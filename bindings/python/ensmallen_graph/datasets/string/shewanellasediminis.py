@@ -117,7 +117,6 @@ def ShewanellaSediminis(
 	1598), 425104.Ssed_1381 (degree 1482) and 425104.Ssed_0627 (degree 1421).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaSediminis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaSediminis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaSediminis",

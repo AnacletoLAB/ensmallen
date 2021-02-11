@@ -117,7 +117,6 @@ def PlanctomycesBrasiliensis(
 	1468), 756272.Plabr_0133 (degree 1438) and 756272.Plabr_1439 (degree 1369).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlanctomycesBrasiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlanctomycesBrasiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlanctomycesBrasiliensis",

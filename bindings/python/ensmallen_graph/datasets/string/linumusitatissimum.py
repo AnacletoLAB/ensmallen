@@ -117,7 +117,6 @@ def LinumUsitatissimum(
 	10264), 4006.Lus10000833 (degree 9699) and 4006.Lus10002098 (degree 9581).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LinumUsitatissimum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LinumUsitatissimum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LinumUsitatissimum",

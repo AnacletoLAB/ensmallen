@@ -119,7 +119,6 @@ def AminicenantesBacteriumAaa252a02(
 	(degree 725) and 1047013.AQSP01000139_gene2383 (degree 716).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AminicenantesBacteriumAaa252a02(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AminicenantesBacteriumAaa252a02(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AminicenantesBacteriumAaa252a02",

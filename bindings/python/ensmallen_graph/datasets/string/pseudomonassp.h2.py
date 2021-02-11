@@ -117,7 +117,6 @@ def PseudomonasSp.H2(
 	1712), 658612.MD26_22345 (degree 1672) and 658612.MD26_02915 (degree 1547).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasSp.H2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasSp.H2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasSp.H2",

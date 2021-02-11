@@ -117,7 +117,6 @@ def LactobacillusSakei(
 	314315.LCA_0379 (degree 600) and 314315.LCA_0276 (degree 591).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusSakei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusSakei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusSakei",

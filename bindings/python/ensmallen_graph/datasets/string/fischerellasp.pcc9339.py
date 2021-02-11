@@ -119,7 +119,6 @@ def FischerellaSp.Pcc9339(
 	(degree 2079).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FischerellaSp.Pcc9339(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FischerellaSp.Pcc9339(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FischerellaSp.Pcc9339",

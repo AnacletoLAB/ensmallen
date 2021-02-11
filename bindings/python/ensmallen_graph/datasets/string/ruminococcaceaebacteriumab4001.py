@@ -119,7 +119,6 @@ def RuminococcaceaeBacteriumAb4001(
 	(degree 750) and 1410638.JHXJ01000002_gene1386 (degree 718).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RuminococcaceaeBacteriumAb4001(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RuminococcaceaeBacteriumAb4001(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcaceaeBacteriumAb4001",

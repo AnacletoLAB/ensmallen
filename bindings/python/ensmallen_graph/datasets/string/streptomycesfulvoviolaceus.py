@@ -119,7 +119,6 @@ def StreptomycesFulvoviolaceus(
 	(degree 2883) and 285535.JOEY01000003_gene10430 (degree 2877).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptomycesFulvoviolaceus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptomycesFulvoviolaceus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesFulvoviolaceus",

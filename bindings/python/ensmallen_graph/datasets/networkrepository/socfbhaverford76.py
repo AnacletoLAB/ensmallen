@@ -131,7 +131,6 @@ def SocfbHaverford76(
 	768 (degree 347), 619 (degree 344) and 491 (degree 338).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbHaverford76(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbHaverford76(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbHaverford76",

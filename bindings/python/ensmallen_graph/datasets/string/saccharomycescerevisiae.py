@@ -117,7 +117,6 @@ def SaccharomycesCerevisiae(
 	4932.YLL039C (degree 1503) and 4932.YGR192C (degree 1482).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaccharomycesCerevisiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaccharomycesCerevisiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharomycesCerevisiae",

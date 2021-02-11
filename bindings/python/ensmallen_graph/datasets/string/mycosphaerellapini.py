@@ -117,7 +117,6 @@ def MycosphaerellaPini(
 	64363.EME49050 (degree 1380) and 64363.EME48849 (degree 1293).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycosphaerellaPini(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycosphaerellaPini(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycosphaerellaPini",

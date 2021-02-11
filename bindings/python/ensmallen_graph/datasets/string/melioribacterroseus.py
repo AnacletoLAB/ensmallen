@@ -117,7 +117,6 @@ def MelioribacterRoseus(
 	1081), 1191523.MROS_2663 (degree 1036) and 1191523.MROS_2577 (degree 1017).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MelioribacterRoseus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MelioribacterRoseus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MelioribacterRoseus",

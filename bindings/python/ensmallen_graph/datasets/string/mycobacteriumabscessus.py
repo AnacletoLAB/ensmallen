@@ -117,7 +117,6 @@ def MycobacteriumAbscessus(
 	36809.MAB_3755c (degree 1369) and 36809.MAB_3148c (degree 1319).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumAbscessus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumAbscessus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumAbscessus",

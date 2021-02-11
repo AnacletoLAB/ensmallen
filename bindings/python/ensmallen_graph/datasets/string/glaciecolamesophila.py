@@ -117,7 +117,6 @@ def GlaciecolaMesophila(
 	1511), 1128912.GMES_2149 (degree 1376) and 1128912.GMES_2655 (degree 1265).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaMesophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaMesophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaMesophila",

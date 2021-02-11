@@ -117,7 +117,6 @@ def ThermoplasmaVolcanium(
 	273116.14324773 (degree 639) and 273116.14324671 (degree 584).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoplasmaVolcanium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoplasmaVolcanium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoplasmaVolcanium",

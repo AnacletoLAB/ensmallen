@@ -117,7 +117,6 @@ def LeadbetterellaByssophila(
 	1277), 649349.Lbys_1881 (degree 1047) and 649349.Lbys_2125 (degree 1043).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeadbetterellaByssophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeadbetterellaByssophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeadbetterellaByssophila",

@@ -117,7 +117,6 @@ def NatronobacteriumGregoryi(
 	982), 797304.Natgr_3595 (degree 912) and 797304.Natgr_3586 (degree 908).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatronobacteriumGregoryi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatronobacteriumGregoryi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatronobacteriumGregoryi",

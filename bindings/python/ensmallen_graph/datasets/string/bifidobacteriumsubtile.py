@@ -117,7 +117,6 @@ def BifidobacteriumSubtile(
 	77635.BISU_1202 (degree 821) and 77635.BISU_1378 (degree 792).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumSubtile(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumSubtile(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumSubtile",

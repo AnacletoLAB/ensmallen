@@ -119,7 +119,6 @@ def SutterellaWadsworthensis2159bfaa(
 	606) and 742823.HMPREF9465_00438 (degree 586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SutterellaWadsworthensis2159bfaa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SutterellaWadsworthensis2159bfaa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SutterellaWadsworthensis2159bfaa",

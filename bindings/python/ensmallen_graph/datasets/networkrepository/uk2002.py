@@ -116,7 +116,6 @@ def Uk2002(
 	7834) and 18424043 (degree 7715).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def Uk2002(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def Uk2002(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Uk2002",

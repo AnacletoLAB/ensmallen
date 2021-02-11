@@ -117,7 +117,6 @@ def PetrotogaMobilis(
 	403833.Pmob_0046 (degree 764) and 403833.Pmob_1239 (degree 748).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PetrotogaMobilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PetrotogaMobilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PetrotogaMobilis",

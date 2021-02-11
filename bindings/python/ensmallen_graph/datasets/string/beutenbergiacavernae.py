@@ -117,7 +117,6 @@ def BeutenbergiaCavernae(
 	1067), 471853.Bcav_1570 (degree 1064) and 471853.Bcav_3709 (degree 1064).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BeutenbergiaCavernae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BeutenbergiaCavernae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BeutenbergiaCavernae",

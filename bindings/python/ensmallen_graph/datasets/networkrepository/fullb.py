@@ -110,7 +110,6 @@ def Fullb(
 	144), 139969 (degree 144), 139968 (degree 144) and 139967 (degree 144).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Fullb(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Fullb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Fullb",

@@ -119,7 +119,6 @@ def PseudomonasNitroreducensHbp1(
 	(degree 2358) and 1437882.AZRU01000035_gene372 (degree 2306).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasNitroreducensHbp1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasNitroreducensHbp1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasNitroreducensHbp1",

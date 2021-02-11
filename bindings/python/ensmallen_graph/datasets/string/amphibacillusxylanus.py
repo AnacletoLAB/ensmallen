@@ -117,7 +117,6 @@ def AmphibacillusXylanus(
 	698758.AXY_11000 (degree 735) and 698758.AXY_00090 (degree 722).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmphibacillusXylanus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmphibacillusXylanus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmphibacillusXylanus",

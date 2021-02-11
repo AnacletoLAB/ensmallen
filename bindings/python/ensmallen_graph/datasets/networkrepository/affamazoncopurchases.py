@@ -125,7 +125,6 @@ def AffAmazonCopurchases(
 	1512) and 1857 (degree 1174).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def AffAmazonCopurchases(
 	        publisher={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def AffAmazonCopurchases(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AffAmazonCopurchases",

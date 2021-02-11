@@ -110,7 +110,6 @@ def TechAs22july06(
 	2016), 15 (degree 1713), 23 (degree 1298) and 59 (degree 1243).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def TechAs22july06(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def TechAs22july06(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechAs22july06",

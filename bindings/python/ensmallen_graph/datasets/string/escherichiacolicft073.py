@@ -117,7 +117,6 @@ def EscherichiaColiCft073(
 	199310.c2469 (degree 1436) and 199310.c3026 (degree 1252).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EscherichiaColiCft073(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EscherichiaColiCft073(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColiCft073",

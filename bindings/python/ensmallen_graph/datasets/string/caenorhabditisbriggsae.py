@@ -117,7 +117,6 @@ def CaenorhabditisBriggsae(
 	(degree 2288), 6238.CBG02840 (degree 2286) and 6238.CBG04405 (degree 2152).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaenorhabditisBriggsae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaenorhabditisBriggsae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaenorhabditisBriggsae",

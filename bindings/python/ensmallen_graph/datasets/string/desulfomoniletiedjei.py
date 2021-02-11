@@ -117,7 +117,6 @@ def DesulfomonileTiedjei(
 	2565), 706587.Desti_5134 (degree 2540) and 706587.Desti_5543 (degree 2446).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfomonileTiedjei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfomonileTiedjei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfomonileTiedjei",

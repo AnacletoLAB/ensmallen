@@ -121,7 +121,6 @@ def WebClueweb09(
 	1 (degree 4937883) and 9 (degree 4160186).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def WebClueweb09(
 	        institution={DTIC Document}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def WebClueweb09(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebClueweb09",

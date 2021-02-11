@@ -117,7 +117,6 @@ def VulcanisaetaMoutnovskia(
 	985053.VMUT_0204 (degree 785) and 985053.VMUT_1570 (degree 774).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VulcanisaetaMoutnovskia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VulcanisaetaMoutnovskia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VulcanisaetaMoutnovskia",

@@ -112,7 +112,6 @@ def MaayanFigeys(
 	(degree 288), 355 (degree 278), 73 (degree 233) and 124 (degree 215).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def MaayanFigeys(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def MaayanFigeys(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MaayanFigeys",

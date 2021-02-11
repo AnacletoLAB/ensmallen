@@ -117,7 +117,6 @@ def VibrioCoralliilyticus(
 	1604), 675814.VIC_000773 (degree 1512) and 675814.VIC_001960 (degree 1451).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioCoralliilyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioCoralliilyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioCoralliilyticus",

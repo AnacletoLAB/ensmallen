@@ -117,7 +117,6 @@ def GilliamellaApicola(
 	796), 1196095.GAPWK_1834 (degree 772) and 1196095.GAPWK_0384 (degree 745).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GilliamellaApicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GilliamellaApicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GilliamellaApicola",

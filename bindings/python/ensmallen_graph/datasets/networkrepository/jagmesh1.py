@@ -110,7 +110,6 @@ def Jagmesh1(
 	928 (degree 7), 925 (degree 7) and 924 (degree 7).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Jagmesh1(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Jagmesh1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Jagmesh1",

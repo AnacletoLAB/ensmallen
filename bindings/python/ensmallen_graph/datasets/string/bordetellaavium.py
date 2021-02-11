@@ -117,7 +117,6 @@ def BordetellaAvium(
 	360910.BAV0472 (degree 858) and 360910.BAV1567 (degree 830).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BordetellaAvium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BordetellaAvium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BordetellaAvium",

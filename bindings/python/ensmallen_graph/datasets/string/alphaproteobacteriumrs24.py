@@ -117,7 +117,6 @@ def AlphaProteobacteriumRs24(
 	609), 1397666.RS24_01667 (degree 586) and 1397666.RS24_00590 (degree 557).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlphaProteobacteriumRs24(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlphaProteobacteriumRs24(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlphaProteobacteriumRs24",

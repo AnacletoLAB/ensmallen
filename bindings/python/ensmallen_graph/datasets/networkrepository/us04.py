@@ -110,7 +110,6 @@ def Us04(
 	28 (degree 9154), 101 (degree 8984) and 92 (degree 8966).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Us04(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Us04(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Us04",

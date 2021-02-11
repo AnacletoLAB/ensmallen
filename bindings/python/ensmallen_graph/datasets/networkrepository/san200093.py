@@ -123,7 +123,6 @@ def San200093(
 	18 (degree 187), 160 (degree 186), 76 (degree 186) and 66 (degree 186).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def San200093(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def San200093(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "San200093",

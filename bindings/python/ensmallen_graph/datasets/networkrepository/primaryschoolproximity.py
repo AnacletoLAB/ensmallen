@@ -119,7 +119,6 @@ def PrimarySchoolProximity(
 	1665 (degree 2447), 1698 (degree 2442) and 1613 (degree 2249).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def PrimarySchoolProximity(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def PrimarySchoolProximity(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PrimarySchoolProximity",

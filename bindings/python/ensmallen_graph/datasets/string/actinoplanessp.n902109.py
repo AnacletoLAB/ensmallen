@@ -117,7 +117,6 @@ def ActinoplanesSp.N902109(
 	1783), 649831.L083_0304 (degree 1722) and 649831.L083_1025 (degree 1692).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinoplanesSp.N902109(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinoplanesSp.N902109(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoplanesSp.N902109",

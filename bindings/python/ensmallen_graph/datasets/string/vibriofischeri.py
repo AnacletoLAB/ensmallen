@@ -117,7 +117,6 @@ def VibrioFischeri(
 	312309.VF_2402 (degree 978) and 312309.VF_2138 (degree 962).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioFischeri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioFischeri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioFischeri",

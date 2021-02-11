@@ -117,7 +117,6 @@ def VariovoraxParadoxusEps(
 	1606), 595537.Varpa_5223 (degree 1483) and 595537.Varpa_5378 (degree 1455).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VariovoraxParadoxusEps(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VariovoraxParadoxusEps(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VariovoraxParadoxusEps",

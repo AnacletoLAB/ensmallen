@@ -131,7 +131,6 @@ def SocfbReed98(
 	889 (degree 211), 646 (degree 183) and 147 (degree 182).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbReed98(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbReed98(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbReed98",

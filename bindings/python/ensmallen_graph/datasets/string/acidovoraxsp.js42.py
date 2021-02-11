@@ -117,7 +117,6 @@ def AcidovoraxSp.Js42(
 	232721.Ajs_2547 (degree 1195) and 232721.Ajs_0741 (degree 1151).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidovoraxSp.Js42(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidovoraxSp.Js42(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidovoraxSp.Js42",

@@ -117,7 +117,6 @@ def CellulomonasFlavigena(
 	912), 446466.Cfla_1630 (degree 899) and 446466.Cfla_2585 (degree 893).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellulomonasFlavigena(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellulomonasFlavigena(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellulomonasFlavigena",

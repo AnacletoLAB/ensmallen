@@ -117,7 +117,6 @@ def AnaplasmaMarginaleMaries(
 	(degree 408), 234826.AM944 (degree 378) and 234826.AM085 (degree 346).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaplasmaMarginaleMaries(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaplasmaMarginaleMaries(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaplasmaMarginaleMaries",

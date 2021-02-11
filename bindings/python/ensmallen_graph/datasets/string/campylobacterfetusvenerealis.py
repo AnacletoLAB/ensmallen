@@ -119,7 +119,6 @@ def CampylobacterFetusVenerealis(
 	(degree 673) and 983328.AFGH01000033_gene836 (degree 622).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CampylobacterFetusVenerealis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CampylobacterFetusVenerealis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CampylobacterFetusVenerealis",

@@ -123,7 +123,6 @@ def FbMessages(
 	(degree 242), 155 (degree 228), 43 (degree 228) and 1483 (degree 208).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def FbMessages(
 	        publisher={Elsevier}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def FbMessages(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FbMessages",

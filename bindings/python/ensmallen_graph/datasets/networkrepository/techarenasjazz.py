@@ -110,7 +110,6 @@ def TechArenasJazz(
 	7 (degree 96), 20 (degree 75), 23 (degree 74) and 90 (degree 62).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def TechArenasJazz(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def TechArenasJazz(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechArenasJazz",

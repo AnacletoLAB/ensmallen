@@ -121,7 +121,6 @@ def CopresenceLyonschool(
 	94706).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def CopresenceLyonschool(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def CopresenceLyonschool(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CopresenceLyonschool",

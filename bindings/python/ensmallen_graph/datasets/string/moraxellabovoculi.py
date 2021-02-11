@@ -117,7 +117,6 @@ def MoraxellaBovoculi(
 	743974.MBO_05104 (degree 565) and 743974.MBO_03667 (degree 526).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MoraxellaBovoculi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MoraxellaBovoculi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MoraxellaBovoculi",

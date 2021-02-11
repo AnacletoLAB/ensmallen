@@ -117,7 +117,6 @@ def SimiduiaAgarivorans(
 	1141), 1117647.M5M_19280 (degree 1117) and 1117647.M5M_03310 (degree 1052).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SimiduiaAgarivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SimiduiaAgarivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SimiduiaAgarivorans",

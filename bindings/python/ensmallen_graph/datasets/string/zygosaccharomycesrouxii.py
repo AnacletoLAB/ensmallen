@@ -117,7 +117,6 @@ def ZygosaccharomycesRouxii(
 	950).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ZygosaccharomycesRouxii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ZygosaccharomycesRouxii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ZygosaccharomycesRouxii",

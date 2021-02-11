@@ -117,7 +117,6 @@ def DickeyaDadantiiEch586(
 	1139), 590409.Dd586_3046 (degree 1038) and 590409.Dd586_0311 (degree 1034).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DickeyaDadantiiEch586(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DickeyaDadantiiEch586(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DickeyaDadantiiEch586",

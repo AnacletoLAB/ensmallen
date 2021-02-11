@@ -119,7 +119,6 @@ def PeptostreptococcaceaeBacteriumCm5(
 	668) and 796940.HMPREF9628_00646 (degree 632).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PeptostreptococcaceaeBacteriumCm5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PeptostreptococcaceaeBacteriumCm5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PeptostreptococcaceaeBacteriumCm5",

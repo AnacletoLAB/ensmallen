@@ -133,7 +133,6 @@ def WebUk2002All(
 	8504955 (degree 73231) and 6748292 (degree 41933).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def WebUk2002All(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def WebUk2002All(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebUk2002All",

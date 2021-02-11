@@ -117,7 +117,6 @@ def MesoplasmaFlorum(
 	(degree 403) and 265311.Mfl398 (degree 402).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MesoplasmaFlorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MesoplasmaFlorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesoplasmaFlorum",

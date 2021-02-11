@@ -117,7 +117,6 @@ def StreptococcusIctaluri(
 	830), 764299.STRIC_1693 (degree 797) and 764299.STRIC_2059 (degree 781).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusIctaluri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusIctaluri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusIctaluri",

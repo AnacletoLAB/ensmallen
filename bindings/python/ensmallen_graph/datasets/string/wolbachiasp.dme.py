@@ -117,7 +117,6 @@ def WolbachiaSp.Dme(
 	163164.WD_0425 (degree 456) and 163164.WD_0307 (degree 437).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WolbachiaSp.Dme(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WolbachiaSp.Dme(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WolbachiaSp.Dme",

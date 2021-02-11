@@ -119,7 +119,6 @@ def FlavobacteriaBacteriumMs0242a(
 	558) and 487796.Flav2ADRAFT_1214 (degree 551).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FlavobacteriaBacteriumMs0242a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FlavobacteriaBacteriumMs0242a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriaBacteriumMs0242a",

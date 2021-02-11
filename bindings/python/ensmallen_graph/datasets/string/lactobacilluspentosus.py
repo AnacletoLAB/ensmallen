@@ -117,7 +117,6 @@ def LactobacillusPentosus(
 	853), 1136177.KCA1_1385 (degree 804) and 1136177.KCA1_3001 (degree 795).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusPentosus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusPentosus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusPentosus",

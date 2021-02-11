@@ -117,7 +117,6 @@ def ActinoplanesUtahensis(
 	1869.MB27_09065 (degree 2132) and 1869.MB27_36585 (degree 2084).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinoplanesUtahensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinoplanesUtahensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoplanesUtahensis",

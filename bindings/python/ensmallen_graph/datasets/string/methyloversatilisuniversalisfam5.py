@@ -119,7 +119,6 @@ def MethyloversatilisUniversalisFam5(
 	1157) and 1000565.METUNv1_00046 (degree 1087).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MethyloversatilisUniversalisFam5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MethyloversatilisUniversalisFam5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethyloversatilisUniversalisFam5",

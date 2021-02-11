@@ -117,7 +117,6 @@ def MetallosphaeraCuprina(
 	659), 1006006.Mcup_1632 (degree 655) and 1006006.Mcup_0518 (degree 649).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MetallosphaeraCuprina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MetallosphaeraCuprina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MetallosphaeraCuprina",

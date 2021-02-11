@@ -117,7 +117,6 @@ def PhytoplasmaOnionYellows(
 	(degree 501), 262768.PAM_131 (degree 499) and 262768.PAM_121 (degree 498).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytoplasmaOnionYellows(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytoplasmaOnionYellows(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytoplasmaOnionYellows",

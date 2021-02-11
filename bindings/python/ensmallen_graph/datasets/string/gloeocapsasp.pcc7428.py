@@ -119,7 +119,6 @@ def GloeocapsaSp.Pcc7428(
 	(degree 1246).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GloeocapsaSp.Pcc7428(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GloeocapsaSp.Pcc7428(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GloeocapsaSp.Pcc7428",

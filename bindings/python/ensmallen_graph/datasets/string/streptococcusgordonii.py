@@ -117,7 +117,6 @@ def StreptococcusGordonii(
 	467705.SGO_2013 (degree 603) and 467705.SGO_1530 (degree 599).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusGordonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusGordonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusGordonii",

@@ -117,7 +117,6 @@ def StreptomycesCattleya(
 	1749), 1003195.SCAT_1135 (degree 1716) and 1003195.SCAT_3679 (degree 1683).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesCattleya(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesCattleya(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesCattleya",

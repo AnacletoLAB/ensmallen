@@ -117,7 +117,6 @@ def WolbachiaSp.Bma(
 	292805.Wbm0350 (degree 377) and 292805.Wbm0461 (degree 377).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WolbachiaSp.Bma(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WolbachiaSp.Bma(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WolbachiaSp.Bma",

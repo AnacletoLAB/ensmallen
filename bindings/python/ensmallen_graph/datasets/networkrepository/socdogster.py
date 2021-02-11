@@ -122,7 +122,6 @@ def SocDogster(
 	(degree 45797).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def SocDogster(
 	        note={http://www.dogster.com}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def SocDogster(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocDogster",

@@ -117,7 +117,6 @@ def MarinithermusHydrothermalis(
 	842), 869210.Marky_1151 (degree 838) and 869210.Marky_0171 (degree 795).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinithermusHydrothermalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinithermusHydrothermalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinithermusHydrothermalis",

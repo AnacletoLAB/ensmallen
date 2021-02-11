@@ -110,7 +110,6 @@ def FoodwebBaywet(
 	85 (degree 75), 21 (degree 72) and 84 (degree 64).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def FoodwebBaywet(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def FoodwebBaywet(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FoodwebBaywet",

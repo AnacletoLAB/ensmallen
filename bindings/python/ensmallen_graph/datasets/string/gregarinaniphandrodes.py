@@ -117,7 +117,6 @@ def GregarinaNiphandrodes(
 	1311), 110365.A0A023B8H5 (degree 1288) and 110365.A0A023B9W9 (degree 1264).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GregarinaNiphandrodes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GregarinaNiphandrodes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GregarinaNiphandrodes",

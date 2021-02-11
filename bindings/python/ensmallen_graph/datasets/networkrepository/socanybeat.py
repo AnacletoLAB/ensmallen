@@ -117,7 +117,6 @@ def SocAnybeat(
 	1582), 10037 (degree 1580), 1622 (degree 963) and 9975 (degree 893).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def SocAnybeat(
 	        year={2012}publisher={Springer}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def SocAnybeat(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocAnybeat",

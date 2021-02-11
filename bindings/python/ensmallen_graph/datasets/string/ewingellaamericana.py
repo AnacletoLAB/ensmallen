@@ -117,7 +117,6 @@ def EwingellaAmericana(
 	1460), 910964.GEAM_1671 (degree 1413) and 910964.GEAM_3550 (degree 1408).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EwingellaAmericana(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EwingellaAmericana(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EwingellaAmericana",

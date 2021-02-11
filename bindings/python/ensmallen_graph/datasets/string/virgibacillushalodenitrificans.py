@@ -119,7 +119,6 @@ def VirgibacillusHalodenitrificans(
 	(degree 992) and 1196028.ALEF01000045_gene50 (degree 964).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def VirgibacillusHalodenitrificans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def VirgibacillusHalodenitrificans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VirgibacillusHalodenitrificans",

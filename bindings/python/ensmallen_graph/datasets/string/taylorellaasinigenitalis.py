@@ -117,7 +117,6 @@ def TaylorellaAsinigenitalis(
 	593), 1008459.TASI_0720 (degree 544) and 1008459.TASI_0718 (degree 493).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TaylorellaAsinigenitalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TaylorellaAsinigenitalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TaylorellaAsinigenitalis",

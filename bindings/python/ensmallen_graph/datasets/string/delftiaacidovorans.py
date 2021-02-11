@@ -117,7 +117,6 @@ def DelftiaAcidovorans(
 	1865), 398578.Daci_5325 (degree 1795) and 398578.Daci_4515 (degree 1679).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DelftiaAcidovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DelftiaAcidovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DelftiaAcidovorans",

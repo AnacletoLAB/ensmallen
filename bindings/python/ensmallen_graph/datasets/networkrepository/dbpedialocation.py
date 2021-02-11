@@ -114,7 +114,6 @@ def DbpediaLocation(
 	20 (degree 2482), 62 (degree 2447), 8 (degree 2229) and 30 (degree 2228).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def DbpediaLocation(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def DbpediaLocation(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaLocation",

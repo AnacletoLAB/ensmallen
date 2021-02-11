@@ -117,7 +117,6 @@ def CorynebacteriumMaris(
 	902), 1224163.B841_02960 (degree 822) and 1224163.B841_06395 (degree 769).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumMaris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumMaris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumMaris",

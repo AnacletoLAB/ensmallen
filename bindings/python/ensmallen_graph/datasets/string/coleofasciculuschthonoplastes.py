@@ -119,7 +119,6 @@ def ColeofasciculusChthonoplastes(
 	118168.MC7420_716 (degree 1875).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ColeofasciculusChthonoplastes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ColeofasciculusChthonoplastes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ColeofasciculusChthonoplastes",

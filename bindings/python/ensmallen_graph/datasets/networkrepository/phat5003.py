@@ -123,7 +123,6 @@ def PHat5003(
 	480 (degree 442), 404 (degree 441), 148 (degree 441) and 124 (degree 440).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def PHat5003(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def PHat5003(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PHat5003",

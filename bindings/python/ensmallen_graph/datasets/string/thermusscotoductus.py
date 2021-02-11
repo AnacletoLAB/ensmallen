@@ -117,7 +117,6 @@ def ThermusScotoductus(
 	923), 743525.TSC_c19470 (degree 842) and 743525.TSC_c02320 (degree 814).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermusScotoductus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermusScotoductus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermusScotoductus",

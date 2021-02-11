@@ -117,7 +117,6 @@ def ElizabethkingiaAnophelis(
 	886), 1338011.BD94_2431 (degree 867) and 1338011.BD94_1022 (degree 855).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ElizabethkingiaAnophelis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ElizabethkingiaAnophelis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ElizabethkingiaAnophelis",

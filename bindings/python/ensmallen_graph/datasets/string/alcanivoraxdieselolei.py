@@ -117,7 +117,6 @@ def AlcanivoraxDieselolei(
 	1176), 930169.B5T_03966 (degree 1107) and 930169.B5T_02958 (degree 1049).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlcanivoraxDieselolei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlcanivoraxDieselolei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcanivoraxDieselolei",

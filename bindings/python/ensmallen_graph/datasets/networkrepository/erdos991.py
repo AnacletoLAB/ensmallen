@@ -112,7 +112,6 @@ def Erdos991(
 	41), 364 (degree 39), 460 (degree 37) and 10 (degree 36).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Erdos991(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Erdos991(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Erdos991",

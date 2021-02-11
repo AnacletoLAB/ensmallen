@@ -115,7 +115,6 @@ def ActinobacteriumAcamd5(
 	542), 1504319.GM45_1565 (degree 537) and 1504319.GM45_1400 (degree 466).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ActinobacteriumAcamd5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ActinobacteriumAcamd5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinobacteriumAcamd5",

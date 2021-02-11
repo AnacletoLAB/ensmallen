@@ -117,7 +117,6 @@ def RickettsiaCanadensis(
 	293613.A1E_01620 (degree 367) and 293613.A1E_04865 (degree 354).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsiaCanadensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsiaCanadensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsiaCanadensis",

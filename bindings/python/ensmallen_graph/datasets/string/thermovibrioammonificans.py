@@ -117,7 +117,6 @@ def ThermovibrioAmmonificans(
 	671), 648996.Theam_1204 (degree 653) and 648996.Theam_1569 (degree 623).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermovibrioAmmonificans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermovibrioAmmonificans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermovibrioAmmonificans",

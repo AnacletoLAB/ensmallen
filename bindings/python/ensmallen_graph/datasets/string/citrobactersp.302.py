@@ -117,7 +117,6 @@ def CitrobacterSp.302(
 	1474), 469595.CSAG_03010 (degree 1347) and 469595.CSAG_02295 (degree 1292).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CitrobacterSp.302(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CitrobacterSp.302(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CitrobacterSp.302",

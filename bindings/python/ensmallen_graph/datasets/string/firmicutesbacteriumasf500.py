@@ -117,7 +117,6 @@ def FirmicutesBacteriumAsf500(
 	899), 1378168.N510_00074 (degree 822) and 1378168.N510_00467 (degree 808).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FirmicutesBacteriumAsf500(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FirmicutesBacteriumAsf500(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FirmicutesBacteriumAsf500",

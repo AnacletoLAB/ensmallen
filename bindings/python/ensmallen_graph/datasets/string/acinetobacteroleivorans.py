@@ -117,7 +117,6 @@ def AcinetobacterOleivorans(
 	1183), 436717.AOLE_03905 (degree 1056) and 436717.AOLE_07870 (degree 1010).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterOleivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterOleivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterOleivorans",

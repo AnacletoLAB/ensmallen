@@ -119,7 +119,6 @@ def LachnospiraceaeBacterium1456faa(
 	926) and 658655.HMPREF0988_02618 (degree 918).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraceaeBacterium1456faa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraceaeBacterium1456faa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacterium1456faa",

@@ -127,7 +127,6 @@ def CaMathscinetDir(
 	267) and 192024 (degree 266).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -153,7 +152,6 @@ def CaMathscinetDir(
 	        publisher={IOP Publishing}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -190,7 +188,6 @@ def CaMathscinetDir(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaMathscinetDir",

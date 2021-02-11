@@ -117,7 +117,6 @@ def ArenimonasMetalli(
 	963), 1384056.N787_02195 (degree 933) and 1384056.N787_02780 (degree 931).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArenimonasMetalli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArenimonasMetalli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArenimonasMetalli",

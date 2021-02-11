@@ -117,7 +117,6 @@ def BradyrhizobiumSp.S23321(
 	2410), 335659.S23_63100 (degree 1989) and 335659.S23_47550 (degree 1988).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BradyrhizobiumSp.S23321(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BradyrhizobiumSp.S23321(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumSp.S23321",

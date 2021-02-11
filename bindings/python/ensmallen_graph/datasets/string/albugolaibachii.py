@@ -117,7 +117,6 @@ def AlbugoLaibachii(
 	653948.CCA15919 (degree 3077) and 653948.CCA15932 (degree 3077).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlbugoLaibachii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlbugoLaibachii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlbugoLaibachii",

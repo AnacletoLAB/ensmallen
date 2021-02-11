@@ -119,7 +119,6 @@ def LachnospiraceaeBacteriumFe2018(
 	(degree 870) and 1410624.JNKK01000068_gene1149 (degree 824).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraceaeBacteriumFe2018(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraceaeBacteriumFe2018(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumFe2018",

@@ -123,7 +123,6 @@ def Brock8001(
 	296 (degree 552), 243 (degree 551), 14 (degree 551) and 744 (degree 550).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Brock8001(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Brock8001(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Brock8001",

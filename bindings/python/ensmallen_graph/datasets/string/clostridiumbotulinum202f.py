@@ -117,7 +117,6 @@ def ClostridiumBotulinum202f(
 	1170), 1415774.U728_1193 (degree 1150) and 1415774.U728_3529 (degree 1144).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumBotulinum202f(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumBotulinum202f(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumBotulinum202f",

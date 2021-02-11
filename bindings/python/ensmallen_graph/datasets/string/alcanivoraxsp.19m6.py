@@ -117,7 +117,6 @@ def AlcanivoraxSp.19m6(
 	1127), 1177154.Y5S_02474 (degree 972) and 1177154.Y5S_02914 (degree 968).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlcanivoraxSp.19m6(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlcanivoraxSp.19m6(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcanivoraxSp.19m6",

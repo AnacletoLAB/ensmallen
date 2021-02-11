@@ -117,7 +117,6 @@ def EnterobacterAsburiaeLf7a(
 	1435), 640513.Entas_3225 (degree 1147) and 640513.Entas_3896 (degree 1073).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterobacterAsburiaeLf7a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterobacterAsburiaeLf7a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterobacterAsburiaeLf7a",

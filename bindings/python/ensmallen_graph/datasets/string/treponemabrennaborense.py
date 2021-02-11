@@ -117,7 +117,6 @@ def TreponemaBrennaborense(
 	895), 906968.Trebr_0850 (degree 837) and 906968.Trebr_1497 (degree 829).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaBrennaborense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaBrennaborense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaBrennaborense",

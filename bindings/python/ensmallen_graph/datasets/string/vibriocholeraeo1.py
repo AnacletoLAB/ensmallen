@@ -117,7 +117,6 @@ def VibrioCholeraeO1(
 	243277.VC_0768 (degree 1148) and 243277.VC_A0985 (degree 1029).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioCholeraeO1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioCholeraeO1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioCholeraeO1",

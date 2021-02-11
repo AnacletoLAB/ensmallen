@@ -119,7 +119,6 @@ def PseudomonasStutzeriCcug29243(
 	1196835.A458_03995 (degree 1083).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasStutzeriCcug29243(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasStutzeriCcug29243(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasStutzeriCcug29243",

@@ -117,7 +117,6 @@ def MycoplasmaFermentans(
 	496833.MBIO_0251 (degree 264) and 496833.MBIO_0585 (degree 264).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaFermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaFermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaFermentans",

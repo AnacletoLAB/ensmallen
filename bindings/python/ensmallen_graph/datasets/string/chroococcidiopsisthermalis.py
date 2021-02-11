@@ -117,7 +117,6 @@ def ChroococcidiopsisThermalis(
 	1579), 251229.Chro_4894 (degree 1330) and 251229.Chro_4133 (degree 1325).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChroococcidiopsisThermalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChroococcidiopsisThermalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChroococcidiopsisThermalis",

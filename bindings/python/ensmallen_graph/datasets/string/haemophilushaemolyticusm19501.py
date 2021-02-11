@@ -115,7 +115,6 @@ def HaemophilusHaemolyticusM19501(
 	1028803.GG9_0023 (degree 696) and 1028803.GG9_0475 (degree 586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def HaemophilusHaemolyticusM19501(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def HaemophilusHaemolyticusM19501(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaemophilusHaemolyticusM19501",

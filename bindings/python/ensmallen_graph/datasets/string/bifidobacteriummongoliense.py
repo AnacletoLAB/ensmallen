@@ -117,7 +117,6 @@ def BifidobacteriumMongoliense(
 	666), 1437603.BMON_0242 (degree 658) and 1437603.BMON_1082 (degree 649).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumMongoliense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumMongoliense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumMongoliense",

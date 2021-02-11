@@ -117,7 +117,6 @@ def RubrobacterRadiotolerans(
 	955), 42256.RradSPS_2945 (degree 952) and 42256.RradSPS_2983 (degree 862).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RubrobacterRadiotolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RubrobacterRadiotolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RubrobacterRadiotolerans",

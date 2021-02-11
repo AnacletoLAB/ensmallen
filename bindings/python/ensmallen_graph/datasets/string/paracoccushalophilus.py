@@ -117,7 +117,6 @@ def ParacoccusHalophilus(
 	997), 376733.IT41_04955 (degree 963) and 376733.IT41_00875 (degree 957).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParacoccusHalophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParacoccusHalophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParacoccusHalophilus",

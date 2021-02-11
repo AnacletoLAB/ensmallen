@@ -117,7 +117,6 @@ def OlsenellaUli(
 	633147.Olsu_0201 (degree 702) and 633147.Olsu_0121 (degree 698).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OlsenellaUli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OlsenellaUli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OlsenellaUli",

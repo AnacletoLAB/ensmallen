@@ -123,7 +123,6 @@ def Brock4002(
 	400 (degree 319), 209 (degree 319), 16 (degree 319) and 292 (degree 318).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Brock4002(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Brock4002(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Brock4002",

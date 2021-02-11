@@ -114,7 +114,6 @@ def Bcsstm09(
 	(degree 1), 1080 (degree 1) and 1079 (degree 1).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def Bcsstm09(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def Bcsstm09(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Bcsstm09",

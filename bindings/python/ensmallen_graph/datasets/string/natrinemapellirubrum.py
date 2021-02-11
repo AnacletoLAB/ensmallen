@@ -117,7 +117,6 @@ def NatrinemaPellirubrum(
 	1135), 797303.Natpe_3747 (degree 1084) and 797303.Natpe_2347 (degree 1005).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatrinemaPellirubrum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatrinemaPellirubrum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatrinemaPellirubrum",

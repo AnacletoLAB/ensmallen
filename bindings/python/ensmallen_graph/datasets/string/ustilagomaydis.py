@@ -117,7 +117,6 @@ def UstilagoMaydis(
 	5270.UM02376P0 (degree 1292) and 5270.UM02860P0 (degree 1197).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def UstilagoMaydis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def UstilagoMaydis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "UstilagoMaydis",

@@ -117,7 +117,6 @@ def EndozoicomonasElysicola(
 	1425), 305900.GV64_23940 (degree 1268) and 305900.GV64_03170 (degree 1196).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EndozoicomonasElysicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EndozoicomonasElysicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndozoicomonasElysicola",

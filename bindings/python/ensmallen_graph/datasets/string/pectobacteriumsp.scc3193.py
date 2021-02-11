@@ -117,7 +117,6 @@ def PectobacteriumSp.Scc3193(
 	1454), 1166016.W5S_0321 (degree 1295) and 1166016.W5S_0319 (degree 1260).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PectobacteriumSp.Scc3193(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PectobacteriumSp.Scc3193(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PectobacteriumSp.Scc3193",

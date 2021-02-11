@@ -119,7 +119,6 @@ def DactylosporangiumAurantiacum(
 	(degree 2539).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DactylosporangiumAurantiacum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DactylosporangiumAurantiacum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DactylosporangiumAurantiacum",

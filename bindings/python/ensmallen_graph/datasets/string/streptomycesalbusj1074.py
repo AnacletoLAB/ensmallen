@@ -117,7 +117,6 @@ def StreptomycesAlbusJ1074(
 	457425.XNR_3170 (degree 1650) and 457425.XNR_4853 (degree 1601).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesAlbusJ1074(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesAlbusJ1074(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesAlbusJ1074",

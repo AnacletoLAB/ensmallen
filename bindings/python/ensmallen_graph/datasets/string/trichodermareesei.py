@@ -117,7 +117,6 @@ def TrichodermaReesei(
 	51453.EGR51948 (degree 1132) and 51453.EGR52618 (degree 1082).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichodermaReesei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichodermaReesei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichodermaReesei",

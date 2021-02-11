@@ -119,7 +119,6 @@ def PropionibacteriumFreudenreichii(
 	754252.PFREUD_21470 (degree 605).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PropionibacteriumFreudenreichii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PropionibacteriumFreudenreichii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PropionibacteriumFreudenreichii",

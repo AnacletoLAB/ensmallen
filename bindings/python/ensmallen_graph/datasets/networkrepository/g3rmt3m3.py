@@ -110,7 +110,6 @@ def G3rmt3m3(
 	48), 1504 (degree 48), 1503 (degree 48) and 1502 (degree 48).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def G3rmt3m3(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def G3rmt3m3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "G3rmt3m3",

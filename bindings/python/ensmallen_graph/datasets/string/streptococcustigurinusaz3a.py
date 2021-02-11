@@ -117,7 +117,6 @@ def StreptococcusTigurinusAz3a(
 	740), 1282664.H354_03764 (degree 707) and 1282664.H354_08145 (degree 685).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusTigurinusAz3a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusTigurinusAz3a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusTigurinusAz3a",

@@ -117,7 +117,6 @@ def FlavobacteriumAquatile(
 	874), 1453498.LG45_08300 (degree 817) and 1453498.LG45_15335 (degree 761).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumAquatile(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumAquatile(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumAquatile",

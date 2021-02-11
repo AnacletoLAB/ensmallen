@@ -117,7 +117,6 @@ def ChlorobiumChlorochromatii(
 	340177.Cag_0179 (degree 848) and 340177.Cag_1730 (degree 625).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlorobiumChlorochromatii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlorobiumChlorochromatii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlorobiumChlorochromatii",

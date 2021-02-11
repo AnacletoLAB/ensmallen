@@ -117,7 +117,6 @@ def RickettsiaBelliiRml369c(
 	336407.RBE_0655 (degree 474) and 336407.RBE_1243 (degree 474).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsiaBelliiRml369c(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsiaBelliiRml369c(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsiaBelliiRml369c",

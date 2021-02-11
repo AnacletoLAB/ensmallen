@@ -117,7 +117,6 @@ def AcinetobacterIndicus(
 	948), 1341679.P253_01476 (degree 932) and 1341679.P253_00822 (degree 905).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterIndicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterIndicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterIndicus",

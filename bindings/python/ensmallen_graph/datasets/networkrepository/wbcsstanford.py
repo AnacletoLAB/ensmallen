@@ -114,7 +114,6 @@ def WbCsStanford(
 	6839 (degree 278), 6837 (degree 278) and 6562 (degree 278).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def WbCsStanford(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def WbCsStanford(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WbCsStanford",

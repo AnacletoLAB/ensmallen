@@ -117,7 +117,6 @@ def NiastellaKoreensis(
 	2018), 700598.Niako_7087 (degree 1841) and 700598.Niako_1259 (degree 1618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NiastellaKoreensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NiastellaKoreensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NiastellaKoreensis",

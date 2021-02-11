@@ -117,7 +117,6 @@ def ErwiniaPyrifoliae(
 	1089), 634499.EpC_03240 (degree 1053) and 634499.EpC_09460 (degree 1016).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErwiniaPyrifoliae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErwiniaPyrifoliae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErwiniaPyrifoliae",

@@ -119,7 +119,6 @@ def LachnospiraceaeBacteriumP6a3(
 	(degree 803) and 1410630.JNKP01000004_gene471 (degree 790).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraceaeBacteriumP6a3(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraceaeBacteriumP6a3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumP6a3",

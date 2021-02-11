@@ -117,7 +117,6 @@ def LeuconostocMesenteroides(
 	203120.LEUM_1347 (degree 579) and 203120.LEUM_0800 (degree 567).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocMesenteroides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocMesenteroides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocMesenteroides",

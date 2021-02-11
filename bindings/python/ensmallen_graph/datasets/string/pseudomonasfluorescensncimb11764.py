@@ -119,7 +119,6 @@ def PseudomonasFluorescensNcimb11764(
 	1221522.B723_24320 (degree 1710).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasFluorescensNcimb11764(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasFluorescensNcimb11764(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasFluorescensNcimb11764",

@@ -117,7 +117,6 @@ def ChromohalobacterSalexigens(
 	951), 290398.Csal_2120 (degree 876) and 290398.Csal_0731 (degree 863).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChromohalobacterSalexigens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChromohalobacterSalexigens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChromohalobacterSalexigens",

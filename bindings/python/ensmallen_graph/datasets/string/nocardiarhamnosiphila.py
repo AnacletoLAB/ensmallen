@@ -119,7 +119,6 @@ def NocardiaRhamnosiphila(
 	(degree 2121).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def NocardiaRhamnosiphila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def NocardiaRhamnosiphila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NocardiaRhamnosiphila",

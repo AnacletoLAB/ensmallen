@@ -115,7 +115,6 @@ def SerratiaSymbiotica(
 	568817.SCc_109 (degree 333) and 568817.SCc_556 (degree 332).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def SerratiaSymbiotica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def SerratiaSymbiotica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SerratiaSymbiotica",

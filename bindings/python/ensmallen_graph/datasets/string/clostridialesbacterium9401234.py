@@ -119,7 +119,6 @@ def ClostridialesBacterium9401234(
 	545) and 938288.HG326225_gene1191 (degree 507).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ClostridialesBacterium9401234(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ClostridialesBacterium9401234(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridialesBacterium9401234",

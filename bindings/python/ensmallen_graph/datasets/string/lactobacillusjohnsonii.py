@@ -117,7 +117,6 @@ def LactobacillusJohnsonii(
 	257314.LJ_1479 (degree 742) and 257314.LJ_1840 (degree 734).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusJohnsonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusJohnsonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusJohnsonii",

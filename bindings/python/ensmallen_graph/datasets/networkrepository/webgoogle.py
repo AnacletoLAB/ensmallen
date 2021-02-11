@@ -121,7 +121,6 @@ def WebGoogle(
 	1106 (degree 45), 466 (degree 44) and 135 (degree 37).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def WebGoogle(
 	        publisher={Taylor \& Francis}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def WebGoogle(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebGoogle",

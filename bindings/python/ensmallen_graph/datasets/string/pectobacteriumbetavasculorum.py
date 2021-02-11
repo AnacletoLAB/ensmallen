@@ -117,7 +117,6 @@ def PectobacteriumBetavasculorum(
 	1199), 55207.KP22_17970 (degree 1193) and 55207.KP22_15510 (degree 1181).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PectobacteriumBetavasculorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PectobacteriumBetavasculorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PectobacteriumBetavasculorum",

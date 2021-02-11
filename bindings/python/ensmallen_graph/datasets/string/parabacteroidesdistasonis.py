@@ -117,7 +117,6 @@ def ParabacteroidesDistasonis(
 	435591.BDI_2740 (degree 1236) and 435591.BDI_3372 (degree 1103).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParabacteroidesDistasonis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParabacteroidesDistasonis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParabacteroidesDistasonis",

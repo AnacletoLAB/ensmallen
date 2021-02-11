@@ -117,7 +117,6 @@ def ClostridiumNovyiBNctc9691(
 	853), 1443122.Z958_08595 (degree 824) and 1443122.Z958_07265 (degree 773).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumNovyiBNctc9691(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumNovyiBNctc9691(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumNovyiBNctc9691",

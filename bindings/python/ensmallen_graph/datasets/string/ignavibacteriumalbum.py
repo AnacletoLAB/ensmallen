@@ -117,7 +117,6 @@ def IgnavibacteriumAlbum(
 	1335), 945713.IALB_2949 (degree 1161) and 945713.IALB_0460 (degree 1061).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IgnavibacteriumAlbum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IgnavibacteriumAlbum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IgnavibacteriumAlbum",

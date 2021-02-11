@@ -117,7 +117,6 @@ def SyntrophusAciditrophicus(
 	56780.SYN_00558 (degree 943) and 56780.SYN_00897 (degree 892).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SyntrophusAciditrophicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SyntrophusAciditrophicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SyntrophusAciditrophicus",

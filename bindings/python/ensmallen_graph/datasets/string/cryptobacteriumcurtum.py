@@ -115,7 +115,6 @@ def CryptobacteriumCurtum(
 	(degree 525) and 469378.Ccur_01810 (degree 511).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def CryptobacteriumCurtum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def CryptobacteriumCurtum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CryptobacteriumCurtum",

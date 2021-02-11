@@ -117,7 +117,6 @@ def ErythrobacterSp.Nap1(
 	873), 237727.NAP1_06335 (degree 857) and 237727.NAP1_09562 (degree 836).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErythrobacterSp.Nap1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErythrobacterSp.Nap1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErythrobacterSp.Nap1",

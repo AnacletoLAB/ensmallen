@@ -117,7 +117,6 @@ def AcidaminococcusIntestini(
 	568816.Acin_1449 (degree 681) and 568816.Acin_0413 (degree 650).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidaminococcusIntestini(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidaminococcusIntestini(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidaminococcusIntestini",

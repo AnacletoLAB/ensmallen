@@ -117,7 +117,6 @@ def DechlorosomaSuillum(
 	1548), 640081.Dsui_2885 (degree 1539) and 640081.Dsui_2125 (degree 1253).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DechlorosomaSuillum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DechlorosomaSuillum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DechlorosomaSuillum",

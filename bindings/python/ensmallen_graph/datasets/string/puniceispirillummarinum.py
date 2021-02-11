@@ -117,7 +117,6 @@ def PuniceispirillumMarinum(
 	712), 488538.SAR116_2483 (degree 694) and 488538.SAR116_1240 (degree 690).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PuniceispirillumMarinum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PuniceispirillumMarinum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PuniceispirillumMarinum",

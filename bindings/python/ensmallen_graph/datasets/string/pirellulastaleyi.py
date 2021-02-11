@@ -117,7 +117,6 @@ def PirellulaStaleyi(
 	1295), 530564.Psta_1253 (degree 1184) and 530564.Psta_3991 (degree 1174).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PirellulaStaleyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PirellulaStaleyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PirellulaStaleyi",

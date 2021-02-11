@@ -115,7 +115,6 @@ def SpiribacterSalinus(
 	1260251.SPISAL_00290 (degree 573) and 1260251.SPISAL_05455 (degree 565).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def SpiribacterSalinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def SpiribacterSalinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpiribacterSalinus",

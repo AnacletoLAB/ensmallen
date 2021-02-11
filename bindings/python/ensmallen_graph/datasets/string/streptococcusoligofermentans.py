@@ -117,7 +117,6 @@ def StreptococcusOligofermentans(
 	586), 1302863.I872_10590 (degree 571) and 1302863.I872_01260 (degree 556).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusOligofermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusOligofermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusOligofermentans",

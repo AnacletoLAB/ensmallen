@@ -119,7 +119,6 @@ def BradyrhizobiumJaponicumUsda6(
 	and 1037409.BJ6T_33260 (degree 2295).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BradyrhizobiumJaponicumUsda6(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BradyrhizobiumJaponicumUsda6(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumJaponicumUsda6",

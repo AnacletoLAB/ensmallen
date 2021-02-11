@@ -117,7 +117,6 @@ def AsticcacaulisBiprosthecum(
 	1154), 715226.ABI_25420 (degree 1063) and 715226.ABI_37770 (degree 1031).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AsticcacaulisBiprosthecum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AsticcacaulisBiprosthecum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AsticcacaulisBiprosthecum",

@@ -117,7 +117,6 @@ def ListeriaWelshimeri(
 	386043.lwe1071 (degree 893) and 386043.lwe1470 (degree 827).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ListeriaWelshimeri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ListeriaWelshimeri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ListeriaWelshimeri",

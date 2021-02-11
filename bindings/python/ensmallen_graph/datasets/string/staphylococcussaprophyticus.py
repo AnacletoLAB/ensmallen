@@ -117,7 +117,6 @@ def StaphylococcusSaprophyticus(
 	342451.SSP2323 (degree 777) and 342451.SSP2266 (degree 769).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusSaprophyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusSaprophyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusSaprophyticus",

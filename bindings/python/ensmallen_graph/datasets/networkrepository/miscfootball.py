@@ -123,7 +123,6 @@ def MiscFootball(
 	(degree 12).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def MiscFootball(
 	        publisher={National Acad Sciences}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def MiscFootball(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MiscFootball",

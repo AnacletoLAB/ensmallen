@@ -117,7 +117,6 @@ def StreptomycesAvermitilis(
 	227882.SAV_4205 (degree 1948) and 227882.SAV_1085 (degree 1846).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesAvermitilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesAvermitilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesAvermitilis",

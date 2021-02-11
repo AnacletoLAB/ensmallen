@@ -117,7 +117,6 @@ def LactobacillusKunkeei(
 	482), 148814.JI66_02100 (degree 475) and 148814.JI66_00855 (degree 451).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusKunkeei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusKunkeei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusKunkeei",

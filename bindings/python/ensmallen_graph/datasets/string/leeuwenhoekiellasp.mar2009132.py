@@ -119,7 +119,6 @@ def LeeuwenhoekiellaSp.Mar2009132(
 	(degree 832) and 1392489.JPOL01000002_gene1586 (degree 792).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LeeuwenhoekiellaSp.Mar2009132(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LeeuwenhoekiellaSp.Mar2009132(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeeuwenhoekiellaSp.Mar2009132",

@@ -117,7 +117,6 @@ def AcinetobacterUrsingii(
 	994), 981336.F944_03179 (degree 985) and 981336.F944_01981 (degree 903).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterUrsingii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterUrsingii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterUrsingii",

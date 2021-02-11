@@ -115,7 +115,6 @@ def BlattabacteriumSp.Bgi(
 	350), 1186051.BGIGA_401 (degree 317) and 1186051.BGIGA_531 (degree 292).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlattabacteriumSp.Bgi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlattabacteriumSp.Bgi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlattabacteriumSp.Bgi",

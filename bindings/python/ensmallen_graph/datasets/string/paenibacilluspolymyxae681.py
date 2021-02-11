@@ -117,7 +117,6 @@ def PaenibacillusPolymyxaE681(
 	1242), 349520.PPE_02875 (degree 1126) and 349520.PPE_01557 (degree 1107).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusPolymyxaE681(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusPolymyxaE681(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusPolymyxaE681",

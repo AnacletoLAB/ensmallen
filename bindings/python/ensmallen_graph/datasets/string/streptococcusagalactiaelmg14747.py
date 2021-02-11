@@ -119,7 +119,6 @@ def StreptococcusAgalactiaeLmg14747(
 	1620) and 1154860.SAG0136_11510 (degree 1618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusAgalactiaeLmg14747(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusAgalactiaeLmg14747(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusAgalactiaeLmg14747",

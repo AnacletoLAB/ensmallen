@@ -118,7 +118,6 @@ def Epinions(
 	41067).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def Epinions(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def Epinions(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Epinions",

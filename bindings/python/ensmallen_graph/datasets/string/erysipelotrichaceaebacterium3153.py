@@ -119,7 +119,6 @@ def ErysipelotrichaceaeBacterium3153(
 	(degree 2157) and 658659.HMPREF0983_02046 (degree 2148).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ErysipelotrichaceaeBacterium3153(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ErysipelotrichaceaeBacterium3153(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErysipelotrichaceaeBacterium3153",

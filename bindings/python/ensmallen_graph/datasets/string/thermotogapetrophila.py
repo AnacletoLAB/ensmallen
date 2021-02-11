@@ -117,7 +117,6 @@ def ThermotogaPetrophila(
 	808), 390874.Tpet_1659 (degree 702) and 390874.Tpet_1105 (degree 649).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermotogaPetrophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermotogaPetrophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermotogaPetrophila",

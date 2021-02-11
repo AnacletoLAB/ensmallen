@@ -117,7 +117,6 @@ def StreptococcusSanguinisSk36(
 	388919.SSA_2374 (degree 628) and 388919.SSA_1845 (degree 608).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSanguinisSk36(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSanguinisSk36(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSanguinisSk36",

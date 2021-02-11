@@ -117,7 +117,6 @@ def SulfurimonasGotlandica(
 	1164), 929558.SMGD1_0318 (degree 1152) and 929558.SMGD1_0802 (degree 1067).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurimonasGotlandica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurimonasGotlandica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurimonasGotlandica",

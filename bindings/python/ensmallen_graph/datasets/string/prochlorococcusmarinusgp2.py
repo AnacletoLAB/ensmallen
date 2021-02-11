@@ -117,7 +117,6 @@ def ProchlorococcusMarinusGp2(
 	59925.EU91_0599 (degree 493) and 59925.EU91_1679 (degree 493).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProchlorococcusMarinusGp2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProchlorococcusMarinusGp2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusMarinusGp2",

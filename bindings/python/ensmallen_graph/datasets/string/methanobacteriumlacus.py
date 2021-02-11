@@ -117,7 +117,6 @@ def MethanobacteriumLacus(
 	927), 877455.Metbo_0415 (degree 901) and 877455.Metbo_2379 (degree 892).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanobacteriumLacus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanobacteriumLacus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanobacteriumLacus",

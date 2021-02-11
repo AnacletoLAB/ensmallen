@@ -117,7 +117,6 @@ def HyphomonasSp.T16b2(
 	950), 1280941.HY2_01835 (degree 878) and 1280941.HY2_06415 (degree 856).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasSp.T16b2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasSp.T16b2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasSp.T16b2",

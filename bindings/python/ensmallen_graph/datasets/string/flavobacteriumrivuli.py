@@ -117,7 +117,6 @@ def FlavobacteriumRivuli(
 	891), 1121895.Q765_04780 (degree 837) and 1121895.Q765_20215 (degree 817).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumRivuli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumRivuli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumRivuli",

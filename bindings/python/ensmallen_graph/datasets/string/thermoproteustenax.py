@@ -117,7 +117,6 @@ def ThermoproteusTenax(
 	768679.TTX_0980 (degree 745) and 768679.TTX_0627 (degree 733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoproteusTenax(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoproteusTenax(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoproteusTenax",

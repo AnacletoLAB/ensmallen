@@ -117,7 +117,6 @@ def VibrioNavarrensis(
 	1215), 29495.EA26_18020 (degree 1193) and 29495.EA26_15335 (degree 1162).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioNavarrensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioNavarrensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioNavarrensis",

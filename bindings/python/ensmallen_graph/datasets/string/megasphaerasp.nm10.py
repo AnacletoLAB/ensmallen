@@ -117,7 +117,6 @@ def MegasphaeraSp.Nm10(
 	810), 1273103.NM10_10585 (degree 784) and 1273103.NM10_07194 (degree 756).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MegasphaeraSp.Nm10(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MegasphaeraSp.Nm10(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MegasphaeraSp.Nm10",

@@ -117,7 +117,6 @@ def AcidiphiliumCryptum(
 	1053), 349163.Acry_1666 (degree 939) and 349163.Acry_2727 (degree 885).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidiphiliumCryptum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidiphiliumCryptum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidiphiliumCryptum",

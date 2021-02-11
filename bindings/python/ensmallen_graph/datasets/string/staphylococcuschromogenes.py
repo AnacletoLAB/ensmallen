@@ -117,7 +117,6 @@ def StaphylococcusChromogenes(
 	794), 1220551.SCHR_03065 (degree 727) and 1220551.SCHR_10570 (degree 716).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusChromogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusChromogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusChromogenes",

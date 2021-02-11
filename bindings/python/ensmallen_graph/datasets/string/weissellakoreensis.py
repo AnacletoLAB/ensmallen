@@ -117,7 +117,6 @@ def WeissellaKoreensis(
 	512), 1045854.WKK_03905 (degree 506) and 1045854.WKK_00690 (degree 500).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WeissellaKoreensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WeissellaKoreensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WeissellaKoreensis",

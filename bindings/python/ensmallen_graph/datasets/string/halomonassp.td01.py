@@ -117,7 +117,6 @@ def HalomonasSp.Td01(
 	1402), 999141.GME_17522 (degree 1296) and 999141.GME_17657 (degree 1248).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalomonasSp.Td01(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalomonasSp.Td01(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalomonasSp.Td01",

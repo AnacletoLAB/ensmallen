@@ -119,7 +119,6 @@ def ArthrobacterSp.Unc362mftsu51(
 	(degree 1375) and 1449044.JMLE01000009_gene3220 (degree 1317).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ArthrobacterSp.Unc362mftsu51(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ArthrobacterSp.Unc362mftsu51(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArthrobacterSp.Unc362mftsu51",

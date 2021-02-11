@@ -119,7 +119,6 @@ def PhotobacteriumLeiognathiMandapamensis(
 	(degree 1442) and 1001530.BACE01000011_gene2309 (degree 1415).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PhotobacteriumLeiognathiMandapamensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PhotobacteriumLeiognathiMandapamensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotobacteriumLeiognathiMandapamensis",

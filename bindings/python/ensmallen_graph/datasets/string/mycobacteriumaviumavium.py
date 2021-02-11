@@ -117,7 +117,6 @@ def MycobacteriumAviumAvium(
 	1639), 44454.NF84_01035 (degree 1620) and 44454.NF84_05860 (degree 1565).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumAviumAvium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumAviumAvium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumAviumAvium",

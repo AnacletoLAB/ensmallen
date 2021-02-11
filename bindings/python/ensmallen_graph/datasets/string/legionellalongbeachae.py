@@ -117,7 +117,6 @@ def LegionellaLongbeachae(
 	661367.LLO_1101 (degree 980) and 661367.LLO_2505 (degree 900).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LegionellaLongbeachae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LegionellaLongbeachae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LegionellaLongbeachae",

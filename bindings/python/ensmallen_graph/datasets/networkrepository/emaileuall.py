@@ -114,7 +114,6 @@ def EmailEuall(
 	6308), 31 (degree 6002), 73 (degree 4309) and 299 (degree 3988).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def EmailEuall(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def EmailEuall(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EmailEuall",

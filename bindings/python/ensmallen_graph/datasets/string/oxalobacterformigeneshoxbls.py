@@ -117,7 +117,6 @@ def OxalobacterFormigenesHoxbls(
 	878), 556268.OFAG_00420 (degree 866) and 556268.OFAG_00189 (degree 829).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OxalobacterFormigenesHoxbls(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OxalobacterFormigenesHoxbls(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OxalobacterFormigenesHoxbls",

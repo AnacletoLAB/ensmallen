@@ -117,7 +117,6 @@ def DesulfosporosinusOrientis(
 	2752), 768706.Desor_4513 (degree 2436) and 768706.Desor_3737 (degree 2346).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfosporosinusOrientis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfosporosinusOrientis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfosporosinusOrientis",

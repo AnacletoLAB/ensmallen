@@ -117,7 +117,6 @@ def HalobacteroidesHalobius(
 	880), 748449.Halha_0978 (degree 860) and 748449.Halha_0072 (degree 821).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalobacteroidesHalobius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalobacteroidesHalobius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalobacteroidesHalobius",

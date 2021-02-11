@@ -117,7 +117,6 @@ def ErysipelothrixRhusiopathiae(
 	650150.ERH_1296 (degree 632) and 650150.ERH_0093 (degree 629).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErysipelothrixRhusiopathiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErysipelothrixRhusiopathiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErysipelothrixRhusiopathiae",

@@ -119,7 +119,6 @@ def StreptococcusSanguinisSk1057(
 	693) and 888821.HMPREF9394_0753 (degree 657).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusSanguinisSk1057(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusSanguinisSk1057(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSanguinisSk1057",

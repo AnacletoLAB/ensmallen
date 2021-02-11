@@ -119,7 +119,6 @@ def SynechococcusSp.Pcc7002(
 	(degree 909).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SynechococcusSp.Pcc7002(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SynechococcusSp.Pcc7002(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechococcusSp.Pcc7002",

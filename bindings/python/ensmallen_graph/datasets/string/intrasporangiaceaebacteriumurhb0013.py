@@ -119,7 +119,6 @@ def IntrasporangiaceaeBacteriumUrhb0013(
 	(degree 1132) and 1380370.JIBA01000012_gene3690 (degree 1097).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def IntrasporangiaceaeBacteriumUrhb0013(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def IntrasporangiaceaeBacteriumUrhb0013(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IntrasporangiaceaeBacteriumUrhb0013",

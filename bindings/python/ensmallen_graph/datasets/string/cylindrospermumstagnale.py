@@ -117,7 +117,6 @@ def CylindrospermumStagnale(
 	2140), 56107.Cylst_1828 (degree 1848) and 56107.Cylst_3751 (degree 1804).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CylindrospermumStagnale(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CylindrospermumStagnale(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CylindrospermumStagnale",

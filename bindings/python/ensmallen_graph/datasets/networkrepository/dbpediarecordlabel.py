@@ -114,7 +114,6 @@ def DbpediaRecordlabel(
 	181 (degree 4463), 29 (degree 4426), 4 (degree 4376) and 8 (degree 4335).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def DbpediaRecordlabel(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def DbpediaRecordlabel(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaRecordlabel",

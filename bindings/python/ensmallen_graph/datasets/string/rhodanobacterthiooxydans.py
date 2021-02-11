@@ -117,7 +117,6 @@ def RhodanobacterThiooxydans(
 	1196), 1163409.UUA_16438 (degree 1168) and 1163409.UUA_10386 (degree 1159).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodanobacterThiooxydans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodanobacterThiooxydans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodanobacterThiooxydans",

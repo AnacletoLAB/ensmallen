@@ -117,7 +117,6 @@ def ThiomicrospiraCrunogena(
 	317025.Tcr_1372 (degree 825) and 317025.Tcr_0106 (degree 785).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThiomicrospiraCrunogena(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThiomicrospiraCrunogena(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThiomicrospiraCrunogena",

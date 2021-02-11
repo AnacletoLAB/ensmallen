@@ -117,7 +117,6 @@ def RoseburiaHominis(
 	895), 585394.RHOM_04835 (degree 856) and 585394.RHOM_00480 (degree 795).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RoseburiaHominis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RoseburiaHominis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RoseburiaHominis",

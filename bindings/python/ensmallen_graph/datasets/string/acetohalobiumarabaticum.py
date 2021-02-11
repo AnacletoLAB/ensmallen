@@ -117,7 +117,6 @@ def AcetohalobiumArabaticum(
 	882), 574087.Acear_0255 (degree 835) and 574087.Acear_1037 (degree 809).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcetohalobiumArabaticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcetohalobiumArabaticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcetohalobiumArabaticum",

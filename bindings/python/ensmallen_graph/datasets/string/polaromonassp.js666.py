@@ -117,7 +117,6 @@ def PolaromonasSp.Js666(
 	1635), 296591.Bpro_3393 (degree 1607) and 296591.Bpro_4825 (degree 1567).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PolaromonasSp.Js666(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PolaromonasSp.Js666(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PolaromonasSp.Js666",

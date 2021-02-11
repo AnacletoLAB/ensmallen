@@ -117,7 +117,6 @@ def PseudomonasEntomophila(
 	1314), 384676.PSEEN1359 (degree 1289) and 384676.PSEEN4392 (degree 1256).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasEntomophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasEntomophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasEntomophila",

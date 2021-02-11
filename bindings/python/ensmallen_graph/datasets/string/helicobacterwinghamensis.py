@@ -117,7 +117,6 @@ def HelicobacterWinghamensis(
 	667), 556267.HWAG_00943 (degree 605) and 556267.HWAG_00362 (degree 579).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterWinghamensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterWinghamensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterWinghamensis",

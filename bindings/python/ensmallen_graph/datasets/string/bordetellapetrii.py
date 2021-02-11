@@ -117,7 +117,6 @@ def BordetellaPetrii(
 	94624.Bpet0153 (degree 1374) and 94624.Bpet2085 (degree 1324).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BordetellaPetrii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BordetellaPetrii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BordetellaPetrii",

@@ -117,7 +117,6 @@ def KnoelliaFlava(
 	1004), 1385518.N798_15355 (degree 995) and 1385518.N798_09470 (degree 980).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KnoelliaFlava(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KnoelliaFlava(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KnoelliaFlava",

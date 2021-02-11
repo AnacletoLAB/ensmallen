@@ -121,7 +121,6 @@ def SocTwitterMpiSws(
 	2450753) and 1829999 (degree 1994926).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def SocTwitterMpiSws(
 	        address = {Washington DC, USA}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def SocTwitterMpiSws(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocTwitterMpiSws",

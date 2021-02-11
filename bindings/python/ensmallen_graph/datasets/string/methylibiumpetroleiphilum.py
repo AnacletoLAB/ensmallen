@@ -117,7 +117,6 @@ def MethylibiumPetroleiphilum(
 	1353), 420662.Mpe_A0099 (degree 1310) and 420662.Mpe_A0812 (degree 1257).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylibiumPetroleiphilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylibiumPetroleiphilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylibiumPetroleiphilum",

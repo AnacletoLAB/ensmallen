@@ -117,7 +117,6 @@ def BurkholderiaPhytofirmans(
 	2398), 398527.Bphyt_3591 (degree 2150) and 398527.Bphyt_0633 (degree 2009).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaPhytofirmans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaPhytofirmans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaPhytofirmans",

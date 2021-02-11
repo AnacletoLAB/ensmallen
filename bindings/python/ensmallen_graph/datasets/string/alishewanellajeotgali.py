@@ -117,7 +117,6 @@ def AlishewanellaJeotgali(
 	1099), 1129374.AJE_05446 (degree 1077) and 1129374.AJE_04836 (degree 1006).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlishewanellaJeotgali(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlishewanellaJeotgali(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlishewanellaJeotgali",

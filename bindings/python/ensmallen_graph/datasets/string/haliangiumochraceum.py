@@ -117,7 +117,6 @@ def HaliangiumOchraceum(
 	2313), 502025.Hoch_3278 (degree 2242) and 502025.Hoch_4612 (degree 2107).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaliangiumOchraceum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaliangiumOchraceum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaliangiumOchraceum",

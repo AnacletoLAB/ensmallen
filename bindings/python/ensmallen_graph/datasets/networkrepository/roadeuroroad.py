@@ -112,7 +112,6 @@ def RoadEuroroad(
 	236 (degree 8), 107 (degree 8), 137 (degree 8) and 39 (degree 8).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def RoadEuroroad(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def RoadEuroroad(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RoadEuroroad",

@@ -119,7 +119,6 @@ def PeptoniphilusSp.F0436(
 	(degree 781).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PeptoniphilusSp.F0436(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PeptoniphilusSp.F0436(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PeptoniphilusSp.F0436",

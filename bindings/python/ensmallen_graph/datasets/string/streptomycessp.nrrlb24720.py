@@ -119,7 +119,6 @@ def StreptomycesSp.Nrrlb24720(
 	(degree 2423).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptomycesSp.Nrrlb24720(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptomycesSp.Nrrlb24720(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesSp.Nrrlb24720",

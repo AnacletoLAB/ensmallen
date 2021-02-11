@@ -117,7 +117,6 @@ def YersiniaKristensenii(
 	28152.DJ57_1210 (degree 1142) and 28152.DJ57_3854 (degree 1078).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def YersiniaKristensenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def YersiniaKristensenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "YersiniaKristensenii",

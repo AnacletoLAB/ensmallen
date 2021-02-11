@@ -115,7 +115,6 @@ def KinetoplastibacteriumGalatii(
 	363), 1208921.ST1E_0611 (degree 341) and 1208921.ST1E_0028 (degree 326).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def KinetoplastibacteriumGalatii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def KinetoplastibacteriumGalatii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KinetoplastibacteriumGalatii",

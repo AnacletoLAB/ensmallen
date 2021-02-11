@@ -117,7 +117,6 @@ def TetrahymenaThermophila(
 	5911.EAR86074 (degree 2946) and 5911.EAR86395 (degree 2851).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TetrahymenaThermophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TetrahymenaThermophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TetrahymenaThermophila",

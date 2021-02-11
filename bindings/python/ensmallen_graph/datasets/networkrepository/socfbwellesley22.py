@@ -131,7 +131,6 @@ def SocfbWellesley22(
 	1136 (degree 394), 1731 (degree 385) and 2659 (degree 383).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbWellesley22(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbWellesley22(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbWellesley22",

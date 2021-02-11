@@ -117,7 +117,6 @@ def PlanctomyceteKsu1(
 	984), 247490.KSU1_C0753 (degree 883) and 247490.KSU1_C1631 (degree 824).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlanctomyceteKsu1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlanctomyceteKsu1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlanctomyceteKsu1",

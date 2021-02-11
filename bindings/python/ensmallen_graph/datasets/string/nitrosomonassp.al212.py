@@ -117,7 +117,6 @@ def NitrosomonasSp.Al212(
 	764), 153948.NAL212_1084 (degree 745) and 153948.NAL212_2057 (degree 741).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosomonasSp.Al212(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosomonasSp.Al212(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosomonasSp.Al212",

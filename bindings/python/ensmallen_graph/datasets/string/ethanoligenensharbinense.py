@@ -117,7 +117,6 @@ def EthanoligenensHarbinense(
 	811), 663278.Ethha_1704 (degree 776) and 663278.Ethha_2598 (degree 751).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EthanoligenensHarbinense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EthanoligenensHarbinense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EthanoligenensHarbinense",

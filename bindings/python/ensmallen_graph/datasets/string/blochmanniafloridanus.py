@@ -115,7 +115,6 @@ def BlochmanniaFloridanus(
 	(degree 298) and 203907.Bfl071 (degree 294).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlochmanniaFloridanus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlochmanniaFloridanus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlochmanniaFloridanus",

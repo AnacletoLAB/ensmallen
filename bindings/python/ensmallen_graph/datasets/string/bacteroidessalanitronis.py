@@ -117,7 +117,6 @@ def BacteroidesSalanitronis(
 	868), 667015.Bacsa_0172 (degree 834) and 667015.Bacsa_2358 (degree 794).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteroidesSalanitronis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteroidesSalanitronis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesSalanitronis",

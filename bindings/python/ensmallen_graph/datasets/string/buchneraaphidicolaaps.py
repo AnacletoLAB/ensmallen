@@ -115,7 +115,6 @@ def BuchneraAphidicolaAps(
 	107806.10039019 (degree 267) and 107806.10039137 (degree 259).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BuchneraAphidicolaAps(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BuchneraAphidicolaAps(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BuchneraAphidicolaAps",

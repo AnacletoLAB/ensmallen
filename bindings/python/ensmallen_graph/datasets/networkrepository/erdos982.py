@@ -112,7 +112,6 @@ def Erdos982(
 	438 (degree 60), 339 (degree 58), 244 (degree 58) and 383 (degree 55).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Erdos982(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Erdos982(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Erdos982",

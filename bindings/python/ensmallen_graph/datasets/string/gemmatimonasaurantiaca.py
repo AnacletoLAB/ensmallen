@@ -117,7 +117,6 @@ def GemmatimonasAurantiaca(
 	379066.GAU_2785 (degree 1167) and 379066.GAU_2451 (degree 1115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GemmatimonasAurantiaca(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GemmatimonasAurantiaca(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GemmatimonasAurantiaca",

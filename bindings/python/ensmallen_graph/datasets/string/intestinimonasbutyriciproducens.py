@@ -119,7 +119,6 @@ def IntestinimonasButyriciproducens(
 	(degree 866) and 1297617.JPJD01000072_gene1804 (degree 837).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def IntestinimonasButyriciproducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def IntestinimonasButyriciproducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IntestinimonasButyriciproducens",

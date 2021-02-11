@@ -117,7 +117,6 @@ def PlanktothrixAgardhii(
 	1500), 388467.A19Y_0397 (degree 1432) and 388467.A19Y_3935 (degree 1382).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlanktothrixAgardhii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlanktothrixAgardhii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlanktothrixAgardhii",

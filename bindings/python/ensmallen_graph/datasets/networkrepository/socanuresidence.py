@@ -112,7 +112,6 @@ def SocAnuResidence(
 	169 (degree 51), 144 (degree 42) and 113 (degree 42).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def SocAnuResidence(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def SocAnuResidence(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocAnuResidence",

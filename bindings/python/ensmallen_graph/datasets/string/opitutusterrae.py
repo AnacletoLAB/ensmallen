@@ -117,7 +117,6 @@ def OpitutusTerrae(
 	1618), 452637.Oter_0776 (degree 1578) and 452637.Oter_1811 (degree 1221).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OpitutusTerrae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OpitutusTerrae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OpitutusTerrae",

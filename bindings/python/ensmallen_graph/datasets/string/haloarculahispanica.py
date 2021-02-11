@@ -117,7 +117,6 @@ def HaloarculaHispanica(
 	634497.HAH_0375 (degree 1066) and 634497.HAH_4198 (degree 1054).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloarculaHispanica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloarculaHispanica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloarculaHispanica",

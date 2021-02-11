@@ -117,7 +117,6 @@ def VerminephrobacterEiseniae(
 	1469), 391735.Veis_3017 (degree 1459) and 391735.Veis_1730 (degree 1316).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VerminephrobacterEiseniae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VerminephrobacterEiseniae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VerminephrobacterEiseniae",

@@ -117,7 +117,6 @@ def BordetellaHolmesii(
 	1123), 1247649.D560_1591 (degree 1109) and 1247649.D560_3214 (degree 1065).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BordetellaHolmesii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BordetellaHolmesii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BordetellaHolmesii",

@@ -117,7 +117,6 @@ def HalomonasSp.Gfaj1(
 	1185), 1118153.MOY_02219 (degree 1101) and 1118153.MOY_00740 (degree 1090).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalomonasSp.Gfaj1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalomonasSp.Gfaj1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalomonasSp.Gfaj1",

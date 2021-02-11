@@ -119,7 +119,6 @@ def CellulosimicrobiumCellulans(
 	(degree 1131).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CellulosimicrobiumCellulans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CellulosimicrobiumCellulans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellulosimicrobiumCellulans",

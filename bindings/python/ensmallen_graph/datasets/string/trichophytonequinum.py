@@ -117,7 +117,6 @@ def TrichophytonEquinum(
 	63418.F2PXC5 (degree 1258) and 63418.F2PRD9 (degree 1161).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichophytonEquinum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichophytonEquinum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichophytonEquinum",

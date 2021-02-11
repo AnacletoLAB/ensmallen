@@ -117,7 +117,6 @@ def AcinetobacterBaumannii(
 	470.IX87_15245 (degree 948) and 470.IX87_18510 (degree 905).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterBaumannii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterBaumannii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterBaumannii",

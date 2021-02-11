@@ -131,7 +131,6 @@ def SocfbWilliam77(
 	1033), 4486 (degree 973), 675 (degree 866) and 5348 (degree 785).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbWilliam77(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbWilliam77(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbWilliam77",

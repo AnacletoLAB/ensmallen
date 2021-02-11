@@ -117,7 +117,6 @@ def NatronococcusOccultus(
 	1115), 694430.Natoc_3971 (degree 1103) and 694430.Natoc_1842 (degree 1084).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatronococcusOccultus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatronococcusOccultus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatronococcusOccultus",

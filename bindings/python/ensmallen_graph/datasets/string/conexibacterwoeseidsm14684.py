@@ -117,7 +117,6 @@ def ConexibacterWoeseiDsm14684(
 	2173), 469383.Cwoe_1875 (degree 1908) and 469383.Cwoe_1761 (degree 1827).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ConexibacterWoeseiDsm14684(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ConexibacterWoeseiDsm14684(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ConexibacterWoeseiDsm14684",

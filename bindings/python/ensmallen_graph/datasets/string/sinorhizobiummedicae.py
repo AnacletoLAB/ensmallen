@@ -117,7 +117,6 @@ def SinorhizobiumMedicae(
 	1313), 366394.Smed_5686 (degree 1257) and 366394.Smed_0567 (degree 1241).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SinorhizobiumMedicae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SinorhizobiumMedicae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SinorhizobiumMedicae",

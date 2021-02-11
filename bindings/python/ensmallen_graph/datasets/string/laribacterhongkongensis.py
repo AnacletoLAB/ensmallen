@@ -117,7 +117,6 @@ def LaribacterHongkongensis(
 	1158), 557598.LHK_00639 (degree 1107) and 557598.LHK_01015 (degree 963).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LaribacterHongkongensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LaribacterHongkongensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LaribacterHongkongensis",

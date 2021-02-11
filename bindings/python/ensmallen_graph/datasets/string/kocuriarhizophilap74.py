@@ -119,7 +119,6 @@ def KocuriaRhizophilaP74(
 	(degree 781).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def KocuriaRhizophilaP74(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def KocuriaRhizophilaP74(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KocuriaRhizophilaP74",

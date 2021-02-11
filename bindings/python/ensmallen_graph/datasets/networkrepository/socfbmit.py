@@ -131,7 +131,6 @@ def SocfbMit(
 	694), 5214 (degree 665), 1770 (degree 623) and 2720 (degree 617).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbMit(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbMit(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbMit",

@@ -117,7 +117,6 @@ def XylellaFastidiosaPls229(
 	674), 1444770.AF72_08380 (degree 674) and 1444770.AF72_08375 (degree 650).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XylellaFastidiosaPls229(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XylellaFastidiosaPls229(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XylellaFastidiosaPls229",

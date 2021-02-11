@@ -119,7 +119,6 @@ def BacteroidesMassiliensisDnlkv3(
 	1235788.C802_00652 (degree 1078).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BacteroidesMassiliensisDnlkv3(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BacteroidesMassiliensisDnlkv3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesMassiliensisDnlkv3",

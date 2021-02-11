@@ -117,7 +117,6 @@ def BacillusCellulosilyticus(
 	1073), 649639.Bcell_3820 (degree 1022) and 649639.Bcell_0038 (degree 990).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusCellulosilyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusCellulosilyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusCellulosilyticus",

@@ -119,7 +119,6 @@ def PseudoalteromonasHaloplanktisAnt505(
 	and 722419.PH505_ar00020 (degree 1129).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudoalteromonasHaloplanktisAnt505(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudoalteromonasHaloplanktisAnt505(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasHaloplanktisAnt505",

@@ -117,7 +117,6 @@ def ThermovirgaLienii(
 	580340.Tlie_0920 (degree 700) and 580340.Tlie_1554 (degree 694).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermovirgaLienii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermovirgaLienii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermovirgaLienii",

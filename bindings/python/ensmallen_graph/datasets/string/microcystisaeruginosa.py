@@ -117,7 +117,6 @@ def MicrocystisAeruginosa(
 	1245), 449447.MAE_32190 (degree 1176) and 449447.MAE_38140 (degree 1128).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrocystisAeruginosa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrocystisAeruginosa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrocystisAeruginosa",

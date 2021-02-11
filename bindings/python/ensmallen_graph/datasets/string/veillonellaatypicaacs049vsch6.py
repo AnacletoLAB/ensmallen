@@ -119,7 +119,6 @@ def VeillonellaAtypicaAcs049vsch6(
 	624) and 866776.HMPREF9321_0409 (degree 607).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def VeillonellaAtypicaAcs049vsch6(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def VeillonellaAtypicaAcs049vsch6(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VeillonellaAtypicaAcs049vsch6",

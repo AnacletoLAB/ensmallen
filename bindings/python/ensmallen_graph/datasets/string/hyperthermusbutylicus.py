@@ -117,7 +117,6 @@ def HyperthermusButylicus(
 	415426.Hbut_1573 (degree 480) and 415426.Hbut_0967 (degree 478).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyperthermusButylicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyperthermusButylicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyperthermusButylicus",

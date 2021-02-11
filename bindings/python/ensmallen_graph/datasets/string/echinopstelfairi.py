@@ -115,7 +115,6 @@ def EchinopsTelfairi(
 	9371.XP_004713581.1 (degree 3852) and 9371.XP_004698552.1 (degree 3804).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def EchinopsTelfairi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def EchinopsTelfairi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EchinopsTelfairi",

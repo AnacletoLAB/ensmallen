@@ -110,7 +110,6 @@ def CaCondmat(
 	252), 15598 (degree 201), 19433 (degree 190) and 4648 (degree 182).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def CaCondmat(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def CaCondmat(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaCondmat",

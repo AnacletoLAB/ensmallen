@@ -117,7 +117,6 @@ def IdiomarinaSalinarum(
 	750), 435908.IDSA_10450 (degree 744) and 435908.IDSA_10280 (degree 733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IdiomarinaSalinarum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IdiomarinaSalinarum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IdiomarinaSalinarum",

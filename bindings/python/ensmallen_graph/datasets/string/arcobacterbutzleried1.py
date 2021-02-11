@@ -117,7 +117,6 @@ def ArcobacterButzleriEd1(
 	944546.ABED_0869 (degree 679) and 944546.ABED_1143 (degree 673).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArcobacterButzleriEd1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArcobacterButzleriEd1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArcobacterButzleriEd1",

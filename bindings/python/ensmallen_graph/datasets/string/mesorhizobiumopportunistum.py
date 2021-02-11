@@ -117,7 +117,6 @@ def MesorhizobiumOpportunistum(
 	1892), 536019.Mesop_1924 (degree 1690) and 536019.Mesop_1786 (degree 1669).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MesorhizobiumOpportunistum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MesorhizobiumOpportunistum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesorhizobiumOpportunistum",

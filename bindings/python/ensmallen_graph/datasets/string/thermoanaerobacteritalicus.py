@@ -117,7 +117,6 @@ def ThermoanaerobacterItalicus(
 	580331.Thit_1568 (degree 737) and 580331.Thit_0565 (degree 728).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoanaerobacterItalicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoanaerobacterItalicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoanaerobacterItalicus",

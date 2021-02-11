@@ -110,7 +110,6 @@ def DbpediaProducer(
 	(degree 450), 492 (degree 423), 421 (degree 420) and 3218 (degree 386).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def DbpediaProducer(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def DbpediaProducer(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaProducer",

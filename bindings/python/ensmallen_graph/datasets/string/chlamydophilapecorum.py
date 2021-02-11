@@ -117,7 +117,6 @@ def ChlamydophilaPecorum(
 	331635.G5S_0496 (degree 347) and 331635.G5S_0127 (degree 346).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydophilaPecorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydophilaPecorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydophilaPecorum",

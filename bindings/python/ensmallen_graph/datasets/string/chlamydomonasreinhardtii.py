@@ -117,7 +117,6 @@ def ChlamydomonasReinhardtii(
 	(degree 2078), 3055.EDP01338 (degree 1990) and 3055.EDP01779 (degree 1959).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydomonasReinhardtii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydomonasReinhardtii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydomonasReinhardtii",

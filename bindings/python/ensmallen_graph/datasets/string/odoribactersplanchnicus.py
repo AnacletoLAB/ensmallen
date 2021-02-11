@@ -117,7 +117,6 @@ def OdoribacterSplanchnicus(
 	991), 709991.Odosp_0874 (degree 928) and 709991.Odosp_0653 (degree 920).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OdoribacterSplanchnicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OdoribacterSplanchnicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OdoribacterSplanchnicus",

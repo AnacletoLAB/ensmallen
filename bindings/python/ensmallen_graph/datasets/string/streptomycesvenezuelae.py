@@ -117,7 +117,6 @@ def StreptomycesVenezuelae(
 	2087), 953739.SVEN_4465 (degree 2000) and 953739.SVEN_0372 (degree 1980).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesVenezuelae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesVenezuelae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesVenezuelae",

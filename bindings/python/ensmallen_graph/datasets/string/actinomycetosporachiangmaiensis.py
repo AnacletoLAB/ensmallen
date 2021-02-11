@@ -119,7 +119,6 @@ def ActinomycetosporaChiangmaiensis(
 	(degree 1581) and 1120948.KB903221_gene412 (degree 1558).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinomycetosporaChiangmaiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinomycetosporaChiangmaiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinomycetosporaChiangmaiensis",

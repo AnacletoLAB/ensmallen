@@ -117,7 +117,6 @@ def ChlorobiumLimicola(
 	789), 290315.Clim_0430 (degree 756) and 290315.Clim_1190 (degree 754).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlorobiumLimicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlorobiumLimicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlorobiumLimicola",

@@ -117,7 +117,6 @@ def FusariumGraminearum(
 	1455), 5518.FGSG_03992P0 (degree 1380) and 5518.FGSG_00865P0 (degree 1378).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusariumGraminearum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusariumGraminearum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusariumGraminearum",

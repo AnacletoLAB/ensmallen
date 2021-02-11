@@ -112,7 +112,6 @@ def Rajat02(
 	357 (degree 415), 380 (degree 274), 11 (degree 130) and 1 (degree 100).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Rajat02(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Rajat02(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Rajat02",

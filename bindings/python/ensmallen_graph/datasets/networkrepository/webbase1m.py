@@ -116,7 +116,6 @@ def Webbase1m(
 	and 122 (degree 4700).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def Webbase1m(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def Webbase1m(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Webbase1m",

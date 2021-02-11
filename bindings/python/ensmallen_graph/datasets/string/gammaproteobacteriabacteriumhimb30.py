@@ -119,7 +119,6 @@ def GammaproteobacteriaBacteriumHimb30(
 	(degree 684) and 751994.AGIG01000028_gene1631 (degree 675).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GammaproteobacteriaBacteriumHimb30(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GammaproteobacteriaBacteriumHimb30(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GammaproteobacteriaBacteriumHimb30",

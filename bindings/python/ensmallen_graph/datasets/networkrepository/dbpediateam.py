@@ -110,7 +110,6 @@ def DbpediaTeam(
 	(degree 2580), 416 (degree 2508), 369 (degree 2458) and 237 (degree 2238).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def DbpediaTeam(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def DbpediaTeam(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaTeam",

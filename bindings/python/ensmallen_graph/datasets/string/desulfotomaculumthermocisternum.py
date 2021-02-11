@@ -119,7 +119,6 @@ def DesulfotomaculumThermocisternum(
 	(degree 863) and 1121430.JMLG01000001_gene2280 (degree 843).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DesulfotomaculumThermocisternum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DesulfotomaculumThermocisternum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumThermocisternum",

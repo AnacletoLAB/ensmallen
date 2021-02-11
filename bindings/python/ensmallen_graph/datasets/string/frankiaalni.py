@@ -117,7 +117,6 @@ def FrankiaAlni(
 	1970), 326424.FRAAL6414 (degree 1891) and 326424.FRAAL5907 (degree 1887).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrankiaAlni(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrankiaAlni(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrankiaAlni",

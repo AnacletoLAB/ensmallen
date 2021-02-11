@@ -117,7 +117,6 @@ def ClostridiumStercorarium(
 	831), 1121335.Clst_1795 (degree 810) and 1121335.Clst_1477 (degree 806).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumStercorarium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumStercorarium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumStercorarium",

@@ -117,7 +117,6 @@ def AeromonasVeronii(
 	1206), 998088.B565_1656 (degree 1130) and 998088.B565_2238 (degree 1125).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AeromonasVeronii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AeromonasVeronii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AeromonasVeronii",

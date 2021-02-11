@@ -117,7 +117,6 @@ def ThermotogaNeapolitana(
 	309803.CTN_1484 (degree 728) and 309803.CTN_0752 (degree 637).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermotogaNeapolitana(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermotogaNeapolitana(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermotogaNeapolitana",

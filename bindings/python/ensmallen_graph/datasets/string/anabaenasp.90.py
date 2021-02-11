@@ -117,7 +117,6 @@ def AnabaenaSp.90(
 	1053), 46234.ANA_C13684 (degree 1036) and 46234.ANA_C13770 (degree 1033).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnabaenaSp.90(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnabaenaSp.90(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnabaenaSp.90",

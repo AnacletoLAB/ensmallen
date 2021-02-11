@@ -117,7 +117,6 @@ def RickettsiaSibirica(
 	435), 272951.rsib_orf396 (degree 430) and 272951.rsib_orf782 (degree 423).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsiaSibirica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsiaSibirica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsiaSibirica",

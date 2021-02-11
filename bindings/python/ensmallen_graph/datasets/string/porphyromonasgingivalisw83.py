@@ -117,7 +117,6 @@ def PorphyromonasGingivalisW83(
 	242619.PG_0589 (degree 588) and 242619.PG_1651 (degree 578).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PorphyromonasGingivalisW83(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PorphyromonasGingivalisW83(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorphyromonasGingivalisW83",

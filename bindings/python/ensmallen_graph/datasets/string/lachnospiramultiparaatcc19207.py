@@ -119,7 +119,6 @@ def LachnospiraMultiparaAtcc19207(
 	(degree 827) and 1282887.AUJG01000008_gene1401 (degree 809).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraMultiparaAtcc19207(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraMultiparaAtcc19207(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraMultiparaAtcc19207",

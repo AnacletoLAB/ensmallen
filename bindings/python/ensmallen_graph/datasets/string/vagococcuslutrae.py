@@ -117,7 +117,6 @@ def VagococcusLutrae(
 	656), 1408226.T233_01299 (degree 654) and 1408226.T233_00984 (degree 617).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VagococcusLutrae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VagococcusLutrae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VagococcusLutrae",

@@ -117,7 +117,6 @@ def DevosiaSp.Lc5(
 	1072), 1502724.FF80_00794 (degree 979) and 1502724.FF80_02665 (degree 974).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DevosiaSp.Lc5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DevosiaSp.Lc5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DevosiaSp.Lc5",

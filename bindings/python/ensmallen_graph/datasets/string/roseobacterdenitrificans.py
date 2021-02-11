@@ -117,7 +117,6 @@ def RoseobacterDenitrificans(
 	375451.RD1_0060 (degree 1047) and 375451.RD1_2713 (degree 1044).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RoseobacterDenitrificans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RoseobacterDenitrificans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RoseobacterDenitrificans",

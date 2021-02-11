@@ -119,7 +119,6 @@ def LachnospiraceaeBacteriumNd2006(
 	(degree 1005) and 1410628.JNKS01000034_gene1069 (degree 982).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraceaeBacteriumNd2006(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraceaeBacteriumNd2006(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumNd2006",

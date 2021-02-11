@@ -119,7 +119,6 @@ def AnaerococcusSp.9402080(
 	(degree 1037) and 938293.CAJU020000020_gene296 (degree 950).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AnaerococcusSp.9402080(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AnaerococcusSp.9402080(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerococcusSp.9402080",

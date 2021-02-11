@@ -117,7 +117,6 @@ def BacillusOkhensis(
 	1305), 333138.LQ50_09725 (degree 1282) and 333138.LQ50_23635 (degree 1224).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusOkhensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusOkhensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusOkhensis",

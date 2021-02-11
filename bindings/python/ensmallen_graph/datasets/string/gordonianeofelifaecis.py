@@ -117,7 +117,6 @@ def GordoniaNeofelifaecis(
 	1145), 644548.SCNU_14731 (degree 1093) and 644548.SCNU_03142 (degree 1091).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GordoniaNeofelifaecis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GordoniaNeofelifaecis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GordoniaNeofelifaecis",

@@ -117,7 +117,6 @@ def MethanocaldococcusJannaschii(
 	(degree 647), 243232.MJ_0869 (degree 647) and 243232.MJ_1528 (degree 641).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanocaldococcusJannaschii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanocaldococcusJannaschii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanocaldococcusJannaschii",

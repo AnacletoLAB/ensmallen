@@ -117,7 +117,6 @@ def IntrasporangiumCalvum(
 	1126), 710696.Intca_0438 (degree 1070) and 710696.Intca_0545 (degree 1046).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IntrasporangiumCalvum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IntrasporangiumCalvum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IntrasporangiumCalvum",

@@ -117,7 +117,6 @@ def MycoplasmaBovoculi(
 	743966.MYB_00345 (degree 258) and 743966.MYB_02520 (degree 252).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaBovoculi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaBovoculi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaBovoculi",

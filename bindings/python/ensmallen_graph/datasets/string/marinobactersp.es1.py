@@ -117,7 +117,6 @@ def MarinobacterSp.Es1(
 	966), 1396858.Q666_01610 (degree 929) and 1396858.Q666_14320 (degree 920).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinobacterSp.Es1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinobacterSp.Es1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinobacterSp.Es1",

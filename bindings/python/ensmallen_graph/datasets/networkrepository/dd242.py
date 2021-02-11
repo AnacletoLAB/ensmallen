@@ -116,7 +116,6 @@ def Dd242(
 	868 (degree 12), 947 (degree 11), 850 (degree 11) and 759 (degree 11).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def Dd242(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def Dd242(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Dd242",

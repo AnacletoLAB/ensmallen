@@ -117,7 +117,6 @@ def FervidobacteriumIslandicum(
 	837), 2423.NA23_0205990 (degree 829) and 2423.NA23_0203435 (degree 826).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FervidobacteriumIslandicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FervidobacteriumIslandicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FervidobacteriumIslandicum",

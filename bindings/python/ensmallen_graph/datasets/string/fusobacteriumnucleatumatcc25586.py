@@ -117,7 +117,6 @@ def FusobacteriumNucleatumAtcc25586(
 	(degree 702), 190304.FN1421 (degree 657) and 190304.FN1268 (degree 618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumNucleatumAtcc25586(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumNucleatumAtcc25586(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumNucleatumAtcc25586",

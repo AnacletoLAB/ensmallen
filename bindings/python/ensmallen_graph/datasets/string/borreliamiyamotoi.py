@@ -117,7 +117,6 @@ def BorreliaMiyamotoi(
 	428), 1302858.I871_00675 (degree 405) and 1302858.I871_01245 (degree 401).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BorreliaMiyamotoi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BorreliaMiyamotoi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BorreliaMiyamotoi",

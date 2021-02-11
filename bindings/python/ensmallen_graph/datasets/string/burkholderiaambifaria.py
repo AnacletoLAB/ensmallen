@@ -117,7 +117,6 @@ def BurkholderiaAmbifaria(
 	1737), 339670.Bamb_2022 (degree 1657) and 339670.Bamb_0821 (degree 1494).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaAmbifaria(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaAmbifaria(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaAmbifaria",

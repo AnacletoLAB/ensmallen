@@ -117,7 +117,6 @@ def CorynebacteriumSp.Atcc6931(
 	1487956.DR71_2180 (degree 664) and 1487956.DR71_1510 (degree 659).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumSp.Atcc6931(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumSp.Atcc6931(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumSp.Atcc6931",

@@ -117,7 +117,6 @@ def MethanococcusVoltae(
 	456320.Mvol_0628 (degree 687) and 456320.Mvol_0366 (degree 686).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanococcusVoltae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanococcusVoltae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanococcusVoltae",

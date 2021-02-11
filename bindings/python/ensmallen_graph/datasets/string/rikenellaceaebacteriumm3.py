@@ -117,7 +117,6 @@ def RikenellaceaeBacteriumM3(
 	714), 1433126.BN938_1421 (degree 634) and 1433126.BN938_1637 (degree 598).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RikenellaceaeBacteriumM3(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RikenellaceaeBacteriumM3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RikenellaceaeBacteriumM3",

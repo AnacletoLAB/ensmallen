@@ -117,7 +117,6 @@ def BifidobacteriumGallinarum(
 	78344.BIGA_0268 (degree 655) and 78344.BIGA_0467 (degree 640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumGallinarum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumGallinarum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumGallinarum",

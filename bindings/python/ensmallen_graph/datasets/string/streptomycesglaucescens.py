@@ -117,7 +117,6 @@ def StreptomycesGlaucescens(
 	1707), 1907.SGLAU_25860 (degree 1704) and 1907.SGLAU_16700 (degree 1696).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesGlaucescens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesGlaucescens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesGlaucescens",

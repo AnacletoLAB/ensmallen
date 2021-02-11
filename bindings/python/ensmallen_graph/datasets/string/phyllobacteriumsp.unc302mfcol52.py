@@ -119,7 +119,6 @@ def PhyllobacteriumSp.Unc302mfcol52(
 	(degree 1192) and 1449065.JMLL01000010_gene463 (degree 1172).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PhyllobacteriumSp.Unc302mfcol52(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PhyllobacteriumSp.Unc302mfcol52(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhyllobacteriumSp.Unc302mfcol52",

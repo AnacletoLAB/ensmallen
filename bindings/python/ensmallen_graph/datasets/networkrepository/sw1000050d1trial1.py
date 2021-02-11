@@ -110,7 +110,6 @@ def Sw1000050d1Trial1(
 	(degree 7), 5397 (degree 7), 1895 (degree 7) and 1654 (degree 7).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Sw1000050d1Trial1(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Sw1000050d1Trial1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Sw1000050d1Trial1",

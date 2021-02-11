@@ -117,7 +117,6 @@ def PhaeodactylumTricornutum(
 	2850.Phatr47067 (degree 1638) and 2850.Phatr31781 (degree 1531).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhaeodactylumTricornutum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhaeodactylumTricornutum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhaeodactylumTricornutum",

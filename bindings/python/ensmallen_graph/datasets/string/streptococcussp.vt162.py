@@ -117,7 +117,6 @@ def StreptococcusSp.Vt162(
 	579), 1419814.V470_03700 (degree 572) and 1419814.V470_09760 (degree 571).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSp.Vt162(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSp.Vt162(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSp.Vt162",

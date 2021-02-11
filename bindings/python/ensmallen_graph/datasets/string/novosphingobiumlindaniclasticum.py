@@ -119,7 +119,6 @@ def NovosphingobiumLindaniclasticum(
 	1096930.L284_10270 (degree 1336).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def NovosphingobiumLindaniclasticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def NovosphingobiumLindaniclasticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NovosphingobiumLindaniclasticum",

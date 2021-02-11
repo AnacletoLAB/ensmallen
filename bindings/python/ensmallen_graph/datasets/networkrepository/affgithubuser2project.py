@@ -123,7 +123,6 @@ def AffGithubUser2project(
 	1492).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def AffGithubUser2project(
 	        year = {2009}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def AffGithubUser2project(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AffGithubUser2project",

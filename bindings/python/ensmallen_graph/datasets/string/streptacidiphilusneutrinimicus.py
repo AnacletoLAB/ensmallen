@@ -119,7 +119,6 @@ def StreptacidiphilusNeutrinimicus(
 	(degree 2272) and 105420.BBPO01000019_gene5478 (degree 2232).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptacidiphilusNeutrinimicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptacidiphilusNeutrinimicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptacidiphilusNeutrinimicus",

@@ -117,7 +117,6 @@ def DrosophilaYakuba(
 	2076), 7245.FBpp0263392 (degree 1953) and 7245.FBpp0266039 (degree 1885).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DrosophilaYakuba(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DrosophilaYakuba(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DrosophilaYakuba",

@@ -123,7 +123,6 @@ def SocThemarker(
 	7089) and 51000 (degree 6625).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocThemarker(
 	        organization={IEEE}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocThemarker(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocThemarker",

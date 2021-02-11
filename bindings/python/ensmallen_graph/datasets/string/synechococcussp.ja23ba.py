@@ -117,7 +117,6 @@ def SynechococcusSp.Ja23ba(
 	321332.CYB_1115 (degree 688) and 321332.CYB_1253 (degree 687).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SynechococcusSp.Ja23ba(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SynechococcusSp.Ja23ba(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechococcusSp.Ja23ba",

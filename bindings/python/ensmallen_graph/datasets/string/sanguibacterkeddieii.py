@@ -117,7 +117,6 @@ def SanguibacterKeddieii(
 	1046), 446469.Sked_20710 (degree 1033) and 446469.Sked_04420 (degree 996).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SanguibacterKeddieii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SanguibacterKeddieii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SanguibacterKeddieii",

@@ -119,7 +119,6 @@ def LachnospiraceaeBacteriumC6a11(
 	(degree 657) and 1410622.JNKY01000017_gene467 (degree 647).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnospiraceaeBacteriumC6a11(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnospiraceaeBacteriumC6a11(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumC6a11",

@@ -117,7 +117,6 @@ def SalinarchaeumSp.Harchtbsk1(
 	819), 1333523.L593_01930 (degree 790) and 1333523.L593_02155 (degree 731).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SalinarchaeumSp.Harchtbsk1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SalinarchaeumSp.Harchtbsk1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SalinarchaeumSp.Harchtbsk1",

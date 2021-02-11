@@ -117,7 +117,6 @@ def NitrosococcusWatsonii(
 	1029), 105559.Nwat_0908 (degree 1005) and 105559.Nwat_1765 (degree 937).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosococcusWatsonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosococcusWatsonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosococcusWatsonii",

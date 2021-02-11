@@ -119,7 +119,6 @@ def MycobacteriumSp.Unc280mftsu51(
 	(degree 1509) and 1449048.JQKU01000025_gene3983 (degree 1485).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MycobacteriumSp.Unc280mftsu51(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MycobacteriumSp.Unc280mftsu51(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumSp.Unc280mftsu51",

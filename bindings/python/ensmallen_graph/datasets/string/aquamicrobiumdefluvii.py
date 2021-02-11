@@ -117,7 +117,6 @@ def AquamicrobiumDefluvii(
 	1336), 69279.BG36_22605 (degree 1317) and 69279.BG36_10380 (degree 1309).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AquamicrobiumDefluvii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AquamicrobiumDefluvii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AquamicrobiumDefluvii",

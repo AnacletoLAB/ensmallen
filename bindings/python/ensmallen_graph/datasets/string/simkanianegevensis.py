@@ -117,7 +117,6 @@ def SimkaniaNegevensis(
 	605), 331113.SNE_A21850 (degree 601) and 331113.SNE_A07670 (degree 588).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SimkaniaNegevensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SimkaniaNegevensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SimkaniaNegevensis",

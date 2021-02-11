@@ -117,7 +117,6 @@ def MycoplasmaArginini(
 	198), 1188236.MARG_0380 (degree 194) and 1188236.MARG_3940 (degree 194).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaArginini(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaArginini(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaArginini",

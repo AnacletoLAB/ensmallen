@@ -117,7 +117,6 @@ def VibrioTasmaniensis(
 	575788.VS_2505 (degree 1008) and 575788.VS_1009 (degree 1002).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioTasmaniensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioTasmaniensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioTasmaniensis",

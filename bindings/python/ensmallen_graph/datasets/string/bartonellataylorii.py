@@ -117,7 +117,6 @@ def BartonellaTaylorii(
 	553), 1094560.ME9_00473 (degree 537) and 1094560.ME9_00367 (degree 520).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaTaylorii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaTaylorii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaTaylorii",

@@ -117,7 +117,6 @@ def CitreicellaSp.357(
 	1078), 766499.C357_09204 (degree 1076) and 766499.C357_02244 (degree 1018).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CitreicellaSp.357(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CitreicellaSp.357(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CitreicellaSp.357",

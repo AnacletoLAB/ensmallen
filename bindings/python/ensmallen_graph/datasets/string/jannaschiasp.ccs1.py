@@ -117,7 +117,6 @@ def JannaschiaSp.Ccs1(
 	1093), 290400.Jann_1982 (degree 1087) and 290400.Jann_2221 (degree 1058).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def JannaschiaSp.Ccs1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def JannaschiaSp.Ccs1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "JannaschiaSp.Ccs1",

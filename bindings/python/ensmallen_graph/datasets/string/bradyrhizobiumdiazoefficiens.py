@@ -117,7 +117,6 @@ def BradyrhizobiumDiazoefficiens(
 	224911.27356027 (degree 2496) and 224911.27351507 (degree 2458).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BradyrhizobiumDiazoefficiens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BradyrhizobiumDiazoefficiens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumDiazoefficiens",

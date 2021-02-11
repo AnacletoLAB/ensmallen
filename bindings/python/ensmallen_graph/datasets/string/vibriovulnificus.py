@@ -117,7 +117,6 @@ def VibrioVulnificus(
 	1333), 672.VV93_v1c43720 (degree 1198) and 672.VV93_v1c13610 (degree 1174).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioVulnificus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioVulnificus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioVulnificus",

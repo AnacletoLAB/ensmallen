@@ -117,7 +117,6 @@ def AcinetobacterCalcoaceticus(
 	947), 871585.BDGL_003482 (degree 939) and 871585.BDGL_002107 (degree 909).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterCalcoaceticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterCalcoaceticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterCalcoaceticus",

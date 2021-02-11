@@ -117,7 +117,6 @@ def NitratireductorBasaltis(
 	1003), 472175.EL18_01860 (degree 990) and 472175.EL18_01768 (degree 962).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitratireductorBasaltis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitratireductorBasaltis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitratireductorBasaltis",

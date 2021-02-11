@@ -117,7 +117,6 @@ def HaloarculaJaponica(
 	956), 1227453.C444_01187 (degree 949) and 1227453.C444_16343 (degree 948).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloarculaJaponica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloarculaJaponica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloarculaJaponica",

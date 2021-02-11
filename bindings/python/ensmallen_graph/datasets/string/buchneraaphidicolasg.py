@@ -115,7 +115,6 @@ def BuchneraAphidicolaSg(
 	198804.BUsg_188 (degree 255) and 198804.BUsg_035 (degree 250).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BuchneraAphidicolaSg(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BuchneraAphidicolaSg(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BuchneraAphidicolaSg",

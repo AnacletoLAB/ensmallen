@@ -117,7 +117,6 @@ def GloeobacterViolaceus(
 	251221.35211197 (degree 1478) and 251221.35211579 (degree 1383).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GloeobacterViolaceus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GloeobacterViolaceus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GloeobacterViolaceus",

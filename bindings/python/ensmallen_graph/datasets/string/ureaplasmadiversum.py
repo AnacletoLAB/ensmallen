@@ -117,7 +117,6 @@ def UreaplasmaDiversum(
 	256), 1188241.UDIV_6610 (degree 254) and 1188241.UDIV_0250 (degree 245).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def UreaplasmaDiversum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def UreaplasmaDiversum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "UreaplasmaDiversum",

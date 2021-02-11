@@ -117,7 +117,6 @@ def MixiaOsmundae(
 	34349.G7E9L6 (degree 1351) and 34349.G7E609 (degree 1303).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MixiaOsmundae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MixiaOsmundae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MixiaOsmundae",

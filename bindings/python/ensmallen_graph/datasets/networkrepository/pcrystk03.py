@@ -110,7 +110,6 @@ def Pcrystk03(
 	81), 24124 (degree 81), 24123 (degree 81) and 24122 (degree 81).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Pcrystk03(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Pcrystk03(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Pcrystk03",

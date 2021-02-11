@@ -117,7 +117,6 @@ def FrancisellaSp.Tx077308(
 	581), 573569.F7308_0104 (degree 566) and 573569.F7308_0052 (degree 551).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrancisellaSp.Tx077308(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrancisellaSp.Tx077308(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrancisellaSp.Tx077308",

@@ -119,7 +119,6 @@ def ThermusSp.Ccbus3uf1(
 	(degree 752).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThermusSp.Ccbus3uf1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThermusSp.Ccbus3uf1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermusSp.Ccbus3uf1",

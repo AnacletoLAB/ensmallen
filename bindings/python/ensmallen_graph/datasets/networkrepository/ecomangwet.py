@@ -130,7 +130,6 @@ def EcoMangwet(
 	93 (degree 74), 57 (degree 58) and 55 (degree 55).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def EcoMangwet(
 	        publisher={Eco Soc America}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def EcoMangwet(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EcoMangwet",

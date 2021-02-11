@@ -117,7 +117,6 @@ def CarnobacteriumSp.174(
 	931), 208596.CAR_c01730 (degree 893) and 208596.CAR_c24930 (degree 889).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CarnobacteriumSp.174(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CarnobacteriumSp.174(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CarnobacteriumSp.174",

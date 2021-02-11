@@ -117,7 +117,6 @@ def DesulfurococcusMucosus(
 	517), 765177.Desmu_1367 (degree 490) and 765177.Desmu_1252 (degree 477).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfurococcusMucosus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfurococcusMucosus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfurococcusMucosus",

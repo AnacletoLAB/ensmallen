@@ -117,7 +117,6 @@ def BradyrhizobiumOligotrophicum(
 	2441), 1245469.S58_23810 (degree 2212) and 1245469.S58_64110 (degree 2007).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BradyrhizobiumOligotrophicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BradyrhizobiumOligotrophicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumOligotrophicum",

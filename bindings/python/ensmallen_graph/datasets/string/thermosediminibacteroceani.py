@@ -117,7 +117,6 @@ def ThermosediminibacterOceani(
 	819), 555079.Toce_0353 (degree 798) and 555079.Toce_0373 (degree 783).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermosediminibacterOceani(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermosediminibacterOceani(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermosediminibacterOceani",

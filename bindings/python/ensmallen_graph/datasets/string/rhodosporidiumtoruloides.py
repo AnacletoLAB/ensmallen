@@ -117,7 +117,6 @@ def RhodosporidiumToruloides(
 	(degree 1132) and 5286.M7X9F4 (degree 1130).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodosporidiumToruloides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodosporidiumToruloides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodosporidiumToruloides",

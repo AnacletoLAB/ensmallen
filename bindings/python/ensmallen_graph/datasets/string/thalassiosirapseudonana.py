@@ -117,7 +117,6 @@ def ThalassiosiraPseudonana(
 	1788), 35128.Thaps26492 (degree 1781) and 35128.Thaps270148 (degree 1721).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThalassiosiraPseudonana(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThalassiosiraPseudonana(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThalassiosiraPseudonana",

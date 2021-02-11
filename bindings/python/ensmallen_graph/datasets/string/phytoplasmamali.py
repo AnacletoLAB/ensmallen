@@ -117,7 +117,6 @@ def PhytoplasmaMali(
 	37692.ATP_00177 (degree 312) and 37692.ATP_00226 (degree 311).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytoplasmaMali(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytoplasmaMali(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytoplasmaMali",

@@ -133,7 +133,6 @@ def WebWebbase2001All(
 	263176), 112916493 (degree 242564) and 38758144 (degree 239556).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def WebWebbase2001All(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def WebWebbase2001All(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebWebbase2001All",

@@ -117,7 +117,6 @@ def PantoeaAnanatisAj13355(
 	932677.PAJ_3567 (degree 1093) and 932677.PAJ_0517 (degree 1043).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PantoeaAnanatisAj13355(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PantoeaAnanatisAj13355(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PantoeaAnanatisAj13355",

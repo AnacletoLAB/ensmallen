@@ -117,7 +117,6 @@ def LysobacterDokdonensis(
 	1030), 1300345.LF41_48 (degree 966) and 1300345.LF41_2870 (degree 926).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysobacterDokdonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysobacterDokdonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysobacterDokdonensis",

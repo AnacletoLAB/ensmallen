@@ -119,7 +119,6 @@ def OryctolagusCuniculus(
 	4395) and 9986.ENSOCUP00000014006 (degree 4191).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def OryctolagusCuniculus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def OryctolagusCuniculus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OryctolagusCuniculus",

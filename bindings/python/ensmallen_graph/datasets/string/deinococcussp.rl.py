@@ -117,7 +117,6 @@ def DeinococcusSp.Rl(
 	822), 1489678.RDMS_01880 (degree 763) and 1489678.RDMS_10875 (degree 738).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeinococcusSp.Rl(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeinococcusSp.Rl(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeinococcusSp.Rl",

@@ -117,7 +117,6 @@ def DeinococcusDeserti(
 	826), 546414.Deide_21970 (degree 770) and 546414.Deide_09380 (degree 735).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeinococcusDeserti(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeinococcusDeserti(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeinococcusDeserti",

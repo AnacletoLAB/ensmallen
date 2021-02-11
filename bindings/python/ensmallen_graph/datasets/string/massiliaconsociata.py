@@ -117,7 +117,6 @@ def MassiliaConsociata(
 	1445), 760117.JN27_05755 (degree 1406) and 760117.JN27_23180 (degree 1355).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MassiliaConsociata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MassiliaConsociata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MassiliaConsociata",

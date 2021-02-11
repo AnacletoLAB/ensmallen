@@ -115,7 +115,6 @@ def Brock2001(
 	108 (degree 162), 27 (degree 162), 115 (degree 161) and 160 (degree 160).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def Brock2001(
 	        title={DIMACS Challenge},
 	        note={http://dimacs.rutgers.edu/Challenges/}}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def Brock2001(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Brock2001",

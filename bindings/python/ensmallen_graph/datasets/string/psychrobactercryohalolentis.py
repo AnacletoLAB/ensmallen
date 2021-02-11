@@ -117,7 +117,6 @@ def PsychrobacterCryohalolentis(
 	805), 335284.Pcryo_0016 (degree 802) and 335284.Pcryo_1596 (degree 763).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PsychrobacterCryohalolentis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PsychrobacterCryohalolentis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PsychrobacterCryohalolentis",

@@ -117,7 +117,6 @@ def PicrophilusTorridus(
 	263820.PTO0229 (degree 561) and 263820.PTO1514 (degree 558).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PicrophilusTorridus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PicrophilusTorridus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PicrophilusTorridus",

@@ -119,7 +119,6 @@ def EnterobacteriaceaeBacteriumLsjc7(
 	(degree 1133) and 1224136.AMFN01000003_gene3534 (degree 1126).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def EnterobacteriaceaeBacteriumLsjc7(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def EnterobacteriaceaeBacteriumLsjc7(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterobacteriaceaeBacteriumLsjc7",

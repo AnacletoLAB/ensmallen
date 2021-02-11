@@ -117,7 +117,6 @@ def MycoplasmaSp.G5847(
 	351), 1179777.D500_0563 (degree 330) and 1179777.D500_0050 (degree 313).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaSp.G5847(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaSp.G5847(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaSp.G5847",

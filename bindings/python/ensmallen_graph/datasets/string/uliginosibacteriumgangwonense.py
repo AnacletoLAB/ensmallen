@@ -119,7 +119,6 @@ def UliginosibacteriumGangwonense(
 	(degree 1301) and 1123487.KB892844_gene854 (degree 1252).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def UliginosibacteriumGangwonense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def UliginosibacteriumGangwonense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "UliginosibacteriumGangwonense",

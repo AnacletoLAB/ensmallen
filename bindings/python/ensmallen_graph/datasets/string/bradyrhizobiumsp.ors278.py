@@ -117,7 +117,6 @@ def BradyrhizobiumSp.Ors278(
 	2328), 114615.BRADO5320 (degree 2111) and 114615.BRADO4029 (degree 1881).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BradyrhizobiumSp.Ors278(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BradyrhizobiumSp.Ors278(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumSp.Ors278",

@@ -123,7 +123,6 @@ def BioCeGn(
 	(degree 237), 100 (degree 234), 357 (degree 228) and 192 (degree 228).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def BioCeGn(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def BioCeGn(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioCeGn",

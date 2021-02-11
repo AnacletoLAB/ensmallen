@@ -119,7 +119,6 @@ def NeorhizobiumGalegaeOrientalis(
 	1548) and 1028800.RG540_CH06100 (degree 1395).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def NeorhizobiumGalegaeOrientalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def NeorhizobiumGalegaeOrientalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NeorhizobiumGalegaeOrientalis",

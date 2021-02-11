@@ -117,7 +117,6 @@ def ProchlorococcusSp.Mit0801(
 	502), 1501269.EW15_2111 (degree 494) and 1501269.EW15_2017 (degree 477).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProchlorococcusSp.Mit0801(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProchlorococcusSp.Mit0801(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusSp.Mit0801",

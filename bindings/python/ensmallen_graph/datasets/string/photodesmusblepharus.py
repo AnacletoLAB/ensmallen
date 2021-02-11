@@ -115,7 +115,6 @@ def PhotodesmusBlepharus(
 	394), 1179155.CF67_03004 (degree 390) and 1179155.CF67_14041 (degree 351).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def PhotodesmusBlepharus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def PhotodesmusBlepharus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotodesmusBlepharus",

@@ -117,7 +117,6 @@ def ZymomonasMobilisAtcc10988(
 	555217.Zmob_1003 (degree 536) and 555217.Zmob_0620 (degree 531).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ZymomonasMobilisAtcc10988(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ZymomonasMobilisAtcc10988(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ZymomonasMobilisAtcc10988",

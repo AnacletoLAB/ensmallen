@@ -119,7 +119,6 @@ def CyanotheceSp.Pcc7822(
 	(degree 1623).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CyanotheceSp.Pcc7822(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CyanotheceSp.Pcc7822(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CyanotheceSp.Pcc7822",

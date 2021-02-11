@@ -117,7 +117,6 @@ def LactobacillusCrispatus(
 	720), 748671.LCRIS_01266 (degree 690) and 748671.LCRIS_01328 (degree 640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusCrispatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusCrispatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusCrispatus",

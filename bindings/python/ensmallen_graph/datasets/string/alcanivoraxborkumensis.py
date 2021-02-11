@@ -117,7 +117,6 @@ def AlcanivoraxBorkumensis(
 	393595.ABO_1084 (degree 797) and 393595.ABO_1599 (degree 790).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlcanivoraxBorkumensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlcanivoraxBorkumensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcanivoraxBorkumensis",

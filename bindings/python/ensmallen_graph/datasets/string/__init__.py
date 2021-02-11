@@ -5092,5095 +5092,1597 @@ from .dickeyasp.2b12 import DickeyaSp.2b12
 from .janthinobacteriumagaricidamnosum import JanthinobacteriumAgaricidamnosum
 
 __all__ = [
-	"PseudomonasAeruginosa"
-	"BurkholderiaCepacia"
-	"PseudomonasOleovorans"
-	"XanthomonasCampestrisCampestris"
-	"AgrobacteriumRhizogenes"
-	"SinorhizobiumFrediiNgr234"
-	"AcinetobacterBaumannii"
-	"AlcaligenesFaecalis"
-	"PantoeaAgglomerans"
-	"KlebsiellaOxytoca"
-	"KlebsiellaPneumoniae"
-	"ProteusVulgaris"
-	"YersiniaPseudotuberculosis"
-	"VibrioVulnificus"
-	"PasteurellaMultocida"
-	"PasteurellaPneumotropica"
-	"ChlamydiaTrachomatis"
-	"CampylobacterUreolyticus"
-	"DesulfovibrioVulgarisHildenborough"
-	"DesulfovibrioVulgarisMiyazaki"
-	"FlavobacteriumHydatis"
-	"ErythrobacterLongus"
-	"SynechococcusElongatusPcc7942"
-	"SynechocystisSp.Pcc6714"
-	"SynechocystisSp.Pcc6803"
-	"LeuconostocLactis"
-	"DermacoccusNishinomiyaensis"
-	"StaphylococcusAureus"
-	"StaphylococcusXylosus"
-	"StreptococcusPyogenes"
-	"StreptococcusIniae"
-	"BacillusCereus"
-	"BacillusMycoides"
-	"ClostridiumSp.Atcc29733"
-	"ClostridiumSticklandii"
-	"LactobacillusAnimalis"
-	"BifidobacteriumAdolescentis"
-	"BifidobacteriumCoryneforme"
-	"BifidobacteriumCuniculi"
-	"BifidobacteriumPseudolongumGlobosum"
-	"BifidobacteriumMagnum"
-	"BifidobacteriumMinimum"
-	"OerskoviaTurbata"
-	"CorynebacteriumPseudotuberculosis"
-	"RhodococcusFascians"
-	"ActinoplanesUtahensis"
-	"StreptomycesAureofaciens"
-	"StreptomycesBikiniensis"
-	"StreptomycesFradiae"
-	"StreptomycesGlaucescens"
-	"StreptomycesHalstedii"
-	"StreptomycesSclerotialus"
-	"StreptomycesVirginiae"
-	"StreptomycesCellulosae"
-	"MicrotetrasporaGlauca"
-	"StreptosporangiumAmethystogenes"
-	"PimelobacterSimplex"
-	"GordoniaTerrae"
-	"PseudonocardiaAutotrophica"
-	"MycoplasmaAgalactiae"
-	"MycoplasmaCalifornicum"
-	"ThermoanaerobacterKivui"
-	"SolemyaVelum"
-	"SodalisPierantonius"
-	"FervidobacteriumIslandicum"
-	"CitrusSinensis"
-	"SynergistesJonesii"
-	"PhaeodactylumTricornutum"
-	"EctocarpusSiliculosus"
-	"EmilianiaHuxleyi"
-	"ChlamydomonasReinhardtii"
-	"VolvoxCarteri"
-	"AuxenochlorellaProtothecoides"
-	"PhyscomitrellaPatens"
-	"TheobromaCacao"
-	"CaricaPapaya"
-	"CucumisMelo"
-	"CucumisSativus"
-	"PopulusTrichocarpa"
-	"ArabidopsisThaliana"
-	"BrassicaRapa"
-	"BrassicaOleracea"
-	"MalusDomestica"
-	"PrunusPersica"
-	"CicerArietinum"
-	"GlycineMax"
-	"MedicagoTruncatula"
-	"PhaseolusVulgaris"
-	"ManihotEsculenta"
-	"RicinusCommunis"
-	"LinumUsitatissimum"
-	"SolanumLycopersicum"
-	"NicotianaSylvestris"
-	"NicotianaTomentosiformis"
-	"SolanumTuberosum"
-	"ErythrantheGuttata"
-	"NelumboNucifera"
-	"HordeumVulgare"
-	"OryzaRufipogon"
-	"OryzaSativa"
-	"OryzaBrachyantha"
-	"OryzaNivara"
-	"OryzaPunctata"
-	"OryzaGlaberrima"
-	"SetariaItalica"
-	"SorghumBicolor"
-	"TriticumAestivum"
-	"TriticumUrartu"
-	"ZeaMays"
-	"MusaAcuminata"
-	"PhytophthoraInfestans"
-	"PhytophthoraParasitica"
-	"SchizosaccharomycesPombe"
-	"SchizosaccharomycesJaponicus"
-	"SchizosaccharomycesOctosporus"
-	"PichiaKudriavzevii"
-	"MillerozymaFarinosa"
-	"KomagataellaPastoris"
-	"ScheffersomycesStipitis"
-	"MeyerozymaGuilliermondii"
-	"SaccharomycesCerevisiae"
-	"TorulasporaDelbrueckii"
-	"YarrowiaLipolytica"
-	"ZygosaccharomycesRouxii"
-	"DebaryomycesHansenii"
-	"TaphrinaDeformans"
-	"BipolarisMaydis"
-	"BipolarisZeicola"
-	"LeptosphaeriaMaculans"
-	"HistoplasmaCapsulatum"
-	"BlastomycesDermatitidis"
-	"AspergillusClavatus"
-	"AspergillusFlavus"
-	"AspergillusNiger"
-	"AspergillusOryzae"
-	"ClavicepsPurpurea"
-	"FusariumFujikuroi"
-	"NeurosporaCrassa"
-	"PodosporaAnserina"
-	"SordariaMacrospora"
-	"SclerotiniaSclerotiorum"
-	"CryptococcusNeoformans"
-	"TremellaMesenterica"
-	"UstilagoMaydis"
-	"RhodosporidiumToruloides"
-	"PucciniaGraminis"
-	"SchizophyllumCommune"
-	"AgaricusBisporus"
-	"CoprinopsisCinerea"
-	"ColletotrichumOrbiculare"
-	"CandidaAlbicans"
-	"CandidaGlabrata"
-	"CandidaMaltosa"
-	"CandidaParapsilosis"
-	"CandidaTropicalis"
-	"CoccidioidesImmitis"
-	"FusariumOxysporum"
-	"FusariumGraminearum"
-	"TrichophytonRubrum"
-	"LeishmaniaMajor"
-	"LeishmaniaInfantum"
-	"LeishmaniaPanamensis"
-	"TrypanosomaBrucei"
-	"TrypanosomaCruzi"
-	"TrichomonasVaginalis"
-	"GiardiaIntestinalis"
-	"EntamoebaHistolytica"
-	"NaegleriaGruberi"
-	"DictyosteliumPurpureum"
-	"CryptosporidiumMuris"
-	"ToxoplasmaGondii"
-	"PlasmodiumBerghei"
-	"PlasmodiumChabaudi"
-	"PlasmodiumCynomolgi"
-	"PlasmodiumFalciparum"
-	"PlasmodiumKnowlesi"
-	"PlasmodiumVivax"
-	"PlasmodiumVinckei"
-	"BabesiaBovis"
-	"BabesiaEqui"
-	"TheileriaAnnulata"
-	"TheileriaParva"
-	"ParameciumTetraurelia"
-	"TetrahymenaThermophila"
-	"IchthyophthiriusMultifiliis"
-	"ExophialaDermatitidis"
-	"HydraVulgaris"
-	"SchistosomaMansoni"
-	"EchinococcusMultilocularis"
-	"CaenorhabditisBriggsae"
-	"CaenorhabditisElegans"
-	"BursaphelenchusXylophilus"
-	"TrichinellaSpiralis"
-	"HelobdellaRobusta"
-	"AplysiaCalifornica"
-	"DaphniaPulex"
-	"AcyrthosiphonPisum"
-	"TriboliumCastaneum"
-	"BombyxMori"
-	"AedesAegypti"
-	"AnophelesGambiae"
-	"CulexQuinquefasciatus"
-	"LoaLoa"
-	"CeratitisCapitata"
-	"DrosophilaAnanassae"
-	"DrosophilaErecta"
-	"DrosophilaGrimshawi"
-	"DrosophilaMelanogaster"
-	"DrosophilaMojavensis"
-	"DrosophilaPersimilis"
-	"DrosophilaPseudoobscura"
-	"DrosophilaVirilis"
-	"DrosophilaYakuba"
-	"DrosophilaWillistoni"
-	"MuscaDomestica"
-	"NasoniaVitripennis"
-	"ApisMellifera"
-	"StrongylocentrotusPurpuratus"
-	"CionaIntestinalis"
-	"BranchiostomaFloridae"
-	"LatimeriaChalumnae"
-	"LepisosteusOculatus"
-	"DanioRerio"
-	"AstyanaxMexicanus"
-	"EsoxLucius"
-	"GadusMorhua"
-	"PoeciliaReticulata"
-	"XiphophorusMaculatus"
-	"OryziasLatipes"
-	"OreochromisNiloticus"
-	"HaplochromisBurtoni"
-	"XenopusTropicalis"
-	"CheloniaMydas"
-	"ChrysemysPicta"
-	"AlligatorMississippiensis"
-	"ColumbaLivia"
-	"GallusGallus"
-	"OrnithorhynchusAnatinus"
-	"SarcophilusHarrisii"
-	"MacropusEugenii"
-	"DasypusNovemcinctus"
-	"ErinaceusEuropaeus"
-	"EchinopsTelfairi"
-	"PteropusAlecto"
-	"TarsiusSyrichta"
-	"CallithrixJacchus"
-	"MacacaFascicularis"
-	"MacacaMulatta"
-	"PapioAnubis"
-	"GorillaGorilla"
-	"PanPaniscus"
-	"PanTroglodytes"
-	"PongoAbelii"
-	"HomoSapiens"
-	"CanisLupus"
-	"AiluropodaMelanoleuca"
-	"MustelaPutorius"
-	"FelisCatus"
-	"PantheraTigris"
-	"OdobenusRosmarus"
-	"LeptonychotesWeddellii"
-	"OrcinusOrca"
-	"TursiopsTruncatus"
-	"BalaenopteraAcutorostrata"
-	"TrichechusManatus"
-	"LoxodontaAfricana"
-	"OrycteropusAfer"
-	"SusScrofa"
-	"BosTaurus"
-	"OvisAries"
-	"OchotonaPrinceps"
-	"OryctolagusCuniculus"
-	"CricetulusGriseus"
-	"MesocricetusAuratus"
-	"PeromyscusManiculatus"
-	"MusMusculus"
-	"RattusNorvegicus"
-	"CaviaPorcellus"
-	"OctodonDegus"
-	"HeterocephalusGlaber"
-	"SaccoglossusKowalevskii"
-	"TrichoplaxAdhaerens"
-	"AttaCephalotes"
-	"DactylococcopsisSalina"
-	"DanausPlexippus"
-	"RhodniusProlixus"
-	"AmborellaTrichopoda"
-	"ArthrobotrysOligospora"
-	"MonodelphisDomestica"
-	"ParastagonosporaNodorum"
-	"SphingomonasPaucimobilis"
-	"SphingobiumYanoikuyae"
-	"PelodiscusSinensis"
-	"BrachypodiumDistachyon"
-	"NaumovozymaCastellii"
-	"NaumovozymaDairenensis"
-	"VerticilliumDahliae"
-	"SaimiriBoliviensis"
-	"MnemiopsisLeidyi"
-	"SaccharopolysporaRectivirgula"
-	"NostocSp.Pcc7524"
-	"PorphyromonasMacacae"
-	"YersiniaKristensenii"
-	"PhotodesmusKatoptron"
-	"ColwelliaPsychrerythraea"
-	"CobetiaMarina"
-	"AnolisCarolinensis"
-	"HerbidosporaCretacea"
-	"TarenayaHassleriana"
-	"TalaromycesStipitatus"
-	"AllomycesMacrogynus"
-	"ElephantulusEdwardii"
-	"KluyveromycesLactis"
-	"UrsusMaritimus"
-	"EptesicusFuscus"
-	"NeosporaCaninum"
-	"StreptomycesGriseoluteus"
-	"YersiniaRuckeri"
-	"VibrioNavarrensis"
-	"NatrialbaAsiatica"
-	"JanthinobacteriumLividum"
-	"GossypiumRaimondii"
-	"VitisVinifera"
-	"GaeumannomycesGraminis"
-	"TrichodermaVirens"
-	"SporothrixSchenckii"
-	"OtolemurGarnettii"
-	"TakifuguRubripes"
-	"CaenorhabditisRemanei"
-	"ColletotrichumGraminicola"
-	"BifidobacteriumPseudolongum"
-	"ClavibacterMichiganensisSepedonicus"
-	"CampylobacterSputorum"
-	"PseudomonasStutzeriAtcc14405"
-	"SynechococcusSp.Pcc7002"
-	"SynechococcusSp.Wh7803"
-	"CalothrixSp.Pcc7103"
-	"TetranychusUrticae"
-	"NeolamprologusBrichardi"
-	"BlautiaProducta"
-	"EremotheciumGossypii"
-	"AspergillusTerreus"
-	"UncinocarpusReesii"
-	"CatenuloplanesJaponicus"
-	"StreptomycesGalbus"
-	"BifidobacteriumThermophilum"
-	"ParacoccusVersutus"
-	"MixiaOsmundae"
-	"BlumeriaGraminis"
-	"StrongyloidesRatti"
-	"HeliconiusMelpomene"
-	"ChinchillaLanigera"
-	"ThalassiosiraPseudonana"
-	"CitrobacterAmalonaticus"
-	"ThielaviaTerrestris"
-	"MacrophominaPhaseolina"
-	"DactylosporangiumAurantiacum"
-	"BifidobacteriumChoerinum"
-	"BacillusThermoamylovorans"
-	"VanderwaltozymaPolyspora"
-	"MucorCircinelloides"
-	"PythiumIrregulare"
-	"NeosartoryaFischeri"
-	"PenicilliumDigitatum"
-	"MycobacteriumAbscessus"
-	"WigglesworthiaGlossinidiaSp.Gbr"
-	"PorphyromonasCangingivalis"
-	"PorphyromonasCanoris"
-	"LodderomycesElongisporus"
-	"ClostridiumAlgidicarnis"
-	"AegilopsTauschii"
-	"PhytoplasmaMali"
-	"TalaromycesMarneffei"
-	"RhodococcusOpacus"
-	"ChaetomiumGlobosum"
-	"AlligatorSinensis"
-	"PanicumVirgatum"
-	"MicromonasPusilla"
-	"TuberMelanosporum"
-	"StreptococcusEqui"
-	"NeurosporaTetrasperma"
-	"OryzaGlumipatula"
-	"OryzaMeridionalis"
-	"AcinetobacterJunii"
-	"AcinetobacterSp.Cipa165"
-	"AspergillusKawachii"
-	"FomitopsisPinicola"
-	"StereumHirsutum"
-	"BotrytisCinerea"
-	"LentzeaAlbidocapillata"
-	"CyanotheceSp.Pcc8801"
-	"BathycoccusPrasinos"
-	"PneumocystisJirovecii"
-	"PythiumVexans"
-	"SorexAraneus"
-	"RubrobacterRadiotolerans"
-	"PhoenixDactylifera"
-	"CandidaDubliniensis"
-	"HalomonasSalina"
-	"AnophelesDarlingi"
-	"IctidomysTridecemlineatus"
-	"CaproniaEpimyces"
-	"CaproniaCoronata"
-	"PrauserellaRugosa"
-	"StreptomycesWedmorensis"
-	"CyanotheceSp.Atcc51142"
-	"AureococcusAnophagefferens"
-	"StreptomycesMegasporus"
-	"PaenibacillusDurus"
-	"MycobacteriumAviumAvium"
-	"DictyosteliumDiscoideum"
-	"BipolarisSorokiniana"
-	"PyrenophoraTriticirepentis"
-	"CyanidioschyzonMerolae"
-	"EremotheciumCymbalariae"
-	"NematostellaVectensis"
-	"MycoplasmaConjunctivae"
-	"CandidaTenuis"
-	"AnabaenaSp.90"
-	"WeissellaHellenica"
-	"SphingobiumChlorophenolicum"
-	"EntamoebaDispar"
-	"StreptomycesOlivaceus"
-	"StreptomycesLydicus"
-	"MycobacteriumTriplex"
-	"PoeciliaFormosa"
-	"ArabisAlpina"
-	"HelicobacterTrogontum"
-	"JaculusJaculus"
-	"TrichodermaReesei"
-	"CionaSavignyi"
-	"SulfitobacterSp.Ee36"
-	"HaliaeetusLeucocephalus"
-	"PyrenophoraTeres"
-	"PectobacteriumBetavasculorum"
-	"GuillardiaTheta"
-	"VibrioAnguillarum"
-	"StreptomycesToyocaensis"
-	"CylindrospermumStagnale"
-	"OscillatoriaAcuminata"
-	"SyntrophusAciditrophicus"
-	"FragariaVesca"
-	"SpirillosporaAlbida"
-	"StreptomycesCelluloflavus"
-	"RickettsiellaGrylli"
-	"FibrobacterSuccinogenes"
-	"MyotisLucifugus"
-	"PantholopsHodgsonii"
-	"ArabidopsisLyrata"
-	"PhytoplasmaAustraliense"
-	"FicedulaAlbicollis"
-	"ProchlorococcusMarinusPastoris"
-	"ProchlorococcusMarinusMit9107"
-	"ProchlorococcusMarinusGp2"
-	"ProchlorococcusMarinusSb"
-	"SynechococcusSp.Wh7805"
-	"LactobacillusParaplantarum"
-	"ChlorocebusSabaeus"
-	"OphiostomaPiceae"
-	"ConiosporiumApollinis"
-	"RhinopithecusRoxellana"
-	"PluralibacterGergoviae"
-	"NomascusLeucogenys"
-	"AzoarcusSp.Bh72"
-	"AcinetobacterSp.Adp1"
-	"ArthrodermaBenhamiae"
-	"MicrosporumGypseum"
-	"ArthrodermaOtae"
-	"TrichophytonEquinum"
-	"TrichodermaAtroviride"
-	"NostocPunctiforme"
-	"MycosphaerellaPini"
-	"SynechococcusSp.Cc9311"
-	"PythiumUltimum"
-	"HalotheceSp.Pcc7418"
-	"CyanotheceSp.Pcc7424"
-	"OryzaBarthii"
-	"ActinoalloteichusCyanogriseus"
-	"PiriformosporaIndica"
-	"PantoeaStewartii"
-	"StreptomycesNiger"
-	"StreptomycesViolens"
-	"StreptomycesRoseoverticillatus"
-	"BacillusClausii"
-	"StreptomycesAtroolivaceus"
-	"StreptomycesBicolor"
-	"StreptomycesCatenulae"
-	"StreptomycesGriseorubens"
-	"StreptomycesAlbusAlbus"
-	"StreptomycesAlboflavus"
-	"StreptomycesAureocirculatus"
-	"StreptomycesCalifornicus"
-	"StreptomycesLavenduligriseus"
-	"StreptomycesMutabilis"
-	"StreptomycesPurpeofuscus"
-	"StreptomycesResistomycificus"
-	"StreptomycesVarsoviensis"
-	"PhytophthoraSojae"
-	"LechevalieriaAerocolonigenes"
-	"StreptomycesDurhamensis"
-	"StreptomycesFlavochromogenes"
-	"StreptomycesIakyrus"
-	"StreptomycesKatrae"
-	"StreptomycesPyridomyceticus"
-	"StreptomycesAlbulus"
-	"TheileriaOrientalis"
-	"ThermococcusKodakarensis"
-	"SynechococcusSp.Wh5701"
-	"AquamicrobiumDefluvii"
-	"GasterosteusAculeatus"
-	"MicroplitisDemolitor"
-	"PseudomonasSp.Vlb120"
-	"CaulobacterHenricii"
-	"PenicilliumOxalicum"
-	"OstreococcusTauri"
-	"PyrococcusHorikoshii"
-	"EucalyptusGrandis"
-	"HaemophilusInfluenzae"
-	"BosMutus"
-	"SphaeroformaArctica"
-	"OphiocordycepsSinensis"
-	"SporisoriumReilianum"
-	"BoecheraStricta"
-	"EutremaSalsugineum"
-	"StreptomycesSeoulensis"
-	"CordycepsMilitaris"
-	"ProchlorococcusMarinusMit9302"
-	"ProchlorococcusMarinusMit9312"
-	"ProchlorococcusMarinusMit9313"
-	"ThiomonasIntermedia"
-	"AromatoleumAromaticum"
-	"MycetocolaSaprophilus"
-	"PseudomonasPutidaGb1"
-	"LeersiaPerrieri"
-	"BifidobacteriumSubtile"
-	"XanthobacterAutotrophicus"
-	"BifidobacteriumGallinarum"
-	"BifidobacteriumMerycicum"
-	"BifidobacteriumRuminantium"
-	"PectobacteriumCarotovorumOdoriferum"
-	"MyceliophthoraThermophila"
-	"MortierellaVerticillata"
-	"MicrotusOchrogaster"
-	"ConiophoraPuteana"
-	"ColletotrichumHigginsianum"
-	"MonosigaBrevicollis"
-	"CapsellaRubella"
-	"TrichosporonAsahii"
-	"PseudanabaenaSp.Pcc7367"
-	"SerratiaGrimesii"
-	"SerratiaPlymuthica"
-	"SulfitobacterMediterraneus"
-	"MycobacteriumTuberculosisH37rv"
-	"PseudocercosporaFijiensis"
-	"GammaproteobacteriaBacteriumHdn1"
-	"LysobacterAntibioticus"
-	"SynechococcusSp.Wh8102"
-	"PseudozymaFlocculosa"
-	"ThaueraSp.Mz1t"
-	"CitrusClementina"
-	"SphaerulinaMusiva"
-	"HelicobacterPylori26695"
-	"HelicobacterPyloriJ99"
-	"SerpulaLacrymans"
-	"CladophialophoraCarrionii"
-	"EndosymbiontOfAcanthamoeba"
-	"ClostridiumPasteurianumBc1"
-	"PseudoalteromonasTunicata"
-	"SelaginellaMoellendorffii"
-	"RoseovariusNubinhibens"
-	"BubalusBubalis"
-	"SalmonellaEntericaTyphimurium"
-	"CamelinaSativa"
-	"ThiomicrospiraSp.Milost1"
-	"ThiomicrospiraSp.Milost2"
-	"SynechococcusSp.Pcc7335"
-	"ParacaedibacterAcanthamoebae"
-	"MetarhiziumAcridum"
-	"ProchlorococcusMarinusMit9201"
-	"ProchlorococcusMarinusMit9211"
-	"PandoraeaPnomenusa"
-	"ProchlorococcusMarinusMit9215"
-	"SetosphaeriaTurcica"
-	"ShewanellaSp.Ana3"
-	"BordetellaPetrii"
-	"PseudomonasSp.M1"
-	"DesulfococcusOleovorans"
-	"EutypaLata"
-	"LactobacillusSp.Asf360"
-	"ClostridiumSp.Asf356"
-	"ClostridiumSp.Asf502"
-	"FischerellaThermalis"
-	"HammondiaHammondi"
-	"CalothrixSp.Pcc7507"
-	"StreptomycesCoelicolor"
-	"WolbachiaSp.Ooc"
-	"FusariumPseudograminearum"
-	"BipolarisOryzae"
-	"RhodococcusJostii"
-	"GlareaLozoyensis"
-	"XenococcusSp.Pcc7305"
-	"LeptolyngbyaSp.Pcc7375"
-	"GloeocapsaSp.Pcc73106"
-	"AcromyrmexEchinatior"
-	"NostocSp.Pcc7120"
-	"SaccharothrixSyringae"
-	"GloeophyllumTrabeum"
-	"SerratiaSp.Atcc39006"
-	"StreptacidiphilusNeutrinimicus"
-	"StreptacidiphilusCarbonis"
-	"StreptacidiphilusAlbus"
-	"NitrosococcusWatsonii"
-	"FrankiaSp.Cci3"
-	"MaylandiaZebra"
-	"AcinetobacterBereziniae"
-	"MethylosinusSp.Lw3"
-	"MethylosinusSp.Pw1"
-	"BuchneraAphidicolaAps"
-	"MyotisBrandtii"
-	"SpizellomycesPunctatus"
-	"BatrachochytriumDendrobatidis"
-	"NocardioidesSp.Cf8"
-	"GregarinaNiphandrodes"
-	"SynechococcusSp.Cc9605"
-	"SynechococcusSp.Cc9616"
-	"PorphyromonasGulae"
-	"StanieriaCyanosphaera"
-	"LeptolyngbyaSp.Pcc7376"
-	"SaprolegniaDiclina"
-	"GeminocystisHerdmanii"
-	"BradyrhizobiumSp.Tv2a2"
-	"TetrapisisporaPhaffii"
-	"BradyrhizobiumSp.Ors278"
-	"PrunusMume"
-	"ChlamydophilaPneumoniaeAr39"
-	"ChlamydophilaPneumoniaeCwl029"
-	"FusariumVerticillioides"
-	"ChrysiogenesArsenatis"
-	"PleurocapsaSp.Pcc7319"
-	"PleurocapsaSp.Pcc7327"
-	"NodosilineaNodulosa"
-	"ColeofasciculusChthonoplastes"
-	"PseudanabaenaSp.Pcc6802"
-	"LipotesVexillifer"
-	"UstilagoHordei"
-	"PediculusHumanus"
-	"ParacoccidioidesBrasiliensis"
-	"PersephonellaMarina"
-	"BordetellaTrematum"
-	"StrigamiaMaritima"
-	"NipponiaNippon"
-	"GaldieriaSulphuraria"
-	"BombusImpatiens"
-	"PteropusVampyrus"
-	"ActinoplanesSp.Se50110"
-	"CaenorhabditisBrenneri"
-	"ZootermopsisNevadensis"
-	"KocuriaPolaris"
-	"MethylosinusSp.Lw4"
-	"DesulfitobacteriumHafniense"
-	"NectriaHaematococca"
-	"LachnobacteriumBovis"
-	"ZobelliaUliginosa"
-	"StegastesPartitus"
-	"ProchlorococcusMarinusAs9601"
-	"StreptomycesGriseofuscus"
-	"MagnaporthiopsisPoae"
-	"LactobacillusKunkeei"
-	"WallemiaSebi"
-	"KozakiaBaliensis"
-	"SporocytophagaMyxococcoides"
-	"NitrosomonasSp.Al212"
-	"GallibacteriumGenomosp."
-	"EscherichiaColiO157h7"
-	"AlteromonadalesBacteriumTw7"
-	"MagnetococcusMarinus"
-	"CorynebacteriumImitans"
-	"AphanomycesInvadans"
-	"PseudomonasCremoricolorata"
-	"SphaerochaetaGlobosa"
-	"SphaerochaetaPleomorpha"
-	"NovosphingobiumResinovorum"
-	"BifidobacteriumScardovii"
-	"CedeceaNeteri"
-	"DechloromonasAromatica"
-	"BurkholderiaSacchari"
-	"ThalassiosiraOceanica"
-	"PseudomonasPutidaKt2440"
-	"XylellaFastidiosa9a5c"
-	"PaenibacillusBorealis"
-	"AuriculariaDelicata"
-	"ThermodesulfobacteriumHydrogeniphilum"
-	"ErythrobacterSp.Sd21"
-	"BetaVulgaris"
-	"AspergillusNidulans"
-	"WolbachiaSp.Dme"
-	"AnabaenaSp.Pcc7108"
-	"PhytophthoraRamorum"
-	"MycobacteriumSp.Jls"
-	"SynechococcusSp.Wh8109"
-	"SynechococcusSp.Wh8016"
-	"ProchlorococcusMarinusCcmp1375"
-	"ProchlorococcusMarinusMit9515"
-	"ProchlorococcusMarinusMit9301"
-	"ProchlorococcusMarinusMit9314"
-	"ProchlorococcusMarinusMit9322"
-	"ProchlorococcusMarinusNatl1a"
-	"ListeriaMonocytogenesEgde"
-	"StreptococcusPneumoniaeTigr4"
-	"StreptococcusPneumoniaeR6"
-	"OceanobacillusPicturae"
-	"ElizabethkingiaMiricola"
-	"BradyrhizobiumSp.Thb2"
-	"StreptococcusSinensis"
-	"BeauveriaBassiana"
-	"StaphylococcusEpidermidisRp62a"
-	"StaphylococcusEpidermidisAtcc12228"
-	"AgrobacteriumFabrum"
-	"PythonBivittatus"
-	"FrancisellaTularensisSchus4"
-	"DesulfobacteriumAutotrophicum"
-	"DesulfotaleaPsychrophila"
-	"PyrobaculumAerophilum"
-	"AcetobacterMalorum"
-	"OscillatoriaNigroviridis"
-	"CyanobiumSp.Pcc7001"
-	"RobinsoniellaPeoriensis"
-	"PseudopodocesHumilis"
-	"ChlamydophilaPneumoniaeTw183"
-	"HelicobacterCetorumMit007128"
-	"ChrysochlorisAsiatica"
-	"BaumanniaCicadellinicola"
-	"PyrococcusFuriosus"
-	"AlkalilimnicolaEhrlichii"
-	"MethylocystisSp.Sc2"
-	"DermacoccusSp.Ellin185"
-	"PaenibacillusGraminis"
-	"PaenibacillusOdorifer"
-	"BradyrhizobiumSp.Ec33"
-	"FusobacteriumNucleatumAtcc25586"
-	"XanthomonasAxonopodisCitri"
-	"CaulobacterCrescentusCb15"
-	"CorynebacteriumAtypicum"
-	"CampylobacterJejuniNctc11168"
-	"CapsasporaOwczarzaki"
-	"MethanosarcinaMazei"
-	"ChlorobiumTepidum"
-	"SphingomonasSp.Atcc31555"
-	"ClostridiumPerfringensAtcc13124"
-	"HaematobacterMassiliensis"
-	"SynechococcusSp.Pcc7336"
-	"SynechococcusSp.Pcc6312"
-	"ThermococcusNautili"
-	"NocardioidesSp.Js614"
-	"CorynebacteriumEfficiens"
-	"BurkholderiaSordidicola"
-	"BradyrhizobiumSp.Ai1a2"
-	"CorynebacteriumGlutamicum"
-	"ThermosynechococcusElongatus"
-	"BacillusAnthracisAmes"
-	"ShigellaFlexneri"
-	"AnoxybacillusGonensis"
-	"DickeyaDadantii3937"
-	"BuchneraAphidicolaSg"
-	"CoccidioidesPosadasii"
-	"EscherichiaColiCft073"
-	"PunctulariaStrigosozonata"
-	"ListeriaIvanoviiLondoniensis"
-	"AcinetobacterGerneri"
-	"AcinetobacterTandoii"
-	"AcinetobacterTjernbergiae"
-	"AcinetobacterTowneri"
-	"RuminiclostridiumThermocellum"
-	"LeuconostocMesenteroides"
-	"SaccharophagusDegradans"
-	"OenococcusOeni"
-	"TrichodesmiumErythraeum"
-	"TropherymaWhipplei"
-	"TannerellaForsythia"
-	"BlochmanniaFloridanus"
-	"MelampsoraLaricipopulina"
-	"SulfurihydrogenibiumAzorense"
-	"KoribacterVersatilis"
-	"HerminiimonasArsenicoxydans"
-	"HaemophilusSomnus"
-	"PseudomonasSyringaeB728a"
-	"EhrlichiaChaffeensis"
-	"PseudomonasFluorescensPf01"
-	"DesulfovibrioAlaskensis"
-	"NeptuniibacterCaesariensis"
-	"AmycolatopsisJaponica"
-	"AmycolatopsisVancoresmycina"
-	"CarnobacteriumSp.174"
-	"FomitiporiaMediterranea"
-	"ChaetomiumThermophilum"
-	"StreptococcusMutansUa159"
-	"StreptococcusAgalactiaeNem316"
-	"AllokutzneriaAlbata"
-	"ChlorogloeopsisFritschii"
-	"ShewanellaOneidensis"
-	"AnaplasmaPhagocytophilum"
-	"YersiniaPestisCo92"
-	"LarimichthysCrocea"
-	"EnhygromyxaSalina"
-	"PseudomonasRhizosphaerae"
-	"CroceibacterAtlanticus"
-	"BurkholderiaCenocepacia"
-	"MycobacteriumMarinum"
-	"PseudomonasFluorescensSbw25"
-	"RhizobiumLeguminosarum3841"
-	"BifidobacteriumLongum"
-	"BifidobacteriumPsychraerophilum"
-	"BacillusVietnamensis"
-	"PectobacteriumAtrosepticum"
-	"SalmonellaBongoriNctc12419"
-	"StreptococcusUberis"
-	"ChlamydophilaAbortus"
-	"AquilegiaCoerulea"
-	"MicromonosporaSp.Atcc39149"
-	"SalmonellaEntericaCt18"
-	"PseudomonasProtegensPf5"
-	"LactobacillusPlantarum"
-	"TreponemaPutidum"
-	"MoniliophthoraRoreri"
-	"OceanobacillusIheyensis"
-	"MastigocladopsisRepens"
-	"SynechococcusSp.Rs9916"
-	"SynechococcusSp.Rs9917"
-	"MannheimiaSucciniciproducens"
-	"FrankiaSp.Bmg512"
-	"NeorickettsiaSennetsu"
-	"NatrinemaAltunense"
-	"KocuriaMarina"
-	"TogniniaMinima"
-	"PseudomonasSyringaeTomato"
-	"VibrioParahaemolyticus"
-	"BacillusSubtilis"
-	"AquifexAeolicus"
-	"ArchaeoglobusFulgidus"
-	"MethanobrevibacterSp.Abm4"
-	"BradyrhizobiumDiazoefficiens"
-	"BrucellaMelitensis"
-	"BuchneraAphidicolaBp"
-	"PyrusXBretschneideri"
-	"MyotisDavidii"
-	"ShewanellaPiezotolerans"
-	"MarinobacterAdhaerens"
-	"EnterococcusFaecalisV583"
-	"BacteroidesThetaiotaomicron"
-	"GrosmanniaClavigera"
-	"BigelowiellaNatans"
-	"CoxiellaBurnetii"
-	"PythiumIwayamai"
-	"ChlamydophilaCaviae"
-	"ActinobacillusPleuropneumoniae14074"
-	"HyphomonasNeptunium"
-	"NitrosomonasEuropaea"
-	"BeijerinckiaMobilis"
-	"HalomonasAlkaliantarctica"
-	"SynechococcusSp.Cb0101"
-	"AcidovoraxSp.Js42"
-	"HaemophilusDucreyi"
-	"SolibacterUsitatus"
-	"RhodococcusErythropolis"
-	"AnaplasmaMarginaleMaries"
-	"PseudoalteromonasSp.Sm9913"
-	"HelicobacterHepaticus"
-	"GeobacillusKaustophilus"
-	"StreptacidiphilusJiangxiensis"
-	"AlcanivoraxSp.Dg881"
-	"ChryseobacteriumFormosense"
-	"ScalinduaBrodae"
-	"PseudomonasAlkylphenolia"
-	"ErythrobacterSp.Nap1"
-	"AcidobacteriumCapsulatum"
-	"VerrucomicrobiumSpinosum"
-	"AnabaenaVariabilis"
-	"HalobacillusDabanensis"
-	"OstreococcusLucimarinus"
-	"PorphyromonasGingivalisW83"
-	"RhodopirellulaBaltica"
-	"AcidithiobacillusFerrooxidansAtcc23270"
-	"BurkholderiaMallei"
-	"ChlamydiaMuridarum"
-	"DehalococcoidesMccartyi195"
-	"DeinococcusRadiodurans"
-	"GeobacterSulfurreducens"
-	"MethanocaldococcusJannaschii"
-	"MethylococcusCapsulatus"
-	"PhotorhabdusLuminescens"
-	"MycoplasmaArthritidis"
-	"MycoplasmaGenitalium"
-	"ThermotogaMaritima"
-	"TreponemaDenticola"
-	"TreponemaPallidum"
-	"VibrioCholeraeO1"
-	"ChromobacteriumViolaceum"
-	"PseudomonasLutea"
-	"CynoglossusSemilaevis"
-	"CaedibacterAcanthamoebae"
-	"ParacaedibacterSymbiosus"
-	"WallemiaIchthyophaga"
-	"CarboxydothermusHydrogenoformans"
-	"DichelobacterNodosus"
-	"MycobacteriumSmegmatisMc2155"
-	"MyxococcusXanthus"
-	"RuminococcusAlbus8"
-	"RuegeriaPomeroyi"
-	"StreptococcusMitisNctc12261"
-	"TupaiaChinensis"
-	"ThermococcusSp.Am4"
-	"NocardiaFarcinica"
-	"PlanctomyceteKsu1"
-	"GammaproteobacteriaBacteriumHtcc2143"
-	"GammaproteobacteriaBacteriumHtcc2148"
-	"GammaproteobacteriaBacteriumHtcc2080"
-	"CoccomyxaSubellipsoidea"
-	"GloeobacterViolaceus"
-	"ChroococcidiopsisThermalis"
-	"OceanicolaBatsensis"
-	"StreptomycesSp.C"
-	"EhrlichiaRuminantium"
-	"DehalococcoidesMccartyiCbdb1"
-	"BordetellaBronchiseptica"
-	"BordetellaPertussisTohama"
-	"LactobacillusJohnsonii"
-	"RickettsiaTyphi"
-	"KitasatosporaArboriphila"
-	"MycobacteriumCosmeticum"
-	"RhodopseudomonasPalustrisCga009"
-	"PsychrobacterArcticus"
-	"BacillusAnthracisSterne"
-	"NitrosomonasSp.Is79a3"
-	"BuchneraAphidicolaCtu"
-	"MycobacteriumAviumParatuberculosis"
-	"ExiguobacteriumSibiricum"
-	"MycoplasmaHyopneumoniaeJ"
-	"MycoplasmaSynoviae"
-	"ThermusThermophilusHb27"
-	"PhytoplasmaOnionYellows"
-	"VerrucosisporaMaris"
-	"PneumocystisMurina"
-	"PicrophilusTorridus"
-	"RalstoniaEutrophaJmp134"
-	"StreptococcusThermophilusLmg18311"
-	"ProtochlamydiaAmoebophila"
-	"ChlamydophilaFelis"
-	"ZymomonasMobilisZm4"
-	"CapsellaGrandiflora"
-	"BacillusCibi"
-	"BdellovibrioBacteriovorusHd100"
-	"PseudomonasSyringaePhaseolicola"
-	"PrevotellaRuminicola"
-	"MoorellaThermoacetica"
-	"ByssochlamysSpectabilis"
-	"MethylobacillusFlagellatus"
-	"MesoplasmaFlorum"
-	"RubrobacterXylanophilus"
-	"CupriavidusMetallidurans"
-	"BurkholderiaXenovorans"
-	"ChryseobacteriumAntarcticum"
-	"PorphyromonasGingivicanis"
-	"ChelativoransSp.Bnc1"
-	"ThalassobacterStenotrophicus"
-	"SinorhizobiumMeliloti"
-	"MesorhizobiumLotiMaff303099"
-	"KineococcusRadiotolerans"
-	"MethanococcusMaripaludisS2"
-	"RalstoniaSolanacearumGmi1000"
-	"PropionibacteriumAcnesKpa171202"
-	"MycoplasmaMobile"
-	"PaenibacillusWynnii"
-	"NatronomonasMoolapensis"
-	"SynechococcusElongatusPcc6301"
-	"BurkholderiaVietnamiensis"
-	"EhrlichiaCanis"
-	"RhodospirillumRubrum"
-	"MethanosarcinaBarkeri"
-	"CytophagaHutchinsonii"
-	"GeobacterMetallireducens"
-	"ThermobifidaFusca"
-	"MarinobacterSp.Elb17"
-	"AnabaenaCylindrica"
-	"LeptolyngbyaBoryana"
-	"AggregatibacterActinomycetemcomitansHk1651"
-	"AeropyrumPernix"
-	"BacillusHalodurans"
-	"BacteroidesFragilisNctc9343"
-	"BurkholderiaPseudomalleiK96243"
-	"ClostridiumAcetobutylicum"
-	"PeptoclostridiumDifficile630"
-	"GluconacetobacterDiazotrophicus"
-	"HaloarculaMarismortui"
-	"LactobacillusAcidophilusNcfm"
-	"LactococcusLactisIl1403"
-	"LegionellaPneumophilaPhiladelphia"
-	"ListeriaInnocua"
-	"MethylobacteriumExtorquensAm1"
-	"MycobacteriumLeprae"
-	"MycoplasmaMycoides"
-	"MycoplasmaPenetrans"
-	"MycoplasmaPulmonis"
-	"PyrococcusAbyssi"
-	"RhodobacterCapsulatus"
-	"RhodobacterSphaeroides241"
-	"RickettsiaProwazekii"
-	"RickettsiaSibirica"
-	"HyaloperonosporaArabidopsidis"
-	"SulfolobusSolfataricus"
-	"SulfolobusTokodaii"
-	"CaldanaerobacterSubterraneus"
-	"ThermoplasmaAcidophilum"
-	"ThermoplasmaVolcanium"
-	"UreaplasmaParvum"
-	"WolinellaSuccinogenes"
-	"CandidaOrthopsilosis"
-	"SerratiaMarcescensDb11"
-	"MicrobacteriumOleivorans"
-	"PediococcusPentosaceus"
-	"DiplosphaeraColitermitum"
-	"AcidobacteriaceaeBacteriumTaa166"
-	"BacillusLicheniformis"
-	"NovosphingobiumAromaticivorans"
-	"PseudogulbenkianiaFerrooxidans"
-	"StaphylococcusHaemolyticus"
-	"LeifsoniaXyliCtcb07"
-	"CaenorhabditisJaponica"
-	"BartonellaQuintana"
-	"BartonellaHenselae"
-	"PseudoalteromonasSp.Bsw20308"
-	"IdiomarinaLoihiensis"
-	"StreptomycesFlavovariabilis"
-	"StreptomycesXylophagus"
-	"StreptomycesFulvoviolaceus"
-	"AmycolatopsisRifamycinica"
-	"BradyrhizobiumSp.Btai1"
-	"RenibacteriumSalmoninarum"
-	"ThermodesulfovibrioYellowstonii"
-	"ThermodesulfobacteriumCommune"
-	"MycoplasmaBovis"
-	"ChlorobiumLimicola"
-	"ChlorobiumPhaeobacteroidesDsm266"
-	"ChlorobiumPhaeovibrioides"
-	"ArthrobacterAurescens"
-	"AnaeromyxobacterDehalogenans"
-	"ChromohalobacterSalexigens"
-	"ArthrobacterSp.Fb24"
-	"JannaschiaSp.Ccs1"
-	"ClostridiumBeijerinckii"
-	"BorreliaGarinii"
-	"ProsthecochlorisAestuarii"
-	"GluconobacterOxydans621h"
-	"PhotorhabdusAsymbiotica"
-	"BlochmanniaPennsylvanicus"
-	"ErythrobacterVulgaris"
-	"RuegeriaSp.Tm1040"
-	"ThiobacillusDenitrificansAtcc25259"
-	"SymbiobacteriumThermophilum"
-	"CyanobacteriumStanieri"
-	"CyanobiumGracile"
-	"WolbachiaSp.Bma"
-	"CyphellophoraEuropaea"
-	"RickettsiaCanadensis"
-	"RickettsiaAkari"
-	"AlkaliphilusMetalliredigens"
-	"MycoplasmaHyopneumoniae232"
-	"MicromonasSp.Rcc299"
-	"PolaromonasSp.Js666"
-	"StreptomycesAvermitilis"
-	"PhotobacteriumProfundum"
-	"FrankiaSp.Ean1pec"
-	"FrankiaSp.Eui1c"
-	"FrankiaSp.Cn3"
-	"ThermusThermophilusHb8"
-	"PundamiliaNyererei"
-	"MethanocellaPaludicola"
-	"ThaueraSp.27"
-	"EndozoicomonasElysicola"
-	"CampylobacterLari"
-	"CampylobacterUpsaliensis"
-	"FischerellaMuscicola"
-	"CorynebacteriumJeikeium"
-	"ChryseobacteriumVrystaatense"
-	"CoprothermobacterProteolyticus"
-	"DictyoglomusThermophilum"
-	"HaloferaxVolcanii"
-	"ThermomicrobiumRoseum"
-	"ThermotogaNeapolitana"
-	"SalinibacterRuber"
-	"NeofusicoccumParvum"
-	"AgrobacteriumVitis"
-	"AgrobacteriumRadiobacter"
-	"DehalococcoidesMccartyiVs"
-	"PolynucleobacterNecessariusAsymbioticus"
-	"ActinobacteriumPhsc20c1"
-	"VibrioFischeri"
-	"JanibacterSp.Htcc2649"
-	"DokdoniaSp.Med134"
-	"PolaribacterIrgensii"
-	"PsychroflexusTorquis"
-	"RobiginitaleaBiformata"
-	"PolaribacterSp.Med152"
-	"MaribacterSp.Htcc2170"
-	"MicroscillaMarina"
-	"LyngbyaSp.Pcc8106"
-	"NodulariaSpumigena"
-	"SynechococcusSp.Bl107"
-	"LentisphaeraAraneosa"
-	"ErythrobacterLitoralis"
-	"BlastopirellulaMarina"
-	"FulvimarinaPelagi"
-	"LoktanellaVestfoldensisSka53"
-	"OceanicaulisSp.Htcc2633"
-	"OceanicolaGranulosus"
-	"ParvularculaBermudensis"
-	"RoseobacterSp.Med193"
-	"RoseovariusSp.217"
-	"PelagibacaBermudensis"
-	"SphingomonasSp.Ska58"
-	"RhodobacteraceaeBacteriumHtcc2083"
-	"MaritimibacterAlkaliphilus"
-	"AlteromonasMacleodiiDeep"
-	"NitrococcusMobilis"
-	"PsychromonasSp.Cnpt3"
-	"CongregibacterLitoralis"
-	"GammaproteobacteriaBacteriumHtcc2207"
-	"PhotobacteriumAngustum"
-	"LactobacillusSakei"
-	"MariprofundusFerrooxydans"
-	"BetaProteobacteriumKb13"
-	"BorreliaHermsii"
-	"FrankiaAlni"
-	"BorreliaTuricatae"
-	"RickettsiaFelis"
-	"BacillusWeihenstephanensis"
-	"BacillusCytotoxicus"
-	"BacillusPumilus"
-	"RhodopseudomonasPalustrisBisa53"
-	"RhodopseudomonasPalustrisBisb18"
-	"RhodopseudomonasPalustrisBisb5"
-	"RhodopseudomonasPalustrisHaa2"
-	"GeobacterDaltonii"
-	"XanthomonasCampestrisVesicatoria"
-	"HerpetosiphonAurantiacus"
-	"AliivibrioSalmonicida"
-	"SynechococcusSp.Rcc307"
-	"SynechococcusSp.Cc9902"
-	"EscherichiaColiK12W3110"
-	"XanthomonasAxonopodisPhaseoli"
-	"ThiomicrospiraCrunogena"
-	"ProchlorothrixHollandica"
-	"SphingopyxisAlaskensis"
-	"NostocSp.Pcc7107"
-	"ShewanellaDenitrificans"
-	"ShewanellaFrigidimarina"
-	"MycobacteriumRufum"
-	"ClostridiumSulfidigenes"
-	"ParacoccusDenitrificans"
-	"MagnaportheOryzae"
-	"BradyrhizobiumSp.Wsm1743"
-	"BradyrhizobiumSp.Wsm1253"
-	"ShewanellaPutrefaciens"
-	"ChlorobiumLuteolum"
-	"NonlabensSediminis"
-	"DeinococcusGeothermalis"
-	"AnaplasmaMarginaleFlorida"
-	"SynechococcusSp.Ja33ab"
-	"SynechococcusSp.Ja23ba"
-	"PseudomonasSimiae"
-	"BrevibacteriumLinens"
-	"PhytoplasmaWheatBlue"
-	"PhytoplasmaAsterYellows"
-	"StreptococcusThermophilusLmd9"
-	"AzotobacterVinelandii"
-	"NitrobacterHamburgensis"
-	"NitrobacterWinogradskyi"
-	"MethanospirillumHungatei"
-	"NitrosococcusOceani"
-	"NitrosospiraMultiformis"
-	"ShewanellaLoihica"
-	"PaenibacillusSp.Jdr2"
-	"ChloroflexusAurantiacus"
-	"LactobacillusGasseri"
-	"PelodictyonPhaeoclathratiforme"
-	"PhytophthoraKernoviae"
-	"XanthomonasAxonopodisVasculorum"
-	"ShewanellaAmazonensis"
-	"SulfurimonasDenitrificans"
-	"BacillusAmyloliquefaciens"
-	"LactobacillusHelveticusCnrz32"
-	"BifidobacteriumBreve"
-	"ChloroflexusAggregans"
-	"PseudoalteromonasHaloplanktisTac125"
-	"PseudozymaHubeiensis"
-	"BifidobacteriumCrudilactis"
-	"AcaryochlorisMarina"
-	"AmycolatopsisJejuensis"
-	"NitrospiraDefluvii"
-	"SulfolobusAcidocaldarius"
-	"BlattabacteriumSp.Bge"
-	"SimkaniaNegevensis"
-	"ChlamydophilaPecorum"
-	"ChlamydiaPsittaci6bc"
-	"ChlorobiumPhaeobacteroidesBs1"
-	"AlphaProteobacteriumBal199"
-	"ClostridiumDrakei"
-	"BacillusOkhensis"
-	"LactobacillusFermentumIfo3956"
-	"FinegoldiaMagnaAtcc29328"
-	"RickettsiaTamurae"
-	"NitrosomonasEutropha"
-	"PsychrobacterCryohalolentis"
-	"SyntrophomonasWolfei"
-	"SyntrophobacterFumaroxidans"
-	"BradyrhizobiumSp.S23321"
-	"PelagibacterUbiqueHtcc1062"
-	"RickettsiaBelliiRml369c"
-	"PyronemaOmphalodes"
-	"GordoniaSp.Ktr9"
-	"PelobacterCarbinolicus"
-	"PelobacterPropionicus"
-	"RhodoferaxFerrireducens"
-	"BurkholderiaAmbifaria"
-	"ActinobacillusSuccinogenes"
-	"MethanosphaeraStadtmanae"
-	"ThermoanaerobacterPseudethanolicus"
-	"SpathasporaPassalidarum"
-	"ChlorobiumChlorochromatii"
-	"BurkholderiaOklahomensis"
-	"StaphylococcusSaprophyticus"
-	"PseudoalteromonasAtlantica"
-	"PyrococcusSp.Na2"
-	"SodalisGlossinidius"
-	"PlanctomycesMaris"
-	"VibrioCholeraeO395"
-	"BacillusCoagulans36d1"
-	"KutzneriaSp.744"
-	"MycoplasmaHominis"
-	"RhizobiumEtliCfn42"
-	"NatronomonasPharaonis"
-	"RhizobiumSp.Lpu83"
-	"RhodobacterSphaeroidesAtcc17025"
-	"PsychrobacterSp.Prwf1"
-	"LactobacillusReuteri10023"
-	"HalorhodospiraHalophila"
-	"DesulfotomaculumReducens"
-	"AcidiphiliumCryptum"
-	"LeuconostocCitreum"
-	"PaenibacillusPolymyxaE681"
-	"HahellaChejuensis"
-	"AkkermansiaMuciniphila"
-	"YersiniaIntermedia"
-	"YersiniaFrederiksenii"
-	"MycobacteriumGilvum"
-	"MycobacteriumVanbaalenii"
-	"AlkaliphilusOremlandii"
-	"RoseobacterSp.Azwk3b"
-	"MethanocellaArvoryzae"
-	"MarinobacterHydrocarbonoclasticus"
-	"AcidothermusCellulolyticus"
-	"CaldicellulosiruptorSaccharolyticus"
-	"PseudomonasPutidaF1"
-	"PyramidobacterPiscolens"
-	"LactobacillusDelbrueckii2038"
-	"CampylobacterJejuni81176"
-	"BifidobacteriumTsurumiense"
-	"MicromonosporaChokoriensis"
-	"OrientiaTsutsugamushi"
-	"BacteroidesDorei"
-	"PsychromonasIngrahamii"
-	"RoseiflexusSp.Rs1"
-	"LachnoclostridiumPhytofermentans"
-	"AcidovoraxSp.Kks102"
-	"HalobiformaLacisalsi"
-	"BrevibacillusBrevisNbrc100599"
-	"StreptomycesOlindensis"
-	"XanthomonasOryzaePxo99a"
-	"BartonellaBacilliformis"
-	"CampylobacterConcisus13826"
-	"CampylobacterFetus8240"
-	"CampylobacterHominis"
-	"BordetellaAvium"
-	"ExiguobacteriumSp.At1b"
-	"MycobacteriumUlcerans"
-	"FlavobacteriumReichenbachii"
-	"EscherichiaColi536"
-	"HaloquadratumWalsbyiDsm16790"
-	"LawsoniaIntracellularis"
-	"EndocarponPusillum"
-	"PolaromonasNaphthalenivorans"
-	"RamlibacterTataouinensis"
-	"FrankiaSp.Bcu110501"
-	"StreptococcusMitisB6"
-	"SinorhizobiumMedicae"
-	"CaulobacterSp.K31"
-	"XanthomonasFuscans"
-	"PhycicoccusJejuensis"
-	"RhodobacteralesBacteriumHtcc2255"
-	"ArcobacterButzleriRm4018"
-	"MethanoculleusMarisnigri"
-	"ThermofilumPendens"
-	"SalinisporaTropica"
-	"PelotomaculumThermopropionicum"
-	"ErwiniaTypographi"
-	"RhodobacterSp.Sw2"
-	"BuchneraAphidicolaBcc"
-	"StreptococcusPneumoniaeD39"
-	"HalothermothrixOrenii"
-	"RivulariaSp.Pcc7116"
-	"KorarchaeumCryptofilum"
-	"JanthinobacteriumSp.Marseille"
-	"RoseobacterDenitrificans"
-	"FrancisellaTularensisHolarctica"
-	"FlavobacteriumJohnsoniae"
-	"ParacoccusHalophilus"
-	"TeredinibacterTurneraeT7901"
-	"KocuriaRhizophilaDc2201"
-	"StigmatellaAurantiaca"
-	"GemmatimonasAurantiaca"
-	"PseudomonasStutzeriA1501"
-	"XanthomonasAlbilineans"
-	"AcidithiobacillusFerrooxidansAtcc53993"
-	"AeromonasHydrophilaAtcc7966"
-	"HydrogenobaculumSp.Y04aas1"
-	"LachanceaThermotolerans"
-	"RalstoniaEutrophaH16"
-	"FervidobacteriumNodosum"
-	"AeromonasSalmonicida"
-	"VerrucomicrobiaeBacteriumDg1235"
-	"HelicobacterAcinonychis"
-	"BartonellaTribocorum"
-	"RoseiflexusCastenholzii"
-	"ErythrobacterSp.Jl475"
-	"XanthomonasOryzaeOryzicola"
-	"PyrobaculumIslandicum"
-	"PseudomonasEntomophila"
-	"LabrenziaAggregata"
-	"ThermophagusXiamenensis"
-	"ListeriaWelshimeri"
-	"ClostridiumNovyiNt"
-	"MethanobacteriumArcticum"
-	"NitratiruptorSp.Sb1552"
-	"SulfurovumSp.Nbc371"
-	"LactobacillusBrevisAtcc367"
-	"ArchaeoglobusSulfaticallidus"
-	"CupriavidusSp.Amp6"
-	"SagittulaStellata"
-	"RhodobacteraceaeBacteriumHtcc2150"
-	"AlgoriphagusMachipongonensis"
-	"PlanktothrixAgardhii"
-	"RoseobacterSp.Sk20926"
-	"StreptococcusSanguinisSk36"
-	"PseudomonasPutidaW619"
-	"BorreliaAfzelii"
-	"LactobacillusDelbrueckiiAtcc11842"
-	"ThermotogaPetrophila"
-	"ActinocatenisporaSera"
-	"StenotrophomonasMaltophiliaR5513"
-	"ThermosiphoMelanesiensis"
-	"EhrlichiaSp.Hf"
-	"SalinisporaArenicola"
-	"BurkholderiaPhymatum"
-	"GranulibacterBethesdensis"
-	"StreptococcusSuis05zyh33"
-	"KordiaAlgicida"
-	"RoseobacterSp.Gai101"
-	"RoseobacterSp.Ccs2"
-	"RoseobacterLitoralis"
-	"PedobacterSp.Bal39"
-	"FlavobacteriaBacteriumBal38"
-	"BrevundimonasSp.Bal3"
-	"FlavobacterialesBacteriumAlc1"
-	"CyanotheceSp.Ccy0110"
-	"RoseovariusSp.Tm1035"
-	"GammaproteobacteriaBacteriumHtcc5015"
-	"OctadecabacterArcticus"
-	"PhaeobacterInhibens"
-	"ThermococcusBarophilus"
-	"OceanibulbusIndolifex"
-	"PlesiocystisPacifica"
-	"OctadecabacterAntarcticus"
-	"VerminephrobacterEiseniae"
-	"RickettsiaBelliiOsu85389"
-	"NitratireductorPacificus"
-	"SphingomonasWittichii"
-	"ShewanellaWoodyi"
-	"PestalotiopsisFici"
-	"YersiniaEnterocolitica8081"
-	"FusobacteriumNucleatumPolymorphum"
-	"AlcanivoraxBorkumensis"
-	"PorphyromonasCrevioricanis"
-	"MaricaulisMaris"
-	"ClostridiumCellulolyticum"
-	"BurkholderiaMultivorans"
-	"RhizobiumLeguminosarumWsm2304"
-	"BeggiatoaAlba"
-	"GallionellaCapsiferriformans"
-	"LeptothrixCholodnii"
-	"CyanotheceSp.Pcc7425"
-	"BeijerinckiaIndica"
-	"MethylocapsaAcidiphila"
-	"MethylocellaSilvestris"
-	"BrachybacteriumPhenoliresistens"
-	"StaphylococcusCarnosus"
-	"ThioalkalivibrioSulfidiphilus"
-	"ThioalkalivibrioSp.K90mix"
-	"MarmoricolaAequoreus"
-	"LachnospiraceaeBacterium284"
-	"LachnospiraceaeBacterium31"
-	"LachnospiraceaeBacteriumA2"
-	"LachnospiraceaeBacteriumA4"
-	"AcidovoraxCitrulli"
-	"CaldivirgaMaquilingensis"
-	"BacillusPseudofirmus"
-	"PseudobacteroidesCellulosolvens"
-	"BifidobacteriumBifidumNcimb41171"
-	"BradyrhizobiumElkaniiUsda76"
-	"BurkholderiaPhytofirmans"
-	"DelftiaAcidovorans"
-	"ShewanellaPealeana"
-	"DinoroseobacterShibae"
-	"LeeuwenhoekiellaBlandensis"
-	"GeobacterLovleyi"
-	"MetallosphaeraSedula"
-	"StaphylothermusMarinus"
-	"PseudomonasMendocinaYmp"
-	"SerratiaProteamaculans"
-	"EnterobacterSp.638"
-	"ComamonasTestosteroniKf1"
-	"MarinomonasSp.Mwyl1"
-	"AmphimedonQueenslandica"
-	"TerriglobusSaanensis"
-	"BifidobacteriumDentium"
-	"ThermosinusCarboxydivorans"
-	"FlavobacteriumPsychrophilum"
-	"RalstoniaPickettii12j"
-	"KamptonemaFormosum"
-	"MethanococcusMaripaludisC5"
-	"ParvibaculumLavamentivorans"
-	"PetrotogaMobilis"
-	"GeobacterBemidjiensis"
-	"AnaeromyxobacterSp.Fw1095"
-	"LactobacillusHelveticusDpc4571"
-	"SaccharopolysporaErythraea"
-	"BacillusSp.M313"
-	"MethanococcusVannielii"
-	"NatrinemaSp.J72"
-	"XenorhabdusNematophila"
-	"XenorhabdusBovienii"
-	"NocardioidaceaeBacteriumBroad1"
-	"MethanocorpusculumLabreanum"
-	"PyrobaculumCalidifontis"
-	"GramellaForsetii"
-	"RuminococcusObeumAtcc29174"
-	"RuminococcusTorquesAtcc27756"
-	"DoreaFormicigeneransAtcc27755"
-	"DoreaLongicatenaDsm13814"
-	"EubacteriumVentriosum"
-	"DesulfovibrioPiger"
-	"ParvimonasMicra"
-	"ActinomycesOdontolyticus"
-	"PseudoflavonifractorCapillosus"
-	"ClostridiumScindens"
-	"EubacteriumHallii"
-	"RuminococcusGnavus"
-	"SubdoligranulumVariabile"
-	"RuminococcusCallidus"
-	"CoprococcusEutactus"
-	"BacteroidesOvatus"
-	"ParabacteroidesMerdae"
-	"BacteroidesUniformis"
-	"FaecalibacteriumPrausnitziiA2165"
-	"ClostridiumSp.L250"
-	"AnaerostipesCaccae"
-	"HoefleaPhototrophica"
-	"BacteroidesCaccae"
-	"ClostridiumBolteae"
-	"BorreliaDuttonii"
-	"ParacoccusSp.Trp"
-	"VesicomyosociusOkutanii"
-	"RuthiaMagnifica"
-	"HalorubrumHalophilum"
-	"RhodospirillumCentenum"
-	"ActinopolysporaErythraea"
-	"HyperthermusButylicus"
-	"ActinobacillusPleuropneumoniae5bL20"
-	"HalorubrumLacusprofundi"
-	"ThermotogaLettingae"
-	"LactococcusLactisCremoris"
-	"MethylobacteriumExtorquensPa1"
-	"MethanococcusAeolicus"
-	"MycobacteriumTuberculosisH37ra"
-	"GeobacillusThermodenitrificans"
-	"MethanobrevibacterSmithiiAtcc35061"
-	"MicrovirgaLupini"
-	"MethylibiumPetroleiphilum"
-	"LactococcusGarvieaeLg2"
-	"AcinetobacterRudis"
-	"EpilithonimonasLactis"
-	"ChryseobacteriumLuteum"
-	"ShewanellaSediminis"
-	"HelicobacterSp.Mit016451"
-	"ThiomonasArsenitoxydans"
-	"MethylobacteriumSp.446"
-	"MethylobacteriumRadiotolerans"
-	"MethanococcusMaripaludisC7"
-	"NocardiaRhamnosiphila"
-	"ClostridiumLeptum"
-	"ClostridiumSpiroforme"
-	"EubacteriumDolichum"
-	"AmmonifexDegensii"
-	"DactylellinaHaptotyla"
-	"BaudoiniaCompniacensis"
-	"ClostridiumKluyveri"
-	"PorphyromonasGingivalisAtcc33277"
-	"KazachstaniaAfricana"
-	"NeorickettsiaRisticii"
-	"BacteroidesVulgatus"
-	"ParabacteroidesDistasonis"
-	"ActinomycesGraevenitzii"
-	"NeisseriaMucosaC102"
-	"StaphylococcusHominisC80"
-	"StaphylococcusCapitis"
-	"StreptococcusSp.C150"
-	"IdiomarinaSalinarum"
-	"SulfurihydrogenibiumSp.Yo3aop1"
-	"StreptacidiphilusJeojiense"
-	"NitrosopumilusMaritimus"
-	"AcinetobacterOleivorans"
-	"AzorhizobiumCaulinodans"
-	"DesulfatibacillumAlkenivorans"
-	"BacillusSelenitireducens"
-	"OchrobactrumAnthropi"
-	"AciduliprofundumBoonei"
-	"PelagibacterSp.Htcc7211"
-	"RhodobacteralesBacteriumY4i"
-	"RuegeriaSp.R11"
-	"PseudomonasSp.Chol1"
-	"MethylobacteriumPopuli"
-	"AcholeplasmaLaidlawii"
-	"BacillusCoahuilensis"
-	"GeobacterSp.M18"
-	"GeobacterSp.M21"
-	"MarinobacterAlgicola"
-	"AmycolicicoccusSubflavus"
-	"MarinitogaPiezophila"
-	"StreptomycesClavuligerus"
-	"BradyrhizobiumSp.Cp53"
-	"ClavibacterMichiganensisNcppb382"
-	"PyrobaculumNeutrophilum"
-	"MethanococcusMaripaludisC6"
-	"ClostridiumBotulinumNctc2916"
-	"ChryseobacteriumSoli"
-	"AlistipesPutredinis"
-	"AnaerofustisStercorihominis"
-	"AnaerotruncusColihominis"
-	"IntestinibacterBartlettii"
-	"ErysipelatoclostridiumRamosum"
-	"CollinsellaStercoris"
-	"BorreliaValaisianaVs116"
-	"ActinosynnemaMirum"
-	"BrachybacteriumFaecium"
-	"CellulomonasFlavigena"
-	"NocardiopsisDassonvillei"
-	"SanguibacterKeddieii"
-	"StackebrandtiaNassauensis"
-	"XylanimonasCellulosilytica"
-	"SorangiumCellulosumSoCe56"
-	"MicrocystisAeruginosa"
-	"BacteroidesStercoris"
-	"MicrobacteriumProfundi"
-	"PhenylobacteriumZucineum"
-	"AmoebophilusAsiaticus"
-	"OpitutusTerrae"
-	"PolynucleobacterNecessariusStir1"
-	"KitasatosporaSetae"
-	"RickettsiaRickettsii"
-	"SphingobiumJaponicumUt26s"
-	"ArthrobacterChlorophenolicus"
-	"IgnicoccusHospitalis"
-	"XanthomonasArboricola"
-	"GlaciecolaSp.Htcc2999"
-	"StreptomycesGriseus"
-	"MethanococcusVoltae"
-	"ThaueraSp.63"
-	"MethanoregulaBoonei"
-	"ClostridiumSp.7243faa"
-	"DesulfovibrioSp.31syn3"
-	"FusobacteriumNucleatumAnimalis"
-	"RuminococcusSp.5139bfaa"
-	"SynergistesSp.31syn1"
-	"ClostridialesBacterium1747faa"
-	"BacteroidesFragilis3112"
-	"StreptomycesAlbusJ1074"
-	"StreptomycesPristinaespiralis"
-	"NatranaerobiusThermophilus"
-	"MacrococcusCaseolyticus"
-	"ShewanellaHalifaxensis"
-	"CloacimonasAcidaminovorans"
-	"ArthrospiraPlatensisC1"
-	"MethylobacteriumNodulans"
-	"StreptomycesSviceus"
-	"MicrococcusLuteusNctc2665"
-	"StreptomycesSp.Mg1"
-	"ErwiniaTasmaniensis"
-	"PelagibacterUbiqueHtcc8051"
-	"AcinetobacterSp.Ver3"
-	"StreptomycesGriseoflavus"
-	"RhodobacteraceaeBacteriumKlh11"
-	"StreptococcusGordonii"
-	"PedobacterOryzae"
-	"GordoniaKroppenstedtii"
-	"EscherichiaColiBl21"
-	"ThermobisporaBispora"
-	"CryptobacteriumCurtum"
-	"DethiosulfovibrioPeptidovorans"
-	"HalogeometricumBorinquense"
-	"ConexibacterWoeseiDsm14684"
-	"CitrobacterSp.302"
-	"CoprobacillusSp.291"
-	"FusobacteriumNucleatumVincentii3136a2"
-	"FusobacteriumNucleatumVincentii4113"
-	"StreptococcusSp.2136faa"
-	"BurkholderialesBacterium1147"
-	"FusobacteriumGonidiaformans"
-	"FusobacteriumMortiferum"
-	"FusobacteriumUlcerans"
-	"FusobacteriumVarium"
-	"BacteroidesCoprocola"
-	"CladophialophoraYegresii"
-	"GeobacillusSp.Wch70"
-	"ThermomonosporaCurvata"
-	"BeutenbergiaCavernae"
-	"DyadobacterFermentans"
-	"SlackiaHeliotrinireducens"
-	"JonesiaDenitrificans"
-	"SaccharomonosporaViridis"
-	"BacteroidesIntestinalis"
-	"ProvidenciaStuartii"
-	"RuminococcusLactaris"
-	"ProteusPenneri"
-	"NitratireductorBasaltis"
-	"NitrosococcusHalophilus"
-	"ColletotrichumGloeosporioides"
-	"BlautiaHydrogenotrophica"
-	"AchromobacterArsenitoxydans"
-	"PseudomonasStutzeriTs44"
-	"ModestobacterMarinus"
-	"DesulforudisAudaxviator"
-	"VerrucomicrobiaBacteriumLp2a"
-	"MarvinbryantiaFormatexigens"
-	"KytococcusSedentarius"
-	"NakamurellaMultipartita"
-	"StreptosporangiumRoseum"
-	"CatenulisporaAcidiphila"
-	"SphaerobacterThermophilus"
-	"KribbellaFlavida"
-	"VeillonellaParvula"
-	"EggerthellaLenta"
-	"MethylacidiphilumInfernorum"
-	"EscherichiaColiAtcc8739"
-	"StreptococcusCanis"
-	"GaleopterusVariegatus"
-	"BacteroidesFinegoldii"
-	"BacteroidesEggerthii"
-	"BacteroidesPectinophilus"
-	"MyxococcusFulvus"
-	"BacteroidesPlebeius"
-	"ThermosiphoAfricanus"
-	"FrancisellaPhilomiragia"
-	"PelosinusSp.Ufo1"
-	"KtedonobacterRacemifer"
-	"HalomicrobiumMukohataei"
-	"DesulfohalobiumRetbaense"
-	"DesulfotomaculumAcetoxidans"
-	"PedobacterHeparinus"
-	"ChitinophagaPinensis"
-	"AcinetobacterSoli"
-	"MycobacteriumIntracellulare"
-	"FlavobacteriaBacteriumMs0242a"
-	"PuniceispirillumMarinum"
-	"NeisseriaLactamica"
-	"MooreaProducens"
-	"DesulfurococcusKamchatkensis"
-	"ChryseobacteriumHispalense"
-	"AnoxybacillusFlavithermusWk1"
-	"RhizobiumEtliCiat652"
-	"MarinomonasPosidonica"
-	"RhizobiumAlamii"
-	"GlaciecolaArctica"
-	"PsychrobacterSp.Tb15"
-	"ArthrobacterSp.Tb23"
-	"MycoplasmaFermentans"
-	"ChthoniobacterFlavus"
-	"CyanotheceSp.Pcc7822"
-	"CellvibrioJaponicus"
-	"BorreliaSpielmanii"
-	"HeliobacteriumModesticaldum"
-	"ThermusAquaticus"
-	"StreptomycesAvicenniae"
-	"TyzzerellaNexilis"
-	"ClostridiumHiranonis"
-	"MitsuokellaMultacida"
-	"ProvidenciaRustigianii"
-	"CitrobacterYoungae"
-	"CitreicellaSp.Se45"
-	"HaliangiumOchraceum"
-	"EscherichiaAlbertiiTw07627"
-	"EggerthellaSp.Yy7918"
-	"SpirosomaLinguale"
-	"CorynebacteriumUrealyticum"
-	"JejuiaPallidilutea"
-	"MeiothermusRuber"
-	"OligotrophaCarboxidovorans"
-	"RheinheimeraSp.A13l"
-	"CaulobacterSegnis"
-	"AcetivibrioCellulolyticus"
-	"PedobacterSp.V48"
-	"CaldisericumExile"
-	"OceanimonasSp.Gk1"
-	"EscherichiaColiK12Mg1655"
-	"LactobacillusBuchneriNrrlb30929"
-	"ButyrivibrioCrossotus"
-	"AzobacteroidesPseudotrichonymphae"
-	"MycoplasmaCrocodyli"
-	"ActinoplanesMissouriensis"
-	"RiesiaPediculicola"
-	"EubacteriumEligens"
-	"ButyrivibrioProteoclasticusB316"
-	"DictyoglomusTurgidum"
-	"ChlorobaculumParvum"
-	"ChloroherpetonThalassium"
-	"PantoeaSp.Ab"
-	"CitromicrobiumSp.Jlt1363"
-	"BifidobacteriumAngulatum"
-	"HoldemanellaBiformis"
-	"RhodothermusMarinus"
-	"StreptobacillusMoniliformis"
-	"HalorhabdusUtahensis"
-	"EctothiorhodospiraSp.Phs1"
-	"AcinetobacterSp.Niph973"
-	"ProvidenciaAlcalifaciens"
-	"ProvidenciaRettgeriDsm1131"
-	"CollinsellaIntestinalis"
-	"BorreliaBissettii"
-	"MethanosphaerulaPalustris"
-	"KosmotogaOlearia"
-	"AtopobiumParvulum"
-	"TsukamurellaPaurometabola"
-	"CapnocytophagaOchraceaDsm7271"
-	"AlicyclobacillusAcidocaldariusDsm446"
-	"ActinomycesTimonensis"
-	"CaldicellulosiruptorBescii"
-	"PlanctomycesLimnophilus"
-	"PseudomonasCaeni"
-	"AccumulibacterPhosphatis"
-	"StenotrophomonasMaltophiliaK279a"
-	"DenitrovibrioAcetiphilus"
-	"KangiellaKoreensis"
-	"LeptotrichiaBuccalis"
-	"HaloferaxMediterranei"
-	"MethanothermococcusThermolithotrophicus"
-	"ThermococcusOnnurineus"
-	"DesulfovibrioDesulfuricansAtcc27774"
-	"AcinetobacterSp.Atcc27244"
-	"ActinomycesColeocanis"
-	"ActinomycesUrogenitalisDsm15434"
-	"AnaerococcusLactolyticusAtcc51172"
-	"AnaerococcusTetradius"
-	"AtopobiumVaginaeDsm15829"
-	"ChryseobacteriumGleum"
-	"CorynebacteriumAccolens"
-	"CorynebacteriumLipophiloflavum"
-	"CorynebacteriumPseudogenitalium"
-	"CorynebacteriumStriatum"
-	"FinegoldiaMagnaAtcc53516"
-	"LactobacillusAntri"
-	"LactobacillusBuchneriAtcc11577"
-	"LactobacillusUltunensis"
-	"ListeriaGrayi"
-	"MycobacteriumParascrofulaceum"
-	"SphingobacteriumSpiritivorum"
-	"StaphylococcusCaprae"
-	"StreptococcusEquinus"
-	"DesulfomicrobiumBaculatum"
-	"SulfurospirillumDeleyianum"
-	"ThermanaerovibrioAcidaminovorans"
-	"ThermobaculumTerrenum"
-	"AcidimicrobiumFerrooxidans"
-	"AnaerococcusPrevotiiDsm20548"
-	"SebaldellaTermitidis"
-	"DesulfovibrioSalexigens"
-	"BrachyspiraMurdochii"
-	"GeodermatophilusObscurus"
-	"GordoniaBronchialis"
-	"MeiothermusSilvanus"
-	"YersiniaAldovae"
-	"ProteusMirabilis"
-	"PyrococcusYayanosii"
-	"ThecamonasTrahens"
-	"RhodolunaLacicola"
-	"PirellulaStaleyi"
-	"FlavobacteriaceaeBacterium351910"
-	"CylindrospermopsisRaciborskii"
-	"RaphidiopsisBrookii"
-	"AcidovoraxEbreus"
-	"MesorhizobiumOpportunistum"
-	"ClostridiumCarboxidivorans"
-	"ClostridiumBotulinumA2Kyoto"
-	"ClostridiumBotulinumE1Bont"
-	"BlautiaHansenii"
-	"PrevotellaCopri"
-	"ClostridiumMethylpentosum"
-	"LiberibacterAsiaticusPsy62"
-	"HelicobacterCanadensis"
-	"HelicobacterCinaediCcug18818"
-	"HelicobacterPullorum"
-	"HaloterrigenaTurkmenica"
-	"ActinoplanesSubtropicus"
-	"VariovoraxParadoxusS110"
-	"LactobacillusCaseiBl23"
-	"BetaProteobacteriumCb"
-	"ClostridiumArbusti"
-	"ThioalkalivibrioSp.Akl11"
-	"ThioalkalivibrioSp.Alj24"
-	"BacillusMegateriumQmB1551"
-	"TreponemaPrimitiaZas2"
-	"TreponemaAzotonutricium"
-	"HoldemaniaFiliformis"
-	"ClostridiumCelatum"
-	"NeisseriaCinerea"
-	"NeisseriaFlavescensNrl30031h210"
-	"NeisseriaMucosaAtcc25996"
-	"NeisseriaPolysaccharea"
-	"NeisseriaSubflava"
-	"FilifactorAlocis"
-	"GemellaHaemolysansAtcc10379"
-	"SelenomonasSputigena"
-	"VeillonellaDispar"
-	"EikenellaCorrodensAtcc23834"
-	"FusobacteriumPeriodonticum"
-	"DeinococcusDeserti"
-	"BacteroidesCoprophilus"
-	"BifidobacteriumPseudocatenulatum"
-	"NeisseriaSicca"
-	"HydrogenobaculumSp.Ho"
-	"MycobacteriumVulneris"
-	"NatrialbaMagadii"
-	"CorynebacteriumAurimucosum"
-	"CorynebacteriumGlucuronolyticum"
-	"MobiluncusCurtisiiAtcc43063"
-	"FerrimonasBalearica"
-	"NostocAzollae"
-	"HirschiaMaritima"
-	"PonticaulisKoreensis"
-	"ErysipelotrichaceaeBacterium5254faa"
-	"RuminococcaceaeBacteriumD16"
-	"CryptococcusGattii"
-	"BifidobacteriumAnimalis"
-	"DehalogenimonasLykanthroporepellens"
-	"PrevotellaBiviaJcvihmp010"
-	"PrevotellaMelaninogenica"
-	"PorphyromonasEndodontalis"
-	"CapnocytophagaSputigena"
-	"CapnocytophagaGingivalis"
-	"AtopobiumRimae"
-	"CorynebacteriumAmycolatum"
-	"CorynebacteriumMatruchotii"
-	"EnhydrobacterAerosaccus"
-	"CampylobacterRectus"
-	"CampylobacterShowaeRm3277"
-	"CampylobacterGracilis"
-	"CobetiaCrustatorum"
-	"ClostridiumHylemonae"
-	"ChlorellaVariabilis"
-	"ThermosediminibacterOceani"
-	"DethiobacterAlkaliphilus"
-	"ZymomonasMobilisAtcc10988"
-	"GalbibacterMarinus"
-	"HalothiobacillusNeapolitanus"
-	"DesulfonatronospiraThiodismutans"
-	"NovosphingobiumSp.Rr217"
-	"ClostridiumSp.D5"
-	"FusobacteriumNecrophorumD12"
-	"HelicobacterWinghamensis"
-	"OxalobacterFormigenesHoxbls"
-	"OxalobacterFormigenesOxcc13"
-	"LactobacillusReuteriDsm20016"
-	"LaribacterHongkongensis"
-	"MycobacteriumKansasiiAtcc12478"
-	"ChryseobacteriumPiperi"
-	"LentibacillusJeotgali"
-	"CorynebacteriumDoosanense"
-	"AeromonasSp.Ae122"
-	"ActinomaduraFlavalba"
-	"AnaerococcusHydrogenalis"
-	"BifidobacteriumGallicum"
-	"DickeyaZeae"
-	"PectobacteriumCarotovorumPc1"
-	"PectobacteriumWasabiae"
-	"AmphibacillusJilinensis"
-	"KyrpidiaTusciae"
-	"ActinomycesViscosus"
-	"GemellaHaemolysansM341"
-	"GemellaMorbillorum"
-	"GemellaSanguinis"
-	"PrevotellaOrisC735"
-	"PrevotellaSp.C561"
-	"StreptococcusSp.M143"
-	"StreptococcusSp.M334"
-	"SulfurimonasAutotrophica"
-	"BilophilaWadsworthia316"
-	"GeoglobusAcetivorans"
-	"BrachyspiraHyodysenteriae"
-	"LuminiphilusSyltensis"
-	"UreaplasmaUrealyticum"
-	"LegionellaPneumophilaParis"
-	"EnterococcusCasseliflavus"
-	"EnterococcusFaeciumC68"
-	"StreptomycesGhanaensis"
-	"GammaproteobacteriaBacteriumNor53"
-	"BifidobacteriumCatenulatum"
-	"MetarhiziumRobertsii"
-	"LactobacillusRhamnosus"
-	"BordetellaPertussis18323"
-	"DickeyaSp.Ncppb569"
-	"AcidaminococcusIntestini"
-	"SerratiaSymbiotica"
-	"NocardiopsisPotens"
-	"WolbachiaSp.Culex"
-	"FodinicurvataSediminis"
-	"FodinicurvataFenggangensis"
-	"SedimentitaleaNanhaiensis"
-	"HamiltonellaDefensa"
-	"AllochromatiumVinosum"
-	"VulcanisaetaDistributa"
-	"HalanaerobiumPraevalens"
-	"ArcobacterNitrofigilis"
-	"IlyobacterPolytropus"
-	"ArchaeoglobusProfundus"
-	"AminobacteriumColombiense"
-	"ClostridiumCellulovorans"
-	"MethanocaldococcusInfernus"
-	"MethanocaldococcusFervens"
-	"AsticcacaulisExcentricus"
-	"DesulfovibrioMagneticusRs1"
-	"BacillusGaemokensis"
-	"SpirochaetaSmaragdinae"
-	"FrancisellaSp.Tx077308"
-	"AcetohalobiumArabaticum"
-	"BacillusManliponensis"
-	"AnaplasmaCentrale"
-	"HalomonasZhanjiangensis"
-	"IsosphaeraPallida"
-	"AcinetobacterSp.Ruh2624"
-	"AcinetobacterJohnsonii"
-	"AcinetobacterLwoffiiSh145"
-	"AcinetobacterRadioresistens"
-	"BacteroidetesF0058"
-	"LachnospiraceaeF0167"
-	"LactobacillusColeohominis"
-	"LactobacillusJensenii1153chn"
-	"LactobacillusJensenii272chn"
-	"PeptoniphilusSp.F0131"
-	"PrevotellaSp.F0108"
-	"VibrioTasmaniensis"
-	"MethanocaldococcusVulcanius"
-	"ZymomonasMobilisPomaceae"
-	"DickeyaDadantiiEch703"
-	"ThermoanaerobacteriumThermosaccharolyticum"
-	"ThermoanaerobacterItalicus"
-	"SideroxydansLithotrophicus"
-	"ThermovirgaLienii"
-	"HirschiaBaltica"
-	"RubidibacterLacunae"
-	"MethylovorusGlucosetrophus"
-	"HyphomicrobiumDenitrificansAtcc51888"
-	"MethyloteneraMobilisJlw8"
-	"CoraliomargaritaAkajimensis"
-	"AminomonasPaucivorans"
-	"MobiluncusCurtisiiAtcc35241"
-	"MobiluncusMulierisAtcc35243"
-	"StreptococcusMitisSk321"
-	"StreptococcusMitisSk564"
-	"StreptococcusMitisSk597"
-	"RoseburiaHominis"
-	"SynechococcusSp.Kordi49"
-	"SynechococcusSp.Kordi52"
-	"OribacteriumSinus"
-	"PrevotellaBergensis"
-	"SelenomonasNoxiaAtcc43541"
-	"WeissellaParamesenteroides"
-	"LactobacillusAmylolyticus"
-	"CorynebacteriumGenitalium"
-	"BrevibacteriumMcbrellneri"
-	"AeromicrobiumMarinum"
-	"BacteroidesSp.D20"
-	"OceanobacillusManasiensis"
-	"TerribacillusAidingensis"
-	"PseudomonasChlororaphis"
-	"ClostridiumPapyrosolvens"
-	"RhizophagusIrregularis"
-	"KazachstaniaNaganishii"
-	"BrevundimonasNaejangsanensis"
-	"DesulfurivibrioAlkaliphilus"
-	"AlteromonasAustralica"
-	"FerroglobusPlacidus"
-	"DickeyaDadantiiEch586"
-	"CellulomonasFimi"
-	"AcidaminococcusFermentans"
-	"StaphylothermusHellenicus"
-	"ActinobacillusMinor202"
-	"StreptomycesSp.Spb78"
-	"StreptomycesSp.Aa4"
-	"StreptomycesViridochromogenes"
-	"StreptomycesPratensis"
-	"AbiotrophiaDefectiva"
-	"AnaerobaculumHydrogeniformans"
-	"CatonellaMorbi"
-	"ClostridiumBotulinumD1873"
-	"DialisterInvisus"
-	"NonlabensDokdonensis"
-	"EubacteriumSaphenum"
-	"PantoeaSp.At9b"
-	"PantoeaSp.Sc1"
-	"ThermococcusGammatolerans"
-	"MethanoregulaFormicica"
-	"CellvibrioGilvus"
-	"RhodopirellulaSp.Swk7"
-	"TolumonasAuensis"
-	"MethylosinusTrichosporium"
-	"VariovoraxParadoxusEps"
-	"ArthrobacterSp.A3"
-	"DesulfovibrioFructosivorans"
-	"DesulfovibrioSp.U5l"
-	"AlicycliphilusDenitrificansBc"
-	"AlicycliphilusDenitrificansK601"
-	"OlsenellaUli"
-	"PeptostreptococcusStomatis"
-	"StaphylococcusWarneriL37603"
-	"NeisseriaFlavescensSk114"
-	"LeptotrichiaGoodfellowii"
-	"TreponemaVincentii"
-	"PorphyromonasUenonis603"
-	"MobiluncusMulieris281"
-	"PeptostreptococcusAnaerobius653l"
-	"PeptoniphilusLacrimalis"
-	"BrenneriaSp.Enid312"
-	"NautiliaProfundicola"
-	"BlattabacteriumSp.Bplan"
-	"MeiothermusRufus"
-	"ThermococcusSibiricus"
-	"CaldicellulosiruptorObsidiansis"
-	"OribacteriumSp.F0262"
-	"HydrogenobacterThermophilus"
-	"ClostridiumSaccharolyticumWm1"
-	"HelicobacterBilis"
-	"RhodoferaxSaidenbachensis"
-	"ArenibacterAlgicola"
-	"VibrioSplendidus"
-	"PrevotellaSp.F0295"
-	"AquimarinaAgarilytica"
-	"PaenibacillusSp.D14"
-	"RoseburiaInulinivorans"
-	"MethylocystisSp.Atcc49242"
-	"GranulicatellaElegans"
-	"BurkholderiaGlumae"
-	"PrevotellaTannerae"
-	"ShuttleworthiaSatelles"
-	"MarinobacterNanhaiticus"
-	"PhascolarctobacteriumSuccinatutens"
-	"SphingobiumSp.Syk6"
-	"PseudomonasSyringaeMaculicola"
-	"StaphylococcusHominisSk119"
-	"SphingomonasSp.Mn802worker"
-	"ShimwelliaBlattae"
-	"ThiorhodovibrioSp.970"
-	"LutibaculumBaratangense"
-	"ClostridiumButyricum"
-	"CaldicellulosiruptorHydrothermalis"
-	"CaldicellulosiruptorKristjanssonii"
-	"CaldicellulosiruptorOwensensis"
-	"ThalassobiumSp.R2a62"
-	"ThermosphaeraAggregans"
-	"BrevundimonasSubvibrioides"
-	"EubacteriumCellulosolvens6"
-	"AggregatibacterAphrophilus"
-	"KomagataeibacterMedellinensis"
-	"AcetobacterPasteurianusIfo328301"
-	"HaloarculaHispanica"
-	"MethanobrevibacterRuminantium"
-	"ErwiniaPyrifoliae"
-	"ErwiniaBillingiae"
-	"BartonellaGrahamii"
-	"GeobacillusThermoglucosidasius"
-	"LeptotrichiaHofstadii"
-	"ThermincolaPotens"
-	"AcidithiobacillusCaldus"
-	"AcidithiobacillusThiooxidans"
-	"ShewanellaViolacea"
-	"CitrobacterRodentium"
-	"ActinobacillusMinorNm305"
-	"GranulicatellaAdiacens"
-	"SelenomonasFlueggei"
-	"ThermocrinisAlbus"
-	"AcidobacteriaBacteriumKbs146"
-	"DeferribacterDesulfuricans"
-	"StarkeyaNovella"
-	"DechlorosomaSuillum"
-	"SegniliparusRotundus"
-	"BurkholderiaSp.Ccge1001"
-	"BurkholderiaSp.Ccge1002"
-	"BurkholderiaSp.Ccge1003"
-	"EnterobacterAsburiaeLf7a"
-	"ClostridiumSp.Dlviii"
-	"RuminococcusFlavefaciensFd1"
-	"CapnocytophagaGranulosa"
-	"ScardoviaInopinata"
-	"SimonsiellaMuelleri"
-	"NeisseriaSp.F0314"
-	"DesulfovibrioDesulfuricansNd132"
-	"CyclobacteriumQasimii"
-	"WinogradskyellaPsychrotolerans"
-	"TatumellaMorbirosei"
-	"ClostridiumLentocellum"
-	"MicrochaeteSp.Pcc7126"
-	"DesulfovibrioAespoeensis"
-	"SyntrophothermusLipocalidus"
-	"MarivirgaTractuosa"
-	"SilicibacterSp.Trichch4b"
-	"SilicibacterLacuscaerulensis"
-	"MethanocaldococcusSp.Fs40622"
-	"DesulfarculusBaarsii"
-	"MicromonosporaAurantiaca"
-	"ArcanobacteriumHaemolyticum"
-	"GordoniaNeofelifaecis"
-	"PseudomonasStutzeriRch2"
-	"ThermaerobacterMarianensis"
-	"DesulfovibrioSp.Fw1012b"
-	"CorynebacteriumKroppenstedtii"
-	"StreptomycesSp.E14"
-	"JonquetellaAnthropiE333e1"
-	"SyntrophobotulusGlycolicus"
-	"DesulfosporosinusAcidiphilus"
-	"MethanothermococcusOkinawensis"
-	"RhodomicrobiumVannielii"
-	"MethylobacteriumSp.Mb200"
-	"ThermovibrioAmmonificans"
-	"LeadbetterellaByssophila"
-	"TrueperaRadiovictrix"
-	"BacillusCellulosilyticus"
-	"ActinomycesSp.F0332"
-	"AneurinibacillusAneurinilyticus"
-	"CorynebacteriumAmmoniagenes"
-	"PrevotellaVeroralisF0319"
-	"SlackiaExigua"
-	"ActinoplanesSp.N902109"
-	"ErysipelothrixRhusiopathiae"
-	"RhodopseudomonasPalustrisDx1"
-	"StreptomycesViolaceusniger"
-	"ActinomycesSp.F0330"
-	"DesulfurispirillumIndicum"
-	"AlbugoLaibachii"
-	"AnaerococcusVaginalis"
-	"AerococcusViridansAtcc11563"
-	"StreptococcusOralisAtcc35037"
-	"ZunongwangiaProfunda"
-	"PseudogymnoascusDestructans"
-	"FrankiaSymbiont"
-	"HalanaerobiumHydrogeniformans"
-	"BacteroidesXylanisolvens"
-	"FaecalibacteriumPrausnitziiSl33"
-	"LachnospiraceaeBacterium3157faact1"
-	"LachnospiraceaeBacterium9143bfaa"
-	"LiberibacterSolanacearum"
-	"LegionellaDrancourtii"
-	"PseudomonasSp.H2"
-	"LachnospiraceaeBacterium1456faa"
-	"ErysipelotrichaceaeBacterium3153"
-	"MesotogaPrima"
-	"OlsenellaSp.F0356"
-	"LegionellaLongbeachae"
-	"FimbriimonasGinsengisoli"
-	"HaloferaxMucosum"
-	"CorynebacteriumResistens"
-	"EthanoligenensHarbinense"
-	"RegiellaInsecticola"
-	"MethylocapsaAurea"
-	"AcetobacterAcetiAtcc23746"
-	"StreptococcusDysgalactiaeAtcc27957"
-	"ErwiniaAmylovora"
-	"SpirochaetaThermophila"
-	"StreptomycesViridosporus"
-	"DesulfovibrioSp.6146afaa"
-	"LachnospiraceaeBacterium3146faa"
-	"BacillusSmithii"
-	"SubdoligranulumSp.4354a2faa"
-	"BacillusSp.2a57ct2"
-	"PlanktomarinaTemperata"
-	"AcidilobusSaccharovorans"
-	"MethyloteneraVersatilis"
-	"AfipiaSp.1nls2"
-	"RhodanobacterDenitrificans"
-	"BacillusSp.1nla3e"
-	"ThermodesulfatatorIndicus"
-	"BacteroidesSalanitronis"
-	"EdwardsiellaTardaAtcc15947"
-	"BurkholderiaSp.Jpy347"
-	"MannheimiaHaemolyticaBovine"
-	"ProfftellaArmatura"
-	"MicrovirgaAerilata"
-	"HyphomicrobiumDenitrificans1nes1"
-	"OceanithermusProfundus"
-	"MetallosphaeraYellowstonensis"
-	"MethylomirabilisOxyfera"
-	"AciduliprofundumSp.Mar08339"
-	"BabelaMassiliensis"
-	"VibrioAlginolyticus40b"
-	"PseudonocardiaDioxanivorans"
-	"VibrioMimicus"
-	"GrimontiaHollisae"
-	"VibrioMetschnikovii"
-	"VibrioCoralliilyticus"
-	"VibrioSp.Rc586"
-	"VibrioOrientalis"
-	"PhotobacteriumDamselae"
-	"FrancisellaTularensisNovicida"
-	"PrevotellaTimonensisCris5cb1"
-	"PrevotellaBuccalisAtcc35310"
-	"PrevotellaAmnii"
-	"BulleidiaExtructa"
-	"SegniliparusRugosus"
-	"AlloprevotellaRava"
-	"JohnsonellaIgnava"
-	"SelenomonasInfelix"
-	"HelicobacterMustelae"
-	"MethanoplanusPetrolearius"
-	"AlistipesFinegoldii"
-	"BacteroidesCoprosuis"
-	"StreptomycesScabiei"
-	"RothiaMucilaginosa"
-	"GranulicellaMallensis"
-	"CampylobacterJejuni414"
-	"ListeriaSeeligeri12b"
-	"AlphaProteobacteriumHimb114"
-	"DeinococcusSp.2009"
-	"CitromicrobiumBathyomarinum"
-	"RhodococcusEqui"
-	"SphingomonasSp.Pr090111t3t6a"
-	"BartonellaRochalimae"
-	"MethylomicrobiumAlbum"
-	"PseudomonasSp.S9"
-	"ComamonasTestosteroniCnb2"
-	"PrevotellaMultisaccharivorax"
-	"ThermotogaThermarum"
-	"CellulophagaAlgicola"
-	"OribacteriumSp.Nk2b42"
-	"RhizobiumVignae"
-	"PseudomonasFluorescensNz007"
-	"DesulfovibrioAfricanus"
-	"FonticulaAlba"
-	"EnterobacteriaceaeBacteriumStrain"
-	"ArchaeoglobusVeneficus"
-	"OscillibacterValericigenes"
-	"DeinococcusProteolyticus"
-	"BacteroidesHelcogenes"
-	"MethylobacteriumOryzae"
-	"PaludibacterPropionicigenes"
-	"PyrolobusFumarii"
-	"NatronococcusOccultus"
-	"DesulfurellaAcetivorans"
-	"MethanomicrobiumMobile"
-	"AggregatibacterActinomycetemcomitansD7s1"
-	"BartonellaClarridgeiae"
-	"DesulfotomaculumRuminis"
-	"DesulfotomaculumNigrificans"
-	"ArthrospiraPlatensisNies39"
-	"ActinobacillusSuis"
-	"MahellaAustraliensis"
-	"MethylobacterTundripaludum"
-	"PaenibacillusLarvae"
-	"ThermoanaerobacterWiegelii"
-	"RuminococcusAlbus7"
-	"MarssoninaBrunnea"
-	"StaphylococcusLugdunensisHku0901"
-	"PyrobaculumOguniense"
-	"AmphibacillusXylanus"
-	"RhizobiumTropici"
-	"VirgibacillusAlimentarius"
-	"GardnerellaVaginalis6119v5"
-	"CorynebacteriumDiphtheriae"
-	"MegasphaeraGenomosp."
-	"ClostridialesGenomosp."
-	"StreptococcusRatti"
-	"CoriobacteriumGlomerans"
-	"MycobacteriumNeoaurum"
-	"NiastellaKoreensis"
-	"VibrioSp.N418"
-	"EnterobacterLignolyticus"
-	"PediococcusClaussenii"
-	"NovosphingobiumSp.Pp1y"
-	"SelenomonasNoxiaF0398"
-	"PrevotellaOulorumF0390"
-	"TuricibacterSanguinis"
-	"BifidobacteriumBifidumPrl2010"
-	"PantoeaAnanatisLmg20103"
-	"SolobacteriumMooreiF0204"
-	"MegasphaeraMicronuciformis"
-	"CapnocytophagaSp.F0087"
-	"StreptococcusAnginosusF0211"
-	"ActinomycesSp.F0337"
-	"DesulfomonileTiedjei"
-	"MycoplasmaGallisepticumF"
-	"SulfuricurvumKujiense"
-	"BradyrhizobiaceaeBacteriumSg6c"
-	"DeinococcusMaricopensis"
-	"OdoribacterSplanchnicus"
-	"FrankiaSp.Qa3"
-	"ColletotrichumFioriniae"
-	"HelicobacterSuis"
-	"MycobacteriumChubuense"
-	"MycobacteriumRhodesiaeNbb3"
-	"MycobacteriumSmegmatisJs623"
-	"MycobacteriumTusciae"
-	"IntrasporangiumCalvum"
-	"StreptomycesSp.Gxt6"
-	"PantoeaVagans"
-	"ThioalkalivibrioThiocyanodenitrificans"
-	"ThioalkalivibrioThiocyanoxidansArh4"
-	"LactobacillusIners"
-	"LeucobacterChromiiresistens"
-	"LactobacillusSanfranciscensis"
-	"MucilaginibacterPaludis"
-	"LysinibacillusFusiformis"
-	"AsticcacaulisBiprosthecum"
-	"AlteromonasSp.Sn2"
-	"EnterobacterCloacaeAtcc13047"
-	"WaddliaChondrophila"
-	"EnsiferSojae"
-	"FlexistipesSinusarabici"
-	"ThermobacillusComposti"
-	"PaenibacillusCurdlanolyticus"
-	"ThioalkalimicrobiumAerophilum"
-	"ThioalkalimicrobiumCyclicum"
-	"MarinomonasMediterranea"
-	"HyphomicrobiumSp.Mc1"
-	"FaecalibacteriumPrausnitziiL26"
-	"ClostridiumClariflavum"
-	"BacillusAtrophaeus"
-	"PseudoalteromonasHaloplanktisAnt505"
-	"MycoplasmaPneumoniae"
-	"IdiomarinaXiamenensis"
-	"RahnellaSp.Y9602"
-	"AchromobacterPiechaudiiAtcc43553"
-	"CollinsellaSp.4847faa"
-	"LachnospiraceaeBacterium2146faa"
-	"AlistipesIndistinctus"
-	"BarnesiellaIntestinihominis"
-	"BacteroidesOleiciplenus"
-	"ClostridiumCitroniae"
-	"ClostridiumClostridioforme"
-	"ClostridiumOrbiscindens"
-	"ClostridiumSymbiosumWal14163"
-	"ClostridiumSymbiosumWal14673"
-	"CollinsellaTanakaei"
-	"DialisterSuccinatiphilus"
-	"DoreaFormicigenerans4653afaa"
-	"DysgonomonasGadei"
-	"DysgonomonasMossii"
-	"OdoribacterLaneus"
-	"SlackiaPiriformis"
-	"SutterellaWadsworthensis3145b"
-	"SutterellaWadsworthensis2159bfaa"
-	"AcidithiobacillusFerrivorans"
-	"ThermusScotoductus"
-	"IsoptericolaVariabilis"
-	"PaenibacillusLactis"
-	"PseudomonasFulva"
-	"PseudoxanthomonasSuwonensis111"
-	"SphingobacteriumSp.21"
-	"MethylocystisSp.Sb2"
-	"MycoplasmaPutrefaciensKs1"
-	"MycoplasmaBovoculi"
-	"MoraxellaBovoculi"
-	"TreponemaCaldaria"
-	"AhrensiaSp.R2a130"
-	"RoseibiumSp.Trichskd4"
-	"AlphaProteobacteriumHimb59"
-	"GammaproteobacteriaBacteriumHimb55"
-	"RahnellaAquatilisCip78.65"
-	"SphingomonasSp.Mm1"
-	"GallaecimonasXiamenensis"
-	"OlleyaSp.Vcsm12"
-	"DeinococcusGobiensis"
-	"AspergillusFumigatus"
-	"AequorivitaSublithincola"
-	"ThermodesulfobiumNarugense"
-	"MycoplasmaAlligatoris"
-	"FaecalibacteriumPrausnitziiKle1255"
-	"AzoarcusSp.Kh32c"
-	"PseudogulbenkianiaSp.Nh8b"
-	"HalobacteroidesHalobius"
-	"ThioalkalivibrioSp.Alsr1"
-	"LactobacillusCrispatus"
-	"ClostridiumLjungdahlii"
-	"NitratifractorSalsuginis"
-	"StreptomycesBingchenggensis"
-	"AmycolatopsisMediterranei"
-	"HalobacteriumSp.Dl1"
-	"ThermusOshimai"
-	"GammaproteobacteriaBacteriumHimb30"
-	"TreponemaPhagedenis"
-	"MesorhizobiumAustralicum"
-	"PropionibacteriumFreudenreichii"
-	"EscherichiaSp.Tw09308"
-	"PhotobacteriumAphoticum"
-	"MethylophagaNitratireducenticrescens"
-	"MethylophagaFrappieri"
-	"CyanobacteriumAponinum"
-	"ClostridiumSp.Bnl1100"
-	"FluviicolaTaffensis"
-	"MicrocoleusVaginatus"
-	"PlanctomycesBrasiliensis"
-	"DesulfitobacteriumDehalogenans"
-	"HaloferacalesArchaeonDl31"
-	"HerbaspirillumSeropedicae"
-	"KetogulonicigeniumVulgare"
-	"StreptococcusDysgalactiaeEquisimilis"
-	"BrachyspiraPilosicoli"
-	"SphaerochaetaCoccoides"
-	"MassiliaConsociata"
-	"HippeaMaritima"
-	"SulfurospirillumBarnesii"
-	"HaliscomenobacterHydrossis"
-	"DesulfotomaculumKuznetsovii"
-	"RunellaSlithyformis"
-	"LeuconostocKimchii"
-	"BifidobacteriumStellenboschense"
-	"AchromobacterXylosoxidansA8"
-	"LeuconostocGasicomitatum"
-	"PedobacterSaltans"
-	"RothiaDentocariosa"
-	"ActinomycesSp.F0386"
-	"ParasutterellaExcrementihominis"
-	"ParaprevotellaClara"
-	"ParaprevotellaXylaniphila"
-	"SuccinatimonasHippei"
-	"BacteroidesClarus"
-	"BacteroidesFluxus"
-	"StreptococcusUrinalis228597"
-	"StreptococcusMacacae"
-	"StreptococcusIctaluri"
-	"PropionibacteriumAcnesHl037pa2"
-	"DesulfurococcusMucosus"
-	"OscillochlorisTrichoides"
-	"MesorhizobiumCiceriBiovar"
-	"BdellovibrioBacteriovorusW"
-	"MarichromatiumPurpuratum"
-	"ThiocystisViolascens"
-	"ThioflavicoccusMobilis"
-	"ThiorhodococcusDrewsii"
-	"ThiorhodospiraSibirica"
-	"ParachlamydiaAcanthamoebae"
-	"CitreicellaSp.357"
-	"PropionibacteriumPropionicum"
-	"PrevotellaDenticola"
-	"FrateuriaAurantia"
-	"DesulfotomaculumGibsoniae"
-	"HalomonasElongata"
-	"EnterococcusHirae"
-	"CalditerrivibrioNitroreducens"
-	"ThiocapsaMarina"
-	"DesulfurococcusFermentans"
-	"ThermoproteusTenax"
-	"DesulfosporosinusMeridiei"
-	"DesulfosporosinusOrientis"
-	"DesulfosporosinusYoungiae"
-	"StreptococcusMitis2F0392"
-	"FervidobacteriumPennivorans"
-	"SinorhizobiumSp.Ccbau05631"
-	"OpitutaceaeBacteriumTav5"
-	"ThermodesulfobacteriumGeofontis"
-	"RalstoniaSp.Pba"
-	"HalalkalicoccusJeotgali"
-	"NesterenkoniaSp.F"
-	"BacillusMethanolicusMga3"
-	"VibrioCaribbeanicus"
-	"PeptostreptococcaceaeBacteriumCm5"
-	"StomatobaculumLongum"
-	"OribacteriumParvum"
-	"HalosimplexCarlsbadense"
-	"HaladaptatusPaucihalophilus"
-	"HalopigerXanaduensis"
-	"HalostagnicolaLarsenii"
-	"HalovivaxRuber"
-	"NatrinemaPellirubrum"
-	"NatronobacteriumGregoryi"
-	"LactobacillusParafarraginis"
-	"SpiroplasmaMirum"
-	"MicavibrioAeruginosavorusArl13"
-	"MethylomonasMethanica"
-	"ScardoviaWiggsiae"
-	"CaloramatorAustralicus"
-	"MoraxellaCatarrhalis"
-	"ThermoanaerobacteriumXylanolyticum"
-	"CorynebacteriumVariabile"
-	"MycoplasmaHaemofelis"
-	"AlphaProteobacteriumHimb5"
-	"RalstoniaSolanacearumPsi07"
-	"CapnocytophagaCanimorsus"
-	"AgrobacteriumSp.H133"
-	"GemmatimonadetesBacteriumKbs708"
-	"ArthrobacterArilaitensis"
-	"AnaeroglobusGeminatus"
-	"FusobacteriumSp.F0437"
-	"LachnospiraceaeBacteriumF0431"
-	"StreptococcusSp.F0407"
-	"StaphylococcusSp.Al1"
-	"PediococcusAcidilacticiDsm20284"
-	"PrevotellaMarshii"
-	"PeptoniphilusDuerdenii"
-	"StreptomycesSp.Sirexaae"
-	"BacteriovoraxMarinus"
-	"HaemophilusParainfluenzae"
-	"StreptococcusIntermedius"
-	"StreptococcusConstellatusPharyngisC1050"
-	"StreptococcusAnginosusC1051"
-	"StreptococcusAnginosusC238"
-	"CorynebacteriumNuruki"
-	"XanthomonasHortorum"
-	"BurkholderialesBacteriumJoshi001"
-	"MicrovirgaLotononidis"
-	"HerbaspirillumFrisingense"
-	"SelenomonasSp.67h29bp"
-	"ParascardoviaDenticolensDsm10105"
-	"EubacteriumYurii"
-	"StreptococcusMitisAtcc6249"
-	"StreptococcusSp.73h25ap"
-	"OscillatorialesCyanobacterium"
-	"ClostridiumUltunense"
-	"GillisiaLimnaea"
-	"WeeksellaVirosa"
-	"BelliellaBaltica"
-	"SchizosaccharomycesCryophilus"
-	"PrevotellaDisiensFb03509an"
-	"AtopobiumVaginaePb189t14"
-	"AerococcusUrinae"
-	"VeillonellaAtypicaAcs049vsch6"
-	"HalobacillusHalophilus"
-	"ChloroflexusSp.Y3961"
-	"CellulophagaLytica"
-	"OrnithobacteriumRhinotracheale"
-	"ThermaerobacterSubterraneus"
-	"MethanobacteriumPaludis"
-	"DesulfotomaculumCarboxydivorans"
-	"DesulfurobacteriumThermolithotrophum"
-	"TreponemaSuccinifaciens"
-	"MarinithermusHydrothermalis"
-	"CytophagaFermentans"
-	"ThiothrixNivea"
-	"VibrioScophthalmi"
-	"AcinetobacterCalcoaceticus"
-	"DesulfitobacteriumDichloroeliminans"
-	"DesulfitobacteriumMetallireducens"
-	"StreptococcusParauberisNcfd2020"
-	"StreptococcusPorcinus"
-	"StreptococcusCriceti"
-	"PrevotellaBuccaeAtcc33574"
-	"CapnocytophagaOchraceaF0287"
-	"PrevotellaOralisAtcc33269"
-	"MycobacteriumSp.Jdm601"
-	"PeptoniphilusRhinitidis"
-	"GammaproteobacteriaBacteriumImcc3088"
-	"MethyloferulaStellata"
-	"RuminococcusSp.Nk3a76"
-	"ClostridialesBacteriumNk3b98"
-	"ErysipelotrichaceaeBacteriumNk3d112"
-	"TreponemaBryantii"
-	"LachnospiraceaeBacteriumNk4a136"
-	"LachnospiraceaeBacteriumNk4a144"
-	"LachnospiraceaeBacteriumNk4a179"
-	"MethanobacteriumLacus"
-	"DesulfobacterPostgatei"
-	"PorphyromonasAsaccharolytica"
-	"AnaerococcusPrevotiiAcs065vcol13"
-	"PeptoniphilusSp.F0436"
-	"VeillonellaSp.F0412"
-	"SelenomonasSp.F0430"
-	"CyclobacteriumMarinum"
-	"FlexibacterLitoralis"
-	"DesulfobaccaAcetoxidans"
-	"CaldithrixAbyssi"
-	"BarnesiellaViscericola"
-	"MycoplasmaLeachii"
-	"RikenellaMicrofusus"
-	"ListeriaIvanoviiPam55"
-	"SaccharomonosporaCyanea"
-	"SaccharomonosporaMarina"
-	"SaccharomonosporaXinjiangensis"
-	"BurkholderiaRhizoxinica"
-	"ActinobaculumMassiliae"
-	"ActinobaculumSchaalii"
-	"ActinomycesEuropaeus"
-	"ActinomycesTuricensis"
-	"AfipiaBroomeae"
-	"AfipiaFelis"
-	"AlloiococcusOtitis"
-	"BergeyellaZoohelcum"
-	"DolosigranulumPigrum"
-	"EubacteriumInfirmum"
-	"FacklamiaHominis"
-	"FacklamiaIgnava"
-	"FacklamiaLanguida"
-	"HelcococcusKunzii"
-	"MassiliaTimonae"
-	"VeillonellaRatti"
-	"PrevotellaMicans"
-	"StreptococcusUrinalisFb127cna2"
-	"TuricellaOtitidis"
-	"JonquetellaAnthropiDsm22815"
-	"FukomysDamarensis"
-	"SingulisphaeraAcidiphila"
-	"MuricaudaRuestringensis"
-	"AnaerophagaThermohalophila"
-	"PaenibacillusPolymyxaSc2"
-	"HylemonellaGracilisAtcc19624"
-	"LachnoanaerobaculumSaburreumDsm3986"
-	"KingellaKingae"
-	"LautropiaMirabilis"
-	"PseudoramibacterAlactolyticus"
-	"StreptococcusParasanguinisAtcc903"
-	"StreptococcusOralisAtcc49296"
-	"ActinomycesCardiffensis"
-	"ActinomycesSp.F0310"
-	"LeptotrichiaWadei"
-	"ActinomycesSp.F0400"
-	"CapnocytophagaSp.F0234"
-	"CentipedaPeriodontii"
-	"DialisterMicraerophilus"
-	"EnterococcusItalicus"
-	"ActinomycesNeuiiBvs029a5"
-	"EubacteriumSulci"
-	"PrevotellaMultiformis"
-	"StreptococcusPeroris"
-	"StreptococcusSanguinisSk49"
-	"StreptococcusSanguinisSk355"
-	"StreptococcusSanguinisSk1057"
-	"PrevotellaSalivae"
-	"StreptococcusAustralis"
-	"StreptococcusCristatus"
-	"StreptococcusInfantisAtcc700779"
-	"SpirochaetaAfricana"
-	"LactobacillusAcidophilus30sc"
-	"AnaerobaculumMobile"
-	"PlautiaStali"
-	"MoranellaEndobia"
-	"EubacteriumLimosum"
-	"HolophagaFoetida"
-	"GardnerellaVaginalis101"
-	"StreptococcusDownei"
-	"StreptococcusSp.F0418"
-	"OribacteriumSp.F0425"
-	"StreptococcusVestibularis"
-	"StaphylococcusPettenkoferi"
-	"NonlabensUlvanivorans"
-	"TreponemaBrennaborense"
-	"HelicobacterPyloriSouthafrica7"
-	"LeuconostocFallax"
-	"TreponemaSaccharophilum"
-	"EremococcusColeocolaAcs139vcol8"
-	"PeptoniphilusHarei"
-	"LactobacillusOrisPb013t23"
-	"ClostridiumSp.Hgf2"
-	"AlistipesSp.Hgb5"
-	"PrevotellaDentalis"
-	"ActinokineosporaSp.Eg49"
-	"SyntrophorhabdusAromaticivorans"
-	"AlphaproteobacteriumSar116"
-	"StreptococcusPseudoporcinus"
-	"DialisterMicroaerophilus"
-	"EwingellaAmericana"
-	"LeclerciaAdecarboxylata"
-	"PseudovibrioSp.Fobeg1"
-	"WeissellaCibaria"
-	"PseudomonasSp.Cf149"
-	"LysobacterArseniciresistens"
-	"LactobacillusCoryniformisKctc3167"
-	"DesulfosporosinusSp.Ot"
-	"SediminibacteriumSp.Or53"
-	"XanthomonasVesicatoria"
-	"AdhaeribacterAquaticus"
-	"CaldilineaAerophila"
-	"CapnocytophagaCynodegmi"
-	"DeinococcusPimensis"
-	"EchinicolaVietnamensis"
-	"JoostellaMarina"
-	"MeiothermusChliarophilus"
-	"OreniaMarismortui"
-	"OwenweeksiaHongkongensis"
-	"PromicromonosporaKroppenstedtii"
-	"TerriglobusRoseus"
-	"ThermanaerovibrioVelox"
-	"AnaerolineaThermophila"
-	"HaloplanusNatans"
-	"HalonatronumSaccharophilum"
-	"AlkaliflexusImshenetskii"
-	"StreptococcusOralisUo5"
-	"SynechocystisSp.Pcc7509"
-	"LeuconostocGelidumKctc3527"
-	"SelenomonasRuminantiumLactilytica"
-	"BartonellaSp.R4"
-	"SaccharomonosporaGlauca"
-	"ClostridiumBotulinumBkt015925"
-	"SolitaleaCanadensis"
-	"SulfurimonasGotlandica"
-	"EmticiciaOligotrophica"
-	"FlectobacillusMajor"
-	"MyroidesOdoratus"
-	"PatulibacterMinatonensis"
-	"NiabellaSoli"
-	"BartonellaSenegalensis"
-	"PseudomonasBrassicacearum"
-	"AlcanivoraxDieselolei"
-	"ArthrobacterPhenanthrenivorans"
-	"SulfolobusIslandicus"
-	"FructobacillusFructosus"
-	"ClostridiumSaccharoperbutylacetonicum"
-	"HalococcusMorrhuae"
-	"AcetobacteriumWoodii"
-	"MycobacteriumRhodesiaeJs60"
-	"SerratiaSp.M24t3"
-	"PantoeaAnanatisAj13355"
-	"ThermocrinisRuber"
-	"PlanococcusDonghaensis"
-	"DesulfosarcinaSp.Bus5"
-	"AcidianusHospitalis"
-	"AminobacterSp.J41"
-	"MesorhizobiumLotiR88b"
-	"SinorhizobiumArboris"
-	"ParacoccusPantotrophus"
-	"PseudoxanthomonasSuwonensisJ43"
-	"BacillusSp.J33"
-	"BacillusSp.J37"
-	"CellulosimicrobiumCellulans"
-	"ChelativoransSp.J32"
-	"PaenibacillusSp.J14"
-	"ParacoccusSp.J39"
-	"LuteimonasSp.J29"
-	"NocardioidesSp.J54"
-	"CaldanaerobiusPolysaccharolyticus"
-	"RhizopusDelemar"
-	"RhizobiumLeguminosarum248"
-	"LactobacillusFarciminis"
-	"StreptococcusParauberisKctc11537"
-	"HelicobacterFelis"
-	"MogibacteriumSp.Cm50"
-	"BradyrhizobiumGenosp."
-	"ActinomycesSp.Icm47"
-	"AtopobiumSp.Bs2"
-	"SelenomonasSp.Fobrc6"
-	"SelenomonasSp.Fobrc9"
-	"ShuttleworthiaSp.Msx8b"
-	"StreptococcusSp.Cm6"
-	"VeillonellaSp.As16"
-	"LachnoanaerobaculumSp.Msx33"
-	"TaylorellaEquigenitalis"
-	"DeinococcusPeraridilitoris"
-	"ClostridialesBacterium9400853"
-	"ClostridialesBacterium9401234"
-	"ClostridialesBacterium9403326"
-	"AnaerococcusSp.9402080"
-	"BacteroidetesBacteriumScgcAaa027n21"
-	"AcetobacterPasteurianus3p3"
-	"DesulfovibrioSp.X2"
-	"BacillusCoagulans26"
-	"LactobacillusFructivorans"
-	"ThermobrachiumCelere"
-	"BurkholderiaSp.Wsm2230"
-	"HippeaJasoniae"
-	"HippeaAlviniae"
-	"HippeaSp.Km1"
-	"ArcobacterButzleriEd1"
-	"ArcobacterSp.L"
-	"ActinomycesSp.F0384"
-	"LactobacillusOrisF0423"
-	"VeillonellaSp.F0422"
-	"ParvimonasSp.F0440"
-	"TetragenococcusHalophilus"
-	"VibrioBrasiliensis"
-	"VibrioSinaloensis"
-	"CorynebacteriumUlcerans"
-	"IgnavibacteriumAlbum"
-	"ImtechellaHalotolerans"
-	"OceanobacillusMassiliensis"
-	"SalpingoecaRosetta"
-	"SymbiobacterMobilis"
-	"BurkholderiaDilworthii"
-	"AvibacteriumParagallinarum72"
-	"StreptomycesVenezuelae"
-	"CupriavidusTaiwanensis"
-	"MicrobacteriumTestaceum"
-	"FlavobacteriaceaeBacteriumHqm9"
-	"MorusNotabilis"
-	"AcinetobacterSp.Nctc7422"
-	"AcinetobacterLwoffiiNctc5866"
-	"AcinetobacterUrsingii"
-	"StreptacidiphilusRugosus"
-	"OrnithinibacillusScapharcae"
-	"RuegeriaConchae"
-	"CampylobacterFetusVenerealis"
-	"LacinutrixSp.5h374"
-	"GlaciecolaSp.4h37ye5"
-	"DokdoniaSp.4h375"
-	"RubrivivaxGelatinosus"
-	"NovosphingobiumNitrogenifigens"
-	"SaprospiraGrandis"
-	"StaphylococcusPseudintermedius"
-	"HeterobasidionIrregulare"
-	"VulcanisaetaMoutnovskia"
-	"RuegeriaHalocynthiae"
-	"GillisiaSp.Cal575"
-	"PaenibacillusTerrae"
-	"StaphylococcusAgnetis"
-	"OdyssellaThessalonicensis"
-	"CaldalkalibacillusThermarum"
-	"RubrivivaxBenzoatilyticus"
-	"LebetimonasSp.Js170"
-	"RhizobiumGrahamii"
-	"PolymorphumGilvum"
-	"RiemerellaAnatipestifer"
-	"SaccharopolysporaSpinosa"
-	"YoungiibacterFragilis"
-	"StreptococcusSuisR61"
-	"StreptomycesGriseoaurantiacus"
-	"BacillusMethanolicusPb1"
-	"DesmosporaSp.8437"
-	"PeptoniphilusIndolicus"
-	"PrevotellaNigrescens"
-	"PrevotellaPallens"
-	"PorphyromonasSp.Kle1280"
-	"StreptococcusInfantisX"
-	"BacteroidesNordii"
-	"AeromonasVeronii"
-	"LeucothrixMucor"
-	"HalomonasSp.Td01"
-	"ClostridiumColicanis"
-	"ClostridiumInnocuum"
-	"EggerthiaCatenaformis"
-	"ParabacteroidesJohnsonii"
-	"SelenomonasSp.F0473"
-	"GordoniaSputi"
-	"StreptococcusSp.F0442"
-	"BurkholderiaGladioli"
-	"LeisingeraDaeponensis"
-	"LeisingeraCaerulea"
-	"PseudophaeobacterArcticus"
-	"LeisingeraAquimarina"
-	"ThermoproteusUzoniensis"
-	"MethyloversatilisUniversalisFam5"
-	"MegasphaeraSp.Upii135e"
-	"StreptococcusAnginosusSk52"
-	"StreptococcusMitis2Sk95"
-	"CryobacteriumRoopkundense"
-	"PhotobacteriumLeiognathiMandapamensis"
-	"PseudomonasMendocinaNk01"
-	"PsychrobacterSp.1501"
-	"LeisingeraSp.Ang1"
-	"PrevotellaStercorea"
-	"PelagibacterSp.Imcc9063"
-	"HelicobacterBizzozeronii"
-	"SolibacillusSilvestris"
-	"StreptomycesCattleya"
-	"AchromobacterInsuavis"
-	"MesoflavibacterZeaxanth.S86"
-	"AlteromonasMacleodiiBlack"
-	"CollimonasFungivorans"
-	"BuchneraAphidicolaUa"
-	"GallibacteriumAnatis"
-	"BuchneraAphidicolaAk"
-	"PseudomonasPutidaCsv86"
-	"StreptococcusOralisSk255"
-	"StreptococcusInfantisSk1076"
-	"OgataeaParapolymorpha"
-	"TrabulsiellaGuamensis"
-	"TatumellaPtyseos"
-	"LeminorellaGrimontii"
-	"KluyveraAscorbata"
-	"ButtiauxellaAgrestis"
-	"MetallosphaeraCuprina"
-	"MycoplasmaGallisepticumS6"
-	"OscillibacterRuminantium"
-	"PaenibacillusElgii"
-	"SphingomonasSp.S17"
-	"PusillimonasSp.T77"
-	"StreptococcusMitisSk1080"
-	"MyroidesInjenensis"
-	"TaylorellaAsinigenitalis"
-	"AcetonemaLongum"
-	"BuchneraAphidicolaG002"
-	"MethylophagaAminisulfidivorans"
-	"NannospalaxGalili"
-	"EndozoicomonasMontiporae"
-	"SporosarcinaNewyorkensis"
-	"GordoniaAlkanivorans"
-	"ListeriaMonocytogenesScott"
-	"EnterobacterAerogenes"
-	"NeorhizobiumGalegaeOrientalis"
-	"NeorhizobiumGalegaeOfficinalis"
-	"HaemophilusHaemolyticusM19501"
-	"HaemophilusHaemolyticusM21621"
-	"HaemophilusHaemolyticusM21639"
-	"ArthromitusSp.Sfbmousejapan"
-	"AcinetobacterSp.P838"
-	"KocuriaRhizophilaP74"
-	"SphingomonasSp.Kc8"
-	"CaloramatorSp.Ald01"
-	"RalstoniaSolanacearumPo82"
-	"MicrolunatusPhosphovorus"
-	"AeromicrobiumMassiliense"
-	"AlistipesSenegalensis"
-	"AnaerococcusSenegalensis"
-	"BacillusTimonensis"
-	"BrevibacteriumSenegalense"
-	"ClostridiumSenegalense"
-	"KurthiaSp.Dielmo"
-	"KurthiaMassiliensis"
-	"KurthiaSp.Jc8e"
-	"PaenibacillusSenegalensis"
-	"PeptoniphilusSenegalensis"
-	"SalinisphaeraShabanensis"
-	"HalorhabdusTiamatea"
-	"HaloplasmaContractile"
-	"LactobacillusKefiranofaciens"
-	"RhizobiumLeguminosarumCb782"
-	"SenegalimassiliaAnaerobia"
-	"BacillusMassiliosenegalensis"
-	"PaenibacillusSp.Hw567"
-	"FlavobacteriumBranchiophilum"
-	"MycoplasmaAnatis"
-	"StaphylococcusLugdunensisN920143"
-	"LegionellaMassiliensis"
-	"StreptococcusMitisSk569"
-	"StreptococcusConstellatusPharyngisSk1060"
-	"StreptococcusInfantisSk970"
-	"BrevundimonasDiminuta4704"
-	"CapnocytophagaSp.F0382"
-	"CorynebacteriumDurum"
-	"PeptostreptococcusAnaerobiusVpi4330"
-	"PrevotellaSp.F0040"
-	"DehalobacterSp.Fth1"
-	"HaemophilusSputorum"
-	"IdiomarinaSp.A28l"
-	"BradyrhizobiumJaponicumUsda6"
-	"MycoplasmaColumbinum"
-	"AzorhizobiumDoebereinerae"
-	"BradyrhizobiumElkaniiWsm1741"
-	"BradyrhizobiumElkaniiWsm2783"
-	"BradyrhizobiumJaponicumUsda124"
-	"BradyrhizobiumSp.Wsm2793"
-	"BradyrhizobiumSp.Wsm3983"
-	"BurkholderiaMimosarum"
-	"PseudomonasFluorescensQ287"
-	"MesorhizobiumLotiCj3sym"
-	"MesorhizobiumLotiUsda3471"
-	"MesorhizobiumSp.Wsm3224"
-	"MesorhizobiumSp.Wsm3626"
-	"BradyrhizobiumSp.Arr65"
-	"RhizobiumGallicum"
-	"RhizobiumGiardinii"
-	"RhizobiumLeguminosarumGb30"
-	"RhizobiumSullae"
-	"RhizobiumLeucaenae"
-	"EnsiferSp.Wsm1721"
-	"ArthromitusSp.Sfbratyit"
-	"MycobacteriumColombiense"
-	"WickerhamomycesCiferrii"
-	"FlavobacteriumColumnare"
-	"MethanocellaConradii"
-	"ClostridiumSp.Sy8519"
-	"BrevibacillusLaterosporusLmg15441"
-	"PseudomonasFluorescensHk44"
-	"RhizobiumSp.Ibun"
-	"MarinobacteriumStanieri"
-	"FlavobacteriaceaeBacteriumS85"
-	"MicrobulbiferAgarilyticus"
-	"PseudomonasPutidaS16"
-	"ThermococcusSp.4557"
-	"SerinicoccusProfundi"
-	"LysinimicrobiumMangrovi"
-	"OenococcusKitaharae"
-	"CitricoccusSp.Ch26a"
-	"WeissellaKoreensis"
-	"PseudoxanthomonasSpadix"
-	"EnterobacterCloacaeEcwsu1"
-	"BrachyspiraIntermedia"
-	"AcinetobacterLwoffiiWj10621"
-	"BizioniaArgentinensis"
-	"StreptococcusSalivarius57i"
-	"GayadomonasJoobiniege"
-	"MarinobacterLipolyticusBf04cf4"
-	"AminicenantesBacteriumAaa252a02"
-	"ZymoseptoriaTritici"
-	"SporichthyaPolymorpha"
-	"ParacoccidioidesSp.Lutzii"
-	"MycoplasmaIowae"
-	"AlicyclobacillusAcidocaldariusTc41"
-	"AnditaleaAndensis"
-	"EndosymbiontOfTevnia"
-	"AllobaculumStercoricanis"
-	"ActinopolysporaMortivallis"
-	"PropionibacteriumAcnesSk182bjcvi"
-	"BacillusMojavensis"
-	"VerticilliumAlfalfae"
-	"SulfobacillusAcidophilus"
-	"VibrioTubiashii"
-	"NeisseriaWeaveri"
-	"PaenibacillusPolymyxaM1"
-	"AcetobacteraceaeBacteriumAt5844"
-	"ThermoplasmatalesArchaeon"
-	"StreptococcusPseudopneumoniae"
-	"StreptomycesPurpureus"
-	"PsychrobacterSp.Tb67"
-	"CaldisphaeraLagunensis"
-	"GrimontiaIndica"
-	"NocardiaSp.Bmg51109"
-	"TeredinibacterTurneraeT7902"
-	"EnsiferSp.Br816"
-	"MegasphaeraElsdenii"
-	"BrachybacteriumParaconglomeratum"
-	"AmycolatopsisMethanolica"
-	"AmycolatopsisNigrescens"
-	"HoefleaSp.108"
-	"SuccinispiraMobilis"
-	"StreptococcusInfantarius"
-	"LactobacillusRuminisAtcc27782"
-	"GlomeribacterGigasporarum"
-	"HalonotiusSp.J07hn4"
-	"BacillusSp.Nsp222"
-	"Haloarchaeon3a1dgr"
-	"TetrapisisporaBlattae"
-	"LactobacillusBuchneriCd034"
-	"BurkholderiaGrimmiae"
-	"BasileaPsittacipulmonis"
-	"CronobacterCondimenti"
-	"LactobacillusCurvatus"
-	"BrachybacteriumSquillarum"
-	"BlattabacteriumSp.Madar"
-	"GordoniaAmarae"
-	"BlattabacteriumSp.Cpu"
-	"PantoeaRwandensis"
-	"DietziaAlimentaria"
-	"BacteroidesFaecis"
-	"ArthrobacterGlobiformis"
-	"GordoniaEffusa"
-	"MycobacteriumThermoresistibile"
-	"StaphylococcusSp.Hgb0015"
-	"PaenisporosarcinaSp.Hgh0030"
-	"RhizobiumMongolense"
-	"StreptomycesChartreusis"
-	"CitrobacterSp.S77"
-	"SphingomonasElodea"
-	"AquilunaSp.Imcc13023"
-	"LonsdaleaQuercina"
-	"PelagibacteriumHalotolerans"
-	"AgrobacteriumTumefaciensCcnwgs0286"
-	"MesorhizobiumAmorphae"
-	"GlaciecolaNitratireducens"
-	"FlavobacteriumFrigoris"
-	"ExiguobacteriumAntarcticum"
-	"PaenibacillusPeoriae"
-	"NovosphingobiumPentaromativorans"
-	"CommensalibacterIntestini"
-	"GluconobacterMorbifer"
-	"FangiaHongkongensis"
-	"AggregatibacterActinomycetemcomitansRhaa1"
-	"MobilicoccusPelagius"
-	"AmycolatopsisBenzoatilytica"
-	"AmycolatopsisBalhimycina"
-	"ActinopolysporaHalophila"
-	"RudanellaLutea"
-	"ThermicanusAegyptius"
-	"HaloglycomycesAlbus"
-	"SalisaetaLonga"
-	"GeminicoccusRoseus"
-	"RhodovibrioSalinarum"
-	"ThermacetogeniumPhaeum"
-	"SphingomonasPhyllosphaerae52"
-	"SphingomonasPhyllosphaeraeFa2"
-	"SphingomonasMelonis"
-	"XanthomonasCampestrisMusacearum"
-	"FlavobacteriumIndicum"
-	"BartonellaAustralis"
-	"BartonellaBovis"
-	"BartonellaSchoenbuchensis"
-	"BartonellaVinsoniiBerkhoffii"
-	"ThermoanaerobacteriumSaccharolyticum"
-	"BartonellaAlsatica"
-	"BartonellaDoshiae"
-	"BartonellaRattimassiliensis"
-	"BartonellaMelophagi"
-	"BartonellaTamiae"
-	"BartonellaTaylorii"
-	"BartonellaVinsoniiArupensis"
-	"BartonellaWashoensis"
-	"FluoribacterDumoffii"
-	"BartonellaSp.Db56"
-	"MethanolobusPsychrophilus"
-	"StreptococcusSp.Sk140"
-	"StreptococcusSp.Sk643"
-	"StreptococcusMitisSk579"
-	"StreptococcusOralisSk1074"
-	"HaemophilusParaphrohaemolyticus"
-	"FusobacteriumNecrophorumFunduliforme"
-	"PasteurellaBettyae"
-	"LachnoanaerobaculumSaburreumF0468"
-	"PrevotellaSp.F0472"
-	"CellulomonasMassiliensis"
-	"HerbaspirillumMassiliense"
-	"PeptoniphilusTimonensis"
-	"TimonellaSenegalensis"
-	"MethylobacteriumSp.Gxf4"
-	"ArthrobacterSp.Pao19"
-	"PelagibacterUbiqueHimb083"
-	"NovosphingobiumLindaniclasticum"
-	"BurkholderiaSp.Yi23"
-	"LimnohabitansSp.Rim28"
-	"LimnohabitansSp.Rim47"
-	"ArthrobacterSp.Man2"
-	"ParacoccusSp.N5"
-	"MethylopilaSp.M107"
-	"MethylobacteriumSp.10"
-	"MethylobacteriumSp.77"
-	"MethylophilaceaeBacterium11"
-	"PyrobaculumSp.1860"
-	"EnterococcusFaeciumNrrlb2354"
-	"ActinomycesSp.Icm39"
-	"ClostridiumSp.Mste9"
-	"RickettsiaAustralis"
-	"PaenirhodobacterEnshiensis"
-	"FlavobacteriumEnshiense"
-	"GordoniaRhizosphera"
-	"PenicilliumRubens"
-	"PseudomonasStutzeriSdmlac"
-	"TistrellaMobilis"
-	"NocardiaAsteroides"
-	"ThermusSp.Ccbus3uf1"
-	"AtopobiumSp.Bv3ac4"
-	"PropionimicrobiumSp.Bv2f7"
-	"PeptoniphilusSp.Bv3c26"
-	"CoriobacteriaceaeBacteriumBv3ac1"
-	"MegasphaeraSp.Bv3c161"
-	"AlicyclobacillusPomorum"
-	"BudviciaAquatica"
-	"CorynebacteriumSputi"
-	"FlavobacteriumAntarcticum"
-	"IgnatzschineriaLarvae"
-	"GordoniaPolyisoprenivorans"
-	"PsychrobacterSp.Pamc21119"
-	"SphingomonasEchinoides"
-	"SphingomonasSp.Pamc26605"
-	"SphingomonasSp.Pamc26617"
-	"PseudomonasPsychrotolerans"
-	"MethylophilusSp.5"
-	"NatronorubrumTibetense"
-	"CitrobacterFarmeri"
-	"SaccharomonosporaAzurea"
-	"SphingobiumBaderi"
-	"StreptococcusParasanguinisFw213"
-	"PseudomonasFluorescensF113"
-	"LactobacillusRossiae"
-	"EscherichiaHermannii"
-	"EscherichiaVulneris"
-	"ArthrobacterSp.31y"
-	"ActinomycesNaeslundii"
-	"StreptococcusMacedonicus"
-	"StreptomycesAcidiscabies"
-	"VibrioSp.Ejy3"
-	"MethyloglobulusMorosus"
-	"PaenibacillusAlvei"
-	"PseudoalteromonasCitrea"
-	"PseudoalteromonasHaloplanktisAtcc14393"
-	"PseudoalteromonasRubra"
-	"PseudoalteromonasSpongiae"
-	"BacillusBataviensis"
-	"MycoplasmaCanis"
-	"SimiduiaAgarivorans"
-	"SinorhizobiumFrediiHh103"
-	"PseudomonasExtremaustralis"
-	"BrevibacillusMassiliensis"
-	"AnaerococcusSp.Ph9"
-	"PeptoniphilusGrossensis"
-	"ActinomycesSp.Ph3"
-	"KallipygaMassiliensis"
-	"EnormaMassiliensis"
-	"HalomonasSp.Gfaj1"
-	"StenotrophomonasMaltophiliaPml168"
-	"MycoplasmaHyorhinisSk76"
-	"SphingopyxisSp.Lc363"
-	"BacteriumSp.Ms4"
-	"MethylopilaSp.73b"
-	"MycobacteriumSp.141"
-	"AcaricomesPhytoseiuli"
-	"AcetobacterNitrogenifigens"
-	"AcinetobacterBouvetii"
-	"ActinobacillusCapsulatus"
-	"ActinobaculumUrinale"
-	"ActinokineosporaEnzanensis"
-	"ActinomaduraAtramentaria"
-	"ActinomycesDentalis"
-	"ActinomycesGeorgiae"
-	"ActinomycesIsraelii"
-	"ActinomycesNeuiiDsm8576"
-	"ActinomycesSuimastitidis"
-	"ActinomycesVaccimaxillae"
-	"ActinomycetosporaChiangmaiensis"
-	"ActinoplanesGlobisporus"
-	"ActinopolymorphaAlba"
-	"AequorivitaCapsosiphonis"
-	"AestuariibacterSalexigens"
-	"AestuariimicrobiumKwangyangense"
-	"AfifellaPfennigii"
-	"AgrococcusLahaulensis"
-	"AgromycesItalicus"
-	"AgromycesSubbeticus"
-	"AlgicolaSagamiensis"
-	"AlgoriphagusMannitolivorans"
-	"AlgoriphagusMarincolaDsm16067"
-	"AlgoriphagusVanfongensis"
-	"AliagarivoransTaiwanensis"
-	"AlicyclobacillusContaminans"
-	"AlicyclobacillusHerbarius"
-	"AlicyclobacillusPohliae"
-	"AlkanindigesIllinoisensis"
-	"AllofustisSeminis"
-	"AlloscardoviaOmnicolens"
-	"AlysiellaCrassa"
-	"AmorphusCoralli"
-	"AnaeroarcusBurkinensis"
-	"AnaerobiospirillumSucciniciproducens"
-	"AnaerovoraxOdorimutans"
-	"AndreprevotiaChitinilytica"
-	"AquaspirillumSerpens"
-	"AquimarinaMuelleri"
-	"ArenibacterCertesii"
-	"ArenibacterLatericius"
-	"ArenimonasComposti"
-	"ArenimonasOryziterrae"
-	"ArsenicicoccusBolidensis"
-	"ArthrobacterCastelli"
-	"ArthrobacterSanguinis"
-	"AsticcacaulisBenevestitus"
-	"AtopococcusTabaci"
-	"AureimonasUreilytica"
-	"AzospirillumHalopraeferens"
-	"AzovibrioRestrictus"
-	"BacillusAidingensis"
-	"BacillusChagannorensis"
-	"BacillusFordii"
-	"BacillusGelatini"
-	"BacteroidesBarnesiae"
-	"BacteroidesGraminisolvens"
-	"BacteroidesMassiliensisB84634"
-	"BacteroidesPyogenesDsm20611"
-	"BacteroidesSalyersiae"
-	"BalneolaVulgaris"
-	"BavariicoccusSeileri"
-	"BelnapiaMoabensis"
-	"BlautiaWexlerae"
-	"BrachymonasChironomi"
-	"BrevibacillusLaterosporusDsm25"
-	"BrevundimonasAveniformis"
-	"BrevundimonasBacteroides"
-	"BurkholderiaNodosa"
-	"ButyricimonasSynergistica"
-	"CampylobacterCuniculorum"
-	"GemmobacterNectariphilus"
-	"CatelliglobosisporaKoreensis"
-	"ChryseobacteriumCaeni"
-	"ChryseobacteriumDaeguense"
-	"ChryseobacteriumGregarium"
-	"ChryseobacteriumPalustre"
-	"ClostridiisalibacterPaucivorans"
-	"ClostridiumAminophilum"
-	"ClostridiumLitorale"
-	"ClostridiumSaccharogumia"
-	"ClostridiumSporosphaeroides"
-	"ClostridiumStercorarium"
-	"ClostridiumTyrobutyricum"
-	"ClostridiumViride"
-	"CohnellaLaeviribosi"
-	"ConchiformibiusKuhniae"
-	"ConchiformibiusSteedae"
-	"CorynebacteriumCallunae"
-	"CorynebacteriumCapitovis"
-	"CorynebacteriumCaspium"
-	"CorynebacteriumCiconiae"
-	"CorynebacteriumFreiburgense"
-	"CorynebacteriumHalotolerans"
-	"CorynebacteriumLubricantis"
-	"CorynebacteriumMassiliense"
-	"CorynebacteriumMastitidis"
-	"CorynebacteriumPilosum"
-	"CorynebacteriumPropinquum"
-	"CorynebacteriumUlceribovis"
-	"GryllotalpicolaGinsengisoli"
-	"CytophagaAurantiaca"
-	"DasaniaMarina"
-	"DeinococcusApachensis"
-	"DeinococcusAquatilis"
-	"DeinococcusFrigens"
-	"DeinococcusMarmoris"
-	"DeinococcusMisasensis"
-	"DemetriaTerragena"
-	"DesulfobacterCurvatus"
-	"DesulfobulbusJaponicus"
-	"DesulfococcusMultivorans"
-	"DesulfocurvusVexinensis"
-	"DesulfonatronovibrioHydrogenovorans"
-	"DesulfotomaculumAlcoholivorax"
-	"DesulfotomaculumAlkaliphilum"
-	"DesulfotomaculumHydrothermale"
-	"DesulfotomaculumThermocisternum"
-	"DesulfovibrioAcrylicus"
-	"DesulfovibrioAlcoholivorans"
-	"DesulfovibrioAlkalitolerans"
-	"DesulfovibrioAminophilus"
-	"DesulfovibrioBastinii"
-	"DesulfovibrioDesulfuricansDsm642"
-	"DesulfovibrioFrigidus"
-	"DesulfovibrioGigas"
-	"DesulfovibrioHydrothermalis"
-	"DesulfovibrioLongus"
-	"DesulfovibrioOxyclinae"
-	"DesulfovirgulaThermocuniculi"
-	"DesulfurisporaThermophila"
-	"DonghicolaXiamenensis"
-	"DyadobacterAlkalitolerans"
-	"EchinicolaPacifica"
-	"ElioraeaTepidiphila"
-	"EnterococcusCecorum"
-	"EnterococcusColumbae"
-	"EnterorhabdusMucosicola"
-	"EpilithonimonasTenax"
-	"EremococcusColeocolaDsm15696"
-	"ErysipelothrixTonsillarum"
-	"EudoraeaAdriatica"
-	"FerrimicrobiumAcidiphilum"
-	"FerrimonasFuttsuensis"
-	"FlavobacteriumDaejeonense"
-	"FlavobacteriumFilum"
-	"FlavobacteriumFrigidarium"
-	"FlavobacteriumRivuli"
-	"FlavobacteriumSasangense"
-	"FlavobacteriumSoli"
-	"FlavobacteriumSubsaxonicum"
-	"FlavobacteriumSuncheonense"
-	"FlexithrixDorotheae"
-	"GelidibacterMesophilus"
-	"GemellaCuniculi"
-	"GeopsychrobacterElectrodiphilus"
-	"GeothrixFermentans"
-	"GilvimarinusChinensis"
-	"GlaciecolaPunicea"
-	"GlaciibacterSuperstes"
-	"GlycomycesArizonensis"
-	"GordoniaHirsuta"
-	"GordoniaShandongensis"
-	"GracilibacillusLacisalsi"
-	"GracilimonasTropica"
-	"GramellaEchinicola"
-	"GranulicoccusPhenolivorans"
-	"GulosibacterMolinativorax"
-	"HahellaGanghwensis"
-	"HalalkalibacillusHalophilus"
-	"HalieaSalexigens"
-	"HalobacillusKuroshimensis"
-	"HalomonasAnticariensis"
-	"HalomonasHalocynthiae"
-	"HalomonasLutea"
-	"HalorubrumEzzemoulense"
-	"HamadaeaTsunoensis"
-	"HelcococcusSueciensis"
-	"HelleaBalneolensis"
-	"HenriciellaMarina"
-	"HumibacterAlbus"
-	"HymenobacterNorwichensis"
-	"JeotgalicoccusMarinus"
-	"JeotgalicoccusPsychrophilus"
-	"JonesiaQuinghaiensis"
-	"KaistiaGranuli"
-	"KangiellaAquimarina"
-	"KiloniellaLaminariae"
-	"KordiimonasGwangyangensis"
-	"KribbellaCatacumbae"
-	"KushneriaAurantia"
-	"LacticigeniumNaphtae"
-	"LactobacillusCeti"
-	"LactobacillusHarbinensis"
-	"LactobacillusMalefermentans"
-	"LactobacillusPsittaci"
-	"LegionellaLansingensis"
-	"LegionellaMoravica"
-	"LegionellaShakespearei"
-	"LeptotrichiaShahii"
-	"LeptotrichiaTrevisanii"
-	"LeucobacterChironomi"
-	"LewinellaCohaerens"
-	"LewinellaPersica"
-	"LoktanellaHongkongensis"
-	"LongisporaAlbida"
-	"LysobacterConcretionis"
-	"MarinimicrobiumAgarilyticum"
-	"MarinobacterDaepoensis"
-	"MarinobacteriumLitorale"
-	"MarinomonasUshuaiensis"
-	"MarinospirillumInsulare"
-	"MarinospirillumMinutulum"
-	"MartelellaMediterranea"
-	"MegamonasHypermegale"
-	"MegamonasRupellensis"
-	"MeganemaPerideroedes"
-	"MeiothermusCerbereus"
-	"MeiothermusTaiwanensis"
-	"MeiothermusTimidus"
-	"MesoflavibacterZeaxanth.Dsm18436"
-	"MesoniaMobilis"
-	"MetascardoviaCriceti"
-	"MethylophilusMethylotrophus"
-	"MicrobacteriumGubbeenense"
-	"MicrobacteriumIndicum"
-	"MicrobacteriumLuticocti"
-	"MoraxellaBoevrei"
-	"MoraxellaCaprae"
-	"MycobacteriumHassiacum"
-	"NeptunomonasJaponica"
-	"NesterenkoniaAlba"
-	"NevskiaRamosa"
-	"NevskiaSoli"
-	"NiabellaAurantiaca"
-	"NocardioidesHalotolerans"
-	"NonomuraeaCoxensis"
-	"NovosphingobiumAcidiphilum"
-	"OceanicaulisAlexandrii"
-	"OceanicolaNanhaiensis"
-	"OligellaUreolytica"
-	"OlivibacterSitiensis"
-	"OrnithinimicrobiumPekingense"
-	"PaenibacillusAlginolyticus"
-	"PaenibacillusDaejeonensis"
-	"PaenibacillusFonticola"
-	"PaenibacillusGinsengihumi"
-	"PaenibacillusMassiliensis"
-	"PaenibacillusSanguinis"
-	"PaenibacillusTerrigena"
-	"PannonibacterPhragmitetus"
-	"ParabacteroidesGordonii"
-	"ParaoerskoviaMarina"
-	"PatulibacterAmericanus"
-	"PelosinusFermentans"
-	"PerlucidibacaPiscinae"
-	"PleomorphomonasKoreensis"
-	"PleomorphomonasOryzae"
-	"PorphyrobacterCryptus"
-	"PorphyromonasBennonis"
-	"PorphyromonasLevii"
-	"PorphyromonasSomerae"
-	"PrevotellaAlbensis"
-	"PrevotellaCorporis"
-	"PrevotellaFalsenii"
-	"PrevotellaLoescheii"
-	"PrevotellaMaculosa"
-	"PrevotellaOrisDsm18711"
-	"PrevotellaPaludivivens"
-	"PrevotellaShahii"
-	"PrevotellaTimonensis4401737"
-	"PrevotellaVeroralisDsm19559"
-	"PropionibacteriumAcidifaciens"
-	"PropionibacteriumJensenii"
-	"PropionibacteriumThoenii"
-	"ProteiniphilumAcetatigenes"
-	"ProteocatellaSphenisci"
-	"PseudoclavibacterSoli"
-	"PseudomonasResinovoransDsm21078"
-	"PseudonocardiaAcaciae"
-	"PseudonocardiaAsaccharolytica"
-	"PsychrobacterLutiphocae"
-	"PsychrobacterPhenylpyruvicus"
-	"PsychroflexusTropicus"
-	"PsychroserpensBurtonensis"
-	"RathayibacterToxicus"
-	"RheinheimeraBaltica"
-	"RheinheimeraPerlucida"
-	"RhodonellumPsychrophilum"
-	"RiemerellaColumbina"
-	"RobiginitomaculumAntarcticum"
-	"RoseomonasAerilata"
-	"RuaniaAlbidiflava"
-	"RubritaleaMarina"
-	"RubritepidaFlocculans"
-	"RudaeaCellulosilytica"
-	"RuminococcusGauvreauii"
-	"SaccharibacillusKuerlensis"
-	"SaccharibacterFloricola"
-	"SaccharospirillumImpatiens"
-	"SalinarimonasRosea"
-	"SalinicoccusAlbus"
-	"SalinimicrobiumTerrae"
-	"SalinimonasChungwhensis"
-	"SalipigerMucosus"
-	"SalsuginibacillusKocurii"
-	"SandarakinorhabdusLimnophila"
-	"SchlesneriaPaludicola"
-	"SediminimonasQiaohouensis"
-	"SegetibacterKoreensis"
-	"SelenomonasBovis"
-	"SerinicoccusMarinus"
-	"ShimazuellaKribbensis"
-	"SilanimonasLenta"
-	"SimplicispiraPsychrophila"
-	"SolimonasVariicoloris"
-	"SolimonasFlava"
-	"SmaragdicoccusNiigatensis"
-	"SolimonasSoli"
-	"SolobacteriumMooreiDsm22971"
-	"SphingomonasAstaxanthinifaciens"
-	"SphingomonasSanxanigenens"
-	"SphingopyxisBaekryungensis"
-	"SpirochaetaBajacaliforniensis"
-	"SpirosomaLuteum"
-	"SpirosomaPanaciterrae"
-	"SpirosomaSpitsbergense"
-	"SpongiibacterTropicus"
-	"SporolactobacillusVineae"
-	"SporomusaOvata"
-	"SporosarcinaUreae"
-	"StenoxybacterAcetivorans"
-	"StreptococcusCaballi"
-	"StreptococcusCastoreus"
-	"StreptococcusDevriesei"
-	"StreptococcusDidelphis"
-	"StreptococcusEntericus"
-	"StreptococcusFerus"
-	"StreptococcusHenryi"
-	"StreptococcusMarimammalium"
-	"StreptococcusMassiliensis"
-	"StreptococcusMerionis"
-	"StreptococcusMinor"
-	"StreptococcusOrisratti"
-	"StreptococcusOvis"
-	"FaecalicoccusPleomorphus"
-	"StreptococcusPlurextorum"
-	"StreptococcusPorci"
-	"StreptococcusThoraltensis"
-	"StreptomycesFlavidovirens"
-	"StreptomycesScabrisporus"
-	"StreptomycesSulphureus"
-	"StreptomycesVitaminophilus"
-	"SulfurihydrogenibiumSubterraneum"
-	"SulfurospirillumArcachonense"
-	"TepidiphilusMargaritifer"
-	"TerasakiellaPusilla"
-	"TetragenococcusMuriaticus"
-	"ThalassobacterArenae"
-	"ThalassospiraXiamenensis"
-	"ThaueraLinaloolentis"
-	"ThermithiobacillusTepidarius"
-	"ThermodesulfatatorAtlanticus"
-	"ThermodesulfobacteriumHveragerdense"
-	"ThermodesulfobacteriumThermophilum"
-	"ThermodesulfovibrioThiophilus"
-	"ThermomonasFusca"
-	"ThermusAntranikianii"
-	"ThermusIgniterrae"
-	"ThermusIslandicus"
-	"ThiobacillusDenitrificansDsm12475"
-	"ThiobacillusThioparus"
-	"ThiothrixDisciformis"
-	"ThiothrixFlexilis"
-	"ThiothrixLacustris"
-	"TuberibacillusCalidus"
-	"UliginosibacteriumGangwonense"
-	"VeillonellaMagna"
-	"VaribaculumCambrienseDsm15806"
-	"VitreoscillaStercoraria"
-	"WeissellaHalotolerans"
-	"WenxiniaMarina"
-	"WohlfahrtiimonasChitiniclastica"
-	"WoodsholeaMaritima"
-	"XenophilusAzovorans"
-	"YaniellaHalotolerans"
-	"ZavarzinellaFormosa"
-	"ZymophilusRaffinosivorans"
-	"ThiomicrospiraArctica"
-	"ThiomicrospiraPelophila"
-	"ThiomicrospiraSp.Kp2"
-	"PseudomonasStutzeriDsm10701"
-	"NafulsellaTurpanensis"
-	"TreponemaSp.Jc4"
-	"PseudomonasProtegensCha0"
-	"MorganellaMorganii"
-	"TreponemaMaltophilum"
-	"TreponemaMedium"
-	"TreponemaSocranskiiParedis"
-	"OlsenellaProfusa"
-	"ActinomycesMassiliensis"
-	"TreponemaSocranskiiVpidr56br1116"
-	"CorynebacteriumPyruviciproducens"
-	"DeferrisomaCamini"
-	"AmycolatopsisOrientalis"
-	"BoseaSp.117"
-	"BradyrhizobiumSp.Doa9"
-	"WeissellaConfusa"
-	"NocardiaCyriacigeorgica"
-	"GlaciecolaLipolytica"
-	"CapnocytophagaSp.F0381"
-	"SelenomonasSp.F0429"
-	"PorphyromonasCatoniae"
-	"VeillonellaAtypicaKon"
-	"ClostridiumAcidurici"
-	"BacteriumSp.Jkg1"
-	"FilamentousCyanobacterium"
-	"GlaciecolaMesophila"
-	"SpiroplasmaMelliferum"
-	"MycoplasmaHyorhinisGdl1"
-	"AlishewanellaJeotgali"
-	"GlaciecolaPsychrophila"
-	"ThaumarchaeotaSp.ScgcAb629i23"
-	"NitrospinaSp.Ab629b18"
-	"XanthomonasFragariae"
-	"DehalobacterSp.Cf"
-	"NitrosomonasCryotolerans"
-	"BacillusVireti"
-	"FlavobacteriumSp.83"
-	"MethylobacteriumSp.88a"
-	"XanthobacterSp.126"
-	"ArthrobacterSp.35w"
-	"BacillusSp.37ma"
-	"HalococcusHamelinensis"
-	"RhizobiumSp.Ccge510"
-	"MethyloteneraMobilis13"
-	"LactobacillusVini"
-	"NocardiaBrasiliensis"
-	"StreptomycesHygroscopicus"
-	"BacillusSp.L1"
-	"StreptomycesSomaliensis"
-	"CellvibrioSp.Br"
-	"BartonellaKoehlerae"
-	"MethylocystisParvus"
-	"PseudomonasFragi"
-	"VibrioCyclitrophicus"
-	"LactobacillusPentosus"
-	"SalinisporaPacifica"
-	"NocardiopsisSp.Cnt312"
-	"StreptomycesSp.Cnh099"
-	"SaccharomonosporaSp.Cnq490"
-	"FormosaSp.Ak20"
-	"EndozoicomonasNumazuensis"
-	"LactobacillusCurieae"
-	"EnterococcusDispar"
-	"EnterococcusSaccharolyticus"
-	"EnterococcusDurans"
-	"EnterococcusAvium"
-	"EnterococcusSulfureus"
-	"StaphylococcusIntermedius"
-	"ProvidenciaBurhodogranariea"
-	"ProvidenciaRettgeriDmel1"
-	"PhycisphaeraMikurensis"
-	"WigglesworthiaGlossinidiaSp.Gmo"
-	"ChlamydiaGallinacea"
-	"CorallococcusCoralloides"
-	"NovosphingobiumSp.Ap12"
-	"SphingobiumSp.Ap49"
-	"RhizobiumSp.Cf080"
-	"RhizobiumSp.Cf122"
-	"EnterococcusGallinarum"
-	"HerbaspirillumSp.Cf444"
-	"PseudomonasSp.Gm21"
-	"HerbaspirillumSp.Yr522"
-	"PhyllobacteriumSp.Yr531"
-	"AcinetobacterSp.Cip102129"
-	"AcinetobacterSp.Cip56.2"
-	"RickettsiaHelvetica"
-	"PelagibacterUbiqueHimb058"
-	"LysinibacillusVarians"
-	"BlastococcusSaxobsidens"
-	"BifidobacteriumAsteroides"
-	"PseudomonasPseudoalcaligenesKf707"
-	"ArthrobacterSp.9mfcol31"
-	"LeifsoniaSp.109"
-	"RhodospirillumPhotometricum"
-	"MesoaciditogaLauensis"
-	"MycobacteriumPhlei"
-	"ArcticibacterSvalbardensis"
-	"SulfurospirillumMultivorans"
-	"PhaeospirillumMolischianum"
-	"MicromonosporaLupini"
-	"TsukamurellaSp.1534"
-	"RahnellaAquatilisHx2"
-	"ThermococcusZilligii"
-	"ArthrobacterSp.161mfsha21"
-	"ArthrobacterSp.162mfsha11"
-	"MicrobacteriumSp.292mf"
-	"MicrobacteriumParaoxydans77mftsu32"
-	"PseudomonasMandelii36mfcvi11"
-	"PeptoclostridiumDifficileCd160"
-	"LeuconostocPseudomesenteroides"
-	"StreptococcusAgalactiaeLmg14747"
-	"StreptomycesSp.Lappah108"
-	"StreptomycesSp.Mspmpm5"
-	"StreptomycesSp.Hmica12"
-	"AchromobacterPiechaudiiHle"
-	"AgrobacteriumAlbertimagni"
-	"MethylacidiphilumFumariolicum"
-	"TumebacillusFlagellatus"
-	"StreptomycesSp.Lappah95"
-	"StreptomycesSp.Amel2xe9"
-	"StreptomycesSp.Atexabd23"
-	"StreptomycesSp.Bolea5"
-	"StreptomycesSp.Pstaah124"
-	"StreptomycesSp.Fxanac1"
-	"VariovoraxParadoxus110b"
-	"MycobacteriumSp.155"
-	"ArthrobacterSp.135mfcol51"
-	"ThioalkalivibrioSp.Aljt"
-	"ThioalkalivibrioSp.Ald1"
-	"ThioalkalivibrioSp.Almg11"
-	"ThioalkalivibrioSp.Ale31"
-	"ThiomonasSp.Fbcd"
-	"PrevotellaSp.10"
-	"DesulfurobacteriumSp.Tc51"
-	"PersephonellaSp.If05l8"
-	"PersephonellaSp.Km09lau8"
-	"EnterococcusMalodoratus"
-	"EnterococcusRaffinosus"
-	"EnterococcusVillorum"
-	"EnterococcusAsini"
-	"EnterococcusPallens"
-	"EnterococcusHaemoperoxidus"
-	"EnterococcusMoraviensis"
-	"EnterococcusPhoeniculicola"
-	"EnterococcusCaccae"
-	"EnterococcusGilvus"
-	"ThioalkalivibrioSp.Alj7"
-	"ThioalkalivibrioSp.Alj11"
-	"ThioalkalivibrioSp.Alj16"
-	"StaphylococcusEquorum"
-	"BordetellaSp.Fb8"
-	"NocardiaSp.Bmg111209"
-	"UreibacillusThermosphaericus"
-	"StreptomycesAuratus"
-	"RuminococcusBicirculans"
-	"MaricaulisSp.Jl2009"
-	"StreptococcusSp.Acc21"
-	"EubacteriumNodatum"
-	"LeptospirillumFerrooxidans"
-	"PhytoplasmaPeanutWitchesbroom"
-	"FrancisellaNoatunensis"
-	"PseudomonasSp.Hys"
-	"RhodanobacterSpathiphylli"
-	"RhodanobacterFulvus"
-	"RhodanobacterThiooxydans"
-	"SulfuricellaDenitrificans"
-	"ClostridiumSp.12"
-	"FervidicoccusFontis"
-	"HelicobacterCetorumMit995656"
-	"RicheliaIntracellularis"
-	"MethyloteneraSp.73s"
-	"SulfurovumSp.Ar"
-	"PectobacteriumSp.Scc3193"
-	"FibrellaAestuarina"
-	"EnterobacterSp.R4368"
-	"HalomonasXinjiangensis"
-	"DesulfocapsaSulfexigens"
-	"StaphylococcusVitulinus"
-	"DraconibacteriumOrientale"
-	"XanthobacteraceaeBacterium501b"
-	"GammaproteobacteriaBacteriumBdw918"
-	"ThiomicrospiraKuenenii"
-	"MarinilabiliaSalmonicolor"
-	"BurkholderiaBryophila"
-	"BacillusSp.123mfchir2"
-	"NocardiaSp.Cny236"
-	"StreptomycesSp.Cnt372"
-	"StreptomycesSp.Cny243"
-	"PropionibacteriumAvidum"
-	"CalothrixSp.Pcc6303"
-	"PropionibacteriumAcidipropionici"
-	"StreptomycesSp.142mfcol31"
-	"StreptomycesSp.351mftsu51"
-	"StreptomycesSp.303mfcol52"
-	"NocardiaSp.348mftsu51"
-	"MycobacteriumSp.360mftsu51"
-	"TerracoccusSp.273mftsu31"
-	"SulfurimonasSp.Ast10"
-	"HelicobacterCinaediPagu611"
-	"ChamaesiphonMinutus"
-	"CyanobacteriumSp.Pcc7702"
-	"CrinaliumEpipsammum"
-	"FischerellaSp.Pcc9431"
-	"FischerellaSp.Pcc9605"
-	"GeitlerinemaSp.Pcc7407"
-	"GloeocapsaSp.Pcc7428"
-	"MicrocoleusSp.Pcc7113"
-	"OscillatoriaSp.Pcc10802"
-	"SpirulinaSubsalsa"
-	"SynechococcusSp.Pcc7502"
-	"LeptolyngbyaSp.Pcc6406"
-	"ColletotrichumSublineola"
-	"BacillusPsychrosaccharolyticus"
-	"FischerellaSp.Pcc9339"
-	"LiberibacterAsiaticusGxpsy"
-	"SphingopyxisSp.Mc1"
-	"HerbaspirillumSp.Gw103"
-	"AerococcusViridansLl1"
-	"BrevibacteriumMassiliense"
-	"AlcanivoraxSp.19m6"
-	"AlcanivoraxHongdengensis"
-	"AlcanivoraxJadensis"
-	"MicrobacteriumSp.C448"
-	"ThalassospiraProfundimaris"
-	"HalomonasSp.Bjgmmb45"
-	"BacillusXiamenensis"
-	"BacillusSp.Dw54"
-	"ArenitaleaLutea"
-	"PhotodesmusBlepharus"
-	"StaphylococcusLentus"
-	"SaccharothrixEspanaensis"
-	"MycoplasmaSp.G5847"
-	"PseudomonasSp.M47t1"
-	"CladophialophoraPsammophila"
-	"PseudomonasPseudoalcaligenesCect5344"
-	"PyrococcusSp.St04"
-	"GloeobacterKilaueensis"
-	"ThermogladiusCellulolyticus"
-	"BdellovibrioExovorus"
-	"AustwickiaChelonae"
-	"KineosphaeraLimosa"
-	"SinorhizobiumFrediiUsda257"
-	"PlanococcusAntarcticus"
-	"ThioclavaDalianensis"
-	"FibrisomaLimi"
-	"BlattabacteriumSp.Bgi"
-	"VibrioGenomosp."
-	"RhodovulumSp.Ph10"
-	"MycoplasmaAuris"
-	"MycoplasmaAlkalescens"
-	"MycoplasmaBovigenitalium"
-	"MycoplasmaArginini"
-	"MycoplasmaOvipneumoniae"
-	"MycoplasmaYeatsii"
-	"UreaplasmaDiversum"
-	"VibrioRumoiensis"
-	"RhodovulumSulfidophilum"
-	"IndibacterAlkaliphilus"
-	"PsychroflexusGondwanensis"
-	"FlavobacteriumSp.Acam123"
-	"EnterovibrioNorvegicus"
-	"EnterovibrioCalviensis"
-	"VibrioKanaloae"
-	"AcinetobacterVenetianus"
-	"MelioribacterRoseus"
-	"ChondromycesApiculatus"
-	"BurkholderiaSp.Lig30"
-	"SphingobiumXenophagum"
-	"PseudaminobacterSalicylatoxidans"
-	"ParascardoviaDenticolensIpla20019"
-	"TetrasphaeraElongata"
-	"EndolissoclinumFaulkneriL2"
-	"MicrobacteriumYannicii"
-	"StaphylococcusWarneriSg1"
-	"MycobacteriumVaccae"
-	"ClostridiumTermitidis"
-	"AlishewanellaAgri"
-	"VirgibacillusHalodenitrificans"
-	"BacillusEndophyticus"
-	"BacillusOceanisediminis"
-	"SnodgrassellaAlvi"
-	"GilliamellaApicola"
-	"ClostridiumSp.Maddingley"
-	"PaenibacillusSp.Osyse"
-	"BacillusMacauensis"
-	"PseudomonasStutzeriCcug29243"
-	"HalococcusSp.197a"
-	"MangrovimonasYunxiaonensis"
-	"ArthrobacterSp.M2012083"
-	"SalmonellaBongoriN26808"
-	"AfipiaBirgiae"
-	"GranulicellaTundricola"
-	"CycloclasticusZancles"
-	"AeropyrumCamini"
-	"JanthinobacteriumSp.Hh01"
-	"StreptococcusMutansGs5"
-	"CorynebacteriumTerpenotabidum"
-	"AnaerovibrioSp.Rm50"
-	"RuminobacterSp.Rm87"
-	"BrevibacillusBrevisX23"
-	"BartonellaBirtlesii"
-	"BacteriovoraxSp.Seq25v"
-	"BacteriovoraxSp.Bal6x"
-	"EnterococcusFaecalisAtcc29212"
-	"MoritellaDasanensis"
-	"FlavobacteriumSp.F52"
-	"HalopigerSalifodinae"
-	"MoritellaMarina"
-	"LactobacillusIngluviei"
-	"CorynebacteriumTimonense"
-	"PrevotellaOralisHga0225"
-	"SutterellaWadsworthensisHga0223"
-	"ActinomycesSp.Hpa0247"
-	"CorynebacteriumSp.Kpl1859"
-	"CorynebacteriumSp.Kpl1860"
-	"DermabacterSp.Hfh0086"
-	"StreptococcusSp.Hph0090"
-	"AtopobiumSp.F0494"
-	"PropionibacteriumSp.F0372"
-	"ButyricicoccusPullicaecorum"
-	"AlistipesOnderdonkii"
-	"CorynebacteriumSp.Kpl1989"
-	"CorynebacteriumSp.Kpl2004"
-	"ReyranellaMassiliensis"
-	"BartonellaRattaustraliani"
-	"YersiniaMassiliensis"
-	"XanthomonasTranslucens"
-	"VibrioBreoganii"
-	"NocardiopsisAlba"
-	"StreptomycesSp.Cnr698"
-	"NocardiaAobensis"
-	"NocardiaBrevicatena"
-	"NocardiaCarnea"
-	"NocardiaExalbida"
-	"NocardiaHigoensis"
-	"NocardiaJiangxiensis"
-	"NocardiaOtitidiscaviarum"
-	"NocardiaNiigatensis"
-	"NocardiaTakedensis"
-	"NocardiaPneumoniae"
-	"NocardiaTestacea"
-	"NocardiaConcava"
-	"NocardiaVeterana"
-	"NocardiaTransvalensis"
-	"PseudomonasSp.Lz4w"
-	"SphingobiumSp.C100"
-	"HyphomonasSp.L53140"
-	"OceanibaculumIndicum"
-	"PseudomonasSp.Uw4"
-	"PseudomonasLuteola"
-	"MarinomonasSp.D104"
-	"CeleribacterBaekdonensis"
-	"CommensalibacterSp.Mx01"
-	"KinetoplastibacteriumCrithidii"
-	"KinetoplastibacteriumDesouzaii"
-	"KinetoplastibacteriumOncopeltii"
-	"KinetoplastibacteriumGalatii"
-	"KinetoplastibacteriumBlastocrithidii"
-	"CellvibrioMixtus"
-	"MycobacteriumMageritense"
-	"TepidanaerobacterAcetatoxydans"
-	"StreptomycesSp.Aa0539"
-	"JanibacterHoylei"
-	"GemmataSp.Iil30"
-	"HalogranumSalarium"
-	"LysinibacillusMassiliensis"
-	"PseudomonasPsychrophila"
-	"PseudoxanthomonasSp.Gw2"
-	"ChelatococcusSp.Gw1"
-	"PseudomonasPutidaNbrc14164"
-	"RhizobiumMesoamericanum"
-	"AlistipesMarseilloanorexicus"
-	"BacillusMassilioanorexius"
-	"BlastococcusMassiliensis"
-	"ClostridiumAnorexicamassiliense"
-	"HoldemaniaMassiliensis"
-	"StoquefichusMassiliensis"
-	"PseudomonasStutzeriNf13"
-	"EnterobacteriaceaeBacteriumB14"
-	"StreptomycesDavawensis"
-	"StreptococcusSuis865192"
-	"StreptococcusSuis22083"
-	"StreptococcusSuisYs72"
-	"StreptomycesCollinus"
-	"PseudomonasAlcaligenesNbrc14159"
-	"PseudomonasParafulva"
-	"LiberibacterCrescens"
-	"LactococcusRaffinolactis"
-	"PseudoalteromonasRuthenica"
-	"FusobacteriumHwasookii"
-	"ClostridiumSp.M240"
-	"EdwardsiellaHoshinae"
-	"ElizabethkingiaMeningoseptica"
-	"AchromobacterXylosoxidansNbrc15126"
-	"AcinetobacterBeijerinckii"
-	"AcinetobacterBrisouii"
-	"AcinetobacterGuillouiae"
-	"AcinetobacterGyllenbergii"
-	"AcinetobacterSp.Anc4105"
-	"AcinetobacterSp.Anc3862"
-	"AcinetobacterSp.Niph2100"
-	"AcinetobacterSp.Niph899"
-	"AcinetobacterSp.Niph758"
-	"AcinetobacterSp.Niph809"
-	"AcinetobacterSp.Anc3789"
-	"AcinetobacterBohemicus"
-	"CupriavidusSp.Bis7"
-	"RoseomonasSp.B5"
-	"BurkholderiaAcidipaludis"
-	"BurkholderiaBannensis"
-	"BurkholderiaFerrariae"
-	"BurkholderiaTerrae"
-	"CitrobacterSedlakii"
-	"ChryseobacteriumIndologenes"
-	"EmpedobacterBrevis"
-	"BacillusAlcalophilus"
-	"PseudomonasStutzeriKos6"
-	"ComamonasAquatica"
-	"NovosphingobiumTardaugens"
-	"SphingobiumHerbicidovorans"
-	"SphingomonasParapaucimobilis"
-	"VibrioProteolyticus"
-	"VibrioHalioticoli"
-	"VibrioAlginolyticusNbrc15630"
-	"VibrioAzureus"
-	"VibrioEzurae"
-	"ThermotogaHypogea"
-	"XanthomonasCassavae"
-	"ActinomycesSp.S4c9"
-	"ArcanobacteriumSp.S3pf19"
-	"PeptostreptococcusSp.Mv1"
-	"MethanobacteriumSp.Maddingley"
-	"AlphaProteobacteriumImcc14465"
-	"StaphylococcusChromogenes"
-	"RhizobiumRubi"
-	"GordoniaAichiensis"
-	"LysinibacillusOdysseyi"
-	"PseudomonasFluorescensNcimb11764"
-	"LactobacillusFlorum"
-	"AltibacterLentus"
-	"ComamonasGranuli"
-	"StreptomycesMobaraensis"
-	"GordoniaMalaquae"
-	"GordoniaSihwensis"
-	"GordoniaParaffinivorans"
-	"GordoniaSoli"
-	"EnterobacteriaceaeBacteriumLsjc7"
-	"CorynebacteriumMaris"
-	"CorynebacteriumVitaeruminis"
-	"MangrovibacterSp.Mfb070"
-	"GluconobacterOxydansH24"
-	"PantoeaSp.A4"
-	"DickeyaSp.Dw0440"
-	"OscillibacterSp.Kle1728"
-	"ClostridiumSp.Kle1755"
-	"PseudomonasNitroreducensTx1"
-	"ActinobaculumSp.F0552"
-	"CapnocytophagaSp.F0517"
-	"LeptotrichiaSp.F0557"
-	"PorphyromonasSp.W7784"
-	"PrevotellaSp.F0091"
-	"PaenibacillusSp.Fslh7689"
-	"PaenibacillusSp.Fslr7277"
-	"ViridibacillusArenosi"
-	"HaloarculaJaponica"
-	"HalobiformaNitratireducens"
-	"HalococcusThailandensis"
-	"HalorubrumSaccharovorum"
-	"HalosarcinaPallida"
-	"HaloterrigenaSalina"
-	"NatrinemaPallidum"
-	"NatronococcusAmylolyticus"
-	"NatronolimnobiusInnermongolicus"
-	"NatronorubrumBangense"
-	"HymenobacterSwuensis"
-	"LeptolyngbyaSp.Kiost1"
-	"ActinobacteriumLlx17"
-	"AlphaProteobacteriumL41a"
-	"BurkholderiaPhenoliruptrix"
-	"SphingobacteriumSp.Accc05744"
-	"GammaproteobacteriaBacteriumWg36"
-	"FlavobacteriumSp.Wg21"
-	"BlattabacteriumSp.Bpaa"
-	"LactococcusGarvieaeI113"
-	"AlkalibacteriumSp.Ak22"
-	"LeuconostocGelidumJb7"
-	"LeuconostocCarnosum"
-	"MicrothrixParvicella"
-	"BrevibacteriumCasei"
-	"StaphylococcusMassiliensis"
-	"ChlamydiaAvium"
-	"NitrosopumilusSp.Ar2"
-	"MoraxellaMacacae"
-	"SalimicrobiumSp.Mj3"
-	"ClostridiumTetanomorphum"
-	"LegionellaAnisa"
-	"HaloterrigenaLimicola"
-	"NatronorubrumSulfidifaciens"
-	"BradyrhizobiumSp.Dfci1"
-	"PaenisporosarcinaSp.Tg14"
-	"NitratireductorAquibiodomus"
-	"NitratireductorIndicus"
-	"ThermotogaSp.Mc24"
-	"LactobacillusShenzhenensis"
-	"LactococcusGarvieaeDcc43"
-	"PusillimonasNoertemannii"
-	"OceaniovalibusGuishaninsula"
-	"CardiniumEndosymbiontCeper1"
-	"DesulfuromonasSp.Tf"
-	"CorynebacteriumSp.Gd7"
-	"MegasphaeraSp.Np3"
-	"NesterenkoniaSp.Np1"
-	"NosocomiicoccusSp.Np2"
-	"CoriobacteriaceaeBacteriumGd5"
-	"DesulfobaculaSp.Ts"
-	"ClostridialesBacteriumVe20213"
-	"FlavobacteriumSp.Cf136"
-	"ClostridialesBacteriumVe20209"
-	"ClostridialesBacteriumVe20208"
-	"ClostridialesBacteriumVe20214"
-	"ClostridialesBacteriumVe20221"
-	"StaphylococcusSciuri"
-	"MarinobacteriumSp.Ak27"
-	"ChryseobacteriumSp.Jm1"
-	"EpilithonimonasSp.Fh1"
-	"DyellaGinsengisoli"
-	"CatellicoccusMarimammalium"
-	"StaphylococcusSp.E463"
-	"AlphaProteobacteriumJlt2015"
-	"GeobacillusCaldoxylosilyticus"
-	"CarnobacteriumMaltaromaticum"
-	"BhargavaeaCecembensis"
-	"RalstoniaSp.Au1208"
-	"SalinicoccusCarnicancri"
-	"BacteroidesMassiliensisDnlkv3"
-	"EubacteriumSp.142"
-	"LachnospiraceaeBacteriumM181"
-	"LachnospiraceaeBacteriumCoe1"
-	"EnterorhabdusCaecimuris"
-	"FirmicutesBacteriumM102"
-	"OscillibacterSp.13"
-	"DoreaSp.52"
-	"LachnospiraceaeBacterium32"
-	"LachnospiraceaeBacterium101"
-	"LactobacillusMurinus"
-	"EubacteriumPlexicaudatum"
-	"ParabacteroidesSp.Asf519"
-	"PrevotellaDisiensJcm6334"
-	"BacteroidesPyogenesJcm10003"
-	"PrevotellaEnoeca"
-	"AnaerotruncusSp.G3"
-	"HalyomorphaHalys"
-	"PrevotellaPleuritidis"
-	"PrevotellaOulorumJcm14966"
-	"AcetobacterOkinawensis"
-	"PrevotellaHisticola"
-	"PrevotellaAurantiaca"
-	"BacteroidesStercorirosoris"
-	"PrevotellaFusca"
-	"PrevotellaScopos"
-	"ShewanellaHaliotis"
-	"ShewanellaMarina"
-	"MethanomethylophilusAlvus"
-	"NocardiopsisBaichengensis"
-	"WolbachiaSp.Dsi"
-	"MethylobacillusGlycogenes"
-	"BacillusAkibai"
-	"PaenibacillusPini"
-	"FulvivirgaImtechensis"
-	"NocardiopsisGanjiahuensis"
-	"CaenispirillumSalinarum"
-	"OceanobacillusKimchii"
-	"LeucobacterSalsicius"
-	"HalomonasJeotgali"
-	"ChlamydiaPsittaci10139811"
-	"HaloquadratumWalsbyiJ07hqw2"
-	"VibrioNigripulchritudo"
-	"DokdoniaSp.Pro95"
-	"MariniradiusSaccharolyticus"
-	"RhodococcusRuber"
-	"PseudomonasPutidaMtcc5279"
-	"CystobacterFuscus"
-	"CampylobacterConcisusAtcc51562"
-	"BacillusSp.G2"
-	"CampylobacterShowaeCsunswcd"
-	"CampylobacterFetusTestudinum"
-	"CampylobacterSp.1485e"
-	"MagnetospirillumSp.So1"
-	"BradyrhizobiumOligotrophicum"
-	"PseudomonasResinovoransNbrc106553"
-	"NocardiopsisPrasina"
-	"NocardiopsisKunsanensis"
-	"NocardiopsisValliformis"
-	"RhizobiumSp.2mfcol31"
-	"NocardiopsisXinjiangensis"
-	"HalobacillusSp.Bab2008"
-	"BacillusLehensis"
-	"MycoplasmaCynos"
-	"ActinoplanesFriuliensis"
-	"ArsenophonusEndosymbiont"
-	"BordetellaHolmesii"
-	"AdvenellaMimigardefordensis"
-	"ParvularculaOceani"
-	"PhotobacteriumLeiognathiLrivu41"
-	"BlastomonasSp.Aap53"
-	"SandarakinorhabdusSp.Aap62"
-	"PorphyrobacterSp.Aap82"
-	"SulfuricurvumSp.Rifrc1"
-	"ThiorhodococcusSp.Ak35"
-	"SerratiaMarcescensFgi94"
-	"GillisiaSp.Heli29"
-	"MaribacterSp.Heli7"
-	"PolaribacterSp.Hel185"
-	"PolaribacterSp.Heli88"
-	"MuricaudaSp.Mar201075"
-	"SalegentibacterSp.Heli6"
-	"SorangiumCellulosumSo01572"
-	"ThioalkalivibrioNitratireducens"
-	"EubacteriumRamulus"
-	"CoprothermobacterPlatensis"
-	"SpiribacterSalinus"
-	"EnterococcusFaecalis13sdw01"
-	"LiberibacterAmericanus"
-	"HalarchaeumAcidiphilum"
-	"ClostridiumPasteurianumDsm525"
-	"PhascolarctobacteriumSp.Cag207"
-	"BibersteiniaTrehalosi"
-	"PhascolarctobacteriumSp.Cag266"
-	"MycobacteriumAsiaticum"
-	"HalieaRubra"
-	"PseudomonasSp.Urmo17wk12i8"
-	"CaldimonasManganoxidans"
-	"ColwelliaPiezophila"
-	"DesulfospiraJoergensenii"
-	"SuccinimonasAmylolytica"
-	"PelagibacterUbiqueHtcc9022"
-	"ListeriaWeihenstephanensis"
-	"CarnobacteriumSp.Wn1359"
-	"ThioalkalivibrioSp.Ale6"
-	"ThioalkalivibrioSp.Ale19"
-	"ThioalkalivibrioSp.Akl19"
-	"NitrosospiraBriensis"
-	"ParacoccusZeaxanthinifaciens"
-	"LactobacillusParabrevis"
-	"HyphomicrobiumZavarzinii"
-	"SediminibacteriumSp.C3"
-	"AcidobacteriaceaeBacteriumKbs83"
-	"AcidobacteriaceaeBacteriumKbs89"
-	"AcidobacteriaceaeBacteriumKbs96"
-	"AnoxybacillusFlavithermusTno09006"
-	"PantoeaSp.Imh"
-	"PseudomonasSp.G5"
-	"PaenibacillusSabinae"
-	"AeromonasDiversa"
-	"PseudoalteromonasLuteoviolacea"
-	"BacteroidesCellulosilyticus"
-	"RhodococcusSp.Aw25m09"
-	"AcidovoraxSp.Mrs7"
-	"LegionellaOakridgensis"
-	"ThioalkalivibrioSp.Alr1721"
-	"FlavobacteriumSp.Kjj"
-	"PedobacterSp.R2019"
-	"MegasphaeraSp.Nm10"
-	"RhodococcusRhodnii"
-	"PlanomicrobiumGlaciei"
-	"PaenibacillusSp.Gd11"
-	"HepatobacterPenaei"
-	"BacillusSonorensis"
-	"SpiroplasmaTaiwanense"
-	"SpiroplasmaDiminutum"
-	"SpiroplasmaChrysopicola"
-	"SpiroplasmaSyrphidicola"
-	"SpiroplasmaCulicicola"
-	"SpiroplasmaSabaudiense"
-	"SpiroplasmaApis"
-	"AcidovoraxSp.Jhl9"
-	"ArthrobacterGangotriensis"
-	"MyxococcusStipitatus"
-	"RhodococcusTriatomae"
-	"AcholeplasmaGranularum"
-	"FusobacteriumRussii"
-	"PsychromonasOssibalaenae"
-	"ZimmermannellaFaecalis"
-	"AmphriteaJaponica"
-	"AcholeplasmaAxanthum"
-	"AvibacteriumParagallinarum221"
-	"CesiribacterAndamanensis"
-	"OceanimonasSmirnovii"
-	"MicrobulbiferVariabilis"
-	"ThioalkalivibrioThiocyanoxidansArh2"
-	"NovispirillumItersonii"
-	"VibrioJasicida"
-	"SynechococcusSp.Kordi100"
-	"PaenibacillaceaeBacteriumG5"
-	"ButyrivibrioSp.Ae2015"
-	"ButyrivibrioSp.Vcd2006"
-	"ButyrivibrioSp.Ae3009"
-	"ButyrivibrioSp.Xpd2006"
-	"ButyrivibrioSp.Fc2001"
-	"ButyrivibrioSp.Ae3006"
-	"PrevotellaSp.Agr2160"
-	"ButyrivibrioSp.Wcd3002"
-	"ButyrivibrioSp.Vcb2006"
-	"ButyrivibrioSp.Lc3010"
-	"ButyrivibrioSp.Wcd2001"
-	"ButyrivibrioSp.Xbb1001"
-	"ButyrivibrioSp.Nc3005"
-	"ButyrivibrioSp.Mc2013"
-	"PseudobutyrivibrioRuminisCf1b"
-	"ClostridiumParaputrificum"
-	"ClostridiumCadaveris"
-	"PseudobutyrivibrioRuminisAd2017"
-	"ButyrivibrioFibrisolvensNd3005"
-	"DoreaLongicatenaAgr2136"
-	"SelenomonasRuminantiumAtcc12561"
-	"HyphomonasSp.T16b2"
-	"HyphomonasSp.Cy54118"
-	"HyphomonasSp.25b141"
-	"HyphomonasSp.Bhbn044"
-	"HyphomonasSp.22ii122f38"
-	"HyphomonasAdhaerens"
-	"HyphomonasJohnsonii"
-	"HyphomonasJannaschiana"
-	"HyphomonasOceanitis"
-	"HyphomonasPolymorpha"
-	"AgrobacteriumTumefaciensCherry"
-	"PseudomonasPoae"
-	"AsticcacaulisSp.Ac460"
-	"AsticcacaulisSp.Ac402"
-	"AsticcacaulisSp.Ac466"
-	"StreptococcusTigurinusAz3a"
-	"StreptococcusTigurinus1366"
-	"AlphaProteobacteriumMf105b01"
-	"LachnospiraMultiparaAtcc19207"
-	"FrankiaSp.Iso899"
-	"TolumonasSp.Brl61"
-	"NocardioidesSp.Iso805n"
-	"ConexibacterWoeseiIso977n"
-	"MethylohalobiusCrimeensis"
-	"PaenibacillusSp.A9"
-	"ActinomycesUrogenitalisS6c4"
-	"ActinomycesSp.S6spd3"
-	"AnaerococcusLactolyticusS7113"
-	"ClostridialesBacteriumS714"
-	"PrevotellaSp.S718"
-	"CorynebacteriumCasei"
-	"LysinibacillusSphaericusOt4b31"
-	"PandoraeaSp.Sd62"
-	"MethylophagaLonarensis"
-	"RaoultellaOrnithinolytica"
-	"EubacteriumAcidaminophilum"
-	"SphaerotilusNatans"
-	"ZhouiaAmylolytica"
-	"MesorhizobiumSp.L2c084a000"
-	"MesorhizobiumSp.Lnjc398b00"
-	"CorynebacteriumFreneyi"
-	"PrevotellaBiviaDnf00188"
-	"PrevotellaSp.S7Ms2"
-	"StreptomycesSp.Cnt318"
-	"StreptomycesSp.Taa040"
-	"RoseovariusMucosus"
-	"DeinococcusWulumuqiensis"
-	"NitrosospiraSp.Apg3"
-	"MarinobacterSantoriniensis"
-	"CyclobacteriaceaeBacteriumAk24"
-	"BrachyspiraHampsonii"
-	"StreptomycesSp.Taa204"
-	"ClostridiumJosui"
-	"LactobacillusOryzae"
-	"DietziaSp.Ucdthp"
-	"MycoplasmaPutrefaciensMput9231"
-	"CaulobacterCrescentusOr37"
-	"ClostridiumSordellii"
-	"PropionibacteriumGranulosum"
-	"HalopigerSp.Iih2"
-	"HalopigerSp.Iih3"
-	"HalanaerobiumSaccharolyticum"
-	"LactobacillusEquicursoris"
-	"ClostridiumIntestinale"
-	"PseudomonasDenitrificans"
-	"BacillusBoroniphilus"
-	"RoseibacteriumElongatum"
-	"GeobacillusStearothermophilus"
-	"AquimarinaSp.Sw150"
-	"AquimarinaMegaterium"
-	"KomagataeibacterXylinus"
-	"StreptococcusDentisani7746"
-	"MesorhizobiumMetallidurans"
-	"MesorhizobiumSp.Stm4661"
-	"AnoxybacillusFlavithermusAk1"
-	"IntestinimonasButyriciproducens"
-	"MyxococcusSp."
-	"StreptococcusDentisani7747"
-	"AfipiaSp.Ohsuic4"
-	"BradyrhizobiumSp.Ohsuiii"
-	"ThalassolituusOleivorans"
-	"GracilibacillusBoraciitolerans"
-	"PsychrobacterSp.Jcm18900"
-	"MesorhizobiumSp.Urha0056"
-	"MicrobacteriumSp.Urha0036"
-	"MarmoricolaSp.Urhb0036"
-	"MycobacteriumSp.Urhd0025"
-	"AlteromonasSp.Alt199"
-	"BradyrhizobiumSp.Urha0002"
-	"StreptomycesSp.Taa486"
-	"DesulfotomaculumGuttoideum"
-	"MycobacteriumKansasii732"
-	"KnoelliaFlava"
-	"ChryseobacteriumOranimense"
-	"EnterococcusMundtii"
-	"LysobacterDokdonensis"
-	"SulfitobacterDonghicola"
-	"PseudomonasKnackmussii"
-	"ClostridiumSp.01"
-	"LactobacillusNamurensis"
-	"BorreliaMiyamotoi"
-	"StreptococcusOligofermentans"
-	"ChthonomonasCalidirosea"
-	"StreptomycesFulvissimus"
-	"SalinisphaeraHydrothermalis"
-	"ClostridiaceaeBacteriumL21thd2"
-	"CellulomonasSp.Krmcy2"
-	"ClostridiumSp.Asbs410"
-	"DesulfovibrioMagneticusIfrc170"
-	"AminiphilusCircumscriptus"
-	"AminobacteriumMobile"
-	"ArthrobacterNicotinovorans"
-	"BradyrhizobiumJaponicum22"
-	"BradyrhizobiumJaponicumIn8p8"
-	"CaldicoprobacterOshimai"
-	"DechloromonasAgitata"
-	"DesulforegulaConservatrix"
-	"GeovibrioSp.L21acebes"
-	"MicrobacteriumSp.Krocy2"
-	"OceanicolaSp.Hl35"
-	"AlgoriphagusMarincolaHl49"
-	"SporosarcinaSp.Eur3222"
-	"KineosporiaAurantiaca"
-	"StreptomycesThermolilacinus"
-	"CandidateDivisionTm6"
-	"StreptomycesSp.R1ns10"
-	"BacillusFirmus"
-	"PseudoalteromonasAgarivorans"
-	"DesulfovibrioSp.L21syrab"
-	"SpirochaetaSp.L21rpuld2"
-	"GluconobacterFrateurii"
-	"GracilibacillusHalophilus"
-	"ArthrobacterSp.Br18"
-	"ArthrobacterSp.H14"
-	"IlumatobacterCoccineus"
-	"ThermocrinisSp.Gbs"
-	"BorreliaCoriaceae"
-	"BorreliaAnserina"
-	"BorreliaParkeri"
-	"ThermonemaRossianum"
-	"ChitinivibrioAlkaliphilus"
-	"AureispiraSp.Ccbqb1"
-	"StreptococcusSp.Hsism1"
-	"BlattabacteriumSp.Nci"
-	"PseudomonasCorrugata"
-	"MannheimiaHaemolyticaM42548"
-	"PhaeospirillumFulvum"
-	"RoseivivaxSp.22iis10s"
-	"AquimarinaSp.22iis11z7"
-	"ThioclavaSp.13d2w2"
-	"MycoplasmaGirerdii"
-	"MarinobacterLipolyticusSm19"
-	"CetobacteriumSomerae"
-	"MesorhizobiumSp.Nbimcp2c3"
-	"StreptococcusSuisEa183292"
-	"AtopobiumSp.F0209"
-	"LeptotrichiaSp.F0581"
-	"ActinomycesSp.F0311"
-	"ClostridialesBacteriumF0540"
-	"LeptotrichiaSp.W9775"
-	"MitsuokellaSp.W9106"
-	"OribacteriumSp.F0263"
-	"PeptostreptococcaceaeBacteriumW5053"
-	"SelenomonasSp.F0426"
-	"EubacteriumBrachy"
-	"TreponemaLecithinolyticum"
-	"GemellaBergeriae"
-	"DesulfovibrioPiezophilus"
-	"RhodococcusDefluvii"
-	"PseudomonasPelagia"
-	"HalobonumTyrrellensis"
-	"HelicobacterFennelliae"
-	"CatenovulumAgarivoransDs2"
-	"WeissellaOryzae"
-	"ThermoactinomycesDaqus"
-	"ThermusCaliditerrae"
-	"SphingobiumLactosutens"
-	"AcinetobacterHaemolyticus"
-	"SerratiaFonticolaAuap2c"
-	"PseudoalteromonasHaloplanktisTb64"
-	"SalinarchaeumSp.Harchtbsk1"
-	"PseudomonasStutzeriMf28"
-	"AlphaProteobacteriumMa2"
-	"KurthiaHuakuii"
-	"ChlamydiaSuis"
-	"SpiribacterSp.Uahsp71"
-	"SphingobiumSp.Yl23"
-	"RoseomonasGilardii"
-	"ShewanellaWaksmanii"
-	"AtopobacterPhocae"
-	"RhizobiumSelenitireducens"
-	"PseudomonasFlectens"
-	"EubacteriumXylanophilum"
-	"MicrovirgaFlocculans"
-	"CarnimonasNigrificans"
-	"RhizobiumLarrymoorei"
-	"PolaribacterSp.Hel13349"
-	"LoktanellaCinnabarina"
-	"CalothrixSp.3363"
-	"ElizabethkingiaAnophelis"
-	"BacillusSp.Unc438cl73tsus30"
-	"BryobacterAggregatus"
-	"LaceyellaSacchari"
-	"FlavobacteriumSaliperosum"
-	"RuminococcusFlavefaciens007c"
-	"FlavobacteriumLimnosediminis"
-	"MycobacteriumSepticum"
-	"AcinetobacterIndicus"
-	"BifidobacteriumBombi"
-	"SulfitobacterSp.Mm124"
-	"SulfitobacterSp.Nb77"
-	"SulfitobacterSp.Nb68"
-	"SaccharibacterSp.Am169"
-	"PalaeococcusPacificus"
-	"StreptomycesRapamycinicus"
-	"TatumellaSp.Nml063099"
-	"ExiguobacteriumPavilionensis"
-	"HelicobacterPyloriSa213a"
-	"ClostridiumSaccharobutylicum"
-	"GeobacillusSp.Jf8"
-	"SphingobacteriumPaucimobilis"
-	"SphingobiumUmmariense"
-	"BacillusSp.Eb01"
-	"PaucisalibacillusSp.Eb02"
-	"FormosaAgariphila"
-	"BacillusSp.Ff3"
-	"BacillusSp.Ff4"
-	"AnaerosalibacterSp.Nd1"
-	"BacteroidaceaeBacteriumMs4"
-	"PseudoalteromonasSp.Ocn003"
-	"LeifsoniaRubra"
-	"CellulophagaBaltica"
-	"VibrioDiazotrophicus"
-	"ThaueraTerpenica"
-	"CorynebacteriumArgentoratense"
-	"KitasatosporaCheerisanensis"
-	"BacillusMegateriumMsp201"
-	"ClostridialesBacteriumVe20218"
-	"TenacibaculumMaritimum"
-	"ArthrobacterSp.Akyn10"
-	"CoprobacterFastidiosus"
-	"StreptomycesNiveus"
-	"OlleyaMarilimosa"
-	"ThioclavaSp.Dt234"
-	"BacteriovoraxSp.Bsw11iv"
-	"EnsiferSp.Tw10"
-	"ThioclavaPacifica"
-	"PeptoniphilusSp.Chdc"
-	"PsychrobacterAquaticus"
-	"CardiniumEndosymbiontCbtq1"
-	"RoseovariusSp.Mctg156"
-	"ArcobacterSp.Af1028"
-	"ArcobacterSp.Af1440"
-	"HymenobacterSp.Apr13"
-	"AlicyclobacillusAcidoterrestris"
-	"PseudomonasSyringaeCc1417"
-	"PseudomonasSyringaeCc1513"
-	"PseudomonasSyringaeCc1557"
-	"HelicobacterCanis"
-	"HelicobacterMacacae"
-	"SphingobacteriumAntarcticus"
-	"ThermofilumSp.1910b"
-	"RhodobacteraceaeBacteriumHimb11"
-	"RalstoniaPickettiiDtp0602"
-	"CampylobacterColi76339"
-	"ParacoccusAminophilus"
-	"MycobacteriumSp.Umwgj"
-	"MycobacteriumSp.Umwwy"
-	"RhizobiumUndicola"
-	"MycobacteriumIranicum"
-	"FirmicutesBacteriumAsf500"
-	"GemmatimonasSp.Ap64"
-	"DesulfonauticusSp.A7a"
-	"CandidateDivisionZixi"
-	"SphingomonasSp.Fukuswis1"
-	"MucispirillumSchaedleri"
-	"StreptomycesSp.Urha0041"
-	"GeodermatophilaceaeBacteriumUrhb0048"
-	"MesorhizobiumSp.Urhc0008"
-	"CellulomonasSp.Urhe0023"
-	"BradyrhizobiumSp.Urhd0069"
-	"BlastococcusSp.Urhd0036"
-	"HalomonasSp.23gom1509m"
-	"SulfitobacterSp.20gpm1509m"
-	"IntrasporangiaceaeBacteriumUrhb0013"
-	"AhrensiaSp.13gom1096m"
-	"TenacibaculumSp.47agom205m"
-	"MycobacteriumSp.Urhb0044"
-	"AlcanivoraxSp.43bgom46m"
-	"SolirubrobacteralesBacteriumUrhd0059"
-	"DongiaSp.Urhe0060"
-	"GeodermatophilaceaeBacteriumUrha0031"
-	"RhodospirillalesBacteriumUrhd0088"
-	"AnoxybacillusFlavithermusYunnanensis"
-	"FlaviramulusIchthyoenteri"
-	"PaenibacillusDarwinianus"
-	"AliihoefleaSp.2ww"
-	"BrevibacteriumSp.Vcm10"
-	"AsaiaPlatycodiSf21"
-	"CaulobacteraceaeBacteriumPmmr1"
-	"AlicyclobacillusMacrosporangiidus"
-	"SporosarcinaSp.D27"
-	"ThermogemmatisporaSp.Pm5"
-	"GeobacillusVulcani"
-	"ThermomicrobialesSp.Ki4"
-	"AnoxybacillusTepidamans"
-	"AcidobacteriumSp.Pmmr2"
-	"LysinibacillusManganicus"
-	"ArenimonasMalthae"
-	"ArenimonasMetalli"
-	"LysinibacillusSinduriensis"
-	"RuminococcusAlbusAd2013"
-	"RuminococcusFlavefaciensAe3010"
-	"AdlercreutziaEquolifaciens"
-	"FrancisellaSp.W121067"
-	"PontibacillusHalophilus"
-	"PontibacillusMarinus"
-	"PontibacillusLitoralis"
-	"PontibacillusChungwhensis"
-	"PontibacillusYanchengensis"
-	"LysobacterDefluvii"
-	"LysobacterDaejeonensis"
-	"KnoelliaAerolata"
-	"KnoelliaSinensis"
-	"KnoelliaSubterranea"
-	"LeptolyngbyaSp.Heron"
-	"IntrasporangiumOryzae"
-	"GordoniaAmicalis"
-	"SchmidhempeliaBombi"
-	"MethylophilusSp.Oh31"
-	"PseudomonasMosselii"
-	"LeifsoniaXyliCynodontis"
-	"PseudomonasMendocinaEgdaq5"
-	"ClostridiumBifermentans"
-	"ClostridiumSp.Adety"
-	"PseudozymaBrasiliensis"
-	"PrevotellaSp.Hun102"
-	"EubacteriumSp.Ab3007"
-	"LeeuwenhoekiellaSp.Heli48"
-	"LeeuwenhoekiellaSp.Mar2009132"
-	"SediminibacterSp.Heli10"
-	"RuminococcaceaeBacteriumAe2021"
-	"LachnospiraceaeBacteriumAc2031"
-	"MaribacterForsetii"
-	"SelenomonasRuminantiumAc2024"
-	"SelenomonasRuminantiumAb3002"
-	"AcinetobacterNectaris"
-	"BordetellaHinzii"
-	"BifidobacteriumSp.7101"
-	"BifidobacteriumSp.A11"
-	"ActinomaduraMadurae"
-	"SporolactobacillusLaevolacticus"
-	"PseudomonasMoraviensis"
-	"PseudomonasTaeanensis"
-	"PaenibacillusSp.Maepy2"
-	"HaloferulaSp.Bvorr071"
-	"VerrucomicrobiumSp.Bvorr034"
-	"MarinobacterSp.Es1"
-	"LeucobacterSp.Ph1c"
-	"SerratiaSp.H1n"
-	"AlcanivoraxSp.P2s70"
-	"HalomonasSp.Pbn3"
-	"AlphaProteobacteriumRs24"
-	"ExiguobacteriumUndae"
-	"ExiguobacteriumMarinum"
-	"ExiguobacteriumOxidotolerans"
-	"BorreliaValaisianaTom4006"
-	"ExiguobacteriumSp.Mh3"
-	"HolosporaObtusa"
-	"EnterobacterCloacaeJd6301"
-	"LactobacillusFabifermentans"
-	"PelagibacterUbiqueHtcc7214"
-	"PelagibacterUbiqueHtcc7217"
-	"CorynebacteriumTuscaniense"
-	"OligellaUrethralis"
-	"VeillonellaMontpellierensis"
-	"PrevotellaBuccalisDnf00985"
-	"EndolissoclinumFaulkneriL5"
-	"SulfitobacterSp.H3"
-	"BacillusSimplex"
-	"VerrucomicrobiumSp.Bvorr106"
-	"StreptococcusAnginosusDora7"
-	"VaribaculumCambrienseDora20"
-	"CorynebacteriumGlycinophilum"
-	"StaphylococcusSimulans"
-	"FlavobacteriumBeibuense"
-	"SynechococcusSp.Nkbg15041c"
-	"BetaproteobacteriaBacteriumMola814"
-	"SinorhizobiumAmericanum"
-	"VagococcusLutrae"
-	"BrevibacillusPanacihumi"
-	"FusobacteriumNucleatumW1481"
-	"BacillusSp.Mb2021"
-	"ButyrivibrioSp.Fcs014"
-	"ButyrivibrioSp.Mc2021"
-	"PrevotellaSp.Ma2016"
-	"OribacteriumSp.Fc2011"
-	"PseudobutyrivibrioSp.Lb2011"
-	"LachnospiraceaeBacteriumAc2028"
-	"LachnospiraceaeBacteriumAc3007"
-	"LachnospiraceaeBacteriumMa2020"
-	"LachnospiraceaeBacteriumMc2017"
-	"AcholeplasmaEquifetale"
-	"AcholeplasmaHippikon"
-	"AcholeplasmaModicum"
-	"AcidiphiliumAngustum"
-	"AcidocellaFacilis"
-	"AlkaliphilusTransvaalensis"
-	"AnaerovibrioLipolyticus"
-	"BacillusBogoriensis"
-	"BartonellaElizabethae"
-	"BilophilaWadsworthiaAtcc49260"
-	"CrocinitomixCatalasitica"
-	"EubacteriumCellulosolvensLd2006"
-	"EubacteriumDesmolans"
-	"FacklamiaSourekii"
-	"FusobacteriumPerfoetens"
-	"HelicobacterPametensis"
-	"LegionellaFairfieldensis"
-	"LegionellaSainthelensi"
-	"MycobacteriumGenavense"
-	"ProlixibacterBellariivorans"
-	"SphingobacteriumSp.H1ai"
-	"ClostridiumMangenotii"
-	"BacteroidesSp.Ga6a2"
-	"TreponemaSp.C6a8"
-	"OribacteriumSp.P6a1"
-	"PrevotellaSp.P6b1"
-	"PseudobutyrivibrioSp.Md2005"
-	"RuminococcusSp.Fc2018"
-	"SelenomonasSp.Nd2010"
-	"SerratiaSp.Dd3"
-	"ShinellaSp.Dd12"
-	"LachnospiraceaeBacteriumC6a11"
-	"LachnospiraceaeBacteriumFe2018"
-	"LachnospiraceaeBacteriumMd2004"
-	"LachnospiraceaeBacteriumNc2004"
-	"LachnospiraceaeBacteriumNd2006"
-	"LachnospiraceaeBacteriumP6a3"
-	"LachnospiraceaeBacteriumP6b14"
-	"LachnospiraceaeBacteriumV9d3004"
-	"LachnospiraceaeBacteriumYsb2008"
-	"PropionibacteriaceaeBacteriumP6a17"
-	"RuminococcaceaeBacteriumAb4001"
-	"ButyrivibrioProteoclasticusP6b7"
-	"ClostridiumLundense"
-	"KandleriaVitulina"
-	"LachnospiraMultiparaLb2003"
-	"MitsuokellaJalaludinii"
-	"PrevotellaBrevis"
-	"ProteiniclasticumRuminis"
-	"RuminococcusFlavefaciensMa2007"
-	"SharpeaAzabuensis"
-	"SuccinivibrioDextrinosolvens"
-	"NocardiaNova"
-	"RhizobialesBacteriumYim77505"
-	"GammaproteobacteriaBacteriumMola455"
-	"CorynebacteriumSp.Jcb"
-	"ClostridiumSp.Jcc"
-	"PseudomonasSp.Tkp"
-	"MarinobacterSp.Mctg268"
-	"HalomonasSp.Tg39a"
-	"OceanicolaSp.Mctg156"
-	"ClostridiumBotulinum202f"
-	"ClostridiumBaratii"
-	"PorticoccusHydrocarbonoclasticus"
-	"PolycyclovoransAlgicola"
-	"AlgiphilusAromaticivorans"
-	"MicrobacteriumParaoxydansDh1b"
-	"LeifsoniaAquatica"
-	"MyroidesOdoratimimus"
-	"BorreliaPersica"
-	"DefluviimonasSp.20v17"
-	"PseudomonasMandeliiPd30"
-	"StreptococcusSp.Vt162"
-	"PhaeobacterGallaeciensis"
-	"BacillusSp.Sjs"
-	"LactobacillusApodemi"
-	"LactobacillusCaseiDsm20011"
-	"LactobacillusComposti"
-	"LactobacillusFarraginis"
-	"LactobacillusFuchuensis"
-	"LactobacillusGallinarum"
-	"LactobacillusHamsteri"
-	"LactobacillusHayakitensis"
-	"LactobacillusHominis"
-	"LactobacillusKitasatonis"
-	"LactobacillusNodensis"
-	"LactobacillusOtakiensis"
-	"LactobacillusPasteurii"
-	"LactobacillusSucicola"
-	"LactobacillusSuebicus"
-	"LactobacillusVaginalis"
-	"LactobacillusVersmoldensis"
-	"LactobacillusZeae"
-	"AdvenellaKashmirensisW13003"
-	"HepatoplasmaCrinochetorum"
-	"RhodococcusRhodochrous"
-	"StenotrophomonasMaltophilia5bai2"
-	"AfipiaSp.P5210"
-	"GeobacillusSp.G1w1"
-	"MagnetospirillumGryphiswaldense"
-	"RhizobiumEtliMimosae"
-	"KomagataeibacterRhaeticus"
-	"MannheimiaVarigenaUsmarc1261"
-	"RikenellaceaeBacteriumM3"
-	"MannheimiaVarigenaUsmarc1296"
-	"DyadobacterTibetensis"
-	"BurkholderiaPseudomalleiAbcpw111"
-	"BifidobacteriumMoukalabense"
-	"RhodococcusPyridinivorans"
-	"CriblamydiaSequanensis"
-	"OchrobactrumRhizosphaerae"
-	"BifidobacteriumPullorum"
-	"BifidobacteriumMongoliense"
-	"BifidobacteriumActinocoloniiforme"
-	"BifidobacteriumBohemicum"
-	"BifidobacteriumBiavatii"
-	"BifidobacteriumCallitrichos"
-	"BifidobacteriumReuteri"
-	"CastellaniellaDefragrans"
-	"PseudomonasNitroreducensHbp1"
-	"PseudomonasSp.Bay1663"
-	"EscherichiaAlbertiiKf1"
-	"StreptomycesScopuliridis"
-	"MycobacteriumAromaticivorans"
-	"PseudomonasCichorii"
-	"SerratiaFonticolaRb25"
-	"ArcobacterCibarius"
-	"LuteimonasHuabeiensis"
-	"SulfitobacterGuttiformis"
-	"YersiniaEnterocoliticaLc20"
-	"ClostridiumNovyiBNctc9691"
-	"ClostridiumBotulinumCdBkt12695"
-	"AquimarinaMacrocephali"
-	"SporolactobacillusTerrae"
-	"BrevibacillusBorstelensis"
-	"BacillusFlexus"
-	"ChlamydiaSp.Diamant"
-	"ChlamydiaSp.Rubis"
-	"XylellaFastidiosaPls229"
-	"SciscionellaSp.Se31"
-	"ParacoccusYeei"
-	"AeromonasHydrophilaYl17"
-	"TomitellaBiformata"
-	"CampylobacterSp.Cit045"
-	"HalobellusRufus"
-	"ArthrobacterSp.Unc362mftsu51"
-	"MycobacteriumSp.Unc280mftsu51"
-	"CaulobacterSp.Unc358mftsu51"
-	"ClostridiumSp.Knhs205"
-	"MicrobacteriumSp.Unccl10"
-	"PaenibacillusSp.Unc451mf"
-	"PhyllobacteriumSp.Unc302mfcol52"
-	"RhodococcusSp.Unc23mfcrub11"
-	"RhodococcusSp.Unc363mftsu51"
-	"SphingomonasSp.Unc305mfcol52"
-	"ThermusSp.Yim77409"
-	"ClostridialesBacteriumDri13"
-	"CarnobacteriumAlterfunditum"
-	"CarnobacteriumDivergens"
-	"CarnobacteriumFunditum"
-	"CarnobacteriumGallinarum"
-	"CarnobacteriumMobile"
-	"CarnobacteriumPleistocenium"
-	"HelicobacterRodentium"
-	"KitasatosporaAzatica"
-	"KitasatosporaMediocidica"
-	"RoseivivaxHalodurans"
-	"RoseivivaxIsoporae"
-	"StreptacidiphilusOryzae"
-	"StreptomycesYeochonensis"
-	"ThermusTengchongensis"
-	"KutzneriaAlbida"
-	"FlavobacteriumSuccinicans"
-	"BacillusSp.Ts2"
-	"CorynebacteriumFalsenii"
-	"MicrobacteriumSp.Mrs1"
-	"MicrobacteriumSp.Crk32"
-	"MicrobacteriumSp.Crk20"
-	"PseudomonasSp.Rl"
-	"HafniaAlvei"
-	"FlavobacteriumAquatile"
-	"SchleiferiaThermophila"
-	"MicrobulbiferSp.Hz11"
-	"PseudomonasPseudoalcaligenesAd6"
-	"FlavobacteriumChungangense"
-	"AccumulibacterSp.Ba93"
-	"PedobacterBorealis"
-	"CellulomonasSp.Hzm"
-	"PhotobacteriumPhosphoreum"
-	"HaladaptatusCibarius"
-	"HalapricumSalinum"
-	"AcetobacterAceti1023"
-	"HylemonellaGracilisNiagara"
-	"BurkholderiaSp.Mp1"
-	"ComamonadaceaeBacteriumH1"
-	"LachnospiraceaeBacteriumAc2029"
-	"NitrososphaeraEvergladensis"
-	"GeomicrobiumSp.Jcm19037"
-	"GeomicrobiumSp.Jcm19038"
-	"BacillusSp.Jcm19046"
-	"WeeksellaSp.Ff8"
-	"HaemophilusSp.Ff7"
-	"BacillusSp.Jce"
-	"JeotgalicoccusSp.13mg44air"
-	"ActibacteriumAtlanticum"
-	"OceanicolaSp.22iis11g"
-	"VirgibacillusSp.Vm5"
-	"OceanobacillusSp.S5"
-	"ActinosporangiumSp.Nrrlb3428"
-	"GlycomycesSp.Nrrlb16210"
-	"SaccharothrixSp.Nrrlb16314"
-	"StreptomycesSp.Nrrlf2580"
-	"StreptomycesSp.Nrrlf2890"
-	"StreptomycesSp.Nrrlf5008"
-	"StreptomycesSp.Nrrlf5053"
-	"StreptomycesSp.Nrrlf5065"
-	"StreptomycesSp.Nrrlf5123"
-	"StreptomycesSp.Nrrlf5126"
-	"StreptomycesSp.Nrrlf5135"
-	"StreptomycesSp.Nrrlf525"
-	"StreptomycesSp.Nrrlf5630"
-	"StreptomycesSp.Nrrlf6677"
-	"StreptomycesSp.Nrrls118"
-	"StreptomycesSp.Nrrls149"
-	"StreptomycesSp.Nrrls1777"
-	"StreptomycesSp.Nrrls237"
-	"StreptomycesSp.Nrrls337"
-	"StreptomycesSp.Nrrls340"
-	"StreptomycesSp.Nrrls37"
-	"StreptomycesSp.Nrrls474"
-	"StreptomycesSp.Nrrls646"
-	"DevosiaSp.Lc5"
-	"StreptomycesSp.Nrrls87"
-	"StreptomycesSp.Nrrls920"
-	"StreptomycesSp.Nrrlwc3626"
-	"StreptomycesSp.Nrrlwc3742"
-	"StreptomycesSp.Nrrlwc3773"
-	"MicromonosporaParva"
-	"ThioalkalivibrioSp.Hk1"
-	"LacinutrixSp.Pamc27137"
-	"ScytonemaHofmanni"
-	"RhodovulumSp.Ni22"
-	"ClostridiumSp.Knhs209"
-	"SphingomonasSp.Rit328"
-	"PseudomonasSp.Rit357"
-	"ProchlorococcusSp.Scb241528o2"
-	"ProchlorococcusSp.Scb245a520k10"
-	"FalsirhodobacterSp.Alg1"
-	"BurkholderiaSp.K24"
-	"LysinibacillusSp.Bf4"
-	"DeinococcusPhoenicis"
-	"StreptomycesSp.Nrrlb24720"
-	"PeptostreptococcaceaeBacteriumVa2"
-	"HalomonasSp.Hl48"
-	"MarinobacterSp.Hl58"
-	"OceanicaulisSp.Hl87"
-	"PorphyrobacterSp.Hl46"
-	"CurtobacteriumSp.S6"
-	"SpirochaetaSp.Jc230"
-	"PantoeaSp.Psnih2"
-	"PantoeaSp.Psnih1"
-	"PsychroserpensSp.Pamc27130"
-	"ExiguobacteriumSp.Ab2"
-	"SelenomonasSp.Ae3005"
-	"FerriphaselusSp.R1"
-	"ZetaproteobacteriaBacteriumTag1"
-	"ClostridiumSp.Hmp27"
-	"DesulfosporosinusSp.Hmp52"
-	"LeptolyngbyaSp.Jsc1"
-	"CorynebacteriumSp.Atcc6931"
-	"PseudomonasSp.Ant303"
-	"DeinococcusSp.Rl"
-	"FlavobacteriumSp.Em1308"
-	"FlavobacteriumSp.Em1321"
-	"GammaproteobacteriaBacteriumMfb021"
-	"CyanobiumSp.Caciam14"
-	"ListeriaceaeBacteriumFsla50209"
-	"ProchlorococcusSp.Mit0601"
-	"ProchlorococcusSp.Mit0602"
-	"ProchlorococcusSp.Mit0701"
-	"BacillusSp.Mt2"
-	"ClostridiumSp.Cl6"
-	"ClostridiumSp.Cl2"
-	"BacillusSp.Kw12"
-	"PseudomonasSp.20bn"
-	"ClostridiumSp.Lf2"
-	"BacteriumUasb270"
-	"PaenibacillusSp.Tca20"
-	"RhizobiumSp.Yr295"
-	"RhizobiumSp.Yr519"
-	"ChryseobacteriumSp.Cf284"
-	"RhizobiumSp.Cf097"
-	"RhizobiumSp.Cf394"
-	"RhizobiumSp.Ok494"
-	"LuteibacterSp.9143"
-	"LuteibacterSp.9135"
-	"MassiliaSp.9096"
-	"BurkholderiaSp.9120"
-	"PaenibacillusSp.Mst1"
-	"ProchlorococcusSp.Mit0604"
-	"ProchlorococcusSp.Mit0801"
-	"AlistipesSp.627"
-	"MethyloteneraSp.L2l1"
-	"SphingopyxisSp.Lc81"
-	"BoseaSp.Lc85"
-	"MassiliaSp.Lc238"
-	"ActinobacteriumAcamd5"
-	"PolaromonasSp.Cg912"
-	"BacteriumSp.Ol1"
-	"BacteriumSp.Lf3"
-	"HalomonasSp.Ko116"
-	"FlavobacteriumSp.Fl"
-	"ButyrivibrioSp.Ae3004"
-	"ArthromitusSp.Sfbmousenl"
-	"AcinetobacterSp.Hr7"
-	"RhizobiumSp.R1200b2"
-	"BoseaSp.Unc402clcol"
-	"RuminococcusSp.Hun007"
-	"PorphyromonasSp.Cot239oh1446"
-	"PorphyromonasSp.Cot290oh860"
-	"ShewanellaSp.Yqh10"
-	"IdiomarinaSp.Mccc1a10513"
-	"VibrioSp.Er1a"
-	"PorphyromonadaceaeCot184oh4590"
-	"OscillibacterSp.Er4"
-	"ChlorobiumSp.Gbchlb"
-	"ChloroflexusSp.Msg"
-	"SphingobiumSp.Ba1"
-	"PseudomonasSp.Ml96"
-	"SerratiaSp.Ag1"
-	"ParacoccusSp.4681"
-	"PlanococcusSp.Pamc21323"
-	"AtelocyanobacteriumThalassaSio64986"
-	"RickettsialesBacteriumAc37b"
-	"ThalassospiraAustralica"
-	"MaribiusSp.Mola401"
-	"AchromobacterSp.Rta"
-	"RhizobiumSp.Ys1r"
-	"DevosiaSp.172e8"
-	"ThalassotaleaSp.Nd16a"
-	"PaenibacillusSp.Fslp40081"
-	"PaenibacillusSp.Fslr50345"
-	"PaenibacillusSp.Fslr70273"
-	"PaenibacillusSp.Fslr70331"
-	"PaenibacillusSp.Fslh70357"
-	"PaenibacillusSp.Fslh70737"
-	"SphingopyxisSp.Mwb1"
-	"SulfurospirillumSp.Scadc"
-	"SulfuricurvumSp.Mlsb"
-	"AlteromonasSp.Lor"
-	"AquabacteriumSp.Nj1"
-	"SphingobacteriumSp.Ml3w"
-	"TreponemaSp.Omz838"
-	"DeinococcusSp.Yim77859"
-	"ClostridiumSp.Knhs214"
-	"MyxosarcinaSp.Gi1"
-	"MollicutesBacteriumHr1"
-	"MollicutesBacteriumHr2"
-	"LactobacillusSp.Wkb10"
-	"LactobacillusSp.Wkb8"
-	"SphingomonasSp.3524zxx"
-	"HoefleaSp.Bal378"
-	"FrancisellaSp.Fsc1006"
-	"HelicobacterSp.Mit115569"
-	"CampylobacterSp.Mit975078"
-	"SphingomonasTaxi"
-	"SphingomonasSp.37zxx"
-	"SphingobacteriaceaeBacteriumDw12"
-	"ListeriaceaeBacteriumFsla50281"
-	"XanthomonasSp.Nyagatare"
-	"CaenorhabditisTropicalis"
-	"BurkholderiaceaeSp.Mortierella"
-	"ShewanellaSp.Ecsmb14101"
-	"SulfurospirillumSp.Mes"
-	"ParacoccusSp.Pamc22219"
-	"DickeyaSp.2b12"
-	"JanthinobacteriumAgaricidamnosum"
-
+	"PseudomonasAeruginosa", "BurkholderiaCepacia", "PseudomonasOleovorans",
+	"XanthomonasCampestrisCampestris", "AgrobacteriumRhizogenes", "SinorhizobiumFrediiNgr234",
+	"AcinetobacterBaumannii", "AlcaligenesFaecalis", "PantoeaAgglomerans",
+	"KlebsiellaOxytoca", "KlebsiellaPneumoniae", "ProteusVulgaris", "YersiniaPseudotuberculosis",
+	"VibrioVulnificus", "PasteurellaMultocida", "PasteurellaPneumotropica",
+	"ChlamydiaTrachomatis", "CampylobacterUreolyticus", "DesulfovibrioVulgarisHildenborough",
+	"DesulfovibrioVulgarisMiyazaki", "FlavobacteriumHydatis", "ErythrobacterLongus",
+	"SynechococcusElongatusPcc7942", "SynechocystisSp.Pcc6714", "SynechocystisSp.Pcc6803",
+	"LeuconostocLactis", "DermacoccusNishinomiyaensis", "StaphylococcusAureus",
+	"StaphylococcusXylosus", "StreptococcusPyogenes", "StreptococcusIniae",
+	"BacillusCereus", "BacillusMycoides", "ClostridiumSp.Atcc29733", "ClostridiumSticklandii",
+	"LactobacillusAnimalis", "BifidobacteriumAdolescentis", "BifidobacteriumCoryneforme",
+	"BifidobacteriumCuniculi", "BifidobacteriumPseudolongumGlobosum", "BifidobacteriumMagnum",
+	"BifidobacteriumMinimum", "OerskoviaTurbata", "CorynebacteriumPseudotuberculosis",
+	"RhodococcusFascians", "ActinoplanesUtahensis", "StreptomycesAureofaciens",
+	"StreptomycesBikiniensis", "StreptomycesFradiae", "StreptomycesGlaucescens",
+	"StreptomycesHalstedii", "StreptomycesSclerotialus", "StreptomycesVirginiae",
+	"StreptomycesCellulosae", "MicrotetrasporaGlauca", "StreptosporangiumAmethystogenes",
+	"PimelobacterSimplex", "GordoniaTerrae", "PseudonocardiaAutotrophica",
+	"MycoplasmaAgalactiae", "MycoplasmaCalifornicum", "ThermoanaerobacterKivui",
+	"SolemyaVelum", "SodalisPierantonius", "FervidobacteriumIslandicum", "CitrusSinensis",
+	"SynergistesJonesii", "PhaeodactylumTricornutum", "EctocarpusSiliculosus",
+	"EmilianiaHuxleyi", "ChlamydomonasReinhardtii", "VolvoxCarteri", "AuxenochlorellaProtothecoides",
+	"PhyscomitrellaPatens", "TheobromaCacao", "CaricaPapaya", "CucumisMelo",
+	"CucumisSativus", "PopulusTrichocarpa", "ArabidopsisThaliana", "BrassicaRapa",
+	"BrassicaOleracea", "MalusDomestica", "PrunusPersica", "CicerArietinum",
+	"GlycineMax", "MedicagoTruncatula", "PhaseolusVulgaris", "ManihotEsculenta",
+	"RicinusCommunis", "LinumUsitatissimum", "SolanumLycopersicum", "NicotianaSylvestris",
+	"NicotianaTomentosiformis", "SolanumTuberosum", "ErythrantheGuttata", "NelumboNucifera",
+	"HordeumVulgare", "OryzaRufipogon", "OryzaSativa", "OryzaBrachyantha",
+	"OryzaNivara", "OryzaPunctata", "OryzaGlaberrima", "SetariaItalica", "SorghumBicolor",
+	"TriticumAestivum", "TriticumUrartu", "ZeaMays", "MusaAcuminata", "PhytophthoraInfestans",
+	"PhytophthoraParasitica", "SchizosaccharomycesPombe", "SchizosaccharomycesJaponicus",
+	"SchizosaccharomycesOctosporus", "PichiaKudriavzevii", "MillerozymaFarinosa",
+	"KomagataellaPastoris", "ScheffersomycesStipitis", "MeyerozymaGuilliermondii",
+	"SaccharomycesCerevisiae", "TorulasporaDelbrueckii", "YarrowiaLipolytica",
+	"ZygosaccharomycesRouxii", "DebaryomycesHansenii", "TaphrinaDeformans",
+	"BipolarisMaydis", "BipolarisZeicola", "LeptosphaeriaMaculans", "HistoplasmaCapsulatum",
+	"BlastomycesDermatitidis", "AspergillusClavatus", "AspergillusFlavus",
+	"AspergillusNiger", "AspergillusOryzae", "ClavicepsPurpurea", "FusariumFujikuroi",
+	"NeurosporaCrassa", "PodosporaAnserina", "SordariaMacrospora", "SclerotiniaSclerotiorum",
+	"CryptococcusNeoformans", "TremellaMesenterica", "UstilagoMaydis", "RhodosporidiumToruloides",
+	"PucciniaGraminis", "SchizophyllumCommune", "AgaricusBisporus", "CoprinopsisCinerea",
+	"ColletotrichumOrbiculare", "CandidaAlbicans", "CandidaGlabrata", "CandidaMaltosa",
+	"CandidaParapsilosis", "CandidaTropicalis", "CoccidioidesImmitis", "FusariumOxysporum",
+	"FusariumGraminearum", "TrichophytonRubrum", "LeishmaniaMajor", "LeishmaniaInfantum",
+	"LeishmaniaPanamensis", "TrypanosomaBrucei", "TrypanosomaCruzi", "TrichomonasVaginalis",
+	"GiardiaIntestinalis", "EntamoebaHistolytica", "NaegleriaGruberi", "DictyosteliumPurpureum",
+	"CryptosporidiumMuris", "ToxoplasmaGondii", "PlasmodiumBerghei", "PlasmodiumChabaudi",
+	"PlasmodiumCynomolgi", "PlasmodiumFalciparum", "PlasmodiumKnowlesi", "PlasmodiumVivax",
+	"PlasmodiumVinckei", "BabesiaBovis", "BabesiaEqui", "TheileriaAnnulata",
+	"TheileriaParva", "ParameciumTetraurelia", "TetrahymenaThermophila", "IchthyophthiriusMultifiliis",
+	"ExophialaDermatitidis", "HydraVulgaris", "SchistosomaMansoni", "EchinococcusMultilocularis",
+	"CaenorhabditisBriggsae", "CaenorhabditisElegans", "BursaphelenchusXylophilus",
+	"TrichinellaSpiralis", "HelobdellaRobusta", "AplysiaCalifornica", "DaphniaPulex",
+	"AcyrthosiphonPisum", "TriboliumCastaneum", "BombyxMori", "AedesAegypti",
+	"AnophelesGambiae", "CulexQuinquefasciatus", "LoaLoa", "CeratitisCapitata",
+	"DrosophilaAnanassae", "DrosophilaErecta", "DrosophilaGrimshawi", "DrosophilaMelanogaster",
+	"DrosophilaMojavensis", "DrosophilaPersimilis", "DrosophilaPseudoobscura",
+	"DrosophilaVirilis", "DrosophilaYakuba", "DrosophilaWillistoni", "MuscaDomestica",
+	"NasoniaVitripennis", "ApisMellifera", "StrongylocentrotusPurpuratus",
+	"CionaIntestinalis", "BranchiostomaFloridae", "LatimeriaChalumnae", "LepisosteusOculatus",
+	"DanioRerio", "AstyanaxMexicanus", "EsoxLucius", "GadusMorhua", "PoeciliaReticulata",
+	"XiphophorusMaculatus", "OryziasLatipes", "OreochromisNiloticus", "HaplochromisBurtoni",
+	"XenopusTropicalis", "CheloniaMydas", "ChrysemysPicta", "AlligatorMississippiensis",
+	"ColumbaLivia", "GallusGallus", "OrnithorhynchusAnatinus", "SarcophilusHarrisii",
+	"MacropusEugenii", "DasypusNovemcinctus", "ErinaceusEuropaeus", "EchinopsTelfairi",
+	"PteropusAlecto", "TarsiusSyrichta", "CallithrixJacchus", "MacacaFascicularis",
+	"MacacaMulatta", "PapioAnubis", "GorillaGorilla", "PanPaniscus", "PanTroglodytes",
+	"PongoAbelii", "HomoSapiens", "CanisLupus", "AiluropodaMelanoleuca", "MustelaPutorius",
+	"FelisCatus", "PantheraTigris", "OdobenusRosmarus", "LeptonychotesWeddellii",
+	"OrcinusOrca", "TursiopsTruncatus", "BalaenopteraAcutorostrata", "TrichechusManatus",
+	"LoxodontaAfricana", "OrycteropusAfer", "SusScrofa", "BosTaurus", "OvisAries",
+	"OchotonaPrinceps", "OryctolagusCuniculus", "CricetulusGriseus", "MesocricetusAuratus",
+	"PeromyscusManiculatus", "MusMusculus", "RattusNorvegicus", "CaviaPorcellus",
+	"OctodonDegus", "HeterocephalusGlaber", "SaccoglossusKowalevskii", "TrichoplaxAdhaerens",
+	"AttaCephalotes", "DactylococcopsisSalina", "DanausPlexippus", "RhodniusProlixus",
+	"AmborellaTrichopoda", "ArthrobotrysOligospora", "MonodelphisDomestica",
+	"ParastagonosporaNodorum", "SphingomonasPaucimobilis", "SphingobiumYanoikuyae",
+	"PelodiscusSinensis", "BrachypodiumDistachyon", "NaumovozymaCastellii",
+	"NaumovozymaDairenensis", "VerticilliumDahliae", "SaimiriBoliviensis",
+	"MnemiopsisLeidyi", "SaccharopolysporaRectivirgula", "NostocSp.Pcc7524",
+	"PorphyromonasMacacae", "YersiniaKristensenii", "PhotodesmusKatoptron",
+	"ColwelliaPsychrerythraea", "CobetiaMarina", "AnolisCarolinensis", "HerbidosporaCretacea",
+	"TarenayaHassleriana", "TalaromycesStipitatus", "AllomycesMacrogynus",
+	"ElephantulusEdwardii", "KluyveromycesLactis", "UrsusMaritimus", "EptesicusFuscus",
+	"NeosporaCaninum", "StreptomycesGriseoluteus", "YersiniaRuckeri", "VibrioNavarrensis",
+	"NatrialbaAsiatica", "JanthinobacteriumLividum", "GossypiumRaimondii",
+	"VitisVinifera", "GaeumannomycesGraminis", "TrichodermaVirens", "SporothrixSchenckii",
+	"OtolemurGarnettii", "TakifuguRubripes", "CaenorhabditisRemanei", "ColletotrichumGraminicola",
+	"BifidobacteriumPseudolongum", "ClavibacterMichiganensisSepedonicus", "CampylobacterSputorum",
+	"PseudomonasStutzeriAtcc14405", "SynechococcusSp.Pcc7002", "SynechococcusSp.Wh7803",
+	"CalothrixSp.Pcc7103", "TetranychusUrticae", "NeolamprologusBrichardi",
+	"BlautiaProducta", "EremotheciumGossypii", "AspergillusTerreus", "UncinocarpusReesii",
+	"CatenuloplanesJaponicus", "StreptomycesGalbus", "BifidobacteriumThermophilum",
+	"ParacoccusVersutus", "MixiaOsmundae", "BlumeriaGraminis", "StrongyloidesRatti",
+	"HeliconiusMelpomene", "ChinchillaLanigera", "ThalassiosiraPseudonana",
+	"CitrobacterAmalonaticus", "ThielaviaTerrestris", "MacrophominaPhaseolina",
+	"DactylosporangiumAurantiacum", "BifidobacteriumChoerinum", "BacillusThermoamylovorans",
+	"VanderwaltozymaPolyspora", "MucorCircinelloides", "PythiumIrregulare",
+	"NeosartoryaFischeri", "PenicilliumDigitatum", "MycobacteriumAbscessus",
+	"WigglesworthiaGlossinidiaSp.Gbr", "PorphyromonasCangingivalis", "PorphyromonasCanoris",
+	"LodderomycesElongisporus", "ClostridiumAlgidicarnis", "AegilopsTauschii",
+	"PhytoplasmaMali", "TalaromycesMarneffei", "RhodococcusOpacus", "ChaetomiumGlobosum",
+	"AlligatorSinensis", "PanicumVirgatum", "MicromonasPusilla", "TuberMelanosporum",
+	"StreptococcusEqui", "NeurosporaTetrasperma", "OryzaGlumipatula", "OryzaMeridionalis",
+	"AcinetobacterJunii", "AcinetobacterSp.Cipa165", "AspergillusKawachii",
+	"FomitopsisPinicola", "StereumHirsutum", "BotrytisCinerea", "LentzeaAlbidocapillata",
+	"CyanotheceSp.Pcc8801", "BathycoccusPrasinos", "PneumocystisJirovecii",
+	"PythiumVexans", "SorexAraneus", "RubrobacterRadiotolerans", "PhoenixDactylifera",
+	"CandidaDubliniensis", "HalomonasSalina", "AnophelesDarlingi", "IctidomysTridecemlineatus",
+	"CaproniaEpimyces", "CaproniaCoronata", "PrauserellaRugosa", "StreptomycesWedmorensis",
+	"CyanotheceSp.Atcc51142", "AureococcusAnophagefferens", "StreptomycesMegasporus",
+	"PaenibacillusDurus", "MycobacteriumAviumAvium", "DictyosteliumDiscoideum",
+	"BipolarisSorokiniana", "PyrenophoraTriticirepentis", "CyanidioschyzonMerolae",
+	"EremotheciumCymbalariae", "NematostellaVectensis", "MycoplasmaConjunctivae",
+	"CandidaTenuis", "AnabaenaSp.90", "WeissellaHellenica", "SphingobiumChlorophenolicum",
+	"EntamoebaDispar", "StreptomycesOlivaceus", "StreptomycesLydicus", "MycobacteriumTriplex",
+	"PoeciliaFormosa", "ArabisAlpina", "HelicobacterTrogontum", "JaculusJaculus",
+	"TrichodermaReesei", "CionaSavignyi", "SulfitobacterSp.Ee36", "HaliaeetusLeucocephalus",
+	"PyrenophoraTeres", "PectobacteriumBetavasculorum", "GuillardiaTheta",
+	"VibrioAnguillarum", "StreptomycesToyocaensis", "CylindrospermumStagnale",
+	"OscillatoriaAcuminata", "SyntrophusAciditrophicus", "FragariaVesca", "SpirillosporaAlbida",
+	"StreptomycesCelluloflavus", "RickettsiellaGrylli", "FibrobacterSuccinogenes",
+	"MyotisLucifugus", "PantholopsHodgsonii", "ArabidopsisLyrata", "PhytoplasmaAustraliense",
+	"FicedulaAlbicollis", "ProchlorococcusMarinusPastoris", "ProchlorococcusMarinusMit9107",
+	"ProchlorococcusMarinusGp2", "ProchlorococcusMarinusSb", "SynechococcusSp.Wh7805",
+	"LactobacillusParaplantarum", "ChlorocebusSabaeus", "OphiostomaPiceae",
+	"ConiosporiumApollinis", "RhinopithecusRoxellana", "PluralibacterGergoviae",
+	"NomascusLeucogenys", "AzoarcusSp.Bh72", "AcinetobacterSp.Adp1", "ArthrodermaBenhamiae",
+	"MicrosporumGypseum", "ArthrodermaOtae", "TrichophytonEquinum", "TrichodermaAtroviride",
+	"NostocPunctiforme", "MycosphaerellaPini", "SynechococcusSp.Cc9311", "PythiumUltimum",
+	"HalotheceSp.Pcc7418", "CyanotheceSp.Pcc7424", "OryzaBarthii", "ActinoalloteichusCyanogriseus",
+	"PiriformosporaIndica", "PantoeaStewartii", "StreptomycesNiger", "StreptomycesViolens",
+	"StreptomycesRoseoverticillatus", "BacillusClausii", "StreptomycesAtroolivaceus",
+	"StreptomycesBicolor", "StreptomycesCatenulae", "StreptomycesGriseorubens",
+	"StreptomycesAlbusAlbus", "StreptomycesAlboflavus", "StreptomycesAureocirculatus",
+	"StreptomycesCalifornicus", "StreptomycesLavenduligriseus", "StreptomycesMutabilis",
+	"StreptomycesPurpeofuscus", "StreptomycesResistomycificus", "StreptomycesVarsoviensis",
+	"PhytophthoraSojae", "LechevalieriaAerocolonigenes", "StreptomycesDurhamensis",
+	"StreptomycesFlavochromogenes", "StreptomycesIakyrus", "StreptomycesKatrae",
+	"StreptomycesPyridomyceticus", "StreptomycesAlbulus", "TheileriaOrientalis",
+	"ThermococcusKodakarensis", "SynechococcusSp.Wh5701", "AquamicrobiumDefluvii",
+	"GasterosteusAculeatus", "MicroplitisDemolitor", "PseudomonasSp.Vlb120",
+	"CaulobacterHenricii", "PenicilliumOxalicum", "OstreococcusTauri", "PyrococcusHorikoshii",
+	"EucalyptusGrandis", "HaemophilusInfluenzae", "BosMutus", "SphaeroformaArctica",
+	"OphiocordycepsSinensis", "SporisoriumReilianum", "BoecheraStricta", "EutremaSalsugineum",
+	"StreptomycesSeoulensis", "CordycepsMilitaris", "ProchlorococcusMarinusMit9302",
+	"ProchlorococcusMarinusMit9312", "ProchlorococcusMarinusMit9313", "ThiomonasIntermedia",
+	"AromatoleumAromaticum", "MycetocolaSaprophilus", "PseudomonasPutidaGb1",
+	"LeersiaPerrieri", "BifidobacteriumSubtile", "XanthobacterAutotrophicus",
+	"BifidobacteriumGallinarum", "BifidobacteriumMerycicum", "BifidobacteriumRuminantium",
+	"PectobacteriumCarotovorumOdoriferum", "MyceliophthoraThermophila", "MortierellaVerticillata",
+	"MicrotusOchrogaster", "ConiophoraPuteana", "ColletotrichumHigginsianum",
+	"MonosigaBrevicollis", "CapsellaRubella", "TrichosporonAsahii", "PseudanabaenaSp.Pcc7367",
+	"SerratiaGrimesii", "SerratiaPlymuthica", "SulfitobacterMediterraneus",
+	"MycobacteriumTuberculosisH37rv", "PseudocercosporaFijiensis", "GammaproteobacteriaBacteriumHdn1",
+	"LysobacterAntibioticus", "SynechococcusSp.Wh8102", "PseudozymaFlocculosa",
+	"ThaueraSp.Mz1t", "CitrusClementina", "SphaerulinaMusiva", "HelicobacterPylori26695",
+	"HelicobacterPyloriJ99", "SerpulaLacrymans", "CladophialophoraCarrionii",
+	"EndosymbiontOfAcanthamoeba", "ClostridiumPasteurianumBc1", "PseudoalteromonasTunicata",
+	"SelaginellaMoellendorffii", "RoseovariusNubinhibens", "BubalusBubalis",
+	"SalmonellaEntericaTyphimurium", "CamelinaSativa", "ThiomicrospiraSp.Milost1",
+	"ThiomicrospiraSp.Milost2", "SynechococcusSp.Pcc7335", "ParacaedibacterAcanthamoebae",
+	"MetarhiziumAcridum", "ProchlorococcusMarinusMit9201", "ProchlorococcusMarinusMit9211",
+	"PandoraeaPnomenusa", "ProchlorococcusMarinusMit9215", "SetosphaeriaTurcica",
+	"ShewanellaSp.Ana3", "BordetellaPetrii", "PseudomonasSp.M1", "DesulfococcusOleovorans",
+	"EutypaLata", "LactobacillusSp.Asf360", "ClostridiumSp.Asf356", "ClostridiumSp.Asf502",
+	"FischerellaThermalis", "HammondiaHammondi", "CalothrixSp.Pcc7507", "StreptomycesCoelicolor",
+	"WolbachiaSp.Ooc", "FusariumPseudograminearum", "BipolarisOryzae", "RhodococcusJostii",
+	"GlareaLozoyensis", "XenococcusSp.Pcc7305", "LeptolyngbyaSp.Pcc7375", "GloeocapsaSp.Pcc73106",
+	"AcromyrmexEchinatior", "NostocSp.Pcc7120", "SaccharothrixSyringae", "GloeophyllumTrabeum",
+	"SerratiaSp.Atcc39006", "StreptacidiphilusNeutrinimicus", "StreptacidiphilusCarbonis",
+	"StreptacidiphilusAlbus", "NitrosococcusWatsonii", "FrankiaSp.Cci3", "MaylandiaZebra",
+	"AcinetobacterBereziniae", "MethylosinusSp.Lw3", "MethylosinusSp.Pw1",
+	"BuchneraAphidicolaAps", "MyotisBrandtii", "SpizellomycesPunctatus", "BatrachochytriumDendrobatidis",
+	"NocardioidesSp.Cf8", "GregarinaNiphandrodes", "SynechococcusSp.Cc9605",
+	"SynechococcusSp.Cc9616", "PorphyromonasGulae", "StanieriaCyanosphaera",
+	"LeptolyngbyaSp.Pcc7376", "SaprolegniaDiclina", "GeminocystisHerdmanii",
+	"BradyrhizobiumSp.Tv2a2", "TetrapisisporaPhaffii", "BradyrhizobiumSp.Ors278",
+	"PrunusMume", "ChlamydophilaPneumoniaeAr39", "ChlamydophilaPneumoniaeCwl029",
+	"FusariumVerticillioides", "ChrysiogenesArsenatis", "PleurocapsaSp.Pcc7319",
+	"PleurocapsaSp.Pcc7327", "NodosilineaNodulosa", "ColeofasciculusChthonoplastes",
+	"PseudanabaenaSp.Pcc6802", "LipotesVexillifer", "UstilagoHordei", "PediculusHumanus",
+	"ParacoccidioidesBrasiliensis", "PersephonellaMarina", "BordetellaTrematum",
+	"StrigamiaMaritima", "NipponiaNippon", "GaldieriaSulphuraria", "BombusImpatiens",
+	"PteropusVampyrus", "ActinoplanesSp.Se50110", "CaenorhabditisBrenneri",
+	"ZootermopsisNevadensis", "KocuriaPolaris", "MethylosinusSp.Lw4", "DesulfitobacteriumHafniense",
+	"NectriaHaematococca", "LachnobacteriumBovis", "ZobelliaUliginosa", "StegastesPartitus",
+	"ProchlorococcusMarinusAs9601", "StreptomycesGriseofuscus", "MagnaporthiopsisPoae",
+	"LactobacillusKunkeei", "WallemiaSebi", "KozakiaBaliensis", "SporocytophagaMyxococcoides",
+	"NitrosomonasSp.Al212", "GallibacteriumGenomosp.", "EscherichiaColiO157h7",
+	"AlteromonadalesBacteriumTw7", "MagnetococcusMarinus", "CorynebacteriumImitans",
+	"AphanomycesInvadans", "PseudomonasCremoricolorata", "SphaerochaetaGlobosa",
+	"SphaerochaetaPleomorpha", "NovosphingobiumResinovorum", "BifidobacteriumScardovii",
+	"CedeceaNeteri", "DechloromonasAromatica", "BurkholderiaSacchari", "ThalassiosiraOceanica",
+	"PseudomonasPutidaKt2440", "XylellaFastidiosa9a5c", "PaenibacillusBorealis",
+	"AuriculariaDelicata", "ThermodesulfobacteriumHydrogeniphilum", "ErythrobacterSp.Sd21",
+	"BetaVulgaris", "AspergillusNidulans", "WolbachiaSp.Dme", "AnabaenaSp.Pcc7108",
+	"PhytophthoraRamorum", "MycobacteriumSp.Jls", "SynechococcusSp.Wh8109",
+	"SynechococcusSp.Wh8016", "ProchlorococcusMarinusCcmp1375", "ProchlorococcusMarinusMit9515",
+	"ProchlorococcusMarinusMit9301", "ProchlorococcusMarinusMit9314", "ProchlorococcusMarinusMit9322",
+	"ProchlorococcusMarinusNatl1a", "ListeriaMonocytogenesEgde", "StreptococcusPneumoniaeTigr4",
+	"StreptococcusPneumoniaeR6", "OceanobacillusPicturae", "ElizabethkingiaMiricola",
+	"BradyrhizobiumSp.Thb2", "StreptococcusSinensis", "BeauveriaBassiana",
+	"StaphylococcusEpidermidisRp62a", "StaphylococcusEpidermidisAtcc12228",
+	"AgrobacteriumFabrum", "PythonBivittatus", "FrancisellaTularensisSchus4",
+	"DesulfobacteriumAutotrophicum", "DesulfotaleaPsychrophila", "PyrobaculumAerophilum",
+	"AcetobacterMalorum", "OscillatoriaNigroviridis", "CyanobiumSp.Pcc7001",
+	"RobinsoniellaPeoriensis", "PseudopodocesHumilis", "ChlamydophilaPneumoniaeTw183",
+	"HelicobacterCetorumMit007128", "ChrysochlorisAsiatica", "BaumanniaCicadellinicola",
+	"PyrococcusFuriosus", "AlkalilimnicolaEhrlichii", "MethylocystisSp.Sc2",
+	"DermacoccusSp.Ellin185", "PaenibacillusGraminis", "PaenibacillusOdorifer",
+	"BradyrhizobiumSp.Ec33", "FusobacteriumNucleatumAtcc25586", "XanthomonasAxonopodisCitri",
+	"CaulobacterCrescentusCb15", "CorynebacteriumAtypicum", "CampylobacterJejuniNctc11168",
+	"CapsasporaOwczarzaki", "MethanosarcinaMazei", "ChlorobiumTepidum", "SphingomonasSp.Atcc31555",
+	"ClostridiumPerfringensAtcc13124", "HaematobacterMassiliensis", "SynechococcusSp.Pcc7336",
+	"SynechococcusSp.Pcc6312", "ThermococcusNautili", "NocardioidesSp.Js614",
+	"CorynebacteriumEfficiens", "BurkholderiaSordidicola", "BradyrhizobiumSp.Ai1a2",
+	"CorynebacteriumGlutamicum", "ThermosynechococcusElongatus", "BacillusAnthracisAmes",
+	"ShigellaFlexneri", "AnoxybacillusGonensis", "DickeyaDadantii3937", "BuchneraAphidicolaSg",
+	"CoccidioidesPosadasii", "EscherichiaColiCft073", "PunctulariaStrigosozonata",
+	"ListeriaIvanoviiLondoniensis", "AcinetobacterGerneri", "AcinetobacterTandoii",
+	"AcinetobacterTjernbergiae", "AcinetobacterTowneri", "RuminiclostridiumThermocellum",
+	"LeuconostocMesenteroides", "SaccharophagusDegradans", "OenococcusOeni",
+	"TrichodesmiumErythraeum", "TropherymaWhipplei", "TannerellaForsythia",
+	"BlochmanniaFloridanus", "MelampsoraLaricipopulina", "SulfurihydrogenibiumAzorense",
+	"KoribacterVersatilis", "HerminiimonasArsenicoxydans", "HaemophilusSomnus",
+	"PseudomonasSyringaeB728a", "EhrlichiaChaffeensis", "PseudomonasFluorescensPf01",
+	"DesulfovibrioAlaskensis", "NeptuniibacterCaesariensis", "AmycolatopsisJaponica",
+	"AmycolatopsisVancoresmycina", "CarnobacteriumSp.174", "FomitiporiaMediterranea",
+	"ChaetomiumThermophilum", "StreptococcusMutansUa159", "StreptococcusAgalactiaeNem316",
+	"AllokutzneriaAlbata", "ChlorogloeopsisFritschii", "ShewanellaOneidensis",
+	"AnaplasmaPhagocytophilum", "YersiniaPestisCo92", "LarimichthysCrocea",
+	"EnhygromyxaSalina", "PseudomonasRhizosphaerae", "CroceibacterAtlanticus",
+	"BurkholderiaCenocepacia", "MycobacteriumMarinum", "PseudomonasFluorescensSbw25",
+	"RhizobiumLeguminosarum3841", "BifidobacteriumLongum", "BifidobacteriumPsychraerophilum",
+	"BacillusVietnamensis", "PectobacteriumAtrosepticum", "SalmonellaBongoriNctc12419",
+	"StreptococcusUberis", "ChlamydophilaAbortus", "AquilegiaCoerulea", "MicromonosporaSp.Atcc39149",
+	"SalmonellaEntericaCt18", "PseudomonasProtegensPf5", "LactobacillusPlantarum",
+	"TreponemaPutidum", "MoniliophthoraRoreri", "OceanobacillusIheyensis",
+	"MastigocladopsisRepens", "SynechococcusSp.Rs9916", "SynechococcusSp.Rs9917",
+	"MannheimiaSucciniciproducens", "FrankiaSp.Bmg512", "NeorickettsiaSennetsu",
+	"NatrinemaAltunense", "KocuriaMarina", "TogniniaMinima", "PseudomonasSyringaeTomato",
+	"VibrioParahaemolyticus", "BacillusSubtilis", "AquifexAeolicus", "ArchaeoglobusFulgidus",
+	"MethanobrevibacterSp.Abm4", "BradyrhizobiumDiazoefficiens", "BrucellaMelitensis",
+	"BuchneraAphidicolaBp", "PyrusXBretschneideri", "MyotisDavidii", "ShewanellaPiezotolerans",
+	"MarinobacterAdhaerens", "EnterococcusFaecalisV583", "BacteroidesThetaiotaomicron",
+	"GrosmanniaClavigera", "BigelowiellaNatans", "CoxiellaBurnetii", "PythiumIwayamai",
+	"ChlamydophilaCaviae", "ActinobacillusPleuropneumoniae14074", "HyphomonasNeptunium",
+	"NitrosomonasEuropaea", "BeijerinckiaMobilis", "HalomonasAlkaliantarctica",
+	"SynechococcusSp.Cb0101", "AcidovoraxSp.Js42", "HaemophilusDucreyi", "SolibacterUsitatus",
+	"RhodococcusErythropolis", "AnaplasmaMarginaleMaries", "PseudoalteromonasSp.Sm9913",
+	"HelicobacterHepaticus", "GeobacillusKaustophilus", "StreptacidiphilusJiangxiensis",
+	"AlcanivoraxSp.Dg881", "ChryseobacteriumFormosense", "ScalinduaBrodae",
+	"PseudomonasAlkylphenolia", "ErythrobacterSp.Nap1", "AcidobacteriumCapsulatum",
+	"VerrucomicrobiumSpinosum", "AnabaenaVariabilis", "HalobacillusDabanensis",
+	"OstreococcusLucimarinus", "PorphyromonasGingivalisW83", "RhodopirellulaBaltica",
+	"AcidithiobacillusFerrooxidansAtcc23270", "BurkholderiaMallei", "ChlamydiaMuridarum",
+	"DehalococcoidesMccartyi195", "DeinococcusRadiodurans", "GeobacterSulfurreducens",
+	"MethanocaldococcusJannaschii", "MethylococcusCapsulatus", "PhotorhabdusLuminescens",
+	"MycoplasmaArthritidis", "MycoplasmaGenitalium", "ThermotogaMaritima",
+	"TreponemaDenticola", "TreponemaPallidum", "VibrioCholeraeO1", "ChromobacteriumViolaceum",
+	"PseudomonasLutea", "CynoglossusSemilaevis", "CaedibacterAcanthamoebae",
+	"ParacaedibacterSymbiosus", "WallemiaIchthyophaga", "CarboxydothermusHydrogenoformans",
+	"DichelobacterNodosus", "MycobacteriumSmegmatisMc2155", "MyxococcusXanthus",
+	"RuminococcusAlbus8", "RuegeriaPomeroyi", "StreptococcusMitisNctc12261",
+	"TupaiaChinensis", "ThermococcusSp.Am4", "NocardiaFarcinica", "PlanctomyceteKsu1",
+	"GammaproteobacteriaBacteriumHtcc2143", "GammaproteobacteriaBacteriumHtcc2148",
+	"GammaproteobacteriaBacteriumHtcc2080", "CoccomyxaSubellipsoidea", "GloeobacterViolaceus",
+	"ChroococcidiopsisThermalis", "OceanicolaBatsensis", "StreptomycesSp.C",
+	"EhrlichiaRuminantium", "DehalococcoidesMccartyiCbdb1", "BordetellaBronchiseptica",
+	"BordetellaPertussisTohama", "LactobacillusJohnsonii", "RickettsiaTyphi",
+	"KitasatosporaArboriphila", "MycobacteriumCosmeticum", "RhodopseudomonasPalustrisCga009",
+	"PsychrobacterArcticus", "BacillusAnthracisSterne", "NitrosomonasSp.Is79a3",
+	"BuchneraAphidicolaCtu", "MycobacteriumAviumParatuberculosis", "ExiguobacteriumSibiricum",
+	"MycoplasmaHyopneumoniaeJ", "MycoplasmaSynoviae", "ThermusThermophilusHb27",
+	"PhytoplasmaOnionYellows", "VerrucosisporaMaris", "PneumocystisMurina",
+	"PicrophilusTorridus", "RalstoniaEutrophaJmp134", "StreptococcusThermophilusLmg18311",
+	"ProtochlamydiaAmoebophila", "ChlamydophilaFelis", "ZymomonasMobilisZm4",
+	"CapsellaGrandiflora", "BacillusCibi", "BdellovibrioBacteriovorusHd100",
+	"PseudomonasSyringaePhaseolicola", "PrevotellaRuminicola", "MoorellaThermoacetica",
+	"ByssochlamysSpectabilis", "MethylobacillusFlagellatus", "MesoplasmaFlorum",
+	"RubrobacterXylanophilus", "CupriavidusMetallidurans", "BurkholderiaXenovorans",
+	"ChryseobacteriumAntarcticum", "PorphyromonasGingivicanis", "ChelativoransSp.Bnc1",
+	"ThalassobacterStenotrophicus", "SinorhizobiumMeliloti", "MesorhizobiumLotiMaff303099",
+	"KineococcusRadiotolerans", "MethanococcusMaripaludisS2", "RalstoniaSolanacearumGmi1000",
+	"PropionibacteriumAcnesKpa171202", "MycoplasmaMobile", "PaenibacillusWynnii",
+	"NatronomonasMoolapensis", "SynechococcusElongatusPcc6301", "BurkholderiaVietnamiensis",
+	"EhrlichiaCanis", "RhodospirillumRubrum", "MethanosarcinaBarkeri", "CytophagaHutchinsonii",
+	"GeobacterMetallireducens", "ThermobifidaFusca", "MarinobacterSp.Elb17",
+	"AnabaenaCylindrica", "LeptolyngbyaBoryana", "AggregatibacterActinomycetemcomitansHk1651",
+	"AeropyrumPernix", "BacillusHalodurans", "BacteroidesFragilisNctc9343",
+	"BurkholderiaPseudomalleiK96243", "ClostridiumAcetobutylicum", "PeptoclostridiumDifficile630",
+	"GluconacetobacterDiazotrophicus", "HaloarculaMarismortui", "LactobacillusAcidophilusNcfm",
+	"LactococcusLactisIl1403", "LegionellaPneumophilaPhiladelphia", "ListeriaInnocua",
+	"MethylobacteriumExtorquensAm1", "MycobacteriumLeprae", "MycoplasmaMycoides",
+	"MycoplasmaPenetrans", "MycoplasmaPulmonis", "PyrococcusAbyssi", "RhodobacterCapsulatus",
+	"RhodobacterSphaeroides241", "RickettsiaProwazekii", "RickettsiaSibirica",
+	"HyaloperonosporaArabidopsidis", "SulfolobusSolfataricus", "SulfolobusTokodaii",
+	"CaldanaerobacterSubterraneus", "ThermoplasmaAcidophilum", "ThermoplasmaVolcanium",
+	"UreaplasmaParvum", "WolinellaSuccinogenes", "CandidaOrthopsilosis", "SerratiaMarcescensDb11",
+	"MicrobacteriumOleivorans", "PediococcusPentosaceus", "DiplosphaeraColitermitum",
+	"AcidobacteriaceaeBacteriumTaa166", "BacillusLicheniformis", "NovosphingobiumAromaticivorans",
+	"PseudogulbenkianiaFerrooxidans", "StaphylococcusHaemolyticus", "LeifsoniaXyliCtcb07",
+	"CaenorhabditisJaponica", "BartonellaQuintana", "BartonellaHenselae", "PseudoalteromonasSp.Bsw20308",
+	"IdiomarinaLoihiensis", "StreptomycesFlavovariabilis", "StreptomycesXylophagus",
+	"StreptomycesFulvoviolaceus", "AmycolatopsisRifamycinica", "BradyrhizobiumSp.Btai1",
+	"RenibacteriumSalmoninarum", "ThermodesulfovibrioYellowstonii", "ThermodesulfobacteriumCommune",
+	"MycoplasmaBovis", "ChlorobiumLimicola", "ChlorobiumPhaeobacteroidesDsm266",
+	"ChlorobiumPhaeovibrioides", "ArthrobacterAurescens", "AnaeromyxobacterDehalogenans",
+	"ChromohalobacterSalexigens", "ArthrobacterSp.Fb24", "JannaschiaSp.Ccs1",
+	"ClostridiumBeijerinckii", "BorreliaGarinii", "ProsthecochlorisAestuarii",
+	"GluconobacterOxydans621h", "PhotorhabdusAsymbiotica", "BlochmanniaPennsylvanicus",
+	"ErythrobacterVulgaris", "RuegeriaSp.Tm1040", "ThiobacillusDenitrificansAtcc25259",
+	"SymbiobacteriumThermophilum", "CyanobacteriumStanieri", "CyanobiumGracile",
+	"WolbachiaSp.Bma", "CyphellophoraEuropaea", "RickettsiaCanadensis", "RickettsiaAkari",
+	"AlkaliphilusMetalliredigens", "MycoplasmaHyopneumoniae232", "MicromonasSp.Rcc299",
+	"PolaromonasSp.Js666", "StreptomycesAvermitilis", "PhotobacteriumProfundum",
+	"FrankiaSp.Ean1pec", "FrankiaSp.Eui1c", "FrankiaSp.Cn3", "ThermusThermophilusHb8",
+	"PundamiliaNyererei", "MethanocellaPaludicola", "ThaueraSp.27", "EndozoicomonasElysicola",
+	"CampylobacterLari", "CampylobacterUpsaliensis", "FischerellaMuscicola",
+	"CorynebacteriumJeikeium", "ChryseobacteriumVrystaatense", "CoprothermobacterProteolyticus",
+	"DictyoglomusThermophilum", "HaloferaxVolcanii", "ThermomicrobiumRoseum",
+	"ThermotogaNeapolitana", "SalinibacterRuber", "NeofusicoccumParvum", "AgrobacteriumVitis",
+	"AgrobacteriumRadiobacter", "DehalococcoidesMccartyiVs", "PolynucleobacterNecessariusAsymbioticus",
+	"ActinobacteriumPhsc20c1", "VibrioFischeri", "JanibacterSp.Htcc2649", "DokdoniaSp.Med134",
+	"PolaribacterIrgensii", "PsychroflexusTorquis", "RobiginitaleaBiformata",
+	"PolaribacterSp.Med152", "MaribacterSp.Htcc2170", "MicroscillaMarina",
+	"LyngbyaSp.Pcc8106", "NodulariaSpumigena", "SynechococcusSp.Bl107", "LentisphaeraAraneosa",
+	"ErythrobacterLitoralis", "BlastopirellulaMarina", "FulvimarinaPelagi",
+	"LoktanellaVestfoldensisSka53", "OceanicaulisSp.Htcc2633", "OceanicolaGranulosus",
+	"ParvularculaBermudensis", "RoseobacterSp.Med193", "RoseovariusSp.217",
+	"PelagibacaBermudensis", "SphingomonasSp.Ska58", "RhodobacteraceaeBacteriumHtcc2083",
+	"MaritimibacterAlkaliphilus", "AlteromonasMacleodiiDeep", "NitrococcusMobilis",
+	"PsychromonasSp.Cnpt3", "CongregibacterLitoralis", "GammaproteobacteriaBacteriumHtcc2207",
+	"PhotobacteriumAngustum", "LactobacillusSakei", "MariprofundusFerrooxydans",
+	"BetaProteobacteriumKb13", "BorreliaHermsii", "FrankiaAlni", "BorreliaTuricatae",
+	"RickettsiaFelis", "BacillusWeihenstephanensis", "BacillusCytotoxicus",
+	"BacillusPumilus", "RhodopseudomonasPalustrisBisa53", "RhodopseudomonasPalustrisBisb18",
+	"RhodopseudomonasPalustrisBisb5", "RhodopseudomonasPalustrisHaa2", "GeobacterDaltonii",
+	"XanthomonasCampestrisVesicatoria", "HerpetosiphonAurantiacus", "AliivibrioSalmonicida",
+	"SynechococcusSp.Rcc307", "SynechococcusSp.Cc9902", "EscherichiaColiK12W3110",
+	"XanthomonasAxonopodisPhaseoli", "ThiomicrospiraCrunogena", "ProchlorothrixHollandica",
+	"SphingopyxisAlaskensis", "NostocSp.Pcc7107", "ShewanellaDenitrificans",
+	"ShewanellaFrigidimarina", "MycobacteriumRufum", "ClostridiumSulfidigenes",
+	"ParacoccusDenitrificans", "MagnaportheOryzae", "BradyrhizobiumSp.Wsm1743",
+	"BradyrhizobiumSp.Wsm1253", "ShewanellaPutrefaciens", "ChlorobiumLuteolum",
+	"NonlabensSediminis", "DeinococcusGeothermalis", "AnaplasmaMarginaleFlorida",
+	"SynechococcusSp.Ja33ab", "SynechococcusSp.Ja23ba", "PseudomonasSimiae",
+	"BrevibacteriumLinens", "PhytoplasmaWheatBlue", "PhytoplasmaAsterYellows",
+	"StreptococcusThermophilusLmd9", "AzotobacterVinelandii", "NitrobacterHamburgensis",
+	"NitrobacterWinogradskyi", "MethanospirillumHungatei", "NitrosococcusOceani",
+	"NitrosospiraMultiformis", "ShewanellaLoihica", "PaenibacillusSp.Jdr2",
+	"ChloroflexusAurantiacus", "LactobacillusGasseri", "PelodictyonPhaeoclathratiforme",
+	"PhytophthoraKernoviae", "XanthomonasAxonopodisVasculorum", "ShewanellaAmazonensis",
+	"SulfurimonasDenitrificans", "BacillusAmyloliquefaciens", "LactobacillusHelveticusCnrz32",
+	"BifidobacteriumBreve", "ChloroflexusAggregans", "PseudoalteromonasHaloplanktisTac125",
+	"PseudozymaHubeiensis", "BifidobacteriumCrudilactis", "AcaryochlorisMarina",
+	"AmycolatopsisJejuensis", "NitrospiraDefluvii", "SulfolobusAcidocaldarius",
+	"BlattabacteriumSp.Bge", "SimkaniaNegevensis", "ChlamydophilaPecorum",
+	"ChlamydiaPsittaci6bc", "ChlorobiumPhaeobacteroidesBs1", "AlphaProteobacteriumBal199",
+	"ClostridiumDrakei", "BacillusOkhensis", "LactobacillusFermentumIfo3956",
+	"FinegoldiaMagnaAtcc29328", "RickettsiaTamurae", "NitrosomonasEutropha",
+	"PsychrobacterCryohalolentis", "SyntrophomonasWolfei", "SyntrophobacterFumaroxidans",
+	"BradyrhizobiumSp.S23321", "PelagibacterUbiqueHtcc1062", "RickettsiaBelliiRml369c",
+	"PyronemaOmphalodes", "GordoniaSp.Ktr9", "PelobacterCarbinolicus", "PelobacterPropionicus",
+	"RhodoferaxFerrireducens", "BurkholderiaAmbifaria", "ActinobacillusSuccinogenes",
+	"MethanosphaeraStadtmanae", "ThermoanaerobacterPseudethanolicus", "SpathasporaPassalidarum",
+	"ChlorobiumChlorochromatii", "BurkholderiaOklahomensis", "StaphylococcusSaprophyticus",
+	"PseudoalteromonasAtlantica", "PyrococcusSp.Na2", "SodalisGlossinidius",
+	"PlanctomycesMaris", "VibrioCholeraeO395", "BacillusCoagulans36d1", "KutzneriaSp.744",
+	"MycoplasmaHominis", "RhizobiumEtliCfn42", "NatronomonasPharaonis", "RhizobiumSp.Lpu83",
+	"RhodobacterSphaeroidesAtcc17025", "PsychrobacterSp.Prwf1", "LactobacillusReuteri10023",
+	"HalorhodospiraHalophila", "DesulfotomaculumReducens", "AcidiphiliumCryptum",
+	"LeuconostocCitreum", "PaenibacillusPolymyxaE681", "HahellaChejuensis",
+	"AkkermansiaMuciniphila", "YersiniaIntermedia", "YersiniaFrederiksenii",
+	"MycobacteriumGilvum", "MycobacteriumVanbaalenii", "AlkaliphilusOremlandii",
+	"RoseobacterSp.Azwk3b", "MethanocellaArvoryzae", "MarinobacterHydrocarbonoclasticus",
+	"AcidothermusCellulolyticus", "CaldicellulosiruptorSaccharolyticus", "PseudomonasPutidaF1",
+	"PyramidobacterPiscolens", "LactobacillusDelbrueckii2038", "CampylobacterJejuni81176",
+	"BifidobacteriumTsurumiense", "MicromonosporaChokoriensis", "OrientiaTsutsugamushi",
+	"BacteroidesDorei", "PsychromonasIngrahamii", "RoseiflexusSp.Rs1", "LachnoclostridiumPhytofermentans",
+	"AcidovoraxSp.Kks102", "HalobiformaLacisalsi", "BrevibacillusBrevisNbrc100599",
+	"StreptomycesOlindensis", "XanthomonasOryzaePxo99a", "BartonellaBacilliformis",
+	"CampylobacterConcisus13826", "CampylobacterFetus8240", "CampylobacterHominis",
+	"BordetellaAvium", "ExiguobacteriumSp.At1b", "MycobacteriumUlcerans", "FlavobacteriumReichenbachii",
+	"EscherichiaColi536", "HaloquadratumWalsbyiDsm16790", "LawsoniaIntracellularis",
+	"EndocarponPusillum", "PolaromonasNaphthalenivorans", "RamlibacterTataouinensis",
+	"FrankiaSp.Bcu110501", "StreptococcusMitisB6", "SinorhizobiumMedicae",
+	"CaulobacterSp.K31", "XanthomonasFuscans", "PhycicoccusJejuensis", "RhodobacteralesBacteriumHtcc2255",
+	"ArcobacterButzleriRm4018", "MethanoculleusMarisnigri", "ThermofilumPendens",
+	"SalinisporaTropica", "PelotomaculumThermopropionicum", "ErwiniaTypographi",
+	"RhodobacterSp.Sw2", "BuchneraAphidicolaBcc", "StreptococcusPneumoniaeD39",
+	"HalothermothrixOrenii", "RivulariaSp.Pcc7116", "KorarchaeumCryptofilum",
+	"JanthinobacteriumSp.Marseille", "RoseobacterDenitrificans", "FrancisellaTularensisHolarctica",
+	"FlavobacteriumJohnsoniae", "ParacoccusHalophilus", "TeredinibacterTurneraeT7901",
+	"KocuriaRhizophilaDc2201", "StigmatellaAurantiaca", "GemmatimonasAurantiaca",
+	"PseudomonasStutzeriA1501", "XanthomonasAlbilineans", "AcidithiobacillusFerrooxidansAtcc53993",
+	"AeromonasHydrophilaAtcc7966", "HydrogenobaculumSp.Y04aas1", "LachanceaThermotolerans",
+	"RalstoniaEutrophaH16", "FervidobacteriumNodosum", "AeromonasSalmonicida",
+	"VerrucomicrobiaeBacteriumDg1235", "HelicobacterAcinonychis", "BartonellaTribocorum",
+	"RoseiflexusCastenholzii", "ErythrobacterSp.Jl475", "XanthomonasOryzaeOryzicola",
+	"PyrobaculumIslandicum", "PseudomonasEntomophila", "LabrenziaAggregata",
+	"ThermophagusXiamenensis", "ListeriaWelshimeri", "ClostridiumNovyiNt",
+	"MethanobacteriumArcticum", "NitratiruptorSp.Sb1552", "SulfurovumSp.Nbc371",
+	"LactobacillusBrevisAtcc367", "ArchaeoglobusSulfaticallidus", "CupriavidusSp.Amp6",
+	"SagittulaStellata", "RhodobacteraceaeBacteriumHtcc2150", "AlgoriphagusMachipongonensis",
+	"PlanktothrixAgardhii", "RoseobacterSp.Sk20926", "StreptococcusSanguinisSk36",
+	"PseudomonasPutidaW619", "BorreliaAfzelii", "LactobacillusDelbrueckiiAtcc11842",
+	"ThermotogaPetrophila", "ActinocatenisporaSera", "StenotrophomonasMaltophiliaR5513",
+	"ThermosiphoMelanesiensis", "EhrlichiaSp.Hf", "SalinisporaArenicola", "BurkholderiaPhymatum",
+	"GranulibacterBethesdensis", "StreptococcusSuis05zyh33", "KordiaAlgicida",
+	"RoseobacterSp.Gai101", "RoseobacterSp.Ccs2", "RoseobacterLitoralis", "PedobacterSp.Bal39",
+	"FlavobacteriaBacteriumBal38", "BrevundimonasSp.Bal3", "FlavobacterialesBacteriumAlc1",
+	"CyanotheceSp.Ccy0110", "RoseovariusSp.Tm1035", "GammaproteobacteriaBacteriumHtcc5015",
+	"OctadecabacterArcticus", "PhaeobacterInhibens", "ThermococcusBarophilus",
+	"OceanibulbusIndolifex", "PlesiocystisPacifica", "OctadecabacterAntarcticus",
+	"VerminephrobacterEiseniae", "RickettsiaBelliiOsu85389", "NitratireductorPacificus",
+	"SphingomonasWittichii", "ShewanellaWoodyi", "PestalotiopsisFici", "YersiniaEnterocolitica8081",
+	"FusobacteriumNucleatumPolymorphum", "AlcanivoraxBorkumensis", "PorphyromonasCrevioricanis",
+	"MaricaulisMaris", "ClostridiumCellulolyticum", "BurkholderiaMultivorans",
+	"RhizobiumLeguminosarumWsm2304", "BeggiatoaAlba", "GallionellaCapsiferriformans",
+	"LeptothrixCholodnii", "CyanotheceSp.Pcc7425", "BeijerinckiaIndica", "MethylocapsaAcidiphila",
+	"MethylocellaSilvestris", "BrachybacteriumPhenoliresistens", "StaphylococcusCarnosus",
+	"ThioalkalivibrioSulfidiphilus", "ThioalkalivibrioSp.K90mix", "MarmoricolaAequoreus",
+	"LachnospiraceaeBacterium284", "LachnospiraceaeBacterium31", "LachnospiraceaeBacteriumA2",
+	"LachnospiraceaeBacteriumA4", "AcidovoraxCitrulli", "CaldivirgaMaquilingensis",
+	"BacillusPseudofirmus", "PseudobacteroidesCellulosolvens", "BifidobacteriumBifidumNcimb41171",
+	"BradyrhizobiumElkaniiUsda76", "BurkholderiaPhytofirmans", "DelftiaAcidovorans",
+	"ShewanellaPealeana", "DinoroseobacterShibae", "LeeuwenhoekiellaBlandensis",
+	"GeobacterLovleyi", "MetallosphaeraSedula", "StaphylothermusMarinus", "PseudomonasMendocinaYmp",
+	"SerratiaProteamaculans", "EnterobacterSp.638", "ComamonasTestosteroniKf1",
+	"MarinomonasSp.Mwyl1", "AmphimedonQueenslandica", "TerriglobusSaanensis",
+	"BifidobacteriumDentium", "ThermosinusCarboxydivorans", "FlavobacteriumPsychrophilum",
+	"RalstoniaPickettii12j", "KamptonemaFormosum", "MethanococcusMaripaludisC5",
+	"ParvibaculumLavamentivorans", "PetrotogaMobilis", "GeobacterBemidjiensis",
+	"AnaeromyxobacterSp.Fw1095", "LactobacillusHelveticusDpc4571", "SaccharopolysporaErythraea",
+	"BacillusSp.M313", "MethanococcusVannielii", "NatrinemaSp.J72", "XenorhabdusNematophila",
+	"XenorhabdusBovienii", "NocardioidaceaeBacteriumBroad1", "MethanocorpusculumLabreanum",
+	"PyrobaculumCalidifontis", "GramellaForsetii", "RuminococcusObeumAtcc29174",
+	"RuminococcusTorquesAtcc27756", "DoreaFormicigeneransAtcc27755", "DoreaLongicatenaDsm13814",
+	"EubacteriumVentriosum", "DesulfovibrioPiger", "ParvimonasMicra", "ActinomycesOdontolyticus",
+	"PseudoflavonifractorCapillosus", "ClostridiumScindens", "EubacteriumHallii",
+	"RuminococcusGnavus", "SubdoligranulumVariabile", "RuminococcusCallidus",
+	"CoprococcusEutactus", "BacteroidesOvatus", "ParabacteroidesMerdae", "BacteroidesUniformis",
+	"FaecalibacteriumPrausnitziiA2165", "ClostridiumSp.L250", "AnaerostipesCaccae",
+	"HoefleaPhototrophica", "BacteroidesCaccae", "ClostridiumBolteae", "BorreliaDuttonii",
+	"ParacoccusSp.Trp", "VesicomyosociusOkutanii", "RuthiaMagnifica", "HalorubrumHalophilum",
+	"RhodospirillumCentenum", "ActinopolysporaErythraea", "HyperthermusButylicus",
+	"ActinobacillusPleuropneumoniae5bL20", "HalorubrumLacusprofundi", "ThermotogaLettingae",
+	"LactococcusLactisCremoris", "MethylobacteriumExtorquensPa1", "MethanococcusAeolicus",
+	"MycobacteriumTuberculosisH37ra", "GeobacillusThermodenitrificans", "MethanobrevibacterSmithiiAtcc35061",
+	"MicrovirgaLupini", "MethylibiumPetroleiphilum", "LactococcusGarvieaeLg2",
+	"AcinetobacterRudis", "EpilithonimonasLactis", "ChryseobacteriumLuteum",
+	"ShewanellaSediminis", "HelicobacterSp.Mit016451", "ThiomonasArsenitoxydans",
+	"MethylobacteriumSp.446", "MethylobacteriumRadiotolerans", "MethanococcusMaripaludisC7",
+	"NocardiaRhamnosiphila", "ClostridiumLeptum", "ClostridiumSpiroforme",
+	"EubacteriumDolichum", "AmmonifexDegensii", "DactylellinaHaptotyla", "BaudoiniaCompniacensis",
+	"ClostridiumKluyveri", "PorphyromonasGingivalisAtcc33277", "KazachstaniaAfricana",
+	"NeorickettsiaRisticii", "BacteroidesVulgatus", "ParabacteroidesDistasonis",
+	"ActinomycesGraevenitzii", "NeisseriaMucosaC102", "StaphylococcusHominisC80",
+	"StaphylococcusCapitis", "StreptococcusSp.C150", "IdiomarinaSalinarum",
+	"SulfurihydrogenibiumSp.Yo3aop1", "StreptacidiphilusJeojiense", "NitrosopumilusMaritimus",
+	"AcinetobacterOleivorans", "AzorhizobiumCaulinodans", "DesulfatibacillumAlkenivorans",
+	"BacillusSelenitireducens", "OchrobactrumAnthropi", "AciduliprofundumBoonei",
+	"PelagibacterSp.Htcc7211", "RhodobacteralesBacteriumY4i", "RuegeriaSp.R11",
+	"PseudomonasSp.Chol1", "MethylobacteriumPopuli", "AcholeplasmaLaidlawii",
+	"BacillusCoahuilensis", "GeobacterSp.M18", "GeobacterSp.M21", "MarinobacterAlgicola",
+	"AmycolicicoccusSubflavus", "MarinitogaPiezophila", "StreptomycesClavuligerus",
+	"BradyrhizobiumSp.Cp53", "ClavibacterMichiganensisNcppb382", "PyrobaculumNeutrophilum",
+	"MethanococcusMaripaludisC6", "ClostridiumBotulinumNctc2916", "ChryseobacteriumSoli",
+	"AlistipesPutredinis", "AnaerofustisStercorihominis", "AnaerotruncusColihominis",
+	"IntestinibacterBartlettii", "ErysipelatoclostridiumRamosum", "CollinsellaStercoris",
+	"BorreliaValaisianaVs116", "ActinosynnemaMirum", "BrachybacteriumFaecium",
+	"CellulomonasFlavigena", "NocardiopsisDassonvillei", "SanguibacterKeddieii",
+	"StackebrandtiaNassauensis", "XylanimonasCellulosilytica", "SorangiumCellulosumSoCe56",
+	"MicrocystisAeruginosa", "BacteroidesStercoris", "MicrobacteriumProfundi",
+	"PhenylobacteriumZucineum", "AmoebophilusAsiaticus", "OpitutusTerrae",
+	"PolynucleobacterNecessariusStir1", "KitasatosporaSetae", "RickettsiaRickettsii",
+	"SphingobiumJaponicumUt26s", "ArthrobacterChlorophenolicus", "IgnicoccusHospitalis",
+	"XanthomonasArboricola", "GlaciecolaSp.Htcc2999", "StreptomycesGriseus",
+	"MethanococcusVoltae", "ThaueraSp.63", "MethanoregulaBoonei", "ClostridiumSp.7243faa",
+	"DesulfovibrioSp.31syn3", "FusobacteriumNucleatumAnimalis", "RuminococcusSp.5139bfaa",
+	"SynergistesSp.31syn1", "ClostridialesBacterium1747faa", "BacteroidesFragilis3112",
+	"StreptomycesAlbusJ1074", "StreptomycesPristinaespiralis", "NatranaerobiusThermophilus",
+	"MacrococcusCaseolyticus", "ShewanellaHalifaxensis", "CloacimonasAcidaminovorans",
+	"ArthrospiraPlatensisC1", "MethylobacteriumNodulans", "StreptomycesSviceus",
+	"MicrococcusLuteusNctc2665", "StreptomycesSp.Mg1", "ErwiniaTasmaniensis",
+	"PelagibacterUbiqueHtcc8051", "AcinetobacterSp.Ver3", "StreptomycesGriseoflavus",
+	"RhodobacteraceaeBacteriumKlh11", "StreptococcusGordonii", "PedobacterOryzae",
+	"GordoniaKroppenstedtii", "EscherichiaColiBl21", "ThermobisporaBispora",
+	"CryptobacteriumCurtum", "DethiosulfovibrioPeptidovorans", "HalogeometricumBorinquense",
+	"ConexibacterWoeseiDsm14684", "CitrobacterSp.302", "CoprobacillusSp.291",
+	"FusobacteriumNucleatumVincentii3136a2", "FusobacteriumNucleatumVincentii4113",
+	"StreptococcusSp.2136faa", "BurkholderialesBacterium1147", "FusobacteriumGonidiaformans",
+	"FusobacteriumMortiferum", "FusobacteriumUlcerans", "FusobacteriumVarium",
+	"BacteroidesCoprocola", "CladophialophoraYegresii", "GeobacillusSp.Wch70",
+	"ThermomonosporaCurvata", "BeutenbergiaCavernae", "DyadobacterFermentans",
+	"SlackiaHeliotrinireducens", "JonesiaDenitrificans", "SaccharomonosporaViridis",
+	"BacteroidesIntestinalis", "ProvidenciaStuartii", "RuminococcusLactaris",
+	"ProteusPenneri", "NitratireductorBasaltis", "NitrosococcusHalophilus",
+	"ColletotrichumGloeosporioides", "BlautiaHydrogenotrophica", "AchromobacterArsenitoxydans",
+	"PseudomonasStutzeriTs44", "ModestobacterMarinus", "DesulforudisAudaxviator",
+	"VerrucomicrobiaBacteriumLp2a", "MarvinbryantiaFormatexigens", "KytococcusSedentarius",
+	"NakamurellaMultipartita", "StreptosporangiumRoseum", "CatenulisporaAcidiphila",
+	"SphaerobacterThermophilus", "KribbellaFlavida", "VeillonellaParvula",
+	"EggerthellaLenta", "MethylacidiphilumInfernorum", "EscherichiaColiAtcc8739",
+	"StreptococcusCanis", "GaleopterusVariegatus", "BacteroidesFinegoldii",
+	"BacteroidesEggerthii", "BacteroidesPectinophilus", "MyxococcusFulvus",
+	"BacteroidesPlebeius", "ThermosiphoAfricanus", "FrancisellaPhilomiragia",
+	"PelosinusSp.Ufo1", "KtedonobacterRacemifer", "HalomicrobiumMukohataei",
+	"DesulfohalobiumRetbaense", "DesulfotomaculumAcetoxidans", "PedobacterHeparinus",
+	"ChitinophagaPinensis", "AcinetobacterSoli", "MycobacteriumIntracellulare",
+	"FlavobacteriaBacteriumMs0242a", "PuniceispirillumMarinum", "NeisseriaLactamica",
+	"MooreaProducens", "DesulfurococcusKamchatkensis", "ChryseobacteriumHispalense",
+	"AnoxybacillusFlavithermusWk1", "RhizobiumEtliCiat652", "MarinomonasPosidonica",
+	"RhizobiumAlamii", "GlaciecolaArctica", "PsychrobacterSp.Tb15", "ArthrobacterSp.Tb23",
+	"MycoplasmaFermentans", "ChthoniobacterFlavus", "CyanotheceSp.Pcc7822",
+	"CellvibrioJaponicus", "BorreliaSpielmanii", "HeliobacteriumModesticaldum",
+	"ThermusAquaticus", "StreptomycesAvicenniae", "TyzzerellaNexilis", "ClostridiumHiranonis",
+	"MitsuokellaMultacida", "ProvidenciaRustigianii", "CitrobacterYoungae",
+	"CitreicellaSp.Se45", "HaliangiumOchraceum", "EscherichiaAlbertiiTw07627",
+	"EggerthellaSp.Yy7918", "SpirosomaLinguale", "CorynebacteriumUrealyticum",
+	"JejuiaPallidilutea", "MeiothermusRuber", "OligotrophaCarboxidovorans",
+	"RheinheimeraSp.A13l", "CaulobacterSegnis", "AcetivibrioCellulolyticus",
+	"PedobacterSp.V48", "CaldisericumExile", "OceanimonasSp.Gk1", "EscherichiaColiK12Mg1655",
+	"LactobacillusBuchneriNrrlb30929", "ButyrivibrioCrossotus", "AzobacteroidesPseudotrichonymphae",
+	"MycoplasmaCrocodyli", "ActinoplanesMissouriensis", "RiesiaPediculicola",
+	"EubacteriumEligens", "ButyrivibrioProteoclasticusB316", "DictyoglomusTurgidum",
+	"ChlorobaculumParvum", "ChloroherpetonThalassium", "PantoeaSp.Ab", "CitromicrobiumSp.Jlt1363",
+	"BifidobacteriumAngulatum", "HoldemanellaBiformis", "RhodothermusMarinus",
+	"StreptobacillusMoniliformis", "HalorhabdusUtahensis", "EctothiorhodospiraSp.Phs1",
+	"AcinetobacterSp.Niph973", "ProvidenciaAlcalifaciens", "ProvidenciaRettgeriDsm1131",
+	"CollinsellaIntestinalis", "BorreliaBissettii", "MethanosphaerulaPalustris",
+	"KosmotogaOlearia", "AtopobiumParvulum", "TsukamurellaPaurometabola", "CapnocytophagaOchraceaDsm7271",
+	"AlicyclobacillusAcidocaldariusDsm446", "ActinomycesTimonensis", "CaldicellulosiruptorBescii",
+	"PlanctomycesLimnophilus", "PseudomonasCaeni", "AccumulibacterPhosphatis",
+	"StenotrophomonasMaltophiliaK279a", "DenitrovibrioAcetiphilus", "KangiellaKoreensis",
+	"LeptotrichiaBuccalis", "HaloferaxMediterranei", "MethanothermococcusThermolithotrophicus",
+	"ThermococcusOnnurineus", "DesulfovibrioDesulfuricansAtcc27774", "AcinetobacterSp.Atcc27244",
+	"ActinomycesColeocanis", "ActinomycesUrogenitalisDsm15434", "AnaerococcusLactolyticusAtcc51172",
+	"AnaerococcusTetradius", "AtopobiumVaginaeDsm15829", "ChryseobacteriumGleum",
+	"CorynebacteriumAccolens", "CorynebacteriumLipophiloflavum", "CorynebacteriumPseudogenitalium",
+	"CorynebacteriumStriatum", "FinegoldiaMagnaAtcc53516", "LactobacillusAntri",
+	"LactobacillusBuchneriAtcc11577", "LactobacillusUltunensis", "ListeriaGrayi",
+	"MycobacteriumParascrofulaceum", "SphingobacteriumSpiritivorum", "StaphylococcusCaprae",
+	"StreptococcusEquinus", "DesulfomicrobiumBaculatum", "SulfurospirillumDeleyianum",
+	"ThermanaerovibrioAcidaminovorans", "ThermobaculumTerrenum", "AcidimicrobiumFerrooxidans",
+	"AnaerococcusPrevotiiDsm20548", "SebaldellaTermitidis", "DesulfovibrioSalexigens",
+	"BrachyspiraMurdochii", "GeodermatophilusObscurus", "GordoniaBronchialis",
+	"MeiothermusSilvanus", "YersiniaAldovae", "ProteusMirabilis", "PyrococcusYayanosii",
+	"ThecamonasTrahens", "RhodolunaLacicola", "PirellulaStaleyi", "FlavobacteriaceaeBacterium351910",
+	"CylindrospermopsisRaciborskii", "RaphidiopsisBrookii", "AcidovoraxEbreus",
+	"MesorhizobiumOpportunistum", "ClostridiumCarboxidivorans", "ClostridiumBotulinumA2Kyoto",
+	"ClostridiumBotulinumE1Bont", "BlautiaHansenii", "PrevotellaCopri", "ClostridiumMethylpentosum",
+	"LiberibacterAsiaticusPsy62", "HelicobacterCanadensis", "HelicobacterCinaediCcug18818",
+	"HelicobacterPullorum", "HaloterrigenaTurkmenica", "ActinoplanesSubtropicus",
+	"VariovoraxParadoxusS110", "LactobacillusCaseiBl23", "BetaProteobacteriumCb",
+	"ClostridiumArbusti", "ThioalkalivibrioSp.Akl11", "ThioalkalivibrioSp.Alj24",
+	"BacillusMegateriumQmB1551", "TreponemaPrimitiaZas2", "TreponemaAzotonutricium",
+	"HoldemaniaFiliformis", "ClostridiumCelatum", "NeisseriaCinerea", "NeisseriaFlavescensNrl30031h210",
+	"NeisseriaMucosaAtcc25996", "NeisseriaPolysaccharea", "NeisseriaSubflava",
+	"FilifactorAlocis", "GemellaHaemolysansAtcc10379", "SelenomonasSputigena",
+	"VeillonellaDispar", "EikenellaCorrodensAtcc23834", "FusobacteriumPeriodonticum",
+	"DeinococcusDeserti", "BacteroidesCoprophilus", "BifidobacteriumPseudocatenulatum",
+	"NeisseriaSicca", "HydrogenobaculumSp.Ho", "MycobacteriumVulneris", "NatrialbaMagadii",
+	"CorynebacteriumAurimucosum", "CorynebacteriumGlucuronolyticum", "MobiluncusCurtisiiAtcc43063",
+	"FerrimonasBalearica", "NostocAzollae", "HirschiaMaritima", "PonticaulisKoreensis",
+	"ErysipelotrichaceaeBacterium5254faa", "RuminococcaceaeBacteriumD16", "CryptococcusGattii",
+	"BifidobacteriumAnimalis", "DehalogenimonasLykanthroporepellens", "PrevotellaBiviaJcvihmp010",
+	"PrevotellaMelaninogenica", "PorphyromonasEndodontalis", "CapnocytophagaSputigena",
+	"CapnocytophagaGingivalis", "AtopobiumRimae", "CorynebacteriumAmycolatum",
+	"CorynebacteriumMatruchotii", "EnhydrobacterAerosaccus", "CampylobacterRectus",
+	"CampylobacterShowaeRm3277", "CampylobacterGracilis", "CobetiaCrustatorum",
+	"ClostridiumHylemonae", "ChlorellaVariabilis", "ThermosediminibacterOceani",
+	"DethiobacterAlkaliphilus", "ZymomonasMobilisAtcc10988", "GalbibacterMarinus",
+	"HalothiobacillusNeapolitanus", "DesulfonatronospiraThiodismutans", "NovosphingobiumSp.Rr217",
+	"ClostridiumSp.D5", "FusobacteriumNecrophorumD12", "HelicobacterWinghamensis",
+	"OxalobacterFormigenesHoxbls", "OxalobacterFormigenesOxcc13", "LactobacillusReuteriDsm20016",
+	"LaribacterHongkongensis", "MycobacteriumKansasiiAtcc12478", "ChryseobacteriumPiperi",
+	"LentibacillusJeotgali", "CorynebacteriumDoosanense", "AeromonasSp.Ae122",
+	"ActinomaduraFlavalba", "AnaerococcusHydrogenalis", "BifidobacteriumGallicum",
+	"DickeyaZeae", "PectobacteriumCarotovorumPc1", "PectobacteriumWasabiae",
+	"AmphibacillusJilinensis", "KyrpidiaTusciae", "ActinomycesViscosus", "GemellaHaemolysansM341",
+	"GemellaMorbillorum", "GemellaSanguinis", "PrevotellaOrisC735", "PrevotellaSp.C561",
+	"StreptococcusSp.M143", "StreptococcusSp.M334", "SulfurimonasAutotrophica",
+	"BilophilaWadsworthia316", "GeoglobusAcetivorans", "BrachyspiraHyodysenteriae",
+	"LuminiphilusSyltensis", "UreaplasmaUrealyticum", "LegionellaPneumophilaParis",
+	"EnterococcusCasseliflavus", "EnterococcusFaeciumC68", "StreptomycesGhanaensis",
+	"GammaproteobacteriaBacteriumNor53", "BifidobacteriumCatenulatum", "MetarhiziumRobertsii",
+	"LactobacillusRhamnosus", "BordetellaPertussis18323", "DickeyaSp.Ncppb569",
+	"AcidaminococcusIntestini", "SerratiaSymbiotica", "NocardiopsisPotens",
+	"WolbachiaSp.Culex", "FodinicurvataSediminis", "FodinicurvataFenggangensis",
+	"SedimentitaleaNanhaiensis", "HamiltonellaDefensa", "AllochromatiumVinosum",
+	"VulcanisaetaDistributa", "HalanaerobiumPraevalens", "ArcobacterNitrofigilis",
+	"IlyobacterPolytropus", "ArchaeoglobusProfundus", "AminobacteriumColombiense",
+	"ClostridiumCellulovorans", "MethanocaldococcusInfernus", "MethanocaldococcusFervens",
+	"AsticcacaulisExcentricus", "DesulfovibrioMagneticusRs1", "BacillusGaemokensis",
+	"SpirochaetaSmaragdinae", "FrancisellaSp.Tx077308", "AcetohalobiumArabaticum",
+	"BacillusManliponensis", "AnaplasmaCentrale", "HalomonasZhanjiangensis",
+	"IsosphaeraPallida", "AcinetobacterSp.Ruh2624", "AcinetobacterJohnsonii",
+	"AcinetobacterLwoffiiSh145", "AcinetobacterRadioresistens", "BacteroidetesF0058",
+	"LachnospiraceaeF0167", "LactobacillusColeohominis", "LactobacillusJensenii1153chn",
+	"LactobacillusJensenii272chn", "PeptoniphilusSp.F0131", "PrevotellaSp.F0108",
+	"VibrioTasmaniensis", "MethanocaldococcusVulcanius", "ZymomonasMobilisPomaceae",
+	"DickeyaDadantiiEch703", "ThermoanaerobacteriumThermosaccharolyticum",
+	"ThermoanaerobacterItalicus", "SideroxydansLithotrophicus", "ThermovirgaLienii",
+	"HirschiaBaltica", "RubidibacterLacunae", "MethylovorusGlucosetrophus",
+	"HyphomicrobiumDenitrificansAtcc51888", "MethyloteneraMobilisJlw8", "CoraliomargaritaAkajimensis",
+	"AminomonasPaucivorans", "MobiluncusCurtisiiAtcc35241", "MobiluncusMulierisAtcc35243",
+	"StreptococcusMitisSk321", "StreptococcusMitisSk564", "StreptococcusMitisSk597",
+	"RoseburiaHominis", "SynechococcusSp.Kordi49", "SynechococcusSp.Kordi52",
+	"OribacteriumSinus", "PrevotellaBergensis", "SelenomonasNoxiaAtcc43541",
+	"WeissellaParamesenteroides", "LactobacillusAmylolyticus", "CorynebacteriumGenitalium",
+	"BrevibacteriumMcbrellneri", "AeromicrobiumMarinum", "BacteroidesSp.D20",
+	"OceanobacillusManasiensis", "TerribacillusAidingensis", "PseudomonasChlororaphis",
+	"ClostridiumPapyrosolvens", "RhizophagusIrregularis", "KazachstaniaNaganishii",
+	"BrevundimonasNaejangsanensis", "DesulfurivibrioAlkaliphilus", "AlteromonasAustralica",
+	"FerroglobusPlacidus", "DickeyaDadantiiEch586", "CellulomonasFimi", "AcidaminococcusFermentans",
+	"StaphylothermusHellenicus", "ActinobacillusMinor202", "StreptomycesSp.Spb78",
+	"StreptomycesSp.Aa4", "StreptomycesViridochromogenes", "StreptomycesPratensis",
+	"AbiotrophiaDefectiva", "AnaerobaculumHydrogeniformans", "CatonellaMorbi",
+	"ClostridiumBotulinumD1873", "DialisterInvisus", "NonlabensDokdonensis",
+	"EubacteriumSaphenum", "PantoeaSp.At9b", "PantoeaSp.Sc1", "ThermococcusGammatolerans",
+	"MethanoregulaFormicica", "CellvibrioGilvus", "RhodopirellulaSp.Swk7",
+	"TolumonasAuensis", "MethylosinusTrichosporium", "VariovoraxParadoxusEps",
+	"ArthrobacterSp.A3", "DesulfovibrioFructosivorans", "DesulfovibrioSp.U5l",
+	"AlicycliphilusDenitrificansBc", "AlicycliphilusDenitrificansK601", "OlsenellaUli",
+	"PeptostreptococcusStomatis", "StaphylococcusWarneriL37603", "NeisseriaFlavescensSk114",
+	"LeptotrichiaGoodfellowii", "TreponemaVincentii", "PorphyromonasUenonis603",
+	"MobiluncusMulieris281", "PeptostreptococcusAnaerobius653l", "PeptoniphilusLacrimalis",
+	"BrenneriaSp.Enid312", "NautiliaProfundicola", "BlattabacteriumSp.Bplan",
+	"MeiothermusRufus", "ThermococcusSibiricus", "CaldicellulosiruptorObsidiansis",
+	"OribacteriumSp.F0262", "HydrogenobacterThermophilus", "ClostridiumSaccharolyticumWm1",
+	"HelicobacterBilis", "RhodoferaxSaidenbachensis", "ArenibacterAlgicola",
+	"VibrioSplendidus", "PrevotellaSp.F0295", "AquimarinaAgarilytica", "PaenibacillusSp.D14",
+	"RoseburiaInulinivorans", "MethylocystisSp.Atcc49242", "GranulicatellaElegans",
+	"BurkholderiaGlumae", "PrevotellaTannerae", "ShuttleworthiaSatelles", "MarinobacterNanhaiticus",
+	"PhascolarctobacteriumSuccinatutens", "SphingobiumSp.Syk6", "PseudomonasSyringaeMaculicola",
+	"StaphylococcusHominisSk119", "SphingomonasSp.Mn802worker", "ShimwelliaBlattae",
+	"ThiorhodovibrioSp.970", "LutibaculumBaratangense", "ClostridiumButyricum",
+	"CaldicellulosiruptorHydrothermalis", "CaldicellulosiruptorKristjanssonii",
+	"CaldicellulosiruptorOwensensis", "ThalassobiumSp.R2a62", "ThermosphaeraAggregans",
+	"BrevundimonasSubvibrioides", "EubacteriumCellulosolvens6", "AggregatibacterAphrophilus",
+	"KomagataeibacterMedellinensis", "AcetobacterPasteurianusIfo328301", "HaloarculaHispanica",
+	"MethanobrevibacterRuminantium", "ErwiniaPyrifoliae", "ErwiniaBillingiae",
+	"BartonellaGrahamii", "GeobacillusThermoglucosidasius", "LeptotrichiaHofstadii",
+	"ThermincolaPotens", "AcidithiobacillusCaldus", "AcidithiobacillusThiooxidans",
+	"ShewanellaViolacea", "CitrobacterRodentium", "ActinobacillusMinorNm305",
+	"GranulicatellaAdiacens", "SelenomonasFlueggei", "ThermocrinisAlbus", "AcidobacteriaBacteriumKbs146",
+	"DeferribacterDesulfuricans", "StarkeyaNovella", "DechlorosomaSuillum",
+	"SegniliparusRotundus", "BurkholderiaSp.Ccge1001", "BurkholderiaSp.Ccge1002",
+	"BurkholderiaSp.Ccge1003", "EnterobacterAsburiaeLf7a", "ClostridiumSp.Dlviii",
+	"RuminococcusFlavefaciensFd1", "CapnocytophagaGranulosa", "ScardoviaInopinata",
+	"SimonsiellaMuelleri", "NeisseriaSp.F0314", "DesulfovibrioDesulfuricansNd132",
+	"CyclobacteriumQasimii", "WinogradskyellaPsychrotolerans", "TatumellaMorbirosei",
+	"ClostridiumLentocellum", "MicrochaeteSp.Pcc7126", "DesulfovibrioAespoeensis",
+	"SyntrophothermusLipocalidus", "MarivirgaTractuosa", "SilicibacterSp.Trichch4b",
+	"SilicibacterLacuscaerulensis", "MethanocaldococcusSp.Fs40622", "DesulfarculusBaarsii",
+	"MicromonosporaAurantiaca", "ArcanobacteriumHaemolyticum", "GordoniaNeofelifaecis",
+	"PseudomonasStutzeriRch2", "ThermaerobacterMarianensis", "DesulfovibrioSp.Fw1012b",
+	"CorynebacteriumKroppenstedtii", "StreptomycesSp.E14", "JonquetellaAnthropiE333e1",
+	"SyntrophobotulusGlycolicus", "DesulfosporosinusAcidiphilus", "MethanothermococcusOkinawensis",
+	"RhodomicrobiumVannielii", "MethylobacteriumSp.Mb200", "ThermovibrioAmmonificans",
+	"LeadbetterellaByssophila", "TrueperaRadiovictrix", "BacillusCellulosilyticus",
+	"ActinomycesSp.F0332", "AneurinibacillusAneurinilyticus", "CorynebacteriumAmmoniagenes",
+	"PrevotellaVeroralisF0319", "SlackiaExigua", "ActinoplanesSp.N902109",
+	"ErysipelothrixRhusiopathiae", "RhodopseudomonasPalustrisDx1", "StreptomycesViolaceusniger",
+	"ActinomycesSp.F0330", "DesulfurispirillumIndicum", "AlbugoLaibachii",
+	"AnaerococcusVaginalis", "AerococcusViridansAtcc11563", "StreptococcusOralisAtcc35037",
+	"ZunongwangiaProfunda", "PseudogymnoascusDestructans", "FrankiaSymbiont",
+	"HalanaerobiumHydrogeniformans", "BacteroidesXylanisolvens", "FaecalibacteriumPrausnitziiSl33",
+	"LachnospiraceaeBacterium3157faact1", "LachnospiraceaeBacterium9143bfaa",
+	"LiberibacterSolanacearum", "LegionellaDrancourtii", "PseudomonasSp.H2",
+	"LachnospiraceaeBacterium1456faa", "ErysipelotrichaceaeBacterium3153",
+	"MesotogaPrima", "OlsenellaSp.F0356", "LegionellaLongbeachae", "FimbriimonasGinsengisoli",
+	"HaloferaxMucosum", "CorynebacteriumResistens", "EthanoligenensHarbinense",
+	"RegiellaInsecticola", "MethylocapsaAurea", "AcetobacterAcetiAtcc23746",
+	"StreptococcusDysgalactiaeAtcc27957", "ErwiniaAmylovora", "SpirochaetaThermophila",
+	"StreptomycesViridosporus", "DesulfovibrioSp.6146afaa", "LachnospiraceaeBacterium3146faa",
+	"BacillusSmithii", "SubdoligranulumSp.4354a2faa", "BacillusSp.2a57ct2",
+	"PlanktomarinaTemperata", "AcidilobusSaccharovorans", "MethyloteneraVersatilis",
+	"AfipiaSp.1nls2", "RhodanobacterDenitrificans", "BacillusSp.1nla3e", "ThermodesulfatatorIndicus",
+	"BacteroidesSalanitronis", "EdwardsiellaTardaAtcc15947", "BurkholderiaSp.Jpy347",
+	"MannheimiaHaemolyticaBovine", "ProfftellaArmatura", "MicrovirgaAerilata",
+	"HyphomicrobiumDenitrificans1nes1", "OceanithermusProfundus", "MetallosphaeraYellowstonensis",
+	"MethylomirabilisOxyfera", "AciduliprofundumSp.Mar08339", "BabelaMassiliensis",
+	"VibrioAlginolyticus40b", "PseudonocardiaDioxanivorans", "VibrioMimicus",
+	"GrimontiaHollisae", "VibrioMetschnikovii", "VibrioCoralliilyticus", "VibrioSp.Rc586",
+	"VibrioOrientalis", "PhotobacteriumDamselae", "FrancisellaTularensisNovicida",
+	"PrevotellaTimonensisCris5cb1", "PrevotellaBuccalisAtcc35310", "PrevotellaAmnii",
+	"BulleidiaExtructa", "SegniliparusRugosus", "AlloprevotellaRava", "JohnsonellaIgnava",
+	"SelenomonasInfelix", "HelicobacterMustelae", "MethanoplanusPetrolearius",
+	"AlistipesFinegoldii", "BacteroidesCoprosuis", "StreptomycesScabiei", "RothiaMucilaginosa",
+	"GranulicellaMallensis", "CampylobacterJejuni414", "ListeriaSeeligeri12b",
+	"AlphaProteobacteriumHimb114", "DeinococcusSp.2009", "CitromicrobiumBathyomarinum",
+	"RhodococcusEqui", "SphingomonasSp.Pr090111t3t6a", "BartonellaRochalimae",
+	"MethylomicrobiumAlbum", "PseudomonasSp.S9", "ComamonasTestosteroniCnb2",
+	"PrevotellaMultisaccharivorax", "ThermotogaThermarum", "CellulophagaAlgicola",
+	"OribacteriumSp.Nk2b42", "RhizobiumVignae", "PseudomonasFluorescensNz007",
+	"DesulfovibrioAfricanus", "FonticulaAlba", "EnterobacteriaceaeBacteriumStrain",
+	"ArchaeoglobusVeneficus", "OscillibacterValericigenes", "DeinococcusProteolyticus",
+	"BacteroidesHelcogenes", "MethylobacteriumOryzae", "PaludibacterPropionicigenes",
+	"PyrolobusFumarii", "NatronococcusOccultus", "DesulfurellaAcetivorans",
+	"MethanomicrobiumMobile", "AggregatibacterActinomycetemcomitansD7s1", "BartonellaClarridgeiae",
+	"DesulfotomaculumRuminis", "DesulfotomaculumNigrificans", "ArthrospiraPlatensisNies39",
+	"ActinobacillusSuis", "MahellaAustraliensis", "MethylobacterTundripaludum",
+	"PaenibacillusLarvae", "ThermoanaerobacterWiegelii", "RuminococcusAlbus7",
+	"MarssoninaBrunnea", "StaphylococcusLugdunensisHku0901", "PyrobaculumOguniense",
+	"AmphibacillusXylanus", "RhizobiumTropici", "VirgibacillusAlimentarius",
+	"GardnerellaVaginalis6119v5", "CorynebacteriumDiphtheriae", "MegasphaeraGenomosp.",
+	"ClostridialesGenomosp.", "StreptococcusRatti", "CoriobacteriumGlomerans",
+	"MycobacteriumNeoaurum", "NiastellaKoreensis", "VibrioSp.N418", "EnterobacterLignolyticus",
+	"PediococcusClaussenii", "NovosphingobiumSp.Pp1y", "SelenomonasNoxiaF0398",
+	"PrevotellaOulorumF0390", "TuricibacterSanguinis", "BifidobacteriumBifidumPrl2010",
+	"PantoeaAnanatisLmg20103", "SolobacteriumMooreiF0204", "MegasphaeraMicronuciformis",
+	"CapnocytophagaSp.F0087", "StreptococcusAnginosusF0211", "ActinomycesSp.F0337",
+	"DesulfomonileTiedjei", "MycoplasmaGallisepticumF", "SulfuricurvumKujiense",
+	"BradyrhizobiaceaeBacteriumSg6c", "DeinococcusMaricopensis", "OdoribacterSplanchnicus",
+	"FrankiaSp.Qa3", "ColletotrichumFioriniae", "HelicobacterSuis", "MycobacteriumChubuense",
+	"MycobacteriumRhodesiaeNbb3", "MycobacteriumSmegmatisJs623", "MycobacteriumTusciae",
+	"IntrasporangiumCalvum", "StreptomycesSp.Gxt6", "PantoeaVagans", "ThioalkalivibrioThiocyanodenitrificans",
+	"ThioalkalivibrioThiocyanoxidansArh4", "LactobacillusIners", "LeucobacterChromiiresistens",
+	"LactobacillusSanfranciscensis", "MucilaginibacterPaludis", "LysinibacillusFusiformis",
+	"AsticcacaulisBiprosthecum", "AlteromonasSp.Sn2", "EnterobacterCloacaeAtcc13047",
+	"WaddliaChondrophila", "EnsiferSojae", "FlexistipesSinusarabici", "ThermobacillusComposti",
+	"PaenibacillusCurdlanolyticus", "ThioalkalimicrobiumAerophilum", "ThioalkalimicrobiumCyclicum",
+	"MarinomonasMediterranea", "HyphomicrobiumSp.Mc1", "FaecalibacteriumPrausnitziiL26",
+	"ClostridiumClariflavum", "BacillusAtrophaeus", "PseudoalteromonasHaloplanktisAnt505",
+	"MycoplasmaPneumoniae", "IdiomarinaXiamenensis", "RahnellaSp.Y9602", "AchromobacterPiechaudiiAtcc43553",
+	"CollinsellaSp.4847faa", "LachnospiraceaeBacterium2146faa", "AlistipesIndistinctus",
+	"BarnesiellaIntestinihominis", "BacteroidesOleiciplenus", "ClostridiumCitroniae",
+	"ClostridiumClostridioforme", "ClostridiumOrbiscindens", "ClostridiumSymbiosumWal14163",
+	"ClostridiumSymbiosumWal14673", "CollinsellaTanakaei", "DialisterSuccinatiphilus",
+	"DoreaFormicigenerans4653afaa", "DysgonomonasGadei", "DysgonomonasMossii",
+	"OdoribacterLaneus", "SlackiaPiriformis", "SutterellaWadsworthensis3145b",
+	"SutterellaWadsworthensis2159bfaa", "AcidithiobacillusFerrivorans", "ThermusScotoductus",
+	"IsoptericolaVariabilis", "PaenibacillusLactis", "PseudomonasFulva", "PseudoxanthomonasSuwonensis111",
+	"SphingobacteriumSp.21", "MethylocystisSp.Sb2", "MycoplasmaPutrefaciensKs1",
+	"MycoplasmaBovoculi", "MoraxellaBovoculi", "TreponemaCaldaria", "AhrensiaSp.R2a130",
+	"RoseibiumSp.Trichskd4", "AlphaProteobacteriumHimb59", "GammaproteobacteriaBacteriumHimb55",
+	"RahnellaAquatilisCip78.65", "SphingomonasSp.Mm1", "GallaecimonasXiamenensis",
+	"OlleyaSp.Vcsm12", "DeinococcusGobiensis", "AspergillusFumigatus", "AequorivitaSublithincola",
+	"ThermodesulfobiumNarugense", "MycoplasmaAlligatoris", "FaecalibacteriumPrausnitziiKle1255",
+	"AzoarcusSp.Kh32c", "PseudogulbenkianiaSp.Nh8b", "HalobacteroidesHalobius",
+	"ThioalkalivibrioSp.Alsr1", "LactobacillusCrispatus", "ClostridiumLjungdahlii",
+	"NitratifractorSalsuginis", "StreptomycesBingchenggensis", "AmycolatopsisMediterranei",
+	"HalobacteriumSp.Dl1", "ThermusOshimai", "GammaproteobacteriaBacteriumHimb30",
+	"TreponemaPhagedenis", "MesorhizobiumAustralicum", "PropionibacteriumFreudenreichii",
+	"EscherichiaSp.Tw09308", "PhotobacteriumAphoticum", "MethylophagaNitratireducenticrescens",
+	"MethylophagaFrappieri", "CyanobacteriumAponinum", "ClostridiumSp.Bnl1100",
+	"FluviicolaTaffensis", "MicrocoleusVaginatus", "PlanctomycesBrasiliensis",
+	"DesulfitobacteriumDehalogenans", "HaloferacalesArchaeonDl31", "HerbaspirillumSeropedicae",
+	"KetogulonicigeniumVulgare", "StreptococcusDysgalactiaeEquisimilis", "BrachyspiraPilosicoli",
+	"SphaerochaetaCoccoides", "MassiliaConsociata", "HippeaMaritima", "SulfurospirillumBarnesii",
+	"HaliscomenobacterHydrossis", "DesulfotomaculumKuznetsovii", "RunellaSlithyformis",
+	"LeuconostocKimchii", "BifidobacteriumStellenboschense", "AchromobacterXylosoxidansA8",
+	"LeuconostocGasicomitatum", "PedobacterSaltans", "RothiaDentocariosa",
+	"ActinomycesSp.F0386", "ParasutterellaExcrementihominis", "ParaprevotellaClara",
+	"ParaprevotellaXylaniphila", "SuccinatimonasHippei", "BacteroidesClarus",
+	"BacteroidesFluxus", "StreptococcusUrinalis228597", "StreptococcusMacacae",
+	"StreptococcusIctaluri", "PropionibacteriumAcnesHl037pa2", "DesulfurococcusMucosus",
+	"OscillochlorisTrichoides", "MesorhizobiumCiceriBiovar", "BdellovibrioBacteriovorusW",
+	"MarichromatiumPurpuratum", "ThiocystisViolascens", "ThioflavicoccusMobilis",
+	"ThiorhodococcusDrewsii", "ThiorhodospiraSibirica", "ParachlamydiaAcanthamoebae",
+	"CitreicellaSp.357", "PropionibacteriumPropionicum", "PrevotellaDenticola",
+	"FrateuriaAurantia", "DesulfotomaculumGibsoniae", "HalomonasElongata",
+	"EnterococcusHirae", "CalditerrivibrioNitroreducens", "ThiocapsaMarina",
+	"DesulfurococcusFermentans", "ThermoproteusTenax", "DesulfosporosinusMeridiei",
+	"DesulfosporosinusOrientis", "DesulfosporosinusYoungiae", "StreptococcusMitis2F0392",
+	"FervidobacteriumPennivorans", "SinorhizobiumSp.Ccbau05631", "OpitutaceaeBacteriumTav5",
+	"ThermodesulfobacteriumGeofontis", "RalstoniaSp.Pba", "HalalkalicoccusJeotgali",
+	"NesterenkoniaSp.F", "BacillusMethanolicusMga3", "VibrioCaribbeanicus",
+	"PeptostreptococcaceaeBacteriumCm5", "StomatobaculumLongum", "OribacteriumParvum",
+	"HalosimplexCarlsbadense", "HaladaptatusPaucihalophilus", "HalopigerXanaduensis",
+	"HalostagnicolaLarsenii", "HalovivaxRuber", "NatrinemaPellirubrum", "NatronobacteriumGregoryi",
+	"LactobacillusParafarraginis", "SpiroplasmaMirum", "MicavibrioAeruginosavorusArl13",
+	"MethylomonasMethanica", "ScardoviaWiggsiae", "CaloramatorAustralicus",
+	"MoraxellaCatarrhalis", "ThermoanaerobacteriumXylanolyticum", "CorynebacteriumVariabile",
+	"MycoplasmaHaemofelis", "AlphaProteobacteriumHimb5", "RalstoniaSolanacearumPsi07",
+	"CapnocytophagaCanimorsus", "AgrobacteriumSp.H133", "GemmatimonadetesBacteriumKbs708",
+	"ArthrobacterArilaitensis", "AnaeroglobusGeminatus", "FusobacteriumSp.F0437",
+	"LachnospiraceaeBacteriumF0431", "StreptococcusSp.F0407", "StaphylococcusSp.Al1",
+	"PediococcusAcidilacticiDsm20284", "PrevotellaMarshii", "PeptoniphilusDuerdenii",
+	"StreptomycesSp.Sirexaae", "BacteriovoraxMarinus", "HaemophilusParainfluenzae",
+	"StreptococcusIntermedius", "StreptococcusConstellatusPharyngisC1050",
+	"StreptococcusAnginosusC1051", "StreptococcusAnginosusC238", "CorynebacteriumNuruki",
+	"XanthomonasHortorum", "BurkholderialesBacteriumJoshi001", "MicrovirgaLotononidis",
+	"HerbaspirillumFrisingense", "SelenomonasSp.67h29bp", "ParascardoviaDenticolensDsm10105",
+	"EubacteriumYurii", "StreptococcusMitisAtcc6249", "StreptococcusSp.73h25ap",
+	"OscillatorialesCyanobacterium", "ClostridiumUltunense", "GillisiaLimnaea",
+	"WeeksellaVirosa", "BelliellaBaltica", "SchizosaccharomycesCryophilus",
+	"PrevotellaDisiensFb03509an", "AtopobiumVaginaePb189t14", "AerococcusUrinae",
+	"VeillonellaAtypicaAcs049vsch6", "HalobacillusHalophilus", "ChloroflexusSp.Y3961",
+	"CellulophagaLytica", "OrnithobacteriumRhinotracheale", "ThermaerobacterSubterraneus",
+	"MethanobacteriumPaludis", "DesulfotomaculumCarboxydivorans", "DesulfurobacteriumThermolithotrophum",
+	"TreponemaSuccinifaciens", "MarinithermusHydrothermalis", "CytophagaFermentans",
+	"ThiothrixNivea", "VibrioScophthalmi", "AcinetobacterCalcoaceticus", "DesulfitobacteriumDichloroeliminans",
+	"DesulfitobacteriumMetallireducens", "StreptococcusParauberisNcfd2020",
+	"StreptococcusPorcinus", "StreptococcusCriceti", "PrevotellaBuccaeAtcc33574",
+	"CapnocytophagaOchraceaF0287", "PrevotellaOralisAtcc33269", "MycobacteriumSp.Jdm601",
+	"PeptoniphilusRhinitidis", "GammaproteobacteriaBacteriumImcc3088", "MethyloferulaStellata",
+	"RuminococcusSp.Nk3a76", "ClostridialesBacteriumNk3b98", "ErysipelotrichaceaeBacteriumNk3d112",
+	"TreponemaBryantii", "LachnospiraceaeBacteriumNk4a136", "LachnospiraceaeBacteriumNk4a144",
+	"LachnospiraceaeBacteriumNk4a179", "MethanobacteriumLacus", "DesulfobacterPostgatei",
+	"PorphyromonasAsaccharolytica", "AnaerococcusPrevotiiAcs065vcol13", "PeptoniphilusSp.F0436",
+	"VeillonellaSp.F0412", "SelenomonasSp.F0430", "CyclobacteriumMarinum",
+	"FlexibacterLitoralis", "DesulfobaccaAcetoxidans", "CaldithrixAbyssi",
+	"BarnesiellaViscericola", "MycoplasmaLeachii", "RikenellaMicrofusus", "ListeriaIvanoviiPam55",
+	"SaccharomonosporaCyanea", "SaccharomonosporaMarina", "SaccharomonosporaXinjiangensis",
+	"BurkholderiaRhizoxinica", "ActinobaculumMassiliae", "ActinobaculumSchaalii",
+	"ActinomycesEuropaeus", "ActinomycesTuricensis", "AfipiaBroomeae", "AfipiaFelis",
+	"AlloiococcusOtitis", "BergeyellaZoohelcum", "DolosigranulumPigrum", "EubacteriumInfirmum",
+	"FacklamiaHominis", "FacklamiaIgnava", "FacklamiaLanguida", "HelcococcusKunzii",
+	"MassiliaTimonae", "VeillonellaRatti", "PrevotellaMicans", "StreptococcusUrinalisFb127cna2",
+	"TuricellaOtitidis", "JonquetellaAnthropiDsm22815", "FukomysDamarensis",
+	"SingulisphaeraAcidiphila", "MuricaudaRuestringensis", "AnaerophagaThermohalophila",
+	"PaenibacillusPolymyxaSc2", "HylemonellaGracilisAtcc19624", "LachnoanaerobaculumSaburreumDsm3986",
+	"KingellaKingae", "LautropiaMirabilis", "PseudoramibacterAlactolyticus",
+	"StreptococcusParasanguinisAtcc903", "StreptococcusOralisAtcc49296", "ActinomycesCardiffensis",
+	"ActinomycesSp.F0310", "LeptotrichiaWadei", "ActinomycesSp.F0400", "CapnocytophagaSp.F0234",
+	"CentipedaPeriodontii", "DialisterMicraerophilus", "EnterococcusItalicus",
+	"ActinomycesNeuiiBvs029a5", "EubacteriumSulci", "PrevotellaMultiformis",
+	"StreptococcusPeroris", "StreptococcusSanguinisSk49", "StreptococcusSanguinisSk355",
+	"StreptococcusSanguinisSk1057", "PrevotellaSalivae", "StreptococcusAustralis",
+	"StreptococcusCristatus", "StreptococcusInfantisAtcc700779", "SpirochaetaAfricana",
+	"LactobacillusAcidophilus30sc", "AnaerobaculumMobile", "PlautiaStali",
+	"MoranellaEndobia", "EubacteriumLimosum", "HolophagaFoetida", "GardnerellaVaginalis101",
+	"StreptococcusDownei", "StreptococcusSp.F0418", "OribacteriumSp.F0425",
+	"StreptococcusVestibularis", "StaphylococcusPettenkoferi", "NonlabensUlvanivorans",
+	"TreponemaBrennaborense", "HelicobacterPyloriSouthafrica7", "LeuconostocFallax",
+	"TreponemaSaccharophilum", "EremococcusColeocolaAcs139vcol8", "PeptoniphilusHarei",
+	"LactobacillusOrisPb013t23", "ClostridiumSp.Hgf2", "AlistipesSp.Hgb5",
+	"PrevotellaDentalis", "ActinokineosporaSp.Eg49", "SyntrophorhabdusAromaticivorans",
+	"AlphaproteobacteriumSar116", "StreptococcusPseudoporcinus", "DialisterMicroaerophilus",
+	"EwingellaAmericana", "LeclerciaAdecarboxylata", "PseudovibrioSp.Fobeg1",
+	"WeissellaCibaria", "PseudomonasSp.Cf149", "LysobacterArseniciresistens",
+	"LactobacillusCoryniformisKctc3167", "DesulfosporosinusSp.Ot", "SediminibacteriumSp.Or53",
+	"XanthomonasVesicatoria", "AdhaeribacterAquaticus", "CaldilineaAerophila",
+	"CapnocytophagaCynodegmi", "DeinococcusPimensis", "EchinicolaVietnamensis",
+	"JoostellaMarina", "MeiothermusChliarophilus", "OreniaMarismortui", "OwenweeksiaHongkongensis",
+	"PromicromonosporaKroppenstedtii", "TerriglobusRoseus", "ThermanaerovibrioVelox",
+	"AnaerolineaThermophila", "HaloplanusNatans", "HalonatronumSaccharophilum",
+	"AlkaliflexusImshenetskii", "StreptococcusOralisUo5", "SynechocystisSp.Pcc7509",
+	"LeuconostocGelidumKctc3527", "SelenomonasRuminantiumLactilytica", "BartonellaSp.R4",
+	"SaccharomonosporaGlauca", "ClostridiumBotulinumBkt015925", "SolitaleaCanadensis",
+	"SulfurimonasGotlandica", "EmticiciaOligotrophica", "FlectobacillusMajor",
+	"MyroidesOdoratus", "PatulibacterMinatonensis", "NiabellaSoli", "BartonellaSenegalensis",
+	"PseudomonasBrassicacearum", "AlcanivoraxDieselolei", "ArthrobacterPhenanthrenivorans",
+	"SulfolobusIslandicus", "FructobacillusFructosus", "ClostridiumSaccharoperbutylacetonicum",
+	"HalococcusMorrhuae", "AcetobacteriumWoodii", "MycobacteriumRhodesiaeJs60",
+	"SerratiaSp.M24t3", "PantoeaAnanatisAj13355", "ThermocrinisRuber", "PlanococcusDonghaensis",
+	"DesulfosarcinaSp.Bus5", "AcidianusHospitalis", "AminobacterSp.J41", "MesorhizobiumLotiR88b",
+	"SinorhizobiumArboris", "ParacoccusPantotrophus", "PseudoxanthomonasSuwonensisJ43",
+	"BacillusSp.J33", "BacillusSp.J37", "CellulosimicrobiumCellulans", "ChelativoransSp.J32",
+	"PaenibacillusSp.J14", "ParacoccusSp.J39", "LuteimonasSp.J29", "NocardioidesSp.J54",
+	"CaldanaerobiusPolysaccharolyticus", "RhizopusDelemar", "RhizobiumLeguminosarum248",
+	"LactobacillusFarciminis", "StreptococcusParauberisKctc11537", "HelicobacterFelis",
+	"MogibacteriumSp.Cm50", "BradyrhizobiumGenosp.", "ActinomycesSp.Icm47",
+	"AtopobiumSp.Bs2", "SelenomonasSp.Fobrc6", "SelenomonasSp.Fobrc9", "ShuttleworthiaSp.Msx8b",
+	"StreptococcusSp.Cm6", "VeillonellaSp.As16", "LachnoanaerobaculumSp.Msx33",
+	"TaylorellaEquigenitalis", "DeinococcusPeraridilitoris", "ClostridialesBacterium9400853",
+	"ClostridialesBacterium9401234", "ClostridialesBacterium9403326", "AnaerococcusSp.9402080",
+	"BacteroidetesBacteriumScgcAaa027n21", "AcetobacterPasteurianus3p3", "DesulfovibrioSp.X2",
+	"BacillusCoagulans26", "LactobacillusFructivorans", "ThermobrachiumCelere",
+	"BurkholderiaSp.Wsm2230", "HippeaJasoniae", "HippeaAlviniae", "HippeaSp.Km1",
+	"ArcobacterButzleriEd1", "ArcobacterSp.L", "ActinomycesSp.F0384", "LactobacillusOrisF0423",
+	"VeillonellaSp.F0422", "ParvimonasSp.F0440", "TetragenococcusHalophilus",
+	"VibrioBrasiliensis", "VibrioSinaloensis", "CorynebacteriumUlcerans", "IgnavibacteriumAlbum",
+	"ImtechellaHalotolerans", "OceanobacillusMassiliensis", "SalpingoecaRosetta",
+	"SymbiobacterMobilis", "BurkholderiaDilworthii", "AvibacteriumParagallinarum72",
+	"StreptomycesVenezuelae", "CupriavidusTaiwanensis", "MicrobacteriumTestaceum",
+	"FlavobacteriaceaeBacteriumHqm9", "MorusNotabilis", "AcinetobacterSp.Nctc7422",
+	"AcinetobacterLwoffiiNctc5866", "AcinetobacterUrsingii", "StreptacidiphilusRugosus",
+	"OrnithinibacillusScapharcae", "RuegeriaConchae", "CampylobacterFetusVenerealis",
+	"LacinutrixSp.5h374", "GlaciecolaSp.4h37ye5", "DokdoniaSp.4h375", "RubrivivaxGelatinosus",
+	"NovosphingobiumNitrogenifigens", "SaprospiraGrandis", "StaphylococcusPseudintermedius",
+	"HeterobasidionIrregulare", "VulcanisaetaMoutnovskia", "RuegeriaHalocynthiae",
+	"GillisiaSp.Cal575", "PaenibacillusTerrae", "StaphylococcusAgnetis", "OdyssellaThessalonicensis",
+	"CaldalkalibacillusThermarum", "RubrivivaxBenzoatilyticus", "LebetimonasSp.Js170",
+	"RhizobiumGrahamii", "PolymorphumGilvum", "RiemerellaAnatipestifer", "SaccharopolysporaSpinosa",
+	"YoungiibacterFragilis", "StreptococcusSuisR61", "StreptomycesGriseoaurantiacus",
+	"BacillusMethanolicusPb1", "DesmosporaSp.8437", "PeptoniphilusIndolicus",
+	"PrevotellaNigrescens", "PrevotellaPallens", "PorphyromonasSp.Kle1280",
+	"StreptococcusInfantisX", "BacteroidesNordii", "AeromonasVeronii", "LeucothrixMucor",
+	"HalomonasSp.Td01", "ClostridiumColicanis", "ClostridiumInnocuum", "EggerthiaCatenaformis",
+	"ParabacteroidesJohnsonii", "SelenomonasSp.F0473", "GordoniaSputi", "StreptococcusSp.F0442",
+	"BurkholderiaGladioli", "LeisingeraDaeponensis", "LeisingeraCaerulea",
+	"PseudophaeobacterArcticus", "LeisingeraAquimarina", "ThermoproteusUzoniensis",
+	"MethyloversatilisUniversalisFam5", "MegasphaeraSp.Upii135e", "StreptococcusAnginosusSk52",
+	"StreptococcusMitis2Sk95", "CryobacteriumRoopkundense", "PhotobacteriumLeiognathiMandapamensis",
+	"PseudomonasMendocinaNk01", "PsychrobacterSp.1501", "LeisingeraSp.Ang1",
+	"PrevotellaStercorea", "PelagibacterSp.Imcc9063", "HelicobacterBizzozeronii",
+	"SolibacillusSilvestris", "StreptomycesCattleya", "AchromobacterInsuavis",
+	"MesoflavibacterZeaxanth.S86", "AlteromonasMacleodiiBlack", "CollimonasFungivorans",
+	"BuchneraAphidicolaUa", "GallibacteriumAnatis", "BuchneraAphidicolaAk",
+	"PseudomonasPutidaCsv86", "StreptococcusOralisSk255", "StreptococcusInfantisSk1076",
+	"OgataeaParapolymorpha", "TrabulsiellaGuamensis", "TatumellaPtyseos", "LeminorellaGrimontii",
+	"KluyveraAscorbata", "ButtiauxellaAgrestis", "MetallosphaeraCuprina", "MycoplasmaGallisepticumS6",
+	"OscillibacterRuminantium", "PaenibacillusElgii", "SphingomonasSp.S17",
+	"PusillimonasSp.T77", "StreptococcusMitisSk1080", "MyroidesInjenensis",
+	"TaylorellaAsinigenitalis", "AcetonemaLongum", "BuchneraAphidicolaG002",
+	"MethylophagaAminisulfidivorans", "NannospalaxGalili", "EndozoicomonasMontiporae",
+	"SporosarcinaNewyorkensis", "GordoniaAlkanivorans", "ListeriaMonocytogenesScott",
+	"EnterobacterAerogenes", "NeorhizobiumGalegaeOrientalis", "NeorhizobiumGalegaeOfficinalis",
+	"HaemophilusHaemolyticusM19501", "HaemophilusHaemolyticusM21621", "HaemophilusHaemolyticusM21639",
+	"ArthromitusSp.Sfbmousejapan", "AcinetobacterSp.P838", "KocuriaRhizophilaP74",
+	"SphingomonasSp.Kc8", "CaloramatorSp.Ald01", "RalstoniaSolanacearumPo82",
+	"MicrolunatusPhosphovorus", "AeromicrobiumMassiliense", "AlistipesSenegalensis",
+	"AnaerococcusSenegalensis", "BacillusTimonensis", "BrevibacteriumSenegalense",
+	"ClostridiumSenegalense", "KurthiaSp.Dielmo", "KurthiaMassiliensis", "KurthiaSp.Jc8e",
+	"PaenibacillusSenegalensis", "PeptoniphilusSenegalensis", "SalinisphaeraShabanensis",
+	"HalorhabdusTiamatea", "HaloplasmaContractile", "LactobacillusKefiranofaciens",
+	"RhizobiumLeguminosarumCb782", "SenegalimassiliaAnaerobia", "BacillusMassiliosenegalensis",
+	"PaenibacillusSp.Hw567", "FlavobacteriumBranchiophilum", "MycoplasmaAnatis",
+	"StaphylococcusLugdunensisN920143", "LegionellaMassiliensis", "StreptococcusMitisSk569",
+	"StreptococcusConstellatusPharyngisSk1060", "StreptococcusInfantisSk970",
+	"BrevundimonasDiminuta4704", "CapnocytophagaSp.F0382", "CorynebacteriumDurum",
+	"PeptostreptococcusAnaerobiusVpi4330", "PrevotellaSp.F0040", "DehalobacterSp.Fth1",
+	"HaemophilusSputorum", "IdiomarinaSp.A28l", "BradyrhizobiumJaponicumUsda6",
+	"MycoplasmaColumbinum", "AzorhizobiumDoebereinerae", "BradyrhizobiumElkaniiWsm1741",
+	"BradyrhizobiumElkaniiWsm2783", "BradyrhizobiumJaponicumUsda124", "BradyrhizobiumSp.Wsm2793",
+	"BradyrhizobiumSp.Wsm3983", "BurkholderiaMimosarum", "PseudomonasFluorescensQ287",
+	"MesorhizobiumLotiCj3sym", "MesorhizobiumLotiUsda3471", "MesorhizobiumSp.Wsm3224",
+	"MesorhizobiumSp.Wsm3626", "BradyrhizobiumSp.Arr65", "RhizobiumGallicum",
+	"RhizobiumGiardinii", "RhizobiumLeguminosarumGb30", "RhizobiumSullae",
+	"RhizobiumLeucaenae", "EnsiferSp.Wsm1721", "ArthromitusSp.Sfbratyit", "MycobacteriumColombiense",
+	"WickerhamomycesCiferrii", "FlavobacteriumColumnare", "MethanocellaConradii",
+	"ClostridiumSp.Sy8519", "BrevibacillusLaterosporusLmg15441", "PseudomonasFluorescensHk44",
+	"RhizobiumSp.Ibun", "MarinobacteriumStanieri", "FlavobacteriaceaeBacteriumS85",
+	"MicrobulbiferAgarilyticus", "PseudomonasPutidaS16", "ThermococcusSp.4557",
+	"SerinicoccusProfundi", "LysinimicrobiumMangrovi", "OenococcusKitaharae",
+	"CitricoccusSp.Ch26a", "WeissellaKoreensis", "PseudoxanthomonasSpadix",
+	"EnterobacterCloacaeEcwsu1", "BrachyspiraIntermedia", "AcinetobacterLwoffiiWj10621",
+	"BizioniaArgentinensis", "StreptococcusSalivarius57i", "GayadomonasJoobiniege",
+	"MarinobacterLipolyticusBf04cf4", "AminicenantesBacteriumAaa252a02", "ZymoseptoriaTritici",
+	"SporichthyaPolymorpha", "ParacoccidioidesSp.Lutzii", "MycoplasmaIowae",
+	"AlicyclobacillusAcidocaldariusTc41", "AnditaleaAndensis", "EndosymbiontOfTevnia",
+	"AllobaculumStercoricanis", "ActinopolysporaMortivallis", "PropionibacteriumAcnesSk182bjcvi",
+	"BacillusMojavensis", "VerticilliumAlfalfae", "SulfobacillusAcidophilus",
+	"VibrioTubiashii", "NeisseriaWeaveri", "PaenibacillusPolymyxaM1", "AcetobacteraceaeBacteriumAt5844",
+	"ThermoplasmatalesArchaeon", "StreptococcusPseudopneumoniae", "StreptomycesPurpureus",
+	"PsychrobacterSp.Tb67", "CaldisphaeraLagunensis", "GrimontiaIndica", "NocardiaSp.Bmg51109",
+	"TeredinibacterTurneraeT7902", "EnsiferSp.Br816", "MegasphaeraElsdenii",
+	"BrachybacteriumParaconglomeratum", "AmycolatopsisMethanolica", "AmycolatopsisNigrescens",
+	"HoefleaSp.108", "SuccinispiraMobilis", "StreptococcusInfantarius", "LactobacillusRuminisAtcc27782",
+	"GlomeribacterGigasporarum", "HalonotiusSp.J07hn4", "BacillusSp.Nsp222",
+	"Haloarchaeon3a1dgr", "TetrapisisporaBlattae", "LactobacillusBuchneriCd034",
+	"BurkholderiaGrimmiae", "BasileaPsittacipulmonis", "CronobacterCondimenti",
+	"LactobacillusCurvatus", "BrachybacteriumSquillarum", "BlattabacteriumSp.Madar",
+	"GordoniaAmarae", "BlattabacteriumSp.Cpu", "PantoeaRwandensis", "DietziaAlimentaria",
+	"BacteroidesFaecis", "ArthrobacterGlobiformis", "GordoniaEffusa", "MycobacteriumThermoresistibile",
+	"StaphylococcusSp.Hgb0015", "PaenisporosarcinaSp.Hgh0030", "RhizobiumMongolense",
+	"StreptomycesChartreusis", "CitrobacterSp.S77", "SphingomonasElodea", "AquilunaSp.Imcc13023",
+	"LonsdaleaQuercina", "PelagibacteriumHalotolerans", "AgrobacteriumTumefaciensCcnwgs0286",
+	"MesorhizobiumAmorphae", "GlaciecolaNitratireducens", "FlavobacteriumFrigoris",
+	"ExiguobacteriumAntarcticum", "PaenibacillusPeoriae", "NovosphingobiumPentaromativorans",
+	"CommensalibacterIntestini", "GluconobacterMorbifer", "FangiaHongkongensis",
+	"AggregatibacterActinomycetemcomitansRhaa1", "MobilicoccusPelagius", "AmycolatopsisBenzoatilytica",
+	"AmycolatopsisBalhimycina", "ActinopolysporaHalophila", "RudanellaLutea",
+	"ThermicanusAegyptius", "HaloglycomycesAlbus", "SalisaetaLonga", "GeminicoccusRoseus",
+	"RhodovibrioSalinarum", "ThermacetogeniumPhaeum", "SphingomonasPhyllosphaerae52",
+	"SphingomonasPhyllosphaeraeFa2", "SphingomonasMelonis", "XanthomonasCampestrisMusacearum",
+	"FlavobacteriumIndicum", "BartonellaAustralis", "BartonellaBovis", "BartonellaSchoenbuchensis",
+	"BartonellaVinsoniiBerkhoffii", "ThermoanaerobacteriumSaccharolyticum",
+	"BartonellaAlsatica", "BartonellaDoshiae", "BartonellaRattimassiliensis",
+	"BartonellaMelophagi", "BartonellaTamiae", "BartonellaTaylorii", "BartonellaVinsoniiArupensis",
+	"BartonellaWashoensis", "FluoribacterDumoffii", "BartonellaSp.Db56", "MethanolobusPsychrophilus",
+	"StreptococcusSp.Sk140", "StreptococcusSp.Sk643", "StreptococcusMitisSk579",
+	"StreptococcusOralisSk1074", "HaemophilusParaphrohaemolyticus", "FusobacteriumNecrophorumFunduliforme",
+	"PasteurellaBettyae", "LachnoanaerobaculumSaburreumF0468", "PrevotellaSp.F0472",
+	"CellulomonasMassiliensis", "HerbaspirillumMassiliense", "PeptoniphilusTimonensis",
+	"TimonellaSenegalensis", "MethylobacteriumSp.Gxf4", "ArthrobacterSp.Pao19",
+	"PelagibacterUbiqueHimb083", "NovosphingobiumLindaniclasticum", "BurkholderiaSp.Yi23",
+	"LimnohabitansSp.Rim28", "LimnohabitansSp.Rim47", "ArthrobacterSp.Man2",
+	"ParacoccusSp.N5", "MethylopilaSp.M107", "MethylobacteriumSp.10", "MethylobacteriumSp.77",
+	"MethylophilaceaeBacterium11", "PyrobaculumSp.1860", "EnterococcusFaeciumNrrlb2354",
+	"ActinomycesSp.Icm39", "ClostridiumSp.Mste9", "RickettsiaAustralis", "PaenirhodobacterEnshiensis",
+	"FlavobacteriumEnshiense", "GordoniaRhizosphera", "PenicilliumRubens",
+	"PseudomonasStutzeriSdmlac", "TistrellaMobilis", "NocardiaAsteroides",
+	"ThermusSp.Ccbus3uf1", "AtopobiumSp.Bv3ac4", "PropionimicrobiumSp.Bv2f7",
+	"PeptoniphilusSp.Bv3c26", "CoriobacteriaceaeBacteriumBv3ac1", "MegasphaeraSp.Bv3c161",
+	"AlicyclobacillusPomorum", "BudviciaAquatica", "CorynebacteriumSputi",
+	"FlavobacteriumAntarcticum", "IgnatzschineriaLarvae", "GordoniaPolyisoprenivorans",
+	"PsychrobacterSp.Pamc21119", "SphingomonasEchinoides", "SphingomonasSp.Pamc26605",
+	"SphingomonasSp.Pamc26617", "PseudomonasPsychrotolerans", "MethylophilusSp.5",
+	"NatronorubrumTibetense", "CitrobacterFarmeri", "SaccharomonosporaAzurea",
+	"SphingobiumBaderi", "StreptococcusParasanguinisFw213", "PseudomonasFluorescensF113",
+	"LactobacillusRossiae", "EscherichiaHermannii", "EscherichiaVulneris",
+	"ArthrobacterSp.31y", "ActinomycesNaeslundii", "StreptococcusMacedonicus",
+	"StreptomycesAcidiscabies", "VibrioSp.Ejy3", "MethyloglobulusMorosus",
+	"PaenibacillusAlvei", "PseudoalteromonasCitrea", "PseudoalteromonasHaloplanktisAtcc14393",
+	"PseudoalteromonasRubra", "PseudoalteromonasSpongiae", "BacillusBataviensis",
+	"MycoplasmaCanis", "SimiduiaAgarivorans", "SinorhizobiumFrediiHh103", "PseudomonasExtremaustralis",
+	"BrevibacillusMassiliensis", "AnaerococcusSp.Ph9", "PeptoniphilusGrossensis",
+	"ActinomycesSp.Ph3", "KallipygaMassiliensis", "EnormaMassiliensis", "HalomonasSp.Gfaj1",
+	"StenotrophomonasMaltophiliaPml168", "MycoplasmaHyorhinisSk76", "SphingopyxisSp.Lc363",
+	"BacteriumSp.Ms4", "MethylopilaSp.73b", "MycobacteriumSp.141", "AcaricomesPhytoseiuli",
+	"AcetobacterNitrogenifigens", "AcinetobacterBouvetii", "ActinobacillusCapsulatus",
+	"ActinobaculumUrinale", "ActinokineosporaEnzanensis", "ActinomaduraAtramentaria",
+	"ActinomycesDentalis", "ActinomycesGeorgiae", "ActinomycesIsraelii", "ActinomycesNeuiiDsm8576",
+	"ActinomycesSuimastitidis", "ActinomycesVaccimaxillae", "ActinomycetosporaChiangmaiensis",
+	"ActinoplanesGlobisporus", "ActinopolymorphaAlba", "AequorivitaCapsosiphonis",
+	"AestuariibacterSalexigens", "AestuariimicrobiumKwangyangense", "AfifellaPfennigii",
+	"AgrococcusLahaulensis", "AgromycesItalicus", "AgromycesSubbeticus", "AlgicolaSagamiensis",
+	"AlgoriphagusMannitolivorans", "AlgoriphagusMarincolaDsm16067", "AlgoriphagusVanfongensis",
+	"AliagarivoransTaiwanensis", "AlicyclobacillusContaminans", "AlicyclobacillusHerbarius",
+	"AlicyclobacillusPohliae", "AlkanindigesIllinoisensis", "AllofustisSeminis",
+	"AlloscardoviaOmnicolens", "AlysiellaCrassa", "AmorphusCoralli", "AnaeroarcusBurkinensis",
+	"AnaerobiospirillumSucciniciproducens", "AnaerovoraxOdorimutans", "AndreprevotiaChitinilytica",
+	"AquaspirillumSerpens", "AquimarinaMuelleri", "ArenibacterCertesii", "ArenibacterLatericius",
+	"ArenimonasComposti", "ArenimonasOryziterrae", "ArsenicicoccusBolidensis",
+	"ArthrobacterCastelli", "ArthrobacterSanguinis", "AsticcacaulisBenevestitus",
+	"AtopococcusTabaci", "AureimonasUreilytica", "AzospirillumHalopraeferens",
+	"AzovibrioRestrictus", "BacillusAidingensis", "BacillusChagannorensis",
+	"BacillusFordii", "BacillusGelatini", "BacteroidesBarnesiae", "BacteroidesGraminisolvens",
+	"BacteroidesMassiliensisB84634", "BacteroidesPyogenesDsm20611", "BacteroidesSalyersiae",
+	"BalneolaVulgaris", "BavariicoccusSeileri", "BelnapiaMoabensis", "BlautiaWexlerae",
+	"BrachymonasChironomi", "BrevibacillusLaterosporusDsm25", "BrevundimonasAveniformis",
+	"BrevundimonasBacteroides", "BurkholderiaNodosa", "ButyricimonasSynergistica",
+	"CampylobacterCuniculorum", "GemmobacterNectariphilus", "CatelliglobosisporaKoreensis",
+	"ChryseobacteriumCaeni", "ChryseobacteriumDaeguense", "ChryseobacteriumGregarium",
+	"ChryseobacteriumPalustre", "ClostridiisalibacterPaucivorans", "ClostridiumAminophilum",
+	"ClostridiumLitorale", "ClostridiumSaccharogumia", "ClostridiumSporosphaeroides",
+	"ClostridiumStercorarium", "ClostridiumTyrobutyricum", "ClostridiumViride",
+	"CohnellaLaeviribosi", "ConchiformibiusKuhniae", "ConchiformibiusSteedae",
+	"CorynebacteriumCallunae", "CorynebacteriumCapitovis", "CorynebacteriumCaspium",
+	"CorynebacteriumCiconiae", "CorynebacteriumFreiburgense", "CorynebacteriumHalotolerans",
+	"CorynebacteriumLubricantis", "CorynebacteriumMassiliense", "CorynebacteriumMastitidis",
+	"CorynebacteriumPilosum", "CorynebacteriumPropinquum", "CorynebacteriumUlceribovis",
+	"GryllotalpicolaGinsengisoli", "CytophagaAurantiaca", "DasaniaMarina",
+	"DeinococcusApachensis", "DeinococcusAquatilis", "DeinococcusFrigens",
+	"DeinococcusMarmoris", "DeinococcusMisasensis", "DemetriaTerragena", "DesulfobacterCurvatus",
+	"DesulfobulbusJaponicus", "DesulfococcusMultivorans", "DesulfocurvusVexinensis",
+	"DesulfonatronovibrioHydrogenovorans", "DesulfotomaculumAlcoholivorax",
+	"DesulfotomaculumAlkaliphilum", "DesulfotomaculumHydrothermale", "DesulfotomaculumThermocisternum",
+	"DesulfovibrioAcrylicus", "DesulfovibrioAlcoholivorans", "DesulfovibrioAlkalitolerans",
+	"DesulfovibrioAminophilus", "DesulfovibrioBastinii", "DesulfovibrioDesulfuricansDsm642",
+	"DesulfovibrioFrigidus", "DesulfovibrioGigas", "DesulfovibrioHydrothermalis",
+	"DesulfovibrioLongus", "DesulfovibrioOxyclinae", "DesulfovirgulaThermocuniculi",
+	"DesulfurisporaThermophila", "DonghicolaXiamenensis", "DyadobacterAlkalitolerans",
+	"EchinicolaPacifica", "ElioraeaTepidiphila", "EnterococcusCecorum", "EnterococcusColumbae",
+	"EnterorhabdusMucosicola", "EpilithonimonasTenax", "EremococcusColeocolaDsm15696",
+	"ErysipelothrixTonsillarum", "EudoraeaAdriatica", "FerrimicrobiumAcidiphilum",
+	"FerrimonasFuttsuensis", "FlavobacteriumDaejeonense", "FlavobacteriumFilum",
+	"FlavobacteriumFrigidarium", "FlavobacteriumRivuli", "FlavobacteriumSasangense",
+	"FlavobacteriumSoli", "FlavobacteriumSubsaxonicum", "FlavobacteriumSuncheonense",
+	"FlexithrixDorotheae", "GelidibacterMesophilus", "GemellaCuniculi", "GeopsychrobacterElectrodiphilus",
+	"GeothrixFermentans", "GilvimarinusChinensis", "GlaciecolaPunicea", "GlaciibacterSuperstes",
+	"GlycomycesArizonensis", "GordoniaHirsuta", "GordoniaShandongensis", "GracilibacillusLacisalsi",
+	"GracilimonasTropica", "GramellaEchinicola", "GranulicoccusPhenolivorans",
+	"GulosibacterMolinativorax", "HahellaGanghwensis", "HalalkalibacillusHalophilus",
+	"HalieaSalexigens", "HalobacillusKuroshimensis", "HalomonasAnticariensis",
+	"HalomonasHalocynthiae", "HalomonasLutea", "HalorubrumEzzemoulense", "HamadaeaTsunoensis",
+	"HelcococcusSueciensis", "HelleaBalneolensis", "HenriciellaMarina", "HumibacterAlbus",
+	"HymenobacterNorwichensis", "JeotgalicoccusMarinus", "JeotgalicoccusPsychrophilus",
+	"JonesiaQuinghaiensis", "KaistiaGranuli", "KangiellaAquimarina", "KiloniellaLaminariae",
+	"KordiimonasGwangyangensis", "KribbellaCatacumbae", "KushneriaAurantia",
+	"LacticigeniumNaphtae", "LactobacillusCeti", "LactobacillusHarbinensis",
+	"LactobacillusMalefermentans", "LactobacillusPsittaci", "LegionellaLansingensis",
+	"LegionellaMoravica", "LegionellaShakespearei", "LeptotrichiaShahii", "LeptotrichiaTrevisanii",
+	"LeucobacterChironomi", "LewinellaCohaerens", "LewinellaPersica", "LoktanellaHongkongensis",
+	"LongisporaAlbida", "LysobacterConcretionis", "MarinimicrobiumAgarilyticum",
+	"MarinobacterDaepoensis", "MarinobacteriumLitorale", "MarinomonasUshuaiensis",
+	"MarinospirillumInsulare", "MarinospirillumMinutulum", "MartelellaMediterranea",
+	"MegamonasHypermegale", "MegamonasRupellensis", "MeganemaPerideroedes",
+	"MeiothermusCerbereus", "MeiothermusTaiwanensis", "MeiothermusTimidus",
+	"MesoflavibacterZeaxanth.Dsm18436", "MesoniaMobilis", "MetascardoviaCriceti",
+	"MethylophilusMethylotrophus", "MicrobacteriumGubbeenense", "MicrobacteriumIndicum",
+	"MicrobacteriumLuticocti", "MoraxellaBoevrei", "MoraxellaCaprae", "MycobacteriumHassiacum",
+	"NeptunomonasJaponica", "NesterenkoniaAlba", "NevskiaRamosa", "NevskiaSoli",
+	"NiabellaAurantiaca", "NocardioidesHalotolerans", "NonomuraeaCoxensis",
+	"NovosphingobiumAcidiphilum", "OceanicaulisAlexandrii", "OceanicolaNanhaiensis",
+	"OligellaUreolytica", "OlivibacterSitiensis", "OrnithinimicrobiumPekingense",
+	"PaenibacillusAlginolyticus", "PaenibacillusDaejeonensis", "PaenibacillusFonticola",
+	"PaenibacillusGinsengihumi", "PaenibacillusMassiliensis", "PaenibacillusSanguinis",
+	"PaenibacillusTerrigena", "PannonibacterPhragmitetus", "ParabacteroidesGordonii",
+	"ParaoerskoviaMarina", "PatulibacterAmericanus", "PelosinusFermentans",
+	"PerlucidibacaPiscinae", "PleomorphomonasKoreensis", "PleomorphomonasOryzae",
+	"PorphyrobacterCryptus", "PorphyromonasBennonis", "PorphyromonasLevii",
+	"PorphyromonasSomerae", "PrevotellaAlbensis", "PrevotellaCorporis", "PrevotellaFalsenii",
+	"PrevotellaLoescheii", "PrevotellaMaculosa", "PrevotellaOrisDsm18711",
+	"PrevotellaPaludivivens", "PrevotellaShahii", "PrevotellaTimonensis4401737",
+	"PrevotellaVeroralisDsm19559", "PropionibacteriumAcidifaciens", "PropionibacteriumJensenii",
+	"PropionibacteriumThoenii", "ProteiniphilumAcetatigenes", "ProteocatellaSphenisci",
+	"PseudoclavibacterSoli", "PseudomonasResinovoransDsm21078", "PseudonocardiaAcaciae",
+	"PseudonocardiaAsaccharolytica", "PsychrobacterLutiphocae", "PsychrobacterPhenylpyruvicus",
+	"PsychroflexusTropicus", "PsychroserpensBurtonensis", "RathayibacterToxicus",
+	"RheinheimeraBaltica", "RheinheimeraPerlucida", "RhodonellumPsychrophilum",
+	"RiemerellaColumbina", "RobiginitomaculumAntarcticum", "RoseomonasAerilata",
+	"RuaniaAlbidiflava", "RubritaleaMarina", "RubritepidaFlocculans", "RudaeaCellulosilytica",
+	"RuminococcusGauvreauii", "SaccharibacillusKuerlensis", "SaccharibacterFloricola",
+	"SaccharospirillumImpatiens", "SalinarimonasRosea", "SalinicoccusAlbus",
+	"SalinimicrobiumTerrae", "SalinimonasChungwhensis", "SalipigerMucosus",
+	"SalsuginibacillusKocurii", "SandarakinorhabdusLimnophila", "SchlesneriaPaludicola",
+	"SediminimonasQiaohouensis", "SegetibacterKoreensis", "SelenomonasBovis",
+	"SerinicoccusMarinus", "ShimazuellaKribbensis", "SilanimonasLenta", "SimplicispiraPsychrophila",
+	"SolimonasVariicoloris", "SolimonasFlava", "SmaragdicoccusNiigatensis",
+	"SolimonasSoli", "SolobacteriumMooreiDsm22971", "SphingomonasAstaxanthinifaciens",
+	"SphingomonasSanxanigenens", "SphingopyxisBaekryungensis", "SpirochaetaBajacaliforniensis",
+	"SpirosomaLuteum", "SpirosomaPanaciterrae", "SpirosomaSpitsbergense", "SpongiibacterTropicus",
+	"SporolactobacillusVineae", "SporomusaOvata", "SporosarcinaUreae", "StenoxybacterAcetivorans",
+	"StreptococcusCaballi", "StreptococcusCastoreus", "StreptococcusDevriesei",
+	"StreptococcusDidelphis", "StreptococcusEntericus", "StreptococcusFerus",
+	"StreptococcusHenryi", "StreptococcusMarimammalium", "StreptococcusMassiliensis",
+	"StreptococcusMerionis", "StreptococcusMinor", "StreptococcusOrisratti",
+	"StreptococcusOvis", "FaecalicoccusPleomorphus", "StreptococcusPlurextorum",
+	"StreptococcusPorci", "StreptococcusThoraltensis", "StreptomycesFlavidovirens",
+	"StreptomycesScabrisporus", "StreptomycesSulphureus", "StreptomycesVitaminophilus",
+	"SulfurihydrogenibiumSubterraneum", "SulfurospirillumArcachonense", "TepidiphilusMargaritifer",
+	"TerasakiellaPusilla", "TetragenococcusMuriaticus", "ThalassobacterArenae",
+	"ThalassospiraXiamenensis", "ThaueraLinaloolentis", "ThermithiobacillusTepidarius",
+	"ThermodesulfatatorAtlanticus", "ThermodesulfobacteriumHveragerdense",
+	"ThermodesulfobacteriumThermophilum", "ThermodesulfovibrioThiophilus",
+	"ThermomonasFusca", "ThermusAntranikianii", "ThermusIgniterrae", "ThermusIslandicus",
+	"ThiobacillusDenitrificansDsm12475", "ThiobacillusThioparus", "ThiothrixDisciformis",
+	"ThiothrixFlexilis", "ThiothrixLacustris", "TuberibacillusCalidus", "UliginosibacteriumGangwonense",
+	"VeillonellaMagna", "VaribaculumCambrienseDsm15806", "VitreoscillaStercoraria",
+	"WeissellaHalotolerans", "WenxiniaMarina", "WohlfahrtiimonasChitiniclastica",
+	"WoodsholeaMaritima", "XenophilusAzovorans", "YaniellaHalotolerans", "ZavarzinellaFormosa",
+	"ZymophilusRaffinosivorans", "ThiomicrospiraArctica", "ThiomicrospiraPelophila",
+	"ThiomicrospiraSp.Kp2", "PseudomonasStutzeriDsm10701", "NafulsellaTurpanensis",
+	"TreponemaSp.Jc4", "PseudomonasProtegensCha0", "MorganellaMorganii", "TreponemaMaltophilum",
+	"TreponemaMedium", "TreponemaSocranskiiParedis", "OlsenellaProfusa", "ActinomycesMassiliensis",
+	"TreponemaSocranskiiVpidr56br1116", "CorynebacteriumPyruviciproducens",
+	"DeferrisomaCamini", "AmycolatopsisOrientalis", "BoseaSp.117", "BradyrhizobiumSp.Doa9",
+	"WeissellaConfusa", "NocardiaCyriacigeorgica", "GlaciecolaLipolytica",
+	"CapnocytophagaSp.F0381", "SelenomonasSp.F0429", "PorphyromonasCatoniae",
+	"VeillonellaAtypicaKon", "ClostridiumAcidurici", "BacteriumSp.Jkg1", "FilamentousCyanobacterium",
+	"GlaciecolaMesophila", "SpiroplasmaMelliferum", "MycoplasmaHyorhinisGdl1",
+	"AlishewanellaJeotgali", "GlaciecolaPsychrophila", "ThaumarchaeotaSp.ScgcAb629i23",
+	"NitrospinaSp.Ab629b18", "XanthomonasFragariae", "DehalobacterSp.Cf", "NitrosomonasCryotolerans",
+	"BacillusVireti", "FlavobacteriumSp.83", "MethylobacteriumSp.88a", "XanthobacterSp.126",
+	"ArthrobacterSp.35w", "BacillusSp.37ma", "HalococcusHamelinensis", "RhizobiumSp.Ccge510",
+	"MethyloteneraMobilis13", "LactobacillusVini", "NocardiaBrasiliensis",
+	"StreptomycesHygroscopicus", "BacillusSp.L1", "StreptomycesSomaliensis",
+	"CellvibrioSp.Br", "BartonellaKoehlerae", "MethylocystisParvus", "PseudomonasFragi",
+	"VibrioCyclitrophicus", "LactobacillusPentosus", "SalinisporaPacifica",
+	"NocardiopsisSp.Cnt312", "StreptomycesSp.Cnh099", "SaccharomonosporaSp.Cnq490",
+	"FormosaSp.Ak20", "EndozoicomonasNumazuensis", "LactobacillusCurieae",
+	"EnterococcusDispar", "EnterococcusSaccharolyticus", "EnterococcusDurans",
+	"EnterococcusAvium", "EnterococcusSulfureus", "StaphylococcusIntermedius",
+	"ProvidenciaBurhodogranariea", "ProvidenciaRettgeriDmel1", "PhycisphaeraMikurensis",
+	"WigglesworthiaGlossinidiaSp.Gmo", "ChlamydiaGallinacea", "CorallococcusCoralloides",
+	"NovosphingobiumSp.Ap12", "SphingobiumSp.Ap49", "RhizobiumSp.Cf080", "RhizobiumSp.Cf122",
+	"EnterococcusGallinarum", "HerbaspirillumSp.Cf444", "PseudomonasSp.Gm21",
+	"HerbaspirillumSp.Yr522", "PhyllobacteriumSp.Yr531", "AcinetobacterSp.Cip102129",
+	"AcinetobacterSp.Cip56.2", "RickettsiaHelvetica", "PelagibacterUbiqueHimb058",
+	"LysinibacillusVarians", "BlastococcusSaxobsidens", "BifidobacteriumAsteroides",
+	"PseudomonasPseudoalcaligenesKf707", "ArthrobacterSp.9mfcol31", "LeifsoniaSp.109",
+	"RhodospirillumPhotometricum", "MesoaciditogaLauensis", "MycobacteriumPhlei",
+	"ArcticibacterSvalbardensis", "SulfurospirillumMultivorans", "PhaeospirillumMolischianum",
+	"MicromonosporaLupini", "TsukamurellaSp.1534", "RahnellaAquatilisHx2",
+	"ThermococcusZilligii", "ArthrobacterSp.161mfsha21", "ArthrobacterSp.162mfsha11",
+	"MicrobacteriumSp.292mf", "MicrobacteriumParaoxydans77mftsu32", "PseudomonasMandelii36mfcvi11",
+	"PeptoclostridiumDifficileCd160", "LeuconostocPseudomesenteroides", "StreptococcusAgalactiaeLmg14747",
+	"StreptomycesSp.Lappah108", "StreptomycesSp.Mspmpm5", "StreptomycesSp.Hmica12",
+	"AchromobacterPiechaudiiHle", "AgrobacteriumAlbertimagni", "MethylacidiphilumFumariolicum",
+	"TumebacillusFlagellatus", "StreptomycesSp.Lappah95", "StreptomycesSp.Amel2xe9",
+	"StreptomycesSp.Atexabd23", "StreptomycesSp.Bolea5", "StreptomycesSp.Pstaah124",
+	"StreptomycesSp.Fxanac1", "VariovoraxParadoxus110b", "MycobacteriumSp.155",
+	"ArthrobacterSp.135mfcol51", "ThioalkalivibrioSp.Aljt", "ThioalkalivibrioSp.Ald1",
+	"ThioalkalivibrioSp.Almg11", "ThioalkalivibrioSp.Ale31", "ThiomonasSp.Fbcd",
+	"PrevotellaSp.10", "DesulfurobacteriumSp.Tc51", "PersephonellaSp.If05l8",
+	"PersephonellaSp.Km09lau8", "EnterococcusMalodoratus", "EnterococcusRaffinosus",
+	"EnterococcusVillorum", "EnterococcusAsini", "EnterococcusPallens", "EnterococcusHaemoperoxidus",
+	"EnterococcusMoraviensis", "EnterococcusPhoeniculicola", "EnterococcusCaccae",
+	"EnterococcusGilvus", "ThioalkalivibrioSp.Alj7", "ThioalkalivibrioSp.Alj11",
+	"ThioalkalivibrioSp.Alj16", "StaphylococcusEquorum", "BordetellaSp.Fb8",
+	"NocardiaSp.Bmg111209", "UreibacillusThermosphaericus", "StreptomycesAuratus",
+	"RuminococcusBicirculans", "MaricaulisSp.Jl2009", "StreptococcusSp.Acc21",
+	"EubacteriumNodatum", "LeptospirillumFerrooxidans", "PhytoplasmaPeanutWitchesbroom",
+	"FrancisellaNoatunensis", "PseudomonasSp.Hys", "RhodanobacterSpathiphylli",
+	"RhodanobacterFulvus", "RhodanobacterThiooxydans", "SulfuricellaDenitrificans",
+	"ClostridiumSp.12", "FervidicoccusFontis", "HelicobacterCetorumMit995656",
+	"RicheliaIntracellularis", "MethyloteneraSp.73s", "SulfurovumSp.Ar", "PectobacteriumSp.Scc3193",
+	"FibrellaAestuarina", "EnterobacterSp.R4368", "HalomonasXinjiangensis",
+	"DesulfocapsaSulfexigens", "StaphylococcusVitulinus", "DraconibacteriumOrientale",
+	"XanthobacteraceaeBacterium501b", "GammaproteobacteriaBacteriumBdw918",
+	"ThiomicrospiraKuenenii", "MarinilabiliaSalmonicolor", "BurkholderiaBryophila",
+	"BacillusSp.123mfchir2", "NocardiaSp.Cny236", "StreptomycesSp.Cnt372",
+	"StreptomycesSp.Cny243", "PropionibacteriumAvidum", "CalothrixSp.Pcc6303",
+	"PropionibacteriumAcidipropionici", "StreptomycesSp.142mfcol31", "StreptomycesSp.351mftsu51",
+	"StreptomycesSp.303mfcol52", "NocardiaSp.348mftsu51", "MycobacteriumSp.360mftsu51",
+	"TerracoccusSp.273mftsu31", "SulfurimonasSp.Ast10", "HelicobacterCinaediPagu611",
+	"ChamaesiphonMinutus", "CyanobacteriumSp.Pcc7702", "CrinaliumEpipsammum",
+	"FischerellaSp.Pcc9431", "FischerellaSp.Pcc9605", "GeitlerinemaSp.Pcc7407",
+	"GloeocapsaSp.Pcc7428", "MicrocoleusSp.Pcc7113", "OscillatoriaSp.Pcc10802",
+	"SpirulinaSubsalsa", "SynechococcusSp.Pcc7502", "LeptolyngbyaSp.Pcc6406",
+	"ColletotrichumSublineola", "BacillusPsychrosaccharolyticus", "FischerellaSp.Pcc9339",
+	"LiberibacterAsiaticusGxpsy", "SphingopyxisSp.Mc1", "HerbaspirillumSp.Gw103",
+	"AerococcusViridansLl1", "BrevibacteriumMassiliense", "AlcanivoraxSp.19m6",
+	"AlcanivoraxHongdengensis", "AlcanivoraxJadensis", "MicrobacteriumSp.C448",
+	"ThalassospiraProfundimaris", "HalomonasSp.Bjgmmb45", "BacillusXiamenensis",
+	"BacillusSp.Dw54", "ArenitaleaLutea", "PhotodesmusBlepharus", "StaphylococcusLentus",
+	"SaccharothrixEspanaensis", "MycoplasmaSp.G5847", "PseudomonasSp.M47t1",
+	"CladophialophoraPsammophila", "PseudomonasPseudoalcaligenesCect5344",
+	"PyrococcusSp.St04", "GloeobacterKilaueensis", "ThermogladiusCellulolyticus",
+	"BdellovibrioExovorus", "AustwickiaChelonae", "KineosphaeraLimosa", "SinorhizobiumFrediiUsda257",
+	"PlanococcusAntarcticus", "ThioclavaDalianensis", "FibrisomaLimi", "BlattabacteriumSp.Bgi",
+	"VibrioGenomosp.", "RhodovulumSp.Ph10", "MycoplasmaAuris", "MycoplasmaAlkalescens",
+	"MycoplasmaBovigenitalium", "MycoplasmaArginini", "MycoplasmaOvipneumoniae",
+	"MycoplasmaYeatsii", "UreaplasmaDiversum", "VibrioRumoiensis", "RhodovulumSulfidophilum",
+	"IndibacterAlkaliphilus", "PsychroflexusGondwanensis", "FlavobacteriumSp.Acam123",
+	"EnterovibrioNorvegicus", "EnterovibrioCalviensis", "VibrioKanaloae", "AcinetobacterVenetianus",
+	"MelioribacterRoseus", "ChondromycesApiculatus", "BurkholderiaSp.Lig30",
+	"SphingobiumXenophagum", "PseudaminobacterSalicylatoxidans", "ParascardoviaDenticolensIpla20019",
+	"TetrasphaeraElongata", "EndolissoclinumFaulkneriL2", "MicrobacteriumYannicii",
+	"StaphylococcusWarneriSg1", "MycobacteriumVaccae", "ClostridiumTermitidis",
+	"AlishewanellaAgri", "VirgibacillusHalodenitrificans", "BacillusEndophyticus",
+	"BacillusOceanisediminis", "SnodgrassellaAlvi", "GilliamellaApicola", "ClostridiumSp.Maddingley",
+	"PaenibacillusSp.Osyse", "BacillusMacauensis", "PseudomonasStutzeriCcug29243",
+	"HalococcusSp.197a", "MangrovimonasYunxiaonensis", "ArthrobacterSp.M2012083",
+	"SalmonellaBongoriN26808", "AfipiaBirgiae", "GranulicellaTundricola", "CycloclasticusZancles",
+	"AeropyrumCamini", "JanthinobacteriumSp.Hh01", "StreptococcusMutansGs5",
+	"CorynebacteriumTerpenotabidum", "AnaerovibrioSp.Rm50", "RuminobacterSp.Rm87",
+	"BrevibacillusBrevisX23", "BartonellaBirtlesii", "BacteriovoraxSp.Seq25v",
+	"BacteriovoraxSp.Bal6x", "EnterococcusFaecalisAtcc29212", "MoritellaDasanensis",
+	"FlavobacteriumSp.F52", "HalopigerSalifodinae", "MoritellaMarina", "LactobacillusIngluviei",
+	"CorynebacteriumTimonense", "PrevotellaOralisHga0225", "SutterellaWadsworthensisHga0223",
+	"ActinomycesSp.Hpa0247", "CorynebacteriumSp.Kpl1859", "CorynebacteriumSp.Kpl1860",
+	"DermabacterSp.Hfh0086", "StreptococcusSp.Hph0090", "AtopobiumSp.F0494",
+	"PropionibacteriumSp.F0372", "ButyricicoccusPullicaecorum", "AlistipesOnderdonkii",
+	"CorynebacteriumSp.Kpl1989", "CorynebacteriumSp.Kpl2004", "ReyranellaMassiliensis",
+	"BartonellaRattaustraliani", "YersiniaMassiliensis", "XanthomonasTranslucens",
+	"VibrioBreoganii", "NocardiopsisAlba", "StreptomycesSp.Cnr698", "NocardiaAobensis",
+	"NocardiaBrevicatena", "NocardiaCarnea", "NocardiaExalbida", "NocardiaHigoensis",
+	"NocardiaJiangxiensis", "NocardiaOtitidiscaviarum", "NocardiaNiigatensis",
+	"NocardiaTakedensis", "NocardiaPneumoniae", "NocardiaTestacea", "NocardiaConcava",
+	"NocardiaVeterana", "NocardiaTransvalensis", "PseudomonasSp.Lz4w", "SphingobiumSp.C100",
+	"HyphomonasSp.L53140", "OceanibaculumIndicum", "PseudomonasSp.Uw4", "PseudomonasLuteola",
+	"MarinomonasSp.D104", "CeleribacterBaekdonensis", "CommensalibacterSp.Mx01",
+	"KinetoplastibacteriumCrithidii", "KinetoplastibacteriumDesouzaii", "KinetoplastibacteriumOncopeltii",
+	"KinetoplastibacteriumGalatii", "KinetoplastibacteriumBlastocrithidii",
+	"CellvibrioMixtus", "MycobacteriumMageritense", "TepidanaerobacterAcetatoxydans",
+	"StreptomycesSp.Aa0539", "JanibacterHoylei", "GemmataSp.Iil30", "HalogranumSalarium",
+	"LysinibacillusMassiliensis", "PseudomonasPsychrophila", "PseudoxanthomonasSp.Gw2",
+	"ChelatococcusSp.Gw1", "PseudomonasPutidaNbrc14164", "RhizobiumMesoamericanum",
+	"AlistipesMarseilloanorexicus", "BacillusMassilioanorexius", "BlastococcusMassiliensis",
+	"ClostridiumAnorexicamassiliense", "HoldemaniaMassiliensis", "StoquefichusMassiliensis",
+	"PseudomonasStutzeriNf13", "EnterobacteriaceaeBacteriumB14", "StreptomycesDavawensis",
+	"StreptococcusSuis865192", "StreptococcusSuis22083", "StreptococcusSuisYs72",
+	"StreptomycesCollinus", "PseudomonasAlcaligenesNbrc14159", "PseudomonasParafulva",
+	"LiberibacterCrescens", "LactococcusRaffinolactis", "PseudoalteromonasRuthenica",
+	"FusobacteriumHwasookii", "ClostridiumSp.M240", "EdwardsiellaHoshinae",
+	"ElizabethkingiaMeningoseptica", "AchromobacterXylosoxidansNbrc15126",
+	"AcinetobacterBeijerinckii", "AcinetobacterBrisouii", "AcinetobacterGuillouiae",
+	"AcinetobacterGyllenbergii", "AcinetobacterSp.Anc4105", "AcinetobacterSp.Anc3862",
+	"AcinetobacterSp.Niph2100", "AcinetobacterSp.Niph899", "AcinetobacterSp.Niph758",
+	"AcinetobacterSp.Niph809", "AcinetobacterSp.Anc3789", "AcinetobacterBohemicus",
+	"CupriavidusSp.Bis7", "RoseomonasSp.B5", "BurkholderiaAcidipaludis", "BurkholderiaBannensis",
+	"BurkholderiaFerrariae", "BurkholderiaTerrae", "CitrobacterSedlakii", "ChryseobacteriumIndologenes",
+	"EmpedobacterBrevis", "BacillusAlcalophilus", "PseudomonasStutzeriKos6",
+	"ComamonasAquatica", "NovosphingobiumTardaugens", "SphingobiumHerbicidovorans",
+	"SphingomonasParapaucimobilis", "VibrioProteolyticus", "VibrioHalioticoli",
+	"VibrioAlginolyticusNbrc15630", "VibrioAzureus", "VibrioEzurae", "ThermotogaHypogea",
+	"XanthomonasCassavae", "ActinomycesSp.S4c9", "ArcanobacteriumSp.S3pf19",
+	"PeptostreptococcusSp.Mv1", "MethanobacteriumSp.Maddingley", "AlphaProteobacteriumImcc14465",
+	"StaphylococcusChromogenes", "RhizobiumRubi", "GordoniaAichiensis", "LysinibacillusOdysseyi",
+	"PseudomonasFluorescensNcimb11764", "LactobacillusFlorum", "AltibacterLentus",
+	"ComamonasGranuli", "StreptomycesMobaraensis", "GordoniaMalaquae", "GordoniaSihwensis",
+	"GordoniaParaffinivorans", "GordoniaSoli", "EnterobacteriaceaeBacteriumLsjc7",
+	"CorynebacteriumMaris", "CorynebacteriumVitaeruminis", "MangrovibacterSp.Mfb070",
+	"GluconobacterOxydansH24", "PantoeaSp.A4", "DickeyaSp.Dw0440", "OscillibacterSp.Kle1728",
+	"ClostridiumSp.Kle1755", "PseudomonasNitroreducensTx1", "ActinobaculumSp.F0552",
+	"CapnocytophagaSp.F0517", "LeptotrichiaSp.F0557", "PorphyromonasSp.W7784",
+	"PrevotellaSp.F0091", "PaenibacillusSp.Fslh7689", "PaenibacillusSp.Fslr7277",
+	"ViridibacillusArenosi", "HaloarculaJaponica", "HalobiformaNitratireducens",
+	"HalococcusThailandensis", "HalorubrumSaccharovorum", "HalosarcinaPallida",
+	"HaloterrigenaSalina", "NatrinemaPallidum", "NatronococcusAmylolyticus",
+	"NatronolimnobiusInnermongolicus", "NatronorubrumBangense", "HymenobacterSwuensis",
+	"LeptolyngbyaSp.Kiost1", "ActinobacteriumLlx17", "AlphaProteobacteriumL41a",
+	"BurkholderiaPhenoliruptrix", "SphingobacteriumSp.Accc05744", "GammaproteobacteriaBacteriumWg36",
+	"FlavobacteriumSp.Wg21", "BlattabacteriumSp.Bpaa", "LactococcusGarvieaeI113",
+	"AlkalibacteriumSp.Ak22", "LeuconostocGelidumJb7", "LeuconostocCarnosum",
+	"MicrothrixParvicella", "BrevibacteriumCasei", "StaphylococcusMassiliensis",
+	"ChlamydiaAvium", "NitrosopumilusSp.Ar2", "MoraxellaMacacae", "SalimicrobiumSp.Mj3",
+	"ClostridiumTetanomorphum", "LegionellaAnisa", "HaloterrigenaLimicola",
+	"NatronorubrumSulfidifaciens", "BradyrhizobiumSp.Dfci1", "PaenisporosarcinaSp.Tg14",
+	"NitratireductorAquibiodomus", "NitratireductorIndicus", "ThermotogaSp.Mc24",
+	"LactobacillusShenzhenensis", "LactococcusGarvieaeDcc43", "PusillimonasNoertemannii",
+	"OceaniovalibusGuishaninsula", "CardiniumEndosymbiontCeper1", "DesulfuromonasSp.Tf",
+	"CorynebacteriumSp.Gd7", "MegasphaeraSp.Np3", "NesterenkoniaSp.Np1", "NosocomiicoccusSp.Np2",
+	"CoriobacteriaceaeBacteriumGd5", "DesulfobaculaSp.Ts", "ClostridialesBacteriumVe20213",
+	"FlavobacteriumSp.Cf136", "ClostridialesBacteriumVe20209", "ClostridialesBacteriumVe20208",
+	"ClostridialesBacteriumVe20214", "ClostridialesBacteriumVe20221", "StaphylococcusSciuri",
+	"MarinobacteriumSp.Ak27", "ChryseobacteriumSp.Jm1", "EpilithonimonasSp.Fh1",
+	"DyellaGinsengisoli", "CatellicoccusMarimammalium", "StaphylococcusSp.E463",
+	"AlphaProteobacteriumJlt2015", "GeobacillusCaldoxylosilyticus", "CarnobacteriumMaltaromaticum",
+	"BhargavaeaCecembensis", "RalstoniaSp.Au1208", "SalinicoccusCarnicancri",
+	"BacteroidesMassiliensisDnlkv3", "EubacteriumSp.142", "LachnospiraceaeBacteriumM181",
+	"LachnospiraceaeBacteriumCoe1", "EnterorhabdusCaecimuris", "FirmicutesBacteriumM102",
+	"OscillibacterSp.13", "DoreaSp.52", "LachnospiraceaeBacterium32", "LachnospiraceaeBacterium101",
+	"LactobacillusMurinus", "EubacteriumPlexicaudatum", "ParabacteroidesSp.Asf519",
+	"PrevotellaDisiensJcm6334", "BacteroidesPyogenesJcm10003", "PrevotellaEnoeca",
+	"AnaerotruncusSp.G3", "HalyomorphaHalys", "PrevotellaPleuritidis", "PrevotellaOulorumJcm14966",
+	"AcetobacterOkinawensis", "PrevotellaHisticola", "PrevotellaAurantiaca",
+	"BacteroidesStercorirosoris", "PrevotellaFusca", "PrevotellaScopos", "ShewanellaHaliotis",
+	"ShewanellaMarina", "MethanomethylophilusAlvus", "NocardiopsisBaichengensis",
+	"WolbachiaSp.Dsi", "MethylobacillusGlycogenes", "BacillusAkibai", "PaenibacillusPini",
+	"FulvivirgaImtechensis", "NocardiopsisGanjiahuensis", "CaenispirillumSalinarum",
+	"OceanobacillusKimchii", "LeucobacterSalsicius", "HalomonasJeotgali", "ChlamydiaPsittaci10139811",
+	"HaloquadratumWalsbyiJ07hqw2", "VibrioNigripulchritudo", "DokdoniaSp.Pro95",
+	"MariniradiusSaccharolyticus", "RhodococcusRuber", "PseudomonasPutidaMtcc5279",
+	"CystobacterFuscus", "CampylobacterConcisusAtcc51562", "BacillusSp.G2",
+	"CampylobacterShowaeCsunswcd", "CampylobacterFetusTestudinum", "CampylobacterSp.1485e",
+	"MagnetospirillumSp.So1", "BradyrhizobiumOligotrophicum", "PseudomonasResinovoransNbrc106553",
+	"NocardiopsisPrasina", "NocardiopsisKunsanensis", "NocardiopsisValliformis",
+	"RhizobiumSp.2mfcol31", "NocardiopsisXinjiangensis", "HalobacillusSp.Bab2008",
+	"BacillusLehensis", "MycoplasmaCynos", "ActinoplanesFriuliensis", "ArsenophonusEndosymbiont",
+	"BordetellaHolmesii", "AdvenellaMimigardefordensis", "ParvularculaOceani",
+	"PhotobacteriumLeiognathiLrivu41", "BlastomonasSp.Aap53", "SandarakinorhabdusSp.Aap62",
+	"PorphyrobacterSp.Aap82", "SulfuricurvumSp.Rifrc1", "ThiorhodococcusSp.Ak35",
+	"SerratiaMarcescensFgi94", "GillisiaSp.Heli29", "MaribacterSp.Heli7", "PolaribacterSp.Hel185",
+	"PolaribacterSp.Heli88", "MuricaudaSp.Mar201075", "SalegentibacterSp.Heli6",
+	"SorangiumCellulosumSo01572", "ThioalkalivibrioNitratireducens", "EubacteriumRamulus",
+	"CoprothermobacterPlatensis", "SpiribacterSalinus", "EnterococcusFaecalis13sdw01",
+	"LiberibacterAmericanus", "HalarchaeumAcidiphilum", "ClostridiumPasteurianumDsm525",
+	"PhascolarctobacteriumSp.Cag207", "BibersteiniaTrehalosi", "PhascolarctobacteriumSp.Cag266",
+	"MycobacteriumAsiaticum", "HalieaRubra", "PseudomonasSp.Urmo17wk12i8",
+	"CaldimonasManganoxidans", "ColwelliaPiezophila", "DesulfospiraJoergensenii",
+	"SuccinimonasAmylolytica", "PelagibacterUbiqueHtcc9022", "ListeriaWeihenstephanensis",
+	"CarnobacteriumSp.Wn1359", "ThioalkalivibrioSp.Ale6", "ThioalkalivibrioSp.Ale19",
+	"ThioalkalivibrioSp.Akl19", "NitrosospiraBriensis", "ParacoccusZeaxanthinifaciens",
+	"LactobacillusParabrevis", "HyphomicrobiumZavarzinii", "SediminibacteriumSp.C3",
+	"AcidobacteriaceaeBacteriumKbs83", "AcidobacteriaceaeBacteriumKbs89", "AcidobacteriaceaeBacteriumKbs96",
+	"AnoxybacillusFlavithermusTno09006", "PantoeaSp.Imh", "PseudomonasSp.G5",
+	"PaenibacillusSabinae", "AeromonasDiversa", "PseudoalteromonasLuteoviolacea",
+	"BacteroidesCellulosilyticus", "RhodococcusSp.Aw25m09", "AcidovoraxSp.Mrs7",
+	"LegionellaOakridgensis", "ThioalkalivibrioSp.Alr1721", "FlavobacteriumSp.Kjj",
+	"PedobacterSp.R2019", "MegasphaeraSp.Nm10", "RhodococcusRhodnii", "PlanomicrobiumGlaciei",
+	"PaenibacillusSp.Gd11", "HepatobacterPenaei", "BacillusSonorensis", "SpiroplasmaTaiwanense",
+	"SpiroplasmaDiminutum", "SpiroplasmaChrysopicola", "SpiroplasmaSyrphidicola",
+	"SpiroplasmaCulicicola", "SpiroplasmaSabaudiense", "SpiroplasmaApis", "AcidovoraxSp.Jhl9",
+	"ArthrobacterGangotriensis", "MyxococcusStipitatus", "RhodococcusTriatomae",
+	"AcholeplasmaGranularum", "FusobacteriumRussii", "PsychromonasOssibalaenae",
+	"ZimmermannellaFaecalis", "AmphriteaJaponica", "AcholeplasmaAxanthum",
+	"AvibacteriumParagallinarum221", "CesiribacterAndamanensis", "OceanimonasSmirnovii",
+	"MicrobulbiferVariabilis", "ThioalkalivibrioThiocyanoxidansArh2", "NovispirillumItersonii",
+	"VibrioJasicida", "SynechococcusSp.Kordi100", "PaenibacillaceaeBacteriumG5",
+	"ButyrivibrioSp.Ae2015", "ButyrivibrioSp.Vcd2006", "ButyrivibrioSp.Ae3009",
+	"ButyrivibrioSp.Xpd2006", "ButyrivibrioSp.Fc2001", "ButyrivibrioSp.Ae3006",
+	"PrevotellaSp.Agr2160", "ButyrivibrioSp.Wcd3002", "ButyrivibrioSp.Vcb2006",
+	"ButyrivibrioSp.Lc3010", "ButyrivibrioSp.Wcd2001", "ButyrivibrioSp.Xbb1001",
+	"ButyrivibrioSp.Nc3005", "ButyrivibrioSp.Mc2013", "PseudobutyrivibrioRuminisCf1b",
+	"ClostridiumParaputrificum", "ClostridiumCadaveris", "PseudobutyrivibrioRuminisAd2017",
+	"ButyrivibrioFibrisolvensNd3005", "DoreaLongicatenaAgr2136", "SelenomonasRuminantiumAtcc12561",
+	"HyphomonasSp.T16b2", "HyphomonasSp.Cy54118", "HyphomonasSp.25b141", "HyphomonasSp.Bhbn044",
+	"HyphomonasSp.22ii122f38", "HyphomonasAdhaerens", "HyphomonasJohnsonii",
+	"HyphomonasJannaschiana", "HyphomonasOceanitis", "HyphomonasPolymorpha",
+	"AgrobacteriumTumefaciensCherry", "PseudomonasPoae", "AsticcacaulisSp.Ac460",
+	"AsticcacaulisSp.Ac402", "AsticcacaulisSp.Ac466", "StreptococcusTigurinusAz3a",
+	"StreptococcusTigurinus1366", "AlphaProteobacteriumMf105b01", "LachnospiraMultiparaAtcc19207",
+	"FrankiaSp.Iso899", "TolumonasSp.Brl61", "NocardioidesSp.Iso805n", "ConexibacterWoeseiIso977n",
+	"MethylohalobiusCrimeensis", "PaenibacillusSp.A9", "ActinomycesUrogenitalisS6c4",
+	"ActinomycesSp.S6spd3", "AnaerococcusLactolyticusS7113", "ClostridialesBacteriumS714",
+	"PrevotellaSp.S718", "CorynebacteriumCasei", "LysinibacillusSphaericusOt4b31",
+	"PandoraeaSp.Sd62", "MethylophagaLonarensis", "RaoultellaOrnithinolytica",
+	"EubacteriumAcidaminophilum", "SphaerotilusNatans", "ZhouiaAmylolytica",
+	"MesorhizobiumSp.L2c084a000", "MesorhizobiumSp.Lnjc398b00", "CorynebacteriumFreneyi",
+	"PrevotellaBiviaDnf00188", "PrevotellaSp.S7Ms2", "StreptomycesSp.Cnt318",
+	"StreptomycesSp.Taa040", "RoseovariusMucosus", "DeinococcusWulumuqiensis",
+	"NitrosospiraSp.Apg3", "MarinobacterSantoriniensis", "CyclobacteriaceaeBacteriumAk24",
+	"BrachyspiraHampsonii", "StreptomycesSp.Taa204", "ClostridiumJosui", "LactobacillusOryzae",
+	"DietziaSp.Ucdthp", "MycoplasmaPutrefaciensMput9231", "CaulobacterCrescentusOr37",
+	"ClostridiumSordellii", "PropionibacteriumGranulosum", "HalopigerSp.Iih2",
+	"HalopigerSp.Iih3", "HalanaerobiumSaccharolyticum", "LactobacillusEquicursoris",
+	"ClostridiumIntestinale", "PseudomonasDenitrificans", "BacillusBoroniphilus",
+	"RoseibacteriumElongatum", "GeobacillusStearothermophilus", "AquimarinaSp.Sw150",
+	"AquimarinaMegaterium", "KomagataeibacterXylinus", "StreptococcusDentisani7746",
+	"MesorhizobiumMetallidurans", "MesorhizobiumSp.Stm4661", "AnoxybacillusFlavithermusAk1",
+	"IntestinimonasButyriciproducens", "MyxococcusSp.", "StreptococcusDentisani7747",
+	"AfipiaSp.Ohsuic4", "BradyrhizobiumSp.Ohsuiii", "ThalassolituusOleivorans",
+	"GracilibacillusBoraciitolerans", "PsychrobacterSp.Jcm18900", "MesorhizobiumSp.Urha0056",
+	"MicrobacteriumSp.Urha0036", "MarmoricolaSp.Urhb0036", "MycobacteriumSp.Urhd0025",
+	"AlteromonasSp.Alt199", "BradyrhizobiumSp.Urha0002", "StreptomycesSp.Taa486",
+	"DesulfotomaculumGuttoideum", "MycobacteriumKansasii732", "KnoelliaFlava",
+	"ChryseobacteriumOranimense", "EnterococcusMundtii", "LysobacterDokdonensis",
+	"SulfitobacterDonghicola", "PseudomonasKnackmussii", "ClostridiumSp.01",
+	"LactobacillusNamurensis", "BorreliaMiyamotoi", "StreptococcusOligofermentans",
+	"ChthonomonasCalidirosea", "StreptomycesFulvissimus", "SalinisphaeraHydrothermalis",
+	"ClostridiaceaeBacteriumL21thd2", "CellulomonasSp.Krmcy2", "ClostridiumSp.Asbs410",
+	"DesulfovibrioMagneticusIfrc170", "AminiphilusCircumscriptus", "AminobacteriumMobile",
+	"ArthrobacterNicotinovorans", "BradyrhizobiumJaponicum22", "BradyrhizobiumJaponicumIn8p8",
+	"CaldicoprobacterOshimai", "DechloromonasAgitata", "DesulforegulaConservatrix",
+	"GeovibrioSp.L21acebes", "MicrobacteriumSp.Krocy2", "OceanicolaSp.Hl35",
+	"AlgoriphagusMarincolaHl49", "SporosarcinaSp.Eur3222", "KineosporiaAurantiaca",
+	"StreptomycesThermolilacinus", "CandidateDivisionTm6", "StreptomycesSp.R1ns10",
+	"BacillusFirmus", "PseudoalteromonasAgarivorans", "DesulfovibrioSp.L21syrab",
+	"SpirochaetaSp.L21rpuld2", "GluconobacterFrateurii", "GracilibacillusHalophilus",
+	"ArthrobacterSp.Br18", "ArthrobacterSp.H14", "IlumatobacterCoccineus",
+	"ThermocrinisSp.Gbs", "BorreliaCoriaceae", "BorreliaAnserina", "BorreliaParkeri",
+	"ThermonemaRossianum", "ChitinivibrioAlkaliphilus", "AureispiraSp.Ccbqb1",
+	"StreptococcusSp.Hsism1", "BlattabacteriumSp.Nci", "PseudomonasCorrugata",
+	"MannheimiaHaemolyticaM42548", "PhaeospirillumFulvum", "RoseivivaxSp.22iis10s",
+	"AquimarinaSp.22iis11z7", "ThioclavaSp.13d2w2", "MycoplasmaGirerdii", "MarinobacterLipolyticusSm19",
+	"CetobacteriumSomerae", "MesorhizobiumSp.Nbimcp2c3", "StreptococcusSuisEa183292",
+	"AtopobiumSp.F0209", "LeptotrichiaSp.F0581", "ActinomycesSp.F0311", "ClostridialesBacteriumF0540",
+	"LeptotrichiaSp.W9775", "MitsuokellaSp.W9106", "OribacteriumSp.F0263",
+	"PeptostreptococcaceaeBacteriumW5053", "SelenomonasSp.F0426", "EubacteriumBrachy",
+	"TreponemaLecithinolyticum", "GemellaBergeriae", "DesulfovibrioPiezophilus",
+	"RhodococcusDefluvii", "PseudomonasPelagia", "HalobonumTyrrellensis", "HelicobacterFennelliae",
+	"CatenovulumAgarivoransDs2", "WeissellaOryzae", "ThermoactinomycesDaqus",
+	"ThermusCaliditerrae", "SphingobiumLactosutens", "AcinetobacterHaemolyticus",
+	"SerratiaFonticolaAuap2c", "PseudoalteromonasHaloplanktisTb64", "SalinarchaeumSp.Harchtbsk1",
+	"PseudomonasStutzeriMf28", "AlphaProteobacteriumMa2", "KurthiaHuakuii",
+	"ChlamydiaSuis", "SpiribacterSp.Uahsp71", "SphingobiumSp.Yl23", "RoseomonasGilardii",
+	"ShewanellaWaksmanii", "AtopobacterPhocae", "RhizobiumSelenitireducens",
+	"PseudomonasFlectens", "EubacteriumXylanophilum", "MicrovirgaFlocculans",
+	"CarnimonasNigrificans", "RhizobiumLarrymoorei", "PolaribacterSp.Hel13349",
+	"LoktanellaCinnabarina", "CalothrixSp.3363", "ElizabethkingiaAnophelis",
+	"BacillusSp.Unc438cl73tsus30", "BryobacterAggregatus", "LaceyellaSacchari",
+	"FlavobacteriumSaliperosum", "RuminococcusFlavefaciens007c", "FlavobacteriumLimnosediminis",
+	"MycobacteriumSepticum", "AcinetobacterIndicus", "BifidobacteriumBombi",
+	"SulfitobacterSp.Mm124", "SulfitobacterSp.Nb77", "SulfitobacterSp.Nb68",
+	"SaccharibacterSp.Am169", "PalaeococcusPacificus", "StreptomycesRapamycinicus",
+	"TatumellaSp.Nml063099", "ExiguobacteriumPavilionensis", "HelicobacterPyloriSa213a",
+	"ClostridiumSaccharobutylicum", "GeobacillusSp.Jf8", "SphingobacteriumPaucimobilis",
+	"SphingobiumUmmariense", "BacillusSp.Eb01", "PaucisalibacillusSp.Eb02",
+	"FormosaAgariphila", "BacillusSp.Ff3", "BacillusSp.Ff4", "AnaerosalibacterSp.Nd1",
+	"BacteroidaceaeBacteriumMs4", "PseudoalteromonasSp.Ocn003", "LeifsoniaRubra",
+	"CellulophagaBaltica", "VibrioDiazotrophicus", "ThaueraTerpenica", "CorynebacteriumArgentoratense",
+	"KitasatosporaCheerisanensis", "BacillusMegateriumMsp201", "ClostridialesBacteriumVe20218",
+	"TenacibaculumMaritimum", "ArthrobacterSp.Akyn10", "CoprobacterFastidiosus",
+	"StreptomycesNiveus", "OlleyaMarilimosa", "ThioclavaSp.Dt234", "BacteriovoraxSp.Bsw11iv",
+	"EnsiferSp.Tw10", "ThioclavaPacifica", "PeptoniphilusSp.Chdc", "PsychrobacterAquaticus",
+	"CardiniumEndosymbiontCbtq1", "RoseovariusSp.Mctg156", "ArcobacterSp.Af1028",
+	"ArcobacterSp.Af1440", "HymenobacterSp.Apr13", "AlicyclobacillusAcidoterrestris",
+	"PseudomonasSyringaeCc1417", "PseudomonasSyringaeCc1513", "PseudomonasSyringaeCc1557",
+	"HelicobacterCanis", "HelicobacterMacacae", "SphingobacteriumAntarcticus",
+	"ThermofilumSp.1910b", "RhodobacteraceaeBacteriumHimb11", "RalstoniaPickettiiDtp0602",
+	"CampylobacterColi76339", "ParacoccusAminophilus", "MycobacteriumSp.Umwgj",
+	"MycobacteriumSp.Umwwy", "RhizobiumUndicola", "MycobacteriumIranicum",
+	"FirmicutesBacteriumAsf500", "GemmatimonasSp.Ap64", "DesulfonauticusSp.A7a",
+	"CandidateDivisionZixi", "SphingomonasSp.Fukuswis1", "MucispirillumSchaedleri",
+	"StreptomycesSp.Urha0041", "GeodermatophilaceaeBacteriumUrhb0048", "MesorhizobiumSp.Urhc0008",
+	"CellulomonasSp.Urhe0023", "BradyrhizobiumSp.Urhd0069", "BlastococcusSp.Urhd0036",
+	"HalomonasSp.23gom1509m", "SulfitobacterSp.20gpm1509m", "IntrasporangiaceaeBacteriumUrhb0013",
+	"AhrensiaSp.13gom1096m", "TenacibaculumSp.47agom205m", "MycobacteriumSp.Urhb0044",
+	"AlcanivoraxSp.43bgom46m", "SolirubrobacteralesBacteriumUrhd0059", "DongiaSp.Urhe0060",
+	"GeodermatophilaceaeBacteriumUrha0031", "RhodospirillalesBacteriumUrhd0088",
+	"AnoxybacillusFlavithermusYunnanensis", "FlaviramulusIchthyoenteri", "PaenibacillusDarwinianus",
+	"AliihoefleaSp.2ww", "BrevibacteriumSp.Vcm10", "AsaiaPlatycodiSf21", "CaulobacteraceaeBacteriumPmmr1",
+	"AlicyclobacillusMacrosporangiidus", "SporosarcinaSp.D27", "ThermogemmatisporaSp.Pm5",
+	"GeobacillusVulcani", "ThermomicrobialesSp.Ki4", "AnoxybacillusTepidamans",
+	"AcidobacteriumSp.Pmmr2", "LysinibacillusManganicus", "ArenimonasMalthae",
+	"ArenimonasMetalli", "LysinibacillusSinduriensis", "RuminococcusAlbusAd2013",
+	"RuminococcusFlavefaciensAe3010", "AdlercreutziaEquolifaciens", "FrancisellaSp.W121067",
+	"PontibacillusHalophilus", "PontibacillusMarinus", "PontibacillusLitoralis",
+	"PontibacillusChungwhensis", "PontibacillusYanchengensis", "LysobacterDefluvii",
+	"LysobacterDaejeonensis", "KnoelliaAerolata", "KnoelliaSinensis", "KnoelliaSubterranea",
+	"LeptolyngbyaSp.Heron", "IntrasporangiumOryzae", "GordoniaAmicalis", "SchmidhempeliaBombi",
+	"MethylophilusSp.Oh31", "PseudomonasMosselii", "LeifsoniaXyliCynodontis",
+	"PseudomonasMendocinaEgdaq5", "ClostridiumBifermentans", "ClostridiumSp.Adety",
+	"PseudozymaBrasiliensis", "PrevotellaSp.Hun102", "EubacteriumSp.Ab3007",
+	"LeeuwenhoekiellaSp.Heli48", "LeeuwenhoekiellaSp.Mar2009132", "SediminibacterSp.Heli10",
+	"RuminococcaceaeBacteriumAe2021", "LachnospiraceaeBacteriumAc2031", "MaribacterForsetii",
+	"SelenomonasRuminantiumAc2024", "SelenomonasRuminantiumAb3002", "AcinetobacterNectaris",
+	"BordetellaHinzii", "BifidobacteriumSp.7101", "BifidobacteriumSp.A11",
+	"ActinomaduraMadurae", "SporolactobacillusLaevolacticus", "PseudomonasMoraviensis",
+	"PseudomonasTaeanensis", "PaenibacillusSp.Maepy2", "HaloferulaSp.Bvorr071",
+	"VerrucomicrobiumSp.Bvorr034", "MarinobacterSp.Es1", "LeucobacterSp.Ph1c",
+	"SerratiaSp.H1n", "AlcanivoraxSp.P2s70", "HalomonasSp.Pbn3", "AlphaProteobacteriumRs24",
+	"ExiguobacteriumUndae", "ExiguobacteriumMarinum", "ExiguobacteriumOxidotolerans",
+	"BorreliaValaisianaTom4006", "ExiguobacteriumSp.Mh3", "HolosporaObtusa",
+	"EnterobacterCloacaeJd6301", "LactobacillusFabifermentans", "PelagibacterUbiqueHtcc7214",
+	"PelagibacterUbiqueHtcc7217", "CorynebacteriumTuscaniense", "OligellaUrethralis",
+	"VeillonellaMontpellierensis", "PrevotellaBuccalisDnf00985", "EndolissoclinumFaulkneriL5",
+	"SulfitobacterSp.H3", "BacillusSimplex", "VerrucomicrobiumSp.Bvorr106",
+	"StreptococcusAnginosusDora7", "VaribaculumCambrienseDora20", "CorynebacteriumGlycinophilum",
+	"StaphylococcusSimulans", "FlavobacteriumBeibuense", "SynechococcusSp.Nkbg15041c",
+	"BetaproteobacteriaBacteriumMola814", "SinorhizobiumAmericanum", "VagococcusLutrae",
+	"BrevibacillusPanacihumi", "FusobacteriumNucleatumW1481", "BacillusSp.Mb2021",
+	"ButyrivibrioSp.Fcs014", "ButyrivibrioSp.Mc2021", "PrevotellaSp.Ma2016",
+	"OribacteriumSp.Fc2011", "PseudobutyrivibrioSp.Lb2011", "LachnospiraceaeBacteriumAc2028",
+	"LachnospiraceaeBacteriumAc3007", "LachnospiraceaeBacteriumMa2020", "LachnospiraceaeBacteriumMc2017",
+	"AcholeplasmaEquifetale", "AcholeplasmaHippikon", "AcholeplasmaModicum",
+	"AcidiphiliumAngustum", "AcidocellaFacilis", "AlkaliphilusTransvaalensis",
+	"AnaerovibrioLipolyticus", "BacillusBogoriensis", "BartonellaElizabethae",
+	"BilophilaWadsworthiaAtcc49260", "CrocinitomixCatalasitica", "EubacteriumCellulosolvensLd2006",
+	"EubacteriumDesmolans", "FacklamiaSourekii", "FusobacteriumPerfoetens",
+	"HelicobacterPametensis", "LegionellaFairfieldensis", "LegionellaSainthelensi",
+	"MycobacteriumGenavense", "ProlixibacterBellariivorans", "SphingobacteriumSp.H1ai",
+	"ClostridiumMangenotii", "BacteroidesSp.Ga6a2", "TreponemaSp.C6a8", "OribacteriumSp.P6a1",
+	"PrevotellaSp.P6b1", "PseudobutyrivibrioSp.Md2005", "RuminococcusSp.Fc2018",
+	"SelenomonasSp.Nd2010", "SerratiaSp.Dd3", "ShinellaSp.Dd12", "LachnospiraceaeBacteriumC6a11",
+	"LachnospiraceaeBacteriumFe2018", "LachnospiraceaeBacteriumMd2004", "LachnospiraceaeBacteriumNc2004",
+	"LachnospiraceaeBacteriumNd2006", "LachnospiraceaeBacteriumP6a3", "LachnospiraceaeBacteriumP6b14",
+	"LachnospiraceaeBacteriumV9d3004", "LachnospiraceaeBacteriumYsb2008", "PropionibacteriaceaeBacteriumP6a17",
+	"RuminococcaceaeBacteriumAb4001", "ButyrivibrioProteoclasticusP6b7", "ClostridiumLundense",
+	"KandleriaVitulina", "LachnospiraMultiparaLb2003", "MitsuokellaJalaludinii",
+	"PrevotellaBrevis", "ProteiniclasticumRuminis", "RuminococcusFlavefaciensMa2007",
+	"SharpeaAzabuensis", "SuccinivibrioDextrinosolvens", "NocardiaNova", "RhizobialesBacteriumYim77505",
+	"GammaproteobacteriaBacteriumMola455", "CorynebacteriumSp.Jcb", "ClostridiumSp.Jcc",
+	"PseudomonasSp.Tkp", "MarinobacterSp.Mctg268", "HalomonasSp.Tg39a", "OceanicolaSp.Mctg156",
+	"ClostridiumBotulinum202f", "ClostridiumBaratii", "PorticoccusHydrocarbonoclasticus",
+	"PolycyclovoransAlgicola", "AlgiphilusAromaticivorans", "MicrobacteriumParaoxydansDh1b",
+	"LeifsoniaAquatica", "MyroidesOdoratimimus", "BorreliaPersica", "DefluviimonasSp.20v17",
+	"PseudomonasMandeliiPd30", "StreptococcusSp.Vt162", "PhaeobacterGallaeciensis",
+	"BacillusSp.Sjs", "LactobacillusApodemi", "LactobacillusCaseiDsm20011",
+	"LactobacillusComposti", "LactobacillusFarraginis", "LactobacillusFuchuensis",
+	"LactobacillusGallinarum", "LactobacillusHamsteri", "LactobacillusHayakitensis",
+	"LactobacillusHominis", "LactobacillusKitasatonis", "LactobacillusNodensis",
+	"LactobacillusOtakiensis", "LactobacillusPasteurii", "LactobacillusSucicola",
+	"LactobacillusSuebicus", "LactobacillusVaginalis", "LactobacillusVersmoldensis",
+	"LactobacillusZeae", "AdvenellaKashmirensisW13003", "HepatoplasmaCrinochetorum",
+	"RhodococcusRhodochrous", "StenotrophomonasMaltophilia5bai2", "AfipiaSp.P5210",
+	"GeobacillusSp.G1w1", "MagnetospirillumGryphiswaldense", "RhizobiumEtliMimosae",
+	"KomagataeibacterRhaeticus", "MannheimiaVarigenaUsmarc1261", "RikenellaceaeBacteriumM3",
+	"MannheimiaVarigenaUsmarc1296", "DyadobacterTibetensis", "BurkholderiaPseudomalleiAbcpw111",
+	"BifidobacteriumMoukalabense", "RhodococcusPyridinivorans", "CriblamydiaSequanensis",
+	"OchrobactrumRhizosphaerae", "BifidobacteriumPullorum", "BifidobacteriumMongoliense",
+	"BifidobacteriumActinocoloniiforme", "BifidobacteriumBohemicum", "BifidobacteriumBiavatii",
+	"BifidobacteriumCallitrichos", "BifidobacteriumReuteri", "CastellaniellaDefragrans",
+	"PseudomonasNitroreducensHbp1", "PseudomonasSp.Bay1663", "EscherichiaAlbertiiKf1",
+	"StreptomycesScopuliridis", "MycobacteriumAromaticivorans", "PseudomonasCichorii",
+	"SerratiaFonticolaRb25", "ArcobacterCibarius", "LuteimonasHuabeiensis",
+	"SulfitobacterGuttiformis", "YersiniaEnterocoliticaLc20", "ClostridiumNovyiBNctc9691",
+	"ClostridiumBotulinumCdBkt12695", "AquimarinaMacrocephali", "SporolactobacillusTerrae",
+	"BrevibacillusBorstelensis", "BacillusFlexus", "ChlamydiaSp.Diamant", "ChlamydiaSp.Rubis",
+	"XylellaFastidiosaPls229", "SciscionellaSp.Se31", "ParacoccusYeei", "AeromonasHydrophilaYl17",
+	"TomitellaBiformata", "CampylobacterSp.Cit045", "HalobellusRufus", "ArthrobacterSp.Unc362mftsu51",
+	"MycobacteriumSp.Unc280mftsu51", "CaulobacterSp.Unc358mftsu51", "ClostridiumSp.Knhs205",
+	"MicrobacteriumSp.Unccl10", "PaenibacillusSp.Unc451mf", "PhyllobacteriumSp.Unc302mfcol52",
+	"RhodococcusSp.Unc23mfcrub11", "RhodococcusSp.Unc363mftsu51", "SphingomonasSp.Unc305mfcol52",
+	"ThermusSp.Yim77409", "ClostridialesBacteriumDri13", "CarnobacteriumAlterfunditum",
+	"CarnobacteriumDivergens", "CarnobacteriumFunditum", "CarnobacteriumGallinarum",
+	"CarnobacteriumMobile", "CarnobacteriumPleistocenium", "HelicobacterRodentium",
+	"KitasatosporaAzatica", "KitasatosporaMediocidica", "RoseivivaxHalodurans",
+	"RoseivivaxIsoporae", "StreptacidiphilusOryzae", "StreptomycesYeochonensis",
+	"ThermusTengchongensis", "KutzneriaAlbida", "FlavobacteriumSuccinicans",
+	"BacillusSp.Ts2", "CorynebacteriumFalsenii", "MicrobacteriumSp.Mrs1", "MicrobacteriumSp.Crk32",
+	"MicrobacteriumSp.Crk20", "PseudomonasSp.Rl", "HafniaAlvei", "FlavobacteriumAquatile",
+	"SchleiferiaThermophila", "MicrobulbiferSp.Hz11", "PseudomonasPseudoalcaligenesAd6",
+	"FlavobacteriumChungangense", "AccumulibacterSp.Ba93", "PedobacterBorealis",
+	"CellulomonasSp.Hzm", "PhotobacteriumPhosphoreum", "HaladaptatusCibarius",
+	"HalapricumSalinum", "AcetobacterAceti1023", "HylemonellaGracilisNiagara",
+	"BurkholderiaSp.Mp1", "ComamonadaceaeBacteriumH1", "LachnospiraceaeBacteriumAc2029",
+	"NitrososphaeraEvergladensis", "GeomicrobiumSp.Jcm19037", "GeomicrobiumSp.Jcm19038",
+	"BacillusSp.Jcm19046", "WeeksellaSp.Ff8", "HaemophilusSp.Ff7", "BacillusSp.Jce",
+	"JeotgalicoccusSp.13mg44air", "ActibacteriumAtlanticum", "OceanicolaSp.22iis11g",
+	"VirgibacillusSp.Vm5", "OceanobacillusSp.S5", "ActinosporangiumSp.Nrrlb3428",
+	"GlycomycesSp.Nrrlb16210", "SaccharothrixSp.Nrrlb16314", "StreptomycesSp.Nrrlf2580",
+	"StreptomycesSp.Nrrlf2890", "StreptomycesSp.Nrrlf5008", "StreptomycesSp.Nrrlf5053",
+	"StreptomycesSp.Nrrlf5065", "StreptomycesSp.Nrrlf5123", "StreptomycesSp.Nrrlf5126",
+	"StreptomycesSp.Nrrlf5135", "StreptomycesSp.Nrrlf525", "StreptomycesSp.Nrrlf5630",
+	"StreptomycesSp.Nrrlf6677", "StreptomycesSp.Nrrls118", "StreptomycesSp.Nrrls149",
+	"StreptomycesSp.Nrrls1777", "StreptomycesSp.Nrrls237", "StreptomycesSp.Nrrls337",
+	"StreptomycesSp.Nrrls340", "StreptomycesSp.Nrrls37", "StreptomycesSp.Nrrls474",
+	"StreptomycesSp.Nrrls646", "DevosiaSp.Lc5", "StreptomycesSp.Nrrls87", "StreptomycesSp.Nrrls920",
+	"StreptomycesSp.Nrrlwc3626", "StreptomycesSp.Nrrlwc3742", "StreptomycesSp.Nrrlwc3773",
+	"MicromonosporaParva", "ThioalkalivibrioSp.Hk1", "LacinutrixSp.Pamc27137",
+	"ScytonemaHofmanni", "RhodovulumSp.Ni22", "ClostridiumSp.Knhs209", "SphingomonasSp.Rit328",
+	"PseudomonasSp.Rit357", "ProchlorococcusSp.Scb241528o2", "ProchlorococcusSp.Scb245a520k10",
+	"FalsirhodobacterSp.Alg1", "BurkholderiaSp.K24", "LysinibacillusSp.Bf4",
+	"DeinococcusPhoenicis", "StreptomycesSp.Nrrlb24720", "PeptostreptococcaceaeBacteriumVa2",
+	"HalomonasSp.Hl48", "MarinobacterSp.Hl58", "OceanicaulisSp.Hl87", "PorphyrobacterSp.Hl46",
+	"CurtobacteriumSp.S6", "SpirochaetaSp.Jc230", "PantoeaSp.Psnih2", "PantoeaSp.Psnih1",
+	"PsychroserpensSp.Pamc27130", "ExiguobacteriumSp.Ab2", "SelenomonasSp.Ae3005",
+	"FerriphaselusSp.R1", "ZetaproteobacteriaBacteriumTag1", "ClostridiumSp.Hmp27",
+	"DesulfosporosinusSp.Hmp52", "LeptolyngbyaSp.Jsc1", "CorynebacteriumSp.Atcc6931",
+	"PseudomonasSp.Ant303", "DeinococcusSp.Rl", "FlavobacteriumSp.Em1308",
+	"FlavobacteriumSp.Em1321", "GammaproteobacteriaBacteriumMfb021", "CyanobiumSp.Caciam14",
+	"ListeriaceaeBacteriumFsla50209", "ProchlorococcusSp.Mit0601", "ProchlorococcusSp.Mit0602",
+	"ProchlorococcusSp.Mit0701", "BacillusSp.Mt2", "ClostridiumSp.Cl6", "ClostridiumSp.Cl2",
+	"BacillusSp.Kw12", "PseudomonasSp.20bn", "ClostridiumSp.Lf2", "BacteriumUasb270",
+	"PaenibacillusSp.Tca20", "RhizobiumSp.Yr295", "RhizobiumSp.Yr519", "ChryseobacteriumSp.Cf284",
+	"RhizobiumSp.Cf097", "RhizobiumSp.Cf394", "RhizobiumSp.Ok494", "LuteibacterSp.9143",
+	"LuteibacterSp.9135", "MassiliaSp.9096", "BurkholderiaSp.9120", "PaenibacillusSp.Mst1",
+	"ProchlorococcusSp.Mit0604", "ProchlorococcusSp.Mit0801", "AlistipesSp.627",
+	"MethyloteneraSp.L2l1", "SphingopyxisSp.Lc81", "BoseaSp.Lc85", "MassiliaSp.Lc238",
+	"ActinobacteriumAcamd5", "PolaromonasSp.Cg912", "BacteriumSp.Ol1", "BacteriumSp.Lf3",
+	"HalomonasSp.Ko116", "FlavobacteriumSp.Fl", "ButyrivibrioSp.Ae3004", "ArthromitusSp.Sfbmousenl",
+	"AcinetobacterSp.Hr7", "RhizobiumSp.R1200b2", "BoseaSp.Unc402clcol", "RuminococcusSp.Hun007",
+	"PorphyromonasSp.Cot239oh1446", "PorphyromonasSp.Cot290oh860", "ShewanellaSp.Yqh10",
+	"IdiomarinaSp.Mccc1a10513", "VibrioSp.Er1a", "PorphyromonadaceaeCot184oh4590",
+	"OscillibacterSp.Er4", "ChlorobiumSp.Gbchlb", "ChloroflexusSp.Msg", "SphingobiumSp.Ba1",
+	"PseudomonasSp.Ml96", "SerratiaSp.Ag1", "ParacoccusSp.4681", "PlanococcusSp.Pamc21323",
+	"AtelocyanobacteriumThalassaSio64986", "RickettsialesBacteriumAc37b", "ThalassospiraAustralica",
+	"MaribiusSp.Mola401", "AchromobacterSp.Rta", "RhizobiumSp.Ys1r", "DevosiaSp.172e8",
+	"ThalassotaleaSp.Nd16a", "PaenibacillusSp.Fslp40081", "PaenibacillusSp.Fslr50345",
+	"PaenibacillusSp.Fslr70273", "PaenibacillusSp.Fslr70331", "PaenibacillusSp.Fslh70357",
+	"PaenibacillusSp.Fslh70737", "SphingopyxisSp.Mwb1", "SulfurospirillumSp.Scadc",
+	"SulfuricurvumSp.Mlsb", "AlteromonasSp.Lor", "AquabacteriumSp.Nj1", "SphingobacteriumSp.Ml3w",
+	"TreponemaSp.Omz838", "DeinococcusSp.Yim77859", "ClostridiumSp.Knhs214",
+	"MyxosarcinaSp.Gi1", "MollicutesBacteriumHr1", "MollicutesBacteriumHr2",
+	"LactobacillusSp.Wkb10", "LactobacillusSp.Wkb8", "SphingomonasSp.3524zxx",
+	"HoefleaSp.Bal378", "FrancisellaSp.Fsc1006", "HelicobacterSp.Mit115569",
+	"CampylobacterSp.Mit975078", "SphingomonasTaxi", "SphingomonasSp.37zxx",
+	"SphingobacteriaceaeBacteriumDw12", "ListeriaceaeBacteriumFsla50281", "XanthomonasSp.Nyagatare",
+	"CaenorhabditisTropicalis", "BurkholderiaceaeSp.Mortierella", "ShewanellaSp.Ecsmb14101",
+	"SulfurospirillumSp.Mes", "ParacoccusSp.Pamc22219", "DickeyaSp.2b12", "JanthinobacteriumAgaricidamnosum",
 ]

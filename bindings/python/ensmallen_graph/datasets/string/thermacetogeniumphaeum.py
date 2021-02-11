@@ -117,7 +117,6 @@ def ThermacetogeniumPhaeum(
 	766), 1089553.Tph_c17700 (degree 759) and 1089553.Tph_c28730 (degree 699).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermacetogeniumPhaeum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermacetogeniumPhaeum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermacetogeniumPhaeum",

@@ -117,7 +117,6 @@ def PseudomonasLutea(
 	1535), 243924.LT42_18825 (degree 1509) and 243924.LT42_11785 (degree 1494).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasLutea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasLutea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasLutea",

@@ -117,7 +117,6 @@ def BartonellaDoshiae(
 	552), 1094553.MCS_00966 (degree 519) and 1094553.MCS_00714 (degree 508).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaDoshiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaDoshiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaDoshiae",

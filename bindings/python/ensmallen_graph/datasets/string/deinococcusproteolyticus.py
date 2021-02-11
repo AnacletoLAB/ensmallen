@@ -117,7 +117,6 @@ def DeinococcusProteolyticus(
 	736), 693977.Deipr_1026 (degree 725) and 693977.Deipr_0177 (degree 721).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeinococcusProteolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeinococcusProteolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeinococcusProteolyticus",

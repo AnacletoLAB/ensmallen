@@ -119,7 +119,6 @@ def PseudobutyrivibrioRuminisAd2017(
 	(degree 980) and 1280694.AUJQ01000005_gene1323 (degree 968).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudobutyrivibrioRuminisAd2017(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudobutyrivibrioRuminisAd2017(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudobutyrivibrioRuminisAd2017",

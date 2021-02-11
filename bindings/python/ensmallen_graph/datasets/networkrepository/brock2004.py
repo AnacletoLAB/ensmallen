@@ -123,7 +123,6 @@ def Brock2004(
 	198 (degree 146), 91 (degree 146), 9 (degree 146) and 90 (degree 145).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Brock2004(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Brock2004(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Brock2004",

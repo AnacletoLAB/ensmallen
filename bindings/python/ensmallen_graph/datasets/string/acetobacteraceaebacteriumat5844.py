@@ -119,7 +119,6 @@ def AcetobacteraceaeBacteriumAt5844(
 	(degree 1382) and 1054213.HMPREF9946_05073 (degree 1235).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AcetobacteraceaeBacteriumAt5844(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AcetobacteraceaeBacteriumAt5844(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcetobacteraceaeBacteriumAt5844",

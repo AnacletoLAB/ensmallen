@@ -117,7 +117,6 @@ def ErythrobacterLitoralis(
 	794), 314225.ELI_06055 (degree 708) and 314225.ELI_07095 (degree 707).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErythrobacterLitoralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErythrobacterLitoralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErythrobacterLitoralis",

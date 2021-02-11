@@ -117,7 +117,6 @@ def BurkholderiaCenocepacia(
 	216591.BCAL2061 (degree 1772) and 216591.BCAM2218 (degree 1722).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaCenocepacia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaCenocepacia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaCenocepacia",

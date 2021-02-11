@@ -119,7 +119,6 @@ def PseudomonasAlcaligenesNbrc14159(
 	989) and 1215092.PA6_010_00520 (degree 986).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasAlcaligenesNbrc14159(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasAlcaligenesNbrc14159(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasAlcaligenesNbrc14159",

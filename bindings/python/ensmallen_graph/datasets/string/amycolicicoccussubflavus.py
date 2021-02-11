@@ -117,7 +117,6 @@ def AmycolicicoccusSubflavus(
 	1793), 443218.AS9A_1092 (degree 1610) and 443218.AS9A_1477 (degree 1600).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmycolicicoccusSubflavus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmycolicicoccusSubflavus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmycolicicoccusSubflavus",

@@ -117,7 +117,6 @@ def NitrosococcusHalophilus(
 	1242), 472759.Nhal_2872 (degree 1174) and 472759.Nhal_3752 (degree 1115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosococcusHalophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosococcusHalophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosococcusHalophilus",

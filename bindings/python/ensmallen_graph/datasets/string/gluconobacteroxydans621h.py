@@ -117,7 +117,6 @@ def GluconobacterOxydans621h(
 	290633.GOX0261 (degree 662) and 290633.GOX2265 (degree 641).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GluconobacterOxydans621h(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GluconobacterOxydans621h(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GluconobacterOxydans621h",

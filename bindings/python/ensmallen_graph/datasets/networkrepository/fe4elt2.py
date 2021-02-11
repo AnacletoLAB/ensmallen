@@ -117,7 +117,6 @@ def Fe4elt2(
 	8355 (degree 10), 5989 (degree 10) and 5790 (degree 10).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def Fe4elt2(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def Fe4elt2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Fe4elt2",

@@ -117,7 +117,6 @@ def NitrosopumilusMaritimus(
 	436308.Nmar_0096 (degree 544) and 436308.Nmar_0546 (degree 514).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosopumilusMaritimus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosopumilusMaritimus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosopumilusMaritimus",

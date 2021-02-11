@@ -117,7 +117,6 @@ def FormosaAgariphila(
 	1118), 1347342.BN863_8180 (degree 964) and 1347342.BN863_8740 (degree 944).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FormosaAgariphila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FormosaAgariphila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FormosaAgariphila",

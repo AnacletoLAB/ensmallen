@@ -117,7 +117,6 @@ def BartonellaClarridgeiae(
 	478), 696125.BARCL_0065 (degree 474) and 696125.BARCL_1086 (degree 472).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaClarridgeiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaClarridgeiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaClarridgeiae",

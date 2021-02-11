@@ -117,7 +117,6 @@ def MethylobacteriumSp.Gxf4(
 	1734), 1096546.WYO_2024 (degree 1703) and 1096546.WYO_2631 (degree 1680).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacteriumSp.Gxf4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacteriumSp.Gxf4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacteriumSp.Gxf4",

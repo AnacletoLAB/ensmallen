@@ -117,7 +117,6 @@ def ArenimonasComposti(
 	980), 1121013.P873_08410 (degree 944) and 1121013.P873_02015 (degree 886).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArenimonasComposti(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArenimonasComposti(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArenimonasComposti",

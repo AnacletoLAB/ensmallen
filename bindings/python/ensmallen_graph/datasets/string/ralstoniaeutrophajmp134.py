@@ -117,7 +117,6 @@ def RalstoniaEutrophaJmp134(
 	2226), 264198.Reut_A2610 (degree 2214) and 264198.Reut_B4883 (degree 2208).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RalstoniaEutrophaJmp134(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RalstoniaEutrophaJmp134(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RalstoniaEutrophaJmp134",

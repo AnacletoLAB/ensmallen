@@ -117,7 +117,6 @@ def AzorhizobiumCaulinodans(
 	438753.AZC_1344 (degree 1255) and 438753.AZC_3098 (degree 1255).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AzorhizobiumCaulinodans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AzorhizobiumCaulinodans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AzorhizobiumCaulinodans",

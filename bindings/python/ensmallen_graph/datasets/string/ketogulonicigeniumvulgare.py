@@ -117,7 +117,6 @@ def KetogulonicigeniumVulgare(
 	759362.KVU_1957 (degree 687) and 759362.KVU_1481 (degree 666).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KetogulonicigeniumVulgare(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KetogulonicigeniumVulgare(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KetogulonicigeniumVulgare",

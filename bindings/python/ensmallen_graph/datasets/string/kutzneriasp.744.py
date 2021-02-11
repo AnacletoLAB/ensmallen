@@ -117,7 +117,6 @@ def KutzneriaSp.744(
 	2612), 345341.KUTG_04333 (degree 2548) and 345341.KUTG_05923 (degree 2519).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KutzneriaSp.744(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KutzneriaSp.744(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KutzneriaSp.744",

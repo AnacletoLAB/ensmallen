@@ -117,7 +117,6 @@ def RhodobacteralesBacteriumY4i(
 	1375), 439496.RBY4I_2577 (degree 1350) and 439496.RBY4I_814 (degree 1301).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodobacteralesBacteriumY4i(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodobacteralesBacteriumY4i(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodobacteralesBacteriumY4i",

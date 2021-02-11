@@ -117,7 +117,6 @@ def NovosphingobiumResinovorum(
 	1779), 158500.BV97_02199 (degree 1276) and 158500.BV97_03157 (degree 1245).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NovosphingobiumResinovorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NovosphingobiumResinovorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NovosphingobiumResinovorum",

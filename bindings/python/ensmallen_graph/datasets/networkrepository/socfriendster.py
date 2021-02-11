@@ -117,7 +117,6 @@ def SocFriendster(
 	4406) and 30857939 (degree 4333).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SocFriendster(
 	        title = {Friendster: The online gaming social network},
 	        note = {{https://archive.org/details/friendster-dataset-201107}}}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SocFriendster(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocFriendster",

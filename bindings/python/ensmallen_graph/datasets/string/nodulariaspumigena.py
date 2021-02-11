@@ -117,7 +117,6 @@ def NodulariaSpumigena(
 	1541), 313624.NSP_26730 (degree 1493) and 313624.NSP_44820 (degree 1398).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NodulariaSpumigena(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NodulariaSpumigena(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NodulariaSpumigena",

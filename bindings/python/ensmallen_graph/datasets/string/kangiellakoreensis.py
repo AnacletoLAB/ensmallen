@@ -117,7 +117,6 @@ def KangiellaKoreensis(
 	824), 523791.Kkor_1830 (degree 815) and 523791.Kkor_1831 (degree 764).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KangiellaKoreensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KangiellaKoreensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KangiellaKoreensis",

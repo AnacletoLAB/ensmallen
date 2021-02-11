@@ -117,7 +117,6 @@ def DesulfococcusOleovorans(
 	96561.Dole_2982 (degree 1093) and 96561.Dole_2755 (degree 1080).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfococcusOleovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfococcusOleovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfococcusOleovorans",

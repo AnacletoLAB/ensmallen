@@ -117,7 +117,6 @@ def ShewanellaFrigidimarina(
 	1156), 318167.Sfri_2246 (degree 1049) and 318167.Sfri_2951 (degree 1031).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaFrigidimarina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaFrigidimarina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaFrigidimarina",

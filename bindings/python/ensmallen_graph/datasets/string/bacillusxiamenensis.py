@@ -117,7 +117,6 @@ def BacillusXiamenensis(
 	1035), 1178537.BA1_18422 (degree 959) and 1178537.BA1_04632 (degree 943).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusXiamenensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusXiamenensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusXiamenensis",

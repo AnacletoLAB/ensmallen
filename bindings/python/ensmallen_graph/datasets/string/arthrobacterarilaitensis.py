@@ -117,7 +117,6 @@ def ArthrobacterArilaitensis(
 	1010), 861360.AARI_11410 (degree 942) and 861360.AARI_25330 (degree 913).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArthrobacterArilaitensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArthrobacterArilaitensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArthrobacterArilaitensis",

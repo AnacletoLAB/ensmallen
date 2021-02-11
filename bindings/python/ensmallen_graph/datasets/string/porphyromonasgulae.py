@@ -117,7 +117,6 @@ def PorphyromonasGulae(
 	729), 111105.HR09_00035 (degree 694) and 111105.HR09_09640 (degree 642).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PorphyromonasGulae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PorphyromonasGulae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorphyromonasGulae",

@@ -117,7 +117,6 @@ def ShewanellaHalifaxensis(
 	1599), 458817.Shal_0720 (degree 1553) and 458817.Shal_1698 (degree 1326).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaHalifaxensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaHalifaxensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaHalifaxensis",

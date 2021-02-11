@@ -115,7 +115,6 @@ def ColumbaLivia(
 	8932.XP_005510688.1 (degree 2981) and 8932.XP_005510100.1 (degree 2946).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ColumbaLivia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ColumbaLivia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ColumbaLivia",

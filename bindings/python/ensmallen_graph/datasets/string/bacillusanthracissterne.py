@@ -117,7 +117,6 @@ def BacillusAnthracisSterne(
 	260799.BAS4169 (degree 1298) and 260799.BAS0498 (degree 1281).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusAnthracisSterne(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusAnthracisSterne(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusAnthracisSterne",

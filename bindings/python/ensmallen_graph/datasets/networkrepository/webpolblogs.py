@@ -119,7 +119,6 @@ def WebPolblogs(
 	22 (degree 72), 415 (degree 56) and 32 (degree 49).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def WebPolblogs(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def WebPolblogs(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebPolblogs",

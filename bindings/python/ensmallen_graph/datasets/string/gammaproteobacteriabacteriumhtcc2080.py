@@ -119,7 +119,6 @@ def GammaproteobacteriaBacteriumHtcc2080(
 	and 247639.MGP2080_08274 (degree 1003).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GammaproteobacteriaBacteriumHtcc2080(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GammaproteobacteriaBacteriumHtcc2080(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GammaproteobacteriaBacteriumHtcc2080",

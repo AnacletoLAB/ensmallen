@@ -117,7 +117,6 @@ def DanausPlexippus(
 	13037.EHJ72961 (degree 1978) and 13037.EHJ77748 (degree 1838).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DanausPlexippus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DanausPlexippus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DanausPlexippus",

@@ -117,7 +117,6 @@ def ShewanellaPealeana(
 	1359), 398579.Spea_1314 (degree 1244) and 398579.Spea_1917 (degree 1209).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaPealeana(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaPealeana(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaPealeana",

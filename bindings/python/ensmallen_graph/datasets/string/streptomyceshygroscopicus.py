@@ -117,7 +117,6 @@ def StreptomycesHygroscopicus(
 	2393), 1133850.SHJG_1246 (degree 2373) and 1133850.SHJG_3921 (degree 2277).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesHygroscopicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesHygroscopicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesHygroscopicus",

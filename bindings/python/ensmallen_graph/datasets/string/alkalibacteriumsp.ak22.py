@@ -117,7 +117,6 @@ def AlkalibacteriumSp.Ak22(
 	784), 1229520.ADIAL_1079 (degree 725) and 1229520.ADIAL_0254 (degree 709).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlkalibacteriumSp.Ak22(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlkalibacteriumSp.Ak22(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlkalibacteriumSp.Ak22",

@@ -119,7 +119,6 @@ def CopresenceSfhh(
 	1787 (degree 26796), 1512 (degree 25731) and 1538 (degree 24946).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def CopresenceSfhh(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def CopresenceSfhh(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CopresenceSfhh",

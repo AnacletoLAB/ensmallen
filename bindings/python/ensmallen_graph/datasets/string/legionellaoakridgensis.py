@@ -117,7 +117,6 @@ def LegionellaOakridgensis(
 	807), 1268635.Loa_01209 (degree 784) and 1268635.Loa_01721 (degree 765).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LegionellaOakridgensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LegionellaOakridgensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LegionellaOakridgensis",

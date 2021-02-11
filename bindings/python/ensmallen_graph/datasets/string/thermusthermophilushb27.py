@@ -117,7 +117,6 @@ def ThermusThermophilusHb27(
 	262724.TT_C1176 (degree 810) and 262724.TT_C1104 (degree 751).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermusThermophilusHb27(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermusThermophilusHb27(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermusThermophilusHb27",

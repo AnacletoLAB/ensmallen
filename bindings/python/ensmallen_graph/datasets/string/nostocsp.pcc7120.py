@@ -117,7 +117,6 @@ def NostocSp.Pcc7120(
 	103690.17131771 (degree 1547) and 103690.17130576 (degree 1524).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NostocSp.Pcc7120(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NostocSp.Pcc7120(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NostocSp.Pcc7120",

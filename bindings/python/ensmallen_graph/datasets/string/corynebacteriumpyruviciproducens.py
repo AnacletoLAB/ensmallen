@@ -119,7 +119,6 @@ def CorynebacteriumPyruviciproducens(
 	677) and 1125779.HMPREF1219_00919 (degree 640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CorynebacteriumPyruviciproducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CorynebacteriumPyruviciproducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumPyruviciproducens",

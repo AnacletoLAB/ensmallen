@@ -117,7 +117,6 @@ def Wing(
 	(degree 4), 62027 (degree 4), 62029 (degree 4) and 48093 (degree 4).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def Wing(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def Wing(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Wing",

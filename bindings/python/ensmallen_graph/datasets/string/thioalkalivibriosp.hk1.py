@@ -119,7 +119,6 @@ def ThioalkalivibrioSp.Hk1(
 	(degree 737).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThioalkalivibrioSp.Hk1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThioalkalivibrioSp.Hk1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioalkalivibrioSp.Hk1",

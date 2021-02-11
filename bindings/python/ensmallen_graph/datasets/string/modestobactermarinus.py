@@ -117,7 +117,6 @@ def ModestobacterMarinus(
 	1351), 477641.MODMU_2458 (degree 1259) and 477641.MODMU_3403 (degree 1239).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ModestobacterMarinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ModestobacterMarinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ModestobacterMarinus",

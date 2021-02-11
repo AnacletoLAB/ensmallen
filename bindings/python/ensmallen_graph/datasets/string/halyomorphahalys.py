@@ -115,7 +115,6 @@ def HalyomorphaHalys(
 	422), 1235990.HHS_04020 (degree 419) and 1235990.HHS_05060 (degree 384).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def HalyomorphaHalys(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def HalyomorphaHalys(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalyomorphaHalys",

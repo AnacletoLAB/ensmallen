@@ -117,7 +117,6 @@ def BifidobacteriumMagnum(
 	1692.BMAGN_1102 (degree 548) and 1692.BMAGN_0295 (degree 529).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumMagnum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumMagnum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumMagnum",

@@ -117,7 +117,6 @@ def OceanithermusProfundus(
 	799), 670487.Ocepr_1181 (degree 797) and 670487.Ocepr_0685 (degree 792).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OceanithermusProfundus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OceanithermusProfundus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceanithermusProfundus",

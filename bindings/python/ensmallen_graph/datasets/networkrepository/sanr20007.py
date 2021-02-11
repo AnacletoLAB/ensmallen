@@ -123,7 +123,6 @@ def Sanr20007(
 	124 (degree 154), 196 (degree 153), 97 (degree 151) and 2 (degree 151).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Sanr20007(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Sanr20007(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Sanr20007",

@@ -117,7 +117,6 @@ def LeuconostocCarnosum(
 	582), 1229758.C270_03230 (degree 496) and 1229758.C270_05440 (degree 473).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocCarnosum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocCarnosum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocCarnosum",

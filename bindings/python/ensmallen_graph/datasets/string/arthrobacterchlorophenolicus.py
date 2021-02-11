@@ -117,7 +117,6 @@ def ArthrobacterChlorophenolicus(
 	1176), 452863.Achl_2576 (degree 1175) and 452863.Achl_2587 (degree 1123).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArthrobacterChlorophenolicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArthrobacterChlorophenolicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArthrobacterChlorophenolicus",

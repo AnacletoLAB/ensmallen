@@ -117,7 +117,6 @@ def PyrococcusHorikoshii(
 	(degree 507) and 70601.3257974 (degree 494).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrococcusHorikoshii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrococcusHorikoshii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrococcusHorikoshii",

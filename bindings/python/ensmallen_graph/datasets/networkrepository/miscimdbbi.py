@@ -120,7 +120,6 @@ def MiscImdbBi(
 	(degree 1124).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def MiscImdbBi(
 	        publisher={Cambridge University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def MiscImdbBi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MiscImdbBi",

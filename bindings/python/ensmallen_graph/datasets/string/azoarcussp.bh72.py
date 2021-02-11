@@ -117,7 +117,6 @@ def AzoarcusSp.Bh72(
 	62928.azo3642 (degree 1148) and 62928.azo1581 (degree 1119).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AzoarcusSp.Bh72(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AzoarcusSp.Bh72(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AzoarcusSp.Bh72",

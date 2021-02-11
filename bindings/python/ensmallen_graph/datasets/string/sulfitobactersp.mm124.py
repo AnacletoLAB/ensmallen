@@ -117,7 +117,6 @@ def SulfitobacterSp.Mm124(
 	1427), 1342299.Z947_2795 (degree 1311) and 1342299.Z947_3239 (degree 1278).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfitobacterSp.Mm124(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfitobacterSp.Mm124(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfitobacterSp.Mm124",

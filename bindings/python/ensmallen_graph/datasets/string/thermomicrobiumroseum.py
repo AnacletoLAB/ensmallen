@@ -117,7 +117,6 @@ def ThermomicrobiumRoseum(
 	309801.trd_A0215 (degree 908) and 309801.trd_1105 (degree 828).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermomicrobiumRoseum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermomicrobiumRoseum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermomicrobiumRoseum",

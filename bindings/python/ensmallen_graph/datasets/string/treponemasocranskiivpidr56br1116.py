@@ -119,7 +119,6 @@ def TreponemaSocranskiiVpidr56br1116(
 	754) and 1125725.HMPREF1325_1558 (degree 750).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def TreponemaSocranskiiVpidr56br1116(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def TreponemaSocranskiiVpidr56br1116(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaSocranskiiVpidr56br1116",

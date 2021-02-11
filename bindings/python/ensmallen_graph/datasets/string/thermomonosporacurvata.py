@@ -117,7 +117,6 @@ def ThermomonosporaCurvata(
 	1582), 471852.Tcur_4776 (degree 1551) and 471852.Tcur_0181 (degree 1302).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermomonosporaCurvata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermomonosporaCurvata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermomonosporaCurvata",

@@ -117,7 +117,6 @@ def OscillochlorisTrichoides(
 	1231), 765420.OSCT_1424 (degree 1170) and 765420.OSCT_2120 (degree 1132).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OscillochlorisTrichoides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OscillochlorisTrichoides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OscillochlorisTrichoides",

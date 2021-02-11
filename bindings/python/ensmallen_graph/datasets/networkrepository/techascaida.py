@@ -112,7 +112,6 @@ def TechAsCaida(
 	4080), 107 (degree 3367), 330 (degree 3331) and 1041 (degree 3242).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def TechAsCaida(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def TechAsCaida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechAsCaida",

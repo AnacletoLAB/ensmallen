@@ -114,7 +114,6 @@ def Cl1000001d7Trial3(
 	220) and 40495 (degree 219).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def Cl1000001d7Trial3(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def Cl1000001d7Trial3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Cl1000001d7Trial3",

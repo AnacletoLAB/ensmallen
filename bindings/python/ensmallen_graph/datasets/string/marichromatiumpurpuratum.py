@@ -117,7 +117,6 @@ def MarichromatiumPurpuratum(
 	963), 765910.MARPU_16465 (degree 958) and 765910.MARPU_03930 (degree 958).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarichromatiumPurpuratum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarichromatiumPurpuratum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarichromatiumPurpuratum",

@@ -117,7 +117,6 @@ def PyrenophoraTeres(
 	53485.EFQ90287 (degree 1543) and 53485.EFQ89753 (degree 1399).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrenophoraTeres(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrenophoraTeres(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrenophoraTeres",

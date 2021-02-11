@@ -110,7 +110,6 @@ def OpsahlSouthernwomen(
 	14), 14 (degree 11), 9 (degree 11) and 10 (degree 9).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def OpsahlSouthernwomen(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def OpsahlSouthernwomen(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OpsahlSouthernwomen",

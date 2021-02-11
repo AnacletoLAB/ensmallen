@@ -119,7 +119,6 @@ def GardnerellaVaginalis6119v5(
 	(degree 524) and 698961.CGSMWGv6119V5_01368 (degree 520).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GardnerellaVaginalis6119v5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GardnerellaVaginalis6119v5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GardnerellaVaginalis6119v5",

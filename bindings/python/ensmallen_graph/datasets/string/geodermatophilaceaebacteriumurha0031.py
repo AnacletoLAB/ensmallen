@@ -119,7 +119,6 @@ def GeodermatophilaceaeBacteriumUrha0031(
 	(degree 1473) and 1380393.JHVP01000010_gene2967 (degree 1469).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GeodermatophilaceaeBacteriumUrha0031(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GeodermatophilaceaeBacteriumUrha0031(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeodermatophilaceaeBacteriumUrha0031",

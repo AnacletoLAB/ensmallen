@@ -117,7 +117,6 @@ def PectobacteriumAtrosepticum(
 	218491.ECA0312 (degree 1209) and 218491.ECA2957 (degree 1205).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PectobacteriumAtrosepticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PectobacteriumAtrosepticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PectobacteriumAtrosepticum",

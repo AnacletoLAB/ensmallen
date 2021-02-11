@@ -117,7 +117,6 @@ def BacillusGaemokensis(
 	1447), 574375.BAGA_04445 (degree 1413) and 574375.BAGA_00715 (degree 1278).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusGaemokensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusGaemokensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusGaemokensis",

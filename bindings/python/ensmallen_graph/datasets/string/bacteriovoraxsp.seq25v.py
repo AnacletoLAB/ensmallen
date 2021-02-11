@@ -117,7 +117,6 @@ def BacteriovoraxSp.Seq25v(
 	881), 1201288.M900_1145 (degree 861) and 1201288.M900_0628 (degree 842).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteriovoraxSp.Seq25v(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteriovoraxSp.Seq25v(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteriovoraxSp.Seq25v",

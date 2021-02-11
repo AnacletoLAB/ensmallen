@@ -117,7 +117,6 @@ def LactobacillusKefiranofaciens(
 	622), 1033837.WANG_0984 (degree 602) and 1033837.WANG_0394 (degree 589).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusKefiranofaciens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusKefiranofaciens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusKefiranofaciens",

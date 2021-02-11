@@ -117,7 +117,6 @@ def AggregatibacterAphrophilus(
 	636), 634176.NT05HA_0529 (degree 611) and 634176.NT05HA_0762 (degree 593).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AggregatibacterAphrophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AggregatibacterAphrophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AggregatibacterAphrophilus",

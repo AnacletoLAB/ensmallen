@@ -119,7 +119,6 @@ def PropionibacteriumAcnesSk182bjcvi(
 	772) and 1051006.HMPREF1162_0648 (degree 747).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PropionibacteriumAcnesSk182bjcvi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PropionibacteriumAcnesSk182bjcvi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PropionibacteriumAcnesSk182bjcvi",

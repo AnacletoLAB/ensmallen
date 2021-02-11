@@ -119,7 +119,6 @@ def BacillusPsychrosaccharolyticus(
 	(degree 1309) and 1174504.AJTN02000241_gene4330 (degree 1296).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BacillusPsychrosaccharolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BacillusPsychrosaccharolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusPsychrosaccharolyticus",

@@ -117,7 +117,6 @@ def HalothermothrixOrenii(
 	820), 373903.Hore_02020 (degree 805) and 373903.Hore_02400 (degree 745).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalothermothrixOrenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalothermothrixOrenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalothermothrixOrenii",

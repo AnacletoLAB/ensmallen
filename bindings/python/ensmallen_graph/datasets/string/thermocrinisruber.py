@@ -117,7 +117,6 @@ def ThermocrinisRuber(
 	566), 932678.THERU_01435 (degree 551) and 932678.THERU_05415 (degree 526).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermocrinisRuber(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermocrinisRuber(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermocrinisRuber",

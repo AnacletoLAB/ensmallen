@@ -119,7 +119,6 @@ def RuminococcusFlavefaciens007c(
 	1341157.RF007C_03475 (degree 841).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RuminococcusFlavefaciens007c(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RuminococcusFlavefaciens007c(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcusFlavefaciens007c",

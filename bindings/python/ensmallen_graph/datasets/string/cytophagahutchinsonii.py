@@ -117,7 +117,6 @@ def CytophagaHutchinsonii(
 	269798.CHU_2895 (degree 1142) and 269798.CHU_0196 (degree 994).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CytophagaHutchinsonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CytophagaHutchinsonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CytophagaHutchinsonii",

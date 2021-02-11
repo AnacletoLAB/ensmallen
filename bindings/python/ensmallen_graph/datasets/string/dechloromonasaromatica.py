@@ -117,7 +117,6 @@ def DechloromonasAromatica(
 	1593), 159087.Daro_3459 (degree 1553) and 159087.Daro_2840 (degree 1545).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DechloromonasAromatica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DechloromonasAromatica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DechloromonasAromatica",

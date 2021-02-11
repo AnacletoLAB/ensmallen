@@ -117,7 +117,6 @@ def DesulfotomaculumGibsoniae(
 	1582), 767817.Desgi_2561 (degree 1581) and 767817.Desgi_0898 (degree 1490).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotomaculumGibsoniae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotomaculumGibsoniae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumGibsoniae",

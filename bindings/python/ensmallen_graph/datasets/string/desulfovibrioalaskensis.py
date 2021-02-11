@@ -117,7 +117,6 @@ def DesulfovibrioAlaskensis(
 	207559.Dde_3237 (degree 1016) and 207559.Dde_2080 (degree 1003).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioAlaskensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioAlaskensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioAlaskensis",

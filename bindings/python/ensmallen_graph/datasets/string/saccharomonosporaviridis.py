@@ -117,7 +117,6 @@ def SaccharomonosporaViridis(
 	1024), 471857.Svir_28040 (degree 1008) and 471857.Svir_37200 (degree 967).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaccharomonosporaViridis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaccharomonosporaViridis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharomonosporaViridis",

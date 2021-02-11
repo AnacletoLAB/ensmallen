@@ -110,7 +110,6 @@ def CfinderGoogle(
 	69 (degree 3681), 72 (degree 3427) and 41 (degree 3387).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def CfinderGoogle(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def CfinderGoogle(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CfinderGoogle",

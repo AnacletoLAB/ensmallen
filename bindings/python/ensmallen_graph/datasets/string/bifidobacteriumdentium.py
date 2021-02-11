@@ -117,7 +117,6 @@ def BifidobacteriumDentium(
 	401473.BDP_0621 (degree 666) and 401473.BDP_1005 (degree 664).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumDentium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumDentium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumDentium",

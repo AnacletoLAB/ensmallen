@@ -117,7 +117,6 @@ def AcidovoraxCitrulli(
 	1623), 397945.Aave_1008 (degree 1294) and 397945.Aave_3367 (degree 1138).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidovoraxCitrulli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidovoraxCitrulli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidovoraxCitrulli",

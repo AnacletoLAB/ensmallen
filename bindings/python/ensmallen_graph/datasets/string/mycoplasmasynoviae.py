@@ -117,7 +117,6 @@ def MycoplasmaSynoviae(
 	262723.MS53_0021 (degree 254) and 262723.MS53_0489 (degree 252).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaSynoviae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaSynoviae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaSynoviae",

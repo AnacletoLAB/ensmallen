@@ -119,7 +119,6 @@ def PeptostreptococcaceaeBacteriumW5053(
 	587) and 1321784.HMPREF1987_01459 (degree 563).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PeptostreptococcaceaeBacteriumW5053(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PeptostreptococcaceaeBacteriumW5053(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PeptostreptococcaceaeBacteriumW5053",

@@ -117,7 +117,6 @@ def MycobacteriumHassiacum(
 	1906), 1122247.C731_2906 (degree 1665) and 1122247.C731_3610 (degree 1605).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumHassiacum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumHassiacum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumHassiacum",

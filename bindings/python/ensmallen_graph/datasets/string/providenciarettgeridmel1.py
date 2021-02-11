@@ -117,7 +117,6 @@ def ProvidenciaRettgeriDmel1(
 	1032), 1141663.OOC_12361 (degree 1007) and 1141663.OOC_07653 (degree 928).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProvidenciaRettgeriDmel1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProvidenciaRettgeriDmel1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProvidenciaRettgeriDmel1",

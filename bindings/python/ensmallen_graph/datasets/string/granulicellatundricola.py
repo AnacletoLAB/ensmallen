@@ -117,7 +117,6 @@ def GranulicellaTundricola(
 	996), 1198114.AciX9_1167 (degree 877) and 1198114.AciX9_1897 (degree 873).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GranulicellaTundricola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GranulicellaTundricola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GranulicellaTundricola",

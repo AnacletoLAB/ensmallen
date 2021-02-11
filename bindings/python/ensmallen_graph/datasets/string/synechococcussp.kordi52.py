@@ -117,7 +117,6 @@ def SynechococcusSp.Kordi52(
 	574), 585425.KR52_12915 (degree 566) and 585425.KR52_04985 (degree 550).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SynechococcusSp.Kordi52(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SynechococcusSp.Kordi52(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechococcusSp.Kordi52",

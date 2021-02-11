@@ -117,7 +117,6 @@ def GeodermatophilusObscurus(
 	1674), 526225.Gobs_3201 (degree 1446) and 526225.Gobs_1802 (degree 1222).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeodermatophilusObscurus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeodermatophilusObscurus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeodermatophilusObscurus",

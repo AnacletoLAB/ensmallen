@@ -117,7 +117,6 @@ def AcidovoraxEbreus(
 	1135), 535289.Dtpsy_0028 (degree 1125) and 535289.Dtpsy_1261 (degree 1087).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidovoraxEbreus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidovoraxEbreus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidovoraxEbreus",

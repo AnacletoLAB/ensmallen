@@ -117,7 +117,6 @@ def SodalisGlossinidius(
 	(degree 744) and 343509.SG1749 (degree 736).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SodalisGlossinidius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SodalisGlossinidius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SodalisGlossinidius",

@@ -117,7 +117,6 @@ def PaenibacillusSp.Tca20(
 	1525), 1499968.TCA2_4649 (degree 1253) and 1499968.TCA2_1989 (degree 1245).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusSp.Tca20(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusSp.Tca20(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusSp.Tca20",

@@ -117,7 +117,6 @@ def ProsthecochlorisAestuarii(
 	1030), 290512.Paes_2193 (degree 842) and 290512.Paes_1367 (degree 783).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProsthecochlorisAestuarii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProsthecochlorisAestuarii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProsthecochlorisAestuarii",

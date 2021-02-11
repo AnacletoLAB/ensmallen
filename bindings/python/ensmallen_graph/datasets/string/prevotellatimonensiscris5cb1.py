@@ -119,7 +119,6 @@ def PrevotellaTimonensisCris5cb1(
 	647) and 679189.HMPREF9019_0356 (degree 636).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PrevotellaTimonensisCris5cb1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PrevotellaTimonensisCris5cb1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PrevotellaTimonensisCris5cb1",

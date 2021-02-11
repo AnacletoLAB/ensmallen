@@ -117,7 +117,6 @@ def NonlabensDokdonensis(
 	592029.DDD_3250 (degree 879) and 592029.DDD_2245 (degree 872).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NonlabensDokdonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NonlabensDokdonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NonlabensDokdonensis",

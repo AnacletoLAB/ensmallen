@@ -117,7 +117,6 @@ def PseudozymaBrasiliensis(
 	1392244.V5E6J0 (degree 1293) and 1392244.V5ESI6 (degree 1144).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudozymaBrasiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudozymaBrasiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudozymaBrasiliensis",

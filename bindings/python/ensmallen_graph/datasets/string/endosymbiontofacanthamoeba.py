@@ -117,7 +117,6 @@ def EndosymbiontOfAcanthamoeba(
 	86106.I862_04915 (degree 432) and 86106.I862_02210 (degree 426).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EndosymbiontOfAcanthamoeba(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EndosymbiontOfAcanthamoeba(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndosymbiontOfAcanthamoeba",

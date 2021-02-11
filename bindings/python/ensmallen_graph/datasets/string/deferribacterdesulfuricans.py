@@ -117,7 +117,6 @@ def DeferribacterDesulfuricans(
 	859), 639282.DEFDS_0470 (degree 842) and 639282.DEFDS_0066 (degree 832).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeferribacterDesulfuricans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeferribacterDesulfuricans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeferribacterDesulfuricans",

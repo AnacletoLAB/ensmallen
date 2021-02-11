@@ -117,7 +117,6 @@ def PseudomonasFulva(
 	1323), 743720.Psefu_1379 (degree 1173) and 743720.Psefu_1395 (degree 1165).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasFulva(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasFulva(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasFulva",

@@ -135,7 +135,6 @@ def SocfbMichigan23(
 	6011 (degree 1147).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -169,7 +168,6 @@ def SocfbMichigan23(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -206,7 +204,6 @@ def SocfbMichigan23(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbMichigan23",

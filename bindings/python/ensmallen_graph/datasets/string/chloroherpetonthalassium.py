@@ -117,7 +117,6 @@ def ChloroherpetonThalassium(
 	946), 517418.Ctha_1050 (degree 938) and 517418.Ctha_2310 (degree 900).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChloroherpetonThalassium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChloroherpetonThalassium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChloroherpetonThalassium",

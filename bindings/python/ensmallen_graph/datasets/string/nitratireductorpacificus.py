@@ -117,7 +117,6 @@ def NitratireductorPacificus(
 	1186), 391937.NA2_06208 (degree 1185) and 391937.NA2_12913 (degree 1161).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitratireductorPacificus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitratireductorPacificus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitratireductorPacificus",

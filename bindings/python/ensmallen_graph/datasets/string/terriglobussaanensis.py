@@ -117,7 +117,6 @@ def TerriglobusSaanensis(
 	952), 401053.AciPR4_1494 (degree 945) and 401053.AciPR4_3191 (degree 909).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TerriglobusSaanensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TerriglobusSaanensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TerriglobusSaanensis",

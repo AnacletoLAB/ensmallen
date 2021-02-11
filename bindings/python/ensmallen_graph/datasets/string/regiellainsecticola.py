@@ -117,7 +117,6 @@ def RegiellaInsecticola(
 	663321.REG_1623 (degree 531) and 663321.REG_0369 (degree 525).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RegiellaInsecticola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RegiellaInsecticola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RegiellaInsecticola",

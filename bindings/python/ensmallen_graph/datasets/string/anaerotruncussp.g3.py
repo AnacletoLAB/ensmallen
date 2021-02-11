@@ -117,7 +117,6 @@ def AnaerotruncusSp.G3(
 	953), 1235835.C814_02169 (degree 950) and 1235835.C814_03302 (degree 821).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaerotruncusSp.G3(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaerotruncusSp.G3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerotruncusSp.G3",

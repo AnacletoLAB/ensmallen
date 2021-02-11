@@ -119,7 +119,6 @@ def CoriobacteriaceaeBacteriumGd5(
 	(degree 887) and 1232436.CAPF01000063_gene1604 (degree 858).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CoriobacteriaceaeBacteriumGd5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CoriobacteriaceaeBacteriumGd5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CoriobacteriaceaeBacteriumGd5",

@@ -117,7 +117,6 @@ def EnterobacterAerogenes(
 	1339), 1028307.EAE_04480 (degree 1241) and 1028307.EAE_00660 (degree 1203).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterobacterAerogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterobacterAerogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterobacterAerogenes",

@@ -117,7 +117,6 @@ def MyroidesOdoratus(
 	1051), 929704.Myrod_3017 (degree 1026) and 929704.Myrod_1499 (degree 897).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MyroidesOdoratus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MyroidesOdoratus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MyroidesOdoratus",

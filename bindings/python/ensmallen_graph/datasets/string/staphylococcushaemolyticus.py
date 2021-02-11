@@ -117,7 +117,6 @@ def StaphylococcusHaemolyticus(
 	(degree 707) and 279808.SH2521 (degree 702).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusHaemolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusHaemolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusHaemolyticus",

@@ -117,7 +117,6 @@ def GlaciecolaLipolytica(
 	1214), 1127673.GLIP_0107 (degree 1197) and 1127673.GLIP_2530 (degree 1170).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaLipolytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaLipolytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaLipolytica",

@@ -117,7 +117,6 @@ def ExiguobacteriumSibiricum(
 	891), 262543.Exig_0781 (degree 875) and 262543.Exig_1724 (degree 846).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ExiguobacteriumSibiricum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ExiguobacteriumSibiricum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ExiguobacteriumSibiricum",

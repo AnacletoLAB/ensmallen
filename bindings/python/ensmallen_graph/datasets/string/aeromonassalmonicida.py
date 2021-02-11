@@ -117,7 +117,6 @@ def AeromonasSalmonicida(
 	382245.ASA_1667 (degree 1301) and 382245.ASA_1869 (degree 1268).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AeromonasSalmonicida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AeromonasSalmonicida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AeromonasSalmonicida",

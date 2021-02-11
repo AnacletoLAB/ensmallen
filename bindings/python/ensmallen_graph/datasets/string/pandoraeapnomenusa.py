@@ -117,7 +117,6 @@ def PandoraeaPnomenusa(
 	1280), 93220.LV28_01105 (degree 1249) and 93220.LV28_18265 (degree 1138).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PandoraeaPnomenusa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PandoraeaPnomenusa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PandoraeaPnomenusa",

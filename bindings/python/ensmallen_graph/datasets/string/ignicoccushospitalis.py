@@ -117,7 +117,6 @@ def IgnicoccusHospitalis(
 	453591.Igni_0096 (degree 458) and 453591.Igni_0897 (degree 443).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IgnicoccusHospitalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IgnicoccusHospitalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IgnicoccusHospitalis",

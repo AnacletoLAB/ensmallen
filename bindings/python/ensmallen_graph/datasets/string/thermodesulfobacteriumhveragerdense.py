@@ -119,7 +119,6 @@ def ThermodesulfobacteriumHveragerdense(
 	(degree 673) and 1123372.AUIT01000001_gene694 (degree 665).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThermodesulfobacteriumHveragerdense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThermodesulfobacteriumHveragerdense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermodesulfobacteriumHveragerdense",

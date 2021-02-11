@@ -125,7 +125,6 @@ def TechWhois(
 	269 (degree 611), 456 (degree 569) and 2848 (degree 506).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -153,7 +152,6 @@ def TechWhois(
 	        title={{Internet} Routing Registries},
 	        note={{\scriptsize \url{http://www.irr.net/}}}}
 	
-
 
 	Usage example
 	----------------------
@@ -190,7 +188,6 @@ def TechWhois(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechWhois",

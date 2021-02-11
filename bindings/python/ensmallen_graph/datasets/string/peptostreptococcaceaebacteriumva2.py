@@ -119,7 +119,6 @@ def PeptostreptococcaceaeBacteriumVa2(
 	(degree 918) and 1476973.JMMB01000007_gene2647 (degree 902).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PeptostreptococcaceaeBacteriumVa2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PeptostreptococcaceaeBacteriumVa2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PeptostreptococcaceaeBacteriumVa2",

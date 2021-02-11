@@ -117,7 +117,6 @@ def HelicobacterAcinonychis(
 	382638.Hac_1197 (degree 507) and 382638.Hac_0457 (degree 497).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterAcinonychis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterAcinonychis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterAcinonychis",

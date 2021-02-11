@@ -117,7 +117,6 @@ def MollicutesBacteriumHr1(
 	630), 1541959.KQ51_01603 (degree 610) and 1541959.KQ51_00401 (degree 609).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MollicutesBacteriumHr1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MollicutesBacteriumHr1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MollicutesBacteriumHr1",

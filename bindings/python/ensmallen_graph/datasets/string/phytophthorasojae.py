@@ -117,7 +117,6 @@ def PhytophthoraSojae(
 	2898), 67593.Physo143782 (degree 2794) and 67593.Physo128466 (degree 2642).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytophthoraSojae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytophthoraSojae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytophthoraSojae",

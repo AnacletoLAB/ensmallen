@@ -117,7 +117,6 @@ def ErythrobacterSp.Jl475(
 	949), 383381.EH30_06950 (degree 947) and 383381.EH30_12210 (degree 903).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErythrobacterSp.Jl475(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErythrobacterSp.Jl475(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErythrobacterSp.Jl475",

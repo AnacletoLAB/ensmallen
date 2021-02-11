@@ -117,7 +117,6 @@ def SyntrophomonasWolfei(
 	335541.Swol_1784 (degree 816) and 335541.Swol_1344 (degree 813).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SyntrophomonasWolfei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SyntrophomonasWolfei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SyntrophomonasWolfei",

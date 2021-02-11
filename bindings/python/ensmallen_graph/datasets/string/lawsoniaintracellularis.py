@@ -117,7 +117,6 @@ def LawsoniaIntracellularis(
 	(degree 542), 363253.LI0238 (degree 498) and 363253.LI0590 (degree 487).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LawsoniaIntracellularis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LawsoniaIntracellularis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LawsoniaIntracellularis",

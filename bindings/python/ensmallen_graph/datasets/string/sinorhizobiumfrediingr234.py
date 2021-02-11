@@ -117,7 +117,6 @@ def SinorhizobiumFrediiNgr234(
 	394.NGR_c36520 (degree 1180) and 394.NGR_c02090 (degree 1179).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SinorhizobiumFrediiNgr234(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SinorhizobiumFrediiNgr234(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SinorhizobiumFrediiNgr234",

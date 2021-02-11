@@ -117,7 +117,6 @@ def ScNasasrb(
 	611 (degree 275), 610 (degree 275), 609 (degree 275) and 607 (degree 275).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def ScNasasrb(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def ScNasasrb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ScNasasrb",

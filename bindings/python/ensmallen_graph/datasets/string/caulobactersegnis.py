@@ -117,7 +117,6 @@ def CaulobacterSegnis(
 	1196), 509190.Cseg_4092 (degree 1112) and 509190.Cseg_1955 (degree 1078).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaulobacterSegnis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaulobacterSegnis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaulobacterSegnis",

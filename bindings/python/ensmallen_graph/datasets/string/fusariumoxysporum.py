@@ -117,7 +117,6 @@ def FusariumOxysporum(
 	2006), 5507.FOXG_00887P0 (degree 1803) and 5507.FOXG_11669P0 (degree 1799).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusariumOxysporum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusariumOxysporum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusariumOxysporum",

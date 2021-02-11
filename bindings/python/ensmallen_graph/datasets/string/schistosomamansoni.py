@@ -117,7 +117,6 @@ def SchistosomaMansoni(
 	1933), 6183.Smp_034000.1 (degree 1923) and 6183.Smp_160500.1 (degree 1893).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SchistosomaMansoni(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SchistosomaMansoni(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SchistosomaMansoni",

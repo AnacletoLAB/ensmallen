@@ -117,7 +117,6 @@ def SaprospiraGrandis(
 	795), 984262.SGRA_0441 (degree 757) and 984262.SGRA_0992 (degree 749).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaprospiraGrandis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaprospiraGrandis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaprospiraGrandis",

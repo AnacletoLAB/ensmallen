@@ -117,7 +117,6 @@ def LeuconostocGasicomitatum(
 	602), 762550.LEGAS_0220 (degree 548) and 762550.LEGAS_1445 (degree 544).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocGasicomitatum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocGasicomitatum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocGasicomitatum",

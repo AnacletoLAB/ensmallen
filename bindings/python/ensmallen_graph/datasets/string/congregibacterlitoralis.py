@@ -117,7 +117,6 @@ def CongregibacterLitoralis(
 	1095), 314285.KT71_06364 (degree 1095) and 314285.KT71_19652 (degree 1069).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CongregibacterLitoralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CongregibacterLitoralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CongregibacterLitoralis",

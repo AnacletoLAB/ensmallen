@@ -117,7 +117,6 @@ def ChlamydiaAvium(
 	1229831.M832_06300 (degree 371) and 1229831.M832_00100 (degree 367).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydiaAvium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydiaAvium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydiaAvium",

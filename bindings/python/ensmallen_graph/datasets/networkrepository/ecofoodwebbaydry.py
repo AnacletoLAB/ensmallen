@@ -130,7 +130,6 @@ def EcoFoodwebBaydry(
 	(degree 89), 85 (degree 76), 21 (degree 72) and 84 (degree 64).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def EcoFoodwebBaydry(
 	        publisher={Eco Soc America}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def EcoFoodwebBaydry(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EcoFoodwebBaydry",

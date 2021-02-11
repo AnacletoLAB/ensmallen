@@ -117,7 +117,6 @@ def ParacoccusVersutus(
 	1579), 34007.IT40_06490 (degree 1566) and 34007.IT40_02925 (degree 1563).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParacoccusVersutus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParacoccusVersutus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParacoccusVersutus",

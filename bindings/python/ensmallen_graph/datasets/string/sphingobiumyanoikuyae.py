@@ -117,7 +117,6 @@ def SphingobiumYanoikuyae(
 	1442), 13690.CP98_01619 (degree 1182) and 13690.CP98_01592 (degree 1072).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingobiumYanoikuyae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingobiumYanoikuyae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingobiumYanoikuyae",

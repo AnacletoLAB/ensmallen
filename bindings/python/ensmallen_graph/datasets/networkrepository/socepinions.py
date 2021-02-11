@@ -127,7 +127,6 @@ def SocEpinions(
 	(degree 426), 1783 (degree 423), 486 (degree 422) and 1024 (degree 412).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -157,7 +156,6 @@ def SocEpinions(
 	        pages = {121--126},
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -194,7 +192,6 @@ def SocEpinions(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocEpinions",

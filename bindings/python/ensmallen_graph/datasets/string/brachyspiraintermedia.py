@@ -117,7 +117,6 @@ def BrachyspiraIntermedia(
 	831), 1045858.Bint_1190 (degree 815) and 1045858.Bint_0831 (degree 811).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrachyspiraIntermedia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrachyspiraIntermedia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrachyspiraIntermedia",

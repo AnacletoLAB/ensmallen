@@ -117,7 +117,6 @@ def PneumocystisJirovecii(
 	42068.L0PDK4 (degree 1252) and 42068.L0PGD0 (degree 1248).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PneumocystisJirovecii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PneumocystisJirovecii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PneumocystisJirovecii",

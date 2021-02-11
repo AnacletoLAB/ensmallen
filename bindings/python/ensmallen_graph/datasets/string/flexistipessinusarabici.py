@@ -117,7 +117,6 @@ def FlexistipesSinusarabici(
 	797), 717231.Flexsi_1807 (degree 745) and 717231.Flexsi_0100 (degree 712).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlexistipesSinusarabici(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlexistipesSinusarabici(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlexistipesSinusarabici",

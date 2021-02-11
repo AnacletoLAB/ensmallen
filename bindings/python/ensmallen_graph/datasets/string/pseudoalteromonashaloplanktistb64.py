@@ -119,7 +119,6 @@ def PseudoalteromonasHaloplanktisTb64(
 	(degree 1266) and 1333507.AUTQ01000207_gene1518 (degree 1239).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudoalteromonasHaloplanktisTb64(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudoalteromonasHaloplanktisTb64(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasHaloplanktisTb64",

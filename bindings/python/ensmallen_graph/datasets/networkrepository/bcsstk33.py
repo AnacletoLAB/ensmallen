@@ -110,7 +110,6 @@ def Bcsstk33(
 	141), 8735 (degree 140), 8734 (degree 140) and 8733 (degree 140).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Bcsstk33(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Bcsstk33(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Bcsstk33",

@@ -117,7 +117,6 @@ def ActinoplanesSp.Se50110(
 	1956), 134676.ACPL_1813 (degree 1943) and 134676.ACPL_3091 (degree 1919).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinoplanesSp.Se50110(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinoplanesSp.Se50110(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoplanesSp.Se50110",

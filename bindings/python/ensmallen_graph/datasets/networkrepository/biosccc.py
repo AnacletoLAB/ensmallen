@@ -121,7 +121,6 @@ def BioScCc(
 	15 (degree 466), 36 (degree 408) and 248 (degree 370).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def BioScCc(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def BioScCc(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioScCc",

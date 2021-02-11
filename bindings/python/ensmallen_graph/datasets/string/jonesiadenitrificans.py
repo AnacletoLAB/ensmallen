@@ -117,7 +117,6 @@ def JonesiaDenitrificans(
 	471856.Jden_0638 (degree 762) and 471856.Jden_0650 (degree 760).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def JonesiaDenitrificans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def JonesiaDenitrificans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "JonesiaDenitrificans",

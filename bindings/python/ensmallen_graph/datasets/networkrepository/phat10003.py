@@ -123,7 +123,6 @@ def PHat10003(
 	763 (degree 888), 283 (degree 882), 798 (degree 880) and 464 (degree 880).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def PHat10003(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def PHat10003(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PHat10003",

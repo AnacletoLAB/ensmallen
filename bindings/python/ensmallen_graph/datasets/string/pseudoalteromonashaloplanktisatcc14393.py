@@ -119,7 +119,6 @@ def PseudoalteromonasHaloplanktisAtcc14393(
 	(degree 1325) and 1117315.AHCA01000005_gene1312 (degree 1312).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudoalteromonasHaloplanktisAtcc14393(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudoalteromonasHaloplanktisAtcc14393(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasHaloplanktisAtcc14393",

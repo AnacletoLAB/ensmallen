@@ -117,7 +117,6 @@ def MicrobacteriumOleivorans(
 	801), 273677.BW34_02596 (degree 775) and 273677.BW34_00397 (degree 756).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrobacteriumOleivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrobacteriumOleivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrobacteriumOleivorans",

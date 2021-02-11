@@ -117,7 +117,6 @@ def OceanibaculumIndicum(
 	1180), 1207063.P24_06761 (degree 1149) and 1207063.P24_02521 (degree 1125).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OceanibaculumIndicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OceanibaculumIndicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceanibaculumIndicum",

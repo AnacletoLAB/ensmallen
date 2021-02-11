@@ -117,7 +117,6 @@ def HaliscomenobacterHydrossis(
 	1648), 760192.Halhy_6513 (degree 1596) and 760192.Halhy_4861 (degree 1487).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaliscomenobacterHydrossis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaliscomenobacterHydrossis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaliscomenobacterHydrossis",

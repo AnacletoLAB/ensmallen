@@ -119,7 +119,6 @@ def SelenomonasRuminantiumAb3002(
 	(degree 955) and 1392502.JNIO01000008_gene2370 (degree 917).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SelenomonasRuminantiumAb3002(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SelenomonasRuminantiumAb3002(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SelenomonasRuminantiumAb3002",

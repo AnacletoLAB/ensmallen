@@ -117,7 +117,6 @@ def GordoniaBronchialis(
 	1576), 526226.Gbro_0629 (degree 1458) and 526226.Gbro_2830 (degree 1429).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GordoniaBronchialis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GordoniaBronchialis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GordoniaBronchialis",

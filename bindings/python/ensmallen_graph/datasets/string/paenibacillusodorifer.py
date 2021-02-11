@@ -117,7 +117,6 @@ def PaenibacillusOdorifer(
 	1378), 189426.PODO_02245 (degree 1326) and 189426.PODO_22000 (degree 1261).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusOdorifer(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusOdorifer(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusOdorifer",

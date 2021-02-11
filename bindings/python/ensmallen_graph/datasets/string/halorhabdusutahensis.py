@@ -117,7 +117,6 @@ def HalorhabdusUtahensis(
 	917), 519442.Huta_0370 (degree 889) and 519442.Huta_0879 (degree 883).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalorhabdusUtahensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalorhabdusUtahensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalorhabdusUtahensis",

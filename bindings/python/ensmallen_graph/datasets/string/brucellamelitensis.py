@@ -117,7 +117,6 @@ def BrucellaMelitensis(
 	1048), 224914.BMEII0040 (degree 1033) and 224914.BMEI1436 (degree 944).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrucellaMelitensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrucellaMelitensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrucellaMelitensis",

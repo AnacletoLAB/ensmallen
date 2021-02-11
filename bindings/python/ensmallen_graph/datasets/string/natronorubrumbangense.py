@@ -117,7 +117,6 @@ def NatronorubrumBangense(
 	850), 1227500.C494_13866 (degree 845) and 1227500.C494_09820 (degree 784).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatronorubrumBangense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatronorubrumBangense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatronorubrumBangense",

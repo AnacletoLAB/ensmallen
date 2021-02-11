@@ -117,7 +117,6 @@ def SinorhizobiumMeliloti(
 	1336), 266834.SMc04028 (degree 1333) and 266834.SMc02273 (degree 1268).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SinorhizobiumMeliloti(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SinorhizobiumMeliloti(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SinorhizobiumMeliloti",

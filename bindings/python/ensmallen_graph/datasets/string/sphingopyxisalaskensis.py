@@ -117,7 +117,6 @@ def SphingopyxisAlaskensis(
 	962), 317655.Sala_2140 (degree 830) and 317655.Sala_1610 (degree 780).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingopyxisAlaskensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingopyxisAlaskensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingopyxisAlaskensis",

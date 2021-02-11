@@ -117,7 +117,6 @@ def BartonellaAlsatica(
 	550), 1094551.MEC_01043 (degree 517) and 1094551.MEC_00314 (degree 511).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaAlsatica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaAlsatica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaAlsatica",

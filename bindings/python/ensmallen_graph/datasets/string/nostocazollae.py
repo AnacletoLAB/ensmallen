@@ -117,7 +117,6 @@ def NostocAzollae(
 	1049), 551115.Aazo_0462 (degree 986) and 551115.Aazo_4294 (degree 901).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NostocAzollae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NostocAzollae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NostocAzollae",

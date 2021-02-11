@@ -116,7 +116,6 @@ def Flickr(
 	2302973 (degree 27543) and 2302948 (degree 22097).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def Flickr(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def Flickr(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Flickr",

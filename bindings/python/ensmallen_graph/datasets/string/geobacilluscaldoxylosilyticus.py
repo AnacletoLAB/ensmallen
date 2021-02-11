@@ -119,7 +119,6 @@ def GeobacillusCaldoxylosilyticus(
 	(degree 1128) and 1234664.AMRO01000027_gene1415 (degree 1126).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GeobacillusCaldoxylosilyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GeobacillusCaldoxylosilyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacillusCaldoxylosilyticus",

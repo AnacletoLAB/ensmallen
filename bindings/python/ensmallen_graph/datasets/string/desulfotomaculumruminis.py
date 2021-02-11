@@ -117,7 +117,6 @@ def DesulfotomaculumRuminis(
 	1211), 696281.Desru_1117 (degree 1069) and 696281.Desru_2762 (degree 1054).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotomaculumRuminis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotomaculumRuminis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumRuminis",

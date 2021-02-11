@@ -119,7 +119,6 @@ def StenotrophomonasMaltophilia5bai2(
 	1429851.X548_19945 (degree 1222).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StenotrophomonasMaltophilia5bai2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StenotrophomonasMaltophilia5bai2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StenotrophomonasMaltophilia5bai2",

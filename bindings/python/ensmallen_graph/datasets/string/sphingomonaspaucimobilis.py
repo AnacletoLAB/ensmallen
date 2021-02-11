@@ -117,7 +117,6 @@ def SphingomonasPaucimobilis(
 	1292), 13689.BV96_00843 (degree 1236) and 13689.BV96_01101 (degree 1225).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingomonasPaucimobilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingomonasPaucimobilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingomonasPaucimobilis",

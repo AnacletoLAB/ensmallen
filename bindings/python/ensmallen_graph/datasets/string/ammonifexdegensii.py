@@ -117,7 +117,6 @@ def AmmonifexDegensii(
 	429009.Adeg_0887 (degree 632) and 429009.Adeg_1146 (degree 609).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmmonifexDegensii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmmonifexDegensii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmmonifexDegensii",

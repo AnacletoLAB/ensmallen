@@ -117,7 +117,6 @@ def HalorhabdusTiamatea(
 	684), 1033806.HTIA_2318 (degree 617) and 1033806.HTIA_2319 (degree 603).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalorhabdusTiamatea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalorhabdusTiamatea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalorhabdusTiamatea",

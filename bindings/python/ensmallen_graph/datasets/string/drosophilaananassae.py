@@ -117,7 +117,6 @@ def DrosophilaAnanassae(
 	2269), 7217.FBpp0121166 (degree 2081) and 7217.FBpp0123168 (degree 2057).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DrosophilaAnanassae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DrosophilaAnanassae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DrosophilaAnanassae",

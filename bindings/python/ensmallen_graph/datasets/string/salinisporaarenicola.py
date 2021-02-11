@@ -117,7 +117,6 @@ def SalinisporaArenicola(
 	1451), 391037.Sare_3392 (degree 1226) and 391037.Sare_2072 (degree 1224).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SalinisporaArenicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SalinisporaArenicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SalinisporaArenicola",

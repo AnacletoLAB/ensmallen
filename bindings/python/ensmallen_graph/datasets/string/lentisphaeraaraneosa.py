@@ -117,7 +117,6 @@ def LentisphaeraAraneosa(
 	981), 313628.LNTAR_02759 (degree 971) and 313628.LNTAR_22035 (degree 887).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LentisphaeraAraneosa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LentisphaeraAraneosa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LentisphaeraAraneosa",

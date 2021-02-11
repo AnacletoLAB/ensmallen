@@ -117,7 +117,6 @@ def TuberMelanosporum(
 	39416.CAZ81124 (degree 992) and 39416.CAZ83121 (degree 961).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TuberMelanosporum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TuberMelanosporum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TuberMelanosporum",

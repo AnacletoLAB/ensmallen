@@ -117,7 +117,6 @@ def ThaueraSp.Mz1t(
 	1587), 85643.Tmz1t_1730 (degree 1553) and 85643.Tmz1t_0842 (degree 1233).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThaueraSp.Mz1t(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThaueraSp.Mz1t(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThaueraSp.Mz1t",

@@ -121,7 +121,6 @@ def SocLastfm(
 	and 108129 (degree 2216).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def SocLastfm(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def SocLastfm(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocLastfm",

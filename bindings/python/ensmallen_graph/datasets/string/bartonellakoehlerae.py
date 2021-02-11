@@ -117,7 +117,6 @@ def BartonellaKoehlerae(
 	557), 1134510.O9A_00374 (degree 526) and 1134510.O9A_00356 (degree 520).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaKoehlerae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaKoehlerae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaKoehlerae",

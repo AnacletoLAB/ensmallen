@@ -117,7 +117,6 @@ def SolitaleaCanadensis(
 	1439), 929556.Solca_1467 (degree 1189) and 929556.Solca_2365 (degree 1186).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SolitaleaCanadensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SolitaleaCanadensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SolitaleaCanadensis",

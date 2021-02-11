@@ -117,7 +117,6 @@ def ChlamydiaPsittaci6bc(
 	331636.G5O_0901 (degree 367) and 331636.G5O_0273 (degree 367).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydiaPsittaci6bc(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydiaPsittaci6bc(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydiaPsittaci6bc",

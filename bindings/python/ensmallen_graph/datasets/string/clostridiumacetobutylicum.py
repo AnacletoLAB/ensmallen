@@ -117,7 +117,6 @@ def ClostridiumAcetobutylicum(
 	272562.CA_C0473 (degree 1111) and 272562.CA_C2499 (degree 1095).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumAcetobutylicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumAcetobutylicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumAcetobutylicum",

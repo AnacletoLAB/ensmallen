@@ -117,7 +117,6 @@ def RuminococcusAlbus7(
 	859), 697329.Rumal_3203 (degree 798) and 697329.Rumal_1611 (degree 766).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RuminococcusAlbus7(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RuminococcusAlbus7(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcusAlbus7",

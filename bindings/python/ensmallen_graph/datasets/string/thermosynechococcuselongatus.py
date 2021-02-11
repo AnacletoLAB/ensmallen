@@ -117,7 +117,6 @@ def ThermosynechococcusElongatus(
 	197221.22295650 (degree 929) and 197221.22294647 (degree 807).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermosynechococcusElongatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermosynechococcusElongatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermosynechococcusElongatus",

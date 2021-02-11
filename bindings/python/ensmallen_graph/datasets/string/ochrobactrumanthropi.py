@@ -117,7 +117,6 @@ def OchrobactrumAnthropi(
 	1173), 439375.Oant_0409 (degree 1118) and 439375.Oant_3058 (degree 1095).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OchrobactrumAnthropi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OchrobactrumAnthropi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OchrobactrumAnthropi",

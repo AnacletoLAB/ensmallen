@@ -119,7 +119,6 @@ def BacteroidetesBacteriumScgcAaa027n21(
 	(degree 792) and 938709.AUSH02000069_gene1531 (degree 751).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BacteroidetesBacteriumScgcAaa027n21(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BacteroidetesBacteriumScgcAaa027n21(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidetesBacteriumScgcAaa027n21",

@@ -117,7 +117,6 @@ def TrichosporonAsahii(
 	82508.K1VK41 (degree 1396) and 82508.K1VAJ1 (degree 1371).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichosporonAsahii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichosporonAsahii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichosporonAsahii",

@@ -119,7 +119,6 @@ def AlicyclobacillusMacrosporangiidus(
 	(degree 1029) and 1382304.JNIL01000001_gene1651 (degree 915).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AlicyclobacillusMacrosporangiidus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AlicyclobacillusMacrosporangiidus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlicyclobacillusMacrosporangiidus",

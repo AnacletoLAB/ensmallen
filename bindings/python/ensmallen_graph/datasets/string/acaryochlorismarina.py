@@ -117,7 +117,6 @@ def AcaryochlorisMarina(
 	329726.AM1_2151 (degree 1735) and 329726.AM1_5997 (degree 1624).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcaryochlorisMarina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcaryochlorisMarina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcaryochlorisMarina",

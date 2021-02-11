@@ -117,7 +117,6 @@ def PropionibacteriumAcnesKpa171202(
 	(degree 753), 267747.PPA1764 (degree 748) and 267747.PPA1408 (degree 741).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PropionibacteriumAcnesKpa171202(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PropionibacteriumAcnesKpa171202(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PropionibacteriumAcnesKpa171202",

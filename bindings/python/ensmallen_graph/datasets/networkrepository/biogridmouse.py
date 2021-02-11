@@ -112,7 +112,6 @@ def BioGridMouse(
 	162 (degree 74), 154 (degree 46), 33 (degree 45) and 1361 (degree 44).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def BioGridMouse(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def BioGridMouse(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioGridMouse",

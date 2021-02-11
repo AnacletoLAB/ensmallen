@@ -117,7 +117,6 @@ def PyrococcusYayanosii(
 	583), 529709.PYCH_17240 (degree 563) and 529709.PYCH_13930 (degree 543).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrococcusYayanosii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrococcusYayanosii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrococcusYayanosii",

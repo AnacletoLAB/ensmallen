@@ -117,7 +117,6 @@ def PhycisphaeraMikurensis(
 	796), 1142394.PSMK_27430 (degree 787) and 1142394.PSMK_22160 (degree 774).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhycisphaeraMikurensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhycisphaeraMikurensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhycisphaeraMikurensis",

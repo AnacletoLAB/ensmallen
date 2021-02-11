@@ -117,7 +117,6 @@ def HaloferaxMucosum(
 	792), 662479.C440_09442 (degree 742) and 662479.C440_06972 (degree 735).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloferaxMucosum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloferaxMucosum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloferaxMucosum",

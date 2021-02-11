@@ -117,7 +117,6 @@ def HalovivaxRuber(
 	973), 797302.Halru_0450 (degree 929) and 797302.Halru_1701 (degree 824).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalovivaxRuber(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalovivaxRuber(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalovivaxRuber",

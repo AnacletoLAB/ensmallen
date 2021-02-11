@@ -117,7 +117,6 @@ def PantoeaAnanatisLmg20103(
 	1342), 706191.PANA_2848 (degree 1129) and 706191.PANA_1196 (degree 1080).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PantoeaAnanatisLmg20103(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PantoeaAnanatisLmg20103(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PantoeaAnanatisLmg20103",

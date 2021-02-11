@@ -117,7 +117,6 @@ def CorynebacteriumJeikeium(
 	(degree 654) and 306537.jk0878 (degree 598).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumJeikeium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumJeikeium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumJeikeium",

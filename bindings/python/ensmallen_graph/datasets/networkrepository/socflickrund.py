@@ -123,7 +123,6 @@ def SocFlickrUnd(
 	16348) and 915 (degree 14483).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocFlickrUnd(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocFlickrUnd(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocFlickrUnd",

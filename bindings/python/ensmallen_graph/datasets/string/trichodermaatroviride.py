@@ -117,7 +117,6 @@ def TrichodermaAtroviride(
 	63577.G9NJD1 (degree 1510) and 63577.G9NX56 (degree 1467).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichodermaAtroviride(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichodermaAtroviride(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichodermaAtroviride",

@@ -116,7 +116,6 @@ def SocBlogcatalogAsu(
 	2976) and 1226 (degree 2780).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def SocBlogcatalogAsu(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def SocBlogcatalogAsu(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocBlogcatalogAsu",

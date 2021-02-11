@@ -117,7 +117,6 @@ def LactococcusGarvieaeDcc43(
 	824), 1231377.C426_1310 (degree 820) and 1231377.C426_1523 (degree 803).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactococcusGarvieaeDcc43(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactococcusGarvieaeDcc43(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactococcusGarvieaeDcc43",

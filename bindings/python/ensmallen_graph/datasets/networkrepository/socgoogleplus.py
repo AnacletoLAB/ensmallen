@@ -127,7 +127,6 @@ def SocGooglePlus(
 	66836 (degree 1363).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -151,7 +150,6 @@ def SocGooglePlus(
 	        publisher={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -188,7 +186,6 @@ def SocGooglePlus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocGooglePlus",

@@ -117,7 +117,6 @@ def DesulfotomaculumReducens(
 	1119), 349161.Dred_1154 (degree 925) and 349161.Dred_2462 (degree 856).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotomaculumReducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotomaculumReducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumReducens",

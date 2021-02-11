@@ -117,7 +117,6 @@ def NasoniaVitripennis(
 	7425.NV13733-PA (degree 1839) and 7425.NV13505-PA (degree 1822).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NasoniaVitripennis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NasoniaVitripennis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NasoniaVitripennis",

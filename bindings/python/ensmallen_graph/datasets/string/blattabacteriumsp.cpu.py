@@ -115,7 +115,6 @@ def BlattabacteriumSp.Cpu(
 	311), 1075399.BLBCPU_192 (degree 289) and 1075399.BLBCPU_087 (degree 277).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlattabacteriumSp.Cpu(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlattabacteriumSp.Cpu(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlattabacteriumSp.Cpu",

@@ -117,7 +117,6 @@ def PseudomonasSyringaeTomato(
 	1162), 223283.PSPTO_1449 (degree 1141) and 223283.PSPTO_3886 (degree 1068).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasSyringaeTomato(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasSyringaeTomato(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasSyringaeTomato",

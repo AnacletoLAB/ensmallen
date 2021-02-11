@@ -117,7 +117,6 @@ def EnterococcusDispar(
 	943), 1139219.I569_01733 (degree 939) and 1139219.I569_01973 (degree 887).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusDispar(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusDispar(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusDispar",

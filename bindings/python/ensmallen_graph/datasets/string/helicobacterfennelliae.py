@@ -117,7 +117,6 @@ def HelicobacterFennelliae(
 	1325130.HFN_0346 (degree 594) and 1325130.HFN_2168 (degree 530).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterFennelliae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterFennelliae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterFennelliae",

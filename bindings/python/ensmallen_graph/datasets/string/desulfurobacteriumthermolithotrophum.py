@@ -115,7 +115,6 @@ def DesulfurobacteriumThermolithotrophum(
 	606), 868864.Dester_0068 (degree 594) and 868864.Dester_0117 (degree 580).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def DesulfurobacteriumThermolithotrophum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def DesulfurobacteriumThermolithotrophum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfurobacteriumThermolithotrophum",

@@ -117,7 +117,6 @@ def ClostridiumSp.Asf356(
 	748), 97138.C820_02656 (degree 744) and 97138.C820_01321 (degree 709).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumSp.Asf356(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumSp.Asf356(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumSp.Asf356",

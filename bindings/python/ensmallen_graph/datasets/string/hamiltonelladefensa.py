@@ -117,7 +117,6 @@ def HamiltonellaDefensa(
 	572265.HDEF_1926 (degree 544) and 572265.HDEF_1830 (degree 533).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HamiltonellaDefensa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HamiltonellaDefensa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HamiltonellaDefensa",

@@ -117,7 +117,6 @@ def MyxococcusXanthus(
 	2573), 246197.MXAN_4445 (degree 2270) and 246197.MXAN_1528 (degree 2143).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MyxococcusXanthus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MyxococcusXanthus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MyxococcusXanthus",

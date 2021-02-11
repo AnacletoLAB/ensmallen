@@ -117,7 +117,6 @@ def MycobacteriumSp.Jls(
 	2015), 164757.Mjls_1821 (degree 2011) and 164757.Mjls_5233 (degree 1969).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumSp.Jls(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumSp.Jls(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumSp.Jls",

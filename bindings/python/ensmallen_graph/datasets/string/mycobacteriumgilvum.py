@@ -117,7 +117,6 @@ def MycobacteriumGilvum(
 	1948), 350054.Mflv_3564 (degree 1729) and 350054.Mflv_4983 (degree 1654).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumGilvum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumGilvum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumGilvum",

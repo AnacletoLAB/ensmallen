@@ -119,7 +119,6 @@ def ParasutterellaExcrementihominis(
 	724) and 762966.HMPREF9439_00594 (degree 722).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ParasutterellaExcrementihominis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ParasutterellaExcrementihominis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParasutterellaExcrementihominis",

@@ -119,7 +119,6 @@ def PhotobacteriumLeiognathiLrivu41(
 	(degree 1425) and 1248232.BANQ01000044_gene3375 (degree 1401).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PhotobacteriumLeiognathiLrivu41(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PhotobacteriumLeiognathiLrivu41(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotobacteriumLeiognathiLrivu41",

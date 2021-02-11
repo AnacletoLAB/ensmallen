@@ -117,7 +117,6 @@ def ThermosiphoMelanesiensis(
 	391009.Tmel_1623 (degree 780) and 391009.Tmel_1578 (degree 749).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermosiphoMelanesiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermosiphoMelanesiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermosiphoMelanesiensis",

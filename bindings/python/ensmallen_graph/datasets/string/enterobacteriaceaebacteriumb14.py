@@ -119,7 +119,6 @@ def EnterobacteriaceaeBacteriumB14(
 	(degree 1013) and 1214065.BAGV01000002_gene419 (degree 1011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def EnterobacteriaceaeBacteriumB14(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def EnterobacteriaceaeBacteriumB14(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterobacteriaceaeBacteriumB14",

@@ -117,7 +117,6 @@ def ClostridiumPapyrosolvens(
 	1411), 588581.Cpap_3966 (degree 1110) and 588581.Cpap_3172 (degree 1060).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumPapyrosolvens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumPapyrosolvens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumPapyrosolvens",

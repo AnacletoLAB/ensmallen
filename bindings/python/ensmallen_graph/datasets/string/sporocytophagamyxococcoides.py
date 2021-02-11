@@ -117,7 +117,6 @@ def SporocytophagaMyxococcoides(
 	153721.MYP_4397 (degree 1544) and 153721.MYP_244 (degree 1353).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SporocytophagaMyxococcoides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SporocytophagaMyxococcoides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SporocytophagaMyxococcoides",

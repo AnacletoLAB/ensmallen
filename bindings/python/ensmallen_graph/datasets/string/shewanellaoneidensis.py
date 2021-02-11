@@ -117,7 +117,6 @@ def ShewanellaOneidensis(
 	211586.SO_0840 (degree 1412) and 211586.SO_1602 (degree 1288).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaOneidensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaOneidensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaOneidensis",

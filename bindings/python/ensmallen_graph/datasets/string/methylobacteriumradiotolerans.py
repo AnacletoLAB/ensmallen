@@ -119,7 +119,6 @@ def MethylobacteriumRadiotolerans(
 	and 426355.Mrad2831_0036 (degree 1797).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MethylobacteriumRadiotolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MethylobacteriumRadiotolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacteriumRadiotolerans",

@@ -117,7 +117,6 @@ def SphaerobacterThermophilus(
 	1526), 479434.Sthe_2434 (degree 1325) and 479434.Sthe_1364 (degree 1190).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphaerobacterThermophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphaerobacterThermophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphaerobacterThermophilus",

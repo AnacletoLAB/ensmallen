@@ -117,7 +117,6 @@ def BrevundimonasSubvibrioides(
 	872), 633149.Bresu_2769 (degree 798) and 633149.Bresu_2770 (degree 793).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrevundimonasSubvibrioides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrevundimonasSubvibrioides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrevundimonasSubvibrioides",

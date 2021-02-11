@@ -130,7 +130,6 @@ def EcoEverglades(
 	64 (degree 61), 68 (degree 55) and 10 (degree 50).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def EcoEverglades(
 	        publisher={Eco Soc America}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def EcoEverglades(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EcoEverglades",

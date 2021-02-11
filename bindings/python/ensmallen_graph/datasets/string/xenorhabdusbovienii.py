@@ -117,7 +117,6 @@ def XenorhabdusBovienii(
 	963), 406818.XBJ1_2584 (degree 879) and 406818.XBJ1_0935 (degree 877).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XenorhabdusBovienii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XenorhabdusBovienii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XenorhabdusBovienii",

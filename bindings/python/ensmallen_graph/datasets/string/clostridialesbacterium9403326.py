@@ -119,7 +119,6 @@ def ClostridialesBacterium9403326(
 	(degree 608) and 938289.CAJN020000003_gene912 (degree 594).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ClostridialesBacterium9403326(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ClostridialesBacterium9403326(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridialesBacterium9403326",

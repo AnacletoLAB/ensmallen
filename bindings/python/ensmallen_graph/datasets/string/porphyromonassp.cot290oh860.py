@@ -117,7 +117,6 @@ def PorphyromonasSp.Cot290oh860(
 	584), 1515615.HQ41_03525 (degree 575) and 1515615.HQ41_09565 (degree 502).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PorphyromonasSp.Cot290oh860(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PorphyromonasSp.Cot290oh860(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorphyromonasSp.Cot290oh860",

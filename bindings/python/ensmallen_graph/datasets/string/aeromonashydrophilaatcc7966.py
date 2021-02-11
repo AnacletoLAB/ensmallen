@@ -117,7 +117,6 @@ def AeromonasHydrophilaAtcc7966(
 	380703.AHA_1497 (degree 1331) and 380703.AHA_2703 (degree 1305).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AeromonasHydrophilaAtcc7966(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AeromonasHydrophilaAtcc7966(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AeromonasHydrophilaAtcc7966",

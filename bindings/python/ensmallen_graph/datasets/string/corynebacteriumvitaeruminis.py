@@ -117,7 +117,6 @@ def CorynebacteriumVitaeruminis(
 	937), 1224164.B843_06575 (degree 812) and 1224164.B843_04230 (degree 794).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumVitaeruminis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumVitaeruminis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumVitaeruminis",

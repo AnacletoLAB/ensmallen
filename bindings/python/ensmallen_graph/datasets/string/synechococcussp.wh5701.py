@@ -117,7 +117,6 @@ def SynechococcusSp.Wh5701(
 	1038), 69042.WH5701_11779 (degree 972) and 69042.WH5701_11869 (degree 930).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SynechococcusSp.Wh5701(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SynechococcusSp.Wh5701(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechococcusSp.Wh5701",

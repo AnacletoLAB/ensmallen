@@ -117,7 +117,6 @@ def WolbachiaSp.Ooc(
 	100901.wOo_04550 (degree 349) and 100901.wOo_06190 (degree 345).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WolbachiaSp.Ooc(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WolbachiaSp.Ooc(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WolbachiaSp.Ooc",

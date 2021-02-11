@@ -117,7 +117,6 @@ def LeuconostocKimchii(
 	762051.LKI_05215 (degree 592) and 762051.LKI_05500 (degree 536).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocKimchii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocKimchii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocKimchii",

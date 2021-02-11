@@ -119,7 +119,6 @@ def BartonellaVinsoniiBerkhoffii(
 	1094497.BVwin_00590 (degree 494).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BartonellaVinsoniiBerkhoffii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BartonellaVinsoniiBerkhoffii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaVinsoniiBerkhoffii",

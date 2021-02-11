@@ -117,7 +117,6 @@ def HyphomonasJohnsonii(
 	1132), 1280950.HJO_02910 (degree 1008) and 1280950.HJO_03500 (degree 980).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasJohnsonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasJohnsonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasJohnsonii",

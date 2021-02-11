@@ -110,7 +110,6 @@ def BioGridYeast(
 	1234), 1388 (degree 1187), 1656 (degree 1132) and 35 (degree 818).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def BioGridYeast(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def BioGridYeast(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioGridYeast",

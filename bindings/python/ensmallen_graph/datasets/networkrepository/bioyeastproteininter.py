@@ -121,7 +121,6 @@ def BioYeastProteinInter(
 	38), 150 (degree 30), 1219 (degree 29) and 819 (degree 29).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def BioYeastProteinInter(
 	        year={2001}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def BioYeastProteinInter(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioYeastProteinInter",

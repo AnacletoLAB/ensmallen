@@ -117,7 +117,6 @@ def NitrosospiraMultiformis(
 	1100), 323848.Nmul_A0327 (degree 1078) and 323848.Nmul_A2207 (degree 1041).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosospiraMultiformis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosospiraMultiformis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosospiraMultiformis",

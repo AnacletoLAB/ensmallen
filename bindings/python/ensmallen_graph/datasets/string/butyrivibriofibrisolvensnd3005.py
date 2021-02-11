@@ -119,7 +119,6 @@ def ButyrivibrioFibrisolvensNd3005(
 	(degree 982) and 1280696.ATVY01000067_gene2473 (degree 961).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ButyrivibrioFibrisolvensNd3005(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ButyrivibrioFibrisolvensNd3005(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ButyrivibrioFibrisolvensNd3005",

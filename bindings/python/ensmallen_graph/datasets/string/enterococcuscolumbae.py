@@ -117,7 +117,6 @@ def EnterococcusColumbae(
 	773), 1121865.OMW_00898 (degree 742) and 1121865.OMW_00829 (degree 726).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusColumbae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusColumbae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusColumbae",

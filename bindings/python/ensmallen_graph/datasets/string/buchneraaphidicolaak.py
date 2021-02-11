@@ -115,7 +115,6 @@ def BuchneraAphidicolaAk(
 	258), 1005090.BAKON_019 (degree 257) and 1005090.BAKON_152 (degree 256).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BuchneraAphidicolaAk(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BuchneraAphidicolaAk(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BuchneraAphidicolaAk",

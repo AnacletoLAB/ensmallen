@@ -117,7 +117,6 @@ def TrypanosomaBrucei(
 	5691.AAZ10837 (degree 1229) and 5691.EAN78749 (degree 1138).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrypanosomaBrucei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrypanosomaBrucei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrypanosomaBrucei",

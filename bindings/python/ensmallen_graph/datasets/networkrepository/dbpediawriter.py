@@ -110,7 +110,6 @@ def DbpediaWriter(
 	(degree 237), 996 (degree 215), 1064 (degree 180) and 2667 (degree 143).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def DbpediaWriter(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def DbpediaWriter(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaWriter",

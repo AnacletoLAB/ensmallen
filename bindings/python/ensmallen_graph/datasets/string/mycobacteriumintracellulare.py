@@ -117,7 +117,6 @@ def MycobacteriumIntracellulare(
 	1741), 487521.OCU_39110 (degree 1735) and 487521.OCU_18170 (degree 1701).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumIntracellulare(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumIntracellulare(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumIntracellulare",

@@ -117,7 +117,6 @@ def ThermotogaSp.Mc24(
 	825), 1231241.Mc24_06110 (degree 697) and 1231241.Mc24_02493 (degree 686).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermotogaSp.Mc24(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermotogaSp.Mc24(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermotogaSp.Mc24",

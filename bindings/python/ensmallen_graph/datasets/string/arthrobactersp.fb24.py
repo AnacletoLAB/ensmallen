@@ -117,7 +117,6 @@ def ArthrobacterSp.Fb24(
 	1565), 290399.Arth_2644 (degree 1531) and 290399.Arth_2879 (degree 1525).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArthrobacterSp.Fb24(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArthrobacterSp.Fb24(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArthrobacterSp.Fb24",

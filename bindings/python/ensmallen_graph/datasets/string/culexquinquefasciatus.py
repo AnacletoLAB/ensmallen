@@ -119,7 +119,6 @@ def CulexQuinquefasciatus(
 	7176.CPIJ008013-PA (degree 2613).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CulexQuinquefasciatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CulexQuinquefasciatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CulexQuinquefasciatus",

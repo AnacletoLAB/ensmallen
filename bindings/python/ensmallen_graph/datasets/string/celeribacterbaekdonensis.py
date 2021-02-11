@@ -117,7 +117,6 @@ def CeleribacterBaekdonensis(
 	1214), 1208323.B30_06591 (degree 1161) and 1208323.B30_19228 (degree 1115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CeleribacterBaekdonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CeleribacterBaekdonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CeleribacterBaekdonensis",

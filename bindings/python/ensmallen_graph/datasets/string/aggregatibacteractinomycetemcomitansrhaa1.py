@@ -119,7 +119,6 @@ def AggregatibacterActinomycetemcomitansRhaa1(
 	and 1089447.RHAA1_01009 (degree 594).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AggregatibacterActinomycetemcomitansRhaa1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AggregatibacterActinomycetemcomitansRhaa1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AggregatibacterActinomycetemcomitansRhaa1",

@@ -117,7 +117,6 @@ def KitasatosporaCheerisanensis(
 	2314), 1348663.KCH_04120 (degree 2179) and 1348663.KCH_20570 (degree 2142).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KitasatosporaCheerisanensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KitasatosporaCheerisanensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KitasatosporaCheerisanensis",

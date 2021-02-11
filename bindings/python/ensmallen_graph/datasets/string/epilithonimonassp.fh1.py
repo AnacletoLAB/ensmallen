@@ -117,7 +117,6 @@ def EpilithonimonasSp.Fh1(
 	753), 1233951.IO90_18955 (degree 736) and 1233951.IO90_16770 (degree 706).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EpilithonimonasSp.Fh1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EpilithonimonasSp.Fh1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EpilithonimonasSp.Fh1",

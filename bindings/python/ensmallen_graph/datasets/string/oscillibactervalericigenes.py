@@ -117,7 +117,6 @@ def OscillibacterValericigenes(
 	1206), 693746.OBV_34190 (degree 1115) and 693746.OBV_41240 (degree 1103).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OscillibacterValericigenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OscillibacterValericigenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OscillibacterValericigenes",

@@ -123,7 +123,6 @@ def BioDrCx(
 	(degree 397), 419 (degree 381), 421 (degree 355) and 632 (degree 343).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def BioDrCx(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def BioDrCx(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioDrCx",

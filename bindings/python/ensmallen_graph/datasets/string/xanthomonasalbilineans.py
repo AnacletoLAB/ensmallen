@@ -117,7 +117,6 @@ def XanthomonasAlbilineans(
 	841), 380358.XALC_0085 (degree 809) and 380358.XALC_1579 (degree 808).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasAlbilineans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasAlbilineans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasAlbilineans",

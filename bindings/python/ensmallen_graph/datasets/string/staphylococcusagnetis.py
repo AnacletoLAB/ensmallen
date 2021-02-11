@@ -117,7 +117,6 @@ def StaphylococcusAgnetis(
 	698), 985762.SAGN_01967 (degree 688) and 985762.SAGN_01325 (degree 668).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusAgnetis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusAgnetis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusAgnetis",

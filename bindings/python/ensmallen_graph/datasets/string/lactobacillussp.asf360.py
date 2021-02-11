@@ -117,7 +117,6 @@ def LactobacillusSp.Asf360(
 	97137.C821_01209 (degree 562) and 97137.C821_00149 (degree 550).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusSp.Asf360(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusSp.Asf360(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusSp.Asf360",

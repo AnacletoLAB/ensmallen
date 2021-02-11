@@ -119,7 +119,6 @@ def FusobacteriumNucleatumVincentii3136a2(
 	(degree 664) and 469604.HMPREF0946_00616 (degree 628).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FusobacteriumNucleatumVincentii3136a2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FusobacteriumNucleatumVincentii3136a2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumNucleatumVincentii3136a2",

@@ -117,7 +117,6 @@ def LactococcusGarvieaeLg2(
 	420890.LCGL_1183 (degree 687) and 420890.LCGL_0134 (degree 624).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactococcusGarvieaeLg2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactococcusGarvieaeLg2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactococcusGarvieaeLg2",

@@ -119,7 +119,6 @@ def DesulfovibrioMagneticusIfrc170(
 	(degree 1416) and 1304872.JAGC01000003_gene3062 (degree 1413).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DesulfovibrioMagneticusIfrc170(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DesulfovibrioMagneticusIfrc170(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioMagneticusIfrc170",

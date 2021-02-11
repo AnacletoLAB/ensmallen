@@ -117,7 +117,6 @@ def SulfolobusIslandicus(
 	930945.SiRe_1458 (degree 754) and 930945.SiRe_2615 (degree 732).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfolobusIslandicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfolobusIslandicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfolobusIslandicus",

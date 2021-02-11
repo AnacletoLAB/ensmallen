@@ -117,7 +117,6 @@ def RahnellaAquatilisCip78.65(
 	1354), 745277.GRAQ_01273 (degree 1333) and 745277.GRAQ_01833 (degree 1238).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RahnellaAquatilisCip78.65(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RahnellaAquatilisCip78.65(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RahnellaAquatilisCip78.65",

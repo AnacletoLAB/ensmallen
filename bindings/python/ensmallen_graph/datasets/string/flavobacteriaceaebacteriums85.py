@@ -119,7 +119,6 @@ def FlavobacteriaceaeBacteriumS85(
 	(degree 720) and 1042376.AFPK01000026_gene2248 (degree 691).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FlavobacteriaceaeBacteriumS85(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FlavobacteriaceaeBacteriumS85(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriaceaeBacteriumS85",

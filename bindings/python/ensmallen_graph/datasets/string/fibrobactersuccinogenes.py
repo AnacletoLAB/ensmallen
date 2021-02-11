@@ -117,7 +117,6 @@ def FibrobacterSuccinogenes(
 	890), 59374.Fisuc_0875 (degree 844) and 59374.Fisuc_0185 (degree 840).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FibrobacterSuccinogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FibrobacterSuccinogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FibrobacterSuccinogenes",

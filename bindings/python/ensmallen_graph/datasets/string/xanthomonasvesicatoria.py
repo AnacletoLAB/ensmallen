@@ -117,7 +117,6 @@ def XanthomonasVesicatoria(
 	925775.XVE_1969 (degree 1115) and 925775.XVE_1868 (degree 1114).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasVesicatoria(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasVesicatoria(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasVesicatoria",

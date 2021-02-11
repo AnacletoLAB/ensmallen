@@ -119,7 +119,6 @@ def PseudomonasResinovoransNbrc106553(
 	1245471.PCA10_21930 (degree 1876).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasResinovoransNbrc106553(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasResinovoransNbrc106553(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasResinovoransNbrc106553",

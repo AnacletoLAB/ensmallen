@@ -117,7 +117,6 @@ def CellvibrioGilvus(
 	945), 593907.Celgi_1477 (degree 925) and 593907.Celgi_1960 (degree 912).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellvibrioGilvus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellvibrioGilvus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellvibrioGilvus",

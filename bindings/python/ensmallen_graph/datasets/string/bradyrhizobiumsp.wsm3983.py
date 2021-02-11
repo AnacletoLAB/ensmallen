@@ -119,7 +119,6 @@ def BradyrhizobiumSp.Wsm3983(
 	(degree 2582).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BradyrhizobiumSp.Wsm3983(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BradyrhizobiumSp.Wsm3983(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumSp.Wsm3983",

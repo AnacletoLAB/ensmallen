@@ -117,7 +117,6 @@ def MethanoplanusPetrolearius(
 	1057), 679926.Mpet_2779 (degree 1003) and 679926.Mpet_0202 (degree 969).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanoplanusPetrolearius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanoplanusPetrolearius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanoplanusPetrolearius",

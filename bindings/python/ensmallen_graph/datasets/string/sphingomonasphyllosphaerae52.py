@@ -119,7 +119,6 @@ def SphingomonasPhyllosphaerae52(
 	(degree 879) and 1090318.ATTI01000001_gene3374 (degree 878).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SphingomonasPhyllosphaerae52(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SphingomonasPhyllosphaerae52(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingomonasPhyllosphaerae52",

@@ -117,7 +117,6 @@ def AlteromonasAustralica(
 	979), 589873.EP13_03570 (degree 922) and 589873.EP13_07745 (degree 900).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlteromonasAustralica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlteromonasAustralica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlteromonasAustralica",

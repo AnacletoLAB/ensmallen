@@ -117,7 +117,6 @@ def MarinomonasMediterranea(
 	1073), 717774.Marme_4171 (degree 1027) and 717774.Marme_3167 (degree 1012).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinomonasMediterranea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinomonasMediterranea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinomonasMediterranea",

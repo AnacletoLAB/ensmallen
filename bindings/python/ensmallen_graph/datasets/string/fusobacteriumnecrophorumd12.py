@@ -117,7 +117,6 @@ def FusobacteriumNecrophorumD12(
 	643), 556263.FSEG_01638 (degree 625) and 556263.FSEG_01392 (degree 604).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumNecrophorumD12(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumNecrophorumD12(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumNecrophorumD12",

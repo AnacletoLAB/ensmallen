@@ -117,7 +117,6 @@ def LeifsoniaXyliCtcb07(
 	281090.Lxx05990 (degree 595) and 281090.Lxx19780 (degree 586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeifsoniaXyliCtcb07(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeifsoniaXyliCtcb07(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeifsoniaXyliCtcb07",

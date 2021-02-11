@@ -119,7 +119,6 @@ def BurkholderiaceaeSp.Mortierella(
 	(degree 669) and 1562701.BBOF01000044_gene1190 (degree 662).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BurkholderiaceaeSp.Mortierella(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BurkholderiaceaeSp.Mortierella(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaceaeSp.Mortierella",

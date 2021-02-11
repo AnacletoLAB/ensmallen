@@ -117,7 +117,6 @@ def RickettsiaAustralis(
 	420), 1105110.MC5_03870 (degree 396) and 1105110.MC5_06835 (degree 378).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsiaAustralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsiaAustralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsiaAustralis",

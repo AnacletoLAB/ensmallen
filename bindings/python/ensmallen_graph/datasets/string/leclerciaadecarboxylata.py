@@ -117,7 +117,6 @@ def LeclerciaAdecarboxylata(
 	1454), 911008.GLAD_02940 (degree 1291) and 911008.GLAD_01165 (degree 1263).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeclerciaAdecarboxylata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeclerciaAdecarboxylata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeclerciaAdecarboxylata",

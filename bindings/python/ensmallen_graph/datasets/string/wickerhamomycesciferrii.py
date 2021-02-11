@@ -115,7 +115,6 @@ def WickerhamomycesCiferrii(
 	1041607.K0KMV2 (degree 1146) and 1041607.K0KNL6 (degree 1134).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def WickerhamomycesCiferrii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def WickerhamomycesCiferrii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WickerhamomycesCiferrii",

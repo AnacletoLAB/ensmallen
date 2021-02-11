@@ -117,7 +117,6 @@ def AlphaProteobacteriumHimb59(
 	(degree 420).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlphaProteobacteriumHimb59(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlphaProteobacteriumHimb59(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlphaProteobacteriumHimb59",

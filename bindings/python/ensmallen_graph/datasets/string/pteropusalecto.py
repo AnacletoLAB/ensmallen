@@ -115,7 +115,6 @@ def PteropusAlecto(
 	9402.XP_006914684.1 (degree 3690) and 9402.XP_006916242.1 (degree 3681).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def PteropusAlecto(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def PteropusAlecto(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PteropusAlecto",

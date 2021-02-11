@@ -117,7 +117,6 @@ def LysobacterArseniciresistens(
 	821), 913325.N799_07495 (degree 813) and 913325.N799_00115 (degree 772).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysobacterArseniciresistens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysobacterArseniciresistens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysobacterArseniciresistens",

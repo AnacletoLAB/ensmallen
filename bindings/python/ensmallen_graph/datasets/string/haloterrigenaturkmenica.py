@@ -117,7 +117,6 @@ def HaloterrigenaTurkmenica(
 	1199), 543526.Htur_1904 (degree 1072) and 543526.Htur_3728 (degree 1040).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloterrigenaTurkmenica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloterrigenaTurkmenica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloterrigenaTurkmenica",

@@ -117,7 +117,6 @@ def BacteroidesFragilis3112(
 	1276), 457424.BFAG_03062 (degree 1245) and 457424.BFAG_02604 (degree 1180).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteroidesFragilis3112(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteroidesFragilis3112(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesFragilis3112",

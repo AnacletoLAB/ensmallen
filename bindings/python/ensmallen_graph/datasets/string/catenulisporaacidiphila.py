@@ -117,7 +117,6 @@ def CatenulisporaAcidiphila(
 	2456), 479433.Caci_4117 (degree 2455) and 479433.Caci_5677 (degree 2247).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CatenulisporaAcidiphila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CatenulisporaAcidiphila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CatenulisporaAcidiphila",

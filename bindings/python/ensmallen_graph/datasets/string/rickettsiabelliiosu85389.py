@@ -117,7 +117,6 @@ def RickettsiaBelliiOsu85389(
 	391896.A1I_01755 (degree 462) and 391896.A1I_04380 (degree 459).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsiaBelliiOsu85389(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsiaBelliiOsu85389(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsiaBelliiOsu85389",

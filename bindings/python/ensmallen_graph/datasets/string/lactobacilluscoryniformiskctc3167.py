@@ -119,7 +119,6 @@ def LactobacillusCoryniformisKctc3167(
 	(degree 817) and 913848.AELK01000053_gene2568 (degree 742).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LactobacillusCoryniformisKctc3167(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LactobacillusCoryniformisKctc3167(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusCoryniformisKctc3167",

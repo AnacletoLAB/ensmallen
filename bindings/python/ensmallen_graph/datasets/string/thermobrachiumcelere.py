@@ -117,7 +117,6 @@ def ThermobrachiumCelere(
 	1005), 941824.TCEL_00209 (degree 957) and 941824.TCEL_00563 (degree 953).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermobrachiumCelere(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermobrachiumCelere(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermobrachiumCelere",

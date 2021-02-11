@@ -115,7 +115,6 @@ def MycobacteriumTuberculosisH37rv(
 	83332.Rv1798 (degree 1537) and 83332.Rv3446c (degree 1422).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def MycobacteriumTuberculosisH37rv(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def MycobacteriumTuberculosisH37rv(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumTuberculosisH37rv",

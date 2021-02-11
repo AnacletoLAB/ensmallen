@@ -117,7 +117,6 @@ def BabelaMassiliensis(
 	673862.BABL1_488 (degree 403) and 673862.BABL1_479 (degree 401).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BabelaMassiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BabelaMassiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BabelaMassiliensis",

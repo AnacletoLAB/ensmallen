@@ -117,7 +117,6 @@ def PseudomonasCremoricolorata(
 	1149), 157783.LK03_10455 (degree 1086) and 157783.LK03_10450 (degree 1030).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasCremoricolorata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasCremoricolorata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasCremoricolorata",

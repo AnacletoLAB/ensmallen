@@ -117,7 +117,6 @@ def ThioclavaDalianensis(
 	1091), 1185766.DL1_07940 (degree 1071) and 1185766.DL1_08435 (degree 1032).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThioclavaDalianensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThioclavaDalianensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioclavaDalianensis",

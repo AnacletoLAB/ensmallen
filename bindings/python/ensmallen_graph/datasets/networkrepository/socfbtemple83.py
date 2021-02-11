@@ -135,7 +135,6 @@ def SocfbTemple83(
 	(degree 869).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -169,7 +168,6 @@ def SocfbTemple83(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -206,7 +204,6 @@ def SocfbTemple83(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbTemple83",

@@ -117,7 +117,6 @@ def CorynebacteriumDoosanense(
 	734), 558173.CDOO_07685 (degree 684) and 558173.CDOO_06865 (degree 660).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumDoosanense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumDoosanense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumDoosanense",

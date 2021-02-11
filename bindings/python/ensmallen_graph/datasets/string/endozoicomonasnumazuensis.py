@@ -117,7 +117,6 @@ def EndozoicomonasNumazuensis(
 	1017), 1137799.GZ78_10750 (degree 995) and 1137799.GZ78_17180 (degree 969).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EndozoicomonasNumazuensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EndozoicomonasNumazuensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndozoicomonasNumazuensis",

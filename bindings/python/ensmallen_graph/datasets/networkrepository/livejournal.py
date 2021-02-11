@@ -118,7 +118,6 @@ def Livejournal(
 	5204225 (degree 466651) and 5204271 (degree 454981).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def Livejournal(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def Livejournal(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Livejournal",

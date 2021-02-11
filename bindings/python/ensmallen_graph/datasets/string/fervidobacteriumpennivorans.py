@@ -115,7 +115,6 @@ def FervidobacteriumPennivorans(
 	962), 771875.Ferpe_1885 (degree 844) and 771875.Ferpe_1000 (degree 807).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def FervidobacteriumPennivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def FervidobacteriumPennivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FervidobacteriumPennivorans",

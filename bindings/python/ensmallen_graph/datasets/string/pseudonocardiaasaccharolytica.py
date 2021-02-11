@@ -119,7 +119,6 @@ def PseudonocardiaAsaccharolytica(
 	(degree 1326) and 1123024.AUII01000003_gene3576 (degree 1306).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudonocardiaAsaccharolytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudonocardiaAsaccharolytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudonocardiaAsaccharolytica",

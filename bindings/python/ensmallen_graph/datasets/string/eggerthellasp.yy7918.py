@@ -117,7 +117,6 @@ def EggerthellaSp.Yy7918(
 	818), 502558.EGYY_23240 (degree 783) and 502558.EGYY_24800 (degree 733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EggerthellaSp.Yy7918(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EggerthellaSp.Yy7918(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EggerthellaSp.Yy7918",

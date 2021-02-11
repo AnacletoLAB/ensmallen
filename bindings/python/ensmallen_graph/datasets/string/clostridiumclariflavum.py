@@ -117,7 +117,6 @@ def ClostridiumClariflavum(
 	1200), 720554.Clocl_1845 (degree 1074) and 720554.Clocl_2156 (degree 1072).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumClariflavum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumClariflavum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumClariflavum",

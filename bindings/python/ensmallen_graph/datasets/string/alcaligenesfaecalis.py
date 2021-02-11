@@ -117,7 +117,6 @@ def AlcaligenesFaecalis(
 	511.JT27_01410 (degree 996) and 511.JT27_14740 (degree 993).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlcaligenesFaecalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlcaligenesFaecalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcaligenesFaecalis",

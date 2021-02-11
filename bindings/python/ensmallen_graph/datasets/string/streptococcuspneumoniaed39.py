@@ -117,7 +117,6 @@ def StreptococcusPneumoniaeD39(
 	373153.SPD_2055 (degree 655) and 373153.SPD_0460 (degree 594).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusPneumoniaeD39(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusPneumoniaeD39(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusPneumoniaeD39",

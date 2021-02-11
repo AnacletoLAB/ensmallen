@@ -117,7 +117,6 @@ def MethanoregulaFormicica(
 	1007), 593750.Metfor_1886 (degree 998) and 593750.Metfor_0186 (degree 992).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanoregulaFormicica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanoregulaFormicica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanoregulaFormicica",

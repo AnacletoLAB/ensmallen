@@ -117,7 +117,6 @@ def BacteriovoraxSp.Bsw11iv(
 	1080), 1353529.M899_1411 (degree 1055) and 1353529.M899_0464 (degree 1051).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteriovoraxSp.Bsw11iv(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteriovoraxSp.Bsw11iv(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteriovoraxSp.Bsw11iv",

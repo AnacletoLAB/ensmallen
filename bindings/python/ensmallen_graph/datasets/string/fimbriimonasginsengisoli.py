@@ -117,7 +117,6 @@ def FimbriimonasGinsengisoli(
 	726), 661478.OP10G_1821 (degree 718) and 661478.OP10G_2419 (degree 717).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FimbriimonasGinsengisoli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FimbriimonasGinsengisoli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FimbriimonasGinsengisoli",

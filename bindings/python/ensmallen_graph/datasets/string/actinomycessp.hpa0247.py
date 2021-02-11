@@ -119,7 +119,6 @@ def ActinomycesSp.Hpa0247(
 	(degree 676).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinomycesSp.Hpa0247(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinomycesSp.Hpa0247(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinomycesSp.Hpa0247",

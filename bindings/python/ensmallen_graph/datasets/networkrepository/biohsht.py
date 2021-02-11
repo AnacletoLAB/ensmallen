@@ -123,7 +123,6 @@ def BioHsHt(
 	134 (degree 146), 63 (degree 132), 314 (degree 112) and 89 (degree 109).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def BioHsHt(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def BioHsHt(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioHsHt",

@@ -117,7 +117,6 @@ def BacillusCoagulans36d1(
 	875), 345219.Bcoa_0867 (degree 844) and 345219.Bcoa_1299 (degree 823).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusCoagulans36d1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusCoagulans36d1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusCoagulans36d1",

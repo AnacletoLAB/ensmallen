@@ -122,7 +122,6 @@ def SocTwitter2010(
 	384210) and 11980205 (degree 358469).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocTwitter2010(
 	        publisher={ACM Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocTwitter2010(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocTwitter2010",

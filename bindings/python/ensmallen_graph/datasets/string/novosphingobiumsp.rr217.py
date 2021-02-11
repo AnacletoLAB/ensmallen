@@ -117,7 +117,6 @@ def NovosphingobiumSp.Rr217(
 	555793.WSK_3032 (degree 1044) and 555793.WSK_2712 (degree 1037).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NovosphingobiumSp.Rr217(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NovosphingobiumSp.Rr217(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NovosphingobiumSp.Rr217",

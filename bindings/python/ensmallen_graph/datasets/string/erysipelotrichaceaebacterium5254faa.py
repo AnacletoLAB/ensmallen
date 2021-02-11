@@ -119,7 +119,6 @@ def ErysipelotrichaceaeBacterium5254faa(
 	1179) and 552396.HMPREF0863_04159 (degree 1138).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ErysipelotrichaceaeBacterium5254faa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ErysipelotrichaceaeBacterium5254faa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErysipelotrichaceaeBacterium5254faa",

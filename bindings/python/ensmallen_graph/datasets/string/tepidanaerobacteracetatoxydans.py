@@ -119,7 +119,6 @@ def TepidanaerobacterAcetatoxydans(
 	1209989.TepiRe1_2484 (degree 839).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def TepidanaerobacterAcetatoxydans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def TepidanaerobacterAcetatoxydans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TepidanaerobacterAcetatoxydans",

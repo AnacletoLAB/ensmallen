@@ -115,7 +115,6 @@ def BuchneraAphidicolaCtu(
 	261317.BCTU_019 (degree 201) and 261317.BCTU_100 (degree 198).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BuchneraAphidicolaCtu(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BuchneraAphidicolaCtu(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BuchneraAphidicolaCtu",

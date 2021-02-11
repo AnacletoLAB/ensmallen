@@ -117,7 +117,6 @@ def AnoxybacillusGonensis(
 	921), 198467.NP92_09665 (degree 900) and 198467.NP92_09945 (degree 878).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnoxybacillusGonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnoxybacillusGonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnoxybacillusGonensis",

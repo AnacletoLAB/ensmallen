@@ -119,7 +119,6 @@ def MycobacteriumParascrofulaceum(
 	1936) and 525368.HMPREF0591_3521 (degree 1874).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MycobacteriumParascrofulaceum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MycobacteriumParascrofulaceum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumParascrofulaceum",

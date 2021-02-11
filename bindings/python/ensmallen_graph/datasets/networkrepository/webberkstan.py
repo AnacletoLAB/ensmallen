@@ -110,7 +110,6 @@ def WebBerkstan(
 	(degree 58), 4031 (degree 49), 1499 (degree 42) and 8906 (degree 41).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def WebBerkstan(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def WebBerkstan(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebBerkstan",

@@ -119,7 +119,6 @@ def StreptococcusConstellatusPharyngisSk1060(
 	(degree 1035) and 1035184.HMPREF1042_2159 (degree 908).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusConstellatusPharyngisSk1060(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusConstellatusPharyngisSk1060(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusConstellatusPharyngisSk1060",

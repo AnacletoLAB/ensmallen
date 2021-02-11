@@ -117,7 +117,6 @@ def ProchlorococcusMarinusMit9313(
 	(degree 633), 74547.PMT_0356 (degree 620) and 74547.PMT_1444 (degree 617).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProchlorococcusMarinusMit9313(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProchlorococcusMarinusMit9313(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusMarinusMit9313",

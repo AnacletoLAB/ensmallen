@@ -117,7 +117,6 @@ def RhodanobacterFulvus(
 	1021), 1163408.UU9_05284 (degree 1011) and 1163408.UU9_04467 (degree 1003).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodanobacterFulvus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodanobacterFulvus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodanobacterFulvus",

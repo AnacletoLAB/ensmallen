@@ -117,7 +117,6 @@ def RoseiflexusCastenholzii(
 	1915), 383372.Rcas_2930 (degree 1656) and 383372.Rcas_2466 (degree 1513).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RoseiflexusCastenholzii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RoseiflexusCastenholzii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RoseiflexusCastenholzii",

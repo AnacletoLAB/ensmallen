@@ -117,7 +117,6 @@ def MannheimiaHaemolyticaBovine(
 	669262.COK_0981 (degree 734) and 669262.COK_2083 (degree 712).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MannheimiaHaemolyticaBovine(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MannheimiaHaemolyticaBovine(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MannheimiaHaemolyticaBovine",

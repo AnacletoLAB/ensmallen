@@ -119,7 +119,6 @@ def GammaproteobacteriaBacteriumBdw918(
 	1188).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GammaproteobacteriaBacteriumBdw918(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GammaproteobacteriaBacteriumBdw918(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GammaproteobacteriaBacteriumBdw918",

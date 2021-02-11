@@ -117,7 +117,6 @@ def ThermococcusSp.Am4(
 	246969.TAM4_85 (degree 507) and 246969.TAM4_1211 (degree 507).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermococcusSp.Am4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermococcusSp.Am4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermococcusSp.Am4",

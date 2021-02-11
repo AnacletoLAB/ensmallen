@@ -119,7 +119,6 @@ def PseudoalteromonasLuteoviolacea(
 	and 1268239.PALB_19080 (degree 1620).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudoalteromonasLuteoviolacea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudoalteromonasLuteoviolacea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasLuteoviolacea",

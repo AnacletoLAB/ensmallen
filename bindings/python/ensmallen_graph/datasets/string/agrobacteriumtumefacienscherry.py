@@ -119,7 +119,6 @@ def AgrobacteriumTumefaciensCherry(
 	1281779.H009_00954 (degree 1389).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AgrobacteriumTumefaciensCherry(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AgrobacteriumTumefaciensCherry(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AgrobacteriumTumefaciensCherry",

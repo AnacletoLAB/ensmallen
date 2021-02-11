@@ -117,7 +117,6 @@ def PseudomonasStutzeriTs44(
 	1297), 477228.YO5_08018 (degree 1251) and 477228.YO5_02977 (degree 1193).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasStutzeriTs44(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasStutzeriTs44(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasStutzeriTs44",

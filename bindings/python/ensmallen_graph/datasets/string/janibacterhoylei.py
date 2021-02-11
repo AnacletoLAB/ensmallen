@@ -117,7 +117,6 @@ def JanibacterHoylei(
 	980), 1210046.B277_02888 (degree 925) and 1210046.B277_12261 (degree 923).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def JanibacterHoylei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def JanibacterHoylei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "JanibacterHoylei",

@@ -117,7 +117,6 @@ def GeobacterSp.M18(
 	1598), 443143.GM18_2128 (degree 1592) and 443143.GM18_0172 (degree 1430).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacterSp.M18(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacterSp.M18(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacterSp.M18",

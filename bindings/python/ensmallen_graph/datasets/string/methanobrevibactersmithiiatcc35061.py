@@ -119,7 +119,6 @@ def MethanobrevibacterSmithiiAtcc35061(
 	629).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MethanobrevibacterSmithiiAtcc35061(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MethanobrevibacterSmithiiAtcc35061(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanobrevibacterSmithiiAtcc35061",

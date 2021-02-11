@@ -117,7 +117,6 @@ def FrancisellaSp.Fsc1006(
 	584), 1547445.LO80_00875 (degree 570) and 1547445.LO80_06475 (degree 538).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrancisellaSp.Fsc1006(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrancisellaSp.Fsc1006(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrancisellaSp.Fsc1006",

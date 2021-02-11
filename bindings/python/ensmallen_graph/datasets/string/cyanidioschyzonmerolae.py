@@ -117,7 +117,6 @@ def CyanidioschyzonMerolae(
 	45157.CMJ305CT (degree 1068) and 45157.CMT083CT (degree 1065).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CyanidioschyzonMerolae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CyanidioschyzonMerolae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CyanidioschyzonMerolae",

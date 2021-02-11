@@ -117,7 +117,6 @@ def FlavobacteriumSuncheonense(
 	795), 1121899.Q764_00890 (degree 749) and 1121899.Q764_13010 (degree 722).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumSuncheonense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumSuncheonense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumSuncheonense",

@@ -117,7 +117,6 @@ def SlackiaHeliotrinireducens(
 	792), 471855.Shel_06740 (degree 699) and 471855.Shel_07200 (degree 689).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SlackiaHeliotrinireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SlackiaHeliotrinireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SlackiaHeliotrinireducens",

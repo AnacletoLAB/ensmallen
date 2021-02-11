@@ -117,7 +117,6 @@ def DickeyaDadantiiEch703(
 	1104), 579405.Dd703_3633 (degree 1097) and 579405.Dd703_2728 (degree 1067).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DickeyaDadantiiEch703(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DickeyaDadantiiEch703(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DickeyaDadantiiEch703",

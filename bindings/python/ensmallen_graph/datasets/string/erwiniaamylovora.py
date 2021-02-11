@@ -117,7 +117,6 @@ def ErwiniaAmylovora(
 	1095), 665029.EAMY_0449 (degree 1045) and 665029.EAMY_0308 (degree 1018).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErwiniaAmylovora(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErwiniaAmylovora(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErwiniaAmylovora",

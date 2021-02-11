@@ -117,7 +117,6 @@ def StreptomycesSp.Spb78(
 	1550), 591157.SSLG_02350 (degree 1530) and 591157.SSLG_02340 (degree 1517).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesSp.Spb78(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesSp.Spb78(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesSp.Spb78",

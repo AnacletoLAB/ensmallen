@@ -117,7 +117,6 @@ def CampylobacterLari(
 	306263.Cla_0388 (degree 578) and 306263.Cla_1159 (degree 556).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CampylobacterLari(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CampylobacterLari(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CampylobacterLari",

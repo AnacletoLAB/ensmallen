@@ -117,7 +117,6 @@ def SerratiaFonticolaAuap2c(
 	1024), 1332071.L581_0606 (degree 967) and 1332071.L581_1850 (degree 967).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SerratiaFonticolaAuap2c(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SerratiaFonticolaAuap2c(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SerratiaFonticolaAuap2c",

@@ -117,7 +117,6 @@ def OceanimonasSp.Gk1(
 	1168), 511062.GU3_03910 (degree 1119) and 511062.GU3_14265 (degree 1074).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OceanimonasSp.Gk1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OceanimonasSp.Gk1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceanimonasSp.Gk1",

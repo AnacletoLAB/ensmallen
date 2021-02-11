@@ -117,7 +117,6 @@ def GeobacillusSp.Wch70(
 	846), 471223.GWCH70_0009 (degree 816) and 471223.GWCH70_2648 (degree 808).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacillusSp.Wch70(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacillusSp.Wch70(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacillusSp.Wch70",

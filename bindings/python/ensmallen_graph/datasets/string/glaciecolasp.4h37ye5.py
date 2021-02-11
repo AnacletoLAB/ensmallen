@@ -117,7 +117,6 @@ def GlaciecolaSp.4h37ye5(
 	1350), 983545.Glaag_1213 (degree 1192) and 983545.Glaag_0988 (degree 1111).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaSp.4h37ye5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaSp.4h37ye5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaSp.4h37ye5",

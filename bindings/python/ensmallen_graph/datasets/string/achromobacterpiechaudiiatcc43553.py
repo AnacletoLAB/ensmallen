@@ -119,7 +119,6 @@ def AchromobacterPiechaudiiAtcc43553(
 	1647) and 742159.HMPREF0004_3980 (degree 1633).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AchromobacterPiechaudiiAtcc43553(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AchromobacterPiechaudiiAtcc43553(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AchromobacterPiechaudiiAtcc43553",

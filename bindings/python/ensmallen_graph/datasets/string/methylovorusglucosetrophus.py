@@ -117,7 +117,6 @@ def MethylovorusGlucosetrophus(
 	751), 582744.Msip34_1226 (degree 748) and 582744.Msip34_1098 (degree 733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylovorusGlucosetrophus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylovorusGlucosetrophus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylovorusGlucosetrophus",

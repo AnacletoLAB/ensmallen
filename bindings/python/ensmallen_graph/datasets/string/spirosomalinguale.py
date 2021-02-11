@@ -117,7 +117,6 @@ def SpirosomaLinguale(
 	1556), 504472.Slin_3312 (degree 1479) and 504472.Slin_0474 (degree 1440).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SpirosomaLinguale(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SpirosomaLinguale(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpirosomaLinguale",

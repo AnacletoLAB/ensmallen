@@ -119,7 +119,6 @@ def ThermodesulfobacteriumHydrogeniphilum(
 	(degree 623) and 161156.JQKW01000009_gene1576 (degree 600).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThermodesulfobacteriumHydrogeniphilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThermodesulfobacteriumHydrogeniphilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermodesulfobacteriumHydrogeniphilum",

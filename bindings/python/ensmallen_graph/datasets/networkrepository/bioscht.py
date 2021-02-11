@@ -123,7 +123,6 @@ def BioScHt(
 	(degree 472), 233 (degree 419), 231 (degree 419) and 230 (degree 419).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def BioScHt(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def BioScHt(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioScHt",

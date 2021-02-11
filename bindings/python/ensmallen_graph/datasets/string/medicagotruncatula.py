@@ -117,7 +117,6 @@ def MedicagoTruncatula(
 	3880.AES88228 (degree 4736) and 3880.AES68722 (degree 4527).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MedicagoTruncatula(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MedicagoTruncatula(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MedicagoTruncatula",

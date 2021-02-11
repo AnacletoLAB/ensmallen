@@ -117,7 +117,6 @@ def BacteriovoraxSp.Bal6x(
 	825), 1201290.M902_2618 (degree 819) and 1201290.M902_1696 (degree 776).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteriovoraxSp.Bal6x(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteriovoraxSp.Bal6x(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteriovoraxSp.Bal6x",

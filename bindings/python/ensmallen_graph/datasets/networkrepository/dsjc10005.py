@@ -123,7 +123,6 @@ def Dsjc10005(
 	792 (degree 545), 80 (degree 545), 597 (degree 543) and 428 (degree 542).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Dsjc10005(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Dsjc10005(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Dsjc10005",

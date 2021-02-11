@@ -117,7 +117,6 @@ def SalmonellaBongoriNctc12419(
 	218493.SBG_2288 (degree 1039) and 218493.SBG_3387 (degree 1027).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SalmonellaBongoriNctc12419(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SalmonellaBongoriNctc12419(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SalmonellaBongoriNctc12419",

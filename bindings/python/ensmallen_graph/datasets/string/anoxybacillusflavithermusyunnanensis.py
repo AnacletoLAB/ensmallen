@@ -119,7 +119,6 @@ def AnoxybacillusFlavithermusYunnanensis(
 	(degree 1033) and 1380408.AVGH01000024_gene1535 (degree 935).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AnoxybacillusFlavithermusYunnanensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AnoxybacillusFlavithermusYunnanensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnoxybacillusFlavithermusYunnanensis",

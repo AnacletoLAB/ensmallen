@@ -117,7 +117,6 @@ def RahnellaSp.Y9602(
 	1334), 741091.Rahaq_1057 (degree 1220) and 741091.Rahaq_3955 (degree 1208).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RahnellaSp.Y9602(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RahnellaSp.Y9602(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RahnellaSp.Y9602",

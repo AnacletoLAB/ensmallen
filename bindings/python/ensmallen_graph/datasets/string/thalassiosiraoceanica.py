@@ -117,7 +117,6 @@ def ThalassiosiraOceanica(
 	159749.K0T512 (degree 2783) and 159749.K0SU06 (degree 2518).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThalassiosiraOceanica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThalassiosiraOceanica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThalassiosiraOceanica",

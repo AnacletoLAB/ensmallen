@@ -119,7 +119,6 @@ def VaribaculumCambrienseDsm15806(
 	(degree 615) and 1123488.ATUF01000002_gene522 (degree 598).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def VaribaculumCambrienseDsm15806(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def VaribaculumCambrienseDsm15806(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VaribaculumCambrienseDsm15806",

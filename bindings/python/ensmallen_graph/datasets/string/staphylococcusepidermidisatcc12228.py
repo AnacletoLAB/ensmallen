@@ -117,7 +117,6 @@ def StaphylococcusEpidermidisAtcc12228(
 	(degree 712), 176280.SE_2348 (degree 712) and 176280.SE_0895 (degree 701).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusEpidermidisAtcc12228(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusEpidermidisAtcc12228(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusEpidermidisAtcc12228",

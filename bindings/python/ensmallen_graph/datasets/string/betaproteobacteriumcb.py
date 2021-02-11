@@ -117,7 +117,6 @@ def BetaProteobacteriumCb(
 	543913.D521_0840 (degree 677) and 543913.D521_0548 (degree 667).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BetaProteobacteriumCb(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BetaProteobacteriumCb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BetaProteobacteriumCb",

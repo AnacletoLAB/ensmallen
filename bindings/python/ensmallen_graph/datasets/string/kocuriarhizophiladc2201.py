@@ -117,7 +117,6 @@ def KocuriaRhizophilaDc2201(
 	378753.KRH_03980 (degree 809) and 378753.KRH_15600 (degree 805).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KocuriaRhizophilaDc2201(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KocuriaRhizophilaDc2201(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KocuriaRhizophilaDc2201",

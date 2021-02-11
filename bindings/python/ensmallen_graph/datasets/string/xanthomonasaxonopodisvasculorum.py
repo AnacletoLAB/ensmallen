@@ -119,7 +119,6 @@ def XanthomonasAxonopodisVasculorum(
 	325777.GW15_0211105 (degree 1171).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def XanthomonasAxonopodisVasculorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def XanthomonasAxonopodisVasculorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasAxonopodisVasculorum",

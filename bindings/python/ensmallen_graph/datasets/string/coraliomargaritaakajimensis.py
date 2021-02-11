@@ -117,7 +117,6 @@ def CoraliomargaritaAkajimensis(
 	887), 583355.Caka_1152 (degree 867) and 583355.Caka_2841 (degree 857).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CoraliomargaritaAkajimensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CoraliomargaritaAkajimensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CoraliomargaritaAkajimensis",

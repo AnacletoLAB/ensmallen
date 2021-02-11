@@ -117,7 +117,6 @@ def HerbaspirillumSp.Gw103(
 	1612), 1175306.GWL_25310 (degree 1599) and 1175306.GWL_32840 (degree 1586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HerbaspirillumSp.Gw103(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HerbaspirillumSp.Gw103(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HerbaspirillumSp.Gw103",

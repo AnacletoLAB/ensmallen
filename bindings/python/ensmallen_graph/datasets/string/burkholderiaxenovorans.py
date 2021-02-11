@@ -117,7 +117,6 @@ def BurkholderiaXenovorans(
 	3341), 266265.Bxe_B1520 (degree 3000) and 266265.Bxe_C0521 (degree 2997).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaXenovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaXenovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaXenovorans",

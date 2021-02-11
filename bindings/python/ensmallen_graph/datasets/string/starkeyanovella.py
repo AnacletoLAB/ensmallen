@@ -117,7 +117,6 @@ def StarkeyaNovella(
 	1538), 639283.Snov_4473 (degree 1360) and 639283.Snov_2232 (degree 1244).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StarkeyaNovella(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StarkeyaNovella(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StarkeyaNovella",

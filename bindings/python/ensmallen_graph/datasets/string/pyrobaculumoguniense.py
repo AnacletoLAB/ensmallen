@@ -117,7 +117,6 @@ def PyrobaculumOguniense(
 	698757.Pogu_1175 (degree 785) and 698757.Pogu_2752 (degree 769).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrobaculumOguniense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrobaculumOguniense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrobaculumOguniense",

@@ -117,7 +117,6 @@ def SorangiumCellulosumSoCe56(
 	448385.sce8671 (degree 2033) and 448385.sce3221 (degree 2027).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SorangiumCellulosumSoCe56(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SorangiumCellulosumSoCe56(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SorangiumCellulosumSoCe56",

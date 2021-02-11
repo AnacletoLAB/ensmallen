@@ -119,7 +119,6 @@ def LechevalieriaAerocolonigenes(
 	2902) and 68170.KL590481_gene1373 (degree 2883).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LechevalieriaAerocolonigenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LechevalieriaAerocolonigenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LechevalieriaAerocolonigenes",

@@ -123,7 +123,6 @@ def TechAsCaida2007(
 	(degree 2052), 96 (degree 1699), 276 (degree 1677) and 882 (degree 1631).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def TechAsCaida2007(
 	        year={2013}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def TechAsCaida2007(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechAsCaida2007",

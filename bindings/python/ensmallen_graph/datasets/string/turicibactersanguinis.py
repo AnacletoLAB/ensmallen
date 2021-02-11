@@ -117,7 +117,6 @@ def TuricibacterSanguinis(
 	702450.CUW_1700 (degree 775) and 702450.CUW_1668 (degree 770).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TuricibacterSanguinis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TuricibacterSanguinis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TuricibacterSanguinis",

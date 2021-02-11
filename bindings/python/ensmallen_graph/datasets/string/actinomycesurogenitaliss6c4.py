@@ -119,7 +119,6 @@ def ActinomycesUrogenitalisS6c4(
 	812) and 1284679.HMPREF1626_00280 (degree 774).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinomycesUrogenitalisS6c4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinomycesUrogenitalisS6c4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinomycesUrogenitalisS6c4",

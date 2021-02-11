@@ -117,7 +117,6 @@ def PseudovibrioSp.Fobeg1(
 	911045.PSE_1753 (degree 1478) and 911045.PSE_2688 (degree 1451).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudovibrioSp.Fobeg1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudovibrioSp.Fobeg1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudovibrioSp.Fobeg1",

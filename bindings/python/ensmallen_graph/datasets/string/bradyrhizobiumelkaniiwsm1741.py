@@ -119,7 +119,6 @@ def BradyrhizobiumElkaniiWsm1741(
 	(degree 2087) and 1038859.AXAU01000013_gene6519 (degree 2017).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BradyrhizobiumElkaniiWsm1741(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BradyrhizobiumElkaniiWsm1741(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumElkaniiWsm1741",

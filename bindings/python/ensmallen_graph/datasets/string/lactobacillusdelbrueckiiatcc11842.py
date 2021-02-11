@@ -117,7 +117,6 @@ def LactobacillusDelbrueckiiAtcc11842(
 	(degree 504), 390333.Ldb1411 (degree 501) and 390333.Ldb0125 (degree 495).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusDelbrueckiiAtcc11842(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusDelbrueckiiAtcc11842(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusDelbrueckiiAtcc11842",

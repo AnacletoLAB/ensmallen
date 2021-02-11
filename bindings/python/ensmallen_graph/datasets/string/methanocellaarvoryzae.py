@@ -117,7 +117,6 @@ def MethanocellaArvoryzae(
 	351160.RCIX750 (degree 863) and 351160.RCIX770 (degree 851).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanocellaArvoryzae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanocellaArvoryzae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanocellaArvoryzae",

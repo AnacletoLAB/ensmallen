@@ -119,7 +119,6 @@ def AiluropodaMelanoleuca(
 	3657) and 9646.ENSAMEP00000006146 (degree 3636).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AiluropodaMelanoleuca(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AiluropodaMelanoleuca(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AiluropodaMelanoleuca",

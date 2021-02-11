@@ -117,7 +117,6 @@ def ChromobacteriumViolaceum(
 	243365.CV_2643 (degree 1544) and 243365.CV_1190 (degree 1528).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChromobacteriumViolaceum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChromobacteriumViolaceum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChromobacteriumViolaceum",

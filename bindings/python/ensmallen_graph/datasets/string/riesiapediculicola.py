@@ -115,7 +115,6 @@ def RiesiaPediculicola(
 	254), 515618.RIEPE_0548 (degree 253) and 515618.RIEPE_0178 (degree 236).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def RiesiaPediculicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def RiesiaPediculicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RiesiaPediculicola",

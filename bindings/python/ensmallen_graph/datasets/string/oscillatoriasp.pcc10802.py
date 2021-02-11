@@ -119,7 +119,6 @@ def OscillatoriaSp.Pcc10802(
 	(degree 1971).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def OscillatoriaSp.Pcc10802(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def OscillatoriaSp.Pcc10802(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OscillatoriaSp.Pcc10802",

@@ -117,7 +117,6 @@ def LachnospiraceaeBacterium31(
 	1385), 397288.C806_04212 (degree 1367) and 397288.C806_02769 (degree 1230).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LachnospiraceaeBacterium31(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LachnospiraceaeBacterium31(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacterium31",

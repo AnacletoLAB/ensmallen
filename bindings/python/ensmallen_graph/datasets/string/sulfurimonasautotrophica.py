@@ -115,7 +115,6 @@ def SulfurimonasAutotrophica(
 	563040.Saut_1301 (degree 727) and 563040.Saut_1217 (degree 718).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def SulfurimonasAutotrophica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def SulfurimonasAutotrophica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurimonasAutotrophica",

@@ -123,7 +123,6 @@ def BioCePg(
 	117 (degree 565), 89 (degree 479), 27 (degree 446) and 20 (degree 440).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def BioCePg(
 	        publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def BioCePg(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioCePg",

@@ -117,7 +117,6 @@ def CaenorhabditisElegans(
 	(degree 2784), 6239.C47E8.5.2 (degree 2700) and 6239.D2021.1 (degree 2695).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaenorhabditisElegans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaenorhabditisElegans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaenorhabditisElegans",

@@ -117,7 +117,6 @@ def RuegeriaSp.Tm1040(
 	1012), 292414.TM1040_1224 (degree 900) and 292414.TM1040_2309 (degree 882).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RuegeriaSp.Tm1040(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RuegeriaSp.Tm1040(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuegeriaSp.Tm1040",

@@ -115,7 +115,6 @@ def TreponemaPallidum(
 	495), 243276.TPANIC_0667 (degree 489) and 243276.TPANIC_0521 (degree 484).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def TreponemaPallidum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def TreponemaPallidum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaPallidum",

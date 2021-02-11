@@ -117,7 +117,6 @@ def DesulfotaleaPsychrophila(
 	177439.DP0740 (degree 1050) and 177439.DP0903 (degree 1049).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotaleaPsychrophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotaleaPsychrophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotaleaPsychrophila",

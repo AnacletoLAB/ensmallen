@@ -117,7 +117,6 @@ def IdiomarinaSp.Mccc1a10513(
 	747), 1517416.IDAT_11540 (degree 744) and 1517416.IDAT_08870 (degree 736).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IdiomarinaSp.Mccc1a10513(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IdiomarinaSp.Mccc1a10513(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IdiomarinaSp.Mccc1a10513",

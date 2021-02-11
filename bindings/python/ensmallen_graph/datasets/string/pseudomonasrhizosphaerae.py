@@ -117,7 +117,6 @@ def PseudomonasRhizosphaerae(
 	986), 216142.LT40_20540 (degree 961) and 216142.LT40_20535 (degree 930).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasRhizosphaerae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasRhizosphaerae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasRhizosphaerae",

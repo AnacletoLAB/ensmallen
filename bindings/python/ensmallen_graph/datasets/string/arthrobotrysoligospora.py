@@ -117,7 +117,6 @@ def ArthrobotrysOligospora(
 	13349.G1XHI1 (degree 1343) and 13349.G1XMF7 (degree 1311).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArthrobotrysOligospora(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArthrobotrysOligospora(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArthrobotrysOligospora",

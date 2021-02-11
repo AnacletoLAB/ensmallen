@@ -115,7 +115,6 @@ def EscherichiaColiK12W3110(
 	316407.1805567 (degree 1256) and 316407.85676006 (degree 1157).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def EscherichiaColiK12W3110(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def EscherichiaColiK12W3110(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColiK12W3110",

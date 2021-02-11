@@ -117,7 +117,6 @@ def ChryseobacteriumVrystaatense(
 	948), 307480.IW16_00025 (degree 930) and 307480.IW16_14670 (degree 916).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChryseobacteriumVrystaatense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChryseobacteriumVrystaatense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChryseobacteriumVrystaatense",

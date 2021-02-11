@@ -117,7 +117,6 @@ def BacteroidesHelcogenes(
 	960), 693979.Bache_0399 (degree 929) and 693979.Bache_1451 (degree 883).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteroidesHelcogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteroidesHelcogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesHelcogenes",

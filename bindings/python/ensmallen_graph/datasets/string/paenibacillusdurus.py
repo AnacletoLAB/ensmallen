@@ -117,7 +117,6 @@ def PaenibacillusDurus(
 	1673), 44251.PDUR_18640 (degree 1293) and 44251.PDUR_18540 (degree 1266).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusDurus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusDurus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusDurus",

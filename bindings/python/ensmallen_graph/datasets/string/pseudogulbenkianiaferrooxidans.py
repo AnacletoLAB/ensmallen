@@ -119,7 +119,6 @@ def PseudogulbenkianiaFerrooxidans(
 	1878) and 279714.FuraDRAFT_1538 (degree 1867).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudogulbenkianiaFerrooxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudogulbenkianiaFerrooxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudogulbenkianiaFerrooxidans",

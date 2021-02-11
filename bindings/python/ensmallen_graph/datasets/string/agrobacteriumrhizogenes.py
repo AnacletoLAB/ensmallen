@@ -117,7 +117,6 @@ def AgrobacteriumRhizogenes(
 	359.CN09_03380 (degree 3256) and 359.CN09_14055 (degree 3149).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AgrobacteriumRhizogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AgrobacteriumRhizogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AgrobacteriumRhizogenes",

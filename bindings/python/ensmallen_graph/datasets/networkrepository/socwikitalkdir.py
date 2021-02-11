@@ -123,7 +123,6 @@ def SocWikiTalkDir(
 	19587) and 17066 (degree 19311).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocWikiTalkDir(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocWikiTalkDir(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocWikiTalkDir",

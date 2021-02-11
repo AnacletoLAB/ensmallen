@@ -117,7 +117,6 @@ def ChlorobiumPhaeovibrioides(
 	290318.Cvib_0436 (degree 667) and 290318.Cvib_1589 (degree 624).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlorobiumPhaeovibrioides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlorobiumPhaeovibrioides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlorobiumPhaeovibrioides",

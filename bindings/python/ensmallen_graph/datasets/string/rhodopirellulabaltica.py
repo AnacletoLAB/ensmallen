@@ -117,7 +117,6 @@ def RhodopirellulaBaltica(
 	243090.RB10446 (degree 1755) and 243090.RB12799 (degree 1586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodopirellulaBaltica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodopirellulaBaltica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodopirellulaBaltica",

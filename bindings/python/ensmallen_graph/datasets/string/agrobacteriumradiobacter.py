@@ -117,7 +117,6 @@ def AgrobacteriumRadiobacter(
 	1646), 311403.Arad_3836 (degree 1591) and 311403.Arad_0510 (degree 1401).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AgrobacteriumRadiobacter(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AgrobacteriumRadiobacter(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AgrobacteriumRadiobacter",

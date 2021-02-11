@@ -117,7 +117,6 @@ def ListeriaSeeligeri12b(
 	683837.lse_0205 (degree 834) and 683837.lse_1372 (degree 760).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ListeriaSeeligeri12b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ListeriaSeeligeri12b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ListeriaSeeligeri12b",

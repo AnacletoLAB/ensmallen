@@ -117,7 +117,6 @@ def DermacoccusNishinomiyaensis(
 	1274.HX89_13450 (degree 687) and 1274.HX89_08285 (degree 684).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DermacoccusNishinomiyaensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DermacoccusNishinomiyaensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DermacoccusNishinomiyaensis",

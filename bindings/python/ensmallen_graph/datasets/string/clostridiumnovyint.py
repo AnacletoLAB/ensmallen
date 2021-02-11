@@ -117,7 +117,6 @@ def ClostridiumNovyiNt(
 	755), 386415.NT01CX_1455 (degree 753) and 386415.NT01CX_0460 (degree 745).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumNovyiNt(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumNovyiNt(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumNovyiNt",

@@ -124,7 +124,6 @@ def WebCc12Payleveldomain(
 	1842930).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def WebCc12Payleveldomain(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def WebCc12Payleveldomain(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebCc12Payleveldomain",

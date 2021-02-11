@@ -117,7 +117,6 @@ def DesulfarculusBaarsii(
 	1126), 644282.Deba_0503 (degree 1123) and 644282.Deba_2372 (degree 1112).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfarculusBaarsii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfarculusBaarsii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfarculusBaarsii",

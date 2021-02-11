@@ -117,7 +117,6 @@ def SphingomonasWittichii(
 	1861), 392499.Swit_4009 (degree 1589) and 392499.Swit_0405 (degree 1378).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingomonasWittichii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingomonasWittichii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingomonasWittichii",

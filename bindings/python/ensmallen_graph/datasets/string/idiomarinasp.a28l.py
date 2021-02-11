@@ -117,7 +117,6 @@ def IdiomarinaSp.A28l(
 	783), 1036674.A28LD_1437 (degree 778) and 1036674.A28LD_1724 (degree 778).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IdiomarinaSp.A28l(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IdiomarinaSp.A28l(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IdiomarinaSp.A28l",

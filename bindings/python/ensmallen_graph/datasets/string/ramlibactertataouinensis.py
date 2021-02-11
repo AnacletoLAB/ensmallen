@@ -117,7 +117,6 @@ def RamlibacterTataouinensis(
 	1442), 365046.Rta_12840 (degree 1413) and 365046.Rta_30410 (degree 1219).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RamlibacterTataouinensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RamlibacterTataouinensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RamlibacterTataouinensis",

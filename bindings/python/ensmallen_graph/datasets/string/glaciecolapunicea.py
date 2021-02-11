@@ -117,7 +117,6 @@ def GlaciecolaPunicea(
 	867), 1121923.GPUN_0255 (degree 864) and 1121923.GPUN_1138 (degree 850).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaPunicea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaPunicea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaPunicea",

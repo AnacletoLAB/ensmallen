@@ -117,7 +117,6 @@ def ParastagonosporaNodorum(
 	1415), 13684.SNOT_11806 (degree 1318) and 13684.SNOT_00877 (degree 1242).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParastagonosporaNodorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParastagonosporaNodorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParastagonosporaNodorum",

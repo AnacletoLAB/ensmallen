@@ -117,7 +117,6 @@ def NostocPunctiforme(
 	1796), 63737.Npun_R4132 (degree 1726) and 63737.Npun_R0896 (degree 1579).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NostocPunctiforme(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NostocPunctiforme(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NostocPunctiforme",

@@ -117,7 +117,6 @@ def OceanobacillusIheyensis(
 	221109.22777652 (degree 974) and 221109.22776300 (degree 938).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OceanobacillusIheyensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OceanobacillusIheyensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceanobacillusIheyensis",

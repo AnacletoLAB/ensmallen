@@ -117,7 +117,6 @@ def LegionellaPneumophilaParis(
 	297246.lpp2136 (degree 1120) and 297246.lpp1774 (degree 1021).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LegionellaPneumophilaParis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LegionellaPneumophilaParis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LegionellaPneumophilaParis",

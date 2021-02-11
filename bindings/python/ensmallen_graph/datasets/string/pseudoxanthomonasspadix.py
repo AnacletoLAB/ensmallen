@@ -117,7 +117,6 @@ def PseudoxanthomonasSpadix(
 	1118), 1045855.DSC_05310 (degree 1104) and 1045855.DSC_10250 (degree 1064).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudoxanthomonasSpadix(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudoxanthomonasSpadix(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoxanthomonasSpadix",

@@ -117,7 +117,6 @@ def MycoplasmaAlkalescens(
 	237), 1188234.MALK_6060 (degree 235) and 1188234.MALK_1710 (degree 233).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaAlkalescens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaAlkalescens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaAlkalescens",

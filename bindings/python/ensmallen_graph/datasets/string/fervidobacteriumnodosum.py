@@ -117,7 +117,6 @@ def FervidobacteriumNodosum(
 	381764.Fnod_0796 (degree 775) and 381764.Fnod_1233 (degree 752).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FervidobacteriumNodosum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FervidobacteriumNodosum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FervidobacteriumNodosum",

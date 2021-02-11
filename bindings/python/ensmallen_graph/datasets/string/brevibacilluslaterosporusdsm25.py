@@ -119,7 +119,6 @@ def BrevibacillusLaterosporusDsm25(
 	(degree 1422) and 1121121.KB894291_gene1507 (degree 1416).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BrevibacillusLaterosporusDsm25(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BrevibacillusLaterosporusDsm25(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrevibacillusLaterosporusDsm25",

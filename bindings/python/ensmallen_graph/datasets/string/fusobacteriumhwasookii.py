@@ -117,7 +117,6 @@ def FusobacteriumHwasookii(
 	729), 1216362.B437_08733 (degree 705) and 1216362.B437_05495 (degree 703).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumHwasookii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumHwasookii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumHwasookii",

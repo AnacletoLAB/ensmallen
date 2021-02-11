@@ -117,7 +117,6 @@ def BacillusCytotoxicus(
 	974), 315749.Bcer98_3040 (degree 965) and 315749.Bcer98_2808 (degree 848).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusCytotoxicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusCytotoxicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusCytotoxicus",

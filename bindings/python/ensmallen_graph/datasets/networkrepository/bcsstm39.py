@@ -114,7 +114,6 @@ def Bcsstm39(
 	1), 46770 (degree 1), 46769 (degree 1) and 46768 (degree 1).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def Bcsstm39(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def Bcsstm39(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Bcsstm39",

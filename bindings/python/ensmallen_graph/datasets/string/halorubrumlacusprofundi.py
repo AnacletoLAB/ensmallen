@@ -117,7 +117,6 @@ def HalorubrumLacusprofundi(
 	1166), 416348.Hlac_0836 (degree 1148) and 416348.Hlac_0682 (degree 981).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalorubrumLacusprofundi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalorubrumLacusprofundi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalorubrumLacusprofundi",

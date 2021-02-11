@@ -117,7 +117,6 @@ def HeliobacteriumModesticaldum(
 	498761.HM1_0559 (degree 969) and 498761.HM1_0057 (degree 891).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HeliobacteriumModesticaldum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HeliobacteriumModesticaldum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HeliobacteriumModesticaldum",

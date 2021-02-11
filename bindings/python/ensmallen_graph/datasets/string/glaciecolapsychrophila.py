@@ -117,7 +117,6 @@ def GlaciecolaPsychrophila(
 	1081), 1129794.C427_0419 (degree 1060) and 1129794.C427_1992 (degree 1038).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaPsychrophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaPsychrophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaPsychrophila",

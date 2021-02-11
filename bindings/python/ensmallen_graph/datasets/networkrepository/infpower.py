@@ -121,7 +121,6 @@ def InfPower(
 	4346 (degree 14), 3469 (degree 14) and 832 (degree 14).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def InfPower(
 	        publisher={Nature Publishing Group}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def InfPower(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "InfPower",

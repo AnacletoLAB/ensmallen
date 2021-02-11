@@ -117,7 +117,6 @@ def EnterococcusFaecalisV583(
 	226185.EF_0053 (degree 994) and 226185.EF_3293 (degree 953).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusFaecalisV583(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusFaecalisV583(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusFaecalisV583",

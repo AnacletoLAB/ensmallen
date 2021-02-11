@@ -117,7 +117,6 @@ def CollimonasFungivorans(
 	1212), 1005048.CFU_0502 (degree 1186) and 1005048.CFU_1944 (degree 1097).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CollimonasFungivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CollimonasFungivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CollimonasFungivorans",

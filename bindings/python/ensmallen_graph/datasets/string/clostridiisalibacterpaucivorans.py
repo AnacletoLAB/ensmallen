@@ -119,7 +119,6 @@ def ClostridiisalibacterPaucivorans(
 	(degree 1024) and 1121289.JHVL01000002_gene2355 (degree 992).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ClostridiisalibacterPaucivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ClostridiisalibacterPaucivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiisalibacterPaucivorans",

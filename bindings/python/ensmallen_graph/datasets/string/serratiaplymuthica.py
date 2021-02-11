@@ -117,7 +117,6 @@ def SerratiaPlymuthica(
 	82996.sch_25955 (degree 1604) and 82996.sch_22530 (degree 1590).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SerratiaPlymuthica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SerratiaPlymuthica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SerratiaPlymuthica",

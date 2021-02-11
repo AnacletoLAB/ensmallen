@@ -119,7 +119,6 @@ def AnaerobaculumHydrogeniformans(
 	889) and 592015.HMPREF1705_02001 (degree 870).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AnaerobaculumHydrogeniformans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AnaerobaculumHydrogeniformans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerobaculumHydrogeniformans",

@@ -117,7 +117,6 @@ def EscherichiaColiAtcc8739(
 	1512), 481805.EcolC_1170 (degree 1298) and 481805.EcolC_0488 (degree 1232).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EscherichiaColiAtcc8739(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EscherichiaColiAtcc8739(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColiAtcc8739",

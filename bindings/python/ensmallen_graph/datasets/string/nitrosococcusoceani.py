@@ -117,7 +117,6 @@ def NitrosococcusOceani(
 	323261.Noc_1459 (degree 1095) and 323261.Noc_1968 (degree 963).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosococcusOceani(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosococcusOceani(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosococcusOceani",

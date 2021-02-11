@@ -117,7 +117,6 @@ def ChryseobacteriumAntarcticum(
 	654), 266748.HY04_03105 (degree 631) and 266748.HY04_09305 (degree 624).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChryseobacteriumAntarcticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChryseobacteriumAntarcticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChryseobacteriumAntarcticum",

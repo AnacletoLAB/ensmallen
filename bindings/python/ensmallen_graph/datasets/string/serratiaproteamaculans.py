@@ -117,7 +117,6 @@ def SerratiaProteamaculans(
 	1559), 399741.Spro_4344 (degree 1252) and 399741.Spro_4342 (degree 1220).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SerratiaProteamaculans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SerratiaProteamaculans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SerratiaProteamaculans",

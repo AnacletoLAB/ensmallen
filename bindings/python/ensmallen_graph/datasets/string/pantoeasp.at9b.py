@@ -117,7 +117,6 @@ def PantoeaSp.At9b(
 	1311), 592316.Pat9b_2027 (degree 1310) and 592316.Pat9b_1910 (degree 1210).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PantoeaSp.At9b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PantoeaSp.At9b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PantoeaSp.At9b",

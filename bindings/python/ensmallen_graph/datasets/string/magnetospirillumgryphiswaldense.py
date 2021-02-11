@@ -119,7 +119,6 @@ def MagnetospirillumGryphiswaldense(
 	and 1430440.MGMSRv2_1016 (degree 1160).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MagnetospirillumGryphiswaldense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MagnetospirillumGryphiswaldense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MagnetospirillumGryphiswaldense",

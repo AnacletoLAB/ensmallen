@@ -119,7 +119,6 @@ def XiphophorusMaculatus(
 	4189) and 8083.ENSXMAP00000001423 (degree 4034).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def XiphophorusMaculatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def XiphophorusMaculatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XiphophorusMaculatus",

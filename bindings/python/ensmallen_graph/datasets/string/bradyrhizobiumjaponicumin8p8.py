@@ -119,7 +119,6 @@ def BradyrhizobiumJaponicumIn8p8(
 	(degree 2100) and 1304878.AUGD01000001_gene392 (degree 2081).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BradyrhizobiumJaponicumIn8p8(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BradyrhizobiumJaponicumIn8p8(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumJaponicumIn8p8",

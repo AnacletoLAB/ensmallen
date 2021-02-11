@@ -117,7 +117,6 @@ def VulcanisaetaDistributa(
 	572478.Vdis_1791 (degree 828) and 572478.Vdis_1757 (degree 815).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VulcanisaetaDistributa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VulcanisaetaDistributa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VulcanisaetaDistributa",

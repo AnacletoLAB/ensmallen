@@ -117,7 +117,6 @@ def MethanococcusMaripaludisS2(
 	(degree 723), 267377.MMP1067 (degree 710) and 267377.MMP0687 (degree 701).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanococcusMaripaludisS2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanococcusMaripaludisS2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanococcusMaripaludisS2",

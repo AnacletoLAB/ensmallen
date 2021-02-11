@@ -119,7 +119,6 @@ def BioCelegans(
 	408 (degree 109), 145 (degree 104) and 228 (degree 75).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def BioCelegans(
 	        year={2005}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def BioCelegans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioCelegans",

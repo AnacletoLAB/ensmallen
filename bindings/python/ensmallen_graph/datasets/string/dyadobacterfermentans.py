@@ -117,7 +117,6 @@ def DyadobacterFermentans(
 	1694), 471854.Dfer_1096 (degree 1603) and 471854.Dfer_1604 (degree 1388).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DyadobacterFermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DyadobacterFermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DyadobacterFermentans",

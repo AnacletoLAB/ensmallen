@@ -119,7 +119,6 @@ def StreptococcusInfantisAtcc700779(
 	664) and 889204.HMPREF9423_1109 (degree 642).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusInfantisAtcc700779(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusInfantisAtcc700779(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusInfantisAtcc700779",

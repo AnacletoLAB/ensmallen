@@ -117,7 +117,6 @@ def PaenirhodobacterEnshiensis(
 	867), 1105367.CG50_15980 (degree 828) and 1105367.CG50_02600 (degree 824).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenirhodobacterEnshiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenirhodobacterEnshiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenirhodobacterEnshiensis",

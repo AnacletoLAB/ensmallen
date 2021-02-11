@@ -123,7 +123,6 @@ def Dsjc5005(
 	14 (degree 280), 440 (degree 279), 410 (degree 279) and 136 (degree 277).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Dsjc5005(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Dsjc5005(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Dsjc5005",

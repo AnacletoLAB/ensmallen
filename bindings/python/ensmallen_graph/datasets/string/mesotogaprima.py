@@ -117,7 +117,6 @@ def MesotogaPrima(
 	1096), 660470.Theba_0398 (degree 1081) and 660470.Theba_0103 (degree 882).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MesotogaPrima(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MesotogaPrima(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesotogaPrima",

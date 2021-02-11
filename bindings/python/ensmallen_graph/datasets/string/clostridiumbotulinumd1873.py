@@ -117,7 +117,6 @@ def ClostridiumBotulinumD1873(
 	592027.CLG_B1010 (degree 757) and 592027.CLG_B1377 (degree 724).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumBotulinumD1873(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumBotulinumD1873(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumBotulinumD1873",

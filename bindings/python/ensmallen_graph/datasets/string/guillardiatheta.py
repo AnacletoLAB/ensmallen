@@ -117,7 +117,6 @@ def GuillardiaTheta(
 	55529.EKX33460 (degree 2292) and 55529.EKX43726 (degree 2265).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GuillardiaTheta(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GuillardiaTheta(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GuillardiaTheta",

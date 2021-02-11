@@ -117,7 +117,6 @@ def FlavobacteriumFrigoris(
 	956), 1086011.HJ01_01885 (degree 954) and 1086011.HJ01_00205 (degree 941).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumFrigoris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumFrigoris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumFrigoris",

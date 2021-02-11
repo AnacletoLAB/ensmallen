@@ -117,7 +117,6 @@ def RhodococcusOpacus(
 	3302), 37919.EP51_20345 (degree 3201) and 37919.EP51_29615 (degree 3162).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodococcusOpacus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodococcusOpacus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodococcusOpacus",

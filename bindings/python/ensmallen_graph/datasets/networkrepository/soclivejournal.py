@@ -120,7 +120,6 @@ def SocLivejournal(
 	(degree 796).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def SocLivejournal(
 	        month = {October},
 	        year = {2007}}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def SocLivejournal(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocLivejournal",

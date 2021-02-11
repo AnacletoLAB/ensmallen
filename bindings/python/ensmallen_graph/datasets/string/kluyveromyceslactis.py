@@ -117,7 +117,6 @@ def KluyveromycesLactis(
 	1032), 28985.XP_455310.1 (degree 965) and 28985.XP_453640.1 (degree 914).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KluyveromycesLactis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KluyveromycesLactis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KluyveromycesLactis",

@@ -115,7 +115,6 @@ def BuchneraAphidicolaBcc(
 	372461.BCc_344 (degree 206) and 372461.BCc_096 (degree 205).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BuchneraAphidicolaBcc(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BuchneraAphidicolaBcc(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BuchneraAphidicolaBcc",

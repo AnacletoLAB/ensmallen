@@ -117,7 +117,6 @@ def EhrlichiaSp.Hf(
 	391036.EHF_0940 (degree 379) and 391036.EHF_0316 (degree 346).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EhrlichiaSp.Hf(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EhrlichiaSp.Hf(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EhrlichiaSp.Hf",

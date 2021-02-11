@@ -119,7 +119,6 @@ def ClostridiumSymbiosumWal14163(
 	1298) and 742740.HMPREF9474_01937 (degree 1279).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ClostridiumSymbiosumWal14163(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ClostridiumSymbiosumWal14163(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumSymbiosumWal14163",

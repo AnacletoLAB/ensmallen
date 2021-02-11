@@ -117,7 +117,6 @@ def SulfurospirillumBarnesii(
 	859), 760154.Sulba_2012 (degree 850) and 760154.Sulba_0649 (degree 842).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurospirillumBarnesii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurospirillumBarnesii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurospirillumBarnesii",

@@ -117,7 +117,6 @@ def KyrpidiaTusciae(
 	988), 562970.Btus_0781 (degree 961) and 562970.Btus_1227 (degree 956).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KyrpidiaTusciae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KyrpidiaTusciae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KyrpidiaTusciae",

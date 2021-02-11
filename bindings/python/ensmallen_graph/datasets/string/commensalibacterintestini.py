@@ -117,7 +117,6 @@ def CommensalibacterIntestini(
 	685), 1088868.CIN_01260 (degree 617) and 1088868.CIN_20170 (degree 612).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CommensalibacterIntestini(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CommensalibacterIntestini(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CommensalibacterIntestini",

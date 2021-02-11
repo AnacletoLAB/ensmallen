@@ -117,7 +117,6 @@ def PseudomonasSp.Chol1(
 	1935), 440512.C211_19414 (degree 1820) and 440512.C211_13106 (degree 1820).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasSp.Chol1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasSp.Chol1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasSp.Chol1",

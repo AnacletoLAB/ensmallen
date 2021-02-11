@@ -117,7 +117,6 @@ def TrichinellaSpiralis(
 	6334.EFV50344 (degree 1846) and 6334.EFV55828 (degree 1746).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichinellaSpiralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichinellaSpiralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichinellaSpiralis",

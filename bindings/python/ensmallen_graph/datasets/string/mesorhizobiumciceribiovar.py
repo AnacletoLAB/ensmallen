@@ -117,7 +117,6 @@ def MesorhizobiumCiceriBiovar(
 	1675), 765698.Mesci_1728 (degree 1517) and 765698.Mesci_6429 (degree 1449).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MesorhizobiumCiceriBiovar(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MesorhizobiumCiceriBiovar(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesorhizobiumCiceriBiovar",

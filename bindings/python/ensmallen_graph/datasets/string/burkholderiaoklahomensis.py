@@ -117,7 +117,6 @@ def BurkholderiaOklahomensis(
 	1798), 342113.DM82_3989 (degree 1710) and 342113.DM82_3839 (degree 1660).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaOklahomensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaOklahomensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaOklahomensis",

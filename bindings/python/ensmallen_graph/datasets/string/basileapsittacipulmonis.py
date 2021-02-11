@@ -117,7 +117,6 @@ def BasileaPsittacipulmonis(
 	562), 1072685.IX83_02970 (degree 478) and 1072685.IX83_07275 (degree 449).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BasileaPsittacipulmonis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BasileaPsittacipulmonis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BasileaPsittacipulmonis",

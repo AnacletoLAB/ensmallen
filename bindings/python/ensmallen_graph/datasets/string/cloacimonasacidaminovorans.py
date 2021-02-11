@@ -117,7 +117,6 @@ def CloacimonasAcidaminovorans(
 	771), 459349.CLOAM0238 (degree 732) and 459349.CLOAM0440 (degree 689).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CloacimonasAcidaminovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CloacimonasAcidaminovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CloacimonasAcidaminovorans",

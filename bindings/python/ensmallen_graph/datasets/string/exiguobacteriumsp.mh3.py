@@ -117,7 +117,6 @@ def ExiguobacteriumSp.Mh3(
 	1000), 1399115.U719_09815 (degree 914) and 1399115.U719_04450 (degree 851).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ExiguobacteriumSp.Mh3(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ExiguobacteriumSp.Mh3(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ExiguobacteriumSp.Mh3",

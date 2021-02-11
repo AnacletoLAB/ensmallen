@@ -117,7 +117,6 @@ def MethanocorpusculumLabreanum(
 	410358.Mlab_1723 (degree 631) and 410358.Mlab_0139 (degree 617).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanocorpusculumLabreanum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanocorpusculumLabreanum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanocorpusculumLabreanum",

@@ -117,7 +117,6 @@ def ErwiniaBillingiae(
 	1388), 634500.EbC_33660 (degree 1169) and 634500.EbC_40450 (degree 1131).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErwiniaBillingiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErwiniaBillingiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErwiniaBillingiae",

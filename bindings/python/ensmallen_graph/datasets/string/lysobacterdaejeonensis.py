@@ -117,7 +117,6 @@ def LysobacterDaejeonensis(
 	910), 1385517.N800_05110 (degree 899) and 1385517.N800_05045 (degree 818).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysobacterDaejeonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysobacterDaejeonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysobacterDaejeonensis",

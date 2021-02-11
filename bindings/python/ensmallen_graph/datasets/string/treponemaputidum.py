@@ -117,7 +117,6 @@ def TreponemaPutidum(
 	669), 221027.JO40_00310 (degree 656) and 221027.JO40_09635 (degree 650).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaPutidum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaPutidum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaPutidum",

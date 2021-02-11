@@ -115,7 +115,6 @@ def ThioalkalimicrobiumCyclicum(
 	590), 717773.Thicy_1125 (degree 565) and 717773.Thicy_0454 (degree 562).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ThioalkalimicrobiumCyclicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ThioalkalimicrobiumCyclicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioalkalimicrobiumCyclicum",

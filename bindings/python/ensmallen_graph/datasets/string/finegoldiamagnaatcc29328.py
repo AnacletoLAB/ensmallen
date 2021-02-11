@@ -117,7 +117,6 @@ def FinegoldiaMagnaAtcc29328(
 	334413.FMG_0826 (degree 644) and 334413.FMG_0314 (degree 606).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FinegoldiaMagnaAtcc29328(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FinegoldiaMagnaAtcc29328(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FinegoldiaMagnaAtcc29328",

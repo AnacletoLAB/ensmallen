@@ -119,7 +119,6 @@ def RuminococcusFlavefaciensAe3010(
 	(degree 758) and 1384066.JAGT01000001_gene2476 (degree 751).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RuminococcusFlavefaciensAe3010(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RuminococcusFlavefaciensAe3010(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcusFlavefaciensAe3010",

@@ -112,7 +112,6 @@ def AvesSparrowSocial(
 	41), 4 (degree 41) and 9 (degree 37).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def AvesSparrowSocial(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def AvesSparrowSocial(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AvesSparrowSocial",

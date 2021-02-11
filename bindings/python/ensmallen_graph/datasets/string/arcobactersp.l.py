@@ -117,7 +117,6 @@ def ArcobacterSp.L(
 	1010), 944547.ABLL_1780 (degree 930) and 944547.ABLL_1768 (degree 891).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArcobacterSp.L(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArcobacterSp.L(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArcobacterSp.L",

@@ -117,7 +117,6 @@ def AegilopsTauschii(
 	37682.EMT03890 (degree 4990) and 37682.EMT06772 (degree 4983).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AegilopsTauschii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AegilopsTauschii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AegilopsTauschii",

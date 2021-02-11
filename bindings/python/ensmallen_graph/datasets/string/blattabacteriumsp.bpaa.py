@@ -115,7 +115,6 @@ def BlattabacteriumSp.Bpaa(
 	1229512.BPAA_410 (degree 314) and 1229512.BPAA_539 (degree 282).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlattabacteriumSp.Bpaa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlattabacteriumSp.Bpaa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlattabacteriumSp.Bpaa",

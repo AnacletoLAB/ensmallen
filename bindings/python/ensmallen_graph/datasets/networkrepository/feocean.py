@@ -117,7 +117,6 @@ def FeOcean(
 	(degree 6), 141687 (degree 6), 141686 (degree 6) and 141685 (degree 6).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def FeOcean(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def FeOcean(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FeOcean",

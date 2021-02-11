@@ -117,7 +117,6 @@ def NatronomonasMoolapensis(
 	758), 268739.Nmlp_3286 (degree 714) and 268739.Nmlp_3588 (degree 671).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatronomonasMoolapensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatronomonasMoolapensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatronomonasMoolapensis",

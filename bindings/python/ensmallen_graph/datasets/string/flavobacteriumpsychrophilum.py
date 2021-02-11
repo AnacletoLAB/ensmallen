@@ -117,7 +117,6 @@ def FlavobacteriumPsychrophilum(
 	402612.FP1820 (degree 736) and 402612.FP0055 (degree 689).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumPsychrophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumPsychrophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumPsychrophilum",

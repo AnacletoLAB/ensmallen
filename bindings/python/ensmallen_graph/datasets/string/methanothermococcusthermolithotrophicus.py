@@ -119,7 +119,6 @@ def MethanothermococcusThermolithotrophicus(
 	(degree 791) and 523845.AQXV01000055_gene50 (degree 787).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MethanothermococcusThermolithotrophicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MethanothermococcusThermolithotrophicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanothermococcusThermolithotrophicus",

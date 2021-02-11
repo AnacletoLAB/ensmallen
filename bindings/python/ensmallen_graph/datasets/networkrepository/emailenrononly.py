@@ -110,7 +110,6 @@ def EmailEnronOnly(
 	95 (degree 23), 48 (degree 20) and 43 (degree 19).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def EmailEnronOnly(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def EmailEnronOnly(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EmailEnronOnly",

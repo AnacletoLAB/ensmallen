@@ -115,7 +115,6 @@ def OrycteropusAfer(
 	9818.XP_007939056.1 (degree 3823) and 9818.XP_007942972.1 (degree 3454).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def OrycteropusAfer(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def OrycteropusAfer(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OrycteropusAfer",

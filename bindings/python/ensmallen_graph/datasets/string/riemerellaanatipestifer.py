@@ -117,7 +117,6 @@ def RiemerellaAnatipestifer(
 	992406.RIA_2130 (degree 629) and 992406.RIA_1883 (degree 582).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RiemerellaAnatipestifer(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RiemerellaAnatipestifer(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RiemerellaAnatipestifer",

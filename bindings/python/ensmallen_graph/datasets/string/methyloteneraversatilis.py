@@ -117,7 +117,6 @@ def MethyloteneraVersatilis(
 	855), 666681.M301_1134 (degree 808) and 666681.M301_1122 (degree 806).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethyloteneraVersatilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethyloteneraVersatilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethyloteneraVersatilis",

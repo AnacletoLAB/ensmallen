@@ -117,7 +117,6 @@ def ThioalkalivibrioSp.K90mix(
 	834), 396595.TK90_1912 (degree 804) and 396595.TK90_0816 (degree 795).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThioalkalivibrioSp.K90mix(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThioalkalivibrioSp.K90mix(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioalkalivibrioSp.K90mix",

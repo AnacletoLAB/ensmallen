@@ -119,7 +119,6 @@ def ClostridialesBacteriumVe20218(
 	(degree 1841) and 1232446.BAIE02000078_gene647 (degree 1817).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ClostridialesBacteriumVe20218(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ClostridialesBacteriumVe20218(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridialesBacteriumVe20218",

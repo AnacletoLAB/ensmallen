@@ -118,7 +118,6 @@ def CaImdb(
 	1336), 21504 (degree 1298), 408682 (degree 1200) and 404933 (degree 1124).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def CaImdb(
 	        publisher={Cambridge University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def CaImdb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaImdb",

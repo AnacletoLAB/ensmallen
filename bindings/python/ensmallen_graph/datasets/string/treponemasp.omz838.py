@@ -117,7 +117,6 @@ def TreponemaSp.Omz838(
 	703), 1539298.JO41_10225 (degree 702) and 1539298.JO41_11755 (degree 664).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaSp.Omz838(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaSp.Omz838(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaSp.Omz838",

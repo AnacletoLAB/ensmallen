@@ -119,7 +119,6 @@ def BurkholderialesBacterium1147(
 	659) and 469610.HMPREF0189_01307 (degree 645).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BurkholderialesBacterium1147(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BurkholderialesBacterium1147(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderialesBacterium1147",

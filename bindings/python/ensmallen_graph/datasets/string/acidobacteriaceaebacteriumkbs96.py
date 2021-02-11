@@ -119,7 +119,6 @@ def AcidobacteriaceaeBacteriumKbs96(
 	(degree 1598) and 1267535.KB906767_gene3434 (degree 1579).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AcidobacteriaceaeBacteriumKbs96(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AcidobacteriaceaeBacteriumKbs96(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidobacteriaceaeBacteriumKbs96",

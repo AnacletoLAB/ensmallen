@@ -117,7 +117,6 @@ def StreptococcusSp.Hsism1(
 	835), 1316408.HSISM1_1280 (degree 798) and 1316408.HSISM1_84 (degree 753).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSp.Hsism1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSp.Hsism1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSp.Hsism1",

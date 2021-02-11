@@ -117,7 +117,6 @@ def ClostridiumPasteurianumBc1(
 	1198), 86416.Clopa_2212 (degree 1191) and 86416.Clopa_3227 (degree 1172).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumPasteurianumBc1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumPasteurianumBc1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumPasteurianumBc1",

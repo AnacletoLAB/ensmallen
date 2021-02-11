@@ -119,7 +119,6 @@ def FaecalicoccusPleomorphus(
 	(degree 856) and 1123313.ATUT01000028_gene52 (degree 821).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FaecalicoccusPleomorphus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FaecalicoccusPleomorphus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FaecalicoccusPleomorphus",

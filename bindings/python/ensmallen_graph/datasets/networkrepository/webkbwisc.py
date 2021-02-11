@@ -118,7 +118,6 @@ def WebkbWisc(
 	20), 48 (degree 15), 148 (degree 13) and 256 (degree 11).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def WebkbWisc(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def WebkbWisc(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebkbWisc",

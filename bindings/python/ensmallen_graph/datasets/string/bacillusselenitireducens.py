@@ -117,7 +117,6 @@ def BacillusSelenitireducens(
 	1036), 439292.Bsel_2723 (degree 1035) and 439292.Bsel_2368 (degree 980).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusSelenitireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusSelenitireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusSelenitireducens",

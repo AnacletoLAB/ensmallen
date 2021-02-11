@@ -117,7 +117,6 @@ def RhodothermusMarinus(
 	1010), 518766.Rmar_1568 (degree 880) and 518766.Rmar_2230 (degree 877).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodothermusMarinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodothermusMarinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodothermusMarinus",

@@ -119,7 +119,6 @@ def SolirubrobacteralesBacteriumUrhd0059(
 	(degree 1866) and 1380390.JIAT01000009_gene1947 (degree 1730).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SolirubrobacteralesBacteriumUrhd0059(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SolirubrobacteralesBacteriumUrhd0059(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SolirubrobacteralesBacteriumUrhd0059",

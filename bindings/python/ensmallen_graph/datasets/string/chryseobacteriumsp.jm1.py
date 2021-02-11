@@ -117,7 +117,6 @@ def ChryseobacteriumSp.Jm1(
 	866), 1233950.IW22_08940 (degree 863) and 1233950.IW22_06710 (degree 835).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChryseobacteriumSp.Jm1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChryseobacteriumSp.Jm1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChryseobacteriumSp.Jm1",

@@ -119,7 +119,6 @@ def AchromobacterXylosoxidansNbrc15126(
 	and 1216976.AX27061_5740 (degree 1398).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AchromobacterXylosoxidansNbrc15126(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AchromobacterXylosoxidansNbrc15126(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AchromobacterXylosoxidansNbrc15126",

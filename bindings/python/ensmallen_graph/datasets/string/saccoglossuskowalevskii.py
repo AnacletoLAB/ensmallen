@@ -119,7 +119,6 @@ def SaccoglossusKowalevskii(
 	and 10224.XP_006815331.1 (degree 3167).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SaccoglossusKowalevskii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SaccoglossusKowalevskii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccoglossusKowalevskii",

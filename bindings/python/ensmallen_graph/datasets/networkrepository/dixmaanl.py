@@ -110,7 +110,6 @@ def Dixmaanl(
 	(degree 5), 39999 (degree 5), 20000 (degree 5) and 59998 (degree 5).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Dixmaanl(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Dixmaanl(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Dixmaanl",

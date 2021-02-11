@@ -117,7 +117,6 @@ def PantoeaVagans(
 	1010), 712898.Pvag_2017 (degree 909) and 712898.Pvag_3628 (degree 886).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PantoeaVagans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PantoeaVagans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PantoeaVagans",

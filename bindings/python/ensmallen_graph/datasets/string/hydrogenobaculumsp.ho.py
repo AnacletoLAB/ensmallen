@@ -115,7 +115,6 @@ def HydrogenobaculumSp.Ho(
 	(degree 599) and 547144.HydHO_0961 (degree 563).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def HydrogenobaculumSp.Ho(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def HydrogenobaculumSp.Ho(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HydrogenobaculumSp.Ho",

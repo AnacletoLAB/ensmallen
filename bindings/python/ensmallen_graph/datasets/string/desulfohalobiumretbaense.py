@@ -117,7 +117,6 @@ def DesulfohalobiumRetbaense(
 	870), 485915.Dret_1036 (degree 829) and 485915.Dret_0989 (degree 802).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfohalobiumRetbaense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfohalobiumRetbaense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfohalobiumRetbaense",

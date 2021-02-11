@@ -121,7 +121,6 @@ def ScPwtk(
 	217887 (degree 179).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def ScPwtk(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def ScPwtk(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ScPwtk",

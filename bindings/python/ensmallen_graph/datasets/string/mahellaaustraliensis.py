@@ -117,7 +117,6 @@ def MahellaAustraliensis(
 	809), 697281.Mahau_1974 (degree 769) and 697281.Mahau_0283 (degree 763).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MahellaAustraliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MahellaAustraliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MahellaAustraliensis",

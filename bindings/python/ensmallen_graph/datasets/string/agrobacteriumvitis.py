@@ -117,7 +117,6 @@ def AgrobacteriumVitis(
 	311402.Avi_0620 (degree 1120) and 311402.Avi_1154 (degree 1118).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AgrobacteriumVitis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AgrobacteriumVitis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AgrobacteriumVitis",

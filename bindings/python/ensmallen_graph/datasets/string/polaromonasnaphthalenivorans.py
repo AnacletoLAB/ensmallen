@@ -117,7 +117,6 @@ def PolaromonasNaphthalenivorans(
 	1203), 365044.Pnap_4054 (degree 1105) and 365044.Pnap_0818 (degree 994).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PolaromonasNaphthalenivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PolaromonasNaphthalenivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PolaromonasNaphthalenivorans",

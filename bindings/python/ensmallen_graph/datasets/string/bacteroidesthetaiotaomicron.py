@@ -117,7 +117,6 @@ def BacteroidesThetaiotaomicron(
 	226186.BT_4602 (degree 1489) and 226186.BT_3805 (degree 1476).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteroidesThetaiotaomicron(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteroidesThetaiotaomicron(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesThetaiotaomicron",

@@ -117,7 +117,6 @@ def YersiniaFrederiksenii(
 	1333), 349966.DJ58_3000 (degree 1296) and 349966.DJ58_1988 (degree 1283).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def YersiniaFrederiksenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def YersiniaFrederiksenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "YersiniaFrederiksenii",

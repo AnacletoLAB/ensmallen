@@ -117,7 +117,6 @@ def GalbibacterMarinus(
 	999), 555500.I215_06767 (degree 948) and 555500.I215_07691 (degree 936).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GalbibacterMarinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GalbibacterMarinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GalbibacterMarinus",

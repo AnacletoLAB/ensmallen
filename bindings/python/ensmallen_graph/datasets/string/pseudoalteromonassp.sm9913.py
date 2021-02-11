@@ -117,7 +117,6 @@ def PseudoalteromonasSp.Sm9913(
 	1181), 234831.PSM_A2412 (degree 1093) and 234831.PSM_B0636 (degree 1055).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudoalteromonasSp.Sm9913(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudoalteromonasSp.Sm9913(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasSp.Sm9913",

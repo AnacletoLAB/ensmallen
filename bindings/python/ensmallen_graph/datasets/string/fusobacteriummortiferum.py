@@ -117,7 +117,6 @@ def FusobacteriumMortiferum(
 	925), 469616.FMAG_02110 (degree 882) and 469616.FMAG_00338 (degree 863).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumMortiferum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumMortiferum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumMortiferum",

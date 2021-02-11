@@ -112,7 +112,6 @@ def SlashdotZoo(
 	238 (degree 2219), 107 (degree 1709) and 386 (degree 1681).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def SlashdotZoo(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def SlashdotZoo(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SlashdotZoo",

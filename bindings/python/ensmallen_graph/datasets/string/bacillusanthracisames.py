@@ -117,7 +117,6 @@ def BacillusAnthracisAmes(
 	198094.BA_4491 (degree 1276) and 198094.BA_0530 (degree 1230).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusAnthracisAmes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusAnthracisAmes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusAnthracisAmes",

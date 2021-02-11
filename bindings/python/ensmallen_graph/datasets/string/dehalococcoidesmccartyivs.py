@@ -117,7 +117,6 @@ def DehalococcoidesMccartyiVs(
 	544), 311424.DhcVS_310 (degree 518) and 311424.DhcVS_494 (degree 499).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DehalococcoidesMccartyiVs(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DehalococcoidesMccartyiVs(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DehalococcoidesMccartyiVs",

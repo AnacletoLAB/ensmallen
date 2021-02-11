@@ -119,7 +119,6 @@ def BacteroidesMassiliensisB84634(
 	(degree 1051) and 1121098.HMPREF1534_01543 (degree 1042).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BacteroidesMassiliensisB84634(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BacteroidesMassiliensisB84634(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesMassiliensisB84634",

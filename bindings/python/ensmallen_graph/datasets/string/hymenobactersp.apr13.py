@@ -117,7 +117,6 @@ def HymenobacterSp.Apr13(
 	1006), 1356852.N008_01805 (degree 974) and 1356852.N008_06390 (degree 958).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HymenobacterSp.Apr13(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HymenobacterSp.Apr13(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HymenobacterSp.Apr13",

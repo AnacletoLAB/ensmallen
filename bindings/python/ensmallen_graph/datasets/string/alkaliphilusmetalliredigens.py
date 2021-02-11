@@ -117,7 +117,6 @@ def AlkaliphilusMetalliredigens(
 	1493), 293826.Amet_2529 (degree 1458) and 293826.Amet_0287 (degree 1398).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlkaliphilusMetalliredigens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlkaliphilusMetalliredigens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlkaliphilusMetalliredigens",

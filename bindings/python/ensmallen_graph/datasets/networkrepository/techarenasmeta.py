@@ -110,7 +110,6 @@ def TechArenasMeta(
 	5 (degree 109), 97 (degree 105) and 9 (degree 75).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def TechArenasMeta(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def TechArenasMeta(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechArenasMeta",

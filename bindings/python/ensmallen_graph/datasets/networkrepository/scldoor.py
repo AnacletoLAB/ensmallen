@@ -119,7 +119,6 @@ def ScLdoor(
 	(degree 76).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def ScLdoor(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def ScLdoor(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ScLdoor",

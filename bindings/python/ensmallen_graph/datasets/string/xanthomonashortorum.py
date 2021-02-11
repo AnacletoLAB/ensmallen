@@ -117,7 +117,6 @@ def XanthomonasHortorum(
 	863365.XHC_0639 (degree 1111) and 863365.XHC_0038 (degree 1093).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasHortorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasHortorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasHortorum",

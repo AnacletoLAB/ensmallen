@@ -117,7 +117,6 @@ def NitrobacterHamburgensis(
 	993), 323097.Nham_0274 (degree 924) and 323097.Nham_0129 (degree 902).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrobacterHamburgensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrobacterHamburgensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrobacterHamburgensis",

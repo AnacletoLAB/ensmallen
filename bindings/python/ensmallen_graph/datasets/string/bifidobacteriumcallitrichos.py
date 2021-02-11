@@ -117,7 +117,6 @@ def BifidobacteriumCallitrichos(
 	827), 1437609.BCAL_0054 (degree 791) and 1437609.BCAL_1299 (degree 776).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumCallitrichos(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumCallitrichos(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumCallitrichos",

@@ -110,7 +110,6 @@ def DbpediaGenre(
 	(degree 22125), 2 (degree 16721), 84 (degree 11780) and 66 (degree 11518).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def DbpediaGenre(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def DbpediaGenre(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaGenre",

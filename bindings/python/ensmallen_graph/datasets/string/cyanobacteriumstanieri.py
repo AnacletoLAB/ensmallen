@@ -117,7 +117,6 @@ def CyanobacteriumStanieri(
 	974), 292563.Cyast_2143 (degree 910) and 292563.Cyast_1758 (degree 789).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CyanobacteriumStanieri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CyanobacteriumStanieri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CyanobacteriumStanieri",

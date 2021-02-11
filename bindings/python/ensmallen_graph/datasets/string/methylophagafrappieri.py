@@ -117,7 +117,6 @@ def MethylophagaFrappieri(
 	754477.Q7C_1511 (degree 743) and 754477.Q7C_580 (degree 700).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylophagaFrappieri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylophagaFrappieri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylophagaFrappieri",

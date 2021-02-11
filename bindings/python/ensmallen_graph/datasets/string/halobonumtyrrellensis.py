@@ -117,7 +117,6 @@ def HalobonumTyrrellensis(
 	688), 1324957.K933_03270 (degree 668) and 1324957.K933_04486 (degree 661).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalobonumTyrrellensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalobonumTyrrellensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalobonumTyrrellensis",

@@ -114,7 +114,6 @@ def MaayanStelzl(
 	(degree 72), 196 (degree 66) and 54 (degree 65).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def MaayanStelzl(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def MaayanStelzl(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MaayanStelzl",

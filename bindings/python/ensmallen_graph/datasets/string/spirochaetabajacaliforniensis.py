@@ -119,7 +119,6 @@ def SpirochaetaBajacaliforniensis(
 	(degree 1448) and 1123274.KB899413_gene732 (degree 1379).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SpirochaetaBajacaliforniensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SpirochaetaBajacaliforniensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpirochaetaBajacaliforniensis",

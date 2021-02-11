@@ -119,7 +119,6 @@ def ArcanobacteriumSp.S3pf19(
 	420) and 1219585.HMPREF1631_00830 (degree 400).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ArcanobacteriumSp.S3pf19(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ArcanobacteriumSp.S3pf19(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArcanobacteriumSp.S3pf19",

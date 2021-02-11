@@ -117,7 +117,6 @@ def UstilagoHordei(
 	120017.I2FRN5 (degree 1417) and 120017.I2FMI0 (degree 1311).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def UstilagoHordei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def UstilagoHordei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "UstilagoHordei",

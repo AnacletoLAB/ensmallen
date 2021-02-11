@@ -117,7 +117,6 @@ def PyrobaculumCalidifontis(
 	410359.Pcal_1052 (degree 680) and 410359.Pcal_1771 (degree 670).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrobaculumCalidifontis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrobaculumCalidifontis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrobaculumCalidifontis",

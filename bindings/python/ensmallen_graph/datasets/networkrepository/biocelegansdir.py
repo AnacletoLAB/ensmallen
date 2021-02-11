@@ -119,7 +119,6 @@ def BioCelegansDir(
 	5 (degree 109), 97 (degree 105) and 9 (degree 75).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def BioCelegansDir(
 	        year={2005}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def BioCelegansDir(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioCelegansDir",

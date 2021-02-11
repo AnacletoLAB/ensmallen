@@ -123,7 +123,6 @@ def Johnson1624(
 	(degree 91), 118 (degree 91), 117 (degree 91) and 116 (degree 91).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def Johnson1624(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def Johnson1624(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Johnson1624",

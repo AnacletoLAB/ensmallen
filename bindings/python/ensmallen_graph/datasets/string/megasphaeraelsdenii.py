@@ -117,7 +117,6 @@ def MegasphaeraElsdenii(
 	717), 1064535.MELS_2044 (degree 664) and 1064535.MELS_0387 (degree 651).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MegasphaeraElsdenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MegasphaeraElsdenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MegasphaeraElsdenii",

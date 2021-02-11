@@ -117,7 +117,6 @@ def AnaplasmaMarginaleFlorida(
 	(degree 398), 320483.AMF_725 (degree 345) and 320483.AMF_013 (degree 332).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaplasmaMarginaleFlorida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaplasmaMarginaleFlorida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaplasmaMarginaleFlorida",

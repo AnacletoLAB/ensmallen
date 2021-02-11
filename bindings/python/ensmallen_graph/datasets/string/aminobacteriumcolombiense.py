@@ -117,7 +117,6 @@ def AminobacteriumColombiense(
 	731), 572547.Amico_0583 (degree 728) and 572547.Amico_0977 (degree 723).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AminobacteriumColombiense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AminobacteriumColombiense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AminobacteriumColombiense",

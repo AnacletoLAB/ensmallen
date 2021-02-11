@@ -117,7 +117,6 @@ def BacillusCoagulans26(
 	748), 941639.BCO26_1210 (degree 745) and 941639.BCO26_2960 (degree 733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusCoagulans26(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusCoagulans26(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusCoagulans26",

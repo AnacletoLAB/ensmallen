@@ -117,7 +117,6 @@ def ParameciumTetraurelia(
 	(degree 5907), 5888.CAK86280 (degree 5598) and 5888.CAK66407 (degree 5481).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParameciumTetraurelia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParameciumTetraurelia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParameciumTetraurelia",

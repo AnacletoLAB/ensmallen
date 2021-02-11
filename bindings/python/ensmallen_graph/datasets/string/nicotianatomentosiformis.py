@@ -119,7 +119,6 @@ def NicotianaTomentosiformis(
 	4098.XP_009605274.1 (degree 4623).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def NicotianaTomentosiformis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def NicotianaTomentosiformis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NicotianaTomentosiformis",

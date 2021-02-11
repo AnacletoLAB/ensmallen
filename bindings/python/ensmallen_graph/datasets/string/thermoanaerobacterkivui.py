@@ -117,7 +117,6 @@ def ThermoanaerobacterKivui(
 	2325.TKV_c16590 (degree 678) and 2325.TKV_c01120 (degree 662).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoanaerobacterKivui(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoanaerobacterKivui(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoanaerobacterKivui",

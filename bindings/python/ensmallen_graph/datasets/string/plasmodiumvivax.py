@@ -117,7 +117,6 @@ def PlasmodiumVivax(
 	5855.PVX_089425 (degree 1233) and 5855.PVX_092535 (degree 1160).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlasmodiumVivax(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlasmodiumVivax(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlasmodiumVivax",

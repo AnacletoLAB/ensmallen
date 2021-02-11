@@ -119,7 +119,6 @@ def SocWikiVote(
 	170 (degree 66), 536 (degree 60) and 399 (degree 56).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def SocWikiVote(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def SocWikiVote(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocWikiVote",

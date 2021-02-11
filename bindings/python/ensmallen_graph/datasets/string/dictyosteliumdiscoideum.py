@@ -117,7 +117,6 @@ def DictyosteliumDiscoideum(
 	2050), 44689.DDB0191503 (degree 2034) and 44689.DDB0235320 (degree 2018).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DictyosteliumDiscoideum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DictyosteliumDiscoideum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DictyosteliumDiscoideum",

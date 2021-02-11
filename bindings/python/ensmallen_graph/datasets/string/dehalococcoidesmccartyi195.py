@@ -117,7 +117,6 @@ def DehalococcoidesMccartyi195(
 	243164.DET0366 (degree 538) and 243164.DET0554 (degree 534).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DehalococcoidesMccartyi195(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DehalococcoidesMccartyi195(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DehalococcoidesMccartyi195",

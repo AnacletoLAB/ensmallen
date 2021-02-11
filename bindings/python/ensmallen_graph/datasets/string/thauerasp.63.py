@@ -117,7 +117,6 @@ def ThaueraSp.63(
 	1280), 497321.C664_16380 (degree 1223) and 497321.C664_11230 (degree 1207).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThaueraSp.63(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThaueraSp.63(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThaueraSp.63",

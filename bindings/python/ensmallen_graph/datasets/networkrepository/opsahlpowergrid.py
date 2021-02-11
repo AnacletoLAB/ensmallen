@@ -110,7 +110,6 @@ def OpsahlPowergrid(
 	(degree 18), 4436 (degree 14), 3411 (degree 14) and 932 (degree 14).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def OpsahlPowergrid(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def OpsahlPowergrid(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OpsahlPowergrid",

@@ -117,7 +117,6 @@ def ThermodesulfatatorIndicus(
 	726), 667014.Thein_1566 (degree 699) and 667014.Thein_0148 (degree 686).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermodesulfatatorIndicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermodesulfatatorIndicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermodesulfatatorIndicus",

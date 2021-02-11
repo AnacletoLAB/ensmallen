@@ -117,7 +117,6 @@ def BradyrhizobiumSp.Btai1(
 	2448), 288000.BBta_6315 (degree 2423) and 288000.BBta_0860 (degree 2188).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BradyrhizobiumSp.Btai1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BradyrhizobiumSp.Btai1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumSp.Btai1",

@@ -119,7 +119,6 @@ def MycobacteriumSp.Urhb0044(
 	(degree 2029).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MycobacteriumSp.Urhb0044(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MycobacteriumSp.Urhb0044(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumSp.Urhb0044",

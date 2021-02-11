@@ -119,7 +119,6 @@ def LachnoanaerobaculumSaburreumF0468(
 	680) and 1095750.HMPREF9970_2307 (degree 678).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LachnoanaerobaculumSaburreumF0468(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LachnoanaerobaculumSaburreumF0468(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnoanaerobaculumSaburreumF0468",

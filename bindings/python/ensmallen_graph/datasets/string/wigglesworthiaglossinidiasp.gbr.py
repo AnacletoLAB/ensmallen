@@ -115,7 +115,6 @@ def WigglesworthiaGlossinidiaSp.Gbr(
 	(degree 294), 36870.25166190 (degree 287) and 36870.25166547 (degree 286).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def WigglesworthiaGlossinidiaSp.Gbr(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def WigglesworthiaGlossinidiaSp.Gbr(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WigglesworthiaGlossinidiaSp.Gbr",

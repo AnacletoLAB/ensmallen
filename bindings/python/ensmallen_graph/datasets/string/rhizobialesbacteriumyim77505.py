@@ -119,7 +119,6 @@ def RhizobialesBacteriumYim77505(
 	(degree 1110) and 1411123.JQNH01000001_gene171 (degree 1098).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RhizobialesBacteriumYim77505(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RhizobialesBacteriumYim77505(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhizobialesBacteriumYim77505",

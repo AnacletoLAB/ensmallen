@@ -117,7 +117,6 @@ def MethylobacteriumNodulans(
 	2110), 460265.Mnod_7445 (degree 2103) and 460265.Mnod_5851 (degree 2001).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacteriumNodulans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacteriumNodulans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacteriumNodulans",

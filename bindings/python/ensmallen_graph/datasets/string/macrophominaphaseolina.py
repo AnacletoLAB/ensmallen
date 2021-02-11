@@ -117,7 +117,6 @@ def MacrophominaPhaseolina(
 	35725.K2SSH4 (degree 1567) and 35725.K2SLP9 (degree 1481).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MacrophominaPhaseolina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MacrophominaPhaseolina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MacrophominaPhaseolina",

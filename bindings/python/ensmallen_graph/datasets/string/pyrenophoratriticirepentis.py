@@ -117,7 +117,6 @@ def PyrenophoraTriticirepentis(
 	45151.EDU46538 (degree 1494) and 45151.EDU40929 (degree 1478).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrenophoraTriticirepentis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrenophoraTriticirepentis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrenophoraTriticirepentis",

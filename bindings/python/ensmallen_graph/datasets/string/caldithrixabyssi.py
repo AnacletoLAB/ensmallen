@@ -117,7 +117,6 @@ def CaldithrixAbyssi(
 	1162), 880073.Calab_2438 (degree 1127) and 880073.Calab_0529 (degree 1090).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaldithrixAbyssi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaldithrixAbyssi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaldithrixAbyssi",

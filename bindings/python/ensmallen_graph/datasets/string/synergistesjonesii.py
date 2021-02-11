@@ -117,7 +117,6 @@ def SynergistesJonesii(
 	2754.EH55_02550 (degree 698) and 2754.EH55_10790 (degree 676).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SynergistesJonesii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SynergistesJonesii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynergistesJonesii",

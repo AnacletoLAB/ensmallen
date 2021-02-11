@@ -135,7 +135,6 @@ def SocfbIndiana69(
 	26807 (degree 1024).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -169,7 +168,6 @@ def SocfbIndiana69(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -206,7 +204,6 @@ def SocfbIndiana69(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbIndiana69",

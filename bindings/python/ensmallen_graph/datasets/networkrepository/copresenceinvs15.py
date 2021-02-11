@@ -119,7 +119,6 @@ def CopresenceInvs15(
 	39463), 845 (degree 35968), 753 (degree 33828) and 466 (degree 31011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def CopresenceInvs15(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def CopresenceInvs15(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CopresenceInvs15",

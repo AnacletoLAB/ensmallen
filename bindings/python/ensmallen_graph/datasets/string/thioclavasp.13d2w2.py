@@ -117,7 +117,6 @@ def ThioclavaSp.13d2w2(
 	1282), 1317124.DW2_09131 (degree 1218) and 1317124.DW2_10464 (degree 1140).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThioclavaSp.13d2w2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThioclavaSp.13d2w2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioclavaSp.13d2w2",

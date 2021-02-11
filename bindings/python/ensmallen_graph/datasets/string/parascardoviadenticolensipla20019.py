@@ -119,7 +119,6 @@ def ParascardoviaDenticolensIpla20019(
 	644).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ParascardoviaDenticolensIpla20019(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ParascardoviaDenticolensIpla20019(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParascardoviaDenticolensIpla20019",

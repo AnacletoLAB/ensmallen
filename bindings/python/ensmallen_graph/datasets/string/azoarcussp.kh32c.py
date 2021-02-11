@@ -117,7 +117,6 @@ def AzoarcusSp.Kh32c(
 	2362), 748247.AZKH_1499 (degree 2333) and 748247.AZKH_3325 (degree 2115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AzoarcusSp.Kh32c(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AzoarcusSp.Kh32c(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AzoarcusSp.Kh32c",

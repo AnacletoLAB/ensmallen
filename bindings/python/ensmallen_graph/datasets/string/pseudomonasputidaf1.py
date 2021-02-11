@@ -117,7 +117,6 @@ def PseudomonasPutidaF1(
 	1493), 351746.Pput_4603 (degree 1369) and 351746.Pput_1072 (degree 1365).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasPutidaF1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasPutidaF1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasPutidaF1",

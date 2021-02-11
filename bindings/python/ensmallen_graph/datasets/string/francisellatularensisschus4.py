@@ -117,7 +117,6 @@ def FrancisellaTularensisSchus4(
 	177416.FTT_1290 (degree 554) and 177416.FTT_1019c (degree 552).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrancisellaTularensisSchus4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrancisellaTularensisSchus4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrancisellaTularensisSchus4",

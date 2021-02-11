@@ -117,7 +117,6 @@ def FervidicoccusFontis(
 	576), 1163730.FFONT_0900 (degree 571) and 1163730.FFONT_0728 (degree 548).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FervidicoccusFontis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FervidicoccusFontis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FervidicoccusFontis",

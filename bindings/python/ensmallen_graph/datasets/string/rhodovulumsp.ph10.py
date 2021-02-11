@@ -117,7 +117,6 @@ def RhodovulumSp.Ph10(
 	1444), 1187851.A33M_1288 (degree 1430) and 1187851.A33M_2704 (degree 1345).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodovulumSp.Ph10(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodovulumSp.Ph10(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodovulumSp.Ph10",

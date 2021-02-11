@@ -117,7 +117,6 @@ def LiberibacterAmericanus(
 	1261131.lam_010 (degree 411) and 1261131.lam_602 (degree 388).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LiberibacterAmericanus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LiberibacterAmericanus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LiberibacterAmericanus",

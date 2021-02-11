@@ -117,7 +117,6 @@ def MnemiopsisLeidyi(
 	2844), 27923.ML15997a-PA (degree 2527) and 27923.ML17402a-PA (degree 2518).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MnemiopsisLeidyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MnemiopsisLeidyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MnemiopsisLeidyi",

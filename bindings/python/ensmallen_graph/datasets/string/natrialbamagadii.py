@@ -117,7 +117,6 @@ def NatrialbaMagadii(
 	1250), 547559.Nmag_0842 (degree 1209) and 547559.Nmag_2141 (degree 1146).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatrialbaMagadii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatrialbaMagadii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatrialbaMagadii",

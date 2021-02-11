@@ -119,7 +119,6 @@ def ActinosporangiumSp.Nrrlb3428(
 	(degree 2047) and 1463820.JOGW01000013_gene4348 (degree 2032).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinosporangiumSp.Nrrlb3428(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinosporangiumSp.Nrrlb3428(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinosporangiumSp.Nrrlb3428",

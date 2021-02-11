@@ -121,7 +121,6 @@ def CaNetscience(
 	(degree 27), 16 (degree 21) and 67 (degree 19).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def CaNetscience(
 	        publisher={APS}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def CaNetscience(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaNetscience",

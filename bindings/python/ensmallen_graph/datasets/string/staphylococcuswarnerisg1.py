@@ -117,7 +117,6 @@ def StaphylococcusWarneriSg1(
 	748), 1194526.A284_05970 (degree 737) and 1194526.A284_11180 (degree 736).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylococcusWarneriSg1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylococcusWarneriSg1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylococcusWarneriSg1",

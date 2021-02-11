@@ -117,7 +117,6 @@ def EnterorhabdusCaecimuris(
 	790), 1235794.C811_00395 (degree 707) and 1235794.C811_02045 (degree 688).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterorhabdusCaecimuris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterorhabdusCaecimuris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterorhabdusCaecimuris",

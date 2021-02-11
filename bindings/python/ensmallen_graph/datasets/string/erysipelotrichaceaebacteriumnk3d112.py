@@ -119,7 +119,6 @@ def ErysipelotrichaceaeBacteriumNk3d112(
 	(degree 1271) and 877415.JNJQ01000014_gene435 (degree 1211).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ErysipelotrichaceaeBacteriumNk3d112(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ErysipelotrichaceaeBacteriumNk3d112(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErysipelotrichaceaeBacteriumNk3d112",

@@ -117,7 +117,6 @@ def AllochromatiumVinosum(
 	1335), 572477.Alvin_1373 (degree 1306) and 572477.Alvin_1488 (degree 1297).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AllochromatiumVinosum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AllochromatiumVinosum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AllochromatiumVinosum",

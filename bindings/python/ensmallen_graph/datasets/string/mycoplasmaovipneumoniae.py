@@ -117,7 +117,6 @@ def MycoplasmaOvipneumoniae(
 	270), 1188239.MOVI_2490 (degree 253) and 1188239.MOVI_5600 (degree 249).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycoplasmaOvipneumoniae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycoplasmaOvipneumoniae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaOvipneumoniae",

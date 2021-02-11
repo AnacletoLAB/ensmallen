@@ -117,7 +117,6 @@ def AcidimicrobiumFerrooxidans(
 	525909.Afer_1988 (degree 625) and 525909.Afer_0246 (degree 608).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidimicrobiumFerrooxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidimicrobiumFerrooxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidimicrobiumFerrooxidans",

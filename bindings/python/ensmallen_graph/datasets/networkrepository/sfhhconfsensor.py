@@ -119,7 +119,6 @@ def SfhhConfSensor(
 	2189), 1599 (degree 2112) and 1441 (degree 1994).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def SfhhConfSensor(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def SfhhConfSensor(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SfhhConfSensor",

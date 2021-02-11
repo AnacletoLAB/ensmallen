@@ -119,7 +119,6 @@ def ButyrivibrioSp.Lc3010(
 	(degree 1185).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ButyrivibrioSp.Lc3010(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ButyrivibrioSp.Lc3010(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ButyrivibrioSp.Lc3010",

@@ -115,7 +115,6 @@ def PhotodesmusKatoptron(
 	28176.CF66_4064 (degree 339) and 28176.CF66_0102 (degree 329).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def PhotodesmusKatoptron(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def PhotodesmusKatoptron(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotodesmusKatoptron",

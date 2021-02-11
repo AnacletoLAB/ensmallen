@@ -124,7 +124,6 @@ def WebBaiduBaike(
 	and 145 (degree 50693).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def WebBaiduBaike(
 	        year={2011},
 	        publisher={Springer}}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def WebBaiduBaike(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebBaiduBaike",

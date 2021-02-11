@@ -117,7 +117,6 @@ def KomagataellaPastoris(
 	4922.CAY70252 (degree 959) and 4922.CAY70616 (degree 894).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KomagataellaPastoris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KomagataellaPastoris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KomagataellaPastoris",

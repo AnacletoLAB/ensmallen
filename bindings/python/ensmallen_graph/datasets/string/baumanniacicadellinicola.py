@@ -115,7 +115,6 @@ def BaumanniaCicadellinicola(
 	186490.IM45_270 (degree 512) and 186490.IM45_1318 (degree 464).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BaumanniaCicadellinicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BaumanniaCicadellinicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BaumanniaCicadellinicola",

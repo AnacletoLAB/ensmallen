@@ -117,7 +117,6 @@ def ThermococcusOnnurineus(
 	523850.TON_1647 (degree 574) and 523850.TON_0826 (degree 568).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermococcusOnnurineus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermococcusOnnurineus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermococcusOnnurineus",

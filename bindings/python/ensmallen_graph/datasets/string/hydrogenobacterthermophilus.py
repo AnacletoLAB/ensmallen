@@ -117,7 +117,6 @@ def HydrogenobacterThermophilus(
 	608538.HTH_1644 (degree 660) and 608538.HTH_1314 (degree 660).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HydrogenobacterThermophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HydrogenobacterThermophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HydrogenobacterThermophilus",

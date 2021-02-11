@@ -117,7 +117,6 @@ def EnterococcusCasseliflavus(
 	1247), 565655.ECBG_01126 (degree 1201) and 565655.ECBG_01236 (degree 1173).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusCasseliflavus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusCasseliflavus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusCasseliflavus",

@@ -117,7 +117,6 @@ def PichiaKudriavzevii(
 	4909.A0A099P595 (degree 1301) and 4909.A0A099NWJ1 (degree 1294).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PichiaKudriavzevii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PichiaKudriavzevii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PichiaKudriavzevii",

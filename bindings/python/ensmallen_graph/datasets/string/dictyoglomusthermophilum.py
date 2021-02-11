@@ -117,7 +117,6 @@ def DictyoglomusThermophilum(
 	697), 309799.DICTH_1088 (degree 676) and 309799.DICTH_1433 (degree 671).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DictyoglomusThermophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DictyoglomusThermophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DictyoglomusThermophilum",

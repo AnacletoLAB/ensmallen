@@ -117,7 +117,6 @@ def PsychrobacterArcticus(
 	259536.Psyc_1432 (degree 681) and 259536.Psyc_2138 (degree 667).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PsychrobacterArcticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PsychrobacterArcticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PsychrobacterArcticus",

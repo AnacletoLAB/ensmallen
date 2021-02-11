@@ -117,7 +117,6 @@ def EndolissoclinumFaulkneriL2(
 	575), 1193729.A1OE_561 (degree 480) and 1193729.A1OE_1543 (degree 437).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EndolissoclinumFaulkneriL2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EndolissoclinumFaulkneriL2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndolissoclinumFaulkneriL2",

@@ -119,7 +119,6 @@ def RhodobacteraceaeBacteriumHtcc2150(
 	388401.RB2150_13091 (degree 1114).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RhodobacteraceaeBacteriumHtcc2150(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RhodobacteraceaeBacteriumHtcc2150(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodobacteraceaeBacteriumHtcc2150",

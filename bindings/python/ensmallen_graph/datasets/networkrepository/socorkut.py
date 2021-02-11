@@ -120,7 +120,6 @@ def SocOrkut(
 	and 42606 (degree 22844).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def SocOrkut(
 	        month = {October},
 	        year = {2007}}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def SocOrkut(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocOrkut",

@@ -119,7 +119,6 @@ def StreptomycesPristinaespiralis(
 	(degree 1811) and 457429.ABJI02000336_gene5209 (degree 1744).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptomycesPristinaespiralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptomycesPristinaespiralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesPristinaespiralis",

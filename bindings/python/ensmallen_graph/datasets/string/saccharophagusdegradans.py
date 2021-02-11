@@ -117,7 +117,6 @@ def SaccharophagusDegradans(
 	203122.Sde_1460 (degree 974) and 203122.Sde_3531 (degree 922).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaccharophagusDegradans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaccharophagusDegradans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharophagusDegradans",

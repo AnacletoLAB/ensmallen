@@ -117,7 +117,6 @@ def KomagataeibacterXylinus(
 	944), 1296990.H845_3168 (degree 864) and 1296990.H845_557 (degree 851).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KomagataeibacterXylinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KomagataeibacterXylinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KomagataeibacterXylinus",

@@ -119,7 +119,6 @@ def GasterosteusAculeatus(
 	(degree 3915) and 69293.ENSGACP00000010268 (degree 3883).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GasterosteusAculeatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GasterosteusAculeatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GasterosteusAculeatus",

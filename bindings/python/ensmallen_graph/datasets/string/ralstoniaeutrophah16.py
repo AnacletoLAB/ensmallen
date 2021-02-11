@@ -117,7 +117,6 @@ def RalstoniaEutrophaH16(
 	2492), 381666.H16_A0749 (degree 2356) and 381666.H16_A0441 (degree 2340).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RalstoniaEutrophaH16(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RalstoniaEutrophaH16(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RalstoniaEutrophaH16",

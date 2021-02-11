@@ -117,7 +117,6 @@ def MetallosphaeraSedula(
 	399549.Msed_1653 (degree 752) and 399549.Msed_1650 (degree 741).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MetallosphaeraSedula(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MetallosphaeraSedula(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MetallosphaeraSedula",

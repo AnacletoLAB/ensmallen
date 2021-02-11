@@ -110,7 +110,6 @@ def AffDbpediaUsers2country(
 	81 (degree 56328), 17 (degree 39979), 7 (degree 39936) and 22 (degree 29567).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def AffDbpediaUsers2country(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def AffDbpediaUsers2country(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AffDbpediaUsers2country",

@@ -117,7 +117,6 @@ def MoorellaThermoacetica(
 	861), 264732.Moth_1329 (degree 795) and 264732.Moth_0048 (degree 780).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MoorellaThermoacetica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MoorellaThermoacetica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MoorellaThermoacetica",

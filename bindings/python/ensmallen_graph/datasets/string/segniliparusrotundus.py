@@ -117,7 +117,6 @@ def SegniliparusRotundus(
 	640132.Srot_0133 (degree 761) and 640132.Srot_2940 (degree 754).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SegniliparusRotundus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SegniliparusRotundus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SegniliparusRotundus",

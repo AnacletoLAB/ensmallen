@@ -117,7 +117,6 @@ def XanthomonasOryzaeOryzicola(
 	383407.XOC_2648 (degree 1015) and 383407.XOC_2679 (degree 963).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasOryzaeOryzicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasOryzaeOryzicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasOryzaeOryzicola",

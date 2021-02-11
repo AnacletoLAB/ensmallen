@@ -117,7 +117,6 @@ def ChlamydiaGallinacea(
 	371), 1143323.M787_0579 (degree 354) and 1143323.M787_0925 (degree 348).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydiaGallinacea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydiaGallinacea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydiaGallinacea",

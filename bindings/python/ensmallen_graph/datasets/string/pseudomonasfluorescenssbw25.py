@@ -117,7 +117,6 @@ def PseudomonasFluorescensSbw25(
 	2011), 216595.PFLU_0414 (degree 1921) and 216595.PFLU_5043 (degree 1840).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasFluorescensSbw25(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasFluorescensSbw25(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasFluorescensSbw25",

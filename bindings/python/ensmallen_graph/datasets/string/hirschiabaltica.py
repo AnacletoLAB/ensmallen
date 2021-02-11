@@ -117,7 +117,6 @@ def HirschiaBaltica(
 	905), 582402.Hbal_1810 (degree 855) and 582402.Hbal_0927 (degree 847).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HirschiaBaltica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HirschiaBaltica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HirschiaBaltica",

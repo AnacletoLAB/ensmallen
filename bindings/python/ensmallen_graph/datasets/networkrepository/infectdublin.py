@@ -115,7 +115,6 @@ def InfectDublin(
 	372 (degree 43), 148 (degree 43) and 314 (degree 34).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def InfectDublin(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def InfectDublin(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "InfectDublin",

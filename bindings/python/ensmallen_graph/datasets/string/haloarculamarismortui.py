@@ -117,7 +117,6 @@ def HaloarculaMarismortui(
 	1029), 272569.rrnAC2262 (degree 1003) and 272569.rrnAC1532 (degree 1003).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloarculaMarismortui(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloarculaMarismortui(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloarculaMarismortui",

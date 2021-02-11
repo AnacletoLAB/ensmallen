@@ -119,7 +119,6 @@ def MarinobacterLipolyticusBf04cf4(
 	(degree 881) and 1046724.KB889873_gene2105 (degree 869).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MarinobacterLipolyticusBf04cf4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MarinobacterLipolyticusBf04cf4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinobacterLipolyticusBf04cf4",

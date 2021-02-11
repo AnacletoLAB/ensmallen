@@ -117,7 +117,6 @@ def DesulfitobacteriumHafniense(
 	138119.DSY2291 (degree 1468) and 138119.DSY2685 (degree 1397).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfitobacteriumHafniense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfitobacteriumHafniense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfitobacteriumHafniense",

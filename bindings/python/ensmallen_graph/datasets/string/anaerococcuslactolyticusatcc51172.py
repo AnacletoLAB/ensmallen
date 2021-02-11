@@ -119,7 +119,6 @@ def AnaerococcusLactolyticusAtcc51172(
 	875) and 525254.HMPREF0072_0477 (degree 813).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AnaerococcusLactolyticusAtcc51172(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AnaerococcusLactolyticusAtcc51172(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerococcusLactolyticusAtcc51172",

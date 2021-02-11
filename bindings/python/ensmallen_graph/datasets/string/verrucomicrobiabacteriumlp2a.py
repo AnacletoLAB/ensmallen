@@ -119,7 +119,6 @@ def VerrucomicrobiaBacteriumLp2a(
 	(degree 671) and 478741.JAFS01000002_gene273 (degree 635).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def VerrucomicrobiaBacteriumLp2a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def VerrucomicrobiaBacteriumLp2a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VerrucomicrobiaBacteriumLp2a",

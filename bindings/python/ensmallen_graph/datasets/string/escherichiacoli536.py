@@ -117,7 +117,6 @@ def EscherichiaColi536(
 	362663.ECP_1979 (degree 1386) and 362663.ECP_4074 (degree 1381).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EscherichiaColi536(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EscherichiaColi536(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColi536",

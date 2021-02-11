@@ -117,7 +117,6 @@ def TerriglobusRoseus(
 	1064), 926566.Terro_1714 (degree 1053) and 926566.Terro_3528 (degree 1031).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TerriglobusRoseus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TerriglobusRoseus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TerriglobusRoseus",

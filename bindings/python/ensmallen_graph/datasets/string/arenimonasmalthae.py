@@ -117,7 +117,6 @@ def ArenimonasMalthae(
 	1002), 1384054.N790_00140 (degree 975) and 1384054.N790_13550 (degree 949).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArenimonasMalthae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArenimonasMalthae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArenimonasMalthae",

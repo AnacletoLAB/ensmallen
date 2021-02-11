@@ -110,7 +110,6 @@ def P2pGnutella06(
 	(degree 73), 177 (degree 72), 557 (degree 70) and 32 (degree 70).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def P2pGnutella06(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def P2pGnutella06(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "P2pGnutella06",

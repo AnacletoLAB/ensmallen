@@ -117,7 +117,6 @@ def CommensalibacterSp.Mx01(
 	679), 1208583.COMX_02455 (degree 629) and 1208583.COMX_09046 (degree 618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CommensalibacterSp.Mx01(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CommensalibacterSp.Mx01(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CommensalibacterSp.Mx01",

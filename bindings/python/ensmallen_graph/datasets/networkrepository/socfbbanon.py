@@ -133,7 +133,6 @@ def SocfbBAnon(
 	(degree 2905).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -167,7 +166,6 @@ def SocfbBAnon(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -204,7 +202,6 @@ def SocfbBAnon(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbBAnon",

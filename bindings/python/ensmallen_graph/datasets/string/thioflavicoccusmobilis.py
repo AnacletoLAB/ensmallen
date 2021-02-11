@@ -117,7 +117,6 @@ def ThioflavicoccusMobilis(
 	1273), 765912.Thimo_3402 (degree 1060) and 765912.Thimo_1404 (degree 1037).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThioflavicoccusMobilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThioflavicoccusMobilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioflavicoccusMobilis",

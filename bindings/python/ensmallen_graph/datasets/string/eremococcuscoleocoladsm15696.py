@@ -119,7 +119,6 @@ def EremococcusColeocolaDsm15696(
 	(degree 613) and 1121871.AUAT01000023_gene1057 (degree 612).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def EremococcusColeocolaDsm15696(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def EremococcusColeocolaDsm15696(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EremococcusColeocolaDsm15696",

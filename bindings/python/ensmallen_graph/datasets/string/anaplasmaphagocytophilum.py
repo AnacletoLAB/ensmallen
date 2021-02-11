@@ -117,7 +117,6 @@ def AnaplasmaPhagocytophilum(
 	212042.APH_0273 (degree 433) and 212042.APH_1233 (degree 417).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaplasmaPhagocytophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaplasmaPhagocytophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaplasmaPhagocytophilum",

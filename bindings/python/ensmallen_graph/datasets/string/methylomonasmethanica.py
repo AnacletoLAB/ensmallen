@@ -117,7 +117,6 @@ def MethylomonasMethanica(
 	1436), 857087.Metme_2776 (degree 1325) and 857087.Metme_2097 (degree 1285).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylomonasMethanica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylomonasMethanica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylomonasMethanica",

@@ -118,7 +118,6 @@ def InfOpenflights(
 	65 (degree 218), 59 (degree 211), 56 (degree 172) and 259 (degree 170).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def InfOpenflights(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def InfOpenflights(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "InfOpenflights",

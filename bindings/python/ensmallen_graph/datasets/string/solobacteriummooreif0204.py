@@ -119,7 +119,6 @@ def SolobacteriumMooreiF0204(
 	903) and 706433.HMPREF9430_00054 (degree 899).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SolobacteriumMooreiF0204(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SolobacteriumMooreiF0204(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SolobacteriumMooreiF0204",

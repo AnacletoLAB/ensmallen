@@ -115,7 +115,6 @@ def EscherichiaColiK12Mg1655(
 	511145.b2507 (degree 1204) and 511145.b3212 (degree 1110).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def EscherichiaColiK12Mg1655(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def EscherichiaColiK12Mg1655(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColiK12Mg1655",

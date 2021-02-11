@@ -117,7 +117,6 @@ def ClostridiumSp.7243faa(
 	1388), 457396.CSBG_00169 (degree 1286) and 457396.CSBG_01867 (degree 1224).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumSp.7243faa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumSp.7243faa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumSp.7243faa",

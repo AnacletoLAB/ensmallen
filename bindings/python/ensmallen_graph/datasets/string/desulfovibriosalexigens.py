@@ -117,7 +117,6 @@ def DesulfovibrioSalexigens(
 	1236), 526222.Desal_1954 (degree 1181) and 526222.Desal_1566 (degree 1147).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioSalexigens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioSalexigens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioSalexigens",

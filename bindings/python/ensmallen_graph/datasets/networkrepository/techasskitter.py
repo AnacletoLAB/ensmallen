@@ -119,7 +119,6 @@ def TechAsSkitter(
 	30714) and 7041 (degree 30056).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def TechAsSkitter(
 	        author={{CAIDA}},
 	        note={{\scriptsize \url{http://caida.org/tools/measurement/skitter/}}}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def TechAsSkitter(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechAsSkitter",

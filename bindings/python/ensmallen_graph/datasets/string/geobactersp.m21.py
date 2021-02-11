@@ -117,7 +117,6 @@ def GeobacterSp.M21(
 	1599), 443144.GM21_2113 (degree 1540) and 443144.GM21_0285 (degree 1516).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacterSp.M21(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacterSp.M21(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacterSp.M21",

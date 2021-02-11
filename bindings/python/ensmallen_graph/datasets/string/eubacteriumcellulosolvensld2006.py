@@ -119,7 +119,6 @@ def EubacteriumCellulosolvensLd2006(
 	(degree 858) and 1408436.JHXY01000027_gene936 (degree 840).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def EubacteriumCellulosolvensLd2006(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def EubacteriumCellulosolvensLd2006(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EubacteriumCellulosolvensLd2006",

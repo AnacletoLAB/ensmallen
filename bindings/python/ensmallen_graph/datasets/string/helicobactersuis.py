@@ -117,7 +117,6 @@ def HelicobacterSuis(
 	479), 710393.HSUHS1_0977 (degree 441) and 710393.HSUHS1_0715 (degree 432).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterSuis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterSuis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterSuis",

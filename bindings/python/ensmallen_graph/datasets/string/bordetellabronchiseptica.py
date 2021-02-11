@@ -117,7 +117,6 @@ def BordetellaBronchiseptica(
 	257310.BB2509 (degree 1495) and 257310.BB2326 (degree 1432).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BordetellaBronchiseptica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BordetellaBronchiseptica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BordetellaBronchiseptica",

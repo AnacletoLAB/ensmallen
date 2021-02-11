@@ -117,7 +117,6 @@ def CellvibrioJaponicus(
 	498211.CJA_1898 (degree 1219) and 498211.CJA_2029 (degree 1120).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellvibrioJaponicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellvibrioJaponicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellvibrioJaponicus",

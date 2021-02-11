@@ -117,7 +117,6 @@ def EchinicolaVietnamensis(
 	1265), 926556.Echvi_2760 (degree 1258) and 926556.Echvi_4259 (degree 1234).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EchinicolaVietnamensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EchinicolaVietnamensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EchinicolaVietnamensis",

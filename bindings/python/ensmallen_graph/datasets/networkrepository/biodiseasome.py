@@ -123,7 +123,6 @@ def BioDiseasome(
 	163 (degree 27), 252 (degree 26) and 457 (degree 26).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def BioDiseasome(
 	        publisher={National Acad Sciences}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def BioDiseasome(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioDiseasome",

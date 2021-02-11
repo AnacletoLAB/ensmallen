@@ -119,7 +119,6 @@ def PorticoccusHydrocarbonoclasticus(
 	(degree 772) and 1415778.JQMM01000001_gene2104 (degree 766).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PorticoccusHydrocarbonoclasticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PorticoccusHydrocarbonoclasticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorticoccusHydrocarbonoclasticus",

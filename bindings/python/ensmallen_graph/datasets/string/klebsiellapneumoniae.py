@@ -117,7 +117,6 @@ def KlebsiellaPneumoniae(
 	573.JG24_16630 (degree 1589) and 573.JG24_23010 (degree 1536).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KlebsiellaPneumoniae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KlebsiellaPneumoniae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KlebsiellaPneumoniae",

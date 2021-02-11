@@ -118,7 +118,6 @@ def SocHamsterster(
 	121 (degree 223), 301 (degree 173), 202 (degree 154) and 6 (degree 151).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def SocHamsterster(
 	        note={http://www.hamsterster.com}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def SocHamsterster(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocHamsterster",

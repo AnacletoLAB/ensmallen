@@ -117,7 +117,6 @@ def IsosphaeraPallida(
 	1077), 575540.Isop_1658 (degree 1075) and 575540.Isop_3023 (degree 992).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IsosphaeraPallida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IsosphaeraPallida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IsosphaeraPallida",

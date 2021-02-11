@@ -125,7 +125,6 @@ def RtRetweet(
 	72 (degree 9), 89 (degree 9) and 93 (degree 8).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -153,7 +152,6 @@ def RtRetweet(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -190,7 +188,6 @@ def RtRetweet(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RtRetweet",

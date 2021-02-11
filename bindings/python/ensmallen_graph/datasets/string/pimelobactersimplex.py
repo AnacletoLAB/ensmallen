@@ -117,7 +117,6 @@ def PimelobacterSimplex(
 	2045.KR76_06745 (degree 1347) and 2045.KR76_18725 (degree 1276).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PimelobacterSimplex(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PimelobacterSimplex(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PimelobacterSimplex",

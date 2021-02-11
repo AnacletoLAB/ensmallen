@@ -117,7 +117,6 @@ def EpilithonimonasLactis(
 	897), 421072.IO89_00775 (degree 851) and 421072.IO89_07530 (degree 832).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EpilithonimonasLactis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EpilithonimonasLactis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EpilithonimonasLactis",

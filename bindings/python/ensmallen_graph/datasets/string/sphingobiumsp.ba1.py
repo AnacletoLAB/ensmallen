@@ -117,7 +117,6 @@ def SphingobiumSp.Ba1(
 	1162), 1522072.IL54_1504 (degree 1156) and 1522072.IL54_3660 (degree 1046).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingobiumSp.Ba1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingobiumSp.Ba1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingobiumSp.Ba1",

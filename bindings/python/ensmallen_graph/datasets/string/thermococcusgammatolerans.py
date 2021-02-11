@@ -117,7 +117,6 @@ def ThermococcusGammatolerans(
 	593117.TGAM_0130 (degree 605) and 593117.TGAM_2074 (degree 595).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermococcusGammatolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermococcusGammatolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermococcusGammatolerans",

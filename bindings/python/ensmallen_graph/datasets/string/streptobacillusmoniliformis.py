@@ -117,7 +117,6 @@ def StreptobacillusMoniliformis(
 	519441.Smon_0300 (degree 594) and 519441.Smon_0852 (degree 590).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptobacillusMoniliformis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptobacillusMoniliformis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptobacillusMoniliformis",

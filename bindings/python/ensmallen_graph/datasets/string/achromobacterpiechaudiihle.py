@@ -117,7 +117,6 @@ def AchromobacterPiechaudiiHle(
 	2087), 1156919.QWC_03668 (degree 1997) and 1156919.QWC_13043 (degree 1849).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AchromobacterPiechaudiiHle(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AchromobacterPiechaudiiHle(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AchromobacterPiechaudiiHle",

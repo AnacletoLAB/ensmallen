@@ -119,7 +119,6 @@ def AlphaProteobacteriumMf105b01(
 	(degree 1034) and 1282876.BAOK01000001_gene2867 (degree 1011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AlphaProteobacteriumMf105b01(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AlphaProteobacteriumMf105b01(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlphaProteobacteriumMf105b01",

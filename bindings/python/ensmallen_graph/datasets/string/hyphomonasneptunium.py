@@ -117,7 +117,6 @@ def HyphomonasNeptunium(
 	228405.HNE_1820 (degree 1109) and 228405.HNE_0666 (degree 1030).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasNeptunium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasNeptunium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasNeptunium",

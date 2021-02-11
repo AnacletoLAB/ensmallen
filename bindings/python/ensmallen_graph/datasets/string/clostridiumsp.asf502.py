@@ -117,7 +117,6 @@ def ClostridiumSp.Asf502(
 	1255), 97139.C824_05753 (degree 1203) and 97139.C824_03178 (degree 1173).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumSp.Asf502(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumSp.Asf502(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumSp.Asf502",

@@ -117,7 +117,6 @@ def BdellovibrioBacteriovorusHd100(
 	(degree 1165), 264462.Bd3836 (degree 1039) and 264462.Bd2080 (degree 1003).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BdellovibrioBacteriovorusHd100(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BdellovibrioBacteriovorusHd100(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BdellovibrioBacteriovorusHd100",

@@ -117,7 +117,6 @@ def KocuriaMarina(
 	838), 223184.AS25_09765 (degree 837) and 223184.AS25_13430 (degree 807).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KocuriaMarina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KocuriaMarina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KocuriaMarina",

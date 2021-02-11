@@ -119,7 +119,6 @@ def PeptostreptococcusAnaerobiusVpi4330(
 	626) and 1035196.HMPREF9998_01843 (degree 615).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PeptostreptococcusAnaerobiusVpi4330(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PeptostreptococcusAnaerobiusVpi4330(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PeptostreptococcusAnaerobiusVpi4330",

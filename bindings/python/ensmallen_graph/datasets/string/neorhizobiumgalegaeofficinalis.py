@@ -119,7 +119,6 @@ def NeorhizobiumGalegaeOfficinalis(
 	1629) and 1028801.RG1141_CH44760 (degree 1622).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def NeorhizobiumGalegaeOfficinalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def NeorhizobiumGalegaeOfficinalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NeorhizobiumGalegaeOfficinalis",

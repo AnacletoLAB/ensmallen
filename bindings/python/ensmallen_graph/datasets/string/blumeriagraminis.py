@@ -117,7 +117,6 @@ def BlumeriaGraminis(
 	34373.CCU75561 (degree 1181) and 34373.CCU76638 (degree 1091).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BlumeriaGraminis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BlumeriaGraminis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlumeriaGraminis",

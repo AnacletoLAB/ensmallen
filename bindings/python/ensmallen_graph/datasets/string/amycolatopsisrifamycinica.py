@@ -117,7 +117,6 @@ def AmycolatopsisRifamycinica(
 	2474), 287986.DV20_11295 (degree 2437) and 287986.DV20_39350 (degree 2301).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmycolatopsisRifamycinica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmycolatopsisRifamycinica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmycolatopsisRifamycinica",

@@ -119,7 +119,6 @@ def RuminococcusFlavefaciensMa2007(
 	(degree 792) and 1410670.JHXF01000001_gene2725 (degree 749).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RuminococcusFlavefaciensMa2007(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RuminococcusFlavefaciensMa2007(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcusFlavefaciensMa2007",

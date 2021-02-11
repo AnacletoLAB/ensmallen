@@ -117,7 +117,6 @@ def StigmatellaAurantiaca(
 	2627), 378806.STAUR_1169 (degree 2399) and 378806.STAUR_4965 (degree 2386).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StigmatellaAurantiaca(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StigmatellaAurantiaca(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StigmatellaAurantiaca",

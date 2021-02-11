@@ -117,7 +117,6 @@ def MethylobacteriumOryzae(
 	693986.MOC_0298 (degree 1714) and 693986.MOC_0607 (degree 1614).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacteriumOryzae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacteriumOryzae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacteriumOryzae",

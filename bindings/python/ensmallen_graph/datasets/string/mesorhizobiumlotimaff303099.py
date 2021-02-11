@@ -117,7 +117,6 @@ def MesorhizobiumLotiMaff303099(
 	266835.14021530 (degree 1807) and 266835.14025299 (degree 1786).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MesorhizobiumLotiMaff303099(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MesorhizobiumLotiMaff303099(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesorhizobiumLotiMaff303099",

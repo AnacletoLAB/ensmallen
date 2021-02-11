@@ -117,7 +117,6 @@ def PelobacterPropionicus(
 	1315), 338966.Ppro_3101 (degree 1240) and 338966.Ppro_3306 (degree 1186).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelobacterPropionicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelobacterPropionicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelobacterPropionicus",

@@ -117,7 +117,6 @@ def AcidothermusCellulolyticus(
 	351607.Acel_0371 (degree 724) and 351607.Acel_1078 (degree 715).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidothermusCellulolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidothermusCellulolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidothermusCellulolyticus",

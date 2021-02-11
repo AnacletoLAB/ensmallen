@@ -117,7 +117,6 @@ def ByssochlamysSpectabilis(
 	264951.V5FLA6 (degree 1651) and 264951.V5HXB8 (degree 1618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ByssochlamysSpectabilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ByssochlamysSpectabilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ByssochlamysSpectabilis",

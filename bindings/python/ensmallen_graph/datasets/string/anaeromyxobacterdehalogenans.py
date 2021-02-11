@@ -117,7 +117,6 @@ def AnaeromyxobacterDehalogenans(
 	1419), 290397.Adeh_3529 (degree 1380) and 290397.Adeh_0721 (degree 1337).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaeromyxobacterDehalogenans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaeromyxobacterDehalogenans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaeromyxobacterDehalogenans",

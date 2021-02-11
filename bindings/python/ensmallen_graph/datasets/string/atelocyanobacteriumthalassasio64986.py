@@ -119,7 +119,6 @@ def AtelocyanobacteriumThalassaSio64986(
 	and 1527444.ucyna2_00777 (degree 600).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AtelocyanobacteriumThalassaSio64986(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AtelocyanobacteriumThalassaSio64986(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AtelocyanobacteriumThalassaSio64986",

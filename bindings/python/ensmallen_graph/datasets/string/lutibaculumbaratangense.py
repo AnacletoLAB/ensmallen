@@ -117,7 +117,6 @@ def LutibaculumBaratangense(
 	1158), 631454.N177_0927 (degree 1119) and 631454.N177_1415 (degree 1109).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LutibaculumBaratangense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LutibaculumBaratangense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LutibaculumBaratangense",

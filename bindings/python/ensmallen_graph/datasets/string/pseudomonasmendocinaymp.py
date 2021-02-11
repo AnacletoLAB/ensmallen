@@ -117,7 +117,6 @@ def PseudomonasMendocinaYmp(
 	1409), 399739.Pmen_3414 (degree 1372) and 399739.Pmen_2468 (degree 1364).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasMendocinaYmp(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasMendocinaYmp(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasMendocinaYmp",

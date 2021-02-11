@@ -117,7 +117,6 @@ def LysobacterDefluvii(
 	860), 1385515.N791_02445 (degree 788) and 1385515.N791_11865 (degree 767).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysobacterDefluvii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysobacterDefluvii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysobacterDefluvii",

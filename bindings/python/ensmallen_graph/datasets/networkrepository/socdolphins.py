@@ -121,7 +121,6 @@ def SocDolphins(
 	38 (degree 11), 34 (degree 10) and 52 (degree 10).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocDolphins(
 	        publisher={Springer}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocDolphins(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocDolphins",

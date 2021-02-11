@@ -117,7 +117,6 @@ def AcidaminococcusFermentans(
 	650), 591001.Acfer_0886 (degree 603) and 591001.Acfer_0481 (degree 592).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidaminococcusFermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidaminococcusFermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidaminococcusFermentans",

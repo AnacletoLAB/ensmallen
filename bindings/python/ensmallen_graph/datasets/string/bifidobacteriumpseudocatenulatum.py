@@ -119,7 +119,6 @@ def BifidobacteriumPseudocatenulatum(
 	594) and 547043.BIFPSEUDO_02452 (degree 561).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BifidobacteriumPseudocatenulatum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BifidobacteriumPseudocatenulatum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumPseudocatenulatum",

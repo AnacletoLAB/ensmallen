@@ -119,7 +119,6 @@ def PseudomonasPseudoalcaligenesKf707(
 	2119) and 1149133.ppKF707_0796 (degree 2050).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasPseudoalcaligenesKf707(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasPseudoalcaligenesKf707(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasPseudoalcaligenesKf707",

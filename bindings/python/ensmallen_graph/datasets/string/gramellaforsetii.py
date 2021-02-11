@@ -117,7 +117,6 @@ def GramellaForsetii(
 	411154.GFO_1684 (degree 1115) and 411154.GFO_2705 (degree 1100).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GramellaForsetii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GramellaForsetii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GramellaForsetii",

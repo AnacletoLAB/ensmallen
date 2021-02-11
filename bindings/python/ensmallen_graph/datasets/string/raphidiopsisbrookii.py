@@ -117,7 +117,6 @@ def RaphidiopsisBrookii(
 	1173), 533247.CRD_02195 (degree 1066) and 533247.CRD_00391 (degree 1000).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RaphidiopsisBrookii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RaphidiopsisBrookii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RaphidiopsisBrookii",

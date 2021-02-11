@@ -117,7 +117,6 @@ def HaemophilusParainfluenzae(
 	630), 862965.PARA_13960 (degree 617) and 862965.PARA_18730 (degree 582).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaemophilusParainfluenzae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaemophilusParainfluenzae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaemophilusParainfluenzae",

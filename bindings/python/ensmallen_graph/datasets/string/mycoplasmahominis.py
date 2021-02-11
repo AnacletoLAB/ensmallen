@@ -115,7 +115,6 @@ def MycoplasmaHominis(
 	347256.MHO_1170 (degree 229) and 347256.MHO_4590 (degree 226).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def MycoplasmaHominis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def MycoplasmaHominis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycoplasmaHominis",

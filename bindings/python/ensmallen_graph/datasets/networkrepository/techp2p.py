@@ -121,7 +121,6 @@ def TechP2p(
 	2 (degree 493183), 0 (degree 412229), 3 (degree 383342) and 4 (degree 314705).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def TechP2p(
 	        publisher={Elsevier}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def TechP2p(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechP2p",

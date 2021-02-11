@@ -119,7 +119,6 @@ def BurkholderialesBacteriumJoshi001(
 	1638) and 864051.BurJ1DRAFT_3572 (degree 1564).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BurkholderialesBacteriumJoshi001(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BurkholderialesBacteriumJoshi001(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderialesBacteriumJoshi001",

@@ -117,7 +117,6 @@ def RubrivivaxGelatinosus(
 	2217), 983917.RGE_23260 (degree 2190) and 983917.RGE_22850 (degree 2173).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RubrivivaxGelatinosus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RubrivivaxGelatinosus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RubrivivaxGelatinosus",

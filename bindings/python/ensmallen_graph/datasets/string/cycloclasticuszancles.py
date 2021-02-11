@@ -117,7 +117,6 @@ def CycloclasticusZancles(
 	856), 1198232.CYCME_1985 (degree 821) and 1198232.CYCME_0163 (degree 750).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CycloclasticusZancles(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CycloclasticusZancles(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CycloclasticusZancles",

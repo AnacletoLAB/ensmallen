@@ -117,7 +117,6 @@ def ListeriaIvanoviiPam55(
 	881621.LIV_1430 (degree 808) and 881621.LIV_1412 (degree 805).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ListeriaIvanoviiPam55(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ListeriaIvanoviiPam55(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ListeriaIvanoviiPam55",

@@ -115,7 +115,6 @@ def CandidaGlabrata(
 	(degree 1017) and 5478.XP_449113.1 (degree 990).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def CandidaGlabrata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def CandidaGlabrata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CandidaGlabrata",

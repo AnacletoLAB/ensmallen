@@ -117,7 +117,6 @@ def NitrococcusMobilis(
 	1023), 314278.NB231_09418 (degree 939) and 314278.NB231_07712 (degree 931).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrococcusMobilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrococcusMobilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrococcusMobilis",

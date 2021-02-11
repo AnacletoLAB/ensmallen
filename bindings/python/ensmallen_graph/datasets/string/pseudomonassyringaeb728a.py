@@ -117,7 +117,6 @@ def PseudomonasSyringaeB728a(
 	1144), 205918.Psyr_1261 (degree 1066) and 205918.Psyr_1029 (degree 1011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasSyringaeB728a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasSyringaeB728a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasSyringaeB728a",

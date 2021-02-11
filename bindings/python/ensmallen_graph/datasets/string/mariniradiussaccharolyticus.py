@@ -117,7 +117,6 @@ def MariniradiusSaccharolyticus(
 	1192), 1239962.C943_02389 (degree 995) and 1239962.C943_03528 (degree 955).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MariniradiusSaccharolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MariniradiusSaccharolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MariniradiusSaccharolyticus",

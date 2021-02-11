@@ -117,7 +117,6 @@ def IsoptericolaVariabilis(
 	895), 743718.Isova_0740 (degree 879) and 743718.Isova_1331 (degree 871).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IsoptericolaVariabilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IsoptericolaVariabilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IsoptericolaVariabilis",

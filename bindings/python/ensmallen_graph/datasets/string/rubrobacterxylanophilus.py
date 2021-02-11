@@ -117,7 +117,6 @@ def RubrobacterXylanophilus(
 	1016), 266117.Rxyl_0436 (degree 945) and 266117.Rxyl_0341 (degree 942).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RubrobacterXylanophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RubrobacterXylanophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RubrobacterXylanophilus",

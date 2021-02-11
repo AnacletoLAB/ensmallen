@@ -119,7 +119,6 @@ def CorynebacteriumGlucuronolyticum(
 	806) and 548477.HMPREF0294_1291 (degree 755).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CorynebacteriumGlucuronolyticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CorynebacteriumGlucuronolyticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumGlucuronolyticum",

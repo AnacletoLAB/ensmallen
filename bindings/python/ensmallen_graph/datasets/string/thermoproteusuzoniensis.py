@@ -117,7 +117,6 @@ def ThermoproteusUzoniensis(
 	999630.TUZN_0936 (degree 788) and 999630.TUZN_0650 (degree 774).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoproteusUzoniensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoproteusUzoniensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoproteusUzoniensis",

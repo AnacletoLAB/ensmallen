@@ -117,7 +117,6 @@ def BorreliaDuttonii(
 	412419.BDU_522 (degree 427) and 412419.BDU_135 (degree 424).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BorreliaDuttonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BorreliaDuttonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BorreliaDuttonii",

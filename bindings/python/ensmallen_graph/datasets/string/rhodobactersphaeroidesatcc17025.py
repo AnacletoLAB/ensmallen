@@ -119,7 +119,6 @@ def RhodobacterSphaeroidesAtcc17025(
 	1159) and 349102.Rsph17025_2781 (degree 1133).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def RhodobacterSphaeroidesAtcc17025(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def RhodobacterSphaeroidesAtcc17025(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodobacterSphaeroidesAtcc17025",

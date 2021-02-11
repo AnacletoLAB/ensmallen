@@ -117,7 +117,6 @@ def SulfitobacterMediterraneus(
 	1238), 83219.PM02_05755 (degree 1126) and 83219.PM02_04355 (degree 1113).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfitobacterMediterraneus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfitobacterMediterraneus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfitobacterMediterraneus",

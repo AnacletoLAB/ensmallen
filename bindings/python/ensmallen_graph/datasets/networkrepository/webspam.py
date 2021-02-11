@@ -117,7 +117,6 @@ def WebSpam(
 	395), 3071 (degree 355), 136 (degree 352) and 982 (degree 351).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def WebSpam(
 	        year={2008}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def WebSpam(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebSpam",

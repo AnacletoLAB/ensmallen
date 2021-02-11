@@ -117,7 +117,6 @@ def KutzneriaAlbida(
 	2444), 1449976.KALB_883 (degree 2190) and 1449976.KALB_8148 (degree 2165).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KutzneriaAlbida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KutzneriaAlbida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KutzneriaAlbida",

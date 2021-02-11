@@ -115,7 +115,6 @@ def SchizosaccharomycesJaponicus(
 	4897.EEB06666 (degree 1263) and 4897.EEB05438 (degree 1207).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def SchizosaccharomycesJaponicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def SchizosaccharomycesJaponicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SchizosaccharomycesJaponicus",

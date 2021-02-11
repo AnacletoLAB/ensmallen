@@ -117,7 +117,6 @@ def PlanococcusAntarcticus(
 	888), 1185653.A1A1_05512 (degree 885) and 1185653.A1A1_03907 (degree 839).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlanococcusAntarcticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlanococcusAntarcticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlanococcusAntarcticus",

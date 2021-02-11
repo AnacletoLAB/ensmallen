@@ -117,7 +117,6 @@ def XylanimonasCellulosilytica(
 	963), 446471.Xcel_0687 (degree 944) and 446471.Xcel_1503 (degree 930).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XylanimonasCellulosilytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XylanimonasCellulosilytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XylanimonasCellulosilytica",

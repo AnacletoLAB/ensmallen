@@ -117,7 +117,6 @@ def OstreococcusLucimarinus(
 	242159.ABO95851 (degree 1233) and 242159.ABO97278 (degree 1219).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OstreococcusLucimarinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OstreococcusLucimarinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OstreococcusLucimarinus",

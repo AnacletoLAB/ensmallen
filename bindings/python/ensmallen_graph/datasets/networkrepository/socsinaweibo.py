@@ -123,7 +123,6 @@ def SocSinaweibo(
 	(degree 94118) and 243610 (degree 93796).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocSinaweibo(
 	        publisher={Springer}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocSinaweibo(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocSinaweibo",

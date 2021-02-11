@@ -119,7 +119,6 @@ def PseudomonasStutzeriAtcc14405(
 	1445) and 32042.PstZobell_03510 (degree 1441).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasStutzeriAtcc14405(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasStutzeriAtcc14405(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasStutzeriAtcc14405",

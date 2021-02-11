@@ -117,7 +117,6 @@ def ChryseobacteriumPiperi(
 	814), 558152.IQ37_12825 (degree 785) and 558152.IQ37_16550 (degree 774).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChryseobacteriumPiperi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChryseobacteriumPiperi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChryseobacteriumPiperi",

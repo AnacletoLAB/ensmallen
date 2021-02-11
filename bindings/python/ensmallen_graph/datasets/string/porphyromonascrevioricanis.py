@@ -117,7 +117,6 @@ def PorphyromonasCrevioricanis(
 	653), 393921.HQ45_08340 (degree 599) and 393921.HQ45_01295 (degree 594).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PorphyromonasCrevioricanis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PorphyromonasCrevioricanis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorphyromonasCrevioricanis",

@@ -117,7 +117,6 @@ def TheobromaCacao(
 	3641.EOY07890 (degree 3611) and 3641.EOY30790 (degree 3533).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TheobromaCacao(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TheobromaCacao(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TheobromaCacao",

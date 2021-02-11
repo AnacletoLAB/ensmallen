@@ -117,7 +117,6 @@ def IndibacterAlkaliphilus(
 	1128), 1189612.A33Q_4226 (degree 1070) and 1189612.A33Q_2061 (degree 1035).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IndibacterAlkaliphilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IndibacterAlkaliphilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IndibacterAlkaliphilus",

@@ -117,7 +117,6 @@ def PseudozymaHubeiensis(
 	327079.R9PDA6 (degree 1267) and 327079.R9NZF9 (degree 1244).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudozymaHubeiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudozymaHubeiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudozymaHubeiensis",

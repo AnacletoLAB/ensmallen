@@ -119,7 +119,6 @@ def LactobacillusSp.Wkb10(
 	1119) and 1545701.LACWKB10_0175 (degree 1115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LactobacillusSp.Wkb10(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LactobacillusSp.Wkb10(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusSp.Wkb10",

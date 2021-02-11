@@ -117,7 +117,6 @@ def CatenovulumAgarivoransDs2(
 	1233), 1328313.DS2_02353 (degree 1226) and 1328313.DS2_00380 (degree 1183).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CatenovulumAgarivoransDs2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CatenovulumAgarivoransDs2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CatenovulumAgarivoransDs2",

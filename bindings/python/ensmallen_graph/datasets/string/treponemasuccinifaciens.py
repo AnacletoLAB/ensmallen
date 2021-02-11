@@ -117,7 +117,6 @@ def TreponemaSuccinifaciens(
 	665), 869209.Tresu_1337 (degree 664) and 869209.Tresu_1801 (degree 663).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaSuccinifaciens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaSuccinifaciens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaSuccinifaciens",

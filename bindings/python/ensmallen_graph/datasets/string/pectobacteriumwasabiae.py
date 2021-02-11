@@ -117,7 +117,6 @@ def PectobacteriumWasabiae(
 	1198), 561231.Pecwa_0305 (degree 1138) and 561231.Pecwa_0307 (degree 1129).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PectobacteriumWasabiae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PectobacteriumWasabiae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PectobacteriumWasabiae",

@@ -117,7 +117,6 @@ def GallaecimonasXiamenensis(
 	1317), 745411.B3C1_08721 (degree 1279) and 745411.B3C1_01115 (degree 1273).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GallaecimonasXiamenensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GallaecimonasXiamenensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GallaecimonasXiamenensis",

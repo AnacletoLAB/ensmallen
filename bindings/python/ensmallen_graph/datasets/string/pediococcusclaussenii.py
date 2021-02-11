@@ -117,7 +117,6 @@ def PediococcusClaussenii(
 	701521.PECL_973 (degree 547) and 701521.PECL_1111 (degree 535).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PediococcusClaussenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PediococcusClaussenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PediococcusClaussenii",

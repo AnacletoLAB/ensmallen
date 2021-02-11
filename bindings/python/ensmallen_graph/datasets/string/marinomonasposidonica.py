@@ -117,7 +117,6 @@ def MarinomonasPosidonica(
 	890), 491952.Mar181_2232 (degree 885) and 491952.Mar181_2434 (degree 873).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinomonasPosidonica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinomonasPosidonica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinomonasPosidonica",

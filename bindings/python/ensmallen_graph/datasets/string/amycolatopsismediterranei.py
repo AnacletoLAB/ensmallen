@@ -117,7 +117,6 @@ def AmycolatopsisMediterranei(
 	2635), 749927.AMED_4526 (degree 2322) and 749927.AMED_6138 (degree 2277).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmycolatopsisMediterranei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmycolatopsisMediterranei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmycolatopsisMediterranei",

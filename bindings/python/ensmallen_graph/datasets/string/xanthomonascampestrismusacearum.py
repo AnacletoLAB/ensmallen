@@ -119,7 +119,6 @@ def XanthomonasCampestrisMusacearum(
 	1094184.KWO_0100130 (degree 1162).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def XanthomonasCampestrisMusacearum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def XanthomonasCampestrisMusacearum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasCampestrisMusacearum",

@@ -117,7 +117,6 @@ def DichelobacterNodosus(
 	246195.DNO_0376 (degree 485) and 246195.DNO_0158 (degree 461).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DichelobacterNodosus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DichelobacterNodosus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DichelobacterNodosus",

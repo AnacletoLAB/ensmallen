@@ -117,7 +117,6 @@ def XanthomonasArboricola(
 	1511), 454957.IA64_00210 (degree 1495) and 454957.IA64_07885 (degree 1476).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasArboricola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasArboricola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasArboricola",

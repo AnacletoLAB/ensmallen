@@ -117,7 +117,6 @@ def FusobacteriumVarium(
 	851), 469618.FVAG_01872 (degree 844) and 469618.FVAG_01930 (degree 776).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumVarium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumVarium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumVarium",

@@ -117,7 +117,6 @@ def MethylomicrobiumAlbum(
 	1133), 686340.Metal_3216 (degree 1032) and 686340.Metal_0536 (degree 1021).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylomicrobiumAlbum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylomicrobiumAlbum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylomicrobiumAlbum",

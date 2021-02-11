@@ -117,7 +117,6 @@ def HyphomonasOceanitis(
 	1043), 1280953.HOC_16181 (degree 1012) and 1280953.HOC_12882 (degree 923).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasOceanitis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasOceanitis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasOceanitis",

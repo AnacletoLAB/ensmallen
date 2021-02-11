@@ -117,7 +117,6 @@ def FlavobacteriumReichenbachii(
 	1274), 362418.IW19_07905 (degree 1218) and 362418.IW19_08740 (degree 1078).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumReichenbachii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumReichenbachii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumReichenbachii",

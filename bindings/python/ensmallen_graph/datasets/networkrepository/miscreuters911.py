@@ -125,7 +125,6 @@ def MiscReuters911(
 	1066).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def MiscReuters911(
 	        publisher={Wiley Online Library}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def MiscReuters911(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MiscReuters911",

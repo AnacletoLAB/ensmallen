@@ -117,7 +117,6 @@ def BrachyspiraHyodysenteriae(
 	788), 565034.BHWA1_00219 (degree 778) and 565034.BHWA1_02605 (degree 754).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrachyspiraHyodysenteriae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrachyspiraHyodysenteriae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrachyspiraHyodysenteriae",

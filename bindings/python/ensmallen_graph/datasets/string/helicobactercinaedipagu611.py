@@ -117,7 +117,6 @@ def HelicobacterCinaediPagu611(
 	1172562.HCN_0165 (degree 626) and 1172562.HCN_0421 (degree 545).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterCinaediPagu611(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterCinaediPagu611(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterCinaediPagu611",

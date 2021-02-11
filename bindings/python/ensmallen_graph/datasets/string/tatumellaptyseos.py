@@ -117,7 +117,6 @@ def TatumellaPtyseos(
 	993), 1005995.GTPT_1776 (degree 961) and 1005995.GTPT_1742 (degree 934).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TatumellaPtyseos(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TatumellaPtyseos(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TatumellaPtyseos",

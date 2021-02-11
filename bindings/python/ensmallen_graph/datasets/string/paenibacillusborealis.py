@@ -117,7 +117,6 @@ def PaenibacillusBorealis(
 	1938), 160799.PBOR_08770 (degree 1681) and 160799.PBOR_30800 (degree 1680).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusBorealis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusBorealis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusBorealis",

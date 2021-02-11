@@ -117,7 +117,6 @@ def PantoeaSp.Sc1(
 	1306), 593105.S7A_04625 (degree 1300) and 593105.S7A_13465 (degree 1299).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PantoeaSp.Sc1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PantoeaSp.Sc1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PantoeaSp.Sc1",

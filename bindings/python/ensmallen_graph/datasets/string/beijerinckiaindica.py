@@ -117,7 +117,6 @@ def BeijerinckiaIndica(
 	1456), 395963.Bind_2744 (degree 1270) and 395963.Bind_1102 (degree 1112).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BeijerinckiaIndica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BeijerinckiaIndica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BeijerinckiaIndica",

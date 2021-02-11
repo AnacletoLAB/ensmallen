@@ -117,7 +117,6 @@ def KordiaAlgicida(
 	958), 391587.KAOT1_07548 (degree 868) and 391587.KAOT1_19727 (degree 831).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KordiaAlgicida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KordiaAlgicida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KordiaAlgicida",

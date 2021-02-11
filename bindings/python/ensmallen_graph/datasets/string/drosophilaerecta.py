@@ -117,7 +117,6 @@ def DrosophilaErecta(
 	2160), 7220.FBpp0142103 (degree 1914) and 7220.FBpp0130932 (degree 1896).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DrosophilaErecta(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DrosophilaErecta(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DrosophilaErecta",

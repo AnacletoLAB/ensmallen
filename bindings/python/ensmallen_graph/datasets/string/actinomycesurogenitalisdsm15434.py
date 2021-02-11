@@ -119,7 +119,6 @@ def ActinomycesUrogenitalisDsm15434(
 	822) and 525246.HMPREF0058_0259 (degree 771).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinomycesUrogenitalisDsm15434(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinomycesUrogenitalisDsm15434(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinomycesUrogenitalisDsm15434",

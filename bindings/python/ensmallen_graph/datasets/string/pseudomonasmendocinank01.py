@@ -117,7 +117,6 @@ def PseudomonasMendocinaNk01(
 	1479), 1001585.MDS_3657 (degree 1440) and 1001585.MDS_3132 (degree 1434).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasMendocinaNk01(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasMendocinaNk01(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasMendocinaNk01",

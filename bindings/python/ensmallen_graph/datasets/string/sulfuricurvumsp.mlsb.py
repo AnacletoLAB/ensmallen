@@ -117,7 +117,6 @@ def SulfuricurvumSp.Mlsb(
 	712), 1537917.JU82_10620 (degree 694) and 1537917.JU82_11160 (degree 676).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfuricurvumSp.Mlsb(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfuricurvumSp.Mlsb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfuricurvumSp.Mlsb",

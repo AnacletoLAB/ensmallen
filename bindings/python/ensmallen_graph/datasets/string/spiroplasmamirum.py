@@ -117,7 +117,6 @@ def SpiroplasmaMirum(
 	441), 838561.P344_04320 (degree 395) and 838561.P344_01355 (degree 390).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SpiroplasmaMirum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SpiroplasmaMirum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpiroplasmaMirum",

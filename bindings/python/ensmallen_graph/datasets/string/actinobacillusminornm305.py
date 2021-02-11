@@ -117,7 +117,6 @@ def ActinobacillusMinorNm305(
 	761), 637911.AM305_10781 (degree 759) and 637911.AM305_12015 (degree 717).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinobacillusMinorNm305(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinobacillusMinorNm305(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinobacillusMinorNm305",

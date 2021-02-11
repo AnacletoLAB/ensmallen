@@ -117,7 +117,6 @@ def DesulfosporosinusSp.Ot(
 	913865.DOT_6228 (degree 1834) and 913865.DOT_1468 (degree 1681).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfosporosinusSp.Ot(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfosporosinusSp.Ot(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfosporosinusSp.Ot",

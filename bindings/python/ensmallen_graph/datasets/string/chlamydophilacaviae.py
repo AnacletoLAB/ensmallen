@@ -117,7 +117,6 @@ def ChlamydophilaCaviae(
 	227941.CCA_00178 (degree 369) and 227941.CCA_00863 (degree 363).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydophilaCaviae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydophilaCaviae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydophilaCaviae",

@@ -117,7 +117,6 @@ def AcromyrmexEchinatior(
 	103372.F4WI50 (degree 1622) and 103372.F4WZJ9 (degree 1605).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcromyrmexEchinatior(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcromyrmexEchinatior(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcromyrmexEchinatior",

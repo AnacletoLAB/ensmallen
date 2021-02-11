@@ -115,7 +115,6 @@ def KazachstaniaNaganishii(
 	588726.J7S636 (degree 1212) and 588726.J7S320 (degree 1197).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def KazachstaniaNaganishii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def KazachstaniaNaganishii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KazachstaniaNaganishii",

@@ -117,7 +117,6 @@ def ThermocrinisAlbus(
 	638303.Thal_1082 (degree 596) and 638303.Thal_0732 (degree 581).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermocrinisAlbus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermocrinisAlbus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermocrinisAlbus",

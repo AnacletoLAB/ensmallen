@@ -117,7 +117,6 @@ def MagnetococcusMarinus(
 	1212), 156889.Mmc1_1538 (degree 1157) and 156889.Mmc1_3409 (degree 1130).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MagnetococcusMarinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MagnetococcusMarinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MagnetococcusMarinus",

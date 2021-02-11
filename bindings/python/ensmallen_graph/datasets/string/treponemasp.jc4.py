@@ -117,7 +117,6 @@ def TreponemaSp.Jc4(
 	986), 1124982.MSI_12460 (degree 886) and 1124982.MSI_15840 (degree 835).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaSp.Jc4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaSp.Jc4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaSp.Jc4",

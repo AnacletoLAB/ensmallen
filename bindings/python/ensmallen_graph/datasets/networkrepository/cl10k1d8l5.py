@@ -118,7 +118,6 @@ def Cl10k1d8L5(
 	4332 (degree 196) and 4207 (degree 192).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def Cl10k1d8L5(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def Cl10k1d8L5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Cl10k1d8L5",

@@ -117,7 +117,6 @@ def AcinetobacterSp.Anc3789(
 	970), 1217714.F975_00704 (degree 951) and 1217714.F975_02317 (degree 925).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterSp.Anc3789(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterSp.Anc3789(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterSp.Anc3789",

@@ -117,7 +117,6 @@ def HyphomonasSp.L53140(
 	891), 1207058.L53_06590 (degree 851) and 1207058.L53_12480 (degree 837).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasSp.L53140(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasSp.L53140(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasSp.L53140",

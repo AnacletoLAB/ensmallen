@@ -117,7 +117,6 @@ def MorganellaMorganii(
 	918), 1124991.MU9_3327 (degree 912) and 1124991.MU9_1920 (degree 903).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MorganellaMorganii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MorganellaMorganii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MorganellaMorganii",

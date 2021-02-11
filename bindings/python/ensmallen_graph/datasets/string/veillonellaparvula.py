@@ -117,7 +117,6 @@ def VeillonellaParvula(
 	479436.Vpar_0616 (degree 611) and 479436.Vpar_1390 (degree 590).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VeillonellaParvula(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VeillonellaParvula(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VeillonellaParvula",

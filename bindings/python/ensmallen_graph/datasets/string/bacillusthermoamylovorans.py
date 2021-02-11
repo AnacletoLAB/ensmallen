@@ -117,7 +117,6 @@ def BacillusThermoamylovorans(
 	1005), 35841.BT1A1_0012 (degree 991) and 35841.BT1A1_0628 (degree 929).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusThermoamylovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusThermoamylovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusThermoamylovorans",

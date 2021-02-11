@@ -117,7 +117,6 @@ def YersiniaPseudotuberculosis(
 	633.DJ40_3144 (degree 1216) and 633.DJ40_3145 (degree 1166).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def YersiniaPseudotuberculosis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def YersiniaPseudotuberculosis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "YersiniaPseudotuberculosis",

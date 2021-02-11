@@ -117,7 +117,6 @@ def SulfurovumSp.Nbc371(
 	387093.SUN_1897 (degree 887) and 387093.SUN_1794 (degree 882).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurovumSp.Nbc371(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurovumSp.Nbc371(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurovumSp.Nbc371",

@@ -117,7 +117,6 @@ def HalorhodospiraHalophila(
 	1085), 349124.Hhal_0366 (degree 951) and 349124.Hhal_1681 (degree 815).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalorhodospiraHalophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalorhodospiraHalophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalorhodospiraHalophila",

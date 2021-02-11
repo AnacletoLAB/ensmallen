@@ -117,7 +117,6 @@ def BacteroidesXylanisolvens(
 	1217), 657309.BXY_48420 (degree 1163) and 657309.BXY_36200 (degree 1135).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacteroidesXylanisolvens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacteroidesXylanisolvens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacteroidesXylanisolvens",

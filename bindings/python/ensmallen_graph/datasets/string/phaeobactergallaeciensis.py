@@ -117,7 +117,6 @@ def PhaeobacterGallaeciensis(
 	1065), 1423144.Gal_01879 (degree 954) and 1423144.Gal_03678 (degree 944).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhaeobacterGallaeciensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhaeobacterGallaeciensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhaeobacterGallaeciensis",

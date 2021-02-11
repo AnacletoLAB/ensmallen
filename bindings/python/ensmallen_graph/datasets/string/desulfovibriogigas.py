@@ -117,7 +117,6 @@ def DesulfovibrioGigas(
 	1433), 1121448.DGI_2603 (degree 1402) and 1121448.DGI_0996 (degree 1388).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioGigas(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioGigas(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioGigas",

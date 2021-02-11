@@ -117,7 +117,6 @@ def AcidianusHospitalis(
 	933801.Ahos_1306 (degree 596) and 933801.Ahos_0748 (degree 590).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidianusHospitalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidianusHospitalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidianusHospitalis",

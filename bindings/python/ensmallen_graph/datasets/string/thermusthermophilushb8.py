@@ -117,7 +117,6 @@ def ThermusThermophilusHb8(
 	300852.55771814 (degree 662) and 300852.55772850 (degree 659).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermusThermophilusHb8(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermusThermophilusHb8(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermusThermophilusHb8",

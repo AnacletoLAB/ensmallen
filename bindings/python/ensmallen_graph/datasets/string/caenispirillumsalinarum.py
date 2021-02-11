@@ -117,7 +117,6 @@ def CaenispirillumSalinarum(
 	1439), 1238182.C882_3748 (degree 1357) and 1238182.C882_4396 (degree 1343).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaenispirillumSalinarum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaenispirillumSalinarum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaenispirillumSalinarum",

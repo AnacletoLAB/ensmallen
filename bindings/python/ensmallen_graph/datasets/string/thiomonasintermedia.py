@@ -117,7 +117,6 @@ def ThiomonasIntermedia(
 	75379.Tint_1186 (degree 810) and 75379.Tint_2424 (degree 788).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThiomonasIntermedia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThiomonasIntermedia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThiomonasIntermedia",

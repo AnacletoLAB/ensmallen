@@ -117,7 +117,6 @@ def MethylophagaLonarensis(
 	860), 1286106.MPL1_03288 (degree 853) and 1286106.MPL1_03293 (degree 848).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylophagaLonarensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylophagaLonarensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylophagaLonarensis",

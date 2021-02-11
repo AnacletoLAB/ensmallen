@@ -116,7 +116,6 @@ def WikisignedK2(
 	6645), 97 (degree 3453), 765 (degree 3375) and 414 (degree 2475).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def WikisignedK2(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def WikisignedK2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WikisignedK2",

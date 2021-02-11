@@ -123,7 +123,6 @@ def SocAdvogato(
 	597 (degree 551), 30 (degree 526) and 328 (degree 407).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocAdvogato(
 	        organization={IEEE}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocAdvogato(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocAdvogato",

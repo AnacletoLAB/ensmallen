@@ -119,7 +119,6 @@ def ActinoalloteichusCyanogriseus(
 	(degree 1284) and 65497.JODV01000002_gene4476 (degree 1262).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ActinoalloteichusCyanogriseus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ActinoalloteichusCyanogriseus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoalloteichusCyanogriseus",

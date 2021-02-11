@@ -117,7 +117,6 @@ def PyrobaculumAerophilum(
 	178306.PAE0654 (degree 716) and 178306.PAE3238 (degree 715).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrobaculumAerophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrobaculumAerophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrobaculumAerophilum",

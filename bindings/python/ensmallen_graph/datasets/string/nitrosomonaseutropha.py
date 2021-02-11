@@ -117,7 +117,6 @@ def NitrosomonasEutropha(
 	823), 335283.Neut_1921 (degree 799) and 335283.Neut_0464 (degree 782).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosomonasEutropha(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosomonasEutropha(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosomonasEutropha",

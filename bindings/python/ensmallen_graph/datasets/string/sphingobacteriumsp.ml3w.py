@@ -117,7 +117,6 @@ def SphingobacteriumSp.Ml3w(
 	978), 1538644.KO02_10660 (degree 889) and 1538644.KO02_06880 (degree 884).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingobacteriumSp.Ml3w(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingobacteriumSp.Ml3w(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingobacteriumSp.Ml3w",

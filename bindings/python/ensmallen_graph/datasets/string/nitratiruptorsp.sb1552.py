@@ -117,7 +117,6 @@ def NitratiruptorSp.Sb1552(
 	387092.NIS_1339 (degree 695) and 387092.NIS_0724 (degree 641).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitratiruptorSp.Sb1552(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitratiruptorSp.Sb1552(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitratiruptorSp.Sb1552",

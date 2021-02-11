@@ -117,7 +117,6 @@ def ChlamydophilaPneumoniaeAr39(
 	115711.CP_0656 (degree 391) and 115711.CP_0599 (degree 369).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydophilaPneumoniaeAr39(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydophilaPneumoniaeAr39(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydophilaPneumoniaeAr39",

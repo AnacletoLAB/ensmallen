@@ -117,7 +117,6 @@ def StreptococcusSuisR61(
 	750), 996306.SSUR61_2236 (degree 709) and 996306.SSUR61_0895 (degree 679).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSuisR61(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSuisR61(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSuisR61",

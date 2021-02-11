@@ -117,7 +117,6 @@ def PaenibacillusSp.Jdr2(
 	1395), 324057.Pjdr2_0836 (degree 1276) and 324057.Pjdr2_0089 (degree 1252).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusSp.Jdr2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusSp.Jdr2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusSp.Jdr2",

@@ -119,7 +119,6 @@ def CoriobacteriaceaeBacteriumBv3ac1(
 	700) and 1111135.HMPREF1248_1042 (degree 619).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CoriobacteriaceaeBacteriumBv3ac1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CoriobacteriaceaeBacteriumBv3ac1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CoriobacteriaceaeBacteriumBv3ac1",

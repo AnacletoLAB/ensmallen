@@ -119,7 +119,6 @@ def InfEuroroad(
 	236 (degree 8), 107 (degree 8), 137 (degree 8) and 39 (degree 8).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def InfEuroroad(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def InfEuroroad(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "InfEuroroad",

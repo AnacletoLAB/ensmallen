@@ -117,7 +117,6 @@ def CryptococcusNeoformans(
 	5207.AAW40768 (degree 1061) and 5207.AAW41026 (degree 1046).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CryptococcusNeoformans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CryptococcusNeoformans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CryptococcusNeoformans",

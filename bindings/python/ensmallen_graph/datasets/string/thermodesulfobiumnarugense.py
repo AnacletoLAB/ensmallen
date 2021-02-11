@@ -115,7 +115,6 @@ def ThermodesulfobiumNarugense(
 	587), 747365.Thena_0780 (degree 569) and 747365.Thena_0396 (degree 563).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ThermodesulfobiumNarugense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ThermodesulfobiumNarugense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermodesulfobiumNarugense",

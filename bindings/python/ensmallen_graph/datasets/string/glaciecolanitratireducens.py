@@ -117,7 +117,6 @@ def GlaciecolaNitratireducens(
 	910), 1085623.GNIT_0944 (degree 904) and 1085623.GNIT_1478 (degree 845).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GlaciecolaNitratireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GlaciecolaNitratireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GlaciecolaNitratireducens",

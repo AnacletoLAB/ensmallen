@@ -119,7 +119,6 @@ def HalomonasSp.23gom1509m(
 	(degree 1392).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def HalomonasSp.23gom1509m(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def HalomonasSp.23gom1509m(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalomonasSp.23gom1509m",

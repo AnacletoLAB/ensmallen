@@ -117,7 +117,6 @@ def ThermotogaThermarum(
 	670), 688269.Theth_1930 (degree 668) and 688269.Theth_0895 (degree 628).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermotogaThermarum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermotogaThermarum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermotogaThermarum",

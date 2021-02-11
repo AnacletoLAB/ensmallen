@@ -117,7 +117,6 @@ def StreptococcusSalivarius57i(
 	607), 1046629.Ssal_01745 (degree 597) and 1046629.Ssal_00643 (degree 594).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSalivarius57i(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSalivarius57i(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSalivarius57i",

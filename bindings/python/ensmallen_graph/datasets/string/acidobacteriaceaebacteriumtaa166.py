@@ -119,7 +119,6 @@ def AcidobacteriaceaeBacteriumTaa166(
 	(degree 1439) and 278963.ATWD01000001_gene4667 (degree 1278).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AcidobacteriaceaeBacteriumTaa166(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AcidobacteriaceaeBacteriumTaa166(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidobacteriaceaeBacteriumTaa166",

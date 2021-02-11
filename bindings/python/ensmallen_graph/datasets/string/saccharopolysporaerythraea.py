@@ -117,7 +117,6 @@ def SaccharopolysporaErythraea(
 	2661), 405948.SACE_4476 (degree 2514) and 405948.SACE_5437 (degree 2394).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaccharopolysporaErythraea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaccharopolysporaErythraea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharopolysporaErythraea",

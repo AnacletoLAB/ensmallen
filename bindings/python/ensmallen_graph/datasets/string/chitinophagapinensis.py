@@ -117,7 +117,6 @@ def ChitinophagaPinensis(
 	3026), 485918.Cpin_5297 (degree 2092) and 485918.Cpin_0712 (degree 1982).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChitinophagaPinensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChitinophagaPinensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChitinophagaPinensis",

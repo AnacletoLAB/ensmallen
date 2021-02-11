@@ -117,7 +117,6 @@ def LactobacillusAcidophilusNcfm(
 	(degree 733), 272621.LBA0666 (degree 651) and 272621.LBA1164 (degree 637).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusAcidophilusNcfm(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusAcidophilusNcfm(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusAcidophilusNcfm",

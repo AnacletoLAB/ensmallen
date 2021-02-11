@@ -117,7 +117,6 @@ def EnterobacterLignolyticus(
 	1490), 701347.Entcl_0485 (degree 1293) and 701347.Entcl_1252 (degree 1171).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterobacterLignolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterobacterLignolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterobacterLignolyticus",

@@ -117,7 +117,6 @@ def BdellovibrioBacteriovorusW(
 	930), 765869.BDW_06165 (degree 783) and 765869.BDW_12785 (degree 748).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BdellovibrioBacteriovorusW(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BdellovibrioBacteriovorusW(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BdellovibrioBacteriovorusW",

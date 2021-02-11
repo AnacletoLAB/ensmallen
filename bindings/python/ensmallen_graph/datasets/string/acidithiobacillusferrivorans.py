@@ -117,7 +117,6 @@ def AcidithiobacillusFerrivorans(
 	792), 743299.Acife_2039 (degree 780) and 743299.Acife_2167 (degree 770).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidithiobacillusFerrivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidithiobacillusFerrivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidithiobacillusFerrivorans",

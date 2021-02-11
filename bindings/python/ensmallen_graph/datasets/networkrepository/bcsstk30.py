@@ -110,7 +110,6 @@ def Bcsstk30(
 	219), 6999 (degree 219), 6998 (degree 219) and 6997 (degree 219).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def Bcsstk30(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def Bcsstk30(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Bcsstk30",

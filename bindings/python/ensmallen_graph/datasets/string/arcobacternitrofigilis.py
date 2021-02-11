@@ -117,7 +117,6 @@ def ArcobacterNitrofigilis(
 	1243), 572480.Arnit_1601 (degree 1074) and 572480.Arnit_2519 (degree 1062).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArcobacterNitrofigilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArcobacterNitrofigilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArcobacterNitrofigilis",

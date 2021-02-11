@@ -117,7 +117,6 @@ def NocardiopsisAlba(
 	1258), 1205910.B005_1176 (degree 1252) and 1205910.B005_2797 (degree 1219).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NocardiopsisAlba(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NocardiopsisAlba(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NocardiopsisAlba",

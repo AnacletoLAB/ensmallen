@@ -117,7 +117,6 @@ def OrientiaTsutsugamushi(
 	357244.OTBS_0704 (degree 429) and 357244.OTBS_1140 (degree 424).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OrientiaTsutsugamushi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OrientiaTsutsugamushi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OrientiaTsutsugamushi",

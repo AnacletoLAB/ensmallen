@@ -117,7 +117,6 @@ def CaulobacterCrescentusCb15(
 	190650.CC_1043 (degree 942) and 190650.CC_1617 (degree 935).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaulobacterCrescentusCb15(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaulobacterCrescentusCb15(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaulobacterCrescentusCb15",

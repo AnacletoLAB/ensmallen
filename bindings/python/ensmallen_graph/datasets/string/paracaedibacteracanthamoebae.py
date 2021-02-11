@@ -117,7 +117,6 @@ def ParacaedibacterAcanthamoebae(
 	91604.ID47_06795 (degree 444) and 91604.ID47_01760 (degree 435).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParacaedibacterAcanthamoebae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParacaedibacterAcanthamoebae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParacaedibacterAcanthamoebae",

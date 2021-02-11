@@ -117,7 +117,6 @@ def ActinopolysporaErythraea(
 	1082), 414996.IL38_13535 (degree 1057) and 414996.IL38_10115 (degree 1019).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinopolysporaErythraea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinopolysporaErythraea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinopolysporaErythraea",

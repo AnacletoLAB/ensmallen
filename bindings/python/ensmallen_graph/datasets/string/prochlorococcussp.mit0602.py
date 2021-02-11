@@ -117,7 +117,6 @@ def ProchlorococcusSp.Mit0602(
 	576), 1499499.EV06_0951 (degree 574) and 1499499.EV06_0681 (degree 544).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProchlorococcusSp.Mit0602(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProchlorococcusSp.Mit0602(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusSp.Mit0602",

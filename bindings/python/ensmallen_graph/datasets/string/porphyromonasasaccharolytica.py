@@ -117,7 +117,6 @@ def PorphyromonasAsaccharolytica(
 	600), 879243.Poras_1679 (degree 533) and 879243.Poras_0104 (degree 510).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PorphyromonasAsaccharolytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PorphyromonasAsaccharolytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PorphyromonasAsaccharolytica",

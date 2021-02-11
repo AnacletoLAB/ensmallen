@@ -115,7 +115,6 @@ def OgataeaParapolymorpha(
 	(degree 1136) and 1005962.O59841 (degree 1135).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def OgataeaParapolymorpha(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def OgataeaParapolymorpha(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OgataeaParapolymorpha",

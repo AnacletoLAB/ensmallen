@@ -119,7 +119,6 @@ def CaenorhabditisTropicalis(
 	(degree 2977) and 1561998.Csp11.Scaffold627.g6738.t1 (degree 2815).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CaenorhabditisTropicalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CaenorhabditisTropicalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaenorhabditisTropicalis",

@@ -117,7 +117,6 @@ def HalobacillusHalophilus(
 	1302), 866895.HBHAL_4983 (degree 1122) and 866895.HBHAL_3573 (degree 1115).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalobacillusHalophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalobacillusHalophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalobacillusHalophilus",

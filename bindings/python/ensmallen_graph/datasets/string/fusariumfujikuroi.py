@@ -117,7 +117,6 @@ def FusariumFujikuroi(
 	5127.CCT67290 (degree 2021) and 5127.CCT72246 (degree 1877).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusariumFujikuroi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusariumFujikuroi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusariumFujikuroi",

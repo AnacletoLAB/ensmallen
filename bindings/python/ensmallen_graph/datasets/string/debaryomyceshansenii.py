@@ -117,7 +117,6 @@ def DebaryomycesHansenii(
 	1099), 4959.XP_002770038.1 (degree 1013) and 4959.XP_458703.2 (degree 978).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DebaryomycesHansenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DebaryomycesHansenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DebaryomycesHansenii",

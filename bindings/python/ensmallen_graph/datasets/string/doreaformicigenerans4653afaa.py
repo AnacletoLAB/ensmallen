@@ -119,7 +119,6 @@ def DoreaFormicigenerans4653afaa(
 	1002) and 742765.HMPREF9457_00100 (degree 940).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DoreaFormicigenerans4653afaa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DoreaFormicigenerans4653afaa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DoreaFormicigenerans4653afaa",

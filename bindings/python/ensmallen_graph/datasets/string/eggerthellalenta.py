@@ -117,7 +117,6 @@ def EggerthellaLenta(
 	881), 479437.Elen_1984 (degree 828) and 479437.Elen_2143 (degree 780).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EggerthellaLenta(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EggerthellaLenta(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EggerthellaLenta",

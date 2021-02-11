@@ -117,7 +117,6 @@ def AequorivitaSublithincola(
 	1134), 746697.Aeqsu_0459 (degree 1120) and 746697.Aeqsu_1696 (degree 987).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AequorivitaSublithincola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AequorivitaSublithincola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AequorivitaSublithincola",

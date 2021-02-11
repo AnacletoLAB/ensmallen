@@ -117,7 +117,6 @@ def FeSphere(
 	6), 16383 (degree 6), 16382 (degree 6) and 16381 (degree 6).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def FeSphere(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def FeSphere(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FeSphere",

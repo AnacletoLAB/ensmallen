@@ -115,7 +115,6 @@ def OdobenusRosmarus(
 	9707.XP_004402327.1 (degree 3873) and 9707.XP_004417190.1 (degree 3764).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def OdobenusRosmarus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def OdobenusRosmarus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OdobenusRosmarus",

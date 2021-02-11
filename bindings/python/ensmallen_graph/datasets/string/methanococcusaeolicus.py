@@ -117,7 +117,6 @@ def MethanococcusAeolicus(
 	419665.Maeo_0717 (degree 702) and 419665.Maeo_0982 (degree 702).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanococcusAeolicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanococcusAeolicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanococcusAeolicus",

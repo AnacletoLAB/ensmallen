@@ -117,7 +117,6 @@ def CobetiaMarina(
 	828), 28258.KP05_03065 (degree 796) and 28258.KP05_00280 (degree 776).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CobetiaMarina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CobetiaMarina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CobetiaMarina",

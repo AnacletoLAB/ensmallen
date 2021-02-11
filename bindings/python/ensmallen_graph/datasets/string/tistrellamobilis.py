@@ -117,7 +117,6 @@ def TistrellaMobilis(
 	1116), 1110502.TMO_1445 (degree 1064) and 1110502.TMO_0185 (degree 1024).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TistrellaMobilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TistrellaMobilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TistrellaMobilis",

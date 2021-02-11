@@ -117,7 +117,6 @@ def NitrosopumilusSp.Ar2(
 	500), 1229909.NSED_01670 (degree 460) and 1229909.NSED_02765 (degree 453).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrosopumilusSp.Ar2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrosopumilusSp.Ar2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrosopumilusSp.Ar2",

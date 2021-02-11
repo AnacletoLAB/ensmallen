@@ -116,7 +116,6 @@ def ZhishiHudongRelatedpages(
 	(degree 16396) and 2287 (degree 14825).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -129,7 +128,6 @@ def ZhishiHudongRelatedpages(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -166,7 +164,6 @@ def ZhishiHudongRelatedpages(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ZhishiHudongRelatedpages",

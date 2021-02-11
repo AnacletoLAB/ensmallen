@@ -119,7 +119,6 @@ def PromicromonosporaKroppenstedtii(
 	(degree 1715) and 926564.KI911693_gene1034 (degree 1619).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PromicromonosporaKroppenstedtii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PromicromonosporaKroppenstedtii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PromicromonosporaKroppenstedtii",

@@ -117,7 +117,6 @@ def OenococcusOeni(
 	203123.OEOE_1309 (degree 547) and 203123.OEOE_1746 (degree 546).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OenococcusOeni(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OenococcusOeni(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OenococcusOeni",

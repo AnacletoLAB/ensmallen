@@ -119,7 +119,6 @@ def StrongylocentrotusPurpuratus(
 	7668.SPU_005280-tr (degree 4364).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StrongylocentrotusPurpuratus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StrongylocentrotusPurpuratus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StrongylocentrotusPurpuratus",

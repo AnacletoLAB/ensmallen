@@ -119,7 +119,6 @@ def ThaumarchaeotaSp.ScgcAb629i23(
 	(degree 518) and 1131266.ARWQ01000005_gene855 (degree 515).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThaumarchaeotaSp.ScgcAb629i23(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThaumarchaeotaSp.ScgcAb629i23(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThaumarchaeotaSp.ScgcAb629i23",

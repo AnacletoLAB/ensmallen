@@ -117,7 +117,6 @@ def LactobacillusShenzhenensis(
 	1001), 1231336.L248_2653 (degree 864) and 1231336.L248_1275 (degree 788).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusShenzhenensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusShenzhenensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusShenzhenensis",

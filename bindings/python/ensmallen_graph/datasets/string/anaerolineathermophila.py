@@ -117,7 +117,6 @@ def AnaerolineaThermophila(
 	1358), 926569.ANT_16660 (degree 1312) and 926569.ANT_08900 (degree 1288).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaerolineaThermophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaerolineaThermophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerolineaThermophila",

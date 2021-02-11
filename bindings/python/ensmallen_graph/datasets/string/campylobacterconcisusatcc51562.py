@@ -119,7 +119,6 @@ def CampylobacterConcisusAtcc51562(
 	and 1242969.ATCC51562_394 (degree 547).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CampylobacterConcisusAtcc51562(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CampylobacterConcisusAtcc51562(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CampylobacterConcisusAtcc51562",

@@ -117,7 +117,6 @@ def OligotrophaCarboxidovorans(
 	1064), 504832.OCAR_4403 (degree 943) and 504832.OCAR_4703 (degree 932).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OligotrophaCarboxidovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OligotrophaCarboxidovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OligotrophaCarboxidovorans",

@@ -117,7 +117,6 @@ def GillisiaLimnaea(
 	996), 865937.Gilli_3213 (degree 990) and 865937.Gilli_2293 (degree 990).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GillisiaLimnaea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GillisiaLimnaea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GillisiaLimnaea",

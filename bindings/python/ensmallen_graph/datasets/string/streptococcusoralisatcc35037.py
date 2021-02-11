@@ -119,7 +119,6 @@ def StreptococcusOralisAtcc35037(
 	656) and 655813.HMPREF8579_1125 (degree 652).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusOralisAtcc35037(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusOralisAtcc35037(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusOralisAtcc35037",

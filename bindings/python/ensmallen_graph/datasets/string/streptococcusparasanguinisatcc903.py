@@ -119,7 +119,6 @@ def StreptococcusParasanguinisAtcc903(
 	687) and 888048.HMPREF8577_0085 (degree 678).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusParasanguinisAtcc903(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusParasanguinisAtcc903(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusParasanguinisAtcc903",

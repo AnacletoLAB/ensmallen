@@ -117,7 +117,6 @@ def DesulfocapsaSulfexigens(
 	1174), 1167006.UWK_03460 (degree 1141) and 1167006.UWK_03058 (degree 1047).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfocapsaSulfexigens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfocapsaSulfexigens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfocapsaSulfexigens",

@@ -117,7 +117,6 @@ def ThiocystisViolascens(
 	1699), 765911.Thivi_1206 (degree 1663) and 765911.Thivi_1799 (degree 1609).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThiocystisViolascens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThiocystisViolascens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThiocystisViolascens",

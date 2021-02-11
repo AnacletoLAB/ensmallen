@@ -121,7 +121,6 @@ def CitHepth2007(
 	719 (degree 1653), 812 (degree 1368) and 8 (degree 1308).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def CitHepth2007(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def CitHepth2007(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CitHepth2007",

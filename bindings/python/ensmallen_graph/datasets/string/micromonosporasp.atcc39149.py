@@ -117,7 +117,6 @@ def MicromonosporaSp.Atcc39149(
 	1718), 219305.MCAG_03617 (degree 1680) and 219305.MCAG_00438 (degree 1640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicromonosporaSp.Atcc39149(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicromonosporaSp.Atcc39149(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicromonosporaSp.Atcc39149",

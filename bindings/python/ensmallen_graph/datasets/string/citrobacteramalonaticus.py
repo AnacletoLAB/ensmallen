@@ -117,7 +117,6 @@ def CitrobacterAmalonaticus(
 	1569), 35703.DQ02_05970 (degree 1311) and 35703.DQ02_03880 (degree 1254).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CitrobacterAmalonaticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CitrobacterAmalonaticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CitrobacterAmalonaticus",

@@ -117,7 +117,6 @@ def LeuconostocCitreum(
 	349519.LCK_00119 (degree 555) and 349519.LCK_01218 (degree 501).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocCitreum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocCitreum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocCitreum",

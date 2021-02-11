@@ -115,7 +115,6 @@ def MethanocaldococcusInfernus(
 	515), 573063.Metin_1148 (degree 511) and 573063.Metin_0980 (degree 509).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def MethanocaldococcusInfernus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def MethanocaldococcusInfernus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanocaldococcusInfernus",

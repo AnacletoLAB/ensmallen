@@ -117,7 +117,6 @@ def AchromobacterXylosoxidansA8(
 	1979), 762376.AXYL_01873 (degree 1955) and 762376.AXYL_06491 (degree 1914).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AchromobacterXylosoxidansA8(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AchromobacterXylosoxidansA8(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AchromobacterXylosoxidansA8",

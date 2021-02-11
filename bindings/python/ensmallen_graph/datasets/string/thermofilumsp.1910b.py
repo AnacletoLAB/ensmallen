@@ -117,7 +117,6 @@ def ThermofilumSp.1910b(
 	590), 1365176.N186_05840 (degree 561) and 1365176.N186_05295 (degree 543).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermofilumSp.1910b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermofilumSp.1910b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermofilumSp.1910b",

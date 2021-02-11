@@ -117,7 +117,6 @@ def ExiguobacteriumSp.At1b(
 	855), 360911.EAT1b_1949 (degree 843) and 360911.EAT1b_1723 (degree 829).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ExiguobacteriumSp.At1b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ExiguobacteriumSp.At1b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ExiguobacteriumSp.At1b",

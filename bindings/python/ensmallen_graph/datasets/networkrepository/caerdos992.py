@@ -123,7 +123,6 @@ def CaErdos992(
 	343 (degree 60), 443 (degree 60), 314 (degree 56) and 298 (degree 55).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def CaErdos992(
 	        publisher={Elsevier}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def CaErdos992(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaErdos992",

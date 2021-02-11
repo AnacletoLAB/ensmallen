@@ -120,7 +120,6 @@ def SocCatster(
 	80468), 53 (degree 80442), 55 (degree 78647) and 59 (degree 78497).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def SocCatster(
 	        note={http://www.catster.com}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def SocCatster(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocCatster",

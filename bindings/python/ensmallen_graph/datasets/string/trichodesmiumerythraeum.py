@@ -117,7 +117,6 @@ def TrichodesmiumErythraeum(
 	1720), 203124.Tery_3155 (degree 1537) and 203124.Tery_0546 (degree 1476).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichodesmiumErythraeum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichodesmiumErythraeum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichodesmiumErythraeum",

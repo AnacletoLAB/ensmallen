@@ -119,7 +119,6 @@ def ProchlorococcusSp.Scb241528o2(
 	(degree 518) and 1471459.JFLJ01000108_gene1680 (degree 511).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ProchlorococcusSp.Scb241528o2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ProchlorococcusSp.Scb241528o2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusSp.Scb241528o2",

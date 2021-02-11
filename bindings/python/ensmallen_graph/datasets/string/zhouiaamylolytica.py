@@ -117,7 +117,6 @@ def ZhouiaAmylolytica(
 	1167), 1286632.P278_04530 (degree 964) and 1286632.P278_06220 (degree 900).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ZhouiaAmylolytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ZhouiaAmylolytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ZhouiaAmylolytica",

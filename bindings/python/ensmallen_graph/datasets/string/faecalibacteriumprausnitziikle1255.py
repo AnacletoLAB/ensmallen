@@ -119,7 +119,6 @@ def FaecalibacteriumPrausnitziiKle1255(
 	804) and 748224.HMPREF9436_00928 (degree 776).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FaecalibacteriumPrausnitziiKle1255(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FaecalibacteriumPrausnitziiKle1255(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FaecalibacteriumPrausnitziiKle1255",

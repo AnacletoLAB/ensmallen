@@ -117,7 +117,6 @@ def HaloferaxVolcanii(
 	891), 309800.C498_16289 (degree 860) and 309800.C498_19454 (degree 852).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloferaxVolcanii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloferaxVolcanii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloferaxVolcanii",

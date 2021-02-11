@@ -117,7 +117,6 @@ def EnterococcusFaeciumC68(
 	1100), 565664.EFXG_01666 (degree 1004) and 565664.EFXG_01350 (degree 993).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusFaeciumC68(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusFaeciumC68(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusFaeciumC68",

@@ -119,7 +119,6 @@ def SocBrightkite(
 	(degree 1055), 109 (degree 854), 117 (degree 838) and 160 (degree 833).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def SocBrightkite(
 	        organization={ACM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def SocBrightkite(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocBrightkite",

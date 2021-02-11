@@ -117,7 +117,6 @@ def PedobacterHeparinus(
 	1098), 485917.Phep_2033 (degree 1080) and 485917.Phep_1594 (degree 1039).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PedobacterHeparinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PedobacterHeparinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PedobacterHeparinus",

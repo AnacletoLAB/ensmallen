@@ -119,7 +119,6 @@ def ScRel9(
 	162), 274149 (degree 158), 224781 (degree 151) and 274652 (degree 148).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def ScRel9(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def ScRel9(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ScRel9",

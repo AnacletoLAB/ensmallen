@@ -117,7 +117,6 @@ def AlistipesFinegoldii(
 	679935.Alfi_0159 (degree 720) and 679935.Alfi_2679 (degree 719).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlistipesFinegoldii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlistipesFinegoldii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlistipesFinegoldii",

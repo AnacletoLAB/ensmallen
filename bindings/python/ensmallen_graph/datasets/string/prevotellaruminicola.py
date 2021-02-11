@@ -117,7 +117,6 @@ def PrevotellaRuminicola(
 	264731.PRU_1572 (degree 905) and 264731.PRU_1678 (degree 852).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PrevotellaRuminicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PrevotellaRuminicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PrevotellaRuminicola",

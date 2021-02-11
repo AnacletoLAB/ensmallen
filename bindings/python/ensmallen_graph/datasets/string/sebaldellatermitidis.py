@@ -117,7 +117,6 @@ def SebaldellaTermitidis(
 	1195), 526218.Sterm_1132 (degree 1193) and 526218.Sterm_1556 (degree 1182).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SebaldellaTermitidis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SebaldellaTermitidis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SebaldellaTermitidis",

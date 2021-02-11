@@ -117,7 +117,6 @@ def HyphomonasSp.22ii122f38(
 	945), 1280948.HY36_07355 (degree 915) and 1280948.HY36_08735 (degree 900).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasSp.22ii122f38(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasSp.22ii122f38(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasSp.22ii122f38",

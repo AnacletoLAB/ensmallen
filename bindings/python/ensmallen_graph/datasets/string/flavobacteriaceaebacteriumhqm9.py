@@ -119,7 +119,6 @@ def FlavobacteriaceaeBacteriumHqm9(
 	(degree 824) and 980584.AFPB01000180_gene2772 (degree 785).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FlavobacteriaceaeBacteriumHqm9(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FlavobacteriaceaeBacteriumHqm9(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriaceaeBacteriumHqm9",

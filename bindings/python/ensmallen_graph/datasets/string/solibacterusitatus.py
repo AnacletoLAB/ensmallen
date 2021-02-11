@@ -117,7 +117,6 @@ def SolibacterUsitatus(
 	2638), 234267.Acid_1347 (degree 2380) and 234267.Acid_0587 (degree 2377).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SolibacterUsitatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SolibacterUsitatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SolibacterUsitatus",

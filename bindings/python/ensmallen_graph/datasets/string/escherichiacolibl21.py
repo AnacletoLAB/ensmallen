@@ -117,7 +117,6 @@ def EscherichiaColiBl21(
 	1341), 469008.B21_02361 (degree 1185) and 469008.B21_03028 (degree 1123).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EscherichiaColiBl21(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EscherichiaColiBl21(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EscherichiaColiBl21",

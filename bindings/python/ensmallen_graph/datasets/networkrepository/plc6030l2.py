@@ -112,7 +112,6 @@ def Plc6030L2(
 	9418), 67 (degree 7591), 71 (degree 7583) and 70 (degree 6970).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Plc6030L2(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Plc6030L2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Plc6030L2",

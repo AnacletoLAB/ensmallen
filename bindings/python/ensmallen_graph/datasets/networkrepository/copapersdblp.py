@@ -121,7 +121,6 @@ def CoPapersDblp(
 	(degree 1683).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def CoPapersDblp(
 	        organization={SIAM}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def CoPapersDblp(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CoPapersDblp",

@@ -117,7 +117,6 @@ def SporisoriumReilianum(
 	72558.CBQ67761 (degree 1309) and 72558.CBQ70959 (degree 1267).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SporisoriumReilianum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SporisoriumReilianum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SporisoriumReilianum",

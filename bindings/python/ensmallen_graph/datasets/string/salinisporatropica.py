@@ -117,7 +117,6 @@ def SalinisporaTropica(
 	1314), 369723.Strop_3833 (degree 1231) and 369723.Strop_3429 (degree 1202).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SalinisporaTropica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SalinisporaTropica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SalinisporaTropica",

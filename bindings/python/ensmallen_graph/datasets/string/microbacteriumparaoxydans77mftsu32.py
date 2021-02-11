@@ -119,7 +119,6 @@ def MicrobacteriumParaoxydans77mftsu32(
 	(degree 940) and 1151126.AQYI01000007_gene2265 (degree 890).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MicrobacteriumParaoxydans77mftsu32(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MicrobacteriumParaoxydans77mftsu32(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrobacteriumParaoxydans77mftsu32",

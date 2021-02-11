@@ -119,7 +119,6 @@ def ChrysochlorisAsiatica(
 	3923) and 185453.XP_006862605.1 (degree 3668).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ChrysochlorisAsiatica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ChrysochlorisAsiatica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChrysochlorisAsiatica",

@@ -117,7 +117,6 @@ def NocardioidesSp.Js614(
 	1773), 196162.Noca_1670 (degree 1614) and 196162.Noca_4363 (degree 1493).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NocardioidesSp.Js614(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NocardioidesSp.Js614(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NocardioidesSp.Js614",

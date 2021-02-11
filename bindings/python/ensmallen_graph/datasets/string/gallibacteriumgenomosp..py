@@ -117,7 +117,6 @@ def GallibacteriumGenomosp.(
 	716), 155515.JP36_02040 (degree 712) and 155515.JP36_06855 (degree 711).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GallibacteriumGenomosp.(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GallibacteriumGenomosp.(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GallibacteriumGenomosp.",

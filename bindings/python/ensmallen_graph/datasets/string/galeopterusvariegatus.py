@@ -119,7 +119,6 @@ def GaleopterusVariegatus(
 	4562) and 482537.XP_008578211.1 (degree 4256).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GaleopterusVariegatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GaleopterusVariegatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GaleopterusVariegatus",

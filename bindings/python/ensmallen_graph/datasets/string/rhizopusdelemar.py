@@ -117,7 +117,6 @@ def RhizopusDelemar(
 	936053.I1BPF8 (degree 2658) and 936053.I1CC68 (degree 2427).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhizopusDelemar(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhizopusDelemar(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhizopusDelemar",

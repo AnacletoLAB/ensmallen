@@ -117,7 +117,6 @@ def HalococcusHamelinensis(
 	865), 1132509.C447_16524 (degree 856) and 1132509.C447_09532 (degree 814).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalococcusHamelinensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalococcusHamelinensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalococcusHamelinensis",

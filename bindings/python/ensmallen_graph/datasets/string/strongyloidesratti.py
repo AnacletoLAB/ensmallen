@@ -117,7 +117,6 @@ def StrongyloidesRatti(
 	(degree 3217) and 34506.g5327 (degree 3040).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StrongyloidesRatti(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StrongyloidesRatti(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StrongyloidesRatti",

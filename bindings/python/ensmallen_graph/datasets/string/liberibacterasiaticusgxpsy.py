@@ -117,7 +117,6 @@ def LiberibacterAsiaticusGxpsy(
 	438), 1174529.WSI_03765 (degree 430) and 1174529.WSI_02775 (degree 423).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LiberibacterAsiaticusGxpsy(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LiberibacterAsiaticusGxpsy(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LiberibacterAsiaticusGxpsy",

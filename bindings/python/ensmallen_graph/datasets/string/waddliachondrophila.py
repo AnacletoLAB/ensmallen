@@ -117,7 +117,6 @@ def WaddliaChondrophila(
 	716544.wcw_1645 (degree 775) and 716544.wcw_1680 (degree 747).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WaddliaChondrophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WaddliaChondrophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WaddliaChondrophila",

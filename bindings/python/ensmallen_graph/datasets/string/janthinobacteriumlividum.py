@@ -117,7 +117,6 @@ def JanthinobacteriumLividum(
 	1961), 29581.BW37_02520 (degree 1897) and 29581.BW37_03398 (degree 1873).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def JanthinobacteriumLividum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def JanthinobacteriumLividum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "JanthinobacteriumLividum",

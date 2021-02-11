@@ -117,7 +117,6 @@ def MeiothermusRuber(
 	959), 504728.K649_13545 (degree 919) and 504728.K649_12875 (degree 907).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MeiothermusRuber(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MeiothermusRuber(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MeiothermusRuber",

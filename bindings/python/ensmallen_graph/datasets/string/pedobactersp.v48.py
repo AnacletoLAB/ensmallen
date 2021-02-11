@@ -117,7 +117,6 @@ def PedobacterSp.V48(
 	1292), 509635.N824_22550 (degree 1280) and 509635.N824_06090 (degree 1228).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PedobacterSp.V48(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PedobacterSp.V48(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PedobacterSp.V48",

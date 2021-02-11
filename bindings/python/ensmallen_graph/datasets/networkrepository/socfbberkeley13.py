@@ -131,7 +131,6 @@ def SocfbBerkeley13(
 	3428), 22300 (degree 2821), 16217 (degree 1253) and 16297 (degree 1203).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbBerkeley13(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbBerkeley13(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbBerkeley13",

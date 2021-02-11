@@ -117,7 +117,6 @@ def DenitrovibrioAcetiphilus(
 	1023), 522772.Dacet_2952 (degree 994) and 522772.Dacet_0103 (degree 987).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DenitrovibrioAcetiphilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DenitrovibrioAcetiphilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DenitrovibrioAcetiphilus",

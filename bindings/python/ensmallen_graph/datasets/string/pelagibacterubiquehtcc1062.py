@@ -117,7 +117,6 @@ def PelagibacterUbiqueHtcc1062(
 	478), 335992.SAR11_1046 (degree 466) and 335992.SAR11_0618 (degree 464).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelagibacterUbiqueHtcc1062(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelagibacterUbiqueHtcc1062(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelagibacterUbiqueHtcc1062",

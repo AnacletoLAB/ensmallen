@@ -117,7 +117,6 @@ def AmoebophilusAsiaticus(
 	452471.Aasi_1325 (degree 595) and 452471.Aasi_0323 (degree 569).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmoebophilusAsiaticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmoebophilusAsiaticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmoebophilusAsiaticus",

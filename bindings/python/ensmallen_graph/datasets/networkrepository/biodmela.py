@@ -120,7 +120,6 @@ def BioDmela(
 	708 (degree 122), 209 (degree 115) and 76 (degree 113).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def BioDmela(
 	        number = {35}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def BioDmela(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioDmela",

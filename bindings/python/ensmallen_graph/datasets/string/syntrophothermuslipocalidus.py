@@ -117,7 +117,6 @@ def SyntrophothermusLipocalidus(
 	643648.Slip_0054 (degree 757) and 643648.Slip_0590 (degree 743).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SyntrophothermusLipocalidus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SyntrophothermusLipocalidus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SyntrophothermusLipocalidus",

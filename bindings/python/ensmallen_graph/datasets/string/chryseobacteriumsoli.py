@@ -117,7 +117,6 @@ def ChryseobacteriumSoli(
 	976), 445961.IW15_13020 (degree 946) and 445961.IW15_20480 (degree 915).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChryseobacteriumSoli(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChryseobacteriumSoli(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChryseobacteriumSoli",

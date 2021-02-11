@@ -119,7 +119,6 @@ def PropionibacteriaceaeBacteriumP6a17(
 	(degree 901) and 1410634.JHVD01000012_gene595 (degree 882).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PropionibacteriaceaeBacteriumP6a17(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PropionibacteriaceaeBacteriumP6a17(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PropionibacteriaceaeBacteriumP6a17",

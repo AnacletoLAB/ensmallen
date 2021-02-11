@@ -115,7 +115,6 @@ def ActinobacillusPleuropneumoniae5bL20(
 	416269.APL_0352 (degree 673) and 416269.APL_0593 (degree 596).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ActinobacillusPleuropneumoniae5bL20(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ActinobacillusPleuropneumoniae5bL20(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinobacillusPleuropneumoniae5bL20",

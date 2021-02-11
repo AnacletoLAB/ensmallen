@@ -117,7 +117,6 @@ def HalogeometricumBorinquense(
 	678), 469382.Hbor_26990 (degree 649) and 469382.Hbor_27010 (degree 640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalogeometricumBorinquense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalogeometricumBorinquense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalogeometricumBorinquense",

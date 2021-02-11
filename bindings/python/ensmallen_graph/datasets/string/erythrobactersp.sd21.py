@@ -117,7 +117,6 @@ def ErythrobacterSp.Sd21(
 	901), 161528.ED21_18422 (degree 880) and 161528.ED21_25076 (degree 865).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErythrobacterSp.Sd21(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErythrobacterSp.Sd21(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErythrobacterSp.Sd21",

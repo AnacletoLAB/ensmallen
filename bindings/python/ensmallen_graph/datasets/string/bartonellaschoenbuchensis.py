@@ -117,7 +117,6 @@ def BartonellaSchoenbuchensis(
 	533), 1094496.m07a_02720 (degree 524) and 1094496.m07a_00700 (degree 508).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaSchoenbuchensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaSchoenbuchensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaSchoenbuchensis",

@@ -117,7 +117,6 @@ def PsychrobacterAquaticus(
 	814), 1354303.M917_2568 (degree 814) and 1354303.M917_0577 (degree 806).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PsychrobacterAquaticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PsychrobacterAquaticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PsychrobacterAquaticus",

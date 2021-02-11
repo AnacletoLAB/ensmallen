@@ -117,7 +117,6 @@ def SphingobacteriumAntarcticus(
 	902), 1358423.N180_14440 (degree 892) and 1358423.N180_15605 (degree 869).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingobacteriumAntarcticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingobacteriumAntarcticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingobacteriumAntarcticus",

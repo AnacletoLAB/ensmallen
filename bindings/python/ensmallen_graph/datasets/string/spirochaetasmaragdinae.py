@@ -117,7 +117,6 @@ def SpirochaetaSmaragdinae(
 	1406), 573413.Spirs_2889 (degree 1334) and 573413.Spirs_0620 (degree 1266).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SpirochaetaSmaragdinae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SpirochaetaSmaragdinae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpirochaetaSmaragdinae",

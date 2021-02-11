@@ -117,7 +117,6 @@ def DesulfurococcusFermentans(
 	536), 768672.Desfe_1318 (degree 499) and 768672.Desfe_1470 (degree 487).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfurococcusFermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfurococcusFermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfurococcusFermentans",

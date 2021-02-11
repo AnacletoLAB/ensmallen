@@ -119,7 +119,6 @@ def ButyrivibrioProteoclasticusP6b7(
 	(degree 1020) and 1410650.JHWL01000003_gene2880 (degree 1017).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ButyrivibrioProteoclasticusP6b7(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ButyrivibrioProteoclasticusP6b7(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ButyrivibrioProteoclasticusP6b7",

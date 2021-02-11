@@ -117,7 +117,6 @@ def AcinetobacterBeijerinckii(
 	909), 1217648.F933_00240 (degree 896) and 1217648.F933_01171 (degree 858).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterBeijerinckii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterBeijerinckii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterBeijerinckii",

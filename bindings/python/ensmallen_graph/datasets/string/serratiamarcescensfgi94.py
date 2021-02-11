@@ -117,7 +117,6 @@ def SerratiaMarcescensFgi94(
 	1119), 1249634.D781_4079 (degree 1117) and 1249634.D781_4077 (degree 1087).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SerratiaMarcescensFgi94(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SerratiaMarcescensFgi94(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SerratiaMarcescensFgi94",

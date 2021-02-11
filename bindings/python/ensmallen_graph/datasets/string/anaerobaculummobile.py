@@ -117,7 +117,6 @@ def AnaerobaculumMobile(
 	736), 891968.Anamo_0461 (degree 714) and 891968.Anamo_1657 (degree 692).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaerobaculumMobile(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaerobaculumMobile(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaerobaculumMobile",

@@ -117,7 +117,6 @@ def FormosaSp.Ak20(
 	1011), 1137281.D778_02536 (degree 861) and 1137281.D778_00433 (degree 787).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FormosaSp.Ak20(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FormosaSp.Ak20(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FormosaSp.Ak20",

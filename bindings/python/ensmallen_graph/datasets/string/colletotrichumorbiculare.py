@@ -117,7 +117,6 @@ def ColletotrichumOrbiculare(
 	5465.ENH87845 (degree 1628) and 5465.ENH87749 (degree 1524).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ColletotrichumOrbiculare(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ColletotrichumOrbiculare(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ColletotrichumOrbiculare",

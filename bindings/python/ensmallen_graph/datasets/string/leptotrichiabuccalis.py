@@ -117,7 +117,6 @@ def LeptotrichiaBuccalis(
 	669), 523794.Lebu_0685 (degree 663) and 523794.Lebu_0369 (degree 640).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeptotrichiaBuccalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeptotrichiaBuccalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeptotrichiaBuccalis",

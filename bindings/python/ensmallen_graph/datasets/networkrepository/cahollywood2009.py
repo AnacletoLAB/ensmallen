@@ -122,7 +122,6 @@ def CaHollywood2009(
 	and 791344 (degree 8191).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def CaHollywood2009(
 	        publisher={ACM Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def CaHollywood2009(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaHollywood2009",

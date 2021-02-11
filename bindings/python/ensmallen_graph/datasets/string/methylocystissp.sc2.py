@@ -117,7 +117,6 @@ def MethylocystisSp.Sc2(
 	936), 187303.BN69_1687 (degree 909) and 187303.BN69_3582 (degree 908).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylocystisSp.Sc2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylocystisSp.Sc2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylocystisSp.Sc2",

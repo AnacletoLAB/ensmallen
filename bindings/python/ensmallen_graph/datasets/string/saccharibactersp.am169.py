@@ -117,7 +117,6 @@ def SaccharibacterSp.Am169(
 	634), 1343158.SACS_1279 (degree 602) and 1343158.SACS_0445 (degree 591).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SaccharibacterSp.Am169(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SaccharibacterSp.Am169(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharibacterSp.Am169",

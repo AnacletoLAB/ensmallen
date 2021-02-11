@@ -117,7 +117,6 @@ def TheileriaAnnulata(
 	1072), 5874.XP_951815.1 (degree 1068) and 5874.XP_952563.1 (degree 1067).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TheileriaAnnulata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TheileriaAnnulata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TheileriaAnnulata",

@@ -112,7 +112,6 @@ def SocSlashdotZoo(
 	2377), 9449 (degree 2223), 35731 (degree 1709) and 279 (degree 1684).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def SocSlashdotZoo(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def SocSlashdotZoo(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocSlashdotZoo",

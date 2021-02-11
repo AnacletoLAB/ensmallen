@@ -119,7 +119,6 @@ def CopresenceInvs13(
 	23639), 987 (degree 21887) and 48 (degree 20237).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def CopresenceInvs13(
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def CopresenceInvs13(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CopresenceInvs13",

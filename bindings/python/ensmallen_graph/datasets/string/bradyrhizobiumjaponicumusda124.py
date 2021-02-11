@@ -119,7 +119,6 @@ def BradyrhizobiumJaponicumUsda124(
 	(degree 2195) and 1038862.KB893906_gene5441 (degree 2134).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BradyrhizobiumJaponicumUsda124(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BradyrhizobiumJaponicumUsda124(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BradyrhizobiumJaponicumUsda124",

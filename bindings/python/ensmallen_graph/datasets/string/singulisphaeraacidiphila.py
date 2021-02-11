@@ -117,7 +117,6 @@ def SingulisphaeraAcidiphila(
 	2027), 886293.Sinac_5362 (degree 2014) and 886293.Sinac_5564 (degree 1950).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SingulisphaeraAcidiphila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SingulisphaeraAcidiphila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SingulisphaeraAcidiphila",

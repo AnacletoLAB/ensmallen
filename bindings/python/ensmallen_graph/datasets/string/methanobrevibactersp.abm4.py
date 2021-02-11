@@ -117,7 +117,6 @@ def MethanobrevibacterSp.Abm4(
 	224719.Abm4_0334 (degree 575) and 224719.Abm4_0461 (degree 573).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanobrevibacterSp.Abm4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanobrevibacterSp.Abm4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanobrevibacterSp.Abm4",

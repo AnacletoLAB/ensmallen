@@ -117,7 +117,6 @@ def ThalassospiraProfundimaris(
 	1471), 1177928.TH2_10394 (degree 1306) and 1177928.TH2_16456 (degree 1287).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThalassospiraProfundimaris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThalassospiraProfundimaris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThalassospiraProfundimaris",

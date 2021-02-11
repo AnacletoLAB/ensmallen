@@ -117,7 +117,6 @@ def OceanobacillusPicturae(
 	1041), 171693.BN988_00291 (degree 986) and 171693.BN988_00739 (degree 964).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OceanobacillusPicturae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OceanobacillusPicturae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceanobacillusPicturae",

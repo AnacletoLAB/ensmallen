@@ -117,7 +117,6 @@ def BelliellaBaltica(
 	919), 866536.Belba_1102 (degree 902) and 866536.Belba_1410 (degree 869).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BelliellaBaltica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BelliellaBaltica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BelliellaBaltica",

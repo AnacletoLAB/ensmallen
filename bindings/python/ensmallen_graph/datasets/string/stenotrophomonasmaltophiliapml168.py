@@ -119,7 +119,6 @@ def StenotrophomonasMaltophiliaPml168(
 	(degree 1106) and 1118235.CAJH01000010_gene659 (degree 1101).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StenotrophomonasMaltophiliaPml168(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StenotrophomonasMaltophiliaPml168(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StenotrophomonasMaltophiliaPml168",

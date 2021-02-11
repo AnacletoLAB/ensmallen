@@ -117,7 +117,6 @@ def BordetellaPertussisTohama(
 	257313.BP2700 (degree 892) and 257313.BP2624 (degree 881).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BordetellaPertussisTohama(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BordetellaPertussisTohama(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BordetellaPertussisTohama",

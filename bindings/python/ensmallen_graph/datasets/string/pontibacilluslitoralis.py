@@ -117,7 +117,6 @@ def PontibacillusLitoralis(
 	923), 1385512.N784_00910 (degree 908) and 1385512.N784_02070 (degree 832).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PontibacillusLitoralis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PontibacillusLitoralis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PontibacillusLitoralis",

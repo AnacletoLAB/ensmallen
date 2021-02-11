@@ -110,7 +110,6 @@ def FlickrGroupmemberships(
 	13 (degree 30312), 48 (degree 27796), 23 (degree 22117) and 8 (degree 21884).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def FlickrGroupmemberships(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def FlickrGroupmemberships(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlickrGroupmemberships",

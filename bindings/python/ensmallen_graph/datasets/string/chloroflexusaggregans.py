@@ -117,7 +117,6 @@ def ChloroflexusAggregans(
 	1593), 326427.Cagg_3753 (degree 1578) and 326427.Cagg_1830 (degree 1549).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChloroflexusAggregans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChloroflexusAggregans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChloroflexusAggregans",

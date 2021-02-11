@@ -117,7 +117,6 @@ def AspergillusKawachii(
 	40384.G7XRL9 (degree 1716) and 40384.G7XPI1 (degree 1587).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AspergillusKawachii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AspergillusKawachii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AspergillusKawachii",

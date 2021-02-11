@@ -117,7 +117,6 @@ def ErwiniaTypographi(
 	1632), 371042.NG99_13945 (degree 1533) and 371042.NG99_01095 (degree 1528).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErwiniaTypographi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErwiniaTypographi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErwiniaTypographi",

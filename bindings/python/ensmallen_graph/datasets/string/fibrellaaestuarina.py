@@ -117,7 +117,6 @@ def FibrellaAestuarina(
 	1755), 1166018.FAES_3100 (degree 1711) and 1166018.FAES_4764 (degree 1601).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FibrellaAestuarina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FibrellaAestuarina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FibrellaAestuarina",

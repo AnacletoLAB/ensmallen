@@ -117,7 +117,6 @@ def LysobacterConcretionis(
 	800), 1122185.N792_00430 (degree 775) and 1122185.N792_02695 (degree 755).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysobacterConcretionis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysobacterConcretionis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysobacterConcretionis",

@@ -117,7 +117,6 @@ def MelampsoraLaricipopulina(
 	203908.EGG08271 (degree 1210) and 203908.EGG11633 (degree 1209).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MelampsoraLaricipopulina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MelampsoraLaricipopulina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MelampsoraLaricipopulina",

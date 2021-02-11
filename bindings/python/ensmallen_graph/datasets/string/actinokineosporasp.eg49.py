@@ -117,7 +117,6 @@ def ActinokineosporaSp.Eg49(
 	1761), 909613.UO65_6645 (degree 1651) and 909613.UO65_4709 (degree 1646).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinokineosporaSp.Eg49(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinokineosporaSp.Eg49(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinokineosporaSp.Eg49",

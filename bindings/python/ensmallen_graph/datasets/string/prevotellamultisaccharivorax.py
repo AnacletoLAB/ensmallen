@@ -117,7 +117,6 @@ def PrevotellaMultisaccharivorax(
 	741), 688246.Premu_1194 (degree 711) and 688246.Premu_0905 (degree 686).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PrevotellaMultisaccharivorax(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PrevotellaMultisaccharivorax(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PrevotellaMultisaccharivorax",

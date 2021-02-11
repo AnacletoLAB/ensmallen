@@ -117,7 +117,6 @@ def PseudomonasPutidaS16(
 	1329), 1042876.PPS_4583 (degree 1274) and 1042876.PPS_4158 (degree 1264).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasPutidaS16(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasPutidaS16(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasPutidaS16",

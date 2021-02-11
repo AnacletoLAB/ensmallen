@@ -117,7 +117,6 @@ def ThermobacillusComposti(
 	948), 717605.Theco_3655 (degree 945) and 717605.Theco_2403 (degree 923).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermobacillusComposti(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermobacillusComposti(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermobacillusComposti",

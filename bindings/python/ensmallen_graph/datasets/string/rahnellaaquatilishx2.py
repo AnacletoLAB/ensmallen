@@ -117,7 +117,6 @@ def RahnellaAquatilisHx2(
 	1223), 1151116.Q7S_05055 (degree 1079) and 1151116.Q7S_08490 (degree 979).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RahnellaAquatilisHx2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RahnellaAquatilisHx2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RahnellaAquatilisHx2",

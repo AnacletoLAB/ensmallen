@@ -117,7 +117,6 @@ def MariprofundusFerrooxydans(
 	811), 314345.SPV1_07796 (degree 808) and 314345.SPV1_08366 (degree 807).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MariprofundusFerrooxydans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MariprofundusFerrooxydans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MariprofundusFerrooxydans",

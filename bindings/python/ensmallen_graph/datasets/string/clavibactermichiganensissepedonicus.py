@@ -117,7 +117,6 @@ def ClavibacterMichiganensisSepedonicus(
 	(degree 766), 31964.CMS1230 (degree 765) and 31964.CMS2006 (degree 737).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClavibacterMichiganensisSepedonicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClavibacterMichiganensisSepedonicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClavibacterMichiganensisSepedonicus",

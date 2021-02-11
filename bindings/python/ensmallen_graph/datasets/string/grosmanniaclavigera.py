@@ -117,7 +117,6 @@ def GrosmanniaClavigera(
 	226899.F0X6X2 (degree 1467) and 226899.F0X6M1 (degree 1448).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GrosmanniaClavigera(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GrosmanniaClavigera(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GrosmanniaClavigera",

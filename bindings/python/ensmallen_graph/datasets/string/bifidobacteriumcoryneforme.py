@@ -117,7 +117,6 @@ def BifidobacteriumCoryneforme(
 	1687.BCOR_0779 (degree 509) and 1687.BCOR_0156 (degree 508).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumCoryneforme(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumCoryneforme(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumCoryneforme",

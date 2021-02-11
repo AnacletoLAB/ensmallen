@@ -117,7 +117,6 @@ def PhotobacteriumProfundum(
 	1809), 298386.PBPRA1593 (degree 1803) and 298386.PBPRA1460 (degree 1561).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhotobacteriumProfundum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhotobacteriumProfundum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotobacteriumProfundum",

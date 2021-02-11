@@ -117,7 +117,6 @@ def BrassicaOleracea(
 	8969), 3712.Bo3g090180.1 (degree 8966) and 3712.Bo1g007160.1 (degree 8966).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrassicaOleracea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrassicaOleracea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrassicaOleracea",

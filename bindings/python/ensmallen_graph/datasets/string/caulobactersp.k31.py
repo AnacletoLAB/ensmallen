@@ -117,7 +117,6 @@ def CaulobacterSp.K31(
 	1336), 366602.Caul_4950 (degree 1262) and 366602.Caul_4914 (degree 1213).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaulobacterSp.K31(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaulobacterSp.K31(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaulobacterSp.K31",

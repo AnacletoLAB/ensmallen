@@ -117,7 +117,6 @@ def ColletotrichumGraminicola(
 	31870.EFQ30042 (degree 1597) and 31870.EFQ33012 (degree 1560).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ColletotrichumGraminicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ColletotrichumGraminicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ColletotrichumGraminicola",

@@ -117,7 +117,6 @@ def HaematobacterMassiliensis(
 	1127), 195105.CN97_09850 (degree 1125) and 195105.CN97_01590 (degree 1117).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaematobacterMassiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaematobacterMassiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaematobacterMassiliensis",

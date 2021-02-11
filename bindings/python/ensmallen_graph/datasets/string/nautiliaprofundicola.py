@@ -117,7 +117,6 @@ def NautiliaProfundicola(
 	598659.NAMH_0699 (degree 619) and 598659.NAMH_0908 (degree 612).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NautiliaProfundicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NautiliaProfundicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NautiliaProfundicola",

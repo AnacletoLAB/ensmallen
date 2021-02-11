@@ -115,7 +115,6 @@ def ListeriaMonocytogenesEgde(
 	169963.lmo1096 (degree 911) and 169963.lmo1473 (degree 858).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ListeriaMonocytogenesEgde(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ListeriaMonocytogenesEgde(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ListeriaMonocytogenesEgde",

@@ -115,7 +115,6 @@ def BlattabacteriumSp.Bplan(
 	600809.BPLAN_138 (degree 287) and 600809.BPLAN_539 (degree 283).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlattabacteriumSp.Bplan(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlattabacteriumSp.Bplan(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlattabacteriumSp.Bplan",

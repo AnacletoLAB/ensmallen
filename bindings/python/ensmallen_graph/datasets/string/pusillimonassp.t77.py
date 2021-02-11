@@ -117,7 +117,6 @@ def PusillimonasSp.T77(
 	1069), 1007105.PT7_1931 (degree 1067) and 1007105.PT7_0847 (degree 1063).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PusillimonasSp.T77(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PusillimonasSp.T77(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PusillimonasSp.T77",

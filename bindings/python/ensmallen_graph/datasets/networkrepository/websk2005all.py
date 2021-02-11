@@ -133,7 +133,6 @@ def WebSk2005All(
 	50284701 (degree 1582409) and 48932213 (degree 1367113).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def WebSk2005All(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def WebSk2005All(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebSk2005All",

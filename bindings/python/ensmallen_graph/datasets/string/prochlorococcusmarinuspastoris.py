@@ -117,7 +117,6 @@ def ProchlorococcusMarinusPastoris(
 	483), 59919.PMM1590 (degree 480) and 59919.PMM1512 (degree 473).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProchlorococcusMarinusPastoris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProchlorococcusMarinusPastoris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusMarinusPastoris",

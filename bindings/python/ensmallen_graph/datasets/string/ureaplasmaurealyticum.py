@@ -117,7 +117,6 @@ def UreaplasmaUrealyticum(
 	242), 565575.UUR10_0090 (degree 237) and 565575.UUR10_0671 (degree 231).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def UreaplasmaUrealyticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def UreaplasmaUrealyticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "UreaplasmaUrealyticum",

@@ -117,7 +117,6 @@ def ImtechellaHalotolerans(
 	888), 946077.W5A_10210 (degree 846) and 946077.W5A_06600 (degree 737).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ImtechellaHalotolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ImtechellaHalotolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ImtechellaHalotolerans",

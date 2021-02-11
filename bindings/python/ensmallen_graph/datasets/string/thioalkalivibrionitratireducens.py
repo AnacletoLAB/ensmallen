@@ -119,7 +119,6 @@ def ThioalkalivibrioNitratireducens(
 	1255043.TVNIR_3476 (degree 944).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThioalkalivibrioNitratireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThioalkalivibrioNitratireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioalkalivibrioNitratireducens",

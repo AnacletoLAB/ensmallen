@@ -117,7 +117,6 @@ def HalogranumSalarium(
 	994), 1210908.HSB1_21240 (degree 986) and 1210908.HSB1_31390 (degree 933).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalogranumSalarium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalogranumSalarium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalogranumSalarium",

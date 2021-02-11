@@ -117,7 +117,6 @@ def RhodospirillumRubrum(
 	1114), 269796.Rru_A0687 (degree 1062) and 269796.Rru_A1410 (degree 1042).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodospirillumRubrum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodospirillumRubrum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodospirillumRubrum",

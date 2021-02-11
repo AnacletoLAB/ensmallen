@@ -117,7 +117,6 @@ def PhytophthoraInfestans(
 	2875), 4787.PITG_06749T0 (degree 2673) and 4787.PITG_20502T0 (degree 2449).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytophthoraInfestans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytophthoraInfestans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytophthoraInfestans",

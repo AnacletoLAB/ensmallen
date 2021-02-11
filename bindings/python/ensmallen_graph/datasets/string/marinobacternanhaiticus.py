@@ -117,7 +117,6 @@ def MarinobacterNanhaiticus(
 	1501), 626887.J057_23300 (degree 1452) and 626887.J057_22760 (degree 1423).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinobacterNanhaiticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinobacterNanhaiticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinobacterNanhaiticus",

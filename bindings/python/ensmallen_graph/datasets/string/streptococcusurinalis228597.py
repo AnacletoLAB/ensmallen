@@ -117,7 +117,6 @@ def StreptococcusUrinalis228597(
 	796), 764291.STRUR_0499 (degree 795) and 764291.STRUR_2246 (degree 741).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusUrinalis228597(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusUrinalis228597(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusUrinalis228597",

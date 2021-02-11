@@ -117,7 +117,6 @@ def LegionellaDrancourtii(
 	658187.LDG_7847 (degree 1205) and 658187.LDG_7848 (degree 1173).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LegionellaDrancourtii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LegionellaDrancourtii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LegionellaDrancourtii",

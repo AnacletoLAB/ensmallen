@@ -120,7 +120,6 @@ def MiscJungCodeDep(
 	21 (degree 5380), 15 (degree 643) and 14 (degree 625).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def MiscJungCodeDep(
 	        pages = {9--16},
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def MiscJungCodeDep(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MiscJungCodeDep",

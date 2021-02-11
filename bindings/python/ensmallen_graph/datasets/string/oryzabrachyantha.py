@@ -117,7 +117,6 @@ def OryzaBrachyantha(
 	4793), 4533.OB12G19370.1 (degree 4578) and 4533.OB06G26320.1 (degree 4164).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OryzaBrachyantha(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OryzaBrachyantha(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OryzaBrachyantha",

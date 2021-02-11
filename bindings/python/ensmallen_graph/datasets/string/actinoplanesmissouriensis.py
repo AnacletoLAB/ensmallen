@@ -117,7 +117,6 @@ def ActinoplanesMissouriensis(
 	2297), 512565.AMIS_18730 (degree 2245) and 512565.AMIS_40200 (degree 2097).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinoplanesMissouriensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinoplanesMissouriensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoplanesMissouriensis",

@@ -117,7 +117,6 @@ def StreptococcusPneumoniaeTigr4(
 	(degree 644), 170187.SP_0788 (degree 641) and 170187.SP_0517 (degree 636).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusPneumoniaeTigr4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusPneumoniaeTigr4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusPneumoniaeTigr4",

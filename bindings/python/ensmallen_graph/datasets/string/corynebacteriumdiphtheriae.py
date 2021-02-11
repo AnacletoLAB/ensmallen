@@ -117,7 +117,6 @@ def CorynebacteriumDiphtheriae(
 	709), 698964.CDPW8_1144 (degree 686) and 698964.CDPW8_0594 (degree 656).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumDiphtheriae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumDiphtheriae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumDiphtheriae",

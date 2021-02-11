@@ -117,7 +117,6 @@ def BetaProteobacteriumKb13(
 	314607.KB13_760 (degree 482) and 314607.KB13_11 (degree 447).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BetaProteobacteriumKb13(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BetaProteobacteriumKb13(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BetaProteobacteriumKb13",

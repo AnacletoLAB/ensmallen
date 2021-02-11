@@ -125,7 +125,6 @@ def PHat15003(
 	(degree 1324).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -151,7 +150,6 @@ def PHat15003(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -188,7 +186,6 @@ def PHat15003(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PHat15003",

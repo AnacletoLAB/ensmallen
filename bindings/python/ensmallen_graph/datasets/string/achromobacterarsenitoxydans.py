@@ -117,7 +117,6 @@ def AchromobacterArsenitoxydans(
 	1648), 477184.KYC_07191 (degree 1631) and 477184.KYC_25072 (degree 1630).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AchromobacterArsenitoxydans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AchromobacterArsenitoxydans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AchromobacterArsenitoxydans",

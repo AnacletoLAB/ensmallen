@@ -117,7 +117,6 @@ def ThalassolituusOleivorans(
 	986), 1298593.TOL_2357 (degree 940) and 1298593.TOL_3670 (degree 932).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThalassolituusOleivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThalassolituusOleivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThalassolituusOleivorans",

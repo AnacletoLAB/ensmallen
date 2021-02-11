@@ -117,7 +117,6 @@ def ListeriaInnocua(
 	272626.lin1081 (degree 914) and 272626.lin1492 (degree 863).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ListeriaInnocua(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ListeriaInnocua(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ListeriaInnocua",

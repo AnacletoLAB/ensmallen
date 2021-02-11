@@ -117,7 +117,6 @@ def FusariumPseudograminearum(
 	101028.EKJ69834 (degree 1436) and 101028.EKJ79131 (degree 1434).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusariumPseudograminearum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusariumPseudograminearum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusariumPseudograminearum",

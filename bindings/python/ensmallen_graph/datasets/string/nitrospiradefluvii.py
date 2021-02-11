@@ -117,7 +117,6 @@ def NitrospiraDefluvii(
 	330214.NIDE4158 (degree 1497) and 330214.NIDE1587 (degree 1478).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrospiraDefluvii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrospiraDefluvii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrospiraDefluvii",

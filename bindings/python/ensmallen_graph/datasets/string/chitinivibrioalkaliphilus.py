@@ -117,7 +117,6 @@ def ChitinivibrioAlkaliphilus(
 	830), 1313304.CALK_1455 (degree 799) and 1313304.CALK_1643 (degree 781).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChitinivibrioAlkaliphilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChitinivibrioAlkaliphilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChitinivibrioAlkaliphilus",

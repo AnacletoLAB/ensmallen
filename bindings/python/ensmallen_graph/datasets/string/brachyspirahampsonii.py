@@ -117,7 +117,6 @@ def BrachyspiraHampsonii(
 	936), 1289135.A966_11706 (degree 857) and 1289135.A966_02366 (degree 825).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrachyspiraHampsonii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrachyspiraHampsonii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrachyspiraHampsonii",

@@ -117,7 +117,6 @@ def CandidaParapsilosis(
 	(degree 1190) and 5480.G8BB94 (degree 1168).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CandidaParapsilosis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CandidaParapsilosis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CandidaParapsilosis",

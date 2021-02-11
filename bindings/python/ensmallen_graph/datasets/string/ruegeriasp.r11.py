@@ -117,7 +117,6 @@ def RuegeriaSp.R11(
 	1335), 439497.RR11_607 (degree 1249) and 439497.RR11_3429 (degree 1187).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RuegeriaSp.R11(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RuegeriaSp.R11(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuegeriaSp.R11",

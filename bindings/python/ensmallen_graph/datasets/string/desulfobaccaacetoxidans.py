@@ -117,7 +117,6 @@ def DesulfobaccaAcetoxidans(
 	1184), 880072.Desac_0373 (degree 947) and 880072.Desac_1090 (degree 921).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfobaccaAcetoxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfobaccaAcetoxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfobaccaAcetoxidans",

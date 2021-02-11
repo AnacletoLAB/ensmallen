@@ -117,7 +117,6 @@ def TrichoplaxAdhaerens(
 	1647), 10228.TriadP59653 (degree 1580) and 10228.TriadP37778 (degree 1579).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrichoplaxAdhaerens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrichoplaxAdhaerens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrichoplaxAdhaerens",

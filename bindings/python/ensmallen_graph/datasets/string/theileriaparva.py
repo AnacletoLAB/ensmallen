@@ -117,7 +117,6 @@ def TheileriaParva(
 	1066), 5875.XP_764717.1 (degree 1054) and 5875.XP_765469.1 (degree 1048).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TheileriaParva(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TheileriaParva(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TheileriaParva",

@@ -115,7 +115,6 @@ def CampylobacterJejuniNctc11168(
 	(degree 626), 192222.Cj0896c (degree 625) and 192222.Cj0893c (degree 602).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def CampylobacterJejuniNctc11168(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def CampylobacterJejuniNctc11168(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CampylobacterJejuniNctc11168",

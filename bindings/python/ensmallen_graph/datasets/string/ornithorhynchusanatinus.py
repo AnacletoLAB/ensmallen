@@ -119,7 +119,6 @@ def OrnithorhynchusAnatinus(
 	4237) and 9258.ENSOANP00000026775 (degree 4029).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def OrnithorhynchusAnatinus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def OrnithorhynchusAnatinus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OrnithorhynchusAnatinus",

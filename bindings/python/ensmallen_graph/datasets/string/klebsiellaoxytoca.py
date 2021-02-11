@@ -117,7 +117,6 @@ def KlebsiellaOxytoca(
 	571.MC52_05340 (degree 1644) and 571.MC52_29000 (degree 1429).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KlebsiellaOxytoca(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KlebsiellaOxytoca(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KlebsiellaOxytoca",

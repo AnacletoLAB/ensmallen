@@ -117,7 +117,6 @@ def GeobacterMetallireducens(
 	1533), 269799.Gmet_2642 (degree 1439) and 269799.Gmet_3419 (degree 1328).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacterMetallireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacterMetallireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacterMetallireducens",

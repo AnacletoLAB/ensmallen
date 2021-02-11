@@ -117,7 +117,6 @@ def MethanocaldococcusVulcanius(
 	635), 579137.Metvu_1398 (degree 633) and 579137.Metvu_0699 (degree 632).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanocaldococcusVulcanius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanocaldococcusVulcanius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanocaldococcusVulcanius",

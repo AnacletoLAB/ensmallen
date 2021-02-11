@@ -119,7 +119,6 @@ def PropionibacteriumAcidifaciens(
 	(degree 753) and 1122994.AUFR01000029_gene494 (degree 743).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PropionibacteriumAcidifaciens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PropionibacteriumAcidifaciens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PropionibacteriumAcidifaciens",

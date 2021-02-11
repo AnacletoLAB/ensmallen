@@ -119,7 +119,6 @@ def LactobacillusBuchneriAtcc11577(
 	689) and 525318.HMPREF0497_0711 (degree 684).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LactobacillusBuchneriAtcc11577(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LactobacillusBuchneriAtcc11577(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusBuchneriAtcc11577",

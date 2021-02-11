@@ -117,7 +117,6 @@ def MethylobacterTundripaludum(
 	1641), 697282.Mettu_2187 (degree 1620) and 697282.Mettu_1727 (degree 1557).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacterTundripaludum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacterTundripaludum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacterTundripaludum",

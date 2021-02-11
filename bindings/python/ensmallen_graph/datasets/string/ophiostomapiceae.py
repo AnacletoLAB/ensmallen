@@ -117,7 +117,6 @@ def OphiostomaPiceae(
 	61273.S3CK02 (degree 1437) and 61273.S3BS06 (degree 1274).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OphiostomaPiceae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OphiostomaPiceae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OphiostomaPiceae",

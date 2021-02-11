@@ -117,7 +117,6 @@ def SolemyaVelum(
 	2340.JV46_10770 (degree 830) and 2340.JV46_27120 (degree 724).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SolemyaVelum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SolemyaVelum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SolemyaVelum",

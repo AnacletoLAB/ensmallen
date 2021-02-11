@@ -119,7 +119,6 @@ def HeterocephalusGlaber(
 	and 10181.XP_004869455.1 (degree 4064).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def HeterocephalusGlaber(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def HeterocephalusGlaber(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HeterocephalusGlaber",

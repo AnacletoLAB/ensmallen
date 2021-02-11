@@ -117,7 +117,6 @@ def MacrococcusCaseolyticus(
 	458233.MCCL_1922 (degree 617) and 458233.MCCL_0383 (degree 617).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MacrococcusCaseolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MacrococcusCaseolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MacrococcusCaseolyticus",

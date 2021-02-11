@@ -117,7 +117,6 @@ def StreptococcusAnginosusC238(
 	862971.SANR_0515 (degree 682) and 862971.SANR_1694 (degree 667).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusAnginosusC238(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusAnginosusC238(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusAnginosusC238",

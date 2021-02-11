@@ -117,7 +117,6 @@ def TsukamurellaPaurometabola(
 	1138), 521096.Tpau_0486 (degree 1061) and 521096.Tpau_0107 (degree 1042).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TsukamurellaPaurometabola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TsukamurellaPaurometabola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TsukamurellaPaurometabola",

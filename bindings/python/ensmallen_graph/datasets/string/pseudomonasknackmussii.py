@@ -117,7 +117,6 @@ def PseudomonasKnackmussii(
 	1964), 1301098.PKB_2492 (degree 1862) and 1301098.PKB_5343 (degree 1835).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasKnackmussii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasKnackmussii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasKnackmussii",

@@ -117,7 +117,6 @@ def VerticilliumDahliae(
 	27337.EGY16641 (degree 1170) and 27337.EGY15260 (degree 1167).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VerticilliumDahliae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VerticilliumDahliae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VerticilliumDahliae",

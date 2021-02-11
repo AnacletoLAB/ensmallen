@@ -119,7 +119,6 @@ def FusobacteriumNecrophorumFunduliforme(
 	683) and 1095747.HMPREF1049_1161 (degree 652).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def FusobacteriumNecrophorumFunduliforme(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def FusobacteriumNecrophorumFunduliforme(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumNecrophorumFunduliforme",

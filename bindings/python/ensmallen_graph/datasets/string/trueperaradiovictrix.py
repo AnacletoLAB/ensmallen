@@ -117,7 +117,6 @@ def TrueperaRadiovictrix(
 	969), 649638.Trad_1381 (degree 901) and 649638.Trad_1076 (degree 883).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrueperaRadiovictrix(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrueperaRadiovictrix(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrueperaRadiovictrix",

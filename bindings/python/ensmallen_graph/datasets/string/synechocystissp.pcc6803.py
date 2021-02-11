@@ -115,7 +115,6 @@ def SynechocystisSp.Pcc6803(
 	1148.1653244 (degree 1133) and 1148.1001335 (degree 1123).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def SynechocystisSp.Pcc6803(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def SynechocystisSp.Pcc6803(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechocystisSp.Pcc6803",

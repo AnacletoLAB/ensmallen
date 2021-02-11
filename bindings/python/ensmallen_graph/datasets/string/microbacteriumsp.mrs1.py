@@ -117,7 +117,6 @@ def MicrobacteriumSp.Mrs1(
 	847), 1451261.AS96_10870 (degree 795) and 1451261.AS96_03290 (degree 772).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrobacteriumSp.Mrs1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrobacteriumSp.Mrs1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrobacteriumSp.Mrs1",

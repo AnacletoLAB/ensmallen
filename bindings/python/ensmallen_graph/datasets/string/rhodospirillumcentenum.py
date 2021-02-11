@@ -117,7 +117,6 @@ def RhodospirillumCentenum(
 	414684.RC1_3193 (degree 1155) and 414684.RC1_0155 (degree 1124).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodospirillumCentenum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodospirillumCentenum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodospirillumCentenum",

@@ -117,7 +117,6 @@ def PhenylobacteriumZucineum(
 	1263), 450851.PHZ_c1417 (degree 1183) and 450851.PHZ_c1163 (degree 1130).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhenylobacteriumZucineum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhenylobacteriumZucineum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhenylobacteriumZucineum",

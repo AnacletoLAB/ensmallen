@@ -117,7 +117,6 @@ def SpirochaetaAfricana(
 	925), 889378.Spiaf_2184 (degree 897) and 889378.Spiaf_2805 (degree 874).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SpirochaetaAfricana(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SpirochaetaAfricana(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SpirochaetaAfricana",

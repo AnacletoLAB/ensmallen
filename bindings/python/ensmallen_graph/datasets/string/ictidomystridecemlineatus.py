@@ -119,7 +119,6 @@ def IctidomysTridecemlineatus(
 	(degree 3807) and 43179.ENSSTOP00000002981 (degree 3729).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def IctidomysTridecemlineatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def IctidomysTridecemlineatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IctidomysTridecemlineatus",

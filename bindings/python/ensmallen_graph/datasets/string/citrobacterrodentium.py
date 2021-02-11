@@ -117,7 +117,6 @@ def CitrobacterRodentium(
 	1351), 637910.ROD_46101 (degree 1307) and 637910.ROD_46051 (degree 1275).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CitrobacterRodentium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CitrobacterRodentium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CitrobacterRodentium",

@@ -119,7 +119,6 @@ def ProchlorococcusSp.Scb245a520k10(
 	(degree 515) and 1471522.JFNU01000202_gene1078 (degree 506).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ProchlorococcusSp.Scb245a520k10(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ProchlorococcusSp.Scb245a520k10(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProchlorococcusSp.Scb245a520k10",

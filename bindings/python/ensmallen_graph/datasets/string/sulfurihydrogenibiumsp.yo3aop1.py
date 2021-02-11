@@ -119,7 +119,6 @@ def SulfurihydrogenibiumSp.Yo3aop1(
 	436114.SYO3AOP1_0805 (degree 538).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SulfurihydrogenibiumSp.Yo3aop1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SulfurihydrogenibiumSp.Yo3aop1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurihydrogenibiumSp.Yo3aop1",

@@ -117,7 +117,6 @@ def AlphaProteobacteriumMa2(
 	1288), 1333998.M2A_2310 (degree 1246) and 1333998.M2A_2089 (degree 1205).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlphaProteobacteriumMa2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlphaProteobacteriumMa2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlphaProteobacteriumMa2",

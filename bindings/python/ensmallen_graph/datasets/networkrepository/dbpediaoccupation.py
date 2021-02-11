@@ -114,7 +114,6 @@ def DbpediaOccupation(
 	50 (degree 8770), 63 (degree 8539), 52 (degree 5928) and 62 (degree 4758).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -127,7 +126,6 @@ def DbpediaOccupation(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -164,7 +162,6 @@ def DbpediaOccupation(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DbpediaOccupation",

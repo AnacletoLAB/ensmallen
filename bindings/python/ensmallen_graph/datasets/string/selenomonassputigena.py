@@ -117,7 +117,6 @@ def SelenomonasSputigena(
 	680), 546271.Selsp_0725 (degree 653) and 546271.Selsp_0988 (degree 616).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SelenomonasSputigena(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SelenomonasSputigena(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SelenomonasSputigena",

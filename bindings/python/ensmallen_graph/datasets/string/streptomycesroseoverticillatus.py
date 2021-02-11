@@ -119,7 +119,6 @@ def StreptomycesRoseoverticillatus(
 	(degree 1888) and 66429.JOFL01000006_gene1981 (degree 1743).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptomycesRoseoverticillatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptomycesRoseoverticillatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesRoseoverticillatus",

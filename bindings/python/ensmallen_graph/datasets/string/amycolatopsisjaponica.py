@@ -117,7 +117,6 @@ def AmycolatopsisJaponica(
 	1655), 208439.AJAP_04620 (degree 1585) and 208439.AJAP_14160 (degree 1569).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmycolatopsisJaponica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmycolatopsisJaponica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmycolatopsisJaponica",

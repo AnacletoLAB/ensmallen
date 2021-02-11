@@ -117,7 +117,6 @@ def CellulophagaAlgicola(
 	1053), 688270.Celal_0337 (degree 1050) and 688270.Celal_3392 (degree 1020).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellulophagaAlgicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellulophagaAlgicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellulophagaAlgicola",

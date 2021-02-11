@@ -117,7 +117,6 @@ def SulfurihydrogenibiumAzorense(
 	643), 204536.SULAZ_0467 (degree 593) and 204536.SULAZ_0484 (degree 586).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurihydrogenibiumAzorense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurihydrogenibiumAzorense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurihydrogenibiumAzorense",

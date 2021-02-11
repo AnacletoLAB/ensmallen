@@ -117,7 +117,6 @@ def PyronemaOmphalodes(
 	337075.U4LQG2 (degree 1274) and 337075.U4LUL9 (degree 1274).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyronemaOmphalodes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyronemaOmphalodes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyronemaOmphalodes",

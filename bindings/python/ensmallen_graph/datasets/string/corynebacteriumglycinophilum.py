@@ -117,7 +117,6 @@ def CorynebacteriumGlycinophilum(
 	989), 1404245.CGLY_09275 (degree 899) and 1404245.CGLY_02430 (degree 894).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CorynebacteriumGlycinophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CorynebacteriumGlycinophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CorynebacteriumGlycinophilum",

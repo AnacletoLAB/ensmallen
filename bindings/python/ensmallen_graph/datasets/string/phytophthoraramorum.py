@@ -117,7 +117,6 @@ def PhytophthoraRamorum(
 	3568), 164328.Phyra71343 (degree 3497) and 164328.Phyra81252 (degree 3423).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytophthoraRamorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytophthoraRamorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytophthoraRamorum",

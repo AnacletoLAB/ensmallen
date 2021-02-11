@@ -117,7 +117,6 @@ def DactylellinaHaptotyla(
 	430498.S8BIQ7 (degree 1587) and 430498.S8A220 (degree 1460).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DactylellinaHaptotyla(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DactylellinaHaptotyla(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DactylellinaHaptotyla",

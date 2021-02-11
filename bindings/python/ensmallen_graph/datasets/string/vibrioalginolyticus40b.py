@@ -117,7 +117,6 @@ def VibrioAlginolyticus40b(
 	1842), 674977.VMC_24400 (degree 1799) and 674977.VMC_40450 (degree 1681).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioAlginolyticus40b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioAlginolyticus40b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioAlginolyticus40b",

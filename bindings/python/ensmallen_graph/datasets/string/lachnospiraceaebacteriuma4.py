@@ -117,7 +117,6 @@ def LachnospiraceaeBacteriumA4(
 	1799), 397291.C804_03244 (degree 1669) and 397291.C804_01764 (degree 1523).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LachnospiraceaeBacteriumA4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LachnospiraceaeBacteriumA4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumA4",

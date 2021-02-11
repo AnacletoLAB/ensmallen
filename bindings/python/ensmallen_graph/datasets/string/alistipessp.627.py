@@ -117,7 +117,6 @@ def AlistipesSp.627(
 	520), 1501391.LG35_09505 (degree 502) and 1501391.LG35_08035 (degree 493).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlistipesSp.627(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlistipesSp.627(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlistipesSp.627",

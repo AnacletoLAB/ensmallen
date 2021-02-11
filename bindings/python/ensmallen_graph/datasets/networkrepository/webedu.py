@@ -119,7 +119,6 @@ def WebEdu(
 	294 (degree 73), 1575 (degree 72) and 1849 (degree 66).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -141,7 +140,6 @@ def WebEdu(
 	        year={2004}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -178,7 +176,6 @@ def WebEdu(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebEdu",

@@ -117,7 +117,6 @@ def BacillusMegateriumQmB1551(
 	545693.BMQ_4508 (degree 1287) and 545693.BMQ_2179 (degree 1284).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BacillusMegateriumQmB1551(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BacillusMegateriumQmB1551(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusMegateriumQmB1551",

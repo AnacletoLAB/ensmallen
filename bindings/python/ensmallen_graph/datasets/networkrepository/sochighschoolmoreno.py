@@ -112,7 +112,6 @@ def SocHighschoolMoreno(
 	16), 4 (degree 16) and 63 (degree 14).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def SocHighschoolMoreno(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def SocHighschoolMoreno(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocHighschoolMoreno",

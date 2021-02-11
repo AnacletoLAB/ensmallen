@@ -117,7 +117,6 @@ def NeorickettsiaRisticii(
 	434131.NRI_0614 (degree 362) and 434131.NRI_0427 (degree 351).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NeorickettsiaRisticii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NeorickettsiaRisticii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NeorickettsiaRisticii",

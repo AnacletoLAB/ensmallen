@@ -117,7 +117,6 @@ def LachnospiraceaeBacteriumA2(
 	1492), 397290.C810_05124 (degree 1224) and 397290.C810_03264 (degree 1204).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LachnospiraceaeBacteriumA2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LachnospiraceaeBacteriumA2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacteriumA2",

@@ -117,7 +117,6 @@ def EnterococcusPhoeniculicola(
 	1459), 1158610.UC3_00785 (degree 1449) and 1158610.UC3_01626 (degree 1436).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusPhoeniculicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusPhoeniculicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusPhoeniculicola",

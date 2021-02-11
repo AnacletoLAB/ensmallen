@@ -117,7 +117,6 @@ def DokdoniaSp.4h375(
 	832), 983548.Krodi_1774 (degree 786) and 983548.Krodi_2956 (degree 786).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DokdoniaSp.4h375(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DokdoniaSp.4h375(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DokdoniaSp.4h375",

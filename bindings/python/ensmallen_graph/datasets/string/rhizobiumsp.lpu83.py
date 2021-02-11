@@ -117,7 +117,6 @@ def RhizobiumSp.Lpu83(
 	1105), 348824.LPU83_1147 (degree 1025) and 348824.LPU83_0364 (degree 1000).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhizobiumSp.Lpu83(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhizobiumSp.Lpu83(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhizobiumSp.Lpu83",

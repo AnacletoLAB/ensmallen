@@ -117,7 +117,6 @@ def PseudomonasSp.Vlb120(
 	1380), 69328.PVLB_20015 (degree 1368) and 69328.PVLB_05960 (degree 1298).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasSp.Vlb120(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasSp.Vlb120(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasSp.Vlb120",

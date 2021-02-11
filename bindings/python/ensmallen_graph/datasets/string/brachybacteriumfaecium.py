@@ -117,7 +117,6 @@ def BrachybacteriumFaecium(
 	852), 446465.Bfae_12160 (degree 827) and 446465.Bfae_21840 (degree 827).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrachybacteriumFaecium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrachybacteriumFaecium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrachybacteriumFaecium",

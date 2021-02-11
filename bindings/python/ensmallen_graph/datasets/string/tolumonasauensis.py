@@ -117,7 +117,6 @@ def TolumonasAuensis(
 	1183), 595494.Tola_0617 (degree 1044) and 595494.Tola_2171 (degree 1041).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TolumonasAuensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TolumonasAuensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TolumonasAuensis",

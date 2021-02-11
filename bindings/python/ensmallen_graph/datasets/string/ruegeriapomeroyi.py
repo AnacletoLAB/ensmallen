@@ -117,7 +117,6 @@ def RuegeriaPomeroyi(
 	246200.SPO0847 (degree 1494) and 246200.SPO0849 (degree 1434).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RuegeriaPomeroyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RuegeriaPomeroyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuegeriaPomeroyi",

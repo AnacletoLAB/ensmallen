@@ -117,7 +117,6 @@ def KribbellaFlavida(
 	1773), 479435.Kfla_6010 (degree 1566) and 479435.Kfla_3074 (degree 1565).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KribbellaFlavida(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KribbellaFlavida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KribbellaFlavida",

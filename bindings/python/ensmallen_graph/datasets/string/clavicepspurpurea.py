@@ -117,7 +117,6 @@ def ClavicepsPurpurea(
 	(degree 1335) and 5111.M1WEH4 (degree 1309).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClavicepsPurpurea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClavicepsPurpurea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClavicepsPurpurea",

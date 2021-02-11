@@ -119,7 +119,6 @@ def PseudaminobacterSalicylatoxidans(
 	(degree 1499) and 1192868.CAIU01000024_gene3542 (degree 1461).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudaminobacterSalicylatoxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudaminobacterSalicylatoxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudaminobacterSalicylatoxidans",

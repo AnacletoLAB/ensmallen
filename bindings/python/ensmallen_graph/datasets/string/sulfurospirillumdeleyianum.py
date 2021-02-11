@@ -117,7 +117,6 @@ def SulfurospirillumDeleyianum(
 	525898.Sdel_0486 (degree 674) and 525898.Sdel_1546 (degree 645).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurospirillumDeleyianum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurospirillumDeleyianum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurospirillumDeleyianum",

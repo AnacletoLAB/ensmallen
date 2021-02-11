@@ -119,7 +119,6 @@ def PediococcusAcidilacticiDsm20284(
 	721) and 862514.HMPREF0623_0218 (degree 697).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PediococcusAcidilacticiDsm20284(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PediococcusAcidilacticiDsm20284(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PediococcusAcidilacticiDsm20284",

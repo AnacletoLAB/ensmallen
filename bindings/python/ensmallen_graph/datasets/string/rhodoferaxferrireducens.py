@@ -117,7 +117,6 @@ def RhodoferaxFerrireducens(
 	1617), 338969.Rfer_2287 (degree 1384) and 338969.Rfer_2728 (degree 1361).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodoferaxFerrireducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodoferaxFerrireducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodoferaxFerrireducens",

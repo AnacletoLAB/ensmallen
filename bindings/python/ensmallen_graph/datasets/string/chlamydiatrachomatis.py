@@ -117,7 +117,6 @@ def ChlamydiaTrachomatis(
 	813.O172_02155 (degree 388) and 813.O172_00530 (degree 381).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlamydiaTrachomatis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlamydiaTrachomatis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlamydiaTrachomatis",

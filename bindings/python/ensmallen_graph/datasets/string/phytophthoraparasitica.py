@@ -117,7 +117,6 @@ def PhytophthoraParasitica(
 	4792.ETI34702 (degree 3082) and 4792.ETI55810 (degree 3023).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhytophthoraParasitica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhytophthoraParasitica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytophthoraParasitica",

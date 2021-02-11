@@ -117,7 +117,6 @@ def HelicobacterSp.Mit115569(
 	727), 1548151.LS70_07115 (degree 604) and 1548151.LS70_05675 (degree 588).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterSp.Mit115569(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterSp.Mit115569(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterSp.Mit115569",

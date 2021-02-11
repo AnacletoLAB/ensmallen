@@ -129,7 +129,6 @@ def TechRlCaida(
 	8414 (degree 841), 1301 (degree 802), 7 (degree 780) and 867 (degree 742).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -161,7 +160,6 @@ def TechRlCaida(
 	        year={2013}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -198,7 +196,6 @@ def TechRlCaida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechRlCaida",

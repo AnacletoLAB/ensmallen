@@ -119,7 +119,6 @@ def ThiobacillusDenitrificansDsm12475(
 	(degree 976) and 1123392.AQWL01000008_gene1260 (degree 971).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ThiobacillusDenitrificansDsm12475(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ThiobacillusDenitrificansDsm12475(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThiobacillusDenitrificansDsm12475",

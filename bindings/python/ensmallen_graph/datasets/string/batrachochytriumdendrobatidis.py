@@ -119,7 +119,6 @@ def BatrachochytriumDendrobatidis(
 	1408) and 109871.XP_006675784.1 (degree 1325).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BatrachochytriumDendrobatidis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BatrachochytriumDendrobatidis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BatrachochytriumDendrobatidis",

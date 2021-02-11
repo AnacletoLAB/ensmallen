@@ -117,7 +117,6 @@ def LactococcusLactisIl1403(
 	(degree 749) and 272623.L0353 (degree 693).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactococcusLactisIl1403(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactococcusLactisIl1403(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactococcusLactisIl1403",

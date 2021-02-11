@@ -110,7 +110,6 @@ def ComDblp(
 	(degree 296), 167 (degree 290), 14690 (degree 269) and 13941 (degree 264).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def ComDblp(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def ComDblp(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ComDblp",

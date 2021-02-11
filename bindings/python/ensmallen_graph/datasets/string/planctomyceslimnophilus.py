@@ -117,7 +117,6 @@ def PlanctomycesLimnophilus(
 	1208), 521674.Plim_0602 (degree 854) and 521674.Plim_3740 (degree 819).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlanctomycesLimnophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlanctomycesLimnophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlanctomycesLimnophilus",

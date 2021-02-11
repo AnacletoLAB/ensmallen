@@ -117,7 +117,6 @@ def LeptospirillumFerrooxidans(
 	1162668.LFE_0995 (degree 698) and 1162668.LFE_1136 (degree 664).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeptospirillumFerrooxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeptospirillumFerrooxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeptospirillumFerrooxidans",

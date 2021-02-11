@@ -117,7 +117,6 @@ def PseudomonasStutzeriA1501(
 	379731.PST_0561 (degree 1231) and 379731.PST_3340 (degree 1143).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasStutzeriA1501(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasStutzeriA1501(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasStutzeriA1501",

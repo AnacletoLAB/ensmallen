@@ -110,7 +110,6 @@ def S4dkt3m2(
 	42), 89534 (degree 42), 89533 (degree 42) and 89532 (degree 42).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def S4dkt3m2(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def S4dkt3m2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "S4dkt3m2",

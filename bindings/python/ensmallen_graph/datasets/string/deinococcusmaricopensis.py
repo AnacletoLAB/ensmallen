@@ -117,7 +117,6 @@ def DeinococcusMaricopensis(
 	1091), 709986.Deima_1639 (degree 971) and 709986.Deima_1277 (degree 951).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeinococcusMaricopensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeinococcusMaricopensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeinococcusMaricopensis",

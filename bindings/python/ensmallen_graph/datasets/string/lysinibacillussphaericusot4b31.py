@@ -119,7 +119,6 @@ def LysinibacillusSphaericusOt4b31(
 	1285586.H131_12773 (degree 1206).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LysinibacillusSphaericusOt4b31(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LysinibacillusSphaericusOt4b31(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysinibacillusSphaericusOt4b31",

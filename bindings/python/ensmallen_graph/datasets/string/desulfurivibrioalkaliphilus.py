@@ -117,7 +117,6 @@ def DesulfurivibrioAlkaliphilus(
 	945), 589865.DaAHT2_0906 (degree 939) and 589865.DaAHT2_1544 (degree 756).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfurivibrioAlkaliphilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfurivibrioAlkaliphilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfurivibrioAlkaliphilus",

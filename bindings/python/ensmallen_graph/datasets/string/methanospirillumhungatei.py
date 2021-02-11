@@ -117,7 +117,6 @@ def MethanospirillumHungatei(
 	1117), 323259.Mhun_2940 (degree 1114) and 323259.Mhun_0128 (degree 1099).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanospirillumHungatei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanospirillumHungatei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanospirillumHungatei",

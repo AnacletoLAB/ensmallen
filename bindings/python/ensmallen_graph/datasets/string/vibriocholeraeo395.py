@@ -117,7 +117,6 @@ def VibrioCholeraeO395(
 	1184), 345073.VC395_A1009 (degree 1106) and 345073.VC395_0639 (degree 1095).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioCholeraeO395(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioCholeraeO395(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioCholeraeO395",

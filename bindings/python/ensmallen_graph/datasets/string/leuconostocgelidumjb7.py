@@ -117,7 +117,6 @@ def LeuconostocGelidumJb7(
 	594), 1229756.C269_00950 (degree 563) and 1229756.C269_03920 (degree 539).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeuconostocGelidumJb7(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeuconostocGelidumJb7(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeuconostocGelidumJb7",

@@ -123,7 +123,6 @@ def MiscLesmis(
 	56 (degree 19), 28 (degree 17) and 26 (degree 16).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -147,7 +146,6 @@ def MiscLesmis(
 	        publisher={APS}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -184,7 +182,6 @@ def MiscLesmis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MiscLesmis",

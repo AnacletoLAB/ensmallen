@@ -117,7 +117,6 @@ def FomitopsisPinicola(
 	40483.S8FQB4 (degree 1447) and 40483.S8G6Y1 (degree 1405).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FomitopsisPinicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FomitopsisPinicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FomitopsisPinicola",

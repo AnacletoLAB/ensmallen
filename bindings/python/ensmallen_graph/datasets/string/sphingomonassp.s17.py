@@ -117,7 +117,6 @@ def SphingomonasSp.S17(
 	1225), 1007104.SUS17_3413 (degree 1128) and 1007104.SUS17_232 (degree 1036).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SphingomonasSp.S17(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SphingomonasSp.S17(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingomonasSp.S17",

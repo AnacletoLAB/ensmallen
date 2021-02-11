@@ -117,7 +117,6 @@ def PyrobaculumSp.1860(
 	760), 1104324.P186_1330 (degree 748) and 1104324.P186_2178 (degree 747).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrobaculumSp.1860(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrobaculumSp.1860(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrobaculumSp.1860",

@@ -117,7 +117,6 @@ def PolaromonasSp.Cg912(
 	1347), 1504672.669787298 (degree 1322) and 1504672.669784391 (degree 1319).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PolaromonasSp.Cg912(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PolaromonasSp.Cg912(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PolaromonasSp.Cg912",

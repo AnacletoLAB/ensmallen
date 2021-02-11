@@ -117,7 +117,6 @@ def PiriformosporaIndica(
 	65672.G4TB02 (degree 1524) and 65672.G4T5J6 (degree 1510).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PiriformosporaIndica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PiriformosporaIndica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PiriformosporaIndica",

@@ -117,7 +117,6 @@ def ClostridiumTetanomorphum(
 	2022), 1230342.CTM_01564 (degree 2019) and 1230342.CTM_24703 (degree 2011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumTetanomorphum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumTetanomorphum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumTetanomorphum",

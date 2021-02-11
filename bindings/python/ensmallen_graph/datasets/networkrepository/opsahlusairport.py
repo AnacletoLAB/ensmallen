@@ -112,7 +112,6 @@ def OpsahlUsairport(
 	69 (degree 299), 88 (degree 296), 165 (degree 292) and 74 (degree 291).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def OpsahlUsairport(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def OpsahlUsairport(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OpsahlUsairport",

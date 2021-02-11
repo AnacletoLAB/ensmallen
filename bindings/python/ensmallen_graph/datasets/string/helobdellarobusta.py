@@ -117,7 +117,6 @@ def HelobdellaRobusta(
 	2923), 6412.HelroP158018 (degree 2523) and 6412.HelroP185661 (degree 2485).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelobdellaRobusta(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelobdellaRobusta(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelobdellaRobusta",

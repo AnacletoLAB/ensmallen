@@ -119,7 +119,6 @@ def AtopobiumVaginaePb189t14(
 	565) and 866774.HMPREF9248_0913 (degree 564).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AtopobiumVaginaePb189t14(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AtopobiumVaginaePb189t14(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AtopobiumVaginaePb189t14",

@@ -117,7 +117,6 @@ def RickettsialesBacteriumAc37b(
 	480), 1528098.NOVO_08010 (degree 448) and 1528098.NOVO_07960 (degree 433).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RickettsialesBacteriumAc37b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RickettsialesBacteriumAc37b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RickettsialesBacteriumAc37b",

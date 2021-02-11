@@ -119,7 +119,6 @@ def GeopsychrobacterElectrodiphilus(
 	(degree 1201) and 1121918.ARWE01000001_gene1992 (degree 1187).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GeopsychrobacterElectrodiphilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GeopsychrobacterElectrodiphilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeopsychrobacterElectrodiphilus",

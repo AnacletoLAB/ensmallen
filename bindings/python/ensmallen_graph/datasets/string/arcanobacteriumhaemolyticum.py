@@ -117,7 +117,6 @@ def ArcanobacteriumHaemolyticum(
 	644284.Arch_1307 (degree 637) and 644284.Arch_0859 (degree 602).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArcanobacteriumHaemolyticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArcanobacteriumHaemolyticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArcanobacteriumHaemolyticum",

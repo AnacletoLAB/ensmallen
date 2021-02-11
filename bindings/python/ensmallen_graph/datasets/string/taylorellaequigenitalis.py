@@ -117,7 +117,6 @@ def TaylorellaEquigenitalis(
 	549), 937774.TEQUI_1280 (degree 549) and 937774.TEQUI_1278 (degree 500).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TaylorellaEquigenitalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TaylorellaEquigenitalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TaylorellaEquigenitalis",

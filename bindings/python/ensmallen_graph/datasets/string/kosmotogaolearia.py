@@ -117,7 +117,6 @@ def KosmotogaOlearia(
 	521045.Kole_1028 (degree 668) and 521045.Kole_0384 (degree 662).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KosmotogaOlearia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KosmotogaOlearia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KosmotogaOlearia",

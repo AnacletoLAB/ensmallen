@@ -119,7 +119,6 @@ def PhascolarctobacteriumSuccinatutens(
 	and 626939.HMPREF9443_00837 (degree 569).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PhascolarctobacteriumSuccinatutens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PhascolarctobacteriumSuccinatutens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhascolarctobacteriumSuccinatutens",

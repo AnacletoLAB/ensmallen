@@ -117,7 +117,6 @@ def HelicobacterPyloriJ99(
 	85963.jhp_0982 (degree 496) and 85963.jhp_0967 (degree 482).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HelicobacterPyloriJ99(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HelicobacterPyloriJ99(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HelicobacterPyloriJ99",

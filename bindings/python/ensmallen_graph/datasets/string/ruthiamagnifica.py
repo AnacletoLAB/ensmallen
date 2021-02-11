@@ -115,7 +115,6 @@ def RuthiaMagnifica(
 	413404.Rmag_0642 (degree 448) and 413404.Rmag_0462 (degree 415).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def RuthiaMagnifica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def RuthiaMagnifica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuthiaMagnifica",

@@ -117,7 +117,6 @@ def AcinetobacterSp.Cip102129(
 	928), 1144664.F973_00887 (degree 862) and 1144664.F973_02192 (degree 860).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterSp.Cip102129(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterSp.Cip102129(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterSp.Cip102129",

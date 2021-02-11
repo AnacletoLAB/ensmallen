@@ -119,7 +119,6 @@ def DesulfonatronospiraThiodismutans(
 	555779.Dthio_PD2132 (degree 1057).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DesulfonatronospiraThiodismutans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DesulfonatronospiraThiodismutans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfonatronospiraThiodismutans",

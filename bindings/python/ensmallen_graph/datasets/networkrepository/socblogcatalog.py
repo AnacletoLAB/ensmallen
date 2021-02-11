@@ -117,7 +117,6 @@ def SocBlogcatalog(
 	(degree 9417), 35 (degree 9192), 1082 (degree 9162) and 1140 (degree 9131).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def SocBlogcatalog(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def SocBlogcatalog(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocBlogcatalog",

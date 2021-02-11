@@ -117,7 +117,6 @@ def PsychromonasIngrahamii(
 	1296), 357804.Ping_0528 (degree 1213) and 357804.Ping_2949 (degree 1182).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PsychromonasIngrahamii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PsychromonasIngrahamii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PsychromonasIngrahamii",

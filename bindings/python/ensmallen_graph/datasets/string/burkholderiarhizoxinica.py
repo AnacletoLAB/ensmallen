@@ -117,7 +117,6 @@ def BurkholderiaRhizoxinica(
 	796), 882378.RBRH_00140 (degree 782) and 882378.RBRH_02146 (degree 760).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaRhizoxinica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaRhizoxinica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaRhizoxinica",

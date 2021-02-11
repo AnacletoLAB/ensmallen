@@ -117,7 +117,6 @@ def PhotorhabdusAsymbiotica(
 	1210), 291112.PAU_03783 (degree 1200) and 291112.PAU_03073 (degree 1101).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhotorhabdusAsymbiotica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhotorhabdusAsymbiotica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotorhabdusAsymbiotica",

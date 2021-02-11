@@ -119,7 +119,6 @@ def SocFoursquare(
 	and 102996 (degree 46291).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def SocFoursquare(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def SocFoursquare(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocFoursquare",

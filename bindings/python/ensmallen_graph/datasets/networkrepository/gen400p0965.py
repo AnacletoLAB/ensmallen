@@ -125,7 +125,6 @@ def Gen400P0965(
 	374).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -151,7 +150,6 @@ def Gen400P0965(
 	        year={2014}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -188,7 +186,6 @@ def Gen400P0965(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Gen400P0965",

@@ -117,7 +117,6 @@ def KineococcusRadiotolerans(
 	1165), 266940.Krad_3163 (degree 1087) and 266940.Krad_1231 (degree 1044).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KineococcusRadiotolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KineococcusRadiotolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KineococcusRadiotolerans",

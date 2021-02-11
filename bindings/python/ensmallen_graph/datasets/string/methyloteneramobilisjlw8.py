@@ -117,7 +117,6 @@ def MethyloteneraMobilisJlw8(
 	583345.Mmol_0958 (degree 679) and 583345.Mmol_2309 (degree 668).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethyloteneraMobilisJlw8(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethyloteneraMobilisJlw8(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethyloteneraMobilisJlw8",

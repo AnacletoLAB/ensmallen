@@ -117,7 +117,6 @@ def ErwiniaTasmaniensis(
 	1013), 465817.ETA_03090 (degree 887) and 465817.ETA_12990 (degree 870).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErwiniaTasmaniensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErwiniaTasmaniensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErwiniaTasmaniensis",

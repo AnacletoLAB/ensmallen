@@ -117,7 +117,6 @@ def HaloterrigenaLimicola(
 	903), 1230457.C476_16535 (degree 859) and 1230457.C476_12406 (degree 815).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaloterrigenaLimicola(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaloterrigenaLimicola(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaloterrigenaLimicola",

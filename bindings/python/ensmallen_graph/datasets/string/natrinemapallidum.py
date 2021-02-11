@@ -117,7 +117,6 @@ def NatrinemaPallidum(
 	878), 1227495.C487_06945 (degree 860) and 1227495.C487_00705 (degree 852).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatrinemaPallidum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatrinemaPallidum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatrinemaPallidum",

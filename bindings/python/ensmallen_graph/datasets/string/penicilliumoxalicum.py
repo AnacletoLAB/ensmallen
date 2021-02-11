@@ -117,7 +117,6 @@ def PenicilliumOxalicum(
 	69781.S8B5S6 (degree 1373) and 69781.S8AV48 (degree 1361).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PenicilliumOxalicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PenicilliumOxalicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PenicilliumOxalicum",

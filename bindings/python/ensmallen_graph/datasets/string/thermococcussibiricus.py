@@ -117,7 +117,6 @@ def ThermococcusSibiricus(
 	604354.TSIB_1992 (degree 603) and 604354.TSIB_1868 (degree 591).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermococcusSibiricus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermococcusSibiricus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermococcusSibiricus",

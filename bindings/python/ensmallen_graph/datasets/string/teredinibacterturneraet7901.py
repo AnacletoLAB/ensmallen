@@ -117,7 +117,6 @@ def TeredinibacterTurneraeT7901(
 	1362), 377629.TERTU_2204 (degree 1341) and 377629.TERTU_3478 (degree 1328).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TeredinibacterTurneraeT7901(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TeredinibacterTurneraeT7901(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TeredinibacterTurneraeT7901",

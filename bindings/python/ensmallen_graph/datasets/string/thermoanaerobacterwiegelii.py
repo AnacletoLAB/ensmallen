@@ -117,7 +117,6 @@ def ThermoanaerobacterWiegelii(
 	835), 697303.Thewi_2535 (degree 822) and 697303.Thewi_0666 (degree 820).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoanaerobacterWiegelii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoanaerobacterWiegelii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoanaerobacterWiegelii",

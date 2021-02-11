@@ -117,7 +117,6 @@ def PelosinusFermentans(
 	1572), 1122947.FR7_1848 (degree 1551) and 1122947.FR7_3402 (degree 1542).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelosinusFermentans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelosinusFermentans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelosinusFermentans",

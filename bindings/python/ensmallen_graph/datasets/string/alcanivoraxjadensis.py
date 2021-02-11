@@ -117,7 +117,6 @@ def AlcanivoraxJadensis(
 	928), 1177181.T9A_01824 (degree 909) and 1177181.T9A_02733 (degree 902).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlcanivoraxJadensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlcanivoraxJadensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcanivoraxJadensis",

@@ -117,7 +117,6 @@ def MethylobacteriumSp.446(
 	2448), 426117.M446_6706 (degree 2335) and 426117.M446_1812 (degree 2125).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacteriumSp.446(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacteriumSp.446(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacteriumSp.446",

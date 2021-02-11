@@ -117,7 +117,6 @@ def FirmicutesBacteriumM102(
 	1039), 1235796.C815_01233 (degree 951) and 1235796.C815_02077 (degree 858).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FirmicutesBacteriumM102(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FirmicutesBacteriumM102(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FirmicutesBacteriumM102",

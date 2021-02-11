@@ -117,7 +117,6 @@ def GracilibacillusHalophilus(
 	919), 1308866.J416_00095 (degree 900) and 1308866.J416_05893 (degree 867).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GracilibacillusHalophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GracilibacillusHalophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GracilibacillusHalophilus",

@@ -117,7 +117,6 @@ def ParacoccusDenitrificans(
 	1534), 318586.Pden_0541 (degree 1411) and 318586.Pden_0838 (degree 1402).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParacoccusDenitrificans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParacoccusDenitrificans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParacoccusDenitrificans",

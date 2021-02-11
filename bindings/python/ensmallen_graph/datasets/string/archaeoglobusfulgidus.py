@@ -117,7 +117,6 @@ def ArchaeoglobusFulgidus(
 	224325.AF_0007 (degree 867) and 224325.AF_0012 (degree 865).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArchaeoglobusFulgidus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArchaeoglobusFulgidus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArchaeoglobusFulgidus",

@@ -119,7 +119,6 @@ def MicrobacteriumParaoxydansDh1b(
 	(degree 882) and 1416752.AYME01000004_gene2044 (degree 843).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MicrobacteriumParaoxydansDh1b(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MicrobacteriumParaoxydansDh1b(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrobacteriumParaoxydansDh1b",

@@ -117,7 +117,6 @@ def SporothrixSchenckii(
 	29908.U7PX49 (degree 1311) and 29908.U7Q5K3 (degree 1286).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SporothrixSchenckii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SporothrixSchenckii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SporothrixSchenckii",

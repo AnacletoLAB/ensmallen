@@ -117,7 +117,6 @@ def ThermoplasmaAcidophilum(
 	(degree 598), 273075.Ta1075 (degree 550) and 273075.Ta0310 (degree 540).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermoplasmaAcidophilum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermoplasmaAcidophilum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermoplasmaAcidophilum",

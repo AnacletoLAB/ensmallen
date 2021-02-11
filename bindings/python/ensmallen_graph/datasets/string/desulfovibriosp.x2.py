@@ -117,7 +117,6 @@ def DesulfovibrioSp.X2(
 	1348), 941449.dsx2_2874 (degree 1335) and 941449.dsx2_2294 (degree 1309).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioSp.X2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioSp.X2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioSp.X2",

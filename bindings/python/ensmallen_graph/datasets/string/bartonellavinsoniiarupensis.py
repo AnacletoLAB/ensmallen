@@ -117,7 +117,6 @@ def BartonellaVinsoniiArupensis(
 	542), 1094561.MEI_00545 (degree 531) and 1094561.MEI_01270 (degree 524).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaVinsoniiArupensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaVinsoniiArupensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaVinsoniiArupensis",

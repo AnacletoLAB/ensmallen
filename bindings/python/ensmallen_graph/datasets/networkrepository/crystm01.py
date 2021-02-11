@@ -112,7 +112,6 @@ def Crystm01(
 	4637 (degree 27), 4636 (degree 27), 4635 (degree 27) and 4634 (degree 27).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Crystm01(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Crystm01(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Crystm01",

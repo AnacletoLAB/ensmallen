@@ -125,7 +125,6 @@ def WebGoogleDir(
 	and 3151 (degree 5100).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -149,7 +148,6 @@ def WebGoogleDir(
 	        publisher={Taylor \& Francis}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -186,7 +184,6 @@ def WebGoogleDir(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebGoogleDir",

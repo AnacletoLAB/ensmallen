@@ -117,7 +117,6 @@ def TreponemaPrimitiaZas2(
 	964), 545694.TREPR_3490 (degree 901) and 545694.TREPR_2223 (degree 880).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TreponemaPrimitiaZas2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TreponemaPrimitiaZas2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TreponemaPrimitiaZas2",

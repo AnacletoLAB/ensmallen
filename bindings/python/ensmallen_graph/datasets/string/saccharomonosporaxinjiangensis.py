@@ -119,7 +119,6 @@ def SaccharomonosporaXinjiangensis(
 	1131) and 882086.SacxiDRAFT_1536 (degree 1131).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SaccharomonosporaXinjiangensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SaccharomonosporaXinjiangensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SaccharomonosporaXinjiangensis",

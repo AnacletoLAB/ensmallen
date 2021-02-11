@@ -117,7 +117,6 @@ def AsticcacaulisExcentricus(
 	981), 573065.Astex_2656 (degree 973) and 573065.Astex_1172 (degree 958).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AsticcacaulisExcentricus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AsticcacaulisExcentricus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AsticcacaulisExcentricus",

@@ -110,7 +110,6 @@ def CaAstroph(
 	427), 4972 (degree 420), 8318 (degree 418) and 12438 (degree 387).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def CaAstroph(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def CaAstroph(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaAstroph",

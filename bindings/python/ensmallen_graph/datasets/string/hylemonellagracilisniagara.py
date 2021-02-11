@@ -117,7 +117,6 @@ def HylemonellaGracilisNiagara(
 	1027), 1458275.AZ34_13580 (degree 993) and 1458275.AZ34_01605 (degree 989).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HylemonellaGracilisNiagara(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HylemonellaGracilisNiagara(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HylemonellaGracilisNiagara",

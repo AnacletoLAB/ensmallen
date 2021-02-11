@@ -117,7 +117,6 @@ def AcinetobacterSp.Niph899(
 	975), 1217710.F969_02880 (degree 968) and 1217710.F969_03163 (degree 954).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterSp.Niph899(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterSp.Niph899(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterSp.Niph899",

@@ -117,7 +117,6 @@ def SchleiferiaThermophila(
 	721), 1453500.AT05_03645 (degree 617) and 1453500.AT05_09835 (degree 613).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SchleiferiaThermophila(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SchleiferiaThermophila(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SchleiferiaThermophila",

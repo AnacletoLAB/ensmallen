@@ -123,7 +123,6 @@ def SocTwitterHiggs(
 	44188) and 6059 (degree 40146).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def SocTwitterHiggs(
 	        publisher={Nature Publishing Group}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def SocTwitterHiggs(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocTwitterHiggs",

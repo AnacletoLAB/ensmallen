@@ -117,7 +117,6 @@ def LuminiphilusSyltensis(
 	922), 565045.NOR51B_2098 (degree 879) and 565045.NOR51B_1806 (degree 862).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LuminiphilusSyltensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LuminiphilusSyltensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LuminiphilusSyltensis",

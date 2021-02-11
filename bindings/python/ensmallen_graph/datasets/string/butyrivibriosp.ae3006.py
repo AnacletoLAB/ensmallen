@@ -119,7 +119,6 @@ def ButyrivibrioSp.Ae3006(
 	(degree 1049).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def ButyrivibrioSp.Ae3006(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def ButyrivibrioSp.Ae3006(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ButyrivibrioSp.Ae3006",

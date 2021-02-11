@@ -117,7 +117,6 @@ def LeishmaniaMajor(
 	1350), 5664.LmjF.26.0310 (degree 1315) and 5664.LmjF.34.2340 (degree 1208).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeishmaniaMajor(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeishmaniaMajor(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeishmaniaMajor",

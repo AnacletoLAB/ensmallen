@@ -117,7 +117,6 @@ def MicromonosporaAurantiaca(
 	1699), 644283.Micau_4382 (degree 1645) and 644283.Micau_3688 (degree 1515).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicromonosporaAurantiaca(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicromonosporaAurantiaca(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicromonosporaAurantiaca",

@@ -117,7 +117,6 @@ def PseudoalteromonasAtlantica(
 	1260), 342610.Patl_3119 (degree 1185) and 342610.Patl_3748 (degree 1029).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudoalteromonasAtlantica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudoalteromonasAtlantica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudoalteromonasAtlantica",

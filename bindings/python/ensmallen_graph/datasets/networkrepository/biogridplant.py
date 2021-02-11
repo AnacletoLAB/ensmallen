@@ -112,7 +112,6 @@ def BioGridPlant(
 	100 (degree 59), 75 (degree 40), 69 (degree 40) and 679 (degree 39).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def BioGridPlant(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def BioGridPlant(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioGridPlant",

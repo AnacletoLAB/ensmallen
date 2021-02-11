@@ -117,7 +117,6 @@ def DinoroseobacterShibae(
 	1112), 398580.Dshi_3571 (degree 1051) and 398580.Dshi_0601 (degree 1041).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DinoroseobacterShibae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DinoroseobacterShibae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DinoroseobacterShibae",

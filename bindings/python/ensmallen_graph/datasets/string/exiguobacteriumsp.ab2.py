@@ -117,7 +117,6 @@ def ExiguobacteriumSp.Ab2(
 	917), 1484479.DI14_03655 (degree 901) and 1484479.DI14_05055 (degree 895).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ExiguobacteriumSp.Ab2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ExiguobacteriumSp.Ab2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ExiguobacteriumSp.Ab2",

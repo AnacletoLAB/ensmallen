@@ -117,7 +117,6 @@ def LactococcusLactisCremoris(
 	416870.llmg_1008 (degree 727) and 416870.llmg_0230 (degree 666).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactococcusLactisCremoris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactococcusLactisCremoris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactococcusLactisCremoris",

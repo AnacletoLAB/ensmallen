@@ -119,7 +119,6 @@ def AvibacteriumParagallinarum72(
 	(degree 635) and 948565.AFFP02000002_gene1230 (degree 635).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AvibacteriumParagallinarum72(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AvibacteriumParagallinarum72(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AvibacteriumParagallinarum72",

@@ -119,7 +119,6 @@ def GardnerellaVaginalis101(
 	(degree 535) and 904144.AEJD01000006_gene715 (degree 525).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def GardnerellaVaginalis101(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def GardnerellaVaginalis101(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GardnerellaVaginalis101",

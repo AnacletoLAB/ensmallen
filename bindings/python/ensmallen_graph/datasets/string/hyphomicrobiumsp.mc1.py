@@ -117,7 +117,6 @@ def HyphomicrobiumSp.Mc1(
 	1618), 717785.HYPMC_3913 (degree 1516) and 717785.HYPMC_0730 (degree 1503).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomicrobiumSp.Mc1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomicrobiumSp.Mc1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomicrobiumSp.Mc1",

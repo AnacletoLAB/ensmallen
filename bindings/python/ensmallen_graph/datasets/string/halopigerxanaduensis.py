@@ -117,7 +117,6 @@ def HalopigerXanaduensis(
 	1022), 797210.Halxa_2509 (degree 931) and 797210.Halxa_1290 (degree 894).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalopigerXanaduensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalopigerXanaduensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalopigerXanaduensis",

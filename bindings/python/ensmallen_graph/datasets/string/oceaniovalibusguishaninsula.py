@@ -115,7 +115,6 @@ def OceaniovalibusGuishaninsula(
 	886), 1231392.OCGS_1886 (degree 808) and 1231392.OCGS_1435 (degree 793).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def OceaniovalibusGuishaninsula(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def OceaniovalibusGuishaninsula(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OceaniovalibusGuishaninsula",

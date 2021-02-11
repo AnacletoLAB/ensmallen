@@ -117,7 +117,6 @@ def AcidithiobacillusCaldus(
 	923), 637389.Acaty_c1283 (degree 902) and 637389.Acaty_c1243 (degree 826).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidithiobacillusCaldus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidithiobacillusCaldus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidithiobacillusCaldus",

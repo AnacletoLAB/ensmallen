@@ -110,7 +110,6 @@ def EconPsmigr2(
 	2446), 608 (degree 2393), 103 (degree 2058) and 215 (degree 1929).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def EconPsmigr2(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def EconPsmigr2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EconPsmigr2",

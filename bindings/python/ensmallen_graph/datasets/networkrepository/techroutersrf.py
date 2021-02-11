@@ -120,7 +120,6 @@ def TechRoutersRf(
 	50 (degree 79), 1356 (degree 75) and 18 (degree 74).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def TechRoutersRf(
 	        year={2002}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def TechRoutersRf(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TechRoutersRf",

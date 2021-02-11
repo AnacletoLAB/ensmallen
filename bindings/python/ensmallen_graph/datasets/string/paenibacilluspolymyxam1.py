@@ -117,7 +117,6 @@ def PaenibacillusPolymyxaM1(
 	1463), 1052684.PPM_2387 (degree 1436) and 1052684.PPM_0914 (degree 1417).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaenibacillusPolymyxaM1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaenibacillusPolymyxaM1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaenibacillusPolymyxaM1",

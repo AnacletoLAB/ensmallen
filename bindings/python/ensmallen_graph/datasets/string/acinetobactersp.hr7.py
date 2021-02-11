@@ -117,7 +117,6 @@ def AcinetobacterSp.Hr7(
 	938), 1509403.GW12_28490 (degree 922) and 1509403.GW12_26850 (degree 908).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterSp.Hr7(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterSp.Hr7(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterSp.Hr7",

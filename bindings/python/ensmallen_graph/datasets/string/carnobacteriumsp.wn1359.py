@@ -117,7 +117,6 @@ def CarnobacteriumSp.Wn1359(
 	829), 1266845.Q783_03080 (degree 815) and 1266845.Q783_11265 (degree 803).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CarnobacteriumSp.Wn1359(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CarnobacteriumSp.Wn1359(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CarnobacteriumSp.Wn1359",

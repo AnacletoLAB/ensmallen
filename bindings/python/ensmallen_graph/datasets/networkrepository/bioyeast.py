@@ -117,7 +117,6 @@ def BioYeast(
 	98 (degree 30), 844 (degree 29) and 567 (degree 29).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -137,7 +136,6 @@ def BioYeast(
 	        year={2001}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -174,7 +172,6 @@ def BioYeast(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioYeast",

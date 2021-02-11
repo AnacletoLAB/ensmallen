@@ -119,7 +119,6 @@ def StreptococcusDysgalactiaeAtcc27957(
 	and 663952.SDD27957_09535 (degree 713).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptococcusDysgalactiaeAtcc27957(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptococcusDysgalactiaeAtcc27957(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusDysgalactiaeAtcc27957",

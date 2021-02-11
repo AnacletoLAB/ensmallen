@@ -117,7 +117,6 @@ def ArchaeoglobusProfundus(
 	532), 572546.Arcpr_0621 (degree 529) and 572546.Arcpr_1402 (degree 527).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArchaeoglobusProfundus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArchaeoglobusProfundus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArchaeoglobusProfundus",

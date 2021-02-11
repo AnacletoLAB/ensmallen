@@ -119,7 +119,6 @@ def PseudomonasResinovoransDsm21078(
 	(degree 2064) and 1123020.AUIE01000044_gene1834 (degree 2038).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PseudomonasResinovoransDsm21078(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PseudomonasResinovoransDsm21078(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasResinovoransDsm21078",

@@ -117,7 +117,6 @@ def DesulfovibrioAlkalitolerans(
 	1034), 1121439.dsat_2797 (degree 1018) and 1121439.dsat_0744 (degree 984).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioAlkalitolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioAlkalitolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioAlkalitolerans",

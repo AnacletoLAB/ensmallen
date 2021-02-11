@@ -117,7 +117,6 @@ def ProvidenciaBurhodogranariea(
 	1265), 1141662.OOA_15235 (degree 1251) and 1141662.OOA_04592 (degree 1188).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ProvidenciaBurhodogranariea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ProvidenciaBurhodogranariea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ProvidenciaBurhodogranariea",

@@ -117,7 +117,6 @@ def AcinetobacterSp.Cipa165(
 	1012), 40373.F991_02764 (degree 996) and 40373.F991_00181 (degree 987).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcinetobacterSp.Cipa165(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcinetobacterSp.Cipa165(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcinetobacterSp.Cipa165",

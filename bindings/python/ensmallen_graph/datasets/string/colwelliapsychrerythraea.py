@@ -117,7 +117,6 @@ def ColwelliaPsychrerythraea(
 	28229.ND2E_3815 (degree 1308) and 28229.ND2E_3732 (degree 1280).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ColwelliaPsychrerythraea(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ColwelliaPsychrerythraea(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ColwelliaPsychrerythraea",

@@ -119,7 +119,6 @@ def LactobacillusJensenii1153chn(
 	(degree 561) and 575605.ACQN01000004_gene271 (degree 558).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def LactobacillusJensenii1153chn(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def LactobacillusJensenii1153chn(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusJensenii1153chn",

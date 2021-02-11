@@ -117,7 +117,6 @@ def GluconobacterOxydansH24(
 	864), 1224746.B932_0212 (degree 773) and 1224746.B932_2131 (degree 720).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GluconobacterOxydansH24(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GluconobacterOxydansH24(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GluconobacterOxydansH24",

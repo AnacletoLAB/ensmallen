@@ -115,7 +115,6 @@ def ThermanaerovibrioAcidaminovorans(
 	525903.Taci_1451 (degree 781) and 525903.Taci_1228 (degree 712).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ThermanaerovibrioAcidaminovorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ThermanaerovibrioAcidaminovorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermanaerovibrioAcidaminovorans",

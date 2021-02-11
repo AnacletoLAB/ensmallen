@@ -117,7 +117,6 @@ def MethylocellaSilvestris(
 	1242), 395965.Msil_2534 (degree 930) and 395965.Msil_0378 (degree 897).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylocellaSilvestris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylocellaSilvestris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylocellaSilvestris",

@@ -119,7 +119,6 @@ def MarinobacterHydrocarbonoclasticus(
 	1097).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MarinobacterHydrocarbonoclasticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MarinobacterHydrocarbonoclasticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinobacterHydrocarbonoclasticus",

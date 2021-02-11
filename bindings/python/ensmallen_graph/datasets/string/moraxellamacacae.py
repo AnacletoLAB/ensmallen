@@ -117,7 +117,6 @@ def MoraxellaMacacae(
 	636), 1230338.MOMA_07471 (degree 636) and 1230338.MOMA_00760 (degree 553).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MoraxellaMacacae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MoraxellaMacacae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MoraxellaMacacae",

@@ -117,7 +117,6 @@ def EndozoicomonasMontiporae(
 	1010), 1027273.GZ77_04245 (degree 983) and 1027273.GZ77_08720 (degree 945).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EndozoicomonasMontiporae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EndozoicomonasMontiporae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndozoicomonasMontiporae",

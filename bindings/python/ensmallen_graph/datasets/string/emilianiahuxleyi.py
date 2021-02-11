@@ -117,7 +117,6 @@ def EmilianiaHuxleyi(
 	2903.EOD23989 (degree 3849) and 2903.EOD15966 (degree 3817).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EmilianiaHuxleyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EmilianiaHuxleyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EmilianiaHuxleyi",

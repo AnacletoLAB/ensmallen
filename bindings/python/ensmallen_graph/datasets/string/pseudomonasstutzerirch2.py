@@ -117,7 +117,6 @@ def PseudomonasStutzeriRch2(
 	1386), 644801.Psest_1286 (degree 1373) and 644801.Psest_0951 (degree 1349).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasStutzeriRch2(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasStutzeriRch2(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasStutzeriRch2",

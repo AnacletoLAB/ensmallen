@@ -117,7 +117,6 @@ def HalomonasSalina(
 	944), 42565.FP66_13315 (degree 895) and 42565.FP66_11155 (degree 888).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalomonasSalina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalomonasSalina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalomonasSalina",

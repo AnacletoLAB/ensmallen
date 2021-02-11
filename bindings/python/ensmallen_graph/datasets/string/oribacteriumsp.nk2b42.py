@@ -119,7 +119,6 @@ def OribacteriumSp.Nk2b42(
 	(degree 929).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def OribacteriumSp.Nk2b42(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def OribacteriumSp.Nk2b42(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OribacteriumSp.Nk2b42",

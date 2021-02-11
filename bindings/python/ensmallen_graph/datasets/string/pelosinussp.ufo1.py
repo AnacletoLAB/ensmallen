@@ -117,7 +117,6 @@ def PelosinusSp.Ufo1(
 	1472), 484770.UFO1_2023 (degree 1385) and 484770.UFO1_4371 (degree 1383).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelosinusSp.Ufo1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelosinusSp.Ufo1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelosinusSp.Ufo1",

@@ -117,7 +117,6 @@ def PaludibacterPropionicigenes(
 	1105), 694427.Palpr_2552 (degree 1004) and 694427.Palpr_0370 (degree 922).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PaludibacterPropionicigenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PaludibacterPropionicigenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PaludibacterPropionicigenes",

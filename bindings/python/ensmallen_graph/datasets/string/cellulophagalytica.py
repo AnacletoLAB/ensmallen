@@ -117,7 +117,6 @@ def CellulophagaLytica(
 	1131), 867900.Celly_2113 (degree 931) and 867900.Celly_2465 (degree 892).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellulophagaLytica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellulophagaLytica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellulophagaLytica",

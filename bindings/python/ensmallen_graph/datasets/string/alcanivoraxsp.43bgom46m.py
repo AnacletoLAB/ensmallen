@@ -119,7 +119,6 @@ def AlcanivoraxSp.43bgom46m(
 	(degree 1212).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AlcanivoraxSp.43bgom46m(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AlcanivoraxSp.43bgom46m(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlcanivoraxSp.43bgom46m",

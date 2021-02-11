@@ -117,7 +117,6 @@ def TrypanosomaCruzi(
 	2425), 5693.XP_822138.1 (degree 2237) and 5693.XP_816898.1 (degree 2237).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TrypanosomaCruzi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TrypanosomaCruzi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TrypanosomaCruzi",

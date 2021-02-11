@@ -117,7 +117,6 @@ def GranulicellaMallensis(
 	1325), 682795.AciX8_2865 (degree 1204) and 682795.AciX8_3272 (degree 985).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GranulicellaMallensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GranulicellaMallensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GranulicellaMallensis",

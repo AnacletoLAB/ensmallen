@@ -117,7 +117,6 @@ def ErythrobacterLongus(
 	1044.EH31_02785 (degree 888) and 1044.EH31_01630 (degree 851).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ErythrobacterLongus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ErythrobacterLongus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ErythrobacterLongus",

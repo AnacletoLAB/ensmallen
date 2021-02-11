@@ -130,7 +130,6 @@ def EcoFlorida(
 	44 (degree 75), 45 (degree 72) and 43 (degree 64).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def EcoFlorida(
 	        publisher={Eco Soc America}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def EcoFlorida(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EcoFlorida",

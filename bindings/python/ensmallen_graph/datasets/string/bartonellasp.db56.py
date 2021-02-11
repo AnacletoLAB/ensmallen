@@ -117,7 +117,6 @@ def BartonellaSp.Db56(
 	595), 1094755.MCO_00081 (degree 584) and 1094755.MCO_01394 (degree 576).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BartonellaSp.Db56(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BartonellaSp.Db56(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BartonellaSp.Db56",

@@ -117,7 +117,6 @@ def ChlorobiumSp.Gbchlb(
 	678), 1519464.HY22_11925 (degree 663) and 1519464.HY22_04340 (degree 576).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChlorobiumSp.Gbchlb(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChlorobiumSp.Gbchlb(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChlorobiumSp.Gbchlb",

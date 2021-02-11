@@ -119,7 +119,6 @@ def StreptacidiphilusJiangxiensis(
 	(degree 2195) and 235985.BBPN01000023_gene2711 (degree 2147).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptacidiphilusJiangxiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptacidiphilusJiangxiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptacidiphilusJiangxiensis",

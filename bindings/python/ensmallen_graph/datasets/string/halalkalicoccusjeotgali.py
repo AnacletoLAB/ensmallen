@@ -117,7 +117,6 @@ def HalalkalicoccusJeotgali(
 	956), 795797.C497_05812 (degree 916) and 795797.C497_18857 (degree 884).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalalkalicoccusJeotgali(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalalkalicoccusJeotgali(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalalkalicoccusJeotgali",

@@ -112,7 +112,6 @@ def MaayanPdzbase(
 	13), 3 (degree 13), 34 (degree 12) and 32 (degree 12).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def MaayanPdzbase(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def MaayanPdzbase(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MaayanPdzbase",

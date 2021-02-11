@@ -117,7 +117,6 @@ def EnterococcusSaccharolyticus(
 	900), 1139996.OMQ_02383 (degree 869) and 1139996.OMQ_00392 (degree 827).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnterococcusSaccharolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnterococcusSaccharolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnterococcusSaccharolyticus",

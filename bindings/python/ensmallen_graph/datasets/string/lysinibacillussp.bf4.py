@@ -117,7 +117,6 @@ def LysinibacillusSp.Bf4(
 	793), 1473546.CH76_09430 (degree 717) and 1473546.CH76_02935 (degree 675).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysinibacillusSp.Bf4(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysinibacillusSp.Bf4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysinibacillusSp.Bf4",

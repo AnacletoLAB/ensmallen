@@ -117,7 +117,6 @@ def ChondromycesApiculatus(
 	1962), 1192034.CAP_3789 (degree 1950) and 1192034.CAP_5125 (degree 1909).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChondromycesApiculatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChondromycesApiculatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChondromycesApiculatus",

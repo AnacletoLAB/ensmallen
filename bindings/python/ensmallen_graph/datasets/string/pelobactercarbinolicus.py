@@ -117,7 +117,6 @@ def PelobacterCarbinolicus(
 	1104), 338963.Pcar_1218 (degree 1004) and 338963.Pcar_1217 (degree 954).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelobacterCarbinolicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelobacterCarbinolicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelobacterCarbinolicus",

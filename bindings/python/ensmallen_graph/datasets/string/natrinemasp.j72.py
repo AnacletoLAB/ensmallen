@@ -117,7 +117,6 @@ def NatrinemaSp.J72(
 	933), 406552.NJ7G_0318 (degree 893) and 406552.NJ7G_3307 (degree 890).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NatrinemaSp.J72(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NatrinemaSp.J72(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NatrinemaSp.J72",

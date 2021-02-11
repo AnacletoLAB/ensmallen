@@ -117,7 +117,6 @@ def CaloramatorAustralicus(
 	847), 857293.CAAU_1884 (degree 836) and 857293.CAAU_1710 (degree 828).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaloramatorAustralicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaloramatorAustralicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaloramatorAustralicus",

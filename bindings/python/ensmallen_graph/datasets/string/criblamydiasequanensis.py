@@ -117,7 +117,6 @@ def CriblamydiaSequanensis(
 	851), 1437425.CSEC_1054 (degree 781) and 1437425.CSEC_1578 (degree 705).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CriblamydiaSequanensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CriblamydiaSequanensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CriblamydiaSequanensis",

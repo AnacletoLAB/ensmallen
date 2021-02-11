@@ -119,7 +119,6 @@ def BrevibacillusLaterosporusLmg15441(
 	and 1042163.BRLA_c007370 (degree 1250).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BrevibacillusLaterosporusLmg15441(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BrevibacillusLaterosporusLmg15441(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrevibacillusLaterosporusLmg15441",

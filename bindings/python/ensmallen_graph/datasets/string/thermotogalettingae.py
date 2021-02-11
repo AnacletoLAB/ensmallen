@@ -117,7 +117,6 @@ def ThermotogaLettingae(
 	416591.Tlet_0466 (degree 757) and 416591.Tlet_1537 (degree 737).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermotogaLettingae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermotogaLettingae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermotogaLettingae",

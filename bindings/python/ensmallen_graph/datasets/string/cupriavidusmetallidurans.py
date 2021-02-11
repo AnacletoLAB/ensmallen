@@ -117,7 +117,6 @@ def CupriavidusMetallidurans(
 	1743), 266264.Rmet_1463 (degree 1727) and 266264.Rmet_0367 (degree 1701).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CupriavidusMetallidurans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CupriavidusMetallidurans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CupriavidusMetallidurans",

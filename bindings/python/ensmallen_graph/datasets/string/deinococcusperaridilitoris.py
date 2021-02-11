@@ -117,7 +117,6 @@ def DeinococcusPeraridilitoris(
 	1004), 937777.Deipe_2173 (degree 986) and 937777.Deipe_0072 (degree 921).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DeinococcusPeraridilitoris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DeinococcusPeraridilitoris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DeinococcusPeraridilitoris",

@@ -117,7 +117,6 @@ def MycobacteriumKansasii732(
 	2130), 1299327.I546_6993 (degree 2064) and 1299327.I546_7080 (degree 1954).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumKansasii732(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumKansasii732(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumKansasii732",

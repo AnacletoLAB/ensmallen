@@ -117,7 +117,6 @@ def ZunongwangiaProfunda(
 	655815.ZPR_2293 (degree 1318) and 655815.ZPR_3751 (degree 1316).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ZunongwangiaProfunda(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ZunongwangiaProfunda(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ZunongwangiaProfunda",

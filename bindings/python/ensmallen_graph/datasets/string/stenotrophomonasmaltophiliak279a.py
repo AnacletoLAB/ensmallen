@@ -119,7 +119,6 @@ def StenotrophomonasMaltophiliaK279a(
 	1013).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StenotrophomonasMaltophiliaK279a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StenotrophomonasMaltophiliaK279a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StenotrophomonasMaltophiliaK279a",

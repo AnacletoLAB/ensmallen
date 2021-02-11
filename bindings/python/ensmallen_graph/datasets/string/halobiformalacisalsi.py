@@ -117,7 +117,6 @@ def HalobiformaLacisalsi(
 	1070), 358396.C445_08337 (degree 1017) and 358396.C445_07660 (degree 1008).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalobiformaLacisalsi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalobiformaLacisalsi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalobiformaLacisalsi",

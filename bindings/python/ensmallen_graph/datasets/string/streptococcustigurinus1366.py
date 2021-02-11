@@ -117,7 +117,6 @@ def StreptococcusTigurinus1366(
 	714), 1282665.H353_09158 (degree 704) and 1282665.H353_01490 (degree 663).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusTigurinus1366(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusTigurinus1366(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusTigurinus1366",

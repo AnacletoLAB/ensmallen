@@ -117,7 +117,6 @@ def VibrioMetschnikovii(
 	1185), 675813.VIB_000859 (degree 1170) and 675813.VIB_001846 (degree 1145).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VibrioMetschnikovii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VibrioMetschnikovii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VibrioMetschnikovii",

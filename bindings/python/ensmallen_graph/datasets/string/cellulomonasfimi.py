@@ -117,7 +117,6 @@ def CellulomonasFimi(
 	1034), 590998.Celf_0458 (degree 1026) and 590998.Celf_2133 (degree 1023).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CellulomonasFimi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CellulomonasFimi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CellulomonasFimi",

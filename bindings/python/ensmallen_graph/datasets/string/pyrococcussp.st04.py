@@ -117,7 +117,6 @@ def PyrococcusSp.St04(
 	562), 1183377.Py04_0225 (degree 540) and 1183377.Py04_0318 (degree 520).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrococcusSp.St04(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrococcusSp.St04(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrococcusSp.St04",

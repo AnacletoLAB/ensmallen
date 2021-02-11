@@ -122,7 +122,6 @@ def SocStudentCoop(
 	10), 15 (degree 9), 159 (degree 9) and 27 (degree 9).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def SocStudentCoop(
 	        year={2012},
 	        publisher={Springer}	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def SocStudentCoop(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocStudentCoop",

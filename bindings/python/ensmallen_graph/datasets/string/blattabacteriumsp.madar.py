@@ -115,7 +115,6 @@ def BlattabacteriumSp.Madar(
 	308), 1074889.MADAR_411 (degree 288) and 1074889.MADAR_036 (degree 259).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def BlattabacteriumSp.Madar(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def BlattabacteriumSp.Madar(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BlattabacteriumSp.Madar",

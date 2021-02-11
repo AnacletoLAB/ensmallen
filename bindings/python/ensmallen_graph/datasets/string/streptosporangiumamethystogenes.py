@@ -119,7 +119,6 @@ def StreptosporangiumAmethystogenes(
 	(degree 2277) and 2002.JOEQ01000010_gene6302 (degree 2093).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def StreptosporangiumAmethystogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def StreptosporangiumAmethystogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptosporangiumAmethystogenes",

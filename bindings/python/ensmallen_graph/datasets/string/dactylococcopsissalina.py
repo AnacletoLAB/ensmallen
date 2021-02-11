@@ -117,7 +117,6 @@ def DactylococcopsisSalina(
 	940), 13035.Dacsa_0359 (degree 860) and 13035.Dacsa_3475 (degree 857).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DactylococcopsisSalina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DactylococcopsisSalina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DactylococcopsisSalina",

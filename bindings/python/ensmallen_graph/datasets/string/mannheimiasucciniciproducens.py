@@ -117,7 +117,6 @@ def MannheimiaSucciniciproducens(
 	(degree 664) and 221988.MS1374 (degree 582).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MannheimiaSucciniciproducens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MannheimiaSucciniciproducens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MannheimiaSucciniciproducens",

@@ -117,7 +117,6 @@ def ParachlamydiaAcanthamoebae(
 	639), 765952.PUV_03260 (degree 629) and 765952.PUV_18630 (degree 618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParachlamydiaAcanthamoebae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParachlamydiaAcanthamoebae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParachlamydiaAcanthamoebae",

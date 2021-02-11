@@ -117,7 +117,6 @@ def NeorickettsiaSennetsu(
 	222891.NSE_0642 (degree 355) and 222891.NSE_0019 (degree 329).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NeorickettsiaSennetsu(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NeorickettsiaSennetsu(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NeorickettsiaSennetsu",

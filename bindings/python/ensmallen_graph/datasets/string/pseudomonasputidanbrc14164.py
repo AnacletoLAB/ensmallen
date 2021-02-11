@@ -117,7 +117,6 @@ def PseudomonasPutidaNbrc14164(
 	1510), 1211579.PP4_51410 (degree 1490) and 1211579.PP4_42850 (degree 1392).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasPutidaNbrc14164(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasPutidaNbrc14164(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasPutidaNbrc14164",

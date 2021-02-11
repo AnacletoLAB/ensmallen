@@ -119,7 +119,6 @@ def DesulfovibrioDesulfuricansDsm642(
 	(degree 989) and 1121445.ATUZ01000011_gene514 (degree 932).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DesulfovibrioDesulfuricansDsm642(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DesulfovibrioDesulfuricansDsm642(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioDesulfuricansDsm642",

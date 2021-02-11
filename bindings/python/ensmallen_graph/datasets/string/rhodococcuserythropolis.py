@@ -117,7 +117,6 @@ def RhodococcusErythropolis(
 	2071), 234621.RER_32690 (degree 2037) and 234621.RER_08140 (degree 1996).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RhodococcusErythropolis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RhodococcusErythropolis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RhodococcusErythropolis",

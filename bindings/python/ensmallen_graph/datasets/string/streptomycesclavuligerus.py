@@ -117,7 +117,6 @@ def StreptomycesClavuligerus(
 	2022), 443255.SCLAV_1231 (degree 1718) and 443255.SCLAV_3712 (degree 1705).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesClavuligerus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesClavuligerus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesClavuligerus",

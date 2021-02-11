@@ -117,7 +117,6 @@ def MicrococcusLuteusNctc2665(
 	873), 465515.Mlut_08390 (degree 809) and 465515.Mlut_16470 (degree 808).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrococcusLuteusNctc2665(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrococcusLuteusNctc2665(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrococcusLuteusNctc2665",

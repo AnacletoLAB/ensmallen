@@ -127,7 +127,6 @@ def WebIndochina2004(
 	(degree 181), 11322 (degree 161), 543 (degree 154) and 7416 (degree 135).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -157,7 +156,6 @@ def WebIndochina2004(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -194,7 +192,6 @@ def WebIndochina2004(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebIndochina2004",

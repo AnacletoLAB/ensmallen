@@ -119,7 +119,6 @@ def MetallosphaeraYellowstonensis(
 	(degree 720) and 671065.MetMK1DRAFT_00025600 (degree 715).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MetallosphaeraYellowstonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MetallosphaeraYellowstonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MetallosphaeraYellowstonensis",

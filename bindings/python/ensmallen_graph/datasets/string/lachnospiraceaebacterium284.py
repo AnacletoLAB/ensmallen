@@ -117,7 +117,6 @@ def LachnospiraceaeBacterium284(
 	1355), 397287.C807_03593 (degree 1272) and 397287.C807_02239 (degree 1268).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LachnospiraceaeBacterium284(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LachnospiraceaeBacterium284(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LachnospiraceaeBacterium284",

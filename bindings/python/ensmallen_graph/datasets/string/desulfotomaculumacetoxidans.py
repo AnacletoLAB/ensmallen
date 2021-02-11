@@ -117,7 +117,6 @@ def DesulfotomaculumAcetoxidans(
 	893), 485916.Dtox_0088 (degree 810) and 485916.Dtox_2102 (degree 798).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotomaculumAcetoxidans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotomaculumAcetoxidans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumAcetoxidans",

@@ -117,7 +117,6 @@ def KytococcusSedentarius(
 	929), 478801.Ksed_07600 (degree 884) and 478801.Ksed_20090 (degree 871).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KytococcusSedentarius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KytococcusSedentarius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KytococcusSedentarius",

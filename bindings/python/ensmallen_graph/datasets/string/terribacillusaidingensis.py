@@ -117,7 +117,6 @@ def TerribacillusAidingensis(
 	775), 586416.GZ22_09485 (degree 775) and 586416.GZ22_09785 (degree 769).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def TerribacillusAidingensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def TerribacillusAidingensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "TerribacillusAidingensis",

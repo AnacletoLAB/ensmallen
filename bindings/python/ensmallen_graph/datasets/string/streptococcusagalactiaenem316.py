@@ -117,7 +117,6 @@ def StreptococcusAgalactiaeNem316(
 	(degree 831), 211110.gbs0053 (degree 813) and 211110.gbs0307 (degree 781).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusAgalactiaeNem316(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusAgalactiaeNem316(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusAgalactiaeNem316",

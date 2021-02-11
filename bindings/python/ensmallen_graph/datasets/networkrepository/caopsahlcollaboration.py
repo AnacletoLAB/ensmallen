@@ -110,7 +110,6 @@ def CaOpsahlCollaboration(
 	311 (degree 81), 213 (degree 77), 755 (degree 76) and 2263 (degree 72).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def CaOpsahlCollaboration(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def CaOpsahlCollaboration(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaOpsahlCollaboration",

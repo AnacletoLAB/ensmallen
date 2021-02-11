@@ -117,7 +117,6 @@ def PucciniaGraminis(
 	1546), 5297.GMQ_09878T0 (degree 1311) and 5297.GMQ_18300T0 (degree 1269).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PucciniaGraminis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PucciniaGraminis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PucciniaGraminis",

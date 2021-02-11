@@ -117,7 +117,6 @@ def OstreococcusTauri(
 	1746), 70448.A0A090N3M5 (degree 1603) and 70448.A0A096P931 (degree 1464).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OstreococcusTauri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OstreococcusTauri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OstreococcusTauri",

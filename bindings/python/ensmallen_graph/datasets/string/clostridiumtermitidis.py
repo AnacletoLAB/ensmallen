@@ -117,7 +117,6 @@ def ClostridiumTermitidis(
 	1650), 1195236.CTER_3181 (degree 1524) and 1195236.CTER_2445 (degree 1504).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumTermitidis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumTermitidis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumTermitidis",

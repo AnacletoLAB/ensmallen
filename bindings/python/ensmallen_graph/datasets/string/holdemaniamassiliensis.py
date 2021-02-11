@@ -119,7 +119,6 @@ def HoldemaniaMassiliensis(
 	(degree 2161) and 1211819.CALK01000015_gene1222 (degree 2158).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def HoldemaniaMassiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def HoldemaniaMassiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HoldemaniaMassiliensis",

@@ -117,7 +117,6 @@ def LeifsoniaXyliCynodontis(
 	703), 1389489.O159_21650 (degree 631) and 1389489.O159_12410 (degree 618).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeifsoniaXyliCynodontis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeifsoniaXyliCynodontis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeifsoniaXyliCynodontis",

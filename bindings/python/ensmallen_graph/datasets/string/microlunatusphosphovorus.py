@@ -117,7 +117,6 @@ def MicrolunatusPhosphovorus(
 	1440), 1032480.MLP_23440 (degree 1271) and 1032480.MLP_22680 (degree 1255).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrolunatusPhosphovorus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrolunatusPhosphovorus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrolunatusPhosphovorus",

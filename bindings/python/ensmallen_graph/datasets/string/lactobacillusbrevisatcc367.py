@@ -117,7 +117,6 @@ def LactobacillusBrevisAtcc367(
 	387344.LVIS_1088 (degree 576) and 387344.LVIS_1653 (degree 538).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LactobacillusBrevisAtcc367(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LactobacillusBrevisAtcc367(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LactobacillusBrevisAtcc367",

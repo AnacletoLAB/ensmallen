@@ -112,7 +112,6 @@ def Cl10001d9Trial1(
 	908 (degree 135), 598 (degree 125), 903 (degree 112) and 375 (degree 112).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def Cl10001d9Trial1(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def Cl10001d9Trial1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Cl10001d9Trial1",

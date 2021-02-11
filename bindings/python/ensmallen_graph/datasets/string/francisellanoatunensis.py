@@ -117,7 +117,6 @@ def FrancisellaNoatunensis(
 	1163389.OOM_0953 (degree 525) and 1163389.OOM_1720 (degree 519).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrancisellaNoatunensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrancisellaNoatunensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrancisellaNoatunensis",

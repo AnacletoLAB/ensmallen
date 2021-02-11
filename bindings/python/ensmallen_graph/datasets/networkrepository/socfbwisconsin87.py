@@ -131,7 +131,6 @@ def SocfbWisconsin87(
 	3263), 7352 (degree 2292), 1540 (degree 1594) and 17317 (degree 1450).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbWisconsin87(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbWisconsin87(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbWisconsin87",

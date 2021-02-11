@@ -117,7 +117,6 @@ def FrancisellaPhilomiragia(
 	484022.Fphi_1403 (degree 570) and 484022.Fphi_0713 (degree 569).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FrancisellaPhilomiragia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FrancisellaPhilomiragia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FrancisellaPhilomiragia",

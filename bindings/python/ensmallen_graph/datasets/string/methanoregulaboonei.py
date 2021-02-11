@@ -117,7 +117,6 @@ def MethanoregulaBoonei(
 	456442.Mboo_0085 (degree 828) and 456442.Mboo_2454 (degree 824).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethanoregulaBoonei(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethanoregulaBoonei(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethanoregulaBoonei",

@@ -117,7 +117,6 @@ def CaldicellulosiruptorBescii(
 	521460.Athe_0307 (degree 774) and 521460.Athe_1432 (degree 750).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaldicellulosiruptorBescii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaldicellulosiruptorBescii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaldicellulosiruptorBescii",

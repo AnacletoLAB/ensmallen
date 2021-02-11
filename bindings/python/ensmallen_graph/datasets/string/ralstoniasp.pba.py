@@ -117,7 +117,6 @@ def RalstoniaSp.Pba(
 	795666.MW7_1923 (degree 1061) and 795666.MW7_1648 (degree 981).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RalstoniaSp.Pba(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RalstoniaSp.Pba(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RalstoniaSp.Pba",

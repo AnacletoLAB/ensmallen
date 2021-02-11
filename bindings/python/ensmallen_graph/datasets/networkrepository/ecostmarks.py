@@ -130,7 +130,6 @@ def EcoStmarks(
 	52 (degree 27), 27 (degree 21) and 19 (degree 20).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -163,7 +162,6 @@ def EcoStmarks(
 	        publisher={Eco Soc America}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -200,7 +198,6 @@ def EcoStmarks(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EcoStmarks",

@@ -117,7 +117,6 @@ def MucorCircinelloides(
 	36080.S2JWC2 (degree 2025) and 36080.S2JMD7 (degree 1910).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MucorCircinelloides(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MucorCircinelloides(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MucorCircinelloides",

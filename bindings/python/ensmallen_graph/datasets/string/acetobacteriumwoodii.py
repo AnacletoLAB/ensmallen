@@ -117,7 +117,6 @@ def AcetobacteriumWoodii(
 	1385), 931626.Awo_c30290 (degree 1361) and 931626.Awo_c24330 (degree 1267).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcetobacteriumWoodii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcetobacteriumWoodii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcetobacteriumWoodii",

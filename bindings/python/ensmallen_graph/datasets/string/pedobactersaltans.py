@@ -117,7 +117,6 @@ def PedobacterSaltans(
 	1063), 762903.Pedsa_1938 (degree 1021) and 762903.Pedsa_1136 (degree 972).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PedobacterSaltans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PedobacterSaltans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PedobacterSaltans",

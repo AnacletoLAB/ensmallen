@@ -119,7 +119,6 @@ def CaldanaerobiusPolysaccharolyticus(
 	(degree 749) and 935948.KE386493_gene2405 (degree 708).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CaldanaerobiusPolysaccharolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CaldanaerobiusPolysaccharolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaldanaerobiusPolysaccharolyticus",

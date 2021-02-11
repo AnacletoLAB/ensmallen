@@ -117,7 +117,6 @@ def ShewanellaWoodyi(
 	1247), 392500.Swoo_1560 (degree 1159) and 392500.Swoo_1512 (degree 1151).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ShewanellaWoodyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ShewanellaWoodyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ShewanellaWoodyi",

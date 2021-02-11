@@ -119,7 +119,6 @@ def CoprothermobacterProteolyticus(
 	and 309798.COPRO5265_0355 (degree 536).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CoprothermobacterProteolyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CoprothermobacterProteolyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CoprothermobacterProteolyticus",

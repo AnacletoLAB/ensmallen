@@ -112,7 +112,6 @@ def SocPhysicians(
 	(degree 26), 121 (degree 22), 128 (degree 18) and 74 (degree 18).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -125,7 +124,6 @@ def SocPhysicians(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -162,7 +160,6 @@ def SocPhysicians(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocPhysicians",

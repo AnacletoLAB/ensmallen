@@ -117,7 +117,6 @@ def RunellaSlithyformis(
 	1765), 761193.Runsl_3391 (degree 1716) and 761193.Runsl_3110 (degree 1666).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RunellaSlithyformis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RunellaSlithyformis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RunellaSlithyformis",

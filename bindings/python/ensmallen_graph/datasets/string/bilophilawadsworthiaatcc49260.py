@@ -119,7 +119,6 @@ def BilophilaWadsworthiaAtcc49260(
 	(degree 1078) and 1408428.JNJP01000006_gene2567 (degree 1055).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BilophilaWadsworthiaAtcc49260(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BilophilaWadsworthiaAtcc49260(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BilophilaWadsworthiaAtcc49260",

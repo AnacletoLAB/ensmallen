@@ -117,7 +117,6 @@ def StreptococcusSuis05zyh33(
 	751), 391295.SSU05_0300 (degree 718) and 391295.SSU05_2183 (degree 648).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusSuis05zyh33(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusSuis05zyh33(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusSuis05zyh33",

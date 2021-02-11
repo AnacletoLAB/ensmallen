@@ -117,7 +117,6 @@ def ButtiauxellaAgrestis(
 	1669), 1006004.GBAG_4198 (degree 1576) and 1006004.GBAG_3692 (degree 1449).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ButtiauxellaAgrestis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ButtiauxellaAgrestis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ButtiauxellaAgrestis",

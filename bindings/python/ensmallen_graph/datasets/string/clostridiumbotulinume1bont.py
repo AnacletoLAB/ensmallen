@@ -117,7 +117,6 @@ def ClostridiumBotulinumE1Bont(
 	536233.CLO_2737 (degree 1029) and 536233.CLO_2188 (degree 1018).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumBotulinumE1Bont(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumBotulinumE1Bont(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumBotulinumE1Bont",

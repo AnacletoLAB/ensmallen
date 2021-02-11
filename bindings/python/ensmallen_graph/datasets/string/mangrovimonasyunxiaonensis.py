@@ -117,7 +117,6 @@ def MangrovimonasYunxiaonensis(
 	905), 1197477.IA57_10060 (degree 792) and 1197477.IA57_11080 (degree 788).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MangrovimonasYunxiaonensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MangrovimonasYunxiaonensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MangrovimonasYunxiaonensis",

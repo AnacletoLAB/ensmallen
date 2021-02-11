@@ -117,7 +117,6 @@ def GeoglobusAcetivorans(
 	565033.GACE_0060 (degree 724) and 565033.GACE_0777 (degree 716).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeoglobusAcetivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeoglobusAcetivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeoglobusAcetivorans",

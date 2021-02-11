@@ -117,7 +117,6 @@ def NocardioidesSp.Cf8(
 	110319.CF8_2516 (degree 1127) and 110319.CF8_3131 (degree 1118).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NocardioidesSp.Cf8(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NocardioidesSp.Cf8(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NocardioidesSp.Cf8",

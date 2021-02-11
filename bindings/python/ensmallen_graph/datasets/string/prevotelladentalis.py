@@ -117,7 +117,6 @@ def PrevotellaDentalis(
 	722), 908937.Prede_1076 (degree 716) and 908937.Prede_0606 (degree 713).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PrevotellaDentalis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PrevotellaDentalis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PrevotellaDentalis",

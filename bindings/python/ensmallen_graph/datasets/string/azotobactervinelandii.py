@@ -117,7 +117,6 @@ def AzotobacterVinelandii(
 	1573), 322710.Avin_51880 (degree 1360) and 322710.Avin_35230 (degree 1351).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AzotobacterVinelandii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AzotobacterVinelandii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AzotobacterVinelandii",

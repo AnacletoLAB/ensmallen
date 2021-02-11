@@ -117,7 +117,6 @@ def GrimontiaHollisae(
 	1176), 675812.VHA_002975 (degree 1122) and 675812.VHA_002689 (degree 1062).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GrimontiaHollisae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GrimontiaHollisae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GrimontiaHollisae",

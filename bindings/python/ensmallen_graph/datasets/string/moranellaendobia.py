@@ -115,7 +115,6 @@ def MoranellaEndobia(
 	260), 903503.MEPCIT_085 (degree 254) and 903503.MEPCIT_416 (degree 240).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def MoranellaEndobia(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def MoranellaEndobia(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MoranellaEndobia",

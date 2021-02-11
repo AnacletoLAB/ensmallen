@@ -117,7 +117,6 @@ def DesulfurispirillumIndicum(
 	1259), 653733.Selin_0622 (degree 1139) and 653733.Selin_1406 (degree 1121).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfurispirillumIndicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfurispirillumIndicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfurispirillumIndicum",

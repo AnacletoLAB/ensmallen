@@ -117,7 +117,6 @@ def SulfobacillusAcidophilus(
 	1151), 1051632.TPY_2486 (degree 1114) and 1051632.TPY_0955 (degree 1044).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfobacillusAcidophilus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfobacillusAcidophilus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfobacillusAcidophilus",

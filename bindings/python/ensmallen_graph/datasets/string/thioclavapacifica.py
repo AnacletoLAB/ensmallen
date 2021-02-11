@@ -117,7 +117,6 @@ def ThioclavaPacifica(
 	1115), 1353537.TP2_02210 (degree 1111) and 1353537.TP2_05610 (degree 1047).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThioclavaPacifica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThioclavaPacifica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThioclavaPacifica",

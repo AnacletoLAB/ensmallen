@@ -117,7 +117,6 @@ def GallionellaCapsiferriformans(
 	1204), 395494.Galf_2239 (degree 1164) and 395494.Galf_0678 (degree 1002).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GallionellaCapsiferriformans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GallionellaCapsiferriformans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GallionellaCapsiferriformans",

@@ -129,7 +129,6 @@ def WebWebbase2001(
 	354).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -159,7 +158,6 @@ def WebWebbase2001(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -196,7 +194,6 @@ def WebWebbase2001(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebWebbase2001",

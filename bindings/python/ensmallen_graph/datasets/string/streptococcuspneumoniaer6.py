@@ -117,7 +117,6 @@ def StreptococcusPneumoniaeR6(
 	171101.spr0696 (degree 652) and 171101.spr0455 (degree 643).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptococcusPneumoniaeR6(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptococcusPneumoniaeR6(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptococcusPneumoniaeR6",

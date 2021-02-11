@@ -117,7 +117,6 @@ def DesulfococcusMultivorans(
 	1567), 1121405.dsmv_2602 (degree 1194) and 1121405.dsmv_3225 (degree 1161).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfococcusMultivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfococcusMultivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfococcusMultivorans",

@@ -117,7 +117,6 @@ def PhotorhabdusLuminescens(
 	243265.plu0908 (degree 1121) and 243265.plu2712 (degree 1027).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PhotorhabdusLuminescens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PhotorhabdusLuminescens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhotorhabdusLuminescens",

@@ -117,7 +117,6 @@ def MethylobacillusFlagellatus(
 	851), 265072.Mfla_1139 (degree 774) and 265072.Mfla_1141 (degree 762).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylobacillusFlagellatus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylobacillusFlagellatus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylobacillusFlagellatus",

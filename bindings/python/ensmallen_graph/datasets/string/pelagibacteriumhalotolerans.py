@@ -117,7 +117,6 @@ def PelagibacteriumHalotolerans(
 	1082931.KKY_968 (degree 876) and 1082931.KKY_1579 (degree 825).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PelagibacteriumHalotolerans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PelagibacteriumHalotolerans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PelagibacteriumHalotolerans",

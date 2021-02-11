@@ -117,7 +117,6 @@ def XanthomonasOryzaePxo99a(
 	1124), 360094.PXO_00906 (degree 976) and 360094.PXO_03319 (degree 958).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasOryzaePxo99a(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasOryzaePxo99a(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasOryzaePxo99a",

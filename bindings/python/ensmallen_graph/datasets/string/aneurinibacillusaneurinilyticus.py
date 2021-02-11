@@ -119,7 +119,6 @@ def AneurinibacillusAneurinilyticus(
 	1547) and 649747.HMPREF0083_05906 (degree 1545).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def AneurinibacillusAneurinilyticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def AneurinibacillusAneurinilyticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AneurinibacillusAneurinilyticus",

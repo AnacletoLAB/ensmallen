@@ -117,7 +117,6 @@ def ExiguobacteriumAntarcticum(
 	839), 1087448.Eab7_0754 (degree 812) and 1087448.Eab7_1578 (degree 791).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ExiguobacteriumAntarcticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ExiguobacteriumAntarcticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ExiguobacteriumAntarcticum",

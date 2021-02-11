@@ -117,7 +117,6 @@ def AcetobacterMalorum(
 	943), 178901.AmDm5_0177 (degree 887) and 178901.AmDm5_2784 (degree 846).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcetobacterMalorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcetobacterMalorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcetobacterMalorum",

@@ -117,7 +117,6 @@ def LiberibacterSolanacearum(
 	658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LiberibacterSolanacearum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LiberibacterSolanacearum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LiberibacterSolanacearum",

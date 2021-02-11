@@ -117,7 +117,6 @@ def SynechocystisSp.Pcc6714(
 	1147.D082_07980 (degree 1070) and 1147.D082_17020 (degree 1055).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SynechocystisSp.Pcc6714(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SynechocystisSp.Pcc6714(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SynechocystisSp.Pcc6714",

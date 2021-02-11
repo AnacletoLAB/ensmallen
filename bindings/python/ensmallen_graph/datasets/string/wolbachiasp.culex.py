@@ -117,7 +117,6 @@ def WolbachiaSp.Culex(
 	(degree 463) and 570417.WP0027 (degree 447).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WolbachiaSp.Culex(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WolbachiaSp.Culex(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WolbachiaSp.Culex",

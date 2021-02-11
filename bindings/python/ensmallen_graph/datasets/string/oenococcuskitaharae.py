@@ -117,7 +117,6 @@ def OenococcusKitaharae(
 	654), 1045004.OKIT_0606 (degree 595) and 1045004.OKIT_1655 (degree 595).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def OenococcusKitaharae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def OenococcusKitaharae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "OenococcusKitaharae",

@@ -117,7 +117,6 @@ def KnoelliaSinensis(
 	1060), 1385520.N802_14235 (degree 996) and 1385520.N802_13190 (degree 976).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KnoelliaSinensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KnoelliaSinensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KnoelliaSinensis",

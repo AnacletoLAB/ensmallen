@@ -119,7 +119,6 @@ def MesoflavibacterZeaxanth.Dsm18436(
 	(degree 821) and 1122225.AULQ01000001_gene1681 (degree 784).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def MesoflavibacterZeaxanth.Dsm18436(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def MesoflavibacterZeaxanth.Dsm18436(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MesoflavibacterZeaxanth.Dsm18436",

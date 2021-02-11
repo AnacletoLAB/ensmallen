@@ -129,7 +129,6 @@ def WebSk2005(
 	309).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -159,7 +158,6 @@ def WebSk2005(
 	        pages = {587--596}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -196,7 +194,6 @@ def WebSk2005(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebSk2005",

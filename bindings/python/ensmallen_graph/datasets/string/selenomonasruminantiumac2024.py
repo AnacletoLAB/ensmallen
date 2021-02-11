@@ -119,7 +119,6 @@ def SelenomonasRuminantiumAc2024(
 	(degree 910) and 1392501.JIAC01000001_gene790 (degree 903).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SelenomonasRuminantiumAc2024(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SelenomonasRuminantiumAc2024(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SelenomonasRuminantiumAc2024",

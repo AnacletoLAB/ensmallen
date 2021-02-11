@@ -117,7 +117,6 @@ def ActinobacteriumPhsc20c1(
 	788), 312284.A20C1_02916 (degree 755) and 312284.A20C1_09034 (degree 727).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinobacteriumPhsc20c1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinobacteriumPhsc20c1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinobacteriumPhsc20c1",

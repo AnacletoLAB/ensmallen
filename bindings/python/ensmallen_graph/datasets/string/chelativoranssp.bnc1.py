@@ -117,7 +117,6 @@ def ChelativoransSp.Bnc1(
 	1164), 266779.Meso_0495 (degree 1156) and 266779.Meso_0772 (degree 1108).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChelativoransSp.Bnc1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChelativoransSp.Bnc1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChelativoransSp.Bnc1",

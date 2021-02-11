@@ -117,7 +117,6 @@ def ActinoplanesFriuliensis(
 	1961), 1246995.AFR_04980 (degree 1852) and 1246995.AFR_10335 (degree 1830).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ActinoplanesFriuliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ActinoplanesFriuliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinoplanesFriuliensis",

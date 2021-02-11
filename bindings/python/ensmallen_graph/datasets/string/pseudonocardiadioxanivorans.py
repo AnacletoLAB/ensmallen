@@ -117,7 +117,6 @@ def PseudonocardiaDioxanivorans(
 	2815), 675635.Psed_3588 (degree 2236) and 675635.Psed_6430 (degree 2198).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudonocardiaDioxanivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudonocardiaDioxanivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudonocardiaDioxanivorans",

@@ -119,7 +119,6 @@ def PleurocapsaSp.Pcc7319(
 	(degree 1772).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PleurocapsaSp.Pcc7319(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PleurocapsaSp.Pcc7319(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PleurocapsaSp.Pcc7319",

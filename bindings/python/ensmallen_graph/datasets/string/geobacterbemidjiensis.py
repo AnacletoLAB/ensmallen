@@ -117,7 +117,6 @@ def GeobacterBemidjiensis(
 	1593), 404380.Gbem_0302 (degree 1443) and 404380.Gbem_0209 (degree 1371).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacterBemidjiensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacterBemidjiensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacterBemidjiensis",

@@ -119,7 +119,6 @@ def SulfitobacterSp.20gpm1509m(
 	(degree 1325).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SulfitobacterSp.20gpm1509m(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SulfitobacterSp.20gpm1509m(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfitobacterSp.20gpm1509m",

@@ -117,7 +117,6 @@ def IdiomarinaXiamenensis(
 	892), 740709.A10D4_12101 (degree 769) and 740709.A10D4_02017 (degree 757).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def IdiomarinaXiamenensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def IdiomarinaXiamenensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "IdiomarinaXiamenensis",

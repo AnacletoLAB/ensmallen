@@ -117,7 +117,6 @@ def LeminorellaGrimontii(
 	1152), 1005999.GLGR_2453 (degree 1120) and 1005999.GLGR_1424 (degree 1094).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LeminorellaGrimontii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LeminorellaGrimontii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LeminorellaGrimontii",

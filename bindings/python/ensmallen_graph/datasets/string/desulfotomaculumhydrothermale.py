@@ -119,7 +119,6 @@ def DesulfotomaculumHydrothermale(
 	824) and 1121428.DESHY_160145___1 (degree 765).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def DesulfotomaculumHydrothermale(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def DesulfotomaculumHydrothermale(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumHydrothermale",

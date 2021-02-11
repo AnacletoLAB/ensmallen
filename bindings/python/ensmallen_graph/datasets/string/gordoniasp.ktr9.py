@@ -117,7 +117,6 @@ def GordoniaSp.Ktr9(
 	1953), 337191.KTR9_2472 (degree 1884) and 337191.KTR9_0212 (degree 1859).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GordoniaSp.Ktr9(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GordoniaSp.Ktr9(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GordoniaSp.Ktr9",

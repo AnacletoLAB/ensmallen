@@ -115,7 +115,6 @@ def EndolissoclinumFaulkneriL5(
 	1401328.P856_821 (degree 430) and 1401328.P856_726 (degree 416).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def EndolissoclinumFaulkneriL5(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def EndolissoclinumFaulkneriL5(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EndolissoclinumFaulkneriL5",

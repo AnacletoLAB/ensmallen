@@ -117,7 +117,6 @@ def HyphomonasPolymorpha(
 	1308), 1280954.HPO_05607 (degree 1300) and 1280954.HPO_06182 (degree 1294).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HyphomonasPolymorpha(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HyphomonasPolymorpha(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HyphomonasPolymorpha",

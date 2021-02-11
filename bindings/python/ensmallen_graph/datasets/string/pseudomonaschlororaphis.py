@@ -117,7 +117,6 @@ def PseudomonasChlororaphis(
 	1635), 587753.EY04_25145 (degree 1618) and 587753.EY04_24700 (degree 1528).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PseudomonasChlororaphis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PseudomonasChlororaphis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PseudomonasChlororaphis",

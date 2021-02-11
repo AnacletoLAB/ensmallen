@@ -119,7 +119,6 @@ def BacillusSp.Unc438cl73tsus30(
 	(degree 1587).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BacillusSp.Unc438cl73tsus30(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BacillusSp.Unc438cl73tsus30(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BacillusSp.Unc438cl73tsus30",

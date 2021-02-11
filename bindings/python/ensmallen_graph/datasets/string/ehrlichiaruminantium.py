@@ -117,7 +117,6 @@ def EhrlichiaRuminantium(
 	254945.Erum5830 (degree 389) and 254945.Erum6420 (degree 376).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EhrlichiaRuminantium(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EhrlichiaRuminantium(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EhrlichiaRuminantium",

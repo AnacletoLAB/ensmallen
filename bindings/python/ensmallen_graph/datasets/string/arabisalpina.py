@@ -117,7 +117,6 @@ def ArabisAlpina(
 	3974), 50452.A0A087HCL3 (degree 3901) and 50452.A0A087HS95 (degree 3875).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArabisAlpina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArabisAlpina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArabisAlpina",

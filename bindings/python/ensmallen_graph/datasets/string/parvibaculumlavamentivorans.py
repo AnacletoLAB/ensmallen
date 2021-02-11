@@ -117,7 +117,6 @@ def ParvibaculumLavamentivorans(
 	1035), 402881.Plav_1969 (degree 1030) and 402881.Plav_0221 (degree 1017).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ParvibaculumLavamentivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ParvibaculumLavamentivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ParvibaculumLavamentivorans",

@@ -117,7 +117,6 @@ def SulfuricurvumKujiense(
 	984), 709032.Sulku_1960 (degree 963) and 709032.Sulku_0331 (degree 932).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfuricurvumKujiense(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfuricurvumKujiense(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfuricurvumKujiense",

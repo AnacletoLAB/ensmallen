@@ -117,7 +117,6 @@ def DesulfovibrioVulgarisMiyazaki(
 	(degree 1036), 883.DvMF_3125 (degree 1033) and 883.DvMF_1860 (degree 988).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfovibrioVulgarisMiyazaki(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfovibrioVulgarisMiyazaki(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfovibrioVulgarisMiyazaki",

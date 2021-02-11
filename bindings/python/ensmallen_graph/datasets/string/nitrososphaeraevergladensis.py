@@ -117,7 +117,6 @@ def NitrososphaeraEvergladensis(
 	769), 1459636.NTE_02858 (degree 726) and 1459636.NTE_01449 (degree 677).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NitrososphaeraEvergladensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NitrososphaeraEvergladensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NitrososphaeraEvergladensis",

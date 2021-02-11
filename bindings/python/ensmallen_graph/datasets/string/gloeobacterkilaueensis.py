@@ -117,7 +117,6 @@ def GloeobacterKilaueensis(
 	1394), 1183438.GKIL_1462 (degree 1196) and 1183438.GKIL_1830 (degree 1180).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GloeobacterKilaueensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GloeobacterKilaueensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GloeobacterKilaueensis",

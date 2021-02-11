@@ -117,7 +117,6 @@ def ChloroflexusAurantiacus(
 	1695), 324602.Caur_0613 (degree 1549) and 324602.Caur_2080 (degree 1456).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ChloroflexusAurantiacus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ChloroflexusAurantiacus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ChloroflexusAurantiacus",

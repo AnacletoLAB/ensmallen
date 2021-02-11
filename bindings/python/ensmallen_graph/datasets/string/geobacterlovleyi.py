@@ -117,7 +117,6 @@ def GeobacterLovleyi(
 	1315), 398767.Glov_2267 (degree 1270) and 398767.Glov_1900 (degree 1196).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacterLovleyi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacterLovleyi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacterLovleyi",

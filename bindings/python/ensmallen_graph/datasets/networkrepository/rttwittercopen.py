@@ -118,7 +118,6 @@ def RtTwitterCopen(
 	693 (degree 31), 358 (degree 26) and 397 (degree 25).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -139,7 +138,6 @@ def RtTwitterCopen(
 	        year={2010},
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -176,7 +174,6 @@ def RtTwitterCopen(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RtTwitterCopen",

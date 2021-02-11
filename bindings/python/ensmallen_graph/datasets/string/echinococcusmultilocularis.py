@@ -117,7 +117,6 @@ def EchinococcusMultilocularis(
 	6211.A0A087W0C3 (degree 2035) and 6211.A0A068Y929 (degree 1933).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EchinococcusMultilocularis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EchinococcusMultilocularis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EchinococcusMultilocularis",

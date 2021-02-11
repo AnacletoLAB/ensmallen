@@ -117,7 +117,6 @@ def ArchaeoglobusSulfaticallidus(
 	797), 387631.Asulf_00029 (degree 772) and 387631.Asulf_01889 (degree 756).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ArchaeoglobusSulfaticallidus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ArchaeoglobusSulfaticallidus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ArchaeoglobusSulfaticallidus",

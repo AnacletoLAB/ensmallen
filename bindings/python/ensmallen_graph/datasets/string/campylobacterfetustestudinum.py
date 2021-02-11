@@ -119,7 +119,6 @@ def CampylobacterFetusTestudinum(
 	and 1244528.CFT03427_1068 (degree 529).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def CampylobacterFetusTestudinum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def CampylobacterFetusTestudinum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CampylobacterFetusTestudinum",

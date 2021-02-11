@@ -117,7 +117,6 @@ def HaemophilusSomnus(
 	205914.HS_0420 (degree 558) and 205914.HS_1214 (degree 509).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HaemophilusSomnus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HaemophilusSomnus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HaemophilusSomnus",

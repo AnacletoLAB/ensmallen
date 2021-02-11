@@ -126,7 +126,6 @@ def BioCelegansneural(
 	3 (degree 74), 5 (degree 54) and 87 (degree 53).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -155,7 +154,6 @@ def BioCelegansneural(
 	        year={2012}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -192,7 +190,6 @@ def BioCelegansneural(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BioCelegansneural",

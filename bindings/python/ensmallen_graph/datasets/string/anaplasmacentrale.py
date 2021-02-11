@@ -117,7 +117,6 @@ def AnaplasmaCentrale(
 	396), 574556.ACIS_00394 (degree 355) and 574556.ACIS_00015 (degree 331).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnaplasmaCentrale(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnaplasmaCentrale(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnaplasmaCentrale",

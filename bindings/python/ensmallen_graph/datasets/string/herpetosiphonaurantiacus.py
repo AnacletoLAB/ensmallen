@@ -117,7 +117,6 @@ def HerpetosiphonAurantiacus(
 	1921), 316274.Haur_1999 (degree 1613) and 316274.Haur_1450 (degree 1411).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HerpetosiphonAurantiacus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HerpetosiphonAurantiacus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HerpetosiphonAurantiacus",

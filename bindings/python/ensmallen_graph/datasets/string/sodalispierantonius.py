@@ -117,7 +117,6 @@ def SodalisPierantonius(
 	2342.SOPEG_3080 (degree 584) and 2342.SOPEG_0181 (degree 578).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SodalisPierantonius(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SodalisPierantonius(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SodalisPierantonius",

@@ -130,7 +130,6 @@ def EmailEnron(
 	45536 (degree 1488), 46022 (degree 1458) and 30043 (degree 1400).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -159,7 +158,6 @@ def EmailEnron(
 	        note={http://www.cs.cmu.edu/~enron/}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -196,7 +194,6 @@ def EmailEnron(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EmailEnron",

@@ -121,7 +121,6 @@ def SocTribes(
 	8).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -143,7 +142,6 @@ def SocTribes(
 	        publisher={JSTOR}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -180,7 +178,6 @@ def SocTribes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocTribes",

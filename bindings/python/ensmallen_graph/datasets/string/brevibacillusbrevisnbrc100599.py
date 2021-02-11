@@ -119,7 +119,6 @@ def BrevibacillusBrevisNbrc100599(
 	358681.BBR47_39880 (degree 1868).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def BrevibacillusBrevisNbrc100599(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def BrevibacillusBrevisNbrc100599(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrevibacillusBrevisNbrc100599",

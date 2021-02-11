@@ -117,7 +117,6 @@ def FusobacteriumGonidiaformans(
 	587), 469615.FGAG_00985 (degree 587) and 469615.FGAG_01335 (degree 579).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FusobacteriumGonidiaformans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FusobacteriumGonidiaformans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FusobacteriumGonidiaformans",

@@ -117,7 +117,6 @@ def RuminococcusSp.5139bfaa(
 	1141), 457412.RSAG_01855 (degree 1130) and 457412.RSAG_02196 (degree 1081).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def RuminococcusSp.5139bfaa(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def RuminococcusSp.5139bfaa(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "RuminococcusSp.5139bfaa",

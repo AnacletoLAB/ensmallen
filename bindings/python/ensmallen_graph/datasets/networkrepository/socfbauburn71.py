@@ -131,7 +131,6 @@ def SocfbAuburn71(
 	3439), 14497 (degree 3267), 12499 (degree 2857) and 7194 (degree 2495).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -165,7 +164,6 @@ def SocfbAuburn71(
 	        year={2011}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -202,7 +200,6 @@ def SocfbAuburn71(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SocfbAuburn71",

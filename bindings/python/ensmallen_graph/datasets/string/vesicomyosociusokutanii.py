@@ -115,7 +115,6 @@ def VesicomyosociusOkutanii(
 	412965.COSY_0427 (degree 411) and 412965.COSY_0477 (degree 388).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def VesicomyosociusOkutanii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def VesicomyosociusOkutanii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VesicomyosociusOkutanii",

@@ -117,7 +117,6 @@ def BifidobacteriumPseudolongumGlobosum(
 	(degree 738), 1690.BPSG_1573 (degree 634) and 1690.BPSG_0886 (degree 627).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BifidobacteriumPseudolongumGlobosum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BifidobacteriumPseudolongumGlobosum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BifidobacteriumPseudolongumGlobosum",

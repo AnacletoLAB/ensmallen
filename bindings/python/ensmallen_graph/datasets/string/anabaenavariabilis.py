@@ -117,7 +117,6 @@ def AnabaenaVariabilis(
 	240292.Ava_3043 (degree 1654) and 240292.Ava_2239 (degree 1589).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnabaenaVariabilis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnabaenaVariabilis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnabaenaVariabilis",

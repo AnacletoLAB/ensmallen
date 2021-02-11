@@ -117,7 +117,6 @@ def DaphniaPulex(
 	6669.EFX76608 (degree 3348) and 6669.EFX81968 (degree 3248).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DaphniaPulex(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DaphniaPulex(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DaphniaPulex",

@@ -117,7 +117,6 @@ def HalorubrumSaccharovorum(
 	750), 1227484.C471_13271 (degree 749) and 1227484.C471_07295 (degree 717).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalorubrumSaccharovorum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalorubrumSaccharovorum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalorubrumSaccharovorum",

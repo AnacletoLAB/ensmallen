@@ -117,7 +117,6 @@ def SchizosaccharomycesOctosporus(
 	(degree 1427), 4899.EPX73930 (degree 1360) and 4899.EPX72235 (degree 1269).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SchizosaccharomycesOctosporus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SchizosaccharomycesOctosporus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SchizosaccharomycesOctosporus",

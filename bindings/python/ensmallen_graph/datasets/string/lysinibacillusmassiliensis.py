@@ -117,7 +117,6 @@ def LysinibacillusMassiliensis(
 	1001), 1211035.CD30_15880 (degree 983) and 1211035.CD30_18210 (degree 934).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LysinibacillusMassiliensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LysinibacillusMassiliensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LysinibacillusMassiliensis",

@@ -108,7 +108,6 @@ def Trec4(
 	top 3 most central nodes are 2 (degree 3), 3 (degree 1) and 1 (degree 1).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -121,7 +120,6 @@ def Trec4(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -158,7 +156,6 @@ def Trec4(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "Trec4",

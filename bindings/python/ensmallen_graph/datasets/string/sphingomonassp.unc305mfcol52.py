@@ -119,7 +119,6 @@ def SphingomonasSp.Unc305mfcol52(
 	(degree 1157) and 1449076.JOOE01000002_gene939 (degree 1101).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SphingomonasSp.Unc305mfcol52(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SphingomonasSp.Unc305mfcol52(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SphingomonasSp.Unc305mfcol52",

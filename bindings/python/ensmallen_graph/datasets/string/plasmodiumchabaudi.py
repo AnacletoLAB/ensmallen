@@ -117,7 +117,6 @@ def PlasmodiumChabaudi(
 	1243), 5825.PCHAS_123090 (degree 1223) and 5825.PCHAS_072100 (degree 1190).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PlasmodiumChabaudi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PlasmodiumChabaudi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PlasmodiumChabaudi",

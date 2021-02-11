@@ -117,7 +117,6 @@ def ThermincolaPotens(
 	889), 635013.TherJR_0787 (degree 829) and 635013.TherJR_1153 (degree 790).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThermincolaPotens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThermincolaPotens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThermincolaPotens",

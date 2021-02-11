@@ -117,7 +117,6 @@ def FlavobacteriumSubsaxonicum(
 	964), 1121898.Q766_12365 (degree 938) and 1121898.Q766_02970 (degree 928).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumSubsaxonicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumSubsaxonicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumSubsaxonicum",

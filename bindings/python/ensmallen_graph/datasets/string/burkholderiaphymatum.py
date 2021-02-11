@@ -117,7 +117,6 @@ def BurkholderiaPhymatum(
 	1856), 391038.Bphy_5115 (degree 1685) and 391038.Bphy_2788 (degree 1666).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BurkholderiaPhymatum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BurkholderiaPhymatum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BurkholderiaPhymatum",

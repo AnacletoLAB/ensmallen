@@ -117,7 +117,6 @@ def StreptomycesSp.Sirexaae(
 	1808), 862751.SACTE_3413 (degree 1757) and 862751.SACTE_1450 (degree 1736).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesSp.Sirexaae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesSp.Sirexaae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesSp.Sirexaae",

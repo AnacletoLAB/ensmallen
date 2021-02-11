@@ -117,7 +117,6 @@ def CyclobacteriumMarinum(
 	1361), 880070.Cycma_3490 (degree 1253) and 880070.Cycma_4552 (degree 1224).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CyclobacteriumMarinum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CyclobacteriumMarinum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CyclobacteriumMarinum",

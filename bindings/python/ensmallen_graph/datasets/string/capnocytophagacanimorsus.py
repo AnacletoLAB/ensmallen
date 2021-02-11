@@ -117,7 +117,6 @@ def CapnocytophagaCanimorsus(
 	693), 860228.Ccan_15300 (degree 655) and 860228.Ccan_06780 (degree 647).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CapnocytophagaCanimorsus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CapnocytophagaCanimorsus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CapnocytophagaCanimorsus",

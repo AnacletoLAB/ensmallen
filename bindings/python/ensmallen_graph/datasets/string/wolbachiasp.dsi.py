@@ -117,7 +117,6 @@ def WolbachiaSp.Dsi(
 	470), 1236908.wNo_01030 (degree 452) and 1236908.wNo_00760 (degree 435).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def WolbachiaSp.Dsi(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def WolbachiaSp.Dsi(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WolbachiaSp.Dsi",

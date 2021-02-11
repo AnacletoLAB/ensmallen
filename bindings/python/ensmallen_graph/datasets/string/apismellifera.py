@@ -117,7 +117,6 @@ def ApisMellifera(
 	7460.GB41836-PA (degree 1744) and 7460.GB41233-PA (degree 1733).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ApisMellifera(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ApisMellifera(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ApisMellifera",

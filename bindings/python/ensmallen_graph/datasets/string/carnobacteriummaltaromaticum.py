@@ -117,7 +117,6 @@ def CarnobacteriumMaltaromaticum(
 	1304), 1234679.BN424_199 (degree 1243) and 1234679.BN424_2844 (degree 1170).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CarnobacteriumMaltaromaticum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CarnobacteriumMaltaromaticum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CarnobacteriumMaltaromaticum",

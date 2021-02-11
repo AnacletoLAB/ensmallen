@@ -117,7 +117,6 @@ def FerrimonasBalearica(
 	1231), 550540.Fbal_3029 (degree 1090) and 550540.Fbal_2738 (degree 1081).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FerrimonasBalearica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FerrimonasBalearica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FerrimonasBalearica",

@@ -117,7 +117,6 @@ def AcidovoraxSp.Kks102(
 	1340), 358220.C380_04330 (degree 1326) and 358220.C380_21970 (degree 1305).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AcidovoraxSp.Kks102(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AcidovoraxSp.Kks102(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AcidovoraxSp.Kks102",

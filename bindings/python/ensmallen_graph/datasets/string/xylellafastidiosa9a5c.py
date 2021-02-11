@@ -117,7 +117,6 @@ def XylellaFastidiosa9a5c(
 	160492.XF_0549 (degree 606) and 160492.XF_2430 (degree 577).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XylellaFastidiosa9a5c(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XylellaFastidiosa9a5c(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XylellaFastidiosa9a5c",

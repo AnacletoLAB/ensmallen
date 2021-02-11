@@ -117,7 +117,6 @@ def AmborellaTrichopoda(
 	13333.ERN08053 (degree 3244) and 13333.ERM95270 (degree 3133).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AmborellaTrichopoda(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AmborellaTrichopoda(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AmborellaTrichopoda",

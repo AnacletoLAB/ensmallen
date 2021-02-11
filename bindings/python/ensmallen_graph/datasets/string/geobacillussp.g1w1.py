@@ -117,7 +117,6 @@ def GeobacillusSp.G1w1(
 	956), 1430331.EP10_16735 (degree 858) and 1430331.EP10_05360 (degree 857).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def GeobacillusSp.G1w1(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def GeobacillusSp.G1w1(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "GeobacillusSp.G1w1",

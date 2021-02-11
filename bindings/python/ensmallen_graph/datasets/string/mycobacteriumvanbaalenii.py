@@ -117,7 +117,6 @@ def MycobacteriumVanbaalenii(
 	2081), 350058.Mvan_1931 (degree 2052) and 350058.Mvan_4109 (degree 1938).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MycobacteriumVanbaalenii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MycobacteriumVanbaalenii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MycobacteriumVanbaalenii",

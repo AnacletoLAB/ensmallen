@@ -117,7 +117,6 @@ def AgrobacteriumAlbertimagni(
 	1519), 1156935.QWE_12758 (degree 1481) and 1156935.QWE_15366 (degree 1362).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AgrobacteriumAlbertimagni(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AgrobacteriumAlbertimagni(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AgrobacteriumAlbertimagni",

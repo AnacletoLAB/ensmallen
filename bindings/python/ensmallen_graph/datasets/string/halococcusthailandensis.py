@@ -117,7 +117,6 @@ def HalococcusThailandensis(
 	821), 1227457.C451_10032 (degree 819) and 1227457.C451_10905 (degree 800).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HalococcusThailandensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HalococcusThailandensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HalococcusThailandensis",

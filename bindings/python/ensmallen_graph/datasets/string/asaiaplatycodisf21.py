@@ -117,7 +117,6 @@ def AsaiaPlatycodiSf21(
 	1002), 1382230.ASAP_1363 (degree 937) and 1382230.ASAP_0148 (degree 884).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AsaiaPlatycodiSf21(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AsaiaPlatycodiSf21(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AsaiaPlatycodiSf21",

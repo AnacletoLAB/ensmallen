@@ -117,7 +117,6 @@ def NocardiaFarcinica(
 	1955), 247156.NFA_18750 (degree 1950) and 247156.NFA_27070 (degree 1697).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def NocardiaFarcinica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def NocardiaFarcinica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "NocardiaFarcinica",

@@ -117,7 +117,6 @@ def MicrovirgaAerilata(
 	1458), 670292.JH26_23550 (degree 1448) and 670292.JH26_02885 (degree 1395).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MicrovirgaAerilata(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MicrovirgaAerilata(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MicrovirgaAerilata",

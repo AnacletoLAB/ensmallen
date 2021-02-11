@@ -117,7 +117,6 @@ def HerbaspirillumSeropedicae(
 	1439), 757424.Hsero_1234 (degree 1419) and 757424.Hsero_3924 (degree 1365).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def HerbaspirillumSeropedicae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def HerbaspirillumSeropedicae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "HerbaspirillumSeropedicae",

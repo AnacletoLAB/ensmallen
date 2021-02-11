@@ -119,7 +119,6 @@ def PhytoplasmaPeanutWitchesbroom(
 	and 1163385.PNWB_v1c1970 (degree 283).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def PhytoplasmaPeanutWitchesbroom(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def PhytoplasmaPeanutWitchesbroom(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PhytoplasmaPeanutWitchesbroom",

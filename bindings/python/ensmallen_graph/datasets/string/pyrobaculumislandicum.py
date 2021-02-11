@@ -117,7 +117,6 @@ def PyrobaculumIslandicum(
 	384616.Pisl_0713 (degree 618) and 384616.Pisl_0249 (degree 602).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def PyrobaculumIslandicum(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def PyrobaculumIslandicum(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "PyrobaculumIslandicum",

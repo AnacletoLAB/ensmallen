@@ -117,7 +117,6 @@ def MethylomirabilisOxyfera(
 	1044), 671143.DAMO_2850 (degree 873) and 671143.DAMO_2417 (degree 823).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MethylomirabilisOxyfera(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MethylomirabilisOxyfera(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MethylomirabilisOxyfera",

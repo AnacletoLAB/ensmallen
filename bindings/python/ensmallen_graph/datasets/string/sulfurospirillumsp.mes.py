@@ -117,7 +117,6 @@ def SulfurospirillumSp.Mes(
 	1011), 1565314.OA34_03140 (degree 981) and 1565314.OA34_03210 (degree 963).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurospirillumSp.Mes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurospirillumSp.Mes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurospirillumSp.Mes",

@@ -117,7 +117,6 @@ def AnabaenaCylindrica(
 	1522), 272123.Anacy_4718 (degree 1492) and 272123.Anacy_3153 (degree 1487).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AnabaenaCylindrica(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AnabaenaCylindrica(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AnabaenaCylindrica",

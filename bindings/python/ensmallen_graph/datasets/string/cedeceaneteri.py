@@ -117,7 +117,6 @@ def CedeceaNeteri(
 	2065), 158822.LH89_18655 (degree 2045) and 158822.LH89_10550 (degree 2016).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CedeceaNeteri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CedeceaNeteri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CedeceaNeteri",

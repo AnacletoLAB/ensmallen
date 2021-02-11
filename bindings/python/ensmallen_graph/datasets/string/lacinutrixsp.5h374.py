@@ -117,7 +117,6 @@ def LacinutrixSp.5h374(
 	919), 983544.Lacal_2813 (degree 891) and 983544.Lacal_1511 (degree 878).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def LacinutrixSp.5h374(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def LacinutrixSp.5h374(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "LacinutrixSp.5h374",

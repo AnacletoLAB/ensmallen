@@ -117,7 +117,6 @@ def SulfitobacterSp.Ee36(
 	910), 52598.EE36_17132 (degree 898) and 52598.EE36_14937 (degree 862).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfitobacterSp.Ee36(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfitobacterSp.Ee36(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfitobacterSp.Ee36",

@@ -117,7 +117,6 @@ def XanthomonasAxonopodisCitri(
 	190486.XAC4193 (degree 1153) and 190486.XAC2054 (degree 1094).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def XanthomonasAxonopodisCitri(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def XanthomonasAxonopodisCitri(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "XanthomonasAxonopodisCitri",

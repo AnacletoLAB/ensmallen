@@ -117,7 +117,6 @@ def DesulfotomaculumKuznetsovii(
 	1270), 760568.Desku_2381 (degree 1066) and 760568.Desku_1196 (degree 1058).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def DesulfotomaculumKuznetsovii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def DesulfotomaculumKuznetsovii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "DesulfotomaculumKuznetsovii",

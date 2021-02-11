@@ -117,7 +117,6 @@ def MarinobacterAdhaerens(
 	1309), 225937.HP15_1872 (degree 1260) and 225937.HP15_3808 (degree 1174).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MarinobacterAdhaerens(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MarinobacterAdhaerens(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MarinobacterAdhaerens",

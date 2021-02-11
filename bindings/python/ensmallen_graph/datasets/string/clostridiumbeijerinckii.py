@@ -117,7 +117,6 @@ def ClostridiumBeijerinckii(
 	1800), 290402.Cbei_1458 (degree 1783) and 290402.Cbei_0331 (degree 1783).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ClostridiumBeijerinckii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ClostridiumBeijerinckii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ClostridiumBeijerinckii",

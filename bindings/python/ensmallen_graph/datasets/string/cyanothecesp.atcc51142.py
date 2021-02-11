@@ -117,7 +117,6 @@ def CyanotheceSp.Atcc51142(
 	43989.cce_3558 (degree 1322) and 43989.cce_0726 (degree 1289).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CyanotheceSp.Atcc51142(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CyanotheceSp.Atcc51142(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CyanotheceSp.Atcc51142",

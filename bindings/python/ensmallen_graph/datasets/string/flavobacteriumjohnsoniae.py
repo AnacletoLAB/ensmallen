@@ -117,7 +117,6 @@ def FlavobacteriumJohnsoniae(
 	1412), 376686.Fjoh_3950 (degree 1305) and 376686.Fjoh_4574 (degree 1294).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def FlavobacteriumJohnsoniae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def FlavobacteriumJohnsoniae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "FlavobacteriumJohnsoniae",

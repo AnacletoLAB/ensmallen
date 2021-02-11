@@ -117,7 +117,6 @@ def SulfurospirillumMultivorans(
 	1006), 1150621.SMUL_0701 (degree 992) and 1150621.SMUL_0774 (degree 977).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def SulfurospirillumMultivorans(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def SulfurospirillumMultivorans(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SulfurospirillumMultivorans",

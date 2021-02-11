@@ -117,7 +117,6 @@ def KocuriaPolaris(
 	912), 136273.GY22_05440 (degree 904) and 136273.GY22_12710 (degree 893).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def KocuriaPolaris(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def KocuriaPolaris(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "KocuriaPolaris",

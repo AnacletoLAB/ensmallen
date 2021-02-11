@@ -124,7 +124,6 @@ def WebHudong(
 	31307).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -145,7 +144,6 @@ def WebHudong(
 	        pages     = {205--220},
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -182,7 +180,6 @@ def WebHudong(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "WebHudong",

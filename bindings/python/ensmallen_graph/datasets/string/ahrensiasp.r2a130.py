@@ -117,7 +117,6 @@ def AhrensiaSp.R2a130(
 	994), 744979.R2A130_0492 (degree 934) and 744979.R2A130_1673 (degree 920).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AhrensiaSp.R2a130(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AhrensiaSp.R2a130(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AhrensiaSp.R2a130",

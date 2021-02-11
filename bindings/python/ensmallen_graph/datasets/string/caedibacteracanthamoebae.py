@@ -117,7 +117,6 @@ def CaedibacterAcanthamoebae(
 	349), 244581.IM40_00295 (degree 345) and 244581.IM40_00200 (degree 324).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def CaedibacterAcanthamoebae(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def CaedibacterAcanthamoebae(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "CaedibacterAcanthamoebae",

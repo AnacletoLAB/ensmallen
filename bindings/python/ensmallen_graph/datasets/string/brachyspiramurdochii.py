@@ -117,7 +117,6 @@ def BrachyspiraMurdochii(
 	526224.Bmur_2315 (degree 743) and 526224.Bmur_0095 (degree 724).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def BrachyspiraMurdochii(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def BrachyspiraMurdochii(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "BrachyspiraMurdochii",

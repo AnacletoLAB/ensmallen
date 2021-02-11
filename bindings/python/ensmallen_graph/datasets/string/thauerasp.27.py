@@ -117,7 +117,6 @@ def ThaueraSp.27(
 	1460), 305700.B447_11067 (degree 1434) and 305700.B447_00465 (degree 1399).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def ThaueraSp.27(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def ThaueraSp.27(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ThaueraSp.27",

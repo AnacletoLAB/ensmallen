@@ -119,7 +119,6 @@ def SporolactobacillusLaevolacticus(
 	1395513.P343_11695 (degree 1001).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -135,7 +134,6 @@ def SporolactobacillusLaevolacticus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -172,7 +170,6 @@ def SporolactobacillusLaevolacticus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "SporolactobacillusLaevolacticus",

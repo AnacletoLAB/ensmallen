@@ -117,7 +117,6 @@ def StaphylothermusHellenicus(
 	479), 591019.Shell_1489 (degree 474) and 591019.Shell_0184 (degree 472).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StaphylothermusHellenicus(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StaphylothermusHellenicus(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StaphylothermusHellenicus",

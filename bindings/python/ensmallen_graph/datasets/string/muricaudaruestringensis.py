@@ -117,7 +117,6 @@ def MuricaudaRuestringensis(
 	1214), 886377.Murru_2094 (degree 1124) and 886377.Murru_0708 (degree 1011).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MuricaudaRuestringensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MuricaudaRuestringensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MuricaudaRuestringensis",

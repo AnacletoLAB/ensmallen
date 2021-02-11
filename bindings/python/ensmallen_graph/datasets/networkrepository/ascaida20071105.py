@@ -110,7 +110,6 @@ def AsCaida20071105(
 	(degree 2052), 31 (degree 1699), 230 (degree 1677) and 43 (degree 1631).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -123,7 +122,6 @@ def AsCaida20071105(
 	    year={2015}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -160,7 +158,6 @@ def AsCaida20071105(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AsCaida20071105",

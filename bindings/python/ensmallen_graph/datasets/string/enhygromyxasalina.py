@@ -117,7 +117,6 @@ def EnhygromyxaSalina(
 	3313), 215803.DB30_0846 (degree 3247) and 215803.DB30_1197 (degree 3045).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def EnhygromyxaSalina(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def EnhygromyxaSalina(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "EnhygromyxaSalina",

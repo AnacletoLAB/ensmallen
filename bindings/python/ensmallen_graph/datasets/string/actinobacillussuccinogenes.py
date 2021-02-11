@@ -115,7 +115,6 @@ def ActinobacillusSuccinogenes(
 	339671.Asuc_0893 (degree 633) and 339671.Asuc_1368 (degree 553).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -131,7 +130,6 @@ def ActinobacillusSuccinogenes(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -168,7 +166,6 @@ def ActinobacillusSuccinogenes(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "ActinobacillusSuccinogenes",

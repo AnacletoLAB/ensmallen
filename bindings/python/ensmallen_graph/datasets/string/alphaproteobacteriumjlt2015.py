@@ -117,7 +117,6 @@ def AlphaProteobacteriumJlt2015(
 	885), 1234595.C725_1603 (degree 879) and 1234595.C725_0641 (degree 859).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def AlphaProteobacteriumJlt2015(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def AlphaProteobacteriumJlt2015(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "AlphaProteobacteriumJlt2015",

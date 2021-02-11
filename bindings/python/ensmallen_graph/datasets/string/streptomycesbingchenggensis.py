@@ -117,7 +117,6 @@ def StreptomycesBingchenggensis(
 	3750), 749414.SBI_08156 (degree 3282) and 749414.SBI_09651 (degree 3130).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def StreptomycesBingchenggensis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def StreptomycesBingchenggensis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "StreptomycesBingchenggensis",

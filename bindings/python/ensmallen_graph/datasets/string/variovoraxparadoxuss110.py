@@ -117,7 +117,6 @@ def VariovoraxParadoxusS110(
 	2023), 543728.Vapar_1152 (degree 1965) and 543728.Vapar_2764 (degree 1953).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def VariovoraxParadoxusS110(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def VariovoraxParadoxusS110(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "VariovoraxParadoxusS110",

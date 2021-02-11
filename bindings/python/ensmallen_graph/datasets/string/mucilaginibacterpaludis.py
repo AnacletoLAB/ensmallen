@@ -117,7 +117,6 @@ def MucilaginibacterPaludis(
 	1507), 714943.Mucpa_0373 (degree 1453) and 714943.Mucpa_1543 (degree 1349).
 	
 
-
 	References
 	---------------------
 	Please cite the following if you use the data:
@@ -133,7 +132,6 @@ def MucilaginibacterPaludis(
 	    publisher={Oxford University Press}
 	}
 	
-
 
 	Usage example
 	----------------------
@@ -170,7 +168,6 @@ def MucilaginibacterPaludis(
 	
 	    # Consider using the methods made available in the Embiggen package
 	    # to run graph embedding or link prediction tasks.
-
     """
     return AutomaticallyRetrievedGraph(
         "MucilaginibacterPaludis",
