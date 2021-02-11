@@ -7,7 +7,6 @@ import requests
 from glob import glob
 from bs4 import BeautifulSoup
 from userinput import userinput, set_validator, set_recoverer, clear
-from unicodedata import normalize
 from .graph_repository import GraphRepository
 from .custom_exceptions import UnsupportedGraphException
 
@@ -120,9 +119,11 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         Citations relative to the given Network Repository graph.
         """
         skitter_target = "Skitter"
+        whois_target = "WHOIS"
         targets = [
             "The Network Data Repository",
-            skitter_target
+            skitter_target,
+            whois_target
         ]
         baseline_citations = [
             open(
@@ -146,8 +147,16 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 "r"
             ).read())
 
+        if any(whois_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/whois.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
         return baseline_citations + [
-            normalize('NFKD', reference).encode('ascii', 'ignore')
+            reference
             for reference in citations
             if not any(
                 target in reference.text.strip()
