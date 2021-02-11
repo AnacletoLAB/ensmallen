@@ -636,6 +636,22 @@ class GraphRepository:
         ---------------------
         Formatted model of the report.
         """
+        report_words = report.split(" ")
+        line_length = 80
+        lines = []
+        line = None
+        for word in report_words:
+            if line is None:
+                line = word
+            else:
+                line += " " + word
+            if line >= 80:
+                lines.append(line)
+                line = None
+        if line is not None:
+            lines.append(line)
+        report = "\n".join(lines)
+
         with open(
             "{}/models/report.rst".format(
                 os.path.dirname(os.path.abspath(__file__))),
@@ -703,9 +719,47 @@ class GraphRepository:
                 references=self.format_references(references),
                 usage_example=self.format_usage_example(graph_name)
             )
+    
+    def format_init_file(
+        self,
+        graph_name: str,
+        report: str,
+        references: List[str]
+    ) -> str:
+        """Return formatted report model.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+        report: str,
+            Report of the graph.
+        references: List[str],
+            List of the references of the graph.
+
+        Returns
+        ---------------------
+        Formatted model of the report.
+        """
+        with open(
+            "{}/models/init_file_model.py".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format(
+                graph_method_name=self.build_stored_graph_name(graph_name),
+                repository_package_name=self.repository_package_name,
+                graph_name=graph_name,
+                repository_name=self.get_formatted_repository_name(),
+                report=report,
+                references=self.format_references(references),
+                usage_example=self.format_usage_example(graph_name)
+            )
 
     def build_all(self):
         """Build graph retrieval methods."""
+        graph_method_names = []
+        graph_file_names = []
         for graph_report_path in tqdm(
             glob("{}/*.json.gz".format(self.build_graph_reports_directory())),
             desc="Building graph retrieval methods for {}".format(self.name),
@@ -729,6 +783,12 @@ class GraphRepository:
                 "{}.py".format(
                     self.build_stored_graph_name(graph_data["graph_name"]).lower()
                 )
+            )
+            graph_method_names.append(
+                self.build_stored_graph_name(graph_data["graph_name"])
+            )
+            graph_file_names.append(
+                self.build_stored_graph_name(graph_data["graph_name"]).lower()
             )
             target_json_path = os.path.join(
                 target_directory_path,

@@ -37,11 +37,11 @@ def {graph_method_name}(
     -----------------------
     Instace of {graph_name} graph.
 
-    {report}
+{report}
 
-    {references}
+{references}
 
-    {usage_example}
+{usage_example}
     """
     return AutomaticallyRetrievedGraph(
         "{graph_method_name}",
