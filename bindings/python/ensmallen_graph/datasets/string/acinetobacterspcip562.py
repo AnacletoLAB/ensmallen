@@ -8,7 +8,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-11 13:41:16.049077
+Datetime: 2021-02-02 22:59:04.405027
 
 The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466
 weighted edges, of which none are self-loops. The graph is dense as it
@@ -106,7 +106,7 @@ def AcinetobacterSpCip562(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-11 13:41:16.049077
+	Datetime: 2021-02-02 22:59:04.405027
 	
 	The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466
 	weighted edges, of which none are self-loops. The graph is dense as it
