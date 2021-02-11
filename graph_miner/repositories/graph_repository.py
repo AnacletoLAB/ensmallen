@@ -639,7 +639,7 @@ class GraphRepository:
         Formatted model of the report.
         """
         report_words = report.split(" ")
-        line_length = 80
+        line_length = 70
         lines = []
         line = None
         for word in report_words:
@@ -835,4 +835,4 @@ class GraphRepository:
             "__init__.py"
         )
         with open(init_path, "w") as f:
-            f.write(self.format_init_file(graph_file_names, graph_file_names))
+            f.write(self.format_init_file(graph_file_names, graph_method_names))
