@@ -94,13 +94,11 @@ class KGHubRepository(GraphRepository):
         -----------------------
         The paths where to store the downloaded graphs.
         """
+        if graph_name == "KGCOVID19":
+            return None
         return [
-            os.path.join(
-                self.repository_package_name,
-                value
-            )
-            for path, value in self._data[graph_name]["arguments"].items()
-            if path.endswith("path")
+            self.get_edge_list_path(graph_name, None),
+            self.get_node_list_path(graph_name, None),
         ]
 
     def build_graph_parameters(
@@ -155,7 +153,10 @@ class KGHubRepository(GraphRepository):
         -----------------------
         The path from where to load the node files.
         """
-        return self._data[graph_name]["arguments"]["node_path"]
+        return os.path.join(
+            self.repository_package_name,
+            self._data[graph_name]["arguments"]["node_path"]
+        )
 
     def get_edge_list_path(
         self,
@@ -175,4 +176,7 @@ class KGHubRepository(GraphRepository):
         -----------------------
         The path from where to load the edge files.
         """
-        return self._data[graph_name]["arguments"]["edge_path"]
+        return os.path.join(
+            self.repository_package_name,
+            self._data[graph_name]["arguments"]["edge_path"]
+        )
