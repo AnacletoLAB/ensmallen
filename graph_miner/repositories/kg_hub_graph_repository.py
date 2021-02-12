@@ -6,7 +6,7 @@ import pandas as pd
 from .graph_repository import GraphRepository
 
 
-class KGHubRepository(GraphRepository):
+class KGHubGraphRepository(GraphRepository):
 
     def __init__(self):
         """Create new String Graph Repository object."""
