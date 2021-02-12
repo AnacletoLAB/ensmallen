@@ -4,5 +4,5 @@ from .repositories import StringGraphRepository, NetworkRepositoryGraphRepositor
 __all__ = [
     "StringGraphRepository",
     "NetworkRepositoryGraphRepository",
-    "KGHubRepository"
+    "KGHubGraphRepository"
 ]
