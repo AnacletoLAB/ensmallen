@@ -119,7 +119,7 @@
             "node_types_column": "category"
         }
     },
-    "KG-COVID19": {
+    "KGCOVID19": {
         "urls": [
             "https://kg-hub.berkeleybop.io/kg-covid-19/current/kg-covid-19.tar.gz"
         ],

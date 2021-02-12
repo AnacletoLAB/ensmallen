@@ -510,12 +510,15 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
     def get_node_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the node files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -566,12 +569,15 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
     def get_edge_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the edge files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
