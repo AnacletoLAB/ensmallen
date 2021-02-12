@@ -508,12 +508,15 @@ class GraphRepository:
 
     def get_node_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the node files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -527,12 +530,15 @@ class GraphRepository:
 
     def get_edge_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the edge files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -579,8 +585,8 @@ class GraphRepository:
                 self.add_corrupted_graph(graph_name)
                 continue
             try:
-                node_path = self.get_node_list_path(download_report)
-                edge_path = self.get_edge_list_path(download_report)
+                node_path = self.get_node_list_path(graph_name, download_report)
+                edge_path = self.get_edge_list_path(graph_name, download_report)
                 arguments = self.build_graph_parameters(
                     graph_name,
                     edge_path=edge_path,
