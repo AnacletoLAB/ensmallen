@@ -1,19 +1,4 @@
 {
-    "ChEMBL": {
-        "urls": [
-            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/ChEMBL/edges.tsv",
-            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/ChEMBL/nodes.tsv"
-        ],
-        "arguments": {
-            "edge_path": "edges.tsv",
-            "node_path": "nodes.tsv",
-            "sources_column": "subject",
-            "destinations_column": "object",
-            "edge_types_column": "edge_label",
-            "nodes_column": "id",
-            "node_types_column": "category"
-        }
-    },
     "GOCAMs": {
         "urls": [
             "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/GOCAMs/GOCAMs_edges.tsv",
