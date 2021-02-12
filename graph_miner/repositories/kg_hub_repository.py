@@ -94,7 +94,14 @@ class KGHubRepository(GraphRepository):
         -----------------------
         The paths where to store the downloaded graphs.
         """
-        return None
+        return [
+            os.path.join(
+                self.repository_package_name,
+                value
+            )
+            for path, value in self._data[graph_name]["arguments"].items()
+            if path.endswith("path")
+        ]
 
     def build_graph_parameters(
         self,
