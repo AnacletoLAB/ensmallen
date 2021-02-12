@@ -128,7 +128,11 @@ class KGHubGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            **self._data[graph_name]["arguments"]
+            **{
+                key: value
+                for key, value in self._data[graph_name]["arguments"].items()
+                if not key.endswith("_path")
+            }
         }
 
     def get_graph_list(self) -> List:
