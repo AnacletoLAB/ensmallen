@@ -182,3 +182,45 @@ class YueGraphRepository(GraphRepository):
             self.repository_package_name,
             self._data[graph_name]["arguments"]["edge_path"]
         )
+
+    def get_imports(self, graph_name: str) -> str:
+        """Return imports to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        Imports.
+        """
+        return ""
+
+    def get_description(self, graph_name: str) -> str:
+        """Return description to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        description.
+        """
+        return ""
+
+    def get_callbacks(self, graph_name: str) -> str:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        return ""

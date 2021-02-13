@@ -550,6 +550,54 @@ class GraphRepository:
             "The method get_edge_list_path must be implemented in child classes."
         )
 
+    def get_imports(self, graph_name: str) -> str:
+        """Return imports to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        Imports.
+        """
+        raise NotImplementedError(
+            "The method get_imports must be implemented in child classes."
+        )
+
+    def get_description(self, graph_name: str) -> str:
+        """Return description to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        description.
+        """
+        raise NotImplementedError(
+            "The method get_description must be implemented in child classes."
+        )
+
+    def get_callbacks(self, graph_name: str) -> str:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        raise NotImplementedError(
+            "The method get_callbacks must be implemented in child classes."
+        )
+
     def check_nominal_download(
         self,
         download_report: pd.DataFrame
@@ -585,8 +633,10 @@ class GraphRepository:
                 self.add_corrupted_graph(graph_name)
                 continue
             try:
-                node_path = self.get_node_list_path(graph_name, download_report)
-                edge_path = self.get_edge_list_path(graph_name, download_report)
+                node_path = self.get_node_list_path(
+                    graph_name, download_report)
+                edge_path = self.get_edge_list_path(
+                    graph_name, download_report)
                 arguments = self.build_graph_parameters(
                     graph_name,
                     edge_path=edge_path,
@@ -632,14 +682,14 @@ class GraphRepository:
 
     def format_lines(self, text: str, line_length: int = 70) -> str:
         """Return formatted lines.
-        
+
         Parameters
         --------------------------
         text: str,
             The text to be formatted.
         line_length: int = 70,
             Maximum length of the text lines.
-        
+
         Returns
         --------------------------
         Formatted text.
@@ -751,6 +801,14 @@ class GraphRepository:
                 graph_name=graph_name,
                 repository_name=self.get_formatted_repository_name(),
                 report=report,
+                imports=self.get_imports(graph_name),
+                callbacks=self.get_callbacks(graph_name),
+                description=self.format_lines(
+                    self.get_description(graph_name)
+                ),
+                tabbed_description=self.add_tabs(
+                    self.format_lines(self.get_description(graph_name))
+                ),
                 references=self.format_references(references),
                 usage_example=self.format_usage_example(graph_name),
                 tabbed_report=self.add_tabs(report),

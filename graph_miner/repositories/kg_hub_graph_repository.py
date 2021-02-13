@@ -139,6 +139,48 @@ class KGHubGraphRepository(GraphRepository):
         """Return list of graph data."""
         return list(self._data.items())
 
+    def get_imports(self, graph_name: str) -> str:
+        """Return imports to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        Imports.
+        """
+        return ""
+
+    def get_description(self, graph_name: str) -> str:
+        """Return description to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        description.
+        """
+        return ""
+
+    def get_callbacks(self, graph_name: str) -> str:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        return ""
+
     def get_node_list_path(
         self,
         graph_name: str,

@@ -1,20 +1,25 @@
-"""Sub-module handling the retrieval and building of graphs from STRING."""
+"""Sub-module handling the retrieval and building of graphs from LINQS."""
 from typing import List, Dict
 import os
+import compress_json
 import pandas as pd
 from .graph_repository import GraphRepository
+from .models.parse_linqs import (
+    parse_linqs_incidence_matrix,
+    parse_linqs_pubmed_incidence_matrix
+)
 
 
-class StringGraphRepository(GraphRepository):
+class LINQSGraphRepository(GraphRepository):
 
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
-        self._base_url = "https://stringdb-static.org/download/protein.links.v11.0/{}.protein.links.v11.0.txt.gz"
-        self._organisms = pd.read_csv(
-            "https://stringdb-static.org/download/species.v11.0.txt",
-            sep="\t"
-        )
+        self._data = compress_json.local_load("linqs.json")
+        self._parse = {
+            "parse_linqs_incidence_matrix": parse_linqs_incidence_matrix,
+            "parse_linqs_pubmed_incidence_matrix": parse_linqs_pubmed_incidence_matrix
+        }
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -28,28 +33,25 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         Complete name of the graph.
         """
-        return "".join([
-            term.capitalize()
-            for term in partial_graph_name.replace(".", " ").split(" ")
-        ])
+        return partial_graph_name
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
-        return "STRING"
+        return "LINQS"
 
     def get_graph_name(self, graph_data) -> str:
         """Return built graph name.
 
         Parameters
         -----------------------
-        graph_data: str,
-            Partial graph name to be built.
+        graph_data,
+            Data loaded for given graph.
 
         Returns
         -----------------------
         Complete name of the graph.
         """
-        return graph_data.STRING_name_compact
+        return graph_data[0]
 
     def get_graph_urls(self, graph_data) -> List[str]:
         """Return url for the given graph.
@@ -63,7 +65,7 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         The urls list from where to download the graph data.
         """
-        return [self._base_url.format(graph_data['## taxon_id'])]
+        return graph_data[1]["urls"]
 
     def get_graph_citations(self, graph_data) -> List[str]:
         """Return url for the given graph.
@@ -79,11 +81,13 @@ class StringGraphRepository(GraphRepository):
         """
         return [
             open(
-                "{}/models/string_citation.bib".format(
-                    os.path.dirname(os.path.abspath(__file__))
+                "{}/models/{}.bib".format(
+                    os.path.dirname(os.path.abspath(__file__)),
+                    citation
                 ),
                 "r"
             ).read()
+            for citation in graph_data[1]["citations"]
         ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
@@ -100,12 +104,7 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         The paths where to store the downloaded graphs.
         """
-        return [os.path.join(
-            self.repository_package_name,
-            "{}.csv.gz".format(
-                graph_name.lower().replace(" ", "_")
-            )
-        )]
+        return None
 
     def build_graph_parameters(
         self,
@@ -134,51 +133,12 @@ class StringGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            "sources_column": "protein1",
-            "destinations_column": "protein2",
-            "weights_column": "combined_score",
+            # TODO: extend!
         }
 
-    def get_graph_list(self) -> List[str]:
-        """Return list of graph names."""
-        return [
-            row
-            for _, row in self._organisms.iterrows()
-        ]
-
-    def get_node_list_path(
-        self,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the node files.
-
-        Parameters
-        -----------------------
-        download_report: pd.DataFrame,
-            Report from downloader.
-
-        Returns
-        -----------------------
-        The path from where to load the node files.
-        """
-        return None
-
-    def get_edge_list_path(
-        self,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the edge files.
-
-        Parameters
-        -----------------------
-        download_report: pd.DataFrame,
-            Report from downloader.
-
-        Returns
-        -----------------------
-        The path from where to load the edge files.
-        """
-        return download_report.extraction_destination[0]
+    def get_graph_list(self) -> List:
+        """Return list of graph data."""
+        return list(self._data.items())
 
     def get_imports(self, graph_name: str) -> str:
         """Return imports to be added to model file.
@@ -192,7 +152,7 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         Imports.
         """
-        return ""
+        return "\n".join(self._data[graph_name]["imports"])
 
     def get_description(self, graph_name: str) -> str:
         """Return description to be added to model file.
@@ -206,7 +166,7 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         description.
         """
-        return ""
+        return self._data[graph_name]["description"]
 
     def get_callbacks(self, graph_name: str) -> str:
         """Return callbacks to be added to model file.
@@ -220,4 +180,74 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         callbacks.
         """
-        return ""
+        return "\n".join(self._data[graph_name]["callbacks"])
+
+    def get_node_list_path(
+        self,
+        graph_name: str,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the node files.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the node files.
+        """
+        return os.path.join(
+            self.repository_package_name,
+            self.build_stored_graph_name(graph_name),
+            "nodes.tsv"
+        )
+
+    def get_edge_list_path(
+        self,
+        graph_name: str,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the edge files.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the edge files.
+        """
+        return os.path.join(
+            self.repository_package_name,
+            self.build_stored_graph_name(graph_name),
+            "edges.tsv"
+        )
+
+    def download(self, graph_data, graph_name: str) -> pd.DataFrame:
+        """Return url for the given graph.
+
+        Parameters
+        -----------------------
+        graph_data,
+            Data of the graph to retrieve.
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Dataframe with download metadata.
+        """
+        report = super().download(graph_data, graph_name)
+        self._parse.get(self._data[graph_name]["callback"])(
+            **self._data[graph_name]["callback_arguments"],
+            node_path=self.get_node_list_path(graph_name, report),
+            edge_path=self.get_edge_list_path(graph_name, report),
+        )
+        return report
