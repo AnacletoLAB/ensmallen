@@ -251,7 +251,7 @@ class LINQSGraphRepository(GraphRepository):
                     self.repository_package_name,
                     value
                 )
-                for parameter, value in self._data[graph_name]["callback_arguments"]
+                for parameter, value in self._data[graph_name]["callback_arguments"].items()
             },
             node_list_path=self.get_node_list_path(graph_name, report),
             edge_list_path=self.get_edge_list_path(graph_name, report),
