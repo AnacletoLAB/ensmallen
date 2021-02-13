@@ -135,8 +135,9 @@ def parse_linqs_incidence_matrix(
             "node_type": "Word"
         }),
         pd.DataFrame({
-            "ids": list(
-                set(cities[["subject", "object"]].values.flatten()) - set(content.index)
+            "id": list(
+                set(cities[["subject", "object"]].values.flatten()
+                    ) - set(content.index)
             ),
             "node_type": "Unknown"
         })
