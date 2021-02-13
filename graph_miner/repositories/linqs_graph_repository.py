@@ -140,6 +140,7 @@ class LINQSGraphRepository(GraphRepository):
             "edge_types_column": "edge_type",
             "node_types_column": "node_type",
             "nodes_column": "id",
+            "skip_weights_if_unavailable": True
         }
 
     def get_graph_list(self) -> List:
