@@ -14,7 +14,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-13 09:45:27.015162
+Datetime: 2021-02-13 10:41:49.820142
 
 The undirected graph CiteSeer has 7030 nodes with 8 different node types:
  the 5 most common are Word (nodes number 3703), DB (nodes number 701),
@@ -128,7 +128,7 @@ def CiteSeer(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-13 09:45:27.015162
+	Datetime: 2021-02-13 10:41:49.820142
 	
 	The undirected graph CiteSeer has 7030 nodes with 8 different node types:
 	 the 5 most common are Word (nodes number 3703), DB (nodes number 701),
