@@ -133,7 +133,13 @@ class LINQSGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            # TODO: extend!
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "weights_column": "weight",
+            "default_weight": 1,
+            "edge_types_column": "edge_type",
+            "node_types_column": "node_type",
+            "nodes_column": "id",
         }
 
     def get_graph_list(self) -> List:
@@ -202,7 +208,7 @@ class LINQSGraphRepository(GraphRepository):
         """
         return os.path.join(
             self.repository_package_name,
-            self.build_stored_graph_name(graph_name),
+            self.build_stored_graph_name(graph_name).lower(),
             "nodes.tsv"
         )
 
@@ -226,7 +232,7 @@ class LINQSGraphRepository(GraphRepository):
         """
         return os.path.join(
             self.repository_package_name,
-            self.build_stored_graph_name(graph_name),
+            self.build_stored_graph_name(graph_name).lower(),
             "edges.tsv"
         )
 
