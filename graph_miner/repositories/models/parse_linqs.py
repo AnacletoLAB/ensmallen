@@ -66,7 +66,7 @@ def parse_linqs_pubmed_incidence_matrix(
 
         src, label = vals[0]
         # Writing node and its node type to the node list.
-        node_list_file.write(",".join((src, labels[int(label)])) + "\n")
+        node_list_file.write(",".join((src, labels[int(label)-1])) + "\n")
 
         # Writing the edges between papers and words
         for (word, weight) in re.findall(word_regex, line):
