@@ -867,6 +867,10 @@ class GraphRepository:
         """Build graph retrieval methods."""
         graph_method_names = []
         graph_file_names = []
+        target_directory_path = os.path.join(
+            "bindings/python/ensmallen_graph/datasets",
+            self.repository_package_name,
+        )
         for graph_report_path in tqdm(
             glob("{}/*.json.gz".format(self.build_graph_reports_directory())),
             desc="Building graph retrieval methods for {}".format(self.name),
@@ -880,10 +884,6 @@ class GraphRepository:
                     graph_data["datetime"]
                 ),
                 references=graph_data["citations"],
-            )
-            target_directory_path = os.path.join(
-                "bindings/python/ensmallen_graph/datasets",
-                self.repository_package_name,
             )
             target_path = os.path.join(
                 target_directory_path,

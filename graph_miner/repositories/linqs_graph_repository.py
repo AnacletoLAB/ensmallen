@@ -3,6 +3,7 @@ from typing import List, Dict
 import os
 import compress_json
 import pandas as pd
+import shutil
 from .graph_repository import GraphRepository
 from .models.parse_linqs import (
     parse_linqs_incidence_matrix,
@@ -266,3 +267,16 @@ class LINQSGraphRepository(GraphRepository):
             edge_list_path=self.get_edge_list_path(graph_name, report),
         )
         return report
+
+    def build_all(self):
+        """Build graph retrieval methods."""
+        super().build_all()
+        shutil.copyfile(
+            "{}/models/parse_linqs.py".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            os.path.join(
+                "bindings/python/ensmallen_graph/datasets",
+                self.repository_package_name,
+                "parse_linqs.py"
+            )
+        )
