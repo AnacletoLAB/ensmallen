@@ -33,6 +33,8 @@ def parse_linqs_pubmed_incidence_matrix(
     with open(cites_path) as f:
         cites = f.read()
 
+    separator = "\t"
+
     edge_list_file = open(edge_list_path, "w")
     node_list_file = open(node_list_path, "w")
 
@@ -48,16 +50,16 @@ def parse_linqs_pubmed_incidence_matrix(
     ]
 
     edge_list_file.write(
-        ",".join(("subject", "object", "edge_type", "weight")) + "\n"
+        separator.join(("subject", "object", "edge_type", "weight")) + "\n"
     )
-    node_list_file.write(",".join(("id", "node_type")) + "\n")
+    node_list_file.write(separator.join(("id", "node_type")) + "\n")
 
     for line in cites.split("\n")[2:-1]:
         edge = re.findall(edge_regex, line)
         if len(edge) != 2:
             continue
         # Writing the edges between papers and papers
-        edge_list_file.write(",".join((*edge, "Paper2Paper", "")) + "\n")
+        edge_list_file.write(separator.join((*edge, "Paper2Paper", "")) + "\n")
 
     for line in content.split("\n")[2:]:
         vals = re.findall(node_regex, line)
@@ -66,18 +68,18 @@ def parse_linqs_pubmed_incidence_matrix(
 
         src, label = vals[0]
         # Writing node and its node type to the node list.
-        node_list_file.write(",".join((src, labels[int(label)-1])) + "\n")
+        node_list_file.write(separator.join((src, labels[int(label)-1])) + "\n")
 
         # Writing the edges between papers and words
         for (word, weight) in re.findall(word_regex, line):
             edge_list_file.write(
-                ",".join((src, word, "Paper2Word", weight)) + "\n")
+                separator.join((src, word, "Paper2Word", weight)) + "\n")
             # Add word to the unique words set
             unique_words.add(word)
 
     # Writing the nodes representing words
     for word in unique_words:
-        node_list_file.write(",".join((word, "Word")) + "\n")
+        node_list_file.write(separator.join((word, "Word")) + "\n")
 
     edge_list_file.close()
     node_list_file.close()
