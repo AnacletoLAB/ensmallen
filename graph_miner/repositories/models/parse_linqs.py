@@ -112,13 +112,15 @@ def parse_linqs_incidence_matrix(
         content_path,
         sep="\t",
         header=None,
-        index_col=0
+        index_col=0,
+        dtype=str
     )
     # Loading the citations file (edge list)
     cities = pd.read_csv(
         cites_path,
         sep="\t",
-        header=None
+        header=None,
+        dtype=str
     )
     # Standardizing dataframe
     cities.columns = ["subject", "object"]
