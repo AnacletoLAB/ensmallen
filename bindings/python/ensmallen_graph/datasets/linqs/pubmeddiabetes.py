@@ -185,6 +185,6 @@ def PubMedDiabetes(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[parse_linqs_pubmed_incidence_matrix]
+        callbacks=[parse_linqs_pubmed_incidence_matrix],
         dataset="linqs"
     )()

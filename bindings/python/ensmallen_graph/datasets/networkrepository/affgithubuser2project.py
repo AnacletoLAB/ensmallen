@@ -189,6 +189,6 @@ def AffGithubUser2project(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[]
+        callbacks=[],
         dataset="networkrepository"
     )()

@@ -173,6 +173,6 @@ def Sw1000060d3L5(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[]
+        callbacks=[],
         dataset="networkrepository"
     )()

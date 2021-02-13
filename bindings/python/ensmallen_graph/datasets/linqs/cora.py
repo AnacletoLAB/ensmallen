@@ -211,6 +211,6 @@ def Cora(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[parse_linqs_incidence_matrix]
+        callbacks=[parse_linqs_incidence_matrix],
         dataset="linqs"
     )()

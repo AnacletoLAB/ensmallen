@@ -169,6 +169,6 @@ def P2pGnutella04(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[]
+        callbacks=[],
         dataset="networkrepository"
     )()

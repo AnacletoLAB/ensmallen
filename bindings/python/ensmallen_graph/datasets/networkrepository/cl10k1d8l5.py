@@ -177,6 +177,6 @@ def Cl10k1d8L5(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[]
+        callbacks=[],
         dataset="networkrepository"
     )()

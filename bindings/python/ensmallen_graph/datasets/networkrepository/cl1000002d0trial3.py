@@ -173,6 +173,6 @@ def Cl1000002d0Trial3(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[]
+        callbacks=[],
         dataset="networkrepository"
     )()
