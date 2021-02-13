@@ -207,33 +207,6 @@ def CiteSeer(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[p
-a
-r
-s
-e
-_
-l
-i
-n
-q
-s
-_
-i
-n
-c
-i
-d
-e
-n
-c
-e
-_
-m
-a
-t
-r
-i
-x]
+        callbacks=[parse_linqs_incidence_matrix]
         dataset="linqs"
     )()
