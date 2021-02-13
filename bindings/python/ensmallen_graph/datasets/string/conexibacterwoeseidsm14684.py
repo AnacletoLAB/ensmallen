@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph Conexibacter wo
 
 The graph is automatically retrieved from the STRING repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -72,6 +74,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -84,6 +87,8 @@ def ConexibacterWoeseiDsm14684(
     """Return new instance of the Conexibacter woesei DSM14684 graph.
 
     The graph is automatically retrieved from the STRING repository. 
+
+	
 
     Parameters
     -------------------
@@ -174,5 +179,6 @@ def ConexibacterWoeseiDsm14684(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="string"
     )()

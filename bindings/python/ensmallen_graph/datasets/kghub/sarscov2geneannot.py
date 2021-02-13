@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph SARSCOV2GeneAnn
 
 The graph is automatically retrieved from the KGHub repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -75,6 +77,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -87,6 +90,8 @@ def SARSCOV2GeneAnnot(
     """Return new instance of the SARSCOV2GeneAnnot graph.
 
     The graph is automatically retrieved from the KGHub repository. 
+
+	
 
     Parameters
     -------------------
@@ -180,5 +185,6 @@ def SARSCOV2GeneAnnot(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="kghub"
     )()

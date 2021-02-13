@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph Rhizobium mongo
 
 The graph is automatically retrieved from the STRING repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -73,6 +75,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -85,6 +88,8 @@ def RhizobiumMongolense(
     """Return new instance of the Rhizobium mongolense graph.
 
     The graph is automatically retrieved from the STRING repository. 
+
+	
 
     Parameters
     -------------------
@@ -176,5 +181,6 @@ def RhizobiumMongolense(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="string"
     )()

@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph web-webbase-200
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -85,6 +87,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -97,6 +100,8 @@ def WebWebbase2001(
     """Return new instance of the web-webbase-2001 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository. 
+
+	
 
     Parameters
     -------------------
@@ -200,5 +205,6 @@ def WebWebbase2001(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="networkrepository"
     )()

@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph KGCOVID19.
 
 The graph is automatically retrieved from the KGHub repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -79,6 +81,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -91,6 +94,8 @@ def KGCOVID19(
     """Return new instance of the KGCOVID19 graph.
 
     The graph is automatically retrieved from the KGHub repository. 
+
+	
 
     Parameters
     -------------------
@@ -188,5 +193,6 @@ def KGCOVID19(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="kghub"
     )()

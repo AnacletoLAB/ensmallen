@@ -3,6 +3,8 @@ This file offers the methods to automatically retrieve the graph tech-RL-caida.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
+
+
 Report
 ---------------------
 At the time of rendering these methods (please see datetime below), the graph
@@ -86,6 +88,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
@@ -98,6 +101,8 @@ def TechRlCaida(
     """Return new instance of the tech-RL-caida graph.
 
     The graph is automatically retrieved from the NetworkRepository repository. 
+
+	
 
     Parameters
     -------------------
@@ -202,5 +207,6 @@ def TechRlCaida(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
+        callbacks=[]
         dataset="networkrepository"
     )()
