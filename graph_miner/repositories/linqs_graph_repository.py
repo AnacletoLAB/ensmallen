@@ -189,7 +189,7 @@ class LINQSGraphRepository(GraphRepository):
         -----------------------
         callbacks.
         """
-        return "\n".join(self._data[graph_name]["callbacks"])
+        return "\n".join(self._data[graph_name]["callback"])
 
     def get_node_list_path(
         self,
