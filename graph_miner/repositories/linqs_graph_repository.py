@@ -247,7 +247,7 @@ class LINQSGraphRepository(GraphRepository):
         report = super().download(graph_data, graph_name)
         self._parse.get(self._data[graph_name]["callback"])(
             **self._data[graph_name]["callback_arguments"],
-            node_path=self.get_node_list_path(graph_name, report),
-            edge_path=self.get_edge_list_path(graph_name, report),
+            node_list_path=self.get_node_list_path(graph_name, report),
+            edge_list_path=self.get_edge_list_path(graph_name, report),
         )
         return report
