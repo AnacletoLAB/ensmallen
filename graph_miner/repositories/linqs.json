@@ -3,9 +3,7 @@
         "urls": [
             "https://linqs-data.soe.ucsc.edu/public/lbc/citeseer.tgz"
         ],
-        "callback": [
-            "parse_linqs_incidence_matrix"
-        ],
+        "callback": "parse_linqs_incidence_matrix",
         "callback_arguments": {
             "cites_path": "citeseer/citeseer.cites",
             "content_path": "citeseer/citeseer.content"
@@ -23,9 +21,7 @@
         "urls": [
             "https://linqs-data.soe.ucsc.edu/public/lbc/cora.tgz"
         ],
-        "callback": [
-            "parse_linqs_incidence_matrix"
-        ],
+        "callback": "parse_linqs_incidence_matrix",
         "callback_arguments": {
             "cites_path": "cora/cora.cites",
             "content_path": "cora/cora.content"
@@ -43,9 +39,7 @@
         "urls": [
             "https://linqs-data.soe.ucsc.edu/public/Pubmed-Diabetes.tgz"
         ],
-        "callback": [
-            "parse_linqs_pubmed_incidence_matrix"
-        ],
+        "callback": "parse_linqs_pubmed_incidence_matrix",
         "callback_arguments": {
             "cites_path": "Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
             "content_path": "Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab"
