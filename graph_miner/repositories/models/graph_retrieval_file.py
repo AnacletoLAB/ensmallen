@@ -53,6 +53,6 @@ def {graph_method_name}(
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[{callbacks}]
+        callbacks=[{callbacks}],
         dataset="{repository_package_name}"
     )()
