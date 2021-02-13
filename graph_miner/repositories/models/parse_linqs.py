@@ -134,6 +134,12 @@ def parse_linqs_incidence_matrix(
             "id": words,
             "node_type": "Word"
         }),
+        pd.DataFrame({
+            "ids": list(
+                set(cities[["subject", "object"]].values.flatten()) - set(content.index)
+            ),
+            "node_type": "Unknown"
+        })
     ]).reset_index(drop=True)
     # Create the edge list
     edge_list = pd.concat([
