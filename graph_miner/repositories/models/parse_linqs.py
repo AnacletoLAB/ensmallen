@@ -1,5 +1,6 @@
 """Methods to parse the incidence matrix from LINQS."""
 import re
+import os
 import pandas as pd
 import numpy as np
 
@@ -23,6 +24,10 @@ def parse_linqs_pubmed_incidence_matrix(
     node_list_path: str,
         Path where to store the node list.
     """
+    # Creating directories
+    os.makedirs(os.path.dirname(edge_list_path), exist_ok=True)
+    os.makedirs(os.path.dirname(node_list_path), exist_ok=True)
+    # Loading data
     with open(content_path) as f:
         content = f.read()
     with open(cites_path) as f:
@@ -97,6 +102,9 @@ def parse_linqs_incidence_matrix(
     node_list_path: str,
         Path where to store the node list.
     """
+    # Creating directories
+    os.makedirs(os.path.dirname(edge_list_path), exist_ok=True)
+    os.makedirs(os.path.dirname(node_list_path), exist_ok=True)
     # Loading the content file (incidence matrix)
     content = pd.read_csv(
         content_path,
