@@ -249,6 +249,7 @@ class LINQSGraphRepository(GraphRepository):
             **{
                 parameter: os.path.join(
                     self.repository_package_name,
+                    self.build_stored_graph_name(graph_name),
                     value
                 )
                 for parameter, value in self._data[graph_name]["callback_arguments"].items()
