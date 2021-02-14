@@ -82,14 +82,14 @@ class AutomaticallyRetrievedGraph:
         )
         for callback, arguments in zip(self._callbacks, self._callbacks_arguments):
             callback(**arguments)
-        return EnsmallenGraph.from_unsorted_csv(**dict(
+        return EnsmallenGraph.from_unsorted_csv(**{
             **{
                 key: os.path.join(self._cache_path, value)
                 if key.endswith("_path") else value
                 for key, value in self._graph["arguments"].items()
             },
-            directed=self._directed,
-            verbose=self._verbose > 0,
-            name=self._name,
+            "directed":self._directed,
+            "verbose":self._verbose > 0,
+            "name":self._name,
             **self._additional_graph_kwargs,
-        ))
+        })
