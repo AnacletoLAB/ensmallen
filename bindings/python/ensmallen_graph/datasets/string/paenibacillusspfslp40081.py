@@ -75,6 +75,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -83,7 +84,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def PaenibacillusSpFslp40081(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/string"
+    cache_path: str = "graphs/string",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Paenibacillus sp. FSLP40081 graph.
 
@@ -101,6 +103,8 @@ def PaenibacillusSpFslp40081(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -177,10 +181,10 @@ def PaenibacillusSpFslp40081(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "PaenibacillusSpFslp40081",
+        graph_name="PaenibacillusSpFslp40081",
+        dataset="string",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[],
-        dataset="string"
+        additional_graph_kwargs=additional_graph_kwargs
     )()

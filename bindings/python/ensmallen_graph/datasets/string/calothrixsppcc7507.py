@@ -75,6 +75,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -83,7 +84,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def CalothrixSpPcc7507(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/string"
+    cache_path: str = "graphs/string",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Calothrix sp. PCC7507 graph.
 
@@ -101,6 +103,8 @@ def CalothrixSpPcc7507(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -177,10 +181,10 @@ def CalothrixSpPcc7507(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "CalothrixSpPcc7507",
+        graph_name="CalothrixSpPcc7507",
+        dataset="string",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[],
-        dataset="string"
+        additional_graph_kwargs=additional_graph_kwargs
     )()

@@ -76,6 +76,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -84,7 +85,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def CTDDDA(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/yue"
+    cache_path: str = "graphs/yue",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the CTDDDA graph.
 
@@ -102,6 +104,8 @@ def CTDDDA(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -179,10 +183,10 @@ def CTDDDA(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "CTDDDA",
+        graph_name="CTDDDA",
+        dataset="yue",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[],
-        dataset="yue"
+        additional_graph_kwargs=additional_graph_kwargs
     )()

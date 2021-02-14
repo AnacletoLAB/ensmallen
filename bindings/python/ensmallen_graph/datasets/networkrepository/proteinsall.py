@@ -73,6 +73,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -81,7 +82,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def ProteinsAll(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/networkrepository"
+    cache_path: str = "graphs/networkrepository",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the proteins-all graph.
 
@@ -99,6 +101,8 @@ def ProteinsAll(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -173,10 +177,10 @@ def ProteinsAll(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "ProteinsAll",
+        graph_name="ProteinsAll",
+        dataset="networkrepository",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[],
-        dataset="networkrepository"
+        additional_graph_kwargs=additional_graph_kwargs
     )()
