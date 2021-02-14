@@ -42,7 +42,11 @@ impl PyObjectProtocol for EnsmallenGraph {
 #[pymethods]
 impl EnsmallenGraph {
     fn _repr_html_(&self) -> PyResult<String> {
-        Ok(format!(r#"<p style="text-align: justify; text-justify: inter-word;">{}</p>"#, self.__repr__()?))
+        Ok(format!(
+            r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
+            self.get_name(),
+            self.__repr__()?
+        ))
     }
 }
 
