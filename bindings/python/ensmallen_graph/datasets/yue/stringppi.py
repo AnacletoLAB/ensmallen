@@ -10,17 +10,17 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-12 11:23:16.885093
+Datetime: 2021-02-14 15:14:20.629282
 
-The undirected graph StringPPI has 15132 nodes, of which 1 are singletons,
-and 359776 unweighted edges, of which none are self-loops. The graph is
-sparse as it has a density of 0.00314 and has 88 connected components,
-where the component with most nodes has 14932 nodes and the component with
-the least nodes has a single node. The graph median node degree is 14,
-the mean node degree is 47.55, and the node degree mode is 1. The top 5
-most central nodes are 9606.ENSP00000269299 (degree 1249), 9606.ENSP00000326003
-(degree 1224), 9606.ENSP00000326604 (degree 1018), 9606.ENSP00000359114
-(degree 1014) and 9606.ENSP00000364782 (degree 906).
+The undirected graph StringPPI has 15131 nodes and 359776 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00314 and has 87 connected components, where the component with most
+nodes has 14932 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 14, the mean node degree is 47.55, and
+the node degree mode is 1. The top 5 most central nodes are 9606.ENSP00000388107
+(degree 1249), 9606.ENSP00000272317 (degree 1224), 9606.ENSP00000344818
+(degree 1018), 9606.ENSP00000304697 (degree 1014) and 9606.ENSP00000367869
+(degree 906).
 
 
 References
@@ -115,17 +115,17 @@ def StringPPI(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-12 11:23:16.885093
+	Datetime: 2021-02-14 15:14:20.629282
 	
-	The undirected graph StringPPI has 15132 nodes, of which 1 are singletons,
-	and 359776 unweighted edges, of which none are self-loops. The graph is
-	sparse as it has a density of 0.00314 and has 88 connected components,
-	where the component with most nodes has 14932 nodes and the component with
-	the least nodes has a single node. The graph median node degree is 14,
-	the mean node degree is 47.55, and the node degree mode is 1. The top 5
-	most central nodes are 9606.ENSP00000269299 (degree 1249), 9606.ENSP00000326003
-	(degree 1224), 9606.ENSP00000326604 (degree 1018), 9606.ENSP00000359114
-	(degree 1014) and 9606.ENSP00000364782 (degree 906).
+	The undirected graph StringPPI has 15131 nodes and 359776 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00314 and has 87 connected components, where the component with most
+	nodes has 14932 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 14, the mean node degree is 47.55, and
+	the node degree mode is 1. The top 5 most central nodes are 9606.ENSP00000388107
+	(degree 1249), 9606.ENSP00000272317 (degree 1224), 9606.ENSP00000344818
+	(degree 1018), 9606.ENSP00000304697 (degree 1014) and 9606.ENSP00000367869
+	(degree 906).
 	
 
 	References

@@ -10,18 +10,17 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-12 11:23:18.706314
+Datetime: 2021-02-14 15:14:22.541246
 
-The undirected graph CTDDDA has 12766 nodes with 3 different node types:
-chemical (nodes number 9580), disease (nodes number 3185) and type (nodes
-number 1), of which 1 are singletons, and 92813 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00114
-and has 21 connected components, where the component with most nodes has
-12724 nodes and the component with the least nodes has a single node. The
-graph median node degree is 3, the mean node degree is 14.54, and the node
-degree mode is 1. The top 5 most central nodes are D016055 (degree 1217),
-D005235 (degree 1098), D008271 (degree 838), D011248 (degree 831) and D008588
-(degree 705).
+The undirected graph CTDDDA has 12765 nodes with 2 different node types:
+chemical (nodes number 9580) and disease (nodes number 3185) and 92813
+unweighted edges, of which none are self-loops. The graph is sparse as
+it has a density of 0.00114 and has 20 connected components, where the
+component with most nodes has 12724 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 3, the mean node degree
+is 14.54, and the node degree mode is 1. The top 5 most central nodes are
+D056486 (degree 1217), D012640 (degree 1098), D006973 (degree 838), D009336
+(degree 831) and D007674 (degree 705).
 
 
 References
@@ -116,18 +115,17 @@ def CTDDDA(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-12 11:23:18.706314
+	Datetime: 2021-02-14 15:14:22.541246
 	
-	The undirected graph CTDDDA has 12766 nodes with 3 different node types:
-	chemical (nodes number 9580), disease (nodes number 3185) and type (nodes
-	number 1), of which 1 are singletons, and 92813 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00114
-	and has 21 connected components, where the component with most nodes has
-	12724 nodes and the component with the least nodes has a single node. The
-	graph median node degree is 3, the mean node degree is 14.54, and the node
-	degree mode is 1. The top 5 most central nodes are D016055 (degree 1217),
-	D005235 (degree 1098), D008271 (degree 838), D011248 (degree 831) and D008588
-	(degree 705).
+	The undirected graph CTDDDA has 12765 nodes with 2 different node types:
+	chemical (nodes number 9580) and disease (nodes number 3185) and 92813
+	unweighted edges, of which none are self-loops. The graph is sparse as
+	it has a density of 0.00114 and has 20 connected components, where the
+	component with most nodes has 12724 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 3, the mean node degree
+	is 14.54, and the node degree mode is 1. The top 5 most central nodes are
+	D056486 (degree 1217), D012640 (degree 1098), D006973 (degree 838), D009336
+	(degree 831) and D007674 (degree 705).
 	
 
 	References

@@ -10,18 +10,17 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-12 11:23:22.289475
+Datetime: 2021-02-14 15:14:25.254751
 
-The undirected graph NDFRTDDA has 13546 nodes with 3 different node types:
-drug (nodes number 12337), disease (nodes number 1208) and type (nodes
-number 1), of which 1 are singletons, and 56515 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00062
-and has 86 connected components, where the component with most nodes has
-13033 nodes and the component with the least nodes has a single node. The
-graph median node degree is 3, the mean node degree is 8.34, and the node
-degree mode is 1. The top 5 most central nodes are C0014544 (degree 845),
-C0003864 (degree 741), C0751861 (degree 653), C0458219 (degree 575) and
-C0036982 (degree 534).
+The undirected graph NDFRTDDA has 13545 nodes with 2 different node types:
+drug (nodes number 12337) and disease (nodes number 1208) and 56515 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00062 and has 85 connected components, where the component
+with most nodes has 13033 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 3, the mean node degree is
+8.34, and the node degree mode is 1. The top 5 most central nodes are C0030193
+(degree 845), C0004623 (degree 741), C0004096 (degree 653), C0038160 (degree
+575) and C0020538 (degree 534).
 
 
 References
@@ -116,18 +115,17 @@ def NDFRTDDA(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-12 11:23:22.289475
+	Datetime: 2021-02-14 15:14:25.254751
 	
-	The undirected graph NDFRTDDA has 13546 nodes with 3 different node types:
-	drug (nodes number 12337), disease (nodes number 1208) and type (nodes
-	number 1), of which 1 are singletons, and 56515 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00062
-	and has 86 connected components, where the component with most nodes has
-	13033 nodes and the component with the least nodes has a single node. The
-	graph median node degree is 3, the mean node degree is 8.34, and the node
-	degree mode is 1. The top 5 most central nodes are C0014544 (degree 845),
-	C0003864 (degree 741), C0751861 (degree 653), C0458219 (degree 575) and
-	C0036982 (degree 534).
+	The undirected graph NDFRTDDA has 13545 nodes with 2 different node types:
+	drug (nodes number 12337) and disease (nodes number 1208) and 56515 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00062 and has 85 connected components, where the component
+	with most nodes has 13033 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 3, the mean node degree is
+	8.34, and the node degree mode is 1. The top 5 most central nodes are C0030193
+	(degree 845), C0004623 (degree 741), C0004096 (degree 653), C0038160 (degree
+	575) and C0020538 (degree 534).
 	
 
 	References

@@ -10,16 +10,16 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-12 11:23:20.649483
+Datetime: 2021-02-14 15:14:23.513196
 
-The undirected graph DrugBankDDI has 2192 nodes, of which 1 are singletons,
-and 242027 unweighted edges, of which none are self-loops. The graph is
-quite dense as it has a density of 0.10079 and has 3 connected components,
-where the component with most nodes has 2189 nodes and the component with
-the least nodes has a single node. The graph median node degree is 155,
-the mean node degree is 220.83, and the node degree mode is 11. The top
-5 most central nodes are DB09228 (degree 1034), DB05540 (degree 1028),
-DB01257 (degree 992), DB06652 (degree 963) and DB03819 (degree 952).
+The undirected graph DrugBankDDI has 2191 nodes and 242027 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.10088 and has 2 connected components, where the component with most
+nodes has 2189 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 220.93, and
+the node degree mode is 11. The top 5 most central nodes are DB01174 (degree
+1034), DB00564 (degree 1028), DB00252 (degree 992), DB00176 (degree 963)
+and DB00794 (degree 952).
 
 
 References
@@ -114,16 +114,16 @@ def DrugBankDDI(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-12 11:23:20.649483
+	Datetime: 2021-02-14 15:14:23.513196
 	
-	The undirected graph DrugBankDDI has 2192 nodes, of which 1 are singletons,
-	and 242027 unweighted edges, of which none are self-loops. The graph is
-	quite dense as it has a density of 0.10079 and has 3 connected components,
-	where the component with most nodes has 2189 nodes and the component with
-	the least nodes has a single node. The graph median node degree is 155,
-	the mean node degree is 220.83, and the node degree mode is 11. The top
-	5 most central nodes are DB09228 (degree 1034), DB05540 (degree 1028),
-	DB01257 (degree 992), DB06652 (degree 963) and DB03819 (degree 952).
+	The undirected graph DrugBankDDI has 2191 nodes and 242027 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.10088 and has 2 connected components, where the component with most
+	nodes has 2189 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 220.93, and
+	the node degree mode is 11. The top 5 most central nodes are DB01174 (degree
+	1034), DB00564 (degree 1028), DB00252 (degree 992), DB00176 (degree 963)
+	and DB00794 (degree 952).
 	
 
 	References
