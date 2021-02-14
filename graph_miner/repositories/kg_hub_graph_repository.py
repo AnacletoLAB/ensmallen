@@ -167,20 +167,6 @@ class KGHubGraphRepository(GraphRepository):
         """
         return ""
 
-    def get_callbacks(self, graph_name: str) -> str:
-        """Return callbacks to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        callbacks.
-        """
-        return ""
-
     def get_node_list_path(
         self,
         graph_name: str,

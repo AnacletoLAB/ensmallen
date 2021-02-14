@@ -2,6 +2,7 @@
 from typing import List, Dict, Set
 import pandas as pd
 import os
+import json
 import compress_json
 import datetime
 import shutil
@@ -562,9 +563,7 @@ class GraphRepository:
         -----------------------
         Imports.
         """
-        raise NotImplementedError(
-            "The method get_imports must be implemented in child classes."
-        )
+        return ""
 
     def get_description(self, graph_name: str) -> str:
         """Return description to be added to model file.
@@ -578,9 +577,7 @@ class GraphRepository:
         -----------------------
         description.
         """
-        raise NotImplementedError(
-            "The method get_description must be implemented in child classes."
-        )
+        return ""
 
     def get_callbacks(self, graph_name: str) -> str:
         """Return callbacks to be added to model file.
@@ -596,6 +593,22 @@ class GraphRepository:
         """
         raise NotImplementedError(
             "The method get_callbacks must be implemented in child classes."
+        )
+
+    def get_callbacks_arguments(self, graph_name: str) -> List[Dict]:
+        """Return arguments for callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        arguments for callbacks.
+        """
+        raise NotImplementedError(
+            "The method get_callbacks_arguments must be implemented in child classes."
         )
 
     def check_nominal_download(
@@ -769,6 +782,34 @@ class GraphRepository:
         """
         return "\t" + "\n\t".join(text.split("\n"))
 
+    def format_callbacks_data(self, graph_name: str) -> str:
+        """Return formatted callbacks data.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        ---------------------
+        Formatted callbacks data.
+        """
+        try:
+            callbacks = self.get_callbacks(graph_name)
+            callbacks_data = self.get_callbacks_arguments(graph_name)
+            return "\n" + self.add_tabs("\n".join((
+                "callbacks={}".format(json.dumps(
+                    callbacks,
+                    indent=4
+                )),
+                "callbacks_arguments={}".format(json.dumps(
+                    callbacks_data,
+                    indent=4
+                )),
+            )))
+        except NotImplementedError:
+            return ""
+
     def format_graph_retrieval_file(
         self,
         graph_name: str,
@@ -802,7 +843,9 @@ class GraphRepository:
                 repository_name=self.get_formatted_repository_name(),
                 report=report,
                 imports=self.get_imports(graph_name),
-                callbacks=self.get_callbacks(graph_name),
+                callbacks_data=self.format_callbacks_data(
+                    graph_name,
+                ),
                 description=self.format_lines(
                     self.get_description(graph_name)
                 ),

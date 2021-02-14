@@ -178,7 +178,7 @@ class LINQSGraphRepository(GraphRepository):
         """
         return self._data[graph_name]["description"]
 
-    def get_callbacks(self, graph_name: str) -> str:
+    def get_callbacks(self, graph_name: str) -> List[str]:
         """Return callbacks to be added to model file.
 
         Parameters
@@ -190,7 +190,31 @@ class LINQSGraphRepository(GraphRepository):
         -----------------------
         callbacks.
         """
-        return self._data[graph_name]["callback"]
+        return [self._data[graph_name]["callback"]]
+
+    def get_callbacks_arguments(self, graph_name: str) -> List[Dict]:
+        """Return dictionary with list of arguments to pass to callbacks.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Arguments to pass to callbacks.
+        """
+        return dict(
+            **{
+                parameter: os.path.join(
+                    self.repository_package_name,
+                    value
+                )
+                for parameter, value in self._data[graph_name]["callback_arguments"].items()
+            },
+            node_list_path=self.get_node_list_path(graph_name, None),
+            edge_list_path=self.get_edge_list_path(graph_name, None),
+        )
 
     def get_node_list_path(
         self,
@@ -255,16 +279,8 @@ class LINQSGraphRepository(GraphRepository):
         Dataframe with download metadata.
         """
         report = super().download(graph_data, graph_name)
-        self._parse.get(self._data[graph_name]["callback"])(
-            **{
-                parameter: os.path.join(
-                    self.repository_package_name,
-                    value
-                )
-                for parameter, value in self._data[graph_name]["callback_arguments"].items()
-            },
-            node_list_path=self.get_node_list_path(graph_name, report),
-            edge_list_path=self.get_edge_list_path(graph_name, report),
+        self._parse.get(self._data[graph_name]["callback"][0])(
+            **self.get_callbacks_arguments(graph_name)[0]
         )
         return report
 
