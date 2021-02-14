@@ -216,10 +216,12 @@ def CiteSeer(
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
-		callbacks_arguments={
-		    "cites_path": "linqs/citeseer/citeseer/citeseer.cites",
-		    "content_path": "linqs/citeseer/citeseer/citeseer.content",
-		    "node_list_path": "linqs/citeseer/nodes.tsv",
-		    "edge_list_path": "linqs/citeseer/edges.tsv"
-		}
+		callbacks_arguments=[
+		    {
+		        "cites_path": "linqs/citeseer/citeseer/citeseer.cites",
+		        "content_path": "linqs/citeseer/citeseer/citeseer.content",
+		        "node_list_path": "linqs/citeseer/nodes.tsv",
+		        "edge_list_path": "linqs/citeseer/edges.tsv"
+		    }
+		]
     )()

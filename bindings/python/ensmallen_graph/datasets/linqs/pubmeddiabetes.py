@@ -194,10 +194,12 @@ def PubMedDiabetes(
 		callbacks=[
 			parse_linqs_pubmed_incidence_matrix
 		],
-		callbacks_arguments={
-		    "cites_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
-		    "content_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab",
-		    "node_list_path": "linqs/pubmeddiabetes/nodes.tsv",
-		    "edge_list_path": "linqs/pubmeddiabetes/edges.tsv"
-		}
+		callbacks_arguments=[
+		    {
+		        "cites_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
+		        "content_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab",
+		        "node_list_path": "linqs/pubmeddiabetes/nodes.tsv",
+		        "edge_list_path": "linqs/pubmeddiabetes/edges.tsv"
+		    }
+		]
     )()

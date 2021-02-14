@@ -220,10 +220,12 @@ def Cora(
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
-		callbacks_arguments={
-		    "cites_path": "linqs/cora/cora/cora.cites",
-		    "content_path": "linqs/cora/cora/cora.content",
-		    "node_list_path": "linqs/cora/nodes.tsv",
-		    "edge_list_path": "linqs/cora/edges.tsv"
-		}
+		callbacks_arguments=[
+		    {
+		        "cites_path": "linqs/cora/cora/cora.cites",
+		        "content_path": "linqs/cora/cora/cora.content",
+		        "node_list_path": "linqs/cora/nodes.tsv",
+		        "edge_list_path": "linqs/cora/edges.tsv"
+		    }
+		]
     )()
