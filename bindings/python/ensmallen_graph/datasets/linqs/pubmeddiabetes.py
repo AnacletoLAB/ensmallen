@@ -192,7 +192,7 @@ def PubMedDiabetes(
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs,
 		callbacks=[
-		    "parse_linqs_pubmed_incidence_matrix"
+		parse_linqs_pubmed_incidence_matrix
 		],
 		callbacks_arguments={
 		    "cites_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",

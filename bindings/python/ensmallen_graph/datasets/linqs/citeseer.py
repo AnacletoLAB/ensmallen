@@ -214,7 +214,7 @@ def CiteSeer(
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs,
 		callbacks=[
-		    "parse_linqs_incidence_matrix"
+		parse_linqs_incidence_matrix
 		],
 		callbacks_arguments={
 		    "cites_path": "linqs/citeseer/citeseer/citeseer.cites",
