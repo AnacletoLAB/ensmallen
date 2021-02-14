@@ -798,9 +798,9 @@ class GraphRepository:
             callbacks = self.get_callbacks(graph_name)
             callbacks_data = self.get_callbacks_arguments(graph_name)
             return ",\n" + self.add_tabs(self.add_tabs("\n".join((
-                "callbacks=[\n{}\n],".format("\n".join(
+                "callbacks=[\n{}\n],".format(self.add_tabs("\n".join(
                     callbacks
-                )),
+                ))),
                 "callbacks_arguments={}".format(json.dumps(
                     callbacks_data,
                     indent=4
