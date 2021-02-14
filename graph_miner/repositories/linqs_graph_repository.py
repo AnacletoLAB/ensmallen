@@ -204,7 +204,7 @@ class LINQSGraphRepository(GraphRepository):
         -----------------------
         Arguments to pass to callbacks.
         """
-        return dict(
+        return [dict(
             **{
                 parameter: os.path.join(
                     self.repository_package_name,
@@ -214,7 +214,7 @@ class LINQSGraphRepository(GraphRepository):
             },
             node_list_path=self.get_node_list_path(graph_name, None),
             edge_list_path=self.get_edge_list_path(graph_name, None),
-        )
+        )]
 
     def get_node_list_path(
         self,
