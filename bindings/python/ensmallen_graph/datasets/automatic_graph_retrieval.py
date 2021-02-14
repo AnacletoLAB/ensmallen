@@ -88,8 +88,8 @@ class AutomaticallyRetrievedGraph:
                 if key.endswith("_path") else value
                 for key, value in self._graph["arguments"].items()
             },
-            **self._additional_graph_kwargs,
             directed=self._directed,
             verbose=self._verbose > 0,
-            name=self._name
+            name=self._name,
+            **self._additional_graph_kwargs,
         )
