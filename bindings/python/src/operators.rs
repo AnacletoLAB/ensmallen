@@ -44,7 +44,7 @@ impl EnsmallenGraph {
     fn _repr_html_(&self) -> PyResult<String> {
         Ok(format!(
             r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
-            self.get_name(),
+            self.graph.get_name(),
             self.__repr__()?
         ))
     }
