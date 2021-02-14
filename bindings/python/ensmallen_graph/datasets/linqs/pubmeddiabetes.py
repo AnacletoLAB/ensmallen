@@ -14,7 +14,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-13 10:02:43.351934
+Datetime: 2021-02-13 10:42:02.115490
 
 The undirected graph PubMedDiabetes has 20217 nodes with 4 different node
 types: Diabetes Mellitus Type 1 (nodes number 7875), Diabetes Mellitus
@@ -117,7 +117,7 @@ def PubMedDiabetes(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-13 10:02:43.351934
+	Datetime: 2021-02-13 10:42:02.115490
 	
 	The undirected graph PubMedDiabetes has 20217 nodes with 4 different node
 	types: Diabetes Mellitus Type 1 (nodes number 7875), Diabetes Mellitus
