@@ -88,6 +88,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 from .parse_linqs import parse_linqs_incidence_matrix
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -96,7 +97,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def CiteSeer(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/linqs"
+    cache_path: str = "graphs/linqs",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the CiteSeer graph.
 
@@ -118,6 +120,8 @@ def CiteSeer(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -203,10 +207,19 @@ def CiteSeer(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "CiteSeer",
+        graph_name="CiteSeer",
+        dataset="linqs",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[parse_linqs_incidence_matrix],
-        dataset="linqs"
+        additional_graph_kwargs=additional_graph_kwargs
+	callbacks=[
+	    "parse_linqs_incidence_matrix"
+	]
+	callbacks_arguments={
+	    "cites_path": "linqs/citeseer/citeseer/citeseer.cites",
+	    "content_path": "linqs/citeseer/citeseer/citeseer.content",
+	    "node_list_path": "linqs/citeseer/nodes.tsv",
+	    "edge_list_path": "linqs/citeseer/edges.tsv"
+	}
     )()

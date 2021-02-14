@@ -77,6 +77,7 @@ The usage of this graph is relatively straightforward:
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
 """
+from typing import Dict
 from .parse_linqs import parse_linqs_pubmed_incidence_matrix
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
@@ -85,7 +86,8 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 def PubMedDiabetes(
     directed: bool = False,
     verbose: int = 2,
-    cache_path: str = "graphs/linqs"
+    cache_path: str = "graphs/linqs",
+    **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the PubMedDiabetes graph.
 
@@ -107,6 +109,8 @@ def PubMedDiabetes(
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    additional_graph_kwargs: Dict,
+        Additional graph kwargs.
 
     Returns
     -----------------------
@@ -181,10 +185,19 @@ def PubMedDiabetes(
 	    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
-        "PubMedDiabetes",
+        graph_name="PubMedDiabetes",
+        dataset="linqs",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
-        callbacks=[parse_linqs_pubmed_incidence_matrix],
-        dataset="linqs"
+        additional_graph_kwargs=additional_graph_kwargs
+	callbacks=[
+	    "parse_linqs_pubmed_incidence_matrix"
+	]
+	callbacks_arguments={
+	    "cites_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
+	    "content_path": "linqs/Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab",
+	    "node_list_path": "linqs/pubmeddiabetes/nodes.tsv",
+	    "edge_list_path": "linqs/pubmeddiabetes/edges.tsv"
+	}
     )()
