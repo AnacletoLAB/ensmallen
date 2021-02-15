@@ -1,5 +1,6 @@
 use super::*;
 use graph::{WeightT, NodeT};
+use numpy::{PyArray, PyArray1};
 
 #[pymethods]
 impl EnsmallenGraph {
