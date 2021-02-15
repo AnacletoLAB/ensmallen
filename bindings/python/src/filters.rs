@@ -75,7 +75,7 @@ impl EnsmallenGraph {
         edge_types: Option<Vec<String>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
-    ) -> PyResult<EnsmallenGraph> {
+    ) -> PyResult<PyWords> {
         let neighbours = pyex!(self
             .graph
             .get_filtered_neighbours_range(
