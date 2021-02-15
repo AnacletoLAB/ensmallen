@@ -18,6 +18,7 @@ mod trees;
 mod connected_components;
 mod tarjan;
 mod thread_safe;
+mod hash;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;
