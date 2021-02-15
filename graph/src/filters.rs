@@ -76,11 +76,56 @@ impl Graph {
     }
 
     /// Return filtered iterator over NodeT of destinations of the given node src.
-    pub fn get_filtered_source_destinations_range(
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - The source node.
+    /// * node_names: Option<Vec<String>> - The node names to keep.
+    /// * node_types: Option<Vec<String>> - The node types to keep.
+    /// * edge_types: Option<Vec<String>> - The edge types to keep.
+    /// * min_weight: Option<WeightT> - Minimum weight to use to filter edges.
+    /// * max_weight: Option<WeightT> - Maximum weight to use to filter edges.
+    /// * verbose: bool - Wether to show the loading bar.
+    ///
+    pub fn get_filtered_neighbours_range(
         &self,
-        src: NodeT
+        src: NodeT,
+        node_names: Option<Vec<String>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
+        min_weight: Option<WeightT>,
+        max_weight: Option<WeightT>,
     ) -> impl Iterator<Item = NodeT> + '_ {
+        let node_ids = self.get_filter_bitmap(node_names, node_types)?;
+        let edge_types_ids = match edge_types {
+            Some(ets) => Some(self.translate_edge_types(ets)?),
+            None => None,
+        };
         self.get_unchecked_destinations_range(src)
-            .map(move |edge_id| self.get_destination(edge_id))
+            .filter_map(move |edge_id| {
+                if let Some(ets) = &edge_types_ids {
+                    if !ets.contains(self.get_unchecked_edge_type(edge_id)) {
+                        return None;
+                    }
+                }
+                let weight = self.get_unchecked_edge_weight(edge_id);
+                if let (Some(_min), Some(w)) = (min_weight, weight) {
+                    if _min > w {
+                        return None;
+                    }
+                }
+                if let (Some(_max), Some(w)) = (max_weight, weight) {
+                    if w >= _max {
+                        return None;
+                    }
+                }
+                let dst = self.get_destination(edge_id);
+                if let Some(nis) = &node_ids {
+                    if !nis.contains(src) || !nis.contains(dst) {
+                        return None;
+                    }
+                }
+                dst
+            })
     }
 }

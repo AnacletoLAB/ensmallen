@@ -66,8 +66,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -114,8 +114,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -167,8 +167,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -194,7 +194,7 @@ impl Graph {
             .into_par_iter()
             .map(|node| {
                 if !self.is_node_trap(node) {
-                    self.get_source_destinations_range(node)
+                    self.get_neighbours_range(node)
                         .map(|dst| self.is_node_trap(dst) as usize as f64)
                         .sum::<f64>()
                         / self.get_node_degree(node) as f64

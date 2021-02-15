@@ -88,7 +88,7 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.get_source_destinations_range(*node_id)
+                            self.get_neighbours_range(*node_id)
                                 .collect::<Vec<NodeT>>(),
                         )
                     })

@@ -604,7 +604,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.get_source_destinations_range(src) {
+                for dst in self.get_neighbours_range(src) {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
