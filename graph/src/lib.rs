@@ -66,6 +66,7 @@ mod trees;
 mod types;
 mod walks;
 mod walks_parameters;
+mod hash;
 
 pub mod test_utilities;
 
