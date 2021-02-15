@@ -155,6 +155,8 @@ class YueGraphRepository(GraphRepository):
         -----------------------
         The path from where to load the node files.
         """
+        if "node_path" not in self._data[graph_name]["arguments"]:
+            return None
         return os.path.join(
             self.repository_package_name,
             self._data[graph_name]["arguments"]["node_path"]
