@@ -78,7 +78,7 @@
             "edge_path": "Mashup_PPI.edgelist",
             "sources_column_number": 0,
             "destinations_column_number": 1,
-            "weights_column": 2,
+            "weights_column_number": 2,
             "numeric_edge_node_ids": true
         }
     },
