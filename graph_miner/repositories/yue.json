@@ -78,8 +78,7 @@
             "edge_path": "Mashup_PPI.edgelist",
             "sources_column_number": 0,
             "destinations_column_number": 1,
-            "weights_column_number": 2,
-            "numeric_edge_node_ids": true
+            "weights_column_number": 2
         }
     },
     "node2vecPPI": {
@@ -90,8 +89,7 @@
         "arguments": {
             "edge_path": "node2vec_PPI.edgelist",
             "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "numeric_edge_node_ids": true
+            "destinations_column_number": 1
         }
     },
     "ClinTermCOOC": {
@@ -102,8 +100,7 @@
         "arguments": {
             "edge_path": "Clin_Term_COOC.edgelist",
             "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "numeric_edge_node_ids": true
+            "destinations_column_number": 1
         }
     }
 }
