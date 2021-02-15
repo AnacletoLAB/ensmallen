@@ -83,6 +83,6 @@ impl EnsmallenGraph {
             ))?
             .collect::<Vec<NodeT>>();
         let gil = pyo3::Python::acquire_gil();
-        to_nparray_1d!(gil, neighbours, NodeT)
+        Ok(to_nparray_1d!(gil, neighbours, NodeT))
     }
 }
