@@ -138,7 +138,7 @@ impl Graph {
                         if let Some(dnts) = &deny_node_types_set {
                             // We check that the current node type name is NOT within the node type set.
                             if dnts.contains(&src_node_type_name)
-                                && dnts.contains(&dst_node_type_name)
+                                || dnts.contains(&dst_node_type_name)
                             {
                                 return None;
                             }

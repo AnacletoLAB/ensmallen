@@ -74,4 +74,13 @@ impl Graph {
             self.has_weights(),
         )
     }
+
+    /// Return filtered iterator over NodeT of destinations of the given node src.
+    pub fn get_filtered_source_destinations_range(
+        &self,
+        src: NodeT
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_unchecked_destinations_range(src)
+            .map(move |edge_id| self.get_destination(edge_id))
+    }
 }
