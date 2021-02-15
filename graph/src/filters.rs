@@ -101,7 +101,7 @@ impl Graph {
             Some(ets) => Some(self.translate_edge_types(ets)?),
             None => None,
         };
-        self.get_unchecked_destinations_range(src)
+        Ok(self.get_unchecked_destinations_range(src)
             .filter_map(move |edge_id| {
                 if let Some(ets) = &edge_types_ids {
                     if !ets.contains(self.get_unchecked_edge_type(edge_id)) {
@@ -126,6 +126,6 @@ impl Graph {
                     }
                 }
                 dst
-            })
+            }))
     }
 }
