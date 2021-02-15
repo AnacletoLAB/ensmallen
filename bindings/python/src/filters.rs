@@ -75,11 +75,11 @@ impl EnsmallenGraph {
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
     ) -> PyResult<EnsmallenGraph> {
-        let neighbours = self
+        let neighbours = pyex!(self
             .graph
             .get_filtered_neighbours_range(
                 src, nodes, node_types, edge_types, min_weight, max_weight,
-            )
+            ))?
             .collect::<Vec<NodeT>>();
         let gil = pyo3::Python::acquire_gil();
         to_nparray_1d!(gil, neighbours, NodeT)

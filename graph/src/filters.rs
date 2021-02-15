@@ -95,7 +95,7 @@ impl Graph {
         edge_types: Option<Vec<String>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
-    ) -> impl Iterator<Item = NodeT> + '_ {
+    ) -> Result<impl Iterator<Item = NodeT> + '_, String> {
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
         let edge_types_ids = match edge_types {
             Some(ets) => Some(self.translate_edge_types(ets)?),
