@@ -76,7 +76,6 @@
         ],
         "arguments": {
             "edge_path": "Mashup_PPI.edgelist",
-            "edge_separator": " ",
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "weights_column": 2,
@@ -90,7 +89,6 @@
         ],
         "arguments": {
             "edge_path": "node2vec_PPI.edgelist",
-            "edge_separator": " ",
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "numeric_edge_node_ids": true
@@ -103,7 +101,6 @@
         ],
         "arguments": {
             "edge_path": "Clin_Term_COOC.edgelist",
-            "edge_separator": " ",
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "numeric_edge_node_ids": true
