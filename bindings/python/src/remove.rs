@@ -68,7 +68,7 @@ impl EnsmallenGraph {
                 "singletons",
                 "selfloops",
                 "verbose"
-            ],
+            ]),
         ))?;
 
         Ok(EnsmallenGraph {
@@ -142,7 +142,7 @@ impl EnsmallenGraph {
                 "minimum_component_size",
                 "top_k_components",
                 "verbose"
-            ]
+            ])
         ))?;
 
         Ok(EnsmallenGraph {
