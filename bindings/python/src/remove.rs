@@ -53,7 +53,7 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            &[
+            [
                 "allow_nodes_set",
                 "deny_nodes_set",
                 "allow_node_types_set",
@@ -135,7 +135,7 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            &[
+            [
                 "node_names",
                 "node_types",
                 "edge_types",
