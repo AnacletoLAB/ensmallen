@@ -34,6 +34,7 @@ impl Graph {
     /// * `node_types`: bool - Wether to remove the node types.
     /// * `edge_types`: bool - Wether to remove the edge types.
     /// * `singletons`: bool - Wether to remove the singleton nodes.
+    /// * `selfloops`: bool - Wether to remove edges with self-loops.
     /// * `verbose`: bool - Wether to show a loading bar while building the graph.
     ///
     pub fn remove(
@@ -50,6 +51,7 @@ impl Graph {
         node_types: bool,
         edge_types: bool,
         singletons: bool,
+        selfloops: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         let pb_edges = get_loading_bar(
@@ -81,6 +83,10 @@ impl Graph {
                         if !aes.contains(&edge_id) {
                             return None;
                         }
+                    }
+                    // If selfloops need to be filtered out.
+                    if selfloops && src_name == dst_name {
+                        return None;
                     }
                     // If a deny edge set was provided
                     if let Some(des) = &deny_edge_set {
@@ -161,8 +167,15 @@ impl Graph {
             Some(
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
-                    .filter_map(|(_, node_name, node_type)| {
+                    .filter_map(|(node_id, node_name, node_type)| {
                         if singletons && self.is_singleton_string(&node_name).unwrap() {
+                            return None;
+                        }
+                        // If singletons and selfloops need to be removed.
+                        // We need to check all the destinations of the node if they are equal
+                        // with the source node, as in multigraphs there may be multiple selfloops of different
+                        // node types.
+                        if singletons && selfloops && self.get_neighbours_range(node_id).all(|dst| dst == node_id) {
                             return None;
                         }
                         if let Some(ans) = &allow_nodes_set {

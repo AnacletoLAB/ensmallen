@@ -218,21 +218,26 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         // let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
         // assert_eq!(has_singletons, graph.has_singletons());
-        
+
         let (_components_number, smallest, biggest) = graph.connected_components_number(false);
-        assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
-            
         assert!(
-            ! (
-                smallest == 1
-                &&
-                (!graph.has_singletons())
-                &&
-                (!graph.has_selfloops())
-            ),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
-            graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>()
-        );    
+            biggest >= smallest,
+            "smallest: {} biggest: {}",
+            smallest,
+            biggest
+        );
+
+        assert!(
+            !(smallest == 1 && (!graph.has_singletons()) && (!graph.has_selfloops())),
+            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}",
+            graph.has_singletons(),
+            graph.has_selfloops(),
+            smallest,
+            biggest,
+            graph
+                .get_unique_edges_iter(false)
+                .collect::<Vec<(u32, u32)>>()
+        );
     }
 
     // Testing principal random walk algorithms
@@ -403,7 +408,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         )?;
         assert_eq!(
             test.remove(
-                None, None, None, None, None, None, None, None, false, false, false, true, verbose
+                None, None, None, None, None, None, None, None, false, false, false, false, true,
+                verbose
             )?
             .connected_components_number(verbose)
             .0,
@@ -422,8 +428,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             )?;
             assert_eq!(
                 test.remove(
-                    None, None, None, None, None, None, None, None, false, false, false, true,
-                    verbose
+                    None, None, None, None, None, None, None, None, false, false, false, false,
+                    true, verbose
                 )?
                 .connected_components_number(verbose)
                 .0,
@@ -444,7 +450,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(
                 test.remove(
                     None, None, None, None, None, None, None, None, false, false, false, true,
-                    verbose
+                    false, verbose
                 )?
                 .connected_components_number(verbose)
                 .0,
@@ -529,7 +535,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         // Testing SkipGram / CBOW / GloVe preprocessing
         graph.cooccurence_matrix(&walker, 3, verbose)?;
-    
+
         let window_size = 3;
         let batch_size = 256;
         let data = graph
@@ -688,7 +694,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     //test removes
     {
         let without_edge_types = graph.remove(
-            None, None, None, None, None, None, None, None, false, false, true, false, verbose,
+            None, None, None, None, None, None, None, None, false, false, true, false, false,
+            verbose,
         );
         if let Some(we) = &without_edge_types.ok() {
             validate_vocabularies(we);
@@ -714,7 +721,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     {
         let without_node_types = graph.remove(
-            None, None, None, None, None, None, None, None, false, true, false, false, verbose,
+            None, None, None, None, None, None, None, None, false, true, false, false, false,
+            verbose,
         );
         if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
@@ -731,7 +739,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     {
         let without_weights = graph.remove(
-            None, None, None, None, None, None, None, None, true, false, false, false, verbose,
+            None, None, None, None, None, None, None, None, true, false, false, false, false,
+            verbose,
         );
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
