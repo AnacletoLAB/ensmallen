@@ -89,6 +89,11 @@ macro_rules! to_nparray_2d {
     };
 }
 
+pub fn to_string_vector(parameters: &[&str]) -> Vec<String> {
+    parameters.iter()
+        .map(|x| x.to_string())
+        .collect()
+}
 
 pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
     let default = vec![

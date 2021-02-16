@@ -53,7 +53,7 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            [
+            to_string_vector(&[
                 "allow_nodes_set",
                 "deny_nodes_set",
                 "allow_node_types_set",
@@ -68,7 +68,7 @@ impl EnsmallenGraph {
                 "singletons",
                 "selfloops",
                 "verbose"
-            ].iter().collect::<Vec<String>>(),
+            ],
         ))?;
 
         Ok(EnsmallenGraph {
@@ -135,14 +135,14 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            [
+            to_string_vector(&[
                 "node_names",
                 "node_types",
                 "edge_types",
                 "minimum_component_size",
                 "top_k_components",
                 "verbose"
-            ].iter().collect::<Vec<String>>(),
+            ]
         ))?;
 
         Ok(EnsmallenGraph {
