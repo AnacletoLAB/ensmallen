@@ -1,11 +1,9 @@
 use super::*;
-use numpy::{PyArray2};
 use graph::NodeT;
-use rayon::prelude::*;
+use numpy::PyArray2;
 use rayon::iter::IndexedParallelIterator;
+use rayon::prelude::*;
 use thread_safe::ThreadSafe;
-
-
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -78,13 +76,15 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
-        let array = ThreadSafe{t:PyArray2::new(py.python(), [quantity as usize, length as usize], false)};
+        let array = ThreadSafe {
+            t: PyArray2::new(py.python(), [quantity as usize, length as usize], false),
+        };
         unsafe {
-            iter.enumerate().for_each(|(y, vy)| 
-                vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = *vyx
-                )
-            );
+            iter.enumerate().for_each(|(y, vy)| {
+                vy.iter()
+                    .enumerate()
+                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+            });
         }
         Ok(array.t.to_owned())
     }
@@ -155,13 +155,22 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
-        let array = ThreadSafe{t:PyArray2::new(py.python(), [self.graph.get_unique_sources_number() as usize, length as usize], false)};
+        let array = ThreadSafe {
+            t: PyArray2::new(
+                py.python(),
+                [
+                    self.graph.get_unique_sources_number() as usize * parameters.get_iterations(),
+                    length as usize,
+                ],
+                false,
+            ),
+        };
         unsafe {
-            iter.enumerate().for_each(|(y, vy)| 
-                vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = *vyx
-                )
-            );
+            iter.enumerate().for_each(|(y, vy)| {
+                vy.iter()
+                    .enumerate()
+                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+            });
         }
         Ok(array.t.to_owned())
     }
