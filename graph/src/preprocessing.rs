@@ -95,7 +95,7 @@ pub fn word2vec<'a>(
         if sequence_length < window_size * 2 + 1 {
             panic!("You are providing sequences that are smaller than the the minimum amount.");
         }
-        (window_size..(sequence_length - window_size - 1)).map(move |i| {
+        (window_size..(sequence_length - window_size)).map(move |i| {
             (
                 (i - window_size..i)
                     .chain(i + 1..window_size + i + 1)
