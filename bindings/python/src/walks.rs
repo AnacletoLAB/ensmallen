@@ -77,7 +77,14 @@ impl EnsmallenGraph {
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
         let array = ThreadSafe {
-            t: PyArray2::new(py.python(), [quantity as usize, length as usize], false),
+            t: PyArray2::new(
+                py.python(),
+                [
+                    quantity as usize * parameters.get_iterations() as usize,
+                    length as usize,
+                ],
+                false,
+            ),
         };
         unsafe {
             iter.enumerate().for_each(|(y, vy)| {
@@ -159,7 +166,8 @@ impl EnsmallenGraph {
             t: PyArray2::new(
                 py.python(),
                 [
-                    self.graph.get_unique_sources_number() as usize * parameters.get_iterations() as usize,
+                    self.graph.get_unique_sources_number() as usize
+                        * parameters.get_iterations() as usize,
                     length as usize,
                 ],
                 false,
