@@ -257,7 +257,7 @@ impl EnsmallenGraph {
         let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
-        let elements_per_batch = (walk_length as usize - window_size * 2 - 1)
+        let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
             * parameters.get_iterations() as usize;
 
