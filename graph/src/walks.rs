@@ -626,11 +626,15 @@ impl Graph {
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        let factor = 0xDEAD;
+        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
             quantity,
             move |global_index| {
                 let local_index = global_index % quantity;
-                let random_source_id = splitmix64((parameters.random_state + local_index) as u64) as NodeT;
+                let random_source_id = splitmix64(
+                    random_state + local_index.wrapping_mul(factor) as u64
+                ) as NodeT;
                 (
                     random_source_id as NodeT,
                     self.get_unique_source(random_source_id),
