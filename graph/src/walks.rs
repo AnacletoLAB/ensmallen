@@ -2,8 +2,9 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
-use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::sample_uniform;
+use vec_rand::sorted_unique_sub_sampling;
+use vec_rand::splitmix64;
 use vec_rand::xorshift::xorshift;
 
 #[inline(always)]
@@ -629,8 +630,7 @@ impl Graph {
             quantity,
             move |global_index| {
                 let local_index = global_index % quantity;
-                let random_source_id =
-                    xorshift((parameters.random_state + local_index as NodeT) as u64) as NodeT;
+                let random_source_id = splitmix64((parameters.random_state + local_index) as u64) as NodeT;
                 (
                     random_source_id as NodeT,
                     self.get_unique_source(random_source_id),
@@ -684,7 +684,9 @@ impl Graph {
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
-                true => self.uniform_walk(node, random_state, parameters.single_walk_parameters.length),
+                true => {
+                    self.uniform_walk(node, random_state, parameters.single_walk_parameters.length)
+                }
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
 
