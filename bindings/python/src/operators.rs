@@ -37,6 +37,10 @@ impl PyObjectProtocol for EnsmallenGraph {
     fn __repr__(&'p self) -> PyResult<String> {
         self.__str__()
     }
+
+    fn __hash__(&'p self) -> PyResult<isize> {
+        Ok(self.hash() as isize)
+    }
 }
 
 #[pymethods]
