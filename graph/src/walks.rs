@@ -2,8 +2,9 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
-use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::sample_uniform;
+use vec_rand::sorted_unique_sub_sampling;
+use vec_rand::splitmix64;
 use vec_rand::xorshift::xorshift;
 
 #[inline(always)]
@@ -625,15 +626,17 @@ impl Graph {
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        let factor = 0xDEAD;
+        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
             quantity,
-            move |global_index| {
-                let local_index = global_index % quantity;
+            move |index| {
+                let local_index = index % quantity;
                 let random_source_id =
-                    xorshift((parameters.random_state + local_index as NodeT) as u64) as NodeT;
+                    splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
-                    random_source_id as NodeT,
-                    self.get_unique_source(random_source_id),
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    self.get_unique_source(random_source_id % self.get_source_nodes_number()),
                 )
             },
             parameters,
@@ -650,9 +653,16 @@ impl Graph {
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        let factor = 0xDEAD;
+        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
             self.get_unique_sources_number(),
-            move |source_id| (source_id, self.get_unique_source(source_id as NodeT)),
+            move |index| {
+                (
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    self.get_unique_source(index as NodeT % self.get_source_nodes_number()),
+                )
+            },
             parameters,
         )
     }
@@ -684,7 +694,9 @@ impl Graph {
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
-                true => self.uniform_walk(node, random_state, parameters.single_walk_parameters.length),
+                true => {
+                    self.uniform_walk(node, random_state, parameters.single_walk_parameters.length)
+                }
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
 
