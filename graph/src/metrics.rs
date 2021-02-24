@@ -643,7 +643,7 @@ impl Graph {
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
-                "The top {most_common_nodes_number} most central nodes are {central_nodes}.",
+                "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
                 "The hash of the graph is {hash:08x} ."
             ),
             hash = hash,
