@@ -423,14 +423,14 @@ impl Graph {
 
                         return (indices[i], src, dst, false);
                     }
-                    panic!(format!(
+                    panic!(
                         concat!(
                             "Executed more than {} attempts to sample a negative edge.\n",
                             "If your graph is so small that you see this error, you may want to consider ",
                             "using one of the edge embedding transformer from the Embiggen library."
                         ),
                         maximal_sampling_attempts
-                    ));
+                    );
                 }
             }))
     }

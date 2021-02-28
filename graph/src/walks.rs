@@ -5,7 +5,6 @@ use vec_rand::sample_f32 as sample;
 use vec_rand::sample_uniform;
 use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::splitmix64;
-use vec_rand::xorshift::xorshift;
 
 #[inline(always)]
 fn update_return_weight_transition(
