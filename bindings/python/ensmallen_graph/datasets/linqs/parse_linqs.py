@@ -78,7 +78,7 @@ def parse_linqs_pubmed_incidence_matrix(
             unique_words.add(word)
 
     # Writing the nodes representing words
-    for word in unique_words:
+    for word in sorted(unique_words):
         node_list_file.write(separator.join((word, "Word")) + "\n")
 
     edge_list_file.close()
@@ -147,9 +147,8 @@ def parse_linqs_incidence_matrix(
             "node_type": "Word"
         }),
         pd.DataFrame({
-            "id": list(
-                set(cities[["subject", "object"]].values.flatten()
-                    ) - set(content.index.astype(str))
+            "id": sorted(
+                set(cities[["subject", "object"]].values.flatten()) - set(content.index.astype(str))
             ),
             "node_type": "Unknown"
         })
