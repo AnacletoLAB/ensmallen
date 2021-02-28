@@ -46,7 +46,7 @@ impl EdgeEmbeddingMethods {
         }
     }
 
-    fn call(&self, x1: &Vec<f64>, x2: &Vec<f64>) -> Vec<f64>{
+    fn call(&self, x1: &[f64], x2: &[f64]) -> Vec<f64>{
         match self {
             EdgeEmbeddingMethods::Concatenate => x1.iter().chain(x2.iter()).cloned().collect(),
             _ => {

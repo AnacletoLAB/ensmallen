@@ -15,9 +15,9 @@ pub struct FromVecHarnessParams {
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     let mut g = graph::Graph::from_string_unsorted(
-        data.edges.iter().cloned(),
+        data.edges.into_iter(),
         match &data.nodes {
-            Some(ns) => Some(ns.iter().cloned()),
+            Some(ns) => Some(ns.into_iter()),
             None => None,
         },
         data.directed,
