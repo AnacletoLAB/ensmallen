@@ -95,12 +95,17 @@
     "ClinTermCOOC": {
         "urls": [
             "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC_labels.txt"
+            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/node_list.txt",
+            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC_labels.txt",
+            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/label_list.txt"
         ],
         "arguments": {
             "edge_path": "Clin_Term_COOC.edgelist",
+            "node_path": "node_list.txt",
             "sources_column_number": 0,
-            "destinations_column_number": 1
+            "destinations_column_number": 1,
+            "node_header": true,
+            "nodes_column": "term_id"
         }
     }
 }
