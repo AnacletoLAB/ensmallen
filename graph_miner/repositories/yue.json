@@ -105,6 +105,7 @@
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "node_header": true,
+            "numeric_edge_node_ids": true,
             "nodes_column": "term_id"
         }
     }
