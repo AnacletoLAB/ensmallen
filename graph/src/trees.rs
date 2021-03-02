@@ -316,7 +316,7 @@ impl Graph {
                             }
                         }
                     };
-                    self.get_neighbours_range(src).for_each(|dst| {
+                    self.get_neighbours_iter(src).for_each(|dst| {
                         let ptr = thread_safe_parents.value.get();
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
@@ -352,7 +352,7 @@ impl Graph {
         ))
     }
 
-    /// Compute the connected components building in parallel a spanning tree using bader's algorithm.
+    /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
     /// **This works only for undirected graphs.**
     ///
     /// This method is **not thread save and not deterministic** but by design of the algorithm this
@@ -472,13 +472,20 @@ impl Graph {
                         }
                         return;
                     }
+
                     loop {
+                        // if the node has been now mapped to a component by anyone of the
+                        // parallel threads, move on to the next node.
                         unsafe {
                             if (*ptr)[src] != NOT_PRESENT {
                                 (*component_sizes)[(*ptr)[src] as usize] += 1;
                                 break;
                             }
                         }
+                        // Otherwise, Check if the parallel threads are finished
+                        // and are all waiting for a new node to explore.
+                        // In that case add the currently not explored node to the
+                        // work stack of the first thread.
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
                                 (*ptr)[src] = (*component_sizes).len() as NodeT;
@@ -488,13 +495,20 @@ impl Graph {
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
                             break;
                         }
+                        // Otherwise, Loop until the parallel threads are finished.
                     }
                 });
                 completed.store(true, Ordering::SeqCst);
             });
+
+            // Spawn the parallel threads that handle the components mapping,
+            // these threads use work-stealing, meaning that if their stack is empty,
+            // they will steal nodes from the stack of another random thread.
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
+                    // get the id, we use this as an idex for the stacks vector.
                     let thread_id = rayon::current_thread_index().unwrap();
+                    
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
@@ -510,7 +524,8 @@ impl Graph {
                             }
                         }
                     };
-                    self.get_neighbours_range(src).for_each(|dst| {
+                    
+                    self.get_neighbours_iter(src).for_each(|dst| {
                         let ptr = thread_safe_components.value.get();
                         if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {
                             unsafe {
