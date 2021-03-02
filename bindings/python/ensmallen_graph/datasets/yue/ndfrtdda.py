@@ -10,7 +10,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-14 15:14:25.254751
+Datetime: 2021-03-02 10:32:32.759091
 
 The undirected graph NDFRTDDA has 13545 nodes with 2 different node types:
 drug (nodes number 12337) and disease (nodes number 1208) and 56515 unweighted
@@ -20,7 +20,8 @@ with most nodes has 13033 nodes and the component with the least nodes
 has 2 nodes. The graph median node degree is 3, the mean node degree is
 8.34, and the node degree mode is 1. The top 5 most central nodes are C0030193
 (degree 845), C0004623 (degree 741), C0004096 (degree 653), C0038160 (degree
-575) and C0020538 (degree 534).
+575) and C0020538 (degree 534). The hash of the graph is aff446d784c13f38
+.
 
 
 References
@@ -115,7 +116,7 @@ def NDFRTDDA(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-14 15:14:25.254751
+	Datetime: 2021-03-02 10:32:32.759091
 	
 	The undirected graph NDFRTDDA has 13545 nodes with 2 different node types:
 	drug (nodes number 12337) and disease (nodes number 1208) and 56515 unweighted
@@ -125,7 +126,8 @@ def NDFRTDDA(
 	has 2 nodes. The graph median node degree is 3, the mean node degree is
 	8.34, and the node degree mode is 1. The top 5 most central nodes are C0030193
 	(degree 845), C0004623 (degree 741), C0004096 (degree 653), C0038160 (degree
-	575) and C0020538 (degree 534).
+	575) and C0020538 (degree 534). The hash of the graph is aff446d784c13f38
+	.
 	
 
 	References

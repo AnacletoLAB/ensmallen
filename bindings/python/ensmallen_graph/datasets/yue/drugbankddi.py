@@ -10,7 +10,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-14 15:14:23.513196
+Datetime: 2021-03-02 10:32:31.617397
 
 The undirected graph DrugBankDDI has 2191 nodes and 242027 unweighted edges,
 of which none are self-loops. The graph is quite dense as it has a density
@@ -19,7 +19,7 @@ nodes has 2189 nodes and the component with the least nodes has 2 nodes.
 The graph median node degree is 155, the mean node degree is 220.93, and
 the node degree mode is 11. The top 5 most central nodes are DB01174 (degree
 1034), DB00564 (degree 1028), DB00252 (degree 992), DB00176 (degree 963)
-and DB00794 (degree 952).
+and DB00794 (degree 952). The hash of the graph is 5eefcc46ed6cd319 .
 
 
 References
@@ -114,7 +114,7 @@ def DrugBankDDI(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-14 15:14:23.513196
+	Datetime: 2021-03-02 10:32:31.617397
 	
 	The undirected graph DrugBankDDI has 2191 nodes and 242027 unweighted edges,
 	of which none are self-loops. The graph is quite dense as it has a density
@@ -123,7 +123,7 @@ def DrugBankDDI(
 	The graph median node degree is 155, the mean node degree is 220.93, and
 	the node degree mode is 11. The top 5 most central nodes are DB01174 (degree
 	1034), DB00564 (degree 1028), DB00252 (degree 992), DB00176 (degree 963)
-	and DB00794 (degree 952).
+	and DB00794 (degree 952). The hash of the graph is 5eefcc46ed6cd319 .
 	
 
 	References

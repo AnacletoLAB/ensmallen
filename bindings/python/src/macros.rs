@@ -120,7 +120,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> Result<(), Stri
         .iter()
         .map(|v| v.extract::<String>().unwrap())
         .collect();
-    let columns: HashSet<String> = columns.iter().cloned().collect();
+    let columns: HashSet<String> = columns.into_iter().collect();
     if keys.is_subset(&columns) {
         return Ok(());
     }

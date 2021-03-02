@@ -10,16 +10,16 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-15 14:20:50.126345
+Datetime: 2021-03-02 10:35:53.865089
 
 The undirected graph ClinTermCOOC has 48651 nodes and 1659248 unweighted
 edges, of which none are self-loops. The graph is sparse as it has a density
 of 0.00140 and has 25 connected components, where the component with most
 nodes has 48601 nodes and the component with the least nodes has 2 nodes.
 The graph median node degree is 20, the mean node degree is 68.21, and
-the node degree mode is 1. The top 5 most central nodes are 16349 (degree
-3394), 8262 (degree 2978), 18203 (degree 2378), 32203 (degree 2084) and
-9147 (degree 2055).
+the node degree mode is 1. The top 5 most central nodes are 167 (degree
+3394), 196 (degree 2978), 488 (degree 2378), 1276 (degree 2084) and 1041
+(degree 2055). The hash of the graph is da61007aadfef6b3 .
 
 
 References
@@ -114,16 +114,16 @@ def ClinTermCOOC(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-15 14:20:50.126345
+	Datetime: 2021-03-02 10:35:53.865089
 	
 	The undirected graph ClinTermCOOC has 48651 nodes and 1659248 unweighted
 	edges, of which none are self-loops. The graph is sparse as it has a density
 	of 0.00140 and has 25 connected components, where the component with most
 	nodes has 48601 nodes and the component with the least nodes has 2 nodes.
 	The graph median node degree is 20, the mean node degree is 68.21, and
-	the node degree mode is 1. The top 5 most central nodes are 16349 (degree
-	3394), 8262 (degree 2978), 18203 (degree 2378), 32203 (degree 2084) and
-	9147 (degree 2055).
+	the node degree mode is 1. The top 5 most central nodes are 167 (degree
+	3394), 196 (degree 2978), 488 (degree 2378), 1276 (degree 2084) and 1041
+	(degree 2055). The hash of the graph is da61007aadfef6b3 .
 	
 
 	References

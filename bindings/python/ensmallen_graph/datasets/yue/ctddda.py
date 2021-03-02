@@ -10,7 +10,7 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-14 15:14:22.541246
+Datetime: 2021-03-02 10:32:30.488037
 
 The undirected graph CTDDDA has 12765 nodes with 2 different node types:
 chemical (nodes number 9580) and disease (nodes number 3185) and 92813
@@ -20,7 +20,8 @@ component with most nodes has 12724 nodes and the component with the least
 nodes has 2 nodes. The graph median node degree is 3, the mean node degree
 is 14.54, and the node degree mode is 1. The top 5 most central nodes are
 D056486 (degree 1217), D012640 (degree 1098), D006973 (degree 838), D009336
-(degree 831) and D007674 (degree 705).
+(degree 831) and D007674 (degree 705). The hash of the graph is d0ea7570f7a904ae
+.
 
 
 References
@@ -115,7 +116,7 @@ def CTDDDA(
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-14 15:14:22.541246
+	Datetime: 2021-03-02 10:32:30.488037
 	
 	The undirected graph CTDDDA has 12765 nodes with 2 different node types:
 	chemical (nodes number 9580) and disease (nodes number 3185) and 92813
@@ -125,7 +126,8 @@ def CTDDDA(
 	nodes has 2 nodes. The graph median node degree is 3, the mean node degree
 	is 14.54, and the node degree mode is 1. The top 5 most central nodes are
 	D056486 (degree 1217), D012640 (degree 1098), D006973 (degree 838), D009336
-	(degree 831) and D007674 (degree 705).
+	(degree 831) and D007674 (degree 705). The hash of the graph is d0ea7570f7a904ae
+	.
 	
 
 	References

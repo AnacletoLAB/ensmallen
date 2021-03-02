@@ -46,7 +46,7 @@ impl EdgeEmbeddingMethods {
         }
     }
 
-    fn call(&self, x1: &Vec<f64>, x2: &Vec<f64>) -> Vec<f64>{
+    fn call(&self, x1: &[f64], x2: &[f64]) -> Vec<f64>{
         match self {
             EdgeEmbeddingMethods::Concatenate => x1.iter().chain(x2.iter()).cloned().collect(),
             _ => {
@@ -423,14 +423,14 @@ impl Graph {
 
                         return (indices[i], src, dst, false);
                     }
-                    panic!(format!(
+                    panic!(
                         concat!(
                             "Executed more than {} attempts to sample a negative edge.\n",
                             "If your graph is so small that you see this error, you may want to consider ",
                             "using one of the edge embedding transformer from the Embiggen library."
                         ),
                         maximal_sampling_attempts
-                    ));
+                    );
                 }
             }))
     }

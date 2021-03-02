@@ -94,10 +94,7 @@ class YueGraphRepository(GraphRepository):
         -----------------------
         The paths where to store the downloaded graphs.
         """
-        return [
-            self.get_edge_list_path(graph_name, None),
-            self.get_node_list_path(graph_name, None),
-        ]
+        return None
 
     def build_graph_parameters(
         self,

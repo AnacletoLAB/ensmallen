@@ -545,7 +545,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             data.len(),
             batch_size as usize
                 * walker.iterations as usize
-                * (walker.single_walk_parameters.length as usize - window_size * 2)
+                * (walker.single_walk_parameters.walk_length as usize - window_size * 2)
         );
         for (context, _) in data.iter() {
             assert_eq!(context.len(), window_size * 2);
