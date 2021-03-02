@@ -616,7 +616,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.get_neighbours_range(src) {
+                for dst in self.get_neighbours_iter(src) {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
