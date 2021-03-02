@@ -487,6 +487,19 @@ impl Graph {
                         // In that case add the currently not explored node to the
                         // work stack of the first thread.
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
+                            // The check here might seems redundant but its' needed
+                            // to prevent data races.
+                            //
+                            // If the last parallel thread finishes its stack between the 
+                            // presence check above and the active nodes numbers check
+                            // the src node will never increase the component size and thus
+                            // leading to wrong results.
+                            unsafe {
+                                if (*ptr)[src] != NOT_PRESENT {
+                                    (*component_sizes)[(*ptr)[src] as usize] += 1;
+                                    break;
+                                }
+                            }
                             unsafe {
                                 (*ptr)[src] = (*component_sizes).len() as NodeT;
                                 (*component_sizes).push(1);
