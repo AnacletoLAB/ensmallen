@@ -148,7 +148,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -159,7 +159,7 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,

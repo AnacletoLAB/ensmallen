@@ -141,10 +141,10 @@ pub(crate) fn build_csv_file_reader(
 impl EnsmallenGraph {
     pub(crate) fn build_walk_parameters(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         kwargs: &PyDict,
     ) -> Result<WalksParameters, String> {
-        Ok(WalksParameters::new(length)?
+        Ok(WalksParameters::new(walk_length)?
             .set_change_edge_type_weight(extract_value!(
                 kwargs,
                 "change_edge_type_weight",

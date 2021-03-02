@@ -8,12 +8,12 @@ use thread_safe::ThreadSafe;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
     /// ---------------------
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// quantity: int,
@@ -65,7 +65,7 @@ impl EnsmallenGraph {
     ///
     fn random_walks(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
@@ -74,14 +74,14 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
                 py.python(),
                 [
                     quantity as usize * parameters.get_iterations() as usize,
-                    length as usize,
+                    walk_length as usize,
                 ],
                 false,
             ),
@@ -97,12 +97,12 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, walk_length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
     /// ---------------------
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// return_weight: float = 1.0,
@@ -152,7 +152,7 @@ impl EnsmallenGraph {
     ///
     fn complete_walks(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
@@ -160,7 +160,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
@@ -168,7 +168,7 @@ impl EnsmallenGraph {
                 [
                     self.graph.get_unique_sources_number() as usize
                         * parameters.get_iterations() as usize,
-                    length as usize,
+                    walk_length as usize,
                 ],
                 false,
             ),
