@@ -569,13 +569,27 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
-    /// Return the count of how many time an edge type appears.
+    /// Return dictionary count of how many time an edge type appears.
+    /// 
+    /// The dictionary looks like the following:
+    ///
+    /// {
+    ///    edge_type_id: count_of_edge_types    
+    /// }
+    ///
     fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_edge_type_counts_hashmap())
     }
 
     #[text_signature = "($self)"]
-    /// Return the count of how many time an node type appears.
+    /// Return dictionary count of how many time an node type appears.
+    /// 
+    /// The dictionary looks like the following:
+    ///
+    /// {
+    ///    node_type_id: count_of_node_types    
+    /// }
+    ///
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_node_type_counts_hashmap())
     }
