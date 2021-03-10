@@ -3,6 +3,32 @@ import re
 import os
 import pandas as pd
 import numpy as np
+from ensmallen_graph import EnsmallenGraph
+from tqdm.auto import tqdm
+
+
+def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
+    """Return dataframe with words features.
+    
+    Parameters
+    --------------------
+    graph: EnsmallenGraph,
+        Graph containing the words features to be extracted.
+
+    Returns
+    --------------------
+    Pandas DataFrame with words features as columns and nodes as rows.
+    """
+    word_node_type = graph.get_node_type_names().index("Word")
+    weights = graph.get_weights() if graph.has_weights() else None
+    return pd.DataFrame({
+        node_name: {
+            graph.get_node_name(source): weights[graph.get_edge_id(source, node_id)] if graph.has_weights() else 1
+            for source in graph.get_filtered_neighbours(node_id)
+        }
+        for node_id, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
+        if graph.get_node_type(node_id) == word_node_type
+    }).fillna(0)
 
 
 def parse_linqs_pubmed_incidence_matrix(
@@ -68,7 +94,8 @@ def parse_linqs_pubmed_incidence_matrix(
 
         src, label = vals[0]
         # Writing node and its node type to the node list.
-        node_list_file.write(separator.join((src, labels[int(label)-1])) + "\n")
+        node_list_file.write(separator.join(
+            (src, labels[int(label)-1])) + "\n")
 
         # Writing the edges between papers and words
         for (word, weight) in re.findall(word_regex, line):
