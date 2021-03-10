@@ -58,7 +58,7 @@ lto = "fat"
 # The default value, if not specified, is 16 for non-incremental builds. For 
 # incremental builds the default is 256 which allows caching to be more 
 # granular.
-codgen-units=1
+# codgen-units=1
 
 # This option lets you set the default threshold for inlining a function. 
 # It takes an unsigned integer as a value. Inlining is based on a cost model, 
