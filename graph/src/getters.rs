@@ -1,8 +1,8 @@
 use super::*;
 use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::HashMap;
 use std::iter::once;
+use std::{collections::HashMap};
 
 impl Graph {
     /// Return name of the graph.
@@ -147,7 +147,7 @@ impl Graph {
     }
 
     /// Return the edge types of the edges.
-    pub fn get_edge_types(&self) -> Option<Vec<EdgeTypeT>> {
+    pub fn get_edge_types(&self) -> Option<Vec<Option<EdgeTypeT>>> {
         match &self.edge_types {
             Some(ets) => Some(ets.ids.clone()),
             None => None,
@@ -174,7 +174,7 @@ impl Graph {
     }
 
     /// Return the node types of the nodes.
-    pub fn get_node_types(&self) -> Option<Vec<NodeTypeT>> {
+    pub fn get_node_types(&self) -> Option<Vec<Option<Vec<NodeTypeT>>>> {
         match &self.node_types {
             Some(nts) => Some(nts.ids.clone()),
             None => None,
@@ -184,10 +184,29 @@ impl Graph {
     /// Return node type name of given node type.
     ///
     /// # Arguments
-    /// * node_type_id: NodeTypeT - Id of the node type.
-    pub fn get_node_type_name(&self, node_type_id: NodeTypeT) -> Option<String> {
+    /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
+    pub fn translate_node_type_id_vector(
+        &self,
+        node_type_id: Vec<NodeTypeT>,
+    ) -> Option<Vec<String>> {
         match &self.node_types {
-            Some(nts) => Some(nts.translate(node_type_id).to_owned()),
+            Some(nts) => Some(
+                nts.translate_vector(node_type_id)
+                    .into_iter()
+                    .map(str::to_owned)
+                    .collect(),
+            ),
+            None => None,
+        }
+    }
+
+    /// Return node type name of given node type.
+    ///
+    /// # Arguments
+    /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
+    pub fn translate_node_type_id(&self, node_type_id: NodeTypeT) -> Option<String> {
+        match &self.node_types {
+            Some(nts) => Some(nts.translate(node_type_id).to_string()),
             None => None,
         }
     }
@@ -240,7 +259,7 @@ impl Graph {
     /// Returs option with the edge type of the given edge id.
     pub fn get_unchecked_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
         match &self.edge_types {
-            Some(ets) => Some(ets.ids[edge_id as usize]),
+            Some(ets) => ets.ids[edge_id as usize],
             None => None,
         }
     }
@@ -254,9 +273,9 @@ impl Graph {
     }
 
     /// Returs option with the node type of the given node id.
-    pub fn get_unchecked_node_type(&self, node_id: NodeT) -> Option<NodeTypeT> {
+    pub fn get_unchecked_node_type(&self, node_id: NodeT) -> Option<Vec<NodeTypeT>> {
         match &self.node_types {
-            Some(nts) => Some(nts.ids[node_id as usize]),
+            Some(nts) => nts.ids[node_id as usize].clone(),
             None => None,
         }
     }
@@ -273,10 +292,10 @@ impl Graph {
     /// println!("The node type id of node {} is {}", 0, graph.get_node_type(0).unwrap());
     /// ```
     ///
-    pub fn get_node_type(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
+    pub fn get_node_type(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.ids.len() as NodeT {
-                Ok(nt.ids[node_id as usize])
+                Ok(nt.ids[node_id as usize].clone())
             } else {
                 Err(format!(
                     "The node_index {} is too big for the node_types vector which has len {}",
@@ -301,10 +320,10 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type(0).unwrap());
     /// ```
-    pub fn get_edge_type(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
+    pub fn get_edge_type(&self, edge_id: EdgeT) -> Result<Option<EdgeTypeT>, String> {
         if let Some(et) = &self.edge_types {
             return if edge_id <= et.ids.len() as EdgeT {
-                Ok(et.ids[edge_id as usize])
+                Ok(self.get_unchecked_edge_type(edge_id))
             } else {
                 Err(format!(
                     "The edge_index {} is too big for the edge_types vector which has len {}",
@@ -319,12 +338,12 @@ impl Graph {
     }
 
     /// Returs option with the node type of the given node id.
-    pub fn get_node_type_string(&self, node_id: NodeT) -> Option<String> {
+    pub fn get_node_type_string(&self, node_id: NodeT) -> Option<Vec<String>> {
         match &self.node_types {
-            Some(nts) => Some(
-                nts.translate(self.get_unchecked_node_type(node_id).unwrap())
-                    .to_owned(),
-            ),
+            Some(nts) => match self.get_unchecked_node_type(node_id) {
+                Some(node_type_id) => self.translate_node_type_id_vector(node_type_id),
+                None => None,
+            },
             None => None,
         }
     }
@@ -378,10 +397,7 @@ impl Graph {
 
     /// Returs option with the weight of the given edge id.
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
-        match &self.weights {
-            Some(ws) => Some(ws[edge_id as usize]),
-            None => None,
-        }
+        return self.get_unchecked_edge_weight(edge_id);
     }
 
     /// Returns boolean representing if graph has node types.

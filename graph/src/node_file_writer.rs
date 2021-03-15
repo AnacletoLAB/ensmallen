@@ -8,12 +8,14 @@ use super::*;
 /// * nodes_column_number: usize - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
 /// * node_types_column: String - The name of the nodes type column. This parameter is mutually exclusive with node_types_column_number.
 /// * node_types_column_number: usize - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
+/// * node_types_separator: String - Separator to split the node types.
 pub struct NodeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) nodes_column: String,
     pub(crate) node_types_column: String,
     pub(crate) nodes_column_number: usize,
     pub(crate) node_types_column_number: usize,
+    pub(crate) node_types_separator: String,
 }
 
 impl NodeFileWriter {
@@ -30,6 +32,7 @@ impl NodeFileWriter {
             nodes_column_number: 0,
             node_types_column: "category".to_string(),
             node_types_column_number: 1,
+            node_types_separator: "".to_string(),
         }
     }
 
@@ -39,10 +42,7 @@ impl NodeFileWriter {
     ///
     /// * nodes_column: Option<String> - The nodes column to use for the file.
     ///
-    pub fn set_nodes_column(
-        mut self,
-        nodes_column: Option<String>,
-    ) -> NodeFileWriter {
+    pub fn set_nodes_column(mut self, nodes_column: Option<String>) -> NodeFileWriter {
         if let Some(column) = nodes_column {
             self.nodes_column = column;
         }
@@ -55,10 +55,7 @@ impl NodeFileWriter {
     ///
     /// * node_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_node_types_column(
-        mut self,
-        nodes_type_column: Option<String>,
-    ) -> NodeFileWriter {
+    pub fn set_node_types_column(mut self, nodes_type_column: Option<String>) -> NodeFileWriter {
         if let Some(column) = nodes_type_column {
             self.node_types_column = column;
         }
@@ -134,14 +131,11 @@ impl NodeFileWriter {
     }
 
     /// Write nodes to file.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * `graph`: &Graph, reference to graph to use.
-    pub fn dump(
-        &self,
-        graph: &Graph,
-    ) -> Result<(), String> {
+    pub fn dump(&self, graph: &Graph) -> Result<(), String> {
         // build the header
         let mut header = vec![(self.nodes_column.clone(), self.nodes_column_number)];
 
@@ -157,12 +151,18 @@ impl NodeFileWriter {
         self.writer.write_lines(
             graph.get_nodes_number() as usize,
             compose_lines(number_of_columns, header),
-            (0..graph.get_nodes_number()).map(|index| {
-                let mut line = vec![(graph.nodes.translate(index).to_string(), self.nodes_column_number)];
+            (0..graph.get_nodes_number()).map(|node_id| {
+                let mut line = vec![(
+                    graph.nodes.translate(node_id).to_string(),
+                    self.nodes_column_number,
+                )];
 
                 if let Some(nt) = &graph.node_types {
                     line.push((
-                        nt.translate(nt.ids[index as usize]).to_string(),
+                        match graph.get_node_type_string(node_id) {
+                            Some(values) => values.join(&self.node_types_separator),
+                            None => "".to_string(),
+                        },
                         self.node_types_column_number,
                     ));
                 }

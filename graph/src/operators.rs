@@ -66,6 +66,7 @@ fn generic_string_operator(
         false,
         false,
         false,
+        main.has_node_types(),
         main.has_edge_types(),
         main.has_weights(),
     )

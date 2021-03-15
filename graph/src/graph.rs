@@ -58,11 +58,11 @@ pub struct Graph {
     /// `weights[10]` return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
-    pub(crate) node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+    pub(crate) node_types: Option<NodeTypeVocabulary>,
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
-    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+    pub(crate) edge_types: Option<EdgeTypeVocabulary>,
 }
 
 /// # Graph utility methods
@@ -79,10 +79,10 @@ impl Graph {
         nodes: Vocabulary<NodeT>,
         node_bit_mask: EdgeT,
         node_bits: u8,
-        edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+        edge_types: Option<EdgeTypeVocabulary>,
         name: S,
         weights: Option<Vec<WeightT>>,
-        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+        node_types: Option<NodeTypeVocabulary>,
     ) -> Graph {
         Graph {
             directed,
@@ -104,7 +104,7 @@ impl Graph {
             destinations: None,
             outbounds: None,
             cached_destinations: None,
-            name:name.into(),
+            name: name.into(),
         }
     }
 
@@ -114,13 +114,12 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
-        if let Some(et) = edge_type {
-            if let Some(ets) = &self.edge_types {
-                return self
-                    .get_unchecked_edge_ids_range(src, dst)
-                    .find(|edge_id| ets.ids[*edge_id as usize] == et)
-                    .unwrap();
-            }
+        if let Some(ets) = &self.edge_types {
+            return self
+                .get_unchecked_edge_ids_range(src, dst)
+                // The vectors of the edge types can only have one element.
+                .find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+                .unwrap();
         }
         self.get_unchecked_edge_id_from_tuple(src, dst)
     }
@@ -131,12 +130,10 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Option<EdgeT> {
-        if let Some(et) = edge_type {
-            if let Some(ets) = &self.edge_types {
-                return self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
-                    edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == et)
-                });
-            }
+        if let Some(ets) = &self.edge_types {
+            return self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
+                edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+            });
         }
         self.get_edge_id_from_tuple(src, dst)
     }
@@ -177,7 +174,9 @@ impl Graph {
     /// ```
     pub fn get_edge_type_counts(&self) -> Result<Counter<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
-            Ok(Counter::init(et.ids.clone()))
+            Ok(Counter::init(
+                et.ids.iter().filter_map(|edge_type| *edge_type),
+            ))
         } else {
             Err(String::from(
                 "Edge types are not defined for current graph instance.",
@@ -264,7 +263,12 @@ impl Graph {
     /// ```
     pub fn get_node_type_counts(&self) -> Result<Counter<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
-            Ok(Counter::init(nt.ids.clone()))
+            Ok(Counter::init(
+                nt.ids
+                    .iter()
+                    .filter_map(|node_type| node_type.clone())
+                    .flatten(),
+            ))
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
@@ -324,10 +328,22 @@ impl Graph {
     ///
     /// * node_name: String - The node name.
     ///
-    pub fn has_node_string(&self, node_name: &str, node_type_name: Option<String>) -> bool {
+    pub fn has_node_string(&self, node_name: &str, node_type_name: Option<Vec<String>>) -> bool {
         match self.get_node_id(node_name) {
             Err(_) => false,
-            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name,
+            Ok(node_id) => {
+                let our_node_types = self.get_node_type_string(node_id);
+                let other_node_types = node_type_name.clone();
+                match (our_node_types, other_node_types) {
+                    (Some(mut our_nts), Some(mut other_nts)) => {
+                        our_nts.sort();
+                        other_nts.sort();
+                        our_nts == other_nts
+                    }
+                    (None, None) => true,
+                    _ => false,
+                }
+            }
         }
     }
 
@@ -495,7 +511,11 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_unchecked_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+    pub fn get_unchecked_link_edge_types(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<Vec<Option<EdgeTypeT>>> {
         match &self.edge_types {
             Some(ets) => Some(
                 self.get_unchecked_edge_ids_range(src, dst)

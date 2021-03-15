@@ -3,7 +3,7 @@ use rayon::prelude::*;
 
 impl Graph {
     /// Return iterator on the node of the graph.
-    pub fn get_nodes_iter(&self) -> impl Iterator<Item = (NodeT, Option<NodeTypeT>)> + '_ {
+    pub fn get_nodes_iter(&self) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
         (0..self.get_nodes_number())
             .map(move |node_id| (node_id, self.get_unchecked_node_type(node_id)))
     }
@@ -23,7 +23,7 @@ impl Graph {
     /// Return iterator on the node of the graph as Strings.
     pub fn get_nodes_names_iter(
         &self,
-    ) -> impl Iterator<Item = (NodeT, String, Option<String>)> + '_ {
+    ) -> impl Iterator<Item = (NodeT, String, Option<Vec<String>>)> + '_ {
         (0..self.get_nodes_number()).map(move |node_id| {
             (
                 node_id,

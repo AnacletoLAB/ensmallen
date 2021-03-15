@@ -398,7 +398,10 @@ impl EdgeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> Result<EdgeFileReader, String> {
+    pub fn set_separator<S: Into<String>>(
+        mut self,
+        separator: Option<S>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(sep) = separator {
             let sep = sep.into();
             if sep.is_empty() {
@@ -446,73 +449,53 @@ impl EdgeFileReader {
         self
     }
 
+    /// Return boolean representing if the edge types exist.
+    pub fn has_edge_types(&self) -> bool {
+        self.default_edge_type.is_some() || self.edge_types_column_number.is_some()
+    }
+
+    /// Return boolean representing if the weight types exist.
+    pub fn has_weights(&self) -> bool {
+        self.default_weight.is_some() || self.weights_column_number.is_some()
+    }
+
     /// Parse a single line (vecotr of strings already splitted)
     /// # Arguments
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line<S: Into<String> + Clone>(&self, vals: Vec<S>) -> Result<StringQuadruple, String> {
+    fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple, String> {
         // exctract the values
-        let source_node_name = vals[self.sources_column_number].clone().into();
-        let destination_node_name = vals[self.destinations_column_number].clone().into();
-        // extract the edge type if present
-        let edge_type: Option<String> = match self.edge_types_column_number {
-            None => Ok(None),
-            Some(idx) => {
-                let curr = vals[idx].clone().into();
-                if !curr.is_empty() {
-                    Ok(Some(curr))
-                } else if let Some(def) = &self.default_edge_type {
-                    Ok(Some(def.clone()))
-                } else {
-                    Err(format!(
-                        concat!(
-                            "Found empty edge type but no default edge ",
-                            "type to use was provided.",
-                            "The source node name is {source_node_name}.\n",
-                            "The destination node name is {destination_node_name}.\n",
-                            "The path of the document was {path}.\n"
-                        ),
-                        source_node_name = source_node_name,
-                        destination_node_name = destination_node_name,
-                        path = self.reader.path
-                    ))
-                }
-            }
-        }?;
-        // extract the weights
-        let edge_weight = match self.weights_column_number {
-            None => Ok(None),
-            Some(idx) => {
-                let curr = vals[idx].clone().into();
-                if !curr.is_empty() {
-                    match parse_weight(Some(&curr)) {
-                        Ok(v) => Ok(v),
-                        Err(e) => Err(e),
-                    }
-                } else if let Some(def) = &self.default_weight {
-                    Ok(Some(*def))
-                } else {
-                    Err(format!(
-                        concat!(
-                            "Found empty weight but no default weight ",
-                            "to use was provided. ",
-                            "The source node name is {source_node_name}.\n",
-                            "The destination node name is {destination_node_name}.\n",
-                            "The path of the document was {path}.\n"
-                        ),
-                        source_node_name = source_node_name,
-                        destination_node_name = destination_node_name,
-                        path = self.reader.path
-                    ))
-                }
-            }
-        }?;
+        let maybe_source_node_name = vals[self.sources_column_number].clone();
+        let maybe_destination_node_name = vals[self.destinations_column_number].clone();
+        if maybe_source_node_name.is_none() || maybe_destination_node_name.is_none() {
+            return Err("Either the source or destination node types is undefined.".to_string());
+        }
+        let source_node_name = maybe_source_node_name.unwrap();
+        let destination_node_name = maybe_destination_node_name.unwrap();
+
+        // Handle the extraction of the edge types.
+        let maybe_edge_types_string = match self.edge_types_column_number {
+            Some(column) => match vals[column].to_owned() {
+                Some(edge_type) => Some(edge_type),
+                None => self.default_edge_type.clone(),
+            },
+            None => self.default_edge_type.clone(),
+        };
+
+        // Handle the extraction of the weights.
+        let maybe_weight_string = match self.edge_types_column_number {
+            Some(column) => match vals[column].to_owned() {
+                Some(w) => Some(parse_weight(w)?),
+                None => self.default_weight,
+            },
+            None => self.default_weight,
+        };
 
         Ok((
             source_node_name,
             destination_node_name,
-            edge_type,
-            edge_weight,
+            maybe_edge_types_string,
+            maybe_weight_string,
         ))
     }
 

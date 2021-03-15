@@ -76,7 +76,15 @@ impl<IndexT: ToFromUsize> Hash for Vocabulary<IndexT> {
     }
 }
 
-impl<IndexT: ToFromUsize, CountT: ToFromUsize> Hash for VocabularyVec<IndexT, CountT> {
+impl Hash for NodeTypeVocabulary {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.ids.hash(state);
+        self.vocabulary.hash(state);
+        self.counts.hash(state);
+    }
+}
+
+impl Hash for EdgeTypeVocabulary {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.ids.hash(state);
         self.vocabulary.hash(state);

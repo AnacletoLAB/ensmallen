@@ -1,31 +1,34 @@
 use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
-pub struct VocabularyVec<IndexT: ToFromUsize, CountT: ToFromUsize> {
-    pub ids: Vec<IndexT>,
-    pub vocabulary: Vocabulary<IndexT>,
-    pub counts: Vec<CountT>,
+pub struct EdgeTypeVocabulary {
+    pub ids: Vec<Option<EdgeTypeT>>,
+    pub vocabulary: Vocabulary<EdgeTypeT>,
+    pub counts: Vec<EdgeT>,
+    pub unknown_count: EdgeT,
 }
 
-impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
-    pub fn default() -> VocabularyVec<IndexT, CountT> {
-        VocabularyVec {
+impl EdgeTypeVocabulary {
+    pub fn default() -> EdgeTypeVocabulary {
+        EdgeTypeVocabulary {
             ids: Vec::new(),
             vocabulary: Vocabulary::default(),
             counts: Vec::new(),
+            unknown_count: EdgeT::from_usize(0),
         }
     }
 
     pub fn from_structs(
-        ids: Vec<IndexT>,
-        vocabulary: Option<Vocabulary<IndexT>>,
-    ) -> Option<VocabularyVec<IndexT, CountT>> {
+        ids: Vec<Option<EdgeTypeT>>,
+        vocabulary: Option<Vocabulary<EdgeTypeT>>,
+    ) -> Option<EdgeTypeVocabulary> {
         match vocabulary {
             Some(vocab) => {
-                let mut vocabvec = VocabularyVec {
+                let mut vocabvec = EdgeTypeVocabulary {
                     ids,
                     vocabulary: vocab,
                     counts: Vec::new(),
+                    unknown_count: EdgeT::from_usize(0),
                 };
                 vocabvec.build_counts();
                 Some(vocabvec)
@@ -35,9 +38,14 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     }
 
     pub fn build_counts(&mut self) {
-        self.counts = vec![CountT::from_usize(0); self.vocabulary.len()];
+        self.counts = vec![EdgeT::from_usize(0); self.vocabulary.len()];
         for index in self.ids.iter() {
-            self.counts[IndexT::to_usize(*index)] += CountT::from_usize(1);
+            match index {
+                Some(value) => {
+                    self.counts[*value as usize] += 1;
+                }
+                None => self.unknown_count += EdgeT::from_usize(1),
+            }
         }
     }
 
@@ -45,14 +53,21 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
         self.vocabulary.build_reverse_mapping()
     }
 
-    /// Returns id of given value inserted.
+    /// Returns ids of given values inserted.
     ///
     /// # Arguments
     ///
-    /// * `value`: String - The value to be inserted.
-    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
-        self.vocabulary.insert(value.as_ref())?;
-        let id = *self.get(value.as_ref()).unwrap();
+    /// * `maybe_value`: Option<S> - The values to be inserted.
+    pub fn insert_value<S: AsRef<str>>(
+        &mut self,
+        maybe_value: Option<S>,
+    ) -> Result<Option<EdgeTypeT>, String> {
+        let id = match maybe_value {
+            Some(value) => {
+                Some(self.vocabulary.insert(value.as_ref())?) 
+            }
+            None => None,
+        };
         self.ids.push(id);
         Ok(id)
     }
@@ -66,8 +81,8 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     ///
     /// # Arguments
     ///
-    /// * `id`: IndexT - Id to be translated.
-    pub fn translate(&self, id: IndexT) -> &str {
+    /// * `id`: EdgeTypeT - Id to be translated.
+    pub fn translate(&self, id: EdgeTypeT) -> &str {
         self.vocabulary.translate(id)
     }
 
@@ -76,7 +91,7 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     /// # Arguments
     ///
     /// * `key`: &str - the key whose Id is to be retrieved.
-    pub fn get(&self, key: &str) -> Option<&IndexT> {
+    pub fn get(&self, key: &str) -> Option<&EdgeTypeT> {
         self.vocabulary.get(key)
     }
 
@@ -100,7 +115,7 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     /// # Arguments
     /// * numeric_ids: bool - Wether to load the IDs as numeric
     ///
-    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> VocabularyVec<IndexT, CountT> {
+    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> EdgeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
         self
     }

@@ -5,6 +5,7 @@ use bitvec::prelude::*;
 use std::cmp::Ordering;
 use rayon::prelude::ParallelSliceMut;
 use std::collections::BTreeMap;
+use itertools::Itertools;
 use log::info;
 
 type ParsedStringEdgesType = Result<
@@ -12,7 +13,7 @@ type ParsedStringEdgesType = Result<
         EliasFano,
         EliasFano,
         Vocabulary<NodeT>,
-        Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+        Option<EdgeTypeVocabulary>,
         Vec<WeightT>,
         EdgeT,
         EdgeT,
@@ -39,10 +40,10 @@ macro_rules! optionify {
 
 /// Returns iterator of nodes handling the node IDs.
 pub(crate) fn parse_node_ids<'a, 'b>(
-    nodes_iter: impl Iterator<Item = Result<(String, Option<String>), String>> + 'a,
+    nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
     ignore_duplicated_nodes: bool,
     nodes: &'b mut Vocabulary<NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, Option<String>), String>> + 'a
+) -> impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a
 where
     'b: 'a,
 {
@@ -88,23 +89,15 @@ where
 
 /// Returns iterator of nodes handling the node type IDs.
 pub(crate) fn parse_node_type_ids<'a, 'b>(
-    nodes_iter: impl Iterator<Item = Result<(NodeT, Option<String>), String>> + 'a,
-    node_types: &'b mut VocabularyVec<NodeTypeT, NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, Option<NodeTypeT>), String>> + 'a
+    nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
+    node_types_vocabulary: &'b mut NodeTypeVocabulary,
+) -> impl Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a
 where
     'b: 'a,
 {
-    let mut has_node_types: Option<bool> = None;
     nodes_iter.map(move |row| match row {
-        Ok((node_id, node_type)) => {
-            if *has_node_types.get_or_insert(node_type.is_some()) != node_type.is_some(){
-                return Err("The node types are not consistents. Either all node types are None, or all have valid values.".to_string());
-            }
-            let node_type_id = match node_type {
-                Some(nt) => Some(node_types.insert(nt)?),
-                None => None
-            };
-            Ok((node_id, node_type_id))
+        Ok((node_id, node_types)) => {
+            Ok((node_id, node_types_vocabulary.insert_values(node_types)?))
         }
         Err(e) => Err(e),
     })
@@ -188,23 +181,17 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
 /// Returns iterator of edges handling the edge type IDs.
 pub(crate) fn parse_edge_type_ids<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
-    edge_types: &'a mut Vec<EdgeTypeT>,
+    edge_types: &'a mut Vec<Option<EdgeTypeT>>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    let mut has_edge_types: Option<bool> = None;
     edges_iter.map(move |row| {
         match row {
             Ok((src, dst, edge_type, weight)) => {
-                if *has_edge_types.get_or_insert(edge_type.is_some()) != edge_type.is_some(){
-                    return Err("The edge_types are not consistents. Either all edge_types are None, or all have valid values.".to_string());
-                }
+                edge_types.push(edge_type);
                 Ok((
                     src,
                     dst,
-                    edge_type.map(|nt| {
-                        edge_types.push(nt);
-                        nt
-                    }),
-                    weight,
+                    edge_type,
+                    weight
                 ))
             },
             Err(e) => Err(e)
@@ -218,13 +205,8 @@ pub(crate) fn parse_weights<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     weights: &'a mut Vec<WeightT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    let mut has_weights: Option<bool> = None;
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
-            if *has_weights.get_or_insert(weight.is_some()) != weight.is_some(){
-                return Err("The weights are not consistents. Either all weights are None, or all have valid values.".to_string());
-            }
-            
             let parsed_weight = match weight {
                 Some(w) => {
                     validate_weight(w)?;
@@ -483,20 +465,27 @@ pub(crate) fn build_edges(
 }
 
 fn parse_nodes(
-    nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+    nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
     ignore_duplicated_nodes: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
-) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT, NodeT>), String> {
+    has_node_types: bool
+) -> Result<(Vocabulary<NodeT>, NodeTypeVocabulary), String> {
     let mut nodes = Vocabulary::default().set_numeric_ids(numeric_node_ids);
-    let mut node_types = VocabularyVec::default().set_numeric_ids(numeric_node_types_ids);
+    let mut node_types = NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
-        for row in parse_node_type_ids(
-            parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes),
-            &mut node_types,
-        ) {
+        let node_iterator = parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes);
+        // In the case there is a node types we need to add its proper iterator.
+        let node_iterator: Box<dyn Iterator<Item=Result<(NodeT, Option<Vec<NodeTypeT>>), String>>> = match has_node_types{
+            true => Box::new(parse_node_type_ids(
+                node_iterator,
+                &mut node_types,
+            )),
+            false => Box::new(node_iterator.map_ok(|(node_id, _)| (node_id, None)))
+        };
+        for row in node_iterator{
             row?;
         }
         node_types.build_reverse_mapping()?;
@@ -521,7 +510,7 @@ pub(crate) fn parse_string_edges(
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
-    let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
+    let mut edge_types_ids: Vec<Option<EdgeTypeT>> = Vec::new();
     nodes = nodes.set_numeric_ids(numeric_edge_node_ids);
 
     let wrapped_edges_iterator = parse_sorted_edges(
@@ -581,7 +570,7 @@ pub(crate) fn parse_string_edges(
     }
 
     edge_types_vocabulary.build_reverse_mapping()?;
-    let edge_types = VocabularyVec::from_structs(edge_types_ids, optionify!(edge_types_vocabulary));
+    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, optionify!(edge_types_vocabulary));
 
     Ok((
         edges,
@@ -613,7 +602,7 @@ pub(crate) fn parse_integer_edges(
     (
         EliasFano,
         EliasFano,
-        Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+        Option<EdgeTypeVocabulary>,
         Vec<WeightT>,
         EdgeT,
         EdgeT,
@@ -626,7 +615,7 @@ pub(crate) fn parse_integer_edges(
     String,
 > {
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
+    let mut edge_types_ids: Vec<Option<EdgeTypeT>> = Vec::new();
     
     let edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_edge_types{
         true=> Box::new(parse_edge_type_ids(edges_iter, &mut edge_types_ids)),
@@ -673,7 +662,7 @@ pub(crate) fn parse_integer_edges(
         ));
     }
 
-    let edge_types = VocabularyVec::from_structs(edge_types_ids, edge_types_vocabulary);
+    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, edge_types_vocabulary);
 
     Ok((
         edges,
@@ -697,7 +686,7 @@ impl Graph {
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,
         nodes: Vocabulary<NodeT>,
-        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+        node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
         name: S,
@@ -752,6 +741,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
+    /// TODO: UPDATE THE DOCSTRING!
+    /// 
     /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
     /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
@@ -766,7 +757,7 @@ impl Graph {
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
-        nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+        nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
         name: S,
@@ -777,6 +768,7 @@ impl Graph {
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
+        has_node_types: bool,
         has_edge_types: bool,
         has_weights: bool
     ) -> Result<Graph, String> {
@@ -785,6 +777,7 @@ impl Graph {
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
+            has_node_types
         )?;
         
         info!("Parse unsorted edges.");
@@ -835,7 +828,7 @@ impl Graph {
             Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
         >,
         nodes: Vocabulary<NodeT>,
-        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+        node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
         directed_edge_list: bool,
@@ -865,7 +858,7 @@ impl Graph {
     /// Create new Graph object from sorted sources.
     pub fn from_string_sorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
-        nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+        nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
         ignore_duplicated_nodes: bool,
@@ -876,6 +869,7 @@ impl Graph {
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
+        has_node_types: bool,
         has_edge_types: bool,
         has_weights: bool,
         name: S,
@@ -885,6 +879,7 @@ impl Graph {
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
+            has_node_types
         )?;
 
         let (
