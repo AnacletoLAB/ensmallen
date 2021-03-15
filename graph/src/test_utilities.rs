@@ -412,12 +412,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             None,
             verbose,
         )?;
+        let no_selfloops = test.remove(
+            None, None, None, None, None, None, None, None, false, false, false, true, false,
+            verbose
+        )?;
         assert_eq!(
-            test.remove(
-                None, None, None, None, None, None, None, None, false, false, false, false, true,
-                verbose
-            )?
-            .connected_components_number(verbose)
+            no_selfloops.connected_components_number(verbose)
             .0,
             1,
             "Expected number of components (1) is not matched!"
@@ -434,8 +434,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             )?;
             assert_eq!(
                 test.remove(
-                    None, None, None, None, None, None, None, None, false, false, false, false,
-                    true, verbose
+                    None, None, None, None, None, None, None, None, false, false, false, true,
+                    false, verbose
                 )?
                 .connected_components_number(verbose)
                 .0,

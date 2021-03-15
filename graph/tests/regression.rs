@@ -313,3 +313,12 @@ fn test_regression21()->Result<(), String>{
     let _ = graph::test_utilities::default_test_suite(&mut g, false);
     Ok(())
 }
+
+#[test]
+fn test_regression22()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/22.tsv".to_string())?
+        .set_separator(Some(",".to_string()))?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
