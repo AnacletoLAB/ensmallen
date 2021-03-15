@@ -1,8 +1,8 @@
 use super::*;
 use itertools::Itertools;
 use rayon::prelude::*;
+use std::collections::HashMap;
 use std::iter::once;
-use std::{collections::HashMap};
 
 impl Graph {
     /// Return name of the graph.
@@ -339,12 +339,12 @@ impl Graph {
 
     /// Returs option with the node type of the given node id.
     pub fn get_node_type_string(&self, node_id: NodeT) -> Option<Vec<String>> {
-        match &self.node_types {
-            Some(nts) => match self.get_unchecked_node_type(node_id) {
+        match &self.node_types.is_some() {
+            true => match self.get_unchecked_node_type(node_id) {
                 Some(node_type_id) => self.translate_node_type_id_vector(node_type_id),
                 None => None,
             },
-            None => None,
+            false => None,
         }
     }
 

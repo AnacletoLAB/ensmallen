@@ -483,7 +483,7 @@ impl EdgeFileReader {
         };
 
         // Handle the extraction of the weights.
-        let maybe_weight_string = match self.edge_types_column_number {
+        let maybe_weight_string = match self.weights_column_number {
             Some(column) => match vals[column].to_owned() {
                 Some(w) => Some(parse_weight(w)?),
                 None => self.default_weight,

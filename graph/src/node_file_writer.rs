@@ -157,7 +157,7 @@ impl NodeFileWriter {
                     self.nodes_column_number,
                 )];
 
-                if let Some(nt) = &graph.node_types {
+                if graph.has_node_types() {
                     line.push((
                         match graph.get_node_type_string(node_id) {
                             Some(values) => values.join(&self.node_types_separator),
