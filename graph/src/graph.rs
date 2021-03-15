@@ -207,7 +207,7 @@ impl Graph {
     ///
     /// * `edge_types`: Vec<String> - Vector of edge types to be converted.
     pub fn translate_edge_types(&self, edge_types: Vec<String>) -> Result<Vec<EdgeTypeT>, String> {
-        Ok(match &self.edge_types {
+        match &self.edge_types {
             None => Err(String::from("Current graph does not have edge types.")),
             Some(ets) => {
                 Ok(edge_types
@@ -222,7 +222,7 @@ impl Graph {
                 })
                 .collect::<Result<Vec<EdgeTypeT>, String>>()?)
             }
-        }?)
+        }
     }
 
     /// Return translated node types from string to internal node ID.
@@ -231,7 +231,7 @@ impl Graph {
     ///
     /// * `node_types`: Vec<String> - Vector of node types to be converted.
     pub fn translate_node_types(&self, node_types: Vec<String>) -> Result<Vec<NodeTypeT>, String> {
-        Ok(match &self.node_types {
+        match &self.node_types {
             None => Err(String::from("Current graph does not have node types.")),
             Some(nts) => {
                 Ok(node_types
@@ -246,7 +246,7 @@ impl Graph {
                 })
                 .collect::<Result<Vec<NodeTypeT>, String>>()?)
             }
-        }?)
+        }
     }
 
     /// Returns node type counts.
@@ -333,8 +333,7 @@ impl Graph {
             Err(_) => false,
             Ok(node_id) => {
                 let our_node_types = self.get_node_type_string(node_id);
-                let other_node_types = node_type_name.clone();
-                match (our_node_types, other_node_types) {
+                match (our_node_types, node_type_name) {
                     (Some(mut our_nts), Some(mut other_nts)) => {
                         our_nts.sort();
                         other_nts.sort();
@@ -497,10 +496,8 @@ impl Graph {
 
     // TODO: Update docstring
     pub fn get_edge_ids(&self, src: NodeT, dst: NodeT) -> Option<impl Iterator<Item = EdgeT>> {
-        match self.get_edge_types_min_max_edge_ids(src, dst) {
-            Some((min_edge_id, max_edge_id)) => Some(min_edge_id..max_edge_id),
-            None => None,
-        }
+        self.get_edge_types_min_max_edge_ids(src, dst)
+            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
     }
 
     /// Returns edge_types associated to the given edge.
@@ -516,14 +513,11 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> Option<Vec<Option<EdgeTypeT>>> {
-        match &self.edge_types {
-            Some(ets) => Some(
-                self.get_unchecked_edge_ids_range(src, dst)
-                    .map(|edge_id| ets.ids[edge_id as usize])
-                    .collect(),
-            ),
-            None => None,
-        }
+        self.edge_types.as_ref().map(|ets| {
+            self.get_unchecked_edge_ids_range(src, dst)
+                .map(|edge_id| ets.ids[edge_id as usize])
+                .collect()
+        })
     }
 
     /// Returns weights associated to the given link.
@@ -535,14 +529,11 @@ impl Graph {
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
     pub fn get_unchecked_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
-        match &self.weights {
-            Some(ws) => Some(
-                self.get_unchecked_edge_ids_range(src, dst)
-                    .map(|edge_id| ws[edge_id as usize])
-                    .collect(),
-            ),
-            None => None,
-        }
+        self.weights.as_ref().map(|ws| {
+            self.get_unchecked_edge_ids_range(src, dst)
+                .map(|edge_id| ws[edge_id as usize])
+                .collect()
+        })
     }
 
     /// Returns boolean representing if given node is a trap.

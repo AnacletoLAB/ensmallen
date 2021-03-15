@@ -37,7 +37,7 @@ impl Graph {
                     }
                     if let (Some(ants), Some(nt)) = (&node_type_set, &node_type) {
                         if nt
-                            .into_iter()
+                            .iter()
                             .any(|node_type_name| !ants.contains(node_type_name))
                         {
                             return None;
@@ -199,7 +199,7 @@ impl Graph {
             .filter_map(|(node_id, node_name, node_type)| {
                 if let (Some(ants), Some(nt)) = (&allow_node_type_set, &node_type) {
                     if nt
-                        .into_iter()
+                        .iter()
                         .any(|node_type_name| !ants.contains(node_type_name))
                     {
                         return None;
