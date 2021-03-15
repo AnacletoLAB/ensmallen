@@ -1,6 +1,23 @@
 use super::*;
 
-#[derive(Debug, Clone, PartialEq)]
+use std::hash::{Hash, Hasher};
+use std::collections::hash_map::DefaultHasher;
+
+impl EdgeTypeVocabulary {
+    fn compute_hash(&self) -> u64 {
+        let mut hasher = DefaultHasher::new();
+        self.hash(&mut hasher);
+        hasher.finish()
+    }
+}
+
+impl PartialEq for EdgeTypeVocabulary {
+    fn eq(&self, other: &Self) -> bool {
+        self.compute_hash() == other.compute_hash()
+    }
+}
+
+#[derive(Debug, Clone)]
 pub struct EdgeTypeVocabulary {
     pub ids: Vec<Option<EdgeTypeT>>,
     pub vocabulary: Vocabulary<EdgeTypeT>,

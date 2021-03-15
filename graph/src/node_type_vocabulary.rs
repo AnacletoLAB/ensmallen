@@ -1,11 +1,27 @@
 use super::*;
+use std::hash::{Hash, Hasher};
+use std::collections::hash_map::DefaultHasher;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone)]
 pub struct NodeTypeVocabulary {
     pub ids: Vec<Option<Vec<NodeTypeT>>>,
     pub vocabulary: Vocabulary<NodeTypeT>,
     pub counts: Vec<NodeT>,
     pub unknown_count: NodeT,
+}
+
+impl NodeTypeVocabulary {
+    fn compute_hash(&self) -> u64 {
+        let mut hasher = DefaultHasher::new();
+        self.hash(&mut hasher);
+        hasher.finish()
+    }
+}
+
+impl PartialEq for NodeTypeVocabulary {
+    fn eq(&self, other: &Self) -> bool {
+        self.compute_hash() == other.compute_hash()
+    }
 }
 
 impl NodeTypeVocabulary {
