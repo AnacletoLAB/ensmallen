@@ -148,10 +148,7 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_types(&self) -> Option<Vec<Option<EdgeTypeT>>> {
-        match &self.edge_types {
-            Some(ets) => Some(ets.ids.clone()),
-            None => None,
-        }
+        self.edge_types.as_ref().map(|ets| ets.ids.clone())
     }
 
     /// Return edge type name of given edge type.
@@ -159,26 +156,21 @@ impl Graph {
     /// # Arguments
     /// * edge_type_id: EdgeTypeT - Id of the edge type.
     pub fn get_edge_type_name(&self, edge_type_id: EdgeTypeT) -> Option<String> {
-        match &self.edge_types {
-            Some(ets) => Some(ets.translate(edge_type_id).to_owned()),
-            None => None,
-        }
+        self.edge_types
+            .as_ref()
+            .map(|ets| ets.translate(edge_type_id).to_owned())
     }
 
     /// Return the edge types names.
     pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
-        match &self.edge_types {
-            Some(ets) => Some(ets.vocabulary.reverse_map.clone()),
-            None => None,
-        }
+        self.edge_types
+            .as_ref()
+            .map(|ets| ets.vocabulary.reverse_map.clone())
     }
 
     /// Return the node types of the nodes.
     pub fn get_node_types(&self) -> Option<Vec<Option<Vec<NodeTypeT>>>> {
-        match &self.node_types {
-            Some(nts) => Some(nts.ids.clone()),
-            None => None,
-        }
+        self.node_types.as_ref().map(|nts| nts.ids.clone())
     }
 
     /// Return node type name of given node type.
@@ -189,15 +181,12 @@ impl Graph {
         &self,
         node_type_id: Vec<NodeTypeT>,
     ) -> Option<Vec<String>> {
-        match &self.node_types {
-            Some(nts) => Some(
-                nts.translate_vector(node_type_id)
-                    .into_iter()
-                    .map(str::to_owned)
-                    .collect(),
-            ),
-            None => None,
-        }
+        self.node_types.as_ref().map(|nts| {
+            nts.translate_vector(node_type_id)
+                .into_iter()
+                .map(str::to_owned)
+                .collect()
+        })
     }
 
     /// Return node type name of given node type.
@@ -205,10 +194,9 @@ impl Graph {
     /// # Arguments
     /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
     pub fn translate_node_type_id(&self, node_type_id: NodeTypeT) -> Option<String> {
-        match &self.node_types {
-            Some(nts) => Some(nts.translate(node_type_id).to_string()),
-            None => None,
-        }
+        self.node_types
+            .as_ref()
+            .map(|nts| nts.translate(node_type_id).to_string())
     }
 
     /// Return the weights of the nodes.
@@ -289,7 +277,7 @@ impl Graph {
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The node type id of node {} is {}", 0, graph.get_node_type(0).unwrap());
+    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type(0).unwrap());
     /// ```
     ///
     pub fn get_node_type(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
@@ -318,7 +306,7 @@ impl Graph {
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type(0).unwrap());
+    /// println!("The edge type id of edge {} is {:?}", 0, graph.get_edge_type(0));
     /// ```
     pub fn get_edge_type(&self, edge_id: EdgeT) -> Result<Option<EdgeTypeT>, String> {
         if let Some(et) = &self.edge_types {
@@ -350,13 +338,10 @@ impl Graph {
 
     /// Returs option with the edge type of the given edge id.
     pub fn get_edge_type_string(&self, edge_id: EdgeT) -> Option<String> {
-        match &self.edge_types {
-            Some(ets) => Some(
-                ets.translate(self.get_unchecked_edge_type(edge_id).unwrap())
-                    .to_owned(),
-            ),
-            None => None,
-        }
+        self.edge_types.as_ref().map(|ets| {
+            ets.translate(self.get_unchecked_edge_type(edge_id).unwrap())
+                .to_owned()
+        })
     }
 
     /// Returs result with the node name.

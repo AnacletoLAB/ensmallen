@@ -374,7 +374,7 @@ impl Graph {
     ///  #        Ok(("2".to_string(), "3".to_string(), None, None)), 
     ///  #     ];
     ///  # 
-    ///  # let nodes = None.map(|x: Vec<Result<(String, Option<String>), String>>| x.into_iter());
+    ///  # let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());
     ///  # 
     ///  # let graph = Graph::from_string_unsorted(
     ///  #     edge.into_iter(),
@@ -389,6 +389,7 @@ impl Graph {
     ///  #     false,     // numeric_node_ids
     ///  #     false,     // numeric_edge_node_ids
     ///  #     false,     // numeric_node_types_ids
+    ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_weights
     ///  # ).unwrap();
