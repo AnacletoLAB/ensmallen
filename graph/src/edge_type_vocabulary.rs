@@ -1,7 +1,7 @@
 use super::*;
 
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 
 impl EdgeTypeVocabulary {
     fn compute_hash(&self) -> u64 {
@@ -79,12 +79,10 @@ impl EdgeTypeVocabulary {
         &mut self,
         maybe_value: Option<S>,
     ) -> Result<Option<EdgeTypeT>, String> {
-        let id = match maybe_value {
-            Some(value) => {
-                Some(self.vocabulary.insert(value.as_ref())?) 
-            }
-            None => None,
-        };
+        let id: Result<Option<EdgeTypeT>, String> = maybe_value.map_or(Ok(None), |value| {
+            Ok(Some(self.vocabulary.insert(value.as_ref())?))
+        });
+        let id = id?;
         self.ids.push(id);
         Ok(id)
     }
