@@ -468,8 +468,9 @@ impl EdgeFileReader {
         let maybe_source_node_name = vals[self.sources_column_number].clone();
         let maybe_destination_node_name = vals[self.destinations_column_number].clone();
         if maybe_source_node_name.is_none() || maybe_destination_node_name.is_none() {
-            return Err("Either the source or destination node types is undefined.".to_string());
+            return Err("Either the source or destination node ID are undefined.".to_string());
         }
+        
         let source_node_name = maybe_source_node_name.unwrap();
         let destination_node_name = maybe_destination_node_name.unwrap();
 
