@@ -117,7 +117,7 @@ pub fn word2vec<'a>(
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * window_size: Option<usize> - Window size to consider for the sequences.
 /// * verbose: Option<bool>,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
@@ -228,7 +228,7 @@ impl Graph {
     /// * parameters: &WalksParameters - the walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
     /// * verbose: Option<bool>,
-    ///     Wethever to show the progress bars.
+    ///     whether to show the progress bars.
     ///     The default behaviour is false.
     ///     
     pub fn cooccurence_matrix(

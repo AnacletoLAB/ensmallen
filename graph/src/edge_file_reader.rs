@@ -341,7 +341,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
@@ -354,7 +354,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_edge_type_ids(
         mut self,
@@ -370,7 +370,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -383,7 +383,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - Wethever to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> EdgeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -416,7 +416,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - Wethever to expect an header or not.
+    /// * header: Option<bool> - whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
         if let Some(v) = header {
@@ -429,7 +429,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - Wethever to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
         if let Some(v) = rows_to_skip {

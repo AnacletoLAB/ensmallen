@@ -1,6 +1,6 @@
 use super::*;
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 
 #[derive(Debug, Clone)]
 pub struct NodeTypeVocabulary {
@@ -8,6 +8,7 @@ pub struct NodeTypeVocabulary {
     pub vocabulary: Vocabulary<NodeTypeT>,
     pub counts: Vec<NodeT>,
     pub unknown_count: NodeT,
+    pub multilabel: bool,
 }
 
 impl NodeTypeVocabulary {
@@ -31,6 +32,7 @@ impl NodeTypeVocabulary {
             vocabulary: Vocabulary::default(),
             counts: Vec::new(),
             unknown_count: NodeT::from_usize(0),
+            multilabel: false,
         }
     }
 
@@ -40,11 +42,15 @@ impl NodeTypeVocabulary {
     ) -> Option<NodeTypeVocabulary> {
         match vocabulary {
             Some(vocab) => {
+                let multilabel = ids
+                .iter()
+                .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
                 let mut vocabvec = NodeTypeVocabulary {
                     ids,
                     vocabulary: vocab,
                     counts: Vec::new(),
                     unknown_count: NodeT::from_usize(0),
+                    multilabel
                 };
                 vocabvec.build_counts();
                 Some(vocabvec)
@@ -101,9 +107,24 @@ impl NodeTypeVocabulary {
         })
     }
 
-    /// Returns wethever the value is empty or not.
+    /// Returns whether the vocabulary is empty or not.
     pub fn is_empty(&self) -> bool {
         self.vocabulary.is_empty()
+    }
+
+    /// Returns whether the node types are multi-label or not.
+    pub fn is_multilabel(&self) -> bool {
+        self.multilabel
+    }
+
+    /// Returns number of minimum node-count.
+    pub fn min_node_type_count(&self) -> NodeT {
+        *self.counts.iter().min().unwrap()
+    }
+
+    /// Returns number of unknown nodes.
+    pub fn get_unknown_count(&self) -> NodeT {
+        self.unknown_count
     }
 
     /// Returns string name of given id.

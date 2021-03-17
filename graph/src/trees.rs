@@ -190,9 +190,9 @@ impl Graph {
     /// # Arguments
     ///
     /// * `random_state`:NodeT - The random_state to use for the holdout,
-    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
-    /// * `verbose`: bool - Wethever to show a loading bar or not.
+    /// * `verbose`: bool - whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(
         &self,

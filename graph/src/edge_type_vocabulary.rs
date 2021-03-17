@@ -87,7 +87,7 @@ impl EdgeTypeVocabulary {
         Ok(id)
     }
 
-    /// Returns wethever the value is empty or not.
+    /// Returns whether the value is empty or not.
     pub fn is_empty(&self) -> bool {
         self.vocabulary.is_empty()
     }

@@ -11,7 +11,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::xorshift::xorshift as rand_u64;
+use vec_rand::xorshift::{xorshift as rand_u64};
 use vec_rand::{gen_random_vec, sample_uniform};
 
 /// # Holdouts.
@@ -201,12 +201,10 @@ impl Graph {
         pb1.finish();
 
         Graph::from_integer_unsorted(
-            negative_edges_hashset
-                .into_iter()
-                .map(|edge| {
-                    let (src, dst) = self.decode_edge(edge);
-                    Ok((src, dst, None, None))
-                }),
+            negative_edges_hashset.into_iter().map(|edge| {
+                let (src, dst) = self.decode_edge(edge);
+                Ok((src, dst, None, None))
+            }),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
@@ -216,8 +214,41 @@ impl Graph {
             false,
             self.has_edge_types(),
             self.has_weights(),
-            verbose
+            verbose,
         )
+    }
+
+    /// Compute the training and validation elements number from the training rate
+    fn get_holdouts_elements_number(
+        &self,
+        train_size: f64,
+        total_elements: usize,
+    ) -> Result<(usize, usize), String> {
+        if train_size <= 0.0 || train_size >= 1.0 {
+            return Err(String::from("Train rate must be strictly between 0 and 1."));
+        }
+        if self.directed && self.get_edges_number() == 1
+            || !self.directed && self.get_edges_number() == 2
+        {
+            return Err(String::from(
+                "The current graph instance has only one edge. You cannot build an holdout with one edge.",
+            ));
+        }
+        let train_elements_number = (total_elements as f64 * train_size) as usize;
+        let valid_elements_number = total_elements - train_elements_number;
+
+        if train_elements_number == 0 || train_elements_number >= total_elements {
+            return Err(String::from(
+                "The training set has 0 elements! Change the training rate.",
+            ));
+        }
+        if valid_elements_number == 0 {
+            return Err(String::from(
+                "The validation set has 0 elements! Change the training rate.",
+            ));
+        }
+
+        Ok((train_elements_number, valid_elements_number))
     }
 
     /// Compute the training and validation edges number from the training rate
@@ -226,9 +257,6 @@ impl Graph {
         train_size: f64,
         include_all_edge_types: bool,
     ) -> Result<(EdgeT, EdgeT), String> {
-        if train_size <= 0.0 || train_size >= 1.0 {
-            return Err(String::from("Train rate must be strictly between 0 and 1."));
-        }
         if self.directed && self.get_edges_number() == 1
             || !self.directed && self.get_edges_number() == 2
         {
@@ -241,24 +269,13 @@ impl Graph {
         } else {
             self.get_edges_number()
         };
-        let train_edges_number = (total_edges_number as f64 * train_size) as EdgeT;
-        let valid_edges_number = total_edges_number - train_edges_number;
 
-        if train_edges_number == 0 || train_edges_number >= total_edges_number {
-            return Err(String::from(
-                "The training set has 0 edges! Change the training rate.",
-            ));
-        }
-        if valid_edges_number == 0 {
-            return Err(String::from(
-                "The validation set has 0 edges! Change the training rate.",
-            ));
-        }
-
-        Ok((train_edges_number, valid_edges_number))
+        let (train_edges, test_edges) =
+            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
+        Ok((train_edges as EdgeT, test_edges as EdgeT))
     }
 
-    fn holdout(
+    fn edge_holdout(
         &self,
         random_state: EdgeT,
         valid_edges_number: EdgeT,
@@ -398,8 +415,8 @@ impl Graph {
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
-    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
-    /// * `verbose`: bool - Wethever to show the loading bar.
+    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     ///
     pub fn connected_holdout(
@@ -459,7 +476,7 @@ impl Graph {
             ));
         }
 
-        self.holdout(
+        self.edge_holdout(
             random_state,
             valid_edges_number,
             include_all_edge_types,
@@ -489,10 +506,10 @@ impl Graph {
     ///
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training
-    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
-    /// * `verbose`: bool - Wethever to show the loading bar.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn random_holdout(
         &self,
@@ -517,7 +534,7 @@ impl Graph {
         if min_number_overlaps.is_some() && !self.is_multigraph() {
             return Err("Current graph is not a multigraph!".to_string());
         }
-        self.holdout(
+        self.edge_holdout(
             random_state,
             valid_edges_number,
             include_all_edge_types,
@@ -544,6 +561,97 @@ impl Graph {
         )
     }
 
+    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+    ///
+    /// # Arguments
+    ///
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: bool - Wheter to use node-label stratification,
+    ///
+    pub fn node_label_holdout(
+        &self,
+        random_state: EdgeT,
+        train_size: f64,
+        use_stratification: bool,
+    ) -> Result<(Graph, Graph), String> {
+        if !self.has_node_types() {
+            return Err("The current graph does not have node types.".to_string());
+        }
+        if use_stratification
+            && self
+                .node_types
+                .as_ref()
+                .map_or(true, |nts| nts.is_multilabel())
+        {
+            return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
+        }
+        if use_stratification
+            && self
+                .node_types
+                .as_ref()
+                .map_or(true, |nts| nts.min_node_type_count() < 2)
+        {
+            return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+        }
+
+        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+
+        let node_sets: Vec<Vec<NodeT>> = self
+            .node_types
+            .as_ref()
+            .map(|nts| {
+                if use_stratification {
+                    let mut node_sets: Vec<Vec<NodeT>> =
+                        vec![Vec::new(); self.get_node_types_number() as usize];
+                    nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
+                        node_type.as_ref().map(|nt| {
+                            node_sets[*nt.first().unwrap() as usize].push(node_id as NodeT)
+                        });
+                    });
+                    node_sets
+                } else {
+                    vec![nts
+                        .ids
+                        .iter()
+                        .enumerate()
+                        .filter_map(|(node_id, node_type)| {
+                            node_type.as_ref().map(|_| node_id as NodeT)
+                        })
+                        .collect()]
+                }
+            })
+            .unwrap();
+
+        let mut rnd = SmallRng::seed_from_u64(random_state ^ SEED_XOR as u64);
+
+        for mut node_set in node_sets {
+            node_set.shuffle(&mut rnd);
+            let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
+            node_set[..train_size].iter().for_each(|node_id| {
+                train_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id);
+            });
+            node_set[train_size..].iter().for_each(|node_id| {
+                test_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id);
+            });
+        }
+
+        let mut train_graph = self.clone();
+        let mut test_graph = self.clone();
+
+        train_graph.node_types = NodeTypeVocabulary::from_structs(
+            train_node_types,
+            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
+        );
+        test_graph.node_types = NodeTypeVocabulary::from_structs(
+            test_node_types,
+            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
+        );
+
+        Ok((train_graph, test_graph))
+    }
+
     /// Returns subgraph with given number of nodes.
     ///
     /// This method creates a subset of the graph starting from a random node
@@ -557,7 +665,7 @@ impl Graph {
     ///
     /// * `random_state`: usize - Random random_state to use.
     /// * `nodes_number`: usize - Number of nodes to extract.
-    /// * `verbose`: bool - Wethever to show the loading bar.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn random_subgraph(
         &self,
@@ -666,7 +774,7 @@ impl Graph {
     /// * `k`: u64 - The number of folds.
     /// * `k_index`: u64 - Which fold to use for the validation.
     /// * `random_state`: NodeT - The random_state (seed) to use for the holdout,
-    /// * `verbose`: bool - Wethever to show the loading bar.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn kfold(
         &self,
@@ -733,12 +841,12 @@ impl Graph {
         let start = (k_index as f64 * chunk_size).ceil() as EdgeT;
         let end = std::cmp::min(
             indices.len() as EdgeT,
-            (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT
+            (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT,
         );
         let chunk =
             RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
         // Create the two graphs
-        self.holdout(
+        self.edge_holdout(
             random_state,
             end - start,
             false,

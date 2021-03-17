@@ -163,7 +163,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -176,7 +176,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
         if let Some(nni) = numeric_node_ids {
@@ -202,7 +202,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - Wethever to write out an header or not.
+    /// * header: Option<bool> - whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = header {
@@ -215,7 +215,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * directed: Option<bool> - Wethever to write out the graph as directed or not.
+    /// * directed: Option<bool> - whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;
