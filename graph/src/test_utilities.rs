@@ -404,6 +404,17 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // test remove components
     if graph.connected_components_number(verbose).0 > 1 {
+
+        let without_selfloops = graph.remove(
+            None, None, None, None, None, None, None, None, false, false, false, false, true,
+            verbose
+        )?;
+        assert_eq!(
+            graph.connected_components_number(verbose),
+            without_selfloops.connected_components_number(verbose),
+            "Removing selfloops changes the number of components ?????"
+        );
+
         let test = graph.remove_components(
             Some(vec![graph.nodes.translate(0).to_string()]),
             None,

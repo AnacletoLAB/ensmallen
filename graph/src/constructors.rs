@@ -378,7 +378,8 @@ pub(crate) fn build_edges(
     let mut unique_edges_number: EdgeT = 0;
     let mut unique_self_loop_number: NodeT = 0;
     let mut self_loop_number: EdgeT = 0;
-    let mut undirected_edges_cumulative_check: EdgeT = 0;
+    let mut forward_undirected_edges_counter: EdgeT = 0;
+    let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut not_singleton_node_number: NodeT = 0;
     let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
@@ -400,8 +401,8 @@ pub(crate) fn build_edges(
         }
         if  !directed && directed_edge_list{
             match src.cmp(&dst) {
-                Ordering::Greater => {undirected_edges_cumulative_check -= 1},
-                Ordering::Less => {undirected_edges_cumulative_check += 1},
+                Ordering::Greater => {forward_undirected_edges_counter += 1},
+                Ordering::Less => {backward_undirected_edges_counter += 1},
                 Ordering::Equal => {}
             }
         }
@@ -443,7 +444,7 @@ pub(crate) fn build_edges(
         }
     }
 
-    if undirected_edges_cumulative_check != 0{
+    if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
             "You are trying to load an undirected graph ",
             "from a directed edge list but the edge list is not ",
