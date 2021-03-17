@@ -35,9 +35,9 @@ impl EnsmallenGraph {
     /// weights_column: str = "weight",
     ///     The name of the column where to write out the .
     /// numeric_node_ids: bool = False,
-    ///     Wethever to save the internal numeric Ids instead of the string names.
+    ///     whether to save the internal numeric Ids instead of the string names.
     /// directed: bool = False,
-    ///     Wethever to save graph as directed or undirected.
+    ///     whether to save graph as directed or undirected.
     ///
     /// Raises
     /// ------------------------

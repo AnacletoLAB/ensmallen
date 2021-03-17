@@ -58,7 +58,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyConte
 /// window_size: int = 4,
 ///     Window size to consider for the sequences.
 /// verbose: bool = False,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
@@ -140,7 +140,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
     /// verbose: int = True,
-    ///     Wethever to show or not the loading bar of the walks.
+    ///     whether to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------

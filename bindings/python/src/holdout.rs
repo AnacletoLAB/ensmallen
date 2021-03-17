@@ -19,10 +19,10 @@ impl EnsmallenGraph {
     /// edge_types: List[str] = None,
     ///     List of names of the edge types to put into the validation.
     /// include_all_edge_types: bool = False,
-    ///     Wethever to include all the edges between two nodes.
+    ///     whether to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
     /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
+    ///     whether to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
@@ -79,7 +79,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     The random_state to use to generate the partial graph.
     /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
+    ///     whether to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
@@ -126,7 +126,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     The random_state to make the holdout reproducible.
     /// include_all_edge_types: bool = False,
-    ///     Wethever to include all the edges between two nodes.
+    ///     whether to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
     /// edge_types: List[String] = None,
     ///     The edge types to be included in the validation.
@@ -138,7 +138,7 @@ impl EnsmallenGraph {
     ///     If the value passed is None (default value) any edge can be put into the validation set.
     ///     If a non None value is passed, the graph MUST be a multi-graph, otherwise an exception will be raised.
     /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
+    ///     whether to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
@@ -210,7 +210,7 @@ impl EnsmallenGraph {
     ///     Wether to sample negative edges only from the same node component.
     ///     This avoids generating topologically impossible negative edges.
     /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
+    ///     whether to show the loading bar.
     ///     The loading bar will only be visible in console.
     ///
     /// Raises
@@ -271,7 +271,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     The random_state (seed) to use for the holdout,
     /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
+    ///     whether to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
