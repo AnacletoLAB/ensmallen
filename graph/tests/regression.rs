@@ -323,9 +323,30 @@ fn test_regression22()->Result<(), String>{
     Ok(())
 }
 
+/// This used to cause a subtract with overflow during the samplig of negativ edges,
+/// the solution was to have two separate counters instead of a single one.
+/// Of course this does not impact on the result, but it's cleaner and more informative.
 #[test]
 fn test_regression23()->Result<(), String>{
     let edges_reader = EdgeFileReader::new("tests/data/regression/23.csv".to_string())?
+        .set_separator(Some(",".to_string()))?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
+
+#[test]
+fn test_regression24()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/24.csv".to_string())?
+        .set_separator(Some(",".to_string()))?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
+
+#[test]
+fn test_regression25()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/25.csv".to_string())?
         .set_separator(Some(",".to_string()))?;
     let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
     let _ = graph::test_utilities::default_test_suite(&mut g, false);
