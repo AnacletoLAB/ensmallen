@@ -352,3 +352,21 @@ fn test_regression25()->Result<(), String>{
     let _ = graph::test_utilities::default_test_suite(&mut g, false);
     Ok(())
 }
+
+#[test]
+fn test_regression26()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/26.csv".to_string())?
+        .set_separator(Some(",".to_string()))?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
+
+#[test]
+fn test_regression27()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/27.csv".to_string())?
+        .set_separator(Some(",".to_string()))?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
