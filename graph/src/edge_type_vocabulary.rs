@@ -134,4 +134,9 @@ impl EdgeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
         self
     }
+
+    /// Returns number of unknown edges.
+    pub fn get_unknown_count(&self) -> EdgeT {
+        self.unknown_count
+    }
 }

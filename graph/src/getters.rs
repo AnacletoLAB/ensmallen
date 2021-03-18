@@ -385,6 +385,37 @@ impl Graph {
         self.node_types.is_some()
     }
 
+    /// Returns boolean representing if graph has multilabel node types.
+    pub fn has_multilabel_node_types(&self) -> bool {
+        self.node_types
+            .as_ref()
+            .map_or(false, |nt| nt.is_multilabel())
+    }
+
+    /// Returns number of unknown node types.
+    pub fn get_unknown_node_types_number(&self) -> NodeT {
+        self.node_types
+            .as_ref()
+            .map_or(0, |nt| nt.get_unknown_count())
+    }
+
+    /// Returns whether there are unknown node types.
+    pub fn has_unknown_node_types(&self) -> bool {
+        self.get_unknown_node_types_number() > 0
+    }
+
+    /// Returns number of unknown edge types.
+    pub fn get_unknown_edge_types_number(&self) -> EdgeT {
+        self.edge_types
+            .as_ref()
+            .map_or(0, |et| et.get_unknown_count())
+    }
+
+    /// Returns whether there are unknown edge types.
+    pub fn has_unknown_edge_types(&self) -> bool {
+        self.get_unknown_edge_types_number() > 0
+    }
+
     /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> NodeT {
         self.nodes.len() as NodeT
