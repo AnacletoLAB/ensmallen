@@ -358,7 +358,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -378,7 +378,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -398,7 +398,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -418,7 +418,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -433,7 +433,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: Option<bool>) -> Vec<String> {
         self.graph.get_source_names(directed.unwrap_or(true))
     }
@@ -444,7 +444,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: Option<bool>) -> Vec<String> {
         self.graph.get_destination_names(directed.unwrap_or(true))
     }

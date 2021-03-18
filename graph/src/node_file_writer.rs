@@ -95,7 +95,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
         if let Some(v) = verbose {
@@ -121,7 +121,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - Wethever to write out an header or not.
+    /// * header: Option<bool> - whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileWriter {
         if let Some(v) = header {

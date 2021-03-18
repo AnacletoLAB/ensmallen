@@ -7,11 +7,11 @@ impl Graph {
     ///
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
-    /// * `directed`: bool - Wethever the graph is to be read as directed or undirected.
+    /// * `directed`: bool - whether the graph is to be read as directed or undirected.
     /// * `directed_edge_list`: bool - Wether to read the edge list as directed.
-    /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
-    /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
-    /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
+    /// * `ignore_duplicated_nodes`: bool - whether to ignore duplicated nodes while reading.
+    /// * `ignore_duplicated_edges`: bool - whether to ignore duplicated edges while reading.
+    /// * `skip_self_loops`: bool - whether to skip self-loops while reading the edge file.
     pub fn from_sorted_csv<S: Into<String>>(
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
@@ -62,11 +62,11 @@ impl Graph {
     ///
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
-    /// * `directed`: bool - Wethever the graph is to be read as directed or undirected.
+    /// * `directed`: bool - whether the graph is to be read as directed or undirected.
     /// * `directed_edge_list`: bool - Wether to read the edge list as directed.
-    /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
-    /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
-    /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
+    /// * `ignore_duplicated_nodes`: bool - whether to ignore duplicated nodes while reading.
+    /// * `ignore_duplicated_edges`: bool - whether to ignore duplicated edges while reading.
+    /// * `skip_self_loops`: bool - whether to skip self-loops while reading the edge file.
     pub fn from_unsorted_csv<S: Into<String>>(
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,

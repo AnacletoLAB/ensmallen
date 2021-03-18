@@ -73,7 +73,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
-    /// * `directed`: bool, wethever to filter out the undirected edges.
+    /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
         self.get_sources_par_iter(directed).collect()
     }
@@ -81,7 +81,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool, wethever to filter out the undirected edges.
+    /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.get_sources_par_iter(directed)
             .map(|src| self.get_node_name(src).unwrap())
@@ -91,7 +91,7 @@ impl Graph {
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, wethever to filter out the undirected edges.
+    /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
         self.get_destinations_par_iter(directed).collect()
     }
@@ -99,7 +99,7 @@ impl Graph {
     /// Return vector of the non-unique destination nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool, wethever to filter out the undirected edges.
+    /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.get_destinations_par_iter(directed)
             .map(|dst| self.get_node_name(dst).unwrap())
