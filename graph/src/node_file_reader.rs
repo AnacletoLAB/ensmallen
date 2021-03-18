@@ -31,7 +31,7 @@ impl NodeFileReader {
     ///
     /// * reader: CSVFileParameters - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> Result<NodeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<NodeFileReader, String> {
         Ok(NodeFileReader {
             reader: CSVFileReader::new(path)?,
             default_node_type: None,
@@ -50,11 +50,12 @@ impl NodeFileReader {
     ///
     /// * nodes_column: Option<String> - The nodes column to use for the file.
     ///
-    pub fn set_nodes_column(
+    pub fn set_nodes_column<S: Into<String>>(
         mut self,
-        nodes_column: Option<String>,
+        nodes_column: Option<S>,
     ) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node column is empty.".to_owned());
             }
@@ -80,11 +81,12 @@ impl NodeFileReader {
     ///
     /// * node_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_node_types_column(
+    pub fn set_node_types_column<S: Into<String>>(
         mut self,
-        nodes_type_column: Option<String>,
+        nodes_type_column: Option<S>,
     ) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_type_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -223,8 +225,12 @@ impl NodeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileReader, String> {
+    pub fn set_separator<S: Into<String>>(
+        mut self,
+        separator: Option<S>,
+    ) -> Result<NodeFileReader, String> {
         if let Some(sep) = separator {
+            let sep = sep.into();
             if sep.is_empty() {
                 return Err("The separator cannot be empty.".to_owned());
             }

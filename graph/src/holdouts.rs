@@ -628,8 +628,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(random_state ^ SEED_XOR as u64);
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = Vec::with_capacity(self.get_nodes_number() as usize);
-        let mut test_node_types = Vec::with_capacity(self.get_nodes_number() as usize);
+        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -637,16 +637,12 @@ impl Graph {
             // Compute how many of these nodes belongs to the training set
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
-            train_node_types.extend(
-                node_set[..train_size]
-                    .iter()
-                    .map(|node_id| self.get_unchecked_node_type(*node_id)),
-            );
-            test_node_types.extend(
-                node_set[train_size..]
-                    .iter()
-                    .map(|node_id| self.get_unchecked_node_type(*node_id)),
-            );
+            node_set[..train_size].iter().for_each(|node_id| {
+                train_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+            });
+            node_set[train_size..].iter().for_each(|node_id| {
+                test_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+            });
         }
 
         // Clone the current graph

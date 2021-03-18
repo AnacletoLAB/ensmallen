@@ -361,7 +361,7 @@ pub(crate) fn build_edges(
     directed: bool,
     directed_edge_list: bool
 ) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
-    info!("Started building of compressed EliasFano edges data structure.");
+    info!("Started building of EliasFano edges data structure.");
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(

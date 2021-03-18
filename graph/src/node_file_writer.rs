@@ -25,7 +25,7 @@ impl NodeFileWriter {
     ///
     /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> NodeFileWriter {
+    pub fn new<S: Into<String>>(path: S) -> NodeFileWriter {
         NodeFileWriter {
             writer: CSVFileWriter::new(path),
             nodes_column: "id".to_string(),
@@ -42,9 +42,9 @@ impl NodeFileWriter {
     ///
     /// * nodes_column: Option<String> - The nodes column to use for the file.
     ///
-    pub fn set_nodes_column(mut self, nodes_column: Option<String>) -> NodeFileWriter {
+    pub fn set_nodes_column<S: Into<String>>(mut self, nodes_column: Option<S>) -> NodeFileWriter {
         if let Some(column) = nodes_column {
-            self.nodes_column = column;
+            self.nodes_column = column.into();
         }
         self
     }
@@ -55,9 +55,9 @@ impl NodeFileWriter {
     ///
     /// * node_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_node_types_column(mut self, nodes_type_column: Option<String>) -> NodeFileWriter {
+    pub fn set_node_types_column<S: Into<String>>(mut self, nodes_type_column: Option<S>) -> NodeFileWriter {
         if let Some(column) = nodes_type_column {
-            self.node_types_column = column;
+            self.node_types_column = column.into();
         }
         self
     }
@@ -110,9 +110,9 @@ impl NodeFileWriter {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> NodeFileWriter {
+    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> NodeFileWriter {
         if let Some(v) = separator {
-            self.writer.separator = v;
+            self.writer.separator = v.into();
         }
         self
     }

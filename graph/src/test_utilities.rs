@@ -5,6 +5,7 @@ use rand::Rng;
 use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
 use std::fs;
+use log::info;
 use std::path::Path;
 
 // where to save the test files
@@ -59,7 +60,7 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
                 .set_ignore_duplicates(Some(true))
-                .set_separator(Some("\t".to_string()))
+                .set_separator(Some("\t"))
                 .unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
@@ -72,7 +73,7 @@ pub fn load_ppi(
     let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t"))
         .unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
@@ -194,6 +195,7 @@ pub fn default_holdout_test_suite(
 
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    info!("Starting default test suite.");
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
@@ -216,9 +218,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     );
 
     if !graph.directed {
-        // let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
-        // assert_eq!(has_singletons, graph.has_singletons());
-
         let (_components_number, smallest, biggest) = graph.connected_components_number(false);
         assert!(
             biggest >= smallest,
@@ -243,6 +242,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
+        info!("Executing random walks tests.");
         for mode in 0..3 {
             if mode == 1 {
                 graph.enable(false, true, true, None)?;
@@ -361,6 +361,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     );
 
     // Testing main holdout mechanisms
+    info!("Executing edge holdouts tests.");
     for include_all_edge_types in &[false, true] {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
@@ -516,11 +517,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let node_file = random_path();
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(Some(verbose))
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t"))
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
-        .set_node_types_column(Some("node_types".to_string()))
+        .set_node_types_column(Some("node_types"))
         .set_nodes_column(Some("node_column".to_string()));
     nodes_writer.dump(&graph)?;
     fs::remove_file(node_file).unwrap();
@@ -528,9 +529,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let edges_file = random_path();
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(Some(verbose))
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t"))
         .set_header(Some(true))
-        .set_edge_types_column(Some("edge_types".to_string()))
+        .set_edge_types_column(Some("edge_types"))
         .set_destinations_column_number(Some(3))
         .set_weights_column(Some("weight".to_string()))
         .set_weights_column_number(Some(2))
@@ -621,6 +622,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 .collect::<HashSet<String>>(),
         ),
     );
+    info!("Running edge lists generator tests.");
     if graph.get_nodes_number() > 1 {
         let _bipartite = graph.get_bipartite_edge_names(
             None,
@@ -672,8 +674,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
         );
 
+        info!("Running node-label holdouts tests.");
         for use_stratification in [true, false].iter() {
-            // CHECK THAT THIS RAISES EXCEPTION!
+            
             if *use_stratification
                 && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
                 && graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
@@ -791,8 +794,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // Testing cloning
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
-    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
+    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
 
     assert_eq!(
         clone.get_edge_types_number(),
