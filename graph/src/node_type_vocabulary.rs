@@ -4,6 +4,11 @@ use std::hash::{Hash, Hasher};
 
 #[derive(Debug, Clone)]
 pub struct NodeTypeVocabulary {
+    /// This is the vector with the node types of each node
+    /// Moreover, for the node x it's node type is ids[x]
+    /// it's an option since the node might not have the node type
+    /// and it contains a vector since we support multiple node types 
+    /// on the same node
     pub ids: Vec<Option<Vec<NodeTypeT>>>,
     pub vocabulary: Vocabulary<NodeTypeT>,
     pub counts: Vec<NodeT>,

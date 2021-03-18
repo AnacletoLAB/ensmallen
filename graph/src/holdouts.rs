@@ -587,23 +587,31 @@ impl Graph {
             }
         }
 
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
-
+        // Compute the vectors with the indices of the nodes which node type matches
+        // therefore the expected shape is:
+        // (node_types_number, number of nodes of that node type) 
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
             .map(|nts| {
                 if use_stratification {
+                    // Initialize the vectors for each node type
                     let mut node_sets: Vec<Vec<NodeT>> =
                         vec![Vec::new(); self.get_node_types_number() as usize];
+                    // itering over the indices and adding each node to the 
+                    // vector of the corresponding node type.
                     nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
+                        // if the node has a node_type
                         node_type.as_ref().map(|nt| {
-                            node_sets[*nt.first().unwrap() as usize].push(node_id as NodeT)
+                            // Get the index of the correct node type vector.
+                            node_sets[nt[0] as usize].push(node_id as NodeT)
                         });
                     });
+
                     node_sets
                 } else {
+                    // just compute a vector with a single vector of the indices
+                    //  of the nodes with node 
                     vec![nts
                         .ids
                         .iter()
@@ -615,23 +623,37 @@ impl Graph {
                 }
             })
             .unwrap();
-
+        
+        // initialize the seed for a re-producible shuffle
         let mut rnd = SmallRng::seed_from_u64(random_state ^ SEED_XOR as u64);
+        
+        // Allocate the vectors for the nodes of each 
+        let mut train_node_types = Vec::with_capacity(self.get_nodes_number() as usize);
+        let mut test_node_types  = Vec::with_capacity(self.get_nodes_number() as usize);
 
         for mut node_set in node_sets {
+            // Shuffle in a reproducible way the nodes of the current node_type
             node_set.shuffle(&mut rnd);
+            // Compute how many of these nodes belongs to the training set
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
-            node_set[..train_size].iter().for_each(|node_id| {
-                train_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id);
-            });
-            node_set[train_size..].iter().for_each(|node_id| {
-                test_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id);
-            });
+            // add the nodes to the relative vectors
+            train_node_types.extend(node_set[..train_size].iter().map(
+                |node_id| self.get_unchecked_node_type(*node_id) 
+            ));
+            test_node_types.extend(node_set[train_size..].iter().map(
+                |node_id| self.get_unchecked_node_type(*node_id) 
+            ));
         }
 
+        // Clone the current graph
+        // here we could manually initialize the clones so that we don't waste
+        // time and memory cloning the node_types which will be immediately 
+        // overwrite. We argue that this should not be impactfull so we prefer
+        // to prioritze the simplicity of the code
         let mut train_graph = self.clone();
         let mut test_graph = self.clone();
 
+        // Replace the node_types with the one computes above
         train_graph.node_types = NodeTypeVocabulary::from_structs(
             train_node_types,
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
