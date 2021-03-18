@@ -322,7 +322,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 graph.textual_report(false).unwrap()
             );
             assert!(
-                graph.has_node_string(&src_string, None) && graph.has_node_string(&dst_string, None)
+                graph.has_node_string(&src_string, None)
+                    && graph.has_node_string(&dst_string, None)
             );
             assert_eq!(
                 graph.get_edge_id_string(
@@ -371,15 +372,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             .random_spanning_arborescence_kruskal(42, &None, verbose)
             .0;
         if !graph.directed {
-            let spanning_arborescence_bader = graph
-                .spanning_arborescence(verbose)
-                .unwrap()
-                .1
-                .collect::<Vec<(NodeT, NodeT)>>();
-            assert_eq!(
-                spanning_arborescence_bader.len() as usize,
-                kruskal_tree.len()
-            );
+            let spanning_arborescence_bader_len =
+                graph.spanning_arborescence(verbose).unwrap().1.count();
+            assert_eq!(spanning_arborescence_bader_len, kruskal_tree.len());
         }
         assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
         let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
@@ -404,10 +399,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // test remove components
     if graph.connected_components_number(verbose).0 > 1 {
-
         let without_selfloops = graph.remove(
             None, None, None, None, None, None, None, None, false, false, false, false, true,
-            verbose
+            verbose,
         )?;
         assert_eq!(
             graph.connected_components_number(verbose),
@@ -425,11 +419,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         )?;
         let no_selfloops = test.remove(
             None, None, None, None, None, None, None, None, false, false, false, true, false,
-            verbose
+            verbose,
         )?;
         assert_eq!(
-            no_selfloops.connected_components_number(verbose)
-            .0,
+            no_selfloops.connected_components_number(verbose).0,
             1,
             "Expected number of components (1) is not matched!"
         );

@@ -98,7 +98,7 @@ impl NodeTypeVocabulary {
                     })
                     .collect::<Result<Vec<NodeTypeT>, String>>()?;
                 // Sort the slice
-                ids.sort();
+                ids.sort_unstable();
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
                 Some(ids)

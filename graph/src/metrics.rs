@@ -599,7 +599,7 @@ impl Graph {
     ) -> Result<String, String> {
         self.format_list(
             node_types_list
-                .into_iter()
+                .iter()
                 .map(|(node_type_id, number)| {
                     format!(
                         "{node_type} (nodes number {node_degree})",

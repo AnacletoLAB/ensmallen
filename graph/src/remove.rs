@@ -343,10 +343,7 @@ impl Graph {
             self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
             self.name.clone(),
             true,

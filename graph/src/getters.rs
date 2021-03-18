@@ -206,10 +206,9 @@ impl Graph {
 
     /// Return the node types names.
     pub fn get_node_type_names(&self) -> Option<Vec<String>> {
-        match &self.node_types {
-            Some(nts) => Some(nts.vocabulary.reverse_map.clone()),
-            None => None,
-        }
+        self.node_types
+            .as_ref()
+            .map(|nts| nts.vocabulary.reverse_map.clone())
     }
 
     /// Return number of the unique edges in the graph.
@@ -254,18 +253,14 @@ impl Graph {
 
     /// Returs option with the weight of the given edge id.
     pub fn get_unchecked_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
-        match &self.weights {
-            Some(ws) => Some(ws[edge_id as usize]),
-            None => None,
-        }
+        self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
     /// Returs option with the node type of the given node id.
     pub fn get_unchecked_node_type(&self, node_id: NodeT) -> Option<Vec<NodeTypeT>> {
-        match &self.node_types {
-            Some(nts) => nts.ids[node_id as usize].clone(),
-            None => None,
-        }
+        self.node_types
+            .as_ref()
+            .and_then(|nts| nts.ids[node_id as usize].clone())
     }
 
     /// Returns node type of given node.
@@ -382,7 +377,7 @@ impl Graph {
 
     /// Returs option with the weight of the given edge id.
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
-        return self.get_unchecked_edge_weight(edge_id);
+        self.get_unchecked_edge_weight(edge_id)
     }
 
     /// Returns boolean representing if graph has node types.

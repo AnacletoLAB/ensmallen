@@ -117,10 +117,7 @@ fn generic_integer_operator(
         edges_iterator,
         main.nodes.clone(),
         main.node_types.clone(),
-        match &main.edge_types {
-            Some(ets) => Some(ets.vocabulary.clone()),
-            None => None,
-        },
+        main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
         main.directed,
         false,
         build_operator_graph_name(main, other, operator),
