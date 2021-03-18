@@ -1,11 +1,11 @@
 //! Test functions used both for testing and fuzzing.
 
 use super::*;
+use log::warn;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
 use std::fs;
-use log::info;
 use std::path::Path;
 
 // where to save the test files
@@ -195,7 +195,7 @@ pub fn default_holdout_test_suite(
 
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    info!("Starting default test suite.");
+    warn!("Starting default test suite.");
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
@@ -218,6 +218,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     );
 
     if !graph.directed {
+        warn!("Running connected components tests.");
         let (_components_number, smallest, biggest) = graph.connected_components_number(false);
         assert!(
             biggest >= smallest,
@@ -242,7 +243,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        info!("Executing random walks tests.");
+        warn!("Executing random walks tests.");
         for mode in 0..3 {
             if mode == 1 {
                 graph.enable(false, true, true, None)?;
@@ -361,7 +362,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     );
 
     // Testing main holdout mechanisms
-    info!("Executing edge holdouts tests.");
+    warn!("Executing edge holdouts tests.");
     for include_all_edge_types in &[false, true] {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
@@ -400,6 +401,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // test remove components
     if graph.connected_components_number(verbose).0 > 1 {
+        warn!("Running remove components tests.");
         let without_selfloops = graph.remove(
             None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
@@ -427,52 +429,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             1,
             "Expected number of components (1) is not matched!"
         );
-
-        if let Some(nts) = &graph.node_types {
-            let test = graph.remove_components(
-                None,
-                Some(vec![nts.translate(0).to_string()]),
-                None,
-                None,
-                None,
-                verbose,
-            )?;
-            assert_eq!(
-                test.remove(
-                    None, None, None, None, None, None, None, None, false, false, false, true,
-                    false, verbose
-                )?
-                .connected_components_number(verbose)
-                .0,
-                1,
-                "Expected number of components (1) is not matched!"
-            );
-        }
-
-        if let Some(ets) = &graph.edge_types {
-            let test = graph.remove_components(
-                None,
-                None,
-                Some(vec![ets.translate(0).to_string()]),
-                None,
-                None,
-                verbose,
-            )?;
-            assert_eq!(
-                test.remove(
-                    None, None, None, None, None, None, None, None, false, false, false, true,
-                    false, verbose
-                )?
-                .connected_components_number(verbose)
-                .0,
-                1,
-                "Expected number of components (1) is not matched!"
-            );
-        }
     }
 
+    warn!("Testing k-fold holdouts.");
     // test the kfold
-    let k = 10;
+    let k = 3;
     for i in 0..k {
         let (train, test) = graph.kfold(k, i, None, 42, false)?;
         assert!(
@@ -622,7 +583,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 .collect::<HashSet<String>>(),
         ),
     );
-    info!("Running edge lists generator tests.");
+    warn!("Running edge lists generator tests.");
     if graph.get_nodes_number() > 1 {
         let _bipartite = graph.get_bipartite_edge_names(
             None,
@@ -674,9 +635,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
         );
 
-        info!("Running node-label holdouts tests.");
+        warn!("Running node-label holdouts tests.");
         for use_stratification in [true, false].iter() {
-            
             if *use_stratification
                 && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
                 && graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
@@ -686,16 +646,28 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .is_err());
             }
             let (train, test) = graph.node_label_holdout(42, 0.8, *use_stratification)?;
-            assert_eq!(&(&train | &test)?, graph);
-            assert!(train.node_types.as_ref().map_or(false, |train_nts| {
-                test.node_types.as_ref().map_or(false, |test_nts| {
-                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                        |(train_node_type, test_node_type)| {
-                            !(train_node_type.is_some() && test_node_type.is_some())
-                        },
-                    )
-                })
-            }));
+            let remerged = &mut (&train | &test)?;
+            assert_eq!(remerged.node_types, graph.node_types);
+            assert!(
+                remerged.contains(graph)?,
+                "The re-merged holdouts does not contain the original graph."
+            );
+            assert!(
+                graph.contains(remerged)?,
+                "The re-merged holdouts does not contain the original graph."
+            );
+            assert!(
+                train.node_types.as_ref().map_or(false, |train_nts| {
+                    test.node_types.as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_node_type, test_node_type)| {
+                                !(train_node_type.is_some() && test_node_type.is_some())
+                            },
+                        )
+                    })
+                }),
+                "The train and test node-label graphs are overlapping!"
+            );
         }
     }
     if graph.has_edge_types() {
@@ -766,7 +738,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.nodes, graph.nodes);
-            assert_eq!(wn.edges, graph.edges);
             assert_eq!(
                 graph.has_node_types(),
                 graph.validate_operator_terms(&wn).is_err()
@@ -784,7 +755,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.nodes, graph.nodes);
-            assert_eq!(ww.edges, graph.edges);
             assert_eq!(
                 graph.has_weights(),
                 graph.validate_operator_terms(&ww).is_err()

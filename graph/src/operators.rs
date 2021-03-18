@@ -134,9 +134,8 @@ fn generic_integer_operator(
         (Some(mnts), Some(onts)) => Some(match mnts == onts {
             true => mnts.clone(),
             false => {
-                let mut node_types = mnts.clone();
-                node_types
-                    .ids
+                let mut main_node_types = mnts.ids.clone();
+                main_node_types
                     .iter_mut()
                     .zip(onts.ids.iter())
                     .for_each(|(mid, oid)| {
@@ -144,7 +143,7 @@ fn generic_integer_operator(
                             *mid = oid.clone();
                         }
                     });
-                node_types
+                NodeTypeVocabulary::from_structs(main_node_types, Some(mnts.vocabulary.clone())).unwrap()
             }
         }),
         (Some(mnts), _) => Some(mnts.clone()),

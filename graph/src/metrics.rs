@@ -708,7 +708,7 @@ impl Graph {
                             true=>{
                                 let unknown_nodes_number=self.get_unknown_node_types_number();
                                 let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
-                                format!(". There are {} unknown node types ({}%).", unknown_nodes_number, percentage)
+                                format!(". There are {} unknown node types ({:.2}%).", unknown_nodes_number, percentage)
                             },
                             false=>"".to_owned()
                         }
@@ -754,7 +754,7 @@ impl Graph {
                             true=>{
                                 let unknown_edges_number=self.get_unknown_edge_types_number();
                                 let percentage = 100.0*(unknown_edges_number as f64 / self.get_edges_number() as f64);
-                                format!(". There are {} unknown edge types ({}%).", unknown_edges_number, percentage)
+                                format!(". There are {} unknown edge types ({:.2}%).", unknown_edges_number, percentage)
                             },
                             false=>"".to_owned()
                         }

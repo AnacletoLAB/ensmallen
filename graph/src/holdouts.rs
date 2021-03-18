@@ -666,6 +666,106 @@ impl Graph {
         Ok((train_graph, test_graph))
     }
 
+    /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
+    ///
+    /// # Arguments
+    ///
+    /// * `random_state`: EdgeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: bool - Wheter to use edge-label stratification,
+    ///
+    pub fn edge_label_holdout(
+        &self,
+        random_state: EdgeT,
+        train_size: f64,
+        use_stratification: bool,
+    ) -> Result<(Graph, Graph), String> {
+        if !self.has_edge_types() {
+            return Err("The current graph does not have edge types.".to_string());
+        }
+        if use_stratification && self.get_minimum_edge_types_number() < 2 {
+            return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
+        }
+
+        // Compute the vectors with the indices of the edges which edge type matches
+        // therefore the expected shape is:
+        // (edge_types_number, number of edges of that edge type)
+        let edge_sets: Vec<Vec<EdgeT>> = self
+            .edge_types
+            .as_ref()
+            .map(|nts| {
+                if use_stratification {
+                    // Initialize the vectors for each edge type
+                    let mut edge_sets: Vec<Vec<EdgeT>> =
+                        vec![Vec::new(); self.get_edge_types_number() as usize];
+                    // itering over the indices and adding each edge to the
+                    // vector of the corresponding edge type.
+                    nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
+                        // if the edge has a edge_type
+                        if let Some(et) = edge_type {
+                            // Get the index of the correct edge type vector.
+                            edge_sets[*et as usize].push(edge_id as EdgeT);
+                        };
+                    });
+
+                    edge_sets
+                } else {
+                    // just compute a vector with a single vector of the indices
+                    //  of the edges with edge
+                    vec![nts
+                        .ids
+                        .iter()
+                        .enumerate()
+                        .filter_map(|(edge_id, edge_type)| {
+                            edge_type.as_ref().map(|_| edge_id as EdgeT)
+                        })
+                        .collect()]
+                }
+            })
+            .unwrap();
+
+        // initialize the seed for a re-producible shuffle
+        let mut rnd = SmallRng::seed_from_u64(random_state ^ SEED_XOR as u64);
+
+        // Allocate the vectors for the edges of each
+        let mut train_edge_types = vec![None; self.get_edges_number() as usize];
+        let mut test_edge_types = vec![None; self.get_edges_number() as usize];
+
+        for mut edge_set in edge_sets {
+            // Shuffle in a reproducible way the edges of the current edge_type
+            edge_set.shuffle(&mut rnd);
+            // Compute how many of these edges belongs to the training set
+            let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
+            // add the edges to the relative vectors
+            edge_set[..train_size].iter().for_each(|edge_id| {
+                train_edge_types[*edge_id as usize] = self.get_unchecked_edge_type(*edge_id)
+            });
+            edge_set[train_size..].iter().for_each(|edge_id| {
+                test_edge_types[*edge_id as usize] = self.get_unchecked_edge_type(*edge_id)
+            });
+        }
+
+        // Clone the current graph
+        // here we could manually initialize the clones so that we don't waste
+        // time and memory cloning the edge_types which will be immediately
+        // overwrite. We argue that this should not be impactfull so we prefer
+        // to prioritze the simplicity of the code
+        let mut train_graph = self.clone();
+        let mut test_graph = self.clone();
+
+        // Replace the edge_types with the one computes above
+        train_graph.edge_types = EdgeTypeVocabulary::from_structs(
+            train_edge_types,
+            self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
+        );
+        test_graph.edge_types = EdgeTypeVocabulary::from_structs(
+            test_edge_types,
+            self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
+        );
+
+        Ok((train_graph, test_graph))
+    }
+
     /// Returns subgraph with given number of nodes.
     ///
     /// This method creates a subset of the graph starting from a random node
