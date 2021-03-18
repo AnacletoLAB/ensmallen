@@ -322,7 +322,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 graph.textual_report(false).unwrap()
             );
             assert!(
-                graph.has_node_string(&src_string, None) && graph.has_node_string(&dst_string, None)
+                graph.has_node_string(&src_string, None)
+                    && graph.has_node_string(&dst_string, None)
             );
             assert_eq!(
                 graph.get_edge_id_string(
@@ -371,15 +372,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             .random_spanning_arborescence_kruskal(42, &None, verbose)
             .0;
         if !graph.directed {
-            let spanning_arborescence_bader = graph
-                .spanning_arborescence(verbose)
-                .unwrap()
-                .1
-                .collect::<Vec<(NodeT, NodeT)>>();
-            assert_eq!(
-                spanning_arborescence_bader.len() as usize,
-                kruskal_tree.len()
-            );
+            let spanning_arborescence_bader_len =
+                graph.spanning_arborescence(verbose).unwrap().1.count();
+            assert_eq!(spanning_arborescence_bader_len, kruskal_tree.len());
         }
         assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
         let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
@@ -404,10 +399,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // test remove components
     if graph.connected_components_number(verbose).0 > 1 {
-
         let without_selfloops = graph.remove(
             None, None, None, None, None, None, None, None, false, false, false, false, true,
-            verbose
+            verbose,
         )?;
         assert_eq!(
             graph.connected_components_number(verbose),
@@ -425,11 +419,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         )?;
         let no_selfloops = test.remove(
             None, None, None, None, None, None, None, None, false, false, false, true, false,
-            verbose
+            verbose,
         )?;
         assert_eq!(
-            no_selfloops.connected_components_number(verbose)
-            .0,
+            no_selfloops.connected_components_number(verbose).0,
             1,
             "Expected number of components (1) is not matched!"
         );
@@ -678,6 +671,19 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
             "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
         );
+
+        for use_stratification in [true, false].iter() {
+            // CHECK THAT THIS RAISES EXCEPTION!
+            if *use_stratification
+                && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
+                && graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
+            {
+                assert!(graph
+                    .node_label_holdout(42, 0.8, *use_stratification)
+                    .is_err());
+            }
+            let (train, test) = graph.node_label_holdout(42, 0.8, *use_stratification)?;
+        }
     }
     if graph.has_edge_types() {
         graph.get_edge_type(0)?;

@@ -11,7 +11,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::xorshift::{xorshift as rand_u64};
+use vec_rand::xorshift::xorshift as rand_u64;
 use vec_rand::{gen_random_vec, sample_uniform};
 
 /// # Holdouts.
@@ -431,15 +431,15 @@ impl Graph {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
-        let edge_type_ids = if let Some(ets) = edge_types {
-            Some(
-                self.translate_edge_types(ets)?
-                    .into_iter()
-                    .collect::<HashSet<EdgeTypeT>>(),
-            )
-        } else {
-            None
-        };
+        let edge_type_ids: Result<Option<HashSet<NodeTypeT>>, String> =
+            edge_types.map_or(Ok(None), |ets| {
+                Ok(Some(
+                    self.translate_edge_types(ets)?
+                        .into_iter()
+                        .collect::<HashSet<EdgeTypeT>>(),
+                ))
+            });
+        let edge_type_ids = edge_type_ids?;
 
         let tree = self
             .random_spanning_arborescence_kruskal(random_state, &edge_type_ids, verbose)
@@ -522,15 +522,15 @@ impl Graph {
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
             self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
-        let edge_type_ids = if let Some(ets) = edge_types {
-            Some(
-                self.translate_edge_types(ets)?
-                    .into_iter()
-                    .collect::<HashSet<EdgeTypeT>>(),
-            )
-        } else {
-            None
-        };
+        let edge_type_ids: Result<Option<HashSet<NodeTypeT>>, String> =
+            edge_types.map_or(Ok(None), |ets| {
+                Ok(Some(
+                    self.translate_edge_types(ets)?
+                        .into_iter()
+                        .collect::<HashSet<EdgeTypeT>>(),
+                ))
+            });
+        let edge_type_ids = edge_type_ids?;
         if min_number_overlaps.is_some() && !self.is_multigraph() {
             return Err("Current graph is not a multigraph!".to_string());
         }
@@ -578,21 +578,13 @@ impl Graph {
         if !self.has_node_types() {
             return Err("The current graph does not have node types.".to_string());
         }
-        if use_stratification
-            && self
-                .node_types
-                .as_ref()
-                .map_or(true, |nts| nts.is_multilabel())
-        {
-            return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
-        }
-        if use_stratification
-            && self
-                .node_types
-                .as_ref()
-                .map_or(true, |nts| nts.min_node_type_count() < 2)
-        {
-            return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+        if use_stratification {
+            if self.has_multilabel_node_types() {
+                return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
+            }
+            if self.get_minimum_node_types_number() < 2 {
+                return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+            }
         }
 
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];

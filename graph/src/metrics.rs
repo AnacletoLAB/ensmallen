@@ -599,7 +599,7 @@ impl Graph {
     ) -> Result<String, String> {
         self.format_list(
             node_types_list
-                .into_iter()
+                .iter()
                 .map(|(node_type_id, number)| {
                     format!(
                         "{node_type} (nodes number {node_degree})",
@@ -689,14 +689,28 @@ impl Graph {
                     }
                 ),
                 ntn if ntn > 1 => format!(
-                    " with {node_types_number} different node types: {most_common_node_types}",
+                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}",
                     node_types_number=ntn,
+                    multilabel=match self.has_multilabel_node_types(){
+                        true=>"multi-label ",
+                        false=>""
+                    },
                     most_common_node_types={
                         let node_types = self.get_node_type_counts()?;
                         let most_common = node_types.most_common();
                         match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_node_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_node_type_list(most_common.as_slice())?
+                        }
+                    },
+                    unknown_node_types={
+                        match self.has_unknown_node_types(){
+                            true=>{
+                                let unknown_nodes_number=self.get_unknown_node_types_number();
+                                let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
+                                format!(". There are {} unknown node types ({}%).", unknown_nodes_number, percentage)
+                            },
+                            false=>"".to_owned()
                         }
                     }
                 ),
@@ -725,7 +739,7 @@ impl Graph {
                     }
                 ),
                 etn if etn > 1 => format!(
-                    " with {edge_types_number} different edge types: {most_common_edge_types}",
+                    " with {edge_types_number} different edge types: {most_common_edge_types}{unknown_edge_types}",
                     edge_types_number=etn,
                     most_common_edge_types={
                         let edge_types = self.get_edge_type_counts()?;
@@ -733,6 +747,16 @@ impl Graph {
                         match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_edge_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_edge_type_list(most_common.as_slice())?
+                        }
+                    },
+                    unknown_edge_types={
+                        match self.has_unknown_edge_types(){
+                            true=>{
+                                let unknown_edges_number=self.get_unknown_edge_types_number();
+                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_edges_number() as f64);
+                                format!(". There are {} unknown edge types ({}%).", unknown_edges_number, percentage)
+                            },
+                            false=>"".to_owned()
                         }
                     }
                 ),
