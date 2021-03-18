@@ -17,24 +17,13 @@ fn test_citeseer() -> Result<(), String> {
             .set_nodes_column(Some("id"))?
             .set_node_types_column(Some("node_type"))?,
     );
-    let mut citeseer =
-        Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, "CiteSeer".to_owned())?
-            .remove(
-                None,
-                None,
-                None,
-                Some(["Word".to_string()].iter().map(|nt| nt.clone()).collect()),
-                None,
-                None,
-                None,
-                None,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-            )?;
+    let mut citeseer = Graph::from_unsorted_csv(
+        edges_reader,
+        nodes_reader,
+        false,
+        false,
+        "CiteSeer".to_owned(),
+    )?;
     let _ = graph::test_utilities::default_test_suite(&mut citeseer, false);
     Ok(())
 }

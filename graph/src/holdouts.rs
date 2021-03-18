@@ -565,15 +565,15 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training,
-    /// * `use_stratification`: bool - Wheter to use node-label stratification,
+    /// * `use_stratification`: bool - Whether to use node-label stratification,
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
     ///
     pub fn node_label_holdout(
         &self,
-        random_state: EdgeT,
         train_size: f64,
         use_stratification: bool,
+        random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
         if !self.has_node_types() {
             return Err("The current graph does not have node types.".to_string());
@@ -670,15 +670,15 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training,
-    /// * `use_stratification`: bool - Wheter to use edge-label stratification,
+    /// * `use_stratification`: bool - Whether to use edge-label stratification,
+    /// * `random_state`: EdgeT - The random_state to use for the holdout,
     ///
     pub fn edge_label_holdout(
         &self,
-        random_state: EdgeT,
         train_size: f64,
         use_stratification: bool,
+        random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
         if !self.has_edge_types() {
             return Err("The current graph does not have edge types.".to_string());

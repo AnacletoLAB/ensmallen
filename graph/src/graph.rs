@@ -38,8 +38,6 @@ pub struct Graph {
     pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
     /// Graph name
     pub(crate) name: String,
-    // Graph embedding for fast edge embedding operations.
-    pub(crate) embedding: Option<Vec<Vec<f64>>>,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -100,7 +98,6 @@ impl Graph {
             edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
             nodes: nodes.set_numeric_ids(false),
             sources: None,
-            embedding: None,
             destinations: None,
             outbounds: None,
             cached_destinations: None,

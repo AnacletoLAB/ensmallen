@@ -522,27 +522,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         for (context, _) in data.iter() {
             assert_eq!(context.len(), window_size * 2);
         }
-        // Testing link prediction pre-processing
-        let batch_size = 10;
-        graph.set_embedding(vec![vec![1.0; 100]; graph.get_nodes_number() as usize])?;
-        vec!["Average", "L1", "L2", "AbsoluteL1", "Hadamard"]
-            .iter()
-            .for_each(|method| {
-                let link_prediction_edges = graph
-                    .link_prediction(0, batch_size, method, 1.0, true, 5, &None)
-                    .unwrap()
-                    .collect::<Vec<_>>();
-                for (_, edges, _) in link_prediction_edges.iter() {
-                    assert_eq!(edges.len(), 100);
-                }
-            });
-        let concatenated_edges = graph
-            .link_prediction(0, batch_size, "Concatenate", 1.0, false, 5, &None)
-            .unwrap()
-            .collect::<Vec<_>>();
-        for (_, edge, _) in concatenated_edges.iter() {
-            assert_eq!(edge.len(), 200);
-        }
     }
     // Compute metrics of the graph
     graph.report();
@@ -642,10 +621,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 || graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
             {
                 assert!(graph
-                    .node_label_holdout(42, 0.8, *use_stratification)
+                    .node_label_holdout(0.8, *use_stratification, 42)
                     .is_err());
             }
-            let (train, test) = graph.node_label_holdout(42, 0.8, *use_stratification)?;
+            let (train, test) = graph.node_label_holdout(0.8, *use_stratification, 42)?;
             let remerged = &mut (&train | &test)?;
             assert_eq!(remerged.node_types, graph.node_types);
             assert!(
@@ -680,15 +659,14 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
         warn!("Running edge-label holdouts tests.");
         for use_stratification in [true, false].iter() {
-            if *use_stratification
-                && graph.get_minimum_edge_types_number() < 2
+            if *use_stratification && graph.get_minimum_edge_types_number() < 2
                 || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
             {
                 assert!(graph
-                    .edge_label_holdout(42, 0.8, *use_stratification)
+                    .edge_label_holdout(0.8, *use_stratification, 42)
                     .is_err());
             }
-            let (train, test) = graph.edge_label_holdout(42, 0.8, *use_stratification)?;
+            let (train, test) = graph.edge_label_holdout(0.8, *use_stratification, 42)?;
             assert!(
                 train.edge_types.as_ref().map_or(false, |train_nts| {
                     test.edge_types.as_ref().map_or(false, |test_nts| {

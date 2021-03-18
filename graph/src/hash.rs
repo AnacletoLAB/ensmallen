@@ -24,7 +24,7 @@ fn hash_float<H: Hasher>(x: f32, state: &mut H){
 }
 
 impl Graph {
-    fn compute_hash(&self) -> u64 {
+    pub fn compute_hash(&self) -> u64 {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
         hasher.finish()

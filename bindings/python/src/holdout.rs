@@ -51,14 +51,11 @@ impl EnsmallenGraph {
         ))?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
-            pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                .unwrap_or(42),
+            pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
             train_size,
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
-            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .unwrap_or(false),
-            pyex!(extract_value!(kwargs, "verbose", bool))?
-                .unwrap_or(true),
+            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
+            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
@@ -103,11 +100,9 @@ impl EnsmallenGraph {
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.random_subgraph(
-                pyex!(extract_value!(kwargs, "random_state", usize))?
-                    .unwrap_or(42),
+                pyex!(extract_value!(kwargs, "random_state", usize))?.unwrap_or(42),
                 nodes_number,
-                pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .unwrap_or(true),
+                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
             ))?,
         })
     }
@@ -175,15 +170,12 @@ impl EnsmallenGraph {
         ))?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                .unwrap_or(42),
+            pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
             train_size,
-            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .unwrap_or(false),
+            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
-            pyex!(extract_value!(kwargs, "verbose", bool))?
-                .unwrap_or(true),
+            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
@@ -230,24 +222,26 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "verbose", "seed_graph", "only_from_same_component"]),
+            build_walk_parameters_list(&[
+                "random_state",
+                "verbose",
+                "seed_graph",
+                "only_from_same_component"
+            ]),
         ))?;
 
         let seed_graph = pyex!(extract_value!(kwargs, "seed_graph", EnsmallenGraph))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
-                pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                    .unwrap_or(42),
+                pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
                 negatives_number,
                 match &seed_graph {
                     Some(sg) => Some(&sg.graph),
                     None => None,
                 },
-                pyex!(extract_value!(kwargs, "only_from_same_component", bool))?
-                    .unwrap_or(true),
-                pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .unwrap_or(true),
+                pyex!(extract_value!(kwargs, "only_from_same_component", bool))?.unwrap_or(true),
+                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
             ))?,
         })
     }
@@ -266,7 +260,7 @@ impl EnsmallenGraph {
     /// k_index: int,
     ///     Which fold to use for the validation.
     /// edge_types: List[str] = None,
-    ///     Edge types to be selected when computing the folds 
+    ///     Edge types to be selected when computing the folds
     ///        (All the edge types not listed here will be always be used in the training set).
     /// random_state: int = 42,
     ///     The random_state (seed) to use for the holdout,
@@ -298,19 +292,117 @@ impl EnsmallenGraph {
             k,
             k_index,
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
-            pyex!(extract_value!(kwargs, "random_state", u64))?
-                .unwrap_or(42),
-            pyex!(extract_value!(kwargs, "verbose", bool))?
-                .unwrap_or(true),
+            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
 
         Ok((
-            EnsmallenGraph {
-                graph: train
-            },
-            EnsmallenGraph {
-                graph: test
-            },
+            EnsmallenGraph { graph: train },
+            EnsmallenGraph { graph: test },
+        ))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, train_size, random_state, use_stratification)"]
+    /// Returns train and test graphs for node-label prediction tasks.
+    ///
+    /// The split is done using Monte Carlo split or, if stratification is
+    /// enabled, Stratified Monte Carlo.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// train_size: float,
+    ///     Rate target to reserve for training,
+    /// random_state: int = 42,
+    ///     The random_state to use for the holdout,
+    /// use_stratification: bool = True,
+    ///     Whether to use edge-label stratification,
+    ///
+    /// Raises
+    /// -----------------------------
+    /// ValueError,
+    ///     If the graph does not have node types.
+    /// ValueError,
+    ///     If the stratification is required but the graph has multi-label node types.
+    /// ValueError,
+    ///     If the stratification is required but the graph has some node types with insufficient cardinality.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Train and test graph.
+    fn node_label_holdout(
+        &self,
+        train_size: f64,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pyex!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["random_state", "use_stratification"])
+        ))?;
+
+        let (train, test) = pyex!(self.graph.node_label_holdout(
+            train_size,
+            pyex!(extract_value!(kwargs, "use_stratification", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+        ))?;
+
+        Ok((
+            EnsmallenGraph { graph: train },
+            EnsmallenGraph { graph: test },
+        ))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, train_size, random_state, use_stratification)"]
+    /// Returns train and test graphs for edge-label prediction tasks.
+    ///
+    /// The split is done using Monte Carlo split or, if stratification is
+    /// enabled, Stratified Monte Carlo.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// train_size: float,
+    ///     Rate target to reserve for training,
+    /// random_state: int = 42,
+    ///     The random_state to use for the holdout,
+    /// use_stratification: bool = True,
+    ///     Whether to use edge-label stratification,
+    ///
+    /// Raises
+    /// -----------------------------
+    /// ValueError,
+    ///     If the graph does not have edge types.
+    /// ValueError,
+    ///     If the stratification is required but the graph has some edge types with insufficient cardinality.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Train and test graph.
+    fn edge_label_holdout(
+        &self,
+        train_size: f64,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pyex!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["random_state", "use_stratification"])
+        ))?;
+
+        let (train, test) = pyex!(self.graph.edge_label_holdout(
+            train_size,
+            pyex!(extract_value!(kwargs, "use_stratification", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+        ))?;
+
+        Ok((
+            EnsmallenGraph { graph: train },
+            EnsmallenGraph { graph: test },
         ))
     }
 }
