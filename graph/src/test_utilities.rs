@@ -683,6 +683,16 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .is_err());
             }
             let (train, test) = graph.node_label_holdout(42, 0.8, *use_stratification)?;
+            assert_eq!(&(&train | &test)?, graph);
+            assert!(train.node_types.as_ref().map_or(false, |train_nts| {
+                test.node_types.as_ref().map_or(false, |test_nts| {
+                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                        |(train_node_type, test_node_type)| {
+                            !(train_node_type.is_some() && test_node_type.is_some())
+                        },
+                    )
+                })
+            }));
         }
     }
     if graph.has_edge_types() {

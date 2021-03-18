@@ -130,8 +130,6 @@ fn generic_integer_operator(
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
 
-    // TODO: Add node types and edge types merger!
-
     let node_types = match (&main.node_types, &other.node_types) {
         (Some(mnts), Some(onts)) => Some(match mnts == onts {
             true => mnts.clone(),
