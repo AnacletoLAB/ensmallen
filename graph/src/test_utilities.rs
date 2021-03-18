@@ -639,7 +639,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         for use_stratification in [true, false].iter() {
             if *use_stratification
                 && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
-                && graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
+                || graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
             {
                 assert!(graph
                     .node_label_holdout(42, 0.8, *use_stratification)
@@ -677,6 +677,31 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.get_edge_type(graph.get_edges_number() + 1).is_err(),
             "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
         );
+
+        warn!("Running edge-label holdouts tests.");
+        for use_stratification in [true, false].iter() {
+            if *use_stratification
+                && graph.get_minimum_edge_types_number() < 2
+                || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
+            {
+                assert!(graph
+                    .edge_label_holdout(42, 0.8, *use_stratification)
+                    .is_err());
+            }
+            let (train, test) = graph.edge_label_holdout(42, 0.8, *use_stratification)?;
+            assert!(
+                train.edge_types.as_ref().map_or(false, |train_nts| {
+                    test.edge_types.as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_edge_type, test_edge_type)| {
+                                !(train_edge_type.is_some() && test_edge_type.is_some())
+                            },
+                        )
+                    })
+                }),
+                "The train and test edge-label graphs are overlapping!"
+            );
+        }
     }
     // Evaluate get_node_type
     assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
