@@ -35,6 +35,7 @@ fn generic_string_operator(
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
+                    // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
                         return !dg.has_edge_string(src, dst, edge_type.as_ref());
                     }
@@ -46,12 +47,28 @@ fn generic_string_operator(
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
 
-    let graphs = [main, other];
-    let nodes_iterator = graphs.iter().flat_map(|graph| {
-        graph
-            .get_nodes_names_iter()
-            .map(|(_, node_name, node_id)| Ok((node_name, node_id)))
-    });
+    // Chaining node types in a way that merges the information between
+    // two node type sets where one of the two has some unknown node types
+    let nodes_iterator =
+        main.get_nodes_names_iter()
+            .map(|(_, node_name, node_type_names)| {
+                let node_type_names = match node_type_names {
+                    Some(ntns) => Some(ntns),
+                    None => other
+                        .get_node_id(&node_name)
+                        .ok()
+                        .and_then(|node_id| other.get_node_type_string(node_id)),
+                };
+                Ok((node_name, node_type_names))
+            })
+            .chain(
+                other.get_nodes_names_iter().filter_map(
+                    |(_, node_name, node_type_names)| match main.has_node_by_name(&node_name) {
+                        true => None,
+                        false => Some(Ok((node_name, node_type_names))),
+                    },
+                ),
+            );
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -113,10 +130,34 @@ fn generic_integer_operator(
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
 
+    // TODO: Add node types and edge types merger!
+
+    let node_types = match (&main.node_types, &other.node_types) {
+        (Some(mnts), Some(onts)) => Some(match mnts == onts {
+            true => mnts.clone(),
+            false => {
+                let mut node_types = mnts.clone();
+                node_types
+                    .ids
+                    .iter_mut()
+                    .zip(onts.ids.iter())
+                    .for_each(|(mid, oid)| {
+                        if mid.is_none() {
+                            *mid = oid.clone();
+                        }
+                    });
+                node_types
+            }
+        }),
+        (Some(mnts), _) => Some(mnts.clone()),
+        (_, Some(onts)) => Some(onts.clone()),
+        _ => None,
+    };
+
     Graph::from_integer_unsorted(
         edges_iterator,
         main.nodes.clone(),
-        main.node_types.clone(),
+        node_types,
         main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
         main.directed,
         false,
@@ -165,14 +206,14 @@ impl Graph {
         if self.nodes != other.nodes {
             return Ok(false);
         }
-        if self.node_types != other.node_types {
-            return Ok(false);
+        if let (Some(snts), Some(onts)) = (&self.node_types, &other.node_types) {
+            if snts.vocabulary != onts.vocabulary {
+                return Ok(false);
+            }
         }
-        if let Some(sets) = &self.edge_types {
-            if let Some(oets) = &other.edge_types {
-                if sets.vocabulary != oets.vocabulary {
-                    return Ok(false);
-                }
+        if let (Some(sets), Some(oets)) = (&self.edge_types, &other.edge_types) {
+            if sets.vocabulary != oets.vocabulary {
+                return Ok(false);
             }
         }
         Ok(true)

@@ -362,6 +362,11 @@ impl Graph {
         }
     }
 
+    /// Returs whether the graph has the given node name.
+    pub fn has_node_by_name(&self, node_name: &str) -> bool {
+        self.get_node_id(node_name).is_ok()
+    }
+
     /// Returs node id raising a panic if used unproperly.
     pub fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
         *self.nodes.get(node_name).unwrap()
