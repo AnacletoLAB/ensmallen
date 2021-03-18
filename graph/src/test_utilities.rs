@@ -671,6 +671,19 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
             "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
         );
+
+        for use_stratification in [true, false].iter() {
+            // CHECK THAT THIS RAISES EXCEPTION!
+            if *use_stratification
+                && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
+                && graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
+            {
+                assert!(graph
+                    .node_label_holdout(42, 0.8, *use_stratification)
+                    .is_err());
+            }
+            let (train, test) = graph.node_label_holdout(42, 0.8, *use_stratification)?;
+        }
     }
     if graph.has_edge_types() {
         graph.get_edge_type(0)?;

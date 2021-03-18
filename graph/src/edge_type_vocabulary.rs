@@ -139,4 +139,9 @@ impl EdgeTypeVocabulary {
     pub fn get_unknown_count(&self) -> EdgeT {
         self.unknown_count
     }
+
+    /// Returns number of minimum edge-count.
+    pub fn min_edge_type_count(&self) -> EdgeT {
+        *self.counts.iter().min().unwrap()
+    }
 }

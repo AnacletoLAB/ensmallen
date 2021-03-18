@@ -578,21 +578,13 @@ impl Graph {
         if !self.has_node_types() {
             return Err("The current graph does not have node types.".to_string());
         }
-        if use_stratification
-            && self
-                .node_types
-                .as_ref()
-                .map_or(true, |nts| nts.is_multilabel())
-        {
-            return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
-        }
-        if use_stratification
-            && self
-                .node_types
-                .as_ref()
-                .map_or(true, |nts| nts.min_node_type_count() < 2)
-        {
-            return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+        if use_stratification {
+            if self.has_multilabel_node_types() {
+                return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
+            }
+            if self.get_minimum_node_types_number() < 2 {
+                return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+            }
         }
 
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];
