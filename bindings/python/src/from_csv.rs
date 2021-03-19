@@ -13,7 +13,7 @@ impl EnsmallenGraph {
     /// edge_path: String,
     ///     The path from where load the edge file.
     /// directed: bool,
-    ///     Wethever to load the graph as directed or undirected.
+    ///     whether to load the graph as directed or undirected.
     /// directed_edge_list: bool = False,
     ///     Wether to load the edge list as directed or undirected.
     ///     The default behaviour is to treat he list as undirected and handle the
@@ -53,15 +53,15 @@ impl EnsmallenGraph {
     ///     String representing the default edge type to use when the edge type
     ///     in the provided column is empty.
     /// skip_self_loops: bool = False,
-    ///     Wethever to skip self loops while loading the edge file.
+    ///     whether to skip self loops while loading the edge file.
     /// ignore_duplicated_edges: bool = True,
-    ///     Wethever to skip duplicated edges while loading the edge file.
+    ///     whether to skip duplicated edges while loading the edge file.
     ///     When NOT ignoring the duplicated edges, an exception with information
     ///     on the duplicated edge will be raised.
     ///     When ignoring the edge type while reading the file duplicated edges
     ///     in a multi-graph will be marked as duplicates.
     /// edge_header: bool = True,
-    ///     Wethever to expect the first line of the edge file to be a header.
+    ///     whether to expect the first line of the edge file to be a header.
     /// edge_rows_to_skip: int = 0,
     ///     If the edge file has some descriptive text in the first few lines,
     ///     this is the parameter that allows you to skip it.
@@ -92,11 +92,11 @@ impl EnsmallenGraph {
     ///     String representing the default node type to use when the node type
     ///     in the provided column is empty.
     /// ignore_duplicated_nodes: bool = True,
-    ///     Wethever to skip duplicated nodes while loading the node file.
+    ///     whether to skip duplicated nodes while loading the node file.
     ///     When NOT ignoring the duplicated nodes, an exception with information
     ///     on the duplicated node will be raised.
     /// node_header: bool = True,
-    ///     Wethever to expect the first line of the node file to be a header.
+    ///     whether to expect the first line of the node file to be a header.
     /// node_rows_to_skip: int = 0,
     ///     If the node file has some descriptive text in the first few lines,
     ///     this is the parameter that allows you to skip it.
@@ -128,7 +128,7 @@ impl EnsmallenGraph {
     /// name: str = "Graph",
     ///     The name of the graph to use.
     /// verbose: bool = True,
-    ///     Wethever to load the files verbosely, showing a loading bar.
+    ///     whether to load the files verbosely, showing a loading bar.
     ///
     /// Raises
     /// ------------------------
@@ -168,7 +168,7 @@ impl EnsmallenGraph {
     /// edge_path: String,
     ///     The path from where load the edge file.
     /// directed: bool,
-    ///     Wethever to load the graph as directed or undirected.
+    ///     whether to load the graph as directed or undirected.
     /// directed_edge_list: bool = False,
     ///     Wether to load the edge list as directed or undirected.
     ///     The default behaviour is to the list as undirected and handle the
@@ -208,15 +208,15 @@ impl EnsmallenGraph {
     ///     String representing the default edge type to use when the edge type
     ///     in the provided column is empty.
     /// skip_self_loops: bool = False,
-    ///     Wethever to skip self loops while loading the edge file.
+    ///     whether to skip self loops while loading the edge file.
     /// ignore_duplicated_edges: bool = True,
-    ///     Wethever to skip duplicated edges while loading the edge file.
+    ///     whether to skip duplicated edges while loading the edge file.
     ///     When NOT ignoring the duplicated edges, an exception with information
     ///     on the duplicated edge will be raised.
     ///     When ignoring the edge type while reading the file duplicated edges
     ///     in a multi-graph will be marked as duplicates.
     /// edge_header: bool = True,
-    ///     Wethever to expect the first line of the edge file to be a header.
+    ///     whether to expect the first line of the edge file to be a header.
     /// edge_rows_to_skip: int = 0,
     ///     If the edge file has some descriptive text in the first few lines,
     ///     this is the parameter that allows you to skip it.
@@ -247,11 +247,11 @@ impl EnsmallenGraph {
     ///     String representing the default node type to use when the node type
     ///     in the provided column is empty.
     /// ignore_duplicated_nodes: bool = True,
-    ///     Wethever to skip duplicated nodes while loading the node file.
+    ///     whether to skip duplicated nodes while loading the node file.
     ///     When NOT ignoring the duplicated nodes, an exception with information
     ///     on the duplicated node will be raised.
     /// node_header: bool = True,
-    ///     Wethever to expect the first line of the node file to be a header.
+    ///     whether to expect the first line of the node file to be a header.
     /// node_rows_to_skip: int = 0,
     ///     If the node file has some descriptive text in the first few lines,
     ///     this is the parameter that allows you to skip it.
@@ -283,7 +283,7 @@ impl EnsmallenGraph {
     /// name: str = "Graph",
     ///     The name of the graph to use.
     /// verbose: bool = True,
-    ///     Wethever to load the files verbosely, showing a loading bar.
+    ///     whether to load the files verbosely, showing a loading bar.
     ///
     /// Raises
     /// ------------------------

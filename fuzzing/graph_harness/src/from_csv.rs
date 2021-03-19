@@ -109,7 +109,6 @@ fn handle_panics(data: FromCsvHarnessParams) {
         write!(file, "{},{:?}\n", "nodes_column", nodes_reader.nodes_column);
         write!(file, "{},{:?}\n", "node_types_column_number", nodes_reader.node_types_column_number);
         write!(file, "{},{:?}\n", "node_types_column", nodes_reader.node_types_column);
-        write!(file, "{},{:?}\n", "nodes_column", nodes_reader.nodes_column);
         write!(file, "{},{:?}\n", "verbose", nodes_reader.reader.verbose);
         write!(file, "{},{:?}\n", "separator", nodes_reader.reader.separator);
         write!(file, "{},{:?}\n", "header", nodes_reader.reader.header);
@@ -165,8 +164,8 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
                 NodeFileReader::new(nodes_path.to_string())?
                     .set_verbose(Some(false))
                     .set_separator(nr.reader.separator)?
-                    .set_node_types_column_number(nr.node_types_column_number)?
-                    .set_nodes_column_number(nr.node_types_column_number)?
+                    .set_node_types_column_number(nr.node_types_column_number)
+                    .set_nodes_column_number(nr.node_types_column_number)
                     .set_node_types_column(nr.node_types_column)?
                     .set_default_node_type(nr.default_node_type)
                     .set_nodes_column(nr.nodes_column)?

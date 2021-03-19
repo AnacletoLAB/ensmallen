@@ -61,7 +61,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         Ok(())
     }
 
-    /// Returns wethever the value is empty or not.
+    /// Returns whether the value is empty or not.
     pub fn is_empty(&self) -> bool {
         self.map.is_empty()
     }
