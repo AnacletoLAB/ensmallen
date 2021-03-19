@@ -51,12 +51,34 @@ pub struct EdgeFileReaderParams {
     pub file: String,
 }
 
+
+fn get_path(wanted_folder: &str) -> std::path::PathBuf {
+    let curr_dir = std::env::current_dir().unwrap().canonicalize().unwrap();
+
+    let mut new_path = std::path::PathBuf::new();
+
+    for part in curr_dir.iter() {
+        new_path.push(part);
+        if part == wanted_folder{
+            break
+        }
+    }
+
+    new_path
+}
+
 fn handle_panics(data: FromCsvHarnessParams) {
-    let path = graph::test_utilities::random_path(Some("./"));
-    let edge_path = format!("{}_edges.csv", path);
+    let mut currdir = get_path("ensmallen_graph");
+    currdir.push("fuzzing");
+    currdir.push("unit_tests");
+
+    let path = graph::test_utilities::random_path(currdir.to_str());
+    std::fs::create_dir_all(&path).unwrap();
+
+    let edge_path = format!("{}/edges.csv", path);
     std::fs::write(edge_path, data.edge_reader.file);
 
-    let edge_metadata_path = format!("{}_edges_metadata.csv", path);
+    let edge_metadata_path = format!("{}/edges_metadata.csv", path);
     let mut file = File::create(edge_metadata_path).unwrap();
     write!(file, "{},{:?}\n", "directed", data.directed);
     write!(file, "{},{:?}\n", "sources_column_number", data.edge_reader.sources_column_number);
@@ -77,10 +99,10 @@ fn handle_panics(data: FromCsvHarnessParams) {
     write!(file, "{},{:?}\n", "ignore_duplicates", data.edge_reader.reader.ignore_duplicates);
     
     if let Some(nodes_reader) = data.nodes_reader{
-        let node_path = format!("{}_nodes.csv", path);
+        let node_path = format!("{}/nodes.csv", path);
         std::fs::write(node_path, nodes_reader.file);
 
-        let node_metadata_path = format!("{}_nodes_metadata.csv", path);
+        let node_metadata_path = format!("{}/nodes_metadata.csv", path);
         let mut file = File::create(node_metadata_path).unwrap();
         write!(file, "{},{:?}\n", "default_node_type", nodes_reader.default_node_type);
         write!(file, "{},{:?}\n", "nodes_column_number", nodes_reader.nodes_column_number);
