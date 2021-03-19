@@ -133,7 +133,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<NodeT> - Wethever to show the loading bar or not.
+    /// * iterations: Option<NodeT> - whether to show the loading bar or not.
     ///
     pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters, String> {
         if let Some(it) = iterations {

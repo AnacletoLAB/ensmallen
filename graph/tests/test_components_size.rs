@@ -6,9 +6,9 @@ use std::collections::HashMap;
 /// Test that the components number is reasonable, this raised the wierd case in which:
 /// singletons: false selfloops: false smallest: 1 biggest: 3, edges: [(0, 1), (2, 3), (4, 5)]
 fn test_components_size() {
-    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv".to_string())
+    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv")
         .unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(","))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))

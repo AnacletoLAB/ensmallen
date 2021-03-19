@@ -1,3 +1,4 @@
+use itertools::Itertools;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
@@ -36,7 +37,7 @@ impl CSVFileReader {
         // check file existance
         match File::open(&path) {
             Ok(_) => Ok(CSVFileReader {
-                path:path.into(),
+                path,
                 verbose: true,
                 separator: "\t".to_string(),
                 header: true,
@@ -45,7 +46,7 @@ impl CSVFileReader {
                 max_rows_number: None,
                 comment_symbol: None,
             }),
-            Err(_) => Err(format!("Cannot open the file at {}", path.to_string())),
+            Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
     }
 
@@ -61,14 +62,11 @@ impl CSVFileReader {
 
     /// Return list of components of the header.
     pub fn get_header(&self) -> Result<Vec<String>, String> {
-        if let Some(lt) = self.get_lines_iterator(false)?.next() {
-            match lt {
-                Ok(line) => Ok(line
-                    .split(&self.separator)
-                    .map(|s| s.to_string())
-                    .collect::<Vec<String>>()),
-                Err(_) => Err("Something went wrong reading the line from the file".to_string()),
-            }
+        if let Some(first_line) = self.get_lines_iterator(false)?.next() {
+            Ok(first_line?
+                .split(&self.separator)
+                .map(|s| s.to_string())
+                .collect::<Vec<String>>())
         } else {
             Err("The given file has no lines!".to_string())
         }
@@ -77,7 +75,7 @@ impl CSVFileReader {
     pub fn get_lines_iterator(
         &self,
         skip_header: bool,
-    ) -> Result<impl Iterator<Item = Result<String, std::io::Error>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<String, String>> + '_, String> {
         let rows_to_skip = match skip_header {
             true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
                 Some(v) => Ok(v),
@@ -91,12 +89,12 @@ impl CSVFileReader {
         } as usize;
         Ok(BufReader::new(File::open(&self.path).unwrap())
             .lines()
-            .filter(move |line| match line {
-                Ok(l) => !l.is_empty(),
-                _ => true,
+            .map(|line| match line {
+                Ok(l)=>Ok(l),
+                Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
             })
-            .filter(move |line| match (line, &self.comment_symbol) {
-                (Ok(l), Some(cs)) => !l.starts_with(cs),
+            .filter_ok(move |line| !line.is_empty() && match &self.comment_symbol {
+                Some(cs) => !line.starts_with(cs),
                 _ => true,
             })
             .skip(rows_to_skip))
@@ -124,7 +122,7 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>>  + '_, String> {
         let pb = if self.verbose {
             let pb = ProgressBar::new(self.count_rows() as u64);
             pb.set_draw_delta(std::cmp::max(self.count_rows() as u64 / 1000, 1));
@@ -142,21 +140,17 @@ impl CSVFileReader {
             .enumerate()
             // skip empty lines
             .take_while(move |(i, _)| self.max_rows_number.unwrap_or(u64::MAX) > *i as u64)
-            .map(move |(_, line)| match line {
-                Ok(l) => {
-                    let mut line_components = l
-                        .split(&self.separator)
-                        .map(|s| s.to_string()) // TODO FIND A WAY TO USE A REF INSTEAD OF A STRING we are copying every line, this slow down a lot imho
-                        .collect::<Vec<String>>();
-                    // If in this line some values have been implied,
-                    // we add the necessary padding.
-                    if line_components.len() < number_of_elements_per_line {
-                        line_components.extend((0..(number_of_elements_per_line - line_components.len())).map(|_| "".to_string()));
-                    }
-                    Ok(line_components)
-                },
-                Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
-            }))
+            .map(|(_, line)| line)
+            // Handling NaN values and padding them to the number of rows
+            .map_ok(move |line|{
+                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| match element.is_empty() {
+                    true=>None,
+                    false=>Some(element.to_string())
+                }).collect();
+                elements.resize(number_of_elements_per_line, None);
+                elements
+            })
+        )
     }
 
     /// Return number of the given column in header.

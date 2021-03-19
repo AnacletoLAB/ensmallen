@@ -16,7 +16,7 @@ pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize
 }
 
 /// Return true if the given weight is near to one.
-pub(crate) fn not_one(weight:WeightT)->bool {
+pub(crate) fn not_one(weight: WeightT) -> bool {
     (weight - 1.0).abs() > WeightT::EPSILON
 }
 
@@ -43,19 +43,16 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     if weight.is_finite() && weight > 0.0 {
         Ok(weight)
     } else {
-        Err(format!("The weight is '{}' but the weights must be strictly positives and finite.", weight))
+        Err(format!(
+            "The weight is '{}' but the weights must be strictly positives and finite.",
+            weight
+        ))
     }
 }
 
-pub fn parse_weight(weight: Option<&str>) -> Result<Option<WeightT>, String> {
-    match weight {
-        None => Ok(None),
-        Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => match validate_weight(val) {
-                Ok(val) => Ok(Some(val)),
-                Err(e) => Err(e)
-            },
-            Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
-        },
+pub fn parse_weight(weight: String) -> Result<WeightT, String> {
+    match weight.parse::<WeightT>() {
+        Ok(val) => Ok(val),
+        Err(_) => Err(format!("Cannot parse weight {} as a float.", weight)),
     }
 }

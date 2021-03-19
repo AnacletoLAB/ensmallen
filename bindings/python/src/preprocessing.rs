@@ -58,7 +58,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyConte
 /// window_size: int = 4,
 ///     Window size to consider for the sequences.
 /// verbose: bool = False,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
@@ -140,7 +140,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
     /// verbose: int = True,
-    ///     Wethever to show or not the loading bar of the walks.
+    ///     whether to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -275,99 +275,6 @@ impl EnsmallenGraph {
             }
         });
         Ok((contexts.t.to_owned(), words.t.to_owned()))
-    }
-
-    #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, method, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
-    /// Returns
-    ///
-    ///
-    /// Parameters
-    /// -----------------------------
-    /// idx:int,
-    ///     Index corresponding to batch to be rendered.
-    /// batch_size: int,
-    ///     The batch size to use.
-    /// method: str,
-    ///     The method to use for the edge embedding.
-    /// negative_samples: float = 1.0,
-    ///     Factor of negatives to use in every batch.
-    ///     For example, with a batch size of 128 and negative_samples equal
-    ///     to 1.0, there will be 64 positives and 64 negatives.
-    /// avoid_false_negatives: bool = False,
-    ///     Wether to filter out false negatives.
-    ///     By default False.
-    ///     Enabling this will slow down the batch generation while (likely) not
-    ///     introducing any significant gain to the model performance.
-    /// maximal_sampling_attempts: usize = 100,
-    ///     Number of attempts to execute to sample the negative edges.
-    /// graph_to_avoid: EnsmallenGraph = None,
-    ///     Graph to avoid when generating the links.
-    ///     This can be the validation component of the graph, for example.
-    ///
-    /// Returns
-    /// -----------------------------
-    /// Tuple containing training and validation graphs.
-    ///
-    fn link_prediction(
-        &self,
-        idx: u64,
-        batch_size: usize,
-        method: &str,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<bool>>)> {
-        let gil = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-
-        pyex!(validate_kwargs(
-            kwargs,
-            [
-                "negative_samples",
-                "avoid_false_negatives",
-                "maximal_sampling_attempts",
-                "graph_to_avoid",
-            ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
-        ))?;
-        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
-        let maybe_graph = match &graph_to_avoid {
-            Some(g) => Some(&g.graph),
-            None => None,
-        };
-
-        let iter = pyex!(self.graph.link_prediction(
-            idx,
-            batch_size,
-            method,
-            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
-            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
-            &maybe_graph
-        ))?;
-
-        let embedding_size = pyex!(self.graph.get_embedding_size())?;
-        let edge_vector_len = match method {
-            "Concatenate" => embedding_size * 2,
-            _ => embedding_size,
-        };
-
-        let edges = ThreadSafe {
-            t: PyArray2::new(gil.python(), [batch_size, edge_vector_len], false),
-        };
-        let labels = ThreadSafe {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-        unsafe {
-            iter.for_each(|(i, edge_embedding, label)| {
-                edge_embedding.iter().enumerate().for_each(|(j, v)| {
-                    *(edges.t.uget_mut([i, j])) = *v;
-                });
-                *(labels.t.uget_mut([i])) = label;
-            });
-        }
-        Ok((edges.t.to_owned(), labels.t.to_owned()))
     }
 
     #[args(py_kwargs = "**")]

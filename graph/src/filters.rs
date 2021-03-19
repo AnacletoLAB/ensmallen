@@ -29,10 +29,9 @@ impl Graph {
         );
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
-        let edge_types_ids = match edge_types {
-            Some(ets) => Some(self.translate_edge_types(ets)?),
-            None => None,
-        };
+        let edge_types_ids: Result<Option<Vec<EdgeTypeT>>, String> =
+            edge_types.map_or(Ok(None), |ets| Ok(Some(self.translate_edge_types(ets)?)));
+        let edge_types_ids = edge_types_ids?;
 
         Graph::build_graph(
             self.get_edges_quadruples(true)
@@ -63,10 +62,7 @@ impl Graph {
             self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
             self.name.clone(),
             false,
@@ -97,13 +93,15 @@ impl Graph {
         max_weight: Option<WeightT>,
     ) -> Result<impl Iterator<Item = NodeT> + '_, String> {
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
-        let edge_types_ids = match edge_types {
-            Some(ets) => Some(self.translate_edge_types(ets)?),
-            None => None,
-        };
-        Ok(self.get_unchecked_destinations_range(src)
+        let edge_types_ids: Result<Option<Vec<EdgeTypeT>>, String> =
+            edge_types.map_or(Ok(None), |ets| Ok(Some(self.translate_edge_types(ets)?)));
+        let edge_types_ids = edge_types_ids?;
+        Ok(self
+            .get_unchecked_destinations_range(src)
             .filter_map(move |edge_id| {
-                if let (Some(ets), Some(et)) = (&edge_types_ids, self.get_unchecked_edge_type(edge_id)) {
+                if let (Some(ets), Some(et)) =
+                    (&edge_types_ids, self.get_unchecked_edge_type(edge_id))
+                {
                     if !ets.contains(&et) {
                         return None;
                     }

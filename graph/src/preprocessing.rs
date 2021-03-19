@@ -16,61 +16,6 @@ fn fast_u32_modulo(val: u32, n: u32) -> u32 {
     ((val as u64 * n as u64) >> 32) as u32
 }
 
-enum EdgeEmbeddingMethods {
-    Hadamard,
-    Average,
-    Sum,
-    L1,
-    AbsoluteL1,
-    L2,
-    Concatenate,
-}
-
-impl EdgeEmbeddingMethods {
-    fn new(method: &str) -> Result<EdgeEmbeddingMethods, String> {
-        match method {
-            "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
-            "Average" => Ok(EdgeEmbeddingMethods::Average),
-            "Sum" => Ok(EdgeEmbeddingMethods::Sum),
-            "L1" => Ok(EdgeEmbeddingMethods::L1),
-            "AbsoluteL1" => Ok(EdgeEmbeddingMethods::AbsoluteL1),
-            "L2" => Ok(EdgeEmbeddingMethods::L2),
-            "Concatenate" => Ok(EdgeEmbeddingMethods::Concatenate),
-            _ => Err(format!(
-                concat!(
-                    "Given embedding method '{}' is not supported.",
-                    "The supported methods are 'Hadamard', 'Average', 'Sum', 'AbsoluteL1', 'L1', 'Concatenate' and 'L2'."
-                ),
-                method
-            )),
-        }
-    }
-
-    fn call(&self, x1: &[f64], x2: &[f64]) -> Vec<f64>{
-        match self {
-            EdgeEmbeddingMethods::Concatenate => x1.iter().chain(x2.iter()).cloned().collect(),
-            _ => {
-                x1.iter()
-                .cloned()
-                .zip(x2.iter().cloned())
-                .map(
-                    match self {
-                        EdgeEmbeddingMethods::Hadamard   => |(x1, x2): (f64, f64)| -> f64 {x1 * x2},
-                        EdgeEmbeddingMethods::Average    => |(x1, x2): (f64, f64)| -> f64 {(x1 + x2) / 2.0},
-                        EdgeEmbeddingMethods::Sum        => |(x1, x2): (f64, f64)| -> f64 {x1 + x2},
-                        EdgeEmbeddingMethods::L1         => |(x1, x2): (f64, f64)| -> f64 {x1 - x2},
-                        EdgeEmbeddingMethods::AbsoluteL1 => |(x1, x2): (f64, f64)| -> f64 {(x1 - x2).abs()},
-                        EdgeEmbeddingMethods::L2         => |(x1, x2): (f64, f64)| -> f64 {(x1 - x2).powi(2)},   
-                        _ => unreachable!(),
-                    }
-                )
-                .collect()
-            }
-        }
-        
-    }
-}
-
 /// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
@@ -117,7 +62,7 @@ pub fn word2vec<'a>(
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * window_size: Option<usize> - Window size to consider for the sequences.
 /// * verbose: Option<bool>,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
@@ -228,7 +173,7 @@ impl Graph {
     /// * parameters: &WalksParameters - the walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
     /// * verbose: Option<bool>,
-    ///     Wethever to show the progress bars.
+    ///     whether to show the progress bars.
     ///     The default behaviour is false.
     ///     
     pub fn cooccurence_matrix(
@@ -246,58 +191,6 @@ impl Graph {
         )
     }
 
-    /// Returns triple with the embeddings of source nodes, destination nodes and labels for training model for link prediction.
-    ///
-    /// # Arguments
-    ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * method: &str - String representing the required edge embedding method.
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
-    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    ///
-    pub fn link_prediction<'a>(
-        &'a self,
-        idx: u64,
-        batch_size: usize,
-        method: &str,
-        negative_samples: f64,
-        avoid_false_negatives: bool,
-        maximal_sampling_attempts: usize,
-        graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
-        if self.embedding.is_none() {
-            return Err("Embedding object was not provided.".to_string());
-        }
-
-        let method = EdgeEmbeddingMethods::new(method)?;
-
-        match &self.embedding {
-            Some(embedding) => {
-                let iter = self.link_prediction_ids(
-                    idx,
-                    batch_size,
-                    negative_samples,
-                    avoid_false_negatives,
-                    maximal_sampling_attempts,
-                    graph_to_avoid
-                )?;
-                Ok(iter.map(move |(index, src, dst, label)| 
-                    (
-                        index,    
-                        method.call(&embedding[src as usize], &embedding[dst as usize]),
-                        label
-                    )
-                ))
-            }
-            None=>Err("Embedding object was not provided. Use the method 'set_embedding' to provide the embedding.".to_string())
-        }
-    }
-
-    
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
     /// This method is just for setting the lowerbound on the simplest possible model.
     ///
@@ -328,22 +221,22 @@ impl Graph {
             negative_samples,
             avoid_false_negatives,
             maximal_sampling_attempts,
-            graph_to_avoid
+            graph_to_avoid,
         )?;
 
-        let max_degree = match normalize{
-            true=>self.max_degree() as f64,
-            false=>1.0,
+        let max_degree = match normalize {
+            true => self.max_degree() as f64,
+            false => 1.0,
         };
-        
-        Ok(iter.map(move |(index, src, dst, label)| 
+
+        Ok(iter.map(move |(index, src, dst, label)| {
             (
-                index,    
+                index,
                 self.get_node_degree(src) as f64 / max_degree,
                 self.get_node_degree(dst) as f64 / max_degree,
-                label
+                label,
             )
-        ))
+        }))
     }
 
     /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.

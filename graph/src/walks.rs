@@ -369,13 +369,12 @@ impl Graph {
                 // if the destination node type matches the neighbour
                 // destination node type (we are not changing the node type)
                 // we weigth using the provided change_node_type_weight weight.
-                let this_type: NodeTypeT = nt.ids[node as usize];
 
                 transition
                     .iter_mut()
                     .zip(destinations)
                     .for_each(|(transition_value, dst)| {
-                        if this_type == nt.ids[dst as usize] {
+                        if nt.ids[node as usize] == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
                         }
                     });
@@ -453,7 +452,7 @@ impl Graph {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.
-                let this_type: EdgeTypeT = ets.ids[edge_id as usize];
+                let this_type: Option<EdgeTypeT> = ets.ids[edge_id as usize];
                 transition
                     .iter_mut()
                     .zip(min_edge_id..max_edge_id)
@@ -693,9 +692,11 @@ impl Graph {
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
-                true => {
-                    self.uniform_walk(node, random_state, parameters.single_walk_parameters.walk_length)
-                }
+                true => self.uniform_walk(
+                    node,
+                    random_state,
+                    parameters.single_walk_parameters.walk_length,
+                ),
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
 
