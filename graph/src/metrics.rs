@@ -321,7 +321,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
-    pub fn get_singleton_nodes_number(&self) -> NodeT {
+    pub fn get_singleton_nodes_number(&self) -> NodeT { 
         self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
