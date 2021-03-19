@@ -193,9 +193,26 @@ pub fn default_holdout_test_suite(
     Ok(())
 }
 
-/// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    warn!("Starting default test suite.");
+/// Test that the spanning arborescence algorithm from bader is working correctly.
+pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
+    let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
+    let random_kruskal_tree = graph
+        .random_spanning_arborescence_kruskal(42, &None, verbose)
+        .0;
+        
+    if !graph.directed {
+        let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
+            graph.spanning_arborescence(verbose).unwrap().1.collect();
+        assert_eq!(
+            spanning_arborescence_bader.len(), kruskal_tree.len(),
+            "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
+            graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
+        );
+    }
+    assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
+}
+
+pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), String> { 
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
@@ -204,6 +221,27 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
         None,
         "Graph contains non-existing edge."
+    );
+
+    // Test has_node_string
+    assert!(
+        !(graph.has_node_string("NONEXISTENT", None)),
+        "The graph seems to have a non-existing node."
+    );
+
+    // Test translate_edge|node_types()
+    assert!(
+        graph
+            .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
+            .is_err(),
+        "The graph seems to have a non-existing edge type."
+    );
+
+    assert!(
+        graph
+            .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
+            .is_err(),
+        "The graph seems to have a non-existing node type."
     );
 
     assert!(
@@ -239,7 +277,91 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 .collect::<Vec<(u32, u32)>>()
         );
     }
+    // Get one edge from the graph if there are any presents
+    if let Some(edge) = graph.get_unique_edges_iter(true).next() {
+        if !graph.has_edge_types() {
+            let src_string = graph.get_node_name(edge.0).unwrap();
+            let dst_string = graph.get_node_name(edge.1).unwrap();
+            assert!(
+                graph.has_edge_string(&src_string, &dst_string, None),
+                "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {}",
+                src_string,
+                dst_string,
+                graph.textual_report(false).unwrap()
+            );
+            assert!(
+                graph.has_node_string(&src_string, None)
+                    && graph.has_node_string(&dst_string, None)
+            );
+            assert_eq!(
+                graph.get_edge_id_string(
+                    &src_string,
+                    &dst_string,
+                    Some(&"NONEXISTENT_EDGE_TYPE".to_string())
+                ),
+                None
+            );
+            assert_eq!(
+                graph.get_edge_id_string(&src_string, &dst_string, None),
+                graph.get_edge_id(edge.0, edge.1, None),
+                "Check of given edge ID does not match."
+            );
+        }
+    }
 
+    // Test the generation of the textual report, this includes the connected components algorithm.
+    graph.report();
+    graph.textual_report(verbose)?;
+
+    // Compute degrees metrics
+    for src in 0..5 {
+        for dst in 0..5 {
+            let _ = graph.degrees_product(src, dst);
+            let _ = graph.jaccard_index(src, dst);
+            let _ = graph.adamic_adar_index(src, dst);
+            let _ = graph.resource_allocation_index(src, dst);
+        }
+    }
+
+    assert_eq!(graph.has_node_types(), graph.get_node_type(0).is_ok());
+
+    assert!(
+        graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
+        "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
+    );
+
+    assert_eq!(graph.has_edge_types(), graph.get_edge_type(0).is_ok());
+
+    assert!(
+        graph.get_edge_type(graph.get_edges_number() + 1).is_err(),
+        "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
+    );
+
+    // Evaluate get_node_type
+    assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
+
+    // Evaluate get_edge_type
+    assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
+
+    // Evaluate get_node_type_counts
+    assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
+
+    // Evaluate get_edge_type_counts
+    assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
+
+    // Evaluate get_edge_type_counts_hashmap
+    assert_eq!(
+        graph.get_edge_type_counts_hashmap().is_ok(),
+        graph.has_edge_types()
+    );
+
+    graph.set_name("TestName".to_owned());
+    graph.strongly_connected_components();
+
+    Ok(())
+}
+
+pub fn test_random_walks(graph: &mut Graph) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
@@ -310,62 +432,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
         }
     }
+    Ok(())
+}
 
-    if let Some(edge) = graph.get_unique_edges_iter(true).next() {
-        if !graph.has_edge_types() {
-            let src_string = graph.get_node_name(edge.0).unwrap();
-            let dst_string = graph.get_node_name(edge.1).unwrap();
-            assert!(
-                graph.has_edge_string(&src_string, &dst_string, None),
-                "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {}",
-                src_string,
-                dst_string,
-                graph.textual_report(false).unwrap()
-            );
-            assert!(
-                graph.has_node_string(&src_string, None)
-                    && graph.has_node_string(&dst_string, None)
-            );
-            assert_eq!(
-                graph.get_edge_id_string(
-                    &src_string,
-                    &dst_string,
-                    Some(&"NONEXISTENT_EDGE_TYPE".to_string())
-                ),
-                None
-            );
-            assert_eq!(
-                graph.get_edge_id_string(&src_string, &dst_string, None),
-                graph.get_edge_id(edge.0, edge.1, None),
-                "Check of given edge ID does not match."
-            );
-        }
-    }
-    // Test has_node_string
-    assert!(
-        !(graph.has_node_string("NONEXISTENT", None)),
-        "The graph seems to have a non-existing node."
-    );
-
-    // Test translate_edge|node_types()
-    assert!(
-        graph
-            .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
-            .is_err(),
-        "The graph seems to have a non-existing edge type."
-    );
-    assert!(
-        graph
-            .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
-            .is_err(),
-        "The graph seems to have a non-existing node type."
-    );
-
-    warn!("Testing the spanning arborescences.");
-    test_spanning_arborescence_bader(graph, verbose);
-
-    // Testing main holdout mechanisms
-    warn!("Executing edge holdouts tests.");
+pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     for include_all_edge_types in &[false, true] {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
@@ -391,10 +461,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
         default_holdout_test_suite(graph, &train, &test)?;
     }
+    Ok(())
+}
 
-    // test remove components
+pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     if graph.connected_components_number(verbose).0 > 1 {
-        warn!("Running remove components tests.");
         let without_selfloops = graph.remove(
             None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
@@ -424,8 +495,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         );
     }
 
-    warn!("Testing k-fold holdouts.");
-    // test the kfold
+    Ok(())
+}
+
+pub fn test_kfold(graph: &mut Graph) -> Result<(), String> {
     let k = 3;
     for i in 0..k {
         let (train, test) = graph.kfold(k, i, None, 42, false)?;
@@ -442,7 +515,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
 
-    // Testing negative edges generation
+    Ok(())
+}
+
+pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     for only_from_same_component in &[true, false] {
         let negatives = graph.sample_negatives(
             4,
@@ -461,13 +537,19 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     }
-    // Testing subgraph generation
+
+    Ok(())
+}
+
+pub fn test_subgraph_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
+    Ok(())
+}
 
-    // Testing writing out graph to file
+pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(Some(verbose))
@@ -497,8 +579,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
 
+    Ok(())
+}
+
+pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        // Testing SkipGram / CBOW / GloVe preprocessing
         graph.cooccurence_matrix(&walker, 3, verbose)?;
 
         let window_size = 3;
@@ -516,20 +602,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(context.len(), window_size * 2);
         }
     }
-    // Compute metrics of the graph
-    graph.report();
-    graph.textual_report(verbose)?;
-    // Compute degrees metrics
-    for src in 0..10 {
-        for dst in 0..10 {
-            graph.degrees_product(src, dst)?;
-            graph.jaccard_index(src, dst)?;
-            graph.adamic_adar_index(src, dst)?;
-            graph.resource_allocation_index(src, dst)?;
-        }
-    }
+    Ok(())
+}
 
-    // Testing generic filtering mechanisms
+pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let _filtered = graph
         .filter(
             Some(graph.get_node_names()),
@@ -540,8 +616,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             verbose,
         )
         .unwrap();
+    Ok(())
+}
 
-    // Tetsing edge lists generation
+
+pub fn test_edgelist_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let _clique = graph.get_clique_edge_names(
         None,
         None,
@@ -597,105 +676,79 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             None,
         )?;
     }
+    Ok(())
+}
 
-    // Testing the top Ks
-    if graph.has_node_types() {
-        graph.get_node_type(0)?;
-
-        assert!(
-            graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
-            "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
-        );
-
-        warn!("Running node-label holdouts tests.");
-        for use_stratification in [true, false].iter() {
-            if *use_stratification
-                && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
-                || graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
-            {
-                assert!(graph
-                    .node_label_holdout(0.8, *use_stratification, 42)
-                    .is_err());
-            }
-            let (train, test) = graph.node_label_holdout(0.8, *use_stratification, 42)?;
-            let remerged = &mut (&train | &test)?;
-            assert_eq!(remerged.node_types, graph.node_types);
-            assert!(
-                remerged.contains(graph)?,
-                "The re-merged holdouts does not contain the original graph."
-            );
-            assert!(
-                graph.contains(remerged)?,
-                "The re-merged holdouts does not contain the original graph."
-            );
-            assert!(
-                train.node_types.as_ref().map_or(false, |train_nts| {
-                    test.node_types.as_ref().map_or(false, |test_nts| {
-                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                            |(train_node_type, test_node_type)| {
-                                !(train_node_type.is_some() && test_node_type.is_some())
-                            },
-                        )
-                    })
-                }),
-                "The train and test node-label graphs are overlapping!"
-            );
+pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    for use_stratification in [true, false].iter() {
+        if *use_stratification
+            && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
+            || graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
+            || !graph.has_node_types()
+        {
+            assert!(graph
+                .node_label_holdout(0.8, *use_stratification, 42)
+                .is_err());
+            continue;
         }
-    }
-    if graph.has_edge_types() {
-        graph.get_edge_type(0)?;
 
+        let (train, test) = graph.node_label_holdout(0.8, *use_stratification, 42)?;
+        let remerged = &mut (&train | &test)?;
+        assert_eq!(remerged.node_types, graph.node_types);
         assert!(
-            graph.get_edge_type(graph.get_edges_number() + 1).is_err(),
-            "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
+            remerged.contains(graph)?,
+            "The re-merged holdouts does not contain the original graph."
         );
-
-        warn!("Running edge-label holdouts tests.");
-        for use_stratification in [true, false].iter() {
-            if *use_stratification && graph.get_minimum_edge_types_number() < 2
-                || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
-            {
-                assert!(graph
-                    .edge_label_holdout(0.8, *use_stratification, 42)
-                    .is_err());
-            }
-            let (train, test) = graph.edge_label_holdout(0.8, *use_stratification, 42)?;
-            assert!(
-                train.edge_types.as_ref().map_or(false, |train_nts| {
-                    test.edge_types.as_ref().map_or(false, |test_nts| {
-                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                            |(train_edge_type, test_edge_type)| {
-                                !(train_edge_type.is_some() && test_edge_type.is_some())
-                            },
-                        )
-                    })
-                }),
-                "The train and test edge-label graphs are overlapping!"
-            );
-        }
+        assert!(
+            graph.contains(remerged)?,
+            "The re-merged holdouts does not contain the original graph."
+        );
+        assert!(
+            train.node_types.as_ref().map_or(false, |train_nts| {
+                test.node_types.as_ref().map_or(false, |test_nts| {
+                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                        |(train_node_type, test_node_type)| {
+                            !(train_node_type.is_some() && test_node_type.is_some())
+                        },
+                    )
+                })
+            }),
+            "The train and test node-label graphs are overlapping!"
+        );
     }
-    // Evaluate get_node_type
-    assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
+    Ok(())
+}
 
-    // Evaluate get_edge_type
-    assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
+pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    for use_stratification in [true, false].iter() {
+        if *use_stratification && graph.get_minimum_edge_types_number() < 2
+            || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
+            || !graph.has_edge_types()
+        {
+            assert!(graph
+                .edge_label_holdout(0.8, *use_stratification, 42)
+                .is_err());
+            continue;
+        }
+        let (train, test) = graph.edge_label_holdout(0.8, *use_stratification, 42)?;
+        assert!(
+            train.edge_types.as_ref().map_or(false, |train_nts| {
+                test.edge_types.as_ref().map_or(false, |test_nts| {
+                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                        |(train_edge_type, test_edge_type)| {
+                            !(train_edge_type.is_some() && test_edge_type.is_some())
+                        },
+                    )
+                })
+            }),
+            "The train and test edge-label graphs are overlapping!"
+        );
+    }
+    Ok(())
+}
 
-    // Evaluate get_node_type_counts
-    assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
+pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), Stirng> {
 
-    // Evaluate get_edge_type_counts
-    assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
-
-    // Evaluate get_edge_type_counts_hashmap
-    assert_eq!(
-        graph.get_edge_type_counts_hashmap().is_ok(),
-        graph.has_edge_types()
-    );
-
-    graph.set_name("Non c'è l'agavazzzz, c'è la manetta".to_owned());
-    graph.strongly_connected_components();
-
-    //test removes
     {
         let without_edge_types = graph.remove(
             None, None, None, None, None, None, None, None, false, false, true, false, false,
@@ -758,7 +811,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
 
-    // Testing cloning
+    Ok(())
+}
+
+pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
@@ -788,21 +844,56 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     Ok(())
 }
 
-/// Test that the spanning arborescence algorithm from bader is working correctly.
-pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
-    let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
-    let random_kruskal_tree = graph
-        .random_spanning_arborescence_kruskal(42, &None, verbose)
-        .0;
-        
-    if !graph.directed {
-        let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
-            graph.spanning_arborescence(verbose).unwrap().1.collect();
-        assert_eq!(
-            spanning_arborescence_bader.len(), kruskal_tree.len(),
-            "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
-            graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
-        );
-    }
-    assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
+/// Executes near-complete test of all functions for the given graph.
+pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    warn!("Starting default test suite.");
+    test_graph_properties(graph, verbose)?;
+    
+    warn!("Testing random walks.");
+    test_random_walks(graph)?;
+
+    warn!("Testing the spanning arborescences.");
+    test_spanning_arborescence_bader(graph, verbose);
+
+    warn!("Executing edge holdouts tests.");
+    test_edge_holdouts(graph, verbose)?;
+
+    warn!("Running remove components tests.");
+    test_remove_components(graph, verbose)?;
+
+    warn!("Testing k-fold holdouts.");
+    test_kfold(graph)?;
+
+    warn!("Testing negative edges generation.");
+    test_negative_edges_generation(graph, verbose)?;
+
+    warn!("Testing subgraph generation.");
+    test_subgraph_generation(graph, verbose)?;
+
+    warn!("Testing writing out graph to file.");
+    test_dump_graph(graph, verbose)?;
+
+    warn!("Testing SkipGram / CBOW / GloVe preprocessing.");
+    test_embiggen_preprocessing(graph, verbose)?;
+
+    warn!("Testing generic filtering mechanism.");
+    test_graph_filter(graph, verbose)?;
+
+    warn!("Testing edge lists generation.");
+    test_edgelist_generation(graph, verbose)?;
+
+    warn!("Running node-label holdouts tests.");
+    test_nodelabel_holdouts(graph, verbose)?;
+
+    warn!("Testing edge-label holdouts tests.");
+    test_edgelabel_holdouts(graph, verbose)?;
+
+    warn!("Testing removes.");
+    test_graph_removes(graph, verbose)?;
+
+    // Testing cloning
+    warn!("Testing clone and setters.");
+    test_clone_and_setters(graph, verbose)?;
+
+    Ok(())
 }

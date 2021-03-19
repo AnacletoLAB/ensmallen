@@ -353,6 +353,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
+/// [(0, 1), (3, 0)] directed
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: EdgeT,
