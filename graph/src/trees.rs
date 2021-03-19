@@ -71,14 +71,30 @@ impl Graph {
 
     /// Returns set of edges composing a spanning tree and connected components.
     ///
+    /// If the graph is composed of a single node with one or more self-loops,
+    /// we consider such a graph as a graph with an empty spanning tree, with
+    /// a single component of size one.
+    ///
     /// # Arguments
     ///
-    /// TODO: Updated docstrings.
-    ///
+    /// `edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.
+    /// 
+    /// # Returns
+    /// Tuple with:
+    ///     - Set of the edges
+    ///     - Vector of the nodes components
+    ///     - Total components number
+    ///     - Minimum component size
+    ///     - Maximum component size
     pub fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+
+        if self.get_nodes_number() == 1{
+            return (HashSet::new(), vec![0; 1], 1, 1, 1);
+        }
+
         let nodes_number = self.get_nodes_number() as usize;
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
         let mut components = vec![NOT_PRESENT; nodes_number];
