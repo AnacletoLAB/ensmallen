@@ -12,3 +12,6 @@ arbitrary = { version = "0.4.5", features = ["derive"] }
 
 [dependencies.graph]
 path = "../../graph"
+
+[profile.release]
+panic = "unwind"

@@ -4,15 +4,16 @@ use arbitrary::Arbitrary;
 use std::fs::File;
 use std::io::prelude::*;
 use std::fs::remove_file;
+use std::ffi::OsStr;
 
-#[derive(Arbitrary, Debug)]
+#[derive(Arbitrary, Debug, Clone)]
 pub struct FromCsvHarnessParams {
     edge_reader: EdgeFileReaderParams,
     nodes_reader: Option<NodeFileReaderParams>,
     directed: bool,
 }
 
-#[derive(Arbitrary, Debug)]
+#[derive(Arbitrary, Debug, Clone)]
 pub struct CSVFileReaderParams {
     pub verbose: Option<bool>,
     pub separator: Option<String>,
@@ -21,21 +22,20 @@ pub struct CSVFileReaderParams {
     pub ignore_duplicates: Option<bool>,
 }
 
-#[derive(Arbitrary, Debug)]
+#[derive(Arbitrary, Debug, Clone)]
 pub struct NodeFileReaderParams {
-    pub file: String,
     pub reader: CSVFileReaderParams,
     pub default_node_type: Option<String>,
     pub nodes_column_number: Option<usize>,
     pub nodes_column: Option<String>,
     pub node_types_column_number: Option<usize>,
     pub node_types_column: Option<String>,
+    pub file: String,
 }
 
 
-#[derive(Arbitrary, Debug)]
+#[derive(Arbitrary, Debug, Clone)]
 pub struct EdgeFileReaderParams {
-    pub file: String,
     pub reader: CSVFileReaderParams,
     pub sources_column_number: Option<usize>,
     pub sources_column: Option<String>,
@@ -48,24 +48,69 @@ pub struct EdgeFileReaderParams {
     pub default_weight: Option<WeightT>,
     pub default_edge_type: Option<String>,
     pub skip_self_loops: Option<bool>,
+    pub file: String,
+}
+
+fn handle_panics(data: FromCsvHarnessParams) {
+    let path = graph::test_utilities::random_path(Some("./"));
+    let edge_path = format!("{}_edges.csv", path);
+    std::fs::write(edge_path, data.edge_reader.file);
+
+    let edge_metadata_path = format!("{}_edges_metadata.csv", path);
+    let mut file = File::create(edge_metadata_path).unwrap();
+    write!(file, "{},{:?}\n", "directed", data.directed);
+    write!(file, "{},{:?}\n", "sources_column_number", data.edge_reader.sources_column_number);
+    write!(file, "{},{:?}\n", "sources_column", data.edge_reader.sources_column);
+    write!(file, "{},{:?}\n", "destinations_column_number", data.edge_reader.destinations_column_number);
+    write!(file, "{},{:?}\n", "destinations_column", data.edge_reader.destinations_column);
+    write!(file, "{},{:?}\n", "edge_types_column_number", data.edge_reader.edge_types_column_number);
+    write!(file, "{},{:?}\n", "edge_types_column", data.edge_reader.edge_types_column);
+    write!(file, "{},{:?}\n", "weights_column_number", data.edge_reader.weights_column_number);
+    write!(file, "{},{:?}\n", "weights_column", data.edge_reader.weights_column);
+    write!(file, "{},{:?}\n", "default_weight", data.edge_reader.default_weight);
+    write!(file, "{},{:?}\n", "default_edge_type", data.edge_reader.sources_column_number);
+    write!(file, "{},{:?}\n", "skip_self_loops", data.edge_reader.skip_self_loops);
+    write!(file, "{},{:?}\n", "verbose", data.edge_reader.reader.verbose);
+    write!(file, "{},{:?}\n", "separator", data.edge_reader.reader.separator);
+    write!(file, "{},{:?}\n", "header", data.edge_reader.reader.header);
+    write!(file, "{},{:?}\n", "rows_to_skip", data.edge_reader.reader.rows_to_skip);
+    write!(file, "{},{:?}\n", "ignore_duplicates", data.edge_reader.reader.ignore_duplicates);
+    
+    if let Some(nodes_reader) = data.nodes_reader{
+        let node_path = format!("{}_nodes.csv", path);
+        std::fs::write(node_path, nodes_reader.file);
+
+        let node_metadata_path = format!("{}_nodes_metadata.csv", path);
+        let mut file = File::create(node_metadata_path).unwrap();
+        write!(file, "{},{:?}\n", "default_node_type", nodes_reader.default_node_type);
+        write!(file, "{},{:?}\n", "nodes_column_number", nodes_reader.nodes_column_number);
+        write!(file, "{},{:?}\n", "nodes_column", nodes_reader.nodes_column);
+        write!(file, "{},{:?}\n", "node_types_column_number", nodes_reader.node_types_column_number);
+        write!(file, "{},{:?}\n", "node_types_column", nodes_reader.node_types_column);
+        write!(file, "{},{:?}\n", "nodes_column", nodes_reader.nodes_column);
+        write!(file, "{},{:?}\n", "verbose", nodes_reader.reader.verbose);
+        write!(file, "{},{:?}\n", "separator", nodes_reader.reader.separator);
+        write!(file, "{},{:?}\n", "header", nodes_reader.reader.header);
+        write!(file, "{},{:?}\n", "rows_to_skip", nodes_reader.reader.rows_to_skip);
+        write!(file, "{},{:?}\n", "ignore_duplicates", nodes_reader.reader.ignore_duplicates);
+    }
 }
 
 pub fn from_csv_harness(data: FromCsvHarnessParams) -> Result<(), String> {
-    // generate random paths
-    let edges_path = graph::test_utilities::random_path();
-    let nodes_path = graph::test_utilities::random_path();
-    // run the harness
-    let result = internal_harness(&edges_path, &nodes_path, data);
-    // cleanup
-    let _ = remove_file(&edges_path);
-    let _ = remove_file(&nodes_path);
-    result
+    let edges_path = graph::test_utilities::random_path(None);
+    let nodes_path = graph::test_utilities::random_path(None);
+
+    let data_copy = data.clone();
+    std::panic::set_hook(Box::new(move |_| {
+        handle_panics(data_copy.clone());
+    }));
+
+    internal_harness(&edges_path, &nodes_path, data)
 }
 
 fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<(), String> {
     // create the edge file
-    let mut edges_file = File::create(edges_path).unwrap();
-    edges_file.write_all(&data.edge_reader.file.as_bytes()).unwrap();
+    std::fs::write(edges_path, data.edge_reader.file);
     
     // create the reader
     let edges_reader = EdgeFileReader::new(edges_path.to_string())?
@@ -91,8 +136,7 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         Some(nr) => {
 
             // create the node file
-            let mut nodes_file = File::create(&nodes_path).unwrap();
-            nodes_file.write_all(&nr.file.as_bytes()).unwrap();
+            std::fs::write(nodes_path, nr.file);
 
             // return the reader
             Some(

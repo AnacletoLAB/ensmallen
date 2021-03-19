@@ -30,8 +30,8 @@ pub fn random_string(len: usize) -> String {
 }
 
 /// Computes a random path.
-pub fn random_path() -> String {
-    Path::new(DEFAULT_PATH)
+pub fn random_path(path: Option<&str>) -> String {
+    Path::new(path.unwrap_or_else(|| DEFAULT_PATH))
         .join(random_string(64))
         .to_str()
         .unwrap()
@@ -503,7 +503,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
 
     // Testing writing out graph to file
-    let node_file = random_path();
+    let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(Some(verbose))
         .set_separator(Some("\t".to_string()))
@@ -515,7 +515,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     nodes_writer.dump(&graph)?;
     fs::remove_file(node_file).unwrap();
 
-    let edges_file = random_path();
+    let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(Some(verbose))
         .set_separator(Some("\t".to_string()))
