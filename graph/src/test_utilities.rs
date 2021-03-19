@@ -361,6 +361,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         "The graph seems to have a non-existing node type."
     );
 
+    warn!("Testing the spanning arborescences.");
+    test_spanning_arborescence_bader(graph, verbose);
+
     // Testing main holdout mechanisms
     warn!("Executing edge holdouts tests.");
     for include_all_edge_types in &[false, true] {
@@ -369,16 +372,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
-        let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
-        let random_kruskal_tree = graph
-            .random_spanning_arborescence_kruskal(42, &None, verbose)
-            .0;
-        if !graph.directed {
-            let spanning_arborescence_bader_len =
-                graph.spanning_arborescence(verbose).unwrap().1.count();
-            assert_eq!(spanning_arborescence_bader_len, kruskal_tree.len());
-        }
-        assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
         let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
         assert_eq!(
             graph.connected_components_number(verbose),
@@ -793,4 +786,23 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     );
 
     Ok(())
+}
+
+/// Test that the spanning arborescence algorithm from bader is working correctly.
+pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
+    let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
+    let random_kruskal_tree = graph
+        .random_spanning_arborescence_kruskal(42, &None, verbose)
+        .0;
+        
+    if !graph.directed {
+        let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
+            graph.spanning_arborescence(verbose).unwrap().1.collect();
+        assert_eq!(
+            spanning_arborescence_bader.len(), kruskal_tree.len(),
+            "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
+            graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
+        );
+    }
+    assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }

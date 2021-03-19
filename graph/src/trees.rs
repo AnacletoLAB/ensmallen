@@ -219,6 +219,7 @@ impl Graph {
     }
 
     /// Returns set of edges composing a spanning tree.
+    /// 
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(
@@ -288,6 +289,11 @@ impl Graph {
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
+                                if (*ptr)[src] != NOT_PRESENT {
+                                    break;
+                                }
+                            }
+                            unsafe {
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
@@ -338,7 +344,9 @@ impl Graph {
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
         Ok((
+            // Number of edges inserted
             total_inserted_edges.load(Ordering::SeqCst),
+            // Return an iterator over all the edges in the spanning arborescence
             (0..self.get_nodes_number()).filter_map(move |src| {
                 let dst = parents[src as usize];
                 // If the edge is NOT registered as a self-loop

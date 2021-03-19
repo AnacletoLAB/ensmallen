@@ -8,13 +8,13 @@ use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 /// by the fuzzer harness.
 /// The test originally caused a panic in the file test_utilities.rs,
 /// specifically (at the time) line 379 and column 13.
-///
+/// The probability  of this happening is less than 1 in 10_000.
 fn test_regression_29() -> Result<(), String> {
     let edges_reader = EdgeFileReader::new("tests/data/regression/29.edges")?;
 
     let nodes_reader = None;
 
-    let mut graph = Graph::from_unsorted_csv(
+    let graph = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
         false, // Directed
@@ -29,7 +29,7 @@ fn test_regression_29() -> Result<(), String> {
     )));
 
     for _ in (0..100).progress_with(pb){
-        let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+        let _ = graph::test_utilities::test_spanning_arborescence_bader(&graph, false);
     }
     Ok(())
 }
