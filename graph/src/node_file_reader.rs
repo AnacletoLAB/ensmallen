@@ -159,8 +159,8 @@ impl NodeFileReader {
     ///
     /// * default_node_type: Option<String> - The node type to use when node type is missing.
     ///
-    pub fn set_default_node_type(mut self, default_node_type: Option<String>) -> NodeFileReader {
-        self.default_node_type = default_node_type;
+    pub fn set_default_node_type<S: Into<String>>(mut self, default_node_type: Option<S>) -> NodeFileReader {
+        self.default_node_type = default_node_type.map(|val| val.into());
         self
     }
 

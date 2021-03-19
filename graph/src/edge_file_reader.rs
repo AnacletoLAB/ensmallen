@@ -300,8 +300,8 @@ impl EdgeFileReader {
     ///
     /// * default_edge_type: Option<String> - The edge type to use when edge type is missing.
     ///
-    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader {
-        self.default_edge_type = default_edge_type;
+    pub fn set_default_edge_type<S: Into<String>>(mut self, default_edge_type: Option<S>) -> EdgeFileReader {
+        self.default_edge_type = default_edge_type.map(|val| val.into());
         self
     }
 
