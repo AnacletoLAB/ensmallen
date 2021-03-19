@@ -1,29 +1,6 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 
-#[macro_export]
-/// Macro that computes the maximum between two numbers
-macro_rules! max {
-    ($a: expr, $b: expr) => {
-        if $a >= $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-#[macro_export]
-/// Macro that computes the minimum between two numbers
-macro_rules! min {
-    ($a: expr, $b: expr) => {
-        if $a < $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-
 pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
@@ -39,7 +16,7 @@ pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize
 }
 
 /// Return true if the given weight is near to one.
-pub(crate) fn not_one(weight:WeightT)->bool {
+pub(crate) fn not_one(weight: WeightT) -> bool {
     (weight - 1.0).abs() > WeightT::EPSILON
 }
 
@@ -66,19 +43,16 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     if weight.is_finite() && weight > 0.0 {
         Ok(weight)
     } else {
-        Err(format!("The weight is '{}' but the weights must be strictly positives and finite.", weight))
+        Err(format!(
+            "The weight is '{}' but the weights must be strictly positives and finite.",
+            weight
+        ))
     }
 }
 
-pub fn parse_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
-    match weight {
-        None => Ok(None),
-        Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => match validate_weight(val) {
-                Ok(val) => Ok(Some(val)),
-                Err(e) => Err(e)
-            },
-            Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
-        },
+pub fn parse_weight(weight: String) -> Result<WeightT, String> {
+    match weight.parse::<WeightT>() {
+        Ok(val) => Ok(val),
+        Err(_) => Err(format!("Cannot parse weight {} as a float.", weight)),
     }
 }

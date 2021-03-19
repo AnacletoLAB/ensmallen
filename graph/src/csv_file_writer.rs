@@ -24,9 +24,9 @@ impl CSVFileWriter {
     ///
     /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> CSVFileWriter {
+    pub fn new<S: Into<String>>(path: S) -> CSVFileWriter {
         CSVFileWriter {
-            path,
+            path: path.into(),
             verbose: true,
             separator: "\t".to_string(),
             header: true,

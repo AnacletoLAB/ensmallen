@@ -25,7 +25,7 @@ impl EdgeFileReader {
     ///
     /// * reader: CSVFilereader - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> Result<EdgeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
         Ok(EdgeFileReader {
             reader: CSVFileReader::new(path)?,
             sources_column_number: 0,
@@ -48,11 +48,12 @@ impl EdgeFileReader {
     ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
-    pub fn set_sources_column(
+    pub fn set_sources_column<S: Into<String>>(
         mut self,
-        sources_column: Option<String>,
+        sources_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = sources_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -94,11 +95,12 @@ impl EdgeFileReader {
     ///
     /// * destination_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_destinations_column(
+    pub fn set_destinations_column<S: Into<String>>(
         mut self,
-        destinations_column: Option<String>,
+        destinations_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = destinations_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -139,11 +141,12 @@ impl EdgeFileReader {
     ///
     /// * destination_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_edge_types_column(
+    pub fn set_edge_types_column<S: Into<String>>(
         mut self,
-        edge_type_column: Option<String>,
+        edge_type_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = edge_type_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -196,11 +199,12 @@ impl EdgeFileReader {
     ///
     /// * weights_column: Option<String> - The edge weights column to use for the file.
     ///
-    pub fn set_weights_column(
+    pub fn set_weights_column<S: Into<String>>(
         mut self,
-        weights_column: Option<String>,
+        weights_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = weights_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given edge weights column is empty.".to_owned());
             }
@@ -337,7 +341,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
@@ -350,7 +354,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_edge_type_ids(
         mut self,
@@ -366,7 +370,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -379,7 +383,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - Wethever to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> EdgeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -394,8 +398,12 @@ impl EdgeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader, String> {
+    pub fn set_separator<S: Into<String>>(
+        mut self,
+        separator: Option<S>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(sep) = separator {
+            let sep = sep.into();
             if sep.is_empty() {
                 return Err("The separator cannot be empty.".to_owned());
             }
@@ -408,7 +416,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - Wethever to expect an header or not.
+    /// * header: Option<bool> - whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
         if let Some(v) = header {
@@ -421,7 +429,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - Wethever to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
         if let Some(v) = rows_to_skip {
@@ -441,73 +449,54 @@ impl EdgeFileReader {
         self
     }
 
+    /// Return boolean representing if the edge types exist.
+    pub fn has_edge_types(&self) -> bool {
+        self.default_edge_type.is_some() || self.edge_types_column_number.is_some()
+    }
+
+    /// Return boolean representing if the weight types exist.
+    pub fn has_weights(&self) -> bool {
+        self.default_weight.is_some() || self.weights_column_number.is_some()
+    }
+
     /// Parse a single line (vecotr of strings already splitted)
     /// # Arguments
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line(&self, vals: Vec<String>) -> Result<StringQuadruple, String> {
+    fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple, String> {
         // exctract the values
-        let source_node_name = vals[self.sources_column_number].to_owned();
-        let destination_node_name = vals[self.destinations_column_number].to_owned();
-        // extract the edge type if present
-        let edge_type: Option<String> = match self.edge_types_column_number {
-            None => Ok(None),
-            Some(idx) => {
-                let curr = vals[idx].to_owned();
-                if !curr.is_empty() {
-                    Ok(Some(curr))
-                } else if let Some(def) = &self.default_edge_type {
-                    Ok(Some(def.clone()))
-                } else {
-                    Err(format!(
-                        concat!(
-                            "Found empty edge type but no default edge ",
-                            "type to use was provided.",
-                            "The source node name is {source_node_name}.\n",
-                            "The destination node name is {destination_node_name}.\n",
-                            "The path of the document was {path}.\n"
-                        ),
-                        source_node_name = source_node_name,
-                        destination_node_name = destination_node_name,
-                        path = self.reader.path
-                    ))
-                }
-            }
-        }?;
-        // extract the weights
-        let edge_weight = match self.weights_column_number {
-            None => Ok(None),
-            Some(idx) => {
-                let curr = vals[idx].to_owned();
-                if !curr.is_empty() {
-                    match parse_weight(Some(curr)) {
-                        Ok(v) => Ok(v),
-                        Err(e) => Err(e),
-                    }
-                } else if let Some(def) = &self.default_weight {
-                    Ok(Some(*def))
-                } else {
-                    Err(format!(
-                        concat!(
-                            "Found empty weight but no default weight ",
-                            "to use was provided. ",
-                            "The source node name is {source_node_name}.\n",
-                            "The destination node name is {destination_node_name}.\n",
-                            "The path of the document was {path}.\n"
-                        ),
-                        source_node_name = source_node_name,
-                        destination_node_name = destination_node_name,
-                        path = self.reader.path
-                    ))
-                }
-            }
-        }?;
+        let maybe_source_node_name = vals[self.sources_column_number].clone();
+        let maybe_destination_node_name = vals[self.destinations_column_number].clone();
+        if maybe_source_node_name.is_none() || maybe_destination_node_name.is_none() {
+            return Err("Either the source or destination node ID are undefined.".to_string());
+        }
+        
+        let source_node_name = maybe_source_node_name.unwrap();
+        let destination_node_name = maybe_destination_node_name.unwrap();
+
+        // Handle the extraction of the edge types.
+        let maybe_edge_types_string = match self.edge_types_column_number {
+            Some(column) => match vals[column].to_owned() {
+                Some(edge_type) => Some(edge_type),
+                None => self.default_edge_type.clone(),
+            },
+            None => self.default_edge_type.clone(),
+        };
+
+        // Handle the extraction of the weights.
+        let maybe_weight_string = match self.weights_column_number {
+            Some(column) => match vals[column].to_owned() {
+                Some(w) => Some(parse_weight(w)?),
+                None => self.default_weight,
+            },
+            None => self.default_weight,
+        };
 
         Ok((
             source_node_name,
             destination_node_name,
-            edge_type,
-            edge_weight,
+            maybe_edge_types_string,
+            maybe_weight_string,
         ))
     }
 

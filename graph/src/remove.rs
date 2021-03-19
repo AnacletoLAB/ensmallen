@@ -34,6 +34,7 @@ impl Graph {
     /// * `node_types`: bool - Wether to remove the node types.
     /// * `edge_types`: bool - Wether to remove the edge types.
     /// * `singletons`: bool - Wether to remove the singleton nodes.
+    /// * `selfloops`: bool - Wether to remove edges with self-loops.
     /// * `verbose`: bool - Wether to show a loading bar while building the graph.
     ///
     pub fn remove(
@@ -50,6 +51,7 @@ impl Graph {
         node_types: bool,
         edge_types: bool,
         singletons: bool,
+        selfloops: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         let pb_edges = get_loading_bar(
@@ -81,6 +83,10 @@ impl Graph {
                         if !aes.contains(&edge_id) {
                             return None;
                         }
+                    }
+                    // If selfloops need to be filtered out.
+                    if selfloops && src_name == dst_name {
+                        return None;
                     }
                     // If a deny edge set was provided
                     if let Some(des) = &deny_edge_set {
@@ -123,13 +129,17 @@ impl Graph {
                         self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
                     // If the graph has node types
                     if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
-                        let src_node_type_name = self.get_node_type_name(src_nt).unwrap();
-                        let dst_node_type_name = self.get_node_type_name(dst_nt).unwrap();
+                        let node_type_names = self
+                            .translate_node_type_id_vector(
+                                src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
+                            )
+                            .unwrap();
                         // If the allow node types set was provided
                         if let Some(ants) = &allow_node_types_set {
                             // We check that the current node type name is NOT within the node type set.
-                            if !ants.contains(&src_node_type_name)
-                                || !ants.contains(&dst_node_type_name)
+                            if node_type_names
+                                .iter()
+                                .any(|node_type_name| !ants.contains(node_type_name))
                             {
                                 return None;
                             }
@@ -137,8 +147,9 @@ impl Graph {
                         // If the deny node types set was provided
                         if let Some(dnts) = &deny_node_types_set {
                             // We check that the current node type name is NOT within the node type set.
-                            if dnts.contains(&src_node_type_name)
-                                && dnts.contains(&dst_node_type_name)
+                            if node_type_names
+                                .iter()
+                                .any(|node_type_name| dnts.contains(node_type_name))
                             {
                                 return None;
                             }
@@ -161,8 +172,18 @@ impl Graph {
             Some(
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
-                    .filter_map(|(_, node_name, node_type)| {
+                    .filter_map(|(node_id, node_name, node_type_names)| {
                         if singletons && self.is_singleton_string(&node_name).unwrap() {
+                            return None;
+                        }
+                        // If singletons and selfloops need to be removed.
+                        // We need to check all the destinations of the node if they are equal
+                        // with the source node, as in multigraphs there may be multiple selfloops of different
+                        // node types.
+                        if singletons
+                            && selfloops
+                            && self.get_neighbours_iter(node_id).all(|dst| dst == node_id)
+                        {
                             return None;
                         }
                         if let Some(ans) = &allow_nodes_set {
@@ -175,20 +196,28 @@ impl Graph {
                                 return None;
                             }
                         }
-                        if let (Some(ants), Some(nt)) = (&allow_node_types_set, &node_type) {
-                            if !ants.contains(nt) {
+                        if let (Some(ants), Some(nts)) = (&allow_node_types_set, &node_type_names) {
+                            // We check that the current node type name is NOT within the node type set.
+                            if nts
+                                .iter()
+                                .any(|node_type_name| !ants.contains(node_type_name))
+                            {
                                 return None;
                             }
                         }
-                        if let (Some(dnts), Some(nt)) = (&deny_node_types_set, &node_type) {
-                            if dnts.contains(nt) {
+                        if let (Some(dnts), Some(nts)) = (&deny_node_types_set, &node_type_names) {
+                            // We check that the current node type name is NOT within the node type set.
+                            if nts
+                                .iter()
+                                .any(|node_type_name| dnts.contains(node_type_name))
+                            {
                                 return None;
                             }
                         }
                         Some(Ok((
                             node_name,
                             match node_types {
-                                false => node_type,
+                                false => node_type_names,
                                 true => None,
                             },
                         )))
@@ -204,12 +233,14 @@ impl Graph {
                 Some(ets) => ets.has_numeric_ids(),
                 None => false,
             },
+            // TODO: KEEP THE INFORMATION ABOUT THE STRING NODE IDS IF THEY ARE MEANT TO BE NUMERIC OR NOT.
             false,
             false,
             match &self.node_types {
                 Some(nts) => nts.has_numeric_ids(),
                 None => false,
             },
+            self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
             self.has_weights() && !weights,
             self.get_name(),
@@ -312,10 +343,7 @@ impl Graph {
             self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
             self.name.clone(),
             true,

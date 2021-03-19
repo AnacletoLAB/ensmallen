@@ -6,9 +6,9 @@ use graph::{EdgeFileReader, Graph};
 /// becasue we computed wrongly the total number of negative edges
 /// in undirected graphs.
 fn test_load_sorted() {
-    let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv".to_string())
+    let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv")
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t"))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))

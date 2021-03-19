@@ -5,6 +5,8 @@ use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -66,8 +68,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -114,8 +116,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -167,8 +169,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -194,7 +196,7 @@ impl Graph {
             .into_par_iter()
             .map(|node| {
                 if !self.is_node_trap(node) {
-                    self.get_source_destinations_range(node)
+                    self.get_neighbours_iter(node)
                         .map(|dst| self.is_node_trap(dst) as usize as f64)
                         .sum::<f64>()
                         / self.get_node_degree(node) as f64
@@ -238,18 +240,18 @@ impl Graph {
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The maximum node degree of the graph is  {}", graph.min_degree());
+    /// println!("The maximum node degree of the graph is  {}", graph.max_degree());
     /// ```
-    pub fn min_degree(&self) -> NodeT {
+    pub fn max_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().max().unwrap()
     }
 
     /// Returns minimum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The minimum node degree of the graph is  {}", graph.max_degree());
+    /// println!("The minimum node degree of the graph is  {}", graph.min_degree());
     /// ```
-    pub fn max_degree(&self) -> NodeT {
+    pub fn min_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().min().unwrap()
     }
 
@@ -299,7 +301,7 @@ impl Graph {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
-    /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
+    /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
@@ -348,7 +350,11 @@ impl Graph {
     /// ```
     pub fn density(&self) -> f64 {
         let nodes_number = self.get_nodes_number() as EdgeT;
-        self.unique_edges_number as f64 / (nodes_number * (nodes_number - 1)) as f64
+        let total_nodes_number = nodes_number * match self.has_selfloops(){
+            true=>nodes_number,
+            false=>nodes_number-1
+        };
+        self.unique_edges_number as f64 / total_nodes_number as f64
     }
 
     /// Returns report relative to the graph metrics
@@ -390,8 +396,8 @@ impl Graph {
         report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert("degree_mean", self.degrees_mean().to_string());
-        report.insert("max_degree", self.min_degree().to_string());
-        report.insert("min_degree", self.max_degree().to_string());
+        report.insert("min_degree", self.min_degree().to_string());
+        report.insert("max_degree", self.max_degree().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
@@ -597,7 +603,7 @@ impl Graph {
                 .map(|(node_type_id, number)| {
                     format!(
                         "{node_type} (nodes number {node_degree})",
-                        node_type = self.get_node_type_name(*node_type_id).unwrap(),
+                        node_type = self.translate_node_type_id(*node_type_id).unwrap(),
                         node_degree = number
                     )
                 })
@@ -628,13 +634,19 @@ impl Graph {
         let (connected_components_number, minimum_connected_component, maximum_connected_component) =
             self.connected_components_number(verbose);
 
+        let mut hasher = DefaultHasher::new();
+        self.hash(&mut hasher);
+        let hash = hasher.finish();
+    
         Ok(format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
-                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
-                "The top {most_common_nodes_number} most central nodes are {central_nodes}."
+                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
+                "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
+                "The hash of the graph is {hash:08x}."
             ),
+            hash = hash,
             direction = match self.directed {
                 true=> "directed",
                 false => "undirected"
@@ -677,14 +689,28 @@ impl Graph {
                     }
                 ),
                 ntn if ntn > 1 => format!(
-                    " with {node_types_number} different node types: {most_common_node_types}",
+                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}",
                     node_types_number=ntn,
+                    multilabel=match self.has_multilabel_node_types(){
+                        true=>"multi-label ",
+                        false=>""
+                    },
                     most_common_node_types={
                         let node_types = self.get_node_type_counts()?;
                         let most_common = node_types.most_common();
                         match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_node_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_node_type_list(most_common.as_slice())?
+                        }
+                    },
+                    unknown_node_types={
+                        match self.has_unknown_node_types(){
+                            true=>{
+                                let unknown_nodes_number=self.get_unknown_node_types_number();
+                                let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
+                                format!(". There are {} unknown node types ({:.2}%).", unknown_nodes_number, percentage)
+                            },
+                            false=>"".to_owned()
                         }
                     }
                 ),
@@ -713,7 +739,7 @@ impl Graph {
                     }
                 ),
                 etn if etn > 1 => format!(
-                    " with {edge_types_number} different edge types: {most_common_edge_types}",
+                    " with {edge_types_number} different edge types: {most_common_edge_types}{unknown_edge_types}",
                     edge_types_number=etn,
                     most_common_edge_types={
                         let edge_types = self.get_edge_type_counts()?;
@@ -721,6 +747,16 @@ impl Graph {
                         match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_edge_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_edge_type_list(most_common.as_slice())?
+                        }
+                    },
+                    unknown_edge_types={
+                        match self.has_unknown_edge_types(){
+                            true=>{
+                                let unknown_edges_number=self.get_unknown_edge_types_number();
+                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_edges_number() as f64);
+                                format!(". There are {} unknown edge types ({:.2}%).", unknown_edges_number, percentage)
+                            },
+                            false=>"".to_owned()
                         }
                     }
                 ),
@@ -755,8 +791,8 @@ impl Graph {
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
-            most_common_nodes_number=min!(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_nodes(min!(5, self.get_nodes_number())).as_slice())?
+            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
+            central_nodes = self.format_node_list(self.get_top_k_central_nodes(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ))
     }
 }

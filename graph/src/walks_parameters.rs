@@ -14,7 +14,7 @@ pub struct WalkWeights {
 #[derive(Clone, Debug)]
 /// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
-    pub(crate) length: NodeT,
+    pub(crate) walk_length: NodeT,
     pub(crate) weights: WalkWeights,
     pub(crate) max_neighbours: Option<NodeT>,
 }
@@ -93,13 +93,13 @@ impl SingleWalkParameters {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Maximal length of the walk.
-    pub fn new(length: NodeT) -> Result<SingleWalkParameters, String> {
-        if length == 0 {
+    /// * walk_length: usize - Maximal walk_length of the walk.
+    pub fn new(walk_length: NodeT) -> Result<SingleWalkParameters, String> {
+        if walk_length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
         Ok(SingleWalkParameters {
-            length,
+            walk_length,
             weights: WalkWeights::default(),
             max_neighbours: None,
         })
@@ -119,10 +119,10 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * length: NodeT - Maximal length of the walk.
-    pub fn new(length: NodeT) -> Result<WalksParameters, String> {
+    /// * walk_length: NodeT - Maximal walk_length of the walk.
+    pub fn new(walk_length: NodeT) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
-            single_walk_parameters: SingleWalkParameters::new(length)?,
+            single_walk_parameters: SingleWalkParameters::new(walk_length)?,
             iterations: 1,
             random_state: (42 ^ SEED_XOR) as NodeT,
             dense_node_mapping: None,
@@ -133,7 +133,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<NodeT> - Wethever to show the loading bar or not.
+    /// * iterations: Option<NodeT> - whether to show the loading bar or not.
     ///
     pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters, String> {
         if let Some(it) = iterations {

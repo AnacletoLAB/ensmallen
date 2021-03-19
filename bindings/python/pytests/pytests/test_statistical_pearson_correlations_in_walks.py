@@ -28,7 +28,7 @@ def test_return_weight_behaviour_hpo():
     ):
         walks = graph.random_walks(
             quantity=graph.get_nodes_number(),
-            length=1000,
+            walk_length=1000,
             return_weight=return_weight,
             random_state=seed
         )

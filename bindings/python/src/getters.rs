@@ -81,19 +81,19 @@ impl EnsmallenGraph {
 
     #[text_signature = "(self, edge_type)"]
     /// Return the number of edges with the given edge type in the graph.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// edge_type: int,
     ///     Edge type ID for which to count the edges.
-    /// 
+    ///
     /// Raises
     /// ---------------------
     /// ValueError,
     ///     If the graph has no edge types.
     /// ValueError,
     ///     If the graph has not the given edge type.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Number of edges of given edge type.
@@ -103,19 +103,19 @@ impl EnsmallenGraph {
 
     #[text_signature = "(self, node_type)"]
     /// Return the number of nodes with the given node type in the graph.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node_type: int,
     ///     Node type ID for which to number the nodes.
-    /// 
+    ///
     /// Raises
     /// ---------------------
     /// ValueError,
     ///     If the graph has no node types.
     /// ValueError,
     ///     If the graph has not the given node type.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Number of nodes of given node type.
@@ -125,19 +125,19 @@ impl EnsmallenGraph {
 
     #[text_signature = "(self, edge_type)"]
     /// Return the number of edges with the given edge type name in the graph.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// edge_type: str,
     ///     Edge type name for which to number the edges.
-    /// 
+    ///
     /// Raises
     /// ---------------------
     /// ValueError,
     ///     If the graph has no edge types.
     /// ValueError,
     ///     If the graph has not the given edge type.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Number of edges of given edge type.
@@ -147,19 +147,19 @@ impl EnsmallenGraph {
 
     #[text_signature = "(self, node_type)"]
     /// Return the number of nodes with the given node type name in the graph.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node_type: str,
     ///     Node type name for which to number the nodes.
-    /// 
+    ///
     /// Raises
     /// ---------------------
     /// ValueError,
     ///     If the graph has no node types.
     /// ValueError,
     ///     If the graph has not the given node type.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Number of nodes of given node type.
@@ -282,14 +282,14 @@ impl EnsmallenGraph {
     /// ---------------------
     /// node_name: str,
     ///     Name of the node.
-    /// node_type: str = None,
+    /// node_type: List[str] = None,
     ///     Optional node type of the node.
     ///
     /// Returns
     /// ----------------------------
     /// Boolean representing if given node exists in graph.
     ///
-    fn has_node_string(&self, node_name: &str, node_type: Option<String>) -> bool {
+    fn has_node_string(&self, node_name: &str, node_type: Option<Vec<String>>) -> bool {
         self.graph.has_node_string(node_name, node_type)
     }
 
@@ -358,7 +358,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -378,7 +378,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -398,7 +398,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -418,7 +418,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     Wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     ///
     /// Returns
     /// --------------------------
@@ -433,7 +433,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: Option<bool>) -> Vec<String> {
         self.graph.get_source_names(directed.unwrap_or(true))
     }
@@ -444,7 +444,7 @@ impl EnsmallenGraph {
     /// Parameters
     /// --------------------------
     /// directed: bool,
-    ///     wethever to filter out the undirected edges.
+    ///     whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: Option<bool>) -> Vec<String> {
         self.graph.get_destination_names(directed.unwrap_or(true))
     }
@@ -461,24 +461,18 @@ impl EnsmallenGraph {
     }
 
     /// Return vector of node types.
-    pub fn get_node_types(&self) -> PyResult<Py<PyArray1<NodeTypeT>>> {
+    pub fn get_node_types(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
         pyex!(match self.graph.get_node_types() {
-            Some(values) => {
-                let gil = pyo3::Python::acquire_gil();
-                Ok(to_nparray_1d!(gil, values, NodeTypeT))
-            }
+            Some(values) => Ok(values),
             None => Err("Graph does not have node types."),
         })
     }
 
     /// Return vector of edge types.
-    pub fn get_edge_types(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
+    pub fn get_edge_types(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         pyex!(match self.graph.get_edge_types() {
-            Some(values) => {
-                let gil = pyo3::Python::acquire_gil();
-                Ok(to_nparray_1d!(gil, values, EdgeTypeT))
-            }
-            None => Err("Graph does not have edge types."),
+            Some(values) => Ok(values),
+            None => Err("Graph does not have edge types.")
         })
     }
 
@@ -519,7 +513,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Id of the edge type of the edge.
-    fn get_edge_type(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
+    fn get_edge_type(&self, edge_id: EdgeT) -> PyResult<Option<EdgeTypeT>> {
         pyex!(self.graph.get_edge_type(edge_id))
     }
 
@@ -534,7 +528,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Id of the node type of the node.
-    fn get_node_type(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
+    fn get_node_type(&self, node_id: NodeT) -> PyResult<Option<Vec<NodeTypeT>>> {
         pyex!(self.graph.get_node_type(node_id))
     }
 
@@ -569,13 +563,27 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
-    /// Return the count of how many time an edge type appears.
+    /// Return dictionary count of how many time an edge type appears.
+    ///
+    /// The dictionary looks like the following:
+    ///
+    /// {
+    ///    edge_type_id: count_of_edge_types    
+    /// }
+    ///
     fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_edge_type_counts_hashmap())
     }
 
     #[text_signature = "($self)"]
-    /// Return the count of how many time an node type appears.
+    /// Return dictionary count of how many time an node type appears.
+    ///
+    /// The dictionary looks like the following:
+    ///
+    /// {
+    ///    node_type_id: count_of_node_types    
+    /// }
+    ///
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_node_type_counts_hashmap())
     }

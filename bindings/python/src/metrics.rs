@@ -40,6 +40,18 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
+    /// Returns max node degree of the graph.
+    pub fn max_degree(&self) -> NodeT {
+        self.graph.max_degree()
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns min node degree of the graph.
+    pub fn min_degree(&self) -> NodeT {
+        self.graph.min_degree()
+    }
+
+    #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
     pub fn degrees_mode(&self) -> NodeT {
         self.graph.degrees_mode()
@@ -78,8 +90,14 @@ impl EnsmallenGraph {
     /// Returns
     /// -------------------
     /// Textual report.
-    fn overlap_textual_report(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<String> {
-        pyex!(self.graph.overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
+    fn overlap_textual_report(
+        &self,
+        other: &EnsmallenGraph,
+        verbose: Option<bool>,
+    ) -> PyResult<String> {
+        pyex!(self
+            .graph
+            .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
 
     #[text_signature = "($self, node)"]

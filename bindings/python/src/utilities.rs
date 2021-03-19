@@ -94,32 +94,39 @@ pub(crate) fn build_csv_file_reader(
         .set_max_rows_number(extract_value!(kwargs, "edge_max_rows_number", u64)?);
 
     let nodes: Option<NodeFileReader> = match kwargs.get_item("node_path") {
-        Some(_) => Some(
-            NodeFileReader::new(extract_value!(kwargs, "node_path", String)?.unwrap())?
-                .set_separator(extract_value!(kwargs, "node_separator", String)?)?
-                .set_skip_node_types_if_unavailable(extract_value!(
-                    kwargs,
-                    "skip_node_types_if_unavailable",
-                    bool
-                )?)?
-                .set_comment_symbol(extract_value!(kwargs, "node_file_comment_symbol", String)?)?
-                .set_header(extract_value!(kwargs, "edge_header", bool)?)
-                .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize)?)
-                .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)?)?
-                .set_nodes_column(extract_value!(kwargs, "nodes_column", String)?)?
-                .set_node_types_column_number(extract_value!(
-                    kwargs,
-                    "node_types_column_number",
-                    usize
-                )?)?
-                .set_node_types_column(extract_value!(kwargs, "node_types_column", String)?)?
-                .set_default_node_type(extract_value!(kwargs, "default_node_type", String)?)
-                .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool)?)
-                .set_verbose(extract_value!(kwargs, "verbose", bool)?)
-                .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool)?)
-                .set_numeric_node_type_ids(extract_value!(kwargs, "numeric_node_type_ids", bool)?)
-                .set_max_rows_number(extract_value!(kwargs, "node_max_rows_number", u64)?),
-        ),
+        Some(_) => {
+            let maybe_node_path = extract_value!(kwargs, "node_path", String)?;
+            match maybe_node_path {
+                None => None,
+                Some(node_path) => {
+                    Some(NodeFileReader::new(node_path)?
+                        .set_separator(extract_value!(kwargs, "node_separator", String)?)?
+                        .set_skip_node_types_if_unavailable(extract_value!(
+                            kwargs,
+                            "skip_node_types_if_unavailable",
+                            bool
+                        )?)?
+                        .set_comment_symbol(extract_value!(kwargs, "node_file_comment_symbol", String)?)?
+                        .set_header(extract_value!(kwargs, "node_header", bool)?)
+                        .set_rows_to_skip(extract_value!(kwargs, "node_rows_to_skip", usize)?)
+                        .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)?)
+                        .set_nodes_column(extract_value!(kwargs, "nodes_column", String)?)?
+                        .set_node_types_column_number(extract_value!(
+                            kwargs,
+                            "node_types_column_number",
+                            usize
+                        )?)
+                        .set_node_types_column(extract_value!(kwargs, "node_types_column", String)?)?
+                        .set_default_node_type(extract_value!(kwargs, "default_node_type", String)?)
+                        .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool)?)
+                        .set_verbose(extract_value!(kwargs, "verbose", bool)?)
+                        .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool)?)
+                        .set_numeric_node_type_ids(extract_value!(kwargs, "numeric_node_type_ids", bool)?)
+                        .set_max_rows_number(extract_value!(kwargs, "node_max_rows_number", u64)?)
+                    )
+                }
+            }
+        },
         None => None,
     };
 
@@ -134,10 +141,10 @@ pub(crate) fn build_csv_file_reader(
 impl EnsmallenGraph {
     pub(crate) fn build_walk_parameters(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         kwargs: &PyDict,
     ) -> Result<WalksParameters, String> {
-        Ok(WalksParameters::new(length)?
+        Ok(WalksParameters::new(walk_length)?
             .set_change_edge_type_weight(extract_value!(
                 kwargs,
                 "change_edge_type_weight",

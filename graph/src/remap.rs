@@ -45,10 +45,7 @@ impl Graph {
                 }),
             other.nodes.clone(),
             other.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
             true,
             self.name.clone(),

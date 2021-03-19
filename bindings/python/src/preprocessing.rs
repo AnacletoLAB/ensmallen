@@ -58,7 +58,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyConte
 /// window_size: int = 4,
 ///     Window size to consider for the sequences.
 /// verbose: bool = False,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
@@ -92,7 +92,6 @@ fn cooccurence_matrix(
 
 #[pymethods]
 impl EnsmallenGraph {
-    
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, walk_length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
@@ -141,7 +140,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
     /// verbose: int = True,
-    ///     Wethever to show or not the loading bar of the walks.
+    ///     whether to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -149,7 +148,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -160,7 +159,7 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
@@ -174,7 +173,6 @@ impl EnsmallenGraph {
             to_nparray_1d!(gil, frequencies, f64),
         ))
     }
-
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
@@ -250,14 +248,12 @@ impl EnsmallenGraph {
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-        pyex!(validate_kwargs(
-            kwargs,
-            build_walk_parameters_list(&["window_size"])
-        ))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
         let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
-        let elements_per_batch = (walk_length as usize - window_size * 2 - 1)
+        
+        let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
             * parameters.get_iterations() as usize;
 
@@ -282,7 +278,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, method, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
     ///
     ///
@@ -292,8 +288,6 @@ impl EnsmallenGraph {
     ///     Index corresponding to batch to be rendered.
     /// batch_size: int,
     ///     The batch size to use.
-    /// method: str,
-    ///     The method to use for the edge embedding.
     /// negative_samples: float = 1.0,
     ///     Factor of negatives to use in every batch.
     ///     For example, with a batch size of 128 and negative_samples equal
@@ -313,13 +307,12 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// Tuple containing training and validation graphs.
     ///
-    fn link_prediction(
+    fn link_prediction_ids(
         &self,
         idx: u64,
         batch_size: usize,
-        method: &str,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<bool>>)> {
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<bool>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -341,36 +334,124 @@ impl EnsmallenGraph {
             None => None,
         };
 
-        let iter = pyex!(self.graph.link_prediction(
+        let iter = pyex!(self.graph.link_prediction_ids(
             idx,
             batch_size,
-            method,
             pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
             pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
             &maybe_graph
         ))?;
 
-        let embedding_size = pyex!(self.graph.get_embedding_size())?;
-        let edge_vector_len = match method {
-            "Concatenate" => embedding_size * 2,
-            _ => embedding_size,
+        let srcs = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
         };
-
-        let edges = ThreadSafe {
-            t: PyArray2::new(gil.python(), [batch_size, edge_vector_len], false),
+        let dsts = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
         };
         let labels = ThreadSafe {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
+
         unsafe {
-            iter.for_each(|(i, edge_embedding, label)| {
-                edge_embedding.iter().enumerate().for_each(|(j, v)| {
-                    *(edges.t.uget_mut([i, j])) = *v;
-                });
+            iter.for_each(|(i, src, dst, label)| {
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
                 *(labels.t.uget_mut([i])) = label;
             });
         }
-        Ok((edges.t.to_owned(), labels.t.to_owned()))
+
+        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, normalize, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    /// Returns
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// idx:int,
+    ///     Index corresponding to batch to be rendered.
+    /// batch_size: int,
+    ///     The batch size to use.
+    /// normalize: bool=True,
+    ///      Divide the degrees by the max, this way the values are in [0, 1].
+    /// negative_samples: float = 1.0,
+    ///     Factor of negatives to use in every batch.
+    ///     For example, with a batch size of 128 and negative_samples equal
+    ///     to 1.0, there will be 64 positives and 64 negatives.
+    /// avoid_false_negatives: bool = False,
+    ///     Wether to filter out false negatives.
+    ///     By default False.
+    ///     Enabling this will slow down the batch generation while (likely) not
+    ///     introducing any significant gain to the model performance.
+    /// maximal_sampling_attempts: usize = 100,
+    ///     Number of attempts to execute to sample the negative edges.
+    /// graph_to_avoid: EnsmallenGraph = None,
+    ///     Graph to avoid when generating the links.
+    ///     This can be the validation component of the graph, for example.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Tuple containing training and validation graphs.
+    ///
+    fn link_prediction_degrees(
+        &self,
+        idx: u64,
+        batch_size: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<bool>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        pyex!(validate_kwargs(
+            kwargs,
+            [
+                "normalize",
+                "negative_samples",
+                "avoid_false_negatives",
+                "maximal_sampling_attempts",
+                "graph_to_avoid",
+            ]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
+        ))?;
+        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let maybe_graph = match &graph_to_avoid {
+            Some(g) => Some(&g.graph),
+            None => None,
+        };
+
+        let iter = pyex!(self.graph.link_prediction_degrees(
+            idx,
+            batch_size,
+            pyex!(extract_value!(kwargs, "normalize", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
+            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
+            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
+            &maybe_graph
+        ))?;
+
+        let srcs = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let dsts = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let labels = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        unsafe {
+            iter.for_each(|(i, src, dst, label)| {
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
+                *(labels.t.uget_mut([i])) = label;
+            });
+        }
+
+        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
 }

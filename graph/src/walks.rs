@@ -2,9 +2,9 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
-use vec_rand::sample_k_distinct_uniform;
 use vec_rand::sample_uniform;
-use vec_rand::xorshift::xorshift;
+use vec_rand::sorted_unique_sub_sampling;
+use vec_rand::splitmix64;
 
 #[inline(always)]
 fn update_return_weight_transition(
@@ -26,6 +26,7 @@ fn update_return_weight_transition(
             i += 1;
         }
     }
+    // TODO: This could possibly be skipped always if the graph does not have self-loops!
     if src != dst {
         if let Ok(mut i) = destinations.binary_search(&dst) {
             let mut j = i;
@@ -152,7 +153,7 @@ extern "C" {
     );
 }
 
-pub fn update_explore_weight_transition(
+fn update_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -188,7 +189,7 @@ pub fn update_explore_weight_transition(
     );
 }
 
-pub fn update_return_explore_weight_transition(
+fn update_return_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -306,7 +307,7 @@ fn get_probabilistic_indices(
     if let Some(mn) = max_neighbours {
         if (*mn as u64) < (max_edge_id - min_edge_id) {
             return Some(
-                sample_k_distinct_uniform(
+                sorted_unique_sub_sampling(
                     min_edge_id,
                     max_edge_id,
                     *mn as u64,
@@ -368,13 +369,12 @@ impl Graph {
                 // if the destination node type matches the neighbour
                 // destination node type (we are not changing the node type)
                 // we weigth using the provided change_node_type_weight weight.
-                let this_type: NodeTypeT = nt.ids[node as usize];
 
                 transition
                     .iter_mut()
                     .zip(destinations)
                     .for_each(|(transition_value, dst)| {
-                        if this_type == nt.ids[dst as usize] {
+                        if nt.ids[node as usize] == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
                         }
                     });
@@ -452,7 +452,7 @@ impl Graph {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.
-                let this_type: EdgeTypeT = ets.ids[edge_id as usize];
+                let this_type: Option<EdgeTypeT> = ets.ids[edge_id as usize];
                 transition
                     .iter_mut()
                     .zip(min_edge_id..max_edge_id)
@@ -624,15 +624,17 @@ impl Graph {
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        let factor = 0xDEAD;
+        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
             quantity,
-            move |global_index| {
-                let local_index = global_index % quantity;
+            move |index| {
+                let local_index = index % quantity;
                 let random_source_id =
-                    xorshift((parameters.random_state + local_index as NodeT) as u64) as NodeT;
+                    splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
-                    random_source_id as NodeT,
-                    self.get_unique_source(random_source_id),
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    self.get_unique_source(random_source_id % self.get_source_nodes_number()),
                 )
             },
             parameters,
@@ -649,9 +651,16 @@ impl Graph {
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        let factor = 0xDEAD;
+        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
             self.get_unique_sources_number(),
-            move |source_id| (source_id, self.get_unique_source(source_id as NodeT)),
+            move |index| {
+                (
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    self.get_unique_source(index as NodeT % self.get_source_nodes_number()),
+                )
+            },
             parameters,
         )
     }
@@ -683,7 +692,11 @@ impl Graph {
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
-                true => self.uniform_walk(node, random_state, parameters.single_walk_parameters.length),
+                true => self.uniform_walk(
+                    node,
+                    random_state,
+                    parameters.single_walk_parameters.walk_length,
+                ),
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
 
@@ -795,9 +808,10 @@ impl Graph {
             &indices,
         );
         let stub = [node, dst];
+        // We iterate two times before because we need to parse the two initial nodes
         (0..2)
             .map(move |i| stub[i])
-            .chain((2..parameters.length).scan(
+            .chain((2..parameters.walk_length).scan(
                 (min_edge_id, max_edge_id, destinations, node, dst, edge),
                 move |(
                     previous_min_edge_id,
@@ -858,10 +872,11 @@ impl Graph {
     /// * random_state: usize, the random_state to use for extracting the nodes and edges.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    fn uniform_walk(&self, node: NodeT, random_state: NodeT, length: NodeT) -> Vec<NodeT> {
+    fn uniform_walk(&self, node: NodeT, random_state: NodeT, walk_length: NodeT) -> Vec<NodeT> {
+        // We iterate one time before because we need to parse the initial node.
         (0..1)
             .map(move |_| node)
-            .chain((1..length).scan(node, move |node, iteration| {
+            .chain((1..walk_length).scan(node, move |node, iteration| {
                 *node = self.extract_uniform_node(*node, random_state + iteration);
                 Some(*node)
             }))
