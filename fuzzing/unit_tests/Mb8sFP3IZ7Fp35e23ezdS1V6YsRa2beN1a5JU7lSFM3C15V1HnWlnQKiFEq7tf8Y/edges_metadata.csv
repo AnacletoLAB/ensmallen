@@ -1,0 +1,17 @@
+sources_column_number,None
+sources_column,None
+destinations_column_number,None
+destinations_column,None
+edge_types_column_number,None
+edge_types_column,None
+weights_column_number,None
+weights_column,None
+default_weight,None
+default_edge_type,None
+skip_self_loops,None
+verbose,Some(false)
+separator,None
+header,None
+rows_to_skip,None
+ignore_duplicates,None
+max_rows_number,None
