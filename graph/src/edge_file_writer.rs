@@ -24,7 +24,7 @@ impl EdgeFileWriter {
     ///
     /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> EdgeFileWriter {
+    pub fn new<S: Into<String>>(path: S) -> EdgeFileWriter {
         EdgeFileWriter {
             writer: CSVFileWriter::new(path),
             sources_column: "subject".to_string(),
@@ -46,9 +46,9 @@ impl EdgeFileWriter {
     ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
-    pub fn set_sources_column(mut self, sources_column: Option<String>) -> EdgeFileWriter {
+    pub fn set_sources_column<S: Into<String>>(mut self, sources_column: Option<S>) -> EdgeFileWriter {
         if let Some(column) = sources_column {
-            self.sources_column = column;
+            self.sources_column = column.into();
         }
         self
     }
@@ -75,12 +75,12 @@ impl EdgeFileWriter {
     ///
     /// * destinations_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_destinations_column(
+    pub fn set_destinations_column<S: Into<String>>(
         mut self,
-        destinations_column: Option<String>,
+        destinations_column: Option<S>,
     ) -> EdgeFileWriter {
         if let Some(column) = destinations_column {
-            self.destinations_column = column;
+            self.destinations_column = column.into();
         }
         self
     }
@@ -107,9 +107,9 @@ impl EdgeFileWriter {
     ///
     /// * edge_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_edge_types_column(mut self, edge_type_column: Option<String>) -> EdgeFileWriter {
+    pub fn set_edge_types_column<S: Into<String>>(mut self, edge_type_column: Option<S>) -> EdgeFileWriter {
         if let Some(column) = edge_type_column {
-            self.edge_types_column = column;
+            self.edge_types_column = column.into();
         }
         self
     }
@@ -136,9 +136,9 @@ impl EdgeFileWriter {
     ///
     /// * weights_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_weights_column(mut self, weights_column: Option<String>) -> EdgeFileWriter {
+    pub fn set_weights_column<S: Into<String>>(mut self, weights_column: Option<S>) -> EdgeFileWriter {
         if let Some(column) = weights_column {
-            self.weights_column = column;
+            self.weights_column = column.into();
         }
         self
     }
@@ -163,7 +163,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -176,7 +176,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
         if let Some(nni) = numeric_node_ids {
@@ -191,9 +191,9 @@ impl EdgeFileWriter {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileWriter {
+    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> EdgeFileWriter {
         if let Some(v) = separator {
-            self.writer.separator = v;
+            self.writer.separator = v.into();
         }
         self
     }
@@ -202,7 +202,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - Wethever to write out an header or not.
+    /// * header: Option<bool> - whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = header {
@@ -215,7 +215,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * directed: Option<bool> - Wethever to write out the graph as directed or not.
+    /// * directed: Option<bool> - whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;

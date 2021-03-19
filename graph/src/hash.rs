@@ -1,5 +1,7 @@
 use super::*;
 use std::hash::{Hash, Hasher};
+use std::collections::hash_map::DefaultHasher;
+
 
 #[inline(always)]
 /// Hashing floats is usually a bad idea
@@ -19,6 +21,20 @@ fn hash_float<H: Hasher>(x: f32, state: &mut H){
     hack &= 0b11111111111111111111000000000000;
 
     state.write_u32(hack);
+}
+
+impl Graph {
+    pub fn compute_hash(&self) -> u64 {
+        let mut hasher = DefaultHasher::new();
+        self.hash(&mut hasher);
+        hasher.finish()
+    }
+}
+
+impl PartialEq for Graph {
+    fn eq(&self, other: &Self) -> bool {
+        self.compute_hash() == other.compute_hash()
+    }
 }
 
 impl Hash for Graph {
@@ -76,7 +92,15 @@ impl<IndexT: ToFromUsize> Hash for Vocabulary<IndexT> {
     }
 }
 
-impl<IndexT: ToFromUsize, CountT: ToFromUsize> Hash for VocabularyVec<IndexT, CountT> {
+impl Hash for NodeTypeVocabulary {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.ids.hash(state);
+        self.vocabulary.hash(state);
+        self.counts.hash(state);
+    }
+}
+
+impl Hash for EdgeTypeVocabulary {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.ids.hash(state);
         self.vocabulary.hash(state);

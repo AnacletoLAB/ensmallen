@@ -22,8 +22,10 @@ const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
-mod vocabulary_vec;
-pub use self::vocabulary_vec::VocabularyVec;
+mod node_type_vocabulary;
+pub use self::node_type_vocabulary::NodeTypeVocabulary;
+mod edge_type_vocabulary;
+pub use self::edge_type_vocabulary::EdgeTypeVocabulary;
 
 mod csv_file_writer;
 pub(crate) use self::csv_file_writer::compose_lines;
