@@ -614,7 +614,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
 }
 
 
-pub fn test_edgelist_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_edgelist_generation(graph: &mut Graph) -> Result<(), String> {
     let _clique = graph.get_clique_edge_names(
         None,
         None,
@@ -673,7 +673,7 @@ pub fn test_edgelist_generation(graph: &mut Graph, verbose: bool) -> Result<(), 
     Ok(())
 }
 
-pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_nodelabel_holdouts(graph: &mut Graph) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification
             && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
@@ -713,7 +713,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
     Ok(())
 }
 
-pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_edgelabel_holdouts(graph: &mut Graph) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.get_minimum_edge_types_number() < 2
             || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
@@ -741,7 +741,7 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
     Ok(())
 }
 
-pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), Stirng> {
+pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     {
         let without_edge_types = graph.remove(
@@ -808,7 +808,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), Stirng
     Ok(())
 }
 
-pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_clone_and_setters(graph: &mut Graph) -> Result<(), String> {
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
@@ -874,20 +874,20 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     test_graph_filter(graph, verbose)?;
 
     warn!("Testing edge lists generation.");
-    test_edgelist_generation(graph, verbose)?;
+    test_edgelist_generation(graph)?;
 
     warn!("Running node-label holdouts tests.");
-    test_nodelabel_holdouts(graph, verbose)?;
+    test_nodelabel_holdouts(graph)?;
 
     warn!("Testing edge-label holdouts tests.");
-    test_edgelabel_holdouts(graph, verbose)?;
+    test_edgelabel_holdouts(graph)?;
 
     warn!("Testing removes.");
     test_graph_removes(graph, verbose)?;
 
     // Testing cloning
     warn!("Testing clone and setters.");
-    test_clone_and_setters(graph, verbose)?;
+    test_clone_and_setters(graph)?;
 
     Ok(())
 }
