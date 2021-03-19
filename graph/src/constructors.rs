@@ -401,7 +401,21 @@ pub(crate) fn build_edges(
         }
         if  !directed && directed_edge_list{
             match src.cmp(&dst) {
-                Ordering::Greater => {forward_undirected_edges_counter += 1},
+                Ordering::Greater => {
+                    if !edges.contains(encode_edge(dst, src, node_bits)){
+                        return Err(
+                            concat!(
+                                "You are trying to load an undirected ",
+                                "graph using the directed edge list ",
+                                "paremeter that requires for ALL edges to ",
+                                "be fully defined in both directions.\n",
+                                "The edge list you have provided does not ",
+                                "provide the edges in both directions.",
+                            ).to_string()
+                        )
+                    }
+                    forward_undirected_edges_counter += 1
+                },
                 Ordering::Less => {backward_undirected_edges_counter += 1},
                 Ordering::Equal => {}
             }
@@ -451,6 +465,7 @@ pub(crate) fn build_edges(
             "complete."
         ).to_owned());
     }
+
 
     Ok((
         edges,

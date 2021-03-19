@@ -228,15 +228,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         );
 
         assert!(
-            !(smallest == 1 && (!graph.has_singletons()) && (!graph.has_selfloops())),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}",
-            graph.has_singletons(),
-            graph.has_selfloops(),
-            smallest,
-            biggest,
-            graph
-                .get_unique_edges_iter(false)
-                .collect::<Vec<(u32, u32)>>()
+            smallest != 1 || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
+            "When the smallest component is one the graph must have singletons! Graph report: \n{}",
+            graph.textual_report(false)?
         );
     }
 
