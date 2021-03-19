@@ -71,13 +71,15 @@ fn get_path(wanted_folder: &str) -> std::path::PathBuf {
 }
 
 fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
+    // Find the root of the repository
     let mut currdir = get_path("ensmallen_graph");
+    // Build the path to the folder for the tests
     currdir.push("fuzzing");
     currdir.push("unit_tests");
-
+    // Create a random directory
     let path = graph::test_utilities::random_path(currdir.to_str());
     std::fs::create_dir_all(&path).unwrap();
-
+    // Write the informations about the panic
     let panic_path = format!("{}/panic.csv", path);
     let mut file = File::create(panic_path).unwrap();
     if let Some(s) = info.location() {
@@ -85,16 +87,16 @@ fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
         write!(file, "{},{:?}\n", "line", s.line());
         write!(file, "{},{:?}\n", "col", s.column());
     }
-
+    // Write the metadata of the graph
     let edge_metadata_path = format!("{}/graph_metadata.csv", path);
     let mut file = File::create(edge_metadata_path).unwrap();
     write!(file, "{},{:?}\n", "directed", data.directed);
     write!(file, "{},{:?}\n", "directed_edge_list", data.directed_edge_list);
     write!(file, "{},{:?}\n", "name", data.name);
-
+    // Write the edge file
     let edge_path = format!("{}/edges.csv", path);
     std::fs::write(edge_path, data.edge_reader.file);
-
+    // Write the edge metadata
     let edge_metadata_path = format!("{}/edges_metadata.csv", path);
     let mut file = File::create(edge_metadata_path).unwrap();
     write!(file, "{},{:?}\n", "sources_column_number", data.edge_reader.sources_column_number);
@@ -114,11 +116,12 @@ fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
     write!(file, "{},{:?}\n", "rows_to_skip", data.edge_reader.reader.rows_to_skip);
     write!(file, "{},{:?}\n", "ignore_duplicates", data.edge_reader.reader.ignore_duplicates);
     write!(file, "{},{:?}\n", "max_rows_number", data.edge_reader.reader.max_rows_number);
-    
+    // If there is a node files
     if let Some(nodes_reader) = data.nodes_reader{
+        // Write it
         let node_path = format!("{}/nodes.csv", path);
         std::fs::write(node_path, nodes_reader.file);
-
+        // Write its metadata
         let node_metadata_path = format!("{}/nodes_metadata.csv", path);
         let mut file = File::create(node_metadata_path).unwrap();
         write!(file, "{},{:?}\n", "default_node_type", nodes_reader.default_node_type);
