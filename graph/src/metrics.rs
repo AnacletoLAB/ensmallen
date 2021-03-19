@@ -5,6 +5,8 @@ use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -66,8 +68,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -114,8 +116,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -167,8 +169,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -194,7 +196,7 @@ impl Graph {
             .into_par_iter()
             .map(|node| {
                 if !self.is_node_trap(node) {
-                    self.get_source_destinations_range(node)
+                    self.get_neighbours_iter(node)
                         .map(|dst| self.is_node_trap(dst) as usize as f64)
                         .sum::<f64>()
                         / self.get_node_degree(node) as f64
@@ -632,13 +634,19 @@ impl Graph {
         let (connected_components_number, minimum_connected_component, maximum_connected_component) =
             self.connected_components_number(verbose);
 
+        let mut hasher = DefaultHasher::new();
+        self.hash(&mut hasher);
+        let hash = hasher.finish();
+    
         Ok(format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
-                "The top {most_common_nodes_number} most central nodes are {central_nodes}."
+                "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
+                "The hash of the graph is {hash:08x}."
             ),
+            hash = hash,
             direction = match self.directed {
                 true=> "directed",
                 false => "undirected"

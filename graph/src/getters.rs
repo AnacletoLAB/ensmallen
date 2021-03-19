@@ -245,6 +245,14 @@ impl Graph {
         }
     }
 
+    /// Returs option with the weight of the given edge id.
+    pub fn get_unchecked_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
+        match &self.weights {
+            Some(ws) => Some(ws[edge_id as usize]),
+            None => None,
+        }
+    }
+
     /// Returs option with the node type of the given node id.
     pub fn get_unchecked_node_type(&self, node_id: NodeT) -> Option<NodeTypeT> {
         match &self.node_types {
@@ -557,7 +565,8 @@ impl Graph {
         (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id))
     }
 
-    pub fn get_source_destinations_range(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
+    /// Return iterator over NodeT of destinations of the given node src.
+    pub fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
         self.get_unchecked_destinations_range(src)
             .map(move |edge_id| self.get_destination(edge_id))
     }

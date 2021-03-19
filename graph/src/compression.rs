@@ -56,7 +56,6 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
-        self.unique_sources
-            .unchecked_select((source_id % self.get_source_nodes_number()) as u64) as NodeT
+        self.unique_sources.unchecked_select(source_id as u64) as NodeT
     }
 }

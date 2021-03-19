@@ -18,7 +18,7 @@ fn test_components_size() {
         Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph".to_owned()).unwrap();
 
     // THIS IS NOT DETERMINISTIC
-    for _ in 0..1_000 {
+    for _ in 0..10_000 {
         let (components, _components_number, smallest, biggest) = g.connected_components(false).unwrap();
         assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
 

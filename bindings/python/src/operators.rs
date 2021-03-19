@@ -37,12 +37,20 @@ impl PyObjectProtocol for EnsmallenGraph {
     fn __repr__(&'p self) -> PyResult<String> {
         self.__str__()
     }
+
+    fn __hash__(&'p self) -> PyResult<isize> {
+        Ok(self.hash() as isize)
+    }
 }
 
 #[pymethods]
 impl EnsmallenGraph {
     fn _repr_html_(&self) -> PyResult<String> {
-        Ok(format!(r#"<p style="text-align: justify; text-justify: inter-word;">{}</p>"#, self.__repr__()?))
+        Ok(format!(
+            r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
+            self.graph.get_name(),
+            self.__repr__()?
+        ))
     }
 }
 

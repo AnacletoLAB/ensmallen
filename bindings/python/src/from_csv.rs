@@ -16,7 +16,7 @@ impl EnsmallenGraph {
     ///     Wethever to load the graph as directed or undirected.
     /// directed_edge_list: bool = False,
     ///     Wether to load the edge list as directed or undirected.
-    ///     The default behaviour is to the list as undirected and handle the
+    ///     The default behaviour is to treat he list as undirected and handle the
     ///     undirected edges automatically if the parameter `directed=False`.
     /// sources_column_number: int = 0,
     ///     The column number of the sources of the edges.

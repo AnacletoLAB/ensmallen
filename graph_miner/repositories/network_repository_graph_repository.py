@@ -38,10 +38,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Complete name of the graph.
         """
-        return "".join([
+        stored_graph_name = "".join([
             term.capitalize()
             for term in partial_graph_name.split("-")
         ])
+        if stored_graph_name[0].isnumeric():
+            stored_graph_name = "Graph{}".format(stored_graph_name)
+        return stored_graph_name
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
@@ -115,8 +118,16 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Citations relative to the given Network Repository graph.
         """
-        target = "The Network Data Repository"
-        baseline_citation = [
+        skitter_target = "Skitter"
+        whois_target = "WHOIS"
+        routeviews_target = "RouteViews"
+        targets = [
+            "The Network Data Repository",
+            skitter_target,
+            whois_target,
+            routeviews_target
+        ]
+        baseline_citations = [
             open(
                 "{}/models/network_repository_citation.bib".format(
                     os.path.dirname(os.path.abspath(__file__))
@@ -126,10 +137,41 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         ]
 
         soup = self.get_graph_soup(self.get_graph_name(graph_data))
-        return baseline_citation + [
+        citations = [
             reference.text.strip()
             for reference in soup.find_all("blockquote")
-            if target not in reference.text.strip()
+        ]
+        if any(skitter_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/skitter.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
+        if any(whois_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/whois.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
+        if any(routeviews_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/routeviews.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
+        return baseline_citations + [
+            reference
+            for reference in citations
+            if not any(
+                target in reference.text.strip()
+                for target in targets
+            )
         ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
@@ -466,14 +508,31 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             for _, row in self._organisms.iterrows()
         ]
 
+    def get_description(self, graph_name: str) -> str:
+        """Return description to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        description.
+        """
+        return ""
+
     def get_node_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the node files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -524,12 +583,15 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
     def get_edge_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the edge files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 

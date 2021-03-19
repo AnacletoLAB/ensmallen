@@ -2,6 +2,7 @@
 from typing import List, Dict, Set
 import pandas as pd
 import os
+import json
 import compress_json
 import datetime
 import shutil
@@ -223,10 +224,11 @@ class GraphRepository:
     def _dump_corrupted_graphs(self, corrupted_graphs: Set[str]):
         """Return set of known corrupted graphs."""
         compress_json.local_dump(corrupted_graphs, self.corrupted_graphs_path)
-    
+
     def _dump_unsupported_graphs(self, unsupported_graphs: Set[str]):
         """Return set of known unsupported graphs."""
-        compress_json.local_dump(unsupported_graphs, self.unsupported_graphs_path)
+        compress_json.local_dump(
+            unsupported_graphs, self.unsupported_graphs_path)
 
     def add_corrupted_graph(self, graph_name: str):
         """Add given graph to corrupted graphs set.
@@ -293,7 +295,7 @@ class GraphRepository:
             for graph_data in self.get_graph_list()
             if not (
                 self.is_graph_cached(self.get_graph_name(graph_data)) or
-                self.is_graph_corrupted(self.get_graph_name(graph_data)) or 
+                self.is_graph_corrupted(self.get_graph_name(graph_data)) or
                 self.is_graph_unsupported(self.get_graph_name(graph_data))
             )
         ]
@@ -491,7 +493,8 @@ class GraphRepository:
         return pd.read_csv(
             path,
             sep=self.get_file_separator(path),
-            skiprows=self.get_starting_commented_lines_number(path) + self.get_lines_to_skip(path),
+            skiprows=self.get_starting_commented_lines_number(
+                path) + self.get_lines_to_skip(path),
             header=None,
             nrows=1000000,
             low_memory=False
@@ -506,12 +509,15 @@ class GraphRepository:
 
     def get_node_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the node files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -525,12 +531,15 @@ class GraphRepository:
 
     def get_edge_list_path(
         self,
+        graph_name: str,
         download_report: pd.DataFrame
     ) -> str:
         """Return path from where to load the edge files.
 
         Parameters
         -----------------------
+        graph_name: str,
+            Name of the graph.
         download_report: pd.DataFrame,
             Report from downloader.
 
@@ -541,7 +550,67 @@ class GraphRepository:
         raise NotImplementedError(
             "The method get_edge_list_path must be implemented in child classes."
         )
-    
+
+    def get_imports(self, graph_name: str) -> str:
+        """Return imports to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        Imports.
+        """
+        return ""
+
+    def get_description(self, graph_name: str) -> str:
+        """Return description to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        description.
+        """
+        return ""
+
+    def get_callbacks(self, graph_name: str) -> str:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        raise NotImplementedError(
+            "The method get_callbacks must be implemented in child classes."
+        )
+
+    def get_callbacks_arguments(self, graph_name: str) -> List[Dict]:
+        """Return arguments for callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        arguments for callbacks.
+        """
+        raise NotImplementedError(
+            "The method get_callbacks_arguments must be implemented in child classes."
+        )
+
     def check_nominal_download(
         self,
         download_report: pd.DataFrame
@@ -577,8 +646,10 @@ class GraphRepository:
                 self.add_corrupted_graph(graph_name)
                 continue
             try:
-                node_path = self.get_node_list_path(download_report)
-                edge_path = self.get_edge_list_path(download_report)
+                node_path = self.get_node_list_path(
+                    graph_name, download_report)
+                edge_path = self.get_edge_list_path(
+                    graph_name, download_report)
                 arguments = self.build_graph_parameters(
                     graph_name,
                     edge_path=edge_path,
@@ -622,6 +693,35 @@ class GraphRepository:
         ) as f:
             return f.read().format("\n\n".join(references))
 
+    def format_lines(self, text: str, line_length: int = 70) -> str:
+        """Return formatted lines.
+
+        Parameters
+        --------------------------
+        text: str,
+            The text to be formatted.
+        line_length: int = 70,
+            Maximum length of the text lines.
+
+        Returns
+        --------------------------
+        Formatted text.
+        """
+        line_length = 70
+        lines = []
+        line = None
+        for word in text.split(" "):
+            if line is None:
+                line = word
+            else:
+                line += " " + word
+            if len(line) >= line_length:
+                lines.append(line)
+                line = None
+        if line is not None:
+            lines.append(line)
+        return "\n".join(lines)
+
     def format_report(self, report: str, datetime: str) -> str:
         """Return formatted report model.
 
@@ -642,7 +742,7 @@ class GraphRepository:
             "r"
         ) as f:
             return f.read().format(
-                report=report,
+                report=self.format_lines(report),
                 datetime=datetime
             )
 
@@ -667,6 +767,47 @@ class GraphRepository:
                 repository_package_name=self.repository_package_name,
                 graph_method_name=self.build_stored_graph_name(graph_name)
             )
+
+    def add_tabs(self, text: str) -> str:
+        """Add tabs for formatting porposes to given text.
+
+        Parameters
+        --------------------
+        text: str,
+            The text to format.
+
+        Returns
+        --------------------
+        Formatted text.
+        """
+        return "\t" + "\n\t".join(text.split("\n"))
+
+    def format_callbacks_data(self, graph_name: str) -> str:
+        """Return formatted callbacks data.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        ---------------------
+        Formatted callbacks data.
+        """
+        try:
+            callbacks = self.get_callbacks(graph_name)
+            callbacks_data = self.get_callbacks_arguments(graph_name)
+            return ",\n" + self.add_tabs(self.add_tabs("\n".join((
+                "callbacks=[\n{}\n],".format(self.add_tabs("\n".join(
+                    callbacks
+                ))),
+                "callbacks_arguments={}".format(json.dumps(
+                    callbacks_data,
+                    indent=4
+                )),
+            ))))
+        except NotImplementedError:
+            return ""
 
     def format_graph_retrieval_file(
         self,
@@ -700,12 +841,78 @@ class GraphRepository:
                 graph_name=graph_name,
                 repository_name=self.get_formatted_repository_name(),
                 report=report,
+                imports=self.get_imports(graph_name),
+                callbacks_data=self.format_callbacks_data(
+                    graph_name,
+                ),
+                description=self.format_lines(
+                    self.get_description(graph_name)
+                ),
+                tabbed_description=self.add_tabs(
+                    self.format_lines(self.get_description(graph_name))
+                ),
                 references=self.format_references(references),
-                usage_example=self.format_usage_example(graph_name)
+                usage_example=self.format_usage_example(graph_name),
+                tabbed_report=self.add_tabs(report),
+                tabbed_references=self.add_tabs(
+                    self.format_references(references)),
+                tabbed_usage_example=self.add_tabs(
+                    self.format_usage_example(graph_name))
+            )
+
+    def format_init_file(
+        self,
+        graph_method_names: List[str],
+        graph_file_names: List[str]
+    ) -> str:
+        """Return formatted init model.
+
+        Parameters
+        ---------------------
+        graph_method_names: List[str],
+            Names of the methods to import.
+        graph_file_names: List[str],
+            Names of the files to import the methods from.
+
+        Returns
+        ---------------------
+        Formatted model of init file.
+        """
+        import_pattern = "from .{graph_file_name} import {graph_method_name}"
+        imports = "\n".join([
+            import_pattern.format(
+                graph_file_name=graph_file_name,
+                graph_method_name=graph_method_name
+            )
+            for graph_method_name, graph_file_name in zip(
+                graph_method_names,
+                graph_file_names
+            )
+        ])
+        method_names = self.add_tabs(self.format_lines(" ".join([
+            '"{}",'.format(graph_method_name)
+            for graph_method_name in graph_method_names
+        ])))
+
+        with open(
+            "{}/models/init_file_model.py".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format(
+                imports=imports,
+                method_names=method_names,
+                repository_name=self.get_formatted_repository_name()
             )
 
     def build_all(self):
         """Build graph retrieval methods."""
+        graph_method_names = []
+        graph_file_names = []
+        target_directory_path = os.path.join(
+            "bindings/python/ensmallen_graph/datasets",
+            self.repository_package_name,
+        )
         for graph_report_path in tqdm(
             glob("{}/*.json.gz".format(self.build_graph_reports_directory())),
             desc="Building graph retrieval methods for {}".format(self.name),
@@ -720,23 +927,35 @@ class GraphRepository:
                 ),
                 references=graph_data["citations"],
             )
-            target_directory_path = os.path.join(
-                "bindings/python/ensmallen_graph/datasets",
-                self.repository_package_name,
-            )
             target_path = os.path.join(
                 target_directory_path,
                 "{}.py".format(
-                    graph_data["graph_name"].replace(" ", "_").lower()
+                    self.build_stored_graph_name(
+                        graph_data["graph_name"]).lower()
                 )
+            )
+            graph_method_names.append(
+                self.build_stored_graph_name(graph_data["graph_name"])
+            )
+            graph_file_names.append(
+                self.build_stored_graph_name(graph_data["graph_name"]).lower()
             )
             target_json_path = os.path.join(
                 target_directory_path,
                 "{}.json.gz".format(
-                    graph_data["graph_method_name"]
+                    self.build_stored_graph_name(graph_data["graph_name"])
                 )
             )
             os.makedirs(target_directory_path, exist_ok=True)
             with open(target_path, "w") as f:
                 f.write(graph_retrieval_file)
             compress_json.dump(graph_data, target_json_path)
+        init_path = os.path.join(
+            target_directory_path,
+            "__init__.py"
+        )
+        with open(init_path, "w") as f:
+            f.write(self.format_init_file(
+                graph_method_names,
+                graph_file_names
+            ))

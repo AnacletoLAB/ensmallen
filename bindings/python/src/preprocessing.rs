@@ -92,7 +92,6 @@ fn cooccurence_matrix(
 
 #[pymethods]
 impl EnsmallenGraph {
-    
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, walk_length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
@@ -149,7 +148,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -160,7 +159,7 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
@@ -174,7 +173,6 @@ impl EnsmallenGraph {
             to_nparray_1d!(gil, frequencies, f64),
         ))
     }
-
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
@@ -250,14 +248,12 @@ impl EnsmallenGraph {
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-        pyex!(validate_kwargs(
-            kwargs,
-            build_walk_parameters_list(&["window_size"])
-        ))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
         let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
-        let elements_per_batch = (walk_length as usize - window_size * 2 - 1)
+        
+        let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
             * parameters.get_iterations() as usize;
 
@@ -373,7 +369,7 @@ impl EnsmallenGraph {
         }
         Ok((edges.t.to_owned(), labels.t.to_owned()))
     }
-    
+
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
@@ -449,11 +445,11 @@ impl EnsmallenGraph {
         let labels = ThreadSafe {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        
+
         unsafe {
             iter.for_each(|(i, src, dst, label)| {
-                *(dsts.t.uget_mut([i]))   = src;
-                *(srcs.t.uget_mut([i]))   = dst;
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
                 *(labels.t.uget_mut([i])) = label;
             });
         }
@@ -461,7 +457,6 @@ impl EnsmallenGraph {
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
 
-    
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, idx, batch_size, normalize, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
@@ -541,11 +536,11 @@ impl EnsmallenGraph {
         let labels = ThreadSafe {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        
+
         unsafe {
             iter.for_each(|(i, src, dst, label)| {
-                *(dsts.t.uget_mut([i]))   = src;
-                *(srcs.t.uget_mut([i]))   = dst;
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
                 *(labels.t.uget_mut([i])) = label;
             });
         }

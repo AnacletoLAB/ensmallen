@@ -30,7 +30,7 @@ class StringGraphRepository(GraphRepository):
         """
         return "".join([
             term.capitalize()
-            for term in partial_graph_name.split(" ")
+            for term in partial_graph_name.replace(".", " ").split(" ")
         ])
 
     def get_formatted_repository_name(self) -> str:
