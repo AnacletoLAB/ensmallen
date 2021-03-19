@@ -1,18 +1,14 @@
 use super::*;
 use arbitrary::Arbitrary;
-
-use std::fs::File;
-use std::io::prelude::*;
 use std::fs::remove_file;
-use std::ffi::OsStr;
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct FromCsvHarnessParams {
-    directed: bool,
-    directed_edge_list: bool,
-    edge_reader: EdgeFileReaderParams,
-    nodes_reader: Option<NodeFileReaderParams>,
-    name: String,
+    pub directed: bool,
+    pub directed_edge_list: bool,
+    pub edge_reader: EdgeFileReaderParams,
+    pub nodes_reader: Option<NodeFileReaderParams>,
+    pub name: String,
 }
 
 #[derive(Arbitrary, Debug, Clone)]
@@ -36,7 +32,6 @@ pub struct NodeFileReaderParams {
     pub file: String,
 }
 
-
 #[derive(Arbitrary, Debug, Clone)]
 pub struct EdgeFileReaderParams {
     pub reader: CSVFileReaderParams,
@@ -54,90 +49,6 @@ pub struct EdgeFileReaderParams {
     pub file: String,
 }
 
-
-fn get_path(wanted_folder: &str) -> std::path::PathBuf {
-    let curr_dir = std::env::current_dir().unwrap().canonicalize().unwrap();
-
-    let mut new_path = std::path::PathBuf::new();
-
-    for part in curr_dir.iter() {
-        new_path.push(part);
-        if part == wanted_folder{
-            break
-        }
-    }
-
-    new_path
-}
-
-fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
-    // Find the root of the repository
-    let mut currdir = get_path("ensmallen_graph");
-    // Build the path to the folder for the tests
-    currdir.push("fuzzing");
-    currdir.push("unit_tests");
-    // Create a random directory
-    let path = graph::test_utilities::random_path(currdir.to_str());
-    std::fs::create_dir_all(&path).unwrap();
-    // Write the informations about the panic
-    let panic_path = format!("{}/panic.csv", path);
-    let mut file = File::create(panic_path).unwrap();
-    if let Some(s) = info.location() {
-        write!(file, "{},{:?}\n", "file", s.file());
-        write!(file, "{},{:?}\n", "line", s.line());
-        write!(file, "{},{:?}\n", "col", s.column());
-    }
-    // Write the metadata of the graph
-    let edge_metadata_path = format!("{}/graph_metadata.csv", path);
-    let mut file = File::create(edge_metadata_path).unwrap();
-    write!(file, "{},{:?}\n", "directed", data.directed);
-    write!(file, "{},{:?}\n", "directed_edge_list", data.directed_edge_list);
-    write!(file, "{},{:?}\n", "name", data.name);
-    // Write the edge file
-    let edge_path = format!("{}/edges.csv", path);
-    std::fs::write(edge_path, data.edge_reader.file);
-    // Write the edge metadata
-    let edge_metadata_path = format!("{}/edges_metadata.csv", path);
-    let mut file = File::create(edge_metadata_path).unwrap();
-    write!(file, "{},{:?}\n", "sources_column_number", data.edge_reader.sources_column_number);
-    write!(file, "{},{:?}\n", "sources_column", data.edge_reader.sources_column);
-    write!(file, "{},{:?}\n", "destinations_column_number", data.edge_reader.destinations_column_number);
-    write!(file, "{},{:?}\n", "destinations_column", data.edge_reader.destinations_column);
-    write!(file, "{},{:?}\n", "edge_types_column_number", data.edge_reader.edge_types_column_number);
-    write!(file, "{},{:?}\n", "edge_types_column", data.edge_reader.edge_types_column);
-    write!(file, "{},{:?}\n", "weights_column_number", data.edge_reader.weights_column_number);
-    write!(file, "{},{:?}\n", "weights_column", data.edge_reader.weights_column);
-    write!(file, "{},{:?}\n", "default_weight", data.edge_reader.default_weight);
-    write!(file, "{},{:?}\n", "default_edge_type", data.edge_reader.sources_column_number);
-    write!(file, "{},{:?}\n", "skip_self_loops", data.edge_reader.skip_self_loops);
-    write!(file, "{},{:?}\n", "verbose", data.edge_reader.reader.verbose);
-    write!(file, "{},{:?}\n", "separator", data.edge_reader.reader.separator);
-    write!(file, "{},{:?}\n", "header", data.edge_reader.reader.header);
-    write!(file, "{},{:?}\n", "rows_to_skip", data.edge_reader.reader.rows_to_skip);
-    write!(file, "{},{:?}\n", "ignore_duplicates", data.edge_reader.reader.ignore_duplicates);
-    write!(file, "{},{:?}\n", "max_rows_number", data.edge_reader.reader.max_rows_number);
-    // If there is a node files
-    if let Some(nodes_reader) = data.nodes_reader{
-        // Write it
-        let node_path = format!("{}/nodes.csv", path);
-        std::fs::write(node_path, nodes_reader.file);
-        // Write its metadata
-        let node_metadata_path = format!("{}/nodes_metadata.csv", path);
-        let mut file = File::create(node_metadata_path).unwrap();
-        write!(file, "{},{:?}\n", "default_node_type", nodes_reader.default_node_type);
-        write!(file, "{},{:?}\n", "nodes_column_number", nodes_reader.nodes_column_number);
-        write!(file, "{},{:?}\n", "nodes_column", nodes_reader.nodes_column);
-        write!(file, "{},{:?}\n", "node_types_column_number", nodes_reader.node_types_column_number);
-        write!(file, "{},{:?}\n", "node_types_column", nodes_reader.node_types_column);
-        write!(file, "{},{:?}\n", "verbose", nodes_reader.reader.verbose);
-        write!(file, "{},{:?}\n", "separator", nodes_reader.reader.separator);
-        write!(file, "{},{:?}\n", "header", nodes_reader.reader.header);
-        write!(file, "{},{:?}\n", "rows_to_skip", nodes_reader.reader.rows_to_skip);
-        write!(file, "{},{:?}\n", "ignore_duplicates", nodes_reader.reader.ignore_duplicates);
-        write!(file, "{},{:?}\n", "max_rows_number", nodes_reader.reader.max_rows_number);
-    }
-}
-
 pub fn from_csv_harness(data: FromCsvHarnessParams) -> Result<(), String> {
     let edges_path = graph::test_utilities::random_path(None);
     let nodes_path = graph::test_utilities::random_path(None);
@@ -147,12 +58,16 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) -> Result<(), String> {
         handle_panics(info, data_copy.clone());
     }));
 
-    internal_harness(&edges_path, &nodes_path, data)
+    let result = internal_harness(&edges_path, &nodes_path, data);
+
+    let _ = remove_file(edges_path);
+    let _ = remove_file(nodes_path);
+    result
 }
 
 fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<(), String> {
     // create the edge file
-    std::fs::write(edges_path, data.edge_reader.file);
+    std::fs::write(edges_path, data.edge_reader.file).expect("Cannot write the edges file.");
     
     // create the reader
     let edges_reader = EdgeFileReader::new(edges_path.to_string())?
@@ -179,7 +94,7 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         Some(nr) => {
 
             // create the node file
-            std::fs::write(nodes_path, nr.file);
+            std::fs::write(nodes_path, nr.file).expect("Cannot write the nodes file.");
 
             // return the reader
             Some(
