@@ -8,6 +8,7 @@ fn test_citeseer() -> Result<(), String> {
     let edges_reader = EdgeFileReader::new("tests/data/citeseer/edges.tsv")?
         .set_separator(Some("\t"))?
         .set_verbose(Some(true))
+        .set_max_rows_number(Some(10000))
         .set_sources_column(Some("subject"))?
         .set_destinations_column(Some("object"))?
         .set_edge_types_column(Some("edge_type"))?;
