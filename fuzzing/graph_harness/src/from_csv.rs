@@ -100,8 +100,8 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         .set_skip_self_loops(data.edge_reader.skip_self_loops)
         .set_numeric_edge_type_ids(data.edge_reader.numeric_edge_type_ids)
         .set_numeric_node_ids(data.edge_reader.numeric_node_ids)
-        .set_skip_weights_if_unavailable(data.edge_reader.skip_weights_if_unavailable)?
-        .set_skip_edge_types_if_unavailable(data.edge_reader.skip_edge_types_if_unavailable)?;
+        .set_skip_weights_if_unavailable(data.edge_reader.skip_weights_if_unavailable)
+        .set_skip_edge_types_if_unavailable(data.edge_reader.skip_edge_types_if_unavailable);
 
     let nodes_reader = match data.nodes_reader {
         None => None,
