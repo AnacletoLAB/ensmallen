@@ -375,7 +375,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     Ok(())
 }
 
-pub fn test_random_walks(graph: &mut Graph) -> Result<(), String> {
+pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
@@ -525,7 +525,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
-pub fn test_kfold(graph: &mut Graph) -> Result<(), String> {
+pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let k = 3;
     for i in 0..k {
         let (train, test) = graph.kfold(k, i, None, 42, false)?;
@@ -646,7 +646,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
     Ok(())
 }
 
-pub fn test_edgelist_generation(graph: &mut Graph) -> Result<(), String> {
+pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let _clique = graph.get_clique_edge_names(
         None,
         None,
@@ -708,7 +708,7 @@ pub fn test_edgelist_generation(graph: &mut Graph) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_nodelabel_holdouts(graph: &mut Graph) -> Result<(), String> {
+pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification
             && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
@@ -748,7 +748,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_edgelabel_holdouts(graph: &mut Graph) -> Result<(), String> {
+pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.get_minimum_edge_types_number() < 2
             || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
@@ -842,7 +842,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
     Ok(())
 }
 
-pub fn test_clone_and_setters(graph: &mut Graph) -> Result<(), String> {
+pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
@@ -884,10 +884,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let _  = test_subgraph_generation(graph, verbose);
 
     warn!("Testing clone and setters.");
-    let _  = test_clone_and_setters(graph);
+    let _  = test_clone_and_setters(graph, verbose);
 
     warn!("Testing edge-label holdouts tests.");
-    let _  = test_edgelabel_holdouts(graph);
+    let _  = test_edgelabel_holdouts(graph, verbose);
 
     warn!("Testing writing out graph to file.");
     let _  = test_dump_graph(graph, verbose);
@@ -899,10 +899,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let _  = test_spanning_arborescence_bader(graph, verbose);
 
     warn!("Running node-label holdouts tests.");
-    let _  = test_nodelabel_holdouts(graph);
+    let _  = test_nodelabel_holdouts(graph, verbose);
 
     warn!("Testing random walks.");
-    let _  = test_random_walks(graph);
+    let _  = test_random_walks(graph, verbose);
 
     warn!("Running remove components tests.");
     let _  = test_remove_components(graph, verbose);
@@ -917,10 +917,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let _  = test_edge_holdouts(graph, verbose);
 
     warn!("Testing k-fold holdouts.");
-    let _  = test_kfold(graph);
+    let _  = test_kfold(graph, verbose);
 
     warn!("Testing edge lists generation.");
-    let _  = test_edgelist_generation(graph);
+    let _  = test_edgelist_generation(graph, verbose);
 
     Ok(())
 }

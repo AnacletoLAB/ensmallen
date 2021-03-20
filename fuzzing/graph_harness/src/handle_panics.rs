@@ -11,7 +11,7 @@ macro_rules! dump {
 
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
+pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
     // Find the root of the repository
     let mut currdir = get_path("ensmallen_graph");
     // Build the path to the folder for the tests
@@ -29,6 +29,31 @@ pub(crate) fn handle_panics(info: &std::panic::PanicInfo, data: FromCsvHarnessPa
 
     // If there is a node files
     if let Some(nodes_reader) = data.nodes_reader{
+        dump_nodes(format!("{}/nodes.csv", path), &nodes_reader.file);
+        dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
+    }
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVecHarnessParams) {
+    // Find the root of the repository
+    let mut currdir = get_path("ensmallen_graph");
+    // Build the path to the folder for the tests
+    currdir.push("fuzzing");
+    currdir.push("unit_tests");
+    // Create a random directory
+    let path = graph::test_utilities::random_path(currdir.to_str());
+    std::fs::create_dir_all(&path).unwrap();
+    
+    // Dump the informations
+    dump_panic_info(format!("{}/panic.csv", path), info);
+    dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
+    dump_edges(format!("{}/edges.csv", path), &data.edge_reader.file);
+    dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
+
+    // If there is a node files
+    if let Some(nodes) = data.nodes{
         dump_nodes(format!("{}/nodes.csv", path), &nodes_reader.file);
         dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
     }
@@ -76,6 +101,14 @@ fn dump_edges(path: String, edges: &str){
 /// Dump the parameters used to load the edges file
 fn dump_edges_metadata(path: String, data: &EdgeFileReaderParams){
     let mut file = File::create(path).unwrap();
+    // Csv default
+    dump!(file, "verbose", data.reader.verbose);
+    dump!(file, "separator", data.reader.separator);
+    dump!(file, "header", data.reader.header);
+    dump!(file, "rows_to_skip", data.reader.rows_to_skip);
+    dump!(file, "ignore_duplicates", data.reader.ignore_duplicates);
+    dump!(file, "max_rows_number", data.reader.max_rows_number);
+    // edge specific
     dump!(file, "sources_column_number", data.sources_column_number);
     dump!(file, "sources_column", data.sources_column);
     dump!(file, "destinations_column_number", data.destinations_column_number);
@@ -87,12 +120,10 @@ fn dump_edges_metadata(path: String, data: &EdgeFileReaderParams){
     dump!(file, "default_weight", data.default_weight);
     dump!(file, "default_edge_type", data.sources_column_number);
     dump!(file, "skip_self_loops", data.skip_self_loops);
-    dump!(file, "verbose", data.reader.verbose);
-    dump!(file, "separator", data.reader.separator);
-    dump!(file, "header", data.reader.header);
-    dump!(file, "rows_to_skip", data.reader.rows_to_skip);
-    dump!(file, "ignore_duplicates", data.reader.ignore_duplicates);
-    dump!(file, "max_rows_number", data.reader.max_rows_number);
+    dump!(file, "numeric_edge_type_ids", data.numeric_edge_type_ids);
+    dump!(file, "numeric_node_ids", data.numeric_node_ids);
+    dump!(file, "skip_weights_if_unavailable", data.skip_weights_if_unavailable);
+    dump!(file, "skip_edge_types_if_unavailable", data.skip_edge_types_if_unavailable);
 }
 
 /// Dump the nodes file
@@ -103,15 +134,22 @@ fn dump_nodes(path: String, nodes: &str){
 /// Dump the parameters used to load the node files
 fn dump_nodes_metadata(path: String, data: &NodeFileReaderParams){
     let mut file = File::create(path).unwrap();
-    dump!(file, "default_node_type", data.default_node_type);
-    dump!(file, "nodes_column_number", data.nodes_column_number);
-    dump!(file, "nodes_column", data.nodes_column);
-    dump!(file, "node_types_column_number", data.node_types_column_number);
-    dump!(file, "node_types_column", data.node_types_column);
+    // Csv default
     dump!(file, "verbose", data.reader.verbose);
     dump!(file, "separator", data.reader.separator);
     dump!(file, "header", data.reader.header);
     dump!(file, "rows_to_skip", data.reader.rows_to_skip);
     dump!(file, "ignore_duplicates", data.reader.ignore_duplicates);
     dump!(file, "max_rows_number", data.reader.max_rows_number);
+    // nodes specific
+    dump!(file, "default_node_type", data.default_node_type);
+    dump!(file, "nodes_column_number", data.nodes_column_number);
+    dump!(file, "node_types_separator", data.node_types_separator);
+    dump!(file, "node_types_column", data.node_types_column);
+    dump!(file, "node_types_column_number", data.node_types_column_number);
+    dump!(file, "numeric_node_ids", data.numeric_node_ids);
+    dump!(file, "numeric_node_type_ids", data.numeric_node_type_ids);
+    dump!(file, "skip_node_types_if_unavailable", data.skip_node_types_if_unavailable);
+    dump!(file, "nodes_column", data.nodes_column);
+    dump!(file, "node_types_column", data.node_types_column);
 }
