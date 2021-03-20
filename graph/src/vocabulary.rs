@@ -25,20 +25,22 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
         let value = value.as_ref();
-        if !self.map.contains_key(value) {
-            self.map.insert(
-                value.to_string(),
-                IndexT::from_usize(if self.numeric_ids {
-                    match value.parse::<usize>() {
-                        Ok(val) => Ok(val),
-                        Err(_) => Err(format!("The given ID `{}` is not numeric.", value)),
-                    }?
-                } else {
-                    self.map.len()
-                }),
-            );
+
+        let (normalized_value, index) = if self.numeric_ids {
+            let parsed_value = match value.parse::<usize>() {
+                Ok(val) => Ok(val),
+                Err(_) => Err(format!("The given ID `{}` is not numeric.", value)),
+            }?;
+            (parsed_value.to_string(), parsed_value)
+        } else {
+            (value.to_string(), self.map.len())
+        };
+
+        if !self.map.contains_key(&normalized_value) {
+            self.map.insert(normalized_value.clone(), IndexT::from_usize(index));
         }
-        Ok(*self.get(value).unwrap())
+
+        Ok(*self.get(&normalized_value).unwrap())
     }
 
     /// Compute the reverse mapping vector for fast decoding
@@ -56,7 +58,22 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                     self.map.len()
                 ));
             }
-            self.reverse_map[IndexT::to_usize(*v)] = k.clone();
+            let i  = IndexT::to_usize(*v);
+            if self.reverse_map[i] != "" {
+                return Err(format!(
+                    concat!(
+                        "During the building of the reverse mapping, ",
+                        "one of the elements of the reverse mapping was attempted ",
+                        "to be assigned multiple times. This means that in the map ",
+                        "there are multiple nodes with the same id.\n",
+                        "In the past this was caused by improper handling of numeric ",
+                        "node id.\n",
+                        "In this case, the value is {} and its index is {}."
+                    ),
+                    k, i
+                ));
+            }
+            self.reverse_map[i] = k.clone();
         }
         Ok(())
     }

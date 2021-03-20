@@ -757,11 +757,11 @@ impl Graph {
         train_graph.edge_types = EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
-        );
+        )?;
         test_graph.edge_types = EdgeTypeVocabulary::from_structs(
             test_edge_types,
             self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
-        );
+        )?;
 
         Ok((train_graph, test_graph))
     }

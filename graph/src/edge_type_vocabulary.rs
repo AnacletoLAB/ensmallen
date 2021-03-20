@@ -38,20 +38,30 @@ impl EdgeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
         vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    ) -> Option<EdgeTypeVocabulary> {
-        match vocabulary {
-            Some(vocab) => {
-                let mut vocabvec = EdgeTypeVocabulary {
-                    ids,
-                    vocabulary: vocab,
-                    counts: Vec::new(),
-                    unknown_count: EdgeT::from_usize(0),
-                };
-                vocabvec.build_counts();
-                Some(vocabvec)
+    ) -> Result<Option<EdgeTypeVocabulary>, String> {
+        if let Some(mut vocab) = vocabulary {
+            vocab.build_reverse_mapping()?;
+
+            if ids.len() == 0 {
+                return Err("The ids vector passed was empty!".to_string());
             }
-            None => None,
+
+            if ids.iter().filter_map(|i| *i).max().unwrap() as usize > vocab.len() {
+                return Err("There are ids which are not in the vocabulary.".to_string());
+            }
+
+            let mut vocabvec = EdgeTypeVocabulary {
+                ids,
+                vocabulary: vocab,
+                counts: Vec::new(),
+                unknown_count: EdgeT::from_usize(0),
+            };
+
+            vocabvec.build_counts();
+
+            return Ok(Some(vocabvec));
         }
+        Ok(None)
     }
 
     pub fn build_counts(&mut self) {
@@ -64,27 +74,6 @@ impl EdgeTypeVocabulary {
                 None => self.unknown_count += EdgeT::from_usize(1),
             }
         }
-    }
-
-    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
-        self.vocabulary.build_reverse_mapping()
-    }
-
-    /// Returns ids of given values inserted.
-    ///
-    /// # Arguments
-    ///
-    /// * `maybe_value`: Option<S> - The values to be inserted.
-    pub fn insert_value<S: AsRef<str>>(
-        &mut self,
-        maybe_value: Option<S>,
-    ) -> Result<Option<EdgeTypeT>, String> {
-        let id: Result<Option<EdgeTypeT>, String> = maybe_value.map_or(Ok(None), |value| {
-            Ok(Some(self.vocabulary.insert(value.as_ref())?))
-        });
-        let id = id?;
-        self.ids.push(id);
-        Ok(id)
     }
 
     /// Returns whether the value is empty or not.

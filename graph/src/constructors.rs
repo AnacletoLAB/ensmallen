@@ -586,8 +586,7 @@ pub(crate) fn parse_string_edges(
         ));
     }
 
-    edge_types_vocabulary.build_reverse_mapping()?;
-    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, optionify!(edge_types_vocabulary));
+    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, optionify!(edge_types_vocabulary))?;
 
     Ok((
         edges,
@@ -679,7 +678,7 @@ pub(crate) fn parse_integer_edges(
         ));
     }
 
-    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, edge_types_vocabulary);
+    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, edge_types_vocabulary)?;
 
     Ok((
         edges,

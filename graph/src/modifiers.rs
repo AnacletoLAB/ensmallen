@@ -8,16 +8,16 @@ impl Graph {
     ///
     /// # Arguments
     /// - `edge_type`: String - The edge type to assing to all the edges.
-    pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Graph {
+    pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Result<Graph, String> {
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(edge_type.into()).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
         let edge_types = EdgeTypeVocabulary::from_structs(
             vec![Some(0); self.get_edges_number() as usize],
             Some(vocabulary),
-        );
+        )?;
         self.edge_types = edge_types;
-        self
+        Ok(self)
     }
 
     /// Replace all node types (if present) and set all the node to node_type.

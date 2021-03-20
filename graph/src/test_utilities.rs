@@ -844,7 +844,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
 
 pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
 
     assert_eq!(
