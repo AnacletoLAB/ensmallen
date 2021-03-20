@@ -52,8 +52,8 @@ impl Graph {
                             return None;
                         }
                     }
-                    if let Some(ets) = &edge_types_ids {
-                        if !ets.contains(&edge_type.unwrap()) {
+                    if let (Some(et), Some(ets)) = (&edge_type, &edge_types_ids) {
+                        if !ets.contains(et) {
                             return None;
                         }
                     }

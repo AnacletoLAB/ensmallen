@@ -343,9 +343,9 @@ impl Graph {
 
     /// Returs option with the edge type of the given edge id.
     pub fn get_edge_type_string(&self, edge_id: EdgeT) -> Option<String> {
-        self.edge_types.as_ref().map(|ets| {
-            ets.translate(self.get_unchecked_edge_type(edge_id).unwrap())
-                .to_owned()
+        self.edge_types.as_ref().and_then(|ets| {
+            self.get_unchecked_edge_type(edge_id)
+                .map(|et| ets.translate(et).to_owned())
         })
     }
 

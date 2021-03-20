@@ -46,7 +46,10 @@ impl EdgeFileWriter {
     ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
-    pub fn set_sources_column<S: Into<String>>(mut self, sources_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_sources_column<S: Into<String>>(
+        mut self,
+        sources_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = sources_column {
             self.sources_column = column.into();
         }
@@ -107,7 +110,10 @@ impl EdgeFileWriter {
     ///
     /// * edge_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_edge_types_column<S: Into<String>>(mut self, edge_type_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_edge_types_column<S: Into<String>>(
+        mut self,
+        edge_type_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = edge_type_column {
             self.edge_types_column = column.into();
         }
@@ -136,7 +142,10 @@ impl EdgeFileWriter {
     ///
     /// * weights_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_weights_column<S: Into<String>>(mut self, weights_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_weights_column<S: Into<String>>(
+        mut self,
+        weights_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = weights_column {
             self.weights_column = column.into();
         }
@@ -276,7 +285,7 @@ impl EdgeFileWriter {
 
                     if let Some(ets) = &graph.edge_types {
                         line.push((
-                            ets.translate(edge_type.unwrap()).to_string(),
+                            edge_type.map_or("", |et| ets.translate(et)).to_string(),
                             self.edge_types_column_number,
                         ));
                     }
