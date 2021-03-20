@@ -46,7 +46,13 @@ impl EdgeTypeVocabulary {
                 return Err("The ids vector passed was empty!".to_string());
             }
 
-            if ids.iter().filter_map(|i| *i).max().unwrap() as usize > vocab.len() {
+            let maybe_max = ids.iter().filter_map(|i| *i).max();
+
+            if maybe_max.is_none() {
+                return Err("The ids vector has only Nones!".to_string());
+            }
+
+            if maybe_max.unwrap() as usize > vocab.len() {
                 return Err("There are ids which are not in the vocabulary.".to_string());
             }
 
