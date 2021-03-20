@@ -464,7 +464,20 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
             nodes_number=graph.get_nodes_number().to_string()
         );
         if total == 1 {
-            assert_eq!(min_comp, graph.get_nodes_number());
+            assert_eq!(
+                min_comp, graph.get_nodes_number(),
+                concat!(
+                    "We expect for the minimum size of connected components ",
+                    "in a graph with a single connected component to ",
+                    "match the number of nodes of the graph, but we got ",
+                    "the minimum component with size {} and the number ",
+                    "of nodes in the graph equal to {}.\n",
+                    "The graph report is: \n {}",
+                ),
+                min_comp,
+                graph.get_nodes_number(),
+                graph.textual_report(false).unwrap()
+            );
             assert_eq!(max_comp, graph.get_nodes_number());
             assert_eq!(min_comp, test.get_nodes_number());
             assert_eq!(max_comp, test.get_nodes_number());

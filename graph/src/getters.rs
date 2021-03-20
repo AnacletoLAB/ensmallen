@@ -43,13 +43,23 @@ impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///
     /// The following works for traps and singletons.
-    /// THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
+    /// TODO: THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
     ///
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton(&self, node_id: NodeT) -> bool {
-        self.get_node_degree(node_id) == 0
+        self.has_singletons() && self.get_node_degree(node_id) == 0
+    }
+
+    /// Returns boolean representing if given node is a singleton with self-loops.
+    ///
+    /// # Arguments
+    ///
+    /// `node_id`: NodeT - The node to be checked for.
+    pub fn is_singleton_with_self_loops(&self, node_id: NodeT) -> bool {
+        self.has_singleton_nodes_with_self_loops_number()
+            && self.get_neighbours_iter(node_id).all(|dst| dst == node_id)
     }
 
     /// Returns boolean representing if given node is a singleton.
