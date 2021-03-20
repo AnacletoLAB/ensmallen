@@ -79,7 +79,7 @@ fn dump_graph_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    dump!(file, "name", data.name);
+    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
 }
 
 fn dump_nodes_from_vec(path: String, nodes: &Vec<Result<(String, Option<Vec<String>>), String>>){
@@ -100,7 +100,7 @@ fn dump_nodes_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     dump!(file, "verbose", Some(false));
     dump!(file, "separator", Some(","));
     dump!(file, "header", Some(false));
-    dump!(file, "rows_to_skip", 0);
+    dump!(file, "rows_to_skip", Some(0));
     dump!(file, "ignore_duplicates", Some(data.ignore_duplicated_nodes));
     dump!(file, "max_rows_number", None::<u64>);
     // nodes specific
@@ -141,7 +141,7 @@ fn dump_edges_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     dump!(file, "verbose", Some(false));
     dump!(file, "separator", Some(","));
     dump!(file, "header", Some(false));
-    dump!(file, "rows_to_skip", 0);
+    dump!(file, "rows_to_skip", Some(0));
     dump!(file, "ignore_duplicates", Some(data.ignore_duplicated_edges));
     dump!(file, "max_rows_number", None::<u64>);
     // edge specific
@@ -164,14 +164,14 @@ fn dump_edges_metadata_from_vec(path: String, data: &FromVecHarnessParams){
         None
     });
 
-    dump!(file, "weights_column",  None::<u64>);
-    dump!(file, "default_weight",  None::<u64>);
-    dump!(file, "default_edge_type",  None::<u64>);
-    dump!(file, "skip_self_loops", false);
+    dump!(file, "weights_column", None::<u64>);
+    dump!(file, "default_weight", None::<u64>);
+    dump!(file, "default_edge_type", None::<u64>);
+    dump!(file, "skip_self_loops", Some(false));
     dump!(file, "numeric_edge_type_ids", Some(data.numeric_edge_types_ids));
     dump!(file, "numeric_node_ids", Some(data.numeric_node_ids));
-    dump!(file, "skip_weights_if_unavailable", false);
-    dump!(file, "skip_edge_types_if_unavailable", false);
+    dump!(file, "skip_weights_if_unavailable", Some(false));
+    dump!(file, "skip_edge_types_if_unavailable", Some(false));
 }
 
 /// Dump the informations about the panic
@@ -189,7 +189,7 @@ fn dump_graph_metadata(path: String, data: &FromCsvHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    dump!(file, "name", data.name);
+    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
 }
 
 /// Dump the edges file
