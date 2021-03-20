@@ -97,11 +97,11 @@ fn dump_nodes_from_vec(path: String, nodes: &Vec<Result<(String, Option<Vec<Stri
 
 fn dump_nodes_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     let mut file = File::create(path).unwrap();
-    dump!(file, "verbose", false);
-    dump!(file, "separator", ",");
-    dump!(file, "header", false);
+    dump!(file, "verbose", Some(false));
+    dump!(file, "separator", Some(","));
+    dump!(file, "header", Some(false));
     dump!(file, "rows_to_skip", 0);
-    dump!(file, "ignore_duplicates", false);
+    dump!(file, "ignore_duplicates", Some(data.ignore_duplicated_nodes));
     dump!(file, "max_rows_number", None::<u64>);
     // nodes specific
     dump!(file, "default_node_type", None::<u64>);
@@ -115,9 +115,9 @@ fn dump_nodes_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     });
 
     dump!(file, "node_types_column_number", None::<u64>);
-    dump!(file, "numeric_node_ids", false);
-    dump!(file, "numeric_node_type_ids", false);
-    dump!(file, "skip_node_types_if_unavailable",false);
+    dump!(file, "numeric_node_ids", Some(data.numeric_node_ids));
+    dump!(file, "numeric_node_type_ids", Some(data.numeric_node_types_ids));
+    dump!(file, "skip_node_types_if_unavailable", Some(false));
     dump!(file, "nodes_column", None::<u64>);
     dump!(file, "node_types_column", None::<u64>);
 
@@ -138,11 +138,11 @@ fn dump_edges_from_vec(path: String, data: &FromVecHarnessParams){
 
 fn dump_edges_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     let mut file = File::create(path).unwrap();
-    dump!(file, "verbose", false);
-    dump!(file, "separator", ",");
-    dump!(file, "header", false);
+    dump!(file, "verbose", Some(false));
+    dump!(file, "separator", Some(","));
+    dump!(file, "header", Some(false));
     dump!(file, "rows_to_skip", 0);
-    dump!(file, "ignore_duplicates", false);
+    dump!(file, "ignore_duplicates", Some(data.ignore_duplicated_edges));
     dump!(file, "max_rows_number", None::<u64>);
     // edge specific
     dump!(file, "sources_column_number", Some(0));
@@ -168,8 +168,8 @@ fn dump_edges_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     dump!(file, "default_weight",  None::<u64>);
     dump!(file, "default_edge_type",  None::<u64>);
     dump!(file, "skip_self_loops", false);
-    dump!(file, "numeric_edge_type_ids", false);
-    dump!(file, "numeric_node_ids", false);
+    dump!(file, "numeric_edge_type_ids", Some(data.numeric_edge_types_ids));
+    dump!(file, "numeric_node_ids", Some(data.numeric_node_ids));
     dump!(file, "skip_weights_if_unavailable", false);
     dump!(file, "skip_edge_types_if_unavailable", false);
 }
