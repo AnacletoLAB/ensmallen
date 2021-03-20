@@ -260,11 +260,11 @@ impl EdgeFileReader {
     pub fn set_skip_weights_if_unavailable(
         mut self,
         skip_weights_if_unavailable: Option<bool>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> EdgeFileReader {
         if let Some(skip) = skip_weights_if_unavailable {
             self.skip_weights_if_unavailable = skip;
         }
-        Ok(self)
+        self
     }
 
     /// Set wether to automatically skip edge types if they are not avaitable instead of raising an exception.
@@ -276,11 +276,11 @@ impl EdgeFileReader {
     pub fn set_skip_edge_types_if_unavailable(
         mut self,
         skip_edge_types_if_unavailable: Option<bool>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> EdgeFileReader {
         if let Some(skip) = skip_edge_types_if_unavailable {
             self.skip_edge_types_if_unavailable = skip;
         }
-        Ok(self)
+        self
     }
 
     /// Set the default default_weight.
