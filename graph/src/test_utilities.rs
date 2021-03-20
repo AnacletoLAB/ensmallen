@@ -652,10 +652,13 @@ pub fn test_edgelist_generation(graph: &mut Graph) -> Result<(), String> {
         None,
         Some(false),
         None,
+        // limit to compute the clique for at most the first 3 nodes
+        // because it's really expensive computationally.
         Some(
             graph
                 .get_node_names()
                 .iter()
+                .take(3)
                 .cloned()
                 .collect::<HashSet<String>>(),
         ),
@@ -874,51 +877,50 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     warn!("Starting default test suite.");
     let _  = test_graph_properties(graph, verbose);
 
-    warn!("Testing random walks.");
-    let _  = test_random_walks(graph);
-
-    warn!("Testing the spanning arborescences.");
-    let _  = test_spanning_arborescence_bader(graph, verbose);
-
-    warn!("Executing edge holdouts tests.");
-    let _  = test_edge_holdouts(graph, verbose);
-
-    warn!("Running remove components tests.");
-    let _  = test_remove_components(graph, verbose);
-
-    warn!("Testing k-fold holdouts.");
-    let _  = test_kfold(graph);
-
-    warn!("Testing negative edges generation.");
-    let _  = test_negative_edges_generation(graph, verbose);
+    warn!("Testing SkipGram / CBOW / GloVe preprocessing.");
+    let _  = test_embiggen_preprocessing(graph, verbose);
 
     warn!("Testing subgraph generation.");
     let _  = test_subgraph_generation(graph, verbose);
 
-    warn!("Testing writing out graph to file.");
-    let _  = test_dump_graph(graph, verbose);
-
-    warn!("Testing SkipGram / CBOW / GloVe preprocessing.");
-    let _  = test_embiggen_preprocessing(graph, verbose);
-
-    warn!("Testing generic filtering mechanism.");
-    let _  = test_graph_filter(graph, verbose);
-
-    warn!("Testing edge lists generation.");
-    let _  = test_edgelist_generation(graph);
-
-    warn!("Running node-label holdouts tests.");
-    let _  = test_nodelabel_holdouts(graph);
+    warn!("Testing clone and setters.");
+    let _  = test_clone_and_setters(graph);
 
     warn!("Testing edge-label holdouts tests.");
     let _  = test_edgelabel_holdouts(graph);
 
+    warn!("Testing writing out graph to file.");
+    let _  = test_dump_graph(graph, verbose);
+
+    warn!("Testing generic filtering mechanism.");
+    let _  = test_graph_filter(graph, verbose);
+
+    warn!("Testing the spanning arborescences.");
+    let _  = test_spanning_arborescence_bader(graph, verbose);
+
+    warn!("Running node-label holdouts tests.");
+    let _  = test_nodelabel_holdouts(graph);
+
+    warn!("Testing random walks.");
+    let _  = test_random_walks(graph);
+
+    warn!("Running remove components tests.");
+    let _  = test_remove_components(graph, verbose);
+
     warn!("Testing removes.");
     let _  = test_graph_removes(graph, verbose);
 
-    // Testing cloning
-    warn!("Testing clone and setters.");
-    let _  = test_clone_and_setters(graph);
+    warn!("Testing negative edges generation.");
+    let _  = test_negative_edges_generation(graph, verbose);
+
+    warn!("Executing edge holdouts tests.");
+    let _  = test_edge_holdouts(graph, verbose);
+
+    warn!("Testing k-fold holdouts.");
+    let _  = test_kfold(graph);
+
+    warn!("Testing edge lists generation.");
+    let _  = test_edgelist_generation(graph);
 
     Ok(())
 }

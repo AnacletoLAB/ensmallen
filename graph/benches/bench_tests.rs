@@ -5,7 +5,7 @@ use test::{black_box, Bencher};
 extern crate graph;
 use graph::test_utilities::*;
 
-#[bench]
+//#[bench]
 fn bench_spanning_arborescence(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -13,7 +13,7 @@ fn bench_spanning_arborescence(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_graph_properties(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -21,7 +21,7 @@ fn bench_graph_properties(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_random_walks(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -29,7 +29,7 @@ fn bench_random_walks(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_edge_holdouts(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -37,7 +37,7 @@ fn bench_edge_holdouts(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_remove_components(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -45,7 +45,7 @@ fn bench_remove_components(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_kfold(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -53,7 +53,7 @@ fn bench_kfold(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_negative_edges_generation(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -61,7 +61,7 @@ fn bench_negative_edges_generation(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_subgraph_generation(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -69,7 +69,7 @@ fn bench_subgraph_generation(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_dump_graph(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -77,7 +77,7 @@ fn bench_dump_graph(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_embiggen_preprocessing(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -85,7 +85,7 @@ fn bench_embiggen_preprocessing(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_graph_filter(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -93,7 +93,7 @@ fn bench_graph_filter(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_edgelist_generationr(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -101,7 +101,7 @@ fn bench_edgelist_generationr(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_nodelabel_holdouts(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -109,7 +109,7 @@ fn bench_nodelabel_holdouts(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_edgelabel_holdouts(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -117,7 +117,7 @@ fn bench_edgelabel_holdouts(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_graph_removes(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
@@ -125,7 +125,7 @@ fn bench_graph_removes(b: &mut Bencher) {
     });
 }
 
-#[bench]
+//#[bench]
 fn bench_clone_and_setters(b: &mut Bencher) {
     let mut graph = load_cora().unwrap();
     b.iter(|| {
