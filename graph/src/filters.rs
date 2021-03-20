@@ -22,6 +22,15 @@ impl Graph {
         max_weight: Option<WeightT>,
         verbose: bool,
     ) -> Result<Graph, String> {
+        if let (Some(min_w), Some(max_w)) = (min_weight, max_weight) {
+            if min_w >= max_w {
+                return Err(format!(
+                    "The given minimum weight ({}) is greater or equal than the given maximum weight ({})!",
+                    min_w, max_w
+                ));
+            }
+        }
+
         let pb = get_loading_bar(
             verbose,
             format!("Building filtered {}", self.name).as_ref(),

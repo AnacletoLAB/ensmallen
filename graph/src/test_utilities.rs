@@ -633,7 +633,18 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
 }
 
 pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let _filtered = graph
+    assert!(
+        graph
+        .filter(
+            Some(graph.get_node_names()),
+            graph.get_node_type_names(),
+            graph.get_edge_type_names(),
+            Some(1000.0),
+            Some(10.0),
+            verbose,
+        ).is_err()
+    );
+    let _ = graph
         .filter(
             Some(graph.get_node_names()),
             graph.get_node_type_names(),
@@ -641,8 +652,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
             graph.get_edge_weight(0),
             graph.get_edge_weight(graph.get_edges_number() - 1),
             verbose,
-        )
-        .unwrap();
+        );
     Ok(())
 }
 
