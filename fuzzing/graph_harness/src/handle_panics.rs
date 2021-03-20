@@ -124,7 +124,7 @@ fn dump_graph_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
+    dump!(file, "name", data.name);
 }
 
 fn dump_nodes_from_vec(path: String, nodes: &Vec<Result<(String, Option<Vec<String>>), String>>){
@@ -234,7 +234,7 @@ fn dump_graph_metadata(path: String, data: &FromCsvHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
+    dump!(file, "name", data.name);
 }
 
 /// Dump the edges file
