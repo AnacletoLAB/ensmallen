@@ -180,10 +180,7 @@ impl Graph {
                         // We need to check all the destinations of the node if they are equal
                         // with the source node, as in multigraphs there may be multiple selfloops of different
                         // node types.
-                        if singletons
-                            && selfloops
-                            && self.get_neighbours_iter(node_id).all(|dst| dst == node_id)
-                        {
+                        if singletons && selfloops && self.is_singleton_with_self_loops(node_id) {
                             return None;
                         }
                         if let Some(ans) = &allow_nodes_set {
