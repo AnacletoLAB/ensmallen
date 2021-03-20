@@ -23,16 +23,14 @@ pub struct FromVecHarnessParams {
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
 
     let data_copy = data.clone();
+    let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
         handle_panics_from_vec(info, data_copy.clone());
     }));
 
     let mut g = graph::Graph::from_string_unsorted(
         data.edges.into_iter(),
-        match data.nodes {
-            Some(ns) => Some(ns.into_iter()),
-            None => None,
-        },
+        data.nodes.map(|ns| ns.into_iter()),
         data.directed,
         data.directed_edge_list,
         data.name,
@@ -47,6 +45,13 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.has_edge_types,
         data.has_weights,
     )?;
+
+
+    let g_copy = g.clone();
+    std::panic::set_hook(Box::new(move |info| {
+        handle_panics_from_vec_once_loaded(info, data_copy2.clone(), g_copy.clone());
+    }));
+
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
     let _ = graph::test_utilities::default_test_suite(&mut g, false);

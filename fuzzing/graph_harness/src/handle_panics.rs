@@ -9,9 +9,7 @@ macro_rules! dump {
     };
 }
 
-/// This function takes the data used for the current fuzz case and dump it.
-/// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
+fn get_folder() -> String {
     // Find the root of the repository
     let mut currdir = get_path("ensmallen_graph");
     // Build the path to the folder for the tests
@@ -20,7 +18,14 @@ pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsv
     // Create a random directory
     let path = graph::test_utilities::random_path(currdir.to_str());
     std::fs::create_dir_all(&path).unwrap();
-    
+    return path;
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsvHarnessParams) {
+    // Find the root of the repository
+    let path = get_folder();
     // Dump the informations
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
@@ -37,15 +42,7 @@ pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsv
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
 pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVecHarnessParams) {
-    // Find the root of the repository
-    let mut currdir = get_path("ensmallen_graph");
-    // Build the path to the folder for the tests
-    currdir.push("fuzzing");
-    currdir.push("unit_tests");
-    // Create a random directory
-    let path = graph::test_utilities::random_path(currdir.to_str());
-    std::fs::create_dir_all(&path).unwrap();
-    
+    let path = get_folder();
     // Dump the informations
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
@@ -57,6 +54,29 @@ pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVec
         dump_nodes_from_vec(format!("{}/nodes.csv", path), &nodes);
         dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
     }
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_from_vec_once_loaded(info: &std::panic::PanicInfo, data: FromVecHarnessParams, graph: Graph) {
+    let path = get_folder();
+    // Dump the informations
+    dump_panic_info(format!("{}/panic.csv", path), info);
+    dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
+    dump_edges_from_vec(format!("{}/edges.csv", path), &data);
+    dump_edges_metadata_from_vec(format!("{}/edges_metadata.csv", path), &data);
+
+    // If there is a node files
+    if let Some(nodes) = &data.nodes{
+        dump_nodes_from_vec(format!("{}/nodes.csv", path), &nodes);
+        dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
+    }
+    
+    let report = graph.textual_report(false);
+    std::fs::write(format!("{}/report.csv", path), format!("{:?}", report)).expect("Cannot write the edge file");
+
+    std::fs::write(format!("{}/debug.csv", &path), format!("{:#4?}", graph)).expect("Cannot write the edge file");
+    std::fs::write(format!("{}/edges_vector.csv", &path), format!("{:#4?}", &data.edges)).expect("Cannot write the edge file");
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.
@@ -124,7 +144,7 @@ fn dump_nodes_metadata_from_vec(path: String, data: &FromVecHarnessParams){
 }
 
 fn dump_edges_from_vec(path: String, data: &FromVecHarnessParams){
-    let mut file = File::create(path).unwrap();
+    let mut file = File::create(&path).unwrap();
     for edge in &data.edges{
         if let Ok((src, dst, edge_type, weight)) = &edge {
             write!(
