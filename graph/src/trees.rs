@@ -11,6 +11,19 @@ use vec_rand::xorshift::xorshift as rand_u64;
 const NOT_PRESENT: u32 = u32::MAX;
 
 /// # Implementation of algorithms relative to trees.
+/// 
+/// # Definitions
+/// - **Self-loops**: Edges with source equal to the destination.
+/// - **Singleton**: A node with no incident edges, (self-loops are not considered).
+/// - **Spanning Tree**: A set of edges that allows to build a path between every
+///     node in the graph. For a graph with n nodes the spanning tree will have n - 1 edges.
+/// - **Spanning Arborescence**: is the generalizzation of the spanning tree for graphs
+///     with multiple components. Being a tree it trivially contains no self-loops.
+///     For a grpah with n nodes and c components the spanning arborescence will have
+///     n - c edges.
+/// - **Component**: Set of nodes in which any two vertices in it are connected to
+///     each other by paths. A singleton is a component and so is a singleton with a 
+///     self-loop.
 impl Graph {
     fn iter_edges_from_random_state(
         &self,

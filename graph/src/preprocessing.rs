@@ -38,7 +38,11 @@ pub fn word2vec<'a>(
     Ok(sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
         if sequence_length < window_size * 2 + 1 {
-            panic!("You are providing sequences that are smaller than the the minimum amount.");
+            panic!("
+            Cannot compute word2vec, got a sequence of length {} and window size {}.
+            for the current window_size the minimum sequence length required is {}",
+            sequence_length, window_size, window_size*2 + 1,
+            );
         }
         (window_size..(sequence_length - window_size)).map(move |i| {
             (
