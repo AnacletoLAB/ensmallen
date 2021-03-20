@@ -124,13 +124,12 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
                     .set_default_node_type(nr.default_node_type)
                     .set_nodes_column_number(nr.nodes_column_number)
                     .set_node_types_separator(nr.node_types_separator)?
-                    .set_node_types_column(nr.node_types_column)?
                     .set_node_types_column_number(nr.node_types_column_number)
                     .set_numeric_node_ids(nr.numeric_node_ids)
                     .set_numeric_node_type_ids(nr.numeric_node_type_ids)
                     .set_skip_node_types_if_unavailable(nr.skip_node_types_if_unavailable)?
                     .set_nodes_column(nr.nodes_column)?
-                    .set_node_types_column(nr.node_types_column)?;
+                    .set_node_types_column(nr.node_types_column)?
             )
         }
     };

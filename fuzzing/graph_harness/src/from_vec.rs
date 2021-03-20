@@ -3,28 +3,28 @@ use arbitrary::Arbitrary;
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct FromVecHarnessParams {
-    directed: bool,
-    directed_edge_list: bool,
-    ignore_duplicated_nodes: bool,
-    ignore_duplicated_edges: bool,
-    verbose: bool,
-    numeric_edge_types_ids: bool,
-    numeric_node_ids: bool,
-    numeric_edge_node_ids: bool,
-    numeric_node_types_ids: bool,
-    has_node_types: bool,
-    has_edge_types: bool,
-    has_weights: bool,
-    name: String,
-    edges: Vec<Result<StringQuadruple, String>>,
-    nodes: Option<Vec<Result<(String, Option<Vec<String>>), String>>>,
+    pub directed: bool,
+    pub directed_edge_list: bool,
+    pub ignore_duplicated_nodes: bool,
+    pub ignore_duplicated_edges: bool,
+    pub verbose: bool,
+    pub numeric_edge_types_ids: bool,
+    pub numeric_node_ids: bool,
+    pub numeric_edge_node_ids: bool,
+    pub numeric_node_types_ids: bool,
+    pub has_node_types: bool,
+    pub has_edge_types: bool,
+    pub has_weights: bool,
+    pub name: String,
+    pub edges: Vec<Result<StringQuadruple, String>>,
+    pub nodes: Option<Vec<Result<(String, Option<Vec<String>>), String>>>,
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
 
     let data_copy = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_vec(info, data_copy.clone());
+        handle_panics_from_vec(info, data_copy.clone());
     }));
 
     let mut g = graph::Graph::from_string_unsorted(

@@ -47,15 +47,15 @@ pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVec
     std::fs::create_dir_all(&path).unwrap();
     
     // Dump the informations
-    dump_panic_info(format!("{}/panic.csv", path), info);
-    dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
-    dump_edges(format!("{}/edges.csv", path), &data.edge_reader.file);
-    dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
+    //dump_panic_info(format!("{}/panic.csv", path), info);
+    //dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
+    //dump_edges(format!("{}/edges.csv", path), &data.edge_reader.file);
+    //dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
 
     // If there is a node files
     if let Some(nodes) = data.nodes{
-        dump_nodes(format!("{}/nodes.csv", path), &nodes_reader.file);
-        dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
+        //dump_nodes(format!("{}/nodes.csv", path), &nodes_reader.file);
+        //dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
     }
 }
 
