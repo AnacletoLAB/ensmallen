@@ -57,23 +57,32 @@ pub struct EdgeFileReaderParams {
     pub file: String,
 }
 
-pub fn from_csv_harness(data: FromCsvHarnessParams) -> Result<(), String> {
+pub fn from_csv_harness(data: FromCsvHarnessParams) {
     let edges_path = graph::test_utilities::random_path(None);
     let nodes_path = graph::test_utilities::random_path(None);
 
     let data_copy = data.clone();
+    let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
         handle_panics_from_csv(info, data_copy.clone());
     }));
 
-    let result = internal_harness(&edges_path, &nodes_path, data);
+    let graph = load_graph(&edges_path, &nodes_path, data);
+
+    if let Ok(mut g) = graph {
+        let g_copy = g.clone();
+        std::panic::set_hook(Box::new(move |info| {
+            handle_panics_from_csv_once_loaded(info, data_copy2.clone(), g_copy.clone());
+        }));
+    
+        let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    }
 
     let _ = remove_file(edges_path);
     let _ = remove_file(nodes_path);
-    result
 }
 
-fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<(), String> {
+fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<Graph, String> {
     // create the edge file
     std::fs::write(edges_path, data.edge_reader.file).expect("Cannot write the edges file.");
     
@@ -135,7 +144,6 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
     };
 
     let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, data.directed_edge_list, data.name)?;
-    let _ = graph::test_utilities::default_test_suite(&mut g, false);
 
-    Ok(())
+    Ok(g)
 }

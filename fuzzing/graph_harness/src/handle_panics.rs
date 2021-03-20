@@ -29,14 +29,38 @@ pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsv
     // Dump the informations
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
-    dump_edges(format!("{}/edges.csv", path), &data.edge_reader.file);
+    dump_edges(format!("{}/edges.edges", path), &data.edge_reader.file);
     dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
 
     // If there is a node files
     if let Some(nodes_reader) = data.nodes_reader{
-        dump_nodes(format!("{}/nodes.csv", path), &nodes_reader.file);
+        dump_nodes(format!("{}/nodes.nodes", path), &nodes_reader.file);
         dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
     }
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_from_csv_once_loaded(info: &std::panic::PanicInfo, data: FromCsvHarnessParams, graph: Graph) {
+    // Find the root of the repository
+    let path = get_folder();
+    // Dump the informations
+    dump_panic_info(format!("{}/panic.csv", path), info);
+    dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
+    dump_edges(format!("{}/edges.edges", path), &data.edge_reader.file);
+    dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
+
+    // If there is a node files
+    if let Some(nodes_reader) = data.nodes_reader{
+        dump_nodes(format!("{}/nodes.nodes", path), &nodes_reader.file);
+        dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
+    }
+
+    if let Ok(r) = graph.textual_report(false) {
+        std::fs::write(format!("{}/report.txt", path), r).expect("Cannot write the edge file");
+    }
+
+    std::fs::write(format!("{}/debug.txt", &path), format!("{:#4?}", graph)).expect("Cannot write the edge file");
 }
 
 /// This function takes the data used for the current fuzz case and dump it.
@@ -46,12 +70,12 @@ pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVec
     // Dump the informations
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
-    dump_edges_from_vec(format!("{}/edges.csv", path), &data);
+    dump_edges_from_vec(format!("{}/edges.edges", path), &data);
     dump_edges_metadata_from_vec(format!("{}/edges_metadata.csv", path), &data);
 
     // If there is a node files
     if let Some(nodes) = &data.nodes{
-        dump_nodes_from_vec(format!("{}/nodes.csv", path), &nodes);
+        dump_nodes_from_vec(format!("{}/nodes.nodes", path), &nodes);
         dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
     }
 }
@@ -63,20 +87,21 @@ pub(crate) fn handle_panics_from_vec_once_loaded(info: &std::panic::PanicInfo, d
     // Dump the informations
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
-    dump_edges_from_vec(format!("{}/edges.csv", path), &data);
+    dump_edges_from_vec(format!("{}/edges.edges", path), &data);
     dump_edges_metadata_from_vec(format!("{}/edges_metadata.csv", path), &data);
 
     // If there is a node files
     if let Some(nodes) = &data.nodes{
-        dump_nodes_from_vec(format!("{}/nodes.csv", path), &nodes);
+        dump_nodes_from_vec(format!("{}/nodes.nodes", path), &nodes);
         dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
     }
     
-    let report = graph.textual_report(false);
-    std::fs::write(format!("{}/report.csv", path), format!("{:?}", report)).expect("Cannot write the edge file");
+    if let Ok(r) = graph.textual_report(false) {
+        std::fs::write(format!("{}/report.txt", path), r).expect("Cannot write the edge file");
+    }
 
-    std::fs::write(format!("{}/debug.csv", &path), format!("{:#4?}", graph)).expect("Cannot write the edge file");
-    std::fs::write(format!("{}/edges_vector.csv", &path), format!("{:#4?}", &data.edges)).expect("Cannot write the edge file");
+    std::fs::write(format!("{}/debug.txt", &path), format!("{:#4?}", graph)).expect("Cannot write the edge file");
+    std::fs::write(format!("{}/edges_vector.txt", &path), format!("{:#4?}", &data.edges)).expect("Cannot write the edge file");
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.
