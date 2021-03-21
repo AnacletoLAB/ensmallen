@@ -261,7 +261,7 @@ impl EdgeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_edges_number() as usize,
+            graph.get_directed_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
                 .get_edges_quadruples(directed)

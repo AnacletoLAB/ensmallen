@@ -227,8 +227,8 @@ impl Graph {
         if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
-        if self.directed && self.get_edges_number() == 1
-            || !self.directed && self.get_edges_number() == 2
+        if self.directed && self.get_directed_edges_number() == 1
+            || !self.directed && self.get_directed_edges_number() == 2
         {
             return Err(String::from(
                 "The current graph instance has only one edge. You cannot build an holdout with one edge.",
@@ -257,8 +257,8 @@ impl Graph {
         train_size: f64,
         include_all_edge_types: bool,
     ) -> Result<(EdgeT, EdgeT), String> {
-        if self.directed && self.get_edges_number() == 1
-            || !self.directed && self.get_edges_number() == 2
+        if self.directed && self.get_directed_edges_number() == 1
+            || !self.directed && self.get_directed_edges_number() == 2
         {
             return Err(String::from(
                 "The current graph instance has only one edge. You cannot build an holdout with one edge.",
@@ -267,7 +267,7 @@ impl Graph {
         let total_edges_number = if include_all_edge_types {
             self.unique_edges_number
         } else {
-            self.get_edges_number()
+            self.get_directed_edges_number()
         };
 
         let (train_edges, test_edges) =
@@ -291,7 +291,7 @@ impl Graph {
 
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
-        let mut edge_indices: Vec<EdgeT> = (0..self.get_edges_number()).collect();
+        let mut edge_indices: Vec<EdgeT> = (0..self.get_directed_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 
         let mut valid_edges_bitmap = RoaringTreemap::new();
@@ -360,16 +360,16 @@ impl Graph {
         let pb_train = get_loading_bar(
             verbose,
             "Building the train partition",
-            (self.get_edges_number() - valid_edges_bitmap.len()) as usize,
+            (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
         Ok((
             Graph::build_graph(
-                (0..self.get_edges_number())
+                (0..self.get_directed_edges_number())
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
                     .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
-                self.get_edges_number() - valid_edges_bitmap.len() as EdgeT,
+                self.get_directed_edges_number() - valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
@@ -444,8 +444,8 @@ impl Graph {
             .0;
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_size) as usize;
-        let mut valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
+        let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;
+        let mut valid_edges_number = (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
@@ -720,8 +720,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(random_state ^ SEED_XOR as u64);
 
         // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_edges_number() as usize];
-        let mut test_edge_types = vec![None; self.get_edges_number() as usize];
+        let mut train_edge_types = vec![None; self.get_directed_edges_number() as usize];
+        let mut test_edge_types = vec![None; self.get_directed_edges_number() as usize];
 
         for mut edge_set in edge_sets {
             // Shuffle in a reproducible way the edges of the current edge_type
@@ -799,7 +799,7 @@ impl Graph {
         let pb3 = get_loading_bar(
             verbose,
             "Building subgraph",
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         // Creating the random number generator
@@ -932,6 +932,14 @@ impl Graph {
                 "Cannot do a number of k-fold greater than the number of available edges.",
             ));
         }
+
+        // if the graph has 8 edges and k = 3
+        // we want the chunks sized to be:
+        // 3, 3, 2
+
+        // if the graph has 4 edges and k = 3
+        // we want the chunks sized to be:
+        // 2, 1, 1
 
         // shuffle the indices
         let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);

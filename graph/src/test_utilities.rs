@@ -347,7 +347,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     assert_eq!(graph.has_edge_types(), graph.get_edge_type(0).is_ok());
 
     assert!(
-        graph.get_edge_type(graph.get_edges_number() + 1).is_err(),
+        graph.get_edge_type(graph.get_directed_edges_number() + 1).is_err(),
         "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
     );
 
@@ -393,7 +393,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
                 if let Some(destinations) = &graph.destinations {
                     assert_eq!(
                         destinations.len(),
-                        graph.get_edges_number() as usize,
+                        graph.get_directed_edges_number() as usize,
                         "Length of destinations does not match number of edges in the graph."
                     );
                 }
@@ -530,8 +530,23 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for i in 0..k {
         let (train, test) = graph.kfold(k, i, None, 42, false)?;
         assert!(
-            test.get_edges_number() <= graph.get_edges_number() / k + 1,
-            "Check that test kfolds respect size bound has failed!"
+            test.get_edges_number() <= (graph.get_edges_number() / k) + 1,
+            concat!(
+                "Check that test kfolds respect size bound has failed!\n",
+                "The value of k is {}.\n",
+                "The report of the original graph is:\n{}\n",
+                "The report of the train graph is:\n{}\n",
+                "The report of the test graph is:\n{}\n",
+                "We expect that the test graph has at most {} edges but it has {}.\n",
+                "The holdout index is {}.\n",
+            ),
+            k, 
+            graph.textual_report(false).unwrap(),
+            train.textual_report(false).unwrap(),
+            test.textual_report(false).unwrap(),
+            (graph.get_edges_number() / k) + 1,
+            test.get_edges_number(),
+            i
         );
         default_holdout_test_suite(graph, &train, &test)?;
     }
@@ -650,7 +665,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
             graph.get_node_type_names().map(|ntn| ntn.into_iter().map(Option::Some).collect()),
             graph.get_edge_type_names().map(|etn| etn.into_iter().map(Option::Some).collect()),
             graph.get_edge_weight(0),
-            graph.get_edge_weight(graph.get_edges_number() - 1),
+            graph.get_edge_weight(graph.get_directed_edges_number() - 1),
             verbose,
         );
     Ok(())
@@ -761,7 +776,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
 pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.get_minimum_edge_types_number() < 2
-            || graph.get_edges_number() - graph.get_unknown_edge_types_number() < 2
+            || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number() < 2
             || !graph.has_edge_types()
         {
             assert!(graph
@@ -864,7 +879,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     );
     assert_eq!(
         clone.get_unchecked_edge_count_by_edge_type(Some(0)),
-        graph.get_edges_number(),
+        graph.get_directed_edges_number(),
         "Number of edges with the unique edge type does not match number of edges in the graph."
     );
 

@@ -42,7 +42,7 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
+            return Box::new((0..self.get_directed_edges_number()).filter_map(move |edge_id| {
                 let (src, dst) = self.get_edge_from_edge_id(edge_id);
                 if !directed && src > dst {
                     return None;
@@ -290,7 +290,7 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
+            return Box::new((0..self.get_directed_edges_number()).filter_map(move |edge_id| {
                 let (src, dst) = self.get_edge_from_edge_id(edge_id);
                 if edge_id > 0 {
                     let (last_src, last_dst) = self.get_edge_from_edge_id(edge_id - 1);

@@ -25,7 +25,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             format!("Building remapped {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         if !self.are_nodes_remappable(&other) {

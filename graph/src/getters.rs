@@ -464,8 +464,8 @@ impl Graph {
         }
     }
 
-    /// Returns number of edges in the graph.
-    pub fn get_edges_number(&self) -> EdgeT {
+    /// Returns number of directed edges in the graph.
+    pub fn get_directed_edges_number(&self) -> EdgeT {
         self.edges.len() as EdgeT
     }
 
@@ -602,7 +602,7 @@ impl Graph {
 
     /// Return number of edges that have multigraph syblings.
     pub fn get_multigraph_edges_number(&self) -> EdgeT {
-        self.get_edges_number() - self.unique_edges_number
+        self.get_directed_edges_number() - self.unique_edges_number
     }
 
     pub fn get_outbounds(&self) -> Vec<EdgeT> {

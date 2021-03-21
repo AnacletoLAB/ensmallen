@@ -34,7 +34,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             format!("Building filtered {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
@@ -67,7 +67,7 @@ impl Graph {
                     }
                     Some(Ok((src, dst, edge_type, weight)))
                 }),
-            self.get_edges_number(),
+            self.get_directed_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

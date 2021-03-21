@@ -61,7 +61,7 @@ impl Graph {
                 self.name
             )
             .as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
         let pb_nodes = get_loading_bar(
             verbose,
@@ -224,7 +224,7 @@ impl Graph {
             true,
             false,
             self.is_multigraph() && edge_types,
-            self.get_edges_number(), // Approximation of expected edges number.
+            self.get_directed_edges_number(), // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             match &self.edge_types {
                 Some(ets) => ets.has_numeric_ids(),
@@ -285,7 +285,7 @@ impl Graph {
                     "Computing which components are to keep for the graph {}",
                     &self.name
                 ),
-                self.get_edges_number() as usize,
+                self.get_directed_edges_number() as usize,
             );
 
             self.get_edges_triples(self.directed)
@@ -322,7 +322,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             &format!("removing components for the graph {}", &self.name),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         Graph::build_graph(
@@ -334,7 +334,7 @@ impl Graph {
                         false => None,
                     }
                 }),
-            self.get_edges_number(),
+            self.get_directed_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

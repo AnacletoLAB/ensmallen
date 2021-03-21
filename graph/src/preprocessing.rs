@@ -279,7 +279,7 @@ impl Graph {
         let positive_number: usize = batch_size - negative_number;
         let graph_has_no_self_loops = !self.has_selfloops();
 
-        let edges_number = self.get_edges_number() as u64;
+        let edges_number = self.get_directed_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u32;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);

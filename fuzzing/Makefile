@@ -6,6 +6,7 @@ CORPUS_FOLDER := corpus
 
 
 libfuzz_from_csv:
+	rm -rfd ./unit_tests/*
 	(\
 	cd graph_harness;\
 	cargo update;\
@@ -13,6 +14,7 @@ libfuzz_from_csv:
 	)
 
 libfuzz_from_vec:
+	rm -rfd ./unit_tests/*
 	(\
 	cd graph_harness;\
 	cargo update;\
@@ -20,6 +22,7 @@ libfuzz_from_vec:
 	)
 
 hfuzz_from_csv:
+	rm -rfd ./unit_tests/*
 	(\
 	cd honggfuzz/from_csv;\
 	cargo update;\
@@ -27,6 +30,7 @@ hfuzz_from_csv:
 	)
 
 hfuzz_from_vec:
+	rm -rfd ./unit_tests/*
 	(\
 	cd honggfuzz/from_vec;\
 	cargo update;\
@@ -34,6 +38,7 @@ hfuzz_from_vec:
 	)
 
 afl_from_csv:
+	rm -rfd ./unit_tests/*
 	(\
 	cd afl/from_csv;\
 	cargo update;\
@@ -41,6 +46,7 @@ afl_from_csv:
 	)
 
 afl_from_vec:
+	rm -rfd ./unit_tests/*
 	(\
 	cd afl/from_vec;\
 	cargo update;\
