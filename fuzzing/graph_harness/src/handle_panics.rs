@@ -27,6 +27,7 @@ pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsv
     // Find the root of the repository
     let path = get_folder();
     // Dump the informations
+    std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data)).expect("Cannot write the edge file");
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
     dump_edges(format!("{}/edges.edges", path), &data.edge_reader.file);
@@ -45,6 +46,7 @@ pub(crate) fn handle_panics_from_csv_once_loaded(info: &std::panic::PanicInfo, d
     // Find the root of the repository
     let path = get_folder();
     // Dump the informations
+    std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data)).expect("Cannot write the edge file");
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
     dump_edges(format!("{}/edges.edges", path), &data.edge_reader.file);
@@ -68,6 +70,7 @@ pub(crate) fn handle_panics_from_csv_once_loaded(info: &std::panic::PanicInfo, d
 pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVecHarnessParams) {
     let path = get_folder();
     // Dump the informations
+    std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data)).expect("Cannot write the edge file");
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
     dump_edges_from_vec(format!("{}/edges.edges", path), &data);
@@ -85,6 +88,7 @@ pub(crate) fn handle_panics_from_vec(info: &std::panic::PanicInfo, data: FromVec
 pub(crate) fn handle_panics_from_vec_once_loaded(info: &std::panic::PanicInfo, data: FromVecHarnessParams, graph: Graph) {
     let path = get_folder();
     // Dump the informations
+    std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data)).expect("Cannot write the edge file");
     dump_panic_info(format!("{}/panic.csv", path), info);
     dump_graph_metadata_from_vec(format!("{}/graph_metadata.csv", path), &data);
     dump_edges_from_vec(format!("{}/edges.edges", path), &data);
@@ -101,7 +105,6 @@ pub(crate) fn handle_panics_from_vec_once_loaded(info: &std::panic::PanicInfo, d
     }
 
     std::fs::write(format!("{}/debug.txt", &path), format!("{:#4?}", graph)).expect("Cannot write the edge file");
-    std::fs::write(format!("{}/edges_vector.txt", &path), format!("{:#4?}", &data.edges)).expect("Cannot write the edge file");
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.
@@ -124,7 +127,7 @@ fn dump_graph_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
+    dump!(file, "name", data.name);
 }
 
 fn dump_nodes_from_vec(path: String, nodes: &Vec<Result<(String, Option<Vec<String>>), String>>){
@@ -227,6 +230,10 @@ fn dump_panic_info(path: String, info: &std::panic::PanicInfo){
         dump!(file, "line", s.line());
         dump!(file, "col",  s.column());
     }
+
+    if let Some(s) = info.message() {
+        dump!(file, "message", s);
+    }
 }
 
 /// Dump the metadata specific for the graphs
@@ -234,7 +241,7 @@ fn dump_graph_metadata(path: String, data: &FromCsvHarnessParams){
     let mut file = File::create(path).unwrap();
     dump!(file, "directed", data.directed);
     dump!(file, "directed_edge_list", data.directed_edge_list);
-    write!(file, "{},{}\n", "name", data.name).expect("Cannot write to file.");
+    dump!(file, "name", data.name);
 }
 
 /// Dump the edges file
