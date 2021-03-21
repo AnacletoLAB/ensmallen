@@ -116,11 +116,15 @@ impl NodeTypeVocabulary {
                         values
                     ));
                 }
+                self.multilabel = self.multilabel || ids.len() > 1;
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
                 Some(ids)
             }
-            None => None,
+            None => {    
+                self.ids.push(None);
+                None
+            },
         })
     }
 

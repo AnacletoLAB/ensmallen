@@ -698,7 +698,7 @@ impl Graph {
                     }
                 ),
                 ntn if ntn > 1 => format!(
-                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}",
+                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}.",
                     node_types_number=ntn,
                     multilabel=match self.has_multilabel_node_types(){
                         true=>"multi-label ",
@@ -717,7 +717,7 @@ impl Graph {
                             true=>{
                                 let unknown_nodes_number=self.get_unknown_node_types_number();
                                 let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
-                                format!(". There are {} unknown node types ({:.2}%).", unknown_nodes_number, percentage)
+                                format!(" and there are {} unknown node types ({:.2}%)", unknown_nodes_number, percentage)
                             },
                             false=>"".to_owned()
                         }
@@ -727,7 +727,7 @@ impl Graph {
             },
             singletons = match self.has_singletons() {
                 true => format!(
-                    ", of which {singleton_number} are singletons{self_loop_singleton},", 
+                    " There are {singleton_number} singleton nodes{self_loop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
                     self_loop_singleton=match self.has_singleton_nodes_with_self_loops_number(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){

@@ -475,7 +475,6 @@ pub(crate) fn build_edges(
         ).to_owned());
     }
 
-
     Ok((
         edges,
         unique_sources,
