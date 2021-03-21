@@ -8,16 +8,7 @@ use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
 
-const NONEXISTENT: String = concat!(
-    "Cthulhu is a fictional cosmic entity created by writer H. P. Lovecraft ",
-    "and first introduced in the short story The Call of Cthulhu,[2] published",
-    " in the American pulp magazine Weird Tales in 1928. Considered a Great Old",
-    " One within the pantheon of Lovecraftian cosmic entities, the creature has",
-    " since been featured in numerous popular culture references. Lovecraft depicts",
-    " it as a gigantic entity worshipped by cultists, in shape like an octopus, a",
-    " dragon, and a caricature of human form. Its name was given to the Lovecraft-inspired",
-    " universe where it and its fellow entities existed, the Cthulhu Mythos."
-).to_string();
+const NONEXISTENT: &str = "Cthulhu is a fictional cosmic entity created by writer H. P. Lovecraft and first introduced in the short story The Call of Cthulhu,[2] published in the American pulp magazine Weird Tales in 1928. Considered a Great Old One within the pantheon of Lovecraftian cosmic entities, the creature has since been featured in numerous popular culture references. Lovecraft depicts it as a gigantic entity worshipped by cultists, in shape like an octopus, a dragon, and a caricature of human form. Its name was given to the Lovecraft-inspired universe where it and its fellow entities existed, the Cthulhu Mythos.";
 
 // where to save the test files
 #[cfg(target_os = "macos")]
@@ -267,14 +258,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Test translate_edge|node_types()
     assert!(
         graph
-            .translate_edge_types(vec![Some("NONEXISTENT_EDGE_TYPE".to_string())])
+            .translate_edge_types(vec![Some(NONEXISTENT.to_string())])
             .is_err(),
         "The graph seems to have a non-existing edge type."
     );
 
     assert!(
         graph
-            .translate_node_types(vec![Some("NONEXISTENT_NODE_TYPE".to_string())])
+            .translate_node_types(vec![Some(NONEXISTENT.to_string())])
             .is_err(),
         "The graph seems to have a non-existing node type."
     );
