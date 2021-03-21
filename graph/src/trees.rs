@@ -277,7 +277,7 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
-        let cpu_number = num_cpus::get();
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
             .build()
@@ -467,7 +467,7 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
         let mut component_sizes: Vec<NodeT> = Vec::new();
-        let cpu_number = num_cpus::get();
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
             .build()
