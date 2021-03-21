@@ -37,10 +37,10 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_string(src, dst, edge_type.as_ref());
+                        return !dg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_string(src, dst, edge_type.as_ref());
+                        return mhg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
                     }
                     true
                 })
@@ -57,7 +57,7 @@ fn generic_string_operator(
                     None => other
                         .get_node_id(&node_name)
                         .ok()
-                        .and_then(|node_id| other.get_node_type_string(node_id)),
+                        .and_then(|node_id| other.get_node_type_name(node_id)),
                 };
                 Ok((node_name, node_type_names))
             })

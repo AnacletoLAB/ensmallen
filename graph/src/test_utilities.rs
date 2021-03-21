@@ -237,10 +237,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
-    // Test get_edge_id_string()
-    assert_eq!(
-        graph.get_edge_id_string(NONEXISTENT, NONEXISTENT, None),
-        None,
+    // Test get_edge_id_with_type_by_node_names()
+    assert!(
+        graph.get_edge_id_with_type_by_node_names(NONEXISTENT, NONEXISTENT, None).is_err(),
         "Graph contains non-existing edge."
     );
 
@@ -299,39 +298,42 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         );
     }
     // Get one edge from the graph if there are any presents
-    if let Some(edge) = graph.get_unique_edges_iter(true).next() {
-        if !graph.has_edge_types() {
-            let src_string = graph.get_node_name(edge.0).unwrap();
-            let dst_string = graph.get_node_name(edge.1).unwrap();
+    if let Some(edge) = graph.get_unique_edges_iter(true).next() { 
+        let src_string = graph.get_node_name(edge.0).unwrap();
+        let dst_string = graph.get_node_name(edge.1).unwrap();
+        let edge_id = graph.get_edge_id_by_node_names(&src_string, &dst_string)?;
+        if graph.has_edge_types(){
+            let edge_type = graph.get_edge_type_name_by_edge_id(edge_id);
             assert!(
-                graph.has_edge_string(&src_string, &dst_string, None),
+                graph.has_edge_with_type_by_node_names(&src_string, &dst_string, edge_type.as_ref()),
+                "I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {}",
+                src_string,
+                dst_string,
+                edge_type,
+                graph.textual_report(false).unwrap()
+            );
+        } else {
+            assert!(
+                graph.has_edge_by_node_names(&src_string, &dst_string),
                 "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {}",
                 src_string,
                 dst_string,
                 graph.textual_report(false).unwrap()
             );
-            assert!(
-                graph.has_node_by_name(&src_string)
-                    && graph.has_node_by_name(&dst_string)
-            );
-            assert!(
-                graph.has_node_with_type_by_name(&src_string, graph.get_node_type_name_by_node_name(&src_string)?)
-                    && graph.has_node_with_type_by_name(&dst_string, graph.get_node_type_name_by_node_name(&dst_string)?)
-            );
-            assert_eq!(
-                graph.get_edge_id_string(
-                    &src_string,
-                    &dst_string,
-                    Some(&"NONEXISTENT_EDGE_TYPE".to_string())
-                ),
-                None
-            );
-            assert_eq!(
-                graph.get_edge_id_string(&src_string, &dst_string, None),
-                graph.get_edge_id(edge.0, edge.1, None),
-                "Check of given edge ID does not match."
-            );
         }
+        assert!(
+            graph.has_node_by_name(&src_string)
+                && graph.has_node_by_name(&dst_string)
+        );
+        assert!(
+            graph.has_node_with_type_by_name(&src_string, graph.get_node_type_name_by_node_name(&src_string)?)
+                && graph.has_node_with_type_by_name(&dst_string, graph.get_node_type_name_by_node_name(&dst_string)?)
+        );
+        assert_eq!(
+            graph.get_edge_id_by_node_names(&src_string, &dst_string)?,
+            graph.get_edge_id_by_node_ids(edge.0, edge.1).unwrap(),
+            "Check of given edge ID does not match."
+        );
     }
 
     // Test the generation of the textual report, this includes the connected components algorithm.
@@ -561,7 +563,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
         );
         default_holdout_test_suite(graph, &train, &test)?;
     }
-    if let Some(edge_t) = graph.get_edge_type_string(0) {
+    if let Some(edge_t) = graph.get_edge_type_name(0) {
         for i in 0..k {
             let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
             default_holdout_test_suite(graph, &train, &test)?;

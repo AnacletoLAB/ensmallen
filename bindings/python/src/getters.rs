@@ -271,8 +271,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given edge exists in graph.
     ///
-    fn has_edge_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> bool {
-        self.graph.has_edge_string(&src, &dst, edge_type.as_ref())
+    fn has_edge_with_type_by_node_names(&self, src: &str, dst: &str, edge_type: Option<String>) -> bool {
+        self.graph.has_edge_with_type_by_node_names(&src, &dst, edge_type.as_ref())
     }
 
     #[text_signature = "($self, node_name, node_type)"]

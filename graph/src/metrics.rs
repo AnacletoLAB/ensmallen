@@ -476,7 +476,7 @@ impl Graph {
         let overlapping_edges_number = self
             .get_edges_par_string_triples(self.directed)
             .filter(|(_, src_name, dst_name, edge_type_name)| {
-                other.has_edge_string(src_name, dst_name, edge_type_name.as_ref())
+                other.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref())
             })
             .count();
         // Get number of overlapping components
