@@ -335,24 +335,25 @@ impl Graph {
             .is_some()
     }
 
-    /// Returns boolean representing if node with given name exists in current graph.
+    /// Returns boolean representing if node with given name and node type name exists in current graph.
     ///
     /// # Arguments
     ///
     /// * node_name: String - The node name.
+    /// * node_type_name: String - The node type name.
     ///
-    pub fn has_node_string(&self, node_name: &str, node_type_name: Option<Vec<String>>) -> bool {
+    pub fn has_node_with_type_by_name(&self, node_name: &str, node_type_name: Option<Vec<String>>) -> bool {
         match self.get_node_id(node_name) {
             Err(_) => false,
             Ok(node_id) => {
                 let our_node_types = self.get_node_type_string(node_id);
                 match (our_node_types, node_type_name) {
+                    (None, None) => true,
                     (Some(mut our_nts), Some(mut other_nts)) => {
                         our_nts.sort();
                         other_nts.sort();
                         our_nts == other_nts
                     }
-                    (None, None) => true,
                     _ => false,
                 }
             }

@@ -282,10 +282,10 @@ impl Graph {
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type(0).unwrap());
+    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0).unwrap());
     /// ```
     ///
-    pub fn get_node_type(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
+    pub fn get_node_type_id_by_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.ids.len() as NodeT {
                 Ok(nt.ids[node_id as usize].clone())
@@ -370,6 +370,14 @@ impl Graph {
                 node_name
             )),
         }
+    }
+
+    pub fn get_node_type_id_by_node_name(&self, node_name: &str) -> Result<Option<Vec<NodeTypeT>>, String> {
+        self.get_node_type_id_by_node_id(self.get_node_id(node_name)?)
+    }
+
+    pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> Result<Option<Vec<String>>, String> {
+        Ok(self.get_node_type_id_by_node_name(node_name)?.and_then(|vector| self.translate_node_type_id_vector(vector)))
     }
 
     /// Returs whether the graph has the given node name.

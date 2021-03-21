@@ -11,7 +11,7 @@ impl Graph {
             return false;
         }
         self.get_nodes_names_iter()
-            .all(|(_, node_name, node_type)| other.has_node_string(&node_name, node_type))
+            .all(|(_, node_name, node_type)| other.has_node_with_type_by_name(&node_name, node_type))
     }
 
     /// Return graph remapped towards nodes of the given graph.

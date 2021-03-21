@@ -242,11 +242,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "Graph contains non-existing edge."
     );
 
-    // Test has_node_string
+    // Test has_node_by_name
     assert!(
-        !(graph.has_node_string("NONEXISTENT", None)),
+        !(graph.has_node_with_type_by_name("NONEXISTENT", None)),
         "The graph seems to have a non-existing node."
     );
+    assert!(
+        !(graph.has_node_by_name("NONEXISTENT")),
+        "The graph seems to have a non-existing node."
+    );
+
 
     // Test translate_edge|node_types()
     assert!(
@@ -304,8 +309,12 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 graph.textual_report(false).unwrap()
             );
             assert!(
-                graph.has_node_string(&src_string, None)
-                    && graph.has_node_string(&dst_string, None)
+                graph.has_node_by_name(&src_string)
+                    && graph.has_node_by_name(&dst_string)
+            );
+            assert!(
+                graph.has_node_with_type_by_name(&src_string, graph.get_node_type_name_by_node_name(&src_string)?)
+                    && graph.has_node_with_type_by_name(&dst_string, graph.get_node_type_name_by_node_name(&dst_string)?)
             );
             assert_eq!(
                 graph.get_edge_id_string(
@@ -337,10 +346,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         }
     }
 
-    assert_eq!(graph.has_node_types(), graph.get_node_type(0).is_ok());
+    assert_eq!(graph.has_node_types(), graph.get_node_type_id_by_node_id(0).is_ok());
 
     assert!(
-        graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
+        graph.get_node_type_id_by_node_id(graph.get_nodes_number() + 1).is_err(),
         "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
     );
 
@@ -352,7 +361,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     // Evaluate get_node_type
-    assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
+    assert_eq!(graph.get_node_type_id_by_node_id(0).is_ok(), graph.has_node_types());
 
     // Evaluate get_edge_type
     assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
