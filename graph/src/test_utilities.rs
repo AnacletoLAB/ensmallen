@@ -8,6 +8,17 @@ use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
 
+const NONEXISTENT: String = concat!(
+    "Cthulhu is a fictional cosmic entity created by writer H. P. Lovecraft ",
+    "and first introduced in the short story The Call of Cthulhu,[2] published",
+    " in the American pulp magazine Weird Tales in 1928. Considered a Great Old",
+    " One within the pantheon of Lovecraftian cosmic entities, the creature has",
+    " since been featured in numerous popular culture references. Lovecraft depicts",
+    " it as a gigantic entity worshipped by cultists, in shape like an octopus, a",
+    " dragon, and a caricature of human form. Its name was given to the Lovecraft-inspired",
+    " universe where it and its fellow entities existed, the Cthulhu Mythos."
+).to_string();
+
 // where to save the test files
 #[cfg(target_os = "macos")]
 static DEFAULT_PATH: &str = "/tmp/";
@@ -237,18 +248,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Test get_edge_id_string()
     assert_eq!(
-        graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
+        graph.get_edge_id_string(NONEXISTENT, NONEXISTENT, None),
         None,
         "Graph contains non-existing edge."
     );
 
     // Test has_node_by_name
     assert!(
-        !(graph.has_node_with_type_by_name("NONEXISTENT", None)),
+        !(graph.has_node_with_type_by_name(NONEXISTENT, None)),
         "The graph seems to have a non-existing node."
     );
     assert!(
-        !(graph.has_node_by_name("NONEXISTENT")),
+        !(graph.has_node_by_name(NONEXISTENT)),
         "The graph seems to have a non-existing node."
     );
 
