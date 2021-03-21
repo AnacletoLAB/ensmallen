@@ -254,11 +254,12 @@ impl NodeFileReader {
     ///
     /// * node_types_separator: Option<String> - The separator to use for the node types column.
     ///
-    pub fn set_node_types_separator(
+    pub fn set_node_types_separator<S: Into<String>>(
         mut self,
-        node_types_separator: Option<String>,
+        node_types_separator: Option<S>,
     ) -> Result<NodeFileReader, String> {
         if let Some(sep) = node_types_separator {
+            let sep = sep.into();
             if sep.is_empty() {
                 return Err("The node type separator cannot be empty.".to_owned());
             }
@@ -319,7 +320,7 @@ impl NodeFileReader {
             .iter()
             .all(|val| val.is_none())
         {
-            return Err("Neither nodes ID column of node types column were given!".to_string());
+            return Err("Neither nodes ID column or node types column were given!".to_string());
         }
 
         // Check that the two columns do not have the same value.
