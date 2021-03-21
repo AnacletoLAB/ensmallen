@@ -1,3 +1,4 @@
+#![feature(panic_info_message)]
 extern crate graph;
 pub(crate) use graph::*;
 

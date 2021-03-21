@@ -7,10 +7,10 @@ max_rows_number,None
 default_node_type,None
 nodes_column_number,Some(0)
 node_types_separator,Some("|")
-node_types_column,Some(1)
+node_types_column,None
 node_types_column_number,None
 numeric_node_ids,Some(false)
-numeric_node_type_ids,Some(true)
+numeric_node_type_ids,Some(false)
 skip_node_types_if_unavailable,Some(false)
 nodes_column,None
 node_types_column,None

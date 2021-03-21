@@ -49,7 +49,9 @@ impl NodeTypeVocabulary {
             Some(vocab) => {
                 let multilabel = ids
                 .iter()
-                .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
+                .any(|node_types| 
+                    node_types.as_ref().map_or(false, |nts| nts.len() > 1)
+                );
                 let mut vocabvec = NodeTypeVocabulary {
                     ids,
                     vocabulary: vocab,
@@ -88,22 +90,32 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `maybe_values`: Option<Vec<S>> - The values to be inserted.
-    pub fn insert_values<S: AsRef<str>>(
+    pub fn insert_values<S: AsRef<str> + std::fmt::Debug>(
         &mut self,
         maybe_values: Option<Vec<S>>,
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         Ok(match maybe_values {
             Some(values) => {
-                // Retrieve the IDs
+                // Retrieve the ID
                 let mut ids = values
                     .iter()
                     .map(|value| {
-                        self.vocabulary.insert(value.as_ref())?;
-                        Ok(*self.get(value.as_ref()).unwrap())
+                        self.vocabulary.insert(value.as_ref())
                     })
                     .collect::<Result<Vec<NodeTypeT>, String>>()?;
                 // Sort the slice
                 ids.sort_unstable();
+
+                // check for duplicates
+                if ids[..ids.len() - 1].iter().zip(ids[1..].iter()).any(|(a, b)| a == b) {
+                    return Err(format!(
+                        concat!(
+                            "Node with duplicated node types was provided.\n",
+                            "Specifically the node types vector of the node is {:?} ",
+                        ),
+                        values
+                    ));
+                }
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
                 Some(ids)
