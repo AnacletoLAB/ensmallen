@@ -136,8 +136,8 @@ fn dump_nodes_from_vec(path: String, nodes: &Vec<Result<(String, Option<Vec<Stri
     for node_and_type in nodes{
         if let Ok((node, node_type)) = &node_and_type {
             write!(
-                file, "{},{:?}\n", 
-                node, node_type.clone().map(|x| x.join("|")),
+                file, "{},{}\n", 
+                node, node_type.clone().map_or("".to_string(), |x| x.join("|")),
             ).expect("Cannot write to file.");
         }
     }
@@ -153,21 +153,21 @@ fn dump_nodes_metadata_from_vec(path: String, data: &FromVecHarnessParams){
     dump!(file, "max_rows_number", None::<u64>);
     // nodes specific
     dump!(file, "default_node_type", None::<u64>);
-    dump!(file, "nodes_column_number", Some(0));
     dump!(file, "node_types_separator", Some("|"));
 
-    dump!(file, "node_types_column", if data.has_node_types {
+    dump!(file, "numeric_node_ids", Some(data.numeric_node_ids));
+    dump!(file, "numeric_node_type_ids", Some(data.numeric_node_types_ids));
+    dump!(file, "skip_node_types_if_unavailable", Some(false));
+    dump!(file, "nodes_column", None::<u64>);
+    dump!(file, "nodes_column_number", Some(0));
+
+    dump!(file, "node_types_column", None::<u64>);
+    dump!(file, "node_types_column_number", if data.has_node_types {
         Some(1)
     } else {
         None
     });
 
-    dump!(file, "node_types_column_number", None::<u64>);
-    dump!(file, "numeric_node_ids", Some(data.numeric_node_ids));
-    dump!(file, "numeric_node_type_ids", Some(data.numeric_node_types_ids));
-    dump!(file, "skip_node_types_if_unavailable", Some(false));
-    dump!(file, "nodes_column", None::<u64>);
-    dump!(file, "node_types_column", None::<u64>);
 
 }
 
