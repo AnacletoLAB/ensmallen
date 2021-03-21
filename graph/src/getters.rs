@@ -513,41 +513,47 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_unchecked_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> EdgeT {
-        match &self.edge_types {
-            None => 0,
-            Some(ets) => ets.counts[edge_type as usize],
+    pub fn get_unchecked_edge_count_by_edge_type(&self, edge_type: Option<EdgeTypeT>) -> EdgeT {
+        match (&self.edge_types, edge_type) {
+            (None, _) => 0,
+            (Some(ets), None) => ets.get_unknown_count(),
+            (Some(ets), Some(et)) => ets.counts[et as usize],
         }
     }
 
-    pub fn get_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> Result<EdgeT, String> {
+    pub fn get_edge_count_by_edge_type(&self, edge_type: Option<EdgeTypeT>) -> Result<EdgeT, String> {
         if !self.has_edge_types() {
             return Err("Current graph does not have edge types!".to_owned());
         }
-        if self.get_edge_types_number() <= edge_type {
-            return Err(format!(
-                "Given edge type ID {} is bigger than number of edge types in the graph {}.",
-                self.get_edge_types_number(),
-                edge_type
-            ));
+        if let Some(et) = &edge_type{
+            if self.get_edge_types_number() <= *et {
+                return Err(format!(
+                    "Given edge type ID {} is bigger than number of edge types in the graph {}.",
+                    self.get_edge_types_number(),
+                    et
+                ));
+            }
         }
         Ok(self.get_unchecked_edge_count_by_edge_type(edge_type))
     }
 
-    pub fn get_edge_type_id(&self, edge_type_name: &str) -> Result<EdgeTypeT, String> {
-        if let Some(ets) = &self.edge_types {
-            return match ets.get(edge_type_name) {
-                Some(edge_type_id) => Ok(*edge_type_id),
-                None => Err(format!(
-                    "Given edge type name {} is not available in current graph.",
-                    edge_type_name
-                )),
-            };
+    pub fn get_edge_type_id(&self, edge_type_name: Option<&str>) -> Result<Option<EdgeTypeT>, String> {
+        match (&self.edge_types, edge_type_name) {
+            (None, _) => Err("Current graph does not have edge types.".to_owned()),
+            (Some(_), None) => Ok(None),
+            (Some(ets), Some(etn)) => {
+                match ets.get(etn) {
+                    Some(edge_type_id) => Ok(Some(*edge_type_id)),
+                    None => Err(format!(
+                        "Given edge type name {} is not available in current graph.",
+                        etn
+                    )),
+                }
+            }
         }
-        Err("Current graph does not have edge types.".to_owned())
     }
 
-    pub fn get_edge_count_by_edge_type_name(&self, edge_type: &str) -> Result<EdgeT, String> {
+    pub fn get_edge_count_by_edge_type_name(&self, edge_type: Option<&str>) -> Result<EdgeT, String> {
         self.get_edge_count_by_edge_type(self.get_edge_type_id(edge_type)?)
     }
 

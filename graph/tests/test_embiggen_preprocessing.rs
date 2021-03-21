@@ -6,6 +6,6 @@ use graph::test_utilities::*;
 
 fn test_regression_29() -> Result<(), String> {
     let mut graph = load_cora().unwrap();
-    test_embiggen_preprocessing(&mut graph, false);
+    let _ = test_embiggen_preprocessing(&mut graph, false);
     Ok(())
 }

@@ -38,6 +38,23 @@ macro_rules! optionify {
     };
 }
 
+fn check_numeric_ids_compatibility(
+    has_nodes_list: bool, 
+    numeric_node_ids: bool, 
+    numeric_edge_node_ids: bool,
+) -> Result<(), String> {
+    if has_nodes_list && (numeric_node_ids == true) && (numeric_edge_node_ids == false) {
+        return Err(concat!(
+            "You are trying to load a numeric node list and a non numeric edge list.\n",
+            "This is a problem because an edge composed of two nodes (e.g. \"2, 8\") is ",
+            "not necessarily mapped internally to the same node ids of the node list.\n",
+            "Possibily you want to also enable the parameter for the numeric edge node ids."
+        ).to_string());
+    }
+    Ok(())
+}
+
+
 /// Returns iterator of nodes handling the node IDs.
 pub(crate) fn parse_node_ids<'a, 'b>(
     nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
@@ -113,44 +130,35 @@ where
     let empty_nodes_mapping = nodes.is_empty();
     edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
         Ok((src_name, dst_name, edge_type, weight)) => {
-            for node_name in [src_name.clone(), dst_name.clone()].iter() {
-                if node_name.is_empty() {
-                    return Err("Found an empty node name. Node names cannot be empty.".to_owned());
+            let node_ids = [src_name.clone(), dst_name.clone()].iter().map(|node_name| {
+                // the source and destination nodes must either be 
+                //  - both numeric node ids
+                //      - if the node list was provided
+                //          - The nodes must be less than the max nodes
+                //      - if the node list was not provided
+                //          - the nodes must be added to the node list which should be numeric.
+                //  - if the edge node ids are not numeric
+                //      - if the node list was provided
+                //          - the nodes must be added to the node list.
+                //      - if the node list was no provided
+                //          - the nodes must be added to the node list.
+                if empty_nodes_mapping {
+                    nodes.insert(node_name.to_owned())
+                } else if let Some(node_id) = nodes.get(&node_name){
+                    Ok(*node_id)
+                } else {
+                    Err(format!(
+                        concat!(
+                            "In the edge list was found the node {} ",
+                            "which is not present in the given node list."
+                        ),
+                        node_name
+                    ))
                 }
-                if !nodes.contains_key(node_name) {
-                    if empty_nodes_mapping {
-                        nodes.insert(node_name.to_owned())?;
-                    } else if !nodes.numeric_ids {
-                        return Err(format!(
-                            concat!(
-                                "In the edge file was found the node {} ",
-                                "which is not present in the given node file."
-                            ),
-                            node_name
-                        ));
-                    }
-                }
-            }
-            if let Some(edge_type_string) = &edge_type{
-                if edge_type_string.is_empty() {
-                    return Err("Found an empty edge type name. Edge type names cannot be empty.".to_owned());
-                }
-            }
+            }).collect::<Result<Vec<NodeT>, String>>()?;
             Ok((
-                match nodes.numeric_ids{
-                    true => match src_name.parse::<NodeT>() {
-                        Ok(val) => val,
-                        Err(_) => {return Err(format!("The given source node ID `{}` is not numeric.", src_name));},
-                    },
-                    false => *nodes.get(&src_name).unwrap()
-                },
-                match nodes.numeric_ids{
-                    true => match dst_name.parse::<NodeT>() {
-                        Ok(val) => val,
-                        Err(_) => {return Err(format!("The given destination node ID `{}` is not numeric.", dst_name));},
-                    },
-                    false => *nodes.get(&dst_name).unwrap()
-                },
+                node_ids[0],
+                node_ids[1],
                 edge_type,
                 weight,
             ))
@@ -486,9 +494,12 @@ fn parse_nodes(
     ignore_duplicated_nodes: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
+    numeric_edge_node_ids: bool,
     has_node_types: bool
 ) -> Result<(Vocabulary<NodeT>, NodeTypeVocabulary), String> {
-    let mut nodes = Vocabulary::default().set_numeric_ids(numeric_node_ids);
+    let mut nodes = Vocabulary::default().set_numeric_ids(
+        numeric_node_ids || numeric_edge_node_ids && nodes_iterator.is_none()
+    );
     let mut node_types = NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
@@ -788,11 +799,13 @@ impl Graph {
         has_edge_types: bool,
         has_weights: bool
     ) -> Result<Graph, String> {
+        check_numeric_ids_compatibility(nodes_iterator.is_some(), numeric_node_ids, numeric_edge_node_ids)?;
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
+            numeric_edge_node_ids,
             has_node_types
         )?;
         
@@ -890,11 +903,13 @@ impl Graph {
         has_weights: bool,
         name: S,
     ) -> Result<Graph, String> {
+        check_numeric_ids_compatibility(nodes_iterator.is_some(), numeric_node_ids, numeric_edge_node_ids)?;
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
+            numeric_edge_node_ids,
             has_node_types
         )?;
 

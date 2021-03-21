@@ -423,7 +423,7 @@ impl Graph {
         &self,
         random_state: EdgeT,
         train_size: f64,
-        edge_types: Option<Vec<String>>,
+        edge_types: Option<Vec<Option<String>>>,
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
@@ -431,15 +431,13 @@ impl Graph {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
-        let edge_type_ids: Result<Option<HashSet<NodeTypeT>>, String> =
-            edge_types.map_or(Ok(None), |ets| {
-                Ok(Some(
-                    self.translate_edge_types(ets)?
-                        .into_iter()
-                        .collect::<HashSet<EdgeTypeT>>(),
-                ))
-            });
-        let edge_type_ids = edge_type_ids?;
+        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
+            Ok(Some(
+                self.translate_edge_types(ets)?
+                    .into_iter()
+                    .collect::<HashSet<Option<EdgeTypeT>>>(),
+            ))
+        })?;
 
         let tree = self
             .random_spanning_arborescence_kruskal(random_state, &edge_type_ids, verbose)
@@ -483,10 +481,7 @@ impl Graph {
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
                 let singleton_self_loop = src == dst && self.get_node_degree(src) == 1;
-                let correct_edge_type = match &edge_type_ids {
-                    Some(etis) => etis.contains(&edge_type.unwrap()),
-                    None => true,
-                };
+                let correct_edge_type = edge_type_ids.as_ref().map_or(true, |etis| etis.contains(&edge_type));
                 // The tree must not contain the provided edge ID
                 // And this is not a self-loop edge with degree 1
                 // And the edge type of the edge ID is within the provided edge type
@@ -516,21 +511,20 @@ impl Graph {
         random_state: EdgeT,
         train_size: f64,
         include_all_edge_types: bool,
-        edge_types: Option<Vec<String>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
             self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
-        let edge_type_ids: Result<Option<HashSet<NodeTypeT>>, String> =
-            edge_types.map_or(Ok(None), |ets| {
+        let edge_type_ids =
+            edge_types.map_or(Ok::<_, String>(None), |ets| {
                 Ok(Some(
                     self.translate_edge_types(ets)?
                         .into_iter()
-                        .collect::<HashSet<EdgeTypeT>>(),
+                        .collect::<HashSet<Option<EdgeTypeT>>>(),
                 ))
-            });
-        let edge_type_ids = edge_type_ids?;
+            })?;
         if min_number_overlaps.is_some() && !self.is_multigraph() {
             return Err("Current graph is not a multigraph!".to_string());
         }
@@ -542,10 +536,8 @@ impl Graph {
                 // If a list of edge types was provided and the edge type
                 // of the current edge is not within the provided list,
                 // we skip the current edge.
-                if let Some(etis) = &edge_type_ids {
-                    if !etis.contains(&edge_type.unwrap()) {
-                        return false;
-                    }
+                if !edge_type_ids.as_ref().map_or(true, |etis| etis.contains(&edge_type)) {
+                    return false;
                 }
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
@@ -894,7 +886,7 @@ impl Graph {
         &self,
         k: EdgeT,
         k_index: u64,
-        edge_types: Option<Vec<String>>,
+        edge_types: Option<Vec<Option<String>>>,
         random_state: EdgeT,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
@@ -915,21 +907,15 @@ impl Graph {
                     "Required edge types must be a non-empty list.",
                 ));
             }
-            if !self.has_edge_types() {
-                return Err(String::from(
-                    "Edge types-based k-fold requested but the edge types are not available in this graph."
-                ));
-            }
 
-            let edge_type_ids: HashSet<EdgeTypeT> = self
+            let edge_type_ids = self
                 .translate_edge_types(ets)?
-                .iter()
-                .cloned()
-                .collect::<HashSet<EdgeTypeT>>();
+                .into_iter()
+                .collect::<HashSet<Option<EdgeTypeT>>>();
 
             self.get_edges_triples(self.directed)
                 .filter_map(|(edge_id, _, _, edge_type)| {
-                    if !edge_type_ids.contains(&edge_type.unwrap()) {
+                    if !edge_type_ids.contains(&edge_type) {
                         return None;
                     }
                     Some(edge_id)

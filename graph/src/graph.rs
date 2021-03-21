@@ -203,21 +203,31 @@ impl Graph {
     /// # Arguments
     ///
     /// * `edge_types`: Vec<String> - Vector of edge types to be converted.
-    pub fn translate_edge_types(&self, edge_types: Vec<String>) -> Result<Vec<EdgeTypeT>, String> {
+    pub fn translate_edge_types(
+        &self,
+        edge_types: Vec<Option<String>>,
+    ) -> Result<Vec<Option<EdgeTypeT>>, String> {
         match &self.edge_types {
-            None => Err(String::from("Current graph does not have edge types.")),
-            Some(ets) => {
-                Ok(edge_types
-                .iter()
-                .map(|edge_type| match ets.get(edge_type) {
-                    None => Err(format!(
-                        "The edge type {} does not exist in current graph. The available edge types are {}.",
-                        edge_type,
-                        ets.keys().join(", ")
-                    )),
-                    Some(et) => Ok(*et),
-                })
-                .collect::<Result<Vec<EdgeTypeT>, String>>()?)
+                None => Err(String::from("Current graph does not have edge types.")),
+                Some(ets) => {
+                    edge_types
+                    .iter()
+                    .map(|edge_type_name|
+                        match edge_type_name {
+                            None=> Ok(None),
+                            Some(et) => {
+                                match ets.get(et) {
+                                    Some(edge_type_id) => Ok(Some(*edge_type_id)),
+                                    None => Err(format!(
+                                        "The edge type {} does not exist in current graph. The available edge types are {}.",
+                                        et,
+                                        ets.keys().join(", ")
+                                    ))
+                                }
+                            }
+                        }
+                    )
+                .collect::<Result<Vec<Option<EdgeTypeT>>, String>>()
             }
         }
     }
@@ -227,21 +237,27 @@ impl Graph {
     /// # Arguments
     ///
     /// * `node_types`: Vec<String> - Vector of node types to be converted.
-    pub fn translate_node_types(&self, node_types: Vec<String>) -> Result<Vec<NodeTypeT>, String> {
+    pub fn translate_node_types(&self, node_types: Vec<Option<String>>) -> Result<Vec<Option<NodeTypeT>>, String> {
         match &self.node_types {
             None => Err(String::from("Current graph does not have node types.")),
             Some(nts) => {
-                Ok(node_types
+                node_types
                 .iter()
-                .map(|node_type| match nts.get(node_type) {
-                    None => Err(format!(
-                        "The node type {} does not exist in current graph. The available node types are {}.",
-                        node_type,
-                        nts.keys().join(", ")
-                    )),
-                    Some(et) => Ok(*et),
-                })
-                .collect::<Result<Vec<NodeTypeT>, String>>()?)
+                .map(|node_type_name| 
+                    match node_type_name {
+                        None => Ok(None),
+                        Some(nt) => {
+                            match nts.get(nt) {
+                                Some(node_type_id) => Ok(Some(*node_type_id)),
+                                None => Err(format!(
+                                    "The node type {} does not exist in current graph. The available node types are {}.",
+                                    nt,
+                                    nts.keys().join(", ")
+                                )),
+                            }
+                        }
+                    })
+                .collect::<Result<Vec<Option<NodeTypeT>>, String>>()
             }
         }
     }

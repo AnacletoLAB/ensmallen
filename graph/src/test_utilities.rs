@@ -251,14 +251,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Test translate_edge|node_types()
     assert!(
         graph
-            .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
+            .translate_edge_types(vec![Some("NONEXISTENT_EDGE_TYPE".to_string())])
             .is_err(),
         "The graph seems to have a non-existing edge type."
     );
 
     assert!(
         graph
-            .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
+            .translate_node_types(vec![Some("NONEXISTENT_NODE_TYPE".to_string())])
             .is_err(),
         "The graph seems to have a non-existing node type."
     );
@@ -537,7 +537,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     }
     if let Some(edge_t) = graph.get_edge_type_string(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(k, i, Some(vec![edge_t.clone()]), 1337, false)?;
+            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
@@ -637,8 +637,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         graph
         .filter(
             Some(graph.get_node_names()),
-            graph.get_node_type_names(),
-            graph.get_edge_type_names(),
+            graph.get_node_type_names().map(|ntn| ntn.into_iter().map(Option::Some).collect()),
+            graph.get_edge_type_names().map(|etn| etn.into_iter().map(Option::Some).collect()),
             Some(1000.0),
             Some(10.0),
             verbose,
@@ -647,8 +647,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
     let _ = graph
         .filter(
             Some(graph.get_node_names()),
-            graph.get_node_type_names(),
-            graph.get_edge_type_names(),
+            graph.get_node_type_names().map(|ntn| ntn.into_iter().map(Option::Some).collect()),
+            graph.get_edge_type_names().map(|etn| etn.into_iter().map(Option::Some).collect()),
             graph.get_edge_weight(0),
             graph.get_edge_weight(graph.get_edges_number() - 1),
             verbose,
@@ -863,7 +863,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         "Number of edge types of the graph is not 1."
     );
     assert_eq!(
-        clone.get_unchecked_edge_count_by_edge_type(0),
+        clone.get_unchecked_edge_count_by_edge_type(Some(0)),
         graph.get_edges_number(),
         "Number of edges with the unique edge type does not match number of edges in the graph."
     );

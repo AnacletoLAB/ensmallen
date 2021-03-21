@@ -257,8 +257,8 @@ impl Graph {
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: bool,
@@ -277,8 +277,7 @@ impl Graph {
 
         // Extend the components to keep those that include the given edge types.
         if let Some(ets) = edge_types {
-            let mut edge_types_ids = RoaringBitmap::new();
-            edge_types_ids.extend(self.translate_edge_types(ets)?.iter().map(|x| *x as u32));
+            let edge_types_ids: HashSet<Option<EdgeTypeT>> = self.translate_edge_types(ets)?.into_iter().collect();
 
             let pb = get_loading_bar(
                 verbose,
@@ -292,11 +291,9 @@ impl Graph {
             self.get_edges_triples(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
-                    if let Some(et) = edge_type {
-                        if edge_types_ids.contains(et as u32) {
-                            keep_components.insert(components_vector[src as usize]);
-                            keep_components.insert(components_vector[dst as usize]);
-                        }
+                    if edge_types_ids.contains(&edge_type) {
+                        keep_components.insert(components_vector[src as usize]);
+                        keep_components.insert(components_vector[dst as usize]);
                     }
                 });
         }

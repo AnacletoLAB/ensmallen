@@ -45,7 +45,7 @@ impl Graph {
     fn iter_on_edges_with_preference<'a>(
         &'a self,
         random_state: u64,
-        unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
         let pb = get_loading_bar(
@@ -58,14 +58,14 @@ impl Graph {
                 Box::new(
                     self.iter_edges_from_random_state(random_state)
                         .filter_map(move |(edge_id, src, dst)| {
-                            if uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                            if uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))
                         })
                         .chain(self.iter_edges_from_random_state(random_state).filter_map(
                             move |(edge_id, src, dst)| {
-                                if !uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                                if !uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                     return None;
                                 }
                                 Some((src, dst))
@@ -241,7 +241,7 @@ impl Graph {
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
-        unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))

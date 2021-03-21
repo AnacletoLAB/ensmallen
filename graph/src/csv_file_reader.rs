@@ -142,9 +142,7 @@ impl CSVFileReader {
             // Handling NaN values and padding them to the number of rows
             .map_ok(move |line|{
                 let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| 
-                    // in rust \0, which is the string terminator, cannot be printed
-                    // moreover, "\x00" is equivalent to "" since strings are null termianted
-                    match element.is_empty() || element == "\x00" {
+                    match element.is_empty() {
                     true=>None,
                     false=>Some(element.to_string())
                 }).collect();

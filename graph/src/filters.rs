@@ -16,8 +16,8 @@ impl Graph {
     pub fn filter(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: bool,
@@ -38,8 +38,7 @@ impl Graph {
         );
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
-        let edge_types_ids: Result<Option<Vec<EdgeTypeT>>, String> =
-            edge_types.map_or(Ok(None), |ets| Ok(Some(self.translate_edge_types(ets)?)));
+        let edge_types_ids = edge_types.map_or(Ok::<_, String>(None), |ets| Ok(Some(self.translate_edge_types(ets)?)));
         let edge_types_ids = edge_types_ids?;
 
         Graph::build_graph(
@@ -61,8 +60,8 @@ impl Graph {
                             return None;
                         }
                     }
-                    if let (Some(et), Some(ets)) = (&edge_type, &edge_types_ids) {
-                        if !ets.contains(et) {
+                    if let Some(ets) =  &edge_types_ids {
+                        if !ets.contains(&edge_type) {
                             return None;
                         }
                     }
@@ -96,22 +95,19 @@ impl Graph {
         &self,
         src: NodeT,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
     ) -> Result<impl Iterator<Item = NodeT> + '_, String> {
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
-        let edge_types_ids: Result<Option<Vec<EdgeTypeT>>, String> =
-            edge_types.map_or(Ok(None), |ets| Ok(Some(self.translate_edge_types(ets)?)));
-        let edge_types_ids = edge_types_ids?;
+        let edge_types_ids =
+            edge_types.map_or(Ok::<_, String>(None), |ets| Ok(Some(self.translate_edge_types(ets)?)))?;
         Ok(self
             .get_unchecked_destinations_range(src)
             .filter_map(move |edge_id| {
-                if let (Some(ets), Some(et)) =
-                    (&edge_types_ids, self.get_unchecked_edge_type(edge_id))
-                {
-                    if !ets.contains(&et) {
+                if let Some(ets) = &edge_types_ids {
+                    if !ets.contains(& self.get_unchecked_edge_type(edge_id)) {
                         return None;
                     }
                 }
