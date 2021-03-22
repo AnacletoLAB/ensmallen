@@ -2,6 +2,7 @@ use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
+use itertools::Itertools;
 use log::info;
 use rayon::prelude::ParallelSliceMut;
 use std::cmp::Ordering;
@@ -280,6 +281,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     directed_edge_list: bool,
+    has_edge_types: bool,
     verbose: bool,
     numeric_edge_type_ids: bool,
 ) -> Result<
@@ -287,35 +289,44 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         usize,
         impl Iterator<Item = Result<Quadruple, String>> + 'a,
         Vocabulary<NodeT>,
-        Vocabulary<EdgeTypeT>,
+        Option<Vocabulary<EdgeTypeT>>,
     ),
     String,
 > {
-    let mut edge_types_vocabulary = Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
+    let mut edge_types_vocabulary = if has_edge_types {
+        Some(Vocabulary::default().set_numeric_ids(numeric_edge_type_ids))
+    } else {
+        None
+    };
     let (edges_number, edges_iter) = {
-        let edge_quadruples: Vec<Quadruple> = parse_edge_type_ids_vocabulary(
-            parse_edges_node_ids(edges_iter, &mut nodes),
-            &mut edge_types_vocabulary,
-        )
-        .flat_map(|tuple| match tuple {
-            Ok((src, dst, edt, weight)) => {
-                if !directed && src != dst && !directed_edge_list {
-                    vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
-                } else {
-                    vec![Ok((src, dst, edt, weight))]
+        let edges_iter = parse_edges_node_ids(edges_iter, &mut nodes);
+        let edges_iter: Box<dyn Iterator<Item = Result<Quadruple, String>>> =
+            if let Some(ets) = &mut edge_types_vocabulary {
+                Box::new(parse_edge_type_ids_vocabulary(edges_iter, ets))
+            } else {
+                Box::new(edges_iter.map_ok(|(src, dst, _, weight)| (src, dst, None, weight)))
+            };
+        let edge_quadruples: Vec<Quadruple> = edges_iter
+            .flat_map(|tuple| match tuple {
+                Ok((src, dst, edt, weight)) => {
+                    if !directed && src != dst && !directed_edge_list {
+                        vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
+                    } else {
+                        vec![Ok((src, dst, edt, weight))]
+                    }
                 }
-            }
-            Err(e) => vec![Err(e)],
-        })
-        .collect::<Result<Vec<Quadruple>, String>>()?;
+                Err(e) => vec![Err(e)],
+            })
+            .collect::<Result<Vec<Quadruple>, String>>()?;
 
         parse_unsorted_quadruples(edge_quadruples, verbose)
     };
     info!("Building nodes reverse mapping.");
     nodes.build_reverse_mapping()?;
-    info!("Building edge types reverse mapping.");
-    edge_types_vocabulary.build_reverse_mapping()?;
-
+    if let Some(ets) = &mut edge_types_vocabulary {
+        info!("Building edge types reverse mapping.");
+        ets.build_reverse_mapping()?;
+    }
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
@@ -496,7 +507,6 @@ pub(crate) fn build_edges(
         }
     }
 
-
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
             "You are trying to load an undirected graph ",
@@ -572,7 +582,7 @@ fn parse_nodes(
             Ok::<_, String>(Some(node_types))
         } else {
             let mut iterations = 0;
-            for row in node_iterator{
+            for row in node_iterator {
                 row?;
                 iterations += 1;
             }
@@ -837,6 +847,7 @@ impl Graph {
                 nodes,
                 directed,
                 directed_edge_list,
+                has_edge_types,
                 verbose,
                 numeric_edge_type_ids,
             )?;
@@ -846,7 +857,7 @@ impl Graph {
             edges_number,
             nodes,
             node_types,
-            optionify!(edge_types_vocabulary),
+            edge_types_vocabulary,
             directed,
             !directed_edge_list,
             name,

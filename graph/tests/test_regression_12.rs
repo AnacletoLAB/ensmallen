@@ -21,9 +21,7 @@ fn test_regression_12() -> Result<(), String> {
         false, // Directed edge list
         "\r\"" // Name of the graph
     )?;
-
-    println!("{:?}", graph.textual_report(false));
-
+    
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())
 }
