@@ -301,13 +301,13 @@ impl Graph {
                         let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
                         let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
 
-                        if avoid_false_negatives && self.has_edge(src, dst, None) {
+                        if avoid_false_negatives && self.has_edge_with_type(src, dst, None) {
                             sampled = xorshift(sampled);
                             continue;
                         }
 
                         if let Some(g) = &graph_to_avoid {
-                            if g.has_edge(src, dst, None) {
+                            if g.has_edge_with_type(src, dst, None) {
                                 sampled = xorshift(sampled);
                                 continue;
                             }

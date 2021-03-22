@@ -9,7 +9,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use std::collections::HashSet;
+use std::{collections::HashSet, ops::Neg};
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 use vec_rand::{gen_random_vec, sample_uniform};
@@ -127,7 +127,7 @@ impl Graph {
         // to mitigate this problem
         random_state ^= SEED_XOR as EdgeT;
 
-        let mut negative_edges_hashset = HashSet::new();
+        let mut negative_edges_hashset = HashSet::with_capacity(negatives_number as usize);
         let mut last_length = 0;
         let mut sampling_round: usize = 0;
 
@@ -167,7 +167,7 @@ impl Graph {
                     // If the edge is not a self-loop or the user allows self-loops and
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.
-                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None) {
+                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst) {
                         true => Some((src, dst)),
                         false => None,
                     }

@@ -695,6 +695,11 @@ impl Graph {
         }
     }
 
+    pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
+        self.get_edge_id_by_node_ids(src, dst).is_some()
+    }
+
+
     /// Returns boolean representing if edge passing between given nodes exists.
     ///
     /// # Arguments
@@ -703,7 +708,7 @@ impl Graph {
     /// * dst: NodeT - The destination node of the edge.
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
-    pub fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
+    pub fn has_edge_with_type(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
         self.get_edge_id(src, dst, edge_type).is_ok()
     }
 

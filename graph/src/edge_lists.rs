@@ -74,7 +74,7 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -225,7 +225,7 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])

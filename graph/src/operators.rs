@@ -120,10 +120,10 @@ fn generic_integer_operator(
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge(*src, *dst, *edge_type);
+                        return !dg.has_edge_with_type(*src, *dst, *edge_type);
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge(*src, *dst, *edge_type);
+                        return mhg.has_edge_with_type(*src, *dst, *edge_type);
                     }
                     true
                 })
