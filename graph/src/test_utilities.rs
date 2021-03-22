@@ -592,10 +592,13 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
         );
         default_holdout_test_suite(graph, &train, &test)?;
     }
-    if let Some(edge_t) = graph.get_edge_type_name(0) {
-        for i in 0..k {
-            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
-            default_holdout_test_suite(graph, &train, &test)?;
+    
+    if graph.has_edge_types() {
+        if let Some(edge_t) = graph.get_edge_type_name(0) {
+            for i in 0..k {
+                let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
+                default_holdout_test_suite(graph, &train, &test)?;
+            }
         }
     }
 
