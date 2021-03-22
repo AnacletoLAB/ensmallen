@@ -1,0 +1,115 @@
+Graph {
+    directed: false,
+    unique_self_loop_number:    0,
+    self_loop_number:    0,
+    not_singleton_nodes_number:    3,
+    singleton_nodes_with_self_loops_number:    0,
+    unique_edges_number:    4,
+    destinations: None,
+    sources: None,
+    outbounds: None,
+    cached_destinations: None,
+    name: "",
+    edges: EliasFano {
+        universe:   15,
+        number_of_elements:    4,
+        low_bit_count:    1,
+        low_bit_mask:    1,
+        low_bits: [
+               1,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    8,
+            num_ones:    4,
+            num_zeros:    4,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:  149,
+                num_ones:    4,
+                num_zeros:    4,
+            },
+        },
+        last_high_value:    4,
+        last_value:    8,
+        last_index:    4,
+        current_number_of_elements:    4,
+    },
+    node_bits:    2,
+    node_bit_mask:    3,
+    nodes: Vocabulary {
+        map: {
+            "\u{0}\u{0}\u{0}\u{0}L\u{0}$$":    2,
+            "2\u{0}\u{0})\u{0}":    0,
+            "\u{0}\u{0}\u{0}\u{0}L\u{0}$$\u{c}\u{1c}":    1,
+        },
+        reverse_map: [
+            "2\u{0}\u{0})\u{0}",
+            "\u{0}\u{0}\u{0}\u{0}L\u{0}$$\u{c}\u{1c}",
+            "\u{0}\u{0}\u{0}\u{0}L\u{0}$$",
+        ],
+        numeric_ids: false,
+    },
+    unique_sources: EliasFano {
+        universe:    3,
+        number_of_elements:    3,
+        low_bit_count:    0,
+        low_bit_mask:    0,
+        low_bits: [
+               0,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    5,
+            num_ones:    3,
+            num_zeros:    2,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:   21,
+                num_ones:    3,
+                num_zeros:    2,
+            },
+        },
+        last_high_value:    2,
+        last_value:    2,
+        last_index:    3,
+        current_number_of_elements:    3,
+    },
+    weights: None,
+    node_types: None,
+    edge_types: None,
+}
