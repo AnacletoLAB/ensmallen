@@ -23,12 +23,12 @@ impl Graph {
     ) -> Result<Graph, String> {
         Graph::from_string_sorted(
             edge_file_reader.read_lines()?,
-            match &node_file_reader {
-                Some(nfr) => Some(nfr.read_lines()?),
-                None => None,
-            },
+            node_file_reader
+                .as_ref()
+                .map_or(Ok::<_, String>(None), |nfr| Ok(Some(nfr.read_lines()?)))?,
             directed,
             directed_edge_list,
+            false,
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.reader.ignore_duplicates),

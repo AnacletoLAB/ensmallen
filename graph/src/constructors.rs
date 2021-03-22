@@ -579,6 +579,7 @@ pub(crate) fn parse_string_edges(
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_type_ids: bool,
     directed_edge_list: bool,
+    automatic_directed_edge_list: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
     has_weights: bool,
@@ -615,12 +616,10 @@ pub(crate) fn parse_string_edges(
         has_weights,
         has_edge_types,
         directed,
-        !directed_edge_list,
+        automatic_directed_edge_list,
     )?;
 
-    // TODO CHECK WHERE ELSE THIS HAPPENS!!!
     nodes.build_reverse_mapping()?;
-
     edge_types_vocabulary.build_reverse_mapping()?;
     let edge_types =
         EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary));
@@ -894,6 +893,7 @@ impl Graph {
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
+        automatic_directed_edge_list: bool,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         edges_number: usize,
@@ -942,6 +942,7 @@ impl Graph {
             nodes,
             numeric_edge_type_ids,
             directed_edge_list,
+            automatic_directed_edge_list,
             ignore_duplicated_edges,
             has_edge_types,
             has_weights,

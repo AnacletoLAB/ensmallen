@@ -68,6 +68,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
     /// Compute the reverse mapping vector for fast decoding
     pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
+        if !self.reverse_map.is_empty(){
+            panic!("Build reverse mapping called multiple times!");
+        }
         self.reverse_map = vec!["".to_string(); self.map.len()];
         for (k, v) in self.map.iter() {
             if *v >= IndexT::from_usize(self.map.len()) {

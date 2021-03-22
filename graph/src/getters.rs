@@ -1049,7 +1049,13 @@ impl Graph {
         (max_edge_id - min_edge_id) as NodeT
     }
 
-    // TODO: Update docstring
+    /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    /// 
+    /// * `src` - Source node of the edge.
+    /// * `dst` - Destination node of the edge.
+    /// 
     pub fn get_unchecked_edge_ids_range(
         &self,
         src: NodeT,
@@ -1059,13 +1065,23 @@ impl Graph {
         min_edge_id..max_edge_id
     }
 
-    // TODO: Update docstring
+    /// Returns range of the edge ids of edges starting from the given source node.
+    ///
+    /// # Arguments
+    /// 
+    /// * `src` - Source node of the edge.
+    /// 
     pub fn get_unchecked_destinations_range(&self, src: NodeT) -> impl Iterator<Item = EdgeT> {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
         min_edge_id..max_edge_id
     }
 
-    // TODO: Update docstring
+    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    /// 
+    /// * `src` - Source node of the edge.
+    /// 
     pub fn get_edge_ids(&self, src: NodeT, dst: NodeT) -> Option<impl Iterator<Item = EdgeT>> {
         self.get_edge_types_min_max_edge_ids(src, dst)
             .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)

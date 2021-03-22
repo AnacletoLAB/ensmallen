@@ -222,22 +222,15 @@ impl Graph {
             ),
             self.directed,
             true,
-            false,
-            // TODO: CHECK THIS CONDITION!!!
-            self.is_multigraph() && edge_types,
+            true,
+            true,
+            true,
             self.get_directed_edges_number() as usize, // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
-            match &self.edge_types {
-                Some(ets) => ets.has_numeric_ids(),
-                None => false,
-            },
-            // TODO: KEEP THE INFORMATION ABOUT THE STRING NODE IDS IF THEY ARE MEANT TO BE NUMERIC OR NOT.
             false,
             false,
-            match &self.node_types {
-                Some(nts) => nts.has_numeric_ids(),
-                None => false,
-            },
+            false,
+            false,
             self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
             self.has_weights() && !weights,

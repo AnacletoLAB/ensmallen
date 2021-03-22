@@ -58,7 +58,6 @@ impl Graph {
             return Err("The second nodes set of required bipartite graph is empty!".to_owned());
         }
 
-        // TODO: this would be faster by using an adapted merge sort
         if first_nodes
             .par_iter()
             .any(|src| second_nodes.binary_search(src).is_ok())
