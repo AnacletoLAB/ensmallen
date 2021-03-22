@@ -10,3 +10,6 @@ pub use from_vec::*;
 
 mod handle_panics;
 use handle_panics::*;
+
+mod mega_test;
+pub use mega_test::*;

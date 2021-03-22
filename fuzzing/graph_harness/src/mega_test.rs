@@ -4,26 +4,6 @@ use arbitrary::Arbitrary;
 use std::collections::HashSet;
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct FromVecHarnessParams {
-    pub directed: bool,
-    pub directed_edge_list: bool,
-    pub ignore_duplicated_nodes: bool,
-    pub ignore_duplicated_edges: bool,
-    pub verbose: bool,
-    pub numeric_edge_types_ids: bool,
-    pub numeric_node_ids: bool,
-    pub numeric_edge_node_ids: bool,
-    pub numeric_node_types_ids: bool,
-    pub has_node_types: bool,
-    pub has_edge_types: bool,
-    pub has_weights: bool,
-    pub name: String,
-    pub edges: Vec<Result<StringQuadruple, String>>,
-    pub nodes: Option<Vec<Result<(String, Option<Vec<String>>), String>>>,
-}
-
-
-#[derive(Arbitrary, Debug, Clone)]
 pub struct Spanning_arborescence_kruskal_Params {
 	pub verbose : bool,
 }

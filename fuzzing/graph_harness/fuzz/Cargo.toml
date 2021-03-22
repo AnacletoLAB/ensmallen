@@ -33,3 +33,9 @@ name = "from_vec"
 path = "fuzz_targets/from_vec.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "mega_test"
+path = "fuzz_targets/mega_test.rs"
+test = false
+doc = false
