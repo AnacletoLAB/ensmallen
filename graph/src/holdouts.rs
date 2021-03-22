@@ -758,14 +758,14 @@ impl Graph {
                 .as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        )?);
+        ));
         test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
             test_edge_types,
             self.edge_types
                 .as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        )?);
+        ));
 
         Ok((train_graph, test_graph))
     }

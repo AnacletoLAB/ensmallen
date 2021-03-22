@@ -7,7 +7,7 @@ pub struct NodeTypeVocabulary {
     /// This is the vector with the node types of each node
     /// Moreover, for the node x it's node type is ids[x]
     /// it's an option since the node might not have the node type
-    /// and it contains a vector since we support multiple node types 
+    /// and it contains a vector since we support multiple node types
     /// on the same node
     pub ids: Vec<Option<Vec<NodeTypeT>>>,
     pub vocabulary: Vocabulary<NodeTypeT>,
@@ -48,16 +48,14 @@ impl NodeTypeVocabulary {
         match vocabulary {
             Some(vocab) => {
                 let multilabel = ids
-                .iter()
-                .any(|node_types| 
-                    node_types.as_ref().map_or(false, |nts| nts.len() > 1)
-                );
+                    .iter()
+                    .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
                 let mut vocabvec = NodeTypeVocabulary {
                     ids,
                     vocabulary: vocab,
                     counts: Vec::new(),
                     unknown_count: NodeT::from_usize(0),
-                    multilabel
+                    multilabel,
                 };
                 vocabvec.build_counts();
                 Some(vocabvec)
@@ -67,6 +65,10 @@ impl NodeTypeVocabulary {
     }
 
     pub fn build_counts(&mut self) {
+        if self.ids.is_empty() {
+            panic!("The node type ids vector passed was empty!");
+        }
+
         let mut counts = vec![NodeT::from_usize(0); self.vocabulary.len()];
         for index in self.ids.iter() {
             match index {
@@ -99,15 +101,17 @@ impl NodeTypeVocabulary {
                 // Retrieve the ID
                 let mut ids = values
                     .iter()
-                    .map(|value| {
-                        self.vocabulary.insert(value.as_ref())
-                    })
+                    .map(|value| self.vocabulary.insert(value.as_ref()))
                     .collect::<Result<Vec<NodeTypeT>, String>>()?;
                 // Sort the slice
                 ids.sort_unstable();
 
                 // check for duplicates
-                if ids[..ids.len() - 1].iter().zip(ids[1..].iter()).any(|(a, b)| a == b) {
+                if ids[..ids.len() - 1]
+                    .iter()
+                    .zip(ids[1..].iter())
+                    .any(|(a, b)| a == b)
+                {
                     return Err(format!(
                         concat!(
                             "Node with duplicated node types was provided.\n",
@@ -121,10 +125,10 @@ impl NodeTypeVocabulary {
                 self.ids.push(Some(ids.clone()));
                 Some(ids)
             }
-            None => {    
+            None => {
                 self.ids.push(None);
                 None
-            },
+            }
         })
     }
 

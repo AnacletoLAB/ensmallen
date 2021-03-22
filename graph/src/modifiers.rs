@@ -16,7 +16,7 @@ impl Graph {
             vec![Some(0); self.get_directed_edges_number() as usize],
             vocabulary,
         );
-        self.edge_types = Some(edge_types.unwrap());
+        self.edge_types = Some(edge_types);
         self
     }
 

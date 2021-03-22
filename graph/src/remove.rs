@@ -73,6 +73,8 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
 
+        println!("{:?}", self.textual_report(false));
+
         Graph::from_string_sorted(
             self.get_edges_string_quadruples(true)
                 .progress_with(pb_edges)

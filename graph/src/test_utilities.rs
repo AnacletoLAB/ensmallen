@@ -91,19 +91,41 @@ pub fn load_ppi(
         } else {
             None
         })?
-        .set_default_edge_type(Some("Kebab".to_string()))
+        .set_default_edge_type(if load_edge_types {
+            Some("Kebab".to_string())
+        } else {
+            None
+        })
         .set_max_rows_number(Some(100000))
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops))
         .clone();
 
-    Graph::from_unsorted_csv(
+    let ppi = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
         directed,
         false,
         "Graph".to_owned(),
-    )
+    );
+    assert!(
+        ppi.is_ok(),
+        "We expect to be able to load the String PPI graph."
+    );
+    let ppi = ppi?;
+    assert_eq!(
+        ppi.has_node_types(),
+        load_nodes
+    );
+    assert_eq!(
+        ppi.has_edge_types(),
+        load_edge_types,
+    );
+    assert_eq!(
+        ppi.has_weights(),
+        load_weights
+    );
+    Ok(ppi)
 }
 
 #[allow(clippy::redundant_clone)]
@@ -824,7 +846,19 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     {
         let without_edge_types = graph.remove(
-            None, None, None, None, None, None, None, None, false, false, true, false, false,
+            None, 
+            None, 
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            true,
+            false,
+            false,
             verbose,
         );
         if let Some(we) = &without_edge_types.ok() {

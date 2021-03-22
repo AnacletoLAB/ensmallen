@@ -298,6 +298,7 @@ impl Graph {
                 ))
             };
         }
+
         Err(String::from(
             "Node types are not defined for current graph instance.",
         ))

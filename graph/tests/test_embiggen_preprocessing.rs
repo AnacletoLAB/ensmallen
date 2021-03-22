@@ -4,7 +4,7 @@ use graph::test_utilities::*;
 
 #[test]
 
-fn test_regression_29() -> Result<(), String> {
+fn test_cora_embiggen_preprocessing() -> Result<(), String> {
     let mut graph = load_cora().unwrap();
     let _ = test_embiggen_preprocessing(&mut graph, false);
     Ok(())

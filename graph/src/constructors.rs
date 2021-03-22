@@ -2,7 +2,6 @@ use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
-use itertools::Itertools;
 use log::info;
 use rayon::prelude::ParallelSliceMut;
 use std::cmp::Ordering;
@@ -404,7 +403,7 @@ pub(crate) fn build_edges(
                 validate_weight(w)?;
                 ws.push(w);
                 Ok(())
-            },
+            }
             (None, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
                 "because the has_weights flag has been set to false."
@@ -417,7 +416,7 @@ pub(crate) fn build_edges(
                 "edge weights colum or column number.\n",
                 "If you intend to load this edge with its weight, add a default weight."
             )),
-            _ => Ok(())
+            _ => Ok(()),
         }?;
 
         if !directed && !automatic_directed_edge_list {
@@ -549,27 +548,32 @@ fn parse_nodes(
     numeric_node_types_ids: bool,
     numeric_edge_node_ids: bool,
     has_node_types: bool,
-) -> Result<(Vocabulary<NodeT>, NodeTypeVocabulary), String> {
+) -> Result<(Vocabulary<NodeT>, Option<NodeTypeVocabulary>), String> {
     let mut nodes = Vocabulary::default()
         .set_numeric_ids(numeric_node_ids || numeric_edge_node_ids && nodes_iterator.is_none());
-    let mut node_types = NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
 
-    if let Some(ni) = nodes_iterator {
+    let node_types = if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
         let node_iterator = parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes);
         // In the case there is a node types we need to add its proper iterator.
-        let node_iterator: Box<
-            dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>>,
-        > = match has_node_types {
-            true => Box::new(parse_node_type_ids(node_iterator, &mut node_types)),
-            false => Box::new(node_iterator.map_ok(|(node_id, _)| (node_id, None))),
-        };
-        for row in node_iterator {
-            row?;
+        if has_node_types {
+            let mut node_types =
+                NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
+            for row in parse_node_type_ids(node_iterator, &mut node_types) {
+                row?;
+            }
+            node_types.build_reverse_mapping()?;
+            node_types.build_counts();
+            Some(node_types)
+        } else {
+            for row in node_iterator {
+                row?;
+            }
+            None
         }
-        node_types.build_reverse_mapping()?;
-        node_types.build_counts();
-    }
+    } else {
+        None
+    };
 
     Ok((nodes, node_types))
 }
@@ -625,7 +629,7 @@ pub(crate) fn parse_string_edges(
     nodes.build_reverse_mapping()?;
     edge_types_vocabulary.build_reverse_mapping()?;
     let edge_types =
-        EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary))?;
+        EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary));
 
     Ok((
         edges,
@@ -692,7 +696,7 @@ pub(crate) fn parse_integer_edges(
         automatic_directed_edge_list,
     )?;
 
-    let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary)?;
+    let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary);
 
     Ok((
         edges,
@@ -831,7 +835,7 @@ impl Graph {
             edges_iterator,
             edges_number,
             nodes,
-            optionify!(node_types),
+            node_types,
             optionify!(edge_types_vocabulary),
             directed,
             !directed_edge_list,
@@ -966,7 +970,7 @@ impl Graph {
             edge_types,
             name,
             weights,
-            optionify!(node_types),
+            node_types
         ))
     }
 }
