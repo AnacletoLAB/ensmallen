@@ -611,6 +611,13 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
             *only_from_same_component,
             verbose,
         )?;
+        assert_eq!(
+            graph.get_edges_number(),
+            negatives.get_edges_number(),
+            "We expect the graph and its negative graph to have the same number of edges but we got {} and {}.",
+            graph.get_edges_number(),
+            negatives.get_edges_number()
+        );
         validate_vocabularies(&negatives);
         if !graph.has_edge_types() {
             assert!(!graph.overlaps(&negatives)?);
