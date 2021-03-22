@@ -1,0 +1,19 @@
+FromVecHarnessParams {
+    directed: false,
+    directed_edge_list: false,
+    ignore_duplicated_nodes: true,
+    ignore_duplicated_edges: false,
+    verbose: false,
+    numeric_edge_types_ids: false,
+    numeric_node_ids: false,
+    numeric_edge_node_ids: true,
+    numeric_node_types_ids: true,
+    has_node_types: true,
+    has_edge_types: true,
+    has_weights: false,
+    name: "",
+    edges: [],
+    nodes: Some(
+        [],
+    ),
+}
