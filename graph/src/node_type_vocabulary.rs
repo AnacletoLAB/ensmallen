@@ -144,7 +144,7 @@ impl NodeTypeVocabulary {
 
     /// Returns number of minimum node-count.
     pub fn min_node_type_count(&self) -> NodeT {
-        *self.counts.iter().min().unwrap()
+        *self.counts.iter().min().unwrap_or(&0)
     }
 
     /// Returns number of unknown nodes.
