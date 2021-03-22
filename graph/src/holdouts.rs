@@ -193,7 +193,10 @@ impl Graph {
 
             let pb3 = get_loading_bar(
                 verbose,
-                "Inserting negative graph edges",
+                format!(
+                    "Inserting negative graph edges (iteration {})",
+                    sampling_round
+                ).as_ref(),
                 negatives_number as usize,
             );
 
@@ -204,7 +207,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 200{
+            if sampling_round > 50000{
                 panic!("Deadlock in sampling negatives!");
             }
 

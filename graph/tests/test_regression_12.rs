@@ -8,8 +8,9 @@ use graph::{Graph, EdgeFileReader};
 /// The test originally caused a panic in the file holdouts.rs,
 /// specifically (at the time) line 208 and column 17.
 ///
-fn test_regression_11() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/11.edges")?;
+fn test_regression_12() -> Result<(), String> {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/12.edges")?
+        .set_skip_self_loops(Some(false));
 
     let nodes_reader = None;
 
@@ -18,8 +19,10 @@ fn test_regression_11() -> Result<(), String> {
         nodes_reader,
         false, // Directed
         false, // Directed edge list
-        "$zzzzzzzzzzzzzzzzzzzzz" // Name of the graph
+        "\r\"" // Name of the graph
     )?;
+
+    println!("{:?}", graph.textual_report(false));
 
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())
