@@ -154,6 +154,10 @@ impl Graph {
                 .filter_map(|(src_seed, dst_seed)| {
                     let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
                     let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
+                    if !self.is_directed() && src > dst {
+                        return None;
+                    }
+                    
                     if let Some(sn) = &seed_nodes {
                         if !sn.contains(src) && !sn.contains(dst) {
                             return None;
@@ -168,16 +172,10 @@ impl Graph {
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.
                     match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst) {
-                        true => Some((src, dst)),
+                        true => Some(self.encode_edge(src, dst)),
                         false => None,
                     }
-                })
-                .flat_map(|(src, dst)| {
-                    if !self.is_directed() && src != dst {
-                        vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
-                    } else {
-                        vec![self.encode_edge(src, dst)]
-                    }
+                    
                 })
                 .collect::<Vec<EdgeT>>();
 
@@ -201,9 +199,13 @@ impl Graph {
         pb1.finish();
 
         Graph::from_integer_unsorted(
-            negative_edges_hashset.into_iter().map(|edge| {
+            negative_edges_hashset.into_iter().flat_map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
-                Ok((src, dst, None, None))
+                if !self.is_directed() && src != dst {
+                    vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
+                } else {
+                    vec![Ok((src, dst, None, None))]
+                }
             }),
             self.nodes.clone(),
             self.node_types.clone(),
@@ -361,9 +363,6 @@ impl Graph {
             "Building the train partition",
             (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
-
-        println!("{:?}", self.textual_report(false));
-        println!("bitmap: {:?}", valid_edges_bitmap);
 
         Ok((
             Graph::build_graph(

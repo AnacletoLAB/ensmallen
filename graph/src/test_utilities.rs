@@ -609,7 +609,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
             graph.get_edges_number(),
             None,
             *only_from_same_component,
-            verbose,
+            true,
         )?;
         assert_eq!(
             graph.get_edges_number(),
