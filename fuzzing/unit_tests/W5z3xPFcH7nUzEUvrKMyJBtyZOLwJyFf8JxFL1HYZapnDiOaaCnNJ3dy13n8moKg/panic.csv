@@ -1,0 +1,4 @@
+file,"/io/ensmallen_graph/graph/src/getters.rs"
+line,665
+col,20
+message,called `Option::unwrap()` on a `None` value

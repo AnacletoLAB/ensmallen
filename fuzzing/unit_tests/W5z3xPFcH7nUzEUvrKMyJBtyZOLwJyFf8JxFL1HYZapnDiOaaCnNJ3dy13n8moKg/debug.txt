@@ -1,0 +1,146 @@
+Graph {
+    directed: false,
+    unique_self_loop_number:    1,
+    self_loop_number:    1,
+    not_singleton_nodes_number:    2,
+    singleton_nodes_with_self_loops_number:    0,
+    unique_edges_number:    3,
+    destinations: None,
+    sources: None,
+    outbounds: None,
+    cached_destinations: None,
+    name: "\u{5}\u{5}\u{5}\u{5}\u{5}",
+    edges: EliasFano {
+        universe:   10,
+        number_of_elements:    3,
+        low_bit_count:    1,
+        low_bit_mask:    1,
+        low_bits: [
+               2,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    5,
+            num_ones:    3,
+            num_zeros:    2,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:   19,
+                num_ones:    3,
+                num_zeros:    2,
+            },
+        },
+        last_high_value:    2,
+        last_value:    4,
+        last_index:    3,
+        current_number_of_elements:    3,
+    },
+    node_bits:    2,
+    node_bit_mask:    3,
+    nodes: Vocabulary {
+        map: {
+            "\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}":    1,
+            "\u{5}\u{5}\u{5}\u{5}\u{5}":    0,
+        },
+        reverse_map: [
+            "\u{5}\u{5}\u{5}\u{5}\u{5}",
+            "\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}",
+        ],
+        numeric_ids: false,
+    },
+    unique_sources: EliasFano {
+        universe:    2,
+        number_of_elements:    2,
+        low_bit_count:    0,
+        low_bit_mask:    0,
+        low_bits: [
+               0,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    3,
+            num_ones:    2,
+            num_zeros:    1,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:    5,
+                num_ones:    2,
+                num_zeros:    1,
+            },
+        },
+        last_high_value:    1,
+        last_value:    1,
+        last_index:    2,
+        current_number_of_elements:    2,
+    },
+    weights: None,
+    node_types: None,
+    edge_types: Some(
+        EdgeTypeVocabulary {
+            ids: [
+                Some(
+                       0,
+                ),
+                Some(
+                       1,
+                ),
+                Some(
+                       2,
+                ),
+            ],
+            vocabulary: Vocabulary {
+                map: {
+                    "\u{5}\u{5}\u{5}\u{5}\u{5}":    0,
+                    "\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}":    1,
+                    "\u{5}":    2,
+                },
+                reverse_map: [
+                    "\u{5}\u{5}\u{5}\u{5}\u{5}",
+                    "\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}\u{5}",
+                    "\u{5}",
+                ],
+                numeric_ids: false,
+            },
+            counts: [
+                   1,
+                   1,
+                   1,
+            ],
+            unknown_count:    0,
+        },
+    ),
+}

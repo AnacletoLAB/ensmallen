@@ -26,7 +26,7 @@ hfuzz_from_csv:
 	(\
 	cd honggfuzz/from_csv;\
 	cargo update;\
-	HFUZZ_INPUT="../../$(CORPUS_FOLDER)/from_csv/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run from_csv; \
+	HFUZZ_INPUT="../../$(CORPUS_FOLDER)/from_csv/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads 64 --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run from_csv; \
 	)
 
 hfuzz_from_vec:
