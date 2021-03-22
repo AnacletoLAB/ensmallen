@@ -954,6 +954,7 @@ impl Graph {
                 let our_node_types = self.get_node_type_name(node_id);
                 match (our_node_types, node_type_name) {
                     (Err(_), None) => true,
+                    (Ok(None), None) => true,
                     (Ok(Some(mut our_nts)), Some(mut other_nts)) => {
                         our_nts.sort();
                         other_nts.sort();

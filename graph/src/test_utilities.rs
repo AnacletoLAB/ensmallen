@@ -344,15 +344,37 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             );
         }
         assert!(graph.has_node_by_name(&src_string) && graph.has_node_by_name(&dst_string));
-        assert!(
-            graph.has_node_with_type_by_name(
-                &src_string,
-                graph.get_node_type_name_by_node_name(&src_string)?
-            ) && graph.has_node_with_type_by_name(
-                &dst_string,
-                graph.get_node_type_name_by_node_name(&dst_string)?
-            )
-        );
+        if graph.has_node_types() {
+            assert!(
+                graph.has_node_with_type_by_name(
+                    &src_string,
+                    graph.get_node_type_name_by_node_name(&src_string)?
+                ) && graph.has_node_with_type_by_name(
+                    &dst_string,
+                    graph.get_node_type_name_by_node_name(&dst_string)?
+                ),
+                concat!(
+                    "The nodes {:?} and {:?} with node types are not present in the graph.\n",
+                    "The node types are {:?} and {:?}.\n",
+                    "The first node existance is {}\n",
+                    "The second node existance is {}\n",
+                    "The graph report is {:?}"
+                ),
+                src_string,
+                dst_string,
+                graph.get_node_type_name_by_node_name(&src_string),
+                graph.get_node_type_name_by_node_name(&dst_string),
+                graph.has_node_with_type_by_name(
+                    &src_string,
+                    graph.get_node_type_name_by_node_name(&src_string)?
+                ),
+                graph.has_node_with_type_by_name(
+                    &dst_string,
+                    graph.get_node_type_name_by_node_name(&dst_string)?
+                ),
+                graph.textual_report(false)
+            );
+        }
         assert_eq!(
             graph.get_edge_id_by_node_names(&src_string, &dst_string)?,
             graph.get_edge_id_by_node_ids(edge.0, edge.1).unwrap(),
