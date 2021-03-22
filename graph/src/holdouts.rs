@@ -362,6 +362,9 @@ impl Graph {
             (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
+        println!("{:?}", self.textual_report(false));
+        println!("bitmap: {:?}", valid_edges_bitmap);
+
         Ok((
             Graph::build_graph(
                 (0..self.get_directed_edges_number())
@@ -375,7 +378,7 @@ impl Graph {
                 self.directed,
                 true,
                 format!("{} training", self.name.clone()),
-                false,
+                true,
                 self.has_edge_types(),
                 self.has_weights(),
             )?,
@@ -391,7 +394,7 @@ impl Graph {
                 self.directed,
                 true,
                 format!("{} testing", self.name.clone()),
-                false,
+                true,
                 self.has_edge_types(),
                 self.has_weights(),
             )?,
