@@ -270,14 +270,14 @@ impl EdgeFileWriter {
                         (
                             match self.numeric_node_ids {
                                 true => src.to_string(),
-                                false => graph.nodes.translate(src).to_string(),
+                                false => graph.nodes.unchecked_translate(src),
                             },
                             self.sources_column_number,
                         ),
                         (
                             match self.numeric_node_ids {
                                 true => dst.to_string(),
-                                false => graph.nodes.translate(dst).to_string(),
+                                false => graph.nodes.unchecked_translate(dst),
                             },
                             self.destinations_column_number,
                         ),
@@ -285,7 +285,7 @@ impl EdgeFileWriter {
 
                     if let Some(ets) = &graph.edge_types {
                         line.push((
-                            edge_type.map_or("", |et| ets.translate(et)).to_string(),
+                            edge_type.map_or("".to_string(), |et| ets.unchecked_translate(et)),
                             self.edge_types_column_number,
                         ));
                     }

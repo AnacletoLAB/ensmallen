@@ -27,8 +27,8 @@ impl Graph {
         (0..self.get_nodes_number()).map(move |node_id| {
             (
                 node_id,
-                self.nodes.translate(node_id).to_owned(),
-                self.get_node_type_name(node_id),
+                self.nodes.unchecked_translate(node_id),
+                self.get_node_type_name(node_id).unwrap_or(None),
             )
         })
     }
@@ -113,8 +113,8 @@ impl Graph {
             .map(move |(edge_id, src, dst)| {
                 (
                     edge_id,
-                    self.nodes.translate(src).to_owned(),
-                    self.nodes.translate(dst).to_owned(),
+                    self.nodes.unchecked_translate(src),
+                    self.nodes.unchecked_translate(dst),
                 )
             })
     }
@@ -150,8 +150,8 @@ impl Graph {
             .map(move |(edge_id, src, dst)| {
                 (
                     edge_id,
-                    self.nodes.translate(src).to_owned(),
-                    self.nodes.translate(dst).to_owned(),
+                    self.nodes.unchecked_translate(src),
+                    self.nodes.unchecked_translate(dst),
                 )
             })
     }

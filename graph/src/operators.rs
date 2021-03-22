@@ -57,7 +57,7 @@ fn generic_string_operator(
                     None => other
                         .get_node_id(&node_name)
                         .ok()
-                        .and_then(|node_id| other.get_node_type_name(node_id)),
+                        .and_then(|node_id| other.get_node_type_name(node_id).unwrap()),
                 };
                 Ok((node_name, node_type_names))
             })

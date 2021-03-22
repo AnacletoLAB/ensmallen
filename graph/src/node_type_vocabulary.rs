@@ -157,7 +157,16 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: NodeTypeT - Node Type ID to be translated.
-    pub fn translate(&self, id: NodeTypeT) -> &str {
+    pub fn unchecked_translate(&self, id: NodeTypeT) -> String {
+        self.vocabulary.unchecked_translate(id)
+    }
+
+    /// Returns string name of given id.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: NodeTypeT - Node Type ID to be translated.
+    pub fn translate(&self, id: NodeTypeT) -> Result<&String, String> {
         self.vocabulary.translate(id)
     }
 
@@ -166,7 +175,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Vec<&str> {
+    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<&String>, String> {
         ids.into_iter().map(|id| self.translate(id)).collect()
     }
 

@@ -55,7 +55,10 @@ impl NodeFileWriter {
     ///
     /// * node_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_node_types_column<S: Into<String>>(mut self, nodes_type_column: Option<S>) -> NodeFileWriter {
+    pub fn set_node_types_column<S: Into<String>>(
+        mut self,
+        nodes_type_column: Option<S>,
+    ) -> NodeFileWriter {
         if let Some(column) = nodes_type_column {
             self.node_types_column = column.into();
         }
@@ -153,13 +156,13 @@ impl NodeFileWriter {
             compose_lines(number_of_columns, header),
             (0..graph.get_nodes_number()).map(|node_id| {
                 let mut line = vec![(
-                    graph.nodes.translate(node_id).to_string(),
+                    graph.nodes.unchecked_translate(node_id),
                     self.nodes_column_number,
                 )];
 
                 if graph.has_node_types() {
                     line.push((
-                        match graph.get_node_type_name(node_id) {
+                        match graph.get_node_type_name(node_id).unwrap() {
                             Some(values) => values.join(&self.node_types_separator),
                             None => "".to_string(),
                         },

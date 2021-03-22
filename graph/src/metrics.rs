@@ -3,9 +3,9 @@ use super::*;
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
-use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
@@ -223,7 +223,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_self_loop_number()) / 2 + self.get_self_loop_number()
+        (self.get_directed_edges_number() - self.get_self_loop_number()) / 2
+            + self.get_self_loop_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -232,7 +233,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2 + self.get_unique_self_loop_number() as EdgeT
+        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2
+            + self.get_unique_self_loop_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -244,7 +246,7 @@ impl Graph {
         match self.directed {
             true => self.get_directed_edges_number(),
             false => self.get_undirected_edges_number(),
-        }    
+        }
     }
 
     /// Returns number of unique edges of the graph.
@@ -255,8 +257,8 @@ impl Graph {
     pub fn get_unique_edges_number(&self) -> EdgeT {
         match self.directed {
             true => self.get_unique_directed_edges_number(),
-            false => self.get_unique_undirected_edges_number()
-        }    
+            false => self.get_unique_undirected_edges_number(),
+        }
     }
 
     /// Returns median node degree of the graph
@@ -354,7 +356,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
-    pub fn get_singleton_nodes_number(&self) -> NodeT { 
+    pub fn get_singleton_nodes_number(&self) -> NodeT {
         self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
@@ -383,10 +385,11 @@ impl Graph {
     /// ```
     pub fn density(&self) -> f64 {
         let nodes_number = self.get_nodes_number() as EdgeT;
-        let total_nodes_number = nodes_number * match self.has_selfloops(){
-            true=>nodes_number,
-            false=>nodes_number-1
-        };
+        let total_nodes_number = nodes_number
+            * match self.has_selfloops() {
+                true => nodes_number,
+                false => nodes_number - 1,
+            };
         self.unique_edges_number as f64 / total_nodes_number as f64
     }
 
@@ -491,7 +494,9 @@ impl Graph {
         // Get overlapping nodes
         let overlapping_nodes_number = self
             .get_nodes_names_iter()
-            .filter(|(_, node_name, node_type)| other.has_node_with_type_by_name(node_name, node_type.clone()))
+            .filter(|(_, node_name, node_type)| {
+                other.has_node_with_type_by_name(node_name, node_type.clone())
+            })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
@@ -656,7 +661,7 @@ impl Graph {
         self.format_list(
             edge_types_list
                 .iter()
-                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap())
+                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap().clone())
                 .collect::<Vec<String>>()
                 .as_slice(),
         )
@@ -670,7 +675,7 @@ impl Graph {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
         let hash = hasher.finish();
-    
+
         Ok(format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",

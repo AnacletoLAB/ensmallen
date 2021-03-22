@@ -88,7 +88,16 @@ impl EdgeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: EdgeTypeT - Id to be translated.
-    pub fn translate(&self, id: EdgeTypeT) -> &str {
+    pub fn unchecked_translate(&self, id: EdgeTypeT) -> String {
+        self.vocabulary.unchecked_translate(id)
+    }
+
+    /// Returns string name of given id.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: EdgeTypeT - Id to be translated.
+    pub fn translate(&self, id: EdgeTypeT) -> Result<&String, String> {
         self.vocabulary.translate(id)
     }
 

@@ -166,10 +166,13 @@ impl Graph {
     ///
     /// # Arguments
     /// * edge_type_id: EdgeTypeT - Id of the edge type.
-    pub fn get_edge_type_name(&self, edge_type_id: EdgeTypeT) -> Option<String> {
+    pub fn get_edge_type_name(&self, edge_type_id: EdgeTypeT) -> Result<&String, String> {
         self.edge_types
             .as_ref()
-            .map(|ets| ets.translate(edge_type_id).to_owned())
+            .map_or(
+                Err("Edge types not available for the current graph instance.".to_string()),
+                |ets| ets.translate(edge_type_id))
+        
     }
 
     /// Return the edge types names.
@@ -188,26 +191,31 @@ impl Graph {
     ///
     /// # Arguments
     /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
-    pub fn translate_node_type_id_vector(
-        &self,
-        node_type_id: Vec<NodeTypeT>,
-    ) -> Option<Vec<String>> {
-        self.node_types.as_ref().map(|nts| {
-            nts.translate_vector(node_type_id)
-                .into_iter()
-                .map(str::to_owned)
-                .collect()
-        })
+    pub fn translate_node_type_id(&self, node_type_id: NodeTypeT) -> Result<&String, String> {
+        self.node_types
+            .as_ref()
+            .map_or(
+                Err("Node types not available for the current graph instance.".to_string()),
+                |nts| nts.translate(node_type_id)
+            )
     }
 
     /// Return node type name of given node type.
     ///
     /// # Arguments
     /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
-    pub fn translate_node_type_id(&self, node_type_id: NodeTypeT) -> Option<String> {
-        self.node_types
-            .as_ref()
-            .map(|nts| nts.translate(node_type_id).to_string())
+    pub fn translate_node_type_id_vector(
+        &self,
+        node_type_id: Vec<NodeTypeT>,
+    ) -> Result<Vec<String>, String> {
+        self.node_types.as_ref().map_or(
+            Err("Node types not available for the current graph instance.".to_string()), 
+            |nts| {
+                Ok(nts.translate_vector(node_type_id)?
+                    .into_iter()
+                    .map(String::to_owned)
+                    .collect())
+        })
     }
 
     /// Return the weights of the nodes.
@@ -333,13 +341,13 @@ impl Graph {
     }
 
     /// Returs option with the node type of the given node id.
-    pub fn get_node_type_name(&self, node_id: NodeT) -> Option<Vec<String>> {
+    pub fn get_node_type_name(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
-            true => match self.get_unchecked_node_type(node_id) {
-                Some(node_type_id) => self.translate_node_type_id_vector(node_type_id),
+            true => Ok(match self.get_unchecked_node_type(node_id) {
+                Some(node_type_id) => Some(self.translate_node_type_id_vector(node_type_id)?),
                 None => None,
-            },
-            false => None,
+            }),
+            false => Err("Node types not available for the current graph instance.".to_string()),
         }
     }
 
@@ -347,14 +355,14 @@ impl Graph {
     pub fn get_edge_type_name_by_edge_id(&self, edge_id: EdgeT) -> Option<String> {
         self.edge_types.as_ref().and_then(|ets| {
             self.get_unchecked_edge_type(edge_id)
-                .map(|et| ets.translate(et).to_owned())
+                .map(|et| ets.unchecked_translate(et))
         })
     }
 
     /// Returs result with the node name.
     pub fn get_node_name(&self, node_id: NodeT) -> Result<String, String> {
         match node_id < self.get_nodes_number() {
-            true => Ok(self.nodes.translate(node_id).to_string()),
+            true => Ok(self.nodes.unchecked_translate(node_id)),
             false => Err(format!(
                 "Given node_id {} is greater than number of nodes in the graph ({}).",
                 node_id,
@@ -379,7 +387,7 @@ impl Graph {
     }
 
     pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> Result<Option<Vec<String>>, String> {
-        Ok(self.get_node_type_id_by_node_name(node_name)?.and_then(|vector| self.translate_node_type_id_vector(vector)))
+        self.get_node_type_name(self.get_node_id(node_name)?)
     }
 
     /// Returs whether the graph has the given node name.
@@ -945,8 +953,8 @@ impl Graph {
             Ok(node_id) => {
                 let our_node_types = self.get_node_type_name(node_id);
                 match (our_node_types, node_type_name) {
-                    (None, None) => true,
-                    (Some(mut our_nts), Some(mut other_nts)) => {
+                    (Err(_), None) => true,
+                    (Ok(Some(mut our_nts)), Some(mut other_nts)) => {
                         our_nts.sort();
                         other_nts.sort();
                         our_nts == other_nts
