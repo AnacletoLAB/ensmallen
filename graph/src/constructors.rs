@@ -559,18 +559,18 @@ fn parse_nodes(
         if has_node_types {
             let mut node_types =
                 NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            for row in parse_node_type_ids(node_iterator, &mut node_types) {
-                row?;
+            if parse_node_type_ids(node_iterator, &mut node_types).count() == 0 {
+                return Err("The provided node list is empty!".to_string());
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
-            Some(node_types)
+            Ok::<_, String>(Some(node_types))
         } else {
-            for row in node_iterator {
-                row?;
+            if node_iterator.count() == 0 {
+                return Err("The provided node list is empty!".to_string());
             }
-            None
-        }
+            Ok::<_, String>(None)
+        }?
     } else {
         None
     };
@@ -970,7 +970,7 @@ impl Graph {
             edge_types,
             name,
             weights,
-            node_types
+            node_types,
         ))
     }
 }
