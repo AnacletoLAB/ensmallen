@@ -405,7 +405,10 @@ pub(crate) fn build_edges(
                 ws.push(w);
                 Ok(())
             },
-            (None, Some(_)) => panic!("A weight cannot be Some if we do not expect weights!"),
+            (None, Some(_)) => Err(concat!(
+                "A non-None weight was provided but no weights are expected ",
+                "because the has_weights flag has been set to false."
+            )),
             (Some(_), None) => Err(concat!(
                 "A None weight was found.\n",
                 "This might mean you have either provided a None weight to the edge list or ",
