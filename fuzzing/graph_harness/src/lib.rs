@@ -8,8 +8,5 @@ pub use from_csv::*;
 mod from_vec;
 pub use from_vec::*;
 
-mod mega_test;
-pub use mega_test::*;
-
 mod handle_panics;
 use handle_panics::*;
