@@ -1,0 +1,63 @@
+FromCsvHarnessParams {
+    directed: false,
+    directed_edge_list: false,
+    edge_reader: EdgeFileReaderParams {
+        reader: CSVFileReaderParams {
+            verbose: None,
+            separator: None,
+            header: None,
+            rows_to_skip: None,
+            ignore_duplicates: None,
+            max_rows_number: None,
+        },
+        sources_column_number: None,
+        sources_column: None,
+        destinations_column_number: None,
+        destinations_column: None,
+        edge_types_column_number: None,
+        edge_types_column: None,
+        weights_column_number: None,
+        weights_column: None,
+        default_weight: Some(
+             0.0,
+        ),
+        default_edge_type: None,
+        skip_self_loops: None,
+        numeric_edge_type_ids: None,
+        numeric_node_ids: Some(
+            false,
+        ),
+        skip_weights_if_unavailable: None,
+        skip_edge_types_if_unavailable: None,
+        file: "\u{0}\u{0}\u{0}W\u{c}\u{1c}\n2\u{0}\u{0})\u{0}\t\u{0}9179153$$,\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\u{1d}B\n,\u{0}\t\u{0}\u{0}\u{0}`\u{0}\n\u{0}\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\n\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}W\u{c}\u{1c}\n2\u{0}\u{0})\u{0}\t\u{0}\u{0}2853\u{0}\u{14}",
+    },
+    nodes_reader: Some(
+        NodeFileReaderParams {
+            reader: CSVFileReaderParams {
+                verbose: None,
+                separator: None,
+                header: None,
+                rows_to_skip: None,
+                ignore_duplicates: None,
+                max_rows_number: None,
+            },
+            default_node_type: None,
+            nodes_column_number: None,
+            node_types_separator: Some(
+                "\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}//\u{c}\u{1c}\n1\u{0}\u{0})\u{0}\t\u{1d}B\n,\u{0}\t\u{0}\u{0}\u{0}`\u{0}W\u{c}\u{1c}\n2\u{0}\u{0})\u{0}\t\u{0}\u{0}\u{0}\u{0}L\u{0}$$$$,\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}//\u{c}\u{1c}\n1\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}W\u{c}\u{1c}\n2\u{0}\u{0})\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0})\u{0}\t\u{1d}B\n,\u{0}\t\u{0}\u{0}\u{0}`\u{0}\n\u{0}\u{0}\t\u{0}\u{0}\u{0}\u{0}\u{0}\n\u{0}\u{0}\u{0}\u{0}~\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}",
+            ),
+            node_types_column_number: Some(
+                   0,
+            ),
+            numeric_node_ids: None,
+            numeric_node_type_ids: Some(
+                true,
+            ),
+            skip_node_types_if_unavailable: None,
+            nodes_column: None,
+            node_types_column: None,
+            file: "\u{0}\u{1e}\u{16}f5\n\u{12}",
+        },
+    ),
+    name: "",
+}
