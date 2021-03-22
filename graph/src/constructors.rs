@@ -516,6 +516,16 @@ pub(crate) fn build_edges(
         .to_owned());
     }
 
+    if edges.is_empty() {
+        return Err(
+            concat!(
+                "The edge list you are trying to load is empty. ",
+                "This is likely caused by either an excessive parametrization ",
+                "of a remove or filter call."
+            ).to_string()
+        );
+    }
+
     if let Some(ws) = &weights {
         if edges.len() != ws.len() {
             panic!(
