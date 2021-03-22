@@ -409,7 +409,7 @@ struct Is_singleton_with_self_loops_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-struct Is_singleton_string_Params {
+struct is_singleton_by_nide_name_Params {
 	 : node_name,
 }
 
@@ -1028,7 +1028,7 @@ struct TheUltimateFuzzer {
 	get_clique_edge_names : Get_clique_edge_names_Params,
 	is_singleton : Is_singleton_Params,
 	is_singleton_with_self_loops : Is_singleton_with_self_loops_Params,
-	is_singleton_string : Is_singleton_string_Params,
+	is_singleton_by_nide_name : is_singleton_by_nide_name_Params,
 	get_sources : Get_sources_Params,
 	get_source_names : Get_source_names_Params,
 	get_destinations : Get_destinations_Params,
@@ -1203,7 +1203,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.has_selfloops();
 	graph.is_singleton(data.is_singleton.);
 	graph.is_singleton_with_self_loops(data.is_singleton_with_self_loops.);
-	graph.is_singleton_string(data.is_singleton_string.)?;
+	graph.is_singleton_by_nide_name(data.is_singleton_by_nide_name.)?;
 	graph.has_singletons();
 	graph.has_singleton_nodes_with_self_loops_number();
 	graph.get_sources(data.get_sources.);

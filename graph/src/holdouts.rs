@@ -73,12 +73,20 @@ impl Graph {
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
-                    (*nodes_number * (*nodes_number - 1)) as EdgeT
+                    let mut edge_number = (*nodes_number * (*nodes_number - 1)) as EdgeT;
+                    if !self.is_directed(){
+                        edge_number /= 2;
+                    }
+                    edge_number
                 })
                 .sum();
             (Some(node_components), complete_edges_number)
         } else {
-            (None, nodes_number * (nodes_number - 1))
+            let mut edge_number = nodes_number * (nodes_number - 1);
+            if !self.is_directed(){
+                edge_number /= 2;
+            }
+            (None, edge_number)
         };
 
         // Here we compute the number of edges that a complete graph would have if it had the same number of nodes
@@ -89,7 +97,7 @@ impl Graph {
         }
 
         // Now we compute the maximum number of negative edges that we can actually generate
-        let max_negative_edges = complete_edges_number - self.unique_edges_number;
+        let max_negative_edges = complete_edges_number - self.get_unique_edges_number();
 
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
@@ -154,6 +162,14 @@ impl Graph {
                 .filter_map(|(src_seed, dst_seed)| {
                     let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
                     let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
+                    if !self.is_directed() && src > dst {
+                        return None;
+                    }
+                    
+                    if !self.has_selfloops() && src == dst {
+                        return None;
+                    }
+
                     if let Some(sn) = &seed_nodes {
                         if !sn.contains(src) && !sn.contains(dst) {
                             return None;
@@ -167,23 +183,20 @@ impl Graph {
                     // If the edge is not a self-loop or the user allows self-loops and
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.
-                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst) {
-                        true => Some((src, dst)),
-                        false => None,
+                    match self.has_edge(src, dst) {
+                        true => None,
+                        false => Some(self.encode_edge(src, dst)),
                     }
-                })
-                .flat_map(|(src, dst)| {
-                    if !self.is_directed() && src != dst {
-                        vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
-                    } else {
-                        vec![self.encode_edge(src, dst)]
-                    }
+                    
                 })
                 .collect::<Vec<EdgeT>>();
 
             let pb3 = get_loading_bar(
                 verbose,
-                "Inserting negative graph edges",
+                format!(
+                    "Inserting negative graph edges (iteration {})",
+                    sampling_round
+                ).as_ref(),
                 negatives_number as usize,
             );
 
@@ -194,6 +207,10 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
+            if sampling_round > 50000{
+                panic!("Deadlock in sampling negatives!");
+            }
+
             pb1.inc((negative_edges_hashset.len() - last_length as usize) as u64);
             last_length = negative_edges_hashset.len();
         }
@@ -201,9 +218,13 @@ impl Graph {
         pb1.finish();
 
         Graph::from_integer_unsorted(
-            negative_edges_hashset.into_iter().map(|edge| {
+            negative_edges_hashset.into_iter().flat_map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
-                Ok((src, dst, None, None))
+                if !self.is_directed() && src != dst {
+                    vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
+                } else {
+                    vec![Ok((src, dst, None, None))]
+                }
             }),
             self.nodes.clone(),
             self.node_types.clone(),
@@ -361,9 +382,6 @@ impl Graph {
             "Building the train partition",
             (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
-
-        println!("{:?}", self.textual_report(false));
-        println!("bitmap: {:?}", valid_edges_bitmap);
 
         Ok((
             Graph::build_graph(

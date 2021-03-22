@@ -133,6 +133,6 @@ impl EdgeTypeVocabulary {
 
     /// Returns number of minimum edge-count.
     pub fn min_edge_type_count(&self) -> EdgeT {
-        *self.counts.iter().min().unwrap()
+        *self.counts.iter().min().unwrap_or(&0)
     }
 }

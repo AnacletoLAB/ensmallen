@@ -213,8 +213,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a singleton.
     ///
-    fn is_singleton_string(&self, node_name: &str) -> PyResult<bool> {
-        pyex!(self.graph.is_singleton_string(node_name))
+    fn is_singleton_by_nide_name(&self, node_name: &str) -> PyResult<bool> {
+        pyex!(self.graph.is_singleton_by_nide_name(node_name))
     }
 
     #[text_signature = "($self, edge)"]

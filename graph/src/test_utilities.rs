@@ -612,7 +612,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
             graph.get_edges_number(),
             None,
             *only_from_same_component,
-            verbose,
+            true,
         )?;
         assert_eq!(
             graph.get_edges_number(),
@@ -879,7 +879,13 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(
                 we.get_unique_edges_number(),
                 graph.get_unique_edges_number(),
-                "Number of unique edges does not match in graph without edge types."
+                concat!(
+                    "Number of unique edges does not match in graph without edge types.\n",
+                    "The report of the original graph is \n{:?}\n",
+                    "The report of the graph without edge types is \n{:?}",
+                ),
+                graph.textual_report(false),
+                we.textual_report(false),
             );
             assert_eq!(
                 we.get_unique_self_loop_number(),
@@ -887,10 +893,6 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
                 "Number of unique self loops does not match in graph without edge types."
             );
             assert_eq!(we.nodes, graph.nodes);
-            assert_eq!(
-                graph.has_edge_types(),
-                graph.validate_operator_terms(&we).is_err()
-            );
         }
     }
     {
@@ -904,10 +906,6 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.nodes, graph.nodes);
-            assert_eq!(
-                graph.has_node_types(),
-                graph.validate_operator_terms(&wn).is_err()
-            );
         }
     }
     {
@@ -921,10 +919,6 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.nodes, graph.nodes);
-            assert_eq!(
-                graph.has_weights(),
-                graph.validate_operator_terms(&ww).is_err()
-            );
         }
     }
 
