@@ -73,12 +73,20 @@ impl Graph {
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
-                    (*nodes_number * (*nodes_number - 1)) as EdgeT
+                    let mut edge_number = (*nodes_number * (*nodes_number - 1)) as EdgeT;
+                    if !self.is_directed(){
+                        edge_number /= 2;
+                    }
+                    edge_number
                 })
                 .sum();
             (Some(node_components), complete_edges_number)
         } else {
-            (None, nodes_number * (nodes_number - 1))
+            let mut edge_number = nodes_number * (nodes_number - 1);
+            if !self.is_directed(){
+                edge_number /= 2;
+            }
+            (None, edge_number)
         };
 
         // Here we compute the number of edges that a complete graph would have if it had the same number of nodes
@@ -89,7 +97,7 @@ impl Graph {
         }
 
         // Now we compute the maximum number of negative edges that we can actually generate
-        let max_negative_edges = complete_edges_number - self.unique_edges_number;
+        let max_negative_edges = complete_edges_number - self.get_unique_edges_number();
 
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
@@ -158,6 +166,10 @@ impl Graph {
                         return None;
                     }
                     
+                    if !self.has_selfloops() && src == dst {
+                        return None;
+                    }
+
                     if let Some(sn) = &seed_nodes {
                         if !sn.contains(src) && !sn.contains(dst) {
                             return None;
@@ -171,9 +183,9 @@ impl Graph {
                     // If the edge is not a self-loop or the user allows self-loops and
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.
-                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst) {
-                        true => Some(self.encode_edge(src, dst)),
-                        false => None,
+                    match self.has_edge(src, dst) {
+                        true => None,
+                        false => Some(self.encode_edge(src, dst)),
                     }
                     
                 })
@@ -192,7 +204,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 100{
+            if sampling_round > 10{
                 panic!("Deadlock in sampling negatives!");
             }
 

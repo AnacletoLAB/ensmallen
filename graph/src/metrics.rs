@@ -226,6 +226,15 @@ impl Graph {
         (self.get_directed_edges_number() - self.get_self_loop_number()) / 2 + self.get_self_loop_number()
     }
 
+    /// Returns number of undirected edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
+    /// ```
+    pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
+        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2 + self.get_unique_self_loop_number() as EdgeT
+    }
+
     /// Returns number of edges of the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -235,6 +244,18 @@ impl Graph {
         match self.directed {
             true => self.get_directed_edges_number(),
             false => self.get_undirected_edges_number(),
+        }    
+    }
+
+    /// Returns number of unique edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of edges of the graph is  {}", graph.get_unique_edges_number());
+    /// ```
+    pub fn get_unique_edges_number(&self) -> EdgeT {
+        match self.directed {
+            true => self.get_unique_directed_edges_number(),
+            false => self.get_unique_undirected_edges_number()
         }    
     }
 

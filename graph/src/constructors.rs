@@ -319,7 +319,6 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
-/// [(0, 1), (3, 0)] directed
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,
@@ -496,6 +495,7 @@ pub(crate) fn build_edges(
             first = false;
         }
     }
+
 
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
@@ -726,7 +726,7 @@ pub(crate) fn parse_integer_edges(
 /// # Graph Constructors
 impl Graph {
     pub(crate) fn build_graph<S: Into<String>>(
-        edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
+        edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: usize,
         nodes: Vocabulary<NodeT>,
         node_types: Option<NodeTypeVocabulary>,
@@ -751,7 +751,7 @@ impl Graph {
             node_bit_mask,
             node_bits,
         ) = parse_integer_edges(
-            edge_iter,
+            edges_iter,
             edges_number,
             nodes.len() as NodeT,
             edge_types_vocabulary,

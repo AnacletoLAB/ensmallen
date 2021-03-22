@@ -876,7 +876,13 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(
                 we.get_unique_edges_number(),
                 graph.get_unique_edges_number(),
-                "Number of unique edges does not match in graph without edge types."
+                concat!(
+                    "Number of unique edges does not match in graph without edge types.\n",
+                    "The report of the original graph is \n{:?}\n",
+                    "The report of the graph without edge types is \n{:?}",
+                ),
+                graph.textual_report(false),
+                we.textual_report(false),
             );
             assert_eq!(
                 we.get_unique_self_loop_number(),

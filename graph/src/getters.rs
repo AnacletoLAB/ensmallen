@@ -67,7 +67,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `node_name`: &str - The node name to be checked for.
-    pub fn is_singleton_string(&self, node_name: &str) -> Result<bool, String> {
+    pub fn is_singleton_by_nide_name(&self, node_name: &str) -> Result<bool, String> {
         Ok(self.is_singleton(self.get_node_id(node_name)?))
     }
 
@@ -223,7 +223,7 @@ impl Graph {
     }
 
     /// Return number of the unique edges in the graph.
-    pub fn get_unique_edges_number(&self) -> EdgeT {
+    pub fn get_unique_directed_edges_number(&self) -> EdgeT {
         self.unique_edges_number
     }
 
