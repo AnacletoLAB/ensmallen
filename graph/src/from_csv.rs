@@ -17,7 +17,7 @@ impl Graph {
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
         directed_edge_list: bool,
-        edges_number: EdgeT,
+        edges_number: usize,
         nodes_number: NodeT,
         name: S,
     ) -> Result<Graph, String> {
@@ -29,15 +29,23 @@ impl Graph {
             },
             directed,
             directed_edge_list,
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.reader.ignore_duplicates),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.reader.ignore_duplicates),
             edge_file_reader.reader.ignore_duplicates,
             edges_number,
             nodes_number,
             edge_file_reader.numeric_edge_type_ids,
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.numeric_node_ids),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.numeric_node_ids),
             edge_file_reader.numeric_node_ids,
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.numeric_node_type_ids),
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.has_node_types()),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.numeric_node_type_ids),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
             edge_file_reader.has_weights(),
             name,
@@ -64,21 +72,28 @@ impl Graph {
     ) -> Result<Graph, String> {
         Graph::from_string_unsorted(
             edge_file_reader.read_lines()?,
-            match &node_file_reader {
-                Some(nfr) => Some(nfr.read_lines()?),
-                None => None,
-            },
+            node_file_reader
+                .as_ref()
+                .map_or(Ok::<_, String>(None), |nfr| Ok(Some(nfr.read_lines()?)))?,
             directed,
             directed_edge_list,
             name,
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.reader.ignore_duplicates),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.reader.ignore_duplicates),
             edge_file_reader.reader.ignore_duplicates,
             edge_file_reader.reader.verbose,
             edge_file_reader.numeric_edge_type_ids,
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.numeric_node_ids),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.numeric_node_ids),
             edge_file_reader.numeric_node_ids,
-            node_file_reader.as_ref().map_or(false,|nfr| nfr.numeric_node_type_ids),
-            node_file_reader.as_ref().map_or(false, |nfr| nfr.has_node_types()),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.numeric_node_type_ids),
+            node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
             edge_file_reader.has_weights(),
         )

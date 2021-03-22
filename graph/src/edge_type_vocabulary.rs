@@ -37,37 +37,43 @@ impl EdgeTypeVocabulary {
 
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
-        vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    ) -> Result<Option<EdgeTypeVocabulary>, String> {
-        if let Some(mut vocab) = vocabulary {
-            vocab.build_reverse_mapping()?;
-
-            if ids.len() == 0 {
-                return Err("The ids vector passed was empty!".to_string());
-            }
-
-            let maybe_max = ids.iter().filter_map(|i| *i).max();
-
-            if maybe_max.is_none() {
-                return Err("The ids vector has only Nones!".to_string());
-            }
-
-            if maybe_max.unwrap() as usize > vocab.len() {
-                return Err("There are ids which are not in the vocabulary.".to_string());
-            }
-
-            let mut vocabvec = EdgeTypeVocabulary {
-                ids,
-                vocabulary: vocab,
-                counts: Vec::new(),
-                unknown_count: EdgeT::from_usize(0),
-            };
-
-            vocabvec.build_counts();
-
-            return Ok(Some(vocabvec));
+        vocabulary: Vocabulary<EdgeTypeT>,
+    ) -> EdgeTypeVocabulary {
+        if ids.is_empty() {
+            panic!("The ids vector passed was empty!");
         }
-        Ok(None)
+
+        let maybe_max = ids.iter().filter_map(|i| *i).max();
+
+        if maybe_max.is_none() {
+            panic!("The ids vector has only Nones!");
+        }
+
+        if maybe_max.unwrap() as usize > vocabulary.len() {
+            panic!("There are ids which are not in the vocabulary.");
+        }
+
+        let mut vocabvec = EdgeTypeVocabulary {
+            ids,
+            vocabulary,
+            counts: Vec::new(),
+            unknown_count: EdgeT::from_usize(0),
+        };
+
+        vocabvec.build_counts();
+
+        vocabvec
+    }
+
+    pub fn from_option_structs(
+        ids: Option<Vec<Option<EdgeTypeT>>>,
+        vocabulary: Option<Vocabulary<EdgeTypeT>>,
+    ) -> Option<EdgeTypeVocabulary> {
+        if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
+            Some(EdgeTypeVocabulary::from_structs(ids, vocabulary))
+        } else {
+            None
+        }
     }
 
     pub fn build_counts(&mut self) {

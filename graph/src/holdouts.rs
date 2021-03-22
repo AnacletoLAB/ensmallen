@@ -209,11 +209,10 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
-            true,
             format!("Negative {}", self.name.clone()),
             false,
-            self.has_edge_types(),
-            self.has_weights(),
+            false,
+            false,
             verbose,
         )
     }
@@ -369,11 +368,12 @@ impl Graph {
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
                     .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
-                self.get_directed_edges_number() - valid_edges_bitmap.len() as EdgeT,
+                self.get_directed_edges_number() as usize - valid_edges_bitmap.len() as usize,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
                 self.directed,
+                true,
                 format!("{} training", self.name.clone()),
                 false,
                 self.has_edge_types(),
@@ -384,11 +384,12 @@ impl Graph {
                     .iter()
                     .progress_with(pb_valid)
                     .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
-                valid_edges_bitmap.len() as EdgeT,
+                valid_edges_bitmap.len() as usize,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
                 self.directed,
+                true,
                 format!("{} testing", self.name.clone()),
                 false,
                 self.has_edge_types(),
@@ -445,7 +446,8 @@ impl Graph {
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
         let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;
-        let mut valid_edges_number = (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
+        let mut valid_edges_number =
+            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
@@ -481,7 +483,9 @@ impl Graph {
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
                 let singleton_self_loop = src == dst && self.get_node_degree(src) == 1;
-                let correct_edge_type = edge_type_ids.as_ref().map_or(true, |etis| etis.contains(&edge_type));
+                let correct_edge_type = edge_type_ids
+                    .as_ref()
+                    .map_or(true, |etis| etis.contains(&edge_type));
                 // The tree must not contain the provided edge ID
                 // And this is not a self-loop edge with degree 1
                 // And the edge type of the edge ID is within the provided edge type
@@ -517,14 +521,13 @@ impl Graph {
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
             self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
-        let edge_type_ids =
-            edge_types.map_or(Ok::<_, String>(None), |ets| {
-                Ok(Some(
-                    self.translate_edge_types(ets)?
-                        .into_iter()
-                        .collect::<HashSet<Option<EdgeTypeT>>>(),
-                ))
-            })?;
+        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
+            Ok(Some(
+                self.translate_edge_types(ets)?
+                    .into_iter()
+                    .collect::<HashSet<Option<EdgeTypeT>>>(),
+            ))
+        })?;
         if min_number_overlaps.is_some() && !self.is_multigraph() {
             return Err("Current graph is not a multigraph!".to_string());
         }
@@ -536,7 +539,10 @@ impl Graph {
                 // If a list of edge types was provided and the edge type
                 // of the current edge is not within the provided list,
                 // we skip the current edge.
-                if !edge_type_ids.as_ref().map_or(true, |etis| etis.contains(&edge_type)) {
+                if !edge_type_ids
+                    .as_ref()
+                    .map_or(true, |etis| etis.contains(&edge_type))
+                {
                     return false;
                 }
                 // If a minimum number of overlaps was provided and the current
@@ -746,14 +752,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
-            self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
-        )?;
-        test_graph.edge_types = EdgeTypeVocabulary::from_structs(
+            self.edge_types
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        ));
+        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
             test_edge_types,
-            self.edge_types.as_ref().map(|etv| etv.vocabulary.clone()),
-        )?;
+            self.edge_types
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -856,11 +868,12 @@ impl Graph {
                 .iter()
                 .progress_with(pb3)
                 .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
-            edges_bitmap.len() as EdgeT,
+            edges_bitmap.len() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
+            true,
             format!("{} subgraph", self.name.clone()),
             false,
             self.has_edge_types(),

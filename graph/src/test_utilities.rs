@@ -34,7 +34,7 @@ pub fn random_string(len: usize) -> String {
 
 /// Computes a random path.
 pub fn random_path(path: Option<&str>) -> String {
-    Path::new(path.unwrap_or_else(|| DEFAULT_PATH))
+    Path::new(path.unwrap_or(DEFAULT_PATH))
         .join(random_string(64))
         .to_str()
         .unwrap()
@@ -157,7 +157,14 @@ fn validate_vocabularies(graph: &Graph) {
     }
 
     if let Some(ws) = &graph.weights {
-        assert_eq!(!ws.is_empty(), graph.has_weights());
+        assert_eq!(
+            !ws.is_empty(), graph.has_weights(),
+            concat!(
+                "We expect the edge weights vector to NOT be empty if the graph says it has weights.\n",
+                "The graph report is:\n{:?}"
+            ),
+            graph.textual_report(false)
+        );
     }
 }
 
@@ -882,7 +889,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
 
 pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES");
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES");
 
     assert_eq!(

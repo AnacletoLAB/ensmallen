@@ -998,11 +998,10 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> Option<(EdgeT, EdgeT)> {
-        if let Some(min_edge) = self.get_edge_id_by_node_ids(src, dst) {
-            let max_edge = self.get_unchecked_edge_id_from_tuple(src, dst + 1);
-            return Some((min_edge as EdgeT, max_edge as EdgeT));
-        }
-        None
+        self.get_edge_id_by_node_ids(src, dst).map(
+            |min_edge|
+            (min_edge, self.get_unchecked_edge_id_from_tuple(src, dst + 1))
+        )
     }
 
     /// Return range of outbound edges IDs for given Node.

@@ -157,7 +157,6 @@ fn generic_integer_operator(
         node_types,
         main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
         main.directed,
-        false,
         build_operator_graph_name(main, other, operator),
         false,
         main.has_edge_types(),

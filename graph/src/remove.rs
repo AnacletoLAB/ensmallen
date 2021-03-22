@@ -223,8 +223,9 @@ impl Graph {
             self.directed,
             true,
             false,
+            // TODO: CHECK THIS CONDITION!!!
             self.is_multigraph() && edge_types,
-            self.get_directed_edges_number(), // Approximation of expected edges number.
+            self.get_directed_edges_number() as usize, // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             match &self.edge_types {
                 Some(ets) => ets.has_numeric_ids(),
@@ -334,11 +335,12 @@ impl Graph {
                         false => None,
                     }
                 }),
-            self.get_directed_edges_number(),
+            self.get_directed_edges_number() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
+            true,
             self.name.clone(),
             true,
             self.has_edge_types(),
