@@ -9,7 +9,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use std::{collections::HashSet, ops::Neg};
+use std::{collections::HashSet};
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 use vec_rand::{gen_random_vec, sample_uniform};
