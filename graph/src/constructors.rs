@@ -559,14 +559,24 @@ fn parse_nodes(
         if has_node_types {
             let mut node_types =
                 NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            if parse_node_type_ids(node_iterator, &mut node_types).count() == 0 {
+            let mut iterations = 0;
+            for row in parse_node_type_ids(node_iterator, &mut node_types) {
+                row?;
+                iterations += 1;
+            }
+            if iterations == 0 {
                 return Err("The provided node list is empty!".to_string());
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
             Ok::<_, String>(Some(node_types))
         } else {
-            if node_iterator.count() == 0 {
+            let mut iterations = 0;
+            for row in node_iterator{
+                row?;
+                iterations += 1;
+            }
+            if iterations == 0 {
                 return Err("The provided node list is empty!".to_string());
             }
             Ok::<_, String>(None)
