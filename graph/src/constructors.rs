@@ -625,7 +625,7 @@ pub(crate) fn parse_string_edges(
     nodes.build_reverse_mapping()?;
     edge_types_vocabulary.build_reverse_mapping()?;
     let edge_types =
-        EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary));
+        EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary))?;
 
     Ok((
         edges,
@@ -692,7 +692,7 @@ pub(crate) fn parse_integer_edges(
         automatic_directed_edge_list,
     )?;
 
-    let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary);
+    let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary)?;
 
     Ok((
         edges,

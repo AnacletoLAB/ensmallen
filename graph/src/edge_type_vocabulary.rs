@@ -38,7 +38,7 @@ impl EdgeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
         vocabulary: Vocabulary<EdgeTypeT>,
-    ) -> EdgeTypeVocabulary {
+    ) -> Result<EdgeTypeVocabulary, String> {
         if ids.is_empty() {
             panic!("The ids vector passed was empty!");
         }
@@ -46,7 +46,14 @@ impl EdgeTypeVocabulary {
         let maybe_max = ids.iter().filter_map(|i| *i).max();
 
         if maybe_max.is_none() {
-            panic!("The ids vector has only Nones!");
+            return Err(concat!(
+                "The provided edge type list contains only None values.\n",
+                "If you do not want to load the edge types, either ",
+                "do not provide the node types column or column number ",
+                "if you are loading from a CSV or set the has_edge_types flag ",
+                "to false when loading using the internals."
+            )
+            .to_string());
         }
 
         if maybe_max.unwrap() as usize > vocabulary.len() {
@@ -62,18 +69,18 @@ impl EdgeTypeVocabulary {
 
         vocabvec.build_counts();
 
-        vocabvec
+        Ok(vocabvec)
     }
 
     pub fn from_option_structs(
         ids: Option<Vec<Option<EdgeTypeT>>>,
         vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    ) -> Option<EdgeTypeVocabulary> {
-        if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
-            Some(EdgeTypeVocabulary::from_structs(ids, vocabulary))
+    ) -> Result<Option<EdgeTypeVocabulary>, String> {
+        Ok(if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
+            Some(EdgeTypeVocabulary::from_structs(ids, vocabulary)?)
         } else {
             None
-        }
+        })
     }
 
     pub fn build_counts(&mut self) {
