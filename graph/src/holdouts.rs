@@ -192,6 +192,10 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
+            if sampling_round > 100{
+                panic!("Deadlock in sampling negatives!");
+            }
+
             pb1.inc((negative_edges_hashset.len() - last_length as usize) as u64);
             last_length = negative_edges_hashset.len();
         }
