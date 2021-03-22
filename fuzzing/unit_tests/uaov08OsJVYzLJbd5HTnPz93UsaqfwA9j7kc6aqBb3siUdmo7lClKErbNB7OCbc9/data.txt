@@ -1,0 +1,42 @@
+FromVecHarnessParams {
+    directed: true,
+    directed_edge_list: false,
+    ignore_duplicated_nodes: true,
+    ignore_duplicated_edges: true,
+    verbose: false,
+    numeric_edge_types_ids: false,
+    numeric_node_ids: false,
+    numeric_edge_node_ids: false,
+    numeric_node_types_ids: true,
+    has_node_types: true,
+    has_edge_types: false,
+    has_weights: false,
+    name: "\u{e}",
+    edges: [
+        Err(
+            "\'V\u{17}\u{5}/",
+        ),
+        Err(
+            "[",
+        ),
+        Ok(
+            (
+                "\u{7}T444444444",
+                "",
+                Some(
+                    "6238888888",
+                ),
+                Some(
+                    0.000011038549,
+                ),
+            ),
+        ),
+    ],
+    nodes: Some(
+        [
+            Err(
+                "",
+            ),
+        ],
+    ),
+}
