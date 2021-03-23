@@ -3,7 +3,7 @@ from typing import Dict, Callable, Generator
 from tqdm.auto import trange
 
 
-def holdouts_wrapper(
+def holdouts_generator(
     holdout_callback: Callable,
     holdouts_number: int,
     random_state: int = 42,

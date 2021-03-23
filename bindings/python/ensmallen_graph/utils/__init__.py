@@ -1,6 +1,6 @@
 """Sub-module with holdouts utilities."""
-from .holdouts_wrapper import holdouts_wrapper
+from .holdouts_generator import holdouts_generator
 
 __all__ = [
-    "holdouts_wrapper"
+    "holdouts_generator"
 ]
