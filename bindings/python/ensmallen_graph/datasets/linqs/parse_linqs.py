@@ -26,8 +26,12 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
             graph.get_node_name(source): weights[graph.get_edge_id_with_type_by_node_ids(source, node_id)] if graph.has_weights() else 1
             for source in graph.get_filtered_neighbours(node_id)
         }
-        for node_id, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
-        if graph.get_node_type(node_id) == word_node_type
+        for node_id, node_name in enumerate(tqdm(
+            graph.get_node_names(),
+            desc="Extracting words features",
+            leave=False
+        ))
+        if graph.get_node_type_id_by_node_id(node_id) == word_node_type
     }).fillna(0)
 
 
