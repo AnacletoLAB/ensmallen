@@ -43,10 +43,14 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
-        self.edges
+    pub fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
+        match self
+            .edges
             .rank(self.encode_edge(src, dst))
-            .map(|value| value as EdgeT)
+            .map(|value| value as EdgeT) {
+                Some(edge_id) => Ok(edge_id),
+                None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
+            }
     }
 
     #[inline(always)]

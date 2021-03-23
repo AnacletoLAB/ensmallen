@@ -686,7 +686,7 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
-        let edge_id = self.edge_types.as_ref().map_or_else(|| self.get_edge_id_by_node_ids(src, dst), |ets| self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
+        let edge_id = self.edge_types.as_ref().map_or_else(|| self.get_edge_id_by_node_ids(src, dst).ok(), |ets| self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
             edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
         }));
         match edge_id{
@@ -704,7 +704,7 @@ impl Graph {
     }
 
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
-        self.get_edge_id_by_node_ids(src, dst).is_some()
+        self.get_edge_id_by_node_ids(src, dst).is_ok()
     }
 
 
@@ -726,7 +726,7 @@ impl Graph {
         dst_name: &str
     ) -> Result<EdgeT, String> {
         let edge_id = if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id_by_node_ids(*src, *dst)
+            self.get_edge_id_by_node_ids(*src, *dst).ok()
         } else {
             None
         };
@@ -1013,7 +1013,7 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> Option<(EdgeT, EdgeT)> {
-        self.get_edge_id_by_node_ids(src, dst).map(
+        self.get_edge_id_by_node_ids(src, dst).ok().map(
             |min_edge|
             (min_edge, self.get_unchecked_edge_id_from_tuple(src, dst + 1))
         )

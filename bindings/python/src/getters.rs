@@ -327,8 +327,26 @@ impl EnsmallenGraph {
         self.graph.has_node_with_type_by_name(node_name, node_type)
     }
 
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return integer representing ID of the edge.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: int,
+    ///     Node ID to use as source of given edge.
+    /// dst: int,
+    ///     Node ID to use as destination of given edge.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Integer representing ID of the edge.
+    ///
+    fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
+        pyex!(self.graph.get_edge_id_by_node_ids(src, dst))
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return integer representing ID of the edge with type.
     ///
     /// Parameters
     /// ---------------------
@@ -341,9 +359,9 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// ----------------------------
-    /// Integer representing ID of the edge. It will return None when the edge does not exist.
+    /// Integer representing ID of the edge.
     ///
-    fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> PyResult<EdgeT> {
+    fn get_edge_id_with_type_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> PyResult<EdgeT> {
         pyex!(self.graph.get_edge_id_with_type_by_node_ids(src, dst, edge_type))
     }
 
