@@ -680,7 +680,7 @@ impl Graph {
         self.get_unchecked_edge_id_from_tuple(src, dst)
     }
 
-    pub fn get_edge_id(
+    pub fn get_edge_id_with_type_by_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -717,7 +717,7 @@ impl Graph {
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
     pub fn has_edge_with_type(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
-        self.get_edge_id(src, dst, edge_type).is_ok()
+        self.get_edge_id_with_type_by_node_ids(src, dst, edge_type).is_ok()
     }
 
     pub fn get_edge_id_by_node_names(
@@ -759,7 +759,7 @@ impl Graph {
         edge_type_name: Option<&String>,
     ) -> Result<EdgeT, String> {
         if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id(*src, *dst, self.get_edge_type_id(edge_type_name.map(|x| x.as_str()))?)
+            self.get_edge_id_with_type_by_node_ids(*src, *dst, self.get_edge_type_id(edge_type_name.map(|x| x.as_str()))?)
         } else {
             Err(
                 format!(

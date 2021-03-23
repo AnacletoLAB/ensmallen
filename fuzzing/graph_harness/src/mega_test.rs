@@ -826,7 +826,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.get_destinations_range(data.get_destinations_range.min_edge_id, data.get_destinations_range.max_edge_id);
 	graph.get_neighbours_iter(data.get_neighbours_iter.src);
 	graph.get_unchecked_edge_id(data.get_unchecked_edge_id.src, data.get_unchecked_edge_id.dst, data.get_unchecked_edge_id.edge_type);
-	graph.get_edge_id(data.get_edge_id.src, data.get_edge_id.dst, data.get_edge_id.edge_type)?;
+	graph.get_edge_id_with_type_by_node_ids(data.get_edge_id.src, data.get_edge_id.dst, data.get_edge_id.edge_type)?;
 
 	graph.has_edge_with_type(data.has_edge_with_type.src, data.has_edge_with_type.dst, data.has_edge_with_type.edge_type);
 

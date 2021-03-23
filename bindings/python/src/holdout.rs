@@ -53,7 +53,7 @@ impl EnsmallenGraph {
         let (g1, g2) = pyex!(self.graph.connected_holdout(
             pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
             train_size,
-            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
@@ -173,7 +173,7 @@ impl EnsmallenGraph {
             pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
             train_size,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
             pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
             pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
@@ -291,7 +291,7 @@ impl EnsmallenGraph {
         let (train, test) = pyex!(self.graph.kfold(
             k,
             k_index,
-            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
             pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
             pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
@@ -316,7 +316,7 @@ impl EnsmallenGraph {
     /// random_state: int = 42,
     ///     The random_state to use for the holdout,
     /// use_stratification: bool = True,
-    ///     Whether to use edge-label stratification,
+    ///     Whether to use node-label stratification,
     ///
     /// Raises
     /// -----------------------------
