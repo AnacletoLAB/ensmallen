@@ -42,7 +42,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            to_string_vector(&[
                 "random_state",
                 "edge_types",
                 "include_all_edge_types",
@@ -95,7 +95,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "verbose"])
+            to_string_vector(&["random_state", "verbose"])
         ))?;
 
         Ok(EnsmallenGraph {
@@ -160,7 +160,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            to_string_vector(&[
                 "random_state",
                 "include_all_edge_types",
                 "edge_types",
@@ -222,7 +222,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            to_string_vector(&[
                 "random_state",
                 "verbose",
                 "seed_graph",
@@ -285,7 +285,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["edge_types", "random_state", "verbose"])
+            to_string_vector(&["edge_types", "random_state", "verbose"])
         ))?;
 
         let (train, test) = pyex!(self.graph.kfold(
@@ -340,7 +340,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "use_stratification"])
+            to_string_vector(&["random_state", "use_stratification"])
         ))?;
 
         let (train, test) = pyex!(self.graph.node_label_holdout(
@@ -391,7 +391,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "use_stratification"])
+            to_string_vector(&["random_state", "use_stratification"])
         ))?;
 
         let (train, test) = pyex!(self.graph.edge_label_holdout(
