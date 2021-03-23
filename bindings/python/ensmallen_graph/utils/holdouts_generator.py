@@ -9,7 +9,7 @@ def holdouts_generator(
     random_state: int = 42,
     random_state_factor: int = 1000,
     desc: str = "Computing holdouts",
-    verbose: bool = True,
+    disable: bool = False,
     **kwargs: Dict
 ) -> Generator:
     """Return generator of the holdouts.
@@ -30,7 +30,7 @@ def holdouts_generator(
         This is needed to make the randomly generated holdouts more different.
     desc: str = "Computing holdouts",
         The description for the TQDM bar.
-    verbose: bool = False,
+    disable: bool = False,
         Whether to show the loading bars,
     **kwargs: Dict,
         The kwargs to pass to the given callback.
@@ -41,11 +41,10 @@ def holdouts_generator(
             # The multiplication is a simple way to make the
             # randomly sampled holdouts a bit farther one to the other.
             random_state=random_state+i*random_state_factor,
-            verbose=verbose
         ))
         for i in trange(
             holdouts_number,
-            disable=not verbose,
+            disable=disable,
             desc=desc,
         )
     )
