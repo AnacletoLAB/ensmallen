@@ -63,12 +63,12 @@ pub(crate) fn build_csv_file_reader(
             kwargs,
             "skip_edge_types_if_unavailable",
             bool
-        )?)?
+        )?)
         .set_skip_weights_if_unavailable(extract_value!(
             kwargs,
             "skip_weights_if_unavailable",
             bool
-        )?)?
+        )?)
         .set_comment_symbol(extract_value!(kwargs, "edge_file_comment_symbol", String)?)?
         .set_header(extract_value!(kwargs, "edge_header", bool)?)
         .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize)?)

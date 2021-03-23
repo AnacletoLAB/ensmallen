@@ -13,6 +13,7 @@ fn update_return_weight_transition(
     src: NodeT,
     dst: NodeT,
     return_weight: ParamsT,
+    has_selfloop: bool,
 ) {
     if let Ok(mut i) = destinations.binary_search(&src) {
         let mut j = i;
@@ -26,8 +27,8 @@ fn update_return_weight_transition(
             i += 1;
         }
     }
-    // TODO: This could possibly be skipped always if the graph does not have self-loops!
-    if src != dst {
+
+    if src != dst && has_selfloop {
         if let Ok(mut i) = destinations.binary_search(&dst) {
             let mut j = i;
             while j > 0 && destinations[j] == dst {
@@ -290,7 +291,7 @@ mod tests {
         let mut transitions = (0..destinations.len())
             .map(|_| 1.0)
             .collect::<Vec<WeightT>>();
-        update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0);
+        update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0, true);
         assert_eq!(
             transitions,
             vec![1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0]
@@ -351,7 +352,18 @@ impl Graph {
         }
     }
 
-    /// TODO: Update docstring!
+    /// Updates the the transitions probability score for the change of the node type.
+    ///
+    /// Specifically, we multiply the transition score by the given `change_node_type_weight`
+    /// when the node type changes.
+    ///
+    /// # Arguments
+    /// 
+    /// node: NodeT - Source node.
+    /// transition: &mut Vec<WeightT> - Vector of transitions to update.
+    /// destinations: impl Iterator<Item = NodeT> - Iterator of the destinations.
+    /// change_node_type_weight: ParamsT - The weight to multiply the transition by if there is a change of node type.
+    ///
     fn update_node_transition(
         &self,
         node: NodeT,
@@ -374,8 +386,8 @@ impl Graph {
                     .iter_mut()
                     .zip(destinations)
                     .for_each(|(transition_value, dst)| {
-                        if nt.ids[node as usize] == nt.ids[dst as usize] {
-                            *transition_value /= change_node_type_weight
+                        if nt.ids[node as usize] != nt.ids[dst as usize] {
+                            *transition_value *= change_node_type_weight
                         }
                     });
             }
@@ -430,6 +442,7 @@ impl Graph {
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
+        has_selfloop: bool
     ) -> (Vec<WeightT>, EdgeT) {
         let mut transition =
             self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
@@ -498,6 +511,7 @@ impl Graph {
                     src,
                     dst,
                     walk_weights.return_weight,
+                    has_selfloop
                 );
             }
         }
@@ -569,11 +583,17 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge: EdgeT, the previous edge from which to compute the transitions.
-    /// * random_state: usize, the random_state to use for extracting the node.
-    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
+    /// * `src`: NodeT - Current source node id.
+    /// * `dst`: NodeT - Current destination node id.
+    /// * `edge`: EdgeT - Current edge id.
+    /// * `random_state`: NodeT - The random state to use to sample the next edge id.
+    /// * `walk_weights`: &WalkWeights - Struct with the weights to use to update the transitions.
+    /// * `min_edge_id`: EdgeT - Minimum edge id to sample for given destination node id.
+    /// * `max_edge_id`: EdgeT - Maximum edge id to sample for given destination node id.
+    /// * `destinations`: &[NodeT] - Current destinations slice.
+    /// * `previous_destinations`: &[NodeT] - Previous destination slice.
+    /// * `probabilistic_indices`: &Option<Vec<u64>> - Probabilistic indices, used when max neighbours is provided.
     ///
-    /// TODO: UPDATE DOCSTRING!
     pub fn extract_edge(
         &self,
         src: NodeT,
@@ -597,6 +617,7 @@ impl Graph {
             destinations,
             previous_destinations,
             probabilistic_indices,
+            self.has_selfloops()
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
         let edge_id = match probabilistic_indices {

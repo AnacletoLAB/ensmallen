@@ -38,7 +38,11 @@ pub fn word2vec<'a>(
     Ok(sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
         if sequence_length < window_size * 2 + 1 {
-            panic!("You are providing sequences that are smaller than the the minimum amount.");
+            panic!("
+            Cannot compute word2vec, got a sequence of length {} and window size {}.
+            for the current window_size the minimum sequence length required is {}",
+            sequence_length, window_size, window_size*2 + 1,
+            );
         }
         (window_size..(sequence_length - window_size)).map(move |i| {
             (
@@ -275,7 +279,7 @@ impl Graph {
         let positive_number: usize = batch_size - negative_number;
         let graph_has_no_self_loops = !self.has_selfloops();
 
-        let edges_number = self.get_edges_number() as u64;
+        let edges_number = self.get_directed_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u32;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
@@ -297,13 +301,13 @@ impl Graph {
                         let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
                         let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
 
-                        if avoid_false_negatives && self.has_edge(src, dst, None) {
+                        if avoid_false_negatives && self.has_edge_with_type(src, dst, None) {
                             sampled = xorshift(sampled);
                             continue;
                         }
 
                         if let Some(g) = &graph_to_avoid {
-                            if g.has_edge(src, dst, None) {
+                            if g.has_edge_with_type(src, dst, None) {
                                 sampled = xorshift(sampled);
                                 continue;
                             }

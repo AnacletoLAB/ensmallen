@@ -1,6 +1,6 @@
 use super::*;
-use graph::{WeightT, NodeT};
-use numpy::{PyArray};
+use graph::{NodeT, WeightT};
+use numpy::PyArray;
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -28,8 +28,8 @@ impl EnsmallenGraph {
     pub fn filter(
         &self,
         nodes: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: Option<bool>,
@@ -71,17 +71,15 @@ impl EnsmallenGraph {
         &self,
         src: NodeT,
         nodes: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
     ) -> PyResult<PyWords> {
-        let neighbours = pyex!(self
-            .graph
-            .get_filtered_neighbours_range(
-                src, nodes, node_types, edge_types, min_weight, max_weight,
-            ))?
-            .collect::<Vec<NodeT>>();
+        let neighbours = pyex!(self.graph.get_filtered_neighbours_range(
+            src, nodes, node_types, edge_types, min_weight, max_weight,
+        ))?
+        .collect::<Vec<NodeT>>();
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_1d!(gil, neighbours, NodeT))
     }

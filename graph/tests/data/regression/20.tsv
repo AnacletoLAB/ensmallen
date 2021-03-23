@@ -1,7 +1,0 @@
-subject,object,edge_type
-A,B,edgeA
-C,D,edgeB
-E,F,edgeC
-E,F,edgeD
-G,G,edgeA
-G,G,edgeB

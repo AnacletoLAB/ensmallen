@@ -11,12 +11,25 @@ use vec_rand::xorshift::xorshift as rand_u64;
 const NOT_PRESENT: u32 = u32::MAX;
 
 /// # Implementation of algorithms relative to trees.
+/// 
+/// # Definitions
+/// - **Self-loops**: Edges with source equal to the destination.
+/// - **Singleton**: A node with no incident edges, (self-loops are not considered).
+/// - **Spanning Tree**: A set of edges that allows to build a path between every
+///     node in the graph. For a graph with n nodes the spanning tree will have n - 1 edges.
+/// - **Spanning Arborescence**: is the generalizzation of the spanning tree for graphs
+///     with multiple components. Being a tree it trivially contains no self-loops.
+///     For a grpah with n nodes and c components the spanning arborescence will have
+///     n - c edges.
+/// - **Component**: Set of nodes in which any two vertices in it are connected to
+///     each other by paths. A singleton is a component and so is a singleton with a 
+///     self-loop.
 impl Graph {
     fn iter_edges_from_random_state(
         &self,
         random_state: u64,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        let edges_number = self.get_edges_number();
+        let edges_number = self.get_directed_edges_number();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
@@ -32,27 +45,27 @@ impl Graph {
     fn iter_on_edges_with_preference<'a>(
         &'a self,
         random_state: u64,
-        unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
         let pb = get_loading_bar(
             verbose,
             format!("Building random spanning tree for {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
             if let (Some(uet), _) = (unwanted_edge_types, &self.edge_types) {
                 Box::new(
                     self.iter_edges_from_random_state(random_state)
                         .filter_map(move |(edge_id, src, dst)| {
-                            if uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                            if uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))
                         })
                         .chain(self.iter_edges_from_random_state(random_state).filter_map(
                             move |(edge_id, src, dst)| {
-                                if !uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                                if !uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                     return None;
                                 }
                                 Some((src, dst))
@@ -71,10 +84,21 @@ impl Graph {
 
     /// Returns set of edges composing a spanning tree and connected components.
     ///
+    /// If the graph is composed of a single node with one or more self-loops,
+    /// we consider such a graph as a graph with an empty spanning tree, with
+    /// a single component of size one.
+    ///
     /// # Arguments
     ///
-    /// TODO: Updated docstrings.
+    /// `edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.
     ///
+    /// # Returns
+    /// Tuple with:
+    ///     - Set of the edges
+    ///     - Vector of the nodes components
+    ///     - Total components number
+    ///     - Minimum component size
+    ///     - Maximum component size
     pub fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
@@ -85,6 +109,26 @@ impl Graph {
         let mut merged_component_number = 0;
         let mut component_sizes: Vec<usize> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
+
+        // When there are singleton nodes with self-loops,
+        // which is an arguability weird feature of some graphs,
+        // Kruskal fails to identify them because by definition
+        // a tree cannot contain self-loop.
+        // We call these nodes with one or more self-loops
+        // (in the case of a multigraph) `singletons with self-loops` for lack of
+        // a better term. These nodes are treated as nodes in their own
+        // component and their edges (the self-loops) are not added to the tree.
+        if self.has_singletons() || self.has_singleton_nodes_with_self_loops_number() {
+            (0..self.get_nodes_number())
+                .filter(|node_id| {
+                    self.is_singleton(*node_id) || self.is_singleton_with_self_loops(*node_id)
+                })
+                .for_each(|node_id| {
+                    components[node_id as usize] = component_sizes.len() as NodeT;
+                    components_remapping.push(component_sizes.len() as NodeT);
+                    component_sizes.push(1);
+                });
+        }
 
         edges.for_each(|(src, dst)| {
             if src == dst {
@@ -197,7 +241,7 @@ impl Graph {
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
-        unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))
@@ -219,6 +263,7 @@ impl Graph {
     }
 
     /// Returns set of edges composing a spanning tree.
+    ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(
@@ -232,7 +277,7 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
-        let cpu_number = num_cpus::get();
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
             .build()
@@ -288,6 +333,11 @@ impl Graph {
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
+                                if (*ptr)[src] != NOT_PRESENT {
+                                    break;
+                                }
+                            }
+                            unsafe {
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
@@ -338,7 +388,9 @@ impl Graph {
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
         Ok((
+            // Number of edges inserted
             total_inserted_edges.load(Ordering::SeqCst),
+            // Return an iterator over all the edges in the spanning arborescence
             (0..self.get_nodes_number()).filter_map(move |src| {
                 let dst = parents[src as usize];
                 // If the edge is NOT registered as a self-loop
@@ -369,13 +421,13 @@ impl Graph {
     ///  // Graph is a weightless graph with the edges
     ///  // [(0, 1), (1, 4), (2, 3)]
     ///  # let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![
-    ///  #        Ok(("0".to_string(), "1".to_string(), None, None)), 
-    ///  #        Ok(("1".to_string(), "4".to_string(), None, None)), 
-    ///  #        Ok(("2".to_string(), "3".to_string(), None, None)), 
+    ///  #        Ok(("0".to_string(), "1".to_string(), None, None)),
+    ///  #        Ok(("1".to_string(), "4".to_string(), None, None)),
+    ///  #        Ok(("2".to_string(), "3".to_string(), None, None)),
     ///  #     ];
-    ///  # 
+    ///  #
     ///  # let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());
-    ///  # 
+    ///  #
     ///  # let graph = Graph::from_string_unsorted(
     ///  #     edge.into_iter(),
     ///  #     nodes,      // nodes
@@ -393,12 +445,12 @@ impl Graph {
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_weights
     ///  # ).unwrap();
-    /// let (components, number_of_components, smallest, biggest) = 
+    /// let (components, number_of_components, smallest, biggest) =
     ///     graph.connected_components(false).unwrap();
-    /// 
+    ///
     /// //   nodes names:       0  1  4  2  3
     /// assert_eq!(components, [0, 0, 0, 1, 1].to_vec());
-    /// 
+    ///
     /// assert_eq!(number_of_components, 2);
     /// assert_eq!(smallest, 2); // the size of the smallest component
     /// assert_eq!(biggest, 3);  // the size of the biggest component
@@ -415,7 +467,7 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
         let mut component_sizes: Vec<NodeT> = Vec::new();
-        let cpu_number = num_cpus::get();
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
             .build()
@@ -491,7 +543,7 @@ impl Graph {
                             // The check here might seems redundant but its' needed
                             // to prevent data races.
                             //
-                            // If the last parallel thread finishes its stack between the 
+                            // If the last parallel thread finishes its stack between the
                             // presence check above and the active nodes numbers check
                             // the src node will never increase the component size and thus
                             // leading to wrong results.
@@ -522,7 +574,7 @@ impl Graph {
                 s.spawn(|_| 'outer: loop {
                     // get the id, we use this as an idex for the stacks vector.
                     let thread_id = rayon::current_thread_index().unwrap();
-                    
+
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
@@ -538,7 +590,7 @@ impl Graph {
                             }
                         }
                     };
-                    
+
                     self.get_neighbours_iter(src).for_each(|dst| {
                         let ptr = thread_safe_components.value.get();
                         if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {

@@ -11,7 +11,9 @@ impl Graph {
             return false;
         }
         self.get_nodes_names_iter()
-            .all(|(_, node_name, node_type)| other.has_node_string(&node_name, node_type))
+            .all(|(_, node_name, node_type)| {
+                other.has_node_with_type_by_name(&node_name, node_type)
+            })
     }
 
     /// Return graph remapped towards nodes of the given graph.
@@ -25,7 +27,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             format!("Building remapped {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         if !self.are_nodes_remappable(&other) {
@@ -47,7 +49,6 @@ impl Graph {
             other.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
-            true,
             self.name.clone(),
             false,
             self.has_edge_types(),

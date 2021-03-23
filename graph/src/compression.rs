@@ -43,7 +43,7 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_id_from_tuple(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
+    pub(crate) fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
         self.edges
             .rank(self.encode_edge(src, dst))
             .map(|value| value as EdgeT)

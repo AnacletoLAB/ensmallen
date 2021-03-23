@@ -148,8 +148,8 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.remove_components(
                 pyex!(extract_value!(kwargs, "node_names", Vec<String>))?,
-                pyex!(extract_value!(kwargs, "node_types", Vec<String>))?,
-                pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+                pyex!(extract_value!(kwargs, "node_types", Vec<Option<String>>))?,
+                pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
                 pyex!(extract_value!(kwargs, "minimum_component_size", NodeT))?,
                 pyex!(extract_value!(kwargs, "top_k_components", NodeT))?,
                 pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),

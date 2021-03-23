@@ -13,10 +13,10 @@ impl Graph {
         vocabulary.insert(edge_type.into()).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
         let edge_types = EdgeTypeVocabulary::from_structs(
-            vec![Some(0); self.get_edges_number() as usize],
-            Some(vocabulary),
+            vec![Some(0); self.get_directed_edges_number() as usize],
+            vocabulary,
         );
-        self.edge_types = edge_types;
+        self.edge_types = Some(edge_types);
         self
     }
 

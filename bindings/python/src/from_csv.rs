@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, Graph, NodeT};
+use graph::{Graph, NodeT};
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -297,7 +297,7 @@ impl EnsmallenGraph {
         edge_path: String,
         directed: bool,
         nodes_number: NodeT,
-        edges_number: EdgeT,
+        edges_number: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<EnsmallenGraph> {
         let _ = ctrlc::set_handler(|| std::process::exit(2));

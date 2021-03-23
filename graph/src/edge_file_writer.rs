@@ -46,7 +46,10 @@ impl EdgeFileWriter {
     ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
-    pub fn set_sources_column<S: Into<String>>(mut self, sources_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_sources_column<S: Into<String>>(
+        mut self,
+        sources_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = sources_column {
             self.sources_column = column.into();
         }
@@ -107,7 +110,10 @@ impl EdgeFileWriter {
     ///
     /// * edge_types_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_edge_types_column<S: Into<String>>(mut self, edge_type_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_edge_types_column<S: Into<String>>(
+        mut self,
+        edge_type_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = edge_type_column {
             self.edge_types_column = column.into();
         }
@@ -136,7 +142,10 @@ impl EdgeFileWriter {
     ///
     /// * weights_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_weights_column<S: Into<String>>(mut self, weights_column: Option<S>) -> EdgeFileWriter {
+    pub fn set_weights_column<S: Into<String>>(
+        mut self,
+        weights_column: Option<S>,
+    ) -> EdgeFileWriter {
         if let Some(column) = weights_column {
             self.weights_column = column.into();
         }
@@ -252,7 +261,7 @@ impl EdgeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_edges_number() as usize,
+            graph.get_directed_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
                 .get_edges_quadruples(directed)
@@ -261,14 +270,14 @@ impl EdgeFileWriter {
                         (
                             match self.numeric_node_ids {
                                 true => src.to_string(),
-                                false => graph.nodes.translate(src).to_string(),
+                                false => graph.nodes.unchecked_translate(src),
                             },
                             self.sources_column_number,
                         ),
                         (
                             match self.numeric_node_ids {
                                 true => dst.to_string(),
-                                false => graph.nodes.translate(dst).to_string(),
+                                false => graph.nodes.unchecked_translate(dst),
                             },
                             self.destinations_column_number,
                         ),
@@ -276,7 +285,7 @@ impl EdgeFileWriter {
 
                     if let Some(ets) = &graph.edge_types {
                         line.push((
-                            ets.translate(edge_type.unwrap()).to_string(),
+                            edge_type.map_or("".to_string(), |et| ets.unchecked_translate(et)),
                             self.edge_types_column_number,
                         ));
                     }

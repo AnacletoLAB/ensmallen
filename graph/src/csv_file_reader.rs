@@ -137,13 +137,12 @@ impl CSVFileReader {
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(self.get_lines_iterator(true)?
             .progress_with(pb)
-            .enumerate()
             // skip empty lines
-            .take_while(move |(i, _)| self.max_rows_number.unwrap_or(u64::MAX) > *i as u64)
-            .map(|(_, line)| line)
+            .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             // Handling NaN values and padding them to the number of rows
             .map_ok(move |line|{
-                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| match element.is_empty() {
+                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| 
+                    match element.is_empty() {
                     true=>None,
                     false=>Some(element.to_string())
                 }).collect();

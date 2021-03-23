@@ -6,6 +6,9 @@ authors = ["Automatically generated"]
 publish = false
 edition = "2018"
 
+[profile.release]
+panic = "unwind"
+
 [package.metadata]
 cargo-fuzz = true
 
@@ -28,5 +31,11 @@ doc = false
 [[bin]]
 name = "from_vec"
 path = "fuzz_targets/from_vec.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "mega_test"
+path = "fuzz_targets/mega_test.rs"
 test = false
 doc = false

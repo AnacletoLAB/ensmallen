@@ -3,9 +3,9 @@ use super::*;
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
-use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
@@ -214,7 +214,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.degrees_mean());
     /// ```
     pub fn degrees_mean(&self) -> f64 {
-        self.get_edges_number() as f64 / self.get_nodes_number() as f64
+        self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64
     }
 
     /// Returns number of undirected edges of the graph.
@@ -223,7 +223,42 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_edges_number() - self.get_self_loop_number()) / 2 + self.get_self_loop_number()
+        (self.get_directed_edges_number() - self.get_self_loop_number()) / 2
+            + self.get_self_loop_number()
+    }
+
+    /// Returns number of undirected edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
+    /// ```
+    pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
+        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2
+            + self.get_unique_self_loop_number() as EdgeT
+    }
+
+    /// Returns number of edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of edges of the graph is  {}", graph.get_edges_number());
+    /// ```
+    pub fn get_edges_number(&self) -> EdgeT {
+        match self.directed {
+            true => self.get_directed_edges_number(),
+            false => self.get_undirected_edges_number(),
+        }
+    }
+
+    /// Returns number of unique edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of edges of the graph is  {}", graph.get_unique_edges_number());
+    /// ```
+    pub fn get_unique_edges_number(&self) -> EdgeT {
+        match self.directed {
+            true => self.get_unique_directed_edges_number(),
+            false => self.get_unique_undirected_edges_number(),
+        }
     }
 
     /// Returns median node degree of the graph
@@ -298,7 +333,7 @@ impl Graph {
     /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate());
     /// ```
     pub fn get_self_loop_rate(&self) -> f64 {
-        self.get_self_loop_number() as f64 / self.get_edges_number() as f64
+        self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64
     }
 
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
@@ -350,10 +385,11 @@ impl Graph {
     /// ```
     pub fn density(&self) -> f64 {
         let nodes_number = self.get_nodes_number() as EdgeT;
-        let total_nodes_number = nodes_number * match self.has_selfloops(){
-            true=>nodes_number,
-            false=>nodes_number-1
-        };
+        let total_nodes_number = nodes_number
+            * match self.has_selfloops() {
+                true => nodes_number,
+                false => nodes_number - 1,
+            };
         self.unique_edges_number as f64 / total_nodes_number as f64
     }
 
@@ -382,7 +418,7 @@ impl Graph {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
         report.insert("name", self.name.clone());
         report.insert("nodes_number", self.get_nodes_number().to_string());
-        report.insert("edges_number", self.get_edges_number().to_string());
+        report.insert("edges_number", self.get_directed_edges_number().to_string());
         report.insert(
             "undirected_edges_number",
             self.get_undirected_edges_number().to_string(),
@@ -458,13 +494,15 @@ impl Graph {
         // Get overlapping nodes
         let overlapping_nodes_number = self
             .get_nodes_names_iter()
-            .filter(|(_, node_name, node_type)| other.has_node_string(node_name, node_type.clone()))
+            .filter(|(_, node_name, node_type)| {
+                other.has_node_with_type_by_name(node_name, node_type.clone())
+            })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
             .get_edges_par_string_triples(self.directed)
             .filter(|(_, src_name, dst_name, edge_type_name)| {
-                other.has_edge_string(src_name, dst_name, edge_type_name.as_ref())
+                other.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref())
             })
             .count();
         // Get number of overlapping components
@@ -483,11 +521,11 @@ impl Graph {
             other.merged_components_number(&second_nodes_components, self);
 
         let first_edges = match self.directed {
-            true => self.get_edges_number(),
+            true => self.get_directed_edges_number(),
             false => self.get_undirected_edges_number(),
         };
         let second_edges = match other.directed {
-            true => other.get_edges_number(),
+            true => other.get_directed_edges_number(),
             false => other.get_undirected_edges_number(),
         };
         // Building up the report
@@ -623,7 +661,7 @@ impl Graph {
         self.format_list(
             edge_types_list
                 .iter()
-                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap())
+                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap().clone())
                 .collect::<Vec<String>>()
                 .as_slice(),
         )
@@ -637,7 +675,7 @@ impl Graph {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
         let hash = hasher.finish();
-    
+
         Ok(format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
@@ -657,10 +695,7 @@ impl Graph {
             }.to_owned(),
             name = self.name,
             nodes_number = self.get_nodes_number(),
-            edges_number = match self.directed {
-                true => self.get_edges_number(),
-                false => self.get_undirected_edges_number(),
-            },
+            edges_number = self.get_edges_number(),
             weighted = match self.has_weights(){
                 true=> "weighted",
                 false=> "unweighted"
@@ -689,7 +724,7 @@ impl Graph {
                     }
                 ),
                 ntn if ntn > 1 => format!(
-                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}",
+                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}.",
                     node_types_number=ntn,
                     multilabel=match self.has_multilabel_node_types(){
                         true=>"multi-label ",
@@ -708,7 +743,7 @@ impl Graph {
                             true=>{
                                 let unknown_nodes_number=self.get_unknown_node_types_number();
                                 let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
-                                format!(". There are {} unknown node types ({:.2}%).", unknown_nodes_number, percentage)
+                                format!(" and there are {} unknown node types ({:.2}%)", unknown_nodes_number, percentage)
                             },
                             false=>"".to_owned()
                         }
@@ -718,7 +753,7 @@ impl Graph {
             },
             singletons = match self.has_singletons() {
                 true => format!(
-                    ", of which {singleton_number} are singletons{self_loop_singleton},", 
+                    " There are {singleton_number} singleton nodes{self_loop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
                     self_loop_singleton=match self.has_singleton_nodes_with_self_loops_number(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){
@@ -753,7 +788,7 @@ impl Graph {
                         match self.has_unknown_edge_types(){
                             true=>{
                                 let unknown_edges_number=self.get_unknown_edge_types_number();
-                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_edges_number() as f64);
+                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_directed_edges_number() as f64);
                                 format!(". There are {} unknown edge types ({:.2}%).", unknown_edges_number, percentage)
                             },
                             false=>"".to_owned()
