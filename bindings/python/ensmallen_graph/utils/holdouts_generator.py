@@ -41,12 +41,12 @@ def holdouts_generator(
             # The multiplication is a simple way to make the
             # randomly sampled holdouts a bit farther one to the other.
             random_state=random_state+i*random_state_factor,
-            verbose=verbose
+            verbose=verbose,
+            **kwargs
         ))
         for i in trange(
             holdouts_number,
             disable=not verbose,
-            kwargs=kwargs,
             desc=desc,
         )
     )
