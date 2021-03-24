@@ -5,7 +5,8 @@ from tqdm.auto import trange
 
 def holdouts_generator(
     holdout_callback: Callable,
-    holdouts_number: int,
+    train_size: float = 0.8,
+    holdouts_number: int = 10,
     random_state: int = 42,
     random_state_factor: int = 1000,
     desc: str = "Computing holdouts",
@@ -21,7 +22,12 @@ def holdouts_generator(
     ----------------------------
     holdout_callback: Callable,
         The callback that generates the training and test holdout.
-    holdouts_number: int,
+    train_size: float = 0.8,
+        The portion of the data to reserve for the training data.
+        Note that this value is a maximal, if there is an odd number
+        of values the value will be assigned to the test set in order to
+        avoid a potentially small positive evaluation bias.
+    holdouts_number: int = 10,
         The number of holdouts to yield.
     random_state: int = 42,
         The random state to use to start generating the holdouts.
@@ -38,6 +44,7 @@ def holdouts_generator(
     return (
         (i, holdout_callback(
             **kwargs,
+            train_size=train_size,
             # The multiplication is a simple way to make the
             # randomly sampled holdouts a bit farther one to the other.
             random_state=random_state+i*random_state_factor,
