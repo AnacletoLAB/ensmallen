@@ -11,6 +11,7 @@ def holdouts_generator(
     random_state_factor: int = 1000,
     desc: str = "Computing holdouts",
     disable: bool = False,
+    enable_speedup: bool = True,
     **kwargs: Dict
 ) -> Generator:
     """Return generator of the holdouts.
@@ -38,20 +39,32 @@ def holdouts_generator(
         The description for the TQDM bar.
     disable: bool = False,
         Whether to show the loading bars,
+    enable_speedup: bool = True,
+        Whether to enable all speedups in the holdouts graphs.
     **kwargs: Dict,
         The kwargs to pass to the given callback.
     """
-    return (
-        (i, holdout_callback(
+    for holdout_number in trange(
+        holdouts_number,
+        disable=disable,
+        desc=desc,
+    ):
+        # Generate the training and test graphs.
+        train_graph, test_graph = holdout_callback(
             **kwargs,
             train_size=train_size,
             # The multiplication is a simple way to make the
             # randomly sampled holdouts a bit farther one to the other.
-            random_state=random_state+i*random_state_factor,
-        ))
-        for i in trange(
-            holdouts_number,
-            disable=disable,
-            desc=desc,
+            random_state=random_state+holdout_number*random_state_factor,
         )
-    )
+        # Enable the speedups
+        if enable_speedup:
+            train_graph.enable(
+                vector_destinations=True,
+                vector_outbounds=True
+            )
+            test_graph.enable(
+                vector_destinations=True,
+                vector_outbounds=True
+            )
+        yield holdout_number, (train_graph, test_graph)
