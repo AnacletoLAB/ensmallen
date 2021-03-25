@@ -97,7 +97,11 @@ pub fn load_ppi(
             None
         })
         .set_max_rows_number(Some(100000))
-        .set_default_weight(Some(5.0))
+        .set_default_weight(if load_weights {
+            Some(5.0)
+        } else {
+            None
+        })
         .set_skip_self_loops(Some(skip_self_loops))
         .clone();
 
@@ -963,7 +967,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         "Number of node types of the graph is not 1."
     );
     assert_eq!(
-        clone.get_unchecked_node_count_by_node_type(0),
+        clone.get_unchecked_node_count_by_node_type(Some(0)),
         graph.get_nodes_number(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );

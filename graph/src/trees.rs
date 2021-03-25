@@ -34,7 +34,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_edge_from_edge_id(edge_id);
+            let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),

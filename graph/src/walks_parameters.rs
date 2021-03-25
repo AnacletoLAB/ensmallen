@@ -14,7 +14,7 @@ pub struct WalkWeights {
 #[derive(Clone, Debug)]
 /// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
-    pub(crate) walk_length: NodeT,
+    pub(crate) walk_length: u64,
     pub(crate) weights: WalkWeights,
     pub(crate) max_neighbours: Option<NodeT>,
 }
@@ -94,7 +94,7 @@ impl SingleWalkParameters {
     /// # Arguments
     ///
     /// * walk_length: usize - Maximal walk_length of the walk.
-    pub fn new(walk_length: NodeT) -> Result<SingleWalkParameters, String> {
+    pub fn new(walk_length: u64) -> Result<SingleWalkParameters, String> {
         if walk_length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
@@ -120,7 +120,7 @@ impl WalksParameters {
     /// # Arguments
     ///
     /// * walk_length: NodeT - Maximal walk_length of the walk.
-    pub fn new(walk_length: NodeT) -> Result<WalksParameters, String> {
+    pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(walk_length)?,
             iterations: 1,

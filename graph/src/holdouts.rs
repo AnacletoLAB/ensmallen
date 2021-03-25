@@ -657,10 +657,10 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| {
-                train_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+                train_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
             node_set[train_size..].iter().for_each(|node_id| {
-                test_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+                test_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
         }
 

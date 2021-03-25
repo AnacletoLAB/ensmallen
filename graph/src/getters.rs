@@ -4,34 +4,87 @@ use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use std::iter::once;
+use vec_rand::sorted_unique_sub_sampling;
 
 impl Graph {
     /// Return name of the graph.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The name of the current graph is {}.", graph.get_name());
+    /// ```
+    ///
     pub fn get_name(&self) -> String {
         self.name.clone()
     }
 
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("There are {} trap nodes in the current graph.", graph.get_traps_number());
+    /// ```
+    ///
     pub fn get_traps_number(&self) -> EdgeT {
         self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
     }
 
-    // Return if the graph has traps or not
+    // Return whether the graph has trap nodes.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// if graph.has_traps(){
+    ///     println!("There are {} trap nodes in the current graph.", graph.get_traps_number());
+    /// } else {
+    ///     println!("There are no trap nodes in the current graph.");
+    /// }
+    /// ```
+    ///
     pub fn has_traps(&self) -> bool {
         self.get_traps_number() > 0
     }
 
     /// Returns boolean representing if graph is directed.
+    ///
+    /// # Example
+    /// ```rust
+    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(directed_string_ppi.is_directed());
+    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// assert!(!undirected_string_ppi.is_directed());
+    /// ```
+    ///
     pub fn is_directed(&self) -> bool {
         self.directed
     }
 
-    /// Returns boolean representing if graph has weights.
+    /// Returns boolean representing whether graph has weights.
+    ///
+    /// # Example
+    /// ```rust
+    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(weights_string_ppi.has_weights());
+    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// assert!(!unweights_string_ppi.has_weights());
+    /// ```
+    ///
     pub fn has_weights(&self) -> bool {
         self.weights.is_some()
     }
 
-    /// Returns boolean representing if graph has edge types.
+    /// Returns boolean representing whether graph has edge types.
+    ///
+    /// # Example
+    /// ```rust
+    /// let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(string_ppi_with_edge_types.has_edge_types());
+    /// let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
+    /// assert!(!string_ppi_without_edge_types.has_edge_types());
+    /// ```
+    ///
     pub fn has_edge_types(&self) -> bool {
         self.edge_types.is_some()
     }
@@ -263,20 +316,17 @@ impl Graph {
     }
 
     /// Returs option with the edge type of the given edge id.
-    pub fn get_unchecked_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
-        match &self.edge_types {
-            Some(ets) => ets.ids[edge_id as usize],
-            None => None,
-        }
+    pub(crate) fn get_unchecked_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
+        self.edge_types.as_ref().and_then(|ets| ets.ids[edge_id as usize])
     }
 
     /// Returs option with the weight of the given edge id.
-    pub fn get_unchecked_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
+    pub(crate) fn get_unchecked_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
     /// Returs option with the node type of the given node id.
-    pub fn get_unchecked_node_type(&self, node_id: NodeT) -> Option<Vec<NodeTypeT>> {
+    pub(crate) fn get_unchecked_node_type_id_by_node_id(&self, node_id: NodeT) -> Option<Vec<NodeTypeT>> {
         self.node_types
             .as_ref()
             .and_then(|nts| nts.ids[node_id as usize].clone())
@@ -286,12 +336,12 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node_id: NodeT - node whose node type is to be returned.
+    /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0).unwrap());
+    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0));
     /// ```
     ///
     pub fn get_node_type_id_by_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
@@ -343,7 +393,7 @@ impl Graph {
     /// Returs option with the node type of the given node id.
     pub fn get_node_type_name(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
-            true => Ok(match self.get_unchecked_node_type(node_id) {
+            true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
                 Some(node_type_id) => Some(self.translate_node_type_id_vector(node_type_id)?),
                 None => None,
             }),
@@ -489,20 +539,12 @@ impl Graph {
 
     /// Returns number of edge types in the graph.
     pub fn get_edge_types_number(&self) -> EdgeTypeT {
-        if let Some(etm) = &self.edge_types {
-            etm.len() as EdgeTypeT
-        } else {
-            0
-        }
+        self.edge_types.as_ref().map_or(0, |ets| ets.len() as EdgeTypeT)
     }
 
     /// Returns number of node types in the graph.
     pub fn get_node_types_number(&self) -> NodeTypeT {
-        if let Some(etm) = &self.node_types {
-            etm.len() as NodeTypeT
-        } else {
-            0
-        }
+        self.node_types.as_ref().map_or(0, |nts| nts.len() as NodeTypeT)
     }
 
     /// Returns the degree of every node in the graph.
@@ -531,11 +573,31 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_unchecked_edge_count_by_edge_type(&self, edge_type: Option<EdgeTypeT>) -> EdgeT {
+    /// Return number of edges of the given edge type without checks.
+    /// 
+    /// # Arguments
+    /// 
+    /// * edge_type: Option<EdgeTypeT> - The edge type to retrieve count of.
+    ///
+    pub(crate) fn get_unchecked_edge_count_by_edge_type(&self, edge_type: Option<EdgeTypeT>) -> EdgeT {
         match (&self.edge_types, edge_type) {
-            (None, _) => 0,
             (Some(ets), None) => ets.get_unknown_count(),
             (Some(ets), Some(et)) => ets.counts[et as usize],
+            _ => unreachable!("The current graph instance does not have edge types!")
+        }
+    }
+
+    /// Return number of nodes of the given node type without checks.
+    /// 
+    /// # Arguments
+    /// 
+    /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
+    ///
+    pub(crate) fn get_unchecked_node_count_by_node_type(&self, node_type: Option<NodeTypeT>) -> NodeT {
+        match (&self.node_types, node_type) {
+            (Some(nts), None) => nts.get_unknown_count(),
+            (Some(nts), Some(nt)) => nts.counts[nt as usize],
+            _ => unreachable!("The current graph instance does not have node types!")
         }
     }
 
@@ -575,13 +637,6 @@ impl Graph {
         self.get_edge_count_by_edge_type(self.get_edge_type_id(edge_type)?)
     }
 
-    pub fn get_unchecked_node_count_by_node_type(&self, node_type: NodeTypeT) -> NodeT {
-        match &self.node_types {
-            None => 0,
-            Some(nts) => nts.counts[node_type as usize],
-        }
-    }
-
     pub fn get_node_type_id(&self, node_type_name: &str) -> Result<NodeTypeT, String> {
         if let Some(ets) = &self.node_types {
             return match ets.get(node_type_name) {
@@ -595,22 +650,25 @@ impl Graph {
         Err("Current graph does not have node types.".to_owned())
     }
 
-    pub fn get_node_count_by_node_type(&self, node_type: NodeTypeT) -> Result<NodeT, String> {
+    pub fn get_node_count_by_node_type(&self, node_type: Option<NodeTypeT>) -> Result<NodeT, String> {
         if !self.has_node_types() {
             return Err("Current graph does not have node types!".to_owned());
         }
-        if self.get_node_types_number() <= node_type {
+        if node_type.map_or(false, |nt| self.get_node_types_number() <= nt) {
             return Err(format!(
-                "Given node type ID {} is bigger than number of node types in the graph {}.",
-                self.get_node_types_number(),
-                node_type
+                "Given node type ID {:?} is bigger than number of node types in the graph {}.",
+                node_type,
+                self.get_node_types_number()
             ));
         }
         Ok(self.get_unchecked_node_count_by_node_type(node_type))
     }
 
-    pub fn get_node_count_by_node_type_name(&self, node_type: &str) -> Result<NodeT, String> {
-        self.get_node_count_by_node_type(self.get_node_type_id(node_type)?)
+    pub fn get_node_count_by_node_type_name(&self, node_type_name: Option<&str>) -> Result<NodeT, String> {
+        self.get_node_count_by_node_type(node_type_name.map_or(
+            Ok::<_, String>(None), 
+            |ntn| Ok(Some(self.get_node_type_id(ntn)?))
+        )?)
     }
 
     /// Return if there are multiple edges between two nodes
@@ -633,11 +691,11 @@ impl Graph {
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
         match &self.destinations {
             Some(destinations) => destinations[edge_id as usize],
-            None => self.get_edge_from_edge_id(edge_id).1,
+            None => self.get_node_ids_from_edge_id(edge_id).1,
         }
     }
 
-    pub fn get_destinations_range(
+    pub(crate) fn get_destinations_range(
         &self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
@@ -646,11 +704,107 @@ impl Graph {
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
-    pub fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
+    pub(crate) fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
         self.get_unchecked_destinations_range(src)
             .map(move |edge_id| self.get_destination(edge_id))
     }
 
+    pub(crate) fn get_node_edges_and_destinations(
+        &self,
+        max_neighbours: Option<NodeT>,
+        random_state: u64,
+        node: NodeT,
+    ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
+        // We retrieve the range of edge ids, the minimum and maximum value.
+        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
+        // If the destinations are stored explicitly because the time-memory tradeoff is enabled we are done.
+        if self.destinations.is_some() {
+            return (min_edge_id, max_edge_id, None, None);
+        }
+
+        // Otherwise we check if subsampling is enabled and if so, if it makes sense:
+        // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
+        // than the required sub-sampling we do not use it as it would be useless.
+        if let Some(indices) = max_neighbours.and_then(|mn| {
+            sorted_unique_sub_sampling(min_edge_id, max_edge_id, mn as u64, random_state).ok()
+        }) {
+            let destinations: Vec<NodeT> = match self
+                .cached_destinations
+                .as_ref()
+                .and_then(|cds| cds.get(&node))
+            {
+                Some(dsts) => indices
+                    .iter()
+                    .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
+                    .collect(),
+                None => indices
+                    .iter()
+                    .map(|edge_id| self.get_destination(*edge_id))
+                    .collect(),
+            };
+            return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
+        }
+
+        // Finally if we are using the cache without sub-sampling
+        let destinations = match self
+            .cached_destinations
+            .as_ref()
+            .map_or(false, |cds| cds.contains_key(&node))
+        {
+            true => None,
+            false => Some(
+                self.get_destinations_range(min_edge_id, max_edge_id)
+                    .collect(),
+            ),
+        };
+        (min_edge_id, max_edge_id, destinations, None)
+    }
+
+    pub(crate) fn get_destinations_slice<'a>(
+        &'a self,
+        min_edge_id: EdgeT,
+        max_edge_id: EdgeT,
+        node: NodeT,
+        destinations: &'a Option<Vec<NodeT>>,
+    ) -> &'a [NodeT] {
+        match (&self.destinations, &self.cached_destinations, destinations) {
+            (_, _, Some(dsts)) => &dsts.as_slice(),
+            (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
+            (None, Some(dsts), None) => dsts.get(&node).unwrap(),
+            _ => unreachable!(
+                "It is not possible to have both destinations and cached destinations at once."
+            ),
+        }
+    }
+
+    /// Return (subsampled) vector of destinations of given node.
+    /// 
+    /// If the max neighbours parameter is given, and is smaller than the 
+    /// number of the neighbours of the given node, the subsampling
+    /// mechanism is given.
+    /// 
+    /// # Arguments
+    /// `node`: NodeT - Node whose neighbours are to return.
+    /// `random_state`: u64 - Random state to subsample neighbours.
+    /// `max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider.
+    pub(crate) fn get_node_destinations(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        max_neighbours: Option<NodeT>,
+    )->Vec<NodeT>{
+        let (min_edge_id, max_edge_id, destinations, _) =
+            self.get_node_edges_and_destinations(max_neighbours, random_state, node);
+        self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations).to_owned()
+    }
+
+    /// Return number of unique source nodes number.
+    /// 
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The graph has {} unique source nodes.", graph.get_unique_sources_number());
+    /// ```
     pub fn get_unique_sources_number(&self) -> NodeT {
         self.unique_sources.len() as NodeT
     }
@@ -664,22 +818,41 @@ impl Graph {
         self.unique_sources.len() as NodeT
     }
 
-    pub fn get_unchecked_edge_id(
+    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    /// 
+    /// This method will cause a panic if used improperly when it is not certain
+    /// that the edge exists.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - Source node of the edge. 
+    /// `dst`: NodeT - Destination node of the edge.
+    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    pub(crate) fn get_unchecked_edge_id(
         &self,
         src: NodeT,
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
-        if let Some(ets) = &self.edge_types {
-            return self
-                .get_unchecked_edge_ids_range(src, dst)
-                // The vectors of the edge types can only have one element.
-                .find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
-                .unwrap();
-        }
-        self.get_unchecked_edge_id_from_tuple(src, dst)
+        self.edge_types.as_ref().map_or_else(
+            || self.get_unchecked_edge_id_from_tuple(src, dst),
+            |ets| self
+            .get_unchecked_edge_ids_range(src, dst)
+            // The vectors of the edge types can only have one element.
+            .find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+            .unwrap()
+        )
     }
 
+    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    /// 
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - Source node of the edge. 
+    /// `dst`: NodeT - Destination node of the edge.
+    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    ///
     pub fn get_edge_id_with_type_by_node_ids(
         &self,
         src: NodeT,

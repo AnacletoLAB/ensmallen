@@ -3,7 +3,6 @@ use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
 use vec_rand::sample_uniform;
-use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::splitmix64;
 
 #[inline(always)]
@@ -299,28 +298,6 @@ mod tests {
     }
 }
 
-fn get_probabilistic_indices(
-    min_edge_id: EdgeT,
-    max_edge_id: EdgeT,
-    max_neighbours: &Option<NodeT>,
-    random_state: NodeT,
-) -> Option<Vec<u64>> {
-    if let Some(mn) = max_neighbours {
-        if (*mn as u64) < (max_edge_id - min_edge_id) {
-            return Some(
-                sorted_unique_sub_sampling(
-                    min_edge_id,
-                    max_edge_id,
-                    *mn as u64,
-                    random_state as u64,
-                )
-                .unwrap(),
-            );
-        }
-    }
-    None
-}
-
 impl Graph {
     /// Return the base weighted transitions.
     ///
@@ -358,7 +335,7 @@ impl Graph {
     /// when the node type changes.
     ///
     /// # Arguments
-    /// 
+    ///
     /// node: NodeT - Source node.
     /// transition: &mut Vec<WeightT> - Vector of transitions to update.
     /// destinations: impl Iterator<Item = NodeT> - Iterator of the destinations.
@@ -442,7 +419,7 @@ impl Graph {
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
-        has_selfloop: bool
+        has_selfloop: bool,
     ) -> (Vec<WeightT>, EdgeT) {
         let mut transition =
             self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
@@ -511,7 +488,7 @@ impl Graph {
                     src,
                     dst,
                     walk_weights.return_weight,
-                    has_selfloop
+                    has_selfloop,
                 );
             }
         }
@@ -524,17 +501,18 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
-    /// * random_state: usize, the random_state to use for extracting the node.
+    /// * random_state: u64, the random_state to use for extracting the node.
     ///
-    pub fn extract_uniform_node(&self, node: NodeT, random_state: NodeT) -> NodeT {
+    fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
         let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
-        let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state as u64);
+        let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state);
 
-        match &self.cached_destinations {
-            Some(cds) => match cds.get(&node) {
-                Some(dsts) => dsts[sampled_offset],
-                None => self.get_destination(min_edge + sampled_offset as EdgeT),
-            },
+        match self
+            .cached_destinations
+            .as_ref()
+            .and_then(|cds| cds.get(&node))
+        {
+            Some(dsts) => dsts[sampled_offset],
             None => self.get_destination(min_edge + sampled_offset as EdgeT),
         }
     }
@@ -549,7 +527,7 @@ impl Graph {
     pub fn extract_node(
         &self,
         node: NodeT,
-        random_state: NodeT,
+        random_state: u64,
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
@@ -564,16 +542,18 @@ impl Graph {
             destinations,
             probabilistic_indices,
         );
-        let sampled_offset = sample(&mut weights, random_state as u64);
+        let sampled_offset = sample(&mut weights, random_state);
         let edge_id = match probabilistic_indices {
             Some(inds) => inds[sampled_offset],
             None => min_edge_id + sampled_offset as EdgeT,
         };
-        let destination = match &self.cached_destinations {
-            Some(cds) => match cds.get(&node) {
-                Some(dsts) => dsts[sampled_offset],
-                None => self.get_destination(edge_id),
-            },
+
+        let destination = match self
+            .cached_destinations
+            .as_ref()
+            .and_then(|cds| cds.get(&node))
+        {
+            Some(dsts) => dsts[sampled_offset],
             None => self.get_destination(edge_id),
         };
         (destination, edge_id)
@@ -599,7 +579,7 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
         edge: EdgeT,
-        random_state: NodeT,
+        random_state: u64,
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
@@ -617,7 +597,7 @@ impl Graph {
             destinations,
             previous_destinations,
             probabilistic_indices,
-            self.has_selfloops()
+            self.has_selfloops(),
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
         let edge_id = match probabilistic_indices {
@@ -654,7 +634,7 @@ impl Graph {
                 let random_source_id =
                     splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
-                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64),
                     self.get_unique_source(random_source_id % self.get_source_nodes_number()),
                 )
             },
@@ -678,7 +658,7 @@ impl Graph {
             self.get_unique_sources_number(),
             move |index| {
                 (
-                    splitmix64(random_state + index.wrapping_mul(factor) as u64) as NodeT,
+                    splitmix64(random_state + index.wrapping_mul(factor) as u64),
                     self.get_unique_source(index as NodeT % self.get_source_nodes_number()),
                 )
             },
@@ -695,7 +675,7 @@ impl Graph {
     pub fn walk_iter<'a>(
         &'a self,
         quantity: NodeT,
-        to_node: impl Fn(NodeT) -> (NodeT, NodeT) + Sync + Send + 'a,
+        to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         if self.directed {
@@ -708,6 +688,9 @@ impl Graph {
         let total_iterations = quantity * parameters.iterations;
         info!("Starting random walk.");
 
+        // If the graph does not have any weights and the parameters
+        // for the walks are all equal to 1, we can use the first-order
+        // random walk algorithm.
         let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
@@ -731,76 +714,6 @@ impl Graph {
         Ok(walks)
     }
 
-    fn get_node_edges_and_destinations(
-        &self,
-        max_neighbours: &Option<NodeT>,
-        random_state: NodeT,
-        node: NodeT,
-    ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
-        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let indices =
-            get_probabilistic_indices(min_edge_id, max_edge_id, max_neighbours, random_state);
-        if let Some(ids) = &indices {
-            let destinations: Option<Vec<NodeT>> = match &self.destinations {
-                Some(dsts) => Some(ids.iter().map(|edge_id| dsts[*edge_id as usize]).collect()),
-                None => match &self.cached_destinations {
-                    Some(cds) => match cds.get(&node) {
-                        Some(dsts) => Some(
-                            ids.iter()
-                                .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
-                                .collect(),
-                        ),
-                        None => Some(
-                            ids.iter()
-                                .map(|edge_id| self.get_destination(*edge_id))
-                                .collect(),
-                        ),
-                    },
-                    None => Some(
-                        ids.iter()
-                            .map(|edge_id| self.get_destination(*edge_id))
-                            .collect(),
-                    ),
-                },
-            };
-            return (min_edge_id, max_edge_id, destinations, indices);
-        }
-        if self.destinations.is_some() {
-            return (min_edge_id, max_edge_id, None, None);
-        }
-        let destinations = match &self.cached_destinations {
-            Some(cds) => match cds.contains_key(&node) {
-                true => None,
-                false => Some(
-                    self.get_destinations_range(min_edge_id, max_edge_id)
-                        .collect(),
-                ),
-            },
-            None => Some(
-                self.get_destinations_range(min_edge_id, max_edge_id)
-                    .collect(),
-            ),
-        };
-        (min_edge_id, max_edge_id, destinations, None)
-    }
-
-    fn get_destinations_slice<'a>(
-        &'a self,
-        min_edge_id: EdgeT,
-        max_edge_id: EdgeT,
-        node: NodeT,
-        destinations: &'a Option<Vec<NodeT>>,
-    ) -> &'a [NodeT] {
-        match (&self.destinations, &self.cached_destinations, destinations) {
-            (_, _, Some(dsts)) => &dsts.as_slice(),
-            (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
-            (None, Some(dsts), None) => dsts.get(&node).unwrap(),
-            _ => unreachable!(
-                "It is not possible to have both destinations and cached destinations at once."
-            ),
-        }
-    }
-
     /// Returns single walk from given node.
     ///
     /// This method assumes that there are no traps in the graph.
@@ -814,11 +727,11 @@ impl Graph {
     pub fn single_walk(
         &self,
         node: NodeT,
-        random_state: NodeT,
+        random_state: u64,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let (min_edge_id, max_edge_id, destinations, indices) =
-            self.get_node_edges_and_destinations(&parameters.max_neighbours, random_state, node);
+            self.get_node_edges_and_destinations(parameters.max_neighbours, random_state, node);
         let (dst, edge) = self.extract_node(
             node,
             random_state,
@@ -845,7 +758,7 @@ impl Graph {
                       iteration| {
                     let (min_edge_id, max_edge_id, destinations, indices) = self
                         .get_node_edges_and_destinations(
-                            &parameters.max_neighbours,
+                            parameters.max_neighbours,
                             random_state + iteration,
                             *previous_dst,
                         );
@@ -890,10 +803,10 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize, the random_state to use for extracting the nodes and edges.
-    /// * parameters: SingleWalkParameters - Parameters for the single walk.
+    /// * random_state: usize - the random_state to use for extracting the nodes and edges.
+    /// * walk_length: u64 - Length of the random walk.
     ///
-    fn uniform_walk(&self, node: NodeT, random_state: NodeT, walk_length: NodeT) -> Vec<NodeT> {
+    fn uniform_walk(&self, node: NodeT, random_state: u64, walk_length: u64) -> Vec<NodeT> {
         // We iterate one time before because we need to parse the initial node.
         (0..1)
             .map(move |_| node)

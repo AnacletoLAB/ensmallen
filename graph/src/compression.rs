@@ -35,7 +35,7 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
+    pub(crate) fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
         if let (Some(sources), Some(destinations)) = (&self.sources, &self.destinations) {
             return (sources[edge_id as usize], destinations[edge_id as usize]);
         }

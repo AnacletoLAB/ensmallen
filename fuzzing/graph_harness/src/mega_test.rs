@@ -800,7 +800,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.get_edge_names(data.get_edge_names.directed);
 	graph.get_unchecked_edge_type(data.get_unchecked_edge_type.edge_id);
 	graph.get_unchecked_edge_weight(data.get_unchecked_edge_weight.edge_id);
-	graph.get_unchecked_node_type(data.get_unchecked_node_type.node_id);
+	graph.get_unchecked_node_type_id_by_node_id(data.get_unchecked_node_type.node_id);
 	graph.get_node_type_id_by_node_id(data.get_node_type_id_by_node_id.node_id)?;
 	graph.get_edge_type(data.get_edge_type.edge_id)?;
 	graph.get_node_type_name(data.get_node_type_name.node_id)?;

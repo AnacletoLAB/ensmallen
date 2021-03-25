@@ -38,10 +38,13 @@ pub fn word2vec<'a>(
     Ok(sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
         if sequence_length < window_size * 2 + 1 {
-            panic!("
+            panic!(
+                "
             Cannot compute word2vec, got a sequence of length {} and window size {}.
             for the current window_size the minimum sequence length required is {}",
-            sequence_length, window_size, window_size*2 + 1,
+                sequence_length,
+                window_size,
+                window_size * 2 + 1,
             );
         }
         (window_size..(sequence_length - window_size)).map(move |i| {
@@ -195,6 +198,135 @@ impl Graph {
         )
     }
 
+    /// Return iterator over neighbours for the given node ID, optionally including given node ID.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    ///
+    pub(crate) fn get_neighbours_by_node_id(
+        &self,
+        node_id: NodeT,
+        random_state: u64,
+        include_node_id: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        (if include_node_id {
+            vec![node_id]
+        } else {
+            vec![]
+        })
+        .into_iter()
+        .chain(
+            self.get_node_destinations(node_id, random_state, max_neighbours)
+                .into_iter(),
+        )
+        .map(move |node_id| node_id + offset)
+    }
+
+    /// Return tuple with iterator over neighbours for the given node ID, optionally including given node ID, and node type.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    /// * `one_hot_encode_node_types`: bool - Whether to one-hot encode the labels.
+    ///
+    pub fn get_node_label_prediction_tuple_by_node_id(
+        &self,
+        node_id: NodeT,
+        random_state: u64,
+        include_node_id: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+        one_hot_encode_node_types: bool,
+    ) -> Result<(impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>), String> {
+        if !self.has_node_types() {
+            return Err("The current graph instance does not have node types!".to_string());
+        }
+        if node_id >= self.get_nodes_number() {
+            return Err(format!(
+                "The given node_id {} is greater than the number of the graph nodes number {}!",
+                node_id,
+                self.get_nodes_number()
+            ));
+        }
+        Ok((
+            self.get_neighbours_by_node_id(
+                node_id,
+                random_state,
+                include_node_id,
+                offset,
+                max_neighbours,
+            ),
+            self.get_unchecked_node_type_id_by_node_id(node_id)
+                .map(|node_types| {
+                    if one_hot_encode_node_types {
+                        one_hot_encode(node_types, self.get_node_types_number())
+                    } else {
+                        node_types
+                    }
+                }),
+        ))
+    }
+
+    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_ids`: Vec<NodeT> - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    /// * `one_hot_encode_node_types`: bool - Whether to one-hot encode the labels.
+    ///
+    pub fn get_node_label_prediction_tuple_by_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        random_state: u64,
+        include_node_id: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+        one_hot_encode_node_types: bool,
+    ) -> impl Iterator<
+        Item = Result<(impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>), String>,
+    > + '_ {
+        node_ids.into_iter().map(move |node_id| {
+            self.get_node_label_prediction_tuple_by_node_id(
+                node_id,
+                random_state,
+                include_node_id,
+                offset,
+                max_neighbours,
+                one_hot_encode_node_types,
+            )
+        })
+    }
+
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
     /// This method is just for setting the lowerbound on the simplest possible model.
     ///
@@ -292,7 +424,7 @@ impl Graph {
             .map(move |i| {
                 let mut sampled = random_values[i];
                 if i < positive_number{
-                    let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
+                    let (src, dst) = self.get_node_ids_from_edge_id(sampled % edges_number);
                     (indices[i], src, dst, true)
                 } else {
                     for _ in 0..maximal_sampling_attempts {

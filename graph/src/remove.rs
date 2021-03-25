@@ -126,9 +126,9 @@ impl Graph {
 
                     if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
                         let src_node_type =
-                            self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&src_name));
                         let dst_node_type =
-                            self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&dst_name));
                         // If the graph has node types
                         if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
                             let node_type_names = self
