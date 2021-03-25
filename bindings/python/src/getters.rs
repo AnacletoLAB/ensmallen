@@ -119,7 +119,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Number of nodes of given node type.
-    fn get_node_count_by_node_type(&self, node_type: NodeTypeT) -> PyResult<NodeT> {
+    fn get_node_count_by_node_type(&self, node_type: Option<NodeTypeT>) -> PyResult<NodeT> {
         pyex!(self.graph.get_node_count_by_node_type(node_type))
     }
 
@@ -163,7 +163,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Number of nodes of given node type.
-    fn get_node_count_by_node_type_name(&self, node_type: &str) -> PyResult<NodeT> {
+    fn get_node_count_by_node_type_name(&self, node_type: Option<&str>) -> PyResult<NodeT> {
         pyex!(self.graph.get_node_count_by_node_type_name(node_type))
     }
 
@@ -181,8 +181,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a trap.
     ///
-    fn is_node_trap(&self, node: NodeT) -> bool {
-        self.graph.is_node_trap(node)
+    fn is_node_trap(&self, node: NodeT) -> PyResult<bool> {
+        pyex!(self.graph.is_node_trap(node))
     }
 
     #[text_signature = "($self, node_id)"]
@@ -197,8 +197,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a singleton.
     ///
-    fn is_singleton(&self, node_id: NodeT) -> bool {
-        self.graph.is_singleton(node_id)
+    fn is_singleton(&self, node_id: NodeT) -> PyResult<bool> {
+        pyex!(self.graph.is_singleton(node_id))
     }
 
     #[text_signature = "($self, node_name)"]
@@ -213,8 +213,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a singleton.
     ///
-    fn is_singleton_by_nide_name(&self, node_name: &str) -> PyResult<bool> {
-        pyex!(self.graph.is_singleton_by_nide_name(node_name))
+    fn is_singleton_by_node_name(&self, node_name: &str) -> PyResult<bool> {
+        pyex!(self.graph.is_singleton_by_node_name(node_name))
     }
 
     #[text_signature = "($self, edge)"]
@@ -231,8 +231,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given edge is a trap.
     ///
-    fn is_edge_trap(&self, edge: EdgeT) -> bool {
-        self.graph.is_edge_trap(edge)
+    fn is_edge_trap(&self, edge: EdgeT) -> PyResult<bool> {
+        pyex!(self.graph.is_edge_trap(edge))
     }
 
     #[text_signature = "($self, src, dst)"]
@@ -289,8 +289,14 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given edge exists in graph.
     ///
-    fn has_edge_with_type_by_node_names(&self, src: &str, dst: &str, edge_type: Option<String>) -> bool {
-        self.graph.has_edge_with_type_by_node_names(&src, &dst, edge_type.as_ref())
+    fn has_edge_with_type_by_node_names(
+        &self,
+        src: &str,
+        dst: &str,
+        edge_type: Option<String>,
+    ) -> bool {
+        self.graph
+            .has_edge_with_type_by_node_names(&src, &dst, edge_type.as_ref())
     }
 
     #[text_signature = "($self, node_name)"]
@@ -361,8 +367,15 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Integer representing ID of the edge.
     ///
-    fn get_edge_id_with_type_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> PyResult<EdgeT> {
-        pyex!(self.graph.get_edge_id_with_type_by_node_ids(src, dst, edge_type))
+    fn get_edge_id_with_type_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> PyResult<EdgeT> {
+        pyex!(self
+            .graph
+            .get_edge_id_with_type_by_node_ids(src, dst, edge_type))
     }
 
     #[text_signature = "($self, src, dst)"]
@@ -381,7 +394,7 @@ impl EnsmallenGraph {
     fn get_edge_id_by_node_names(&self, src: &str, dst: &str) -> PyResult<EdgeT> {
         pyex!(self.graph.get_edge_id_by_node_names(src, dst))
     }
-    
+
     #[text_signature = "($self, src, dst, edge_type)"]
     /// Return integer representing ID of the edge.
     ///
@@ -397,8 +410,15 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Integer representing ID of the edge. It will return None when the edge does not exist.
-    fn get_edge_id_with_type_by_node_names(&self, src: &str, dst: &str, edge_type: Option<String>) -> PyResult<EdgeT> {
-        pyex!(self.graph.get_edge_id_with_type_by_node_names(src, dst, edge_type.as_ref()))
+    fn get_edge_id_with_type_by_node_names(
+        &self,
+        src: &str,
+        dst: &str,
+        edge_type: Option<String>,
+    ) -> PyResult<EdgeT> {
+        pyex!(self
+            .graph
+            .get_edge_id_with_type_by_node_names(src, dst, edge_type.as_ref()))
     }
 
     #[text_signature = "($self)"]
@@ -541,7 +561,7 @@ impl EnsmallenGraph {
     pub fn get_edge_types(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         pyex!(match self.graph.get_edge_types() {
             Some(values) => Ok(values),
-            None => Err("Graph does not have edge types.")
+            None => Err("Graph does not have edge types."),
         })
     }
 

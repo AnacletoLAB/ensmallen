@@ -513,7 +513,9 @@ impl Graph {
             .and_then(|cds| cds.get(&node))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination(min_edge + sampled_offset as EdgeT),
+            None => self
+                .get_destination(min_edge + sampled_offset as EdgeT)
+                .unwrap(),
         }
     }
 
@@ -524,7 +526,7 @@ impl Graph {
     /// * node: NodeT, the previous node from which to compute the transitions.
     /// * random_state: usize, the random_state to use for extracting the node.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
-    pub fn extract_node(
+    fn extract_node(
         &self,
         node: NodeT,
         random_state: u64,
@@ -554,7 +556,7 @@ impl Graph {
             .and_then(|cds| cds.get(&node))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination(edge_id),
+            None => self.get_destination(edge_id).unwrap(),
         };
         (destination, edge_id)
     }
@@ -574,7 +576,7 @@ impl Graph {
     /// * `previous_destinations`: &[NodeT] - Previous destination slice.
     /// * `probabilistic_indices`: &Option<Vec<u64>> - Probabilistic indices, used when max neighbours is provided.
     ///
-    pub fn extract_edge(
+    fn extract_edge(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -604,12 +606,9 @@ impl Graph {
             Some(inds) => inds[sampled_offset],
             None => min_edge_id + sampled_offset as EdgeT,
         };
-        let destination = match &self.cached_destinations {
-            Some(cds) => match cds.get(&dst) {
-                Some(dsts) => dsts[sampled_offset],
-                None => self.get_destination(edge_id),
-            },
-            None => self.get_destination(edge_id),
+        let destination = match self.cached_destinations.as_ref().and_then(|cds| cds.get(&dst)) {
+            Some(dsts) => dsts[sampled_offset],
+            None => self.get_destination(edge_id).unwrap(),
         };
         (destination, edge_id)
     }
@@ -672,7 +671,7 @@ impl Graph {
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn walk_iter<'a>(
+    fn walk_iter<'a>(
         &'a self,
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
@@ -724,7 +723,7 @@ impl Graph {
     /// * random_state: usize, the random_state to use for extracting the nodes and edges.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    pub fn single_walk(
+    fn single_walk(
         &self,
         node: NodeT,
         random_state: u64,

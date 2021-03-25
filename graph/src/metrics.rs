@@ -33,7 +33,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree(one) as usize * self.get_node_degree(two) as usize)
+        Ok(self.get_node_degree(one).unwrap() as usize * self.get_node_degree(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -64,7 +64,7 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap(one) || self.is_node_trap(two) {
+        if self.is_node_trap(one).unwrap() || self.is_node_trap(two).unwrap() {
             return Ok(0.0f64);
         }
 
@@ -100,19 +100,7 @@ impl Graph {
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "One or more of the given nodes indices ({}, {}) are ",
-                    "biggen than the number of nodes present in the graph ({})."
-                ),
-                one,
-                two,
-                self.get_nodes_number()
-            ));
-        }
-
-        if self.is_node_trap(one) || self.is_node_trap(two) {
+        if self.is_node_trap(one)? || self.is_node_trap(two)? {
             return Ok(0.0f64);
         }
 
@@ -125,8 +113,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap(**node))
-            .map(|node| 1.0 / (self.get_node_degree(*node) as f64).ln())
+            .filter(|node| !self.is_node_trap(**node).unwrap())
+            .map(|node| 1.0 / (self.get_node_degree(*node).unwrap() as f64).ln())
             .sum())
     }
 
@@ -153,19 +141,7 @@ impl Graph {
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "One or more of the given nodes indices ({}, {}) are ",
-                    "biggen than the number of nodes present in the graph ({})."
-                ),
-                one,
-                two,
-                self.get_nodes_number()
-            ));
-        }
-
-        if self.is_node_trap(one) || self.is_node_trap(two) {
+        if self.is_node_trap(one)? || self.is_node_trap(two)? {
             return Ok(0.0f64);
         }
 
@@ -178,8 +154,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap(**node))
-            .map(|node| 1.0 / self.get_node_degree(*node) as f64)
+            .filter(|node| !self.is_node_trap(**node).unwrap())
+            .map(|node| 1.0 / self.get_node_degree(*node).unwrap() as f64)
             .sum())
     }
 
@@ -195,11 +171,11 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| {
-                if !self.is_node_trap(node) {
+                if !self.is_node_trap(node).unwrap() {
                     self.get_neighbours_iter(node)
-                        .map(|dst| self.is_node_trap(dst) as usize as f64)
+                        .map(|dst| self.is_node_trap(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_node_degree(node) as f64
+                        / self.get_node_degree(node).unwrap() as f64
                 } else {
                     1.0
                 }
@@ -619,7 +595,7 @@ impl Graph {
                     format!(
                         "{node_name} (degree {node_degree})",
                         node_name = self.get_node_name(*node_id).unwrap(),
-                        node_degree = self.get_node_degree(*node_id)
+                        node_degree = self.get_node_degree(*node_id).unwrap()
                     )
                 })
                 .collect::<Vec<String>>()

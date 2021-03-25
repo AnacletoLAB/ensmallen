@@ -112,8 +112,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// degrees product for the two given nodes.
     ///
-    fn degree(&self, node: NodeT) -> NodeT {
-        self.graph.get_node_degree(node)
+    fn degree(&self, node: NodeT) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_degree(node))
     }
 
     #[text_signature = "($self)"]

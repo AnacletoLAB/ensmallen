@@ -121,7 +121,7 @@ impl Graph {
         if self.has_singletons() || self.has_singleton_nodes_with_self_loops_number() {
             (0..self.get_nodes_number())
                 .filter(|node_id| {
-                    self.is_singleton(*node_id) || self.is_singleton_with_self_loops(*node_id)
+                    self.is_singleton(*node_id).unwrap() || self.is_singleton_with_self_loops(*node_id)
                 })
                 .for_each(|node_id| {
                     components[node_id as usize] = component_sizes.len() as NodeT;
@@ -319,7 +319,7 @@ impl Graph {
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton(src as NodeT) {
+                        if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
                             // We set singletons as self-loops for now.
                             (*ptr)[src] = src as NodeT;
                             return;
@@ -517,7 +517,7 @@ impl Graph {
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
-                    if self.has_singletons() && self.is_singleton(src as NodeT) {
+                    if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
                         // We set singletons as self-loops for now.
                         unsafe {
                             (*ptr)[src] = (*component_sizes).len() as NodeT;

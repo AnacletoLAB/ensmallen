@@ -209,7 +209,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
@@ -217,11 +217,11 @@ impl Graph {
         &self,
         node_id: NodeT,
         random_state: u64,
-        include_node_id: bool,
+        include_central_node: bool,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
     ) -> impl Iterator<Item = NodeT> + '_ {
-        (if include_node_id {
+        (if include_central_node {
             vec![node_id]
         } else {
             vec![]
@@ -245,47 +245,28 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
-    /// * `one_hot_encode_node_types`: bool - Whether to one-hot encode the labels.
     ///
-    pub fn get_node_label_prediction_tuple_by_node_id(
+    pub(crate) fn get_node_label_prediction_tuple_by_node_id(
         &self,
         node_id: NodeT,
         random_state: u64,
-        include_node_id: bool,
+        include_central_node: bool,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
-        one_hot_encode_node_types: bool,
-    ) -> Result<(impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>), String> {
-        if !self.has_node_types() {
-            return Err("The current graph instance does not have node types!".to_string());
-        }
-        if node_id >= self.get_nodes_number() {
-            return Err(format!(
-                "The given node_id {} is greater than the number of the graph nodes number {}!",
-                node_id,
-                self.get_nodes_number()
-            ));
-        }
-        Ok((
+    ) -> (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>) {
+        (
             self.get_neighbours_by_node_id(
                 node_id,
                 random_state,
-                include_node_id,
+                include_central_node,
                 offset,
                 max_neighbours,
             ),
-            self.get_unchecked_node_type_id_by_node_id(node_id)
-                .map(|node_types| {
-                    if one_hot_encode_node_types {
-                        one_hot_encode(node_types, self.get_node_types_number())
-                    } else {
-                        node_types
-                    }
-                }),
-        ))
+            self.get_unchecked_node_type_id_by_node_id(node_id),
+        )
     }
 
     /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
@@ -299,32 +280,33 @@ impl Graph {
     ///
     /// * `node_ids`: Vec<NodeT> - The node ID to retrieve neighbours for.
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_node_id`: bool - Whether to include the node ID in the returned iterator.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
-    /// * `one_hot_encode_node_types`: bool - Whether to one-hot encode the labels.
     ///
     pub fn get_node_label_prediction_tuple_by_node_ids(
         &self,
         node_ids: Vec<NodeT>,
         random_state: u64,
-        include_node_id: bool,
+        include_central_node: bool,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
-        one_hot_encode_node_types: bool,
-    ) -> impl Iterator<
-        Item = Result<(impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>), String>,
-    > + '_ {
-        node_ids.into_iter().map(move |node_id| {
+    ) -> Result<
+        impl IndexedParallelIterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
+        String,
+    > {
+        if !self.has_node_types() {
+            return Err("The current graph instance does not have node types!".to_string());
+        }
+        Ok(node_ids.into_par_iter().map(move |node_id| {
             self.get_node_label_prediction_tuple_by_node_id(
                 node_id,
                 random_state,
-                include_node_id,
+                include_central_node,
                 offset,
                 max_neighbours,
-                one_hot_encode_node_types,
             )
-        })
+        }))
     }
 
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
@@ -368,8 +350,8 @@ impl Graph {
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_node_degree(src) as f64 / max_degree,
-                self.get_node_degree(dst) as f64 / max_degree,
+                self.get_node_degree(src).unwrap() as f64 / max_degree,
+                self.get_node_degree(dst).unwrap() as f64 / max_degree,
                 label,
             )
         }))

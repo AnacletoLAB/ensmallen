@@ -1,5 +1,7 @@
 use super::*;
-use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
+use graph::{
+    cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT, NodeTypeT,
+};
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
@@ -70,10 +72,7 @@ fn cooccurence_matrix(
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
     pyex!(validate_kwargs(
         kwargs,
-        ["window_size", "verbose"]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
+        to_string_vector(&["window_size", "verbose"])
     ))?;
     let len = sequences.len();
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
@@ -148,7 +147,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -242,7 +241,7 @@ impl EnsmallenGraph {
     fn node2vec(
         &self,
         batch_size: NodeT,
-        walk_length: NodeT,
+        walk_length: u64,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {
@@ -252,7 +251,7 @@ impl EnsmallenGraph {
         let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
-        
+
         let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
             * parameters.get_iterations() as usize;
@@ -278,9 +277,111 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
-    /// Returns
+    #[text_signature = "($self, node_ids, *, random_state, include_central_node, offset, max_neighbours)"]
+    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
     ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// - node_ids: List[int],
+    ///     The node ID to retrieve neighbours for.
+    /// - random_state: int = 42,
+    ///     The random state to use to extract the neighbours.
+    /// - include_central_node: bool = True,
+    ///     Whether to include the node ID in the returned iterator.
+    /// - offset: int = 1,
+    ///     Offset for padding porposes.
+    /// - max_neighbours: int = None,
+    ///     Number of maximum neighbours to consider.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Tuple with input nodes and output node types.
+    ///
+    fn get_node_label_prediction_tuple_by_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray2<NodeTypeT>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        pyex!(validate_kwargs(
+            kwargs,
+            to_string_vector(&[
+                "random_state",
+                "include_central_node",
+                "offset",
+                "max_neighbours",
+            ])
+        ))?;
+
+        if node_ids.is_empty() {
+            return pyex!(Err("Given list of node IDs is empty!"));
+        }
+
+        let mut max_degree = node_ids
+            .iter()
+            .map(|node_id| self.graph.get_node_degree(*node_id).unwrap())
+            .max()
+            .unwrap();
+
+        let nodes_number = node_ids.len();
+        let max_neighbours = pyex!(extract_value!(kwargs, "max_neighbours", NodeT))?;
+        let include_central_node =
+            pyex!(extract_value!(kwargs, "include_central_node", bool))?.unwrap_or(true);
+
+        if let Some(mn) = &max_neighbours {
+            max_degree = std::cmp::min(max_degree, *mn);
+        }
+
+        if include_central_node {
+            max_degree += 1;
+        }
+
+        let iter = pyex!(self.graph.get_node_label_prediction_tuple_by_node_ids(
+            node_ids,
+            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+            include_central_node,
+            pyex!(extract_value!(kwargs, "offset", NodeT))?.unwrap_or(1),
+            max_neighbours,
+        ))?;
+
+        let neighbours = ThreadSafe {
+            t: PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false),
+        };
+        let labels = ThreadSafe {
+            t: PyArray2::zeros(
+                gil.python(),
+                [nodes_number, self.graph.get_node_types_number() as usize],
+                false,
+            ),
+        };
+
+        unsafe {
+            iter.enumerate()
+                .for_each(|(i, (neighbours_iterator, node_types))| {
+                    neighbours_iterator.enumerate().for_each(|(j, node_id)| {
+                        *(neighbours.t.uget_mut([i, j])) = node_id;
+                    });
+                    if let Some(nts) = node_types {
+                        nts.into_iter().for_each(|label| {
+                            *(labels.t.uget_mut([i, label as usize])) = 1;
+                        });
+                    }
+                });
+        }
+
+        Ok((neighbours.t.to_owned(), labels.t.to_owned()))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    /// Returns ids for a link prediction training batch.
     ///
     /// Parameters
     /// -----------------------------
@@ -305,7 +406,7 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// -----------------------------
-    /// Tuple containing training and validation graphs.
+    /// Triple with source and destination nodes and labels.
     ///
     fn link_prediction_ids(
         &self,
@@ -318,15 +419,12 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            [
+            to_string_vector(&[
                 "negative_samples",
                 "avoid_false_negatives",
                 "maximal_sampling_attempts",
                 "graph_to_avoid",
-            ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
+            ])
         ))?;
         let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
         let maybe_graph = match &graph_to_avoid {
@@ -407,16 +505,13 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            [
+            to_string_vector(&[
                 "normalize",
                 "negative_samples",
                 "avoid_false_negatives",
                 "maximal_sampling_attempts",
                 "graph_to_avoid",
-            ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
+            ])
         ))?;
         let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
         let maybe_graph = match &graph_to_avoid {

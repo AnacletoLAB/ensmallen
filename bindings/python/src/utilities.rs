@@ -141,7 +141,7 @@ pub(crate) fn build_csv_file_reader(
 impl EnsmallenGraph {
     pub(crate) fn build_walk_parameters(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         kwargs: &PyDict,
     ) -> Result<WalksParameters, String> {
         Ok(WalksParameters::new(walk_length)?

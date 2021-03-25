@@ -65,7 +65,7 @@ impl EnsmallenGraph {
     ///
     fn random_walks(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
@@ -152,7 +152,7 @@ impl EnsmallenGraph {
     ///
     fn complete_walks(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();

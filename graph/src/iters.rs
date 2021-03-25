@@ -10,14 +10,14 @@ impl Graph {
 
     /// Return iterator on the node degrees of the graph.
     pub fn get_node_degrees_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).map(move |node| self.get_node_degree(node))
+        (0..self.get_nodes_number()).map(move |node| self.get_node_degree(node).unwrap())
     }
 
     /// Return iterator on the node degrees of the graph.
     pub fn get_node_degrees_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(move |node| self.get_node_degree(node))
+            .map(move |node| self.get_node_degree(node).unwrap())
     }
 
     /// Return iterator on the node of the graph as Strings.

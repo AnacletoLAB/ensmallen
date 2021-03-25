@@ -102,8 +102,8 @@ impl Graph {
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
-    pub fn is_singleton(&self, node_id: NodeT) -> bool {
-        self.has_singletons() && self.get_node_degree(node_id) == 0
+    pub fn is_singleton(&self, node_id: NodeT) -> Result<bool, String> {
+        Ok(self.has_singletons() && self.get_node_degree(node_id)? == 0)
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -120,8 +120,8 @@ impl Graph {
     ///
     /// # Arguments
     /// `node_name`: &str - The node name to be checked for.
-    pub fn is_singleton_by_nide_name(&self, node_name: &str) -> Result<bool, String> {
-        Ok(self.is_singleton(self.get_node_id(node_name)?))
+    pub fn is_singleton_by_node_name(&self, node_name: &str) -> Result<bool, String> {
+        self.is_singleton(self.get_node_id(node_name)?)
     }
 
     /// Returns boolean representing if graph has singletons.
@@ -187,7 +187,7 @@ impl Graph {
     /// * k: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
-            .map(|node_id| (self.get_node_degree(node_id), node_id))
+            .map(|node_id| (self.get_node_degree(node_id).unwrap(), node_id))
             .collect();
         nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
@@ -551,7 +551,7 @@ impl Graph {
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(|node| self.get_node_degree(node as NodeT))
+            .map(|node| self.get_node_degree(node as NodeT).unwrap())
             .collect::<Vec<NodeT>>()
     }
 
@@ -688,11 +688,18 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
-        match &self.destinations {
+    pub fn get_destination(&self, edge_id: EdgeT) -> Result<NodeT, String> {
+        if edge_id >= self.get_directed_edges_number(){
+            return Err(format!(
+                "The edge ID {} is higher than the number of available directed edges {}.",
+                edge_id,
+                self.get_directed_edges_number()
+            ));
+        }
+        Ok(match &self.destinations {
             Some(destinations) => destinations[edge_id as usize],
             None => self.get_node_ids_from_edge_id(edge_id).1,
-        }
+        })
     }
 
     pub(crate) fn get_destinations_range(
@@ -700,13 +707,13 @@ impl Graph {
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
     ) -> impl Iterator<Item = NodeT> + '_ {
-        (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id))
+        (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id).unwrap())
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
     pub(crate) fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
         self.get_unchecked_destinations_range(src)
-            .map(move |edge_id| self.get_destination(edge_id))
+            .map(move |edge_id| self.get_destination(edge_id).unwrap())
     }
 
     pub(crate) fn get_node_edges_and_destinations(
@@ -739,7 +746,7 @@ impl Graph {
                     .collect(),
                 None => indices
                     .iter()
-                    .map(|edge_id| self.get_destination(*edge_id))
+                    .map(|edge_id| self.get_destination(*edge_id).unwrap())
                     .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
@@ -1230,11 +1237,18 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node` - Integer ID of the node.
+    /// * `node_id` - Integer ID of the node.
     ///
-    pub fn get_node_degree(&self, node: NodeT) -> NodeT {
-        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        (max_edge_id - min_edge_id) as NodeT
+    pub fn get_node_degree(&self, node_id: NodeT) -> Result<NodeT, String> {
+        if node_id >= self.get_nodes_number(){
+            return Err(format!(
+                "The node ID {} is higher than the number of available nodes {}.",
+                node_id,
+                self.get_nodes_number()
+            ));
+        }
+        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node_id);
+        Ok((max_edge_id - min_edge_id) as NodeT)
     }
 
     /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
@@ -1244,7 +1258,7 @@ impl Graph {
     /// * `src` - Source node of the edge.
     /// * `dst` - Destination node of the edge.
     /// 
-    pub fn get_unchecked_edge_ids_range(
+    pub(crate) fn get_unchecked_edge_ids_range(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -1259,7 +1273,7 @@ impl Graph {
     /// 
     /// * `src` - Source node of the edge.
     /// 
-    pub fn get_unchecked_destinations_range(&self, src: NodeT) -> impl Iterator<Item = EdgeT> {
+    pub(crate) fn get_unchecked_destinations_range(&self, src: NodeT) -> impl Iterator<Item = EdgeT> {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
         min_edge_id..max_edge_id
     }
@@ -1317,8 +1331,8 @@ impl Graph {
     ///
     /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_node_trap(&self, node: NodeT) -> bool {
-        self.get_node_degree(node) == 0
+    pub fn is_node_trap(&self, node: NodeT) -> Result<bool, String> {
+        Ok(self.get_node_degree(node)? == 0)
     }
     /// Returns boolean representing if given edge is a trap.
     ///
@@ -1326,7 +1340,7 @@ impl Graph {
     ///
     /// * `edge_id` - Integer ID of the edge, if this is bigger that the number of edges it will panic.
     ///
-    pub fn is_edge_trap(&self, edge_id: EdgeT) -> bool {
-        self.is_node_trap(self.get_destination(edge_id))
+    pub fn is_edge_trap(&self, edge_id: EdgeT) -> Result<bool, String> {
+        self.is_node_trap(self.get_destination(edge_id)?)
     }
 }
