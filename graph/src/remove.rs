@@ -298,9 +298,9 @@ impl Graph {
         // Retrieve minimal size of the smallest top k components
         let components_counts = Counter::init(components_vector.clone()).most_common();
         let updated_min_component_size = match top_k_components {
-            Some(tkc) => Some(match components_counts.len() < tkc as usize {
-                true => components_counts.last().unwrap().1,
-                false => components_counts.get(tkc as usize).unwrap().1,
+            Some(tkc) => Some(match (tkc as usize) < components_counts.len() {
+                true => components_counts.get(tkc as usize).unwrap().1,
+                false => components_counts.last().unwrap().1,
             }),
             None => minimum_component_size,
         };
