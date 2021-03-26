@@ -17,9 +17,9 @@ impl EnsmallenGraph {
     /// New remapped graph.
     pub fn remap(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self
+            graph: pe!(self
                 .graph
-                .remap(&other.graph, verbose.or(Some(true)).unwrap()))?,
+                .remap(&other.graph, verbose.unwrap_or(true)))?,
         })
     }
 }

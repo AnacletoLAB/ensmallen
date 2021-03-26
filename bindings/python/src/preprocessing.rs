@@ -37,11 +37,11 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
-    let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
+    let (contexts, words):(Vec<Vec<NodeT>>, Vec<NodeT>) = pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
     let gil = pyo3::Python::acquire_gil();
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
-        to_nparray_1d!(gil, words, NodeT),
+        to_ndarray_1d!(gil, words, NodeT),
     ))
 }
 
@@ -70,22 +70,19 @@ fn cooccurence_matrix(
     let _ = ctrlc::set_handler(|| std::process::exit(2));
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    pyex!(validate_kwargs(
-        kwargs,
-        to_string_vector(&["window_size", "verbose"])
-    ))?;
+    pe!(validate_kwargs(kwargs, &["window_size", "verbose"]))?;
     let len = sequences.len();
-    let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
+    let (words, contexts, frequencies) = pe!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
-        pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
+        extract_value!(kwargs, "window_size", usize).unwrap_or(3),
         len,
-        pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+        extract_value!(kwargs, "verbose", bool).unwrap_or(true),
     ))?;
 
     Ok((
-        to_nparray_1d!(gil, words, NodeT),
-        to_nparray_1d!(gil, contexts, NodeT),
-        to_nparray_1d!(gil, frequencies, f64),
+        to_ndarray_1d!(gil, words, NodeT),
+        to_ndarray_1d!(gil, contexts, NodeT),
+        to_ndarray_1d!(gil, frequencies, f64),
     ))
 }
 
@@ -153,23 +150,23 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size", "verbose"]),
+            build_walk_parameters_list(&["window_size", "verbose"]).as_slice(),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
+        let (words, contexts, frequencies) = pe!(self.graph.cooccurence_matrix(
             &parameters,
-            pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
-            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+            extract_value!(kwargs, "window_size", usize).unwrap_or(3),
+            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
 
         Ok((
-            to_nparray_1d!(gil, words, NodeT),
-            to_nparray_1d!(gil, contexts, NodeT),
-            to_nparray_1d!(gil, frequencies, f64),
+            to_ndarray_1d!(gil, words, NodeT),
+            to_ndarray_1d!(gil, contexts, NodeT),
+            to_ndarray_1d!(gil, frequencies, f64),
         ))
     }
 
@@ -247,10 +244,13 @@ impl EnsmallenGraph {
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
+        pe!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&[]).as_slice()
+        ))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
+        let iter = pe!(self.graph.node2vec(&parameters, batch_size, window_size))?;
 
         let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
@@ -310,18 +310,18 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            to_string_vector(&[
+            &[
                 "random_state",
                 "include_central_node",
                 "offset",
                 "max_neighbours",
-            ])
+            ],
         ))?;
 
         if node_ids.is_empty() {
-            return pyex!(Err("Given list of node IDs is empty!"));
+            return pe!(Err("Given list of node IDs is empty!".to_string()));
         }
 
         let mut max_degree = node_ids
@@ -331,9 +331,9 @@ impl EnsmallenGraph {
             .unwrap();
 
         let nodes_number = node_ids.len();
-        let max_neighbours = pyex!(extract_value!(kwargs, "max_neighbours", NodeT))?;
+        let max_neighbours = extract_value!(kwargs, "max_neighbours", NodeT);
         let include_central_node =
-            pyex!(extract_value!(kwargs, "include_central_node", bool))?.unwrap_or(true);
+            extract_value!(kwargs, "include_central_node", bool).unwrap_or(true);
 
         if let Some(mn) = &max_neighbours {
             max_degree = std::cmp::min(max_degree, *mn);
@@ -343,11 +343,11 @@ impl EnsmallenGraph {
             max_degree += 1;
         }
 
-        let iter = pyex!(self.graph.get_node_label_prediction_tuple_by_node_ids(
+        let iter = pe!(self.graph.get_node_label_prediction_tuple_by_node_ids(
             node_ids,
-            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
             include_central_node,
-            pyex!(extract_value!(kwargs, "offset", NodeT))?.unwrap_or(1),
+            extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
             max_neighbours,
         ))?;
 
@@ -417,28 +417,28 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            to_string_vector(&[
+            &[
                 "negative_samples",
                 "avoid_false_negatives",
                 "maximal_sampling_attempts",
                 "graph_to_avoid",
-            ])
+            ],
         ))?;
-        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
         let maybe_graph = match &graph_to_avoid {
             Some(g) => Some(&g.graph),
             None => None,
         };
 
-        let iter = pyex!(self.graph.link_prediction_ids(
+        let iter = pe!(self.graph.link_prediction_ids(
             idx,
             batch_size,
-            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
-            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
-            &maybe_graph
+            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
+            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
+            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
+            &maybe_graph,
         ))?;
 
         let srcs = ThreadSafe {
@@ -503,30 +503,30 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            to_string_vector(&[
+            &[
                 "normalize",
                 "negative_samples",
                 "avoid_false_negatives",
                 "maximal_sampling_attempts",
                 "graph_to_avoid",
-            ])
+            ],
         ))?;
-        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
         let maybe_graph = match &graph_to_avoid {
             Some(g) => Some(&g.graph),
             None => None,
         };
 
-        let iter = pyex!(self.graph.link_prediction_degrees(
+        let iter = pe!(self.graph.link_prediction_degrees(
             idx,
             batch_size,
-            pyex!(extract_value!(kwargs, "normalize", bool))?.unwrap_or(true),
-            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
-            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
-            &maybe_graph
+            extract_value!(kwargs, "normalize", bool).unwrap_or(true),
+            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
+            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
+            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
+            &maybe_graph,
         ))?;
 
         let srcs = ThreadSafe {

@@ -211,8 +211,11 @@ impl Graph {
     }
 
     /// Return the edge types of the edges.
-    pub fn get_edge_types(&self) -> Option<Vec<Option<EdgeTypeT>>> {
-        self.edge_types.as_ref().map(|ets| ets.ids.clone())
+    pub fn get_edge_types(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
+        if !self.has_edge_types(){
+            return Err("The current graph instance does not have edge types!".to_string())
+        }
+        Ok(self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
 
     /// Return edge type name of given edge type.
@@ -236,8 +239,11 @@ impl Graph {
     }
 
     /// Return the node types of the nodes.
-    pub fn get_node_types(&self) -> Option<Vec<Option<Vec<NodeTypeT>>>> {
-        self.node_types.as_ref().map(|nts| nts.ids.clone())
+    pub fn get_node_types(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
+        if !self.has_node_types(){
+            return Err("The current graph instance does not have nodes!".to_string())
+        }
+        Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
     /// Return node type name of given node type.
@@ -272,8 +278,11 @@ impl Graph {
     }
 
     /// Return the weights of the nodes.
-    pub fn get_weights(&self) -> Option<Vec<WeightT>> {
-        self.weights.clone()
+    pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
+        if !self.has_weights(){
+            return Err("The current graph instance does not have weights!".to_string())
+        }
+        Ok(self.weights.clone().unwrap())
     }
 
     /// Return the node types names.

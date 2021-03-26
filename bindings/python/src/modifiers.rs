@@ -53,19 +53,16 @@ impl EnsmallenGraph {
     pub fn enable(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            ["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
-                .iter()
-                .map(|x| x.to_string())
-                .collect(),
+            &["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
         ))?;
 
-        pyex!(self.graph.enable(
-            pyex!(extract_value!(kwargs, "vector_sources", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "vector_destinations", bool))?.unwrap_or(true),
-            pyex!(extract_value!(kwargs, "vector_outbounds", bool))?.unwrap_or(true),
-            pyex!(extract_value!(kwargs, "cache_size", f64))?,
+        pe!(self.graph.enable(
+            extract_value!(kwargs, "vector_sources", bool).unwrap_or(false),
+            extract_value!(kwargs, "vector_destinations", bool).unwrap_or(true),
+            extract_value!(kwargs, "vector_outbounds", bool).unwrap_or(true),
+            extract_value!(kwargs, "cache_size", f64),
         ))?;
         Ok(())
     }

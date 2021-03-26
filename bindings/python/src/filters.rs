@@ -34,7 +34,7 @@ impl EnsmallenGraph {
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.filter(
+            graph: pe!(self.graph.filter(
                 nodes,
                 node_types,
                 edge_types,

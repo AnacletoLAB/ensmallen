@@ -95,7 +95,7 @@ impl EnsmallenGraph {
         other: &EnsmallenGraph,
         verbose: Option<bool>,
     ) -> PyResult<String> {
-        pyex!(self
+        pe!(self
             .graph
             .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
@@ -113,7 +113,7 @@ impl EnsmallenGraph {
     /// degrees product for the two given nodes.
     ///
     fn degree(&self, node: NodeT) -> PyResult<NodeT> {
-        pyex!(self.graph.get_node_degree(node))
+        pe!(self.graph.get_node_degree(node))
     }
 
     #[text_signature = "($self)"]
@@ -126,7 +126,7 @@ impl EnsmallenGraph {
     fn degrees(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, degrees, NodeT))
+        Ok(to_ndarray_1d!(gil, degrees, NodeT))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -144,7 +144,7 @@ impl EnsmallenGraph {
     /// Jaccard Index for the two given nodes.
     ///
     fn jaccard_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pyex!(self.graph.jaccard_index(one, two))
+        pe!(self.graph.jaccard_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -162,7 +162,7 @@ impl EnsmallenGraph {
     /// Adamic/Adar for the two given nodes.
     ///
     fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pyex!(self.graph.adamic_adar_index(one, two))
+        pe!(self.graph.adamic_adar_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -180,7 +180,7 @@ impl EnsmallenGraph {
     /// Resource Allocation Index for the two given nodes.
     ///
     fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pyex!(self.graph.resource_allocation_index(one, two))
+        pe!(self.graph.resource_allocation_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -198,7 +198,7 @@ impl EnsmallenGraph {
     /// degrees product for the two given nodes.
     ///
     fn degrees_product(&self, one: NodeT, two: NodeT) -> PyResult<usize> {
-        pyex!(self.graph.degrees_product(one, two))
+        pe!(self.graph.degrees_product(one, two))
     }
 
     #[text_signature = "(self)"]

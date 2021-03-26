@@ -4,26 +4,6 @@ use pyo3::types::PyDict;
 use std::collections::HashSet;
 
 #[macro_export]
-macro_rules! python_exception {
-    ($value: expr, $msg: expr) => {
-        match $value {
-            Ok(v) => Ok(v),
-            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>($msg)),
-        }
-    };
-}
-
-#[macro_export]
-macro_rules! pyex {
-    ($value: expr) => {
-        match $value {
-            Ok(v) => Ok(v),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
-    };
-}
-
-#[macro_export]
 macro_rules! normalize_kwargs {
     ($kwargs: expr, $py: expr) => {
         match $kwargs {
@@ -36,67 +16,77 @@ macro_rules! normalize_kwargs {
 #[macro_export]
 macro_rules! extract_value {
     ($kwargs: ident, $key: literal, $_type: ty) => {
-        match $kwargs.get_item($key) {
-            None => Ok(None),
-            Some(value) => {
-                if value.get_type().name() == "NoneType" {
-                    Ok(None)
+        $kwargs
+            .get_item($key)
+            .map_or(Ok::<_, PyErr>(None), |value| {
+                Ok(if value.get_type().name().unwrap() == "NoneType" {
+                    None
                 } else {
-                    match value.extract::<$_type>() {
-                        Ok(v) => Ok(Some(v)),
-                        Err(_) => Err(format!(
-                            "The value passed for {} cannot be casted from {} to {}.",
+                    Some(value.extract::<$_type>().map_err(|_| {
+                        PyTypeError::new_err(format!(
+                            "The value passed as parameter {} cannot be casted from {} to {}.",
                             $key,
-                            value.get_type().name(),
+                            value.get_type().name().unwrap(),
                             stringify!($_type)
-                        )),
-                    }
-                }
-            }
-        }
+                        ))
+                    })?)
+                })
+            })?
+    };
+}
+
+// TODO: create a cleaner way.
+#[macro_export]
+macro_rules! extract_value_rust_result {
+    ($kwargs: ident, $key: literal, $_type: ty) => {
+        $kwargs
+            .get_item($key)
+            .map_or(Ok::<_, String>(None), |value| {
+                Ok(if value.get_type().name().unwrap() == "NoneType" {
+                    None
+                } else {
+                    Some(value.extract::<$_type>().map_err(|_| {
+                        format!(
+                            "The value passed as parameter {} cannot be casted from {} to {}.",
+                            $key,
+                            value.get_type().name().unwrap(),
+                            stringify!($_type)
+                        )
+                    })?)
+                })
+            })?
     };
 }
 
 #[macro_export]
-macro_rules! to_nparray_1d {
+macro_rules! pe {
+    ($value: expr) => {
+        ($value).map_err(|err| PyValueError::new_err(err))
+    };
+}
+
+#[macro_export]
+macro_rules! to_ndarray_1d {
     ($gil: expr, $value: expr, $_type: ty) => {
-        python_exception!(
-            PyArray::from_vec($gil.python(), $value).cast::<$_type>(false),
-            format!(
-                "The given array cannot be casted to {}.",
-                stringify!($_type)
-            )
-        )?
-        .to_owned()
+        PyArray::from_vec($gil.python(), $value)
+            .cast::<$_type>(false)
+            .unwrap()
+            .to_owned()
     };
 }
 
 #[macro_export]
 macro_rules! to_nparray_2d {
     ($gil: expr, $value: expr, $_type: ty) => {
-        python_exception!(
-            python_exception!(
-                PyArray::from_vec2($gil.python(), &$value),
-                "The given value cannot be casted to a 2d numpy array."
-            )?
-            .cast::<$_type>(false),
-            format!(
-                "The given 2d array cannot be casted to {}.",
-                stringify!($_type)
-            )
-        )?
-        .to_owned()
+        PyArray::from_vec2($gil.python(), &$value).unwrap()
+            .cast::<$_type>(false)
+            .unwrap()
+            .to_owned()
     };
 }
 
-pub fn to_string_vector(parameters: &[&str]) -> Vec<String> {
-    parameters.iter()
-        .map(|x| x.to_string())
-        .collect()
-}
-
-pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
-    let default = vec![
+pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
+    let default = &[
         "return_weight",
         "explore_weight",
         "change_edge_type_weight",
@@ -106,21 +96,17 @@ pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
         "iterations",
         "dense_node_mapping",
     ];
-    default
-        .iter()
-        .chain(parameters.iter())
-        .map(|x| x.to_string())
-        .collect()
+    default.into_iter().chain(parameters.into_iter()).map(|x| *x).collect()
 }
 
 /// Validate given kwargs.
-pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> Result<(), String> {
+pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> Result<(), String> {
     let mut keys: HashSet<String> = kwargs
         .keys()
         .iter()
         .map(|v| v.extract::<String>().unwrap())
         .collect();
-    let columns: HashSet<String> = columns.into_iter().collect();
+    let columns: HashSet<String> = columns.into_iter().map(|x| x.to_string()).collect();
     if keys.is_subset(&columns) {
         return Ok(());
     }
