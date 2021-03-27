@@ -691,9 +691,6 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
     graph.get_edges_par_string_quadruples(data.get_edges_par_string_quadruples.directed);
     graph.get_edges_string_quadruples(data.get_edges_string_quadruples.directed);
     graph
-        .get_edges_par_triples(data.get_edges_par_triples.directed)
-        .collect::<Vec<_>>();
-    graph
         .get_edges_quadruples(data.get_edges_quadruples.directed)
         .collect::<Vec<_>>();
     graph.get_edges_par_quadruples(data.get_edges_par_quadruples.directed);
