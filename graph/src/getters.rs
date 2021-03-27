@@ -324,17 +324,17 @@ impl Graph {
             .collect()
     }
 
-    /// Returs option with the edge type of the given edge id.
+    /// Returns option with the edge type of the given edge id.
     pub(crate) fn get_unchecked_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
         self.edge_types.as_ref().and_then(|ets| ets.ids[edge_id as usize])
     }
 
-    /// Returs option with the weight of the given edge id.
+    /// Returns option with the weight of the given edge id.
     pub(crate) fn get_unchecked_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
-    /// Returs option with the node type of the given node id.
+    /// Returns option with the node type of the given node id.
     pub(crate) fn get_unchecked_node_type_id_by_node_id(&self, node_id: NodeT) -> Option<Vec<NodeTypeT>> {
         self.node_types
             .as_ref()
@@ -399,7 +399,7 @@ impl Graph {
         ))
     }
 
-    /// Returs option with the node type of the given node id.
+    /// Returns option with the node type of the given node id.
     pub fn get_node_type_name(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
             true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
@@ -410,7 +410,9 @@ impl Graph {
         }
     }
 
-    /// Returs option with the edge type of the given edge id.
+    /// Returns option with the edge type of the given edge id.
+    /// TODO: complete docstring and add example!
+    /// TODO: THIS SHOULD RETURN A RESULT!
     pub fn get_edge_type_name_by_edge_id(&self, edge_id: EdgeT) -> Option<String> {
         self.edge_types.as_ref().and_then(|ets| {
             self.get_unchecked_edge_type(edge_id)
@@ -418,7 +420,113 @@ impl Graph {
         })
     }
 
-    /// Returs result with the node name.
+    /// Returns weight of the given edge id.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose weight is to be returned.
+    ///
+    /// # Examples
+    /// To get the weight of a given `edge_id` you can run:
+    /// ```rust
+    /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// let edge_id = 0;
+    /// let unexistent_edge_id = 123456789;
+    /// assert!(weighted_graph.get_weight_by_edge_id(edge_id).is_ok());
+    /// assert!(weighted_graph.get_weight_by_edge_id(unexistent_edge_id).is_err());
+    /// assert!(unweighted_graph.get_weight_by_edge_id(edge_id).is_err());
+    /// ```
+    pub fn get_weight_by_edge_id(&self, edge_id: EdgeT) -> Result<WeightT, String> {
+        self.weights.as_ref().map_or(
+            Err("The current graph instance does not have weights!".to_string()),
+            |weights| weights.get(edge_id as usize).map_or(
+                Err(format!(
+                    "The given edge_id {} is higher than the number of available directed edges {}.",
+                    edge_id,
+                    self.get_directed_edges_number()
+                )),
+                |value| Ok(*value)
+            )
+        )
+    }
+
+    /// Returns weight of the given node ids.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node ID of the source node.
+    /// * `dst`: NodeT - The node ID of the destination node.
+    ///
+    /// # Examples
+    /// To get the weight of a given `src` and `dst` you can run:
+    /// ```rust
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// let src = 0;
+    /// let dst = 1;
+    /// assert!(weighted_graph.get_weight_by_node_ids(src, dst).is_ok());
+    /// ```
+    pub fn get_weight_by_node_ids(&self, src: NodeT, dst: NodeT) -> Result<WeightT, String> {
+        self.get_weight_by_edge_id(self.get_edge_id_by_node_ids(src, dst)?)
+    }
+
+    /// Returns weight of the given node ids and edge type.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node ID of the source node.
+    /// * `dst`: NodeT - The node ID of the destination node.
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type ID of the edge.
+    ///
+    /// # Examples
+    /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
+    /// ```rust
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// let src = 0;
+    /// let dst = 1;
+    /// let edge_type = Some(0);
+    /// assert!(weighted_graph.get_weight_with_type_by_node_ids(src, dst, edge_type).is_ok());
+    /// ```
+    pub fn get_weight_with_type_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> Result<WeightT, String> {
+        self.get_weight_by_edge_id(self.get_edge_id_with_type_by_node_ids(src, dst, edge_type)?)
+    }
+
+    /// Returns weight of the given node names and edge type.
+    ///
+    /// # Arguments
+    /// * `src`: &str - The node name of the source node.
+    /// * `dst`: &str - The node name of the destination node.
+    /// * `edge_type`: Option<&String> - The edge type name of the edge.
+    ///
+    /// # Examples
+    /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
+    /// ```rust
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// let src = "ENSP00000000233";
+    /// let dst = "ENSP00000432568";
+    /// let edge_type = Some("red".to_string());
+    /// assert!(weighted_graph.get_weight_with_type_by_node_names(src, dst, edge_type.as_ref()).is_ok());
+    /// ```
+    pub fn get_weight_with_type_by_node_names(&self, src: &str, dst: &str, edge_type: Option<&String>) -> Result<WeightT, String> {
+        self.get_weight_by_edge_id(self.get_edge_id_with_type_by_node_names(src, dst, edge_type)?)
+    }
+
+    /// Returns weight of the given node names.
+    ///
+    /// # Arguments
+    /// * `src_name`: &str - The node name of the source node.
+    /// * `dst_name`: &str - The node name of the destination node.
+    ///
+    /// # Examples
+    /// To get the weight of a given `src_name` and `dst_name` you can run:
+    /// ```rust
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// let src_name = "ENSP00000000233";
+    /// let dst_name = "ENSP00000432568";
+    /// assert!(weighted_graph.get_weight_by_node_names(src_name, dst_name).is_ok());
+    /// ```
+    pub fn get_weight_by_node_names(&self, src_name: &str, dst_name: &str) -> Result<WeightT, String> {
+        self.get_weight_by_edge_id(self.get_edge_id_by_node_names(src_name, dst_name)?)
+    }
+
+    /// Returns result with the node name.
     pub fn get_node_name(&self, node_id: NodeT) -> Result<String, String> {
         match node_id < self.get_nodes_number() {
             true => Ok(self.nodes.unchecked_translate(node_id)),
@@ -430,7 +538,7 @@ impl Graph {
         }
     }
 
-    /// Returs result with the node id.
+    /// Returns result with the node id.
     pub fn get_node_id(&self, node_name: &str) -> Result<NodeT, String> {
         match self.nodes.get(node_name) {
             Some(node_id) => Ok(*node_id),
@@ -441,25 +549,66 @@ impl Graph {
         }
     }
 
+    /// Return node type ID for the given node name if available.
+    ///
+    /// # Arguments
+    /// 
+    /// * `node_name`: &str - Name of the node.
+    ///
+    /// # Examples
+    /// To get the node type ID for a given node name you can run:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let node_name = "ENSP00000000233";
+    /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_id_by_node_name(node_name).unwrap());
+    /// ```
     pub fn get_node_type_id_by_node_name(&self, node_name: &str) -> Result<Option<Vec<NodeTypeT>>, String> {
         self.get_node_type_id_by_node_id(self.get_node_id(node_name)?)
     }
 
+    /// Return node type name for the given node name if available.
+    ///
+    /// # Arguments
+    /// 
+    /// * `node_name`: &str - Name of the node.
+    ///
+    /// # Examples
+    /// To get the node type name for a given node name you can run:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let node_name = "ENSP00000000233";
+    /// println!("The node type of node {} is {:?}", node_name, graph.get_node_type_name_by_node_name(node_name).unwrap());
+    /// ```
     pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> Result<Option<Vec<String>>, String> {
         self.get_node_type_name(self.get_node_id(node_name)?)
     }
 
-    /// Returs whether the graph has the given node name.
+    /// Returns whether the graph has the given node name.
+    ///
+    /// # Arguments
+    /// 
+    /// * `node_name`: &str - Name of the node.
+    ///
+    /// # Examples
+    /// To check if a node appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let node_name = "ENSP00000000233";
+    /// let unexistent_node_name = "I_do_not_exist!";
+    /// assert!(graph.has_node_by_name(node_name));
+    /// assert!(!graph.has_node_by_name(unexistent_node_name));
+    /// ```
     pub fn has_node_by_name(&self, node_name: &str) -> bool {
         self.get_node_id(node_name).is_ok()
     }
 
-    /// Returs node id raising a panic if used unproperly.
+    /// Returns node id raising a panic if used unproperly.
     pub fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
         *self.nodes.get(node_name).unwrap()
     }
 
-    /// Returs edge type id.
+    /// Returns edge type id.
+    /// TODO: CHECK IF THIS THING SHOULD BE PUBLIC!
     pub fn get_unchecked_edge_type_id(&self, edge_type: Option<&str>) -> Option<EdgeTypeT> {
         match (&self.edge_types, edge_type) {
             (Some(ets), Some(et)) => ets.get(et).copied(),
@@ -467,7 +616,8 @@ impl Graph {
         }
     }
 
-    /// Returs option with the weight of the given edge id.
+    /// Returns option with the weight of the given edge id.
+    /// TODO: CHECK IF THIS THING SHOULD BE PUBLIC!
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.get_unchecked_edge_weight(edge_id)
     }
@@ -697,6 +847,8 @@ impl Graph {
             .collect()
     }
 
+    /// TODO: add unchecked version of this method!
+    /// TODO: add docstring and example!
     pub fn get_destination(&self, edge_id: EdgeT) -> Result<NodeT, String> {
         if edge_id >= self.get_directed_edges_number(){
             return Err(format!(
@@ -711,6 +863,8 @@ impl Graph {
         })
     }
 
+    /// TODO: add docstring
+    /// TODO: check how to uniform this method with the other similar ones!
     pub(crate) fn get_destinations_range(
         &self,
         min_edge_id: EdgeT,
@@ -719,10 +873,68 @@ impl Graph {
         (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id).unwrap())
     }
 
-    /// Return iterator over NodeT of destinations of the given node src.
-    pub(crate) fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
-        self.get_unchecked_destinations_range(src)
-            .map(move |edge_id| self.get_destination(edge_id).unwrap())
+    /// Return vector of destinations for the given source node ID.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - Node ID whose neighbours are to be retrieved.
+    ///
+    /// # Example
+    /// To retrieve the neighbours of a given node `src` you can use:
+    /// 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let node_id = 0;
+    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());
+    /// let unavailable_node = 2349765432;
+    /// assert!(graph.get_node_neighbours_by_node_id(unavailable_node).is_err());
+    /// ```
+    pub fn get_node_neighbours_by_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>, String> {
+        if node_id >= self.get_nodes_number(){
+            return Err(format!(
+                "The node ID {} is higher than the number of available nodes {}.",
+                node_id,
+                self.get_nodes_number()
+            ));
+        }
+        Ok(self.get_unchecked_destinations_range(node_id)
+        .map(move |edge_id| self.get_destination(edge_id).unwrap()).collect())
+    }
+
+    /// Return vector of destinations for the given source node name.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_name`: &str - Node ID whose neighbours are to be retrieved.
+    ///
+    /// # Example
+    /// To retrieve the neighbours of a given node `src` you can use:
+    /// 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let node_id = 0;
+    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());
+    /// ```
+    pub fn get_node_neighbours_by_node_name(&self, node_name: &str) -> Result<Vec<NodeT>, String> {
+        self.get_node_neighbours_by_node_id(self.get_node_id(node_name)?)
+    }
+
+    /// Return vector of destination names for the given source node name.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - Node ID whose neighbours are to be retrieved.
+    ///
+    /// # Example
+    /// To retrieve the neighbours of a given node `src` you can use:
+    /// 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let node_name = "ENSP00000000233";
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbours_name_by_node_name(node_name).unwrap());
+    /// ```
+    pub fn get_node_neighbours_name_by_node_name(&self, node_name: &str) -> Result<Vec<String>, String> {
+        Ok(self.get_neighbours_names_iter(self.get_node_id(node_name)?).collect())
     }
 
     pub(crate) fn get_node_edges_and_destinations(
@@ -878,6 +1090,7 @@ impl Graph {
         let edge_id = self.edge_types.as_ref().map_or_else(|| self.get_edge_id_by_node_ids(src, dst).ok(), |ets| self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
             edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
         }));
+        // TODO: change using a map_err!
         match edge_id{
             Some(e) => Ok(e),
             None => Err(
@@ -892,6 +1105,7 @@ impl Graph {
         }
     }
 
+    // TODO: add docstring and example!
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
         self.get_edge_id_by_node_ids(src, dst).is_ok()
     }
@@ -905,15 +1119,18 @@ impl Graph {
     /// * dst: NodeT - The destination node of the edge.
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
+    /// TODO: add example!
     pub fn has_edge_with_type(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
         self.get_edge_id_with_type_by_node_ids(src, dst, edge_type).is_ok()
     }
 
+    // TODO: add docstring and example!
     pub fn get_edge_id_by_node_names(
         &self,
         src_name: &str,
         dst_name: &str
     ) -> Result<EdgeT, String> {
+        // TODO REFACTOR CODE to be cleaner!
         let edge_id = if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
             self.get_edge_id_by_node_ids(*src, *dst).ok()
         } else {
@@ -933,6 +1150,7 @@ impl Graph {
         }
     }
 
+    // TODO: add docstring and example!
     pub fn has_edge_by_node_names(
         &self,
         src_name: &str,
@@ -941,6 +1159,7 @@ impl Graph {
         self.get_edge_id_by_node_names(src_name, dst_name).is_ok()
     }
 
+    // TODO: add docstring and example!
     pub fn get_edge_id_with_type_by_node_names(
         &self,
         src_name: &str,

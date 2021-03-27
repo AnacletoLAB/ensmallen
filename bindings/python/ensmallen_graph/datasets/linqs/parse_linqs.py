@@ -19,19 +19,17 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
     --------------------
     Pandas DataFrame with words features as columns and nodes as rows.
     """
-    word_node_type = graph.get_node_type_names().index("Word")
-    weights = graph.get_weights() if graph.has_weights() else None
     return pd.DataFrame({
         node_name: {
-            graph.get_node_name(source): weights[graph.get_edge_id_by_node_ids(source, node_id)] if graph.has_weights() else 1
-            for source in graph.get_filtered_neighbours(node_id)
+            source_name: graph.get_weight_by_node_names(source_name, node_name) if graph.has_weights() else 1
+            for source_name in graph.get_node_neighbours_name_by_node_name(node_name)
         }
-        for node_id, node_name in enumerate(tqdm(
+        for node_name in tqdm(
             graph.get_node_names(),
             desc="Extracting words features",
             leave=False
-        ))
-        if graph.get_node_type_id_by_node_id(node_id)[0] == word_node_type
+        )
+        if graph.get_node_type_name_by_node_name(node_name)[0] == "Word"
     }).fillna(0)
 
 

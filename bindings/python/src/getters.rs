@@ -661,6 +661,155 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_type_counts_hashmap())
     }
 
+    #[text_signature = "($self, node_name)"]
+    /// Return node type ID for the given node name if available.
+    ///
+    /// Arguments
+    /// -------------------
+    /// node_name: str,
+    ///     Name of the node.
+    ///
+    /// Returns
+    /// -------------------
+    /// Vector of the node type IDs or None if unknown.
+    pub fn get_node_type_id_by_node_name(&self, node_name: &str) -> PyResult<Option<Vec<NodeTypeT>>> {
+        pe!(self.graph.get_node_type_id_by_node_name(node_name))
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return node type name for the given node name if available.
+    ///
+    /// Arguments
+    /// -------------------
+    /// node_name: str,
+    ///     Name of the node.
+    ///
+    /// Returns
+    /// -------------------
+    /// Vector of the node type names or None if unknown.
+    pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> PyResult<Option<Vec<String>>> {
+        pe!(self.graph.get_node_type_name_by_node_name(node_name))
+    }
+
+    #[text_signature = "($self, edge_id)"]
+    /// Return the weight curresponding to the edge composed by the given edge ids.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// edge_id: int,
+    ///     ID of the edge.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Weight of the edge.
+    ///
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the current graph instance does not have weights.
+    /// ValueError,
+    ///     If the given edge_id does not exist.
+    pub fn get_weight_by_edge_id(&self, edge_id: EdgeT) -> PyResult<WeightT> {
+        pe!(self.graph.get_weight_by_edge_id(edge_id))
+    }
+
+    #[text_signature = "($self, src, dst)"]
+    /// Return the weight curresponding to the edge composed by the given node ids.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: int,
+    ///     id of the source node.
+    /// dst: int,
+    ///     id of the destination node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Weight of the edge.
+    ///
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the current graph instance does not have weights.
+    /// ValueError,
+    ///     If one or more of the given node ids do not exist in the graph.
+    /// ValueError,
+    ///     If the edge composed of the given node ids does not exist.
+    pub fn get_weight_by_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
+        pe!(self.graph.get_weight_by_node_ids(src, dst))
+    }
+
+    #[text_signature = "($self, src_name, dst_name)"]
+    /// Return the weight curresponding to the edge composed by the given node names.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src_name: str,
+    ///     Name of the source node.
+    /// dst_name: str,
+    ///     Name of the destination node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Weight of the edge.
+    ///
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the current graph instance does not have weights.
+    /// ValueError,
+    ///     If one or more of the given node names do not exist in the graph.
+    /// ValueError,
+    ///     If the edge composed of the given node names does not exist.
+    pub fn get_weight_by_node_names(&self, src_name: &str, dst_name: &str) -> PyResult<WeightT> {
+        pe!(self.graph.get_weight_by_node_names(src_name, dst_name))
+    }
+
+    #[text_signature = "(node_id)"]
+    /// Return vector of destination IDs for the given source node ID.
+    ///
+    /// Parameters
+    /// ----------------
+    /// node_id: int,
+    ///     Node ID whose neighbours are to be retrieved.
+    ///
+    /// Returns
+    /// ----------------
+    /// Vector of the node IDs of the neighbours of given node.
+    pub fn get_node_neighbours_by_node_id(&self, node_id: NodeT) -> PyResult<Vec<NodeT>> {
+        pe!(self.graph.get_node_neighbours_by_node_id(node_id))
+    }
+
+    #[text_signature = "(node_name)"]
+    /// Return vector of destination IDs for the given source node name.
+    ///
+    /// Parameters
+    /// ----------------
+    /// node_name: str,
+    ///     Node name whose neighbours are to be retrieved.
+    ///
+    /// Returns
+    /// ----------------
+    /// Vector of the node IDs of the neighbours of given node.
+    pub fn get_node_neighbours_by_node_name(&self, node_name: &str) -> PyResult<Vec<NodeT>> {
+        pe!(self.graph.get_node_neighbours_by_node_name(node_name))
+    }
+
+    #[text_signature = "(node_name)"]
+    /// Return vector of destination names for the given source node name.
+    ///
+    /// Parameters
+    /// ----------------
+    /// node_name: str,
+    ///     Node name whose neighbours are to be retrieved.
+    ///
+    /// Returns
+    /// ----------------
+    /// Vector of the node names of the neighbours of given node.
+    pub fn get_node_neighbours_name_by_node_name(&self, node_name: &str) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_node_neighbours_name_by_node_name(node_name))
+    }
+
     #[text_signature = "(self)"]
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
