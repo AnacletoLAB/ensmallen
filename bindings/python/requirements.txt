@@ -4,4 +4,3 @@ humanize
 scipy
 tqdm
 pandas
-notipy_me
