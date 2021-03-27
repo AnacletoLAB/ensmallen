@@ -664,26 +664,44 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
         data.get_edge_id_by_node_ids.src,
         data.get_edge_id_by_node_ids.dst,
     )?;
-    graph.get_nodes_names_iter();
-    graph.get_edges_iter(data.get_edges_iter.directed);
-    graph.get_sources_iter(data.get_sources_iter.directed);
+    graph.get_nodes_names_iter().collect::<Vec<_>>();
+    graph
+        .get_edges_iter(data.get_edges_iter.directed)
+        .collect::<Vec<_>>();
+    graph
+        .get_sources_iter(data.get_sources_iter.directed)
+        .collect::<Vec<_>>();
     graph.get_sources_par_iter(data.get_sources_par_iter.directed);
-    graph.get_destinations_iter(data.get_destinations_iter.directed);
+    graph
+        .get_destinations_iter(data.get_destinations_iter.directed)
+        .collect::<Vec<_>>();
     graph.get_destinations_par_iter(data.get_destinations_par_iter.directed);
-    graph.get_edges_string_iter(data.get_edges_string_iter.directed);
+    graph
+        .get_edges_string_iter(data.get_edges_string_iter.directed)
+        .collect::<Vec<_>>();
     graph.get_edges_par_iter(data.get_edges_par_iter.directed);
     graph.get_edges_par_string_iter(data.get_edges_par_string_iter.directed);
-    graph.get_edges_triples(data.get_edges_triples.directed);
-    graph.get_edges_string_triples(data.get_edges_string_triples.directed);
+    graph
+        .get_edges_triples(data.get_edges_triples.directed)
+        .collect::<Vec<_>>();
+    graph
+        .get_edges_string_triples(data.get_edges_string_triples.directed)
+        .collect::<Vec<_>>();
     graph.get_edges_par_string_triples(data.get_edges_par_string_triples.directed);
     graph.get_edges_par_string_quadruples(data.get_edges_par_string_quadruples.directed);
     graph.get_edges_string_quadruples(data.get_edges_string_quadruples.directed);
-    graph.get_edges_par_triples(data.get_edges_par_triples.directed);
-    graph.get_edges_quadruples(data.get_edges_quadruples.directed);
+    graph
+        .get_edges_par_triples(data.get_edges_par_triples.directed)
+        .collect::<Vec<_>>();
+    graph
+        .get_edges_quadruples(data.get_edges_quadruples.directed)
+        .collect::<Vec<_>>();
     graph.get_edges_par_quadruples(data.get_edges_par_quadruples.directed);
     graph.get_edge_quadruple(data.get_edge_quadruple.edge_id);
     graph.get_edge_triple(data.get_edge_triple.edge_id);
-    graph.get_unique_edges_iter(data.get_unique_edges_iter.directed);
+    graph
+        .get_unique_edges_iter(data.get_unique_edges_iter.directed)
+        .collect::<Vec<_>>();
 
     graph.connected_holdout(
         data.connected_holdout.random_state,
