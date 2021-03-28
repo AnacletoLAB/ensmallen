@@ -945,12 +945,8 @@ impl Graph {
     ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         // We retrieve the range of edge ids, the minimum and maximum value.
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        // If the destinations are stored explicitly because the time-memory tradeoff is enabled we are done.
-        if self.destinations.is_some() {
-            return (min_edge_id, max_edge_id, None, None);
-        }
 
-        // Otherwise we check if subsampling is enabled and if so, if it makes sense:
+        // We check if subsampling is enabled and if so, if it makes sense:
         // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
         // than the required sub-sampling we do not use it as it would be useless.
         if let Some(indices) = max_neighbours.and_then(|mn| {
@@ -971,6 +967,11 @@ impl Graph {
                     .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
+        }
+
+        // If the destinations are stored explicitly because the time-memory tradeoff is enabled we are done.
+        if self.destinations.is_some() {
+            return (min_edge_id, max_edge_id, None, None);
         }
 
         // Finally if we are using the cache without sub-sampling

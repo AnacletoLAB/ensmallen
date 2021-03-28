@@ -256,7 +256,7 @@ impl Graph {
         include_central_node: bool,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
-    ) -> (Vec<NodeT>, Option<Vec<NodeTypeT>>) {
+    ) -> (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>) {
         (
             self.get_neighbours_by_node_id(
                 node_id,
@@ -264,7 +264,7 @@ impl Graph {
                 include_central_node,
                 offset,
                 max_neighbours,
-            ).collect(),
+            ),
             self.get_unchecked_node_type_id_by_node_id(node_id),
         )
     }
@@ -321,14 +321,13 @@ impl Graph {
         offset: NodeT,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        //impl Iterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
-        impl Iterator<Item = (Vec<NodeT>, Option<Vec<NodeTypeT>>)> + '_,
+        impl IndexedParallelIterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
         String,
     > {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types!".to_string());
         }
-        Ok(node_ids.into_iter().map(move |node_id| {
+        Ok(node_ids.into_par_iter().map(move |node_id| {
             self.get_node_label_prediction_tuple_by_node_id(
                 node_id,
                 random_state,
