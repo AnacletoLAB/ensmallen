@@ -294,15 +294,21 @@ impl Graph {
     /// let node_ids = (0..10).collect::<Vec<NodeT>>();
     /// let include_central_nodes = true;
     /// let offset = 0;
-    /// let max_neighbours = Some(5);
+    /// let max_neighbours = 5;
     /// let iterator = graph.get_node_label_prediction_tuple_by_node_ids(
-    ///    node_ids.clone(), 42, include_central_nodes, offset, max_neighbours
+    ///    node_ids.clone(), 42, include_central_nodes, offset, Some(max_neighbours)
     /// ).unwrap();
     /// iterator.enumerate().for_each(|(i, (neighbours_iter, labels))|{
     ///     for (j, node_id) in neighbours_iter.enumerate(){
     ///         if j==0 && include_central_nodes{
     ///             assert!(node_id==node_ids[i]);
     ///         }
+    ///         assert!(
+    ///             max_neighbours + include_central_nodes as NodeT > j as NodeT,
+    ///             "The index {} is higher than the given maximum neighbours number {}!",
+    ///             j,
+    ///             max_neighbours
+    ///         );
     ///     }
     /// });
     /// ```
