@@ -207,7 +207,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
+    /// * `central_node_id`: NodeT - The node ID to retrieve neighbours for.
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
     /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
@@ -215,20 +215,20 @@ impl Graph {
     ///
     pub(crate) fn get_neighbours_by_node_id(
         &self,
-        node_id: NodeT,
+        central_node_id: NodeT,
         random_state: u64,
         include_central_node: bool,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
     ) -> impl Iterator<Item = NodeT> + '_ {
         (if include_central_node {
-            vec![node_id]
+            vec![central_node_id]
         } else {
             vec![]
         })
         .into_iter()
         .chain(
-            self.get_node_destinations(node_id, random_state, max_neighbours)
+            self.get_node_destinations(central_node_id, random_state, max_neighbours)
                 .into_iter(),
         )
         .map(move |node_id| node_id + offset)
