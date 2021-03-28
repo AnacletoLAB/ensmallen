@@ -37,7 +37,8 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
-    let (contexts, words):(Vec<Vec<NodeT>>, Vec<NodeT>) = pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
+    let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
+        pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
     let gil = pyo3::Python::acquire_gil();
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
@@ -308,8 +309,13 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray2<NodeTypeT>>)> {
         let gil = pyo3::Python::acquire_gil();
+
+        // First we normalize the kwargs so that we always at least
+        // an empty dictionary
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
+        // Then we validate the provided kwargs, that is we verify
+        // that the valid kwarg names are provided.
         pe!(validate_kwargs(
             kwargs,
             &[
@@ -320,29 +326,45 @@ impl EnsmallenGraph {
             ],
         ))?;
 
+        // We check that the provided list is not empty.
         if node_ids.is_empty() {
             return pe!(Err("Given list of node IDs is empty!".to_string()));
         }
 
+        // We get the maximum degree among the provided nodes.
+        // We will use this as a maximal value for the size of the batch.
+        // This way if there are no high-degree centrality nodes in this
+        // batch we do not allocate extra memory for no reason.
+        // We can always unwrap this value because we have requested
+        // just above that the list cannot be empty.
         let mut max_degree = node_ids
             .iter()
             .map(|node_id| self.graph.get_node_degree(*node_id).unwrap())
             .max()
             .unwrap();
 
+        // We get the number of the requested nodes IDs.
         let nodes_number = node_ids.len();
+        // Extract the maximum neighbours parameter.
         let max_neighbours = extract_value!(kwargs, "max_neighbours", NodeT);
+        // And whether to include or not the central node.
         let include_central_node =
             extract_value!(kwargs, "include_central_node", bool).unwrap_or(true);
-
+        
+        // If the maximum neighbours was provided, we set the minimum value
+        // between max degree and maximum neighbours as the size of the
+        // bacth vector to return.
         if let Some(mn) = &max_neighbours {
             max_degree = std::cmp::min(max_degree, *mn);
         }
 
+        // If the batch includes also the central node we need to add an
+        // additional column for it.
         if include_central_node {
             max_degree += 1;
         }
 
+        // We retrieve the batch iterator.
         let iter = pe!(self.graph.get_node_label_prediction_tuple_by_node_ids(
             node_ids,
             extract_value!(kwargs, "random_state", u64).unwrap_or(42),
@@ -350,10 +372,18 @@ impl EnsmallenGraph {
             extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
             max_neighbours,
         ))?;
-
+        
+        // We create the vector of zeros where to allocate the neighbours
+        // This vector has `nodes_number` rows, that is the number of required
+        // node IDs, and `max_degree` rows, that is the maximum degree.
         let neighbours = ThreadSafe {
             t: PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false),
         };
+        // We create the vector of zeros for the one-hot encoded labels.
+        // This is also used for the multi-label case.
+        // This vector has the same number of rows as the previous vector,
+        // that is the number of requested node IDs, while the number
+        // of columns is the number of node types in the graph.
         let labels = ThreadSafe {
             t: PyArray2::zeros(
                 gil.python(),
@@ -362,19 +392,20 @@ impl EnsmallenGraph {
             ),
         };
 
-        unsafe {
-            iter.enumerate()
-                .for_each(|(i, (neighbours_iterator, node_types))| {
-                    neighbours_iterator.enumerate().for_each(|(j, node_id)| {
+        // We iterate over the batch.
+        iter.enumerate()
+            .for_each(|(i, (neighbours_iterator, node_types))| {
+                neighbours_iterator
+                    .enumerate()
+                    .for_each(|(j, node_id)| unsafe {
                         *(neighbours.t.uget_mut([i, j])) = node_id;
                     });
-                    if let Some(nts) = node_types {
-                        nts.into_iter().for_each(|label| {
-                            *(labels.t.uget_mut([i, label as usize])) = 1;
-                        });
-                    }
-                });
-        }
+                if let Some(nts) = node_types {
+                    nts.into_iter().for_each(|label| unsafe {
+                        *(labels.t.uget_mut([i, label as usize])) = 1;
+                    });
+                }
+            });
 
         Ok((neighbours.t.to_owned(), labels.t.to_owned()))
     }

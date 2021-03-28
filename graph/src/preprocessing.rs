@@ -284,6 +284,29 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
+    /// # Examples
+    /// Suppose you want to the get the neighbours of the first 10 nodes:
+    /// ```rust
+    /// # use rayon::iter::ParallelIterator;
+    /// # use graph::NodeT;
+    /// # use rayon::iter::IndexedParallelIterator;
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// let node_ids = (0..10).collect::<Vec<NodeT>>();
+    /// let include_central_nodes = true;
+    /// let offset = 0;
+    /// let max_neighbours = Some(5);
+    /// let iterator = graph.get_node_label_prediction_tuple_by_node_ids(
+    ///    node_ids.clone(), 42, include_central_nodes, offset, max_neighbours
+    /// ).unwrap();
+    /// iterator.enumerate().for_each(|(i, (neighbours_iter, labels))|{
+    ///     for (j, node_id) in neighbours_iter.enumerate(){
+    ///         if j==0 && include_central_nodes{
+    ///             assert!(node_id==node_ids[i]);
+    ///         }
+    ///     }
+    /// });
+    /// ```
+    ///
     pub fn get_node_label_prediction_tuple_by_node_ids(
         &self,
         node_ids: Vec<NodeT>,
