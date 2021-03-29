@@ -5,13 +5,13 @@ use std::collections::HashMap;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the number of nodes in the graph.
     fn get_nodes_number(&self) -> NodeT {
         self.graph.get_nodes_number()
     }
 
-    #[text_signature = "(self, k)"]
+    #[text_signature = "($self, k)"]
     /// Return List with top k central node Ids.
     ///
     /// Parameters
@@ -26,7 +26,7 @@ impl EnsmallenGraph {
         self.graph.get_top_k_central_nodes(k)
     }
 
-    #[text_signature = "(self, k)"]
+    #[text_signature = "($self, k)"]
     /// Return List with top k central node names.
     ///
     /// Parameters
@@ -41,25 +41,25 @@ impl EnsmallenGraph {
         self.graph.get_top_k_central_node_names(k)
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the name of the graph.
     fn get_name(&self) -> String {
         self.graph.get_name()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the number of edges in the graph.
     fn get_edges_number(&self) -> EdgeT {
         self.graph.get_edges_number()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the number of undirected edges in the graph.
     fn get_undirected_edges_number(&self) -> EdgeT {
         self.graph.get_undirected_edges_number()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the number of edges types in the graph.
     ///
     /// This method will include, if found necessary by a missing value,
@@ -69,7 +69,7 @@ impl EnsmallenGraph {
         self.graph.get_edge_types_number()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Return the number of edges in the graph.
     ///
     /// This method will include, if found necessary by a missing value,
@@ -79,7 +79,7 @@ impl EnsmallenGraph {
         self.graph.get_node_types_number()
     }
 
-    #[text_signature = "(self, edge_type)"]
+    #[text_signature = "($self, edge_type)"]
     /// Return the number of edges with the given edge type in the graph.
     ///
     /// Parameters
@@ -101,7 +101,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_edge_count_by_edge_type(edge_type))
     }
 
-    #[text_signature = "(self, node_type)"]
+    #[text_signature = "($self, node_type)"]
     /// Return the number of nodes with the given node type in the graph.
     ///
     /// Parameters
@@ -123,7 +123,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_count_by_node_type(node_type))
     }
 
-    #[text_signature = "(self, edge_type)"]
+    #[text_signature = "($self, edge_type)"]
     /// Return the number of edges with the given edge type name in the graph.
     ///
     /// Parameters
@@ -145,7 +145,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_edge_count_by_edge_type_name(edge_type))
     }
 
-    #[text_signature = "(self, node_type)"]
+    #[text_signature = "($self, node_type)"]
     /// Return the number of nodes with the given node type name in the graph.
     ///
     /// Parameters
@@ -441,7 +441,7 @@ impl EnsmallenGraph {
         self.graph.get_unique_sources_number()
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique source nodes.
     ///
     /// Parameters
@@ -457,7 +457,7 @@ impl EnsmallenGraph {
         to_ndarray_1d!(gil, self.graph.get_sources(directed.unwrap_or(true)), NodeT)
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -473,7 +473,7 @@ impl EnsmallenGraph {
         to_ndarray_1d!(gil, self.graph.get_destinations(directed.unwrap_or(true)), NodeT)
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector on the edges of the graph.
     ///
     /// Parameters
@@ -493,7 +493,7 @@ impl EnsmallenGraph {
         ))
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return list on the name of the edges of the graph.
     ///
     /// Parameters
@@ -508,7 +508,7 @@ impl EnsmallenGraph {
         self.graph.get_edge_names(directed.unwrap_or(true))
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique source nodes names.
     ///
     /// Parameters
@@ -519,7 +519,7 @@ impl EnsmallenGraph {
         self.graph.get_source_names(directed.unwrap_or(true))
     }
 
-    #[text_signature = "(self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -765,7 +765,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_weight_by_node_names(src_name, dst_name))
     }
 
-    #[text_signature = "(node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return vector of destination IDs for the given source node ID.
     ///
     /// Parameters
@@ -780,7 +780,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_neighbours_by_node_id(node_id))
     }
 
-    #[text_signature = "(node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return vector of destination IDs for the given source node name.
     ///
     /// Parameters
@@ -795,7 +795,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_neighbours_by_node_name(node_name))
     }
 
-    #[text_signature = "(node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return vector of destination names for the given source node name.
     ///
     /// Parameters
@@ -810,26 +810,26 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_neighbours_name_by_node_name(node_name))
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
     fn has_selfloops(&self) -> bool {
         self.graph.has_selfloops()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Returns true if the graph has weights.
     fn has_weights(&self) -> bool {
         self.graph.has_weights()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Returns true if the graph has node types.
     fn has_node_types(&self) -> bool {
         self.graph.has_node_types()
     }
 
-    #[text_signature = "(self)"]
+    #[text_signature = "($self)"]
     /// Returns true if the graph has edge types.
     fn has_edge_types(&self) -> bool {
         self.graph.has_edge_types()
