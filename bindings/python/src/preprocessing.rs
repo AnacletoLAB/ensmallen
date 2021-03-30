@@ -350,7 +350,7 @@ impl EnsmallenGraph {
         // And whether to include or not the central node.
         let include_central_node =
             extract_value!(kwargs, "include_central_node", bool).unwrap_or(true);
-        
+
         // If the maximum neighbours was provided, we set the minimum value
         // between max degree and maximum neighbours as the size of the
         // bacth vector to return.
@@ -372,42 +372,37 @@ impl EnsmallenGraph {
             extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
             max_neighbours,
         ))?;
-        
+
         // We create the vector of zeros where to allocate the neighbours
         // This vector has `nodes_number` rows, that is the number of required
         // node IDs, and `max_degree` rows, that is the maximum degree.
-        let neighbours = ThreadSafe {
-            t: PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false),
-        };
+        let neighbours =
+            PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
         // We create the vector of zeros for the one-hot encoded labels.
         // This is also used for the multi-label case.
         // This vector has the same number of rows as the previous vector,
         // that is the number of requested node IDs, while the number
         // of columns is the number of node types in the graph.
-        let labels = ThreadSafe {
-            t: PyArray2::zeros(
-                gil.python(),
-                [nodes_number, self.graph.get_node_types_number() as usize],
-                false,
-            ),
-        };
+        let labels = PyArray2::zeros(
+            gil.python(),
+            [nodes_number, self.graph.get_node_types_number() as usize],
+            false,
+        );
 
         // We iterate over the batch.
         iter.enumerate()
             .for_each(|(i, (neighbours_iterator, node_types))| {
-                neighbours_iterator
-                    .enumerate()
-                    .for_each(|(j, node_id)| unsafe {
-                        *(neighbours.t.uget_mut([i, j])) = node_id;
-                    });
+                neighbours_iterator.enumerate().for_each(|(j, node_id)| unsafe {
+                    *neighbours.uget_mut([i, j]) = node_id;
+                });
                 if let Some(nts) = node_types {
                     nts.into_iter().for_each(|label| unsafe {
-                        *(labels.t.uget_mut([i, label as usize])) = 1;
+                        *labels.uget_mut([i, label as usize]) = 1;
                     });
                 }
             });
 
-        Ok((neighbours.t.to_owned(), labels.t.to_owned()))
+        Ok((neighbours.to_owned(), labels.to_owned()))
     }
 
     #[args(py_kwargs = "**")]
