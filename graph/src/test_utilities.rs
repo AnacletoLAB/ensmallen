@@ -120,6 +120,20 @@ pub fn load_ppi(
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types,);
     assert_eq!(ppi.has_weights(), load_weights);
+    assert_eq!(
+        ppi.has_selfloops(),
+        !skip_self_loops,
+        concat!(
+            "I was expecting the graph self-loops status to be {} ",
+            "since we have given parameter skip_self_loops equal to {}, ",
+            "but actually is {}.\n",
+            "The graph report is: \n {:?}"
+        ),
+        !skip_self_loops,
+        skip_self_loops,
+        ppi.has_selfloops(),
+        ppi.textual_report(false)
+    );
     Ok(ppi)
 }
 

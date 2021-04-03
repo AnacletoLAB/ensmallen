@@ -10,8 +10,10 @@ impl Graph {
     /// Return name of the graph.
     ///
     /// # Example
+    /// To the retrieve the name of the current graph instance you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph.get_name(), "Graph".to_string());
     /// println!("The name of the current graph is {}.", graph.get_name());
     /// ```
     ///
@@ -90,6 +92,15 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has self-loops.
+    ///
+    /// # Example
+    /// ```rust
+    /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(string_ppi_with_selfloops.has_selfloops());
+    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();
+    /// assert!(!string_ppi_without_selfloops.has_selfloops());
+    /// ```
+    ///
     pub fn has_selfloops(&self) -> bool {
         self.self_loop_number > 0
     }
