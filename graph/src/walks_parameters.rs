@@ -417,6 +417,23 @@ impl WalksParameters {
     ///
     /// * graph: Graph - Graph object for which parameters are to be validated.
     ///
+    /// # Example
+    /// A graph is always remappable to itself:
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let mut parameters = WalksParameters::new(32).unwrap();
+    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&ppi).is_ok());
+    /// ```
+    /// Two different graphs, like Cora and STRING, are not remappable:
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// # let cora = graph::test_utilities::load_cora().unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let mut parameters = WalksParameters::new(32).unwrap();
+    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&cora).is_err());
+    /// ```
+    ///
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
