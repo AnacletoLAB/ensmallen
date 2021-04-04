@@ -457,6 +457,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
+    assert_eq!(walker.clone(), walker);
+    let walker2 = second_order_walker(&graph)?;
+    assert_eq!(walker2.clone(), walker2);
     if !graph.directed {
         warn!("Executing random walks tests.");
         for mode in 0..3 {
@@ -614,14 +617,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
         }
         if graph.has_unknown_node_types() {
             assert!(graph
-                .remove_components(
-                    None,
-                    Some(vec![None]),
-                    None,
-                    None,
-                    None,
-                    verbose
-                )
+                .remove_components(None, Some(vec![None]), None, None, None, verbose)
                 .is_ok());
         }
         if let Ok(edge_type_name) = graph.get_edge_type_name(0) {
@@ -638,14 +634,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
         }
         if graph.has_unknown_edge_types() {
             assert!(graph
-                .remove_components(
-                    None,
-                    None,
-                    Some(vec![None]),
-                    None,
-                    None,
-                    verbose
-                )
+                .remove_components(None, None, Some(vec![None]), None, None, verbose)
                 .is_ok());
         }
     } else {
@@ -1037,6 +1026,18 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     Ok(())
 }
 
+pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    assert!(
+        graph.are_nodes_remappable(&graph),
+        "Graph always should be remappable to itself."
+    );
+    assert!(
+        graph.remap(&graph, verbose).is_ok(),
+        "Graph always should be remappable to itself."
+    );
+    Ok(())
+}
+
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Starting default test suite.");
@@ -1086,6 +1087,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     warn!("Testing edge lists generation.");
     let _ = test_edgelist_generation(graph, verbose);
+
+    warn!("Testing graph remapping.");
+    let _ = test_graph_remapping(graph, verbose);
 
     Ok(())
 }

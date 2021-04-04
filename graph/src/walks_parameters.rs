@@ -2,7 +2,7 @@ use super::*;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap walk weights.
 pub struct WalkWeights {
     pub(crate) return_weight: ParamsT,
@@ -11,7 +11,7 @@ pub struct WalkWeights {
     pub(crate) change_edge_type_weight: ParamsT,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
     pub(crate) walk_length: u64,
@@ -19,7 +19,7 @@ pub struct SingleWalkParameters {
     pub(crate) max_neighbours: Option<NodeT>,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap parameters relative to a set of walks.
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
@@ -69,16 +69,6 @@ impl WalkWeights {
         let weights = vec![
             self.change_node_type_weight,
             self.change_edge_type_weight,
-            self.return_weight,
-            self.explore_weight,
-        ];
-        weights.iter().all(|weight| !not_one(*weight))
-    }
-
-    /// Return boolean value representing if walk is of first order.
-    pub fn is_walk_without_destinations(&self) -> bool {
-        let weights = vec![
-            self.change_node_type_weight,
             self.return_weight,
             self.explore_weight,
         ];
