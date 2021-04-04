@@ -65,6 +65,15 @@ impl WalkWeights {
     }
 
     /// Return boolean value representing if walk is of first order.
+    ///
+    /// # Example
+    /// The default parametrization defines a first order walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalkWeights;
+    /// let weights = WalkWeights::default();
+    /// assert!(weights.is_first_order_walk());
+    /// ```
     pub fn is_first_order_walk(&self) -> bool {
         let weights = vec![
             self.change_node_type_weight,
@@ -84,6 +93,21 @@ impl SingleWalkParameters {
     /// # Arguments
     ///
     /// * walk_length: usize - Maximal walk_length of the walk.
+    ///
+    /// # Example
+    /// You can create a single walk parameters struct as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::SingleWalkParameters;
+    /// assert!(SingleWalkParameters::new(45).is_ok());
+    /// ```
+    ///
+    /// as long as you don't try to make a zero walk length you'll be fine:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::SingleWalkParameters;
+    /// assert!(SingleWalkParameters::new(0).is_err());
+    /// ```
     pub fn new(walk_length: u64) -> Result<SingleWalkParameters, String> {
         if walk_length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
@@ -96,6 +120,15 @@ impl SingleWalkParameters {
     }
 
     /// Return boolean value representing if walk is of first order.
+    ///
+    /// # Example
+    /// The default parametrization defines a first order walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::SingleWalkParameters;
+    /// let weights = SingleWalkParameters::new(32).unwrap();
+    /// assert!(weights.is_first_order_walk());
+    /// ```
     pub fn is_first_order_walk(&self) -> bool {
         self.weights.is_first_order_walk()
     }
@@ -110,6 +143,7 @@ impl WalksParameters {
     /// # Arguments
     ///
     /// * walk_length: NodeT - Maximal walk_length of the walk.
+    ///
     pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(walk_length)?,
@@ -125,6 +159,22 @@ impl WalksParameters {
     ///
     /// * iterations: Option<NodeT> - whether to show the loading bar or not.
     ///
+    /// # Example
+    /// You can change the `iterations` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_iterations(Some(0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_iterations(Some(2)).is_ok());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_iterations(None).is_ok());
+    /// ```
     pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters, String> {
         if let Some(it) = iterations {
             if it == 0 {
@@ -138,6 +188,18 @@ impl WalksParameters {
     }
 
     /// Return the iterations.
+    ///
+    /// # Example
+    /// To retrieve the number of iterations you can do the following:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// let mut walk_parameters = WalksParameters::new(32).unwrap();
+    /// assert_eq!(walk_parameters.get_iterations(), 1);
+    /// let iterations_number = 56;
+    /// walk_parameters = walk_parameters.set_iterations(Some(iterations_number)).unwrap();
+    /// assert_eq!(walk_parameters.get_iterations(), iterations_number);
+    /// ```
     pub fn get_iterations(&self) -> NodeT {
         self.iterations
     }
@@ -148,6 +210,22 @@ impl WalksParameters {
     ///
     /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
+    /// # Example
+    /// You can change the `max_neighbours` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(2)).is_ok());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_max_neighbours(None).is_ok());
+    /// ```
     pub fn set_max_neighbours(
         mut self,
         max_neighbours: Option<NodeT>,
@@ -199,6 +277,24 @@ impl WalksParameters {
     ///
     /// * return_weight: Option<WeightT> - weight for the exploitation factor.
     ///
+    /// # Example
+    /// You can change the `return_weight` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_return_weight(Some(-1.0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_return_weight(Some(2.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).unwrap().is_first_order_walk());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_return_weight(None).unwrap().is_first_order_walk());
+    /// ```
     pub fn set_return_weight(
         mut self,
         return_weight: Option<WeightT>,
@@ -216,6 +312,24 @@ impl WalksParameters {
     ///
     /// * explore_weight: Option<WeightT> - weight for the exploration factor.
     ///
+    /// # Example
+    /// You can change the `explore_weight` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(-1.0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(2.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).unwrap().is_first_order_walk());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_explore_weight(None).unwrap().is_first_order_walk());
+    /// ```
     pub fn set_explore_weight(
         mut self,
         explore_weight: Option<WeightT>,
@@ -233,6 +347,24 @@ impl WalksParameters {
     ///
     /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
     ///
+    /// # Example
+    /// You can change the `change_node_type_weight` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(-1.0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(2.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).unwrap().is_first_order_walk());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(None).unwrap().is_first_order_walk());
+    /// ```
     pub fn set_change_node_type_weight(
         mut self,
         change_node_type_weight: Option<WeightT>,
@@ -250,6 +382,22 @@ impl WalksParameters {
     ///
     /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
     ///
+    /// # Example
+    /// You can change the `change_edge_type_weight` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(-1.0)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(2.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).is_ok());
+    /// assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).unwrap().is_first_order_walk());
+    /// ```
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(None).unwrap().is_first_order_walk());
+    /// ```
     pub fn set_change_edge_type_weight(
         mut self,
         change_edge_type_weight: Option<WeightT>,
@@ -286,6 +434,14 @@ impl WalksParameters {
     }
 
     /// Return boolean value representing if walk is of first order.
+    ///
+    /// # Example
+    /// The default parametrization defines a first order walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().is_first_order_walk());
+    /// ```
     pub fn is_first_order_walk(&self) -> bool {
         self.single_walk_parameters.is_first_order_walk()
     }
