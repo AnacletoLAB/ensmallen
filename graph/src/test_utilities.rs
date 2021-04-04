@@ -172,7 +172,7 @@ pub fn second_order_walker(
         .set_iterations(Some(1))?
         .set_return_weight(Some(return_weight))?
         .set_explore_weight(Some(explore_weight))?
-        .set_max_neighbours(Some(20))?
+        .set_max_neighbours(Some(3))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
@@ -464,6 +464,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
     assert_eq!(walker.clone(), walker);
     let walker2 = second_order_walker(&graph, 2.0, 2.0)?;
     assert_eq!(walker2.clone(), walker2);
+    
     if !graph.directed {
         warn!("Executing random walks tests.");
         for mode in 0..3 {
@@ -551,6 +552,11 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
                 "Complete second order walks are not reproducible!"
             );
         }
+    } else {
+        assert!(
+            graph
+                .complete_walks_iter(&walker).is_err()
+        );
     }
     Ok(())
 }
