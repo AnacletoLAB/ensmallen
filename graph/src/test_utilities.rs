@@ -1069,7 +1069,7 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), Stri
 }
 
 /// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Starting default test suite.");
     let _ = test_graph_properties(graph, verbose);
 
@@ -1121,5 +1121,15 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     warn!("Testing graph remapping.");
     let _ = test_graph_remapping(graph, verbose);
 
+    Ok(())
+}
+
+/// Executes near-complete test of all functions for the given graph.
+pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    warn!("Starting default test suite.");
+    let _ = _default_test_suite(graph, verbose);
+    warn!("Starting default test suite with speedups enabled.");
+    graph.enable(true, true, true, None)?;
+    let _ = _default_test_suite(graph, verbose);
     Ok(())
 }

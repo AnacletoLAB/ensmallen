@@ -730,10 +730,7 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|node| self.get_node_degree(node as NodeT).unwrap())
-            .collect::<Vec<NodeT>>()
+        self.get_node_degrees_iter().collect()
     }
 
     /// Return set of nodes that are not singletons.
@@ -862,6 +859,7 @@ impl Graph {
         self.get_directed_edges_number() - self.unique_edges_number
     }
 
+    /// Return vector with node degrees
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
         (0..self.get_nodes_number())
             .into_par_iter()
