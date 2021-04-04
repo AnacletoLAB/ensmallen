@@ -163,11 +163,6 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self.map.len()
     }
 
-    /// Return boolean representing if values are numeric.
-    pub fn has_numeric_ids(&self) -> bool {
-        self.numeric_ids
-    }
-
     /// Set wether to load IDs as numeric.
     ///
     /// # Arguments
