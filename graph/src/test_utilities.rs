@@ -97,11 +97,7 @@ pub fn load_ppi(
             None
         })
         .set_max_rows_number(Some(100000))
-        .set_default_weight(if load_weights {
-            Some(5.0)
-        } else {
-            None
-        })
+        .set_default_weight(if load_weights { Some(5.0) } else { None })
         .set_skip_self_loops(Some(skip_self_loops))
         .clone();
 
@@ -604,6 +600,58 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             1,
             "Expected number of components (1) is not matched!"
         );
+        if let Ok(node_type_name) = graph.translate_node_type_id(0) {
+            assert!(graph
+                .remove_components(
+                    None,
+                    Some(vec![Some(node_type_name.to_string())]),
+                    None,
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+        if graph.has_unknown_node_types() {
+            assert!(graph
+                .remove_components(
+                    None,
+                    Some(vec![None]),
+                    None,
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+        if let Ok(edge_type_name) = graph.get_edge_type_name(0) {
+            assert!(graph
+                .remove_components(
+                    None,
+                    None,
+                    Some(vec![Some(edge_type_name.to_string())]),
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+        if graph.has_unknown_edge_types() {
+            assert!(graph
+                .remove_components(
+                    None,
+                    None,
+                    Some(vec![None]),
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+    } else {
+        assert!(graph
+            .remove_components(None, None, None, None, None, verbose)
+            .is_err());
     }
 
     Ok(())

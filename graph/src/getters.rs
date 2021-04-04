@@ -26,10 +26,10 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("There are {} trap nodes in the current graph.", graph.get_traps_number());
+    /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
-    pub fn get_traps_number(&self) -> EdgeT {
+    pub fn get_trap_nodes_number(&self) -> EdgeT {
         self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
     }
 
@@ -38,15 +38,15 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// if graph.has_traps(){
-    ///     println!("There are {} trap nodes in the current graph.", graph.get_traps_number());
+    /// if graph.has_trap_nodes(){
+    ///     println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// } else {
     ///     println!("There are no trap nodes in the current graph.");
     /// }
     /// ```
     ///
-    pub fn has_traps(&self) -> bool {
-        self.get_traps_number() > 0
+    pub fn has_trap_nodes(&self) -> bool {
+        self.get_trap_nodes_number() > 0
     }
 
     /// Returns boolean representing if graph is directed.
@@ -136,6 +136,16 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has singletons.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// assert!(graph_with_singletons.has_singletons());
+    /// let graph_without_singletons = graph_with_singletons.remove(
+    ///     None, None, None, None, None, None, None, None, false, false, true, true, false, false,
+    /// ).unwrap();
+    /// assert!(!graph_without_singletons.has_singletons());
+    /// ```
     pub fn has_singletons(&self) -> bool {
         self.get_singleton_nodes_number() > 0
     }
@@ -411,6 +421,7 @@ impl Graph {
     }
 
     /// Returns option with the node type of the given node id.
+    /// TODO: MOST LIKELY THIS SHOULD BE CHANGED!!!
     pub fn get_node_type_name(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
             true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
