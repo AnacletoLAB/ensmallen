@@ -268,6 +268,8 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
             "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
             graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
         );
+    } else {
+        assert!(graph.spanning_arborescence(verbose).is_err());
     }
     assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }
@@ -320,23 +322,21 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "Sum of singleton and non singleton nodes number does not match."
     );
 
-    if !graph.directed {
-        warn!("Running connected components tests.");
-        let (_components_number, smallest, biggest) = graph.connected_components_number(false);
-        assert!(
-            biggest >= smallest,
-            "smallest: {} biggest: {}",
-            smallest,
-            biggest
-        );
+    warn!("Running connected components tests.");
+    let (_components_number, smallest, biggest) = graph.connected_components_number(false);
+    assert!(
+        biggest >= smallest,
+        "smallest: {} biggest: {}",
+        smallest,
+        biggest
+    );
 
-        assert!(
-            smallest != 1
-                || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
-            "When the smallest component is one the graph must have singletons! Graph report: \n{}",
-            graph.textual_report(false)?
-        );
-    }
+    assert!(
+        smallest != 1
+            || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
+        "When the smallest component is one the graph must have singletons! Graph report: \n{}",
+        graph.textual_report(false)?
+    );
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.get_unique_edges_iter(true).next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
@@ -464,7 +464,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
     assert_eq!(walker.clone(), walker);
     let walker2 = second_order_walker(&graph, 2.0, 2.0)?;
     assert_eq!(walker2.clone(), walker2);
-    
+
     if !graph.directed {
         warn!("Executing random walks tests.");
         for mode in 0..3 {
@@ -553,10 +553,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
             );
         }
     } else {
-        assert!(
-            graph
-                .complete_walks_iter(&walker).is_err()
-        );
+        assert!(graph.complete_walks_iter(&walker).is_err());
     }
     Ok(())
 }
@@ -803,6 +800,15 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
+    graph
+        .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
+        .unwrap()
+        .collect::<Vec<_>>();
+    graph
+        .link_prediction_ids(0, 256, 10.0, false, 10, &None)
+        .unwrap()
+        .collect::<Vec<_>>();
+
     Ok(())
 }
 
