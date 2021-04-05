@@ -1097,9 +1097,6 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);
 
-    warn!("Testing random walks.");
-    let _ = test_random_walks(graph, verbose);
-
     warn!("Running remove components tests.");
     let _ = test_remove_components(graph, verbose);
 
@@ -1120,6 +1117,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing graph remapping.");
     let _ = test_graph_remapping(graph, verbose);
+
+    warn!("Testing random walks.");
+    let _ = test_random_walks(graph, verbose);
 
     Ok(())
 }
