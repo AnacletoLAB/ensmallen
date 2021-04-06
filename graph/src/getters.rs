@@ -883,17 +883,6 @@ impl Graph {
         })
     }
 
-    /// TODO: add docstring
-    /// TODO: check how to uniform this method with the other similar ones!
-    pub(crate) fn get_destinations_range(
-        &self,
-        min_edge_id: EdgeT,
-        max_edge_id: EdgeT,
-    ) -> impl Iterator<Item = NodeT> + '_ {
-        // TODO: NEW ELIAS FANO METHOD
-        (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id).unwrap())
-    }
-
     /// Return vector of destinations for the given source node ID.
     ///
     /// # Arguments
