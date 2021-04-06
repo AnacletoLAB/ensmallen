@@ -1,7 +1,5 @@
 maturin
 compress_json
-humanize
 scipy
 tqdm
 pandas
-notipy_me

@@ -1,7 +1,7 @@
 [package]
 edition = "2018"
 name = "ensmallen_graph"
-version = "0.5.2"
+version = "0.6.0"
 license = "MIT"
 repository= "https://github.com/LucaCappelletti94/ensmallen_graph"
 authors = [
@@ -13,7 +13,7 @@ exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
-requires-python = ">=3.5"
+requires-python = ">=3.6"
 requires-dist = ["toml~=0.10.0", "downloaders", "compress_json"]
 
 [lib]
@@ -21,13 +21,13 @@ name = "ensmallen_graph"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]
-version = "0.10.1"
+version = "0.13.2"
 features = ["extension-module"]
 
 [dependencies]
 env_logger = "0.8.1"
 graph = { path = "../../graph" }
-numpy = "0.9.0"
+numpy = "0.13.1"
 edit-distance = "2.1.0"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
@@ -58,7 +58,7 @@ lto = "fat"
 # The default value, if not specified, is 16 for non-incremental builds. For 
 # incremental builds the default is 256 which allows caching to be more 
 # granular.
-codgen-units=1
+# codgen-units=1
 
 # This option lets you set the default threshold for inlining a function. 
 # It takes an unsigned integer as a value. Inlining is based on a cost model, 

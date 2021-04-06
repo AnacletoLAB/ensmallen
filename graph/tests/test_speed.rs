@@ -12,5 +12,5 @@ fn test_speed() {
         false,
     )
     .unwrap();
-    ppi.random_walks_iter(1, &second_order_walker(&ppi).unwrap()).unwrap();
+    ppi.random_walks_iter(1, &second_order_walker(&ppi, 2.0, 2.0).unwrap()).unwrap();
 }

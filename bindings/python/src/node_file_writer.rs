@@ -34,9 +34,9 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            [
+            &[
                 "verbose",
                 "separator",
                 "header",
@@ -44,20 +44,17 @@ impl EnsmallenGraph {
                 "nodes_column",
                 "node_types_column_number",
                 "nodes_type_column",
-            ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
+            ],
         ))?;
 
         let writer = NodeFileWriter::new(path)
-            .set_verbose(pyex!(extract_value!(kwargs, "verbose", bool))?)
-            .set_separator(pyex!(extract_value!(kwargs, "separator", String))?)
-            .set_header(pyex!(extract_value!(kwargs, "header", bool))?)
-            .set_nodes_column_number(pyex!(extract_value!(kwargs, "nodes_column_number", usize))?)
-            .set_nodes_column(pyex!(extract_value!(kwargs, "nodes_column", String))?)
-            .set_node_types_column_number(pyex!(extract_value!(kwargs, "node_types_column_number", usize))?)
-            .set_node_types_column(pyex!(extract_value!(kwargs, "nodes_type_column", String))?);
-        pyex!(writer.dump(&self.graph))
+            .set_verbose(extract_value!(kwargs, "verbose", bool))
+            .set_separator(extract_value!(kwargs, "separator", String))
+            .set_header(extract_value!(kwargs, "header", bool))
+            .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
+            .set_nodes_column(extract_value!(kwargs, "nodes_column", String))
+            .set_node_types_column_number(extract_value!(kwargs, "node_types_column_number", usize))
+            .set_node_types_column(extract_value!(kwargs, "nodes_type_column", String));
+        pe!(writer.dump(&self.graph))
     }
 }

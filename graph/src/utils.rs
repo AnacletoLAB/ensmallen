@@ -39,6 +39,25 @@ impl Graph {
     }
 }
 
+/// Return validated weight.
+///
+/// A weight, to be valid in the context of graph machine learning
+/// as we have defined, must be strictly positive and non infinite. 
+///
+/// # Arguments
+/// 
+/// * weight: WeightT - The weight to validate.
+///
+/// # Examples
+/// The weight can be validated as follows:
+/// ```rust
+/// # use graph::utils::validate_weight;
+/// assert!(validate_weight(0.0).is_err());
+/// assert!(validate_weight(-1.0).is_err());
+/// assert!(validate_weight(2.0).is_ok());
+/// assert_eq!(validate_weight(2.0).unwrap(), 2.0);
+/// ```
+/// 
 pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     if weight.is_finite() && weight > 0.0 {
         Ok(weight)
@@ -50,6 +69,23 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     }
 }
 
+/// Return given weight parsed from string to float.
+///
+/// # Arguments
+/// 
+/// * weight: String - The weight to be parsed.
+///
+/// # Examples
+/// The weight can be validated as follows:
+/// ```rust
+/// # use graph::utils::parse_weight;
+/// assert!(parse_weight("0.0".to_string()).is_ok());
+/// assert!(parse_weight("-1.0".to_string()).is_ok());
+/// assert!(parse_weight("2.0".to_string()).is_ok());
+/// assert!(parse_weight("2ghgjh.0".to_string()).is_err());
+/// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
+/// ```
+/// 
 pub fn parse_weight(weight: String) -> Result<WeightT, String> {
     match weight.parse::<WeightT>() {
         Ok(val) => Ok(val),

@@ -5,27 +5,50 @@ impl Graph {
     /// Return wether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
-    /// other: &Grap - graph towards remap the nodes to.
+    /// other: &Graph - graph towards remap the nodes to.
+    ///
+    /// # Example
+    /// A graph is always remappable to itself:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.are_nodes_remappable(&graph));
+    /// ```
+    /// Two different graphs, like Cora and STRING, are not remappable:
+    /// ```rust
+    /// # let cora = graph::test_utilities::load_cora().unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(!cora.are_nodes_remappable(&ppi));
+    /// ```
+    ///
     pub fn are_nodes_remappable(&self, other: &Graph) -> bool {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
         self.get_nodes_names_iter()
-            .all(|(_, node_name, node_type)| other.has_node_string(&node_name, node_type))
+            .all(|(_, node_name, node_type)| {
+                other.has_node_with_type_by_name(&node_name, node_type)
+            })
     }
 
     /// Return graph remapped towards nodes of the given graph.
     ///
     /// # Arguments
     ///
-    /// * other: Graph - The graph to remap towards.
+    /// * other: &Graph - The graph to remap towards.
     /// * verbose: bool - Wether to show a loding bar.
+    ///
+    /// # Example
+    /// A graph is always remappable to itself:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
+    /// ```
     ///
     pub fn remap(&self, other: &Graph, verbose: bool) -> Result<Graph, String> {
         let pb = get_loading_bar(
             verbose,
             format!("Building remapped {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         if !self.are_nodes_remappable(&other) {
@@ -47,7 +70,6 @@ impl Graph {
             other.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
-            true,
             self.name.clone(),
             false,
             self.has_edge_types(),

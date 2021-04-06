@@ -1,5 +1,0 @@
-subject,object,edge_type,weight
-A,A,type_1,6
-B,B,type_2,7
-D,C,type_3,8
-C,D,type_3,8

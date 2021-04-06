@@ -1,3 +1,5 @@
+use itertools::Itertools;
+
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
@@ -58,7 +60,16 @@ impl EdgeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
 
-            self.sources_column_number = self.reader.get_column_number(column)?;
+            match self.reader.get_column_number(column) {
+                Ok(ecn) => {
+                    self = self.set_sources_column_number(Some(ecn))?;
+                }
+                Err(e) => {
+                    if !self.skip_edge_types_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
         }
         Ok(self)
     }
@@ -104,7 +115,16 @@ impl EdgeFileReader {
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
-            self.destinations_column_number = self.reader.get_column_number(column)?;
+            match self.reader.get_column_number(column) {
+                Ok(ecn) => {
+                    self = self.set_destinations_column_number(Some(ecn))?;
+                }
+                Err(e) => {
+                    if !self.skip_edge_types_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
         }
         Ok(self)
     }
@@ -152,7 +172,7 @@ impl EdgeFileReader {
             }
             match self.reader.get_column_number(column) {
                 Ok(ecn) => {
-                    self.edge_types_column_number = Some(ecn);
+                    self = self.set_edge_types_column_number(Some(ecn))?;
                 }
                 Err(e) => {
                     if !self.skip_edge_types_if_unavailable {
@@ -210,7 +230,7 @@ impl EdgeFileReader {
             }
             match self.reader.get_column_number(column) {
                 Ok(wcn) => {
-                    self.weights_column_number = Some(wcn);
+                    self = self.set_weights_column_number(Some(wcn))?;
                 }
                 Err(e) => {
                     if !self.skip_weights_if_unavailable {
@@ -260,11 +280,11 @@ impl EdgeFileReader {
     pub fn set_skip_weights_if_unavailable(
         mut self,
         skip_weights_if_unavailable: Option<bool>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> EdgeFileReader {
         if let Some(skip) = skip_weights_if_unavailable {
             self.skip_weights_if_unavailable = skip;
         }
-        Ok(self)
+        self
     }
 
     /// Set wether to automatically skip edge types if they are not avaitable instead of raising an exception.
@@ -276,11 +296,11 @@ impl EdgeFileReader {
     pub fn set_skip_edge_types_if_unavailable(
         mut self,
         skip_edge_types_if_unavailable: Option<bool>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> EdgeFileReader {
         if let Some(skip) = skip_edge_types_if_unavailable {
             self.skip_edge_types_if_unavailable = skip;
         }
-        Ok(self)
+        self
     }
 
     /// Set the default default_weight.
@@ -300,8 +320,11 @@ impl EdgeFileReader {
     ///
     /// * default_edge_type: Option<String> - The edge type to use when edge type is missing.
     ///
-    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader {
-        self.default_edge_type = default_edge_type;
+    pub fn set_default_edge_type<S: Into<String>>(
+        mut self,
+        default_edge_type: Option<S>,
+    ) -> EdgeFileReader {
+        self.default_edge_type = default_edge_type.map(|val| val.into());
         self
     }
 
@@ -312,8 +335,8 @@ impl EdgeFileReader {
     /// * skip_self_loops: Option<bool> - if the reader should ignore or not duplicated edges.
     ///
     pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
-        if let Some(i) = skip_self_loops {
-            self.skip_self_loops = i;
+        if let Some(ssl) = skip_self_loops {
+            self.skip_self_loops = ssl;
         }
         self
     }
@@ -464,13 +487,13 @@ impl EdgeFileReader {
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
     fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple, String> {
-        // exctract the values
+        // extract the values
         let maybe_source_node_name = vals[self.sources_column_number].clone();
         let maybe_destination_node_name = vals[self.destinations_column_number].clone();
         if maybe_source_node_name.is_none() || maybe_destination_node_name.is_none() {
             return Err("Either the source or destination node ID are undefined.".to_string());
         }
-        
+
         let source_node_name = maybe_source_node_name.unwrap();
         let destination_node_name = maybe_destination_node_name.unwrap();
 
@@ -544,9 +567,15 @@ impl EdgeFileReader {
                 self.destinations_column_number, expected_elements
             ));
         }
-        Ok(self.reader.read_lines()?.map(move |values| match values {
-            Ok(vals) => self.parse_edge_line(vals),
-            Err(e) => Err(e),
-        }))
+        Ok(self
+            .reader
+            .read_lines()?
+            .map(move |values| match values {
+                Ok(vals) => self.parse_edge_line(vals),
+                Err(e) => Err(e),
+            })
+            .filter_ok(move |(source_node_name, destination_node_name, _, _)| {
+                !self.skip_self_loops || source_node_name != destination_node_name
+            }))
     }
 }

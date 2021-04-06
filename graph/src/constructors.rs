@@ -1,12 +1,12 @@
 use super::*;
+use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
-use bitvec::prelude::*;
-use std::cmp::Ordering;
-use rayon::prelude::ParallelSliceMut;
-use std::collections::BTreeMap;
 use itertools::Itertools;
 use log::info;
+use rayon::prelude::ParallelSliceMut;
+use std::cmp::Ordering;
+use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
     (
@@ -14,7 +14,7 @@ type ParsedStringEdgesType = Result<
         EliasFano,
         Vocabulary<NodeT>,
         Option<EdgeTypeVocabulary>,
-        Vec<WeightT>,
+        Option<Vec<WeightT>>,
         EdgeT,
         EdgeT,
         NodeT,
@@ -36,6 +36,23 @@ macro_rules! optionify {
             Some($val)
         }
     };
+}
+
+fn check_numeric_ids_compatibility(
+    has_nodes_list: bool,
+    numeric_node_ids: bool,
+    numeric_edge_node_ids: bool,
+) -> Result<(), String> {
+    if has_nodes_list && numeric_node_ids && !numeric_edge_node_ids {
+        return Err(concat!(
+            "You are trying to load a numeric node list and a non numeric edge list.\n",
+            "This is a problem because an edge composed of two nodes (e.g. \"2, 8\") is ",
+            "not necessarily mapped internally to the same node ids of the node list.\n",
+            "Possibily you want to also enable the parameter for the numeric edge node ids."
+        )
+        .to_string());
+    }
+    Ok(())
 }
 
 /// Returns iterator of nodes handling the node IDs.
@@ -113,47 +130,36 @@ where
     let empty_nodes_mapping = nodes.is_empty();
     edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
         Ok((src_name, dst_name, edge_type, weight)) => {
-            for node_name in [src_name.clone(), dst_name.clone()].iter() {
-                if node_name.is_empty() {
-                    return Err("Found an empty node name. Node names cannot be empty.".to_owned());
-                }
-                if !nodes.contains_key(node_name) {
+            let node_ids = [src_name, dst_name]
+                .iter()
+                .map(|node_name| {
+                    // the source and destination nodes must either be
+                    //  - both numeric node ids
+                    //      - if the node list was provided
+                    //          - The nodes must be less than the max nodes
+                    //      - if the node list was not provided
+                    //          - the nodes must be added to the node list which should be numeric.
+                    //  - if the edge node ids are not numeric
+                    //      - if the node list was provided
+                    //          - the nodes must be added to the node list.
+                    //      - if the node list was no provided
+                    //          - the nodes must be added to the node list.
                     if empty_nodes_mapping {
-                        nodes.insert(node_name.to_owned())?;
-                    } else if !nodes.numeric_ids {
-                        return Err(format!(
+                        nodes.insert(node_name.to_owned())
+                    } else if let Some(node_id) = nodes.get(&node_name) {
+                        Ok(*node_id)
+                    } else {
+                        Err(format!(
                             concat!(
-                                "In the edge file was found the node {} ",
-                                "which is not present in the given node file."
+                                "In the edge list was found the node {} ",
+                                "which is not present in the given node list."
                             ),
                             node_name
-                        ));
+                        ))
                     }
-                }
-            }
-            if let Some(edge_type_string) = &edge_type{
-                if edge_type_string.is_empty() {
-                    return Err("Found an empty edge type name. Edge type names cannot be empty.".to_owned());
-                }
-            }
-            Ok((
-                match nodes.numeric_ids{
-                    true => match src_name.parse::<NodeT>() {
-                        Ok(val) => val,
-                        Err(_) => {return Err(format!("The given source node ID `{}` is not numeric.", src_name));},
-                    },
-                    false => *nodes.get(&src_name).unwrap()
-                },
-                match nodes.numeric_ids{
-                    true => match dst_name.parse::<NodeT>() {
-                        Ok(val) => val,
-                        Err(_) => {return Err(format!("The given destination node ID `{}` is not numeric.", dst_name));},
-                    },
-                    false => *nodes.get(&dst_name).unwrap()
-                },
-                edge_type,
-                weight,
-            ))
+                })
+                .collect::<Result<Vec<NodeT>, String>>()?;
+            Ok((node_ids[0], node_ids[1], edge_type, weight))
         }
         Err(e) => Err(e),
     })
@@ -165,7 +171,9 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
         + 'a,
     edge_types: &'b mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a
-    where 'b: 'a,{
+where
+    'b: 'a,
+{
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
             let edge_type_id = match edge_type {
@@ -178,53 +186,10 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
     })
 }
 
-/// Returns iterator of edges handling the edge type IDs.
-pub(crate) fn parse_edge_type_ids<'a>(
-    edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
-    edge_types: &'a mut Vec<Option<EdgeTypeT>>,
-) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map(move |row| {
-        match row {
-            Ok((src, dst, edge_type, weight)) => {
-                edge_types.push(edge_type);
-                Ok((
-                    src,
-                    dst,
-                    edge_type,
-                    weight
-                ))
-            },
-            Err(e) => Err(e)
-        }
-        
-    })
-}
-
-/// Returns iterator of edges handling the weights.
-pub(crate) fn parse_weights<'a>(
-    edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
-    weights: &'a mut Vec<WeightT>,
-) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map(move |row| match row {
-        Ok((src, dst, edge_type, weight)) => {
-            let parsed_weight = match weight {
-                Some(w) => {
-                    validate_weight(w)?;
-                    weights.push(w);
-                    Some(w)
-                }
-                None => None,
-            };
-            Ok((src, dst, edge_type, parsed_weight))
-        }
-        Err(e) => Err(e),
-    })
-}
-
 pub(crate) fn parse_sorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     directed: bool,
-    directed_edge_list: bool
+    directed_edge_list: bool,
 ) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
     if directed || directed_edge_list {
         return Box::new(edges_iter);
@@ -269,28 +234,22 @@ pub(crate) fn parse_sorted_edges<'a>(
 
 pub(crate) fn parse_unsorted_quadruples(
     mut edges: Vec<Quadruple>,
-    ignore_duplicated_edges: bool,
     verbose: bool,
-) -> (EdgeT, impl Iterator<Item = Result<Quadruple, String>>) {
+) -> (usize, impl Iterator<Item = Result<Quadruple, String>>) {
     let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
     info!("Sorting edges.");
-    edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
+    edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)| {
         (*src2, *dst2, *edt2).cmp(&(*src1, *dst1, *edt1))
     });
 
-    if ignore_duplicated_edges{
-        info!("Removing duplicated edges.");
-        edges.dedup_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
-            (src1, dst1, edt1) == (src2, dst2, edt2)
-        });
-    }
-
-    let edges_number = edges.len() as EdgeT;
+    let edges_number = edges.len();
 
     (
         edges_number,
-        (0..edges_number).progress_with(pb).map(move |_| { Ok(edges.pop().unwrap())}),
+        (0..edges_number)
+            .progress_with(pb)
+            .map(move |_| Ok(edges.pop().unwrap())),
     )
 }
 
@@ -298,21 +257,22 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
     directed: bool,
     directed_edge_list: bool,
-    ignore_duplicated_edges: bool,
     verbose: bool,
-) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a), String> {
-    let edge_quadruples:Vec<Quadruple> = edges_iter.flat_map(|tuple|{
-        match tuple{
-            Ok((src, dst, edt, weight)) => if !directed && src != dst && !directed_edge_list {
-                vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
-            } else {
-                vec![Ok((src, dst, edt, weight))]
-            },
-            Err(e) => vec![Err(e)]
-        }
-    }).collect::<Result<Vec<Quadruple>, String>>()?;
+) -> Result<(usize, impl Iterator<Item = Result<Quadruple, String>> + 'a), String> {
+    let edge_quadruples: Vec<Quadruple> = edges_iter
+        .flat_map(|tuple| match tuple {
+            Ok((src, dst, edt, weight)) => {
+                if !directed && src != dst && !directed_edge_list {
+                    vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
+                } else {
+                    vec![Ok((src, dst, edt, weight))]
+                }
+            }
+            Err(e) => vec![Err(e)],
+        })
+        .collect::<Result<Vec<Quadruple>, String>>()?;
 
-    Ok(parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose))
+    Ok(parse_unsorted_quadruples(edge_quadruples, verbose))
 }
 
 pub(crate) fn parse_string_unsorted_edges<'a>(
@@ -321,53 +281,98 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     directed_edge_list: bool,
+    has_edge_types: bool,
     verbose: bool,
-    numeric_node_ids: bool,
-    numeric_edge_types_ids: bool,
-    ignore_duplicated_edges: bool
-) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a, Vocabulary<NodeT>, Vocabulary<EdgeTypeT>), String>  {
-    let mut edge_types_vocabulary = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
-    nodes = nodes.set_numeric_ids(numeric_node_ids);
-    let (edges_number, edges_iter) = { 
-            let edge_quadruples:Vec<Quadruple> = parse_edge_type_ids_vocabulary(
-                parse_edges_node_ids(edges_iter, &mut nodes),
-                &mut edge_types_vocabulary,
-            ).flat_map(|tuple|{
-                match tuple{
-                    Ok((src, dst, edt, weight)) => if !directed && src != dst && !directed_edge_list {
+    numeric_edge_type_ids: bool,
+) -> Result<
+    (
+        usize,
+        impl Iterator<Item = Result<Quadruple, String>> + 'a,
+        Vocabulary<NodeT>,
+        Option<Vocabulary<EdgeTypeT>>,
+    ),
+    String,
+> {
+    let mut edge_types_vocabulary = if has_edge_types {
+        Some(Vocabulary::default().set_numeric_ids(numeric_edge_type_ids))
+    } else {
+        None
+    };
+    let (edges_number, edges_iter) = {
+        let edges_iter = parse_edges_node_ids(edges_iter, &mut nodes);
+        let edges_iter: Box<dyn Iterator<Item = Result<Quadruple, String>>> =
+            if let Some(ets) = &mut edge_types_vocabulary {
+                Box::new(parse_edge_type_ids_vocabulary(edges_iter, ets))
+            } else {
+                Box::new(edges_iter.map_ok(|(src, dst, _, weight)| (src, dst, None, weight)))
+            };
+        let edge_quadruples: Vec<Quadruple> = edges_iter
+            .flat_map(|tuple| match tuple {
+                Ok((src, dst, edt, weight)) => {
+                    if !directed && src != dst && !directed_edge_list {
                         vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
                     } else {
                         vec![Ok((src, dst, edt, weight))]
-                    },
-                    Err(e) => vec![Err(e)]
+                    }
                 }
-            }).collect::<Result<Vec<Quadruple>, String>>()?;
-        
-            parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose)
+                Err(e) => vec![Err(e)],
+            })
+            .collect::<Result<Vec<Quadruple>, String>>()?;
+
+        parse_unsorted_quadruples(edge_quadruples, verbose)
     };
     info!("Building nodes reverse mapping.");
     nodes.build_reverse_mapping()?;
-    info!("Building edge types reverse mapping.");
-    edge_types_vocabulary.build_reverse_mapping()?;
-
+    if let Some(ets) = &mut edge_types_vocabulary {
+        info!("Building edge types reverse mapping.");
+        ets.build_reverse_mapping()?;
+    }
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
-    edges_number: EdgeT,
+    edges_number: usize,
     nodes_number: NodeT,
     ignore_duplicated_edges: bool,
+    has_weights: bool,
+    has_edge_types: bool,
     directed: bool,
-    directed_edge_list: bool
-) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
+    automatic_directed_edge_list: bool,
+) -> Result<
+    (
+        EliasFano,
+        EliasFano,
+        Option<Vec<Option<EdgeTypeT>>>,
+        Option<Vec<WeightT>>,
+        EdgeT,
+        EdgeT,
+        NodeT,
+        NodeT,
+        NodeT,
+        u8,
+        u64,
+    ),
+    String,
+> {
     info!("Started building of EliasFano edges data structure.");
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
-    let mut edges: EliasFano = EliasFano::new(
-        encode_max_edge(nodes_number, node_bits),
-        edges_number as usize,
-    )?;
+    let mut edges: EliasFano =
+        EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;
+
+    let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {
+        Some(Vec::with_capacity(edges_number))
+    } else {
+        None
+    };
+
+    let mut weights: Option<Vec<WeightT>> = if has_weights {
+        Some(Vec::with_capacity(edges_number))
+    } else {
+        None
+    };
+
     // TODO: the following data structure could be better to be a bitvector.
     // This is because universe == number of elements
     let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize)?;
@@ -387,22 +392,80 @@ pub(crate) fn build_edges(
     let mut first = true;
 
     for value in edges_iter {
-        let (src, dst, edge_type, _) = value?;
+        let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
         let self_loop = src == dst;
         let different_edge_type = last_edge_type != edge_type || first;
-        if !(different_src || different_dst || different_edge_type){
+        if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
                 continue;
             } else {
                 return Err("A duplicated edge was found while building the graph.".to_owned());
             }
         }
-        if  !directed && directed_edge_list{
+
+        if let Some(ets) = &mut edge_type_ids {
+            ets.push(edge_type);
+        }
+        match (&mut weights, weight) {
+            (Some(ws), Some(w)) => {
+                validate_weight(w)?;
+                ws.push(w);
+                Ok(())
+            }
+            (None, Some(_)) => Err(concat!(
+                "A non-None weight was provided but no weights are expected ",
+                "because the has_weights flag has been set to false."
+            )),
+            (Some(_), None) => Err(concat!(
+                "A None weight was found.\n",
+                "This might mean you have either provided a None weight to the edge list or ",
+                "you may have an empty weight in your edge list file.\n",
+                "If you intend to load this edge list WITHOUT weights, do not provide the ",
+                "edge weights colum or column number.\n",
+                "If you intend to load this edge with its weight, add a default weight."
+            )),
+            _ => Ok(()),
+        }?;
+
+        if !directed && !automatic_directed_edge_list {
             match src.cmp(&dst) {
-                Ordering::Greater => {forward_undirected_edges_counter += 1},
-                Ordering::Less => {backward_undirected_edges_counter += 1},
+                Ordering::Greater => {
+                    // We retrieve the edge id of the forward edge, the one going from
+                    // dst to src.
+                    let maybe_edge_id = edges.rank(encode_edge(dst, src, node_bits));
+                    // Now we need to find, starting from edge id, if the edge types are given,
+                    // the correct edge id: if we are in a multi-graph the edge may be the same
+                    // but have multiple edge types and hence be reported multiple times.
+                    let maybe_edge_id = maybe_edge_id.and_then(|min_edge_id| {
+                        edge_type_ids.as_ref().map_or(Some(min_edge_id), |ets| {
+                            (min_edge_id
+                                ..edges.unchecked_rank(encode_edge(dst, src + 1, node_bits)))
+                                .find(|edge_id| ets[*edge_id as usize] == edge_type)
+                        })
+                    });
+                    // Finally now we need to check if the weights of the two edges, if given
+                    // are actually equal.
+                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
+                        weights.as_ref().map_or(false, |ws| {
+                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
+                        })
+                    });
+                    if has_unbalanced_undirected_edge {
+                        return Err(concat!(
+                            "You are trying to load an undirected ",
+                            "graph using the directed edge list ",
+                            "paremeter that requires for ALL edges to ",
+                            "be fully defined in both directions.\n",
+                            "The edge list you have provided does not ",
+                            "provide the edges in both directions.",
+                        )
+                        .to_string());
+                    }
+                    backward_undirected_edges_counter += 1
+                }
+                Ordering::Less => forward_undirected_edges_counter += 1,
                 Ordering::Equal => {}
             }
         }
@@ -412,19 +475,19 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            for node in &[src, dst]{
-                if !nodes_with_edges[*node as usize]{
+            for node in &[src, dst] {
+                if !nodes_with_edges[*node as usize] {
                     nodes_with_edges.set(*node as usize, true);
-                    if !self_loop{
-                        not_singleton_node_number+=1;
+                    if !self_loop {
+                        not_singleton_node_number += 1;
                     } else {
                         singleton_nodes_with_self_loops.set(*node as usize, true);
-                        singleton_nodes_with_self_loops_number+= 1;
+                        singleton_nodes_with_self_loops_number += 1;
                     }
-                } else if !self_loop && singleton_nodes_with_self_loops[*node as usize]{
+                } else if !self_loop && singleton_nodes_with_self_loops[*node as usize] {
                     singleton_nodes_with_self_loops.set(*node as usize, false);
-                    singleton_nodes_with_self_loops_number-= 1;
-                    not_singleton_node_number+=1;
+                    singleton_nodes_with_self_loops_number -= 1;
+                    not_singleton_node_number += 1;
                 }
             }
             unique_edges_number += 1;
@@ -449,12 +512,45 @@ pub(crate) fn build_edges(
             "You are trying to load an undirected graph ",
             "from a directed edge list but the edge list is not ",
             "complete."
-        ).to_owned());
+        )
+        .to_owned());
+    }
+
+    if edges.is_empty() {
+        return Err(
+            concat!(
+                "The edge list you are trying to load is empty. ",
+                "This is likely caused by either an excessive parametrization ",
+                "of a remove or filter call."
+            ).to_string()
+        );
+    }
+
+    if let Some(ws) = &weights {
+        if edges.len() != ws.len() {
+            panic!(
+                "The number of weights {} does not match the number of edges {}.",
+                ws.len(),
+                edges.len()
+            );
+        }
+    }
+
+    if let Some(ets) = &edge_type_ids {
+        if edges.len() != ets.len() {
+            panic!(
+                "The number of edge types {} does not match the number of edges {}.",
+                ets.len(),
+                edges.len()
+            );
+        }
     }
 
     Ok((
         edges,
         unique_sources,
+        edge_type_ids,
+        weights,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -470,72 +566,78 @@ fn parse_nodes(
     ignore_duplicated_nodes: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
-    has_node_types: bool
-) -> Result<(Vocabulary<NodeT>, NodeTypeVocabulary), String> {
-    let mut nodes = Vocabulary::default().set_numeric_ids(numeric_node_ids);
-    let mut node_types = NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
+    numeric_edge_node_ids: bool,
+    has_node_types: bool,
+) -> Result<(Vocabulary<NodeT>, Option<NodeTypeVocabulary>), String> {
+    let mut nodes = Vocabulary::default()
+        .set_numeric_ids(numeric_node_ids || numeric_edge_node_ids && nodes_iterator.is_none());
 
-    if let Some(ni) = nodes_iterator {
+    let node_types = if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
         let node_iterator = parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes);
         // In the case there is a node types we need to add its proper iterator.
-        let node_iterator: Box<dyn Iterator<Item=Result<(NodeT, Option<Vec<NodeTypeT>>), String>>> = match has_node_types{
-            true => Box::new(parse_node_type_ids(
-                node_iterator,
-                &mut node_types,
-            )),
-            false => Box::new(node_iterator.map_ok(|(node_id, _)| (node_id, None)))
-        };
-        for row in node_iterator{
-            row?;
-        }
-        node_types.build_reverse_mapping()?;
-        node_types.build_counts();
-    }
+        if has_node_types {
+            let mut node_types =
+                NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
+            let mut iterations = 0;
+            for row in parse_node_type_ids(node_iterator, &mut node_types) {
+                row?;
+                iterations += 1;
+            }
+            if iterations == 0 {
+                return Err("The provided node list is empty!".to_string());
+            }
+            node_types.build_reverse_mapping()?;
+            node_types.build_counts();
+            Ok::<_, String>(Some(node_types))
+        } else {
+            let mut iterations = 0;
+            for row in node_iterator {
+                row?;
+                iterations += 1;
+            }
+            if iterations == 0 {
+                return Err("The provided node list is empty!".to_string());
+            }
+            Ok::<_, String>(None)
+        }?
+    } else {
+        None
+    };
 
     Ok((nodes, node_types))
 }
 
 pub(crate) fn parse_string_edges(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
-    edges_number: EdgeT,
+    edges_number: usize,
     nodes_number: NodeT,
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
-    numeric_edge_node_ids: bool,
-    numeric_edge_types_ids: bool,
+    numeric_edge_type_ids: bool,
     directed_edge_list: bool,
+    automatic_directed_edge_list: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
-    has_weights: bool
+    has_weights: bool,
 ) -> ParsedStringEdgesType {
-    let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
-    let mut edge_types_ids: Vec<Option<EdgeTypeT>> = Vec::new();
-    nodes = nodes.set_numeric_ids(numeric_edge_node_ids);
+    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> =
+        Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
 
-    let wrapped_edges_iterator = parse_sorted_edges(
+    let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
             parse_edges_node_ids(edges_iter, &mut nodes),
             &mut edge_types_vocabulary,
         ),
         directed,
-        directed_edge_list
+        directed_edge_list,
     );
-
-    let typed_edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_edge_types{
-        true=> Box::new(parse_edge_type_ids(wrapped_edges_iterator, &mut edge_types_ids)),
-        false => Box::new(wrapped_edges_iterator)
-    };
-
-    let weighted_edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_weights{
-        true=> Box::new(parse_weights(typed_edges_iter, &mut weights)),
-        false => Box::new(typed_edges_iter)
-    };
 
     let (
         edges,
         unique_sources,
+        edge_type_ids,
+        weights,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -544,34 +646,20 @@ pub(crate) fn parse_string_edges(
         node_bits,
         node_bit_mask,
     ) = build_edges(
-        weighted_edges_iter,
+        edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
+        has_weights,
+        has_edge_types,
         directed,
-        directed_edge_list
+        automatic_directed_edge_list,
     )?;
 
     nodes.build_reverse_mapping()?;
-
-    if !weights.is_empty() && edges.len() != weights.len() {
-        return Err(format!(
-            "The number of weights {} does not match the number of edges {}.",
-            weights.len(),
-            edges.len()
-        ));
-    }
-
-    if !edge_types_ids.is_empty() && edges.len() != edge_types_ids.len() {
-        return Err(format!(
-            "The number of edge types {} does not match the number of edges {}.",
-            edge_types_ids.len(),
-            edges.len()
-        ));
-    }
-
     edge_types_vocabulary.build_reverse_mapping()?;
-    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, optionify!(edge_types_vocabulary));
+    let edge_types =
+        EdgeTypeVocabulary::from_option_structs(edge_type_ids, optionify!(edge_types_vocabulary));
 
     Ok((
         edges,
@@ -591,20 +679,20 @@ pub(crate) fn parse_string_edges(
 
 pub(crate) fn parse_integer_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
-    edges_number: EdgeT,
+    edges_number: usize,
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ignore_duplicated_edges: bool,
     directed: bool,
-    directed_edge_list: bool,
+    automatic_directed_edge_list: bool,
     has_edge_types: bool,
-    has_weights: bool
+    has_weights: bool,
 ) -> Result<
     (
         EliasFano,
         EliasFano,
         Option<EdgeTypeVocabulary>,
-        Vec<WeightT>,
+        Option<Vec<WeightT>>,
         EdgeT,
         EdgeT,
         NodeT,
@@ -615,22 +703,11 @@ pub(crate) fn parse_integer_edges(
     ),
     String,
 > {
-    let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_ids: Vec<Option<EdgeTypeT>> = Vec::new();
-    
-    let edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_edge_types{
-        true=> Box::new(parse_edge_type_ids(edges_iter, &mut edge_types_ids)),
-        false => Box::new(edges_iter)
-    };
-
-    let edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_weights{
-        true=> Box::new(parse_weights(edges_iter, &mut weights)),
-        false => Box::new(edges_iter)
-    };
-
     let (
         edges,
         unique_sources,
+        edge_type_ids,
+        weights,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -643,27 +720,13 @@ pub(crate) fn parse_integer_edges(
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
+        has_weights,
+        has_edge_types,
         directed,
-        directed_edge_list
+        automatic_directed_edge_list,
     )?;
 
-    if !weights.is_empty() && edges.len() != weights.len() {
-        return Err(format!(
-            "The number of weights {} does not match the number of edges {}.",
-            weights.len(),
-            edges.len()
-        ));
-    }
-
-    if !edge_types_ids.is_empty() && edges.len() != edge_types_ids.len() {
-        return Err(format!(
-            "The number of edge types {} does not match the number of edges {}.",
-            edge_types_ids.len(),
-            edges.len()
-        ));
-    }
-
-    let edge_types = EdgeTypeVocabulary::from_structs(edge_types_ids, edge_types_vocabulary);
+    let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary);
 
     Ok((
         edges,
@@ -682,18 +745,18 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
-
     pub(crate) fn build_graph<S: Into<String>>(
-        edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
-        edges_number: EdgeT,
+        edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
+        edges_number: usize,
         nodes: Vocabulary<NodeT>,
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        automatic_directed_edge_list: bool,
         name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool
+        has_weights: bool,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -708,15 +771,15 @@ impl Graph {
             node_bit_mask,
             node_bits,
         ) = parse_integer_edges(
-            edge_iter,
+            edges_iter,
             edges_number,
             nodes.len() as NodeT,
             edge_types_vocabulary,
             ignore_duplicated_edges,
             directed,
-            true,
+            automatic_directed_edge_list,
             has_edge_types,
-            has_weights
+            has_weights,
         )?;
 
         Ok(Graph::new(
@@ -733,8 +796,8 @@ impl Graph {
             node_bits,
             edge_types,
             name,
-            optionify!(weights),
-            node_types
+            weights,
+            node_types,
         ))
     }
 
@@ -743,7 +806,7 @@ impl Graph {
     /// # Arguments
     ///
     /// TODO: UPDATE THE DOCSTRING!
-    /// 
+    ///
     /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
     /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
@@ -765,22 +828,28 @@ impl Graph {
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         verbose: bool,
-        numeric_edge_types_ids: bool,
+        numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool
+        has_weights: bool,
     ) -> Result<Graph, String> {
+        check_numeric_ids_compatibility(
+            nodes_iterator.is_some(),
+            numeric_node_ids,
+            numeric_edge_node_ids,
+        )?;
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
-            has_node_types
+            numeric_edge_node_ids,
+            has_node_types,
         )?;
-        
+
         info!("Parse unsorted edges.");
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
@@ -788,23 +857,23 @@ impl Graph {
                 nodes,
                 directed,
                 directed_edge_list,
+                has_edge_types,
                 verbose,
-                numeric_edge_node_ids,
-                numeric_edge_types_ids,
-                ignore_duplicated_edges
+                numeric_edge_type_ids,
             )?;
 
         Graph::build_graph(
             edges_iterator,
             edges_number,
             nodes,
-            optionify!(node_types),
-            optionify!(edge_types_vocabulary),
+            node_types,
+            edge_types_vocabulary,
             directed,
+            !directed_edge_list,
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights
+            has_weights,
         )
     }
 
@@ -832,15 +901,14 @@ impl Graph {
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        directed_edge_list: bool,
         name: String,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_weights: bool,
-        verbose: bool
+        verbose: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
-            parse_integer_unsorted_edges(edges_iterator, directed, directed_edge_list, ignore_duplicated_edges, verbose)?;
+            parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
 
         Graph::build_graph(
             edges_iterator,
@@ -849,10 +917,11 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
+            true,
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights
+            has_weights,
         )
     }
 
@@ -862,11 +931,12 @@ impl Graph {
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
+        automatic_directed_edge_list: bool,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
-        edges_number: EdgeT,
+        edges_number: usize,
         nodes_number: NodeT,
-        numeric_edge_types_ids: bool,
+        numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
@@ -875,12 +945,18 @@ impl Graph {
         has_weights: bool,
         name: S,
     ) -> Result<Graph, String> {
+        check_numeric_ids_compatibility(
+            nodes_iterator.is_some(),
+            numeric_node_ids,
+            numeric_edge_node_ids,
+        )?;
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
             numeric_node_ids,
             numeric_node_types_ids,
-            has_node_types
+            numeric_edge_node_ids,
+            has_node_types,
         )?;
 
         let (
@@ -902,12 +978,12 @@ impl Graph {
             nodes_number,
             directed,
             nodes,
-            numeric_edge_node_ids,
-            numeric_edge_types_ids,
+            numeric_edge_type_ids,
             directed_edge_list,
+            automatic_directed_edge_list,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights
+            has_weights,
         )?;
 
         Ok(Graph::new(
@@ -924,8 +1000,8 @@ impl Graph {
             node_bits,
             edge_types,
             name,
-            optionify!(weights),
-            optionify!(node_types)
+            weights,
+            node_types,
         ))
     }
 }

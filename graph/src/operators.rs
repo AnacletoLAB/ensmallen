@@ -37,10 +37,10 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_string(src, dst, edge_type.as_ref());
+                        return !dg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_string(src, dst, edge_type.as_ref());
+                        return mhg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
                     }
                     true
                 })
@@ -57,7 +57,7 @@ fn generic_string_operator(
                     None => other
                         .get_node_id(&node_name)
                         .ok()
-                        .and_then(|node_id| other.get_node_type_string(node_id)),
+                        .and_then(|node_id| other.get_node_type_name(node_id).unwrap()),
                 };
                 Ok((node_name, node_type_names))
             })
@@ -120,10 +120,10 @@ fn generic_integer_operator(
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge(*src, *dst, *edge_type);
+                        return !dg.has_edge_with_type(*src, *dst, *edge_type);
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge(*src, *dst, *edge_type);
+                        return mhg.has_edge_with_type(*src, *dst, *edge_type);
                     }
                     true
                 })
@@ -157,7 +157,6 @@ fn generic_integer_operator(
         node_types,
         main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
         main.directed,
-        false,
         build_operator_graph_name(main, other, operator),
         false,
         main.has_edge_types(),

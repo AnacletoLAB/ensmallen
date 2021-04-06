@@ -61,7 +61,7 @@ impl Graph {
                 self.name
             )
             .as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
         let pb_nodes = get_loading_bar(
             verbose,
@@ -123,35 +123,38 @@ impl Graph {
                             return None;
                         }
                     }
-                    let src_node_type =
-                        self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
-                    let dst_node_type =
-                        self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
-                    // If the graph has node types
-                    if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
-                        let node_type_names = self
-                            .translate_node_type_id_vector(
-                                src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
-                            )
-                            .unwrap();
-                        // If the allow node types set was provided
-                        if let Some(ants) = &allow_node_types_set {
-                            // We check that the current node type name is NOT within the node type set.
-                            if node_type_names
-                                .iter()
-                                .any(|node_type_name| !ants.contains(node_type_name))
-                            {
-                                return None;
+
+                    if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
+                        let src_node_type =
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&src_name));
+                        let dst_node_type =
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&dst_name));
+                        // If the graph has node types
+                        if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
+                            let node_type_names = self
+                                .translate_node_type_id_vector(
+                                    src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
+                                )
+                                .unwrap();
+                            // If the allow node types set was provided
+                            if let Some(ants) = &allow_node_types_set {
+                                // We check that the current node type name is NOT within the node type set.
+                                if node_type_names
+                                    .iter()
+                                    .any(|node_type_name| !ants.contains(node_type_name))
+                                {
+                                    return None;
+                                }
                             }
-                        }
-                        // If the deny node types set was provided
-                        if let Some(dnts) = &deny_node_types_set {
-                            // We check that the current node type name is NOT within the node type set.
-                            if node_type_names
-                                .iter()
-                                .any(|node_type_name| dnts.contains(node_type_name))
-                            {
-                                return None;
+                            // If the deny node types set was provided
+                            if let Some(dnts) = &deny_node_types_set {
+                                // We check that the current node type name is NOT within the node type set.
+                                if node_type_names
+                                    .iter()
+                                    .any(|node_type_name| dnts.contains(node_type_name))
+                                {
+                                    return None;
+                                }
                             }
                         }
                     }
@@ -173,17 +176,14 @@ impl Graph {
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
                     .filter_map(|(node_id, node_name, node_type_names)| {
-                        if singletons && self.is_singleton_string(&node_name).unwrap() {
+                        if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
                             return None;
                         }
                         // If singletons and selfloops need to be removed.
                         // We need to check all the destinations of the node if they are equal
                         // with the source node, as in multigraphs there may be multiple selfloops of different
                         // node types.
-                        if singletons
-                            && selfloops
-                            && self.get_neighbours_iter(node_id).all(|dst| dst == node_id)
-                        {
+                        if singletons && selfloops && self.is_singleton_with_self_loops(node_id) {
                             return None;
                         }
                         if let Some(ans) = &allow_nodes_set {
@@ -224,22 +224,16 @@ impl Graph {
                     }),
             ),
             self.directed,
+            false,
+            false,
             true,
-            false,
-            self.is_multigraph() && edge_types,
-            self.get_edges_number(), // Approximation of expected edges number.
+            true,
+            self.get_directed_edges_number() as usize, // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
-            match &self.edge_types {
-                Some(ets) => ets.has_numeric_ids(),
-                None => false,
-            },
-            // TODO: KEEP THE INFORMATION ABOUT THE STRING NODE IDS IF THEY ARE MEANT TO BE NUMERIC OR NOT.
             false,
             false,
-            match &self.node_types {
-                Some(nts) => nts.has_numeric_ids(),
-                None => false,
-            },
+            false,
+            false,
             self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
             self.has_weights() && !weights,
@@ -260,8 +254,8 @@ impl Graph {
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: bool,
@@ -280,8 +274,7 @@ impl Graph {
 
         // Extend the components to keep those that include the given edge types.
         if let Some(ets) = edge_types {
-            let mut edge_types_ids = RoaringBitmap::new();
-            edge_types_ids.extend(self.translate_edge_types(ets)?.iter().map(|x| *x as u32));
+            let edge_types_ids: HashSet<Option<EdgeTypeT>> = self.translate_edge_types(ets)?.into_iter().collect();
 
             let pb = get_loading_bar(
                 verbose,
@@ -289,17 +282,15 @@ impl Graph {
                     "Computing which components are to keep for the graph {}",
                     &self.name
                 ),
-                self.get_edges_number() as usize,
+                self.get_directed_edges_number() as usize,
             );
 
             self.get_edges_triples(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
-                    if let Some(et) = edge_type {
-                        if edge_types_ids.contains(et as u32) {
-                            keep_components.insert(components_vector[src as usize]);
-                            keep_components.insert(components_vector[dst as usize]);
-                        }
+                    if edge_types_ids.contains(&edge_type) {
+                        keep_components.insert(components_vector[src as usize]);
+                        keep_components.insert(components_vector[dst as usize]);
                     }
                 });
         }
@@ -307,9 +298,9 @@ impl Graph {
         // Retrieve minimal size of the smallest top k components
         let components_counts = Counter::init(components_vector.clone()).most_common();
         let updated_min_component_size = match top_k_components {
-            Some(tkc) => Some(match components_counts.len() < tkc as usize {
-                true => components_counts.last().unwrap().1,
-                false => components_counts.get(tkc as usize).unwrap().1,
+            Some(tkc) => Some(match (tkc as usize) < components_counts.len() {
+                true => components_counts.get(tkc as usize).unwrap().1,
+                false => components_counts.last().unwrap().1,
             }),
             None => minimum_component_size,
         };
@@ -328,7 +319,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             &format!("removing components for the graph {}", &self.name),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         Graph::build_graph(
@@ -340,11 +331,12 @@ impl Graph {
                         false => None,
                     }
                 }),
-            self.get_edges_number(),
+            self.get_directed_edges_number() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
+            true,
             self.name.clone(),
             true,
             self.has_edge_types(),

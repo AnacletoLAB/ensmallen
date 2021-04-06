@@ -37,20 +37,32 @@ impl EdgeTypeVocabulary {
 
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
+        vocabulary: Vocabulary<EdgeTypeT>,
+    ) -> EdgeTypeVocabulary {
+        if ids.is_empty() {
+            panic!("The edge type ids vector passed was empty!");
+        }
+
+        let mut vocabvec = EdgeTypeVocabulary {
+            ids,
+            vocabulary,
+            counts: Vec::new(),
+            unknown_count: EdgeT::from_usize(0),
+        };
+
+        vocabvec.build_counts();
+
+        vocabvec
+    }
+
+    pub fn from_option_structs(
+        ids: Option<Vec<Option<EdgeTypeT>>>,
         vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ) -> Option<EdgeTypeVocabulary> {
-        match vocabulary {
-            Some(vocab) => {
-                let mut vocabvec = EdgeTypeVocabulary {
-                    ids,
-                    vocabulary: vocab,
-                    counts: Vec::new(),
-                    unknown_count: EdgeT::from_usize(0),
-                };
-                vocabvec.build_counts();
-                Some(vocabvec)
-            }
-            None => None,
+        if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
+            Some(EdgeTypeVocabulary::from_structs(ids, vocabulary))
+        } else {
+            None
         }
     }
 
@@ -66,27 +78,6 @@ impl EdgeTypeVocabulary {
         }
     }
 
-    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
-        self.vocabulary.build_reverse_mapping()
-    }
-
-    /// Returns ids of given values inserted.
-    ///
-    /// # Arguments
-    ///
-    /// * `maybe_value`: Option<S> - The values to be inserted.
-    pub fn insert_value<S: AsRef<str>>(
-        &mut self,
-        maybe_value: Option<S>,
-    ) -> Result<Option<EdgeTypeT>, String> {
-        let id: Result<Option<EdgeTypeT>, String> = maybe_value.map_or(Ok(None), |value| {
-            Ok(Some(self.vocabulary.insert(value.as_ref())?))
-        });
-        let id = id?;
-        self.ids.push(id);
-        Ok(id)
-    }
-
     /// Returns whether the value is empty or not.
     pub fn is_empty(&self) -> bool {
         self.vocabulary.is_empty()
@@ -97,7 +88,16 @@ impl EdgeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: EdgeTypeT - Id to be translated.
-    pub fn translate(&self, id: EdgeTypeT) -> &str {
+    pub fn unchecked_translate(&self, id: EdgeTypeT) -> String {
+        self.vocabulary.unchecked_translate(id)
+    }
+
+    /// Returns string name of given id.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: EdgeTypeT - Id to be translated.
+    pub fn translate(&self, id: EdgeTypeT) -> Result<&String, String> {
         self.vocabulary.translate(id)
     }
 
@@ -120,11 +120,6 @@ impl EdgeTypeVocabulary {
         self.counts.len()
     }
 
-    /// Return boolean representing if values are numeric.
-    pub fn has_numeric_ids(&self) -> bool {
-        self.vocabulary.has_numeric_ids()
-    }
-
     /// Set wether to load IDs as numeric.
     ///
     /// # Arguments
@@ -142,6 +137,6 @@ impl EdgeTypeVocabulary {
 
     /// Returns number of minimum edge-count.
     pub fn min_edge_type_count(&self) -> EdgeT {
-        *self.counts.iter().min().unwrap()
+        *self.counts.iter().min().unwrap_or(&0)
     }
 }

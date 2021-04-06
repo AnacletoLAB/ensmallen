@@ -58,7 +58,6 @@ impl Graph {
             return Err("The second nodes set of required bipartite graph is empty!".to_owned());
         }
 
-        // TODO: this would be faster by using an adapted merge sort
         if first_nodes
             .par_iter()
             .any(|src| second_nodes.binary_search(src).is_ok())
@@ -75,7 +74,7 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -226,7 +225,7 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])

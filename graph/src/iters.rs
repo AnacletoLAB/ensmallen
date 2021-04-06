@@ -5,19 +5,37 @@ impl Graph {
     /// Return iterator on the node of the graph.
     pub fn get_nodes_iter(&self) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
         (0..self.get_nodes_number())
-            .map(move |node_id| (node_id, self.get_unchecked_node_type(node_id)))
+            .map(move |node_id| (node_id, self.get_unchecked_node_type_id_by_node_id(node_id)))
     }
 
     /// Return iterator on the node degrees of the graph.
     pub fn get_node_degrees_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).map(move |node| self.get_node_degree(node))
+        (0..self.get_nodes_number()).map(move |node| self.get_node_degree(node).unwrap())
+    }
+
+    /// Return iterator over NodeT of destinations of the given node src.
+    pub(crate) fn get_neighbours_iter(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_unchecked_destinations_range(src)
+            .map(move |edge_id| self.get_destination(edge_id).unwrap())
+    }
+
+    /// Return iterator over NodeT of destinations of the given node src.
+    pub(crate) fn get_neighbours_names_iter(
+        &self,
+        src: NodeT,
+    ) -> impl Iterator<Item = String> + '_ {
+        self.get_unchecked_destinations_range(src)
+            .map(move |edge_id| {
+                self.get_node_name(self.get_destination(edge_id).unwrap())
+                    .unwrap()
+            })
     }
 
     /// Return iterator on the node degrees of the graph.
     pub fn get_node_degrees_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(move |node| self.get_node_degree(node))
+            .map(move |node| self.get_node_degree(node).unwrap())
     }
 
     /// Return iterator on the node of the graph as Strings.
@@ -27,8 +45,8 @@ impl Graph {
         (0..self.get_nodes_number()).map(move |node_id| {
             (
                 node_id,
-                self.nodes.translate(node_id).to_owned(),
-                self.get_node_type_string(node_id),
+                self.nodes.unchecked_translate(node_id),
+                self.get_node_type_name(node_id).unwrap_or(None),
             )
         })
     }
@@ -42,13 +60,15 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
-                let (src, dst) = self.get_edge_from_edge_id(edge_id);
-                if !directed && src > dst {
-                    return None;
-                }
-                Some((edge_id, src, dst))
-            }));
+            return Box::new(
+                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                    let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
+                    if !directed && src > dst {
+                        return None;
+                    }
+                    Some((edge_id, src, dst))
+                }),
+            );
         }
         Box::new(
             self.edges
@@ -113,8 +133,8 @@ impl Graph {
             .map(move |(edge_id, src, dst)| {
                 (
                     edge_id,
-                    self.nodes.translate(src).to_owned(),
-                    self.nodes.translate(dst).to_owned(),
+                    self.nodes.unchecked_translate(src),
+                    self.nodes.unchecked_translate(dst),
                 )
             })
     }
@@ -150,8 +170,8 @@ impl Graph {
             .map(move |(edge_id, src, dst)| {
                 (
                     edge_id,
-                    self.nodes.translate(src).to_owned(),
-                    self.nodes.translate(dst).to_owned(),
+                    self.nodes.unchecked_translate(src),
+                    self.nodes.unchecked_translate(dst),
                 )
             })
     }
@@ -179,7 +199,14 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, String, String, Option<String>)> + '_ {
         self.get_edges_string_iter(directed)
-            .map(move |(edge_id, src, dst)| (edge_id, src, dst, self.get_edge_type_string(edge_id)))
+            .map(move |(edge_id, src, dst)| {
+                (
+                    edge_id,
+                    src,
+                    dst,
+                    self.get_edge_type_name_by_edge_id(edge_id),
+                )
+            })
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -191,7 +218,14 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, String, String, Option<String>)> + '_ {
         self.get_edges_par_string_iter(directed)
-            .map(move |(edge_id, src, dst)| (edge_id, src, dst, self.get_edge_type_string(edge_id)))
+            .map(move |(edge_id, src, dst)| {
+                (
+                    edge_id,
+                    src,
+                    dst,
+                    self.get_edge_type_name_by_edge_id(edge_id),
+                )
+            })
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -277,7 +311,7 @@ impl Graph {
 
     /// Return the src, dst, edge type of a given edge id
     pub fn get_edge_triple(&self, edge_id: EdgeT) -> (NodeT, NodeT, Option<EdgeTypeT>) {
-        let (src, dst) = self.get_edge_from_edge_id(edge_id);
+        let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
         (src, dst, self.get_unchecked_edge_type(edge_id))
     }
 
@@ -290,19 +324,21 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
-                let (src, dst) = self.get_edge_from_edge_id(edge_id);
-                if edge_id > 0 {
-                    let (last_src, last_dst) = self.get_edge_from_edge_id(edge_id - 1);
-                    if last_src == src && last_dst == dst {
+            return Box::new(
+                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                    let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
+                    if edge_id > 0 {
+                        let (last_src, last_dst) = self.get_node_ids_from_edge_id(edge_id - 1);
+                        if last_src == src && last_dst == dst {
+                            return None;
+                        }
+                    }
+                    if !directed && src > dst {
                         return None;
                     }
-                }
-                if !directed && src > dst {
-                    return None;
-                }
-                Some((src, dst))
-            }));
+                    Some((src, dst))
+                }),
+            );
         }
         Box::new(self.edges.iter_uniques().filter_map(move |edge| {
             let (src, dst) = self.decode_edge(edge);

@@ -3,6 +3,34 @@ import re
 import os
 import pandas as pd
 import numpy as np
+from ensmallen_graph import EnsmallenGraph
+from tqdm.auto import tqdm
+
+
+def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
+    """Return dataframe with words features.
+    
+    Parameters
+    --------------------
+    graph: EnsmallenGraph,
+        Graph containing the words features to be extracted.
+
+    Returns
+    --------------------
+    Pandas DataFrame with words features as columns and nodes as rows.
+    """
+    return pd.DataFrame({
+        node_name: {
+            source_name: graph.get_weight_by_node_names(source_name, node_name) if graph.has_weights() else 1
+            for source_name in graph.get_node_neighbours_name_by_node_name(node_name)
+        }
+        for node_name in tqdm(
+            graph.get_node_names(),
+            desc="Extracting words features",
+            leave=False
+        )
+        if graph.get_node_type_name_by_node_name(node_name)[0] == "Word"
+    }).fillna(0)
 
 
 def parse_linqs_pubmed_incidence_matrix(
@@ -68,7 +96,8 @@ def parse_linqs_pubmed_incidence_matrix(
 
         src, label = vals[0]
         # Writing node and its node type to the node list.
-        node_list_file.write(separator.join((src, labels[int(label)-1])) + "\n")
+        node_list_file.write(separator.join(
+            (src, labels[int(label)-1])) + "\n")
 
         # Writing the edges between papers and words
         for (word, weight) in re.findall(word_regex, line):
@@ -78,7 +107,7 @@ def parse_linqs_pubmed_incidence_matrix(
             unique_words.add(word)
 
     # Writing the nodes representing words
-    for word in sorted(unique_words):
+    for word in unique_words:
         node_list_file.write(separator.join((word, "Word")) + "\n")
 
     edge_list_file.close()
@@ -147,8 +176,9 @@ def parse_linqs_incidence_matrix(
             "node_type": "Word"
         }),
         pd.DataFrame({
-            "id": sorted(
-                set(cities[["subject", "object"]].values.flatten()) - set(content.index.astype(str))
+            "id": list(
+                set(cities[["subject", "object"]].values.flatten()
+                    ) - set(content.index.astype(str))
             ),
             "node_type": "Unknown"
         })
