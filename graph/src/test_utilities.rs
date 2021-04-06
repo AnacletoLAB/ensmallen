@@ -97,7 +97,7 @@ pub fn load_ppi(
             None
         })
         .set_max_rows_number(Some(100000))
-        .set_default_weight(Some(5.0))
+        .set_default_weight(if load_weights { Some(5.0) } else { None })
         .set_skip_self_loops(Some(skip_self_loops))
         .clone();
 
@@ -116,6 +116,20 @@ pub fn load_ppi(
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types,);
     assert_eq!(ppi.has_weights(), load_weights);
+    assert_eq!(
+        ppi.has_selfloops(),
+        !skip_self_loops,
+        concat!(
+            "I was expecting the graph self-loops status to be {} ",
+            "since we have given parameter skip_self_loops equal to {}, ",
+            "but actually is {}.\n",
+            "The graph report is: \n {:?}"
+        ),
+        !skip_self_loops,
+        skip_self_loops,
+        ppi.has_selfloops(),
+        ppi.textual_report(false)
+    );
     Ok(ppi)
 }
 
@@ -149,12 +163,16 @@ pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
 }
 
 /// Return WalksParameters to execute a second order walk.
-pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
+pub fn second_order_walker(
+    graph: &Graph,
+    return_weight: WeightT,
+    explore_weight: WeightT,
+) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(8)?
         .set_iterations(Some(1))?
-        .set_return_weight(Some(2.0))?
-        .set_explore_weight(Some(2.0))?
-        .set_max_neighbours(Some(20))?
+        .set_return_weight(Some(return_weight))?
+        .set_explore_weight(Some(explore_weight))?
+        .set_max_neighbours(Some(3))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
@@ -250,6 +268,8 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
             "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
             graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
         );
+    } else {
+        assert!(graph.spanning_arborescence(verbose).is_err());
     }
     assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }
@@ -302,23 +322,21 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "Sum of singleton and non singleton nodes number does not match."
     );
 
-    if !graph.directed {
-        warn!("Running connected components tests.");
-        let (_components_number, smallest, biggest) = graph.connected_components_number(false);
-        assert!(
-            biggest >= smallest,
-            "smallest: {} biggest: {}",
-            smallest,
-            biggest
-        );
+    warn!("Running connected components tests.");
+    let (_components_number, smallest, biggest) = graph.connected_components_number(false);
+    assert!(
+        biggest >= smallest,
+        "smallest: {} biggest: {}",
+        smallest,
+        biggest
+    );
 
-        assert!(
-            smallest != 1
-                || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
-            "When the smallest component is one the graph must have singletons! Graph report: \n{}",
-            graph.textual_report(false)?
-        );
-    }
+    assert!(
+        smallest != 1
+            || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
+        "When the smallest component is one the graph must have singletons! Graph report: \n{}",
+        graph.textual_report(false)?
+    );
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.get_unique_edges_iter(true).next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
@@ -443,6 +461,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
+    assert_eq!(walker.clone(), walker);
+    let walker2 = second_order_walker(&graph, 2.0, 2.0)?;
+    assert_eq!(walker2.clone(), walker2);
+
     if !graph.directed {
         warn!("Executing random walks tests.");
         for mode in 0..3 {
@@ -482,10 +504,10 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
 
             assert_eq!(
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph)?)
+                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph)?)
+                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );
@@ -502,14 +524,36 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph)?)
+                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph)?)
+                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
         }
+    } else {
+        assert!(graph.complete_walks_iter(&walker).is_err());
     }
     Ok(())
 }
@@ -586,6 +630,44 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             1,
             "Expected number of components (1) is not matched!"
         );
+        if let Ok(node_type_name) = graph.translate_node_type_id(0) {
+            assert!(graph
+                .remove_components(
+                    None,
+                    Some(vec![Some(node_type_name.to_string())]),
+                    None,
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+        if graph.has_unknown_node_types() {
+            assert!(graph
+                .remove_components(None, Some(vec![None]), None, None, None, verbose)
+                .is_ok());
+        }
+        if let Ok(edge_type_name) = graph.get_edge_type_name(0) {
+            assert!(graph
+                .remove_components(
+                    None,
+                    None,
+                    Some(vec![Some(edge_type_name.to_string())]),
+                    None,
+                    None,
+                    verbose
+                )
+                .is_ok());
+        }
+        if graph.has_unknown_edge_types() {
+            assert!(graph
+                .remove_components(None, None, Some(vec![None]), None, None, verbose)
+                .is_ok());
+        }
+    } else {
+        assert!(graph
+            .remove_components(None, None, None, None, None, verbose)
+            .is_err());
     }
 
     Ok(())
@@ -718,6 +800,15 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
+    graph
+        .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
+        .unwrap()
+        .collect::<Vec<_>>();
+    graph
+        .link_prediction_ids(0, 256, 10.0, false, 10, &None)
+        .unwrap()
+        .collect::<Vec<_>>();
+
     Ok(())
 }
 
@@ -963,7 +1054,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         "Number of node types of the graph is not 1."
     );
     assert_eq!(
-        clone.get_unchecked_node_count_by_node_type(0),
+        clone.get_unchecked_node_count_by_node_type(Some(0)),
         graph.get_nodes_number(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );
@@ -971,8 +1062,20 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     Ok(())
 }
 
+pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    assert!(
+        graph.are_nodes_remappable(&graph),
+        "Graph always should be remappable to itself."
+    );
+    assert!(
+        graph.remap(&graph, verbose).is_ok(),
+        "Graph always should be remappable to itself."
+    );
+    Ok(())
+}
+
 /// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Starting default test suite.");
     let _ = test_graph_properties(graph, verbose);
 
@@ -1000,9 +1103,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);
 
-    warn!("Testing random walks.");
-    let _ = test_random_walks(graph, verbose);
-
     warn!("Running remove components tests.");
     let _ = test_remove_components(graph, verbose);
 
@@ -1021,5 +1121,21 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     warn!("Testing edge lists generation.");
     let _ = test_edgelist_generation(graph, verbose);
 
+    warn!("Testing graph remapping.");
+    let _ = test_graph_remapping(graph, verbose);
+
+    warn!("Testing random walks.");
+    let _ = test_random_walks(graph, verbose);
+
+    Ok(())
+}
+
+/// Executes near-complete test of all functions for the given graph.
+pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    warn!("Starting default test suite.");
+    let _ = _default_test_suite(graph, verbose);
+    warn!("Starting default test suite with speedups enabled.");
+    graph.enable(true, true, true, None)?;
+    let _ = _default_test_suite(graph, verbose);
     Ok(())
 }

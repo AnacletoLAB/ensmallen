@@ -51,9 +51,9 @@ impl EnsmallenGraph {
     fn remove(&self, py_kwargs: Option<&PyDict>) -> PyResult<EnsmallenGraph> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            to_string_vector(&[
+            &[
                 "allow_nodes_set",
                 "deny_nodes_set",
                 "allow_node_types_set",
@@ -68,41 +68,41 @@ impl EnsmallenGraph {
                 "singletons",
                 "selfloops",
                 "verbose"
-            ]),
+            ],
         ))?;
 
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.remove(
-                pyex!(extract_value!(kwargs, "allow_nodes_set", HashSet<String>))?,
-                pyex!(extract_value!(kwargs, "deny_nodes_set", HashSet<String>))?,
-                pyex!(extract_value!(
+            graph: pe!(self.graph.remove(
+                extract_value!(kwargs, "allow_nodes_set", HashSet<String>),
+                extract_value!(kwargs, "deny_nodes_set", HashSet<String>),
+                extract_value!(
                     kwargs,
                     "allow_node_types_set",
                     HashSet<String>
-                ))?,
-                pyex!(extract_value!(
+                ),
+                extract_value!(
                     kwargs,
                     "deny_node_types_set",
                     HashSet<String>
-                ))?,
-                pyex!(extract_value!(kwargs, "allow_edge_set", HashSet<EdgeT>))?,
-                pyex!(extract_value!(kwargs, "deny_edge_set", HashSet<EdgeT>))?,
-                pyex!(extract_value!(
+                ),
+                extract_value!(kwargs, "allow_edge_set", HashSet<EdgeT>),
+                extract_value!(kwargs, "deny_edge_set", HashSet<EdgeT>),
+                extract_value!(
                     kwargs,
                     "allow_edge_types_set",
                     HashSet<String>
-                ))?,
-                pyex!(extract_value!(
+                ),
+                extract_value!(
                     kwargs,
                     "deny_edge_types_set",
                     HashSet<String>
-                ))?,
-                pyex!(extract_value!(kwargs, "weights", bool))?.unwrap_or(false),
-                pyex!(extract_value!(kwargs, "node_types", bool))?.unwrap_or(false),
-                pyex!(extract_value!(kwargs, "edge_types", bool))?.unwrap_or(false),
-                pyex!(extract_value!(kwargs, "singletons", bool))?.unwrap_or(false),
-                pyex!(extract_value!(kwargs, "selfloops", bool))?.unwrap_or(false),
-                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+                ),
+                extract_value!(kwargs, "weights", bool).unwrap_or(false),
+                extract_value!(kwargs, "node_types", bool).unwrap_or(false),
+                extract_value!(kwargs, "edge_types", bool).unwrap_or(false),
+                extract_value!(kwargs, "singletons", bool).unwrap_or(false),
+                extract_value!(kwargs, "selfloops", bool).unwrap_or(false),
+                extract_value!(kwargs, "verbose", bool).unwrap_or(true),
             ))?,
         })
     }
@@ -133,26 +133,26 @@ impl EnsmallenGraph {
     fn remove_components(&self, py_kwargs: Option<&PyDict>) -> PyResult<EnsmallenGraph> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            to_string_vector(&[
+            &[
                 "node_names",
                 "node_types",
                 "edge_types",
                 "minimum_component_size",
                 "top_k_components",
                 "verbose"
-            ])
+            ]
         ))?;
 
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.remove_components(
-                pyex!(extract_value!(kwargs, "node_names", Vec<String>))?,
-                pyex!(extract_value!(kwargs, "node_types", Vec<Option<String>>))?,
-                pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
-                pyex!(extract_value!(kwargs, "minimum_component_size", NodeT))?,
-                pyex!(extract_value!(kwargs, "top_k_components", NodeT))?,
-                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+            graph: pe!(self.graph.remove_components(
+                extract_value!(kwargs, "node_names", Vec<String>),
+                extract_value!(kwargs, "node_types", Vec<Option<String>>),
+                extract_value!(kwargs, "edge_types", Vec<Option<String>>),
+                extract_value!(kwargs, "minimum_component_size", NodeT),
+                extract_value!(kwargs, "top_k_components", NodeT),
+                extract_value!(kwargs, "verbose", bool).unwrap_or(true),
             ))?,
         })
     }

@@ -35,7 +35,7 @@ impl EnsmallenGraph {
     fn spanning_arborescence(&self, verbose: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let (edges_number, iter) =
-            pyex!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
+            pe!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
         let array = ThreadSafe {
             t: PyArray2::new(py.python(), [edges_number, 2], false),
         };

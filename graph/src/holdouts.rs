@@ -503,7 +503,7 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop = src == dst && self.get_node_degree(src) == 1;
+                let singleton_self_loop = src == dst && self.get_node_degree(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -657,10 +657,10 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| {
-                train_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+                train_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
             node_set[train_size..].iter().for_each(|node_id| {
-                test_node_types[*node_id as usize] = self.get_unchecked_node_type(*node_id)
+                test_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
         }
 
@@ -851,7 +851,7 @@ impl Graph {
         // We iterate on the components
         'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
-            if self.is_node_trap(*node) {
+            if self.is_node_trap(*node).unwrap() {
                 continue;
             }
             stack.push(*node);
@@ -880,7 +880,7 @@ impl Graph {
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
                 let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
                 (min_edge_id..max_edge_id)
-                    .filter(|edge_id| unique_nodes.contains(self.get_destination(*edge_id)))
+                    .filter(|edge_id| unique_nodes.contains(self.get_destination(*edge_id).unwrap()))
                     .collect::<Vec<EdgeT>>()
             }));
 

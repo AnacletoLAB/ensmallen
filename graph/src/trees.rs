@@ -1,4 +1,5 @@
 use super::*;
+
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
@@ -34,7 +35,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_edge_from_edge_id(edge_id);
+            let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -121,7 +122,7 @@ impl Graph {
         if self.has_singletons() || self.has_singleton_nodes_with_self_loops_number() {
             (0..self.get_nodes_number())
                 .filter(|node_id| {
-                    self.is_singleton(*node_id) || self.is_singleton_with_self_loops(*node_id)
+                    self.is_singleton(*node_id).unwrap() || self.is_singleton_with_self_loops(*node_id)
                 })
                 .for_each(|node_id| {
                     components[node_id as usize] = component_sizes.len() as NodeT;
@@ -319,7 +320,7 @@ impl Graph {
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton(src as NodeT) {
+                        if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
                             // We set singletons as self-loops for now.
                             (*ptr)[src] = src as NodeT;
                             return;
@@ -517,7 +518,7 @@ impl Graph {
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
-                    if self.has_singletons() && self.is_singleton(src as NodeT) {
+                    if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
                         // We set singletons as self-loops for now.
                         unsafe {
                             (*ptr)[src] = (*component_sizes).len() as NodeT;

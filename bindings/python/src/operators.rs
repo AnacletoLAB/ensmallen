@@ -6,25 +6,25 @@ use pyo3::class::number::PyNumberProtocol;
 impl PyNumberProtocol for EnsmallenGraph {
     fn __or__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(&lhs.graph | &rhs.graph)?,
+            graph: pe!(&lhs.graph | &rhs.graph)?,
         })
     }
 
     fn __sub__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(&lhs.graph - &rhs.graph)?,
+            graph: pe!(&lhs.graph - &rhs.graph)?,
         })
     }
 
     fn __and__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(&lhs.graph & &rhs.graph)?,
+            graph: pe!(&lhs.graph & &rhs.graph)?,
         })
     }
 
     fn __xor__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(&lhs.graph ^ &rhs.graph)?,
+            graph: pe!(&lhs.graph ^ &rhs.graph)?,
         })
     }
 }
@@ -32,7 +32,7 @@ impl PyNumberProtocol for EnsmallenGraph {
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __str__(&'p self) -> PyResult<String> {
-        pyex!(self.graph.textual_report(true))
+        pe!(self.graph.textual_report(true))
     }
     fn __repr__(&'p self) -> PyResult<String> {
         self.__str__()
@@ -49,7 +49,8 @@ impl EnsmallenGraph {
         Ok(format!(
             r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
             self.graph.get_name(),
-            self.__repr__()?
+            // TODO! Investigate when this thing can actually crash!
+            pe!(self.__repr__())?
         ))
     }
 }
@@ -67,7 +68,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if any overlapping edge was found.
     pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pyex!(self.graph.overlaps(&graph.graph))
+        pe!(self.graph.overlaps(&graph.graph))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -81,6 +82,6 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if graph contains completely the othe graph.
     pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pyex!(self.graph.contains(&graph.graph))
+        pe!(self.graph.contains(&graph.graph))
     }
 }

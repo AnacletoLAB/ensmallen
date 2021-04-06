@@ -40,22 +40,22 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            &[
                 "random_state",
                 "edge_types",
                 "include_all_edge_types",
                 "verbose"
-            ]),
+            ],
         ))?;
 
-        let (g1, g2) = pyex!(self.graph.connected_holdout(
-            pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
+        let (g1, g2) = pe!(self.graph.connected_holdout(
+            extract_value!(kwargs, "random_state", EdgeT).unwrap_or(42),
             train_size,
-            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
-            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+            extract_value!(kwargs, "edge_types", Vec<Option<String>>),
+            extract_value!(kwargs, "include_all_edge_types", bool).unwrap_or(false),
+            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
@@ -93,16 +93,16 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "verbose"])
+            &["random_state", "verbose"]
         ))?;
 
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.random_subgraph(
-                pyex!(extract_value!(kwargs, "random_state", usize))?.unwrap_or(42),
+            graph: pe!(self.graph.random_subgraph(
+                extract_value!(kwargs, "random_state", usize).unwrap_or(42),
                 nodes_number,
-                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+                extract_value!(kwargs, "verbose", bool).unwrap_or(true),
             ))?,
         })
     }
@@ -158,24 +158,24 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            &[
                 "random_state",
                 "include_all_edge_types",
                 "edge_types",
                 "min_number_overlaps",
                 "verbose",
-            ]),
+            ],
         ))?;
 
-        let (g1, g2) = pyex!(self.graph.random_holdout(
-            pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
+        let (g1, g2) = pe!(self.graph.random_holdout(
+            extract_value!(kwargs, "random_state", EdgeT).unwrap_or(42),
             train_size,
-            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
-            pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
-            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+            extract_value!(kwargs, "include_all_edge_types", bool).unwrap_or(false),
+            extract_value!(kwargs, "edge_types", Vec<Option<String>>),
+            extract_value!(kwargs, "min_number_overlaps", EdgeT),
+            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
@@ -220,28 +220,28 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&[
+            &[
                 "random_state",
                 "verbose",
                 "seed_graph",
                 "only_from_same_component"
-            ]),
+            ],
         ))?;
 
-        let seed_graph = pyex!(extract_value!(kwargs, "seed_graph", EnsmallenGraph))?;
+        let seed_graph = extract_value!(kwargs, "seed_graph", EnsmallenGraph);
 
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.sample_negatives(
-                pyex!(extract_value!(kwargs, "random_state", EdgeT))?.unwrap_or(42),
+            graph: pe!(self.graph.sample_negatives(
+                extract_value!(kwargs, "random_state", EdgeT).unwrap_or(42),
                 negatives_number,
                 match &seed_graph {
                     Some(sg) => Some(&sg.graph),
                     None => None,
                 },
-                pyex!(extract_value!(kwargs, "only_from_same_component", bool))?.unwrap_or(true),
-                pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+                extract_value!(kwargs, "only_from_same_component", bool).unwrap_or(true),
+                extract_value!(kwargs, "verbose", bool).unwrap_or(true),
             ))?,
         })
     }
@@ -283,17 +283,17 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["edge_types", "random_state", "verbose"])
+            &["edge_types", "random_state", "verbose"]
         ))?;
 
-        let (train, test) = pyex!(self.graph.kfold(
+        let (train, test) = pe!(self.graph.kfold(
             k,
             k_index,
-            pyex!(extract_value!(kwargs, "edge_types", Vec<Option<String>>))?,
-            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
-            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+            extract_value!(kwargs, "edge_types", Vec<Option<String>>),
+            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
+            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
 
         Ok((
@@ -338,15 +338,15 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "use_stratification"])
+            &["random_state", "use_stratification"]
         ))?;
 
-        let (train, test) = pyex!(self.graph.node_label_holdout(
+        let (train, test) = pe!(self.graph.node_label_holdout(
             train_size,
-            pyex!(extract_value!(kwargs, "use_stratification", bool))?.unwrap_or(true),
-            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+            extract_value!(kwargs, "use_stratification", bool).unwrap_or(true),
+            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
         ))?;
 
         Ok((
@@ -389,15 +389,15 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "use_stratification"])
+            &["random_state", "use_stratification"]
         ))?;
 
-        let (train, test) = pyex!(self.graph.edge_label_holdout(
+        let (train, test) = pe!(self.graph.edge_label_holdout(
             train_size,
-            pyex!(extract_value!(kwargs, "use_stratification", bool))?.unwrap_or(true),
-            pyex!(extract_value!(kwargs, "random_state", u64))?.unwrap_or(42),
+            extract_value!(kwargs, "use_stratification", bool).unwrap_or(true),
+            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
         ))?;
 
         Ok((

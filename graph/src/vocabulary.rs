@@ -90,7 +90,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                 ));
             }
             let i = IndexT::to_usize(*v);
-            if self.reverse_map[i] != "" {
+            if !self.reverse_map[i].is_empty() {
                 return Err(format!(
                     concat!(
                         "During the building of the reverse mapping, ",
@@ -161,11 +161,6 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// Return length of the vocabulary.
     pub fn len(&self) -> usize {
         self.map.len()
-    }
-
-    /// Return boolean representing if values are numeric.
-    pub fn has_numeric_ids(&self) -> bool {
-        self.numeric_ids
     }
 
     /// Set wether to load IDs as numeric.

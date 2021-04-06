@@ -1,6 +1,5 @@
 use super::*;
-use graph::{NodeT, WeightT};
-use numpy::PyArray;
+use graph::{WeightT};
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -35,7 +34,7 @@ impl EnsmallenGraph {
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.filter(
+            graph: pe!(self.graph.filter(
                 nodes,
                 node_types,
                 edge_types,
@@ -44,43 +43,5 @@ impl EnsmallenGraph {
                 verbose.unwrap_or(true),
             ))?,
         })
-    }
-
-    #[text_signature = "($self, src, node_names, node_types, edge_types, min_weight, max_weight)"]
-    /// Return node neighbours filtered by given filters.
-    ///
-    /// Parameters
-    /// -------------
-    /// `src`: int,
-    ///     The source node.
-    /// `node_names`: List[str],
-    ///     The node names to keep.
-    /// `node_types`: List[str],
-    ///     The node types to keep.
-    /// `edge_types`: List[str],
-    ///     The edge types to keep.
-    /// `min_weight`: float,
-    ///     Minimum weight to use to filter edges.
-    /// `max_weight`: float,
-    ///     Maximum weight to use to filter edges.
-    ///
-    /// Returns
-    /// -------------
-    /// Integer numpy array with filtered node neighbours.
-    pub fn get_filtered_neighbours(
-        &self,
-        src: NodeT,
-        nodes: Option<Vec<String>>,
-        node_types: Option<Vec<Option<String>>>,
-        edge_types: Option<Vec<Option<String>>>,
-        min_weight: Option<WeightT>,
-        max_weight: Option<WeightT>,
-    ) -> PyResult<PyWords> {
-        let neighbours = pyex!(self.graph.get_filtered_neighbours_range(
-            src, nodes, node_types, edge_types, min_weight, max_weight,
-        ))?
-        .collect::<Vec<NodeT>>();
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, neighbours, NodeT))
     }
 }

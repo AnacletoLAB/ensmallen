@@ -126,9 +126,9 @@ impl Graph {
 
                     if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
                         let src_node_type =
-                            self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&src_name));
                         let dst_node_type =
-                            self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
+                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&dst_name));
                         // If the graph has node types
                         if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
                             let node_type_names = self
@@ -176,7 +176,7 @@ impl Graph {
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
                     .filter_map(|(node_id, node_name, node_type_names)| {
-                        if singletons && self.is_singleton_by_nide_name(&node_name).unwrap() {
+                        if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
                             return None;
                         }
                         // If singletons and selfloops need to be removed.
@@ -298,9 +298,9 @@ impl Graph {
         // Retrieve minimal size of the smallest top k components
         let components_counts = Counter::init(components_vector.clone()).most_common();
         let updated_min_component_size = match top_k_components {
-            Some(tkc) => Some(match components_counts.len() < tkc as usize {
-                true => components_counts.last().unwrap().1,
-                false => components_counts.get(tkc as usize).unwrap().1,
+            Some(tkc) => Some(match (tkc as usize) < components_counts.len() {
+                true => components_counts.get(tkc as usize).unwrap().1,
+                false => components_counts.last().unwrap().1,
             }),
             None => minimum_component_size,
         };

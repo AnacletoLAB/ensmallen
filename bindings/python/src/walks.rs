@@ -65,17 +65,17 @@ impl EnsmallenGraph {
     ///
     fn random_walks(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
+        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let iter = pe!(self.graph.random_walks_iter(quantity, &parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
                 py.python(),
@@ -152,16 +152,16 @@ impl EnsmallenGraph {
     ///
     fn complete_walks(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
+        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let iter = pe!(self.graph.complete_walks_iter(&parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
                 py.python(),
