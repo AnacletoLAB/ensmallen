@@ -84,6 +84,3 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use preprocessing::*;
-
-mod dijkstra;
-pub use self::dijkstra::*;
