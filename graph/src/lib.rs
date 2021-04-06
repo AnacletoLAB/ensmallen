@@ -46,7 +46,7 @@ pub(crate) use self::compression::*;
 
 mod constructors;
 
-mod utils;
+pub mod utils;
 pub(crate) use self::utils::*;
 
 mod bitmaps;
@@ -67,7 +67,7 @@ mod tarjan;
 mod trees;
 mod types;
 mod walks;
-mod walks_parameters;
+pub mod walks_parameters;
 mod hash;
 
 pub mod test_utilities;

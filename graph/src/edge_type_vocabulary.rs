@@ -120,11 +120,6 @@ impl EdgeTypeVocabulary {
         self.counts.len()
     }
 
-    /// Return boolean representing if values are numeric.
-    pub fn has_numeric_ids(&self) -> bool {
-        self.vocabulary.has_numeric_ids()
-    }
-
     /// Set wether to load IDs as numeric.
     ///
     /// # Arguments

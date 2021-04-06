@@ -5,7 +5,21 @@ impl Graph {
     /// Return wether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
-    /// other: &Grap - graph towards remap the nodes to.
+    /// other: &Graph - graph towards remap the nodes to.
+    ///
+    /// # Example
+    /// A graph is always remappable to itself:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.are_nodes_remappable(&graph));
+    /// ```
+    /// Two different graphs, like Cora and STRING, are not remappable:
+    /// ```rust
+    /// # let cora = graph::test_utilities::load_cora().unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(!cora.are_nodes_remappable(&ppi));
+    /// ```
+    ///
     pub fn are_nodes_remappable(&self, other: &Graph) -> bool {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
@@ -20,8 +34,15 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - The graph to remap towards.
+    /// * other: &Graph - The graph to remap towards.
     /// * verbose: bool - Wether to show a loding bar.
+    ///
+    /// # Example
+    /// A graph is always remappable to itself:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
+    /// ```
     ///
     pub fn remap(&self, other: &Graph, verbose: bool) -> Result<Graph, String> {
         let pb = get_loading_bar(
