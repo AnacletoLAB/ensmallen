@@ -62,7 +62,7 @@ def test_return_weight_behaviour_pathway():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=200,
+            walk_length=200,
             return_weight=return_weight,
         )
         mean_uniques_counts.append(np.mean([
@@ -94,7 +94,7 @@ def test_explore_weight_behaviour_hpo():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=400,
+            walk_length=400,
             explore_weight=explore_weight,
         )
         mean_uniques_counts.append(np.mean([
@@ -127,7 +127,7 @@ def test_explore_weight_behaviour_pathway():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=100,
+            walk_length=100,
             explore_weight=explore_weight,
         )
         mean_uniques_counts.append(np.mean([
@@ -161,7 +161,7 @@ def test_change_node_type_weight_behaviour_hpo():
     ):
         walks = graph.complete_walks(
             iterations=1,
-            length=100,
+            walk_length=100,
             change_node_type_weight=change_node_type_weight
         )
         changes = []
@@ -169,7 +169,7 @@ def test_change_node_type_weight_behaviour_hpo():
             type_changes = 0
             previous_node_type = -1
             for node_id in walk:
-                node_type_id = graph.get_node_type(node_id)
+                node_type_id = graph.get_node_type_id_by_node_id(node_id)
                 if previous_node_type != node_type_id:
                     type_changes += 1
                     previous_node_type = node_type_id
