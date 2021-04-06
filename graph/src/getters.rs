@@ -870,6 +870,7 @@ impl Graph {
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
     ) -> impl Iterator<Item = NodeT> + '_ {
+        // TODO: NEW ELIAS FANO METHOD
         (min_edge_id..max_edge_id).map(move |edge_id| self.get_destination(edge_id).unwrap())
     }
 
@@ -957,14 +958,18 @@ impl Graph {
                 .as_ref()
                 .and_then(|cds| cds.get(&node))
             {
-                Some(dsts) => indices
-                    .iter()
-                    .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
-                    .collect(),
-                None => indices
-                    .iter()
-                    .map(|edge_id| self.get_destination(*edge_id).unwrap())
-                    .collect(),
+                Some(dsts) => {
+                    indices
+                        .iter()
+                        .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
+                        .collect()
+                },
+                None => {
+                    indices
+                        .iter()
+                        .map(|edge_id| self.get_destination(*edge_id).unwrap())
+                        .collect()
+                },
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
         }

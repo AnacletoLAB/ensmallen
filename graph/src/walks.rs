@@ -457,20 +457,9 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
-        let has_q = not_one(walk_weights.explore_weight);
-        let has_p = not_one(walk_weights.return_weight);
-        if has_p && has_q {
-            update_return_explore_weight_transition(
-                &mut transition,
-                destinations,
-                previous_destinations,
-                walk_weights.return_weight,
-                walk_weights.explore_weight,
-                src,
-                dst,
-            );
-        } else {
-            if has_q {
+        match (not_one(walk_weights.return_weight), not_one(walk_weights.explore_weight)) {
+            (false, false) => {},
+            (false, true) => {
                 update_explore_weight_transition(
                     &mut transition,
                     destinations,
@@ -479,9 +468,8 @@ impl Graph {
                     src,
                     dst,
                 );
-            }
-
-            if has_p {
+            },
+            (true, false) => {
                 update_return_weight_transition(
                     &mut transition,
                     destinations,
@@ -490,7 +478,18 @@ impl Graph {
                     walk_weights.return_weight,
                     has_selfloop,
                 );
-            }
+            },
+            (true, true) => {
+                update_return_explore_weight_transition(
+                    &mut transition,
+                    destinations,
+                    previous_destinations,
+                    walk_weights.return_weight,
+                    walk_weights.explore_weight,
+                    src,
+                    dst,
+                );
+            },
         }
 
         (transition, min_edge_id)
@@ -746,15 +745,16 @@ impl Graph {
             .map(move |i| stub[i])
             .chain((2..parameters.walk_length).scan(
                 (min_edge_id, max_edge_id, destinations, node, dst, edge),
-                move |(
-                    previous_min_edge_id,
-                    previous_max_edge_id,
-                    previous_destinations,
-                    previous_src,
-                    previous_dst,
-                    previous_edge,
-                ),
-                      iteration| {
+                move |
+                    (
+                        previous_min_edge_id,
+                        previous_max_edge_id,
+                        previous_destinations,
+                        previous_src,
+                        previous_dst,
+                        previous_edge,
+                    ),
+                    iteration| {
                     let (min_edge_id, max_edge_id, destinations, indices) = self
                         .get_node_edges_and_destinations(
                             parameters.max_neighbours,
