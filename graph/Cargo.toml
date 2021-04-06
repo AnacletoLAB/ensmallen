@@ -1,6 +1,6 @@
 [package]
 name = "graph"
-version = "0.1.0"
+version = "0.6.0"
 authors = [
     "LucaCappelletti94 <cappelletti.luca94@gmail.com>",
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"   

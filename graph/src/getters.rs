@@ -1007,8 +1007,11 @@ impl Graph {
         {
             true => None,
             false => Some(
-                self.get_destinations_range(min_edge_id, max_edge_id)
-                    .collect(),
+                self.edges.iter_in_range(
+                    self.encode_edge(node, 0)..self.encode_edge(node + 1, 0)
+                ).map(|edge| {
+                    self.decode_edge(edge).1
+                }).collect()
             ),
         };
         (min_edge_id, max_edge_id, destinations, None)
