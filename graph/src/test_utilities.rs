@@ -26,7 +26,7 @@ pub fn random_string(len: usize) -> String {
 
     (0..len)
         .map(|_| {
-            let idx = rng.gen_range(0, CHARSET.len());
+            let idx = rng.gen_range(0..CHARSET.len());
             CHARSET[idx] as char
         })
         .collect()
