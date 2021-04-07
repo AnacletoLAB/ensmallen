@@ -37,10 +37,13 @@ impl EnsmallenGraph {
         verbose: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, NodeT, NodeT, NodeT)> {
         let (components, number, min_size, max_size) =
-            pyex!(self.graph.connected_components(verbose.unwrap_or(true)))?;
+            pe!(self.graph.connected_components(verbose.unwrap_or(true)))?;
         let gil = pyo3::Python::acquire_gil();
         Ok((
-            to_nparray_1d!(gil, components, NodeT),
+            PyArray::from_vec(gil.python(), components)
+                .cast::<NodeT>(false)
+                .unwrap()
+                .to_owned(),
             number,
             min_size,
             max_size,

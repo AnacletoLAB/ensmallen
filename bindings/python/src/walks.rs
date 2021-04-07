@@ -1,21 +1,19 @@
 use super::*;
-use numpy::{PyArray2};
 use graph::NodeT;
-use rayon::prelude::*;
+use numpy::PyArray2;
 use rayon::iter::IndexedParallelIterator;
+use rayon::prelude::*;
 use thread_safe::ThreadSafe;
-
-
 
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
     /// ---------------------
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// quantity: int,
@@ -67,35 +65,44 @@ impl EnsmallenGraph {
     ///
     fn random_walks(
         &self,
-        length: NodeT,
+        walk_length: u64,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
+        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
-        let array = ThreadSafe{t:PyArray2::new(py.python(), [quantity as usize, length as usize], false)};
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let iter = pe!(self.graph.random_walks_iter(quantity, &parameters))?;
+        let array = ThreadSafe {
+            t: PyArray2::new(
+                py.python(),
+                [
+                    quantity as usize * parameters.get_iterations() as usize,
+                    walk_length as usize,
+                ],
+                false,
+            ),
+        };
         unsafe {
-            iter.enumerate().for_each(|(y, vy)| 
-                vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = *vyx
-                )
-            );
+            iter.enumerate().for_each(|(y, vy)| {
+                vy.iter()
+                    .enumerate()
+                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+            });
         }
         Ok(array.t.to_owned())
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, walk_length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
     /// ---------------------
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// return_weight: float = 1.0,
@@ -145,23 +152,33 @@ impl EnsmallenGraph {
     ///
     fn complete_walks(
         &self,
-        length: NodeT,
+        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
+        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
-        let array = ThreadSafe{t:PyArray2::new(py.python(), [self.graph.get_unique_sources_number() as usize, length as usize], false)};
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let iter = pe!(self.graph.complete_walks_iter(&parameters))?;
+        let array = ThreadSafe {
+            t: PyArray2::new(
+                py.python(),
+                [
+                    self.graph.get_unique_sources_number() as usize
+                        * parameters.get_iterations() as usize,
+                    walk_length as usize,
+                ],
+                false,
+            ),
+        };
         unsafe {
-            iter.enumerate().for_each(|(y, vy)| 
-                vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = *vyx
-                )
-            );
+            iter.enumerate().for_each(|(y, vy)| {
+                vy.iter()
+                    .enumerate()
+                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+            });
         }
         Ok(array.t.to_owned())
     }

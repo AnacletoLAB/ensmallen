@@ -16,23 +16,32 @@ impl Graph {
     pub fn filter(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: bool,
     ) -> Result<Graph, String> {
+        if let (Some(min_w), Some(max_w)) = (min_weight, max_weight) {
+            if min_w >= max_w {
+                return Err(format!(
+                    "The given minimum weight ({}) is greater or equal than the given maximum weight ({})!",
+                    min_w, max_w
+                ));
+            }
+        }
+
         let pb = get_loading_bar(
             verbose,
             format!("Building filtered {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            self.get_directed_edges_number() as usize,
         );
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
-        let edge_types_ids = match edge_types {
-            Some(ets) => Some(self.translate_edge_types(ets)?),
-            None => None,
-        };
+        let edge_types_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
+            Ok(Some(self.translate_edge_types(ets)?))
+        });
+        let edge_types_ids = edge_types_ids?;
 
         Graph::build_graph(
             self.get_edges_quadruples(true)
@@ -54,20 +63,18 @@ impl Graph {
                         }
                     }
                     if let Some(ets) = &edge_types_ids {
-                        if !ets.contains(&edge_type.unwrap()) {
+                        if !ets.contains(&edge_type) {
                             return None;
                         }
                     }
                     Some(Ok((src, dst, edge_type, weight)))
                 }),
-            self.get_edges_number(),
+            self.get_directed_edges_number() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.directed,
+            true,
             self.name.clone(),
             false,
             self.has_edge_types(),

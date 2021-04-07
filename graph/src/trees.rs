@@ -1,4 +1,5 @@
 use super::*;
+
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
@@ -11,17 +12,30 @@ use vec_rand::xorshift::xorshift as rand_u64;
 const NOT_PRESENT: u32 = u32::MAX;
 
 /// # Implementation of algorithms relative to trees.
+/// 
+/// # Definitions
+/// - **Self-loops**: Edges with source equal to the destination.
+/// - **Singleton**: A node with no incident edges, (self-loops are not considered).
+/// - **Spanning Tree**: A set of edges that allows to build a path between every
+///     node in the graph. For a graph with n nodes the spanning tree will have n - 1 edges.
+/// - **Spanning Arborescence**: is the generalizzation of the spanning tree for graphs
+///     with multiple components. Being a tree it trivially contains no self-loops.
+///     For a grpah with n nodes and c components the spanning arborescence will have
+///     n - c edges.
+/// - **Component**: Set of nodes in which any two vertices in it are connected to
+///     each other by paths. A singleton is a component and so is a singleton with a 
+///     self-loop.
 impl Graph {
     fn iter_edges_from_random_state(
         &self,
         random_state: u64,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        let edges_number = self.get_edges_number();
+        let edges_number = self.get_directed_edges_number();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_edge_from_edge_id(edge_id);
+            let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -32,27 +46,27 @@ impl Graph {
     fn iter_on_edges_with_preference<'a>(
         &'a self,
         random_state: u64,
-        unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
         let pb = get_loading_bar(
             verbose,
-            format!("Building random spanning tree for graph {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
+            format!("Building random spanning tree for {}", self.name).as_ref(),
+            self.get_directed_edges_number() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
             if let (Some(uet), _) = (unwanted_edge_types, &self.edge_types) {
                 Box::new(
                     self.iter_edges_from_random_state(random_state)
                         .filter_map(move |(edge_id, src, dst)| {
-                            if uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                            if uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))
                         })
                         .chain(self.iter_edges_from_random_state(random_state).filter_map(
                             move |(edge_id, src, dst)| {
-                                if !uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                                if !uet.contains(&self.get_unchecked_edge_type(edge_id)) {
                                     return None;
                                 }
                                 Some((src, dst))
@@ -71,10 +85,21 @@ impl Graph {
 
     /// Returns set of edges composing a spanning tree and connected components.
     ///
+    /// If the graph is composed of a single node with one or more self-loops,
+    /// we consider such a graph as a graph with an empty spanning tree, with
+    /// a single component of size one.
+    ///
     /// # Arguments
     ///
-    /// TODO: Updated docstrings.
+    /// `edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.
     ///
+    /// # Returns
+    /// Tuple with:
+    ///     - Set of the edges
+    ///     - Vector of the nodes components
+    ///     - Total components number
+    ///     - Minimum component size
+    ///     - Maximum component size
     pub fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
@@ -85,6 +110,26 @@ impl Graph {
         let mut merged_component_number = 0;
         let mut component_sizes: Vec<usize> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
+
+        // When there are singleton nodes with self-loops,
+        // which is an arguability weird feature of some graphs,
+        // Kruskal fails to identify them because by definition
+        // a tree cannot contain self-loop.
+        // We call these nodes with one or more self-loops
+        // (in the case of a multigraph) `singletons with self-loops` for lack of
+        // a better term. These nodes are treated as nodes in their own
+        // component and their edges (the self-loops) are not added to the tree.
+        if self.has_singletons() || self.has_singleton_nodes_with_self_loops_number() {
+            (0..self.get_nodes_number())
+                .filter(|node_id| {
+                    self.is_singleton(*node_id).unwrap() || self.is_singleton_with_self_loops(*node_id)
+                })
+                .for_each(|node_id| {
+                    components[node_id as usize] = component_sizes.len() as NodeT;
+                    components_remapping.push(component_sizes.len() as NodeT);
+                    component_sizes.push(1);
+                });
+        }
 
         edges.for_each(|(src, dst)| {
             if src == dst {
@@ -190,14 +235,14 @@ impl Graph {
     /// # Arguments
     ///
     /// * `random_state`:NodeT - The random_state to use for the holdout,
-    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
-    /// * `verbose`: bool - Wethever to show a loading bar or not.
+    /// * `verbose`: bool - whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
-        unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
+        unwanted_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))
@@ -210,7 +255,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             &format!(
-                "Computing spanning arborescence with Kruskal for graph {}",
+                "Computing spanning arborescence with Kruskal for {}",
                 self.get_name()
             ),
             self.get_unique_edges_number() as usize,
@@ -218,11 +263,8 @@ impl Graph {
         self.kruskal(self.get_unique_edges_iter(self.directed).progress_with(pb))
     }
 
-    fn scale_node_threads(&self) -> usize {
-        1 + (1.0 / (1.0 + 1000000.0 / (self.get_nodes_number() as f64 * 0.8))) as usize
-    }
-
     /// Returns set of edges composing a spanning tree.
+    ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(
@@ -236,14 +278,13 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
-        let cpu_number = num_cpus::get();
-        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
-            .num_threads(thread_number)
+            .num_threads(cpu_number)
             .build()
             .unwrap();
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
-            (0..(thread_number - 1))
+            (0..std::cmp::max(cpu_number - 1, 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
@@ -279,7 +320,7 @@ impl Graph {
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton(src as NodeT) {
+                        if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
                             // We set singletons as self-loops for now.
                             (*ptr)[src] = src as NodeT;
                             return;
@@ -296,6 +337,8 @@ impl Graph {
                                 if (*ptr)[src] != NOT_PRESENT {
                                     break;
                                 }
+                            }
+                            unsafe {
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
@@ -324,7 +367,7 @@ impl Graph {
                             }
                         }
                     };
-                    self.get_source_destinations_range(src).for_each(|dst| {
+                    self.get_neighbours_iter(src).for_each(|dst| {
                         let ptr = thread_safe_parents.value.get();
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
@@ -346,7 +389,9 @@ impl Graph {
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
         Ok((
+            // Number of edges inserted
             total_inserted_edges.load(Ordering::SeqCst),
+            // Return an iterator over all the edges in the spanning arborescence
             (0..self.get_nodes_number()).filter_map(move |src| {
                 let dst = parents[src as usize];
                 // If the edge is NOT registered as a self-loop
@@ -360,7 +405,57 @@ impl Graph {
         ))
     }
 
-    /// Returns set of roaring bitmaps representing the connected components.
+    /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
+    /// **This works only for undirected graphs.**
+    ///
+    /// This method is **not thread save and not deterministic** but by design of the algorithm this
+    /// shouldn't matter but if we will encounter non-detemristic bugs here is where we want to look.
+    ///
+    /// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
+    /// We assign to each node the index of its component, so nodes in the same components will have the same index.
+    /// This component index is the returned Components membership vector.
+    ///
+    /// Example:
+    /// ```rust
+    ///  # #![feature(impl_trait_in_bindings)]
+    ///  # use graph::Graph;
+    ///  // Graph is a weightless graph with the edges
+    ///  // [(0, 1), (1, 4), (2, 3)]
+    ///  # let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![
+    ///  #        Ok(("0".to_string(), "1".to_string(), None, None)),
+    ///  #        Ok(("1".to_string(), "4".to_string(), None, None)),
+    ///  #        Ok(("2".to_string(), "3".to_string(), None, None)),
+    ///  #     ];
+    ///  #
+    ///  # let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());
+    ///  #
+    ///  # let graph = Graph::from_string_unsorted(
+    ///  #     edge.into_iter(),
+    ///  #     nodes,      // nodes
+    ///  #     false,     // directed
+    ///  #     false,      // directe edge list
+    ///  #     "test graph",// name
+    ///  #     false,     // ignore_duplicated_nodes
+    ///  #     false,     // ignore_duplicated_edges
+    ///  #     false,     // verbose
+    ///  #     false,     // numeric_edge_types_ids
+    ///  #     false,     // numeric_node_ids
+    ///  #     false,     // numeric_edge_node_ids
+    ///  #     false,     // numeric_node_types_ids
+    ///  #     false,     // has_node_types
+    ///  #     false,     // has_edge_types
+    ///  #     false,     // has_weights
+    ///  # ).unwrap();
+    /// let (components, number_of_components, smallest, biggest) =
+    ///     graph.connected_components(false).unwrap();
+    ///
+    /// //   nodes names:       0  1  4  2  3
+    /// assert_eq!(components, [0, 0, 0, 1, 1].to_vec());
+    ///
+    /// assert_eq!(number_of_components, 2);
+    /// assert_eq!(smallest, 2); // the size of the smallest component
+    /// assert_eq!(biggest, 3);  // the size of the biggest component
+    /// ```
     pub fn connected_components(
         &self,
         verbose: bool,
@@ -372,25 +467,24 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
-        let cpu_number = num_cpus::get();
-        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let mut component_sizes: Vec<NodeT> = Vec::new();
+        let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
-            .num_threads(thread_number)
+            .num_threads(cpu_number)
             .build()
             .unwrap();
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
-            (0..(thread_number - 1))
+            (0..std::cmp::max(cpu_number - 1, 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
         let active_nodes_number = AtomicUsize::new(0);
-        let current_component_nodes_number = AtomicUsize::new(0);
-        let components_number = AtomicUsize::new(0);
-        let max_component_nodes_number = AtomicUsize::new(1);
-        let min_component_nodes_number = AtomicUsize::new(usize::MAX);
         let completed = AtomicBool::new(false);
         let thread_safe_components = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut components),
+        };
+        let thread_safe_component_sizes = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut component_sizes),
         };
 
         // since we were able to build a stub tree with cpu.len() leafs,
@@ -412,58 +506,76 @@ impl Graph {
                     .as_ref(),
                     nodes_number,
                 );
+                let component_sizes = thread_safe_component_sizes.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| {
                     let ptr = thread_safe_components.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
                         if (*ptr)[src] != NOT_PRESENT {
+                            (*component_sizes)[(*ptr)[src] as usize] += 1;
                             return;
                         }
                     }
-                    unsafe {
-                        // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton(src as NodeT) {
-                            // We set singletons as self-loops for now.
-                            (*ptr)[src] =
-                                components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
-                            min_component_nodes_number.store(1, Ordering::SeqCst);
-                            return;
+
+                    // find the first not explored node (this is guardanteed to be in a new component)
+                    if self.has_singletons() && self.is_singleton(src as NodeT).unwrap() {
+                        // We set singletons as self-loops for now.
+                        unsafe {
+                            (*ptr)[src] = (*component_sizes).len() as NodeT;
+                            (*component_sizes).push(1);
                         }
+                        return;
                     }
+
                     loop {
+                        // if the node has been now mapped to a component by anyone of the
+                        // parallel threads, move on to the next node.
                         unsafe {
                             if (*ptr)[src] != NOT_PRESENT {
+                                (*component_sizes)[(*ptr)[src] as usize] += 1;
                                 break;
                             }
                         }
+                        // Otherwise, Check if the parallel threads are finished
+                        // and are all waiting for a new node to explore.
+                        // In that case add the currently not explored node to the
+                        // work stack of the first thread.
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
+                            // The check here might seems redundant but its' needed
+                            // to prevent data races.
+                            //
+                            // If the last parallel thread finishes its stack between the
+                            // presence check above and the active nodes numbers check
+                            // the src node will never increase the component size and thus
+                            // leading to wrong results.
                             unsafe {
                                 if (*ptr)[src] != NOT_PRESENT {
+                                    (*component_sizes)[(*ptr)[src] as usize] += 1;
                                     break;
                                 }
-                                (*ptr)[src] =
-                                    components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                             }
-                            shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            unsafe {
+                                (*ptr)[src] = (*component_sizes).len() as NodeT;
+                                (*component_sizes).push(1);
+                            }
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                            let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
-                            if ccnn != 0 {
-                                if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-                                    max_component_nodes_number.store(ccnn, Ordering::SeqCst);
-                                }
-                                if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-                                    min_component_nodes_number.store(ccnn, Ordering::SeqCst);
-                                }
-                            }
+                            shared_stacks[0].lock().unwrap().push(src as NodeT);
                             break;
                         }
+                        // Otherwise, Loop until the parallel threads are finished.
                     }
                 });
                 completed.store(true, Ordering::SeqCst);
             });
+
+            // Spawn the parallel threads that handle the components mapping,
+            // these threads use work-stealing, meaning that if their stack is empty,
+            // they will steal nodes from the stack of another random thread.
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
+                    // get the id, we use this as an idex for the stacks vector.
                     let thread_id = rayon::current_thread_index().unwrap();
+
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
@@ -479,36 +591,37 @@ impl Graph {
                             }
                         }
                     };
-                    self.get_source_destinations_range(src).for_each(|dst| {
+
+                    self.get_neighbours_iter(src).for_each(|dst| {
                         let ptr = thread_safe_components.value.get();
-                        unsafe {
-                            if (*ptr)[dst as usize] == NOT_PRESENT {
+                        if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {
+                            unsafe {
                                 (*ptr)[dst as usize] = (*ptr)[src as usize];
-                                current_component_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
-                                    .lock()
-                                    .unwrap()
-                                    .push(dst);
                             }
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                .lock()
+                                .unwrap()
+                                .push(dst);
                         }
                     });
                     active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
-        let ccnn = current_component_nodes_number.load(Ordering::SeqCst);
-        if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-            max_component_nodes_number.store(ccnn, Ordering::SeqCst);
-        }
-        if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-            min_component_nodes_number.store(ccnn, Ordering::SeqCst);
-        }
+        let (min_component_size, max_component_size) = component_sizes
+            .iter()
+            .cloned()
+            .filter(|c| *c != 0)
+            .minmax()
+            .into_option()
+            .unwrap();
+
         Ok((
             components,
-            components_number.load(Ordering::SeqCst) as NodeT,
-            min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
-            max_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+            component_sizes.len() as NodeT,
+            min_component_size,
+            max_component_size,
         ))
     }
 }

@@ -1,5 +1,8 @@
-from .ensmallen_graph import EnsmallenGraph
+"""Module offering fast graph processing and graph datasets."""
+from .ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from .ensmallen_graph import preprocessing  # pylint: disable=import-error
 
-def test():
-    print("IT WORKS!")
-    return EnsmallenGraph
+__all__ = [
+    "EnsmallenGraph",
+    "preprocessing"
+]

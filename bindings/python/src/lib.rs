@@ -1,6 +1,7 @@
-use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use pyo3::exceptions::PyValueError;
+use pyo3::exceptions::PyTypeError;
 use pyo3::{wrap_pymodule};
 mod macros;
 pub(crate) use crate::macros::*;
@@ -18,6 +19,7 @@ mod trees;
 mod connected_components;
 mod tarjan;
 mod thread_safe;
+mod hash;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;

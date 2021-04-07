@@ -1,5 +1,5 @@
 use super::*;
-use graph::WeightT;
+use graph::{WeightT};
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -27,14 +27,14 @@ impl EnsmallenGraph {
     pub fn filter(
         &self,
         nodes: Option<Vec<String>>,
-        node_types: Option<Vec<String>>,
-        edge_types: Option<Vec<String>>,
+        node_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<String>>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.filter(
+            graph: pe!(self.graph.filter(
                 nodes,
                 node_types,
                 edge_types,

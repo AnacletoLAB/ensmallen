@@ -28,3 +28,5 @@ Python-*
 .coverage
 coveralls.json
 default.profraw
+graphs
+.userinput.json

@@ -1,7 +1,7 @@
 [package]
 edition = "2018"
 name = "ensmallen_graph"
-version = "0.4.4"
+version = "0.6.0"
 license = "MIT"
 repository= "https://github.com/LucaCappelletti94/ensmallen_graph"
 authors = [
@@ -13,26 +13,55 @@ exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
-requires-python = ">=3.5"
-requires-dist = ["toml~=0.10.0"]
+requires-python = ">=3.6"
+requires-dist = ["toml~=0.10.0", "downloaders", "compress_json"]
 
 [lib]
 name = "ensmallen_graph"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]
-version = "0.10.1"
+version = "0.13.2"
 features = ["extension-module"]
 
 [dependencies]
 env_logger = "0.8.1"
 graph = { path = "../../graph" }
-numpy = "0.9.0"
+numpy = "0.13.1"
 edit-distance = "2.1.0"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
 
 [profile.release]
+# The opt-level setting controls the number of optimizations Rust will apply to 
+# your code, with a range of 0 to 3. Applying more optimizations extends 
+# compiling time, so if you’re in development and compiling your code often, 
+# you’ll want faster compiling even if the resulting code runs slower. That is 
+# the reason the default opt-level for dev is 0. When you’re ready to release 
+# your code, it’s best to spend more time compiling. You’ll only compile in 
+# release mode once, but you’ll run the compiled program many times, so release 
+# mode trades longer compile time for code that runs faster. That is why the 
+# default opt-level for the release profile is 3.
 opt-level = 3
-codgen-units=1
+
+# This flag controls whether LLVM uses link time optimizations to produce better 
+# optimized code, using whole-program analysis, at the cost of longer linking 
+# time.
+# Perform "fat" LTO which attempts to perform optimizations across all crates 
+# within the dependency graph
 lto = "fat"
+
+# When a crate is split into multiple codegen units, LLVM is able to process 
+# them in parallel. Increasing parallelism may speed up compile times, but may 
+# also produce slower code. Setting this to 1 may improve the performance of 
+# generated code, but may be slower to compile.
+# The default value, if not specified, is 16 for non-incremental builds. For 
+# incremental builds the default is 256 which allows caching to be more 
+# granular.
+# codgen-units=1
+
+# This option lets you set the default threshold for inlining a function. 
+# It takes an unsigned integer as a value. Inlining is based on a cost model, 
+# where a higher threshold will allow more inlining.
+# The default for opt-level=3 is 275.
+#inline-threshold=1000000

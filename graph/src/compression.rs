@@ -35,7 +35,7 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
+    pub(crate) fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
         if let (Some(sources), Some(destinations)) = (&self.sources, &self.destinations) {
             return (sources[edge_id as usize], destinations[edge_id as usize]);
         }
@@ -43,10 +43,14 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_id_from_tuple(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
-        self.edges
+    pub fn get_edge_id_by_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
+        match self
+            .edges
             .rank(self.encode_edge(src, dst))
-            .map(|value| value as EdgeT)
+            .map(|value| value as EdgeT) {
+                Some(edge_id) => Ok(edge_id),
+                None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
+            }
     }
 
     #[inline(always)]
@@ -56,7 +60,6 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
-        self.unique_sources
-            .unchecked_select((source_id % self.get_source_nodes_number()) as u64) as NodeT
+        self.unique_sources.unchecked_select(source_id as u64) as NodeT
     }
 }

@@ -1,3 +1,19 @@
+//! Ensmallen its an efficient graph manipulation library.
+//! 
+//! # Example:
+//! 
+//! ```rust
+//! use graph::{EdgeFileReader, Graph};
+//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv").unwrap()
+//!     .set_separator(Some(",")).unwrap()
+//!     .set_verbose(Some(false))
+//!     .set_numeric_node_ids(Some(true))
+//!     .set_header(Some(false));
+//!  
+//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph").unwrap();
+//! 
+//! 
+//! ```
 #![warn(unused_macros)]
 #![feature(map_first_last)]
 #![feature(thread_id_value)]
@@ -6,13 +22,12 @@
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
-mod atomic_f64_hashmap;
-pub(crate) use atomic_f64_hashmap::AtomicF64HashMap;
-
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
-mod vocabulary_vec;
-pub use self::vocabulary_vec::VocabularyVec;
+mod node_type_vocabulary;
+pub use self::node_type_vocabulary::NodeTypeVocabulary;
+mod edge_type_vocabulary;
+pub use self::edge_type_vocabulary::EdgeTypeVocabulary;
 
 mod csv_file_writer;
 pub(crate) use self::csv_file_writer::compose_lines;
@@ -33,14 +48,14 @@ pub(crate) use self::compression::*;
 
 mod constructors;
 
-mod utils;
+pub mod utils;
 pub(crate) use self::utils::*;
 
 mod bitmaps;
 mod edge_lists;
 mod filters;
 mod getters;
-pub mod graph;
+mod graph;
 mod holdouts;
 mod iters;
 mod metrics;
@@ -52,9 +67,10 @@ mod remove;
 mod setters;
 mod tarjan;
 mod trees;
-pub mod types;
+mod types;
 mod walks;
-mod walks_parameters;
+pub mod walks_parameters;
+mod hash;
 
 pub mod test_utilities;
 

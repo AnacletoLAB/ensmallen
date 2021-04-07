@@ -1,5 +1,7 @@
 use super::*;
-use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
+use graph::{
+    cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT, NodeTypeT,
+};
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
@@ -35,11 +37,12 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
-    let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
+    let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
+        pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
     let gil = pyo3::Python::acquire_gil();
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
-        to_nparray_1d!(gil, words, NodeT),
+        to_ndarray_1d!(gil, words, NodeT),
     ))
 }
 
@@ -58,7 +61,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyConte
 /// window_size: int = 4,
 ///     Window size to consider for the sequences.
 /// verbose: bool = False,
-///     Wethever to show the progress bars.
+///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
@@ -68,46 +71,31 @@ fn cooccurence_matrix(
     let _ = ctrlc::set_handler(|| std::process::exit(2));
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    pyex!(validate_kwargs(
-        kwargs,
-        ["window_size", "verbose"]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
-    ))?;
-    let (len, iter) = rust_cooccurence_matrix(
+    pe!(validate_kwargs(kwargs, &["window_size", "verbose"]))?;
+    let len = sequences.len();
+    let (words, contexts, frequencies) = pe!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
-        pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
-    );
-
-    let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
-    let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
-    let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
-
-    iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-            unsafe{
-                *words.uget_mut([i]) = node1;
-                *contexts.uget_mut([i]) = node2;
-                *frequencies.uget_mut([i]) = frequency;
-            }
-        });
+        extract_value!(kwargs, "window_size", usize).unwrap_or(3),
+        len,
+        extract_value!(kwargs, "verbose", bool).unwrap_or(true),
+    ))?;
 
     Ok((
-        words.to_owned(), 
-        contexts.to_owned(), 
-        frequencies.to_owned()
+        to_ndarray_1d!(gil, words, NodeT),
+        to_ndarray_1d!(gil, contexts, NodeT),
+        to_ndarray_1d!(gil, frequencies, f64),
     ))
 }
 
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
+    #[text_signature = "($self, walk_length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
     /// ---------------------
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// window_size: int = 4,
@@ -148,6 +136,8 @@ impl EnsmallenGraph {
     ///     and becomes an approximation of an exact walk.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
+    /// verbose: int = True,
+    ///     whether to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -155,40 +145,29 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        walk_length: NodeT,
+        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size", "verbose"]),
+            build_walk_parameters_list(&["window_size", "verbose"]).as_slice(),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (len, iter) = pyex!(self.graph.cooccurence_matrix( 
+        let (words, contexts, frequencies) = pe!(self.graph.cooccurence_matrix(
             &parameters,
-            pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
+            extract_value!(kwargs, "window_size", usize).unwrap_or(3),
+            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
-    
-        let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
-        let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
-        let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
-    
-        iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-                unsafe{
-                    *words.uget_mut([i]) = node1;
-                    *contexts.uget_mut([i]) = node2;
-                    *frequencies.uget_mut([i]) = frequency;
-                }
-            });
-    
+
         Ok((
-            words.to_owned(), 
-            contexts.to_owned(), 
-            frequencies.to_owned()
+            to_ndarray_1d!(gil, words, NodeT),
+            to_ndarray_1d!(gil, contexts, NodeT),
+            to_ndarray_1d!(gil, frequencies, f64),
         ))
     }
 
@@ -260,29 +239,26 @@ impl EnsmallenGraph {
     fn node2vec(
         &self,
         batch_size: NodeT,
-        walk_length: NodeT,
+        walk_length: u64,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size"])
+            build_walk_parameters_list(&[]).as_slice()
         ))?;
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
-        let elements_per_batch = (walk_length as usize - window_size * 2 - 1)
+        let iter = pe!(self.graph.node2vec(&parameters, batch_size, window_size))?;
+
+        let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
             * parameters.get_iterations() as usize;
 
         let contexts = ThreadSafe {
-            t: PyArray2::new(
-                gil.python(),
-                [elements_per_batch, window_size * 2],
-                false,
-            ),
+            t: PyArray2::new(gil.python(), [elements_per_batch, window_size * 2], false),
         };
         let words = ThreadSafe {
             t: PyArray1::new(gil.python(), [elements_per_batch], false),
@@ -302,7 +278,218 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, method, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    #[text_signature = "($self, node_ids, *, random_state, include_central_node, offset, max_neighbours)"]
+    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// - node_ids: List[int],
+    ///     The node ID to retrieve neighbours for.
+    /// - random_state: int = 42,
+    ///     The random state to use to extract the neighbours.
+    /// - include_central_node: bool = True,
+    ///     Whether to include the node ID in the returned iterator.
+    /// - offset: int = 1,
+    ///     Offset for padding porposes.
+    /// - max_neighbours: int = None,
+    ///     Number of maximum neighbours to consider.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Tuple with input nodes and output node types.
+    ///
+    fn get_node_label_prediction_tuple_by_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray2<NodeTypeT>>)> {
+        let gil = pyo3::Python::acquire_gil();
+
+        // First we normalize the kwargs so that we always at least
+        // an empty dictionary
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        // Then we validate the provided kwargs, that is we verify
+        // that the valid kwarg names are provided.
+        pe!(validate_kwargs(
+            kwargs,
+            &[
+                "random_state",
+                "include_central_node",
+                "offset",
+                "max_neighbours",
+            ],
+        ))?;
+
+        // We check that the provided list is not empty.
+        if node_ids.is_empty() {
+            return pe!(Err("Given list of node IDs is empty!".to_string()));
+        }
+
+        // We get the maximum degree among the provided nodes.
+        // We will use this as a maximal value for the size of the batch.
+        // This way if there are no high-degree centrality nodes in this
+        // batch we do not allocate extra memory for no reason.
+        // We can always unwrap this value because we have requested
+        // just above that the list cannot be empty.
+        let mut max_degree = node_ids
+            .iter()
+            .map(|node_id| self.graph.get_node_degree(*node_id).unwrap())
+            .max()
+            .unwrap();
+
+        // We get the number of the requested nodes IDs.
+        let nodes_number = node_ids.len();
+        // Extract the maximum neighbours parameter.
+        let max_neighbours = extract_value!(kwargs, "max_neighbours", NodeT);
+        // And whether to include or not the central node.
+        let include_central_node =
+            extract_value!(kwargs, "include_central_node", bool).unwrap_or(true);
+
+        // If the maximum neighbours was provided, we set the minimum value
+        // between max degree and maximum neighbours as the size of the
+        // bacth vector to return.
+        if let Some(mn) = &max_neighbours {
+            max_degree = std::cmp::min(max_degree, *mn);
+        }
+
+        // If the batch includes also the central node we need to add an
+        // additional column for it.
+        if include_central_node {
+            max_degree += 1;
+        }
+
+        // We retrieve the batch iterator.
+        let iter = pe!(self.graph.get_node_label_prediction_tuple_by_node_ids(
+            node_ids,
+            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
+            include_central_node,
+            extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
+            max_neighbours,
+        ))?;
+
+        // We create the vector of zeros where to allocate the neighbours
+        // This vector has `nodes_number` rows, that is the number of required
+        // node IDs, and `max_degree` rows, that is the maximum degree.
+        let neighbours =
+            PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
+        // We create the vector of zeros for the one-hot encoded labels.
+        // This is also used for the multi-label case.
+        // This vector has the same number of rows as the previous vector,
+        // that is the number of requested node IDs, while the number
+        // of columns is the number of node types in the graph.
+        let labels = PyArray2::zeros(
+            gil.python(),
+            [nodes_number, self.graph.get_node_types_number() as usize],
+            false,
+        );
+
+        // We iterate over the batch.
+        iter.enumerate()
+            .for_each(|(i, (neighbours_iterator, node_types))| {
+                neighbours_iterator.enumerate().for_each(|(j, node_id)| unsafe {
+                    *neighbours.uget_mut([i, j]) = node_id;
+                });
+                if let Some(nts) = node_types {
+                    nts.into_iter().for_each(|label| unsafe {
+                        *labels.uget_mut([i, label as usize]) = 1;
+                    });
+                }
+            });
+
+        Ok((neighbours.to_owned(), labels.to_owned()))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    /// Returns ids for a link prediction training batch.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// idx:int,
+    ///     Index corresponding to batch to be rendered.
+    /// batch_size: int,
+    ///     The batch size to use.
+    /// negative_samples: float = 1.0,
+    ///     Factor of negatives to use in every batch.
+    ///     For example, with a batch size of 128 and negative_samples equal
+    ///     to 1.0, there will be 64 positives and 64 negatives.
+    /// avoid_false_negatives: bool = False,
+    ///     Wether to filter out false negatives.
+    ///     By default False.
+    ///     Enabling this will slow down the batch generation while (likely) not
+    ///     introducing any significant gain to the model performance.
+    /// maximal_sampling_attempts: usize = 100,
+    ///     Number of attempts to execute to sample the negative edges.
+    /// graph_to_avoid: EnsmallenGraph = None,
+    ///     Graph to avoid when generating the links.
+    ///     This can be the validation component of the graph, for example.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Triple with source and destination nodes and labels.
+    ///
+    fn link_prediction_ids(
+        &self,
+        idx: u64,
+        batch_size: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<bool>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            &[
+                "negative_samples",
+                "avoid_false_negatives",
+                "maximal_sampling_attempts",
+                "graph_to_avoid",
+            ],
+        ))?;
+        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
+        let maybe_graph = match &graph_to_avoid {
+            Some(g) => Some(&g.graph),
+            None => None,
+        };
+
+        let iter = pe!(self.graph.link_prediction_ids(
+            idx,
+            batch_size,
+            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
+            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
+            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
+            &maybe_graph,
+        ))?;
+
+        let srcs = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let dsts = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let labels = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        unsafe {
+            iter.for_each(|(i, src, dst, label)| {
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
+                *(labels.t.uget_mut([i])) = label;
+            });
+        }
+
+        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, normalize, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
     ///
     ///
@@ -312,8 +499,8 @@ impl EnsmallenGraph {
     ///     Index corresponding to batch to be rendered.
     /// batch_size: int,
     ///     The batch size to use.
-    /// method: str,
-    ///     The method to use for the edge embedding.
+    /// normalize: bool=True,
+    ///      Divide the degrees by the max, this way the values are in [0, 1].
     /// negative_samples: float = 1.0,
     ///     Factor of negatives to use in every batch.
     ///     For example, with a batch size of 128 and negative_samples equal
@@ -333,68 +520,59 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// Tuple containing training and validation graphs.
     ///
-    fn link_prediction(
+    fn link_prediction_degrees(
         &self,
         idx: u64,
         batch_size: usize,
-        method: &str,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<bool>>)> {
+    ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<bool>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            [
+            &[
+                "normalize",
                 "negative_samples",
                 "avoid_false_negatives",
                 "maximal_sampling_attempts",
                 "graph_to_avoid",
-            ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
+            ],
         ))?;
-        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
         let maybe_graph = match &graph_to_avoid {
             Some(g) => Some(&g.graph),
             None => None,
         };
 
-        let iter = pyex!(self.graph.link_prediction(
+        let iter = pe!(self.graph.link_prediction_degrees(
             idx,
             batch_size,
-            method,
-            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
-            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
-            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
-            &maybe_graph
+            extract_value!(kwargs, "normalize", bool).unwrap_or(true),
+            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
+            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
+            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
+            &maybe_graph,
         ))?;
 
-        let embedding_size = pyex!(self.graph.get_embedding_size())?;
-        let edge_vector_len = match method {
-            "Concatenate" => embedding_size*2,
-            _ => embedding_size
+        let srcs = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
         };
-
-        let edges = ThreadSafe {
-            t: PyArray2::new(
-                gil.python(),
-                [batch_size, edge_vector_len],
-                false,
-            ),
+        let dsts = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
         };
         let labels = ThreadSafe {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
+
         unsafe {
-            iter.for_each(|(i, edge_embedding, label)| {
-                edge_embedding.iter().enumerate().for_each(|(j, v)| {
-                    *(edges.t.uget_mut([i, j])) = *v;
-                });
+            iter.for_each(|(i, src, dst, label)| {
+                *(dsts.t.uget_mut([i])) = src;
+                *(srcs.t.uget_mut([i])) = dst;
                 *(labels.t.uget_mut([i])) = label;
             });
         }
-        Ok((edges.t.to_owned(), labels.t.to_owned()))
+
+        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
 }

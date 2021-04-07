@@ -35,9 +35,9 @@ impl EnsmallenGraph {
     /// weights_column: str = "weight",
     ///     The name of the column where to write out the .
     /// numeric_node_ids: bool = False,
-    ///     Wethever to save the internal numeric Ids instead of the string names.
+    ///     whether to save the internal numeric Ids instead of the string names.
     /// directed: bool = False,
-    ///     Wethever to save graph as directed or undirected.
+    ///     whether to save graph as directed or undirected.
     ///
     /// Raises
     /// ------------------------
@@ -47,9 +47,9 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(
+        pe!(validate_kwargs(
             kwargs,
-            [
+            &[
                 "verbose",
                 "separator",
                 "header",
@@ -64,29 +64,26 @@ impl EnsmallenGraph {
                 "numeric_node_ids",
                 "directed"
             ]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
         ))?;
 
         let writer = EdgeFileWriter::new(path)
-            .set_verbose(pyex!(extract_value!(kwargs, "verbose", bool))?)
-            .set_separator(pyex!(extract_value!(kwargs, "separator", String))?)
-            .set_header(pyex!(extract_value!(kwargs, "header", bool))?)
-            .set_directed(pyex!(extract_value!(kwargs, "directed", bool))?)
-            .set_sources_column_number(pyex!(extract_value!(kwargs, "sources_column_number", usize))?)
-            .set_sources_column(pyex!(extract_value!(kwargs, "sources_column", String))?)
-            .set_destinations_column_number(pyex!(extract_value!(
+            .set_verbose(extract_value!(kwargs, "verbose", bool))
+            .set_separator(extract_value!(kwargs, "separator", String))
+            .set_header(extract_value!(kwargs, "header", bool))
+            .set_directed(extract_value!(kwargs, "directed", bool))
+            .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize))
+            .set_sources_column(extract_value!(kwargs, "sources_column", String))
+            .set_destinations_column_number(extract_value!(
                 kwargs,
                 "destinations_column_number",
                 usize
-            ))?)
-            .set_destinations_column(pyex!(extract_value!(kwargs, "destinations_column", String))?)
-            .set_weights_column_number(pyex!(extract_value!(kwargs, "weights_column_number", usize))?)
-            .set_weights_column(pyex!(extract_value!(kwargs, "weights_column", String))?)
-            .set_edge_types_column_number(pyex!(extract_value!(kwargs, "edge_types_column_number", usize))?)
-            .set_numeric_node_ids(pyex!(extract_value!(kwargs, "numeric_node_ids", bool))?)
-            .set_edge_types_column(pyex!(extract_value!(kwargs, "edges_type_column", String))?);
-        pyex!(writer.dump(&self.graph))
+            ))
+            .set_destinations_column(extract_value!(kwargs, "destinations_column", String))
+            .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize))
+            .set_weights_column(extract_value!(kwargs, "weights_column", String))
+            .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
+            .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
+            .set_edge_types_column(extract_value!(kwargs, "edges_type_column", String));
+        pe!(writer.dump(&self.graph))
     }
 }

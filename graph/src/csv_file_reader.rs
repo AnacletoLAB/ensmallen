@@ -1,3 +1,4 @@
+use itertools::Itertools;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
@@ -31,7 +32,8 @@ impl CSVFileReader {
     ///
     /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<CSVFileReader, String> {
+        let path = path.into();
         // check file existance
         match File::open(&path) {
             Ok(_) => Ok(CSVFileReader {
@@ -50,36 +52,57 @@ impl CSVFileReader {
 
     /// Read the whole file and return how many rows it has.
     pub(crate) fn count_rows(&self) -> usize {
-        BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .count()
+        std::cmp::min(
+            BufReader::new(File::open(&self.path).unwrap())
+                .lines()
+                .count(),
+            self.max_rows_number.unwrap_or(u64::MAX) as usize
+        )
     }
 
     /// Return list of components of the header.
     pub fn get_header(&self) -> Result<Vec<String>, String> {
-        let file = File::open(&self.path).unwrap();
-        let node_buf_reader = BufReader::new(file);
-        let mut lines = node_buf_reader.lines().skip(self.rows_to_skip);
-        // read the first line
-
-        if let Some(lt) = lines.next() {
-            match lt {
-                Ok(line) => Ok(line
-                    .split(&self.separator)
-                    .map(|s| s.to_string())
-                    .collect::<Vec<String>>()),
-                Err(_) => Err("Something went wrong reading the line from the file".to_string()),
-            }
+        if let Some(first_line) = self.get_lines_iterator(false)?.next() {
+            Ok(first_line?
+                .split(&self.separator)
+                .map(|s| s.to_string())
+                .collect::<Vec<String>>())
         } else {
             Err("The given file has no lines!".to_string())
         }
     }
 
+    pub fn get_lines_iterator(
+        &self,
+        skip_header: bool,
+    ) -> Result<impl Iterator<Item = Result<String, String>> + '_, String> {
+        let rows_to_skip = match skip_header {
+            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
+                Some(v) => Ok(v),
+                None => Err(concat!(
+                    "This overflow was caused because rows to skip = 2**64 - 1",
+                    "and header is setted to true which causes to skip one extra line.",
+                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
+                )),
+            }?,
+            false => self.rows_to_skip as u64,
+        } as usize;
+        Ok(BufReader::new(File::open(&self.path).unwrap())
+            .lines()
+            .map(|line| match line {
+                Ok(l)=>Ok(l),
+                Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
+            })
+            .filter_ok(move |line| !line.is_empty() && match &self.comment_symbol {
+                Some(cs) => !line.starts_with(cs),
+                _ => true,
+            })
+            .skip(rows_to_skip))
+    }
+
     /// Return elements of the first line not to be skipped.
     pub fn get_elements_per_line(&self) -> Result<usize, String> {
-        let first_line = BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .nth(self.rows_to_skip);
+        let first_line = self.get_lines_iterator(true)?.next();
         match first_line {
             Some(fl) => {
                 match fl {
@@ -88,7 +111,7 @@ impl CSVFileReader {
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
-            },
+            }, 
             None => Err(concat!(
                 "Unable to read the first non skipped line of the file.\n",
                 "The file has possibly less than the expected amount of lines"
@@ -99,30 +122,10 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>>  + '_, String> {
         let pb = if self.verbose {
-            let number_of_rows = self.count_rows() as u64;
-            let rows_to_skip = match (self.rows_to_skip as u64).checked_add(self.header as u64) {
-                Some(v) => Ok(v),
-                None => Err(concat!(
-                    "This overflow was caused because rows to skip = 2**64 - 1",
-                    "and header is setted to true which causes to skip one extra line.",
-                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
-                )),
-            }?;
-            if number_of_rows < rows_to_skip {
-                return Err(format!(
-                    concat!(
-                        "The given file has {} lines but it was asked to skip",
-                        "{} rows. This is not possible."
-                    ),
-                    number_of_rows, rows_to_skip
-                ));
-            }
-
-            let rows_number = number_of_rows - rows_to_skip;
-            let pb = ProgressBar::new(rows_number);
-            pb.set_draw_delta(rows_number / 100);
+            let pb = ProgressBar::new(self.count_rows() as u64);
+            pb.set_draw_delta(std::cmp::max(self.count_rows() as u64 / 1000, 1));
             pb.set_style(ProgressStyle::default_bar().template(
                 "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
@@ -132,46 +135,21 @@ impl CSVFileReader {
         };
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
-        Ok(BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .skip(self.rows_to_skip + self.header as usize)
+        Ok(self.get_lines_iterator(true)?
             .progress_with(pb)
-            .enumerate()
             // skip empty lines
-            .filter_map(move |(i, line)| match line {
-                Ok(l) => {
-                    if l.is_empty() || self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
-                        return None;
-                    }
-                    if let Some(cs) = &self.comment_symbol{
-                        if l.starts_with(cs){
-                            return None;
-                        }
-                    }
-                    let line_components = l
-                        .split(&self.separator)
-                        .map(|s| s.to_string())
-                        .collect::<Vec<String>>();
-                    if line_components.len() != number_of_elements_per_line {
-                        return Some(Err(format!(
-                            concat!(
-                                "Found line {i} with different number",
-                                " ({found}) of separator from the expected",
-                                " one {expected}.\n",
-                                "Specifically, the line is: {line}\n",
-                                "And the line components is {line_components:?}"
-                            ),
-                            i=i,
-                            found=line_components.len(),
-                            expected=number_of_elements_per_line,
-                            line_components=line_components,
-                            line=l
-                        )));
-                    }
-                    Some(Ok(line_components))
-                },
-                Err(_) => Some(Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()))
-            }))
+            .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
+            // Handling NaN values and padding them to the number of rows
+            .map_ok(move |line|{
+                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| 
+                    match element.is_empty() {
+                    true=>None,
+                    false=>Some(element.to_string())
+                }).collect();
+                elements.resize(number_of_elements_per_line, None);
+                elements
+            })
+        )
     }
 
     /// Return number of the given column in header.

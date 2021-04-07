@@ -1,42 +1,19 @@
 use super::*;
+use indicatif::ProgressIterator;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
-use std::cmp::{max, min};
-use std::sync::Arc;
+use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
-enum EdgeEmbeddingMethods {
-    Hadamard,
-    Average,
-    Sum,
-    L1,
-    AbsoluteL1,
-    L2,
-    Concatenate,
-}
-
-impl EdgeEmbeddingMethods {
-    fn new(method: &str) -> Result<EdgeEmbeddingMethods, String> {
-        match method {
-            "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
-            "Average" => Ok(EdgeEmbeddingMethods::Average),
-            "Sum" => Ok(EdgeEmbeddingMethods::Sum),
-            "L1" => Ok(EdgeEmbeddingMethods::L1),
-            "AbsoluteL1" => Ok(EdgeEmbeddingMethods::AbsoluteL1),
-            "L2" => Ok(EdgeEmbeddingMethods::L2),
-            "Concatenate" => Ok(EdgeEmbeddingMethods::Concatenate),
-            _ => Err(format!(
-                concat!(
-                    "Given embedding method '{}' is not supported.",
-                    "The supported methods are 'Hadamard', 'Average', 'Sum', 'AbsoluteL1', 'L1' and 'L2'."
-                ),
-                method
-            )),
-        }
-    }
+#[inline(always)]
+/// Computes val % n using lemires fast method for u32.
+/// https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
+/// This is supposed to be ~5 times faster.
+fn fast_u32_modulo(val: u32, n: u32) -> u32 {
+    ((val as u64 * n as u64) >> 32) as u32
 }
 
 /// Return training batches for Word2Vec models.
@@ -60,10 +37,17 @@ pub fn word2vec<'a>(
 ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
     Ok(sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
-        if sequence_length < window_size * 2 {
-            panic!("You are providing sequences that are smaller than the the minimum amount.");
+        if sequence_length < window_size * 2 + 1 {
+            panic!(
+                "
+            Cannot compute word2vec, got a sequence of length {} and window size {}.
+            for the current window_size the minimum sequence length required is {}",
+                sequence_length,
+                window_size,
+                window_size * 2 + 1,
+            );
         }
-        (window_size..(sequence_length - window_size - 1)).map(move |i| {
+        (window_size..(sequence_length - window_size)).map(move |i| {
             (
                 (i - window_size..i)
                     .chain(i + 1..window_size + i + 1)
@@ -84,42 +68,75 @@ pub fn word2vec<'a>(
 ///
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * window_size: Option<usize> - Window size to consider for the sequences.
+/// * verbose: Option<bool>,
+///     whether to show the progress bars.
+///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
     sequences: impl ParallelIterator<Item = Vec<NodeT>>,
     window_size: usize,
-) -> (usize, impl Iterator<Item = ((NodeT, NodeT), f64)>) {
-    let cooccurence_matrix = Arc::new(AtomicF64HashMap::<(NodeT, NodeT)>::new());
-    // TODO!: This could be implemented using word2vec, it should be cleaner
-    //        but we don't know about its performances yet.
-    // fill the matrix
-    sequences.for_each(|sequence| {
-        // get a reference to the shared matrix
-        let cooccurence_matrix = cooccurence_matrix.clone();
+    number_of_sequences: usize,
+    verbose: bool,
+) -> Result<(Words, Words, Frequencies), String> {
+    let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
+    let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
+    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
+    let vec = sequences.collect::<Vec<Vec<NodeT>>>();
+    vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
-        // for each batch of size 2*window_size + 1
-        (window_size..walk_length - window_size - 1).for_each(|i| {
-            let central_word_id = sequence[i];
-            // for each index in the current batch update the matrix
-            (i - window_size..i)
-                .chain(i + 1..window_size + i + 1)
-                .for_each(|j| {
-                    let smaller = min(central_word_id, sequence[j]) as NodeT;
-                    let bigger = max(central_word_id, sequence[j]) as NodeT;
-                    cooccurence_matrix.add(&(smaller, bigger), 1.0 / (i as f64 - j as f64).abs());
-                });
-        });
+        for (central_index, &central_word_id) in sequence.iter().enumerate() {
+            for distance in 1..1 + window_size {
+                if central_index + distance >= walk_length {
+                    break;
+                }
+                let context_id = sequence[central_index + distance];
+                if central_word_id < context_id {
+                    *cooccurence_matrix
+                        .entry((central_word_id as NodeT, context_id as NodeT))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                } else {
+                    *cooccurence_matrix
+                        .entry((context_id as NodeT, central_word_id as NodeT))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                }
+            }
+        }
     });
 
-    let mut result = Arc::try_unwrap(cooccurence_matrix)
-    .unwrap();
+    let elements = cooccurence_matrix.len() * 2;
+    let mut max_frequency = 0.0;
+    let mut words: Vec<NodeT> = vec![0; elements];
+    let mut contexts: Vec<NodeT> = vec![0; elements];
+    let mut frequencies: Vec<f64> = vec![0.0; elements];
+    let pb2 = get_loading_bar(
+        verbose,
+        "Converting mapping into CSR matrix",
+        cooccurence_matrix.len(),
+    );
 
-    result.merge();
+    cooccurence_matrix
+        .iter()
+        .progress_with(pb2)
+        .enumerate()
+        .for_each(|(i, ((word, context), frequency))| {
+            let (k, j) = (i * 2, i * 2 + 1);
+            if *frequency > max_frequency {
+                max_frequency = *frequency;
+            }
+            words[k] = *word;
+            words[j] = words[k];
+            contexts[k] = *context;
+            contexts[j] = contexts[k];
+            frequencies[k] = *frequency;
+            frequencies[j] = frequencies[k];
+        });
 
-    (
-        result.len(),
-        result.into_iter_normalized(),
-    )
+    frequencies
+        .par_iter_mut()
+        .for_each(|frequency| *frequency /= max_frequency);
+
+    Ok((words, contexts, frequencies))
 }
 
 /// # Preprocessing for ML algorithms on graph.
@@ -163,43 +180,233 @@ impl Graph {
     /// * parameters: &WalksParameters - the walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
     /// * verbose: Option<bool>,
-    ///     Wethever to show the progress bars.
+    ///     whether to show the progress bars.
     ///     The default behaviour is false.
     ///     
-    pub fn cooccurence_matrix<'a>(
-        &'a self,
-        walks_parameters: &'a WalksParameters,
+    pub fn cooccurence_matrix(
+        &self,
+        walks_parameters: &WalksParameters,
         window_size: usize,
-    ) -> Result<(usize, impl Iterator<Item = ((NodeT, NodeT), f64)> + 'a), String> {
-        Ok(cooccurence_matrix(
-            self.complete_walks_iter(walks_parameters)?,
+        verbose: bool,
+    ) -> Result<(Words, Words, Frequencies), String> {
+        let walks = self.complete_walks_iter(walks_parameters)?;
+        cooccurence_matrix(
+            walks,
             window_size,
-        ))
+            (self.get_unique_sources_number() * walks_parameters.iterations) as usize,
+            verbose,
+        )
     }
 
-    /// Returns triple with source nodes, destination nodes and labels for training model for link prediction.
+    /// Return iterator over neighbours for the given node ID, optionally including given node ID.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `central_node_id`: NodeT - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    ///
+    pub(crate) fn get_neighbours_by_node_id(
+        &self,
+        central_node_id: NodeT,
+        random_state: u64,
+        include_central_node: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        (if include_central_node {
+            vec![central_node_id]
+        } else {
+            vec![]
+        })
+        .into_iter()
+        .chain(
+            self.get_node_destinations(central_node_id, random_state, max_neighbours)
+                .into_iter(),
+        )
+        .map(move |node_id| node_id + offset)
+    }
+
+    /// Return tuple with iterator over neighbours for the given node ID, optionally including given node ID, and node type.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    ///
+    pub(crate) fn get_node_label_prediction_tuple_by_node_id(
+        &self,
+        node_id: NodeT,
+        random_state: u64,
+        include_central_node: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+    ) -> (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>) {
+        (
+            self.get_neighbours_by_node_id(
+                node_id,
+                random_state,
+                include_central_node,
+                offset,
+                max_neighbours,
+            ),
+            self.get_unchecked_node_type_id_by_node_id(node_id),
+        )
+    }
+
+    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
+    ///
+    /// This method is meant to be used to predict node labels using the NoLaN model.
+    ///
+    /// If you need to predict the node label of a node, not during training,
+    /// use `max_neighbours=None`.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_ids`: Vec<NodeT> - The node ID to retrieve neighbours for.
+    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
+    /// * `offset`: NodeT - Offset for padding porposes.
+    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    ///
+    /// # Examples
+    /// Suppose you want to the get the neighbours of the first 10 nodes:
+    /// ```rust
+    /// # use rayon::iter::ParallelIterator;
+    /// # use graph::NodeT;
+    /// # use rayon::iter::IndexedParallelIterator;
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// let node_ids = (0..10).collect::<Vec<NodeT>>();
+    /// let include_central_nodes = true;
+    /// let offset = 0;
+    /// let max_neighbours = 5;
+    /// let iterator = graph.get_node_label_prediction_tuple_by_node_ids(
+    ///    node_ids.clone(), 42, include_central_nodes, offset, Some(max_neighbours)
+    /// ).unwrap();
+    /// iterator.enumerate().for_each(|(i, (neighbours_iter, labels))|{
+    ///     for (j, node_id) in neighbours_iter.enumerate(){
+    ///         if j==0 && include_central_nodes{
+    ///             assert!(node_id==node_ids[i]);
+    ///         }
+    ///         assert!(
+    ///             max_neighbours + include_central_nodes as NodeT > j as NodeT,
+    ///             "The index {} is higher than the given maximum neighbours number {}!",
+    ///             j,
+    ///             max_neighbours
+    ///         );
+    ///     }
+    /// });
+    /// ```
+    ///
+    pub fn get_node_label_prediction_tuple_by_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        random_state: u64,
+        include_central_node: bool,
+        offset: NodeT,
+        max_neighbours: Option<NodeT>,
+    ) -> Result<
+        impl Iterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
+        String,
+    > {
+        if !self.has_node_types() {
+            return Err("The current graph instance does not have node types!".to_string());
+        }
+        Ok(node_ids.into_iter().map(move |node_id| {
+            self.get_node_label_prediction_tuple_by_node_id(
+                node_id,
+                random_state,
+                include_central_node,
+                offset,
+                max_neighbours,
+            )
+        }))
+    }
+
+    /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
+    /// This method is just for setting the lowerbound on the simplest possible model.
     ///
     /// # Arguments
     ///
     /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
     /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * method: &str - String representing the required edge embedding method.
+    /// * normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],
     /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
-    pub fn link_prediction<'a>(
+    pub fn link_prediction_degrees<'a>(
         &'a self,
         idx: u64,
         batch_size: usize,
-        method: &str,
+        normalize: bool,
         negative_samples: f64,
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
+    ) -> Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String> {
+        let iter = self.link_prediction_ids(
+            idx,
+            batch_size,
+            negative_samples,
+            avoid_false_negatives,
+            maximal_sampling_attempts,
+            graph_to_avoid,
+        )?;
+
+        let max_degree = match normalize {
+            true => self.max_degree() as f64,
+            false => 1.0,
+        };
+
+        Ok(iter.map(move |(index, src, dst, label)| {
+            (
+                index,
+                self.get_node_degree(src).unwrap() as f64 / max_degree,
+                self.get_node_degree(dst).unwrap() as f64 / max_degree,
+                label,
+            )
+        }))
+    }
+
+    /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
+    ///
+    /// # Arguments
+    ///
+    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * batch_size: usize - The maximal size of the batch to generate,
+    /// * negative_samples: f64 - The component of netagetive samples to use,
+    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
+    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    pub fn link_prediction_ids<'a>(
+        &'a self,
+        idx: u64,
+        batch_size: usize,
+        negative_samples: f64,
+        avoid_false_negatives: bool,
+        maximal_sampling_attempts: usize,
+        graph_to_avoid: &'a Option<&Graph>,
+    ) -> Result<impl ParallelIterator<Item = (usize, NodeT, NodeT, bool)> + 'a, String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
@@ -208,58 +415,6 @@ impl Graph {
             return Err("Negative sample must be a posive real value.".to_string());
         }
 
-        if self.embedding.is_none() {
-            return Err("Embedding object was not provided.".to_string());
-        }
-
-        let method = match EdgeEmbeddingMethods::new(method)? {
-            EdgeEmbeddingMethods::Hadamard => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 * x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Average => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 + x2) / 2.0)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Sum => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 + x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::L1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 - x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::AbsoluteL1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 - x2).abs())
-                    .collect()
-            },
-            EdgeEmbeddingMethods::L2 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 - x2).powi(2))
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Concatenate => {
-                |x1: &Vec<f64>, x2: &Vec<f64>| x1.iter().chain(x2.iter()).cloned().collect()
-            }
-        };
-
         // The number of negatives is given by computing their fraction of batchsize
         let negative_number: usize =
             ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
@@ -267,66 +422,56 @@ impl Graph {
         let positive_number: usize = batch_size - negative_number;
         let graph_has_no_self_loops = !self.has_selfloops();
 
-        let edges_number = self.get_edges_number() as u64;
-        let nodes_number = self.get_nodes_number() as u64;
+        let edges_number = self.get_directed_edges_number() as u64;
+        let nodes_number = self.get_nodes_number() as u32;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
         let random_values = gen_random_vec(batch_size, random_state);
         let mut indices: Vec<usize> = (0..batch_size).collect();
         indices.shuffle(&mut rng);
 
-        match &self.embedding {
-            Some(embedding) =>Ok((0..batch_size)
-                .into_par_iter()
-                .map(move |i| {
-                    let mut sampled = random_values[i];
-                    let (src, dst, label) = if i < positive_number{
-                        let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
-                        (src, dst, true)
-                    } else {
-                        let mut attempts = 0;
-                        loop {
-                            if attempts > maximal_sampling_attempts {
-                                panic!(format!(
-                                    concat!(
-                                        "Executed more than {} attempts to sample a negative edge.\n",
-                                        "If your graph is so small that you see this error, you may want to consider ",
-                                        "using one of the edge embedding transformer from the Embiggen library."
-                                    ),
-                                    maximal_sampling_attempts
-                                ));
-                            }
-                            attempts += 1;
-                            let random_src = sampled & 0xffffffff; // We need this to be an u64.
-                            let random_dst = sampled >> 32; // We need this to be an u64.
-                                                            // This technique is taken from:
-                                                            // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
-                            let src = ((random_src * nodes_number) >> 32) as NodeT;
-                            let dst = ((random_dst * nodes_number) >> 32) as NodeT;
-                            if avoid_false_negatives && self.has_edge(src, dst, None) {
-                                sampled = xorshift(sampled);
-                                continue;
-                            }
-                            if let Some(g) = &graph_to_avoid {
-                                if g.has_edge(src, dst, None) {
-                                    sampled = xorshift(sampled);
-                                    continue;
-                                }
-                            }
-                            if graph_has_no_self_loops && src == dst {
-                                sampled = xorshift(sampled);
-                                continue;
-                            }
-                            break (src, dst, false);
+        Ok((0..batch_size)
+            .into_par_iter()
+            .map(move |i| {
+                let mut sampled = random_values[i];
+                if i < positive_number{
+                    let (src, dst) = self.get_node_ids_from_edge_id(sampled % edges_number);
+                    (indices[i], src, dst, true)
+                } else {
+                    for _ in 0..maximal_sampling_attempts {
+                        // split the random u64 into 2 u32 and mod them to have
+                        // usable nodes (this is slightly biased towards low values)
+                        let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
+                        let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
+
+                        if avoid_false_negatives && self.has_edge_with_type(src, dst, None) {
+                            sampled = xorshift(sampled);
+                            continue;
                         }
-                    };
-                    (
-                        indices[i],
-                        method(&embedding[src as usize],&embedding[dst as usize]),
-                        label
-                    )
-                })),
-            None=>Err("Embedding object was not provided. Use the method 'set_embedding' to provide the embedding.".to_string())
-        }
+
+                        if let Some(g) = &graph_to_avoid {
+                            if g.has_edge_with_type(src, dst, None) {
+                                sampled = xorshift(sampled);
+                                continue;
+                            }
+                        }
+
+                        if graph_has_no_self_loops && src == dst {
+                            sampled = xorshift(sampled);
+                            continue;
+                        }
+
+                        return (indices[i], src, dst, false);
+                    }
+                    panic!(
+                        concat!(
+                            "Executed more than {} attempts to sample a negative edge.\n",
+                            "If your graph is so small that you see this error, you may want to consider ",
+                            "using one of the edge embedding transformer from the Embiggen library."
+                        ),
+                        maximal_sampling_attempts
+                    );
+                }
+            }))
     }
 }

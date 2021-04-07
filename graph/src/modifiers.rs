@@ -8,15 +8,15 @@ impl Graph {
     ///
     /// # Arguments
     /// - `edge_type`: String - The edge type to assing to all the edges.
-    pub fn set_all_edge_types(mut self, edge_type: String) -> Graph {
+    pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Graph {
         let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(edge_type).unwrap();
+        vocabulary.insert(edge_type.into()).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
-        let edge_types = VocabularyVec::from_structs(
-            vec![0; self.get_edges_number() as usize],
-            Some(vocabulary),
+        let edge_types = EdgeTypeVocabulary::from_structs(
+            vec![Some(0); self.get_directed_edges_number() as usize],
+            vocabulary,
         );
-        self.edge_types = edge_types;
+        self.edge_types = Some(edge_types);
         self
     }
 
@@ -24,12 +24,12 @@ impl Graph {
     ///
     /// # Arguments
     /// - `node_type`: String - The node type to assing to all the nodes.
-    pub fn set_all_node_types(mut self, node_type: String) -> Graph {
+    pub fn set_all_node_types<S: Into<String>>(mut self, node_type: S) -> Graph {
         let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(node_type).unwrap();
+        vocabulary.insert(node_type.into()).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
-        let node_types = VocabularyVec::from_structs(
-            vec![0; self.get_nodes_number() as usize],
+        let node_types = NodeTypeVocabulary::from_structs(
+            vec![Some(vec![0]); self.get_nodes_number() as usize],
             Some(vocabulary),
         );
         self.node_types = node_types;
@@ -88,8 +88,7 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.get_source_destinations_range(*node_id)
-                                .collect::<Vec<NodeT>>(),
+                            self.get_neighbours_iter(*node_id).collect::<Vec<NodeT>>(),
                         )
                     })
                     .collect::<HashMap<NodeT, Vec<NodeT>>>(),

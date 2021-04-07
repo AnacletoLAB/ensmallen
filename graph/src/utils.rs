@@ -1,29 +1,6 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 
-#[macro_export]
-/// Macro that computes the maximum between two numbers
-macro_rules! max {
-    ($a: expr, $b: expr) => {
-        if $a >= $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-#[macro_export]
-/// Macro that computes the minimum between two numbers
-macro_rules! min {
-    ($a: expr, $b: expr) => {
-        if $a < $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-
 pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
@@ -39,7 +16,7 @@ pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize
 }
 
 /// Return true if the given weight is near to one.
-pub(crate) fn not_one(weight:WeightT)->bool {
+pub(crate) fn not_one(weight: WeightT) -> bool {
     (weight - 1.0).abs() > WeightT::EPSILON
 }
 
@@ -62,23 +39,56 @@ impl Graph {
     }
 }
 
+/// Return validated weight.
+///
+/// A weight, to be valid in the context of graph machine learning
+/// as we have defined, must be strictly positive and non infinite. 
+///
+/// # Arguments
+/// 
+/// * weight: WeightT - The weight to validate.
+///
+/// # Examples
+/// The weight can be validated as follows:
+/// ```rust
+/// # use graph::utils::validate_weight;
+/// assert!(validate_weight(0.0).is_err());
+/// assert!(validate_weight(-1.0).is_err());
+/// assert!(validate_weight(2.0).is_ok());
+/// assert_eq!(validate_weight(2.0).unwrap(), 2.0);
+/// ```
+/// 
 pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     if weight.is_finite() && weight > 0.0 {
         Ok(weight)
     } else {
-        Err(format!("The weight is '{}' but the weights must be strictly positives and finite.", weight))
+        Err(format!(
+            "The weight is '{}' but the weights must be strictly positives and finite.",
+            weight
+        ))
     }
 }
 
-pub fn parse_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
-    match weight {
-        None => Ok(None),
-        Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => match validate_weight(val) {
-                Ok(val) => Ok(Some(val)),
-                Err(e) => Err(e)
-            },
-            Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
-        },
+/// Return given weight parsed from string to float.
+///
+/// # Arguments
+/// 
+/// * weight: String - The weight to be parsed.
+///
+/// # Examples
+/// The weight can be validated as follows:
+/// ```rust
+/// # use graph::utils::parse_weight;
+/// assert!(parse_weight("0.0".to_string()).is_ok());
+/// assert!(parse_weight("-1.0".to_string()).is_ok());
+/// assert!(parse_weight("2.0".to_string()).is_ok());
+/// assert!(parse_weight("2ghgjh.0".to_string()).is_err());
+/// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
+/// ```
+/// 
+pub fn parse_weight(weight: String) -> Result<WeightT, String> {
+    match weight.parse::<WeightT>() {
+        Ok(val) => Ok(val),
+        Err(_) => Err(format!("Cannot parse weight {} as a float.", weight)),
     }
 }

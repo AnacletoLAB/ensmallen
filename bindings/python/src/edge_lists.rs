@@ -42,7 +42,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_2d!(
             gil,
-            pyex!(self.graph.get_bipartite_edges(
+            pe!(self.graph.get_bipartite_edges(
                 removed_existing_edges,
                 first_nodes_set,
                 second_nodes_set,
@@ -87,7 +87,7 @@ impl EnsmallenGraph {
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
-        pyex!(self.graph.get_bipartite_edge_names(
+        pe!(self.graph.get_bipartite_edge_names(
             removed_existing_edges,
             first_nodes_set,
             second_nodes_set,
@@ -130,7 +130,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_2d!(
             gil,
-            pyex!(self.graph.get_star_edges(
+            pe!(self.graph.get_star_edges(
                 central_node,
                 removed_existing_edges,
                 star_points_nodes_set,
@@ -171,7 +171,7 @@ impl EnsmallenGraph {
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
-        pyex!(self.graph.get_star_edge_names(
+        pe!(self.graph.get_star_edge_names(
             central_node,
             removed_existing_edges,
             star_points_nodes_set,

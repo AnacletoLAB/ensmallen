@@ -36,7 +36,10 @@ impl Graph {
                         }
                     }
                     if let (Some(ants), Some(nt)) = (&node_type_set, &node_type) {
-                        if !ants.contains(nt) {
+                        if nt
+                            .iter()
+                            .any(|node_type_name| !ants.contains(node_type_name))
+                        {
                             return None;
                         }
                     }
@@ -55,7 +58,6 @@ impl Graph {
             return Err("The second nodes set of required bipartite graph is empty!".to_owned());
         }
 
-        // TODO: this would be faster by using an adapted merge sort
         if first_nodes
             .par_iter()
             .any(|src| second_nodes.binary_search(src).is_ok())
@@ -72,7 +74,7 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -195,7 +197,10 @@ impl Graph {
             .get_nodes_names_iter()
             .filter_map(|(node_id, node_name, node_type)| {
                 if let (Some(ants), Some(nt)) = (&allow_node_type_set, &node_type) {
-                    if !ants.contains(nt) {
+                    if nt
+                        .iter()
+                        .any(|node_type_name| !ants.contains(node_type_name))
+                    {
                         return None;
                     }
                 }
@@ -220,7 +225,7 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
                             return None;
                         }
                         Some(vec![*src, *dst])
