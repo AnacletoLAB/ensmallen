@@ -739,60 +739,59 @@ impl Graph {
             self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations),
             &indices,
         );
-        let stub = [node, dst];
+
+        let mut  result = Vec::with_capacity(parameters.walk_length as usize);
+        result.push(node);
+        result.push(dst);
         // We iterate two times before because we need to parse the two initial nodes
-        (0..2)
-            .map(move |i| stub[i])
-            .chain((2..parameters.walk_length).scan(
-                (min_edge_id, max_edge_id, destinations, node, dst, edge),
-                move |
-                    (
-                        previous_min_edge_id,
-                        previous_max_edge_id,
-                        previous_destinations,
-                        previous_src,
-                        previous_dst,
-                        previous_edge,
-                    ),
-                    iteration| {
-                    let (min_edge_id, max_edge_id, destinations, indices) = self
-                        .get_node_edges_and_destinations(
-                            parameters.max_neighbours,
-                            random_state + iteration,
-                            *previous_dst,
-                        );
-                    let (dst, edge) = self.extract_edge(
-                        *previous_src,
-                        *previous_dst,
-                        *previous_edge,
-                        random_state + iteration,
-                        &parameters.weights,
-                        min_edge_id,
-                        max_edge_id,
-                        self.get_destinations_slice(
-                            min_edge_id,
-                            max_edge_id,
-                            *previous_dst,
-                            &destinations,
-                        ),
-                        self.get_destinations_slice(
-                            *previous_min_edge_id,
-                            *previous_max_edge_id,
-                            *previous_src,
-                            previous_destinations,
-                        ),
-                        &indices,
-                    );
-                    *previous_min_edge_id = min_edge_id;
-                    *previous_max_edge_id = max_edge_id;
-                    *previous_destinations = destinations;
-                    *previous_src = *previous_dst;
-                    *previous_dst = dst;
-                    *previous_edge = edge;
-                    Some(dst)
-                },
-            ))
-            .collect()
+
+        let mut previous_min_edge_id = min_edge_id;
+        let mut previous_max_edge_id = max_edge_id;
+        let mut previous_destinations = destinations;
+        let mut previous_src = node;
+        let mut previous_dst = dst;
+        let mut previous_edge = edge;
+
+        for i in  2..parameters.walk_length {
+            let (min_edge_id, max_edge_id, destinations, indices) = self
+            .get_node_edges_and_destinations(
+                parameters.max_neighbours,
+                random_state + i,
+                previous_dst,
+            );
+            let (dst, edge) = self.extract_edge(
+                previous_src,
+                previous_dst,
+                previous_edge,
+                random_state + i,
+                &parameters.weights,
+                min_edge_id,
+                max_edge_id,
+                self.get_destinations_slice(
+                    min_edge_id,
+                    max_edge_id,
+                    previous_dst,
+                    &destinations,
+                ),
+                self.get_destinations_slice(
+                    previous_min_edge_id,
+                    previous_max_edge_id,
+                    previous_src,
+                    &previous_destinations,
+                ),
+                &indices,
+            );
+
+            previous_min_edge_id = min_edge_id;
+            previous_max_edge_id = max_edge_id;
+            previous_destinations = destinations;
+            previous_src = previous_dst;
+            previous_dst = dst;
+            previous_edge = edge;
+            result.push(dst);
+        }
+
+        result
     }
 
     /// Returns single walk from given node.
