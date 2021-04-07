@@ -643,9 +643,13 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .is_ok());
         }
         if graph.has_unknown_node_types() {
-            assert!(graph
-                .remove_components(None, Some(vec![None]), None, None, None, verbose)
-                .is_ok());
+            let without_unknowns = graph
+            .remove_components(None, Some(vec![None]), None, None, None, verbose);
+            assert!(
+                without_unknowns.is_ok(),
+                "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
+                without_unknowns, graph.textual_report(false)
+            );
         }
         if let Ok(edge_type_name) = graph.get_edge_type_name(0) {
             assert!(graph
