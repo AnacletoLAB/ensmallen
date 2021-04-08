@@ -39,6 +39,7 @@ pub(crate) fn build_csv_file_reader(
             "node_header",
             "node_rows_to_skip",
             "node_separator",
+            "node_types_separator",
             "node_max_rows_number",
             "verbose",
             "numeric_node_ids",
