@@ -38,6 +38,7 @@ addons:
       - python3
       - python3-pip
       - python3-setuptools
+      - musl-tools
 
 before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
