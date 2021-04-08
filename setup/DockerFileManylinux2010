@@ -2,7 +2,7 @@ FROM quay.io/pypa/manylinux2010_x86_64
 
 ENV PATH /root/.cargo/bin:$PATH
 # Add all supported python versions
-ENV PATH /opt/python/cp35-cp35m/bin/:/opt/python/cp36-cp36m/bin/:/opt/python/cp37-cp37m/bin/:/opt/python/cp38-cp38/bin/:/opt/python/cp39-cp39/bin/:$PATH
+ENV PATH /opt/python/cp36-cp36m/bin/:/opt/python/cp37-cp37m/bin/:/opt/python/cp38-cp38/bin/:/opt/python/cp39-cp39/bin/:$PATH
 # Otherwise `cargo new` errors
 ENV USER root
 
@@ -13,7 +13,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
 ADD . /maturin/
 
 # Install the required rust version
-RUN rustup default nightly-2020-06-01
+RUN rustup default nightly
 
 RUN cargo install maturin
 
