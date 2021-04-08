@@ -41,7 +41,6 @@ elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch
 
 [build]
 rustflags = ["-C target-cpu=native", "-C target-feature=-crt-static"]
-target="x86_64-unknown-linux-musl"
 
 [profile.release]
 opt-level = 3
