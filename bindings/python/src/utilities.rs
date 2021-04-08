@@ -126,6 +126,11 @@ pub(crate) fn build_csv_file_reader(
                             "node_types_column",
                             String
                         ))?
+                        .set_node_types_separator(extract_value_rust_result!(
+                            kwargs,
+                            "node_types_separator",
+                            String
+                        ))?
                         .set_default_node_type(extract_value_rust_result!(kwargs, "default_node_type", String))
                         .set_ignore_duplicates(extract_value_rust_result!(
                             kwargs,
