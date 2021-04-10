@@ -267,8 +267,8 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
             graph.spanning_arborescence(verbose).unwrap().1.collect();
         assert_eq!(
             spanning_arborescence_bader.len(), kruskal_tree.len(),
-            "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
-            graph.textual_report(false).unwrap(), spanning_arborescence_bader, kruskal_tree,
+            "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{:?}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
+            graph.textual_report(false), spanning_arborescence_bader, kruskal_tree,
         );
     } else {
         assert!(graph.spanning_arborescence(verbose).is_err());
@@ -290,25 +290,25 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Test has_node_by_name
     assert!(
-        !(graph.has_node_with_type_by_name(NONEXISTENT, None)),
+        !(graph.has_node_with_type_by_node_name(NONEXISTENT, None)),
         "The graph seems to have a non-existing node."
     );
     assert!(
-        !(graph.has_node_by_name(NONEXISTENT)),
+        !(graph.has_node_by_node_name(NONEXISTENT)),
         "The graph seems to have a non-existing node."
     );
 
     // Test translate_edge|node_types()
     assert!(
         graph
-            .translate_edge_types(vec![Some(NONEXISTENT.to_string())])
+            .get_edge_type_ids_by_edge_type_names(vec![Some(NONEXISTENT.to_string())])
             .is_err(),
         "The graph seems to have a non-existing edge type."
     );
 
     assert!(
         graph
-            .translate_node_types(vec![Some(NONEXISTENT.to_string())])
+            .get_node_type_ids_by_node_type_names(vec![Some(NONEXISTENT.to_string())])
             .is_err(),
         "The graph seems to have a non-existing node type."
     );
@@ -336,40 +336,40 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     assert!(
         smallest != 1
             || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
-        "When the smallest component is one the graph must have singletons! Graph report: \n{}",
-        graph.textual_report(false)?
+        "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
+        graph.textual_report(false)
     );
     // Get one edge from the graph if there are any presents
-    if let Some(edge) = graph.get_unique_edges_iter(true).next() {
-        let src_string = graph.get_node_name(edge.0).unwrap();
-        let dst_string = graph.get_node_name(edge.1).unwrap();
+    if let Some(edge) = graph.iter_unique_edges(true).next() {
+        let src_string = graph.get_node_name_by_node_id(edge.0).unwrap();
+        let dst_string = graph.get_node_name_by_node_id(edge.1).unwrap();
         let edge_id = graph.get_edge_id_by_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
-            let edge_type = graph.get_edge_type_name_by_edge_id(edge_id);
+            let edge_type = graph.get_edge_type_name_by_edge_id(edge_id)?;
             assert!(
                 graph.has_edge_with_type_by_node_names(&src_string, &dst_string, edge_type.as_ref()),
-                "I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {}",
+                "I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
                 edge_type,
-                graph.textual_report(false).unwrap()
+                graph.textual_report(false)
             );
         } else {
             assert!(
                 graph.has_edge_by_node_names(&src_string, &dst_string),
-                "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {}",
+                "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
-                graph.textual_report(false).unwrap()
+                graph.textual_report(false)
             );
         }
-        assert!(graph.has_node_by_name(&src_string) && graph.has_node_by_name(&dst_string));
+        assert!(graph.has_node_by_node_name(&src_string) && graph.has_node_by_node_name(&dst_string));
         if graph.has_node_types() {
             assert!(
-                graph.has_node_with_type_by_name(
+                graph.has_node_with_type_by_node_name(
                     &src_string,
                     graph.get_node_type_name_by_node_name(&src_string)?
-                ) && graph.has_node_with_type_by_name(
+                ) && graph.has_node_with_type_by_node_name(
                     &dst_string,
                     graph.get_node_type_name_by_node_name(&dst_string)?
                 ),
@@ -384,11 +384,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 dst_string,
                 graph.get_node_type_name_by_node_name(&src_string),
                 graph.get_node_type_name_by_node_name(&dst_string),
-                graph.has_node_with_type_by_name(
+                graph.has_node_with_type_by_node_name(
                     &src_string,
                     graph.get_node_type_name_by_node_name(&src_string)?
                 ),
-                graph.has_node_with_type_by_name(
+                graph.has_node_with_type_by_node_name(
                     &dst_string,
                     graph.get_node_type_name_by_node_name(&dst_string)?
                 ),
@@ -426,10 +426,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
     );
 
-    assert_eq!(graph.has_edge_types(), graph.get_edge_type(0).is_ok());
+    assert_eq!(graph.has_edge_types(), graph.get_edge_type_id_by_edge_id(0).is_ok());
 
     assert!(
-        graph.get_edge_type(graph.get_directed_edges_number() + 1).is_err(),
+        graph.get_edge_type_id_by_edge_id(graph.get_directed_edges_number() + 1).is_err(),
         "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
     );
 
@@ -440,7 +440,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     // Evaluate get_edge_type
-    assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
+    assert_eq!(graph.get_edge_type_id_by_edge_id(0).is_ok(), graph.has_edge_types());
 
     // Evaluate get_node_type_counts
     assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
@@ -584,11 +584,11 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
                     "match the number of nodes of the graph, but we got ",
                     "the minimum component with size {} and the number ",
                     "of nodes in the graph equal to {}.\n",
-                    "The graph report is: \n {}",
+                    "The graph report is: \n {:?}",
                 ),
                 min_comp,
                 graph.get_nodes_number(),
-                graph.textual_report(false).unwrap()
+                graph.textual_report(false)
             );
             assert_eq!(max_comp, graph.get_nodes_number());
             assert_eq!(min_comp, test.get_nodes_number());
@@ -620,18 +620,18 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             single_component.is_ok(),
             concat!(
                 "Removing all the components except the first one returned an error.\n",
-                "The error is:\n{:?}\nand the graph report is:\n{}"
-            ), single_component, graph.textual_report(false).unwrap()
+                "The error is:\n{:?}\nand the graph report is:\n{:?}"
+            ), single_component, graph.textual_report(false)
         );
         let single_component_number = single_component.unwrap().connected_components_number(verbose).0;
         assert_eq!(
             single_component_number,
             1,
             concat!(
-                "Removing all the components except the first one returned a graph",
-                "whith {} components, which is not one!!\nThe report of the graph is:{}\n"
+                "Removing all the components except the first one returned a graph ",
+                "with {} components, which is not one.\nThe report of the graph is:{:?}\n"
             ),
-            single_component_number, graph.textual_report(false).unwrap()
+            single_component_number, graph.textual_report(false)
         );
 
         let test = graph.remove_components(
@@ -672,7 +672,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 without_unknowns, graph.textual_report(false)
             );
         }
-        if let Ok(edge_type_name) = graph.get_edge_type_name(0) {
+        if let Ok(edge_type_name) = graph.get_edge_type_name_by_edge_type_id(0) {
             assert!(graph
                 .remove_components(
                     None,
@@ -712,16 +712,16 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
             concat!(
                 "Check that test kfolds respect size bound has failed!\n",
                 "The value of k is {}.\n",
-                "The report of the original graph is:\n{}\n",
-                "The report of the train graph is:\n{}\n",
-                "The report of the test graph is:\n{}\n",
+                "The report of the original graph is:\n{:?}\n",
+                "The report of the train graph is:\n{:?}\n",
+                "The report of the test graph is:\n{:?}\n",
                 "We expect that the test graph has at most {} edges but it has {}.\n",
                 "The holdout index is {}.\n",
             ),
             k,
-            graph.textual_report(false).unwrap(),
-            train.textual_report(false).unwrap(),
-            test.textual_report(false).unwrap(),
+            graph.textual_report(false),
+            train.textual_report(false),
+            test.textual_report(false),
             (graph.get_edges_number() / k) + 1,
             test.get_edges_number(),
             i
@@ -729,7 +729,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
-    if let Ok(edge_t) = graph.get_edge_type_name(0) {
+    if let Ok(edge_t) = graph.get_edge_type_name_by_edge_type_id(0) {
         for i in 0..k {
             let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
             default_holdout_test_suite(graph, &train, &test)?;
@@ -865,8 +865,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         graph
             .get_edge_type_names()
             .map(|etn| etn.into_iter().map(Option::Some).collect()),
-        graph.get_edge_weight(0),
-        graph.get_edge_weight(graph.get_directed_edges_number() - 1),
+        graph.get_weight_by_edge_id(0).ok(),
+        graph.get_weight_by_edge_id(graph.get_directed_edges_number() - 1).ok(),
         verbose,
     );
     Ok(())
@@ -894,13 +894,13 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
-                [graph.get_node_name(0).unwrap()]
+                [graph.get_node_name_by_node_id(0).unwrap()]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
             ),
             Some(
-                [graph.get_node_name(1).unwrap()]
+                [graph.get_node_name_by_node_id(1).unwrap()]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -909,10 +909,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edges(
-            graph.get_node_name(0).unwrap(),
+            graph.get_node_name_by_node_id(0).unwrap(),
             Some(false),
             Some(
-                [graph.get_node_name(1).unwrap()]
+                [graph.get_node_name_by_node_id(1).unwrap()]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -920,10 +920,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            graph.get_node_name(0).unwrap(),
+            graph.get_node_name_by_node_id(0).unwrap(),
             Some(false),
             Some(
-                [graph.get_node_name(1).unwrap()]
+                [graph.get_node_name_by_node_id(1).unwrap()]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1040,7 +1040,14 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
-            assert_eq!(wn.weights, graph.weights);
+            assert_eq!(
+                wn.weights, graph.weights, 
+                concat!(
+                    "We expected the weights not to change when removig node types.",
+                    "\nThe report of the original graph is {:?}.",
+                    "\nThe report of the filtered graph is {:?}."
+                ), graph.textual_report(false), wn.textual_report(false)
+            );
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.nodes, graph.nodes);
         }
@@ -1074,7 +1081,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         "Number of edge types of the graph is not 1."
     );
     assert_eq!(
-        clone.get_unchecked_edge_count_by_edge_type(Some(0)),
+        clone.get_unchecked_edge_count_by_edge_type_id(Some(0)),
         graph.get_directed_edges_number(),
         "Number of edges with the unique edge type does not match number of edges in the graph."
     );
@@ -1085,7 +1092,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         "Number of node types of the graph is not 1."
     );
     assert_eq!(
-        clone.get_unchecked_node_count_by_node_type(Some(0)),
+        clone.get_unchecked_node_count_by_node_type_id(Some(0)),
         graph.get_nodes_number(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );

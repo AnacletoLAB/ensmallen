@@ -29,7 +29,7 @@ impl Graph {
         .iter()
         .map(|(node_set, node_type_set)| {
             self.iter_nodes()
-                .filter_map(|(node_id, node_name, node_type)| {
+                .filter_map(|(node_id, node_name, _, node_type)| {
                     if let Some(ans) = &node_set {
                         if !ans.contains(&node_name) {
                             return None;
@@ -74,7 +74,7 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst) {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -112,7 +112,7 @@ impl Graph {
             .map(|nodes| {
                 nodes
                     .iter()
-                    .map(|node| self.get_node_name(*node).unwrap())
+                    .map(|node| self.get_node_name_by_node_id(*node).unwrap())
                     .collect::<Vec<String>>()
             })
             .collect::<Vec<Vec<String>>>())
@@ -193,7 +193,7 @@ impl Graph {
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
             .iter_nodes()
-            .filter_map(|(node_id, node_name, node_type)| {
+            .filter_map(|(node_id, node_name, _, node_type)| {
                 if let (Some(ants), Some(nt)) = (&allow_node_type_set, &node_type) {
                     if nt
                         .iter()
@@ -223,7 +223,7 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge_with_type(*src, *dst, None) {
+                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst) {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -260,7 +260,7 @@ impl Graph {
         .map(|nodes| {
             nodes
                 .iter()
-                .map(|node| self.get_node_name(*node).unwrap())
+                .map(|node| self.get_node_name_by_node_id(*node).unwrap())
                 .collect::<Vec<String>>()
         })
         .collect::<Vec<Vec<String>>>()

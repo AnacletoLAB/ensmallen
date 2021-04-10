@@ -588,7 +588,12 @@ fn parse_nodes(
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
-            Ok::<_, String>(Some(node_types))
+            
+            if node_types.is_empty() {
+                Ok(None)
+            } else {
+                Ok::<_, String>(Some(node_types))
+            }
         } else {
             for row in node_iterator {
                 row?;

@@ -22,13 +22,13 @@ impl Graph {
         if let Some(ns) = node_names {
             node_ids.extend(
                 ns.iter()
-                    .map(|node_name| self.get_node_id(node_name))
+                    .map(|node_name| self.get_node_id_by_node_name(node_name))
                     .collect::<Result<Vec<NodeT>, String>>()?,
             );
         }
 
         if let Some(ndt) = node_types {
-            let node_type_ids = self.translate_node_types(ndt)?;
+            let node_type_ids = self.get_node_type_ids_by_node_type_names(ndt)?;
             node_ids.extend(self.iter_node_ids().filter_map(|(node_id, nts)| {
                 if nts.map_or_else(
                     //DEFAULT

@@ -146,9 +146,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `id`: IndexT - Id to be translated.
-    pub fn translate(&self, id: IndexT) -> Result<&String, String> {
+    pub fn translate(&self, id: IndexT) -> Result<String, String> {
         match self.reverse_map.get(IndexT::to_usize(id)) {
-            Some(name) => Ok(name),
+            Some(name) => Ok(name.clone()),
             None => Err("The requested ID is not available in current dictionary.".to_string()),
         }
     }

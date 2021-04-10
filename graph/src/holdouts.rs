@@ -50,7 +50,7 @@ impl Graph {
             }
             Some(
                 sg.iter_nodes()
-                    .map(|(_, node_name, _)| self.get_unchecked_node_id(&node_name))
+                    .map(|(_, node_name, _, _)| self.get_unchecked_node_id_by_node_name(&node_name))
                     .collect::<RoaringBitmap>(),
             )
         } else {
@@ -183,7 +183,7 @@ impl Graph {
                     // If the edge is not a self-loop or the user allows self-loops and
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.
-                    match self.has_edge(src, dst) {
+                    match self.has_edge_by_node_ids(src, dst) {
                         true => None,
                         false => Some(self.encode_edge(src, dst)),
                     }
@@ -341,7 +341,7 @@ impl Graph {
                 if !self.directed {
                     // we compute also the backward edge ids that are required.
                     valid_edges_bitmap.extend(self.compute_edge_ids_vector(
-                        self.get_unchecked_edge_id(dst, src, edge_type),
+                        self.get_unchecked_edge_id_by_node_ids(dst, src, edge_type),
                         dst,
                         src,
                         include_all_edge_types,
@@ -454,7 +454,7 @@ impl Graph {
 
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
-                self.translate_edge_types(ets)?
+                self.get_edge_type_ids_by_edge_type_names(ets)?
                     .into_iter()
                     .collect::<HashSet<Option<EdgeTypeT>>>(),
             ))
@@ -472,7 +472,7 @@ impl Graph {
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
-                .map(|et| self.get_unchecked_edge_count_by_edge_type(*et) as EdgeT)
+                .map(|et| self.get_unchecked_edge_count_by_edge_type_id(*et) as EdgeT)
                 .sum();
             valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
@@ -502,7 +502,7 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop = src == dst && self.get_node_degree(src).unwrap() == 1;
+                let singleton_self_loop = src == dst && self.get_node_degree_by_node_id(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -543,7 +543,7 @@ impl Graph {
             self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
-                self.translate_edge_types(ets)?
+                self.get_edge_type_ids_by_edge_type_names(ets)?
                     .into_iter()
                     .collect::<HashSet<Option<EdgeTypeT>>>(),
             ))
@@ -568,7 +568,7 @@ impl Graph {
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
                 if let Some(mno) = min_number_overlaps {
-                    if self.get_unchecked_edge_types_number_from_tuple(src, dst) < mno {
+                    if self.get_unchecked_edge_degreee_by_node_ids(src, dst) < mno {
                         return false;
                     }
                 }
@@ -756,10 +756,10 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
             // add the edges to the relative vectors
             edge_set[..train_size].iter().for_each(|edge_id| {
-                train_edge_types[*edge_id as usize] = self.get_unchecked_edge_type(*edge_id)
+                train_edge_types[*edge_id as usize] = self.get_unchecked_edge_type_by_edge_id(*edge_id)
             });
             edge_set[train_size..].iter().for_each(|edge_id| {
-                test_edge_types[*edge_id as usize] = self.get_unchecked_edge_type(*edge_id)
+                test_edge_types[*edge_id as usize] = self.get_unchecked_edge_type_by_edge_id(*edge_id)
             });
         }
 
@@ -850,7 +850,7 @@ impl Graph {
         // We iterate on the components
         'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
-            if self.is_node_trap(*node).unwrap() {
+            if self.is_node_trap_by_node_id(*node).unwrap() {
                 continue;
             }
             stack.push(*node);
@@ -877,9 +877,9 @@ impl Graph {
 
         let edges_bitmap =
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
-                let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
+                let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
                 (min_edge_id..max_edge_id)
-                    .filter(|edge_id| unique_nodes.contains(self.get_destination(*edge_id).unwrap()))
+                    .filter(|edge_id| unique_nodes.contains(self.get_destination_node_id_by_edge_id(*edge_id).unwrap()))
                     .collect::<Vec<EdgeT>>()
             }));
 
@@ -942,7 +942,7 @@ impl Graph {
             }
 
             let edge_type_ids = self
-                .translate_edge_types(ets)?
+                .get_edge_type_ids_by_edge_type_names(ets)?
                 .into_iter()
                 .collect::<HashSet<Option<EdgeTypeT>>>();
 

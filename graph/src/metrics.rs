@@ -33,7 +33,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree(one).unwrap() as usize * self.get_node_degree(two).unwrap() as usize)
+        Ok(self.get_node_degree_by_node_id(one).unwrap() as usize * self.get_node_degree_by_node_id(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -64,7 +64,7 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap(one).unwrap() || self.is_node_trap(two).unwrap() {
+        if self.is_node_trap_by_node_id(one).unwrap() || self.is_node_trap_by_node_id(two).unwrap() {
             return Ok(0.0f64);
         }
 
@@ -100,7 +100,7 @@ impl Graph {
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap(one)? || self.is_node_trap(two)? {
+        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -113,8 +113,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap(**node).unwrap())
-            .map(|node| 1.0 / (self.get_node_degree(*node).unwrap() as f64).ln())
+            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
+            .map(|node| 1.0 / (self.get_node_degree_by_node_id(*node).unwrap() as f64).ln())
             .sum())
     }
 
@@ -141,7 +141,7 @@ impl Graph {
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap(one)? || self.is_node_trap(two)? {
+        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -154,8 +154,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap(**node).unwrap())
-            .map(|node| 1.0 / self.get_node_degree(*node).unwrap() as f64)
+            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
+            .map(|node| 1.0 / self.get_node_degree_by_node_id(*node).unwrap() as f64)
             .sum())
     }
 
@@ -171,11 +171,11 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| {
-                if !self.is_node_trap(node).unwrap() {
+                if !self.is_node_trap_by_node_id(node).unwrap() {
                     self.iter_node_neighbours_ids(node)
-                        .map(|dst| self.is_node_trap(dst).unwrap() as usize as f64)
+                        .map(|dst| self.is_node_trap_by_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_node_degree(node).unwrap() as f64
+                        / self.get_node_degree_by_node_id(node).unwrap() as f64
                 } else {
                     1.0
                 }
@@ -424,7 +424,7 @@ impl Graph {
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
             .iter_nodes()
-            .filter_map(|(_, node_name, _)| match self.get_node_id(&node_name) {
+            .filter_map(|(_, node_name, _, _)| match self.get_node_id_by_node_name(&node_name) {
                 Ok(node_id) => Some(nodes_components[node_id as usize]),
                 Err(_) => None,
             })
@@ -439,9 +439,9 @@ impl Graph {
     /// * `other`: &Graph - Graph from where to extract the edge list.
     fn merged_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .iter_edge(false)
-            .filter_map(|(_, src_name, dst_name)| {
-                match (self.get_node_id(&src_name), self.get_node_id(&dst_name)) {
+            .iter_edges(false)
+            .filter_map(|(_, _, src_name, _, dst_name)| {
+                match (self.get_node_id_by_node_name(&src_name), self.get_node_id_by_node_name(&dst_name)) {
                     (Ok(src_id), Ok(dst_id)) => {
                         let src_component_number = nodes_components[src_id as usize];
                         let dst_component_number = nodes_components[dst_id as usize];
@@ -470,14 +470,14 @@ impl Graph {
         // Get overlapping nodes
         let overlapping_nodes_number = self
             .iter_nodes()
-            .filter(|(_, node_name, node_type)| {
-                other.has_node_with_type_by_name(node_name, node_type.clone())
+            .filter(|(_, node_name, _, node_type)| {
+                other.has_node_with_type_by_node_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
-            .par_iter_edges_with_type(self.directed)
-            .filter(|(_, src_name, dst_name, edge_type_name)| {
+            .par_iter_edge_with_type(self.directed)
+            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
                 other.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref())
             })
             .count();
@@ -594,8 +594,8 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = self.get_node_name(*node_id).unwrap(),
-                        node_degree = self.get_node_degree(*node_id).unwrap()
+                        node_name = self.get_node_name_by_node_id(*node_id).unwrap(),
+                        node_degree = self.get_node_degree_by_node_id(*node_id).unwrap()
                     )
                 })
                 .collect::<Vec<String>>()
@@ -637,7 +637,7 @@ impl Graph {
         self.format_list(
             edge_types_list
                 .iter()
-                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap().clone())
+                .map(|(edge_type_id, _)| self.get_edge_type_name_by_edge_type_id(*edge_type_id).unwrap().clone())
                 .collect::<Vec<String>>()
                 .as_slice(),
         )
@@ -803,7 +803,7 @@ impl Graph {
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_nodes(std::cmp::min(5, self.get_nodes_number())).as_slice())?
+            central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ))
     }
 }

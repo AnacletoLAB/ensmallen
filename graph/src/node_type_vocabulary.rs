@@ -94,6 +94,10 @@ impl NodeTypeVocabulary {
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         Ok(match maybe_values {
             Some(values) => {
+                // Check if there is at least one node type
+                if values.is_empty() {
+                    return Err("The given node types vector is empty.".to_owned());
+                }
                 // Retrieve the ID
                 let mut ids = values
                     .iter()
@@ -162,7 +166,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: NodeTypeT - Node Type ID to be translated.
-    pub fn translate(&self, id: NodeTypeT) -> Result<&String, String> {
+    pub fn translate(&self, id: NodeTypeT) -> Result<String, String> {
         self.vocabulary.translate(id)
     }
 
@@ -171,7 +175,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<&String>, String> {
+    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>, String> {
         ids.into_iter().map(|id| self.translate(id)).collect()
     }
 

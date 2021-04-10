@@ -228,7 +228,7 @@ impl Graph {
         })
         .into_iter()
         .chain(
-            self.get_node_destinations(central_node_id, random_state, max_neighbours)
+            self.get_unchecked_node_destinations_by_node_id(central_node_id, random_state, max_neighbours)
                 .into_iter(),
         )
         .map(move |node_id| node_id + offset)
@@ -379,8 +379,8 @@ impl Graph {
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_node_degree(src).unwrap() as f64 / max_degree,
-                self.get_node_degree(dst).unwrap() as f64 / max_degree,
+                self.get_node_degree_by_node_id(src).unwrap() as f64 / max_degree,
+                self.get_node_degree_by_node_id(dst).unwrap() as f64 / max_degree,
                 label,
             )
         }))
@@ -444,13 +444,13 @@ impl Graph {
                         let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
                         let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
 
-                        if avoid_false_negatives && self.has_edge_with_type(src, dst, None) {
+                        if avoid_false_negatives && self.has_edge_by_node_ids(src, dst) {
                             sampled = xorshift(sampled);
                             continue;
                         }
 
                         if let Some(g) = &graph_to_avoid {
-                            if g.has_edge_with_type(src, dst, None) {
+                            if g.has_edge_by_node_ids(src, dst)  {
                                 sampled = xorshift(sampled);
                                 continue;
                             }

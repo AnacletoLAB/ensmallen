@@ -44,7 +44,7 @@ fn test_components_size() {
             g.has_selfloops(),
             smallest,
             biggest,
-            g.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>(),
+            g.iter_unique_edges(false).collect::<Vec<(u32, u32)>>(),
             components
         );
     }

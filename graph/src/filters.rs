@@ -39,12 +39,12 @@ impl Graph {
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
         let edge_types_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
-            Ok(Some(self.translate_edge_types(ets)?))
+            Ok(Some(self.get_edge_type_ids_by_edge_type_names(ets)?))
         });
         let edge_types_ids = edge_types_ids?;
 
         Graph::build_graph(
-            self.get_edges_quadruples(true)
+            self.iter_edge_with_type_and_weight_ids(true)
                 .progress_with(pb)
                 .filter_map(|(_, src, dst, edge_type, weight)| {
                     if let Some(nis) = &node_ids {

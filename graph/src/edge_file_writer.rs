@@ -264,7 +264,7 @@ impl EdgeFileWriter {
             graph.get_directed_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
-                .get_edges_quadruples(directed)
+                .iter_edge_with_type_and_weight_ids(directed)
                 .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (

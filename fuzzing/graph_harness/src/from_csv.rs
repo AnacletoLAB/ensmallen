@@ -8,7 +8,6 @@ pub struct FromCsvHarnessParams {
     pub directed_edge_list: bool,
     pub edge_reader: EdgeFileReaderParams,
     pub nodes_reader: Option<NodeFileReaderParams>,
-    pub name: String,
 }
 
 #[derive(Arbitrary, Debug, Clone)]
@@ -87,7 +86,7 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
     std::fs::write(edges_path, data.edge_reader.file).expect("Cannot write the edges file.");
     
     // create the reader
-    let edges_reader = EdgeFileReader::new(edges_path.to_string())?
+    let edges_reader = EdgeFileReader::new(edges_path.to_string(), "Fuzz Graph".to_string())?
         // Csv reader
         .set_verbose(Some(false))
         .set_separator(data.edge_reader.reader.separator)?
@@ -121,7 +120,7 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
 
             // return the reader
             Some(
-                NodeFileReader::new(nodes_path.to_string())?
+                NodeFileReader::new(nodes_path.to_string(), "Fuzz Graph".to_string())?
                     // Csv reader
                     .set_verbose(Some(false))
                     .set_separator(nr.reader.separator)?
@@ -143,7 +142,7 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
         }
     };
 
-    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, data.directed_edge_list, data.name)?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, data.directed_edge_list, "Fuzz Graph")?;
 
     Ok(g)
 }

@@ -113,11 +113,14 @@ impl Graph {
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples(other.directed)
-                .any(|(_, src, dst, et)| self.has_edge_with_type(src, dst, et)),
+                .par_iter_edge_with_type_ids(other.directed)
+                .any(|(_, src, dst, et)| self.has_edge_with_type_by_node_ids(src, dst, et)),
             false => other
-                .par_iter_edges_with_type(other.directed)
-                .any(|(_, src, dst, et)| self.has_edge_with_type_by_node_names(&src, &dst, et.as_ref())),
+                .par_iter_edge_with_type(other.directed)
+                .any(
+                    |(_, _, src_name, _, dst_name, _, edge_type_name)| 
+                    self.has_edge_with_type_by_node_names(&src_name, &dst_name, edge_type_name.as_ref())
+                ),
         })
     }
 
@@ -130,11 +133,14 @@ impl Graph {
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples(other.directed)
-                .all(|(_, src, dst, et)| self.has_edge_with_type(src, dst, et)),
+                .par_iter_edge_with_type_ids(other.directed)
+                .all(|(_, src, dst, et)| self.has_edge_with_type_by_node_ids(src, dst, et)),
             false => other
-                .par_iter_edges_with_type(other.directed)
-                .all(|(_, src, dst, et)| self.has_edge_with_type_by_node_names(&src, &dst, et.as_ref())),
+                .par_iter_edge_with_type(other.directed)
+                .all(
+                    |(_, _, src_name, _, dst_name, _, edge_type_name)| 
+                    self.has_edge_with_type_by_node_names(&src_name, &dst_name, edge_type_name.as_ref())
+                ),
         })
     }
 }

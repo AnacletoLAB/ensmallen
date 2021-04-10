@@ -30,32 +30,32 @@ fn generic_string_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_string_quadruples(main.directed)
-                .filter(move |(_, src, dst, edge_type, _)| {
+            one.iter_edge_with_type_and_weight(main.directed)
+                .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
+                        return !dg.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref());
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_by_node_names(src, dst, edge_type.as_ref());
+                        return mhg.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref());
                     }
                     true
                 })
-                .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
+                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| Ok((src_name, dst_name, edge_type_name, weight)))
         });
 
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
     let nodes_iterator =
         main.iter_nodes()
-            .map(|(_, node_name, node_type_names)| {
+            .map(|(_, node_name, _, node_type_names)| {
                 let node_type_names = match node_type_names {
                     Some(ntns) => Some(ntns),
                     None => other
-                        .get_node_id(&node_name)
+                        .get_node_id_by_node_name(&node_name)
                         .ok()
                         .and_then(|node_id| other.get_node_type_name_by_node_id(node_id).unwrap()),
                 };
@@ -63,7 +63,7 @@ fn generic_string_operator(
             })
             .chain(
                 other.iter_nodes().filter_map(
-                    |(_, node_name, node_type_names)| match main.has_node_by_name(&node_name) {
+                    |(_, node_name, _, node_type_names)| match main.has_node_by_node_name(&node_name) {
                         true => None,
                         false => Some(Ok((node_name, node_type_names))),
                     },
@@ -116,16 +116,16 @@ fn generic_integer_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_quadruples(main.directed)
+            one.iter_edge_with_type_and_weight_ids(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type(*src, *dst, *edge_type);
+                        return !dg.has_edge_with_type_by_node_ids(*src, *dst, *edge_type);
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type(*src, *dst, *edge_type);
+                        return mhg.has_edge_with_type_by_node_ids(*src, *dst, *edge_type);
                     }
                     true
                 })

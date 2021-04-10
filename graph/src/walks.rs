@@ -503,7 +503,7 @@ impl Graph {
     /// * random_state: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
-        let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
+        let (min_edge, max_edge) = self.get_minmax_edge_ids_by_source_node_id(node);
         let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state);
 
         match self
@@ -513,7 +513,7 @@ impl Graph {
         {
             Some(dsts) => dsts[sampled_offset],
             None => self
-                .get_destination(min_edge + sampled_offset as EdgeT)
+                .get_destination_node_id_by_edge_id(min_edge + sampled_offset as EdgeT)
                 .unwrap(),
         }
     }
@@ -555,7 +555,7 @@ impl Graph {
             .and_then(|cds| cds.get(&node))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination(edge_id).unwrap(),
+            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
         };
         (destination, edge_id)
     }
@@ -607,7 +607,7 @@ impl Graph {
         };
         let destination = match self.cached_destinations.as_ref().and_then(|cds| cds.get(&dst)) {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination(edge_id).unwrap(),
+            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
         };
         (destination, edge_id)
     }
@@ -633,7 +633,7 @@ impl Graph {
                     splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unique_source(random_source_id % self.get_source_nodes_number()),
+                    self.get_unique_source(random_source_id % self.get_unique_source_nodes_number()),
                 )
             },
             parameters,
@@ -657,7 +657,7 @@ impl Graph {
             move |index| {
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unique_source(index as NodeT % self.get_source_nodes_number()),
+                    self.get_unique_source(index as NodeT % self.get_unique_source_nodes_number()),
                 )
             },
             parameters,

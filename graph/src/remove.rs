@@ -74,163 +74,168 @@ impl Graph {
         );
 
         Graph::from_string_sorted(
-            self.get_edges_string_quadruples(true)
+            self.iter_edge_with_type_and_weight(true)
                 .progress_with(pb_edges)
-                .filter_map(|(edge_id, src_name, dst_name, edge_type, weight)| {
-                    // If an allow edge set was provided
-                    if let Some(aes) = &allow_edge_set {
-                        // We check that the current edge ID is within the edge set.
-                        if !aes.contains(&edge_id) {
-                            return None;
-                        }
-                    }
-                    // If selfloops need to be filtered out.
-                    if selfloops && src_name == dst_name {
-                        return None;
-                    }
-                    // If a deny edge set was provided
-                    if let Some(des) = &deny_edge_set {
-                        // We check that the current edge ID is NOT within the edge set.
-                        if des.contains(&edge_id) {
-                            return None;
-                        }
-                    }
-                    // If an allow nodes set was provided
-                    if let Some(ans) = &allow_nodes_set {
-                        // We check that the current source or destination node name is within the edge set.
-                        if !ans.contains(&src_name) || !ans.contains(&dst_name) {
-                            return None;
-                        }
-                    }
-                    // If a deny nodes set was provided
-                    if let Some(dns) = &deny_nodes_set {
-                        // We check that the current source or destination node name is NOT within the edge set.
-                        if dns.contains(&src_name) || dns.contains(&dst_name) {
-                            return None;
-                        }
-                    }
-                    // If the allow edge types set was provided
-                    if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is within the edge type set.
-                        if !aets.contains(et) {
-                            return None;
-                        }
-                    }
-                    // If the deny edge types set was provided
-                    if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is NOT within the edge type set.
-                        if dets.contains(et) {
-                            return None;
-                        }
-                    }
-
-                    if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
-                        let src_node_type =
-                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&src_name));
-                        let dst_node_type =
-                            self.get_unchecked_node_type_id_by_node_id(self.get_unchecked_node_id(&dst_name));
-                        // If the graph has node types
-                        if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
-                            let node_type_names = self
-                                .get_node_type_names_by_node_type_ids(
-                                    src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
-                                )
-                                .unwrap();
-                            // If the allow node types set was provided
-                            if let Some(ants) = &allow_node_types_set {
-                                // We check that the current node type name is NOT within the node type set.
-                                if node_type_names
-                                    .iter()
-                                    .any(|node_type_name| !ants.contains(node_type_name))
-                                {
-                                    return None;
-                                }
-                            }
-                            // If the deny node types set was provided
-                            if let Some(dnts) = &deny_node_types_set {
-                                // We check that the current node type name is NOT within the node type set.
-                                if node_type_names
-                                    .iter()
-                                    .any(|node_type_name| dnts.contains(node_type_name))
-                                {
-                                    return None;
-                                }
+                .filter_map(
+                    |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| {
+                        // If an allow edge set was provided
+                        if let Some(aes) = &allow_edge_set {
+                            // We check that the current edge ID is within the edge set.
+                            if !aes.contains(&edge_id) {
+                                return None;
                             }
                         }
-                    }
-
-                    Some(Ok((
-                        src_name,
-                        dst_name,
-                        match edge_types {
-                            false => edge_type,
-                            true => None,
-                        },
-                        match weights {
-                            false => weight,
-                            true => None,
-                        },
-                    )))
-                }),
-            Some(
-                self.iter_nodes()
-                    .progress_with(pb_nodes)
-                    .filter_map(|(node_id, node_name, node_type_names)| {
-                        if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
+                        // If selfloops need to be filtered out.
+                        if selfloops && src_name == dst_name {
                             return None;
                         }
-                        // If singletons and selfloops need to be removed.
-                        // We need to check all the destinations of the node if they are equal
-                        // with the source node, as in multigraphs there may be multiple selfloops of different
-                        // node types.
-                        if singletons && selfloops && self.is_singleton_with_self_loops(node_id) {
-                            return None;
+                        // If a deny edge set was provided
+                        if let Some(des) = &deny_edge_set {
+                            // We check that the current edge ID is NOT within the edge set.
+                            if des.contains(&edge_id) {
+                                return None;
+                            }
                         }
+                        // If an allow nodes set was provided
                         if let Some(ans) = &allow_nodes_set {
-                            if !ans.contains(&node_name) {
+                            // We check that the current source or destination node name is within the edge set.
+                            if !ans.contains(&src_name) || !ans.contains(&dst_name) {
                                 return None;
                             }
                         }
+                        // If a deny nodes set was provided
                         if let Some(dns) = &deny_nodes_set {
-                            if dns.contains(&node_name) {
+                            // We check that the current source or destination node name is NOT within the edge set.
+                            if dns.contains(&src_name) || dns.contains(&dst_name) {
                                 return None;
                             }
                         }
-                        if let (Some(ants), Some(nts)) = (&allow_node_types_set, &node_type_names) {
-                            // We check that the current node type name is NOT within the node type set.
-                            if nts
-                                .iter()
-                                .any(|node_type_name| !ants.contains(node_type_name))
-                            {
+                        // If the allow edge types set was provided
+                        if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {
+                            // We check that the current edge type name is within the edge type set.
+                            if !aets.contains(et) {
                                 return None;
                             }
                         }
-                        if let (Some(dnts), Some(nts)) = (&deny_node_types_set, &node_type_names) {
-                            // We check that the current node type name is NOT within the node type set.
-                            if nts
-                                .iter()
-                                .any(|node_type_name| dnts.contains(node_type_name))
-                            {
+                        // If the deny edge types set was provided
+                        if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
+                            // We check that the current edge type name is NOT within the edge type set.
+                            if dets.contains(et) {
                                 return None;
                             }
                         }
+
+                        if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
+                            let src_node_type = self.get_unchecked_node_type_id_by_node_id(
+                                self.get_unchecked_node_id_by_node_name(&src_name),
+                            );
+                            let dst_node_type = self.get_unchecked_node_type_id_by_node_id(
+                                self.get_unchecked_node_id_by_node_name(&dst_name),
+                            );
+                            // If the graph has node types
+                            if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
+                                let node_type_names = self
+                                    .get_node_type_names_by_node_type_ids(
+                                        src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
+                                    )
+                                    .unwrap();
+                                // If the allow node types set was provided
+                                if let Some(ants) = &allow_node_types_set {
+                                    // We check that the current node type name is NOT within the node type set.
+                                    if node_type_names
+                                        .iter()
+                                        .any(|node_type_name| !ants.contains(node_type_name))
+                                    {
+                                        return None;
+                                    }
+                                }
+                                // If the deny node types set was provided
+                                if let Some(dnts) = &deny_node_types_set {
+                                    // We check that the current node type name is NOT within the node type set.
+                                    if node_type_names
+                                        .iter()
+                                        .any(|node_type_name| dnts.contains(node_type_name))
+                                    {
+                                        return None;
+                                    }
+                                }
+                            }
+                        }
+
                         Some(Ok((
-                            node_name,
-                            match node_types {
-                                false => node_type_names,
+                            src_name,
+                            dst_name,
+                            match edge_types {
+                                false => edge_type,
+                                true => None,
+                            },
+                            match weights {
+                                false => weight,
                                 true => None,
                             },
                         )))
-                    }),
-            ),
+                    },
+                ),
+            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
+                |(node_id, node_name, _, node_type_names)| {
+                    if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
+                        return None;
+                    }
+                    // If singletons and selfloops need to be removed.
+                    // We need to check all the destinations of the node if they are equal
+                    // with the source node, as in multigraphs there may be multiple selfloops of different
+                    // node types.
+                    if singletons
+                        && selfloops
+                        && self.is_singleton_with_self_loops_by_node_id(node_id)
+                    {
+                        return None;
+                    }
+                    if let Some(ans) = &allow_nodes_set {
+                        if !ans.contains(&node_name) {
+                            return None;
+                        }
+                    }
+                    if let Some(dns) = &deny_nodes_set {
+                        if dns.contains(&node_name) {
+                            return None;
+                        }
+                    }
+                    if let (Some(ants), Some(nts)) = (&allow_node_types_set, &node_type_names) {
+                        // We check that the current node type name is NOT within the node type set.
+                        if nts
+                            .iter()
+                            .any(|node_type_name| !ants.contains(node_type_name))
+                        {
+                            return None;
+                        }
+                    }
+                    if let (Some(dnts), Some(nts)) = (&deny_node_types_set, &node_type_names) {
+                        // We check that the current node type name is NOT within the node type set.
+                        if nts
+                            .iter()
+                            .any(|node_type_name| dnts.contains(node_type_name))
+                        {
+                            return None;
+                        }
+                    }
+                    Some(Ok((
+                        node_name,
+                        match node_types {
+                            false => node_type_names,
+                            true => None,
+                        },
+                    )))
+                },
+            )),
             self.directed,
-            false,
+            true,
             false,
             true,
             true,
             true,
             self.get_directed_edges_number() as usize, // Approximation of expected edges number.
-            self.get_nodes_number(), // Approximation of expected nodes number.
+            self.get_nodes_number(),                   // Approximation of expected nodes number.
             false,
             false,
             false,
@@ -275,7 +280,10 @@ impl Graph {
 
         // Extend the components to keep those that include the given edge types.
         if let Some(ets) = edge_types {
-            let edge_types_ids: HashSet<Option<EdgeTypeT>> = self.translate_edge_types(ets)?.into_iter().collect();
+            let edge_types_ids: HashSet<Option<EdgeTypeT>> = self
+                .get_edge_type_ids_by_edge_type_names(ets)?
+                .into_iter()
+                .collect();
 
             let pb = get_loading_bar(
                 verbose,
@@ -296,66 +304,82 @@ impl Graph {
                 });
         }
 
-        // Retrieve minimal size of the smallest top k components
-        let components_counts = Counter::init(components_vector.clone()).most_common();
-        let updated_min_component_size = match top_k_components {
-            Some(tkc) => Some(match (tkc as usize) < components_counts.len() {
-                true => components_counts.get(tkc as usize).unwrap().1,
-                false => components_counts.last().unwrap().1,
-            }),
-            None => minimum_component_size,
-        };
+        // Create the components counter
+        let component_counts: Vec<(NodeT, NodeT)> = Counter::init(components_vector.clone()).most_common_ordered();
 
-        // Remove components that are smaller than given amount
-        if let Some(mcs) = updated_min_component_size {
-            components_counts
+        // Insert the top k biggest components components
+        if let Some(tkc) = top_k_components {
+            for (i, (component_id, _)) in component_counts.iter().enumerate() {
+                if i < tkc as usize {
+                    keep_components.insert(*component_id);
+                }
+            }
+        }
+
+        // Remove components smaller than the given amount
+        if let Some(mcs) = minimum_component_size {
+            component_counts
                 .iter()
                 .for_each(|(component, component_size)| {
-                    if *component_size >= mcs {
-                        keep_components.insert(*component);
+                    if *component_size < mcs {
+                        keep_components.remove(*component);
                     }
                 });
         }
 
         let pb = get_loading_bar(
             verbose,
-            &format!("removing components for the graph {}", &self.name),
+            &format!(
+                "Building edgelist with only required components {}",
+                &self.name
+            ),
+            self.get_directed_edges_number() as usize,
+        );
+        let pb_nodes = get_loading_bar(
+            verbose,
+            &format!(
+                "Building nodes with only required components {}",
+                &self.name
+            ),
             self.get_directed_edges_number() as usize,
         );
 
-        Ok(Graph::from_string_sorted(
-            self.get_edges_quadruples(true)
+        Graph::from_string_sorted(
+            self.iter_edge_with_type_and_weight(true)
                 .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    // we just check src because dst is trivially in the same component as src
-                    match keep_components.contains(components_vector[src as usize]) {
-                        true => Some(Ok((src, dst, edge_type, weight))),
-                        false => None,
-                    }
-                }),
-            Some(self.iter_nodes()
-                .progress_with(pb_nodes)
-                .filter_map(|(node_id, node_name, node_type_names)| {
+                .filter_map(
+                    |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
+                        // we just check src because dst is trivially in the same component as src
+                        match keep_components.contains(components_vector[src as usize]) {
+                            true => Some(Ok((src_name, dst_name, edge_type_name, weight))),
+                            false => None,
+                        }
+                    },
+                ),
+            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
+                |(node_id, node_name, _, node_type_names)| {
                     match keep_components.contains(components_vector[node_id as usize]) {
                         true => Some(Ok((node_name, node_type_names))),
                         false => None,
                     }
-            })),
+                },
+            )),
             self.directed,
+            true,
             false,
-            false,
+            true,
             true,
             true,
             self.get_directed_edges_number() as usize, // Approximation of expected edges number.
-            self.get_nodes_number(), // Approximation of expected nodes number.
+            self.get_nodes_number(),                   // Approximation of expected nodes number.
             false,
             false,
             false,
             false,
-            self.has_node_types() && !node_types,
-            self.has_edge_types() && !edge_types,
-            self.has_weights() && !weights,
+            self.has_node_types(),
+            self.has_edge_types(),
+            self.has_weights(),
             self.get_name(),
-        ))
+        )
     }
 }

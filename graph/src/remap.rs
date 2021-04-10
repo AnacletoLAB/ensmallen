@@ -25,8 +25,8 @@ impl Graph {
             return false;
         }
         self.iter_nodes()
-            .all(|(_, node_name, node_type)| {
-                other.has_node_with_type_by_name(&node_name, node_type)
+            .all(|(_, node_name, _, node_type)| {
+                other.has_node_with_type_by_node_name(&node_name, node_type)
             })
     }
 
@@ -56,13 +56,13 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.get_edges_string_quadruples(true)
+            self.iter_edge_with_type_and_weight(true)
                 .progress_with(pb)
-                .map(|(_, src_name, dst_name, edge_type, weight)| {
+                .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| {
                     Ok((
-                        other.get_unchecked_node_id(&src_name),
-                        other.get_unchecked_node_id(&dst_name),
-                        edge_type.and_then(|et| self.get_unchecked_edge_type_id(Some(et.as_str()))),
+                        other.get_unchecked_node_id_by_node_name(&src_name),
+                        other.get_unchecked_node_id_by_node_name(&dst_name),
+                        edge_type.and_then(|et| self.get_unchecked_edge_type_id_by_edge_type_name(Some(et.as_str()))),
                         weight,
                     ))
                 }),

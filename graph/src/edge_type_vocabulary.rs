@@ -93,7 +93,7 @@ impl EdgeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: EdgeTypeT - Id to be translated.
-    pub fn translate(&self, id: EdgeTypeT) -> Result<&String, String> {
+    pub fn translate(&self, id: EdgeTypeT) -> Result<String, String> {
         self.vocabulary.translate(id)
     }
 

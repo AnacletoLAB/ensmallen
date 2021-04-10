@@ -1,5 +1,5 @@
 
-BUILD_COMMAND=maturin build --release
+BUILD_COMMAND=make build
 MANYLINUX=sudo docker run --rm -v "$${PWD}:/io" manylinux2010
 
 python:
