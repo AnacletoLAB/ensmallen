@@ -100,7 +100,7 @@ impl Graph {
     ///     - Total components number
     ///     - Minimum component size
     ///     - Maximum component size
-    pub fn kruskal<'a>(
+    pub(crate) fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {

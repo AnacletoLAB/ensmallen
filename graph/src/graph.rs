@@ -64,7 +64,7 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
-    pub fn new<S: Into<String>>(
+    pub(crate) fn new<S: Into<String>>(
         directed: bool,
         unique_self_loop_number: NodeT,
         self_loop_number: EdgeT,

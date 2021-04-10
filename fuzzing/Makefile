@@ -3,11 +3,12 @@ TIMEOUT := 60 # seconds
 MAX_RAM := 8192 # Mb
 MAX_LEN := 81920 # bytes
 CORPUS_FOLDER := corpus
-THREADS := 12
+THREADS := 12ca
 
 
 libfuzz_from_csv:
 	rm -rfd ./unit_tests/*
+	mkdir -p corpus/from_csv
 	(\
 	cd graph_harness;\
 	cargo update;\
@@ -16,6 +17,7 @@ libfuzz_from_csv:
 
 libfuzz_from_vec:
 	rm -rfd ./unit_tests/*
+	mkdir -p corpus/from_vec
 	(\
 	cd graph_harness;\
 	cargo update;\
@@ -24,6 +26,7 @@ libfuzz_from_vec:
 
 hfuzz_from_csv:
 	rm -rfd ./unit_tests/*
+	mkdir -p corpus/from_csv
 	(\
 	cd honggfuzz/from_csv;\
 	cargo update;\
@@ -32,6 +35,7 @@ hfuzz_from_csv:
 
 hfuzz_from_vec:
 	rm -rfd ./unit_tests/*
+	mkdir -p corpus/from_vec
 	(\
 	cd honggfuzz/from_vec;\
 	cargo update;\
