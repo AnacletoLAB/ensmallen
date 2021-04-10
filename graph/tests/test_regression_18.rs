@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'index out of bounds: the len is 2 but the index is 2021161079'
 ///
 fn test_regression_18() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/18.edges")?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/18.edges", "RegressionTest".to_owned())?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?

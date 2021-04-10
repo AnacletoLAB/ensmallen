@@ -1,17 +1,24 @@
 use itertools::Itertools;
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use indicatif::{ProgressIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
+
+use crate::utils::get_loading_bar;
 
 /// Structure that saves the common parameters for reading csv files.
 ///
 /// # Attributes
-/// * path: String - The of the file to read. E.g. "/tmp/test.csv"
-/// * verbose: bool - If the progress bars and logging must be displayed.
-/// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
-/// * header: bool - If the file (will / must) have the header with the titles of the columns.
-/// * rows_to_skip: usize - When reading, how many lines to skip before starting to read the file.
-/// * ignore_duplicates: bool -if the program should raise an exception or not when the file contains duplicated edges / nodes.
-/// * max_rows_number: Option<u64> -if the program should stop reading after a certain number of rows.
+///
+/// * `path`: String - The of the file to read. E.g. "/tmp/test.csv"
+/// * `verbose`: bool - If the progress bars and logging must be displayed.
+/// * `separator`: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
+/// * `header`: bool - If the file (will / must) have the header with the titles of the columns.
+/// * `rows_to_skip`: usize - When reading, how many lines to skip before starting to read the file.
+/// * `ignore_duplicates`: bool - Whether the program should raise an exception or not when the file contains duplicated edges / nodes.
+/// * `csv_is_correct`: bool - Pinky promise that the file is well made.
+/// * `max_rows_number`: Option<u64> -if the program should stop reading after a certain number of rows.
+/// * `list_name`: String - The name of the list that is being loaded.
+/// * `graph_name`: String - The name of graph that is being loaded.
+///
 #[derive(Clone)]
 pub struct CSVFileReader {
     pub(crate) path: String,
@@ -20,8 +27,11 @@ pub struct CSVFileReader {
     pub(crate) header: bool,
     pub(crate) rows_to_skip: usize,
     pub(crate) ignore_duplicates: bool,
+    pub(crate) csv_is_correct: bool,
     pub(crate) max_rows_number: Option<u64>,
     pub(crate) comment_symbol: Option<String>,
+    pub(crate) list_name: String,
+    pub(crate) graph_name: String,
 }
 
 /// # Builder methods
@@ -31,8 +41,14 @@ impl CSVFileReader {
     /// # Arguments
     ///
     /// * path: String - Path where to store/load the file.
+    /// * list_name: String - Name of the list that is being loaded.
+    /// * graph_name: String - Name of the graph to be loaded.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(
+        path: S,
+        list_name: String,
+        graph_name: String
+    ) -> Result<CSVFileReader, String> {
         let path = path.into();
         // check file existance
         match File::open(&path) {
@@ -43,8 +59,11 @@ impl CSVFileReader {
                 header: true,
                 rows_to_skip: 0,
                 ignore_duplicates: true,
+                csv_is_correct: false,
                 max_rows_number: None,
                 comment_symbol: None,
+                list_name,
+                graph_name
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -123,16 +142,15 @@ impl CSVFileReader {
     pub(crate) fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>>  + '_, String> {
-        let pb = if self.verbose {
-            let pb = ProgressBar::new(self.count_rows() as u64);
-            pb.set_draw_delta(std::cmp::max(self.count_rows() as u64 / 1000, 1));
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(
+            self.verbose,
+            format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
+            if self.verbose {
+                self.count_rows()
+            } else {
+                0
+            }
+        );
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(self.get_lines_iterator(true)?

@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'Cannot execute the select1 inside the RsDict with index 7, the high bits currently have 7 ones and have size 13'
 ///
 fn test_regression_9() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/9.edges")?;
+    let edges_reader = EdgeFileReader::new("tests/data/regression/9.edges", "RegressionTest".to_owned())?;
 
     let nodes_reader = None;
 

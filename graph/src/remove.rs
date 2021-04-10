@@ -228,6 +228,7 @@ impl Graph {
             false,
             true,
             true,
+            true,
             self.get_directed_edges_number() as usize, // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             false,

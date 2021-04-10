@@ -52,9 +52,10 @@ pub fn load_ppi(
     verbose: bool,
     skip_self_loops: bool,
 ) -> Result<Graph, String> {
+    let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
         Some(
-            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
+            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string(), graph_name.clone())?
                 .set_verbose(Some(false))
                 .set_node_types_column_number(Some(1))
                 .set_nodes_column_number(Some(0))
@@ -72,7 +73,7 @@ pub fn load_ppi(
     } else {
         None
     };
-    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
+    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string(), graph_name.clone())?
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t"))
@@ -106,7 +107,7 @@ pub fn load_ppi(
         nodes_reader,
         directed,
         false,
-        "Graph".to_owned(),
+        graph_name.clone(),
     );
     assert!(
         ppi.is_ok(),
@@ -136,21 +137,22 @@ pub fn load_ppi(
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
 pub fn load_cora() -> Result<Graph, String> {
-    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")?
+    let graph_name = "Cora".to_owned();
+    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv", graph_name.clone())?
         .set_separator(Some("\t"))?
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))?
         .set_destinations_column(Some("object"))?
         .set_edge_types_column(Some("edge_type"))?;
     let nodes_reader = Some(
-        NodeFileReader::new("tests/data/cora/nodes.tsv")?
+        NodeFileReader::new("tests/data/cora/nodes.tsv", graph_name.clone())?
             .set_separator(Some("\t"))?
             .set_nodes_column(Some("id"))?
             .set_verbose(Some(false))
             .set_node_types_column(Some("node_type"))?,
     );
     let cora =
-        Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, "Cora".to_owned())?;
+        Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, graph_name.clone())?;
     Ok(cora)
 }
 
@@ -643,8 +645,8 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .is_ok());
         }
         if graph.has_unknown_node_types() {
-            let without_unknowns = graph
-            .remove_components(None, Some(vec![None]), None, None, None, verbose);
+            let without_unknowns =
+                graph.remove_components(None, Some(vec![None]), None, None, None, verbose);
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
@@ -669,9 +671,12 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .is_ok());
         }
     } else {
-        assert!(graph
+        assert!(
+            graph
             .remove_components(None, None, None, None, None, verbose)
-            .is_err());
+            .is_ok(),
+            "We expect it to be possible, now, to create empty graphs."
+        );
     }
 
     Ok(())

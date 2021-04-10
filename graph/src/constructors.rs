@@ -56,51 +56,58 @@ fn check_numeric_ids_compatibility(
 }
 
 /// Returns iterator of nodes handling the node IDs.
+///
+/// # Arguments
+///
+/// nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
+///     Iterator over the node list.
+/// ignore_duplicated_nodes: bool,
+///     Whether to just ignore the duplicated node types.
+/// node_list_is_correct: bool,
+///     Parameter to pinky promise that the node list is correct.
+///     If you provide a broken node list to this method while promising
+///     that the node list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the node list is actually
+///     correct.
+///     We assume that any provided node list is broken until disproved.
+/// nodes: &'b mut Vocabulary<NodeT>,
+///     Vocabulary of the nodes to be populated.
 pub(crate) fn parse_node_ids<'a, 'b>(
     nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
     ignore_duplicated_nodes: bool,
+    node_list_is_correct: bool,
     nodes: &'b mut Vocabulary<NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a
 where
     'b: 'a,
 {
-    nodes_iter.filter_map(move |row|{
-        match row{
-            Ok((node_name, node_type)) =>  {
+    nodes_iter.filter_map(move |row| {
+        row.map_or_else(|err| Some(Err(err)), |(node_name, node_type)| {
+            if node_list_is_correct {
+                Some(Ok((nodes.unchecked_insert(node_name), node_type)))
+            } else {
                 if node_name.is_empty() {
-                    return Some(Err("Found an empty node name. Node names cannot be empty.".to_owned()))
+                    return Some(Err("Found an empty node name. Node names cannot be empty.".to_owned()));
                 }
-                if let Some(node_type_string) = &node_type{
-                    if node_type_string.is_empty() {
-                        return Some(Err("Found an empty node type name. Node type names cannot be empty.".to_owned()))
-                    }
-                }
-                match nodes.get(&node_name){
-                Some(_) => {
+                if nodes.contains_key(&node_name){
                     if ignore_duplicated_nodes {
-                        None
-                    } else {
-                        Some(Err(format!(
-                            concat!(
-                                "\nFound duplicated nodes!\n",
-                                "The node is {node_name}.\n",
-                                "The node type of the row is {node_type:?}.\n",
-                                "The library does not currently support multiple node types for a single node."
-                            ),
-                            node_name = node_name,
-                            node_type = node_type
-                        )))
+                        return None;
                     }
-                },
-                None=>{
-                    Some(match nodes.insert(node_name){
-                        Ok(node_id) => Ok((node_id, node_type)),
-                        Err(e) => Err(e)
-                    })
+                    return Some(Err(format!(
+                        concat!(
+                            "The node {node_name} appears multiple times in the node list.\n",
+                            "The node type of the row is {node_type:?}.\n",
+                            "The library does not currently support multiple node types for a single node."
+                        ),
+                        node_name = node_name,
+                        node_type = node_type
+                    )));
                 }
-            }},
-            Err(e) => Some(Err(e))
-        }
+                Some(nodes.insert(node_name).map(|node_id| (node_id, node_type)))
+            }
+        })
     })
 }
 
@@ -122,6 +129,7 @@ where
 
 pub(crate) fn parse_edges_node_ids<'a, 'b>(
     edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
+    edge_list_is_correct: bool,
     nodes: &'b mut Vocabulary<NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a
 where
@@ -145,7 +153,11 @@ where
                     //      - if the node list was no provided
                     //          - the nodes must be added to the node list.
                     if empty_nodes_mapping {
-                        nodes.insert(node_name.to_owned())
+                        if edge_list_is_correct {
+                            Ok(nodes.unchecked_insert(node_name.to_owned()))
+                        } else {
+                            nodes.insert(node_name.to_owned())
+                        }
                     } else if let Some(node_id) = nodes.get(&node_name) {
                         Ok(*node_id)
                     } else {
@@ -281,6 +293,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     directed_edge_list: bool,
+    edge_list_is_correct: bool,
     has_edge_types: bool,
     verbose: bool,
     numeric_edge_type_ids: bool,
@@ -299,7 +312,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         None
     };
     let (edges_number, edges_iter) = {
-        let edges_iter = parse_edges_node_ids(edges_iter, &mut nodes);
+        let edges_iter = parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes);
         let edges_iter: Box<dyn Iterator<Item = Result<Quadruple, String>>> =
             if let Some(ets) = &mut edge_types_vocabulary {
                 Box::new(parse_edge_type_ids_vocabulary(edges_iter, ets))
@@ -338,7 +351,7 @@ pub(crate) fn build_edges(
     has_weights: bool,
     has_edge_types: bool,
     directed: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
 ) -> Result<
     (
         EliasFano,
@@ -429,7 +442,7 @@ pub(crate) fn build_edges(
             _ => Ok(()),
         }?;
 
-        if !directed && !automatic_directed_edge_list {
+        if !directed && !edge_list_is_correct {
             match src.cmp(&dst) {
                 Ordering::Greater => {
                     // We retrieve the edge id of the forward edge, the one going from
@@ -516,16 +529,6 @@ pub(crate) fn build_edges(
         .to_owned());
     }
 
-    if edges.is_empty() {
-        return Err(
-            concat!(
-                "The edge list you are trying to load is empty. ",
-                "This is likely caused by either an excessive parametrization ",
-                "of a remove or filter call."
-            ).to_string()
-        );
-    }
-
     if let Some(ws) = &weights {
         if edges.len() != ws.len() {
             panic!(
@@ -564,6 +567,7 @@ pub(crate) fn build_edges(
 fn parse_nodes(
     nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
     ignore_duplicated_nodes: bool,
+    node_list_is_correct: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
     numeric_edge_node_ids: bool,
@@ -574,30 +578,25 @@ fn parse_nodes(
 
     let node_types = if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
-        let node_iterator = parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes);
+        let node_iterator = parse_node_ids(
+            ni,
+            ignore_duplicated_nodes,
+            node_list_is_correct,
+            &mut nodes,
+        );
         // In the case there is a node types we need to add its proper iterator.
         if has_node_types {
             let mut node_types =
                 NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            let mut iterations = 0;
             for row in parse_node_type_ids(node_iterator, &mut node_types) {
                 row?;
-                iterations += 1;
-            }
-            if iterations == 0 {
-                return Err("The provided node list is empty!".to_string());
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
             Ok::<_, String>(Some(node_types))
         } else {
-            let mut iterations = 0;
             for row in node_iterator {
                 row?;
-                iterations += 1;
-            }
-            if iterations == 0 {
-                return Err("The provided node list is empty!".to_string());
             }
             Ok::<_, String>(None)
         }?
@@ -616,7 +615,7 @@ pub(crate) fn parse_string_edges(
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_type_ids: bool,
     directed_edge_list: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
     has_weights: bool,
@@ -626,7 +625,7 @@ pub(crate) fn parse_string_edges(
 
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
-            parse_edges_node_ids(edges_iter, &mut nodes),
+            parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes),
             &mut edge_types_vocabulary,
         ),
         directed,
@@ -653,7 +652,7 @@ pub(crate) fn parse_string_edges(
         has_weights,
         has_edge_types,
         directed,
-        automatic_directed_edge_list,
+        edge_list_is_correct,
     )?;
 
     nodes.build_reverse_mapping()?;
@@ -684,7 +683,7 @@ pub(crate) fn parse_integer_edges(
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ignore_duplicated_edges: bool,
     directed: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
     has_edge_types: bool,
     has_weights: bool,
 ) -> Result<
@@ -723,7 +722,7 @@ pub(crate) fn parse_integer_edges(
         has_weights,
         has_edge_types,
         directed,
-        automatic_directed_edge_list,
+        edge_list_is_correct,
     )?;
 
     let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary);
@@ -752,7 +751,7 @@ impl Graph {
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        automatic_directed_edge_list: bool,
+        edge_list_is_correct: bool,
         name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
@@ -777,7 +776,7 @@ impl Graph {
             edge_types_vocabulary,
             ignore_duplicated_edges,
             directed,
-            automatic_directed_edge_list,
+            edge_list_is_correct,
             has_edge_types,
             has_weights,
         )?;
@@ -826,7 +825,9 @@ impl Graph {
         directed_edge_list: bool,
         name: S,
         ignore_duplicated_nodes: bool,
+        node_list_is_correct: bool,
         ignore_duplicated_edges: bool,
+        edge_list_is_correct: bool,
         verbose: bool,
         numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
@@ -844,6 +845,7 @@ impl Graph {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
+            node_list_is_correct,
             numeric_node_ids,
             numeric_node_types_ids,
             numeric_edge_node_ids,
@@ -851,12 +853,14 @@ impl Graph {
         )?;
 
         info!("Parse unsorted edges.");
+        // TODO: ADD USE OF edge_list_is_correct
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
                 edges_iterator,
                 nodes,
                 directed,
                 directed_edge_list,
+                edge_list_is_correct,
                 has_edge_types,
                 verbose,
                 numeric_edge_type_ids,
@@ -869,7 +873,7 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
-            !directed_edge_list,
+            edge_list_is_correct || !directed_edge_list,
             name,
             ignore_duplicated_edges,
             has_edge_types,
@@ -931,9 +935,10 @@ impl Graph {
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
-        automatic_directed_edge_list: bool,
         ignore_duplicated_nodes: bool,
+        node_list_is_correct: bool,
         ignore_duplicated_edges: bool,
+        edge_list_is_correct: bool,
         edges_number: usize,
         nodes_number: NodeT,
         numeric_edge_type_ids: bool,
@@ -953,6 +958,7 @@ impl Graph {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
+            node_list_is_correct,
             numeric_node_ids,
             numeric_node_types_ids,
             numeric_edge_node_ids,
@@ -980,7 +986,7 @@ impl Graph {
             nodes,
             numeric_edge_type_ids,
             directed_edge_list,
-            automatic_directed_edge_list,
+            edge_list_is_correct,
             ignore_duplicated_edges,
             has_edge_types,
             has_weights,

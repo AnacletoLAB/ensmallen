@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'called `Option::unwrap()` on a `None` value'
 ///
 fn test_regression_14() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/14.edges")?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/14.edges", "RegressionTest".to_owned())?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?

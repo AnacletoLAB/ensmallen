@@ -55,7 +55,9 @@ pub(crate) fn build_csv_file_reader(
         ]
     )?;
 
-    let edges: EdgeFileReader = EdgeFileReader::new(edge_path)?
+    let graph_name = extract_value_rust_result!(kwargs, "name", String).unwrap_or_else(|| "Graph".to_owned());
+
+    let edges: EdgeFileReader = EdgeFileReader::new(edge_path, graph_name.clone())?
         .set_separator(extract_value_rust_result!(kwargs, "edge_separator", String))?
         .set_skip_edge_types_if_unavailable(extract_value_rust_result!(
             kwargs,
@@ -97,7 +99,7 @@ pub(crate) fn build_csv_file_reader(
             match maybe_node_path {
                 None => None,
                 Some(node_path) => Some(
-                    NodeFileReader::new(node_path)?
+                    NodeFileReader::new(node_path, graph_name.clone())?
                         .set_separator(extract_value_rust_result!(kwargs, "node_separator", String))?
                         .set_skip_node_types_if_unavailable(extract_value_rust_result!(
                             kwargs,
@@ -155,7 +157,7 @@ pub(crate) fn build_csv_file_reader(
     Ok((
         edges,
         nodes,
-        extract_value_rust_result!(kwargs, "name", String).unwrap_or_else(|| "Graph".to_owned()),
+        graph_name,
         extract_value_rust_result!(kwargs, "directed_edge_list", bool).unwrap_or(false),
     ))
 }

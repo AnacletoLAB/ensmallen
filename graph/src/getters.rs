@@ -13,7 +13,7 @@ impl Graph {
     /// To the retrieve the name of the current graph instance you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert_eq!(graph.get_name(), "Graph".to_string());
+    /// assert_eq!(graph.get_name(), "STRING PPI".to_string());
     /// println!("The name of the current graph is {}.", graph.get_name());
     /// ```
     ///

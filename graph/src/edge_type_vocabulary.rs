@@ -39,10 +39,6 @@ impl EdgeTypeVocabulary {
         ids: Vec<Option<EdgeTypeT>>,
         vocabulary: Vocabulary<EdgeTypeT>,
     ) -> EdgeTypeVocabulary {
-        if ids.is_empty() {
-            panic!("The edge type ids vector passed was empty!");
-        }
-
         let mut vocabvec = EdgeTypeVocabulary {
             ids,
             vocabulary,

@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'assertion failed: `(left == right)`'
 ///
 fn test_regression_13() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/13.edges")?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/13.edges", "RegressionTest".to_owned())?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?

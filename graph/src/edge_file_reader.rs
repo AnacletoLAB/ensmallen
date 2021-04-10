@@ -26,10 +26,11 @@ impl EdgeFileReader {
     /// # Arguments
     ///
     /// * reader: CSVFilereader - Path where to store/load the file.
+    /// * graph_name: String - Name of the graph to be loaded.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S, graph_name: String) -> Result<EdgeFileReader, String> {
         Ok(EdgeFileReader {
-            reader: CSVFileReader::new(path)?,
+            reader: CSVFileReader::new(path, "edge list".to_owned(), graph_name)?,
             sources_column_number: 0,
             destinations_column_number: 1,
             edge_types_column_number: None,
@@ -328,15 +329,28 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set if the reader should ignore or not duplicated edges.
+    /// Set whether should ignore or not selfloops.
     ///
     /// # Arguments
     ///
-    /// * skip_self_loops: Option<bool> - if the reader should ignore or not duplicated edges.
+    /// * skip_self_loops: Option<bool> - whether should ignore or not selfloops.
     ///
     pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_self_loops {
             self.skip_self_loops = ssl;
+        }
+        self
+    }
+
+    /// Set whether the CSV is expected to be well written.
+    ///
+    /// # Arguments
+    ///
+    /// * csv_is_correct: Option<bool> - Whether you pinky swear the edge list is correct.
+    ///
+    pub fn set_csv_is_correct(mut self, csv_is_correct: Option<bool>) -> EdgeFileReader {
+        if let Some(cic) = csv_is_correct {
+            self.reader.csv_is_correct = cic;
         }
         self
     }

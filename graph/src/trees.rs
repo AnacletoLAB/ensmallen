@@ -436,7 +436,9 @@ impl Graph {
     ///  #     false,      // directe edge list
     ///  #     "test graph",// name
     ///  #     false,     // ignore_duplicated_nodes
-    ///  #     false,     // ignore_duplicated_edges
+    ///  #     true,     // node_list_is_correct
+    ///  #     false,     // ignore_duplicated_nodes
+    ///  #     true,     // node_list_is_correct
     ///  #     false,     // verbose
     ///  #     false,     // numeric_edge_types_ids
     ///  #     false,     // numeric_node_ids

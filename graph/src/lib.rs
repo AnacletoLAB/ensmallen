@@ -4,7 +4,7 @@
 //! 
 //! ```rust
 //! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv").unwrap()
+//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv", "Graph".to_owned()).unwrap()
 //!     .set_separator(Some(",")).unwrap()
 //!     .set_verbose(Some(false))
 //!     .set_numeric_node_ids(Some(true))

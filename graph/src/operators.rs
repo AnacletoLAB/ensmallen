@@ -77,7 +77,9 @@ fn generic_string_operator(
         false,
         build_operator_graph_name(main, other, operator),
         true,
+        true,
         false,
+        true,
         false,
         false,
         false,
@@ -143,7 +145,8 @@ fn generic_integer_operator(
                             *mid = oid.clone();
                         }
                     });
-                NodeTypeVocabulary::from_structs(main_node_types, Some(mnts.vocabulary.clone())).unwrap()
+                NodeTypeVocabulary::from_structs(main_node_types, Some(mnts.vocabulary.clone()))
+                    .unwrap()
             }
         }),
         (Some(mnts), _) => Some(mnts.clone()),

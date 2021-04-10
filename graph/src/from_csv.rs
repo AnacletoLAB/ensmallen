@@ -28,11 +28,14 @@ impl Graph {
                 .map_or(Ok::<_, String>(None), |nfr| Ok(Some(nfr.read_lines()?)))?,
             directed,
             directed_edge_list,
-            false,
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.reader.ignore_duplicates),
+                node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.reader.csv_is_correct),
             edge_file_reader.reader.ignore_duplicates,
+            edge_file_reader.reader.csv_is_correct,
             edges_number,
             nodes_number,
             edge_file_reader.numeric_edge_type_ids,
@@ -61,7 +64,9 @@ impl Graph {
     /// * `directed`: bool - whether the graph is to be read as directed or undirected.
     /// * `directed_edge_list`: bool - Wether to read the edge list as directed.
     /// * `ignore_duplicated_nodes`: bool - whether to ignore duplicated nodes while reading.
+    /// * `node_list_is_correct`: bool - You pinky swear the node list is correct.
     /// * `ignore_duplicated_edges`: bool - whether to ignore duplicated edges while reading.
+    /// * `edge_list_is_correct`: bool - You pinky swear the edge list is correct.
     /// * `skip_self_loops`: bool - whether to skip self-loops while reading the edge file.
     pub fn from_unsorted_csv<S: Into<String>>(
         edge_file_reader: EdgeFileReader,
@@ -81,7 +86,11 @@ impl Graph {
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.reader.ignore_duplicates),
+                node_file_reader
+                .as_ref()
+                .map_or(false, |nfr| nfr.reader.csv_is_correct),
             edge_file_reader.reader.ignore_duplicates,
+            edge_file_reader.reader.csv_is_correct,
             edge_file_reader.reader.verbose,
             edge_file_reader.numeric_edge_type_ids,
             node_file_reader

@@ -65,10 +65,6 @@ impl NodeTypeVocabulary {
     }
 
     pub fn build_counts(&mut self) {
-        if self.ids.is_empty() {
-            panic!("The node type ids vector passed was empty!");
-        }
-
         let mut counts = vec![NodeT::from_usize(0); self.vocabulary.len()];
         for index in self.ids.iter() {
             match index {

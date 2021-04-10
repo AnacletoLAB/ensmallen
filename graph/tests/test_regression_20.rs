@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader, NodeFileReader};
 /// The provided message was: 'assertion failed: graph.remove_components(None, Some(vec![None]), None, None, None,\n                        verbose).is_ok()'
 ///
 fn test_regression_20() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/20.edges")?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/20.edges", "RegressionTest".to_owned())?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -25,7 +25,7 @@ fn test_regression_20() -> Result<(), String> {
         .set_skip_edge_types_if_unavailable(Some(false))
         .set_edge_types_column_number(Some(2))?;
 
-    let nodes_reader = Some(NodeFileReader::new("tests/data/regression/20.nodes")?
+    let nodes_reader = Some(NodeFileReader::new("tests/data/regression/20.nodes", "RegressionTest".to_owned())?
         .set_rows_to_skip(Some(0))
         .set_separator(Some(","))?
         .set_header(Some(false))

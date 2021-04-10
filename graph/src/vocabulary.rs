@@ -28,9 +28,11 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                 )),
             }?;
 
+            let string_parsed_value = parsed_value.to_string();
+
             // Check that there are no extra zeros or separators in the number
             // E.g. 000 is not supported since it will be traduced to 0
-            if value != parsed_value.to_string() {
+            if value != string_parsed_value {
                 return Err(format!(
                     concat!(
                         "The given ID is numeric but is not symmetric.\n",
@@ -38,12 +40,11 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "and the second one is the result of parsing the value as an ",
                         " integer and casting back to string."
                     ),
-                    value,
-                    parsed_value.to_string()
+                    value, string_parsed_value
                 ));
             }
 
-            (parsed_value.to_string(), parsed_value)
+            (string_parsed_value, parsed_value)
         } else {
             (value.to_string(), self.map.len())
         })
@@ -54,7 +55,24 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
+    pub(crate) fn unchecked_insert(&mut self, value: String) -> IndexT {
+        let current_length = self.map.len();
+        let numeric_ids = self.numeric_ids;
+        *self.map.entry(value).or_insert_with_key( |value| {
+            IndexT::from_usize(if numeric_ids {
+                value.parse::<usize>().unwrap()
+            } else {
+                current_length
+            })
+        })
+    }
+
+    /// Returns id of given value inserted.
+    ///
+    /// # Arguments
+    ///
+    /// * `value`: String - The value to be inserted.
+    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
         let value = value.as_ref();
 
         if value.is_empty() {

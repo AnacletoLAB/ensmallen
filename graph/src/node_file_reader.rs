@@ -30,10 +30,11 @@ impl NodeFileReader {
     /// # Arguments
     ///
     /// * reader: CSVFileParameters - Path where to store/load the file.
+    /// * graph_name: String - Name of the graph to be loaded.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<NodeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S, graph_name: String) -> Result<NodeFileReader, String> {
         Ok(NodeFileReader {
-            reader: CSVFileReader::new(path)?,
+            reader: CSVFileReader::new(path, "node list".to_owned(), graph_name)?,
             default_node_type: None,
             nodes_column_number: None,
             node_types_separator: None,
