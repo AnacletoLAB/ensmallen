@@ -136,8 +136,7 @@ impl Graph {
             removed_existing_edges,
             Some(
                 vec![central_node]
-                    .iter()
-                    .cloned()
+                    .into_iter()
                     .collect::<HashSet<String>>(),
             ),
             star_points_nodes_set,
@@ -164,8 +163,7 @@ impl Graph {
             removed_existing_edges,
             Some(
                 vec![central_node]
-                    .iter()
-                    .cloned()
+                    .into_iter()
                     .collect::<HashSet<String>>(),
             ),
             star_points_nodes_set,

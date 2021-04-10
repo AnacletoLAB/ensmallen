@@ -225,8 +225,7 @@ impl Graph {
     /// * k: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
         self.get_top_k_central_nodes(k)
-            .iter()
-            .cloned()
+            .into_iter()
             .map(|node_id| self.get_node_name(node_id).unwrap())
             .collect()
     }
@@ -744,8 +743,7 @@ impl Graph {
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.get_not_singletons()
-            .iter()
-            .cloned()
+            .into_iter()
             .enumerate()
             .map(|(i, node)| (node as NodeT, i as NodeT))
             .collect()

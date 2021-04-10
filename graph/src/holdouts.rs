@@ -318,8 +318,7 @@ impl Graph {
         let mut last_length = 0;
 
         for (edge_id, (src, dst, edge_type)) in edge_indices
-            .iter()
-            .cloned()
+            .into_iter()
             .map(|edge_id| (edge_id, self.get_edge_triple(edge_id)))
         {
             // If the graph is undirected and we have extracted an edge that is a

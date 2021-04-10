@@ -208,15 +208,16 @@ impl Graph {
             }
         });
 
+        let total_components_number = component_sizes.len() - merged_component_number;
+
+        // TODO: explore ways to compute these on the fly.
         let (min_component_size, max_component_size) = component_sizes
-            .iter()
-            .cloned()
+            .into_iter()
             .filter(|c| *c != 0)
             .minmax()
             .into_option()
             .unwrap();
 
-        let total_components_number = component_sizes.len() - merged_component_number;
 
         (
             tree,
@@ -611,9 +612,12 @@ impl Graph {
                 });
             });
         });
+
+        let components_number = component_sizes.len();
+
+        // TODO: re-explore the possibility of computing these on the fly.
         let (min_component_size, max_component_size) = component_sizes
-            .iter()
-            .cloned()
+            .into_iter()
             .filter(|c| *c != 0)
             .minmax()
             .into_option()
@@ -621,7 +625,7 @@ impl Graph {
 
         Ok((
             components,
-            component_sizes.len() as NodeT,
+            components_number as NodeT,
             min_component_size,
             max_component_size,
         ))

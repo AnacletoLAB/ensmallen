@@ -248,21 +248,16 @@ pub(crate) fn parse_unsorted_quadruples(
     mut edges: Vec<Quadruple>,
     verbose: bool,
 ) -> (usize, impl Iterator<Item = Result<Quadruple, String>>) {
-    let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
     info!("Sorting edges.");
     edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)| {
-        (*src2, *dst2, *edt2).cmp(&(*src1, *dst1, *edt1))
+        (*src1, *dst1, *edt1).cmp(&(*src2, *dst2, *edt2))
     });
 
     let edges_number = edges.len();
+    let pb = get_loading_bar(verbose, "Building sorted graph", edges_number);
 
-    (
-        edges_number,
-        (0..edges_number)
-            .progress_with(pb)
-            .map(move |_| Ok(edges.pop().unwrap())),
-    )
+    (edges_number, edges.into_iter().progress_with(pb).map(Result::Ok))
 }
 
 pub(crate) fn parse_integer_unsorted_edges<'a>(
