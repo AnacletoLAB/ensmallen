@@ -116,7 +116,7 @@ impl Graph {
                 .get_edges_par_triples(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge_with_type(src, dst, et)),
             false => other
-                .get_edges_par_string_triples(other.directed)
+                .par_iter_edges_with_type(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge_with_type_by_node_names(&src, &dst, et.as_ref())),
         })
     }
@@ -133,7 +133,7 @@ impl Graph {
                 .get_edges_par_triples(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge_with_type(src, dst, et)),
             false => other
-                .get_edges_par_string_triples(other.directed)
+                .par_iter_edges_with_type(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge_with_type_by_node_names(&src, &dst, et.as_ref())),
         })
     }

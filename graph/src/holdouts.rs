@@ -49,7 +49,7 @@ impl Graph {
                 ));
             }
             Some(
-                sg.get_nodes_names_iter()
+                sg.iter_nodes()
                     .map(|(_, node_name, _)| self.get_unchecked_node_id(&node_name))
                     .collect::<RoaringBitmap>(),
             )
@@ -856,7 +856,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.get_neighbours_iter(src) {
+                for dst in self.iter_node_neighbours_ids(src) {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
@@ -946,7 +946,7 @@ impl Graph {
                 .into_iter()
                 .collect::<HashSet<Option<EdgeTypeT>>>();
 
-            self.get_edges_triples(self.directed)
+            self.iter_edges_with_type_ids(self.directed)
                 .filter_map(|(edge_id, _, _, edge_type)| {
                     if !edge_type_ids.contains(&edge_type) {
                         return None;
@@ -955,7 +955,7 @@ impl Graph {
                 })
                 .collect::<Vec<EdgeT>>()
         } else {
-            self.get_edges_iter(self.directed)
+            self.iter_edge_ids(self.directed)
                 .map(|(edge_id, _, _)| edge_id)
                 .collect::<Vec<EdgeT>>()
         };

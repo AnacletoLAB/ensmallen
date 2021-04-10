@@ -124,7 +124,7 @@ impl Graph {
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_self_loops(&self, node_id: NodeT) -> bool {
         self.has_singleton_nodes_with_self_loops_number()
-            && self.get_neighbours_iter(node_id).all(|dst| dst == node_id)
+            && self.iter_node_neighbours_ids(node_id).all(|dst| dst == node_id)
     }
 
     /// Returns boolean representing if given node is a singleton.
@@ -160,7 +160,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
-        self.get_sources_par_iter(directed).collect()
+        self.par_iter_sources_ids(directed).collect()
     }
 
     /// Return vector of the non-unique source nodes names.
@@ -168,7 +168,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
-        self.get_sources_par_iter(directed)
+        self.par_iter_sources_ids(directed)
             .map(|src| self.get_node_name(src).unwrap())
             .collect()
     }
@@ -178,7 +178,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
-        self.get_destinations_par_iter(directed).collect()
+        self.par_iter_destinations_ids(directed).collect()
     }
 
     /// Return vector of the non-unique destination nodes names.
@@ -186,7 +186,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
-        self.get_destinations_par_iter(directed)
+        self.par_iter_destinations_ids(directed)
             .map(|dst| self.get_node_name(dst).unwrap())
             .collect()
     }
@@ -268,9 +268,12 @@ impl Graph {
 
     /// Return node type name of given node type.
     ///
+    /// There is no need for a unchecked version since we will have to map
+    /// on the note_types anyway.
+    /// 
     /// # Arguments
     /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
-    pub fn translate_node_type_id(&self, node_type_id: NodeTypeT) -> Result<&String, String> {
+    pub fn get_node_type_name_by_node_type_id(&self, node_type_id: NodeTypeT) -> Result<&String, String> {
         self.node_types
             .as_ref()
             .map_or(
@@ -282,10 +285,10 @@ impl Graph {
     /// Return node type name of given node type.
     ///
     /// # Arguments
-    /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
-    pub fn translate_node_type_id_vector(
+    /// * node_type_ids: Vec<NodeTypeT> - Id of the node type.
+    pub fn get_node_type_names_by_node_type_ids(
         &self,
-        node_type_id: Vec<NodeTypeT>,
+        node_type_ids: Vec<NodeTypeT>,
     ) -> Result<Vec<String>, String> {
         self.node_types.as_ref().map_or(
             Err("Node types not available for the current graph instance.".to_string()), 
@@ -332,14 +335,14 @@ impl Graph {
 
     /// Return vector with the sorted edge Ids.
     pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
-        self.get_edges_par_iter(directed)
+        self.par_iter_edge_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }
 
     /// Return vector with the sorted edge names.
     pub fn get_edge_names(&self, directed: bool) -> Vec<(String, String)> {
-        self.get_edges_par_string_iter(directed)
+        self.par_iter_edges(directed)
             .map(|(_, src, dst)| (src, dst))
             .collect()
     }
@@ -421,10 +424,10 @@ impl Graph {
 
     /// Returns option with the node type of the given node id.
     /// TODO: MOST LIKELY THIS SHOULD BE CHANGED!!!
-    pub fn get_node_type_name(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
+    pub fn get_node_type_name_by_node_id(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
             true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
-                Some(node_type_id) => Some(self.translate_node_type_id_vector(node_type_id)?),
+                Some(node_type_id) => Some(self.get_node_type_names_by_node_type_ids(node_type_id)?),
                 None => None,
             }),
             false => Err("Node types not available for the current graph instance.".to_string()),
@@ -601,7 +604,7 @@ impl Graph {
     /// println!("The node type of node {} is {:?}", node_name, graph.get_node_type_name_by_node_name(node_name).unwrap());
     /// ```
     pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> Result<Option<Vec<String>>, String> {
-        self.get_node_type_name(self.get_node_id(node_name)?)
+        self.get_node_type_name_by_node_id(self.get_node_id(node_name)?)
     }
 
     /// Returns whether the graph has the given node name.
@@ -624,13 +627,12 @@ impl Graph {
     }
 
     /// Returns node id raising a panic if used unproperly.
-    pub fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
+    pub(crate) fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
         *self.nodes.get(node_name).unwrap()
     }
 
     /// Returns edge type id.
-    /// TODO: CHECK IF THIS THING SHOULD BE PUBLIC!
-    pub fn get_unchecked_edge_type_id(&self, edge_type: Option<&str>) -> Option<EdgeTypeT> {
+    pub(crate) fn get_unchecked_edge_type_id(&self, edge_type: Option<&str>) -> Option<EdgeTypeT> {
         match (&self.edge_types, edge_type) {
             (Some(ets), Some(et)) => ets.get(et).copied(),
             _ => None,
@@ -700,8 +702,8 @@ impl Graph {
 
     /// Return a vector with the components each node belongs to.
     ///
-    /// E.g. If we have two components [0, 2, 3] and [1, 4, 5] the result will look like
-    /// [0, 1, 0, 0, 1, 1]
+    /// E.g. If we have two components `[0, 2, 3]` and `[1, 4, 5]` the result will look like
+    /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
     /// * `verbose`: bool - wether to show the loading bar.
@@ -729,12 +731,12 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.get_node_degrees_iter().collect()
+        self.iter_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.
     pub fn get_not_singletons(&self) -> Vec<NodeT> {
-        self.get_edges_iter(false)
+        self.iter_edge_ids(false)
             .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
             .unique()
             .collect()
@@ -942,7 +944,7 @@ impl Graph {
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbours_name_by_node_name(node_name).unwrap());
     /// ```
     pub fn get_node_neighbours_name_by_node_name(&self, node_name: &str) -> Result<Vec<String>, String> {
-        Ok(self.get_neighbours_names_iter(self.get_node_id(node_name)?).collect())
+        Ok(self.iter_node_neighbours(self.get_node_id(node_name)?).collect())
     }
 
     pub(crate) fn get_node_edges_and_destinations(
@@ -1375,7 +1377,7 @@ impl Graph {
         match self.get_node_id(node_name) {
             Err(_) => false,
             Ok(node_id) => {
-                let our_node_types = self.get_node_type_name(node_id);
+                let our_node_types = self.get_node_type_name_by_node_id(node_id);
                 match (our_node_types, node_type_name) {
                     (Err(_), None) => true,
                     (Ok(None), None) => true,
@@ -1541,7 +1543,7 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_unchecked_link_edge_types(
+    pub(crate) fn get_unchecked_link_edge_types(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -1561,7 +1563,7 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_unchecked_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+    pub(crate) fn get_unchecked_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
         self.weights.as_ref().map(|ws| {
             self.get_unchecked_edge_ids_range(src, dst)
                 .map(|edge_id| ws[edge_id as usize])

@@ -68,8 +68,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -104,8 +104,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -145,8 +145,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_neighbours_iter(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.get_neighbours_iter(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_node_neighbours_ids(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -172,7 +172,7 @@ impl Graph {
             .into_par_iter()
             .map(|node| {
                 if !self.is_node_trap(node).unwrap() {
-                    self.get_neighbours_iter(node)
+                    self.iter_node_neighbours_ids(node)
                         .map(|dst| self.is_node_trap(dst).unwrap() as usize as f64)
                         .sum::<f64>()
                         / self.get_node_degree(node).unwrap() as f64
@@ -423,7 +423,7 @@ impl Graph {
 
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .get_nodes_names_iter()
+            .iter_nodes()
             .filter_map(|(_, node_name, _)| match self.get_node_id(&node_name) {
                 Ok(node_id) => Some(nodes_components[node_id as usize]),
                 Err(_) => None,
@@ -439,7 +439,7 @@ impl Graph {
     /// * `other`: &Graph - Graph from where to extract the edge list.
     fn merged_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .get_edges_string_iter(false)
+            .iter_edge(false)
             .filter_map(|(_, src_name, dst_name)| {
                 match (self.get_node_id(&src_name), self.get_node_id(&dst_name)) {
                     (Ok(src_id), Ok(dst_id)) => {
@@ -469,14 +469,14 @@ impl Graph {
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
         let overlapping_nodes_number = self
-            .get_nodes_names_iter()
+            .iter_nodes()
             .filter(|(_, node_name, node_type)| {
                 other.has_node_with_type_by_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
-            .get_edges_par_string_triples(self.directed)
+            .par_iter_edges_with_type(self.directed)
             .filter(|(_, src_name, dst_name, edge_type_name)| {
                 other.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref())
             })
@@ -617,7 +617,7 @@ impl Graph {
                 .map(|(node_type_id, number)| {
                     format!(
                         "{node_type} (nodes number {node_degree})",
-                        node_type = self.translate_node_type_id(*node_type_id).unwrap(),
+                        node_type = self.get_node_type_name_by_node_type_id(*node_type_id).unwrap(),
                         node_degree = number
                     )
                 })

@@ -162,7 +162,7 @@ impl NodeFileWriter {
 
                 if graph.has_node_types() {
                     line.push((
-                        match graph.get_node_type_name(node_id).unwrap() {
+                        match graph.get_node_type_name_by_node_id(node_id).unwrap() {
                             Some(values) => values.join(&self.node_types_separator),
                             None => "".to_string(),
                         },

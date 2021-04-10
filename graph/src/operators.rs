@@ -50,19 +50,19 @@ fn generic_string_operator(
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
     let nodes_iterator =
-        main.get_nodes_names_iter()
+        main.iter_nodes()
             .map(|(_, node_name, node_type_names)| {
                 let node_type_names = match node_type_names {
                     Some(ntns) => Some(ntns),
                     None => other
                         .get_node_id(&node_name)
                         .ok()
-                        .and_then(|node_id| other.get_node_type_name(node_id).unwrap()),
+                        .and_then(|node_id| other.get_node_type_name_by_node_id(node_id).unwrap()),
                 };
                 Ok((node_name, node_type_names))
             })
             .chain(
-                other.get_nodes_names_iter().filter_map(
+                other.iter_nodes().filter_map(
                     |(_, node_name, node_type_names)| match main.has_node_by_name(&node_name) {
                         true => None,
                         false => Some(Ok((node_name, node_type_names))),

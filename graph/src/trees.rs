@@ -368,7 +368,7 @@ impl Graph {
                             }
                         }
                     };
-                    self.get_neighbours_iter(src).for_each(|dst| {
+                    self.iter_node_neighbours_ids(src).for_each(|dst| {
                         let ptr = thread_safe_parents.value.get();
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
@@ -595,7 +595,7 @@ impl Graph {
                         }
                     };
 
-                    self.get_neighbours_iter(src).for_each(|dst| {
+                    self.iter_node_neighbours_ids(src).for_each(|dst| {
                         let ptr = thread_safe_components.value.get();
                         if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {
                             unsafe {

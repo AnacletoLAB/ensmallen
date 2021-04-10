@@ -615,6 +615,25 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             "Removing selfloops changes the number of components ?????"
         );
 
+        let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);
+        assert!(
+            single_component.is_ok(),
+            concat!(
+                "Removing all the components except the first one returned an error.\n",
+                "The error is:\n{:?}\nand the graph report is:\n{}"
+            ), single_component, graph.textual_report(false).unwrap()
+        );
+        let single_component_number = single_component.unwrap().connected_components_number(verbose).0;
+        assert_eq!(
+            single_component_number,
+            1,
+            concat!(
+                "Removing all the components except the first one returned a graph",
+                "whith {} components, which is not one!!\nThe report of the graph is:{}\n"
+            ),
+            single_component_number, graph.textual_report(false).unwrap()
+        );
+
         let test = graph.remove_components(
             Some(vec![graph.nodes.unchecked_translate(0)]),
             None,
@@ -632,7 +651,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             1,
             "Expected number of components (1) is not matched!"
         );
-        if let Ok(node_type_name) = graph.translate_node_type_id(0) {
+        if let Ok(node_type_name) = graph.get_node_type_name_by_node_type_id(0) {
             assert!(graph
                 .remove_components(
                     None,
@@ -678,6 +697,8 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             "We expect it to be possible, now, to create empty graphs."
         );
     }
+
+
 
     Ok(())
 }
@@ -1037,6 +1058,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.nodes, graph.nodes);
         }
     }
+
 
     Ok(())
 }

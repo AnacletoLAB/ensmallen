@@ -88,7 +88,7 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.get_neighbours_iter(*node_id).collect::<Vec<NodeT>>(),
+                            self.iter_node_neighbours_ids(*node_id).collect::<Vec<NodeT>>(),
                         )
                     })
                     .collect::<HashMap<NodeT, Vec<NodeT>>>(),

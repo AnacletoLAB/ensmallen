@@ -132,7 +132,7 @@ impl Graph {
                         // If the graph has node types
                         if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
                             let node_type_names = self
-                                .translate_node_type_id_vector(
+                                .get_node_type_names_by_node_type_ids(
                                     src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
                                 )
                                 .unwrap();
@@ -173,7 +173,7 @@ impl Graph {
                     )))
                 }),
             Some(
-                self.get_nodes_names_iter()
+                self.iter_nodes()
                     .progress_with(pb_nodes)
                     .filter_map(|(node_id, node_name, node_type_names)| {
                         if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
@@ -286,7 +286,7 @@ impl Graph {
                 self.get_directed_edges_number() as usize,
             );
 
-            self.get_edges_triples(self.directed)
+            self.iter_edges_with_type_ids(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
                     if edge_types_ids.contains(&edge_type) {
@@ -311,8 +311,8 @@ impl Graph {
             components_counts
                 .iter()
                 .for_each(|(component, component_size)| {
-                    if *component_size < mcs {
-                        keep_components.remove(*component);
+                    if *component_size >= mcs {
+                        keep_components.insert(*component);
                     }
                 });
         }
@@ -323,25 +323,39 @@ impl Graph {
             self.get_directed_edges_number() as usize,
         );
 
-        Graph::build_graph(
+        Ok(Graph::from_string_sorted(
             self.get_edges_quadruples(true)
                 .progress_with(pb)
                 .filter_map(|(_, src, dst, edge_type, weight)| {
+                    // we just check src because dst is trivially in the same component as src
                     match keep_components.contains(components_vector[src as usize]) {
                         true => Some(Ok((src, dst, edge_type, weight))),
                         false => None,
                     }
                 }),
-            self.get_directed_edges_number() as usize,
-            self.nodes.clone(),
-            self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            Some(self.iter_nodes()
+                .progress_with(pb_nodes)
+                .filter_map(|(node_id, node_name, node_type_names)| {
+                    match keep_components.contains(components_vector[node_id as usize]) {
+                        true => Some(Ok((node_name, node_type_names))),
+                        false => None,
+                    }
+            })),
             self.directed,
+            false,
+            false,
             true,
-            self.name.clone(),
             true,
-            self.has_edge_types(),
-            self.has_weights(),
-        )
+            self.get_directed_edges_number() as usize, // Approximation of expected edges number.
+            self.get_nodes_number(), // Approximation of expected nodes number.
+            false,
+            false,
+            false,
+            false,
+            self.has_node_types() && !node_types,
+            self.has_edge_types() && !edge_types,
+            self.has_weights() && !weights,
+            self.get_name(),
+        ))
     }
 }
