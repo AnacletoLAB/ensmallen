@@ -457,8 +457,11 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
-        match (not_one(walk_weights.return_weight), not_one(walk_weights.explore_weight)) {
-            (false, false) => {},
+        match (
+            not_one(walk_weights.return_weight),
+            not_one(walk_weights.explore_weight),
+        ) {
+            (false, false) => {}
             (false, true) => {
                 update_explore_weight_transition(
                     &mut transition,
@@ -468,7 +471,7 @@ impl Graph {
                     src,
                     dst,
                 );
-            },
+            }
             (true, false) => {
                 update_return_weight_transition(
                     &mut transition,
@@ -478,7 +481,7 @@ impl Graph {
                     walk_weights.return_weight,
                     has_selfloop,
                 );
-            },
+            }
             (true, true) => {
                 update_return_explore_weight_transition(
                     &mut transition,
@@ -489,7 +492,7 @@ impl Graph {
                     src,
                     dst,
                 );
-            },
+            }
         }
 
         (transition, min_edge_id)
@@ -605,7 +608,11 @@ impl Graph {
             Some(inds) => inds[sampled_offset],
             None => min_edge_id + sampled_offset as EdgeT,
         };
-        let destination = match self.cached_destinations.as_ref().and_then(|cds| cds.get(&dst)) {
+        let destination = match self
+            .cached_destinations
+            .as_ref()
+            .and_then(|cds| cds.get(&dst))
+        {
             Some(dsts) => dsts[sampled_offset],
             None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
         };
@@ -633,7 +640,9 @@ impl Graph {
                     splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unique_source(random_source_id % self.get_unique_source_nodes_number()),
+                    self.get_unique_source(
+                        random_source_id % self.get_unique_source_nodes_number(),
+                    ),
                 )
             },
             parameters,
@@ -653,7 +662,7 @@ impl Graph {
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
-            self.get_unique_sources_number(),
+            self.get_unique_source_nodes_number(),
             move |index| {
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
@@ -740,7 +749,7 @@ impl Graph {
             &indices,
         );
 
-        let mut  result = Vec::with_capacity(parameters.walk_length as usize);
+        let mut result = Vec::with_capacity(parameters.walk_length as usize);
         result.push(node);
         result.push(dst);
         // We iterate two times before because we need to parse the two initial nodes
@@ -752,13 +761,13 @@ impl Graph {
         let mut previous_dst = dst;
         let mut previous_edge = edge;
 
-        for i in  2..parameters.walk_length {
+        for i in 2..parameters.walk_length {
             let (min_edge_id, max_edge_id, destinations, indices) = self
-            .get_node_edges_and_destinations(
-                parameters.max_neighbours,
-                random_state + i,
-                previous_dst,
-            );
+                .get_node_edges_and_destinations(
+                    parameters.max_neighbours,
+                    random_state + i,
+                    previous_dst,
+                );
             let (dst, edge) = self.extract_edge(
                 previous_src,
                 previous_dst,
@@ -767,12 +776,7 @@ impl Graph {
                 &parameters.weights,
                 min_edge_id,
                 max_edge_id,
-                self.get_destinations_slice(
-                    min_edge_id,
-                    max_edge_id,
-                    previous_dst,
-                    &destinations,
-                ),
+                self.get_destinations_slice(min_edge_id, max_edge_id, previous_dst, &destinations),
                 self.get_destinations_slice(
                     previous_min_edge_id,
                     previous_max_edge_id,

@@ -1,22 +1,22 @@
 //! Ensmallen its an efficient graph manipulation library.
-//! 
+//!
 //! # Example:
-//! 
+//!
 //! ```rust
 //! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv", "Graph".to_owned()).unwrap()
+//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv",).unwrap()
 //!     .set_separator(Some(",")).unwrap()
 //!     .set_verbose(Some(false))
 //!     .set_numeric_node_ids(Some(true))
 //!     .set_header(Some(false));
 //!  
 //! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph").unwrap();
-//! 
-//! 
+//!
+//!
 //! ```
 #![warn(unused_macros)]
 #![feature(map_first_last)]
-#![type_length_limit="3764086"]
+#![type_length_limit = "3764086"]
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
@@ -54,6 +54,7 @@ mod edge_lists;
 mod filters;
 mod getters;
 mod graph;
+mod hash;
 mod holdouts;
 mod iters;
 mod metrics;
@@ -68,7 +69,6 @@ mod trees;
 mod types;
 mod walks;
 pub mod walks_parameters;
-mod hash;
 
 mod queries;
 mod queries_boolean;

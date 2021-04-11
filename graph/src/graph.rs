@@ -13,7 +13,31 @@ use std::collections::HashMap;
 ///
 #[derive(Clone, Debug)]
 pub struct Graph {
-    // properties
+    /// The main datastructure where all the edges are saved
+    /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
+    /// operation in O(1) without decompressing the data.
+    pub(crate) edges: EliasFano,
+    /// How many bits are needed to save a node.
+    pub(crate) node_bits: u8,
+    /// The mask used to extract the dst value form an encoded edge.
+    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
+    pub(crate) node_bit_mask: u64,
+
+    /// Optional vector of the weights of every edge.
+    /// `weights[10]` return the weight of the edge with edge_id 10
+    pub(crate) weights: Option<Vec<WeightT>>,
+    /// Vocabulary that save the mappings from string to index of every node type
+    pub(crate) node_types: Option<NodeTypeVocabulary>,
+    // This is the next attribute that will be embedded inside of edges once
+    // the first refactoring is done
+    /// Vocabulary that save the mappings from string to index of every edge type
+    pub(crate) edge_types: Option<EdgeTypeVocabulary>,
+    /// Vocabulary that save the mappings from string to index of every node
+    pub(crate) nodes: Vocabulary<NodeT>,
+
+    ////////////////////////////////////////////////////////////////////////////
+    /// Cached properties
+    ////////////////////////////////////////////////////////////////////////////
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
     /// Number of nodes that have at least a self-loop.
@@ -27,6 +51,15 @@ pub struct Graph {
     pub(crate) singleton_nodes_with_self_loops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
+    /// Graph name
+    pub(crate) name: String,
+
+    pub(crate) unique_sources: Option<EliasFano>,
+
+    ////////////////////////////////////////////////////////////////////////////
+    /// Elias-Fano Caching related attributes
+    ////////////////////////////////////////////////////////////////////////////
+
     /// Vector of destinations to execute fast walks if required.
     pub(crate) destinations: Option<Vec<NodeT>>,
     /// Vector of sources to execute fast link prediction sequences if required.
@@ -35,31 +68,6 @@ pub struct Graph {
     pub(crate) outbounds: Option<Vec<EdgeT>>,
     // Hashmap of cached destinations to execute faster walks if required.
     pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
-    /// Graph name
-    pub(crate) name: String,
-
-    /// The main datastructure where all the edges are saved
-    /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
-    /// operation in O(1) without decompressing the data.
-    pub(crate) edges: EliasFano,
-    /// How many bits are needed to save a node.
-    pub(crate) node_bits: u8,
-    /// The mask used to extract the dst value form an encoded edge.
-    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
-    pub(crate) node_bit_mask: u64,
-    /// Vocabulary that save the mappings from string to index of every node
-    pub(crate) nodes: Vocabulary<NodeT>,
-    pub(crate) unique_sources: EliasFano,
-
-    /// Optional vector of the weights of every edge.
-    /// `weights[10]` return the weight of the edge with edge_id 10
-    pub(crate) weights: Option<Vec<WeightT>>,
-    /// Vocabulary that save the mappings from string to index of every node type
-    pub(crate) node_types: Option<NodeTypeVocabulary>,
-    // This is the next attribute that will be embedded inside of edges once
-    // the first refactoring is done
-    /// Vocabulary that save the mappings from string to index of every edge type
-    pub(crate) edge_types: Option<EdgeTypeVocabulary>,
 }
 
 /// # Graph utility methods
@@ -72,7 +80,7 @@ impl Graph {
         singleton_nodes_with_self_loops_number: NodeT,
         unique_edges_number: EdgeT,
         edges: EliasFano,
-        unique_sources: EliasFano,
+        unique_sources: Option<EliasFano>,
         nodes: Vocabulary<NodeT>,
         node_bit_mask: EdgeT,
         node_bits: u8,
@@ -115,12 +123,15 @@ impl Graph {
             true => other
                 .par_iter_edge_with_type_ids(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge_with_type_by_node_ids(src, dst, et)),
-            false => other
-                .par_iter_edge_with_type(other.directed)
-                .any(
-                    |(_, _, src_name, _, dst_name, _, edge_type_name)| 
-                    self.has_edge_with_type_by_node_names(&src_name, &dst_name, edge_type_name.as_ref())
-                ),
+            false => other.par_iter_edge_with_type(other.directed).any(
+                |(_, _, src_name, _, dst_name, _, edge_type_name)| {
+                    self.has_edge_with_type_by_node_names(
+                        &src_name,
+                        &dst_name,
+                        edge_type_name.as_ref(),
+                    )
+                },
+            ),
         })
     }
 
@@ -135,12 +146,15 @@ impl Graph {
             true => other
                 .par_iter_edge_with_type_ids(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge_with_type_by_node_ids(src, dst, et)),
-            false => other
-                .par_iter_edge_with_type(other.directed)
-                .all(
-                    |(_, _, src_name, _, dst_name, _, edge_type_name)| 
-                    self.has_edge_with_type_by_node_names(&src_name, &dst_name, edge_type_name.as_ref())
-                ),
+            false => other.par_iter_edge_with_type(other.directed).all(
+                |(_, _, src_name, _, dst_name, _, edge_type_name)| {
+                    self.has_edge_with_type_by_node_names(
+                        &src_name,
+                        &dst_name,
+                        edge_type_name.as_ref(),
+                    )
+                },
+            ),
         })
     }
 }

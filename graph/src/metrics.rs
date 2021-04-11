@@ -33,7 +33,8 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree_by_node_id(one).unwrap() as usize * self.get_node_degree_by_node_id(two).unwrap() as usize)
+        Ok(self.get_node_degree_by_node_id(one).unwrap() as usize
+            * self.get_node_degree_by_node_id(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -64,7 +65,8 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap_by_node_id(one).unwrap() || self.is_node_trap_by_node_id(two).unwrap() {
+        if self.is_node_trap_by_node_id(one).unwrap() || self.is_node_trap_by_node_id(two).unwrap()
+        {
             return Ok(0.0f64);
         }
 
@@ -333,7 +335,13 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_not_singleton_nodes_number()
+        if let Some(d) = self
+            .get_nodes_number()
+            .checked_sub(self.get_not_singleton_nodes_number())
+        {
+            return d;
+        }
+        panic!("{:#4?}", self);
     }
 
     /// Returns number of singleton nodes with self-loops within the graph.
@@ -360,6 +368,9 @@ impl Graph {
     /// println!("The graph density is {}", graph.density());
     /// ```
     pub fn density(&self) -> f64 {
+        if self.is_empty() {
+            return f64::NAN;
+        }
         let nodes_number = self.get_nodes_number() as EdgeT;
         let total_nodes_number = nodes_number
             * match self.has_selfloops() {
@@ -424,10 +435,12 @@ impl Graph {
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
             .iter_nodes()
-            .filter_map(|(_, node_name, _, _)| match self.get_node_id_by_node_name(&node_name) {
-                Ok(node_id) => Some(nodes_components[node_id as usize]),
-                Err(_) => None,
-            })
+            .filter_map(
+                |(_, node_name, _, _)| match self.get_node_id_by_node_name(&node_name) {
+                    Ok(node_id) => Some(nodes_components[node_id as usize]),
+                    Err(_) => None,
+                },
+            )
             .unique()
             .count() as NodeT
     }
@@ -441,7 +454,10 @@ impl Graph {
         other
             .iter_edges(false)
             .filter_map(|(_, _, src_name, _, dst_name)| {
-                match (self.get_node_id_by_node_name(&src_name), self.get_node_id_by_node_name(&dst_name)) {
+                match (
+                    self.get_node_id_by_node_name(&src_name),
+                    self.get_node_id_by_node_name(&dst_name),
+                ) {
                     (Ok(src_id), Ok(dst_id)) => {
                         let src_component_number = nodes_components[src_id as usize];
                         let dst_component_number = nodes_components[dst_id as usize];
@@ -463,7 +479,7 @@ impl Graph {
     /// # Arguments
     ///
     /// - `other`: &Graph - graph to create overlap report with.
-    /// - `verbose`: bool - wether to shor the loading bars.
+    /// - `verbose`: bool - whether to shor the loading bars.
     pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
@@ -617,7 +633,9 @@ impl Graph {
                 .map(|(node_type_id, number)| {
                     format!(
                         "{node_type} (nodes number {node_degree})",
-                        node_type = self.get_node_type_name_by_node_type_id(*node_type_id).unwrap(),
+                        node_type = self
+                            .get_node_type_name_by_node_type_id(*node_type_id)
+                            .unwrap(),
                         node_degree = number
                     )
                 })
@@ -637,7 +655,11 @@ impl Graph {
         self.format_list(
             edge_types_list
                 .iter()
-                .map(|(edge_type_id, _)| self.get_edge_type_name_by_edge_type_id(*edge_type_id).unwrap().clone())
+                .map(|(edge_type_id, _)| {
+                    self.get_edge_type_name_by_edge_type_id(*edge_type_id)
+                        .unwrap()
+                        .clone()
+                })
                 .collect::<Vec<String>>()
                 .as_slice(),
         )
@@ -731,7 +753,7 @@ impl Graph {
                 true => format!(
                     " There are {singleton_number} singleton nodes{self_loop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    self_loop_singleton=match self.has_singleton_nodes_with_self_loops_number(){
+                    self_loop_singleton=match self.has_singleton_nodes_with_self_loops(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){
                             true=>"all".to_owned(),
                             false=>format!("{} of these", self.get_singleton_nodes_with_self_loops_number())

@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'Cannot execute the select1 inside the RsDict with index 7, the high bits currently have 7 ones and have size 13'
 ///
 fn test_regression_9() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/9.edges", "RegressionTest".to_owned())?;
+    let edges_reader = EdgeFileReader::new("tests/data/regression/9.edges")?;
 
     let nodes_reader = None;
 
@@ -19,7 +19,7 @@ fn test_regression_9() -> Result<(), String> {
         nodes_reader,
         false, // Directed
         false, // Directed edge list
-        "" // Name of the graph
+        "",    // Name of the graph
     )?;
 
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);

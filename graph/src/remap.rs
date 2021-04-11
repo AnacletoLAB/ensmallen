@@ -2,7 +2,7 @@ use super::*;
 use indicatif::ProgressIterator;
 
 impl Graph {
-    /// Return wether nodes are remappable to those of the given graph.
+    /// Return whether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
     /// other: &Graph - graph towards remap the nodes to.
@@ -24,10 +24,9 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.iter_nodes()
-            .all(|(_, node_name, _, node_type)| {
-                other.has_node_with_type_by_node_name(&node_name, node_type)
-            })
+        self.iter_nodes().all(|(_, node_name, _, node_type)| {
+            other.has_node_with_type_by_node_name(&node_name, node_type)
+        })
     }
 
     /// Return graph remapped towards nodes of the given graph.
@@ -35,7 +34,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * other: &Graph - The graph to remap towards.
-    /// * verbose: bool - Wether to show a loding bar.
+    /// * verbose: bool - whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -62,7 +61,9 @@ impl Graph {
                     Ok((
                         other.get_unchecked_node_id_by_node_name(&src_name),
                         other.get_unchecked_node_id_by_node_name(&dst_name),
-                        edge_type.and_then(|et| self.get_unchecked_edge_type_id_by_edge_type_name(Some(et.as_str()))),
+                        edge_type.and_then(|et| {
+                            self.get_unchecked_edge_type_id_by_edge_type_name(Some(et.as_str()))
+                        }),
                         weight,
                     ))
                 }),
@@ -75,6 +76,9 @@ impl Graph {
             self.has_edge_types(),
             self.has_weights(),
             verbose,
+            self.has_singletons(),
+            self.has_singleton_nodes_with_self_loops(),
+            self.has_trap_nodes(),
         )
     }
 }

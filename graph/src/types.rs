@@ -1,6 +1,6 @@
 use std::fmt::Display;
-use std::ops::AddAssign;
 use std::hash::Hash;
+use std::ops::AddAssign;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.

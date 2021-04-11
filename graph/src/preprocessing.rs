@@ -79,6 +79,7 @@ pub fn cooccurence_matrix(
     verbose: bool,
 ) -> Result<(Words, Words, Frequencies), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
+    let mut max_frequency = 0.0;
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
     // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
     // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
@@ -86,26 +87,32 @@ pub fn cooccurence_matrix(
     vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
         for (central_index, &central_word_id) in sequence.iter().enumerate() {
-            for distance in 1..1 + window_size {
-                if central_index + distance >= walk_length {
-                    break;
-                }
+            let upperbound = std::cmp::min(1 + window_size, walk_length - central_index);
+
+            for distance in 1..upperbound {
                 let context_id = sequence[central_index + distance];
-                if central_word_id < context_id {
-                    *cooccurence_matrix
-                        .entry((central_word_id as NodeT, context_id as NodeT))
-                        .or_insert(0.0) += 1.0 / distance as f64;
-                } else {
-                    *cooccurence_matrix
-                        .entry((context_id as NodeT, central_word_id as NodeT))
-                        .or_insert(0.0) += 1.0 / distance as f64;
+
+                let (smaller, bigger) = (
+                    std::cmp::min(central_word_id, context_id),
+                    std::cmp::max(central_word_id, context_id),
+                );
+
+                let freq = 1.0 / distance as f64;
+
+                // Get the current value for this pair of nodes
+                let ptr = cooccurence_matrix
+                    .entry((smaller, bigger))
+                    .and_modify(|e| *e += freq)
+                    .or_insert(freq);
+                // Update the max
+                if *ptr > max_frequency {
+                    max_frequency = *ptr;
                 }
             }
         }
     });
 
     let elements = cooccurence_matrix.len() * 2;
-    let mut max_frequency = 0.0;
     let mut words: Vec<NodeT> = vec![0; elements];
     let mut contexts: Vec<NodeT> = vec![0; elements];
     let mut frequencies: Vec<f64> = vec![0.0; elements];
@@ -116,25 +123,20 @@ pub fn cooccurence_matrix(
     );
 
     cooccurence_matrix
-        .iter()
+        .into_iter()
         .progress_with(pb2)
         .enumerate()
         .for_each(|(i, ((word, context), frequency))| {
             let (k, j) = (i * 2, i * 2 + 1);
-            if *frequency > max_frequency {
-                max_frequency = *frequency;
-            }
-            words[k] = *word;
-            words[j] = words[k];
-            contexts[k] = *context;
-            contexts[j] = contexts[k];
-            frequencies[k] = *frequency;
-            frequencies[j] = frequencies[k];
-        });
 
-    frequencies
-        .par_iter_mut()
-        .for_each(|frequency| *frequency /= max_frequency);
+            words[k] = word;
+            contexts[k] = context;
+            frequencies[k] = frequency / max_frequency;
+
+            words[j] = word;
+            contexts[j] = context;
+            frequencies[j] = frequency / max_frequency;
+        });
 
     Ok((words, contexts, frequencies))
 }
@@ -193,7 +195,7 @@ impl Graph {
         cooccurence_matrix(
             walks,
             window_size,
-            (self.get_unique_sources_number() * walks_parameters.iterations) as usize,
+            (self.get_unique_source_nodes_number() * walks_parameters.iterations) as usize,
             verbose,
         )
     }
@@ -228,8 +230,12 @@ impl Graph {
         })
         .into_iter()
         .chain(
-            self.get_unchecked_node_destinations_by_node_id(central_node_id, random_state, max_neighbours)
-                .into_iter(),
+            self.get_unchecked_node_destinations_by_node_id(
+                central_node_id,
+                random_state,
+                max_neighbours,
+            )
+            .into_iter(),
         )
         .map(move |node_id| node_id + offset)
     }
@@ -347,7 +353,7 @@ impl Graph {
     /// * batch_size: usize - The maximal size of the batch to generate,
     /// * normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],
     /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
@@ -393,7 +399,7 @@ impl Graph {
     /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
     /// * batch_size: usize - The maximal size of the batch to generate,
     /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,

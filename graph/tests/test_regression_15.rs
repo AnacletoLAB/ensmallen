@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'index out of bounds: the len is 0 but the index is 0'
 ///
 fn test_regression_15() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/15.edges", "RegressionTest".to_owned())?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/15.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?

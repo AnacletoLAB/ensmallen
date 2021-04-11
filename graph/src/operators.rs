@@ -17,12 +17,15 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-///
+/// TODO: update docstring
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -37,38 +40,50 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref());
+                        return !dg.has_edge_with_type_by_node_names(
+                            src_name,
+                            dst_name,
+                            edge_type_name.as_ref(),
+                        );
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref());
+                        return mhg.has_edge_with_type_by_node_names(
+                            src_name,
+                            dst_name,
+                            edge_type_name.as_ref(),
+                        );
                     }
                     true
                 })
-                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| Ok((src_name, dst_name, edge_type_name, weight)))
+                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                    Ok((src_name, dst_name, edge_type_name, weight))
+                })
         });
 
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
-    let nodes_iterator =
-        main.iter_nodes()
-            .map(|(_, node_name, _, node_type_names)| {
-                let node_type_names = match node_type_names {
-                    Some(ntns) => Some(ntns),
-                    None => other
-                        .get_node_id_by_node_name(&node_name)
-                        .ok()
-                        .and_then(|node_id| other.get_node_type_name_by_node_id(node_id).unwrap()),
-                };
-                Ok((node_name, node_type_names))
-            })
-            .chain(
-                other.iter_nodes().filter_map(
-                    |(_, node_name, _, node_type_names)| match main.has_node_by_node_name(&node_name) {
+    let nodes_iterator = main
+        .iter_nodes()
+        .map(|(_, node_name, _, node_type_names)| {
+            let node_type_names = match node_type_names {
+                Some(ntns) => Some(ntns),
+                None => other
+                    .get_node_id_by_node_name(&node_name)
+                    .ok()
+                    .and_then(|node_id| other.get_node_type_name_by_node_id(node_id).unwrap()),
+            };
+            Ok((node_name, node_type_names))
+        })
+        .chain(
+            other
+                .iter_nodes()
+                .filter_map(|(_, node_name, _, node_type_names)| {
+                    match main.has_node_by_node_name(&node_name) {
                         true => None,
                         false => Some(Ok((node_name, node_type_names))),
-                    },
-                ),
-            );
+                    }
+                }),
+        );
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -88,6 +103,9 @@ fn generic_string_operator(
         main.has_node_types(),
         main.has_edge_types(),
         main.has_weights(),
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
     )
 }
 
@@ -103,12 +121,15 @@ fn generic_string_operator(
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-///
+/// TODO: update docstring
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -165,6 +186,9 @@ fn generic_integer_operator(
         main.has_edge_types(),
         main.has_weights(),
         false,
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
     )
 }
 
@@ -223,10 +247,29 @@ impl Graph {
         other: &Graph,
         operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
-            true => generic_integer_operator(self, other, operator, graphs),
-            false => generic_string_operator(self, other, operator, graphs),
+            true => generic_integer_operator(
+                self,
+                other,
+                operator,
+                graphs,
+                might_have_singletons,
+                might_have_singletons_with_selfloops,
+                might_have_trap_nodes,
+            ),
+            false => generic_string_operator(
+                self,
+                other,
+                operator,
+                graphs,
+                might_have_singletons,
+                might_have_singletons_with_selfloops,
+                might_have_trap_nodes,
+            ),
         }
     }
 }
@@ -246,6 +289,13 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
             other,
             "|".to_owned(),
             vec![(self, None, None), (other, Some(self), None)],
+            // TODO: it is possible to make the following more precise!
+            self.has_singletons() || other.has_singletons(),
+            // TODO: it is possible to make the following more precise!
+            self.has_singleton_nodes_with_self_loops()
+                || other.has_singleton_nodes_with_self_loops(),
+            // TODO: it is possible to make the following more precise!
+            self.has_trap_nodes() || other.has_trap_nodes(),
         )
     }
 }
@@ -265,6 +315,10 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
             self,
             "^".to_owned(),
             vec![(self, Some(other), None), (other, Some(self), None)],
+            true,
+            // TODO: it is possible to make the following more precise!
+            self.has_selfloops() || other.has_selfloops(),
+            true,
         )
     }
 }
@@ -280,7 +334,14 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     /// * other: Graph - Graph to be subtracted.
     ///
     fn sub(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(other, "-".to_owned(), vec![(self, Some(other), None)])
+        self.generic_operator(
+            other,
+            "-".to_owned(),
+            vec![(self, Some(other), None)],
+            true,
+            self.has_selfloops(),
+            true,
+        )
     }
 }
 
@@ -295,6 +356,13 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     /// * other: Graph - Graph to be subtracted.
     ///
     fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(other, "&".to_owned(), vec![(self, None, Some(other))])
+        self.generic_operator(
+            other,
+            "&".to_owned(),
+            vec![(self, None, Some(other))],
+            true,
+            self.has_selfloops() && other.has_selfloops(),
+            true,
+        )
     }
 }

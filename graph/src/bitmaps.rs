@@ -32,14 +32,12 @@ impl Graph {
             node_ids.extend(self.iter_node_ids().filter_map(|(node_id, nts)| {
                 if nts.map_or_else(
                     //DEFAULT
-                    || {
-                        node_type_ids.contains(&None)
-                    },
+                    || node_type_ids.contains(&None),
                     // If some
                     |ns| {
                         ns.into_iter()
-                        .any(|node_type_name| node_type_ids.contains(&Some(node_type_name)))
-                    }
+                            .any(|node_type_name| node_type_ids.contains(&Some(node_type_name)))
+                    },
                 ) {
                     Some(node_id)
                 } else {

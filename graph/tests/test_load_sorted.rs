@@ -7,7 +7,7 @@ use graph::{EdgeFileReader, Graph};
 /// in undirected graphs.
 fn test_load_sorted() {
     let graph_name = "Macaque".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv", graph_name.clone())
+    let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv")
         .unwrap()
         .set_separator(Some("\t"))
         .unwrap()

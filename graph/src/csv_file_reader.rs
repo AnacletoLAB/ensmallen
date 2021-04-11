@@ -1,5 +1,5 @@
+use indicatif::ProgressIterator;
 use itertools::Itertools;
-use indicatif::{ProgressIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 use crate::utils::get_loading_bar;
@@ -42,13 +42,8 @@ impl CSVFileReader {
     ///
     /// * path: String - Path where to store/load the file.
     /// * list_name: String - Name of the list that is being loaded.
-    /// * graph_name: String - Name of the graph to be loaded.
     ///
-    pub fn new<S: Into<String>>(
-        path: S,
-        list_name: String,
-        graph_name: String
-    ) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(path: S, list_name: String) -> Result<CSVFileReader, String> {
         let path = path.into();
         // check file existance
         match File::open(&path) {
@@ -63,7 +58,7 @@ impl CSVFileReader {
                 max_rows_number: None,
                 comment_symbol: None,
                 list_name,
-                graph_name
+                graph_name: "Graph".to_string(),
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -75,7 +70,7 @@ impl CSVFileReader {
             BufReader::new(File::open(&self.path).unwrap())
                 .lines()
                 .count(),
-            self.max_rows_number.unwrap_or(u64::MAX) as usize
+            self.max_rows_number.unwrap_or(u64::MAX) as usize,
         )
     }
 
@@ -130,7 +125,7 @@ impl CSVFileReader {
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
-            }, 
+            },
             None => Err(concat!(
                 "Unable to read the first non skipped line of the file.\n",
                 "The file has possibly less than the expected amount of lines"
@@ -141,33 +136,31 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>>  + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>> + '_, String> {
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
-            if self.verbose {
-                self.count_rows()
-            } else {
-                0
-            }
+            if self.verbose { self.count_rows() } else { 0 },
         );
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
-        Ok(self.get_lines_iterator(true)?
+        Ok(self
+            .get_lines_iterator(true)?
             .progress_with(pb)
             // skip empty lines
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             // Handling NaN values and padding them to the number of rows
-            .map_ok(move |line|{
-                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| 
-                    match element.is_empty() {
-                    true=>None,
-                    false=>Some(element.to_string())
-                }).collect();
+            .map_ok(move |line| {
+                let mut elements: Vec<Option<String>> = line
+                    .split(&self.separator)
+                    .map(|element| match element.is_empty() {
+                        true => None,
+                        false => Some(element.to_string()),
+                    })
+                    .collect();
                 elements.resize(number_of_elements_per_line, None);
                 elements
-            })
-        )
+            }))
     }
 
     /// Return number of the given column in header.

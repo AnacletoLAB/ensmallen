@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -9,7 +9,7 @@ use graph::{Graph, EdgeFileReader};
 /// specifically (at the time) line 174 and column 55.
 ///
 fn test_regression_4() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/4.edges", "RegressionTest".to_owned())?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/4.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -32,7 +32,7 @@ fn test_regression_4() -> Result<(), String> {
         nodes_reader,
         false, // Directed
         false, // Directed edge list
-        "" // Name of the graph
+        "",    // Name of the graph
     )?;
 
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);

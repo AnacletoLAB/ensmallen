@@ -1,5 +1,4 @@
 use super::*;
-use rayon::prelude::*;
 use std::collections::HashMap;
 
 #[derive(Clone, Debug, PartialEq)]
@@ -437,7 +436,7 @@ impl WalksParameters {
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
-                .par_iter_unique_sources()
+                .iter_unique_sources()
                 .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
             {
                 return Err(String::from(concat!(

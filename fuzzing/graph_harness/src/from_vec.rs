@@ -45,6 +45,9 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.has_node_types,
         data.has_edge_types,
         data.has_weights,
+        true,
+        true,
+        true
     )?;
 
 

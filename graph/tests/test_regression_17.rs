@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader, NodeFileReader};
+use graph::{EdgeFileReader, Graph, NodeFileReader};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader, NodeFileReader};
 /// The provided message was: 'called `Option::unwrap()` on a `None` value'
 ///
 fn test_regression_17() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/17.edges", "RegressionTest".to_owned())?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/17.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -26,15 +26,17 @@ fn test_regression_17() -> Result<(), String> {
         .set_skip_edge_types_if_unavailable(Some(false))
         .set_edge_types_column_number(Some(2))?;
 
-    let nodes_reader = Some(NodeFileReader::new("tests/data/regression/17.nodes", "RegressionTest".to_owned())?
-        .set_rows_to_skip(Some(0))
-        .set_separator(Some(","))?
-        .set_header(Some(false))
-        .set_verbose(Some(false))
-        .set_ignore_duplicates(Some(false))
-        .set_node_types_separator(Some("|"))?
-        .set_nodes_column_number(Some(0))
-        .set_node_types_column_number(Some(1)));
+    let nodes_reader = Some(
+        NodeFileReader::new("tests/data/regression/17.nodes")?
+            .set_rows_to_skip(Some(0))
+            .set_separator(Some(","))?
+            .set_header(Some(false))
+            .set_verbose(Some(false))
+            .set_ignore_duplicates(Some(false))
+            .set_node_types_separator(Some("|"))?
+            .set_nodes_column_number(Some(0))
+            .set_node_types_column_number(Some(1)),
+    );
 
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,

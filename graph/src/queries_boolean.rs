@@ -23,10 +23,12 @@ impl Graph {
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_self_loops_by_node_id(&self, node_id: NodeT) -> bool {
-        self.has_singleton_nodes_with_self_loops_number()
-            && self.iter_node_neighbours_ids(node_id).all(|dst| dst == node_id)
+        self.has_singleton_nodes_with_self_loops()
+            && self
+                .iter_node_neighbours_ids(node_id)
+                .all(|dst| dst == node_id)
     }
-    
+
     /// Returns boolean representing if given node is a singleton.
     ///
     /// # Arguments
@@ -38,7 +40,7 @@ impl Graph {
     /// Returns whether the graph has the given node name.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * `node_name`: &str - Name of the node.
     ///
     /// # Examples
@@ -68,8 +70,14 @@ impl Graph {
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
     /// TODO: add example!
-    pub fn has_edge_with_type_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
-        self.get_edge_id_with_type_by_node_ids(src, dst, edge_type).is_ok()
+    pub fn has_edge_with_type_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> bool {
+        self.get_edge_id_with_type_by_node_ids(src, dst, edge_type)
+            .is_ok()
     }
 
     /// Returns boolean representing if given node is a trap.
@@ -89,7 +97,11 @@ impl Graph {
     /// * node_name: String - The node name.
     /// * node_type_name: String - The node type name.
     ///
-    pub fn has_node_with_type_by_node_name(&self, node_name: &str, node_type_name: Option<Vec<String>>) -> bool {
+    pub fn has_node_with_type_by_node_name(
+        &self,
+        node_name: &str,
+        node_type_name: Option<Vec<String>>,
+    ) -> bool {
         match self.get_node_id_by_node_name(node_name) {
             Err(_) => false,
             Ok(node_id) => {
@@ -127,11 +139,7 @@ impl Graph {
     }
 
     // TODO: add docstring and example!
-    pub fn has_edge_by_node_names(
-        &self,
-        src_name: &str,
-        dst_name: &str
-    ) -> bool {
+    pub fn has_edge_by_node_names(&self, src_name: &str, dst_name: &str) -> bool {
         self.get_edge_id_by_node_names(src_name, dst_name).is_ok()
     }
 }

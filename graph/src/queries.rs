@@ -4,14 +4,18 @@ use rayon::prelude::*;
 /// # Queries
 /// The naming convection we follow is `get_X_by_Y`.
 impl Graph {
-
     /// Return the src, dst, edge type and weight of a given edge id
     pub fn get_edge_quadruple(
         &self,
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
         let (src, dst, edge_type) = self.get_edge_triple(edge_id);
-        (src, dst, edge_type, self.get_unchecked_weight_by_edge_id(edge_id))
+        (
+            src,
+            dst,
+            edge_type,
+            self.get_unchecked_weight_by_edge_id(edge_id),
+        )
     }
 
     /// Return the src, dst, edge type of a given edge id
@@ -37,7 +41,6 @@ impl Graph {
             .collect()
     }
 
-
     /// Return vector with top k central node names.
     ///
     /// # Arguments
@@ -62,7 +65,10 @@ impl Graph {
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0));
     /// ```
     ///
-    pub fn get_node_type_id_by_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>, String> {
+    pub fn get_node_type_id_by_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Result<Option<Vec<NodeTypeT>>, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.ids.len() as NodeT {
                 Ok(nt.ids[node_id as usize].clone())
@@ -110,10 +116,15 @@ impl Graph {
 
     /// Returns option with the node type of the given node id.
     /// TODO: MOST LIKELY THIS SHOULD BE CHANGED!!!
-    pub fn get_node_type_name_by_node_id(&self, node_id: NodeT) -> Result<Option<Vec<String>>, String> {
+    pub fn get_node_type_name_by_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Result<Option<Vec<String>>, String> {
         match &self.node_types.is_some() {
             true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
-                Some(node_type_id) => Some(self.get_node_type_names_by_node_type_ids(node_type_id)?),
+                Some(node_type_id) => {
+                    Some(self.get_node_type_names_by_node_type_ids(node_type_id)?)
+                }
                 None => None,
             }),
             false => Err("Node types not available for the current graph instance.".to_string()),
@@ -125,23 +136,23 @@ impl Graph {
     /// TODO: THIS SHOULD RETURN A RESULT!
     pub fn get_edge_type_name_by_edge_id(&self, edge_id: EdgeT) -> Result<Option<String>, String> {
         self.get_edge_type_id_by_edge_id(edge_id)?
-            .map_or(
-                Ok(None),
-                |x| Ok(Some(self.get_edge_type_name_by_edge_type_id(x)?))
-        )
+            .map_or(Ok(None), |x| {
+                Ok(Some(self.get_edge_type_name_by_edge_type_id(x)?))
+            })
     }
 
     /// Return edge type name of given edge type.
     ///
     /// # Arguments
     /// * edge_type_id: EdgeTypeT - Id of the edge type.
-    pub fn get_edge_type_name_by_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<String, String> {
-        self.edge_types
-            .as_ref()
-            .map_or(
-                Err("Edge types not available for the current graph instance.".to_string()),
-                |ets| ets.translate(edge_type_id))
-        
+    pub fn get_edge_type_name_by_edge_type_id(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> Result<String, String> {
+        self.edge_types.as_ref().map_or(
+            Err("Edge types not available for the current graph instance.".to_string()),
+            |ets| ets.translate(edge_type_id),
+        )
     }
 
     /// Returns weight of the given edge id.
@@ -208,7 +219,12 @@ impl Graph {
     /// let edge_type = Some(0);
     /// assert!(weighted_graph.get_weight_with_type_by_node_ids(src, dst, edge_type).is_ok());
     /// ```
-    pub fn get_weight_with_type_by_node_ids(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> Result<WeightT, String> {
+    pub fn get_weight_with_type_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> Result<WeightT, String> {
         self.get_weight_by_edge_id(self.get_edge_id_with_type_by_node_ids(src, dst, edge_type)?)
     }
 
@@ -228,7 +244,12 @@ impl Graph {
     /// let edge_type = Some("red".to_string());
     /// assert!(weighted_graph.get_weight_with_type_by_node_names(src, dst, edge_type.as_ref()).is_ok());
     /// ```
-    pub fn get_weight_with_type_by_node_names(&self, src: &str, dst: &str, edge_type: Option<&String>) -> Result<WeightT, String> {
+    pub fn get_weight_with_type_by_node_names(
+        &self,
+        src: &str,
+        dst: &str,
+        edge_type: Option<&String>,
+    ) -> Result<WeightT, String> {
         self.get_weight_by_edge_id(self.get_edge_id_with_type_by_node_names(src, dst, edge_type)?)
     }
 
@@ -246,7 +267,11 @@ impl Graph {
     /// let dst_name = "ENSP00000432568";
     /// assert!(weighted_graph.get_weight_by_node_names(src_name, dst_name).is_ok());
     /// ```
-    pub fn get_weight_by_node_names(&self, src_name: &str, dst_name: &str) -> Result<WeightT, String> {
+    pub fn get_weight_by_node_names(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+    ) -> Result<WeightT, String> {
         self.get_weight_by_edge_id(self.get_edge_id_by_node_names(src_name, dst_name)?)
     }
 
@@ -276,7 +301,7 @@ impl Graph {
     /// Return node type ID for the given node name if available.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * `node_name`: &str - Name of the node.
     ///
     /// # Examples
@@ -286,14 +311,17 @@ impl Graph {
     /// let node_name = "ENSP00000000233";
     /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_id_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_type_id_by_node_name(&self, node_name: &str) -> Result<Option<Vec<NodeTypeT>>, String> {
+    pub fn get_node_type_id_by_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<Option<Vec<NodeTypeT>>, String> {
         self.get_node_type_id_by_node_id(self.get_node_id_by_node_name(node_name)?)
     }
 
     /// Return node type name for the given node name if available.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * `node_name`: &str - Name of the node.
     ///
     /// # Examples
@@ -303,16 +331,22 @@ impl Graph {
     /// let node_name = "ENSP00000000233";
     /// println!("The node type of node {} is {:?}", node_name, graph.get_node_type_name_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_type_name_by_node_name(&self, node_name: &str) -> Result<Option<Vec<String>>, String> {
+    pub fn get_node_type_name_by_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<Option<Vec<String>>, String> {
         self.get_node_type_name_by_node_id(self.get_node_id_by_node_name(node_name)?)
     }
 
     /// TODO: add doc
-    pub fn get_edge_count_by_edge_type_id(&self, edge_type: Option<EdgeTypeT>) -> Result<EdgeT, String> {
+    pub fn get_edge_count_by_edge_type_id(
+        &self,
+        edge_type: Option<EdgeTypeT>,
+    ) -> Result<EdgeT, String> {
         if !self.has_edge_types() {
             return Err("Current graph does not have edge types!".to_owned());
         }
-        if let Some(et) = &edge_type{
+        if let Some(et) = &edge_type {
             if self.get_edge_types_number() <= *et {
                 return Err(format!(
                     "Given edge type ID {} is bigger than number of edge types in the graph {}.",
@@ -323,31 +357,38 @@ impl Graph {
         }
         Ok(self.get_unchecked_edge_count_by_edge_type_id(edge_type))
     }
-    
+
     /// TODO: add doc
-    pub fn get_edge_type_id_by_edge_type_name(&self, edge_type_name: Option<&str>) -> Result<Option<EdgeTypeT>, String> {
+    pub fn get_edge_type_id_by_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Option<EdgeTypeT>, String> {
         match (&self.edge_types, edge_type_name) {
             (None, _) => Err("Current graph does not have edge types.".to_owned()),
             (Some(_), None) => Ok(None),
-            (Some(ets), Some(etn)) => {
-                match ets.get(etn) {
-                    Some(edge_type_id) => Ok(Some(*edge_type_id)),
-                    None => Err(format!(
-                        "Given edge type name {} is not available in current graph.",
-                        etn
-                    )),
-                }
-            }
+            (Some(ets), Some(etn)) => match ets.get(etn) {
+                Some(edge_type_id) => Ok(Some(*edge_type_id)),
+                None => Err(format!(
+                    "Given edge type name {} is not available in current graph.",
+                    etn
+                )),
+            },
         }
     }
 
     /// TODO: add doc
-    pub fn get_edge_count_by_edge_type_name(&self, edge_type: Option<&str>) -> Result<EdgeT, String> {
+    pub fn get_edge_count_by_edge_type_name(
+        &self,
+        edge_type: Option<&str>,
+    ) -> Result<EdgeT, String> {
         self.get_edge_count_by_edge_type_id(self.get_edge_type_id_by_edge_type_name(edge_type)?)
     }
 
     /// TODO: add doc
-    pub fn get_node_type_id_by_node_type_name(&self, node_type_name: &str) -> Result<NodeTypeT, String> {
+    pub fn get_node_type_id_by_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> Result<NodeTypeT, String> {
         if let Some(ets) = &self.node_types {
             return match ets.get(node_type_name) {
                 Some(node_type_id) => Ok(*node_type_id),
@@ -361,7 +402,10 @@ impl Graph {
     }
 
     /// TODO: add doc
-    pub fn get_node_count_by_node_type_id(&self, node_type: Option<NodeTypeT>) -> Result<NodeT, String> {
+    pub fn get_node_count_by_node_type_id(
+        &self,
+        node_type: Option<NodeTypeT>,
+    ) -> Result<NodeT, String> {
         if !self.has_node_types() {
             return Err("Current graph does not have node types!".to_owned());
         }
@@ -376,17 +420,21 @@ impl Graph {
     }
 
     /// TODO: add docstring
-    pub fn get_node_count_by_node_type_name(&self, node_type_name: Option<&str>) -> Result<NodeT, String> {
-        self.get_node_count_by_node_type_id(node_type_name.map_or(
-            Ok::<_, String>(None), 
-            |ntn| Ok(Some(self.get_node_type_id_by_node_type_name(ntn)?))
-        )?)
+    pub fn get_node_count_by_node_type_name(
+        &self,
+        node_type_name: Option<&str>,
+    ) -> Result<NodeT, String> {
+        self.get_node_count_by_node_type_id(
+            node_type_name.map_or(Ok::<_, String>(None), |ntn| {
+                Ok(Some(self.get_node_type_id_by_node_type_name(ntn)?))
+            })?,
+        )
     }
 
     /// TODO!: add unchecked version of this method!
     /// TODO: add docstring and example!
     pub fn get_destination_node_id_by_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
-        if edge_id >= self.get_directed_edges_number(){
+        if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
                 "The edge ID {} is higher than the number of available directed edges {}.",
                 edge_id,
@@ -407,7 +455,7 @@ impl Graph {
     ///
     /// # Example
     /// To retrieve the neighbours of a given node `src` you can use:
-    /// 
+    ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// # let node_id = 0;
@@ -416,15 +464,17 @@ impl Graph {
     /// assert!(graph.get_node_neighbours_by_node_id(unavailable_node).is_err());
     /// ```
     pub fn get_node_neighbours_by_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>, String> {
-        if node_id >= self.get_nodes_number(){
+        if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The node ID {} is higher than the number of available nodes {}.",
                 node_id,
                 self.get_nodes_number()
             ));
         }
-        Ok(self.iter_unchecked_edge_ids_by_source_node_id(node_id)
-        .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap()).collect())
+        Ok(self
+            .iter_unchecked_edge_ids_by_source_node_id(node_id)
+            .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+            .collect())
     }
 
     /// Return vector of destinations for the given source node name.
@@ -435,7 +485,7 @@ impl Graph {
     ///
     /// # Example
     /// To retrieve the neighbours of a given node `src` you can use:
-    /// 
+    ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_id = 0;
@@ -453,23 +503,28 @@ impl Graph {
     ///
     /// # Example
     /// To retrieve the neighbours of a given node `src` you can use:
-    /// 
+    ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbours_name_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbours_name_by_node_name(&self, node_name: &str) -> Result<Vec<String>, String> {
-        Ok(self.iter_node_neighbours(self.get_node_id_by_node_name(node_name)?).collect())
+    pub fn get_node_neighbours_name_by_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<Vec<String>, String> {
+        Ok(self
+            .iter_node_neighbours(self.get_node_id_by_node_name(node_name)?)
+            .collect())
     }
 
     /// Return edge ID without any checks for given tuple of nodes and edge type.
-    /// 
+    ///
     /// This method will return an error if the graph does not contain the
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src`: NodeT - Source node of the edge. 
+    /// `src`: NodeT - Source node of the edge.
     /// `dst`: NodeT - Destination node of the edge.
     /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     ///
@@ -479,21 +534,25 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
-        let edge_id = self.edge_types.as_ref().map_or_else(|| self.get_edge_id_by_node_ids(src, dst).ok(), |ets| self.get_edge_ids_by_node_ids(src, dst).and_then(|mut edge_ids| {
-            edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
-        }));
+        let edge_id = self.edge_types.as_ref().map_or_else(
+            || self.get_edge_id_by_node_ids(src, dst).ok(),
+            |ets| {
+                self.get_edge_ids_by_node_ids(src, dst)
+                    .and_then(|mut edge_ids| {
+                        edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+                    })
+            },
+        );
         // TODO: change using a map_err!
-        match edge_id{
+        match edge_id {
             Some(e) => Ok(e),
-            None => Err(
-                format!(
-                    concat!(
-                        "The current graph instance does not contain the required edge composed of ",
-                        "source node ID {}, destination node ID {} and edge ID {:?}."
-                    ),
-                    src, dst, edge_type
-                )
-            )
+            None => Err(format!(
+                concat!(
+                    "The current graph instance does not contain the required edge composed of ",
+                    "source node ID {}, destination node ID {} and edge ID {:?}."
+                ),
+                src, dst, edge_type
+            )),
         }
     }
 
@@ -501,25 +560,24 @@ impl Graph {
     pub fn get_edge_id_by_node_names(
         &self,
         src_name: &str,
-        dst_name: &str
+        dst_name: &str,
     ) -> Result<EdgeT, String> {
         // TODO REFACTOR CODE to be cleaner!
-        let edge_id = if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id_by_node_ids(*src, *dst).ok()
-        } else {
-            None
-        };
+        let edge_id =
+            if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
+                self.get_edge_id_by_node_ids(*src, *dst).ok()
+            } else {
+                None
+            };
         match edge_id {
             Some(e) => Ok(e),
-            None => Err(
-                format!(
-                    concat!(
-                        "The current graph instance does not contain the required edge composed of ",
-                        "source node name {} and destination node name {}."
-                    ),
-                    src_name, dst_name
-                )
-            )
+            None => Err(format!(
+                concat!(
+                    "The current graph instance does not contain the required edge composed of ",
+                    "source node name {} and destination node name {}."
+                ),
+                src_name, dst_name
+            )),
         }
     }
 
@@ -531,17 +589,19 @@ impl Graph {
         edge_type_name: Option<&String>,
     ) -> Result<EdgeT, String> {
         if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id_with_type_by_node_ids(*src, *dst, self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?)
-        } else {
-            Err(
-                format!(
-                    concat!(
-                        "The current graph instance does not contain the required edge composed of ",
-                        "source node name {}, destination node name {} and edge name {:?}."
-                    ),
-                    src_name, dst_name, edge_type_name
-                )
+            self.get_edge_id_with_type_by_node_ids(
+                *src,
+                *dst,
+                self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
             )
+        } else {
+            Err(format!(
+                concat!(
+                    "The current graph instance does not contain the required edge composed of ",
+                    "source node name {}, destination node name {} and edge name {:?}."
+                ),
+                src_name, dst_name, edge_type_name
+            ))
         }
     }
 
@@ -584,13 +644,16 @@ impl Graph {
     /// # Arguments
     ///
     /// * `node_types`: Vec<String> - Vector of node types to be converted.
-    pub fn get_node_type_ids_by_node_type_names(&self, node_types: Vec<Option<String>>) -> Result<Vec<Option<NodeTypeT>>, String> {
+    pub fn get_node_type_ids_by_node_type_names(
+        &self,
+        node_types: Vec<Option<String>>,
+    ) -> Result<Vec<Option<NodeTypeT>>, String> {
         match &self.node_types {
             None => Err(String::from("Current graph does not have node types.")),
             Some(nts) => {
                 node_types
                 .iter()
-                .map(|node_type_name| 
+                .map(|node_type_name|
                     match node_type_name {
                         None => Ok(None),
                         Some(nt) => {
@@ -623,10 +686,12 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> Option<(EdgeT, EdgeT)> {
-        self.get_edge_id_by_node_ids(src, dst).ok().map(
-            |min_edge|
-            (min_edge, self.get_unchecked_edge_id_from_tuple(src, dst + 1))
-        )
+        self.get_edge_id_by_node_ids(src, dst).ok().map(|min_edge| {
+            (
+                min_edge,
+                self.get_unchecked_edge_id_from_tuple(src, dst + 1),
+            )
+        })
     }
 
     /// Return range of outbound edges IDs which have as source the given Node.
@@ -664,10 +729,14 @@ impl Graph {
     /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * `src` - Source node of the edge.
-    /// 
-    pub fn get_edge_ids_by_node_ids(&self, src: NodeT, dst: NodeT) -> Option<impl Iterator<Item = EdgeT>> {
+    ///
+    pub fn get_edge_ids_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<impl Iterator<Item = EdgeT>> {
         self.get_minmax_edge_ids_by_node_ids(src, dst)
             .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
     }
@@ -676,16 +745,17 @@ impl Graph {
     ///
     /// There is no need for a unchecked version since we will have to map
     /// on the note_types anyway.
-    /// 
+    ///
     /// # Arguments
     /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
-    pub fn get_node_type_name_by_node_type_id(&self, node_type_id: NodeTypeT) -> Result<String, String> {
-        self.node_types
-            .as_ref()
-            .map_or(
-                Err("Node types not available for the current graph instance.".to_string()),
-                |nts| nts.translate(node_type_id)
-            )
+    pub fn get_node_type_name_by_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> Result<String, String> {
+        self.node_types.as_ref().map_or(
+            Err("Node types not available for the current graph instance.".to_string()),
+            |nts| nts.translate(node_type_id),
+        )
     }
 
     /// Return node type name of given node type.
@@ -697,10 +767,9 @@ impl Graph {
         node_type_ids: Vec<NodeTypeT>,
     ) -> Result<Vec<String>, String> {
         self.node_types.as_ref().map_or(
-            Err("Node types not available for the current graph instance.".to_string()), 
-            |nts| {
-                nts.translate_vector(node_type_ids)
-        })
+            Err("Node types not available for the current graph instance.".to_string()),
+            |nts| nts.translate_vector(node_type_ids),
+        )
     }
 
     /// Returns the number of outbound neighbours of given node.
@@ -712,7 +781,7 @@ impl Graph {
     /// * `node_id` - Integer ID of the node.
     ///
     pub fn get_node_degree_by_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
-        if node_id >= self.get_nodes_number(){
+        if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The node ID {} is higher than the number of available nodes {}.",
                 node_id,

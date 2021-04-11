@@ -9,7 +9,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use std::{collections::HashSet};
+use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 use vec_rand::{gen_random_vec, sample_uniform};
@@ -28,8 +28,8 @@ impl Graph {
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
-    /// * `only_from_same_component`: bool - Wether to sample negative edges only from nodes that are from the same component.
-    /// * `verbose`: bool - Wether to show the loading bar.
+    /// * `only_from_same_component`: bool - whether to sample negative edges only from nodes that are from the same component.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
@@ -67,14 +67,14 @@ impl Graph {
         // edges cannot have an edge type.
         let nodes_number = self.get_nodes_number() as EdgeT;
 
-        // Wether to sample negative edges only from the same connected component.
+        // whether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
             let node_components = self.get_node_components_vector(verbose);
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
                     let mut edge_number = (*nodes_number * (*nodes_number - 1)) as EdgeT;
-                    if !self.is_directed(){
+                    if !self.is_directed() {
                         edge_number /= 2;
                     }
                     edge_number
@@ -83,7 +83,7 @@ impl Graph {
             (Some(node_components), complete_edges_number)
         } else {
             let mut edge_number = nodes_number * (nodes_number - 1);
-            if !self.is_directed(){
+            if !self.is_directed() {
                 edge_number /= 2;
             }
             (None, edge_number)
@@ -165,7 +165,7 @@ impl Graph {
                     if !self.is_directed() && src > dst {
                         return None;
                     }
-                    
+
                     if !self.has_selfloops() && src == dst {
                         return None;
                     }
@@ -187,7 +187,6 @@ impl Graph {
                         true => None,
                         false => Some(self.encode_edge(src, dst)),
                     }
-                    
                 })
                 .collect::<Vec<EdgeT>>();
 
@@ -196,7 +195,8 @@ impl Graph {
                 format!(
                     "Inserting negative graph edges (iteration {})",
                     sampling_round
-                ).as_ref(),
+                )
+                .as_ref(),
                 negatives_number as usize,
             );
 
@@ -207,7 +207,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 50000{
+            if sampling_round > 50000 {
                 panic!("Deadlock in sampling negatives!");
             }
 
@@ -235,6 +235,9 @@ impl Graph {
             false,
             false,
             verbose,
+            true,
+            self.has_selfloops(),
+            true,
         )
     }
 
@@ -302,6 +305,8 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
+        train_graph_might_have_singletons: bool,
+        train_graph_might_have_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph), String> {
         let pb1 = get_loading_bar(
             verbose,
@@ -398,6 +403,9 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_weights(),
+                train_graph_might_have_singletons,
+                train_graph_might_have_singletons_with_selfloops,
+                true,
             )?,
             Graph::build_graph(
                 valid_edges_bitmap
@@ -414,6 +422,9 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_weights(),
+                true,
+                self.has_selfloops(),
+                true,
             )?,
         ))
     }
@@ -502,7 +513,8 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop = src == dst && self.get_node_degree_by_node_id(src).unwrap() == 1;
+                let singleton_self_loop =
+                    src == dst && self.get_node_degree_by_node_id(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -512,6 +524,8 @@ impl Graph {
                 !is_in_tree && !singleton_self_loop && correct_edge_type
             },
             verbose,
+            self.has_singletons(),
+            self.has_singleton_nodes_with_self_loops(),
         )
     }
 
@@ -576,6 +590,10 @@ impl Graph {
                 true
             },
             verbose,
+            // Singletons may be generated during the holdouts process
+            true,
+            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph
+            self.has_selfloops(),
         )
     }
 
@@ -656,10 +674,12 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| {
-                train_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
+                train_node_types[*node_id as usize] =
+                    self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
             node_set[train_size..].iter().for_each(|node_id| {
-                test_node_types[*node_id as usize] = self.get_unchecked_node_type_id_by_node_id(*node_id)
+                test_node_types[*node_id as usize] =
+                    self.get_unchecked_node_type_id_by_node_id(*node_id)
             });
         }
 
@@ -756,10 +776,12 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
             // add the edges to the relative vectors
             edge_set[..train_size].iter().for_each(|edge_id| {
-                train_edge_types[*edge_id as usize] = self.get_unchecked_edge_type_by_edge_id(*edge_id)
+                train_edge_types[*edge_id as usize] =
+                    self.get_unchecked_edge_type_by_edge_id(*edge_id)
             });
             edge_set[train_size..].iter().for_each(|edge_id| {
-                test_edge_types[*edge_id as usize] = self.get_unchecked_edge_type_by_edge_id(*edge_id)
+                test_edge_types[*edge_id as usize] =
+                    self.get_unchecked_edge_type_by_edge_id(*edge_id)
             });
         }
 
@@ -797,7 +819,8 @@ impl Graph {
     /// the required number of nodes is reached. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
     ///
-    ///
+    /// This is meant to execute distributed node embeddings.
+    /// It may also sample singleton nodes.
     ///
     /// # Arguments
     ///
@@ -879,7 +902,10 @@ impl Graph {
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
                 let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
                 (min_edge_id..max_edge_id)
-                    .filter(|edge_id| unique_nodes.contains(self.get_destination_node_id_by_edge_id(*edge_id).unwrap()))
+                    .filter(|edge_id| {
+                        unique_nodes
+                            .contains(self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                    })
                     .collect::<Vec<EdgeT>>()
             }));
 
@@ -898,6 +924,9 @@ impl Graph {
             false,
             self.has_edge_types(),
             self.has_weights(),
+            true,
+            self.has_selfloops(),
+            true,
         )
     }
 
@@ -993,6 +1022,8 @@ impl Graph {
             false,
             |edge_id, _, _, _| chunk.contains(edge_id),
             verbose,
+            true,
+            self.has_selfloops(),
         )
     }
 }

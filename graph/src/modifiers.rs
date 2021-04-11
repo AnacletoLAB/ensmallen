@@ -39,9 +39,9 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool, wether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
-    /// * `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
+    /// * `vector_sources`: bool, whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.
+    /// * `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
@@ -88,7 +88,8 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.iter_node_neighbours_ids(*node_id).collect::<Vec<NodeT>>(),
+                            self.iter_node_neighbours_ids(*node_id)
+                                .collect::<Vec<NodeT>>(),
                         )
                     })
                     .collect::<HashMap<NodeT, Vec<NodeT>>>(),

@@ -4,7 +4,6 @@ use vec_rand::sorted_unique_sub_sampling;
 /// # Walk Queries
 /// These are the queries that are used mainly in the random walk.
 impl Graph {
-
     pub(crate) fn get_node_edges_and_destinations(
         &self,
         max_neighbours: Option<NodeT>,
@@ -25,18 +24,14 @@ impl Graph {
                 .as_ref()
                 .and_then(|cds| cds.get(&node))
             {
-                Some(dsts) => {
-                    indices
-                        .iter()
-                        .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
-                        .collect()
-                },
-                None => {
-                    indices
-                        .iter()
-                        .map(|edge_id| self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
-                        .collect()
-                },
+                Some(dsts) => indices
+                    .iter()
+                    .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
+                    .collect(),
+                None => indices
+                    .iter()
+                    .map(|edge_id| self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                    .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
         }
@@ -54,16 +49,15 @@ impl Graph {
         {
             true => None,
             false => Some(
-                self.edges.iter_in_range(
-                    self.encode_edge(node, 0)..self.encode_edge(node + 1, 0)
-                ).map(|edge| {
-                    self.decode_edge(edge).1
-                }).collect()
+                self.edges
+                    .iter_in_range(self.encode_edge(node, 0)..self.encode_edge(node + 1, 0))
+                    .map(|edge| self.decode_edge(edge).1)
+                    .collect(),
             ),
         };
         (min_edge_id, max_edge_id, destinations, None)
     }
-    
+
     /// TODO:! add doc
     pub(crate) fn get_destinations_slice<'a>(
         &'a self,

@@ -1,18 +1,16 @@
 use super::*;
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
-
+use std::hash::{Hash, Hasher};
 
 #[inline(always)]
 /// Hashing floats is usually a bad idea
 /// But we want to know if any weight changed significantly
-/// THUS we will hash only the order of magnitude and the 
+/// THUS we will hash only the order of magnitude and the
 /// first few bits of the mantissa.
-/// 
+///
 /// This should be an hash which is kinda robust to float erros.
-fn hash_float<H: Hasher>(x: f32, state: &mut H){
-
-    // basically we are converting the float to a u32 and 
+fn hash_float<H: Hasher>(x: f32, state: &mut H) {
+    // basically we are converting the float to a u32 and
     // clear out the lower bits of the mantissa.
     let mut hack = u32::from_le_bytes(x.to_le_bytes());
 

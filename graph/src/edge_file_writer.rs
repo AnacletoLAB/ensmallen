@@ -263,9 +263,8 @@ impl EdgeFileWriter {
         self.writer.write_lines(
             graph.get_directed_edges_number() as usize,
             compose_lines(number_of_columns, header),
-            graph
-                .iter_edge_with_type_and_weight_ids(directed)
-                .map(|(_, src, dst, edge_type, weight)| {
+            graph.iter_edge_with_type_and_weight_ids(directed).map(
+                |(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (
                             match self.numeric_node_ids {
@@ -295,7 +294,8 @@ impl EdgeFileWriter {
                     }
 
                     compose_lines(number_of_columns, line)
-                }),
+                },
+            ),
         )
     }
 }

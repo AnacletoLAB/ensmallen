@@ -9,6 +9,20 @@ use std::iter::once;
 /// The naming convection we follow is `get_X_by_Y`.
 /// The naming convection for unchecked methods follows `get_unchecked_X_by_Y`.
 impl Graph {
+
+    /// Return if the graph has any nodes.
+    ///
+    /// # Example
+    /// To the retrieve the name of the current graph instance you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph.is_empty(), false);
+    /// ```
+    ///
+    pub fn is_empty(&self) -> bool {
+        self.get_nodes_number() == 0
+    }
+
     /// Return name of the graph.
     ///
     /// # Example
@@ -24,6 +38,8 @@ impl Graph {
     }
 
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
+    /// This also includes nodes with only a self-loops, therefore singletons with 
+    /// only a self-loops are not considered traps because you could make a walk on them.
     ///
     /// # Example
     /// ```rust
@@ -32,7 +48,8 @@ impl Graph {
     /// ```
     ///
     pub fn get_trap_nodes_number(&self) -> EdgeT {
-        self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
+        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_self_loops_number()
+            - self.get_unique_source_nodes_number()) as EdgeT
     }
 
     // Return whether the graph has trap nodes.
@@ -123,7 +140,7 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has singletons.
-    pub fn has_singleton_nodes_with_self_loops_number(&self) -> bool {
+    pub fn has_singleton_nodes_with_self_loops(&self) -> bool {
         self.get_singleton_nodes_with_self_loops_number() > 0
     }
 
@@ -172,11 +189,11 @@ impl Graph {
     pub fn get_nodes(&self) -> Vec<NodeT> {
         (0..self.get_nodes_number()).collect()
     }
-    
+
     /// Return the edge types of the edges.
     pub fn get_edge_types(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
-        if !self.has_edge_types(){
-            return Err("The current graph instance does not have edge types!".to_string())
+        if !self.has_edge_types() {
+            return Err("The current graph instance does not have edge types!".to_string());
         }
         Ok(self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
@@ -190,16 +207,16 @@ impl Graph {
 
     /// Return the node types of the nodes.
     pub fn get_node_types(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
-        if !self.has_node_types(){
-            return Err("The current graph instance does not have nodes!".to_string())
+        if !self.has_node_types() {
+            return Err("The current graph instance does not have nodes!".to_string());
         }
         Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
     /// Return the weights of the nodes.
     pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
-        if !self.has_weights(){
-            return Err("The current graph instance does not have weights!".to_string())
+        if !self.has_weights() {
+            return Err("The current graph instance does not have weights!".to_string());
         }
         Ok(self.weights.clone().unwrap())
     }
@@ -239,9 +256,7 @@ impl Graph {
     /// Return vector with the sorted edge names.
     pub fn get_edge_names(&self, directed: bool) -> Vec<(String, String)> {
         self.par_iter_edges(directed)
-            .map(|
-                (_, _, src_name, _, dst_name)| (src_name, dst_name)
-            )
+            .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
             .collect()
     }
 
@@ -306,7 +321,7 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - wether to show the loading bar.
+    /// * `verbose`: bool - whether to show the loading bar.
     pub fn get_node_components_vector(&self, verbose: bool) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
@@ -321,12 +336,16 @@ impl Graph {
 
     /// Returns number of edge types in the graph.
     pub fn get_edge_types_number(&self) -> EdgeTypeT {
-        self.edge_types.as_ref().map_or(0, |ets| ets.len() as EdgeTypeT)
+        self.edge_types
+            .as_ref()
+            .map_or(0, |ets| ets.len() as EdgeTypeT)
     }
 
     /// Returns number of node types in the graph.
     pub fn get_node_types_number(&self) -> NodeTypeT {
-        self.node_types.as_ref().map_or(0, |nts| nts.len() as NodeTypeT)
+        self.node_types
+            .as_ref()
+            .map_or(0, |nts| nts.len() as NodeTypeT)
     }
 
     /// Returns the degree of every node in the graph.
@@ -369,24 +388,15 @@ impl Graph {
             .collect()
     }
 
-    /// Return number of unique source nodes number.
-    /// 
-    /// # Example
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The graph has {} unique source nodes.", graph.get_unique_sources_number());
-    /// ```
-    pub fn get_unique_sources_number(&self) -> NodeT {
-        self.unique_sources.len() as NodeT
-    }
-
     /// Returns number of the source nodes.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
     /// ```
     pub fn get_unique_source_nodes_number(&self) -> NodeT {
-        self.unique_sources.len() as NodeT
+        self.unique_sources
+            .as_ref()
+            .map_or(self.get_nodes_number(), |x| x.len() as NodeT)
     }
 
     /// Returns edge type counts.

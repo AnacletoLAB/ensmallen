@@ -55,7 +55,7 @@ pub fn load_ppi(
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
         Some(
-            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string(), graph_name.clone())?
+            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
                 .set_verbose(Some(false))
                 .set_node_types_column_number(Some(1))
                 .set_nodes_column_number(Some(0))
@@ -73,7 +73,7 @@ pub fn load_ppi(
     } else {
         None
     };
-    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string(), graph_name.clone())?
+    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t"))
@@ -138,14 +138,14 @@ pub fn load_ppi(
 /// This is our default graph we use on tests with node types.
 pub fn load_cora() -> Result<Graph, String> {
     let graph_name = "Cora".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv", graph_name.clone())?
+    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")?
         .set_separator(Some("\t"))?
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))?
         .set_destinations_column(Some("object"))?
         .set_edge_types_column(Some("edge_type"))?;
     let nodes_reader = Some(
-        NodeFileReader::new("tests/data/cora/nodes.tsv", graph_name.clone())?
+        NodeFileReader::new("tests/data/cora/nodes.tsv")?
             .set_separator(Some("\t"))?
             .set_nodes_column(Some("id"))?
             .set_verbose(Some(false))
@@ -334,8 +334,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     assert!(
-        smallest != 1
-            || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops_number()),
+        smallest != 1 || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops()),
         "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
         graph.textual_report(false)
     );
@@ -363,7 +362,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 graph.textual_report(false)
             );
         }
-        assert!(graph.has_node_by_node_name(&src_string) && graph.has_node_by_node_name(&dst_string));
+        assert!(
+            graph.has_node_by_node_name(&src_string) && graph.has_node_by_node_name(&dst_string)
+        );
         if graph.has_node_types() {
             assert!(
                 graph.has_node_with_type_by_node_name(
@@ -426,7 +427,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
     );
 
-    assert_eq!(graph.has_edge_types(), graph.get_edge_type_id_by_edge_id(0).is_ok());
+    assert_eq!(
+        graph.has_edge_types(),
+        graph.get_edge_type_id_by_edge_id(0).is_ok()
+    );
 
     assert!(
         graph.get_edge_type_id_by_edge_id(graph.get_directed_edges_number() + 1).is_err(),
@@ -440,7 +444,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     // Evaluate get_edge_type
-    assert_eq!(graph.get_edge_type_id_by_edge_id(0).is_ok(), graph.has_edge_types());
+    assert_eq!(
+        graph.get_edge_type_id_by_edge_id(0).is_ok(),
+        graph.has_edge_types()
+    );
 
     // Evaluate get_node_type_counts
     assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
@@ -454,7 +461,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         graph.has_edge_types()
     );
 
-    graph.set_name("TestName".to_owned());
+    graph.set_name(graph.get_name());
     graph.strongly_connected_components();
 
     Ok(())
@@ -621,9 +628,14 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             concat!(
                 "Removing all the components except the first one returned an error.\n",
                 "The error is:\n{:?}\nand the graph report is:\n{:?}"
-            ), single_component, graph.textual_report(false)
+            ),
+            single_component,
+            graph.textual_report(false)
         );
-        let single_component_number = single_component.unwrap().connected_components_number(verbose).0;
+        let single_component_number = single_component
+            .unwrap()
+            .connected_components_number(verbose)
+            .0;
         assert_eq!(
             single_component_number,
             1,
@@ -631,7 +643,8 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "Removing all the components except the first one returned a graph ",
                 "with {} components, which is not one.\nThe report of the graph is:{:?}\n"
             ),
-            single_component_number, graph.textual_report(false)
+            single_component_number,
+            graph.textual_report(false)
         );
 
         let test = graph.remove_components(
@@ -692,13 +705,11 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
     } else {
         assert!(
             graph
-            .remove_components(None, None, None, None, None, verbose)
-            .is_ok(),
+                .remove_components(None, None, None, None, None, verbose)
+                .is_ok(),
             "We expect it to be possible, now, to create empty graphs."
         );
     }
-
-
 
     Ok(())
 }
@@ -763,6 +774,9 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
         // Testing holdouts executed on negative edges.
         let (neg_train, neg_test) =
             negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+
+        neg_test.get_trap_nodes_number();
+
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     }
 
@@ -866,7 +880,9 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
             .get_edge_type_names()
             .map(|etn| etn.into_iter().map(Option::Some).collect()),
         graph.get_weight_by_edge_id(0).ok(),
-        graph.get_weight_by_edge_id(graph.get_directed_edges_number() - 1).ok(),
+        graph
+            .get_weight_by_edge_id(graph.get_directed_edges_number() - 1)
+            .ok(),
         verbose,
     );
     Ok(())
@@ -1041,12 +1057,15 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
             assert_eq!(
-                wn.weights, graph.weights, 
+                wn.weights,
+                graph.weights,
                 concat!(
                     "We expected the weights not to change when removig node types.",
                     "\nThe report of the original graph is {:?}.",
                     "\nThe report of the filtered graph is {:?}."
-                ), graph.textual_report(false), wn.textual_report(false)
+                ),
+                graph.textual_report(false),
+                wn.textual_report(false)
             );
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.nodes, graph.nodes);
@@ -1065,7 +1084,6 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.nodes, graph.nodes);
         }
     }
-
 
     Ok(())
 }

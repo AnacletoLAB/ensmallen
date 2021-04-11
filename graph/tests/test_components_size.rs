@@ -7,7 +7,7 @@ use std::collections::HashMap;
 /// singletons: false selfloops: false smallest: 1 biggest: 3, edges: [(0, 1), (2, 3), (4, 5)]
 fn test_components_size() {
     let graph_name = "ComponentSizeTest".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv", graph_name.clone())
+    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv")
         .unwrap()
         .set_separator(Some(","))
         .unwrap()

@@ -1,6 +1,6 @@
 use super::*;
-use indicatif::{ProgressIterator};
-use std::{fs::File, io::BufWriter, io::prelude::*};
+use indicatif::ProgressIterator;
+use std::{fs::File, io::prelude::*, io::BufWriter};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -80,9 +80,7 @@ impl CSVFileWriter {
 
         match stream.flush() {
             Ok(_) => Ok(()),
-            Err(_) => Err(
-                "Unable to close file. There might have been an I/O error.".to_string()
-            )
+            Err(_) => Err("Unable to close file. There might have been an I/O error.".to_string()),
         }
     }
 }

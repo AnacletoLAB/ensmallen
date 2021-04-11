@@ -5,13 +5,14 @@ use indicatif::ProgressIterator;
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::ParallelSliceMut;
+use roaring::RoaringBitmap;
 use std::cmp::Ordering;
 use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Vocabulary<NodeT>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
@@ -248,7 +249,6 @@ pub(crate) fn parse_unsorted_quadruples(
     mut edges: Vec<Quadruple>,
     verbose: bool,
 ) -> (usize, impl Iterator<Item = Result<Quadruple, String>>) {
-
     info!("Sorting edges.");
     edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)| {
         (*src1, *dst1, *edt1).cmp(&(*src2, *dst2, *edt2))
@@ -257,7 +257,10 @@ pub(crate) fn parse_unsorted_quadruples(
     let edges_number = edges.len();
     let pb = get_loading_bar(verbose, "Building sorted graph", edges_number);
 
-    (edges_number, edges.into_iter().progress_with(pb).map(Result::Ok))
+    (
+        edges_number,
+        edges.into_iter().progress_with(pb).map(Result::Ok),
+    )
 }
 
 pub(crate) fn parse_integer_unsorted_edges<'a>(
@@ -345,12 +348,15 @@ pub(crate) fn build_edges(
     ignore_duplicated_edges: bool,
     has_weights: bool,
     has_edge_types: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
     directed: bool,
     edge_list_is_correct: bool,
 ) -> Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Option<Vec<Option<EdgeTypeT>>>,
         Option<Vec<WeightT>>,
         EdgeT,
@@ -369,6 +375,8 @@ pub(crate) fn build_edges(
     let mut edges: EliasFano =
         EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;
 
+    // The graph might still contain duplicated edges, therefore the provided edges
+    // number is a maximal value.
     let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {
         Some(Vec::with_capacity(edges_number))
     } else {
@@ -381,9 +389,46 @@ pub(crate) fn build_edges(
         None
     };
 
-    // TODO: the following data structure could be better to be a bitvector.
-    // This is because universe == number of elements
-    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize)?;
+    // The unique sources variable is equal to the set of nodes of the graph when
+    // there are no singletons and the graph is undirected. Otherwise, if there is
+    // a singleton node, that must not appear in this set.
+    // We will use this set during the random walks and other graph algorithms
+    // in order to obtain the nth source node. For this reason we cannot
+    // use a bitvec here, since we need to execute an unchecked select when the
+    // object is not equal to the set of the nodes to remap the nth source node
+    // to the nth unique source node, excluding the eventual; singleton nodes.
+    // Similarly, in directed graphs, only a subset of the nodes might be a
+    // source as there might be traps.
+    // In the case of directed graphs, we have additionally the might have trap nodes
+    // parameter which allows to specify whether the graph is known to contain
+    // trap nodes. The parameter only makes sense in directed graphs.
+    // Since we expect that the average use case (when we arew not dealing with pathological graphs)
+    // the following set should be relatively dense, when we know that the set of unique
+    // sources will be needed but it will be equal to the nodes with edges set, we compute it
+    // afterwards. This is because it is known that an Elias Fano data structure
+    // uses more than twice the memory required by a bitvec to memorize a set of
+    // dense values.
+    let mut unique_sources: Option<EliasFano> =
+        if directed && (might_have_trap_nodes || might_have_singletons) {
+            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)
+        } else {
+            None
+        };
+    // When the graph is either undirected or directed without trap nodes, the unique sources set and the
+    // nodes with edges set are equal one another.
+    // We need to compute the following set when it is not trivial, that is when
+    // either the graph is undirected and there are no singletons or alternatively
+    // when the graph is directed and there are neither trap nodes nor singletons.
+    // Additionally, since we need this support data structure when computing the
+    // number of singletons with selfloops, we need to create it also when it has
+    // been specified that there might be singletons with selfloops.
+    let mut nodes_with_edges: Option<_> =
+        if might_have_singletons || might_have_singletons_with_selfloops {
+            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
+        } else {
+            None
+        };
+
     // Last source inserted
     let mut last_src: NodeT = 0;
     let mut last_dst: NodeT = 0;
@@ -393,12 +438,21 @@ pub(crate) fn build_edges(
     let mut self_loop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
-    let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
-    let mut not_singleton_node_number: NodeT = 0;
-    let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
-    let mut singleton_nodes_with_self_loops_number: NodeT = 0;
-    let mut first = true;
+    let mut not_singleton_node_number: NodeT =
+        if might_have_singletons || might_have_singletons_with_selfloops {
+            0
+        } else {
+            nodes_number
+        };
+    // This bitvec should be really sparse ON SANE GRAPHS
+    // so we use a roaring bitvec to save memory.
+    let mut singleton_nodes_with_self_loops = if might_have_singletons_with_selfloops {
+        Some(RoaringBitmap::new())
+    } else {
+        None
+    };
 
+    let mut first = true;
     for value in edges_iter {
         let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
@@ -409,6 +463,7 @@ pub(crate) fn build_edges(
             if ignore_duplicated_edges {
                 continue;
             } else {
+                // TODO: this error can likely be made more usefull
                 return Err("A duplicated edge was found while building the graph.".to_owned());
             }
         }
@@ -483,19 +538,28 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            for node in &[src, dst] {
-                if !nodes_with_edges[*node as usize] {
-                    nodes_with_edges.set(*node as usize, true);
-                    if !self_loop {
-                        not_singleton_node_number += 1;
-                    } else {
-                        singleton_nodes_with_self_loops.set(*node as usize, true);
-                        singleton_nodes_with_self_loops_number += 1;
+            if let Some(nwe) = &mut nodes_with_edges {
+                for node in &[src, dst] {
+                    unsafe {
+                        let mut ptr = nwe.get_unchecked_mut(*node as usize);
+                        if !*ptr {
+                            *ptr = true;
+                            if !self_loop || singleton_nodes_with_self_loops.is_none() {
+                                not_singleton_node_number += 1;
+                            } else {
+                                if let Some(bitmap) = &mut singleton_nodes_with_self_loops {
+                                    bitmap.insert(*node);
+                                }
+                                break;
+                            }
+                        } else if !self_loop
+                            && singleton_nodes_with_self_loops
+                                .as_mut()
+                                .map_or(false, |bitmap| bitmap.remove(*node))
+                        {
+                            not_singleton_node_number += 1;
+                        }
                     }
-                } else if !self_loop && singleton_nodes_with_self_loops[*node as usize] {
-                    singleton_nodes_with_self_loops.set(*node as usize, false);
-                    singleton_nodes_with_self_loops_number -= 1;
-                    not_singleton_node_number += 1;
                 }
             }
             unique_edges_number += 1;
@@ -503,16 +567,14 @@ pub(crate) fn build_edges(
                 unique_self_loop_number += 1;
             }
             if different_src {
-                unique_sources.unchecked_push(src as u64);
-                last_src = src;
-            }
-            if different_dst {
-                last_dst = dst;
+                unique_sources
+                    .as_mut()
+                    .map(|us| us.unchecked_push(src as u64));
             }
         }
-        if first {
-            first = false;
-        }
+        last_src = src;
+        last_dst = dst;
+        first = false;
     }
 
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
@@ -542,6 +604,50 @@ pub(crate) fn build_edges(
                 edges.len()
             );
         }
+    }
+
+    if not_singleton_node_number > nodes_number {
+        panic!(
+            "There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'",
+            not_singleton_node_number, nodes_number
+        );
+    }
+
+    let singleton_nodes_with_self_loops_number =
+        singleton_nodes_with_self_loops.map_or(0, |bitmap| bitmap.len() as NodeT);
+
+    // When we have computed the nodes with edges set but we have left None
+    // the unique sources elias fano, this is done to avoid using extra memory
+    // for no reason. We need to create the elias fano object starting from the
+    // nodes with edges now to normalize the returned values.
+    if might_have_singletons && unique_sources.is_none() {
+        unique_sources = Some(EliasFano::from_iter(
+            nodes_with_edges
+                .unwrap()
+                .iter_ones()
+                .into_iter()
+                .map(|x| x as u64),
+            nodes_number as u64,
+            not_singleton_node_number as usize + singleton_nodes_with_self_loops_number as usize,
+        )?);
+    }
+
+    if !directed && unique_sources
+        .as_ref()
+        .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)
+    {
+        panic!(
+            "There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'",
+            not_singleton_node_number, unique_sources.unwrap().len()
+        );
+    }
+
+    // While on internal methods nodes_number is always exact, the user may 
+    // provide a wrong value for nodes_number when loading a sorted csv.
+    // If this happens, it might cause a slow down in the walk and other 
+    // currently unforseen consequences.
+    if nodes_number == not_singleton_node_number {
+        unique_sources = None;
     }
 
     Ok((
@@ -588,7 +694,7 @@ fn parse_nodes(
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
-            
+
             if node_types.is_empty() {
                 Ok(None)
             } else {
@@ -619,9 +725,22 @@ pub(crate) fn parse_string_edges(
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
     has_weights: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> ParsedStringEdgesType {
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> =
         Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
+
+    // This is not equivalent to nodes_iterator.is_some() because the iterator
+    // could also be empty, this is a corner-case that might happen when over-filtering
+    // or fuzzing or loading an empty file with improper configurations.
+    // There might be singletons if the user has told us that there might be singletons
+    // and the node list is not empty. If the node list is empty, then it is not possible
+    // to have singletons.
+    let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+    // If the graph is undirected there cannot be trap nodes
+    let might_have_trap_nodes = directed && might_have_trap_nodes;
 
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
@@ -651,6 +770,9 @@ pub(crate) fn parse_string_edges(
         ignore_duplicated_edges,
         has_weights,
         has_edge_types,
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -686,10 +808,13 @@ pub(crate) fn parse_integer_edges(
     edge_list_is_correct: bool,
     has_edge_types: bool,
     has_weights: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
         EdgeT,
@@ -721,6 +846,9 @@ pub(crate) fn parse_integer_edges(
         ignore_duplicated_edges,
         has_weights,
         has_edge_types,
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -756,6 +884,9 @@ impl Graph {
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -779,6 +910,9 @@ impl Graph {
             edge_list_is_correct,
             has_edge_types,
             has_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )?;
 
         Ok(Graph::new(
@@ -836,12 +970,16 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
             numeric_node_ids,
             numeric_edge_node_ids,
         )?;
+
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
@@ -851,6 +989,16 @@ impl Graph {
             numeric_edge_node_ids,
             has_node_types,
         )?;
+
+        // This is not equivalent to nodes_iterator.is_some() because the iterator
+        // could also be empty, this is a corner-case that might happen when over-filtering
+        // or fuzzing or loading an empty file with improper configurations.
+        // There might be singletons if the user has told us that there might be singletons
+        // and the node list is not empty. If the node list is empty, then it is not possible
+        // to have singletons.
+        let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+        // If the graph is undirected there cannot be trap nodes
+        let might_have_trap_nodes = directed && might_have_trap_nodes;
 
         info!("Parse unsorted edges.");
         // TODO: ADD USE OF edge_list_is_correct
@@ -878,6 +1026,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )
     }
 
@@ -910,6 +1061,9 @@ impl Graph {
         has_edge_types: bool,
         has_weights: bool,
         verbose: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
             parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
@@ -926,6 +1080,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )
     }
 
@@ -940,7 +1097,7 @@ impl Graph {
         ignore_duplicated_edges: bool,
         edge_list_is_correct: bool,
         edges_number: usize,
-        nodes_number: NodeT,
+        mut nodes_number: NodeT,
         numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
@@ -948,6 +1105,9 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
         name: S,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
@@ -964,6 +1124,10 @@ impl Graph {
             numeric_edge_node_ids,
             has_node_types,
         )?;
+
+        if !nodes.is_empty() {
+            nodes_number = nodes.len() as NodeT;
+        }
 
         let (
             edges,
@@ -990,6 +1154,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )?;
 
         Ok(Graph::new(

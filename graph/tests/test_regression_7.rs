@@ -9,7 +9,7 @@ use graph::{EdgeFileReader, Graph};
 /// specifically (at the time) line 665 and column 20.
 ///
 fn test_regression_7() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/7.edges", "RegressionTest".to_owned())?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/7.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?

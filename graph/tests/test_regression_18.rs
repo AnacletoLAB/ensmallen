@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -10,7 +10,7 @@ use graph::{Graph, EdgeFileReader};
 /// The provided message was: 'index out of bounds: the len is 2 but the index is 2021161079'
 ///
 fn test_regression_18() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/18.edges", "RegressionTest".to_owned())?
+    let edges_reader = EdgeFileReader::new("tests/data/regression/18.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -29,9 +29,9 @@ fn test_regression_18() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
-        false, // Directed
-        false, // Directed edge list
-        "xxxxxxxxxxxxx55555555555555555555555555555555555555555" // Name of the graph
+        false,                                                    // Directed
+        false,                                                    // Directed edge list
+        "xxxxxxxxxxxxx55555555555555555555555555555555555555555", // Name of the graph
     )?;
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())

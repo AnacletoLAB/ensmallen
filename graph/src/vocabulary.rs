@@ -58,7 +58,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     pub(crate) fn unchecked_insert(&mut self, value: String) -> IndexT {
         let current_length = self.map.len();
         let numeric_ids = self.numeric_ids;
-        *self.map.entry(value).or_insert_with_key( |value| {
+        *self.map.entry(value).or_insert_with_key(|value| {
             IndexT::from_usize(if numeric_ids {
                 value.parse::<usize>().unwrap()
             } else {
@@ -181,10 +181,10 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self.map.len()
     }
 
-    /// Set wether to load IDs as numeric.
+    /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - Wether to load the IDs as numeric
+    /// * numeric_ids: bool - whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> Vocabulary<IndexT> {
         self.numeric_ids = numeric_ids;

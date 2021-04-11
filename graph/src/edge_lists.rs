@@ -8,7 +8,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -74,7 +74,8 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst) {
+                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst)
+                        {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -87,7 +88,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -122,7 +123,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
@@ -134,11 +135,7 @@ impl Graph {
     ) -> Result<Vec<Vec<NodeT>>, String> {
         self.get_bipartite_edges(
             removed_existing_edges,
-            Some(
-                vec![central_node]
-                    .into_iter()
-                    .collect::<HashSet<String>>(),
-            ),
+            Some(vec![central_node].into_iter().collect::<HashSet<String>>()),
             star_points_nodes_set,
             None,
             star_points_node_types_set,
@@ -149,7 +146,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
@@ -161,11 +158,7 @@ impl Graph {
     ) -> Result<Vec<Vec<String>>, String> {
         self.get_bipartite_edge_names(
             removed_existing_edges,
-            Some(
-                vec![central_node]
-                    .into_iter()
-                    .collect::<HashSet<String>>(),
-            ),
+            Some(vec![central_node].into_iter().collect::<HashSet<String>>()),
             star_points_nodes_set,
             None,
             star_points_node_types_set,
@@ -175,9 +168,9 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - Wether to allow self-loops in the clique. By default, equal to the graph.
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
@@ -223,7 +216,8 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst) {
+                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst)
+                        {
                             return None;
                         }
                         Some(vec![*src, *dst])
@@ -236,9 +230,9 @@ impl Graph {
     /// Return vector of tuple of Node names that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - Wether to allow self-loops in the clique. By default, equal to the graph.
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(

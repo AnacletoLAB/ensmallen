@@ -12,7 +12,7 @@ use vec_rand::xorshift::xorshift as rand_u64;
 const NOT_PRESENT: u32 = u32::MAX;
 
 /// # Implementation of algorithms relative to trees.
-/// 
+///
 /// # Definitions
 /// - **Self-loops**: Edges with source equal to the destination.
 /// - **Singleton**: A node with no incident edges, (self-loops are not considered).
@@ -23,7 +23,7 @@ const NOT_PRESENT: u32 = u32::MAX;
 ///     For a grpah with n nodes and c components the spanning arborescence will have
 ///     n - c edges.
 /// - **Component**: Set of nodes in which any two vertices in it are connected to
-///     each other by paths. A singleton is a component and so is a singleton with a 
+///     each other by paths. A singleton is a component and so is a singleton with a
 ///     self-loop.
 impl Graph {
     fn iter_edges_from_random_state(
@@ -54,31 +54,32 @@ impl Graph {
             format!("Building random spanning tree for {}", self.name).as_ref(),
             self.get_directed_edges_number() as usize,
         );
-        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
-            if let (Some(uet), _) = (unwanted_edge_types, &self.edge_types) {
-                Box::new(
-                    self.iter_edges_from_random_state(random_state)
-                        .filter_map(move |(edge_id, src, dst)| {
-                            if uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
+        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =
+            (unwanted_edge_types, &self.edge_types)
+        {
+            Box::new(
+                self.iter_edges_from_random_state(random_state)
+                    .filter_map(move |(edge_id, src, dst)| {
+                        if uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
+                            return None;
+                        }
+                        Some((src, dst))
+                    })
+                    .chain(self.iter_edges_from_random_state(random_state).filter_map(
+                        move |(edge_id, src, dst)| {
+                            if !uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))
-                        })
-                        .chain(self.iter_edges_from_random_state(random_state).filter_map(
-                            move |(edge_id, src, dst)| {
-                                if !uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
-                                    return None;
-                                }
-                                Some((src, dst))
-                            },
-                        )),
-                )
-            } else {
-                Box::new(
-                    self.iter_edges_from_random_state(random_state)
-                        .map(|(_, src, dst)| (src, dst)),
-                )
-            };
+                        },
+                    )),
+            )
+        } else {
+            Box::new(
+                self.iter_edges_from_random_state(random_state)
+                    .map(|(_, src, dst)| (src, dst)),
+            )
+        };
 
         result.progress_with(pb)
     }
@@ -119,10 +120,11 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singletons() || self.has_singleton_nodes_with_self_loops_number() {
+        if self.has_singletons() || self.has_singleton_nodes_with_self_loops() {
             (0..self.get_nodes_number())
                 .filter(|node_id| {
-                    self.is_singleton_by_node_id(*node_id).unwrap() || self.is_singleton_with_self_loops_by_node_id(*node_id)
+                    self.is_singleton_by_node_id(*node_id).unwrap()
+                        || self.is_singleton_with_self_loops_by_node_id(*node_id)
                 })
                 .for_each(|node_id| {
                     components[node_id as usize] = component_sizes.len() as NodeT;
@@ -217,7 +219,6 @@ impl Graph {
             .minmax()
             .into_option()
             .unwrap();
-
 
         (
             tree,
@@ -321,7 +322,9 @@ impl Graph {
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton_by_node_id(src as NodeT).unwrap() {
+                        if self.has_singletons()
+                            && self.is_singleton_by_node_id(src as NodeT).unwrap()
+                        {
                             // We set singletons as self-loops for now.
                             (*ptr)[src] = src as NodeT;
                             return;
@@ -448,6 +451,9 @@ impl Graph {
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_weights
+    ///  #     true,
+    ///  #     true,
+    ///  #     true,
     ///  # ).unwrap();
     /// let (components, number_of_components, smallest, biggest) =
     ///     graph.connected_components(false).unwrap();
@@ -468,10 +474,15 @@ impl Graph {
                 "The connected components algorithm only works for undirected graphs!".to_owned(),
             );
         }
-        if self.get_edges_number() == 0{
-            return Ok(((0..self.get_nodes_number()).collect(), self.get_nodes_number(), 1, 1));
+        if self.get_edges_number() == 0 {
+            return Ok((
+                (0..self.get_nodes_number()).collect(),
+                self.get_nodes_number(),
+                1,
+                1,
+            ));
         }
-        if self.get_nodes_number() == 0{
+        if self.get_nodes_number() == 0 {
             return Ok((Vec::new(), 0, 0, 0));
         }
         let nodes_number = self.get_nodes_number() as usize;
@@ -527,7 +538,8 @@ impl Graph {
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
-                    if self.has_singletons() && self.is_singleton_by_node_id(src as NodeT).unwrap() {
+                    if self.has_singletons() && self.is_singleton_by_node_id(src as NodeT).unwrap()
+                    {
                         // We set singletons as self-loops for now.
                         unsafe {
                             (*ptr)[src] = (*component_sizes).len() as NodeT;
@@ -622,11 +634,8 @@ impl Graph {
         let components_number = component_sizes.len();
 
         // TODO: re-explore the possibility of computing these on the fly.
-        let (min_component_size, max_component_size) = component_sizes
-            .into_iter()
-            .minmax()
-            .into_option()
-            .unwrap();
+        let (min_component_size, max_component_size) =
+            component_sizes.into_iter().minmax().into_option().unwrap();
 
         Ok((
             components,

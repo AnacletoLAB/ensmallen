@@ -49,7 +49,8 @@ impl Graph {
                             // If w is not on stack, then (v, w) is an edge pointing to an SCC already found and must be ignored
                             // Note: The next line may look odd - but is correct.
                             // It says w.index not w.lowlink; that is deliberate and from the original paper
-                            low_indices[src as usize] = min(low_indices[src as usize], indices[dst as usize]);
+                            low_indices[src as usize] =
+                                min(low_indices[src as usize], indices[dst as usize]);
                         }
                     }
 
@@ -74,7 +75,8 @@ impl Graph {
 
                     if !to_visit.is_empty() {
                         let (root, _) = to_visit.last().unwrap();
-                        low_indices[*root as usize] = min(low_indices[*root as usize], low_indices[src as usize]);
+                        low_indices[*root as usize] =
+                            min(low_indices[*root as usize], low_indices[src as usize]);
                     }
                 }
             }

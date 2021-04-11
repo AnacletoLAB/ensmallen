@@ -18,6 +18,8 @@ pub struct EdgeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
     pub(crate) skip_edge_types_if_unavailable: bool,
+    pub(crate) might_have_singletons_with_selfloops: bool,
+    pub(crate) might_have_trap_nodes: bool,
 }
 
 impl EdgeFileReader {
@@ -26,11 +28,10 @@ impl EdgeFileReader {
     /// # Arguments
     ///
     /// * reader: CSVFilereader - Path where to store/load the file.
-    /// * graph_name: String - Name of the graph to be loaded.
     ///
-    pub fn new<S: Into<String>>(path: S, graph_name: String) -> Result<EdgeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
         Ok(EdgeFileReader {
-            reader: CSVFileReader::new(path, "edge list".to_owned(), graph_name)?,
+            reader: CSVFileReader::new(path, "edge list".to_owned())?,
             sources_column_number: 0,
             destinations_column_number: 1,
             edge_types_column_number: None,
@@ -42,6 +43,8 @@ impl EdgeFileReader {
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
             skip_edge_types_if_unavailable: false,
+            might_have_singletons_with_selfloops: true,
+            might_have_trap_nodes: true,
         })
     }
 
@@ -272,11 +275,11 @@ impl EdgeFileReader {
         Ok(self)
     }
 
-    /// Set wether to automatically skip weights if they are not avaitable instead of raising an exception.
+    /// Set whether to automatically skip weights if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
     ///
-    /// * skip_weights_if_unavailable: Option<bool> - Wether to skip weights if they are not available.
+    /// * skip_weights_if_unavailable: Option<bool> - whether to skip weights if they are not available.
     ///
     pub fn set_skip_weights_if_unavailable(
         mut self,
@@ -288,11 +291,11 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set wether to automatically skip edge types if they are not avaitable instead of raising an exception.
+    /// Set whether to automatically skip edge types if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
     ///
-    /// * skip_edge_types_if_unavailable: Option<bool> - Wether to skip edge types if they are not available.
+    /// * skip_edge_types_if_unavailable: Option<bool> - whether to skip edge types if they are not available.
     ///
     pub fn set_skip_edge_types_if_unavailable(
         mut self,
@@ -312,6 +315,17 @@ impl EdgeFileReader {
     ///
     pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader {
         self.default_weight = default_weight;
+        self
+    }
+
+    /// Set the name of the graph to be loaded.
+    ///
+    /// # Arguments
+    ///
+    /// * graph_name: String - The name of the graph to be loaded.
+    ///
+    pub(crate) fn set_graph_name(mut self, graph_name: String) -> EdgeFileReader {
+        self.reader.graph_name = graph_name;
         self
     }
 
@@ -338,6 +352,7 @@ impl EdgeFileReader {
     pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_self_loops {
             self.skip_self_loops = ssl;
+            self.might_have_singletons_with_selfloops = !ssl;
         }
         self
     }
@@ -387,9 +402,38 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set the numeric_id.
+    /// Set whether you pinky promise that this graph has singletons with self-loops or not.
     ///
     /// # Arguments
+    ///
+    /// * might_have_singletons_with_selfloops: Option<bool> - Whether this graph has singletons with self-loops.
+    ///
+    pub fn set_might_have_singletons_with_selfloops(
+        mut self,
+        might_have_singletons_with_selfloops: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(skip) = might_have_singletons_with_selfloops {
+            self.might_have_singletons_with_selfloops = !self.skip_self_loops && skip;
+        }
+        self
+    }
+
+    /// Set whether you pinky promise that this graph has trap nodes or not.
+    ///
+    /// # Arguments
+    ///
+    /// * might_have_trap_nodes: Option<bool> - Whether this graph has trap nodes with self-loops.
+    ///
+    pub fn set_might_have_trap_nodes(
+        mut self,
+        might_have_trap_nodes: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(skip) = might_have_trap_nodes {
+            self.might_have_trap_nodes = skip;
+        }
+        self
+    }
+
     ///
     /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
     ///

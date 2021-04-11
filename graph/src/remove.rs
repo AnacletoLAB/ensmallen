@@ -30,12 +30,12 @@ impl Graph {
     /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
     /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
     /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
-    /// * `weights`: bool - Wether to remove the weights.
-    /// * `node_types`: bool - Wether to remove the node types.
-    /// * `edge_types`: bool - Wether to remove the edge types.
-    /// * `singletons`: bool - Wether to remove the singleton nodes.
-    /// * `selfloops`: bool - Wether to remove edges with self-loops.
-    /// * `verbose`: bool - Wether to show a loading bar while building the graph.
+    /// * `weights`: bool - whether to remove the weights.
+    /// * `node_types`: bool - whether to remove the node types.
+    /// * `edge_types`: bool - whether to remove the edge types.
+    /// * `singletons`: bool - whether to remove the singleton nodes.
+    /// * `selfloops`: bool - whether to remove edges with self-loops.
+    /// * `verbose`: bool - whether to show a loading bar while building the graph.
     ///
     pub fn remove(
         &self,
@@ -243,6 +243,10 @@ impl Graph {
             self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
             self.has_weights() && !weights,
+            // TODO: This may be made more precise!
+            true,
+            self.has_selfloops() && !selfloops,
+            true,
             self.get_name(),
         )
     }
@@ -256,7 +260,7 @@ impl Graph {
     /// * `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
-    /// * `verbose`: bool - Wether to show the loading bar.
+    /// * `verbose`: bool - whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
@@ -305,7 +309,8 @@ impl Graph {
         }
 
         // Create the components counter
-        let component_counts: Vec<(NodeT, NodeT)> = Counter::init(components_vector.clone()).most_common_ordered();
+        let component_counts: Vec<(NodeT, NodeT)> =
+            Counter::init(components_vector.clone()).most_common_ordered();
 
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
@@ -317,11 +322,11 @@ impl Graph {
         }
 
         // Remove components smaller than the given amount
-        if let Some(mcs) = minimum_component_size {
+        if let Some(mcs) = &minimum_component_size {
             component_counts
                 .iter()
                 .for_each(|(component, component_size)| {
-                    if *component_size < mcs {
+                    if *component_size < *mcs {
                         keep_components.remove(*component);
                     }
                 });
@@ -379,6 +384,15 @@ impl Graph {
             self.has_node_types(),
             self.has_edge_types(),
             self.has_weights(),
+            self.has_singletons()
+                && minimum_component_size
+                    .as_ref()
+                    .map_or(true, |mcs| *mcs <= 1),
+            self.has_singleton_nodes_with_self_loops()
+                && minimum_component_size
+                    .as_ref()
+                    .map_or(true, |mcs| *mcs <= 1),
+            self.has_trap_nodes(),
             self.get_name(),
         )
     }
