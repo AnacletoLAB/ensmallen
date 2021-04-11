@@ -1,0 +1,68 @@
+FromVecHarnessParams {
+    directed: true,
+    directed_edge_list: false,
+    ignore_duplicated_nodes: true,
+    ignore_duplicated_edges: false,
+    verbose: false,
+    numeric_edge_types_ids: false,
+    numeric_node_ids: false,
+    numeric_edge_node_ids: true,
+    numeric_node_types_ids: false,
+    has_node_types: true,
+    has_edge_types: false,
+    has_weights: false,
+    edges: [
+        Ok(
+            (
+                "\u{1}",
+                "\u{1}",
+                Some(
+                    "\u{0}",
+                ),
+                None,
+            ),
+        ),
+    ],
+    nodes: Some(
+        [
+            Ok(
+                (
+                    "\u{1}",
+                    Some(
+                        [
+                            "\u{1}\u{1}682399656583737476823:3:5",
+                            "0",
+                        ],
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    "\u{f}\u{1}\u{2}\u{1}`",
+                    None,
+                ),
+            ),
+            Ok(
+                (
+                    "\u{1}\u{10}\u{0}>\u{1}\u{1}\u{1}\u{1}\u{1}",
+                    Some(
+                        [
+                            "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}/572790700\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}7\u{0}\u{1}\u{1}\u{1}\u{1}\u{8}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}",
+                            "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}Q\u{7f}q",
+                        ],
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    "i",
+                    Some(
+                        [
+                            "&",
+                        ],
+                    ),
+                ),
+            ),
+        ],
+    ),
+}

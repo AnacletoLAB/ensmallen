@@ -1,0 +1,164 @@
+Graph {
+    edges: EliasFano {
+        universe:   36,
+        number_of_elements:    1,
+        low_bit_count:    5,
+        low_bit_mask:   31,
+        low_bits: [
+               0,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    1,
+            num_ones:    1,
+            num_zeros:    0,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [],
+            last_block: LastBlock {
+                bits:    1,
+                num_ones:    1,
+                num_zeros:    0,
+            },
+        },
+        last_high_value:    0,
+        last_value:    0,
+        last_index:    1,
+        current_number_of_elements:    1,
+    },
+    node_bits:    3,
+    node_bit_mask:    7,
+    weights: None,
+    node_types: Some(
+        NodeTypeVocabulary {
+            ids: [
+                Some(
+                    [
+                           0,
+                           1,
+                    ],
+                ),
+                None,
+                Some(
+                    [
+                           2,
+                           3,
+                    ],
+                ),
+                Some(
+                    [
+                           4,
+                    ],
+                ),
+            ],
+            vocabulary: Vocabulary {
+                map: {
+                    "\u{1}\u{1}682399656583737476823:3:5":    0,
+                    "&":    4,
+                    "0":    1,
+                    "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}/572790700\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}7\u{0}\u{1}\u{1}\u{1}\u{1}\u{8}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}":    2,
+                    "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}Q\u{7f}q":    3,
+                },
+                reverse_map: [
+                    "\u{1}\u{1}682399656583737476823:3:5",
+                    "0",
+                    "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}/572790700\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}7\u{0}\u{1}\u{1}\u{1}\u{1}\u{8}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}",
+                    "\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}\u{1}Q\u{7f}q",
+                    "&",
+                ],
+                numeric_ids: false,
+            },
+            counts: [
+                   1,
+                   1,
+                   1,
+                   1,
+                   1,
+            ],
+            unknown_count:    1,
+            multilabel: true,
+        },
+    ),
+    edge_types: None,
+    nodes: Vocabulary {
+        map: {
+            "i":    3,
+            "\u{1}\u{10}\u{0}>\u{1}\u{1}\u{1}\u{1}\u{1}":    2,
+            "\u{1}":    0,
+            "\u{f}\u{1}\u{2}\u{1}`":    1,
+        },
+        reverse_map: [
+            "\u{1}",
+            "\u{f}\u{1}\u{2}\u{1}`",
+            "\u{1}\u{10}\u{0}>\u{1}\u{1}\u{1}\u{1}\u{1}",
+            "i",
+        ],
+        numeric_ids: false,
+    },
+    directed: true,
+    unique_self_loop_number:    1,
+    self_loop_number:    1,
+    not_singleton_nodes_number:    0,
+    singleton_nodes_with_self_loops_number:    1,
+    unique_edges_number:    1,
+    name: "Fuzz Graph",
+    unique_sources: Some(
+        EliasFano {
+            universe:    4,
+            number_of_elements:    4,
+            low_bit_count:    0,
+            low_bit_mask:    0,
+            low_bits: [
+                   0,
+                   0,
+                   0,
+            ],
+            high_bits: RsDict {
+                len:    1,
+                num_ones:    1,
+                num_zeros:    0,
+                sb_classes: [],
+                sb_indices: VarintBuffer {
+                    buf: [],
+                    len:    0,
+                },
+                large_blocks: [
+                    LargeBlock {
+                        pointer:    0,
+                        rank:    0,
+                    },
+                ],
+                select_one_inds: [
+                       0,
+                ],
+                select_zero_inds: [],
+                last_block: LastBlock {
+                    bits:    1,
+                    num_ones:    1,
+                    num_zeros:    0,
+                },
+            },
+            last_high_value:    0,
+            last_value:    0,
+            last_index:    1,
+            current_number_of_elements:    1,
+        },
+    ),
+    destinations: None,
+    sources: None,
+    outbounds: None,
+    cached_destinations: None,
+}
