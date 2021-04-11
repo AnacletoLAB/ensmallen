@@ -629,7 +629,13 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
         assert_eq!(
             graph.connected_components_number(verbose),
             without_selfloops.connected_components_number(verbose),
-            "Removing selfloops changes the number of components ?????"
+            concat!(
+                "We expected the graph to have the same components once we remove the selfloops.\n",
+                "The report of the original graph is {:?}\n",
+                "The report of the filtered graph is {:?}\n",
+            ),
+            graph.textual_report(false),
+            without_selfloops.textual_report(false),
         );
 
         let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);

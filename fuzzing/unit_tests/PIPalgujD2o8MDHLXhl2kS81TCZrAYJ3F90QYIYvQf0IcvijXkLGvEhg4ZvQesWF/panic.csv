@@ -1,6 +1,0 @@
-file,"/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs"
-line,629
-col,9
-message,assertion failed: `(left == right)`
-  left: `(4, 1, 1)`,
- right: `(1, 1, 1)`: Removing selfloops changes the number of components ?????

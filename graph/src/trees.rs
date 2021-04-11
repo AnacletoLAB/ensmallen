@@ -112,7 +112,7 @@ impl Graph {
             return (
                 HashSet::new(),
                 (0..self.get_nodes_number()).collect(),
-                1,
+                self.get_nodes_number(),
                 1,
                 1,
             );
