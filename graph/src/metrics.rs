@@ -192,7 +192,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
     pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string()
             );
@@ -252,7 +252,7 @@ impl Graph {
     /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
     pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err(
                 "The median of the node degrees is not defined on an empty graph".to_string()
             );
@@ -288,7 +288,7 @@ impl Graph {
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
     pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string()
             );
@@ -389,8 +389,11 @@ impl Graph {
     /// println!("The graph density is {}", graph.get_density().unwrap());
     /// ```
     pub fn get_density(&self) -> Result<f64, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err("The density of an empty graph is undefined.".to_string());
+        }
+        if !self.has_edges() {
+            return Ok(0.0);
         }
         let nodes_number = self.get_nodes_number() as EdgeT;
         let total_nodes_number = nodes_number
@@ -427,7 +430,7 @@ impl Graph {
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
 
-        if !self.is_empty() {
+        if !!self.has_nodes() {
             report.insert("density",  self.get_density().unwrap().to_string());
             report.insert("min_degree", self.get_min_node_degree().unwrap().to_string());
             report.insert("max_degree", self.get_max_node_degree().unwrap().to_string());
@@ -694,7 +697,7 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
-        if self.is_empty(){
+        if !self.has_nodes(){
             return Ok(format!(
                 "The graph {} is empty.",
                 self.get_name()

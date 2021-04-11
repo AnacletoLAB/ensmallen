@@ -12,14 +12,27 @@ impl Graph {
     /// Return if the graph has any nodes.
     ///
     /// # Example
-    /// To the retrieve the name of the current graph instance you can use:
+    /// To check if the graph has nodes you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert_eq!(graph.is_empty(), false);
+    /// assert_eq!(graph.has_nodes(), true);
     /// ```
     ///
-    pub fn is_empty(&self) -> bool {
-        self.get_nodes_number() == 0
+    pub fn has_nodes(&self) -> bool {
+        self.get_nodes_number() > 0
+    }
+
+    /// Return if the graph has any edges.
+    ///
+    /// # Example
+    /// To check if the current graph has edges you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph.has_edges(), true);
+    /// ```
+    ///
+    pub fn has_edges(&self) -> bool {
+        self.get_edges_number() > 0
     }
 
     /// Return name of the graph.

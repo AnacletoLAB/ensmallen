@@ -630,7 +630,7 @@ impl Graph {
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err(
                 "It does not make sense to compute a random walk on an empty graph.".to_string(),
             );
@@ -664,7 +664,7 @@ impl Graph {
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Err(
                 "It does not make sense to compute a random walk on an empty graph.".to_string(),
             );

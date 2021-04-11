@@ -105,7 +105,7 @@ impl Graph {
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        if self.is_empty() {
+        if !self.has_nodes() {
             return (HashSet::new(), Vec::new(), 0, 0, 0);
         }
         if self.get_edges_number() == 0 {
@@ -487,7 +487,7 @@ impl Graph {
                 "The connected components algorithm only works for undirected graphs!".to_owned(),
             );
         }
-        if self.is_empty() {
+        if !self.has_nodes() {
             return Ok((Vec::new(), 0, 0, 0));
         }
         if self.get_edges_number() == 0 {

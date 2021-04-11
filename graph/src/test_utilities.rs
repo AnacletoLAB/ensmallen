@@ -343,7 +343,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 0 {
         assert!(
-            graph.is_empty(),
+            !graph.has_nodes(),
             "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
             graph.textual_report(false)
         );
@@ -854,7 +854,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
-    if !graph.is_empty() {
+    if graph.has_nodes() {
         graph
             .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
             .unwrap()
