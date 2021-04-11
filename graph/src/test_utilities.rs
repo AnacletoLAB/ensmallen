@@ -784,7 +784,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
         // Testing holdouts executed on negative edges.
         let (neg_train, neg_test) =
             negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
-            
+
         neg_test.get_trap_nodes_number();
 
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
@@ -854,7 +854,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
-    if ! graph.is_empty() {
+    if !graph.is_empty() {
         graph
             .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
             .unwrap()
@@ -891,10 +891,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         graph
             .get_edge_type_names()
             .map(|etn| etn.into_iter().map(Option::Some).collect()),
-        graph.get_weight_by_edge_id(0).ok(),
-        graph
-            .get_weight_by_edge_id(graph.get_directed_edges_number() - 1)
-            .ok(),
+        graph.get_min_weight().ok(),
+        graph.get_max_weight().ok(),
         verbose,
     );
     Ok(())

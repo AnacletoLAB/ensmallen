@@ -9,7 +9,6 @@ use std::iter::once;
 /// The naming convection we follow is `get_X_by_Y`.
 /// The naming convection for unchecked methods follows `get_unchecked_X_by_Y`.
 impl Graph {
-
     /// Return if the graph has any nodes.
     ///
     /// # Example
@@ -38,7 +37,7 @@ impl Graph {
     }
 
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
-    /// This also includes nodes with only a self-loops, therefore singletons with 
+    /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
     ///
     /// # Example
@@ -213,12 +212,38 @@ impl Graph {
         Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
-    /// Return the weights of the nodes.
+    /// Return the weights of the edges.
     pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
         if !self.has_weights() {
             return Err("The current graph instance does not have weights!".to_string());
         }
         Ok(self.weights.clone().unwrap())
+    }
+
+    /// Return the minimum weight, if graph has weights.
+    pub fn get_min_weight(&self) -> Result<WeightT, String> {
+        self.weights.as_ref().map_or(
+            Err("The current graph instance does not have weights!".to_string()),
+            |ws| {
+                Ok(ws
+                    .par_iter()
+                    .cloned()
+                    .reduce(|| f32::INFINITY, |a, b| a.min(b)))
+            },
+        )
+    }
+
+    /// Return the maximum weight, if graph has weights.
+    pub fn get_max_weight(&self) -> Result<WeightT, String> {
+        self.weights.as_ref().map_or(
+            Err("The current graph instance does not have weights!".to_string()),
+            |ws| {
+                Ok(ws
+                    .par_iter()
+                    .cloned()
+                    .reduce(|| f32::NEG_INFINITY, |a, b| a.max(b)))
+            },
+        )
     }
 
     /// Return the node types names.
