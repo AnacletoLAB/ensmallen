@@ -854,7 +854,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
-    if graph.has_nodes() {
+    if graph.has_edges() {
         graph
             .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
             .unwrap()
