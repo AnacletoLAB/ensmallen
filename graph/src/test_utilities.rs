@@ -854,14 +854,16 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
             assert_eq!(context.len(), window_size * 2);
         }
     }
-    graph
-        .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
-        .unwrap()
-        .collect::<Vec<_>>();
-    graph
-        .link_prediction_ids(0, 256, 10.0, false, 10, &None)
-        .unwrap()
-        .collect::<Vec<_>>();
+    if ! graph.is_empty() {
+        graph
+            .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
+            .unwrap()
+            .collect::<Vec<_>>();
+        graph
+            .link_prediction_ids(0, 256, 10.0, false, 10, &None)
+            .unwrap()
+            .collect::<Vec<_>>();
+    }
 
     Ok(())
 }
