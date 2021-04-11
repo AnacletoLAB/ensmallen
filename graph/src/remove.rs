@@ -335,7 +335,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             &format!(
-                "Building edgelist with only required components {}",
+                "Building edge list with only required components {}",
                 &self.name
             ),
             self.get_directed_edges_number() as usize,
@@ -343,10 +343,10 @@ impl Graph {
         let pb_nodes = get_loading_bar(
             verbose,
             &format!(
-                "Building nodes with only required components {}",
+                "Building node list with only required components {}",
                 &self.name
             ),
-            self.get_directed_edges_number() as usize,
+            self.get_nodes_number() as usize
         );
 
         Graph::from_string_sorted(
