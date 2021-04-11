@@ -430,7 +430,7 @@ impl Graph {
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
 
-        if !self.has_nodes() {
+        if self.has_nodes() {
             report.insert("density",  self.get_density().unwrap().to_string());
             report.insert("min_degree", self.get_min_node_degree().unwrap().to_string());
             report.insert("max_degree", self.get_max_node_degree().unwrap().to_string());
