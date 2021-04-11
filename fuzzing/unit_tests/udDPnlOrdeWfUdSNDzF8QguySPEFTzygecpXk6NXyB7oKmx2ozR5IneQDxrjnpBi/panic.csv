@@ -1,4 +1,0 @@
-file,"/io/ensmallen_graph/graph/src/test_utilities.rs"
-line,859
-col,10
-message,called `Result::unwrap()` on an `Err` value: "The maximum node degree of a graph with no nodes is not defined."
