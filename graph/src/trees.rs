@@ -105,6 +105,19 @@ impl Graph {
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        if self.is_empty() {
+            return (HashSet::new(), Vec::new(), 0, 0, 0);
+        }
+        if self.get_edges_number() == 0 {
+            return (
+                HashSet::new(),
+                (0..self.get_nodes_number()).collect(),
+                1,
+                1,
+                1,
+            );
+        }
+
         let nodes_number = self.get_nodes_number() as usize;
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
         let mut components = vec![NOT_PRESENT; nodes_number];
@@ -474,6 +487,9 @@ impl Graph {
                 "The connected components algorithm only works for undirected graphs!".to_owned(),
             );
         }
+        if self.is_empty() {
+            return Ok((Vec::new(), 0, 0, 0));
+        }
         if self.get_edges_number() == 0 {
             return Ok((
                 (0..self.get_nodes_number()).collect(),
@@ -481,9 +497,6 @@ impl Graph {
                 1,
                 1,
             ));
-        }
-        if self.get_nodes_number() == 0 {
-            return Ok((Vec::new(), 0, 0, 0));
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];

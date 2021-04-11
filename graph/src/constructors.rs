@@ -594,6 +594,9 @@ pub(crate) fn build_edges(
                 edges.len()
             );
         }
+        if ws.is_empty() {
+            weights = None;   
+        }
     }
 
     if let Some(ets) = &edge_type_ids {
@@ -603,6 +606,10 @@ pub(crate) fn build_edges(
                 ets.len(),
                 edges.len()
             );
+        }
+
+        if ets.is_empty() {
+            edge_type_ids = None;
         }
     }
 

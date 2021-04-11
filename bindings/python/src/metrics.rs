@@ -7,8 +7,8 @@ use std::collections::HashMap;
 impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns mean node degree of the graph.
-    pub fn degrees_mean(&self) -> f64 {
-        self.graph.degrees_mean()
+    pub fn get_node_degrees_mean(&self) -> f64 {
+        self.graph.get_node_degrees_mean()
     }
 
     #[text_signature = "($self, verbose)"]
@@ -35,26 +35,26 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self)"]
     /// Returns median node degree of the graph.
-    pub fn degrees_median(&self) -> NodeT {
-        self.graph.degrees_median()
+    pub fn get_node_degrees_median(&self) -> NodeT {
+        self.graph.get_node_degrees_median()
     }
 
     #[text_signature = "($self)"]
     /// Returns max node degree of the graph.
-    pub fn max_degree(&self) -> NodeT {
-        self.graph.max_degree()
+    pub fn get_max_node_degree(&self) -> NodeT {
+        self.graph.get_max_node_degree()
     }
 
     #[text_signature = "($self)"]
     /// Returns min node degree of the graph.
-    pub fn min_degree(&self) -> NodeT {
-        self.graph.min_degree()
+    pub fn get_min_node_degree(&self) -> NodeT {
+        self.graph.get_min_node_degree()
     }
 
     #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
-    pub fn degrees_mode(&self) -> NodeT {
-        self.graph.degrees_mode()
+    pub fn get_node_degrees_mode(&self) -> NodeT {
+        self.graph.get_node_degrees_mode()
     }
 
     #[text_signature = "($self)"]

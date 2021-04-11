@@ -333,11 +333,21 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         biggest
     );
 
-    assert!(
-        smallest != 1 || (graph.has_singletons() || graph.has_singleton_nodes_with_self_loops()),
-        "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
-        graph.textual_report(false)
-    );
+    if smallest == 1 {
+        assert!(
+            graph.has_singletons() || graph.has_singleton_nodes_with_self_loops(),
+            "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
+            graph.textual_report(false)
+        );
+    }
+
+    if smallest == 0 {
+        assert!(
+            graph.is_empty(),
+            "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
+            graph.textual_report(false)
+        );
+    }
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edges(true).next() {
         let src_string = graph.get_node_name_by_node_id(edge.0).unwrap();
@@ -774,7 +784,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
         // Testing holdouts executed on negative edges.
         let (neg_train, neg_test) =
             negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
-
+            
         neg_test.get_trap_nodes_number();
 
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;

@@ -189,10 +189,17 @@ impl Graph {
     /// Returns mean node degree of the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The mean node degree of the graph is  {}", graph.degrees_mean());
+    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
-    pub fn degrees_mean(&self) -> f64 {
-        self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64
+    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
+        if self.is_empty() {
+            return Err(
+                "The mean of the node degrees is not defined on an empty graph".to_string()
+            );
+        }
+        Ok(
+            self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64
+        )
     }
 
     /// Returns number of undirected edges of the graph.
@@ -242,49 +249,63 @@ impl Graph {
     /// Returns median node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The median node degree of the graph is  {}", graph.degrees_median());
+    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
-    pub fn degrees_median(&self) -> NodeT {
+    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
+        if self.is_empty() {
+            return Err(
+                "The median of the node degrees is not defined on an empty graph".to_string()
+            );
+        }
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
-        degrees[(self.get_nodes_number() / 2) as usize]
+        Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
 
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The maximum node degree of the graph is  {}", graph.max_degree());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
-    pub fn max_degree(&self) -> NodeT {
-        *self.get_node_degrees().iter().max().unwrap()
+    pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
+        self.get_node_degrees().into_iter().max()
+            .ok_or("The maximum node degree of a graph with no nodes is not defined.".to_string())
     }
 
     /// Returns minimum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The minimum node degree of the graph is  {}", graph.min_degree());
+    /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
-    pub fn min_degree(&self) -> NodeT {
-        *self.get_node_degrees().iter().min().unwrap()
+    pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
+        self.get_node_degrees().into_iter().min()
+        .ok_or("The minimum node degree of a graph with no nodes is not defined.".to_string())
     }
 
     /// Returns mode node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The mode node degree of the graph is  {}", graph.degrees_mode());
+    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
-    pub fn degrees_mode(&self) -> NodeT {
+    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
+        if self.is_empty() {
+            return Err(
+                "The mode of the node degrees is not defined on an empty graph".to_string()
+            );
+        }
+
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
         for value in self.get_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
-
-        occurrences
-            .into_iter()
-            .max_by_key(|&(_, count)| count)
-            .map(|(val, _)| val)
-            .unwrap()
+        Ok(
+            occurrences
+                .into_iter()
+                .max_by_key(|&(_, count)| count)
+                .map(|(val, _)| val)
+                .unwrap()
+        )
     }
 
     /// Returns number of self-loops, including also those in eventual multi-edges.
@@ -365,11 +386,11 @@ impl Graph {
     /// Returns density of the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The graph density is {}", graph.density());
+    /// println!("The graph density is {}", graph.get_density().unwrap());
     /// ```
-    pub fn density(&self) -> f64 {
+    pub fn get_density(&self) -> Result<f64, String> {
         if self.is_empty() {
-            return f64::NAN;
+            return Err("The density of an empty graph is undefined.".to_string());
         }
         let nodes_number = self.get_nodes_number() as EdgeT;
         let total_nodes_number = nodes_number
@@ -377,7 +398,9 @@ impl Graph {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        self.unique_edges_number as f64 / total_nodes_number as f64
+        Ok(
+            self.unique_edges_number as f64 / total_nodes_number as f64
+        )
     }
 
     /// Returns report relative to the graph metrics
@@ -403,6 +426,14 @@ impl Graph {
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
+
+        if !self.is_empty() {
+            report.insert("density",  self.get_density().unwrap().to_string());
+            report.insert("min_degree", self.get_min_node_degree().unwrap().to_string());
+            report.insert("max_degree", self.get_max_node_degree().unwrap().to_string());
+            report.insert("degree_mean", self.get_node_degrees_mean().unwrap().to_string());
+        }
+
         report.insert("name", self.name.clone());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_directed_edges_number().to_string());
@@ -410,7 +441,6 @@ impl Graph {
             "undirected_edges_number",
             self.get_undirected_edges_number().to_string(),
         );
-        report.insert("density", self.density().to_string());
         report.insert("directed", self.is_directed().to_string());
         report.insert("has_weights", self.has_weights().to_string());
         report.insert("has_edge_types", self.has_edge_types().to_string());
@@ -418,9 +448,6 @@ impl Graph {
         report.insert("self_loops_number", self.get_self_loop_number().to_string());
         report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
-        report.insert("degree_mean", self.degrees_mean().to_string());
-        report.insert("min_degree", self.min_degree().to_string());
-        report.insert("max_degree", self.max_degree().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
@@ -667,6 +694,13 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
+        if self.is_empty(){
+            return Ok(format!(
+                "The graph {} is empty.",
+                self.get_name()
+            ));
+        }
+
         let (connected_components_number, minimum_connected_component, maximum_connected_component) =
             self.connected_components_number(verbose);
 
@@ -795,7 +829,7 @@ impl Graph {
                 ),
                 _ => "".to_owned()
             },
-            quantized_density = match self.density() {
+            quantized_density = match self.get_density().unwrap() {
                 d if d < 0.0001 => "extremely sparse".to_owned(),
                 d if d < 0.001 => "quite sparse".to_owned(),
                 d if d < 0.01 => "sparse".to_owned(),
@@ -805,7 +839,7 @@ impl Graph {
                 d if d <= 1.0 => "extremely dense".to_owned(),
                 d => unreachable!(format!("Unreacheable density case {}", d))
             },
-            density=self.density(),
+            density=self.get_density().unwrap(),
             connected_components=match connected_components_number> 1{
                 true=>format!(
                     "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}",
@@ -821,9 +855,9 @@ impl Graph {
                 ),
                 false=>"is connected, as it has a single component".to_owned()
             },
-            median_node_degree=self.degrees_median(),
-            mean_node_degree=self.degrees_mean(),
-            mode_node_degree=self.degrees_mode(),
+            median_node_degree=self.get_node_degrees_median().unwrap(),
+            mean_node_degree=self.get_node_degrees_mean().unwrap(),
+            mode_node_degree=self.get_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
             central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ))
