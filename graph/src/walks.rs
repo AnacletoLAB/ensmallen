@@ -630,6 +630,11 @@ impl Graph {
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        if self.is_empty() {
+            return Err(
+                "It does not make sense to compute a random walk on an empty graph.".to_string(),
+            );
+        }
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
@@ -659,6 +664,11 @@ impl Graph {
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        if self.is_empty() {
+            return Err(
+                "It does not make sense to compute a random walk on an empty graph.".to_string(),
+            );
+        }
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
