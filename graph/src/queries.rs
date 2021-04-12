@@ -518,7 +518,7 @@ impl Graph {
             .collect())
     }
 
-    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    /// Return edge ID for given tuple of nodes and edge type.
     ///
     /// This method will return an error if the graph does not contain the
     /// requested edge with edge type.
@@ -534,75 +534,92 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
-        let edge_id = self.edge_types.as_ref().map_or_else(
-            || self.get_edge_id_by_node_ids(src, dst).ok(),
-            |ets| {
-                self.get_edge_ids_by_node_ids(src, dst)
-                    .and_then(|mut edge_ids| {
-                        edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
-                    })
-            },
-        );
-        // TODO: change using a map_err!
-        match edge_id {
-            Some(e) => Ok(e),
-            None => Err(format!(
-                concat!(
+        self.edge_types
+            .as_ref()
+            .map_or_else(
+                || self.get_edge_id_by_node_ids(src, dst).ok(),
+                |ets| {
+                    self.iter_edge_ids_by_node_ids(src, dst)
+                        .and_then(|mut edge_ids| {
+                            edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+                        })
+                },
+            )
+            .ok_or_else(|| {
+                format!(
+                    concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node ID {}, destination node ID {} and edge ID {:?}."
                 ),
-                src, dst, edge_type
-            )),
-        }
+                    src, dst, edge_type
+                )
+            })
     }
 
-    // TODO: add docstring and example!
+    /// Return edge ID for given tuple of node names.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// # Arguments
+    /// `src_name`: &str - Source node name of the edge.
+    /// `dst_name`: &str - Destination node name of the edge.
+    ///
     pub fn get_edge_id_by_node_names(
         &self,
         src_name: &str,
         dst_name: &str,
     ) -> Result<EdgeT, String> {
-        // TODO REFACTOR CODE to be cleaner!
-        let edge_id =
-            if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-                self.get_edge_id_by_node_ids(*src, *dst).ok()
-            } else {
-                None
-            };
-        match edge_id {
-            Some(e) => Ok(e),
-            None => Err(format!(
+        match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
+            (Some(src), Some(dst)) => self.get_edge_id_by_node_ids(*src, *dst).ok(),
+            _ => None,
+        }
+        .ok_or_else(|| {
+            format!(
                 concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node name {} and destination node name {}."
                 ),
                 src_name, dst_name
-            )),
-        }
+            )
+        })
     }
 
-    // TODO: add docstring and example!
+    /// Return edge ID for given tuple of node names and edge type name.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// # Arguments
+    /// `src_name`: &str - Source node name of the edge.
+    /// `dst_name`: &str - Destination node name of the edge.
+    /// `edge_type_name`: Option<&String> - Edge type name.
+    ///
     pub fn get_edge_id_with_type_by_node_names(
         &self,
         src_name: &str,
         dst_name: &str,
         edge_type_name: Option<&String>,
     ) -> Result<EdgeT, String> {
-        if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id_with_type_by_node_ids(
-                *src,
-                *dst,
-                self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
-            )
-        } else {
-            Err(format!(
+        match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
+            (Some(src), Some(dst)) => self
+                .get_edge_id_with_type_by_node_ids(
+                    *src,
+                    *dst,
+                    self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
+                )
+                .ok(),
+            _ => None,
+        }
+        .ok_or_else(|| {
+            format!(
                 concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node name {}, destination node name {} and edge name {:?}."
                 ),
                 src_name, dst_name, edge_type_name
-            ))
-        }
+            )
+        })
     }
 
     /// Return translated edge types from string to internal edge ID.
@@ -724,21 +741,6 @@ impl Graph {
                 )
             }
         }
-    }
-
-    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
-    ///
-    /// # Arguments
-    ///
-    /// * `src` - Source node of the edge.
-    ///
-    pub fn get_edge_ids_by_node_ids(
-        &self,
-        src: NodeT,
-        dst: NodeT,
-    ) -> Option<impl Iterator<Item = EdgeT>> {
-        self.get_minmax_edge_ids_by_node_ids(src, dst)
-            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
     }
 
     /// Return node type name of given node type.

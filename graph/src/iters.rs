@@ -447,6 +447,21 @@ impl Graph {
         }))
     }
 
+    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    ///
+    /// * `src` - Source node of the edge.
+    ///
+    pub(crate) fn iter_edge_ids_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<impl Iterator<Item = EdgeT>> {
+        self.get_minmax_edge_ids_by_node_ids(src, dst)
+            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
+    }
+
     /// Return iterator on the unique sources of the graph.
     pub fn iter_unique_sources(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         if let Some(x) = &self.unique_sources {
