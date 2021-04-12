@@ -1,0 +1,80 @@
+digraph deps {
+	rankdir="LR"
+	node [shape=box];
+
+	extract_uniform_node
+	get_self_loop_number
+	get_node_ids_from_edge_id
+	update_node_transition
+	get_unique_source
+	extract_edge
+	decode_edge
+	get_destinations_slice
+	has_edges
+	encode_edge
+	get_directed_edges_number
+	has_selfloops
+	get_minmax_edge_ids_by_source_node_id
+	complete_walks_iter
+	uniform_walk
+	has_weights
+	get_node_edges_and_destinations
+	get_edge_transition
+	cooccurence_matrix
+	get_unique_source_nodes_number
+	get_edges_number
+	get_weighted_transitions
+	walk_iter
+	get_destination_node_id_by_edge_id
+	get_unchecked_edge_id_from_tuple
+	single_walk
+	get_undirected_edges_number
+	get_node_transition
+	extract_node
+	get_nodes_number
+
+	"extract_uniform_node" -> "get_destination_node_id_by_edge_id"
+	"extract_uniform_node" -> "get_minmax_edge_ids_by_source_node_id"
+	"get_node_ids_from_edge_id" -> "decode_edge"
+	"extract_edge" -> "get_destination_node_id_by_edge_id"
+	"extract_edge" -> "get_edge_transition"
+	"extract_edge" -> "has_selfloops"
+	"decode_edge" -> "decode_edge"
+	"has_edges" -> "get_edges_number"
+	"encode_edge" -> "encode_edge"
+	"get_minmax_edge_ids_by_source_node_id" -> "get_unchecked_edge_id_from_tuple"
+	"complete_walks_iter" -> "get_unique_source"
+	"complete_walks_iter" -> "has_edges"
+	"complete_walks_iter" -> "get_unique_source_nodes_number"
+	"complete_walks_iter" -> "walk_iter"
+	"uniform_walk" -> "extract_uniform_node"
+	"get_node_edges_and_destinations" -> "get_destination_node_id_by_edge_id"
+	"get_node_edges_and_destinations" -> "decode_edge"
+	"get_node_edges_and_destinations" -> "encode_edge"
+	"get_node_edges_and_destinations" -> "get_minmax_edge_ids_by_source_node_id"
+	"get_edge_transition" -> "get_weighted_transitions"
+	"get_edge_transition" -> "update_node_transition"
+	"cooccurence_matrix" -> "complete_walks_iter"
+	"cooccurence_matrix" -> "cooccurence_matrix"
+	"cooccurence_matrix" -> "has_edges"
+	"cooccurence_matrix" -> "get_unique_source_nodes_number"
+	"get_unique_source_nodes_number" -> "get_nodes_number"
+	"get_edges_number" -> "get_undirected_edges_number"
+	"get_edges_number" -> "get_directed_edges_number"
+	"walk_iter" -> "uniform_walk"
+	"walk_iter" -> "single_walk"
+	"walk_iter" -> "has_weights"
+	"get_destination_node_id_by_edge_id" -> "get_node_ids_from_edge_id"
+	"get_destination_node_id_by_edge_id" -> "get_directed_edges_number"
+	"get_unchecked_edge_id_from_tuple" -> "encode_edge"
+	"single_walk" -> "get_destinations_slice"
+	"single_walk" -> "extract_edge"
+	"single_walk" -> "get_node_edges_and_destinations"
+	"single_walk" -> "extract_node"
+	"get_undirected_edges_number" -> "get_self_loop_number"
+	"get_undirected_edges_number" -> "get_directed_edges_number"
+	"get_node_transition" -> "get_weighted_transitions"
+	"get_node_transition" -> "update_node_transition"
+	"extract_node" -> "get_destination_node_id_by_edge_id"
+	"extract_node" -> "get_node_transition"
+}
