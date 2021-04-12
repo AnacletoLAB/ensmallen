@@ -595,7 +595,7 @@ pub(crate) fn build_edges(
             );
         }
         if ws.is_empty() {
-            weights = None;   
+            weights = None;
         }
     }
 
@@ -623,11 +623,22 @@ pub(crate) fn build_edges(
     let singleton_nodes_with_self_loops_number =
         singleton_nodes_with_self_loops.map_or(0, |bitmap| bitmap.len() as NodeT);
 
+    // While on internal methods nodes_number is always exact, the user may
+    // provide a wrong value for nodes_number when loading a sorted csv.
+    // If this happens, it might cause a slow down in the walk and other
+    // currently unforseen consequences.
+    if nodes_number == not_singleton_node_number + singleton_nodes_with_self_loops_number {
+        unique_sources = None;
+    }
+
     // When we have computed the nodes with edges set but we have left None
     // the unique sources elias fano, this is done to avoid using extra memory
     // for no reason. We need to create the elias fano object starting from the
     // nodes with edges now to normalize the returned values.
-    if might_have_singletons && unique_sources.is_none() {
+    if might_have_singletons
+        && unique_sources.is_none()
+        && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number
+    {
         unique_sources = Some(EliasFano::from_iter(
             nodes_with_edges
                 .unwrap()
@@ -639,22 +650,15 @@ pub(crate) fn build_edges(
         )?);
     }
 
-    if !directed && unique_sources
-        .as_ref()
-        .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)
+    if !directed
+        && unique_sources
+            .as_ref()
+            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)
     {
         panic!(
             "There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'",
             not_singleton_node_number, unique_sources.unwrap().len()
         );
-    }
-
-    // While on internal methods nodes_number is always exact, the user may 
-    // provide a wrong value for nodes_number when loading a sorted csv.
-    // If this happens, it might cause a slow down in the walk and other 
-    // currently unforseen consequences.
-    if nodes_number == not_singleton_node_number {
-        unique_sources = None;
     }
 
     Ok((
