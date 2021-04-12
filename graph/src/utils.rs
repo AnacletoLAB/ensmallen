@@ -1,7 +1,7 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 
-pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
+pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
         pb.set_draw_delta(total_iterations as u64 / 100);

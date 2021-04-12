@@ -5,15 +5,12 @@ use graph::{Graph, EdgeFileReader};
 #[test]
 /// This is a regression test that has been automatically generated
 /// by the fuzzer harness.
-///
-/// THIS IS A NON DETERMINISTIC TEST!!!
-///
 /// The test originally caused a panic in the file test_utilities.rs,
 /// specifically (at the time) line 644 and column 9.
-/// The provided message was: 'assertion failed: `(left == right)` left: `(2, 2, 4)`, right: `(2, 2, 3)`: We expected the graph to have the same components once we remove the selfloops.'
+/// The provided message was: 'assertion failed: `(left == right)`  left: `(2, 2, 4)`, right: `(2, 2, 5)`: We expected the graph to have the same components once we remove the selfloops.'
 ///
-fn test_regression_28() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/28.edges")?
+fn test_regression_30() -> Result<(), String> {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/30.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -37,14 +34,6 @@ fn test_regression_28() -> Result<(), String> {
         false, // Directed edge list
         "Fuzz Graph" // Name of the graph
     )?;
-
-    graph.enable(true, true, true, None)?;
-    let iterations = 1_000;
-    let pb = graph::utils::get_loading_bar(true, "Running non-deterministic component test", iterations);
-
-    for _ in 0..iterations {
-        pb.inc(1);
-        let _ = graph::test_utilities::test_remove_components(&mut graph, false);
-    }
+    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())
 }

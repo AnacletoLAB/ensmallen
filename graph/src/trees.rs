@@ -627,13 +627,6 @@ impl Graph {
                             // Otherwise, Loop until the parallel threads are finished.
                         }
                     });
-                unsafe {
-                    let ccs = current_component_size.load(Ordering::Relaxed);
-                    **max_component_size = (**max_component_size).max(ccs);
-                    if ccs > 1 {
-                        **min_component_size = (**min_component_size).min(ccs);
-                    }
-                }
                 completed.store(true, Ordering::Relaxed);
             });
 
@@ -661,9 +654,10 @@ impl Graph {
                         }
                     };
 
+                    let src_component = components[src as usize].load(Ordering::Relaxed);
                     self.iter_node_neighbours_ids(src).for_each(|dst| {
                         if components[dst as usize].swap(
-                            components[src as usize].load(Ordering::Relaxed),
+                            src_component,
                             Ordering::SeqCst,
                         ) == NOT_PRESENT
                         {
@@ -679,6 +673,12 @@ impl Graph {
                 });
             });
         });
+
+        let ccs = current_component_size.load(Ordering::SeqCst);
+        max_component_size = max_component_size.max(ccs);
+        if ccs > 1 {
+            min_component_size = min_component_size.min(ccs);
+        }
 
         Ok((
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },
