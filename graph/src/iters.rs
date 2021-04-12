@@ -34,19 +34,31 @@ impl Graph {
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
-    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
-        // TODO this could be replaced with the new elias-fano iters
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match &self.destinations{
+            Some(dsts) => {
+                let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
+                Box::new(dsts[min_edge_id as usize..max_edge_id as usize].iter().cloned())
+            },
+            None => Box::new(self.edges
+                .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
+                .map(move |edge| self.decode_edge(edge).1))
+        }
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
+    ///
     pub(crate) fn iter_node_neighbours(&self, src: NodeT) -> impl Iterator<Item = String> + '_ {
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| {
-                self.get_unchecked_node_name_by_node_id(
-                    self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
-                )
+        self.iter_node_neighbours_ids(src)
+            .map(move |dst| {
+                self.get_unchecked_node_name_by_node_id(dst)
             })
     }
 
@@ -451,7 +463,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
+    /// * `src` - Source node id of the edge.
+    /// * `dst` - Destination node id of the edge.
     ///
     pub(crate) fn iter_edge_ids_by_node_ids(
         &self,

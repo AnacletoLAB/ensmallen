@@ -49,10 +49,7 @@ impl Graph {
         {
             true => None,
             false => Some(
-                self.edges
-                    .iter_in_range(self.encode_edge(node, 0)..self.encode_edge(node + 1, 0))
-                    .map(|edge| self.decode_edge(edge).1)
-                    .collect(),
+                self.iter_node_neighbours_ids(node).collect(),
             ),
         };
         (min_edge_id, max_edge_id, destinations, None)
