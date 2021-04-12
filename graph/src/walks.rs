@@ -516,8 +516,7 @@ impl Graph {
         {
             Some(dsts) => dsts[sampled_offset],
             None => self
-                .get_destination_node_id_by_edge_id(min_edge + sampled_offset as EdgeT)
-                .unwrap(),
+                .get_unchecked_destination_node_id_by_edge_id(min_edge + sampled_offset as EdgeT),
         }
     }
 
@@ -558,7 +557,7 @@ impl Graph {
             .and_then(|cds| cds.get(&node))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
+            None => self.get_unchecked_destination_node_id_by_edge_id(edge_id),
         };
         (destination, edge_id)
     }
@@ -614,7 +613,7 @@ impl Graph {
             .and_then(|cds| cds.get(&dst))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
+            None => self.get_unchecked_destination_node_id_by_edge_id(edge_id),
         };
         (destination, edge_id)
     }

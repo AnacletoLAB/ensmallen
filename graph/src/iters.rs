@@ -16,9 +16,9 @@ impl Graph {
     pub(crate) fn iter_unchecked_edge_ids_by_source_node_id(
         &self,
         src: NodeT,
-    ) -> impl Iterator<Item = EdgeT> + '_ {
+    ) -> std::ops::Range<usize> {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
-        min_edge_id..max_edge_id
+        min_edge_id as usize..max_edge_id as usize
     }
 
     /// Return iterator on the node degrees of the graph.
@@ -34,19 +34,30 @@ impl Graph {
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
-    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
-        // TODO this could be replaced with the new elias-fano iters
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match &self.destinations{
+            Some(dsts) => {
+                Box::new(dsts[self.iter_unchecked_edge_ids_by_source_node_id(src)].iter().cloned())
+            },
+            None => Box::new(self.edges
+                .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
+                .map(move |edge| self.decode_edge(edge).1))
+        }
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
+    ///
     pub(crate) fn iter_node_neighbours(&self, src: NodeT) -> impl Iterator<Item = String> + '_ {
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| {
-                self.get_unchecked_node_name_by_node_id(
-                    self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
-                )
+        self.iter_node_neighbours_ids(src)
+            .map(move |dst| {
+                self.get_unchecked_node_name_by_node_id(dst)
             })
     }
 
@@ -447,11 +458,27 @@ impl Graph {
         }))
     }
 
+    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    ///
+    /// * `src` - Source node id of the edge.
+    /// * `dst` - Destination node id of the edge.
+    ///
+    pub(crate) fn iter_edge_ids_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<impl Iterator<Item = EdgeT>> {
+        self.get_minmax_edge_ids_by_node_ids(src, dst)
+            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
+    }
+
     /// Return iterator on the unique sources of the graph.
     pub fn iter_unique_sources(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         if let Some(x) = &self.unique_sources {
             return Box::new(x.iter().map(|source| source as NodeT));
         }
-        Box::new((0..self.get_nodes_number()).map(|source| source))
+        Box::new(0..self.get_nodes_number())
     }
 }

@@ -904,7 +904,7 @@ impl Graph {
                 (min_edge_id..max_edge_id)
                     .filter(|edge_id| {
                         unique_nodes
-                            .contains(self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                            .contains(self.get_unchecked_destination_node_id_by_edge_id(*edge_id))
                     })
                     .collect::<Vec<EdgeT>>()
             }));

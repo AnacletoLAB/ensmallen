@@ -20,7 +20,6 @@ pub struct FromVecHarnessParams {
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-
     let data_copy = data.clone();
     let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
@@ -47,9 +46,8 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.has_weights,
         true,
         true,
-        true
+        true,
     )?;
-
 
     let g_copy = g.clone();
     std::panic::set_hook(Box::new(move |info| {

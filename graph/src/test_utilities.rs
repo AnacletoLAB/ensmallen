@@ -313,11 +313,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "The graph seems to have a non-existing node type."
     );
 
-    assert!(
-        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
-        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
-    );
-
     assert_eq!(
         graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
         graph.get_nodes_number(),
@@ -473,6 +468,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     graph.set_name(graph.get_name());
     graph.strongly_connected_components();
+
+    // Checking that the connected components are a dense range.
+    let (_, connected_components, total_connected_components, _, _) =
+        graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+    let max_component_id = connected_components.iter().max();
+    if let Some(mci) = max_component_id {
+        assert_eq!(
+            *mci as usize,
+            total_connected_components as usize - 1,
+            "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
+            connected_components,
+            graph.textual_report(true)
+        );
+    }
 
     Ok(())
 }
@@ -672,19 +681,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             verbose,
         )?;
         let no_selfloops = test.remove(
-            None,
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            false, 
-            false, 
-            false, 
-            false, 
-            true,
+            None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
         assert_eq!(
@@ -696,13 +693,15 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The report of the graph with only one component is {:?}\n",
                 "The report of the graph without selfloops is {:?}\n",
             ),
-            graph.textual_report(false), test.textual_report(false), no_selfloops.textual_report(false)
+            graph.textual_report(false),
+            test.textual_report(false),
+            no_selfloops.textual_report(false)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_by_node_type_id(0) {
             assert!(graph
                 .remove_components(
                     None,
-                    Some(vec![Some(node_type_name.to_string())]),
+                    Some(vec![Some(node_type_name)]),
                     None,
                     None,
                     None,
@@ -724,7 +723,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .remove_components(
                     None,
                     None,
-                    Some(vec![Some(edge_type_name.to_string())]),
+                    Some(vec![Some(edge_type_name)]),
                     None,
                     None,
                     verbose
@@ -861,7 +860,8 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        graph.cooccurence_matrix(&walker, 3, verbose)?;
+        let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
+        assert_eq!(terms_number, iterator.count());
 
         let window_size = 3;
         let batch_size = 256;

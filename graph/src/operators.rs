@@ -17,7 +17,9 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// TODO: update docstring
+/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
+/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
+/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
@@ -121,7 +123,9 @@ fn generic_string_operator(
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// TODO: update docstring
+/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
+/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
+/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,

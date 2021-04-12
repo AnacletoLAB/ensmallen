@@ -83,7 +83,9 @@ pub fn cooccurence_matrix(
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
 
     // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
-    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
+    // We are currently working on this but is terribly non-trivial,
+    // as most parallel implementations end up being slower than sequential
+    // ones or require massive amounts of additional memory.
     let vec = sequences.collect::<Vec<Vec<NodeT>>>();
     vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();

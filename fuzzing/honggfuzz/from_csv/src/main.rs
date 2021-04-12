@@ -1,4 +1,5 @@
-#[macro_use] extern crate honggfuzz;
+#[macro_use]
+extern crate honggfuzz;
 extern crate graph_harness;
 use graph_harness::*;
 

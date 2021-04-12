@@ -73,7 +73,7 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_from_csv_once_loaded(info, data_copy2.clone(), g_copy.clone());
         }));
-    
+
         let _ = graph::test_utilities::default_test_suite(&mut g, false);
     }
 
@@ -81,10 +81,14 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     let _ = remove_file(nodes_path);
 }
 
-fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<Graph, String> {
+fn load_graph(
+    edges_path: &str,
+    nodes_path: &str,
+    data: FromCsvHarnessParams,
+) -> Result<Graph, String> {
     // create the edge file
     std::fs::write(edges_path, data.edge_reader.file).expect("Cannot write the edges file.");
-    
+
     // create the reader
     let edges_reader = EdgeFileReader::new(edges_path.to_string())?
         // Csv reader
@@ -114,7 +118,6 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
     let nodes_reader = match data.nodes_reader {
         None => None,
         Some(nr) => {
-
             // create the node file
             std::fs::write(nodes_path, nr.file).expect("Cannot write the nodes file.");
 
@@ -137,12 +140,18 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
                     .set_numeric_node_type_ids(nr.numeric_node_type_ids)
                     .set_skip_node_types_if_unavailable(nr.skip_node_types_if_unavailable)?
                     .set_nodes_column(nr.nodes_column)?
-                    .set_node_types_column(nr.node_types_column)?
+                    .set_node_types_column(nr.node_types_column)?,
             )
         }
     };
 
-    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, data.directed_edge_list, "Fuzz Graph")?;
+    let g = Graph::from_unsorted_csv(
+        edges_reader,
+        nodes_reader,
+        data.directed,
+        data.directed_edge_list,
+        "Fuzz Graph",
+    )?;
 
     Ok(g)
 }

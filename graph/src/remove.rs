@@ -312,8 +312,6 @@ impl Graph {
         let component_counts: Vec<(NodeT, NodeT)> =
             Counter::init(components_vector.clone()).most_common_ordered();
 
-        println!("Count components {:?}", component_counts);
-
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
             for (i, (component_id, _)) in component_counts.iter().enumerate() {
