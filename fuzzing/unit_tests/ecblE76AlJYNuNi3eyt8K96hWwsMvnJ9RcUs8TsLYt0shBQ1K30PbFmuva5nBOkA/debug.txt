@@ -1,0 +1,139 @@
+Graph {
+    edges: EliasFano {
+        universe:   15,
+        number_of_elements:    4,
+        low_bit_count:    1,
+        low_bit_mask:    1,
+        low_bits: [
+               8,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    8,
+            num_ones:    4,
+            num_zeros:    4,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:  163,
+                num_ones:    4,
+                num_zeros:    4,
+            },
+        },
+        last_high_value:    4,
+        last_value:    9,
+        last_index:    4,
+        current_number_of_elements:    4,
+    },
+    node_bits:    2,
+    node_bit_mask:    3,
+    weights: Some(
+        [
+            0.0000000000000000000000000000070533445,
+            0.0000000000000000000000000000070533445,
+            0.0000027444514,
+            0.0000027444514,
+        ],
+    ),
+    node_types: None,
+    edge_types: Some(
+        EdgeTypeVocabulary {
+            ids: [
+                Some(
+                       0,
+                ),
+                Some(
+                       1,
+                ),
+                Some(
+                       2,
+                ),
+                Some(
+                       2,
+                ),
+            ],
+            vocabulary: Vocabulary {
+                map: {
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    0,
+                    "20QQQQQQQQQQQQQ":    2,
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    1,
+                },
+                reverse_map: [
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                    "20QQQQQQQQQQQQQ",
+                ],
+                numeric_ids: false,
+            },
+            counts: [
+                   1,
+                   1,
+                   2,
+            ],
+            unknown_count:    0,
+        },
+    ),
+    nodes: Vocabulary {
+        map: {
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}QQQQQQQQQ":    1,
+            "QQQQQQQQQQ-7363":    2,
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    0,
+        },
+        reverse_map: [
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}QQQQQQQQQ",
+            "QQQQQQQQQQ-7363",
+        ],
+        numeric_ids: false,
+    },
+    directed: false,
+    unique_self_loop_number:    1,
+    self_loop_number:    2,
+    not_singleton_nodes_number:    2,
+    singleton_nodes_with_self_loops_number:    1,
+    unique_edges_number:    3,
+    name: "Fuzz Graph",
+    not_singleton_nodes: Some(
+        BitVec<bitvec::order::Lsb0, u8> {
+            addr: 0x602001b4db90,
+            head: 000,
+            bits:    3,
+            capacity:   64,
+        } [
+            0b111,
+        ],
+    ),
+    singleton_nodes_with_self_loops: Some(
+        RoaringBitmap<[0]>,
+    ),
+    unique_sources: None,
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The undirected multigraph Fuzz Graph has 3 nodes and 3 weighted edges with 3 different edge types: 20QQQQQQQQQQQQQ, \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f} and \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}, of which 2 are self-loops and 1 are parallel. The graph is quite dense as it has a density of 0.33333 and has 2 connected components, where the component with most nodes has 2 nodes and the component with the least nodes has a single node. The graph median node degree is 1, the mean node degree is 1.33, and the node degree mode is 1. The top 3 most central nodes are \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f} (degree 2), QQQQQQQQQQ-7363 (degree 1) and \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}QQQQQQQQQ (degree 1). The hash of the graph is d43c30bf0ef5bd21.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    outbounds: None,
+    cached_destinations: None,
+}
