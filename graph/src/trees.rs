@@ -214,8 +214,6 @@ impl Graph {
             };
         });
 
-        println!("components_remapping: {:?}", components_remapping);
-
         // Remapping components to a dense remapping
         let mut state = 0;
         for i in 0..components_remapping.len() {
@@ -226,8 +224,6 @@ impl Graph {
                 components_remapping[i] = components_remapping[components_remapping[i] as usize];
             }
         }
-
-        println!("components_remapping after: {:?}", components_remapping);
 
         components.par_iter_mut().for_each(|remapped| {
             *remapped = components_remapping[*remapped as usize];
