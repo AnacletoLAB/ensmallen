@@ -463,7 +463,6 @@ pub(crate) fn build_edges(
             if ignore_duplicated_edges {
                 continue;
             } else {
-                // TODO: this error can likely be made more usefull
                 return Err("A duplicated edge was found while building the graph.".to_owned());
             }
         }
@@ -1012,7 +1011,6 @@ impl Graph {
         let might_have_trap_nodes = directed && might_have_trap_nodes;
 
         info!("Parse unsorted edges.");
-        // TODO: ADD USE OF edge_list_is_correct
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
                 edges_iterator,
