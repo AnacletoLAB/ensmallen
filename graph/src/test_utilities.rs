@@ -474,6 +474,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     graph.set_name(graph.get_name());
     graph.strongly_connected_components();
 
+    // Checking that the connected components are a dense range.
+    let (_, connected_components, total_connected_components, _, _) = graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+    let max_component_id = connected_components.iter().max();
+    if let Some(mci) = max_component_id{
+        assert_eq!(
+            *mci as usize,
+            total_connected_components as usize - 1,
+            "We expected the connected components to be a dense set.\n The graph report is:\n{:?}",
+            graph.textual_report(true)
+        );
+    }
+
     Ok(())
 }
 
@@ -862,8 +874,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
         let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
-        let terms = iterator.collect::<Vec<_>>();
-        assert_eq!(terms_number, terms.len());
+        assert_eq!(terms_number, iterator.count());
 
         let window_size = 3;
         let batch_size = 256;
