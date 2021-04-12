@@ -1,0 +1,152 @@
+Graph {
+    edges: EliasFano {
+        universe:   36,
+        number_of_elements:    6,
+        low_bit_count:    2,
+        low_bit_mask:    3,
+        low_bits: [
+             432,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:   12,
+            num_ones:    6,
+            num_zeros:    6,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits: 2343,
+                num_ones:    6,
+                num_zeros:    6,
+            },
+        },
+        last_high_value:    6,
+        last_value:   24,
+        last_index:    6,
+        current_number_of_elements:    6,
+    },
+    node_bits:    3,
+    node_bit_mask:    7,
+    weights: Some(
+        [
+            0.0000000000000000000000000000070533445,
+            38402060000.0,
+            996938000000000000.0,
+            56188277000.0,
+            56188277000.0,
+            996938000000000000.0,
+        ],
+    ),
+    node_types: None,
+    edge_types: Some(
+        EdgeTypeVocabulary {
+            ids: [
+                Some(
+                       0,
+                ),
+                Some(
+                       1,
+                ),
+                Some(
+                       3,
+                ),
+                Some(
+                       2,
+                ),
+                Some(
+                       2,
+                ),
+                Some(
+                       3,
+                ),
+            ],
+            vocabulary: Vocabulary {
+                map: {
+                    "QQQQQQQQQQQQQQ]":    3,
+                    "QQQQQQQQQQQQQQQ":    2,
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    1,
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    0,
+                },
+                reverse_map: [
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                    "QQQQQQQQQQQQQQQ",
+                    "QQQQQQQQQQQQQQ]",
+                ],
+                numeric_ids: false,
+            },
+            counts: [
+                   1,
+                   1,
+                   2,
+                   2,
+            ],
+            unknown_count:    0,
+        },
+    ),
+    nodes: Vocabulary {
+        map: {
+            "Q-7363920QQQQQQ":    2,
+            "\u{f}QQQQQQQQQQQQQQ":    3,
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}":    0,
+            "QQQQQQQQQQQQQQQ":    1,
+        },
+        reverse_map: [
+            "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+            "QQQQQQQQQQQQQQQ",
+            "Q-7363920QQQQQQ",
+            "\u{f}QQQQQQQQQQQQQQ",
+        ],
+        numeric_ids: false,
+    },
+    directed: false,
+    unique_self_loop_number:    1,
+    self_loop_number:    2,
+    not_singleton_nodes_number:    4,
+    singleton_nodes_with_self_loops_number:    0,
+    unique_edges_number:    5,
+    name: "Fuzz Graph",
+    not_singleton_nodes: Some(
+        BitVec<bitvec::order::Lsb0, u8> {
+            addr: 0x602001636f50,
+            head: 000,
+            bits:    4,
+            capacity:   64,
+        } [
+            0b1111,
+        ],
+    ),
+    singleton_nodes_with_self_loops: Some(
+        RoaringBitmap<[]>,
+    ),
+    unique_sources: None,
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The undirected multigraph Fuzz Graph has 4 nodes and 4 weighted edges with 4 different edge types: QQQQQQQQQQQQQQ], QQQQQQQQQQQQQQQ, \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f} and \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}, of which 2 are self-loops and 1 are parallel. The graph is quite dense as it has a density of 0.31250 and has 2 connected components, where the component with most nodes has 3 nodes and the component with the least nodes has a single node. The graph median node degree is 1, the mean node degree is 1.50, and the node degree mode is 1. The top 4 most central nodes are \u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f} (degree 3), \u{f}QQQQQQQQQQQQQQ (degree 1), Q-7363920QQQQQQ (degree 1) and QQQQQQQQQQQQQQQ (degree 1). The hash of the graph is acd1851d379448d.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    outbounds: None,
+    cached_destinations: None,
+}

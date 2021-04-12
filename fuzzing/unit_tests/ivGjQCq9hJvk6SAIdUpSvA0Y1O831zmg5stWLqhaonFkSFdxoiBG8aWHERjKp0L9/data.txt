@@ -1,0 +1,65 @@
+FromVecHarnessParams {
+    directed: false,
+    directed_edge_list: false,
+    ignore_duplicated_nodes: false,
+    ignore_duplicated_edges: false,
+    verbose: false,
+    numeric_edge_types_ids: false,
+    numeric_node_ids: false,
+    numeric_edge_node_ids: false,
+    numeric_node_types_ids: false,
+    has_node_types: false,
+    has_edge_types: true,
+    has_weights: true,
+    edges: [
+        Ok(
+            (
+                "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                Some(
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{8}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                ),
+                Some(
+                    0.0000000000000000000000000000070533445,
+                ),
+            ),
+        ),
+        Ok(
+            (
+                "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                Some(
+                    "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                ),
+                Some(
+                    38402060000.0,
+                ),
+            ),
+        ),
+        Ok(
+            (
+                "QQQQQQQQQQQQQQQ",
+                "Q-7363920QQQQQQ",
+                Some(
+                    "QQQQQQQQQQQQQQQ",
+                ),
+                Some(
+                    56188277000.0,
+                ),
+            ),
+        ),
+        Ok(
+            (
+                "\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}\u{f}",
+                "\u{f}QQQQQQQQQQQQQQ",
+                Some(
+                    "QQQQQQQQQQQQQQ]",
+                ),
+                Some(
+                    996938000000000000.0,
+                ),
+            ),
+        ),
+    ],
+    nodes: None,
+}
