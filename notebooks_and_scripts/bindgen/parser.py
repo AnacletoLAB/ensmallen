@@ -9,10 +9,6 @@ def read_file(path):
     with open(path, "r") as f:
         return f.read()
     
-def read_line(text):
-    line, _, text = text.partition("\n")
-    return line, text
-
 def read_files(path):
     return [
         read_file(file)
@@ -27,18 +23,20 @@ def remove_prefix(text, prefix):
         return text[len(prefix):]
     return text  # or whatever
 
+def partition(text, pattern):
+    res, _, text = text.partition(pattern)
+    return res, text.lstrip()
+
+def read_line(text):
+    return partition(text, "\n")
+
 class Parser:
     def __init__(self):
         self.functions = []
         self.doc = []
 
-    def doc(self, text):
-        """Parse a documentation line"""
-        doc_line, text = read_line(text)
-        self.doc.append(doc_line.strip())
-        return text
-
-    def skip_to_match(self, text):
+    def skip_to_match(self, text:str):
+        """Find the next matching parenthesis and return all the text whitin."""
         par_wanted = text[0]
         closing_wanted = {
             "{":"}",
@@ -46,8 +44,8 @@ class Parser:
             "[":"]",
             "(":")",
         }[par_wanted]
-        wanted = 0
 
+        wanted = 0
         skipped = ""
 
         while True:
@@ -65,9 +63,35 @@ class Parser:
         skipped = skipped[1:-1]
         return skipped, text
 
-    def parse_args(self, arguments):
+    def parse_struct(self, text):
+        _, text = partition(text, "{")
+        _, text = self.skip_to_match("{" + text)
+        return text
+
+    def parse_use(self, text):
+        _line, text = read_line(text) 
+        return text
+
+    def parse_attr(self, text):
+        _skipped_attr, text = read_line(text)
+        return text
+
+    def parse_extern(self, text):
+        _, text = partition(text, "{")
+        _, text = self.skip_to_match("{" + text)
+        return text
+
+
+    def parse_doc(self, text:str) -> str:
+        """Parse a documentation line"""
+        doc_line, text = read_line(text[3:])
+        self.doc.append(doc_line.strip())
+        return text
+
+    def parse_args(self, arguments:str) -> str:
+        """Parse the arguments of a function"""
         result = []
-        maybe_self, _, text = arguments.partition(",")
+        maybe_self, text = partition(arguments, ",")
 
         if "self" in maybe_self:
             result.append(("self", maybe_self[1:].strip().rstrip(")").lstrip("(")))
@@ -85,96 +109,111 @@ class Parser:
         ]
         return result            
         
-
-    def function(self, text):
-        if set(self.current_function.keys()) != {"doc"}:
-            self.functions.append(self.current_function)
-            self.current_function = {}
-
-        ########################################################################
-
-        modifiers, _, text = text.partition("fn")
-        self.current_function["modifiers"] = modifiers.strip()
-        text = text.lstrip()
-
-        name = ""
-        while text[0] not in "(<":
-            name += text[0]
+    def parse_identifier(self, text:str):
+        """Parse a function, struct, or variable name"""
+        identifier = ""
+        while text[0] not in "<{[()]}>? \t\r\n":
+            identifier += text[0]
             text = text[1:]
-        self.current_function["name"] = name
+        return identifier, text
+
+    def parse_type(self, text:str):
+        """Parse a type"""
+        parsed_type, text = self.parse_identifier(text)
+
+        if text[0] == "<":
+            generics, text = self.skip_to_match(text)
+            parsed_type += "<" + generics + ">"
+
+        return parsed_type, text
+
+    def parse_function(self, text:str) -> str:
+        """Parse a function declaration"""
+        function = {}
+        if self.struct_name is not None:
+            function["struct"] = self.struct_name
+        # If we parsed some documentation we add it to the current function
+        # and reset it.
+        function["doc"] = self.doc
+        self.doc = []
+        ########################################################################
+        modifiers, text = partition(text, "fn")
+        function["modifiers"] = modifiers.strip()
+
+        name, text = self.parse_identifier(text)
+        function["name"] = name
         print(name)
 
         ########################################################################
         # Parse the generics if present
         if text[0] == "<":
             generics, text = self.skip_to_match(text)
-            self.current_function["generics"] = generics
+            function["generics"] = generics
         
         # Parse the arguments
         args, text = self.skip_to_match(text)
-        self.current_function["args"] = self.parse_args(args)
+        function["args"] = self.parse_args(args)
         ########################################################################
 
         # Parse the return arguments
         if text.startswith("->"):
             text = text[2:].strip()
-            return_type = ""
-            while text[0] not in "<{":
-                return_type += text[0]
-                text = text[1:]
-
-            if text[0] == "<":
-                generics, text = self.skip_to_match(text)
-                return_type += "<" + generics + ">"
+            return_type, text = self.parse_type(text)
 
             while text[0] not in "{":
                 return_type += text[0]
                 text = text[1:]
 
-            self.current_function["return_type"] = return_type.strip()
+            function["return_type"] = return_type.strip()
 
+        print(json.dumps(function, indent=4))
         # Pase the body
         body, text = self.skip_to_match(text)
-        self.current_function["body"] = body.strip()
+        function["body"] = body.strip()
+
+        # add the function
+        self.functions.append(function)
+        return text
+
+    def parse_impl(self, text):
+        # Reset the doc if present
+        # we don't care about impl documentation.
+        self.doc = []
+        # Get the name of the struct
+        self.struct_name = re.match(r"\s*impl\s+(\S+)\s+{", text).groups()[0]
+        # skip to the end of the impl definition
+        _, _, text = text.partition(self.struct_name)
+        # Get all the text inside the current impl
+        to_parse, text = self.skip_to_match(text.strip())
+        # Parse all the content 
+        self.start(to_parse.strip())
+        # Reset the struct name
+        self.struct_name = None
         return text
 
     def start(self, text):
+        """Main entrypoint of the parser."""
         while text:
             # Remove the white space
             text = text.lstrip()
 
-            # Check if the current line is an impl or a function
-            impl_matches = re.match(r"\s*impl\s+(\S+)\s+{", text)
-            func_matches = re.match(r"\s*(pub(\(crate\))?\s+)?fn\s+", text)
-            if impl_matches is not None:
-                # Reset the doc if present
-                # we don't care about impl documentation.
-                self.doc = []
-                # Get the name of the struct
-                self.struct_name = impl_matches.groups()[0]
-                # skip to the end of the impl definition
-                _, _, text = text.partition(self.struct_name)
-                # Get all the text inside the current impl
-                to_parse, text = self.skip_to_match(text.strip())
-                # Parse all the content 
-                self.start(to_parse.strip())
-                # Reset the struct name
-                self.struct_name = None
-            elif func_matches is not None:
-                text = self.function(text)
-            # if we encounter a struct we skip it.
+            # Check if it's an impl
+            if re.match(r"\s*impl\s+(\S+)\s+{", text):
+                text = self.parse_impl(text)
+            # Check if it's a function
+            elif re.match(r"\s*(pub(\(crate\))?\s+)?fn\s+", text):
+                text = self.parse_function(text)
+            # iCheck if it's a struct
+            elif re.match(r"\s*(pub(\(crate\))?\s+)?struct\s+", text):
+                text = self.parse_struct(text)
             elif text.startswith("use"):
-                _line, text = read_line(text)  
-            # if we encounter an use statement we just skip the line
-            elif text.startswith("use"):
-                _line, text = read_line(text)  
-            # If it's a doc line, add it to the current buffer
+                text = self.parse_use(text) 
             elif text.startswith("///"):
-                text = self.doc(text[3:])
-            # if we encounter an attribute we just skip the line
+                text = self.parse_doc(text)
             elif text.startswith("#["):
-                _skipped_attr, text = read_line(text)
-            # Otherwise just skip the line
+                text = self.parse_attr(text)
+            elif text.startswith("extern"):
+                text = self.parse_extern(text)
             else:
                 _skipped_line, text = read_line(text)
                 print("Skipping line: '{}'".format(_skipped_line.strip()))

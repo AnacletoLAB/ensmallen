@@ -30,7 +30,7 @@ impl Graph {
                     .collect(),
                 None => indices
                     .iter()
-                    .map(|edge_id| self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                    .map(|edge_id| self.get_unchecked_destination_node_id_by_edge_id(*edge_id))
                     .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
@@ -48,17 +48,12 @@ impl Graph {
             .map_or(false, |cds| cds.contains_key(&node))
         {
             true => None,
-            false => Some(
-                self.edges
-                    .iter_in_range(self.encode_edge(node, 0)..self.encode_edge(node + 1, 0))
-                    .map(|edge| self.decode_edge(edge).1)
-                    .collect(),
-            ),
+            false => Some(self.iter_node_neighbours_ids(node).collect()),
         };
         (min_edge_id, max_edge_id, destinations, None)
     }
 
-    /// TODO:! add doc
+    /// Returns slice of destinations corresponding to given minmax edge ID and node.
     pub(crate) fn get_destinations_slice<'a>(
         &'a self,
         min_edge_id: EdgeT,
@@ -96,7 +91,9 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// TODO: update docstring
+/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
+/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
+/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
@@ -200,7 +197,9 @@ fn generic_string_operator(
 /// * other: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// TODO: update docstring
+/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
+/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
+/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
@@ -484,18 +483,18 @@ impl Graph {
         *self.nodes.get(node_name).unwrap()
     }
 
-    /// TODO: add doc
+    /// Return edge type ID corresponding to the given edge type name.
     pub(crate) fn get_unchecked_edge_type_id_by_edge_type_name(
         &self,
-        edge_type_name: Option<&str>,
+        edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
-        match (&self.edge_types, edge_type_name) {
-            (Some(ets), Some(et)) => ets.get(et).copied(),
-            _ => None,
-        }
+        self.edge_types
+            .as_ref()
+            .and_then(|ets| ets.get(edge_type_name).copied())
     }
 
-    /// TODO: add doc
+    /// Return edge type ID corresponding to the given edge type name
+    /// raising panic if edge type ID does not exists in current graph.
     pub(crate) fn get_unchecked_edge_type_name_by_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
@@ -1109,7 +1108,7 @@ impl WalksParameters {
 use super::*;
 
 use indicatif::ProgressIterator;
-use itertools::Itertools;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
@@ -1216,7 +1215,7 @@ impl Graph {
         if !self.has_nodes() {
             return (HashSet::new(), Vec::new(), 0, 0, 0);
         }
-        if self.get_edges_number() == 0 {
+        if !self.has_edges() {
             return (
                 HashSet::new(),
                 (0..self.get_nodes_number()).collect(),
@@ -1230,8 +1229,10 @@ impl Graph {
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
         let mut components = vec![NOT_PRESENT; nodes_number];
         let mut merged_component_number = 0;
-        let mut component_sizes: Vec<usize> = Vec::new();
+        let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
+        let mut max_component_size: NodeT = 0;
+        let mut min_component_size = NodeT::MAX;
 
         // When there are singleton nodes with self-loops,
         // which is an arguability weird feature of some graphs,
@@ -1242,6 +1243,8 @@ impl Graph {
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
         if self.has_singletons() || self.has_singleton_nodes_with_self_loops() {
+            min_component_size = 1;
+            max_component_size = 1;
             (0..self.get_nodes_number())
                 .filter(|node_id| {
                     self.is_singleton_by_node_id(*node_id).unwrap()
@@ -1255,6 +1258,7 @@ impl Graph {
         }
 
         edges.for_each(|(src, dst)| {
+            // If this is a self-loop we skip it.
             if src == dst {
                 return;
             }
@@ -1270,6 +1274,7 @@ impl Graph {
                     components[dst as usize] = component_number;
                     components_remapping.push(component_number);
                     component_sizes.push(2);
+                    max_component_size = max_component_size.max(2);
                     tree.insert((src, dst));
                 }
                 // If both nodes have a component, the two components must be merged
@@ -1295,6 +1300,8 @@ impl Graph {
                     merged_component_number += 1;
                     component_sizes[min_component as usize] +=
                         component_sizes[max_component as usize];
+                    max_component_size =
+                        max_component_size.max(component_sizes[min_component as usize]);
 
                     components_remapping
                         .iter_mut()
@@ -1315,38 +1322,48 @@ impl Graph {
                     };
                     let component_number = components_remapping[component_number as usize];
                     component_sizes[component_number as usize] += 1;
+                    max_component_size =
+                        max_component_size.max(component_sizes[component_number as usize]);
                     components[not_inserted_node as usize] = component_number as NodeT;
                     tree.insert((src, dst));
                 }
             };
         });
 
-        let components_number = AtomicUsize::new(component_sizes.len());
-        components.par_iter_mut().for_each(|remapped| {
-            if *remapped == NOT_PRESENT {
-                *remapped = (components_number.fetch_add(1, Ordering::SeqCst)
-                    - merged_component_number) as NodeT;
+        // Remapping components to a dense remapping
+        let mut state = 0;
+        for i in 0..components_remapping.len() {
+            if components_remapping[i] >= state {
+                components_remapping[i] = state;
+                state += 1;
             } else {
-                *remapped = components_remapping[*remapped as usize];
+                components_remapping[i] = components_remapping[components_remapping[i] as usize];
             }
+        }
+
+        components.par_iter_mut().for_each(|remapped| {
+            *remapped = components_remapping[*remapped as usize];
         });
 
-        let total_components_number = component_sizes.len() - merged_component_number;
+        let components_number = component_sizes.len() - merged_component_number;
 
-        // TODO: explore ways to compute these on the fly.
-        let (min_component_size, max_component_size) = component_sizes
-            .into_iter()
-            .filter(|c| *c != 0)
-            .minmax()
-            .into_option()
-            .unwrap();
+        // If the minimum component size is still bigger than one
+        // that is, we do not know alredy that there is a singleton
+        // we need to compute it.
+        if min_component_size > 1 {
+            min_component_size = component_sizes
+                .into_par_iter()
+                .filter(|c| *c != 0)
+                .min()
+                .unwrap();
+        }
 
         (
             tree,
             components,
-            total_components_number as NodeT,
-            min_component_size as NodeT,
-            max_component_size as NodeT,
+            components_number as NodeT,
+            min_component_size,
+            max_component_size,
         )
     }
 
@@ -1433,11 +1450,11 @@ impl Graph {
                     format!("Computing spanning tree of graph {}", self.get_name()).as_ref(),
                     nodes_number,
                 );
+                let parents = thread_safe_parents.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| {
-                    let ptr = thread_safe_parents.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
-                        if (*ptr)[src] != NOT_PRESENT {
+                        if (*parents)[src] != NOT_PRESENT {
                             return;
                         }
                     }
@@ -1447,24 +1464,24 @@ impl Graph {
                             && self.is_singleton_by_node_id(src as NodeT).unwrap()
                         {
                             // We set singletons as self-loops for now.
-                            (*ptr)[src] = src as NodeT;
+                            (*parents)[src] = src as NodeT;
                             return;
                         }
                     }
                     loop {
                         unsafe {
-                            if (*ptr)[src] != NOT_PRESENT {
+                            if (*parents)[src] != NOT_PRESENT {
                                 break;
                             }
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
-                                if (*ptr)[src] != NOT_PRESENT {
+                                if (*parents)[src] != NOT_PRESENT {
                                     break;
                                 }
                             }
                             unsafe {
-                                (*ptr)[src] = src as NodeT;
+                                (*parents)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
@@ -1492,18 +1509,16 @@ impl Graph {
                             }
                         }
                     };
-                    self.iter_node_neighbours_ids(src).for_each(|dst| {
-                        let ptr = thread_safe_parents.value.get();
-                        unsafe {
-                            if (*ptr)[dst as usize] == NOT_PRESENT {
-                                (*ptr)[dst as usize] = src;
-                                total_inserted_edges.fetch_add(1, Ordering::SeqCst);
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
-                                    .lock()
-                                    .unwrap()
-                                    .push(dst);
-                            }
+                    let parents = thread_safe_parents.value.get();
+                    self.iter_node_neighbours_ids(src).for_each(|dst| unsafe {
+                        if (*parents)[dst as usize] == NOT_PRESENT {
+                            (*parents)[dst as usize] = src;
+                            total_inserted_edges.fetch_add(1, Ordering::SeqCst);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                .lock()
+                                .unwrap()
+                                .push(dst);
                         }
                     });
                     active_nodes_number.fetch_sub(1, Ordering::SeqCst);
@@ -1608,7 +1623,9 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
-        let mut component_sizes: Vec<NodeT> = Vec::new();
+        let mut min_component_size: NodeT = NodeT::MAX;
+        let mut max_component_size: NodeT = 0;
+        let mut components_number: NodeT = 0;
         let cpu_number = rayon::current_num_threads();
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
@@ -1624,8 +1641,14 @@ impl Graph {
         let thread_safe_components = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut components),
         };
-        let thread_safe_component_sizes = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut component_sizes),
+        let thread_safe_min_component_size = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut min_component_size),
+        };
+        let thread_safe_max_component_size = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut max_component_size),
+        };
+        let thread_safe_components_number = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut components_number),
         };
 
         // since we were able to build a stub tree with cpu.len() leafs,
@@ -1647,13 +1670,16 @@ impl Graph {
                     .as_ref(),
                     nodes_number,
                 );
-                let component_sizes = thread_safe_component_sizes.value.get();
+                let min_component_size = thread_safe_min_component_size.value.get();
+                let max_component_size = thread_safe_max_component_size.value.get();
+                let components_number = thread_safe_components_number.value.get();
+                let mut current_component_size: NodeT = 0;
+                let components = thread_safe_components.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| {
-                    let ptr = thread_safe_components.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
-                        if (*ptr)[src] != NOT_PRESENT {
-                            (*component_sizes)[(*ptr)[src] as usize] += 1;
+                        if (*components)[src] != NOT_PRESENT {
+                            current_component_size += 1;
                             return;
                         }
                     }
@@ -1663,8 +1689,10 @@ impl Graph {
                     {
                         // We set singletons as self-loops for now.
                         unsafe {
-                            (*ptr)[src] = (*component_sizes).len() as NodeT;
-                            (*component_sizes).push(1);
+                            (*components)[src] = **components_number;
+                            **components_number += 1;
+                            **min_component_size = 1;
+                            **max_component_size = (**max_component_size).max(1);
                         }
                         return;
                     }
@@ -1673,8 +1701,8 @@ impl Graph {
                         // if the node has been now mapped to a component by anyone of the
                         // parallel threads, move on to the next node.
                         unsafe {
-                            if (*ptr)[src] != NOT_PRESENT {
-                                (*component_sizes)[(*ptr)[src] as usize] += 1;
+                            if (*components)[src] != NOT_PRESENT {
+                                current_component_size += 1;
                                 break;
                             }
                         }
@@ -1691,15 +1719,22 @@ impl Graph {
                             // the src node will never increase the component size and thus
                             // leading to wrong results.
                             unsafe {
-                                if (*ptr)[src] != NOT_PRESENT {
-                                    (*component_sizes)[(*ptr)[src] as usize] += 1;
+                                if (*components)[src] != NOT_PRESENT {
+                                    current_component_size += 1;
                                     break;
                                 }
                             }
                             unsafe {
-                                (*ptr)[src] = (*component_sizes).len() as NodeT;
-                                (*component_sizes).push(1);
+                                (*components)[src] = **components_number;
+                                **max_component_size =
+                                    (**max_component_size).max(current_component_size);
+                                if current_component_size != 0 {
+                                    **min_component_size =
+                                        (**min_component_size).min(current_component_size);
+                                }
+                                **components_number += 1;
                             }
+                            current_component_size = 1;
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
                             break;
@@ -1707,6 +1742,10 @@ impl Graph {
                         // Otherwise, Loop until the parallel threads are finished.
                     }
                 });
+                unsafe {
+                    **max_component_size = (**max_component_size).max(current_component_size);
+                    **min_component_size = (**min_component_size).min(current_component_size);
+                }
                 completed.store(true, Ordering::SeqCst);
             });
 
@@ -1734,11 +1773,11 @@ impl Graph {
                         }
                     };
 
+                    let components = thread_safe_components.value.get();
                     self.iter_node_neighbours_ids(src).for_each(|dst| {
-                        let ptr = thread_safe_components.value.get();
-                        if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {
+                        if unsafe { (*components)[dst as usize] == NOT_PRESENT } {
                             unsafe {
-                                (*ptr)[dst as usize] = (*ptr)[src as usize];
+                                (*components)[dst as usize] = (*components)[src as usize];
                             }
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
@@ -1752,15 +1791,9 @@ impl Graph {
             });
         });
 
-        let components_number = component_sizes.len();
-
-        // TODO: re-explore the possibility of computing these on the fly.
-        let (min_component_size, max_component_size) =
-            component_sizes.into_iter().minmax().into_option().unwrap();
-
         Ok((
             components,
-            components_number as NodeT,
+            components_number,
             min_component_size,
             max_component_size,
         ))
@@ -1878,8 +1911,10 @@ pub(crate) fn compose_lines(number_of_columns: usize, pairs: Vec<(String, usize)
 
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
+use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
+use roaring::RoaringBitmap;
 use std::collections::HashMap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -1931,7 +1966,8 @@ pub struct Graph {
     pub(crate) unique_edges_number: EdgeT,
     /// Graph name
     pub(crate) name: String,
-
+    pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+    pub(crate) singleton_nodes_with_self_loops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
 
     /// Cache of the textual report. This is needed because in some of the bindings
@@ -1972,6 +2008,8 @@ impl Graph {
         name: S,
         weights: Option<Vec<WeightT>>,
         node_types: Option<NodeTypeVocabulary>,
+        not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+        singleton_nodes_with_self_loops: Option<RoaringBitmap>
     ) -> Graph {
         Graph {
             directed,
@@ -1993,6 +2031,8 @@ impl Graph {
             outbounds: None,
             cached_destinations: None,
             name: name.into(),
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
             cached_report: ClonableRwLock::new(None),
         }
     }
@@ -2129,7 +2169,9 @@ pub fn cooccurence_matrix(
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
 
     // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
-    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
+    // We are currently working on this but is terribly non-trivial,
+    // as most parallel implementations end up being slower than sequential
+    // ones or require massive amounts of additional memory.
     let vec = sequences.collect::<Vec<Vec<NodeT>>>();
     vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
@@ -2865,7 +2907,7 @@ impl Graph {
                         other.get_unchecked_node_id_by_node_name(&src_name),
                         other.get_unchecked_node_id_by_node_name(&dst_name),
                         edge_type.and_then(|et| {
-                            self.get_unchecked_edge_type_id_by_edge_type_name(Some(et.as_str()))
+                            self.get_unchecked_edge_type_id_by_edge_type_name(et.as_str())
                         }),
                         weight,
                     ))
@@ -3535,14 +3577,16 @@ use super::*;
 impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///
-    /// The following works for traps and singletons.
-    /// TODO: THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
-    ///
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.has_singletons() && self.get_node_degree_by_node_id(node_id)? == 0)
+        Ok(self.has_singletons()
+            && self.get_node_degree_by_node_id(node_id)? == 0
+            && self
+                .not_singleton_nodes
+                .as_ref()
+                .map_or(true, |nsns| !nsns[node_id as usize]))
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -3551,10 +3595,9 @@ impl Graph {
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_self_loops_by_node_id(&self, node_id: NodeT) -> bool {
-        self.has_singleton_nodes_with_self_loops()
-            && self
-                .iter_node_neighbours_ids(node_id)
-                .all(|dst| dst == node_id)
+        self.singleton_nodes_with_self_loops
+            .as_ref()
+            .map_or(false, |snsls| snsls.contains(node_id))
     }
 
     /// Returns boolean representing if given node is a singleton.
@@ -3584,12 +3627,25 @@ impl Graph {
         self.get_node_id_by_node_name(node_name).is_ok()
     }
 
-    // TODO: add docstring and example!
+    /// Returns whether edge passing between given node ids exists.
+    ///
+    /// # Arguments
+    ///
+    /// * `src`: NodeT - Source node id.
+    /// * `dst`: NodeT - Destination node id.
+    ///
+    /// # Examples
+    /// To check if an edge appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// assert!(graph.has_edge_by_node_ids(0, 1));
+    /// assert!(!graph.has_edge_by_node_ids(0, 4565));
+    /// ```
     pub fn has_edge_by_node_ids(&self, src: NodeT, dst: NodeT) -> bool {
         self.get_edge_id_by_node_ids(src, dst).is_ok()
     }
 
-    /// Returns boolean representing if edge passing between given nodes exists.
+    /// Returns whether edge with the given type passing between given nodes exists.
     ///
     /// # Arguments
     ///
@@ -3597,7 +3653,13 @@ impl Graph {
     /// * dst: NodeT - The destination node of the edge.
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
-    /// TODO: add example!
+    /// # Examples
+    /// To check if an edge with given type appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// assert!(graph.has_edge_with_type_by_node_ids(0, 1, Some(0)));
+    /// assert!(!graph.has_edge_with_type_by_node_ids(0, 1, Some(1)));
+    /// ```
     pub fn has_edge_with_type_by_node_ids(
         &self,
         src: NodeT,
@@ -3612,10 +3674,14 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_node_trap_by_node_id(&self, node: NodeT) -> Result<bool, String> {
-        Ok(self.get_node_degree_by_node_id(node)? == 0)
+    pub fn is_node_trap_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+        Ok(self.get_node_degree_by_node_id(node_id)? == 0
+            && self
+                .not_singleton_nodes
+                .as_ref()
+                .map_or(true, |nsns| nsns[node_id as usize]))
     }
 
     /// Returns whether the given node name and node type name exist in current graph.
@@ -3648,7 +3714,25 @@ impl Graph {
         }
     }
 
-    /// Returns boolean representing if edge passing between given nodes exists.
+    /// Returns whether if edge passing between given nodes exists.
+    ///
+    /// # Arguments
+    ///
+    /// * src: String - The source node name of the edge.
+    /// * dst: String - The destination node name of the edge.
+    ///
+    /// # Examples
+    /// To check if an edge in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// assert!(graph.has_edge_by_node_names("ENSP00000000233", "ENSP00000432568"));
+    /// assert!(!graph.has_edge_by_node_names("ENSP00000000233", "NonExistent"));
+    /// ```
+    pub fn has_edge_by_node_names(&self, src_name: &str, dst_name: &str) -> bool {
+        self.get_edge_id_by_node_names(src_name, dst_name).is_ok()
+    }
+
+    /// Returns whether if edge with type passing between given nodes exists.
     ///
     /// # Arguments
     ///
@@ -3656,6 +3740,17 @@ impl Graph {
     /// * dst: String - The destination node name of the edge.
     /// * edge_type: Option<String> - The (optional) edge type name.
     ///
+    /// # Examples
+    /// To check if an edge with type in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// let edge_type = "red".to_string();
+    /// let unexistent_edge_type = "NonExistent".to_string();
+    /// assert!(graph.has_edge_with_type_by_node_names("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
+    /// assert!(!graph.has_edge_with_type_by_node_names("ENSP00000000233", "ENSP00000432568", Some(&unexistent_edge_type)));
+    /// assert!(!graph.has_edge_with_type_by_node_names("ENSP00000000233", "NonExistent", Some(&edge_type)));
+    /// assert!(!graph.has_edge_with_type_by_node_names("ENSP00000000233", "NonExistent", Some(&unexistent_edge_type)));
+    /// ```
     pub fn has_edge_with_type_by_node_names(
         &self,
         src_name: &str,
@@ -3664,11 +3759,6 @@ impl Graph {
     ) -> bool {
         self.get_edge_id_with_type_by_node_names(src_name, dst_name, edge_type_name)
             .is_ok()
-    }
-
-    // TODO: add docstring and example!
-    pub fn has_edge_by_node_names(&self, src_name: &str, dst_name: &str) -> bool {
-        self.get_edge_id_by_node_names(src_name, dst_name).is_ok()
     }
 }
 
@@ -4039,11 +4129,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "The graph seems to have a non-existing node type."
     );
 
-    assert!(
-        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
-        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
-    );
-
     assert_eq!(
         graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
         graph.get_nodes_number(),
@@ -4199,6 +4284,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     graph.set_name(graph.get_name());
     graph.strongly_connected_components();
+
+    // Checking that the connected components are a dense range.
+    let (_, connected_components, total_connected_components, _, _) =
+        graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+    let max_component_id = connected_components.iter().max();
+    if let Some(mci) = max_component_id {
+        assert_eq!(
+            *mci as usize,
+            total_connected_components as usize - 1,
+            "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
+            connected_components,
+            graph.textual_report(true)
+        );
+    }
 
     Ok(())
 }
@@ -4398,19 +4497,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             verbose,
         )?;
         let no_selfloops = test.remove(
-            None,
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            false, 
-            false, 
-            false, 
-            false, 
-            true,
+            None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
         assert_eq!(
@@ -4422,13 +4509,15 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The report of the graph with only one component is {:?}\n",
                 "The report of the graph without selfloops is {:?}\n",
             ),
-            graph.textual_report(false), test.textual_report(false), no_selfloops.textual_report(false)
+            graph.textual_report(false),
+            test.textual_report(false),
+            no_selfloops.textual_report(false)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_by_node_type_id(0) {
             assert!(graph
                 .remove_components(
                     None,
-                    Some(vec![Some(node_type_name.to_string())]),
+                    Some(vec![Some(node_type_name)]),
                     None,
                     None,
                     None,
@@ -4450,7 +4539,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .remove_components(
                     None,
                     None,
-                    Some(vec![Some(edge_type_name.to_string())]),
+                    Some(vec![Some(edge_type_name)]),
                     None,
                     None,
                     verbose
@@ -4587,7 +4676,8 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        graph.cooccurence_matrix(&walker, 3, verbose)?;
+        let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
+        assert_eq!(terms_number, iterator.count());
 
         let window_size = 3;
         let batch_size = 256;
@@ -5249,7 +5339,7 @@ impl Graph {
                     let (_min, _max) = self.get_minmax_edge_ids_by_source_node_id(src);
                     // Consider successors of source node
                     for (j, dst) in ((_min + i as EdgeT).._max)
-                        .map(|edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+                        .map(|edge_id| self.get_unchecked_destination_node_id_by_edge_id(edge_id))
                         .enumerate()
                     {
                         if !indexed_mask[dst as usize] {
@@ -5415,26 +5505,32 @@ impl Graph {
         ))
     }
 
-    /// Returns option with the node type of the given node id.
-    /// TODO: MOST LIKELY THIS SHOULD BE CHANGED!!!
+    /// Returns result of option with the node type of the given node id.
+    ///
+    /// # Arguments
+    /// `node_id`: NodeT - The node ID whose node types are to be returned.
     pub fn get_node_type_name_by_node_id(
         &self,
         node_id: NodeT,
     ) -> Result<Option<Vec<String>>, String> {
-        match &self.node_types.is_some() {
-            true => Ok(match self.get_unchecked_node_type_id_by_node_id(node_id) {
-                Some(node_type_id) => {
-                    Some(self.get_node_type_names_by_node_type_ids(node_type_id)?)
-                }
-                None => None,
-            }),
-            false => Err("Node types not available for the current graph instance.".to_string()),
+        if self.node_types.is_some() {
+            Ok(self
+                .get_node_type_id_by_node_id(node_id)?
+                .and_then(|node_type_ids| {
+                    // This unwrap cannot fail because it is surely a vector
+                    // of node type IDs from the current graph instance.
+                    self.get_node_type_names_by_node_type_ids(node_type_ids)
+                        .ok()
+                }))
+        } else {
+            Err("Node types not available for the current graph instance.".to_string())
         }
     }
 
     /// Returns option with the edge type of the given edge id.
-    /// TODO: complete docstring and add example!
-    /// TODO: THIS SHOULD RETURN A RESULT!
+    ///
+    /// # Arguments
+    /// `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
     pub fn get_edge_type_name_by_edge_id(&self, edge_id: EdgeT) -> Result<Option<String>, String> {
         self.get_edge_type_id_by_edge_id(edge_id)?
             .map_or(Ok(None), |x| {
@@ -5639,7 +5735,14 @@ impl Graph {
         self.get_node_type_name_by_node_id(self.get_node_id_by_node_name(node_name)?)
     }
 
-    /// TODO: add doc
+    /// Return number of edges with given edge type ID.
+    ///
+    /// If None is given as an edge type ID, the unknown edge type IDs
+    /// will be returned.
+    ///
+    /// # Arguments
+    /// edge_type: Option<EdgeTypeT> - The edge type ID to count the edges of.
+    ///
     pub fn get_edge_count_by_edge_type_id(
         &self,
         edge_type: Option<EdgeTypeT>,
@@ -5659,7 +5762,13 @@ impl Graph {
         Ok(self.get_unchecked_edge_count_by_edge_type_id(edge_type))
     }
 
-    /// TODO: add doc
+    /// Return edge type ID curresponding to given edge type name.
+    ///
+    /// If None is given as an edge type ID, None is returned.
+    ///
+    /// # Arguments
+    /// edge_type: Option<&str> - The edge type name whose ID is to be returned.
+    ///
     pub fn get_edge_type_id_by_edge_type_name(
         &self,
         edge_type_name: Option<&str>,
@@ -5677,7 +5786,14 @@ impl Graph {
         }
     }
 
-    /// TODO: add doc
+    /// Return number of edges with given edge type name.
+    ///
+    /// If None is given as an edge type name, the unknown edge types
+    /// will be returned.
+    ///
+    /// # Arguments
+    /// edge_type: Option<&str> - The edge type name to count the edges of.
+    ///
     pub fn get_edge_count_by_edge_type_name(
         &self,
         edge_type: Option<&str>,
@@ -5685,7 +5801,13 @@ impl Graph {
         self.get_edge_count_by_edge_type_id(self.get_edge_type_id_by_edge_type_name(edge_type)?)
     }
 
-    /// TODO: add doc
+    /// Return node type ID curresponding to given node type name.
+    ///
+    /// If None is given as an node type ID, None is returned.
+    ///
+    /// # Arguments
+    /// node_type: Option<&str> - The node type name whose ID is to be returned.
+    ///
     pub fn get_node_type_id_by_node_type_name(
         &self,
         node_type_name: &str,
@@ -5702,7 +5824,14 @@ impl Graph {
         Err("Current graph does not have node types.".to_owned())
     }
 
-    /// TODO: add doc
+    /// Return number of nodes with given node type ID.
+    ///
+    /// If None is given as an node type ID, the unknown node types
+    /// will be returned.
+    ///
+    /// # Arguments
+    /// node_type: Option<NodeTypeT> - The node type ID to count the nodes of.
+    ///
     pub fn get_node_count_by_node_type_id(
         &self,
         node_type: Option<NodeTypeT>,
@@ -5720,7 +5849,14 @@ impl Graph {
         Ok(self.get_unchecked_node_count_by_node_type_id(node_type))
     }
 
-    /// TODO: add docstring
+    /// Return number of nodes with given node type name.
+    ///
+    /// If None is given as an node type name, the unknown node types
+    /// will be returned.
+    ///
+    /// # Arguments
+    /// node_type: Option<&str> - The node type name to count the nodes of.
+    ///
     pub fn get_node_count_by_node_type_name(
         &self,
         node_type_name: Option<&str>,
@@ -5732,8 +5868,23 @@ impl Graph {
         )
     }
 
-    /// TODO!: add unchecked version of this method!
-    /// TODO: add docstring and example!
+    /// Returns the destination of given edge id without making any boundary check.
+    ///
+    /// # Arguments
+    ///
+    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    pub(crate) fn get_unchecked_destination_node_id_by_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.destinations.as_ref().map_or_else(
+            || self.get_node_ids_from_edge_id(edge_id).1,
+            |dsts| dsts[edge_id as usize],
+        )
+    }
+
+    /// Returns the destination of given edge id.
+    ///
+    /// # Arguments
+    ///
+    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
     pub fn get_destination_node_id_by_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
         if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
@@ -5742,10 +5893,7 @@ impl Graph {
                 self.get_directed_edges_number()
             ));
         }
-        Ok(match &self.destinations {
-            Some(destinations) => destinations[edge_id as usize],
-            None => self.get_node_ids_from_edge_id(edge_id).1,
-        })
+        Ok(self.get_unchecked_destination_node_id_by_edge_id(edge_id))
     }
 
     /// Return vector of destinations for the given source node ID.
@@ -5772,10 +5920,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self
-            .iter_unchecked_edge_ids_by_source_node_id(node_id)
-            .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
-            .collect())
+        Ok(self.iter_node_neighbours_ids(node_id).collect())
     }
 
     /// Return vector of destinations for the given source node name.
@@ -5789,10 +5934,10 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// let node_id = 0;
-    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());
+    /// let node_name = "ENSP00000000233";
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_ids_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbours_by_node_name(&self, node_name: &str) -> Result<Vec<NodeT>, String> {
+    pub fn get_node_neighbour_ids_by_node_name(&self, node_name: &str) -> Result<Vec<NodeT>, String> {
         self.get_node_neighbours_by_node_id(self.get_node_id_by_node_name(node_name)?)
     }
 
@@ -5808,9 +5953,9 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
-    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbours_name_by_node_name(node_name).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbours_name_by_node_name(
+    pub fn get_node_neighbour_names_by_node_name(
         &self,
         node_name: &str,
     ) -> Result<Vec<String>, String> {
@@ -5819,7 +5964,7 @@ impl Graph {
             .collect())
     }
 
-    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    /// Return edge ID for given tuple of nodes and edge type.
     ///
     /// This method will return an error if the graph does not contain the
     /// requested edge with edge type.
@@ -5835,75 +5980,92 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
-        let edge_id = self.edge_types.as_ref().map_or_else(
-            || self.get_edge_id_by_node_ids(src, dst).ok(),
-            |ets| {
-                self.get_edge_ids_by_node_ids(src, dst)
-                    .and_then(|mut edge_ids| {
-                        edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
-                    })
-            },
-        );
-        // TODO: change using a map_err!
-        match edge_id {
-            Some(e) => Ok(e),
-            None => Err(format!(
-                concat!(
+        self.edge_types
+            .as_ref()
+            .map_or_else(
+                || self.get_edge_id_by_node_ids(src, dst).ok(),
+                |ets| {
+                    self.iter_edge_ids_by_node_ids(src, dst)
+                        .and_then(|mut edge_ids| {
+                            edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+                        })
+                },
+            )
+            .ok_or_else(|| {
+                format!(
+                    concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node ID {}, destination node ID {} and edge ID {:?}."
                 ),
-                src, dst, edge_type
-            )),
-        }
+                    src, dst, edge_type
+                )
+            })
     }
 
-    // TODO: add docstring and example!
+    /// Return edge ID for given tuple of node names.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// # Arguments
+    /// `src_name`: &str - Source node name of the edge.
+    /// `dst_name`: &str - Destination node name of the edge.
+    ///
     pub fn get_edge_id_by_node_names(
         &self,
         src_name: &str,
         dst_name: &str,
     ) -> Result<EdgeT, String> {
-        // TODO REFACTOR CODE to be cleaner!
-        let edge_id =
-            if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-                self.get_edge_id_by_node_ids(*src, *dst).ok()
-            } else {
-                None
-            };
-        match edge_id {
-            Some(e) => Ok(e),
-            None => Err(format!(
+        match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
+            (Some(src), Some(dst)) => self.get_edge_id_by_node_ids(*src, *dst).ok(),
+            _ => None,
+        }
+        .ok_or_else(|| {
+            format!(
                 concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node name {} and destination node name {}."
                 ),
                 src_name, dst_name
-            )),
-        }
+            )
+        })
     }
 
-    // TODO: add docstring and example!
+    /// Return edge ID for given tuple of node names and edge type name.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// # Arguments
+    /// `src_name`: &str - Source node name of the edge.
+    /// `dst_name`: &str - Destination node name of the edge.
+    /// `edge_type_name`: Option<&String> - Edge type name.
+    ///
     pub fn get_edge_id_with_type_by_node_names(
         &self,
         src_name: &str,
         dst_name: &str,
         edge_type_name: Option<&String>,
     ) -> Result<EdgeT, String> {
-        if let (Some(src), Some(dst)) = (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            self.get_edge_id_with_type_by_node_ids(
-                *src,
-                *dst,
-                self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
-            )
-        } else {
-            Err(format!(
+        match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
+            (Some(src), Some(dst)) => self
+                .get_edge_id_with_type_by_node_ids(
+                    *src,
+                    *dst,
+                    self.get_edge_type_id_by_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
+                )
+                .ok(),
+            _ => None,
+        }
+        .ok_or_else(|| {
+            format!(
                 concat!(
                     "The current graph instance does not contain the required edge composed of ",
                     "source node name {}, destination node name {} and edge name {:?}."
                 ),
                 src_name, dst_name, edge_type_name
-            ))
-        }
+            )
+        })
     }
 
     /// Return translated edge types from string to internal edge ID.
@@ -6025,21 +6187,6 @@ impl Graph {
                 )
             }
         }
-    }
-
-    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
-    ///
-    /// # Arguments
-    ///
-    /// * `src` - Source node of the edge.
-    ///
-    pub fn get_edge_ids_by_node_ids(
-        &self,
-        src: NodeT,
-        dst: NodeT,
-    ) -> Option<impl Iterator<Item = EdgeT>> {
-        self.get_minmax_edge_ids_by_node_ids(src, dst)
-            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
     }
 
     /// Return node type name of given node type.
@@ -6470,12 +6617,10 @@ impl Graph {
     pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
-                "The mean of the node degrees is not defined on an empty graph".to_string()
+                "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        Ok(
-            self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64
-        )
+        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -6530,7 +6675,7 @@ impl Graph {
     pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
-                "The median of the node degrees is not defined on an empty graph".to_string()
+                "The median of the node degrees is not defined on an empty graph".to_string(),
             );
         }
         let mut degrees = self.get_node_degrees();
@@ -6544,8 +6689,9 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
     pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().max()
-            .ok_or("The maximum node degree of a graph with no nodes is not defined.".to_string())
+        self.get_node_degrees().into_iter().max().ok_or_else(|| {
+            "The maximum node degree of a graph with no nodes is not defined.".to_string()
+        })
     }
 
     /// Returns minimum node degree of the graph
@@ -6554,8 +6700,9 @@ impl Graph {
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().min()
-        .ok_or("The minimum node degree of a graph with no nodes is not defined.".to_string())
+        self.get_node_degrees().into_iter().min().ok_or_else(|| {
+            "The minimum node degree of a graph with no nodes is not defined.".to_string()
+        })
     }
 
     /// Returns mode node degree of the graph
@@ -6566,7 +6713,7 @@ impl Graph {
     pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
-                "The mode of the node degrees is not defined on an empty graph".to_string()
+                "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
 
@@ -6575,13 +6722,11 @@ impl Graph {
         for value in self.get_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
-        Ok(
-            occurrences
-                .into_iter()
-                .max_by_key(|&(_, count)| count)
-                .map(|(val, _)| val)
-                .unwrap()
-        )
+        Ok(occurrences
+            .into_iter()
+            .max_by_key(|&(_, count)| count)
+            .map(|(val, _)| val)
+            .unwrap())
     }
 
     /// Returns number of self-loops, including also those in eventual multi-edges.
@@ -6605,10 +6750,13 @@ impl Graph {
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate().unwrap());
     /// ```
-    pub fn get_self_loop_rate(&self) -> f64 {
-        self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64
+    pub fn get_self_loop_rate(&self) -> Result<f64, String> {
+        if !self.has_edges() {
+            return Err("The self-loops rate is not defined for graphs without edges.".to_string());
+        }
+        Ok(self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64)
     }
 
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
@@ -6677,9 +6825,7 @@ impl Graph {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        Ok(
-            self.unique_edges_number as f64 / total_nodes_number as f64
-        )
+        Ok(self.unique_edges_number as f64 / total_nodes_number as f64)
     }
 
     /// Returns report relative to the graph metrics
@@ -6707,10 +6853,26 @@ impl Graph {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
 
         if self.has_nodes() {
-            report.insert("density",  self.get_density().unwrap().to_string());
-            report.insert("min_degree", self.get_min_node_degree().unwrap().to_string());
-            report.insert("max_degree", self.get_max_node_degree().unwrap().to_string());
-            report.insert("degree_mean", self.get_node_degrees_mean().unwrap().to_string());
+            report.insert("density", self.get_density().unwrap().to_string());
+            report.insert(
+                "min_degree",
+                self.get_min_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "max_degree",
+                self.get_max_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "degree_mean",
+                self.get_node_degrees_mean().unwrap().to_string(),
+            );
+        }
+
+        if self.has_edges() {
+            report.insert(
+                "self_loops_rate",
+                self.get_self_loop_rate().unwrap().to_string(),
+            );
         }
 
         report.insert("name", self.name.clone());
@@ -6725,7 +6887,6 @@ impl Graph {
         report.insert("has_edge_types", self.has_edge_types().to_string());
         report.insert("has_node_types", self.has_node_types().to_string());
         report.insert("self_loops_number", self.get_self_loop_number().to_string());
-        report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",
@@ -6964,7 +7125,6 @@ impl Graph {
                 .map(|(edge_type_id, _)| {
                     self.get_edge_type_name_by_edge_type_id(*edge_type_id)
                         .unwrap()
-                        .clone()
                 })
                 .collect::<Vec<String>>()
                 .as_slice(),
@@ -6975,22 +7135,19 @@ impl Graph {
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();
-            if let Some(report) = &*ptr{
+            if let Some(report) = &*ptr {
                 return Ok(report.clone());
             }
         }
 
-        if !self.has_nodes(){
-            return Ok(format!(
-                "The graph {} is empty.",
-                self.get_name()
-            ));
+        if !self.has_nodes() {
+            return Ok(format!("The graph {} is empty.", self.get_name()));
         }
 
         let mut ptr = self.cached_report.write();
-        // THis is not a duplicate of above because we need to 
+        // THis is not a duplicate of above because we need to
         // check if another thread already filled the cache
-        if let Some(report) = &*ptr{
+        if let Some(report) = &*ptr {
             return Ok(report.clone());
         }
 
@@ -7472,8 +7629,6 @@ impl Graph {
         // Create the components counter
         let component_counts: Vec<(NodeT, NodeT)> =
             Counter::init(components_vector.clone()).most_common_ordered();
-
-        println!("Count components {:?}", component_counts);
 
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
@@ -8436,8 +8591,7 @@ impl Graph {
         {
             Some(dsts) => dsts[sampled_offset],
             None => self
-                .get_destination_node_id_by_edge_id(min_edge + sampled_offset as EdgeT)
-                .unwrap(),
+                .get_unchecked_destination_node_id_by_edge_id(min_edge + sampled_offset as EdgeT),
         }
     }
 
@@ -8478,7 +8632,7 @@ impl Graph {
             .and_then(|cds| cds.get(&node))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
+            None => self.get_unchecked_destination_node_id_by_edge_id(edge_id),
         };
         (destination, edge_id)
     }
@@ -8534,7 +8688,7 @@ impl Graph {
             .and_then(|cds| cds.get(&dst))
         {
             Some(dsts) => dsts[sampled_offset],
-            None => self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
+            None => self.get_unchecked_destination_node_id_by_edge_id(edge_id),
         };
         (destination, edge_id)
     }
@@ -10591,9 +10745,9 @@ impl Graph {
     pub(crate) fn iter_unchecked_edge_ids_by_source_node_id(
         &self,
         src: NodeT,
-    ) -> impl Iterator<Item = EdgeT> + '_ {
+    ) -> std::ops::Range<usize> {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
-        min_edge_id..max_edge_id
+        min_edge_id as usize..max_edge_id as usize
     }
 
     /// Return iterator on the node degrees of the graph.
@@ -10609,19 +10763,30 @@ impl Graph {
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
-    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> impl Iterator<Item = NodeT> + '_ {
-        // TODO this could be replaced with the new elias-fano iters
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match &self.destinations{
+            Some(dsts) => {
+                Box::new(dsts[self.iter_unchecked_edge_ids_by_source_node_id(src)].iter().cloned())
+            },
+            None => Box::new(self.edges
+                .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
+                .map(move |edge| self.decode_edge(edge).1))
+        }
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
+    ///
     pub(crate) fn iter_node_neighbours(&self, src: NodeT) -> impl Iterator<Item = String> + '_ {
-        self.iter_unchecked_edge_ids_by_source_node_id(src)
-            .map(move |edge_id| {
-                self.get_unchecked_node_name_by_node_id(
-                    self.get_destination_node_id_by_edge_id(edge_id).unwrap(),
-                )
+        self.iter_node_neighbours_ids(src)
+            .map(move |dst| {
+                self.get_unchecked_node_name_by_node_id(dst)
             })
     }
 
@@ -11022,12 +11187,28 @@ impl Graph {
         }))
     }
 
+    /// Returns option of range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    ///
+    /// * `src` - Source node id of the edge.
+    /// * `dst` - Destination node id of the edge.
+    ///
+    pub(crate) fn iter_edge_ids_by_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<impl Iterator<Item = EdgeT>> {
+        self.get_minmax_edge_ids_by_node_ids(src, dst)
+            .map(|(min_edge_id, max_edge_id)| min_edge_id..max_edge_id)
+    }
+
     /// Return iterator on the unique sources of the graph.
     pub fn iter_unique_sources(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         if let Some(x) = &self.unique_sources {
             return Box::new(x.iter().map(|source| source as NodeT));
         }
-        Box::new((0..self.get_nodes_number()).map(|source| source))
+        Box::new(0..self.get_nodes_number())
     }
 }
 
@@ -11042,7 +11223,10 @@ impl Graph {
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
     /// * `directed`: bool - whether the graph is to be read as directed or undirected.
     /// * `directed_edge_list`: bool - whether to read the edge list as directed.
-    /// TODO UPDATE!!
+    /// * `edges_number`: usize - Number of edges of the graph.
+    /// * `nodes_number`: NodeT - Number of the nodes of the graph.
+    /// * `name`: S - Name of the graph.
+    ///
     pub fn from_sorted_csv<S: Clone + Into<String>>(
         mut edge_file_reader: EdgeFileReader,
         mut node_file_reader: Option<NodeFileReader>,
@@ -11377,6 +11561,8 @@ type ParsedStringEdgesType = Result<
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 >;
@@ -11720,6 +11906,8 @@ pub(crate) fn build_edges(
         NodeT,
         u8,
         u64,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 > {
@@ -11776,7 +11964,7 @@ pub(crate) fn build_edges(
     // Additionally, since we need this support data structure when computing the
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
-    let mut nodes_with_edges: Option<_> =
+    let mut not_singleton_nodes: Option<_> =
         if might_have_singletons || might_have_singletons_with_selfloops {
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
@@ -11817,7 +12005,6 @@ pub(crate) fn build_edges(
             if ignore_duplicated_edges {
                 continue;
             } else {
-                // TODO: this error can likely be made more usefull
                 return Err("A duplicated edge was found while building the graph.".to_owned());
             }
         }
@@ -11892,7 +12079,7 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            if let Some(nwe) = &mut nodes_with_edges {
+            if let Some(nwe) = &mut not_singleton_nodes {
                 for node in &[src, dst] {
                     unsafe {
                         let mut ptr = nwe.get_unchecked_mut(*node as usize);
@@ -11921,9 +12108,9 @@ pub(crate) fn build_edges(
                 unique_self_loop_number += 1;
             }
             if different_src {
-                unique_sources
-                    .as_mut()
-                    .map(|us| us.unchecked_push(src as u64));
+                if let Some(us) = &mut unique_sources {
+                    us.unchecked_push(src as u64);
+                }
             }
         }
         last_src = src;
@@ -11974,8 +12161,9 @@ pub(crate) fn build_edges(
         );
     }
 
-    let singleton_nodes_with_self_loops_number =
-        singleton_nodes_with_self_loops.map_or(0, |bitmap| bitmap.len() as NodeT);
+    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops
+        .as_ref()
+        .map_or(0, |bitmap| bitmap.len() as NodeT);
 
     // While on internal methods nodes_number is always exact, the user may
     // provide a wrong value for nodes_number when loading a sorted csv.
@@ -11993,15 +12181,16 @@ pub(crate) fn build_edges(
         && unique_sources.is_none()
         && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number
     {
-        unique_sources = Some(EliasFano::from_iter(
-            nodes_with_edges
-                .unwrap()
-                .iter_ones()
-                .into_iter()
-                .map(|x| x as u64),
-            nodes_number as u64,
-            not_singleton_node_number as usize + singleton_nodes_with_self_loops_number as usize,
-        )?);
+        unique_sources = not_singleton_nodes
+            .as_ref()
+            .map_or(Ok::<_, String>(None), |nsns| {
+                Ok(Some(EliasFano::from_iter(
+                    nsns.iter_ones().into_iter().map(|x| x as u64),
+                    nodes_number as u64,
+                    not_singleton_node_number as usize
+                        + singleton_nodes_with_self_loops_number as usize,
+                )?))
+            })?;
     }
 
     if !directed
@@ -12027,6 +12216,8 @@ pub(crate) fn build_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -12128,6 +12319,8 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -12160,6 +12353,8 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -12189,6 +12384,8 @@ pub(crate) fn parse_integer_edges(
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 > {
@@ -12204,6 +12401,8 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -12232,6 +12431,8 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -12265,6 +12466,8 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -12296,6 +12499,8 @@ impl Graph {
             name,
             weights,
             node_types,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ))
     }
 
@@ -12366,7 +12571,6 @@ impl Graph {
         let might_have_trap_nodes = directed && might_have_trap_nodes;
 
         info!("Parse unsorted edges.");
-        // TODO: ADD USE OF edge_list_is_correct
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
                 edges_iterator,
@@ -12507,6 +12711,8 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -12540,6 +12746,8 @@ impl Graph {
             name,
             weights,
             node_types,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ))
     }
 }
@@ -13450,7 +13658,7 @@ impl Graph {
                 (min_edge_id..max_edge_id)
                     .filter(|edge_id| {
                         unique_nodes
-                            .contains(self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                            .contains(self.get_unchecked_destination_node_id_by_edge_id(*edge_id))
                     })
                     .collect::<Vec<EdgeT>>()
             }));
