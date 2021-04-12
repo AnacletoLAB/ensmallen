@@ -194,12 +194,10 @@ impl Graph {
     pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
-                "The mean of the node degrees is not defined on an empty graph".to_string()
+                "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        Ok(
-            self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64
-        )
+        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -254,7 +252,7 @@ impl Graph {
     pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
-                "The median of the node degrees is not defined on an empty graph".to_string()
+                "The median of the node degrees is not defined on an empty graph".to_string(),
             );
         }
         let mut degrees = self.get_node_degrees();
@@ -268,8 +266,9 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
     pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().max()
-            .ok_or("The maximum node degree of a graph with no nodes is not defined.".to_string())
+        self.get_node_degrees().into_iter().max().ok_or_else(|| {
+            "The maximum node degree of a graph with no nodes is not defined.".to_string()
+        })
     }
 
     /// Returns minimum node degree of the graph
@@ -278,8 +277,9 @@ impl Graph {
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().min()
-        .ok_or("The minimum node degree of a graph with no nodes is not defined.".to_string())
+        self.get_node_degrees().into_iter().min().ok_or_else(|| {
+            "The minimum node degree of a graph with no nodes is not defined.".to_string()
+        })
     }
 
     /// Returns mode node degree of the graph
@@ -290,7 +290,7 @@ impl Graph {
     pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
-                "The mode of the node degrees is not defined on an empty graph".to_string()
+                "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
 
@@ -299,13 +299,11 @@ impl Graph {
         for value in self.get_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
-        Ok(
-            occurrences
-                .into_iter()
-                .max_by_key(|&(_, count)| count)
-                .map(|(val, _)| val)
-                .unwrap()
-        )
+        Ok(occurrences
+            .into_iter()
+            .max_by_key(|&(_, count)| count)
+            .map(|(val, _)| val)
+            .unwrap())
     }
 
     /// Returns number of self-loops, including also those in eventual multi-edges.
@@ -401,9 +399,7 @@ impl Graph {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        Ok(
-            self.unique_edges_number as f64 / total_nodes_number as f64
-        )
+        Ok(self.unique_edges_number as f64 / total_nodes_number as f64)
     }
 
     /// Returns report relative to the graph metrics
@@ -431,10 +427,19 @@ impl Graph {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
 
         if self.has_nodes() {
-            report.insert("density",  self.get_density().unwrap().to_string());
-            report.insert("min_degree", self.get_min_node_degree().unwrap().to_string());
-            report.insert("max_degree", self.get_max_node_degree().unwrap().to_string());
-            report.insert("degree_mean", self.get_node_degrees_mean().unwrap().to_string());
+            report.insert("density", self.get_density().unwrap().to_string());
+            report.insert(
+                "min_degree",
+                self.get_min_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "max_degree",
+                self.get_max_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "degree_mean",
+                self.get_node_degrees_mean().unwrap().to_string(),
+            );
         }
 
         report.insert("name", self.name.clone());
@@ -688,7 +693,6 @@ impl Graph {
                 .map(|(edge_type_id, _)| {
                     self.get_edge_type_name_by_edge_type_id(*edge_type_id)
                         .unwrap()
-                        .clone()
                 })
                 .collect::<Vec<String>>()
                 .as_slice(),
@@ -699,22 +703,19 @@ impl Graph {
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();
-            if let Some(report) = &*ptr{
+            if let Some(report) = &*ptr {
                 return Ok(report.clone());
             }
         }
 
-        if !self.has_nodes(){
-            return Ok(format!(
-                "The graph {} is empty.",
-                self.get_name()
-            ));
+        if !self.has_nodes() {
+            return Ok(format!("The graph {} is empty.", self.get_name()));
         }
 
         let mut ptr = self.cached_report.write();
-        // THis is not a duplicate of above because we need to 
+        // THis is not a duplicate of above because we need to
         // check if another thread already filled the cache
-        if let Some(report) = &*ptr{
+        if let Some(report) = &*ptr {
             return Ok(report.clone());
         }
 

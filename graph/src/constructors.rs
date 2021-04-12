@@ -567,9 +567,9 @@ pub(crate) fn build_edges(
                 unique_self_loop_number += 1;
             }
             if different_src {
-                unique_sources
-                    .as_mut()
-                    .map(|us| us.unchecked_push(src as u64));
+                if let Some(us) = &mut unique_sources {
+                    us.unchecked_push(src as u64);
+                }
             }
         }
         last_src = src;

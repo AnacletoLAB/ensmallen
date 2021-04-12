@@ -452,6 +452,6 @@ impl Graph {
         if let Some(x) = &self.unique_sources {
             return Box::new(x.iter().map(|source| source as NodeT));
         }
-        Box::new((0..self.get_nodes_number()).map(|source| source))
+        Box::new(0..self.get_nodes_number())
     }
 }

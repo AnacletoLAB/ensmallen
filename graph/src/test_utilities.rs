@@ -702,7 +702,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             assert!(graph
                 .remove_components(
                     None,
-                    Some(vec![Some(node_type_name.to_string())]),
+                    Some(vec![Some(node_type_name)]),
                     None,
                     None,
                     None,
@@ -724,7 +724,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 .remove_components(
                     None,
                     None,
-                    Some(vec![Some(edge_type_name.to_string())]),
+                    Some(vec![Some(edge_type_name)]),
                     None,
                     None,
                     verbose

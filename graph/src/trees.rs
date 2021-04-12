@@ -108,7 +108,7 @@ impl Graph {
         if !self.has_nodes() {
             return (HashSet::new(), Vec::new(), 0, 0, 0);
         }
-        if self.get_edges_number() == 0 {
+        if !self.has_edges() {
             return (
                 HashSet::new(),
                 (0..self.get_nodes_number()).collect(),
