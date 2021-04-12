@@ -1111,9 +1111,9 @@ use indicatif::ProgressIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
+use std::{collections::HashSet, sync::atomic::AtomicU32};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 const NOT_PRESENT: u32 = u32::MAX;
@@ -1621,8 +1621,9 @@ impl Graph {
                 1,
             ));
         }
-        let nodes_number = self.get_nodes_number() as usize;
-        let mut components = vec![NOT_PRESENT; nodes_number];
+        let components = (0..self.get_nodes_number())
+            .map(|_| AtomicU32::new(NOT_PRESENT))
+            .collect::<Vec<_>>();
         let mut min_component_size: NodeT = NodeT::MAX;
         let mut max_component_size: NodeT = 0;
         let mut components_number: NodeT = 0;
@@ -1637,10 +1638,8 @@ impl Graph {
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
         let active_nodes_number = AtomicUsize::new(0);
+        let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_components = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut components),
-        };
         let thread_safe_min_component_size = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut min_component_size),
         };
@@ -1668,85 +1667,81 @@ impl Graph {
                         self.get_name()
                     )
                     .as_ref(),
-                    nodes_number,
+                    self.get_nodes_number() as usize,
                 );
                 let min_component_size = thread_safe_min_component_size.value.get();
                 let max_component_size = thread_safe_max_component_size.value.get();
                 let components_number = thread_safe_components_number.value.get();
-                let mut current_component_size: NodeT = 0;
-                let components = thread_safe_components.value.get();
-                (0..nodes_number).progress_with(pb).for_each(|src| {
-                    unsafe {
+                (0..self.get_nodes_number())
+                    .progress_with(pb)
+                    .for_each(|src| {
                         // If the node has already been explored we skip ahead.
-                        if (*components)[src] != NOT_PRESENT {
-                            current_component_size += 1;
+                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
                             return;
                         }
-                    }
 
-                    // find the first not explored node (this is guardanteed to be in a new component)
-                    if self.has_singletons() && self.is_singleton_by_node_id(src as NodeT).unwrap()
-                    {
-                        // We set singletons as self-loops for now.
-                        unsafe {
-                            (*components)[src] = **components_number;
-                            **components_number += 1;
-                            **min_component_size = 1;
-                            **max_component_size = (**max_component_size).max(1);
+                        // find the first not explored node (this is guardanteed to be in a new component)
+                        if self.has_singletons()
+                            && (self.is_singleton_by_node_id(src).unwrap()
+                                || self.is_singleton_with_self_loops_by_node_id(src))
+                        {
+                            // We set singletons as self-loops for now.
+                            unsafe {
+                                components[src as usize]
+                                    .store(**components_number, Ordering::Relaxed);
+                                **components_number += 1;
+                                **min_component_size = 1;
+                                **max_component_size = (**max_component_size).max(1);
+                            }
+                            return;
                         }
-                        return;
-                    }
 
-                    loop {
-                        // if the node has been now mapped to a component by anyone of the
-                        // parallel threads, move on to the next node.
-                        unsafe {
-                            if (*components)[src] != NOT_PRESENT {
-                                current_component_size += 1;
+                        loop {
+                            // if the node has been now mapped to a component by anyone of the
+                            // parallel threads, move on to the next node.
+                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
                                 break;
                             }
-                        }
-                        // Otherwise, Check if the parallel threads are finished
-                        // and are all waiting for a new node to explore.
-                        // In that case add the currently not explored node to the
-                        // work stack of the first thread.
-                        if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                            // The check here might seems redundant but its' needed
-                            // to prevent data races.
-                            //
-                            // If the last parallel thread finishes its stack between the
-                            // presence check above and the active nodes numbers check
-                            // the src node will never increase the component size and thus
-                            // leading to wrong results.
-                            unsafe {
-                                if (*components)[src] != NOT_PRESENT {
-                                    current_component_size += 1;
+                            // Otherwise, Check if the parallel threads are finished
+                            // and are all waiting for a new node to explore.
+                            // In that case add the currently not explored node to the
+                            // work stack of the first thread.
+                            if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                                // The check here might seems redundant but its' needed
+                                // to prevent data races.
+                                //
+                                // If the last parallel thread finishes its stack between the
+                                // presence check above and the active nodes numbers check
+                                // the src node will never increase the component size and thus
+                                // leading to wrong results.
+                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
                                     break;
                                 }
-                            }
-                            unsafe {
-                                (*components)[src] = **components_number;
-                                **max_component_size =
-                                    (**max_component_size).max(current_component_size);
-                                if current_component_size != 0 {
-                                    **min_component_size =
-                                        (**min_component_size).min(current_component_size);
+                                let ccs = current_component_size.swap(1, Ordering::Relaxed) as NodeT;
+                                unsafe {
+                                    **max_component_size = (**max_component_size).max(ccs);
+                                    if ccs > 1 {
+                                        **min_component_size = (**min_component_size).min(ccs);
+                                    }
+                                    components[src as usize]
+                                        .store(**components_number, Ordering::Relaxed);
+                                    **components_number += 1;
                                 }
-                                **components_number += 1;
+                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                                shared_stacks[0].lock().unwrap().push(src);
+                                break;
                             }
-                            current_component_size = 1;
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                            shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            break;
+                            // Otherwise, Loop until the parallel threads are finished.
                         }
-                        // Otherwise, Loop until the parallel threads are finished.
-                    }
-                });
+                    });
                 unsafe {
-                    **max_component_size = (**max_component_size).max(current_component_size);
-                    **min_component_size = (**min_component_size).min(current_component_size);
+                    let ccs = current_component_size.load(Ordering::Relaxed);
+                    **max_component_size = (**max_component_size).max(ccs);
+                    if ccs > 1 {
+                        **min_component_size = (**min_component_size).min(ccs);
+                    }
                 }
-                completed.store(true, Ordering::SeqCst);
+                completed.store(true, Ordering::Relaxed);
             });
 
             // Spawn the parallel threads that handle the components mapping,
@@ -1767,19 +1762,20 @@ impl Graph {
                                 }
                             }
 
-                            if completed.load(Ordering::SeqCst) {
+                            if completed.load(Ordering::Relaxed) {
                                 break 'outer;
                             }
                         }
                     };
 
-                    let components = thread_safe_components.value.get();
                     self.iter_node_neighbours_ids(src).for_each(|dst| {
-                        if unsafe { (*components)[dst as usize] == NOT_PRESENT } {
-                            unsafe {
-                                (*components)[dst as usize] = (*components)[src as usize];
-                            }
+                        if components[dst as usize].swap(
+                            components[src as usize].load(Ordering::Relaxed),
+                            Ordering::SeqCst,
+                        ) == NOT_PRESENT
+                        {
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            current_component_size.fetch_add(1, Ordering::SeqCst);
                             shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                 .lock()
                                 .unwrap()
@@ -1792,7 +1788,7 @@ impl Graph {
         });
 
         Ok((
-            components,
+            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },
             components_number,
             min_component_size,
             max_component_size,
@@ -4437,7 +4433,12 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(max_comp, test.get_nodes_number());
         }
         if total == 2 {
-            assert_eq!(max_comp + min_comp, graph.get_nodes_number());
+            assert_eq!(
+                max_comp + min_comp, graph.get_nodes_number(),
+                "We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\nThe graph report is:\n {:?}",
+                min_comp, max_comp, graph.get_nodes_number(),
+                graph.textual_report(false)
+            );
             assert_eq!(max_comp + min_comp, test.get_nodes_number());
         }
         default_holdout_test_suite(graph, &train, &test)?;
@@ -4451,6 +4452,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
+
         assert_eq!(
             graph.connected_components_number(verbose),
             without_selfloops.connected_components_number(verbose),
@@ -6780,13 +6782,7 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        if let Some(d) = self
-            .get_nodes_number()
-            .checked_sub(self.get_not_singleton_nodes_number())
-        {
-            return d;
-        }
-        panic!("{:#4?}", self);
+        self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
     /// Returns number of singleton nodes with self-loops within the graph.
