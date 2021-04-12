@@ -26,7 +26,7 @@ with open("method.dot", "w") as f:
     f.write("\n")
 
     for sub in to_print:
-        f.write(f"\t{sub}\n")
+        f.write(f"\t\"{sub}\"\n")
 
     f.write("\n")
 

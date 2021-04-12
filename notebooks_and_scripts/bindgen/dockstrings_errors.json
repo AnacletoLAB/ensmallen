@@ -1,0 +1,989 @@
+{
+    "random_spanning_arborescence_kruskal": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "spanning_arborescence_kruskal": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for verbose"
+    ],
+    "spanning_arborescence": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for verbose"
+    ],
+    "connected_components": [
+        "Missing Example header",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for verbose"
+    ],
+    "overlaps": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "contains": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "node2vec": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "cooccurence_matrix": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for walks_parameters",
+        "Missing the documentation for verbose"
+    ],
+    "link_prediction_degrees": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "link_prediction_ids": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "are_nodes_remappable": [
+        "Missing Example header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for other"
+    ],
+    "remap": [
+        "Missing Example header"
+    ],
+    "is_singleton_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "is_singleton_with_self_loops_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "is_singleton_by_node_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_name"
+    ],
+    "is_node_trap_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "has_node_with_type_by_node_name": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "has_edge_by_node_names": [
+        "Missing the documentation for src_name",
+        "Missing the documentation for dst_name"
+    ],
+    "has_edge_with_type_by_node_names": [
+        "Missing the documentation for src_name",
+        "Missing the documentation for dst_name",
+        "Missing the documentation for edge_type_name"
+    ],
+    "enable": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for vector_sources",
+        "Missing the documentation for vector_destinations",
+        "Missing the documentation for vector_outbounds",
+        "Missing the documentation for cache_size"
+    ],
+    "disable_all": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "strongly_connected_components": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_edge_quadruple": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_id"
+    ],
+    "get_edge_triple": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_id"
+    ],
+    "get_top_k_central_nodes_ids": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_top_k_central_node_names": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_type_name_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "get_edge_type_name_by_edge_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_id"
+    ],
+    "get_edge_type_name_by_edge_type_id": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_name_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "get_node_id_by_node_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_name"
+    ],
+    "get_edge_count_by_edge_type_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_type"
+    ],
+    "get_edge_type_id_by_edge_type_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_type_name"
+    ],
+    "get_edge_count_by_edge_type_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_type"
+    ],
+    "get_node_type_id_by_node_type_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_type_name"
+    ],
+    "get_node_count_by_node_type_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_type"
+    ],
+    "get_node_count_by_node_type_name": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_type_name"
+    ],
+    "get_destination_node_id_by_edge_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_id"
+    ],
+    "get_node_neighbours_by_node_id": [
+        "Missing Example header"
+    ],
+    "get_node_neighbour_ids_by_node_name": [
+        "Missing Example header"
+    ],
+    "get_node_neighbour_names_by_node_name": [
+        "Missing Example header",
+        "Missing the documentation for node_name"
+    ],
+    "get_edge_id_with_type_by_node_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for src",
+        "Missing the documentation for dst",
+        "Missing the documentation for edge_type"
+    ],
+    "get_edge_id_by_node_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for src_name",
+        "Missing the documentation for dst_name"
+    ],
+    "get_edge_id_with_type_by_node_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for src_name",
+        "Missing the documentation for dst_name",
+        "Missing the documentation for edge_type_name"
+    ],
+    "get_edge_type_ids_by_edge_type_names": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_type_ids_by_node_type_names": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_type_name_by_node_type_id": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_type_names_by_node_type_ids": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_node_degree_by_node_id": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_id"
+    ],
+    "filter": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "degrees_product": [
+        "Missing Example header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for one",
+        "Missing the documentation for two"
+    ],
+    "jaccard_index": [
+        "Missing Example header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for one",
+        "Missing the documentation for two"
+    ],
+    "adamic_adar_index": [
+        "Missing Example header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for one",
+        "Missing the documentation for two"
+    ],
+    "resource_allocation_index": [
+        "Missing Example header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for one",
+        "Missing the documentation for two"
+    ],
+    "traps_rate": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_node_degrees_mean": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_undirected_edges_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_unique_undirected_edges_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_edges_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_unique_edges_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_node_degrees_median": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_max_node_degree": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_min_node_degree": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_node_degrees_mode": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_self_loop_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_unique_self_loop_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_self_loop_rate": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "connected_components_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for verbose"
+    ],
+    "get_singleton_nodes_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_singleton_nodes_with_self_loops_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_not_singleton_nodes_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_density": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "report": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "overlap_textual_report": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for other",
+        "Missing the documentation for verbose"
+    ],
+    "textual_report": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for verbose"
+    ],
+    "remove": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "remove_components": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "set_name": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "set_all_edge_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge_type"
+    ],
+    "set_all_node_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for node_type"
+    ],
+    "random_walks_iter": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for quantity"
+    ],
+    "complete_walks_iter": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "encode_edge": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for src",
+        "Missing the documentation for dst"
+    ],
+    "decode_edge": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edge"
+    ],
+    "get_edge_id_by_node_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for src",
+        "Missing the documentation for dst"
+    ],
+    "get_bipartite_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for first_nodes_set",
+        "Missing the documentation for second_nodes_set",
+        "Missing the documentation for first_node_types_set",
+        "Missing the documentation for second_node_types_set"
+    ],
+    "get_bipartite_edge_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for first_nodes_set",
+        "Missing the documentation for second_nodes_set",
+        "Missing the documentation for first_node_types_set",
+        "Missing the documentation for second_node_types_set"
+    ],
+    "get_star_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for central_node",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for star_points_nodes_set",
+        "Missing the documentation for star_points_node_types_set"
+    ],
+    "get_star_edge_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for central_node",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for star_points_nodes_set",
+        "Missing the documentation for star_points_node_types_set"
+    ],
+    "get_clique_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed",
+        "Missing the documentation for allow_self_loops",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for allow_node_type_set",
+        "Missing the documentation for allow_node_set"
+    ],
+    "get_clique_edge_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed",
+        "Missing the documentation for allow_self_loops",
+        "Missing the documentation for removed_existing_edges",
+        "Missing the documentation for allow_node_type_set",
+        "Missing the documentation for allow_node_set"
+    ],
+    "has_nodes": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_edges": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_name": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_trap_nodes_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_trap_nodes": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "is_directed": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_weights": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_edge_types": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_selfloops": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_singletons": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "has_singleton_nodes_with_self_loops": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_sources": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "get_source_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "get_destinations": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "get_destination_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "get_node_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_nodes": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_edge_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_edge_type_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_node_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_weights": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_min_weight": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_max_weight": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_node_type_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_unique_directed_edges_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_max_encodable_edge_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_nodes_mapping": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "get_edge_names": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "has_node_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "has_multilabel_node_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_unknown_node_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_minimum_node_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "has_unknown_node_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_unknown_edge_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_minimum_edge_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "has_unknown_edge_types": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_nodes_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_node_components_vector": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "get_directed_edges_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_edge_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_node_types_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_node_degrees": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_not_singletons": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_dense_node_mapping": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "is_multigraph": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_multigraph_edges_number": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_outbounds": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "get_unique_source_nodes_number": [
+        "Missing Example header",
+        "Missing Arguments Header"
+    ],
+    "get_node_type_counts": [
+        "Missing Example header"
+    ],
+    "get_node_type_counts_hashmap": [
+        "Missing Example header"
+    ],
+    "iter_node_degrees": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "par_iter_node_degrees": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "iter_sources_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_sources_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_destinations_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_destinations_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_node_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "iter_nodes": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "iter_edge_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edge_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_edges_with_type_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_edges_with_type": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edge_with_type": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edge_with_type_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edge_with_type_and_weight": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_edge_with_type_and_weight": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "par_iter_edge_with_type_and_weight_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_edge_with_type_and_weight_ids": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_unique_edges": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for directed"
+    ],
+    "iter_unique_sources": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "from_sorted_csv": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "from_unsorted_csv": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for name"
+    ],
+    "compute_hash": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header"
+    ],
+    "from_string_unsorted": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edges_iterator",
+        "Missing the documentation for nodes_iterator",
+        "Missing the documentation for directed",
+        "Missing the documentation for directed_edge_list",
+        "Missing the documentation for name",
+        "Missing the documentation for ignore_duplicated_nodes",
+        "Missing the documentation for node_list_is_correct",
+        "Missing the documentation for ignore_duplicated_edges",
+        "Missing the documentation for edge_list_is_correct",
+        "Missing the documentation for verbose",
+        "Missing the documentation for numeric_edge_type_ids",
+        "Missing the documentation for numeric_node_ids",
+        "Missing the documentation for numeric_edge_node_ids",
+        "Missing the documentation for numeric_node_types_ids",
+        "Missing the documentation for has_node_types",
+        "Missing the documentation for has_edge_types",
+        "Missing the documentation for has_weights",
+        "Missing the documentation for might_have_singletons",
+        "Missing the documentation for might_have_singletons_with_selfloops",
+        "Missing the documentation for might_have_trap_nodes"
+    ],
+    "from_integer_unsorted": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edges_iterator",
+        "Missing the documentation for nodes",
+        "Missing the documentation for node_types",
+        "Missing the documentation for edge_types_vocabulary",
+        "Missing the documentation for directed",
+        "Missing the documentation for name",
+        "Missing the documentation for ignore_duplicated_edges",
+        "Missing the documentation for has_edge_types",
+        "Missing the documentation for has_weights",
+        "Missing the documentation for verbose",
+        "Missing the documentation for might_have_singletons",
+        "Missing the documentation for might_have_singletons_with_selfloops",
+        "Missing the documentation for might_have_trap_nodes"
+    ],
+    "from_string_sorted": [
+        "Missing Example header",
+        "Missing Example",
+        "Missing Arguments Header",
+        "Missing the documentation of some arguments.",
+        "Missing the documentation for edges_iterator",
+        "Missing the documentation for nodes_iterator",
+        "Missing the documentation for directed",
+        "Missing the documentation for directed_edge_list",
+        "Missing the documentation for ignore_duplicated_nodes",
+        "Missing the documentation for node_list_is_correct",
+        "Missing the documentation for ignore_duplicated_edges",
+        "Missing the documentation for edge_list_is_correct",
+        "Missing the documentation for edges_number",
+        "Missing the documentation for nodes_number",
+        "Missing the documentation for numeric_edge_type_ids",
+        "Missing the documentation for numeric_node_ids",
+        "Missing the documentation for numeric_edge_node_ids",
+        "Missing the documentation for numeric_node_types_ids",
+        "Missing the documentation for has_node_types",
+        "Missing the documentation for has_edge_types",
+        "Missing the documentation for has_weights",
+        "Missing the documentation for might_have_singletons",
+        "Missing the documentation for might_have_singletons_with_selfloops",
+        "Missing the documentation for might_have_trap_nodes",
+        "Missing the documentation for name"
+    ],
+    "sample_negatives": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "connected_holdout": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "random_holdout": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "node_label_holdout": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "edge_label_holdout": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "random_subgraph": [
+        "Missing Example header",
+        "Missing Example"
+    ],
+    "kfold": [
+        "Missing Example header",
+        "Missing Example"
+    ]
+}

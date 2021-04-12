@@ -12,6 +12,9 @@ for function in functions:
     if function.get("modifiers", "") != "pub":
         continue
 
+    if function.get("struct", "") != "Graph":
+        continue
+
     if "name" not in function.keys():
         print("WTF", function)
         continue
