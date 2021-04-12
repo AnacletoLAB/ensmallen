@@ -672,13 +672,31 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             verbose,
         )?;
         let no_selfloops = test.remove(
-            None, None, None, None, None, None, None, None, false, false, false, true, false,
+            None,
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            false, 
+            false, 
+            false, 
+            false, 
+            true,
             verbose,
         )?;
         assert_eq!(
             no_selfloops.connected_components_number(verbose).0,
             1,
-            "Expected number of components (1) is not matched!"
+            concat!(
+                "Expected number of components (1) is not matched!\n",
+                "The report of the original graph is {:?}\n",
+                "The report of the graph with only one component is {:?}\n",
+                "The report of the graph without selfloops is {:?}\n",
+            ),
+            graph.textual_report(false), test.textual_report(false), no_selfloops.textual_report(false)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_by_node_type_id(0) {
             assert!(graph
