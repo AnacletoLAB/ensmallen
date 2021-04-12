@@ -49,7 +49,10 @@ def to_dot(nodes, edges):
     result += "\n"
 
     for sub in nodes:
-        result += f"\t\"{sub}\"\n"
+        if isinstance(sub, str):
+            result += f"\t\"{sub}\"\n"
+        else:
+            result += f"\t\"{sub[0]}\" [color={sub[1]}];\n"
 
     result += "\n"
 
