@@ -327,10 +327,13 @@ impl Graph {
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate().unwrap());
     /// ```
-    pub fn get_self_loop_rate(&self) -> f64 {
-        self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64
+    pub fn get_self_loop_rate(&self) -> Result<f64, String> {
+        if !self.has_edges() {
+            return Err("The self-loops rate is not defined for graphs without edges.".to_string());
+        }
+        Ok(self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64)
     }
 
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
@@ -378,7 +381,7 @@ impl Graph {
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
     /// ```
     pub fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.not_singleton_nodes_number + self.singleton_nodes_with_self_loops_number
+        self.not_singleton_nodes_number
     }
 
     /// Returns density of the graph.
@@ -442,6 +445,13 @@ impl Graph {
             );
         }
 
+        if self.has_edges() {
+            report.insert(
+                "self_loops_rate",
+                self.get_self_loop_rate().unwrap().to_string(),
+            );
+        }
+
         report.insert("name", self.name.clone());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_directed_edges_number().to_string());
@@ -454,7 +464,6 @@ impl Graph {
         report.insert("has_edge_types", self.has_edge_types().to_string());
         report.insert("has_node_types", self.has_node_types().to_string());
         report.insert("self_loops_number", self.get_self_loop_number().to_string());
-        report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",

@@ -470,9 +470,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     graph.strongly_connected_components();
 
     // Checking that the connected components are a dense range.
-    let (_, connected_components, total_connected_components, _, _) = graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+    let (_, connected_components, total_connected_components, _, _) =
+        graph.random_spanning_arborescence_kruskal(42, &None, verbose);
     let max_component_id = connected_components.iter().max();
-    if let Some(mci) = max_component_id{
+    if let Some(mci) = max_component_id {
         assert_eq!(
             *mci as usize,
             total_connected_components as usize - 1,
@@ -680,19 +681,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             verbose,
         )?;
         let no_selfloops = test.remove(
-            None,
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            false, 
-            false, 
-            false, 
-            false, 
-            true,
+            None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
         assert_eq!(
@@ -704,7 +693,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The report of the graph with only one component is {:?}\n",
                 "The report of the graph without selfloops is {:?}\n",
             ),
-            graph.textual_report(false), test.textual_report(false), no_selfloops.textual_report(false)
+            graph.textual_report(false),
+            test.textual_report(false),
+            no_selfloops.textual_report(false)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_by_node_type_id(0) {
             assert!(graph

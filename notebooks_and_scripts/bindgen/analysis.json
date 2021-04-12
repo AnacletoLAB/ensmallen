@@ -2697,13 +2697,13 @@
             "```rust",
             "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
             "let node_name = \"ENSP00000000233\";",
-            "println!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbours_name_by_node_name(node_name).unwrap());",
+            "println!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());",
             "```"
         ]
     },
     {
         "modifiers": "pub",
-        "name": "get_node_neighbours_name_by_node_name",
+        "name": "get_node_neighbour_names_by_node_name",
         "args": [
             [
                 "self",
