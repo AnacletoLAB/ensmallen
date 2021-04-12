@@ -147,6 +147,7 @@ impl Graph {
         }
 
         edges.for_each(|(src, dst)| {
+            // If this is a self-loop we skip it.
             if src == dst {
                 return;
             }

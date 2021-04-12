@@ -378,7 +378,7 @@ impl Graph {
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
     /// ```
     pub fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.not_singleton_nodes_number
+        self.not_singleton_nodes_number + self.singleton_nodes_with_self_loops_number
     }
 
     /// Returns density of the graph.

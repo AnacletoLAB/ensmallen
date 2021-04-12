@@ -313,11 +313,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "The graph seems to have a non-existing node type."
     );
 
-    assert!(
-        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
-        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
-    );
-
     assert_eq!(
         graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
         graph.get_nodes_number(),
@@ -481,7 +476,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         assert_eq!(
             *mci as usize,
             total_connected_components as usize - 1,
-            "We expected the connected components to be a dense set.\n The graph report is:\n{:?}",
+            "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
+            connected_components,
             graph.textual_report(true)
         );
     }

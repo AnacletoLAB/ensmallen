@@ -7,13 +7,16 @@ use super::*;
 impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///
-    /// TODO: THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
-    ///
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.has_singletons() && self.get_node_degree_by_node_id(node_id)? == 0)
+        Ok(self.has_singletons()
+            && self.get_node_degree_by_node_id(node_id)? == 0
+            && self
+                .not_singleton_nodes
+                .as_ref()
+                .map_or(true, |nsns| !nsns[node_id as usize]))
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -22,10 +25,9 @@ impl Graph {
     ///
     /// `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_self_loops_by_node_id(&self, node_id: NodeT) -> bool {
-        self.has_singleton_nodes_with_self_loops()
-            && self
-                .iter_node_neighbours_ids(node_id)
-                .all(|dst| dst == node_id)
+        self.singleton_nodes_with_self_loops
+            .as_ref()
+            .map_or(false, |snsls| snsls.contains(node_id))
     }
 
     /// Returns boolean representing if given node is a singleton.
@@ -100,14 +102,16 @@ impl Graph {
 
     /// Returns boolean representing if given node is a trap.
     ///
-    /// TODO: THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
-    ///
     /// # Arguments
     ///
-    /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_node_trap_by_node_id(&self, node: NodeT) -> Result<bool, String> {
-        Ok(self.get_node_degree_by_node_id(node)? == 0)
+    pub fn is_node_trap_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+        Ok(self.get_node_degree_by_node_id(node_id)? == 0
+            && self
+                .not_singleton_nodes
+                .as_ref()
+                .map_or(true, |nsns| nsns[node_id as usize]))
     }
 
     /// Returns whether the given node name and node type name exist in current graph.

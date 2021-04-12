@@ -23,6 +23,8 @@ type ParsedStringEdgesType = Result<
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 >;
@@ -366,6 +368,8 @@ pub(crate) fn build_edges(
         NodeT,
         u8,
         u64,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 > {
@@ -422,7 +426,7 @@ pub(crate) fn build_edges(
     // Additionally, since we need this support data structure when computing the
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
-    let mut nodes_with_edges: Option<_> =
+    let mut not_singleton_nodes: Option<_> =
         if might_have_singletons || might_have_singletons_with_selfloops {
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
@@ -537,7 +541,7 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            if let Some(nwe) = &mut nodes_with_edges {
+            if let Some(nwe) = &mut not_singleton_nodes {
                 for node in &[src, dst] {
                     unsafe {
                         let mut ptr = nwe.get_unchecked_mut(*node as usize);
@@ -619,8 +623,9 @@ pub(crate) fn build_edges(
         );
     }
 
-    let singleton_nodes_with_self_loops_number =
-        singleton_nodes_with_self_loops.map_or(0, |bitmap| bitmap.len() as NodeT);
+    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops
+        .as_ref()
+        .map_or(0, |bitmap| bitmap.len() as NodeT);
 
     // While on internal methods nodes_number is always exact, the user may
     // provide a wrong value for nodes_number when loading a sorted csv.
@@ -638,15 +643,16 @@ pub(crate) fn build_edges(
         && unique_sources.is_none()
         && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number
     {
-        unique_sources = Some(EliasFano::from_iter(
-            nodes_with_edges
-                .unwrap()
-                .iter_ones()
-                .into_iter()
-                .map(|x| x as u64),
-            nodes_number as u64,
-            not_singleton_node_number as usize + singleton_nodes_with_self_loops_number as usize,
-        )?);
+        unique_sources = not_singleton_nodes
+            .as_ref()
+            .map_or(Ok::<_, String>(None), |nsns| {
+                Ok(Some(EliasFano::from_iter(
+                    nsns.iter_ones().into_iter().map(|x| x as u64),
+                    nodes_number as u64,
+                    not_singleton_node_number as usize
+                        + singleton_nodes_with_self_loops_number as usize,
+                )?))
+            })?;
     }
 
     if !directed
@@ -672,6 +678,8 @@ pub(crate) fn build_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -773,6 +781,8 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -805,6 +815,8 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -834,6 +846,8 @@ pub(crate) fn parse_integer_edges(
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
     ),
     String,
 > {
@@ -849,6 +863,8 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -877,6 +893,8 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
+        not_singleton_nodes,
+        singleton_nodes_with_self_loops,
     ))
 }
 
@@ -910,6 +928,8 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -941,6 +961,8 @@ impl Graph {
             name,
             weights,
             node_types,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ))
     }
 
@@ -1151,6 +1173,8 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -1184,6 +1208,8 @@ impl Graph {
             name,
             weights,
             node_types,
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
         ))
     }
 }

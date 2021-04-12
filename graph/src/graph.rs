@@ -1,7 +1,9 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
+use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
+use roaring::RoaringBitmap;
 use std::collections::HashMap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -53,7 +55,8 @@ pub struct Graph {
     pub(crate) unique_edges_number: EdgeT,
     /// Graph name
     pub(crate) name: String,
-
+    pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+    pub(crate) singleton_nodes_with_self_loops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
 
     /// Cache of the textual report. This is needed because in some of the bindings
@@ -94,6 +97,8 @@ impl Graph {
         name: S,
         weights: Option<Vec<WeightT>>,
         node_types: Option<NodeTypeVocabulary>,
+        not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+        singleton_nodes_with_self_loops: Option<RoaringBitmap>
     ) -> Graph {
         Graph {
             directed,
@@ -115,6 +120,8 @@ impl Graph {
             outbounds: None,
             cached_destinations: None,
             name: name.into(),
+            not_singleton_nodes,
+            singleton_nodes_with_self_loops,
             cached_report: ClonableRwLock::new(None),
         }
     }
