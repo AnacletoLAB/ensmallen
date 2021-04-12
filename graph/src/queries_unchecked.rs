@@ -36,18 +36,18 @@ impl Graph {
         *self.nodes.get(node_name).unwrap()
     }
 
-    /// TODO: add doc
+    /// Return edge type ID corresponding to the given edge type name.
     pub(crate) fn get_unchecked_edge_type_id_by_edge_type_name(
         &self,
-        edge_type_name: Option<&str>,
+        edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
-        match (&self.edge_types, edge_type_name) {
-            (Some(ets), Some(et)) => ets.get(et).copied(),
-            _ => None,
-        }
+        self.edge_types
+            .as_ref()
+            .and_then(|ets| ets.get(edge_type_name).copied())
     }
 
-    /// TODO: add doc
+    /// Return edge type ID corresponding to the given edge type name
+    /// raising panic if edge type ID does not exists in current graph.
     pub(crate) fn get_unchecked_edge_type_name_by_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,

@@ -30,7 +30,7 @@ impl Graph {
                     .collect(),
                 None => indices
                     .iter()
-                    .map(|edge_id| self.get_destination_node_id_by_edge_id(*edge_id).unwrap())
+                    .map(|edge_id| self.get_unchecked_destination_node_id_by_edge_id(*edge_id))
                     .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
@@ -53,7 +53,7 @@ impl Graph {
         (min_edge_id, max_edge_id, destinations, None)
     }
 
-    /// TODO:! add doc
+    /// Returns slice of destinations corresponding to given minmax edge ID and node.
     pub(crate) fn get_destinations_slice<'a>(
         &'a self,
         min_edge_id: EdgeT,

@@ -62,7 +62,7 @@ impl Graph {
                         other.get_unchecked_node_id_by_node_name(&src_name),
                         other.get_unchecked_node_id_by_node_name(&dst_name),
                         edge_type.and_then(|et| {
-                            self.get_unchecked_edge_type_id_by_edge_type_name(Some(et.as_str()))
+                            self.get_unchecked_edge_type_id_by_edge_type_name(et.as_str())
                         }),
                         weight,
                     ))

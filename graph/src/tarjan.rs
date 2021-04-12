@@ -35,7 +35,7 @@ impl Graph {
                     let (_min, _max) = self.get_minmax_edge_ids_by_source_node_id(src);
                     // Consider successors of source node
                     for (j, dst) in ((_min + i as EdgeT).._max)
-                        .map(|edge_id| self.get_destination_node_id_by_edge_id(edge_id).unwrap())
+                        .map(|edge_id| self.get_unchecked_destination_node_id_by_edge_id(edge_id))
                         .enumerate()
                     {
                         if !indexed_mask[dst as usize] {
