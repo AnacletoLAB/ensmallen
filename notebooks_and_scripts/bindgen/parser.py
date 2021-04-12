@@ -30,12 +30,12 @@ def remove_prefix(text, prefix):
 class Parser:
     def __init__(self):
         self.functions = []
-        self.current_function = {}
+        self.doc = []
 
     def doc(self, text):
+        """Parse a documentation line"""
         doc_line, text = read_line(text)
-        self.current_function.setdefault("doc", []) 
-        self.current_function["doc"].append(doc_line.strip())
+        self.doc.append(doc_line.strip())
         return text
 
     def skip_to_match(self, text):
