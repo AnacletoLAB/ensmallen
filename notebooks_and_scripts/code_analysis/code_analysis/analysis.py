@@ -1,9 +1,10 @@
 import re
+import sys
 import json
 import glob
+import argparse
+from .utils import build_path
 from tqdm.auto import tqdm
-
-path = "../../graph/src/*.rs"
 
 def read_file(path):
     with open(path, "r") as f:
@@ -218,13 +219,19 @@ class Parser:
                 _skipped_line, text = read_line(text)
                 print("Skipping line: '{}'".format(_skipped_line.strip()))
 
-txt = get_all_impls(path)
 
-with open("debug.rs", "w") as f:
-    f.write(txt)
+def analysis(args):
+    parser = argparse.ArgumentParser(description='Generate a json with the informations about all the methods in the selected files.')  
+    parser.add_argument('-p', "--path", type=str, default="../../graph/src/*.rs", help='A glob path of which files to parse. Default: %(default)s')
+    args = parser.parse_args(args)
 
-p = Parser()
-p.start(txt)
+    path = build_path(args.path)   
+    txt = get_all_impls(path)
+    with open(build_path("results/debug.rs"), "w") as f:
+        f.write(txt)
 
-with open("analysis.json", "w") as f:
-    f.write(json.dumps(p.functions, indent=4))
+    p = Parser()
+    p.start(txt)
+
+    with open(build_path("results/analysis.json"), "w") as f:
+        f.write(json.dumps(p.functions, indent=4))

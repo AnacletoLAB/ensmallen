@@ -2,9 +2,7 @@ import re
 import sys
 import json
 from ensmallen_graph import EnsmallenGraph
-
-with open("analysis.json", "r") as f:
-    functions = json.load(f)
+from .utils import build_path
 
 def check_doc_validity(doc, function):
     result = []
@@ -40,26 +38,32 @@ def check_doc_validity(doc, function):
 
     return result
 
-result = {}
 
-for function in functions:
-    if function.get("modifiers", "") != "pub":
-        continue
+def check_doc(args):
 
-    if function.get("struct", "") != "Graph":
-        continue
+    with open(build_path("results/analysis.json"), "r") as f:
+        functions = json.load(f)
 
-    errors = check_doc_validity(function.get("doc", []), function)
+    result = {}
 
-    if errors:
-        result[function.get("name")] = errors
+    for function in functions:
+        if function.get("modifiers", "") != "pub":
+            continue
+
+        if function.get("struct", "") != "Graph":
+            continue
+
+        errors = check_doc_validity(function.get("doc", []), function)
+
+        if errors:
+            result[function.get("name")] = errors
 
 
-print(json.dumps(result, indent=4))
-if result != {}:
-    with open("dockstrings_errors.json", "w") as f:
-        json.dump(result, f, indent=4)
+    print(json.dumps(result, indent=4))
+    if result != {}:
+        with open(build_path("results/dockstrings_errors.json"), "w") as f:
+            json.dump(result, f, indent=4)
 
-    sys.exit(1)
+        sys.exit(1)
 
-sys.exit(0)
+    sys.exit(0)
