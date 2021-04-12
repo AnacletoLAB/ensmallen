@@ -1,9 +1,7 @@
-use std::{fmt::Display, sync::MutexGuard};
+use std::fmt::Display;
 use std::hash::Hash;
 use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 use std::ops::AddAssign;
-
-use bitvec::ptr::Mut;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.

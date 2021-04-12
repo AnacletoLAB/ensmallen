@@ -1,6 +1,4 @@
 use super::*;
-use bitvec::prelude::*;
-use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
@@ -9,8 +7,6 @@ use rayon::prelude::*;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
-
-use super::atomic_f64_hashmap::AtomicF64;
 
 #[inline(always)]
 /// Computes val % n using lemires fast method for u32.

@@ -45,8 +45,6 @@ mod from_csv;
 pub(crate) use self::compression::*;
 
 
-mod atomic_f64_hashmap;
-
 mod constructors;
 
 pub mod utils;

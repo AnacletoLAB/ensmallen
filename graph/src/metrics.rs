@@ -712,6 +712,11 @@ impl Graph {
         }
 
         let mut ptr = self.cached_report.write();
+        // THis is not a duplicate of above because we need to 
+        // check if another thread already filled the cache
+        if let Some(report) = &*ptr{
+            return Ok(report.clone());
+        }
 
         let (connected_components_number, minimum_connected_component, maximum_connected_component) =
             self.connected_components_number(verbose);

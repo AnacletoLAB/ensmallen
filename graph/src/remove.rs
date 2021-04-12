@@ -312,6 +312,8 @@ impl Graph {
         let component_counts: Vec<(NodeT, NodeT)> =
             Counter::init(components_vector.clone()).most_common_ordered();
 
+        println!("Count components {:?}", component_counts);
+
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
             for (i, (component_id, _)) in component_counts.iter().enumerate() {
@@ -346,8 +348,13 @@ impl Graph {
                 "Building node list with only required components {}",
                 &self.name
             ),
-            self.get_nodes_number() as usize
+            self.get_nodes_number() as usize,
         );
+
+        let min_component_size = keep_components
+            .iter()
+            .map(|component_id| component_counts[component_id as usize].1)
+            .min();
 
         Graph::from_string_sorted(
             self.iter_edge_with_type_and_weight(true)
@@ -384,14 +391,9 @@ impl Graph {
             self.has_node_types(),
             self.has_edge_types(),
             self.has_weights(),
-            self.has_singletons()
-                && minimum_component_size
-                    .as_ref()
-                    .map_or(true, |mcs| *mcs <= 1),
+            min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_singleton_nodes_with_self_loops()
-                && minimum_component_size
-                    .as_ref()
-                    .map_or(true, |mcs| *mcs <= 1),
+                && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
             self.get_name(),
         )
