@@ -214,14 +214,23 @@ impl Graph {
             };
         });
 
-        let components_number = AtomicUsize::new(component_sizes.len());
-        components.par_iter_mut().for_each(|remapped| {
-            if *remapped == NOT_PRESENT {
-                *remapped = (components_number.fetch_add(1, Ordering::SeqCst)
-                    - merged_component_number) as NodeT;
+        println!("components_remapping: {:?}", components_remapping);
+
+        // Remapping components to a dense remapping
+        let mut state = 0;
+        for i in 0..components_remapping.len() {
+            if components_remapping[i] >= state {
+                components_remapping[i] = state;
+                state += 1;
             } else {
-                *remapped = components_remapping[*remapped as usize];
+                components_remapping[i] = components_remapping[components_remapping[i] as usize];
             }
+        }
+
+        println!("components_remapping after: {:?}", components_remapping);
+
+        components.par_iter_mut().for_each(|remapped| {
+            *remapped = components_remapping[*remapped as usize];
         });
 
         let total_components_number = component_sizes.len() - merged_component_number;
