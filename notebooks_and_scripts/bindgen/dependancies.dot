@@ -1,0 +1,841 @@
+digraph deps {
+	node [shape=boz];
+
+	get_unique_edges_number
+	iter_edges_with_type
+	get_self_loop_number
+	strongly_connected_components
+	get_destination_node_id_by_edge_id
+	link_prediction_ids
+	iter_destinations_ids
+	from_unsorted_csv
+	get_dense_node_mapping
+	remove_components
+	uniform_walk
+	get_nodes
+	get_unchecked_edge_id_by_node_ids
+	get_outbounds
+	is_compatible
+	par_iter_edge_with_type_and_weight_ids
+	invalidate_report
+	get_destinations_slice
+	from_string_sorted
+	filter
+	extract_edge
+	overlaps
+	remap
+	is_singleton_with_self_loops_by_node_id
+	traps_rate
+	iter_unchecked_edge_ids_by_source_node_id
+	random_holdout
+	has_node_with_type_by_node_name
+	get_node_neighbours_name_by_node_name
+	get_unique_self_loop_number
+	get_unchecked_node_name_by_node_id
+	get_not_singleton_nodes_number
+	complete_walks_iter
+	get_min_weight
+	get_holdouts_elements_number
+	from_sorted_csv
+	get_unchecked_minmax_edge_ids_by_node_ids
+	get_max_weight
+	has_unknown_node_types
+	get_edge_type_counts
+	get_node_type_id_by_node_name
+	get_node_edges_and_destinations
+	has_unknown_edge_types
+	get_clique_edges
+	par_iter_edges
+	get_unchecked_node_destinations_by_node_id
+	format_edge_type_list
+	connected_holdout
+	get_edge_id_by_node_ids
+	get_weight_by_edge_id
+	get_unique_directed_edges_number
+	jaccard_index
+	sample_negatives
+	get_node_count_by_node_type_name
+	iter_edge_ids
+	random_subgraph
+	get_clique_edge_names
+	format_node_type_list
+	get_multigraph_edges_number
+	get_edge_id_by_node_names
+	get_destinations
+	get_density
+	get_undirected_edges_number
+	has_multilabel_node_types
+	get_self_loop_rate
+	get_unchecked_edge_ids_range
+	get_edge_type_name_by_edge_id
+	get_weight_by_node_ids
+	single_walk
+	extract_uniform_node
+	par_iter_edge_with_type_ids
+	get_unchecked_edge_count_by_edge_type_id
+	get_unknown_edge_types_number
+	has_singleton_nodes_with_self_loops
+	get_weighted_transitions
+	get_bipartite_edge_names
+	compute_hash
+	from_string_unsorted
+	get_nodes_mapping
+	get_edge_type_id_by_edge_id
+	get_top_k_central_node_names
+	iter_edges_from_random_state
+	update_node_transition
+	par_iter_destinations_ids
+	is_singleton_by_node_name
+	get_unchecked_edge_type_by_edge_id
+	shared_components_number
+	get_holdouts_edges_number
+	get_name
+	get_node_names
+	get_node_count_by_node_type_id
+	merged_components_number
+	get_unique_source
+	set_all_node_types
+	get_trap_nodes_number
+	get_node_type_ids_by_node_type_names
+	get_unchecked_node_id_by_node_name
+	degrees_product
+	extract_node
+	get_min_node_degree
+	get_unknown_node_types_number
+	get_edge_types_number
+	get_filter_bitmap
+	par_iter_edge_with_type
+	iter_node_ids
+	has_edge_with_type_by_node_names
+	get_edge_transition
+	contains
+	get_edge_type_id_by_edge_type_name
+	get_not_singletons
+	get_edge_types
+	link_prediction_degrees
+	get_node_types_number
+	spanning_arborescence
+	cooccurence_matrix
+	random_walks_iter
+	has_singletons
+	get_node_type_counts
+	get_top_k_central_nodes_ids
+	iter_nodes
+	connected_components
+	get_node_components_vector
+	get_singleton_nodes_with_self_loops_number
+	get_node_types
+	get_weights
+	get_node_type_counts_hashmap
+	are_nodes_remappable
+	get_edge_id_with_type_by_node_ids
+	is_multigraph
+	kruskal
+	is_singleton_by_node_id
+	has_trap_nodes
+	get_minimum_node_types_number
+	get_node_degrees_median
+	from_integer_unsorted
+	get_weight_by_node_names
+	get_minmax_edge_ids_by_node_ids
+	format_node_list
+	par_iter_edge_with_type_and_weight
+	par_iter_edge_ids
+	get_node_neighbours_by_node_id
+	adamic_adar_index
+	has_edges
+	iter_unique_sources
+	spanning_arborescence_kruskal
+	get_node_type_id_by_node_id
+	get_node_neighbours_by_node_name
+	get_node_degree_by_node_id
+	has_edge_by_node_names
+	iter_sources_ids
+	get_edge_type_names
+	iter_edge_with_type_and_weight_ids
+	get_node_label_prediction_tuple_by_node_ids
+	iter_node_neighbours
+	get_source_names
+	get_node_name_by_node_id
+	get_node_transition
+	set_name
+	get_edge_count_by_edge_type_name
+	get_singleton_nodes_number
+	get_edge_triple
+	build_graph
+	get_weight_with_type_by_node_names
+	has_node_types
+	get_nodes_number
+	par_iter_node_degrees
+	get_edges_number
+	get_unchecked_edge_type_id_by_edge_type_name
+	has_selfloops
+	connected_components_number
+	has_edge_by_node_ids
+	get_node_type_id_by_node_type_name
+	get_bipartite_edges
+	get_max_node_degree
+	get_edge_quadruple
+	get_edge_names
+	get_edge_type_name_by_edge_type_id
+	get_unchecked_node_type_id_by_node_id
+	iter_node_degrees
+	get_unchecked_node_count_by_node_type_id
+	get_star_edges
+	random_spanning_arborescence_kruskal
+	get_sources
+	iter_edge_with_type_and_weight
+	kfold
+	new
+	get_unchecked_weight_by_edge_id
+	iter_on_edges_with_preference
+	has_node_by_node_name
+	get_node_ids_from_edge_id
+	par_iter_sources_ids
+	get_edge_id_with_type_by_node_names
+	get_neighbours_by_node_id
+	decode_edge
+	iter_edges
+	get_node_degrees_mean
+	node2vec
+	get_unique_undirected_edges_number
+	get_node_type_name_by_node_name
+	get_unique_source_nodes_number
+	iter_node_neighbours_ids
+	node_label_holdout
+	format_list
+	is_node_trap_by_node_id
+	encode_edge
+	resource_allocation_index
+	get_node_label_prediction_tuple_by_node_id
+	get_unchecked_edge_id_from_tuple
+	has_edge_types
+	get_node_type_name_by_node_type_id
+	get_max_encodable_edge_number
+	set_all_edge_types
+	disable_all
+	get_edge_type_ids_by_edge_type_names
+	remove
+	get_star_edge_names
+	get_node_degrees
+	iter_edges_with_type_ids
+	get_node_id_by_node_name
+	enable
+	get_edge_count_by_edge_type_id
+	get_weight_with_type_by_node_ids
+	get_unchecked_edge_type_name_by_edge_type_id
+	get_minmax_edge_ids_by_source_node_id
+	report
+	overlap_textual_report
+	get_directed_edges_number
+	compute_edge_ids_vector
+	has_edge_with_type_by_node_ids
+	get_node_type_names
+	iter_unique_edges
+	has_nodes
+	get_edge_type_counts_hashmap
+	get_unchecked_edge_degreee_by_node_ids
+	get_node_type_name_by_node_id
+	get_destination_names
+	edge_holdout
+	has_weights
+	get_edges
+	generic_operator
+	get_edge_ids_by_node_ids
+	get_node_type_names_by_node_type_ids
+	textual_report
+	get_node_degrees_mode
+	walk_iter
+	get_minimum_edge_types_number
+	edge_label_holdout
+	is_directed
+
+	"get_node_edges_and_destinations" -> "get_destination_node_id_by_edge_id"
+	"get_node_edges_and_destinations" -> "decode_edge"
+	"get_node_edges_and_destinations" -> "encode_edge"
+	"get_node_edges_and_destinations" -> "get_minmax_edge_ids_by_source_node_id"
+	"generic_operator" -> "is_compatible"
+	"get_unchecked_node_destinations_by_node_id" -> "get_destinations_slice"
+	"get_unchecked_node_destinations_by_node_id" -> "get_node_edges_and_destinations"
+	"get_unchecked_edge_id_by_node_ids" -> "get_unchecked_edge_ids_range"
+	"get_unchecked_edge_id_by_node_ids" -> "get_unchecked_edge_id_from_tuple"
+	"get_unchecked_edge_ids_range" -> "get_unchecked_minmax_edge_ids_by_node_ids"
+	"get_unchecked_minmax_edge_ids_by_node_ids" -> "get_unchecked_edge_id_from_tuple"
+	"get_unchecked_edge_degreee_by_node_ids" -> "get_unchecked_minmax_edge_ids_by_node_ids"
+	"iter_edges_from_random_state" -> "get_node_ids_from_edge_id"
+	"iter_edges_from_random_state" -> "get_directed_edges_number"
+	"iter_on_edges_with_preference" -> "iter_edges_from_random_state"
+	"iter_on_edges_with_preference" -> "get_unchecked_edge_type_by_edge_id"
+	"iter_on_edges_with_preference" -> "contains"
+	"iter_on_edges_with_preference" -> "new"
+	"iter_on_edges_with_preference" -> "get_directed_edges_number"
+	"kruskal" -> "filter"
+	"kruskal" -> "is_singleton_with_self_loops_by_node_id"
+	"kruskal" -> "has_singleton_nodes_with_self_loops"
+	"kruskal" -> "has_singletons"
+	"kruskal" -> "is_singleton_by_node_id"
+	"kruskal" -> "get_nodes_number"
+	"kruskal" -> "get_edges_number"
+	"kruskal" -> "new"
+	"kruskal" -> "has_nodes"
+	"random_spanning_arborescence_kruskal" -> "kruskal"
+	"random_spanning_arborescence_kruskal" -> "iter_on_edges_with_preference"
+	"spanning_arborescence_kruskal" -> "get_unique_edges_number"
+	"spanning_arborescence_kruskal" -> "get_name"
+	"spanning_arborescence_kruskal" -> "kruskal"
+	"spanning_arborescence_kruskal" -> "iter_unique_edges"
+	"spanning_arborescence" -> "get_name"
+	"spanning_arborescence" -> "has_singletons"
+	"spanning_arborescence" -> "is_singleton_by_node_id"
+	"spanning_arborescence" -> "get_nodes_number"
+	"spanning_arborescence" -> "new"
+	"spanning_arborescence" -> "iter_node_neighbours_ids"
+	"connected_components" -> "get_name"
+	"connected_components" -> "has_singletons"
+	"connected_components" -> "is_singleton_by_node_id"
+	"connected_components" -> "get_nodes_number"
+	"connected_components" -> "get_edges_number"
+	"connected_components" -> "new"
+	"connected_components" -> "iter_node_neighbours_ids"
+	"connected_components" -> "has_nodes"
+	"new" -> "new"
+	"overlaps" -> "is_compatible"
+	"overlaps" -> "par_iter_edge_with_type_ids"
+	"overlaps" -> "par_iter_edge_with_type"
+	"overlaps" -> "has_edge_with_type_by_node_names"
+	"overlaps" -> "has_edge_with_type_by_node_ids"
+	"contains" -> "is_compatible"
+	"contains" -> "par_iter_edge_with_type_ids"
+	"contains" -> "par_iter_edge_with_type"
+	"contains" -> "has_edge_with_type_by_node_names"
+	"contains" -> "has_edge_with_type_by_node_ids"
+	"node2vec" -> "random_walks_iter"
+	"cooccurence_matrix" -> "complete_walks_iter"
+	"cooccurence_matrix" -> "cooccurence_matrix"
+	"cooccurence_matrix" -> "has_edges"
+	"cooccurence_matrix" -> "get_unique_source_nodes_number"
+	"get_neighbours_by_node_id" -> "get_unchecked_node_destinations_by_node_id"
+	"get_node_label_prediction_tuple_by_node_id" -> "get_unchecked_node_type_id_by_node_id"
+	"get_node_label_prediction_tuple_by_node_id" -> "get_neighbours_by_node_id"
+	"get_node_label_prediction_tuple_by_node_ids" -> "has_node_types"
+	"get_node_label_prediction_tuple_by_node_ids" -> "get_node_label_prediction_tuple_by_node_id"
+	"link_prediction_degrees" -> "link_prediction_ids"
+	"link_prediction_degrees" -> "get_node_degree_by_node_id"
+	"link_prediction_degrees" -> "get_max_node_degree"
+	"link_prediction_ids" -> "get_nodes_number"
+	"link_prediction_ids" -> "has_selfloops"
+	"link_prediction_ids" -> "has_edge_by_node_ids"
+	"link_prediction_ids" -> "get_node_ids_from_edge_id"
+	"link_prediction_ids" -> "get_directed_edges_number"
+	"compute_edge_ids_vector" -> "get_unchecked_minmax_edge_ids_by_node_ids"
+	"are_nodes_remappable" -> "has_node_with_type_by_node_name"
+	"are_nodes_remappable" -> "iter_nodes"
+	"are_nodes_remappable" -> "get_nodes_number"
+	"remap" -> "has_singleton_nodes_with_self_loops"
+	"remap" -> "get_unchecked_node_id_by_node_name"
+	"remap" -> "has_singletons"
+	"remap" -> "are_nodes_remappable"
+	"remap" -> "has_trap_nodes"
+	"remap" -> "from_integer_unsorted"
+	"remap" -> "get_unchecked_edge_type_id_by_edge_type_name"
+	"remap" -> "iter_edge_with_type_and_weight"
+	"remap" -> "has_edge_types"
+	"remap" -> "get_directed_edges_number"
+	"remap" -> "has_weights"
+	"is_singleton_by_node_id" -> "has_singletons"
+	"is_singleton_by_node_id" -> "get_node_degree_by_node_id"
+	"is_singleton_with_self_loops_by_node_id" -> "has_singleton_nodes_with_self_loops"
+	"is_singleton_with_self_loops_by_node_id" -> "iter_node_neighbours_ids"
+	"is_singleton_by_node_name" -> "is_singleton_by_node_id"
+	"is_singleton_by_node_name" -> "get_node_id_by_node_name"
+	"has_node_by_node_name" -> "get_node_id_by_node_name"
+	"has_edge_by_node_ids" -> "get_edge_id_by_node_ids"
+	"has_edge_with_type_by_node_ids" -> "get_edge_id_with_type_by_node_ids"
+	"is_node_trap_by_node_id" -> "get_node_degree_by_node_id"
+	"has_node_with_type_by_node_name" -> "get_node_id_by_node_name"
+	"has_node_with_type_by_node_name" -> "get_node_type_name_by_node_id"
+	"has_edge_with_type_by_node_names" -> "get_edge_id_with_type_by_node_names"
+	"has_edge_by_node_names" -> "get_edge_id_by_node_names"
+	"get_filter_bitmap" -> "get_node_type_ids_by_node_type_names"
+	"get_filter_bitmap" -> "iter_node_ids"
+	"get_filter_bitmap" -> "contains"
+	"get_filter_bitmap" -> "new"
+	"get_filter_bitmap" -> "get_node_id_by_node_name"
+	"enable" -> "get_outbounds"
+	"enable" -> "get_destinations"
+	"enable" -> "get_top_k_central_nodes_ids"
+	"enable" -> "get_nodes_number"
+	"enable" -> "get_sources"
+	"enable" -> "iter_node_neighbours_ids"
+	"strongly_connected_components" -> "get_destination_node_id_by_edge_id"
+	"strongly_connected_components" -> "get_nodes_number"
+	"strongly_connected_components" -> "new"
+	"strongly_connected_components" -> "get_minmax_edge_ids_by_source_node_id"
+	"get_edge_quadruple" -> "get_edge_triple"
+	"get_edge_quadruple" -> "get_unchecked_weight_by_edge_id"
+	"get_edge_triple" -> "get_unchecked_edge_type_by_edge_id"
+	"get_edge_triple" -> "get_node_ids_from_edge_id"
+	"get_top_k_central_nodes_ids" -> "get_node_degree_by_node_id"
+	"get_top_k_central_nodes_ids" -> "get_nodes_number"
+	"get_top_k_central_node_names" -> "get_top_k_central_nodes_ids"
+	"get_top_k_central_node_names" -> "get_node_name_by_node_id"
+	"get_edge_type_id_by_edge_id" -> "get_unchecked_edge_type_by_edge_id"
+	"get_node_type_name_by_node_id" -> "get_unchecked_node_type_id_by_node_id"
+	"get_node_type_name_by_node_id" -> "get_node_type_names_by_node_type_ids"
+	"get_edge_type_name_by_edge_id" -> "get_edge_type_id_by_edge_id"
+	"get_edge_type_name_by_edge_id" -> "get_edge_type_name_by_edge_type_id"
+	"get_weight_by_edge_id" -> "get_directed_edges_number"
+	"get_weight_by_node_ids" -> "get_edge_id_by_node_ids"
+	"get_weight_by_node_ids" -> "get_weight_by_edge_id"
+	"get_weight_with_type_by_node_ids" -> "get_weight_by_edge_id"
+	"get_weight_with_type_by_node_ids" -> "get_edge_id_with_type_by_node_ids"
+	"get_weight_with_type_by_node_names" -> "get_weight_by_edge_id"
+	"get_weight_with_type_by_node_names" -> "get_edge_id_with_type_by_node_names"
+	"get_weight_by_node_names" -> "get_weight_by_edge_id"
+	"get_weight_by_node_names" -> "get_edge_id_by_node_names"
+	"get_node_name_by_node_id" -> "get_nodes_number"
+	"get_node_type_id_by_node_name" -> "get_node_type_id_by_node_id"
+	"get_node_type_id_by_node_name" -> "get_node_id_by_node_name"
+	"get_node_type_name_by_node_name" -> "get_node_id_by_node_name"
+	"get_node_type_name_by_node_name" -> "get_node_type_name_by_node_id"
+	"get_edge_count_by_edge_type_id" -> "get_unchecked_edge_count_by_edge_type_id"
+	"get_edge_count_by_edge_type_id" -> "get_edge_types_number"
+	"get_edge_count_by_edge_type_id" -> "has_edge_types"
+	"get_edge_count_by_edge_type_name" -> "get_edge_type_id_by_edge_type_name"
+	"get_edge_count_by_edge_type_name" -> "get_edge_count_by_edge_type_id"
+	"get_node_count_by_node_type_id" -> "get_node_types_number"
+	"get_node_count_by_node_type_id" -> "has_node_types"
+	"get_node_count_by_node_type_id" -> "get_unchecked_node_count_by_node_type_id"
+	"get_node_count_by_node_type_name" -> "get_node_count_by_node_type_id"
+	"get_node_count_by_node_type_name" -> "get_node_type_id_by_node_type_name"
+	"get_destination_node_id_by_edge_id" -> "get_node_ids_from_edge_id"
+	"get_destination_node_id_by_edge_id" -> "get_directed_edges_number"
+	"get_node_neighbours_by_node_id" -> "get_destination_node_id_by_edge_id"
+	"get_node_neighbours_by_node_id" -> "iter_unchecked_edge_ids_by_source_node_id"
+	"get_node_neighbours_by_node_id" -> "get_nodes_number"
+	"get_node_neighbours_by_node_name" -> "get_node_neighbours_by_node_id"
+	"get_node_neighbours_by_node_name" -> "get_node_id_by_node_name"
+	"get_node_neighbours_name_by_node_name" -> "iter_node_neighbours"
+	"get_node_neighbours_name_by_node_name" -> "get_node_id_by_node_name"
+	"get_edge_id_with_type_by_node_ids" -> "get_edge_id_by_node_ids"
+	"get_edge_id_with_type_by_node_ids" -> "get_edge_ids_by_node_ids"
+	"get_edge_id_by_node_names" -> "get_edge_id_by_node_ids"
+	"get_edge_id_with_type_by_node_names" -> "get_edge_type_id_by_edge_type_name"
+	"get_edge_id_with_type_by_node_names" -> "get_edge_id_with_type_by_node_ids"
+	"get_minmax_edge_ids_by_node_ids" -> "get_edge_id_by_node_ids"
+	"get_minmax_edge_ids_by_node_ids" -> "get_unchecked_edge_id_from_tuple"
+	"get_minmax_edge_ids_by_source_node_id" -> "get_unchecked_edge_id_from_tuple"
+	"get_edge_ids_by_node_ids" -> "get_minmax_edge_ids_by_node_ids"
+	"get_node_degree_by_node_id" -> "get_nodes_number"
+	"get_node_degree_by_node_id" -> "get_minmax_edge_ids_by_source_node_id"
+	"filter" -> "get_filter_bitmap"
+	"filter" -> "contains"
+	"filter" -> "iter_edge_with_type_and_weight_ids"
+	"filter" -> "build_graph"
+	"filter" -> "has_edge_types"
+	"filter" -> "get_edge_type_ids_by_edge_type_names"
+	"filter" -> "get_directed_edges_number"
+	"filter" -> "has_weights"
+	"degrees_product" -> "get_node_degree_by_node_id"
+	"degrees_product" -> "get_nodes_number"
+	"jaccard_index" -> "get_nodes_number"
+	"jaccard_index" -> "iter_node_neighbours_ids"
+	"jaccard_index" -> "is_node_trap_by_node_id"
+	"adamic_adar_index" -> "filter"
+	"adamic_adar_index" -> "get_node_degree_by_node_id"
+	"adamic_adar_index" -> "iter_node_neighbours_ids"
+	"adamic_adar_index" -> "is_node_trap_by_node_id"
+	"resource_allocation_index" -> "filter"
+	"resource_allocation_index" -> "get_node_degree_by_node_id"
+	"resource_allocation_index" -> "iter_node_neighbours_ids"
+	"resource_allocation_index" -> "is_node_trap_by_node_id"
+	"traps_rate" -> "get_node_degree_by_node_id"
+	"traps_rate" -> "get_nodes_number"
+	"traps_rate" -> "iter_node_neighbours_ids"
+	"traps_rate" -> "is_node_trap_by_node_id"
+	"get_node_degrees_mean" -> "get_nodes_number"
+	"get_node_degrees_mean" -> "get_directed_edges_number"
+	"get_node_degrees_mean" -> "has_nodes"
+	"get_undirected_edges_number" -> "get_self_loop_number"
+	"get_undirected_edges_number" -> "get_directed_edges_number"
+	"get_unique_undirected_edges_number" -> "get_unique_self_loop_number"
+	"get_edges_number" -> "get_undirected_edges_number"
+	"get_edges_number" -> "get_directed_edges_number"
+	"get_unique_edges_number" -> "get_unique_directed_edges_number"
+	"get_unique_edges_number" -> "get_unique_undirected_edges_number"
+	"get_node_degrees_median" -> "get_nodes_number"
+	"get_node_degrees_median" -> "get_node_degrees"
+	"get_node_degrees_median" -> "has_nodes"
+	"get_max_node_degree" -> "get_node_degrees"
+	"get_min_node_degree" -> "get_node_degrees"
+	"get_node_degrees_mode" -> "new"
+	"get_node_degrees_mode" -> "get_node_degrees"
+	"get_node_degrees_mode" -> "has_nodes"
+	"get_self_loop_rate" -> "get_self_loop_number"
+	"get_self_loop_rate" -> "get_directed_edges_number"
+	"connected_components_number" -> "connected_components"
+	"connected_components_number" -> "kruskal"
+	"connected_components_number" -> "spanning_arborescence_kruskal"
+	"get_singleton_nodes_number" -> "get_not_singleton_nodes_number"
+	"get_singleton_nodes_number" -> "get_nodes_number"
+	"get_density" -> "has_edges"
+	"get_density" -> "get_nodes_number"
+	"get_density" -> "has_selfloops"
+	"get_density" -> "has_nodes"
+	"report" -> "get_self_loop_number"
+	"report" -> "get_density"
+	"report" -> "get_undirected_edges_number"
+	"report" -> "get_self_loop_rate"
+	"report" -> "get_min_node_degree"
+	"report" -> "get_edge_types_number"
+	"report" -> "get_node_types_number"
+	"report" -> "get_singleton_nodes_number"
+	"report" -> "has_node_types"
+	"report" -> "get_nodes_number"
+	"report" -> "get_max_node_degree"
+	"report" -> "new"
+	"report" -> "get_node_degrees_mean"
+	"report" -> "has_edge_types"
+	"report" -> "get_directed_edges_number"
+	"report" -> "has_nodes"
+	"report" -> "has_weights"
+	"report" -> "is_directed"
+	"shared_components_number" -> "iter_nodes"
+	"shared_components_number" -> "get_node_id_by_node_name"
+	"merged_components_number" -> "iter_edges"
+	"merged_components_number" -> "get_node_id_by_node_name"
+	"overlap_textual_report" -> "filter"
+	"overlap_textual_report" -> "has_node_with_type_by_node_name"
+	"overlap_textual_report" -> "get_undirected_edges_number"
+	"overlap_textual_report" -> "shared_components_number"
+	"overlap_textual_report" -> "get_name"
+	"overlap_textual_report" -> "merged_components_number"
+	"overlap_textual_report" -> "par_iter_edge_with_type"
+	"overlap_textual_report" -> "has_edge_with_type_by_node_names"
+	"overlap_textual_report" -> "iter_nodes"
+	"overlap_textual_report" -> "get_node_components_vector"
+	"overlap_textual_report" -> "get_nodes_number"
+	"overlap_textual_report" -> "get_directed_edges_number"
+	"format_node_list" -> "get_node_degree_by_node_id"
+	"format_node_list" -> "get_node_name_by_node_id"
+	"format_node_list" -> "format_list"
+	"format_node_type_list" -> "format_list"
+	"format_node_type_list" -> "get_node_type_name_by_node_type_id"
+	"format_edge_type_list" -> "get_edge_type_name_by_edge_type_id"
+	"format_edge_type_list" -> "format_list"
+	"textual_report" -> "get_self_loop_number"
+	"textual_report" -> "has_unknown_node_types"
+	"textual_report" -> "get_edge_type_counts"
+	"textual_report" -> "has_unknown_edge_types"
+	"textual_report" -> "format_edge_type_list"
+	"textual_report" -> "format_node_type_list"
+	"textual_report" -> "get_multigraph_edges_number"
+	"textual_report" -> "get_density"
+	"textual_report" -> "has_multilabel_node_types"
+	"textual_report" -> "get_unknown_edge_types_number"
+	"textual_report" -> "has_singleton_nodes_with_self_loops"
+	"textual_report" -> "get_name"
+	"textual_report" -> "get_unknown_node_types_number"
+	"textual_report" -> "get_edge_types_number"
+	"textual_report" -> "get_node_types_number"
+	"textual_report" -> "has_singletons"
+	"textual_report" -> "get_node_type_counts"
+	"textual_report" -> "get_top_k_central_nodes_ids"
+	"textual_report" -> "get_singleton_nodes_with_self_loops_number"
+	"textual_report" -> "is_multigraph"
+	"textual_report" -> "get_node_degrees_median"
+	"textual_report" -> "format_node_list"
+	"textual_report" -> "get_singleton_nodes_number"
+	"textual_report" -> "get_nodes_number"
+	"textual_report" -> "get_edges_number"
+	"textual_report" -> "has_selfloops"
+	"textual_report" -> "connected_components_number"
+	"textual_report" -> "new"
+	"textual_report" -> "get_node_degrees_mean"
+	"textual_report" -> "get_directed_edges_number"
+	"textual_report" -> "has_nodes"
+	"textual_report" -> "has_weights"
+	"textual_report" -> "get_node_degrees_mode"
+	"remove" -> "from_string_sorted"
+	"remove" -> "is_singleton_with_self_loops_by_node_id"
+	"remove" -> "is_singleton_by_node_name"
+	"remove" -> "get_name"
+	"remove" -> "get_unchecked_node_id_by_node_name"
+	"remove" -> "contains"
+	"remove" -> "iter_nodes"
+	"remove" -> "has_node_types"
+	"remove" -> "get_nodes_number"
+	"remove" -> "has_selfloops"
+	"remove" -> "get_unchecked_node_type_id_by_node_id"
+	"remove" -> "iter_edge_with_type_and_weight"
+	"remove" -> "has_edge_types"
+	"remove" -> "get_directed_edges_number"
+	"remove" -> "has_weights"
+	"remove" -> "get_node_type_names_by_node_type_ids"
+	"remove_components" -> "from_string_sorted"
+	"remove_components" -> "has_singleton_nodes_with_self_loops"
+	"remove_components" -> "get_name"
+	"remove_components" -> "get_filter_bitmap"
+	"remove_components" -> "contains"
+	"remove_components" -> "has_singletons"
+	"remove_components" -> "iter_nodes"
+	"remove_components" -> "get_node_components_vector"
+	"remove_components" -> "has_trap_nodes"
+	"remove_components" -> "has_node_types"
+	"remove_components" -> "get_nodes_number"
+	"remove_components" -> "iter_edge_with_type_and_weight"
+	"remove_components" -> "new"
+	"remove_components" -> "has_edge_types"
+	"remove_components" -> "get_edge_type_ids_by_edge_type_names"
+	"remove_components" -> "remove"
+	"remove_components" -> "iter_edges_with_type_ids"
+	"remove_components" -> "get_directed_edges_number"
+	"remove_components" -> "has_weights"
+	"set_name" -> "invalidate_report"
+	"set_name" -> "report"
+	"set_all_edge_types" -> "invalidate_report"
+	"set_all_edge_types" -> "report"
+	"set_all_edge_types" -> "get_directed_edges_number"
+	"set_all_node_types" -> "invalidate_report"
+	"set_all_node_types" -> "get_nodes_number"
+	"set_all_node_types" -> "report"
+	"get_node_transition" -> "get_weighted_transitions"
+	"get_node_transition" -> "update_node_transition"
+	"get_edge_transition" -> "get_weighted_transitions"
+	"get_edge_transition" -> "update_node_transition"
+	"extract_uniform_node" -> "get_destination_node_id_by_edge_id"
+	"extract_uniform_node" -> "get_minmax_edge_ids_by_source_node_id"
+	"extract_node" -> "get_destination_node_id_by_edge_id"
+	"extract_node" -> "get_node_transition"
+	"extract_edge" -> "get_destination_node_id_by_edge_id"
+	"extract_edge" -> "get_edge_transition"
+	"extract_edge" -> "has_selfloops"
+	"random_walks_iter" -> "get_unique_source"
+	"random_walks_iter" -> "has_edges"
+	"random_walks_iter" -> "get_unique_source_nodes_number"
+	"random_walks_iter" -> "walk_iter"
+	"complete_walks_iter" -> "get_unique_source"
+	"complete_walks_iter" -> "has_edges"
+	"complete_walks_iter" -> "get_unique_source_nodes_number"
+	"complete_walks_iter" -> "walk_iter"
+	"walk_iter" -> "uniform_walk"
+	"walk_iter" -> "single_walk"
+	"walk_iter" -> "has_weights"
+	"single_walk" -> "get_destinations_slice"
+	"single_walk" -> "extract_edge"
+	"single_walk" -> "get_node_edges_and_destinations"
+	"single_walk" -> "extract_node"
+	"uniform_walk" -> "extract_uniform_node"
+	"encode_edge" -> "encode_edge"
+	"decode_edge" -> "decode_edge"
+	"get_node_ids_from_edge_id" -> "decode_edge"
+	"get_edge_id_by_node_ids" -> "encode_edge"
+	"get_unchecked_edge_id_from_tuple" -> "encode_edge"
+	"get_bipartite_edges" -> "contains"
+	"get_bipartite_edges" -> "iter_nodes"
+	"get_bipartite_edges" -> "has_edge_by_node_ids"
+	"get_bipartite_edge_names" -> "get_node_name_by_node_id"
+	"get_bipartite_edge_names" -> "get_bipartite_edges"
+	"get_star_edges" -> "get_bipartite_edges"
+	"get_star_edge_names" -> "get_bipartite_edge_names"
+	"get_clique_edges" -> "contains"
+	"get_clique_edges" -> "iter_nodes"
+	"get_clique_edges" -> "has_selfloops"
+	"get_clique_edges" -> "has_edge_by_node_ids"
+	"get_clique_edge_names" -> "get_clique_edges"
+	"get_clique_edge_names" -> "get_node_name_by_node_id"
+	"has_nodes" -> "get_nodes_number"
+	"has_edges" -> "get_edges_number"
+	"get_trap_nodes_number" -> "get_not_singleton_nodes_number"
+	"get_trap_nodes_number" -> "get_singleton_nodes_with_self_loops_number"
+	"get_trap_nodes_number" -> "get_unique_source_nodes_number"
+	"has_trap_nodes" -> "get_trap_nodes_number"
+	"has_singletons" -> "get_singleton_nodes_number"
+	"has_singleton_nodes_with_self_loops" -> "get_singleton_nodes_with_self_loops_number"
+	"get_sources" -> "iter_sources_ids"
+	"get_sources" -> "par_iter_sources_ids"
+	"get_source_names" -> "iter_sources_ids"
+	"get_source_names" -> "get_node_name_by_node_id"
+	"get_source_names" -> "par_iter_sources_ids"
+	"get_destinations" -> "iter_destinations_ids"
+	"get_destinations" -> "par_iter_destinations_ids"
+	"get_destination_names" -> "iter_destinations_ids"
+	"get_destination_names" -> "par_iter_destinations_ids"
+	"get_destination_names" -> "get_node_name_by_node_id"
+	"get_nodes" -> "get_nodes_number"
+	"get_edge_types" -> "has_edge_types"
+	"get_node_types" -> "has_node_types"
+	"get_weights" -> "has_weights"
+	"get_max_encodable_edge_number" -> "get_nodes_number"
+	"get_edges" -> "iter_edge_ids"
+	"get_edges" -> "par_iter_edge_ids"
+	"get_edge_names" -> "par_iter_edges"
+	"get_edge_names" -> "iter_edges"
+	"has_unknown_node_types" -> "get_unknown_node_types_number"
+	"has_unknown_edge_types" -> "get_unknown_edge_types_number"
+	"get_node_components_vector" -> "connected_components"
+	"get_node_components_vector" -> "kruskal"
+	"get_node_components_vector" -> "spanning_arborescence_kruskal"
+	"get_node_degrees" -> "iter_node_degrees"
+	"get_not_singletons" -> "iter_edge_ids"
+	"get_dense_node_mapping" -> "get_not_singletons"
+	"is_multigraph" -> "get_multigraph_edges_number"
+	"get_multigraph_edges_number" -> "get_directed_edges_number"
+	"get_outbounds" -> "get_nodes_number"
+	"get_outbounds" -> "get_unchecked_edge_id_from_tuple"
+	"get_unique_source_nodes_number" -> "get_nodes_number"
+	"get_edge_type_counts_hashmap" -> "get_edge_type_counts"
+	"get_node_type_counts_hashmap" -> "get_node_type_counts"
+	"iter_unchecked_edge_ids_by_source_node_id" -> "get_minmax_edge_ids_by_source_node_id"
+	"iter_node_degrees" -> "get_node_degree_by_node_id"
+	"iter_node_degrees" -> "get_nodes_number"
+	"par_iter_node_degrees" -> "get_node_degree_by_node_id"
+	"par_iter_node_degrees" -> "get_nodes_number"
+	"iter_node_neighbours_ids" -> "get_destination_node_id_by_edge_id"
+	"iter_node_neighbours_ids" -> "iter_unchecked_edge_ids_by_source_node_id"
+	"iter_node_neighbours" -> "get_destination_node_id_by_edge_id"
+	"iter_node_neighbours" -> "iter_unchecked_edge_ids_by_source_node_id"
+	"iter_node_neighbours" -> "get_unchecked_node_name_by_node_id"
+	"iter_sources_ids" -> "iter_edge_ids"
+	"par_iter_sources_ids" -> "iter_edge_ids"
+	"par_iter_sources_ids" -> "par_iter_edge_ids"
+	"iter_destinations_ids" -> "iter_edge_ids"
+	"par_iter_destinations_ids" -> "iter_edge_ids"
+	"par_iter_destinations_ids" -> "par_iter_edge_ids"
+	"iter_node_ids" -> "get_nodes_number"
+	"iter_node_ids" -> "get_unchecked_node_type_id_by_node_id"
+	"iter_nodes" -> "iter_node_ids"
+	"iter_nodes" -> "get_node_type_name_by_node_id"
+	"iter_edge_ids" -> "new"
+	"iter_edge_ids" -> "get_node_ids_from_edge_id"
+	"iter_edge_ids" -> "decode_edge"
+	"iter_edge_ids" -> "get_directed_edges_number"
+	"iter_edges" -> "get_unchecked_node_name_by_node_id"
+	"iter_edges" -> "iter_edge_ids"
+	"par_iter_edge_ids" -> "decode_edge"
+	"par_iter_edges" -> "get_unchecked_node_name_by_node_id"
+	"par_iter_edges" -> "iter_edge_ids"
+	"par_iter_edges" -> "par_iter_edge_ids"
+	"iter_edges_with_type_ids" -> "iter_edge_ids"
+	"iter_edges_with_type_ids" -> "get_unchecked_edge_type_by_edge_id"
+	"iter_edges_with_type" -> "get_unchecked_edge_type_by_edge_id"
+	"iter_edges_with_type" -> "iter_edges"
+	"iter_edges_with_type" -> "get_unchecked_edge_type_name_by_edge_type_id"
+	"par_iter_edge_with_type" -> "par_iter_edges"
+	"par_iter_edge_with_type" -> "get_unchecked_edge_type_by_edge_id"
+	"par_iter_edge_with_type" -> "iter_edges"
+	"par_iter_edge_with_type" -> "get_unchecked_edge_type_name_by_edge_type_id"
+	"par_iter_edge_with_type_ids" -> "iter_edge_ids"
+	"par_iter_edge_with_type_ids" -> "get_unchecked_edge_type_by_edge_id"
+	"par_iter_edge_with_type_ids" -> "par_iter_edge_ids"
+	"par_iter_edge_with_type_and_weight" -> "par_iter_edge_with_type"
+	"par_iter_edge_with_type_and_weight" -> "get_unchecked_weight_by_edge_id"
+	"iter_edge_with_type_and_weight" -> "iter_edges_with_type"
+	"iter_edge_with_type_and_weight" -> "get_unchecked_weight_by_edge_id"
+	"par_iter_edge_with_type_and_weight_ids" -> "par_iter_edge_with_type_ids"
+	"par_iter_edge_with_type_and_weight_ids" -> "get_unchecked_weight_by_edge_id"
+	"iter_edge_with_type_and_weight_ids" -> "get_unchecked_weight_by_edge_id"
+	"iter_edge_with_type_and_weight_ids" -> "iter_edges_with_type_ids"
+	"iter_unique_edges" -> "new"
+	"iter_unique_edges" -> "get_node_ids_from_edge_id"
+	"iter_unique_edges" -> "decode_edge"
+	"iter_unique_edges" -> "get_directed_edges_number"
+	"iter_unique_sources" -> "get_nodes_number"
+	"iter_unique_sources" -> "new"
+	"from_sorted_csv" -> "from_string_sorted"
+	"from_sorted_csv" -> "has_node_types"
+	"from_sorted_csv" -> "has_edge_types"
+	"from_sorted_csv" -> "has_weights"
+	"from_unsorted_csv" -> "from_string_unsorted"
+	"from_unsorted_csv" -> "has_node_types"
+	"from_unsorted_csv" -> "has_edge_types"
+	"from_unsorted_csv" -> "has_weights"
+	"compute_hash" -> "new"
+	"build_graph" -> "new"
+	"from_string_unsorted" -> "build_graph"
+	"from_integer_unsorted" -> "build_graph"
+	"from_string_sorted" -> "new"
+	"sample_negatives" -> "get_unique_edges_number"
+	"sample_negatives" -> "overlaps"
+	"sample_negatives" -> "get_unchecked_node_id_by_node_name"
+	"sample_negatives" -> "contains"
+	"sample_negatives" -> "iter_nodes"
+	"sample_negatives" -> "get_node_components_vector"
+	"sample_negatives" -> "from_integer_unsorted"
+	"sample_negatives" -> "get_nodes_number"
+	"sample_negatives" -> "has_selfloops"
+	"sample_negatives" -> "has_edge_by_node_ids"
+	"sample_negatives" -> "decode_edge"
+	"sample_negatives" -> "encode_edge"
+	"sample_negatives" -> "is_directed"
+	"get_holdouts_elements_number" -> "get_directed_edges_number"
+	"get_holdouts_edges_number" -> "get_holdouts_elements_number"
+	"get_holdouts_edges_number" -> "get_directed_edges_number"
+	"edge_holdout" -> "get_unchecked_edge_id_by_node_ids"
+	"edge_holdout" -> "filter"
+	"edge_holdout" -> "contains"
+	"edge_holdout" -> "get_edge_triple"
+	"edge_holdout" -> "build_graph"
+	"edge_holdout" -> "has_selfloops"
+	"edge_holdout" -> "get_edge_quadruple"
+	"edge_holdout" -> "new"
+	"edge_holdout" -> "has_edge_types"
+	"edge_holdout" -> "get_directed_edges_number"
+	"edge_holdout" -> "compute_edge_ids_vector"
+	"edge_holdout" -> "has_weights"
+	"connected_holdout" -> "get_unchecked_edge_count_by_edge_type_id"
+	"connected_holdout" -> "has_singleton_nodes_with_self_loops"
+	"connected_holdout" -> "contains"
+	"connected_holdout" -> "has_singletons"
+	"connected_holdout" -> "kruskal"
+	"connected_holdout" -> "spanning_arborescence_kruskal"
+	"connected_holdout" -> "get_node_degree_by_node_id"
+	"connected_holdout" -> "random_spanning_arborescence_kruskal"
+	"connected_holdout" -> "get_edge_type_ids_by_edge_type_names"
+	"connected_holdout" -> "get_directed_edges_number"
+	"connected_holdout" -> "edge_holdout"
+	"connected_holdout" -> "is_directed"
+	"random_holdout" -> "get_holdouts_edges_number"
+	"random_holdout" -> "contains"
+	"random_holdout" -> "is_multigraph"
+	"random_holdout" -> "has_selfloops"
+	"random_holdout" -> "get_edge_type_ids_by_edge_type_names"
+	"random_holdout" -> "get_unchecked_edge_degreee_by_node_ids"
+	"random_holdout" -> "edge_holdout"
+	"node_label_holdout" -> "get_holdouts_elements_number"
+	"node_label_holdout" -> "has_multilabel_node_types"
+	"node_label_holdout" -> "get_node_types_number"
+	"node_label_holdout" -> "get_minimum_node_types_number"
+	"node_label_holdout" -> "has_node_types"
+	"node_label_holdout" -> "get_nodes_number"
+	"node_label_holdout" -> "get_unchecked_node_type_id_by_node_id"
+	"node_label_holdout" -> "new"
+	"edge_label_holdout" -> "get_holdouts_elements_number"
+	"edge_label_holdout" -> "get_unchecked_edge_type_by_edge_id"
+	"edge_label_holdout" -> "get_edge_types_number"
+	"edge_label_holdout" -> "new"
+	"edge_label_holdout" -> "has_edge_types"
+	"edge_label_holdout" -> "get_directed_edges_number"
+	"edge_label_holdout" -> "get_minimum_edge_types_number"
+	"random_subgraph" -> "get_destination_node_id_by_edge_id"
+	"random_subgraph" -> "filter"
+	"random_subgraph" -> "get_not_singleton_nodes_number"
+	"random_subgraph" -> "contains"
+	"random_subgraph" -> "build_graph"
+	"random_subgraph" -> "get_nodes_number"
+	"random_subgraph" -> "has_selfloops"
+	"random_subgraph" -> "get_edge_quadruple"
+	"random_subgraph" -> "new"
+	"random_subgraph" -> "iter_node_neighbours_ids"
+	"random_subgraph" -> "is_node_trap_by_node_id"
+	"random_subgraph" -> "has_edge_types"
+	"random_subgraph" -> "get_minmax_edge_ids_by_source_node_id"
+	"random_subgraph" -> "get_directed_edges_number"
+	"random_subgraph" -> "has_weights"
+	"kfold" -> "iter_edge_ids"
+	"kfold" -> "contains"
+	"kfold" -> "has_selfloops"
+	"kfold" -> "get_edge_type_ids_by_edge_type_names"
+	"kfold" -> "iter_edges_with_type_ids"
+	"kfold" -> "edge_holdout"
+}

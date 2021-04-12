@@ -9,6 +9,10 @@ def read_file(path):
     with open(path, "r") as f:
         return f.read()
     
+def read_line(text):
+    line, _, text = text.partition("\n")
+    return line, text
+
 def read_files(path):
     return [
         read_file(file)
@@ -28,16 +32,10 @@ class Parser:
         self.functions = []
         self.current_function = {}
 
-    def comment(self, text):
-        comment_line, _, text = text.partition("\n")
+    def doc(self, text):
+        doc_line, text = read_line(text)
         self.current_function.setdefault("doc", []) 
-        self.current_function["doc"].append(comment_line.strip())
-        return text
-
-    def attr(self, text):
-        attr, _, text = text.partition("\n")
-        self.current_function.setdefault("attrs", []) 
-        self.current_function["attrs"].append(attr[:-1].strip())
+        self.current_function["doc"].append(doc_line.strip())
         return text
 
     def skip_to_match(self, text):
@@ -139,41 +137,52 @@ class Parser:
         body, text = self.skip_to_match(text)
         self.current_function["body"] = body.strip()
         return text
-        
-    def parse_values(self, text):
-        while text:
-            # Remove the white space
-            text = text.lstrip()
-            
-            if text.startswith("///"):
-                text = self.comment(text[3:])
-            elif text.startswith("//"):
-                _, _, text = text.partition("\n")
-            elif text.startswith("#["):
-                text = self.attr(text[2:])
-            elif re.match(r"\s*(pub(\(crate\))?\s+)?fn\s+", text) is not None:
-                text = self.function(text)
-            else:
-                skipped, _, text = text.partition("\n")
-                print("skipping the current line: [%s]"%skipped)
-
-        if self.current_function != {}:
-            self.functions.append(self.current_function)
-
 
     def start(self, text):
         while text:
             # Remove the white space
             text = text.lstrip()
 
-            if re.match(r"\s*impl\s+Graph\s+", text):
-                _, _, text = text.partition("Graph")
+            # Check if the current line is an impl or a function
+            impl_matches = re.match(r"\s*impl\s+(\S+)\s+{", text)
+            func_matches = re.match(r"\s*(pub(\(crate\))?\s+)?fn\s+", text)
+            if impl_matches is not None:
+                # Reset the doc if present
+                # we don't care about impl documentation.
+                self.doc = []
+                # Get the name of the struct
+                self.struct_name = impl_matches.groups()[0]
+                # skip to the end of the impl definition
+                _, _, text = text.partition(self.struct_name)
+                # Get all the text inside the current impl
                 to_parse, text = self.skip_to_match(text.strip())
-                self.parse_values(to_parse.strip())
+                # Parse all the content 
+                self.start(to_parse.strip())
+                # Reset the struct name
+                self.struct_name = None
+            elif func_matches is not None:
+                text = self.function(text)
+            # if we encounter a struct we skip it.
+            elif text.startswith("use"):
+                _line, text = read_line(text)  
+            # if we encounter an use statement we just skip the line
+            elif text.startswith("use"):
+                _line, text = read_line(text)  
+            # If it's a doc line, add it to the current buffer
+            elif text.startswith("///"):
+                text = self.doc(text[3:])
+            # if we encounter an attribute we just skip the line
+            elif text.startswith("#["):
+                _skipped_attr, text = read_line(text)
+            # Otherwise just skip the line
             else:
-                _, _, text = text.partition("\n")
+                _skipped_line, text = read_line(text)
+                print("Skipping line: '{}'".format(_skipped_line.strip()))
 
 txt = get_all_impls(path)
+
+with open("debug.rs", "w") as f:
+    f.write(txt)
 
 p = Parser()
 p.start(txt)
