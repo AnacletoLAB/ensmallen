@@ -48,9 +48,7 @@ impl Graph {
             .map_or(false, |cds| cds.contains_key(&node))
         {
             true => None,
-            false => Some(
-                self.iter_node_neighbours_ids(node).collect(),
-            ),
+            false => Some(self.iter_node_neighbours_ids(node).collect()),
         };
         (min_edge_id, max_edge_id, destinations, None)
     }
