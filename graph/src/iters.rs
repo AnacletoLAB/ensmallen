@@ -16,9 +16,9 @@ impl Graph {
     pub(crate) fn iter_unchecked_edge_ids_by_source_node_id(
         &self,
         src: NodeT,
-    ) -> impl Iterator<Item = EdgeT> + '_ {
+    ) -> std::ops::Range<usize> {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
-        min_edge_id..max_edge_id
+        min_edge_id as usize..max_edge_id as usize
     }
 
     /// Return iterator on the node degrees of the graph.
@@ -41,8 +41,7 @@ impl Graph {
     pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match &self.destinations{
             Some(dsts) => {
-                let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(src);
-                Box::new(dsts[min_edge_id as usize..max_edge_id as usize].iter().cloned())
+                Box::new(dsts[self.iter_unchecked_edge_ids_by_source_node_id(src)].iter().cloned())
             },
             None => Box::new(self.edges
                 .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))

@@ -861,7 +861,9 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        graph.cooccurence_matrix(&walker, 3, verbose)?;
+        let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
+        let terms = iterator.collect::<Vec<_>>();
+        assert_eq!(terms_number, terms.len());
 
         let window_size = 3;
         let batch_size = 256;
