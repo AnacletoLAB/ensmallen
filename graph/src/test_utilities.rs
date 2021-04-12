@@ -621,7 +621,12 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(max_comp, test.get_nodes_number());
         }
         if total == 2 {
-            assert_eq!(max_comp + min_comp, graph.get_nodes_number());
+            assert_eq!(
+                max_comp + min_comp, graph.get_nodes_number(),
+                "We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\nThe graph report is:\n {:?}",
+                min_comp, max_comp, graph.get_nodes_number(),
+                graph.textual_report(false)
+            );
             assert_eq!(max_comp + min_comp, test.get_nodes_number());
         }
         default_holdout_test_suite(graph, &train, &test)?;
@@ -635,6 +640,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
+
         assert_eq!(
             graph.connected_components_number(verbose),
             without_selfloops.connected_components_number(verbose),

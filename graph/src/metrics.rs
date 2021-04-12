@@ -357,13 +357,7 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        if let Some(d) = self
-            .get_nodes_number()
-            .checked_sub(self.get_not_singleton_nodes_number())
-        {
-            return d;
-        }
-        panic!("{:#4?}", self);
+        self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
     /// Returns number of singleton nodes with self-loops within the graph.
