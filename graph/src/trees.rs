@@ -3,6 +3,7 @@ use super::*;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
@@ -122,8 +123,10 @@ impl Graph {
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
         let mut components = vec![NOT_PRESENT; nodes_number];
         let mut merged_component_number = 0;
-        let mut component_sizes: Vec<usize> = Vec::new();
+        let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
+        let mut max_component_size: NodeT = 0;
+        let mut min_component_size = NodeT::MAX;
 
         // When there are singleton nodes with self-loops,
         // which is an arguability weird feature of some graphs,
@@ -134,6 +137,8 @@ impl Graph {
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
         if self.has_singletons() || self.has_singleton_nodes_with_self_loops() {
+            min_component_size = 1;
+            max_component_size = 1;
             (0..self.get_nodes_number())
                 .filter(|node_id| {
                     self.is_singleton_by_node_id(*node_id).unwrap()
@@ -163,6 +168,7 @@ impl Graph {
                     components[dst as usize] = component_number;
                     components_remapping.push(component_number);
                     component_sizes.push(2);
+                    max_component_size = max_component_size.max(2);
                     tree.insert((src, dst));
                 }
                 // If both nodes have a component, the two components must be merged
@@ -188,6 +194,8 @@ impl Graph {
                     merged_component_number += 1;
                     component_sizes[min_component as usize] +=
                         component_sizes[max_component as usize];
+                    max_component_size =
+                        max_component_size.max(component_sizes[min_component as usize]);
 
                     components_remapping
                         .iter_mut()
@@ -208,6 +216,8 @@ impl Graph {
                     };
                     let component_number = components_remapping[component_number as usize];
                     component_sizes[component_number as usize] += 1;
+                    max_component_size =
+                        max_component_size.max(component_sizes[component_number as usize]);
                     components[not_inserted_node as usize] = component_number as NodeT;
                     tree.insert((src, dst));
                 }
@@ -231,20 +241,23 @@ impl Graph {
 
         let total_components_number = component_sizes.len() - merged_component_number;
 
-        // TODO: explore ways to compute these on the fly.
-        let (min_component_size, max_component_size) = component_sizes
-            .into_iter()
-            .filter(|c| *c != 0)
-            .minmax()
-            .into_option()
-            .unwrap();
+        // If the minimum component size is still bigger than one
+        // that is, we do not know alredy that there is a singleton
+        // we need to compute it.
+        if min_component_size > 1 {
+            min_component_size = component_sizes
+                .into_par_iter()
+                .filter(|c| *c != 0)
+                .min()
+                .unwrap();
+        }
 
         (
             tree,
             components,
             total_components_number as NodeT,
-            min_component_size as NodeT,
-            max_component_size as NodeT,
+            min_component_size,
+            max_component_size,
         )
     }
 
