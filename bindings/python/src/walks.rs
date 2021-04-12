@@ -166,7 +166,7 @@ impl EnsmallenGraph {
             t: PyArray2::new(
                 py.python(),
                 [
-                    self.graph.get_unique_sources_number() as usize
+                    self.graph.get_unique_source_nodes_number() as usize
                         * parameters.get_iterations() as usize,
                     walk_length as usize,
                 ],

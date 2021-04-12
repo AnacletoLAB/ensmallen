@@ -1,4 +1,6 @@
 use super::*;
+use bitvec::prelude::*;
+use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
@@ -7,6 +9,8 @@ use rayon::prelude::*;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
+
+use super::atomic_f64_hashmap::AtomicF64;
 
 #[inline(always)]
 /// Computes val % n using lemires fast method for u32.
@@ -77,10 +81,11 @@ pub fn cooccurence_matrix(
     window_size: usize,
     number_of_sequences: usize,
     verbose: bool,
-) -> Result<(Words, Words, Frequencies), String> {
+) -> Result<(usize, impl Iterator<Item=(NodeT, NodeT, f64)>), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let mut max_frequency = 0.0;
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+
     // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
     // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
     let vec = sequences.collect::<Vec<Vec<NodeT>>>();
@@ -112,33 +117,21 @@ pub fn cooccurence_matrix(
         }
     });
 
-    let elements = cooccurence_matrix.len() * 2;
-    let mut words: Vec<NodeT> = vec![0; elements];
-    let mut contexts: Vec<NodeT> = vec![0; elements];
-    let mut frequencies: Vec<f64> = vec![0.0; elements];
+    let number_of_elements = cooccurence_matrix.len();
     let pb2 = get_loading_bar(
         verbose,
         "Converting mapping into CSR matrix",
         cooccurence_matrix.len(),
     );
-
-    cooccurence_matrix
-        .into_iter()
-        .progress_with(pb2)
-        .enumerate()
-        .for_each(|(i, ((word, context), frequency))| {
-            let (k, j) = (i * 2, i * 2 + 1);
-
-            words[k] = word;
-            contexts[k] = context;
-            frequencies[k] = frequency / max_frequency;
-
-            words[j] = word;
-            contexts[j] = context;
-            frequencies[j] = frequency / max_frequency;
-        });
-
-    Ok((words, contexts, frequencies))
+    Ok((
+        number_of_elements,
+        cooccurence_matrix
+            .into_iter()
+            .progress_with(pb2)
+            .map(move |((word, context), frequency)| {
+                (word, context, frequency / max_frequency)
+            })
+    ))
 }
 
 /// # Preprocessing for ML algorithms on graph.
@@ -185,12 +178,17 @@ impl Graph {
     ///     whether to show the progress bars.
     ///     The default behaviour is false.
     ///     
-    pub fn cooccurence_matrix(
-        &self,
-        walks_parameters: &WalksParameters,
+    pub fn cooccurence_matrix<'a>(
+        &'a self,
+        walks_parameters: &'a WalksParameters,
         window_size: usize,
         verbose: bool,
-    ) -> Result<(Words, Words, Frequencies), String> {
+    ) -> Result<(usize, impl Iterator<Item=(NodeT, NodeT, f64)> + 'a), String> {
+        if !self.has_edges() {
+            return Err(
+                "The cooccurence matrix on a graph without edges is not defined.".to_string(),
+            );
+        }
         let walks = self.complete_walks_iter(walks_parameters)?;
         cooccurence_matrix(
             walks,

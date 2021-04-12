@@ -25,12 +25,12 @@ pub(crate) fn get_node_bits(top_node: NodeT) -> u8 {
 
 impl Graph {
     #[inline(always)]
-    pub(crate) fn encode_edge(&self, src: NodeT, dst: NodeT) -> u64 {
+    pub fn encode_edge(&self, src: NodeT, dst: NodeT) -> u64 {
         encode_edge(src, dst, self.node_bits)
     }
 
     #[inline(always)]
-    pub(crate) fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
+    pub fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
         decode_edge(edge, self.node_bits, self.node_bit_mask)
     }
 

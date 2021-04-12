@@ -73,17 +73,28 @@ fn cooccurence_matrix(
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
     pe!(validate_kwargs(kwargs, &["window_size", "verbose"]))?;
     let len = sequences.len();
-    let (words, contexts, frequencies) = pe!(rust_cooccurence_matrix(
+
+    let (number_of_elements, iter) = pe!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
         extract_value!(kwargs, "window_size", usize).unwrap_or(3),
         len,
         extract_value!(kwargs, "verbose", bool).unwrap_or(true),
     ))?;
 
+    let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
+    let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
+    let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
+
+    iter.enumerate().for_each(|(i, (src, dst, freq))| {
+        unsafe{
+            *srcs.uget_mut(i) = src;
+            *dsts.uget_mut(i) = dst;
+            *frequencies.uget_mut(i) = freq;
+        }
+    });
+    
     Ok((
-        to_ndarray_1d!(gil, words, NodeT),
-        to_ndarray_1d!(gil, contexts, NodeT),
-        to_ndarray_1d!(gil, frequencies, f64),
+        srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()
     ))
 }
 
@@ -158,16 +169,26 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (words, contexts, frequencies) = pe!(self.graph.cooccurence_matrix(
+        let (number_of_elements, iter) = pe!(self.graph.cooccurence_matrix(
             &parameters,
             extract_value!(kwargs, "window_size", usize).unwrap_or(3),
             extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
 
+        let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
+        let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
+        let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
+
+        iter.enumerate().for_each(|(i, (src, dst, freq))| {
+            unsafe{
+                *srcs.uget_mut(i) = src;
+                *dsts.uget_mut(i) = dst;
+                *frequencies.uget_mut(i) = freq;
+            }
+        });
+        
         Ok((
-            to_ndarray_1d!(gil, words, NodeT),
-            to_ndarray_1d!(gil, contexts, NodeT),
-            to_ndarray_1d!(gil, frequencies, f64),
+            srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()
         ))
     }
 

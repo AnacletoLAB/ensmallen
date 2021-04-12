@@ -56,6 +56,12 @@ pub struct Graph {
 
     pub(crate) unique_sources: Option<EliasFano>,
 
+    /// Cache of the textual report. This is needed because in some of the bindings
+    /// (such as whitin jupyter) the textual report is called multiple times like\
+    /// every time the IDE tries to auto-complete.
+    /// This cache must be invalidated everytime the graph is modified.
+    pub(crate) cached_report: ClonableRwLock<Option<String>>,
+
     ////////////////////////////////////////////////////////////////////////////
     /// Elias-Fano Caching related attributes
     ////////////////////////////////////////////////////////////////////////////
@@ -109,6 +115,7 @@ impl Graph {
             outbounds: None,
             cached_destinations: None,
             name: name.into(),
+            cached_report: ClonableRwLock::new(None),
         }
     }
 

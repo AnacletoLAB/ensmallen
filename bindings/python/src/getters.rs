@@ -419,8 +419,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Number of the source nodes.
-    fn get_unique_sources_number(&self) -> NodeT {
-        self.graph.get_unique_sources_number()
+    fn get_unique_source_nodes_number(&self) -> NodeT {
+        self.graph.get_unique_source_nodes_number()
     }
 
     #[text_signature = "($self, directed)"]
@@ -434,7 +434,7 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Numpy array with numeric sources Ids.
-    pub fn get_sources(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
+    fn get_sources(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(gil, self.graph.get_sources(directed.unwrap_or(true)), NodeT)
     }
@@ -450,7 +450,7 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Numpy array with numeric destination Ids.
-    pub fn get_destinations(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
+    fn get_destinations(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(gil, self.graph.get_destinations(directed.unwrap_or(true)), NodeT)
     }

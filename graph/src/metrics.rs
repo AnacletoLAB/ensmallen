@@ -697,12 +697,21 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
+        {
+            let ptr = self.cached_report.read();
+            if let Some(report) = &*ptr{
+                return Ok(report.clone());
+            }
+        }
+
         if !self.has_nodes(){
             return Ok(format!(
                 "The graph {} is empty.",
                 self.get_name()
             ));
         }
+
+        let mut ptr = self.cached_report.write();
 
         let (connected_components_number, minimum_connected_component, maximum_connected_component) =
             self.connected_components_number(verbose);
@@ -711,7 +720,7 @@ impl Graph {
         self.hash(&mut hasher);
         let hash = hasher.finish();
 
-        Ok(format!(
+        *ptr = Some(format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
@@ -863,6 +872,8 @@ impl Graph {
             mode_node_degree=self.get_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
             central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
-        ))
+        ));
+
+        Ok(ptr.clone().unwrap())
     }
 }
