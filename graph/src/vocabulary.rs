@@ -18,7 +18,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         }
     }
 
-    fn normalize_value(&self, value: &str) -> Result<(String, usize), String> {
+    fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
             let parsed_value = match value.parse::<usize>() {
                 Ok(val) => Ok(val),
@@ -44,9 +44,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                 ));
             }
 
-            (string_parsed_value, parsed_value)
+            (string_parsed_value, IndexT::from_usize(parsed_value))
         } else {
-            (value.to_string(), self.map.len())
+            (value.to_string(), IndexT::from_usize(self.map.len()))
         })
     }
 
@@ -81,12 +81,10 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
         let (normalized_value, index) = self.normalize_value(value)?;
 
-        if !self.map.contains_key(&normalized_value) {
-            self.map
-                .insert(normalized_value.clone(), IndexT::from_usize(index));
-        }
-
-        Ok(*self.get(&normalized_value).unwrap())
+        Ok(*self
+            .map
+            .entry(normalized_value)
+            .or_insert(index))
     }
 
     /// Compute the reverse mapping vector for fast decoding
