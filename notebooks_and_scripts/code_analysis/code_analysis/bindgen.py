@@ -1,3 +1,4 @@
+import re
 import json
 from ensmallen_graph import EnsmallenGraph
 from .utils import build_path
@@ -22,8 +23,8 @@ def bindgen(args):
             print("WTF", function)
             continue
 
-        if function["name"] in dir(EnsmallenGraph):
-            continue
+        #if function["name"] in dir(EnsmallenGraph):
+        #    continue
 
         if "iter" in function["name"]:
             continue
@@ -44,7 +45,28 @@ def bindgen(args):
 
         result += "/// TODO!: This binding was automatically generated\n"
         if "doc" in function:
-            result += "\n".join("/// " + x for x in function.get("doc", []))
+            doc = "\n".join(function.get("doc", []))
+            # Remove examples
+            doc = re.sub("```.+```", "", doc, flags=re.DOTALL)
+            # Remove example header
+            doc = re.sub("# Example[^#]+", "", doc, flags=re.DOTALL)
+            # Convert the arguments header
+            doc = re.sub("#\s+Arguments", "Paramenters\n--------------", doc, flags=re.DOTALL)
+            # Convert the arguments in python format
+            doc = re.sub(r"[ \t]*\*`?(.+?)`?\s*:\s*(.+?)\s*-\s*(.+)", r"\1 : \2,\n\t\3", doc)
+            # Type conversions
+            doc = re.sub(r"Vec<(.+?)>", r"List[\1]", doc)
+            doc = re.sub(r"EdgeTypeT", r"int", doc)
+            doc = re.sub(r"NodeTypeT", r"int", doc)
+            doc = re.sub(r"String", r"str", doc)
+            doc = re.sub(r"NodeT", r"int", doc)
+            doc = re.sub(r"EdgeT", r"int", doc)
+            doc = re.sub(r"&", r"", doc)
+            doc = re.sub(r"Option<(.+?)>", r"\1", doc)
+            doc = re.sub(r"HashSet<(.+?)>", r"Dict[\1]", doc)
+            # Remove white space at the edges
+            doc = doc.strip()
+            result += "\n".join("/// " + x for x in doc.split("\n"))
             result += "\n"
 
         if len(function.get("args", [])) > 1:
