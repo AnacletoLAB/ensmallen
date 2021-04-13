@@ -1,6 +1,7 @@
 //! Test functions used both for testing and fuzzing.
 
 use super::*;
+use itertools::Itertools;
 use log::warn;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
@@ -472,6 +473,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Checking that the connected components are a dense range.
     let (_, connected_components, total_connected_components, _, _) =
         graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+    let actual_components_number = connected_components.iter().unique().count() as NodeT;
+    assert_eq!(
+        actual_components_number,
+        total_connected_components,
+        "The measured number of connected components ({}) does not match the computed number of connected components ({}).",
+        actual_components_number,
+        total_connected_components
+    );
     let max_component_id = connected_components.iter().max();
     if let Some(mci) = max_component_id {
         assert_eq!(
@@ -482,7 +491,29 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             graph.textual_report(true)
         );
     }
-
+    if !graph.is_directed() {
+        // Checking that the connected components are a dense range.
+        let (connected_components, total_connected_components, _, _) =
+            graph.connected_components(verbose)?;
+        let actual_components_number = connected_components.iter().unique().count() as NodeT;
+        assert_eq!(
+            actual_components_number,
+            total_connected_components,
+            "The measured number of connected components ({}) does not match the computed number of connected components ({}).",
+            actual_components_number,
+            total_connected_components
+        );
+        let max_component_id = connected_components.iter().max();
+        if let Some(mci) = max_component_id {
+            assert_eq!(
+                *mci as usize,
+                total_connected_components as usize - 1,
+                "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
+                connected_components,
+                graph.textual_report(true)
+            );
+        }
+    }
     Ok(())
 }
 

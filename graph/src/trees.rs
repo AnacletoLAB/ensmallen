@@ -105,9 +105,16 @@ impl Graph {
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        // If the graph does not have nodes, we return all
+        // results as empty to provide an uniform, though pathological,
+        // return value.
         if !self.has_nodes() {
             return (HashSet::new(), Vec::new(), 0, 0, 0);
         }
+        // Similarly, when dealing with a graph with no edges, we define
+        // the spanning tree as empty and the components as the set of the
+        // nodes themselves. Since all nodes are singletons, both the
+        // maximum component size and minimum component size equals to one.
         if !self.has_edges() {
             return (
                 HashSet::new(),
@@ -121,7 +128,6 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
         let mut components = vec![NOT_PRESENT; nodes_number];
-        let mut merged_component_number = 0;
         let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
         let mut max_component_size: NodeT = 0;
@@ -135,19 +141,28 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singletons() || self.has_singleton_nodes_with_self_loops() {
+        if self.has_singletons() {
+            // When there are singleton nodes, the minimum component size
+            // surely becomes one.
             min_component_size = 1;
+            // Similarly we need to bump up the max component size, as if
+            // this graph is composed of only singleton nodes with self-loops
+            // we would not iterate thorugh them in the Kruskal loop
+            // since it skips self-loops.
             max_component_size = 1;
-            (0..self.get_nodes_number())
-                .filter(|node_id| {
-                    self.is_singleton_by_node_id(*node_id).unwrap()
-                        || self.is_singleton_with_self_loops_by_node_id(*node_id)
-                })
-                .for_each(|node_id| {
-                    components[node_id as usize] = component_sizes.len() as NodeT;
-                    components_remapping.push(component_sizes.len() as NodeT);
-                    component_sizes.push(1);
+            // We iterate through the singleton nodes and the singleton nodes
+            // with self-loops.
+            self.iter_singleton_node_ids()
+                .chain(self.iter_singleton_with_selfloops_node_ids())
+                .enumerate()
+                .for_each(|(component_number, node_id)| {
+                    components[node_id as usize] = component_number as NodeT;
                 });
+            // We can re-initialize the component sizes as the vector with
+            // all ones bit as the singleton nodes number.
+            component_sizes = vec![1; self.get_singleton_nodes_number() as usize];
+            // Similarly, the components remapping can be initialized to a range.
+            components_remapping = (0..self.get_singleton_nodes_number()).collect::<Vec<NodeT>>();
         }
 
         edges.for_each(|(src, dst)| {
@@ -162,13 +177,12 @@ impl Graph {
                 // both in the components vector and in the tree.
                 // The edge must be added to the three.
                 (true, true) => {
-                    let component_number = components_remapping.len() as NodeT;
-                    components[src as usize] = component_number;
-                    components[dst as usize] = component_number;
-                    components_remapping.push(component_number);
+                    let new_component_id = components_remapping.len() as NodeT;
+                    components[src as usize] = new_component_id;
+                    components[dst as usize] = new_component_id;
+                    components_remapping.push(new_component_id);
                     component_sizes.push(2);
                     max_component_size = max_component_size.max(2);
-                    tree.insert((src, dst));
                 }
                 // If both nodes have a component, the two components must be merged
                 // if they are not the same one.
@@ -181,54 +195,71 @@ impl Graph {
                     }
                     let src_component = components_remapping[src_component as usize];
                     let dst_component = components_remapping[dst_component as usize];
-                    components[src as usize] = dst_component;
-                    components[dst as usize] = dst_component;
                     if src_component == dst_component {
                         return;
                     }
-                    let (min_component, max_component) = match src_component < dst_component {
-                        true => (src_component, dst_component),
-                        false => (dst_component, src_component),
-                    };
-                    merged_component_number += 1;
-                    component_sizes[min_component as usize] +=
-                        component_sizes[max_component as usize];
-                    max_component_size =
-                        max_component_size.max(component_sizes[min_component as usize]);
+                    let (node_id_to_update, min_component_id, max_component_id) =
+                        match src_component < dst_component {
+                            true => (dst, src_component, dst_component),
+                            false => (src, dst_component, src_component),
+                        };
 
+                    // We update the node to update with the new component ID.
+                    components[node_id_to_update as usize] = min_component_id;
+
+                    // We merge the two component sizes.
+                    component_sizes[min_component_id as usize] +=
+                        component_sizes[max_component_id as usize];
+                    
+                    // We check if we have a new component size record
+                    max_component_size =
+                        max_component_size.max(component_sizes[min_component_id as usize]);
+
+                    // If the component we have removed and integrated with
+                    // the component with the smaller has a size greater than
+                    // one, we may need to remap some element of the component
+                    // to this new component.
+                    // Since the components within this loops start from edges
+                    // they cannot be smaller in cardinality than
+                    // two nodes.
                     components_remapping
                         .iter_mut()
-                        .enumerate()
-                        .for_each(|(comp, remapped)| {
-                            if *remapped == max_component {
-                                *remapped = min_component;
-                                component_sizes[comp] = 0;
+                        .zip(component_sizes.iter_mut())
+                        .for_each(|(component_id, component_size)| {
+                            // If one of other components is being remapped to
+                            // the maximum component, we need to update its value
+                            // to the new value this component is being remapped to.
+                            if *component_id == max_component_id {
+                                *component_id = min_component_id;
+                                // We need to invalidate the size of the component
+                                // we have remapped because otherwise we may count it
+                                // when computing the minimum component size.
+                                *component_size = NOT_PRESENT;
                             }
                         });
-                    tree.insert((src, dst));
                 }
-                // If only one node has a component, the second model must be added.
+                // If only one node has a component, the second node must be added.
                 _ => {
-                    let (component_number, not_inserted_node) = match src_component == NOT_PRESENT {
+                    let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {
                         true => (dst_component, src),
                         false => (src_component, dst),
                     };
-                    let component_number = components_remapping[component_number as usize];
-                    component_sizes[component_number as usize] += 1;
+                    let component_id = components_remapping[component_id as usize];
+                    component_sizes[component_id as usize] += 1;
                     max_component_size =
-                        max_component_size.max(component_sizes[component_number as usize]);
-                    components[not_inserted_node as usize] = component_number as NodeT;
-                    tree.insert((src, dst));
+                        max_component_size.max(component_sizes[component_id as usize]);
+                    components[not_inserted_node as usize] = component_id as NodeT;
                 }
             };
+            tree.insert((src, dst));
         });
 
         // Remapping components to a dense remapping
-        let mut state = 0;
+        let mut components_number = 0;
         for i in 0..components_remapping.len() {
-            if components_remapping[i] >= state {
-                components_remapping[i] = state;
-                state += 1;
+            if components_remapping[i] >= components_number {
+                components_remapping[i] = components_number;
+                components_number += 1;
             } else {
                 components_remapping[i] = components_remapping[components_remapping[i] as usize];
             }
@@ -238,17 +269,15 @@ impl Graph {
             *remapped = components_remapping[*remapped as usize];
         });
 
-        let components_number = component_sizes.len() - merged_component_number;
-
         // If the minimum component size is still bigger than one
         // that is, we do not know alredy that there is a singleton
         // we need to compute it.
         if min_component_size > 1 {
-            min_component_size = component_sizes
-                .into_par_iter()
-                .filter(|c| *c != 0)
-                .min()
-                .unwrap();
+            min_component_size = match components_number {
+                1 => max_component_size,
+                2 => self.get_nodes_number() - max_component_size,
+                _ => component_sizes.into_par_iter().min().unwrap(),
+            };
         }
 
         (
@@ -610,7 +639,8 @@ impl Graph {
                                 if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
                                     break;
                                 }
-                                let ccs = current_component_size.swap(1, Ordering::Relaxed) as NodeT;
+                                let ccs =
+                                    current_component_size.swap(1, Ordering::Relaxed) as NodeT;
                                 unsafe {
                                     **max_component_size = (**max_component_size).max(ccs);
                                     if ccs > 1 {
@@ -656,10 +686,8 @@ impl Graph {
 
                     let src_component = components[src as usize].load(Ordering::Relaxed);
                     self.iter_node_neighbours_ids(src).for_each(|dst| {
-                        if components[dst as usize].swap(
-                            src_component,
-                            Ordering::SeqCst,
-                        ) == NOT_PRESENT
+                        if components[dst as usize].swap(src_component, Ordering::SeqCst)
+                            == NOT_PRESENT
                         {
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             current_component_size.fetch_add(1, Ordering::SeqCst);

@@ -33,19 +33,42 @@ impl Graph {
             .map(move |node| self.get_node_degree_by_node_id(node).unwrap())
     }
 
+    /// Return iterator on the singleton nodes of the graph.
+    pub fn iter_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match self.not_singleton_nodes.as_ref() {
+            Some(nsns) => Box::new(nsns.iter_zeros().map(|node_id| node_id as NodeT)),
+            _ => Box::new(::std::iter::empty()),
+        }
+    }
+
+    /// Return iterator on the singleton with selfloops nodes of the graph.
+    pub fn iter_singleton_with_selfloops_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match self.singleton_nodes_with_self_loops.as_ref() {
+            Some(nsns) => Box::new(nsns.iter()),
+            _ => Box::new(::std::iter::empty()),
+        }
+    }
+
     /// Return iterator over NodeT of destinations of the given node src.
     ///
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbours are to be retrieved.
     ///
-    pub(crate) fn iter_node_neighbours_ids(&self, src: NodeT) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        match &self.destinations{
-            Some(dsts) => {
-                Box::new(dsts[self.iter_unchecked_edge_ids_by_source_node_id(src)].iter().cloned())
-            },
-            None => Box::new(self.edges
-                .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
-                .map(move |edge| self.decode_edge(edge).1))
+    pub(crate) fn iter_node_neighbours_ids(
+        &self,
+        src: NodeT,
+    ) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match &self.destinations {
+            Some(dsts) => Box::new(
+                dsts[self.iter_unchecked_edge_ids_by_source_node_id(src)]
+                    .iter()
+                    .cloned(),
+            ),
+            None => Box::new(
+                self.edges
+                    .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
+                    .map(move |edge| self.decode_edge(edge).1),
+            ),
         }
     }
 
@@ -56,9 +79,7 @@ impl Graph {
     ///
     pub(crate) fn iter_node_neighbours(&self, src: NodeT) -> impl Iterator<Item = String> + '_ {
         self.iter_node_neighbours_ids(src)
-            .map(move |dst| {
-                self.get_unchecked_node_name_by_node_id(dst)
-            })
+            .map(move |dst| self.get_unchecked_node_name_by_node_id(dst))
     }
 
     /// Return iterator on the (non unique) source nodes of the graph.
