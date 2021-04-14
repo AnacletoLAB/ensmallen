@@ -28,5 +28,5 @@ pub(crate) fn register_handler(sig_num: sig_num, handler: fn(sig_num), data: Fro
     };
 
     let mut data_map = SIG_HANDLER_DATA.lock().expect("Cannot get the lock for the sig handlers data");    
-    let data = data_map.insert(u64::from(thread::current().id().as_u64()), data);
+    data_map.insert(u64::from(thread::current().id().as_u64()), data);
 }
