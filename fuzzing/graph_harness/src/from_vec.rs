@@ -1,6 +1,7 @@
 use super::*;
 use arbitrary::Arbitrary;
 
+
 #[derive(Arbitrary, Debug, Clone)]
 pub struct FromVecHarnessParams {
     pub directed: bool,
@@ -20,13 +21,20 @@ pub struct FromVecHarnessParams {
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-    let data_copy = data.clone();
-    let data_copy2 = data.clone();
+    let data_for_panic_handling1 = data.clone();
+    let data_for_panic_handling2 = data.clone();
+    let data_for_signal_handling = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_vec(Some(info), data_copy.clone());
+        handle_panics_from_vec(Some(info), data_for_panic_handling1.clone(), None);
     }));
 
-    let mut g = graph::Graph::from_string_unsorted(
+
+    register_handler(libc::SIGABRT, abrt_handler, data_for_signal_handling);
+
+    //std::process::abort();
+    
+
+    let mut graph = graph::Graph::from_string_unsorted(
         data.edges.into_iter(),
         data.nodes.map(|ns| ns.into_iter()),
         data.directed,
@@ -49,14 +57,18 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         true,
     )?;
 
-    let g_copy = g.clone();
+    let graph_copy_for_panic_handling = graph.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_vec_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
+        handle_panics_from_vec_once_loaded(
+            Some(info),
+            data_for_panic_handling2.clone(),
+            graph_copy_for_panic_handling.clone()
+        );
     }));
 
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
-    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
 
     Ok(())
 }

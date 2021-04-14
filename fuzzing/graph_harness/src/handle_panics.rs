@@ -78,11 +78,17 @@ pub(crate) fn handle_panics_from_csv_once_loaded(
 
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data: FromVecHarnessParams) {
+pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data: FromVecHarnessParams, sig_num: Option<i32>) {
     let path = get_folder();
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
+
+    if let Some(sn) = sig_num {
+        std::fs::write(format!("{}/data.txt", &path), format!("Received signal {}\n", sn))
+        .expect("Cannot write the signal file");
+    }
+
     if let Some(info) = info {
         dump_panic_info(format!("{}/panic.csv", path), info);
     }

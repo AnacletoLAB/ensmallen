@@ -15,7 +15,7 @@ pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: u64) -> Prog
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
         pb.set_style(ProgressStyle::default_bar().template(&format!(
-            "{desc} {{spinner:.green}} [{{elapsed_precise}}] [{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta_precise}})",
+            "{desc} {{spinner:.green}} [{{elapsed_precise}}] [{{wide_bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta_precise}})",
             desc=desc
         )));
         pb
