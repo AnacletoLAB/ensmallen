@@ -22,7 +22,6 @@ pub struct FromVecHarnessParams {
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     let data_copy = data.clone();
     let data_copy2 = data.clone();
-    handle_panics_from_vec(None, data_copy.clone());
     std::panic::set_hook(Box::new(move |info| {
         handle_panics_from_vec(Some(info), data_copy.clone());
     }));
