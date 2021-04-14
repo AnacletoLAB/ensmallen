@@ -44,7 +44,7 @@ pub(crate) fn handle_panics_from_csv(info: &std::panic::PanicInfo, data: FromCsv
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
 pub(crate) fn handle_panics_from_csv_once_loaded(
-    info: &std::panic::PanicInfo,
+    info: Option<&std::panic::PanicInfo>,
     data: FromCsvHarnessParams,
     graph: Graph,
 ) {
@@ -53,7 +53,9 @@ pub(crate) fn handle_panics_from_csv_once_loaded(
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
-    dump_panic_info(format!("{}/panic.csv", path), info);
+    if let Some(info) = info {
+        dump_panic_info(format!("{}/panic.csv", path), info);
+    }
     dump_graph_metadata(format!("{}/graph_metadata.csv", path), &data);
     dump_edges(format!("{}/edges.edges", path), &data.edge_reader.file);
     dump_edges_metadata(format!("{}/edges_metadata.csv", path), &data.edge_reader);
