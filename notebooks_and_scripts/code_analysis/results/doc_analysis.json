@@ -90,11 +90,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'operator'."
+                "msg": "Missing the documentation for the argument 'main'."
             },
             {
                 "doc_line": "~",
@@ -102,11 +98,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
+                "msg": "Missing the documentation for the argument 'operator'."
             },
             {
                 "doc_line": "~",
@@ -114,7 +106,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -161,11 +161,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'operator'."
+                "msg": "Missing the documentation for the argument 'main'."
             },
             {
                 "doc_line": "~",
@@ -173,11 +169,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
+                "msg": "Missing the documentation for the argument 'operator'."
             },
             {
                 "doc_line": "~",
@@ -185,7 +177,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -536,11 +536,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -564,11 +564,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -596,11 +596,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -627,11 +627,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -658,11 +658,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -1498,11 +1498,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'window_size'."
+                "msg": "Missing the documentation for the argument 'walks_parameters'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walks_parameters'."
+                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": 0,
@@ -1534,11 +1534,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'walk_parameters'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_parameters'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
@@ -1734,7 +1734,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
+                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'negative_samples'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'idx'."
             },
             {
                 "doc_line": "~",
@@ -1746,19 +1754,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'idx'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'negative_samples'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'graph_to_avoid'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
+                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
             },
             {
                 "doc_line": 0,
@@ -1794,15 +1794,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'batch_size'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'idx'."
+                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
             },
             {
                 "doc_line": "~",
@@ -1810,11 +1802,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'idx'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'batch_size'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'graph_to_avoid'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
+                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
             },
             {
                 "doc_line": 0,
@@ -2873,11 +2873,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 8,
@@ -3011,15 +3011,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'src_name'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'dst_name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": 8,
@@ -3055,11 +3055,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_names'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'node_names'."
             },
             {
                 "doc_line": 0,
@@ -3607,19 +3607,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'vector_outbounds'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'vector_sources'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'vector_destinations'."
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'vector_outbounds'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'cache_size'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'vector_sources'."
             },
             {
                 "doc_line": 0,
@@ -4505,11 +4505,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -4553,15 +4553,15 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'src_name'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'dst_name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": 0,
@@ -4635,11 +4635,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -4778,7 +4778,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_weight'."
+                "msg": "Missing the documentation for the argument 'max_weight'."
             },
             {
                 "doc_line": "~",
@@ -4790,11 +4790,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_weight'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'min_weight'."
             },
             {
                 "doc_line": 0,
@@ -4897,11 +4897,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'one'."
+                "msg": "Missing the documentation for the argument 'two'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'two'."
+                "msg": "Missing the documentation for the argument 'one'."
             },
             {
                 "doc_line": 8,
@@ -4934,11 +4934,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'one'."
+                "msg": "Missing the documentation for the argument 'two'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'two'."
+                "msg": "Missing the documentation for the argument 'one'."
             },
             {
                 "doc_line": 7,
@@ -5643,11 +5643,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_names'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'node_names'."
             },
             {
                 "doc_line": 0,
@@ -5951,11 +5951,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": 0,
@@ -5974,15 +5974,15 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'transition'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -6014,11 +6014,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -6026,15 +6026,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": 0,
@@ -6061,19 +6061,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'has_selfloop'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
                 "doc_line": "~",
@@ -6081,15 +6073,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": "~",
@@ -6097,7 +6081,23 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": 0,
@@ -6124,11 +6124,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -6159,19 +6159,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
@@ -6179,11 +6167,23 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": 0,
@@ -6275,11 +6275,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": 0,
@@ -6325,15 +6325,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'to_node'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": 0,
@@ -6368,11 +6368,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -6403,7 +6403,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_length'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
@@ -6411,7 +6411,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'walk_length'."
             },
             {
                 "doc_line": 0,
@@ -6582,15 +6582,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'first_nodes_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6599,6 +6591,14 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'second_nodes_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": 0,
@@ -6618,15 +6618,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'first_nodes_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6635,6 +6627,14 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'second_nodes_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": 0,
@@ -6654,11 +6654,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'central_node'."
+                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
+                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
             },
             {
                 "doc_line": "~",
@@ -6666,7 +6666,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
+                "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
                 "doc_line": 0,
@@ -6686,11 +6686,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'central_node'."
+                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
+                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
             },
             {
                 "doc_line": "~",
@@ -6698,7 +6698,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
+                "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
                 "doc_line": 0,
@@ -6718,6 +6718,14 @@
         "errors": [
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_self_loops'."
             },
             {
@@ -6726,15 +6734,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_node_type_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed'."
             },
             {
                 "doc_line": 0,
@@ -6754,6 +6754,14 @@
         "errors": [
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_self_loops'."
             },
             {
@@ -6762,15 +6770,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_node_type_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed'."
             },
             {
                 "doc_line": 0,
@@ -8905,11 +8905,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -9095,6 +9095,10 @@
         "errors": [
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
             },
             {
@@ -9104,10 +9108,6 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": 0,
@@ -9359,11 +9359,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": "~",
@@ -9371,59 +9367,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
             },
             {
                 "doc_line": "~",
@@ -9431,11 +9375,67 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'name'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+                "msg": "Missing the documentation for the argument 'directed'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_node_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -9460,31 +9460,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
             },
             {
                 "doc_line": "~",
@@ -9492,11 +9468,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": "~",
@@ -9504,11 +9480,35 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": 0,
@@ -9711,11 +9711,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_number_overlaps'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'min_number_overlaps'."
             },
             {
                 "doc_line": 0,
@@ -9747,20 +9747,7 @@
     "node_label_holdout": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
         "function": "node_label_holdout",
-        "errors": [
-            {
-                "doc_line": 6,
-                "msg": "The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -9772,21 +9759,24 @@
                     "name": "use_stratification",
                     "type": "bool",
                     "desc": "Whether to use node-label stratification"
+                },
+                {
+                    "name": "random_state",
+                    "type": "EdgeT",
+                    "desc": "The random_state to use for the holdout"
                 }
             ]
         },
-        "example": {},
+        "example": {
+            "desc": "This example create an 80-20 split of the nodes in the graph\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed);\n"
+        },
         "extra_headers": []
     },
     "edge_label_holdout": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
         "function": "edge_label_holdout",
-        "errors": [
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -9806,26 +9796,16 @@
                 }
             ]
         },
-        "example": {},
+        "example": {
+            "desc": "This example creates an 80-20 split of the edges mantaining the edge label ratios\nin train and test.\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed);\n"
+        },
         "extra_headers": []
     },
     "random_subgraph": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
         "function": "random_subgraph",
-        "errors": [
-            {
-                "doc_line": 13,
-                "msg": "The argument type 'usize' of 'nodes_number' does not match the function delcaration which is 'NodeT'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_number'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -9834,13 +9814,21 @@
                     "desc": "Random random_state to use"
                 },
                 {
+                    "name": "nodes_number",
+                    "type": "NodeT",
+                    "desc": "Number of nodes to extract"
+                },
+                {
                     "name": "verbose",
                     "type": "bool",
                     "desc": "whether to show the loading bar"
                 }
             ]
         },
-        "example": {},
+        "example": {
+            "desc": "this generates a random subgraph with 1000 nodes.\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet random_graph = graph.random_subgraph(0xbad5eed, 1000, true);\n"
+        },
         "extra_headers": []
     },
     "kfold": {
@@ -9878,7 +9866,7 @@
         },
         "example": {
             "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor i in 0..5 {\nlet (train, test) = graph.kfold(5, i, None, 0xbad5eed, true);\n// Run the training\n}\n",
-            "footer": "If We pass an avector of edge types, the K-fold will be executed only on the edges which match\nthat type. All the other edges will always appear in the traning set.\n"
+            "footer": "If We pass a vector of edge types, the K-fold will be executed only on the edges which match\nthat type. All the other edges will always appear in the traning set.\n"
         },
         "extra_headers": []
     }

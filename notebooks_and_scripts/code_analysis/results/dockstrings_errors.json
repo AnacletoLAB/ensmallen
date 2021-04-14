@@ -38,8 +38,8 @@
             "[  12] The argument line '* walk_parameters: &WalksParameters - the weighted walks parameters.' (doc_line: 12) is not in the standard format.",
             "[  13] The argument line '* quantity: usize - Number of nodes to consider.' (doc_line: 13) is not in the standard format.",
             "[  14] The argument line '* window_size: usize - Window size to consider for the sequences.' (doc_line: 14) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   ~] Missing the documentation for the argument 'walk_parameters'.",
+            "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   ~] Missing the documentation for the argument 'window_size'.",
             "[   0] Missing Example"
         ],
@@ -48,8 +48,8 @@
             "[   8] The argument line '* window_size: Option<usize> - Window size to consider for the sequences.' (doc_line: 8) is not in the standard format.",
             "[   9] The argument line '* verbose: Option<bool>,' (doc_line: 9) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'window_size'.",
             "[   ~] Missing the documentation for the argument 'walks_parameters'.",
+            "[   ~] Missing the documentation for the argument 'window_size'.",
             "[   0] Missing Example"
         ],
         "get_node_label_prediction_tuple_by_node_ids": [
@@ -63,13 +63,13 @@
             "[   7] The argument line '* normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],' (doc_line: 7) is not in the standard format.",
             "[   8] The argument line '* negative_samples: f64 - The component of netagetive samples to use,' (doc_line: 8) is not in the standard format.",
             "[   9] The argument line '* avoid_false_negatives: bool - whether to remove the false negatives when generated.' (doc_line: 9) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
+            "[   ~] Missing the documentation for the argument 'maximal_sampling_attempts'.",
+            "[   ~] Missing the documentation for the argument 'negative_samples'.",
+            "[   ~] Missing the documentation for the argument 'idx'.",
             "[   ~] Missing the documentation for the argument 'batch_size'.",
             "[   ~] Missing the documentation for the argument 'normalize'.",
-            "[   ~] Missing the documentation for the argument 'idx'.",
-            "[   ~] Missing the documentation for the argument 'negative_samples'.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'.",
-            "[   ~] Missing the documentation for the argument 'maximal_sampling_attempts'.",
+            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
             "[   0] Missing Example"
         ],
         "link_prediction_ids": [
@@ -77,12 +77,12 @@
             "[   5] The argument line '* batch_size: usize - The maximal size of the batch to generate,' (doc_line: 5) is not in the standard format.",
             "[   6] The argument line '* negative_samples: f64 - The component of netagetive samples to use,' (doc_line: 6) is not in the standard format.",
             "[   7] The argument line '* avoid_false_negatives: bool - whether to remove the false negatives when generated.' (doc_line: 7) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
-            "[   ~] Missing the documentation for the argument 'batch_size'.",
-            "[   ~] Missing the documentation for the argument 'idx'.",
-            "[   ~] Missing the documentation for the argument 'negative_samples'.",
-            "[   ~] Missing the documentation for the argument 'graph_to_avoid'.",
             "[   ~] Missing the documentation for the argument 'maximal_sampling_attempts'.",
+            "[   ~] Missing the documentation for the argument 'negative_samples'.",
+            "[   ~] Missing the documentation for the argument 'idx'.",
+            "[   ~] Missing the documentation for the argument 'batch_size'.",
+            "[   ~] Missing the documentation for the argument 'graph_to_avoid'.",
+            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
             "[   0] Missing Example"
         ]
     },
@@ -122,8 +122,8 @@
             "[   5] The argument line '* dst: NodeT - The destination node of the edge.' (doc_line: 5) is not in the standard format.",
             "[   6] The argument line '* edge_type: Option<EdgeTypeT> - The (optional) edge type.' (doc_line: 6) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'edge_type'.",
-            "[   ~] Missing the documentation for the argument 'src'.",
             "[   ~] Missing the documentation for the argument 'dst'.",
+            "[   ~] Missing the documentation for the argument 'src'.",
             "[   8] The example section is missing or in the wrong order."
         ],
         "is_node_trap_by_node_id": [
@@ -149,9 +149,9 @@
             "[   4] The argument line '* src: String - The source node name of the edge.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* dst: String - The destination node name of the edge.' (doc_line: 5) is not in the standard format.",
             "[   6] The argument line '* edge_type: Option<String> - The (optional) edge type name.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
+            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
             "[   8] The example section is missing or in the wrong order."
         ]
     },
@@ -161,10 +161,10 @@
             "[   4] The argument line '* `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.' (doc_line: 5) is not in the standard format.",
             "[   6] The argument line '* `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'vector_outbounds'.",
-            "[   ~] Missing the documentation for the argument 'vector_sources'.",
             "[   ~] Missing the documentation for the argument 'vector_destinations'.",
+            "[   ~] Missing the documentation for the argument 'vector_outbounds'.",
             "[   ~] Missing the documentation for the argument 'cache_size'.",
+            "[   ~] Missing the documentation for the argument 'vector_sources'.",
             "[   0] Missing Example"
         ],
         "disable_all": [
@@ -281,8 +281,8 @@
         ],
         "get_edge_id_with_type_by_node_ids": [
             "[   ~] Missing the documentation for the argument 'edge_type'.",
-            "[   ~] Missing the documentation for the argument 'src'.",
             "[   ~] Missing the documentation for the argument 'dst'.",
+            "[   ~] Missing the documentation for the argument 'src'.",
             "[   0] Missing Example"
         ],
         "get_edge_id_by_node_names": [
@@ -291,9 +291,9 @@
             "[   0] Missing Example"
         ],
         "get_edge_id_with_type_by_node_names": [
-            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
+            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
             "[   0] Missing Example"
         ],
         "get_edge_type_ids_by_edge_type_names": [
@@ -331,11 +331,11 @@
             "[   8] The argument line '* max_weight: Option<WeightT> - Maximum weight to use to filter edges.' (doc_line: 8) is not in the standard format.",
             "[   9] The argument line '* verbose: bool - whether to show the loading bar.' (doc_line: 9) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'min_weight'.",
+            "[   ~] Missing the documentation for the argument 'max_weight'.",
             "[   ~] Missing the documentation for the argument 'node_names'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
-            "[   ~] Missing the documentation for the argument 'max_weight'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'min_weight'.",
             "[   0] Missing Example"
         ]
     },
@@ -343,15 +343,15 @@
         "degrees_product": [
             "[   4] The argument line '* `one` - Integer ID of the first node.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* `two` - Integer ID of the second node.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'one'.",
             "[   ~] Missing the documentation for the argument 'two'.",
+            "[   ~] Missing the documentation for the argument 'one'.",
             "[   8] The example section is missing or in the wrong order."
         ],
         "jaccard_index": [
             "[   4] The argument line '* `one` - Integer ID of the first node.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* `two` - Integer ID of the second node.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'one'.",
             "[   ~] Missing the documentation for the argument 'two'.",
+            "[   ~] Missing the documentation for the argument 'one'.",
             "[   7] The example section is missing or in the wrong order."
         ],
         "adamic_adar_index": [
@@ -440,8 +440,8 @@
             "[   5] The argument line '* `node_types` : Option<Vec<String>> - The types of the nodes of which components to keep.' (doc_line: 5) is not in the standard format.",
             "[   6] The argument line '* `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep.' (doc_line: 6) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
-            "[   ~] Missing the documentation for the argument 'node_names'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'node_names'.",
             "[   0] Missing Example"
         ]
     },
@@ -463,8 +463,8 @@
     "/Workspace/Github/ensmallen_graph/graph/src/walks.rs": {
         "random_walks_iter": [
             "[   4] The argument line '* parameters: WalksParameters - the weighted walks parameters.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   ~] Missing the documentation for the argument 'parameters'.",
+            "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   0] Missing Example"
         ],
         "complete_walks_iter": [
@@ -489,49 +489,49 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {
         "get_bipartite_edges": [
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
             "[   0] Missing Example"
         ],
         "get_bipartite_edge_names": [
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
             "[   0] Missing Example"
         ],
         "get_star_edges": [
-            "[   ~] Missing the documentation for the argument 'central_node'.",
             "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'central_node'.",
             "[   0] Missing Example"
         ],
         "get_star_edge_names": [
-            "[   ~] Missing the documentation for the argument 'central_node'.",
             "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'central_node'.",
             "[   0] Missing Example"
         ],
         "get_clique_edges": [
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'allow_self_loops'.",
             "[   ~] Missing the documentation for the argument 'allow_node_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "get_clique_edge_names": [
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'allow_self_loops'.",
             "[   ~] Missing the documentation for the argument 'allow_node_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
             "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ]
     },
@@ -840,43 +840,43 @@
     "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs": {
         "from_string_unsorted": [
             "[   6] The argument line '* edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
             "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
-            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'has_node_types'.",
-            "[   ~] Missing the documentation for the argument 'has_weights'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_nodes'.",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
             "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
+            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
+            "[   ~] Missing the documentation for the argument 'has_weights'.",
+            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
+            "[   ~] Missing the documentation for the argument 'has_node_types'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
+            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'ignore_duplicated_nodes'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
             "[   0] Missing Example"
         ],
         "from_integer_unsorted": [
             "[   4] The argument line '* edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
             "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
             "[   ~] Missing the documentation for the argument 'has_weights'.",
-            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
-            "[   ~] Missing the documentation for the argument 'nodes'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
             "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'nodes'.",
             "[   0] Missing Example"
         ],
         "from_string_sorted": [
@@ -902,21 +902,8 @@
             "[  11] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
             "[  12] The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function delcaration which is 'Option<EdgeT>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
+            "[   ~] Missing the documentation for the argument 'random_state'.",
             "[   ~] Missing the documentation for the argument 'min_number_overlaps'.",
-            "[   ~] Missing the documentation for the argument 'random_state'.",
-            "[   0] Missing Example"
-        ],
-        "node_label_holdout": [
-            "[   6] The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'.",
-            "[   ~] Missing the documentation for the argument 'random_state'.",
-            "[   0] Missing Example"
-        ],
-        "edge_label_holdout": [
-            "[   0] Missing Example"
-        ],
-        "random_subgraph": [
-            "[  13] The argument type 'usize' of 'nodes_number' does not match the function delcaration which is 'NodeT'.",
-            "[   ~] Missing the documentation for the argument 'nodes_number'.",
             "[   0] Missing Example"
         ]
     }

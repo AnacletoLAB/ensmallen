@@ -39,13 +39,8 @@ roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master"}
 
-[build]
-rustflags = ["-C target-cpu=native", "-C target-feature=-crt-static"]
-target="x86_64-unknown-linux-musl"
-
 [profile.release]
 opt-level = 3
-codgen-units=1
 lto = "fat"
 overflow-checks = true     # Disable integer overflow checks.
 debug = true             # Include debug info.
@@ -54,3 +49,5 @@ debug-assertions = true  # Enables debug assertions.
 [profile.test]
 overflow-checks = true     # Disable integer overflow checks.
 debug = true             # Include debug info.
+debug-assertions = true  # Enables debug assertions.
+opt-level = 3

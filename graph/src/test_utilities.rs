@@ -344,6 +344,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             graph.textual_report(false)
         );
     }
+    
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edges(true).next() {
         let src_string = graph.get_node_name_by_node_id(edge.0).unwrap();
@@ -488,7 +489,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             total_connected_components as usize - 1,
             "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
             connected_components,
-            graph.textual_report(true)
+            graph.textual_report(false)
         );
     }
     if !graph.is_directed() {
@@ -510,7 +511,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 total_connected_components as usize - 1,
                 "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
                 connected_components,
-                graph.textual_report(true)
+                graph.textual_report(false)
             );
         }
     }
@@ -827,7 +828,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
             graph.get_edges_number(),
             None,
             *only_from_same_component,
-            true,
+            verbose,
         )?;
         assert_eq!(
             graph.get_edges_number(),
@@ -1226,6 +1227,7 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing the spanning arborescences.");
     let _ = test_spanning_arborescence_bader(graph, verbose);
+
 
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);

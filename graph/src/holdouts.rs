@@ -600,11 +600,16 @@ impl Graph {
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// # Arguments
-    ///
     /// * `train_size`: f64 - rate target to reserve for training,
     /// * `use_stratification`: bool - Whether to use node-label stratification,
-    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `random_state`: EdgeT - The random_state to use for the holdout,
     ///
+    /// # Example
+    /// This example create an 80-20 split of the nodes in the graph
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    ///   let (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();
+    /// ``` 
     pub fn node_label_holdout(
         &self,
         train_size: f64,
@@ -703,15 +708,29 @@ impl Graph {
 
         Ok((train_graph, test_graph))
     }
-
+    
     /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
+    /// This is commonly used for edge type prediction tasks.
+    ///
+    /// This method returns two graphs, the train and the test one.
+    /// The edges of the graph will be splitted in the train and test graphs according
+    /// to the `train_size` argument.
+    ///
+    /// If stratification is enabled, the train and test will have the same ratios of
+    /// edge types. 
     ///
     /// # Arguments
-    ///
     /// * `train_size`: f64 - rate target to reserve for training,
     /// * `use_stratification`: bool - Whether to use edge-label stratification,
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
     ///
+    /// # Example
+    /// This example creates an 80-20 split of the edges mantaining the edge label ratios
+    /// in train and test.
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    ///   let (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed).unwrap();
+    /// ``` 
     pub fn edge_label_holdout(
         &self,
         train_size: f64,
@@ -814,19 +833,25 @@ impl Graph {
 
     /// Returns subgraph with given number of nodes.
     ///
-    /// This method creates a subset of the graph starting from a random node
+    /// **This method creates a subset of the graph starting from a random node
     /// sampled using given random_state and includes all neighbouring nodes until
-    /// the required number of nodes is reached. All the edges connecting any
+    /// the required number of nodes is reached**. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
     ///
     /// This is meant to execute distributed node embeddings.
     /// It may also sample singleton nodes.
     ///
     /// # Arguments
-    ///
     /// * `random_state`: usize - Random random_state to use.
-    /// * `nodes_number`: usize - Number of nodes to extract.
+    /// * `nodes_number`: NodeT - Number of nodes to extract.
     /// * `verbose`: bool - whether to show the loading bar.
+    /// 
+    /// # Example
+    /// this generates a random subgraph with 1000 nodes.
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    ///   let random_graph = graph.random_subgraph(0xbad5eed, 1000, true).unwrap();
+    /// ``` 
     ///
     pub fn random_subgraph(
         &self,
@@ -946,11 +971,11 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for i in 0..5 { 
-    ///     let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true);
+    ///     let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true).unwrap();
     ///     // Run the training
     /// }
     /// ```
-    /// If We pass an avector of edge types, the K-fold will be executed only on the edges which match
+    /// If We pass a vector of edge types, the K-fold will be executed only on the edges which match
     /// that type. All the other edges will always appear in the traning set.
     ///
     pub fn kfold(
