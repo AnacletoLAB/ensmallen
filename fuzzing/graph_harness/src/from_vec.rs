@@ -49,7 +49,9 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         true,
     )?;
 
+
     let g_copy = g.clone();
+    handle_panics_from_vec_once_loaded(info, data_copy2.clone(), g_copy.clone());
     std::panic::set_hook(Box::new(move |info| {
         handle_panics_from_vec_once_loaded(info, data_copy2.clone(), g_copy.clone());
     }));
