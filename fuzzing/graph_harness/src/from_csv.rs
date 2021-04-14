@@ -63,7 +63,7 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     let data_copy = data.clone();
     let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_csv(info, data_copy.clone());
+        handle_panics_from_csv(Some(info), data_copy.clone());
     }));
 
     let graph = load_graph(&edges_path, &nodes_path, data);
@@ -71,7 +71,7 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     if let Ok(mut g) = graph {
         let g_copy = g.clone();
         std::panic::set_hook(Box::new(move |info| {
-            handle_panics_from_csv_once_loaded(info, data_copy2.clone(), g_copy.clone());
+            handle_panics_from_csv_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
         }));
 
         let _ = graph::test_utilities::default_test_suite(&mut g, false);
