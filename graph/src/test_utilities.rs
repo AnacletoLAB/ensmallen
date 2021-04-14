@@ -1219,7 +1219,7 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let _ = test_edgelabel_holdouts(graph, verbose);
 
     warn!("Testing writing out graph to file.");
-    let _ = test_dump_graph(graph, verbose);
+    //let _ = test_dump_graph(graph, verbose);
 
     warn!("Testing generic filtering mechanism.");
     let _ = test_graph_filter(graph, verbose);

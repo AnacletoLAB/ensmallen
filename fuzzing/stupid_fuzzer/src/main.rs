@@ -104,7 +104,7 @@ fn pretty_print_int(i: usize) -> String {
     s
 }
 
-fn main() {
+fn start_fuzzing(){
     let corpus = load_corpus();
     let statistics = Statistics::new();
 
@@ -137,4 +137,8 @@ fn main() {
 
         std::thread::sleep(Duration::from_millis(1000));
     }
+}
+
+fn main() {
+    start_fuzzing();
 }
