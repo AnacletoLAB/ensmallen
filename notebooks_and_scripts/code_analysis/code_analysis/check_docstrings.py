@@ -4,45 +4,13 @@ import json
 from ensmallen_graph import EnsmallenGraph
 from .utils import build_path
 
-def check_doc_validity(doc, function):
-    result = []
-    doc = "\n".join(doc)
-    if not re.findall("\s*#\s+Examples", doc):
-        result.append("Missing Example header")
-
-    if "```" not in doc:
-        result.append("Missing Example")
-
-    if not re.findall("\s*#\s+Arguments", doc):
-        result.append("Missing Arguments Header")
-
-    arguments_doc = re.findall("\s*\*\s+`?(\S+)`?\s*:\s*(.+?)\s*-\s*(.+)\s*", doc)
-
-    arguments = [
-        x[0] 
-        for x in function["args"]
-        if x[0] != "self"    
-    ]
-    
-    if len(arguments_doc) < len(arguments):
-        result.append("Missing the documentation of some arguments.")
-
-    doc_args = {
-        arg_name.strip("`")
-        for arg_name, arg_type, arg_description in arguments_doc
-    }
-
-    for arg in arguments:
-        if arg not in doc_args:
-            result.append("Missing the documentation for {}".format(arg))
-
-    return result
-
-
 def check_doc(args):
 
     with open(build_path("results/analysis.json"), "r") as f:
         functions = json.load(f)
+
+    with open(build_path("results/doc_analysis.json"), "r") as f:
+        docs = json.load(f)
 
     result = {}
 
@@ -53,10 +21,14 @@ def check_doc(args):
         if function.get("struct", "") != "Graph":
             continue
 
-        errors = check_doc_validity(function.get("doc", []), function)
+        fn_name = function.get("name", "")
+        errors = docs[fn_name]["errors"]
 
         if errors:
-            result[function.get("name")] = errors
+            result[fn_name] = [
+                "[{:>4}] {}".format(x["doc_line"], x["msg"])
+                for x in errors
+            ]
 
 
     print(json.dumps(result, indent=4))

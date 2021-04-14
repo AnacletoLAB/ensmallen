@@ -36,7 +36,6 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     Window size to consider for the sequences.
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
-    let _ = ctrlc::set_handler(|| std::process::exit(2));
     let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
         pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
     let gil = pyo3::Python::acquire_gil();
