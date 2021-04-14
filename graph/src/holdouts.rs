@@ -936,13 +936,22 @@ impl Graph {
     /// the validation graph, all the other edges create the training graph.
     ///
     /// # Arguments
-    ///
-    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected when computing the folds
-    ///         (All the edge types not listed here will be always be used in the training set).
-    /// * `k`: u64 - The number of folds.
+    /// * `k`: EdgeT - The number of folds.
     /// * `k_index`: u64 - Which fold to use for the validation.
-    /// * `random_state`: NodeT - The random_state (seed) to use for the holdout,
+    /// * `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).
+    /// * `random_state`: EdgeT - The random_state (seed) to use for the holdout,
     /// * `verbose`: bool - whether to show the loading bar.
+    /// 
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// for i in 0..5 { 
+    ///     let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true);
+    ///     // Run the training
+    /// }
+    /// ```
+    /// If We pass an avector of edge types, the K-fold will be executed only on the edges which match
+    /// that type. All the other edges will always appear in the traning set.
     ///
     pub fn kfold(
         &self,

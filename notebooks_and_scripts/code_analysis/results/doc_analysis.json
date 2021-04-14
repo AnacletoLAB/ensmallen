@@ -90,10 +90,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
@@ -102,7 +98,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
+                "msg": "Missing the documentation for the argument 'graphs'."
             },
             {
                 "doc_line": "~",
@@ -110,11 +106,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'main'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'other'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graphs'."
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
             },
             {
                 "doc_line": 0,
@@ -161,10 +161,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
@@ -173,7 +169,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
+                "msg": "Missing the documentation for the argument 'graphs'."
             },
             {
                 "doc_line": "~",
@@ -181,11 +177,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'main'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'other'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graphs'."
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
             },
             {
                 "doc_line": 0,
@@ -532,15 +532,15 @@
         "errors": [
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_neighbours'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'random_state'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
             },
             {
                 "doc_line": 0,
@@ -729,26 +729,15 @@
     "is_first_order_walk": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
         "function": "is_first_order_walk",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "The default parametrization defines a first order walk:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().is_first_order_walk());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "The default parametrization defines a first order walk:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().is_first_order_walk());\n"
+        },
+        "extra_headers": []
     },
     "new": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
@@ -784,25 +773,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'iterations'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `iterations` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_iterations(Some(0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_iterations(Some(2)).is_ok());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `iterations` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_iterations(Some(0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_iterations(Some(2)).is_ok());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_iterations(None).is_ok());\n```\n"
@@ -812,26 +793,15 @@
     "get_iterations": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
         "function": "get_iterations",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To retrieve the number of iterations you can do the following:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "let mut walk_parameters = WalksParameters::new(32).unwrap();\nassert_eq!(walk_parameters.get_iterations(), 1);\nlet iterations_number = 56;\nwalk_parameters = walk_parameters.set_iterations(Some(iterations_number)).unwrap();\nassert_eq!(walk_parameters.get_iterations(), iterations_number);\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To retrieve the number of iterations you can do the following:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nlet mut walk_parameters = WalksParameters::new(32).unwrap();\nassert_eq!(walk_parameters.get_iterations(), 1);\nlet iterations_number = 56;\nwalk_parameters = walk_parameters.set_iterations(Some(iterations_number)).unwrap();\nassert_eq!(walk_parameters.get_iterations(), iterations_number);\n"
+        },
+        "extra_headers": []
     },
     "set_max_neighbours": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
@@ -844,25 +814,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_neighbours'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `max_neighbours` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(2)).is_ok());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `max_neighbours` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_max_neighbours(Some(2)).is_ok());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_max_neighbours(None).is_ok());\n```\n"
@@ -926,25 +888,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'return_weight'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `return_weight` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).unwrap().is_first_order_walk());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `return_weight` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_return_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_return_weight(Some(1.0)).unwrap().is_first_order_walk());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_return_weight(None).unwrap().is_first_order_walk());\n```\n"
@@ -962,25 +916,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'explore_weight'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `explore_weight` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).unwrap().is_first_order_walk());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `explore_weight` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_explore_weight(Some(1.0)).unwrap().is_first_order_walk());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_explore_weight(None).unwrap().is_first_order_walk());\n```\n"
@@ -998,25 +944,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'change_node_type_weight'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `change_node_type_weight` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).unwrap().is_first_order_walk());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `change_node_type_weight` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(Some(1.0)).unwrap().is_first_order_walk());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_change_node_type_weight(None).unwrap().is_first_order_walk());\n```\n"
@@ -1034,25 +972,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'change_edge_type_weight'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "You can change the `change_edge_type_weight` parameter as follows:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).unwrap().is_first_order_walk());\n",
+            "footer": "You can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "You can change the `change_edge_type_weight` parameter as follows:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": "assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(-1.0)).is_err());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(2.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).is_ok());\nassert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(Some(1.0)).unwrap().is_first_order_walk());\n```\nYou can also call the method with an option None, in order to avoid a match\nwrapper above. This will end up don't doing anything, just a passthrough.\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": "assert!(WalksParameters::new(32).unwrap().set_change_edge_type_weight(None).unwrap().is_first_order_walk());\n```\n"
@@ -1070,33 +1000,17 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'graph'."
-            },
-            {
-                "doc_line": 8,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "A graph is always remappable to itself:\n",
+            "content": "```rust# use graph::walks_parameters::WalksParameters;\n# let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\n# let mut parameters = WalksParameters::new(32).unwrap();\nassert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&ppi).is_ok());\n",
+            "footer": "Two different graphs, like Cora and STRING, are not remappable:\n```rust\n"
+        },
         "extra_headers": [
-            {
-                "name": "Example",
-                "content": "A graph is always remappable to itself:\n```rust\n"
-            },
-            {
-                "name": "use graph::walks_parameters::WalksParameters;",
-                "content": ""
-            },
-            {
-                "name": "let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": ""
-            },
-            {
-                "name": "let mut parameters = WalksParameters::new(32).unwrap();",
-                "content": "assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&ppi).is_ok());\n```\nTwo different graphs, like Cora and STRING, are not remappable:\n```rust\n"
-            },
             {
                 "name": "use graph::walks_parameters::WalksParameters;",
                 "content": ""
@@ -1179,7 +1093,7 @@
         "errors": [
             {
                 "doc_line": 7,
-                "msg": "The argument line '* `random_state`:NodeT - The random_state to use for the holdout,' (doc_line: 7) is not in the standard format."
+                "msg": "The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'."
             },
             {
                 "doc_line": 8,
@@ -1580,7 +1494,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walks_parameters'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
@@ -1588,7 +1502,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'walks_parameters'."
             },
             {
                 "doc_line": 0,
@@ -1596,7 +1510,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "whether to show the progress bars.\nThe default behaviour is false.\n"
         },
         "example": {},
         "extra_headers": []
@@ -1619,15 +1534,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'window_size'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walk_parameters'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": 0,
@@ -1819,23 +1734,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'batch_size'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'negative_samples'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'batch_size'."
             },
             {
                 "doc_line": "~",
@@ -1846,12 +1749,25 @@
                 "msg": "Missing the documentation for the argument 'idx'."
             },
             {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'negative_samples'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
+            },
+            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "- It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.\n* maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.\n* graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,\n"
         },
         "example": {},
         "extra_headers": []
@@ -1878,15 +1794,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'batch_size'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
+                "msg": "Missing the documentation for the argument 'idx'."
             },
             {
                 "doc_line": "~",
@@ -1894,11 +1810,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'avoid_false_negatives'."
+                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'idx'."
+                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
             },
             {
                 "doc_line": 0,
@@ -1906,7 +1822,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "- It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.\n* maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.\n* graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,\n"
         },
         "example": {},
         "extra_headers": []
@@ -2152,31 +2069,21 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
-                "doc_line": 7,
-                "msg": "Missing the code example!"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'other'."
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "A graph is always remappable to itself:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "assert_eq!(graph, graph.remap(&graph, false).unwrap());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "A graph is always remappable to itself:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert_eq!(graph, graph.remap(&graph, false).unwrap());\n"
+        },
+        "extra_headers": []
     },
     "set_sources_column": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
@@ -2775,42 +2682,26 @@
     "has_edge_types": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_edge_types",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\nlet string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(string_ppi_with_edge_types.has_edge_types());\nlet string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();\nassert!(!string_ppi_without_edge_types.has_edge_types());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rustlet string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(string_ppi_with_edge_types.has_edge_types());\nlet string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();\nassert!(!string_ppi_without_edge_types.has_edge_types());\n"
+        },
+        "extra_headers": []
     },
     "has_weights": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_weights",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\nlet weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(weights_string_ppi.has_weights());\nlet unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();\nassert!(!unweights_string_ppi.has_weights());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rustlet weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(weights_string_ppi.has_weights());\nlet unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();\nassert!(!unweights_string_ppi.has_weights());\n"
+        },
+        "extra_headers": []
     },
     "parse_edge_line": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
@@ -3045,11 +2936,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type_name'."
+                "msg": "Missing the documentation for the argument 'node_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_name'."
+                "msg": "Missing the documentation for the argument 'node_type_name'."
             },
             {
                 "doc_line": 0,
@@ -3120,11 +3011,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
+                "msg": "Missing the documentation for the argument 'src_name'."
             },
             {
                 "doc_line": "~",
@@ -3716,7 +3607,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'cache_size'."
+                "msg": "Missing the documentation for the argument 'vector_outbounds'."
             },
             {
                 "doc_line": "~",
@@ -3724,11 +3615,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'vector_outbounds'."
+                "msg": "Missing the documentation for the argument 'vector_destinations'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'vector_destinations'."
+                "msg": "Missing the documentation for the argument 'cache_size'."
             },
             {
                 "doc_line": 0,
@@ -3824,7 +3715,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "t\n"
         },
         "example": {},
         "extra_headers": []
@@ -4546,12 +4438,7 @@
     "get_node_neighbours_by_node_id": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_node_neighbours_by_node_id",
-        "errors": [
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -4561,31 +4448,16 @@
                 }
             ]
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To retrieve the neighbours of a given node `src` you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": ""
-            },
-            {
-                "name": "let node_id = 0;",
-                "content": "println!(\"The neighbours of the node {} are {:?}.\", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());\nlet unavailable_node = 2349765432;\nassert!(graph.get_node_neighbours_by_node_id(unavailable_node).is_err());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\n# let node_id = 0;\nprintln!(\"The neighbours of the node {} are {:?}.\", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());\nlet unavailable_node = 2349765432;\nassert!(graph.get_node_neighbours_by_node_id(unavailable_node).is_err());\n"
+        },
+        "extra_headers": []
     },
     "get_node_neighbour_ids_by_node_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_node_neighbour_ids_by_node_name",
-        "errors": [
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -4595,17 +4467,11 @@
                 }
             ]
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To retrieve the neighbours of a given node `src` you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "let node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_ids_by_node_name(node_name).unwrap());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_ids_by_node_name(node_name).unwrap());\n"
+        },
+        "extra_headers": []
     },
     "get_node_neighbour_names_by_node_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -4618,26 +4484,16 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_name'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "Missing the code example!"
             }
         ],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To retrieve the neighbours of a given node `src` you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "let node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());\n"
+        },
+        "extra_headers": []
     },
     "get_edge_id_with_type_by_node_ids": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -4697,11 +4553,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
+                "msg": "Missing the documentation for the argument 'src_name'."
             },
             {
                 "doc_line": "~",
@@ -4918,19 +4774,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_weight'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_weight'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_weight'."
             },
             {
                 "doc_line": "~",
@@ -4939,6 +4787,14 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_weight'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": 0,
@@ -5053,7 +4909,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "```rust\n"
         },
         "example": {},
         "extra_headers": [
@@ -5605,11 +5462,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'other'."
             },
             {
                 "doc_line": 0,
@@ -5782,15 +5639,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_names'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": 0,
@@ -6117,7 +5974,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -6125,7 +5982,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6157,7 +6014,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -6165,7 +6022,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6204,15 +6061,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_selfloop'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -6224,15 +6085,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_selfloop'."
+                "msg": "Missing the documentation for the argument 'edge_id'."
             },
             {
                 "doc_line": "~",
@@ -6240,7 +6097,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
                 "doc_line": 0,
@@ -6302,7 +6159,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -6310,11 +6167,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6327,6 +6180,10 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -6468,15 +6325,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'to_node'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'parameters'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'to_node'."
             },
             {
                 "doc_line": 0,
@@ -6507,11 +6364,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6546,11 +6403,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'walk_length'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_length'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6725,7 +6582,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'first_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6737,11 +6598,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_nodes_set'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
             },
             {
                 "doc_line": 0,
@@ -6761,7 +6618,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'first_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6773,11 +6634,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_nodes_set'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
             },
             {
                 "doc_line": 0,
@@ -6797,7 +6654,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
                 "doc_line": "~",
@@ -6805,7 +6662,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'central_node'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
             },
             {
                 "doc_line": "~",
@@ -6829,7 +6686,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
                 "doc_line": "~",
@@ -6837,7 +6694,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'central_node'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
             },
             {
                 "doc_line": "~",
@@ -6861,19 +6718,19 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_self_loops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_node_type_set'."
+                "msg": "Missing the documentation for the argument 'allow_node_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_node_set'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'allow_node_type_set'."
             },
             {
                 "doc_line": "~",
@@ -6897,19 +6754,19 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_self_loops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_node_type_set'."
+                "msg": "Missing the documentation for the argument 'allow_node_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_node_set'."
+                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'allow_node_type_set'."
             },
             {
                 "doc_line": "~",
@@ -6930,186 +6787,101 @@
     "has_nodes": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_nodes",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To check if the graph has nodes you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "assert_eq!(graph.has_nodes(), true);\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To check if the graph has nodes you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert_eq!(graph.has_nodes(), true);\n"
+        },
+        "extra_headers": []
     },
     "has_edges": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_edges",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To check if the current graph has edges you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "assert_eq!(graph.has_edges(), true);\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To check if the current graph has edges you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert_eq!(graph.has_edges(), true);\n"
+        },
+        "extra_headers": []
     },
     "get_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "get_name",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "To the retrieve the name of the current graph instance you can use:\n```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "assert_eq!(graph.get_name(), \"STRING PPI\".to_string());\nprintln!(\"The name of the current graph is {}.\", graph.get_name());\n```\n"
-            }
-        ]
+        "example": {
+            "desc": "To the retrieve the name of the current graph instance you can use:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert_eq!(graph.get_name(), \"STRING PPI\".to_string());\nprintln!(\"The name of the current graph is {}.\", graph.get_name());\n"
+        },
+        "extra_headers": []
     },
     "get_trap_nodes_number": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "get_trap_nodes_number",
-        "errors": [
-            {
-                "doc_line": 4,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nprintln!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());\n"
+        },
+        "extra_headers": []
     },
     "has_trap_nodes": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_trap_nodes",
-        "errors": [
-            {
-                "doc_line": 1,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\n"
-            },
-            {
-                "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "if graph.has_trap_nodes(){\nprintln!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());\n} else {\nprintln!(\"There are no trap nodes in the current graph.\");\n}\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nif graph.has_trap_nodes(){\nprintln!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());\n} else {\nprintln!(\"There are no trap nodes in the current graph.\");\n}\n"
+        },
+        "extra_headers": []
     },
     "is_directed": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "is_directed",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\nlet directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(directed_string_ppi.is_directed());\nlet undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();\nassert!(!undirected_string_ppi.is_directed());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rustlet directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(directed_string_ppi.is_directed());\nlet undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();\nassert!(!undirected_string_ppi.is_directed());\n"
+        },
+        "extra_headers": []
     },
     "has_selfloops": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_selfloops",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\nlet string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(string_ppi_with_selfloops.has_selfloops());\nlet string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();\nassert!(!string_ppi_without_selfloops.has_selfloops());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rustlet string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(string_ppi_with_selfloops.has_selfloops());\nlet string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();\nassert!(!string_ppi_without_selfloops.has_selfloops());\n"
+        },
+        "extra_headers": []
     },
     "has_singletons": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "has_singletons",
-        "errors": [
-            {
-                "doc_line": 2,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\n"
-            },
-            {
-                "name": "let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
-                "content": "assert!(graph_with_singletons.has_singletons());\nlet graph_without_singletons = graph_with_singletons.remove(\nNone, None, None, None, None, None, None, None, false, false, true, true, false, false,\n).unwrap();\nassert!(!graph_without_singletons.has_singletons());\n```\n"
-            }
-        ]
+        "example": {
+            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();\nassert!(graph_with_singletons.has_singletons());\nlet graph_without_singletons = graph_with_singletons.remove(\nNone, None, None, None, None, None, None, None, false, false, true, true, false, false,\n).unwrap();\nassert!(!graph_without_singletons.has_singletons());\n"
+        },
+        "extra_headers": []
     },
     "has_singleton_nodes_with_self_loops": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9323,19 +9095,19 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iter'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": 0,
@@ -9587,7 +9359,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
             },
             {
                 "doc_line": "~",
@@ -9595,11 +9367,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
@@ -9611,43 +9391,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_weights'."
+                "msg": "Missing the documentation for the argument 'directed_edge_list'."
             },
             {
                 "doc_line": "~",
@@ -9655,15 +9411,31 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+                "msg": "Missing the documentation for the argument 'has_node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
+                "msg": "Missing the documentation for the argument 'has_weights'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+                "msg": "Missing the documentation for the argument 'name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
             },
             {
                 "doc_line": 0,
@@ -9672,7 +9444,8 @@
         ],
         "args": {
             "args": [],
-            "desc": "TODO: UPDATE THE DOCSTRING!\n"
+            "desc": "TODO: UPDATE THE DOCSTRING!\n",
+            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_self_loops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
         },
         "example": {},
         "extra_headers": []
@@ -9691,11 +9464,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
+                "msg": "Missing the documentation for the argument 'directed'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
@@ -9703,7 +9480,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
             },
             {
                 "doc_line": "~",
@@ -9715,27 +9504,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": 0,
@@ -9743,7 +9516,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_self_loops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
         },
         "example": {},
         "extra_headers": []
@@ -9933,11 +9707,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_number_overlaps'."
+                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
+                "msg": "Missing the documentation for the argument 'min_number_overlaps'."
             },
             {
                 "doc_line": "~",
@@ -10072,12 +9846,7 @@
     "kfold": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
         "function": "kfold",
-        "errors": [
-            {
-                "doc_line": 12,
-                "msg": "Missing the code example!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -10107,12 +9876,10 @@
                 }
             ]
         },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "Example",
-                "content": "```rust\n"
-            }
-        ]
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor i in 0..5 {\nlet (train, test) = graph.kfold(5, i, None, 0xbad5eed, true);\n// Run the training\n}\n",
+            "footer": "If We pass an avector of edge types, the K-fold will be executed only on the edges which match\nthat type. All the other edges will always appear in the traning set.\n"
+        },
+        "extra_headers": []
     }
 }

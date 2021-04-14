@@ -1416,7 +1416,7 @@
             "",
             "# Arguments",
             "",
-            "* `random_state`:NodeT - The random_state to use for the holdout,",
+            "* `random_state`: NodeT - The random_state to use for the holdout,",
             "* `include_all_edge_types`: bool - whether to include all the edges between two nodes.",
             "* `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.",
             "* `verbose`: bool - whether to show a loading bar or not.",
@@ -4235,7 +4235,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "warn!(\"Starting default test suite.\");\n    let _ = test_graph_properties(graph, verbose);\n\n    warn!(\"Testing SkipGram / CBOW / GloVe preprocessing.\");\n    let _ = test_embiggen_preprocessing(graph, verbose);\n\n    warn!(\"Testing subgraph generation.\");\n    let _ = test_subgraph_generation(graph, verbose);\n\n    warn!(\"Testing clone and setters.\");\n    let _ = test_clone_and_setters(graph, verbose);\n\n    warn!(\"Testing edge-label holdouts tests.\");\n    let _ = test_edgelabel_holdouts(graph, verbose);\n\n    warn!(\"Testing writing out graph to file.\");\n    let _ = test_dump_graph(graph, verbose);\n\n    warn!(\"Testing generic filtering mechanism.\");\n    let _ = test_graph_filter(graph, verbose);\n\n    warn!(\"Testing the spanning arborescences.\");\n    let _ = test_spanning_arborescence_bader(graph, verbose);\n\n    warn!(\"Running node-label holdouts tests.\");\n    let _ = test_nodelabel_holdouts(graph, verbose);\n\n    warn!(\"Running remove components tests.\");\n    let _ = test_remove_components(graph, verbose);\n\n    warn!(\"Testing removes.\");\n    let _ = test_graph_removes(graph, verbose);\n\n    warn!(\"Testing negative edges generation.\");\n    let _ = test_negative_edges_generation(graph, verbose);\n\n    warn!(\"Executing edge holdouts tests.\");\n    let _ = test_edge_holdouts(graph, verbose);\n\n    warn!(\"Testing k-fold holdouts.\");\n    let _ = test_kfold(graph, verbose);\n\n    warn!(\"Testing edge lists generation.\");\n    let _ = test_edgelist_generation(graph, verbose);\n\n    warn!(\"Testing graph remapping.\");\n    let _ = test_graph_remapping(graph, verbose);\n\n    warn!(\"Testing random walks.\");\n    let _ = test_random_walks(graph, verbose);\n\n    Ok(())"
+        "body": "warn!(\"Starting default test suite.\");\n    let _ = test_graph_properties(graph, verbose);\n\n    warn!(\"Testing SkipGram / CBOW / GloVe preprocessing.\");\n    let _ = test_embiggen_preprocessing(graph, verbose);\n\n    warn!(\"Testing subgraph generation.\");\n    let _ = test_subgraph_generation(graph, verbose);\n\n    warn!(\"Testing clone and setters.\");\n    let _ = test_clone_and_setters(graph, verbose);\n\n    warn!(\"Testing edge-label holdouts tests.\");\n    let _ = test_edgelabel_holdouts(graph, verbose);\n\n    warn!(\"Testing writing out graph to file.\");\n    //let _ = test_dump_graph(graph, verbose);\n\n    warn!(\"Testing generic filtering mechanism.\");\n    let _ = test_graph_filter(graph, verbose);\n\n    warn!(\"Testing the spanning arborescences.\");\n    let _ = test_spanning_arborescence_bader(graph, verbose);\n\n    warn!(\"Running node-label holdouts tests.\");\n    let _ = test_nodelabel_holdouts(graph, verbose);\n\n    warn!(\"Running remove components tests.\");\n    let _ = test_remove_components(graph, verbose);\n\n    warn!(\"Testing removes.\");\n    let _ = test_graph_removes(graph, verbose);\n\n    warn!(\"Testing negative edges generation.\");\n    let _ = test_negative_edges_generation(graph, verbose);\n\n    warn!(\"Executing edge holdouts tests.\");\n    let _ = test_edge_holdouts(graph, verbose);\n\n    warn!(\"Testing k-fold holdouts.\");\n    let _ = test_kfold(graph, verbose);\n\n    warn!(\"Testing edge lists generation.\");\n    let _ = test_edgelist_generation(graph, verbose);\n\n    warn!(\"Testing graph remapping.\");\n    let _ = test_graph_remapping(graph, verbose);\n\n    warn!(\"Testing random walks.\");\n    let _ = test_random_walks(graph, verbose);\n\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -9544,8 +9544,8 @@
                 "&str"
             ]
         ],
-        "return_type": "Result<(String, usize), String>",
-        "body": "Ok(if self.numeric_ids {\n            let parsed_value = match value.parse::<usize>() {\n                Ok(val) => Ok(val),\n                Err(_) => Err(format!(\n                    \"The given ID `{}` is not a numeric positive integer.\",\n                    value\n                )),\n            }?;\n\n            let string_parsed_value = parsed_value.to_string();\n\n            // Check that there are no extra zeros or separators in the number\n            // E.g. 000 is not supported since it will be traduced to 0\n            if value != string_parsed_value {\n                return Err(format!(\n                    concat!(\n                        \"The given ID is numeric but is not symmetric.\\n\",\n                        \"Specifically, {} != {} where the first value is the user's one \",\n                        \"and the second one is the result of parsing the value as an \",\n                        \" integer and casting back to string.\"\n                    ),\n                    value, string_parsed_value\n                ));\n            }\n\n            (string_parsed_value, parsed_value)\n        } else {\n            (value.to_string(), self.map.len())\n        })"
+        "return_type": "Result<(String, IndexT), String>",
+        "body": "Ok(if self.numeric_ids {\n            let parsed_value = match value.parse::<usize>() {\n                Ok(val) => Ok(val),\n                Err(_) => Err(format!(\n                    \"The given ID `{}` is not a numeric positive integer.\",\n                    value\n                )),\n            }?;\n\n            let string_parsed_value = parsed_value.to_string();\n\n            // Check that there are no extra zeros or separators in the number\n            // E.g. 000 is not supported since it will be traduced to 0\n            if value != string_parsed_value {\n                return Err(format!(\n                    concat!(\n                        \"The given ID is numeric but is not symmetric.\\n\",\n                        \"Specifically, {} != {} where the first value is the user's one \",\n                        \"and the second one is the result of parsing the value as an \",\n                        \" integer and casting back to string.\"\n                    ),\n                    value, string_parsed_value\n                ));\n            }\n\n            (string_parsed_value, IndexT::from_usize(parsed_value))\n        } else {\n            (value.to_string(), IndexT::from_usize(self.map.len()))\n        })"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
@@ -9594,7 +9594,7 @@
             ]
         ],
         "return_type": "Result<IndexT, String>",
-        "body": "let value = value.as_ref();\n\n        if value.is_empty() {\n            return Err(\"The value given to the vocabulary was empty\".to_string());\n        }\n\n        let (normalized_value, index) = self.normalize_value(value)?;\n\n        if !self.map.contains_key(&normalized_value) {\n            self.map\n                .insert(normalized_value.clone(), IndexT::from_usize(index));\n        }\n\n        Ok(*self.get(&normalized_value).unwrap())"
+        "body": "let value = value.as_ref();\n\n        if value.is_empty() {\n            return Err(\"The value given to the vocabulary was empty\".to_string());\n        }\n\n        let (normalized_value, index) = self.normalize_value(value)?;\n\n        Ok(*self\n            .map\n            .entry(normalized_value)\n            .or_insert(index))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
@@ -13005,16 +13005,23 @@
             "the validation graph, all the other edges create the training graph.",
             "",
             "# Arguments",
-            "* `k`: EdgeT - The number of folds",
-            "* `k_index`: u64 - Which fold to use for the validation",
-            "* `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set)",
+            "* `k`: EdgeT - The number of folds.",
+            "* `k_index`: u64 - Which fold to use for the validation.",
+            "* `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).",
             "* `random_state`: EdgeT - The random_state (seed) to use for the holdout,",
             "* `verbose`: bool - whether to show the loading bar.",
             "",
             "# Example",
             "```rust",
-            "",
-            "```"
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "for i in 0..5 {",
+            "let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true);",
+            "// Run the training",
+            "}",
+            "```",
+            "If We pass an avector of edge types, the K-fold will be executed only on the edges which match",
+            "that type. All the other edges will always appear in the traning set.",
+            ""
         ],
         "modifiers": "pub",
         "name": "kfold",

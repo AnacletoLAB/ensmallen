@@ -141,7 +141,6 @@ class RustParser:
 
             function["return_type"] = return_type.strip()
 
-        print(json.dumps(function, indent=4))
         # Pase the body
         body, text = self.skip_to_match(text)
         function["body"] = body.strip()

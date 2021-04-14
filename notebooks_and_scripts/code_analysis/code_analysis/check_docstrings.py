@@ -25,7 +25,9 @@ def check_doc(args):
         errors = docs[fn_name]["errors"]
 
         if errors:
-            result[fn_name] = [
+            file = function.get("file", "")
+            result.setdefault(file, {})
+            result[file][fn_name] = [
                 "[{:>4}] {}".format(x["doc_line"], x["msg"])
                 for x in errors
             ]

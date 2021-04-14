@@ -141,13 +141,12 @@ class DocParser:
             self.log_error("~", 
                 "Missing the documentation for the argument '{}'.".format(missed_arg)
             )
-        
         # Capture the footer of arguments, if present
         args_footer = ""
         while text and not text[0][1].startswith("#"):
             line, *text = text
             if line[1].strip() != "":
-                args_desc += line[1] + "\n"
+                args_footer += line[1] + "\n"
 
         if args_footer != "":
             self.arguments["footer"] = args_footer
@@ -160,8 +159,8 @@ class DocParser:
         if text[0][1] != "# Example":
             self.log_error(text[0][0], "The example section is missing or in the wrong order.")
             return text
-        line, *text = text
 
+        line, *text = text
         # Parse the arguments description if present
         example_desc = ""
         while not text[0][1].startswith("```") and not text[0][1].startswith("#"):
@@ -179,24 +178,25 @@ class DocParser:
 
         example = text[0][1]
         text = text[1:]
-        while not text[0][1].startswith("```") and not text[0][1].startswith("#"):
+
+        while not text[0][1].startswith("```"):
             line, *text = text
             if line[1].strip() != "":
                 example += line[1] + "\n"
 
-        if not text[0][1].startswith("```"):
-            self.log_error(line[0], "Missing the closing ``` in the code example!")
-            return text
-
         if self.function.get("name", "") not in example:
             self.log_error(line[0], "In the example there isn't the current method!!!!")
         
+        self.example["content"] = example
+
+        if text:
+            line, *text = text
         # Capture the footer of arguments, if present
         example_footer = ""
-        while not text[0][1].startswith("#"):
+        while text and not text[0][1].startswith("#"):
             line, *text = text
             if line[1].strip() != "":
-                example_desc += line[1] + "\n"
+                example_footer += line[1] + "\n"
 
         if example_footer != "":
             self.example["footer"] = example_footer
