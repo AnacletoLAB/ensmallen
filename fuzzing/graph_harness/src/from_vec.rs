@@ -23,7 +23,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     let data_copy = data.clone();
     let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_vec(info, data_copy.clone());
+        handle_panics_from_vec(Some(info), data_copy.clone());
     }));
 
     let mut g = graph::Graph::from_string_unsorted(
