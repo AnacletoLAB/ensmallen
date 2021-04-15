@@ -1,0 +1,5 @@
+#[derive(Arbitrary, Debug, Clone)]
+pub struct MetaParams {{
+{params}
+    pub from_vec: FromVecHarnessParams,
+}}

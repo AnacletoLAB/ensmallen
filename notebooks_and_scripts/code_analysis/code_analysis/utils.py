@@ -1,6 +1,7 @@
 import os
 
-ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.join(PACKAGE_DIR, "..")
 
 def build_path(path):
     return os.path.join(ROOT_DIR, path)
@@ -40,6 +41,10 @@ def filter_function(x):
         return False
     
     return True
+
+def get_file(path):
+    with open(os.path.join(PACKAGE_DIR, path), "r") as f:
+        return f.read()
 
 def to_dot(nodes, edges):
     result = ""

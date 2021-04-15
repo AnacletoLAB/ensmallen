@@ -8,6 +8,7 @@ from .check_docstrings import check_doc
 from .bindgen import bindgen
 from .doc_analysis import doc_analysis
 from .utils import build_path
+from .build_metatest import build_metatest
 
 commands = {
     "analysis":analysis,
@@ -16,24 +17,30 @@ commands = {
     "check_doc":check_doc,
     "bindgen":bindgen,
     "doc_analysis":doc_analysis,
+    "build_metatest":build_metatest,
 }
 
-# each 
+# The dependancy graph of each command 
 deps = {
-    "analysis":[],
+    "analysis":None,
+    "build_metatest":"analysis",
 
-    "dependancies":["analysis"],
-    "method_dependancies":["dependancies"],
+    "dependancies":"analysis",
+    "method_dependancies":"dependancies",
 
-    "doc_analysis":["analysis"],
-    "check_doc":["doc_analysis"],
+    "doc_analysis":"analysis",
+    "check_doc":"doc_analysis",
     
     "bindgen":["analysis", "doc_analysis"],
 }
 
 def solve_deps(start):
     dep = deps[start]
-    if dep == []:
+    if dep is None:
+        return
+
+    if isinstance(dep, str):
+        commands[dep]([])
         return
 
     for sub_dep in dep:
