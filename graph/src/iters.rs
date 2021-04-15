@@ -17,7 +17,8 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> std::ops::Range<usize> {
-        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
+        let (min_edge_id, max_edge_id) =
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
         min_edge_id as usize..max_edge_id as usize
     }
 
@@ -98,6 +99,38 @@ impl Graph {
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn iter_sources_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, src, _)| src)
+    }
+
+    /// Return iterator on the edges' weights.
+    ///
+    /// # Example
+    /// To get an iterator over the edges weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
+    /// assert!(graph_with_weights.iter_weights().is_ok());
+    /// assert!(graph_without_weights.iter_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());
+    /// ```
+    pub fn iter_weights(&self) -> Result<impl Iterator<Item = WeightT> + '_, String> {
+        self.must_have_weights()?;
+        Ok(self.weights.as_ref().map(|ws| ws.iter().cloned()).unwrap())
+    }
+
+    /// Return parallel iterator on the edges' weights.
+    ///
+    /// # Example
+    /// To get an iterator over the edges weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
+    /// assert!(graph_with_weights.iter_weights().is_ok());
+    /// assert!(graph_without_weights.iter_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());
+    /// ```
+    pub fn par_iter_weights(&self) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
+        self.must_have_weights()?;
+        Ok(self.weights.as_ref().map(|ws| ws.par_iter().cloned()).unwrap())
     }
 
     /// Return parallel iterator on the (non unique) source nodes of the graph.

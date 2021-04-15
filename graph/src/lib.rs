@@ -46,6 +46,8 @@ pub(crate) use self::compression::*;
 
 pub mod validators;
 pub use self::validators::*;
+pub mod getters_boolean;
+pub use self::getters_boolean::*;
 
 mod constructors;
 
