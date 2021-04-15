@@ -254,10 +254,24 @@ impl Graph {
     }
 
     /// Return the node types names.
-    pub fn get_node_type_names(&self) -> Option<Vec<String>> {
-        self.node_types
+    ///
+    /// # Example
+    /// To retrieve the node type names of the graph nodes you can use:
+    /// ```rust
+    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph_without_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph_with_node_types.get_node_type_names().is_ok());
+    /// assert!(graph_without_node_types.get_node_type_names().is_err());
+    /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_names());
+    /// ```
+    ///
+    pub fn get_node_type_names(&self) -> Result<Vec<String>, String> {
+        self.must_have_node_types()?;
+        Ok(self
+            .node_types
             .as_ref()
             .map(|nts| nts.vocabulary.reverse_map.clone())
+            .unwrap())
     }
 
     /// Return number of the unique edges in the graph.
