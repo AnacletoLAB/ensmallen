@@ -245,8 +245,6 @@ impl Graph {
     /// The method will panic if the given node id is higher than the number of
     /// nodes in the graph.
     ///
-    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
-    ///
     /// # Arguments
     ///
     /// * `node_id` - Integer ID of the node.
@@ -257,8 +255,6 @@ impl Graph {
     }
 
     /// Returns the number of outbound neighbours of given node.
-    ///
-    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
     ///
     /// # Arguments
     /// * `node_id` - Integer ID of the node.

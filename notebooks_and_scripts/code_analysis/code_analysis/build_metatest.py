@@ -10,7 +10,8 @@ META_STRUCT_TEMPLATE = get_file("templates/meta_struct.txt")
 BLACKLISTED_FUNCS = [
     "validate_weight",
     "parse_weight",
-    "has_edge"
+    "has_edge",
+    "new",
 ]
 
 BLACKLISTED_TYPES = [
@@ -29,11 +30,14 @@ BLACKLISTED_TYPES = [
     "WalkWeights",
     "Self",
     "&[String]",
-    "&"
+    "&",
 ]
 
 def filter_function(function):
     if function.get("name", "") in BLACKLISTED_FUNCS:
+        return False
+
+    if function.get("struct", "") != "Graph":
         return False
 
     args = function.get("args", [])
@@ -69,15 +73,19 @@ def build_struct_and_call(function):
         if arg[0] != "self"
     ])
     
-    call = f"\tgraph.{function_name}({args})"
-    
-    if function.get("return_type", "").startswith("Result"):
+    call = f"graph.{function_name}({args})"
+
+    return_type = function.get("return_type", "")
+    if return_type.startswith("Result"):
         call += "?"
-    
+        
+    if "Iterator" in return_type:
+        call = "let _ = " + call + ".collect::<Vec<_>>()"
+
     result = {
         "struct_name":function_name,
         "struct_type":struct_type,
-        "call":call + ";",
+        "call":"\t" + call + ";",
     }
 
     if len(args) > 1 :
@@ -109,6 +117,9 @@ def build_metatest(args):
         res["call"]
         for res in result
     ]
+    
+    # place the failable methods at the end
+    calls.sort(key=lambda x: "?" in x)
 
     params = "\n".join(
         "\tpub {struct_name}: {struct_type},".format(
