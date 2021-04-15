@@ -261,7 +261,7 @@ impl Graph {
                     edge_id,
                     src,
                     dst,
-                    self.get_unchecked_edge_type_from_edge_id(edge_id),
+                    self.get_unchecked_edge_type_id_from_edge_id(edge_id),
                 )
             })
     }
@@ -286,7 +286,7 @@ impl Graph {
     > + '_ {
         self.iter_edges(directed)
             .map(move |(edge_id, src, src_name, dst, dst_name)| {
-                let edge_type_id = self.get_unchecked_edge_type_from_edge_id(edge_id);
+                let edge_type_id = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
                 (
                     edge_id,
                     src,
@@ -320,7 +320,7 @@ impl Graph {
     > + '_ {
         self.par_iter_edges(directed)
             .map(move |(edge_id, src, src_name, dst, dst_name)| {
-                let edge_type_id = self.get_unchecked_edge_type_from_edge_id(edge_id);
+                let edge_type_id = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
                 (
                     edge_id,
                     src,
@@ -347,7 +347,7 @@ impl Graph {
                     edge_id,
                     src,
                     dst,
-                    self.get_unchecked_edge_type_from_edge_id(edge_id),
+                    self.get_unchecked_edge_type_id_from_edge_id(edge_id),
                 )
             })
     }

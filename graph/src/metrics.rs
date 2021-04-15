@@ -648,7 +648,7 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = self.get_node_name_from_node_id(*node_id).unwrap(),
+                        node_name = self.get_unchecked_node_name_from_node_id(*node_id),
                         node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)
                     )
                 })

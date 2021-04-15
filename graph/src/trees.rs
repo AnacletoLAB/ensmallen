@@ -111,14 +111,14 @@ impl Graph {
             Box::new(
                 self.iter_edges_from_random_state(random_state)
                     .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&self.get_unchecked_edge_type_from_edge_id(edge_id)) {
+                        if uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {
                             return None;
                         }
                         Some((src, dst))
                     })
                     .chain(self.iter_edges_from_random_state(random_state).filter_map(
                         move |(edge_id, src, dst)| {
-                            if !uet.contains(&self.get_unchecked_edge_type_from_edge_id(edge_id)) {
+                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))

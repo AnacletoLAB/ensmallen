@@ -150,7 +150,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-        (src, dst, self.get_unchecked_edge_type_from_edge_id(edge_id))
+        (src, dst, self.get_unchecked_edge_type_id_from_edge_id(edge_id))
     }
 
     /// Return the src, dst, edge type of a given edge ID.
@@ -227,6 +227,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * k: NodeT - Number of central nodes to extract.
+    /// TODO: This can be refactored to run faster!
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_unchecked_node_degree_from_node_id(node_id), node_id))
@@ -251,7 +252,7 @@ impl Graph {
     /// * `node_id` - Integer ID of the node.
     ///
     pub fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
-        let (max_edge_id, min_edge_id)  = self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
+        let (min_edge_id, max_edge_id)  = self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
         (max_edge_id - min_edge_id) as NodeT
     }
 
@@ -274,8 +275,34 @@ impl Graph {
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
         self.get_top_k_central_nodes_ids(k)
             .into_iter()
-            .map(|node_id| self.get_node_name_from_node_id(node_id).unwrap())
+            .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
             .collect()
+    }
+
+    /// Returns option with vector of node types of given node.
+    ///
+    /// This method will panic if the given node ID is greater than
+    /// the number of nodes in the graph.
+    /// Furthermore, if the graph does NOT have node types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - node whose node type is to be returned.
+    ///
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The node type id of node {} is {:?}", 0, graph.get_unchecked_node_type_id_from_node_id(0));
+    /// ```
+    ///
+    pub fn get_unchecked_node_type_id_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Option<Vec<NodeTypeT>> {
+        self.node_types
+            .as_ref()
+            .and_then(|nts| nts.ids[node_id as usize].clone())
     }
 
     /// Returns node type of given node.
@@ -294,21 +321,31 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
-        if let Some(nt) = &self.node_types {
-            return if node_id <= nt.ids.len() as NodeT {
-                Ok(nt.ids[node_id as usize].clone())
-            } else {
-                Err(format!(
-                    "The node_index {} is too big for the node_types vector which has len {}",
-                    node_id,
-                    nt.ids.len()
-                ))
-            };
-        }
+        self.must_have_node_types()?;
+        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
+    }
 
-        Err(String::from(
-            "Node types are not defined for current graph instance.",
-        ))
+    /// Returns edge type of given edge.
+    ///
+    /// This method will panic if the given edge ID is greater than
+    /// the number of edges in the graph.
+    /// Furthermore, if the graph does NOT have edge types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// # Arguments
+    ///
+    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    ///
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+
+    /// assert_eq!(graph.get_unchecked_edge_type_id_from_edge_id(0), Some(0));
+    /// ```
+    pub fn get_unchecked_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
+        self.edge_types
+            .as_ref()
+            .and_then(|ets| ets.ids[edge_id as usize])
     }
 
     /// Returns edge type of given edge.
@@ -320,26 +357,16 @@ impl Graph {
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The edge type id of edge {} is {:?}", 0, graph.get_edge_type_id_from_edge_id(0));
+    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
+    /// assert_eq!(graph.get_edge_type_id_from_edge_id(0).unwrap(), Some(0));
+    /// assert!(graph_without_edge_types.get_edge_type_id_from_edge_id(0).is_err());
     /// ```
     pub fn get_edge_type_id_from_edge_id(
         &self,
         edge_id: EdgeT,
     ) -> Result<Option<EdgeTypeT>, String> {
-        if let Some(et) = &self.edge_types {
-            return if edge_id <= et.ids.len() as EdgeT {
-                Ok(self.get_unchecked_edge_type_from_edge_id(edge_id))
-            } else {
-                Err(format!(
-                    "The edge_index {} is too big for the edge_types vector which has len {}",
-                    edge_id,
-                    et.ids.len()
-                ))
-            };
-        }
-        Err(String::from(
-            "Edge types are not defined for current graph instance.",
-        ))
+        self.must_have_edge_types()?;
+        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
     }
 
     /// Returns result of option with the node type of the given node id.
@@ -350,18 +377,15 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> Result<Option<Vec<String>>, String> {
-        if self.node_types.is_some() {
-            Ok(self
-                .get_node_type_id_from_node_id(node_id)?
-                .and_then(|node_type_ids| {
-                    // This unwrap cannot fail because it is surely a vector
-                    // of node type IDs from the current graph instance.
-                    self.get_node_type_names_from_node_type_ids(node_type_ids)
-                        .ok()
-                }))
-        } else {
-            Err("Node types not available for the current graph instance.".to_string())
-        }
+        self.must_have_node_types()?;
+        Ok(self
+            .get_node_type_id_from_node_id(node_id)?
+            .and_then(|node_type_ids| {
+                // This unwrap cannot fail because it is surely a vector
+                // of node type IDs from the current graph instance.
+                self.get_node_type_names_from_node_type_ids(node_type_ids)
+                    .ok()
+            }))
     }
 
     /// Returns option with the edge type of the given edge id.
@@ -515,16 +539,33 @@ impl Graph {
     }
 
     /// Returns result with the node name.
-    /// TODO: create unchecked version!
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose name is to be returned.
+    ///
+    /// # Examples
+    /// To get the name of a node you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert_eq!(graph.get_unchecked_node_name_from_node_id(0), "ENSG00000004059".to_string());
+    /// ```
+    pub fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
+        self.nodes.unchecked_translate(node_id)
+    }
+
+    /// Returns result with the node name.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose name is to be returned.
+    ///
+    /// # Examples
+    /// To get the name of a node you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.get_node_name_from_node_id(0).is_ok());
+    /// ```
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
-        match node_id < self.get_nodes_number() {
-            true => Ok(self.nodes.unchecked_translate(node_id)),
-            false => Err(format!(
-                "Given node_id {} is greater than number of nodes in the graph ({}).",
-                node_id,
-                self.get_nodes_number()
-            )),
-        }
+        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
     }
 
     /// Returns result with the node id.

@@ -3,32 +3,10 @@ use super::*;
 /// # Unchecked Queries
 /// The naming convention for unchecked methods follows `get_unchecked_X_from_Y`.
 impl Graph {
-    /// Returns the name of the node passed and HORRIBLY PANIC if the id is out
-    /// of range.
-    pub(crate) fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
-        self.nodes.unchecked_translate(node_id)
-    }
-
-    /// Returns option with the edge type of the given edge id.
-    pub(crate) fn get_unchecked_edge_type_from_edge_id(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
-        self.edge_types
-            .as_ref()
-            .and_then(|ets| ets.ids[edge_id as usize])
-    }
 
     /// Returns option with the weight of the given edge id.
     pub(crate) fn get_unchecked_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
-    }
-
-    /// Returns option with the node type of the given node id.
-    pub(crate) fn get_unchecked_node_type_id_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> Option<Vec<NodeTypeT>> {
-        self.node_types
-            .as_ref()
-            .and_then(|nts| nts.ids[node_id as usize].clone())
     }
 
     /// Returns node id raising a panic if used unproperly.

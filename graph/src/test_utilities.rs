@@ -368,8 +368,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edges(true).next() {
-        let src_string = graph.get_node_name_from_node_id(edge.0).unwrap();
-        let dst_string = graph.get_node_name_from_node_id(edge.1).unwrap();
+        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);
+        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
@@ -391,7 +391,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             );
         }
         assert!(
-            graph.has_node_from_node_name(&src_string) && graph.has_node_from_node_name(&dst_string)
+            graph.has_node_from_node_name(&src_string)
+                && graph.has_node_from_node_name(&dst_string)
         );
         if graph.has_node_types() {
             assert!(
@@ -1003,13 +1004,13 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
-                [graph.get_node_name_from_node_id(0).unwrap()]
+                [graph.get_unchecked_node_name_from_node_id(0)]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
             ),
             Some(
-                [graph.get_node_name_from_node_id(1).unwrap()]
+                [graph.get_unchecked_node_name_from_node_id(1)]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1018,10 +1019,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edges(
-            graph.get_node_name_from_node_id(0).unwrap(),
+            graph.get_unchecked_node_name_from_node_id(0),
             Some(false),
             Some(
-                [graph.get_node_name_from_node_id(1).unwrap()]
+                [graph.get_unchecked_node_name_from_node_id(1)]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1029,10 +1030,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            graph.get_node_name_from_node_id(0).unwrap(),
+            graph.get_unchecked_node_name_from_node_id(0),
             Some(false),
             Some(
-                [graph.get_node_name_from_node_id(1).unwrap()]
+                [graph.get_unchecked_node_name_from_node_id(1)]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),

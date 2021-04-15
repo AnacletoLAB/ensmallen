@@ -801,11 +801,11 @@ impl Graph {
             // add the edges to the relative vectors
             edge_set[..train_size].iter().for_each(|edge_id| {
                 train_edge_types[*edge_id as usize] =
-                    self.get_unchecked_edge_type_from_edge_id(*edge_id)
+                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id)
             });
             edge_set[train_size..].iter().for_each(|edge_id| {
                 test_edge_types[*edge_id as usize] =
-                    self.get_unchecked_edge_type_from_edge_id(*edge_id)
+                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id)
             });
         }
 

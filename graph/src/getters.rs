@@ -170,7 +170,7 @@ impl Graph {
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_sources_ids(directed)
-            .map(|src| self.get_node_name_from_node_id(src).unwrap())
+            .map(|src| self.get_unchecked_node_name_from_node_id(src))
             .collect()
     }
 
@@ -188,7 +188,7 @@ impl Graph {
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destinations_ids(directed)
-            .map(|dst| self.get_node_name_from_node_id(dst).unwrap())
+            .map(|dst| self.get_unchecked_node_name_from_node_id(dst))
             .collect()
     }
 
@@ -204,9 +204,7 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_types(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
-        if !self.has_edge_types() {
-            return Err("The current graph instance does not have edge types!".to_string());
-        }
+        self.must_have_edge_types()?;
         Ok(self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
 
@@ -219,17 +217,13 @@ impl Graph {
 
     /// Return the node types of the nodes.
     pub fn get_node_types(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
-        if !self.has_node_types() {
-            return Err("The current graph instance does not have nodes!".to_string());
-        }
+        self.must_have_node_types()?;
         Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
     /// Return the weights of the edges.
     pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
-        if !self.has_weights() {
-            return Err("The current graph instance does not have weights!".to_string());
-        }
+        self.must_have_weights()?;
         Ok(self.weights.clone().unwrap())
     }
 
