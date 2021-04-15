@@ -135,6 +135,27 @@ pub fn load_ppi(
     Ok(ppi)
 }
 
+/// Load an empty graph instance
+pub fn load_empty_graph(directed: bool) -> Graph {
+    Graph::build_graph(
+        std::iter::empty(),
+        0,
+        Vocabulary::default(),
+        None,
+        None,
+        directed,
+        false,
+        "Empty graph",
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+    )
+    .unwrap()
+}
+
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
 pub fn load_cora() -> Result<Graph, String> {
@@ -344,7 +365,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             graph.textual_report(false)
         );
     }
-    
+
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edges(true).next() {
         let src_string = graph.get_node_name_by_node_id(edge.0).unwrap();
@@ -1227,7 +1248,6 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing the spanning arborescences.");
     let _ = test_spanning_arborescence_bader(graph, verbose);
-
 
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);
