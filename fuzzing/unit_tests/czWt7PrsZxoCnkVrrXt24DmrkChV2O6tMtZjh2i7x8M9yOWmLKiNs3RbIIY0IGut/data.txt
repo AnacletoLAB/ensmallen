@@ -1,0 +1,29 @@
+FromVecHarnessParams {
+    directed: false,
+    directed_edge_list: false,
+    ignore_duplicated_nodes: false,
+    ignore_duplicated_edges: true,
+    verbose: false,
+    numeric_edge_types_ids: false,
+    numeric_node_ids: false,
+    numeric_edge_node_ids: false,
+    numeric_node_types_ids: false,
+    has_node_types: true,
+    has_edge_types: false,
+    has_weights: true,
+    edges: [],
+    nodes: Some(
+        [
+            Ok(
+                (
+                    "hv",
+                    Some(
+                        [
+                            "\u{3}",
+                        ],
+                    ),
+                ),
+            ),
+        ],
+    ),
+}
