@@ -392,6 +392,7 @@ impl Graph {
     }
 
     /// Return set of nodes that are not singletons.
+    // TODO: THIS METHOD CAN NOW BE WAY FASTER!
     pub fn get_not_singletons(&self) -> Vec<NodeT> {
         self.iter_edge_ids(false)
             .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
@@ -400,6 +401,7 @@ impl Graph {
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
+    // TODO: REFACTOR THIS TO AVOID DOUBLE ITERATION!
     pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.get_not_singletons()
             .into_iter()
