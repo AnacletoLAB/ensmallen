@@ -1,9 +1,9 @@
 use super::*;
 
 use indicatif::ProgressIterator;
-use rayon::{ThreadPool, iter::IntoParallelIterator};
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
+use rayon::{iter::IntoParallelIterator, ThreadPool};
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::{collections::HashSet, sync::atomic::AtomicU32};
@@ -14,46 +14,50 @@ const NOT_PRESENT: u32 = u32::MAX;
 /// Returns a rayon thread pool handling Creation errors.
 ///
 /// Getting a thread pool might return the error "Resource temporarly unavailable"
-/// if the number of processes currently on the system is more than what set in 
+/// if the number of processes currently on the system is more than what set in
 /// `ulimit -a`, which by default is 256851.
 ///
 /// Moreover, we return an error if the number of selected CPUS is 1 or less.
 /// Because the algorithms which use the pool requires at least 2 threads, and
 /// we generally provide also an optimized single-thread version.
-fn get_thread_pool() -> Result<(usize, ThreadPool), String>{
+fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
     let cpu_number = rayon::current_num_threads();
 
     if cpu_number <= 1 {
-        return Err(
-            concat!(
-                "Cannot execute the parallel connected_components method when",
-                " only a single CPU is made available.\n",
-                "This might be an erroroneus configuration of the envionment",
-                " variable RAYON_NUM_THREADS.\n",
-                "If you really want to compute the connected components with",
-                " these configurations, consider using random_spanning_arborescence_kruskal."
-        ).to_string());
+        return Err(concat!(
+            "Cannot execute the parallel connected_components method when",
+            " only a single CPU is made available.\n",
+            "This might be an erroroneus configuration of the envionment",
+            " variable RAYON_NUM_THREADS.\n",
+            "If you really want to compute the connected components with",
+            " these configurations, consider using random_spanning_arborescence_kruskal."
+        )
+        .to_string());
     }
 
-    let mut attempts_left =1_000;
+    let mut attempts_left = 1_000;
     loop {
         match rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)
-            .build() {
+            .build()
+        {
             Ok(thread_pool) => return Ok((cpu_number, thread_pool)),
             Err(internal_error) => {
                 if attempts_left == 0 {
-                    return Err(format!(concat!(
-                        "Unknown error while trying to allocate the thread pool for ",
-                        "executing the parallel connected components algorithm.\n",
-                        "In our experience this happens once in every 100 milions calls\n",
-                        "The interal error is {:?}."
-                        ), internal_error));
+                    return Err(format!(
+                        concat!(
+                            "Unknown error while trying to allocate the thread pool for ",
+                            "executing the parallel connected components algorithm.\n",
+                            "In our experience this happens once in every 100 milions calls\n",
+                            "The interal error is {:?}."
+                        ),
+                        internal_error
+                    ));
                 }
                 let delay = std::time::Duration::from_millis(50);
                 std::thread::sleep(delay);
                 attempts_left -= 1;
-            },
+            }
         }
     }
 }
@@ -165,7 +169,7 @@ impl Graph {
         if !self.has_edges() {
             return (
                 HashSet::new(),
-                (0..self.get_nodes_number()).collect(),
+                self.get_nodes(),
                 self.get_nodes_number(),
                 1,
                 1,
@@ -257,7 +261,7 @@ impl Graph {
                     // We merge the two component sizes.
                     component_sizes[min_component_id as usize] +=
                         component_sizes[max_component_id as usize];
-                    
+
                     // We check if we have a new component size record
                     max_component_size =
                         max_component_size.max(component_sizes[min_component_id as usize]);
@@ -497,15 +501,11 @@ impl Graph {
             // Number of edges inserted
             total_inserted_edges.load(Ordering::SeqCst),
             // Return an iterator over all the edges in the spanning arborescence
-            (0..self.get_nodes_number()).filter_map(move |src| {
-                let dst = parents[src as usize];
-                // If the edge is NOT registered as a self-loop
-                // which may happen when dealing with singletons
-                // or the root nodes, we return the edge.
-                if src != dst {
-                    return Some((src, dst));
+            parents.into_iter().enumerate().filter_map(|(src, dst)| {
+                if src as NodeT == dst {
+                    return None;
                 }
-                None
+                Some((src as NodeT, dst))
             }),
         ))
     }
@@ -636,7 +636,6 @@ impl Graph {
                 (0..self.get_nodes_number())
                     .progress_with(pb)
                     .for_each(|src| {
-
                         // If the node has already been explored we skip ahead.
                         if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
                             return;
@@ -707,7 +706,7 @@ impl Graph {
                 s.spawn(|_| 'outer: loop {
                     // get the id, we use this as an idex for the stacks vector.
                     let thread_id = rayon::current_thread_index().unwrap();
-            
+
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
@@ -717,13 +716,13 @@ impl Graph {
                                     break 'inner src;
                                 }
                             }
-            
+
                             if completed.load(Ordering::Relaxed) {
                                 break 'outer;
                             }
                         }
                     };
-            
+
                     let src_component = components[src as usize].load(Ordering::Relaxed);
                     self.iter_node_neighbours_ids(src).for_each(|dst| {
                         if components[dst as usize].swap(src_component, Ordering::SeqCst)

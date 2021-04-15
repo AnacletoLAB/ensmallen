@@ -98,10 +98,35 @@ impl Graph {
     }
 
     #[inline(always)]
-    pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
+    /// Returns edge ID corresponding to given source and destination node IDs.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - The source node ID.
+    /// `dst`: NodeT - The destination node ID.
+    ///
+    /// # Example
+    /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
+    ///
+    /// ```rust
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// assert!(
+    ///     graph_without_singletons.iter_node_ids()
+    ///         .all(|node_id|
+    ///             graph_without_singletons.get_unchecked_unique_source_node_id(node_id) == node_id)
+    /// );
+    /// ```
+    pub fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
+        // If there are no singletons or trap nodes in the graph
         self.unique_sources
             .as_ref()
-            .map_or(source_id, |x| x.unchecked_select(source_id as u64) as NodeT)
+            .map_or(
+                // We can directly return the provided source id.
+                source_id, 
+                |x| 
+                // Otherwise we need to retrieve the nodes corresponding to the given source ID
+                x.unchecked_select(source_id as u64) as NodeT
+            )
     }
 
     /// Return the src, dst, edge type of a given edge ID.
@@ -258,7 +283,10 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The edge type id of edge {} is {:?}", 0, graph.get_edge_type_id_from_edge_id(0));
     /// ```
-    pub fn get_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> Result<Option<EdgeTypeT>, String> {
+    pub fn get_edge_type_id_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Result<Option<EdgeTypeT>, String> {
         if let Some(et) = &self.edge_types {
             return if edge_id <= et.ids.len() as EdgeT {
                 Ok(self.get_unchecked_edge_type_from_edge_id(edge_id))
@@ -301,7 +329,10 @@ impl Graph {
     ///
     /// # Arguments
     /// `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
-    pub fn get_edge_type_name_from_edge_id(&self, edge_id: EdgeT) -> Result<Option<String>, String> {
+    pub fn get_edge_type_name_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Result<Option<String>, String> {
         self.get_edge_type_id_from_edge_id(edge_id)?
             .map_or(Ok(None), |x| {
                 Ok(Some(self.get_edge_type_name_from_edge_type_id(x)?))
@@ -417,7 +448,9 @@ impl Graph {
         dst: &str,
         edge_type: Option<&String>,
     ) -> Result<WeightT, String> {
-        self.get_weight_from_edge_id(self.get_edge_id_with_type_from_node_names(src, dst, edge_type)?)
+        self.get_weight_from_edge_id(
+            self.get_edge_id_with_type_from_node_names(src, dst, edge_type)?,
+        )
     }
 
     /// Returns weight of the given node names.
@@ -1000,6 +1033,7 @@ impl Graph {
     ///
     /// * `node_id` - Integer ID of the node.
     ///
+    /// TODO: CREATE UNCHECKED VERSION!!!
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(

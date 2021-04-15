@@ -18,7 +18,7 @@ impl Graph {
         let mut components: Vec<HashSet<NodeT>> = Vec::new();
         let mut common_index = 0;
         let mut recurse: bool;
-        for node in 0..self.get_nodes_number() {
+        for node in self.iter_node_ids() {
             if !indexed_mask[node as usize] {
                 let mut to_visit: Vec<(NodeT, usize)> = vec![(node, 0)];
                 while !to_visit.is_empty() {

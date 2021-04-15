@@ -199,7 +199,7 @@ impl Graph {
 
     /// Return vector with the sorted nodes Ids.
     pub fn get_nodes(&self) -> Vec<NodeT> {
-        (0..self.get_nodes_number()).collect()
+        self.iter_node_ids().collect()
     }
 
     /// Return the edge types of the edges.
@@ -423,9 +423,8 @@ impl Graph {
     /// Return vector with node degrees
     /// TODO: USE CACHE!!!
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|src| self.get_unchecked_edge_id_from_node_ids(src as NodeT + 1, 0))
+        self.par_iter_node_ids()
+            .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))
             .collect()
     }
 

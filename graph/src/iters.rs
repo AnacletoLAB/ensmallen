@@ -21,15 +21,25 @@ impl Graph {
         min_edge_id as usize..max_edge_id as usize
     }
 
+    /// Return iterator on the node of the graph.
+    pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        0..self.get_nodes_number()
+    }
+
+    /// Return iterator on the node of the graph.
+    pub fn par_iter_node_ids(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number()).into_par_iter()
+    }
+
     /// Return iterator on the node degrees of the graph.
     pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).map(move |node| self.get_node_degree_from_node_id(node).unwrap())
+        self.iter_node_ids()
+            .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
     }
 
     /// Return iterator on the node degrees of the graph.
     pub fn par_iter_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number())
-            .into_par_iter()
+        self.par_iter_node_ids()
             .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
     }
 
@@ -118,9 +128,15 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph.
-    pub fn iter_node_ids(&self) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
-        (0..self.get_nodes_number())
-            .map(move |node_id| (node_id, self.get_unchecked_node_type_id_from_node_id(node_id)))
+    pub fn iter_nodes_with_type_ids(
+        &self,
+    ) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+        self.iter_node_ids().map(move |node_id| {
+            (
+                node_id,
+                self.get_unchecked_node_type_id_from_node_id(node_id),
+            )
+        })
     }
 
     /// Return iterator on the node of the graph as Strings.
@@ -128,14 +144,16 @@ impl Graph {
         &self,
     ) -> impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {
-        self.iter_node_ids().map(move |(node_id, node_types)| {
-            (
-                node_id,
-                self.nodes.unchecked_translate(node_id),
-                node_types,
-                self.get_node_type_name_from_node_id(node_id).unwrap_or(None),
-            )
-        })
+        self.iter_nodes_with_type_ids()
+            .map(move |(node_id, node_types)| {
+                (
+                    node_id,
+                    self.nodes.unchecked_translate(node_id),
+                    node_types,
+                    self.get_node_type_name_from_node_id(node_id)
+                        .unwrap_or(None),
+                )
+            })
     }
 
     /// Return iterator on the edges of the graph.
@@ -501,6 +519,6 @@ impl Graph {
         if let Some(x) = &self.unique_sources {
             return Box::new(x.iter().map(|source| source as NodeT));
         }
-        Box::new(0..self.get_nodes_number())
+        Box::new(self.iter_node_ids())
     }
 }

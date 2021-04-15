@@ -644,7 +644,7 @@ impl Graph {
                     splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unique_source(
+                    self.get_unchecked_unique_source_node_id(
                         random_source_id % self.get_unique_source_nodes_number(),
                     ),
                 )
@@ -675,7 +675,7 @@ impl Graph {
             move |index| {
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unique_source(index as NodeT % self.get_unique_source_nodes_number()),
+                    self.get_unchecked_unique_source_node_id(index as NodeT % self.get_unique_source_nodes_number()),
                 )
             },
             parameters,

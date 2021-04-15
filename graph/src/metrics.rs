@@ -6,7 +6,7 @@ use log::info;
 use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap as DefaultHashMap;
-use std::collections::{HashSet};
+use std::collections::HashSet;
 use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
@@ -172,8 +172,7 @@ impl Graph {
     /// println!("The Graph rate is {}", graph.traps_rate());
     /// ```
     pub fn traps_rate(&self) -> f64 {
-        (0..self.get_nodes_number())
-            .into_par_iter()
+        self.par_iter_node_ids()
             .map(|node| {
                 if !self.is_node_trap_from_node_id(node).unwrap() {
                     self.iter_node_neighbours_ids(node)

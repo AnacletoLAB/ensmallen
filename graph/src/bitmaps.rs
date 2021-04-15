@@ -29,21 +29,25 @@ impl Graph {
 
         if let Some(ndt) = node_types {
             let node_type_ids = self.get_node_type_ids_from_node_type_names(ndt)?;
-            node_ids.extend(self.iter_node_ids().filter_map(|(node_id, nts)| {
-                if nts.map_or_else(
-                    //DEFAULT
-                    || node_type_ids.contains(&None),
-                    // If some
-                    |ns| {
-                        ns.into_iter()
-                            .any(|node_type_name| node_type_ids.contains(&Some(node_type_name)))
-                    },
-                ) {
-                    Some(node_id)
-                } else {
-                    None
-                }
-            }));
+            node_ids.extend(
+                self.iter_nodes_with_type_ids()
+                    .filter_map(|(node_id, nts)| {
+                        if nts.map_or_else(
+                            //DEFAULT
+                            || node_type_ids.contains(&None),
+                            // If some
+                            |ns| {
+                                ns.into_iter().any(|node_type_name| {
+                                    node_type_ids.contains(&Some(node_type_name))
+                                })
+                            },
+                        ) {
+                            Some(node_id)
+                        } else {
+                            None
+                        }
+                    }),
+            );
         }
 
         Ok(optionify!(node_ids))
