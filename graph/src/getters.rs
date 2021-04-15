@@ -14,8 +14,10 @@ impl Graph {
     /// # Example
     /// To check if the graph has nodes you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert_eq!(graph.has_nodes(), true);
+    /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// assert!(graph_with_nodes.has_nodes());
+    /// assert!(!empty_graph.has_nodes());
     /// ```
     ///
     pub fn has_nodes(&self) -> bool {
@@ -27,8 +29,10 @@ impl Graph {
     /// # Example
     /// To check if the current graph has edges you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert_eq!(graph.has_edges(), true);
+    /// # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// assert!(graph_with_edges.has_edges());
+    /// assert!(!empty_graph.has_edges());
     /// ```
     ///
     pub fn has_edges(&self) -> bool {
@@ -254,10 +258,24 @@ impl Graph {
     }
 
     /// Return the node types names.
-    pub fn get_node_type_names(&self) -> Option<Vec<String>> {
-        self.node_types
+    ///
+    /// # Example
+    /// To retrieve the node type names of the graph nodes you can use:
+    /// ```rust
+    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// assert!(graph_with_node_types.get_node_type_names().is_ok());
+    /// assert!(graph_without_node_types.get_node_type_names().is_err());
+    /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_names());
+    /// ```
+    ///
+    pub fn get_node_type_names(&self) -> Result<Vec<String>, String> {
+        self.must_have_node_types()?;
+        Ok(self
+            .node_types
             .as_ref()
             .map(|nts| nts.vocabulary.reverse_map.clone())
+            .unwrap())
     }
 
     /// Return number of the unique edges in the graph.
