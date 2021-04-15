@@ -1,11 +1,12 @@
 use super::types::*;
 use super::*;
+use counter::Counter;
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap as DefaultHashMap;
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashSet};
 use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
@@ -33,8 +34,8 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree_by_node_id(one).unwrap() as usize
-            * self.get_node_degree_by_node_id(two).unwrap() as usize)
+        Ok(self.get_node_degree_from_node_id(one).unwrap() as usize
+            * self.get_node_degree_from_node_id(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -65,7 +66,8 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap_by_node_id(one).unwrap() || self.is_node_trap_by_node_id(two).unwrap()
+        if self.is_node_trap_from_node_id(one).unwrap()
+            || self.is_node_trap_from_node_id(two).unwrap()
         {
             return Ok(0.0f64);
         }
@@ -102,7 +104,7 @@ impl Graph {
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
+        if self.is_node_trap_from_node_id(one)? || self.is_node_trap_from_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -115,8 +117,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
-            .map(|node| 1.0 / (self.get_node_degree_by_node_id(*node).unwrap() as f64).ln())
+            .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
+            .map(|node| 1.0 / (self.get_node_degree_from_node_id(*node).unwrap() as f64).ln())
             .sum())
     }
 
@@ -143,7 +145,7 @@ impl Graph {
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
+        if self.is_node_trap_from_node_id(one)? || self.is_node_trap_from_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -156,8 +158,8 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
-            .map(|node| 1.0 / self.get_node_degree_by_node_id(*node).unwrap() as f64)
+            .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
+            .map(|node| 1.0 / self.get_node_degree_from_node_id(*node).unwrap() as f64)
             .sum())
     }
 
@@ -173,11 +175,11 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| {
-                if !self.is_node_trap_by_node_id(node).unwrap() {
+                if !self.is_node_trap_from_node_id(node).unwrap() {
                     self.iter_node_neighbours_ids(node)
-                        .map(|dst| self.is_node_trap_by_node_id(dst).unwrap() as usize as f64)
+                        .map(|dst| self.is_node_trap_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_node_degree_by_node_id(node).unwrap() as f64
+                        / self.get_node_degree_from_node_id(node).unwrap() as f64
                 } else {
                     1.0
                 }
@@ -293,16 +295,11 @@ impl Graph {
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-
-        let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
-
-        for value in self.get_node_degrees() {
-            *occurrences.entry(value).or_insert(0) += 1;
-        }
-        Ok(occurrences
-            .into_iter()
+        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
+        Ok(*counter
+            .iter()
             .max_by_key(|&(_, count)| count)
-            .map(|(val, _)| val)
+            .map(|(degree, _)| degree)
             .unwrap())
     }
 
@@ -474,7 +471,7 @@ impl Graph {
         other
             .iter_nodes()
             .filter_map(
-                |(_, node_name, _, _)| match self.get_node_id_by_node_name(&node_name) {
+                |(_, node_name, _, _)| match self.get_node_id_from_node_name(&node_name) {
                     Ok(node_id) => Some(nodes_components[node_id as usize]),
                     Err(_) => None,
                 },
@@ -493,8 +490,8 @@ impl Graph {
             .iter_edges(false)
             .filter_map(|(_, _, src_name, _, dst_name)| {
                 match (
-                    self.get_node_id_by_node_name(&src_name),
-                    self.get_node_id_by_node_name(&dst_name),
+                    self.get_node_id_from_node_name(&src_name),
+                    self.get_node_id_from_node_name(&dst_name),
                 ) {
                     (Ok(src_id), Ok(dst_id)) => {
                         let src_component_number = nodes_components[src_id as usize];
@@ -525,14 +522,18 @@ impl Graph {
         let overlapping_nodes_number = self
             .iter_nodes()
             .filter(|(_, node_name, _, node_type)| {
-                other.has_node_with_type_by_node_name(node_name, node_type.clone())
+                other.has_node_with_type_from_node_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
             .par_iter_edge_with_type(self.directed)
             .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                other.has_edge_with_type_by_node_names(src_name, dst_name, edge_type_name.as_ref())
+                other.has_edge_with_type_from_node_names(
+                    src_name,
+                    dst_name,
+                    edge_type_name.as_ref(),
+                )
             })
             .count();
         // Get number of overlapping components
@@ -648,8 +649,8 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = self.get_node_name_by_node_id(*node_id).unwrap(),
-                        node_degree = self.get_node_degree_by_node_id(*node_id).unwrap()
+                        node_name = self.get_node_name_from_node_id(*node_id).unwrap(),
+                        node_degree = self.get_node_degree_from_node_id(*node_id).unwrap()
                     )
                 })
                 .collect::<Vec<String>>()
@@ -672,7 +673,7 @@ impl Graph {
                     format!(
                         "{node_type} (nodes number {node_degree})",
                         node_type = self
-                            .get_node_type_name_by_node_type_id(*node_type_id)
+                            .get_node_type_name_from_node_type_id(*node_type_id)
                             .unwrap(),
                         node_degree = number
                     )
@@ -694,7 +695,7 @@ impl Graph {
             edge_types_list
                 .iter()
                 .map(|(edge_type_id, _)| {
-                    self.get_edge_type_name_by_edge_type_id(*edge_type_id)
+                    self.get_edge_type_name_from_edge_type_id(*edge_type_id)
                         .unwrap()
                 })
                 .collect::<Vec<String>>()

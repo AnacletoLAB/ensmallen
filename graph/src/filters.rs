@@ -39,7 +39,7 @@ impl Graph {
 
         let node_ids = self.get_filter_bitmap(node_names, node_types)?;
         let edge_types_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
-            Ok(Some(self.get_edge_type_ids_by_edge_type_names(ets)?))
+            Ok(Some(self.get_edge_type_ids_from_edge_type_names(ets)?))
         });
         let edge_types_ids = edge_types_ids?;
 

@@ -42,14 +42,14 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_by_node_names(
+                        return !dg.has_edge_with_type_from_node_names(
                             src_name,
                             dst_name,
                             edge_type_name.as_ref(),
                         );
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_by_node_names(
+                        return mhg.has_edge_with_type_from_node_names(
                             src_name,
                             dst_name,
                             edge_type_name.as_ref(),
@@ -70,9 +70,9 @@ fn generic_string_operator(
             let node_type_names = match node_type_names {
                 Some(ntns) => Some(ntns),
                 None => other
-                    .get_node_id_by_node_name(&node_name)
+                    .get_node_id_from_node_name(&node_name)
                     .ok()
-                    .and_then(|node_id| other.get_node_type_name_by_node_id(node_id).unwrap()),
+                    .and_then(|node_id| other.get_node_type_name_from_node_id(node_id).unwrap()),
             };
             Ok((node_name, node_type_names))
         })
@@ -80,7 +80,7 @@ fn generic_string_operator(
             other
                 .iter_nodes()
                 .filter_map(|(_, node_name, _, node_type_names)| {
-                    match main.has_node_by_node_name(&node_name) {
+                    match main.has_node_from_node_name(&node_name) {
                         true => None,
                         false => Some(Ok((node_name, node_type_names))),
                     }
@@ -147,10 +147,10 @@ fn generic_integer_operator(
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_by_node_ids(*src, *dst, *edge_type);
+                        return !dg.has_edge_with_type_from_node_ids(*src, *dst, *edge_type);
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_by_node_ids(*src, *dst, *edge_type);
+                        return mhg.has_edge_with_type_from_node_ids(*src, *dst, *edge_type);
                     }
                     true
                 })

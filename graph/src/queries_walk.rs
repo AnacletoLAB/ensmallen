@@ -11,7 +11,7 @@ impl Graph {
         node: NodeT,
     ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         // We retrieve the range of edge ids, the minimum and maximum value.
-        let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_by_source_node_id(node);
+        let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_source_node_id(node);
 
         // We check if subsampling is enabled and if so, if it makes sense:
         // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
@@ -30,7 +30,7 @@ impl Graph {
                     .collect(),
                 None => indices
                     .iter()
-                    .map(|edge_id| self.get_unchecked_destination_node_id_by_edge_id(*edge_id))
+                    .map(|edge_id| self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
                     .collect(),
             };
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));

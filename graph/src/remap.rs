@@ -25,7 +25,7 @@ impl Graph {
             return false;
         }
         self.iter_nodes().all(|(_, node_name, _, node_type)| {
-            other.has_node_with_type_by_node_name(&node_name, node_type)
+            other.has_node_with_type_from_node_name(&node_name, node_type)
         })
     }
 
@@ -59,10 +59,10 @@ impl Graph {
                 .progress_with(pb)
                 .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| {
                     Ok((
-                        other.get_unchecked_node_id_by_node_name(&src_name),
-                        other.get_unchecked_node_id_by_node_name(&dst_name),
+                        other.get_unchecked_node_id_from_node_name(&src_name),
+                        other.get_unchecked_node_id_from_node_name(&dst_name),
                         edge_type.and_then(|et| {
-                            self.get_unchecked_edge_type_id_by_edge_type_name(et.as_str())
+                            self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
                         }),
                         weight,
                     ))

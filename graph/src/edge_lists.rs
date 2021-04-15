@@ -74,7 +74,7 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst)
+                        if removed_existing_edges_unwrapped && self.has_edge_from_node_ids(*src, *dst)
                         {
                             return None;
                         }
@@ -113,7 +113,7 @@ impl Graph {
             .map(|nodes| {
                 nodes
                     .iter()
-                    .map(|node| self.get_node_name_by_node_id(*node).unwrap())
+                    .map(|node| self.get_node_name_from_node_id(*node).unwrap())
                     .collect::<Vec<String>>()
             })
             .collect::<Vec<Vec<String>>>())
@@ -216,7 +216,7 @@ impl Graph {
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge_by_node_ids(*src, *dst)
+                        if removed_existing_edges_unwrapped && self.has_edge_from_node_ids(*src, *dst)
                         {
                             return None;
                         }
@@ -254,7 +254,7 @@ impl Graph {
         .map(|nodes| {
             nodes
                 .iter()
-                .map(|node| self.get_node_name_by_node_id(*node).unwrap())
+                .map(|node| self.get_node_name_from_node_id(*node).unwrap())
                 .collect::<Vec<String>>()
         })
         .collect::<Vec<Vec<String>>>()

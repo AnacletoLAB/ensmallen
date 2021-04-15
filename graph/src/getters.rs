@@ -6,8 +6,8 @@ use std::collections::HashMap;
 use std::iter::once;
 
 /// # Getters
-/// The naming convection we follow is `get_X_by_Y`.
-/// The naming convection for unchecked methods follows `get_unchecked_X_by_Y`.
+/// The naming convention we follow is `get_X_from_Y`.
+/// The naming convention for unchecked methods follows `get_unchecked_X_from_Y`.
 impl Graph {
     /// Return if the graph has any nodes.
     ///
@@ -170,7 +170,7 @@ impl Graph {
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_sources_ids(directed)
-            .map(|src| self.get_node_name_by_node_id(src).unwrap())
+            .map(|src| self.get_node_name_from_node_id(src).unwrap())
             .collect()
     }
 
@@ -188,7 +188,7 @@ impl Graph {
     /// * `directed`: bool, whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destinations_ids(directed)
-            .map(|dst| self.get_node_name_by_node_id(dst).unwrap())
+            .map(|dst| self.get_node_name_from_node_id(dst).unwrap())
             .collect()
     }
 
@@ -419,10 +419,11 @@ impl Graph {
     }
 
     /// Return vector with node degrees
+    /// TODO: USE CACHE!!!
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(|src| self.get_unchecked_edge_id_from_tuple(src as NodeT + 1, 0))
+            .map(|src| self.get_unchecked_edge_id_from_node_ids(src as NodeT + 1, 0))
             .collect()
     }
 

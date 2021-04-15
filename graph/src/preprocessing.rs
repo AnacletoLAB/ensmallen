@@ -211,7 +211,7 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    pub(crate) fn get_neighbours_by_node_id(
+    pub(crate) fn get_neighbours_from_node_id(
         &self,
         central_node_id: NodeT,
         random_state: u64,
@@ -226,7 +226,7 @@ impl Graph {
         })
         .into_iter()
         .chain(
-            self.get_unchecked_node_destinations_by_node_id(
+            self.get_unchecked_node_destinations_from_node_id(
                 central_node_id,
                 random_state,
                 max_neighbours,
@@ -251,7 +251,7 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    pub(crate) fn get_node_label_prediction_tuple_by_node_id(
+    pub(crate) fn get_node_label_prediction_tuple_from_node_id(
         &self,
         node_id: NodeT,
         random_state: u64,
@@ -260,14 +260,14 @@ impl Graph {
         max_neighbours: Option<NodeT>,
     ) -> (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>) {
         (
-            self.get_neighbours_by_node_id(
+            self.get_neighbours_from_node_id(
                 node_id,
                 random_state,
                 include_central_node,
                 offset,
                 max_neighbours,
             ),
-            self.get_unchecked_node_type_id_by_node_id(node_id),
+            self.get_unchecked_node_type_id_from_node_id(node_id),
         )
     }
 
@@ -297,7 +297,7 @@ impl Graph {
     /// let include_central_nodes = true;
     /// let offset = 0;
     /// let max_neighbours = 5;
-    /// let iterator = graph.get_node_label_prediction_tuple_by_node_ids(
+    /// let iterator = graph.get_node_label_prediction_tuple_from_node_ids(
     ///    node_ids.clone(), 42, include_central_nodes, offset, Some(max_neighbours)
     /// ).unwrap();
     /// iterator.enumerate().for_each(|(i, (neighbours_iter, labels))|{
@@ -315,7 +315,7 @@ impl Graph {
     /// });
     /// ```
     ///
-    pub fn get_node_label_prediction_tuple_by_node_ids(
+    pub fn get_node_label_prediction_tuple_from_node_ids(
         &self,
         node_ids: Vec<NodeT>,
         random_state: u64,
@@ -330,7 +330,7 @@ impl Graph {
             return Err("The current graph instance does not have node types!".to_string());
         }
         Ok(node_ids.into_iter().map(move |node_id| {
-            self.get_node_label_prediction_tuple_by_node_id(
+            self.get_node_label_prediction_tuple_from_node_id(
                 node_id,
                 random_state,
                 include_central_node,
@@ -381,8 +381,8 @@ impl Graph {
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_node_degree_by_node_id(src).unwrap() as f64 / max_degree,
-                self.get_node_degree_by_node_id(dst).unwrap() as f64 / max_degree,
+                self.get_node_degree_from_node_id(src).unwrap() as f64 / max_degree,
+                self.get_node_degree_from_node_id(dst).unwrap() as f64 / max_degree,
                 label,
             )
         }))
@@ -437,7 +437,7 @@ impl Graph {
             .map(move |i| {
                 let mut sampled = random_values[i];
                 if i < positive_number{
-                    let (src, dst) = self.get_node_ids_from_edge_id(sampled % edges_number);
+                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(sampled % edges_number);
                     (indices[i], src, dst, true)
                 } else {
                     for _ in 0..maximal_sampling_attempts {
@@ -446,13 +446,13 @@ impl Graph {
                         let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
                         let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
 
-                        if avoid_false_negatives && self.has_edge_by_node_ids(src, dst) {
+                        if avoid_false_negatives && self.has_edge_from_node_ids(src, dst) {
                             sampled = xorshift(sampled);
                             continue;
                         }
 
                         if let Some(g) = &graph_to_avoid {
-                            if g.has_edge_by_node_ids(src, dst)  {
+                            if g.has_edge_from_node_ids(src, dst)  {
                                 sampled = xorshift(sampled);
                                 continue;
                             }

@@ -1,28 +1,28 @@
 use super::*;
 
 /// # Unchecked Queries
-/// The naming convection for unchecked methods follows `get_unchecked_X_by_Y`.
+/// The naming convention for unchecked methods follows `get_unchecked_X_from_Y`.
 impl Graph {
     /// Returns the name of the node passed and HORRIBLY PANIC if the id is out
     /// of range.
-    pub(crate) fn get_unchecked_node_name_by_node_id(&self, node_id: NodeT) -> String {
+    pub(crate) fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
         self.nodes.unchecked_translate(node_id)
     }
 
     /// Returns option with the edge type of the given edge id.
-    pub(crate) fn get_unchecked_edge_type_by_edge_id(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
+    pub(crate) fn get_unchecked_edge_type_from_edge_id(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
         self.edge_types
             .as_ref()
             .and_then(|ets| ets.ids[edge_id as usize])
     }
 
     /// Returns option with the weight of the given edge id.
-    pub(crate) fn get_unchecked_weight_by_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
+    pub(crate) fn get_unchecked_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
     /// Returns option with the node type of the given node id.
-    pub(crate) fn get_unchecked_node_type_id_by_node_id(
+    pub(crate) fn get_unchecked_node_type_id_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Option<Vec<NodeTypeT>> {
@@ -32,12 +32,12 @@ impl Graph {
     }
 
     /// Returns node id raising a panic if used unproperly.
-    pub(crate) fn get_unchecked_node_id_by_node_name(&self, node_name: &str) -> NodeT {
+    pub(crate) fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
         *self.nodes.get(node_name).unwrap()
     }
 
     /// Return edge type ID corresponding to the given edge type name.
-    pub(crate) fn get_unchecked_edge_type_id_by_edge_type_name(
+    pub(crate) fn get_unchecked_edge_type_id_from_edge_type_name(
         &self,
         edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
@@ -48,7 +48,7 @@ impl Graph {
 
     /// Return edge type ID corresponding to the given edge type name
     /// raising panic if edge type ID does not exists in current graph.
-    pub(crate) fn get_unchecked_edge_type_name_by_edge_type_id(
+    pub(crate) fn get_unchecked_edge_type_name_from_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Option<String> {
@@ -64,7 +64,7 @@ impl Graph {
     ///
     /// * edge_type: Option<EdgeTypeT> - The edge type to retrieve count of.
     ///
-    pub(crate) fn get_unchecked_edge_count_by_edge_type_id(
+    pub(crate) fn get_unchecked_edge_count_from_edge_type_id(
         &self,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
@@ -81,7 +81,7 @@ impl Graph {
     ///
     /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
     ///
-    pub(crate) fn get_unchecked_node_count_by_node_type_id(
+    pub(crate) fn get_unchecked_node_count_from_node_type_id(
         &self,
         node_type: Option<NodeTypeT>,
     ) -> NodeT {
@@ -102,7 +102,7 @@ impl Graph {
     /// `node`: NodeT - Node whose neighbours are to return.
     /// `random_state`: u64 - Random state to subsample neighbours.
     /// `max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider.
-    pub(crate) fn get_unchecked_node_destinations_by_node_id(
+    pub(crate) fn get_unchecked_node_destinations_from_node_id(
         &self,
         node: NodeT,
         random_state: u64,
@@ -123,14 +123,14 @@ impl Graph {
     /// `src`: NodeT - Source node of the edge.
     /// `dst`: NodeT - Destination node of the edge.
     /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
-    pub(crate) fn get_unchecked_edge_id_by_node_ids(
+    pub fn get_unchecked_edge_id_with_type_from_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
         self.edge_types.as_ref().map_or_else(
-            || self.get_unchecked_edge_id_from_tuple(src, dst),
+            || self.get_unchecked_edge_id_from_node_ids(src, dst),
             |ets| {
                 self.get_unchecked_edge_ids_range(src, dst)
                     // The vectors of the edge types can only have one element.
@@ -152,7 +152,7 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> impl Iterator<Item = EdgeT> {
-        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_by_node_ids(src, dst);
+        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
         min_edge_id..max_edge_id
     }
 
@@ -165,14 +165,14 @@ impl Graph {
     /// * src: NodeT - Source node.
     /// * dst: NodeT - Destination node.
     ///
-    pub(crate) fn get_unchecked_minmax_edge_ids_by_node_ids(
+    pub fn get_unchecked_minmax_edge_ids_from_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
     ) -> (EdgeT, EdgeT) {
         (
-            self.get_unchecked_edge_id_from_tuple(src, dst),
-            self.get_unchecked_edge_id_from_tuple(src, dst + 1),
+            self.get_unchecked_edge_id_from_node_ids(src, dst),
+            self.get_unchecked_edge_id_from_node_ids(src, dst + 1),
         )
     }
 
@@ -187,8 +187,8 @@ impl Graph {
     /// * src: NodeT - Source node.
     /// * dst: NodeT - Destination node.
     ///
-    pub(crate) fn get_unchecked_edge_degreee_by_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_by_node_ids(src, dst);
+    pub(crate) fn get_unchecked_edge_degreee_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
+        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
         max_edge_id - min_edge_id
     }
 }

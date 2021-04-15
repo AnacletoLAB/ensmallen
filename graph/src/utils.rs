@@ -31,7 +31,7 @@ impl Graph {
     ) -> Vec<EdgeT> {
         if include_all_edge_types {
             let (min_edge_id, max_edge_id) =
-                self.get_unchecked_minmax_edge_ids_by_node_ids(src, dst);
+                self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
             (min_edge_id..max_edge_id).collect::<Vec<EdgeT>>()
         } else {
             vec![edge_id]

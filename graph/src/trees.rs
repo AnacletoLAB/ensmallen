@@ -82,7 +82,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_node_ids_from_edge_id(edge_id);
+            let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -107,14 +107,14 @@ impl Graph {
             Box::new(
                 self.iter_edges_from_random_state(random_state)
                     .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
+                        if uet.contains(&self.get_unchecked_edge_type_from_edge_id(edge_id)) {
                             return None;
                         }
                         Some((src, dst))
                     })
                     .chain(self.iter_edges_from_random_state(random_state).filter_map(
                         move |(edge_id, src, dst)| {
-                            if !uet.contains(&self.get_unchecked_edge_type_by_edge_id(edge_id)) {
+                            if !uet.contains(&self.get_unchecked_edge_type_from_edge_id(edge_id)) {
                                 return None;
                             }
                             Some((src, dst))
@@ -426,7 +426,7 @@ impl Graph {
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
-                            && self.is_singleton_by_node_id(src as NodeT).unwrap()
+                            && self.is_singleton_from_node_id(src as NodeT).unwrap()
                         {
                             // We set singletons as self-loops for now.
                             (*parents)[src] = src as NodeT;
@@ -644,8 +644,8 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
-                            && (self.is_singleton_by_node_id(src).unwrap()
-                                || self.is_singleton_with_self_loops_by_node_id(src))
+                            && (self.is_singleton_from_node_id(src).unwrap()
+                                || self.is_singleton_with_self_loops_from_node_id(src))
                         {
                             // We set singletons as self-loops for now.
                             unsafe {

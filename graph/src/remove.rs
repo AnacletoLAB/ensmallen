@@ -126,16 +126,16 @@ impl Graph {
                         }
 
                         if allow_node_types_set.is_some() || deny_node_types_set.is_some() {
-                            let src_node_type = self.get_unchecked_node_type_id_by_node_id(
-                                self.get_unchecked_node_id_by_node_name(&src_name),
+                            let src_node_type = self.get_unchecked_node_type_id_from_node_id(
+                                self.get_unchecked_node_id_from_node_name(&src_name),
                             );
-                            let dst_node_type = self.get_unchecked_node_type_id_by_node_id(
-                                self.get_unchecked_node_id_by_node_name(&dst_name),
+                            let dst_node_type = self.get_unchecked_node_type_id_from_node_id(
+                                self.get_unchecked_node_id_from_node_name(&dst_name),
                             );
                             // If the graph has node types
                             if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
                                 let node_type_names = self
-                                    .get_node_type_names_by_node_type_ids(
+                                    .get_node_type_names_from_node_type_ids(
                                         src_nt.into_iter().chain(dst_nt.into_iter()).collect(),
                                     )
                                     .unwrap();
@@ -178,7 +178,7 @@ impl Graph {
                 ),
             Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
                 |(node_id, node_name, _, node_type_names)| {
-                    if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
+                    if singletons && self.is_singleton_from_node_name(&node_name).unwrap() {
                         return None;
                     }
                     // If singletons and selfloops need to be removed.
@@ -187,7 +187,7 @@ impl Graph {
                     // node types.
                     if singletons
                         && selfloops
-                        && self.is_singleton_with_self_loops_by_node_id(node_id)
+                        && self.is_singleton_with_self_loops_from_node_id(node_id)
                     {
                         return None;
                     }
@@ -285,7 +285,7 @@ impl Graph {
         // Extend the components to keep those that include the given edge types.
         if let Some(ets) = edge_types {
             let edge_types_ids: HashSet<Option<EdgeTypeT>> = self
-                .get_edge_type_ids_by_edge_type_names(ets)?
+                .get_edge_type_ids_from_edge_type_names(ets)?
                 .into_iter()
                 .collect();
 
