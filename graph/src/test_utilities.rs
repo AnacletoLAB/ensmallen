@@ -957,7 +957,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         .filter(
             Some(graph.get_node_names()),
             graph
-                .get_node_type_names()
+                .get_node_type_names().ok()
                 .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
             graph
                 .get_edge_type_names()
@@ -970,7 +970,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
     let _ = graph.filter(
         Some(graph.get_node_names()),
         graph
-            .get_node_type_names()
+            .get_node_type_names().ok()
             .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
         graph
             .get_edge_type_names()
