@@ -1,9 +1,7 @@
 use super::*;
 use counter::Counter;
-use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use std::iter::once;
 
 /// # Getters
 /// The naming convention we follow is `get_X_from_Y`.
@@ -289,19 +287,13 @@ impl Graph {
     }
 
     /// Return set of nodes that are not singletons.
-    // TODO: THIS METHOD CAN NOW BE WAY FASTER!
     pub fn get_not_singletons(&self) -> Vec<NodeT> {
-        self.iter_edge_ids(false)
-            .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
-            .unique()
-            .collect()
+        self.iter_non_singleton_node_ids().collect()
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
-    // TODO: REFACTOR THIS TO AVOID DOUBLE ITERATION!
     pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.get_not_singletons()
-            .into_iter()
+        self.iter_non_singleton_node_ids()
             .enumerate()
             .map(|(i, node)| (node as NodeT, i as NodeT))
             .collect()
@@ -312,12 +304,16 @@ impl Graph {
         self.get_directed_edges_number() - self.unique_edges_number
     }
 
-    /// Return vector with node degrees
-    /// TODO: USE CACHE!!!
+    /// Return vector with node outbounds, that is the comulative node degree.
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
-        self.par_iter_node_ids()
-            .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))
-            .collect()
+        self.outbounds.as_ref().map_or_else(
+            || {
+                self.par_iter_node_ids()
+                    .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))
+                    .collect()
+            },
+            |outbounds| outbounds.clone(),
+        )
     }
 
     /// Returns number of the source nodes.

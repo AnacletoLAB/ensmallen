@@ -44,6 +44,23 @@ impl Graph {
             .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
     }
 
+    /// Return iterator on the non-singleton nodes of the graph.
+    ///
+    /// Note that this includes also the singleton with self-loops and
+    /// the trap nodes within this iterator. Only true singleton nodes,
+    /// that is, nodes without any edge (both inbound and outbound) are
+    /// included.
+    ///
+    /// Since the following requires to be boxed, we cannot create the
+    /// parallel version of this iterator.
+    ///
+    pub fn iter_non_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
+        match self.not_singleton_nodes.as_ref() {
+            Some(nsns) => Box::new(nsns.iter_ones().map(|node_id| node_id as NodeT)),
+            _ => Box::new(self.iter_node_ids()),
+        }
+    }
+
     /// Return iterator on the singleton nodes of the graph.
     pub fn iter_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match self.not_singleton_nodes.as_ref() {

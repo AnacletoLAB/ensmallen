@@ -10,14 +10,10 @@ impl Graph {
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
-    /// TODO: CREATE UNCHECKED VERSION!
-    pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.has_singletons()
-            && self.get_node_degree_from_node_id(node_id)? == 0
-            && self
-                .not_singleton_nodes
-                .as_ref()
-                .map_or(true, |nsns| !nsns[node_id as usize]))
+    pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> bool {
+        self.not_singleton_nodes
+            .as_ref()
+            .map_or(true, |nsns| !nsns[node_id as usize])
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -36,7 +32,7 @@ impl Graph {
     /// # Arguments
     /// `node_name`: &str - The node name to be checked for.
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool, String> {
-        self.is_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        Ok(self.is_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?))
     }
 
     /// Returns whether the graph has the given node name.
@@ -103,17 +99,30 @@ impl Graph {
 
     /// Returns boolean representing if given node is a trap.
     ///
+    /// If the provided node_id is higher than the number of nodes in the graph,
+    /// the method will panic.
+    ///
     /// # Arguments
     ///
     /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    /// TODO: CREATE UNCHECKED VERSION!
-    pub fn is_node_trap_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.get_node_degree_from_node_id(node_id)? == 0
+    pub fn is_unchecked_node_trap_from_node_id(&self, node_id: NodeT) -> bool {
+        self.get_unchecked_node_degree_from_node_id(node_id) == 0
             && self
                 .not_singleton_nodes
                 .as_ref()
-                .map_or(true, |nsns| nsns[node_id as usize]))
+                .map_or(true, |nsns| nsns[node_id as usize])
+    }
+
+    /// Returns boolean representing if given node is a trap.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    ///
+    pub fn is_node_trap_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.is_unchecked_node_trap_from_node_id(node_id))
     }
 
     /// Returns whether the given node name and node type name exist in current graph.

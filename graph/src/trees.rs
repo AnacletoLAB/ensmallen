@@ -430,7 +430,7 @@ impl Graph {
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
-                            && self.is_singleton_from_node_id(src as NodeT).unwrap()
+                            && self.is_singleton_from_node_id(src as NodeT)
                         {
                             // We set singletons as self-loops for now.
                             (*parents)[src] = src as NodeT;
@@ -643,7 +643,7 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
-                            && (self.is_singleton_from_node_id(src).unwrap()
+                            && (self.is_singleton_from_node_id(src)
                                 || self.is_singleton_with_self_loops_from_node_id(src))
                         {
                             // We set singletons as self-loops for now.
