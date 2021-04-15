@@ -77,9 +77,8 @@ def build_struct_and_call(function):
 
     return_type = function.get("return_type", "")
     if return_type.startswith("Result"):
-        call += "?"
-        
-    if "Iterator" in return_type:
+        call = "let _ = " + call 
+    elif "Iterator" in return_type:
         call = "let _ = " + call + ".collect::<Vec<_>>()"
 
     result = {
@@ -117,9 +116,9 @@ def build_metatest(args):
         res["call"]
         for res in result
     ]
-    
+
     # place the failable methods at the end
-    calls.sort(key=lambda x: "?" in x)
+    calls.sort(key=lambda x: ("collect" not in x, x))
 
     params = "\n".join(
         "\tpub {struct_name}: {struct_type},".format(
