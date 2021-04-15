@@ -8,10 +8,17 @@ STRUCT_TEMPLATE = get_file("templates/struct.txt")
 META_STRUCT_TEMPLATE = get_file("templates/meta_struct.txt")
 
 BLACKLISTED_FUNCS = [
-    "validate_weight",
-    "parse_weight",
-    "has_edge",
+    #"validate_weight",
+    #"parse_weight",
+    #"has_edge",
     "new",
+]
+
+SELFS = [
+    "self",
+    "&self",
+    "&mut self",
+    "mut self",
 ]
 
 BLACKLISTED_TYPES = [
@@ -30,11 +37,16 @@ BLACKLISTED_TYPES = [
     "WalkWeights",
     "Self",
     "&[String]",
-    "&",
 ]
 
 def filter_function(function):
+    if function.get("modifiers", "") != "pub":
+        return False
+
     if function.get("name", "") in BLACKLISTED_FUNCS:
+        return False
+
+    if "unchecked" in function.get("name", ""):
         return False
 
     if function.get("struct", "") != "Graph":
@@ -61,25 +73,38 @@ def build_struct_and_call(function):
     fields = "\n".join([
             "\tpub {field_name} : {field_type},".format(
                 field_name=arg_name,
-                field_type=arg_type,
+                field_type=(arg_type if arg_type != "S" else "String").lstrip("&"),
             )
         for arg_name, arg_type in args
-        if arg_name != "self"
+        if arg_type not in SELFS
     ])
 
-    args = ", ".join([
-        f"data.{function_name}.{arg[0]}"
-        for arg in args
-        if arg[0] != "self"
-    ])
+    call_args = []
+    for arg in args:
+        if arg[0] in SELFS or arg[1] in SELFS:
+            continue
+
+        res = f"data.{function_name}.{arg[0]}"
+
+        if arg[1][0] == "&":
+            res = "&" + res
+
+        call_args.append(res)
+
+    args = ", ".join(call_args)
     
     call = f"graph.{function_name}({args})"
 
     return_type = function.get("return_type", "")
-    if return_type.startswith("Result"):
+    if  return_type.startswith("Result") and "&" not in function.get("args")[0][1]:
+        call = "let mut graph = " + call + "?"
+    elif return_type.startswith("Result"):
         call = "let _ = " + call 
     elif "Iterator" in return_type:
         call = "let _ = " + call + ".collect::<Vec<_>>()"
+    elif "&" not in function.get("args")[0][1]:
+        call = "let mut graph = " + call
+    
 
     result = {
         "struct_name":function_name,
@@ -138,6 +163,8 @@ def build_metatest(args):
         structs="\n".join(structs),
         meta_struct=meta_struct,
     )
+
+    print("Generated a test with {} methods".format(len(calls)))
 
     with open(build_path("results/meta_test.rs"), "w") as f:
         f.write(output)

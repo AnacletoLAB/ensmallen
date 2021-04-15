@@ -149,26 +149,26 @@ pub(crate) fn handle_panics_from_vec_once_loaded(
 
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics_mega_test(info: Option<&std::panic::PanicInfo>, data: TheUltimateFuzzer, sig_num: Option<i32>) {
+pub(crate) fn handle_panics_meta_test(info: Option<&std::panic::PanicInfo>, data: MetaParams, sig_num: Option<i32>) {
     let path = handle_panics_from_vec(info, data.from_vec.clone(), None);
     dump_backtrace(&path);
     
-    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
-        .expect("Cannot write the megatest file");
+    std::fs::write(format!("{}/meta_test.txt", &path), format!("{:#4?}", &data))
+        .expect("Cannot write the metatest file");
 }
 
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics_mega_test_once_loaded(
+pub(crate) fn handle_panics_meta_test_once_loaded(
     info: Option<&std::panic::PanicInfo>,
-    data: TheUltimateFuzzer,
+    data: MetaParams,
     graph: Graph,
 ) {    
     let path = handle_panics_from_vec_once_loaded(info, data.from_vec.clone(), graph);
     dump_backtrace(&path);
 
-    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
-        .expect("Cannot write the megatest file");
+    std::fs::write(format!("{}/meta_test.txt", &path), format!("{:#4?}", &data))
+        .expect("Cannot write the metatest file");
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.

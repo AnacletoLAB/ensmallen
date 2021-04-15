@@ -12,4 +12,4 @@ skip_node_types_if_unavailable,Some(false)
 nodes_column,None
 nodes_column_number,Some(0)
 node_types_column,None
-node_types_column_number,Some(1)
+node_types_column_number,None

@@ -198,7 +198,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -219,7 +219,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -285,7 +285,7 @@
         "args": [
             [
                 "self",
-                "elf"
+                "self"
             ],
             [
                 "other",
@@ -312,7 +312,7 @@
         "args": [
             [
                 "self",
-                "elf"
+                "self"
             ],
             [
                 "other",
@@ -339,7 +339,7 @@
         "args": [
             [
                 "self",
-                "elf"
+                "self"
             ],
             [
                 "other",
@@ -366,7 +366,7 @@
         "args": [
             [
                 "self",
-                "elf"
+                "self"
             ],
             [
                 "other",
@@ -387,7 +387,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -408,7 +408,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_name",
@@ -673,7 +673,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -750,7 +750,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -814,7 +814,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -876,7 +876,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "iterations",
@@ -909,7 +909,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -973,7 +973,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "random_state",
@@ -1221,7 +1221,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "graph",
@@ -1250,7 +1250,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -1441,7 +1441,7 @@
             ]
         ],
         "return_type": "Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String>",
-        "body": "if self.directed {\n            return Err(\n                \"The spanning arborescence from Bader et al. algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut parents = vec![NOT_PRESENT; nodes_number];\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let completed = AtomicBool::new(false);\n        let total_inserted_edges = AtomicUsize::new(0);\n        let thread_safe_parents = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut parents),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the parents vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the parents one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\"Computing spanning tree of graph {}\", self.get_name()).as_ref(),\n                    nodes_number,\n                );\n                let parents = thread_safe_parents.value.get();\n                (0..nodes_number).progress_with(pb).for_each(|src| {\n                    unsafe {\n                        // If the node has already been explored we skip ahead.\n                        if (*parents)[src] != NOT_PRESENT {\n                            return;\n                        }\n                    }\n                    unsafe {\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && self.is_singleton_from_node_id(src as NodeT).unwrap()\n                        {\n                            // We set singletons as self-loops for now.\n                            (*parents)[src] = src as NodeT;\n                            return;\n                        }\n                    }\n                    loop {\n                        unsafe {\n                            if (*parents)[src] != NOT_PRESENT {\n                                break;\n                            }\n                        }\n                        if active_nodes_number.load(Ordering::SeqCst) == 0 {\n                            unsafe {\n                                if (*parents)[src] != NOT_PRESENT {\n                                    break;\n                                }\n                            }\n                            unsafe {\n                                (*parents)[src] = src as NodeT;\n                            }\n                            shared_stacks[0].lock().unwrap().push(src as NodeT);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            break;\n                        }\n                    }\n                });\n                completed.store(true, Ordering::SeqCst);\n            });\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    let thread_id = rayon::current_thread_index().unwrap();\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::SeqCst) {\n                                break 'outer;\n                            }\n                        }\n                    };\n                    let parents = thread_safe_parents.value.get();\n                    self.iter_node_neighbours_ids(src).for_each(|dst| unsafe {\n                        if (*parents)[dst as usize] == NOT_PRESENT {\n                            (*parents)[dst as usize] = src;\n                            total_inserted_edges.fetch_add(1, Ordering::SeqCst);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        // convert the now completed parents vector to a list of tuples representing the edges\n        // of the spanning arborescense.\n        Ok((\n            // Number of edges inserted\n            total_inserted_edges.load(Ordering::SeqCst),\n            // Return an iterator over all the edges in the spanning arborescence\n            parents.into_iter().enumerate().filter_map(|(src, dst)| {\n                if src as NodeT == dst {\n                    return None;\n                }\n                Some((src as NodeT, dst))\n            }),\n        ))"
+        "body": "if self.directed {\n            return Err(\n                \"The spanning arborescence from Bader et al. algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut parents = vec![NOT_PRESENT; nodes_number];\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let completed = AtomicBool::new(false);\n        let total_inserted_edges = AtomicUsize::new(0);\n        let thread_safe_parents = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut parents),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the parents vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the parents one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\"Computing spanning tree of graph {}\", self.get_name()).as_ref(),\n                    nodes_number,\n                );\n                let parents = thread_safe_parents.value.get();\n                (0..nodes_number).progress_with(pb).for_each(|src| {\n                    unsafe {\n                        // If the node has already been explored we skip ahead.\n                        if (*parents)[src] != NOT_PRESENT {\n                            return;\n                        }\n                    }\n                    unsafe {\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && self.is_singleton_from_node_id(src as NodeT)\n                        {\n                            // We set singletons as self-loops for now.\n                            (*parents)[src] = src as NodeT;\n                            return;\n                        }\n                    }\n                    loop {\n                        unsafe {\n                            if (*parents)[src] != NOT_PRESENT {\n                                break;\n                            }\n                        }\n                        if active_nodes_number.load(Ordering::SeqCst) == 0 {\n                            unsafe {\n                                if (*parents)[src] != NOT_PRESENT {\n                                    break;\n                                }\n                            }\n                            unsafe {\n                                (*parents)[src] = src as NodeT;\n                            }\n                            shared_stacks[0].lock().unwrap().push(src as NodeT);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            break;\n                        }\n                    }\n                });\n                completed.store(true, Ordering::SeqCst);\n            });\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    let thread_id = rayon::current_thread_index().unwrap();\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::SeqCst) {\n                                break 'outer;\n                            }\n                        }\n                    };\n                    let parents = thread_safe_parents.value.get();\n                    self.iter_node_neighbours_ids(src).for_each(|dst| unsafe {\n                        if (*parents)[dst as usize] == NOT_PRESENT {\n                            (*parents)[dst as usize] = src;\n                            total_inserted_edges.fetch_add(1, Ordering::SeqCst);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        // convert the now completed parents vector to a list of tuples representing the edges\n        // of the spanning arborescense.\n        Ok((\n            // Number of edges inserted\n            total_inserted_edges.load(Ordering::SeqCst),\n            // Return an iterator over all the edges in the spanning arborescence\n            parents.into_iter().enumerate().filter_map(|(src, dst)| {\n                if src as NodeT == dst {\n                    return None;\n                }\n                Some((src as NodeT, dst))\n            }),\n        ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -1517,7 +1517,7 @@
             ]
         ],
         "return_type": "Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String>",
-        "body": "if self.directed {\n            return Err(\n                \"The connected components algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        if !self.has_nodes() {\n            return Ok((Vec::new(), 0, 0, 0));\n        }\n        if self.get_edges_number() == 0 {\n            return Ok((\n                (0..self.get_nodes_number()).collect(),\n                self.get_nodes_number(),\n                1,\n                1,\n            ));\n        }\n        let components = (0..self.get_nodes_number())\n            .map(|_| AtomicU32::new(NOT_PRESENT))\n            .collect::<Vec<_>>();\n        let mut min_component_size: NodeT = NodeT::MAX;\n        let mut max_component_size: NodeT = 0;\n        let mut components_number: NodeT = 0;\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let current_component_size = AtomicU32::new(0);\n        let completed = AtomicBool::new(false);\n        let thread_safe_min_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut min_component_size),\n        };\n        let thread_safe_max_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut max_component_size),\n        };\n        let thread_safe_components_number = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut components_number),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the components vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the components one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\n                        \"Computing connected components of graph {}\",\n                        self.get_name()\n                    )\n                    .as_ref(),\n                    self.get_nodes_number() as usize,\n                );\n                let min_component_size = thread_safe_min_component_size.value.get();\n                let max_component_size = thread_safe_max_component_size.value.get();\n                let components_number = thread_safe_components_number.value.get();\n                (0..self.get_nodes_number())\n                    .progress_with(pb)\n                    .for_each(|src| {\n                        // If the node has already been explored we skip ahead.\n                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                            return;\n                        }\n\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && (self.is_singleton_from_node_id(src).unwrap()\n                                || self.is_singleton_with_self_loops_from_node_id(src))\n                        {\n                            // We set singletons as self-loops for now.\n                            unsafe {\n                                components[src as usize]\n                                    .store(**components_number, Ordering::Relaxed);\n                                **components_number += 1;\n                                **min_component_size = 1;\n                                **max_component_size = (**max_component_size).max(1);\n                            }\n                            return;\n                        }\n\n                        loop {\n                            // if the node has been now mapped to a component by anyone of the\n                            // parallel threads, move on to the next node.\n                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                break;\n                            }\n                            // Otherwise, Check if the parallel threads are finished\n                            // and are all waiting for a new node to explore.\n                            // In that case add the currently not explored node to the\n                            // work stack of the first thread.\n                            if active_nodes_number.load(Ordering::Relaxed) == 0 {\n                                // The check here might seems redundant but its' needed\n                                // to prevent data races.\n                                //\n                                // If the last parallel thread finishes its stack between the\n                                // presence check above and the active nodes numbers check\n                                // the src node will never increase the component size and thus\n                                // leading to wrong results.\n                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                    break;\n                                }\n                                let ccs =\n                                    current_component_size.swap(1, Ordering::Relaxed) as NodeT;\n                                unsafe {\n                                    **max_component_size = (**max_component_size).max(ccs);\n                                    if ccs > 1 {\n                                        **min_component_size = (**min_component_size).min(ccs);\n                                    }\n                                    components[src as usize]\n                                        .store(**components_number, Ordering::Relaxed);\n                                    **components_number += 1;\n                                }\n                                active_nodes_number.fetch_add(1, Ordering::Relaxed);\n                                shared_stacks[0].lock().unwrap().push(src);\n                                break;\n                            }\n                            // Otherwise, Loop until the parallel threads are finished.\n                        }\n                    });\n                completed.store(true, Ordering::Relaxed);\n            });\n\n            // Spawn the parallel threads that handle the components mapping,\n            // these threads use work-stealing, meaning that if their stack is empty,\n            // they will steal nodes from the stack of another random thread.\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    // get the id, we use this as an idex for the stacks vector.\n                    let thread_id = rayon::current_thread_index().unwrap();\n\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::Relaxed) {\n                                break 'outer;\n                            }\n                        }\n                    };\n\n                    let src_component = components[src as usize].load(Ordering::Relaxed);\n                    self.iter_node_neighbours_ids(src).for_each(|dst| {\n                        if components[dst as usize].swap(src_component, Ordering::SeqCst)\n                            == NOT_PRESENT\n                        {\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            current_component_size.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        let ccs = current_component_size.load(Ordering::SeqCst);\n        max_component_size = max_component_size.max(ccs);\n        if ccs > 1 {\n            min_component_size = min_component_size.min(ccs);\n        }\n\n        Ok((\n            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },\n            components_number,\n            min_component_size,\n            max_component_size,\n        ))"
+        "body": "if self.directed {\n            return Err(\n                \"The connected components algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        if !self.has_nodes() {\n            return Ok((Vec::new(), 0, 0, 0));\n        }\n        if self.get_edges_number() == 0 {\n            return Ok((\n                (0..self.get_nodes_number()).collect(),\n                self.get_nodes_number(),\n                1,\n                1,\n            ));\n        }\n        let components = (0..self.get_nodes_number())\n            .map(|_| AtomicU32::new(NOT_PRESENT))\n            .collect::<Vec<_>>();\n        let mut min_component_size: NodeT = NodeT::MAX;\n        let mut max_component_size: NodeT = 0;\n        let mut components_number: NodeT = 0;\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let current_component_size = AtomicU32::new(0);\n        let completed = AtomicBool::new(false);\n        let thread_safe_min_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut min_component_size),\n        };\n        let thread_safe_max_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut max_component_size),\n        };\n        let thread_safe_components_number = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut components_number),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the components vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the components one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\n                        \"Computing connected components of graph {}\",\n                        self.get_name()\n                    )\n                    .as_ref(),\n                    self.get_nodes_number() as usize,\n                );\n                let min_component_size = thread_safe_min_component_size.value.get();\n                let max_component_size = thread_safe_max_component_size.value.get();\n                let components_number = thread_safe_components_number.value.get();\n                (0..self.get_nodes_number())\n                    .progress_with(pb)\n                    .for_each(|src| {\n                        // If the node has already been explored we skip ahead.\n                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                            return;\n                        }\n\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && (self.is_singleton_from_node_id(src)\n                                || self.is_singleton_with_self_loops_from_node_id(src))\n                        {\n                            // We set singletons as self-loops for now.\n                            unsafe {\n                                components[src as usize]\n                                    .store(**components_number, Ordering::Relaxed);\n                                **components_number += 1;\n                                **min_component_size = 1;\n                                **max_component_size = (**max_component_size).max(1);\n                            }\n                            return;\n                        }\n\n                        loop {\n                            // if the node has been now mapped to a component by anyone of the\n                            // parallel threads, move on to the next node.\n                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                break;\n                            }\n                            // Otherwise, Check if the parallel threads are finished\n                            // and are all waiting for a new node to explore.\n                            // In that case add the currently not explored node to the\n                            // work stack of the first thread.\n                            if active_nodes_number.load(Ordering::Relaxed) == 0 {\n                                // The check here might seems redundant but its' needed\n                                // to prevent data races.\n                                //\n                                // If the last parallel thread finishes its stack between the\n                                // presence check above and the active nodes numbers check\n                                // the src node will never increase the component size and thus\n                                // leading to wrong results.\n                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                    break;\n                                }\n                                let ccs =\n                                    current_component_size.swap(1, Ordering::Relaxed) as NodeT;\n                                unsafe {\n                                    **max_component_size = (**max_component_size).max(ccs);\n                                    if ccs > 1 {\n                                        **min_component_size = (**min_component_size).min(ccs);\n                                    }\n                                    components[src as usize]\n                                        .store(**components_number, Ordering::Relaxed);\n                                    **components_number += 1;\n                                }\n                                active_nodes_number.fetch_add(1, Ordering::Relaxed);\n                                shared_stacks[0].lock().unwrap().push(src);\n                                break;\n                            }\n                            // Otherwise, Loop until the parallel threads are finished.\n                        }\n                    });\n                completed.store(true, Ordering::Relaxed);\n            });\n\n            // Spawn the parallel threads that handle the components mapping,\n            // these threads use work-stealing, meaning that if their stack is empty,\n            // they will steal nodes from the stack of another random thread.\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    // get the id, we use this as an idex for the stacks vector.\n                    let thread_id = rayon::current_thread_index().unwrap();\n\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::Relaxed) {\n                                break 'outer;\n                            }\n                        }\n                    };\n\n                    let src_component = components[src as usize].load(Ordering::Relaxed);\n                    self.iter_node_neighbours_ids(src).for_each(|dst| {\n                        if components[dst as usize].swap(src_component, Ordering::SeqCst)\n                            == NOT_PRESENT\n                        {\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            current_component_size.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        let ccs = current_component_size.load(Ordering::SeqCst);\n        max_component_size = max_component_size.max(ccs);\n        if ccs > 1 {\n            min_component_size = min_component_size.min(ccs);\n        }\n\n        Ok((\n            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },\n            components_number,\n            min_component_size,\n            max_component_size,\n        ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_writer.rs",
@@ -1698,7 +1698,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -1724,7 +1724,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -2388,7 +2388,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "usize",
@@ -2405,7 +2405,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<Vec<String>, String>",
@@ -2441,7 +2441,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<usize, String>",
@@ -2480,7 +2480,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "column_name",
@@ -2518,7 +2518,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -2552,7 +2552,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -2869,7 +2869,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "default_weight",
@@ -2895,7 +2895,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "graph_name",
@@ -2948,7 +2948,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "skip_self_loops",
@@ -2974,7 +2974,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "csv_is_correct",
@@ -3026,7 +3026,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "verbose",
@@ -3127,7 +3127,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_node_ids",
@@ -3153,7 +3153,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "ignore_duplicates",
@@ -3206,7 +3206,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "header",
@@ -3232,7 +3232,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "rows_to_skip",
@@ -3258,7 +3258,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "max_rows_number",
@@ -3279,7 +3279,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -3296,7 +3296,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -3316,7 +3316,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "vals",
@@ -3351,23 +3351,22 @@
             "",
             "# Arguments",
             "",
-            "`node_id`: NodeT - The node to be checked for.",
-            "TODO: CREATE UNCHECKED VERSION!"
+            "`node_id`: NodeT - The node to be checked for."
         ],
         "modifiers": "pub",
         "name": "is_singleton_from_node_id",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
                 "NodeT"
             ]
         ],
-        "return_type": "Result<bool, String>",
-        "body": "Ok(self.has_singletons()\n            && self.get_node_degree_from_node_id(node_id)? == 0\n            && self\n                .not_singleton_nodes\n                .as_ref()\n                .map_or(true, |nsns| !nsns[node_id as usize]))"
+        "return_type": "bool",
+        "body": "self.not_singleton_nodes\n            .as_ref()\n            .map_or(true, |nsns| !nsns[node_id as usize])"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
@@ -3384,7 +3383,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -3408,7 +3407,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_name",
@@ -3416,7 +3415,7 @@
             ]
         ],
         "return_type": "Result<bool, String>",
-        "body": "self.is_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)"
+        "body": "Ok(self.is_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
@@ -3443,7 +3442,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_name",
@@ -3477,7 +3476,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -3540,18 +3539,46 @@
         "doc": [
             "Returns boolean representing if given node is a trap.",
             "",
+            "If the provided node_id is higher than the number of nodes in the graph,",
+            "the method will panic.",
+            "",
             "# Arguments",
             "",
             "* `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "is_unchecked_node_trap_from_node_id",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "node_id",
+                "NodeT"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_unchecked_node_degree_from_node_id(node_id) == 0\n            && self\n                .not_singleton_nodes\n                .as_ref()\n                .map_or(true, |nsns| nsns[node_id as usize])"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if given node is a trap.",
             "",
-            "TODO: CREATE UNCHECKED VERSION!"
+            "# Arguments",
+            "",
+            "* `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.",
+            ""
         ],
         "modifiers": "pub",
         "name": "is_node_trap_from_node_id",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -3559,7 +3586,7 @@
             ]
         ],
         "return_type": "Result<bool, String>",
-        "body": "Ok(self.get_node_degree_from_node_id(node_id)? == 0\n            && self\n                .not_singleton_nodes\n                .as_ref()\n                .map_or(true, |nsns| nsns[node_id as usize]))"
+        "body": "self.validate_node_id(node_id)\n            .map(|node_id| self.is_unchecked_node_trap_from_node_id(node_id))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
@@ -3616,7 +3643,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src_name",
@@ -4080,7 +4107,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "assert!(graph\n        .filter(\n            Some(graph.get_node_names()),\n            graph\n                .get_node_type_names()\n                .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n            graph\n                .get_edge_type_names()\n                .map(|etn| etn.into_iter().map(Option::Some).collect()),\n            Some(1000.0),\n            Some(10.0),\n            verbose,\n        )\n        .is_err());\n    let _ = graph.filter(\n        Some(graph.get_node_names()),\n        graph\n            .get_node_type_names()\n            .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n        graph\n            .get_edge_type_names()\n            .map(|etn| etn.into_iter().map(Option::Some).collect()),\n        graph.get_min_weight().ok(),\n        graph.get_max_weight().ok(),\n        verbose,\n    );\n    Ok(())"
+        "body": "assert!(graph\n        .filter(\n            Some(graph.get_node_names()),\n            graph\n                .get_node_type_names().ok()\n                .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n            graph\n                .get_edge_type_names()\n                .map(|etn| etn.into_iter().map(Option::Some).collect()),\n            Some(1000.0),\n            Some(10.0),\n            verbose,\n        )\n        .is_err());\n    let _ = graph.filter(\n        Some(graph.get_node_names()),\n        graph\n            .get_node_type_names().ok()\n            .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n        graph\n            .get_edge_type_names()\n            .map(|etn| etn.into_iter().map(Option::Some).collect()),\n        graph.get_min_weight().ok(),\n        graph.get_max_weight().ok(),\n        verbose,\n    );\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -4170,7 +4197,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "let mut clone = graph.clone();\n    clone = clone.set_all_edge_types(\"TEST_SET_ALL_EDGE_TYPES\");\n    clone = clone.set_all_node_types(\"TEST_SET_ALL_NODE_TYPES\");\n\n    assert_eq!(\n        clone.get_edge_types_number(),\n        1,\n        \"Number of edge types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),\n        graph.get_directed_edges_number(),\n        \"Number of edges with the unique edge type does not match number of edges in the graph.\"\n    );\n\n    assert_eq!(\n        clone.get_node_types_number(),\n        1,\n        \"Number of node types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_node_count_from_node_type_id(Some(0)),\n        graph.get_nodes_number(),\n        \"Number of nodes with the unique node type does not match number of nodes in the graph.\"\n    );\n\n    Ok(())"
+        "body": "let mut clone = graph.clone();\n    clone = clone.set_all_edge_types(\"TEST_SET_ALL_EDGE_TYPES\")?;\n    clone = clone.set_all_node_types(\"TEST_SET_ALL_NODE_TYPES\")?;\n\n    assert_eq!(\n        clone.get_edge_types_number(),\n        1,\n        \"Number of edge types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),\n        graph.get_directed_edges_number(),\n        \"Number of edges with the unique edge type does not match number of edges in the graph.\"\n    );\n\n    assert_eq!(\n        clone.get_node_types_number(),\n        1,\n        \"Number of node types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_node_count_from_node_type_id(Some(0)),\n        graph.get_nodes_number(),\n        \"Number of nodes with the unique node type does not match number of nodes in the graph.\"\n    );\n\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -4280,7 +4307,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ]
         ],
         "body": "self.destinations = None;\n        self.sources = None;\n        self.outbounds = None;\n        self.cached_destinations = None;"
@@ -4325,7 +4352,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "nodes_column",
@@ -4378,7 +4405,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "nodes_column_number",
@@ -4430,7 +4457,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "verbose",
@@ -4457,7 +4484,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "separator",
@@ -4483,7 +4510,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "header",
@@ -4508,7 +4535,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "graph",
@@ -4532,7 +4559,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<HashSet<NodeT>>",
@@ -4565,7 +4592,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -4598,7 +4625,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -4637,7 +4664,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -4675,7 +4702,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -4717,7 +4744,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "source_id",
@@ -4881,7 +4908,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "k",
@@ -4910,7 +4937,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -4935,7 +4962,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -4960,7 +4987,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "k",
@@ -5065,7 +5092,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -5206,7 +5233,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -5240,7 +5267,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -5401,7 +5428,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -5432,7 +5459,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -5453,7 +5480,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_name",
@@ -5710,7 +5737,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -5735,7 +5762,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -5771,7 +5798,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -6060,7 +6087,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -6086,7 +6113,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -6254,7 +6281,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "RwLockReadGuard<T>",
@@ -6268,7 +6295,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "RwLockWriteGuard<T>",
@@ -6282,7 +6309,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "ClonableRwLock<T>",
@@ -6311,7 +6338,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_id",
@@ -6344,7 +6371,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge_id",
@@ -6375,7 +6402,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<(), String>",
@@ -6402,7 +6429,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<(), String>",
@@ -6429,7 +6456,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<(), String>",
@@ -6456,7 +6483,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "one",
@@ -6495,7 +6522,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "one",
@@ -6540,7 +6567,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "one",
@@ -6586,7 +6613,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "one",
@@ -6618,7 +6645,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "f64",
@@ -6639,7 +6666,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<f64, String>",
@@ -6660,7 +6687,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -6681,7 +6708,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -6702,7 +6729,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -6723,7 +6750,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -6744,7 +6771,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<NodeT, String>",
@@ -6765,7 +6792,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<NodeT, String>",
@@ -6786,7 +6813,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<NodeT, String>",
@@ -6807,7 +6834,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<NodeT, String>",
@@ -6828,7 +6855,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -6849,7 +6876,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -6870,7 +6897,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<f64, String>",
@@ -6887,7 +6914,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "verbose",
@@ -6912,7 +6939,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -6933,7 +6960,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -6954,7 +6981,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -6975,7 +7002,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<f64, String>",
@@ -7012,7 +7039,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "DefaultHashMap<&str, String>",
@@ -7027,7 +7054,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "nodes_components",
@@ -7056,7 +7083,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "nodes_components",
@@ -7086,7 +7113,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -7109,7 +7136,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "list",
@@ -7133,7 +7160,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node_list",
@@ -7202,7 +7229,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "verbose",
@@ -7616,7 +7643,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "verbose",
@@ -7642,7 +7669,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_node_ids",
@@ -7669,7 +7696,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "separator",
@@ -7695,7 +7722,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "header",
@@ -7721,7 +7748,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "directed",
@@ -7746,7 +7773,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "graph",
@@ -7771,7 +7798,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ],
             [
                 "name",
@@ -7793,7 +7820,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "body": "*self.cached_report.write() = None;"
@@ -7813,15 +7840,15 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "edge_type",
                 "S"
             ]
         ],
-        "return_type": "Graph",
-        "body": "self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(edge_type.into()).unwrap();\n        vocabulary.build_reverse_mapping().unwrap();\n        let edge_types = EdgeTypeVocabulary::from_structs(\n            vec![Some(0); self.get_directed_edges_number() as usize],\n            vocabulary,\n        );\n        self.edge_types = Some(edge_types);\n        self"
+        "return_type": "Result<Graph, String>",
+        "body": "self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(edge_type.into())?;\n        vocabulary.build_reverse_mapping()?;\n        let edge_types = EdgeTypeVocabulary::from_structs(\n            vec![Some(0); self.get_directed_edges_number() as usize],\n            vocabulary,\n        );\n        self.edge_types = Some(edge_types);\n        Ok(self)"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
@@ -7838,15 +7865,15 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "node_type",
                 "S"
             ]
         ],
-        "return_type": "Graph",
-        "body": "self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(node_type.into()).unwrap();\n        vocabulary.build_reverse_mapping().unwrap();\n        let node_types = NodeTypeVocabulary::from_structs(\n            vec![Some(vec![0]); self.get_nodes_number() as usize],\n            Some(vocabulary),\n        );\n        self.node_types = node_types;\n        self"
+        "return_type": "Result<Graph, String>",
+        "body": "self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(node_type.into())?;\n        vocabulary.build_reverse_mapping()?;\n        let node_types = NodeTypeVocabulary::from_structs(\n            vec![Some(vec![0]); self.get_nodes_number() as usize],\n            Some(vocabulary),\n        );\n        self.node_types = node_types;\n        Ok(self)"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
@@ -8249,7 +8276,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node",
@@ -8536,7 +8563,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "node",
@@ -8639,7 +8666,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -8662,7 +8689,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "edge",
@@ -8930,56 +8957,6 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return if the graph has any nodes.",
-            "",
-            "# Example",
-            "To check if the graph has nodes you can use:",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert_eq!(graph.has_nodes(), true);",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_nodes",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_nodes_number() > 0"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Return if the graph has any edges.",
-            "",
-            "# Example",
-            "To check if the current graph has edges you can use:",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert_eq!(graph.has_edges(), true);",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_edges",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_edges_number() > 0"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
             "Return name of the graph.",
             "",
             "# Example",
@@ -8996,7 +8973,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "String",
@@ -9022,186 +8999,11 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
         "body": "(self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_self_loops_number()\n            - self.get_unique_source_nodes_number()) as EdgeT"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "",
-            "# Example",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "if graph.has_trap_nodes(){",
-            "println!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());",
-            "} else {",
-            "println!(\"There are no trap nodes in the current graph.\");",
-            "}",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_trap_nodes",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_trap_nodes_number() > 0"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing if graph is directed.",
-            "",
-            "# Example",
-            "```rust",
-            "let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert!(directed_string_ppi.is_directed());",
-            "let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
-            "assert!(!undirected_string_ppi.is_directed());",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "is_directed",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.directed"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing whether graph has weights.",
-            "",
-            "# Example",
-            "```rust",
-            "let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert!(weights_string_ppi.has_weights());",
-            "let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();",
-            "assert!(!unweights_string_ppi.has_weights());",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_weights",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.weights.is_some()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing whether graph has edge types.",
-            "",
-            "# Example",
-            "```rust",
-            "let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert!(string_ppi_with_edge_types.has_edge_types());",
-            "let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();",
-            "assert!(!string_ppi_without_edge_types.has_edge_types());",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_edge_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.edge_types.is_some()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing if graph has self-loops.",
-            "",
-            "# Example",
-            "```rust",
-            "let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "assert!(string_ppi_with_selfloops.has_selfloops());",
-            "let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();",
-            "assert!(!string_ppi_without_selfloops.has_selfloops());",
-            "```",
-            ""
-        ],
-        "modifiers": "pub",
-        "name": "has_selfloops",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.self_loop_number > 0"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing if graph has singletons.",
-            "",
-            "# Example",
-            "```rust",
-            "# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
-            "assert!(graph_with_singletons.has_singletons());",
-            "let graph_without_singletons = graph_with_singletons.remove(",
-            "None, None, None, None, None, None, None, None, false, false, true, true, false, false,",
-            ").unwrap();",
-            "assert!(!graph_without_singletons.has_singletons());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "has_singletons",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_singleton_nodes_number() > 0"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing if graph has singletons."
-        ],
-        "modifiers": "pub",
-        "name": "has_singleton_nodes_with_self_loops",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_singleton_nodes_with_self_loops_number() > 0"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9217,7 +9019,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9241,7 +9043,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9265,7 +9067,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9289,7 +9091,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9310,7 +9112,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<String>",
@@ -9327,7 +9129,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<NodeT>",
@@ -9344,7 +9146,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<Vec<Option<EdgeTypeT>>, String>",
@@ -9361,7 +9163,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Option<Vec<String>>",
@@ -9371,31 +9173,24 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return the node types of the nodes."
-        ],
-        "modifiers": "pub",
-        "name": "get_node_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "Result<Vec<Option<Vec<NodeTypeT>>>, String>",
-        "body": "self.must_have_node_types()?;\n        Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Return the weights of the edges."
+            "Return the weights of the graph edges.",
+            "",
+            "# Example",
+            "To get an the graph weights you can use:",
+            "```rust",
+            "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+            "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+            "assert!(graph_with_weights.get_weights().is_ok());",
+            "assert!(graph_without_weights.get_weights().is_err());",
+            "println!(\"The graph weights are {:?}.\", graph_with_weights.get_weights());",
+            "```"
         ],
         "modifiers": "pub",
         "name": "get_weights",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<Vec<WeightT>, String>",
@@ -9405,52 +9200,111 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return the minimum weight, if graph has weights."
+            "Return the minimum weight, if graph has weights.",
+            "",
+            "# Example",
+            "To get the minimum edge weight you can use:",
+            "```rust",
+            "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+            "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+            "assert!(graph_with_weights.get_min_weight().is_ok());",
+            "assert!(graph_without_weights.get_min_weight().is_err());",
+            "println!(\"The graph minimum weight is {:?}.\", graph_with_weights.get_min_weight());",
+            "```"
         ],
         "modifiers": "pub",
         "name": "get_min_weight",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<WeightT, String>",
-        "body": "self.weights.as_ref().map_or(\n            Err(\"The current graph instance does not have weights!\".to_string()),\n            |ws| {\n                Ok(ws\n                    .par_iter()\n                    .cloned()\n                    .reduce(|| f32::INFINITY, |a, b| a.min(b)))\n            },\n        )"
+        "body": "Ok(self\n            .par_iter_weights()?\n            .reduce(|| f32::INFINITY, |a, b| a.min(b)))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return the maximum weight, if graph has weights."
+            "Return the maximum weight, if graph has weights.",
+            "",
+            "# Example",
+            "To get the maximum edge weight you can use:",
+            "```rust",
+            "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+            "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+            "assert!(graph_with_weights.get_max_weight().is_ok());",
+            "assert!(graph_without_weights.get_max_weight().is_err());",
+            "println!(\"The graph maximum weight is {:?}.\", graph_with_weights.get_max_weight());",
+            "```"
         ],
         "modifiers": "pub",
         "name": "get_max_weight",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<WeightT, String>",
-        "body": "self.weights.as_ref().map_or(\n            Err(\"The current graph instance does not have weights!\".to_string()),\n            |ws| {\n                Ok(ws\n                    .par_iter()\n                    .cloned()\n                    .reduce(|| f32::NEG_INFINITY, |a, b| a.max(b)))\n            },\n        )"
+        "body": "Ok(self\n            .par_iter_weights()?\n            .reduce(|| f32::NEG_INFINITY, |a, b| a.max(b)))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return the node types names."
+            "Return the node types of the graph nodes.",
+            "",
+            "# Example",
+            "To retrieve the node type IDs of the graph nodes you can use:",
+            "```rust",
+            "# let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "# let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+            "assert!(graph_with_node_types.get_node_types_ids().is_ok());",
+            "assert!(graph_without_node_types.get_node_types_ids().is_err());",
+            "println!(\"The graph node types are {:?}\", graph_with_node_types.get_node_types_ids());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "get_node_types_ids",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<Vec<Option<Vec<NodeTypeT>>>, String>",
+        "body": "self.must_have_node_types()?;\n        Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return the node types names.",
+            "",
+            "# Example",
+            "To retrieve the node type names of the graph nodes you can use:",
+            "```rust",
+            "# let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "# let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+            "assert!(graph_with_node_types.get_node_type_names().is_ok());",
+            "assert!(graph_without_node_types.get_node_type_names().is_err());",
+            "println!(\"The graph node types are {:?}\", graph_with_node_types.get_node_type_names());",
+            "```",
+            ""
         ],
         "modifiers": "pub",
         "name": "get_node_type_names",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
-        "return_type": "Option<Vec<String>>",
-        "body": "self.node_types\n            .as_ref()\n            .map(|nts| nts.vocabulary.reverse_map.clone())"
+        "return_type": "Result<Vec<String>, String>",
+        "body": "self.must_have_node_types()?;\n        Ok(self\n            .node_types\n            .as_ref()\n            .map(|nts| nts.vocabulary.reverse_map.clone())\n            .unwrap())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9463,7 +9317,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -9480,7 +9334,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -9497,7 +9351,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "HashMap<String, NodeT>",
@@ -9514,7 +9368,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9535,7 +9389,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -9549,40 +9403,6 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Returns boolean representing if graph has node types."
-        ],
-        "modifiers": "pub",
-        "name": "has_node_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.node_types.is_some()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns boolean representing if graph has multilabel node types."
-        ],
-        "modifiers": "pub",
-        "name": "has_multilabel_node_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.node_types\n            .as_ref()\n            .map_or(false, |nt| nt.is_multilabel())"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
             "Returns number of unknown node types."
         ],
         "modifiers": "pub",
@@ -9590,7 +9410,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -9607,28 +9427,11 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
         "body": "self.node_types\n            .as_ref()\n            .map_or(0, |et| et.min_node_type_count())"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns whether there are unknown node types."
-        ],
-        "modifiers": "pub",
-        "name": "has_unknown_node_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_unknown_node_types_number() > 0"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9641,7 +9444,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -9658,28 +9461,11 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
         "body": "self.edge_types\n            .as_ref()\n            .map_or(0, |et| et.min_edge_type_count())"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Returns whether there are unknown edge types."
-        ],
-        "modifiers": "pub",
-        "name": "has_unknown_edge_types",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_unknown_edge_types_number() > 0"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9692,7 +9478,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -9715,7 +9501,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "verbose",
@@ -9736,7 +9522,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -9753,7 +9539,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeTypeT",
@@ -9770,7 +9556,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeTypeT",
@@ -9787,7 +9573,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<NodeT>",
@@ -9804,11 +9590,11 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<NodeT>",
-        "body": "self.iter_edge_ids(false)\n            .flat_map(|(_, src, dst)| once(src).chain(once(dst)))\n            .unique()\n            .collect()"
+        "body": "self.iter_non_singleton_node_ids().collect()"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9821,28 +9607,11 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "HashMap<NodeT, NodeT>",
-        "body": "self.get_not_singletons()\n            .into_iter()\n            .enumerate()\n            .map(|(i, node)| (node as NodeT, i as NodeT))\n            .collect()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "struct": "Graph",
-        "doc": [
-            "Return if there are multiple edges between two nodes"
-        ],
-        "modifiers": "pub",
-        "name": "is_multigraph",
-        "args": [
-            [
-                "self",
-                "self"
-            ]
-        ],
-        "return_type": "bool",
-        "body": "self.get_multigraph_edges_number() > 0"
+        "body": "self.iter_non_singleton_node_ids()\n            .enumerate()\n            .map(|(i, node)| (node as NodeT, i as NodeT))\n            .collect()"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9855,7 +9624,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -9865,19 +9634,18 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "struct": "Graph",
         "doc": [
-            "Return vector with node degrees",
-            "TODO: USE CACHE!!!"
+            "Return vector with node outbounds, that is the comulative node degree."
         ],
         "modifiers": "pub",
         "name": "get_outbounds",
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<EdgeT>",
-        "body": "self.par_iter_node_ids()\n            .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))\n            .collect()"
+        "body": "self.outbounds.as_ref().map_or_else(\n            || {\n                self.par_iter_node_ids()\n                    .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))\n                    .collect()\n            },\n            |outbounds| outbounds.clone(),\n        )"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
@@ -9894,7 +9662,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -9923,7 +9691,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<Counter<EdgeTypeT, usize>, String>",
@@ -9952,7 +9720,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<HashMap<EdgeTypeT, usize>, String>",
@@ -9980,7 +9748,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<Counter<NodeTypeT, usize>, String>",
@@ -10008,7 +9776,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Result<HashMap<EdgeTypeT, usize>, String>",
@@ -10031,7 +9799,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "value",
@@ -10055,7 +9823,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ],
             [
                 "value",
@@ -10080,7 +9848,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ],
             [
                 "value",
@@ -10100,7 +9868,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ]
         ],
         "return_type": "Result<(), String>",
@@ -10116,7 +9884,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -10136,7 +9904,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -10160,7 +9928,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -10184,7 +9952,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "key",
@@ -10204,7 +9972,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<String>",
@@ -10224,7 +9992,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "key",
@@ -10244,7 +10012,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "usize",
@@ -10264,7 +10032,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_ids",
@@ -10283,7 +10051,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "u64",
@@ -10297,7 +10065,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -10345,7 +10113,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ]
         ],
         "body": "let mut counts = vec![NodeT::from_usize(0); self.vocabulary.len()];\n        for index in self.ids.iter() {\n            match index {\n                Some(values) => {\n                    values.iter().for_each(|value| {\n                        counts[NodeTypeT::to_usize(*value)] += NodeT::from_usize(1)\n                    });\n                }\n                None => self.unknown_count += NodeT::from_usize(1),\n            }\n        }\n        self.counts = counts;"
@@ -10359,7 +10127,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ]
         ],
         "return_type": "Result<(), String>",
@@ -10402,7 +10170,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -10419,7 +10187,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -10436,7 +10204,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -10453,7 +10221,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "NodeT",
@@ -10474,7 +10242,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -10499,7 +10267,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -10524,7 +10292,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "ids",
@@ -10549,7 +10317,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "key",
@@ -10570,7 +10338,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<String>",
@@ -10587,7 +10355,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "usize",
@@ -10608,7 +10376,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_ids",
@@ -10684,7 +10452,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "nodes_column_number",
@@ -10710,7 +10478,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "graph_name",
@@ -10894,7 +10662,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "verbose",
@@ -10946,7 +10714,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_node_ids",
@@ -10972,7 +10740,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "ignore_duplicates",
@@ -11061,7 +10829,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "header",
@@ -11087,7 +10855,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "rows_to_skip",
@@ -11113,7 +10881,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "max_rows_number",
@@ -11134,7 +10902,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -11166,7 +10934,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "u64",
@@ -11180,7 +10948,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -11247,7 +11015,7 @@
         "args": [
             [
                 "self",
-                "mut self"
+                "&mut self"
             ]
         ],
         "body": "self.counts = vec![EdgeT::from_usize(0); self.vocabulary.len()];\n        for index in self.ids.iter() {\n            match index {\n                Some(value) => {\n                    self.counts[*value as usize] += 1;\n                }\n                None => self.unknown_count += EdgeT::from_usize(1),\n            }\n        }"
@@ -11263,7 +11031,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "bool",
@@ -11284,7 +11052,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -11309,7 +11077,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "id",
@@ -11334,7 +11102,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "key",
@@ -11355,7 +11123,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Vec<String>",
@@ -11372,7 +11140,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "usize",
@@ -11393,7 +11161,7 @@
         "args": [
             [
                 "self",
-                "ut self"
+                "mut self"
             ],
             [
                 "numeric_ids",
@@ -11414,7 +11182,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -11431,7 +11199,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "EdgeT",
@@ -11461,7 +11229,7 @@
             ]
         ],
         "return_type": "std::ops::Range<usize>",
-        "body": "let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);\n        min_edge_id as usize..max_edge_id as usize"
+        "body": "let (min_edge_id, max_edge_id) =\n            self.get_unchecked_minmax_edge_ids_from_source_node_id(src);\n        min_edge_id as usize..max_edge_id as usize"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
@@ -11474,7 +11242,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "impl Iterator<Item = NodeT> + '_",
@@ -11491,7 +11259,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "impl ParallelIterator<Item = NodeT> + '_",
@@ -11508,7 +11276,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "impl Iterator<Item = NodeT> + '_",
@@ -11525,11 +11293,37 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "impl ParallelIterator<Item = NodeT> + '_",
         "body": "self.par_iter_node_ids()\n            .map(move |node| self.get_unchecked_node_degree_from_node_id(node))"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return iterator on the non-singleton nodes of the graph.",
+            "",
+            "Note that this includes also the singleton with self-loops and",
+            "the trap nodes within this iterator. Only true singleton nodes,",
+            "that is, nodes without any edge (both inbound and outbound) are",
+            "included.",
+            "",
+            "Since the following requires to be boxed, we cannot create the",
+            "parallel version of this iterator.",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "iter_non_singleton_node_ids",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Box<dyn Iterator<Item = NodeT> + '_>",
+        "body": "match self.not_singleton_nodes.as_ref() {\n            Some(nsns) => Box::new(nsns.iter_ones().map(|node_id| node_id as NodeT)),\n            _ => Box::new(self.iter_node_ids()),\n        }"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
@@ -11542,7 +11336,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Box<dyn Iterator<Item = NodeT> + '_>",
@@ -11559,7 +11353,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Box<dyn Iterator<Item = NodeT> + '_>",
@@ -11605,7 +11399,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "src",
@@ -11629,7 +11423,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -11638,6 +11432,60 @@
         ],
         "return_type": "impl Iterator<Item = NodeT> + '_",
         "body": "self.iter_edge_ids(directed).map(move |(_, src, _)| src)"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return iterator on the edges' weights.",
+            "",
+            "# Example",
+            "To get an iterator over the edges weights you can use:",
+            "```rust",
+            "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+            "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+            "assert!(graph_with_weights.iter_weights().is_ok());",
+            "assert!(graph_without_weights.iter_weights().is_err());",
+            "println!(\"The graph weights are {:?}.\", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "iter_weights",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<impl Iterator<Item = WeightT> + '_, String>",
+        "body": "self.must_have_weights()?;\n        Ok(self.weights.as_ref().map(|ws| ws.iter().cloned()).unwrap())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return parallel iterator on the edges' weights.",
+            "",
+            "# Example",
+            "To get an iterator over the edges weights you can use:",
+            "```rust",
+            "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+            "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+            "assert!(graph_with_weights.iter_weights().is_ok());",
+            "assert!(graph_without_weights.iter_weights().is_err());",
+            "println!(\"The graph weights are {:?}.\", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "par_iter_weights",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<impl ParallelIterator<Item = WeightT> + '_, String>",
+        "body": "self.must_have_weights()?;\n        Ok(self.weights.as_ref().map(|ws| ws.par_iter().cloned()).unwrap())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
@@ -11653,7 +11501,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -11677,7 +11525,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "directed",
@@ -12100,11 +11948,325 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "Box<dyn Iterator<Item = NodeT> + '_>",
         "body": "if let Some(x) = &self.unique_sources {\n            return Box::new(x.iter().map(|source| source as NodeT));\n        }\n        Box::new(self.iter_node_ids())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return if the graph has any nodes.",
+            "",
+            "# Example",
+            "To check if the graph has nodes you can use:",
+            "```rust",
+            "# let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "# let empty_graph = graph::test_utilities::load_empty_graph(false);",
+            "assert!(graph_with_nodes.has_nodes());",
+            "assert!(!empty_graph.has_nodes());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_nodes",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_nodes_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return if the graph has any edges.",
+            "",
+            "# Example",
+            "To check if the current graph has edges you can use:",
+            "```rust",
+            "# let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "# let empty_graph = graph::test_utilities::load_empty_graph(false);",
+            "assert!(graph_with_edges.has_edges());",
+            "assert!(!empty_graph.has_edges());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_edges",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_edges_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "",
+            "# Example",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "if graph.has_trap_nodes(){",
+            "println!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());",
+            "} else {",
+            "println!(\"There are no trap nodes in the current graph.\");",
+            "}",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_trap_nodes",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_trap_nodes_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph is directed.",
+            "",
+            "# Example",
+            "```rust",
+            "let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "assert!(directed_string_ppi.is_directed());",
+            "let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
+            "assert!(!undirected_string_ppi.is_directed());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "is_directed",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.directed"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing whether graph has weights.",
+            "",
+            "# Example",
+            "```rust",
+            "let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "assert!(weights_string_ppi.has_weights());",
+            "let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();",
+            "assert!(!unweights_string_ppi.has_weights());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_weights",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.weights.is_some()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing whether graph has edge types.",
+            "",
+            "# Example",
+            "```rust",
+            "let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "assert!(string_ppi_with_edge_types.has_edge_types());",
+            "let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();",
+            "assert!(!string_ppi_without_edge_types.has_edge_types());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_edge_types",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.edge_types.is_some()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph has self-loops.",
+            "",
+            "# Example",
+            "```rust",
+            "let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "assert!(string_ppi_with_selfloops.has_selfloops());",
+            "let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();",
+            "assert!(!string_ppi_without_selfloops.has_selfloops());",
+            "```",
+            ""
+        ],
+        "modifiers": "pub",
+        "name": "has_selfloops",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.self_loop_number > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph has singletons.",
+            "",
+            "# Example",
+            "```rust",
+            "# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
+            "assert!(graph_with_singletons.has_singletons());",
+            "let graph_without_singletons = graph_with_singletons.remove(",
+            "None, None, None, None, None, None, None, None, false, false, true, true, false, false,",
+            ").unwrap();",
+            "assert!(!graph_without_singletons.has_singletons());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "has_singletons",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_singleton_nodes_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph has singletons."
+        ],
+        "modifiers": "pub",
+        "name": "has_singleton_nodes_with_self_loops",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_singleton_nodes_with_self_loops_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph has node types."
+        ],
+        "modifiers": "pub",
+        "name": "has_node_types",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.node_types.is_some()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns boolean representing if graph has multilabel node types."
+        ],
+        "modifiers": "pub",
+        "name": "has_multilabel_node_types",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.node_types\n            .as_ref()\n            .map_or(false, |nt| nt.is_multilabel())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns whether there are unknown node types."
+        ],
+        "modifiers": "pub",
+        "name": "has_unknown_node_types",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_unknown_node_types_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Returns whether there are unknown edge types."
+        ],
+        "modifiers": "pub",
+        "name": "has_unknown_edge_types",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_unknown_edge_types_number() > 0"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "struct": "Graph",
+        "doc": [
+            "Return if there are multiple edges between two nodes"
+        ],
+        "modifiers": "pub",
+        "name": "is_multigraph",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "bool",
+        "body": "self.get_multigraph_edges_number() > 0"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/from_csv.rs",
@@ -12234,7 +12396,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ]
         ],
         "return_type": "u64",
@@ -12248,7 +12410,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "other",
@@ -12267,7 +12429,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "state",
@@ -12285,7 +12447,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "state",
@@ -12303,7 +12465,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "state",
@@ -12321,7 +12483,7 @@
         "args": [
             [
                 "self",
-                "self"
+                "&self"
             ],
             [
                 "state",
@@ -12581,7 +12743,9 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
         "doc": [
             "TODO! add computation of minimum node degree",
+            "TODO! add computation of minimum edge weight",
             "TODO! add computation of maximum node degree",
+            "TODO! add computation of maximum edge weight",
             "TODO! add docstring"
         ],
         "modifiers": "pub(crate)",
@@ -12633,7 +12797,7 @@
             ]
         ],
         "return_type": "Result<\n    (\n        EliasFano,\n        Option<EliasFano>,\n        Option<Vec<Option<EdgeTypeT>>>,\n        Option<Vec<WeightT>>,\n        EdgeT,\n        EdgeT,\n        NodeT,\n        NodeT,\n        NodeT,\n        u8,\n        u64,\n        Option<BitVec<Lsb0, u8>>,\n        Option<RoaringBitmap>,\n    ),\n    String,\n>",
-        "body": "info!(\"Started building of EliasFano edges data structure.\");\n    let node_bits = get_node_bits(nodes_number);\n    let node_bit_mask = (1 << node_bits) - 1;\n    let mut edges: EliasFano =\n        EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;\n\n    // The graph might still contain duplicated edges, therefore the provided edges\n    // number is a maximal value.\n    let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    let mut weights: Option<Vec<WeightT>> = if has_weights {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    // The unique sources variable is equal to the set of nodes of the graph when\n    // there are no singletons and the graph is undirected. Otherwise, if there is\n    // a singleton node, that must not appear in this set.\n    // We will use this set during the random walks and other graph algorithms\n    // in order to obtain the nth source node. For this reason we cannot\n    // use a bitvec here, since we need to execute an unchecked select when the\n    // object is not equal to the set of the nodes to remap the nth source node\n    // to the nth unique source node, excluding the eventual; singleton nodes.\n    // Similarly, in directed graphs, only a subset of the nodes might be a\n    // source as there might be traps.\n    // In the case of directed graphs, we have additionally the might have trap nodes\n    // parameter which allows to specify whether the graph is known to contain\n    // trap nodes. The parameter only makes sense in directed graphs.\n    // Since we expect that the average use case (when we arew not dealing with pathological graphs)\n    // the following set should be relatively dense, when we know that the set of unique\n    // sources will be needed but it will be equal to the nodes with edges set, we compute it\n    // afterwards. This is because it is known that an Elias Fano data structure\n    // uses more than twice the memory required by a bitvec to memorize a set of\n    // dense values.\n    let mut unique_sources: Option<EliasFano> =\n        if directed && (might_have_trap_nodes || might_have_singletons) {\n            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)\n        } else {\n            None\n        };\n    // When the graph is either undirected or directed without trap nodes, the unique sources set and the\n    // nodes with edges set are equal one another.\n    // We need to compute the following set when it is not trivial, that is when\n    // either the graph is undirected and there are no singletons or alternatively\n    // when the graph is directed and there are neither trap nodes nor singletons.\n    // Additionally, since we need this support data structure when computing the\n    // number of singletons with selfloops, we need to create it also when it has\n    // been specified that there might be singletons with selfloops.\n    let mut not_singleton_nodes: Option<_> =\n        if might_have_singletons || might_have_singletons_with_selfloops {\n            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])\n        } else {\n            None\n        };\n\n    // Last source inserted\n    let mut last_src: NodeT = 0;\n    let mut last_dst: NodeT = 0;\n    let mut last_edge_type: Option<EdgeTypeT> = None;\n    let mut unique_edges_number: EdgeT = 0;\n    let mut unique_self_loop_number: NodeT = 0;\n    let mut self_loop_number: EdgeT = 0;\n    let mut forward_undirected_edges_counter: EdgeT = 0;\n    let mut backward_undirected_edges_counter: EdgeT = 0;\n    let mut not_singleton_node_number: NodeT =\n        if might_have_singletons || might_have_singletons_with_selfloops {\n            0\n        } else {\n            nodes_number\n        };\n    // This bitvec should be really sparse ON SANE GRAPHS\n    // so we use a roaring bitvec to save memory.\n    let mut singleton_nodes_with_self_loops = if might_have_singletons_with_selfloops {\n        Some(RoaringBitmap::new())\n    } else {\n        None\n    };\n\n    let mut first = true;\n    for value in edges_iter {\n        let (src, dst, edge_type, weight) = value?;\n        let different_src = last_src != src || first;\n        let different_dst = last_dst != dst || first;\n        let self_loop = src == dst;\n        let different_edge_type = last_edge_type != edge_type || first;\n        if !(different_src || different_dst || different_edge_type) {\n            if ignore_duplicated_edges {\n                continue;\n            } else {\n                return Err(\"A duplicated edge was found while building the graph.\".to_owned());\n            }\n        }\n\n        if let Some(ets) = &mut edge_type_ids {\n            ets.push(edge_type);\n        }\n        match (&mut weights, weight) {\n            (Some(ws), Some(w)) => {\n                validate_weight(w)?;\n                ws.push(w);\n                Ok(())\n            }\n            (None, Some(_)) => Err(concat!(\n                \"A non-None weight was provided but no weights are expected \",\n                \"because the has_weights flag has been set to false.\"\n            )),\n            (Some(_), None) => Err(concat!(\n                \"A None weight was found.\\n\",\n                \"This might mean you have either provided a None weight to the edge list or \",\n                \"you may have an empty weight in your edge list file.\\n\",\n                \"If you intend to load this edge list WITHOUT weights, do not provide the \",\n                \"edge weights colum or column number.\\n\",\n                \"If you intend to load this edge with its weight, add a default weight.\"\n            )),\n            _ => Ok(()),\n        }?;\n\n        if !directed && !edge_list_is_correct {\n            match src.cmp(&dst) {\n                Ordering::Greater => {\n                    // We retrieve the edge id of the forward edge, the one going from\n                    // dst to src.\n                    let maybe_edge_id = edges.rank(encode_edge(dst, src, node_bits));\n                    // Now we need to find, starting from edge id, if the edge types are given,\n                    // the correct edge id: if we are in a multi-graph the edge may be the same\n                    // but have multiple edge types and hence be reported multiple times.\n                    let maybe_edge_id = maybe_edge_id.and_then(|min_edge_id| {\n                        edge_type_ids.as_ref().map_or(Some(min_edge_id), |ets| {\n                            (min_edge_id\n                                ..edges.unchecked_rank(encode_edge(dst, src + 1, node_bits)))\n                                .find(|edge_id| ets[*edge_id as usize] == edge_type)\n                        })\n                    });\n                    // Finally now we need to check if the weights of the two edges, if given\n                    // are actually equal.\n                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {\n                        weights.as_ref().map_or(false, |ws| {\n                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON\n                        })\n                    });\n                    if has_unbalanced_undirected_edge {\n                        return Err(concat!(\n                            \"You are trying to load an undirected \",\n                            \"graph using the directed edge list \",\n                            \"paremeter that requires for ALL edges to \",\n                            \"be fully defined in both directions.\\n\",\n                            \"The edge list you have provided does not \",\n                            \"provide the edges in both directions.\",\n                        )\n                        .to_string());\n                    }\n                    backward_undirected_edges_counter += 1\n                }\n                Ordering::Less => forward_undirected_edges_counter += 1,\n                Ordering::Equal => {}\n            }\n        }\n        last_edge_type = edge_type;\n        edges.unchecked_push(encode_edge(src, dst, node_bits));\n        if self_loop {\n            self_loop_number += 1;\n        }\n        if different_src || different_dst {\n            if let Some(nwe) = &mut not_singleton_nodes {\n                for node in &[src, dst] {\n                    unsafe {\n                        let mut ptr = nwe.get_unchecked_mut(*node as usize);\n                        if !*ptr {\n                            *ptr = true;\n                            if !self_loop || singleton_nodes_with_self_loops.is_none() {\n                                not_singleton_node_number += 1;\n                            } else {\n                                if let Some(bitmap) = &mut singleton_nodes_with_self_loops {\n                                    bitmap.insert(*node);\n                                }\n                                break;\n                            }\n                        } else if !self_loop\n                            && singleton_nodes_with_self_loops\n                                .as_mut()\n                                .map_or(false, |bitmap| bitmap.remove(*node))\n                        {\n                            not_singleton_node_number += 1;\n                        }\n                    }\n                }\n            }\n            unique_edges_number += 1;\n            if self_loop {\n                unique_self_loop_number += 1;\n            }\n            if different_src {\n                if let Some(us) = &mut unique_sources {\n                    us.unchecked_push(src as u64);\n                }\n            }\n        }\n        last_src = src;\n        last_dst = dst;\n        first = false;\n    }\n\n    if forward_undirected_edges_counter != backward_undirected_edges_counter {\n        return Err(concat!(\n            \"You are trying to load an undirected graph \",\n            \"from a directed edge list but the edge list is not \",\n            \"complete.\"\n        )\n        .to_owned());\n    }\n\n    if let Some(ws) = &weights {\n        if edges.len() != ws.len() {\n            panic!(\n                \"The number of weights {} does not match the number of edges {}.\",\n                ws.len(),\n                edges.len()\n            );\n        }\n        if ws.is_empty() {\n            weights = None;\n        }\n    }\n\n    if let Some(ets) = &edge_type_ids {\n        if edges.len() != ets.len() {\n            panic!(\n                \"The number of edge types {} does not match the number of edges {}.\",\n                ets.len(),\n                edges.len()\n            );\n        }\n\n        if ets.is_empty() {\n            edge_type_ids = None;\n        }\n    }\n\n    if not_singleton_node_number > nodes_number {\n        panic!(\n            \"There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'\",\n            not_singleton_node_number, nodes_number\n        );\n    }\n\n    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops\n        .as_ref()\n        .map_or(0, |bitmap| bitmap.len() as NodeT);\n\n    // While on internal methods nodes_number is always exact, the user may\n    // provide a wrong value for nodes_number when loading a sorted csv.\n    // If this happens, it might cause a slow down in the walk and other\n    // currently unforseen consequences.\n    if nodes_number == not_singleton_node_number + singleton_nodes_with_self_loops_number {\n        unique_sources = None;\n    }\n\n    // When we have computed the nodes with edges set but we have left None\n    // the unique sources elias fano, this is done to avoid using extra memory\n    // for no reason. We need to create the elias fano object starting from the\n    // nodes with edges now to normalize the returned values.\n    if might_have_singletons\n        && unique_sources.is_none()\n        && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number\n    {\n        unique_sources = not_singleton_nodes\n            .as_ref()\n            .map_or(Ok::<_, String>(None), |nsns| {\n                Ok(Some(EliasFano::from_iter(\n                    nsns.iter_ones().into_iter().map(|x| x as u64),\n                    nodes_number as u64,\n                    not_singleton_node_number as usize\n                        + singleton_nodes_with_self_loops_number as usize,\n                )?))\n            })?;\n    }\n\n    if !directed\n        && unique_sources\n            .as_ref()\n            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)\n    {\n        panic!(\n            \"There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'\",\n            not_singleton_node_number, unique_sources.unwrap().len()\n        );\n    }\n\n    Ok((\n        edges,\n        unique_sources,\n        edge_type_ids,\n        weights,\n        unique_edges_number,\n        self_loop_number,\n        unique_self_loop_number,\n        not_singleton_node_number,\n        singleton_nodes_with_self_loops_number,\n        node_bits,\n        node_bit_mask,\n        not_singleton_nodes,\n        singleton_nodes_with_self_loops,\n    ))"
+        "body": "info!(\"Started building of EliasFano edges data structure.\");\n    let node_bits = get_node_bits(nodes_number);\n    let node_bit_mask = (1 << node_bits) - 1;\n    let mut edges: EliasFano =\n        EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;\n\n    // The graph might still contain duplicated edges, therefore the provided edges\n    // number is a maximal value.\n    let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    let mut weights: Option<Vec<WeightT>> = if has_weights {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    // The unique sources variable is equal to the set of nodes of the graph when\n    // there are no singletons and the graph is undirected. Otherwise, if there is\n    // a singleton node, that must not appear in this set.\n    // We will use this set during the random walks and other graph algorithms\n    // in order to obtain the nth source node. For this reason we cannot\n    // use a bitvec here, since we need to execute an unchecked select when the\n    // object is not equal to the set of the nodes to remap the nth source node\n    // to the nth unique source node, excluding the eventual; singleton nodes.\n    // Similarly, in directed graphs, only a subset of the nodes might be a\n    // source as there might be traps.\n    // In the case of directed graphs, we have additionally the might have trap nodes\n    // parameter which allows to specify whether the graph is known to contain\n    // trap nodes. The parameter only makes sense in directed graphs.\n    // Since we expect that the average use case (when we arew not dealing with pathological graphs)\n    // the following set should be relatively dense, when we know that the set of unique\n    // sources will be needed but it will be equal to the nodes with edges set, we compute it\n    // afterwards. This is because it is known that an Elias Fano data structure\n    // uses more than twice the memory required by a bitvec to memorize a set of\n    // dense values.\n    let mut unique_sources: Option<EliasFano> =\n        if directed && (might_have_trap_nodes || might_have_singletons) {\n            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)\n        } else {\n            None\n        };\n    // When the graph is either undirected or directed without trap nodes, the unique sources set and the\n    // nodes with edges set are equal one another.\n    // We need to compute the following set when it is not trivial, that is when\n    // either the graph is undirected and there are no singletons or alternatively\n    // when the graph is directed and there are neither trap nodes nor singletons.\n    // Additionally, since we need this support data structure when computing the\n    // number of singletons with selfloops, we need to create it also when it has\n    // been specified that there might be singletons with selfloops.\n    let mut not_singleton_nodes: Option<_> =\n        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0{\n            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])\n        } else {\n            None\n        };\n\n    // Last source inserted\n    let mut last_src: NodeT = 0;\n    let mut last_dst: NodeT = 0;\n    let mut last_edge_type: Option<EdgeTypeT> = None;\n    let mut unique_edges_number: EdgeT = 0;\n    let mut unique_self_loop_number: NodeT = 0;\n    let mut self_loop_number: EdgeT = 0;\n    let mut forward_undirected_edges_counter: EdgeT = 0;\n    let mut backward_undirected_edges_counter: EdgeT = 0;\n    let mut not_singleton_node_number: NodeT =\n        if might_have_singletons || might_have_singletons_with_selfloops {\n            0\n        } else {\n            nodes_number\n        };\n    // This bitvec should be really sparse ON SANE GRAPHS\n    // so we use a roaring bitvec to save memory.\n    let mut singleton_nodes_with_self_loops = if might_have_singletons_with_selfloops {\n        Some(RoaringBitmap::new())\n    } else {\n        None\n    };\n\n    let mut first = true;\n    for value in edges_iter {\n        let (src, dst, edge_type, weight) = value?;\n        let different_src = last_src != src || first;\n        let different_dst = last_dst != dst || first;\n        let self_loop = src == dst;\n        let different_edge_type = last_edge_type != edge_type || first;\n        if !(different_src || different_dst || different_edge_type) {\n            if ignore_duplicated_edges {\n                continue;\n            } else {\n                return Err(\"A duplicated edge was found while building the graph.\".to_owned());\n            }\n        }\n\n        if let Some(ets) = &mut edge_type_ids {\n            ets.push(edge_type);\n        }\n        match (&mut weights, weight) {\n            (Some(ws), Some(w)) => {\n                validate_weight(w)?;\n                ws.push(w);\n                Ok(())\n            }\n            (None, Some(_)) => Err(concat!(\n                \"A non-None weight was provided but no weights are expected \",\n                \"because the has_weights flag has been set to false.\"\n            )),\n            (Some(_), None) => Err(concat!(\n                \"A None weight was found.\\n\",\n                \"This might mean you have either provided a None weight to the edge list or \",\n                \"you may have an empty weight in your edge list file.\\n\",\n                \"If you intend to load this edge list WITHOUT weights, do not provide the \",\n                \"edge weights colum or column number.\\n\",\n                \"If you intend to load this edge with its weight, add a default weight.\"\n            )),\n            _ => Ok(()),\n        }?;\n\n        if !directed && !edge_list_is_correct {\n            match src.cmp(&dst) {\n                Ordering::Greater => {\n                    // We retrieve the edge id of the forward edge, the one going from\n                    // dst to src.\n                    let maybe_edge_id = edges.rank(encode_edge(dst, src, node_bits));\n                    // Now we need to find, starting from edge id, if the edge types are given,\n                    // the correct edge id: if we are in a multi-graph the edge may be the same\n                    // but have multiple edge types and hence be reported multiple times.\n                    let maybe_edge_id = maybe_edge_id.and_then(|min_edge_id| {\n                        edge_type_ids.as_ref().map_or(Some(min_edge_id), |ets| {\n                            (min_edge_id\n                                ..edges.unchecked_rank(encode_edge(dst, src + 1, node_bits)))\n                                .find(|edge_id| ets[*edge_id as usize] == edge_type)\n                        })\n                    });\n                    // Finally now we need to check if the weights of the two edges, if given\n                    // are actually equal.\n                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {\n                        weights.as_ref().map_or(false, |ws| {\n                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON\n                        })\n                    });\n                    if has_unbalanced_undirected_edge {\n                        return Err(concat!(\n                            \"You are trying to load an undirected \",\n                            \"graph using the directed edge list \",\n                            \"paremeter that requires for ALL edges to \",\n                            \"be fully defined in both directions.\\n\",\n                            \"The edge list you have provided does not \",\n                            \"provide the edges in both directions.\",\n                        )\n                        .to_string());\n                    }\n                    backward_undirected_edges_counter += 1\n                }\n                Ordering::Less => forward_undirected_edges_counter += 1,\n                Ordering::Equal => {}\n            }\n        }\n        last_edge_type = edge_type;\n        edges.unchecked_push(encode_edge(src, dst, node_bits));\n        if self_loop {\n            self_loop_number += 1;\n        }\n        if different_src || different_dst {\n            if let Some(nwe) = &mut not_singleton_nodes {\n                for node in &[src, dst] {\n                    unsafe {\n                        let mut ptr = nwe.get_unchecked_mut(*node as usize);\n                        if !*ptr {\n                            *ptr = true;\n                            if !self_loop || singleton_nodes_with_self_loops.is_none() {\n                                not_singleton_node_number += 1;\n                            } else {\n                                if let Some(bitmap) = &mut singleton_nodes_with_self_loops {\n                                    bitmap.insert(*node);\n                                }\n                                break;\n                            }\n                        } else if !self_loop\n                            && singleton_nodes_with_self_loops\n                                .as_mut()\n                                .map_or(false, |bitmap| bitmap.remove(*node))\n                        {\n                            not_singleton_node_number += 1;\n                        }\n                    }\n                }\n            }\n            unique_edges_number += 1;\n            if self_loop {\n                unique_self_loop_number += 1;\n            }\n            if different_src {\n                if let Some(us) = &mut unique_sources {\n                    us.unchecked_push(src as u64);\n                }\n            }\n        }\n        last_src = src;\n        last_dst = dst;\n        first = false;\n    }\n\n    if forward_undirected_edges_counter != backward_undirected_edges_counter {\n        return Err(concat!(\n            \"You are trying to load an undirected graph \",\n            \"from a directed edge list but the edge list is not \",\n            \"complete.\"\n        )\n        .to_owned());\n    }\n\n    if let Some(ws) = &weights {\n        if edges.len() != ws.len() {\n            panic!(\n                \"The number of weights {} does not match the number of edges {}.\",\n                ws.len(),\n                edges.len()\n            );\n        }\n        if ws.is_empty() {\n            weights = None;\n        }\n    }\n\n    if let Some(ets) = &edge_type_ids {\n        if edges.len() != ets.len() {\n            panic!(\n                \"The number of edge types {} does not match the number of edges {}.\",\n                ets.len(),\n                edges.len()\n            );\n        }\n\n        if ets.is_empty() {\n            edge_type_ids = None;\n        }\n    }\n\n    if not_singleton_node_number > nodes_number {\n        panic!(\n            \"There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'\",\n            not_singleton_node_number, nodes_number\n        );\n    }\n\n    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops\n        .as_ref()\n        .map_or(0, |bitmap| bitmap.len() as NodeT);\n\n    // While on internal methods nodes_number is always exact, the user may\n    // provide a wrong value for nodes_number when loading a sorted csv.\n    // If this happens, it might cause a slow down in the walk and other\n    // currently unforseen consequences.\n    if nodes_number == not_singleton_node_number + singleton_nodes_with_self_loops_number {\n        unique_sources = None;\n    }\n\n    // When we have computed the nodes with edges set but we have left None\n    // the unique sources elias fano, this is done to avoid using extra memory\n    // for no reason. We need to create the elias fano object starting from the\n    // nodes with edges now to normalize the returned values.\n    if might_have_singletons\n        && unique_sources.is_none()\n        && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number\n    {\n        unique_sources = not_singleton_nodes\n            .as_ref()\n            .map_or(Ok::<_, String>(None), |nsns| {\n                Ok(Some(EliasFano::from_iter(\n                    nsns.iter_ones().into_iter().map(|x| x as u64),\n                    nodes_number as u64,\n                    not_singleton_node_number as usize\n                        + singleton_nodes_with_self_loops_number as usize,\n                )?))\n            })?;\n    }\n\n    if !directed\n        && unique_sources\n            .as_ref()\n            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)\n    {\n        panic!(\n            \"There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'\",\n            not_singleton_node_number, unique_sources.unwrap().len()\n        );\n    }\n\n    Ok((\n        edges,\n        unique_sources,\n        edge_type_ids,\n        weights,\n        unique_edges_number,\n        self_loop_number,\n        unique_self_loop_number,\n        not_singleton_node_number,\n        singleton_nodes_with_self_loops_number,\n        node_bits,\n        node_bit_mask,\n        not_singleton_nodes,\n        singleton_nodes_with_self_loops,\n    ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",

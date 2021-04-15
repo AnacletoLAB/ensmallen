@@ -67,7 +67,7 @@ class RustParser:
         maybe_self, text = partition(arguments, ",")
 
         if "self" in maybe_self:
-            result.append(("self", maybe_self[1:].strip().rstrip(")").lstrip("(")))
+            result.append(("self", maybe_self.strip().rstrip(")").lstrip("(")))
             arguments = text
 
         flat = [

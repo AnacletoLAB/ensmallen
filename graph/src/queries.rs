@@ -2,7 +2,9 @@ use super::*;
 use rayon::prelude::*;
 
 /// # Queries
-/// The naming convention we follow is `get_X_from_Y`.
+/// The naming convention we follow is:
+/// * `get_(.+)_from_(.+)`
+/// * `get_unchecked_(.+)_from_(.+)`
 impl Graph {
     #[inline(always)]
     /// Returns node IDs corresponding to given edge ID.
@@ -224,11 +226,15 @@ impl Graph {
 
     /// Return vector with top k central node Ids.
     ///
+    /// If the k passed is bigger than the number of nodes this method will return
+    /// all the nodes in the graph.
+    ///
     /// # Arguments
     ///
     /// * k: NodeT - Number of central nodes to extract.
     /// TODO: This can be refactored to run faster!
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
+        let k = k.min(self.get_nodes_number());
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_unchecked_node_degree_from_node_id(node_id), node_id))
             .collect();

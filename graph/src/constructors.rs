@@ -432,7 +432,7 @@ pub(crate) fn build_edges(
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
     let mut not_singleton_nodes: Option<_> =
-        if might_have_singletons || might_have_singletons_with_selfloops {
+        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0{
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
             None
