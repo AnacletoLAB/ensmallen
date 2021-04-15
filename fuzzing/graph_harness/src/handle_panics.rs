@@ -187,7 +187,7 @@ fn get_path(wanted_folder: &str) -> std::path::PathBuf {
     new_path
 }
 
-fn dump_backtrace(&path: &str) {
+fn dump_backtrace(path: &str) {
     let current_backtrace = Backtrace::new();
     std::fs::write(format!("{}/backtrace.txt", &path), format!("{:#4?}", &current_backtrace))
         .expect("Cannot write the backtrace file");
