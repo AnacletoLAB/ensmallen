@@ -37,32 +37,40 @@ Graph {
                 Some(
                     [
                            0,
+                           1,
+                           2,
                     ],
                 ),
             ],
             vocabulary: Vocabulary {
                 map: {
-                    "\u{3}":    0,
+                    "a":    1,
+                    "W":    0,
+                    "))))))":    2,
                 },
                 reverse_map: [
-                    "\u{3}",
+                    "W",
+                    "a",
+                    "))))))",
                 ],
                 numeric_ids: false,
             },
             counts: [
                    1,
+                   1,
+                   1,
             ],
             unknown_count:    0,
-            multilabel: false,
+            multilabel: true,
         },
     ),
     edge_types: None,
     nodes: Vocabulary {
         map: {
-            "hv":    0,
+            "+":    0,
         },
         reverse_map: [
-            "hv",
+            "+",
         ],
         numeric_ids: false,
     },
@@ -75,7 +83,7 @@ Graph {
     name: "Gino",
     not_singleton_nodes: Some(
         BitVec<bitvec::order::Lsb0, u8> {
-            addr: 0x602000dec6d0,
+            addr: 0x60200064b270,
             head: 000,
             bits:    1,
             capacity:   64,
@@ -120,8 +128,10 @@ Graph {
     cached_report: ClonableRwLock {
         value: RwLock {
             data: Some(
-                "The undirected graph Gino has 1 nodes with a single node type: \u{3} (nodes number 1) There are 1 singleton nodes, and 0 unweighted edges, of which none are self-loops. The graph is extremely sparse as it has a density of 0.00000 and is connected, as it has a single component. The graph median node degree is 0, the mean node degree is 0.00, and the node degree mode is 0. The top 1 most central nodes are hv (degree 0). The hash of the graph is 8294a85cb085dca8.",
+                "The undirected graph Gino has 1 nodes with 3 different multi-label node types: a (nodes number 1), )))))) (nodes number 1) and W (nodes number 1). There are 1 singleton nodes, and 0 unweighted edges, of which none are self-loops. The graph is extremely sparse as it has a density of 0.00000 and is connected, as it has a single component. The graph median node degree is 0, the mean node degree is 0.00, and the node degree mode is 0. The top 1 most central nodes are + (degree 0). The hash of the graph is d3c314a5011bc64c.",
             ),
+            poisoned: false,
+            ..
         },
     },
     destinations: None,

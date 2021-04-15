@@ -1,12 +1,12 @@
 FromVecHarnessParams {
     directed: false,
-    directed_edge_list: false,
+    directed_edge_list: true,
     ignore_duplicated_nodes: false,
-    ignore_duplicated_edges: true,
-    verbose: false,
-    numeric_edge_types_ids: false,
+    ignore_duplicated_edges: false,
+    verbose: true,
+    numeric_edge_types_ids: true,
     numeric_node_ids: false,
-    numeric_edge_node_ids: false,
+    numeric_edge_node_ids: true,
     numeric_node_types_ids: false,
     has_node_types: true,
     has_edge_types: false,
@@ -16,10 +16,12 @@ FromVecHarnessParams {
         [
             Ok(
                 (
-                    "hv",
+                    "+",
                     Some(
                         [
-                            "\u{3}",
+                            "W",
+                            "a",
+                            "))))))",
                         ],
                     ),
                 ),
