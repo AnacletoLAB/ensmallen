@@ -1,6 +1,6 @@
 use super::*;
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::prelude::*;use backtrace::Backtrace;
 
 /// Simple macro to dump in a standard way all the pairs key:value
 macro_rules! dump {
@@ -27,6 +27,7 @@ pub(crate) fn handle_panics_from_csv(info: Option<&std::panic::PanicInfo>, data:
     println!("Panic: {:?}", info);
     // Find the root of the repository
     let path = get_folder();
+    dump_backtrace(path);
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
@@ -54,6 +55,7 @@ pub(crate) fn handle_panics_from_csv_once_loaded(
     println!("Panic: {:?}", info);
     // Find the root of the repository
     let path = get_folder();
+    dump_backtrace(path);
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
@@ -83,6 +85,7 @@ pub(crate) fn handle_panics_from_csv_once_loaded(
 pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data: FromVecHarnessParams, sig_num: Option<i32>) -> String {
     println!("Panic: {:?}", info);
     let path = get_folder();
+    dump_backtrace(path);
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
@@ -117,6 +120,7 @@ pub(crate) fn handle_panics_from_vec_once_loaded(
 ) -> String {
     println!("Panic: {:?}", info);
     let path = get_folder();
+    dump_backtrace(path);
     // Dump the informations
     std::fs::write(format!("{}/data.txt", &path), format!("{:#4?}", &data))
         .expect("Cannot write the edge file");
@@ -147,9 +151,10 @@ pub(crate) fn handle_panics_from_vec_once_loaded(
 /// this is needed for the automatic generation of unit tests from fuzzing.
 pub(crate) fn handle_panics_mega_test(info: Option<&std::panic::PanicInfo>, data: TheUltimateFuzzer, sig_num: Option<i32>) {
     let path = handle_panics_from_vec(info, data.from_vec.clone(), None);
+    dump_backtrace(path);
+    
     std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
-        .expect("Cannot write the edge file");
-
+        .expect("Cannot write the megatest file");
 }
 
 /// This function takes the data used for the current fuzz case and dump it.
@@ -160,9 +165,10 @@ pub(crate) fn handle_panics_mega_test_once_loaded(
     graph: Graph,
 ) {    
     let path = handle_panics_from_vec_once_loaded(info, data.from_vec.clone(), graph);
-    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
-        .expect("Cannot write the edge file");
+    dump_backtrace(path);
 
+    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
+        .expect("Cannot write the megatest file");
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.
@@ -179,6 +185,12 @@ fn get_path(wanted_folder: &str) -> std::path::PathBuf {
     }
 
     new_path
+}
+
+fn dump_backtrace(path: &str) {
+    let current_backtrace = Backtrace::new();
+    std::fs::write(format!("{}/backtrace.txt", &path), format!("{:#4?}", &current_backtrace))
+        .expect("Cannot write the backtrace file");
 }
 
 fn dump_graph_metadata_from_vec(path: String, data: &FromVecHarnessParams) {

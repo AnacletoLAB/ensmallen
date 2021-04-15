@@ -75,7 +75,7 @@ Graph {
     name: "Gino",
     not_singleton_nodes: Some(
         BitVec<bitvec::order::Lsb0, u8> {
-            addr: 0x602000dec6d0,
+            addr: 0x60200023f890,
             head: 000,
             bits:    1,
             capacity:   64,
