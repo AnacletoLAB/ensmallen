@@ -34,8 +34,8 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree_from_node_id(one).unwrap() as usize
-            * self.get_node_degree_from_node_id(two).unwrap() as usize)
+        Ok(self.get_unchecked_node_degree_from_node_id(one) as usize
+            * self.get_unchecked_node_degree_from_node_id(two) as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -118,7 +118,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / (self.get_node_degree_from_node_id(*node).unwrap() as f64).ln())
+            .map(|node| 1.0 / (self.get_unchecked_node_degree_from_node_id(*node) as f64).ln())
             .sum())
     }
 
@@ -159,7 +159,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / self.get_node_degree_from_node_id(*node).unwrap() as f64)
+            .map(|node| 1.0 / self.get_unchecked_node_degree_from_node_id(*node) as f64)
             .sum())
     }
 
@@ -178,7 +178,7 @@ impl Graph {
                     self.iter_node_neighbours_ids(node)
                         .map(|dst| self.is_node_trap_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_node_degree_from_node_id(node).unwrap() as f64
+                        / self.get_unchecked_node_degree_from_node_id(node) as f64
                 } else {
                     1.0
                 }
@@ -649,7 +649,7 @@ impl Graph {
                     format!(
                         "{node_name} (degree {node_degree})",
                         node_name = self.get_node_name_from_node_id(*node_id).unwrap(),
-                        node_degree = self.get_node_degree_from_node_id(*node_id).unwrap()
+                        node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)
                     )
                 })
                 .collect::<Vec<String>>()

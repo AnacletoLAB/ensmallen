@@ -170,15 +170,7 @@ impl Graph {
         &self,
         edge_id: EdgeT,
     ) -> Result<(NodeT, NodeT, Option<EdgeTypeT>), String> {
-        if edge_id >= self.get_directed_edges_number() {
-            Err(format!(
-                "The given edge id ({}) is higher than the edges of the graph ({}).",
-                edge_id,
-                self.get_directed_edges_number()
-            ))
-        } else {
-            Ok(self.get_unchecked_node_ids_and_type_from_edge_id(edge_id))
-        }
+        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_node_ids_and_type_from_edge_id(edge_id))
     }
 
     /// Return the src, dst, edge type and weight of a given edge ID.
@@ -210,6 +202,26 @@ impl Graph {
         )
     }
 
+    /// Return the src, dst, edge type and weight of a given edge ID.
+    ///
+    /// # Arguments
+    /// `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
+    ///
+    /// # Example
+    /// In order to retrieve a given edge ID informations, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.get_node_ids_type_and_weight_from_edge_id(0).is_ok());
+    /// assert!(graph.get_node_ids_type_and_weight_from_edge_id(10000000000).is_err());
+    /// ```
+    pub fn get_node_ids_type_and_weight_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String> {
+        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id))
+    }
+
     /// Return vector with top k central node Ids.
     ///
     /// # Arguments
@@ -217,7 +229,7 @@ impl Graph {
     /// * k: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
-            .map(|node_id| (self.get_node_degree_from_node_id(node_id).unwrap(), node_id))
+            .map(|node_id| (self.get_unchecked_node_degree_from_node_id(node_id), node_id))
             .collect();
         nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
@@ -225,6 +237,33 @@ impl Graph {
             .iter()
             .map(|(_, node_id)| *node_id)
             .collect()
+    }
+
+    /// Returns the number of outbound neighbours of given node.
+    ///
+    /// The method will panic if the given node id is higher than the number of
+    /// nodes in the graph.
+    ///
+    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id` - Integer ID of the node.
+    ///
+    pub fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
+        let (max_edge_id, min_edge_id)  = self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
+        (max_edge_id - min_edge_id) as NodeT
+    }
+
+    /// Returns the number of outbound neighbours of given node.
+    ///
+    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
+    ///
+    /// # Arguments
+    /// * `node_id` - Integer ID of the node.
+    ///
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
     }
 
     /// Return vector with top k central node names.
@@ -476,6 +515,7 @@ impl Graph {
     }
 
     /// Returns result with the node name.
+    /// TODO: create unchecked version!
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
         match node_id < self.get_nodes_number() {
             true => Ok(self.nodes.unchecked_translate(node_id)),
@@ -964,11 +1004,14 @@ impl Graph {
 
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
+    /// The method will panic if the given source node ID is higher than
+    /// the number of nodes in the graph.
+    ///
     /// # Arguments
     ///
-    /// * src: NodeT - Node for which we need to compute the outbounds range.
+    /// * `src`: NodeT - Node for which we need to compute the outbounds range.
     ///
-    pub(crate) fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> (EdgeT, EdgeT) {
+    pub fn get_unchecked_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> (EdgeT, EdgeT) {
         match &self.outbounds {
             Some(outbounds) => {
                 let min_edge_id = if src == 0 {
@@ -992,6 +1035,16 @@ impl Graph {
                 )
             }
         }
+    }
+
+    /// Return range of outbound edges IDs which have as source the given Node.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Node for which we need to compute the outbounds range.
+    ///
+    pub fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> Result<(EdgeT, EdgeT), String> {
+        self.validate_node_id(src).map(|src| self.get_unchecked_minmax_edge_ids_from_source_node_id(src))
     }
 
     /// Return node type name of given node type.
@@ -1023,26 +1076,5 @@ impl Graph {
             Err("Node types not available for the current graph instance.".to_string()),
             |nts| nts.translate_vector(node_type_ids),
         )
-    }
-
-    /// Returns the number of outbound neighbours of given node.
-    ///
-    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
-    ///
-    /// # Arguments
-    ///
-    /// * `node_id` - Integer ID of the node.
-    ///
-    /// TODO: CREATE UNCHECKED VERSION!!!
-    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
-        if node_id >= self.get_nodes_number() {
-            return Err(format!(
-                "The node ID {} is higher than the number of available nodes {}.",
-                node_id,
-                self.get_nodes_number()
-            ));
-        }
-        let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_source_node_id(node_id);
-        Ok((max_edge_id - min_edge_id) as NodeT)
     }
 }

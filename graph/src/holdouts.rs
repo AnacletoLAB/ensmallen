@@ -519,8 +519,7 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop =
-                    src == dst && self.get_node_degree_from_node_id(src).unwrap() == 1;
+                let singleton_self_loop = self.is_singleton_with_self_loops_from_node_id(src);
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -931,7 +930,7 @@ impl Graph {
 
         let edges_bitmap =
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
-                let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_source_node_id(src);
+                let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                 (min_edge_id..max_edge_id)
                     .filter(|edge_id| {
                         unique_nodes

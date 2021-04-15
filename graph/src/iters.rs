@@ -17,7 +17,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> std::ops::Range<usize> {
-        let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_source_node_id(src);
+        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
         min_edge_id as usize..max_edge_id as usize
     }
 
@@ -34,13 +34,13 @@ impl Graph {
     /// Return iterator on the node degrees of the graph.
     pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_node_ids()
-            .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
+            .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
     }
 
     /// Return iterator on the node degrees of the graph.
     pub fn par_iter_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids()
-            .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
+            .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
     }
 
     /// Return iterator on the singleton nodes of the graph.

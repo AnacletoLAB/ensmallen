@@ -10,6 +10,7 @@ impl Graph {
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
+    /// TODO: CREATE UNCHECKED VERSION!
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.has_singletons()
             && self.get_node_degree_from_node_id(node_id)? == 0
@@ -106,6 +107,7 @@ impl Graph {
     ///
     /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
+    /// TODO: CREATE UNCHECKED VERSION!
     pub fn is_node_trap_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.get_node_degree_from_node_id(node_id)? == 0
             && self

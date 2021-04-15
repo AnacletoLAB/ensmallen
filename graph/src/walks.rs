@@ -506,7 +506,7 @@ impl Graph {
     /// * random_state: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
-        let (min_edge, max_edge) = self.get_minmax_edge_ids_from_source_node_id(node);
+        let (min_edge, max_edge) = self.get_unchecked_minmax_edge_ids_from_source_node_id(node);
         let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state);
 
         match self
