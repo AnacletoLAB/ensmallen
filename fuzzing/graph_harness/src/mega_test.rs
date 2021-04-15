@@ -648,7 +648,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
     let data_copy = data.clone();
     let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_mega_test(info, data_copy.clone());
+        handle_panics_mega_test(Some(info), data_copy.clone(), None);
     }));
 
     let mut graph = graph::Graph::from_string_unsorted(
@@ -656,9 +656,11 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
         data.from_vec.nodes.map(|ns| ns.into_iter()),
         data.from_vec.directed,
         data.from_vec.directed_edge_list,
-        data.from_vec.name,
+        "Gino",
         data.from_vec.ignore_duplicated_nodes,
+        false,
         data.from_vec.ignore_duplicated_edges,
+        false,
         data.from_vec.verbose,
         data.from_vec.numeric_edge_types_ids,
         data.from_vec.numeric_node_ids,
@@ -667,13 +669,16 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
         data.from_vec.has_node_types,
         data.from_vec.has_edge_types,
         data.from_vec.has_weights,
+        true,
+        true,
+        true,
     )?;
     
     
 
     let g_copy = graph.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_mega_test_once_loaded(info, data_copy2.clone(), g_copy.clone());
+        handle_panics_mega_test_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
     }));
 
     

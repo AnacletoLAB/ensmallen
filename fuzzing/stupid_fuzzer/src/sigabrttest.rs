@@ -1,15 +1,15 @@
 use arbitrary::{Arbitrary, Unstructured};
+use std::fs::metadata;
 use graph_harness::{from_vec_harness, FromVecHarnessParams};
 use indicatif::ProgressBar;
-use std::fs::metadata;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressStyle;
 use indicatif::ProgressIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use indicatif::ProgressStyle;
 
-const BATCH_SIZE: u64 = 1000;
+const BATCH_SIZE: u64 = 1;
 
 pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: u64) -> ProgressBar {
     if verbose {
@@ -34,10 +34,8 @@ fn test_file(file_name: String, number_of_test_runs:u64) {
 
     if let Ok(params) = maybe_params {
         (0..number_of_test_runs / BATCH_SIZE).into_par_iter().map(|x| x).progress_with(bar).for_each(
-            |_| {
-                for _ in 0..BATCH_SIZE{
-                    let _ = from_vec_harness(params.clone());
-                }
+            |x| {
+                let _ = from_vec_harness(params.clone());
             }
         );
     }

@@ -17,3 +17,6 @@ use handle_panics::*;
 
 mod signal_handler;
 use signal_handler::*;
+
+mod mega_test;
+pub use mega_test::*;

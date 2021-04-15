@@ -80,7 +80,7 @@ pub(crate) fn handle_panics_from_csv_once_loaded(
 
 /// This function takes the data used for the current fuzz case and dump it.
 /// this is needed for the automatic generation of unit tests from fuzzing.
-pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data: FromVecHarnessParams, sig_num: Option<i32>) {
+pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data: FromVecHarnessParams, sig_num: Option<i32>) -> String {
     println!("Panic: {:?}", info);
     let path = get_folder();
     // Dump the informations
@@ -88,7 +88,7 @@ pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data:
         .expect("Cannot write the edge file");
 
     if let Some(sn) = sig_num {
-        std::fs::write(format!("{}/data.txt", &path), format!("Received signal {}\n", sn))
+        std::fs::write(format!("{}/signal.txt", &path), format!("Received signal {}\n", sn))
         .expect("Cannot write the signal file");
     }
 
@@ -104,6 +104,8 @@ pub(crate) fn handle_panics_from_vec(info: Option<&std::panic::PanicInfo>, data:
         dump_nodes_from_vec(format!("{}/nodes.nodes", path), &nodes);
         dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
     }
+
+    path 
 }
 
 /// This function takes the data used for the current fuzz case and dump it.
@@ -112,7 +114,7 @@ pub(crate) fn handle_panics_from_vec_once_loaded(
     info: Option<&std::panic::PanicInfo>,
     data: FromVecHarnessParams,
     graph: Graph,
-) {
+) -> String {
     println!("Panic: {:?}", info);
     let path = get_folder();
     // Dump the informations
@@ -137,6 +139,30 @@ pub(crate) fn handle_panics_from_vec_once_loaded(
 
     std::fs::write(format!("{}/debug.txt", &path), format!("{:#4?}", graph))
         .expect("Cannot write the edge file");
+
+    path
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_mega_test(info: Option<&std::panic::PanicInfo>, data: TheUltimateFuzzer, sig_num: Option<i32>) {
+    let path = handle_panics_from_vec(info, data.from_vec.clone(), None);
+    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
+        .expect("Cannot write the edge file");
+
+}
+
+/// This function takes the data used for the current fuzz case and dump it.
+/// this is needed for the automatic generation of unit tests from fuzzing.
+pub(crate) fn handle_panics_mega_test_once_loaded(
+    info: Option<&std::panic::PanicInfo>,
+    data: TheUltimateFuzzer,
+    graph: Graph,
+) {    
+    let path = handle_panics_from_vec_once_loaded(info, data.from_vec.clone(), graph);
+    std::fs::write(format!("{}/mega_test.txt", &path), format!("{:#4?}", &data))
+        .expect("Cannot write the edge file");
+
 }
 
 /// Return a path stopping at the first occurence of wanted_folder.
