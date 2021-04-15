@@ -680,7 +680,6 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.has_weights();
 	graph.is_directed();
 	graph.is_multigraph();
-	graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
 	graph.is_singleton_with_self_loops_from_node_id(data.is_singleton_with_self_loops_from_node_id.node_id);
 	graph.random_spanning_arborescence_kruskal(data.random_spanning_arborescence_kruskal.random_state, &data.random_spanning_arborescence_kruskal.unwanted_edge_types, data.random_spanning_arborescence_kruskal.verbose);
 	graph.report();
@@ -743,6 +742,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_weight_with_type_from_node_ids(data.get_weight_with_type_from_node_ids.src, data.get_weight_with_type_from_node_ids.dst, data.get_weight_with_type_from_node_ids.edge_type);
 	let _ = graph.get_weights();
 	let _ = graph.is_node_trap_from_node_id(data.is_node_trap_from_node_id.node_id);
+	let _ = graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
 	let _ = graph.iter_edge_ids_from_node_ids(data.iter_edge_ids_from_node_ids.src, data.iter_edge_ids_from_node_ids.dst);
 	let _ = graph.iter_weights();
 	let _ = graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two);

@@ -166,5 +166,5 @@ def build_metatest(args):
 
     print("Generated a test with {} methods".format(len(calls)))
 
-    with open(build_path("results/meta_test.rs"), "w") as f:
+    with open(build_path("../../fuzzing/graph_harness/src/meta_test.rs"), "w") as f:
         f.write(output)

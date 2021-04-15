@@ -1,5 +1,5 @@
 [package]
-name = "from_vec"
+name = "meta_test"
 version = "0.1.0"
 authors = ["Tommaso Fontana <tommaso.fontana.96@gmail.com>"]
 edition = "2018"
