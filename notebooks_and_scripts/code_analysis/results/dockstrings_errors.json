@@ -1,55 +1,31 @@
 {
-    "/Workspace/Github/ensmallen_graph/graph/src/trees.rs": {
-        "random_spanning_arborescence_kruskal": [
-            "[   8] The argument type '&Option<HashSet<EdgeTypeT>>' of 'undesired_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'.",
-            "[   ~] Missing the documentation for the argument 'undesired_edge_types'."
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/graph.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs": {
+    "trees.rs": {},
+    "graph.rs": {},
+    "preprocessing.rs": {
         "node2vec": [
-            "[  12] The argument type '&WalksParameters' of 'walk_parameters' does not match the function declaration which is '&'a WalksParameters'.",
+            "[  12] The argument line '* `walk_parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 12) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'walk_parameters'."
         ],
         "cooccurence_matrix": [
-            "[   7] The argument 'parameters' does not exists in the current method. The available args are ['walks_parameters', 'window_size', 'verbose'].",
-            "[   8] The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'.",
-            "[   ~] Missing the documentation for the argument 'walks_parameters'.",
-            "[   ~] Missing the documentation for the argument 'window_size'."
+            "[   7] The argument line '* `walks_parameters`: &'a WalksParameters - the walks parameters.' (doc_line: 7) is not in the standard format.",
+            "[   ~] Missing the documentation for the argument 'walks_parameters'."
         ],
         "link_prediction_degrees": [
-            "[  11] The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'.",
+            "[  11] The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 11) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'."
         ],
         "link_prediction_ids": [
-            "[   9] The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'.",
+            "[   9] The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 9) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/remap.rs": {
-        "are_nodes_remappable": [
-            "[   ~] Missing the documentation for the argument 'other'."
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs": {
-        "is_singleton_from_node_name": [
-            "[   ~] Missing the documentation for the argument 'node_name'."
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/modifiers.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/tarjan.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/queries.rs": {
-        "get_node_ids_from_edge_id": [
-            "[  11] In the example there isn't the current method!!!!"
-        ],
-        "get_node_type_ids_from_node_type_names": [
-            "[   4] The argument 'node_type_names' does not exists in the current method. The available args are ['node_types'].",
-            "[   ~] Missing the documentation for the argument 'node_types'."
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/filters.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs": {
+    "queries_boolean.rs": {},
+    "modifiers.rs": {},
+    "iter_queries.rs": {},
+    "tarjan.rs": {},
+    "queries.rs": {},
+    "filters.rs": {},
+    "metrics.rs": {
         "jaccard_index": [
             "[   7] The example section is missing or in the wrong order."
         ],
@@ -62,13 +38,13 @@
             "[   2] The example section is missing or in the wrong order."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/remove.rs": {
+    "remove.rs": {
         "remove": [
             "[   2] The arguments section is missing or in the wrong order.",
             "[   2] The example section is missing or in the wrong order."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/setters.rs": {
+    "setters.rs": {
         "set_all_edge_types": [
             "[   3] The argument type 'String' of 'edge_type' does not match the function declaration which is 'S'.",
             "[   ~] Missing the documentation for the argument 'edge_type'."
@@ -78,10 +54,9 @@
             "[   ~] Missing the documentation for the argument 'node_type'."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/walks.rs": {
+    "walks.rs": {
         "random_walks_iter": [
-            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'.",
-            "[   ~] Missing the documentation for the argument 'quantity'.",
+            "[   5] The argument line '* `parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 5) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'parameters'."
         ],
         "complete_walks_iter": [
@@ -89,72 +64,61 @@
             "[   ~] Missing the documentation for the argument 'parameters'."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/compression.rs": {
-        "encode_edge": [
-            "[   0] Missing Arguments"
-        ],
-        "decode_edge": [
-            "[   0] Missing Arguments"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/report.rs": {
+    "compression.rs": {},
+    "edge_lists.rs": {},
+    "report.rs": {
         "report": [
             "[  18] The example section is missing or in the wrong order."
-        ],
-        "textual_report": [
-            "[   3] The argument line '* `verbose`:  bool - Whether to show loading bar.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'verbose'."
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/getters.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/iters.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/from_csv.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/hash.rs": {},
-    "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs": {
+    "getters.rs": {},
+    "iters.rs": {},
+    "getters_boolean.rs": {},
+    "from_csv.rs": {},
+    "hash.rs": {},
+    "constructors.rs": {
         "from_string_unsorted": [
             "[   6] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 6) is not in the standard format.",
             "[   7] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format.",
             "[  11] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes_iterator', 'directed', 'directed_edge_list', 'name', 'ignore_duplicated_nodes', 'node_list_is_correct', 'ignore_duplicated_edges', 'edge_list_is_correct', 'verbose', 'numeric_edge_type_ids', 'numeric_node_ids', 'numeric_edge_node_ids', 'numeric_node_types_ids', 'has_node_types', 'has_edge_types', 'has_edge_weights', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
-            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
-            "[   ~] Missing the documentation for the argument 'has_node_types'.",
-            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
             "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
             "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
+            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
+            "[   ~] Missing the documentation for the argument 'has_node_types'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'name'."
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
+            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'node_list_is_correct'."
         ],
         "from_integer_unsorted": [
             "[   4] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> - Iterator of the nodes.' (doc_line: 5) is not in the standard format.",
             "[   7] The argument 'ignore_duplicated_nodes' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
             "[   9] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'nodes'.",
             "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
             "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
+            "[   ~] Missing the documentation for the argument 'nodes'.",
             "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
-            "[   ~] Missing the documentation for the argument 'name'."
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'verbose'."
         ],
         "from_string_sorted": [
             "[   0] Missing Arguments"
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs": {}
+    "holdouts.rs": {}
 }

@@ -1,6 +1,6 @@
 {
     "get_node_edges_and_destinations": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_walk.rs",
+        "file": "queries_walk.rs",
         "function": "get_node_edges_and_destinations",
         "errors": [
             {
@@ -19,7 +19,7 @@
         "extra_headers": []
     },
     "get_destinations_slice": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_walk.rs",
+        "file": "queries_walk.rs",
         "function": "get_destinations_slice",
         "errors": [
             {
@@ -38,7 +38,7 @@
         "extra_headers": []
     },
     "build_operator_graph_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "build_operator_graph_name",
         "errors": [
             {
@@ -57,7 +57,7 @@
         "extra_headers": []
     },
     "generic_string_operator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "generic_string_operator",
         "errors": [
             {
@@ -111,7 +111,7 @@
         "extra_headers": []
     },
     "generic_integer_operator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "generic_integer_operator",
         "errors": [
             {
@@ -165,7 +165,7 @@
         "extra_headers": []
     },
     "validate_operator_terms": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "validate_operator_terms",
         "errors": [
             {
@@ -188,7 +188,7 @@
         "extra_headers": []
     },
     "is_compatible": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "is_compatible",
         "errors": [
             {
@@ -209,7 +209,7 @@
         "extra_headers": []
     },
     "generic_operator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "generic_operator",
         "errors": [
             {
@@ -258,7 +258,7 @@
         "extra_headers": []
     },
     "bitor": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "bitor",
         "errors": [
             {
@@ -281,7 +281,7 @@
         "extra_headers": []
     },
     "bitxor": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "bitxor",
         "errors": [
             {
@@ -304,7 +304,7 @@
         "extra_headers": []
     },
     "sub": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "sub",
         "errors": [
             {
@@ -327,7 +327,7 @@
         "extra_headers": []
     },
     "bitand": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/operators.rs",
+        "file": "operators.rs",
         "function": "bitand",
         "errors": [
             {
@@ -350,7 +350,7 @@
         "extra_headers": []
     },
     "default": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "default",
         "errors": [
             {
@@ -365,7 +365,7 @@
         "extra_headers": []
     },
     "validate_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/utils.rs",
+        "file": "utils.rs",
         "function": "validate_weight",
         "errors": [],
         "args": {
@@ -384,7 +384,7 @@
         "extra_headers": []
     },
     "is_first_order_walk": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "is_first_order_walk",
         "errors": [],
         "args": {
@@ -397,7 +397,7 @@
         "extra_headers": []
     },
     "new": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "new",
         "errors": [
             {
@@ -420,7 +420,7 @@
         "extra_headers": []
     },
     "set_iterations": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_iterations",
         "errors": [],
         "args": {
@@ -445,7 +445,7 @@
         ]
     },
     "get_iterations": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "get_iterations",
         "errors": [],
         "args": {
@@ -458,7 +458,7 @@
         "extra_headers": []
     },
     "set_max_neighbours": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_max_neighbours",
         "errors": [],
         "args": {
@@ -483,7 +483,7 @@
         ]
     },
     "set_random_state": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_random_state",
         "errors": [
             {
@@ -504,7 +504,7 @@
         "extra_headers": []
     },
     "set_dense_node_mapping": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_dense_node_mapping",
         "errors": [
             {
@@ -527,7 +527,7 @@
         "extra_headers": []
     },
     "set_return_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_return_weight",
         "errors": [],
         "args": {
@@ -552,7 +552,7 @@
         ]
     },
     "set_explore_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_explore_weight",
         "errors": [],
         "args": {
@@ -577,7 +577,7 @@
         ]
     },
     "set_change_node_type_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_change_node_type_weight",
         "errors": [],
         "args": {
@@ -602,7 +602,7 @@
         ]
     },
     "set_change_edge_type_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "set_change_edge_type_weight",
         "errors": [],
         "args": {
@@ -627,7 +627,7 @@
         ]
     },
     "validate": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
+        "file": "walks_parameters.rs",
         "function": "validate",
         "errors": [
             {
@@ -667,7 +667,7 @@
         ]
     },
     "get_thread_pool": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "get_thread_pool",
         "errors": [
             {
@@ -682,7 +682,7 @@
         "extra_headers": []
     },
     "iter_edges_from_random_state": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "iter_edges_from_random_state",
         "errors": [
             {
@@ -703,7 +703,7 @@
         "extra_headers": []
     },
     "iter_on_edges_with_preference_from_random_state": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "iter_on_edges_with_preference_from_random_state",
         "errors": [
             {
@@ -737,7 +737,7 @@
         "extra_headers": []
     },
     "kruskal": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "kruskal",
         "errors": [
             {
@@ -757,17 +757,9 @@
         "extra_headers": []
     },
     "random_spanning_arborescence_kruskal": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "random_spanning_arborescence_kruskal",
         "errors": [
-            {
-                "doc_line": 8,
-                "msg": "The argument type '&Option<HashSet<EdgeTypeT>>' of 'undesired_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'undesired_edge_types'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
@@ -781,6 +773,11 @@
                     "desc": "The random_state to use for the holdout"
                 },
                 {
+                    "name": "undesired_edge_types",
+                    "type": "&Option<HashSet<Option<EdgeTypeT>>>",
+                    "desc": "Which edge types id to try to avoid"
+                },
+                {
                     "name": "verbose",
                     "type": "bool",
                     "desc": "Whether to show a loading bar or not"
@@ -791,7 +788,7 @@
         "extra_headers": []
     },
     "spanning_arborescence_kruskal": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "spanning_arborescence_kruskal",
         "errors": [
             {
@@ -812,7 +809,7 @@
         "extra_headers": []
     },
     "spanning_arborescence": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "spanning_arborescence",
         "errors": [
             {
@@ -833,7 +830,7 @@
         "extra_headers": []
     },
     "connected_components": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
+        "file": "trees.rs",
         "function": "connected_components",
         "errors": [],
         "args": {
@@ -851,7 +848,7 @@
         "extra_headers": []
     },
     "write_lines": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_writer.rs",
+        "file": "csv_file_writer.rs",
         "function": "write_lines",
         "errors": [
             {
@@ -888,7 +885,7 @@
         "extra_headers": []
     },
     "compose_lines": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_writer.rs",
+        "file": "csv_file_writer.rs",
         "function": "compose_lines",
         "errors": [
             {
@@ -917,7 +914,7 @@
         "extra_headers": []
     },
     "overlaps": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/graph.rs",
+        "file": "graph.rs",
         "function": "overlaps",
         "errors": [
             {
@@ -938,7 +935,7 @@
         "extra_headers": []
     },
     "contains": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/graph.rs",
+        "file": "graph.rs",
         "function": "contains",
         "errors": [
             {
@@ -959,7 +956,7 @@
         "extra_headers": []
     },
     "fast_u32_modulo": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "fast_u32_modulo",
         "errors": [
             {
@@ -978,7 +975,7 @@
         "extra_headers": []
     },
     "word2vec": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "word2vec",
         "errors": [
             {
@@ -1007,24 +1004,16 @@
         "extra_headers": []
     },
     "cooccurence_matrix": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "cooccurence_matrix",
         "errors": [
             {
                 "doc_line": 7,
-                "msg": "The argument 'parameters' does not exists in the current method. The available args are ['walks_parameters', 'window_size', 'verbose']."
-            },
-            {
-                "doc_line": 8,
-                "msg": "The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'."
+                "msg": "The argument line '* `walks_parameters`: &'a WalksParameters - the walks parameters.' (doc_line: 7) is not in the standard format."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walks_parameters'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": 0,
@@ -1033,6 +1022,11 @@
         ],
         "args": {
             "args": [
+                {
+                    "name": "window_size",
+                    "type": "usize",
+                    "desc": "Window size to consider for the sequences"
+                },
                 {
                     "name": "verbose",
                     "type": "bool",
@@ -1044,12 +1038,12 @@
         "extra_headers": []
     },
     "node2vec": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "node2vec",
         "errors": [
             {
                 "doc_line": 12,
-                "msg": "The argument type '&WalksParameters' of 'walk_parameters' does not match the function declaration which is '&'a WalksParameters'."
+                "msg": "The argument line '* `walk_parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 12) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1078,7 +1072,7 @@
         "extra_headers": []
     },
     "get_neighbours_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "get_neighbours_from_node_id",
         "errors": [
             {
@@ -1119,7 +1113,7 @@
         "extra_headers": []
     },
     "get_node_label_prediction_tuple_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "get_node_label_prediction_tuple_from_node_id",
         "errors": [
             {
@@ -1160,7 +1154,7 @@
         "extra_headers": []
     },
     "get_node_label_prediction_tuple_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "get_node_label_prediction_tuple_from_node_ids",
         "errors": [],
         "args": {
@@ -1199,12 +1193,12 @@
         "extra_headers": []
     },
     "link_prediction_degrees": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "link_prediction_degrees",
         "errors": [
             {
                 "doc_line": 11,
-                "msg": "The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
+                "msg": "The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 11) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1253,12 +1247,12 @@
         "extra_headers": []
     },
     "link_prediction_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
+        "file": "preprocessing.rs",
         "function": "link_prediction_ids",
         "errors": [
             {
                 "doc_line": 9,
-                "msg": "The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
+                "msg": "The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 9) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1302,7 +1296,7 @@
         "extra_headers": []
     },
     "get_loading_bar": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/utils.rs",
+        "file": "utils.rs",
         "function": "get_loading_bar",
         "errors": [
             {
@@ -1321,7 +1315,7 @@
         "extra_headers": []
     },
     "not_one": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/utils.rs",
+        "file": "utils.rs",
         "function": "not_one",
         "errors": [
             {
@@ -1340,7 +1334,7 @@
         "extra_headers": []
     },
     "compute_edge_ids_vector": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/utils.rs",
+        "file": "utils.rs",
         "function": "compute_edge_ids_vector",
         "errors": [
             {
@@ -1359,7 +1353,7 @@
         "extra_headers": []
     },
     "parse_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/utils.rs",
+        "file": "utils.rs",
         "function": "parse_weight",
         "errors": [],
         "args": {
@@ -1378,7 +1372,7 @@
         "extra_headers": []
     },
     "count_rows": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_reader.rs",
+        "file": "csv_file_reader.rs",
         "function": "count_rows",
         "errors": [
             {
@@ -1393,7 +1387,7 @@
         "extra_headers": []
     },
     "get_header": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_reader.rs",
+        "file": "csv_file_reader.rs",
         "function": "get_header",
         "errors": [
             {
@@ -1408,7 +1402,7 @@
         "extra_headers": []
     },
     "get_lines_iterator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_reader.rs",
+        "file": "csv_file_reader.rs",
         "function": "get_lines_iterator",
         "errors": [
             {
@@ -1427,7 +1421,7 @@
         "extra_headers": []
     },
     "get_elements_per_line": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_reader.rs",
+        "file": "csv_file_reader.rs",
         "function": "get_elements_per_line",
         "errors": [
             {
@@ -1442,7 +1436,7 @@
         "extra_headers": []
     },
     "read_lines": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "read_lines",
         "errors": [
             {
@@ -1457,7 +1451,7 @@
         "extra_headers": []
     },
     "get_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_reader.rs",
+        "file": "csv_file_reader.rs",
         "function": "get_column_number",
         "errors": [
             {
@@ -1480,27 +1474,36 @@
         "extra_headers": []
     },
     "are_nodes_remappable": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/remap.rs",
+        "file": "remap.rs",
         "function": "are_nodes_remappable",
-        "errors": [
+        "errors": [],
+        "args": {
+            "args": [
+                {
+                    "name": "other",
+                    "type": "&Graph",
+                    "desc": "graph towards remap the nodes to"
+                }
+            ]
+        },
+        "example": {
+            "desc": "A graph is always remappable to itself:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.are_nodes_remappable(&graph));\n",
+            "footer": "Two different graphs, like Cora and STRING, are not remappable:\n```rust\n"
+        },
+        "extra_headers": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
+                "name": "let cora = graph::test_utilities::load_cora().unwrap();",
+                "content": ""
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "name": "let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                "content": "assert!(!cora.are_nodes_remappable(&ppi));\n```\n"
             }
-        ],
-        "args": {
-            "args": [],
-            "desc": "`other`: &Graph - graph towards remap the nodes to.\n# Example\nA graph is always remappable to itself:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.are_nodes_remappable(&graph));\n```\nTwo different graphs, like Cora and STRING, are not remappable:\n```rust\n# let cora = graph::test_utilities::load_cora().unwrap();\n# let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(!cora.are_nodes_remappable(&ppi));\n```\n"
-        },
-        "example": {},
-        "extra_headers": []
+        ]
     },
     "remap": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/remap.rs",
+        "file": "remap.rs",
         "function": "remap",
         "errors": [],
         "args": {
@@ -1524,7 +1527,7 @@
         "extra_headers": []
     },
     "set_sources_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_sources_column",
         "errors": [
             {
@@ -1547,7 +1550,7 @@
         "extra_headers": []
     },
     "set_sources_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_sources_column_number",
         "errors": [
             {
@@ -1570,7 +1573,7 @@
         "extra_headers": []
     },
     "set_destinations_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_destinations_column",
         "errors": [
             {
@@ -1593,7 +1596,7 @@
         "extra_headers": []
     },
     "set_destinations_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_destinations_column_number",
         "errors": [
             {
@@ -1616,7 +1619,7 @@
         "extra_headers": []
     },
     "set_edge_types_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_edge_types_column",
         "errors": [
             {
@@ -1639,7 +1642,7 @@
         "extra_headers": []
     },
     "set_edge_types_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_edge_types_column_number",
         "errors": [
             {
@@ -1662,7 +1665,7 @@
         "extra_headers": []
     },
     "set_weights_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_weights_column",
         "errors": [
             {
@@ -1685,7 +1688,7 @@
         "extra_headers": []
     },
     "set_weights_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_weights_column_number",
         "errors": [
             {
@@ -1708,7 +1711,7 @@
         "extra_headers": []
     },
     "set_skip_weights_if_unavailable": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_skip_weights_if_unavailable",
         "errors": [
             {
@@ -1731,7 +1734,7 @@
         "extra_headers": []
     },
     "set_skip_edge_types_if_unavailable": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_skip_edge_types_if_unavailable",
         "errors": [
             {
@@ -1754,7 +1757,7 @@
         "extra_headers": []
     },
     "set_default_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_default_weight",
         "errors": [
             {
@@ -1777,7 +1780,7 @@
         "extra_headers": []
     },
     "set_graph_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_graph_name",
         "errors": [
             {
@@ -1800,7 +1803,7 @@
         "extra_headers": []
     },
     "set_default_edge_type": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_default_edge_type",
         "errors": [
             {
@@ -1823,7 +1826,7 @@
         "extra_headers": []
     },
     "set_skip_selfloops": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_skip_selfloops",
         "errors": [
             {
@@ -1844,7 +1847,7 @@
         "extra_headers": []
     },
     "set_csv_is_correct": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_csv_is_correct",
         "errors": [
             {
@@ -1867,7 +1870,7 @@
         "extra_headers": []
     },
     "set_comment_symbol": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_comment_symbol",
         "errors": [
             {
@@ -1890,7 +1893,7 @@
         "extra_headers": []
     },
     "set_verbose": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_verbose",
         "errors": [
             {
@@ -1911,7 +1914,7 @@
         "extra_headers": []
     },
     "set_might_have_singletons_with_selfloops": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_might_have_singletons_with_selfloops",
         "errors": [
             {
@@ -1932,7 +1935,7 @@
         "extra_headers": []
     },
     "set_might_have_trap_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_might_have_trap_nodes",
         "errors": [
             {
@@ -1953,7 +1956,7 @@
         "extra_headers": []
     },
     "set_numeric_edge_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "set_numeric_edge_type_ids",
         "errors": [
             {
@@ -1972,7 +1975,7 @@
         "extra_headers": []
     },
     "set_numeric_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_numeric_node_ids",
         "errors": [
             {
@@ -1995,7 +1998,7 @@
         "extra_headers": []
     },
     "set_ignore_duplicates": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_ignore_duplicates",
         "errors": [
             {
@@ -2018,7 +2021,7 @@
         "extra_headers": []
     },
     "set_separator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_separator",
         "errors": [
             {
@@ -2041,7 +2044,7 @@
         "extra_headers": []
     },
     "set_header": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_header",
         "errors": [
             {
@@ -2064,7 +2067,7 @@
         "extra_headers": []
     },
     "set_rows_to_skip": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_rows_to_skip",
         "errors": [
             {
@@ -2087,7 +2090,7 @@
         "extra_headers": []
     },
     "set_max_rows_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_max_rows_number",
         "errors": [
             {
@@ -2110,7 +2113,7 @@
         "extra_headers": []
     },
     "has_edge_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_edge_types",
         "errors": [],
         "args": {
@@ -2122,7 +2125,7 @@
         "extra_headers": []
     },
     "has_edge_weights": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_edge_weights",
         "errors": [],
         "args": {
@@ -2134,7 +2137,7 @@
         "extra_headers": []
     },
     "parse_edge_line": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
+        "file": "edge_file_reader.rs",
         "function": "parse_edge_line",
         "errors": [
             {
@@ -2157,7 +2160,7 @@
         "extra_headers": []
     },
     "is_unchecked_singleton_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_unchecked_singleton_from_node_id",
         "errors": [
             {
@@ -2178,7 +2181,7 @@
         "extra_headers": []
     },
     "is_singleton_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_singleton_from_node_id",
         "errors": [
             {
@@ -2199,7 +2202,7 @@
         "extra_headers": []
     },
     "is_singleton_with_selfloops_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_singleton_with_selfloops_from_node_id",
         "errors": [
             {
@@ -2220,27 +2223,28 @@
         "extra_headers": []
     },
     "is_singleton_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_singleton_from_node_name",
         "errors": [
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_name'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`node_name`: &str - The node name to be checked for.\n"
+            "args": [
+                {
+                    "name": "node_name",
+                    "type": "&str",
+                    "desc": "The node name to be checked for"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "has_node_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_node_from_node_name",
         "errors": [],
         "args": {
@@ -2259,7 +2263,7 @@
         "extra_headers": []
     },
     "has_edge_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_edge_from_node_ids",
         "errors": [],
         "args": {
@@ -2283,7 +2287,7 @@
         "extra_headers": []
     },
     "has_edge_from_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_edge_from_node_ids_and_edge_type_id",
         "errors": [],
         "args": {
@@ -2312,7 +2316,7 @@
         "extra_headers": []
     },
     "is_unchecked_trap_node_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_unchecked_trap_node_from_node_id",
         "errors": [
             {
@@ -2333,7 +2337,7 @@
         "extra_headers": []
     },
     "is_trap_node_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "is_trap_node_from_node_id",
         "errors": [
             {
@@ -2354,7 +2358,7 @@
         "extra_headers": []
     },
     "has_node_from_node_name_and_node_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_node_from_node_name_and_node_type_name",
         "errors": [
             {
@@ -2380,7 +2384,7 @@
         "extra_headers": []
     },
     "has_edge_from_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_edge_from_node_names",
         "errors": [],
         "args": {
@@ -2404,7 +2408,7 @@
         "extra_headers": []
     },
     "has_edge_from_node_names_and_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
+        "file": "queries_boolean.rs",
         "function": "has_edge_from_node_names_and_edge_type_name",
         "errors": [],
         "args": {
@@ -2433,7 +2437,7 @@
         "extra_headers": []
     },
     "get_filter_bitmap": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/bitmaps.rs",
+        "file": "bitmaps.rs",
         "function": "get_filter_bitmap",
         "errors": [
             {
@@ -2446,11 +2450,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_names'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'node_names'."
             },
             {
                 "doc_line": 0,
@@ -2464,7 +2468,7 @@
         "extra_headers": []
     },
     "random_string": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "random_string",
         "errors": [
             {
@@ -2483,7 +2487,7 @@
         "extra_headers": []
     },
     "random_path": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "random_path",
         "errors": [
             {
@@ -2502,7 +2506,7 @@
         "extra_headers": []
     },
     "load_ppi": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "load_ppi",
         "errors": [
             {
@@ -2521,7 +2525,7 @@
         "extra_headers": []
     },
     "load_empty_graph": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "load_empty_graph",
         "errors": [
             {
@@ -2540,7 +2544,7 @@
         "extra_headers": []
     },
     "load_cora": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "load_cora",
         "errors": [
             {
@@ -2555,7 +2559,7 @@
         "extra_headers": []
     },
     "first_order_walker": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "first_order_walker",
         "errors": [
             {
@@ -2574,7 +2578,7 @@
         "extra_headers": []
     },
     "second_order_walker": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "second_order_walker",
         "errors": [
             {
@@ -2593,7 +2597,7 @@
         "extra_headers": []
     },
     "validate_vocabularies": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "validate_vocabularies",
         "errors": [
             {
@@ -2612,7 +2616,7 @@
         "extra_headers": []
     },
     "default_holdout_test_suite": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "default_holdout_test_suite",
         "errors": [
             {
@@ -2631,7 +2635,7 @@
         "extra_headers": []
     },
     "test_spanning_arborescence_bader": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_spanning_arborescence_bader",
         "errors": [
             {
@@ -2650,7 +2654,7 @@
         "extra_headers": []
     },
     "test_graph_properties": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_graph_properties",
         "errors": [
             {
@@ -2669,7 +2673,7 @@
         "extra_headers": []
     },
     "test_random_walks": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_random_walks",
         "errors": [
             {
@@ -2688,7 +2692,7 @@
         "extra_headers": []
     },
     "test_edge_holdouts": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_edge_holdouts",
         "errors": [
             {
@@ -2707,7 +2711,7 @@
         "extra_headers": []
     },
     "test_remove_components": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_remove_components",
         "errors": [
             {
@@ -2726,7 +2730,7 @@
         "extra_headers": []
     },
     "test_kfold": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_kfold",
         "errors": [
             {
@@ -2745,7 +2749,7 @@
         "extra_headers": []
     },
     "test_negative_edges_generation": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_negative_edges_generation",
         "errors": [
             {
@@ -2764,7 +2768,7 @@
         "extra_headers": []
     },
     "test_subgraph_generation": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_subgraph_generation",
         "errors": [
             {
@@ -2783,7 +2787,7 @@
         "extra_headers": []
     },
     "test_dump_graph": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_dump_graph",
         "errors": [
             {
@@ -2802,7 +2806,7 @@
         "extra_headers": []
     },
     "test_embiggen_preprocessing": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_embiggen_preprocessing",
         "errors": [
             {
@@ -2821,7 +2825,7 @@
         "extra_headers": []
     },
     "test_graph_filter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_graph_filter",
         "errors": [
             {
@@ -2840,7 +2844,7 @@
         "extra_headers": []
     },
     "test_edgelist_generation": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_edgelist_generation",
         "errors": [
             {
@@ -2859,7 +2863,7 @@
         "extra_headers": []
     },
     "test_nodelabel_holdouts": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_nodelabel_holdouts",
         "errors": [
             {
@@ -2878,7 +2882,7 @@
         "extra_headers": []
     },
     "test_edgelabel_holdouts": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_edgelabel_holdouts",
         "errors": [
             {
@@ -2897,7 +2901,7 @@
         "extra_headers": []
     },
     "test_graph_removes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_graph_removes",
         "errors": [
             {
@@ -2916,7 +2920,7 @@
         "extra_headers": []
     },
     "test_clone_and_setters": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_clone_and_setters",
         "errors": [
             {
@@ -2935,7 +2939,7 @@
         "extra_headers": []
     },
     "test_graph_remapping": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "test_graph_remapping",
         "errors": [
             {
@@ -2954,7 +2958,7 @@
         "extra_headers": []
     },
     "_default_test_suite": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "_default_test_suite",
         "errors": [
             {
@@ -2973,7 +2977,7 @@
         "extra_headers": []
     },
     "default_test_suite": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
+        "file": "test_utilities.rs",
         "function": "default_test_suite",
         "errors": [
             {
@@ -2992,7 +2996,7 @@
         "extra_headers": []
     },
     "enable": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/modifiers.rs",
+        "file": "modifiers.rs",
         "function": "enable",
         "errors": [
             {
@@ -3028,7 +3032,7 @@
         "extra_headers": []
     },
     "disable_all": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/modifiers.rs",
+        "file": "modifiers.rs",
         "function": "disable_all",
         "errors": [
             {
@@ -3043,7 +3047,7 @@
         "extra_headers": []
     },
     "set_nodes_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_nodes_column",
         "errors": [
             {
@@ -3066,7 +3070,7 @@
         "extra_headers": []
     },
     "set_node_types_column": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_node_types_column",
         "errors": [
             {
@@ -3089,7 +3093,7 @@
         "extra_headers": []
     },
     "set_nodes_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_nodes_column_number",
         "errors": [
             {
@@ -3113,7 +3117,7 @@
         "extra_headers": []
     },
     "set_node_types_column_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_node_types_column_number",
         "errors": [
             {
@@ -3136,7 +3140,7 @@
         "extra_headers": []
     },
     "dump": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "dump",
         "errors": [
             {
@@ -3157,7 +3161,7 @@
         "extra_headers": []
     },
     "iter_unchecked_edge_ids_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "iter_unchecked_edge_ids_from_source_node_id",
         "errors": [
             {
@@ -3178,7 +3182,7 @@
         "extra_headers": []
     },
     "par_iter_unchecked_edge_ids_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "par_iter_unchecked_edge_ids_from_source_node_id",
         "errors": [
             {
@@ -3199,7 +3203,7 @@
         "extra_headers": []
     },
     "iter_unchecked_edge_ids_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "iter_unchecked_edge_ids_from_node_ids",
         "errors": [
             {
@@ -3225,7 +3229,7 @@
         "extra_headers": []
     },
     "iter_unchecked_neighbour_node_ids_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "iter_unchecked_neighbour_node_ids_from_source_node_id",
         "errors": [
             {
@@ -3246,7 +3250,7 @@
         "extra_headers": []
     },
     "iter_unchecked_neighbour_node_names_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "iter_unchecked_neighbour_node_names_from_source_node_id",
         "errors": [
             {
@@ -3267,7 +3271,7 @@
         "extra_headers": []
     },
     "iter_edge_ids_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs",
+        "file": "iter_queries.rs",
         "function": "iter_edge_ids_from_node_ids",
         "errors": [
             {
@@ -3293,7 +3297,7 @@
         "extra_headers": []
     },
     "strongly_connected_components": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/tarjan.rs",
+        "file": "tarjan.rs",
         "function": "strongly_connected_components",
         "errors": [
             {
@@ -3308,7 +3312,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_weight_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_weight_from_edge_id",
         "errors": [
             {
@@ -3329,7 +3333,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_id_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_id_from_node_name",
         "errors": [
             {
@@ -3350,7 +3354,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_type_id_from_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_type_id_from_edge_type_name",
         "errors": [
             {
@@ -3371,7 +3375,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_type_name_from_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_type_name_from_edge_type_id",
         "errors": [
             {
@@ -3392,7 +3396,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_count_from_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_count_from_edge_type_id",
         "errors": [
             {
@@ -3413,7 +3417,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_count_from_node_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_count_from_node_type_id",
         "errors": [
             {
@@ -3436,9 +3440,13 @@
         "extra_headers": []
     },
     "get_unchecked_destination_node_ids_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_destination_node_ids_from_node_id",
         "errors": [
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node'."
@@ -3446,10 +3454,6 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_neighbours'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -3464,7 +3468,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_id_from_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_id_from_node_ids_and_edge_type_id",
         "errors": [
             {
@@ -3495,7 +3499,7 @@
         "extra_headers": []
     },
     "get_unchecked_minmax_edge_ids_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_minmax_edge_ids_from_node_ids",
         "errors": [
             {
@@ -3521,7 +3525,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_degree_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_degree_from_node_ids",
         "errors": [
             {
@@ -3547,7 +3551,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_ids_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_ids_from_edge_id",
         "errors": [],
         "args": {
@@ -3566,14 +3570,9 @@
         "extra_headers": []
     },
     "get_node_ids_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_ids_from_edge_id",
-        "errors": [
-            {
-                "doc_line": 11,
-                "msg": "In the example there isn't the current method!!!!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -3585,12 +3584,12 @@
         },
         "example": {
             "desc": "To retrieve the source and destination node IDs of a given edge ID you can use the following:\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_from_edge_id(10000000000).is_err());\n"
         },
         "extra_headers": []
     },
     "get_unchecked_edge_id_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_id_from_node_ids",
         "errors": [],
         "args": {
@@ -3614,7 +3613,7 @@
         "extra_headers": []
     },
     "get_edge_id_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_id_from_node_ids",
         "errors": [],
         "args": {
@@ -3638,7 +3637,7 @@
         "extra_headers": []
     },
     "get_unchecked_unique_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_unique_source_node_id",
         "errors": [],
         "args": {
@@ -3657,7 +3656,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_ids_and_edge_type_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_ids_and_edge_type_id_from_edge_id",
         "errors": [],
         "args": {
@@ -3676,7 +3675,7 @@
         "extra_headers": []
     },
     "get_node_ids_and_edge_type_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_ids_and_edge_type_id_from_edge_id",
         "errors": [],
         "args": {
@@ -3695,7 +3694,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
         "errors": [],
         "args": {
@@ -3714,7 +3713,7 @@
         "extra_headers": []
     },
     "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
         "errors": [],
         "args": {
@@ -3733,7 +3732,7 @@
         "extra_headers": []
     },
     "get_top_k_central_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_top_k_central_node_ids",
         "errors": [
             {
@@ -3755,7 +3754,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_degree_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_degree_from_node_id",
         "errors": [
             {
@@ -3776,7 +3775,7 @@
         "extra_headers": []
     },
     "get_node_degree_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_degree_from_node_id",
         "errors": [
             {
@@ -3797,7 +3796,7 @@
         "extra_headers": []
     },
     "get_top_k_central_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_top_k_central_node_names",
         "errors": [
             {
@@ -3818,7 +3817,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_type_id_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_type_id_from_node_id",
         "errors": [],
         "args": {
@@ -3836,7 +3835,7 @@
         "extra_headers": []
     },
     "get_node_type_id_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_id_from_node_id",
         "errors": [],
         "args": {
@@ -3854,7 +3853,7 @@
         "extra_headers": []
     },
     "get_unchecked_edge_type_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_edge_type_id_from_edge_id",
         "errors": [],
         "args": {
@@ -3872,7 +3871,7 @@
         "extra_headers": []
     },
     "get_edge_type_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_type_id_from_edge_id",
         "errors": [],
         "args": {
@@ -3890,7 +3889,7 @@
         "extra_headers": []
     },
     "get_node_type_name_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_name_from_node_id",
         "errors": [
             {
@@ -3911,7 +3910,7 @@
         "extra_headers": []
     },
     "get_edge_type_name_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_type_name_from_edge_id",
         "errors": [
             {
@@ -3932,7 +3931,7 @@
         "extra_headers": []
     },
     "get_edge_type_name_from_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_type_name_from_edge_type_id",
         "errors": [
             {
@@ -3953,7 +3952,7 @@
         "extra_headers": []
     },
     "get_edge_weight_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_weight_from_edge_id",
         "errors": [],
         "args": {
@@ -3972,7 +3971,7 @@
         "extra_headers": []
     },
     "get_edge_weight_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_weight_from_node_ids",
         "errors": [],
         "args": {
@@ -3996,7 +3995,7 @@
         "extra_headers": []
     },
     "get_edge_weight_from_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_weight_from_node_ids_and_edge_type_id",
         "errors": [],
         "args": {
@@ -4025,7 +4024,7 @@
         "extra_headers": []
     },
     "get_edge_weight_from_node_names_and_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_weight_from_node_names_and_edge_type_name",
         "errors": [],
         "args": {
@@ -4054,7 +4053,7 @@
         "extra_headers": []
     },
     "get_edge_weight_from_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_weight_from_node_names",
         "errors": [],
         "args": {
@@ -4078,7 +4077,7 @@
         "extra_headers": []
     },
     "get_unchecked_node_name_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_node_name_from_node_id",
         "errors": [],
         "args": {
@@ -4097,7 +4096,7 @@
         "extra_headers": []
     },
     "get_node_name_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_name_from_node_id",
         "errors": [],
         "args": {
@@ -4116,7 +4115,7 @@
         "extra_headers": []
     },
     "get_node_id_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_id_from_node_name",
         "errors": [
             {
@@ -4137,7 +4136,7 @@
         "extra_headers": []
     },
     "get_node_type_id_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_id_from_node_name",
         "errors": [],
         "args": {
@@ -4156,7 +4155,7 @@
         "extra_headers": []
     },
     "get_node_type_name_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_name_from_node_name",
         "errors": [],
         "args": {
@@ -4175,7 +4174,7 @@
         "extra_headers": []
     },
     "get_edge_count_from_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_count_from_edge_type_id",
         "errors": [
             {
@@ -4196,7 +4195,7 @@
         "extra_headers": []
     },
     "get_edge_type_id_from_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_type_id_from_edge_type_name",
         "errors": [
             {
@@ -4217,7 +4216,7 @@
         "extra_headers": []
     },
     "get_edge_count_from_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_count_from_edge_type_name",
         "errors": [
             {
@@ -4238,7 +4237,7 @@
         "extra_headers": []
     },
     "get_node_type_id_from_node_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_id_from_node_type_name",
         "errors": [
             {
@@ -4259,7 +4258,7 @@
         "extra_headers": []
     },
     "get_node_count_from_node_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_count_from_node_type_id",
         "errors": [
             {
@@ -4280,7 +4279,7 @@
         "extra_headers": []
     },
     "get_node_count_from_node_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_count_from_node_type_name",
         "errors": [
             {
@@ -4301,7 +4300,7 @@
         "extra_headers": []
     },
     "get_unchecked_destination_node_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_destination_node_id_from_edge_id",
         "errors": [
             {
@@ -4322,7 +4321,7 @@
         "extra_headers": []
     },
     "get_destination_node_id_from_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_destination_node_id_from_edge_id",
         "errors": [
             {
@@ -4343,7 +4342,7 @@
         "extra_headers": []
     },
     "get_neighbour_node_ids_from_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_neighbour_node_ids_from_node_id",
         "errors": [],
         "args": {
@@ -4362,7 +4361,7 @@
         "extra_headers": []
     },
     "get_neighbour_node_ids_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_neighbour_node_ids_from_node_name",
         "errors": [],
         "args": {
@@ -4381,7 +4380,7 @@
         "extra_headers": []
     },
     "get_neighbour_node_names_from_node_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_neighbour_node_names_from_node_name",
         "errors": [],
         "args": {
@@ -4400,7 +4399,7 @@
         "extra_headers": []
     },
     "get_minmax_edge_ids_from_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_minmax_edge_ids_from_node_ids",
         "errors": [
             {
@@ -4426,7 +4425,7 @@
         "extra_headers": []
     },
     "get_edge_id_from_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_id_from_node_ids_and_edge_type_id",
         "errors": [
             {
@@ -4457,7 +4456,7 @@
         "extra_headers": []
     },
     "get_edge_id_from_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_id_from_node_names",
         "errors": [
             {
@@ -4483,7 +4482,7 @@
         "extra_headers": []
     },
     "get_edge_id_from_node_names_and_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_id_from_node_names_and_edge_type_name",
         "errors": [
             {
@@ -4514,7 +4513,7 @@
         "extra_headers": []
     },
     "get_edge_type_ids_from_edge_type_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_edge_type_ids_from_edge_type_names",
         "errors": [
             {
@@ -4535,30 +4534,28 @@
         "extra_headers": []
     },
     "get_node_type_ids_from_node_type_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_ids_from_node_type_names",
         "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument 'node_type_names' does not exists in the current method. The available args are ['node_types']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_type_names",
+                    "type": "Vec<Option<String>>",
+                    "desc": "Vector of node types to be converted"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "get_unchecked_minmax_edge_ids_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_unchecked_minmax_edge_ids_from_source_node_id",
         "errors": [
             {
@@ -4579,7 +4576,7 @@
         "extra_headers": []
     },
     "get_minmax_edge_ids_from_source_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_minmax_edge_ids_from_source_node_id",
         "errors": [
             {
@@ -4600,7 +4597,7 @@
         "extra_headers": []
     },
     "get_node_type_name_from_node_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_name_from_node_type_id",
         "errors": [
             {
@@ -4621,7 +4618,7 @@
         "extra_headers": []
     },
     "get_node_type_names_from_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
+        "file": "queries.rs",
         "function": "get_node_type_names_from_node_type_ids",
         "errors": [
             {
@@ -4642,7 +4639,7 @@
         "extra_headers": []
     },
     "filter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/filters.rs",
+        "file": "filters.rs",
         "function": "filter",
         "errors": [
             {
@@ -4688,7 +4685,7 @@
         "extra_headers": []
     },
     "from_usize": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/types.rs",
+        "file": "types.rs",
         "function": "from_usize",
         "errors": [
             {
@@ -4707,7 +4704,7 @@
         "extra_headers": []
     },
     "read": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/types.rs",
+        "file": "types.rs",
         "function": "read",
         "errors": [
             {
@@ -4722,7 +4719,7 @@
         "extra_headers": []
     },
     "write": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/types.rs",
+        "file": "types.rs",
         "function": "write",
         "errors": [
             {
@@ -4737,7 +4734,7 @@
         "extra_headers": []
     },
     "clone": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/types.rs",
+        "file": "types.rs",
         "function": "clone",
         "errors": [
             {
@@ -4752,7 +4749,7 @@
         "extra_headers": []
     },
     "validate_node_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/validators.rs",
+        "file": "validators.rs",
         "function": "validate_node_id",
         "errors": [],
         "args": {
@@ -4771,7 +4768,7 @@
         "extra_headers": []
     },
     "validate_edge_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/validators.rs",
+        "file": "validators.rs",
         "function": "validate_edge_id",
         "errors": [],
         "args": {
@@ -4789,8 +4786,46 @@
         },
         "extra_headers": []
     },
+    "validate_node_type_id": {
+        "file": "validators.rs",
+        "function": "validate_node_type_id",
+        "errors": [],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_id",
+                    "type": "Option<NodeTypeT>",
+                    "desc": "Node type ID to validate"
+                }
+            ]
+        },
+        "example": {
+            "desc": "In order to validate a given node type ID, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.validate_node_type_id(Some(0)).is_ok());\nassert!(graph.validate_node_type_id(Some(1000)).is_err());\n"
+        },
+        "extra_headers": []
+    },
+    "validate_edge_type_id": {
+        "file": "validators.rs",
+        "function": "validate_edge_type_id",
+        "errors": [],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type_id",
+                    "type": "Option<EdgeTypeT>",
+                    "desc": "edge type ID to validate"
+                }
+            ]
+        },
+        "example": {
+            "desc": "In order to validate a given edge type ID, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.validate_edge_type_id(Some(0)).is_ok());\nassert!(graph.validate_edge_type_id(Some(1000)).is_err());\n"
+        },
+        "extra_headers": []
+    },
     "must_have_node_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/validators.rs",
+        "file": "validators.rs",
         "function": "must_have_node_types",
         "errors": [],
         "args": {
@@ -4803,7 +4838,7 @@
         "extra_headers": []
     },
     "must_have_edge_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/validators.rs",
+        "file": "validators.rs",
         "function": "must_have_edge_types",
         "errors": [],
         "args": {
@@ -4816,7 +4851,7 @@
         "extra_headers": []
     },
     "must_have_edge_weights": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/validators.rs",
+        "file": "validators.rs",
         "function": "must_have_edge_weights",
         "errors": [],
         "args": {
@@ -4828,8 +4863,21 @@
         },
         "extra_headers": []
     },
+    "must_have_edges": {
+        "file": "validators.rs",
+        "function": "must_have_edges",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "desc": "In order to validate a graph instance, you can use:\n",
+            "content": "```rust# let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();\n# let graph_without_edges = graph::test_utilities::load_empty_graph(false);\nassert!(graph_with_edges.must_have_edges().is_ok());\nassert!(graph_without_edges.must_have_edges().is_err());\n"
+        },
+        "extra_headers": []
+    },
     "degrees_product": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
+        "file": "metrics.rs",
         "function": "degrees_product",
         "errors": [],
         "args": {
@@ -4853,7 +4901,7 @@
         "extra_headers": []
     },
     "jaccard_index": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
+        "file": "metrics.rs",
         "function": "jaccard_index",
         "errors": [
             {
@@ -4892,7 +4940,7 @@
         ]
     },
     "adamic_adar_index": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
+        "file": "metrics.rs",
         "function": "adamic_adar_index",
         "errors": [
             {
@@ -4932,7 +4980,7 @@
         ]
     },
     "resource_allocation_index": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
+        "file": "metrics.rs",
         "function": "resource_allocation_index",
         "errors": [
             {
@@ -4972,7 +5020,7 @@
         ]
     },
     "remove": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/remove.rs",
+        "file": "remove.rs",
         "function": "remove",
         "errors": [
             {
@@ -5008,7 +5056,7 @@
         ]
     },
     "remove_components": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/remove.rs",
+        "file": "remove.rs",
         "function": "remove_components",
         "errors": [
             {
@@ -5054,7 +5102,7 @@
         "extra_headers": []
     },
     "set_directed": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_writer.rs",
+        "file": "edge_file_writer.rs",
         "function": "set_directed",
         "errors": [
             {
@@ -5075,7 +5123,7 @@
         "extra_headers": []
     },
     "set_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
+        "file": "setters.rs",
         "function": "set_name",
         "errors": [
             {
@@ -5096,7 +5144,7 @@
         "extra_headers": []
     },
     "invalidate_report": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
+        "file": "setters.rs",
         "function": "invalidate_report",
         "errors": [
             {
@@ -5111,7 +5159,7 @@
         "extra_headers": []
     },
     "set_all_edge_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
+        "file": "setters.rs",
         "function": "set_all_edge_types",
         "errors": [
             {
@@ -5134,7 +5182,7 @@
         "extra_headers": []
     },
     "set_all_node_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
+        "file": "setters.rs",
         "function": "set_all_node_types",
         "errors": [
             {
@@ -5157,7 +5205,7 @@
         "extra_headers": []
     },
     "update_return_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "update_return_weight_transition",
         "errors": [
             {
@@ -5176,7 +5224,7 @@
         "extra_headers": []
     },
     "rust_update_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "rust_update_explore_weight_transition",
         "errors": [
             {
@@ -5195,7 +5243,7 @@
         "extra_headers": []
     },
     "rust_update_return_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "rust_update_return_explore_weight_transition",
         "errors": [
             {
@@ -5214,7 +5262,7 @@
         "extra_headers": []
     },
     "update_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "update_explore_weight_transition",
         "errors": [
             {
@@ -5233,7 +5281,7 @@
         "extra_headers": []
     },
     "update_return_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "update_return_explore_weight_transition",
         "errors": [
             {
@@ -5252,7 +5300,7 @@
         "extra_headers": []
     },
     "test_update_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "test_update_explore_weight_transition",
         "errors": [
             {
@@ -5267,7 +5315,7 @@
         "extra_headers": []
     },
     "test_update_return_explore_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "test_update_return_explore_weight_transition",
         "errors": [
             {
@@ -5282,7 +5330,7 @@
         "extra_headers": []
     },
     "test_update_return_weight_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "test_update_return_weight_transition",
         "errors": [
             {
@@ -5297,7 +5345,7 @@
         "extra_headers": []
     },
     "get_edge_weighted_transitions": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "get_edge_weighted_transitions",
         "errors": [
             {
@@ -5310,15 +5358,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": 0,
@@ -5332,12 +5380,12 @@
         "extra_headers": []
     },
     "update_node_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "update_node_transition",
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'transition'."
             },
             {
                 "doc_line": "~",
@@ -5349,7 +5397,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'transition'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -5364,7 +5412,7 @@
         "extra_headers": []
     },
     "get_node_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "get_node_transition",
         "errors": [
             {
@@ -5377,11 +5425,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
@@ -5390,10 +5442,6 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
@@ -5411,7 +5459,7 @@
         "extra_headers": []
     },
     "get_edge_transition": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "get_edge_transition",
         "errors": [
             {
@@ -5424,7 +5472,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
+                "msg": "Missing the documentation for the argument 'has_selfloop'."
             },
             {
                 "doc_line": "~",
@@ -5432,27 +5480,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_selfloop'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
                 "doc_line": "~",
@@ -5460,7 +5488,27 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'dst'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
                 "doc_line": 0,
@@ -5474,7 +5522,7 @@
         "extra_headers": []
     },
     "extract_uniform_node": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "extract_uniform_node",
         "errors": [
             {
@@ -5487,11 +5535,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -5505,7 +5553,7 @@
         "extra_headers": []
     },
     "extract_node": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "extract_node",
         "errors": [
             {
@@ -5522,11 +5570,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
@@ -5538,15 +5594,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -5560,7 +5608,7 @@
         "extra_headers": []
     },
     "extract_edge": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "extract_edge",
         "errors": [
             {
@@ -5629,16 +5677,12 @@
         "extra_headers": []
     },
     "random_walks_iter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "random_walks_iter",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "doc_line": 5,
+                "msg": "The argument line '* `parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 5) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -5650,13 +5694,19 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "quantity",
+                    "type": "NodeT",
+                    "desc": "Number of random walk to compute"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "complete_walks_iter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "complete_walks_iter",
         "errors": [
             {
@@ -5679,7 +5729,7 @@
         "extra_headers": []
     },
     "walk_iter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "walk_iter",
         "errors": [
             {
@@ -5688,15 +5738,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'parameters'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'to_node'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'quantity'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": 0,
@@ -5710,7 +5760,7 @@
         "extra_headers": []
     },
     "single_walk": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "single_walk",
         "errors": [
             {
@@ -5727,7 +5777,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
@@ -5735,7 +5785,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -5749,7 +5799,7 @@
         "extra_headers": []
     },
     "uniform_walk": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/walks.rs",
+        "file": "walks.rs",
         "function": "uniform_walk",
         "errors": [
             {
@@ -5762,11 +5812,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -5786,26 +5836,33 @@
         "extra_headers": []
     },
     "encode_edge": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/compression.rs",
+        "file": "compression.rs",
         "function": "encode_edge",
         "errors": [
-            {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "src",
+                    "type": "NodeT",
+                    "desc": "The source node ID"
+                },
+                {
+                    "name": "dst",
+                    "type": "NodeT",
+                    "desc": "The destination node ID"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "encode_max_edge": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/compression.rs",
+        "file": "compression.rs",
         "function": "encode_max_edge",
         "errors": [
             {
@@ -5824,26 +5881,28 @@
         "extra_headers": []
     },
     "decode_edge": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/compression.rs",
+        "file": "compression.rs",
         "function": "decode_edge",
         "errors": [
-            {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edge",
+                    "type": "u64",
+                    "desc": "The edge value to decode"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "get_node_bits": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/compression.rs",
+        "file": "compression.rs",
         "function": "get_node_bits",
         "errors": [
             {
@@ -5862,7 +5921,7 @@
         "extra_headers": []
     },
     "get_max_encodable_edge_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/compression.rs",
+        "file": "compression.rs",
         "function": "get_max_encodable_edge_number",
         "errors": [
             {
@@ -5877,7 +5936,7 @@
         "extra_headers": []
     },
     "get_bipartite_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_bipartite_edges",
         "errors": [
             {
@@ -5918,7 +5977,7 @@
         "extra_headers": []
     },
     "get_bipartite_edge_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_bipartite_edge_names",
         "errors": [
             {
@@ -5959,7 +6018,7 @@
         "extra_headers": []
     },
     "get_star_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_star_edges",
         "errors": [
             {
@@ -5995,7 +6054,7 @@
         "extra_headers": []
     },
     "get_star_edge_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_star_edge_names",
         "errors": [
             {
@@ -6031,7 +6090,7 @@
         "extra_headers": []
     },
     "get_clique_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_clique_edges",
         "errors": [
             {
@@ -6072,7 +6131,7 @@
         "extra_headers": []
     },
     "get_clique_edge_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs",
+        "file": "edge_lists.rs",
         "function": "get_clique_edge_names",
         "errors": [
             {
@@ -6113,7 +6172,7 @@
         "extra_headers": []
     },
     "report": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "report",
         "errors": [
             {
@@ -6133,7 +6192,7 @@
         ]
     },
     "shared_components_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "shared_components_number",
         "errors": [
             {
@@ -6152,7 +6211,7 @@
         "extra_headers": []
     },
     "merged_components_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "merged_components_number",
         "errors": [
             {
@@ -6178,7 +6237,7 @@
         "extra_headers": []
     },
     "overlap_textual_report": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "overlap_textual_report",
         "errors": [
             {
@@ -6204,7 +6263,7 @@
         "extra_headers": []
     },
     "format_list": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "format_list",
         "errors": [
             {
@@ -6223,7 +6282,7 @@
         "extra_headers": []
     },
     "format_node_list": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "format_node_list",
         "errors": [
             {
@@ -6244,7 +6303,7 @@
         "extra_headers": []
     },
     "format_node_type_list": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "format_node_type_list",
         "errors": [
             {
@@ -6267,7 +6326,7 @@
         "extra_headers": []
     },
     "format_edge_type_list": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "format_edge_type_list",
         "errors": [
             {
@@ -6290,30 +6349,28 @@
         "extra_headers": []
     },
     "textual_report": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "file": "report.rs",
         "function": "textual_report",
         "errors": [
-            {
-                "doc_line": 3,
-                "msg": "The argument line '* `verbose`:  bool - Whether to show loading bar.' (doc_line: 3) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show loading bar"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
     "get_connected_components_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_connected_components_number",
         "errors": [
             {
@@ -6334,7 +6391,7 @@
         "extra_headers": []
     },
     "get_singleton_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_singleton_nodes_number",
         "errors": [],
         "args": {
@@ -6346,7 +6403,7 @@
         "extra_headers": []
     },
     "get_singleton_nodes_with_selfloops_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_singleton_nodes_with_selfloops_number",
         "errors": [],
         "args": {
@@ -6358,7 +6415,7 @@
         "extra_headers": []
     },
     "get_not_singleton_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_not_singleton_nodes_number",
         "errors": [],
         "args": {
@@ -6370,7 +6427,7 @@
         "extra_headers": []
     },
     "get_density": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_density",
         "errors": [],
         "args": {
@@ -6382,7 +6439,7 @@
         "extra_headers": []
     },
     "get_trap_nodes_rate": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_trap_nodes_rate",
         "errors": [],
         "args": {
@@ -6394,7 +6451,7 @@
         "extra_headers": []
     },
     "get_node_degrees_mean": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_degrees_mean",
         "errors": [],
         "args": {
@@ -6406,7 +6463,7 @@
         "extra_headers": []
     },
     "get_undirected_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_undirected_edges_number",
         "errors": [],
         "args": {
@@ -6418,7 +6475,7 @@
         "extra_headers": []
     },
     "get_unique_undirected_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unique_undirected_edges_number",
         "errors": [],
         "args": {
@@ -6430,7 +6487,7 @@
         "extra_headers": []
     },
     "get_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edges_number",
         "errors": [],
         "args": {
@@ -6442,7 +6499,7 @@
         "extra_headers": []
     },
     "get_unique_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unique_edges_number",
         "errors": [],
         "args": {
@@ -6454,7 +6511,7 @@
         "extra_headers": []
     },
     "get_node_degrees_median": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_degrees_median",
         "errors": [],
         "args": {
@@ -6466,7 +6523,7 @@
         "extra_headers": []
     },
     "get_max_node_degree": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_max_node_degree",
         "errors": [],
         "args": {
@@ -6478,7 +6535,7 @@
         "extra_headers": []
     },
     "get_min_node_degree": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_min_node_degree",
         "errors": [],
         "args": {
@@ -6490,7 +6547,7 @@
         "extra_headers": []
     },
     "get_node_degrees_mode": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_degrees_mode",
         "errors": [],
         "args": {
@@ -6502,7 +6559,7 @@
         "extra_headers": []
     },
     "get_selfloop_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_selfloop_nodes_number",
         "errors": [],
         "args": {
@@ -6514,7 +6571,7 @@
         "extra_headers": []
     },
     "get_unique_selfloop_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unique_selfloop_number",
         "errors": [],
         "args": {
@@ -6526,7 +6583,7 @@
         "extra_headers": []
     },
     "get_selfloop_nodes_rate": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_selfloop_nodes_rate",
         "errors": [],
         "args": {
@@ -6538,7 +6595,7 @@
         "extra_headers": []
     },
     "get_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_name",
         "errors": [],
         "args": {
@@ -6551,7 +6608,7 @@
         "extra_headers": []
     },
     "get_trap_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_trap_nodes_number",
         "errors": [],
         "args": {
@@ -6563,7 +6620,7 @@
         "extra_headers": []
     },
     "get_sources": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_sources",
         "errors": [
             {
@@ -6584,7 +6641,7 @@
         "extra_headers": []
     },
     "get_source_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_source_names",
         "errors": [
             {
@@ -6605,7 +6662,7 @@
         "extra_headers": []
     },
     "get_destinations": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_destinations",
         "errors": [
             {
@@ -6626,7 +6683,7 @@
         "extra_headers": []
     },
     "get_destination_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_destination_names",
         "errors": [
             {
@@ -6647,7 +6704,7 @@
         "extra_headers": []
     },
     "get_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_names",
         "errors": [
             {
@@ -6662,7 +6719,7 @@
         "extra_headers": []
     },
     "get_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_nodes",
         "errors": [
             {
@@ -6677,7 +6734,7 @@
         "extra_headers": []
     },
     "get_edge_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_types",
         "errors": [
             {
@@ -6692,7 +6749,7 @@
         "extra_headers": []
     },
     "get_edge_type_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_type_names",
         "errors": [
             {
@@ -6707,7 +6764,7 @@
         "extra_headers": []
     },
     "get_edge_weights": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_weights",
         "errors": [],
         "args": {
@@ -6720,7 +6777,7 @@
         "extra_headers": []
     },
     "get_min_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_min_edge_weight",
         "errors": [],
         "args": {
@@ -6733,7 +6790,7 @@
         "extra_headers": []
     },
     "get_max_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_max_edge_weight",
         "errors": [],
         "args": {
@@ -6746,7 +6803,7 @@
         "extra_headers": []
     },
     "get_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_type_ids",
         "errors": [],
         "args": {
@@ -6759,7 +6816,7 @@
         "extra_headers": []
     },
     "get_node_type_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_type_names",
         "errors": [],
         "args": {
@@ -6772,7 +6829,7 @@
         "extra_headers": []
     },
     "get_unique_directed_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unique_directed_edges_number",
         "errors": [
             {
@@ -6787,7 +6844,7 @@
         "extra_headers": []
     },
     "get_nodes_mapping": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_nodes_mapping",
         "errors": [
             {
@@ -6802,7 +6859,7 @@
         "extra_headers": []
     },
     "get_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edges",
         "errors": [
             {
@@ -6823,7 +6880,7 @@
         "extra_headers": []
     },
     "get_edge_node_names": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_node_names",
         "errors": [
             {
@@ -6844,7 +6901,7 @@
         "extra_headers": []
     },
     "get_unknown_node_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unknown_node_types_number",
         "errors": [
             {
@@ -6859,7 +6916,7 @@
         "extra_headers": []
     },
     "get_minimum_node_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_minimum_node_types_number",
         "errors": [
             {
@@ -6874,7 +6931,7 @@
         "extra_headers": []
     },
     "get_unknown_edge_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unknown_edge_types_number",
         "errors": [
             {
@@ -6889,7 +6946,7 @@
         "extra_headers": []
     },
     "get_minimum_edge_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_minimum_edge_types_number",
         "errors": [
             {
@@ -6904,7 +6961,7 @@
         "extra_headers": []
     },
     "get_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_nodes_number",
         "errors": [
             {
@@ -6919,7 +6976,7 @@
         "extra_headers": []
     },
     "get_node_connected_component_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_connected_component_ids",
         "errors": [
             {
@@ -6940,7 +6997,7 @@
         "extra_headers": []
     },
     "get_directed_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_directed_edges_number",
         "errors": [
             {
@@ -6955,7 +7012,7 @@
         "extra_headers": []
     },
     "get_edge_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_types_number",
         "errors": [
             {
@@ -6970,7 +7027,7 @@
         "extra_headers": []
     },
     "get_node_types_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_types_number",
         "errors": [
             {
@@ -6985,7 +7042,7 @@
         "extra_headers": []
     },
     "get_node_degrees": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_degrees",
         "errors": [
             {
@@ -7000,7 +7057,7 @@
         "extra_headers": []
     },
     "get_not_singletons_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_not_singletons_node_ids",
         "errors": [
             {
@@ -7015,7 +7072,7 @@
         "extra_headers": []
     },
     "get_dense_nodes_mapping": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_dense_nodes_mapping",
         "errors": [
             {
@@ -7030,7 +7087,7 @@
         "extra_headers": []
     },
     "get_multigraph_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_multigraph_edges_number",
         "errors": [
             {
@@ -7045,7 +7102,7 @@
         "extra_headers": []
     },
     "get_cumulative_node_degrees": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_cumulative_node_degrees",
         "errors": [
             {
@@ -7060,7 +7117,7 @@
         "extra_headers": []
     },
     "get_unique_source_nodes_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_unique_source_nodes_number",
         "errors": [],
         "args": {
@@ -7072,7 +7129,7 @@
         "extra_headers": []
     },
     "get_edge_type_counter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_type_counter",
         "errors": [],
         "args": {
@@ -7084,7 +7141,7 @@
         "extra_headers": []
     },
     "get_edge_type_counts_hashmap": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_edge_type_counts_hashmap",
         "errors": [],
         "args": {
@@ -7096,7 +7153,7 @@
         "extra_headers": []
     },
     "get_node_type_counter": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_type_counter",
         "errors": [],
         "args": {
@@ -7108,7 +7165,7 @@
         "extra_headers": []
     },
     "get_node_type_counts_hashmap": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "file": "getters.rs",
         "function": "get_node_type_counts_hashmap",
         "errors": [],
         "args": {
@@ -7120,7 +7177,7 @@
         "extra_headers": []
     },
     "normalize_value": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
+        "file": "vocabulary.rs",
         "function": "normalize_value",
         "errors": [
             {
@@ -7139,7 +7196,7 @@
         "extra_headers": []
     },
     "unchecked_insert": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
+        "file": "vocabulary.rs",
         "function": "unchecked_insert",
         "errors": [
             {
@@ -7160,7 +7217,7 @@
         "extra_headers": []
     },
     "insert": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
+        "file": "vocabulary.rs",
         "function": "insert",
         "errors": [
             {
@@ -7183,7 +7240,7 @@
         "extra_headers": []
     },
     "build_reverse_mapping": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_type_vocabulary.rs",
+        "file": "node_type_vocabulary.rs",
         "function": "build_reverse_mapping",
         "errors": [
             {
@@ -7198,7 +7255,7 @@
         "extra_headers": []
     },
     "is_empty": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "is_empty",
         "errors": [
             {
@@ -7213,7 +7270,7 @@
         "extra_headers": []
     },
     "unchecked_translate": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "unchecked_translate",
         "errors": [
             {
@@ -7234,7 +7291,7 @@
         "extra_headers": []
     },
     "translate": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "translate",
         "errors": [
             {
@@ -7255,7 +7312,7 @@
         "extra_headers": []
     },
     "get": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "get",
         "errors": [
             {
@@ -7276,7 +7333,7 @@
         "extra_headers": []
     },
     "keys": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "keys",
         "errors": [
             {
@@ -7291,7 +7348,7 @@
         "extra_headers": []
     },
     "contains_key": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/vocabulary.rs",
+        "file": "vocabulary.rs",
         "function": "contains_key",
         "errors": [
             {
@@ -7312,7 +7369,7 @@
         "extra_headers": []
     },
     "len": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "len",
         "errors": [
             {
@@ -7327,7 +7384,7 @@
         "extra_headers": []
     },
     "set_numeric_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "set_numeric_ids",
         "errors": [
             {
@@ -7350,7 +7407,7 @@
         "extra_headers": []
     },
     "compute_hash": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/hash.rs",
+        "file": "hash.rs",
         "function": "compute_hash",
         "errors": [
             {
@@ -7365,7 +7422,7 @@
         "extra_headers": []
     },
     "eq": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/hash.rs",
+        "file": "hash.rs",
         "function": "eq",
         "errors": [
             {
@@ -7384,7 +7441,7 @@
         "extra_headers": []
     },
     "from_structs": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "from_structs",
         "errors": [
             {
@@ -7403,7 +7460,7 @@
         "extra_headers": []
     },
     "build_counts": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "build_counts",
         "errors": [
             {
@@ -7418,7 +7475,7 @@
         "extra_headers": []
     },
     "insert_values": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_type_vocabulary.rs",
+        "file": "node_type_vocabulary.rs",
         "function": "insert_values",
         "errors": [
             {
@@ -7439,7 +7496,7 @@
         "extra_headers": []
     },
     "is_multilabel": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_type_vocabulary.rs",
+        "file": "node_type_vocabulary.rs",
         "function": "is_multilabel",
         "errors": [
             {
@@ -7454,7 +7511,7 @@
         "extra_headers": []
     },
     "min_node_type_count": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_type_vocabulary.rs",
+        "file": "node_type_vocabulary.rs",
         "function": "min_node_type_count",
         "errors": [
             {
@@ -7469,7 +7526,7 @@
         "extra_headers": []
     },
     "get_unknown_count": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "get_unknown_count",
         "errors": [
             {
@@ -7484,7 +7541,7 @@
         "extra_headers": []
     },
     "translate_vector": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_type_vocabulary.rs",
+        "file": "node_type_vocabulary.rs",
         "function": "translate_vector",
         "errors": [
             {
@@ -7505,7 +7562,7 @@
         "extra_headers": []
     },
     "set_skip_node_types_if_unavailable": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_skip_node_types_if_unavailable",
         "errors": [
             {
@@ -7528,7 +7585,7 @@
         "extra_headers": []
     },
     "set_might_have_singletons": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_might_have_singletons",
         "errors": [
             {
@@ -7549,7 +7606,7 @@
         "extra_headers": []
     },
     "set_default_node_type": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_default_node_type",
         "errors": [
             {
@@ -7572,7 +7629,7 @@
         "extra_headers": []
     },
     "set_numeric_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_numeric_node_type_ids",
         "errors": [
             {
@@ -7595,7 +7652,7 @@
         "extra_headers": []
     },
     "set_node_types_separator": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/node_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_node_types_separator",
         "errors": [
             {
@@ -7618,7 +7675,7 @@
         "extra_headers": []
     },
     "has_node_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_node_types",
         "errors": [
             {
@@ -7633,7 +7690,7 @@
         "extra_headers": []
     },
     "from_option_structs": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "from_option_structs",
         "errors": [
             {
@@ -7652,7 +7709,7 @@
         "extra_headers": []
     },
     "min_edge_type_count": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_type_vocabulary.rs",
+        "file": "edge_type_vocabulary.rs",
         "function": "min_edge_type_count",
         "errors": [
             {
@@ -7667,7 +7724,7 @@
         "extra_headers": []
     },
     "iter_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_node_ids",
         "errors": [
             {
@@ -7682,7 +7739,7 @@
         "extra_headers": []
     },
     "par_iter_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_node_ids",
         "errors": [
             {
@@ -7697,7 +7754,7 @@
         "extra_headers": []
     },
     "iter_node_degrees": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_node_degrees",
         "errors": [
             {
@@ -7712,7 +7769,7 @@
         "extra_headers": []
     },
     "par_iter_node_degrees": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_node_degrees",
         "errors": [
             {
@@ -7727,7 +7784,7 @@
         "extra_headers": []
     },
     "iter_non_singleton_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_non_singleton_node_ids",
         "errors": [
             {
@@ -7742,7 +7799,7 @@
         "extra_headers": []
     },
     "iter_singleton_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_singleton_node_ids",
         "errors": [
             {
@@ -7757,7 +7814,7 @@
         "extra_headers": []
     },
     "iter_singleton_with_selfloops_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_singleton_with_selfloops_node_ids",
         "errors": [
             {
@@ -7772,7 +7829,7 @@
         "extra_headers": []
     },
     "iter_source_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_source_node_ids",
         "errors": [
             {
@@ -7793,7 +7850,7 @@
         "extra_headers": []
     },
     "iter_edge_weights": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_weights",
         "errors": [],
         "args": {
@@ -7806,7 +7863,7 @@
         "extra_headers": []
     },
     "par_iter_edge_weights": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_weights",
         "errors": [],
         "args": {
@@ -7819,7 +7876,7 @@
         "extra_headers": []
     },
     "par_iter_source_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_source_node_ids",
         "errors": [
             {
@@ -7840,7 +7897,7 @@
         "extra_headers": []
     },
     "iter_destination_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_destination_node_ids",
         "errors": [
             {
@@ -7861,7 +7918,7 @@
         "extra_headers": []
     },
     "par_iter_destination_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_destination_node_ids",
         "errors": [
             {
@@ -7882,7 +7939,7 @@
         "extra_headers": []
     },
     "iter_node_ids_and_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_node_ids_and_node_type_ids",
         "errors": [
             {
@@ -7897,7 +7954,7 @@
         "extra_headers": []
     },
     "par_iter_node_ids_and_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_node_ids_and_node_type_ids",
         "errors": [
             {
@@ -7912,7 +7969,7 @@
         "extra_headers": []
     },
     "iter_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_nodes",
         "errors": [
             {
@@ -7927,7 +7984,7 @@
         "extra_headers": []
     },
     "iter_edge_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_ids",
         "errors": [
             {
@@ -7948,7 +8005,7 @@
         "extra_headers": []
     },
     "iter_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edges",
         "errors": [
             {
@@ -7969,7 +8026,7 @@
         "extra_headers": []
     },
     "par_iter_edge_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_ids",
         "errors": [
             {
@@ -7990,7 +8047,7 @@
         "extra_headers": []
     },
     "par_iter_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edges",
         "errors": [
             {
@@ -8011,7 +8068,7 @@
         "extra_headers": []
     },
     "iter_edge_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_node_ids_and_edge_type_id",
         "errors": [
             {
@@ -8032,7 +8089,7 @@
         "extra_headers": []
     },
     "iter_edge_node_names_and_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_node_names_and_edge_type_name",
         "errors": [
             {
@@ -8053,7 +8110,7 @@
         "extra_headers": []
     },
     "par_iter_edge_node_names_and_edge_type_name": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_node_names_and_edge_type_name",
         "errors": [
             {
@@ -8074,7 +8131,7 @@
         "extra_headers": []
     },
     "par_iter_edge_node_ids_and_edge_type_id": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_node_ids_and_edge_type_id",
         "errors": [
             {
@@ -8095,7 +8152,7 @@
         "extra_headers": []
     },
     "par_iter_edge_node_names_and_edge_type_name_and_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_node_names_and_edge_type_name_and_edge_weight",
         "errors": [
             {
@@ -8116,7 +8173,7 @@
         "extra_headers": []
     },
     "iter_edge_node_names_and_edge_type_name_and_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_node_names_and_edge_type_name_and_edge_weight",
         "errors": [
             {
@@ -8137,7 +8194,7 @@
         "extra_headers": []
     },
     "par_iter_edge_node_ids_and_edge_type_id_and_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "par_iter_edge_node_ids_and_edge_type_id_and_edge_weight",
         "errors": [
             {
@@ -8158,7 +8215,7 @@
         "extra_headers": []
     },
     "iter_edge_node_ids_and_edge_type_id_and_edge_weight": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_edge_node_ids_and_edge_type_id_and_edge_weight",
         "errors": [
             {
@@ -8179,7 +8236,7 @@
         "extra_headers": []
     },
     "iter_unique_edge_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_unique_edge_node_ids",
         "errors": [
             {
@@ -8200,7 +8257,7 @@
         "extra_headers": []
     },
     "iter_unique_source_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
+        "file": "iters.rs",
         "function": "iter_unique_source_node_ids",
         "errors": [
             {
@@ -8215,7 +8272,7 @@
         "extra_headers": []
     },
     "has_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_nodes",
         "errors": [],
         "args": {
@@ -8228,7 +8285,7 @@
         "extra_headers": []
     },
     "has_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_edges",
         "errors": [],
         "args": {
@@ -8241,7 +8298,7 @@
         "extra_headers": []
     },
     "has_trap_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_trap_nodes",
         "errors": [],
         "args": {
@@ -8253,7 +8310,7 @@
         "extra_headers": []
     },
     "is_directed": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "is_directed",
         "errors": [],
         "args": {
@@ -8265,7 +8322,7 @@
         "extra_headers": []
     },
     "has_selfloops": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_selfloops",
         "errors": [],
         "args": {
@@ -8277,7 +8334,7 @@
         "extra_headers": []
     },
     "has_singletons": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_singletons",
         "errors": [],
         "args": {
@@ -8289,7 +8346,7 @@
         "extra_headers": []
     },
     "has_singletons_with_selfloops": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_singletons_with_selfloops",
         "errors": [
             {
@@ -8304,7 +8361,7 @@
         "extra_headers": []
     },
     "has_multilabel_node_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_multilabel_node_types",
         "errors": [
             {
@@ -8319,7 +8376,7 @@
         "extra_headers": []
     },
     "has_unknown_node_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_unknown_node_types",
         "errors": [
             {
@@ -8334,7 +8391,7 @@
         "extra_headers": []
     },
     "has_unknown_edge_types": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "has_unknown_edge_types",
         "errors": [
             {
@@ -8349,7 +8406,7 @@
         "extra_headers": []
     },
     "is_multigraph": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs",
+        "file": "getters_boolean.rs",
         "function": "is_multigraph",
         "errors": [
             {
@@ -8364,7 +8421,7 @@
         "extra_headers": []
     },
     "from_sorted_csv": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/from_csv.rs",
+        "file": "from_csv.rs",
         "function": "from_sorted_csv",
         "errors": [
             {
@@ -8415,7 +8472,7 @@
         "extra_headers": []
     },
     "from_unsorted_csv": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/from_csv.rs",
+        "file": "from_csv.rs",
         "function": "from_unsorted_csv",
         "errors": [
             {
@@ -8456,7 +8513,7 @@
         "extra_headers": []
     },
     "hash_float": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/hash.rs",
+        "file": "hash.rs",
         "function": "hash_float",
         "errors": [
             {
@@ -8475,7 +8532,7 @@
         "extra_headers": []
     },
     "hash": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/hash.rs",
+        "file": "hash.rs",
         "function": "hash",
         "errors": [
             {
@@ -8494,7 +8551,7 @@
         "extra_headers": []
     },
     "check_numeric_ids_compatibility": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "check_numeric_ids_compatibility",
         "errors": [
             {
@@ -8513,13 +8570,9 @@
         "extra_headers": []
     },
     "parse_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_node_ids",
         "errors": [
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
-            },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
@@ -8531,6 +8584,10 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes_iter'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": 0,
@@ -8545,7 +8602,7 @@
         "extra_headers": []
     },
     "parse_node_type_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_node_type_ids",
         "errors": [
             {
@@ -8564,7 +8621,7 @@
         "extra_headers": []
     },
     "parse_edges_node_ids": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_edges_node_ids",
         "errors": [
             {
@@ -8583,7 +8640,7 @@
         "extra_headers": []
     },
     "parse_edge_type_ids_vocabulary": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_edge_type_ids_vocabulary",
         "errors": [
             {
@@ -8602,7 +8659,7 @@
         "extra_headers": []
     },
     "parse_sorted_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_sorted_edges",
         "errors": [
             {
@@ -8621,7 +8678,7 @@
         "extra_headers": []
     },
     "parse_unsorted_quadruples": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_unsorted_quadruples",
         "errors": [
             {
@@ -8640,7 +8697,7 @@
         "extra_headers": []
     },
     "parse_integer_unsorted_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_integer_unsorted_edges",
         "errors": [
             {
@@ -8659,7 +8716,7 @@
         "extra_headers": []
     },
     "parse_string_unsorted_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_string_unsorted_edges",
         "errors": [
             {
@@ -8678,7 +8735,7 @@
         "extra_headers": []
     },
     "build_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "build_edges",
         "errors": [
             {
@@ -8697,7 +8754,7 @@
         "extra_headers": []
     },
     "parse_nodes": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_nodes",
         "errors": [
             {
@@ -8716,7 +8773,7 @@
         "extra_headers": []
     },
     "parse_string_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_string_edges",
         "errors": [
             {
@@ -8735,7 +8792,7 @@
         "extra_headers": []
     },
     "parse_integer_edges": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "parse_integer_edges",
         "errors": [
             {
@@ -8754,7 +8811,7 @@
         "extra_headers": []
     },
     "build_graph": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "build_graph",
         "errors": [
             {
@@ -8773,7 +8830,7 @@
         "extra_headers": []
     },
     "from_string_unsorted": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "from_string_unsorted",
         "errors": [
             {
@@ -8790,7 +8847,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
+                "msg": "Missing the documentation for the argument 'nodes_iterator'."
             },
             {
                 "doc_line": "~",
@@ -8798,19 +8855,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": "~",
@@ -8818,35 +8867,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'has_node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
             },
             {
                 "doc_line": "~",
@@ -8854,7 +8883,35 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": 0,
@@ -8885,7 +8942,7 @@
         "extra_headers": []
     },
     "from_integer_unsorted": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "from_integer_unsorted",
         "errors": [
             {
@@ -8906,15 +8963,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
@@ -8922,15 +8971,23 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
@@ -8942,11 +8999,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+                "msg": "Missing the documentation for the argument 'name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": 0,
@@ -8971,7 +9028,7 @@
         "extra_headers": []
     },
     "from_string_sorted": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs",
+        "file": "constructors.rs",
         "function": "from_string_sorted",
         "errors": [
             {
@@ -8990,7 +9047,7 @@
         "extra_headers": []
     },
     "sample_negatives": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "sample_negatives",
         "errors": [
             {
@@ -9031,7 +9088,7 @@
         "extra_headers": []
     },
     "get_holdouts_elements_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "get_holdouts_elements_number",
         "errors": [
             {
@@ -9050,7 +9107,7 @@
         "extra_headers": []
     },
     "get_holdouts_edges_number": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "get_holdouts_edges_number",
         "errors": [
             {
@@ -9069,7 +9126,7 @@
         "extra_headers": []
     },
     "edge_holdout": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "edge_holdout",
         "errors": [
             {
@@ -9088,7 +9145,7 @@
         "extra_headers": []
     },
     "connected_holdout": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "connected_holdout",
         "errors": [
             {
@@ -9129,7 +9186,7 @@
         "extra_headers": []
     },
     "random_holdout": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "random_holdout",
         "errors": [
             {
@@ -9175,7 +9232,7 @@
         "extra_headers": []
     },
     "node_label_holdout": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "node_label_holdout",
         "errors": [],
         "args": {
@@ -9204,7 +9261,7 @@
         "extra_headers": []
     },
     "edge_label_holdout": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "edge_label_holdout",
         "errors": [],
         "args": {
@@ -9233,7 +9290,7 @@
         "extra_headers": []
     },
     "random_subgraph": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "random_subgraph",
         "errors": [],
         "args": {
@@ -9262,7 +9319,7 @@
         "extra_headers": []
     },
     "kfold": {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs",
+        "file": "holdouts.rs",
         "function": "kfold",
         "errors": [],
         "args": {

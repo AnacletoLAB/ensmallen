@@ -104,7 +104,7 @@ class RustParser:
     def parse_function(self, text:str) -> str:
         """Parse a function declaration"""
         function = {
-            "file":self.file,
+            "file":os.path.basename(self.file),
         }
         if self.struct_name is not None:
             function["struct"] = self.struct_name
