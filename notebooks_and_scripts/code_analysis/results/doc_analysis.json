@@ -1293,7 +1293,7 @@
                 "content": ""
             },
             {
-                "name": "false,     // has_weights",
+                "name": "false,     // has_edge_weights",
                 "content": ""
             },
             {
@@ -2384,17 +2384,17 @@
         "example": {},
         "extra_headers": []
     },
-    "set_skip_self_loops": {
+    "set_skip_selfloops": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/edge_file_reader.rs",
-        "function": "set_skip_self_loops",
+        "function": "set_skip_selfloops",
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_self_loops: Option<bool> - whether should ignore or not selfloops.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_selfloops: Option<bool> - whether should ignore or not selfloops.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'skip_self_loops'."
+                "msg": "Missing the documentation for the argument 'skip_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -2691,15 +2691,15 @@
         },
         "extra_headers": []
     },
-    "has_weights": {
+    "has_edge_weights": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "function": "has_weights",
+        "function": "has_edge_weights",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rustlet weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(weights_string_ppi.has_weights());\nlet unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();\nassert!(!unweights_string_ppi.has_weights());\n"
+            "content": "```rustlet weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(weights_string_ppi.has_edge_weights());\nlet unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();\nassert!(!unweights_string_ppi.has_edge_weights());\n"
         },
         "extra_headers": []
     },
@@ -2746,9 +2746,9 @@
         "example": {},
         "extra_headers": []
     },
-    "is_singleton_with_self_loops_by_node_id": {
+    "is_singleton_with_selfloops_by_node_id": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
-        "function": "is_singleton_with_self_loops_by_node_id",
+        "function": "is_singleton_with_selfloops_by_node_id",
         "errors": [
             {
                 "doc_line": "~",
@@ -2899,9 +2899,9 @@
             }
         ]
     },
-    "is_node_trap_by_node_id": {
+    "is_trap_node_by_node_id": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs",
-        "function": "is_node_trap_by_node_id",
+        "function": "is_trap_node_by_node_id",
         "errors": [
             {
                 "doc_line": 4,
@@ -5232,9 +5232,9 @@
             }
         ]
     },
-    "get_self_loop_number": {
+    "get_selfloop_number": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "function": "get_self_loop_number",
+        "function": "get_selfloop_number",
         "errors": [
             {
                 "doc_line": 2,
@@ -5248,13 +5248,13 @@
         "extra_headers": [
             {
                 "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"The number of self-loops in the graph is  {}\", graph.get_self_loop_number());\n```\n"
+                "content": "println!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_number());\n```\n"
             }
         ]
     },
-    "get_unique_self_loop_number": {
+    "get_unique_selfloop_number": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "function": "get_unique_self_loop_number",
+        "function": "get_unique_selfloop_number",
         "errors": [
             {
                 "doc_line": 2,
@@ -5268,13 +5268,13 @@
         "extra_headers": [
             {
                 "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"The number of unique self-loops in the graph is  {}\", graph.get_unique_self_loop_number());\n```\n"
+                "content": "println!(\"The number of unique self-loops in the graph is  {}\", graph.get_unique_selfloop_number());\n```\n"
             }
         ]
     },
-    "get_self_loop_rate": {
+    "get_selfloop_rate": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "function": "get_self_loop_rate",
+        "function": "get_selfloop_rate",
         "errors": [
             {
                 "doc_line": 2,
@@ -5288,7 +5288,7 @@
         "extra_headers": [
             {
                 "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"The rate of self-loops in the graph is  {}\", graph.get_self_loop_rate().unwrap());\n```\n"
+                "content": "println!(\"The rate of self-loops in the graph is  {}\", graph.get_selfloop_rate().unwrap());\n```\n"
             }
         ]
     },
@@ -5331,9 +5331,9 @@
             }
         ]
     },
-    "get_singleton_nodes_with_self_loops_number": {
+    "get_singleton_nodes_with_selfloops_number": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "function": "get_singleton_nodes_with_self_loops_number",
+        "function": "get_singleton_nodes_with_selfloops_number",
         "errors": [
             {
                 "doc_line": 2,
@@ -5347,7 +5347,7 @@
         "extra_headers": [
             {
                 "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_self_loops_number());\n```\n"
+                "content": "println!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_selfloops_number());\n```\n"
             }
         ]
     },
@@ -6726,7 +6726,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_self_loops'."
+                "msg": "Missing the documentation for the argument 'allow_selfloops'."
             },
             {
                 "doc_line": "~",
@@ -6743,7 +6743,7 @@
         ],
         "args": {
             "args": [],
-            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
+            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6762,7 +6762,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_self_loops'."
+                "msg": "Missing the documentation for the argument 'allow_selfloops'."
             },
             {
                 "doc_line": "~",
@@ -6779,7 +6779,7 @@
         ],
         "args": {
             "args": [],
-            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
+            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6883,9 +6883,9 @@
         },
         "extra_headers": []
     },
-    "has_singleton_nodes_with_self_loops": {
+    "has_singletons_with_selfloops": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
-        "function": "has_singleton_nodes_with_self_loops",
+        "function": "has_singletons_with_selfloops",
         "errors": [
             {
                 "doc_line": 0,
@@ -9399,7 +9399,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_weights'."
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
             },
             {
                 "doc_line": "~",
@@ -9445,7 +9445,7 @@
         "args": {
             "args": [],
             "desc": "TODO: UPDATE THE DOCSTRING!\n",
-            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_self_loops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
+            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_selfloops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
         },
         "example": {},
         "extra_headers": []
@@ -9464,7 +9464,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_weights'."
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
             },
             {
                 "doc_line": "~",
@@ -9517,7 +9517,7 @@
         ],
         "args": {
             "args": [],
-            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_self_loops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
+            "footer": "Iterator of the edges.\n* nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,\nIterator of the nodes.\n* directed: bool,\nWether the graph should be directed or undirected.\n* ignore_duplicated_nodes: bool,\nWether to ignore duplicated nodes or to raise a proper exception.\n* ignore_duplicated_edges: bool,\nWether to ignore duplicated edges or to raise a proper exception.\n* skip_selfloops: bool,\nWether to skip self loops while reading the the edges iterator.\n"
         },
         "example": {},
         "extra_headers": []

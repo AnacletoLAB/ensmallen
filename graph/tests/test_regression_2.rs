@@ -17,7 +17,7 @@ fn test_regression_2() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_ignore_duplicates(Some(true))
-        .set_skip_self_loops(Some(false))
+        .set_skip_selfloops(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_numeric_node_ids(Some(false))
         .set_skip_weights_if_unavailable(Some(false))

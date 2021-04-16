@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -21,7 +21,7 @@ fn test_regression_28() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_ignore_duplicates(Some(true))
-        .set_skip_self_loops(Some(false))
+        .set_skip_selfloops(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_numeric_node_ids(Some(false))
         .set_skip_weights_if_unavailable(Some(false))
@@ -33,14 +33,15 @@ fn test_regression_28() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
-        false, // Directed
-        false, // Directed edge list
-        "Fuzz Graph" // Name of the graph
+        false,        // Directed
+        false,        // Directed edge list
+        "Fuzz Graph", // Name of the graph
     )?;
 
     graph.enable(true, true, true, None)?;
     let iterations = 1_000;
-    let pb = graph::utils::get_loading_bar(true, "Running non-deterministic component test", iterations);
+    let pb =
+        graph::utils::get_loading_bar(true, "Running non-deterministic component test", iterations);
 
     for _ in 0..iterations {
         pb.inc(1);

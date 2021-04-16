@@ -66,8 +66,8 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap_from_node_id(one).unwrap()
-            || self.is_node_trap_from_node_id(two).unwrap()
+        if self.is_trap_node_from_node_id(one).unwrap()
+            || self.is_trap_node_from_node_id(two).unwrap()
         {
             return Ok(0.0f64);
         }
@@ -104,7 +104,7 @@ impl Graph {
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_from_node_id(one)? || self.is_node_trap_from_node_id(two)? {
+        if self.is_trap_node_from_node_id(one)? || self.is_trap_node_from_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -117,7 +117,7 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
+            .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
             .map(|node| 1.0 / (self.get_unchecked_node_degree_from_node_id(*node) as f64).ln())
             .sum())
     }
@@ -145,7 +145,7 @@ impl Graph {
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_from_node_id(one)? || self.is_node_trap_from_node_id(two)? {
+        if self.is_trap_node_from_node_id(one)? || self.is_trap_node_from_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -158,7 +158,7 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_from_node_id(**node).unwrap())
+            .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
             .map(|node| 1.0 / self.get_unchecked_node_degree_from_node_id(*node) as f64)
             .sum())
     }
@@ -174,9 +174,9 @@ impl Graph {
     pub fn traps_rate(&self) -> f64 {
         self.par_iter_node_ids()
             .map(|node| {
-                if !self.is_node_trap_from_node_id(node).unwrap() {
+                if !self.is_trap_node_from_node_id(node).unwrap() {
                     self.iter_node_neighbours_ids(node)
-                        .map(|dst| self.is_node_trap_from_node_id(dst).unwrap() as usize as f64)
+                        .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
                         / self.get_unchecked_node_degree_from_node_id(node) as f64
                 } else {
@@ -207,8 +207,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_self_loop_number()) / 2
-            + self.get_self_loop_number()
+        (self.get_directed_edges_number() - self.get_selfloop_number()) / 2
+            + self.get_selfloop_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -217,8 +217,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2
-            + self.get_unique_self_loop_number() as EdgeT
+        (self.unique_edges_number - self.get_unique_selfloop_number() as EdgeT) / 2
+            + self.get_unique_selfloop_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -305,31 +305,31 @@ impl Graph {
     /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of self-loops in the graph is  {}", graph.get_self_loop_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
     /// ```
-    pub fn get_self_loop_number(&self) -> EdgeT {
-        self.self_loop_number
+    pub fn get_selfloop_number(&self) -> EdgeT {
+        self.selfloop_number
     }
 
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_self_loop_number());
+    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
     /// ```
-    pub fn get_unique_self_loop_number(&self) -> NodeT {
-        self.unique_self_loop_number
+    pub fn get_unique_selfloop_number(&self) -> NodeT {
+        self.unique_selfloop_number
     }
 
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate().unwrap());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_rate().unwrap());
     /// ```
-    pub fn get_self_loop_rate(&self) -> Result<f64, String> {
+    pub fn get_selfloop_rate(&self) -> Result<f64, String> {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)
     }
 
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
@@ -359,10 +359,10 @@ impl Graph {
     /// Returns number of singleton nodes with self-loops within the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_self_loops_number());
+    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
     /// ```
-    pub fn get_singleton_nodes_with_self_loops_number(&self) -> NodeT {
-        self.singleton_nodes_with_self_loops_number
+    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
+        self.singleton_nodes_with_selfloops_number
     }
 
     /// Returns number of not singleton nodes within the graph.
@@ -437,8 +437,8 @@ impl Graph {
 
         if self.has_edges() {
             report.insert(
-                "self_loops_rate",
-                self.get_self_loop_rate().unwrap().to_string(),
+                "selfloops_rate",
+                self.get_selfloop_rate().unwrap().to_string(),
             );
         }
 
@@ -450,10 +450,10 @@ impl Graph {
             self.get_undirected_edges_number().to_string(),
         );
         report.insert("directed", self.is_directed().to_string());
-        report.insert("has_weights", self.has_weights().to_string());
+        report.insert("has_edge_weights", self.has_edge_weights().to_string());
         report.insert("has_edge_types", self.has_edge_types().to_string());
         report.insert("has_node_types", self.has_node_types().to_string());
-        report.insert("self_loops_number", self.get_self_loop_number().to_string());
+        report.insert("selfloops_number", self.get_selfloop_number().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",
@@ -521,14 +521,14 @@ impl Graph {
         let overlapping_nodes_number = self
             .iter_nodes()
             .filter(|(_, node_name, _, node_type)| {
-                other.has_node_with_type_from_node_name(node_name, node_type.clone())
+                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
             .par_iter_edge_with_type(self.directed)
             .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                other.has_edge_with_type_from_node_names(
+                other.has_edge_from_node_names_and_edge_type_name(
                     src_name,
                     dst_name,
                     edge_type_name.as_ref(),
@@ -731,7 +731,7 @@ impl Graph {
 
         *ptr = Some(format!(
             concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
@@ -749,15 +749,15 @@ impl Graph {
             name = self.name,
             nodes_number = self.get_nodes_number(),
             edges_number = self.get_edges_number(),
-            weighted = match self.has_weights(){
+            weighted = match self.has_edge_weights(){
                 true=> "weighted",
                 false=> "unweighted"
             }.to_owned(),
-            self_loops = match self.has_selfloops() {
-                true => format!("{} are self-loops", self.get_self_loop_number()),
+            selfloops = match self.has_selfloops() {
+                true => format!("{} are self-loops", self.get_selfloop_number()),
                 false => "none are self-loops".to_owned()
             },
-            self_loops_multigraph_connector = match self.is_multigraph() {
+            selfloops_multigraph_connector = match self.is_multigraph() {
                 true => " and ".to_owned(),
                 false => "".to_owned()
             },
@@ -806,12 +806,12 @@ impl Graph {
             },
             singletons = match self.has_singletons() {
                 true => format!(
-                    " There are {singleton_number} singleton nodes{self_loop_singleton},", 
+                    " There are {singleton_number} singleton nodes{selfloop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    self_loop_singleton=match self.has_singleton_nodes_with_self_loops(){
-                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){
+                    selfloop_singleton=match self.has_singletons_with_selfloops(){
+                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
                             true=>"all".to_owned(),
-                            false=>format!("{} of these", self.get_singleton_nodes_with_self_loops_number())
+                            false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())
                         }),
                         false=>"".to_owned()
                     }
@@ -880,7 +880,7 @@ impl Graph {
             mean_node_degree=self.get_node_degrees_mean().unwrap(),
             mode_node_degree=self.get_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
+            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ));
 
         Ok(ptr.clone().unwrap())

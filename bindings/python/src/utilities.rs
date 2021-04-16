@@ -23,7 +23,7 @@ pub(crate) fn build_csv_file_reader(
             "weights_column_number",
             "weights_column",
             "default_weight",
-            "skip_self_loops",
+            "skip_selfloops",
             "ignore_duplicated_edges",
             "edge_header",
             "edge_rows_to_skip",
@@ -86,7 +86,7 @@ pub(crate) fn build_csv_file_reader(
         .set_weights_column_number(extract_value_rust_result!(kwargs, "weights_column_number", usize))?
         .set_weights_column(extract_value_rust_result!(kwargs, "weights_column", String))?
         .set_default_weight(extract_value_rust_result!(kwargs, "default_weight", WeightT))
-        .set_skip_self_loops(extract_value_rust_result!(kwargs, "skip_self_loops", bool))
+        .set_skip_selfloops(extract_value_rust_result!(kwargs, "skip_selfloops", bool))
         .set_ignore_duplicates(extract_value_rust_result!(kwargs, "ignore_duplicated_edges", bool))
         .set_verbose(extract_value_rust_result!(kwargs, "verbose", bool))
         .set_numeric_node_ids(extract_value_rust_result!(kwargs, "numeric_edge_node_ids", bool))

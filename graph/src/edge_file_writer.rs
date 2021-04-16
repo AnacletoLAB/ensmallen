@@ -254,7 +254,7 @@ impl EdgeFileWriter {
             ));
         }
 
-        if graph.has_weights() {
+        if graph.has_edge_weights() {
             header.push((self.weights_column.clone(), self.weights_column_number));
         }
 

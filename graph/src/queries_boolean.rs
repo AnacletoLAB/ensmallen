@@ -2,8 +2,10 @@ use super::*;
 
 /// # Boolean Queries
 /// The naming convention for unchecked methods follows:
-/// - `is_X_from_Y`
-/// - `has_X_from_Y`
+/// * `is_(.+?)_from_(.+)`
+/// * `has_(.+?)_from_(.+)`
+/// * `is_unchecked_(.+?)_from_(.+)`
+/// * `has_unchecked_(.+?)_from_(.+)`
 impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///
@@ -31,8 +33,8 @@ impl Graph {
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
-    pub fn is_singleton_with_self_loops_from_node_id(&self, node_id: NodeT) -> bool {
-        self.singleton_nodes_with_self_loops
+    pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> bool {
+        self.singleton_nodes_with_selfloops
             .as_ref()
             .map_or(false, |snsls| snsls.contains(node_id))
     }
@@ -94,16 +96,16 @@ impl Graph {
     /// To check if an edge with given type appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
-    /// assert!(graph.has_edge_with_type_from_node_ids(0, 1, Some(0)));
-    /// assert!(!graph.has_edge_with_type_from_node_ids(0, 1, Some(1)));
+    /// assert!(graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(0)));
+    /// assert!(!graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(1)));
     /// ```
-    pub fn has_edge_with_type_from_node_ids(
+    pub fn has_edge_from_node_ids_and_edge_type_id(
         &self,
         src: NodeT,
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> bool {
-        self.get_edge_id_with_type_from_node_ids(src, dst, edge_type)
+        self.get_edge_id_from_node_ids_and_edge_type_id(src, dst, edge_type)
             .is_ok()
     }
 
@@ -116,7 +118,7 @@ impl Graph {
     ///
     /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_unchecked_node_trap_from_node_id(&self, node_id: NodeT) -> bool {
+    pub fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.get_unchecked_node_degree_from_node_id(node_id) == 0
             && self
                 .not_singleton_nodes
@@ -130,9 +132,9 @@ impl Graph {
     ///
     /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_node_trap_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+    pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| self.is_unchecked_node_trap_from_node_id(node_id))
+            .map(|node_id| self.is_unchecked_trap_node_from_node_id(node_id))
     }
 
     /// Returns whether the given node name and node type name exist in current graph.
@@ -142,7 +144,7 @@ impl Graph {
     /// * node_name: String - The node name.
     /// * node_type_name: String - The node type name.
     ///
-    pub fn has_node_with_type_from_node_name(
+    pub fn has_node_from_node_name_and_node_type_name(
         &self,
         node_name: &str,
         node_type_name: Option<Vec<String>>,
@@ -197,18 +199,18 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
     /// let edge_type = "red".to_string();
     /// let unexistent_edge_type = "NonExistent".to_string();
-    /// assert!(graph.has_edge_with_type_from_node_names("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
-    /// assert!(!graph.has_edge_with_type_from_node_names("ENSP00000000233", "ENSP00000432568", Some(&unexistent_edge_type)));
-    /// assert!(!graph.has_edge_with_type_from_node_names("ENSP00000000233", "NonExistent", Some(&edge_type)));
-    /// assert!(!graph.has_edge_with_type_from_node_names("ENSP00000000233", "NonExistent", Some(&unexistent_edge_type)));
+    /// assert!(graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", Some(&unexistent_edge_type)));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", Some(&edge_type)));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", Some(&unexistent_edge_type)));
     /// ```
-    pub fn has_edge_with_type_from_node_names(
+    pub fn has_edge_from_node_names_and_edge_type_name(
         &self,
         src_name: &str,
         dst_name: &str,
         edge_type_name: Option<&String>,
     ) -> bool {
-        self.get_edge_id_with_type_from_node_names(src_name, dst_name, edge_type_name)
+        self.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
             .is_ok()
     }
 }

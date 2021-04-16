@@ -5,32 +5,40 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 use crate::utils::get_loading_bar;
 
 /// Structure that saves the common parameters for reading csv files.
-///
-/// # Attributes
-///
-/// * `path`: String - The of the file to read. E.g. "/tmp/test.csv"
-/// * `verbose`: bool - If the progress bars and logging must be displayed.
-/// * `separator`: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
-/// * `header`: bool - If the file (will / must) have the header with the titles of the columns.
-/// * `rows_to_skip`: usize - When reading, how many lines to skip before starting to read the file.
-/// * `ignore_duplicates`: bool - Whether the program should raise an exception or not when the file contains duplicated edges / nodes.
-/// * `csv_is_correct`: bool - Pinky promise that the file is well made.
-/// * `max_rows_number`: Option<u64> -if the program should stop reading after a certain number of rows.
-/// * `list_name`: String - The name of the list that is being loaded.
-/// * `graph_name`: String - The name of graph that is being loaded.
-///
 #[derive(Clone)]
 pub struct CSVFileReader {
+    /// The of the file to read. E.g. "/tmp/test.csv"
     pub(crate) path: String,
+
+    /// If the progress bars and logging must be displayed.
     pub(crate) verbose: bool,
+
+    /// The separator to use, usually, this is "\t" for tsv and "," for csv.
     pub(crate) separator: String,
+
+    /// If the file (will / must) have the header with the titles of the columns
     pub(crate) header: bool,
+
+    /// When reading, how many lines to skip before starting to read the file.
     pub(crate) rows_to_skip: usize,
+
+    /// Whether the program should raise an exception or not when the file contains duplicated edges / nodes.
     pub(crate) ignore_duplicates: bool,
+
+    /// Whether the user pinky promises that the csv is not malformed and thus it
+    /// can be loaded without additional checks, hence going faster.
     pub(crate) csv_is_correct: bool,
+
+    /// Pinky promise that the file is well made.
     pub(crate) max_rows_number: Option<u64>,
+
+    /// if the program should stop reading after a certain number of rows.
     pub(crate) comment_symbol: Option<String>,
+
+    /// The name of the list that is being loaded.
     pub(crate) list_name: String,
+
+    /// The name of graph that is being loaded.
     pub(crate) graph_name: String,
 }
 

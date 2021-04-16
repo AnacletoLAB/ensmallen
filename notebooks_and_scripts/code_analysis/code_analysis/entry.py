@@ -9,6 +9,7 @@ from .bindgen import bindgen
 from .doc_analysis import doc_analysis
 from .utils import build_path
 from .build_metatest import build_metatest
+from .check_method_names import check_method_names
 
 commands = {
     "analysis":analysis,
@@ -18,6 +19,7 @@ commands = {
     "bindgen":bindgen,
     "doc_analysis":doc_analysis,
     "build_metatest":build_metatest,
+    "check_method_names":check_method_names,
 }
 
 # The dependancy graph of each command 
@@ -31,6 +33,8 @@ deps = {
     "doc_analysis":"analysis",
     "check_doc":"doc_analysis",
     
+    "check_method_names":"analysis",
+
     "bindgen":["analysis", "doc_analysis"],
 }
 

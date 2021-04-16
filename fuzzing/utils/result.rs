@@ -39,7 +39,7 @@ pub struct Is_singleton_by_node_id_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_singleton_with_self_loops_by_node_id_Params {
+pub struct Is_singleton_with_selfloops_by_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -60,7 +60,7 @@ pub struct Has_edge_with_type_by_node_ids_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_node_trap_by_node_id_Params {
+pub struct Is_trap_node_by_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -359,7 +359,7 @@ pub struct Get_star_edge_names_Params {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct Get_clique_edges_Params {
 	pub directed : Option<bool>,
-	pub allow_self_loops : Option<bool>,
+	pub allow_selfloops : Option<bool>,
 	pub removed_existing_edges : Option<bool>,
 	pub allow_node_type_set : Option<HashSet<String>>,
 	pub allow_node_set : Option<HashSet<String>>,
@@ -369,7 +369,7 @@ pub struct Get_clique_edges_Params {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct Get_clique_edge_names_Params {
 	pub directed : Option<bool>,
-	pub allow_self_loops : Option<bool>,
+	pub allow_selfloops : Option<bool>,
 	pub removed_existing_edges : Option<bool>,
 	pub allow_node_type_set : Option<HashSet<String>>,
 	pub allow_node_set : Option<HashSet<String>>,
@@ -582,10 +582,10 @@ pub struct TheUltimateFuzzer {
 	pub connected_components : Connected_components_Params,
 	pub get_node_label_prediction_tuple_by_node_ids : Get_node_label_prediction_tuple_by_node_ids_Params,
 	pub is_singleton_by_node_id : Is_singleton_by_node_id_Params,
-	pub is_singleton_with_self_loops_by_node_id : Is_singleton_with_self_loops_by_node_id_Params,
+	pub is_singleton_with_selfloops_by_node_id : Is_singleton_with_selfloops_by_node_id_Params,
 	pub has_edge_by_node_ids : Has_edge_by_node_ids_Params,
 	pub has_edge_with_type_by_node_ids : Has_edge_with_type_by_node_ids_Params,
-	pub is_node_trap_by_node_id : Is_node_trap_by_node_id_Params,
+	pub is_trap_node_by_node_id : Is_trap_node_by_node_id_Params,
 	pub enable : Enable_Params,
 	pub get_edge_quadruple : Get_edge_quadruple_Params,
 	pub get_edge_triple : Get_edge_triple_Params,
@@ -666,7 +666,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
         data.from_vec.numeric_node_types_ids,
         data.from_vec.has_node_types,
         data.from_vec.has_edge_types,
-        data.from_vec.has_weights,
+        data.from_vec.has_edge_weights,
     )?;
     
     
@@ -687,12 +687,12 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 
 
 	graph.is_singleton_by_node_id(data.is_singleton_by_node_id.node_id)?;
-	graph.is_singleton_with_self_loops_by_node_id(data.is_singleton_with_self_loops_by_node_id.node_id);
+	graph.is_singleton_with_selfloops_by_node_id(data.is_singleton_with_selfloops_by_node_id.node_id);
 
 
 	graph.has_edge_by_node_ids(data.has_edge_by_node_ids.src, data.has_edge_by_node_ids.dst);
 	graph.has_edge_with_type_by_node_ids(data.has_edge_with_type_by_node_ids.src, data.has_edge_with_type_by_node_ids.dst, data.has_edge_with_type_by_node_ids.edge_type);
-	graph.is_node_trap_by_node_id(data.is_node_trap_by_node_id.node_id)?;
+	graph.is_trap_node_by_node_id(data.is_trap_node_by_node_id.node_id)?;
 
 
 
@@ -750,8 +750,8 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.get_bipartite_edge_names(data.get_bipartite_edge_names.removed_existing_edges, data.get_bipartite_edge_names.first_nodes_set, data.get_bipartite_edge_names.second_nodes_set, data.get_bipartite_edge_names.first_node_types_set, data.get_bipartite_edge_names.second_node_types_set)?;
 	graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set)?;
 	graph.get_star_edge_names(data.get_star_edge_names.central_node, data.get_star_edge_names.removed_existing_edges, data.get_star_edge_names.star_points_nodes_set, data.get_star_edge_names.star_points_node_types_set)?;
-	graph.get_clique_edges(data.get_clique_edges.directed, data.get_clique_edges.allow_self_loops, data.get_clique_edges.removed_existing_edges, data.get_clique_edges.allow_node_type_set, data.get_clique_edges.allow_node_set);
-	graph.get_clique_edge_names(data.get_clique_edge_names.directed, data.get_clique_edge_names.allow_self_loops, data.get_clique_edge_names.removed_existing_edges, data.get_clique_edge_names.allow_node_type_set, data.get_clique_edge_names.allow_node_set);
+	graph.get_clique_edges(data.get_clique_edges.directed, data.get_clique_edges.allow_selfloops, data.get_clique_edges.removed_existing_edges, data.get_clique_edges.allow_node_type_set, data.get_clique_edges.allow_node_set);
+	graph.get_clique_edge_names(data.get_clique_edge_names.directed, data.get_clique_edge_names.allow_selfloops, data.get_clique_edge_names.removed_existing_edges, data.get_clique_edge_names.allow_node_type_set, data.get_clique_edge_names.allow_node_set);
 	graph.get_sources(data.get_sources.directed);
 	graph.get_source_names(data.get_source_names.directed);
 	graph.get_destinations(data.get_destinations.directed);

@@ -13,7 +13,7 @@ pub struct EdgeFileReader {
     pub(crate) default_edge_type: Option<String>,
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
-    pub(crate) skip_self_loops: bool,
+    pub(crate) skip_selfloops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
@@ -38,7 +38,7 @@ impl EdgeFileReader {
             default_edge_type: None,
             weights_column_number: None,
             default_weight: None,
-            skip_self_loops: false,
+            skip_selfloops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
@@ -347,11 +347,11 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_self_loops: Option<bool> - whether should ignore or not selfloops.
+    /// * skip_selfloops: Option<bool> - whether should ignore or not selfloops.
     ///
-    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
-        if let Some(ssl) = skip_self_loops {
-            self.skip_self_loops = ssl;
+    pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
+        if let Some(ssl) = skip_selfloops {
+            self.skip_selfloops = ssl;
             self.might_have_singletons_with_selfloops = !ssl;
         }
         self
@@ -413,7 +413,7 @@ impl EdgeFileReader {
         might_have_singletons_with_selfloops: Option<bool>,
     ) -> EdgeFileReader {
         if let Some(skip) = might_have_singletons_with_selfloops {
-            self.might_have_singletons_with_selfloops = !self.skip_self_loops && skip;
+            self.might_have_singletons_with_selfloops = !self.skip_selfloops && skip;
         }
         self
     }
@@ -536,7 +536,7 @@ impl EdgeFileReader {
     }
 
     /// Return boolean representing if the weight types exist.
-    pub fn has_weights(&self) -> bool {
+    pub fn has_edge_weights(&self) -> bool {
         self.default_weight.is_some() || self.weights_column_number.is_some()
     }
 
@@ -633,7 +633,7 @@ impl EdgeFileReader {
                 Err(e) => Err(e),
             })
             .filter_ok(move |(source_node_name, destination_node_name, _, _)| {
-                !self.skip_self_loops || source_node_name != destination_node_name
+                !self.skip_selfloops || source_node_name != destination_node_name
             }))
     }
 }

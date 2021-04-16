@@ -25,7 +25,7 @@ impl Graph {
             return false;
         }
         self.iter_nodes().all(|(_, node_name, _, node_type)| {
-            other.has_node_with_type_from_node_name(&node_name, node_type)
+            other.has_node_from_node_name_and_node_type_name(&node_name, node_type)
         })
     }
 
@@ -74,10 +74,10 @@ impl Graph {
             self.name.clone(),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             verbose,
             self.has_singletons(),
-            self.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops(),
             self.has_trap_nodes(),
         )
     }

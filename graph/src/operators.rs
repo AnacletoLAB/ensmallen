@@ -42,14 +42,14 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_from_node_names(
+                        return !dg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_ref(),
                         );
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_from_node_names(
+                        return mhg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_ref(),
@@ -104,7 +104,7 @@ fn generic_string_operator(
         false,
         main.has_node_types(),
         main.has_edge_types(),
-        main.has_weights(),
+        main.has_edge_weights(),
         might_have_singletons,
         might_have_singletons_with_selfloops,
         might_have_trap_nodes,
@@ -147,10 +147,10 @@ fn generic_integer_operator(
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_with_type_from_node_ids(*src, *dst, *edge_type);
+                        return !dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_with_type_from_node_ids(*src, *dst, *edge_type);
+                        return mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
                     }
                     true
                 })
@@ -188,7 +188,7 @@ fn generic_integer_operator(
         build_operator_graph_name(main, other, operator),
         false,
         main.has_edge_types(),
-        main.has_weights(),
+        main.has_edge_weights(),
         false,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -204,7 +204,7 @@ impl<'a, 'b> Graph {
             ));
         }
 
-        if self.has_weights() != other.has_weights() {
+        if self.has_edge_weights() != other.has_edge_weights() {
             return Err(String::from(
                 "Both graphs need to have weights or neither can.",
             ));
@@ -296,8 +296,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
             // TODO: it is possible to make the following more precise!
             self.has_singletons() || other.has_singletons(),
             // TODO: it is possible to make the following more precise!
-            self.has_singleton_nodes_with_self_loops()
-                || other.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops() || other.has_singletons_with_selfloops(),
             // TODO: it is possible to make the following more precise!
             self.has_trap_nodes() || other.has_trap_nodes(),
         )

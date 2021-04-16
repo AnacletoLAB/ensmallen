@@ -1,7 +1,7 @@
 digraph deps {
 	node [shape=box];
 
-	"Graph::get_self_loop_number" [color=red];
+	"Graph::get_selfloop_number" [color=red];
 	"translate" [color=black];
 	"from_usize" [color=black];
 	"encode_max_edge" [color=black];
@@ -15,7 +15,7 @@ digraph deps {
 	"Graph::filter" [color=red];
 	"Graph::decode_edge" [color=red];
 	"Graph::get_edge_id_with_type_by_node_ids" [color=red];
-	"Graph::is_singleton_with_self_loops_by_node_id" [color=red];
+	"Graph::is_singleton_with_selfloops_by_node_id" [color=red];
 	"Graph::get_undirected_edges_number" [color=red];
 	"Graph::get_unchecked_node_id_by_node_name" [color=red];
 	"Graph::get_unchecked_node_name_by_node_id" [color=red];
@@ -63,7 +63,7 @@ digraph deps {
 	"is_empty" [color=black];
 	"Graph::get_filter_bitmap" [color=red];
 	"parse_string_unsorted_edges" [color=black];
-	"Graph::has_weights" [color=red];
+	"Graph::has_edge_weights" [color=red];
 	"Graph::build_graph" [color=red];
 	"Graph::get_unchecked_edge_id_from_tuple" [color=red];
 	"parse_node_type_ids" [color=black];
@@ -131,7 +131,7 @@ digraph deps {
 	"parse_string_unsorted_edges" -> "parse_unsorted_quadruples"
 	"build_reverse_mapping" -> "from_usize"
 	"build_reverse_mapping" -> "is_empty"
-	"validate_operator_terms" -> "Graph::has_weights"
+	"validate_operator_terms" -> "Graph::has_edge_weights"
 	"validate_operator_terms" -> "Graph::has_edge_types"
 	"validate_operator_terms" -> "Graph::has_node_types"
 	"Graph::iter_edges" -> "Graph::get_unchecked_node_name_by_node_id"
@@ -187,11 +187,11 @@ digraph deps {
 	"Graph::remove" -> "Graph::get_unchecked_node_id_by_node_name"
 	"Graph::remove" -> "Graph::contains"
 	"Graph::remove" -> "get_loading_bar"
-	"Graph::remove" -> "Graph::is_singleton_with_self_loops_by_node_id"
+	"Graph::remove" -> "Graph::is_singleton_with_selfloops_by_node_id"
 	"Graph::remove" -> "Graph::is_singleton_by_node_name"
 	"Graph::remove" -> "Graph::get_node_type_names_by_node_type_ids"
 	"Graph::remove" -> "Graph::get_name"
-	"Graph::remove" -> "Graph::has_weights"
+	"Graph::remove" -> "Graph::has_edge_weights"
 	"Graph::remove" -> "Graph::has_edge_types"
 	"Graph::remove" -> "Graph::has_selfloops"
 	"Graph::remove" -> "Graph::has_node_types"
@@ -245,7 +245,7 @@ digraph deps {
 	"parse_nodes" -> "parse_node_type_ids"
 	"Graph::get_singleton_nodes_number" -> "Graph::get_not_singleton_nodes_number"
 	"Graph::get_singleton_nodes_number" -> "Graph::get_nodes_number"
-	"Graph::is_singleton_with_self_loops_by_node_id" -> "Graph::contains"
+	"Graph::is_singleton_with_selfloops_by_node_id" -> "Graph::contains"
 	"Graph::iter_edges_with_type_ids" -> "Graph::get_unchecked_edge_type_by_edge_id"
 	"Graph::iter_edges_with_type_ids" -> "Graph::iter_edge_ids"
 	"is_empty" -> "is_empty"
@@ -255,7 +255,7 @@ digraph deps {
 	"generic_integer_operator" -> "build_operator_graph_name"
 	"generic_integer_operator" -> "Graph::has_edge_with_type_by_node_ids"
 	"generic_integer_operator" -> "Graph::filter"
-	"generic_integer_operator" -> "Graph::has_weights"
+	"generic_integer_operator" -> "Graph::has_edge_weights"
 	"generic_integer_operator" -> "Graph::has_edge_types"
 	"generic_integer_operator" -> "Graph::iter_edge_with_type_and_weight_ids"
 	"generic_integer_operator" -> "Graph::from_integer_unsorted"
@@ -268,7 +268,7 @@ digraph deps {
 	"Graph::filter" -> "get_loading_bar"
 	"Graph::filter" -> "Graph::get_filter_bitmap"
 	"Graph::filter" -> "Graph::get_edge_type_ids_by_edge_type_names"
-	"Graph::filter" -> "Graph::has_weights"
+	"Graph::filter" -> "Graph::has_edge_weights"
 	"Graph::filter" -> "Graph::has_edge_types"
 	"Graph::filter" -> "Graph::get_directed_edges_number"
 	"Graph::filter" -> "Graph::iter_edge_with_type_and_weight_ids"
@@ -278,7 +278,7 @@ digraph deps {
 	"parse_unsorted_quadruples" -> "get_loading_bar"
 	"Graph::iter_edge_with_type_and_weight_ids" -> "Graph::get_unchecked_weight_by_edge_id"
 	"Graph::iter_edge_with_type_and_weight_ids" -> "Graph::iter_edges_with_type_ids"
-	"Graph::get_undirected_edges_number" -> "Graph::get_self_loop_number"
+	"Graph::get_undirected_edges_number" -> "Graph::get_selfloop_number"
 	"Graph::get_undirected_edges_number" -> "Graph::get_directed_edges_number"
 	"Graph::iter_nodes" -> "Graph::get_node_type_name_by_node_id"
 	"Graph::iter_nodes" -> "unchecked_translate"
@@ -310,7 +310,7 @@ digraph deps {
 	"generic_string_operator" -> "Graph::get_node_type_name_by_node_id"
 	"generic_string_operator" -> "Graph::get_node_id_by_node_name"
 	"generic_string_operator" -> "Graph::filter"
-	"generic_string_operator" -> "Graph::has_weights"
+	"generic_string_operator" -> "Graph::has_edge_weights"
 	"generic_string_operator" -> "Graph::has_edge_types"
 	"generic_string_operator" -> "Graph::has_node_types"
 	"generic_string_operator" -> "Graph::iter_nodes"

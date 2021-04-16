@@ -14,7 +14,7 @@ impl Graph {
     /// Invalidate the cache for the textual report.
     /// This should be called as the first line of every methods that either get
     /// a mutable reference to self or get ownership of self.
-    pub(crate) fn invalidate_report(&self)  {
+    pub(crate) fn invalidate_report(&self) {
         *self.cached_report.write() = None;
     }
 

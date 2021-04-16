@@ -1,7 +1,9 @@
 use super::*;
 
 /// # Validators
-/// The naming convention we follow is `validate_X`.
+/// The naming convention we follow is:
+/// * `validate_(.+)`
+/// * `must_have_(.+)`
 impl Graph {
     /// Validates provided node ID.
     ///
@@ -95,11 +97,11 @@ impl Graph {
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
-    /// assert!(graph_with_weights.must_have_weights().is_ok());
-    /// assert!(graph_without_weights.must_have_weights().is_err());
+    /// assert!(graph_with_weights.must_have_edge_weights().is_ok());
+    /// assert!(graph_without_weights.must_have_edge_weights().is_err());
     /// ```
-    pub fn must_have_weights(&self) -> Result<(), String> {
-        if !self.has_weights() {
+    pub fn must_have_edge_weights(&self) -> Result<(), String> {
+        if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
         Ok(())

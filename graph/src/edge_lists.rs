@@ -74,7 +74,8 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if removed_existing_edges_unwrapped && self.has_edge_from_node_ids(*src, *dst)
+                        if removed_existing_edges_unwrapped
+                            && self.has_edge_from_node_ids(*src, *dst)
                         {
                             return None;
                         }
@@ -169,20 +170,20 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
         &self,
         directed: Option<bool>,
-        allow_self_loops: Option<bool>,
+        allow_selfloops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<NodeT>> {
         let directed_unwrapped = directed.unwrap_or(self.directed);
-        let allow_self_loops_unwrapped = allow_self_loops.unwrap_or_else(|| self.has_selfloops());
+        let allow_selfloops_unwrapped = allow_selfloops.unwrap_or_else(|| self.has_selfloops());
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
             .iter_nodes()
@@ -210,13 +211,14 @@ impl Graph {
                 nodes
                     .iter()
                     .filter_map(|dst| {
-                        if !allow_self_loops_unwrapped && src == dst {
+                        if !allow_selfloops_unwrapped && src == dst {
                             return None;
                         }
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
-                        if removed_existing_edges_unwrapped && self.has_edge_from_node_ids(*src, *dst)
+                        if removed_existing_edges_unwrapped
+                            && self.has_edge_from_node_ids(*src, *dst)
                         {
                             return None;
                         }
@@ -231,21 +233,21 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(
         &self,
         directed: Option<bool>,
-        allow_self_loops: Option<bool>,
+        allow_selfloops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.get_clique_edges(
             directed,
-            allow_self_loops,
+            allow_selfloops,
             removed_existing_edges,
             allow_node_type_set,
             allow_node_set,

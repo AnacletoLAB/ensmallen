@@ -77,7 +77,6 @@ pub mod walks_parameters;
 
 mod queries;
 mod queries_boolean;
-mod queries_unchecked;
 mod queries_walk;
 pub use self::queries::*;
 pub use self::queries_boolean::*;

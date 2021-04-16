@@ -51,7 +51,7 @@ pub fn load_ppi(
     load_weights: bool,
     directed: bool,
     verbose: bool,
-    skip_self_loops: bool,
+    skip_selfloops: bool,
 ) -> Result<Graph, String> {
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
@@ -100,7 +100,7 @@ pub fn load_ppi(
         })
         .set_max_rows_number(Some(100000))
         .set_default_weight(if load_weights { Some(5.0) } else { None })
-        .set_skip_self_loops(Some(skip_self_loops))
+        .set_skip_selfloops(Some(skip_selfloops))
         .clone();
 
     let ppi = Graph::from_unsorted_csv(
@@ -117,18 +117,18 @@ pub fn load_ppi(
     let ppi = ppi?;
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types,);
-    assert_eq!(ppi.has_weights(), load_weights);
+    assert_eq!(ppi.has_edge_weights(), load_weights);
     assert_eq!(
         ppi.has_selfloops(),
-        !skip_self_loops,
+        !skip_selfloops,
         concat!(
             "I was expecting the graph self-loops status to be {} ",
-            "since we have given parameter skip_self_loops equal to {}, ",
+            "since we have given parameter skip_selfloops equal to {}, ",
             "but actually is {}.\n",
             "The graph report is: \n {:?}"
         ),
-        !skip_self_loops,
-        skip_self_loops,
+        !skip_selfloops,
+        skip_selfloops,
         ppi.has_selfloops(),
         ppi.textual_report(false)
     );
@@ -214,7 +214,7 @@ fn validate_vocabularies(graph: &Graph) {
 
     if let Some(ws) = &graph.weights {
         assert_eq!(
-            !ws.is_empty(), graph.has_weights(),
+            !ws.is_empty(), graph.has_edge_weights(),
             concat!(
                 "We expect the edge weights vector to NOT be empty if the graph says it has weights.\n",
                 "The graph report is:\n{:?}"
@@ -302,17 +302,17 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
-    // Test get_edge_id_with_type_from_node_names()
+    // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(
         graph
-            .get_edge_id_with_type_from_node_names(NONEXISTENT, NONEXISTENT, None)
+            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)
             .is_err(),
         "Graph contains non-existing edge."
     );
 
     // Test has_node_from_name
     assert!(
-        !(graph.has_node_with_type_from_node_name(NONEXISTENT, None)),
+        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),
         "The graph seems to have a non-existing node."
     );
     assert!(
@@ -352,7 +352,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 1 {
         assert!(
-            graph.has_singletons() || graph.has_singleton_nodes_with_self_loops(),
+            graph.has_singletons() || graph.has_singletons_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
             graph.textual_report(false)
         );
@@ -374,7 +374,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
             assert!(
-                graph.has_edge_with_type_from_node_names(&src_string, &dst_string, edge_type.as_ref()),
+                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),
                 "I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
@@ -396,10 +396,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         );
         if graph.has_node_types() {
             assert!(
-                graph.has_node_with_type_from_node_name(
+                graph.has_node_from_node_name_and_node_type_name(
                     &src_string,
                     graph.get_node_type_name_from_node_name(&src_string)?
-                ) && graph.has_node_with_type_from_node_name(
+                ) && graph.has_node_from_node_name_and_node_type_name(
                     &dst_string,
                     graph.get_node_type_name_from_node_name(&dst_string)?
                 ),
@@ -414,11 +414,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 dst_string,
                 graph.get_node_type_name_from_node_name(&src_string),
                 graph.get_node_type_name_from_node_name(&dst_string),
-                graph.has_node_with_type_from_node_name(
+                graph.has_node_from_node_name_and_node_type_name(
                     &src_string,
                     graph.get_node_type_name_from_node_name(&src_string)?
                 ),
-                graph.has_node_with_type_from_node_name(
+                graph.has_node_from_node_name_and_node_type_name(
                     &dst_string,
                     graph.get_node_type_name_from_node_name(&dst_string)?
                 ),
@@ -957,7 +957,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         .filter(
             Some(graph.get_node_names()),
             graph
-                .get_node_type_names().ok()
+                .get_node_type_names()
+                .ok()
                 .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
             graph
                 .get_edge_type_names()
@@ -970,7 +971,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
     let _ = graph.filter(
         Some(graph.get_node_names()),
         graph
-            .get_node_type_names().ok()
+            .get_node_type_names()
+            .ok()
             .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
         graph
             .get_edge_type_names()
@@ -1121,7 +1123,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         if let Some(we) = &without_edge_types.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
-            assert_eq!(we.has_weights(), graph.has_weights());
+            assert_eq!(we.has_edge_weights(), graph.has_edge_weights());
             assert_eq!(we.node_types, graph.node_types);
             assert_eq!(
                 we.get_unique_edges_number(),
@@ -1135,8 +1137,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
                 we.textual_report(false),
             );
             assert_eq!(
-                we.get_unique_self_loop_number(),
-                graph.get_unique_self_loop_number(),
+                we.get_unique_selfloop_number(),
+                graph.get_unique_selfloop_number(),
                 "Number of unique self loops does not match in graph without edge types."
             );
             assert_eq!(we.nodes, graph.nodes);
@@ -1172,7 +1174,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         );
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
-            assert_eq!(ww.has_weights(), false);
+            assert_eq!(ww.has_edge_weights(), false);
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.nodes, graph.nodes);

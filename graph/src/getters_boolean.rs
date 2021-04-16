@@ -1,8 +1,12 @@
 use super::*;
 
 /// # Getters
-/// The naming convention we follow is `has_X` or `is_X`.
-/// The naming convention for unchecked methods follows `has_unchecked_X` or `is_unchecked_X`.
+/// The naming convention we follow is:
+/// * `has_(.+)`
+/// * `is_(.+)`
+/// The naming convention for unchecked methods follows:
+/// * `has_unchecked_(.+)`
+/// * `is_unchecked_(.+)`.
 impl Graph {
     /// Return if the graph has any nodes.
     ///
@@ -69,12 +73,12 @@ impl Graph {
     /// # Example
     /// ```rust
     /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert!(weights_string_ppi.has_weights());
+    /// assert!(weights_string_ppi.has_edge_weights());
     /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
-    /// assert!(!unweights_string_ppi.has_weights());
+    /// assert!(!unweights_string_ppi.has_edge_weights());
     /// ```
     ///
-    pub fn has_weights(&self) -> bool {
+    pub fn has_edge_weights(&self) -> bool {
         self.weights.is_some()
     }
 
@@ -103,7 +107,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.self_loop_number > 0
+        self.selfloop_number > 0
     }
 
     /// Returns boolean representing if graph has singletons.
@@ -122,8 +126,8 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has singletons.
-    pub fn has_singleton_nodes_with_self_loops(&self) -> bool {
-        self.get_singleton_nodes_with_self_loops_number() > 0
+    pub fn has_singletons_with_selfloops(&self) -> bool {
+        self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
     /// Returns boolean representing if graph has node types.

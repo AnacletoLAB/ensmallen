@@ -53,7 +53,7 @@ impl Graph {
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
-            edge_file_reader.has_weights(),
+            edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.might_have_singletons),
@@ -109,7 +109,7 @@ impl Graph {
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
-            edge_file_reader.has_weights(),
+            edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.might_have_singletons),

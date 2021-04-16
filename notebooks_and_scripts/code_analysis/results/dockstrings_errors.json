@@ -103,7 +103,7 @@
             "[   ~] Missing the documentation for the argument 'node_id'.",
             "[   0] Missing Example"
         ],
-        "is_singleton_with_self_loops_by_node_id": [
+        "is_singleton_with_selfloops_by_node_id": [
             "[   ~] Missing the documentation for the argument 'node_id'.",
             "[   0] Missing Example"
         ],
@@ -126,7 +126,7 @@
             "[   ~] Missing the documentation for the argument 'src'.",
             "[   8] The example section is missing or in the wrong order."
         ],
-        "is_node_trap_by_node_id": [
+        "is_trap_node_by_node_id": [
             "[   4] The argument line '* `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.' (doc_line: 4) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'node_id'.",
             "[   0] Missing Example"
@@ -392,13 +392,13 @@
         "get_node_degrees_mode": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_self_loop_number": [
+        "get_selfloop_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_unique_self_loop_number": [
+        "get_unique_selfloop_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_self_loop_rate": [
+        "get_selfloop_rate": [
             "[   2] The example section is missing or in the wrong order."
         ],
         "connected_components_number": [
@@ -408,7 +408,7 @@
         "get_singleton_nodes_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_singleton_nodes_with_self_loops_number": [
+        "get_singleton_nodes_with_selfloops_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
         "get_not_singleton_nodes_number": [
@@ -521,7 +521,7 @@
         "get_clique_edges": [
             "[   ~] Missing the documentation for the argument 'directed'.",
             "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'allow_self_loops'.",
+            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
             "[   ~] Missing the documentation for the argument 'allow_node_set'.",
             "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
             "[   0] Missing Example"
@@ -529,14 +529,14 @@
         "get_clique_edge_names": [
             "[   ~] Missing the documentation for the argument 'directed'.",
             "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'allow_self_loops'.",
+            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
             "[   ~] Missing the documentation for the argument 'allow_node_set'.",
             "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
             "[   0] Missing Example"
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/getters.rs": {
-        "has_singleton_nodes_with_self_loops": [
+        "has_singletons_with_selfloops": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -850,7 +850,7 @@
             "[   ~] Missing the documentation for the argument 'verbose'.",
             "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
             "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'has_weights'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
             "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
             "[   ~] Missing the documentation for the argument 'has_node_types'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
@@ -865,7 +865,7 @@
         "from_integer_unsorted": [
             "[   4] The argument line '* edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 4) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'has_weights'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
             "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
             "[   ~] Missing the documentation for the argument 'edges_iterator'.",
             "[   ~] Missing the documentation for the argument 'name'.",

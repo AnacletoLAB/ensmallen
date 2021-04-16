@@ -118,7 +118,8 @@ impl Graph {
                     })
                     .chain(self.iter_edges_from_random_state(random_state).filter_map(
                         move |(edge_id, src, dst)| {
-                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {
+                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+                            {
                                 return None;
                             }
                             Some((src, dst))
@@ -551,7 +552,7 @@ impl Graph {
     ///  #     false,     // numeric_node_types_ids
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
-    ///  #     false,     // has_weights
+    ///  #     false,     // has_edge_weights
     ///  #     true,
     ///  #     true,
     ///  #     true,
@@ -644,7 +645,7 @@ impl Graph {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
                             && (self.is_unchecked_singleton_from_node_id(src)
-                                || self.is_singleton_with_self_loops_from_node_id(src))
+                                || self.is_singleton_with_selfloops_from_node_id(src))
                         {
                             // We set singletons as self-loops for now.
                             unsafe {

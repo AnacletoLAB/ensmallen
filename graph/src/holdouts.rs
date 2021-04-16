@@ -50,7 +50,9 @@ impl Graph {
             }
             Some(
                 sg.iter_nodes()
-                    .map(|(_, node_name, _, _)| self.get_unchecked_node_id_from_node_name(&node_name))
+                    .map(|(_, node_name, _, _)| {
+                        self.get_unchecked_node_id_from_node_name(&node_name)
+                    })
                     .collect::<RoaringBitmap>(),
             )
         } else {
@@ -325,7 +327,7 @@ impl Graph {
         for (edge_id, (src, dst, edge_type)) in edge_indices.into_iter().map(|edge_id| {
             (
                 edge_id,
-                self.get_unchecked_node_ids_and_type_from_edge_id(edge_id),
+                self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id),
             )
         }) {
             // If the graph is undirected and we have extracted an edge that is a
@@ -348,7 +350,7 @@ impl Graph {
                 if !self.directed {
                     // we compute also the backward edge ids that are required.
                     valid_edges_bitmap.extend(self.compute_edge_ids_vector(
-                        self.get_unchecked_edge_id_with_type_from_node_ids(dst, src, edge_type),
+                        self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(dst, src, edge_type),
                         dst,
                         src,
                         include_all_edge_types,
@@ -395,7 +397,10 @@ impl Graph {
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
                     .map(|edge_id| {
-                        Ok(self.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id))
+                        Ok(self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            ))
                     }),
                 self.get_directed_edges_number() as usize - valid_edges_bitmap.len() as usize,
                 self.nodes.clone(),
@@ -406,7 +411,7 @@ impl Graph {
                 format!("{} training", self.name.clone()),
                 true,
                 self.has_edge_types(),
-                self.has_weights(),
+                self.has_edge_weights(),
                 train_graph_might_have_singletons,
                 train_graph_might_have_singletons_with_selfloops,
                 true,
@@ -416,7 +421,10 @@ impl Graph {
                     .iter()
                     .progress_with(pb_valid)
                     .map(|edge_id| {
-                        Ok(self.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id))
+                        Ok(self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            ))
                     }),
                 valid_edges_bitmap.len() as usize,
                 self.nodes.clone(),
@@ -427,7 +435,7 @@ impl Graph {
                 format!("{} testing", self.name.clone()),
                 true,
                 self.has_edge_types(),
-                self.has_weights(),
+                self.has_edge_weights(),
                 true,
                 self.has_selfloops(),
                 true,
@@ -519,18 +527,18 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop = self.is_singleton_with_self_loops_from_node_id(src);
+                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
                 // The tree must not contain the provided edge ID
                 // And this is not a self-loop edge with degree 1
                 // And the edge type of the edge ID is within the provided edge type
-                !is_in_tree && !singleton_self_loop && correct_edge_type
+                !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
             self.has_singletons(),
-            self.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops(),
         )
     }
 
@@ -587,7 +595,7 @@ impl Graph {
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
                 if let Some(mno) = min_number_overlaps {
-                    if self.get_unchecked_edge_degreee_from_node_ids(src, dst) < mno {
+                    if self.get_unchecked_edge_degree_from_node_ids(src, dst) < mno {
                         return false;
                     }
                 }
@@ -903,7 +911,7 @@ impl Graph {
         // We iterate on the components
         'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
-            if self.is_node_trap_from_node_id(*node).unwrap() {
+            if self.is_trap_node_from_node_id(*node).unwrap() {
                 continue;
             }
             stack.push(*node);
@@ -930,7 +938,8 @@ impl Graph {
 
         let edges_bitmap =
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
-                let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
+                let (min_edge_id, max_edge_id) =
+                    self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                 (min_edge_id..max_edge_id)
                     .filter(|edge_id| {
                         unique_nodes
@@ -940,10 +949,10 @@ impl Graph {
             }));
 
         Graph::build_graph(
-            edges_bitmap
-                .iter()
-                .progress_with(pb3)
-                .map(|edge_id| Ok(self.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id))),
+            edges_bitmap.iter().progress_with(pb3).map(|edge_id| {
+                Ok(self
+                    .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))
+            }),
             edges_bitmap.len() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
@@ -953,7 +962,7 @@ impl Graph {
             format!("{} subgraph", self.name.clone()),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             true,
             self.has_selfloops(),
             true,

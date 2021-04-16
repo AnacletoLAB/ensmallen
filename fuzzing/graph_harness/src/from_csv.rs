@@ -48,7 +48,7 @@ pub struct EdgeFileReaderParams {
     pub weights_column: Option<String>,
     pub default_weight: Option<WeightT>,
     pub default_edge_type: Option<String>,
-    pub skip_self_loops: Option<bool>,
+    pub skip_selfloops: Option<bool>,
     pub numeric_edge_type_ids: Option<bool>,
     pub numeric_node_ids: Option<bool>,
     pub skip_weights_if_unavailable: Option<bool>,
@@ -109,7 +109,7 @@ fn load_graph(
         .set_weights_column(data.edge_reader.weights_column)?
         .set_default_weight(data.edge_reader.default_weight)
         .set_default_edge_type(data.edge_reader.default_edge_type)
-        .set_skip_self_loops(data.edge_reader.skip_self_loops)
+        .set_skip_selfloops(data.edge_reader.skip_selfloops)
         .set_numeric_edge_type_ids(data.edge_reader.numeric_edge_type_ids)
         .set_numeric_node_ids(data.edge_reader.numeric_node_ids)
         .set_skip_weights_if_unavailable(data.edge_reader.skip_weights_if_unavailable)

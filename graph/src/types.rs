@@ -1,7 +1,7 @@
 use std::fmt::Display;
 use std::hash::Hash;
-use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 use std::ops::AddAssign;
+use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -65,13 +65,13 @@ impl_to_from_usize!(u8 u16 u32 u64 usize);
 
 #[derive(Debug)]
 pub(crate) struct ClonableRwLock<T: Clone + std::fmt::Debug> {
-    value: RwLock<T>
+    value: RwLock<T>,
 }
 
 impl<T: Clone + std::fmt::Debug> ClonableRwLock<T> {
     pub fn new(val: T) -> ClonableRwLock<T> {
-        ClonableRwLock{
-            value: RwLock::new(val)
+        ClonableRwLock {
+            value: RwLock::new(val),
         }
     }
 
@@ -83,10 +83,10 @@ impl<T: Clone + std::fmt::Debug> ClonableRwLock<T> {
     }
 }
 
-impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T>{
+impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T> {
     fn clone(&self) -> ClonableRwLock<T> {
-        ClonableRwLock{
-            value: RwLock::new(self.read().clone())
+        ClonableRwLock {
+            value: RwLock::new(self.read().clone()),
         }
     }
 }

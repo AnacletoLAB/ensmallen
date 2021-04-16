@@ -187,7 +187,7 @@ impl Graph {
                     // node types.
                     if singletons
                         && selfloops
-                        && self.is_singleton_with_self_loops_from_node_id(node_id)
+                        && self.is_singleton_with_selfloops_from_node_id(node_id)
                     {
                         return None;
                     }
@@ -242,7 +242,7 @@ impl Graph {
             false,
             self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
-            self.has_weights() && !weights,
+            self.has_edge_weights() && !weights,
             // TODO: This may be made more precise!
             true,
             self.has_selfloops() && !selfloops,
@@ -388,9 +388,9 @@ impl Graph {
             false,
             self.has_node_types(),
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_singleton_nodes_with_self_loops()
+            self.has_singletons_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
             self.get_name(),

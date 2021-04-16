@@ -675,7 +675,9 @@ impl Graph {
             move |index| {
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    self.get_unchecked_unique_source_node_id(index as NodeT % self.get_unique_source_nodes_number()),
+                    self.get_unchecked_unique_source_node_id(
+                        index as NodeT % self.get_unique_source_nodes_number(),
+                    ),
                 )
             },
             parameters,
@@ -707,7 +709,7 @@ impl Graph {
         // If the graph does not have any weights and the parameters
         // for the walks are all equal to 1, we can use the first-order
         // random walk algorithm.
-        let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+        let use_uniform = !self.has_edge_weights() && parameters.is_first_order_walk();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);

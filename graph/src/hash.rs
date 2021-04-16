@@ -60,15 +60,15 @@ impl Hash for Graph {
         // self.unique_sources.hash(state);
         // self.node_bits.hash(state);
         // self.node_bit_mask.hash(state);
-        // self.unique_self_loop_number.hash(state);
-        // self.self_loop_number.hash(state);
+        // self.unique_selfloop_number.hash(state);
+        // self.selfloop_number.hash(state);
         // self.not_singleton_nodes_number.hash(state);
-        // self.singleton_nodes_with_self_loops_number.hash(state);
+        // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.unique_edges_number.hash(state);
 
         // These fields are not meaningfull to hash imho
         // self.name.hash(state);
-        // self.singleton_nodes_with_self_loops_number.hash(state);
+        // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.sources.hash(state);
         // self.outbounds.hash(state);
         // self.cached_destinations.hash(state);

@@ -24,13 +24,13 @@ impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns number of self-loops.
     pub fn get_selfloops_number(&self) -> EdgeT {
-        self.graph.get_self_loop_number()
+        self.graph.get_selfloop_number()
     }
 
     #[text_signature = "($self)"]
     /// Returns ratio of self-loops.
     pub fn get_selfloops_rate(&self) -> f64 {
-        self.graph.get_self_loop_rate()
+        self.graph.get_selfloop_rate()
     }
 
     #[text_signature = "($self)"]

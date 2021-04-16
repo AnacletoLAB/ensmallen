@@ -31,7 +31,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
         data.from_vec.numeric_node_types_ids,
         data.from_vec.has_node_types,
         data.from_vec.has_edge_types,
-        data.from_vec.has_weights,
+        data.from_vec.has_edge_weights,
         true,
         true,
         true,

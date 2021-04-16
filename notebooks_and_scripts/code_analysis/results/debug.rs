@@ -178,7 +178,7 @@ fn generic_string_operator(
         false,
         main.has_node_types(),
         main.has_edge_types(),
-        main.has_weights(),
+        main.has_edge_weights(),
         might_have_singletons,
         might_have_singletons_with_selfloops,
         might_have_trap_nodes,
@@ -262,7 +262,7 @@ fn generic_integer_operator(
         build_operator_graph_name(main, other, operator),
         false,
         main.has_edge_types(),
-        main.has_weights(),
+        main.has_edge_weights(),
         false,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -278,7 +278,7 @@ impl<'a, 'b> Graph {
             ));
         }
 
-        if self.has_weights() != other.has_weights() {
+        if self.has_edge_weights() != other.has_edge_weights() {
             return Err(String::from(
                 "Both graphs need to have weights or neither can.",
             ));
@@ -370,8 +370,8 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
             // TODO: it is possible to make the following more precise!
             self.has_singletons() || other.has_singletons(),
             // TODO: it is possible to make the following more precise!
-            self.has_singleton_nodes_with_self_loops()
-                || other.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops()
+                || other.has_singletons_with_selfloops(),
             // TODO: it is possible to make the following more precise!
             self.has_trap_nodes() || other.has_trap_nodes(),
         )
@@ -1242,13 +1242,13 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singletons() || self.has_singleton_nodes_with_self_loops() {
+        if self.has_singletons() || self.has_singletons_with_selfloops() {
             min_component_size = 1;
             max_component_size = 1;
             (0..self.get_nodes_number())
                 .filter(|node_id| {
                     self.is_singleton_by_node_id(*node_id).unwrap()
-                        || self.is_singleton_with_self_loops_by_node_id(*node_id)
+                        || self.is_singleton_with_selfloops_by_node_id(*node_id)
                 })
                 .for_each(|node_id| {
                     components[node_id as usize] = component_sizes.len() as NodeT;
@@ -1586,7 +1586,7 @@ impl Graph {
     ///  #     false,     // numeric_node_types_ids
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
-    ///  #     false,     // has_weights
+    ///  #     false,     // has_edge_weights
     ///  #     true,
     ///  #     true,
     ///  #     true,
@@ -1683,7 +1683,7 @@ impl Graph {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons()
                             && (self.is_singleton_by_node_id(src).unwrap()
-                                || self.is_singleton_with_self_loops_by_node_id(src))
+                                || self.is_singleton_with_selfloops_by_node_id(src))
                         {
                             // We set singletons as self-loops for now.
                             unsafe {
@@ -1951,19 +1951,19 @@ pub struct Graph {
     pub(crate) directed: bool,
     /// Number of nodes that have at least a self-loop.
     /// This means that if a nodes has multiples self-loops they will be count as one.
-    pub(crate) unique_self_loop_number: NodeT,
+    pub(crate) unique_selfloop_number: NodeT,
     /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
-    pub(crate) self_loop_number: EdgeT,
+    pub(crate) selfloop_number: EdgeT,
     /// Number of nodes that have at least an edge inbound or outbound.
     pub(crate) not_singleton_nodes_number: NodeT,
     /// Number of singleton nodes that have a self-loop
-    pub(crate) singleton_nodes_with_self_loops_number: NodeT,
+    pub(crate) singleton_nodes_with_selfloops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
     /// Graph name
     pub(crate) name: String,
     pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
-    pub(crate) singleton_nodes_with_self_loops: Option<RoaringBitmap>,
+    pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
 
     /// Cache of the textual report. This is needed because in some of the bindings
@@ -1990,10 +1990,10 @@ pub struct Graph {
 impl Graph {
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
-        unique_self_loop_number: NodeT,
-        self_loop_number: EdgeT,
+        unique_selfloop_number: NodeT,
+        selfloop_number: EdgeT,
         not_singleton_nodes_number: NodeT,
-        singleton_nodes_with_self_loops_number: NodeT,
+        singleton_nodes_with_selfloops_number: NodeT,
         unique_edges_number: EdgeT,
         edges: EliasFano,
         unique_sources: Option<EliasFano>,
@@ -2005,14 +2005,14 @@ impl Graph {
         weights: Option<Vec<WeightT>>,
         node_types: Option<NodeTypeVocabulary>,
         not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
-        singleton_nodes_with_self_loops: Option<RoaringBitmap>
+        singleton_nodes_with_selfloops: Option<RoaringBitmap>
     ) -> Graph {
         Graph {
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -2028,7 +2028,7 @@ impl Graph {
             cached_destinations: None,
             name: name.into(),
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
             cached_report: ClonableRwLock::new(None),
         }
     }
@@ -2504,7 +2504,7 @@ impl Graph {
             ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
         let positive_number: usize = batch_size - negative_number;
-        let graph_has_no_self_loops = !self.has_selfloops();
+        let graph_has_no_selfloops = !self.has_selfloops();
 
         let edges_number = self.get_directed_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u32;
@@ -2540,7 +2540,7 @@ impl Graph {
                             }
                         }
 
-                        if graph_has_no_self_loops && src == dst {
+                        if graph_has_no_selfloops && src == dst {
                             sampled = xorshift(sampled);
                             continue;
                         }
@@ -2915,10 +2915,10 @@ impl Graph {
             self.name.clone(),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             verbose,
             self.has_singletons(),
-            self.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops(),
             self.has_trap_nodes(),
         )
     }
@@ -2939,7 +2939,7 @@ pub struct EdgeFileReader {
     pub(crate) default_edge_type: Option<String>,
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
-    pub(crate) skip_self_loops: bool,
+    pub(crate) skip_selfloops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
@@ -2964,7 +2964,7 @@ impl EdgeFileReader {
             default_edge_type: None,
             weights_column_number: None,
             default_weight: None,
-            skip_self_loops: false,
+            skip_selfloops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
@@ -3273,11 +3273,11 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_self_loops: Option<bool> - whether should ignore or not selfloops.
+    /// * skip_selfloops: Option<bool> - whether should ignore or not selfloops.
     ///
-    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
-        if let Some(ssl) = skip_self_loops {
-            self.skip_self_loops = ssl;
+    pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
+        if let Some(ssl) = skip_selfloops {
+            self.skip_selfloops = ssl;
             self.might_have_singletons_with_selfloops = !ssl;
         }
         self
@@ -3339,7 +3339,7 @@ impl EdgeFileReader {
         might_have_singletons_with_selfloops: Option<bool>,
     ) -> EdgeFileReader {
         if let Some(skip) = might_have_singletons_with_selfloops {
-            self.might_have_singletons_with_selfloops = !self.skip_self_loops && skip;
+            self.might_have_singletons_with_selfloops = !self.skip_selfloops && skip;
         }
         self
     }
@@ -3462,7 +3462,7 @@ impl EdgeFileReader {
     }
 
     /// Return boolean representing if the weight types exist.
-    pub fn has_weights(&self) -> bool {
+    pub fn has_edge_weights(&self) -> bool {
         self.default_weight.is_some() || self.weights_column_number.is_some()
     }
 
@@ -3559,7 +3559,7 @@ impl EdgeFileReader {
                 Err(e) => Err(e),
             })
             .filter_ok(move |(source_node_name, destination_node_name, _, _)| {
-                !self.skip_self_loops || source_node_name != destination_node_name
+                !self.skip_selfloops || source_node_name != destination_node_name
             }))
     }
 }
@@ -3590,8 +3590,8 @@ impl Graph {
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
-    pub fn is_singleton_with_self_loops_by_node_id(&self, node_id: NodeT) -> bool {
-        self.singleton_nodes_with_self_loops
+    pub fn is_singleton_with_selfloops_by_node_id(&self, node_id: NodeT) -> bool {
+        self.singleton_nodes_with_selfloops
             .as_ref()
             .map_or(false, |snsls| snsls.contains(node_id))
     }
@@ -3672,7 +3672,7 @@ impl Graph {
     ///
     /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_node_trap_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+    pub fn is_trap_node_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.get_node_degree_by_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
@@ -3862,7 +3862,7 @@ pub fn load_ppi(
     load_weights: bool,
     directed: bool,
     verbose: bool,
-    skip_self_loops: bool,
+    skip_selfloops: bool,
 ) -> Result<Graph, String> {
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
@@ -3911,7 +3911,7 @@ pub fn load_ppi(
         })
         .set_max_rows_number(Some(100000))
         .set_default_weight(if load_weights { Some(5.0) } else { None })
-        .set_skip_self_loops(Some(skip_self_loops))
+        .set_skip_selfloops(Some(skip_selfloops))
         .clone();
 
     let ppi = Graph::from_unsorted_csv(
@@ -3928,18 +3928,18 @@ pub fn load_ppi(
     let ppi = ppi?;
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types,);
-    assert_eq!(ppi.has_weights(), load_weights);
+    assert_eq!(ppi.has_edge_weights(), load_weights);
     assert_eq!(
         ppi.has_selfloops(),
-        !skip_self_loops,
+        !skip_selfloops,
         concat!(
             "I was expecting the graph self-loops status to be {} ",
-            "since we have given parameter skip_self_loops equal to {}, ",
+            "since we have given parameter skip_selfloops equal to {}, ",
             "but actually is {}.\n",
             "The graph report is: \n {:?}"
         ),
-        !skip_self_loops,
-        skip_self_loops,
+        !skip_selfloops,
+        skip_selfloops,
         ppi.has_selfloops(),
         ppi.textual_report(false)
     );
@@ -4004,7 +4004,7 @@ fn validate_vocabularies(graph: &Graph) {
 
     if let Some(ws) = &graph.weights {
         assert_eq!(
-            !ws.is_empty(), graph.has_weights(),
+            !ws.is_empty(), graph.has_edge_weights(),
             concat!(
                 "We expect the edge weights vector to NOT be empty if the graph says it has weights.\n",
                 "The graph report is:\n{:?}"
@@ -4142,7 +4142,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 1 {
         assert!(
-            graph.has_singletons() || graph.has_singleton_nodes_with_self_loops(),
+            graph.has_singletons() || graph.has_singletons_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
             graph.textual_report(false)
         );
@@ -4879,7 +4879,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         if let Some(we) = &without_edge_types.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
-            assert_eq!(we.has_weights(), graph.has_weights());
+            assert_eq!(we.has_edge_weights(), graph.has_edge_weights());
             assert_eq!(we.node_types, graph.node_types);
             assert_eq!(
                 we.get_unique_edges_number(),
@@ -4893,8 +4893,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
                 we.textual_report(false),
             );
             assert_eq!(
-                we.get_unique_self_loop_number(),
-                graph.get_unique_self_loop_number(),
+                we.get_unique_selfloop_number(),
+                graph.get_unique_selfloop_number(),
                 "Number of unique self loops does not match in graph without edge types."
             );
             assert_eq!(we.nodes, graph.nodes);
@@ -4930,7 +4930,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         );
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
-            assert_eq!(ww.has_weights(), false);
+            assert_eq!(ww.has_edge_weights(), false);
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.nodes, graph.nodes);
@@ -6323,7 +6323,7 @@ impl Graph {
             self.name.clone(),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             true,
             true,
             true,
@@ -6490,7 +6490,7 @@ impl Graph {
             ));
         }
 
-        if self.is_node_trap_by_node_id(one).unwrap() || self.is_node_trap_by_node_id(two).unwrap()
+        if self.is_trap_node_by_node_id(one).unwrap() || self.is_trap_node_by_node_id(two).unwrap()
         {
             return Ok(0.0f64);
         }
@@ -6527,7 +6527,7 @@ impl Graph {
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
+        if self.is_trap_node_by_node_id(one)? || self.is_trap_node_by_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -6540,7 +6540,7 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
+            .filter(|node| !self.is_trap_node_by_node_id(**node).unwrap())
             .map(|node| 1.0 / (self.get_node_degree_by_node_id(*node).unwrap() as f64).ln())
             .sum())
     }
@@ -6568,7 +6568,7 @@ impl Graph {
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
-        if self.is_node_trap_by_node_id(one)? || self.is_node_trap_by_node_id(two)? {
+        if self.is_trap_node_by_node_id(one)? || self.is_trap_node_by_node_id(two)? {
             return Ok(0.0f64);
         }
 
@@ -6581,7 +6581,7 @@ impl Graph {
 
         Ok(intersections
             .par_iter()
-            .filter(|node| !self.is_node_trap_by_node_id(**node).unwrap())
+            .filter(|node| !self.is_trap_node_by_node_id(**node).unwrap())
             .map(|node| 1.0 / self.get_node_degree_by_node_id(*node).unwrap() as f64)
             .sum())
     }
@@ -6598,9 +6598,9 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| {
-                if !self.is_node_trap_by_node_id(node).unwrap() {
+                if !self.is_trap_node_by_node_id(node).unwrap() {
                     self.iter_node_neighbours_ids(node)
-                        .map(|dst| self.is_node_trap_by_node_id(dst).unwrap() as usize as f64)
+                        .map(|dst| self.is_trap_node_by_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
                         / self.get_node_degree_by_node_id(node).unwrap() as f64
                 } else {
@@ -6631,8 +6631,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_self_loop_number()) / 2
-            + self.get_self_loop_number()
+        (self.get_directed_edges_number() - self.get_selfloop_number()) / 2
+            + self.get_selfloop_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -6641,8 +6641,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.unique_edges_number - self.get_unique_self_loop_number() as EdgeT) / 2
-            + self.get_unique_self_loop_number() as EdgeT
+        (self.unique_edges_number - self.get_unique_selfloop_number() as EdgeT) / 2
+            + self.get_unique_selfloop_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -6734,31 +6734,31 @@ impl Graph {
     /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of self-loops in the graph is  {}", graph.get_self_loop_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
     /// ```
-    pub fn get_self_loop_number(&self) -> EdgeT {
-        self.self_loop_number
+    pub fn get_selfloop_number(&self) -> EdgeT {
+        self.selfloop_number
     }
 
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_self_loop_number());
+    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
     /// ```
-    pub fn get_unique_self_loop_number(&self) -> NodeT {
-        self.unique_self_loop_number
+    pub fn get_unique_selfloop_number(&self) -> NodeT {
+        self.unique_selfloop_number
     }
 
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate().unwrap());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_rate().unwrap());
     /// ```
-    pub fn get_self_loop_rate(&self) -> Result<f64, String> {
+    pub fn get_selfloop_rate(&self) -> Result<f64, String> {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_self_loop_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)
     }
 
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
@@ -6788,10 +6788,10 @@ impl Graph {
     /// Returns number of singleton nodes with self-loops within the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_self_loops_number());
+    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
     /// ```
-    pub fn get_singleton_nodes_with_self_loops_number(&self) -> NodeT {
-        self.singleton_nodes_with_self_loops_number
+    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
+        self.singleton_nodes_with_selfloops_number
     }
 
     /// Returns number of not singleton nodes within the graph.
@@ -6866,8 +6866,8 @@ impl Graph {
 
         if self.has_edges() {
             report.insert(
-                "self_loops_rate",
-                self.get_self_loop_rate().unwrap().to_string(),
+                "selfloops_rate",
+                self.get_selfloop_rate().unwrap().to_string(),
             );
         }
 
@@ -6879,10 +6879,10 @@ impl Graph {
             self.get_undirected_edges_number().to_string(),
         );
         report.insert("directed", self.is_directed().to_string());
-        report.insert("has_weights", self.has_weights().to_string());
+        report.insert("has_edge_weights", self.has_edge_weights().to_string());
         report.insert("has_edge_types", self.has_edge_types().to_string());
         report.insert("has_node_types", self.has_node_types().to_string());
-        report.insert("self_loops_number", self.get_self_loop_number().to_string());
+        report.insert("selfloops_number", self.get_selfloop_number().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",
@@ -7156,7 +7156,7 @@ impl Graph {
 
         *ptr = Some(format!(
             concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
@@ -7174,15 +7174,15 @@ impl Graph {
             name = self.name,
             nodes_number = self.get_nodes_number(),
             edges_number = self.get_edges_number(),
-            weighted = match self.has_weights(){
+            weighted = match self.has_edge_weights(){
                 true=> "weighted",
                 false=> "unweighted"
             }.to_owned(),
-            self_loops = match self.has_selfloops() {
-                true => format!("{} are self-loops", self.get_self_loop_number()),
+            selfloops = match self.has_selfloops() {
+                true => format!("{} are self-loops", self.get_selfloop_number()),
                 false => "none are self-loops".to_owned()
             },
-            self_loops_multigraph_connector = match self.is_multigraph() {
+            selfloops_multigraph_connector = match self.is_multigraph() {
                 true => " and ".to_owned(),
                 false => "".to_owned()
             },
@@ -7231,12 +7231,12 @@ impl Graph {
             },
             singletons = match self.has_singletons() {
                 true => format!(
-                    " There are {singleton_number} singleton nodes{self_loop_singleton},", 
+                    " There are {singleton_number} singleton nodes{selfloop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    self_loop_singleton=match self.has_singleton_nodes_with_self_loops(){
-                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){
+                    selfloop_singleton=match self.has_singletons_with_selfloops(){
+                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
                             true=>"all".to_owned(),
-                            false=>format!("{} of these", self.get_singleton_nodes_with_self_loops_number())
+                            false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())
                         }),
                         false=>"".to_owned()
                     }
@@ -7501,7 +7501,7 @@ impl Graph {
                     // node types.
                     if singletons
                         && selfloops
-                        && self.is_singleton_with_self_loops_by_node_id(node_id)
+                        && self.is_singleton_with_selfloops_by_node_id(node_id)
                     {
                         return None;
                     }
@@ -7556,7 +7556,7 @@ impl Graph {
             false,
             self.has_node_types() && !node_types,
             self.has_edge_types() && !edge_types,
-            self.has_weights() && !weights,
+            self.has_edge_weights() && !weights,
             // TODO: This may be made more precise!
             true,
             self.has_selfloops() && !selfloops,
@@ -7702,9 +7702,9 @@ impl Graph {
             false,
             self.has_node_types(),
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_singleton_nodes_with_self_loops()
+            self.has_singletons_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
             self.get_name(),
@@ -7968,7 +7968,7 @@ impl EdgeFileWriter {
             ));
         }
 
-        if graph.has_weights() {
+        if graph.has_edge_weights() {
             header.push((self.weights_column.clone(), self.weights_column_number));
         }
 
@@ -8778,7 +8778,7 @@ impl Graph {
         // If the graph does not have any weights and the parameters
         // for the walks are all equal to 1, we can use the first-order
         // random walk algorithm.
-        let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+        let use_uniform = !self.has_edge_weights() && parameters.is_first_order_walk();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
@@ -9139,20 +9139,20 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
         &self,
         directed: Option<bool>,
-        allow_self_loops: Option<bool>,
+        allow_selfloops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<NodeT>> {
         let directed_unwrapped = directed.unwrap_or(self.directed);
-        let allow_self_loops_unwrapped = allow_self_loops.unwrap_or_else(|| self.has_selfloops());
+        let allow_selfloops_unwrapped = allow_selfloops.unwrap_or_else(|| self.has_selfloops());
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
             .iter_nodes()
@@ -9180,7 +9180,7 @@ impl Graph {
                 nodes
                     .iter()
                     .filter_map(|dst| {
-                        if !allow_self_loops_unwrapped && src == dst {
+                        if !allow_selfloops_unwrapped && src == dst {
                             return None;
                         }
                         if !directed_unwrapped && src > dst {
@@ -9201,21 +9201,21 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_self_loops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(
         &self,
         directed: Option<bool>,
-        allow_self_loops: Option<bool>,
+        allow_selfloops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.get_clique_edges(
             directed,
-            allow_self_loops,
+            allow_selfloops,
             removed_existing_edges,
             allow_node_type_set,
             allow_node_set,
@@ -9293,7 +9293,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_trap_nodes_number(&self) -> EdgeT {
-        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_self_loops_number()
+        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
             - self.get_unique_source_nodes_number()) as EdgeT
     }
 
@@ -9332,12 +9332,12 @@ impl Graph {
     /// # Example
     /// ```rust
     /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert!(weights_string_ppi.has_weights());
+    /// assert!(weights_string_ppi.has_edge_weights());
     /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
-    /// assert!(!unweights_string_ppi.has_weights());
+    /// assert!(!unweights_string_ppi.has_edge_weights());
     /// ```
     ///
-    pub fn has_weights(&self) -> bool {
+    pub fn has_edge_weights(&self) -> bool {
         self.weights.is_some()
     }
 
@@ -9366,7 +9366,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.self_loop_number > 0
+        self.selfloop_number > 0
     }
 
     /// Returns boolean representing if graph has singletons.
@@ -9385,8 +9385,8 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has singletons.
-    pub fn has_singleton_nodes_with_self_loops(&self) -> bool {
-        self.get_singleton_nodes_with_self_loops_number() > 0
+    pub fn has_singletons_with_selfloops(&self) -> bool {
+        self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
     /// Return vector of the non-unique source nodes.
@@ -9460,7 +9460,7 @@ impl Graph {
 
     /// Return the weights of the edges.
     pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
-        if !self.has_weights() {
+        if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights!".to_string());
         }
         Ok(self.weights.clone().unwrap())
@@ -11263,7 +11263,7 @@ impl Graph {
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
-            edge_file_reader.has_weights(),
+            edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.might_have_singletons),
@@ -11319,7 +11319,7 @@ impl Graph {
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
-            edge_file_reader.has_weights(),
+            edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.might_have_singletons),
@@ -11486,15 +11486,15 @@ impl Hash for Graph {
         // self.unique_sources.hash(state);
         // self.node_bits.hash(state);
         // self.node_bit_mask.hash(state);
-        // self.unique_self_loop_number.hash(state);
-        // self.self_loop_number.hash(state);
+        // self.unique_selfloop_number.hash(state);
+        // self.selfloop_number.hash(state);
         // self.not_singleton_nodes_number.hash(state);
-        // self.singleton_nodes_with_self_loops_number.hash(state);
+        // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.unique_edges_number.hash(state);
 
         // These fields are not meaningfull to hash imho
         // self.name.hash(state);
-        // self.singleton_nodes_with_self_loops_number.hash(state);
+        // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.sources.hash(state);
         // self.outbounds.hash(state);
         // self.cached_destinations.hash(state);
@@ -11882,7 +11882,7 @@ pub(crate) fn build_edges(
     edges_number: usize,
     nodes_number: NodeT,
     ignore_duplicated_edges: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     has_edge_types: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
@@ -11921,7 +11921,7 @@ pub(crate) fn build_edges(
         None
     };
 
-    let mut weights: Option<Vec<WeightT>> = if has_weights {
+    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {
         Some(Vec::with_capacity(edges_number))
     } else {
         None
@@ -11972,8 +11972,8 @@ pub(crate) fn build_edges(
     let mut last_dst: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
     let mut unique_edges_number: EdgeT = 0;
-    let mut unique_self_loop_number: NodeT = 0;
-    let mut self_loop_number: EdgeT = 0;
+    let mut unique_selfloop_number: NodeT = 0;
+    let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut not_singleton_node_number: NodeT =
@@ -11984,7 +11984,7 @@ pub(crate) fn build_edges(
         };
     // This bitvec should be really sparse ON SANE GRAPHS
     // so we use a roaring bitvec to save memory.
-    let mut singleton_nodes_with_self_loops = if might_have_singletons_with_selfloops {
+    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {
         Some(RoaringBitmap::new())
     } else {
         None
@@ -11995,7 +11995,7 @@ pub(crate) fn build_edges(
         let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
-        let self_loop = src == dst;
+        let selfloop = src == dst;
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
@@ -12016,7 +12016,7 @@ pub(crate) fn build_edges(
             }
             (None, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
-                "because the has_weights flag has been set to false."
+                "because the has_edge_weights flag has been set to false."
             )),
             (Some(_), None) => Err(concat!(
                 "A None weight was found.\n",
@@ -12071,8 +12071,8 @@ pub(crate) fn build_edges(
         }
         last_edge_type = edge_type;
         edges.unchecked_push(encode_edge(src, dst, node_bits));
-        if self_loop {
-            self_loop_number += 1;
+        if selfloop {
+            selfloop_number += 1;
         }
         if different_src || different_dst {
             if let Some(nwe) = &mut not_singleton_nodes {
@@ -12081,16 +12081,16 @@ pub(crate) fn build_edges(
                         let mut ptr = nwe.get_unchecked_mut(*node as usize);
                         if !*ptr {
                             *ptr = true;
-                            if !self_loop || singleton_nodes_with_self_loops.is_none() {
+                            if !selfloop || singleton_nodes_with_selfloops.is_none() {
                                 not_singleton_node_number += 1;
                             } else {
-                                if let Some(bitmap) = &mut singleton_nodes_with_self_loops {
+                                if let Some(bitmap) = &mut singleton_nodes_with_selfloops {
                                     bitmap.insert(*node);
                                 }
                                 break;
                             }
-                        } else if !self_loop
-                            && singleton_nodes_with_self_loops
+                        } else if !selfloop
+                            && singleton_nodes_with_selfloops
                                 .as_mut()
                                 .map_or(false, |bitmap| bitmap.remove(*node))
                         {
@@ -12100,8 +12100,8 @@ pub(crate) fn build_edges(
                 }
             }
             unique_edges_number += 1;
-            if self_loop {
-                unique_self_loop_number += 1;
+            if selfloop {
+                unique_selfloop_number += 1;
             }
             if different_src {
                 if let Some(us) = &mut unique_sources {
@@ -12157,7 +12157,7 @@ pub(crate) fn build_edges(
         );
     }
 
-    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops
+    let singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops
         .as_ref()
         .map_or(0, |bitmap| bitmap.len() as NodeT);
 
@@ -12165,7 +12165,7 @@ pub(crate) fn build_edges(
     // provide a wrong value for nodes_number when loading a sorted csv.
     // If this happens, it might cause a slow down in the walk and other
     // currently unforseen consequences.
-    if nodes_number == not_singleton_node_number + singleton_nodes_with_self_loops_number {
+    if nodes_number == not_singleton_node_number + singleton_nodes_with_selfloops_number {
         unique_sources = None;
     }
 
@@ -12175,7 +12175,7 @@ pub(crate) fn build_edges(
     // nodes with edges now to normalize the returned values.
     if might_have_singletons
         && unique_sources.is_none()
-        && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number
+        && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
     {
         unique_sources = not_singleton_nodes
             .as_ref()
@@ -12184,7 +12184,7 @@ pub(crate) fn build_edges(
                     nsns.iter_ones().into_iter().map(|x| x as u64),
                     nodes_number as u64,
                     not_singleton_node_number as usize
-                        + singleton_nodes_with_self_loops_number as usize,
+                        + singleton_nodes_with_selfloops_number as usize,
                 )?))
             })?;
     }
@@ -12206,14 +12206,14 @@ pub(crate) fn build_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_node_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -12276,7 +12276,7 @@ pub(crate) fn parse_string_edges(
     edge_list_is_correct: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
     might_have_trap_nodes: bool,
@@ -12309,20 +12309,20 @@ pub(crate) fn parse_string_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -12343,14 +12343,14 @@ pub(crate) fn parse_string_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -12363,7 +12363,7 @@ pub(crate) fn parse_integer_edges(
     directed: bool,
     edge_list_is_correct: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
     might_have_trap_nodes: bool,
@@ -12391,20 +12391,20 @@ pub(crate) fn parse_integer_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -12421,14 +12421,14 @@ pub(crate) fn parse_integer_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -12445,7 +12445,7 @@ impl Graph {
         name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -12456,14 +12456,14 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
+            selfloop_number,
+            unique_selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -12473,7 +12473,7 @@ impl Graph {
             directed,
             edge_list_is_correct,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -12481,10 +12481,10 @@ impl Graph {
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -12496,7 +12496,7 @@ impl Graph {
             weights,
             node_types,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ))
     }
 
@@ -12516,7 +12516,7 @@ impl Graph {
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
     /// * ignore_duplicated_edges: bool,
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
+    /// * skip_selfloops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -12535,7 +12535,7 @@ impl Graph {
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -12590,7 +12590,7 @@ impl Graph {
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -12611,7 +12611,7 @@ impl Graph {
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
     /// * ignore_duplicated_edges: bool,
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
+    /// * skip_selfloops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<
@@ -12624,7 +12624,7 @@ impl Graph {
         name: String,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         verbose: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
@@ -12644,7 +12644,7 @@ impl Graph {
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -12669,7 +12669,7 @@ impl Graph {
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -12701,14 +12701,14 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
+            selfloop_number,
+            unique_selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -12720,7 +12720,7 @@ impl Graph {
             edge_list_is_correct,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -12728,10 +12728,10 @@ impl Graph {
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -12743,7 +12743,7 @@ impl Graph {
             weights,
             node_types,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ))
     }
 }
@@ -13152,7 +13152,7 @@ impl Graph {
                 format!("{} training", self.name.clone()),
                 true,
                 self.has_edge_types(),
-                self.has_weights(),
+                self.has_edge_weights(),
                 train_graph_might_have_singletons,
                 train_graph_might_have_singletons_with_selfloops,
                 true,
@@ -13171,7 +13171,7 @@ impl Graph {
                 format!("{} testing", self.name.clone()),
                 true,
                 self.has_edge_types(),
-                self.has_weights(),
+                self.has_edge_weights(),
                 true,
                 self.has_selfloops(),
                 true,
@@ -13263,7 +13263,7 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_self_loop =
+                let singleton_selfloop =
                     src == dst && self.get_node_degree_by_node_id(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
@@ -13271,11 +13271,11 @@ impl Graph {
                 // The tree must not contain the provided edge ID
                 // And this is not a self-loop edge with degree 1
                 // And the edge type of the edge ID is within the provided edge type
-                !is_in_tree && !singleton_self_loop && correct_edge_type
+                !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
             self.has_singletons(),
-            self.has_singleton_nodes_with_self_loops(),
+            self.has_singletons_with_selfloops(),
         )
     }
 
@@ -13623,7 +13623,7 @@ impl Graph {
         // We iterate on the components
         'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
-            if self.is_node_trap_by_node_id(*node).unwrap() {
+            if self.is_trap_node_by_node_id(*node).unwrap() {
                 continue;
             }
             stack.push(*node);
@@ -13673,7 +13673,7 @@ impl Graph {
             format!("{} subgraph", self.name.clone()),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             true,
             self.has_selfloops(),
             true,

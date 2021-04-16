@@ -81,10 +81,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
         let (normalized_value, index) = self.normalize_value(value)?;
 
-        Ok(*self
-            .map
-            .entry(normalized_value)
-            .or_insert(index))
+        Ok(*self.map.entry(normalized_value).or_insert(index))
     }
 
     /// Compute the reverse mapping vector for fast decoding

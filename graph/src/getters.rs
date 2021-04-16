@@ -32,7 +32,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_trap_nodes_number(&self) -> EdgeT {
-        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_self_loops_number()
+        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
             - self.get_unique_source_nodes_number()) as EdgeT
     }
 
@@ -107,7 +107,7 @@ impl Graph {
     /// println!("The graph weights are {:?}.", graph_with_weights.get_weights());
     /// ```
     pub fn get_weights(&self) -> Result<Vec<WeightT>, String> {
-        self.must_have_weights()?;
+        self.must_have_edge_weights()?;
         Ok(self.weights.clone().unwrap())
     }
 

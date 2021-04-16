@@ -44,19 +44,19 @@ pub struct Graph {
     pub(crate) directed: bool,
     /// Number of nodes that have at least a self-loop.
     /// This means that if a nodes has multiples self-loops they will be count as one.
-    pub(crate) unique_self_loop_number: NodeT,
+    pub(crate) unique_selfloop_number: NodeT,
     /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
-    pub(crate) self_loop_number: EdgeT,
+    pub(crate) selfloop_number: EdgeT,
     /// Number of nodes that have at least an edge inbound or outbound.
     pub(crate) not_singleton_nodes_number: NodeT,
     /// Number of singleton nodes that have a self-loop
-    pub(crate) singleton_nodes_with_self_loops_number: NodeT,
+    pub(crate) singleton_nodes_with_selfloops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
     /// Graph name
     pub(crate) name: String,
     pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
-    pub(crate) singleton_nodes_with_self_loops: Option<RoaringBitmap>,
+    pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
 
     /// Cache of the textual report. This is needed because in some of the bindings
@@ -83,10 +83,10 @@ pub struct Graph {
 impl Graph {
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
-        unique_self_loop_number: NodeT,
-        self_loop_number: EdgeT,
+        unique_selfloop_number: NodeT,
+        selfloop_number: EdgeT,
         not_singleton_nodes_number: NodeT,
-        singleton_nodes_with_self_loops_number: NodeT,
+        singleton_nodes_with_selfloops_number: NodeT,
         unique_edges_number: EdgeT,
         edges: EliasFano,
         unique_sources: Option<EliasFano>,
@@ -98,14 +98,14 @@ impl Graph {
         weights: Option<Vec<WeightT>>,
         node_types: Option<NodeTypeVocabulary>,
         not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
-        singleton_nodes_with_self_loops: Option<RoaringBitmap>
+        singleton_nodes_with_selfloops: Option<RoaringBitmap>,
     ) -> Graph {
         Graph {
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -121,7 +121,7 @@ impl Graph {
             cached_destinations: None,
             name: name.into(),
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
             cached_report: ClonableRwLock::new(None),
         }
     }
@@ -136,10 +136,12 @@ impl Graph {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_with_type_ids(other.directed)
-                .any(|(_, src, dst, et)| self.has_edge_with_type_from_node_ids(src, dst, et)),
+                .any(|(_, src, dst, et)| {
+                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
+                }),
             false => other.par_iter_edge_with_type(other.directed).any(
                 |(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                    self.has_edge_with_type_from_node_names(
+                    self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_ref(),
@@ -159,10 +161,12 @@ impl Graph {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_with_type_ids(other.directed)
-                .all(|(_, src, dst, et)| self.has_edge_with_type_from_node_ids(src, dst, et)),
+                .all(|(_, src, dst, et)| {
+                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
+                }),
             false => other.par_iter_edge_with_type(other.directed).all(
                 |(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                    self.has_edge_with_type_from_node_names(
+                    self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_ref(),

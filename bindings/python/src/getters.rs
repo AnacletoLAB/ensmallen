@@ -181,8 +181,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a trap.
     ///
-    fn is_node_trap_by_node_id(&self, node: NodeT) -> PyResult<bool> {
-        pe!(self.graph.is_node_trap_by_node_id(node))
+    fn is_trap_node_by_node_id(&self, node: NodeT) -> PyResult<bool> {
+        pe!(self.graph.is_trap_node_by_node_id(node))
     }
 
     #[text_signature = "($self, node_id)"]
@@ -801,8 +801,8 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self)"]
     /// Returns true if the graph has weights.
-    fn has_weights(&self) -> bool {
-        self.graph.has_weights()
+    fn has_edge_weights(&self) -> bool {
+        self.graph.has_edge_weights()
     }
 
     #[text_signature = "($self)"]

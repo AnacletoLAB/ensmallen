@@ -51,7 +51,7 @@ impl Graph {
                 return Err("Required cached nodes number cannot be 0 or all the nodes.".to_owned());
             }
             self.cached_destinations = Some(
-                self.get_top_k_central_nodes_ids(cached_nodes_number)
+                self.get_top_k_central_node_ids(cached_nodes_number)
                     .par_iter()
                     .map(|node_id| {
                         (

@@ -3,9 +3,159 @@ use rayon::prelude::*;
 
 /// # Queries
 /// The naming convention we follow is:
-/// * `get_(.+)_from_(.+)`
-/// * `get_unchecked_(.+)_from_(.+)`
+/// * `get_(.+?)_from_(.+)`
+/// * `get_unchecked_(.+?)_from_(.+)`
 impl Graph {
+    /// Returns option with the weight of the given edge id.
+    pub(crate) fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
+        self.weights.as_ref().map(|ws| ws[edge_id as usize])
+    }
+
+    /// Returns node id raising a panic if used unproperly.
+    pub(crate) fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
+        *self.nodes.get(node_name).unwrap()
+    }
+
+    /// Return edge type ID corresponding to the given edge type name.
+    pub(crate) fn get_unchecked_edge_type_id_from_edge_type_name(
+        &self,
+        edge_type_name: &str,
+    ) -> Option<EdgeTypeT> {
+        self.edge_types
+            .as_ref()
+            .and_then(|ets| ets.get(edge_type_name).copied())
+    }
+
+    /// Return edge type ID corresponding to the given edge type name
+    /// raising panic if edge type ID does not exists in current graph.
+    pub(crate) fn get_unchecked_edge_type_name_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Option<String> {
+        match (&self.edge_types, edge_type_id) {
+            (Some(ets), Some(et)) => Some(ets.unchecked_translate(et)),
+            _ => None,
+        }
+    }
+
+    /// Return number of edges of the given edge type without checks.
+    ///
+    /// # Arguments
+    ///
+    /// * edge_type: Option<EdgeTypeT> - The edge type to retrieve count of.
+    ///
+    pub(crate) fn get_unchecked_edge_count_from_edge_type_id(
+        &self,
+        edge_type: Option<EdgeTypeT>,
+    ) -> EdgeT {
+        match (&self.edge_types, edge_type) {
+            (Some(ets), None) => ets.get_unknown_count(),
+            (Some(ets), Some(et)) => ets.counts[et as usize],
+            _ => unreachable!("The current graph instance does not have edge types!"),
+        }
+    }
+
+    /// Return number of nodes of the given node type without checks.
+    ///
+    /// # Arguments
+    ///
+    /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
+    ///
+    pub(crate) fn get_unchecked_node_count_from_node_type_id(
+        &self,
+        node_type: Option<NodeTypeT>,
+    ) -> NodeT {
+        match (&self.node_types, node_type) {
+            (Some(nts), None) => nts.get_unknown_count(),
+            (Some(nts), Some(nt)) => nts.counts[nt as usize],
+            _ => unreachable!("The current graph instance does not have node types!"),
+        }
+    }
+
+    /// Return (subsampled) vector of destinations of given node.
+    ///
+    /// If the max neighbours parameter is given, and is smaller than the
+    /// number of the neighbours of the given node, the subsampling
+    /// mechanism is given.
+    ///
+    /// # Arguments
+    /// `node`: NodeT - Node whose neighbours are to return.
+    /// `random_state`: u64 - Random state to subsample neighbours.
+    /// `max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider.
+    pub(crate) fn get_unchecked_destination_node_ids_from_node_id(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        max_neighbours: Option<NodeT>,
+    ) -> Vec<NodeT> {
+        let (min_edge_id, max_edge_id, destinations, _) =
+            self.get_node_edges_and_destinations(max_neighbours, random_state, node);
+        self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations)
+            .to_owned()
+    }
+
+    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    ///
+    /// This method will cause a panic if used improperly when it is not certain
+    /// that the edge exists.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - Source node of the edge.
+    /// `dst`: NodeT - Destination node of the edge.
+    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    pub fn get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> EdgeT {
+        self.edge_types.as_ref().map_or_else(
+            || self.get_unchecked_edge_id_from_node_ids(src, dst),
+            |ets| {
+                self.iter_unchecked_edge_ids_from_node_ids(src, dst)
+                    // The vectors of the edge types can only have one element.
+                    .find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
+                    .unwrap()
+            },
+        )
+    }
+
+    /// Return range of outbound edges IDs for all the edges bewteen the given
+    /// source and destination nodes.
+    /// This operation is meaningfull only in a multigraph.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Source node.
+    /// * dst: NodeT - Destination node.
+    ///
+    pub fn get_unchecked_minmax_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> (EdgeT, EdgeT) {
+        (
+            self.get_unchecked_edge_id_from_node_ids(src, dst),
+            self.get_unchecked_edge_id_from_node_ids(src, dst + 1),
+        )
+    }
+
+    /// Return the number of edges between the given source and destination nodes.
+    ///
+    /// This might be thought as the degree of an edge in a multigraph.
+    /// On non-multigraph this trivially return 1 on existing edges and 0 on
+    /// the non-existing ones.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Source node.
+    /// * dst: NodeT - Destination node.
+    ///
+    pub(crate) fn get_unchecked_edge_degree_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
+        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
+        max_edge_id - min_edge_id
+    }
+
     #[inline(always)]
     /// Returns node IDs corresponding to given edge ID.
     ///
@@ -42,8 +192,8 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert!(graph.get_node_ids_and_type_from_edge_id(0).is_ok());
-    /// assert!(graph.get_node_ids_and_type_from_edge_id(10000000000).is_err());
+    /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());
+    /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());
     /// ```
     pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> Result<(NodeT, NodeT), String> {
         self.validate_edge_id(edge_id)
@@ -120,15 +270,13 @@ impl Graph {
     /// ```
     pub fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         // If there are no singletons or trap nodes in the graph
-        self.unique_sources
-            .as_ref()
-            .map_or(
-                // We can directly return the provided source id.
-                source_id, 
-                |x| 
+        self.unique_sources.as_ref().map_or(
+            // We can directly return the provided source id.
+            source_id,
+            |x|
                 // Otherwise we need to retrieve the nodes corresponding to the given source ID
-                x.unchecked_select(source_id as u64) as NodeT
-            )
+                x.unchecked_select(source_id as u64) as NodeT,
+        )
     }
 
     /// Return the src, dst, edge type of a given edge ID.
@@ -144,15 +292,19 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let edge_id = 0;
-    /// let (src, dst, edge_type) = graph.get_unchecked_node_ids_and_type_from_edge_id(edge_id);
+    /// let (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);
     /// println!("The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}", edge_id, src, dst, edge_type);
     /// ```
-    pub fn get_unchecked_node_ids_and_type_from_edge_id(
+    pub fn get_unchecked_node_ids_and_edge_type_id_from_edge_id(
         &self,
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-        (src, dst, self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+        (
+            src,
+            dst,
+            self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+        )
     }
 
     /// Return the src, dst, edge type of a given edge ID.
@@ -165,14 +317,15 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert!(graph.get_node_ids_and_type_from_edge_id(0).is_ok());
-    /// assert!(graph.get_node_ids_and_type_from_edge_id(10000000000).is_err());
+    /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());
+    /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());
     /// ```
-    pub fn get_node_ids_and_type_from_edge_id(
+    pub fn get_node_ids_and_edge_type_id_from_edge_id(
         &self,
         edge_id: EdgeT,
     ) -> Result<(NodeT, NodeT, Option<EdgeTypeT>), String> {
-        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_node_ids_and_type_from_edge_id(edge_id))
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id))
     }
 
     /// Return the src, dst, edge type and weight of a given edge ID.
@@ -188,19 +341,20 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let edge_id = 0;
-    /// let (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id);
+    /// let (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);
     /// println!("The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.", edge_id, src, dst, edge_type, weight);
     /// ```
-    pub fn get_unchecked_node_ids_type_and_weight_from_edge_id(
+    pub fn get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
         &self,
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
-        let (src, dst, edge_type) = self.get_unchecked_node_ids_and_type_from_edge_id(edge_id);
+        let (src, dst, edge_type) =
+            self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);
         (
             src,
             dst,
             edge_type,
-            self.get_unchecked_weight_from_edge_id(edge_id),
+            self.get_unchecked_edge_weight_from_edge_id(edge_id),
         )
     }
 
@@ -214,14 +368,16 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// assert!(graph.get_node_ids_type_and_weight_from_edge_id(0).is_ok());
-    /// assert!(graph.get_node_ids_type_and_weight_from_edge_id(10000000000).is_err());
+    /// assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(0).is_ok());
+    /// assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(10000000000).is_err());
     /// ```
-    pub fn get_node_ids_type_and_weight_from_edge_id(
+    pub fn get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
         &self,
         edge_id: EdgeT,
     ) -> Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String> {
-        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_node_ids_type_and_weight_from_edge_id(edge_id))
+        self.validate_edge_id(edge_id).map(|edge_id| {
+            self.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id)
+        })
     }
 
     /// Return vector with top k central node Ids.
@@ -233,10 +389,15 @@ impl Graph {
     ///
     /// * k: NodeT - Number of central nodes to extract.
     /// TODO: This can be refactored to run faster!
-    pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
+    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
         let k = k.min(self.get_nodes_number());
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
-            .map(|node_id| (self.get_unchecked_node_degree_from_node_id(node_id), node_id))
+            .map(|node_id| {
+                (
+                    self.get_unchecked_node_degree_from_node_id(node_id),
+                    node_id,
+                )
+            })
             .collect();
         nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
@@ -256,7 +417,8 @@ impl Graph {
     /// * `node_id` - Integer ID of the node.
     ///
     pub fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
-        let (min_edge_id, max_edge_id)  = self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
+        let (min_edge_id, max_edge_id) =
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
         (max_edge_id - min_edge_id) as NodeT
     }
 
@@ -266,7 +428,8 @@ impl Graph {
     /// * `node_id` - Integer ID of the node.
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
-        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
     }
 
     /// Return vector with top k central node names.
@@ -275,7 +438,7 @@ impl Graph {
     ///
     /// * k: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
-        self.get_top_k_central_nodes_ids(k)
+        self.get_top_k_central_node_ids(k)
             .into_iter()
             .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
             .collect()
@@ -324,7 +487,8 @@ impl Graph {
         node_id: NodeT,
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         self.must_have_node_types()?;
-        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
     }
 
     /// Returns edge type of given edge.
@@ -368,7 +532,8 @@ impl Graph {
         edge_id: EdgeT,
     ) -> Result<Option<EdgeTypeT>, String> {
         self.must_have_edge_types()?;
-        self.validate_edge_id(edge_id).map(|edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
     }
 
     /// Returns result of option with the node type of the given node id.
@@ -430,11 +595,11 @@ impl Graph {
     /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
     /// let edge_id = 0;
     /// let unexistent_edge_id = 123456789;
-    /// assert!(weighted_graph.get_weight_from_edge_id(edge_id).is_ok());
-    /// assert!(weighted_graph.get_weight_from_edge_id(unexistent_edge_id).is_err());
-    /// assert!(unweighted_graph.get_weight_from_edge_id(edge_id).is_err());
+    /// assert!(weighted_graph.get_edge_weight_from_edge_id(edge_id).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_edge_id(unexistent_edge_id).is_err());
+    /// assert!(unweighted_graph.get_edge_weight_from_edge_id(edge_id).is_err());
     /// ```
-    pub fn get_weight_from_edge_id(&self, edge_id: EdgeT) -> Result<WeightT, String> {
+    pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Result<WeightT, String> {
         self.weights.as_ref().map_or(
             Err("The current graph instance does not have weights!".to_string()),
             |weights| weights.get(edge_id as usize).map_or(
@@ -460,10 +625,10 @@ impl Graph {
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
     /// let src = 0;
     /// let dst = 1;
-    /// assert!(weighted_graph.get_weight_from_node_ids(src, dst).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_node_ids(src, dst).is_ok());
     /// ```
-    pub fn get_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<WeightT, String> {
-        self.get_weight_from_edge_id(self.get_edge_id_from_node_ids(src, dst)?)
+    pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<WeightT, String> {
+        self.get_edge_weight_from_edge_id(self.get_edge_id_from_node_ids(src, dst)?)
     }
 
     /// Returns weight of the given node ids and edge type.
@@ -480,15 +645,17 @@ impl Graph {
     /// let src = 0;
     /// let dst = 1;
     /// let edge_type = Some(0);
-    /// assert!(weighted_graph.get_weight_with_type_from_node_ids(src, dst, edge_type).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_node_ids_and_edge_type_id(src, dst, edge_type).is_ok());
     /// ```
-    pub fn get_weight_with_type_from_node_ids(
+    pub fn get_edge_weight_from_node_ids_and_edge_type_id(
         &self,
         src: NodeT,
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> Result<WeightT, String> {
-        self.get_weight_from_edge_id(self.get_edge_id_with_type_from_node_ids(src, dst, edge_type)?)
+        self.get_edge_weight_from_edge_id(
+            self.get_edge_id_from_node_ids_and_edge_type_id(src, dst, edge_type)?,
+        )
     }
 
     /// Returns weight of the given node names and edge type.
@@ -505,16 +672,16 @@ impl Graph {
     /// let src = "ENSP00000000233";
     /// let dst = "ENSP00000432568";
     /// let edge_type = Some("red".to_string());
-    /// assert!(weighted_graph.get_weight_with_type_from_node_names(src, dst, edge_type.as_ref()).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type.as_ref()).is_ok());
     /// ```
-    pub fn get_weight_with_type_from_node_names(
+    pub fn get_edge_weight_from_node_names_and_edge_type_name(
         &self,
         src: &str,
         dst: &str,
         edge_type: Option<&String>,
     ) -> Result<WeightT, String> {
-        self.get_weight_from_edge_id(
-            self.get_edge_id_with_type_from_node_names(src, dst, edge_type)?,
+        self.get_edge_weight_from_edge_id(
+            self.get_edge_id_from_node_names_and_edge_type_name(src, dst, edge_type)?,
         )
     }
 
@@ -530,14 +697,14 @@ impl Graph {
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
     /// let src_name = "ENSP00000000233";
     /// let dst_name = "ENSP00000432568";
-    /// assert!(weighted_graph.get_weight_from_node_names(src_name, dst_name).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_node_names(src_name, dst_name).is_ok());
     /// ```
-    pub fn get_weight_from_node_names(
+    pub fn get_edge_weight_from_node_names(
         &self,
         src_name: &str,
         dst_name: &str,
     ) -> Result<WeightT, String> {
-        self.get_weight_from_edge_id(self.get_edge_id_from_node_names(src_name, dst_name)?)
+        self.get_edge_weight_from_edge_id(self.get_edge_id_from_node_names(src_name, dst_name)?)
     }
 
     /// Returns result with the node name.
@@ -567,7 +734,8 @@ impl Graph {
     /// assert!(graph.get_node_name_from_node_id(0).is_ok());
     /// ```
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
-        self.validate_node_id(node_id).map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
     }
 
     /// Returns result with the node id.
@@ -794,11 +962,14 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// # let node_id = 0;
-    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbours_from_node_id(node_id).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbour_ids_from_node_id(node_id).unwrap());
     /// let unavailable_node = 2349765432;
-    /// assert!(graph.get_node_neighbours_from_node_id(unavailable_node).is_err());
+    /// assert!(graph.get_node_neighbour_ids_from_node_id(unavailable_node).is_err());
     /// ```
-    pub fn get_node_neighbours_from_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>, String> {
+    pub fn get_node_neighbour_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Result<Vec<NodeT>, String> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The node ID {} is higher than the number of available nodes {}.",
@@ -827,7 +998,7 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> Result<Vec<NodeT>, String> {
-        self.get_node_neighbours_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        self.get_node_neighbour_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
     /// Return vector of destination names for the given source node name.
@@ -883,7 +1054,7 @@ impl Graph {
     /// `dst`: NodeT - Destination node of the edge.
     /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     ///
-    pub fn get_edge_id_with_type_from_node_ids(
+    pub fn get_edge_id_from_node_ids_and_edge_type_id(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -951,7 +1122,7 @@ impl Graph {
     /// `dst_name`: &str - Destination node name of the edge.
     /// `edge_type_name`: Option<&String> - Edge type name.
     ///
-    pub fn get_edge_id_with_type_from_node_names(
+    pub fn get_edge_id_from_node_names_and_edge_type_name(
         &self,
         src_name: &str,
         dst_name: &str,
@@ -959,7 +1130,7 @@ impl Graph {
     ) -> Result<EdgeT, String> {
         match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
             (Some(src), Some(dst)) => self
-                .get_edge_id_with_type_from_node_ids(
+                .get_edge_id_from_node_ids_and_edge_type_id(
                     *src,
                     *dst,
                     self.get_edge_type_id_from_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
@@ -1086,8 +1257,12 @@ impl Graph {
     ///
     /// * src: NodeT - Node for which we need to compute the outbounds range.
     ///
-    pub fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> Result<(EdgeT, EdgeT), String> {
-        self.validate_node_id(src).map(|src| self.get_unchecked_minmax_edge_ids_from_source_node_id(src))
+    pub fn get_minmax_edge_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> Result<(EdgeT, EdgeT), String> {
+        self.validate_node_id(src)
+            .map(|src| self.get_unchecked_minmax_edge_ids_from_source_node_id(src))
     }
 
     /// Return node type name of given node type.

@@ -22,6 +22,22 @@ impl Graph {
         min_edge_id as usize..max_edge_id as usize
     }
 
+    /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    ///
+    /// * `src` - Source node of the edge.
+    /// * `dst` - Destination node of the edge.
+    ///
+    pub(crate) fn iter_unchecked_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> impl Iterator<Item = EdgeT> {
+        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
+        min_edge_id..max_edge_id
+    }
+
     /// Return iterator on the node of the graph.
     pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
         0..self.get_nodes_number()
@@ -71,7 +87,7 @@ impl Graph {
 
     /// Return iterator on the singleton with selfloops nodes of the graph.
     pub fn iter_singleton_with_selfloops_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        match self.singleton_nodes_with_self_loops.as_ref() {
+        match self.singleton_nodes_with_selfloops.as_ref() {
             Some(nsns) => Box::new(nsns.iter()),
             _ => Box::new(::std::iter::empty()),
         }
@@ -130,7 +146,7 @@ impl Graph {
     /// println!("The graph weights are {:?}.", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());
     /// ```
     pub fn iter_weights(&self) -> Result<impl Iterator<Item = WeightT> + '_, String> {
-        self.must_have_weights()?;
+        self.must_have_edge_weights()?;
         Ok(self.weights.as_ref().map(|ws| ws.iter().cloned()).unwrap())
     }
 
@@ -146,8 +162,12 @@ impl Graph {
     /// println!("The graph weights are {:?}.", graph_with_weights.iter_weights().unwrap().collect::<Vec<_>>());
     /// ```
     pub fn par_iter_weights(&self) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
-        self.must_have_weights()?;
-        Ok(self.weights.as_ref().map(|ws| ws.par_iter().cloned()).unwrap())
+        self.must_have_edge_weights()?;
+        Ok(self
+            .weights
+            .as_ref()
+            .map(|ws| ws.par_iter().cloned())
+            .unwrap())
     }
 
     /// Return parallel iterator on the (non unique) source nodes of the graph.
@@ -431,7 +451,7 @@ impl Graph {
                     dst_name,
                     edge_type,
                     edge_type_name,
-                    self.get_unchecked_weight_from_edge_id(edge_id),
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
             },
         )
@@ -466,7 +486,7 @@ impl Graph {
                     dst_name,
                     edge_type,
                     edge_type_name,
-                    self.get_unchecked_weight_from_edge_id(edge_id),
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
             },
         )
@@ -488,7 +508,7 @@ impl Graph {
                     src,
                     dst,
                     edge_type,
-                    self.get_unchecked_weight_from_edge_id(edge_id),
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
             })
     }
@@ -508,7 +528,7 @@ impl Graph {
                     src,
                     dst,
                     edge_type,
-                    self.get_unchecked_weight_from_edge_id(edge_id),
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
             })
     }

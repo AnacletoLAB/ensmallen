@@ -353,7 +353,7 @@ pub(crate) fn build_edges(
     edges_number: usize,
     nodes_number: NodeT,
     ignore_duplicated_edges: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     has_edge_types: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
@@ -392,7 +392,7 @@ pub(crate) fn build_edges(
         None
     };
 
-    let mut weights: Option<Vec<WeightT>> = if has_weights {
+    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {
         Some(Vec::with_capacity(edges_number))
     } else {
         None
@@ -432,7 +432,7 @@ pub(crate) fn build_edges(
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
     let mut not_singleton_nodes: Option<_> =
-        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0{
+        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
             None
@@ -443,8 +443,8 @@ pub(crate) fn build_edges(
     let mut last_dst: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
     let mut unique_edges_number: EdgeT = 0;
-    let mut unique_self_loop_number: NodeT = 0;
-    let mut self_loop_number: EdgeT = 0;
+    let mut unique_selfloop_number: NodeT = 0;
+    let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut not_singleton_node_number: NodeT =
@@ -455,7 +455,7 @@ pub(crate) fn build_edges(
         };
     // This bitvec should be really sparse ON SANE GRAPHS
     // so we use a roaring bitvec to save memory.
-    let mut singleton_nodes_with_self_loops = if might_have_singletons_with_selfloops {
+    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {
         Some(RoaringBitmap::new())
     } else {
         None
@@ -466,7 +466,7 @@ pub(crate) fn build_edges(
         let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
-        let self_loop = src == dst;
+        let selfloop = src == dst;
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
@@ -487,7 +487,7 @@ pub(crate) fn build_edges(
             }
             (None, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
-                "because the has_weights flag has been set to false."
+                "because the has_edge_weights flag has been set to false."
             )),
             (Some(_), None) => Err(concat!(
                 "A None weight was found.\n",
@@ -542,8 +542,8 @@ pub(crate) fn build_edges(
         }
         last_edge_type = edge_type;
         edges.unchecked_push(encode_edge(src, dst, node_bits));
-        if self_loop {
-            self_loop_number += 1;
+        if selfloop {
+            selfloop_number += 1;
         }
         if different_src || different_dst {
             if let Some(nwe) = &mut not_singleton_nodes {
@@ -552,16 +552,16 @@ pub(crate) fn build_edges(
                         let mut ptr = nwe.get_unchecked_mut(*node as usize);
                         if !*ptr {
                             *ptr = true;
-                            if !self_loop || singleton_nodes_with_self_loops.is_none() {
+                            if !selfloop || singleton_nodes_with_selfloops.is_none() {
                                 not_singleton_node_number += 1;
                             } else {
-                                if let Some(bitmap) = &mut singleton_nodes_with_self_loops {
+                                if let Some(bitmap) = &mut singleton_nodes_with_selfloops {
                                     bitmap.insert(*node);
                                 }
                                 break;
                             }
-                        } else if !self_loop
-                            && singleton_nodes_with_self_loops
+                        } else if !selfloop
+                            && singleton_nodes_with_selfloops
                                 .as_mut()
                                 .map_or(false, |bitmap| bitmap.remove(*node))
                         {
@@ -571,8 +571,8 @@ pub(crate) fn build_edges(
                 }
             }
             unique_edges_number += 1;
-            if self_loop {
-                unique_self_loop_number += 1;
+            if selfloop {
+                unique_selfloop_number += 1;
             }
             if different_src {
                 if let Some(us) = &mut unique_sources {
@@ -628,7 +628,7 @@ pub(crate) fn build_edges(
         );
     }
 
-    let singleton_nodes_with_self_loops_number = singleton_nodes_with_self_loops
+    let singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops
         .as_ref()
         .map_or(0, |bitmap| bitmap.len() as NodeT);
 
@@ -636,7 +636,7 @@ pub(crate) fn build_edges(
     // provide a wrong value for nodes_number when loading a sorted csv.
     // If this happens, it might cause a slow down in the walk and other
     // currently unforseen consequences.
-    if nodes_number == not_singleton_node_number + singleton_nodes_with_self_loops_number {
+    if nodes_number == not_singleton_node_number + singleton_nodes_with_selfloops_number {
         unique_sources = None;
     }
 
@@ -646,7 +646,7 @@ pub(crate) fn build_edges(
     // nodes with edges now to normalize the returned values.
     if might_have_singletons
         && unique_sources.is_none()
-        && nodes_number != not_singleton_node_number + singleton_nodes_with_self_loops_number
+        && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
     {
         unique_sources = not_singleton_nodes
             .as_ref()
@@ -655,7 +655,7 @@ pub(crate) fn build_edges(
                     nsns.iter_ones().into_iter().map(|x| x as u64),
                     nodes_number as u64,
                     not_singleton_node_number as usize
-                        + singleton_nodes_with_self_loops_number as usize,
+                        + singleton_nodes_with_selfloops_number as usize,
                 )?))
             })?;
     }
@@ -677,14 +677,14 @@ pub(crate) fn build_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_node_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -747,7 +747,7 @@ pub(crate) fn parse_string_edges(
     edge_list_is_correct: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
     might_have_trap_nodes: bool,
@@ -780,20 +780,20 @@ pub(crate) fn parse_string_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -814,14 +814,14 @@ pub(crate) fn parse_string_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -834,7 +834,7 @@ pub(crate) fn parse_integer_edges(
     directed: bool,
     edge_list_is_correct: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     might_have_singletons: bool,
     might_have_singletons_with_selfloops: bool,
     might_have_trap_nodes: bool,
@@ -862,20 +862,20 @@ pub(crate) fn parse_integer_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
         might_have_singletons,
         might_have_singletons_with_selfloops,
@@ -892,14 +892,14 @@ pub(crate) fn parse_integer_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
+        selfloop_number,
+        unique_selfloop_number,
         not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
         not_singleton_nodes,
-        singleton_nodes_with_self_loops,
+        singleton_nodes_with_selfloops,
     ))
 }
 
@@ -916,7 +916,7 @@ impl Graph {
         name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -927,14 +927,14 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
+            selfloop_number,
+            unique_selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -944,7 +944,7 @@ impl Graph {
             directed,
             edge_list_is_correct,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -952,10 +952,10 @@ impl Graph {
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -967,7 +967,7 @@ impl Graph {
             weights,
             node_types,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ))
     }
 
@@ -987,7 +987,7 @@ impl Graph {
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
     /// * ignore_duplicated_edges: bool,
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
+    /// * skip_selfloops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -1006,7 +1006,7 @@ impl Graph {
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -1061,7 +1061,7 @@ impl Graph {
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -1082,7 +1082,7 @@ impl Graph {
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
     /// * ignore_duplicated_edges: bool,
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
+    /// * skip_selfloops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<
@@ -1095,7 +1095,7 @@ impl Graph {
         name: String,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         verbose: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
@@ -1115,7 +1115,7 @@ impl Graph {
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -1140,7 +1140,7 @@ impl Graph {
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
@@ -1172,14 +1172,14 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
+            selfloop_number,
+            unique_selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -1191,7 +1191,7 @@ impl Graph {
             edge_list_is_correct,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
             might_have_singletons,
             might_have_singletons_with_selfloops,
             might_have_trap_nodes,
@@ -1199,10 +1199,10 @@ impl Graph {
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
+            unique_selfloop_number,
+            selfloop_number,
             not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -1214,7 +1214,7 @@ impl Graph {
             weights,
             node_types,
             not_singleton_nodes,
-            singleton_nodes_with_self_loops,
+            singleton_nodes_with_selfloops,
         ))
     }
 }

@@ -34,7 +34,7 @@ pub struct Is_singleton_from_node_id_Params {
 	pub node_id : NodeT,
 }
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_singleton_with_self_loops_from_node_id_Params {
+pub struct Is_singleton_with_selfloops_from_node_id_Params {
 	pub node_id : NodeT,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -49,7 +49,7 @@ pub struct Has_edge_with_type_from_node_ids_Params {
 	pub edge_type : Option<EdgeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_node_trap_from_node_id_Params {
+pub struct Is_trap_node_from_node_id_Params {
 	pub node_id : NodeT,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -299,7 +299,7 @@ pub struct Get_star_edge_names_Params {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct Get_clique_edges_Params {
 	pub directed : Option<bool>,
-	pub allow_self_loops : Option<bool>,
+	pub allow_selfloops : Option<bool>,
 	pub removed_existing_edges : Option<bool>,
 	pub allow_node_type_set : Option<HashSet<String>>,
 	pub allow_node_set : Option<HashSet<String>>,
@@ -307,7 +307,7 @@ pub struct Get_clique_edges_Params {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct Get_clique_edge_names_Params {
 	pub directed : Option<bool>,
-	pub allow_self_loops : Option<bool>,
+	pub allow_selfloops : Option<bool>,
 	pub removed_existing_edges : Option<bool>,
 	pub allow_node_type_set : Option<HashSet<String>>,
 	pub allow_node_set : Option<HashSet<String>>,
@@ -465,10 +465,10 @@ pub struct MetaParams {
 	pub connected_components: Connected_components_Params,
 	pub get_node_label_prediction_tuple_from_node_ids: Get_node_label_prediction_tuple_from_node_ids_Params,
 	pub is_singleton_from_node_id: Is_singleton_from_node_id_Params,
-	pub is_singleton_with_self_loops_from_node_id: Is_singleton_with_self_loops_from_node_id_Params,
+	pub is_singleton_with_selfloops_from_node_id: Is_singleton_with_selfloops_from_node_id_Params,
 	pub has_edge_from_node_ids: Has_edge_from_node_ids_Params,
 	pub has_edge_with_type_from_node_ids: Has_edge_with_type_from_node_ids_Params,
-	pub is_node_trap_from_node_id: Is_node_trap_from_node_id_Params,
+	pub is_trap_node_from_node_id: Is_trap_node_from_node_id_Params,
 	pub enable: Enable_Params,
 	pub get_node_ids_from_edge_id: Get_node_ids_from_edge_id_Params,
 	pub get_edge_id_from_node_ids: Get_edge_id_from_node_ids_Params,
@@ -577,7 +577,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         data.from_vec.numeric_node_types_ids,
         data.from_vec.has_node_types,
         data.from_vec.has_edge_types,
-        data.from_vec.has_weights,
+        data.from_vec.has_edge_weights,
         true,
         true,
         true,
@@ -622,8 +622,8 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.decode_edge(data.decode_edge.edge);
 	graph.disable_all();
 	graph.encode_edge(data.encode_edge.src, data.encode_edge.dst);
-	graph.get_clique_edge_names(data.get_clique_edge_names.directed, data.get_clique_edge_names.allow_self_loops, data.get_clique_edge_names.removed_existing_edges, data.get_clique_edge_names.allow_node_type_set, data.get_clique_edge_names.allow_node_set);
-	graph.get_clique_edges(data.get_clique_edges.directed, data.get_clique_edges.allow_self_loops, data.get_clique_edges.removed_existing_edges, data.get_clique_edges.allow_node_type_set, data.get_clique_edges.allow_node_set);
+	graph.get_clique_edge_names(data.get_clique_edge_names.directed, data.get_clique_edge_names.allow_selfloops, data.get_clique_edge_names.removed_existing_edges, data.get_clique_edge_names.allow_node_type_set, data.get_clique_edge_names.allow_node_set);
+	graph.get_clique_edges(data.get_clique_edges.directed, data.get_clique_edges.allow_selfloops, data.get_clique_edges.removed_existing_edges, data.get_clique_edges.allow_node_type_set, data.get_clique_edges.allow_node_set);
 	graph.get_dense_node_mapping();
 	graph.get_destination_names(data.get_destination_names.directed);
 	graph.get_destinations(data.get_destinations.directed);
@@ -648,9 +648,9 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.get_not_singleton_nodes_number();
 	graph.get_not_singletons();
 	graph.get_outbounds();
-	graph.get_self_loop_number();
+	graph.get_selfloop_number();
 	graph.get_singleton_nodes_number();
-	graph.get_singleton_nodes_with_self_loops_number();
+	graph.get_singleton_nodes_with_selfloops_number();
 	graph.get_source_names(data.get_source_names.directed);
 	graph.get_sources(data.get_sources.directed);
 	graph.get_top_k_central_node_names(data.get_top_k_central_node_names.k);
@@ -659,7 +659,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.get_undirected_edges_number();
 	graph.get_unique_directed_edges_number();
 	graph.get_unique_edges_number();
-	graph.get_unique_self_loop_number();
+	graph.get_unique_selfloop_number();
 	graph.get_unique_source_nodes_number();
 	graph.get_unique_undirected_edges_number();
 	graph.get_unknown_edge_types_number();
@@ -672,15 +672,15 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.has_node_types();
 	graph.has_nodes();
 	graph.has_selfloops();
-	graph.has_singleton_nodes_with_self_loops();
+	graph.has_singletons_with_selfloops();
 	graph.has_singletons();
 	graph.has_trap_nodes();
 	graph.has_unknown_edge_types();
 	graph.has_unknown_node_types();
-	graph.has_weights();
+	graph.has_edge_weights();
 	graph.is_directed();
 	graph.is_multigraph();
-	graph.is_singleton_with_self_loops_from_node_id(data.is_singleton_with_self_loops_from_node_id.node_id);
+	graph.is_singleton_with_selfloops_from_node_id(data.is_singleton_with_selfloops_from_node_id.node_id);
 	graph.random_spanning_arborescence_kruskal(data.random_spanning_arborescence_kruskal.random_state, &data.random_spanning_arborescence_kruskal.unwanted_edge_types, data.random_spanning_arborescence_kruskal.verbose);
 	graph.report();
 	graph.set_name(data.set_name.name);
@@ -734,14 +734,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_node_type_names();
 	let _ = graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids);
 	let _ = graph.get_node_types_ids();
-	let _ = graph.get_self_loop_rate();
+	let _ = graph.get_selfloop_rate();
 	let _ = graph.get_star_edge_names(data.get_star_edge_names.central_node, data.get_star_edge_names.removed_existing_edges, data.get_star_edge_names.star_points_nodes_set, data.get_star_edge_names.star_points_node_types_set);
 	let _ = graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set);
 	let _ = graph.get_weight_from_edge_id(data.get_weight_from_edge_id.edge_id);
 	let _ = graph.get_weight_from_node_ids(data.get_weight_from_node_ids.src, data.get_weight_from_node_ids.dst);
 	let _ = graph.get_weight_with_type_from_node_ids(data.get_weight_with_type_from_node_ids.src, data.get_weight_with_type_from_node_ids.dst, data.get_weight_with_type_from_node_ids.edge_type);
 	let _ = graph.get_weights();
-	let _ = graph.is_node_trap_from_node_id(data.is_node_trap_from_node_id.node_id);
+	let _ = graph.is_trap_node_from_node_id(data.is_trap_node_from_node_id.node_id);
 	let _ = graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
 	let _ = graph.iter_edge_ids_from_node_ids(data.iter_edge_ids_from_node_ids.src, data.iter_edge_ids_from_node_ids.dst);
 	let _ = graph.iter_weights();
@@ -749,7 +749,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.kfold(data.kfold.k, data.kfold.k_index, data.kfold.edge_types, data.kfold.random_state, data.kfold.verbose);
 	let _ = graph.must_have_edge_types();
 	let _ = graph.must_have_node_types();
-	let _ = graph.must_have_weights();
+	let _ = graph.must_have_edge_weights();
 	let _ = graph.node_label_holdout(data.node_label_holdout.train_size, data.node_label_holdout.use_stratification, data.node_label_holdout.random_state);
 	let _ = graph.par_iter_weights();
 	let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);

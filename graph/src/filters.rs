@@ -78,7 +78,7 @@ impl Graph {
             self.name.clone(),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
             true,
             true,
             true,

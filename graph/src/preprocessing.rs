@@ -77,7 +77,7 @@ pub fn cooccurence_matrix(
     window_size: usize,
     number_of_sequences: usize,
     verbose: bool,
-) -> Result<(usize, impl Iterator<Item=(NodeT, NodeT, f64)>), String> {
+) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let mut max_frequency = 0.0;
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
@@ -126,9 +126,7 @@ pub fn cooccurence_matrix(
         cooccurence_matrix
             .into_iter()
             .progress_with(pb2)
-            .map(move |((word, context), frequency)| {
-                (word, context, frequency / max_frequency)
-            })
+            .map(move |((word, context), frequency)| (word, context, frequency / max_frequency)),
     ))
 }
 
@@ -181,7 +179,7 @@ impl Graph {
         walks_parameters: &'a WalksParameters,
         window_size: usize,
         verbose: bool,
-    ) -> Result<(usize, impl Iterator<Item=(NodeT, NodeT, f64)> + 'a), String> {
+    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a), String> {
         if !self.has_edges() {
             return Err(
                 "The cooccurence matrix on a graph without edges is not defined.".to_string(),
@@ -226,7 +224,7 @@ impl Graph {
         })
         .into_iter()
         .chain(
-            self.get_unchecked_node_destinations_from_node_id(
+            self.get_unchecked_destination_node_ids_from_node_id(
                 central_node_id,
                 random_state,
                 max_neighbours,
@@ -422,7 +420,7 @@ impl Graph {
             ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
         let positive_number: usize = batch_size - negative_number;
-        let graph_has_no_self_loops = !self.has_selfloops();
+        let graph_has_no_selfloops = !self.has_selfloops();
 
         let edges_number = self.get_directed_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u32;
@@ -458,7 +456,7 @@ impl Graph {
                             }
                         }
 
-                        if graph_has_no_self_loops && src == dst {
+                        if graph_has_no_selfloops && src == dst {
                             sampled = xorshift(sampled);
                             continue;
                         }

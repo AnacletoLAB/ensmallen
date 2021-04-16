@@ -295,13 +295,13 @@ fn dump_edges_metadata_from_vec(path: String, data: &FromVecHarnessParams) {
     dump!(
         file,
         "weights_column_number",
-        if data.has_weights { Some(3) } else { None }
+        if data.has_edge_weights { Some(3) } else { None }
     );
 
     dump!(file, "weights_column", None::<u64>);
     dump!(file, "default_weight", None::<u64>);
     dump!(file, "default_edge_type", None::<u64>);
-    dump!(file, "skip_self_loops", Some(false));
+    dump!(file, "skip_selfloops", Some(false));
     dump!(
         file,
         "numeric_edge_type_ids",
@@ -367,7 +367,7 @@ fn dump_edges_metadata(path: String, data: &EdgeFileReaderParams) {
     dump!(file, "weights_column", data.weights_column);
     dump!(file, "default_weight", data.default_weight);
     dump!(file, "default_edge_type", data.sources_column_number);
-    dump!(file, "skip_self_loops", data.skip_self_loops);
+    dump!(file, "skip_selfloops", data.skip_selfloops);
     dump!(file, "numeric_edge_type_ids", data.numeric_edge_type_ids);
     dump!(file, "numeric_node_ids", data.numeric_node_ids);
     dump!(

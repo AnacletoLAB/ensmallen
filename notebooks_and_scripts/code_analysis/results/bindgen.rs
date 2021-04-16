@@ -254,8 +254,8 @@ impl Graph {
 	/// --------------
 	/// 
 	/// `node_id`: int - The node to be checked for.
-	fn is_singleton_with_self_loops_by_node_id(self, node_id : NodeT) -> bool {
-		self.graph.is_singleton_with_self_loops_by_node_id(node_id)
+	fn is_singleton_with_selfloops_by_node_id(self, node_id : NodeT) -> bool {
+		self.graph.is_singleton_with_selfloops_by_node_id(node_id)
 	}
 	
 	#[text_signature = "($self, node_name)"]
@@ -322,8 +322,8 @@ impl Graph {
 	/// --------------
 	/// 
 	/// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
-	fn is_node_trap_by_node_id(self, node_id : NodeT) -> PyResult<bool> {
-		pe!(self.graph.is_node_trap_by_node_id(node_id))
+	fn is_trap_node_by_node_id(self, node_id : NodeT) -> PyResult<bool> {
+		pe!(self.graph.is_trap_node_by_node_id(node_id))
 	}
 	
 	#[text_signature = "($self, node_name, node_type_name)"]
@@ -1037,22 +1037,22 @@ impl Graph {
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns number of self-loops, including also those in eventual multi-edges.
-	fn get_self_loop_number(self) -> EdgeT {
-		self.graph.get_self_loop_number()
+	fn get_selfloop_number(self) -> EdgeT {
+		self.graph.get_selfloop_number()
 	}
 	
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns number of unique self-loops, excluding those in eventual multi-edges.
-	fn get_unique_self_loop_number(self) -> NodeT {
-		self.graph.get_unique_self_loop_number()
+	fn get_unique_selfloop_number(self) -> NodeT {
+		self.graph.get_unique_selfloop_number()
 	}
 	
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns rate of self-loops.
-	fn get_self_loop_rate(self) -> PyResult<f64> {
-		pe!(self.graph.get_self_loop_rate())
+	fn get_selfloop_rate(self) -> PyResult<f64> {
+		pe!(self.graph.get_selfloop_rate())
 	}
 	
 	#[text_signature = "($self, verbose)"]
@@ -1072,8 +1072,8 @@ impl Graph {
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns number of singleton nodes with self-loops within the graph.
-	fn get_singleton_nodes_with_self_loops_number(self) -> NodeT {
-		self.graph.get_singleton_nodes_with_self_loops_number()
+	fn get_singleton_nodes_with_selfloops_number(self) -> NodeT {
+		self.graph.get_singleton_nodes_with_selfloops_number()
 	}
 	
 	#[text_signature = "($self)"]
@@ -1320,34 +1320,34 @@ impl Graph {
 		pe!(self.graph.get_star_edge_names(central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set))
 	}
 	
-	#[text_signature = "($self, directed, allow_self_loops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+	#[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
 	/// TODO!: This binding was automatically generated
 	/// Return vector of tuple of Node IDs that form the edges of the required clique.
 	/// 
 	/// Paramenters
 	/// --------------
 	/// `directed`: bool - whether to return the edges as directed or undirected. By default, equal to the graph.
-	/// `allow_self_loops`: bool - whether to allow self-loops in the clique. By default, equal to the graph.
+	/// `allow_selfloops`: bool - whether to allow self-loops in the clique. By default, equal to the graph.
 	/// `removed_existing_edges`: bool - whether to filter out the existing edges. By default, true.
 	/// `allow_node_type_set`: Dict[str] - Node types to include in the clique.
 	/// `allow_node_set`: Dict[str] - Nodes to include i the clique.
-	fn get_clique_edges(&self, directed : Option<bool>, allow_self_loops : Option<bool>, removed_existing_edges : Option<bool>, allow_node_type_set : Option<HashSet<String>>, allow_node_set : Option<HashSet<String>>) -> Vec<Vec<NodeT>> {
-		self.graph.get_clique_edges(directed, allow_self_loops, removed_existing_edges, allow_node_type_set, allow_node_set)
+	fn get_clique_edges(&self, directed : Option<bool>, allow_selfloops : Option<bool>, removed_existing_edges : Option<bool>, allow_node_type_set : Option<HashSet<String>>, allow_node_set : Option<HashSet<String>>) -> Vec<Vec<NodeT>> {
+		self.graph.get_clique_edges(directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)
 	}
 	
-	#[text_signature = "($self, directed, allow_self_loops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+	#[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
 	/// TODO!: This binding was automatically generated
 	/// Return vector of tuple of Node names that form the edges of the required clique.
 	/// 
 	/// Paramenters
 	/// --------------
 	/// `directed`: bool - whether to return the edges as directed or undirected. By default, equal to the graph.
-	/// `allow_self_loops`: bool - whether to allow self-loops in the clique. By default, equal to the graph.
+	/// `allow_selfloops`: bool - whether to allow self-loops in the clique. By default, equal to the graph.
 	/// `removed_existing_edges`: bool - whether to filter out the existing edges. By default, true.
 	/// `allow_node_type_set`: Dict[str] - Node types to include in the clique.
 	/// `allow_node_set`: Dict[str] - Nodes to include i the clique.
-	fn get_clique_edge_names(&self, directed : Option<bool>, allow_self_loops : Option<bool>, removed_existing_edges : Option<bool>, allow_node_type_set : Option<HashSet<String>>, allow_node_set : Option<HashSet<String>>) -> Vec<Vec<String>> {
-		self.graph.get_clique_edge_names(directed, allow_self_loops, removed_existing_edges, allow_node_type_set, allow_node_set)
+	fn get_clique_edge_names(&self, directed : Option<bool>, allow_selfloops : Option<bool>, removed_existing_edges : Option<bool>, allow_node_type_set : Option<HashSet<String>>, allow_node_set : Option<HashSet<String>>) -> Vec<Vec<String>> {
+		self.graph.get_clique_edge_names(directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)
 	}
 	
 	#[text_signature = "($self)"]
@@ -1397,8 +1397,8 @@ impl Graph {
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns boolean representing whether graph has weights.
-	fn has_weights(self) -> bool {
-		self.graph.has_weights()
+	fn has_edge_weights(self) -> bool {
+		self.graph.has_edge_weights()
 	}
 	
 	#[text_signature = "($self)"]
@@ -1425,8 +1425,8 @@ impl Graph {
 	#[text_signature = "($self)"]
 	/// TODO!: This binding was automatically generated
 	/// Returns boolean representing if graph has singletons.
-	fn has_singleton_nodes_with_self_loops(self) -> bool {
-		self.graph.has_singleton_nodes_with_self_loops()
+	fn has_singletons_with_selfloops(self) -> bool {
+		self.graph.has_singletons_with_selfloops()
 	}
 	
 	#[text_signature = "($self, directed)"]
@@ -1818,7 +1818,7 @@ impl Graph {
 		self.graph.compute_hash()
 	}
 	
-	#[text_signature = "($self, nodes_iterator, directed, directed_edge_list, name, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, verbose, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes)"]
+	#[text_signature = "($self, nodes_iterator, directed, directed_edge_list, name, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, verbose, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_edge_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes)"]
 	/// TODO!: This binding was automatically generated
 	/// Create new Graph object from unsorted source.
 	/// 
@@ -1837,13 +1837,13 @@ impl Graph {
 	/// Wether to ignore duplicated nodes or to raise a proper exception.
 	/// * ignore_duplicated_edges: bool,
 	/// Wether to ignore duplicated edges or to raise a proper exception.
-	/// * skip_self_loops: bool,
+	/// * skip_selfloops: bool,
 	/// Wether to skip self loops while reading the the edges iterator.
-	fn from_string_unsorted(impl Iterator<Item = Result<StringQuadruple, String>>, nodes_iterator : Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>, directed : bool, directed_edge_list : bool, name : S, ignore_duplicated_nodes : bool, node_list_is_correct : bool, ignore_duplicated_edges : bool, edge_list_is_correct : bool, verbose : bool, numeric_edge_type_ids : bool, numeric_node_ids : bool, numeric_edge_node_ids : bool, numeric_node_types_ids : bool, has_node_types : bool, has_edge_types : bool, has_weights : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool) -> PyResult<Graph> {
-		pe!(self.graph.from_string_unsorted(nodes_iterator, directed, directed_edge_list, name, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, verbose, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes))
+	fn from_string_unsorted(impl Iterator<Item = Result<StringQuadruple, String>>, nodes_iterator : Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>, directed : bool, directed_edge_list : bool, name : S, ignore_duplicated_nodes : bool, node_list_is_correct : bool, ignore_duplicated_edges : bool, edge_list_is_correct : bool, verbose : bool, numeric_edge_type_ids : bool, numeric_node_ids : bool, numeric_edge_node_ids : bool, numeric_node_types_ids : bool, has_node_types : bool, has_edge_types : bool, has_edge_weights : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool) -> PyResult<Graph> {
+		pe!(self.graph.from_string_unsorted(nodes_iterator, directed, directed_edge_list, name, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, verbose, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_edge_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes))
 	}
 	
-	#[text_signature = "($self, nodes, node_types, edge_types_vocabulary, directed, name, ignore_duplicated_edges, has_edge_types, has_weights, verbose, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes)"]
+	#[text_signature = "($self, nodes, node_types, edge_types_vocabulary, directed, name, ignore_duplicated_edges, has_edge_types, has_edge_weights, verbose, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes)"]
 	/// TODO!: This binding was automatically generated
 	/// Create new Graph object from unsorted source.
 	/// 
@@ -1860,19 +1860,19 @@ impl Graph {
 	/// Wether to ignore duplicated nodes or to raise a proper exception.
 	/// * ignore_duplicated_edges: bool,
 	/// Wether to ignore duplicated edges or to raise a proper exception.
-	/// * skip_self_loops: bool,
+	/// * skip_selfloops: bool,
 	/// Wether to skip self loops while reading the the edges iterator.
 	fn from_integer_unsorted(impl Iterator<
 	            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
-	        >, nodes : Vocabulary<NodeT>, node_types : Option<NodeTypeVocabulary>, edge_types_vocabulary : Option<Vocabulary<EdgeTypeT>>, directed : bool, name : String, ignore_duplicated_edges : bool, has_edge_types : bool, has_weights : bool, verbose : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool) -> PyResult<Graph> {
-		pe!(self.graph.from_integer_unsorted(nodes, node_types, edge_types_vocabulary, directed, name, ignore_duplicated_edges, has_edge_types, has_weights, verbose, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes))
+	        >, nodes : Vocabulary<NodeT>, node_types : Option<NodeTypeVocabulary>, edge_types_vocabulary : Option<Vocabulary<EdgeTypeT>>, directed : bool, name : String, ignore_duplicated_edges : bool, has_edge_types : bool, has_edge_weights : bool, verbose : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool) -> PyResult<Graph> {
+		pe!(self.graph.from_integer_unsorted(nodes, node_types, edge_types_vocabulary, directed, name, ignore_duplicated_edges, has_edge_types, has_edge_weights, verbose, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes))
 	}
 	
-	#[text_signature = "($self, nodes_iterator, directed, directed_edge_list, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, edges_number, nodes_number, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes, name)"]
+	#[text_signature = "($self, nodes_iterator, directed, directed_edge_list, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, edges_number, nodes_number, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_edge_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes, name)"]
 	/// TODO!: This binding was automatically generated
 	/// Create new Graph object from sorted sources.
-	fn from_string_sorted(impl Iterator<Item = Result<StringQuadruple, String>>, nodes_iterator : Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>, directed : bool, directed_edge_list : bool, ignore_duplicated_nodes : bool, node_list_is_correct : bool, ignore_duplicated_edges : bool, edge_list_is_correct : bool, edges_number : usize, nodes_number : NodeT, numeric_edge_type_ids : bool, numeric_node_ids : bool, numeric_edge_node_ids : bool, numeric_node_types_ids : bool, has_node_types : bool, has_edge_types : bool, has_weights : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool, name : S) -> PyResult<Graph> {
-		pe!(self.graph.from_string_sorted(nodes_iterator, directed, directed_edge_list, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, edges_number, nodes_number, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes, name))
+	fn from_string_sorted(impl Iterator<Item = Result<StringQuadruple, String>>, nodes_iterator : Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>, directed : bool, directed_edge_list : bool, ignore_duplicated_nodes : bool, node_list_is_correct : bool, ignore_duplicated_edges : bool, edge_list_is_correct : bool, edges_number : usize, nodes_number : NodeT, numeric_edge_type_ids : bool, numeric_node_ids : bool, numeric_edge_node_ids : bool, numeric_node_types_ids : bool, has_node_types : bool, has_edge_types : bool, has_edge_weights : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool, name : S) -> PyResult<Graph> {
+		pe!(self.graph.from_string_sorted(nodes_iterator, directed, directed_edge_list, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, edges_number, nodes_number, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_edge_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes, name))
 	}
 	
 	#[text_signature = "($self, random_state, negatives_number, seed_graph, only_from_same_component, verbose)"]

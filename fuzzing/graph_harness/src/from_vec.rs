@@ -14,12 +14,10 @@ pub struct FromVecHarnessParams {
     pub numeric_node_types_ids: bool,
     pub has_node_types: bool,
     pub has_edge_types: bool,
-    pub has_weights: bool,
+    pub has_edge_weights: bool,
     pub edges: Vec<Result<StringQuadruple, String>>,
     pub nodes: Option<Vec<Result<(String, Option<Vec<String>>), String>>>,
 }
-
-use std::arch::x86_64::_rdtsc;
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     let data_for_panic_handling1 = data.clone();
@@ -49,7 +47,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.numeric_node_types_ids,
         data.has_node_types,
         data.has_edge_types,
-        data.has_weights,
+        data.has_edge_weights,
         true,
         true,
         true,

@@ -8,9 +8,6 @@ STRUCT_TEMPLATE = get_file("templates/struct.txt")
 META_STRUCT_TEMPLATE = get_file("templates/meta_struct.txt")
 
 BLACKLISTED_FUNCS = [
-    #"validate_weight",
-    #"parse_weight",
-    #"has_edge",
     "new",
 ]
 
@@ -68,7 +65,7 @@ def build_struct_and_call(function):
     args = function.get("args")
     function_name = function.get("name")
 
-    struct_type = function_name.capitalize() + "_Params"
+    struct_type = "".join(x.capitalize() for x in function_name.split("_")) + "Params"
     
     fields = "\n".join([
             "\tpub {field_name} : {field_type},".format(

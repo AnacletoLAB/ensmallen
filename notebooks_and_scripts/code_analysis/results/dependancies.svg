@@ -135,15 +135,15 @@
 <path fill="none" stroke="black" d="M16619.85,-1094C16397.92,-1086.79 15824.65,-1067.35 15346,-1044 15267.86,-1040.19 15177.9,-1034.73 15119.38,-1031.03"/>
 <polygon fill="black" stroke="black" points="15119.39,-1027.53 15109.19,-1030.39 15118.95,-1034.51 15119.39,-1027.53"/>
 </g>
-<!-- Graph::has_weights -->
+<!-- Graph::has_edge_weights -->
 <g id="node233" class="node">
-<title>Graph::has_weights</title>
+<title>Graph::has_edge_weights</title>
 <polygon fill="none" stroke="black" points="18556,-396 18398,-396 18398,-360 18556,-360 18556,-396"/>
-<text text-anchor="middle" x="18477" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::has_weights</text>
+<text text-anchor="middle" x="18477" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_weights</text>
 </g>
-<!-- generic_string_operator&#45;&gt;Graph::has_weights -->
+<!-- generic_string_operator&#45;&gt;Graph::has_edge_weights -->
 <g id="edge10" class="edge">
-<title>generic_string_operator&#45;&gt;Graph::has_weights</title>
+<title>generic_string_operator&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M16720.3,-1079.9C16729.12,-1058.72 16747.37,-1023.54 16776,-1008 16886.32,-948.15 17783.41,-1003.12 17905,-972 17939.28,-963.23 17942.63,-947.75 17976,-936 18030.84,-916.69 18451.38,-873.16 18488,-828 18579.96,-714.62 18551.89,-590.1 18434,-504 18360.36,-450.22 18290.55,-537.91 18232,-468 18184.09,-410.79 18299.55,-390.36 18387.79,-383.06"/>
 <polygon fill="black" stroke="black" points="18388.17,-386.54 18397.86,-382.27 18387.62,-379.56 18388.17,-386.54"/>
 </g>
@@ -237,9 +237,9 @@
 <path fill="none" stroke="black" d="M16950.28,-1088.71C16909.11,-1085.53 16860.77,-1082.15 16817,-1080 16178.9,-1048.65 16018.39,-1068.79 15380,-1044 15289.19,-1040.47 15184.1,-1034.61 15119.09,-1030.78"/>
 <polygon fill="black" stroke="black" points="15119.2,-1027.28 15109.01,-1030.18 15118.78,-1034.26 15119.2,-1027.28"/>
 </g>
-<!-- generic_integer_operator&#45;&gt;Graph::has_weights -->
+<!-- generic_integer_operator&#45;&gt;Graph::has_edge_weights -->
 <g id="edge19" class="edge">
-<title>generic_integer_operator&#45;&gt;Graph::has_weights</title>
+<title>generic_integer_operator&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M17114.93,-1079.94C17196.71,-1059.47 17340.66,-1025.71 17466,-1008 17691,-976.21 17756.2,-1029.63 17976,-972 18012.15,-962.52 18015.99,-946.01 18052,-936 18206.93,-892.95 18265.77,-966.89 18412,-900 18433.16,-890.32 18429.53,-875.06 18450,-864 18511.08,-830.99 18558.94,-882.45 18602,-828 18707.39,-694.74 18555.82,-478.04 18497.9,-404.41"/>
 <polygon fill="black" stroke="black" points="18500.29,-401.79 18491.32,-396.15 18494.81,-406.16 18500.29,-401.79"/>
 </g>
@@ -279,9 +279,9 @@
 <polygon fill="none" stroke="black" points="19361.5,-468 19170.5,-468 19170.5,-432 19361.5,-432 19361.5,-468"/>
 <text text-anchor="middle" x="19266" y="-446.3" font-family="Times,serif" font-size="14.00">validate_operator_terms</text>
 </g>
-<!-- validate_operator_terms&#45;&gt;Graph::has_weights -->
+<!-- validate_operator_terms&#45;&gt;Graph::has_edge_weights -->
 <g id="edge23" class="edge">
-<title>validate_operator_terms&#45;&gt;Graph::has_weights</title>
+<title>validate_operator_terms&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M19170.37,-433.78C19165.51,-433.14 19160.7,-432.55 19156,-432 18945.3,-407.53 18696.47,-391.33 18566.42,-383.82"/>
 <polygon fill="black" stroke="black" points="18566.3,-380.31 18556.12,-383.23 18565.9,-387.3 18566.3,-380.31"/>
 </g>
@@ -369,15 +369,15 @@
 <path fill="none" stroke="black" d="M12479.56,-1223.98C12490.02,-1193.42 12514.61,-1127.97 12548,-1080 12612.64,-987.15 12650.17,-982.12 12728,-900 12772.38,-853.17 12772.65,-829.7 12825,-792 12857.63,-768.5 12885.94,-789.62 12908,-756 12920.76,-736.56 12902.16,-687.09 12890,-612 12886.64,-591.29 12882.96,-567.84 12880.22,-550.22"/>
 <polygon fill="black" stroke="black" points="12883.63,-549.41 12878.64,-540.07 12876.72,-550.49 12883.63,-549.41"/>
 </g>
-<!-- Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::has_singletons_with_selfloops -->
 <g id="node237" class="node">
-<title>Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::has_singletons_with_selfloops</title>
 <polygon fill="none" stroke="black" points="11639.5,-1044 11308.5,-1044 11308.5,-1008 11639.5,-1008 11639.5,-1044"/>
-<text text-anchor="middle" x="11474" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_singleton_nodes_with_self_loops</text>
+<text text-anchor="middle" x="11474" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_singletons_with_selfloops</text>
 </g>
-<!-- bitor&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- bitor&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge33" class="edge">
-<title>bitor&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>bitor&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M12446.84,-1241.03C12340.23,-1240.8 11950.72,-1236.58 11839,-1188 11773.5,-1159.52 11783.53,-1112.64 11720,-1080 11690.59,-1064.89 11657.08,-1054.09 11624.45,-1046.36"/>
 <polygon fill="black" stroke="black" points="11624.89,-1042.87 11614.36,-1044.06 11623.33,-1049.69 11624.89,-1042.87"/>
 </g>
@@ -921,15 +921,15 @@
 <path fill="none" stroke="black" d="M10934.32,-1079.94C10805.53,-1030.11 10415.4,-882.59 10082,-792 9851.7,-729.42 9773.62,-781.97 9556,-684 9531.68,-673.05 9531.89,-659.85 9508,-648 9479.37,-633.79 9446.31,-622.82 9416.07,-614.65"/>
 <polygon fill="black" stroke="black" points="9416.93,-611.25 9406.37,-612.09 9415.15,-618.02 9416.93,-611.25"/>
 </g>
-<!-- Graph::is_singleton_with_self_loops_by_node_id -->
+<!-- Graph::is_singleton_with_selfloops_by_node_id -->
 <g id="node71" class="node">
-<title>Graph::is_singleton_with_self_loops_by_node_id</title>
+<title>Graph::is_singleton_with_selfloops_by_node_id</title>
 <polygon fill="none" stroke="black" points="11949.5,-684 11594.5,-684 11594.5,-648 11949.5,-648 11949.5,-684"/>
-<text text-anchor="middle" x="11772" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_with_self_loops_by_node_id</text>
+<text text-anchor="middle" x="11772" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_with_selfloops_by_node_id</text>
 </g>
-<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id -->
+<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
 <g id="edge77" class="edge">
-<title>Graph::kruskal&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id</title>
+<title>Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
 <path fill="none" stroke="black" d="M10980.77,-1079.85C10988.46,-1037.51 11013.9,-926.89 11078,-864 11199.24,-745.05 11268.32,-765.38 11432,-720 11486.74,-704.82 11547.72,-693.61 11602.75,-685.51"/>
 <polygon fill="black" stroke="black" points="11603.56,-688.93 11612.95,-684.03 11602.56,-682 11603.56,-688.93"/>
 </g>
@@ -969,9 +969,9 @@
 <path fill="none" stroke="black" d="M10988.21,-1079.85C11018.15,-1030.23 11106.59,-888.47 11154,-864 11276.78,-800.64 12275.2,-893.24 12397,-828 12509.38,-767.81 12431.7,-652.07 12534,-576 12543.85,-568.67 12680.56,-549.09 12778.11,-535.9"/>
 <polygon fill="black" stroke="black" points="12778.87,-539.33 12788.31,-534.52 12777.94,-532.39 12778.87,-539.33"/>
 </g>
-<!-- Graph::kruskal&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::kruskal&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge82" class="edge">
-<title>Graph::kruskal&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::kruskal&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M11039.32,-1088.35C11114.74,-1077.7 11244.85,-1059.34 11343.12,-1045.47"/>
 <polygon fill="black" stroke="black" points="11343.71,-1048.92 11353.12,-1044.06 11342.73,-1041.99 11343.71,-1048.92"/>
 </g>
@@ -1143,9 +1143,9 @@
 <path fill="none" stroke="black" d="M9741.62,-1295.75C9735.17,-1285.8 9727.84,-1272.76 9724,-1260 9700.95,-1183.37 9673.89,-1138.95 9728,-1080 9779.93,-1023.42 9848.68,-1103.69 9897,-1044 9907.07,-1031.56 9904.53,-1022.12 9897,-1008 9815.9,-855.95 9719.42,-886.02 9575,-792 9549.89,-775.65 9540.31,-776 9518,-756 9472.31,-715.04 9479.95,-686.28 9432,-648 9415.99,-635.22 9396.39,-624.53 9378.19,-616.18"/>
 <polygon fill="black" stroke="black" points="9379.39,-612.89 9368.83,-612.03 9376.55,-619.29 9379.39,-612.89"/>
 </g>
-<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id -->
+<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
 <g id="edge103" class="edge">
-<title>Graph::connected_components&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id</title>
+<title>Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
 <path fill="none" stroke="black" d="M9757.05,-1295.92C9765.56,-1253.25 9793.49,-1141.06 9861,-1080 9897.59,-1046.91 9919.44,-1060.3 9966,-1044 10190.5,-965.43 10240.17,-925.28 10470,-864 10819.08,-770.93 10912.35,-771 11270,-720 11373.59,-705.23 11489.75,-692.71 11584.22,-683.55"/>
 <polygon fill="black" stroke="black" points="11584.85,-687.01 11594.46,-682.56 11584.17,-680.04 11584.85,-687.01"/>
 </g>
@@ -1647,9 +1647,9 @@
 <path fill="none" stroke="black" d="M17279.81,-1090.31C17244.36,-1086.53 17198.13,-1082.16 17157,-1080 17097.34,-1076.87 13220.93,-1035.31 12544.22,-1028.07"/>
 <polygon fill="black" stroke="black" points="12544.05,-1024.57 12534.02,-1027.96 12543.98,-1031.57 12544.05,-1024.57"/>
 </g>
-<!-- Graph::remap&#45;&gt;Graph::has_weights -->
+<!-- Graph::remap&#45;&gt;Graph::has_edge_weights -->
 <g id="edge158" class="edge">
-<title>Graph::remap&#45;&gt;Graph::has_weights</title>
+<title>Graph::remap&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M17366.37,-1079.99C17403.12,-1058.91 17469.88,-1023.84 17532,-1008 17756.48,-950.77 17827.87,-1030.6 18052,-972 18088.16,-962.55 18092.05,-946.22 18128,-936 18266.52,-896.64 18310.36,-935.19 18450,-900 18491.58,-889.52 18597.56,-857.15 18629,-828 18692.07,-769.53 18725.96,-729.99 18700,-648 18664.57,-536.09 18629.83,-516.16 18548,-432 18537.39,-421.08 18524.37,-410.69 18512.39,-402.04"/>
 <polygon fill="black" stroke="black" points="18514.09,-398.96 18503.9,-396.07 18510.06,-404.68 18514.09,-398.96"/>
 </g>
@@ -1665,9 +1665,9 @@
 <path fill="none" stroke="black" d="M17300.37,-1079.98C17250.34,-1058.35 17158.63,-1022.14 17076,-1008 16730.22,-948.85 14261.74,-1046.78 13919,-972 13880.51,-963.6 13876.06,-946.18 13838,-936 13689.49,-896.3 13626.8,-977.43 13494,-900 13341.22,-810.92 13414.34,-667.5 13263,-576 13238.68,-561.3 13080.34,-543.13 12973.88,-532.34"/>
 <polygon fill="black" stroke="black" points="12974.05,-528.84 12963.75,-531.32 12973.35,-535.8 12974.05,-528.84"/>
 </g>
-<!-- Graph::remap&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::remap&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge161" class="edge">
-<title>Graph::remap&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::remap&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M17279.81,-1090.25C17244.37,-1086.46 17198.14,-1082.08 17157,-1080 16089,-1025.95 13414.27,-1058.43 12345,-1044 12104.12,-1040.75 11825.8,-1034.96 11649.88,-1031.05"/>
 <polygon fill="black" stroke="black" points="11649.83,-1027.55 11639.75,-1030.83 11649.67,-1034.55 11649.83,-1027.55"/>
 </g>
@@ -1701,9 +1701,9 @@
 <path fill="none" stroke="black" d="M9442.12,-576.69C9445.11,-576.44 9448.07,-576.21 9451,-576 10145.5,-526.43 11888.15,-564.24 12584,-540 12648.75,-537.74 12721.49,-533.51 12778.17,-529.84"/>
 <polygon fill="black" stroke="black" points="12778.45,-533.33 12788.2,-529.18 12778,-526.34 12778.45,-533.33"/>
 </g>
-<!-- Graph::is_singleton_with_self_loops_by_node_id&#45;&gt;Graph::contains -->
+<!-- Graph::is_singleton_with_selfloops_by_node_id&#45;&gt;Graph::contains -->
 <g id="edge167" class="edge">
-<title>Graph::is_singleton_with_self_loops_by_node_id&#45;&gt;Graph::contains</title>
+<title>Graph::is_singleton_with_selfloops_by_node_id&#45;&gt;Graph::contains</title>
 <path fill="none" stroke="black" d="M11901.22,-647.97C12003.58,-634.47 12143.03,-616.09 12227.84,-604.91"/>
 <polygon fill="black" stroke="black" points="12228.45,-608.36 12237.9,-603.58 12227.53,-601.42 12228.45,-608.36"/>
 </g>
@@ -1755,15 +1755,15 @@
 <path fill="none" stroke="black" d="M721.65,-503.86C680.87,-484.97 612.49,-454.31 552,-432 519.2,-419.9 482.21,-408.25 450.97,-398.97"/>
 <polygon fill="black" stroke="black" points="451.62,-395.52 441.04,-396.05 449.64,-402.23 451.62,-395.52"/>
 </g>
-<!-- Graph::is_node_trap_by_node_id -->
+<!-- Graph::is_trap_node_by_node_id -->
 <g id="node76" class="node">
-<title>Graph::is_node_trap_by_node_id</title>
+<title>Graph::is_trap_node_by_node_id</title>
 <polygon fill="none" stroke="black" points="4809.5,-540 4564.5,-540 4564.5,-504 4809.5,-504 4809.5,-540"/>
-<text text-anchor="middle" x="4687" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::is_node_trap_by_node_id</text>
+<text text-anchor="middle" x="4687" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::is_trap_node_by_node_id</text>
 </g>
-<!-- Graph::is_node_trap_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::is_trap_node_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id -->
 <g id="edge173" class="edge">
-<title>Graph::is_node_trap_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::is_trap_node_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id</title>
 <path fill="none" stroke="black" d="M4733.23,-503.88C4759.53,-494.14 4792.64,-481.87 4820.36,-471.61"/>
 <polygon fill="black" stroke="black" points="4821.75,-474.82 4829.92,-468.07 4819.32,-468.26 4821.75,-474.82"/>
 </g>
@@ -1917,9 +1917,9 @@
 <path fill="none" stroke="black" d="M21210.7,-1528.59C21022.17,-1526.57 20173.87,-1517.6 19479,-1512 17023.92,-1492.21 16410.11,-1492.79 13955,-1476 13070.61,-1469.95 12000.81,-1462.09 11678.43,-1459.71"/>
 <polygon fill="black" stroke="black" points="11678.22,-1456.21 11668.2,-1459.64 11678.17,-1463.21 11678.22,-1456.21"/>
 </g>
-<!-- load_ppi&#45;&gt;Graph::has_weights -->
+<!-- load_ppi&#45;&gt;Graph::has_edge_weights -->
 <g id="edge188" class="edge">
-<title>load_ppi&#45;&gt;Graph::has_weights</title>
+<title>load_ppi&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M21246.39,-1511.73C21237.46,-1459.01 21202.98,-1299.18 21104,-1224 20732.19,-941.58 20369.54,-1401.32 20069,-1044 20058.7,-1031.76 20067.32,-1023.91 20069,-1008 20074.14,-959.19 20086.86,-948.81 20092,-900 20100.56,-818.69 20115.8,-773.53 20054,-720 20001.25,-674.3 19810.86,-695.37 19742,-684 19667.09,-671.63 19650,-659.86 19575,-648 19418.8,-623.3 19376.19,-642.42 19221,-612 19165.31,-601.08 19025.77,-567.26 18976,-540 18911.9,-504.89 18918.48,-462.36 18852,-432 18802.59,-409.43 18660.75,-393.92 18566.37,-385.75"/>
 <polygon fill="black" stroke="black" points="18566.51,-382.25 18556.25,-384.89 18565.91,-389.23 18566.51,-382.25"/>
 </g>
@@ -2097,9 +2097,9 @@
 <path fill="none" stroke="black" d="M19299.7,-1528.23C18511.84,-1521.17 12513.29,-1467.35 11678.35,-1459.86"/>
 <polygon fill="black" stroke="black" points="11678.21,-1456.36 11668.18,-1459.77 11678.15,-1463.36 11678.21,-1456.36"/>
 </g>
-<!-- validate_vocabularies&#45;&gt;Graph::has_weights -->
+<!-- validate_vocabularies&#45;&gt;Graph::has_edge_weights -->
 <g id="edge212" class="edge">
-<title>validate_vocabularies&#45;&gt;Graph::has_weights</title>
+<title>validate_vocabularies&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M19470.16,-1517.17C19590.54,-1498.02 19796,-1455.32 19796,-1387 19796,-1387 19796,-1387 19796,-953 19796,-849.02 19886.9,-796.97 19817,-720 19773.49,-672.09 19591.96,-693.88 19528,-684 19440.9,-670.55 19420.31,-660.01 19333,-648 19158.36,-623.97 19112.08,-639.8 18938,-612 18726.35,-578.2 18678.03,-546.73 18468,-504 18423.1,-494.87 18294.43,-503.11 18265,-468 18224.81,-420.06 18313.27,-397.46 18387.94,-387.14"/>
 <polygon fill="black" stroke="black" points="18388.44,-390.61 18397.9,-385.83 18387.52,-383.67 18388.44,-390.61"/>
 </g>
@@ -2493,9 +2493,9 @@
 <path fill="none" stroke="black" d="M9124.11,-1600.22C9553.68,-1595.94 11435.41,-1571.82 11677,-1476 11700.17,-1466.81 11700.05,-1454.95 11720,-1440 11881.28,-1319.14 11949.7,-1325.56 12097,-1188 12170.87,-1119.01 12149.06,-1059.55 12236,-1008 12323.86,-955.9 12364.74,-999.92 12463,-972 12542.72,-949.35 12570.73,-952.32 12635,-900 12680.12,-863.27 12660.71,-824.46 12709,-792 12771.65,-749.88 12827.61,-814.77 12875,-756 12885.04,-743.54 12882.93,-733.89 12875,-720 12859.39,-692.66 12829.61,-711.34 12814,-684 12806.07,-670.11 12810.35,-663.58 12814,-648 12822.58,-611.4 12843.54,-573.24 12858.72,-548.86"/>
 <polygon fill="black" stroke="black" points="12861.8,-550.54 12864.21,-540.23 12855.89,-546.78 12861.8,-550.54"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- test_graph_properties&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge259" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>test_graph_properties&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M9124.04,-1600.2C9322.51,-1597.69 9796.07,-1587.58 9856,-1548 9930.8,-1498.6 9871.33,-1416.06 9947,-1368 10063.45,-1294.04 11053.77,-1363.79 11188,-1332 11335.44,-1297.08 11415.58,-1315.78 11497,-1188 11523.38,-1146.61 11503.33,-1087.19 11487.74,-1053.31"/>
 <polygon fill="black" stroke="black" points="11490.78,-1051.57 11483.3,-1044.07 11484.47,-1054.6 11490.78,-1051.57"/>
 </g>
@@ -3279,15 +3279,15 @@
 <path fill="none" stroke="black" d="M19041.44,-1586.91C18973.07,-1569.77 18886,-1533.36 18886,-1459 18886,-1459 18886,-1459 18886,-1385 18886,-1238.2 18422.19,-1151.88 18182.23,-1117.04"/>
 <polygon fill="black" stroke="black" points="18182.42,-1113.54 18172.03,-1115.57 18181.42,-1120.46 18182.42,-1113.54"/>
 </g>
-<!-- Graph::get_unique_self_loop_number -->
+<!-- Graph::get_unique_selfloop_number -->
 <g id="node169" class="node">
-<title>Graph::get_unique_self_loop_number</title>
+<title>Graph::get_unique_selfloop_number</title>
 <polygon fill="none" stroke="black" points="19092,-972 18812,-972 18812,-936 19092,-936 19092,-972"/>
-<text text-anchor="middle" x="18952" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::get_unique_self_loop_number</text>
+<text text-anchor="middle" x="18952" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::get_unique_selfloop_number</text>
 </g>
-<!-- test_graph_removes&#45;&gt;Graph::get_unique_self_loop_number -->
+<!-- test_graph_removes&#45;&gt;Graph::get_unique_selfloop_number -->
 <g id="edge345" class="edge">
-<title>test_graph_removes&#45;&gt;Graph::get_unique_self_loop_number</title>
+<title>test_graph_removes&#45;&gt;Graph::get_unique_selfloop_number</title>
 <path fill="none" stroke="black" d="M19094.98,-1583.96C19061.27,-1560.37 19008,-1514.33 19008,-1459 19008,-1459 19008,-1459 19008,-1097 19008,-1053.91 18985.4,-1008.26 18968.92,-980.7"/>
 <polygon fill="black" stroke="black" points="18971.83,-978.75 18963.6,-972.07 18965.87,-982.42 18971.83,-978.75"/>
 </g>
@@ -3309,9 +3309,9 @@
 <path fill="none" stroke="black" d="M19122,-1583.95C19122,-1557.29 19122,-1504.11 19122,-1459 19122,-1459 19122,-1459 19122,-1313 19122,-1145.18 19218.98,-1055.35 19101,-936 19080.06,-914.81 18060.75,-865.59 18031,-864 17980.87,-861.31 17162.79,-864.2 17128,-828 17087.75,-786.11 17173.74,-761.49 17241.54,-749.12"/>
 <polygon fill="black" stroke="black" points="17242.15,-752.57 17251.39,-747.39 17240.94,-745.67 17242.15,-752.57"/>
 </g>
-<!-- test_graph_removes&#45;&gt;Graph::has_weights -->
+<!-- test_graph_removes&#45;&gt;Graph::has_edge_weights -->
 <g id="edge349" class="edge">
-<title>test_graph_removes&#45;&gt;Graph::has_weights</title>
+<title>test_graph_removes&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M19202.51,-1596.18C19417,-1582.28 19986,-1537.95 19986,-1459 19986,-1459 19986,-1459 19986,-1097 19986,-988.48 20110.31,-959.62 20059,-864 20004.27,-762.01 19950.37,-760.66 19842,-720 19728.24,-677.31 19689.98,-708.63 19571,-684 19513.55,-672.11 19501.65,-658.86 19444,-648 19280.33,-617.16 19232.47,-652.81 19071,-612 18871.33,-561.53 18837.24,-503.22 18644,-432 18611.81,-420.13 18575.56,-408.44 18545.09,-399.06"/>
 <polygon fill="black" stroke="black" points="18546,-395.68 18535.41,-396.1 18543.95,-402.37 18546,-395.68"/>
 </g>
@@ -4215,9 +4215,9 @@
 <path fill="none" stroke="black" d="M15004.78,-1020.19C14959.62,-1016.22 14892.56,-1010.81 14834,-1008 14353.38,-984.9 12891.34,-964.23 12367.9,-957.39"/>
 <polygon fill="black" stroke="black" points="12367.65,-953.89 12357.61,-957.26 12367.56,-960.89 12367.65,-953.89"/>
 </g>
-<!-- Graph::filter&#45;&gt;Graph::has_weights -->
+<!-- Graph::filter&#45;&gt;Graph::has_edge_weights -->
 <g id="edge463" class="edge">
-<title>Graph::filter&#45;&gt;Graph::has_weights</title>
+<title>Graph::filter&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M15109.33,-1018.48C15237.71,-1002.64 15578.65,-961.56 15864,-936 16327.25,-894.5 16443.41,-885.71 16908,-864 16948.69,-862.1 18345.55,-857.16 18374,-828 18381.36,-820.46 18414.2,-570.03 18358,-504 18309.63,-447.17 18240.77,-526.15 18194,-468 18183.97,-455.53 18183.78,-444.31 18194,-432 18218.36,-402.66 18314.2,-389.47 18387.67,-383.6"/>
 <polygon fill="black" stroke="black" points="18388.18,-387.07 18397.88,-382.81 18387.65,-380.09 18388.18,-387.07"/>
 </g>
@@ -4293,9 +4293,9 @@
 <path fill="none" stroke="black" d="M6122.94,-503.97C6172.89,-482.51 6264,-446.67 6346,-432 6540.89,-397.14 7920.03,-383.23 8326.52,-379.86"/>
 <polygon fill="black" stroke="black" points="8326.84,-383.35 8336.81,-379.77 8326.78,-376.36 8326.84,-383.35"/>
 </g>
-<!-- Graph::jaccard_index&#45;&gt;Graph::is_node_trap_by_node_id -->
+<!-- Graph::jaccard_index&#45;&gt;Graph::is_trap_node_by_node_id -->
 <g id="edge473" class="edge">
-<title>Graph::jaccard_index&#45;&gt;Graph::is_node_trap_by_node_id</title>
+<title>Graph::jaccard_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
 <path fill="none" stroke="black" d="M4688.51,-575.7C4688.29,-567.98 4688.02,-558.71 4687.77,-550.11"/>
 <polygon fill="black" stroke="black" points="4691.27,-550 4687.49,-540.1 4684.28,-550.2 4691.27,-550"/>
 </g>
@@ -4311,9 +4311,9 @@
 <path fill="none" stroke="black" d="M4605.37,-583.09C4578.47,-580.29 4548.51,-577.58 4521,-576 3345.93,-508.69 3048.19,-605.28 1873,-540 1860.68,-539.32 1847.9,-538.42 1835.09,-537.4"/>
 <polygon fill="black" stroke="black" points="1835.08,-533.89 1824.83,-536.55 1834.51,-540.86 1835.08,-533.89"/>
 </g>
-<!-- Graph::adamic_adar_index&#45;&gt;Graph::is_node_trap_by_node_id -->
+<!-- Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_by_node_id -->
 <g id="edge476" class="edge">
-<title>Graph::adamic_adar_index&#45;&gt;Graph::is_node_trap_by_node_id</title>
+<title>Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
 <path fill="none" stroke="black" d="M4887.72,-1079.82C4840.1,-1058.46 4772,-1017.05 4772,-955 4772,-955 4772,-955 4772,-809 4772,-691.89 4638.6,-721.47 4597,-612 4591.32,-597.04 4589.06,-589.89 4597,-576 4604.46,-562.95 4616.52,-552.8 4629.42,-545.03"/>
 <polygon fill="black" stroke="black" points="4631.39,-547.94 4638.44,-540.03 4628,-541.82 4631.39,-547.94"/>
 </g>
@@ -4335,9 +4335,9 @@
 <path fill="none" stroke="black" d="M4829.91,-1080.99C4826.91,-1080.64 4823.93,-1080.31 4821,-1080 4030.64,-996.28 3826.25,-1056.77 3036,-972 2931.81,-960.82 2907.33,-945.74 2803,-936 2682.13,-924.71 1821.17,-950.99 1711,-900 1652.18,-872.78 1671.37,-820.18 1613,-792 1503.1,-738.94 1151.46,-842.13 1065,-756 1030.96,-722.09 1031.62,-686.78 1060,-648 1122.51,-562.59 1183.65,-598.84 1287,-576 1338.14,-564.7 1463.9,-549.15 1563.13,-537.83"/>
 <polygon fill="black" stroke="black" points="1563.71,-541.28 1573.25,-536.67 1562.92,-534.33 1563.71,-541.28"/>
 </g>
-<!-- Graph::resource_allocation_index&#45;&gt;Graph::is_node_trap_by_node_id -->
+<!-- Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_by_node_id -->
 <g id="edge480" class="edge">
-<title>Graph::resource_allocation_index&#45;&gt;Graph::is_node_trap_by_node_id</title>
+<title>Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
 <path fill="none" stroke="black" d="M4686.35,-1079.76C4689.96,-1024.31 4695.7,-846.8 4634,-720 4624.24,-699.93 4611.82,-702.27 4599,-684 4578.56,-654.88 4571.98,-646.67 4564,-612 4560.41,-596.41 4555.21,-589.37 4564,-576 4573.05,-562.25 4586.5,-552.05 4601.23,-544.49"/>
 <polygon fill="black" stroke="black" points="4602.98,-547.53 4610.54,-540.11 4600,-541.2 4602.98,-547.53"/>
 </g>
@@ -4365,9 +4365,9 @@
 <polygon fill="none" stroke="black" points="4511.5,-612 4368.5,-612 4368.5,-576 4511.5,-576 4511.5,-612"/>
 <text text-anchor="middle" x="4440" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::traps_rate</text>
 </g>
-<!-- Graph::traps_rate&#45;&gt;Graph::is_node_trap_by_node_id -->
+<!-- Graph::traps_rate&#45;&gt;Graph::is_trap_node_by_node_id -->
 <g id="edge484" class="edge">
-<title>Graph::traps_rate&#45;&gt;Graph::is_node_trap_by_node_id</title>
+<title>Graph::traps_rate&#45;&gt;Graph::is_trap_node_by_node_id</title>
 <path fill="none" stroke="black" d="M4500.11,-575.97C4535.37,-565.97 4580.09,-553.3 4616.94,-542.85"/>
 <polygon fill="black" stroke="black" points="4617.96,-546.2 4626.62,-540.11 4616.05,-539.47 4617.96,-546.2"/>
 </g>
@@ -4419,15 +4419,15 @@
 <polygon fill="none" stroke="black" points="6752,-468 6464,-468 6464,-432 6752,-432 6752,-468"/>
 <text text-anchor="middle" x="6608" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_undirected_edges_number</text>
 </g>
-<!-- Graph::get_self_loop_number -->
+<!-- Graph::get_selfloop_number -->
 <g id="node168" class="node">
-<title>Graph::get_self_loop_number</title>
+<title>Graph::get_selfloop_number</title>
 <polygon fill="none" stroke="black" points="9099,-396 8875,-396 8875,-360 9099,-360 9099,-396"/>
-<text text-anchor="middle" x="8987" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_self_loop_number</text>
+<text text-anchor="middle" x="8987" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_selfloop_number</text>
 </g>
-<!-- Graph::get_undirected_edges_number&#45;&gt;Graph::get_self_loop_number -->
+<!-- Graph::get_undirected_edges_number&#45;&gt;Graph::get_selfloop_number -->
 <g id="edge491" class="edge">
-<title>Graph::get_undirected_edges_number&#45;&gt;Graph::get_self_loop_number</title>
+<title>Graph::get_undirected_edges_number&#45;&gt;Graph::get_selfloop_number</title>
 <path fill="none" stroke="black" d="M6752.32,-441C6813.84,-437.82 6886.42,-434.36 6952,-432 7661.94,-406.47 7839.93,-417.81 8550,-396 8656.21,-392.74 8776.91,-387.96 8864.5,-384.3"/>
 <polygon fill="black" stroke="black" points="8864.9,-387.79 8874.75,-383.87 8864.61,-380.79 8864.9,-387.79"/>
 </g>
@@ -4443,9 +4443,9 @@
 <polygon fill="none" stroke="black" points="18904,-1044 18560,-1044 18560,-1008 18904,-1008 18904,-1044"/>
 <text text-anchor="middle" x="18732" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::get_unique_undirected_edges_number</text>
 </g>
-<!-- Graph::get_unique_undirected_edges_number&#45;&gt;Graph::get_unique_self_loop_number -->
+<!-- Graph::get_unique_undirected_edges_number&#45;&gt;Graph::get_unique_selfloop_number -->
 <g id="edge493" class="edge">
-<title>Graph::get_unique_undirected_edges_number&#45;&gt;Graph::get_unique_self_loop_number</title>
+<title>Graph::get_unique_undirected_edges_number&#45;&gt;Graph::get_unique_selfloop_number</title>
 <path fill="none" stroke="black" d="M18785.54,-1007.97C18816.54,-998.1 18855.76,-985.62 18888.34,-975.25"/>
 <polygon fill="black" stroke="black" points="18889.76,-978.48 18898.22,-972.11 18887.63,-971.81 18889.76,-978.48"/>
 </g>
@@ -4551,27 +4551,27 @@
 <path fill="none" stroke="black" d="M8879.98,-649.1C8876.96,-648.73 8873.96,-648.36 8871,-648 8747.52,-633.03 8605.61,-617.22 8510.31,-606.8"/>
 <polygon fill="black" stroke="black" points="8510.4,-603.29 8500.08,-605.69 8509.64,-610.25 8510.4,-603.29"/>
 </g>
-<!-- Graph::get_self_loop_rate -->
+<!-- Graph::get_selfloop_rate -->
 <g id="node170" class="node">
-<title>Graph::get_self_loop_rate</title>
+<title>Graph::get_selfloop_rate</title>
 <polygon fill="none" stroke="black" points="5824,-684 5626,-684 5626,-648 5824,-648 5824,-684"/>
-<text text-anchor="middle" x="5725" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_self_loop_rate</text>
+<text text-anchor="middle" x="5725" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_selfloop_rate</text>
 </g>
-<!-- Graph::get_self_loop_rate&#45;&gt;Graph::get_self_loop_number -->
+<!-- Graph::get_selfloop_rate&#45;&gt;Graph::get_selfloop_number -->
 <g id="edge506" class="edge">
-<title>Graph::get_self_loop_rate&#45;&gt;Graph::get_self_loop_number</title>
+<title>Graph::get_selfloop_rate&#45;&gt;Graph::get_selfloop_number</title>
 <path fill="none" stroke="black" d="M5824.1,-648.91C5827.1,-648.58 5830.07,-648.28 5833,-648 6082.47,-624.47 6712.99,-654.12 6960,-612 7012.38,-603.07 7021.76,-585.69 7074,-576 7203.59,-551.98 7544.13,-590.19 7666,-540 7688.42,-530.77 7684.57,-513.21 7707,-504 7833.23,-452.17 8184.17,-481.03 8320,-468 8512.53,-449.53 8735.01,-417.72 8868.17,-397.56"/>
 <polygon fill="black" stroke="black" points="8869.03,-400.97 8878.39,-396.01 8867.98,-394.05 8869.03,-400.97"/>
 </g>
-<!-- Graph::get_self_loop_rate&#45;&gt;Graph::has_edges -->
+<!-- Graph::get_selfloop_rate&#45;&gt;Graph::has_edges -->
 <g id="edge507" class="edge">
-<title>Graph::get_self_loop_rate&#45;&gt;Graph::has_edges</title>
+<title>Graph::get_selfloop_rate&#45;&gt;Graph::has_edges</title>
 <path fill="none" stroke="black" d="M5625.8,-650.62C5536.53,-637.69 5406.94,-618.9 5323.56,-606.82"/>
 <polygon fill="black" stroke="black" points="5324.02,-603.35 5313.62,-605.38 5323.02,-610.28 5324.02,-603.35"/>
 </g>
-<!-- Graph::get_self_loop_rate&#45;&gt;Graph::get_directed_edges_number -->
+<!-- Graph::get_selfloop_rate&#45;&gt;Graph::get_directed_edges_number -->
 <g id="edge508" class="edge">
-<title>Graph::get_self_loop_rate&#45;&gt;Graph::get_directed_edges_number</title>
+<title>Graph::get_selfloop_rate&#45;&gt;Graph::get_directed_edges_number</title>
 <path fill="none" stroke="black" d="M5808.98,-647.95C5942.13,-620.31 6189.98,-566.2 6222,-540 6290.62,-483.86 6235.45,-410.97 6308,-360 6338.84,-338.33 6545.66,-322.74 6691.35,-314.29"/>
 <polygon fill="black" stroke="black" points="6691.95,-317.76 6701.73,-313.69 6691.55,-310.77 6691.95,-317.76"/>
 </g>
@@ -4605,11 +4605,11 @@
 <path fill="none" stroke="black" d="M12760.45,-435.08C12744.46,-433.85 12728.38,-432.77 12713,-432 11859.15,-389.06 9720.67,-417.01 8866,-396 8759.16,-393.37 8637.36,-388.32 8551.27,-384.4"/>
 <polygon fill="black" stroke="black" points="8551.36,-380.9 8541.21,-383.94 8551.04,-387.9 8551.36,-380.9"/>
 </g>
-<!-- Graph::get_singleton_nodes_with_self_loops_number -->
+<!-- Graph::get_singleton_nodes_with_selfloops_number -->
 <g id="node173" class="node">
-<title>Graph::get_singleton_nodes_with_self_loops_number</title>
+<title>Graph::get_singleton_nodes_with_selfloops_number</title>
 <polygon fill="none" stroke="black" points="11626,-900 11234,-900 11234,-864 11626,-864 11626,-900"/>
-<text text-anchor="middle" x="11430" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_singleton_nodes_with_self_loops_number</text>
+<text text-anchor="middle" x="11430" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_singleton_nodes_with_selfloops_number</text>
 </g>
 <!-- Graph::get_density -->
 <g id="node175" class="node">
@@ -4671,15 +4671,15 @@
 <path fill="none" stroke="black" d="M8193.18,-733.5C8077.13,-726.22 7807.62,-708.14 7582,-684 7580.88,-683.88 7579.74,-683.76 7578.61,-683.63"/>
 <polygon fill="black" stroke="black" points="7578.61,-680.11 7568.28,-682.47 7577.83,-687.07 7578.61,-680.11"/>
 </g>
-<!-- Graph::report&#45;&gt;Graph::get_self_loop_number -->
+<!-- Graph::report&#45;&gt;Graph::get_selfloop_number -->
 <g id="edge523" class="edge">
-<title>Graph::report&#45;&gt;Graph::get_self_loop_number</title>
+<title>Graph::report&#45;&gt;Graph::get_selfloop_number</title>
 <path fill="none" stroke="black" d="M8246.72,-719.86C8242.8,-699.63 8240.14,-666.43 8259,-648 8345.18,-563.8 8717.68,-699.98 8800,-612 8810.93,-600.32 8803.85,-591.53 8800,-576 8795.65,-558.44 8785.35,-557.56 8781,-540 8777.15,-524.47 8773.15,-517.94 8781,-504 8810.53,-451.54 8871.96,-418.56 8920.09,-399.74"/>
 <polygon fill="black" stroke="black" points="8921.41,-402.98 8929.52,-396.16 8918.93,-396.43 8921.41,-402.98"/>
 </g>
-<!-- Graph::report&#45;&gt;Graph::get_self_loop_rate -->
+<!-- Graph::report&#45;&gt;Graph::get_selfloop_rate -->
 <g id="edge524" class="edge">
-<title>Graph::report&#45;&gt;Graph::get_self_loop_rate</title>
+<title>Graph::report&#45;&gt;Graph::get_selfloop_rate</title>
 <path fill="none" stroke="black" d="M8193.28,-736.79C7875.3,-735.46 6333.8,-726.92 5834.27,-684.02"/>
 <polygon fill="black" stroke="black" points="5834.37,-680.51 5824.1,-683.13 5833.76,-687.49 5834.37,-680.51"/>
 </g>
@@ -4719,9 +4719,9 @@
 <path fill="none" stroke="black" d="M8280.6,-719.88C8296.57,-710.64 8316.46,-699.13 8333.61,-689.21"/>
 <polygon fill="black" stroke="black" points="8335.38,-692.23 8342.29,-684.19 8331.88,-686.17 8335.38,-692.23"/>
 </g>
-<!-- Graph::report&#45;&gt;Graph::has_weights -->
+<!-- Graph::report&#45;&gt;Graph::has_edge_weights -->
 <g id="edge530" class="edge">
-<title>Graph::report&#45;&gt;Graph::has_weights</title>
+<title>Graph::report&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M8308.51,-737.08C8676.22,-737.4 10702.13,-736.74 11319,-684 11423.4,-675.07 11448.09,-661.54 11552,-648 11570.75,-645.56 12210.12,-577.13 12229,-576 13386.14,-506.63 13679.11,-595.48 14837,-540 15422.74,-511.94 15566.39,-462.7 16152,-432 17022.34,-386.38 18078,-380.01 18387.64,-379.14"/>
 <polygon fill="black" stroke="black" points="18387.91,-382.64 18397.9,-379.11 18387.89,-375.64 18387.91,-382.64"/>
 </g>
@@ -5013,9 +5013,9 @@
 <path fill="none" stroke="black" d="M11495.84,-1454.78C11189.47,-1446.76 10167.39,-1419.01 10099,-1404 10058.53,-1395.12 10053.39,-1377.24 10013,-1368 9866.57,-1334.51 9477.77,-1387.04 9338,-1332 9123.02,-1247.34 9076,-1114.04 9076,-883 9076,-883 9076,-883 9076,-809 9076,-763.9 9046.29,-718.94 9024.52,-692.05"/>
 <polygon fill="black" stroke="black" points="9027.15,-689.74 9018.06,-684.31 9021.77,-694.23 9027.15,-689.74"/>
 </g>
-<!-- Graph::textual_report&#45;&gt;Graph::get_self_loop_number -->
+<!-- Graph::textual_report&#45;&gt;Graph::get_selfloop_number -->
 <g id="edge570" class="edge">
-<title>Graph::textual_report&#45;&gt;Graph::get_self_loop_number</title>
+<title>Graph::textual_report&#45;&gt;Graph::get_selfloop_number</title>
 <path fill="none" stroke="black" d="M11495.76,-1455.78C11339.86,-1452.67 11001.03,-1441.76 10718,-1404 10561.45,-1383.11 10520.93,-1378.55 10370,-1332 10290.42,-1307.45 10264.04,-1309.42 10197,-1260 10113.18,-1198.21 10114.31,-1159.46 10047,-1080 10033.35,-1063.89 10023.35,-1063.79 10016,-1044 9965.89,-909 9916.28,-823.89 10016,-720 10083.69,-649.48 10804.95,-722.03 10895,-684 10949.07,-661.16 11009.6,-620.21 10971,-576 10966.12,-570.41 9920.38,-432.71 9913,-432 9625.66,-404.27 9286.66,-389.38 9109.26,-382.96"/>
 <polygon fill="black" stroke="black" points="9109.23,-379.45 9099.11,-382.59 9108.98,-386.45 9109.23,-379.45"/>
 </g>
@@ -5031,9 +5031,9 @@
 <path fill="none" stroke="black" d="M11667.8,-1439.98C11787.51,-1416.16 12011.4,-1371.39 12202,-1332 12204.36,-1331.51 12539.94,-1261.26 12542,-1260 12568.26,-1243.87 12608.49,-1175 12629,-1152 12658.91,-1118.46 12668.33,-1111.89 12700,-1080 12747.83,-1031.83 12761.24,-1021.21 12808,-972 12837.7,-940.75 12848.99,-935.81 12873,-900 12912.52,-841.05 12916.51,-822.23 12942,-756 12983.51,-648.16 13066.94,-602.18 13006,-504 12997.62,-490.49 12984.65,-480.32 12970.6,-472.7"/>
 <polygon fill="black" stroke="black" points="12971.76,-469.37 12961.25,-468.05 12968.65,-475.63 12971.76,-469.37"/>
 </g>
-<!-- Graph::textual_report&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number -->
+<!-- Graph::textual_report&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number -->
 <g id="edge573" class="edge">
-<title>Graph::textual_report&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number</title>
+<title>Graph::textual_report&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number</title>
 <path fill="none" stroke="black" d="M11587.4,-1439.84C11609.91,-1367.02 11693.03,-1083.83 11649,-1008 11630.15,-975.54 11538.32,-930.49 11479.71,-904.28"/>
 <polygon fill="black" stroke="black" points="11480.81,-900.93 11470.25,-900.08 11477.98,-907.33 11480.81,-900.93"/>
 </g>
@@ -5073,9 +5073,9 @@
 <path fill="none" stroke="black" d="M11495.76,-1451.82C11314.23,-1439.83 10880.01,-1405.4 10523,-1332 10439.21,-1314.77 10207.29,-1262.92 10166,-1188 10114.48,-1094.52 10174.93,-748.3 10206,-720 10245.05,-684.44 11103.56,-690.26 11156,-684 11157.48,-683.82 11158.97,-683.64 11160.47,-683.44"/>
 <polygon fill="black" stroke="black" points="11161.08,-686.88 11170.47,-681.97 11160.07,-679.96 11161.08,-686.88"/>
 </g>
-<!-- Graph::textual_report&#45;&gt;Graph::has_weights -->
+<!-- Graph::textual_report&#45;&gt;Graph::has_edge_weights -->
 <g id="edge580" class="edge">
-<title>Graph::textual_report&#45;&gt;Graph::has_weights</title>
+<title>Graph::textual_report&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M11668.28,-1457.46C11824.61,-1457.02 12164.71,-1450.22 12447,-1404 12568.29,-1384.14 12596.75,-1368.85 12714,-1332 12759.06,-1317.84 12767.5,-1304.29 12814,-1296 12881.26,-1284.01 17684.87,-1308.49 17733,-1260 17744.27,-1248.64 17736.39,-1239.64 17733,-1224 17714.35,-1138.09 17669.65,-1129.91 17651,-1044 17630.76,-950.73 17678.19,-831.93 17715,-792 17872.54,-621.11 18074.28,-803.5 18206,-612 18233.2,-572.45 18219.91,-549.94 18206,-504 18200.43,-485.6 18187.57,-486.4 18182,-468 18177.36,-452.69 18171.74,-444.27 18182,-432 18207.88,-401.06 18310.61,-388.15 18387.62,-382.79"/>
 <polygon fill="black" stroke="black" points="18388.08,-386.27 18397.82,-382.11 18387.61,-379.28 18388.08,-386.27"/>
 </g>
@@ -5091,9 +5091,9 @@
 <path fill="none" stroke="black" d="M11619.53,-1439.83C11664.92,-1419.74 11744.06,-1386.83 11815,-1368 11852.77,-1357.97 12476.62,-1280.31 12510,-1260 12560.8,-1229.08 12552.22,-1198.73 12589,-1152 12731.58,-970.85 12844.72,-972.47 12924,-756 12950.48,-683.71 12912.95,-593.16 12890.58,-549.27"/>
 <polygon fill="black" stroke="black" points="12893.54,-547.38 12885.81,-540.14 12887.34,-550.62 12893.54,-547.38"/>
 </g>
-<!-- Graph::textual_report&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::textual_report&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge583" class="edge">
-<title>Graph::textual_report&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::textual_report&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M11495.99,-1450.11C11465.73,-1443.05 11434.65,-1429.53 11416,-1404 11406.56,-1391.08 11410.5,-1383.03 11416,-1368 11451.97,-1269.66 11532.03,-1286.34 11568,-1188 11584.49,-1142.92 11592.21,-1121.45 11568,-1080 11560.25,-1066.73 11547.81,-1056.52 11534.49,-1048.78"/>
 <polygon fill="black" stroke="black" points="11536.12,-1045.68 11525.65,-1044.04 11532.81,-1051.85 11536.12,-1045.68"/>
 </g>
@@ -5241,9 +5241,9 @@
 <path fill="none" stroke="black" d="M17374.8,-735.21C17481.93,-732.11 17709.08,-725.55 17901,-720 18454.78,-703.99 18595.22,-733.66 19147,-684 19158.86,-682.93 19171.37,-681.42 19183.57,-679.73"/>
 <polygon fill="black" stroke="black" points="19184.32,-683.16 19193.72,-678.28 19183.33,-676.23 19184.32,-683.16"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id -->
+<!-- Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
 <g id="edge605" class="edge">
-<title>Graph::remove&#45;&gt;Graph::is_singleton_with_self_loops_by_node_id</title>
+<title>Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
 <path fill="none" stroke="black" d="M17251.44,-736.55C16843.46,-733.52 14486.69,-715.24 12567,-684 12359.12,-680.62 12120.7,-675.33 11959.61,-671.55"/>
 <polygon fill="black" stroke="black" points="11959.68,-668.05 11949.6,-671.32 11959.51,-675.05 11959.68,-668.05"/>
 </g>
@@ -5265,9 +5265,9 @@
 <path fill="none" stroke="black" d="M17251.24,-736.5C16651.8,-731.63 11884.01,-692.7 11586,-684 11494.61,-681.33 11389.75,-675.84 11319.64,-671.82"/>
 <polygon fill="black" stroke="black" points="11319.74,-668.32 11309.55,-671.23 11319.34,-675.3 11319.74,-668.32"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::has_weights -->
+<!-- Graph::remove&#45;&gt;Graph::has_edge_weights -->
 <g id="edge609" class="edge">
-<title>Graph::remove&#45;&gt;Graph::has_weights</title>
+<title>Graph::remove&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M17374.61,-720.95C17376.43,-720.61 17378.22,-720.29 17380,-720 17430.92,-711.62 17807.96,-721.87 17843,-684 17853.87,-672.26 17849.12,-662.78 17843,-648 17825.68,-606.19 17805.74,-605 17771,-576 17749.42,-557.99 17732.05,-564.9 17719,-540 17711.57,-525.83 17707.97,-515.59 17719,-504 17774.21,-445.96 18373.28,-513.8 18439,-468 18459.19,-453.93 18468.72,-426.83 18473.17,-406.21"/>
 <polygon fill="black" stroke="black" points="18476.66,-406.6 18475.07,-396.12 18469.78,-405.3 18476.66,-406.6"/>
 </g>
@@ -5373,9 +5373,9 @@
 <path fill="none" stroke="black" d="M14615.15,-1439.97C14510.26,-1405.07 14258.38,-1326.17 14040,-1296 13995.91,-1289.91 12469.12,-1291.83 12438,-1260 12383.99,-1204.76 12413.88,-1102.32 12432.56,-1053.81"/>
 <polygon fill="black" stroke="black" points="12435.9,-1054.9 12436.35,-1044.31 12429.39,-1052.31 12435.9,-1054.9"/>
 </g>
-<!-- Graph::remove_components&#45;&gt;Graph::has_weights -->
+<!-- Graph::remove_components&#45;&gt;Graph::has_edge_weights -->
 <g id="edge626" class="edge">
-<title>Graph::remove_components&#45;&gt;Graph::has_weights</title>
+<title>Graph::remove_components&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M14773.1,-1446.05C14800.75,-1443.64 14830.45,-1441.4 14858,-1440 16038.37,-1380.11 16337.85,-1484.31 17517,-1404 17778.36,-1386.2 17843.19,-1372.53 18102,-1332 18516.95,-1267.02 18628.76,-1263.53 19022,-1116 19089.74,-1090.59 19110.39,-1087.76 19168,-1044 19253.47,-979.08 19236.66,-918.71 19329,-864 19511.16,-756.07 19661.34,-921.82 19793,-756 19911.39,-606.89 20038.28,-765.72 19528,-684 19440.98,-670.06 19420.31,-660.01 19333,-648 19245.68,-635.99 19018.31,-648.31 18938,-612 18916.8,-602.42 18919.24,-589.08 18900,-576 18895.74,-573.11 18631.42,-450.54 18522.82,-400.22"/>
 <polygon fill="black" stroke="black" points="18524.27,-397.04 18513.73,-396.01 18521.33,-403.39 18524.27,-397.04"/>
 </g>
@@ -5385,9 +5385,9 @@
 <path fill="none" stroke="black" d="M14773.1,-1445.97C14800.75,-1443.57 14830.45,-1441.34 14858,-1440 15708.81,-1398.6 17841.49,-1466.63 18691,-1404 19620.42,-1335.48 19857.32,-1313.96 20768,-1116 21107.2,-1042.27 21452,-1086.12 21452,-739 21452,-739 21452,-739 21452,-593 21452,-549.45 21444.12,-532.28 21411,-504 21366.05,-465.63 21334.39,-497.17 21283,-468 21262.77,-456.52 21266.49,-440.92 21245,-432 21113.99,-377.64 20110.6,-404.23 19969,-396 19939.26,-394.27 19907,-391.71 19877.52,-389.09"/>
 <polygon fill="black" stroke="black" points="19877.5,-385.57 19867.22,-388.16 19876.87,-392.54 19877.5,-385.57"/>
 </g>
-<!-- Graph::remove_components&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::remove_components&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge628" class="edge">
-<title>Graph::remove_components&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::remove_components&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M14556.87,-1454.05C14411.08,-1448.91 14159.83,-1435.68 14074,-1404 13996.26,-1375.3 14000.69,-1322 13922,-1296 13736.07,-1234.57 12354.72,-1280.68 12160,-1260 11992.54,-1242.22 11946.52,-1244.83 11788,-1188 11693.27,-1154.04 11678.97,-1125.08 11589,-1080 11567.18,-1069.07 11542.67,-1057.65 11521.89,-1048.23"/>
 <polygon fill="black" stroke="black" points="11523.19,-1044.97 11512.63,-1044.04 11520.31,-1051.35 11523.19,-1044.97"/>
 </g>
@@ -5871,9 +5871,9 @@
 <path fill="none" stroke="black" d="M1479.1,-724.97C1414.53,-713.52 1316.87,-696.22 1245.06,-683.49"/>
 <polygon fill="black" stroke="black" points="1245.57,-680.03 1235.11,-681.73 1244.34,-686.92 1245.57,-680.03"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;Graph::has_weights -->
+<!-- Graph::walk_iter&#45;&gt;Graph::has_edge_weights -->
 <g id="edge687" class="edge">
-<title>Graph::walk_iter&#45;&gt;Graph::has_weights</title>
+<title>Graph::walk_iter&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M1614.62,-725.36C1630.14,-723.15 1646.6,-721.16 1662,-720 2178.59,-681.02 10471.71,-737.46 10987,-684 11065.98,-675.81 11083.5,-659.95 11162,-648 11321.84,-623.68 11724.63,-586.01 11886,-576 12530.74,-536.01 12694.67,-586.03 13339,-540 13474.71,-530.3 13507.72,-518.54 13643,-504 13808.59,-486.21 13862.38,-532.34 14016,-468 14038.99,-458.37 14035.63,-440.65 14059,-432 14072.17,-427.13 17762.05,-386.78 18387.45,-379.97"/>
 <polygon fill="black" stroke="black" points="18387.79,-383.47 18397.75,-379.86 18387.71,-376.47 18387.79,-383.47"/>
 </g>
@@ -6111,9 +6111,9 @@
 <path fill="none" stroke="black" d="M5313.73,-582.61C5330.84,-580.28 5349.05,-577.93 5366,-576 5537.46,-556.42 5583.77,-561.25 5757.84,-540.23"/>
 <polygon fill="black" stroke="black" points="5758.35,-543.69 5767.86,-539.01 5757.51,-536.74 5758.35,-543.69"/>
 </g>
-<!-- Graph::get_trap_nodes_number&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number -->
+<!-- Graph::get_trap_nodes_number&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number -->
 <g id="edge719" class="edge">
-<title>Graph::get_trap_nodes_number&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number</title>
+<title>Graph::get_trap_nodes_number&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number</title>
 <path fill="none" stroke="black" d="M11669.86,-935.97C11623.75,-925.78 11565.03,-912.82 11517.24,-902.26"/>
 <polygon fill="black" stroke="black" points="11517.73,-898.79 11507.21,-900.05 11516.22,-905.62 11517.73,-898.79"/>
 </g>
@@ -6141,9 +6141,9 @@
 <path fill="none" stroke="black" d="M12881.69,-503.7C12884.25,-495.9 12887.33,-486.51 12890.18,-477.83"/>
 <polygon fill="black" stroke="black" points="12893.58,-478.7 12893.38,-468.1 12886.93,-476.51 12893.58,-478.7"/>
 </g>
-<!-- Graph::has_singleton_nodes_with_self_loops&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number -->
+<!-- Graph::has_singletons_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number -->
 <g id="edge724" class="edge">
-<title>Graph::has_singleton_nodes_with_self_loops&#45;&gt;Graph::get_singleton_nodes_with_self_loops_number</title>
+<title>Graph::has_singletons_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number</title>
 <path fill="none" stroke="black" d="M11468.69,-1007.87C11461.16,-983.56 11447.3,-938.82 11438.37,-910.01"/>
 <polygon fill="black" stroke="black" points="11441.63,-908.71 11435.33,-900.19 11434.94,-910.78 11441.63,-908.71"/>
 </g>
@@ -6285,9 +6285,9 @@
 <polygon fill="none" stroke="black" points="18430,-468 18274,-468 18274,-432 18430,-432 18430,-468"/>
 <text text-anchor="middle" x="18352" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_weights</text>
 </g>
-<!-- Graph::get_weights&#45;&gt;Graph::has_weights -->
+<!-- Graph::get_weights&#45;&gt;Graph::has_edge_weights -->
 <g id="edge738" class="edge">
-<title>Graph::get_weights&#45;&gt;Graph::has_weights</title>
+<title>Graph::get_weights&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M18382.58,-431.88C18399.07,-422.64 18419.62,-411.13 18437.34,-401.21"/>
 <polygon fill="black" stroke="black" points="18439.29,-404.13 18446.3,-396.19 18435.87,-398.02 18439.29,-404.13"/>
 </g>
@@ -6993,9 +6993,9 @@
 <polygon fill="none" stroke="black" points="20947,-756 20761,-756 20761,-720 20947,-720 20947,-756"/>
 <text text-anchor="middle" x="20854" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::from_sorted_csv</text>
 </g>
-<!-- Graph::from_sorted_csv&#45;&gt;Graph::has_weights -->
+<!-- Graph::from_sorted_csv&#45;&gt;Graph::has_edge_weights -->
 <g id="edge836" class="edge">
-<title>Graph::from_sorted_csv&#45;&gt;Graph::has_weights</title>
+<title>Graph::from_sorted_csv&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M20770.89,-719.98C20678.72,-701.32 20525.51,-671 20393,-648 20186.09,-612.09 20134.11,-604.16 19926,-576 19788.99,-557.46 19738.95,-605.14 19617,-540 19561.38,-510.29 19581.56,-459.87 19525,-432 19440.26,-390.24 18804.87,-381.36 18566.75,-379.49"/>
 <polygon fill="black" stroke="black" points="18566.43,-375.99 18556.4,-379.41 18566.37,-382.99 18566.43,-375.99"/>
 </g>
@@ -7017,9 +7017,9 @@
 <path fill="none" stroke="black" d="M20760.88,-726.5C20648.45,-713.76 20465.96,-692.89 20398,-684 20396.71,-683.83 20395.42,-683.66 20394.11,-683.49"/>
 <polygon fill="black" stroke="black" points="20394.39,-680 20384.02,-682.13 20393.46,-686.93 20394.39,-680"/>
 </g>
-<!-- Graph::from_unsorted_csv&#45;&gt;Graph::has_weights -->
+<!-- Graph::from_unsorted_csv&#45;&gt;Graph::has_edge_weights -->
 <g id="edge840" class="edge">
-<title>Graph::from_unsorted_csv&#45;&gt;Graph::has_weights</title>
+<title>Graph::from_unsorted_csv&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M21259.83,-1087.15C21229.35,-1084.49 21195.84,-1081.84 21165,-1080 21104.85,-1076.41 20122.89,-1087.31 20081,-1044 20069.88,-1032.5 20071.38,-1020.78 20081,-1008 20115.77,-961.81 20171.23,-1018.19 20206,-972 20269.31,-887.89 20362.03,-909.29 20092,-720 19996.47,-653.04 19944.52,-714.78 19832,-684 19792.03,-673.07 19786.25,-657.86 19746,-648 19560.59,-602.59 19501.55,-664.44 19318,-612 19149.05,-563.73 19134.36,-482.3 18966,-432 18830.54,-391.53 18665.76,-381.24 18566.24,-379.02"/>
 <polygon fill="black" stroke="black" points="18566.29,-375.52 18556.23,-378.82 18566.15,-382.52 18566.29,-375.52"/>
 </g>
@@ -7695,9 +7695,9 @@
 <path fill="none" stroke="black" d="M14135.59,-1091.24C14331.63,-1077.57 14821.55,-1043.42 14994.96,-1031.33"/>
 <polygon fill="black" stroke="black" points="14995.21,-1034.82 15004.95,-1030.63 14994.73,-1027.83 14995.21,-1034.82"/>
 </g>
-<!-- Graph::edge_holdout&#45;&gt;Graph::has_weights -->
+<!-- Graph::edge_holdout&#45;&gt;Graph::has_edge_weights -->
 <g id="edge936" class="edge">
-<title>Graph::edge_holdout&#45;&gt;Graph::has_weights</title>
+<title>Graph::edge_holdout&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M14135.61,-1095.43C14454.61,-1089.24 15592.1,-1065.72 15666,-1044 15935.26,-964.87 15939.93,-803.08 16208,-720 16269.36,-700.98 16741.02,-730.81 16785,-684 16795.96,-672.34 16793.84,-661.34 16785,-648 16762.34,-613.8 16733.52,-635.66 16700,-612 16682.27,-599.48 16686.5,-585.54 16667,-576 16487.42,-488.17 16085.61,-649.22 16223,-504 16298.67,-424.02 17978.68,-388.13 18387.79,-380.56"/>
 <polygon fill="black" stroke="black" points="18387.86,-384.06 18397.79,-380.37 18387.73,-377.06 18387.86,-384.06"/>
 </g>
@@ -7779,9 +7779,9 @@
 <path fill="none" stroke="black" d="M10611.56,-1223.86C10610.21,-1213.5 10608.68,-1200.02 10608,-1188 10605.18,-1138.02 10605.36,-1116.15 10640,-1080 10740.36,-975.26 10814.62,-1029.04 10948,-972 11027.22,-938.12 11026.94,-890.27 11109,-864 11241.33,-821.64 12236.51,-893.59 12359,-828 12393.57,-809.49 12390.22,-789.86 12410,-756 12454.63,-679.61 12423.72,-628.4 12495,-576 12497.87,-573.89 12666.12,-551.06 12778.05,-536.05"/>
 <polygon fill="black" stroke="black" points="12778.58,-539.52 12788.02,-534.72 12777.65,-532.58 12778.58,-539.52"/>
 </g>
-<!-- Graph::connected_holdout&#45;&gt;Graph::has_singleton_nodes_with_self_loops -->
+<!-- Graph::connected_holdout&#45;&gt;Graph::has_singletons_with_selfloops -->
 <g id="edge950" class="edge">
-<title>Graph::connected_holdout&#45;&gt;Graph::has_singleton_nodes_with_self_loops</title>
+<title>Graph::connected_holdout&#45;&gt;Graph::has_singletons_with_selfloops</title>
 <path fill="none" stroke="black" d="M10616.37,-1223.65C10620.04,-1203.54 10629,-1170.77 10650,-1152 10738.77,-1072.67 10790.93,-1101.64 10908,-1080 11037.53,-1056.06 11185.85,-1042.68 11298.16,-1035.35"/>
 <polygon fill="black" stroke="black" points="11298.47,-1038.84 11308.23,-1034.7 11298.02,-1031.85 11298.47,-1038.84"/>
 </g>
@@ -7947,9 +7947,9 @@
 <path fill="none" stroke="black" d="M15284.82,-1096.36C15495.7,-1094.21 16001.83,-1084.84 16424,-1044 16530.48,-1033.7 16555.45,-1017.57 16662,-1008 17212.46,-958.58 17355.41,-1030.34 17905,-972 17992.64,-962.7 18012.95,-949.74 18100,-936 18221.32,-916.84 18252.72,-919.44 18374,-900 18458.86,-886.4 18672.02,-853.81 18754,-828 18772.59,-822.14 18897.81,-766.86 18914,-756 18933.32,-743.04 18931.2,-730.43 18952,-720 18962.36,-714.81 19096.46,-692.81 19183.96,-678.84"/>
 <polygon fill="black" stroke="black" points="19184.54,-682.29 19193.86,-677.26 19183.44,-675.38 19184.54,-682.29"/>
 </g>
-<!-- Graph::random_subgraph&#45;&gt;Graph::is_node_trap_by_node_id -->
+<!-- Graph::random_subgraph&#45;&gt;Graph::is_trap_node_by_node_id -->
 <g id="edge978" class="edge">
-<title>Graph::random_subgraph&#45;&gt;Graph::is_node_trap_by_node_id</title>
+<title>Graph::random_subgraph&#45;&gt;Graph::is_trap_node_by_node_id</title>
 <path fill="none" stroke="black" d="M15085.35,-1094.52C14890.84,-1089.18 14447.07,-1074.52 14075,-1044 13937.2,-1032.7 13903.97,-1016.95 13766,-1008 13473.03,-988.99 8775.56,-939.69 8482,-936 8308.67,-933.82 5531.09,-938.16 5362,-900 5232.26,-870.72 4900.4,-665.59 4824,-612 4803.87,-597.88 4802.17,-590.06 4782,-576 4765.79,-564.7 4746.96,-553.78 4730.36,-544.83"/>
 <polygon fill="black" stroke="black" points="4731.87,-541.67 4721.4,-540.06 4728.59,-547.85 4731.87,-541.67"/>
 </g>
@@ -7983,9 +7983,9 @@
 <path fill="none" stroke="black" d="M15284.73,-1080.63C15286.5,-1080.41 15288.26,-1080.2 15290,-1080 15515.27,-1053.85 15580.43,-1104.48 15799,-1044 15867.2,-1025.13 15878.4,-1004.99 15941,-972 16174.95,-848.73 16221.49,-775.71 16480,-720 16563.14,-702.08 16803.76,-746.9 16861,-684 16902.74,-638.13 16770.14,-468.96 16716.49,-404.33"/>
 <polygon fill="black" stroke="black" points="16718.86,-401.71 16709.77,-396.28 16713.49,-406.19 16718.86,-401.71"/>
 </g>
-<!-- Graph::random_subgraph&#45;&gt;Graph::has_weights -->
+<!-- Graph::random_subgraph&#45;&gt;Graph::has_edge_weights -->
 <g id="edge984" class="edge">
-<title>Graph::random_subgraph&#45;&gt;Graph::has_weights</title>
+<title>Graph::random_subgraph&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M15284.63,-1089.56C15415.21,-1079.7 15651.33,-1061.5 15853,-1044 16702.46,-970.28 16912.63,-926.32 17763,-864 17839.23,-858.41 18393.34,-879.3 18450,-828 18512.1,-771.77 18489.07,-494.42 18479.99,-406.08"/>
 <polygon fill="black" stroke="black" points="18483.46,-405.62 18478.93,-396.04 18476.5,-406.35 18483.46,-405.62"/>
 </g>

@@ -6,6 +6,7 @@ from .utils import *
 class RustParser:
     def __init__(self):
         self.functions = []
+        self.impl_doc = []
         self.doc = []
 
     def skip_to_match(self, text:str):
@@ -107,6 +108,9 @@ class RustParser:
         }
         if self.struct_name is not None:
             function["struct"] = self.struct_name
+
+        if self.impl_doc:
+            function["impl_doc"] = self.impl_doc
         # If we parsed some documentation we add it to the current function
         # and reset it.
         function["doc"] = self.doc
@@ -150,8 +154,7 @@ class RustParser:
         return text
 
     def parse_impl(self, text):
-        # Reset the doc if present
-        # we don't care about impl documentation.
+        self.impl_doc = self.doc
         self.doc = []
         # Get the name of the struct
         self.struct_name = re.match(r"\s*impl\s+(\S+)\s+{", text).groups()[0]
@@ -163,6 +166,8 @@ class RustParser:
         self.start(to_parse.strip())
         # Reset the struct name
         self.struct_name = None
+        self.impl_doc = []
+        self.doc = []
         return text
 
     def start(self, text):
