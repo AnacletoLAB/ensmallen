@@ -2,6 +2,8 @@ use super::*;
 use roaring::RoaringBitmap;
 
 /// # Drop.
+/// The naming convention we follow is:
+/// * `.*bitmap.*`
 impl Graph {
     /// Return a roaringbitmap with the node ids to keep.
     ///

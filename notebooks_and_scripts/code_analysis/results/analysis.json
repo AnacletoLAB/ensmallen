@@ -1064,7 +1064,7 @@
         ],
         "doc": [],
         "modifiers": "",
-        "name": "iter_on_edges_with_preference",
+        "name": "iter_on_edges_with_preference_from_random_state",
         "generics": "'a",
         "args": [
             [
@@ -1195,7 +1195,7 @@
             ]
         ],
         "return_type": "(HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT)",
-        "body": "self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))"
+        "body": "self.kruskal(self.iter_on_edges_with_preference_from_random_state(random_state, unwanted_edge_types, verbose))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -3928,7 +3928,9 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/bitmaps.rs",
         "struct": "Graph",
         "impl_doc": [
-            "# Drop."
+            "# Drop.",
+            "The naming convention we follow is:",
+            "* `.*bitmap.*`"
         ],
         "doc": [
             "Return a roaringbitmap with the node ids to keep.",

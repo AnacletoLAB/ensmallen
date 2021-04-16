@@ -44,17 +44,16 @@ fn test_file(file_name: String, number_of_test_runs:u64) {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let mut number_of_test_runs = 1;
     if args.len() < 2 {
         println!("Usage: debug PATH_TO_FILE_TO_DEBUG [number of test runs (defualt: 1)]");
         return;
     }
-    if args.len() > 2 {
-        number_of_test_runs = args[2].parse::<u64>().unwrap();
-    }
 
     let path = &args[1];
     let md = metadata(path).expect("Cannot access the given file_path");
+    
+    let number_of_test_runs = args.get(2).map_or(1, |x| x.parse::<u64>().unwrap());
+
 
     // If its only one file, run it
     if md.is_file() {
