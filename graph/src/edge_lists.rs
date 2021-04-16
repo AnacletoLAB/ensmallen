@@ -9,10 +9,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
-    /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
-    /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
-    /// * `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// * `first_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
+    /// * `second_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// * `first_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the first set of nodes of the graph.
+    /// * `second_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edges(
         &self,
         removed_existing_edges: Option<bool>,
@@ -90,10 +90,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
-    /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
-    /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
-    /// * `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// * `first_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
+    /// * `second_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// * `first_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the first set of nodes of the graph.
+    /// * `second_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edge_names(
         &self,
         removed_existing_edges: Option<bool>,
@@ -125,8 +125,8 @@ impl Graph {
     /// # Arguments
     /// * `central_node`: String - Name of the node to use as center of the star.
     /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
-    /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
-    /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
+    /// * `star_points_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the set of star points.
+    /// * `star_points_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
         &self,
         central_node: String,
@@ -148,8 +148,8 @@ impl Graph {
     /// # Arguments
     /// * `central_node`: String - Name of the node to use as center of the star.
     /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
-    /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
-    /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
+    /// * `star_points_nodes_set`: Option<HashSet<String>> - Optional set of nodes to use to create the set of star points.
+    /// * `star_points_node_types_set`: Option<HashSet<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
         &self,
         central_node: String,
