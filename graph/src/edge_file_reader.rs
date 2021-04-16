@@ -406,7 +406,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_singletons_with_selfloops: Option<bool> - Whether this graph has singletons with self-loops.
+    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
     ///
     pub fn set_might_have_singletons_with_selfloops(
         mut self,
@@ -422,7 +422,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_trap_nodes: Option<bool> - Whether this graph has trap nodes with self-loops.
+    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
     ///
     pub fn set_might_have_trap_nodes(
         mut self,

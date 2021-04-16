@@ -87,13 +87,13 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
@@ -193,13 +193,13 @@ fn generic_string_operator(
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
@@ -688,8 +688,8 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * weight_name: &str - name of the weight, used for building the exception.
-    /// * weight: Option<WeightT> - Value of the weight.
+    /// * `weight_name`: &str - name of the weight, used for building the exception.
+    /// * `weight`: Option<WeightT> - Value of the weight.
     ///
     fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT, String> {
         if weight <= 0.0 || !weight.is_finite() {
@@ -733,7 +733,7 @@ impl SingleWalkParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: usize - Maximal walk_length of the walk.
+    /// * `walk_length`: usize - Maximal walk_length of the walk.
     ///
     /// # Example
     /// You can create a single walk parameters struct as follows:
@@ -783,7 +783,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: NodeT - Maximal walk_length of the walk.
+    /// * `walk_length`: NodeT - Maximal walk_length of the walk.
     ///
     pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
@@ -798,7 +798,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<NodeT> - whether to show the loading bar or not.
+    /// * `iterations`: Option<NodeT> - whether to show the loading bar or not.
     ///
     /// # Example
     /// You can change the `iterations` parameter as follows:
@@ -849,7 +849,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
+    /// * `max_neighbours`: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
     /// # Example
     /// You can change the `max_neighbours` parameter as follows:
@@ -886,7 +886,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * random_state: Option<usize> - random_state for reproducible random walks.
+    /// * `random_state`: Option<usize> - random_state for reproducible random walks.
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
         if let Some(s) = random_state {
@@ -902,7 +902,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * dense_node_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    /// * `dense_node_mapping`: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
     pub fn set_dense_node_mapping(
         mut self,
@@ -916,7 +916,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
+    /// * `return_weight`: Option<WeightT> - weight for the exploitation factor.
     ///
     /// # Example
     /// You can change the `return_weight` parameter as follows:
@@ -2608,7 +2608,7 @@ impl Graph {
 ///
 /// # Arguments
 ///
-/// * weight: WeightT - The weight to validate.
+/// * `weight`: WeightT - The weight to validate.
 ///
 /// # Examples
 /// The weight can be validated as follows:
@@ -2635,7 +2635,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
 ///
 /// # Arguments
 ///
-/// * weight: String - The weight to be parsed.
+/// * `weight`: String - The weight to be parsed.
 ///
 /// # Examples
 /// The weight can be validated as follows:
@@ -3332,7 +3332,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_singletons_with_selfloops: Option<bool> - Whether this graph has singletons with self-loops.
+    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
     ///
     pub fn set_might_have_singletons_with_selfloops(
         mut self,
@@ -3348,7 +3348,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_trap_nodes: Option<bool> - Whether this graph has trap nodes with self-loops.
+    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
     ///
     pub fn set_might_have_trap_nodes(
         mut self,
@@ -8574,7 +8574,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
-    /// * random_state: u64, the random_state to use for extracting the node.
+    /// * `random_state`: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
         let (min_edge, max_edge) = self.get_minmax_edge_ids_by_source_node_id(node);
@@ -8596,7 +8596,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
-    /// * random_state: usize, the random_state to use for extracting the node.
+    /// * `random_state`: usize, the random_state to use for extracting the node.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
     fn extract_node(
         &self,
@@ -8808,7 +8808,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize, the random_state to use for extracting the nodes and edges.
+    /// * `random_state`: usize, the random_state to use for extracting the nodes and edges.
     /// * `parameters`: SingleWalkParameters - Parameters for the single walk.
     ///
     fn single_walk(
@@ -8885,8 +8885,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize - the random_state to use for extracting the nodes and edges.
-    /// * walk_length: u64 - Length of the random walk.
+    /// * `random_state`: usize - the random_state to use for extracting the nodes and edges.
+    /// * `walk_length`: u64 - Length of the random walk.
     ///
     fn uniform_walk(&self, node: NodeT, random_state: u64, walk_length: u64) -> Vec<NodeT> {
         // We iterate one time before because we need to parse the initial node.
@@ -10314,7 +10314,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_singletons: Option<bool> - Whether this graph has singletons.
+    /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
     ///
     pub fn set_might_have_singletons(
         mut self,
