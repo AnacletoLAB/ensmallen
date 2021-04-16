@@ -46,9 +46,10 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * weight_name: &str - name of the weight, used for building the exception.
-    /// * weight: Option<WeightT> - Value of the weight.
+    /// * `weight_name`: &str - name of the weight, used for building the exception.
+    /// * `weight`: Option<WeightT> - Value of the weight.
     ///
+    /// TODO: is this a duplicate?
     fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT, String> {
         if weight <= 0.0 || !weight.is_finite() {
             Err(format!(
@@ -91,7 +92,7 @@ impl SingleWalkParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: usize - Maximal walk_length of the walk.
+    /// * `walk_length`: usize - Maximal walk_length of the walk.
     ///
     /// # Example
     /// You can create a single walk parameters struct as follows:
@@ -141,7 +142,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: NodeT - Maximal walk_length of the walk.
+    /// * `walk_length`: NodeT - Maximal walk_length of the walk.
     ///
     pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
@@ -156,7 +157,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<NodeT> - whether to show the loading bar or not.
+    /// * `iterations`: Option<NodeT> - whether to show the loading bar or not.
     ///
     /// # Example
     /// You can change the `iterations` parameter as follows:
@@ -207,7 +208,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
+    /// * `max_neighbours`: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
     /// # Example
     /// You can change the `max_neighbours` parameter as follows:
@@ -244,7 +245,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * random_state: Option<usize> - random_state for reproducible random walks.
+    /// * `random_state`: Option<usize> - random_state for reproducible random walks.
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
         if let Some(s) = random_state {
@@ -260,7 +261,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * dense_node_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    /// * `dense_node_mapping`: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
     pub fn set_dense_node_mapping(
         mut self,
@@ -274,7 +275,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
+    /// * `return_weight`: Option<WeightT> - weight for the exploitation factor.
     ///
     /// # Example
     /// You can change the `return_weight` parameter as follows:

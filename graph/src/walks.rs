@@ -503,7 +503,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
-    /// * random_state: u64, the random_state to use for extracting the node.
+    /// * `random_state`: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
         let (min_edge, max_edge) = self.get_unchecked_minmax_edge_ids_from_source_node_id(node);
@@ -525,7 +525,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
-    /// * random_state: usize, the random_state to use for extracting the node.
+    /// * `random_state`: usize, the random_state to use for extracting the node.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
     fn extract_node(
         &self,
@@ -739,7 +739,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize, the random_state to use for extracting the nodes and edges.
+    /// * `random_state`: usize, the random_state to use for extracting the nodes and edges.
     /// * `parameters`: SingleWalkParameters - Parameters for the single walk.
     ///
     fn single_walk(
@@ -816,8 +816,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize - the random_state to use for extracting the nodes and edges.
-    /// * walk_length: u64 - Length of the random walk.
+    /// * `random_state`: usize - the random_state to use for extracting the nodes and edges.
+    /// * `walk_length`: u64 - Length of the random walk.
     ///
     fn uniform_walk(&self, node: NodeT, random_state: u64, walk_length: u64) -> Vec<NodeT> {
         // We iterate one time before because we need to parse the initial node.

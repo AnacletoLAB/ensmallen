@@ -46,7 +46,7 @@ impl Graph {
 ///
 /// # Arguments
 ///
-/// * weight: WeightT - The weight to validate.
+/// * `weight`: WeightT - The weight to validate.
 ///
 /// # Examples
 /// The weight can be validated as follows:
@@ -73,7 +73,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
 ///
 /// # Arguments
 ///
-/// * weight: String - The weight to be parsed.
+/// * `weight`: String - The weight to be parsed.
 ///
 /// # Examples
 /// The weight can be validated as follows:
