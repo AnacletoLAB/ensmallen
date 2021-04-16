@@ -1327,7 +1327,7 @@
             "We assign to each node the index of its component, so nodes in the same components will have the same index.",
             "This component index is the returned Components membership vector.",
             "",
-            "Example:",
+            "# Example",
             "```rust",
             "# #![feature(impl_trait_in_bindings)]",
             "# use graph::Graph;",

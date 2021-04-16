@@ -31,6 +31,15 @@ def bindgen(args):
 
         result = ""
 
+        if any(
+            "Iterator" in arg[1]
+            for arg in function.get("args", [])
+        ):
+            return False
+
+        if "Iterator" in function.get("return_type", []):
+            return False
+
         if len(function.get("args", [])) > 1:
             signature = ", " + ", ".join(
                 x[0]
@@ -74,6 +83,7 @@ def bindgen(args):
             result += "\n"
 
         if len(function.get("args", [])) > 1:
+            print(function["args"])
             args = function["args"][0][1] + ", " + ", ".join([
                 "%s : %s"%tuple(x) 
                 for x in function["args"][1:]
