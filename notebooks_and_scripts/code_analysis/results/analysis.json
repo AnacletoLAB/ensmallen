@@ -10082,7 +10082,7 @@
             "```"
         ],
         "modifiers": "pub",
-        "name": "get_traps_node_rate",
+        "name": "get_trap_nodes_rate",
         "args": [
             [
                 "self",

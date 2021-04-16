@@ -3,7 +3,7 @@ use arbitrary::Arbitrary;
 use std::collections::HashSet;
 use rayon::iter::ParallelIterator;
 
-const LEVEL: usize = 0;
+const LEVEL: usize = 4;
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RandomSpanningArborescenceKruskalParams {
@@ -747,39 +747,46 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 		}
 
 		if LEVEL == 4 {
-		let _ = graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id);
-		let _ = graph.get_node_type_ids();
-		let _ = graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types);
-		let _ = graph.get_node_type_name_from_node_id(data.get_node_type_name_from_node_id.node_id);
-		let _ = graph.get_node_type_name_from_node_type_id(data.get_node_type_name_from_node_type_id.node_type_id);
-		let _ = graph.get_node_type_names();
-		let _ = graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids);
-		let _ = graph.get_selfloop_nodes_rate();
-		let _ = graph.get_star_edge_names(data.get_star_edge_names.central_node, data.get_star_edge_names.removed_existing_edges, data.get_star_edge_names.star_points_nodes_set, data.get_star_edge_names.star_points_node_types_set);
-		let _ = graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set);
-		let _ = graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
-		let _ = graph.is_trap_node_from_node_id(data.is_trap_node_from_node_id.node_id);
-		let _ = graph.iter_edge_ids_from_node_ids(data.iter_edge_ids_from_node_ids.src, data.iter_edge_ids_from_node_ids.dst);
-		let _ = graph.iter_edge_weights();
-		let _ = graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two);
-		let _ = graph.kfold(data.kfold.k, data.kfold.k_index, data.kfold.edge_types, data.kfold.random_state, data.kfold.verbose);
-		let _ = graph.must_have_edge_types();
-		let _ = graph.must_have_edge_weights();
-		let _ = graph.must_have_node_types();
-		let _ = graph.node_label_holdout(data.node_label_holdout.train_size, data.node_label_holdout.use_stratification, data.node_label_holdout.random_state);
-		let _ = graph.par_iter_edge_weights();
-		let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);
-		let _ = graph.random_subgraph(data.random_subgraph.random_state, data.random_subgraph.nodes_number, data.random_subgraph.verbose);
-		let _ = graph.remove(data.remove.allow_nodes_set, data.remove.deny_nodes_set, data.remove.allow_node_types_set, data.remove.deny_node_types_set, data.remove.allow_edge_set, data.remove.deny_edge_set, data.remove.allow_edge_types_set, data.remove.deny_edge_types_set, data.remove.weights, data.remove.node_types, data.remove.edge_types, data.remove.singletons, data.remove.selfloops, data.remove.verbose);
-		let _ = graph.remove_components(data.remove_components.node_names, data.remove_components.node_types, data.remove_components.edge_types, data.remove_components.minimum_component_size, data.remove_components.top_k_components, data.remove_components.verbose);
-		let _ = graph.resource_allocation_index(data.resource_allocation_index.one, data.resource_allocation_index.two);
-		let _ = graph.spanning_arborescence(data.spanning_arborescence.verbose);
-		let _ = graph.textual_report(data.textual_report.verbose);
-		let _ = graph.validate_edge_id(data.validate_edge_id.edge_id);
-		let _ = graph.validate_node_id(data.validate_node_id.node_id);
-		let mut graph = graph.set_all_edge_types(data.set_all_edge_types.edge_type)?;
-		let mut graph = graph.set_all_node_types(data.set_all_node_types.node_type)?;
-	}
+			let _ = graph.textual_report(data.textual_report.verbose);
+			let _ = graph.spanning_arborescence(data.spanning_arborescence.verbose);
+		}
+
+		if LEVEL == 5 {
+			let _ = graph.kfold(data.kfold.k, data.kfold.k_index, data.kfold.edge_types, data.kfold.random_state, data.kfold.verbose);
+			let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);
+			let _ = graph.random_subgraph(data.random_subgraph.random_state, data.random_subgraph.nodes_number, data.random_subgraph.verbose);
+			let _ = graph.remove(data.remove.allow_nodes_set, data.remove.deny_nodes_set, data.remove.allow_node_types_set, data.remove.deny_node_types_set, data.remove.allow_edge_set, data.remove.deny_edge_set, data.remove.allow_edge_types_set, data.remove.deny_edge_types_set, data.remove.weights, data.remove.node_types, data.remove.edge_types, data.remove.singletons, data.remove.selfloops, data.remove.verbose);
+			let _ = graph.remove_components(data.remove_components.node_names, data.remove_components.node_types, data.remove_components.edge_types, data.remove_components.minimum_component_size, data.remove_components.top_k_components, data.remove_components.verbose);
+			let mut graph = graph.clone().set_all_edge_types(data.set_all_edge_types.edge_type)?;
+			let mut graph = graph.clone().set_all_node_types(data.set_all_node_types.node_type)?;
+		}
+
+		if LEVEL == 6 {
+			let _ = graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id);
+			let _ = graph.get_node_type_ids();
+			let _ = graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types);
+			let _ = graph.get_node_type_name_from_node_id(data.get_node_type_name_from_node_id.node_id);
+			let _ = graph.get_node_type_name_from_node_type_id(data.get_node_type_name_from_node_type_id.node_type_id);
+			let _ = graph.get_node_type_names();
+			let _ = graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids);
+			let _ = graph.get_selfloop_nodes_rate();
+			let _ = graph.get_star_edge_names(data.get_star_edge_names.central_node, data.get_star_edge_names.removed_existing_edges, data.get_star_edge_names.star_points_nodes_set, data.get_star_edge_names.star_points_node_types_set);
+			let _ = graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set);
+			let _ = graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
+			let _ = graph.is_trap_node_from_node_id(data.is_trap_node_from_node_id.node_id);
+			let _ = graph.iter_edge_ids_from_node_ids(data.iter_edge_ids_from_node_ids.src, data.iter_edge_ids_from_node_ids.dst);
+			let _ = graph.iter_edge_weights();
+			let _ = graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two);
+			let _ = graph.must_have_edge_types();
+			let _ = graph.must_have_edge_weights();
+			let _ = graph.must_have_node_types();
+			let _ = graph.node_label_holdout(data.node_label_holdout.train_size, data.node_label_holdout.use_stratification, data.node_label_holdout.random_state);
+			let _ = graph.resource_allocation_index(data.resource_allocation_index.one, data.resource_allocation_index.two);
+			let _ = graph.par_iter_edge_weights();
+			let _ = graph.validate_edge_id(data.validate_edge_id.edge_id);
+			let _ = graph.validate_node_id(data.validate_node_id.node_id);
+		}
+
 
     Ok(())
 }
