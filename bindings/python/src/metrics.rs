@@ -82,7 +82,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -------------------
-    /// other: &EnsmallenGraph,
+    /// `other`: &EnsmallenGraph,
     ///     Graph to compute the overlaps with.
     /// verbose: bool = True,
     ///     Wether to show loading bars.
