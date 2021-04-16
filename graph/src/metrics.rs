@@ -1,11 +1,7 @@
 use super::types::*;
 use super::*;
-use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::hash_map::DefaultHasher;
-use std::collections::HashMap as DefaultHashMap;
 use std::collections::HashSet;
-use std::hash::{Hash, Hasher};
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -70,8 +66,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -106,8 +102,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -147,8 +143,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(one).collect();
-        let two_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(two).collect();
+        let one_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.iter_unchecked_neighbour_node_ids_from_source_node_id(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()

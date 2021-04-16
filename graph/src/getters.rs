@@ -3,7 +3,6 @@ use counter::Counter;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use log::info;
-use counter::Counter;
 
 /// # Getters
 /// The naming convention we follow is:
@@ -85,7 +84,7 @@ impl Graph {
         self.par_iter_node_ids()
             .map(|node| {
                 if !self.is_trap_node_from_node_id(node).unwrap() {
-                    self.iter_neighbour_node_ids_from_source_node_id(node)
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node)
                         .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
                         / self.get_unchecked_node_degree_from_node_id(node) as f64

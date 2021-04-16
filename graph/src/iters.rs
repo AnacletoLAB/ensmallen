@@ -455,7 +455,7 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_
     {
-        self.par_iter_edge_with_type_ids(directed)
+        self.par_iter_edge_node_ids_and_edge_type_id(directed)
             .map(move |(edge_id, src, dst, edge_type)| {
                 (
                     edge_id,

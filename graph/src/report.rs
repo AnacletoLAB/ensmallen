@@ -4,7 +4,6 @@ use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap as DefaultHashMap;
-use std::collections::HashSet;
 use std::hash::{Hash, Hasher};
 
 /// # Human readable report of the properties of the graph

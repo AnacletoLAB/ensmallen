@@ -62,6 +62,7 @@ mod graph;
 mod hash;
 mod holdouts;
 mod iters;
+mod iter_queries;
 mod metrics;
 mod modifiers;
 mod operators;
@@ -76,7 +77,7 @@ mod walks;
 pub mod walks_parameters;
 
 mod report;
-use self::report::*;
+pub use self::report::*;
 
 mod queries;
 mod queries_boolean;
