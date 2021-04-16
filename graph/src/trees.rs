@@ -94,7 +94,7 @@ impl Graph {
         })
     }
 
-    fn iter_on_edges_with_preference<'a>(
+    fn iter_on_edges_with_preference_from_random_state<'a>(
         &'a self,
         random_state: u64,
         unwanted_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
@@ -358,7 +358,7 @@ impl Graph {
         unwanted_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))
+        self.kruskal(self.iter_on_edges_with_preference_from_random_state(random_state, unwanted_edge_types, verbose))
     }
 
     pub fn spanning_arborescence_kruskal(
