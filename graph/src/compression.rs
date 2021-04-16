@@ -25,11 +25,20 @@ pub(crate) fn get_node_bits(top_node: NodeT) -> u8 {
 
 impl Graph {
     #[inline(always)]
+    /// Return edge value corresponding to given node IDs.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node ID.
+    /// * `dst`: NodeT - The destination node ID.
     pub fn encode_edge(&self, src: NodeT, dst: NodeT) -> u64 {
         encode_edge(src, dst, self.node_bits)
     }
 
     #[inline(always)]
+    /// Returns source and destination nodes corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge`: u64 - The edge value to decode.
     pub fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
         decode_edge(edge, self.node_bits, self.node_bit_mask)
     }

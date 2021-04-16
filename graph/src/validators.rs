@@ -53,6 +53,63 @@ impl Graph {
         Ok(edge_id)
     }
 
+    /// Validates provided node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: Option<NodeTypeT> - Node type ID to validate.
+    ///
+    /// # Example
+    /// In order to validate a given node type ID, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.validate_node_type_id(Some(0)).is_ok());
+    /// assert!(graph.validate_node_type_id(Some(1000)).is_err());
+    /// ```
+    pub fn validate_node_type_id(
+        &self,
+        node_type_id: Option<NodeTypeT>,
+    ) -> Result<Option<NodeTypeT>, String> {
+        self.must_have_node_types()?;
+        if let Some(nti) = node_type_id {
+            if self.get_node_types_number() <= nti {
+                return Err(format!(
+                    "Given node type ID {:?} is bigger than number of node types in the graph {}.",
+                    nti,
+                    self.get_node_types_number()
+                ));
+            }
+        }
+        Ok(node_type_id)
+    }
+
+    /// Validates provided edge type ID.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - edge type ID to validate.
+    ///
+    /// # Example
+    /// In order to validate a given edge type ID, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// assert!(graph.validate_edge_type_id(Some(0)).is_ok());
+    /// assert!(graph.validate_edge_type_id(Some(1000)).is_err());
+    /// ```
+    pub fn validate_edge_type_id(&self, edge_type_id: Option<EdgeTypeT>) -> Result<Option<EdgeTypeT>, String> {
+        self.must_have_edge_types()?;
+        if let Some(eti) = edge_type_id{
+            if self.get_edge_types_number() <= eti {
+                return Err(format!(
+                    "Given edge type ID {:?} is bigger than number of edge types in the graph {}.",
+                    eti,
+                    self.get_edge_types_number()
+                ));
+            }
+        }
+        Ok(edge_type_id)
+    }
+
     /// Raises an error if the graph does not have node types.
     ///
     /// # Example
@@ -103,6 +160,24 @@ impl Graph {
     pub fn must_have_edge_weights(&self) -> Result<(), String> {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph does not have any edge.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_without_edges = graph::test_utilities::load_empty_graph(false);
+    /// assert!(graph_with_edges.must_have_edges().is_ok());
+    /// assert!(graph_without_edges.must_have_edges().is_err());
+    /// ```
+    pub fn must_have_edges(&self) -> Result<(), String> {
+        if !self.has_edges() {
+            return Err("The current graph instance does not have any edge.".to_string());
         }
         Ok(())
     }

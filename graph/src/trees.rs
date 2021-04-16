@@ -359,7 +359,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
-    /// * `undesired_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
+    /// * `undesired_edge_types`: &Option<HashSet<Option<EdgeTypeT>>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(

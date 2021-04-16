@@ -1,8 +1,8 @@
 use super::*;
 use counter::Counter;
+use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use log::info;
 
 /// # Getters
 /// The naming convention we follow is:
@@ -607,15 +607,12 @@ impl Graph {
     /// }
     /// ```
     pub fn get_edge_type_counter(&self) -> Result<Counter<EdgeTypeT, usize>, String> {
-        if let Some(et) = &self.edge_types {
-            Ok(Counter::init(
-                et.ids.iter().filter_map(|edge_type| *edge_type),
-            ))
-        } else {
-            Err(String::from(
-                "Edge types are not defined for current graph instance.",
-            ))
-        }
+        self.must_have_edge_types()?;
+        Ok(self
+            .edge_types
+            .as_ref()
+            .map(|ets| Counter::init(ets.ids.iter().filter_map(|edge_type| *edge_type)))
+            .unwrap())
     }
 
     /// Returns edge type counts hashmap.
@@ -641,18 +638,19 @@ impl Graph {
     /// }
     /// ```
     pub fn get_node_type_counter(&self) -> Result<Counter<NodeTypeT, usize>, String> {
-        if let Some(nt) = &self.node_types {
-            Ok(Counter::init(
-                nt.ids
-                    .iter()
-                    .filter_map(|node_type| node_type.clone())
-                    .flatten(),
-            ))
-        } else {
-            Err(String::from(
-                "Node types are not defined for current graph instance.",
-            ))
-        }
+        self.must_have_node_types()?;
+        Ok(self
+            .node_types
+            .as_ref()
+            .map(|nts| {
+                Counter::init(
+                    nts.ids
+                        .iter()
+                        .filter_map(|node_type| node_type.clone())
+                        .flatten(),
+                )
+            })
+            .unwrap())
     }
 
     /// Returns node type counts hashmap.

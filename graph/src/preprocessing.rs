@@ -142,7 +142,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `walk_parameters`: &WalksParameters - the weighted walks parameters.
+    /// * `walk_parameters`: &'a WalksParameters - the weighted walks parameters.
     /// * `quantity`: NodeT - Number of nodes to consider.
     /// * `window_size`: usize - Window size to consider for the sequences.
     ///
@@ -166,8 +166,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: Option<usize> - Window size to consider for the sequences.
+    /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
+    /// * `window_size`: usize - Window size to consider for the sequences.
     /// * `verbose`: bool - Whether to show the progress bars. The default behaviour is false.
     ///     
     pub fn cooccurence_matrix<'a>(
@@ -176,11 +176,7 @@ impl Graph {
         window_size: usize,
         verbose: bool,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a), String> {
-        if !self.has_edges() {
-            return Err(
-                "The cooccurence matrix on a graph without edges is not defined.".to_string(),
-            );
-        }
+        self.must_have_edges()?;
         let walks = self.complete_walks_iter(walks_parameters)?;
         cooccurence_matrix(
             walks,
@@ -320,9 +316,7 @@ impl Graph {
         impl Iterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
         String,
     > {
-        if !self.has_node_types() {
-            return Err("The current graph instance does not have node types!".to_string());
-        }
+        self.must_have_node_types()?;
         Ok(node_ids.into_iter().map(move |node_id| {
             self.get_node_label_prediction_tuple_from_node_id(
                 node_id,
@@ -345,7 +339,7 @@ impl Graph {
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_degrees<'a>(
         &'a self,
@@ -390,7 +384,7 @@ impl Graph {
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_ids<'a>(
         &'a self,

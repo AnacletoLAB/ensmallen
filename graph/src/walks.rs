@@ -622,18 +622,15 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `parameters`: WalksParameters - the weighted walks parameters.
+    /// * `quantity`: NodeT - Number of random walk to compute.
+    /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
     ///
     pub fn random_walks_iter<'a>(
         &'a self,
         quantity: NodeT,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
-        if !self.has_edges() {
-            return Err(
-                "It does not make sense to compute a random walk on an empty graph.".to_string(),
-            );
-        }
+        self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
@@ -663,11 +660,7 @@ impl Graph {
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
-        if !self.has_edges() {
-            return Err(
-                "It does not make sense to compute a random walk on an empty graph.".to_string(),
-            );
-        }
+        self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
         self.walk_iter(
