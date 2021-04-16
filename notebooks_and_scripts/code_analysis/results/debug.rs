@@ -87,13 +87,13 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
@@ -193,13 +193,13 @@ fn generic_string_operator(
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
@@ -3332,7 +3332,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_singletons_with_selfloops: Option<bool> - Whether this graph has singletons with self-loops.
+    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
     ///
     pub fn set_might_have_singletons_with_selfloops(
         mut self,
@@ -3348,7 +3348,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_trap_nodes: Option<bool> - Whether this graph has trap nodes with self-loops.
+    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
     ///
     pub fn set_might_have_trap_nodes(
         mut self,
@@ -10314,7 +10314,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * might_have_singletons: Option<bool> - Whether this graph has singletons.
+    /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
     ///
     pub fn set_might_have_singletons(
         mut self,

@@ -13,13 +13,13 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
@@ -119,13 +119,13 @@ fn generic_string_operator(
 ///
 /// # Arguments
 ///
-/// * main: &Graph - The current graph instance.
+/// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
-/// * operator: String - The operator used.
-/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * might_have_singletons: bool - Whether we expect the graph to have singletons.
-/// * might_have_singletons_with_selfloops: bool - Whether we expect the graph to have singletons with self-loops.
-/// * might_have_trap_nodes: bool - Whether we expect the graph to have trap nodes.
+/// * `operator`: String - The operator used.
+/// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
@@ -197,6 +197,11 @@ fn generic_integer_operator(
 }
 
 impl<'a, 'b> Graph {
+    /// Return true if the graphs can be elaborated through graph algebra.
+    ///
+    /// # Arguments
+    ///
+    /// * `other`: &Graph - The other graph.
     pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
             return Err(String::from(
@@ -228,6 +233,10 @@ impl<'a, 'b> Graph {
 
 impl Graph {
     /// Return true if the graphs are compatible.
+    ///
+    /// # Arguments
+    ///
+    /// * `other`: &Graph - The other graph.
     pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool, String> {
         self.validate_operator_terms(other)?;
         if self.nodes != other.nodes {
@@ -246,6 +255,20 @@ impl Graph {
         Ok(true)
     }
 
+    /// Return graph composed of the two near-incompatible graphs.
+    ///
+    /// The two graphs can have different nodes, edge types and node types.
+    /// These operators are slower than the generic integer operators since they
+    /// require a reverse mapping step.
+    ///
+    /// # Arguments
+    ///
+    /// * `other`: &Graph - The other graph.
+    /// * `operator`: String - The operator used.
+    /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
+    /// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
+    /// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+    /// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
     pub(crate) fn generic_operator(
         &self,
         other: &Graph,
@@ -286,7 +309,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - Graph to be summed.
+    /// * `other`: &Graph - Graph to be summed.
     ///
     fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -311,7 +334,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - Graph to be summed.
+    /// * `other`: &Graph - Graph to be summed.
     ///
     fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -334,7 +357,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - Graph to be subtracted.
+    /// * `other`: &Graph - Graph to be subtracted.
     ///
     fn sub(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -356,7 +379,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - Graph to be subtracted.
+    /// * `other`: &Graph - Graph to be subtracted.
     ///
     fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
