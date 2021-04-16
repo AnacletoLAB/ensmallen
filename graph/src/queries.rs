@@ -977,7 +977,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.iter_neighbour_node_ids_from_source_node_id(node_id).collect())
+        Ok(self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id).collect())
     }
 
     /// Return vector of destinations for the given source node name.
@@ -1020,7 +1020,7 @@ impl Graph {
         node_name: &str,
     ) -> Result<Vec<String>, String> {
         Ok(self
-            .iter_neighbour_node_ids_from_source_node_id(self.get_node_id_from_node_name(node_name)?)
+            .iter_unchecked_neighbour_node_names_from_source_node_id(self.get_node_id_from_node_name(node_name)?)
             .collect())
     }
 

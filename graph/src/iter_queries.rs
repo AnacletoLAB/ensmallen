@@ -13,13 +13,28 @@ impl Graph {
     ///
     /// * `src` - Source node of the edge.
     ///
-    pub(crate) fn iter_unchecked_edge_ids_from_source_node_id(
+    pub fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> std::ops::Range<usize> {
         let (min_edge_id, max_edge_id) =
             self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
         min_edge_id as usize..max_edge_id as usize
+    }
+
+    /// Returns range of the edge ids of edges starting from the given source node.
+    ///
+    /// # Arguments
+    ///
+    /// * `src` - Source node of the edge.
+    ///
+    pub fn par_iter_unchecked_edge_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.iter_unchecked_edge_ids_from_source_node_id(src)
+            .into_par_iter()
+            .map(|node_id| node_id as NodeT)
     }
 
     /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
@@ -29,7 +44,7 @@ impl Graph {
     /// * `src` - Source node of the edge.
     /// * `dst` - Destination node of the edge.
     ///
-    pub(crate) fn iter_unchecked_edge_ids_from_node_ids(
+    pub fn iter_unchecked_edge_ids_from_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -43,7 +58,7 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbours are to be retrieved.
     ///
-    pub(crate) fn iter_neighbour_node_ids_from_source_node_id(
+    pub fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> Box<dyn Iterator<Item = NodeT> + '_> {
@@ -66,8 +81,11 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
     ///
-    pub(crate) fn iter_neighbour_node_ids_from_source_node_id(&self, src: NodeT) -> impl Iterator<Item = String> + '_ {
-        self.iter_neighbour_node_ids_from_source_node_id(src)
+    pub fn iter_unchecked_neighbour_node_names_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl Iterator<Item = String> + '_ {
+        self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
             .map(move |dst| self.get_unchecked_node_name_from_node_id(dst))
     }
 
@@ -86,5 +104,4 @@ impl Graph {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_node_ids(src, dst)?;
         Ok(min_edge_id..max_edge_id)
     }
-
 }

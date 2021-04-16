@@ -480,7 +480,7 @@ impl Graph {
                         }
                     };
                     let parents = thread_safe_parents.value.get();
-                    self.iter_neighbour_node_ids_from_source_node_id(src).for_each(|dst| unsafe {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| unsafe {
                         if (*parents)[dst as usize] == NOT_PRESENT {
                             (*parents)[dst as usize] = src;
                             total_inserted_edges.fetch_add(1, Ordering::SeqCst);
@@ -725,7 +725,7 @@ impl Graph {
                     };
 
                     let src_component = components[src as usize].load(Ordering::Relaxed);
-                    self.iter_neighbour_node_ids_from_source_node_id(src).for_each(|dst| {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| {
                         if components[dst as usize].swap(src_component, Ordering::SeqCst)
                             == NOT_PRESENT
                         {

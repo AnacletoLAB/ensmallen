@@ -56,7 +56,7 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.iter_neighbour_node_ids_from_source_node_id(*node_id)
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
                                 .collect::<Vec<NodeT>>(),
                         )
                     })

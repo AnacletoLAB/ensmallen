@@ -135,7 +135,7 @@ impl Graph {
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .par_iter_edge_with_type_ids(other.directed)
+                .par_iter_edge_node_ids_and_edge_type_id(other.directed)
                 .any(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),
@@ -160,7 +160,7 @@ impl Graph {
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .par_iter_edge_with_type_ids(other.directed)
+                .par_iter_edge_node_ids_and_edge_type_id(other.directed)
                 .all(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),

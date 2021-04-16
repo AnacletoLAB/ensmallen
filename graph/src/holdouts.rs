@@ -917,7 +917,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.iter_neighbour_node_ids_from_source_node_id(src) {
+                for dst in self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
