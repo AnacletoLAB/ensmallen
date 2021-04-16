@@ -11,6 +11,10 @@ use log::info;
 /// * `get_unchecked_(.+)`
 impl Graph {
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
+    ///
+    /// # Arguments
+    ///
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     pub fn get_connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
