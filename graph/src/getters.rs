@@ -464,6 +464,9 @@ impl Graph {
     }
 
     /// Return vector with the sorted edge Ids.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
         self.par_iter_edge_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
@@ -471,6 +474,9 @@ impl Graph {
     }
 
     /// Return vector with the sorted edge names.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.par_iter_edges(directed)
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
