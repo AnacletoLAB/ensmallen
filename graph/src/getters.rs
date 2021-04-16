@@ -78,9 +78,9 @@ impl Graph {
     ///
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The Graph rate is {}", graph.get_traps_node_rate());
+    /// println!("The Graph rate is {}", graph.get_trap_nodes_rate());
     /// ```
-    pub fn get_traps_node_rate(&self) -> f64 {
+    pub fn get_trap_nodes_rate(&self) -> f64 {
         self.par_iter_node_ids()
             .map(|node| {
                 if !self.is_trap_node_from_node_id(node).unwrap() {

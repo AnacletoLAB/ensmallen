@@ -10078,7 +10078,7 @@
             "",
             "```rust",
             "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The Graph rate is {}\", graph.get_traps_node_rate());",
+            "println!(\"The Graph rate is {}\", graph.get_trap_nodes_rate());",
             "```"
         ],
         "modifiers": "pub",
