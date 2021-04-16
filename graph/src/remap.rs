@@ -33,8 +33,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * other: &Graph - The graph to remap towards.
-    /// * verbose: bool - whether to show a loding bar.
+    /// * `other`: &Graph - The graph to remap towards.
+    /// * `verbose`: bool - whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:

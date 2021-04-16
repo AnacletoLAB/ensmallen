@@ -88,9 +88,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - The source node of the edge.
-    /// * dst: NodeT - The destination node of the edge.
-    /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
+    /// * `src`: NodeT - The source node of the edge.
+    /// * `dst`: NodeT - The destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - The (optional) edge type.
     ///
     /// # Examples
     /// To check if an edge with given type appears in the graph you can use:
@@ -116,7 +116,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.get_unchecked_node_degree_from_node_id(node_id) == 0
@@ -130,7 +130,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
@@ -141,8 +141,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node_name: String - The node name.
-    /// * node_type_name: String - The node type name.
+    /// * `node_name`: String - The node name.
+    /// * `node_type_name`: String - The node type name.
     ///
     pub fn has_node_from_node_name_and_node_type_name(
         &self,
@@ -171,8 +171,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: String - The source node name of the edge.
-    /// * dst: String - The destination node name of the edge.
+    /// * `src`: String - The source node name of the edge.
+    /// * `dst`: String - The destination node name of the edge.
     ///
     /// # Examples
     /// To check if an edge in the graph you can use:
@@ -189,9 +189,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: String - The source node name of the edge.
-    /// * dst: String - The destination node name of the edge.
-    /// * edge_type: Option<String> - The (optional) edge type name.
+    /// * `src`: String - The source node name of the edge.
+    /// * `dst`: String - The destination node name of the edge.
+    /// * `edge_type`: Option<String> - The (optional) edge type name.
     ///
     /// # Examples
     /// To check if an edge with type in the graph you can use:

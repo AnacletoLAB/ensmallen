@@ -122,7 +122,7 @@ impl Graph {
 	/// 	the walks parameters.
 	///  window_size : usize,
 	/// 	Window size to consider for the sequences.
-	/// * verbose: bool,
+	/// * `verbose`: bool -
 	/// whether to show the progress bars.
 	/// The default behaviour is false.
 	fn cooccurence_matrix(&'a self, walks_parameters : &'a WalksParameters, window_size : usize, verbose : bool) -> PyResult<(usize, impl Iterator<Item=(NodeT, NodeT, f64)> + 'a)> {
@@ -321,7 +321,7 @@ impl Graph {
 	/// Paramenters
 	/// --------------
 	/// 
-	/// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+	/// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
 	fn is_trap_node_by_node_id(self, node_id : NodeT) -> PyResult<bool> {
 		pe!(self.graph.is_trap_node_by_node_id(node_id))
 	}
@@ -379,9 +379,9 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// * `vector_sources`: bool, whether to cache sources into a vector for faster walks.
-	/// * `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.
-	/// * `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.
+	/// * `vector_sources`: bool - whether to cache sources into a vector for faster walks.
+	/// * `vector_destinations`: bool - whether to cache destinations into a vector for faster walks.
+	/// * `vector_outbounds`: bool - whether to cache outbounds into a vector for faster walks.
 	/// * `cache_size`: f64, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
 	fn enable(&mut self, vector_sources : bool, vector_destinations : bool, vector_outbounds : bool, cache_size : Option<f64>) -> PyResult<()> {
 		pe!(self.graph.enable(vector_sources, vector_destinations, vector_outbounds, cache_size))
@@ -857,7 +857,7 @@ impl Graph {
 	/// Paramenters
 	/// --------------
 	/// 
-	/// * `node_id` - Integer ID of the node.
+	/// * `node_id`: NodeT - Integer ID of the node.
 	fn get_node_degree_by_node_id(self, node_id : NodeT) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_degree_by_node_id(node_id))
 	}
@@ -892,8 +892,8 @@ impl Graph {
 	/// Paramenters
 	/// --------------
 	/// 
-	/// * `one` - Integer ID of the first node.
-	/// * `two` - Integer ID of the second node.
+	/// * `one`: NodeT - Integer ID of the first node.
+	/// * `two`: NodeT - Integer ID of the second node.
 	fn degrees_product(self, one : NodeT, two : NodeT) -> PyResult<usize> {
 		pe!(self.graph.degrees_product(one, two))
 	}
@@ -905,8 +905,8 @@ impl Graph {
 	/// Paramenters
 	/// --------------
 	/// 
-	/// * `one` - Integer ID of the first node.
-	/// * `two` - Integer ID of the second node.
+	/// * `one`: NodeT - Integer ID of the first node.
+	/// * `two`: NodeT - Integer ID of the second node.
 	/// 
 	/// # References
 	/// [D. Liben-Nowell, J. Kleinberg.
@@ -922,8 +922,8 @@ impl Graph {
 	/// Paramenters
 	/// --------------:
 	/// 
-	/// * `one` - Integer ID of the first node.
-	/// * `two` - Integer ID of the second node.
+	/// * `one`: NodeT - Integer ID of the first node.
+	/// * `two`: NodeT - Integer ID of the second node.
 	/// 
 	/// # Implementation details
 	/// Since the Adamic/Adar Index is only defined for graph not containing
@@ -945,8 +945,8 @@ impl Graph {
 	/// Paramenters
 	/// --------------:
 	/// 
-	/// * `one` - Integer ID of the first node.
-	/// * `two` - Integer ID of the second node.
+	/// * `one`: NodeT - Integer ID of the first node.
+	/// * `two`: NodeT - Integer ID of the second node.
 	/// 
 	/// # References
 	/// [T. Zhou, L. Lu, Y.-C. Zhang.
@@ -1435,7 +1435,7 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// * `directed`: bool, whether to filter out the undirected edges.
+	/// * `directed`: bool - whether to filter out the undirected edges.
 	fn get_sources(self, directed : bool) -> Vec<NodeT> {
 		self.graph.get_sources(directed)
 	}
@@ -1446,7 +1446,7 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// * `directed`: bool, whether to filter out the undirected edges.
+	/// * `directed`: bool - whether to filter out the undirected edges.
 	fn get_source_names(self, directed : bool) -> Vec<String> {
 		self.graph.get_source_names(directed)
 	}
@@ -1457,7 +1457,7 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// * `directed`: bool, whether to filter out the undirected edges.
+	/// * `directed`: bool - whether to filter out the undirected edges.
 	fn get_destinations(self, directed : bool) -> Vec<NodeT> {
 		self.graph.get_destinations(directed)
 	}
@@ -1468,7 +1468,7 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// * `directed`: bool, whether to filter out the undirected edges.
+	/// * `directed`: bool - whether to filter out the undirected edges.
 	fn get_destination_names(self, directed : bool) -> Vec<String> {
 		self.graph.get_destination_names(directed)
 	}
@@ -1827,17 +1827,17 @@ impl Graph {
 	/// 
 	/// TODO: UPDATE THE DOCSTRING!
 	/// 
-	/// * edges_iterator: impl Iterator<Item = Result<strQuadruple, str>>,
+	/// * `edges_iterator`: impl Iterator<Item = Result<strQuadruple, str>>,
 	/// Iterator of the edges.
-	/// * nodes_iterator: impl Iterator<Item = Result<(str, Option<str), str>>>,
+	/// * `nodes_iterator`: impl Iterator<Item = Result<(str, Option<str), str>>>,
 	/// Iterator of the nodes.
-	/// * directed: bool,
+	/// * `directed`: bool -
 	/// Wether the graph should be directed or undirected.
-	/// * ignore_duplicated_nodes: bool,
+	/// * `ignore_duplicated_nodes`: bool -
 	/// Wether to ignore duplicated nodes or to raise a proper exception.
-	/// * ignore_duplicated_edges: bool,
+	/// * `ignore_duplicated_edges`: bool -
 	/// Wether to ignore duplicated edges or to raise a proper exception.
-	/// * skip_selfloops: bool,
+	/// * `skip_selfloops`: bool -
 	/// Wether to skip self loops while reading the the edges iterator.
 	fn from_string_unsorted(impl Iterator<Item = Result<StringQuadruple, String>>, nodes_iterator : Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>, directed : bool, directed_edge_list : bool, name : S, ignore_duplicated_nodes : bool, node_list_is_correct : bool, ignore_duplicated_edges : bool, edge_list_is_correct : bool, verbose : bool, numeric_edge_type_ids : bool, numeric_node_ids : bool, numeric_edge_node_ids : bool, numeric_node_types_ids : bool, has_node_types : bool, has_edge_types : bool, has_edge_weights : bool, might_have_singletons : bool, might_have_singletons_with_selfloops : bool, might_have_trap_nodes : bool) -> PyResult<Graph> {
 		pe!(self.graph.from_string_unsorted(nodes_iterator, directed, directed_edge_list, name, ignore_duplicated_nodes, node_list_is_correct, ignore_duplicated_edges, edge_list_is_correct, verbose, numeric_edge_type_ids, numeric_node_ids, numeric_edge_node_ids, numeric_node_types_ids, has_node_types, has_edge_types, has_edge_weights, might_have_singletons, might_have_singletons_with_selfloops, might_have_trap_nodes))
@@ -1850,17 +1850,17 @@ impl Graph {
 	/// Paramenters
 	/// --------------
 	/// 
-	/// * edges_iterator: impl Iterator<Item = Result<strQuadruple, str>>,
+	/// * `edges_iterator`: impl Iterator<Item = Result<strQuadruple, str>>,
 	/// Iterator of the edges.
-	/// * nodes_iterator: impl Iterator<Item = Result<(str, Option<str), str>>>,
+	/// * `nodes_iterator`: impl Iterator<Item = Result<(str, Option<str), str>>>,
 	/// Iterator of the nodes.
-	/// * directed: bool,
+	/// * `directed`: bool -
 	/// Wether the graph should be directed or undirected.
-	/// * ignore_duplicated_nodes: bool,
+	/// * `ignore_duplicated_nodes`: bool -
 	/// Wether to ignore duplicated nodes or to raise a proper exception.
-	/// * ignore_duplicated_edges: bool,
+	/// * `ignore_duplicated_edges`: bool -
 	/// Wether to ignore duplicated edges or to raise a proper exception.
-	/// * skip_selfloops: bool,
+	/// * `skip_selfloops`: bool -
 	/// Wether to skip self loops while reading the the edges iterator.
 	fn from_integer_unsorted(impl Iterator<
 	            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,

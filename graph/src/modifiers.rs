@@ -7,10 +7,10 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool, whether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.
-    /// * `vector_cumulative_node_degrees`: bool, whether to cache cumulative_node_degrees into a vector for faster walks.
-    /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
+    /// * `vector_sources`: bool - whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: bool - whether to cache destinations into a vector for faster walks.
+    /// * `vector_cumulative_node_degrees`: bool - whether to cache cumulative_node_degrees into a vector for faster walks.
+    /// * `cache_size`: Option<f64> - percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
         vector_sources: bool,

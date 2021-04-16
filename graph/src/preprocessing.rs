@@ -29,7 +29,7 @@ fn fast_u32_modulo(val: u32, n: u32) -> u32 {
 /// # Arguments
 ///
 /// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
-/// * window_size: usize - Window size to consider for the sequences.
+/// * `window_size`: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec<'a>(
     sequences: impl ParallelIterator<Item = Vec<NodeT>> + 'a,
@@ -67,8 +67,8 @@ pub fn word2vec<'a>(
 /// # Arguments
 ///
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
-/// * window_size: Option<usize> - Window size to consider for the sequences.
-/// * verbose: Option<bool>,
+/// * `window_size`: Option<usize> - Window size to consider for the sequences.
+/// * `verbose`: Option<bool>,
 ///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
@@ -144,9 +144,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * walk_parameters: &WalksParameters - the weighted walks parameters.
-    /// * quantity: usize - Number of nodes to consider.
-    /// * window_size: usize - Window size to consider for the sequences.
+    /// * `walk_parameters`: &WalksParameters - the weighted walks parameters.
+    /// * `quantity`: usize - Number of nodes to consider.
+    /// * `window_size`: usize - Window size to consider for the sequences.
     ///
     pub fn node2vec<'a>(
         &'a self,
@@ -168,11 +168,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: &WalksParameters - the walks parameters.
-    /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * verbose: Option<bool>,
-    ///     whether to show the progress bars.
-    ///     The default behaviour is false.
+    /// * `parameters`: &WalksParameters - the walks parameters.
+    /// * `window_size`: Option<usize> - Window size to consider for the sequences.
+    /// * `verbose`: Option<bool> - whether to show the progress bars. The default behaviour is false.
     ///     
     pub fn cooccurence_matrix<'a>(
         &'a self,
@@ -343,14 +341,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
-    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
+    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_degrees<'a>(
         &'a self,
@@ -390,13 +387,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
+    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_ids<'a>(
         &'a self,

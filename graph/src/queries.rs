@@ -42,7 +42,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_type: Option<EdgeTypeT> - The edge type to retrieve count of.
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type to retrieve count of.
     ///
     pub(crate) fn get_unchecked_edge_count_from_edge_type_id(
         &self,
@@ -126,8 +126,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub fn get_unchecked_minmax_edge_ids_from_node_ids(
         &self,
@@ -148,8 +148,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub(crate) fn get_unchecked_edge_degree_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
@@ -387,7 +387,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * k: NodeT - Number of central nodes to extract.
+    /// * `k`: NodeT - Number of central nodes to extract.
     /// TODO: This can be refactored to run faster!
     pub fn get_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
         let k = k.min(self.get_nodes_number());
@@ -414,7 +414,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id` - Integer ID of the node.
+    /// * `node_id`: NodeT - Integer ID of the node.
     ///
     pub fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
         let (min_edge_id, max_edge_id) =
@@ -425,7 +425,7 @@ impl Graph {
     /// Returns the number of outbound neighbours of given node.
     ///
     /// # Arguments
-    /// * `node_id` - Integer ID of the node.
+    /// * `node_id`: NodeT - Integer ID of the node.
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         self.validate_node_id(node_id)
@@ -436,7 +436,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * k: NodeT - Number of central nodes to extract.
+    /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
         self.get_top_k_central_node_ids(k)
             .into_iter()
@@ -500,7 +500,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
     /// # Examples
     /// ```rust
@@ -518,7 +518,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
     /// # Examples
     /// ```rust
@@ -572,7 +572,7 @@ impl Graph {
     /// Return edge type name of given edge type.
     ///
     /// # Arguments
-    /// * edge_type_id: EdgeTypeT - Id of the edge type.
+    /// * `edge_type_id`: EdgeTypeT - Id of the edge type.
     pub fn get_edge_type_name_from_edge_type_id(
         &self,
         edge_type_id: EdgeTypeT,
@@ -1030,8 +1030,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub fn get_minmax_edge_ids_from_node_ids(
         &self,
@@ -1255,7 +1255,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Node for which we need to compute the cumulative_node_degrees range.
+    /// * `src`: NodeT - Node for which we need to compute the cumulative_node_degrees range.
     ///
     pub fn get_minmax_edge_ids_from_source_node_id(
         &self,
@@ -1271,7 +1271,7 @@ impl Graph {
     /// on the note_types anyway.
     ///
     /// # Arguments
-    /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_id`: Vec<NodeTypeT> - Id of the node type.
     pub fn get_node_type_name_from_node_type_id(
         &self,
         node_type_id: NodeTypeT,
@@ -1285,7 +1285,7 @@ impl Graph {
     /// Return node type name of given node type.
     ///
     /// # Arguments
-    /// * node_type_ids: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_ids`: Vec<NodeTypeT> - Id of the node type.
     pub fn get_node_type_names_from_node_type_ids(
         &self,
         node_type_ids: Vec<NodeTypeT>,

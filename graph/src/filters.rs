@@ -6,12 +6,12 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node_names: Option<Vec<String>> - The node names to keep.
-    /// * node_types: Option<Vec<String>> - The node types to keep.
-    /// * edge_types: Option<Vec<String>> - The edge types to keep.
-    /// * min_weight: Option<WeightT> - Minimum weight to use to filter edges.
-    /// * max_weight: Option<WeightT> - Maximum weight to use to filter edges.
-    /// * verbose: bool - whether to show the loading bar.
+    /// * `node_names`: Option<Vec<String>> - The node names to keep.
+    /// * `node_types`: Option<Vec<String>> - The node types to keep.
+    /// * `edge_types`: Option<Vec<String>> - The edge types to keep.
+    /// * `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.
+    /// * `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn filter(
         &self,

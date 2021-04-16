@@ -11,7 +11,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
+    /// * `src`: NodeT - Source node of the edge.
     ///
     pub fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
@@ -26,7 +26,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
+    /// * `src`: NodeT - Source node of the edge.
     ///
     pub fn par_iter_unchecked_edge_ids_from_source_node_id(
         &self,
@@ -41,8 +41,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
-    /// * `dst` - Destination node of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT -  Destination node of the edge.
     ///
     pub fn iter_unchecked_edge_ids_from_node_ids(
         &self,
@@ -93,8 +93,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node id of the edge.
-    /// * `dst` - Destination node id of the edge.
+    /// * `src`: NodeT - Source node id of the edge.
+    /// * `dst`: NodeT -  Destination node id of the edge.
     ///
     pub fn iter_edge_ids_from_node_ids(
         &self,

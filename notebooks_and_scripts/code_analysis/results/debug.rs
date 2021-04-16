@@ -88,7 +88,7 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// # Arguments
 ///
 /// * main: &Graph - The current graph instance.
-/// * other: &Graph - The other graph.
+/// * `other`: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 /// * might_have_singletons: bool - Whether we expect the graph to have singletons.
@@ -194,7 +194,7 @@ fn generic_string_operator(
 /// # Arguments
 ///
 /// * main: &Graph - The current graph instance.
-/// * other: &Graph - The other graph.
+/// * `other`: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 /// * might_have_singletons: bool - Whether we expect the graph to have singletons.
@@ -360,7 +360,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be summed.
+    /// * `other`: Graph - Graph to be summed.
     ///
     fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -386,7 +386,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be summed.
+    /// * `other`: Graph - Graph to be summed.
     ///
     fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -409,7 +409,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be subtracted.
+    /// * `other`: Graph - Graph to be subtracted.
     ///
     fn sub(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -431,7 +431,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be subtracted.
+    /// * `other`: Graph - Graph to be subtracted.
     ///
     fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -509,7 +509,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_type: Option<EdgeTypeT> - The edge type to retrieve count of.
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type to retrieve count of.
     ///
     pub(crate) fn get_unchecked_edge_count_by_edge_type_id(
         &self,
@@ -591,8 +591,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
-    /// * `dst` - Destination node of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT -  Destination node of the edge.
     ///
     pub(crate) fn get_unchecked_edge_ids_range(
         &self,
@@ -609,8 +609,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub(crate) fn get_unchecked_minmax_edge_ids_by_node_ids(
         &self,
@@ -631,8 +631,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub(crate) fn get_unchecked_edge_degreee_by_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_by_node_ids(src, dst);
@@ -1812,7 +1812,7 @@ use std::{fs::File, io::prelude::*, io::BufWriter};
 ///
 /// # Attributes
 /// * path: String - The path where to save the file. E.g. "/tmp/test.csv"
-/// * verbose: bool - If the progress bars and logging must be displayed.
+/// * `verbose`: bool - If the progress bars and logging must be displayed.
 /// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
 /// * header: bool - If the file (will / must) have the header with the titles of the columns.
 pub struct CSVFileWriter {
@@ -2037,7 +2037,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - The graph to check against.
+    /// * `other`: Graph - The graph to check against.
     ///
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
@@ -2060,7 +2060,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - The graph to check against.
+    /// * `other`: Graph - The graph to check against.
     ///
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
@@ -2111,7 +2111,7 @@ fn fast_u32_modulo(val: u32, n: u32) -> u32 {
 /// # Arguments
 ///
 /// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
-/// * window_size: usize - Window size to consider for the sequences.
+/// * `window_size`: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec<'a>(
     sequences: impl ParallelIterator<Item = Vec<NodeT>> + 'a,
@@ -2149,8 +2149,8 @@ pub fn word2vec<'a>(
 /// # Arguments
 ///
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
-/// * window_size: Option<usize> - Window size to consider for the sequences.
-/// * verbose: Option<bool>,
+/// * `window_size`: Option<usize> - Window size to consider for the sequences.
+/// * `verbose`: Option<bool>,
 ///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
@@ -2228,9 +2228,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * walk_parameters: &WalksParameters - the weighted walks parameters.
-    /// * quantity: usize - Number of nodes to consider.
-    /// * window_size: usize - Window size to consider for the sequences.
+    /// * `walk_parameters`: &WalksParameters - the weighted walks parameters.
+    /// * `quantity`: usize - Number of nodes to consider.
+    /// * `window_size`: usize - Window size to consider for the sequences.
     ///
     pub fn node2vec<'a>(
         &'a self,
@@ -2252,9 +2252,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: &WalksParameters - the walks parameters.
-    /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * verbose: Option<bool>,
+    /// * `parameters`: &WalksParameters - the walks parameters.
+    /// * `window_size`: Option<usize> - Window size to consider for the sequences.
+    /// * `verbose`: Option<bool>,
     ///     whether to show the progress bars.
     ///     The default behaviour is false.
     ///     
@@ -2427,14 +2427,14 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
+    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
+    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_degrees<'a>(
         &'a self,
@@ -2474,13 +2474,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - whether to remove the false negatives when generated.
+    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_ids<'a>(
         &'a self,
@@ -2874,8 +2874,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * other: &Graph - The graph to remap towards.
-    /// * verbose: bool - whether to show a loding bar.
+    /// * `other`: &Graph - The graph to remap towards.
+    /// * `verbose`: bool - whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -3273,7 +3273,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_selfloops: Option<bool> - whether should ignore or not selfloops.
+    /// * `skip_selfloops`: Option<bool> - whether should ignore or not selfloops.
     ///
     pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_selfloops {
@@ -3319,7 +3319,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
@@ -3645,9 +3645,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - The source node of the edge.
-    /// * dst: NodeT - The destination node of the edge.
-    /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
+    /// * `src`: NodeT - The source node of the edge.
+    /// * `dst`: NodeT - The destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - The (optional) edge type.
     ///
     /// # Examples
     /// To check if an edge with given type appears in the graph you can use:
@@ -3670,7 +3670,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.get_node_degree_by_node_id(node_id)? == 0
@@ -3684,8 +3684,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node_name: String - The node name.
-    /// * node_type_name: String - The node type name.
+    /// * `node_name`: String - The node name.
+    /// * `node_type_name`: String - The node type name.
     ///
     pub fn has_node_with_type_by_node_name(
         &self,
@@ -3714,8 +3714,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: String - The source node name of the edge.
-    /// * dst: String - The destination node name of the edge.
+    /// * `src`: String - The source node name of the edge.
+    /// * `dst`: String - The destination node name of the edge.
     ///
     /// # Examples
     /// To check if an edge in the graph you can use:
@@ -3732,9 +3732,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: String - The source node name of the edge.
-    /// * dst: String - The destination node name of the edge.
-    /// * edge_type: Option<String> - The (optional) edge type name.
+    /// * `src`: String - The source node name of the edge.
+    /// * `dst`: String - The destination node name of the edge.
+    /// * `edge_type`: Option<String> - The (optional) edge type name.
     ///
     /// # Examples
     /// To check if an edge with type in the graph you can use:
@@ -5057,9 +5057,9 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool, whether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.
-    /// * `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.
+    /// * `vector_sources`: bool - whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: bool - whether to cache destinations into a vector for faster walks.
+    /// * `vector_outbounds`: bool - whether to cache outbounds into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
@@ -5227,7 +5227,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
         if let Some(v) = verbose {
@@ -5421,7 +5421,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * k: NodeT - Number of central nodes to extract.
+    /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_node_degree_by_node_id(node_id).unwrap(), node_id))
@@ -5438,7 +5438,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * k: NodeT - Number of central nodes to extract.
+    /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
         self.get_top_k_central_nodes_ids(k)
             .into_iter()
@@ -5483,7 +5483,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
     /// # Examples
     /// ```rust
@@ -5543,7 +5543,7 @@ impl Graph {
     /// Return edge type name of given edge type.
     ///
     /// # Arguments
-    /// * edge_type_id: EdgeTypeT - Id of the edge type.
+    /// * `edge_type_id`: EdgeTypeT - Id of the edge type.
     pub fn get_edge_type_name_by_edge_type_id(
         &self,
         edge_type_id: EdgeTypeT,
@@ -6143,8 +6143,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
+    /// * `src`: NodeT - Source node.
+    /// * `dst`: NodeT - Destination node.
     ///
     pub(crate) fn get_minmax_edge_ids_by_node_ids(
         &self,
@@ -6163,7 +6163,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Node for which we need to compute the outbounds range.
+    /// * `src`: NodeT - Node for which we need to compute the outbounds range.
     ///
     pub(crate) fn get_minmax_edge_ids_by_source_node_id(&self, src: NodeT) -> (EdgeT, EdgeT) {
         match &self.outbounds {
@@ -6197,7 +6197,7 @@ impl Graph {
     /// on the note_types anyway.
     ///
     /// # Arguments
-    /// * node_type_id: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_id`: Vec<NodeTypeT> - Id of the node type.
     pub fn get_node_type_name_by_node_type_id(
         &self,
         node_type_id: NodeTypeT,
@@ -6211,7 +6211,7 @@ impl Graph {
     /// Return node type name of given node type.
     ///
     /// # Arguments
-    /// * node_type_ids: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_ids`: Vec<NodeTypeT> - Id of the node type.
     pub fn get_node_type_names_by_node_type_ids(
         &self,
         node_type_ids: Vec<NodeTypeT>,
@@ -6228,7 +6228,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id` - Integer ID of the node.
+    /// * `node_id`: NodeT - Integer ID of the node.
     ///
     pub fn get_node_degree_by_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         if node_id >= self.get_nodes_number() {
@@ -6251,12 +6251,12 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node_names: Option<Vec<String>> - The node names to keep.
-    /// * node_types: Option<Vec<String>> - The node types to keep.
-    /// * edge_types: Option<Vec<String>> - The edge types to keep.
-    /// * min_weight: Option<WeightT> - Minimum weight to use to filter edges.
-    /// * max_weight: Option<WeightT> - Maximum weight to use to filter edges.
-    /// * verbose: bool - whether to show the loading bar.
+    /// * `node_names`: Option<Vec<String>> - The node names to keep.
+    /// * `node_types`: Option<Vec<String>> - The node types to keep.
+    /// * `edge_types`: Option<Vec<String>> - The edge types to keep.
+    /// * `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.
+    /// * `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.
+    /// * `verbose`: bool - whether to show the loading bar.
     ///
     pub fn filter(
         &self,
@@ -6439,8 +6439,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -6466,8 +6466,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # References
     /// [D. Liben-Nowell, J. Kleinberg.
@@ -6509,8 +6509,8 @@ impl Graph {
     ///
     /// # Arguments:
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
@@ -6549,8 +6549,8 @@ impl Graph {
     ///
     /// # Arguments:
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # References
     /// [T. Zhou, L. Lu, Y.-C. Zhang.
@@ -7886,7 +7886,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -7938,7 +7938,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * directed: Option<bool> - whether to write out the graph as directed or not.
+    /// * `directed`: Option<bool> - whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;
@@ -8021,7 +8021,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * name: String - Name of the graph.
+    /// * `name`: String - Name of the graph.
     pub fn set_name(&mut self, name: String) {
         self.invalidate_report();
         self.name = name;
@@ -8693,7 +8693,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     pub fn random_walks_iter<'a>(
         &'a self,
@@ -8728,7 +8728,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     pub fn complete_walks_iter<'a>(
         &'a self,
@@ -8757,7 +8757,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     fn walk_iter<'a>(
         &'a self,
@@ -8809,7 +8809,7 @@ impl Graph {
     ///
     /// * node: NodeT - Node from where to start the random walks.
     /// * random_state: usize, the random_state to use for extracting the nodes and edges.
-    /// * parameters: SingleWalkParameters - Parameters for the single walk.
+    /// * `parameters`: SingleWalkParameters - Parameters for the single walk.
     ///
     fn single_walk(
         &self,
@@ -9392,7 +9392,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_sources_ids(directed).collect()
     }
@@ -9400,7 +9400,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_sources_ids(directed)
             .map(|src| self.get_node_name_by_node_id(src).unwrap())
@@ -9410,7 +9410,7 @@ impl Graph {
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destinations_ids(directed).collect()
     }
@@ -9418,7 +9418,7 @@ impl Graph {
     /// Return vector of the non-unique destination nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destinations_ids(directed)
             .map(|dst| self.get_node_name_by_node_id(dst).unwrap())
@@ -10363,7 +10363,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {
@@ -10736,7 +10736,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node of the edge.
+    /// * `src`: NodeT - Source node of the edge.
     ///
     pub(crate) fn iter_unchecked_edge_ids_by_source_node_id(
         &self,
@@ -10789,7 +10789,7 @@ impl Graph {
     /// Return iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_sources_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -10797,7 +10797,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_sources_ids(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -10805,7 +10805,7 @@ impl Graph {
     /// Return iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_destinations_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, _, dst)| dst)
     }
@@ -10813,7 +10813,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_destinations_ids(
         &self,
         directed: bool,
@@ -10845,7 +10845,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edge_ids(
         &self,
         directed: bool,
@@ -10877,7 +10877,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edges(
         &self,
         directed: bool,
@@ -10897,7 +10897,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edge_ids(
         &self,
         directed: bool,
@@ -10916,7 +10916,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edges(
         &self,
         directed: bool,
@@ -10936,7 +10936,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edges_with_type_ids(
         &self,
         directed: bool,
@@ -10955,7 +10955,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edges_with_type(
         &self,
         directed: bool,
@@ -10989,7 +10989,7 @@ impl Graph {
     /// The result is (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type(
         &self,
         directed: bool,
@@ -11022,7 +11022,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_ids(
         &self,
         directed: bool,
@@ -11041,7 +11041,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_and_weight(
         &self,
         directed: bool,
@@ -11076,7 +11076,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edge_with_type_and_weight(
         &self,
         directed: bool,
@@ -11111,7 +11111,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_and_weight_ids(
         &self,
         directed: bool,
@@ -11132,7 +11132,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_edge_with_type_and_weight_ids(
         &self,
         directed: bool,
@@ -11152,7 +11152,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool, whether to filter out the undirected edges.
+    /// * `directed`: bool - whether to filter out the undirected edges.
     pub fn iter_unique_edges(
         &self,
         directed: bool,
@@ -11187,8 +11187,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src` - Source node id of the edge.
-    /// * `dst` - Destination node id of the edge.
+    /// * `src`: NodeT - Source node id of the edge.
+    /// * `dst`: NodeT -  Destination node id of the edge.
     ///
     pub(crate) fn iter_edge_ids_by_node_ids(
         &self,
@@ -12506,17 +12506,17 @@ impl Graph {
     ///
     /// TODO: UPDATE THE DOCSTRING!
     ///
-    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
+    /// * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
-    /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+    /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
-    /// * directed: bool,
+    /// * `directed`: bool -
     ///     Wether the graph should be directed or undirected.
-    /// * ignore_duplicated_nodes: bool,
+    /// * `ignore_duplicated_nodes`: bool -
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
-    /// * ignore_duplicated_edges: bool,
+    /// * `ignore_duplicated_edges`: bool -
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_selfloops: bool,
+    /// * `skip_selfloops`: bool -
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -12601,17 +12601,17 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
+    /// * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
-    /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+    /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
-    /// * directed: bool,
+    /// * `directed`: bool -
     ///     Wether the graph should be directed or undirected.
-    /// * ignore_duplicated_nodes: bool,
+    /// * `ignore_duplicated_nodes`: bool -
     ///     Wether to ignore duplicated nodes or to raise a proper exception.
-    /// * ignore_duplicated_edges: bool,
+    /// * `ignore_duplicated_edges`: bool -
     ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_selfloops: bool,
+    /// * `skip_selfloops`: bool -
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<

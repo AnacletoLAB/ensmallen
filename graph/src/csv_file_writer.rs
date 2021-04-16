@@ -6,7 +6,7 @@ use std::{fs::File, io::prelude::*, io::BufWriter};
 ///
 /// # Attributes
 /// * path: String - The path where to save the file. E.g. "/tmp/test.csv"
-/// * verbose: bool - If the progress bars and logging must be displayed.
+/// * `verbose`: bool - If the progress bars and logging must be displayed.
 /// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
 /// * header: bool - If the file (will / must) have the header with the titles of the columns.
 pub struct CSVFileWriter {

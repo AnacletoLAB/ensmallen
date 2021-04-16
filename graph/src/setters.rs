@@ -5,7 +5,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * name: String - Name of the graph.
+    /// * `name`: String - Name of the graph.
     pub fn set_name(&mut self, name: String) {
         self.invalidate_report();
         self.name = name;

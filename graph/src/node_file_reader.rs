@@ -200,7 +200,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {

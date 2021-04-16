@@ -172,7 +172,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -224,7 +224,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * directed: Option<bool> - whether to write out the graph as directed or not.
+    /// * `directed`: Option<bool> - whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;

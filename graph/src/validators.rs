@@ -8,7 +8,7 @@ impl Graph {
     /// Validates provided node ID.
     ///
     /// # Arguments
-    /// * node_id: NodeT - node ID to validate.
+    /// * `node_id`: NodeT - node ID to validate.
     ///
     /// # Example
     /// In order to validate a given node ID, you can use the following:
@@ -32,7 +32,7 @@ impl Graph {
     /// Validates provided edge ID.
     ///
     /// # Arguments
-    /// * edge_id: EdgeT - Edge ID to validate.
+    /// * `edge_id`: EdgeT - Edge ID to validate.
     ///
     /// # Example
     /// In order to validate a given edge ID, you can use the following:

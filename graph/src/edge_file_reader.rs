@@ -347,7 +347,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_selfloops: Option<bool> - whether should ignore or not selfloops.
+    /// * `skip_selfloops`: Option<bool> - whether should ignore or not selfloops.
     ///
     pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_selfloops {
@@ -393,7 +393,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {

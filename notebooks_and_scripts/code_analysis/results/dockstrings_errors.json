@@ -1,11 +1,8 @@
 {
     "/Workspace/Github/ensmallen_graph/graph/src/trees.rs": {
         "random_spanning_arborescence_kruskal": [
-            "[   7] The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'.",
-            "[   8] The argument 'include_all_edge_types' does not exists in the current method. The available args are ['random_state', 'unwanted_edge_types', 'verbose'].",
-            "[   9] The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function delcaration which is '&Option<HashSet<Option<EdgeTypeT>>>'.",
+            "[   8] The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function delcaration which is '&Option<HashSet<Option<EdgeTypeT>>>'.",
             "[   ~] Missing the documentation for the argument 'unwanted_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'random_state'.",
             "[   0] Missing Example"
         ],
         "spanning_arborescence_kruskal": [
@@ -23,66 +20,46 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/graph.rs": {
         "overlaps": [
-            "[   4] The argument line '* other: Graph - The graph to check against.' (doc_line: 4) is not in the standard format.",
+            "[   4] The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'.",
             "[   ~] Missing the documentation for the argument 'other'.",
             "[   0] Missing Example"
         ],
         "contains": [
-            "[   4] The argument line '* other: Graph - The graph to check against.' (doc_line: 4) is not in the standard format.",
+            "[   4] The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'.",
             "[   ~] Missing the documentation for the argument 'other'.",
             "[   0] Missing Example"
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs": {
         "node2vec": [
-            "[  12] The argument line '* walk_parameters: &WalksParameters - the weighted walks parameters.' (doc_line: 12) is not in the standard format.",
-            "[  13] The argument line '* quantity: usize - Number of nodes to consider.' (doc_line: 13) is not in the standard format.",
-            "[  14] The argument line '* window_size: usize - Window size to consider for the sequences.' (doc_line: 14) is not in the standard format.",
+            "[  12] The argument type '&WalksParameters' of 'walk_parameters' does not match the function delcaration which is '&'a WalksParameters'.",
+            "[  13] The argument type 'usize' of 'quantity' does not match the function delcaration which is 'NodeT'.",
             "[   ~] Missing the documentation for the argument 'walk_parameters'.",
             "[   ~] Missing the documentation for the argument 'quantity'.",
-            "[   ~] Missing the documentation for the argument 'window_size'.",
             "[   0] Missing Example"
         ],
         "cooccurence_matrix": [
-            "[   7] The argument line '* parameters: &WalksParameters - the walks parameters.' (doc_line: 7) is not in the standard format.",
-            "[   8] The argument line '* window_size: Option<usize> - Window size to consider for the sequences.' (doc_line: 8) is not in the standard format.",
-            "[   9] The argument line '* verbose: Option<bool>,' (doc_line: 9) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   7] The argument 'parameters' does not exists in the current method. The available args are ['walks_parameters', 'window_size', 'verbose'].",
+            "[   8] The argument type 'Option<usize>' of 'window_size' does not match the function delcaration which is 'usize'.",
+            "[   9] The argument type 'Option<bool>' of 'verbose' does not match the function delcaration which is 'bool'.",
             "[   ~] Missing the documentation for the argument 'walks_parameters'.",
             "[   ~] Missing the documentation for the argument 'window_size'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
             "[   0] Missing Example"
         ],
-        "get_node_label_prediction_tuple_by_node_ids": [
+        "get_node_label_prediction_tuple_from_node_ids": [
             "[  13] The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function delcaration which is 'Option<NodeT>'.",
             "[   ~] Missing the documentation for the argument 'max_neighbours'.",
             "[  15] The example section is missing or in the wrong order."
         ],
         "link_prediction_degrees": [
-            "[   5] The argument line '* idx:u64 - The index of the batch to generate, behaves like a random random_state,' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* batch_size: usize - The maximal size of the batch to generate,' (doc_line: 6) is not in the standard format.",
-            "[   7] The argument line '* normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],' (doc_line: 7) is not in the standard format.",
-            "[   8] The argument line '* negative_samples: f64 - The component of netagetive samples to use,' (doc_line: 8) is not in the standard format.",
-            "[   9] The argument line '* avoid_false_negatives: bool - whether to remove the false negatives when generated.' (doc_line: 9) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'maximal_sampling_attempts'.",
-            "[   ~] Missing the documentation for the argument 'negative_samples'.",
-            "[   ~] Missing the documentation for the argument 'idx'.",
-            "[   ~] Missing the documentation for the argument 'batch_size'.",
-            "[   ~] Missing the documentation for the argument 'normalize'.",
+            "[  11] The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function delcaration which is '&'a Option<&Graph>'.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'.",
-            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
             "[   0] Missing Example"
         ],
         "link_prediction_ids": [
-            "[   4] The argument line '* idx:u64 - The index of the batch to generate, behaves like a random random_state,' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* batch_size: usize - The maximal size of the batch to generate,' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* negative_samples: f64 - The component of netagetive samples to use,' (doc_line: 6) is not in the standard format.",
-            "[   7] The argument line '* avoid_false_negatives: bool - whether to remove the false negatives when generated.' (doc_line: 7) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'maximal_sampling_attempts'.",
-            "[   ~] Missing the documentation for the argument 'negative_samples'.",
-            "[   ~] Missing the documentation for the argument 'idx'.",
-            "[   ~] Missing the documentation for the argument 'batch_size'.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'.",
-            "[   ~] Missing the documentation for the argument 'avoid_false_negatives'.",
             "[   0] Missing Example"
         ]
     },
@@ -90,65 +67,58 @@
         "are_nodes_remappable": [
             "[   ~] Missing the documentation for the argument 'other'.",
             "[   0] Missing Example"
-        ],
-        "remap": [
-            "[   4] The argument line '* other: &Graph - The graph to remap towards.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* verbose: bool - whether to show a loding bar.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'other'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs": {
-        "is_singleton_by_node_id": [
+        "is_unchecked_singleton_from_node_id": [
             "[   ~] Missing the documentation for the argument 'node_id'.",
             "[   0] Missing Example"
         ],
-        "is_singleton_with_selfloops_by_node_id": [
+        "is_singleton_from_node_id": [
             "[   ~] Missing the documentation for the argument 'node_id'.",
             "[   0] Missing Example"
         ],
-        "is_singleton_by_node_name": [
+        "is_singleton_with_selfloops_from_node_id": [
+            "[   ~] Missing the documentation for the argument 'node_id'.",
+            "[   0] Missing Example"
+        ],
+        "is_singleton_from_node_name": [
             "[   ~] Missing the documentation for the argument 'node_name'.",
             "[   0] Missing Example"
         ],
-        "has_node_by_node_name": [
+        "has_node_from_node_name": [
             "[   6] The example section is missing or in the wrong order."
         ],
-        "has_edge_by_node_ids": [
+        "has_edge_from_node_ids": [
             "[   7] The example section is missing or in the wrong order."
         ],
-        "has_edge_with_type_by_node_ids": [
-            "[   4] The argument line '* src: NodeT - The source node of the edge.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* dst: NodeT - The destination node of the edge.' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* edge_type: Option<EdgeTypeT> - The (optional) edge type.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_type'.",
-            "[   ~] Missing the documentation for the argument 'dst'.",
-            "[   ~] Missing the documentation for the argument 'src'.",
+        "has_edge_from_node_ids_and_edge_type_id": [
             "[   8] The example section is missing or in the wrong order."
         ],
-        "is_trap_node_by_node_id": [
-            "[   4] The argument line '* `node_id` - Integer ID of the node, if this is bigger that the number of nodes it will panic.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'node_id'.",
+        "is_unchecked_trap_node_from_node_id": [
             "[   0] Missing Example"
         ],
-        "has_node_with_type_by_node_name": [
-            "[   4] The argument line '* node_name: String - The node name.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* node_type_name: String - The node type name.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'node_name'.",
+        "is_trap_node_from_node_id": [
+            "[   0] Missing Example"
+        ],
+        "has_node_from_node_name_and_node_type_name": [
+            "[   4] The argument type 'String' of 'node_name' does not match the function delcaration which is '&str'.",
+            "[   5] The argument type 'String' of 'node_type_name' does not match the function delcaration which is 'Option<Vec<String>>'.",
             "[   ~] Missing the documentation for the argument 'node_type_name'.",
+            "[   ~] Missing the documentation for the argument 'node_name'.",
             "[   0] Missing Example"
         ],
-        "has_edge_by_node_names": [
-            "[   4] The argument line '* src: String - The source node name of the edge.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* dst: String - The destination node name of the edge.' (doc_line: 5) is not in the standard format.",
+        "has_edge_from_node_names": [
+            "[   4] The argument 'src' does not exists in the current method. The available args are ['src_name', 'dst_name'].",
+            "[   5] The argument 'dst' does not exists in the current method. The available args are ['src_name', 'dst_name'].",
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
             "[   7] The example section is missing or in the wrong order."
         ],
-        "has_edge_with_type_by_node_names": [
-            "[   4] The argument line '* src: String - The source node name of the edge.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* dst: String - The destination node name of the edge.' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* edge_type: Option<String> - The (optional) edge type name.' (doc_line: 6) is not in the standard format.",
+        "has_edge_from_node_names_and_edge_type_name": [
+            "[   4] The argument 'src' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
+            "[   5] The argument 'dst' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
+            "[   6] The argument 'edge_type' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
             "[   ~] Missing the documentation for the argument 'edge_type_name'.",
@@ -157,18 +127,30 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/modifiers.rs": {
         "enable": [
-            "[   3] The argument line '* `vector_sources`: bool, whether to cache sources into a vector for faster walks.' (doc_line: 3) is not in the standard format.",
-            "[   4] The argument line '* `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'vector_destinations'.",
-            "[   ~] Missing the documentation for the argument 'vector_outbounds'.",
-            "[   ~] Missing the documentation for the argument 'cache_size'.",
-            "[   ~] Missing the documentation for the argument 'vector_sources'.",
             "[   0] Missing Example"
         ],
         "disable_all": [
             "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs": {
+        "iter_unchecked_edge_ids_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "par_iter_unchecked_edge_ids_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "iter_unchecked_edge_ids_from_node_ids": [
+            "[   0] Missing Example"
+        ],
+        "iter_unchecked_neighbour_node_ids_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "iter_unchecked_neighbour_node_names_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "iter_edge_ids_from_node_ids": [
             "[   0] Missing Example"
         ]
     },
@@ -179,179 +161,210 @@
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/queries.rs": {
-        "get_edge_quadruple": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_edge_triple": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_top_k_central_nodes_ids": [
-            "[   4] The argument line '* k: NodeT - Number of central nodes to extract.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'k'.",
-            "[   0] Missing Example"
-        ],
-        "get_top_k_central_node_names": [
-            "[   4] The argument line '* k: NodeT - Number of central nodes to extract.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'k'.",
-            "[   0] Missing Example"
-        ],
-        "get_node_type_id_by_node_id": [
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_edge_type_id_by_edge_id": [
-            "[   4] The argument line '* edge_id: EdgeT - edge whose edge type is to be returned.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_id'.",
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_node_type_name_by_node_id": [
-            "[   ~] Missing the documentation for the argument 'node_id'.",
-            "[   0] Missing Example"
-        ],
-        "get_edge_type_name_by_edge_id": [
-            "[   ~] Missing the documentation for the argument 'edge_id'.",
-            "[   0] Missing Example"
-        ],
-        "get_edge_type_name_by_edge_type_id": [
-            "[   3] The argument line '* edge_type_id: EdgeTypeT - Id of the edge type.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_type_id'.",
-            "[   0] Missing Example"
-        ],
-        "get_weight_by_edge_id": [
-            "[   5] The example section is missing or in the wrong order."
-        ],
-        "get_weight_by_node_ids": [
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_weight_with_type_by_node_ids": [
-            "[   7] The example section is missing or in the wrong order."
-        ],
-        "get_weight_with_type_by_node_names": [
-            "[   7] The example section is missing or in the wrong order."
-        ],
-        "get_weight_by_node_names": [
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_node_name_by_node_id": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_node_id_by_node_name": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_node_type_id_by_node_name": [
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_node_type_name_by_node_name": [
-            "[   6] The example section is missing or in the wrong order."
-        ],
-        "get_edge_count_by_edge_type_id": [
+        "get_unchecked_edge_id_from_node_ids_and_edge_type_id": [
+            "[   ~] Missing the documentation for the argument 'dst'.",
+            "[   ~] Missing the documentation for the argument 'src'.",
             "[   ~] Missing the documentation for the argument 'edge_type'.",
             "[   0] Missing Example"
         ],
-        "get_edge_type_id_by_edge_type_name": [
-            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
+        "get_unchecked_minmax_edge_ids_from_node_ids": [
             "[   0] Missing Example"
         ],
-        "get_edge_count_by_edge_type_name": [
-            "[   ~] Missing the documentation for the argument 'edge_type'.",
-            "[   0] Missing Example"
-        ],
-        "get_node_type_id_by_node_type_name": [
-            "[   ~] Missing the documentation for the argument 'node_type_name'.",
-            "[   0] Missing Example"
-        ],
-        "get_node_count_by_node_type_id": [
-            "[   ~] Missing the documentation for the argument 'node_type'.",
-            "[   0] Missing Example"
-        ],
-        "get_node_count_by_node_type_name": [
-            "[   ~] Missing the documentation for the argument 'node_type_name'.",
-            "[   0] Missing Example"
-        ],
-        "get_destination_node_id_by_edge_id": [
+        "get_unchecked_node_ids_from_edge_id": [
             "[   ~] Missing the documentation for the argument 'edge_id'.",
             "[   0] Missing Example"
         ],
-        "get_neighbour_node_names_by_node_name": [
-            "[   4] The argument 'node_id' does not exists in the current method. The available args are ['node_name'].",
-            "[   ~] Missing the documentation for the argument 'node_name'."
+        "get_node_ids_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
         ],
-        "get_edge_id_with_type_by_node_ids": [
-            "[   ~] Missing the documentation for the argument 'edge_type'.",
+        "get_unchecked_edge_id_from_node_ids": [
             "[   ~] Missing the documentation for the argument 'dst'.",
             "[   ~] Missing the documentation for the argument 'src'.",
             "[   0] Missing Example"
         ],
-        "get_edge_id_by_node_names": [
+        "get_edge_id_from_node_ids": [
+            "[   ~] Missing the documentation for the argument 'dst'.",
+            "[   ~] Missing the documentation for the argument 'src'.",
+            "[   0] Missing Example"
+        ],
+        "get_unchecked_unique_source_node_id": [
+            "[   ~] Missing the documentation for the argument 'source_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_unchecked_node_ids_and_edge_type_id_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_node_ids_and_edge_type_id_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_top_k_central_node_ids": [
+            "[   0] Missing Example"
+        ],
+        "get_unchecked_node_degree_from_node_id": [
+            "[   0] Missing Example"
+        ],
+        "get_node_degree_from_node_id": [
+            "[   0] Missing Example"
+        ],
+        "get_top_k_central_node_names": [
+            "[   0] Missing Example"
+        ],
+        "get_unchecked_node_type_id_from_node_id": [
+            "[  11] The example section is missing or in the wrong order."
+        ],
+        "get_node_type_id_from_node_id": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_unchecked_edge_type_id_from_edge_id": [
+            "[  11] The example section is missing or in the wrong order."
+        ],
+        "get_edge_type_id_from_edge_id": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_node_type_name_from_node_id": [
+            "[   ~] Missing the documentation for the argument 'node_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_edge_type_name_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_edge_type_name_from_edge_type_id": [
+            "[   0] Missing Example"
+        ],
+        "get_edge_weight_from_edge_id": [
+            "[   5] The example section is missing or in the wrong order."
+        ],
+        "get_edge_weight_from_node_ids": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_edge_weight_from_node_ids_and_edge_type_id": [
+            "[   7] The example section is missing or in the wrong order."
+        ],
+        "get_edge_weight_from_node_names_and_edge_type_name": [
+            "[   7] The example section is missing or in the wrong order."
+        ],
+        "get_edge_weight_from_node_names": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_unchecked_node_name_from_node_id": [
+            "[   5] The example section is missing or in the wrong order."
+        ],
+        "get_node_name_from_node_id": [
+            "[   5] The example section is missing or in the wrong order."
+        ],
+        "get_node_id_from_node_name": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "get_node_type_id_from_node_name": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_node_type_name_from_node_name": [
+            "[   6] The example section is missing or in the wrong order."
+        ],
+        "get_edge_count_from_edge_type_id": [
+            "[   ~] Missing the documentation for the argument 'edge_type'.",
+            "[   0] Missing Example"
+        ],
+        "get_edge_type_id_from_edge_type_name": [
+            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
+            "[   0] Missing Example"
+        ],
+        "get_edge_count_from_edge_type_name": [
+            "[   ~] Missing the documentation for the argument 'edge_type'.",
+            "[   0] Missing Example"
+        ],
+        "get_node_type_id_from_node_type_name": [
+            "[   ~] Missing the documentation for the argument 'node_type_name'.",
+            "[   0] Missing Example"
+        ],
+        "get_node_count_from_node_type_id": [
+            "[   ~] Missing the documentation for the argument 'node_type'.",
+            "[   0] Missing Example"
+        ],
+        "get_node_count_from_node_type_name": [
+            "[   ~] Missing the documentation for the argument 'node_type_name'.",
+            "[   0] Missing Example"
+        ],
+        "get_destination_node_id_from_edge_id": [
+            "[   ~] Missing the documentation for the argument 'edge_id'.",
+            "[   0] Missing Example"
+        ],
+        "get_neighbour_node_names_from_node_name": [
+            "[   4] The argument 'node_id' does not exists in the current method. The available args are ['node_name'].",
+            "[   ~] Missing the documentation for the argument 'node_name'."
+        ],
+        "get_minmax_edge_ids_from_node_ids": [
+            "[   0] Missing Example"
+        ],
+        "get_edge_id_from_node_ids_and_edge_type_id": [
+            "[   ~] Missing the documentation for the argument 'dst'.",
+            "[   ~] Missing the documentation for the argument 'src'.",
+            "[   ~] Missing the documentation for the argument 'edge_type'.",
+            "[   0] Missing Example"
+        ],
+        "get_edge_id_from_node_names": [
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
             "[   0] Missing Example"
         ],
-        "get_edge_id_with_type_by_node_names": [
+        "get_edge_id_from_node_names_and_edge_type_name": [
             "[   ~] Missing the documentation for the argument 'src_name'.",
             "[   ~] Missing the documentation for the argument 'dst_name'.",
             "[   ~] Missing the documentation for the argument 'edge_type_name'.",
             "[   0] Missing Example"
         ],
-        "get_edge_type_ids_by_edge_type_names": [
+        "get_edge_type_ids_from_edge_type_names": [
             "[   4] The argument type 'Vec<String>' of 'edge_types' does not match the function delcaration which is 'Vec<Option<String>>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
             "[   0] Missing Example"
         ],
-        "get_node_type_ids_by_node_type_names": [
+        "get_node_type_ids_from_node_type_names": [
             "[   4] The argument type 'Vec<String>' of 'node_types' does not match the function delcaration which is 'Vec<Option<String>>'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
             "[   0] Missing Example"
         ],
-        "get_node_type_name_by_node_type_id": [
-            "[   6] The argument line '* node_type_id: Vec<NodeTypeT> - Id of the node type.' (doc_line: 6) is not in the standard format.",
+        "get_unchecked_minmax_edge_ids_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "get_minmax_edge_ids_from_source_node_id": [
+            "[   0] Missing Example"
+        ],
+        "get_node_type_name_from_node_type_id": [
+            "[   6] The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function delcaration which is 'NodeTypeT'.",
             "[   ~] Missing the documentation for the argument 'node_type_id'.",
             "[   0] Missing Example"
         ],
-        "get_node_type_names_by_node_type_ids": [
-            "[   3] The argument line '* node_type_ids: Vec<NodeTypeT> - Id of the node type.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'node_type_ids'.",
-            "[   0] Missing Example"
-        ],
-        "get_node_degree_by_node_id": [
-            "[   6] The argument line '* `node_id` - Integer ID of the node.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'node_id'.",
+        "get_node_type_names_from_node_type_ids": [
             "[   0] Missing Example"
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/filters.rs": {
         "filter": [
-            "[   4] The argument line '* node_names: Option<Vec<String>> - The node names to keep.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* node_types: Option<Vec<String>> - The node types to keep.' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* edge_types: Option<Vec<String>> - The edge types to keep.' (doc_line: 6) is not in the standard format.",
-            "[   7] The argument line '* min_weight: Option<WeightT> - Minimum weight to use to filter edges.' (doc_line: 7) is not in the standard format.",
-            "[   8] The argument line '* max_weight: Option<WeightT> - Maximum weight to use to filter edges.' (doc_line: 8) is not in the standard format.",
-            "[   9] The argument line '* verbose: bool - whether to show the loading bar.' (doc_line: 9) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'max_weight'.",
-            "[   ~] Missing the documentation for the argument 'node_names'.",
+            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'min_weight'.",
             "[   0] Missing Example"
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs": {
         "degrees_product": [
-            "[   4] The argument line '* `one` - Integer ID of the first node.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* `two` - Integer ID of the second node.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'two'.",
-            "[   ~] Missing the documentation for the argument 'one'.",
             "[   8] The example section is missing or in the wrong order."
         ],
         "jaccard_index": [
-            "[   4] The argument line '* `one` - Integer ID of the first node.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* `two` - Integer ID of the second node.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'two'.",
-            "[   ~] Missing the documentation for the argument 'one'.",
             "[   7] The example section is missing or in the wrong order."
         ],
         "adamic_adar_index": [
@@ -361,8 +374,141 @@
         "resource_allocation_index": [
             "[   2] The arguments section is missing or in the wrong order.",
             "[   2] The example section is missing or in the wrong order."
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/remove.rs": {
+        "remove": [
+            "[   2] The arguments section is missing or in the wrong order.",
+            "[   2] The example section is missing or in the wrong order."
         ],
-        "traps_rate": [
+        "remove_components": [
+            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[   ~] Missing the documentation for the argument 'edge_types'.",
+            "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/setters.rs": {
+        "set_name": [
+            "[   0] Missing Example"
+        ],
+        "set_all_edge_types": [
+            "[   ~] Missing the documentation for the argument 'edge_type'.",
+            "[   0] Missing Example"
+        ],
+        "set_all_node_types": [
+            "[   ~] Missing the documentation for the argument 'node_type'.",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/walks.rs": {
+        "random_walks_iter": [
+            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'.",
+            "[   ~] Missing the documentation for the argument 'parameters'.",
+            "[   ~] Missing the documentation for the argument 'quantity'.",
+            "[   0] Missing Example"
+        ],
+        "complete_walks_iter": [
+            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'.",
+            "[   ~] Missing the documentation for the argument 'parameters'.",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/compression.rs": {
+        "encode_edge": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "decode_edge": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "get_max_encodable_edge_number": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {
+        "get_bipartite_edges": [
+            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   0] Missing Example"
+        ],
+        "get_bipartite_edge_names": [
+            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   0] Missing Example"
+        ],
+        "get_star_edges": [
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'central_node'.",
+            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
+            "[   0] Missing Example"
+        ],
+        "get_star_edge_names": [
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'central_node'.",
+            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
+            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
+            "[   0] Missing Example"
+        ],
+        "get_clique_edges": [
+            "[   ~] Missing the documentation for the argument 'allow_node_set'.",
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
+            "[   0] Missing Example"
+        ],
+        "get_clique_edge_names": [
+            "[   ~] Missing the documentation for the argument 'allow_node_set'.",
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
+            "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/report.rs": {
+        "report": [
+            "[  18] The example section is missing or in the wrong order."
+        ],
+        "overlap_textual_report": [
+            "[   ~] Missing the documentation for the argument 'other'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   0] Missing Example"
+        ],
+        "textual_report": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/getters.rs": {
+        "get_connected_components_number": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "get_singleton_nodes_number": [
+            "[   2] The example section is missing or in the wrong order."
+        ],
+        "get_singleton_nodes_with_selfloops_number": [
+            "[   2] The example section is missing or in the wrong order."
+        ],
+        "get_not_singleton_nodes_number": [
+            "[   2] The example section is missing or in the wrong order."
+        ],
+        "get_density": [
+            "[   2] The example section is missing or in the wrong order."
+        ],
+        "get_trap_nodes_rate": [
             "[   5] The example section is missing or in the wrong order."
         ],
         "get_node_degrees_mean": [
@@ -392,172 +538,25 @@
         "get_node_degrees_mode": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_selfloop_number": [
+        "get_selfloop_nodes_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
         "get_unique_selfloop_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_selfloop_rate": [
+        "get_selfloop_nodes_rate": [
             "[   2] The example section is missing or in the wrong order."
-        ],
-        "connected_components_number": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_singleton_nodes_number": [
-            "[   2] The example section is missing or in the wrong order."
-        ],
-        "get_singleton_nodes_with_selfloops_number": [
-            "[   2] The example section is missing or in the wrong order."
-        ],
-        "get_not_singleton_nodes_number": [
-            "[   2] The example section is missing or in the wrong order."
-        ],
-        "get_density": [
-            "[   2] The example section is missing or in the wrong order."
-        ],
-        "report": [
-            "[  18] The example section is missing or in the wrong order."
-        ],
-        "overlap_textual_report": [
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'other'.",
-            "[   0] Missing Example"
-        ],
-        "textual_report": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/remove.rs": {
-        "remove": [
-            "[   2] The arguments section is missing or in the wrong order.",
-            "[   2] The example section is missing or in the wrong order."
-        ],
-        "remove_components": [
-            "[   4] The argument line '* `node_names` : Option<Vec<String>> - The name of the nodes of which components to keep.' (doc_line: 4) is not in the standard format.",
-            "[   5] The argument line '* `node_types` : Option<Vec<String>> - The types of the nodes of which components to keep.' (doc_line: 5) is not in the standard format.",
-            "[   6] The argument line '* `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep.' (doc_line: 6) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_types'.",
-            "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'node_names'.",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/setters.rs": {
-        "set_name": [
-            "[   4] The argument line '* name: String - Name of the graph.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   0] Missing Example"
-        ],
-        "set_all_edge_types": [
-            "[   ~] Missing the documentation for the argument 'edge_type'.",
-            "[   0] Missing Example"
-        ],
-        "set_all_node_types": [
-            "[   ~] Missing the documentation for the argument 'node_type'.",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/walks.rs": {
-        "random_walks_iter": [
-            "[   4] The argument line '* parameters: WalksParameters - the weighted walks parameters.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'parameters'.",
-            "[   ~] Missing the documentation for the argument 'quantity'.",
-            "[   0] Missing Example"
-        ],
-        "complete_walks_iter": [
-            "[   4] The argument line '* parameters: WalksParameters - the weighted walks parameters.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'parameters'.",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/compression.rs": {
-        "encode_edge": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "decode_edge": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_edge_id_by_node_ids": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {
-        "get_bipartite_edges": [
-            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
-            "[   0] Missing Example"
-        ],
-        "get_bipartite_edge_names": [
-            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
-            "[   0] Missing Example"
-        ],
-        "get_star_edges": [
-            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'central_node'.",
-            "[   0] Missing Example"
-        ],
-        "get_star_edge_names": [
-            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'central_node'.",
-            "[   0] Missing Example"
-        ],
-        "get_clique_edges": [
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'allow_node_set'.",
-            "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
-            "[   0] Missing Example"
-        ],
-        "get_clique_edge_names": [
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'removed_existing_edges'.",
-            "[   ~] Missing the documentation for the argument 'allow_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'allow_node_set'.",
-            "[   ~] Missing the documentation for the argument 'allow_node_type_set'.",
-            "[   0] Missing Example"
-        ]
-    },
-    "/Workspace/Github/ensmallen_graph/graph/src/getters.rs": {
-        "has_singletons_with_selfloops": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
         ],
         "get_sources": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "get_source_names": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "get_destinations": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "get_destination_names": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "get_node_names": [
@@ -576,31 +575,7 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_node_types": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_weights": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_min_weight": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_max_weight": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_node_type_names": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
         "get_unique_directed_edges_number": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "get_max_encodable_edge_number": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -612,15 +587,7 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_edge_names": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "has_node_types": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "has_multilabel_node_types": [
+        "get_edge_node_names": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -632,10 +599,6 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "has_unknown_node_types": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
         "get_unknown_edge_types_number": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
@@ -644,15 +607,11 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "has_unknown_edge_types": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
         "get_nodes_number": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_node_components_vector": [
+        "get_node_connected_component_ids": [
             "[   0] Missing Example"
         ],
         "get_directed_edges_number": [
@@ -671,15 +630,11 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_not_singletons": [
+        "get_not_singletons_node_ids": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_dense_node_mapping": [
-            "[   0] Missing Arguments",
-            "[   0] Missing Example"
-        ],
-        "is_multigraph": [
+        "get_dense_nodes_mapping": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -687,20 +642,20 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "get_outbounds": [
+        "get_cumulative_node_degrees": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
         "get_unique_source_nodes_number": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_edge_type_counts": [
+        "get_edge_type_counter": [
             "[   2] The example section is missing or in the wrong order."
         ],
         "get_edge_type_counts_hashmap": [
             "[   2] The example section is missing or in the wrong order."
         ],
-        "get_node_type_counts": [
+        "get_node_type_counter": [
             "[   2] The example section is missing or in the wrong order."
         ],
         "get_node_type_counts_hashmap": [
@@ -708,11 +663,23 @@
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/iters.rs": {
+        "iter_node_ids": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "par_iter_node_ids": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
         "iter_node_degrees": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
         "par_iter_node_degrees": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "iter_non_singleton_node_ids": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -724,27 +691,26 @@
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
-        "iter_sources_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_source_node_ids": [
             "[   0] Missing Example"
         ],
-        "par_iter_sources_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_edge_weights": [
+            "[   9] In the example there isn't the current method!!!!"
+        ],
+        "par_iter_source_node_ids": [
             "[   0] Missing Example"
         ],
-        "iter_destinations_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_destination_node_ids": [
             "[   0] Missing Example"
         ],
-        "par_iter_destinations_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_destination_node_ids": [
             "[   0] Missing Example"
         ],
-        "iter_node_ids": [
+        "iter_node_ids_and_node_type_ids": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "par_iter_node_ids_and_node_type_ids": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ],
@@ -753,71 +719,71 @@
             "[   0] Missing Example"
         ],
         "iter_edge_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "iter_edges": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "par_iter_edge_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
         "par_iter_edges": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
             "[   0] Missing Example"
         ],
-        "iter_edges_with_type_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_edge_node_ids_and_edge_type_id": [
             "[   0] Missing Example"
         ],
-        "iter_edges_with_type": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_edge_node_names_and_edge_type_name": [
             "[   0] Missing Example"
         ],
-        "par_iter_edge_with_type": [
-            "[   4] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_edge_node_names_and_edge_type_name": [
             "[   0] Missing Example"
         ],
-        "par_iter_edge_with_type_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_edge_node_ids_and_edge_type_id": [
             "[   0] Missing Example"
         ],
-        "par_iter_edge_with_type_and_weight": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_edge_node_names_and_edge_type_name_and_edge_weight": [
             "[   0] Missing Example"
         ],
-        "iter_edge_with_type_and_weight": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_edge_node_names_and_edge_type_name_and_edge_weight": [
             "[   0] Missing Example"
         ],
-        "par_iter_edge_with_type_and_weight_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "par_iter_edge_node_ids_and_edge_type_id_and_edge_weight": [
             "[   0] Missing Example"
         ],
-        "iter_edge_with_type_and_weight_ids": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_edge_node_ids_and_edge_type_id_and_edge_weight": [
             "[   0] Missing Example"
         ],
-        "iter_unique_edges": [
-            "[   3] The argument line '* `directed`: bool, whether to filter out the undirected edges.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
+        "iter_unique_edge_node_ids": [
             "[   0] Missing Example"
         ],
-        "iter_unique_sources": [
+        "iter_unique_source_node_ids": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ]
+    },
+    "/Workspace/Github/ensmallen_graph/graph/src/getters_boolean.rs": {
+        "has_singletons_with_selfloops": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "has_node_types": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "has_multilabel_node_types": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "has_unknown_node_types": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "has_unknown_edge_types": [
+            "[   0] Missing Arguments",
+            "[   0] Missing Example"
+        ],
+        "is_multigraph": [
             "[   0] Missing Arguments",
             "[   0] Missing Example"
         ]
@@ -839,44 +805,43 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/constructors.rs": {
         "from_string_unsorted": [
-            "[   6] The argument line '* edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 6) is not in the standard format.",
+            "[   6] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 6) is not in the standard format.",
+            "[   7] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format.",
+            "[  11] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes_iterator', 'directed', 'directed_edge_list', 'name', 'ignore_duplicated_nodes', 'node_list_is_correct', 'ignore_duplicated_edges', 'edge_list_is_correct', 'verbose', 'numeric_edge_type_ids', 'numeric_node_ids', 'numeric_edge_node_ids', 'numeric_node_types_ids', 'has_node_types', 'has_edge_types', 'has_edge_weights', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
+            "[   ~] Missing the documentation for the argument 'has_node_types'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
             "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
             "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
-            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
-            "[   ~] Missing the documentation for the argument 'has_node_types'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_nodes'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
             "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
+            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
+            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
             "[   0] Missing Example"
         ],
         "from_integer_unsorted": [
-            "[   4] The argument line '* edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 4) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
-            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'directed'.",
-            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   4] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>>,' (doc_line: 4) is not in the standard format.",
             "[   ~] Missing the documentation for the argument 'nodes'.",
+            "[   ~] Missing the documentation for the argument 'directed'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'ignore_duplicated_edges'.",
+            "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
             "[   0] Missing Example"
         ],
         "from_string_sorted": [

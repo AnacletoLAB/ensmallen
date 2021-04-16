@@ -14,7 +14,7 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// # Arguments
 ///
 /// * main: &Graph - The current graph instance.
-/// * other: &Graph - The other graph.
+/// * `other`: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 /// * might_have_singletons: bool - Whether we expect the graph to have singletons.
@@ -120,7 +120,7 @@ fn generic_string_operator(
 /// # Arguments
 ///
 /// * main: &Graph - The current graph instance.
-/// * other: &Graph - The other graph.
+/// * `other`: &Graph - The other graph.
 /// * operator: String - The operator used.
 /// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 /// * might_have_singletons: bool - Whether we expect the graph to have singletons.
@@ -286,7 +286,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be summed.
+    /// * `other`: Graph - Graph to be summed.
     ///
     fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -311,7 +311,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be summed.
+    /// * `other`: Graph - Graph to be summed.
     ///
     fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -334,7 +334,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be subtracted.
+    /// * `other`: Graph - Graph to be subtracted.
     ///
     fn sub(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
@@ -356,7 +356,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     ///
     /// # Arguments
     ///
-    /// * other: Graph - Graph to be subtracted.
+    /// * `other`: Graph - Graph to be subtracted.
     ///
     fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(

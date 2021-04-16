@@ -9,8 +9,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -36,8 +36,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # References
     /// [D. Liben-Nowell, J. Kleinberg.
@@ -80,8 +80,8 @@ impl Graph {
     ///
     /// # Arguments:
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
@@ -120,8 +120,8 @@ impl Graph {
     ///
     /// # Arguments:
     ///
-    /// * `one` - Integer ID of the first node.
-    /// * `two` - Integer ID of the second node.
+    /// * `one`: NodeT - Integer ID of the first node.
+    /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// # References
     /// [T. Zhou, L. Lu, Y.-C. Zhang.

@@ -622,7 +622,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     pub fn random_walks_iter<'a>(
         &'a self,
@@ -657,7 +657,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     pub fn complete_walks_iter<'a>(
         &'a self,
@@ -688,7 +688,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * parameters: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
     fn walk_iter<'a>(
         &'a self,
@@ -740,7 +740,7 @@ impl Graph {
     ///
     /// * node: NodeT - Node from where to start the random walks.
     /// * random_state: usize, the random_state to use for extracting the nodes and edges.
-    /// * parameters: SingleWalkParameters - Parameters for the single walk.
+    /// * `parameters`: SingleWalkParameters - Parameters for the single walk.
     ///
     fn single_walk(
         &self,
