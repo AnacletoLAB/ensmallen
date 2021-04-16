@@ -4170,7 +4170,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(graph.get_node_type_counter().is_ok(), graph.has_node_types());\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(graph.get_edge_type_counter().is_ok(), graph.has_edge_types());\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
+        "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(graph.get_node_type_counter().is_ok(), graph.has_node_types());\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(graph.get_edge_type_counter().is_ok(), graph.has_edge_types());\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -4206,7 +4206,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "for include_all_edge_types in &[false, true] {\n        let (train, test) =\n            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;\n        default_holdout_test_suite(graph, &train, &test)?;\n        let (train, test) =\n            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;\n        let (total, min_comp, max_comp) = graph.connected_components_number(verbose);\n        assert_eq!(\n            graph.connected_components_number(verbose),\n            train.connected_components_number(verbose),\n            \"The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.\",\n            nodes_number=graph.get_nodes_number().to_string()\n        );\n        if total == 1 {\n            assert_eq!(\n                min_comp,\n                graph.get_nodes_number(),\n                concat!(\n                    \"We expect for the minimum size of connected components \",\n                    \"in a graph with a single connected component to \",\n                    \"match the number of nodes of the graph, but we got \",\n                    \"the minimum component with size {} and the number \",\n                    \"of nodes in the graph equal to {}.\\n\",\n                    \"The graph report is: \\n {:?}\",\n                ),\n                min_comp,\n                graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp, graph.get_nodes_number());\n            assert_eq!(min_comp, test.get_nodes_number());\n            assert_eq!(max_comp, test.get_nodes_number());\n        }\n        if total == 2 {\n            assert_eq!(\n                max_comp + min_comp, graph.get_nodes_number(),\n                \"We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\\nThe graph report is:\\n {:?}\",\n                min_comp, max_comp, graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp + min_comp, test.get_nodes_number());\n        }\n        default_holdout_test_suite(graph, &train, &test)?;\n    }\n    Ok(())"
+        "body": "for include_all_edge_types in &[false, true] {\n        let (train, test) =\n            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;\n        default_holdout_test_suite(graph, &train, &test)?;\n        let (train, test) =\n            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;\n        let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);\n        assert_eq!(\n            graph.get_connected_components_number(verbose),\n            train.get_connected_components_number(verbose),\n            \"The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.\",\n            nodes_number=graph.get_nodes_number().to_string()\n        );\n        if total == 1 {\n            assert_eq!(\n                min_comp,\n                graph.get_nodes_number(),\n                concat!(\n                    \"We expect for the minimum size of connected components \",\n                    \"in a graph with a single connected component to \",\n                    \"match the number of nodes of the graph, but we got \",\n                    \"the minimum component with size {} and the number \",\n                    \"of nodes in the graph equal to {}.\\n\",\n                    \"The graph report is: \\n {:?}\",\n                ),\n                min_comp,\n                graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp, graph.get_nodes_number());\n            assert_eq!(min_comp, test.get_nodes_number());\n            assert_eq!(max_comp, test.get_nodes_number());\n        }\n        if total == 2 {\n            assert_eq!(\n                max_comp + min_comp, graph.get_nodes_number(),\n                \"We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\\nThe graph report is:\\n {:?}\",\n                min_comp, max_comp, graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp + min_comp, test.get_nodes_number());\n        }\n        default_holdout_test_suite(graph, &train, &test)?;\n    }\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -4224,7 +4224,7 @@
             ]
         ],
         "return_type": "Result<(), String>",
-        "body": "if graph.connected_components_number(verbose).0 > 1 {\n        let without_selfloops = graph.remove(\n            None, None, None, None, None, None, None, None, false, false, false, false, true,\n            verbose,\n        )?;\n\n        assert_eq!(\n            graph.connected_components_number(verbose),\n            without_selfloops.connected_components_number(verbose),\n            concat!(\n                \"We expected the graph to have the same components once we remove the selfloops.\\n\",\n                \"The report of the original graph is {:?}\\n\",\n                \"The report of the filtered graph is {:?}\\n\",\n            ),\n            graph.textual_report(false),\n            without_selfloops.textual_report(false),\n        );\n\n        let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);\n        assert!(\n            single_component.is_ok(),\n            concat!(\n                \"Removing all the components except the first one returned an error.\\n\",\n                \"The error is:\\n{:?}\\nand the graph report is:\\n{:?}\"\n            ),\n            single_component,\n            graph.textual_report(false)\n        );\n        let single_component_number = single_component\n            .unwrap()\n            .connected_components_number(verbose)\n            .0;\n        assert_eq!(\n            single_component_number,\n            1,\n            concat!(\n                \"Removing all the components except the first one returned a graph \",\n                \"with {} components, which is not one.\\nThe report of the graph is:{:?}\\n\"\n            ),\n            single_component_number,\n            graph.textual_report(false)\n        );\n\n        let test = graph.remove_components(\n            Some(vec![graph.nodes.unchecked_translate(0)]),\n            None,\n            None,\n            None,\n            None,\n            verbose,\n        )?;\n        let no_selfloops = test.remove(\n            None, None, None, None, None, None, None, None, false, false, false, false, true,\n            verbose,\n        )?;\n        assert_eq!(\n            no_selfloops.connected_components_number(verbose).0,\n            1,\n            concat!(\n                \"Expected number of components (1) is not matched!\\n\",\n                \"The report of the original graph is {:?}\\n\",\n                \"The report of the graph with only one component is {:?}\\n\",\n                \"The report of the graph without selfloops is {:?}\\n\",\n            ),\n            graph.textual_report(false),\n            test.textual_report(false),\n            no_selfloops.textual_report(false)\n        );\n        if let Ok(node_type_name) = graph.get_node_type_name_from_node_type_id(0) {\n            assert!(graph\n                .remove_components(\n                    None,\n                    Some(vec![Some(node_type_name)]),\n                    None,\n                    None,\n                    None,\n                    verbose\n                )\n                .is_ok());\n        }\n        if graph.has_unknown_node_types() {\n            let without_unknowns =\n                graph.remove_components(None, Some(vec![None]), None, None, None, verbose);\n            assert!(\n                without_unknowns.is_ok(),\n                \"Could not remove components without node type None.\\nThe error is {:?}\\nThe graph report is {:?}\",\n                without_unknowns, graph.textual_report(false)\n            );\n        }\n        if let Ok(edge_type_name) = graph.get_edge_type_name_from_edge_type_id(0) {\n            assert!(graph\n                .remove_components(\n                    None,\n                    None,\n                    Some(vec![Some(edge_type_name)]),\n                    None,\n                    None,\n                    verbose\n                )\n                .is_ok());\n        }\n        if graph.has_unknown_edge_types() {\n            assert!(graph\n                .remove_components(None, None, Some(vec![None]), None, None, verbose)\n                .is_ok());\n        }\n    } else {\n        assert!(\n            graph\n                .remove_components(None, None, None, None, None, verbose)\n                .is_ok(),\n            \"We expect it to be possible, now, to create empty graphs.\"\n        );\n    }\n\n    Ok(())"
+        "body": "if graph.get_connected_components_number(verbose).0 > 1 {\n        let without_selfloops = graph.remove(\n            None, None, None, None, None, None, None, None, false, false, false, false, true,\n            verbose,\n        )?;\n\n        assert_eq!(\n            graph.get_connected_components_number(verbose),\n            without_selfloops.get_connected_components_number(verbose),\n            concat!(\n                \"We expected the graph to have the same components once we remove the selfloops.\\n\",\n                \"The report of the original graph is {:?}\\n\",\n                \"The report of the filtered graph is {:?}\\n\",\n            ),\n            graph.textual_report(false),\n            without_selfloops.textual_report(false),\n        );\n\n        let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);\n        assert!(\n            single_component.is_ok(),\n            concat!(\n                \"Removing all the components except the first one returned an error.\\n\",\n                \"The error is:\\n{:?}\\nand the graph report is:\\n{:?}\"\n            ),\n            single_component,\n            graph.textual_report(false)\n        );\n        let single_component_number = single_component\n            .unwrap()\n            .get_connected_components_number(verbose)\n            .0;\n        assert_eq!(\n            single_component_number,\n            1,\n            concat!(\n                \"Removing all the components except the first one returned a graph \",\n                \"with {} components, which is not one.\\nThe report of the graph is:{:?}\\n\"\n            ),\n            single_component_number,\n            graph.textual_report(false)\n        );\n\n        let test = graph.remove_components(\n            Some(vec![graph.nodes.unchecked_translate(0)]),\n            None,\n            None,\n            None,\n            None,\n            verbose,\n        )?;\n        let no_selfloops = test.remove(\n            None, None, None, None, None, None, None, None, false, false, false, false, true,\n            verbose,\n        )?;\n        assert_eq!(\n            no_selfloops.get_connected_components_number(verbose).0,\n            1,\n            concat!(\n                \"Expected number of components (1) is not matched!\\n\",\n                \"The report of the original graph is {:?}\\n\",\n                \"The report of the graph with only one component is {:?}\\n\",\n                \"The report of the graph without selfloops is {:?}\\n\",\n            ),\n            graph.textual_report(false),\n            test.textual_report(false),\n            no_selfloops.textual_report(false)\n        );\n        if let Ok(node_type_name) = graph.get_node_type_name_from_node_type_id(0) {\n            assert!(graph\n                .remove_components(\n                    None,\n                    Some(vec![Some(node_type_name)]),\n                    None,\n                    None,\n                    None,\n                    verbose\n                )\n                .is_ok());\n        }\n        if graph.has_unknown_node_types() {\n            let without_unknowns =\n                graph.remove_components(None, Some(vec![None]), None, None, None, verbose);\n            assert!(\n                without_unknowns.is_ok(),\n                \"Could not remove components without node type None.\\nThe error is {:?}\\nThe graph report is {:?}\",\n                without_unknowns, graph.textual_report(false)\n            );\n        }\n        if let Ok(edge_type_name) = graph.get_edge_type_name_from_edge_type_id(0) {\n            assert!(graph\n                .remove_components(\n                    None,\n                    None,\n                    Some(vec![Some(edge_type_name)]),\n                    None,\n                    None,\n                    verbose\n                )\n                .is_ok());\n        }\n        if graph.has_unknown_edge_types() {\n            assert!(graph\n                .remove_components(None, None, Some(vec![None]), None, None, verbose)\n                .is_ok());\n        }\n    } else {\n        assert!(\n            graph\n                .remove_components(None, None, None, None, None, verbose)\n                .is_ok(),\n            \"We expect it to be possible, now, to create empty graphs.\"\n        );\n    }\n\n    Ok(())"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs",
@@ -7819,699 +7819,6 @@
         "body": "if self.is_trap_node_from_node_id(one)? || self.is_trap_node_from_node_id(two)? {\n            return Ok(0.0f64);\n        }\n\n        let one_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(one).collect();\n        let two_neighbors: HashSet<NodeT> = self.iter_neighbour_node_ids_from_source_node_id(two).collect();\n        let intersections: HashSet<NodeT> = one_neighbors\n            .intersection(&two_neighbors)\n            .cloned()\n            .collect();\n\n        Ok(intersections\n            .par_iter()\n            .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())\n            .map(|node| 1.0 / self.get_unchecked_node_degree_from_node_id(*node) as f64)\n            .sum())"
     },
     {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns the traps rate of the graph.",
-            "",
-            "THIS IS EXPERIMENTAL AND MUST BE PROVEN!",
-            "",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The Graph rate is {}\", graph.get_traps_rate());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "traps_rate",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "f64",
-        "body": "self.par_iter_node_ids()\n            .map(|node| {\n                if !self.is_trap_node_from_node_id(node).unwrap() {\n                    self.iter_neighbour_node_ids_from_source_node_id(node)\n                        .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_node_degree_from_node_id(node) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns mean node degree of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_node_degrees_mean",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<f64, String>",
-        "body": "if !self.has_nodes() {\n            return Err(\n                \"The mean of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of undirected edges of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of undirected edges of the graph is  {}\", graph.get_undirected_edges_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_undirected_edges_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "EdgeT",
-        "body": "(self.get_directed_edges_number() - self.get_selfloop_number()) / 2\n            + self.get_selfloop_number()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of undirected edges of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of unique undirected edges of the graph is  {}\", graph.get_unique_undirected_edges_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_unique_undirected_edges_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "EdgeT",
-        "body": "(self.unique_edges_number - self.get_unique_selfloop_number() as EdgeT) / 2\n            + self.get_unique_selfloop_number() as EdgeT"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of edges of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of edges of the graph is  {}\", graph.get_edges_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_edges_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "EdgeT",
-        "body": "match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        }"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of unique edges of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of edges of the graph is  {}\", graph.get_unique_edges_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_unique_edges_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "EdgeT",
-        "body": "match self.directed {\n            true => self.get_unique_directed_edges_number(),\n            false => self.get_unique_undirected_edges_number(),\n        }"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns median node degree of the graph",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_node_degrees_median",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<NodeT, String>",
-        "body": "if !self.has_nodes() {\n            return Err(\n                \"The median of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let mut degrees = self.get_node_degrees();\n        degrees.par_sort_unstable();\n        Ok(degrees[(self.get_nodes_number() / 2) as usize])"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns maximum node degree of the graph",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_max_node_degree",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<NodeT, String>",
-        "body": "self.get_node_degrees().into_iter().max().ok_or_else(|| {\n            \"The maximum node degree of a graph with no nodes is not defined.\".to_string()\n        })"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns minimum node degree of the graph",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The minimum node degree of the graph is  {}\", graph.get_min_node_degree().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_min_node_degree",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<NodeT, String>",
-        "body": "self.get_node_degrees().into_iter().min().ok_or_else(|| {\n            \"The minimum node degree of a graph with no nodes is not defined.\".to_string()\n        })"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns mode node degree of the graph",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_node_degrees_mode",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<NodeT, String>",
-        "body": "if !self.has_nodes() {\n            return Err(\n                \"The mode of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());\n        Ok(*counter\n            .iter()\n            .max_by_key(|&(_, count)| count)\n            .map(|(degree, _)| degree)\n            .unwrap())"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of self-loops, including also those in eventual multi-edges.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_selfloop_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "EdgeT",
-        "body": "self.selfloop_number"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of unique self-loops, excluding those in eventual multi-edges.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The number of unique self-loops in the graph is  {}\", graph.get_unique_selfloop_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_unique_selfloop_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "self.unique_selfloop_number"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns rate of self-loops.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The rate of self-loops in the graph is  {}\", graph.get_selfloop_rate().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_selfloop_rate",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<f64, String>",
-        "body": "if !self.has_edges() {\n            return Err(\"The self-loops rate is not defined for graphs without edges.\".to_string());\n        }\n        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )"
-        ],
-        "modifiers": "pub",
-        "name": "connected_components_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "verbose",
-                "bool"
-            ]
-        ],
-        "return_type": "(NodeT, NodeT, NodeT)",
-        "body": "info!(\"Computing connected components number.\");\n        if self.directed {\n            let (_, _, components_number, min_component_size, max_component_size) =\n                self.spanning_arborescence_kruskal(verbose);\n            (components_number, min_component_size, max_component_size)\n        } else {\n            info!(\"Executing undirected parallel version of connected components.\");\n            let (_, components_number, min_component_size, max_component_size) =\n                self.connected_components(verbose).unwrap();\n            (components_number, min_component_size, max_component_size)\n        }"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of singleton nodes within the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The graph contains {} singleton nodes\", graph.get_singleton_nodes_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_singleton_nodes_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "self.get_nodes_number() - self.get_not_singleton_nodes_number()"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of singleton nodes with self-loops within the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_selfloops_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_singleton_nodes_with_selfloops_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "self.singleton_nodes_with_selfloops_number"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns number of not singleton nodes within the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The graph contains {} not singleton nodes\", graph.get_not_singleton_nodes_number());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_not_singleton_nodes_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "self.not_singleton_nodes_number"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns density of the graph.",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "println!(\"The graph density is {}\", graph.get_density().unwrap());",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "get_density",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "Result<f64, String>",
-        "body": "if !self.has_nodes() {\n            return Err(\"The density of an empty graph is undefined.\".to_string());\n        }\n        if !self.has_edges() {\n            return Ok(0.0);\n        }\n        let nodes_number = self.get_nodes_number() as EdgeT;\n        let total_nodes_number = nodes_number\n            * match self.has_selfloops() {\n                true => nodes_number,\n                false => nodes_number - 1,\n            };\n        Ok(self.unique_edges_number as f64 / total_nodes_number as f64)"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Returns report relative to the graph metrics",
-            "",
-            "The report includes a few useful metrics like:",
-            "",
-            "* degrees_median: the median degree of the nodes.",
-            "* degrees_mean: the mean degree of the nodes.",
-            "* degrees_mode: the mode degree of the nodes.",
-            "* min_degree: the max degree of the nodes.",
-            "* max_degree: the min degree of the nodes.",
-            "* nodes_number: the number of nodes in the graph.",
-            "* edges_number: the number of edges in the graph.",
-            "* unique_node_types_number: the number of different node types in the graph.",
-            "* unique_edge_types_number: the number of different edge types in the graph.",
-            "* traps_rate: probability to end up in a trap when starting into any given node.",
-            "* selfloops_rate: pecentage of edges that are selfloops.",
-            "* bidirectional_rate: rate of edges that are bidirectional.",
-            "",
-            "```rust",
-            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "graph.report();",
-            "```"
-        ],
-        "modifiers": "pub",
-        "name": "report",
-        "args": [
-            [
-                "self",
-                "&self"
-            ]
-        ],
-        "return_type": "DefaultHashMap<&str, String>",
-        "body": "let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();\n\n        if self.has_nodes() {\n            report.insert(\"density\", self.get_density().unwrap().to_string());\n            report.insert(\n                \"min_degree\",\n                self.get_min_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"max_degree\",\n                self.get_max_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"degree_mean\",\n                self.get_node_degrees_mean().unwrap().to_string(),\n            );\n        }\n\n        if self.has_edges() {\n            report.insert(\n                \"selfloops_rate\",\n                self.get_selfloop_rate().unwrap().to_string(),\n            );\n        }\n\n        report.insert(\"name\", self.name.clone());\n        report.insert(\"nodes_number\", self.get_nodes_number().to_string());\n        report.insert(\"edges_number\", self.get_directed_edges_number().to_string());\n        report.insert(\n            \"undirected_edges_number\",\n            self.get_undirected_edges_number().to_string(),\n        );\n        report.insert(\"directed\", self.is_directed().to_string());\n        report.insert(\"has_edge_weights\", self.has_edge_weights().to_string());\n        report.insert(\"has_edge_types\", self.has_edge_types().to_string());\n        report.insert(\"has_node_types\", self.has_node_types().to_string());\n        report.insert(\"selfloops_number\", self.get_selfloop_number().to_string());\n        report.insert(\"singletons\", self.get_singleton_nodes_number().to_string());\n        report.insert(\n            \"unique_node_types_number\",\n            self.get_node_types_number().to_string(),\n        );\n        report.insert(\n            \"unique_edge_types_number\",\n            self.get_edge_types_number().to_string(),\n        );\n        report"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [],
-        "modifiers": "",
-        "name": "shared_components_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "nodes_components",
-                "&[NodeT]"
-            ],
-            [
-                "other",
-                "&Graph"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "other\n            .iter_nodes()\n            .filter_map(\n                |(_, node_name, _, _)| match self.get_node_id_from_node_name(&node_name) {\n                    Ok(node_id) => Some(nodes_components[node_id as usize]),\n                    Err(_) => None,\n                },\n            )\n            .unique()\n            .count() as NodeT"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return number of distinct components that are merged by the other graph in current graph.bitvec",
-            "",
-            "# Arguments",
-            "* `nodes_components`: &[NodeT] - Slice with the node components.",
-            "* `other`: &Graph - Graph from where to extract the edge list."
-        ],
-        "modifiers": "",
-        "name": "merged_components_number",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "nodes_components",
-                "&[NodeT]"
-            ],
-            [
-                "other",
-                "&Graph"
-            ]
-        ],
-        "return_type": "NodeT",
-        "body": "other\n            .iter_edges(false)\n            .filter_map(|(_, _, src_name, _, dst_name)| {\n                match (\n                    self.get_node_id_from_node_name(&src_name),\n                    self.get_node_id_from_node_name(&dst_name),\n                ) {\n                    (Ok(src_id), Ok(dst_id)) => {\n                        let src_component_number = nodes_components[src_id as usize];\n                        let dst_component_number = nodes_components[dst_id as usize];\n                        match src_component_number == dst_component_number {\n                            true => None,\n                            false => Some(vec![src_component_number, dst_component_number]),\n                        }\n                    }\n                    _ => None,\n                }\n            })\n            .flatten()\n            .unique()\n            .count() as NodeT"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return rendered textual report about the graph overlaps.",
-            "",
-            "# Arguments",
-            "",
-            "- `other`: &Graph - graph to create overlap report with.",
-            "- `verbose`: bool - whether to shor the loading bars."
-        ],
-        "modifiers": "pub",
-        "name": "overlap_textual_report",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "other",
-                "&Graph"
-            ],
-            [
-                "verbose",
-                "bool"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "// Checking if overlap is allowed\n        self.validate_operator_terms(other)?;\n        // Get overlapping nodes\n        let overlapping_nodes_number = self\n            .iter_nodes()\n            .filter(|(_, node_name, _, node_type)| {\n                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())\n            })\n            .count();\n        // Get overlapping edges\n        let overlapping_edges_number = self\n            .par_iter_edge_node_names_and_edge_type_name(self.directed)\n            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                other.has_edge_from_node_names_and_edge_type_name(\n                    src_name,\n                    dst_name,\n                    edge_type_name.as_ref(),\n                )\n            })\n            .count();\n        // Get number of overlapping components\n        let first_nodes_components = self.get_node_connected_component_ids(verbose);\n        let second_nodes_components = other.get_node_connected_component_ids(verbose);\n        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;\n        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;\n        let first_shared_components_number =\n            self.shared_components_number(&first_nodes_components, other);\n        let second_shared_components_number =\n            other.shared_components_number(&second_nodes_components, self);\n        // Get number of overlapping components\n        let first_merged_components_number =\n            self.merged_components_number(&first_nodes_components, other);\n        let second_merged_components_number =\n            other.merged_components_number(&second_nodes_components, self);\n\n        let first_edges = match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        };\n        let second_edges = match other.directed {\n            true => other.get_directed_edges_number(),\n            false => other.get_undirected_edges_number(),\n        };\n        // Building up the report\n        Ok(format!(\n            concat!(\n                \"The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. \",\n                \"By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. \",\n                \"{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. \",\n                \"Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. \",\n                \"Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. \",\n            ),\n            first_graph=self.get_name(),\n            second_graph=other.get_name(),\n            nodes_number=overlapping_nodes_number,\n            edges_number=overlapping_edges_number,\n            first_nodes=self.get_nodes_number(),\n            second_nodes=other.get_nodes_number(),\n            first_edges=first_edges,\n            second_edges=second_edges,\n            first_components_statement = match second_shared_components_number== second_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{second_shared_components_number} of the {second_components_number}\",\n                    second_shared_components_number=second_shared_components_number,\n                    second_components_number=second_components_number\n                )\n            },\n            second_components_statement = match first_shared_components_number== first_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{first_shared_components_number} of the {first_components_number}\",\n                    first_shared_components_number=first_shared_components_number,\n                    first_components_number=first_components_number\n                )\n            },\n            first_merged_components_statement = match second_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {first_graph}\",\n                    first_graph=self.name,\n                    edges_number= match second_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==second_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", second_merged_components_number)\n                    })\n                },\n            second_merged_components_statement = match first_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {second_graph}\",\n                    second_graph=other.name,\n                    edges_number= match first_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==first_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", first_merged_components_number)\n                    })\n                },\n            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),\n            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),\n            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),\n            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),\n        ))"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [],
-        "modifiers": "",
-        "name": "format_list",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "list",
-                "&[String]"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "if list.is_empty() {\n            return Err(\"Cannot format a list with no elements.\".to_owned());\n        }\n        if list.len() == 1 {\n            return Ok(list.first().unwrap().clone());\n        }\n        let all_minus_last: String = list[0..list.len() - 1].join(\", \");\n        Ok(format!(\n            \"{all_minus_last} and {last}\",\n            all_minus_last = all_minus_last,\n            last = list.last().unwrap()\n        ))"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return formatted node list.",
-            "",
-            "# Arguments",
-            "* `node_list`: &[NodeT] - list of nodes to be formatted."
-        ],
-        "modifiers": "",
-        "name": "format_node_list",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "node_list",
-                "&[NodeT]"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "self.format_list(\n            node_list\n                .iter()\n                .map(|node_id| {\n                    format!(\n                        \"{node_name} (degree {node_degree})\",\n                        node_name = self.get_unchecked_node_name_from_node_id(*node_id),\n                        node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return formatted node type list.",
-            "",
-            "# Arguments",
-            "* `node_types_list`: &[NodeT] - list of nodes to be formatted."
-        ],
-        "modifiers": "",
-        "name": "format_node_type_list",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "node_types_list",
-                "&[(NodeTypeT, usize)]"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "self.format_list(\n            node_types_list\n                .iter()\n                .map(|(node_type_id, number)| {\n                    format!(\n                        \"{node_type} (nodes number {node_degree})\",\n                        node_type = self\n                            .get_node_type_name_from_node_type_id(*node_type_id)\n                            .unwrap(),\n                        node_degree = number\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return formatted edge type list.",
-            "",
-            "# Arguments",
-            "* `edge_types_list`: &[edgeT] - list of edges to be formatted."
-        ],
-        "modifiers": "",
-        "name": "format_edge_type_list",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "edge_types_list",
-                "&[(EdgeTypeT, usize)]"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "self.format_list(\n            edge_types_list\n                .iter()\n                .map(|(edge_type_id, _)| {\n                    self.get_edge_type_name_from_edge_type_id(*edge_type_id)\n                        .unwrap()\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
-    },
-    {
-        "file": "/Workspace/Github/ensmallen_graph/graph/src/metrics.rs",
-        "struct": "Graph",
-        "impl_doc": [
-            "# Properties and measurements of the graph"
-        ],
-        "doc": [
-            "Return rendered textual report of the graph."
-        ],
-        "modifiers": "pub",
-        "name": "textual_report",
-        "args": [
-            [
-                "self",
-                "&self"
-            ],
-            [
-                "verbose",
-                "bool"
-            ]
-        ],
-        "return_type": "Result<String, String>",
-        "body": "{\n            let ptr = self.cached_report.read();\n            if let Some(report) = &*ptr {\n                return Ok(report.clone());\n            }\n        }\n\n        if !self.has_nodes() {\n            return Ok(format!(\"The graph {} is empty.\", self.get_name()));\n        }\n\n        let mut ptr = self.cached_report.write();\n        // THis is not a duplicate of above because we need to\n        // check if another thread already filled the cache\n        if let Some(report) = &*ptr {\n            return Ok(report.clone());\n        }\n\n        let (connected_components_number, minimum_connected_component, maximum_connected_component) =\n            self.connected_components_number(verbose);\n\n        let mut hasher = DefaultHasher::new();\n        self.hash(&mut hasher);\n        let hash = hasher.finish();\n\n        *ptr = Some(format!(\n            concat!(\n                \"The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. \",\n                \"The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. \",\n                \"The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. \",\n                \"The top {most_common_nodes_number} most central nodes are {central_nodes}. \",\n                \"The hash of the graph is {hash:08x}.\"\n            ),\n            hash = hash,\n            direction = match self.directed {\n                true=> \"directed\",\n                false => \"undirected\"\n            }.to_owned(),\n            graph_type = match self.is_multigraph() {\n                true=> \"multigraph\",\n                false => \"graph\"\n            }.to_owned(),\n            name = self.name,\n            nodes_number = self.get_nodes_number(),\n            edges_number = self.get_edges_number(),\n            weighted = match self.has_edge_weights(){\n                true=> \"weighted\",\n                false=> \"unweighted\"\n            }.to_owned(),\n            selfloops = match self.has_selfloops() {\n                true => format!(\"{} are self-loops\", self.get_selfloop_number()),\n                false => \"none are self-loops\".to_owned()\n            },\n            selfloops_multigraph_connector = match self.is_multigraph() {\n                true => \" and \".to_owned(),\n                false => \"\".to_owned()\n            },\n            multigraph_edges = match self.is_multigraph() {\n                true=>match self.get_multigraph_edges_number()>0 {\n                    true => format!(\"{} are parallel\", self.get_multigraph_edges_number()),\n                    false => \"none are parallel\".to_owned()\n                },\n                false=>\"\".to_owned()\n            },\n            node_types= match self.get_node_types_number() {\n                ntn if ntn==1 => format!(\n                    \" with a single node type: {node_type}\",\n                    node_type={\n                        let node_types = self.get_node_type_counter()?;\n                        self.format_node_type_list(node_types.most_common().as_slice())?\n                    }\n                ),\n                ntn if ntn > 1 => format!(\n                    \" with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}.\",\n                    node_types_number=ntn,\n                    multilabel=match self.has_multilabel_node_types(){\n                        true=>\"multi-label \",\n                        false=>\"\"\n                    },\n                    most_common_node_types={\n                        let node_types = self.get_node_type_counter()?;\n                        let most_common = node_types.most_common();\n                        match most_common.len()>5 {\n                            true=>format!(\" the 5 most common are {}\", self.format_node_type_list(most_common[0..5].as_ref())?),\n                            false=>self.format_node_type_list(most_common.as_slice())?\n                        }\n                    },\n                    unknown_node_types={\n                        match self.has_unknown_node_types(){\n                            true=>{\n                                let unknown_nodes_number=self.get_unknown_node_types_number();\n                                let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);\n                                format!(\" and there are {} unknown node types ({:.2}%)\", unknown_nodes_number, percentage)\n                            },\n                            false=>\"\".to_owned()\n                        }\n                    }\n                ),\n                _ => \"\".to_owned()\n            },\n            singletons = match self.has_singletons() {\n                true => format!(\n                    \" There are {singleton_number} singleton nodes{selfloop_singleton},\", \n                    singleton_number=self.get_singleton_nodes_number(),\n                    selfloop_singleton=match self.has_singletons_with_selfloops(){\n                        true=>format!(\" ({} have self-loops)\", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){\n                            true=>\"all\".to_owned(),\n                            false=>format!(\"{} of these\", self.get_singleton_nodes_with_selfloops_number())\n                        }),\n                        false=>\"\".to_owned()\n                    }\n                ),\n                false => \"\".to_owned()\n            },\n            edge_types= match self.get_edge_types_number() {\n                etn if etn==1 => format!(\n                    \" with a single edge type: {edge_type}\",\n                    edge_type={\n                        let edge_types = self.get_edge_type_counter()?;\n                        self.format_edge_type_list(edge_types.most_common().as_slice())?\n                    }\n                ),\n                etn if etn > 1 => format!(\n                    \" with {edge_types_number} different edge types: {most_common_edge_types}{unknown_edge_types}\",\n                    edge_types_number=etn,\n                    most_common_edge_types={\n                        let edge_types = self.get_edge_type_counter()?;\n                        let most_common = edge_types.most_common();\n                        match most_common.len()>5 {\n                            true=>format!(\" the 5 most common are {}\", self.format_edge_type_list(most_common[0..5].as_ref())?),\n                            false=>self.format_edge_type_list(most_common.as_slice())?\n                        }\n                    },\n                    unknown_edge_types={\n                        match self.has_unknown_edge_types(){\n                            true=>{\n                                let unknown_edges_number=self.get_unknown_edge_types_number();\n                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_directed_edges_number() as f64);\n                                format!(\". There are {} unknown edge types ({:.2}%).\", unknown_edges_number, percentage)\n                            },\n                            false=>\"\".to_owned()\n                        }\n                    }\n                ),\n                _ => \"\".to_owned()\n            },\n            quantized_density = match self.get_density().unwrap() {\n                d if d < 0.0001 => \"extremely sparse\".to_owned(),\n                d if d < 0.001 => \"quite sparse\".to_owned(),\n                d if d < 0.01 => \"sparse\".to_owned(),\n                d if d < 0.1 => \"dense\".to_owned(),\n                d if d < 0.5 => \"quite dense\".to_owned(),\n                d if (d - 1.0).abs() < f64::EPSILON => \"complete\".to_owned(),\n                d if d <= 1.0 => \"extremely dense\".to_owned(),\n                d => unreachable!(format!(\"Unreacheable density case {}\", d))\n            },\n            density=self.get_density().unwrap(),\n            connected_components=match connected_components_number> 1{\n                true=>format!(\n                    \"has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}\",\n                    components_number=connected_components_number,\n                    maximum_connected_component=match maximum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", maximum_connected_component)\n                    },\n                    minimum_connected_component=match minimum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", minimum_connected_component)\n                    }\n                ),\n                false=>\"is connected, as it has a single component\".to_owned()\n            },\n            median_node_degree=self.get_node_degrees_median().unwrap(),\n            mean_node_degree=self.get_node_degrees_mean().unwrap(),\n            mode_node_degree=self.get_node_degrees_mode().unwrap(),\n            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),\n            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?\n        ));\n\n        Ok(ptr.clone().unwrap())"
-    },
-    {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/remove.rs",
         "struct": "Graph",
         "impl_doc": [
@@ -10322,6 +9629,771 @@
         ],
         "return_type": "Vec<Vec<String>>",
         "body": "self.get_clique_edges(\n            directed,\n            allow_selfloops,\n            removed_existing_edges,\n            allow_node_type_set,\n            allow_node_set,\n        )\n        .iter()\n        .map(|nodes| {\n            nodes\n                .iter()\n                .map(|node| self.get_unchecked_node_name_from_node_id(*node))\n                .collect::<Vec<String>>()\n        })\n        .collect::<Vec<Vec<String>>>()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Returns report relative to the graph metrics",
+            "",
+            "The report includes a few useful metrics like:",
+            "",
+            "* degrees_median: the median degree of the nodes.",
+            "* degrees_mean: the mean degree of the nodes.",
+            "* degrees_mode: the mode degree of the nodes.",
+            "* min_degree: the max degree of the nodes.",
+            "* max_degree: the min degree of the nodes.",
+            "* nodes_number: the number of nodes in the graph.",
+            "* edges_number: the number of edges in the graph.",
+            "* unique_node_types_number: the number of different node types in the graph.",
+            "* unique_edge_types_number: the number of different edge types in the graph.",
+            "* traps_rate: probability to end up in a trap when starting into any given node.",
+            "* selfloops_rate: pecentage of edges that are selfloops.",
+            "* bidirectional_rate: rate of edges that are bidirectional.",
+            "",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "graph.report();",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "report",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "DefaultHashMap<&str, String>",
+        "body": "let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();\n\n        if self.has_nodes() {\n            report.insert(\"density\", self.get_density().unwrap().to_string());\n            report.insert(\n                \"min_degree\",\n                self.get_min_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"max_degree\",\n                self.get_max_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"degree_mean\",\n                self.get_node_degrees_mean().unwrap().to_string(),\n            );\n        }\n\n        if self.has_edges() {\n            report.insert(\n                \"selfloops_rate\",\n                self.get_selfloop_rate().unwrap().to_string(),\n            );\n        }\n\n        report.insert(\"name\", self.name.clone());\n        report.insert(\"nodes_number\", self.get_nodes_number().to_string());\n        report.insert(\"edges_number\", self.get_directed_edges_number().to_string());\n        report.insert(\n            \"undirected_edges_number\",\n            self.get_undirected_edges_number().to_string(),\n        );\n        report.insert(\"directed\", self.is_directed().to_string());\n        report.insert(\"has_edge_weights\", self.has_edge_weights().to_string());\n        report.insert(\"has_edge_types\", self.has_edge_types().to_string());\n        report.insert(\"has_node_types\", self.has_node_types().to_string());\n        report.insert(\"selfloops_number\", self.get_selfloop_number().to_string());\n        report.insert(\"singletons\", self.get_singleton_nodes_number().to_string());\n        report.insert(\n            \"unique_node_types_number\",\n            self.get_node_types_number().to_string(),\n        );\n        report.insert(\n            \"unique_edge_types_number\",\n            self.get_edge_types_number().to_string(),\n        );\n        report"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [],
+        "modifiers": "",
+        "name": "shared_components_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "nodes_components",
+                "&[NodeT]"
+            ],
+            [
+                "other",
+                "&Graph"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "other\n            .iter_nodes()\n            .filter_map(\n                |(_, node_name, _, _)| match self.get_node_id_from_node_name(&node_name) {\n                    Ok(node_id) => Some(nodes_components[node_id as usize]),\n                    Err(_) => None,\n                },\n            )\n            .unique()\n            .count() as NodeT"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return number of distinct components that are merged by the other graph in current graph.bitvec",
+            "",
+            "# Arguments",
+            "* `nodes_components`: &[NodeT] - Slice with the node components.",
+            "* `other`: &Graph - Graph from where to extract the edge list."
+        ],
+        "modifiers": "",
+        "name": "merged_components_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "nodes_components",
+                "&[NodeT]"
+            ],
+            [
+                "other",
+                "&Graph"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "other\n            .iter_edges(false)\n            .filter_map(|(_, _, src_name, _, dst_name)| {\n                match (\n                    self.get_node_id_from_node_name(&src_name),\n                    self.get_node_id_from_node_name(&dst_name),\n                ) {\n                    (Ok(src_id), Ok(dst_id)) => {\n                        let src_component_number = nodes_components[src_id as usize];\n                        let dst_component_number = nodes_components[dst_id as usize];\n                        match src_component_number == dst_component_number {\n                            true => None,\n                            false => Some(vec![src_component_number, dst_component_number]),\n                        }\n                    }\n                    _ => None,\n                }\n            })\n            .flatten()\n            .unique()\n            .count() as NodeT"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return rendered textual report about the graph overlaps.",
+            "",
+            "# Arguments",
+            "",
+            "- `other`: &Graph - graph to create overlap report with.",
+            "- `verbose`: bool - whether to shor the loading bars."
+        ],
+        "modifiers": "pub",
+        "name": "overlap_textual_report",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "other",
+                "&Graph"
+            ],
+            [
+                "verbose",
+                "bool"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "// Checking if overlap is allowed\n        self.validate_operator_terms(other)?;\n        // Get overlapping nodes\n        let overlapping_nodes_number = self\n            .iter_nodes()\n            .filter(|(_, node_name, _, node_type)| {\n                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())\n            })\n            .count();\n        // Get overlapping edges\n        let overlapping_edges_number = self\n            .par_iter_edge_node_names_and_edge_type_name(self.directed)\n            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                other.has_edge_from_node_names_and_edge_type_name(\n                    src_name,\n                    dst_name,\n                    edge_type_name.as_ref(),\n                )\n            })\n            .count();\n        // Get number of overlapping components\n        let first_nodes_components = self.get_node_connected_component_ids(verbose);\n        let second_nodes_components = other.get_node_connected_component_ids(verbose);\n        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;\n        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;\n        let first_shared_components_number =\n            self.shared_components_number(&first_nodes_components, other);\n        let second_shared_components_number =\n            other.shared_components_number(&second_nodes_components, self);\n        // Get number of overlapping components\n        let first_merged_components_number =\n            self.merged_components_number(&first_nodes_components, other);\n        let second_merged_components_number =\n            other.merged_components_number(&second_nodes_components, self);\n\n        let first_edges = match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        };\n        let second_edges = match other.directed {\n            true => other.get_directed_edges_number(),\n            false => other.get_undirected_edges_number(),\n        };\n        // Building up the report\n        Ok(format!(\n            concat!(\n                \"The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. \",\n                \"By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. \",\n                \"{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. \",\n                \"Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. \",\n                \"Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. \",\n            ),\n            first_graph=self.get_name(),\n            second_graph=other.get_name(),\n            nodes_number=overlapping_nodes_number,\n            edges_number=overlapping_edges_number,\n            first_nodes=self.get_nodes_number(),\n            second_nodes=other.get_nodes_number(),\n            first_edges=first_edges,\n            second_edges=second_edges,\n            first_components_statement = match second_shared_components_number== second_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{second_shared_components_number} of the {second_components_number}\",\n                    second_shared_components_number=second_shared_components_number,\n                    second_components_number=second_components_number\n                )\n            },\n            second_components_statement = match first_shared_components_number== first_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{first_shared_components_number} of the {first_components_number}\",\n                    first_shared_components_number=first_shared_components_number,\n                    first_components_number=first_components_number\n                )\n            },\n            first_merged_components_statement = match second_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {first_graph}\",\n                    first_graph=self.name,\n                    edges_number= match second_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==second_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", second_merged_components_number)\n                    })\n                },\n            second_merged_components_statement = match first_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {second_graph}\",\n                    second_graph=other.name,\n                    edges_number= match first_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==first_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", first_merged_components_number)\n                    })\n                },\n            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),\n            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),\n            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),\n            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),\n        ))"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [],
+        "modifiers": "",
+        "name": "format_list",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "list",
+                "&[String]"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "if list.is_empty() {\n            return Err(\"Cannot format a list with no elements.\".to_owned());\n        }\n        if list.len() == 1 {\n            return Ok(list.first().unwrap().clone());\n        }\n        let all_minus_last: String = list[0..list.len() - 1].join(\", \");\n        Ok(format!(\n            \"{all_minus_last} and {last}\",\n            all_minus_last = all_minus_last,\n            last = list.last().unwrap()\n        ))"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return formatted node list.",
+            "",
+            "# Arguments",
+            "* `node_list`: &[NodeT] - list of nodes to be formatted."
+        ],
+        "modifiers": "",
+        "name": "format_node_list",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "node_list",
+                "&[NodeT]"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "self.format_list(\n            node_list\n                .iter()\n                .map(|node_id| {\n                    format!(\n                        \"{node_name} (degree {node_degree})\",\n                        node_name = self.get_unchecked_node_name_from_node_id(*node_id),\n                        node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return formatted node type list.",
+            "",
+            "# Arguments",
+            "* `node_types_list`: &[NodeT] - list of nodes to be formatted."
+        ],
+        "modifiers": "",
+        "name": "format_node_type_list",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "node_types_list",
+                "&[(NodeTypeT, usize)]"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "self.format_list(\n            node_types_list\n                .iter()\n                .map(|(node_type_id, number)| {\n                    format!(\n                        \"{node_type} (nodes number {node_degree})\",\n                        node_type = self\n                            .get_node_type_name_from_node_type_id(*node_type_id)\n                            .unwrap(),\n                        node_degree = number\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return formatted edge type list.",
+            "",
+            "# Arguments",
+            "* `edge_types_list`: &[edgeT] - list of edges to be formatted."
+        ],
+        "modifiers": "",
+        "name": "format_edge_type_list",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "edge_types_list",
+                "&[(EdgeTypeT, usize)]"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "self.format_list(\n            edge_types_list\n                .iter()\n                .map(|(edge_type_id, _)| {\n                    self.get_edge_type_name_from_edge_type_id(*edge_type_id)\n                        .unwrap()\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/report.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Human readable report of the properties of the graph"
+        ],
+        "doc": [
+            "Return rendered textual report of the graph."
+        ],
+        "modifiers": "pub",
+        "name": "textual_report",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "verbose",
+                "bool"
+            ]
+        ],
+        "return_type": "Result<String, String>",
+        "body": "{\n            let ptr = self.cached_report.read();\n            if let Some(report) = &*ptr {\n                return Ok(report.clone());\n            }\n        }\n\n        if !self.has_nodes() {\n            return Ok(format!(\"The graph {} is empty.\", self.get_name()));\n        }\n\n        let mut ptr = self.cached_report.write();\n        // THis is not a duplicate of above because we need to\n        // check if another thread already filled the cache\n        if let Some(report) = &*ptr {\n            return Ok(report.clone());\n        }\n\n        let (connected_components_number, minimum_connected_component, maximum_connected_component) =\n            self.get_connected_components_number(verbose);\n\n        let mut hasher = DefaultHasher::new();\n        self.hash(&mut hasher);\n        let hash = hasher.finish();\n\n        *ptr = Some(format!(\n            concat!(\n                \"The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. \",\n                \"The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. \",\n                \"The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. \",\n                \"The top {most_common_nodes_number} most central nodes are {central_nodes}. \",\n                \"The hash of the graph is {hash:08x}.\"\n            ),\n            hash = hash,\n            direction = match self.directed {\n                true=> \"directed\",\n                false => \"undirected\"\n            }.to_owned(),\n            graph_type = match self.is_multigraph() {\n                true=> \"multigraph\",\n                false => \"graph\"\n            }.to_owned(),\n            name = self.name,\n            nodes_number = self.get_nodes_number(),\n            edges_number = self.get_edges_number(),\n            weighted = match self.has_edge_weights(){\n                true=> \"weighted\",\n                false=> \"unweighted\"\n            }.to_owned(),\n            selfloops = match self.has_selfloops() {\n                true => format!(\"{} are self-loops\", self.get_selfloop_number()),\n                false => \"none are self-loops\".to_owned()\n            },\n            selfloops_multigraph_connector = match self.is_multigraph() {\n                true => \" and \".to_owned(),\n                false => \"\".to_owned()\n            },\n            multigraph_edges = match self.is_multigraph() {\n                true=>match self.get_multigraph_edges_number()>0 {\n                    true => format!(\"{} are parallel\", self.get_multigraph_edges_number()),\n                    false => \"none are parallel\".to_owned()\n                },\n                false=>\"\".to_owned()\n            },\n            node_types= match self.get_node_types_number() {\n                ntn if ntn==1 => format!(\n                    \" with a single node type: {node_type}\",\n                    node_type={\n                        let node_types = self.get_node_type_counter()?;\n                        self.format_node_type_list(node_types.most_common().as_slice())?\n                    }\n                ),\n                ntn if ntn > 1 => format!(\n                    \" with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}.\",\n                    node_types_number=ntn,\n                    multilabel=match self.has_multilabel_node_types(){\n                        true=>\"multi-label \",\n                        false=>\"\"\n                    },\n                    most_common_node_types={\n                        let node_types = self.get_node_type_counter()?;\n                        let most_common = node_types.most_common();\n                        match most_common.len()>5 {\n                            true=>format!(\" the 5 most common are {}\", self.format_node_type_list(most_common[0..5].as_ref())?),\n                            false=>self.format_node_type_list(most_common.as_slice())?\n                        }\n                    },\n                    unknown_node_types={\n                        match self.has_unknown_node_types(){\n                            true=>{\n                                let unknown_nodes_number=self.get_unknown_node_types_number();\n                                let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);\n                                format!(\" and there are {} unknown node types ({:.2}%)\", unknown_nodes_number, percentage)\n                            },\n                            false=>\"\".to_owned()\n                        }\n                    }\n                ),\n                _ => \"\".to_owned()\n            },\n            singletons = match self.has_singletons() {\n                true => format!(\n                    \" There are {singleton_number} singleton nodes{selfloop_singleton},\", \n                    singleton_number=self.get_singleton_nodes_number(),\n                    selfloop_singleton=match self.has_singletons_with_selfloops(){\n                        true=>format!(\" ({} have self-loops)\", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){\n                            true=>\"all\".to_owned(),\n                            false=>format!(\"{} of these\", self.get_singleton_nodes_with_selfloops_number())\n                        }),\n                        false=>\"\".to_owned()\n                    }\n                ),\n                false => \"\".to_owned()\n            },\n            edge_types= match self.get_edge_types_number() {\n                etn if etn==1 => format!(\n                    \" with a single edge type: {edge_type}\",\n                    edge_type={\n                        let edge_types = self.get_edge_type_counter()?;\n                        self.format_edge_type_list(edge_types.most_common().as_slice())?\n                    }\n                ),\n                etn if etn > 1 => format!(\n                    \" with {edge_types_number} different edge types: {most_common_edge_types}{unknown_edge_types}\",\n                    edge_types_number=etn,\n                    most_common_edge_types={\n                        let edge_types = self.get_edge_type_counter()?;\n                        let most_common = edge_types.most_common();\n                        match most_common.len()>5 {\n                            true=>format!(\" the 5 most common are {}\", self.format_edge_type_list(most_common[0..5].as_ref())?),\n                            false=>self.format_edge_type_list(most_common.as_slice())?\n                        }\n                    },\n                    unknown_edge_types={\n                        match self.has_unknown_edge_types(){\n                            true=>{\n                                let unknown_edges_number=self.get_unknown_edge_types_number();\n                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_directed_edges_number() as f64);\n                                format!(\". There are {} unknown edge types ({:.2}%).\", unknown_edges_number, percentage)\n                            },\n                            false=>\"\".to_owned()\n                        }\n                    }\n                ),\n                _ => \"\".to_owned()\n            },\n            quantized_density = match self.get_density().unwrap() {\n                d if d < 0.0001 => \"extremely sparse\".to_owned(),\n                d if d < 0.001 => \"quite sparse\".to_owned(),\n                d if d < 0.01 => \"sparse\".to_owned(),\n                d if d < 0.1 => \"dense\".to_owned(),\n                d if d < 0.5 => \"quite dense\".to_owned(),\n                d if (d - 1.0).abs() < f64::EPSILON => \"complete\".to_owned(),\n                d if d <= 1.0 => \"extremely dense\".to_owned(),\n                d => unreachable!(format!(\"Unreacheable density case {}\", d))\n            },\n            density=self.get_density().unwrap(),\n            connected_components=match connected_components_number> 1{\n                true=>format!(\n                    \"has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}\",\n                    components_number=connected_components_number,\n                    maximum_connected_component=match maximum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", maximum_connected_component)\n                    },\n                    minimum_connected_component=match minimum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", minimum_connected_component)\n                    }\n                ),\n                false=>\"is connected, as it has a single component\".to_owned()\n            },\n            median_node_degree=self.get_node_degrees_median().unwrap(),\n            mean_node_degree=self.get_node_degrees_mean().unwrap(),\n            mode_node_degree=self.get_node_degrees_mode().unwrap(),\n            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),\n            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?\n        ));\n\n        Ok(ptr.clone().unwrap())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )"
+        ],
+        "modifiers": "pub",
+        "name": "get_connected_components_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ],
+            [
+                "verbose",
+                "bool"
+            ]
+        ],
+        "return_type": "(NodeT, NodeT, NodeT)",
+        "body": "info!(\"Computing connected components number.\");\n        if self.directed {\n            let (_, _, components_number, min_component_size, max_component_size) =\n                self.spanning_arborescence_kruskal(verbose);\n            (components_number, min_component_size, max_component_size)\n        } else {\n            info!(\"Executing undirected parallel version of connected components.\");\n            let (_, components_number, min_component_size, max_component_size) =\n                self.connected_components(verbose).unwrap();\n            (components_number, min_component_size, max_component_size)\n        }"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of singleton nodes within the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The graph contains {} singleton nodes\", graph.get_singleton_nodes_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_singleton_nodes_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "self.get_nodes_number() - self.get_not_singleton_nodes_number()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of singleton nodes with self-loops within the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_selfloops_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_singleton_nodes_with_selfloops_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "self.singleton_nodes_with_selfloops_number"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of not singleton nodes within the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The graph contains {} not singleton nodes\", graph.get_not_singleton_nodes_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_not_singleton_nodes_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "self.not_singleton_nodes_number"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns density of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The graph density is {}\", graph.get_density().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_density",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<f64, String>",
+        "body": "if !self.has_nodes() {\n            return Err(\"The density of an empty graph is undefined.\".to_string());\n        }\n        if !self.has_edges() {\n            return Ok(0.0);\n        }\n        let nodes_number = self.get_nodes_number() as EdgeT;\n        let total_nodes_number = nodes_number\n            * match self.has_selfloops() {\n                true => nodes_number,\n                false => nodes_number - 1,\n            };\n        Ok(self.unique_edges_number as f64 / total_nodes_number as f64)"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns the traps rate of the graph.",
+            "",
+            "THIS IS EXPERIMENTAL AND MUST BE PROVEN!",
+            "",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The Graph rate is {}\", graph.get_traps_rate());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_traps_rate",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "f64",
+        "body": "self.par_iter_node_ids()\n            .map(|node| {\n                if !self.is_trap_node_from_node_id(node).unwrap() {\n                    self.iter_neighbour_node_ids_from_source_node_id(node)\n                        .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_node_degree_from_node_id(node) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns mean node degree of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_node_degrees_mean",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<f64, String>",
+        "body": "if !self.has_nodes() {\n            return Err(\n                \"The mean of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of undirected edges of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of undirected edges of the graph is  {}\", graph.get_undirected_edges_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_undirected_edges_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "EdgeT",
+        "body": "(self.get_directed_edges_number() - self.get_selfloop_number()) / 2\n            + self.get_selfloop_number()"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of undirected edges of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of unique undirected edges of the graph is  {}\", graph.get_unique_undirected_edges_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_unique_undirected_edges_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "EdgeT",
+        "body": "(self.unique_edges_number - self.get_unique_selfloop_number() as EdgeT) / 2\n            + self.get_unique_selfloop_number() as EdgeT"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of edges of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of edges of the graph is  {}\", graph.get_edges_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_edges_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "EdgeT",
+        "body": "match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        }"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of unique edges of the graph.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of edges of the graph is  {}\", graph.get_unique_edges_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_unique_edges_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "EdgeT",
+        "body": "match self.directed {\n            true => self.get_unique_directed_edges_number(),\n            false => self.get_unique_undirected_edges_number(),\n        }"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns median node degree of the graph",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_node_degrees_median",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<NodeT, String>",
+        "body": "if !self.has_nodes() {\n            return Err(\n                \"The median of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let mut degrees = self.get_node_degrees();\n        degrees.par_sort_unstable();\n        Ok(degrees[(self.get_nodes_number() / 2) as usize])"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns maximum node degree of the graph",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_max_node_degree",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<NodeT, String>",
+        "body": "self.get_node_degrees().into_iter().max().ok_or_else(|| {\n            \"The maximum node degree of a graph with no nodes is not defined.\".to_string()\n        })"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns minimum node degree of the graph",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The minimum node degree of the graph is  {}\", graph.get_min_node_degree().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_min_node_degree",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<NodeT, String>",
+        "body": "self.get_node_degrees().into_iter().min().ok_or_else(|| {\n            \"The minimum node degree of a graph with no nodes is not defined.\".to_string()\n        })"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns mode node degree of the graph",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_node_degrees_mode",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<NodeT, String>",
+        "body": "if !self.has_nodes() {\n            return Err(\n                \"The mode of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());\n        Ok(*counter\n            .iter()\n            .max_by_key(|&(_, count)| count)\n            .map(|(degree, _)| degree)\n            .unwrap())"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of self-loops, including also those in eventual multi-edges.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_selfloop_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "EdgeT",
+        "body": "self.selfloop_number"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns number of unique self-loops, excluding those in eventual multi-edges.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The number of unique self-loops in the graph is  {}\", graph.get_unique_selfloop_number());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_unique_selfloop_number",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "NodeT",
+        "body": "self.unique_selfloop_number"
+    },
+    {
+        "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
+        "struct": "Graph",
+        "impl_doc": [
+            "# Getters",
+            "The naming convention we follow is:",
+            "* `get_(.+)`",
+            "The naming convention for unchecked methods follows:",
+            "* `get_unchecked_(.+)`"
+        ],
+        "doc": [
+            "Returns rate of self-loops.",
+            "```rust",
+            "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+            "println!(\"The rate of self-loops in the graph is  {}\", graph.get_selfloop_rate().unwrap());",
+            "```"
+        ],
+        "modifiers": "pub",
+        "name": "get_selfloop_rate",
+        "args": [
+            [
+                "self",
+                "&self"
+            ]
+        ],
+        "return_type": "Result<f64, String>",
+        "body": "if !self.has_edges() {\n            return Err(\"The self-loops rate is not defined for graphs without edges.\".to_string());\n        }\n        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
