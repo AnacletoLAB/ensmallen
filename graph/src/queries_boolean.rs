@@ -53,7 +53,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To check if a node appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -73,7 +73,7 @@ impl Graph {
     /// * `src`: NodeT - Source node id.
     /// * `dst`: NodeT - Destination node id.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -92,7 +92,7 @@ impl Graph {
     /// * `dst`: NodeT - The destination node of the edge.
     /// * `edge_type`: Option<EdgeTypeT> - The (optional) edge type.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge with given type appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -174,7 +174,7 @@ impl Graph {
     /// * `src`: String - The source node name of the edge.
     /// * `dst`: String - The destination node name of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -193,7 +193,7 @@ impl Graph {
     /// * `dst`: String - The destination node name of the edge.
     /// * `edge_type`: Option<String> - The (optional) edge type name.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge with type in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();

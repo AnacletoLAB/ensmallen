@@ -11,7 +11,7 @@ use std::collections::HashMap;
 /// This class should be initialized using the two constructors:
 /// `graph::Graph::new_directed` or `graph::Graph::new_undirected`
 ///
-/// # Examples
+/// # Example
 ///
 #[derive(Clone, Debug)]
 pub struct Graph {

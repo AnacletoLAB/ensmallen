@@ -1918,7 +1918,7 @@ use std::collections::HashMap;
 /// This class should be initialized using the two constructors:
 /// `graph::Graph::new_directed` or `graph::Graph::new_undirected`
 ///
-/// # Examples
+/// # Example
 ///
 #[derive(Clone, Debug)]
 pub struct Graph {
@@ -2368,7 +2368,7 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    /// # Examples
+    /// # Example
     /// Suppose you want to the get the neighbours of the first 10 nodes:
     /// ```rust
     /// # use rayon::iter::ParallelIterator;
@@ -2610,7 +2610,7 @@ impl Graph {
 ///
 /// * `weight`: WeightT - The weight to validate.
 ///
-/// # Examples
+/// # Example
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::validate_weight;
@@ -2637,7 +2637,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
 ///
 /// * `weight`: String - The weight to be parsed.
 ///
-/// # Examples
+/// # Example
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::parse_weight;
@@ -3610,7 +3610,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To check if a node appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -3630,7 +3630,7 @@ impl Graph {
     /// * `src`: NodeT - Source node id.
     /// * `dst`: NodeT - Destination node id.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -3649,7 +3649,7 @@ impl Graph {
     /// * `dst`: NodeT - The destination node of the edge.
     /// * `edge_type`: Option<EdgeTypeT> - The (optional) edge type.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge with given type appears in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -3717,7 +3717,7 @@ impl Graph {
     /// * `src`: String - The source node name of the edge.
     /// * `dst`: String - The destination node name of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -3736,7 +3736,7 @@ impl Graph {
     /// * `dst`: String - The destination node name of the edge.
     /// * `edge_type`: Option<String> - The (optional) edge type name.
     ///
-    /// # Examples
+    /// # Example
     /// To check if an edge with type in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -5452,7 +5452,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0));
@@ -5485,7 +5485,7 @@ impl Graph {
     ///
     /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The edge type id of edge {} is {:?}", 0, graph.get_edge_type_id_by_edge_id(0));
@@ -5559,7 +5559,7 @@ impl Graph {
     /// # Arguments
     /// * `edge_id`: EdgeT - The edge ID whose weight is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `edge_id` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -5590,7 +5590,7 @@ impl Graph {
     /// * `src`: NodeT - The node ID of the source node.
     /// * `dst`: NodeT - The node ID of the destination node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -5609,7 +5609,7 @@ impl Graph {
     /// * `dst`: NodeT - The node ID of the destination node.
     /// * `edge_type`: Option<EdgeTypeT> - The edge type ID of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -5634,7 +5634,7 @@ impl Graph {
     /// * `dst`: &str - The node name of the destination node.
     /// * `edge_type`: Option<&String> - The edge type name of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -5658,7 +5658,7 @@ impl Graph {
     /// * `src_name`: &str - The node name of the source node.
     /// * `dst_name`: &str - The node name of the destination node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src_name` and `dst_name` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -5703,7 +5703,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the node type ID for a given node name you can run:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -5723,7 +5723,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the node type name for a given node name you can run:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -6941,8 +6941,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// - `other`: &Graph - graph to create overlap report with.
-    /// - `verbose`: bool - whether to shor the loading bars.
+    /// * `other`: &Graph - graph to create overlap report with.
+    /// * `verbose`: bool - whether to shor the loading bars.
     pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
@@ -8979,10 +8979,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
-    /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
-    /// `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
+    /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
+    /// * `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edges(
         &self,
         removed_existing_edges: Option<bool>,
@@ -9059,10 +9059,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
-    /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
-    /// `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
+    /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
+    /// * `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edge_names(
         &self,
         removed_existing_edges: Option<bool>,
@@ -9092,10 +9092,10 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required star.
     ///
     /// # Arguments
-    /// `central_node`: String - Name of the node to use as center of the star.
+    /// * `central_node`: String - Name of the node to use as center of the star.
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
-    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
+    /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
+    /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
         &self,
         central_node: String,
@@ -9115,10 +9115,10 @@ impl Graph {
     /// Return vector of tuple of Node names that form the edges of the required star.
     ///
     /// # Arguments
-    /// `central_node`: String - Name of the node to use as center of the star.
+    /// * `central_node`: String - Name of the node to use as center of the star.
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
-    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
+    /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
+    /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
         &self,
         central_node: String,
@@ -9138,11 +9138,11 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// * `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// * `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
-    /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
+    /// * `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
+    /// * `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
         &self,
         directed: Option<bool>,
@@ -9200,11 +9200,11 @@ impl Graph {
     /// Return vector of tuple of Node names that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
+    /// * `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// * `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
     /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
-    /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
-    /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
+    /// * `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
+    /// * `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(
         &self,
         directed: Option<bool>,
@@ -9676,7 +9676,7 @@ impl Graph {
     ///
     /// None
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
@@ -9701,7 +9701,7 @@ impl Graph {
     ///
     /// None
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {

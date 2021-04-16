@@ -26,6 +26,8 @@ impl Graph {
     }
 
     /// Returns number of singleton nodes within the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
@@ -35,6 +37,8 @@ impl Graph {
     }
 
     /// Returns number of singleton nodes with self-loops within the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
@@ -44,6 +48,8 @@ impl Graph {
     }
 
     /// Returns number of not singleton nodes within the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
@@ -53,6 +59,8 @@ impl Graph {
     }
 
     /// Returns density of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph density is {}", graph.get_density().unwrap());
@@ -76,6 +84,7 @@ impl Graph {
     ///
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The Graph rate is {}", graph.get_trap_nodes_rate());
@@ -97,6 +106,8 @@ impl Graph {
     }
 
     /// Returns mean node degree of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
@@ -111,6 +122,8 @@ impl Graph {
     }
 
     /// Returns number of undirected edges of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
@@ -121,6 +134,8 @@ impl Graph {
     }
 
     /// Returns number of undirected edges of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
@@ -131,6 +146,8 @@ impl Graph {
     }
 
     /// Returns number of edges of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of edges of the graph is  {}", graph.get_edges_number());
@@ -143,6 +160,8 @@ impl Graph {
     }
 
     /// Returns number of unique edges of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of edges of the graph is  {}", graph.get_unique_edges_number());
@@ -155,6 +174,8 @@ impl Graph {
     }
 
     /// Returns median node degree of the graph
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
@@ -170,7 +191,9 @@ impl Graph {
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
 
-    /// Returns maximum node degree of the graph
+    /// Returns maximum node degree of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
@@ -181,7 +204,9 @@ impl Graph {
         })
     }
 
-    /// Returns minimum node degree of the graph
+    /// Returns minimum node degree of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
@@ -192,7 +217,9 @@ impl Graph {
         })
     }
 
-    /// Returns mode node degree of the graph
+    /// Returns mode node degree of the graph.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
@@ -212,6 +239,8 @@ impl Graph {
     }
 
     /// Returns number of self-loops, including also those in eventual multi-edges.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_nodes_number());
@@ -221,6 +250,8 @@ impl Graph {
     }
 
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
@@ -230,6 +261,8 @@ impl Graph {
     }
 
     /// Returns rate of self-loops.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_nodes_rate().unwrap());
@@ -542,6 +575,8 @@ impl Graph {
     }
 
     /// Returns number of the source nodes.
+    ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
@@ -554,11 +589,7 @@ impl Graph {
 
     /// Returns edge type counts.
     ///
-    /// # Arguments
-    ///
-    /// None
-    ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {
@@ -579,11 +610,7 @@ impl Graph {
 
     /// Returns edge type counts hashmap.
     ///
-    /// # Arguments
-    ///
-    /// None
-    ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {
@@ -596,10 +623,7 @@ impl Graph {
 
     /// Returns node type counts.
     ///
-    /// # Arguments
-    ///
-    /// None
-    ///
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {
@@ -623,10 +647,7 @@ impl Graph {
 
     /// Returns node type counts hashmap.
     ///
-    /// # Arguments
-    ///
-    /// None
-    ///
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {

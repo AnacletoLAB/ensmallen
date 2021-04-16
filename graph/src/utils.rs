@@ -48,7 +48,7 @@ impl Graph {
 ///
 /// * `weight`: WeightT - The weight to validate.
 ///
-/// # Examples
+/// # Example
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::validate_weight;
@@ -75,7 +75,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
 ///
 /// * `weight`: String - The weight to be parsed.
 ///
-/// # Examples
+/// # Example
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::parse_weight;

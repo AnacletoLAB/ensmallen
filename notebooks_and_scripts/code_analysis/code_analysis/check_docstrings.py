@@ -27,10 +27,13 @@ def check_doc(args):
         if errors:
             file = function.get("file", "")
             result.setdefault(file, {})
-            result[file][fn_name] = [
+            errs = [
                 "[{:>4}] {}".format(x["doc_line"], x["msg"])
                 for x in errors
+                if x["msg"] != "Missing Example"
             ]
+            if errs:
+                result[file][fn_name] = errs
 
 
     print(json.dumps(result, indent=4))

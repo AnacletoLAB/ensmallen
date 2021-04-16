@@ -282,7 +282,7 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    /// # Examples
+    /// # Example
     /// Suppose you want to the get the neighbours of the first 10 nodes:
     /// ```rust
     /// # use rayon::iter::ParallelIterator;

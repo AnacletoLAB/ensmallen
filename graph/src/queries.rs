@@ -455,7 +455,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The node type id of node {} is {:?}", 0, graph.get_unchecked_node_type_id_from_node_id(0));
@@ -476,7 +476,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_from_node_id(0));
@@ -502,7 +502,7 @@ impl Graph {
     ///
     /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
 
@@ -520,7 +520,7 @@ impl Graph {
     ///
     /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
@@ -588,7 +588,7 @@ impl Graph {
     /// # Arguments
     /// * `edge_id`: EdgeT - The edge ID whose weight is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `edge_id` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -619,7 +619,7 @@ impl Graph {
     /// * `src`: NodeT - The node ID of the source node.
     /// * `dst`: NodeT - The node ID of the destination node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -638,7 +638,7 @@ impl Graph {
     /// * `dst`: NodeT - The node ID of the destination node.
     /// * `edge_type`: Option<EdgeTypeT> - The edge type ID of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -665,7 +665,7 @@ impl Graph {
     /// * `dst`: &str - The node name of the destination node.
     /// * `edge_type`: Option<&String> - The edge type name of the edge.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -691,7 +691,7 @@ impl Graph {
     /// * `src_name`: &str - The node name of the source node.
     /// * `dst_name`: &str - The node name of the destination node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the weight of a given `src_name` and `dst_name` you can run:
     /// ```rust
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
@@ -712,7 +712,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose name is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// To get the name of a node you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -727,7 +727,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose name is to be returned.
     ///
-    /// # Examples
+    /// # Example
     /// To get the name of a node you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -755,7 +755,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the node type ID for a given node name you can run:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -775,7 +775,7 @@ impl Graph {
     ///
     /// * `node_name`: &str - Name of the node.
     ///
-    /// # Examples
+    /// # Example
     /// To get the node type name for a given node name you can run:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();

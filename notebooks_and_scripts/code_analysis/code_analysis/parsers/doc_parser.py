@@ -77,6 +77,10 @@ class DocParser:
         if len(self.get_args()) == 0:
             return text
 
+        if not text:
+            self.log_error(0, "Missing Arguments")
+            return
+
         # Parse the arguments header
         if text[0][1] != "# Arguments":
             self.log_error(text[0][0], "The arguments section is missing or in the wrong order.")
@@ -228,10 +232,7 @@ class DocParser:
         else:
             self.log_error(0, "Missing description")
 
-        if text:
-            text = self.parse_arguments(text)
-        else:
-            self.log_error(0, "Missing Arguments")
+        text = self.parse_arguments(text)
 
         if text:
             text = self.parse_example(text)

@@ -125,8 +125,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// - `other`: &Graph - graph to create overlap report with.
-    /// - `verbose`: bool - whether to shor the loading bars.
+    /// * `other`: &Graph - graph to create overlap report with.
+    /// * `verbose`: bool - whether to shor the loading bars.
     pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;

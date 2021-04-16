@@ -11,7 +11,8 @@ impl Graph {
     ///
     /// * `one`: NodeT - Integer ID of the first node.
     /// * `two`: NodeT - Integer ID of the second node.
-    ///
+    ///=
+    /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The degrees_product between 0 and 1 is {}", graph.degrees_product(0, 1).unwrap());
@@ -43,6 +44,7 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The Jaccard Index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
@@ -93,6 +95,7 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
@@ -134,6 +137,7 @@ impl Graph {
     /// must support all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
+    /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
