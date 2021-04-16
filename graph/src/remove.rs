@@ -30,12 +30,12 @@ impl Graph {
     /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
     /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
     /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
-    /// * `weights`: bool - whether to remove the weights.
-    /// * `node_types`: bool - whether to remove the node types.
-    /// * `edge_types`: bool - whether to remove the edge types.
-    /// * `singletons`: bool - whether to remove the singleton nodes.
-    /// * `selfloops`: bool - whether to remove edges with self-loops.
-    /// * `verbose`: bool - whether to show a loading bar while building the graph.
+    /// * `weights`: bool - Whether to remove the weights.
+    /// * `node_types`: bool - Whether to remove the node types.
+    /// * `edge_types`: bool - Whether to remove the edge types.
+    /// * `singletons`: bool - Whether to remove the singleton nodes.
+    /// * `selfloops`: bool - Whether to remove edges with self-loops.
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
     ///
     pub fn remove(
         &self,
@@ -260,7 +260,7 @@ impl Graph {
     /// * `edge_types`: Option<Vec<String>> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,

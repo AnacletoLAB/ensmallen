@@ -71,7 +71,7 @@ impl Graph {
     /// Return iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_source_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -115,7 +115,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_source_node_ids(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -123,7 +123,7 @@ impl Graph {
     /// Return iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_destination_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, _, dst)| dst)
     }
@@ -131,7 +131,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_destination_node_ids(
         &self,
         directed: bool,
@@ -183,7 +183,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_ids(
         &self,
         directed: bool,
@@ -215,7 +215,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edges(
         &self,
         directed: bool,
@@ -235,7 +235,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_ids(
         &self,
         directed: bool,
@@ -254,7 +254,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edges(
         &self,
         directed: bool,
@@ -274,7 +274,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_node_ids_and_edge_type_id(
         &self,
         directed: bool,
@@ -293,7 +293,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_node_names_and_edge_type_name(
         &self,
         directed: bool,
@@ -327,7 +327,7 @@ impl Graph {
     /// The result is (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_node_names_and_edge_type_name(
         &self,
         directed: bool,
@@ -360,7 +360,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_node_ids_and_edge_type_id(
         &self,
         directed: bool,
@@ -379,7 +379,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_node_names_and_edge_type_name_and_edge_weight(
         &self,
         directed: bool,
@@ -414,7 +414,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_node_names_and_edge_type_name_and_edge_weight(
         &self,
         directed: bool,
@@ -449,7 +449,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(
         &self,
         directed: bool,
@@ -470,7 +470,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_node_ids_and_edge_type_id_and_edge_weight(
         &self,
         directed: bool,
@@ -490,7 +490,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_unique_edge_node_ids(
         &self,
         directed: bool,

@@ -360,7 +360,7 @@ impl Graph {
     ///
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `undesired_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
-    /// * `verbose`: bool - whether to show a loading bar or not.
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(
         &self,
@@ -381,7 +381,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - whether to show a loading bar or not.
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     pub fn spanning_arborescence_kruskal(
         &self,
@@ -408,7 +408,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - whether to show a loading bar or not.
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     pub fn spanning_arborescence(
         &self,
@@ -553,7 +553,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - whether to show a loading bar or not.
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     /// # Example
     /// ```rust

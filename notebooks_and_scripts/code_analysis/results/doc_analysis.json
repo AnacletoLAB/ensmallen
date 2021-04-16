@@ -1846,7 +1846,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_weights_if_unavailable: Option<bool> - whether to skip weights if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_weights_if_unavailable: Option<bool> - Whether to skip weights if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1869,7 +1869,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_edge_types_if_unavailable: Option<bool> - whether to skip edge types if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_edge_types_if_unavailable: Option<bool> - Whether to skip edge types if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2110,7 +2110,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2133,7 +2133,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2179,7 +2179,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* header: Option<bool> - whether to expect an header or not.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* header: Option<bool> - Whether to expect an header or not.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2202,7 +2202,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* rows_to_skip: Option<bool> - whether to show the loading bar or not.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* rows_to_skip: Option<bool> - Whether to show the loading bar or not.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -5184,7 +5184,7 @@
             },
             {
                 "name": "Arguments",
-                "content": "* `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.\n* `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.\n* `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.\n* `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.\n* `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.\n* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.\n* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.\n* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.\n* `weights`: bool - whether to remove the weights.\n* `node_types`: bool - whether to remove the node types.\n* `edge_types`: bool - whether to remove the edge types.\n* `singletons`: bool - whether to remove the singleton nodes.\n* `selfloops`: bool - whether to remove edges with self-loops.\n* `verbose`: bool - whether to show a loading bar while building the graph.\n"
+                "content": "* `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.\n* `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.\n* `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.\n* `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.\n* `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.\n* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.\n* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.\n* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.\n* `weights`: bool - Whether to remove the weights.\n* `node_types`: bool - Whether to remove the node types.\n* `edge_types`: bool - Whether to remove the edge types.\n* `singletons`: bool - Whether to remove the singleton nodes.\n* `selfloops`: bool - Whether to remove edges with self-loops.\n* `verbose`: bool - Whether to show a loading bar while building the graph.\n"
             }
         ]
     },
@@ -7555,7 +7555,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument line '* numeric_ids: bool - whether to load the IDs as numeric' (doc_line: 3) is not in the standard format."
+                "msg": "The argument line '* numeric_ids: bool - Whether to load the IDs as numeric' (doc_line: 3) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -7733,7 +7733,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_node_types_if_unavailable: Option<bool> - whether to skip node_types if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -7800,7 +7800,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",

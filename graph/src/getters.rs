@@ -305,7 +305,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_source_node_ids(directed).collect()
     }
@@ -313,7 +313,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_source_node_ids(directed)
             .map(|src| self.get_unchecked_node_name_from_node_id(src))
@@ -323,7 +323,7 @@ impl Graph {
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destination_node_ids(directed).collect()
     }
@@ -331,7 +331,7 @@ impl Graph {
     /// Return vector of the non-unique destination nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destination_node_ids(directed)
             .map(|dst| self.get_unchecked_node_name_from_node_id(dst))
@@ -512,7 +512,7 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     pub fn get_node_connected_component_ids(&self, verbose: bool) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,

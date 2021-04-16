@@ -157,7 +157,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * `iterations`: Option<NodeT> - whether to show the loading bar or not.
+    /// * `iterations`: Option<NodeT> - Whether to show the loading bar or not.
     ///
     /// # Example
     /// You can change the `iterations` parameter as follows:

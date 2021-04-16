@@ -11,7 +11,7 @@ impl Graph {
     /// * `edge_types`: Option<Vec<String>> - The edge types to keep.
     /// * `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.
     /// * `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn filter(
         &self,
