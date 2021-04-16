@@ -77,6 +77,10 @@ fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
 ///     each other by paths. A singleton is a component and so is a singleton with a
 ///     self-loop.
 impl Graph {
+    /// Returns iterator over shuffled edge IDs and node IDs.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the given edge sampling.
     fn iter_edges_from_random_state(
         &self,
         random_state: u64,
@@ -94,10 +98,16 @@ impl Graph {
         })
     }
 
+    /// Returns iterator over shuffled edge IDs and node IDs with preference to given edge types.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the given edge sampling.
+    /// * `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.
+    /// * `verbose`: bool - Whether to show a loading bar.
     fn iter_on_edges_with_preference_from_random_state<'a>(
         &'a self,
         random_state: u64,
-        unwanted_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
+        undesired_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
         let pb = get_loading_bar(
@@ -106,7 +116,7 @@ impl Graph {
             self.get_directed_edges_number() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =
-            (unwanted_edge_types, &self.edge_types)
+            (undesired_edge_types, &self.edge_types)
         {
             Box::new(
                 self.iter_edges_from_random_state(random_state)
@@ -144,7 +154,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.
+    /// `edges`: impl Iterator<Item = (NodeT, NodeT)> + 'a - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.
     ///
     /// # Returns
     /// Tuple with:
@@ -349,18 +359,30 @@ impl Graph {
     /// # Arguments
     ///
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
-    /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
+    /// * `undesired_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
-        unwanted_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
+        undesired_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
         verbose: bool,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        self.kruskal(self.iter_on_edges_with_preference_from_random_state(random_state, unwanted_edge_types, verbose))
+        self.kruskal(self.iter_on_edges_with_preference_from_random_state(
+            random_state,
+            undesired_edge_types,
+            verbose,
+        ))
     }
 
+    /// Returns consistent spanning arborescence using Kruskal.
+    ///
+    /// The spanning tree is NOT minimal.
+    ///
+    /// # Arguments
+    ///
+    /// * `verbose`: bool - whether to show a loading bar or not.
+    ///
     pub fn spanning_arborescence_kruskal(
         &self,
         verbose: bool,
@@ -373,13 +395,21 @@ impl Graph {
             ),
             self.get_unique_edges_number() as usize,
         );
-        self.kruskal(self.iter_unique_edge_node_ids(self.directed).progress_with(pb))
+        self.kruskal(
+            self.iter_unique_edge_node_ids(self.directed)
+                .progress_with(pb),
+        )
     }
 
     /// Returns set of edges composing a spanning tree.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
+    ///
+    /// # Arguments
+    ///
+    /// * `verbose`: bool - whether to show a loading bar or not.
+    ///
     pub fn spanning_arborescence(
         &self,
         verbose: bool,
@@ -479,17 +509,18 @@ impl Graph {
                         }
                     };
                     let parents = thread_safe_parents.value.get();
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| unsafe {
-                        if (*parents)[dst as usize] == NOT_PRESENT {
-                            (*parents)[dst as usize] = src;
-                            total_inserted_edges.fetch_add(1, Ordering::SeqCst);
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
-                                .lock()
-                                .unwrap()
-                                .push(dst);
-                        }
-                    });
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                        .for_each(|dst| unsafe {
+                            if (*parents)[dst as usize] == NOT_PRESENT {
+                                (*parents)[dst as usize] = src;
+                                total_inserted_edges.fetch_add(1, Ordering::SeqCst);
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                    .lock()
+                                    .unwrap()
+                                    .push(dst);
+                            }
+                        });
                     active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
@@ -519,6 +550,10 @@ impl Graph {
     /// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
     /// We assign to each node the index of its component, so nodes in the same components will have the same index.
     /// This component index is the returned Components membership vector.
+    ///
+    /// # Arguments
+    ///
+    /// * `verbose`: bool - whether to show a loading bar or not.
     ///
     /// # Example
     /// ```rust
@@ -724,18 +759,19 @@ impl Graph {
                     };
 
                     let src_component = components[src as usize].load(Ordering::Relaxed);
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| {
-                        if components[dst as usize].swap(src_component, Ordering::SeqCst)
-                            == NOT_PRESENT
-                        {
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                            current_component_size.fetch_add(1, Ordering::SeqCst);
-                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
-                                .lock()
-                                .unwrap()
-                                .push(dst);
-                        }
-                    });
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                        .for_each(|dst| {
+                            if components[dst as usize].swap(src_component, Ordering::SeqCst)
+                                == NOT_PRESENT
+                            {
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                current_component_size.fetch_add(1, Ordering::SeqCst);
+                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                    .lock()
+                                    .unwrap()
+                                    .push(dst);
+                            }
+                        });
                     active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
