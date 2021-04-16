@@ -256,8 +256,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_names`: Option<Vec<String>> - The name of the nodes of which components to keep.
-    /// * `node_types`: Option<Vec<String>> - The types of the nodes of which components to keep.
-    /// * `edge_types`: Option<Vec<String>> - The types of the edges of which components to keep.
+    /// * `node_types`: Option<Vec<Option<String>>> - The types of the nodes of which components to keep.
+    /// * `edge_types`: Option<Vec<Option<String>>> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
     /// * `verbose`: bool - Whether to show the loading bar.

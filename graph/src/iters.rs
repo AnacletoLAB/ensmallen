@@ -97,6 +97,7 @@ impl Graph {
     /// # Example
     /// To get an iterator over the edges weights you can use:
     /// ```rust
+    /// # use rayon::iter::ParallelIterator;
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
     /// assert!(graph_with_weights.iter_edge_weights().is_ok());
