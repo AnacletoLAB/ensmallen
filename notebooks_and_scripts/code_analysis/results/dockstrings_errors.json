@@ -14,8 +14,8 @@
         "cooccurence_matrix": [
             "[   7] The argument 'parameters' does not exists in the current method. The available args are ['walks_parameters', 'window_size', 'verbose'].",
             "[   8] The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'.",
-            "[   ~] Missing the documentation for the argument 'window_size'.",
-            "[   ~] Missing the documentation for the argument 'walks_parameters'."
+            "[   ~] Missing the documentation for the argument 'walks_parameters'.",
+            "[   ~] Missing the documentation for the argument 'window_size'."
         ],
         "link_prediction_degrees": [
             "[  11] The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'.",
@@ -34,75 +34,18 @@
     "/Workspace/Github/ensmallen_graph/graph/src/queries_boolean.rs": {
         "is_singleton_from_node_name": [
             "[   ~] Missing the documentation for the argument 'node_name'."
-        ],
-        "has_node_from_node_name_and_node_type_name": [
-            "[   4] The argument type 'String' of 'node_name' does not match the function declaration which is '&str'.",
-            "[   5] The argument type 'String' of 'node_type_name' does not match the function declaration which is 'Option<Vec<String>>'.",
-            "[   ~] Missing the documentation for the argument 'node_type_name'.",
-            "[   ~] Missing the documentation for the argument 'node_name'."
-        ],
-        "has_edge_from_node_names": [
-            "[   4] The argument 'src' does not exists in the current method. The available args are ['src_name', 'dst_name'].",
-            "[   5] The argument 'dst' does not exists in the current method. The available args are ['src_name', 'dst_name'].",
-            "[   ~] Missing the documentation for the argument 'dst_name'.",
-            "[   ~] Missing the documentation for the argument 'src_name'."
-        ],
-        "has_edge_from_node_names_and_edge_type_name": [
-            "[   4] The argument 'src' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
-            "[   5] The argument 'dst' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
-            "[   6] The argument 'edge_type' does not exists in the current method. The available args are ['src_name', 'dst_name', 'edge_type_name'].",
-            "[   ~] Missing the documentation for the argument 'edge_type_name'.",
-            "[   ~] Missing the documentation for the argument 'dst_name'.",
-            "[   ~] Missing the documentation for the argument 'src_name'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/modifiers.rs": {},
     "/Workspace/Github/ensmallen_graph/graph/src/iter_queries.rs": {},
     "/Workspace/Github/ensmallen_graph/graph/src/tarjan.rs": {},
     "/Workspace/Github/ensmallen_graph/graph/src/queries.rs": {
-        "get_unchecked_edge_type_id_from_edge_type_name": [
-            "[   3] The argument 'node_name' does not exists in the current method. The available args are ['edge_type_name'].",
-            "[   ~] Missing the documentation for the argument 'edge_type_name'."
-        ],
         "get_node_ids_from_edge_id": [
             "[  11] In the example there isn't the current method!!!!"
         ],
-        "get_unchecked_unique_source_node_id": [
-            "[   3] The argument 'src' does not exists in the current method. The available args are ['source_id'].",
-            "[   4] The argument 'dst' does not exists in the current method. The available args are ['source_id'].",
-            "[   ~] Missing the documentation for the argument 'source_id'."
-        ],
-        "get_unchecked_node_ids_and_edge_type_id_from_edge_id": [
-            "[   5] The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_id'."
-        ],
-        "get_node_ids_and_edge_type_id_from_edge_id": [
-            "[   3] The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_id'."
-        ],
-        "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": [
-            "[   5] The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.' (doc_line: 5) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_id'."
-        ],
-        "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": [
-            "[   3] The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.' (doc_line: 3) is not in the standard format.",
-            "[   ~] Missing the documentation for the argument 'edge_id'."
-        ],
-        "get_node_type_id_from_node_type_name": [
-            "[   5] The argument type 'Option<&str>' of 'node_type_name' does not match the function declaration which is '&str'.",
-            "[   ~] Missing the documentation for the argument 'node_type_name'."
-        ],
-        "get_edge_type_ids_from_edge_type_names": [
-            "[   3] The argument type 'Vec<String>' of 'edge_type_names' does not match the function declaration which is 'Vec<Option<String>>'.",
-            "[   ~] Missing the documentation for the argument 'edge_type_names'."
-        ],
         "get_node_type_ids_from_node_type_names": [
-            "[   4] The argument type 'Vec<String>' of 'node_types' does not match the function declaration which is 'Vec<Option<String>>'.",
+            "[   4] The argument 'node_type_names' does not exists in the current method. The available args are ['node_types'].",
             "[   ~] Missing the documentation for the argument 'node_types'."
-        ],
-        "get_node_type_name_from_node_type_id": [
-            "[   6] The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function declaration which is 'NodeTypeT'.",
-            "[   ~] Missing the documentation for the argument 'node_type_id'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/filters.rs": {},
@@ -154,40 +97,7 @@
             "[   0] Missing Arguments"
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {
-        "get_bipartite_edges": [
-            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'."
-        ],
-        "get_bipartite_edge_names": [
-            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'first_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
-            "[   ~] Missing the documentation for the argument 'second_nodes_set'."
-        ],
-        "get_star_edges": [
-            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'."
-        ],
-        "get_star_edge_names": [
-            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
-            "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
-            "[   ~] Missing the documentation for the argument 'star_points_node_types_set'."
-        ]
-    },
+    "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {},
     "/Workspace/Github/ensmallen_graph/graph/src/report.rs": {
         "report": [
             "[  18] The example section is missing or in the wrong order."
@@ -207,63 +117,44 @@
             "[   6] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 6) is not in the standard format.",
             "[   7] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format.",
             "[  11] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes_iterator', 'directed', 'directed_edge_list', 'name', 'ignore_duplicated_nodes', 'node_list_is_correct', 'ignore_duplicated_edges', 'edge_list_is_correct', 'verbose', 'numeric_edge_type_ids', 'numeric_node_ids', 'numeric_edge_node_ids', 'numeric_node_types_ids', 'has_node_types', 'has_edge_types', 'has_edge_weights', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
-            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
             "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
             "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
             "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'has_node_types'.",
+            "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
             "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'has_node_types'.",
             "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'."
+            "[   ~] Missing the documentation for the argument 'name'."
         ],
         "from_integer_unsorted": [
             "[   4] The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 4) is not in the standard format.",
             "[   5] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> - Iterator of the nodes.' (doc_line: 5) is not in the standard format.",
             "[   7] The argument 'ignore_duplicated_nodes' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
             "[   9] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
-            "[   ~] Missing the documentation for the argument 'nodes'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
             "[   ~] Missing the documentation for the argument 'edges_iterator'.",
             "[   ~] Missing the documentation for the argument 'node_types'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'nodes'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
             "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'."
+            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
+            "[   ~] Missing the documentation for the argument 'name'."
         ],
         "from_string_sorted": [
             "[   0] Missing Arguments"
         ]
     },
-    "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs": {
-        "sample_negatives": [
-            "[  11] The argument type 'Option<Graph>' of 'seed_graph' does not match the function declaration which is 'Option<&Graph>'.",
-            "[   ~] Missing the documentation for the argument 'seed_graph'."
-        ],
-        "connected_holdout": [
-            "[  15] The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'.",
-            "[  17] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
-            "[   ~] Missing the documentation for the argument 'edge_types'.",
-            "[   ~] Missing the documentation for the argument 'random_state'."
-        ],
-        "random_holdout": [
-            "[   8] The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'.",
-            "[  11] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
-            "[  12] The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function declaration which is 'Option<EdgeT>'.",
-            "[   ~] Missing the documentation for the argument 'edge_types'.",
-            "[   ~] Missing the documentation for the argument 'min_number_overlaps'.",
-            "[   ~] Missing the documentation for the argument 'random_state'."
-        ]
-    }
+    "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs": {}
 }

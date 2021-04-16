@@ -18,11 +18,11 @@ def bindgen(args):
 
         if function.get("struct", "") != "Graph":
             continue
-
+        
         if "name" not in function.keys():
             print("WTF", function)
             continue
-
+        
         #if function["name"] in dir(EnsmallenGraph):
         #    continue
 
@@ -90,6 +90,9 @@ def bindgen(args):
             ])
         else:
             args = function["args"][0][1]
+
+        if function.get("args", [["", ""]])[0][0] != "self":
+            continue
 
         result += "fn {name}({args})".format(
             name=function["name"],
