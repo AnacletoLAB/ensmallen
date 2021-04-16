@@ -310,7 +310,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
+    /// * `explore_weight`: Option<WeightT> - weight for the exploration factor.
     ///
     /// # Example
     /// You can change the `explore_weight` parameter as follows:
@@ -345,7 +345,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_node_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_node_type_weight` parameter as follows:
@@ -380,7 +380,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_edge_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_edge_type_weight` parameter as follows:
@@ -415,7 +415,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * graph: Graph - Graph object for which parameters are to be validated.
+    /// * `graph`: Graph - Graph object for which parameters are to be validated.
     ///
     /// # Example
     /// A graph is always remappable to itself:
