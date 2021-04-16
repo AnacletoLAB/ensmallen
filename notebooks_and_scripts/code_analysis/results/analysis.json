@@ -581,7 +581,7 @@
             "",
             "# Arguments",
             "",
-            "* `iterations`: Option<NodeT> - whether to show the loading bar or not.",
+            "* `iterations`: Option<NodeT> - Whether to show the loading bar or not.",
             "",
             "# Example",
             "You can change the `iterations` parameter as follows:",
@@ -1196,7 +1196,7 @@
             "",
             "* `random_state`: EdgeT - The random_state to use for the holdout,",
             "* `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.",
-            "* `verbose`: bool - whether to show a loading bar or not.",
+            "* `verbose`: bool - Whether to show a loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -1815,7 +1815,7 @@
             "",
             "* `parameters`: &WalksParameters - the walks parameters.",
             "* `window_size`: Option<usize> - Window size to consider for the sequences.",
-            "* `verbose`: Option<bool> - whether to show the progress bars. The default behaviour is false.",
+            "* `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.",
             ""
         ],
         "modifiers": "pub",
@@ -2049,7 +2049,7 @@
             "* `batch_size`: usize - The maximal size of the batch to generate,",
             "* `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],",
             "* `negative_samples`: f64 - The component of netagetive samples to use,",
-            "* `avoid_false_negatives`: bool - whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
+            "* `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
             "* `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.",
             "* `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
             ""
@@ -2108,7 +2108,7 @@
             "* `idx`: u64 - The index of the batch to generate, behaves like a random random_state,",
             "* `batch_size`: usize - The maximal size of the batch to generate,",
             "* `negative_samples`: f64 - The component of netagetive samples to use,",
-            "* `avoid_false_negatives`: bool - whether to remove the false negatives when generated.",
+            "* `avoid_false_negatives`: bool - Whether to remove the false negatives when generated.",
             "- It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
             "* `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.",
             "* `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
@@ -2503,7 +2503,7 @@
             "# Arguments",
             "",
             "* `other`: &Graph - The graph to remap towards.",
-            "* `verbose`: bool - whether to show a loding bar.",
+            "* `verbose`: bool - Whether to show a loding bar.",
             "",
             "# Example",
             "A graph is always remappable to itself:",
@@ -2825,7 +2825,7 @@
             "",
             "# Arguments",
             "",
-            "* skip_weights_if_unavailable: Option<bool> - whether to skip weights if they are not available.",
+            "* skip_weights_if_unavailable: Option<bool> - Whether to skip weights if they are not available.",
             ""
         ],
         "modifiers": "pub",
@@ -2856,7 +2856,7 @@
             "",
             "# Arguments",
             "",
-            "* skip_edge_types_if_unavailable: Option<bool> - whether to skip edge types if they are not available.",
+            "* skip_edge_types_if_unavailable: Option<bool> - Whether to skip edge types if they are not available.",
             ""
         ],
         "modifiers": "pub",
@@ -2981,7 +2981,7 @@
             "",
             "# Arguments",
             "",
-            "* `skip_selfloops`: Option<bool> - whether should ignore or not selfloops.",
+            "* `skip_selfloops`: Option<bool> - Whether should ignore or not selfloops.",
             ""
         ],
         "modifiers": "pub",
@@ -3074,7 +3074,7 @@
             "",
             "# Arguments",
             "",
-            "* `verbose`: Option<bool> - whether to show the loading bar or not.",
+            "* `verbose`: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -3164,7 +3164,7 @@
         ],
         "doc": [
             "",
-            "* numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.",
+            "* numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.",
             ""
         ],
         "modifiers": "pub",
@@ -3195,7 +3195,7 @@
             "",
             "# Arguments",
             "",
-            "* numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.",
+            "* numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.",
             ""
         ],
         "modifiers": "pub",
@@ -3226,7 +3226,7 @@
             "",
             "# Arguments",
             "",
-            "* ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.",
+            "* ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.",
             ""
         ],
         "modifiers": "pub",
@@ -3289,7 +3289,7 @@
             "",
             "# Arguments",
             "",
-            "* header: Option<bool> - whether to expect an header or not.",
+            "* header: Option<bool> - Whether to expect an header or not.",
             ""
         ],
         "modifiers": "pub",
@@ -3320,7 +3320,7 @@
             "",
             "# Arguments",
             "",
-            "* rows_to_skip: Option<bool> - whether to show the loading bar or not.",
+            "* rows_to_skip: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -4511,9 +4511,9 @@
             "Enable extra perks that buys you time as you accept to spend more memory.",
             "",
             "# Arguments",
-            "* `vector_sources`: bool - whether to cache sources into a vector for faster walks.",
-            "* `vector_destinations`: bool - whether to cache destinations into a vector for faster walks.",
-            "* `vector_cumulative_node_degrees`: bool - whether to cache cumulative_node_degrees into a vector for faster walks.",
+            "* `vector_sources`: bool - Whether to cache sources into a vector for faster walks.",
+            "* `vector_destinations`: bool - Whether to cache destinations into a vector for faster walks.",
+            "* `vector_cumulative_node_degrees`: bool - Whether to cache cumulative_node_degrees into a vector for faster walks.",
             "* `cache_size`: Option<f64> - percentage of nodes destinations to cache. This cannot be used with the vector destinations."
         ],
         "modifiers": "pub",
@@ -4762,7 +4762,7 @@
             "",
             "# Arguments",
             "",
-            "* `verbose`: Option<bool> - whether to show the loading bar or not.",
+            "* `verbose`: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -4837,7 +4837,7 @@
             "",
             "# Arguments",
             "",
-            "* header: Option<bool> - whether to write out an header or not.",
+            "* header: Option<bool> - Whether to write out an header or not.",
             ""
         ],
         "modifiers": "pub",
@@ -7391,7 +7391,7 @@
             "* `edge_types`: Option<Vec<String>> - The edge types to keep.",
             "* `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.",
             "* `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             ""
         ],
         "modifiers": "pub",
@@ -7908,12 +7908,12 @@
             "* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.",
             "* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.",
             "* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.",
-            "* `weights`: bool - whether to remove the weights.",
-            "* `node_types`: bool - whether to remove the node types.",
-            "* `edge_types`: bool - whether to remove the edge types.",
-            "* `singletons`: bool - whether to remove the singleton nodes.",
-            "* `selfloops`: bool - whether to remove edges with self-loops.",
-            "* `verbose`: bool - whether to show a loading bar while building the graph.",
+            "* `weights`: bool - Whether to remove the weights.",
+            "* `node_types`: bool - Whether to remove the node types.",
+            "* `edge_types`: bool - Whether to remove the edge types.",
+            "* `singletons`: bool - Whether to remove the singleton nodes.",
+            "* `selfloops`: bool - Whether to remove edges with self-loops.",
+            "* `verbose`: bool - Whether to show a loading bar while building the graph.",
             ""
         ],
         "modifiers": "pub",
@@ -7999,7 +7999,7 @@
             "* `edge_types`: Option<Vec<String>> - The types of the edges of which components to keep.",
             "* `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.",
             "* `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.",
-            "* `verbose`: bool - whether to show the loading bar."
+            "* `verbose`: bool - Whether to show the loading bar."
         ],
         "modifiers": "pub",
         "name": "remove_components",
@@ -8329,7 +8329,7 @@
             "",
             "# Arguments",
             "",
-            "* `verbose`: Option<bool> - whether to show the loading bar or not.",
+            "* `verbose`: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -8360,7 +8360,7 @@
             "",
             "# Arguments",
             "",
-            "* numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.",
+            "* numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.",
             ""
         ],
         "modifiers": "pub",
@@ -8423,7 +8423,7 @@
             "",
             "# Arguments",
             "",
-            "* header: Option<bool> - whether to write out an header or not.",
+            "* header: Option<bool> - Whether to write out an header or not.",
             ""
         ],
         "modifiers": "pub",
@@ -8454,7 +8454,7 @@
             "",
             "# Arguments",
             "",
-            "* `directed`: Option<bool> - whether to write out the graph as directed or not.",
+            "* `directed`: Option<bool> - Whether to write out the graph as directed or not.",
             ""
         ],
         "modifiers": "pub",
@@ -9442,7 +9442,7 @@
             "Return vector of tuple of Node IDs that form the edges of the required bipartite graph.",
             "",
             "# Arguments",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.",
             "* `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.",
             "* `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.",
@@ -9486,7 +9486,7 @@
             "Return vector of tuple of Node IDs that form the edges of the required bipartite graph.",
             "",
             "# Arguments",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.",
             "* `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.",
             "* `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.",
@@ -9531,7 +9531,7 @@
             "",
             "# Arguments",
             "* `central_node`: String - Name of the node to use as center of the star.",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.",
             "* `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points."
         ],
@@ -9570,7 +9570,7 @@
             "",
             "# Arguments",
             "* `central_node`: String - Name of the node to use as center of the star.",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.",
             "* `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points."
         ],
@@ -9608,9 +9608,9 @@
             "Return vector of tuple of Node IDs that form the edges of the required clique.",
             "",
             "# Arguments",
-            "* `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.",
-            "* `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `directed`: Option<bool> - Whether to return the edges as directed or undirected. By default, equal to the graph.",
+            "* `allow_selfloops`: Option<bool> - Whether to allow self-loops in the clique. By default, equal to the graph.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.",
             "* `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique."
         ],
@@ -9652,9 +9652,9 @@
             "Return vector of tuple of Node names that form the edges of the required clique.",
             "",
             "# Arguments",
-            "* `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.",
-            "* `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.",
-            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `directed`: Option<bool> - Whether to return the edges as directed or undirected. By default, equal to the graph.",
+            "* `allow_selfloops`: Option<bool> - Whether to allow self-loops in the clique. By default, equal to the graph.",
+            "* `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.",
             "* `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.",
             "* `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique."
         ],
@@ -9799,7 +9799,7 @@
             "# Arguments",
             "",
             "* `other`: &Graph - graph to create overlap report with.",
-            "* `verbose`: bool - whether to shor the loading bars."
+            "* `verbose`: bool - Whether to shor the loading bars."
         ],
         "modifiers": "pub",
         "name": "overlap_textual_report",
@@ -10567,7 +10567,7 @@
             "Return vector of the non-unique source nodes.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_sources",
@@ -10598,7 +10598,7 @@
             "Return vector of the non-unique source nodes names.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_source_names",
@@ -10629,7 +10629,7 @@
             "Return vector on the (non unique) destination nodes of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_destinations",
@@ -10660,7 +10660,7 @@
             "Return vector of the non-unique destination nodes names.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_destination_names",
@@ -11186,7 +11186,7 @@
             "`[0, 1, 0, 0, 1, 1]`",
             "",
             "# Arguments",
-            "* `verbose`: bool - whether to show the loading bar."
+            "* `verbose`: bool - Whether to show the loading bar."
         ],
         "modifiers": "pub",
         "name": "get_node_connected_component_ids",
@@ -11795,7 +11795,7 @@
             "Set whether to load IDs as numeric.",
             "",
             "# Arguments",
-            "* numeric_ids: bool - whether to load the IDs as numeric",
+            "* numeric_ids: bool - Whether to load the IDs as numeric",
             ""
         ],
         "modifiers": "pub",
@@ -12139,7 +12139,7 @@
             "Set whether to load IDs as numeric.",
             "",
             "# Arguments",
-            "* numeric_ids: bool - whether to load the IDs as numeric",
+            "* numeric_ids: bool - Whether to load the IDs as numeric",
             ""
         ],
         "modifiers": "pub",
@@ -12418,7 +12418,7 @@
             "",
             "# Arguments",
             "",
-            "* skip_node_types_if_unavailable: Option<bool> - whether to skip node_types if they are not available.",
+            "* skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.",
             ""
         ],
         "modifiers": "pub",
@@ -12579,7 +12579,7 @@
             "",
             "# Arguments",
             "",
-            "* `verbose`: Option<bool> - whether to show the loading bar or not.",
+            "* `verbose`: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -12619,7 +12619,7 @@
             "",
             "# Arguments",
             "",
-            "* numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.",
+            "* numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.",
             ""
         ],
         "modifiers": "pub",
@@ -12659,7 +12659,7 @@
             "",
             "# Arguments",
             "",
-            "* numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.",
+            "* numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.",
             ""
         ],
         "modifiers": "pub",
@@ -12699,7 +12699,7 @@
             "",
             "# Arguments",
             "",
-            "* ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.",
+            "* ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.",
             ""
         ],
         "modifiers": "pub",
@@ -12830,7 +12830,7 @@
             "",
             "# Arguments",
             "",
-            "* header: Option<bool> - whether to expect an header or not.",
+            "* header: Option<bool> - Whether to expect an header or not.",
             ""
         ],
         "modifiers": "pub",
@@ -12870,7 +12870,7 @@
             "",
             "# Arguments",
             "",
-            "* rows_to_skip: Option<bool> - whether to show the loading bar or not.",
+            "* rows_to_skip: Option<bool> - Whether to show the loading bar or not.",
             ""
         ],
         "modifiers": "pub",
@@ -13218,7 +13218,7 @@
             "Set whether to load IDs as numeric.",
             "",
             "# Arguments",
-            "* numeric_ids: bool - whether to load the IDs as numeric",
+            "* numeric_ids: bool - Whether to load the IDs as numeric",
             ""
         ],
         "modifiers": "pub",
@@ -13501,7 +13501,7 @@
             "Return iterator on the (non unique) source nodes of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_source_node_ids",
@@ -13615,7 +13615,7 @@
             "Return parallel iterator on the (non unique) source nodes of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_source_node_ids",
@@ -13651,7 +13651,7 @@
             "Return iterator on the (non unique) destination nodes of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_destination_node_ids",
@@ -13687,7 +13687,7 @@
             "Return parallel iterator on the (non unique) destination nodes of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_destination_node_ids",
@@ -13810,7 +13810,7 @@
             "Return iterator on the edges of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edge_ids",
@@ -13846,7 +13846,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edges",
@@ -13882,7 +13882,7 @@
             "Return iterator on the edges of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edge_ids",
@@ -13918,7 +13918,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edges",
@@ -13954,7 +13954,7 @@
             "Return iterator on the edges of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edge_node_ids_and_edge_type_id",
@@ -13990,7 +13990,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edge_node_names_and_edge_type_name",
@@ -14027,7 +14027,7 @@
             "The result is (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edge_node_names_and_edge_type_name",
@@ -14063,7 +14063,7 @@
             "Return iterator on the edges of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edge_node_ids_and_edge_type_id",
@@ -14099,7 +14099,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edge_node_names_and_edge_type_name_and_edge_weight",
@@ -14135,7 +14135,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edge_node_names_and_edge_type_name_and_edge_weight",
@@ -14171,7 +14171,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "par_iter_edge_node_ids_and_edge_type_id_and_edge_weight",
@@ -14207,7 +14207,7 @@
             "Return iterator on the edges of the graph with the string name.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_edge_node_ids_and_edge_type_id_and_edge_weight",
@@ -14243,7 +14243,7 @@
             "Return iterator on the edges of the graph.",
             "",
             "# Arguments",
-            "* `directed`: bool - whether to filter out the undirected edges."
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "iter_unique_edge_node_ids",
@@ -14739,8 +14739,8 @@
             "",
             "* `edge_file_reader`: EdgeFileReader - Reader of the edge file.",
             "* `node_file_reader`: Option<NodeFileReader> - Reader of the node file.",
-            "* `directed`: bool - whether the graph is to be read as directed or undirected.",
-            "* `directed_edge_list`: bool - whether to read the edge list as directed.",
+            "* `directed`: bool - Whether the graph is to be read as directed or undirected.",
+            "* `directed_edge_list`: bool - Whether to read the edge list as directed.",
             "* `edges_number`: usize - Number of edges of the graph.",
             "* `nodes_number`: NodeT - Number of the nodes of the graph.",
             "* `name`: S - Name of the graph.",
@@ -14792,8 +14792,8 @@
             "",
             "* `edge_file_reader`: EdgeFileReader - Reader of the edge file.",
             "* `node_file_reader`: Option<NodeFileReader> - Reader of the node file.",
-            "* `directed`: bool - whether the graph is to be read as directed or undirected.",
-            "* `directed_edge_list`: bool - whether to read the edge list as directed."
+            "* `directed`: bool - Whether the graph is to be read as directed or undirected.",
+            "* `directed_edge_list`: bool - Whether to read the edge list as directed."
         ],
         "modifiers": "pub",
         "name": "from_unsorted_csv",
@@ -15798,8 +15798,8 @@
             "* `random_state`: EdgeT - random_state to use to reproduce negative edge set.",
             "* `negatives_number`: EdgeT - Number of negatives edges to include.",
             "* `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.",
-            "* `only_from_same_component`: bool - whether to sample negative edges only from nodes that are from the same component.",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `only_from_same_component`: bool - Whether to sample negative edges only from nodes that are from the same component.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             ""
         ],
         "modifiers": "pub",
@@ -15960,8 +15960,8 @@
             "* `random_state`: NodeT - The random_state to use for the holdout,",
             "* `train_size`: f64 - Rate target to reserve for training.",
             "* `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.",
-            "* `include_all_edge_types`: bool - whether to include all the edges between two nodes.",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `include_all_edge_types`: bool - Whether to include all the edges between two nodes.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             "",
             ""
         ],
@@ -16013,10 +16013,10 @@
             "",
             "* `random_state`: NodeT - The random_state to use for the holdout,",
             "* `train_size`: f64 - rate target to reserve for training",
-            "* `include_all_edge_types`: bool - whether to include all the edges between two nodes.",
+            "* `include_all_edge_types`: bool - Whether to include all the edges between two nodes.",
             "* `edge_types`: Option<Vec<String>> - The edges to include in validation set.",
             "* `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             ""
         ],
         "modifiers": "pub",
@@ -16171,7 +16171,7 @@
             "# Arguments",
             "* `random_state`: usize - Random random_state to use.",
             "* `nodes_number`: NodeT - Number of nodes to extract.",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             "",
             "# Example",
             "this generates a random subgraph with 1000 nodes.",
@@ -16221,7 +16221,7 @@
             "* `k_index`: u64 - Which fold to use for the validation.",
             "* `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).",
             "* `random_state`: EdgeT - The random_state (seed) to use for the holdout,",
-            "* `verbose`: bool - whether to show the loading bar.",
+            "* `verbose`: bool - Whether to show the loading bar.",
             "",
             "# Example",
             "```rust",

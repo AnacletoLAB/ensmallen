@@ -127,7 +127,7 @@ class DocParser:
             # Ensure that the argument type matches
             if real_arg_type != arg_type:
                 self.log_error(line[0], 
-                    "The argument type '{}' of '{}' does not match the function delcaration which is '{}'.".format(
+                    "The argument type '{}' of '{}' does not match the function declaration which is '{}'.".format(
                         arg_type, arg_name, real_arg_type
                     )
                 )

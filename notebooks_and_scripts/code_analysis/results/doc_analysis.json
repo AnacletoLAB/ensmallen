@@ -170,7 +170,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type '&Graph' of 'other' does not match the function delcaration which is '&'b Graph'."
+                "msg": "The argument type '&Graph' of 'other' does not match the function declaration which is '&'b Graph'."
             },
             {
                 "doc_line": "~",
@@ -263,7 +263,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument type '&Graph' of 'other' does not match the function delcaration which is '&'b Graph'."
+                "msg": "The argument type '&Graph' of 'other' does not match the function declaration which is '&'b Graph'."
             },
             {
                 "doc_line": "~",
@@ -286,7 +286,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument type '&Graph' of 'other' does not match the function delcaration which is '&'b Graph'."
+                "msg": "The argument type '&Graph' of 'other' does not match the function declaration which is '&'b Graph'."
             },
             {
                 "doc_line": "~",
@@ -309,7 +309,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument type '&Graph' of 'other' does not match the function delcaration which is '&'b Graph'."
+                "msg": "The argument type '&Graph' of 'other' does not match the function declaration which is '&'b Graph'."
             },
             {
                 "doc_line": "~",
@@ -332,7 +332,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument type '&Graph' of 'other' does not match the function delcaration which is '&'b Graph'."
+                "msg": "The argument type '&Graph' of 'other' does not match the function declaration which is '&'b Graph'."
             },
             {
                 "doc_line": "~",
@@ -754,7 +754,7 @@
         "errors": [
             {
                 "doc_line": 8,
-                "msg": "The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function delcaration which is '&Option<HashSet<Option<EdgeTypeT>>>'."
+                "msg": "The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'."
             },
             {
                 "doc_line": "~",
@@ -843,7 +843,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'u64' of 'lines_number' does not match the function delcaration which is 'usize'."
+                "msg": "The argument type 'u64' of 'lines_number' does not match the function declaration which is 'usize'."
             },
             {
                 "doc_line": 6,
@@ -909,7 +909,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'."
+                "msg": "The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'."
             },
             {
                 "doc_line": "~",
@@ -932,7 +932,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'."
+                "msg": "The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'."
             },
             {
                 "doc_line": "~",
@@ -1007,11 +1007,11 @@
             },
             {
                 "doc_line": 8,
-                "msg": "The argument type 'Option<usize>' of 'window_size' does not match the function delcaration which is 'usize'."
+                "msg": "The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'."
             },
             {
                 "doc_line": 9,
-                "msg": "The argument type 'Option<bool>' of 'verbose' does not match the function delcaration which is 'bool'."
+                "msg": "The argument type 'Option<bool>' of 'verbose' does not match the function declaration which is 'bool'."
             },
             {
                 "doc_line": "~",
@@ -1042,11 +1042,11 @@
         "errors": [
             {
                 "doc_line": 12,
-                "msg": "The argument type '&WalksParameters' of 'walk_parameters' does not match the function delcaration which is '&'a WalksParameters'."
+                "msg": "The argument type '&WalksParameters' of 'walk_parameters' does not match the function declaration which is '&'a WalksParameters'."
             },
             {
                 "doc_line": 13,
-                "msg": "The argument type 'usize' of 'quantity' does not match the function delcaration which is 'NodeT'."
+                "msg": "The argument type 'usize' of 'quantity' does not match the function declaration which is 'NodeT'."
             },
             {
                 "doc_line": "~",
@@ -1079,7 +1079,7 @@
         "errors": [
             {
                 "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function delcaration which is 'Option<NodeT>'."
+                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
             },
             {
                 "doc_line": "~",
@@ -1123,7 +1123,7 @@
         "errors": [
             {
                 "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function delcaration which is 'Option<NodeT>'."
+                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
             },
             {
                 "doc_line": "~",
@@ -1167,7 +1167,7 @@
         "errors": [
             {
                 "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function delcaration which is 'Option<NodeT>'."
+                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
             },
             {
                 "doc_line": "~",
@@ -1210,7 +1210,7 @@
         "errors": [
             {
                 "doc_line": 11,
-                "msg": "The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function delcaration which is '&'a Option<&Graph>'."
+                "msg": "The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
             },
             {
                 "doc_line": "~",
@@ -1715,7 +1715,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_weights_if_unavailable: Option<bool> - whether to skip weights if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_weights_if_unavailable: Option<bool> - Whether to skip weights if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1738,7 +1738,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_edge_types_if_unavailable: Option<bool> - whether to skip edge types if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_edge_types_if_unavailable: Option<bool> - Whether to skip edge types if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1979,7 +1979,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2002,7 +2002,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2048,7 +2048,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* header: Option<bool> - whether to expect an header or not.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* header: Option<bool> - Whether to expect an header or not.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2071,7 +2071,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* rows_to_skip: Option<bool> - whether to show the loading bar or not.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* rows_to_skip: Option<bool> - Whether to show the loading bar or not.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2361,11 +2361,11 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'String' of 'node_name' does not match the function delcaration which is '&str'."
+                "msg": "The argument type 'String' of 'node_name' does not match the function declaration which is '&str'."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument type 'String' of 'node_type_name' does not match the function delcaration which is 'Option<Vec<String>>'."
+                "msg": "The argument type 'String' of 'node_type_name' does not match the function declaration which is 'Option<Vec<String>>'."
             },
             {
                 "doc_line": "~",
@@ -4559,7 +4559,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Vec<String>' of 'edge_types' does not match the function delcaration which is 'Vec<Option<String>>'."
+                "msg": "The argument type 'Vec<String>' of 'edge_types' does not match the function declaration which is 'Vec<Option<String>>'."
             },
             {
                 "doc_line": "~",
@@ -4582,7 +4582,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Vec<String>' of 'node_types' does not match the function delcaration which is 'Vec<Option<String>>'."
+                "msg": "The argument type 'Vec<String>' of 'node_types' does not match the function declaration which is 'Vec<Option<String>>'."
             },
             {
                 "doc_line": "~",
@@ -4647,7 +4647,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function delcaration which is 'NodeTypeT'."
+                "msg": "The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function declaration which is 'NodeTypeT'."
             },
             {
                 "doc_line": "~",
@@ -4691,11 +4691,11 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": "~",
@@ -5053,7 +5053,7 @@
             },
             {
                 "name": "Arguments",
-                "content": "* `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.\n* `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.\n* `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.\n* `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.\n* `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.\n* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.\n* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.\n* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.\n* `weights`: bool - whether to remove the weights.\n* `node_types`: bool - whether to remove the node types.\n* `edge_types`: bool - whether to remove the edge types.\n* `singletons`: bool - whether to remove the singleton nodes.\n* `selfloops`: bool - whether to remove edges with self-loops.\n* `verbose`: bool - whether to show a loading bar while building the graph.\n"
+                "content": "* `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.\n* `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.\n* `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.\n* `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.\n* `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.\n* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.\n* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.\n* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.\n* `weights`: bool - Whether to remove the weights.\n* `node_types`: bool - Whether to remove the node types.\n* `edge_types`: bool - Whether to remove the edge types.\n* `singletons`: bool - Whether to remove the singleton nodes.\n* `selfloops`: bool - Whether to remove edges with self-loops.\n* `verbose`: bool - Whether to show a loading bar while building the graph.\n"
             }
         ]
     },
@@ -5063,11 +5063,11 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": "~",
@@ -5172,7 +5172,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument type 'String' of 'edge_type' does not match the function delcaration which is 'S'."
+                "msg": "The argument type 'String' of 'edge_type' does not match the function declaration which is 'S'."
             },
             {
                 "doc_line": "~",
@@ -5195,7 +5195,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument type 'String' of 'node_type' does not match the function delcaration which is 'S'."
+                "msg": "The argument type 'String' of 'node_type' does not match the function declaration which is 'S'."
             },
             {
                 "doc_line": "~",
@@ -5621,7 +5621,7 @@
         "errors": [
             {
                 "doc_line": 7,
-                "msg": "The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'u64'."
+                "msg": "The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'u64'."
             },
             {
                 "doc_line": "~",
@@ -5690,7 +5690,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'."
+                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'."
             },
             {
                 "doc_line": "~",
@@ -5717,7 +5717,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'."
+                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'."
             },
             {
                 "doc_line": "~",
@@ -5740,7 +5740,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'."
+                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'."
             },
             {
                 "doc_line": "~",
@@ -5779,7 +5779,7 @@
             },
             {
                 "doc_line": 8,
-                "msg": "The argument type 'SingleWalkParameters' of 'parameters' does not match the function delcaration which is '&SingleWalkParameters'."
+                "msg": "The argument type 'SingleWalkParameters' of 'parameters' does not match the function declaration which is '&SingleWalkParameters'."
             },
             {
                 "doc_line": "~",
@@ -5814,7 +5814,7 @@
             },
             {
                 "doc_line": 7,
-                "msg": "The argument type 'usize' of 'random_state' does not match the function delcaration which is 'u64'."
+                "msg": "The argument type 'usize' of 'random_state' does not match the function declaration which is 'u64'."
             },
             {
                 "doc_line": "~",
@@ -5938,19 +5938,19 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 7,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": "~",
@@ -5991,19 +5991,19 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 7,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": "~",
@@ -6044,11 +6044,11 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": "~",
@@ -6086,11 +6086,11 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": 6,
-                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'."
+                "msg": "The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'."
             },
             {
                 "doc_line": "~",
@@ -6341,7 +6341,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument type '&[NodeT]' of 'node_types_list' does not match the function delcaration which is '&[(NodeTypeT, usize)]'."
+                "msg": "The argument type '&[NodeT]' of 'node_types_list' does not match the function declaration which is '&[(NodeTypeT, usize)]'."
             },
             {
                 "doc_line": "~",
@@ -6364,7 +6364,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument type '&[edgeT]' of 'edge_types_list' does not match the function delcaration which is '&[(EdgeTypeT, usize)]'."
+                "msg": "The argument type '&[edgeT]' of 'edge_types_list' does not match the function declaration which is '&[(EdgeTypeT, usize)]'."
             },
             {
                 "doc_line": "~",
@@ -7257,7 +7257,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument type 'String' of 'value' does not match the function delcaration which is 'S'."
+                "msg": "The argument type 'String' of 'value' does not match the function declaration which is 'S'."
             },
             {
                 "doc_line": "~",
@@ -7424,7 +7424,7 @@
         "errors": [
             {
                 "doc_line": 3,
-                "msg": "The argument line '* numeric_ids: bool - whether to load the IDs as numeric' (doc_line: 3) is not in the standard format."
+                "msg": "The argument line '* numeric_ids: bool - Whether to load the IDs as numeric' (doc_line: 3) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -7602,7 +7602,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* skip_node_types_if_unavailable: Option<bool> - whether to skip node_types if they are not available.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -7669,7 +7669,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -9091,7 +9091,7 @@
         "errors": [
             {
                 "doc_line": 11,
-                "msg": "The argument type 'Option<Graph>' of 'seed_graph' does not match the function delcaration which is 'Option<&Graph>'."
+                "msg": "The argument type 'Option<Graph>' of 'seed_graph' does not match the function declaration which is 'Option<&Graph>'."
             },
             {
                 "doc_line": "~",
@@ -9192,11 +9192,11 @@
         "errors": [
             {
                 "doc_line": 15,
-                "msg": "The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'."
+                "msg": "The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'."
             },
             {
                 "doc_line": 17,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": "~",
@@ -9239,15 +9239,15 @@
         "errors": [
             {
                 "doc_line": 8,
-                "msg": "The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'."
+                "msg": "The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'."
             },
             {
                 "doc_line": 11,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'."
+                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
             },
             {
                 "doc_line": 12,
-                "msg": "The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function delcaration which is 'Option<EdgeT>'."
+                "msg": "The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function declaration which is 'Option<EdgeT>'."
             },
             {
                 "doc_line": "~",

@@ -119,7 +119,7 @@ impl EdgeTypeVocabulary {
     /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - whether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> EdgeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);

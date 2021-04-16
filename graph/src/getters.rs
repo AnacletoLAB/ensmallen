@@ -11,6 +11,10 @@ use log::info;
 /// * `get_unchecked_(.+)`
 impl Graph {
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
+    ///
+    /// # Arguments
+    ///
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     pub fn get_connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
@@ -305,7 +309,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_source_node_ids(directed).collect()
     }
@@ -313,7 +317,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_source_node_ids(directed)
             .map(|src| self.get_unchecked_node_name_from_node_id(src))
@@ -323,7 +327,7 @@ impl Graph {
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destination_node_ids(directed).collect()
     }
@@ -331,7 +335,7 @@ impl Graph {
     /// Return vector of the non-unique destination nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destination_node_ids(directed)
             .map(|dst| self.get_unchecked_node_name_from_node_id(dst))
@@ -460,6 +464,9 @@ impl Graph {
     }
 
     /// Return vector with the sorted edge Ids.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
         self.par_iter_edge_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
@@ -467,6 +474,9 @@ impl Graph {
     }
 
     /// Return vector with the sorted edge names.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.par_iter_edges(directed)
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
@@ -512,7 +522,7 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     pub fn get_node_connected_component_ids(&self, verbose: bool) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
@@ -613,7 +623,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {
+    /// for (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
@@ -650,7 +660,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {
+    /// for (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```

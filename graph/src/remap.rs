@@ -5,7 +5,7 @@ impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
-    /// other: &Graph - graph towards remap the nodes to.
+    /// `other`: &Graph - graph towards remap the nodes to.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -34,7 +34,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to remap towards.
-    /// * `verbose`: bool - whether to show a loding bar.
+    /// * `verbose`: bool - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:

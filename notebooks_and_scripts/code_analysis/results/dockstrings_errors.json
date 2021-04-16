@@ -1,7 +1,7 @@
 {
     "/Workspace/Github/ensmallen_graph/graph/src/trees.rs": {
         "random_spanning_arborescence_kruskal": [
-            "[   8] The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function delcaration which is '&Option<HashSet<Option<EdgeTypeT>>>'.",
+            "[   8] The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'.",
             "[   ~] Missing the documentation for the argument 'unwanted_edge_types'."
         ],
         "spanning_arborescence_kruskal": [
@@ -17,35 +17,35 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/graph.rs": {
         "overlaps": [
-            "[   4] The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'.",
+            "[   4] The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'.",
             "[   ~] Missing the documentation for the argument 'other'."
         ],
         "contains": [
-            "[   4] The argument type 'Graph' of 'other' does not match the function delcaration which is '&Graph'.",
+            "[   4] The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'.",
             "[   ~] Missing the documentation for the argument 'other'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs": {
         "node2vec": [
-            "[  12] The argument type '&WalksParameters' of 'walk_parameters' does not match the function delcaration which is '&'a WalksParameters'.",
-            "[  13] The argument type 'usize' of 'quantity' does not match the function delcaration which is 'NodeT'.",
+            "[  12] The argument type '&WalksParameters' of 'walk_parameters' does not match the function declaration which is '&'a WalksParameters'.",
+            "[  13] The argument type 'usize' of 'quantity' does not match the function declaration which is 'NodeT'.",
             "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   ~] Missing the documentation for the argument 'walk_parameters'."
         ],
         "cooccurence_matrix": [
             "[   7] The argument 'parameters' does not exists in the current method. The available args are ['walks_parameters', 'window_size', 'verbose'].",
-            "[   8] The argument type 'Option<usize>' of 'window_size' does not match the function delcaration which is 'usize'.",
-            "[   9] The argument type 'Option<bool>' of 'verbose' does not match the function delcaration which is 'bool'.",
+            "[   8] The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'.",
+            "[   9] The argument type 'Option<bool>' of 'verbose' does not match the function declaration which is 'bool'.",
             "[   ~] Missing the documentation for the argument 'walks_parameters'.",
             "[   ~] Missing the documentation for the argument 'window_size'.",
             "[   ~] Missing the documentation for the argument 'verbose'."
         ],
         "get_node_label_prediction_tuple_from_node_ids": [
-            "[  13] The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function delcaration which is 'Option<NodeT>'.",
+            "[  13] The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'.",
             "[   ~] Missing the documentation for the argument 'max_neighbours'."
         ],
         "link_prediction_degrees": [
-            "[  11] The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function delcaration which is '&'a Option<&Graph>'.",
+            "[  11] The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'.",
             "[   ~] Missing the documentation for the argument 'graph_to_avoid'."
         ],
         "link_prediction_ids": [
@@ -63,8 +63,8 @@
             "[   ~] Missing the documentation for the argument 'node_name'."
         ],
         "has_node_from_node_name_and_node_type_name": [
-            "[   4] The argument type 'String' of 'node_name' does not match the function delcaration which is '&str'.",
-            "[   5] The argument type 'String' of 'node_type_name' does not match the function delcaration which is 'Option<Vec<String>>'.",
+            "[   4] The argument type 'String' of 'node_name' does not match the function declaration which is '&str'.",
+            "[   5] The argument type 'String' of 'node_type_name' does not match the function declaration which is 'Option<Vec<String>>'.",
             "[   ~] Missing the documentation for the argument 'node_name'.",
             "[   ~] Missing the documentation for the argument 'node_type_name'."
         ],
@@ -134,22 +134,22 @@
             "[   ~] Missing the documentation for the argument 'edge_type_name'."
         ],
         "get_edge_type_ids_from_edge_type_names": [
-            "[   4] The argument type 'Vec<String>' of 'edge_types' does not match the function delcaration which is 'Vec<Option<String>>'.",
+            "[   4] The argument type 'Vec<String>' of 'edge_types' does not match the function declaration which is 'Vec<Option<String>>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'."
         ],
         "get_node_type_ids_from_node_type_names": [
-            "[   4] The argument type 'Vec<String>' of 'node_types' does not match the function delcaration which is 'Vec<Option<String>>'.",
+            "[   4] The argument type 'Vec<String>' of 'node_types' does not match the function declaration which is 'Vec<Option<String>>'.",
             "[   ~] Missing the documentation for the argument 'node_types'."
         ],
         "get_node_type_name_from_node_type_id": [
-            "[   6] The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function delcaration which is 'NodeTypeT'.",
+            "[   6] The argument type 'Vec<NodeTypeT>' of 'node_type_id' does not match the function declaration which is 'NodeTypeT'.",
             "[   ~] Missing the documentation for the argument 'node_type_id'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/filters.rs": {
         "filter": [
-            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
-            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
+            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
             "[   ~] Missing the documentation for the argument 'node_types'."
         ]
@@ -173,30 +173,30 @@
             "[   2] The example section is missing or in the wrong order."
         ],
         "remove_components": [
-            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
-            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[   5] The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
+            "[   6] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
             "[   ~] Missing the documentation for the argument 'node_types'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/setters.rs": {
         "set_all_edge_types": [
-            "[   3] The argument type 'String' of 'edge_type' does not match the function delcaration which is 'S'.",
+            "[   3] The argument type 'String' of 'edge_type' does not match the function declaration which is 'S'.",
             "[   ~] Missing the documentation for the argument 'edge_type'."
         ],
         "set_all_node_types": [
-            "[   3] The argument type 'String' of 'node_type' does not match the function delcaration which is 'S'.",
+            "[   3] The argument type 'String' of 'node_type' does not match the function declaration which is 'S'.",
             "[   ~] Missing the documentation for the argument 'node_type'."
         ]
     },
     "/Workspace/Github/ensmallen_graph/graph/src/walks.rs": {
         "random_walks_iter": [
-            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'.",
+            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'.",
             "[   ~] Missing the documentation for the argument 'quantity'.",
             "[   ~] Missing the documentation for the argument 'parameters'."
         ],
         "complete_walks_iter": [
-            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function delcaration which is '&'a WalksParameters'.",
+            "[   4] The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'.",
             "[   ~] Missing the documentation for the argument 'parameters'."
         ]
     },
@@ -210,34 +210,34 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/edge_lists.rs": {
         "get_bipartite_edges": [
-            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
+            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
             "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'first_node_types_set'."
         ],
         "get_bipartite_edge_names": [
-            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
+            "[   4] The argument type 'Option<HashMap<String>>' of 'first_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   5] The argument type 'Option<HashMap<String>>' of 'second_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   6] The argument type 'Option<HashMap<String>>' of 'first_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   7] The argument type 'Option<HashMap<String>>' of 'second_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
             "[   ~] Missing the documentation for the argument 'second_node_types_set'.",
             "[   ~] Missing the documentation for the argument 'first_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'second_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'first_node_types_set'."
         ],
         "get_star_edges": [
-            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
+            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
             "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'star_points_node_types_set'."
         ],
         "get_star_edge_names": [
-            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
-            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function delcaration which is 'Option<HashSet<String>>'.",
+            "[   5] The argument type 'Option<HashMap<String>>' of 'star_points_nodes_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
+            "[   6] The argument type 'Option<HashMap<String>>' of 'star_points_node_types_set' does not match the function declaration which is 'Option<HashSet<String>>'.",
             "[   ~] Missing the documentation for the argument 'star_points_nodes_set'.",
             "[   ~] Missing the documentation for the argument 'star_points_node_types_set'."
         ]
@@ -325,19 +325,19 @@
     },
     "/Workspace/Github/ensmallen_graph/graph/src/holdouts.rs": {
         "sample_negatives": [
-            "[  11] The argument type 'Option<Graph>' of 'seed_graph' does not match the function delcaration which is 'Option<&Graph>'.",
+            "[  11] The argument type 'Option<Graph>' of 'seed_graph' does not match the function declaration which is 'Option<&Graph>'.",
             "[   ~] Missing the documentation for the argument 'seed_graph'."
         ],
         "connected_holdout": [
-            "[  15] The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'.",
-            "[  17] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
+            "[  15] The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'.",
+            "[  17] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
             "[   ~] Missing the documentation for the argument 'random_state'.",
             "[   ~] Missing the documentation for the argument 'edge_types'."
         ],
         "random_holdout": [
-            "[   8] The argument type 'NodeT' of 'random_state' does not match the function delcaration which is 'EdgeT'.",
-            "[  11] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function delcaration which is 'Option<Vec<Option<String>>>'.",
-            "[  12] The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function delcaration which is 'Option<EdgeT>'.",
+            "[   8] The argument type 'NodeT' of 'random_state' does not match the function declaration which is 'EdgeT'.",
+            "[  11] The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'.",
+            "[  12] The argument type 'Option<usize>' of 'min_number_overlaps' does not match the function declaration which is 'Option<EdgeT>'.",
             "[   ~] Missing the documentation for the argument 'random_state'.",
             "[   ~] Missing the documentation for the argument 'edge_types'.",
             "[   ~] Missing the documentation for the argument 'min_number_overlaps'."

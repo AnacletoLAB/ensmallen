@@ -126,7 +126,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - graph to create overlap report with.
-    /// * `verbose`: bool - whether to shor the loading bars.
+    /// * `verbose`: bool - Whether to shor the loading bars.
     pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
@@ -317,6 +317,9 @@ impl Graph {
 
 
     /// Return rendered textual report of the graph.
+    ///
+    /// # Arguments
+    /// * `verbose`:  bool - Whether to show loading bar.
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();

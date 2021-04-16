@@ -798,7 +798,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * `iterations`: Option<NodeT> - whether to show the loading bar or not.
+    /// * `iterations`: Option<NodeT> - Whether to show the loading bar or not.
     ///
     /// # Example
     /// You can change the `iterations` parameter as follows:
@@ -951,7 +951,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
+    /// * `explore_weight`: Option<WeightT> - weight for the exploration factor.
     ///
     /// # Example
     /// You can change the `explore_weight` parameter as follows:
@@ -986,7 +986,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_node_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_node_type_weight` parameter as follows:
@@ -1021,7 +1021,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_edge_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_edge_type_weight` parameter as follows:
@@ -1056,7 +1056,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * graph: Graph - Graph object for which parameters are to be validated.
+    /// * `graph`: Graph - Graph object for which parameters are to be validated.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -1375,9 +1375,9 @@ impl Graph {
     /// # Arguments
     ///
     /// * `random_state`:NodeT - The random_state to use for the holdout,
-    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
-    /// * `verbose`: bool - whether to show a loading bar or not.
+    /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
     pub fn random_spanning_arborescence_kruskal(
         &self,
@@ -2110,7 +2110,7 @@ fn fast_u32_modulo(val: u32, n: u32) -> u32 {
 ///
 /// # Arguments
 ///
-/// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
+/// * `sequences`: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * `window_size`: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec<'a>(
@@ -2148,7 +2148,7 @@ pub fn word2vec<'a>(
 ///
 /// # Arguments
 ///
-/// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
+/// * `sequences`:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * `window_size`: Option<usize> - Window size to consider for the sequences.
 /// * `verbose`: Option<bool>,
 ///     whether to show the progress bars.
@@ -2431,7 +2431,7 @@ impl Graph {
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated.
+    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
@@ -2477,7 +2477,7 @@ impl Graph {
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - whether to remove the false negatives when generated.
+    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
@@ -2846,7 +2846,7 @@ impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
-    /// other: &Graph - graph towards remap the nodes to.
+    /// `other`: &Graph - graph towards remap the nodes to.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -2875,7 +2875,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to remap towards.
-    /// * `verbose`: bool - whether to show a loding bar.
+    /// * `verbose`: bool - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -3205,7 +3205,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_weights_if_unavailable: Option<bool> - whether to skip weights if they are not available.
+    /// * skip_weights_if_unavailable: Option<bool> - Whether to skip weights if they are not available.
     ///
     pub fn set_skip_weights_if_unavailable(
         mut self,
@@ -3221,7 +3221,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_edge_types_if_unavailable: Option<bool> - whether to skip edge types if they are not available.
+    /// * skip_edge_types_if_unavailable: Option<bool> - Whether to skip edge types if they are not available.
     ///
     pub fn set_skip_edge_types_if_unavailable(
         mut self,
@@ -3273,7 +3273,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `skip_selfloops`: Option<bool> - whether should ignore or not selfloops.
+    /// * `skip_selfloops`: Option<bool> - Whether should ignore or not selfloops.
     ///
     pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_selfloops {
@@ -3319,7 +3319,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
@@ -3361,7 +3361,7 @@ impl EdgeFileReader {
     }
 
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_edge_type_ids(
         mut self,
@@ -3377,7 +3377,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -3390,7 +3390,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> EdgeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -3423,7 +3423,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to expect an header or not.
+    /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
         if let Some(v) = header {
@@ -3436,7 +3436,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
         if let Some(v) = rows_to_skip {
@@ -5057,9 +5057,9 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool - whether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool - whether to cache destinations into a vector for faster walks.
-    /// * `vector_outbounds`: bool - whether to cache outbounds into a vector for faster walks.
+    /// * `vector_sources`: bool - Whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: bool - Whether to cache destinations into a vector for faster walks.
+    /// * `vector_outbounds`: bool - Whether to cache outbounds into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
@@ -5227,7 +5227,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
         if let Some(v) = verbose {
@@ -5253,7 +5253,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to write out an header or not.
+    /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileWriter {
         if let Some(v) = header {
@@ -6256,7 +6256,7 @@ impl Graph {
     /// * `edge_types`: Option<Vec<String>> - The edge types to keep.
     /// * `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.
     /// * `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn filter(
         &self,
@@ -6942,7 +6942,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - graph to create overlap report with.
-    /// * `verbose`: bool - whether to shor the loading bars.
+    /// * `verbose`: bool - Whether to shor the loading bars.
     pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
@@ -7344,12 +7344,12 @@ impl Graph {
     /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
     /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
     /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
-    /// * `weights`: bool - whether to remove the weights.
-    /// * `node_types`: bool - whether to remove the node types.
-    /// * `edge_types`: bool - whether to remove the edge types.
-    /// * `singletons`: bool - whether to remove the singleton nodes.
-    /// * `selfloops`: bool - whether to remove edges with self-loops.
-    /// * `verbose`: bool - whether to show a loading bar while building the graph.
+    /// * `weights`: bool - Whether to remove the weights.
+    /// * `node_types`: bool - Whether to remove the node types.
+    /// * `edge_types`: bool - Whether to remove the edge types.
+    /// * `singletons`: bool - Whether to remove the singleton nodes.
+    /// * `selfloops`: bool - Whether to remove edges with self-loops.
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
     ///
     pub fn remove(
         &self,
@@ -7574,7 +7574,7 @@ impl Graph {
     /// * `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
@@ -7886,7 +7886,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -7899,7 +7899,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
         if let Some(nni) = numeric_node_ids {
@@ -7925,7 +7925,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to write out an header or not.
+    /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = header {
@@ -7938,7 +7938,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * `directed`: Option<bool> - whether to write out the graph as directed or not.
+    /// * `directed`: Option<bool> - Whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;
@@ -8978,7 +8978,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -9058,7 +9058,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// * `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// * `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -9093,7 +9093,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `central_node`: String - Name of the node to use as center of the star.
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
@@ -9116,7 +9116,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `central_node`: String - Name of the node to use as center of the star.
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// * `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
@@ -9138,9 +9138,9 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// # Arguments
-    /// * `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// * `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `directed`: Option<bool> - Whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// * `allow_selfloops`: Option<bool> - Whether to allow self-loops in the clique. By default, equal to the graph.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// * `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
@@ -9200,9 +9200,9 @@ impl Graph {
     /// Return vector of tuple of Node names that form the edges of the required clique.
     ///
     /// # Arguments
-    /// * `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
-    /// * `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
-    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `directed`: Option<bool> - Whether to return the edges as directed or undirected. By default, equal to the graph.
+    /// * `allow_selfloops`: Option<bool> - Whether to allow self-loops in the clique. By default, equal to the graph.
+    /// * `removed_existing_edges`: Option<bool> - Whether to filter out the existing edges. By default, true.
     /// * `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// * `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(
@@ -9392,7 +9392,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_sources_ids(directed).collect()
     }
@@ -9400,7 +9400,7 @@ impl Graph {
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_sources_ids(directed)
             .map(|src| self.get_node_name_by_node_id(src).unwrap())
@@ -9410,7 +9410,7 @@ impl Graph {
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destinations_ids(directed).collect()
     }
@@ -9418,7 +9418,7 @@ impl Graph {
     /// Return vector of the non-unique destination nodes names.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destinations_ids(directed)
             .map(|dst| self.get_node_name_by_node_id(dst).unwrap())
@@ -9592,7 +9592,7 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     pub fn get_node_components_vector(&self, verbose: bool) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
@@ -9942,7 +9942,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - whether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> Vocabulary<IndexT> {
         self.numeric_ids = numeric_ids;
@@ -10153,7 +10153,7 @@ impl NodeTypeVocabulary {
     /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - whether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> NodeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
@@ -10298,7 +10298,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_node_types_if_unavailable: Option<bool> - whether to skip node_types if they are not available.
+    /// * skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.
     ///
     pub fn set_skip_node_types_if_unavailable(
         mut self,
@@ -10363,7 +10363,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {
@@ -10376,7 +10376,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_type_ids(
         mut self,
@@ -10392,7 +10392,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> NodeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -10405,7 +10405,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> NodeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -10467,7 +10467,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to expect an header or not.
+    /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileReader {
         if let Some(v) = header {
@@ -10480,7 +10480,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> NodeFileReader {
         if let Some(v) = rows_to_skip {
@@ -10705,7 +10705,7 @@ impl EdgeTypeVocabulary {
     /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - whether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> EdgeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
@@ -10789,7 +10789,7 @@ impl Graph {
     /// Return iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_sources_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -10797,7 +10797,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_sources_ids(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
@@ -10805,7 +10805,7 @@ impl Graph {
     /// Return iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_destinations_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_edge_ids(directed).map(move |(_, _, dst)| dst)
     }
@@ -10813,7 +10813,7 @@ impl Graph {
     /// Return parallel iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_destinations_ids(
         &self,
         directed: bool,
@@ -10845,7 +10845,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_ids(
         &self,
         directed: bool,
@@ -10877,7 +10877,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edges(
         &self,
         directed: bool,
@@ -10897,7 +10897,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_ids(
         &self,
         directed: bool,
@@ -10916,7 +10916,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edges(
         &self,
         directed: bool,
@@ -10936,7 +10936,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edges_with_type_ids(
         &self,
         directed: bool,
@@ -10955,7 +10955,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edges_with_type(
         &self,
         directed: bool,
@@ -10989,7 +10989,7 @@ impl Graph {
     /// The result is (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type(
         &self,
         directed: bool,
@@ -11022,7 +11022,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_ids(
         &self,
         directed: bool,
@@ -11041,7 +11041,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_and_weight(
         &self,
         directed: bool,
@@ -11076,7 +11076,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_with_type_and_weight(
         &self,
         directed: bool,
@@ -11111,7 +11111,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn par_iter_edge_with_type_and_weight_ids(
         &self,
         directed: bool,
@@ -11132,7 +11132,7 @@ impl Graph {
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_edge_with_type_and_weight_ids(
         &self,
         directed: bool,
@@ -11152,7 +11152,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
-    /// * `directed`: bool - whether to filter out the undirected edges.
+    /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_unique_edges(
         &self,
         directed: bool,
@@ -11217,8 +11217,8 @@ impl Graph {
     ///
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
-    /// * `directed`: bool - whether the graph is to be read as directed or undirected.
-    /// * `directed_edge_list`: bool - whether to read the edge list as directed.
+    /// * `directed`: bool - Whether the graph is to be read as directed or undirected.
+    /// * `directed_edge_list`: bool - Whether to read the edge list as directed.
     /// * `edges_number`: usize - Number of edges of the graph.
     /// * `nodes_number`: NodeT - Number of the nodes of the graph.
     /// * `name`: S - Name of the graph.
@@ -11279,8 +11279,8 @@ impl Graph {
     ///
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
-    /// * `directed`: bool - whether the graph is to be read as directed or undirected.
-    /// * `directed_edge_list`: bool - whether to read the edge list as directed.
+    /// * `directed`: bool - Whether the graph is to be read as directed or undirected.
+    /// * `directed_edge_list`: bool - Whether to read the edge list as directed.
     pub fn from_unsorted_csv<S: Clone + Into<String>>(
         mut edge_file_reader: EdgeFileReader,
         mut node_file_reader: Option<NodeFileReader>,
@@ -12778,8 +12778,8 @@ impl Graph {
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
-    /// * `only_from_same_component`: bool - whether to sample negative edges only from nodes that are from the same component.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `only_from_same_component`: bool - Whether to sample negative edges only from nodes that are from the same component.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
@@ -13197,8 +13197,8 @@ impl Graph {
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
-    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     ///
     pub fn connected_holdout(
@@ -13289,10 +13289,10 @@ impl Graph {
     ///
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training
-    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn random_holdout(
         &self,
@@ -13576,7 +13576,7 @@ impl Graph {
     ///
     /// * `random_state`: usize - Random random_state to use.
     /// * `nodes_number`: usize - Number of nodes to extract.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn random_subgraph(
         &self,
@@ -13692,7 +13692,7 @@ impl Graph {
     /// * `k`: u64 - The number of folds.
     /// * `k_index`: u64 - Which fold to use for the validation.
     /// * `random_state`: NodeT - The random_state (seed) to use for the holdout,
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn kfold(
         &self,

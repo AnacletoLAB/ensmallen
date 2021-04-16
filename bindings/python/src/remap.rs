@@ -7,7 +7,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// other: EnsmallenGraph,
+    /// `other`: EnsmallenGraph,
     ///     The graph to remap towards.
     /// verbose: bool = True,
     ///     Wether to show a loading bar. By default True.

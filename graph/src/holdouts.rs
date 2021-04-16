@@ -28,8 +28,8 @@ impl Graph {
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
-    /// * `only_from_same_component`: bool - whether to sample negative edges only from nodes that are from the same component.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `only_from_same_component`: bool - Whether to sample negative edges only from nodes that are from the same component.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
@@ -461,8 +461,8 @@ impl Graph {
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
-    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     ///
     pub fn connected_holdout(
@@ -552,10 +552,10 @@ impl Graph {
     ///
     /// * `random_state`: NodeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training
-    /// * `include_all_edge_types`: bool - whether to include all the edges between two nodes.
+    /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn random_holdout(
         &self,
@@ -857,7 +857,7 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: usize - Random random_state to use.
     /// * `nodes_number`: NodeT - Number of nodes to extract.
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     /// # Example
     /// this generates a random subgraph with 1000 nodes.
@@ -979,7 +979,7 @@ impl Graph {
     /// * `k_index`: u64 - Which fold to use for the validation.
     /// * `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).
     /// * `random_state`: EdgeT - The random_state (seed) to use for the holdout,
-    /// * `verbose`: bool - whether to show the loading bar.
+    /// * `verbose`: bool - Whether to show the loading bar.
     ///
     /// # Example
     /// ```rust

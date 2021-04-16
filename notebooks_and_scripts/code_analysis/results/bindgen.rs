@@ -202,7 +202,7 @@ impl Graph {
 	/// 
 	/// Paramenters
 	/// --------------
-	/// other: Graph - graph towards remap the nodes to.
+	/// `other`: Graph - graph towards remap the nodes to.
 	fn are_nodes_remappable(&self, other : &Graph) -> bool {
 		self.graph.are_nodes_remappable(other)
 	}

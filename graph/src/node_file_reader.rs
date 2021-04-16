@@ -135,7 +135,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * skip_node_types_if_unavailable: Option<bool> - whether to skip node_types if they are not available.
+    /// * skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.
     ///
     pub fn set_skip_node_types_if_unavailable(
         mut self,
@@ -200,7 +200,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {
@@ -213,7 +213,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_type_ids(
         mut self,
@@ -229,7 +229,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> NodeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -242,7 +242,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> NodeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -304,7 +304,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to expect an header or not.
+    /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileReader {
         if let Some(v) = header {
@@ -317,7 +317,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> NodeFileReader {
         if let Some(v) = rows_to_skip {
