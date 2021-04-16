@@ -27,7 +27,7 @@ impl Graph {
     ///
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
-    /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
+    /// * `seed_graph`: Option<&Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// * `only_from_same_component`: bool - Whether to sample negative edges only from nodes that are from the same component.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
@@ -458,7 +458,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
@@ -550,7 +550,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
