@@ -130,7 +130,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - The graph to check against.
+    /// * `other`: &Graph - The graph to check against.
     ///
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
@@ -155,7 +155,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `other`: Graph - The graph to check against.
+    /// * `other`: &Graph - The graph to check against.
     ///
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
