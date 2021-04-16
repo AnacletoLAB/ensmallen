@@ -428,7 +428,7 @@
                 {
                     "name": "iterations",
                     "type": "Option<NodeT>",
-                    "desc": "whether to show the loading bar or not"
+                    "desc": "Whether to show the loading bar or not"
                 }
             ]
         },
@@ -554,18 +554,15 @@
     "set_explore_weight": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
         "function": "set_explore_weight",
-        "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument line '* explore_weight: Option<WeightT> - weight for the exploration factor.' (doc_line: 4) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'explore_weight'."
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "explore_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "weight for the exploration factor"
+                }
+            ]
         },
         "example": {
             "desc": "You can change the `explore_weight` parameter as follows:\n",
@@ -582,18 +579,15 @@
     "set_change_node_type_weight": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
         "function": "set_change_node_type_weight",
-        "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument line '* change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.' (doc_line: 4) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'change_node_type_weight'."
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "change_node_type_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "weight for the exploration of different node types"
+                }
+            ]
         },
         "example": {
             "desc": "You can change the `change_node_type_weight` parameter as follows:\n",
@@ -610,18 +604,15 @@
     "set_change_edge_type_weight": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/walks_parameters.rs",
         "function": "set_change_edge_type_weight",
-        "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument line '* change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.' (doc_line: 4) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'change_edge_type_weight'."
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "change_edge_type_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "weight for the exploration of different node types"
+                }
+            ]
         },
         "example": {
             "desc": "You can change the `change_edge_type_weight` parameter as follows:\n",
@@ -641,7 +632,7 @@
         "errors": [
             {
                 "doc_line": 6,
-                "msg": "The argument line '* graph: Graph - Graph object for which parameters are to be validated.' (doc_line: 6) is not in the standard format."
+                "msg": "The argument type 'Graph' of 'graph' does not match the function declaration which is '&Graph'."
             },
             {
                 "doc_line": "~",
@@ -696,15 +687,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "random_state",
+                    "type": "u64",
+                    "desc": "The random state to reproduce the given edge sampling"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -714,8 +707,12 @@
         "function": "iter_on_edges_with_preference_from_random_state",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
+                "doc_line": 4,
+                "msg": "The argument line '* `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.' (doc_line: 4) is not in the standard format."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'undesired_edge_types'."
             },
             {
                 "doc_line": 0,
@@ -723,7 +720,18 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "random_state",
+                    "type": "u64",
+                    "desc": "The random state to reproduce the given edge sampling"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -743,7 +751,7 @@
         ],
         "args": {
             "args": [],
-            "desc": "`edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.\n# Returns\nTuple with:\n- Set of the edges\n- Vector of the nodes components\n- Total components number\n- Minimum component size\n- Maximum component size\n"
+            "desc": "`edges`: impl Iterator<Item = (NodeT, NodeT)> + 'a - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.\n# Returns\nTuple with:\n- Set of the edges\n- Vector of the nodes components\n- Total components number\n- Minimum component size\n- Maximum component size\n"
         },
         "example": {},
         "extra_headers": []
@@ -754,11 +762,11 @@
         "errors": [
             {
                 "doc_line": 8,
-                "msg": "The argument type '&Option<HashSet<EdgeTypeT>>' of 'unwanted_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'."
+                "msg": "The argument type '&Option<HashSet<EdgeTypeT>>' of 'undesired_edge_types' does not match the function declaration which is '&Option<HashSet<Option<EdgeTypeT>>>'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'unwanted_edge_types'."
+                "msg": "Missing the documentation for the argument 'undesired_edge_types'."
             },
             {
                 "doc_line": 0,
@@ -775,7 +783,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show a loading bar or not"
+                    "desc": "Whether to show a loading bar or not"
                 }
             ]
         },
@@ -788,15 +796,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar or not"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -807,15 +817,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar or not"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -823,14 +835,15 @@
     "connected_components": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
         "function": "connected_components",
-        "errors": [
-            {
-                "doc_line": 10,
-                "msg": "The arguments section is missing or in the wrong order."
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar or not"
+                }
+            ]
         },
         "example": {
             "content": "```rust# #![feature(impl_trait_in_bindings)]\n# use graph::Graph;\n// Graph is a weightless graph with the edges\n// [(0, 1), (1, 4), (2, 3)]\n# let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![\n#        Ok((\"0\".to_string(), \"1\".to_string(), None, None)),\n#        Ok((\"1\".to_string(), \"4\".to_string(), None, None)),\n#        Ok((\"2\".to_string(), \"3\".to_string(), None, None)),\n#     ];\n#\n# let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());\n#\n# let graph = Graph::from_string_unsorted(\n#     edge.into_iter(),\n#     nodes,      // nodes\n#     false,     // directed\n#     false,      // directe edge list\n#     \"test graph\",// name\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // verbose\n#     false,     // numeric_edge_types_ids\n#     false,     // numeric_node_ids\n#     false,     // numeric_edge_node_ids\n#     false,     // numeric_node_types_ids\n#     false,     // has_node_types\n#     false,     // has_edge_types\n#     false,     // has_edge_weights\n#     true,\n#     true,\n#     true,\n# ).unwrap();\nlet (components, number_of_components, smallest, biggest) =\ngraph.connected_components(false).unwrap();\n//   nodes names:       0  1  4  2  3\nassert_eq!(components, [0, 0, 0, 1, 1].to_vec());\nassert_eq!(number_of_components, 2);\nassert_eq!(smallest, 2); // the size of the smallest component\nassert_eq!(biggest, 3);  // the size of the biggest component\n"
@@ -908,20 +921,18 @@
         "function": "overlaps",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "other",
+                    "type": "&Graph",
+                    "desc": "The graph to check against"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -931,20 +942,18 @@
         "function": "contains",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument type 'Graph' of 'other' does not match the function declaration which is '&Graph'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "other",
+                    "type": "&Graph",
+                    "desc": "The graph to check against"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -974,7 +983,7 @@
         "errors": [
             {
                 "doc_line": 12,
-                "msg": "The argument line '* sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.' (doc_line: 12) is not in the standard format."
+                "msg": "The argument line '* `sequences`: impl ParallelIterator<Item = Vec<NodeT>> + 'a - the sequence of sequences of integers to preprocess.' (doc_line: 12) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -1010,20 +1019,12 @@
                 "msg": "The argument type 'Option<usize>' of 'window_size' does not match the function declaration which is 'usize'."
             },
             {
-                "doc_line": 9,
-                "msg": "The argument type 'Option<bool>' of 'verbose' does not match the function declaration which is 'bool'."
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walks_parameters'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": 0,
@@ -1031,7 +1032,13 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show the progress bars. The default behaviour is false"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -1045,14 +1052,6 @@
                 "msg": "The argument type '&WalksParameters' of 'walk_parameters' does not match the function declaration which is '&'a WalksParameters'."
             },
             {
-                "doc_line": 13,
-                "msg": "The argument type 'usize' of 'quantity' does not match the function declaration which is 'NodeT'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
-            },
-            {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walk_parameters'."
             },
@@ -1063,6 +1062,11 @@
         ],
         "args": {
             "args": [
+                {
+                    "name": "quantity",
+                    "type": "NodeT",
+                    "desc": "Number of nodes to consider"
+                },
                 {
                     "name": "window_size",
                     "type": "usize",
@@ -1077,14 +1081,6 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
         "function": "get_neighbours_from_node_id",
         "errors": [
-            {
-                "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
@@ -1111,6 +1107,11 @@
                     "name": "offset",
                     "type": "NodeT",
                     "desc": "Offset for padding porposes"
+                },
+                {
+                    "name": "max_neighbours",
+                    "type": "Option<NodeT>",
+                    "desc": "Number of maximum neighbours to consider"
                 }
             ]
         },
@@ -1121,14 +1122,6 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
         "function": "get_node_label_prediction_tuple_from_node_id",
         "errors": [
-            {
-                "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
@@ -1155,6 +1148,11 @@
                     "name": "offset",
                     "type": "NodeT",
                     "desc": "Offset for padding porposes"
+                },
+                {
+                    "name": "max_neighbours",
+                    "type": "Option<NodeT>",
+                    "desc": "Number of maximum neighbours to consider"
                 }
             ]
         },
@@ -1164,16 +1162,7 @@
     "get_node_label_prediction_tuple_from_node_ids": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/preprocessing.rs",
         "function": "get_node_label_prediction_tuple_from_node_ids",
-        "errors": [
-            {
-                "doc_line": 13,
-                "msg": "The argument type '&Option<NodeT>' of 'max_neighbours' does not match the function declaration which is 'Option<NodeT>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
-            }
-        ],
+        "errors": [],
         "args": {
             "args": [
                 {
@@ -1195,6 +1184,11 @@
                     "name": "offset",
                     "type": "NodeT",
                     "desc": "Offset for padding porposes"
+                },
+                {
+                    "name": "max_neighbours",
+                    "type": "Option<NodeT>",
+                    "desc": "Number of maximum neighbours to consider"
                 }
             ]
         },
@@ -1210,7 +1204,7 @@
         "errors": [
             {
                 "doc_line": 11,
-                "msg": "The argument type 'Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
+                "msg": "The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
             },
             {
                 "doc_line": "~",
@@ -1246,7 +1240,7 @@
                 {
                     "name": "avoid_false_negatives",
                     "type": "bool",
-                    "desc": "whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down"
+                    "desc": "Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down"
                 },
                 {
                     "name": "maximal_sampling_attempts",
@@ -1263,8 +1257,8 @@
         "function": "link_prediction_ids",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'maximal_sampling_attempts'."
+                "doc_line": 9,
+                "msg": "The argument type '&Option<&Graph>' of 'graph_to_avoid' does not match the function declaration which is '&'a Option<&Graph>'."
             },
             {
                 "doc_line": "~",
@@ -1295,10 +1289,14 @@
                 {
                     "name": "avoid_false_negatives",
                     "type": "bool",
-                    "desc": "whether to remove the false negatives when generated"
+                    "desc": "Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down"
+                },
+                {
+                    "name": "maximal_sampling_attempts",
+                    "type": "usize",
+                    "desc": "Number of attempts to execute to sample the negative edges"
                 }
-            ],
-            "footer": "- It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.\n* `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.\n* `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,\n"
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -1496,7 +1494,7 @@
         ],
         "args": {
             "args": [],
-            "desc": "other: &Graph - graph towards remap the nodes to.\n# Example\nA graph is always remappable to itself:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.are_nodes_remappable(&graph));\n```\nTwo different graphs, like Cora and STRING, are not remappable:\n```rust\n# let cora = graph::test_utilities::load_cora().unwrap();\n# let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(!cora.are_nodes_remappable(&ppi));\n```\n"
+            "desc": "`other`: &Graph - graph towards remap the nodes to.\n# Example\nA graph is always remappable to itself:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.are_nodes_remappable(&graph));\n```\nTwo different graphs, like Cora and STRING, are not remappable:\n```rust\n# let cora = graph::test_utilities::load_cora().unwrap();\n# let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(!cora.are_nodes_remappable(&ppi));\n```\n"
         },
         "example": {},
         "extra_headers": []
@@ -1515,7 +1513,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show a loding bar"
+                    "desc": "Whether to show a loding bar"
                 }
             ]
         },
@@ -1838,7 +1836,7 @@
                 {
                     "name": "skip_selfloops",
                     "type": "Option<bool>",
-                    "desc": "whether should ignore or not selfloops"
+                    "desc": "Whether should ignore or not selfloops"
                 }
             ]
         },
@@ -1905,7 +1903,7 @@
                 {
                     "name": "verbose",
                     "type": "Option<bool>",
-                    "desc": "whether to show the loading bar or not"
+                    "desc": "Whether to show the loading bar or not"
                 }
             ]
         },
@@ -2369,11 +2367,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_name'."
+                "msg": "Missing the documentation for the argument 'node_type_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type_name'."
+                "msg": "Missing the documentation for the argument 'node_name'."
             },
             {
                 "doc_line": 0,
@@ -2400,11 +2398,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
+                "msg": "Missing the documentation for the argument 'dst_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst_name'."
+                "msg": "Missing the documentation for the argument 'src_name'."
             }
         ],
         "args": {
@@ -2434,7 +2432,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": "~",
@@ -2442,7 +2440,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
+                "msg": "Missing the documentation for the argument 'src_name'."
             }
         ],
         "args": {
@@ -3027,17 +3025,17 @@
                 {
                     "name": "vector_sources",
                     "type": "bool",
-                    "desc": "whether to cache sources into a vector for faster walks"
+                    "desc": "Whether to cache sources into a vector for faster walks"
                 },
                 {
                     "name": "vector_destinations",
                     "type": "bool",
-                    "desc": "whether to cache destinations into a vector for faster walks"
+                    "desc": "Whether to cache destinations into a vector for faster walks"
                 },
                 {
                     "name": "vector_cumulative_node_degrees",
                     "type": "bool",
-                    "desc": "whether to cache cumulative_node_degrees into a vector for faster walks"
+                    "desc": "Whether to cache cumulative_node_degrees into a vector for faster walks"
                 },
                 {
                     "name": "cache_size",
@@ -3335,15 +3333,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge whose edge weight is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -3354,15 +3354,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_name",
+                    "type": "&str",
+                    "desc": "The node name whose node ID is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -3372,8 +3374,12 @@
         "function": "get_unchecked_edge_type_id_from_edge_type_name",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
+                "doc_line": 3,
+                "msg": "The argument 'node_name' does not exists in the current method. The available args are ['edge_type_name']."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
                 "doc_line": 0,
@@ -3392,15 +3398,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edge_type_id",
+                    "type": "Option<EdgeTypeT>",
+                    "desc": "The edge type naIDme whose edge type name is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -3431,8 +3439,8 @@
         "function": "get_unchecked_node_count_from_node_type_id",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument line '* node_type: Option<NodeTypeT> - The node type to retrieve count of.' (doc_line: 4) is not in the standard format."
+                "doc_line": 3,
+                "msg": "The argument line '* node_type: Option<NodeTypeT> - The node type to retrieve count of.' (doc_line: 3) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -3472,7 +3480,7 @@
         ],
         "args": {
             "args": [],
-            "desc": "`node`: NodeT - Node whose neighbours are to return.\n`random_state`: u64 - Random state to subsample neighbours.\n`max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider.\n"
+            "desc": "`node`: NodeT - Node whose neighbours are to return.\n`random_state`: u64 - Random state to subsample neighbours.\n`max_neighbours`: Option<NodeT> - Optionally number of neighbours to consider.\n"
         },
         "example": {},
         "extra_headers": []
@@ -4154,15 +4162,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_name",
+                    "type": "&str",
+                    "desc": "The node name whose node ID is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4217,7 +4227,7 @@
         "args": {
             "args": [
                 {
-                    "name": "edge_type",
+                    "name": "edge_type_id",
                     "type": "Option<EdgeTypeT>",
                     "desc": "The edge type ID to count the edges of"
                 }
@@ -4231,20 +4241,18 @@
         "function": "get_edge_type_id_from_edge_type_name",
         "errors": [
             {
-                "doc_line": 5,
-                "msg": "The argument 'edge_type' does not exists in the current method. The available args are ['edge_type_name']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edge_type_name",
+                    "type": "Option<&str>",
+                    "desc": "The edge type name whose ID is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4261,7 +4269,7 @@
         "args": {
             "args": [
                 {
-                    "name": "edge_type",
+                    "name": "edge_type_name",
                     "type": "Option<&str>",
                     "desc": "The edge type name to count the edges of"
                 }
@@ -4276,7 +4284,7 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument 'node_type' does not exists in the current method. The available args are ['node_type_name']."
+                "msg": "The argument type 'Option<&str>' of 'node_type_name' does not match the function declaration which is '&str'."
             },
             {
                 "doc_line": "~",
@@ -4305,7 +4313,7 @@
         "args": {
             "args": [
                 {
-                    "name": "node_type",
+                    "name": "node_type_id",
                     "type": "Option<NodeTypeT>",
                     "desc": "The node type ID to count the nodes of"
                 }
@@ -4319,20 +4327,18 @@
         "function": "get_node_count_from_node_type_name",
         "errors": [
             {
-                "doc_line": 6,
-                "msg": "The argument 'node_type' does not exists in the current method. The available args are ['node_type_name']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type_name'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_type_name",
+                    "type": "Option<&str>",
+                    "desc": "The node type name to count the nodes of"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4420,18 +4426,15 @@
     "get_neighbour_node_names_from_node_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_neighbour_node_names_from_node_name",
-        "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument 'node_id' does not exists in the current method. The available args are ['node_name']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_name'."
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_name",
+                    "type": "&str",
+                    "desc": "Node name whose neighbours are to be retrieved"
+                }
+            ]
         },
         "example": {
             "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
@@ -4527,10 +4530,6 @@
         "function": "get_edge_id_from_node_names_and_edge_type_name",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type_name'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -4546,9 +4545,13 @@
                     "name": "dst_name",
                     "type": "&str",
                     "desc": "Destination node name of the edge"
+                },
+                {
+                    "name": "edge_type_name",
+                    "type": "Option<&String>",
+                    "desc": "Edge type name"
                 }
-            ],
-            "footer": "`edge_type_name`: Option<&String> - Edge type name.\n"
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4558,12 +4561,12 @@
         "function": "get_edge_type_ids_from_edge_type_names",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument type 'Vec<String>' of 'edge_types' does not match the function declaration which is 'Vec<Option<String>>'."
+                "doc_line": 3,
+                "msg": "The argument type 'Vec<String>' of 'edge_type_names' does not match the function declaration which is 'Vec<Option<String>>'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
+                "msg": "Missing the documentation for the argument 'edge_type_names'."
             },
             {
                 "doc_line": 0,
@@ -4690,22 +4693,6 @@
         "function": "filter",
         "errors": [
             {
-                "doc_line": 5,
-                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -4716,6 +4703,16 @@
                     "name": "node_names",
                     "type": "Option<Vec<String>>",
                     "desc": "The node names to keep"
+                },
+                {
+                    "name": "node_types",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "The node types to keep"
+                },
+                {
+                    "name": "edge_types",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "The edge types to keep"
                 },
                 {
                     "name": "min_weight",
@@ -4730,7 +4727,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -5062,22 +5059,6 @@
         "function": "remove_components",
         "errors": [
             {
-                "doc_line": 5,
-                "msg": "The argument type 'Option<Vec<String>>' of 'node_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
-            },
-            {
-                "doc_line": 6,
-                "msg": "The argument type 'Option<Vec<String>>' of 'edge_types' does not match the function declaration which is 'Option<Vec<Option<String>>>'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -5088,6 +5069,16 @@
                     "name": "node_names",
                     "type": "Option<Vec<String>>",
                     "desc": "The name of the nodes of which components to keep"
+                },
+                {
+                    "name": "node_types",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "The types of the nodes of which components to keep"
+                },
+                {
+                    "name": "edge_types",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "The types of the edges of which components to keep"
                 },
                 {
                     "name": "minimum_component_size",
@@ -5102,7 +5093,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -5123,7 +5114,7 @@
                 {
                     "name": "directed",
                     "type": "Option<bool>",
-                    "desc": "whether to write out the graph as directed or not"
+                    "desc": "Whether to write out the graph as directed or not"
                 }
             ]
         },
@@ -5397,11 +5388,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'transition'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'transition'."
             },
             {
                 "doc_line": "~",
@@ -5441,11 +5432,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5453,7 +5444,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": 0,
@@ -5480,35 +5471,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'has_selfloop'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": "~",
@@ -5517,6 +5484,30 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'previous_destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'src'."
             },
             {
                 "doc_line": 0,
@@ -5586,7 +5577,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
@@ -5594,7 +5585,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
@@ -5602,7 +5593,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": 0,
@@ -5744,11 +5735,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'to_node'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'to_node'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
@@ -5787,11 +5778,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -5958,11 +5949,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_node_types_set'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+                "msg": "Missing the documentation for the argument 'second_node_types_set'."
             },
             {
                 "doc_line": "~",
@@ -5978,7 +5969,7 @@
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 }
             ]
         },
@@ -6011,11 +6002,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_node_types_set'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+                "msg": "Missing the documentation for the argument 'second_node_types_set'."
             },
             {
                 "doc_line": "~",
@@ -6031,7 +6022,7 @@
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 }
             ]
         },
@@ -6052,11 +6043,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
+                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
+                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
             },
             {
                 "doc_line": 0,
@@ -6073,7 +6064,7 @@
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 }
             ]
         },
@@ -6094,11 +6085,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
+                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'star_points_nodes_set'."
+                "msg": "Missing the documentation for the argument 'star_points_node_types_set'."
             },
             {
                 "doc_line": 0,
@@ -6115,7 +6106,7 @@
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 }
             ]
         },
@@ -6136,17 +6127,17 @@
                 {
                     "name": "directed",
                     "type": "Option<bool>",
-                    "desc": "whether to return the edges as directed or undirected. By default, equal to the graph"
+                    "desc": "Whether to return the edges as directed or undirected. By default, equal to the graph"
                 },
                 {
                     "name": "allow_selfloops",
                     "type": "Option<bool>",
-                    "desc": "whether to allow self-loops in the clique. By default, equal to the graph"
+                    "desc": "Whether to allow self-loops in the clique. By default, equal to the graph"
                 },
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 },
                 {
                     "name": "allow_node_type_set",
@@ -6177,17 +6168,17 @@
                 {
                     "name": "directed",
                     "type": "Option<bool>",
-                    "desc": "whether to return the edges as directed or undirected. By default, equal to the graph"
+                    "desc": "Whether to return the edges as directed or undirected. By default, equal to the graph"
                 },
                 {
                     "name": "allow_selfloops",
                     "type": "Option<bool>",
-                    "desc": "whether to allow self-loops in the clique. By default, equal to the graph"
+                    "desc": "Whether to allow self-loops in the clique. By default, equal to the graph"
                 },
                 {
                     "name": "removed_existing_edges",
                     "type": "Option<bool>",
-                    "desc": "whether to filter out the existing edges. By default, true"
+                    "desc": "Whether to filter out the existing edges. By default, true"
                 },
                 {
                     "name": "allow_node_type_set",
@@ -6288,7 +6279,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to shor the loading bars"
+                    "desc": "Whether to shor the loading bars"
                 }
             ]
         },
@@ -6386,8 +6377,12 @@
         "function": "textual_report",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
+                "doc_line": 3,
+                "msg": "The argument line '* `verbose`:  bool - Whether to show loading bar.' (doc_line: 3) is not in the standard format."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": 0,
@@ -6406,15 +6401,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar or not"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -6662,7 +6659,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -6683,7 +6680,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -6704,7 +6701,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -6725,7 +6722,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -6893,15 +6890,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "directed",
+                    "type": "bool",
+                    "desc": "Whether to filter out the undirected edges"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -6912,15 +6911,17 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "directed",
+                    "type": "bool",
+                    "desc": "Whether to filter out the undirected edges"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -7014,7 +7015,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -7168,17 +7169,12 @@
     "get_edge_type_counts_hashmap": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "get_edge_type_counts_hashmap",
-        "errors": [
-            {
-                "doc_line": 7,
-                "msg": "In the example there isn't the current method!!!!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {\nprintln!(\"edge type id {}: count: {}\", edge_type_id, count);\n}\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {\nprintln!(\"edge type id {}: count: {}\", edge_type_id, count);\n}\n"
         },
         "extra_headers": []
     },
@@ -7197,17 +7193,12 @@
     "get_node_type_counts_hashmap": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/getters.rs",
         "function": "get_node_type_counts_hashmap",
-        "errors": [
-            {
-                "doc_line": 7,
-                "msg": "In the example there isn't the current method!!!!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {\nprintln!(\"node type id {}: count: {}\", node_type_id, count);\n}\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nfor (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {\nprintln!(\"node type id {}: count: {}\", node_type_id, count);\n}\n"
         },
         "extra_headers": []
     },
@@ -7877,7 +7868,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -7900,18 +7891,13 @@
     "par_iter_edge_weights": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/iters.rs",
         "function": "par_iter_edge_weights",
-        "errors": [
-            {
-                "doc_line": 9,
-                "msg": "In the example there isn't the current method!!!!"
-            }
-        ],
+        "errors": [],
         "args": {
             "args": []
         },
         "example": {
             "desc": "To get an iterator over the edges weights you can use:\n",
-            "content": "```rust# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();\n# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();\nassert!(graph_with_weights.iter_edge_weights().is_ok());\nassert!(graph_without_weights.iter_edge_weights().is_err());\nprintln!(\"The graph weights are {:?}.\", graph_with_weights.iter_edge_weights().unwrap().collect::<Vec<_>>());\n"
+            "content": "```rust# use rayon::iter::ParallelIterator;\n# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();\n# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();\nassert!(graph_with_weights.iter_edge_weights().is_ok());\nassert!(graph_without_weights.iter_edge_weights().is_err());\nprintln!(\"The graph weights are {:?}.\", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());\n"
         },
         "extra_headers": []
     },
@@ -7929,7 +7915,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -7950,7 +7936,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -7971,7 +7957,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8037,7 +8023,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8058,7 +8044,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8079,7 +8065,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8100,7 +8086,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8121,7 +8107,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8142,7 +8128,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8163,7 +8149,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8184,7 +8170,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8205,7 +8191,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8226,7 +8212,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8247,7 +8233,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8268,7 +8254,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8289,7 +8275,7 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether to filter out the undirected edges"
+                    "desc": "Whether to filter out the undirected edges"
                 }
             ]
         },
@@ -8484,12 +8470,12 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether the graph is to be read as directed or undirected"
+                    "desc": "Whether the graph is to be read as directed or undirected"
                 },
                 {
                     "name": "directed_edge_list",
                     "type": "bool",
-                    "desc": "whether to read the edge list as directed"
+                    "desc": "Whether to read the edge list as directed"
                 },
                 {
                     "name": "edges_number",
@@ -8516,10 +8502,6 @@
         "function": "from_unsorted_csv",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -8539,12 +8521,17 @@
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "whether the graph is to be read as directed or undirected"
+                    "desc": "Whether the graph is to be read as directed or undirected"
                 },
                 {
                     "name": "directed_edge_list",
                     "type": "bool",
-                    "desc": "whether to read the edge list as directed"
+                    "desc": "Whether to read the edge list as directed"
+                },
+                {
+                    "name": "name",
+                    "type": "S",
+                    "desc": "The name for the graph"
                 }
             ]
         },
@@ -8614,7 +8601,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
             },
             {
                 "doc_line": "~",
@@ -8622,7 +8609,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
@@ -8886,27 +8873,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+                "msg": "Missing the documentation for the argument 'directed_edge_list'."
             },
             {
                 "doc_line": "~",
@@ -8914,31 +8881,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+                "msg": "Missing the documentation for the argument 'nodes_iterator'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
             },
             {
                 "doc_line": "~",
@@ -8946,11 +8901,43 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_node_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
                 "doc_line": 0,
@@ -9002,15 +8989,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
@@ -9026,11 +9013,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
             },
             {
                 "doc_line": "~",
@@ -9038,11 +9025,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
                 "doc_line": 0,
@@ -9117,12 +9104,12 @@
                 {
                     "name": "only_from_same_component",
                     "type": "bool",
-                    "desc": "whether to sample negative edges only from nodes that are from the same component"
+                    "desc": "Whether to sample negative edges only from nodes that are from the same component"
                 },
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -9200,11 +9187,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -9221,12 +9208,12 @@
                 {
                     "name": "include_all_edge_types",
                     "type": "bool",
-                    "desc": "whether to include all the edges between two nodes"
+                    "desc": "Whether to include all the edges between two nodes"
                 },
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -9251,7 +9238,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": "~",
@@ -9259,7 +9246,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -9276,12 +9263,12 @@
                 {
                     "name": "include_all_edge_types",
                     "type": "bool",
-                    "desc": "whether to include all the edges between two nodes"
+                    "desc": "Whether to include all the edges between two nodes"
                 },
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -9365,7 +9352,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },
@@ -9404,7 +9391,7 @@
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "whether to show the loading bar"
+                    "desc": "Whether to show the loading bar"
                 }
             ]
         },

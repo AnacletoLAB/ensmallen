@@ -811,7 +811,7 @@
             "",
             "# Arguments",
             "",
-            "* explore_weight: Option<WeightT> - weight for the exploration factor.",
+            "* `explore_weight`: Option<WeightT> - weight for the exploration factor.",
             "",
             "# Example",
             "You can change the `explore_weight` parameter as follows:",
@@ -858,7 +858,7 @@
             "",
             "# Arguments",
             "",
-            "* change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.",
+            "* `change_node_type_weight`: Option<WeightT> - weight for the exploration of different node types.",
             "",
             "# Example",
             "You can change the `change_node_type_weight` parameter as follows:",
@@ -905,7 +905,7 @@
             "",
             "# Arguments",
             "",
-            "* change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.",
+            "* `change_edge_type_weight`: Option<WeightT> - weight for the exploration of different node types.",
             "",
             "# Example",
             "You can change the `change_edge_type_weight` parameter as follows:",
@@ -952,7 +952,7 @@
             "",
             "# Arguments",
             "",
-            "* graph: Graph - Graph object for which parameters are to be validated.",
+            "* `graph`: Graph - Graph object for which parameters are to be validated.",
             "",
             "# Example",
             "A graph is always remappable to itself:",
@@ -1053,7 +1053,12 @@
             "each other by paths. A singleton is a component and so is a singleton with a",
             "self-loop."
         ],
-        "doc": [],
+        "doc": [
+            "Returns iterator over shuffled edge IDs and node IDs.",
+            "",
+            "# Arguments",
+            "* `random_state`: u64 - The random state to reproduce the given edge sampling."
+        ],
         "modifiers": "",
         "name": "iter_edges_from_random_state",
         "args": [
@@ -1088,7 +1093,14 @@
             "each other by paths. A singleton is a component and so is a singleton with a",
             "self-loop."
         ],
-        "doc": [],
+        "doc": [
+            "Returns iterator over shuffled edge IDs and node IDs with preference to given edge types.",
+            "",
+            "# Arguments",
+            "* `random_state`: u64 - The random state to reproduce the given edge sampling.",
+            "* `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.",
+            "* `verbose`: bool - Whether to show a loading bar."
+        ],
         "modifiers": "",
         "name": "iter_on_edges_with_preference_from_random_state",
         "generics": "'a",
@@ -1102,7 +1114,7 @@
                 "u64"
             ],
             [
-                "unwanted_edge_types",
+                "undesired_edge_types",
                 "&'a Option<HashSet<Option<EdgeTypeT>>>"
             ],
             [
@@ -1111,7 +1123,7 @@
             ]
         ],
         "return_type": "impl Iterator<Item = (NodeT, NodeT)> + 'a",
-        "body": "let pb = get_loading_bar(\n            verbose,\n            format!(\"Building random spanning tree for {}\", self.name).as_ref(),\n            self.get_directed_edges_number() as usize,\n        );\n        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =\n            (unwanted_edge_types, &self.edge_types)\n        {\n            Box::new(\n                self.iter_edges_from_random_state(random_state)\n                    .filter_map(move |(edge_id, src, dst)| {\n                        if uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {\n                            return None;\n                        }\n                        Some((src, dst))\n                    })\n                    .chain(self.iter_edges_from_random_state(random_state).filter_map(\n                        move |(edge_id, src, dst)| {\n                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id))\n                            {\n                                return None;\n                            }\n                            Some((src, dst))\n                        },\n                    )),\n            )\n        } else {\n            Box::new(\n                self.iter_edges_from_random_state(random_state)\n                    .map(|(_, src, dst)| (src, dst)),\n            )\n        };\n\n        result.progress_with(pb)"
+        "body": "let pb = get_loading_bar(\n            verbose,\n            format!(\"Building random spanning tree for {}\", self.name).as_ref(),\n            self.get_directed_edges_number() as usize,\n        );\n        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =\n            (undesired_edge_types, &self.edge_types)\n        {\n            Box::new(\n                self.iter_edges_from_random_state(random_state)\n                    .filter_map(move |(edge_id, src, dst)| {\n                        if uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {\n                            return None;\n                        }\n                        Some((src, dst))\n                    })\n                    .chain(self.iter_edges_from_random_state(random_state).filter_map(\n                        move |(edge_id, src, dst)| {\n                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id))\n                            {\n                                return None;\n                            }\n                            Some((src, dst))\n                        },\n                    )),\n            )\n        } else {\n            Box::new(\n                self.iter_edges_from_random_state(random_state)\n                    .map(|(_, src, dst)| (src, dst)),\n            )\n        };\n\n        result.progress_with(pb)"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -1141,7 +1153,7 @@
             "",
             "# Arguments",
             "",
-            "`edges` - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.",
+            "`edges`: impl Iterator<Item = (NodeT, NodeT)> + 'a - Iterator for the edges to explore. If sorted, computed a minimum spanning tree.",
             "",
             "# Returns",
             "Tuple with:",
@@ -1195,7 +1207,7 @@
             "# Arguments",
             "",
             "* `random_state`: EdgeT - The random_state to use for the holdout,",
-            "* `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.",
+            "* `undesired_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.",
             "* `verbose`: bool - Whether to show a loading bar or not.",
             ""
         ],
@@ -1211,7 +1223,7 @@
                 "EdgeT"
             ],
             [
-                "unwanted_edge_types",
+                "undesired_edge_types",
                 "&Option<HashSet<Option<EdgeTypeT>>>"
             ],
             [
@@ -1220,7 +1232,7 @@
             ]
         ],
         "return_type": "(HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT)",
-        "body": "self.kruskal(self.iter_on_edges_with_preference_from_random_state(random_state, unwanted_edge_types, verbose))"
+        "body": "self.kruskal(self.iter_on_edges_with_preference_from_random_state(\n            random_state,\n            undesired_edge_types,\n            verbose,\n        ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -1241,7 +1253,16 @@
             "each other by paths. A singleton is a component and so is a singleton with a",
             "self-loop."
         ],
-        "doc": [],
+        "doc": [
+            "Returns consistent spanning arborescence using Kruskal.",
+            "",
+            "The spanning tree is NOT minimal.",
+            "",
+            "# Arguments",
+            "",
+            "* `verbose`: bool - Whether to show a loading bar or not.",
+            ""
+        ],
         "modifiers": "pub",
         "name": "spanning_arborescence_kruskal",
         "args": [
@@ -1255,7 +1276,7 @@
             ]
         ],
         "return_type": "(HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT)",
-        "body": "let pb = get_loading_bar(\n            verbose,\n            &format!(\n                \"Computing spanning arborescence with Kruskal for {}\",\n                self.get_name()\n            ),\n            self.get_unique_edges_number() as usize,\n        );\n        self.kruskal(self.iter_unique_edge_node_ids(self.directed).progress_with(pb))"
+        "body": "let pb = get_loading_bar(\n            verbose,\n            &format!(\n                \"Computing spanning arborescence with Kruskal for {}\",\n                self.get_name()\n            ),\n            self.get_unique_edges_number() as usize,\n        );\n        self.kruskal(\n            self.iter_unique_edge_node_ids(self.directed)\n                .progress_with(pb),\n        )"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -1280,7 +1301,12 @@
             "Returns set of edges composing a spanning tree.",
             "",
             "This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)",
-            "by David A. Bader and Guojing Cong."
+            "by David A. Bader and Guojing Cong.",
+            "",
+            "# Arguments",
+            "",
+            "* `verbose`: bool - Whether to show a loading bar or not.",
+            ""
         ],
         "modifiers": "pub",
         "name": "spanning_arborescence",
@@ -1295,7 +1321,7 @@
             ]
         ],
         "return_type": "Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String>",
-        "body": "if self.directed {\n            return Err(\n                \"The spanning arborescence from Bader et al. algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut parents = vec![NOT_PRESENT; nodes_number];\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let completed = AtomicBool::new(false);\n        let total_inserted_edges = AtomicUsize::new(0);\n        let thread_safe_parents = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut parents),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the parents vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the parents one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\"Computing spanning tree of graph {}\", self.get_name()).as_ref(),\n                    nodes_number,\n                );\n                let parents = thread_safe_parents.value.get();\n                (0..nodes_number).progress_with(pb).for_each(|src| {\n                    unsafe {\n                        // If the node has already been explored we skip ahead.\n                        if (*parents)[src] != NOT_PRESENT {\n                            return;\n                        }\n                    }\n                    unsafe {\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && self.is_unchecked_singleton_from_node_id(src as NodeT)\n                        {\n                            // We set singletons as self-loops for now.\n                            (*parents)[src] = src as NodeT;\n                            return;\n                        }\n                    }\n                    loop {\n                        unsafe {\n                            if (*parents)[src] != NOT_PRESENT {\n                                break;\n                            }\n                        }\n                        if active_nodes_number.load(Ordering::SeqCst) == 0 {\n                            unsafe {\n                                if (*parents)[src] != NOT_PRESENT {\n                                    break;\n                                }\n                            }\n                            unsafe {\n                                (*parents)[src] = src as NodeT;\n                            }\n                            shared_stacks[0].lock().unwrap().push(src as NodeT);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            break;\n                        }\n                    }\n                });\n                completed.store(true, Ordering::SeqCst);\n            });\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    let thread_id = rayon::current_thread_index().unwrap();\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::SeqCst) {\n                                break 'outer;\n                            }\n                        }\n                    };\n                    let parents = thread_safe_parents.value.get();\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| unsafe {\n                        if (*parents)[dst as usize] == NOT_PRESENT {\n                            (*parents)[dst as usize] = src;\n                            total_inserted_edges.fetch_add(1, Ordering::SeqCst);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        // convert the now completed parents vector to a list of tuples representing the edges\n        // of the spanning arborescense.\n        Ok((\n            // Number of edges inserted\n            total_inserted_edges.load(Ordering::SeqCst),\n            // Return an iterator over all the edges in the spanning arborescence\n            parents.into_iter().enumerate().filter_map(|(src, dst)| {\n                if src as NodeT == dst {\n                    return None;\n                }\n                Some((src as NodeT, dst))\n            }),\n        ))"
+        "body": "if self.directed {\n            return Err(\n                \"The spanning arborescence from Bader et al. algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut parents = vec![NOT_PRESENT; nodes_number];\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let completed = AtomicBool::new(false);\n        let total_inserted_edges = AtomicUsize::new(0);\n        let thread_safe_parents = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut parents),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the parents vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the parents one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\"Computing spanning tree of graph {}\", self.get_name()).as_ref(),\n                    nodes_number,\n                );\n                let parents = thread_safe_parents.value.get();\n                (0..nodes_number).progress_with(pb).for_each(|src| {\n                    unsafe {\n                        // If the node has already been explored we skip ahead.\n                        if (*parents)[src] != NOT_PRESENT {\n                            return;\n                        }\n                    }\n                    unsafe {\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && self.is_unchecked_singleton_from_node_id(src as NodeT)\n                        {\n                            // We set singletons as self-loops for now.\n                            (*parents)[src] = src as NodeT;\n                            return;\n                        }\n                    }\n                    loop {\n                        unsafe {\n                            if (*parents)[src] != NOT_PRESENT {\n                                break;\n                            }\n                        }\n                        if active_nodes_number.load(Ordering::SeqCst) == 0 {\n                            unsafe {\n                                if (*parents)[src] != NOT_PRESENT {\n                                    break;\n                                }\n                            }\n                            unsafe {\n                                (*parents)[src] = src as NodeT;\n                            }\n                            shared_stacks[0].lock().unwrap().push(src as NodeT);\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            break;\n                        }\n                    }\n                });\n                completed.store(true, Ordering::SeqCst);\n            });\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    let thread_id = rayon::current_thread_index().unwrap();\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::SeqCst) {\n                                break 'outer;\n                            }\n                        }\n                    };\n                    let parents = thread_safe_parents.value.get();\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)\n                        .for_each(|dst| unsafe {\n                            if (*parents)[dst as usize] == NOT_PRESENT {\n                                (*parents)[dst as usize] = src;\n                                total_inserted_edges.fetch_add(1, Ordering::SeqCst);\n                                active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                    .lock()\n                                    .unwrap()\n                                    .push(dst);\n                            }\n                        });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        // convert the now completed parents vector to a list of tuples representing the edges\n        // of the spanning arborescense.\n        Ok((\n            // Number of edges inserted\n            total_inserted_edges.load(Ordering::SeqCst),\n            // Return an iterator over all the edges in the spanning arborescence\n            parents.into_iter().enumerate().filter_map(|(src, dst)| {\n                if src as NodeT == dst {\n                    return None;\n                }\n                Some((src as NodeT, dst))\n            }),\n        ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/trees.rs",
@@ -1326,6 +1352,10 @@
             "Returns (Components membership, components number, size of the smallest components, size of the biggest components).",
             "We assign to each node the index of its component, so nodes in the same components will have the same index.",
             "This component index is the returned Components membership vector.",
+            "",
+            "# Arguments",
+            "",
+            "* `verbose`: bool - Whether to show a loading bar or not.",
             "",
             "# Example",
             "```rust",
@@ -1387,7 +1417,7 @@
             ]
         ],
         "return_type": "Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String>",
-        "body": "if self.directed {\n            return Err(\n                \"The connected components algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        if !self.has_nodes() {\n            return Ok((Vec::new(), 0, 0, 0));\n        }\n        if self.get_edges_number() == 0 {\n            return Ok((\n                (0..self.get_nodes_number()).collect(),\n                self.get_nodes_number(),\n                1,\n                1,\n            ));\n        }\n        let components = (0..self.get_nodes_number())\n            .map(|_| AtomicU32::new(NOT_PRESENT))\n            .collect::<Vec<_>>();\n        let mut min_component_size: NodeT = NodeT::MAX;\n        let mut max_component_size: NodeT = 0;\n        let mut components_number: NodeT = 0;\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let current_component_size = AtomicU32::new(0);\n        let completed = AtomicBool::new(false);\n        let thread_safe_min_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut min_component_size),\n        };\n        let thread_safe_max_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut max_component_size),\n        };\n        let thread_safe_components_number = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut components_number),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the components vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the components one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\n                        \"Computing connected components of graph {}\",\n                        self.get_name()\n                    )\n                    .as_ref(),\n                    self.get_nodes_number() as usize,\n                );\n                let min_component_size = thread_safe_min_component_size.value.get();\n                let max_component_size = thread_safe_max_component_size.value.get();\n                let components_number = thread_safe_components_number.value.get();\n                (0..self.get_nodes_number())\n                    .progress_with(pb)\n                    .for_each(|src| {\n                        // If the node has already been explored we skip ahead.\n                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                            return;\n                        }\n\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && (self.is_unchecked_singleton_from_node_id(src)\n                                || self.is_singleton_with_selfloops_from_node_id(src))\n                        {\n                            // We set singletons as self-loops for now.\n                            unsafe {\n                                components[src as usize]\n                                    .store(**components_number, Ordering::Relaxed);\n                                **components_number += 1;\n                                **min_component_size = 1;\n                                **max_component_size = (**max_component_size).max(1);\n                            }\n                            return;\n                        }\n\n                        loop {\n                            // if the node has been now mapped to a component by anyone of the\n                            // parallel threads, move on to the next node.\n                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                break;\n                            }\n                            // Otherwise, Check if the parallel threads are finished\n                            // and are all waiting for a new node to explore.\n                            // In that case add the currently not explored node to the\n                            // work stack of the first thread.\n                            if active_nodes_number.load(Ordering::Relaxed) == 0 {\n                                // The check here might seems redundant but its' needed\n                                // to prevent data races.\n                                //\n                                // If the last parallel thread finishes its stack between the\n                                // presence check above and the active nodes numbers check\n                                // the src node will never increase the component size and thus\n                                // leading to wrong results.\n                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                    break;\n                                }\n                                let ccs =\n                                    current_component_size.swap(1, Ordering::Relaxed) as NodeT;\n                                unsafe {\n                                    **max_component_size = (**max_component_size).max(ccs);\n                                    if ccs > 1 {\n                                        **min_component_size = (**min_component_size).min(ccs);\n                                    }\n                                    components[src as usize]\n                                        .store(**components_number, Ordering::Relaxed);\n                                    **components_number += 1;\n                                }\n                                active_nodes_number.fetch_add(1, Ordering::Relaxed);\n                                shared_stacks[0].lock().unwrap().push(src);\n                                break;\n                            }\n                            // Otherwise, Loop until the parallel threads are finished.\n                        }\n                    });\n                completed.store(true, Ordering::Relaxed);\n            });\n\n            // Spawn the parallel threads that handle the components mapping,\n            // these threads use work-stealing, meaning that if their stack is empty,\n            // they will steal nodes from the stack of another random thread.\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    // get the id, we use this as an idex for the stacks vector.\n                    let thread_id = rayon::current_thread_index().unwrap();\n\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::Relaxed) {\n                                break 'outer;\n                            }\n                        }\n                    };\n\n                    let src_component = components[src as usize].load(Ordering::Relaxed);\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src).for_each(|dst| {\n                        if components[dst as usize].swap(src_component, Ordering::SeqCst)\n                            == NOT_PRESENT\n                        {\n                            active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                            current_component_size.fetch_add(1, Ordering::SeqCst);\n                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                .lock()\n                                .unwrap()\n                                .push(dst);\n                        }\n                    });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        let ccs = current_component_size.load(Ordering::SeqCst);\n        max_component_size = max_component_size.max(ccs);\n        if ccs > 1 {\n            min_component_size = min_component_size.min(ccs);\n        }\n\n        Ok((\n            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },\n            components_number,\n            min_component_size,\n            max_component_size,\n        ))"
+        "body": "if self.directed {\n            return Err(\n                \"The connected components algorithm only works for undirected graphs!\".to_owned(),\n            );\n        }\n        if !self.has_nodes() {\n            return Ok((Vec::new(), 0, 0, 0));\n        }\n        if self.get_edges_number() == 0 {\n            return Ok((\n                (0..self.get_nodes_number()).collect(),\n                self.get_nodes_number(),\n                1,\n                1,\n            ));\n        }\n        let components = (0..self.get_nodes_number())\n            .map(|_| AtomicU32::new(NOT_PRESENT))\n            .collect::<Vec<_>>();\n        let mut min_component_size: NodeT = NodeT::MAX;\n        let mut max_component_size: NodeT = 0;\n        let mut components_number: NodeT = 0;\n        let (cpu_number, pool) = get_thread_pool()?;\n        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(\n            (0..std::cmp::max(cpu_number - 1, 1))\n                .map(|_| Mutex::from(Vec::new()))\n                .collect::<Vec<Mutex<Vec<NodeT>>>>(),\n        );\n        let active_nodes_number = AtomicUsize::new(0);\n        let current_component_size = AtomicU32::new(0);\n        let completed = AtomicBool::new(false);\n        let thread_safe_min_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut min_component_size),\n        };\n        let thread_safe_max_component_size = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut max_component_size),\n        };\n        let thread_safe_components_number = ThreadSafe {\n            value: std::cell::UnsafeCell::new(&mut components_number),\n        };\n\n        // since we were able to build a stub tree with cpu.len() leafs,\n        // we spawn the treads and make anyone of them build the sub-trees.\n        pool.scope(|s| {\n            // for each leaf of the previous stub tree start a DFS keeping track\n            // of which nodes we visited and updating accordingly the components vector.\n            // the nice trick here is that, since all the leafs are part of the same tree,\n            // if two processes find the same node, we don't care which one of the two take\n            // it so we can proceed in a lockless fashion (and maybe even without atomics\n            // if we manage to remove the colors vecotr and only keep the components one)\n            s.spawn(|_| {\n                let pb = get_loading_bar(\n                    verbose,\n                    format!(\n                        \"Computing connected components of graph {}\",\n                        self.get_name()\n                    )\n                    .as_ref(),\n                    self.get_nodes_number() as usize,\n                );\n                let min_component_size = thread_safe_min_component_size.value.get();\n                let max_component_size = thread_safe_max_component_size.value.get();\n                let components_number = thread_safe_components_number.value.get();\n                (0..self.get_nodes_number())\n                    .progress_with(pb)\n                    .for_each(|src| {\n                        // If the node has already been explored we skip ahead.\n                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                            return;\n                        }\n\n                        // find the first not explored node (this is guardanteed to be in a new component)\n                        if self.has_singletons()\n                            && (self.is_unchecked_singleton_from_node_id(src)\n                                || self.is_singleton_with_selfloops_from_node_id(src))\n                        {\n                            // We set singletons as self-loops for now.\n                            unsafe {\n                                components[src as usize]\n                                    .store(**components_number, Ordering::Relaxed);\n                                **components_number += 1;\n                                **min_component_size = 1;\n                                **max_component_size = (**max_component_size).max(1);\n                            }\n                            return;\n                        }\n\n                        loop {\n                            // if the node has been now mapped to a component by anyone of the\n                            // parallel threads, move on to the next node.\n                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                break;\n                            }\n                            // Otherwise, Check if the parallel threads are finished\n                            // and are all waiting for a new node to explore.\n                            // In that case add the currently not explored node to the\n                            // work stack of the first thread.\n                            if active_nodes_number.load(Ordering::Relaxed) == 0 {\n                                // The check here might seems redundant but its' needed\n                                // to prevent data races.\n                                //\n                                // If the last parallel thread finishes its stack between the\n                                // presence check above and the active nodes numbers check\n                                // the src node will never increase the component size and thus\n                                // leading to wrong results.\n                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {\n                                    break;\n                                }\n                                let ccs =\n                                    current_component_size.swap(1, Ordering::Relaxed) as NodeT;\n                                unsafe {\n                                    **max_component_size = (**max_component_size).max(ccs);\n                                    if ccs > 1 {\n                                        **min_component_size = (**min_component_size).min(ccs);\n                                    }\n                                    components[src as usize]\n                                        .store(**components_number, Ordering::Relaxed);\n                                    **components_number += 1;\n                                }\n                                active_nodes_number.fetch_add(1, Ordering::Relaxed);\n                                shared_stacks[0].lock().unwrap().push(src);\n                                break;\n                            }\n                            // Otherwise, Loop until the parallel threads are finished.\n                        }\n                    });\n                completed.store(true, Ordering::Relaxed);\n            });\n\n            // Spawn the parallel threads that handle the components mapping,\n            // these threads use work-stealing, meaning that if their stack is empty,\n            // they will steal nodes from the stack of another random thread.\n            (0..shared_stacks.len()).for_each(|_| {\n                s.spawn(|_| 'outer: loop {\n                    // get the id, we use this as an idex for the stacks vector.\n                    let thread_id = rayon::current_thread_index().unwrap();\n\n                    let src = 'inner: loop {\n                        {\n                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))\n                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())\n                            {\n                                if let Some(src) = stack.pop() {\n                                    break 'inner src;\n                                }\n                            }\n\n                            if completed.load(Ordering::Relaxed) {\n                                break 'outer;\n                            }\n                        }\n                    };\n\n                    let src_component = components[src as usize].load(Ordering::Relaxed);\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)\n                        .for_each(|dst| {\n                            if components[dst as usize].swap(src_component, Ordering::SeqCst)\n                                == NOT_PRESENT\n                            {\n                                active_nodes_number.fetch_add(1, Ordering::SeqCst);\n                                current_component_size.fetch_add(1, Ordering::SeqCst);\n                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]\n                                    .lock()\n                                    .unwrap()\n                                    .push(dst);\n                            }\n                        });\n                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);\n                });\n            });\n        });\n\n        let ccs = current_component_size.load(Ordering::SeqCst);\n        max_component_size = max_component_size.max(ccs);\n        if ccs > 1 {\n            min_component_size = min_component_size.min(ccs);\n        }\n\n        Ok((\n            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },\n            components_number,\n            min_component_size,\n            max_component_size,\n        ))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/csv_file_writer.rs",
@@ -1600,7 +1630,7 @@
             "",
             "# Arguments",
             "",
-            "* `other`: Graph - The graph to check against.",
+            "* `other`: &Graph - The graph to check against.",
             ""
         ],
         "modifiers": "pub",
@@ -1636,7 +1666,7 @@
             "",
             "# Arguments",
             "",
-            "* `other`: Graph - The graph to check against.",
+            "* `other`: &Graph - The graph to check against.",
             ""
         ],
         "modifiers": "pub",
@@ -1691,7 +1721,7 @@
             "",
             "# Arguments",
             "",
-            "* sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.",
+            "* `sequences`: impl ParallelIterator<Item = Vec<NodeT>> + 'a - the sequence of sequences of integers to preprocess.",
             "* `window_size`: usize - Window size to consider for the sequences.",
             ""
         ],
@@ -1721,11 +1751,9 @@
             "",
             "# Arguments",
             "",
-            "* sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.",
+            "* `sequences`: impl ParallelIterator<Item = Vec<NodeT>> - the sequence of sequences of integers to preprocess.",
             "* `window_size`: Option<usize> - Window size to consider for the sequences.",
-            "* `verbose`: Option<bool>,",
-            "whether to show the progress bars.",
-            "The default behaviour is false.",
+            "* `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.",
             ""
         ],
         "modifiers": "pub",
@@ -1771,7 +1799,7 @@
             "# Arguments",
             "",
             "* `walk_parameters`: &WalksParameters - the weighted walks parameters.",
-            "* `quantity`: usize - Number of nodes to consider.",
+            "* `quantity`: NodeT - Number of nodes to consider.",
             "* `window_size`: usize - Window size to consider for the sequences.",
             ""
         ],
@@ -1815,7 +1843,7 @@
             "",
             "* `parameters`: &WalksParameters - the walks parameters.",
             "* `window_size`: Option<usize> - Window size to consider for the sequences.",
-            "* `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.",
+            "* `verbose`: bool - Whether to show the progress bars. The default behaviour is false.",
             ""
         ],
         "modifiers": "pub",
@@ -1862,7 +1890,7 @@
             "* `random_state`: u64 - The random state to use to extract the neighbours.",
             "* `include_central_node`: bool - Whether to include the node ID in the returned iterator.",
             "* `offset`: NodeT - Offset for padding porposes.",
-            "* `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.",
+            "* `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.",
             ""
         ],
         "modifiers": "pub(crate)",
@@ -1916,7 +1944,7 @@
             "* `random_state`: u64 - The random state to use to extract the neighbours.",
             "* `include_central_node`: bool - Whether to include the node ID in the returned iterator.",
             "* `offset`: NodeT - Offset for padding porposes.",
-            "* `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.",
+            "* `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.",
             ""
         ],
         "modifiers": "pub(crate)",
@@ -1970,7 +1998,7 @@
             "* `random_state`: u64 - The random state to use to extract the neighbours.",
             "* `include_central_node`: bool - Whether to include the node ID in the returned iterator.",
             "* `offset`: NodeT - Offset for padding porposes.",
-            "* `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.",
+            "* `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.",
             "",
             "# Example",
             "Suppose you want to the get the neighbours of the first 10 nodes:",
@@ -2051,7 +2079,7 @@
             "* `negative_samples`: f64 - The component of netagetive samples to use,",
             "* `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
             "* `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.",
-            "* `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
+            "* `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
             ""
         ],
         "modifiers": "pub",
@@ -2108,10 +2136,9 @@
             "* `idx`: u64 - The index of the batch to generate, behaves like a random random_state,",
             "* `batch_size`: usize - The maximal size of the batch to generate,",
             "* `negative_samples`: f64 - The component of netagetive samples to use,",
-            "* `avoid_false_negatives`: bool - Whether to remove the false negatives when generated.",
-            "- It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
+            "* `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.",
             "* `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.",
-            "* `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
+            "* `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
             ""
         ],
         "modifiers": "pub",
@@ -2463,7 +2490,7 @@
             "Return whether nodes are remappable to those of the given graph.",
             "",
             "# Arguments",
-            "other: &Graph - graph towards remap the nodes to.",
+            "`other`: &Graph - graph towards remap the nodes to.",
             "",
             "# Example",
             "A graph is always remappable to itself:",
@@ -5130,9 +5157,16 @@
             "* `get_unchecked_(.+?)_from_(.+)`"
         ],
         "doc": [
-            "Returns option with the weight of the given edge id."
+            "Returns option with the weight of the given edge id.",
+            "",
+            "This method will raise a panic if the given edge ID is higher than",
+            "the number of edges in the graph. Additionally, it will simply",
+            "return None if there are no graph weights.",
+            "",
+            "# Arguments",
+            "* `edge_id`: EdgeT - The edge whose edge weight is to be returned."
         ],
-        "modifiers": "pub(crate)",
+        "modifiers": "pub",
         "name": "get_unchecked_edge_weight_from_edge_id",
         "args": [
             [
@@ -5157,9 +5191,12 @@
             "* `get_unchecked_(.+?)_from_(.+)`"
         ],
         "doc": [
-            "Returns node id raising a panic if used unproperly."
+            "Returns node id from given node name raising a panic if used unproperly.",
+            "",
+            "# Arguments",
+            "* `node_name`: &str - The node name whose node ID is to be returned."
         ],
-        "modifiers": "pub(crate)",
+        "modifiers": "pub",
         "name": "get_unchecked_node_id_from_node_name",
         "args": [
             [
@@ -5184,9 +5221,12 @@
             "* `get_unchecked_(.+?)_from_(.+)`"
         ],
         "doc": [
-            "Return edge type ID corresponding to the given edge type name."
+            "Return edge type ID corresponding to the given edge type name.",
+            "",
+            "# Arguments",
+            "* `node_name`: &str - The edge type name whose edge type ID is to be returned."
         ],
-        "modifiers": "pub(crate)",
+        "modifiers": "pub",
         "name": "get_unchecked_edge_type_id_from_edge_type_name",
         "args": [
             [
@@ -5212,9 +5252,12 @@
         ],
         "doc": [
             "Return edge type ID corresponding to the given edge type name",
-            "raising panic if edge type ID does not exists in current graph."
+            "raising panic if edge type ID does not exists in current graph.",
+            "",
+            "# Arguments",
+            "* `edge_type_id`: Option<EdgeTypeT> - The edge type naIDme whose edge type name is to be returned."
         ],
-        "modifiers": "pub(crate)",
+        "modifiers": "pub",
         "name": "get_unchecked_edge_type_name_from_edge_type_id",
         "args": [
             [
@@ -5242,11 +5285,9 @@
             "Return number of edges of the given edge type without checks.",
             "",
             "# Arguments",
-            "",
-            "* `edge_type`: Option<EdgeTypeT> - The edge type to retrieve count of.",
-            ""
+            "* `edge_type`: Option<EdgeTypeT> - The edge type to retrieve count of."
         ],
-        "modifiers": "pub(crate)",
+        "modifiers": "pub",
         "name": "get_unchecked_edge_count_from_edge_type_id",
         "args": [
             [
@@ -5274,9 +5315,7 @@
             "Return number of nodes of the given node type without checks.",
             "",
             "# Arguments",
-            "",
-            "* node_type: Option<NodeTypeT> - The node type to retrieve count of.",
-            ""
+            "* node_type: Option<NodeTypeT> - The node type to retrieve count of."
         ],
         "modifiers": "pub(crate)",
         "name": "get_unchecked_node_count_from_node_type_id",
@@ -5312,7 +5351,7 @@
             "# Arguments",
             "`node`: NodeT - Node whose neighbours are to return.",
             "`random_state`: u64 - Random state to subsample neighbours.",
-            "`max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider."
+            "`max_neighbours`: Option<NodeT> - Optionally number of neighbours to consider."
         ],
         "modifiers": "pub(crate)",
         "name": "get_unchecked_destination_node_ids_from_node_id",
@@ -6539,7 +6578,10 @@
             "* `get_unchecked_(.+?)_from_(.+)`"
         ],
         "doc": [
-            "Returns result with the node id."
+            "Returns result with the node id.",
+            "",
+            "# Arguments",
+            "* `node_name`: &str - The node name whose node ID is to be returned."
         ],
         "modifiers": "pub",
         "name": "get_node_id_from_node_name",
@@ -6650,7 +6692,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "* `edge_type`: Option<EdgeTypeT> - The edge type ID to count the edges of.",
+            "* `edge_type_id`: Option<EdgeTypeT> - The edge type ID to count the edges of.",
             ""
         ],
         "modifiers": "pub",
@@ -6661,12 +6703,12 @@
                 "&self"
             ],
             [
-                "edge_type",
+                "edge_type_id",
                 "Option<EdgeTypeT>"
             ]
         ],
         "return_type": "Result<EdgeT, String>",
-        "body": "if !self.has_edge_types() {\n            return Err(\"Current graph does not have edge types!\".to_owned());\n        }\n        if let Some(et) = &edge_type {\n            if self.get_edge_types_number() <= *et {\n                return Err(format!(\n                    \"Given edge type ID {} is bigger than number of edge types in the graph {}.\",\n                    self.get_edge_types_number(),\n                    et\n                ));\n            }\n        }\n        Ok(self.get_unchecked_edge_count_from_edge_type_id(edge_type))"
+        "body": "if !self.has_edge_types() {\n            return Err(\"Current graph does not have edge types!\".to_owned());\n        }\n        if let Some(et) = &edge_type_id {\n            if self.get_edge_types_number() <= *et {\n                return Err(format!(\n                    \"Given edge type ID {} is bigger than number of edge types in the graph {}.\",\n                    self.get_edge_types_number(),\n                    et\n                ));\n            }\n        }\n        Ok(self.get_unchecked_edge_count_from_edge_type_id(edge_type_id))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -6683,7 +6725,7 @@
             "If None is given as an edge type ID, None is returned.",
             "",
             "# Arguments",
-            "* `edge_type`: Option<&str> - The edge type name whose ID is to be returned.",
+            "* `edge_type_name`: Option<&str> - The edge type name whose ID is to be returned.",
             ""
         ],
         "modifiers": "pub",
@@ -6717,7 +6759,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "* `edge_type`: Option<&str> - The edge type name to count the edges of.",
+            "* `edge_type_name`: Option<&str> - The edge type name to count the edges of.",
             ""
         ],
         "modifiers": "pub",
@@ -6728,12 +6770,12 @@
                 "&self"
             ],
             [
-                "edge_type",
+                "edge_type_name",
                 "Option<&str>"
             ]
         ],
         "return_type": "Result<EdgeT, String>",
-        "body": "self.get_edge_count_from_edge_type_id(self.get_edge_type_id_from_edge_type_name(edge_type)?)"
+        "body": "self.get_edge_count_from_edge_type_id(self.get_edge_type_id_from_edge_type_name(edge_type_name)?)"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -6750,7 +6792,7 @@
             "If None is given as an node type ID, None is returned.",
             "",
             "# Arguments",
-            "* `node_type`: Option<&str> - The node type name whose ID is to be returned.",
+            "* `node_type_name`: Option<&str> - The node type name whose ID is to be returned.",
             ""
         ],
         "modifiers": "pub",
@@ -6784,7 +6826,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "* `node_type`: Option<NodeTypeT> - The node type ID to count the nodes of.",
+            "* `node_type_id`: Option<NodeTypeT> - The node type ID to count the nodes of.",
             ""
         ],
         "modifiers": "pub",
@@ -6795,12 +6837,12 @@
                 "&self"
             ],
             [
-                "node_type",
+                "node_type_id",
                 "Option<NodeTypeT>"
             ]
         ],
         "return_type": "Result<NodeT, String>",
-        "body": "if !self.has_node_types() {\n            return Err(\"Current graph does not have node types!\".to_owned());\n        }\n        if node_type.map_or(false, |nt| self.get_node_types_number() <= nt) {\n            return Err(format!(\n                \"Given node type ID {:?} is bigger than number of node types in the graph {}.\",\n                node_type,\n                self.get_node_types_number()\n            ));\n        }\n        Ok(self.get_unchecked_node_count_from_node_type_id(node_type))"
+        "body": "if !self.has_node_types() {\n            return Err(\"Current graph does not have node types!\".to_owned());\n        }\n        if node_type_id.map_or(false, |nt| self.get_node_types_number() <= nt) {\n            return Err(format!(\n                \"Given node type ID {:?} is bigger than number of node types in the graph {}.\",\n                node_type_id,\n                self.get_node_types_number()\n            ));\n        }\n        Ok(self.get_unchecked_node_count_from_node_type_id(node_type_id))"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -6818,7 +6860,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "* `node_type`: Option<&str> - The node type name to count the nodes of.",
+            "* `node_type_name`: Option<&str> - The node type name to count the nodes of.",
             ""
         ],
         "modifiers": "pub",
@@ -6994,7 +7036,7 @@
             "",
             "# Arguments",
             "",
-            "* `node_id`: NodeT - Node ID whose neighbours are to be retrieved.",
+            "* `node_name`: &str - Node name whose neighbours are to be retrieved.",
             "",
             "# Example",
             "To retrieve the neighbours of a given node `src` you can use:",
@@ -7160,7 +7202,7 @@
             "# Arguments",
             "* `src_name`: &str - Source node name of the edge.",
             "* `dst_name`: &str - Destination node name of the edge.",
-            "`edge_type_name`: Option<&String> - Edge type name.",
+            "* `edge_type_name`: Option<&String> - Edge type name.",
             ""
         ],
         "modifiers": "pub",
@@ -7199,8 +7241,7 @@
             "Return translated edge types from string to internal edge ID.",
             "",
             "# Arguments",
-            "",
-            "* `edge_types`: Vec<String> - Vector of edge types to be converted."
+            "* `edge_type_names`: Vec<String> - Vector of edge types to be converted."
         ],
         "modifiers": "pub",
         "name": "get_edge_type_ids_from_edge_type_names",
@@ -7210,12 +7251,12 @@
                 "&self"
             ],
             [
-                "edge_types",
+                "edge_type_names",
                 "Vec<Option<String>>"
             ]
         ],
         "return_type": "Result<Vec<Option<EdgeTypeT>>, String>",
-        "body": "match &self.edge_types {\n                None => Err(String::from(\"Current graph does not have edge types.\")),\n                Some(ets) => {\n                    edge_types\n                    .iter()\n                    .map(|edge_type_name|\n                        match edge_type_name {\n                            None=> Ok(None),\n                            Some(et) => {\n                                match ets.get(et) {\n                                    Some(edge_type_id) => Ok(Some(*edge_type_id)),\n                                    None => Err(format!(\n                                        \"The edge type {} does not exist in current graph. The available edge types are {}.\",\n                                        et,\n                                        ets.keys().join(\", \")\n                                    ))\n                                }\n                            }\n                        }\n                    )\n                .collect::<Result<Vec<Option<EdgeTypeT>>, String>>()\n            }\n        }"
+        "body": "match &self.edge_types {\n                None => Err(String::from(\"Current graph does not have edge types.\")),\n                Some(ets) => {\n                    edge_type_names\n                    .iter()\n                    .map(|edge_type_name|\n                        match edge_type_name {\n                            None=> Ok(None),\n                            Some(et) => {\n                                match ets.get(et) {\n                                    Some(edge_type_id) => Ok(Some(*edge_type_id)),\n                                    None => Err(format!(\n                                        \"The edge type {} does not exist in current graph. The available edge types are {}.\",\n                                        et,\n                                        ets.keys().join(\", \")\n                                    ))\n                                }\n                            }\n                        }\n                    )\n                .collect::<Result<Vec<Option<EdgeTypeT>>, String>>()\n            }\n        }"
     },
     {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
@@ -7387,8 +7428,8 @@
             "# Arguments",
             "",
             "* `node_names`: Option<Vec<String>> - The node names to keep.",
-            "* `node_types`: Option<Vec<String>> - The node types to keep.",
-            "* `edge_types`: Option<Vec<String>> - The edge types to keep.",
+            "* `node_types`: Option<Vec<Option<String>>> - The node types to keep.",
+            "* `edge_types`: Option<Vec<Option<String>>> - The edge types to keep.",
             "* `min_weight`: Option<WeightT> - Minimum weight to use to filter edges.",
             "* `max_weight`: Option<WeightT> - Maximum weight to use to filter edges.",
             "* `verbose`: bool - Whether to show the loading bar.",
@@ -7995,8 +8036,8 @@
             "",
             "# Arguments",
             "* `node_names`: Option<Vec<String>> - The name of the nodes of which components to keep.",
-            "* `node_types`: Option<Vec<String>> - The types of the nodes of which components to keep.",
-            "* `edge_types`: Option<Vec<String>> - The types of the edges of which components to keep.",
+            "* `node_types`: Option<Vec<Option<String>>> - The types of the nodes of which components to keep.",
+            "* `edge_types`: Option<Vec<Option<String>>> - The types of the edges of which components to keep.",
             "* `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.",
             "* `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.",
             "* `verbose`: bool - Whether to show the loading bar."
@@ -9930,7 +9971,10 @@
             "# Human readable report of the properties of the graph"
         ],
         "doc": [
-            "Return rendered textual report of the graph."
+            "Return rendered textual report of the graph.",
+            "",
+            "# Arguments",
+            "* `verbose`:  bool - Whether to show loading bar."
         ],
         "modifiers": "pub",
         "name": "textual_report",
@@ -9958,7 +10002,11 @@
             "* `get_unchecked_(.+)`"
         ],
         "doc": [
-            "Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )"
+            "Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )",
+            "",
+            "# Arguments",
+            "",
+            "* `verbose`: bool - Whether to show a loading bar or not."
         ],
         "modifiers": "pub",
         "name": "get_connected_components_number",
@@ -11004,7 +11052,10 @@
             "* `get_unchecked_(.+)`"
         ],
         "doc": [
-            "Return vector with the sorted edge Ids."
+            "Return vector with the sorted edge Ids.",
+            "",
+            "# Arguments",
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_edges",
@@ -11032,7 +11083,10 @@
             "* `get_unchecked_(.+)`"
         ],
         "doc": [
-            "Return vector with the sorted edge names."
+            "Return vector with the sorted edge names.",
+            "",
+            "# Arguments",
+            "* `directed`: bool - Whether to filter out the undirected edges."
         ],
         "modifiers": "pub",
         "name": "get_edge_node_names",
@@ -11473,7 +11527,7 @@
             "# Example",
             "```rust",
             "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {",
+            "for (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {",
             "println!(\"edge type id {}: count: {}\", edge_type_id, count);",
             "}",
             "```"
@@ -11537,7 +11591,7 @@
             "# Example",
             "```rust",
             "# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-            "for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {",
+            "for (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {",
             "println!(\"node type id {}: count: {}\", node_type_id, count);",
             "}",
             "```"
@@ -13578,11 +13632,12 @@
             "# Example",
             "To get an iterator over the edges weights you can use:",
             "```rust",
+            "# use rayon::iter::ParallelIterator;",
             "# let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
             "# let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
             "assert!(graph_with_weights.iter_edge_weights().is_ok());",
             "assert!(graph_without_weights.iter_edge_weights().is_err());",
-            "println!(\"The graph weights are {:?}.\", graph_with_weights.iter_edge_weights().unwrap().collect::<Vec<_>>());",
+            "println!(\"The graph weights are {:?}.\", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());",
             "```"
         ],
         "modifiers": "pub",
@@ -14793,7 +14848,8 @@
             "* `edge_file_reader`: EdgeFileReader - Reader of the edge file.",
             "* `node_file_reader`: Option<NodeFileReader> - Reader of the node file.",
             "* `directed`: bool - Whether the graph is to be read as directed or undirected.",
-            "* `directed_edge_list`: bool - Whether to read the edge list as directed."
+            "* `directed_edge_list`: bool - Whether to read the edge list as directed.",
+            "* `name`: S - The name for the graph."
         ],
         "modifiers": "pub",
         "name": "from_unsorted_csv",
