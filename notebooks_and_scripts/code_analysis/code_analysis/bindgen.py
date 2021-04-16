@@ -52,8 +52,9 @@ def bindgen(args):
             doc = re.sub("# Example[^#]+", "", doc, flags=re.DOTALL)
             # Convert the arguments header
             doc = re.sub("#\s+Arguments", "Paramenters\n--------------", doc, flags=re.DOTALL)
+            doc = re.sub("Paramenters\n--------------\n\n", "Paramenters\n--------------\n", doc, flags=re.DOTALL)
             # Convert the arguments in python format
-            doc = re.sub(r"[ \t]*\*`?(.+?)`?\s*:\s*(.+?)\s*-\s*(.+)", r"\1 : \2,\n\t\3", doc)
+            doc = re.sub(r"[ \t]*\* `(.+?)`\s*:\s*(.+?)\s*-\s*(.+)", r"\1 : \2,\n\t\3", doc)
             # Type conversions
             doc = re.sub(r"Vec<(.+?)>", r"List[\1]", doc)
             doc = re.sub(r"EdgeTypeT", r"int", doc)
@@ -61,6 +62,9 @@ def bindgen(args):
             doc = re.sub(r"String", r"str", doc)
             doc = re.sub(r"NodeT", r"int", doc)
             doc = re.sub(r"EdgeT", r"int", doc)
+            doc = re.sub(r"u64", r"int", doc)
+            doc = re.sub(r"usize", r"int", doc)
+            doc = re.sub(r"f64", r"float", doc)
             doc = re.sub(r"&", r"", doc)
             doc = re.sub(r"Option<(.+?)>", r"\1", doc)
             doc = re.sub(r"HashSet<(.+?)>", r"Dict[\1]", doc)

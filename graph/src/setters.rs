@@ -21,7 +21,7 @@ impl Graph {
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// # Arguments
-    /// - `edge_type`: String - The edge type to assing to all the edges.
+    /// * `edge_type`: String - The edge type to assing to all the edges.
     pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Result<Graph, String> {
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
@@ -38,7 +38,7 @@ impl Graph {
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// # Arguments
-    /// - `node_type`: String - The node type to assing to all the nodes.
+    /// * `node_type`: String - The node type to assing to all the nodes.
     pub fn set_all_node_types<S: Into<String>>(mut self, node_type: S) -> Result<Graph, String> {
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();

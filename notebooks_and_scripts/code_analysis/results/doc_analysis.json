@@ -86,10 +86,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
@@ -98,11 +94,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'graphs'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+                "msg": "Missing the documentation for the argument 'main'."
             },
             {
                 "doc_line": "~",
@@ -155,10 +155,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'main'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
@@ -167,11 +163,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'graphs'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+                "msg": "Missing the documentation for the argument 'main'."
             },
             {
                 "doc_line": "~",
@@ -1008,11 +1008,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'lines_number'."
+                "msg": "Missing the documentation for the argument 'values'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'values'."
+                "msg": "Missing the documentation for the argument 'lines_number'."
             },
             {
                 "doc_line": 0,
@@ -1172,11 +1172,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walks_parameters'."
+                "msg": "Missing the documentation for the argument 'window_size'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'window_size'."
+                "msg": "Missing the documentation for the argument 'walks_parameters'."
             },
             {
                 "doc_line": "~",
@@ -1207,11 +1207,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_parameters'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'walk_parameters'."
             },
             {
                 "doc_line": 0,
@@ -2375,17 +2375,18 @@
         "function": "is_unchecked_singleton_from_node_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`node_id`: NodeT - The node to be checked for.\n"
+            "args": [
+                {
+                    "name": "node_id",
+                    "type": "NodeT",
+                    "desc": "The node to be checked for"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -2395,17 +2396,18 @@
         "function": "is_singleton_from_node_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`node_id`: NodeT - The node to be checked for.\n"
+            "args": [
+                {
+                    "name": "node_id",
+                    "type": "NodeT",
+                    "desc": "The node to be checked for"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -2415,17 +2417,18 @@
         "function": "is_singleton_with_selfloops_from_node_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`node_id`: NodeT - The node to be checked for.\n"
+            "args": [
+                {
+                    "name": "node_id",
+                    "type": "NodeT",
+                    "desc": "The node to be checked for"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -2611,11 +2614,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type_name'."
+                "msg": "Missing the documentation for the argument 'node_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_name'."
+                "msg": "Missing the documentation for the argument 'node_type_name'."
             },
             {
                 "doc_line": 0,
@@ -2686,11 +2689,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
+                "msg": "Missing the documentation for the argument 'dst_name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst_name'."
+                "msg": "Missing the documentation for the argument 'src_name'."
             },
             {
                 "doc_line": "~",
@@ -3733,11 +3736,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'max_neighbours'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -3756,25 +3759,28 @@
         "function": "get_unchecked_edge_id_from_node_ids_and_edge_type_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`src`: NodeT - Source node of the edge.\n`dst`: NodeT - Destination node of the edge.\n`edge_type`: Option<EdgeTypeT> - Edge Type of the edge.\n"
+            "args": [
+                {
+                    "name": "src",
+                    "type": "NodeT",
+                    "desc": "Source node of the edge"
+                },
+                {
+                    "name": "dst",
+                    "type": "NodeT",
+                    "desc": "Destination node of the edge"
+                },
+                {
+                    "name": "edge_type",
+                    "type": "Option<EdgeTypeT>",
+                    "desc": "Edge Type of the edge"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -3834,21 +3840,20 @@
     "get_unchecked_node_ids_from_edge_id": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_unchecked_node_ids_from_edge_id",
-        "errors": [
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.\n# Example\nTo retrieve the source and destination node IDs of a given edge ID you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {} and destination node ID {}.\", edge_id, src, dst);\n```\n"
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge ID whose source and destination node IDs are to e retrieved"
+                }
+            ]
         },
-        "example": {},
+        "example": {
+            "desc": "To retrieve the source and destination node IDs of a given edge ID you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {} and destination node ID {}.\", edge_id, src, dst);\n"
+        },
         "extra_headers": []
     },
     "get_node_ids_from_edge_id": {
@@ -3856,67 +3861,71 @@
         "function": "get_node_ids_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": 11,
+                "msg": "In the example there isn't the current method!!!!"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.\n# Example\nTo retrieve the source and destination node IDs of a given edge ID you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());\n```\n"
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge ID whose source and destination node IDs are to e retrieved"
+                }
+            ]
         },
-        "example": {},
+        "example": {
+            "desc": "To retrieve the source and destination node IDs of a given edge ID you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());\n"
+        },
         "extra_headers": []
     },
     "get_unchecked_edge_id_from_node_ids": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_unchecked_edge_id_from_node_ids",
-        "errors": [
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": [],
-            "desc": "`src`: NodeT - The source node ID.\n`dst`: NodeT - The destination node ID.\n# Example\nTo retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nlet src = 0;\nlet dst = 1;\nlet edge_id = graph.get_unchecked_edge_id_from_node_ids(src, dst);\nprintln!(\"The source node ID {} and destination node ID {} corrrespond to the edge with ID {}.\", src, dst, edge_id);\n```\n"
+            "args": [
+                {
+                    "name": "src",
+                    "type": "NodeT",
+                    "desc": "The source node ID"
+                },
+                {
+                    "name": "dst",
+                    "type": "NodeT",
+                    "desc": "The destination node ID"
+                }
+            ]
         },
-        "example": {},
+        "example": {
+            "desc": "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nlet src = 0;\nlet dst = 1;\nlet edge_id = graph.get_unchecked_edge_id_from_node_ids(src, dst);\nprintln!(\"The source node ID {} and destination node ID {} corrrespond to the edge with ID {}.\", src, dst, edge_id);\n"
+        },
         "extra_headers": []
     },
     "get_edge_id_from_node_ids": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_edge_id_from_node_ids",
-        "errors": [
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
+        "errors": [],
         "args": {
-            "args": [],
-            "desc": "`src`: NodeT - The source node ID.\n`dst`: NodeT - The destination node ID.\n# Example\nTo retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nassert!(graph.get_edge_id_from_node_ids(0, 1).is_ok());\nassert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());\n```\n"
+            "args": [
+                {
+                    "name": "src",
+                    "type": "NodeT",
+                    "desc": "The source node ID"
+                },
+                {
+                    "name": "dst",
+                    "type": "NodeT",
+                    "desc": "The destination node ID"
+                }
+            ]
         },
-        "example": {},
+        "example": {
+            "desc": "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nassert!(graph.get_edge_id_from_node_ids(0, 1).is_ok());\nassert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());\n"
+        },
         "extra_headers": []
     },
     "get_unchecked_unique_source_node_id": {
@@ -3924,19 +3933,25 @@
         "function": "get_unchecked_unique_source_node_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'source_id'."
+                "doc_line": 3,
+                "msg": "The argument 'src' does not exists in the current method. The available args are ['source_id']."
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": 4,
+                "msg": "The argument 'dst' does not exists in the current method. The available args are ['source_id']."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'source_id'."
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`src`: NodeT - The source node ID.\n`dst`: NodeT - The destination node ID.\n# Example\nTo retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n```rust\n# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\n# let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nassert!(\ngraph_without_singletons.iter_node_ids()\n.all(|node_id|\ngraph_without_singletons.get_unchecked_unique_source_node_id(node_id) == node_id)\n);\n```\n"
+            "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:\n",
+            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\n# let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();\nassert!(\ngraph_without_singletons.iter_node_ids()\n.all(|node_id|\ngraph_without_singletons.get_unchecked_unique_source_node_id(node_id) == node_id)\n);\n"
+        },
         "extra_headers": []
     },
     "get_unchecked_node_ids_and_edge_type_id_from_edge_id": {
@@ -3944,19 +3959,21 @@
         "function": "get_unchecked_node_ids_and_edge_type_id_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "doc_line": 5,
+                "msg": "The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.' (doc_line: 5) is not in the standard format."
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.\n# Example\nIn order to retrieve a given edge ID informations, you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}\", edge_id, src, dst, edge_type);\n```\n"
+            "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "In order to retrieve a given edge ID informations, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}\", edge_id, src, dst, edge_type);\n"
+        },
         "extra_headers": []
     },
     "get_node_ids_and_edge_type_id_from_edge_id": {
@@ -3964,19 +3981,21 @@
         "function": "get_node_ids_and_edge_type_id_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "doc_line": 3,
+                "msg": "The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.' (doc_line: 3) is not in the standard format."
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.\n# Example\nIn order to retrieve a given edge ID informations, you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());\n```\n"
+            "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "In order to retrieve a given edge ID informations, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());\n"
+        },
         "extra_headers": []
     },
     "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": {
@@ -3984,19 +4003,21 @@
         "function": "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "doc_line": 5,
+                "msg": "The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.' (doc_line: 5) is not in the standard format."
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.\n# Example\nIn order to retrieve a given edge ID informations, you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.\", edge_id, src, dst, edge_type, weight);\n```\n"
+            "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "In order to retrieve a given edge ID informations, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet edge_id = 0;\nlet (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);\nprintln!(\"The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.\", edge_id, src, dst, edge_type, weight);\n"
+        },
         "extra_headers": []
     },
     "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id": {
@@ -4004,19 +4025,21 @@
         "function": "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "doc_line": 3,
+                "msg": "The argument line '* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.' (doc_line: 3) is not in the standard format."
             },
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.\n# Example\nIn order to retrieve a given edge ID informations, you can use the following:\n```rust\n# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(10000000000).is_err());\n```\n"
+            "args": []
         },
-        "example": {},
+        "example": {
+            "desc": "In order to retrieve a given edge ID informations, you can use the following:\n",
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nassert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(0).is_ok());\nassert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(10000000000).is_err());\n"
+        },
         "extra_headers": []
     },
     "get_top_k_central_node_ids": {
@@ -4233,17 +4256,18 @@
         "function": "get_node_type_name_from_node_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`node_id`: NodeT - The node ID whose node types are to be returned.\n"
+            "args": [
+                {
+                    "name": "node_id",
+                    "type": "NodeT",
+                    "desc": "The node ID whose node types are to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4253,17 +4277,18 @@
         "function": "get_edge_type_name_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT - The edge ID whose edge type is to be returned.\n"
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge ID whose edge type is to be returned"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4617,17 +4642,18 @@
         "function": "get_edge_count_from_edge_type_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "edge_type: Option<EdgeTypeT> - The edge type ID to count the edges of.\n"
+            "args": [
+                {
+                    "name": "edge_type",
+                    "type": "Option<EdgeTypeT>",
+                    "desc": "The edge type ID to count the edges of"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4636,6 +4662,10 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_edge_type_id_from_edge_type_name",
         "errors": [
+            {
+                "doc_line": 5,
+                "msg": "The argument 'edge_type' does not exists in the current method. The available args are ['edge_type_name']."
+            },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edge_type_name'."
@@ -4646,8 +4676,7 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "edge_type: Option<&str> - The edge type name whose ID is to be returned.\n"
+            "args": []
         },
         "example": {},
         "extra_headers": []
@@ -4657,17 +4686,18 @@
         "function": "get_edge_count_from_edge_type_name",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "edge_type: Option<&str> - The edge type name to count the edges of.\n"
+            "args": [
+                {
+                    "name": "edge_type",
+                    "type": "Option<&str>",
+                    "desc": "The edge type name to count the edges of"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4677,6 +4707,10 @@
         "function": "get_node_type_id_from_node_type_name",
         "errors": [
             {
+                "doc_line": 5,
+                "msg": "The argument 'node_type' does not exists in the current method. The available args are ['node_type_name']."
+            },
+            {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_type_name'."
             },
@@ -4686,8 +4720,7 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "node_type: Option<&str> - The node type name whose ID is to be returned.\n"
+            "args": []
         },
         "example": {},
         "extra_headers": []
@@ -4697,17 +4730,18 @@
         "function": "get_node_count_from_node_type_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "node_type: Option<NodeTypeT> - The node type ID to count the nodes of.\n"
+            "args": [
+                {
+                    "name": "node_type",
+                    "type": "Option<NodeTypeT>",
+                    "desc": "The node type ID to count the nodes of"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4716,6 +4750,10 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
         "function": "get_node_count_from_node_type_name",
         "errors": [
+            {
+                "doc_line": 6,
+                "msg": "The argument 'node_type' does not exists in the current method. The available args are ['node_type_name']."
+            },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_type_name'."
@@ -4726,8 +4764,7 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "node_type: Option<&str> - The node type name to count the nodes of.\n"
+            "args": []
         },
         "example": {},
         "extra_headers": []
@@ -4737,17 +4774,18 @@
         "function": "get_unchecked_destination_node_id_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT - The edge ID whose destination is to be retrieved.\n"
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge ID whose destination is to be retrieved"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4757,17 +4795,18 @@
         "function": "get_destination_node_id_from_edge_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`edge_id`: EdgeT - The edge ID whose destination is to be retrieved.\n"
+            "args": [
+                {
+                    "name": "edge_id",
+                    "type": "EdgeT",
+                    "desc": "The edge ID whose destination is to be retrieved"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4863,25 +4902,28 @@
         "function": "get_edge_id_from_node_ids_and_edge_type_id",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`src`: NodeT - Source node of the edge.\n`dst`: NodeT - Destination node of the edge.\n`edge_type`: Option<EdgeTypeT> - Edge Type of the edge.\n"
+            "args": [
+                {
+                    "name": "src",
+                    "type": "NodeT",
+                    "desc": "Source node of the edge"
+                },
+                {
+                    "name": "dst",
+                    "type": "NodeT",
+                    "desc": "Destination node of the edge"
+                },
+                {
+                    "name": "edge_type",
+                    "type": "Option<EdgeTypeT>",
+                    "desc": "Edge Type of the edge"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4891,21 +4933,23 @@
         "function": "get_edge_id_from_node_names",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst_name'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`src_name`: &str - Source node name of the edge.\n`dst_name`: &str - Destination node name of the edge.\n"
+            "args": [
+                {
+                    "name": "src_name",
+                    "type": "&str",
+                    "desc": "Source node name of the edge"
+                },
+                {
+                    "name": "dst_name",
+                    "type": "&str",
+                    "desc": "Destination node name of the edge"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -4916,14 +4960,6 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src_name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst_name'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edge_type_name'."
             },
             {
@@ -4932,8 +4968,19 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`src_name`: &str - Source node name of the edge.\n`dst_name`: &str - Destination node name of the edge.\n`edge_type_name`: Option<&String> - Edge type name.\n"
+            "args": [
+                {
+                    "name": "src_name",
+                    "type": "&str",
+                    "desc": "Source node name of the edge"
+                },
+                {
+                    "name": "dst_name",
+                    "type": "&str",
+                    "desc": "Destination node name of the edge"
+                }
+            ],
+            "footer": "`edge_type_name`: Option<&String> - Edge type name.\n"
         },
         "example": {},
         "extra_headers": []
@@ -5568,6 +5615,10 @@
         "function": "set_all_edge_types",
         "errors": [
             {
+                "doc_line": 3,
+                "msg": "The argument type 'String' of 'edge_type' does not match the function delcaration which is 'S'."
+            },
+            {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edge_type'."
             },
@@ -5577,8 +5628,7 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "- `edge_type`: String - The edge type to assing to all the edges.\n"
+            "args": []
         },
         "example": {},
         "extra_headers": []
@@ -5587,6 +5637,10 @@
         "file": "/Workspace/Github/ensmallen_graph/graph/src/setters.rs",
         "function": "set_all_node_types",
         "errors": [
+            {
+                "doc_line": 3,
+                "msg": "The argument type 'String' of 'node_type' does not match the function delcaration which is 'S'."
+            },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_type'."
@@ -5597,8 +5651,7 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "- `node_type`: String - The node type to assing to all the nodes.\n"
+            "args": []
         },
         "example": {},
         "extra_headers": []
@@ -5796,11 +5849,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
+                "msg": "Missing the documentation for the argument 'transition'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'transition'."
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": "~",
@@ -5840,7 +5893,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
             },
             {
                 "doc_line": "~",
@@ -5848,7 +5901,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5883,27 +5936,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5911,7 +5944,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "msg": "Missing the documentation for the argument 'dst'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
                 "doc_line": "~",
@@ -5919,7 +5956,23 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             },
             {
                 "doc_line": 0,
@@ -5981,19 +6034,11 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -6001,7 +6046,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -6151,11 +6204,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'to_node'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'to_node'."
             },
             {
                 "doc_line": 0,
@@ -6186,11 +6239,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": "~",
@@ -6225,11 +6278,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_length'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'walk_length'."
             },
             {
                 "doc_line": "~",
@@ -6347,11 +6400,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_nodes_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+                "msg": "Missing the documentation for the argument 'second_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6359,11 +6408,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_nodes_set'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'first_nodes_set'."
             },
             {
                 "doc_line": 0,
@@ -6371,8 +6420,14 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.\n`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.\n`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.\n`second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "footer": "`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.\n`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.\n`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.\n`second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6383,11 +6438,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_nodes_set'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'first_node_types_set'."
+                "msg": "Missing the documentation for the argument 'second_nodes_set'."
             },
             {
                 "doc_line": "~",
@@ -6395,11 +6446,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'second_nodes_set'."
+                "msg": "Missing the documentation for the argument 'first_node_types_set'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
+                "msg": "Missing the documentation for the argument 'first_nodes_set'."
             },
             {
                 "doc_line": 0,
@@ -6407,8 +6458,14 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.\n`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.\n`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.\n`second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "footer": "`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.\n`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.\n`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.\n`second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6419,10 +6476,6 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
@@ -6439,8 +6492,15 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`central_node`: String - Name of the node to use as center of the star.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.\n`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "desc": "`central_node`: String - Name of the node to use as center of the star.\n",
+            "footer": "`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.\n`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6451,10 +6511,6 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'central_node'."
             },
             {
@@ -6471,8 +6527,15 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`central_node`: String - Name of the node to use as center of the star.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.\n`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "desc": "`central_node`: String - Name of the node to use as center of the star.\n",
+            "footer": "`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.\n`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6491,15 +6554,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_node_type_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'allow_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -6507,8 +6566,15 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n",
+            "footer": "`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6527,15 +6593,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'allow_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'removed_existing_edges'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'allow_node_type_set'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'allow_selfloops'."
             },
             {
                 "doc_line": 0,
@@ -6543,8 +6605,15 @@
             }
         ],
         "args": {
-            "args": [],
-            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.\n`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
+            "args": [
+                {
+                    "name": "removed_existing_edges",
+                    "type": "Option<bool>",
+                    "desc": "whether to filter out the existing edges. By default, true"
+                }
+            ],
+            "desc": "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.\n`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.\n",
+            "footer": "`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.\n`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.\n"
         },
         "example": {},
         "extra_headers": []
@@ -6620,11 +6689,11 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'other'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'other'."
             },
             {
                 "doc_line": 0,
@@ -9333,7 +9402,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
             },
             {
                 "doc_line": "~",
@@ -9341,7 +9410,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iter'."
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
@@ -9605,14 +9674,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
@@ -9621,23 +9682,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
             },
             {
                 "doc_line": "~",
@@ -9645,11 +9690,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
+                "msg": "Missing the documentation for the argument 'has_node_types'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": "~",
@@ -9657,7 +9702,23 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'name'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
             },
             {
                 "doc_line": "~",
@@ -9665,11 +9726,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
             },
             {
                 "doc_line": 0,
@@ -9709,6 +9778,26 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
@@ -9717,15 +9806,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
             },
             {
                 "doc_line": "~",
@@ -9733,15 +9814,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
             },
             {
                 "doc_line": "~",
@@ -9749,15 +9822,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_edges'."
+                "msg": "Missing the documentation for the argument 'name'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
             },
             {
                 "doc_line": 0,
@@ -9905,11 +9974,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": 0,
@@ -9956,15 +10025,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_number_overlaps'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types'."
             },
             {
                 "doc_line": 0,

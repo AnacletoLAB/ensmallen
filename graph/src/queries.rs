@@ -100,9 +100,9 @@ impl Graph {
     /// that the edge exists.
     ///
     /// # Arguments
-    /// `src`: NodeT - Source node of the edge.
-    /// `dst`: NodeT - Destination node of the edge.
-    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT - Destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     pub fn get_unchecked_edge_id_from_node_ids_and_edge_type_id(
         &self,
         src: NodeT,
@@ -163,7 +163,7 @@ impl Graph {
     /// current graph instance.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
     ///
     /// # Example
     /// To retrieve the source and destination node IDs of a given edge ID you can use the following:
@@ -185,7 +185,7 @@ impl Graph {
     /// Returns node IDs corresponding to given edge ID.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
     ///
     /// # Example
     /// To retrieve the source and destination node IDs of a given edge ID you can use the following:
@@ -207,8 +207,8 @@ impl Graph {
     /// not correspond to an edge in this graph instance.
     ///
     /// # Arguments
-    /// `src`: NodeT - The source node ID.
-    /// `dst`: NodeT - The destination node ID.
+    /// * `src`: NodeT - The source node ID.
+    /// * `dst`: NodeT - The destination node ID.
     ///
     /// # Example
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
@@ -228,8 +228,8 @@ impl Graph {
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// # Arguments
-    /// `src`: NodeT - The source node ID.
-    /// `dst`: NodeT - The destination node ID.
+    /// * `src`: NodeT - The source node ID.
+    /// * `dst`: NodeT - The destination node ID.
     ///
     /// # Example
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
@@ -253,8 +253,8 @@ impl Graph {
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// # Arguments
-    /// `src`: NodeT - The source node ID.
-    /// `dst`: NodeT - The destination node ID.
+    /// * `src`: NodeT - The source node ID.
+    /// * `dst`: NodeT - The destination node ID.
     ///
     /// # Example
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
@@ -284,7 +284,7 @@ impl Graph {
     /// This method will raise a panic when an improper configuration is used.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
+    /// * `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -310,7 +310,7 @@ impl Graph {
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
+    /// * `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -333,7 +333,7 @@ impl Graph {
     /// This method will raise a panic when an improper configuration is used.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
+    /// * `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -361,7 +361,7 @@ impl Graph {
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
+    /// * `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -539,7 +539,7 @@ impl Graph {
     /// Returns result of option with the node type of the given node id.
     ///
     /// # Arguments
-    /// `node_id`: NodeT - The node ID whose node types are to be returned.
+    /// * `node_id`: NodeT - The node ID whose node types are to be returned.
     pub fn get_node_type_name_from_node_id(
         &self,
         node_id: NodeT,
@@ -558,7 +558,7 @@ impl Graph {
     /// Returns option with the edge type of the given edge id.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
+    /// * `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
     pub fn get_edge_type_name_from_edge_id(
         &self,
         edge_id: EdgeT,
@@ -795,7 +795,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// edge_type: Option<EdgeTypeT> - The edge type ID to count the edges of.
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type ID to count the edges of.
     ///
     pub fn get_edge_count_from_edge_type_id(
         &self,
@@ -821,7 +821,7 @@ impl Graph {
     /// If None is given as an edge type ID, None is returned.
     ///
     /// # Arguments
-    /// edge_type: Option<&str> - The edge type name whose ID is to be returned.
+    /// * `edge_type`: Option<&str> - The edge type name whose ID is to be returned.
     ///
     pub fn get_edge_type_id_from_edge_type_name(
         &self,
@@ -846,7 +846,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// edge_type: Option<&str> - The edge type name to count the edges of.
+    /// * `edge_type`: Option<&str> - The edge type name to count the edges of.
     ///
     pub fn get_edge_count_from_edge_type_name(
         &self,
@@ -860,7 +860,7 @@ impl Graph {
     /// If None is given as an node type ID, None is returned.
     ///
     /// # Arguments
-    /// node_type: Option<&str> - The node type name whose ID is to be returned.
+    /// * `node_type`: Option<&str> - The node type name whose ID is to be returned.
     ///
     pub fn get_node_type_id_from_node_type_name(
         &self,
@@ -884,7 +884,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// node_type: Option<NodeTypeT> - The node type ID to count the nodes of.
+    /// * `node_type`: Option<NodeTypeT> - The node type ID to count the nodes of.
     ///
     pub fn get_node_count_from_node_type_id(
         &self,
@@ -909,7 +909,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// node_type: Option<&str> - The node type name to count the nodes of.
+    /// * `node_type`: Option<&str> - The node type name to count the nodes of.
     ///
     pub fn get_node_count_from_node_type_name(
         &self,
@@ -926,7 +926,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
     pub(crate) fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.destinations.as_ref().map_or_else(
             || self.get_unchecked_node_ids_from_edge_id(edge_id).1,
@@ -938,7 +938,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
         if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
@@ -1050,9 +1050,9 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src`: NodeT - Source node of the edge.
-    /// `dst`: NodeT - Destination node of the edge.
-    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT - Destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     ///
     pub fn get_edge_id_from_node_ids_and_edge_type_id(
         &self,
@@ -1089,8 +1089,8 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src_name`: &str - Source node name of the edge.
-    /// `dst_name`: &str - Destination node name of the edge.
+    /// * `src_name`: &str - Source node name of the edge.
+    /// * `dst_name`: &str - Destination node name of the edge.
     ///
     pub fn get_edge_id_from_node_names(
         &self,
@@ -1118,8 +1118,8 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src_name`: &str - Source node name of the edge.
-    /// `dst_name`: &str - Destination node name of the edge.
+    /// * `src_name`: &str - Source node name of the edge.
+    /// * `dst_name`: &str - Destination node name of the edge.
     /// `edge_type_name`: Option<&String> - Edge type name.
     ///
     pub fn get_edge_id_from_node_names_and_edge_type_name(

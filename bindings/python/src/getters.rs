@@ -84,7 +84,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ---------------------
-    /// edge_type: int,
+    /// * `edge_type`: int,
     ///     Edge type ID for which to count the edges.
     ///
     /// Raises
@@ -106,7 +106,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ---------------------
-    /// node_type: int,
+    /// * `node_type`: int,
     ///     Node type ID for which to number the nodes.
     ///
     /// Raises
@@ -128,7 +128,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ---------------------
-    /// edge_type: str,
+    /// * `edge_type`: str,
     ///     Edge type name for which to number the edges.
     ///
     /// Raises
@@ -150,7 +150,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ---------------------
-    /// node_type: str,
+    /// * `node_type`: str,
     ///     Node type name for which to number the nodes.
     ///
     /// Raises
@@ -244,7 +244,7 @@ impl EnsmallenGraph {
     ///     Node ID to use as source of given edge.
     /// dst: int,
     ///     Node ID to use as destination of given edge.
-    /// edge_type: Union[None, int],
+    /// * `edge_type`: Union[None, int],
     ///     Edge type ID. (By deafult is None).
     ///
     /// Returns
@@ -264,7 +264,7 @@ impl EnsmallenGraph {
     ///     Node name to use as source of given edge.
     /// dst: str,
     ///     Node name to use as destination of given edge.
-    /// edge_type: Union[None, str],
+    /// * `edge_type`: Union[None, str],
     ///     Edge type name. (By deafult is None).
     ///
     /// Returns
@@ -304,7 +304,7 @@ impl EnsmallenGraph {
     /// ---------------------
     /// node_name: str,
     ///     Name of the node.
-    /// node_type: List[str] = None,
+    /// * `node_type`: List[str] = None,
     ///     Optional node type of the node.
     ///
     /// Returns
@@ -342,7 +342,7 @@ impl EnsmallenGraph {
     ///     Node ID to use as source of given edge.
     /// dst: int,
     ///     Node ID to use as destination of given edge.
-    /// edge_type: Union[None, int],
+    /// * `edge_type`: Union[None, int],
     ///     Edge type ID. (By deafult is None).
     ///
     /// Returns
@@ -386,7 +386,7 @@ impl EnsmallenGraph {
     ///     Node name to use as source of given edge.
     /// dst: str,
     ///     Node name to use as destination of given edge.
-    /// edge_type: Union[None, str],
+    /// * `edge_type`: Union[None, str],
     ///     Edge type name. (By deafult is None).
     ///
     /// Returns

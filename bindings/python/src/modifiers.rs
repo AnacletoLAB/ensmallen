@@ -7,7 +7,7 @@ impl EnsmallenGraph {
     ///
     /// Arguments
     /// ---------
-    /// edge_type: str,
+    /// * `edge_type`: str,
     ///     The edge type to assing to all the edges.
     pub fn set_all_edge_types(&self, edge_type: String) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -20,7 +20,7 @@ impl EnsmallenGraph {
     ///
     /// Arguments
     /// ---------
-    /// node_type: str,
+    /// * `node_type`: str,
     ///     The node type to assing to all the nodes.
     pub fn set_all_node_types(&self, node_type: String) -> EnsmallenGraph {
         EnsmallenGraph {

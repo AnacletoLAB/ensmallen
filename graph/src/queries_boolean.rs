@@ -11,7 +11,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `node_id`: NodeT - The node to be checked for.
+    /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
         self.not_singleton_nodes
             .as_ref()
@@ -22,7 +22,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `node_id`: NodeT - The node to be checked for.
+    /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
             .map(|node_id| self.is_unchecked_singleton_from_node_id(node_id))
@@ -32,7 +32,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `node_id`: NodeT - The node to be checked for.
+    /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> bool {
         self.singleton_nodes_with_selfloops
             .as_ref()

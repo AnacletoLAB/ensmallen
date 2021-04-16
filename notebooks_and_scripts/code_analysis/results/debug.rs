@@ -567,9 +567,9 @@ impl Graph {
     /// that the edge exists.
     ///
     /// # Arguments
-    /// `src`: NodeT - Source node of the edge.
-    /// `dst`: NodeT - Destination node of the edge.
-    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT - Destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     pub(crate) fn get_unchecked_edge_id_by_node_ids(
         &self,
         src: NodeT,
@@ -3575,7 +3575,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `node_id`: NodeT - The node to be checked for.
+    /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.has_singletons()
             && self.get_node_degree_by_node_id(node_id)? == 0
@@ -3589,7 +3589,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `node_id`: NodeT - The node to be checked for.
+    /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_with_selfloops_by_node_id(&self, node_id: NodeT) -> bool {
         self.singleton_nodes_with_selfloops
             .as_ref()
@@ -5510,7 +5510,7 @@ impl Graph {
     /// Returns result of option with the node type of the given node id.
     ///
     /// # Arguments
-    /// `node_id`: NodeT - The node ID whose node types are to be returned.
+    /// * `node_id`: NodeT - The node ID whose node types are to be returned.
     pub fn get_node_type_name_by_node_id(
         &self,
         node_id: NodeT,
@@ -5532,7 +5532,7 @@ impl Graph {
     /// Returns option with the edge type of the given edge id.
     ///
     /// # Arguments
-    /// `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
+    /// * `edge_id`: EdgeT - The edge ID whose edge type is to be returned.
     pub fn get_edge_type_name_by_edge_id(&self, edge_id: EdgeT) -> Result<Option<String>, String> {
         self.get_edge_type_id_by_edge_id(edge_id)?
             .map_or(Ok(None), |x| {
@@ -5743,7 +5743,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// edge_type: Option<EdgeTypeT> - The edge type ID to count the edges of.
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type ID to count the edges of.
     ///
     pub fn get_edge_count_by_edge_type_id(
         &self,
@@ -5769,7 +5769,7 @@ impl Graph {
     /// If None is given as an edge type ID, None is returned.
     ///
     /// # Arguments
-    /// edge_type: Option<&str> - The edge type name whose ID is to be returned.
+    /// * `edge_type`: Option<&str> - The edge type name whose ID is to be returned.
     ///
     pub fn get_edge_type_id_by_edge_type_name(
         &self,
@@ -5794,7 +5794,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// edge_type: Option<&str> - The edge type name to count the edges of.
+    /// * `edge_type`: Option<&str> - The edge type name to count the edges of.
     ///
     pub fn get_edge_count_by_edge_type_name(
         &self,
@@ -5808,7 +5808,7 @@ impl Graph {
     /// If None is given as an node type ID, None is returned.
     ///
     /// # Arguments
-    /// node_type: Option<&str> - The node type name whose ID is to be returned.
+    /// * `node_type`: Option<&str> - The node type name whose ID is to be returned.
     ///
     pub fn get_node_type_id_by_node_type_name(
         &self,
@@ -5832,7 +5832,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// node_type: Option<NodeTypeT> - The node type ID to count the nodes of.
+    /// * `node_type`: Option<NodeTypeT> - The node type ID to count the nodes of.
     ///
     pub fn get_node_count_by_node_type_id(
         &self,
@@ -5857,7 +5857,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// node_type: Option<&str> - The node type name to count the nodes of.
+    /// * `node_type`: Option<&str> - The node type name to count the nodes of.
     ///
     pub fn get_node_count_by_node_type_name(
         &self,
@@ -5874,7 +5874,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
     pub(crate) fn get_unchecked_destination_node_id_by_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.destinations.as_ref().map_or_else(
             || self.get_node_ids_from_edge_id(edge_id).1,
@@ -5886,7 +5886,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
     pub fn get_destination_node_id_by_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
         if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
@@ -5972,9 +5972,9 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src`: NodeT - Source node of the edge.
-    /// `dst`: NodeT - Destination node of the edge.
-    /// `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT - Destination node of the edge.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.
     ///
     pub fn get_edge_id_with_type_by_node_ids(
         &self,
@@ -6010,8 +6010,8 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src_name`: &str - Source node name of the edge.
-    /// `dst_name`: &str - Destination node name of the edge.
+    /// * `src_name`: &str - Source node name of the edge.
+    /// * `dst_name`: &str - Destination node name of the edge.
     ///
     pub fn get_edge_id_by_node_names(
         &self,
@@ -6039,8 +6039,8 @@ impl Graph {
     /// requested edge with edge type.
     ///
     /// # Arguments
-    /// `src_name`: &str - Source node name of the edge.
-    /// `dst_name`: &str - Destination node name of the edge.
+    /// * `src_name`: &str - Source node name of the edge.
+    /// * `dst_name`: &str - Destination node name of the edge.
     /// `edge_type_name`: Option<&String> - Edge type name.
     ///
     pub fn get_edge_id_with_type_by_node_names(
@@ -8037,7 +8037,7 @@ impl Graph {
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// # Arguments
-    /// - `edge_type`: String - The edge type to assing to all the edges.
+    /// * `edge_type`: String - The edge type to assing to all the edges.
     pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Graph {
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
@@ -8054,7 +8054,7 @@ impl Graph {
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// # Arguments
-    /// - `node_type`: String - The node type to assing to all the nodes.
+    /// * `node_type`: String - The node type to assing to all the nodes.
     pub fn set_all_node_types<S: Into<String>>(mut self, node_type: S) -> Graph {
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
@@ -8978,7 +8978,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -9058,7 +9058,7 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
     /// `first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.
@@ -9093,7 +9093,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
@@ -9116,7 +9116,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
     /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
@@ -9140,7 +9140,7 @@ impl Graph {
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
     /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
@@ -9202,7 +9202,7 @@ impl Graph {
     /// # Arguments
     /// `directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.
     /// `allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.
-    /// `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
+    /// * `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edge_names(

@@ -3454,7 +3454,7 @@
             "",
             "# Arguments",
             "",
-            "`node_id`: NodeT - The node to be checked for."
+            "* `node_id`: NodeT - The node to be checked for."
         ],
         "modifiers": "pub",
         "name": "is_unchecked_singleton_from_node_id",
@@ -3487,7 +3487,7 @@
             "",
             "# Arguments",
             "",
-            "`node_id`: NodeT - The node to be checked for."
+            "* `node_id`: NodeT - The node to be checked for."
         ],
         "modifiers": "pub",
         "name": "is_singleton_from_node_id",
@@ -3520,7 +3520,7 @@
             "",
             "# Arguments",
             "",
-            "`node_id`: NodeT - The node to be checked for."
+            "* `node_id`: NodeT - The node to be checked for."
         ],
         "modifiers": "pub",
         "name": "is_singleton_with_selfloops_from_node_id",
@@ -5327,9 +5327,9 @@
             "that the edge exists.",
             "",
             "# Arguments",
-            "`src`: NodeT - Source node of the edge.",
-            "`dst`: NodeT - Destination node of the edge.",
-            "`edge_type`: Option<EdgeTypeT> - Edge Type of the edge."
+            "* `src`: NodeT - Source node of the edge.",
+            "* `dst`: NodeT - Destination node of the edge.",
+            "* `edge_type`: Option<EdgeTypeT> - Edge Type of the edge."
         ],
         "modifiers": "pub",
         "name": "get_unchecked_edge_id_from_node_ids_and_edge_type_id",
@@ -5450,7 +5450,7 @@
             "current graph instance.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.",
+            "* `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.",
             "",
             "# Example",
             "To retrieve the source and destination node IDs of a given edge ID you can use the following:",
@@ -5490,7 +5490,7 @@
             "Returns node IDs corresponding to given edge ID.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.",
+            "* `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.",
             "",
             "# Example",
             "To retrieve the source and destination node IDs of a given edge ID you can use the following:",
@@ -5532,8 +5532,8 @@
             "not correspond to an edge in this graph instance.",
             "",
             "# Arguments",
-            "`src`: NodeT - The source node ID.",
-            "`dst`: NodeT - The destination node ID.",
+            "* `src`: NodeT - The source node ID.",
+            "* `dst`: NodeT - The destination node ID.",
             "",
             "# Example",
             "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
@@ -5578,8 +5578,8 @@
             "Returns edge ID corresponding to given source and destination node IDs.",
             "",
             "# Arguments",
-            "`src`: NodeT - The source node ID.",
-            "`dst`: NodeT - The destination node ID.",
+            "* `src`: NodeT - The source node ID.",
+            "* `dst`: NodeT - The destination node ID.",
             "",
             "# Example",
             "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
@@ -5622,8 +5622,8 @@
             "Returns edge ID corresponding to given source and destination node IDs.",
             "",
             "# Arguments",
-            "`src`: NodeT - The source node ID.",
-            "`dst`: NodeT - The destination node ID.",
+            "* `src`: NodeT - The source node ID.",
+            "* `dst`: NodeT - The destination node ID.",
             "",
             "# Example",
             "To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
@@ -5668,7 +5668,7 @@
             "This method will raise a panic when an improper configuration is used.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.",
+            "* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.",
             "",
             "# Example",
             "In order to retrieve a given edge ID informations, you can use the following:",
@@ -5708,7 +5708,7 @@
             "Return the src, dst, edge type of a given edge ID.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.",
+            "* `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.",
             "",
             "# Example",
             "In order to retrieve a given edge ID informations, you can use the following:",
@@ -5749,7 +5749,7 @@
             "This method will raise a panic when an improper configuration is used.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.",
+            "* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.",
             "",
             "# Example",
             "In order to retrieve a given edge ID informations, you can use the following:",
@@ -5789,7 +5789,7 @@
             "Return the src, dst, edge type and weight of a given edge ID.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.",
+            "* `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.",
             "",
             "# Example",
             "In order to retrieve a given edge ID informations, you can use the following:",
@@ -6122,7 +6122,7 @@
             "Returns result of option with the node type of the given node id.",
             "",
             "# Arguments",
-            "`node_id`: NodeT - The node ID whose node types are to be returned."
+            "* `node_id`: NodeT - The node ID whose node types are to be returned."
         ],
         "modifiers": "pub",
         "name": "get_node_type_name_from_node_id",
@@ -6152,7 +6152,7 @@
             "Returns option with the edge type of the given edge id.",
             "",
             "# Arguments",
-            "`edge_id`: EdgeT - The edge ID whose edge type is to be returned."
+            "* `edge_id`: EdgeT - The edge ID whose edge type is to be returned."
         ],
         "modifiers": "pub",
         "name": "get_edge_type_name_from_edge_id",
@@ -6624,7 +6624,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "edge_type: Option<EdgeTypeT> - The edge type ID to count the edges of.",
+            "* `edge_type`: Option<EdgeTypeT> - The edge type ID to count the edges of.",
             ""
         ],
         "modifiers": "pub",
@@ -6657,7 +6657,7 @@
             "If None is given as an edge type ID, None is returned.",
             "",
             "# Arguments",
-            "edge_type: Option<&str> - The edge type name whose ID is to be returned.",
+            "* `edge_type`: Option<&str> - The edge type name whose ID is to be returned.",
             ""
         ],
         "modifiers": "pub",
@@ -6691,7 +6691,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "edge_type: Option<&str> - The edge type name to count the edges of.",
+            "* `edge_type`: Option<&str> - The edge type name to count the edges of.",
             ""
         ],
         "modifiers": "pub",
@@ -6724,7 +6724,7 @@
             "If None is given as an node type ID, None is returned.",
             "",
             "# Arguments",
-            "node_type: Option<&str> - The node type name whose ID is to be returned.",
+            "* `node_type`: Option<&str> - The node type name whose ID is to be returned.",
             ""
         ],
         "modifiers": "pub",
@@ -6758,7 +6758,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "node_type: Option<NodeTypeT> - The node type ID to count the nodes of.",
+            "* `node_type`: Option<NodeTypeT> - The node type ID to count the nodes of.",
             ""
         ],
         "modifiers": "pub",
@@ -6792,7 +6792,7 @@
             "will be returned.",
             "",
             "# Arguments",
-            "node_type: Option<&str> - The node type name to count the nodes of.",
+            "* `node_type`: Option<&str> - The node type name to count the nodes of.",
             ""
         ],
         "modifiers": "pub",
@@ -6824,7 +6824,7 @@
             "",
             "# Arguments",
             "",
-            "`edge_id`: EdgeT - The edge ID whose destination is to be retrieved."
+            "* `edge_id`: EdgeT - The edge ID whose destination is to be retrieved."
         ],
         "modifiers": "pub(crate)",
         "name": "get_unchecked_destination_node_id_from_edge_id",
@@ -6855,7 +6855,7 @@
             "",
             "# Arguments",
             "",
-            "`edge_id`: EdgeT - The edge ID whose destination is to be retrieved."
+            "* `edge_id`: EdgeT - The edge ID whose destination is to be retrieved."
         ],
         "modifiers": "pub",
         "name": "get_destination_node_id_from_edge_id",
@@ -7049,9 +7049,9 @@
             "requested edge with edge type.",
             "",
             "# Arguments",
-            "`src`: NodeT - Source node of the edge.",
-            "`dst`: NodeT - Destination node of the edge.",
-            "`edge_type`: Option<EdgeTypeT> - Edge Type of the edge.",
+            "* `src`: NodeT - Source node of the edge.",
+            "* `dst`: NodeT - Destination node of the edge.",
+            "* `edge_type`: Option<EdgeTypeT> - Edge Type of the edge.",
             ""
         ],
         "modifiers": "pub",
@@ -7093,8 +7093,8 @@
             "requested edge with edge type.",
             "",
             "# Arguments",
-            "`src_name`: &str - Source node name of the edge.",
-            "`dst_name`: &str - Destination node name of the edge.",
+            "* `src_name`: &str - Source node name of the edge.",
+            "* `dst_name`: &str - Destination node name of the edge.",
             ""
         ],
         "modifiers": "pub",
@@ -7132,8 +7132,8 @@
             "requested edge with edge type.",
             "",
             "# Arguments",
-            "`src_name`: &str - Source node name of the edge.",
-            "`dst_name`: &str - Destination node name of the edge.",
+            "* `src_name`: &str - Source node name of the edge.",
+            "* `dst_name`: &str - Destination node name of the edge.",
             "`edge_type_name`: Option<&String> - Edge type name.",
             ""
         ],
@@ -8521,7 +8521,7 @@
             "Replace all edge types (if present) and set all the edge to edge_type.",
             "",
             "# Arguments",
-            "- `edge_type`: String - The edge type to assing to all the edges."
+            "* `edge_type`: String - The edge type to assing to all the edges."
         ],
         "modifiers": "pub",
         "name": "set_all_edge_types",
@@ -8546,7 +8546,7 @@
             "Replace all node types (if present) and set all the node to node_type.",
             "",
             "# Arguments",
-            "- `node_type`: String - The node type to assing to all the nodes."
+            "* `node_type`: String - The node type to assing to all the nodes."
         ],
         "modifiers": "pub",
         "name": "set_all_node_types",
@@ -9412,7 +9412,7 @@
             "Return vector of tuple of Node IDs that form the edges of the required bipartite graph.",
             "",
             "# Arguments",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.",
             "`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.",
             "`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.",
@@ -9456,7 +9456,7 @@
             "Return vector of tuple of Node IDs that form the edges of the required bipartite graph.",
             "",
             "# Arguments",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.",
             "`second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.",
             "`first_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the first set of nodes of the graph.",
@@ -9501,7 +9501,7 @@
             "",
             "# Arguments",
             "`central_node`: String - Name of the node to use as center of the star.",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.",
             "`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points."
         ],
@@ -9540,7 +9540,7 @@
             "",
             "# Arguments",
             "`central_node`: String - Name of the node to use as center of the star.",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.",
             "`star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points."
         ],
@@ -9580,7 +9580,7 @@
             "# Arguments",
             "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.",
             "`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.",
             "`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique."
         ],
@@ -9624,7 +9624,7 @@
             "# Arguments",
             "`directed`: Option<bool> - whether to return the edges as directed or undirected. By default, equal to the graph.",
             "`allow_selfloops`: Option<bool> - whether to allow self-loops in the clique. By default, equal to the graph.",
-            "`removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
+            "* `removed_existing_edges`: Option<bool> - whether to filter out the existing edges. By default, true.",
             "`allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.",
             "`allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique."
         ],
