@@ -51,7 +51,7 @@ impl Graph {
         if self.has_edges() {
             report.insert(
                 "selfloops_rate",
-                self.get_selfloop_rate().unwrap().to_string(),
+                self.get_selfloop_nodes_rate().unwrap().to_string(),
             );
         }
 
@@ -66,7 +66,7 @@ impl Graph {
         report.insert("has_edge_weights", self.has_edge_weights().to_string());
         report.insert("has_edge_types", self.has_edge_types().to_string());
         report.insert("has_node_types", self.has_node_types().to_string());
-        report.insert("selfloops_number", self.get_selfloop_number().to_string());
+        report.insert("selfloops_number", self.get_selfloop_nodes_number().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",
@@ -368,7 +368,7 @@ impl Graph {
                 false=> "unweighted"
             }.to_owned(),
             selfloops = match self.has_selfloops() {
-                true => format!("{} are self-loops", self.get_selfloop_number()),
+                true => format!("{} are self-loops", self.get_selfloop_nodes_number()),
                 false => "none are self-loops".to_owned()
             },
             selfloops_multigraph_connector = match self.is_multigraph() {

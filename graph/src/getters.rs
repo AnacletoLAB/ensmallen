@@ -78,9 +78,9 @@ impl Graph {
     ///
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The Graph rate is {}", graph.get_traps_rate());
+    /// println!("The Graph rate is {}", graph.get_traps_node_rate());
     /// ```
-    pub fn get_traps_rate(&self) -> f64 {
+    pub fn get_traps_node_rate(&self) -> f64 {
         self.par_iter_node_ids()
             .map(|node| {
                 if !self.is_trap_node_from_node_id(node).unwrap() {
@@ -116,8 +116,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_selfloop_number()) / 2
-            + self.get_selfloop_number()
+        (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) / 2
+            + self.get_selfloop_nodes_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -214,9 +214,9 @@ impl Graph {
     /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_nodes_number());
     /// ```
-    pub fn get_selfloop_number(&self) -> EdgeT {
+    pub fn get_selfloop_nodes_number(&self) -> EdgeT {
         self.selfloop_number
     }
 
@@ -232,18 +232,18 @@ impl Graph {
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_rate().unwrap());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_nodes_rate().unwrap());
     /// ```
-    pub fn get_selfloop_rate(&self) -> Result<f64, String> {
+    pub fn get_selfloop_nodes_rate(&self) -> Result<f64, String> {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloop_nodes_number() as f64 / self.get_directed_edges_number() as f64)
     }
     /// Return name of the graph.
     ///
     /// # Example
-    /// To the retrieve the name of the current graph instance you can use:
+    /// To the retrieve the name of the current graph instance selfloop_number can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// assert_eq!(graph.get_name(), "STRING PPI".to_string());
