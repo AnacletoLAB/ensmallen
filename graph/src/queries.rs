@@ -29,7 +29,7 @@ impl Graph {
     /// Return edge type ID corresponding to the given edge type name.
     ///
     /// # Arguments
-    /// * `node_name`: &str - The edge type name whose edge type ID is to be returned.
+    /// * `edge_type_name`: &str - The edge type name whose edge type ID is to be returned.
     pub fn get_unchecked_edge_type_id_from_edge_type_name(
         &self,
         edge_type_name: &str,
@@ -265,8 +265,7 @@ impl Graph {
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// # Arguments
-    /// * `src`: NodeT - The source node ID.
-    /// * `dst`: NodeT - The destination node ID.
+    /// * `source_id`: NodeT - The source node ID.
     ///
     /// # Example
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
@@ -296,7 +295,7 @@ impl Graph {
     /// This method will raise a panic when an improper configuration is used.
     ///
     /// # Arguments
-    /// * `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source, destination and edge type are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -322,7 +321,7 @@ impl Graph {
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// # Arguments
-    /// * `edge_id`: EdgeT  - The edge ID whose source, destination and edge type are to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source, destination and edge type are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -345,7 +344,7 @@ impl Graph {
     /// This method will raise a panic when an improper configuration is used.
     ///
     /// # Arguments
-    /// * `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source, destination, edge type and weight are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -373,7 +372,7 @@ impl Graph {
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// # Arguments
-    /// * `edge_id`: EdgeT  - The edge ID whose source, destination, edge type and weight are to be retrieved.
+    /// * `edge_id`: EdgeT - The edge ID whose source, destination, edge type and weight are to be retrieved.
     ///
     /// # Example
     /// In order to retrieve a given edge ID informations, you can use the following:
@@ -875,7 +874,7 @@ impl Graph {
     /// If None is given as an node type ID, None is returned.
     ///
     /// # Arguments
-    /// * `node_type_name`: Option<&str> - The node type name whose ID is to be returned.
+    /// * `node_type_name`: &str - The node type name whose ID is to be returned.
     ///
     pub fn get_node_type_id_from_node_type_name(
         &self,
@@ -1167,7 +1166,7 @@ impl Graph {
     /// Return translated edge types from string to internal edge ID.
     ///
     /// # Arguments
-    /// * `edge_type_names`: Vec<String> - Vector of edge types to be converted.
+    /// * `edge_type_names`: Vec<Option<String>> - Vector of edge types to be converted.
     pub fn get_edge_type_ids_from_edge_type_names(
         &self,
         edge_type_names: Vec<Option<String>>,
@@ -1201,7 +1200,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_types`: Vec<String> - Vector of node types to be converted.
+    /// * `node_type_names`: Vec<Option<String>> - Vector of node types to be converted.
     pub fn get_node_type_ids_from_node_type_names(
         &self,
         node_types: Vec<Option<String>>,
@@ -1285,7 +1284,7 @@ impl Graph {
     /// on the note_types anyway.
     ///
     /// # Arguments
-    /// * `node_type_id`: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_id`: NodeTypeT - Id of the node type.
     pub fn get_node_type_name_from_node_type_id(
         &self,
         node_type_id: NodeTypeT,

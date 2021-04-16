@@ -460,7 +460,7 @@ impl Graph {
     ///
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - Rate target to reserve for training.
-    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
+    /// * `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
@@ -553,8 +553,8 @@ impl Graph {
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `train_size`: f64 - rate target to reserve for training
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
-    /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
-    /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
+    /// * `edge_types`: Option<Vec<Option<String>>> - The edges to include in validation set.
+    /// * `min_number_overlaps`: Option<EdgeT> - The minimum number of overlaps to include the edge into the validation set.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
     pub fn random_holdout(

@@ -141,8 +141,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_name`: String - The node name.
-    /// * `node_type_name`: String - The node type name.
+    /// * `node_name`: &str - The node name.
+    /// * `node_type_name`: Option<Vec<String>> - The node types name.
     ///
     pub fn has_node_from_node_name_and_node_type_name(
         &self,
@@ -171,8 +171,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src`: String - The source node name of the edge.
-    /// * `dst`: String - The destination node name of the edge.
+    /// * `src_name`: &str - The source node name of the edge.
+    /// * `dst_name`: &str - The destination node name of the edge.
     ///
     /// # Example
     /// To check if an edge in the graph you can use:
@@ -189,9 +189,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src`: String - The source node name of the edge.
-    /// * `dst`: String - The destination node name of the edge.
-    /// * `edge_type`: Option<String> - The (optional) edge type name.
+    /// * `src_name`: &str - The source node name of the edge.
+    /// * `dst_name`: &str - The destination node name of the edge.
+    /// * `edge_type_name`: Option<&String> - The (optional) edge type name.
     ///
     /// # Example
     /// To check if an edge with type in the graph you can use:
