@@ -73,8 +73,8 @@ pub struct Graph {
     pub(crate) destinations: Option<Vec<NodeT>>,
     /// Vector of sources to execute fast link prediction sequences if required.
     pub(crate) sources: Option<Vec<NodeT>>,
-    /// Vector of outbounds to execute fast walks if required.
-    pub(crate) outbounds: Option<Vec<EdgeT>>,
+    /// Vector of cumulative_node_degrees to execute fast walks if required.
+    pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
     // Hashmap of cached destinations to execute faster walks if required.
     pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
 }
@@ -117,7 +117,7 @@ impl Graph {
             nodes: nodes.set_numeric_ids(false),
             sources: None,
             destinations: None,
-            outbounds: None,
+            cumulative_node_degrees: None,
             cached_destinations: None,
             name: name.into(),
             not_singleton_nodes,
@@ -139,7 +139,7 @@ impl Graph {
                 .any(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),
-            false => other.par_iter_edge_with_type(other.directed).any(
+            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).any(
                 |(_, _, src_name, _, dst_name, _, edge_type_name)| {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
@@ -164,7 +164,7 @@ impl Graph {
                 .all(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),
-            false => other.par_iter_edge_with_type(other.directed).all(
+            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).all(
                 |(_, _, src_name, _, dst_name, _, edge_type_name)| {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,

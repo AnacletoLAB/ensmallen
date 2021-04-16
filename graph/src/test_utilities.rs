@@ -183,7 +183,7 @@ pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(8)?
         .set_iterations(Some(1))?
         .set_random_state(Some(43))
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
 /// Return WalksParameters to execute a second order walk.
@@ -199,7 +199,7 @@ pub fn second_order_walker(
         .set_max_neighbours(Some(3))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping()))
         .set_random_state(Some(43)))
 }
 
@@ -342,7 +342,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     warn!("Running connected components tests.");
-    let (_components_number, smallest, biggest) = graph.connected_components_number(false);
+    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);
     assert!(
         biggest >= smallest,
         "smallest: {} biggest: {}",
@@ -367,7 +367,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     }
 
     // Get one edge from the graph if there are any presents
-    if let Some(edge) = graph.iter_unique_edges(true).next() {
+    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
         let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);
         let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
@@ -479,10 +479,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     // Evaluate get_node_type_counts
-    assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
+    assert_eq!(graph.get_node_type_counter().is_ok(), graph.has_node_types());
 
     // Evaluate get_edge_type_counts
-    assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
+    assert_eq!(graph.get_edge_type_counter().is_ok(), graph.has_edge_types());
 
     // Evaluate get_edge_type_counts_hashmap
     assert_eq!(
@@ -552,11 +552,11 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
         for mode in 0..3 {
             if mode == 1 {
                 graph.enable(false, true, true, None)?;
-                if let Some(outbounds) = &graph.outbounds {
+                if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
                     assert_eq!(
-                        outbounds.len(),
+                        cumulative_node_degrees.len(),
                         graph.get_nodes_number() as usize,
-                        "Length of outbounds does not match number of nodes in the graph."
+                        "Length of cumulative_node_degrees does not match number of nodes in the graph."
                     );
                 }
                 if let Some(destinations) = &graph.destinations {
@@ -647,10 +647,10 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
-        let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
+        let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);
         assert_eq!(
-            graph.connected_components_number(verbose),
-            train.connected_components_number(verbose),
+            graph.get_connected_components_number(verbose),
+            train.get_connected_components_number(verbose),
             "The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.",
             nodes_number=graph.get_nodes_number().to_string()
         );
@@ -689,15 +689,15 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
 }
 
 pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    if graph.connected_components_number(verbose).0 > 1 {
+    if graph.get_connected_components_number(verbose).0 > 1 {
         let without_selfloops = graph.remove(
             None, None, None, None, None, None, None, None, false, false, false, false, true,
             verbose,
         )?;
 
         assert_eq!(
-            graph.connected_components_number(verbose),
-            without_selfloops.connected_components_number(verbose),
+            graph.get_connected_components_number(verbose),
+            without_selfloops.get_connected_components_number(verbose),
             concat!(
                 "We expected the graph to have the same components once we remove the selfloops.\n",
                 "The report of the original graph is {:?}\n",
@@ -719,7 +719,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
         );
         let single_component_number = single_component
             .unwrap()
-            .connected_components_number(verbose)
+            .get_connected_components_number(verbose)
             .0;
         assert_eq!(
             single_component_number,
@@ -745,7 +745,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             verbose,
         )?;
         assert_eq!(
-            no_selfloops.connected_components_number(verbose).0,
+            no_selfloops.get_connected_components_number(verbose).0,
             1,
             concat!(
                 "Expected number of components (1) is not matched!\n",
@@ -977,8 +977,8 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
         graph
             .get_edge_type_names()
             .map(|etn| etn.into_iter().map(Option::Some).collect()),
-        graph.get_min_weight().ok(),
-        graph.get_max_weight().ok(),
+        graph.get_min_edge_weight().ok(),
+        graph.get_max_edge_weight().ok(),
         verbose,
     );
     Ok(())

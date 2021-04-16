@@ -4454,9 +4454,9 @@
         },
         "extra_headers": []
     },
-    "get_node_neighbour_ids_by_node_name": {
+    "get_neighbour_node_ids_by_node_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
-        "function": "get_node_neighbour_ids_by_node_name",
+        "function": "get_neighbour_node_ids_by_node_name",
         "errors": [],
         "args": {
             "args": [
@@ -4469,13 +4469,13 @@
         },
         "example": {
             "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_ids_by_node_name(node_name).unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_neighbour_node_ids_by_node_name(node_name).unwrap());\n"
         },
         "extra_headers": []
     },
-    "get_node_neighbour_names_by_node_name": {
+    "get_neighbour_node_names_by_node_name": {
         "file": "/Workspace/Github/ensmallen_graph/graph/src/queries.rs",
-        "function": "get_node_neighbour_names_by_node_name",
+        "function": "get_neighbour_node_names_by_node_name",
         "errors": [
             {
                 "doc_line": 4,
@@ -4491,7 +4491,7 @@
         },
         "example": {
             "desc": "To retrieve the neighbours of a given node `src` you can use:\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();\nlet node_name = \"ENSP00000000233\";\nprintln!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_neighbour_node_names_by_node_name(node_name).unwrap());\n"
         },
         "extra_headers": []
     },
@@ -5048,7 +5048,7 @@
         "extra_headers": [
             {
                 "name": "let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                "content": "println!(\"The Graph rate is {}\", graph.traps_rate());\n```\n"
+                "content": "println!(\"The Graph rate is {}\", graph.get_traps_rate());\n```\n"
             }
         ]
     },

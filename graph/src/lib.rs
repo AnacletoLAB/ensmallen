@@ -75,6 +75,9 @@ mod types;
 mod walks;
 pub mod walks_parameters;
 
+mod report;
+use self::report::*;
+
 mod queries;
 mod queries_boolean;
 mod queries_walk;

@@ -206,7 +206,7 @@ impl EnsmallenGraph {
     ///
     /// This feature is EXPERIMENTAL and still required proving.
     ///
-    fn traps_rate(&self) -> f64 {
-        self.graph.traps_rate()
+    fn get_traps_rate(&self) -> f64 {
+        self.graph.get_traps_rate()
     }
 }

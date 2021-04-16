@@ -35,7 +35,7 @@ fn generic_string_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.iter_edge_with_type_and_weight(main.directed)
+            one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
                 .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -141,7 +141,7 @@ fn generic_integer_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.iter_edge_with_type_and_weight_ids(main.directed)
+            one.iter_edge_node_ids_and_edge_type_id_and_edge_weight(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid

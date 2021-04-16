@@ -962,11 +962,11 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// # let node_id = 0;
-    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbour_ids_from_node_id(node_id).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_neighbour_node_ids_from_node_id(node_id).unwrap());
     /// let unavailable_node = 2349765432;
-    /// assert!(graph.get_node_neighbour_ids_from_node_id(unavailable_node).is_err());
+    /// assert!(graph.get_neighbour_node_ids_from_node_id(unavailable_node).is_err());
     /// ```
-    pub fn get_node_neighbour_ids_from_node_id(
+    pub fn get_neighbour_node_ids_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Result<Vec<NodeT>, String> {
@@ -977,7 +977,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.iter_node_neighbours_ids(node_id).collect())
+        Ok(self.iter_neighbour_node_ids_from_source_node_id(node_id).collect())
     }
 
     /// Return vector of destinations for the given source node name.
@@ -992,13 +992,13 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
-    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_ids_from_node_name(node_name).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_ids_from_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbour_ids_from_node_name(
+    pub fn get_neighbour_node_ids_from_node_name(
         &self,
         node_name: &str,
     ) -> Result<Vec<NodeT>, String> {
-        self.get_node_neighbour_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        self.get_neighbour_node_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
     /// Return vector of destination names for the given source node name.
@@ -1013,14 +1013,14 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
-    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_names_from_node_name(node_name).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_names_from_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbour_names_from_node_name(
+    pub fn get_neighbour_node_names_from_node_name(
         &self,
         node_name: &str,
     ) -> Result<Vec<String>, String> {
         Ok(self
-            .iter_node_neighbours(self.get_node_id_from_node_name(node_name)?)
+            .iter_neighbour_node_ids_from_source_node_id(self.get_node_id_from_node_name(node_name)?)
             .collect())
     }
 
@@ -1223,17 +1223,17 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `src`: NodeT - Node for which we need to compute the outbounds range.
+    /// * `src`: NodeT - Node for which we need to compute the cumulative_node_degrees range.
     ///
     pub fn get_unchecked_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> (EdgeT, EdgeT) {
-        match &self.outbounds {
-            Some(outbounds) => {
+        match &self.cumulative_node_degrees {
+            Some(cumulative_node_degrees) => {
                 let min_edge_id = if src == 0 {
                     0
                 } else {
-                    outbounds[src as usize - 1]
+                    cumulative_node_degrees[src as usize - 1]
                 };
-                (min_edge_id, outbounds[src as usize])
+                (min_edge_id, cumulative_node_degrees[src as usize])
             }
             None => {
                 let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_node_ids(src, 0);
@@ -1255,7 +1255,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Node for which we need to compute the outbounds range.
+    /// * src: NodeT - Node for which we need to compute the cumulative_node_degrees range.
     ///
     pub fn get_minmax_edge_ids_from_source_node_id(
         &self,

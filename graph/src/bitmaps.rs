@@ -32,7 +32,7 @@ impl Graph {
         if let Some(ndt) = node_types {
             let node_type_ids = self.get_node_type_ids_from_node_type_names(ndt)?;
             node_ids.extend(
-                self.iter_nodes_with_type_ids()
+                self.iter_node_ids_and_node_type_ids()
                     .filter_map(|(node_id, nts)| {
                         if nts.map_or_else(
                             //DEFAULT

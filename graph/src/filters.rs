@@ -44,7 +44,7 @@ impl Graph {
         let edge_types_ids = edge_types_ids?;
 
         Graph::build_graph(
-            self.iter_edge_with_type_and_weight_ids(true)
+            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .progress_with(pb)
                 .filter_map(|(_, src, dst, edge_type, weight)| {
                     if let Some(nis) = &node_ids {

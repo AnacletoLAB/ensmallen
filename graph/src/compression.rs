@@ -33,4 +33,12 @@ impl Graph {
     pub fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
         decode_edge(edge, self.node_bits, self.node_bit_mask)
     }
+
+    /// Return maximum encodable edge number.
+    pub fn get_max_encodable_edge_number(&self) -> EdgeT {
+        encode_max_edge(
+            self.get_nodes_number(),
+            get_node_bits(self.get_nodes_number()),
+        )
+    }
 }

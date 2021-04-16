@@ -70,7 +70,7 @@ impl Hash for Graph {
         // self.name.hash(state);
         // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.sources.hash(state);
-        // self.outbounds.hash(state);
+        // self.cumulative_node_degrees.hash(state);
         // self.cached_destinations.hash(state);
         // self.embedding.hash(state);
     }

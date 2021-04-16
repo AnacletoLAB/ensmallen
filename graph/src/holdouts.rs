@@ -71,7 +71,7 @@ impl Graph {
 
         // whether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
-            let node_components = self.get_node_components_vector(verbose);
+            let node_components = self.get_node_connected_component_ids(verbose);
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
@@ -917,7 +917,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.iter_node_neighbours_ids(src) {
+                for dst in self.iter_neighbour_node_ids_from_source_node_id(src) {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
@@ -1023,7 +1023,7 @@ impl Graph {
                 .into_iter()
                 .collect::<HashSet<Option<EdgeTypeT>>>();
 
-            self.iter_edges_with_type_ids(self.directed)
+            self.iter_edge_node_ids_and_edge_type_id(self.directed)
                 .filter_map(|(edge_id, _, _, edge_type)| {
                     if !edge_type_ids.contains(&edge_type) {
                         return None;

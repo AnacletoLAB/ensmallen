@@ -686,7 +686,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.set_name(data.set_name.name);
 	graph.spanning_arborescence_kruskal(data.spanning_arborescence_kruskal.verbose);
 	graph.strongly_connected_components();
-	graph.traps_rate();
+	graph.get_traps_rate();
 	let _ = graph.adamic_adar_index(data.adamic_adar_index.one, data.adamic_adar_index.two);
 	let _ = graph.connected_components(data.connected_components.verbose);
 	let _ = graph.connected_holdout(data.connected_holdout.random_state, data.connected_holdout.train_size, data.connected_holdout.edge_types, data.connected_holdout.include_all_edge_types, data.connected_holdout.verbose);

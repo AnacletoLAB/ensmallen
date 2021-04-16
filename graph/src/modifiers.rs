@@ -9,13 +9,13 @@ impl Graph {
     /// # Arguments
     /// * `vector_sources`: bool, whether to cache sources into a vector for faster walks.
     /// * `vector_destinations`: bool, whether to cache destinations into a vector for faster walks.
-    /// * `vector_outbounds`: bool, whether to cache outbounds into a vector for faster walks.
+    /// * `vector_cumulative_node_degrees`: bool, whether to cache cumulative_node_degrees into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
         vector_sources: bool,
         vector_destinations: bool,
-        vector_outbounds: bool,
+        vector_cumulative_node_degrees: bool,
         cache_size: Option<f64>,
     ) -> Result<(), String> {
         if vector_destinations {
@@ -32,12 +32,12 @@ impl Graph {
         } else {
             self.sources = None;
         }
-        if vector_outbounds {
-            if self.outbounds.is_none() {
-                self.outbounds = Some(self.get_outbounds());
+        if vector_cumulative_node_degrees {
+            if self.cumulative_node_degrees.is_none() {
+                self.cumulative_node_degrees = Some(self.get_cumulative_node_degrees());
             }
         } else {
-            self.outbounds = None;
+            self.cumulative_node_degrees = None;
         }
         if let Some(cs) = cache_size {
             if vector_destinations {
@@ -56,7 +56,7 @@ impl Graph {
                     .map(|node_id| {
                         (
                             *node_id,
-                            self.iter_node_neighbours_ids(*node_id)
+                            self.iter_neighbour_node_ids_from_source_node_id(*node_id)
                                 .collect::<Vec<NodeT>>(),
                         )
                     })
@@ -72,7 +72,7 @@ impl Graph {
     pub fn disable_all(&mut self) {
         self.destinations = None;
         self.sources = None;
-        self.outbounds = None;
+        self.cumulative_node_degrees = None;
         self.cached_destinations = None;
     }
 }

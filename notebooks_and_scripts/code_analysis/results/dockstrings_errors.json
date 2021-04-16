@@ -275,7 +275,7 @@
             "[   ~] Missing the documentation for the argument 'edge_id'.",
             "[   0] Missing Example"
         ],
-        "get_node_neighbour_names_by_node_name": [
+        "get_neighbour_node_names_by_node_name": [
             "[   4] The argument 'node_id' does not exists in the current method. The available args are ['node_name'].",
             "[   ~] Missing the documentation for the argument 'node_name'."
         ],

@@ -55,7 +55,7 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.iter_edge_with_type_and_weight(true)
+            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
                 .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| {
                     Ok((

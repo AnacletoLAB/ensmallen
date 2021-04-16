@@ -306,7 +306,7 @@ impl Graph {
     /// * min_edge_id: EdgeT - The minimum edge id.
     /// * max_edge_id: EdgeT - The maximum edge id.
     ///
-    fn get_weighted_transitions(
+    fn get_edge_weighted_transitions(
         &self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
@@ -389,7 +389,7 @@ impl Graph {
     ) -> Vec<WeightT> {
         // Retrieve the data to compute the update transition
         let mut transition =
-            self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
+            self.get_edge_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
@@ -422,7 +422,7 @@ impl Graph {
         has_selfloop: bool,
     ) -> (Vec<WeightT>, EdgeT) {
         let mut transition =
-            self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
+            self.get_edge_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(

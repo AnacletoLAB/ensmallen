@@ -731,8 +731,8 @@ impl Graph {
 	/// 
 	///  `node_name : str,
 	/// 	Node ID whose neighbours are to be retrieved.
-	fn get_node_neighbour_ids_by_node_name(self, node_name : &str) -> PyResult<Vec<NodeT>> {
-		pe!(self.graph.get_node_neighbour_ids_by_node_name(node_name))
+	fn get_neighbour_node_ids_by_node_name(self, node_name : &str) -> PyResult<Vec<NodeT>> {
+		pe!(self.graph.get_neighbour_node_ids_by_node_name(node_name))
 	}
 	
 	#[text_signature = "($self, node_name)"]
@@ -744,8 +744,8 @@ impl Graph {
 	/// 
 	///  `node_id : int,
 	/// 	Node ID whose neighbours are to be retrieved.
-	fn get_node_neighbour_names_by_node_name(&self, node_name : &str) -> PyResult<Vec<String>> {
-		pe!(self.graph.get_node_neighbour_names_by_node_name(node_name))
+	fn get_neighbour_node_names_by_node_name(&self, node_name : &str) -> PyResult<Vec<String>> {
+		pe!(self.graph.get_neighbour_node_names_by_node_name(node_name))
 	}
 	
 	#[text_signature = "($self, src, dst, edge_type)"]
@@ -967,8 +967,8 @@ impl Graph {
 	/// Returns the traps rate of the graph.
 	/// 
 	/// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
-	fn traps_rate(self) -> f64 {
-		self.graph.traps_rate()
+	fn get_traps_rate(self) -> f64 {
+		self.graph.get_traps_rate()
 	}
 	
 	#[text_signature = "($self)"]

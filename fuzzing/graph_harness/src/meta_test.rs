@@ -489,7 +489,7 @@ pub struct MetaParams {
 	pub get_edge_count_from_edge_type_id: GetEdgeCountFromEdgeTypeIdParams,
 	pub get_node_count_from_node_type_id: GetNodeCountFromNodeTypeIdParams,
 	pub get_destination_node_id_from_edge_id: GetDestinationNodeIdFromEdgeIdParams,
-	pub get_node_neighbour_ids_from_node_id: GetNodeNeighbourIdsFromNodeIdParams,
+	pub get_neighbour_node_ids_from_node_id: GetNodeNeighbourIdsFromNodeIdParams,
 	pub get_minmax_edge_ids_from_node_ids: GetMinmaxEdgeIdsFromNodeIdsParams,
 	pub get_edge_id_from_node_ids_and_edge_type_id: GetEdgeIdFromNodeIdsAndEdgeTypeIdParams,
 	pub get_edge_type_ids_from_edge_type_names: GetEdgeTypeIdsFromEdgeTypeNamesParams,
@@ -686,7 +686,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.set_name(data.set_name.name);
 	graph.spanning_arborescence_kruskal(data.spanning_arborescence_kruskal.verbose);
 	graph.strongly_connected_components();
-	graph.traps_rate();
+	graph.get_traps_rate();
 	let _ = graph.adamic_adar_index(data.adamic_adar_index.one, data.adamic_adar_index.two);
 	let _ = graph.connected_components(data.connected_components.verbose);
 	let _ = graph.connected_holdout(data.connected_holdout.random_state, data.connected_holdout.train_size, data.connected_holdout.edge_types, data.connected_holdout.include_all_edge_types, data.connected_holdout.verbose);
@@ -727,7 +727,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_node_ids_from_edge_id(data.get_node_ids_from_edge_id.edge_id);
 	let _ = graph.get_node_label_prediction_tuple_from_node_ids(data.get_node_label_prediction_tuple_from_node_ids.node_ids, data.get_node_label_prediction_tuple_from_node_ids.random_state, data.get_node_label_prediction_tuple_from_node_ids.include_central_node, data.get_node_label_prediction_tuple_from_node_ids.offset, data.get_node_label_prediction_tuple_from_node_ids.max_neighbours);
 	let _ = graph.get_node_name_from_node_id(data.get_node_name_from_node_id.node_id);
-	let _ = graph.get_node_neighbour_ids_from_node_id(data.get_node_neighbour_ids_from_node_id.node_id);
+	let _ = graph.get_neighbour_node_ids_from_node_id(data.get_neighbour_node_ids_from_node_id.node_id);
 	let _ = graph.get_node_type_counts();
 	let _ = graph.get_node_type_counts_hashmap();
 	let _ = graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id);

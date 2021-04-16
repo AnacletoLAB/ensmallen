@@ -12,6 +12,7 @@ FUNCTIONS_BLACKLIST = [
 ]
 
 CAPTURE_WHITELIST = [
+    "name",
     "multigraph",
     "directed",
     "node",
@@ -22,6 +23,7 @@ CAPTURE_WHITELIST = [
     "node_count",
     "trap_node",
     "trap_nodes",
+    "trap_nodes_number",
     "edge_id",
     "edge_ids",
     "node_id",
@@ -34,30 +36,67 @@ CAPTURE_WHITELIST = [
     "node_type_ids",
     "edge_type_name",
     "edge_type_names",
+    "edge_types_number",
     "node_type_name",
     "node_type_names",
+    "node_types_number",
     "node_name",
     "node_names",
+    "edge_node_names",
+    "edge_node_ids",
+    "unique_edge_node_ids",
+    "unique_source_node_ids",
     "edge_weight",
     "edge_weights",
+    "min_edge_weight",
+    "max_edge_weight",
     "minmax_edge_id",
     "node_ids_and_type",
+    "sources",
+    "source_names",
+    "destination",
+    "destinations",
+    "destination_name",
+    "destination_names",
     "destination_node_id",
     "destination_node_ids",
     "source_node_id",
+    "source_node_ids",
     "node_degree",
+    "node_degrees",
     "edge_degree",
     "minmax_edge_ids",
-    "node_neighbour_names",
-    "node_neighbour_ids",
+    "neighbour_node_names",
+    "neighbour_node_ids",
     "singleton",
     "singletons",
+    "singleton_node_ids",
+    "not_singletons_node_ids",
     "singleton_with_selfloops",
     "singletons_with_selfloops",
+    "singleton_with_selfloops_node_ids",
     "selfloops",
     "multilabel_node_types",
     "unknown_node_types",
     "unknown_edge_types",
+    "unknown_node_types_number",
+    "minimum_node_types_number",
+    "unknown_edge_types_number",
+    "minimum_edge_types_number",
+    "directed_edges_number",
+    "nodes_number",
+    "unique_directed_edges_number",
+    "nodes_mapping",
+    "dense_nodes_mapping",
+    "multigraph_edges_number",
+    "unique_source_nodes_number",
+    "edge_type_counter",
+    "edge_type_counts_hashmap",
+    "node_type_counter",
+    "node_type_counts_hashmap",
+    "cumulative_node_degrees",
+    "node_connected_component_ids",
+    "non_singleton_node_ids",
 ]
 
 def extract_regex(doc):
@@ -94,8 +133,12 @@ def check_method_names(args):
         for regex in regexes:
             matchs = re.match(regex, function_name)
             if matchs is not None:
-                for group  in matchs.groups():
+                groups = matchs.groups()
+                # WHY PYTHON WHY
+                if isinstance(groups, str):
+                    groups = [groups]
 
+                for group in groups:
                     if group.startswith("unchecked"):
                         continue
 
@@ -104,5 +147,5 @@ def check_method_names(args):
                             result.setdefault(function_name, [])
                             result[function_name].append(sub_grup)
                             print("The method {} does not match the approved capture lists, the wrong value is {}".format(
-                                function.get("name", ""), group
+                                function.get("name", ""), sub_grup
                             ))

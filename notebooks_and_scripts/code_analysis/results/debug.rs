@@ -5937,9 +5937,9 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
-    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_ids_by_node_name(node_name).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_ids_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbour_ids_by_node_name(&self, node_name: &str) -> Result<Vec<NodeT>, String> {
+    pub fn get_neighbour_node_ids_by_node_name(&self, node_name: &str) -> Result<Vec<NodeT>, String> {
         self.get_node_neighbours_by_node_id(self.get_node_id_by_node_name(node_name)?)
     }
 
@@ -5955,9 +5955,9 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let node_name = "ENSP00000000233";
-    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_node_neighbour_names_by_node_name(node_name).unwrap());
+    /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_names_by_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_neighbour_names_by_node_name(
+    pub fn get_neighbour_node_names_by_node_name(
         &self,
         node_name: &str,
     ) -> Result<Vec<String>, String> {
@@ -6592,9 +6592,9 @@ impl Graph {
     ///
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The Graph rate is {}", graph.traps_rate());
+    /// println!("The Graph rate is {}", graph.get_traps_rate());
     /// ```
-    pub fn traps_rate(&self) -> f64 {
+    pub fn get_traps_rate(&self) -> f64 {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| {

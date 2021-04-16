@@ -788,8 +788,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------
     /// Vector of the node names of the neighbours of given node.
-    pub fn get_node_neighbour_names_by_node_name(&self, node_name: &str) -> PyResult<Vec<String>> {
-        pe!(self.graph.get_node_neighbour_names_by_node_name(node_name))
+    pub fn get_neighbour_node_names_by_node_name(&self, node_name: &str) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_neighbour_node_names_by_node_name(node_name))
     }
 
     #[text_signature = "($self)"]

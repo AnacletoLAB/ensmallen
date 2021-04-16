@@ -60,6 +60,15 @@ hfuzz_builder:
 	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/builder/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P --exit_upon_crash" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run builder; \
 	)
 
+hfuzz_components:
+	rm -rfd ./unit_tests/*
+	mkdir -p corpus/components
+	(\
+	cd honggfuzz/components;\
+	cargo update;\
+	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/components/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P --exit_upon_crash" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run components; \
+	)
+
 afl_from_csv:
 	rm -rfd ./unit_tests/*
 	(\

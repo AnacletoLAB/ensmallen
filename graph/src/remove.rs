@@ -74,7 +74,7 @@ impl Graph {
         );
 
         Graph::from_string_sorted(
-            self.iter_edge_with_type_and_weight(true)
+            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb_edges)
                 .filter_map(
                     |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| {
@@ -271,7 +271,7 @@ impl Graph {
         verbose: bool,
     ) -> Result<Graph, String> {
         let mut keep_components = RoaringBitmap::new();
-        let components_vector = self.get_node_components_vector(verbose);
+        let components_vector = self.get_node_connected_component_ids(verbose);
 
         // Extend the components so the include the given node Ids and node types.
         if let Some(node_ids) = self.get_filter_bitmap(node_names, node_types)? {
@@ -298,7 +298,7 @@ impl Graph {
                 self.get_directed_edges_number() as usize,
             );
 
-            self.iter_edges_with_type_ids(self.directed)
+            self.iter_edge_node_ids_and_edge_type_id(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
                     if edge_types_ids.contains(&edge_type) {
@@ -355,7 +355,7 @@ impl Graph {
             .min();
 
         Graph::from_string_sorted(
-            self.iter_edge_with_type_and_weight(true)
+            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
                 .filter_map(
                     |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {

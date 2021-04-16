@@ -4053,33 +4053,33 @@
 <path fill="none" stroke="black" d="M6508.38,-590.94C6259.45,-587.62 5752.49,-580.97 5323,-576 4556.34,-567.13 2638.59,-581.32 1873,-540 1860.68,-539.34 1847.89,-538.45 1835.09,-537.44"/>
 <polygon fill="black" stroke="black" points="1835.08,-533.93 1824.83,-536.6 1834.51,-540.9 1835.08,-533.93"/>
 </g>
-<!-- Graph::get_node_neighbour_ids_by_node_name -->
+<!-- Graph::get_neighbour_node_ids_by_node_name -->
 <g id="node138" class="node">
-<title>Graph::get_node_neighbour_ids_by_node_name</title>
+<title>Graph::get_neighbour_node_ids_by_node_name</title>
 <polygon fill="none" stroke="black" points="10027.5,-684 9674.5,-684 9674.5,-648 10027.5,-648 10027.5,-684"/>
-<text text-anchor="middle" x="9851" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_neighbour_ids_by_node_name</text>
+<text text-anchor="middle" x="9851" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_ids_by_node_name</text>
 </g>
-<!-- Graph::get_node_neighbour_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
 <g id="edge442" class="edge">
-<title>Graph::get_node_neighbour_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
 <path fill="none" stroke="black" d="M10027.82,-653.65C10068.28,-651.42 10111.12,-649.36 10151,-648 10208.65,-646.04 13876.7,-605.21 14652.76,-596.59"/>
 <polygon fill="black" stroke="black" points="14652.91,-600.09 14662.87,-596.48 14652.83,-593.09 14652.91,-600.09"/>
 </g>
-<!-- Graph::get_node_neighbour_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id -->
+<!-- Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id -->
 <g id="edge443" class="edge">
-<title>Graph::get_node_neighbour_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id</title>
+<title>Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id</title>
 <path fill="none" stroke="black" d="M9674.34,-660.42C9529.01,-656.75 9317.66,-651.63 9133,-648 8110.68,-627.92 7850.78,-672.97 6825.73,-612"/>
 <polygon fill="black" stroke="black" points="6825.73,-608.5 6815.54,-611.39 6825.31,-615.48 6825.73,-608.5"/>
 </g>
-<!-- Graph::get_node_neighbour_names_by_node_name -->
+<!-- Graph::get_neighbour_node_names_by_node_name -->
 <g id="node139" class="node">
-<title>Graph::get_node_neighbour_names_by_node_name</title>
+<title>Graph::get_neighbour_node_names_by_node_name</title>
 <polygon fill="none" stroke="black" points="10886,-684 10508,-684 10508,-648 10886,-648 10886,-684"/>
-<text text-anchor="middle" x="10697" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_neighbour_names_by_node_name</text>
+<text text-anchor="middle" x="10697" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_names_by_node_name</text>
 </g>
-<!-- Graph::get_node_neighbour_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
 <g id="edge444" class="edge">
-<title>Graph::get_node_neighbour_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
 <path fill="none" stroke="black" d="M10886.17,-657.14C10970.57,-653.88 11071.25,-650.32 11162,-648 11860,-630.15 14067.23,-603.55 14652.43,-596.67"/>
 <polygon fill="black" stroke="black" points="14652.65,-600.17 14662.61,-596.55 14652.57,-593.17 14652.65,-600.17"/>
 </g>
@@ -4089,9 +4089,9 @@
 <polygon fill="none" stroke="black" points="10164,-612 9940,-612 9940,-576 10164,-576 10164,-612"/>
 <text text-anchor="middle" x="10052" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::iter_node_neighbours</text>
 </g>
-<!-- Graph::get_node_neighbour_names_by_node_name&#45;&gt;Graph::iter_node_neighbours -->
+<!-- Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::iter_node_neighbours -->
 <g id="edge445" class="edge">
-<title>Graph::get_node_neighbour_names_by_node_name&#45;&gt;Graph::iter_node_neighbours</title>
+<title>Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::iter_node_neighbours</title>
 <path fill="none" stroke="black" d="M10512.26,-647.98C10414.8,-638.59 10293,-626.19 10174.33,-612.01"/>
 <polygon fill="black" stroke="black" points="10174.67,-608.53 10164.32,-610.81 10173.84,-615.48 10174.67,-608.53"/>
 </g>
