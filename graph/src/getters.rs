@@ -623,7 +623,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {
+    /// for (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
@@ -660,7 +660,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {
+    /// for (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```

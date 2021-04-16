@@ -101,7 +101,7 @@ impl Graph {
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
     /// assert!(graph_with_weights.iter_edge_weights().is_ok());
     /// assert!(graph_without_weights.iter_edge_weights().is_err());
-    /// println!("The graph weights are {:?}.", graph_with_weights.iter_edge_weights().unwrap().collect::<Vec<_>>());
+    /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());
     /// ```
     pub fn par_iter_edge_weights(&self) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
         self.must_have_edge_weights()?;

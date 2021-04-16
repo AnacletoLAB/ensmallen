@@ -7,17 +7,30 @@ use rayon::prelude::*;
 /// * `get_unchecked_(.+?)_from_(.+)`
 impl Graph {
     /// Returns option with the weight of the given edge id.
-    pub(crate) fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
+    ///
+    /// This method will raise a panic if the given edge ID is higher than
+    /// the number of edges in the graph. Additionally, it will simply
+    /// return None if there are no graph weights. 
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge whose edge weight is to be returned.
+    pub fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
-    /// Returns node id raising a panic if used unproperly.
-    pub(crate) fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
+    /// Returns node id from given node name raising a panic if used unproperly.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name whose node ID is to be returned.
+    pub fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
         *self.nodes.get(node_name).unwrap()
     }
 
     /// Return edge type ID corresponding to the given edge type name.
-    pub(crate) fn get_unchecked_edge_type_id_from_edge_type_name(
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The edge type name whose edge type ID is to be returned.
+    pub fn get_unchecked_edge_type_id_from_edge_type_name(
         &self,
         edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
@@ -28,7 +41,10 @@ impl Graph {
 
     /// Return edge type ID corresponding to the given edge type name
     /// raising panic if edge type ID does not exists in current graph.
-    pub(crate) fn get_unchecked_edge_type_name_from_edge_type_id(
+    /// 
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - The edge type naIDme whose edge type name is to be returned.
+    pub fn get_unchecked_edge_type_name_from_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Option<String> {
@@ -41,10 +57,8 @@ impl Graph {
     /// Return number of edges of the given edge type without checks.
     ///
     /// # Arguments
-    ///
     /// * `edge_type`: Option<EdgeTypeT> - The edge type to retrieve count of.
-    ///
-    pub(crate) fn get_unchecked_edge_count_from_edge_type_id(
+    pub fn get_unchecked_edge_count_from_edge_type_id(
         &self,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
@@ -58,9 +72,7 @@ impl Graph {
     /// Return number of nodes of the given node type without checks.
     ///
     /// # Arguments
-    ///
     /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
-    ///
     pub(crate) fn get_unchecked_node_count_from_node_type_id(
         &self,
         node_type: Option<NodeTypeT>,
@@ -81,7 +93,7 @@ impl Graph {
     /// # Arguments
     /// `node`: NodeT - Node whose neighbours are to return.
     /// `random_state`: u64 - Random state to subsample neighbours.
-    /// `max_neighbours`: &Option<NodeT> - Optionally number of neighbours to consider.
+    /// `max_neighbours`: Option<NodeT> - Optionally number of neighbours to consider.
     pub(crate) fn get_unchecked_destination_node_ids_from_node_id(
         &self,
         node: NodeT,
@@ -739,6 +751,9 @@ impl Graph {
     }
 
     /// Returns result with the node id.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name whose node ID is to be returned.
     pub fn get_node_id_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         match self.nodes.get(node_name) {
             Some(node_id) => Ok(*node_id),
@@ -795,16 +810,16 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// * `edge_type`: Option<EdgeTypeT> - The edge type ID to count the edges of.
+    /// * `edge_type_id`: Option<EdgeTypeT> - The edge type ID to count the edges of.
     ///
     pub fn get_edge_count_from_edge_type_id(
         &self,
-        edge_type: Option<EdgeTypeT>,
+        edge_type_id: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
         if !self.has_edge_types() {
             return Err("Current graph does not have edge types!".to_owned());
         }
-        if let Some(et) = &edge_type {
+        if let Some(et) = &edge_type_id {
             if self.get_edge_types_number() <= *et {
                 return Err(format!(
                     "Given edge type ID {} is bigger than number of edge types in the graph {}.",
@@ -813,7 +828,7 @@ impl Graph {
                 ));
             }
         }
-        Ok(self.get_unchecked_edge_count_from_edge_type_id(edge_type))
+        Ok(self.get_unchecked_edge_count_from_edge_type_id(edge_type_id))
     }
 
     /// Return edge type ID curresponding to given edge type name.
@@ -821,7 +836,7 @@ impl Graph {
     /// If None is given as an edge type ID, None is returned.
     ///
     /// # Arguments
-    /// * `edge_type`: Option<&str> - The edge type name whose ID is to be returned.
+    /// * `edge_type_name`: Option<&str> - The edge type name whose ID is to be returned.
     ///
     pub fn get_edge_type_id_from_edge_type_name(
         &self,
@@ -846,13 +861,13 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// * `edge_type`: Option<&str> - The edge type name to count the edges of.
+    /// * `edge_type_name`: Option<&str> - The edge type name to count the edges of.
     ///
     pub fn get_edge_count_from_edge_type_name(
         &self,
-        edge_type: Option<&str>,
+        edge_type_name: Option<&str>,
     ) -> Result<EdgeT, String> {
-        self.get_edge_count_from_edge_type_id(self.get_edge_type_id_from_edge_type_name(edge_type)?)
+        self.get_edge_count_from_edge_type_id(self.get_edge_type_id_from_edge_type_name(edge_type_name)?)
     }
 
     /// Return node type ID curresponding to given node type name.
@@ -860,7 +875,7 @@ impl Graph {
     /// If None is given as an node type ID, None is returned.
     ///
     /// # Arguments
-    /// * `node_type`: Option<&str> - The node type name whose ID is to be returned.
+    /// * `node_type_name`: Option<&str> - The node type name whose ID is to be returned.
     ///
     pub fn get_node_type_id_from_node_type_name(
         &self,
@@ -884,23 +899,23 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// * `node_type`: Option<NodeTypeT> - The node type ID to count the nodes of.
+    /// * `node_type_id`: Option<NodeTypeT> - The node type ID to count the nodes of.
     ///
     pub fn get_node_count_from_node_type_id(
         &self,
-        node_type: Option<NodeTypeT>,
+        node_type_id: Option<NodeTypeT>,
     ) -> Result<NodeT, String> {
         if !self.has_node_types() {
             return Err("Current graph does not have node types!".to_owned());
         }
-        if node_type.map_or(false, |nt| self.get_node_types_number() <= nt) {
+        if node_type_id.map_or(false, |nt| self.get_node_types_number() <= nt) {
             return Err(format!(
                 "Given node type ID {:?} is bigger than number of node types in the graph {}.",
-                node_type,
+                node_type_id,
                 self.get_node_types_number()
             ));
         }
-        Ok(self.get_unchecked_node_count_from_node_type_id(node_type))
+        Ok(self.get_unchecked_node_count_from_node_type_id(node_type_id))
     }
 
     /// Return number of nodes with given node type name.
@@ -909,7 +924,7 @@ impl Graph {
     /// will be returned.
     ///
     /// # Arguments
-    /// * `node_type`: Option<&str> - The node type name to count the nodes of.
+    /// * `node_type_name`: Option<&str> - The node type name to count the nodes of.
     ///
     pub fn get_node_count_from_node_type_name(
         &self,
@@ -1005,7 +1020,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node_id`: NodeT - Node ID whose neighbours are to be retrieved.
+    /// * `node_name`: &str - Node name whose neighbours are to be retrieved.
     ///
     /// # Example
     /// To retrieve the neighbours of a given node `src` you can use:
@@ -1120,7 +1135,7 @@ impl Graph {
     /// # Arguments
     /// * `src_name`: &str - Source node name of the edge.
     /// * `dst_name`: &str - Destination node name of the edge.
-    /// `edge_type_name`: Option<&String> - Edge type name.
+    /// * `edge_type_name`: Option<&String> - Edge type name.
     ///
     pub fn get_edge_id_from_node_names_and_edge_type_name(
         &self,
@@ -1152,16 +1167,15 @@ impl Graph {
     /// Return translated edge types from string to internal edge ID.
     ///
     /// # Arguments
-    ///
-    /// * `edge_types`: Vec<String> - Vector of edge types to be converted.
+    /// * `edge_type_names`: Vec<String> - Vector of edge types to be converted.
     pub fn get_edge_type_ids_from_edge_type_names(
         &self,
-        edge_types: Vec<Option<String>>,
+        edge_type_names: Vec<Option<String>>,
     ) -> Result<Vec<Option<EdgeTypeT>>, String> {
         match &self.edge_types {
                 None => Err(String::from("Current graph does not have edge types.")),
                 Some(ets) => {
-                    edge_types
+                    edge_type_names
                     .iter()
                     .map(|edge_type_name|
                         match edge_type_name {

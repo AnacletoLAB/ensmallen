@@ -317,6 +317,9 @@ impl Graph {
 
 
     /// Return rendered textual report of the graph.
+    ///
+    /// # Arguments
+    /// * `verbose`:  bool - Whether to show loading bar.
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();

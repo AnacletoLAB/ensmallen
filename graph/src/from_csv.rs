@@ -71,6 +71,7 @@ impl Graph {
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
     /// * `directed`: bool - Whether the graph is to be read as directed or undirected.
     /// * `directed_edge_list`: bool - Whether to read the edge list as directed.
+    /// * `name`: S - The name for the graph.
     pub fn from_unsorted_csv<S: Clone + Into<String>>(
         mut edge_file_reader: EdgeFileReader,
         mut node_file_reader: Option<NodeFileReader>,
