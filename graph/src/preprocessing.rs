@@ -203,7 +203,7 @@ impl Graph {
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
     /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
-    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
     pub(crate) fn get_neighbours_from_node_id(
         &self,
@@ -243,7 +243,7 @@ impl Graph {
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
     /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
-    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
     pub(crate) fn get_node_label_prediction_tuple_from_node_id(
         &self,
@@ -278,7 +278,7 @@ impl Graph {
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
     /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
     /// * `offset`: NodeT - Offset for padding porposes.
-    /// * `max_neighbours`: &Option<NodeT> - Number of maximum neighbours to consider.
+    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
     /// # Example
     /// Suppose you want to the get the neighbours of the first 10 nodes:
@@ -345,7 +345,7 @@ impl Graph {
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_degrees<'a>(
         &'a self,
@@ -388,10 +388,9 @@ impl Graph {
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated.
-    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `graph_to_avoid`: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * `graph_to_avoid`: &Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction_ids<'a>(
         &'a self,
