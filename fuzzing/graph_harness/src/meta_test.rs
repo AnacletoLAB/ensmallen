@@ -3,7 +3,7 @@ use arbitrary::Arbitrary;
 use std::collections::HashSet;
 use rayon::iter::ParallelIterator;
 
-const LEVEL: usize = 4;
+const LEVEL: usize = 6;
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RandomSpanningArborescenceKruskalParams {
@@ -745,13 +745,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 		let _ = graph.get_node_type_counter();
 		let _ = graph.get_node_type_counts_hashmap();
 		}
-
 		if LEVEL == 4 {
-			let _ = graph.textual_report(data.textual_report.verbose);
-			let _ = graph.spanning_arborescence(data.spanning_arborescence.verbose);
-		}
-
-		if LEVEL == 5 {
 			let _ = graph.kfold(data.kfold.k, data.kfold.k_index, data.kfold.edge_types, data.kfold.random_state, data.kfold.verbose);
 			let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);
 			let _ = graph.random_subgraph(data.random_subgraph.random_state, data.random_subgraph.nodes_number, data.random_subgraph.verbose);
@@ -761,7 +755,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 			let mut graph = graph.clone().set_all_node_types(data.set_all_node_types.node_type)?;
 		}
 
-		if LEVEL == 6 {
+		if LEVEL == 5 {
 			let _ = graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id);
 			let _ = graph.get_node_type_ids();
 			let _ = graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types);
@@ -786,6 +780,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 			let _ = graph.validate_edge_id(data.validate_edge_id.edge_id);
 			let _ = graph.validate_node_id(data.validate_node_id.node_id);
 		}
+
+		if LEVEL == 6 {
+			let _ = graph.textual_report(data.textual_report.verbose);
+		}
+		if LEVEL == 7 {
+			let _ = graph.spanning_arborescence(data.spanning_arborescence.verbose);
+		}
+
 
 
     Ok(())
