@@ -8,6 +8,22 @@ use std::collections::HashSet;
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
+    /// # Arguments
+    /// * `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.
+    /// * `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.
+    /// * `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.
+    /// * `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.
+    /// * `allow_edge_set`: Option<HashSet<EdgeT>> - Optional set of numeric edge IDs to keep.
+    /// * `deny_edge_set`: Option<HashSet<EdgeT>> - Optional set of numeric edge IDs to remove.
+    /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
+    /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
+    /// * `weights`: bool - Whether to remove the weights.
+    /// * `node_types`: bool - Whether to remove the node types.
+    /// * `edge_types`: bool - Whether to remove the edge types.
+    /// * `singletons`: bool - Whether to remove the singleton nodes.
+    /// * `selfloops`: bool - Whether to remove edges with self-loops.
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    ///
     /// ## Implementation details
     ///
     /// ### How the collapse of multigraphs is handled
@@ -20,22 +36,6 @@ impl Graph {
     /// function call even if you provide the flag singletons to true, but you
     /// will need to call the method again if you want to get reed of also those
     /// newly created singleton nodes.
-    ///
-    /// # Arguments
-    /// * `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.
-    /// * `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.
-    /// * `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.
-    /// * `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.
-    /// * `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.
-    /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
-    /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
-    /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
-    /// * `weights`: bool - Whether to remove the weights.
-    /// * `node_types`: bool - Whether to remove the node types.
-    /// * `edge_types`: bool - Whether to remove the edge types.
-    /// * `singletons`: bool - Whether to remove the singleton nodes.
-    /// * `selfloops`: bool - Whether to remove edges with self-loops.
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
     ///
     pub fn remove(
         &self,

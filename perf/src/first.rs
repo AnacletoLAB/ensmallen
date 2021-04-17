@@ -24,5 +24,5 @@ fn main() {
     graph.enable(true, true, true, None).unwrap();
 
     let walker = first_order_walker(&graph).unwrap();
-    let _ = graph.random_walks_iter(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.iter_random_walks(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

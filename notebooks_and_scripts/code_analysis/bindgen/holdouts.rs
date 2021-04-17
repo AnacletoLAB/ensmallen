@@ -2,7 +2,6 @@ use super::*;
 impl Graph {
 
 	#[text_signature = "($self, random_state, negatives_number, seed_graph, only_from_same_component, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns Graph with given amount of negative edges as positive edges.
 	/// 
 	/// The graph generated may be used as a testing negatives partition to be
@@ -22,12 +21,13 @@ impl Graph {
 	/// 	Whether to sample negative edges only from nodes that are from the same component.
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn sample_negatives(&self, random_state : EdgeT, negatives_number : EdgeT, seed_graph : Option<&Graph>, only_from_same_component : bool, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.sample_negatives(random_state, negatives_number, seed_graph, only_from_same_component, verbose))
 	}
 	
 	#[text_signature = "($self, random_state, train_size, edge_types, include_all_edge_types, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns holdout for training ML algorithms on the graph structure.
 	/// 
 	/// The holdouts returned are a tuple of graphs. The first one, which
@@ -53,12 +53,13 @@ impl Graph {
 	/// 	Whether to include all the edges between two nodes.
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn connected_holdout(&self, random_state : EdgeT, train_size : f64, edge_types : Option<Vec<Option<String>>>, include_all_edge_types : bool, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.connected_holdout(random_state, train_size, edge_types, include_all_edge_types, verbose))
 	}
 	
 	#[text_signature = "($self, random_state, train_size, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns random holdout for training ML algorithms on the graph edges.
 	/// 
 	/// The holdouts returned are a tuple of graphs. In neither holdouts the
@@ -79,12 +80,13 @@ impl Graph {
 	/// 	The minimum number of overlaps to include the edge into the validation set.
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn random_holdout(&self, random_state : EdgeT, train_size : f64, include_all_edge_types : bool, edge_types : Option<Vec<Option<String>>>, min_number_overlaps : Option<EdgeT>, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.random_holdout(random_state, train_size, include_all_edge_types, edge_types, min_number_overlaps, verbose))
 	}
 	
 	#[text_signature = "($self, train_size, use_stratification, random_state)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns node-label holdout for training ML algorithms on the graph node labels.
 	/// 
 	/// Paramenters
@@ -95,12 +97,13 @@ impl Graph {
 	/// 	Whether to use node-label stratification,
 	/// random_state : int,
 	/// 	The random_state to use for the holdout,
+	///
+	/// [Automatically generated binding]
 	fn node_label_holdout(&self, train_size : f64, use_stratification : bool, random_state : EdgeT) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.node_label_holdout(train_size, use_stratification, random_state))
 	}
 	
 	#[text_signature = "($self, train_size, use_stratification, random_state)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns edge-label holdout for training ML algorithms on the graph edge labels.
 	/// This is commonly used for edge type prediction tasks.
 	/// 
@@ -119,12 +122,13 @@ impl Graph {
 	/// 	Whether to use edge-label stratification,
 	/// random_state : int,
 	/// 	The random_state to use for the holdout,
+	///
+	/// [Automatically generated binding]
 	fn edge_label_holdout(&self, train_size : f64, use_stratification : bool, random_state : EdgeT) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.edge_label_holdout(train_size, use_stratification, random_state))
 	}
 	
 	#[text_signature = "($self, random_state, nodes_number, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns subgraph with given number of nodes.
 	/// 
 	/// **This method creates a subset of the graph starting from a random node
@@ -143,12 +147,13 @@ impl Graph {
 	/// 	Number of nodes to extract.
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn random_subgraph(&self, random_state : usize, nodes_number : NodeT, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.random_subgraph(random_state, nodes_number, verbose))
 	}
 	
 	#[text_signature = "($self, k, k_index, edge_types, random_state, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns train and test graph following kfold validation scheme.
 	/// 
 	/// The edges are splitted into k chunks. The k_index-th chunk is used to build
@@ -166,6 +171,8 @@ impl Graph {
 	/// 	The random_state (seed) to use for the holdout,
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn kfold(&self, k : EdgeT, k_index : u64, edge_types : Option<Vec<Option<String>>>, random_state : EdgeT, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.kfold(k, k_index, edge_types, random_state, verbose))
 	}

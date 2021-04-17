@@ -61,14 +61,6 @@
         "function": "generic_string_operator",
         "errors": [
             {
-                "doc_line": 11,
-                "msg": "The argument line '* `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.' (doc_line: 11) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graphs'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -89,6 +81,11 @@
                     "name": "operator",
                     "type": "String",
                     "desc": "The operator used"
+                },
+                {
+                    "name": "graphs",
+                    "type": "Vec<(&Graph, Option<&Graph>, Option<&Graph>)>",
+                    "desc": "Graph list for the operation"
                 },
                 {
                     "name": "might_have_singletons",
@@ -115,14 +112,6 @@
         "function": "generic_integer_operator",
         "errors": [
             {
-                "doc_line": 11,
-                "msg": "The argument line '* `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.' (doc_line: 11) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graphs'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -143,6 +132,11 @@
                     "name": "operator",
                     "type": "String",
                     "desc": "The operator used"
+                },
+                {
+                    "name": "graphs",
+                    "type": "Vec<(&Graph, Option<&Graph>, Option<&Graph>)>",
+                    "desc": "Graph list for the operation"
                 },
                 {
                     "name": "might_have_singletons",
@@ -213,14 +207,6 @@
         "function": "generic_operator",
         "errors": [
             {
-                "doc_line": 10,
-                "msg": "The argument line '* `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.' (doc_line: 10) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graphs'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -236,6 +222,11 @@
                     "name": "operator",
                     "type": "String",
                     "desc": "The operator used"
+                },
+                {
+                    "name": "graphs",
+                    "type": "Vec<(&Graph, Option<&Graph>, Option<&Graph>)>",
+                    "desc": "Graph list for the operation"
                 },
                 {
                     "name": "might_have_singletons",
@@ -508,20 +499,18 @@
         "function": "set_dense_node_mapping",
         "errors": [
             {
-                "doc_line": 7,
-                "msg": "The argument line '* `dense_node_mapping`: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.' (doc_line: 7) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dense_node_mapping'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "dense_node_mapping",
+                    "type": "Option<HashMap<NodeT, NodeT>>",
+                    "desc": "mapping for the mapping the nodes of the walks"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -707,14 +696,6 @@
         "function": "iter_on_edges_with_preference_from_random_state",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument line '* `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.' (doc_line: 4) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'undesired_edge_types'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -725,6 +706,11 @@
                     "name": "random_state",
                     "type": "u64",
                     "desc": "The random state to reproduce the given edge sampling"
+                },
+                {
+                    "name": "undesired_edge_types",
+                    "type": "&'a Option<HashSet<Option<EdgeTypeT>>>",
+                    "desc": "The edge types whose edges are to leave as last"
                 },
                 {
                     "name": "verbose",
@@ -856,14 +842,6 @@
                 "msg": "The argument type 'u64' of 'lines_number' does not match the function declaration which is 'usize'."
             },
             {
-                "doc_line": 6,
-                "msg": "The argument line '* `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.' (doc_line: 6) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'values'."
-            },
-            {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'lines_number'."
             },
@@ -878,6 +856,11 @@
                     "name": "header",
                     "type": "Vec<String>",
                     "desc": "The header to write out, if so required"
+                },
+                {
+                    "name": "values",
+                    "type": "impl Iterator<Item = Vec<String>>",
+                    "desc": "Iterator of rows to write out"
                 }
             ]
         },
@@ -890,7 +873,7 @@
         "errors": [
             {
                 "doc_line": 5,
-                "msg": "The argument line '* `pairs`: Vec<(String, usize)> - Vector of tuples of column names and their position.' (doc_line: 5) is not in the standard format."
+                "msg": "The argument type 'Vec<(String, usize)>' of 'pairs' does not match the function declaration which is 'Vec<(String'."
             },
             {
                 "doc_line": "~",
@@ -979,20 +962,17 @@
         "function": "word2vec",
         "errors": [
             {
-                "doc_line": 12,
-                "msg": "The argument line '* `sequences`: impl ParallelIterator<Item = Vec<NodeT>> + 'a - the sequence of sequences of integers to preprocess.' (doc_line: 12) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'sequences'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
             "args": [
+                {
+                    "name": "sequences",
+                    "type": "impl ParallelIterator<Item = Vec<NodeT>> + 'a",
+                    "desc": "the sequence of sequences of integers to preprocess"
+                },
                 {
                     "name": "window_size",
                     "type": "usize",
@@ -1008,20 +988,17 @@
         "function": "cooccurence_matrix",
         "errors": [
             {
-                "doc_line": 7,
-                "msg": "The argument line '* `walks_parameters`: &'a WalksParameters - the walks parameters.' (doc_line: 7) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walks_parameters'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
             "args": [
+                {
+                    "name": "walks_parameters",
+                    "type": "&'a WalksParameters",
+                    "desc": "the walks parameters"
+                },
                 {
                     "name": "window_size",
                     "type": "usize",
@@ -1042,20 +1019,17 @@
         "function": "node2vec",
         "errors": [
             {
-                "doc_line": 12,
-                "msg": "The argument line '* `walk_parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 12) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_parameters'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
             "args": [
+                {
+                    "name": "walk_parameters",
+                    "type": "&'a WalksParameters",
+                    "desc": "the weighted walks parameters"
+                },
                 {
                     "name": "quantity",
                     "type": "NodeT",
@@ -1197,14 +1171,6 @@
         "function": "link_prediction_degrees",
         "errors": [
             {
-                "doc_line": 11,
-                "msg": "The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 11) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -1240,6 +1206,11 @@
                     "name": "maximal_sampling_attempts",
                     "type": "usize",
                     "desc": "Number of attempts to execute to sample the negative edges"
+                },
+                {
+                    "name": "graph_to_avoid",
+                    "type": "&'a Option<&Graph>",
+                    "desc": "The graph whose edges are to be avoided during the generation of false negatives"
                 }
             ]
         },
@@ -1250,14 +1221,6 @@
         "file": "preprocessing.rs",
         "function": "link_prediction_ids",
         "errors": [
-            {
-                "doc_line": 9,
-                "msg": "The argument line '* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,' (doc_line: 9) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'graph_to_avoid'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
@@ -1289,6 +1252,11 @@
                     "name": "maximal_sampling_attempts",
                     "type": "usize",
                     "desc": "Number of attempts to execute to sample the negative edges"
+                },
+                {
+                    "name": "graph_to_avoid",
+                    "type": "&'a Option<&Graph>",
+                    "desc": "The graph whose edges are to be avoided during the generation of false negatives"
                 }
             ]
         },
@@ -2450,11 +2418,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
+                "msg": "Missing the documentation for the argument 'node_names'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_names'."
+                "msg": "Missing the documentation for the argument 'node_types'."
             },
             {
                 "doc_line": 0,
@@ -3445,7 +3413,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'max_neighbours'."
             },
             {
                 "doc_line": "~",
@@ -3453,7 +3421,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -4850,6 +4818,32 @@
         },
         "extra_headers": []
     },
+    "must_be_undirected": {
+        "file": "validators.rs",
+        "function": "must_be_undirected",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "desc": "In order to validate a graph instance, you can use:\n",
+            "content": "```rust# let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();\n# let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();\nassert!(undirecte_graph.must_be_undirected().is_ok());\nassert!(directed_graph.must_be_undirected().is_err());\n"
+        },
+        "extra_headers": []
+    },
+    "must_be_multigraph": {
+        "file": "validators.rs",
+        "function": "must_be_multigraph",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "desc": "In order to validate a graph instance, you can use:\n",
+            "content": "```rust# let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false).unwrap();\n# let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();\nassert!(multigraph.must_be_multigraph().is_ok());\nassert!(homogeneous.must_be_multigraph().is_err());\n"
+        },
+        "extra_headers": []
+    },
     "must_have_edge_weights": {
         "file": "validators.rs",
         "function": "must_have_edge_weights",
@@ -4944,23 +4938,26 @@
         "function": "adamic_adar_index",
         "errors": [
             {
-                "doc_line": 2,
-                "msg": "The arguments section is missing or in the wrong order."
-            },
-            {
-                "doc_line": 2,
+                "doc_line": 7,
                 "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "one",
+                    "type": "NodeT",
+                    "desc": "Integer ID of the first node"
+                },
+                {
+                    "name": "two",
+                    "type": "NodeT",
+                    "desc": "Integer ID of the second node"
+                }
+            ]
         },
         "example": {},
         "extra_headers": [
-            {
-                "name": "Arguments:",
-                "content": "* `one`: NodeT - Integer ID of the first node.\n* `two`: NodeT - Integer ID of the second node.\n"
-            },
             {
                 "name": "Implementation details",
                 "content": "Since the Adamic/Adar Index is only defined for graph not containing\nnode traps (nodes without any outbound edge) and must support all kind\nof graphs, the sinks node are excluded from\nthe computation because they would result in an infinity.\n"
@@ -4984,23 +4981,26 @@
         "function": "resource_allocation_index",
         "errors": [
             {
-                "doc_line": 2,
-                "msg": "The arguments section is missing or in the wrong order."
-            },
-            {
-                "doc_line": 2,
+                "doc_line": 7,
                 "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "one",
+                    "type": "NodeT",
+                    "desc": "Integer ID of the first node"
+                },
+                {
+                    "name": "two",
+                    "type": "NodeT",
+                    "desc": "Integer ID of the second node"
+                }
+            ]
         },
         "example": {},
         "extra_headers": [
-            {
-                "name": "Arguments:",
-                "content": "* `one`: NodeT - Integer ID of the first node.\n* `two`: NodeT - Integer ID of the second node.\n"
-            },
             {
                 "name": "References",
                 "content": "[T. Zhou, L. Lu, Y.-C. Zhang.\nPredicting missing links via local information.\nEur. Phys. J. B 71 (2009) 623.](http://arxiv.org/pdf/0901.0553.pdf)\n"
@@ -5024,16 +5024,83 @@
         "function": "remove",
         "errors": [
             {
-                "doc_line": 2,
-                "msg": "The arguments section is missing or in the wrong order."
-            },
-            {
-                "doc_line": 2,
+                "doc_line": 18,
                 "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "allow_nodes_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of nodes names to keep"
+                },
+                {
+                    "name": "deny_nodes_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of nodes names to remove"
+                },
+                {
+                    "name": "allow_node_types_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of node type names to keep"
+                },
+                {
+                    "name": "deny_node_types_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of node type names to remove"
+                },
+                {
+                    "name": "allow_edge_set",
+                    "type": "Option<HashSet<EdgeT>>",
+                    "desc": "Optional set of numeric edge IDs to keep"
+                },
+                {
+                    "name": "deny_edge_set",
+                    "type": "Option<HashSet<EdgeT>>",
+                    "desc": "Optional set of numeric edge IDs to remove"
+                },
+                {
+                    "name": "allow_edge_types_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of edge type names to keep"
+                },
+                {
+                    "name": "deny_edge_types_set",
+                    "type": "Option<HashSet<String>>",
+                    "desc": "Optional set of edge type names to remove"
+                },
+                {
+                    "name": "weights",
+                    "type": "bool",
+                    "desc": "Whether to remove the weights"
+                },
+                {
+                    "name": "node_types",
+                    "type": "bool",
+                    "desc": "Whether to remove the node types"
+                },
+                {
+                    "name": "edge_types",
+                    "type": "bool",
+                    "desc": "Whether to remove the edge types"
+                },
+                {
+                    "name": "singletons",
+                    "type": "bool",
+                    "desc": "Whether to remove the singleton nodes"
+                },
+                {
+                    "name": "selfloops",
+                    "type": "bool",
+                    "desc": "Whether to remove edges with self-loops"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar while building the graph"
+                }
+            ]
         },
         "example": {},
         "extra_headers": [
@@ -5048,10 +5115,6 @@
             {
                 "name": "## Generation of new singleton nodes when removeping edges",
                 "content": "Some of the remove operations allowed in this method might lead to the\ngeneration of new singleton nodes that will not be handled within this\nfunction call even if you provide the flag singletons to true, but you\nwill need to call the method again if you want to get reed of also those\nnewly created singleton nodes.\n"
-            },
-            {
-                "name": "Arguments",
-                "content": "* `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.\n* `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.\n* `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.\n* `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.\n* `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.\n* `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.\n* `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.\n* `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.\n* `weights`: bool - Whether to remove the weights.\n* `node_types`: bool - Whether to remove the node types.\n* `edge_types`: bool - Whether to remove the edge types.\n* `singletons`: bool - Whether to remove the singleton nodes.\n* `selfloops`: bool - Whether to remove edges with self-loops.\n* `verbose`: bool - Whether to show a loading bar while building the graph.\n"
             }
         ]
     },
@@ -5163,20 +5226,18 @@
         "function": "set_all_edge_types",
         "errors": [
             {
-                "doc_line": 3,
-                "msg": "The argument type 'String' of 'edge_type' does not match the function declaration which is 'S'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edge_type",
+                    "type": "S",
+                    "desc": "The edge type to assing to all the edges"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -5186,20 +5247,18 @@
         "function": "set_all_node_types",
         "errors": [
             {
-                "doc_line": 3,
-                "msg": "The argument type 'String' of 'node_type' does not match the function declaration which is 'S'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_type'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "node_type",
+                    "type": "S",
+                    "desc": "The node type to assing to all the nodes"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -5349,24 +5408,8 @@
         "function": "get_edge_weighted_transitions",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument line '* min_edge_id: EdgeT - The minimum edge id.' (doc_line: 4) is not in the standard format."
-            },
-            {
-                "doc_line": 5,
-                "msg": "The argument line '* max_edge_id: EdgeT - The maximum edge id.' (doc_line: 5) is not in the standard format."
-            },
-            {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": 0,
@@ -5374,7 +5417,18 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "min_edge_id",
+                    "type": "EdgeT",
+                    "desc": "The minimum edge id"
+                },
+                {
+                    "name": "max_edge_id",
+                    "type": "EdgeT",
+                    "desc": "The maximum edge id"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -5384,29 +5438,33 @@
         "function": "update_node_transition",
         "errors": [
             {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'transition'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'change_node_type_weight'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": [],
-            "desc": "node: NodeT - Source node.\ntransition: &mut Vec<WeightT> - Vector of transitions to update.\ndestinations: impl Iterator<Item = NodeT> - Iterator of the destinations.\nchange_node_type_weight: ParamsT - The weight to multiply the transition by if there is a change of node type.\n"
+            "args": [
+                {
+                    "name": "node",
+                    "type": "NodeT",
+                    "desc": "Source node"
+                },
+                {
+                    "name": "transition",
+                    "type": "&mut Vec<WeightT>",
+                    "desc": "Vector of transitions to update"
+                },
+                {
+                    "name": "destinations",
+                    "type": "impl Iterator<Item = NodeT>",
+                    "desc": "Iterator of the destinations"
+                },
+                {
+                    "name": "change_node_type_weight",
+                    "type": "ParamsT",
+                    "desc": "The weight to multiply the transition by if there is a change of node type"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -5417,11 +5475,27 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* node: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* `node`: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument line '* walk_weights: WalkWeights, the weights for the weighted random walks.' (doc_line: 5) is not in the standard format."
+                "msg": "The argument line '* `walk_weights`: WalkWeights, the weights for the weighted random walks.' (doc_line: 5) is not in the standard format."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -5430,22 +5504,6 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": 0,
@@ -5464,31 +5522,15 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* edge: EdgeT - the previous edge from which to compute the transitions.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument 'edge' does not exists in the current method. The available args are ['src', 'dst', 'edge_id', 'walk_weights', 'min_edge_id', 'max_edge_id', 'destinations', 'previous_destinations', 'probabilistic_indices', 'has_selfloop']."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument line '* weights: WalkWeights - Weights to use for the weighted walk.' (doc_line: 5) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_selfloop'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
+                "msg": "The argument 'weights' does not exists in the current method. The available args are ['src', 'dst', 'edge_id', 'walk_weights', 'min_edge_id', 'max_edge_id', 'destinations', 'previous_destinations', 'probabilistic_indices', 'has_selfloop']."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5500,7 +5542,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'dst'."
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5508,7 +5554,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
+                "msg": "Missing the documentation for the argument 'src'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_selfloop'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'dst'."
             },
             {
                 "doc_line": 0,
@@ -5527,7 +5585,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* node: NodeT, the previous node from which to compute the transitions.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* `node`: NodeT, the previous node from which to compute the transitions.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": 5,
@@ -5535,11 +5593,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -5558,7 +5616,7 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* node: NodeT, the previous node from which to compute the transitions.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* `node`: NodeT, the previous node from which to compute the transitions.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": 5,
@@ -5566,7 +5624,27 @@
             },
             {
                 "doc_line": 6,
-                "msg": "The argument line '* walk_weights: WalkWeights, the weights for the weighted random walks.' (doc_line: 6) is not in the standard format."
+                "msg": "The argument line '* `walk_weights`: WalkWeights, the weights for the weighted random walks.' (doc_line: 6) is not in the standard format."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -5575,26 +5653,6 @@
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": 0,
@@ -5676,18 +5734,10 @@
         "example": {},
         "extra_headers": []
     },
-    "random_walks_iter": {
+    "iter_random_walks": {
         "file": "walks.rs",
-        "function": "random_walks_iter",
+        "function": "iter_random_walks",
         "errors": [
-            {
-                "doc_line": 5,
-                "msg": "The argument line '* `parameters`: &'a WalksParameters - the weighted walks parameters.' (doc_line: 5) is not in the standard format."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
@@ -5699,38 +5749,41 @@
                     "name": "quantity",
                     "type": "NodeT",
                     "desc": "Number of random walk to compute"
+                },
+                {
+                    "name": "parameters",
+                    "type": "&'a WalksParameters",
+                    "desc": "the weighted walks parameters"
                 }
             ]
         },
         "example": {},
         "extra_headers": []
     },
-    "complete_walks_iter": {
+    "iter_complete_walks": {
         "file": "walks.rs",
-        "function": "complete_walks_iter",
+        "function": "iter_complete_walks",
         "errors": [
-            {
-                "doc_line": 4,
-                "msg": "The argument type 'WalksParameters' of 'parameters' does not match the function declaration which is '&'a WalksParameters'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
-            },
             {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "parameters",
+                    "type": "&'a WalksParameters",
+                    "desc": "the weighted walks parameters"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
     },
-    "walk_iter": {
+    "iter_walk": {
         "file": "walks.rs",
-        "function": "walk_iter",
+        "function": "iter_walk",
         "errors": [
             {
                 "doc_line": 4,
@@ -5738,7 +5791,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'quantity'."
             },
             {
                 "doc_line": "~",
@@ -5746,7 +5799,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'quantity'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": 0,
@@ -5777,7 +5830,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -5785,7 +5838,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -5812,11 +5865,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": 0,
@@ -8583,11 +8636,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iter'."
+                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
             },
             {
                 "doc_line": 0,
@@ -8834,10 +8887,6 @@
         "function": "from_string_unsorted",
         "errors": [
             {
-                "doc_line": 6,
-                "msg": "The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 6) is not in the standard format."
-            },
-            {
                 "doc_line": 7,
                 "msg": "The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format."
             },
@@ -8847,63 +8896,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'directed_edge_list'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
             },
             {
                 "doc_line": "~",
@@ -8911,7 +8904,59 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iterator'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_node_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
             },
             {
                 "doc_line": 0,
@@ -8920,6 +8965,11 @@
         ],
         "args": {
             "args": [
+                {
+                    "name": "edges_iterator",
+                    "type": "impl Iterator<Item = Result<StringQuadruple, String>>",
+                    "desc": "Iterator of the edges"
+                },
                 {
                     "name": "directed",
                     "type": "bool",
@@ -8947,11 +8997,11 @@
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument type 'impl Iterator<Item = Result<StringQuadruple, String>>' of 'edges_iterator' does not match the function declaration which is 'impl Iterator<\n            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,\n        >'."
             },
             {
                 "doc_line": 5,
-                "msg": "The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> - Iterator of the nodes.' (doc_line: 5) is not in the standard format."
+                "msg": "The argument 'nodes_iterator' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes']."
             },
             {
                 "doc_line": 7,
@@ -8963,31 +9013,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
@@ -8995,15 +9021,39 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'name'."
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
                 "doc_line": 0,

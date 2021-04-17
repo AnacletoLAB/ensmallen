@@ -2,7 +2,6 @@ use super::*;
 impl Graph {
 
 	#[text_signature = "($self, one, two)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns product of degrees of given nodes.
 	/// 
 	/// Paramenters
@@ -12,12 +11,13 @@ impl Graph {
 	/// two : int,
 	/// 	Integer ID of the second node.
 	/// =
+	///
+	/// [Automatically generated binding]
 	fn degrees_product(&self, one : NodeT, two : NodeT) -> PyResult<usize> {
 		pe!(self.graph.degrees_product(one, two))
 	}
 	
 	#[text_signature = "($self, one, two)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns the Jaccard index for the two given nodes.
 	/// 
 	/// Paramenters
@@ -30,17 +30,17 @@ impl Graph {
 	/// # References
 	/// [D. Liben-Nowell, J. Kleinberg.
 	/// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
+	///
+	/// [Automatically generated binding]
 	fn jaccard_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.jaccard_index(one, two))
 	}
 	
 	#[text_signature = "($self, one, two)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns the Adamic/Adar Index for the given pair of nodes.
 	/// 
 	/// Paramenters
-	/// --------------:
-	/// 
+	/// --------------
 	/// one : int,
 	/// 	Integer ID of the first node.
 	/// two : int,
@@ -55,17 +55,17 @@ impl Graph {
 	/// # References
 	/// [D. Liben-Nowell, J. Kleinberg.
 	/// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
+	///
+	/// [Automatically generated binding]
 	fn adamic_adar_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.adamic_adar_index(one, two))
 	}
 	
 	#[text_signature = "($self, one, two)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns the Resource Allocation Index for the given pair of nodes.
 	/// 
 	/// Paramenters
-	/// --------------:
-	/// 
+	/// --------------
 	/// one : int,
 	/// 	Integer ID of the first node.
 	/// two : int,
@@ -81,6 +81,8 @@ impl Graph {
 	/// containing node traps (nodes without any outbound edge) and
 	/// must support all kind of graphs, the sinks node are excluded from
 	/// the computation because they would result in an infinity.
+	///
+	/// [Automatically generated binding]
 	fn resource_allocation_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.resource_allocation_index(one, two))
 	}

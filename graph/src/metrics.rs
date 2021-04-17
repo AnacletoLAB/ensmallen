@@ -80,7 +80,7 @@ impl Graph {
 
     /// Returns the Adamic/Adar Index for the given pair of nodes.
     ///
-    /// # Arguments:
+    /// # Arguments
     ///
     /// * `one`: NodeT - Integer ID of the first node.
     /// * `two`: NodeT - Integer ID of the second node.
@@ -121,7 +121,7 @@ impl Graph {
 
     /// Returns the Resource Allocation Index for the given pair of nodes.
     ///
-    /// # Arguments:
+    /// # Arguments
     ///
     /// * `one`: NodeT - Integer ID of the first node.
     /// * `two`: NodeT - Integer ID of the second node.

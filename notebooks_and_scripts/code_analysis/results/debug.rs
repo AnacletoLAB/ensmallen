@@ -2240,7 +2240,7 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
         // do the walks and check the result
         word2vec(
-            self.random_walks_iter(quantity, walk_parameters)?,
+            self.iter_random_walks(quantity, walk_parameters)?,
             window_size,
         )
     }
@@ -2269,7 +2269,7 @@ impl Graph {
                 "The cooccurence matrix on a graph without edges is not defined.".to_string(),
             );
         }
-        let walks = self.complete_walks_iter(walks_parameters)?;
+        let walks = self.iter_complete_walks(walks_parameters)?;
         cooccurence_matrix(
             walks,
             window_size,
@@ -4334,66 +4334,66 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
             }
             assert_eq!(
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of first order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&walker)
+                    .iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&walker)
+                    .iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete first order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
         }
     } else {
-        assert!(graph.complete_walks_iter(&walker).is_err());
+        assert!(graph.iter_complete_walks(&walker).is_err());
     }
     Ok(())
 }
@@ -8695,7 +8695,7 @@ impl Graph {
     ///
     /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
-    pub fn random_walks_iter<'a>(
+    pub fn iter_random_walks<'a>(
         &'a self,
         quantity: NodeT,
         parameters: &'a WalksParameters,
@@ -8707,7 +8707,7 @@ impl Graph {
         }
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
-        self.walk_iter(
+        self.iter_walk(
             quantity,
             move |index| {
                 let local_index = index % quantity;
@@ -8730,7 +8730,7 @@ impl Graph {
     ///
     /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
-    pub fn complete_walks_iter<'a>(
+    pub fn iter_complete_walks<'a>(
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
@@ -8741,7 +8741,7 @@ impl Graph {
         }
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
-        self.walk_iter(
+        self.iter_walk(
             self.get_unique_source_nodes_number(),
             move |index| {
                 (
@@ -8759,7 +8759,7 @@ impl Graph {
     ///
     /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
-    fn walk_iter<'a>(
+    fn iter_walk<'a>(
         &'a self,
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,

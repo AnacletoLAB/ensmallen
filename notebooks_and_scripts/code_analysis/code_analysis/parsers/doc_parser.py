@@ -101,7 +101,7 @@ class DocParser:
         # Parse the arguments
         while text and text[0][1].startswith("*"):
             line, *text = text
-            match = re.match("\* `(\S+?)`: (\S+?) - (.+)", line[1])
+            match = re.match("\* `(\S+?)`: ([^-]+?) - (.+)", line[1])
             # Check if the format is the standard one.
             if match is None:
                 self.log_error(

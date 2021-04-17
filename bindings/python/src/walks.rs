@@ -75,7 +75,7 @@ impl EnsmallenGraph {
         pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.random_walks_iter(quantity, &parameters))?;
+        let iter = pe!(self.graph.iter_random_walks(quantity, &parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
                 py.python(),
@@ -161,7 +161,7 @@ impl EnsmallenGraph {
         pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.complete_walks_iter(&parameters))?;
+        let iter = pe!(self.graph.iter_complete_walks(&parameters))?;
         let array = ThreadSafe {
             t: PyArray2::new(
                 py.python(),

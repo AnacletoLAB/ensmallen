@@ -1365,15 +1365,15 @@
 <path fill="none" stroke="black" d="M3186.17,-880.21C2963.67,-877.33 2265.36,-865.43 2043,-828 2041.74,-827.79 2040.47,-827.56 2039.19,-827.31"/>
 <polygon fill="black" stroke="black" points="2039.83,-823.87 2029.31,-825.11 2038.31,-830.7 2039.83,-823.87"/>
 </g>
-<!-- Graph::random_walks_iter -->
+<!-- Graph::iter_random_walks -->
 <g id="node206" class="node">
-<title>Graph::random_walks_iter</title>
+<title>Graph::iter_random_walks</title>
 <polygon fill="none" stroke="black" points="5460,-828 5256,-828 5256,-792 5460,-792 5460,-828"/>
-<text text-anchor="middle" x="5358" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::random_walks_iter</text>
+<text text-anchor="middle" x="5358" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::iter_random_walks</text>
 </g>
-<!-- Graph::node2vec&#45;&gt;Graph::random_walks_iter -->
+<!-- Graph::node2vec&#45;&gt;Graph::iter_random_walks -->
 <g id="edge128" class="edge">
-<title>Graph::node2vec&#45;&gt;Graph::random_walks_iter</title>
+<title>Graph::node2vec&#45;&gt;Graph::iter_random_walks</title>
 <path fill="none" stroke="black" d="M3323.77,-878.71C3629.27,-868.54 4865.05,-827.41 5245.78,-814.74"/>
 <polygon fill="black" stroke="black" points="5246.1,-818.23 5255.98,-814.4 5245.87,-811.23 5246.1,-818.23"/>
 </g>
@@ -1395,15 +1395,15 @@
 <path fill="none" stroke="black" d="M5866.27,-893.1C5877.09,-890.9 5884,-887.2 5884,-882 5884,-878.59 5881.03,-875.82 5875.92,-873.7"/>
 <polygon fill="black" stroke="black" points="5876.85,-870.33 5866.27,-870.9 5874.9,-877.05 5876.85,-870.33"/>
 </g>
-<!-- Graph::complete_walks_iter -->
+<!-- Graph::iter_complete_walks -->
 <g id="node207" class="node">
-<title>Graph::complete_walks_iter</title>
+<title>Graph::iter_complete_walks</title>
 <polygon fill="none" stroke="black" points="5693.5,-828 5478.5,-828 5478.5,-792 5693.5,-792 5693.5,-828"/>
-<text text-anchor="middle" x="5586" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::complete_walks_iter</text>
+<text text-anchor="middle" x="5586" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::iter_complete_walks</text>
 </g>
-<!-- Graph::cooccurence_matrix&#45;&gt;Graph::complete_walks_iter -->
+<!-- Graph::cooccurence_matrix&#45;&gt;Graph::iter_complete_walks -->
 <g id="edge131" class="edge">
-<title>Graph::cooccurence_matrix&#45;&gt;Graph::complete_walks_iter</title>
+<title>Graph::cooccurence_matrix&#45;&gt;Graph::iter_complete_walks</title>
 <path fill="none" stroke="black" d="M5717.43,-863.88C5693.44,-854.22 5663.27,-842.09 5637.9,-831.88"/>
 <polygon fill="black" stroke="black" points="5639.01,-828.55 5628.43,-828.07 5636.4,-835.05 5639.01,-828.55"/>
 </g>
@@ -2589,15 +2589,15 @@
 <path fill="none" stroke="black" d="M5523.76,-875.59C5590.76,-869.08 5680.68,-855.41 5703,-828 5766.34,-750.21 5628.09,-793.5 5583,-756 5543.99,-723.56 5510.63,-684.38 5546,-648 5594.05,-598.58 6685.44,-620.37 6823.26,-611.58"/>
 <polygon fill="black" stroke="black" points="6823.68,-615.06 6833.32,-610.67 6823.04,-608.09 6823.68,-615.06"/>
 </g>
-<!-- test_random_walks&#45;&gt;Graph::random_walks_iter -->
+<!-- test_random_walks&#45;&gt;Graph::iter_random_walks -->
 <g id="edge270" class="edge">
-<title>test_random_walks&#45;&gt;Graph::random_walks_iter</title>
+<title>test_random_walks&#45;&gt;Graph::iter_random_walks</title>
 <path fill="none" stroke="black" d="M5425,-863.7C5413.79,-854.88 5400,-844.03 5387.85,-834.47"/>
 <polygon fill="black" stroke="black" points="5389.77,-831.54 5379.75,-828.1 5385.44,-837.04 5389.77,-831.54"/>
 </g>
-<!-- test_random_walks&#45;&gt;Graph::complete_walks_iter -->
+<!-- test_random_walks&#45;&gt;Graph::iter_complete_walks -->
 <g id="edge271" class="edge">
-<title>test_random_walks&#45;&gt;Graph::complete_walks_iter</title>
+<title>test_random_walks&#45;&gt;Graph::iter_complete_walks</title>
 <path fill="none" stroke="black" d="M5481,-863.88C5499.6,-854.51 5522.83,-842.81 5542.71,-832.8"/>
 <polygon fill="black" stroke="black" points="5544.51,-835.81 5551.87,-828.19 5541.36,-829.56 5544.51,-835.81"/>
 </g>
@@ -5763,15 +5763,15 @@
 <path fill="none" stroke="black" d="M2506.08,-586.87C2562.41,-582.92 2639.23,-578.13 2707,-576 5656,-483.19 13034.63,-619.92 15984,-540 16064.46,-537.82 16155.84,-532.92 16222.01,-528.94"/>
 <polygon fill="black" stroke="black" points="16222.23,-532.44 16232,-528.34 16221.8,-525.45 16222.23,-532.44"/>
 </g>
-<!-- Graph::walk_iter -->
+<!-- Graph::iter_walk -->
 <g id="node208" class="node">
-<title>Graph::walk_iter</title>
+<title>Graph::iter_walk</title>
 <polygon fill="none" stroke="black" points="1614.5,-756 1479.5,-756 1479.5,-720 1614.5,-720 1614.5,-756"/>
-<text text-anchor="middle" x="1547" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::walk_iter</text>
+<text text-anchor="middle" x="1547" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::iter_walk</text>
 </g>
-<!-- Graph::random_walks_iter&#45;&gt;Graph::walk_iter -->
+<!-- Graph::iter_random_walks&#45;&gt;Graph::iter_walk -->
 <g id="edge673" class="edge">
-<title>Graph::random_walks_iter&#45;&gt;Graph::walk_iter</title>
+<title>Graph::iter_random_walks&#45;&gt;Graph::iter_walk</title>
 <path fill="none" stroke="black" d="M5255.65,-807.92C4678.11,-801.75 1845.75,-770.83 1662,-756 1649.86,-755.02 1637.05,-753.56 1624.56,-751.89"/>
 <polygon fill="black" stroke="black" points="1625.02,-748.42 1614.63,-750.52 1624.06,-755.36 1625.02,-748.42"/>
 </g>
@@ -5781,69 +5781,69 @@
 <polygon fill="none" stroke="black" points="5459.5,-756 5256.5,-756 5256.5,-720 5459.5,-720 5459.5,-756"/>
 <text text-anchor="middle" x="5358" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::get_unique_source</text>
 </g>
-<!-- Graph::random_walks_iter&#45;&gt;Graph::get_unique_source -->
+<!-- Graph::iter_random_walks&#45;&gt;Graph::get_unique_source -->
 <g id="edge674" class="edge">
-<title>Graph::random_walks_iter&#45;&gt;Graph::get_unique_source</title>
+<title>Graph::iter_random_walks&#45;&gt;Graph::get_unique_source</title>
 <path fill="none" stroke="black" d="M5358,-791.7C5358,-783.98 5358,-774.71 5358,-766.11"/>
 <polygon fill="black" stroke="black" points="5361.5,-766.1 5358,-756.1 5354.5,-766.1 5361.5,-766.1"/>
 </g>
-<!-- Graph::random_walks_iter&#45;&gt;Graph::has_edges -->
+<!-- Graph::iter_random_walks&#45;&gt;Graph::has_edges -->
 <g id="edge675" class="edge">
-<title>Graph::random_walks_iter&#45;&gt;Graph::has_edges</title>
+<title>Graph::iter_random_walks&#45;&gt;Graph::has_edges</title>
 <path fill="none" stroke="black" d="M5315.81,-791.91C5294.71,-782.57 5269.21,-770.04 5248,-756 5242.94,-752.65 5168.5,-689.52 5166,-684 5159.4,-669.42 5158.6,-662.19 5166,-648 5172.47,-635.61 5183.3,-625.52 5194.79,-617.6"/>
 <polygon fill="black" stroke="black" points="5196.68,-620.55 5203.22,-612.22 5192.91,-614.65 5196.68,-620.55"/>
 </g>
-<!-- Graph::random_walks_iter&#45;&gt;Graph::get_unique_source_nodes_number -->
+<!-- Graph::iter_random_walks&#45;&gt;Graph::get_unique_source_nodes_number -->
 <g id="edge676" class="edge">
-<title>Graph::random_walks_iter&#45;&gt;Graph::get_unique_source_nodes_number</title>
+<title>Graph::iter_random_walks&#45;&gt;Graph::get_unique_source_nodes_number</title>
 <path fill="none" stroke="black" d="M5453.15,-791.97C5510.74,-781.66 5584.27,-768.49 5643.61,-757.87"/>
 <polygon fill="black" stroke="black" points="5644.54,-761.26 5653.76,-756.05 5643.3,-754.37 5644.54,-761.26"/>
 </g>
-<!-- Graph::complete_walks_iter&#45;&gt;Graph::walk_iter -->
+<!-- Graph::iter_complete_walks&#45;&gt;Graph::iter_walk -->
 <g id="edge677" class="edge">
-<title>Graph::complete_walks_iter&#45;&gt;Graph::walk_iter</title>
+<title>Graph::iter_complete_walks&#45;&gt;Graph::iter_walk</title>
 <path fill="none" stroke="black" d="M5478.32,-792.8C5475.18,-792.5 5472.07,-792.24 5469,-792 4625.46,-727.03 2505.46,-822.02 1662,-756 1649.85,-755.05 1637.04,-753.6 1624.55,-751.94"/>
 <polygon fill="black" stroke="black" points="1625.01,-748.47 1614.63,-750.58 1624.06,-755.41 1625.01,-748.47"/>
 </g>
-<!-- Graph::complete_walks_iter&#45;&gt;Graph::get_unique_source -->
+<!-- Graph::iter_complete_walks&#45;&gt;Graph::get_unique_source -->
 <g id="edge678" class="edge">
-<title>Graph::complete_walks_iter&#45;&gt;Graph::get_unique_source</title>
+<title>Graph::iter_complete_walks&#45;&gt;Graph::get_unique_source</title>
 <path fill="none" stroke="black" d="M5530.52,-791.97C5498.24,-782.06 5457.39,-769.51 5423.54,-759.12"/>
 <polygon fill="black" stroke="black" points="5424.32,-755.7 5413.73,-756.11 5422.26,-762.39 5424.32,-755.7"/>
 </g>
-<!-- Graph::complete_walks_iter&#45;&gt;Graph::has_edges -->
+<!-- Graph::iter_complete_walks&#45;&gt;Graph::has_edges -->
 <g id="edge679" class="edge">
-<title>Graph::complete_walks_iter&#45;&gt;Graph::has_edges</title>
+<title>Graph::iter_complete_walks&#45;&gt;Graph::has_edges</title>
 <path fill="none" stroke="black" d="M5560.99,-791.79C5546.49,-781.64 5527.99,-768.39 5512,-756 5492.3,-740.73 5491.8,-730.07 5469,-720 5414.64,-695.98 5243.09,-728.76 5204,-684 5187.85,-665.51 5202.52,-639.13 5218.08,-619.89"/>
 <polygon fill="black" stroke="black" points="5220.88,-622 5224.72,-612.13 5215.56,-617.45 5220.88,-622"/>
 </g>
-<!-- Graph::complete_walks_iter&#45;&gt;Graph::get_unique_source_nodes_number -->
+<!-- Graph::iter_complete_walks&#45;&gt;Graph::get_unique_source_nodes_number -->
 <g id="edge680" class="edge">
-<title>Graph::complete_walks_iter&#45;&gt;Graph::get_unique_source_nodes_number</title>
+<title>Graph::iter_complete_walks&#45;&gt;Graph::get_unique_source_nodes_number</title>
 <path fill="none" stroke="black" d="M5625.87,-791.88C5648.16,-782.31 5676.12,-770.3 5699.76,-760.15"/>
 <polygon fill="black" stroke="black" points="5701.45,-763.23 5709.26,-756.07 5698.69,-756.8 5701.45,-763.23"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;WalkWeights::is_first_order_walk -->
+<!-- Graph::iter_walk&#45;&gt;WalkWeights::is_first_order_walk -->
 <g id="edge681" class="edge">
-<title>Graph::walk_iter&#45;&gt;WalkWeights::is_first_order_walk</title>
+<title>Graph::iter_walk&#45;&gt;WalkWeights::is_first_order_walk</title>
 <path fill="none" stroke="black" d="M1614.86,-721.97C1619.63,-721.21 1624.38,-720.54 1629,-720 1904.56,-687.71 2607.38,-749.46 2877,-684 2948.86,-666.55 2987.62,-674.59 3027,-612 3035.52,-598.46 3033.52,-590.61 3027,-576 3021.92,-564.6 3013.04,-554.63 3003.69,-546.51"/>
 <polygon fill="black" stroke="black" points="3005.78,-543.69 2995.8,-540.13 3001.37,-549.14 3005.78,-543.69"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;SingleWalkParameters::is_first_order_walk -->
+<!-- Graph::iter_walk&#45;&gt;SingleWalkParameters::is_first_order_walk -->
 <g id="edge682" class="edge">
-<title>Graph::walk_iter&#45;&gt;SingleWalkParameters::is_first_order_walk</title>
+<title>Graph::iter_walk&#45;&gt;SingleWalkParameters::is_first_order_walk</title>
 <path fill="none" stroke="black" d="M1614.87,-722.07C1619.64,-721.28 1624.38,-720.58 1629,-720 1971.99,-676.78 2060.83,-703.15 2406,-684 2435.76,-682.35 2467.4,-680.44 2498.04,-678.51"/>
 <polygon fill="black" stroke="black" points="2498.63,-681.97 2508.39,-677.85 2498.19,-674.99 2498.63,-681.97"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;WalksParameters::validate -->
+<!-- Graph::iter_walk&#45;&gt;WalksParameters::validate -->
 <g id="edge683" class="edge">
-<title>Graph::walk_iter&#45;&gt;WalksParameters::validate</title>
+<title>Graph::iter_walk&#45;&gt;WalksParameters::validate</title>
 <path fill="none" stroke="black" d="M1614.62,-725.36C1630.14,-723.15 1646.6,-721.16 1662,-720 2173.49,-681.4 10385.42,-742.68 10895,-684 10966.12,-675.81 10981.85,-662.27 11052,-648 11112.96,-635.6 11181.27,-623.33 11237.1,-613.73"/>
 <polygon fill="black" stroke="black" points="11237.75,-617.17 11247.01,-612.03 11236.57,-610.27 11237.75,-617.17"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;WalksParameters::is_first_order_walk -->
+<!-- Graph::iter_walk&#45;&gt;WalksParameters::is_first_order_walk -->
 <g id="edge684" class="edge">
-<title>Graph::walk_iter&#45;&gt;WalksParameters::is_first_order_walk</title>
+<title>Graph::iter_walk&#45;&gt;WalksParameters::is_first_order_walk</title>
 <path fill="none" stroke="black" d="M1614.86,-721.98C1619.63,-721.21 1624.38,-720.54 1629,-720 1696.79,-712.04 2809.18,-732.7 2857,-684 2872.67,-668.04 2870.94,-641.67 2866.48,-621.77"/>
 <polygon fill="black" stroke="black" points="2869.85,-620.85 2863.97,-612.04 2863.07,-622.6 2869.85,-620.85"/>
 </g>
@@ -5853,9 +5853,9 @@
 <polygon fill="none" stroke="black" points="2257,-684 2105,-684 2105,-648 2257,-648 2257,-684"/>
 <text text-anchor="middle" x="2181" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::single_walk</text>
 </g>
-<!-- Graph::walk_iter&#45;&gt;Graph::single_walk -->
+<!-- Graph::iter_walk&#45;&gt;Graph::single_walk -->
 <g id="edge685" class="edge">
-<title>Graph::walk_iter&#45;&gt;Graph::single_walk</title>
+<title>Graph::iter_walk&#45;&gt;Graph::single_walk</title>
 <path fill="none" stroke="black" d="M1614.91,-722.33C1619.67,-721.48 1624.4,-720.7 1629,-720 1792.69,-695.25 1985.52,-679.84 2094.5,-672.38"/>
 <polygon fill="black" stroke="black" points="2095.04,-675.86 2104.78,-671.69 2094.57,-668.87 2095.04,-675.86"/>
 </g>
@@ -5865,15 +5865,15 @@
 <polygon fill="none" stroke="black" points="1235,-684 1069,-684 1069,-648 1235,-648 1235,-684"/>
 <text text-anchor="middle" x="1152" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::uniform_walk</text>
 </g>
-<!-- Graph::walk_iter&#45;&gt;Graph::uniform_walk -->
+<!-- Graph::iter_walk&#45;&gt;Graph::uniform_walk -->
 <g id="edge686" class="edge">
-<title>Graph::walk_iter&#45;&gt;Graph::uniform_walk</title>
+<title>Graph::iter_walk&#45;&gt;Graph::uniform_walk</title>
 <path fill="none" stroke="black" d="M1479.1,-724.97C1414.53,-713.52 1316.87,-696.22 1245.06,-683.49"/>
 <polygon fill="black" stroke="black" points="1245.57,-680.03 1235.11,-681.73 1244.34,-686.92 1245.57,-680.03"/>
 </g>
-<!-- Graph::walk_iter&#45;&gt;Graph::has_edge_weights -->
+<!-- Graph::iter_walk&#45;&gt;Graph::has_edge_weights -->
 <g id="edge687" class="edge">
-<title>Graph::walk_iter&#45;&gt;Graph::has_edge_weights</title>
+<title>Graph::iter_walk&#45;&gt;Graph::has_edge_weights</title>
 <path fill="none" stroke="black" d="M1614.62,-725.36C1630.14,-723.15 1646.6,-721.16 1662,-720 2178.59,-681.02 10471.71,-737.46 10987,-684 11065.98,-675.81 11083.5,-659.95 11162,-648 11321.84,-623.68 11724.63,-586.01 11886,-576 12530.74,-536.01 12694.67,-586.03 13339,-540 13474.71,-530.3 13507.72,-518.54 13643,-504 13808.59,-486.21 13862.38,-532.34 14016,-468 14038.99,-458.37 14035.63,-440.65 14059,-432 14072.17,-427.13 17762.05,-386.78 18387.45,-379.97"/>
 <polygon fill="black" stroke="black" points="18387.79,-383.47 18397.75,-379.86 18387.71,-376.47 18387.79,-383.47"/>
 </g>

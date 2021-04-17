@@ -30,7 +30,10 @@ def check_doc(args):
             errs = [
                 "[{:>4}] {}".format(x["doc_line"], x["msg"])
                 for x in errors
-                if x["msg"] != "Missing Example"
+                if x["msg"] not in [
+                    "Missing Example",
+                    "The example section is missing or in the wrong order.",
+                ]
             ]
             if errs:
                 result[file][fn_name] = errs

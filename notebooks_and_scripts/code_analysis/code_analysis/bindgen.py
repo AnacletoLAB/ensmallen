@@ -47,8 +47,6 @@ def bindgen(args):
         bindgen += "impl Graph {\n"
 
         for function in functions:
-            print("DIOBONO", function)
-
             result = ""
 
             if len(function.get("args", [])) > 1:
@@ -63,7 +61,6 @@ def bindgen(args):
                 signature=signature
             )
 
-            result += "/// TODO!: This binding was automatically generated\n"
             if "doc" in function:
                 doc = "\n".join(function.get("doc", []))
                 # Remove examples
@@ -92,6 +89,8 @@ def bindgen(args):
                 doc = doc.strip()
                 result += "\n".join("/// " + x for x in doc.split("\n"))
                 result += "\n"
+
+            result += "///\n/// [Automatically generated binding]\n"
 
             if len(function.get("args", [])) > 1:
                 print(function["args"])

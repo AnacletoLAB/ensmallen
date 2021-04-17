@@ -2,7 +2,6 @@ use super::*;
 impl Graph {
 
 	#[text_signature = "($self, node_names, node_types, edge_types, min_weight, max_weight, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Return graph filtered by given weights range.
 	/// 
 	/// Paramenters
@@ -19,6 +18,8 @@ impl Graph {
 	/// 	Maximum weight to use to filter edges.
 	/// verbose : bool,
 	/// 	Whether to show the loading bar.
+	///
+	/// [Automatically generated binding]
 	fn filter(&self, node_names : Option<Vec<String>>, node_types : Option<Vec<Option<String>>>, edge_types : Option<Vec<Option<String>>>, min_weight : Option<WeightT>, max_weight : Option<WeightT>, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.filter(node_names, node_types, edge_types, min_weight, max_weight, verbose))
 	}

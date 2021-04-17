@@ -154,7 +154,7 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
         // do the walks and check the result
         word2vec(
-            self.random_walks_iter(quantity, walk_parameters)?,
+            self.iter_random_walks(quantity, walk_parameters)?,
             window_size,
         )
     }
@@ -177,7 +177,7 @@ impl Graph {
         verbose: bool,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a), String> {
         self.must_have_edges()?;
-        let walks = self.complete_walks_iter(walks_parameters)?;
+        let walks = self.iter_complete_walks(walks_parameters)?;
         cooccurence_matrix(
             walks,
             window_size,

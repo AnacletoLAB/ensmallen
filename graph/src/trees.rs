@@ -35,7 +35,7 @@ fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
         .to_string());
     }
 
-    let mut attempts_left = 1_000;
+    let mut attempts_left = 1_000_000;
     loop {
         match rayon::ThreadPoolBuilder::new()
             .num_threads(cpu_number)

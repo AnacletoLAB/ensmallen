@@ -303,8 +303,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * min_edge_id: EdgeT - The minimum edge id.
-    /// * max_edge_id: EdgeT - The maximum edge id.
+    /// * `min_edge_id`: EdgeT - The minimum edge id.
+    /// * `max_edge_id`: EdgeT - The maximum edge id.
     ///
     fn get_edge_weighted_transitions(
         &self,
@@ -336,10 +336,10 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// node: NodeT - Source node.
-    /// transition: &mut Vec<WeightT> - Vector of transitions to update.
-    /// destinations: impl Iterator<Item = NodeT> - Iterator of the destinations.
-    /// change_node_type_weight: ParamsT - The weight to multiply the transition by if there is a change of node type.
+    /// * `node`: NodeT - Source node.
+    /// * `transition`: &mut Vec<WeightT> - Vector of transitions to update.
+    /// * `destinations`: impl Iterator<Item = NodeT> - Iterator of the destinations.
+    /// * `change_node_type_weight`: ParamsT - The weight to multiply the transition by if there is a change of node type.
     ///
     fn update_node_transition(
         &self,
@@ -375,8 +375,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
-    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
+    /// * `node`: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
+    /// * `walk_weights`: WalkWeights, the weights for the weighted random walks.
     ///
     fn get_node_transition(
         &self,
@@ -406,8 +406,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge: EdgeT - the previous edge from which to compute the transitions.
-    /// * weights: WalkWeights - Weights to use for the weighted walk.
+    /// * `edge`: EdgeT - the previous edge from which to compute the transitions.
+    /// * `weights`: WalkWeights - Weights to use for the weighted walk.
     fn get_edge_transition(
         &self,
         src: NodeT,
@@ -502,7 +502,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * `node`: NodeT, the previous node from which to compute the transitions.
     /// * `random_state`: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
@@ -524,9 +524,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * `node`: NodeT, the previous node from which to compute the transitions.
     /// * `random_state`: usize, the random_state to use for extracting the node.
-    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
+    /// * `walk_weights`: WalkWeights, the weights for the weighted random walks.
     fn extract_node(
         &self,
         node: NodeT,
@@ -625,7 +625,7 @@ impl Graph {
     /// * `quantity`: NodeT - Number of random walk to compute.
     /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
     ///
-    pub fn random_walks_iter<'a>(
+    pub fn iter_random_walks<'a>(
         &'a self,
         quantity: NodeT,
         parameters: &'a WalksParameters,
@@ -633,7 +633,7 @@ impl Graph {
         self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
-        self.walk_iter(
+        self.iter_walk(
             quantity,
             move |index| {
                 let local_index = index % quantity;
@@ -654,16 +654,16 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `parameters`: WalksParameters - the weighted walks parameters.
+    /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
     ///
-    pub fn complete_walks_iter<'a>(
+    pub fn iter_complete_walks<'a>(
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
-        self.walk_iter(
+        self.iter_walk(
             self.get_unique_source_nodes_number(),
             move |index| {
                 (
@@ -683,7 +683,7 @@ impl Graph {
     ///
     /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
-    fn walk_iter<'a>(
+    fn iter_walk<'a>(
         &'a self,
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,

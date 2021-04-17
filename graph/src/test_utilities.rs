@@ -576,66 +576,66 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
             }
             assert_eq!(
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of first order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .random_walks_iter(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&walker)
+                    .iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&walker)
+                    .iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete first order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .complete_walks_iter(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .complete_walks_iter(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
         }
     } else {
-        assert!(graph.complete_walks_iter(&walker).is_err());
+        assert!(graph.iter_complete_walks(&walker).is_err());
     }
     Ok(())
 }

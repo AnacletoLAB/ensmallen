@@ -2,7 +2,6 @@ use super::*;
 impl Graph {
 
 	#[text_signature = "($self)"]
-	/// TODO!: This binding was automatically generated
 	/// Returns report relative to the graph metrics
 	/// 
 	/// The report includes a few useful metrics like:
@@ -19,12 +18,13 @@ impl Graph {
 	/// * traps_rate: probability to end up in a trap when starting into any given node.
 	/// * selfloops_rate: pecentage of edges that are selfloops.
 	/// * bidirectional_rate: rate of edges that are bidirectional.
+	///
+	/// [Automatically generated binding]
 	fn report(&self) -> DefaultHashMap<&str, String> {
 		self.graph.report()
 	}
 	
 	#[text_signature = "($self, other, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Return rendered textual report about the graph overlaps.
 	/// 
 	/// Paramenters
@@ -33,18 +33,21 @@ impl Graph {
 	/// 	graph to create overlap report with.
 	/// verbose : bool,
 	/// 	Whether to shor the loading bars.
+	///
+	/// [Automatically generated binding]
 	fn overlap_textual_report(&self, other : &Graph, verbose : bool) -> PyResult<String> {
 		pe!(self.graph.overlap_textual_report(other, verbose))
 	}
 	
 	#[text_signature = "($self, verbose)"]
-	/// TODO!: This binding was automatically generated
 	/// Return rendered textual report of the graph.
 	/// 
 	/// Paramenters
 	/// --------------
 	/// verbose : bool,
 	/// 	Whether to show loading bar.
+	///
+	/// [Automatically generated binding]
 	fn textual_report(&self, verbose : bool) -> PyResult<String> {
 		pe!(self.graph.textual_report(verbose))
 	}

@@ -16,7 +16,7 @@ fn bench_slow(b: &mut Bencher) {
         for _ in 0..10 {
             black_box(
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .unwrap()
                     .collect::<Vec<Vec<NodeT>>>(),
             );
@@ -35,7 +35,7 @@ fn bench_fast(b: &mut Bencher) {
         for _ in 0..10 {
             black_box(
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .unwrap()
                     .collect::<Vec<Vec<NodeT>>>(),
             );
@@ -53,7 +53,7 @@ fn bench_cache(b: &mut Bencher, level: f64) {
         for _ in 0..10 {
             black_box(
                 graph
-                    .random_walks_iter(1, &walker)
+                    .iter_random_walks(1, &walker)
                     .unwrap()
                     .collect::<Vec<Vec<NodeT>>>(),
             );

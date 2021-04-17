@@ -28,5 +28,5 @@ fn main() {
     graph.enable(true, true, true, None).unwrap();
 
     let walker = second_order_walker(&graph).unwrap();
-    let _ = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.iter_complete_walks( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

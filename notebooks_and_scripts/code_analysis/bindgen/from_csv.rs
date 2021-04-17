@@ -2,7 +2,6 @@ use super::*;
 impl Graph {
 
 	#[text_signature = "($self, node_file_reader, directed, directed_edge_list, edges_number, nodes_number, name)"]
-	/// TODO!: This binding was automatically generated
 	/// Return graph renderized from given files.
 	/// 
 	/// Paramenters
@@ -21,12 +20,13 @@ impl Graph {
 	/// 	Number of the nodes of the graph.
 	/// name : S,
 	/// 	Name of the graph.
+	///
+	/// [Automatically generated binding]
 	fn from_sorted_csv(EdgeFileReader, node_file_reader : Option<NodeFileReader>, directed : bool, directed_edge_list : bool, edges_number : usize, nodes_number : NodeT, name : S) -> PyResult<Graph> {
 		pe!(self.graph.from_sorted_csv(node_file_reader, directed, directed_edge_list, edges_number, nodes_number, name))
 	}
 	
 	#[text_signature = "($self, node_file_reader, directed, directed_edge_list, name)"]
-	/// TODO!: This binding was automatically generated
 	/// Return graph renderized from given files.
 	/// 
 	/// Paramenters
@@ -41,6 +41,8 @@ impl Graph {
 	/// 	Whether to read the edge list as directed.
 	/// name : S,
 	/// 	The name for the graph.
+	///
+	/// [Automatically generated binding]
 	fn from_unsorted_csv(EdgeFileReader, node_file_reader : Option<NodeFileReader>, directed : bool, directed_edge_list : bool, name : S) -> PyResult<Graph> {
 		pe!(self.graph.from_unsorted_csv(node_file_reader, directed, directed_edge_list, name))
 	}
