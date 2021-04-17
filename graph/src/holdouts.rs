@@ -350,7 +350,9 @@ impl Graph {
                 if !self.directed {
                     // we compute also the backward edge ids that are required.
                     valid_edges_bitmap.extend(self.compute_edge_ids_vector(
-                        self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(dst, src, edge_type),
+                        self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+                            dst, src, edge_type,
+                        ),
                         dst,
                         src,
                         include_all_edge_types,
@@ -575,8 +577,8 @@ impl Graph {
                     .collect::<HashSet<Option<EdgeTypeT>>>(),
             ))
         })?;
-        if min_number_overlaps.is_some() && !self.is_multigraph() {
-            return Err("Current graph is not a multigraph!".to_string());
+        if min_number_overlaps.is_some() {
+            self.must_be_multigraph()?;
         }
         self.edge_holdout(
             random_state,
@@ -629,9 +631,7 @@ impl Graph {
         use_stratification: bool,
         random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
-        if !self.has_node_types() {
-            return Err("The current graph does not have node types.".to_string());
-        }
+        self.must_have_node_types()?;
         if use_stratification {
             if self.has_multilabel_node_types() {
                 return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
@@ -750,9 +750,7 @@ impl Graph {
         use_stratification: bool,
         random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
-        if !self.has_edge_types() {
-            return Err("The current graph does not have edge types.".to_string());
-        }
+        self.must_have_edge_types()?;
         if use_stratification && self.get_minimum_edge_types_number() < 2 {
             return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
         }

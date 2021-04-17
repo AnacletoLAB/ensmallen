@@ -164,6 +164,24 @@ impl Graph {
         Ok(())
     }
 
+    /// Raises an error if the graph does not have edge types.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false).unwrap();
+    /// # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();
+    /// assert!(multigraph.must_be_multigraph().is_ok());
+    /// assert!(homogeneous.must_be_multigraph().is_err());
+    /// ```
+    pub fn must_be_multigraph(&self) -> Result<(), String> {
+        if !self.is_multigraph() {
+            return Err("The current graph instance is not a multigraph.".to_string());
+        }
+        Ok(())
+    }
+
     /// Raises an error if the graph does not have weights.
     ///
     /// # Example
