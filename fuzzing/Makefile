@@ -66,7 +66,7 @@ hfuzz_components:
 	(\
 	cd honggfuzz/components;\
 	cargo update;\
-	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/components/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P --exit_upon_crash" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run components; \
+	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/components/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run components; \
 	)
 
 afl_from_csv:
