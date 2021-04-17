@@ -19,6 +19,14 @@ CODICE CODICE CODICE
 ```
 example footer
 
+# Raises
+raises desc
+ * Exception description1
+ * Exception description2
+ * Exception description3
+ * Exception description4
+raises footer
+
 # Extra header1
 extraheader desc
 
@@ -238,6 +246,8 @@ class DocParser:
             text = self.parse_example(text)
         else:
             self.log_error(0, "Missing Example")
+
+        # TODO! add raises section
 
         if text:
             text = self.parse_extra_headers(text)

@@ -10,6 +10,7 @@ impl Graph {
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_connected_components_number(&self, verbose : bool) -> (NodeT, NodeT, NodeT) {
 		self.graph.get_connected_components_number(verbose)
 	}
@@ -18,6 +19,7 @@ impl Graph {
 	/// Returns number of singleton nodes within the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_singleton_nodes_number(&self) -> NodeT {
 		self.graph.get_singleton_nodes_number()
 	}
@@ -26,6 +28,7 @@ impl Graph {
 	/// Returns number of singleton nodes with self-loops within the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
 		self.graph.get_singleton_nodes_with_selfloops_number()
 	}
@@ -34,6 +37,7 @@ impl Graph {
 	/// Returns number of not singleton nodes within the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_not_singleton_nodes_number(&self) -> NodeT {
 		self.graph.get_not_singleton_nodes_number()
 	}
@@ -42,6 +46,7 @@ impl Graph {
 	/// Returns density of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_density(&self) -> PyResult<f64> {
 		pe!(self.graph.get_density())
 	}
@@ -52,6 +57,7 @@ impl Graph {
 	/// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_trap_nodes_rate(&self) -> f64 {
 		self.graph.get_trap_nodes_rate()
 	}
@@ -60,6 +66,7 @@ impl Graph {
 	/// Returns mean node degree of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_degrees_mean(&self) -> PyResult<f64> {
 		pe!(self.graph.get_node_degrees_mean())
 	}
@@ -68,6 +75,7 @@ impl Graph {
 	/// Returns number of undirected edges of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_undirected_edges_number(&self) -> EdgeT {
 		self.graph.get_undirected_edges_number()
 	}
@@ -76,6 +84,7 @@ impl Graph {
 	/// Returns number of undirected edges of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unique_undirected_edges_number(&self) -> EdgeT {
 		self.graph.get_unique_undirected_edges_number()
 	}
@@ -84,6 +93,7 @@ impl Graph {
 	/// Returns number of edges of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edges_number(&self) -> EdgeT {
 		self.graph.get_edges_number()
 	}
@@ -92,6 +102,7 @@ impl Graph {
 	/// Returns number of unique edges of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unique_edges_number(&self) -> EdgeT {
 		self.graph.get_unique_edges_number()
 	}
@@ -100,6 +111,7 @@ impl Graph {
 	/// Returns median node degree of the graph
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_degrees_median(&self) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_degrees_median())
 	}
@@ -108,6 +120,7 @@ impl Graph {
 	/// Returns maximum node degree of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_max_node_degree(&self) -> PyResult<NodeT> {
 		pe!(self.graph.get_max_node_degree())
 	}
@@ -116,6 +129,7 @@ impl Graph {
 	/// Returns minimum node degree of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_min_node_degree(&self) -> PyResult<NodeT> {
 		pe!(self.graph.get_min_node_degree())
 	}
@@ -124,6 +138,7 @@ impl Graph {
 	/// Returns mode node degree of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_degrees_mode())
 	}
@@ -132,6 +147,7 @@ impl Graph {
 	/// Returns number of self-loops, including also those in eventual multi-edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_selfloop_nodes_number(&self) -> EdgeT {
 		self.graph.get_selfloop_nodes_number()
 	}
@@ -140,6 +156,7 @@ impl Graph {
 	/// Returns number of unique self-loops, excluding those in eventual multi-edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unique_selfloop_number(&self) -> NodeT {
 		self.graph.get_unique_selfloop_number()
 	}
@@ -148,6 +165,7 @@ impl Graph {
 	/// Returns rate of self-loops.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_selfloop_nodes_rate(&self) -> PyResult<f64> {
 		pe!(self.graph.get_selfloop_nodes_rate())
 	}
@@ -156,6 +174,7 @@ impl Graph {
 	/// Return name of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_name(&self) -> String {
 		self.graph.get_name()
 	}
@@ -166,6 +185,7 @@ impl Graph {
 	/// only a self-loops are not considered traps because you could make a walk on them.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_trap_nodes_number(&self) -> EdgeT {
 		self.graph.get_trap_nodes_number()
 	}
@@ -179,6 +199,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_sources(&self, directed : bool) -> Vec<NodeT> {
 		self.graph.get_sources(directed)
 	}
@@ -192,6 +213,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_source_names(&self, directed : bool) -> Vec<String> {
 		self.graph.get_source_names(directed)
 	}
@@ -205,6 +227,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_destinations(&self, directed : bool) -> Vec<NodeT> {
 		self.graph.get_destinations(directed)
 	}
@@ -218,6 +241,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_destination_names(&self, directed : bool) -> Vec<String> {
 		self.graph.get_destination_names(directed)
 	}
@@ -226,6 +250,7 @@ impl Graph {
 	/// Return vector with the sorted nodes names.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_names(&self) -> Vec<String> {
 		self.graph.get_node_names()
 	}
@@ -234,6 +259,7 @@ impl Graph {
 	/// Return vector with the sorted nodes Ids.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_nodes(&self) -> Vec<NodeT> {
 		self.graph.get_nodes()
 	}
@@ -242,6 +268,7 @@ impl Graph {
 	/// Return the edge types of the edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_types(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
 		pe!(self.graph.get_edge_types())
 	}
@@ -250,6 +277,7 @@ impl Graph {
 	/// Return the edge types names.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_names(&self) -> Option<Vec<String>> {
 		self.graph.get_edge_type_names()
 	}
@@ -258,6 +286,7 @@ impl Graph {
 	/// Return the weights of the graph edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weights(&self) -> PyResult<Vec<WeightT>> {
 		pe!(self.graph.get_edge_weights())
 	}
@@ -266,6 +295,7 @@ impl Graph {
 	/// Return the minimum weight, if graph has weights.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_min_edge_weight(&self) -> PyResult<WeightT> {
 		pe!(self.graph.get_min_edge_weight())
 	}
@@ -274,6 +304,7 @@ impl Graph {
 	/// Return the maximum weight, if graph has weights.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_max_edge_weight(&self) -> PyResult<WeightT> {
 		pe!(self.graph.get_max_edge_weight())
 	}
@@ -282,6 +313,7 @@ impl Graph {
 	/// Return the node types of the graph nodes.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
 		pe!(self.graph.get_node_type_ids())
 	}
@@ -290,6 +322,7 @@ impl Graph {
 	/// Return the node types names.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_names(&self) -> PyResult<Vec<String>> {
 		pe!(self.graph.get_node_type_names())
 	}
@@ -298,6 +331,7 @@ impl Graph {
 	/// Return number of the unique edges in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unique_directed_edges_number(&self) -> EdgeT {
 		self.graph.get_unique_directed_edges_number()
 	}
@@ -306,6 +340,7 @@ impl Graph {
 	/// Return the nodes mapping.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
 		self.graph.get_nodes_mapping()
 	}
@@ -319,6 +354,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edges(&self, directed : bool) -> Vec<Vec<NodeT>> {
 		self.graph.get_edges(directed)
 	}
@@ -332,6 +368,7 @@ impl Graph {
 	/// 	Whether to filter out the undirected edges.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_node_names(&self, directed : bool) -> Vec<(String, String)> {
 		self.graph.get_edge_node_names(directed)
 	}
@@ -340,6 +377,7 @@ impl Graph {
 	/// Returns number of unknown node types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unknown_node_types_number(&self) -> NodeT {
 		self.graph.get_unknown_node_types_number()
 	}
@@ -348,6 +386,7 @@ impl Graph {
 	/// Returns minimum number of node types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_minimum_node_types_number(&self) -> NodeT {
 		self.graph.get_minimum_node_types_number()
 	}
@@ -356,6 +395,7 @@ impl Graph {
 	/// Returns number of unknown edge types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unknown_edge_types_number(&self) -> EdgeT {
 		self.graph.get_unknown_edge_types_number()
 	}
@@ -364,6 +404,7 @@ impl Graph {
 	/// Returns minimum number of edge types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_minimum_edge_types_number(&self) -> EdgeT {
 		self.graph.get_minimum_edge_types_number()
 	}
@@ -372,6 +413,7 @@ impl Graph {
 	/// Returns number of nodes in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_nodes_number(&self) -> NodeT {
 		self.graph.get_nodes_number()
 	}
@@ -388,6 +430,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_connected_component_ids(&self, verbose : bool) -> Vec<NodeT> {
 		self.graph.get_node_connected_component_ids(verbose)
 	}
@@ -396,6 +439,7 @@ impl Graph {
 	/// Returns number of directed edges in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_directed_edges_number(&self) -> EdgeT {
 		self.graph.get_directed_edges_number()
 	}
@@ -404,6 +448,7 @@ impl Graph {
 	/// Returns number of edge types in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_types_number(&self) -> EdgeTypeT {
 		self.graph.get_edge_types_number()
 	}
@@ -412,6 +457,7 @@ impl Graph {
 	/// Returns number of node types in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_types_number(&self) -> NodeTypeT {
 		self.graph.get_node_types_number()
 	}
@@ -420,6 +466,7 @@ impl Graph {
 	/// Returns the degree of every node in the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_degrees(&self) -> Vec<NodeT> {
 		self.graph.get_node_degrees()
 	}
@@ -428,6 +475,7 @@ impl Graph {
 	/// Return set of nodes that are not singletons.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_not_singletons_node_ids(&self) -> Vec<NodeT> {
 		self.graph.get_not_singletons_node_ids()
 	}
@@ -436,6 +484,7 @@ impl Graph {
 	/// Return mapping from instance not trap nodes to dense nodes.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
 		self.graph.get_dense_nodes_mapping()
 	}
@@ -444,6 +493,7 @@ impl Graph {
 	/// Return number of edges that have multigraph syblings.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_multigraph_edges_number(&self) -> EdgeT {
 		self.graph.get_multigraph_edges_number()
 	}
@@ -452,6 +502,7 @@ impl Graph {
 	/// Return vector with node cumulative_node_degrees, that is the comulative node degree.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
 		self.graph.get_cumulative_node_degrees()
 	}
@@ -460,6 +511,7 @@ impl Graph {
 	/// Returns number of the source nodes.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unique_source_nodes_number(&self) -> NodeT {
 		self.graph.get_unique_source_nodes_number()
 	}
@@ -468,6 +520,7 @@ impl Graph {
 	/// Returns edge type counts.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_counter(&self) -> PyResult<Counter<EdgeTypeT, usize>> {
 		pe!(self.graph.get_edge_type_counter())
 	}
@@ -476,6 +529,7 @@ impl Graph {
 	/// Returns edge type counts hashmap.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
 		pe!(self.graph.get_edge_type_counts_hashmap())
 	}
@@ -484,6 +538,7 @@ impl Graph {
 	/// Returns node type counts.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_counter(&self) -> PyResult<Counter<NodeTypeT, usize>> {
 		pe!(self.graph.get_node_type_counter())
 	}
@@ -492,6 +547,7 @@ impl Graph {
 	/// Returns node type counts hashmap.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
 		pe!(self.graph.get_node_type_counts_hashmap())
 	}

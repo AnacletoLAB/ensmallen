@@ -22,6 +22,7 @@ impl Graph {
 	/// 	Name of the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn from_sorted_csv(EdgeFileReader, node_file_reader : Option<NodeFileReader>, directed : bool, directed_edge_list : bool, edges_number : usize, nodes_number : NodeT, name : S) -> PyResult<Graph> {
 		pe!(self.graph.from_sorted_csv(node_file_reader, directed, directed_edge_list, edges_number, nodes_number, name))
 	}
@@ -43,6 +44,7 @@ impl Graph {
 	/// 	The name for the graph.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn from_unsorted_csv(EdgeFileReader, node_file_reader : Option<NodeFileReader>, directed : bool, directed_edge_list : bool, name : S) -> PyResult<Graph> {
 		pe!(self.graph.from_unsorted_csv(node_file_reader, directed, directed_edge_list, name))
 	}

@@ -2,12 +2,6 @@ use super::*;
 use graph::NodeT;
 use numpy::PyArray2;
 
-struct ThreadSafe<'a, T> {
-    t: &'a PyArray2<T>,
-}
-
-unsafe impl<'a, T> Sync for ThreadSafe<'a, T> {}
-
 #[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self, verbose)"]

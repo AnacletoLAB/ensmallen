@@ -13,6 +13,7 @@ impl Graph {
 	/// =
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn degrees_product(&self, one : NodeT, two : NodeT) -> PyResult<usize> {
 		pe!(self.graph.degrees_product(one, two))
 	}
@@ -32,6 +33,7 @@ impl Graph {
 	/// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn jaccard_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.jaccard_index(one, two))
 	}
@@ -57,6 +59,7 @@ impl Graph {
 	/// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn adamic_adar_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.adamic_adar_index(one, two))
 	}
@@ -83,6 +86,7 @@ impl Graph {
 	/// the computation because they would result in an infinity.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn resource_allocation_index(&self, one : NodeT, two : NodeT) -> PyResult<f64> {
 		pe!(self.graph.resource_allocation_index(one, two))
 	}

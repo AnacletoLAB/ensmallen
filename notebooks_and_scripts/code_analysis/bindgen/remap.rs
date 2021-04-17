@@ -10,6 +10,7 @@ impl Graph {
 	/// 	graph towards remap the nodes to.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn are_nodes_remappable(&self, other : &Graph) -> bool {
 		self.graph.are_nodes_remappable(other)
 	}
@@ -25,6 +26,7 @@ impl Graph {
 	/// 	Whether to show a loding bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn remap(&self, other : &Graph, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.remap(other, verbose))
 	}

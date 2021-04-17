@@ -10,6 +10,7 @@ impl Graph {
 	/// 	The node to be checked for.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_unchecked_singleton_from_node_id(&self, node_id : NodeT) -> bool {
 		self.graph.is_unchecked_singleton_from_node_id(node_id)
 	}
@@ -23,6 +24,7 @@ impl Graph {
 	/// 	The node to be checked for.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_singleton_from_node_id(&self, node_id : NodeT) -> PyResult<bool> {
 		pe!(self.graph.is_singleton_from_node_id(node_id))
 	}
@@ -36,6 +38,7 @@ impl Graph {
 	/// 	The node to be checked for.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_singleton_with_selfloops_from_node_id(&self, node_id : NodeT) -> bool {
 		self.graph.is_singleton_with_selfloops_from_node_id(node_id)
 	}
@@ -49,6 +52,7 @@ impl Graph {
 	/// 	The node name to be checked for.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_singleton_from_node_name(&self, node_name : &str) -> PyResult<bool> {
 		pe!(self.graph.is_singleton_from_node_name(node_name))
 	}
@@ -62,6 +66,7 @@ impl Graph {
 	/// 	Name of the node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_node_from_node_name(&self, node_name : &str) -> bool {
 		self.graph.has_node_from_node_name(node_name)
 	}
@@ -77,6 +82,7 @@ impl Graph {
 	/// 	Destination node id.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_edge_from_node_ids(&self, src : NodeT, dst : NodeT) -> bool {
 		self.graph.has_edge_from_node_ids(src, dst)
 	}
@@ -94,6 +100,7 @@ impl Graph {
 	/// 	The (optional) edge type.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_edge_from_node_ids_and_edge_type_id(&self, src : NodeT, dst : NodeT, edge_type : Option<EdgeTypeT>) -> bool {
 		self.graph.has_edge_from_node_ids_and_edge_type_id(src, dst, edge_type)
 	}
@@ -110,6 +117,7 @@ impl Graph {
 	/// 	Integer ID of the node, if this is bigger that the number of nodes it will panic.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_unchecked_trap_node_from_node_id(&self, node_id : NodeT) -> bool {
 		self.graph.is_unchecked_trap_node_from_node_id(node_id)
 	}
@@ -123,6 +131,7 @@ impl Graph {
 	/// 	Integer ID of the node, if this is bigger that the number of nodes it will panic.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn is_trap_node_from_node_id(&self, node_id : NodeT) -> PyResult<bool> {
 		pe!(self.graph.is_trap_node_from_node_id(node_id))
 	}
@@ -138,6 +147,7 @@ impl Graph {
 	/// 	The node types name.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_node_from_node_name_and_node_type_name(&self, node_name : &str, node_type_name : Option<Vec<String>>) -> bool {
 		self.graph.has_node_from_node_name_and_node_type_name(node_name, node_type_name)
 	}
@@ -153,6 +163,7 @@ impl Graph {
 	/// 	The destination node name of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_edge_from_node_names(&self, src_name : &str, dst_name : &str) -> bool {
 		self.graph.has_edge_from_node_names(src_name, dst_name)
 	}
@@ -170,6 +181,7 @@ impl Graph {
 	/// 	The (optional) edge type name.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn has_edge_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<&String>) -> bool {
 		self.graph.has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
 	}

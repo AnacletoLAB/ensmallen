@@ -91,6 +91,7 @@ def bindgen(args):
                 result += "\n"
 
             result += "///\n/// [Automatically generated binding]\n"
+            result += "/// [Automatically generated documentation]\n"
 
             if len(function.get("args", [])) > 1:
                 print(function["args"])

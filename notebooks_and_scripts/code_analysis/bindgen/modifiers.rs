@@ -16,6 +16,7 @@ impl Graph {
 	/// 	percentage of nodes destinations to cache. This cannot be used with the vector destinations.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn enable(&mut self, vector_sources : bool, vector_destinations : bool, vector_cumulative_node_degrees : bool, cache_size : Option<f64>) -> PyResult<()> {
 		pe!(self.graph.enable(vector_sources, vector_destinations, vector_cumulative_node_degrees, cache_size))
 	}
@@ -24,6 +25,7 @@ impl Graph {
 	/// Disable all extra perks, reducing memory impact but incresing time requirements.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn disable_all(&mut self){
 		self.graph.disable_all()
 	}

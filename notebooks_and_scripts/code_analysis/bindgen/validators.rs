@@ -10,6 +10,7 @@ impl Graph {
 	/// 	node ID to validate.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn validate_node_id(&self, node_id : NodeT) -> PyResult<NodeT> {
 		pe!(self.graph.validate_node_id(node_id))
 	}
@@ -23,6 +24,7 @@ impl Graph {
 	/// 	Edge ID to validate.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn validate_edge_id(&self, edge_id : EdgeT) -> PyResult<EdgeT> {
 		pe!(self.graph.validate_edge_id(edge_id))
 	}
@@ -36,6 +38,7 @@ impl Graph {
 	/// 	Node type ID to validate.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn validate_node_type_id(&self, node_type_id : Option<NodeTypeT>) -> PyResult<Option<NodeTypeT>> {
 		pe!(self.graph.validate_node_type_id(node_type_id))
 	}
@@ -49,6 +52,7 @@ impl Graph {
 	/// 	edge type ID to validate.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn validate_edge_type_id(&self, edge_type_id : Option<EdgeTypeT>) -> PyResult<Option<EdgeTypeT>> {
 		pe!(self.graph.validate_edge_type_id(edge_type_id))
 	}
@@ -57,6 +61,7 @@ impl Graph {
 	/// Raises an error if the graph does not have node types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_have_node_types(&self) -> PyResult<()> {
 		pe!(self.graph.must_have_node_types())
 	}
@@ -65,6 +70,7 @@ impl Graph {
 	/// Raises an error if the graph does not have edge types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_have_edge_types(&self) -> PyResult<()> {
 		pe!(self.graph.must_have_edge_types())
 	}
@@ -73,6 +79,7 @@ impl Graph {
 	/// Raises an error if the graph does not have edge types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_be_undirected(&self) -> PyResult<()> {
 		pe!(self.graph.must_be_undirected())
 	}
@@ -81,6 +88,7 @@ impl Graph {
 	/// Raises an error if the graph does not have edge types.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_be_multigraph(&self) -> PyResult<()> {
 		pe!(self.graph.must_be_multigraph())
 	}
@@ -89,6 +97,7 @@ impl Graph {
 	/// Raises an error if the graph does not have weights.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_have_edge_weights(&self) -> PyResult<()> {
 		pe!(self.graph.must_have_edge_weights())
 	}
@@ -97,6 +106,7 @@ impl Graph {
 	/// Raises an error if the graph does not have any edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn must_have_edges(&self) -> PyResult<()> {
 		pe!(self.graph.must_have_edges())
 	}

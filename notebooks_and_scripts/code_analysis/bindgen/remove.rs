@@ -49,6 +49,7 @@ impl Graph {
 	/// newly created singleton nodes.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn remove(&self, allow_nodes_set : Option<HashSet<String>>, deny_nodes_set : Option<HashSet<String>>, allow_node_types_set : Option<HashSet<String>>, deny_node_types_set : Option<HashSet<String>>, allow_edge_set : Option<HashSet<EdgeT>>, deny_edge_set : Option<HashSet<EdgeT>>, allow_edge_types_set : Option<HashSet<String>>, deny_edge_types_set : Option<HashSet<String>>, weights : bool, node_types : bool, edge_types : bool, singletons : bool, selfloops : bool, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.remove(allow_nodes_set, deny_nodes_set, allow_node_types_set, deny_node_types_set, allow_edge_set, deny_edge_set, allow_edge_types_set, deny_edge_types_set, weights, node_types, edge_types, singletons, selfloops, verbose))
 	}
@@ -73,6 +74,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn remove_components(&self, node_names : Option<Vec<String>>, node_types : Option<Vec<Option<String>>>, edge_types : Option<Vec<Option<String>>>, minimum_component_size : Option<NodeT>, top_k_components : Option<NodeT>, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.remove_components(node_names, node_types, edge_types, minimum_component_size, top_k_components, verbose))
 	}

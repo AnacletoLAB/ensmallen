@@ -7,6 +7,7 @@ impl Graph {
 	/// This is an implementation of Tarjan algorithm.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn strongly_connected_components(&self) -> Vec<HashSet<NodeT>> {
 		self.graph.strongly_connected_components()
 	}

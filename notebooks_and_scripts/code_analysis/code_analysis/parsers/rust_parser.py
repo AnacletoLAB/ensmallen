@@ -5,9 +5,15 @@ from .utils import *
 
 class RustParser:
     def __init__(self):
+        self.results = {}
+        self.current_file ={}
         self.functions = []
         self.impl_doc = []
         self.doc = []
+        self.attrs = []
+        self.imports = []
+        self.trait_name = None
+        self.struct_name = None
 
     def skip_to_match(self, text:str):
         """Find the next matching parenthesis and return all the text whitin."""
@@ -43,11 +49,13 @@ class RustParser:
         return text
 
     def parse_use(self, text):
-        _line, text = read_line(text) 
+        use_import, text = read_line(text)
+        self.imports.append(use_import)
         return text
 
     def parse_attr(self, text):
-        _skipped_attr, text = read_line(text)
+        attr, text = read_line(text)
+        self.attrs.append(attr.rstrip())
         return text
 
     def parse_extern(self, text):
@@ -59,7 +67,7 @@ class RustParser:
     def parse_doc(self, text:str) -> str:
         """Parse a documentation line"""
         doc_line, text = read_line(text[3:])
-        self.doc.append(doc_line.strip())
+        self.doc.append(doc_line.rstrip())
         return text
 
     def parse_args(self, arguments:str) -> str:
@@ -104,10 +112,13 @@ class RustParser:
     def parse_function(self, text:str) -> str:
         """Parse a function declaration"""
         function = {
-            "file":os.path.basename(self.file),
+            "file":self.file,
         }
         if self.struct_name is not None:
             function["struct"] = self.struct_name
+
+        if self.trait_name is not None:
+            function["trait"] = self.trait_name
 
         if self.impl_doc:
             function["impl_doc"] = self.impl_doc
@@ -115,6 +126,9 @@ class RustParser:
         # and reset it.
         function["doc"] = self.doc
         self.doc = []
+
+        function["attrs"] = self.attrs
+        self.attrs = []
         ########################################################################
         modifiers, text = partition(text, "fn")
         function["modifiers"] = modifiers.strip()
@@ -156,8 +170,13 @@ class RustParser:
     def parse_impl(self, text):
         self.impl_doc = self.doc
         self.doc = []
+        self.attrs = []
+        matches = re.match(r"\s*impl\s+(?:(\S+)\s+for\s+)?(\S+)\s+{", text).groups()
         # Get the name of the struct
-        self.struct_name = re.match(r"\s*impl\s+(\S+)\s+{", text).groups()[0]
+        self.struct_name = matches[1]
+        # Get the trait implemented if present
+        if matches[0] is not None:
+            self.trait_name = matches[0]
         # skip to the end of the impl definition
         _, _, text = text.partition(self.struct_name)
         # Get all the text inside the current impl
@@ -166,6 +185,7 @@ class RustParser:
         self.start(to_parse.strip())
         # Reset the struct name
         self.struct_name = None
+        self.trait_name = None
         self.impl_doc = []
         self.doc = []
         return text
@@ -174,10 +194,13 @@ class RustParser:
         """Main entrypoint of the parser."""
         while text:
             # Remove the white space
-            text = text.lstrip()
+            if text.startswith("///"):
+                text = self.parse_doc(text)
+                continue
 
+            text = text.lstrip()
             # Check if it's an impl
-            if re.match(r"\s*impl\s+(\S+)\s+{", text):
+            if re.match(r"\s*impl\s+(\S+\s+for\s+)?(\S+)\s+{", text):
                 text = self.parse_impl(text)
             # Check if it's a function
             elif re.match(r"\s*(pub(\(crate\))?\s+)?fn\s+", text):
@@ -187,8 +210,6 @@ class RustParser:
                 text = self.parse_struct(text)
             elif text.startswith("use"):
                 text = self.parse_use(text) 
-            elif text.startswith("///"):
-                text = self.parse_doc(text)
             elif text.startswith("#["):
                 text = self.parse_attr(text)
             elif text.startswith("extern"):
@@ -199,5 +220,11 @@ class RustParser:
 
     def parse_files(self, files):
         for file, txt in files:
-            self.file = os.path.abspath(file)
+            self.imports = []
+            self.file = os.path.basename(file)
             self.start(txt)
+            self.results[self.file] = {
+                "imports":self.imports,
+                "functions":self.functions,
+            }
+            self.functions = []

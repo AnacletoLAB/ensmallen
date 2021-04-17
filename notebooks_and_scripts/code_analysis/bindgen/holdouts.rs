@@ -23,6 +23,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn sample_negatives(&self, random_state : EdgeT, negatives_number : EdgeT, seed_graph : Option<&Graph>, only_from_same_component : bool, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.sample_negatives(random_state, negatives_number, seed_graph, only_from_same_component, verbose))
 	}
@@ -55,6 +56,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn connected_holdout(&self, random_state : EdgeT, train_size : f64, edge_types : Option<Vec<Option<String>>>, include_all_edge_types : bool, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.connected_holdout(random_state, train_size, edge_types, include_all_edge_types, verbose))
 	}
@@ -82,6 +84,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn random_holdout(&self, random_state : EdgeT, train_size : f64, include_all_edge_types : bool, edge_types : Option<Vec<Option<String>>>, min_number_overlaps : Option<EdgeT>, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.random_holdout(random_state, train_size, include_all_edge_types, edge_types, min_number_overlaps, verbose))
 	}
@@ -99,6 +102,7 @@ impl Graph {
 	/// 	The random_state to use for the holdout,
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn node_label_holdout(&self, train_size : f64, use_stratification : bool, random_state : EdgeT) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.node_label_holdout(train_size, use_stratification, random_state))
 	}
@@ -124,6 +128,7 @@ impl Graph {
 	/// 	The random_state to use for the holdout,
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn edge_label_holdout(&self, train_size : f64, use_stratification : bool, random_state : EdgeT) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.edge_label_holdout(train_size, use_stratification, random_state))
 	}
@@ -149,6 +154,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn random_subgraph(&self, random_state : usize, nodes_number : NodeT, verbose : bool) -> PyResult<Graph> {
 		pe!(self.graph.random_subgraph(random_state, nodes_number, verbose))
 	}
@@ -173,6 +179,7 @@ impl Graph {
 	/// 	Whether to show the loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn kfold(&self, k : EdgeT, k_index : u64, edge_types : Option<Vec<Option<String>>>, random_state : EdgeT, verbose : bool) -> PyResult<(Graph, Graph)> {
 		pe!(self.graph.kfold(k, k_index, edge_types, random_state, verbose))
 	}

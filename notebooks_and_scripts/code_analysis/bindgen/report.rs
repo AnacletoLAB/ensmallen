@@ -20,6 +20,7 @@ impl Graph {
 	/// * bidirectional_rate: rate of edges that are bidirectional.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn report(&self) -> DefaultHashMap<&str, String> {
 		self.graph.report()
 	}
@@ -35,6 +36,7 @@ impl Graph {
 	/// 	Whether to shor the loading bars.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn overlap_textual_report(&self, other : &Graph, verbose : bool) -> PyResult<String> {
 		pe!(self.graph.overlap_textual_report(other, verbose))
 	}
@@ -48,6 +50,7 @@ impl Graph {
 	/// 	Whether to show loading bar.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn textual_report(&self, verbose : bool) -> PyResult<String> {
 		pe!(self.graph.textual_report(verbose))
 	}

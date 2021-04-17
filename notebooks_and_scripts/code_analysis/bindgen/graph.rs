@@ -10,6 +10,7 @@ impl Graph {
 	/// 	The graph to check against.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn overlaps(&self, other : &Graph) -> PyResult<bool> {
 		pe!(self.graph.overlaps(other))
 	}
@@ -23,6 +24,7 @@ impl Graph {
 	/// 	The graph to check against.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn contains(&self, other : &Graph) -> PyResult<bool> {
 		pe!(self.graph.contains(other))
 	}

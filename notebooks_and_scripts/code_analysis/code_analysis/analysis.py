@@ -26,4 +26,4 @@ def analysis(args):
     p.parse_files(files)
 
     with open(build_path("results/analysis.json"), "w") as f:
-        f.write(json.dumps(p.functions, indent=4))
+        f.write(json.dumps(p.results, indent=4))

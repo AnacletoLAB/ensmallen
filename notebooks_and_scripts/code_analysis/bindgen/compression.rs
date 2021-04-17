@@ -12,6 +12,7 @@ impl Graph {
 	/// 	The destination node ID.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn encode_edge(&self, src : NodeT, dst : NodeT) -> u64 {
 		self.graph.encode_edge(src, dst)
 	}
@@ -25,6 +26,7 @@ impl Graph {
 	/// 	The edge value to decode.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn decode_edge(&self, edge : u64) -> (NodeT, NodeT) {
 		self.graph.decode_edge(edge)
 	}
@@ -33,6 +35,7 @@ impl Graph {
 	/// Return maximum encodable edge number.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_max_encodable_edge_number(&self) -> EdgeT {
 		self.graph.get_max_encodable_edge_number()
 	}

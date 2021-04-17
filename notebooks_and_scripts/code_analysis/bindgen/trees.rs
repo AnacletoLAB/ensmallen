@@ -17,6 +17,7 @@ impl Graph {
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn random_spanning_arborescence_kruskal(&self, random_state : EdgeT, undesired_edge_types : &Option<HashSet<Option<EdgeTypeT>>>, verbose : bool) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
 		self.graph.random_spanning_arborescence_kruskal(random_state, undesired_edge_types, verbose)
 	}
@@ -32,6 +33,7 @@ impl Graph {
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn spanning_arborescence_kruskal(&self, verbose : bool) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
 		self.graph.spanning_arborescence_kruskal(verbose)
 	}
@@ -53,6 +55,7 @@ impl Graph {
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn connected_components(&self, verbose : bool) -> PyResult<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
 		pe!(self.graph.connected_components(verbose))
 	}

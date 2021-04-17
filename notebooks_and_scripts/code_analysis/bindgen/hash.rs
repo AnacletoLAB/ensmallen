@@ -5,6 +5,7 @@ impl Graph {
 	/// 
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn compute_hash(&self) -> u64 {
 		self.graph.compute_hash()
 	}

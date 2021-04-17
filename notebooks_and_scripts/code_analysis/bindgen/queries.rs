@@ -14,6 +14,7 @@ impl Graph {
 	/// 	The edge whose edge weight is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_weight_from_edge_id(&self, edge_id : EdgeT) -> Option<WeightT> {
 		self.graph.get_unchecked_edge_weight_from_edge_id(edge_id)
 	}
@@ -27,6 +28,7 @@ impl Graph {
 	/// 	The node name whose node ID is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_id_from_node_name(&self, node_name : &str) -> NodeT {
 		self.graph.get_unchecked_node_id_from_node_name(node_name)
 	}
@@ -40,6 +42,7 @@ impl Graph {
 	/// 	The edge type name whose edge type ID is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_type_id_from_edge_type_name(&self, edge_type_name : &str) -> Option<EdgeTypeT> {
 		self.graph.get_unchecked_edge_type_id_from_edge_type_name(edge_type_name)
 	}
@@ -54,6 +57,7 @@ impl Graph {
 	/// 	The edge type naIDme whose edge type name is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_type_name_from_edge_type_id(&self, edge_type_id : Option<EdgeTypeT>) -> Option<String> {
 		self.graph.get_unchecked_edge_type_name_from_edge_type_id(edge_type_id)
 	}
@@ -67,6 +71,7 @@ impl Graph {
 	/// 	The edge type to retrieve count of.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_count_from_edge_type_id(&self, edge_type : Option<EdgeTypeT>) -> EdgeT {
 		self.graph.get_unchecked_edge_count_from_edge_type_id(edge_type)
 	}
@@ -87,6 +92,7 @@ impl Graph {
 	/// 	Edge Type of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_id_from_node_ids_and_edge_type_id(&self, src : NodeT, dst : NodeT, edge_type : Option<EdgeTypeT>) -> EdgeT {
 		self.graph.get_unchecked_edge_id_from_node_ids_and_edge_type_id(src, dst, edge_type)
 	}
@@ -104,6 +110,7 @@ impl Graph {
 	/// 	Destination node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_minmax_edge_ids_from_node_ids(&self, src : NodeT, dst : NodeT) -> (EdgeT, EdgeT) {
 		self.graph.get_unchecked_minmax_edge_ids_from_node_ids(src, dst)
 	}
@@ -120,6 +127,7 @@ impl Graph {
 	/// 	The edge ID whose source and destination node IDs are to e retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_ids_from_edge_id(&self, edge_id : EdgeT) -> (NodeT, NodeT) {
 		self.graph.get_unchecked_node_ids_from_edge_id(edge_id)
 	}
@@ -133,6 +141,7 @@ impl Graph {
 	/// 	The edge ID whose source and destination node IDs are to e retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_ids_from_edge_id(&self, edge_id : EdgeT) -> PyResult<(NodeT, NodeT)> {
 		pe!(self.graph.get_node_ids_from_edge_id(edge_id))
 	}
@@ -151,6 +160,7 @@ impl Graph {
 	/// 	The destination node ID.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_id_from_node_ids(&self, src : NodeT, dst : NodeT) -> EdgeT {
 		self.graph.get_unchecked_edge_id_from_node_ids(src, dst)
 	}
@@ -166,6 +176,7 @@ impl Graph {
 	/// 	The destination node ID.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_id_from_node_ids(&self, src : NodeT, dst : NodeT) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_id_from_node_ids(src, dst))
 	}
@@ -179,6 +190,7 @@ impl Graph {
 	/// 	The source node ID.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_unique_source_node_id(&self, source_id : NodeT) -> NodeT {
 		self.graph.get_unchecked_unique_source_node_id(source_id)
 	}
@@ -194,6 +206,7 @@ impl Graph {
 	/// 	The edge ID whose source, destination and edge type are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_ids_and_edge_type_id_from_edge_id(&self, edge_id : EdgeT) -> (NodeT, NodeT, Option<EdgeTypeT>) {
 		self.graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id)
 	}
@@ -207,6 +220,7 @@ impl Graph {
 	/// 	The edge ID whose source, destination and edge type are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_ids_and_edge_type_id_from_edge_id(&self, edge_id : EdgeT) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>)> {
 		pe!(self.graph.get_node_ids_and_edge_type_id_from_edge_id(edge_id))
 	}
@@ -222,6 +236,7 @@ impl Graph {
 	/// 	The edge ID whose source, destination, edge type and weight are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(&self, edge_id : EdgeT) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
 		self.graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id)
 	}
@@ -235,6 +250,7 @@ impl Graph {
 	/// 	The edge ID whose source, destination, edge type and weight are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(&self, edge_id : EdgeT) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> {
 		pe!(self.graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))
 	}
@@ -252,6 +268,7 @@ impl Graph {
 	/// TODO: This can be refactored to run faster!
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_top_k_central_node_ids(&self, k : NodeT) -> Vec<NodeT> {
 		self.graph.get_top_k_central_node_ids(k)
 	}
@@ -268,6 +285,7 @@ impl Graph {
 	/// 	Integer ID of the node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_degree_from_node_id(&self, node_id : NodeT) -> NodeT {
 		self.graph.get_unchecked_node_degree_from_node_id(node_id)
 	}
@@ -281,6 +299,7 @@ impl Graph {
 	/// 	Integer ID of the node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_degree_from_node_id(&self, node_id : NodeT) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_degree_from_node_id(node_id))
 	}
@@ -294,6 +313,7 @@ impl Graph {
 	/// 	Number of central nodes to extract.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_top_k_central_node_names(&self, k : NodeT) -> Vec<String> {
 		self.graph.get_top_k_central_node_names(k)
 	}
@@ -312,6 +332,7 @@ impl Graph {
 	/// 	node whose node type is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_type_id_from_node_id(&self, node_id : NodeT) -> Option<Vec<NodeTypeT>> {
 		self.graph.get_unchecked_node_type_id_from_node_id(node_id)
 	}
@@ -325,6 +346,7 @@ impl Graph {
 	/// 	node whose node type is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_id_from_node_id(&self, node_id : NodeT) -> PyResult<Option<Vec<NodeTypeT>>> {
 		pe!(self.graph.get_node_type_id_from_node_id(node_id))
 	}
@@ -343,6 +365,7 @@ impl Graph {
 	/// 	edge whose edge type is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_edge_type_id_from_edge_id(&self, edge_id : EdgeT) -> Option<EdgeTypeT> {
 		self.graph.get_unchecked_edge_type_id_from_edge_id(edge_id)
 	}
@@ -356,6 +379,7 @@ impl Graph {
 	/// 	edge whose edge type is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_id_from_edge_id(&self, edge_id : EdgeT) -> PyResult<Option<EdgeTypeT>> {
 		pe!(self.graph.get_edge_type_id_from_edge_id(edge_id))
 	}
@@ -369,6 +393,7 @@ impl Graph {
 	/// 	The node ID whose node types are to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_name_from_node_id(&self, node_id : NodeT) -> PyResult<Option<Vec<String>>> {
 		pe!(self.graph.get_node_type_name_from_node_id(node_id))
 	}
@@ -382,6 +407,7 @@ impl Graph {
 	/// 	The edge ID whose edge type is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_name_from_edge_id(&self, edge_id : EdgeT) -> PyResult<Option<String>> {
 		pe!(self.graph.get_edge_type_name_from_edge_id(edge_id))
 	}
@@ -395,6 +421,7 @@ impl Graph {
 	/// 	Id of the edge type.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_name_from_edge_type_id(&self, edge_type_id : EdgeTypeT) -> PyResult<String> {
 		pe!(self.graph.get_edge_type_name_from_edge_type_id(edge_type_id))
 	}
@@ -408,6 +435,7 @@ impl Graph {
 	/// 	The edge ID whose weight is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weight_from_edge_id(&self, edge_id : EdgeT) -> PyResult<WeightT> {
 		pe!(self.graph.get_edge_weight_from_edge_id(edge_id))
 	}
@@ -423,6 +451,7 @@ impl Graph {
 	/// 	The node ID of the destination node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weight_from_node_ids(&self, src : NodeT, dst : NodeT) -> PyResult<WeightT> {
 		pe!(self.graph.get_edge_weight_from_node_ids(src, dst))
 	}
@@ -440,6 +469,7 @@ impl Graph {
 	/// 	The edge type ID of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weight_from_node_ids_and_edge_type_id(&self, src : NodeT, dst : NodeT, edge_type : Option<EdgeTypeT>) -> PyResult<WeightT> {
 		pe!(self.graph.get_edge_weight_from_node_ids_and_edge_type_id(src, dst, edge_type))
 	}
@@ -457,6 +487,7 @@ impl Graph {
 	/// 	The edge type name of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weight_from_node_names_and_edge_type_name(&self, src : &str, dst : &str, edge_type : Option<&String>) -> PyResult<WeightT> {
 		pe!(self.graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))
 	}
@@ -472,6 +503,7 @@ impl Graph {
 	/// 	The node name of the destination node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_weight_from_node_names(&self, src_name : &str, dst_name : &str) -> PyResult<WeightT> {
 		pe!(self.graph.get_edge_weight_from_node_names(src_name, dst_name))
 	}
@@ -485,6 +517,7 @@ impl Graph {
 	/// 	The node ID whose name is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_node_name_from_node_id(&self, node_id : NodeT) -> String {
 		self.graph.get_unchecked_node_name_from_node_id(node_id)
 	}
@@ -498,6 +531,7 @@ impl Graph {
 	/// 	The node ID whose name is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_name_from_node_id(&self, node_id : NodeT) -> PyResult<String> {
 		pe!(self.graph.get_node_name_from_node_id(node_id))
 	}
@@ -511,6 +545,7 @@ impl Graph {
 	/// 	The node name whose node ID is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_id_from_node_name(&self, node_name : &str) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_id_from_node_name(node_name))
 	}
@@ -524,6 +559,7 @@ impl Graph {
 	/// 	Name of the node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_id_from_node_name(&self, node_name : &str) -> PyResult<Option<Vec<NodeTypeT>>> {
 		pe!(self.graph.get_node_type_id_from_node_name(node_name))
 	}
@@ -537,6 +573,7 @@ impl Graph {
 	/// 	Name of the node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_name_from_node_name(&self, node_name : &str) -> PyResult<Option<Vec<String>>> {
 		pe!(self.graph.get_node_type_name_from_node_name(node_name))
 	}
@@ -553,6 +590,7 @@ impl Graph {
 	/// 	The edge type ID to count the edges of.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_count_from_edge_type_id(&self, edge_type_id : Option<EdgeTypeT>) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_count_from_edge_type_id(edge_type_id))
 	}
@@ -568,6 +606,7 @@ impl Graph {
 	/// 	The edge type name whose ID is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_id_from_edge_type_name(&self, edge_type_name : Option<&str>) -> PyResult<Option<EdgeTypeT>> {
 		pe!(self.graph.get_edge_type_id_from_edge_type_name(edge_type_name))
 	}
@@ -584,6 +623,7 @@ impl Graph {
 	/// 	The edge type name to count the edges of.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_count_from_edge_type_name(&self, edge_type_name : Option<&str>) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_count_from_edge_type_name(edge_type_name))
 	}
@@ -599,6 +639,7 @@ impl Graph {
 	/// 	The node type name whose ID is to be returned.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_id_from_node_type_name(&self, node_type_name : &str) -> PyResult<NodeTypeT> {
 		pe!(self.graph.get_node_type_id_from_node_type_name(node_type_name))
 	}
@@ -615,6 +656,7 @@ impl Graph {
 	/// 	The node type ID to count the nodes of.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_count_from_node_type_id(&self, node_type_id : Option<NodeTypeT>) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_count_from_node_type_id(node_type_id))
 	}
@@ -631,6 +673,7 @@ impl Graph {
 	/// 	The node type name to count the nodes of.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_count_from_node_type_name(&self, node_type_name : Option<&str>) -> PyResult<NodeT> {
 		pe!(self.graph.get_node_count_from_node_type_name(node_type_name))
 	}
@@ -644,6 +687,7 @@ impl Graph {
 	/// 	The edge ID whose destination is to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_destination_node_id_from_edge_id(&self, edge_id : EdgeT) -> PyResult<NodeT> {
 		pe!(self.graph.get_destination_node_id_from_edge_id(edge_id))
 	}
@@ -657,6 +701,7 @@ impl Graph {
 	/// 	Node ID whose neighbours are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_neighbour_node_ids_from_node_id(&self, node_id : NodeT) -> PyResult<Vec<NodeT>> {
 		pe!(self.graph.get_neighbour_node_ids_from_node_id(node_id))
 	}
@@ -670,6 +715,7 @@ impl Graph {
 	/// 	Node ID whose neighbours are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_neighbour_node_ids_from_node_name(&self, node_name : &str) -> PyResult<Vec<NodeT>> {
 		pe!(self.graph.get_neighbour_node_ids_from_node_name(node_name))
 	}
@@ -683,6 +729,7 @@ impl Graph {
 	/// 	Node name whose neighbours are to be retrieved.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_neighbour_node_names_from_node_name(&self, node_name : &str) -> PyResult<Vec<String>> {
 		pe!(self.graph.get_neighbour_node_names_from_node_name(node_name))
 	}
@@ -700,6 +747,7 @@ impl Graph {
 	/// 	Destination node.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_minmax_edge_ids_from_node_ids(&self, src : NodeT, dst : NodeT) -> PyResult<(EdgeT, EdgeT)> {
 		pe!(self.graph.get_minmax_edge_ids_from_node_ids(src, dst))
 	}
@@ -720,6 +768,7 @@ impl Graph {
 	/// 	Edge Type of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_id_from_node_ids_and_edge_type_id(&self, src : NodeT, dst : NodeT, edge_type : Option<EdgeTypeT>) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_id_from_node_ids_and_edge_type_id(src, dst, edge_type))
 	}
@@ -738,6 +787,7 @@ impl Graph {
 	/// 	Destination node name of the edge.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_id_from_node_names(&self, src_name : &str, dst_name : &str) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_id_from_node_names(src_name, dst_name))
 	}
@@ -758,6 +808,7 @@ impl Graph {
 	/// 	Edge type name.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_id_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<&String>) -> PyResult<EdgeT> {
 		pe!(self.graph.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name))
 	}
@@ -771,6 +822,7 @@ impl Graph {
 	/// 	Vector of edge types to be converted.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_edge_type_ids_from_edge_type_names(&self, edge_type_names : Vec<Option<String>>) -> PyResult<Vec<Option<EdgeTypeT>>> {
 		pe!(self.graph.get_edge_type_ids_from_edge_type_names(edge_type_names))
 	}
@@ -784,6 +836,7 @@ impl Graph {
 	/// 	Vector of node types to be converted.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_ids_from_node_type_names(&self, node_type_names : Vec<Option<String>>) -> PyResult<Vec<Option<NodeTypeT>>> {
 		pe!(self.graph.get_node_type_ids_from_node_type_names(node_type_names))
 	}
@@ -800,6 +853,7 @@ impl Graph {
 	/// 	Node for which we need to compute the cumulative_node_degrees range.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_unchecked_minmax_edge_ids_from_source_node_id(&self, src : NodeT) -> (EdgeT, EdgeT) {
 		self.graph.get_unchecked_minmax_edge_ids_from_source_node_id(src)
 	}
@@ -813,6 +867,7 @@ impl Graph {
 	/// 	Node for which we need to compute the cumulative_node_degrees range.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_minmax_edge_ids_from_source_node_id(&self, src : NodeT) -> PyResult<(EdgeT, EdgeT)> {
 		pe!(self.graph.get_minmax_edge_ids_from_source_node_id(src))
 	}
@@ -829,6 +884,7 @@ impl Graph {
 	/// 	Id of the node type.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_name_from_node_type_id(&self, node_type_id : NodeTypeT) -> PyResult<String> {
 		pe!(self.graph.get_node_type_name_from_node_type_id(node_type_id))
 	}
@@ -842,6 +898,7 @@ impl Graph {
 	/// 	Id of the node type.
 	///
 	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
 	fn get_node_type_names_from_node_type_ids(&self, node_type_ids : Vec<NodeTypeT>) -> PyResult<Vec<String>> {
 		pe!(self.graph.get_node_type_names_from_node_type_ids(node_type_ids))
 	}
