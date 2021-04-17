@@ -12,7 +12,7 @@ lazy_static! {
     }; 
 }
 
-pub(crate) fn abrt_handler(sig_num: SigNum) {
+pub fn abrt_handler(sig_num: SigNum) {
     let data_map = SIG_HANDLER_DATA.lock().expect("Cannot get the lock for the sig handlers data");
 
     match data_map.get(&u64::from(thread::current().id().as_u64())) {
@@ -24,7 +24,7 @@ pub(crate) fn abrt_handler(sig_num: SigNum) {
 }
 
 
-pub(crate) fn register_handler(sig_num: SigNum, handler: fn(SigNum), data: FromVecHarnessParams) {
+pub fn register_handler(sig_num: SigNum, handler: fn(SigNum), data: FromVecHarnessParams) {
     let mut data_map = SIG_HANDLER_DATA.lock().expect("Cannot get the lock for the sig handlers data");    
     data_map.insert(u64::from(thread::current().id().as_u64()), data);
 

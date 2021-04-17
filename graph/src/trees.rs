@@ -400,7 +400,6 @@ impl Graph {
                 .progress_with(pb),
         )
     }
-
     /// Returns set of edges composing a spanning tree.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
@@ -414,11 +413,7 @@ impl Graph {
         &self,
         verbose: bool,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
-        if self.directed {
-            return Err(
-                "The spanning arborescence from Bader et al. algorithm only works for undirected graphs!".to_owned(),
-            );
-        }
+        self.must_be_undirected()?;
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let (cpu_number, pool) = get_thread_pool()?;
@@ -451,38 +446,30 @@ impl Graph {
                 );
                 let parents = thread_safe_parents.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| {
-                    unsafe {
-                        // If the node has already been explored we skip ahead.
-                        if (*parents)[src] != NOT_PRESENT {
-                            return;
-                        }
+                    // If the node has already been explored we skip ahead.
+                    if unsafe { (*parents)[src] != NOT_PRESENT} {
+                        return;
                     }
-                    unsafe {
-                        // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons()
-                            && self.is_unchecked_singleton_from_node_id(src as NodeT)
-                        {
-                            // We set singletons as self-loops for now.
-                            (*parents)[src] = src as NodeT;
-                            return;
-                        }
+
+                    // find the first not explored node (this is guardanteed to be in a new component)
+                    if self.is_unchecked_singleton_from_node_id(src as NodeT) {
+                        // We set singletons as self-loops for now.
+                        unsafe{ (*parents)[src] = src as NodeT };
+                        return;
                     }
                     loop {
-                        unsafe {
-                            if (*parents)[src] != NOT_PRESENT {
-                                break;
-                            }
+                        if unsafe { (*parents)[src] != NOT_PRESENT} {
+                            break;
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                            unsafe {
-                                if (*parents)[src] != NOT_PRESENT {
-                                    break;
-                                }
+                            if unsafe { (*parents)[src] != NOT_PRESENT} {
+                                break;
                             }
                             unsafe {
                                 (*parents)[src] = src as NodeT;
                             }
-                            shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
+                                .push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
@@ -492,11 +479,11 @@ impl Graph {
             });
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
-                    let thread_id = rayon::current_thread_index().unwrap();
+                    let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
-                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())
+                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().expect("The lock is poisoned from the panic of another thread"))
                             {
                                 if let Some(src) = stack.pop() {
                                     break 'inner src;
@@ -517,7 +504,7 @@ impl Graph {
                                 active_nodes_number.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
-                                    .unwrap()
+                                    .expect("The lock is poisoned from the panic of another thread")
                                     .push(dst);
                             }
                         });
@@ -605,11 +592,7 @@ impl Graph {
         &self,
         verbose: bool,
     ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
-        if self.directed {
-            return Err(
-                "The connected components algorithm only works for undirected graphs!".to_owned(),
-            );
-        }
+        self.must_be_undirected()?;
         if !self.has_nodes() {
             return Ok((Vec::new(), 0, 0, 0));
         }
@@ -725,7 +708,7 @@ impl Graph {
                                     **components_number += 1;
                                 }
                                 active_nodes_number.fetch_add(1, Ordering::Relaxed);
-                                shared_stacks[0].lock().unwrap().push(src);
+                                shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread").push(src);
                                 break;
                             }
                             // Otherwise, Loop until the parallel threads are finished.
@@ -740,12 +723,12 @@ impl Graph {
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
                     // get the id, we use this as an idex for the stacks vector.
-                    let thread_id = rayon::current_thread_index().unwrap();
+                    let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
 
                     let src = 'inner: loop {
                         {
                             for mut stack in (thread_id..(shared_stacks.len() + thread_id))
-                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())
+                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().expect("The lock is poisoned from the panic of another thread"))
                             {
                                 if let Some(src) = stack.pop() {
                                     break 'inner src;
@@ -768,7 +751,7 @@ impl Graph {
                                 current_component_size.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
-                                    .unwrap()
+                                    .expect("The lock is poisoned from the panic of another thread")
                                     .push(dst);
                             }
                         });

@@ -146,6 +146,24 @@ impl Graph {
         Ok(())
     }
 
+    /// Raises an error if the graph does not have edge types.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();
+    /// # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// assert!(undirecte_graph.must_be_undirected().is_ok());
+    /// assert!(directed_graph.must_be_undirected().is_err());
+    /// ```
+    pub fn must_be_undirected(&self) -> Result<(), String> {
+        if self.is_directed() {
+            return Err("The current graph instance is not undirected.".to_string());
+        }
+        Ok(())
+    }
+
     /// Raises an error if the graph does not have weights.
     ///
     /// # Example

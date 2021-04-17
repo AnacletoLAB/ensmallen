@@ -13,10 +13,10 @@ mod from_vec;
 pub use from_vec::*;
 
 mod handle_panics;
-use handle_panics::*;
+pub use handle_panics::*;
 
 mod signal_handler;
-use signal_handler::*;
+pub use signal_handler::*;
 
 mod meta_test;
 pub use meta_test::*;
