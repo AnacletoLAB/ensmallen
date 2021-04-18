@@ -23,13 +23,12 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
-            let parsed_value = match value.parse::<usize>() {
-                Ok(val) => Ok(val),
-                Err(_) => Err(format!(
+            let parsed_value = value.parse::<usize>().map_err(|_| {
+                format!(
                     "The given ID `{}` is not a numeric positive integer.",
                     value
-                )),
-            }?;
+                )
+            })?;
 
             let string_parsed_value = parsed_value.to_string();
 
