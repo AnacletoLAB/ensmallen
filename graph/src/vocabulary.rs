@@ -4,6 +4,9 @@ use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
+    /// TODO: refactor the following to work with shared references
+    /// in order to avoid doubling the amount of mempry required to store
+    /// the string names into memory.
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
     pub numeric_ids: bool,
