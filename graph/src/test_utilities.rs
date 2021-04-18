@@ -975,7 +975,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
                 .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
             graph
                 .get_edge_type_names()
-                .map(|etn| etn.into_iter().map(Option::Some).collect()),
+                .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),
             Some(1000.0),
             Some(10.0),
             verbose,
@@ -989,7 +989,7 @@ pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String>
             .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
         graph
             .get_edge_type_names()
-            .map(|etn| etn.into_iter().map(Option::Some).collect()),
+            .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),
         graph.get_min_edge_weight().ok(),
         graph.get_max_edge_weight().ok(),
         verbose,
@@ -1203,7 +1203,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(
-        clone.get_edge_types_number(),
+        clone.get_edge_types_ids_number(),
         1,
         "Number of edge types of the graph is not 1."
     );

@@ -8,13 +8,13 @@ from .parsers import DocParser
 def doc_analysis(args):
 
     with open(build_path("results/analysis.json"), "r") as f:
-        functions = json.load(f)
+        analysis = json.load(f)
 
     result = {}
-
-    for function in functions:
-        p = DocParser()
-        result[function.get("name", "")] = p.start(function, "\n".join(function["doc"]))
+    for values in analysis.values():
+        for function in values["functions"]:
+            p = DocParser()
+            result[function.get("name", "")] = p.start(function, "\n".join(function["doc"]))
 
     print(json.dumps(result, indent=4))
 

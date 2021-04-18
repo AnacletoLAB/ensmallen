@@ -1,6 +1,8 @@
 use super::*;
-impl Graph {
+use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
 
+#[pymethods]
+impl EnsmallenGraph {
 	#[text_signature = "($self, src, dst)"]
 	/// Returns whether edge passing between given node ids exists.
 	/// 
@@ -65,8 +67,8 @@ impl Graph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn has_edge_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<&String>) -> bool {
-		self.graph.has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
+	fn has_edge_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<String>) -> bool {
+		self.graph.has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name.map(|x| &x))
 	}
 	
 	#[text_signature = "($self, node_name)"]

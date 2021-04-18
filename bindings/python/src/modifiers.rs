@@ -9,10 +9,10 @@ impl EnsmallenGraph {
     /// ---------
     /// * `edge_type`: str,
     ///     The edge type to assing to all the edges.
-    pub fn set_all_edge_types(&self, edge_type: String) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.clone().set_all_edge_types(edge_type),
-        }
+    pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.clone().set_all_edge_types(edge_type))?,
+        })
     }
 
     #[text_signature = "($self, node_type)"]
@@ -22,10 +22,10 @@ impl EnsmallenGraph {
     /// ---------
     /// * `node_type`: str,
     ///     The node type to assing to all the nodes.
-    pub fn set_all_node_types(&self, node_type: String) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.clone().set_all_node_types(node_type),
-        }
+    pub fn set_all_node_types(&self, node_type: String) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.clone().set_all_node_types(node_type))?,
+        })
     }
 
     #[args(py_kwargs = "**")]

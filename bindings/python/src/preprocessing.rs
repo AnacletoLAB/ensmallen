@@ -323,7 +323,7 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// Tuple with input nodes and output node types.
     ///
-    fn get_node_label_prediction_tuple_by_node_ids(
+    fn get_node_label_prediction_tuple_from_node_ids(
         &self,
         node_ids: Vec<NodeT>,
         py_kwargs: Option<&PyDict>,
@@ -359,7 +359,7 @@ impl EnsmallenGraph {
         // just above that the list cannot be empty.
         let mut max_degree = node_ids
             .iter()
-            .map(|node_id| self.graph.get_node_degree_by_node_id(*node_id).unwrap())
+            .map(|node_id| self.graph.get_node_degree_from_node_id(*node_id).unwrap())
             .max()
             .unwrap();
 
@@ -385,7 +385,7 @@ impl EnsmallenGraph {
         }
 
         // We retrieve the batch iterator.
-        let iter = pe!(self.graph.get_node_label_prediction_tuple_by_node_ids(
+        let iter = pe!(self.graph.get_node_label_prediction_tuple_from_node_ids(
             node_ids,
             extract_value!(kwargs, "random_state", u64).unwrap_or(42),
             include_central_node,

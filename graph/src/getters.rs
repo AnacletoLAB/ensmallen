@@ -353,16 +353,20 @@ impl Graph {
     }
 
     /// Return the edge types of the edges.
-    pub fn get_edge_types(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
-        self.must_have_edge_types()?;
-        Ok(self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
+    pub fn get_edge_types_ids(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
+        self.must_have_edge_types().map(|_| 
+            self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap()
+        )
     }
 
     /// Return the edge types names.
-    pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
-        self.edge_types
-            .as_ref()
-            .map(|ets| ets.vocabulary.reverse_map.clone())
+    pub fn get_edge_type_names(&self) -> Result<Vec<String>, String> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .map(|ets| ets.vocabulary.reverse_map.clone())
+                .unwrap()
+        })
     }
 
     /// Return the weights of the graph edges.
@@ -445,12 +449,12 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_names(&self) -> Result<Vec<String>, String> {
-        self.must_have_node_types()?;
-        Ok(self
-            .node_types
-            .as_ref()
-            .map(|nts| nts.vocabulary.reverse_map.clone())
-            .unwrap())
+        self.must_have_node_types().map(|_| {
+            self.node_types
+                .as_ref()
+                .map(|nts| nts.vocabulary.reverse_map.clone())
+                .unwrap()
+        })
     }
 
     /// Return number of the unique edges in the graph.

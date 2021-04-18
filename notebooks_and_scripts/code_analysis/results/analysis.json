@@ -1011,7 +1011,7 @@
                     " A graph is always remappable to itself:",
                     " ```rust",
                     " # use graph::walks_parameters::WalksParameters;",
-                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " # let mut parameters = WalksParameters::new(32).unwrap();",
                     " assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&ppi).is_ok());",
                     " ```",
@@ -1019,7 +1019,7 @@
                     " ```rust",
                     " # use graph::walks_parameters::WalksParameters;",
                     " # let cora = graph::test_utilities::load_cora().unwrap();",
-                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " # let mut parameters = WalksParameters::new(32).unwrap();",
                     " assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&cora).is_err());",
                     " ```",
@@ -2136,7 +2136,7 @@
                     " # use rayon::iter::ParallelIterator;",
                     " # use graph::NodeT;",
                     " # use rayon::iter::IndexedParallelIterator;",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false);",
                     " let node_ids = (0..10).collect::<Vec<NodeT>>();",
                     " let include_central_nodes = true;",
                     " let offset = 0;",
@@ -2458,7 +2458,7 @@
                     ]
                 ],
                 "return_type": "Result<WeightT, String>",
-                "body": "match weight.parse::<WeightT>() {\n        Ok(val) => Ok(val),\n        Err(_) => Err(format!(\"Cannot parse weight {} as a float.\", weight)),\n    }"
+                "body": "weight\n        .parse::<WeightT>()\n        .map_err(|_| format!(\"Cannot parse weight {} as a float.\", weight))"
             }
         ]
     },
@@ -2510,6 +2510,26 @@
                     " Structure that saves the common parameters for reading csv files.",
                     " # Builder methods"
                 ],
+                "doc": [],
+                "attrs": [],
+                "modifiers": "",
+                "name": "get_buffer_reader",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<BufReader<File>, String>",
+                "body": "let file = File::open(&self.path);\n        file.map_or_else(\n            |_| Err(format!(\"Cannot open the file at {}\", self.path)),\n            |file| Ok(BufReader::new(file)),\n        )"
+            },
+            {
+                "file": "csv_file_reader.rs",
+                "struct": "CSVFileReader",
+                "impl_doc": [
+                    " Structure that saves the common parameters for reading csv files.",
+                    " # Builder methods"
+                ],
                 "doc": [
                     " Read the whole file and return how many rows it has."
                 ],
@@ -2522,8 +2542,8 @@
                         "&self"
                     ]
                 ],
-                "return_type": "usize",
-                "body": "std::cmp::min(\n            BufReader::new(File::open(&self.path).unwrap())\n                .lines()\n                .count(),\n            self.max_rows_number.unwrap_or(u64::MAX) as usize,\n        )"
+                "return_type": "Result<usize, String>",
+                "body": "Ok(std::cmp::min(\n            self.get_buffer_reader()?.lines().count(),\n            self.max_rows_number.unwrap_or(u64::MAX) as usize,\n        ))"
             },
             {
                 "file": "csv_file_reader.rs",
@@ -2569,7 +2589,7 @@
                     ]
                 ],
                 "return_type": "Result<impl Iterator<Item = Result<String, String>> + '_, String>",
-                "body": "let rows_to_skip = match skip_header {\n            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {\n                Some(v) => Ok(v),\n                None => Err(concat!(\n                    \"This overflow was caused because rows to skip = 2**64 - 1\",\n                    \"and header is setted to true which causes to skip one extra line.\",\n                    \"Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad.\"\n                )),\n            }?,\n            false => self.rows_to_skip as u64,\n        } as usize;\n        Ok(BufReader::new(File::open(&self.path).unwrap())\n            .lines()\n            .map(|line| match line {\n                Ok(l)=>Ok(l),\n                Err(_)=>Err(\"There might have been an I/O error or the line could contains bytes that are not valid UTF-8\".to_string()),\n            })\n            .filter_ok(move |line| !line.is_empty() && match &self.comment_symbol {\n                Some(cs) => !line.starts_with(cs),\n                _ => true,\n            })\n            .skip(rows_to_skip))"
+                "body": "let rows_to_skip = match skip_header {\n            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {\n                Some(v) => Ok(v),\n                None => Err(concat!(\n                    \"This overflow was caused because rows to skip = 2**64 - 1\",\n                    \"and header is set to true which causes to skip one extra line.\",\n                    \"Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad.\"\n                )),\n            }?,\n            false => self.rows_to_skip as u64,\n        } as usize;\n        Ok(self.get_buffer_reader()?\n            .lines()\n            .map(|line| match line {\n                Ok(l)=>Ok(l),\n                Err(_)=>Err(\"There might have been an I/O error or the line could contains bytes that are not valid UTF-8\".to_string()),\n            })\n            .filter_ok(move |line| !line.is_empty() && match &self.comment_symbol {\n                Some(cs) => !line.starts_with(cs),\n                _ => true,\n            })\n            .skip(rows_to_skip))"
             },
             {
                 "file": "csv_file_reader.rs",
@@ -2613,7 +2633,7 @@
                     ]
                 ],
                 "return_type": "Result<impl Iterator<Item = Result<Vec<Option<String>>, String>> + '_, String>",
-                "body": "let pb = get_loading_bar(\n            self.verbose,\n            format!(\"Reading {}'s {}\", self.graph_name, self.list_name).as_ref(),\n            if self.verbose { self.count_rows() } else { 0 },\n        );\n\n        let number_of_elements_per_line = self.get_elements_per_line()?;\n        Ok(self\n            .get_lines_iterator(true)?\n            .progress_with(pb)\n            // skip empty lines\n            .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)\n            // Handling NaN values and padding them to the number of rows\n            .map_ok(move |line| {\n                let mut elements: Vec<Option<String>> = line\n                    .split(&self.separator)\n                    .map(|element| match element.is_empty() {\n                        true => None,\n                        false => Some(element.to_string()),\n                    })\n                    .collect();\n                elements.resize(number_of_elements_per_line, None);\n                elements\n            }))"
+                "body": "let pb = get_loading_bar(\n            self.verbose,\n            format!(\"Reading {}'s {}\", self.graph_name, self.list_name).as_ref(),\n            if self.verbose { self.count_rows()? } else { 0 },\n        );\n\n        let number_of_elements_per_line = self.get_elements_per_line()?;\n        Ok(self\n            .get_lines_iterator(true)?\n            .progress_with(pb)\n            // skip empty lines\n            .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)\n            // Handling NaN values and padding them to the number of rows\n            .map_ok(move |line| {\n                let mut elements: Vec<Option<String>> = line\n                    .split(&self.separator)\n                    .map(|element| match element.is_empty() {\n                        true => None,\n                        false => Some(element.to_string()),\n                    })\n                    .collect();\n                elements.resize(number_of_elements_per_line, None);\n                elements\n            }))"
             },
             {
                 "file": "csv_file_reader.rs",
@@ -2666,13 +2686,13 @@
                     " # Example",
                     " A graph is always remappable to itself:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.are_nodes_remappable(&graph));",
                     " ```",
                     " Two different graphs, like Cora and STRING, are not remappable:",
                     " ```rust",
                     " # let cora = graph::test_utilities::load_cora().unwrap();",
-                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(!cora.are_nodes_remappable(&ppi));",
                     " ```",
                     ""
@@ -2707,7 +2727,7 @@
                     " # Example",
                     " A graph is always remappable to itself:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert_eq!(graph, graph.remap(&graph, false).unwrap());",
                     " ```",
                     ""
@@ -3826,6 +3846,42 @@
                 "doc": [
                     " Returns boolean representing if given node is a singleton.",
                     "",
+                    " Nota that this method will raise a panic if caled with unproper",
+                    " parametrization.",
+                    "",
+                    " # Arguments",
+                    " * `node_name`: &str - The node name to be checked for."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "is_unchecked_singleton_from_node_name",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "node_name",
+                        "&str"
+                    ]
+                ],
+                "return_type": "bool",
+                "body": "self.is_unchecked_singleton_from_node_id(\n            self.get_unchecked_node_id_from_node_name(node_name),\n        )"
+            },
+            {
+                "file": "queries_boolean.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Boolean Queries",
+                    " The naming convention for unchecked methods follows:",
+                    " * `is_(.+?)_from_(.+)`",
+                    " * `has_(.+?)_from_(.+)`",
+                    " * `is_unchecked_(.+?)_from_(.+)`",
+                    " * `has_unchecked_(.+?)_from_(.+)`"
+                ],
+                "doc": [
+                    " Returns boolean representing if given node is a singleton.",
+                    "",
                     " # Arguments",
                     " * `node_name`: &str - The node name to be checked for."
                 ],
@@ -3866,7 +3922,7 @@
                     " # Example",
                     " To check if a node appears in the graph you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let node_name = \"ENSP00000000233\";",
                     " let unexistent_node_name = \"I_do_not_exist!\";",
                     " assert!(graph.has_node_from_node_name(node_name));",
@@ -3911,7 +3967,7 @@
                     " # Example",
                     " To check if an edge appears in the graph you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph.has_edge_from_node_ids(0, 1));",
                     " assert!(!graph.has_edge_from_node_ids(0, 4565));",
                     " ```"
@@ -3959,7 +4015,7 @@
                     " # Example",
                     " To check if an edge with given type appears in the graph you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(0)));",
                     " assert!(!graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(1)));",
                     " ```"
@@ -4123,7 +4179,7 @@
                     " # Example",
                     " To check if an edge in the graph you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph.has_edge_from_node_names(\"ENSP00000000233\", \"ENSP00000432568\"));",
                     " assert!(!graph.has_edge_from_node_names(\"ENSP00000000233\", \"NonExistent\"));",
                     " ```"
@@ -4171,7 +4227,7 @@
                     " # Example",
                     " To check if an edge with type in the graph you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let edge_type = \"red\".to_string();",
                     " let unexistent_edge_type = \"NonExistent\".to_string();",
                     " assert!(graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", Some(&edge_type)));",
@@ -4340,8 +4396,8 @@
                         "bool"
                     ]
                 ],
-                "return_type": "Result<Graph, String>",
-                "body": "let graph_name = \"STRING PPI\".to_owned();\n    let nodes_reader = if load_nodes {\n        Some(\n            NodeFileReader::new(\"tests/data/ppi/nodes.tsv\".to_string())?\n                .set_verbose(Some(false))\n                .set_node_types_column_number(Some(1))\n                .set_nodes_column_number(Some(0))\n                .set_node_types_column(Some(\"category\".to_string()))?\n                .set_default_node_type(Some(\"default\".to_string()))\n                .set_nodes_column(Some(\"id\".to_string()))?\n                .set_ignore_duplicates(Some(true))\n                .set_separator(Some(\"\\t\"))\n                .unwrap()\n                .set_header(Some(true))\n                .set_max_rows_number(Some(100000))\n                .set_rows_to_skip(Some(0))\n                .clone(),\n        )\n    } else {\n        None\n    };\n    let edges_reader = EdgeFileReader::new(\"tests/data/ppi/edges.tsv\".to_string())?\n        .set_verbose(Some(verbose))\n        .set_ignore_duplicates(Some(true))\n        .set_separator(Some(\"\\t\"))\n        .unwrap()\n        .set_header(Some(true))\n        .set_rows_to_skip(Some(0))\n        .set_sources_column(Some(\"subject\".to_string()))?\n        .set_destinations_column(Some(\"object\".to_string()))?\n        .set_weights_column(if load_weights {\n            Some(\"weight\".to_string())\n        } else {\n            None\n        })?\n        .set_edge_types_column(if load_edge_types {\n            Some(\"edge_label\".to_string())\n        } else {\n            None\n        })?\n        .set_default_edge_type(if load_edge_types {\n            Some(\"Kebab\".to_string())\n        } else {\n            None\n        })\n        .set_max_rows_number(Some(100000))\n        .set_default_weight(if load_weights { Some(5.0) } else { None })\n        .set_skip_selfloops(Some(skip_selfloops))\n        .clone();\n\n    let ppi = Graph::from_unsorted_csv(\n        edges_reader,\n        nodes_reader,\n        directed,\n        false,\n        graph_name.clone(),\n    );\n    assert!(\n        ppi.is_ok(),\n        \"We expect to be able to load the String PPI graph.\"\n    );\n    let ppi = ppi?;\n    assert_eq!(ppi.has_node_types(), load_nodes);\n    assert_eq!(ppi.has_edge_types(), load_edge_types,);\n    assert_eq!(ppi.has_edge_weights(), load_weights);\n    assert_eq!(\n        ppi.has_selfloops(),\n        !skip_selfloops,\n        concat!(\n            \"I was expecting the graph self-loops status to be {} \",\n            \"since we have given parameter skip_selfloops equal to {}, \",\n            \"but actually is {}.\\n\",\n            \"The graph report is: \\n {:?}\"\n        ),\n        !skip_selfloops,\n        skip_selfloops,\n        ppi.has_selfloops(),\n        ppi.textual_report(false)\n    );\n    Ok(ppi)"
+                "return_type": "Graph",
+                "body": "let graph_name = \"STRING PPI\".to_owned();\n    let nodes_reader = if load_nodes {\n        Some(\n            NodeFileReader::new(\"tests/data/ppi/nodes.tsv\".to_string())\n                .unwrap()\n                .set_verbose(Some(false))\n                .set_node_types_column_number(Some(1))\n                .set_nodes_column_number(Some(0))\n                .set_node_types_column(Some(\"category\".to_string()))\n                .unwrap()\n                .set_default_node_type(Some(\"default\".to_string()))\n                .set_nodes_column(Some(\"id\".to_string()))\n                .unwrap()\n                .set_ignore_duplicates(Some(true))\n                .set_separator(Some(\"\\t\"))\n                .unwrap()\n                .set_header(Some(true))\n                .set_max_rows_number(Some(100000))\n                .set_rows_to_skip(Some(0))\n                .clone(),\n        )\n    } else {\n        None\n    };\n    let edges_reader = EdgeFileReader::new(\"tests/data/ppi/edges.tsv\".to_string())\n        .unwrap()\n        .set_verbose(Some(verbose))\n        .set_ignore_duplicates(Some(true))\n        .set_separator(Some(\"\\t\"))\n        .unwrap()\n        .set_header(Some(true))\n        .set_rows_to_skip(Some(0))\n        .set_sources_column(Some(\"subject\".to_string()))\n        .unwrap()\n        .set_destinations_column(Some(\"object\".to_string()))\n        .unwrap()\n        .set_weights_column(if load_weights {\n            Some(\"weight\".to_string())\n        } else {\n            None\n        })\n        .unwrap()\n        .set_edge_types_column(if load_edge_types {\n            Some(\"edge_label\".to_string())\n        } else {\n            None\n        })\n        .unwrap()\n        .set_default_edge_type(if load_edge_types {\n            Some(\"Kebab\".to_string())\n        } else {\n            None\n        })\n        .set_max_rows_number(Some(100000))\n        .set_default_weight(if load_weights { Some(5.0) } else { None })\n        .set_skip_selfloops(Some(skip_selfloops))\n        .clone();\n\n    let ppi = Graph::from_unsorted_csv(\n        edges_reader,\n        nodes_reader,\n        directed,\n        false,\n        graph_name.clone(),\n    )\n    .unwrap();\n    assert_eq!(ppi.has_node_types(), load_nodes);\n    assert_eq!(ppi.has_edge_types(), load_edge_types,);\n    assert_eq!(ppi.has_edge_weights(), load_weights);\n    assert_eq!(\n        ppi.has_selfloops(),\n        !skip_selfloops,\n        concat!(\n            \"I was expecting the graph self-loops status to be {} \",\n            \"since we have given parameter skip_selfloops equal to {}, \",\n            \"but actually is {}.\\n\",\n            \"The graph report is: \\n {:?}\"\n        ),\n        !skip_selfloops,\n        skip_selfloops,\n        ppi.has_selfloops(),\n        ppi.textual_report(false)\n    );\n    ppi"
             },
             {
                 "file": "test_utilities.rs",
@@ -4492,7 +4548,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(graph.get_node_type_counter().is_ok(), graph.has_node_types());\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(graph.get_edge_type_counter().is_ok(), graph.has_edge_types());\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
+                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(\n        graph.get_node_type_counter().is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_counter().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5882,7 +5938,7 @@
                     " To retrieve the source and destination node IDs of a given edge ID you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let edge_id = 0;",
                     " let (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id);",
                     " println!(\"The edge with ID {} has source node ID {} and destination node ID {}.\", edge_id, src, dst);",
@@ -5925,7 +5981,7 @@
                     " To retrieve the source and destination node IDs of a given edge ID you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.get_node_ids_from_edge_id(0).is_ok());",
                     " assert!(graph.get_node_ids_from_edge_id(10000000000).is_err());",
                     " ```"
@@ -5971,7 +6027,7 @@
                     " To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src = 0;",
                     " let dst = 1;",
                     " let edge_id = graph.get_unchecked_edge_id_from_node_ids(src, dst);",
@@ -6020,7 +6076,7 @@
                     " To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph.get_edge_id_from_node_ids(0, 1).is_ok());",
                     " assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());",
                     " ```"
@@ -6066,8 +6122,8 @@
                     " To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(",
                     "     graph_without_singletons.iter_node_ids()",
                     "         .all(|node_id|",
@@ -6114,7 +6170,7 @@
                     " In order to retrieve a given edge ID informations, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let edge_id = 0;",
                     " let (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);",
                     " println!(\"The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}\", edge_id, src, dst, edge_type);",
@@ -6155,7 +6211,7 @@
                     " In order to retrieve a given edge ID informations, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());",
                     " assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());",
                     " ```"
@@ -6197,7 +6253,7 @@
                     " In order to retrieve a given edge ID informations, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let edge_id = 0;",
                     " let (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);",
                     " println!(\"The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.\", edge_id, src, dst, edge_type, weight);",
@@ -6238,7 +6294,7 @@
                     " In order to retrieve a given edge ID informations, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(0).is_ok());",
                     " assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(10000000000).is_err());",
                     " ```"
@@ -6418,7 +6474,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The node type id of node {} is {:?}\", 0, graph.get_unchecked_node_type_id_from_node_id(0));",
                     " ```",
                     ""
@@ -6457,7 +6513,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The node type id of node {} is {:?}\", 0, graph.get_node_type_id_from_node_id(0));",
                     " ```",
                     ""
@@ -6501,7 +6557,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert_eq!(graph.get_unchecked_edge_type_id_from_edge_id(0), Some(0));",
                     " ```"
                 ],
@@ -6539,8 +6595,8 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false);",
                     " assert_eq!(graph.get_edge_type_id_from_edge_id(0).unwrap(), Some(0));",
                     " assert!(graph_without_edge_types.get_edge_type_id_from_edge_id(0).is_err());",
                     " ```"
@@ -6672,8 +6728,8 @@
                     " # Example",
                     " To get the weight of a given `edge_id` you can run:",
                     " ```rust",
-                    " # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();",
+                    " # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false);",
                     " let edge_id = 0;",
                     " let unexistent_edge_id = 123456789;",
                     " assert!(weighted_graph.get_edge_weight_from_edge_id(edge_id).is_ok());",
@@ -6716,7 +6772,7 @@
                     " # Example",
                     " To get the weight of a given `src` and `dst` you can run:",
                     " ```rust",
-                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src = 0;",
                     " let dst = 1;",
                     " assert!(weighted_graph.get_edge_weight_from_node_ids(src, dst).is_ok());",
@@ -6762,7 +6818,7 @@
                     " # Example",
                     " To get the weight of a given `src` and `dst` and `edge_type` you can run:",
                     " ```rust",
-                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src = 0;",
                     " let dst = 1;",
                     " let edge_type = Some(0);",
@@ -6813,7 +6869,7 @@
                     " # Example",
                     " To get the weight of a given `src` and `dst` and `edge_type` you can run:",
                     " ```rust",
-                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src = \"ENSP00000000233\";",
                     " let dst = \"ENSP00000432568\";",
                     " let edge_type = Some(\"red\".to_string());",
@@ -6863,7 +6919,7 @@
                     " # Example",
                     " To get the weight of a given `src_name` and `dst_name` you can run:",
                     " ```rust",
-                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src_name = \"ENSP00000000233\";",
                     " let dst_name = \"ENSP00000432568\";",
                     " assert!(weighted_graph.get_edge_weight_from_node_names(src_name, dst_name).is_ok());",
@@ -6907,7 +6963,7 @@
                     " # Example",
                     " To get the name of a node you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert_eq!(graph.get_unchecked_node_name_from_node_id(0), \"ENSG00000004059\".to_string());",
                     " ```"
                 ],
@@ -6945,7 +7001,7 @@
                     " # Example",
                     " To get the name of a node you can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.get_node_name_from_node_id(0).is_ok());",
                     " ```"
                 ],
@@ -7015,7 +7071,7 @@
                     " # Example",
                     " To get the node type ID for a given node name you can run:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let node_name = \"ENSP00000000233\";",
                     " println!(\"The node type ID of node {} is {:?}.\", node_name, graph.get_node_type_id_from_node_name(node_name).unwrap());",
                     " ```"
@@ -7055,7 +7111,7 @@
                     " # Example",
                     " To get the node type name for a given node name you can run:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let node_name = \"ENSP00000000233\";",
                     " println!(\"The node type of node {} is {:?}\", node_name, graph.get_node_type_name_from_node_name(node_name).unwrap());",
                     " ```"
@@ -7368,7 +7424,7 @@
                     " To retrieve the neighbours of a given node `src` you can use:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " # let node_id = 0;",
                     " println!(\"The neighbours of the node {} are {:?}.\", node_id, graph.get_neighbour_node_ids_from_node_id(node_id).unwrap());",
                     " let unavailable_node = 2349765432;",
@@ -7411,7 +7467,7 @@
                     " To retrieve the neighbours of a given node `src` you can use:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let node_name = \"ENSP00000000233\";",
                     " println!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_neighbour_node_ids_from_node_name(node_name).unwrap());",
                     " ```"
@@ -7452,7 +7508,7 @@
                     " To retrieve the neighbours of a given node `src` you can use:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " let node_name = \"ENSP00000000233\";",
                     " println!(\"The neighbours of the node {} are {:?}.\", node_name, graph.get_neighbour_node_names_from_node_name(node_name).unwrap());",
                     " ```"
@@ -8033,7 +8089,7 @@
                     " In order to validate a given node ID, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.validate_node_id(0).is_ok());",
                     " assert!(graph.validate_node_id(100000000).is_err());",
                     " ```"
@@ -8073,7 +8129,7 @@
                     " In order to validate a given edge ID, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.validate_edge_id(0).is_ok());",
                     " assert!(graph.validate_edge_id(10000000000).is_err());",
                     " ```"
@@ -8113,7 +8169,7 @@
                     " In order to validate a given node type ID, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.validate_node_type_id(Some(0)).is_ok());",
                     " assert!(graph.validate_node_type_id(Some(1000)).is_err());",
                     " ```"
@@ -8153,7 +8209,7 @@
                     " In order to validate a given edge type ID, you can use the following:",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(graph.validate_edge_type_id(Some(0)).is_ok());",
                     " assert!(graph.validate_edge_type_id(Some(1000)).is_err());",
                     " ```"
@@ -8190,8 +8246,8 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph_with_node_types.must_have_node_types().is_ok());",
                     " assert!(graph_without_node_types.must_have_node_types().is_err());",
                     " ```"
@@ -8224,8 +8280,8 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let graph_with_edge_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
-                    " # let graph_without_edge_types = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+                    " # let graph_with_edge_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
+                    " # let graph_without_edge_types = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
                     " assert!(graph_with_edge_types.must_have_edge_types().is_ok());",
                     " assert!(graph_without_edge_types.must_have_edge_types().is_err());",
                     " ```"
@@ -8258,8 +8314,8 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();",
-                    " # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+                    " # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false);",
+                    " # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
                     " assert!(undirecte_graph.must_be_undirected().is_ok());",
                     " assert!(directed_graph.must_be_undirected().is_err());",
                     " ```"
@@ -8292,8 +8348,8 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false).unwrap();",
-                    " # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();",
+                    " # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);",
+                    " # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);",
                     " assert!(multigraph.must_be_multigraph().is_ok());",
                     " assert!(homogeneous.must_be_multigraph().is_err());",
                     " ```"
@@ -8326,8 +8382,8 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.must_have_edge_weights().is_ok());",
                     " assert!(graph_without_weights.must_have_edge_weights().is_err());",
                     " ```"
@@ -8360,7 +8416,7 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+                    " # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
                     " # let graph_without_edges = graph::test_utilities::load_empty_graph(false);",
                     " assert!(graph_with_edges.must_have_edges().is_ok());",
                     " assert!(graph_without_edges.must_have_edges().is_err());",
@@ -8438,7 +8494,7 @@
                     "=",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The degrees_product between 0 and 1 is {}\", graph.degrees_product(0, 1).unwrap());",
                     " ```"
                 ],
@@ -8482,7 +8538,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The Jaccard Index between node 1 and node 2 is {}\", graph.jaccard_index(1, 2).unwrap());",
                     " ```"
                 ],
@@ -8532,7 +8588,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The Adamic/Adar Index between node 1 and node 2 is {}\", graph.adamic_adar_index(1, 2).unwrap());",
                     " ```"
                 ],
@@ -8583,7 +8639,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The Resource Allocation Index between node 1 and node 2 is {}\", graph.resource_allocation_index(1, 2).unwrap());",
                     " ```"
                 ],
@@ -8723,7 +8779,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "let pb_edges = get_loading_bar(\n            verbose,\n            format!(\n                \"Building edges of graph {} without required attributes\",\n                self.name\n            )\n            .as_ref(),\n            self.get_directed_edges_number() as usize,\n        );\n        let pb_nodes = get_loading_bar(\n            verbose,\n            format!(\n                \"Building nodes of graph {} without required attributes\",\n                self.name\n            )\n            .as_ref(),\n            self.get_nodes_number() as usize,\n        );\n\n        Graph::from_string_sorted(\n            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)\n                .progress_with(pb_edges)\n                .filter_map(\n                    |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| {\n                        // If an allow edge set was provided\n                        if let Some(aes) = &allow_edge_set {\n                            // We check that the current edge ID is within the edge set.\n                            if !aes.contains(&edge_id) {\n                                return None;\n                            }\n                        }\n                        // If selfloops need to be filtered out.\n                        if selfloops && src_name == dst_name {\n                            return None;\n                        }\n                        // If a deny edge set was provided\n                        if let Some(des) = &deny_edge_set {\n                            // We check that the current edge ID is NOT within the edge set.\n                            if des.contains(&edge_id) {\n                                return None;\n                            }\n                        }\n                        // If an allow nodes set was provided\n                        if let Some(ans) = &allow_nodes_set {\n                            // We check that the current source or destination node name is within the edge set.\n                            if !ans.contains(&src_name) || !ans.contains(&dst_name) {\n                                return None;\n                            }\n                        }\n                        // If a deny nodes set was provided\n                        if let Some(dns) = &deny_nodes_set {\n                            // We check that the current source or destination node name is NOT within the edge set.\n                            if dns.contains(&src_name) || dns.contains(&dst_name) {\n                                return None;\n                            }\n                        }\n                        // If the allow edge types set was provided\n                        if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {\n                            // We check that the current edge type name is within the edge type set.\n                            if !aets.contains(et) {\n                                return None;\n                            }\n                        }\n                        // If the deny edge types set was provided\n                        if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {\n                            // We check that the current edge type name is NOT within the edge type set.\n                            if dets.contains(et) {\n                                return None;\n                            }\n                        }\n\n                        if allow_node_types_set.is_some() || deny_node_types_set.is_some() {\n                            let src_node_type = self.get_unchecked_node_type_id_from_node_id(\n                                self.get_unchecked_node_id_from_node_name(&src_name),\n                            );\n                            let dst_node_type = self.get_unchecked_node_type_id_from_node_id(\n                                self.get_unchecked_node_id_from_node_name(&dst_name),\n                            );\n                            // If the graph has node types\n                            if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {\n                                let node_type_names = self\n                                    .get_node_type_names_from_node_type_ids(\n                                        src_nt.into_iter().chain(dst_nt.into_iter()).collect(),\n                                    )\n                                    .unwrap();\n                                // If the allow node types set was provided\n                                if let Some(ants) = &allow_node_types_set {\n                                    // We check that the current node type name is NOT within the node type set.\n                                    if node_type_names\n                                        .iter()\n                                        .any(|node_type_name| !ants.contains(node_type_name))\n                                    {\n                                        return None;\n                                    }\n                                }\n                                // If the deny node types set was provided\n                                if let Some(dnts) = &deny_node_types_set {\n                                    // We check that the current node type name is NOT within the node type set.\n                                    if node_type_names\n                                        .iter()\n                                        .any(|node_type_name| dnts.contains(node_type_name))\n                                    {\n                                        return None;\n                                    }\n                                }\n                            }\n                        }\n\n                        Some(Ok((\n                            src_name,\n                            dst_name,\n                            match edge_types {\n                                false => edge_type,\n                                true => None,\n                            },\n                            match weights {\n                                false => weight,\n                                true => None,\n                            },\n                        )))\n                    },\n                ),\n            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(\n                |(node_id, node_name, _, node_type_names)| {\n                    if singletons && self.is_singleton_from_node_name(&node_name).unwrap() {\n                        return None;\n                    }\n                    // If singletons and selfloops need to be removed.\n                    // We need to check all the destinations of the node if they are equal\n                    // with the source node, as in multigraphs there may be multiple selfloops of different\n                    // node types.\n                    if singletons\n                        && selfloops\n                        && self.is_singleton_with_selfloops_from_node_id(node_id)\n                    {\n                        return None;\n                    }\n                    if let Some(ans) = &allow_nodes_set {\n                        if !ans.contains(&node_name) {\n                            return None;\n                        }\n                    }\n                    if let Some(dns) = &deny_nodes_set {\n                        if dns.contains(&node_name) {\n                            return None;\n                        }\n                    }\n                    if let (Some(ants), Some(nts)) = (&allow_node_types_set, &node_type_names) {\n                        // We check that the current node type name is NOT within the node type set.\n                        if nts\n                            .iter()\n                            .any(|node_type_name| !ants.contains(node_type_name))\n                        {\n                            return None;\n                        }\n                    }\n                    if let (Some(dnts), Some(nts)) = (&deny_node_types_set, &node_type_names) {\n                        // We check that the current node type name is NOT within the node type set.\n                        if nts\n                            .iter()\n                            .any(|node_type_name| dnts.contains(node_type_name))\n                        {\n                            return None;\n                        }\n                    }\n                    Some(Ok((\n                        node_name,\n                        match node_types {\n                            false => node_type_names,\n                            true => None,\n                        },\n                    )))\n                },\n            )),\n            self.directed,\n            true,\n            false,\n            true,\n            true,\n            true,\n            self.get_directed_edges_number() as usize, // Approximation of expected edges number.\n            self.get_nodes_number(),                   // Approximation of expected nodes number.\n            false,\n            false,\n            false,\n            false,\n            self.has_node_types() && !node_types,\n            self.has_edge_types() && !edge_types,\n            self.has_edge_weights() && !weights,\n            // TODO: This may be made more precise!\n            true,\n            self.has_selfloops() && !selfloops,\n            true,\n            self.get_name(),\n        )"
+                "body": "let pb_edges = get_loading_bar(\n            verbose,\n            format!(\n                \"Building edges of graph {} without required attributes\",\n                self.name\n            )\n            .as_ref(),\n            self.get_directed_edges_number() as usize,\n        );\n        let pb_nodes = get_loading_bar(\n            verbose,\n            format!(\n                \"Building nodes of graph {} without required attributes\",\n                self.name\n            )\n            .as_ref(),\n            self.get_nodes_number() as usize,\n        );\n\n        Graph::from_string_sorted(\n            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)\n                .progress_with(pb_edges)\n                .filter_map(\n                    |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| {\n                        // If an allow edge set was provided\n                        if let Some(aes) = &allow_edge_set {\n                            // We check that the current edge ID is within the edge set.\n                            if !aes.contains(&edge_id) {\n                                return None;\n                            }\n                        }\n                        // If selfloops need to be filtered out.\n                        if selfloops && src_name == dst_name {\n                            return None;\n                        }\n                        // If a deny edge set was provided\n                        if let Some(des) = &deny_edge_set {\n                            // We check that the current edge ID is NOT within the edge set.\n                            if des.contains(&edge_id) {\n                                return None;\n                            }\n                        }\n                        // If an allow nodes set was provided\n                        if let Some(ans) = &allow_nodes_set {\n                            // We check that the current source or destination node name is within the edge set.\n                            if !ans.contains(&src_name) || !ans.contains(&dst_name) {\n                                return None;\n                            }\n                        }\n                        // If a deny nodes set was provided\n                        if let Some(dns) = &deny_nodes_set {\n                            // We check that the current source or destination node name is NOT within the edge set.\n                            if dns.contains(&src_name) || dns.contains(&dst_name) {\n                                return None;\n                            }\n                        }\n                        // If the allow edge types set was provided\n                        if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {\n                            // We check that the current edge type name is within the edge type set.\n                            if !aets.contains(et) {\n                                return None;\n                            }\n                        }\n                        // If the deny edge types set was provided\n                        if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {\n                            // We check that the current edge type name is NOT within the edge type set.\n                            if dets.contains(et) {\n                                return None;\n                            }\n                        }\n\n                        if allow_node_types_set.is_some() || deny_node_types_set.is_some() {\n                            let src_node_type = self.get_unchecked_node_type_id_from_node_id(\n                                self.get_unchecked_node_id_from_node_name(&src_name),\n                            );\n                            let dst_node_type = self.get_unchecked_node_type_id_from_node_id(\n                                self.get_unchecked_node_id_from_node_name(&dst_name),\n                            );\n                            // If the graph has node types\n                            if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {\n                                let node_type_names = self\n                                    .get_node_type_names_from_node_type_ids(\n                                        src_nt.into_iter().chain(dst_nt.into_iter()).collect(),\n                                    )\n                                    .unwrap();\n                                // If the allow node types set was provided\n                                if let Some(ants) = &allow_node_types_set {\n                                    // We check that the current node type name is NOT within the node type set.\n                                    if node_type_names\n                                        .iter()\n                                        .any(|node_type_name| !ants.contains(node_type_name))\n                                    {\n                                        return None;\n                                    }\n                                }\n                                // If the deny node types set was provided\n                                if let Some(dnts) = &deny_node_types_set {\n                                    // We check that the current node type name is NOT within the node type set.\n                                    if node_type_names\n                                        .iter()\n                                        .any(|node_type_name| dnts.contains(node_type_name))\n                                    {\n                                        return None;\n                                    }\n                                }\n                            }\n                        }\n\n                        Some(Ok((\n                            src_name,\n                            dst_name,\n                            match edge_types {\n                                false => edge_type,\n                                true => None,\n                            },\n                            match weights {\n                                false => weight,\n                                true => None,\n                            },\n                        )))\n                    },\n                ),\n            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(\n                |(node_id, node_name, _, node_type_names)| {\n                    if singletons && self.is_unchecked_singleton_from_node_name(&node_name) {\n                        return None;\n                    }\n                    // If singletons and selfloops need to be removed.\n                    // We need to check all the destinations of the node if they are equal\n                    // with the source node, as in multigraphs there may be multiple selfloops of different\n                    // node types.\n                    if singletons\n                        && selfloops\n                        && self.is_singleton_with_selfloops_from_node_id(node_id)\n                    {\n                        return None;\n                    }\n                    if let Some(ans) = &allow_nodes_set {\n                        if !ans.contains(&node_name) {\n                            return None;\n                        }\n                    }\n                    if let Some(dns) = &deny_nodes_set {\n                        if dns.contains(&node_name) {\n                            return None;\n                        }\n                    }\n                    if let (Some(ants), Some(nts)) = (&allow_node_types_set, &node_type_names) {\n                        // We check that the current node type name is NOT within the node type set.\n                        if nts\n                            .iter()\n                            .any(|node_type_name| !ants.contains(node_type_name))\n                        {\n                            return None;\n                        }\n                    }\n                    if let (Some(dnts), Some(nts)) = (&deny_node_types_set, &node_type_names) {\n                        // We check that the current node type name is NOT within the node type set.\n                        if nts\n                            .iter()\n                            .any(|node_type_name| dnts.contains(node_type_name))\n                        {\n                            return None;\n                        }\n                    }\n                    Some(Ok((\n                        node_name,\n                        match node_types {\n                            false => node_type_names,\n                            true => None,\n                        },\n                    )))\n                },\n            )),\n            self.directed,\n            true,\n            false,\n            true,\n            true,\n            true,\n            self.get_directed_edges_number() as usize, // Approximation of expected edges number.\n            self.get_nodes_number(),                   // Approximation of expected nodes number.\n            false,\n            false,\n            false,\n            false,\n            self.has_node_types() && !node_types,\n            self.has_edge_types() && !edge_types,\n            self.has_edge_weights() && !weights,\n            // TODO: This may be made more precise!\n            true,\n            self.has_selfloops() && !selfloops,\n            true,\n            self.get_name(),\n        )"
             },
             {
                 "file": "remove.rs",
@@ -10607,7 +10663,7 @@
                     " * bidirectional_rate: rate of edges that are bidirectional.",
                     "",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " graph.report();",
                     " ```"
                 ],
@@ -10911,7 +10967,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The graph contains {} singleton nodes\", graph.get_singleton_nodes_number());",
                     " ```"
                 ],
@@ -10942,7 +10998,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_selfloops_number());",
                     " ```"
                 ],
@@ -10973,7 +11029,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The graph contains {} not singleton nodes\", graph.get_not_singleton_nodes_number());",
                     " ```"
                 ],
@@ -11004,7 +11060,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The graph density is {}\", graph.get_density().unwrap());",
                     " ```"
                 ],
@@ -11037,7 +11093,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The Graph rate is {}\", graph.get_trap_nodes_rate());",
                     " ```"
                 ],
@@ -11051,7 +11107,7 @@
                     ]
                 ],
                 "return_type": "f64",
-                "body": "self.par_iter_node_ids()\n            .map(|node| {\n                if !self.is_trap_node_from_node_id(node).unwrap() {\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node)\n                        .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_node_degree_from_node_id(node) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
+                "body": "self.par_iter_node_ids()\n            .map(|node_id| {\n                if !self.is_unchecked_trap_node_from_node_id(node_id) {\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)\n                        .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
             },
             {
                 "file": "getters.rs",
@@ -11068,7 +11124,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());",
                     " ```"
                 ],
@@ -11099,7 +11155,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of undirected edges of the graph is  {}\", graph.get_undirected_edges_number());",
                     " ```"
                 ],
@@ -11130,7 +11186,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of unique undirected edges of the graph is  {}\", graph.get_unique_undirected_edges_number());",
                     " ```"
                 ],
@@ -11161,7 +11217,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of edges of the graph is  {}\", graph.get_edges_number());",
                     " ```"
                 ],
@@ -11192,7 +11248,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of edges of the graph is  {}\", graph.get_unique_edges_number());",
                     " ```"
                 ],
@@ -11223,7 +11279,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());",
                     " ```"
                 ],
@@ -11254,7 +11310,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());",
                     " ```"
                 ],
@@ -11285,7 +11341,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The minimum node degree of the graph is  {}\", graph.get_min_node_degree().unwrap());",
                     " ```"
                 ],
@@ -11316,7 +11372,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());",
                     " ```"
                 ],
@@ -11347,7 +11403,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_nodes_number());",
                     " ```"
                 ],
@@ -11378,7 +11434,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of unique self-loops in the graph is  {}\", graph.get_unique_selfloop_number());",
                     " ```"
                 ],
@@ -11409,7 +11465,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The rate of self-loops in the graph is  {}\", graph.get_selfloop_nodes_rate().unwrap());",
                     " ```"
                 ],
@@ -11441,7 +11497,7 @@
                     " # Example",
                     " To the retrieve the name of the current graph instance selfloop_number can use:",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert_eq!(graph.get_name(), \"STRING PPI\".to_string());",
                     " println!(\"The name of the current graph is {}.\", graph.get_name());",
                     " ```",
@@ -11476,7 +11532,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());",
                     " ```",
                     ""
@@ -11737,8 +11793,8 @@
                     " # Example",
                     " To get an the graph weights you can use:",
                     " ```rust",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.get_edge_weights().is_ok());",
                     " assert!(graph_without_weights.get_edge_weights().is_err());",
                     " println!(\"The graph weights are {:?}.\", graph_with_weights.get_edge_weights());",
@@ -11772,8 +11828,8 @@
                     " # Example",
                     " To get the minimum edge weight you can use:",
                     " ```rust",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.get_min_edge_weight().is_ok());",
                     " assert!(graph_without_weights.get_min_edge_weight().is_err());",
                     " println!(\"The graph minimum weight is {:?}.\", graph_with_weights.get_min_edge_weight());",
@@ -11807,8 +11863,8 @@
                     " # Example",
                     " To get the maximum edge weight you can use:",
                     " ```rust",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.get_max_edge_weight().is_ok());",
                     " assert!(graph_without_weights.get_max_edge_weight().is_err());",
                     " println!(\"The graph maximum weight is {:?}.\", graph_with_weights.get_max_edge_weight());",
@@ -11842,8 +11898,8 @@
                     " # Example",
                     " To retrieve the node type IDs of the graph nodes you can use:",
                     " ```rust",
-                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph_with_node_types.get_node_type_ids().is_ok());",
                     " assert!(graph_without_node_types.get_node_type_ids().is_err());",
                     " println!(\"The graph node types are {:?}\", graph_with_node_types.get_node_type_ids());",
@@ -11878,8 +11934,8 @@
                     " # Example",
                     " To retrieve the node type names of the graph nodes you can use:",
                     " ```rust",
-                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
-                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();",
+                    " # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
+                    " # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " assert!(graph_with_node_types.get_node_type_names().is_ok());",
                     " assert!(graph_without_node_types.get_node_type_names().is_err());",
                     " println!(\"The graph node types are {:?}\", graph_with_node_types.get_node_type_names());",
@@ -12387,7 +12443,7 @@
                     "",
                     " # Example",
                     "```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " println!(\"The number of sources of the graph (not trap nodes) is {}\", graph.get_unique_source_nodes_number());",
                     " ```"
                 ],
@@ -12418,7 +12474,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {",
                     "     println!(\"edge type id {}: count: {}\", edge_type_id, count);",
                     " }",
@@ -12451,7 +12507,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " for (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {",
                     "     println!(\"edge type id {}: count: {}\", edge_type_id, count);",
                     " }",
@@ -12484,7 +12540,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {",
                     "     println!(\"node type id {}: count: {}\", node_type_id, count);",
                     " }",
@@ -12517,7 +12573,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " for (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {",
                     "     println!(\"node type id {}: count: {}\", node_type_id, count);",
                     " }",
@@ -12573,7 +12629,7 @@
                     ]
                 ],
                 "return_type": "Result<(String, IndexT), String>",
-                "body": "Ok(if self.numeric_ids {\n            let parsed_value = match value.parse::<usize>() {\n                Ok(val) => Ok(val),\n                Err(_) => Err(format!(\n                    \"The given ID `{}` is not a numeric positive integer.\",\n                    value\n                )),\n            }?;\n\n            let string_parsed_value = parsed_value.to_string();\n\n            // Check that there are no extra zeros or separators in the number\n            // E.g. 000 is not supported since it will be traduced to 0\n            if value != string_parsed_value {\n                return Err(format!(\n                    concat!(\n                        \"The given ID is numeric but is not symmetric.\\n\",\n                        \"Specifically, {} != {} where the first value is the user's one \",\n                        \"and the second one is the result of parsing the value as an \",\n                        \" integer and casting back to string.\"\n                    ),\n                    value, string_parsed_value\n                ));\n            }\n\n            (string_parsed_value, IndexT::from_usize(parsed_value))\n        } else {\n            (value.to_string(), IndexT::from_usize(self.map.len()))\n        })"
+                "body": "Ok(if self.numeric_ids {\n            let parsed_value = value.parse::<usize>().map_err(|_| {\n                format!(\n                    \"The given ID `{}` is not a numeric positive integer.\",\n                    value\n                )\n            })?;\n\n            let string_parsed_value = parsed_value.to_string();\n\n            // Check that there are no extra zeros or separators in the number\n            // E.g. 000 is not supported since it will be traduced to 0\n            if value != string_parsed_value {\n                return Err(format!(\n                    concat!(\n                        \"The given ID is numeric but is not symmetric.\\n\",\n                        \"Specifically, {} != {} where the first value is the user's one \",\n                        \"and the second one is the result of parsing the value as an \",\n                        \" integer and casting back to string.\"\n                    ),\n                    value, string_parsed_value\n                ));\n            }\n\n            (string_parsed_value, IndexT::from_usize(parsed_value))\n        } else {\n            (value.to_string(), IndexT::from_usize(self.map.len()))\n        })"
             },
             {
                 "file": "vocabulary.rs",
@@ -12641,7 +12697,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "if !self.reverse_map.is_empty() {\n            panic!(\"Build reverse mapping called multiple times!\");\n        }\n        self.reverse_map = vec![\"\".to_string(); self.map.len()];\n        for (k, v) in self.map.iter() {\n            if *v >= IndexT::from_usize(self.map.len()) {\n                return Err(format!(\n                    concat!(\n                        \"The given set of values is not dense. Found the tuple k:{} v:{} \",\n                        \"which has index bigger than the number of elements in the map {}.\"\n                    ),\n                    k,\n                    v,\n                    self.map.len()\n                ));\n            }\n            let i = IndexT::to_usize(*v);\n            if !self.reverse_map[i].is_empty() {\n                return Err(format!(\n                    concat!(\n                        \"During the building of the reverse mapping, \",\n                        \"one of the elements of the reverse mapping was attempted \",\n                        \"to be assigned multiple times. This means that in the map \",\n                        \"there are multiple nodes with the same id.\\n\",\n                        \"In the past this was caused by improper handling of numeric \",\n                        \"node id.\\n\",\n                        \"In this case, the value is {} and its index is {}.\"\n                    ),\n                    k, i\n                ));\n            }\n            self.reverse_map[i] = k.clone();\n        }\n        Ok(())"
+                "body": "if !self.reverse_map.is_empty() {\n            panic!(\"Build reverse mapping called multiple times!\");\n        }\n        self.reverse_map = vec![\"\".to_string(); self.map.len()];\n        for (k, v) in self.map.iter() {\n            if *v >= IndexT::from_usize(self.map.len()) {\n                return Err(format!(\n                    concat!(\n                        \"The given set of values is not dense. Found the tuple k:{} v:{} \",\n                        \"which has index bigger than the number of elements in the map {}.\"\n                    ),\n                    k,\n                    v,\n                    self.map.len()\n                ));\n            }\n            let i = IndexT::to_usize(*v);\n            if !self.reverse_map[i].is_empty() {\n                panic!(\n                    concat!(\n                        \"During the building of the reverse mapping, \",\n                        \"one of the elements of the reverse mapping was attempted \",\n                        \"to be assigned multiple times. This means that in the map \",\n                        \"there are multiple nodes with the same id.\\n\",\n                        \"In the past this was caused by improper handling of numeric \",\n                        \"node id.\\n\",\n                        \"In this case, the value is {} and its index is {}.\"\n                    ),\n                    k,\n                    i,\n                );\n            }\n            self.reverse_map[i] = k.clone();\n        }\n        Ok(())"
             },
             {
                 "file": "vocabulary.rs",
@@ -14644,8 +14700,8 @@
                     " # Example",
                     " To get an iterator over the edges weights you can use:",
                     " ```rust",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.iter_edge_weights().is_ok());",
                     " assert!(graph_without_weights.iter_edge_weights().is_err());",
                     " println!(\"The graph weights are {:?}.\", graph_with_weights.iter_edge_weights().unwrap().collect::<Vec<_>>());",
@@ -14685,8 +14741,8 @@
                     " To get an iterator over the edges weights you can use:",
                     " ```rust",
                     " # use rayon::iter::ParallelIterator;",
-                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
-                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();",
+                    " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
+                    " # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);",
                     " assert!(graph_with_weights.iter_edge_weights().is_ok());",
                     " assert!(graph_without_weights.iter_edge_weights().is_err());",
                     " println!(\"The graph weights are {:?}.\", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());",
@@ -15442,7 +15498,7 @@
                     " # Example",
                     " To check if the graph has nodes you can use:",
                     " ```rust",
-                    " # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " # let empty_graph = graph::test_utilities::load_empty_graph(false);",
                     " assert!(graph_with_nodes.has_nodes());",
                     " assert!(!empty_graph.has_nodes());",
@@ -15479,7 +15535,7 @@
                     " # Example",
                     " To check if the current graph has edges you can use:",
                     " ```rust",
-                    " # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " # let empty_graph = graph::test_utilities::load_empty_graph(false);",
                     " assert!(graph_with_edges.has_edges());",
                     " assert!(!empty_graph.has_edges());",
@@ -15514,7 +15570,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " if graph.has_trap_nodes(){",
                     "     println!(\"There are {} trap nodes in the current graph.\", graph.get_trap_nodes_number());",
                     " } else {",
@@ -15552,9 +15608,9 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(directed_string_ppi.is_directed());",
-                    " let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
+                    " let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false);",
                     " assert!(!undirected_string_ppi.is_directed());",
                     " ```",
                     ""
@@ -15588,9 +15644,9 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(weights_string_ppi.has_edge_weights());",
-                    " let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();",
+                    " let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false);",
                     " assert!(!unweights_string_ppi.has_edge_weights());",
                     " ```",
                     ""
@@ -15624,9 +15680,9 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(string_ppi_with_edge_types.has_edge_types());",
-                    " let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();",
+                    " let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false);",
                     " assert!(!string_ppi_without_edge_types.has_edge_types());",
                     " ```",
                     ""
@@ -15660,9 +15716,9 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " assert!(string_ppi_with_selfloops.has_selfloops());",
-                    " let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();",
+                    " let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true);",
                     " assert!(!string_ppi_without_selfloops.has_selfloops());",
                     " ```",
                     ""
@@ -15696,7 +15752,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();",
+                    " # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);",
                     " assert!(graph_with_singletons.has_singletons());",
                     " let graph_without_singletons = graph_with_singletons.remove(",
                     "     None, None, None, None, None, None, None, None, false, false, true, true, false, false,",
@@ -16303,7 +16359,9 @@
             },
             {
                 "file": "constructors.rs",
-                "doc": [],
+                "doc": [
+                    " TODO: I think this method can be made better!"
+                ],
                 "attrs": [],
                 "modifiers": "pub(crate)",
                 "name": "parse_sorted_edges",
@@ -16423,6 +16481,7 @@
                     " TODO! add computation of minimum edge weight",
                     " TODO! add computation of maximum node degree",
                     " TODO! add computation of maximum edge weight",
+                    " TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.",
                     " TODO! add docstring"
                 ],
                 "attrs": [],
@@ -16475,7 +16534,7 @@
                     ]
                 ],
                 "return_type": "Result<\n    (\n        EliasFano,\n        Option<EliasFano>,\n        Option<Vec<Option<EdgeTypeT>>>,\n        Option<Vec<WeightT>>,\n        EdgeT,\n        EdgeT,\n        NodeT,\n        NodeT,\n        NodeT,\n        u8,\n        u64,\n        Option<BitVec<Lsb0, u8>>,\n        Option<RoaringBitmap>,\n    ),\n    String,\n>",
-                "body": "info!(\"Started building of EliasFano edges data structure.\");\n    let node_bits = get_node_bits(nodes_number);\n    let node_bit_mask = (1 << node_bits) - 1;\n    let mut edges: EliasFano =\n        EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;\n\n    // The graph might still contain duplicated edges, therefore the provided edges\n    // number is a maximal value.\n    let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    // The unique sources variable is equal to the set of nodes of the graph when\n    // there are no singletons and the graph is undirected. Otherwise, if there is\n    // a singleton node, that must not appear in this set.\n    // We will use this set during the random walks and other graph algorithms\n    // in order to obtain the nth source node. For this reason we cannot\n    // use a bitvec here, since we need to execute an unchecked select when the\n    // object is not equal to the set of the nodes to remap the nth source node\n    // to the nth unique source node, excluding the eventual; singleton nodes.\n    // Similarly, in directed graphs, only a subset of the nodes might be a\n    // source as there might be traps.\n    // In the case of directed graphs, we have additionally the might have trap nodes\n    // parameter which allows to specify whether the graph is known to contain\n    // trap nodes. The parameter only makes sense in directed graphs.\n    // Since we expect that the average use case (when we arew not dealing with pathological graphs)\n    // the following set should be relatively dense, when we know that the set of unique\n    // sources will be needed but it will be equal to the nodes with edges set, we compute it\n    // afterwards. This is because it is known that an Elias Fano data structure\n    // uses more than twice the memory required by a bitvec to memorize a set of\n    // dense values.\n    let mut unique_sources: Option<EliasFano> =\n        if directed && (might_have_trap_nodes || might_have_singletons) {\n            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)\n        } else {\n            None\n        };\n    // When the graph is either undirected or directed without trap nodes, the unique sources set and the\n    // nodes with edges set are equal one another.\n    // We need to compute the following set when it is not trivial, that is when\n    // either the graph is undirected and there are no singletons or alternatively\n    // when the graph is directed and there are neither trap nodes nor singletons.\n    // Additionally, since we need this support data structure when computing the\n    // number of singletons with selfloops, we need to create it also when it has\n    // been specified that there might be singletons with selfloops.\n    let mut not_singleton_nodes: Option<_> =\n        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {\n            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])\n        } else {\n            None\n        };\n\n    // Last source inserted\n    let mut last_src: NodeT = 0;\n    let mut last_dst: NodeT = 0;\n    let mut last_edge_type: Option<EdgeTypeT> = None;\n    let mut unique_edges_number: EdgeT = 0;\n    let mut unique_selfloop_number: NodeT = 0;\n    let mut selfloop_number: EdgeT = 0;\n    let mut forward_undirected_edges_counter: EdgeT = 0;\n    let mut backward_undirected_edges_counter: EdgeT = 0;\n    let mut not_singleton_node_number: NodeT =\n        if might_have_singletons || might_have_singletons_with_selfloops {\n            0\n        } else {\n            nodes_number\n        };\n    // This bitvec should be really sparse ON SANE GRAPHS\n    // so we use a roaring bitvec to save memory.\n    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {\n        Some(RoaringBitmap::new())\n    } else {\n        None\n    };\n\n    let mut first = true;\n    for value in edges_iter {\n        let (src, dst, edge_type, weight) = value?;\n        let different_src = last_src != src || first;\n        let different_dst = last_dst != dst || first;\n        let selfloop = src == dst;\n        let different_edge_type = last_edge_type != edge_type || first;\n        if !(different_src || different_dst || different_edge_type) {\n            if ignore_duplicated_edges {\n                continue;\n            } else {\n                return Err(\"A duplicated edge was found while building the graph.\".to_owned());\n            }\n        }\n\n        if let Some(ets) = &mut edge_type_ids {\n            ets.push(edge_type);\n        }\n        match (&mut weights, weight) {\n            (Some(ws), Some(w)) => {\n                validate_weight(w)?;\n                ws.push(w);\n                Ok(())\n            }\n            (None, Some(_)) => Err(concat!(\n                \"A non-None weight was provided but no weights are expected \",\n                \"because the has_edge_weights flag has been set to false.\"\n            )),\n            (Some(_), None) => Err(concat!(\n                \"A None weight was found.\\n\",\n                \"This might mean you have either provided a None weight to the edge list or \",\n                \"you may have an empty weight in your edge list file.\\n\",\n                \"If you intend to load this edge list WITHOUT weights, do not provide the \",\n                \"edge weights colum or column number.\\n\",\n                \"If you intend to load this edge with its weight, add a default weight.\"\n            )),\n            _ => Ok(()),\n        }?;\n\n        if !directed && !edge_list_is_correct {\n            match src.cmp(&dst) {\n                Ordering::Greater => {\n                    // We retrieve the edge id of the forward edge, the one going from\n                    // dst to src.\n                    let maybe_edge_id = edges.rank(encode_edge(dst, src, node_bits));\n                    // Now we need to find, starting from edge id, if the edge types are given,\n                    // the correct edge id: if we are in a multi-graph the edge may be the same\n                    // but have multiple edge types and hence be reported multiple times.\n                    let maybe_edge_id = maybe_edge_id.and_then(|min_edge_id| {\n                        edge_type_ids.as_ref().map_or(Some(min_edge_id), |ets| {\n                            (min_edge_id\n                                ..edges.unchecked_rank(encode_edge(dst, src + 1, node_bits)))\n                                .find(|edge_id| ets[*edge_id as usize] == edge_type)\n                        })\n                    });\n                    // Finally now we need to check if the weights of the two edges, if given\n                    // are actually equal.\n                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {\n                        weights.as_ref().map_or(false, |ws| {\n                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON\n                        })\n                    });\n                    if has_unbalanced_undirected_edge {\n                        return Err(concat!(\n                            \"You are trying to load an undirected \",\n                            \"graph using the directed edge list \",\n                            \"paremeter that requires for ALL edges to \",\n                            \"be fully defined in both directions.\\n\",\n                            \"The edge list you have provided does not \",\n                            \"provide the edges in both directions.\",\n                        )\n                        .to_string());\n                    }\n                    backward_undirected_edges_counter += 1\n                }\n                Ordering::Less => forward_undirected_edges_counter += 1,\n                Ordering::Equal => {}\n            }\n        }\n        last_edge_type = edge_type;\n        edges.unchecked_push(encode_edge(src, dst, node_bits));\n        if selfloop {\n            selfloop_number += 1;\n        }\n        if different_src || different_dst {\n            if let Some(nwe) = &mut not_singleton_nodes {\n                for node in &[src, dst] {\n                    unsafe {\n                        let mut ptr = nwe.get_unchecked_mut(*node as usize);\n                        if !*ptr {\n                            *ptr = true;\n                            if !selfloop || singleton_nodes_with_selfloops.is_none() {\n                                not_singleton_node_number += 1;\n                            } else {\n                                if let Some(bitmap) = &mut singleton_nodes_with_selfloops {\n                                    bitmap.insert(*node);\n                                }\n                                break;\n                            }\n                        } else if !selfloop\n                            && singleton_nodes_with_selfloops\n                                .as_mut()\n                                .map_or(false, |bitmap| bitmap.remove(*node))\n                        {\n                            not_singleton_node_number += 1;\n                        }\n                    }\n                }\n            }\n            unique_edges_number += 1;\n            if selfloop {\n                unique_selfloop_number += 1;\n            }\n            if different_src {\n                if let Some(us) = &mut unique_sources {\n                    us.unchecked_push(src as u64);\n                }\n            }\n        }\n        last_src = src;\n        last_dst = dst;\n        first = false;\n    }\n\n    if forward_undirected_edges_counter != backward_undirected_edges_counter {\n        return Err(concat!(\n            \"You are trying to load an undirected graph \",\n            \"from a directed edge list but the edge list is not \",\n            \"complete.\"\n        )\n        .to_owned());\n    }\n\n    if let Some(ws) = &weights {\n        if edges.len() != ws.len() {\n            panic!(\n                \"The number of weights {} does not match the number of edges {}.\",\n                ws.len(),\n                edges.len()\n            );\n        }\n        if ws.is_empty() {\n            weights = None;\n        }\n    }\n\n    if let Some(ets) = &edge_type_ids {\n        if edges.len() != ets.len() {\n            panic!(\n                \"The number of edge types {} does not match the number of edges {}.\",\n                ets.len(),\n                edges.len()\n            );\n        }\n\n        if ets.is_empty() {\n            edge_type_ids = None;\n        }\n    }\n\n    if not_singleton_node_number > nodes_number {\n        panic!(\n            \"There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'\",\n            not_singleton_node_number, nodes_number\n        );\n    }\n\n    let singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops\n        .as_ref()\n        .map_or(0, |bitmap| bitmap.len() as NodeT);\n\n    // While on internal methods nodes_number is always exact, the user may\n    // provide a wrong value for nodes_number when loading a sorted csv.\n    // If this happens, it might cause a slow down in the walk and other\n    // currently unforseen consequences.\n    if nodes_number == not_singleton_node_number + singleton_nodes_with_selfloops_number {\n        unique_sources = None;\n    }\n\n    // When we have computed the nodes with edges set but we have left None\n    // the unique sources elias fano, this is done to avoid using extra memory\n    // for no reason. We need to create the elias fano object starting from the\n    // nodes with edges now to normalize the returned values.\n    if might_have_singletons\n        && unique_sources.is_none()\n        && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number\n    {\n        unique_sources = not_singleton_nodes\n            .as_ref()\n            .map_or(Ok::<_, String>(None), |nsns| {\n                Ok(Some(EliasFano::from_iter(\n                    nsns.iter_ones().into_iter().map(|x| x as u64),\n                    nodes_number as u64,\n                    not_singleton_node_number as usize\n                        + singleton_nodes_with_selfloops_number as usize,\n                )?))\n            })?;\n    }\n\n    if !directed\n        && unique_sources\n            .as_ref()\n            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)\n    {\n        panic!(\n            \"There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'\",\n            not_singleton_node_number, unique_sources.unwrap().len()\n        );\n    }\n\n    Ok((\n        edges,\n        unique_sources,\n        edge_type_ids,\n        weights,\n        unique_edges_number,\n        selfloop_number,\n        unique_selfloop_number,\n        not_singleton_node_number,\n        singleton_nodes_with_selfloops_number,\n        node_bits,\n        node_bit_mask,\n        not_singleton_nodes,\n        singleton_nodes_with_selfloops,\n    ))"
+                "body": "info!(\"Started building of EliasFano edges data structure.\");\n    let node_bits = get_node_bits(nodes_number);\n    let node_bit_mask = (1 << node_bits) - 1;\n    let mut edges: EliasFano =\n        EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;\n\n    // The graph might still contain duplicated edges, therefore the provided edges\n    // number is a maximal value.\n    let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {\n        Some(Vec::with_capacity(edges_number))\n    } else {\n        None\n    };\n\n    // The unique sources variable is equal to the set of nodes of the graph when\n    // there are no singletons and the graph is undirected. Otherwise, if there is\n    // a singleton node, that must not appear in this set.\n    // We will use this set during the random walks and other graph algorithms\n    // in order to obtain the nth source node. For this reason we cannot\n    // use a bitvec here, since we need to execute an unchecked select when the\n    // object is not equal to the set of the nodes to remap the nth source node\n    // to the nth unique source node, excluding the eventual; singleton nodes.\n    // Similarly, in directed graphs, only a subset of the nodes might be a\n    // source as there might be traps.\n    // In the case of directed graphs, we have additionally the might have trap nodes\n    // parameter which allows to specify whether the graph is known to contain\n    // trap nodes. The parameter only makes sense in directed graphs.\n    // Since we expect that the average use case (when we arew not dealing with pathological graphs)\n    // the following set should be relatively dense, when we know that the set of unique\n    // sources will be needed but it will be equal to the nodes with edges set, we compute it\n    // afterwards. This is because it is known that an Elias Fano data structure\n    // uses more than twice the memory required by a bitvec to memorize a set of\n    // dense values.\n    let mut unique_sources: Option<EliasFano> =\n        if directed && (might_have_trap_nodes || might_have_singletons) {\n            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)\n        } else {\n            None\n        };\n    // When the graph is either undirected or directed without trap nodes, the unique sources set and the\n    // nodes with edges set are equal one another.\n    // We need to compute the following set when it is not trivial, that is when\n    // either the graph is undirected and there are no singletons or alternatively\n    // when the graph is directed and there are neither trap nodes nor singletons.\n    // Additionally, since we need this support data structure when computing the\n    // number of singletons with selfloops, we need to create it also when it has\n    // been specified that there might be singletons with selfloops.\n    let mut not_singleton_nodes: Option<_> =\n        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {\n            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])\n        } else {\n            None\n        };\n\n    // Last source inserted\n    let mut last_src: NodeT = 0;\n    let mut last_dst: NodeT = 0;\n    let mut last_edge_type: Option<EdgeTypeT> = None;\n    let mut unique_edges_number: EdgeT = 0;\n    let mut unique_selfloop_number: NodeT = 0;\n    let mut selfloop_number: EdgeT = 0;\n    let mut forward_undirected_edges_counter: EdgeT = 0;\n    let mut backward_undirected_edges_counter: EdgeT = 0;\n    let mut not_singleton_node_number: NodeT =\n        if might_have_singletons || might_have_singletons_with_selfloops {\n            0\n        } else {\n            nodes_number\n        };\n    // This bitvec should be really sparse ON SANE GRAPHS\n    // so we use a roaring bitvec to save memory.\n    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {\n        Some(RoaringBitmap::new())\n    } else {\n        None\n    };\n\n    let mut first = true;\n    for value in edges_iter {\n        let (src, dst, edge_type, weight) = value?;\n        let different_src = last_src != src || first;\n        let different_dst = last_dst != dst || first;\n        let selfloop = src == dst;\n        let different_edge_type = last_edge_type != edge_type || first;\n        if !(different_src || different_dst || different_edge_type) {\n            if ignore_duplicated_edges {\n                continue;\n            } else {\n                return Err(\"A duplicated edge was found while building the graph.\".to_owned());\n            }\n        }\n\n        if let Some(ets) = &mut edge_type_ids {\n            ets.push(edge_type);\n        }\n        match (&mut weights, weight) {\n            (Some(ws), Some(w)) => {\n                validate_weight(w)?;\n                ws.push(w);\n                Ok(())\n            }\n            (None, Some(_)) => Err(concat!(\n                \"A non-None weight was provided but no weights are expected \",\n                \"because the has_edge_weights flag has been set to false.\"\n            )),\n            (Some(_), None) => Err(concat!(\n                \"A None weight was found.\\n\",\n                \"This might mean you have either provided a None weight to the edge list or \",\n                \"you may have an empty weight in your edge list file.\\n\",\n                \"If you intend to load this edge list WITHOUT weights, do not provide the \",\n                \"edge weights colum or column number.\\n\",\n                \"If you intend to load this edge with its weight, add a default weight.\"\n            )),\n            _ => Ok(()),\n        }?;\n\n        if !directed && !edge_list_is_correct {\n            match src.cmp(&dst) {\n                Ordering::Greater => {\n                    // We retrieve the edge id of the forward edge, the one going from\n                    // dst to src.\n                    let maybe_edge_id = edges.rank(encode_edge(dst, src, node_bits));\n                    // Now we need to find, starting from edge id, if the edge types are given,\n                    // the correct edge id: if we are in a multi-graph the edge may be the same\n                    // but have multiple edge types and hence be reported multiple times.\n                    let maybe_edge_id = maybe_edge_id.and_then(|min_edge_id| {\n                        edge_type_ids.as_ref().map_or(Some(min_edge_id), |ets| {\n                            (min_edge_id\n                                ..edges.unchecked_rank(encode_edge(dst, src + 1, node_bits)))\n                                .find(|edge_id| ets[*edge_id as usize] == edge_type)\n                        })\n                    });\n                    // Finally now we need to check if the weights of the two edges, if given\n                    // are actually equal.\n                    // For the time being we do not allow for undirected graphs to have\n                    // asymmetrical weights.\n                    // let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {\n                    //     weights.as_ref().map_or(false, |ws| {\n                    //         (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON\n                    //     })\n                    // });\n                    if maybe_edge_id.is_none() {\n                        return Err(concat!(\n                            \"You are trying to load an undirected \",\n                            \"graph using the directed edge list \",\n                            \"paremeter that requires for ALL edges to \",\n                            \"be fully defined in both directions.\\n\",\n                            \"The edge list you have provided does not \",\n                            \"provide the edges in both directions.\",\n                        )\n                        .to_string());\n                    }\n                    backward_undirected_edges_counter += 1\n                }\n                Ordering::Less => forward_undirected_edges_counter += 1,\n                Ordering::Equal => {}\n            }\n        }\n        last_edge_type = edge_type;\n        edges.unchecked_push(encode_edge(src, dst, node_bits));\n        if selfloop {\n            selfloop_number += 1;\n        }\n        if different_src || different_dst {\n            if let Some(nwe) = &mut not_singleton_nodes {\n                for node in &[src, dst] {\n                    unsafe {\n                        let mut ptr = nwe.get_unchecked_mut(*node as usize);\n                        if !*ptr {\n                            *ptr = true;\n                            if !selfloop || singleton_nodes_with_selfloops.is_none() {\n                                not_singleton_node_number += 1;\n                            } else {\n                                if let Some(bitmap) = &mut singleton_nodes_with_selfloops {\n                                    bitmap.insert(*node);\n                                }\n                                break;\n                            }\n                        } else if !selfloop\n                            && singleton_nodes_with_selfloops\n                                .as_mut()\n                                .map_or(false, |bitmap| bitmap.remove(*node))\n                        {\n                            not_singleton_node_number += 1;\n                        }\n                    }\n                }\n            }\n            unique_edges_number += 1;\n            if selfloop {\n                unique_selfloop_number += 1;\n            }\n            if different_src {\n                if let Some(us) = &mut unique_sources {\n                    us.unchecked_push(src as u64);\n                }\n            }\n        }\n        last_src = src;\n        last_dst = dst;\n        first = false;\n    }\n\n    if forward_undirected_edges_counter != backward_undirected_edges_counter {\n        return Err(concat!(\n            \"You are trying to load an undirected graph \",\n            \"from a directed edge list but the edge list is not \",\n            \"complete.\"\n        )\n        .to_owned());\n    }\n\n    if let Some(ws) = &weights {\n        if edges.len() != ws.len() {\n            panic!(\n                \"The number of weights {} does not match the number of edges {}.\",\n                ws.len(),\n                edges.len()\n            );\n        }\n        if ws.is_empty() {\n            weights = None;\n        }\n    }\n\n    if let Some(ets) = &edge_type_ids {\n        if edges.len() != ets.len() {\n            panic!(\n                \"The number of edge types {} does not match the number of edges {}.\",\n                ets.len(),\n                edges.len()\n            );\n        }\n\n        if ets.is_empty() {\n            edge_type_ids = None;\n        }\n    }\n\n    if not_singleton_node_number > nodes_number {\n        panic!(\n            \"There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'\",\n            not_singleton_node_number, nodes_number\n        );\n    }\n\n    let singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops\n        .as_ref()\n        .map_or(0, |bitmap| bitmap.len() as NodeT);\n\n    // While on internal methods nodes_number is always exact, the user may\n    // provide a wrong value for nodes_number when loading a sorted csv.\n    // If this happens, it might cause a slow down in the walk and other\n    // currently unforseen consequences.\n    if nodes_number == not_singleton_node_number + singleton_nodes_with_selfloops_number {\n        unique_sources = None;\n    }\n\n    // When we have computed the nodes with edges set but we have left None\n    // the unique sources elias fano, this is done to avoid using extra memory\n    // for no reason. We need to create the elias fano object starting from the\n    // nodes with edges now to normalize the returned values.\n    if might_have_singletons\n        && unique_sources.is_none()\n        && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number\n    {\n        unique_sources = not_singleton_nodes\n            .as_ref()\n            .map_or(Ok::<_, String>(None), |nsns| {\n                Ok(Some(EliasFano::from_iter(\n                    nsns.iter_ones().into_iter().map(|x| x as u64),\n                    nodes_number as u64,\n                    not_singleton_node_number as usize\n                        + singleton_nodes_with_selfloops_number as usize,\n                )?))\n            })?;\n    }\n\n    if !directed\n        && unique_sources\n            .as_ref()\n            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)\n    {\n        panic!(\n            \"There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'\",\n            not_singleton_node_number, unique_sources.unwrap().len()\n        );\n    }\n\n    Ok((\n        edges,\n        unique_sources,\n        edge_type_ids,\n        weights,\n        unique_edges_number,\n        selfloop_number,\n        unique_selfloop_number,\n        not_singleton_node_number,\n        singleton_nodes_with_selfloops_number,\n        node_bits,\n        node_bit_mask,\n        not_singleton_nodes,\n        singleton_nodes_with_selfloops,\n    ))"
             },
             {
                 "file": "constructors.rs",
@@ -17143,7 +17202,9 @@
                 "impl_doc": [
                     " # Holdouts."
                 ],
-                "doc": [],
+                "doc": [
+                    " TODO add doc"
+                ],
                 "attrs": [],
                 "modifiers": "",
                 "name": "edge_holdout",
@@ -17322,7 +17383,7 @@
                     " # Example",
                     " This example create an 80-20 split of the nodes in the graph",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     "   let (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();",
                     " ```"
                 ],
@@ -17376,7 +17437,7 @@
                     " This example creates an 80-20 split of the edges mantaining the edge label ratios",
                     " in train and test.",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     "   let (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed).unwrap();",
                     " ```"
                 ],
@@ -17429,7 +17490,7 @@
                     " # Example",
                     " this generates a random subgraph with 1000 nodes.",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     "   let random_graph = graph.random_subgraph(0xbad5eed, 1000, true).unwrap();",
                     " ```",
                     ""
@@ -17479,7 +17540,7 @@
                     "",
                     " # Example",
                     " ```rust",
-                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();",
+                    " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
                     " for i in 0..5 {",
                     "     let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true).unwrap();",
                     "     // Run the training",

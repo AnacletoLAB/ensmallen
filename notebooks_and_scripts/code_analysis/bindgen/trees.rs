@@ -4,16 +4,16 @@ impl Graph {
 	#[text_signature = "($self, random_state, undesired_edge_types, verbose)"]
 	/// Returns set of edges composing a spanning tree and connected components.
 	/// 
-	/// The spanning tree is NOT minimal.
-	/// The given random_state is NOT the root of the tree.
+	///  The spanning tree is NOT minimal.
+	///  The given random_state is NOT the root of the tree.
 	/// 
-	/// Paramenters
+	/// Parameters
 	/// --------------
-	/// random_state : int,
+	/// random_state: int,
 	/// 	The random_state to use for the holdout,
-	/// undesired_edge_types : Dict[Option<int]>,
+	/// undesired_edge_types: Union[Dict[Option<int, None]]>,
 	/// 	Which edge types id to try to avoid.
-	/// verbose : bool,
+	/// verbose: bool,
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
@@ -25,39 +25,17 @@ impl Graph {
 	#[text_signature = "($self, verbose)"]
 	/// Returns consistent spanning arborescence using Kruskal.
 	/// 
-	/// The spanning tree is NOT minimal.
+	///  The spanning tree is NOT minimal.
 	/// 
-	/// Paramenters
+	/// Parameters
 	/// --------------
-	/// verbose : bool,
+	/// verbose: bool,
 	/// 	Whether to show a loading bar or not.
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
 	fn spanning_arborescence_kruskal(&self, verbose : bool) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
 		self.graph.spanning_arborescence_kruskal(verbose)
-	}
-	
-	#[text_signature = "($self, verbose)"]
-	/// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
-	/// **This works only for undirected graphs.**
-	/// 
-	/// This method is **not thread save and not deterministic** but by design of the algorithm this
-	/// shouldn't matter but if we will encounter non-detemristic bugs here is where we want to look.
-	/// 
-	/// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
-	/// We assign to each node the index of its component, so nodes in the same components will have the same index.
-	/// This component index is the returned Components membership vector.
-	/// 
-	/// Paramenters
-	/// --------------
-	/// verbose : bool,
-	/// 	Whether to show a loading bar or not.
-	///
-	/// [Automatically generated binding]
-	/// [Automatically generated documentation]
-	fn connected_components(&self, verbose : bool) -> PyResult<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
-		pe!(self.graph.connected_components(verbose))
 	}
 	
 }

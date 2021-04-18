@@ -11,28 +11,6 @@ impl EnsmallenGraph {
         pe!(self.graph.get_node_degrees_mean())
     }
 
-    #[text_signature = "($self, verbose)"]
-    /// Returns number of connected components in graph.
-    ///
-    /// Returns
-    /// ------------------------
-    /// Number of connected components.
-    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
-        self.graph.connected_components_number(verbose)
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns number of self-loops.
-    pub fn get_selfloops_number(&self) -> EdgeT {
-        self.graph.get_selfloop_number()
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns ratio of self-loops.
-    pub fn get_selfloops_rate(&self) -> f64 {
-        self.graph.get_selfloop_rate()
-    }
-
     #[text_signature = "($self)"]
     /// Returns median node degree of the graph.
     pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
@@ -98,22 +76,6 @@ impl EnsmallenGraph {
         pe!(self
             .graph
             .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
-    }
-
-    #[text_signature = "($self, node)"]
-    /// Return the degree for the given node.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// node: int,
-    ///     Node ID to use to compute degrees product.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// degrees product for the two given nodes.
-    ///
-    fn get_node_degree_by_node_id(&self, node: NodeT) -> PyResult<NodeT> {
-        pe!(self.graph.get_node_degree_by_node_id(node))
     }
 
     #[text_signature = "($self)"]
@@ -199,14 +161,5 @@ impl EnsmallenGraph {
     ///
     fn degrees_product(&self, one: NodeT, two: NodeT) -> PyResult<usize> {
         pe!(self.graph.degrees_product(one, two))
-    }
-
-    #[text_signature = "(self)"]
-    /// Return the traps rate of the graph.
-    ///
-    /// This feature is EXPERIMENTAL and still required proving.
-    ///
-    fn get_traps_rate(&self) -> f64 {
-        self.graph.get_traps_rate()
     }
 }

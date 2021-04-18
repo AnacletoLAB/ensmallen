@@ -1,6 +1,8 @@
 use super::*;
-impl Graph {
+use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
 
+#[pymethods]
+impl EnsmallenGraph {
 	#[text_signature = "($self, edge_id)"]
 	/// Returns the destination of given edge id.
 	/// 
@@ -45,8 +47,8 @@ impl Graph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn get_edge_count_from_edge_type_name(&self, edge_type_name : Option<&str>) -> PyResult<EdgeT> {
-		pe!(self.graph.get_edge_count_from_edge_type_name(edge_type_name))
+	fn get_edge_count_from_edge_type_name(&self, edge_type_name : Option<String>) -> PyResult<EdgeT> {
+		pe!(self.graph.get_edge_count_from_edge_type_name(edge_type_name.map(|x| x.as_str())))
 	}
 	
 	#[text_signature = "($self, src, dst)"]
@@ -122,8 +124,8 @@ impl Graph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn get_edge_id_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<&String>) -> PyResult<EdgeT> {
-		pe!(self.graph.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name))
+	fn get_edge_id_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<String>) -> PyResult<EdgeT> {
+		pe!(self.graph.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name.map(|x| &x)))
 	}
 	
 	#[text_signature = "($self, edge_id)"]
@@ -276,8 +278,8 @@ impl Graph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn get_edge_weight_from_node_names_and_edge_type_name(&self, src : &str, dst : &str, edge_type : Option<&String>) -> PyResult<WeightT> {
-		pe!(self.graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))
+	fn get_edge_weight_from_node_names_and_edge_type_name(&self, src : &str, dst : &str, edge_type : Option<String>) -> PyResult<WeightT> {
+		pe!(self.graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type.map(|x| &x)))
 	}
 	
 	#[text_signature = "($self, src, dst)"]

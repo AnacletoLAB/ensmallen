@@ -32,6 +32,12 @@ mod modifiers;
 mod remove;
 mod holdout;
 mod operators;
+mod compression;
+mod getters_boolean;
+mod queries_boolean;
+mod queries;
+mod report;
+mod validators;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {

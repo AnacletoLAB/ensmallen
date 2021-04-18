@@ -1,6 +1,8 @@
 use super::*;
-impl Graph {
+use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
 
+#[pymethods]
+impl EnsmallenGraph {
 	#[text_signature = "($self, verbose)"]
 	/// Return rendered textual report of the graph.
 	/// 
