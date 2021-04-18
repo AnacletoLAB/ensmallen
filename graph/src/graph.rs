@@ -139,15 +139,15 @@ impl Graph {
                 .any(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),
-            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).any(
-                |(_, _, src_name, _, dst_name, _, edge_type_name)| {
+            false => other
+                .par_iter_edge_node_names_and_edge_type_name(other.directed)
+                .any(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_deref(),
                     )
-                },
-            ),
+                }),
         })
     }
 
@@ -164,15 +164,15 @@ impl Graph {
                 .all(|(_, src, dst, et)| {
                     self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
                 }),
-            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).all(
-                |(_, _, src_name, _, dst_name, _, edge_type_name)| {
+            false => other
+                .par_iter_edge_node_names_and_edge_type_name(other.directed)
+                .all(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_deref(),
                     )
-                },
-            ),
+                }),
         })
     }
 }
