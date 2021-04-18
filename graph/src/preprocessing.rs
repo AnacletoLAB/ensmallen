@@ -282,7 +282,7 @@ impl Graph {
     /// # use rayon::iter::ParallelIterator;
     /// # use graph::NodeT;
     /// # use rayon::iter::IndexedParallelIterator;
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// let node_ids = (0..10).collect::<Vec<NodeT>>();
     /// let include_central_nodes = true;
     /// let offset = 0;

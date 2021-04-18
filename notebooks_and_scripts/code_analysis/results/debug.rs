@@ -1062,7 +1062,7 @@ impl WalksParameters {
     /// A graph is always remappable to itself:
     /// ```rust
     /// # use graph::walks_parameters::WalksParameters;
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let mut parameters = WalksParameters::new(32).unwrap();
     /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&ppi).is_ok());
     /// ```
@@ -1070,7 +1070,7 @@ impl WalksParameters {
     /// ```rust
     /// # use graph::walks_parameters::WalksParameters;
     /// # let cora = graph::test_utilities::load_cora().unwrap();
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let mut parameters = WalksParameters::new(32).unwrap();
     /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&cora).is_err());
     /// ```
@@ -2374,7 +2374,7 @@ impl Graph {
     /// # use rayon::iter::ParallelIterator;
     /// # use graph::NodeT;
     /// # use rayon::iter::IndexedParallelIterator;
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// let node_ids = (0..10).collect::<Vec<NodeT>>();
     /// let include_central_nodes = true;
     /// let offset = 0;
@@ -2851,13 +2851,13 @@ impl Graph {
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.are_nodes_remappable(&graph));
     /// ```
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
     /// # let cora = graph::test_utilities::load_cora().unwrap();
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(!cora.are_nodes_remappable(&ppi));
     /// ```
     ///
@@ -2880,7 +2880,7 @@ impl Graph {
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
     /// ```
     ///
@@ -3613,7 +3613,7 @@ impl Graph {
     /// # Example
     /// To check if a node appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// let unexistent_node_name = "I_do_not_exist!";
     /// assert!(graph.has_node_by_node_name(node_name));
@@ -3633,7 +3633,7 @@ impl Graph {
     /// # Example
     /// To check if an edge appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_by_node_ids(0, 1));
     /// assert!(!graph.has_edge_by_node_ids(0, 4565));
     /// ```
@@ -3652,7 +3652,7 @@ impl Graph {
     /// # Example
     /// To check if an edge with given type appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_with_type_by_node_ids(0, 1, Some(0)));
     /// assert!(!graph.has_edge_with_type_by_node_ids(0, 1, Some(1)));
     /// ```
@@ -3720,7 +3720,7 @@ impl Graph {
     /// # Example
     /// To check if an edge in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_by_node_names("ENSP00000000233", "ENSP00000432568"));
     /// assert!(!graph.has_edge_by_node_names("ENSP00000000233", "NonExistent"));
     /// ```
@@ -3739,7 +3739,7 @@ impl Graph {
     /// # Example
     /// To check if an edge with type in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let edge_type = "red".to_string();
     /// let unexistent_edge_type = "NonExistent".to_string();
     /// assert!(graph.has_edge_with_type_by_node_names("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
@@ -5454,7 +5454,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_by_node_id(0));
     /// ```
     ///
@@ -5487,7 +5487,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The edge type id of edge {} is {:?}", 0, graph.get_edge_type_id_by_edge_id(0));
     /// ```
     pub fn get_edge_type_id_by_edge_id(&self, edge_id: EdgeT) -> Result<Option<EdgeTypeT>, String> {
@@ -5562,8 +5562,8 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `edge_id` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false);
     /// let edge_id = 0;
     /// let unexistent_edge_id = 123456789;
     /// assert!(weighted_graph.get_weight_by_edge_id(edge_id).is_ok());
@@ -5593,7 +5593,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
     /// assert!(weighted_graph.get_weight_by_node_ids(src, dst).is_ok());
@@ -5612,7 +5612,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
     /// let edge_type = Some(0);
@@ -5637,7 +5637,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = "ENSP00000000233";
     /// let dst = "ENSP00000432568";
     /// let edge_type = Some("red".to_string());
@@ -5661,7 +5661,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src_name` and `dst_name` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src_name = "ENSP00000000233";
     /// let dst_name = "ENSP00000432568";
     /// assert!(weighted_graph.get_weight_by_node_names(src_name, dst_name).is_ok());
@@ -5706,7 +5706,7 @@ impl Graph {
     /// # Example
     /// To get the node type ID for a given node name you can run:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_id_by_node_name(node_name).unwrap());
     /// ```
@@ -5726,7 +5726,7 @@ impl Graph {
     /// # Example
     /// To get the node type name for a given node name you can run:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The node type of node {} is {:?}", node_name, graph.get_node_type_name_by_node_name(node_name).unwrap());
     /// ```
@@ -5908,7 +5908,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let node_id = 0;
     /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_node_neighbours_by_node_id(node_id).unwrap());
     /// let unavailable_node = 2349765432;
@@ -5935,7 +5935,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_ids_by_node_name(node_name).unwrap());
     /// ```
@@ -5953,7 +5953,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_names_by_node_name(node_name).unwrap());
     /// ```
@@ -6443,7 +6443,7 @@ impl Graph {
     /// * `two`: NodeT - Integer ID of the second node.
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The degrees_product between 0 and 1 is {}", graph.degrees_product(0, 1).unwrap());
     /// ```
     pub fn degrees_product(&self, one: NodeT, two: NodeT) -> Result<usize, String> {
@@ -6474,7 +6474,7 @@ impl Graph {
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Jaccard Index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
     /// ```
     pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
@@ -6523,7 +6523,7 @@ impl Graph {
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
@@ -6564,7 +6564,7 @@ impl Graph {
     /// the computation because they would result in an infinity.
     ///
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
@@ -6591,7 +6591,7 @@ impl Graph {
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     ///
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Graph rate is {}", graph.get_traps_rate());
     /// ```
     pub fn get_traps_rate(&self) -> f64 {
@@ -6613,7 +6613,7 @@ impl Graph {
 
     /// Returns mean node degree of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
     pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
@@ -6627,7 +6627,7 @@ impl Graph {
 
     /// Returns number of undirected edges of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
@@ -6637,7 +6637,7 @@ impl Graph {
 
     /// Returns number of undirected edges of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
@@ -6647,7 +6647,7 @@ impl Graph {
 
     /// Returns number of edges of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of edges of the graph is  {}", graph.get_edges_number());
     /// ```
     pub fn get_edges_number(&self) -> EdgeT {
@@ -6659,7 +6659,7 @@ impl Graph {
 
     /// Returns number of unique edges of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of edges of the graph is  {}", graph.get_unique_edges_number());
     /// ```
     pub fn get_unique_edges_number(&self) -> EdgeT {
@@ -6671,7 +6671,7 @@ impl Graph {
 
     /// Returns median node degree of the graph
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
     pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
@@ -6687,7 +6687,7 @@ impl Graph {
 
     /// Returns maximum node degree of the graph
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
     pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
@@ -6698,7 +6698,7 @@ impl Graph {
 
     /// Returns minimum node degree of the graph
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
@@ -6709,7 +6709,7 @@ impl Graph {
 
     /// Returns mode node degree of the graph
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
     pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
@@ -6733,7 +6733,7 @@ impl Graph {
 
     /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
     /// ```
     pub fn get_selfloop_number(&self) -> EdgeT {
@@ -6742,7 +6742,7 @@ impl Graph {
 
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
     /// ```
     pub fn get_unique_selfloop_number(&self) -> NodeT {
@@ -6751,7 +6751,7 @@ impl Graph {
 
     /// Returns rate of self-loops.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_rate().unwrap());
     /// ```
     pub fn get_selfloop_rate(&self) -> Result<f64, String> {
@@ -6778,7 +6778,7 @@ impl Graph {
 
     /// Returns number of singleton nodes within the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
@@ -6787,7 +6787,7 @@ impl Graph {
 
     /// Returns number of singleton nodes with self-loops within the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
     /// ```
     pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
@@ -6796,7 +6796,7 @@ impl Graph {
 
     /// Returns number of not singleton nodes within the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
     /// ```
     pub fn get_not_singleton_nodes_number(&self) -> NodeT {
@@ -6805,7 +6805,7 @@ impl Graph {
 
     /// Returns density of the graph.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph density is {}", graph.get_density().unwrap());
     /// ```
     pub fn get_density(&self) -> Result<f64, String> {
@@ -6842,7 +6842,7 @@ impl Graph {
     /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.report();
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
@@ -9247,7 +9247,7 @@ impl Graph {
     /// # Example
     /// To check if the graph has nodes you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph.has_nodes(), true);
     /// ```
     ///
@@ -9260,7 +9260,7 @@ impl Graph {
     /// # Example
     /// To check if the current graph has edges you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph.has_edges(), true);
     /// ```
     ///
@@ -9273,7 +9273,7 @@ impl Graph {
     /// # Example
     /// To the retrieve the name of the current graph instance you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph.get_name(), "STRING PPI".to_string());
     /// println!("The name of the current graph is {}.", graph.get_name());
     /// ```
@@ -9288,7 +9288,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
@@ -9301,7 +9301,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// if graph.has_trap_nodes(){
     ///     println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// } else {
@@ -9317,9 +9317,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(directed_string_ppi.is_directed());
-    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(!undirected_string_ppi.is_directed());
     /// ```
     ///
@@ -9331,9 +9331,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(weights_string_ppi.has_edge_weights());
-    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false);
     /// assert!(!unweights_string_ppi.has_edge_weights());
     /// ```
     ///
@@ -9345,9 +9345,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_edge_types.has_edge_types());
-    /// let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
+    /// let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false);
     /// assert!(!string_ppi_without_edge_types.has_edge_types());
     /// ```
     ///
@@ -9359,9 +9359,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_selfloops.has_selfloops());
-    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();
+    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true);
     /// assert!(!string_ppi_without_selfloops.has_selfloops());
     /// ```
     ///
@@ -9373,7 +9373,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_singletons());
     /// let graph_without_singletons = graph_with_singletons.remove(
     ///     None, None, None, None, None, None, None, None, false, false, true, true, false, false,
@@ -9661,7 +9661,7 @@ impl Graph {
 
     /// Returns number of the source nodes.
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
     /// ```
     pub fn get_unique_source_nodes_number(&self) -> NodeT {
@@ -9678,7 +9678,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
@@ -9703,7 +9703,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
@@ -9719,7 +9719,7 @@ impl Graph {
     /// None
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
@@ -9746,7 +9746,7 @@ impl Graph {
     /// None
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }

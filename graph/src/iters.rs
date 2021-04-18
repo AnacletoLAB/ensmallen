@@ -81,8 +81,8 @@ impl Graph {
     /// # Example
     /// To get an iterator over the edges weights you can use:
     /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
     /// assert!(graph_with_weights.iter_edge_weights().is_ok());
     /// assert!(graph_without_weights.iter_edge_weights().is_err());
     /// println!("The graph weights are {:?}.", graph_with_weights.iter_edge_weights().unwrap().collect::<Vec<_>>());
@@ -98,8 +98,8 @@ impl Graph {
     /// To get an iterator over the edges weights you can use:
     /// ```rust
     /// # use rayon::iter::ParallelIterator;
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
     /// assert!(graph_with_weights.iter_edge_weights().is_ok());
     /// assert!(graph_without_weights.iter_edge_weights().is_err());
     /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());

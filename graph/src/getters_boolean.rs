@@ -13,7 +13,7 @@ impl Graph {
     /// # Example
     /// To check if the graph has nodes you can use:
     /// ```rust
-    /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
     /// assert!(graph_with_nodes.has_nodes());
     /// assert!(!empty_graph.has_nodes());
@@ -28,7 +28,7 @@ impl Graph {
     /// # Example
     /// To check if the current graph has edges you can use:
     /// ```rust
-    /// # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
     /// assert!(graph_with_edges.has_edges());
     /// assert!(!empty_graph.has_edges());
@@ -42,7 +42,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// if graph.has_trap_nodes(){
     ///     println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// } else {
@@ -58,9 +58,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(directed_string_ppi.is_directed());
-    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(!undirected_string_ppi.is_directed());
     /// ```
     ///
@@ -72,9 +72,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(weights_string_ppi.has_edge_weights());
-    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false);
     /// assert!(!unweights_string_ppi.has_edge_weights());
     /// ```
     ///
@@ -86,9 +86,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let string_ppi_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_edge_types.has_edge_types());
-    /// let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
+    /// let string_ppi_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false);
     /// assert!(!string_ppi_without_edge_types.has_edge_types());
     /// ```
     ///
@@ -100,9 +100,9 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_selfloops.has_selfloops());
-    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true).unwrap();
+    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true);
     /// assert!(!string_ppi_without_selfloops.has_selfloops());
     /// ```
     ///
@@ -114,7 +114,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false).unwrap();
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_singletons());
     /// let graph_without_singletons = graph_with_singletons.remove(
     ///     None, None, None, None, None, None, None, None, false, false, true, true, false, false,

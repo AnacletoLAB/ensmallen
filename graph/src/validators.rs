@@ -14,7 +14,7 @@ impl Graph {
     /// In order to validate a given node ID, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.validate_node_id(0).is_ok());
     /// assert!(graph.validate_node_id(100000000).is_err());
     /// ```
@@ -38,7 +38,7 @@ impl Graph {
     /// In order to validate a given edge ID, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.validate_edge_id(0).is_ok());
     /// assert!(graph.validate_edge_id(10000000000).is_err());
     /// ```
@@ -62,7 +62,7 @@ impl Graph {
     /// In order to validate a given node type ID, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.validate_node_type_id(Some(0)).is_ok());
     /// assert!(graph.validate_node_type_id(Some(1000)).is_err());
     /// ```
@@ -92,7 +92,7 @@ impl Graph {
     /// In order to validate a given edge type ID, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.validate_edge_type_id(Some(0)).is_ok());
     /// assert!(graph.validate_edge_type_id(Some(1000)).is_err());
     /// ```
@@ -116,8 +116,8 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph_with_node_types.must_have_node_types().is_ok());
     /// assert!(graph_without_node_types.must_have_node_types().is_err());
     /// ```
@@ -134,8 +134,8 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_edge_types = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
-    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_with_edge_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);
+    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// assert!(graph_with_edge_types.must_have_edge_types().is_ok());
     /// assert!(graph_without_edge_types.must_have_edge_types().is_err());
     /// ```
@@ -152,8 +152,8 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();
-    /// # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false);
+    /// # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// assert!(undirecte_graph.must_be_undirected().is_ok());
     /// assert!(directed_graph.must_be_undirected().is_err());
     /// ```
@@ -170,8 +170,8 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false).unwrap();
-    /// # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false).unwrap();
+    /// # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);
+    /// # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);
     /// assert!(multigraph.must_be_multigraph().is_ok());
     /// assert!(homogeneous.must_be_multigraph().is_err());
     /// ```
@@ -188,8 +188,8 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false).unwrap();
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
     /// assert!(graph_with_weights.must_have_edge_weights().is_ok());
     /// assert!(graph_without_weights.must_have_edge_weights().is_err());
     /// ```
@@ -206,7 +206,7 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_edges = graph::test_utilities::load_empty_graph(false);
     /// assert!(graph_with_edges.must_have_edges().is_ok());
     /// assert!(graph_without_edges.must_have_edges().is_err());

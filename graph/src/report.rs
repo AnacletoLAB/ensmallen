@@ -26,7 +26,7 @@ impl Graph {
     /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.report();
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {

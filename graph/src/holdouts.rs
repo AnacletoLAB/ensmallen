@@ -622,7 +622,7 @@ impl Graph {
     /// # Example
     /// This example create an 80-20 split of the nodes in the graph
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();
     /// ```
     pub fn node_label_holdout(
@@ -741,7 +741,7 @@ impl Graph {
     /// This example creates an 80-20 split of the edges mantaining the edge label ratios
     /// in train and test.
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed).unwrap();
     /// ```
     pub fn edge_label_holdout(
@@ -860,7 +860,7 @@ impl Graph {
     /// # Example
     /// this generates a random subgraph with 1000 nodes.
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let random_graph = graph.random_subgraph(0xbad5eed, 1000, true).unwrap();
     /// ```
     ///
@@ -981,7 +981,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// for i in 0..5 {
     ///     let (train, test) = graph.kfold(5, i, None, 0xbad5eed, true).unwrap();
     ///     // Run the training

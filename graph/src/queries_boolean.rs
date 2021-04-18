@@ -69,7 +69,7 @@ impl Graph {
     /// # Example
     /// To check if a node appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// let unexistent_node_name = "I_do_not_exist!";
     /// assert!(graph.has_node_from_node_name(node_name));
@@ -89,7 +89,7 @@ impl Graph {
     /// # Example
     /// To check if an edge appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_from_node_ids(0, 1));
     /// assert!(!graph.has_edge_from_node_ids(0, 4565));
     /// ```
@@ -108,7 +108,7 @@ impl Graph {
     /// # Example
     /// To check if an edge with given type appears in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(0)));
     /// assert!(!graph.has_edge_from_node_ids_and_edge_type_id(0, 1, Some(1)));
     /// ```
@@ -190,7 +190,7 @@ impl Graph {
     /// # Example
     /// To check if an edge in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.has_edge_from_node_names("ENSP00000000233", "ENSP00000432568"));
     /// assert!(!graph.has_edge_from_node_names("ENSP00000000233", "NonExistent"));
     /// ```
@@ -209,7 +209,7 @@ impl Graph {
     /// # Example
     /// To check if an edge with type in the graph you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let edge_type = "red".to_string();
     /// let unexistent_edge_type = "NonExistent".to_string();
     /// assert!(graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
