@@ -106,7 +106,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
             }
             let i = IndexT::to_usize(*v);
             if !self.reverse_map[i].is_empty() {
-                return Err(format!(
+                panic!(
                     concat!(
                         "During the building of the reverse mapping, ",
                         "one of the elements of the reverse mapping was attempted ",
@@ -116,8 +116,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "node id.\n",
                         "In this case, the value is {} and its index is {}."
                     ),
-                    k, i
-                ));
+                    k,
+                    i,
+                );
             }
             self.reverse_map[i] = k.clone();
         }
