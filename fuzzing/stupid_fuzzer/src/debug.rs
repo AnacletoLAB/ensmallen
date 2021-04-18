@@ -1,5 +1,5 @@
 use arbitrary::{Arbitrary, Unstructured};
-use graph_harness::{from_vec_harness, FromVecHarnessParams};
+use graph_harness::*;
 use indicatif::ProgressBar;
 use std::fs::metadata;
 
@@ -8,12 +8,16 @@ fn test_file(file_name: String, number_of_test_runs:u64) {
     println!("Running '{}'", &file_name);
     let mut data = std::fs::read(file_name.clone()).expect("Cannot read the file");
     let mut raw_data = Unstructured::new(&mut data);
-    let maybe_params = FromVecHarnessParams::arbitrary(&mut raw_data);
+
+    let maybe_params = MetaParams::arbitrary(&mut raw_data);
+
     println!("{:#4?}", maybe_params);
     let bar = ProgressBar::new(number_of_test_runs);
     if let Ok(params) = maybe_params {
         for _ in (0..number_of_test_runs) {
-            let harness_result = from_vec_harness(params.clone());
+
+            let harness_result = meta_test(params.clone());
+
             bar.inc(1);
         }
     }

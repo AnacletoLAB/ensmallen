@@ -3,10 +3,31 @@ use arbitrary::Arbitrary;
 use std::collections::HashSet;
 use rayon::iter::ParallelIterator;
 
+struct Rng{
+    seed: u64
+}
+
+impl Rng {
+    pub fn new() -> Rng {
+        Rng{
+            seed: 0xbad5eed ^ unsafe{core::arch::x86_64::_rdtsc()}
+        }
+    }
+
+    pub fn next(&mut self) -> u64 {
+        let mut x = self.seed;
+        x ^= x << 17;
+        x ^= x >> 7;
+        x ^= x << 13;
+        self.seed = x;
+        x
+    }
+}
+
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RandomSpanningArborescenceKruskalParams {
 	pub random_state : EdgeT,
-	pub unwanted_edge_types : Option<HashSet<Option<EdgeTypeT>>>,
+	pub undesired_edge_types : Option<HashSet<Option<EdgeTypeT>>>,
 	pub verbose : bool,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -134,11 +155,11 @@ pub struct GetNodeNameFromNodeIdParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetEdgeCountFromEdgeTypeIdParams {
-	pub edge_type : Option<EdgeTypeT>,
+	pub edge_type_id : Option<EdgeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetNodeCountFromNodeTypeIdParams {
-	pub node_type : Option<NodeTypeT>,
+	pub node_type_id : Option<NodeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetDestinationNodeIdFromEdgeIdParams {
@@ -161,11 +182,11 @@ pub struct GetEdgeIdFromNodeIdsAndEdgeTypeIdParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetEdgeTypeIdsFromEdgeTypeNamesParams {
-	pub edge_types : Vec<Option<String>>,
+	pub edge_type_names : Vec<Option<String>>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetNodeTypeIdsFromNodeTypeNamesParams {
-	pub node_types : Vec<Option<String>>,
+	pub node_type_names : Vec<Option<String>>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetMinmaxEdgeIdsFromSourceNodeIdParams {
@@ -195,6 +216,14 @@ pub struct ValidateNodeIdParams {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct ValidateEdgeIdParams {
 	pub edge_id : EdgeT,
+}
+#[derive(Arbitrary, Debug, Clone)]
+pub struct ValidateNodeTypeIdParams {
+	pub node_type_id : Option<NodeTypeT>,
+}
+#[derive(Arbitrary, Debug, Clone)]
+pub struct ValidateEdgeTypeIdParams {
+	pub edge_type_id : Option<EdgeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct DegreesProductParams {
@@ -501,6 +530,8 @@ pub struct MetaParams {
 	pub filter: FilterParams,
 	pub validate_node_id: ValidateNodeIdParams,
 	pub validate_edge_id: ValidateEdgeIdParams,
+	pub validate_node_type_id: ValidateNodeTypeIdParams,
+	pub validate_edge_type_id: ValidateEdgeTypeIdParams,
 	pub degrees_product: DegreesProductParams,
 	pub jaccard_index: JaccardIndexParams,
 	pub adamic_adar_index: AdamicAdarIndexParams,
@@ -554,10 +585,10 @@ pub struct MetaParams {
 }
 
 pub fn meta_test(data: MetaParams) -> Result<(), String> {
-    let data_copy = data.clone();
-    let data_copy2 = data.clone();
+    let panic_handler_data_before_load = data.clone();
+    let data_copy_for_tests = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_meta_test(Some(info), data_copy.clone(), None);
+        handle_panics_meta_test(Some(info), panic_handler_data_before_load.clone(), None);
     }));
 
     let mut graph = graph::Graph::from_string_unsorted(
@@ -582,189 +613,1817 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         true,
         true,
     )?;
-    
-    
 
-    let g_copy = graph.clone();
-    std::panic::set_hook(Box::new(move |info| {
-        handle_panics_meta_test_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
-    }));
-    
-	let _ = graph.iter_destination_node_ids(data.iter_destination_node_ids.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edge_ids(data.iter_edge_ids.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edge_node_ids_and_edge_type_id(data.iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edge_node_ids_and_edge_type_id_and_edge_weight(data.iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edge_node_names_and_edge_type_name(data.iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edge_node_names_and_edge_type_name_and_edge_weight(data.iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
-	let _ = graph.iter_edges(data.iter_edges.directed).collect::<Vec<_>>();
-	let _ = graph.iter_node_degrees().collect::<Vec<_>>();
-	let _ = graph.iter_node_ids().collect::<Vec<_>>();
-	let _ = graph.iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
-	let _ = graph.iter_nodes().collect::<Vec<_>>();
-	let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
-	let _ = graph.iter_singleton_node_ids().collect::<Vec<_>>();
-	let _ = graph.iter_singleton_with_selfloops_node_ids().collect::<Vec<_>>();
-	let _ = graph.iter_source_node_ids(data.iter_source_node_ids.directed).collect::<Vec<_>>();
-	let _ = graph.iter_unique_edge_node_ids(data.iter_unique_edge_node_ids.directed).collect::<Vec<_>>();
-	let _ = graph.iter_unique_source_node_ids().collect::<Vec<_>>();
-	let _ = graph.par_iter_destination_node_ids(data.par_iter_destination_node_ids.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edge_ids(data.par_iter_edge_ids.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edge_node_ids_and_edge_type_id(data.par_iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(data.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edge_node_names_and_edge_type_name(data.par_iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(data.par_iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_edges(data.par_iter_edges.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
-	let _ = graph.par_iter_node_ids().collect::<Vec<_>>();
-	let _ = graph.par_iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
-	let _ = graph.par_iter_source_node_ids(data.par_iter_source_node_ids.directed).collect::<Vec<_>>();
-	graph.compute_hash();
-	graph.decode_edge(data.decode_edge.edge);
-	graph.disable_all();
-	graph.encode_edge(data.encode_edge.src, data.encode_edge.dst);
-	graph.get_clique_edge_names(data.get_clique_edge_names.directed, data.get_clique_edge_names.allow_selfloops, data.get_clique_edge_names.removed_existing_edges, data.get_clique_edge_names.allow_node_type_set, data.get_clique_edge_names.allow_node_set);
-	graph.get_clique_edges(data.get_clique_edges.directed, data.get_clique_edges.allow_selfloops, data.get_clique_edges.removed_existing_edges, data.get_clique_edges.allow_node_type_set, data.get_clique_edges.allow_node_set);
-	graph.get_cumulative_node_degrees();
-	graph.get_dense_nodes_mapping();
-	graph.get_destination_names(data.get_destination_names.directed);
-	graph.get_destinations(data.get_destinations.directed);
-	graph.get_directed_edges_number();
-	graph.get_edge_node_names(data.get_edge_node_names.directed);
-	graph.get_edge_type_names();
-	graph.get_edge_types_number();
-	graph.get_edges(data.get_edges.directed);
-	graph.get_edges_number();
-	graph.get_max_encodable_edge_number();
-	graph.get_minimum_edge_types_number();
-	graph.get_minimum_node_types_number();
-	graph.get_multigraph_edges_number();
-	graph.get_name();
-	graph.get_node_connected_component_ids(data.get_node_connected_component_ids.verbose);
-	graph.get_node_degrees();
-	graph.get_node_names();
-	graph.get_node_types_number();
-	graph.get_nodes();
-	graph.get_nodes_mapping();
-	graph.get_nodes_number();
-	graph.get_not_singleton_nodes_number();
-	graph.get_not_singletons_node_ids();
-	graph.get_selfloop_nodes_number();
-	graph.get_singleton_nodes_number();
-	graph.get_singleton_nodes_with_selfloops_number();
-	graph.get_source_names(data.get_source_names.directed);
-	graph.get_sources(data.get_sources.directed);
-	graph.get_top_k_central_node_ids(data.get_top_k_central_node_ids.k);
-	graph.get_top_k_central_node_names(data.get_top_k_central_node_names.k);
-	graph.get_trap_nodes_number();
-	graph.get_trap_nodes_rate();
-	graph.get_undirected_edges_number();
-	graph.get_unique_directed_edges_number();
-	graph.get_unique_edges_number();
-	graph.get_unique_selfloop_number();
-	graph.get_unique_source_nodes_number();
-	graph.get_unique_undirected_edges_number();
-	graph.get_unknown_edge_types_number();
-	graph.get_unknown_node_types_number();
-	graph.has_edge_from_node_ids(data.has_edge_from_node_ids.src, data.has_edge_from_node_ids.dst);
-	graph.has_edge_from_node_ids_and_edge_type_id(data.has_edge_from_node_ids_and_edge_type_id.src, data.has_edge_from_node_ids_and_edge_type_id.dst, data.has_edge_from_node_ids_and_edge_type_id.edge_type);
-	graph.has_edge_types();
-	graph.has_edge_weights();
-	graph.has_edges();
-	graph.has_multilabel_node_types();
-	graph.has_node_types();
-	graph.has_nodes();
-	graph.has_selfloops();
-	graph.has_singletons();
-	graph.has_singletons_with_selfloops();
-	graph.has_trap_nodes();
-	graph.has_unknown_edge_types();
-	graph.has_unknown_node_types();
-	graph.is_directed();
-	graph.is_multigraph();
-	graph.is_singleton_with_selfloops_from_node_id(data.is_singleton_with_selfloops_from_node_id.node_id);
-	graph.random_spanning_arborescence_kruskal(data.random_spanning_arborescence_kruskal.random_state, &data.random_spanning_arborescence_kruskal.unwanted_edge_types, data.random_spanning_arborescence_kruskal.verbose);
-	graph.report();
-	graph.set_name(data.set_name.name);
-	graph.spanning_arborescence_kruskal(data.spanning_arborescence_kruskal.verbose);
-	graph.get_connected_components_number(data.get_connected_components_number.verbose);
-	graph.strongly_connected_components();
-	let _ = graph.connected_components(data.connected_components.verbose);
-	let _ = graph.connected_holdout(data.connected_holdout.random_state, data.connected_holdout.train_size, data.connected_holdout.edge_types, data.connected_holdout.include_all_edge_types, data.connected_holdout.verbose);
-	let _ = graph.adamic_adar_index(data.adamic_adar_index.one, data.adamic_adar_index.two);
-	let _ = graph.degrees_product(data.degrees_product.one, data.degrees_product.two);
-	let _ = graph.edge_label_holdout(data.edge_label_holdout.train_size, data.edge_label_holdout.use_stratification, data.edge_label_holdout.random_state);
-	let _ = graph.enable(data.enable.vector_sources, data.enable.vector_destinations, data.enable.vector_cumulative_node_degrees, data.enable.cache_size);
-	let _ = graph.filter(data.filter.node_names, data.filter.node_types, data.filter.edge_types, data.filter.min_weight, data.filter.max_weight, data.filter.verbose);
-	let _ = graph.get_bipartite_edge_names(data.get_bipartite_edge_names.removed_existing_edges, data.get_bipartite_edge_names.first_nodes_set, data.get_bipartite_edge_names.second_nodes_set, data.get_bipartite_edge_names.first_node_types_set, data.get_bipartite_edge_names.second_node_types_set);
-	let _ = graph.get_bipartite_edges(data.get_bipartite_edges.removed_existing_edges, data.get_bipartite_edges.first_nodes_set, data.get_bipartite_edges.second_nodes_set, data.get_bipartite_edges.first_node_types_set, data.get_bipartite_edges.second_node_types_set);
-	let _ = graph.get_density();
-	let _ = graph.get_destination_node_id_from_edge_id(data.get_destination_node_id_from_edge_id.edge_id);
-	let _ = graph.get_edge_count_from_edge_type_id(data.get_edge_count_from_edge_type_id.edge_type);
-	let _ = graph.get_edge_id_from_node_ids(data.get_edge_id_from_node_ids.src, data.get_edge_id_from_node_ids.dst);
-	let _ = graph.get_edge_id_from_node_ids_and_edge_type_id(data.get_edge_id_from_node_ids_and_edge_type_id.src, data.get_edge_id_from_node_ids_and_edge_type_id.dst, data.get_edge_id_from_node_ids_and_edge_type_id.edge_type);
-	let _ = graph.get_edge_type_counter();
-	let _ = graph.get_edge_type_counts_hashmap();
-	let _ = graph.get_edge_type_id_from_edge_id(data.get_edge_type_id_from_edge_id.edge_id);
-	let _ = graph.get_edge_type_ids_from_edge_type_names(data.get_edge_type_ids_from_edge_type_names.edge_types);
-	let _ = graph.get_edge_type_name_from_edge_id(data.get_edge_type_name_from_edge_id.edge_id);
-	let _ = graph.get_edge_type_name_from_edge_type_id(data.get_edge_type_name_from_edge_type_id.edge_type_id);
-	let _ = graph.get_edge_types();
-	let _ = graph.get_edge_weight_from_edge_id(data.get_edge_weight_from_edge_id.edge_id);
-	let _ = graph.get_edge_weight_from_node_ids(data.get_edge_weight_from_node_ids.src, data.get_edge_weight_from_node_ids.dst);
-	let _ = graph.get_edge_weight_from_node_ids_and_edge_type_id(data.get_edge_weight_from_node_ids_and_edge_type_id.src, data.get_edge_weight_from_node_ids_and_edge_type_id.dst, data.get_edge_weight_from_node_ids_and_edge_type_id.edge_type);
-	let _ = graph.get_edge_weights();
-	let _ = graph.get_max_edge_weight();
-	let _ = graph.get_max_node_degree();
-	let _ = graph.get_min_edge_weight();
-	let _ = graph.get_min_node_degree();
-	let _ = graph.get_minmax_edge_ids_from_node_ids(data.get_minmax_edge_ids_from_node_ids.src, data.get_minmax_edge_ids_from_node_ids.dst);
-	let _ = graph.get_minmax_edge_ids_from_source_node_id(data.get_minmax_edge_ids_from_source_node_id.src);
-	let _ = graph.get_neighbour_node_ids_from_node_id(data.get_neighbour_node_ids_from_node_id.node_id);
-	let _ = graph.get_node_count_from_node_type_id(data.get_node_count_from_node_type_id.node_type);
-	let _ = graph.get_node_degree_from_node_id(data.get_node_degree_from_node_id.node_id);
-	let _ = graph.get_node_degrees_mean();
-	let _ = graph.get_node_degrees_median();
-	let _ = graph.get_node_degrees_mode();
-	let _ = graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(data.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id.edge_id);
-	let _ = graph.get_node_ids_and_edge_type_id_from_edge_id(data.get_node_ids_and_edge_type_id_from_edge_id.edge_id);
-	let _ = graph.get_node_ids_from_edge_id(data.get_node_ids_from_edge_id.edge_id);
-	let _ = graph.get_node_label_prediction_tuple_from_node_ids(data.get_node_label_prediction_tuple_from_node_ids.node_ids, data.get_node_label_prediction_tuple_from_node_ids.random_state, data.get_node_label_prediction_tuple_from_node_ids.include_central_node, data.get_node_label_prediction_tuple_from_node_ids.offset, data.get_node_label_prediction_tuple_from_node_ids.max_neighbours);
-	let _ = graph.get_node_name_from_node_id(data.get_node_name_from_node_id.node_id);
-	let _ = graph.get_node_type_counter();
-	let _ = graph.get_node_type_counts_hashmap();
-	let _ = graph.kfold(data.kfold.k, data.kfold.k_index, data.kfold.edge_types, data.kfold.random_state, data.kfold.verbose);
-	let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);
-	let _ = graph.random_subgraph(data.random_subgraph.random_state, data.random_subgraph.nodes_number, data.random_subgraph.verbose);
-	let _ = graph.remove(data.remove.allow_nodes_set, data.remove.deny_nodes_set, data.remove.allow_node_types_set, data.remove.deny_node_types_set, data.remove.allow_edge_set, data.remove.deny_edge_set, data.remove.allow_edge_types_set, data.remove.deny_edge_types_set, data.remove.weights, data.remove.node_types, data.remove.edge_types, data.remove.singletons, data.remove.selfloops, data.remove.verbose);
-	let _ = graph.remove_components(data.remove_components.node_names, data.remove_components.node_types, data.remove_components.edge_types, data.remove_components.minimum_component_size, data.remove_components.top_k_components, data.remove_components.verbose);
-	let mut graph = graph.clone().set_all_edge_types(data.set_all_edge_types.edge_type)?;
-	let mut graph = graph.clone().set_all_node_types(data.set_all_node_types.node_type)?;
-	let _ = graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id);
-	let _ = graph.get_node_type_ids();
-	let _ = graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types);
-	let _ = graph.get_node_type_name_from_node_id(data.get_node_type_name_from_node_id.node_id);
-	let _ = graph.get_node_type_name_from_node_type_id(data.get_node_type_name_from_node_type_id.node_type_id);
-	let _ = graph.get_node_type_names();
-	let _ = graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids);
-	let _ = graph.get_selfloop_nodes_rate();
-	let _ = graph.get_star_edge_names(data.get_star_edge_names.central_node, data.get_star_edge_names.removed_existing_edges, data.get_star_edge_names.star_points_nodes_set, data.get_star_edge_names.star_points_node_types_set);
-	let _ = graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set);
-	let _ = graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id);
-	let _ = graph.is_trap_node_from_node_id(data.is_trap_node_from_node_id.node_id);
-	let _ = graph.iter_edge_ids_from_node_ids(data.iter_edge_ids_from_node_ids.src, data.iter_edge_ids_from_node_ids.dst);
-	let _ = graph.iter_edge_weights();
-	let _ = graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two);
-	let _ = graph.must_have_edge_types();
-	let _ = graph.must_have_edge_weights();
-	let _ = graph.must_have_node_types();
-	let _ = graph.node_label_holdout(data.node_label_holdout.train_size, data.node_label_holdout.use_stratification, data.node_label_holdout.random_state);
-	let _ = graph.resource_allocation_index(data.resource_allocation_index.one, data.resource_allocation_index.two);
-	let _ = graph.par_iter_edge_weights();
-	let _ = graph.validate_edge_id(data.validate_edge_id.edge_id);
-	let _ = graph.validate_node_id(data.validate_node_id.node_id);
-	let _ = graph.textual_report(data.textual_report.verbose);
-	let _ = graph.spanning_arborescence(data.spanning_arborescence.verbose);
-	let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let mut rng = Rng::new();
+    let mut trace = Vec::new();
+    for _ in 0..10 {
+        let data_for_current_test = data_copy_for_tests.clone();
+        let data_for_panic_handler = data_copy_for_tests.clone();
+        match rng.next() % 181 {
+			0 => {
+				trace.push(format!("random_spanning_arborescence_kruskal(random_state = {:?}, undesired_edge_types = {:?}, verbose = {:?})", data_for_current_test.random_spanning_arborescence_kruskal.random_state, &data_for_current_test.random_spanning_arborescence_kruskal.undesired_edge_types, data_for_current_test.random_spanning_arborescence_kruskal.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.random_spanning_arborescence_kruskal(data_for_current_test.random_spanning_arborescence_kruskal.random_state, &data_for_current_test.random_spanning_arborescence_kruskal.undesired_edge_types, data_for_current_test.random_spanning_arborescence_kruskal.verbose);
+			},
+			1 => {
+				trace.push(format!("spanning_arborescence_kruskal(verbose = {:?})", data_for_current_test.spanning_arborescence_kruskal.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.spanning_arborescence_kruskal(data_for_current_test.spanning_arborescence_kruskal.verbose);
+			},
+			2 => {
+				trace.push(format!("spanning_arborescence(verbose = {:?})", data_for_current_test.spanning_arborescence.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.spanning_arborescence(data_for_current_test.spanning_arborescence.verbose);
+			},
+			3 => {
+				trace.push(format!("connected_components(verbose = {:?})", data_for_current_test.connected_components.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.connected_components(data_for_current_test.connected_components.verbose);
+			},
+			4 => {
+				trace.push(format!("get_node_label_prediction_tuple_from_node_ids(node_ids = {:?}, random_state = {:?}, include_central_node = {:?}, offset = {:?}, max_neighbours = {:?})", data_for_current_test.get_node_label_prediction_tuple_from_node_ids.node_ids, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.random_state, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.include_central_node, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.offset, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.max_neighbours));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_label_prediction_tuple_from_node_ids(data_for_current_test.get_node_label_prediction_tuple_from_node_ids.node_ids, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.random_state, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.include_central_node, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.offset, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.max_neighbours);
+			},
+			5 => {
+				trace.push(format!("is_singleton_from_node_id(node_id = {:?})", data_for_current_test.is_singleton_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.is_singleton_from_node_id(data_for_current_test.is_singleton_from_node_id.node_id);
+			},
+			6 => {
+				trace.push(format!("is_singleton_with_selfloops_from_node_id(node_id = {:?})", data_for_current_test.is_singleton_with_selfloops_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.is_singleton_with_selfloops_from_node_id(data_for_current_test.is_singleton_with_selfloops_from_node_id.node_id);
+			},
+			7 => {
+				trace.push(format!("has_edge_from_node_ids(src = {:?}, dst = {:?})", data_for_current_test.has_edge_from_node_ids.src, data_for_current_test.has_edge_from_node_ids.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_edge_from_node_ids(data_for_current_test.has_edge_from_node_ids.src, data_for_current_test.has_edge_from_node_ids.dst);
+			},
+			8 => {
+				trace.push(format!("has_edge_from_node_ids_and_edge_type_id(src = {:?}, dst = {:?}, edge_type = {:?})", data_for_current_test.has_edge_from_node_ids_and_edge_type_id.src, data_for_current_test.has_edge_from_node_ids_and_edge_type_id.dst, data_for_current_test.has_edge_from_node_ids_and_edge_type_id.edge_type));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_edge_from_node_ids_and_edge_type_id(data_for_current_test.has_edge_from_node_ids_and_edge_type_id.src, data_for_current_test.has_edge_from_node_ids_and_edge_type_id.dst, data_for_current_test.has_edge_from_node_ids_and_edge_type_id.edge_type);
+			},
+			9 => {
+				trace.push(format!("is_trap_node_from_node_id(node_id = {:?})", data_for_current_test.is_trap_node_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.is_trap_node_from_node_id(data_for_current_test.is_trap_node_from_node_id.node_id);
+			},
+			10 => {
+				trace.push(format!("enable(vector_sources = {:?}, vector_destinations = {:?}, vector_cumulative_node_degrees = {:?}, cache_size = {:?})", data_for_current_test.enable.vector_sources, data_for_current_test.enable.vector_destinations, data_for_current_test.enable.vector_cumulative_node_degrees, data_for_current_test.enable.cache_size));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.enable(data_for_current_test.enable.vector_sources, data_for_current_test.enable.vector_destinations, data_for_current_test.enable.vector_cumulative_node_degrees, data_for_current_test.enable.cache_size);
+			},
+			11 => {
+				trace.push(format!("disable_all()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.disable_all();
+			},
+			12 => {
+				trace.push(format!("iter_edge_ids_from_node_ids(src = {:?}, dst = {:?})", data_for_current_test.iter_edge_ids_from_node_ids.src, data_for_current_test.iter_edge_ids_from_node_ids.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_ids_from_node_ids(data_for_current_test.iter_edge_ids_from_node_ids.src, data_for_current_test.iter_edge_ids_from_node_ids.dst);
+			},
+			13 => {
+				trace.push(format!("strongly_connected_components()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.strongly_connected_components();
+			},
+			14 => {
+				trace.push(format!("get_node_ids_from_edge_id(edge_id = {:?})", data_for_current_test.get_node_ids_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_ids_from_edge_id(data_for_current_test.get_node_ids_from_edge_id.edge_id);
+			},
+			15 => {
+				trace.push(format!("get_edge_id_from_node_ids(src = {:?}, dst = {:?})", data_for_current_test.get_edge_id_from_node_ids.src, data_for_current_test.get_edge_id_from_node_ids.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_id_from_node_ids(data_for_current_test.get_edge_id_from_node_ids.src, data_for_current_test.get_edge_id_from_node_ids.dst);
+			},
+			16 => {
+				trace.push(format!("get_node_ids_and_edge_type_id_from_edge_id(edge_id = {:?})", data_for_current_test.get_node_ids_and_edge_type_id_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_ids_and_edge_type_id_from_edge_id(data_for_current_test.get_node_ids_and_edge_type_id_from_edge_id.edge_id);
+			},
+			17 => {
+				trace.push(format!("get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id = {:?})", data_for_current_test.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(data_for_current_test.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id.edge_id);
+			},
+			18 => {
+				trace.push(format!("get_top_k_central_node_ids(k = {:?})", data_for_current_test.get_top_k_central_node_ids.k));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_top_k_central_node_ids(data_for_current_test.get_top_k_central_node_ids.k);
+			},
+			19 => {
+				trace.push(format!("get_node_degree_from_node_id(node_id = {:?})", data_for_current_test.get_node_degree_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_degree_from_node_id(data_for_current_test.get_node_degree_from_node_id.node_id);
+			},
+			20 => {
+				trace.push(format!("get_top_k_central_node_names(k = {:?})", data_for_current_test.get_top_k_central_node_names.k));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_top_k_central_node_names(data_for_current_test.get_top_k_central_node_names.k);
+			},
+			21 => {
+				trace.push(format!("get_node_type_id_from_node_id(node_id = {:?})", data_for_current_test.get_node_type_id_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_id_from_node_id(data_for_current_test.get_node_type_id_from_node_id.node_id);
+			},
+			22 => {
+				trace.push(format!("get_edge_type_id_from_edge_id(edge_id = {:?})", data_for_current_test.get_edge_type_id_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_id_from_edge_id(data_for_current_test.get_edge_type_id_from_edge_id.edge_id);
+			},
+			23 => {
+				trace.push(format!("get_node_type_name_from_node_id(node_id = {:?})", data_for_current_test.get_node_type_name_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_name_from_node_id(data_for_current_test.get_node_type_name_from_node_id.node_id);
+			},
+			24 => {
+				trace.push(format!("get_edge_type_name_from_edge_id(edge_id = {:?})", data_for_current_test.get_edge_type_name_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_name_from_edge_id(data_for_current_test.get_edge_type_name_from_edge_id.edge_id);
+			},
+			25 => {
+				trace.push(format!("get_edge_type_name_from_edge_type_id(edge_type_id = {:?})", data_for_current_test.get_edge_type_name_from_edge_type_id.edge_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_name_from_edge_type_id(data_for_current_test.get_edge_type_name_from_edge_type_id.edge_type_id);
+			},
+			26 => {
+				trace.push(format!("get_edge_weight_from_edge_id(edge_id = {:?})", data_for_current_test.get_edge_weight_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_weight_from_edge_id(data_for_current_test.get_edge_weight_from_edge_id.edge_id);
+			},
+			27 => {
+				trace.push(format!("get_edge_weight_from_node_ids(src = {:?}, dst = {:?})", data_for_current_test.get_edge_weight_from_node_ids.src, data_for_current_test.get_edge_weight_from_node_ids.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_weight_from_node_ids(data_for_current_test.get_edge_weight_from_node_ids.src, data_for_current_test.get_edge_weight_from_node_ids.dst);
+			},
+			28 => {
+				trace.push(format!("get_edge_weight_from_node_ids_and_edge_type_id(src = {:?}, dst = {:?}, edge_type = {:?})", data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.src, data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.dst, data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.edge_type));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_weight_from_node_ids_and_edge_type_id(data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.src, data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.dst, data_for_current_test.get_edge_weight_from_node_ids_and_edge_type_id.edge_type);
+			},
+			29 => {
+				trace.push(format!("get_node_name_from_node_id(node_id = {:?})", data_for_current_test.get_node_name_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_name_from_node_id(data_for_current_test.get_node_name_from_node_id.node_id);
+			},
+			30 => {
+				trace.push(format!("get_edge_count_from_edge_type_id(edge_type_id = {:?})", data_for_current_test.get_edge_count_from_edge_type_id.edge_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_count_from_edge_type_id(data_for_current_test.get_edge_count_from_edge_type_id.edge_type_id);
+			},
+			31 => {
+				trace.push(format!("get_node_count_from_node_type_id(node_type_id = {:?})", data_for_current_test.get_node_count_from_node_type_id.node_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_count_from_node_type_id(data_for_current_test.get_node_count_from_node_type_id.node_type_id);
+			},
+			32 => {
+				trace.push(format!("get_destination_node_id_from_edge_id(edge_id = {:?})", data_for_current_test.get_destination_node_id_from_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_destination_node_id_from_edge_id(data_for_current_test.get_destination_node_id_from_edge_id.edge_id);
+			},
+			33 => {
+				trace.push(format!("get_neighbour_node_ids_from_node_id(node_id = {:?})", data_for_current_test.get_neighbour_node_ids_from_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_neighbour_node_ids_from_node_id(data_for_current_test.get_neighbour_node_ids_from_node_id.node_id);
+			},
+			34 => {
+				trace.push(format!("get_minmax_edge_ids_from_node_ids(src = {:?}, dst = {:?})", data_for_current_test.get_minmax_edge_ids_from_node_ids.src, data_for_current_test.get_minmax_edge_ids_from_node_ids.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_minmax_edge_ids_from_node_ids(data_for_current_test.get_minmax_edge_ids_from_node_ids.src, data_for_current_test.get_minmax_edge_ids_from_node_ids.dst);
+			},
+			35 => {
+				trace.push(format!("get_edge_id_from_node_ids_and_edge_type_id(src = {:?}, dst = {:?}, edge_type = {:?})", data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.src, data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.dst, data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.edge_type));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_id_from_node_ids_and_edge_type_id(data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.src, data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.dst, data_for_current_test.get_edge_id_from_node_ids_and_edge_type_id.edge_type);
+			},
+			36 => {
+				trace.push(format!("get_edge_type_ids_from_edge_type_names(edge_type_names = {:?})", data_for_current_test.get_edge_type_ids_from_edge_type_names.edge_type_names));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_ids_from_edge_type_names(data_for_current_test.get_edge_type_ids_from_edge_type_names.edge_type_names);
+			},
+			37 => {
+				trace.push(format!("get_node_type_ids_from_node_type_names(node_type_names = {:?})", data_for_current_test.get_node_type_ids_from_node_type_names.node_type_names));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_ids_from_node_type_names(data_for_current_test.get_node_type_ids_from_node_type_names.node_type_names);
+			},
+			38 => {
+				trace.push(format!("get_minmax_edge_ids_from_source_node_id(src = {:?})", data_for_current_test.get_minmax_edge_ids_from_source_node_id.src));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_minmax_edge_ids_from_source_node_id(data_for_current_test.get_minmax_edge_ids_from_source_node_id.src);
+			},
+			39 => {
+				trace.push(format!("get_node_type_name_from_node_type_id(node_type_id = {:?})", data_for_current_test.get_node_type_name_from_node_type_id.node_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_name_from_node_type_id(data_for_current_test.get_node_type_name_from_node_type_id.node_type_id);
+			},
+			40 => {
+				trace.push(format!("get_node_type_names_from_node_type_ids(node_type_ids = {:?})", data_for_current_test.get_node_type_names_from_node_type_ids.node_type_ids));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_names_from_node_type_ids(data_for_current_test.get_node_type_names_from_node_type_ids.node_type_ids);
+			},
+			41 => {
+				trace.push(format!("filter(node_names = {:?}, node_types = {:?}, edge_types = {:?}, min_weight = {:?}, max_weight = {:?}, verbose = {:?})", data_for_current_test.filter.node_names, data_for_current_test.filter.node_types, data_for_current_test.filter.edge_types, data_for_current_test.filter.min_weight, data_for_current_test.filter.max_weight, data_for_current_test.filter.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.filter(data_for_current_test.filter.node_names, data_for_current_test.filter.node_types, data_for_current_test.filter.edge_types, data_for_current_test.filter.min_weight, data_for_current_test.filter.max_weight, data_for_current_test.filter.verbose);
+			},
+			42 => {
+				trace.push(format!("validate_node_id(node_id = {:?})", data_for_current_test.validate_node_id.node_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.validate_node_id(data_for_current_test.validate_node_id.node_id);
+			},
+			43 => {
+				trace.push(format!("validate_edge_id(edge_id = {:?})", data_for_current_test.validate_edge_id.edge_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.validate_edge_id(data_for_current_test.validate_edge_id.edge_id);
+			},
+			44 => {
+				trace.push(format!("validate_node_type_id(node_type_id = {:?})", data_for_current_test.validate_node_type_id.node_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.validate_node_type_id(data_for_current_test.validate_node_type_id.node_type_id);
+			},
+			45 => {
+				trace.push(format!("validate_edge_type_id(edge_type_id = {:?})", data_for_current_test.validate_edge_type_id.edge_type_id));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.validate_edge_type_id(data_for_current_test.validate_edge_type_id.edge_type_id);
+			},
+			46 => {
+				trace.push(format!("must_have_node_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_have_node_types();
+			},
+			47 => {
+				trace.push(format!("must_have_edge_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_have_edge_types();
+			},
+			48 => {
+				trace.push(format!("must_be_undirected()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_be_undirected();
+			},
+			49 => {
+				trace.push(format!("must_be_multigraph()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_be_multigraph();
+			},
+			50 => {
+				trace.push(format!("must_have_edge_weights()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_have_edge_weights();
+			},
+			51 => {
+				trace.push(format!("must_have_edges()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_have_edges();
+			},
+			52 => {
+				trace.push(format!("must_have_nodes()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.must_have_nodes();
+			},
+			53 => {
+				trace.push(format!("degrees_product(one = {:?}, two = {:?})", data_for_current_test.degrees_product.one, data_for_current_test.degrees_product.two));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.degrees_product(data_for_current_test.degrees_product.one, data_for_current_test.degrees_product.two);
+			},
+			54 => {
+				trace.push(format!("jaccard_index(one = {:?}, two = {:?})", data_for_current_test.jaccard_index.one, data_for_current_test.jaccard_index.two));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.jaccard_index(data_for_current_test.jaccard_index.one, data_for_current_test.jaccard_index.two);
+			},
+			55 => {
+				trace.push(format!("adamic_adar_index(one = {:?}, two = {:?})", data_for_current_test.adamic_adar_index.one, data_for_current_test.adamic_adar_index.two));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.adamic_adar_index(data_for_current_test.adamic_adar_index.one, data_for_current_test.adamic_adar_index.two);
+			},
+			56 => {
+				trace.push(format!("resource_allocation_index(one = {:?}, two = {:?})", data_for_current_test.resource_allocation_index.one, data_for_current_test.resource_allocation_index.two));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.resource_allocation_index(data_for_current_test.resource_allocation_index.one, data_for_current_test.resource_allocation_index.two);
+			},
+			57 => {
+				trace.push(format!("remove(allow_nodes_set = {:?}, deny_nodes_set = {:?}, allow_node_types_set = {:?}, deny_node_types_set = {:?}, allow_edge_set = {:?}, deny_edge_set = {:?}, allow_edge_types_set = {:?}, deny_edge_types_set = {:?}, weights = {:?}, node_types = {:?}, edge_types = {:?}, singletons = {:?}, selfloops = {:?}, verbose = {:?})", data_for_current_test.remove.allow_nodes_set, data_for_current_test.remove.deny_nodes_set, data_for_current_test.remove.allow_node_types_set, data_for_current_test.remove.deny_node_types_set, data_for_current_test.remove.allow_edge_set, data_for_current_test.remove.deny_edge_set, data_for_current_test.remove.allow_edge_types_set, data_for_current_test.remove.deny_edge_types_set, data_for_current_test.remove.weights, data_for_current_test.remove.node_types, data_for_current_test.remove.edge_types, data_for_current_test.remove.singletons, data_for_current_test.remove.selfloops, data_for_current_test.remove.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.remove(data_for_current_test.remove.allow_nodes_set, data_for_current_test.remove.deny_nodes_set, data_for_current_test.remove.allow_node_types_set, data_for_current_test.remove.deny_node_types_set, data_for_current_test.remove.allow_edge_set, data_for_current_test.remove.deny_edge_set, data_for_current_test.remove.allow_edge_types_set, data_for_current_test.remove.deny_edge_types_set, data_for_current_test.remove.weights, data_for_current_test.remove.node_types, data_for_current_test.remove.edge_types, data_for_current_test.remove.singletons, data_for_current_test.remove.selfloops, data_for_current_test.remove.verbose);
+			},
+			58 => {
+				trace.push(format!("remove_components(node_names = {:?}, node_types = {:?}, edge_types = {:?}, minimum_component_size = {:?}, top_k_components = {:?}, verbose = {:?})", data_for_current_test.remove_components.node_names, data_for_current_test.remove_components.node_types, data_for_current_test.remove_components.edge_types, data_for_current_test.remove_components.minimum_component_size, data_for_current_test.remove_components.top_k_components, data_for_current_test.remove_components.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.remove_components(data_for_current_test.remove_components.node_names, data_for_current_test.remove_components.node_types, data_for_current_test.remove_components.edge_types, data_for_current_test.remove_components.minimum_component_size, data_for_current_test.remove_components.top_k_components, data_for_current_test.remove_components.verbose);
+			},
+			59 => {
+				trace.push(format!("set_name(name = {:?})", data_for_current_test.set_name.name));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.set_name(data_for_current_test.set_name.name);
+			},
+			60 => {
+				trace.push(format!("set_all_edge_types(edge_type = {:?})", data_for_current_test.set_all_edge_types.edge_type));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph = graph.set_all_edge_types(data_for_current_test.set_all_edge_types.edge_type)?;
+			},
+			61 => {
+				trace.push(format!("set_all_node_types(node_type = {:?})", data_for_current_test.set_all_node_types.node_type));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph = graph.set_all_node_types(data_for_current_test.set_all_node_types.node_type)?;
+			},
+			62 => {
+				trace.push(format!("encode_edge(src = {:?}, dst = {:?})", data_for_current_test.encode_edge.src, data_for_current_test.encode_edge.dst));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.encode_edge(data_for_current_test.encode_edge.src, data_for_current_test.encode_edge.dst);
+			},
+			63 => {
+				trace.push(format!("decode_edge(edge = {:?})", data_for_current_test.decode_edge.edge));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.decode_edge(data_for_current_test.decode_edge.edge);
+			},
+			64 => {
+				trace.push(format!("get_max_encodable_edge_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_max_encodable_edge_number();
+			},
+			65 => {
+				trace.push(format!("get_bipartite_edges(removed_existing_edges = {:?}, first_nodes_set = {:?}, second_nodes_set = {:?}, first_node_types_set = {:?}, second_node_types_set = {:?})", data_for_current_test.get_bipartite_edges.removed_existing_edges, data_for_current_test.get_bipartite_edges.first_nodes_set, data_for_current_test.get_bipartite_edges.second_nodes_set, data_for_current_test.get_bipartite_edges.first_node_types_set, data_for_current_test.get_bipartite_edges.second_node_types_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_bipartite_edges(data_for_current_test.get_bipartite_edges.removed_existing_edges, data_for_current_test.get_bipartite_edges.first_nodes_set, data_for_current_test.get_bipartite_edges.second_nodes_set, data_for_current_test.get_bipartite_edges.first_node_types_set, data_for_current_test.get_bipartite_edges.second_node_types_set);
+			},
+			66 => {
+				trace.push(format!("get_bipartite_edge_names(removed_existing_edges = {:?}, first_nodes_set = {:?}, second_nodes_set = {:?}, first_node_types_set = {:?}, second_node_types_set = {:?})", data_for_current_test.get_bipartite_edge_names.removed_existing_edges, data_for_current_test.get_bipartite_edge_names.first_nodes_set, data_for_current_test.get_bipartite_edge_names.second_nodes_set, data_for_current_test.get_bipartite_edge_names.first_node_types_set, data_for_current_test.get_bipartite_edge_names.second_node_types_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_bipartite_edge_names(data_for_current_test.get_bipartite_edge_names.removed_existing_edges, data_for_current_test.get_bipartite_edge_names.first_nodes_set, data_for_current_test.get_bipartite_edge_names.second_nodes_set, data_for_current_test.get_bipartite_edge_names.first_node_types_set, data_for_current_test.get_bipartite_edge_names.second_node_types_set);
+			},
+			67 => {
+				trace.push(format!("get_star_edges(central_node = {:?}, removed_existing_edges = {:?}, star_points_nodes_set = {:?}, star_points_node_types_set = {:?})", data_for_current_test.get_star_edges.central_node, data_for_current_test.get_star_edges.removed_existing_edges, data_for_current_test.get_star_edges.star_points_nodes_set, data_for_current_test.get_star_edges.star_points_node_types_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_star_edges(data_for_current_test.get_star_edges.central_node, data_for_current_test.get_star_edges.removed_existing_edges, data_for_current_test.get_star_edges.star_points_nodes_set, data_for_current_test.get_star_edges.star_points_node_types_set);
+			},
+			68 => {
+				trace.push(format!("get_star_edge_names(central_node = {:?}, removed_existing_edges = {:?}, star_points_nodes_set = {:?}, star_points_node_types_set = {:?})", data_for_current_test.get_star_edge_names.central_node, data_for_current_test.get_star_edge_names.removed_existing_edges, data_for_current_test.get_star_edge_names.star_points_nodes_set, data_for_current_test.get_star_edge_names.star_points_node_types_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_star_edge_names(data_for_current_test.get_star_edge_names.central_node, data_for_current_test.get_star_edge_names.removed_existing_edges, data_for_current_test.get_star_edge_names.star_points_nodes_set, data_for_current_test.get_star_edge_names.star_points_node_types_set);
+			},
+			69 => {
+				trace.push(format!("get_clique_edges(directed = {:?}, allow_selfloops = {:?}, removed_existing_edges = {:?}, allow_node_type_set = {:?}, allow_node_set = {:?})", data_for_current_test.get_clique_edges.directed, data_for_current_test.get_clique_edges.allow_selfloops, data_for_current_test.get_clique_edges.removed_existing_edges, data_for_current_test.get_clique_edges.allow_node_type_set, data_for_current_test.get_clique_edges.allow_node_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_clique_edges(data_for_current_test.get_clique_edges.directed, data_for_current_test.get_clique_edges.allow_selfloops, data_for_current_test.get_clique_edges.removed_existing_edges, data_for_current_test.get_clique_edges.allow_node_type_set, data_for_current_test.get_clique_edges.allow_node_set);
+			},
+			70 => {
+				trace.push(format!("get_clique_edge_names(directed = {:?}, allow_selfloops = {:?}, removed_existing_edges = {:?}, allow_node_type_set = {:?}, allow_node_set = {:?})", data_for_current_test.get_clique_edge_names.directed, data_for_current_test.get_clique_edge_names.allow_selfloops, data_for_current_test.get_clique_edge_names.removed_existing_edges, data_for_current_test.get_clique_edge_names.allow_node_type_set, data_for_current_test.get_clique_edge_names.allow_node_set));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_clique_edge_names(data_for_current_test.get_clique_edge_names.directed, data_for_current_test.get_clique_edge_names.allow_selfloops, data_for_current_test.get_clique_edge_names.removed_existing_edges, data_for_current_test.get_clique_edge_names.allow_node_type_set, data_for_current_test.get_clique_edge_names.allow_node_set);
+			},
+			71 => {
+				trace.push(format!("report()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.report();
+			},
+			72 => {
+				trace.push(format!("textual_report(verbose = {:?})", data_for_current_test.textual_report.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.textual_report(data_for_current_test.textual_report.verbose);
+			},
+			73 => {
+				trace.push(format!("get_connected_components_number(verbose = {:?})", data_for_current_test.get_connected_components_number.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_connected_components_number(data_for_current_test.get_connected_components_number.verbose);
+			},
+			74 => {
+				trace.push(format!("get_singleton_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_singleton_nodes_number();
+			},
+			75 => {
+				trace.push(format!("get_singleton_nodes_with_selfloops_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_singleton_nodes_with_selfloops_number();
+			},
+			76 => {
+				trace.push(format!("get_not_singleton_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_not_singleton_nodes_number();
+			},
+			77 => {
+				trace.push(format!("get_density()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_density();
+			},
+			78 => {
+				trace.push(format!("get_trap_nodes_rate()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_trap_nodes_rate();
+			},
+			79 => {
+				trace.push(format!("get_node_degrees_mean()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_degrees_mean();
+			},
+			80 => {
+				trace.push(format!("get_undirected_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_undirected_edges_number();
+			},
+			81 => {
+				trace.push(format!("get_unique_undirected_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unique_undirected_edges_number();
+			},
+			82 => {
+				trace.push(format!("get_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_edges_number();
+			},
+			83 => {
+				trace.push(format!("get_unique_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unique_edges_number();
+			},
+			84 => {
+				trace.push(format!("get_node_degrees_median()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_degrees_median();
+			},
+			85 => {
+				trace.push(format!("get_max_node_degree()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_max_node_degree();
+			},
+			86 => {
+				trace.push(format!("get_min_node_degree()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_min_node_degree();
+			},
+			87 => {
+				trace.push(format!("get_node_degrees_mode()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_degrees_mode();
+			},
+			88 => {
+				trace.push(format!("get_selfloop_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_selfloop_nodes_number();
+			},
+			89 => {
+				trace.push(format!("get_unique_selfloop_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unique_selfloop_number();
+			},
+			90 => {
+				trace.push(format!("get_selfloop_nodes_rate()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_selfloop_nodes_rate();
+			},
+			91 => {
+				trace.push(format!("get_name()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_name();
+			},
+			92 => {
+				trace.push(format!("get_trap_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_trap_nodes_number();
+			},
+			93 => {
+				trace.push(format!("get_sources(directed = {:?})", data_for_current_test.get_sources.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_sources(data_for_current_test.get_sources.directed);
+			},
+			94 => {
+				trace.push(format!("get_source_names(directed = {:?})", data_for_current_test.get_source_names.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_source_names(data_for_current_test.get_source_names.directed);
+			},
+			95 => {
+				trace.push(format!("get_destinations(directed = {:?})", data_for_current_test.get_destinations.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_destinations(data_for_current_test.get_destinations.directed);
+			},
+			96 => {
+				trace.push(format!("get_destination_names(directed = {:?})", data_for_current_test.get_destination_names.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_destination_names(data_for_current_test.get_destination_names.directed);
+			},
+			97 => {
+				trace.push(format!("get_node_names()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_node_names();
+			},
+			98 => {
+				trace.push(format!("get_nodes()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_nodes();
+			},
+			99 => {
+				trace.push(format!("get_edge_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_types();
+			},
+			100 => {
+				trace.push(format!("get_edge_type_names()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_edge_type_names();
+			},
+			101 => {
+				trace.push(format!("get_edge_weights()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_weights();
+			},
+			102 => {
+				trace.push(format!("get_min_edge_weight()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_min_edge_weight();
+			},
+			103 => {
+				trace.push(format!("get_max_edge_weight()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_max_edge_weight();
+			},
+			104 => {
+				trace.push(format!("get_node_type_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_ids();
+			},
+			105 => {
+				trace.push(format!("get_node_type_names()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_names();
+			},
+			106 => {
+				trace.push(format!("get_unique_directed_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unique_directed_edges_number();
+			},
+			107 => {
+				trace.push(format!("get_nodes_mapping()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_nodes_mapping();
+			},
+			108 => {
+				trace.push(format!("get_edges(directed = {:?})", data_for_current_test.get_edges.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_edges(data_for_current_test.get_edges.directed);
+			},
+			109 => {
+				trace.push(format!("get_edge_node_names(directed = {:?})", data_for_current_test.get_edge_node_names.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_edge_node_names(data_for_current_test.get_edge_node_names.directed);
+			},
+			110 => {
+				trace.push(format!("get_unknown_node_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unknown_node_types_number();
+			},
+			111 => {
+				trace.push(format!("get_minimum_node_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_minimum_node_types_number();
+			},
+			112 => {
+				trace.push(format!("get_unknown_edge_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unknown_edge_types_number();
+			},
+			113 => {
+				trace.push(format!("get_minimum_edge_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_minimum_edge_types_number();
+			},
+			114 => {
+				trace.push(format!("get_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_nodes_number();
+			},
+			115 => {
+				trace.push(format!("get_node_connected_component_ids(verbose = {:?})", data_for_current_test.get_node_connected_component_ids.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_node_connected_component_ids(data_for_current_test.get_node_connected_component_ids.verbose);
+			},
+			116 => {
+				trace.push(format!("get_directed_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_directed_edges_number();
+			},
+			117 => {
+				trace.push(format!("get_edge_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_edge_types_number();
+			},
+			118 => {
+				trace.push(format!("get_node_types_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_node_types_number();
+			},
+			119 => {
+				trace.push(format!("get_node_degrees()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_node_degrees();
+			},
+			120 => {
+				trace.push(format!("get_not_singletons_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_not_singletons_node_ids();
+			},
+			121 => {
+				trace.push(format!("get_dense_nodes_mapping()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_dense_nodes_mapping();
+			},
+			122 => {
+				trace.push(format!("get_multigraph_edges_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_multigraph_edges_number();
+			},
+			123 => {
+				trace.push(format!("get_cumulative_node_degrees()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_cumulative_node_degrees();
+			},
+			124 => {
+				trace.push(format!("get_unique_source_nodes_number()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.get_unique_source_nodes_number();
+			},
+			125 => {
+				trace.push(format!("get_edge_type_counter()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_counter();
+			},
+			126 => {
+				trace.push(format!("get_edge_type_counts_hashmap()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_edge_type_counts_hashmap();
+			},
+			127 => {
+				trace.push(format!("get_node_type_counter()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_counter();
+			},
+			128 => {
+				trace.push(format!("get_node_type_counts_hashmap()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_node_type_counts_hashmap();
+			},
+			129 => {
+				trace.push(format!("iter_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_node_ids().collect::<Vec<_>>();
+			},
+			130 => {
+				trace.push(format!("par_iter_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_node_ids().collect::<Vec<_>>();
+			},
+			131 => {
+				trace.push(format!("iter_node_degrees()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_node_degrees().collect::<Vec<_>>();
+			},
+			132 => {
+				trace.push(format!("par_iter_node_degrees()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
+			},
+			133 => {
+				trace.push(format!("iter_non_singleton_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
+			},
+			134 => {
+				trace.push(format!("iter_singleton_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_singleton_node_ids().collect::<Vec<_>>();
+			},
+			135 => {
+				trace.push(format!("iter_singleton_with_selfloops_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_singleton_with_selfloops_node_ids().collect::<Vec<_>>();
+			},
+			136 => {
+				trace.push(format!("iter_source_node_ids(directed = {:?})", data_for_current_test.iter_source_node_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_source_node_ids(data_for_current_test.iter_source_node_ids.directed).collect::<Vec<_>>();
+			},
+			137 => {
+				trace.push(format!("iter_edge_weights()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_weights();
+			},
+			138 => {
+				trace.push(format!("par_iter_edge_weights()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_weights();
+			},
+			139 => {
+				trace.push(format!("par_iter_source_node_ids(directed = {:?})", data_for_current_test.par_iter_source_node_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_source_node_ids(data_for_current_test.par_iter_source_node_ids.directed).collect::<Vec<_>>();
+			},
+			140 => {
+				trace.push(format!("iter_destination_node_ids(directed = {:?})", data_for_current_test.iter_destination_node_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_destination_node_ids(data_for_current_test.iter_destination_node_ids.directed).collect::<Vec<_>>();
+			},
+			141 => {
+				trace.push(format!("par_iter_destination_node_ids(directed = {:?})", data_for_current_test.par_iter_destination_node_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_destination_node_ids(data_for_current_test.par_iter_destination_node_ids.directed).collect::<Vec<_>>();
+			},
+			142 => {
+				trace.push(format!("iter_node_ids_and_node_type_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
+			},
+			143 => {
+				trace.push(format!("par_iter_node_ids_and_node_type_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
+			},
+			144 => {
+				trace.push(format!("iter_nodes()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_nodes().collect::<Vec<_>>();
+			},
+			145 => {
+				trace.push(format!("iter_edge_ids(directed = {:?})", data_for_current_test.iter_edge_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_ids(data_for_current_test.iter_edge_ids.directed).collect::<Vec<_>>();
+			},
+			146 => {
+				trace.push(format!("iter_edges(directed = {:?})", data_for_current_test.iter_edges.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edges(data_for_current_test.iter_edges.directed).collect::<Vec<_>>();
+			},
+			147 => {
+				trace.push(format!("par_iter_edge_ids(directed = {:?})", data_for_current_test.par_iter_edge_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_ids(data_for_current_test.par_iter_edge_ids.directed).collect::<Vec<_>>();
+			},
+			148 => {
+				trace.push(format!("par_iter_edges(directed = {:?})", data_for_current_test.par_iter_edges.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edges(data_for_current_test.par_iter_edges.directed).collect::<Vec<_>>();
+			},
+			149 => {
+				trace.push(format!("iter_edge_node_ids_and_edge_type_id(directed = {:?})", data_for_current_test.iter_edge_node_ids_and_edge_type_id.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_node_ids_and_edge_type_id(data_for_current_test.iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
+			},
+			150 => {
+				trace.push(format!("iter_edge_node_names_and_edge_type_name(directed = {:?})", data_for_current_test.iter_edge_node_names_and_edge_type_name.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_node_names_and_edge_type_name(data_for_current_test.iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
+			},
+			151 => {
+				trace.push(format!("par_iter_edge_node_names_and_edge_type_name(directed = {:?})", data_for_current_test.par_iter_edge_node_names_and_edge_type_name.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_node_names_and_edge_type_name(data_for_current_test.par_iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
+			},
+			152 => {
+				trace.push(format!("par_iter_edge_node_ids_and_edge_type_id(directed = {:?})", data_for_current_test.par_iter_edge_node_ids_and_edge_type_id.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_node_ids_and_edge_type_id(data_for_current_test.par_iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
+			},
+			153 => {
+				trace.push(format!("par_iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = {:?})", data_for_current_test.par_iter_edge_node_names_and_edge_type_name_and_edge_weight.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(data_for_current_test.par_iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
+			},
+			154 => {
+				trace.push(format!("iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = {:?})", data_for_current_test.iter_edge_node_names_and_edge_type_name_and_edge_weight.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_node_names_and_edge_type_name_and_edge_weight(data_for_current_test.iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
+			},
+			155 => {
+				trace.push(format!("par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = {:?})", data_for_current_test.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(data_for_current_test.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
+			},
+			156 => {
+				trace.push(format!("iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = {:?})", data_for_current_test.iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_edge_node_ids_and_edge_type_id_and_edge_weight(data_for_current_test.iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
+			},
+			157 => {
+				trace.push(format!("iter_unique_edge_node_ids(directed = {:?})", data_for_current_test.iter_unique_edge_node_ids.directed));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_unique_edge_node_ids(data_for_current_test.iter_unique_edge_node_ids.directed).collect::<Vec<_>>();
+			},
+			158 => {
+				trace.push(format!("iter_unique_source_node_ids()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_unique_source_node_ids().collect::<Vec<_>>();
+			},
+			159 => {
+				trace.push(format!("has_nodes()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_nodes();
+			},
+			160 => {
+				trace.push(format!("has_edges()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_edges();
+			},
+			161 => {
+				trace.push(format!("has_trap_nodes()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_trap_nodes();
+			},
+			162 => {
+				trace.push(format!("is_directed()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.is_directed();
+			},
+			163 => {
+				trace.push(format!("has_edge_weights()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_edge_weights();
+			},
+			164 => {
+				trace.push(format!("has_edge_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_edge_types();
+			},
+			165 => {
+				trace.push(format!("has_selfloops()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_selfloops();
+			},
+			166 => {
+				trace.push(format!("has_singletons()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_singletons();
+			},
+			167 => {
+				trace.push(format!("has_singletons_with_selfloops()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_singletons_with_selfloops();
+			},
+			168 => {
+				trace.push(format!("has_node_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_node_types();
+			},
+			169 => {
+				trace.push(format!("has_multilabel_node_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_multilabel_node_types();
+			},
+			170 => {
+				trace.push(format!("has_unknown_node_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_unknown_node_types();
+			},
+			171 => {
+				trace.push(format!("has_unknown_edge_types()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_unknown_edge_types();
+			},
+			172 => {
+				trace.push(format!("is_multigraph()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.is_multigraph();
+			},
+			173 => {
+				trace.push(format!("compute_hash()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.compute_hash();
+			},
+			174 => {
+				trace.push(format!("connected_holdout(random_state = {:?}, train_size = {:?}, edge_types = {:?}, include_all_edge_types = {:?}, verbose = {:?})", data_for_current_test.connected_holdout.random_state, data_for_current_test.connected_holdout.train_size, data_for_current_test.connected_holdout.edge_types, data_for_current_test.connected_holdout.include_all_edge_types, data_for_current_test.connected_holdout.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.connected_holdout(data_for_current_test.connected_holdout.random_state, data_for_current_test.connected_holdout.train_size, data_for_current_test.connected_holdout.edge_types, data_for_current_test.connected_holdout.include_all_edge_types, data_for_current_test.connected_holdout.verbose);
+			},
+			175 => {
+				trace.push(format!("random_holdout(random_state = {:?}, train_size = {:?}, include_all_edge_types = {:?}, edge_types = {:?}, min_number_overlaps = {:?}, verbose = {:?})", data_for_current_test.random_holdout.random_state, data_for_current_test.random_holdout.train_size, data_for_current_test.random_holdout.include_all_edge_types, data_for_current_test.random_holdout.edge_types, data_for_current_test.random_holdout.min_number_overlaps, data_for_current_test.random_holdout.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.random_holdout(data_for_current_test.random_holdout.random_state, data_for_current_test.random_holdout.train_size, data_for_current_test.random_holdout.include_all_edge_types, data_for_current_test.random_holdout.edge_types, data_for_current_test.random_holdout.min_number_overlaps, data_for_current_test.random_holdout.verbose);
+			},
+			176 => {
+				trace.push(format!("node_label_holdout(train_size = {:?}, use_stratification = {:?}, random_state = {:?})", data_for_current_test.node_label_holdout.train_size, data_for_current_test.node_label_holdout.use_stratification, data_for_current_test.node_label_holdout.random_state));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.node_label_holdout(data_for_current_test.node_label_holdout.train_size, data_for_current_test.node_label_holdout.use_stratification, data_for_current_test.node_label_holdout.random_state);
+			},
+			177 => {
+				trace.push(format!("edge_label_holdout(train_size = {:?}, use_stratification = {:?}, random_state = {:?})", data_for_current_test.edge_label_holdout.train_size, data_for_current_test.edge_label_holdout.use_stratification, data_for_current_test.edge_label_holdout.random_state));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.edge_label_holdout(data_for_current_test.edge_label_holdout.train_size, data_for_current_test.edge_label_holdout.use_stratification, data_for_current_test.edge_label_holdout.random_state);
+			},
+			178 => {
+				trace.push(format!("random_subgraph(random_state = {:?}, nodes_number = {:?}, verbose = {:?})", data_for_current_test.random_subgraph.random_state, data_for_current_test.random_subgraph.nodes_number, data_for_current_test.random_subgraph.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.random_subgraph(data_for_current_test.random_subgraph.random_state, data_for_current_test.random_subgraph.nodes_number, data_for_current_test.random_subgraph.verbose);
+			},
+			179 => {
+				trace.push(format!("kfold(k = {:?}, k_index = {:?}, edge_types = {:?}, random_state = {:?}, verbose = {:?})", data_for_current_test.kfold.k, data_for_current_test.kfold.k_index, data_for_current_test.kfold.edge_types, data_for_current_test.kfold.random_state, data_for_current_test.kfold.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.kfold(data_for_current_test.kfold.k, data_for_current_test.kfold.k_index, data_for_current_test.kfold.edge_types, data_for_current_test.kfold.random_state, data_for_current_test.kfold.verbose);
+			},
+		180 => {let _ = graph::test_utilities::default_test_suite(&mut graph, false);}
+            _ => unreachable!()
+        }
+    }
 
     Ok(())
 }

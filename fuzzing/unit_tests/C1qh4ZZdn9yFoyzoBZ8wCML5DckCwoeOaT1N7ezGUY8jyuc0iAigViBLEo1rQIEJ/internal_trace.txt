@@ -1,0 +1,13 @@
+Some(
+    [
+        "get_max_encodable_edge_number()",
+        "validate_edge_id(edge_id = 0)",
+        "get_min_node_degree()",
+        "get_node_types_number()",
+        "disable_all()",
+        "kfold(k = 13266954002535679075, k_index = 5709112889238686613, edge_types = None, random_state = 12009830888202642519, verbose = true)",
+        "validate_edge_type_id(edge_type_id = None)",
+        "is_trap_node_from_node_id(node_id = 65280)",
+        "connected_holdout(random_state = 9585099867338220604, train_size = 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003175243275383713, edge_types = Some([None, None]), include_all_edge_types = false, verbose = true)",
+    ],
+)

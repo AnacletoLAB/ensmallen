@@ -205,7 +205,10 @@ pub fn second_order_walker(
 
 fn validate_vocabularies(graph: &Graph) {
     if let Some(ets) = &graph.edge_types {
-        assert_eq!(!ets.ids.is_empty(), graph.has_edge_types());
+        assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
+            "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
+            graph.textual_report(false)
+        );
     }
 
     if let Some(nts) = &graph.node_types {

@@ -217,4 +217,22 @@ impl Graph {
         }
         Ok(())
     }
+
+    /// Raises an error if the graph does not have any node.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_without_nodes = graph::test_utilities::load_empty_graph(false);
+    /// assert!(graph_with_nodes.must_have_nodes().is_ok());
+    /// assert!(graph_without_nodes.must_have_nodes().is_err());
+    /// ```
+    pub fn must_have_nodes(&self) -> Result<(), String> {
+        if !self.has_nodes() {
+            return Err("The current graph instance does not have any node.".to_string());
+        }
+        Ok(())
+    }
 }

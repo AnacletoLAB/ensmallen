@@ -1,0 +1,13 @@
+Some(
+    [
+        "must_have_node_types()",
+        "filter(node_names = None, node_types = None, edge_types = None, min_weight = None, max_weight = None, verbose = false)",
+        "has_multilabel_node_types()",
+        "get_selfloop_nodes_rate()",
+        "get_node_type_counter()",
+        "iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = true)",
+        "iter_nodes()",
+        "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id = 0)",
+        "connected_holdout(random_state = 11891720208740423473, train_size = 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004945974957907641, edge_types = Some([None, None]), include_all_edge_types = true, verbose = false)",
+    ],
+)

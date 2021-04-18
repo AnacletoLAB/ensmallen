@@ -3,9 +3,18 @@ import glob
 import json
 from .utils import get_file, build_path
 
+DEBUG = True
+
 HARNESS_TEMPLATE = get_file("templates/harness.txt")
 STRUCT_TEMPLATE = get_file("templates/struct.txt")
 META_STRUCT_TEMPLATE = get_file("templates/meta_struct.txt")
+
+RESET_HOOK = """
+let g_copy = graph.clone();
+let trace2 = trace.clone();
+std::panic::set_hook(Box::new(move |info| {
+\thandle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+}));"""
 
 BLACKLISTED_FUNCS = [
     "new",
@@ -81,7 +90,7 @@ def build_struct_and_call(function):
         if arg[0] in SELFS or arg[1] in SELFS:
             continue
 
-        res = f"data.{function_name}.{arg[0]}"
+        res = f"data_for_current_test.{function_name}.{arg[0]}"
 
         if arg[1][0] == "&":
             res = "&" + res
@@ -94,19 +103,22 @@ def build_struct_and_call(function):
 
     return_type = function.get("return_type", "")
     if  return_type.startswith("Result") and "&" not in function.get("args")[0][1]:
-        call = "let mut graph = " + call + "?"
+        call = "graph = " + call + "?"
     elif return_type.startswith("Result"):
         call = "let _ = " + call 
     elif "Iterator" in return_type:
         call = "let _ = " + call + ".collect::<Vec<_>>()"
     elif "&" not in function.get("args")[0][1]:
-        call = "let mut graph = " + call
+        call = "graph = " + call
     
 
     result = {
+        "function_name":function.get("name"),
         "struct_name":function_name,
         "struct_type":struct_type,
-        "call":"\t" + call + ";",
+        "call":call + ";",
+        "call_args":call_args,
+        "args":function.get("args"),
     }
 
     if len(args) > 1 :
@@ -120,11 +132,12 @@ def build_struct_and_call(function):
 
 def build_metatest(args):
     with open(build_path("results/analysis.json"), "r") as f:
-        functions = json.load(f)
+        analysis = json.load(f)
 
     result = [
         build_struct_and_call(function)
-        for function in functions
+        for results in analysis.values()
+        for function in results["functions"]
         if filter_function(function)
     ]
 
@@ -133,14 +146,25 @@ def build_metatest(args):
         for res in result
         if "struct" in res
     ]
+    calls = []
+    for i, res in enumerate(result):
+        output = "\t\t\t{i} => {{\n".format(i=i)
+        if DEBUG:
+            output += "\t\t\t\ttrace.push(format!(\"{function_name}({kwargs_format})\", {call_args}));\n".format(
+                function_name=res["function_name"],
+                call_args=", ".join(res["call_args"]),    
+                kwargs_format=", ".join("{arg_name} = {{:?}}".format(arg_name=arg[0]) for arg in res["args"][1:]),
+            )
+            output += "\n".join("\t\t\t\t" + x for x in RESET_HOOK.split("\n"))
 
-    calls = [
-        res["call"]
-        for res in result
-    ]
+        output += "\n\t\t\t\t" + res["call"]
+        output += "\n\t\t\t},"
+        calls.append(output)
 
-    # place the failable methods at the end
-    calls.sort(key=lambda x: ("collect" not in x, x))
+    calls.append(
+        "\t\t{i} => {{let _ = graph::test_utilities::default_test_suite(&mut graph, false);}}".format(i=len(calls))
+    )
+    
 
     params = "\n".join(
         "\tpub {struct_name}: {struct_type},".format(
@@ -157,6 +181,7 @@ def build_metatest(args):
 
     output = HARNESS_TEMPLATE.format(
         calls="\n".join(calls),
+        n_of_calls=len(calls),
         structs="\n".join(structs),
         meta_struct=meta_struct,
     )

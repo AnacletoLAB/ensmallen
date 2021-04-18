@@ -1,0 +1,469 @@
+MetaParams {
+    random_spanning_arborescence_kruskal: RandomSpanningArborescenceKruskalParams {
+        random_state: 18173213292807861553,
+        undesired_edge_types: Some(
+            {},
+        ),
+        verbose: true,
+    },
+    spanning_arborescence_kruskal: SpanningArborescenceKruskalParams {
+        verbose: false,
+    },
+    spanning_arborescence: SpanningArborescenceParams {
+        verbose: false,
+    },
+    connected_components: ConnectedComponentsParams {
+        verbose: false,
+    },
+    get_node_label_prediction_tuple_from_node_ids: GetNodeLabelPredictionTupleFromNodeIdsParams {
+        node_ids: [],
+        random_state: 72057594021150720,
+        include_central_node: false,
+        offset:    0,
+        max_neighbours: None,
+    },
+    is_singleton_from_node_id: IsSingletonFromNodeIdParams {
+        node_id:    0,
+    },
+    is_singleton_with_selfloops_from_node_id: IsSingletonWithSelfloopsFromNodeIdParams {
+        node_id:    0,
+    },
+    has_edge_from_node_ids: HasEdgeFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    has_edge_from_node_ids_and_edge_type_id: HasEdgeFromNodeIdsAndEdgeTypeIdParams {
+        src:    0,
+        dst: 16711680,
+        edge_type: None,
+    },
+    is_trap_node_from_node_id: IsTrapNodeFromNodeIdParams {
+        node_id:    0,
+    },
+    enable: EnableParams {
+        vector_sources: false,
+        vector_destinations: false,
+        vector_cumulative_node_degrees: false,
+        cache_size: None,
+    },
+    iter_edge_ids_from_node_ids: IterEdgeIdsFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_node_ids_from_edge_id: GetNodeIdsFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_id_from_node_ids: GetEdgeIdFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_node_ids_and_edge_type_id_from_edge_id: GetNodeIdsAndEdgeTypeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id: GetNodeIdsAndEdgeTypeIdAndEdgeWeightFromEdgeIdParams {
+        edge_id:  256,
+    },
+    get_top_k_central_node_ids: GetTopKCentralNodeIdsParams {
+        k:    0,
+    },
+    get_node_degree_from_node_id: GetNodeDegreeFromNodeIdParams {
+        node_id:    0,
+    },
+    get_top_k_central_node_names: GetTopKCentralNodeNamesParams {
+        k:    0,
+    },
+    get_node_type_id_from_node_id: GetNodeTypeIdFromNodeIdParams {
+        node_id:    2,
+    },
+    get_edge_type_id_from_edge_id: GetEdgeTypeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_node_type_name_from_node_id: GetNodeTypeNameFromNodeIdParams {
+        node_id:    0,
+    },
+    get_edge_type_name_from_edge_id: GetEdgeTypeNameFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_type_name_from_edge_type_id: GetEdgeTypeNameFromEdgeTypeIdParams {
+        edge_type_id:    0,
+    },
+    get_edge_weight_from_edge_id: GetEdgeWeightFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_weight_from_node_ids: GetEdgeWeightFromNodeIdsParams {
+        src: 16777216,
+        dst:    0,
+    },
+    get_edge_weight_from_node_ids_and_edge_type_id: GetEdgeWeightFromNodeIdsAndEdgeTypeIdParams {
+        src:    0,
+        dst:    0,
+        edge_type: None,
+    },
+    get_node_name_from_node_id: GetNodeNameFromNodeIdParams {
+        node_id:    0,
+    },
+    get_edge_count_from_edge_type_id: GetEdgeCountFromEdgeTypeIdParams {
+        edge_type_id: None,
+    },
+    get_node_count_from_node_type_id: GetNodeCountFromNodeTypeIdParams {
+        node_type_id: None,
+    },
+    get_destination_node_id_from_edge_id: GetDestinationNodeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_neighbour_node_ids_from_node_id: GetNeighbourNodeIdsFromNodeIdParams {
+        node_id:    0,
+    },
+    get_minmax_edge_ids_from_node_ids: GetMinmaxEdgeIdsFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_edge_id_from_node_ids_and_edge_type_id: GetEdgeIdFromNodeIdsAndEdgeTypeIdParams {
+        src:    0,
+        dst: 3159085,
+        edge_type: None,
+    },
+    get_edge_type_ids_from_edge_type_names: GetEdgeTypeIdsFromEdgeTypeNamesParams {
+        edge_type_names: [],
+    },
+    get_node_type_ids_from_node_type_names: GetNodeTypeIdsFromNodeTypeNamesParams {
+        node_type_names: [],
+    },
+    get_minmax_edge_ids_from_source_node_id: GetMinmaxEdgeIdsFromSourceNodeIdParams {
+        src:    0,
+    },
+    get_node_type_name_from_node_type_id: GetNodeTypeNameFromNodeTypeIdParams {
+        node_type_id:    0,
+    },
+    get_node_type_names_from_node_type_ids: GetNodeTypeNamesFromNodeTypeIdsParams {
+        node_type_ids: [],
+    },
+    filter: FilterParams {
+        node_names: None,
+        node_types: None,
+        edge_types: None,
+        min_weight: None,
+        max_weight: None,
+        verbose: false,
+    },
+    validate_node_id: ValidateNodeIdParams {
+        node_id:    0,
+    },
+    validate_edge_id: ValidateEdgeIdParams {
+        edge_id:    0,
+    },
+    validate_node_type_id: ValidateNodeTypeIdParams {
+        node_type_id: None,
+    },
+    validate_edge_type_id: ValidateEdgeTypeIdParams {
+        edge_type_id: None,
+    },
+    degrees_product: DegreesProductParams {
+        one: 842083637,
+        two:    0,
+    },
+    jaccard_index: JaccardIndexParams {
+        one: 1241513984,
+        two:   25,
+    },
+    adamic_adar_index: AdamicAdarIndexParams {
+        one:    1,
+        two: 791609344,
+    },
+    resource_allocation_index: ResourceAllocationIndexParams {
+        one: 791621423,
+        two: 791621423,
+    },
+    remove: RemoveParams {
+        allow_nodes_set: Some(
+            {
+                "/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////0//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
+                "\u{13}",
+            },
+        ),
+        deny_nodes_set: None,
+        allow_node_types_set: None,
+        deny_node_types_set: None,
+        allow_edge_set: Some(
+            {
+                16274732699613985600,
+                10566892418528927341,
+            },
+        ),
+        deny_edge_set: Some(
+            {
+                8501037480110737526,
+                639270869665907344,
+                17015642938210861273,
+            },
+        ),
+        allow_edge_types_set: None,
+        deny_edge_types_set: Some(
+            {},
+        ),
+        weights: true,
+        node_types: true,
+        edge_types: false,
+        singletons: true,
+        selfloops: false,
+        verbose: false,
+    },
+    remove_components: RemoveComponentsParams {
+        node_names: Some(
+            [
+                "c@\u{2}\u{16}",
+            ],
+        ),
+        node_types: Some(
+            [],
+        ),
+        edge_types: Some(
+            [
+                Some(
+                    "",
+                ),
+            ],
+        ),
+        minimum_component_size: None,
+        top_k_components: None,
+        verbose: false,
+    },
+    set_name: SetNameParams {
+        name: "\u{e}\u{8}",
+    },
+    set_all_edge_types: SetAllEdgeTypesParams {
+        edge_type: "",
+    },
+    set_all_node_types: SetAllNodeTypesParams {
+        node_type: "",
+    },
+    encode_edge: EncodeEdgeParams {
+        src: 3981467525,
+        dst: 3438327420,
+    },
+    decode_edge: DecodeEdgeParams {
+        edge: 1247796638253234960,
+    },
+    get_bipartite_edges: GetBipartiteEdgesParams {
+        removed_existing_edges: Some(
+            true,
+        ),
+        first_nodes_set: Some(
+            {},
+        ),
+        second_nodes_set: None,
+        first_node_types_set: Some(
+            {
+                "",
+                "Z\u{1f}",
+                "a6sZ",
+                "ǲO",
+                "<1",
+                "^ ",
+            },
+        ),
+        second_node_types_set: None,
+    },
+    get_bipartite_edge_names: GetBipartiteEdgeNamesParams {
+        removed_existing_edges: Some(
+            false,
+        ),
+        first_nodes_set: None,
+        second_nodes_set: None,
+        first_node_types_set: None,
+        second_node_types_set: Some(
+            {},
+        ),
+    },
+    get_star_edges: GetStarEdgesParams {
+        central_node: "u=m",
+        removed_existing_edges: None,
+        star_points_nodes_set: Some(
+            {},
+        ),
+        star_points_node_types_set: Some(
+            {
+                "\n\u{1e}?<B",
+                "A",
+            },
+        ),
+    },
+    get_star_edge_names: GetStarEdgeNamesParams {
+        central_node: "*",
+        removed_existing_edges: None,
+        star_points_nodes_set: Some(
+            {
+                "",
+            },
+        ),
+        star_points_node_types_set: None,
+    },
+    get_clique_edges: GetCliqueEdgesParams {
+        directed: None,
+        allow_selfloops: None,
+        removed_existing_edges: Some(
+            false,
+        ),
+        allow_node_type_set: None,
+        allow_node_set: Some(
+            {},
+        ),
+    },
+    get_clique_edge_names: GetCliqueEdgeNamesParams {
+        directed: None,
+        allow_selfloops: None,
+        removed_existing_edges: None,
+        allow_node_type_set: Some(
+            {},
+        ),
+        allow_node_set: None,
+    },
+    textual_report: TextualReportParams {
+        verbose: false,
+    },
+    get_connected_components_number: GetConnectedComponentsNumberParams {
+        verbose: true,
+    },
+    get_sources: GetSourcesParams {
+        directed: false,
+    },
+    get_source_names: GetSourceNamesParams {
+        directed: true,
+    },
+    get_destinations: GetDestinationsParams {
+        directed: true,
+    },
+    get_destination_names: GetDestinationNamesParams {
+        directed: true,
+    },
+    get_edges: GetEdgesParams {
+        directed: true,
+    },
+    get_edge_node_names: GetEdgeNodeNamesParams {
+        directed: true,
+    },
+    get_node_connected_component_ids: GetNodeConnectedComponentIdsParams {
+        verbose: false,
+    },
+    iter_source_node_ids: IterSourceNodeIdsParams {
+        directed: true,
+    },
+    par_iter_source_node_ids: ParIterSourceNodeIdsParams {
+        directed: false,
+    },
+    iter_destination_node_ids: IterDestinationNodeIdsParams {
+        directed: true,
+    },
+    par_iter_destination_node_ids: ParIterDestinationNodeIdsParams {
+        directed: true,
+    },
+    iter_edge_ids: IterEdgeIdsParams {
+        directed: true,
+    },
+    iter_edges: IterEdgesParams {
+        directed: true,
+    },
+    par_iter_edge_ids: ParIterEdgeIdsParams {
+        directed: true,
+    },
+    par_iter_edges: ParIterEdgesParams {
+        directed: true,
+    },
+    iter_edge_node_ids_and_edge_type_id: IterEdgeNodeIdsAndEdgeTypeIdParams {
+        directed: false,
+    },
+    iter_edge_node_names_and_edge_type_name: IterEdgeNodeNamesAndEdgeTypeNameParams {
+        directed: false,
+    },
+    par_iter_edge_node_names_and_edge_type_name: ParIterEdgeNodeNamesAndEdgeTypeNameParams {
+        directed: true,
+    },
+    par_iter_edge_node_ids_and_edge_type_id: ParIterEdgeNodeIdsAndEdgeTypeIdParams {
+        directed: true,
+    },
+    par_iter_edge_node_names_and_edge_type_name_and_edge_weight: ParIterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeightParams {
+        directed: true,
+    },
+    iter_edge_node_names_and_edge_type_name_and_edge_weight: IterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeightParams {
+        directed: false,
+    },
+    par_iter_edge_node_ids_and_edge_type_id_and_edge_weight: ParIterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeightParams {
+        directed: false,
+    },
+    iter_edge_node_ids_and_edge_type_id_and_edge_weight: IterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeightParams {
+        directed: false,
+    },
+    iter_unique_edge_node_ids: IterUniqueEdgeNodeIdsParams {
+        directed: false,
+    },
+    connected_holdout: ConnectedHoldoutParams {
+        random_state: 10310970262096435640,
+        train_size: 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014685993307597664,
+        edge_types: Some(
+            [
+                None,
+                None,
+            ],
+        ),
+        include_all_edge_types: true,
+        verbose: true,
+    },
+    random_holdout: RandomHoldoutParams {
+        random_state: 744637103337827804,
+        train_size: 195826575341.6361,
+        include_all_edge_types: false,
+        edge_types: Some(
+            [
+                Some(
+                    "\u{2}T",
+                ),
+            ],
+        ),
+        min_number_overlaps: Some(
+            609190416143284283,
+        ),
+        verbose: true,
+    },
+    node_label_holdout: NodeLabelHoldoutParams {
+        train_size: -0.0000000000000000000000000000006850786669774587,
+        use_stratification: false,
+        random_state: 3473590939727868643,
+    },
+    edge_label_holdout: EdgeLabelHoldoutParams {
+        train_size: -0.00000000000000000000000000000000000000000001099526170059908,
+        use_stratification: true,
+        random_state: 7856727593202214557,
+    },
+    random_subgraph: RandomSubgraphParams {
+        random_state: 10347599949200778709,
+        nodes_number: 1578609335,
+        verbose: false,
+    },
+    kfold: KfoldParams {
+        k: 4054510917489789798,
+        k_index: 16642872485467907472,
+        edge_types: Some(
+            [
+                None,
+            ],
+        ),
+        random_state: 5723478053272829082,
+        verbose: false,
+    },
+    from_vec: FromVecHarnessParams {
+        directed: false,
+        directed_edge_list: true,
+        ignore_duplicated_nodes: true,
+        ignore_duplicated_edges: false,
+        verbose: true,
+        numeric_edge_types_ids: false,
+        numeric_node_ids: false,
+        numeric_edge_node_ids: true,
+        numeric_node_types_ids: true,
+        has_node_types: true,
+        has_edge_types: false,
+        has_edge_weights: true,
+        edges: [],
+        nodes: None,
+    },
+}

@@ -1,0 +1,450 @@
+MetaParams {
+    random_spanning_arborescence_kruskal: RandomSpanningArborescenceKruskalParams {
+        random_state: 18173213292807861553,
+        undesired_edge_types: Some(
+            {},
+        ),
+        verbose: true,
+    },
+    spanning_arborescence_kruskal: SpanningArborescenceKruskalParams {
+        verbose: false,
+    },
+    spanning_arborescence: SpanningArborescenceParams {
+        verbose: false,
+    },
+    connected_components: ConnectedComponentsParams {
+        verbose: false,
+    },
+    get_node_label_prediction_tuple_from_node_ids: GetNodeLabelPredictionTupleFromNodeIdsParams {
+        node_ids: [],
+        random_state: 72057594021150720,
+        include_central_node: false,
+        offset:    0,
+        max_neighbours: None,
+    },
+    is_singleton_from_node_id: IsSingletonFromNodeIdParams {
+        node_id: 959919412,
+    },
+    is_singleton_with_selfloops_from_node_id: IsSingletonWithSelfloopsFromNodeIdParams {
+        node_id:    0,
+    },
+    has_edge_from_node_ids: HasEdgeFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    has_edge_from_node_ids_and_edge_type_id: HasEdgeFromNodeIdsAndEdgeTypeIdParams {
+        src:    0,
+        dst:    0,
+        edge_type: None,
+    },
+    is_trap_node_from_node_id: IsTrapNodeFromNodeIdParams {
+        node_id: 65280,
+    },
+    enable: EnableParams {
+        vector_sources: false,
+        vector_destinations: false,
+        vector_cumulative_node_degrees: false,
+        cache_size: None,
+    },
+    iter_edge_ids_from_node_ids: IterEdgeIdsFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_node_ids_from_edge_id: GetNodeIdsFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_id_from_node_ids: GetEdgeIdFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_node_ids_and_edge_type_id_from_edge_id: GetNodeIdsAndEdgeTypeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id: GetNodeIdsAndEdgeTypeIdAndEdgeWeightFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_top_k_central_node_ids: GetTopKCentralNodeIdsParams {
+        k:    0,
+    },
+    get_node_degree_from_node_id: GetNodeDegreeFromNodeIdParams {
+        node_id:    0,
+    },
+    get_top_k_central_node_names: GetTopKCentralNodeNamesParams {
+        k:    0,
+    },
+    get_node_type_id_from_node_id: GetNodeTypeIdFromNodeIdParams {
+        node_id:    0,
+    },
+    get_edge_type_id_from_edge_id: GetEdgeTypeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_node_type_name_from_node_id: GetNodeTypeNameFromNodeIdParams {
+        node_id:    0,
+    },
+    get_edge_type_name_from_edge_id: GetEdgeTypeNameFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_type_name_from_edge_type_id: GetEdgeTypeNameFromEdgeTypeIdParams {
+        edge_type_id:    0,
+    },
+    get_edge_weight_from_edge_id: GetEdgeWeightFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_edge_weight_from_node_ids: GetEdgeWeightFromNodeIdsParams {
+        src: 4294967295,
+        dst:    0,
+    },
+    get_edge_weight_from_node_ids_and_edge_type_id: GetEdgeWeightFromNodeIdsAndEdgeTypeIdParams {
+        src: 3910813429,
+        dst:    4,
+        edge_type: None,
+    },
+    get_node_name_from_node_id: GetNodeNameFromNodeIdParams {
+        node_id:    0,
+    },
+    get_edge_count_from_edge_type_id: GetEdgeCountFromEdgeTypeIdParams {
+        edge_type_id: None,
+    },
+    get_node_count_from_node_type_id: GetNodeCountFromNodeTypeIdParams {
+        node_type_id: None,
+    },
+    get_destination_node_id_from_edge_id: GetDestinationNodeIdFromEdgeIdParams {
+        edge_id:    0,
+    },
+    get_neighbour_node_ids_from_node_id: GetNeighbourNodeIdsFromNodeIdParams {
+        node_id: 16711680,
+    },
+    get_minmax_edge_ids_from_node_ids: GetMinmaxEdgeIdsFromNodeIdsParams {
+        src:    0,
+        dst:    0,
+    },
+    get_edge_id_from_node_ids_and_edge_type_id: GetEdgeIdFromNodeIdsAndEdgeTypeIdParams {
+        src:    0,
+        dst:    0,
+        edge_type: None,
+    },
+    get_edge_type_ids_from_edge_type_names: GetEdgeTypeIdsFromEdgeTypeNamesParams {
+        edge_type_names: [],
+    },
+    get_node_type_ids_from_node_type_names: GetNodeTypeIdsFromNodeTypeNamesParams {
+        node_type_names: [],
+    },
+    get_minmax_edge_ids_from_source_node_id: GetMinmaxEdgeIdsFromSourceNodeIdParams {
+        src:    0,
+    },
+    get_node_type_name_from_node_type_id: GetNodeTypeNameFromNodeTypeIdParams {
+        node_type_id:    0,
+    },
+    get_node_type_names_from_node_type_ids: GetNodeTypeNamesFromNodeTypeIdsParams {
+        node_type_ids: [],
+    },
+    filter: FilterParams {
+        node_names: None,
+        node_types: None,
+        edge_types: None,
+        min_weight: None,
+        max_weight: None,
+        verbose: false,
+    },
+    validate_node_id: ValidateNodeIdParams {
+        node_id:    0,
+    },
+    validate_edge_id: ValidateEdgeIdParams {
+        edge_id:    0,
+    },
+    validate_node_type_id: ValidateNodeTypeIdParams {
+        node_type_id: None,
+    },
+    validate_edge_type_id: ValidateEdgeTypeIdParams {
+        edge_type_id: None,
+    },
+    degrees_product: DegreesProductParams {
+        one:    0,
+        two: 842083637,
+    },
+    jaccard_index: JaccardIndexParams {
+        one:    0,
+        two:    0,
+    },
+    adamic_adar_index: AdamicAdarIndexParams {
+        one:    0,
+        two:    1,
+    },
+    resource_allocation_index: ResourceAllocationIndexParams {
+        one: 791609344,
+        two: 791621423,
+    },
+    remove: RemoveParams {
+        allow_nodes_set: Some(
+            {
+                "///////////////////////////////////// Y/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\'///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////17579///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
+            },
+        ),
+        deny_nodes_set: None,
+        allow_node_types_set: None,
+        deny_node_types_set: None,
+        allow_edge_set: None,
+        deny_edge_set: Some(
+            {
+                3399988123389603631,
+                3399988123389636399,
+                589741955910414127,
+            },
+        ),
+        allow_edge_types_set: Some(
+            {
+                "",
+                "tz\u{0}\u{0}\u{0}\u{0}///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ɛD\u{1e}\u{13}7",
+                "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////0//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}\u{1f}/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{6}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{6}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}\u{7}G\u{7}\u{7}\u{7}\u{7}\u{7}/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
+                "%",
+                "q)////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\'//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\u{5}\u{0}\u{0}\u{0}///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\'/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:///////////////////////////////////////////////////////////////////:////////////////////////////////////////////////////////////////////////////////////////////////////////.///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////R",
+            },
+        ),
+        deny_edge_types_set: None,
+        weights: true,
+        node_types: false,
+        edge_types: false,
+        singletons: true,
+        selfloops: true,
+        verbose: false,
+    },
+    remove_components: RemoveComponentsParams {
+        node_names: Some(
+            [
+                "",
+                "t",
+                "",
+            ],
+        ),
+        node_types: None,
+        edge_types: None,
+        minimum_component_size: None,
+        top_k_components: None,
+        verbose: false,
+    },
+    set_name: SetNameParams {
+        name: "",
+    },
+    set_all_edge_types: SetAllEdgeTypesParams {
+        edge_type: "",
+    },
+    set_all_node_types: SetAllNodeTypesParams {
+        node_type: "",
+    },
+    encode_edge: EncodeEdgeParams {
+        src: 1477765295,
+        dst: 1909414898,
+    },
+    decode_edge: DecodeEdgeParams {
+        edge: 3399988123395117783,
+    },
+    get_bipartite_edges: GetBipartiteEdgesParams {
+        removed_existing_edges: Some(
+            true,
+        ),
+        first_nodes_set: Some(
+            {
+                "///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
+            },
+        ),
+        second_nodes_set: None,
+        first_node_types_set: Some(
+            {},
+        ),
+        second_node_types_set: Some(
+            {},
+        ),
+    },
+    get_bipartite_edge_names: GetBipartiteEdgeNamesParams {
+        removed_existing_edges: Some(
+            false,
+        ),
+        first_nodes_set: None,
+        second_nodes_set: None,
+        first_node_types_set: Some(
+            {},
+        ),
+        second_node_types_set: None,
+    },
+    get_star_edges: GetStarEdgesParams {
+        central_node: "c",
+        removed_existing_edges: None,
+        star_points_nodes_set: None,
+        star_points_node_types_set: None,
+    },
+    get_star_edge_names: GetStarEdgeNamesParams {
+        central_node: "",
+        removed_existing_edges: Some(
+            true,
+        ),
+        star_points_nodes_set: None,
+        star_points_node_types_set: Some(
+            {
+                "Д\u{1e}",
+            },
+        ),
+    },
+    get_clique_edges: GetCliqueEdgesParams {
+        directed: None,
+        allow_selfloops: None,
+        removed_existing_edges: None,
+        allow_node_type_set: None,
+        allow_node_set: None,
+    },
+    get_clique_edge_names: GetCliqueEdgeNamesParams {
+        directed: Some(
+            true,
+        ),
+        allow_selfloops: None,
+        removed_existing_edges: None,
+        allow_node_type_set: None,
+        allow_node_set: Some(
+            {},
+        ),
+    },
+    textual_report: TextualReportParams {
+        verbose: true,
+    },
+    get_connected_components_number: GetConnectedComponentsNumberParams {
+        verbose: false,
+    },
+    get_sources: GetSourcesParams {
+        directed: false,
+    },
+    get_source_names: GetSourceNamesParams {
+        directed: true,
+    },
+    get_destinations: GetDestinationsParams {
+        directed: true,
+    },
+    get_destination_names: GetDestinationNamesParams {
+        directed: false,
+    },
+    get_edges: GetEdgesParams {
+        directed: true,
+    },
+    get_edge_node_names: GetEdgeNodeNamesParams {
+        directed: true,
+    },
+    get_node_connected_component_ids: GetNodeConnectedComponentIdsParams {
+        verbose: true,
+    },
+    iter_source_node_ids: IterSourceNodeIdsParams {
+        directed: true,
+    },
+    par_iter_source_node_ids: ParIterSourceNodeIdsParams {
+        directed: true,
+    },
+    iter_destination_node_ids: IterDestinationNodeIdsParams {
+        directed: true,
+    },
+    par_iter_destination_node_ids: ParIterDestinationNodeIdsParams {
+        directed: true,
+    },
+    iter_edge_ids: IterEdgeIdsParams {
+        directed: false,
+    },
+    iter_edges: IterEdgesParams {
+        directed: false,
+    },
+    par_iter_edge_ids: ParIterEdgeIdsParams {
+        directed: true,
+    },
+    par_iter_edges: ParIterEdgesParams {
+        directed: false,
+    },
+    iter_edge_node_ids_and_edge_type_id: IterEdgeNodeIdsAndEdgeTypeIdParams {
+        directed: false,
+    },
+    iter_edge_node_names_and_edge_type_name: IterEdgeNodeNamesAndEdgeTypeNameParams {
+        directed: false,
+    },
+    par_iter_edge_node_names_and_edge_type_name: ParIterEdgeNodeNamesAndEdgeTypeNameParams {
+        directed: true,
+    },
+    par_iter_edge_node_ids_and_edge_type_id: ParIterEdgeNodeIdsAndEdgeTypeIdParams {
+        directed: false,
+    },
+    par_iter_edge_node_names_and_edge_type_name_and_edge_weight: ParIterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeightParams {
+        directed: true,
+    },
+    iter_edge_node_names_and_edge_type_name_and_edge_weight: IterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeightParams {
+        directed: false,
+    },
+    par_iter_edge_node_ids_and_edge_type_id_and_edge_weight: ParIterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeightParams {
+        directed: true,
+    },
+    iter_edge_node_ids_and_edge_type_id_and_edge_weight: IterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeightParams {
+        directed: true,
+    },
+    iter_unique_edge_node_ids: IterUniqueEdgeNodeIdsParams {
+        directed: false,
+    },
+    connected_holdout: ConnectedHoldoutParams {
+        random_state: 9585099867338220604,
+        train_size: 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003175243275383713,
+        edge_types: Some(
+            [
+                None,
+                None,
+            ],
+        ),
+        include_all_edge_types: false,
+        verbose: true,
+    },
+    random_holdout: RandomHoldoutParams {
+        random_state: 5939816093879027887,
+        train_size: -0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000019574802891930622,
+        include_all_edge_types: false,
+        edge_types: Some(
+            [
+                Some(
+                    "",
+                ),
+                None,
+            ],
+        ),
+        min_number_overlaps: Some(
+            15835718696020937282,
+        ),
+        verbose: true,
+    },
+    node_label_holdout: NodeLabelHoldoutParams {
+        train_size: -115337750302652400000000000000000000000000000000000000000000.0,
+        use_stratification: true,
+        random_state: 2104195285752674790,
+    },
+    edge_label_holdout: EdgeLabelHoldoutParams {
+        train_size: 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010019945552100274,
+        use_stratification: false,
+        random_state: 13349407798248269410,
+    },
+    random_subgraph: RandomSubgraphParams {
+        random_state: 1508527561538227388,
+        nodes_number: 3685995531,
+        verbose: true,
+    },
+    kfold: KfoldParams {
+        k: 13266954002535679075,
+        k_index: 5709112889238686613,
+        edge_types: None,
+        random_state: 12009830888202642519,
+        verbose: true,
+    },
+    from_vec: FromVecHarnessParams {
+        directed: true,
+        directed_edge_list: true,
+        ignore_duplicated_nodes: true,
+        ignore_duplicated_edges: false,
+        verbose: false,
+        numeric_edge_types_ids: true,
+        numeric_node_ids: false,
+        numeric_edge_node_ids: false,
+        numeric_node_types_ids: false,
+        has_node_types: false,
+        has_edge_types: false,
+        has_edge_weights: true,
+        edges: [],
+        nodes: None,
+    },
+}

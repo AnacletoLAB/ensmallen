@@ -299,7 +299,8 @@ impl Graph {
             self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
         Ok((train_edges as EdgeT, test_edges as EdgeT))
     }
-
+    
+    /// TODO add doc
     fn edge_holdout(
         &self,
         random_state: EdgeT,

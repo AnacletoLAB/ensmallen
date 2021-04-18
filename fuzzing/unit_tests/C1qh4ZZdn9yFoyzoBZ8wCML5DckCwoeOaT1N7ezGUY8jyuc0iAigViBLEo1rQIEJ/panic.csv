@@ -1,0 +1,4 @@
+file,"/Workspace/Github/ensmallen_graph/graph/src/queries.rs"
+line,68
+col,18
+message,internal error: entered unreachable code: The current graph instance does not have edge types!
