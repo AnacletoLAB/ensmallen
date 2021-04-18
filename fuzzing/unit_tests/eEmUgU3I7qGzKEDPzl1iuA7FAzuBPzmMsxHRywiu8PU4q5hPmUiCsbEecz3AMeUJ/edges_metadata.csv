@@ -8,7 +8,7 @@ sources_column_number,Some(0)
 sources_column,None
 destinations_column_number,Some(1)
 destinations_column,None
-edge_types_column_number,None
+edge_types_column_number,Some(2)
 edge_types_column,None
 weights_column_number,Some(3)
 weights_column,None

@@ -1,7 +1,0 @@
-Some(
-    [
-        "spanning_arborescence(verbose = true)",
-        "par_iter_edges(directed = true)",
-        "connected_holdout(random_state = 4944490478894350017, train_size = 0.000000000000000000000000000000000000000000000000000000000000000000000000000000001623390559213236, edge_types = Some([None]), include_all_edge_types = true, verbose = true)",
-    ],
-)
