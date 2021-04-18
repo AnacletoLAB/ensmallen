@@ -388,6 +388,15 @@ impl EnsmallenGraph {
 	fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
 		pe!(self.graph.get_node_type_ids())
 	}
+
+	#[text_signature = "($self)"]
+	/// Return the edge types of the graph edges.
+	///
+	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
+	fn get_edge_type_ids(&self) -> PyResult<Vec<Option<Vec<EdgeTypeT>>>> {
+		pe!(self.graph.get_edge_type_ids())
+	}
 	
 	#[text_signature = "($self)"]
 	/// Returns number of not singleton nodes within the graph.
