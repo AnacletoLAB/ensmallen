@@ -40,7 +40,7 @@ impl Graph {
             self.cumulative_node_degrees = None;
         }
         if let Some(cs) = cache_size {
-            if vector_destinations {
+            if self.destinations.is_some() {
                 return Err("You cannot use cache if you enable the destinations vector".to_owned());
             }
             if cs <= 0.0 || cs >= 1.0 {
