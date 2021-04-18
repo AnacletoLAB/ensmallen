@@ -1170,6 +1170,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
+            assert_eq!(graph.is_multigraph(), wn.is_multigraph(), "If the original graph is a multigraph, the removal of node types should not change that.");
             assert_eq!(
                 wn.weights,
                 graph.weights,
