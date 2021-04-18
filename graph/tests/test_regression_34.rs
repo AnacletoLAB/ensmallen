@@ -35,6 +35,9 @@ fn test_regression_34() -> Result<(), String> {
         false, // Directed edge list
         "Fuzz Graph" // Name of the graph
     )?;
+
+    graph = graph.set_all_edge_types("test".to_string())?;
+
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())
 }
