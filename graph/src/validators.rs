@@ -224,7 +224,7 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_nodes = graph::test_utilities::load_empty_graph(false);
     /// assert!(graph_with_nodes.must_have_nodes().is_ok());
     /// assert!(graph_without_nodes.must_have_nodes().is_err());

@@ -654,6 +654,11 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
 }
 
 pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    if !graph.has_edge_types() {
+        assert!(graph
+            .connected_holdout(4, 0.8, Some(vec![None]), false, verbose)
+            .is_err());
+    }
     for include_all_edge_types in &[false, true] {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
