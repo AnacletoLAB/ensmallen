@@ -182,6 +182,19 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Set whether the CSV is expected to be well written.
+    ///
+    /// # Arguments
+    ///
+    /// * csv_is_correct: Option<bool> - Whether you pinky swear the node list is correct.
+    ///
+    pub fn set_csv_is_correct(mut self, csv_is_correct: Option<bool>) -> NodeFileReader {
+        if let Some(cic) = csv_is_correct {
+            self.reader.csv_is_correct = cic;
+        }
+        self
+    }
+
     /// Set the default node type.
     ///
     /// # Arguments
