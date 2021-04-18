@@ -4,6 +4,8 @@ use super::*;
 /// The naming convention we follow is:
 /// * `validate_(.+)`
 /// * `must_have_(.+)`
+/// * `must_be_(.+)`
+/// * `must_not_be_(.+)`
 impl Graph {
     /// Validates provided node ID.
     ///
@@ -177,7 +179,25 @@ impl Graph {
     /// ```
     pub fn must_be_multigraph(&self) -> Result<(), String> {
         if !self.is_multigraph() {
-            return Err("The current graph instance is not a multigraph.".to_string());
+            return Err("The current graph instance must be a multigraph to run this method.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph does not have edge types.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);
+    /// # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);
+    /// assert!(multigraph.must_be_multigraph().is_ok());
+    /// assert!(homogeneous.must_be_multigraph().is_err());
+    /// ```
+    pub fn must_not_be_multigraph(&self) -> Result<(), String> {
+        if self.is_multigraph() {
+            return Err("The current graph instance must not be a multigraph to run this method.".to_string());
         }
         Ok(())
     }
@@ -224,7 +244,7 @@ impl Graph {
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();
+    /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_nodes = graph::test_utilities::load_empty_graph(false);
     /// assert!(graph_with_nodes.must_have_nodes().is_ok());
     /// assert!(graph_without_nodes.must_have_nodes().is_err());

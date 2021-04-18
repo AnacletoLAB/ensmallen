@@ -299,7 +299,7 @@ impl Graph {
             self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
         Ok((train_edges as EdgeT, test_edges as EdgeT))
     }
-    
+
     /// TODO add doc
     fn edge_holdout(
         &self,
@@ -476,6 +476,11 @@ impl Graph {
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
+        // If the user has requested to restrict the connected holdout to a 
+        // limited set of edge types, the graph must have edge types.
+        if edge_types.is_some() {
+            self.must_have_edge_types()?;
+        }
         if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
@@ -497,6 +502,8 @@ impl Graph {
         let mut valid_edges_number =
             (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
+        // We need to check if the connected holdout can actually be built with
+        // the additional constraint of the edge types. 
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
@@ -569,6 +576,11 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
+        // If the user has requested to restrict the connected holdout to a 
+        // limited set of edge types, the graph must have edge types.
+        if edge_types.is_some() {
+            self.must_have_edge_types()?;
+        }
         let (_, valid_edges_number) =
             self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {

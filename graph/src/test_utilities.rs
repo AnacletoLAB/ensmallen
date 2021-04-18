@@ -654,6 +654,11 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
 }
 
 pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    if !graph.has_edge_types() {
+        assert!(graph
+            .connected_holdout(4, 0.8, Some(vec![None]), false, verbose)
+            .is_err());
+    }
     for include_all_edge_types in &[false, true] {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
@@ -1165,6 +1170,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
+            assert_eq!(graph.is_multigraph(), wn.is_multigraph(), "If the original graph is a multigraph, the removal of node types should not change that.");
             assert_eq!(
                 wn.weights,
                 graph.weights,
@@ -1200,6 +1206,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
 pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
+    assert!(!clone.is_multigraph());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(

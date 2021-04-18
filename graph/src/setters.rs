@@ -23,7 +23,24 @@ impl Graph {
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
     pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Result<Graph, String> {
+        // If the graph does not have edges, it does not make sense to
+        // try and set the edge types.
         self.must_have_edges()?;
+        // Similarly, setting the edge types of a multigraph would make it
+        // collapse to a homogeneous graph, and this operation is not supported
+        // with the function set all edge types.
+        self.must_not_be_multigraph().map_err(|_| concat!(
+            "The method set_all_edge_types does not support multigraphs because ",
+            "setting the edge types of all edges to a single one in this type",
+            "of graphs will cause a multigraph to collapse to an homogeneous ",
+            "graph, leading to multiple undefined behaviours, such as loosing ",
+            "the parallel edges that would collapse to one: which one should we keep?\n",
+            "This is a strongly undefined behaviour that can be first handled with ",
+            "the remove method, that can let you remove edge types.\n",
+            "Consider that when using the remove method, you will still collapse ",
+            "the multigraph to an homogeneous graph, and it will keep the FIRST edge ",
+            "of any group of multigraph edges between two given nodes."
+        ).to_string())?;
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(edge_type.into())?;
