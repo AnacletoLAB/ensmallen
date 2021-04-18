@@ -41,6 +41,19 @@ impl Graph {
 
     /// Returns boolean representing if given node is a singleton.
     ///
+    /// Nota that this method will raise a panic if caled with unproper
+    /// parametrization.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name to be checked for.
+    pub fn is_unchecked_singleton_from_node_name(&self, node_name: &str) -> bool {
+        self.is_unchecked_singleton_from_node_id(
+            self.get_unchecked_node_id_from_node_name(node_name),
+        )
+    }
+
+    /// Returns boolean representing if given node is a singleton.
+    ///
     /// # Arguments
     /// * `node_name`: &str - The node name to be checked for.
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool, String> {

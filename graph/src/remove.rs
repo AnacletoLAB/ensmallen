@@ -178,7 +178,7 @@ impl Graph {
                 ),
             Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
                 |(node_id, node_name, _, node_type_names)| {
-                    if singletons && self.is_singleton_from_node_name(&node_name).unwrap() {
+                    if singletons && self.is_unchecked_singleton_from_node_name(&node_name) {
                         return None;
                     }
                     // If singletons and selfloops need to be removed.
