@@ -52,17 +52,20 @@ pub fn load_ppi(
     directed: bool,
     verbose: bool,
     skip_selfloops: bool,
-) -> Result<Graph, String> {
+) -> Graph {
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
         Some(
-            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
+            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())
+                .unwrap()
                 .set_verbose(Some(false))
                 .set_node_types_column_number(Some(1))
                 .set_nodes_column_number(Some(0))
-                .set_node_types_column(Some("category".to_string()))?
+                .set_node_types_column(Some("category".to_string()))
+                .unwrap()
                 .set_default_node_type(Some("default".to_string()))
-                .set_nodes_column(Some("id".to_string()))?
+                .set_nodes_column(Some("id".to_string()))
+                .unwrap()
                 .set_ignore_duplicates(Some(true))
                 .set_separator(Some("\t"))
                 .unwrap()
@@ -74,25 +77,30 @@ pub fn load_ppi(
     } else {
         None
     };
-    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
+    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())
+        .unwrap()
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t"))
         .unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
-        .set_sources_column(Some("subject".to_string()))?
-        .set_destinations_column(Some("object".to_string()))?
+        .set_sources_column(Some("subject".to_string()))
+        .unwrap()
+        .set_destinations_column(Some("object".to_string()))
+        .unwrap()
         .set_weights_column(if load_weights {
             Some("weight".to_string())
         } else {
             None
-        })?
+        })
+        .unwrap()
         .set_edge_types_column(if load_edge_types {
             Some("edge_label".to_string())
         } else {
             None
-        })?
+        })
+        .unwrap()
         .set_default_edge_type(if load_edge_types {
             Some("Kebab".to_string())
         } else {
@@ -109,12 +117,8 @@ pub fn load_ppi(
         directed,
         false,
         graph_name.clone(),
-    );
-    assert!(
-        ppi.is_ok(),
-        "We expect to be able to load the String PPI graph."
-    );
-    let ppi = ppi?;
+    )
+    .unwrap();
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types,);
     assert_eq!(ppi.has_edge_weights(), load_weights);
@@ -132,7 +136,7 @@ pub fn load_ppi(
         ppi.has_selfloops(),
         ppi.textual_report(false)
     );
-    Ok(ppi)
+    ppi
 }
 
 /// Load an empty graph instance
@@ -482,10 +486,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     // Evaluate get_node_type_counts
-    assert_eq!(graph.get_node_type_counter().is_ok(), graph.has_node_types());
+    assert_eq!(
+        graph.get_node_type_counter().is_ok(),
+        graph.has_node_types()
+    );
 
     // Evaluate get_edge_type_counts
-    assert_eq!(graph.get_edge_type_counter().is_ok(), graph.has_edge_types());
+    assert_eq!(
+        graph.get_edge_type_counter().is_ok(),
+        graph.has_edge_types()
+    );
 
     // Evaluate get_edge_type_counts_hashmap
     assert_eq!(

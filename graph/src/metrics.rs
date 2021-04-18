@@ -14,7 +14,7 @@ impl Graph {
     ///=
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The degrees_product between 0 and 1 is {}", graph.degrees_product(0, 1).unwrap());
     /// ```
     pub fn degrees_product(&self, one: NodeT, two: NodeT) -> Result<usize, String> {
@@ -46,7 +46,7 @@ impl Graph {
     ///
     /// # Example
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Jaccard Index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
     /// ```
     pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
@@ -97,7 +97,7 @@ impl Graph {
     ///
     /// # Example
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
     /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
@@ -139,7 +139,7 @@ impl Graph {
     ///
     /// # Example
     ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
     /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {

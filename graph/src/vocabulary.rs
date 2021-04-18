@@ -4,6 +4,9 @@ use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
+    /// TODO: refactor the following to work with shared references
+    /// in order to avoid doubling the amount of mempry required to store
+    /// the string names into memory.
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
     pub numeric_ids: bool,
@@ -20,13 +23,12 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
-            let parsed_value = match value.parse::<usize>() {
-                Ok(val) => Ok(val),
-                Err(_) => Err(format!(
+            let parsed_value = value.parse::<usize>().map_err(|_| {
+                format!(
                     "The given ID `{}` is not a numeric positive integer.",
                     value
-                )),
-            }?;
+                )
+            })?;
 
             let string_parsed_value = parsed_value.to_string();
 
@@ -104,7 +106,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
             }
             let i = IndexT::to_usize(*v);
             if !self.reverse_map[i].is_empty() {
-                return Err(format!(
+                panic!(
                     concat!(
                         "During the building of the reverse mapping, ",
                         "one of the elements of the reverse mapping was attempted ",
@@ -114,8 +116,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "node id.\n",
                         "In this case, the value is {} and its index is {}."
                     ),
-                    k, i
-                ));
+                    k,
+                    i,
+                );
             }
             self.reverse_map[i] = k.clone();
         }

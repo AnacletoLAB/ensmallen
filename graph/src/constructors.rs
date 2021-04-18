@@ -201,6 +201,7 @@ where
     })
 }
 
+/// TODO: I think this method can be made better!
 pub(crate) fn parse_sorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     directed: bool,
@@ -347,6 +348,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
 /// TODO! add computation of minimum edge weight
 /// TODO! add computation of maximum node degree
 /// TODO! add computation of maximum edge weight
+/// TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.
 /// TODO! add docstring
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
@@ -518,12 +520,14 @@ pub(crate) fn build_edges(
                     });
                     // Finally now we need to check if the weights of the two edges, if given
                     // are actually equal.
-                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
-                        weights.as_ref().map_or(false, |ws| {
-                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
-                        })
-                    });
-                    if has_unbalanced_undirected_edge {
+                    // For the time being we do not allow for undirected graphs to have
+                    // asymmetrical weights.
+                    // let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
+                    //     weights.as_ref().map_or(false, |ws| {
+                    //         (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
+                    //     })
+                    // });
+                    if maybe_edge_id.is_none() {
                         return Err(concat!(
                             "You are trying to load an undirected ",
                             "graph using the directed edge list ",

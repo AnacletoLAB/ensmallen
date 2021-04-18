@@ -10,13 +10,13 @@ impl Graph {
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.are_nodes_remappable(&graph));
     /// ```
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
     /// # let cora = graph::test_utilities::load_cora().unwrap();
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(!cora.are_nodes_remappable(&ppi));
     /// ```
     ///
@@ -39,7 +39,7 @@ impl Graph {
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
     /// ```
     ///

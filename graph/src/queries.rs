@@ -181,7 +181,7 @@ impl Graph {
     /// To retrieve the source and destination node IDs of a given edge ID you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
     /// let (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id);
     /// println!("The edge with ID {} has source node ID {} and destination node ID {}.", edge_id, src, dst);
@@ -203,7 +203,7 @@ impl Graph {
     /// To retrieve the source and destination node IDs of a given edge ID you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.get_node_ids_from_edge_id(0).is_ok());
     /// assert!(graph.get_node_ids_from_edge_id(10000000000).is_err());
     /// ```
@@ -226,7 +226,7 @@ impl Graph {
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
     /// let edge_id = graph.get_unchecked_edge_id_from_node_ids(src, dst);
@@ -247,7 +247,7 @@ impl Graph {
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(graph.get_edge_id_from_node_ids(0, 1).is_ok());
     /// assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());
     /// ```
@@ -271,8 +271,8 @@ impl Graph {
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
     ///
     /// ```rust
-    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// assert!(
     ///     graph_without_singletons.iter_node_ids()
     ///         .all(|node_id|
@@ -301,7 +301,7 @@ impl Graph {
     /// In order to retrieve a given edge ID informations, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
     /// let (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);
     /// println!("The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}", edge_id, src, dst, edge_type);
@@ -327,7 +327,7 @@ impl Graph {
     /// In order to retrieve a given edge ID informations, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(0).is_ok());
     /// assert!(graph.get_node_ids_and_edge_type_id_from_edge_id(10000000000).is_err());
     /// ```
@@ -350,7 +350,7 @@ impl Graph {
     /// In order to retrieve a given edge ID informations, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
     /// let (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);
     /// println!("The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.", edge_id, src, dst, edge_type, weight);
@@ -378,7 +378,7 @@ impl Graph {
     /// In order to retrieve a given edge ID informations, you can use the following:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(0).is_ok());
     /// assert!(graph.get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(10000000000).is_err());
     /// ```
@@ -468,7 +468,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The node type id of node {} is {:?}", 0, graph.get_unchecked_node_type_id_from_node_id(0));
     /// ```
     ///
@@ -489,7 +489,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_from_node_id(0));
     /// ```
     ///
@@ -515,7 +515,7 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
 
     /// assert_eq!(graph.get_unchecked_edge_type_id_from_edge_id(0), Some(0));
     /// ```
@@ -533,8 +533,8 @@ impl Graph {
     ///
     /// # Example
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(true, false, true, true, false, false);
     /// assert_eq!(graph.get_edge_type_id_from_edge_id(0).unwrap(), Some(0));
     /// assert!(graph_without_edge_types.get_edge_type_id_from_edge_id(0).is_err());
     /// ```
@@ -602,8 +602,8 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `edge_id` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let unweighted_graph = graph::test_utilities::load_ppi(true, true, false, true, false, false);
     /// let edge_id = 0;
     /// let unexistent_edge_id = 123456789;
     /// assert!(weighted_graph.get_edge_weight_from_edge_id(edge_id).is_ok());
@@ -633,7 +633,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
     /// assert!(weighted_graph.get_edge_weight_from_node_ids(src, dst).is_ok());
@@ -652,7 +652,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
     /// let edge_type = Some(0);
@@ -679,7 +679,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = "ENSP00000000233";
     /// let dst = "ENSP00000432568";
     /// let edge_type = Some("red".to_string());
@@ -705,7 +705,7 @@ impl Graph {
     /// # Example
     /// To get the weight of a given `src_name` and `dst_name` you can run:
     /// ```rust
-    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false).unwrap();
+    /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src_name = "ENSP00000000233";
     /// let dst_name = "ENSP00000432568";
     /// assert!(weighted_graph.get_edge_weight_from_node_names(src_name, dst_name).is_ok());
@@ -726,7 +726,7 @@ impl Graph {
     /// # Example
     /// To get the name of a node you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph.get_unchecked_node_name_from_node_id(0), "ENSG00000004059".to_string());
     /// ```
     pub fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
@@ -741,7 +741,7 @@ impl Graph {
     /// # Example
     /// To get the name of a node you can use:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.get_node_name_from_node_id(0).is_ok());
     /// ```
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
@@ -772,7 +772,7 @@ impl Graph {
     /// # Example
     /// To get the node type ID for a given node name you can run:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_id_from_node_name(node_name).unwrap());
     /// ```
@@ -792,7 +792,7 @@ impl Graph {
     /// # Example
     /// To get the node type name for a given node name you can run:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The node type of node {} is {:?}", node_name, graph.get_node_type_name_from_node_name(node_name).unwrap());
     /// ```
@@ -964,7 +964,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let node_id = 0;
     /// println!("The neighbours of the node {} are {:?}.", node_id, graph.get_neighbour_node_ids_from_node_id(node_id).unwrap());
     /// let unavailable_node = 2349765432;
@@ -990,7 +990,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_ids_from_node_name(node_name).unwrap());
     /// ```
@@ -1011,7 +1011,7 @@ impl Graph {
     /// To retrieve the neighbours of a given node `src` you can use:
     ///
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
     /// println!("The neighbours of the node {} are {:?}.", node_name, graph.get_neighbour_node_names_from_node_name(node_name).unwrap());
     /// ```

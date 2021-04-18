@@ -72,14 +72,20 @@ impl CSVFileReader {
         }
     }
 
-    /// Read the whole file and return how many rows it has.
-    pub(crate) fn count_rows(&self) -> usize {
-        std::cmp::min(
-            BufReader::new(File::open(&self.path).unwrap())
-                .lines()
-                .count(),
-            self.max_rows_number.unwrap_or(u64::MAX) as usize,
+    fn get_buffer_reader(&self) -> Result<BufReader<File>, String> {
+        let file = File::open(&self.path);
+        file.map_or_else(
+            |_| Err(format!("Cannot open the file at {}", self.path)),
+            |file| Ok(BufReader::new(file)),
         )
+    }
+
+    /// Read the whole file and return how many rows it has.
+    pub(crate) fn count_rows(&self) -> Result<usize, String> {
+        Ok(std::cmp::min(
+            self.get_buffer_reader()?.lines().count(),
+            self.max_rows_number.unwrap_or(u64::MAX) as usize,
+        ))
     }
 
     /// Return list of components of the header.
@@ -103,13 +109,13 @@ impl CSVFileReader {
                 Some(v) => Ok(v),
                 None => Err(concat!(
                     "This overflow was caused because rows to skip = 2**64 - 1",
-                    "and header is setted to true which causes to skip one extra line.",
+                    "and header is set to true which causes to skip one extra line.",
                     "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
                 )),
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
-        Ok(BufReader::new(File::open(&self.path).unwrap())
+        Ok(self.get_buffer_reader()?
             .lines()
             .map(|line| match line {
                 Ok(l)=>Ok(l),
@@ -148,7 +154,7 @@ impl CSVFileReader {
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
-            if self.verbose { self.count_rows() } else { 0 },
+            if self.verbose { self.count_rows()? } else { 0 },
         );
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
