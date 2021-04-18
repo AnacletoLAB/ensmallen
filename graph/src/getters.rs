@@ -95,12 +95,12 @@ impl Graph {
     /// ```
     pub fn get_trap_nodes_rate(&self) -> f64 {
         self.par_iter_node_ids()
-            .map(|node| {
-                if !self.is_trap_node_from_node_id(node).unwrap() {
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node)
-                        .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)
+            .map(|node_id| {
+                if !self.is_unchecked_trap_node_from_node_id(node_id) {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
                         .sum::<f64>()
-                        / self.get_unchecked_node_degree_from_node_id(node) as f64
+                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64
                 } else {
                     1.0
                 }
