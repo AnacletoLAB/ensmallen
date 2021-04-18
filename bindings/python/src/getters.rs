@@ -394,7 +394,7 @@ impl EnsmallenGraph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn get_edge_type_ids(&self) -> PyResult<Vec<Option<Vec<EdgeTypeT>>>> {
+	fn get_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
 		pe!(self.graph.get_edge_type_ids())
 	}
 	
