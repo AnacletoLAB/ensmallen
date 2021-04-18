@@ -6,7 +6,7 @@ use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicUsize, Ordering};
-use thread_safe::ThreadSafe;
+use types::ThreadSafe;
 
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {

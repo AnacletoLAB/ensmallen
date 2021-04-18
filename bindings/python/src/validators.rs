@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
+use graph::{NodeTypeT, NodeT, EdgeTypeT, EdgeT};
 
 #[pymethods]
 impl EnsmallenGraph {

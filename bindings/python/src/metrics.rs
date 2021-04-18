@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, NodeT};
+use graph::NodeT;
 use numpy::{PyArray, PyArray1};
 use std::collections::HashMap;
 

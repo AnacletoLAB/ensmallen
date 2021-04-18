@@ -310,7 +310,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
+    pub fn get_source_node_ids(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_source_node_ids(directed).collect()
     }
 
@@ -328,7 +328,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
+    pub fn get_destination_node_ids(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destination_node_ids(directed).collect()
     }
 
@@ -348,7 +348,7 @@ impl Graph {
     }
 
     /// Return vector with the sorted nodes Ids.
-    pub fn get_nodes(&self) -> Vec<NodeT> {
+    pub fn get_node_ids(&self) -> Vec<NodeT> {
         self.iter_node_ids().collect()
     }
 
@@ -471,7 +471,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
+    pub fn get_edge_node_ids(&self, directed: bool) -> Vec<Vec<NodeT>> {
         self.par_iter_edge_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()

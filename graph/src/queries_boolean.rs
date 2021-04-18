@@ -204,24 +204,24 @@ impl Graph {
     ///
     /// * `src_name`: &str - The source node name of the edge.
     /// * `dst_name`: &str - The destination node name of the edge.
-    /// * `edge_type_name`: Option<&String> - The (optional) edge type name.
+    /// * `edge_type_name`: Option<&str> - The (optional) edge type name.
     ///
     /// # Example
     /// To check if an edge with type in the graph you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
-    /// let edge_type = "red".to_string();
-    /// let unexistent_edge_type = "NonExistent".to_string();
-    /// assert!(graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", Some(&edge_type)));
-    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", Some(&unexistent_edge_type)));
-    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", Some(&edge_type)));
-    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", Some(&unexistent_edge_type)));
+    /// let edge_type = Some("red");
+    /// let unexistent_edge_type = Some("NonExistent");
+    /// assert!(graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", edge_type));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "ENSP00000432568", unexistent_edge_type));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", edge_type));
+    /// assert!(!graph.has_edge_from_node_names_and_edge_type_name("ENSP00000000233", "NonExistent", unexistent_edge_type));
     /// ```
     pub fn has_edge_from_node_names_and_edge_type_name(
         &self,
         src_name: &str,
         dst_name: &str,
-        edge_type_name: Option<&String>,
+        edge_type_name: Option<&str>,
     ) -> bool {
         self.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
             .is_ok()

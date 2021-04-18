@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
+use graph::{EdgeTypeT, NodeT};
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -68,7 +68,7 @@ impl EnsmallenGraph {
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
 	fn has_edge_from_node_names_and_edge_type_name(&self, src_name : &str, dst_name : &str, edge_type_name : Option<String>) -> bool {
-		self.graph.has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name.map(|x| &x))
+		self.graph.has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name.as_deref())
 	}
 	
 	#[text_signature = "($self, node_name)"]

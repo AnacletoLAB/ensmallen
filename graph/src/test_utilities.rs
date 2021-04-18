@@ -380,8 +380,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
+            let clone_edge_type = edge_type.clone();
             assert!(
-                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),
+                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),
                 "I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
@@ -1207,10 +1208,10 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
     assert!(!clone.is_multigraph());
-    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
+        clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(
-        clone.get_edge_types_ids_number(),
+        clone.get_edge_types_number(),
         1,
         "Number of edge types of the graph is not 1."
     );

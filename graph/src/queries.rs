@@ -674,7 +674,7 @@ impl Graph {
     /// # Arguments
     /// * `src`: &str - The node name of the source node.
     /// * `dst`: &str - The node name of the destination node.
-    /// * `edge_type`: Option<&String> - The edge type name of the edge.
+    /// * `edge_type`: Option<&str> - The edge type name of the edge.
     ///
     /// # Example
     /// To get the weight of a given `src` and `dst` and `edge_type` you can run:
@@ -682,14 +682,14 @@ impl Graph {
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = "ENSP00000000233";
     /// let dst = "ENSP00000432568";
-    /// let edge_type = Some("red".to_string());
-    /// assert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type.as_ref()).is_ok());
+    /// let edge_type = Some("red");
+    /// assert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type).is_ok());
     /// ```
     pub fn get_edge_weight_from_node_names_and_edge_type_name(
         &self,
         src: &str,
         dst: &str,
-        edge_type: Option<&String>,
+        edge_type: Option<&str>,
     ) -> Result<WeightT, String> {
         self.get_edge_weight_from_edge_id(
             self.get_edge_id_from_node_names_and_edge_type_name(src, dst, edge_type)?,
@@ -1122,20 +1122,20 @@ impl Graph {
     /// # Arguments
     /// * `src_name`: &str - Source node name of the edge.
     /// * `dst_name`: &str - Destination node name of the edge.
-    /// * `edge_type_name`: Option<&String> - Edge type name.
+    /// * `edge_type_name`: Option<&str> - Edge type name.
     ///
     pub fn get_edge_id_from_node_names_and_edge_type_name(
         &self,
         src_name: &str,
         dst_name: &str,
-        edge_type_name: Option<&String>,
+        edge_type_name: Option<&str>,
     ) -> Result<EdgeT, String> {
         match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
             (Some(src), Some(dst)) => self
                 .get_edge_id_from_node_ids_and_edge_type_id(
                     *src,
                     *dst,
-                    self.get_edge_type_id_from_edge_type_name(edge_type_name.map(|x| x.as_str()))?,
+                    self.get_edge_type_id_from_edge_type_name(edge_type_name)?,
                 )
                 .ok(),
             _ => None,

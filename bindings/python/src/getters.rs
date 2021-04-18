@@ -85,9 +85,9 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Numpy array with numeric sources Ids.
-    fn get_sources(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
+    fn get_source_node_ids(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_sources(directed.unwrap_or(true)), NodeT)
+        to_ndarray_1d!(gil, self.graph.get_source_node_ids(directed.unwrap_or(true)), NodeT)
     }
 
     #[text_signature = "($self, directed)"]
@@ -101,9 +101,9 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Numpy array with numeric destination Ids.
-    fn get_destinations(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
+    fn get_destination_node_ids(&self, directed: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_destinations(directed.unwrap_or(true)), NodeT)
+        to_ndarray_1d!(gil, self.graph.get_destination_node_ids(directed.unwrap_or(true)), NodeT)
     }
 
     #[text_signature = "($self, directed)"]
@@ -117,11 +117,11 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Numpy array with numeric source and destination Ids.
-    pub fn get_edges(&self, directed: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
+    pub fn get_edge_node_ids(&self, directed: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_2d!(
             gil,
-            self.graph.get_edges(directed.unwrap_or(true)),
+            self.graph.get_edge_node_ids(directed.unwrap_or(true)),
             NodeT
         ))
     }
@@ -154,9 +154,9 @@ impl EnsmallenGraph {
     }
 
     /// Return vector with the sorted nodes Ids.
-    pub fn get_nodes(&self) -> Py<PyArray1<NodeT>> {
+    pub fn get_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        PyArray::from_vec(gil.python(), self.graph.get_nodes())
+        PyArray::from_vec(gil.python(), self.graph.get_node_ids())
             .cast::<NodeT>(false)
             .unwrap()
             .to_owned()

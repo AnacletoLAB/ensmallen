@@ -3,7 +3,7 @@ use graph::NodeT;
 use numpy::PyArray2;
 use rayon::iter::IndexedParallelIterator;
 use rayon::prelude::*;
-use thread_safe::ThreadSafe;
+use types::ThreadSafe;
 
 #[pymethods]
 impl EnsmallenGraph {

@@ -180,7 +180,7 @@ impl Graph {
         if !self.has_edges() {
             return (
                 HashSet::new(),
-                self.get_nodes(),
+                self.get_node_ids(),
                 self.get_nodes_number(),
                 1,
                 1,

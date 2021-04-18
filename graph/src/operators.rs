@@ -45,14 +45,14 @@ fn generic_string_operator(
                         return !dg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
-                            edge_type_name.as_ref(),
+                            edge_type_name.as_deref(),
                         );
                     }
                     if let Some(mhg) = must_have_graph {
                         return mhg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
-                            edge_type_name.as_ref(),
+                            edge_type_name.as_deref(),
                         );
                     }
                     true

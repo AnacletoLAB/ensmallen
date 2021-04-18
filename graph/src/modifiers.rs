@@ -33,14 +33,14 @@ impl Graph {
 
         if vector_destinations {
             if self.destinations.is_none() {
-                self.destinations = Some(self.get_destinations(true));
+                self.destinations = Some(self.get_destination_node_ids(true));
             }
         } else {
             self.destinations = None;
         }
         if vector_sources {
             if self.sources.is_none() {
-                self.sources = Some(self.get_sources(true));
+                self.sources = Some(self.get_source_node_ids(true));
             }
         } else {
             self.sources = None;

@@ -144,7 +144,7 @@ impl Graph {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
-                        edge_type_name.as_ref(),
+                        edge_type_name.as_deref(),
                     )
                 },
             ),
@@ -169,7 +169,7 @@ impl Graph {
                     self.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
-                        edge_type_name.as_ref(),
+                        edge_type_name.as_deref(),
                     )
                 },
             ),
