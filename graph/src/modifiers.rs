@@ -18,6 +18,19 @@ impl Graph {
         vector_cumulative_node_degrees: bool,
         cache_size: Option<f64>,
     ) -> Result<(), String> {
+        if (vector_destinations || self.destinations.is_some()) && (cache_size.is_some() || self.cached_destinations.is_some()){
+            return Err(concat!(
+                "It is not possible (nor would it make sense) to have both ",
+                "partially cached destinations and completely cached vector ",
+                "destinations at once.\n",
+                "If you want to switch from one to the ",
+                "other form of destinations cache remember to run the method ",
+                "disable_all to disable all forms of time-memory tradeoffs.\n",
+                "Once you have disabled again all trade-offs, you can ",
+                "re-enable the any one you would like."
+            ).to_string());
+        }
+
         if vector_destinations {
             if self.destinations.is_none() {
                 self.destinations = Some(self.get_destinations(true));
@@ -40,9 +53,6 @@ impl Graph {
             self.cumulative_node_degrees = None;
         }
         if let Some(cs) = cache_size {
-            if self.destinations.is_some() {
-                return Err("You cannot use cache if you enable the destinations vector".to_owned());
-            }
             if cs <= 0.0 || cs >= 1.0 {
                 return Err("Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.".to_owned());
             }
