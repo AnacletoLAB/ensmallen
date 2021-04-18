@@ -2,7 +2,7 @@ verbose,Some(false)
 separator,Some(",")
 header,Some(false)
 rows_to_skip,Some(0)
-ignore_duplicates,Some(false)
+ignore_duplicates,Some(true)
 max_rows_number,None
 sources_column_number,Some(0)
 sources_column,None

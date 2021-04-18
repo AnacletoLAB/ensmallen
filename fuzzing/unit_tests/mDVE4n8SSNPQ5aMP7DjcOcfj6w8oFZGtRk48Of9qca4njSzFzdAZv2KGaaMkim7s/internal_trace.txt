@@ -1,0 +1,11 @@
+Some(
+    [
+        "get_node_count_from_node_type_id(node_type_id = Some(8481))",
+        "get_multigraph_edges_number()",
+        "get_node_type_names_from_node_type_ids(node_type_ids = [79])",
+        "get_destination_node_id_from_edge_id(edge_id = 2387225703656530209)",
+        "get_star_edge_names(central_node = \"\", removed_existing_edges = None, star_points_nodes_set = Some({\".1\"}), star_points_node_types_set = Some({}))",
+        "set_all_edge_types(edge_type = \"\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{558}\")",
+        "get_node_type_ids()",
+    ],
+)

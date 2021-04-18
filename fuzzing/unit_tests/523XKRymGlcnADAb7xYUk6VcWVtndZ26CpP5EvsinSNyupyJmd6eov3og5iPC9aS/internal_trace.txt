@@ -1,0 +1,11 @@
+Some(
+    [
+        "get_unique_undirected_edges_number()",
+        "set_all_edge_types(edge_type = \"\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{4}\\u{558}\")",
+        "encode_edge(src = 4065007769, dst = 2826246149)",
+        "has_unknown_node_types()",
+        "get_edge_type_ids_from_edge_type_names(edge_type_names = [Some(\"\"), Some(\"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!F\")])",
+        "remove(allow_nodes_set = None, deny_nodes_set = None, allow_node_types_set = None, deny_node_types_set = None, allow_edge_set = None, deny_edge_set = None, allow_edge_types_set = None, deny_edge_types_set = None, weights = false, node_types = false, edge_types = false, singletons = false, selfloops = false, verbose = false)",
+        "iter_edge_ids_from_node_ids(src = 555819297, dst = 555819297)",
+    ],
+)
