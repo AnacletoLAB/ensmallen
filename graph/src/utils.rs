@@ -87,8 +87,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
 /// ```
 ///
 pub fn parse_weight(weight: String) -> Result<WeightT, String> {
-    match weight.parse::<WeightT>() {
-        Ok(val) => Ok(val),
-        Err(_) => Err(format!("Cannot parse weight {} as a float.", weight)),
-    }
+    weight
+        .parse::<WeightT>()
+        .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }

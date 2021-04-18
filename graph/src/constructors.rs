@@ -348,6 +348,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
 /// TODO! add computation of minimum edge weight
 /// TODO! add computation of maximum node degree
 /// TODO! add computation of maximum edge weight
+/// TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.
 /// TODO! add docstring
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
