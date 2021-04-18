@@ -16788,10 +16788,10 @@
                     "",
                     " * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.",
                     " * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.",
-                    " * `directed`: bool - Wether the graph should be directed or undirected.",
-                    " * `ignore_duplicated_nodes`: bool - Wether to ignore duplicated nodes or to raise a proper exception.",
-                    " * `ignore_duplicated_edges`: bool - Wether to ignore duplicated edges or to raise a proper exception.",
-                    " * `skip_selfloops`: bool - Wether to skip self loops while reading the the edges iterator."
+                    " * `directed`: bool - Whether the graph should be directed or undirected.",
+                    " * `ignore_duplicated_nodes`: bool - Whether to ignore duplicated nodes or to raise a proper exception.",
+                    " * `ignore_duplicated_edges`: bool - Whether to ignore duplicated edges or to raise a proper exception.",
+                    " * `skip_selfloops`: bool - Whether to skip self loops while reading the the edges iterator."
                 ],
                 "attrs": [],
                 "modifiers": "pub",
@@ -16895,10 +16895,10 @@
                     "",
                     " * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.",
                     " * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> - Iterator of the nodes.",
-                    " * `directed`: bool - Wether the graph should be directed or undirected.",
-                    " * `ignore_duplicated_nodes`: bool - Wether to ignore duplicated nodes or to raise a proper exception.",
-                    " * `ignore_duplicated_edges`: bool - Wether to ignore duplicated edges or to raise a proper exception.",
-                    " * `skip_selfloops`: bool - Wether to skip self loops while reading the the edges iterator."
+                    " * `directed`: bool - Whether the graph should be directed or undirected.",
+                    " * `ignore_duplicated_nodes`: bool - Whether to ignore duplicated nodes or to raise a proper exception.",
+                    " * `ignore_duplicated_edges`: bool - Whether to ignore duplicated edges or to raise a proper exception.",
+                    " * `skip_selfloops`: bool - Whether to skip self loops while reading the the edges iterator."
                 ],
                 "attrs": [],
                 "modifiers": "pub",

@@ -5,7 +5,7 @@ use graph::{Graph, NodeT};
 impl EnsmallenGraph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, directed_edge_list, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_max_rows_number, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_max_rows_number, node_separator, node_types_separator, numeric_node_ids, numeric_edge_node_ids, numeric_node_type_ids, numeric_edge_type_ids, edge_file_comment_symbol, node_file_comment_symbol, skip_weights_if_unavailable, skip_edge_types_if_unavailable, skip_node_types_if_unavailable, name, verbose)"]
+    #[text_signature = "(edge_path, directed, *, directed_edge_list, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_max_rows_number, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_max_rows_number, node_separator, node_types_separator, numeric_node_ids, numeric_edge_node_ids, numeric_node_type_ids, numeric_edge_type_ids, edge_file_comment_symbol, node_file_comment_symbol, skip_weights_if_unavailable, skip_edge_types_if_unavailable, skip_node_types_if_unavailable, edge_list_is_correct, node_list_is_correct, name, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
     ///
     /// Parameters
@@ -15,7 +15,7 @@ impl EnsmallenGraph {
     /// directed: bool,
     ///     whether to load the graph as directed or undirected.
     /// directed_edge_list: bool = False,
-    ///     Wether to load the edge list as directed or undirected.
+    ///     Whether to load the edge list as directed or undirected.
     ///     The default behaviour is to treat he list as undirected and handle the
     ///     undirected edges automatically if the parameter `directed=False`.
     /// sources_column_number: int = 0,
@@ -108,26 +108,40 @@ impl EnsmallenGraph {
     ///     The separator to split the node types if a graph with
     ///     multi-label node types is being loaded.
     /// numeric_node_ids: bool = False,
-    ///     Wether to load the Node Ids as numeric.
+    ///     Whether to load the Node Ids as numeric.
     /// numeric_edge_node_ids: bool = False,
-    ///     Wether to load the edge file Node Ids as numeric.
+    ///     Whether to load the edge file Node Ids as numeric.
     /// numeric_node_type_ids: bool = False,
-    ///     Wether to load the Node Type Ids as numeric.
+    ///     Whether to load the Node Type Ids as numeric.
     /// numeric_edge_type_ids: bool = False,
-    ///     Wether to load the Edge Type Ids as numeric.
+    ///     Whether to load the Edge Type Ids as numeric.
     /// edge_file_comment_symbol: str = None,
     ///     The symbol to use for the lines to be ignored in the edge file.
     /// node_file_comment_symbol: str = None,
     ///     The symbol to use for the lines to be ignored in the node file.
     /// skip_weights_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the weights even if requested but
+    ///     Whether to skip the loading of the weights even if requested but
     ///     in the file the column is actually unavailable.
     /// skip_edge_types_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the edge types even if requested but
+    ///     Whether to skip the loading of the edge types even if requested but
     ///     in the file the column is actually unavailable.
     /// skip_node_types_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the node types even if requested but
+    ///     Whether to skip the loading of the node types even if requested but
     ///     in the file the column is actually unavailable.
+    /// edge_list_is_correct: bool = False,
+    ///     Whether the user PINKY PROMISE that the edge list is actully correct.
+    ///     No take backsies. The graph loader will crash and burn if the edge
+    ///     list is not correct.
+    ///     If the edge list is correct, it will load up faster without running
+    ///     sanity checks.
+    ///     By default, we assume that every edge list is broken until proven otherwise.
+    /// node_list_is_correct: bool = False,
+    ///     Whether the user PINKY PROMISE that the node list is actully correct.
+    ///     No take backsies. The graph loader will crash and burn if the node
+    ///     list is not correct.
+    ///     If the node list is correct, it will load up faster without running
+    ///     sanity checks.
+    ///     By default, we assume that every node list is broken until proven otherwise.
     /// name: str = "Graph",
     ///     The name of the graph to use.
     /// verbose: bool = True,
@@ -163,7 +177,7 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, directed_edge_list, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_max_rows_number, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_max_rows_number, node_separator, node_types_separator, numeric_node_ids, numeric_edge_node_ids, numeric_node_type_ids, numeric_edge_type_ids, edge_file_comment_symbol, node_file_comment_symbol, skip_weights_if_unavailable, skip_edge_types_if_unavailable, skip_node_types_if_unavailable, name, verbose, )"]
+    #[text_signature = "(edge_path, directed, *, directed_edge_list, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_max_rows_number, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_max_rows_number, node_separator, node_types_separator, numeric_node_ids, numeric_edge_node_ids, numeric_node_type_ids, numeric_edge_type_ids, edge_file_comment_symbol, node_file_comment_symbol, skip_weights_if_unavailable, skip_edge_types_if_unavailable, skip_node_types_if_unavailable, edge_list_is_correct, node_list_is_correct, name, verbose, )"]
     /// Return graph loaded from given edge file and optionally node file.
     ///
     /// Parameters
@@ -173,7 +187,7 @@ impl EnsmallenGraph {
     /// directed: bool,
     ///     whether to load the graph as directed or undirected.
     /// directed_edge_list: bool = False,
-    ///     Wether to load the edge list as directed or undirected.
+    ///     Whether to load the edge list as directed or undirected.
     ///     The default behaviour is to the list as undirected and handle the
     ///     undirected edges automatically if the parameter `directed=False`.
     /// sources_column_number: int = 0,
@@ -266,25 +280,25 @@ impl EnsmallenGraph {
     ///     The separator to split the node types if a graph with
     ///     multi-label node types is being loaded.
     /// numeric_node_ids: bool = False,
-    ///     Wether to load the Node Ids as numeric.
+    ///     Whether to load the Node Ids as numeric.
     /// numeric_edge_node_ids: bool = False,
-    ///     Wether to load the edge file Node Ids as numeric.
+    ///     Whether to load the edge file Node Ids as numeric.
     /// numeric_node_type_ids: bool = False,
-    ///     Wether to load the Node Type Ids as numeric.
+    ///     Whether to load the Node Type Ids as numeric.
     /// numeric_edge_type_ids: bool = False,
-    ///     Wether to load the Edge Type Ids as numeric.
+    ///     Whether to load the Edge Type Ids as numeric.
     /// edge_file_comment_symbol: str = None,
     ///     The symbol to use for the lines to be ignored in the edge file.
     /// node_file_comment_symbol: str = None,
     ///     The symbol to use for the lines to be ignored in the node file.
     /// skip_weights_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the weights even if requested but
+    ///     Whether to skip the loading of the weights even if requested but
     ///     in the file the column is actually unavailable.
     /// skip_edge_types_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the edge types even if requested but
+    ///     Whether to skip the loading of the edge types even if requested but
     ///     in the file the column is actually unavailable.
     /// skip_node_types_if_unavailable: bool = False,
-    ///     Wether to skip the loading of the node types even if requested but
+    ///     Whether to skip the loading of the node types even if requested but
     ///     in the file the column is actually unavailable.
     /// name: str = "Graph",
     ///     The name of the graph to use.

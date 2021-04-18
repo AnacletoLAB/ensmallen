@@ -44,7 +44,7 @@ Usage example
 ----------------------
 The usage of this graph is relatively straightforward:
 
-.. code:: python
+```python
 
     # First import the function to retrieve the graph from the datasets
     from ensmallen_graph.datasets.kghub import DrugCentral
@@ -75,6 +75,9 @@ The usage of this graph is relatively straightforward:
 
     # Consider using the methods made available in the Embiggen package
     # to run graph embedding or link prediction tasks.
+
+```
+
 """
 from typing import Dict
 

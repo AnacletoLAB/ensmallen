@@ -35,11 +35,11 @@ impl EnsmallenGraph {
     /// Arguments
     /// ------------------
     /// vector_sources: bool = False,
-    ///     Wether to cache sources into a vector for faster walks.
+    ///     Whether to cache sources into a vector for faster walks.
     /// vector_destinations: bool = True,
-    ///     Wether to cache destinations into a vector for faster walks.
+    ///     Whether to cache destinations into a vector for faster walks.
     /// vector_outbounds: bool = True,
-    ///     Wether to cache outbounds into a vector for faster walks.
+    ///     Whether to cache outbounds into a vector for faster walks.
     /// cache_size: float = None,
     ///     Rate of nodes destinations to cache.
     ///     Must be a value between 0 and 1.

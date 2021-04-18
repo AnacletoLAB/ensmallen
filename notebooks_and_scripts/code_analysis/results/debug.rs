@@ -12511,13 +12511,13 @@ impl Graph {
     /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
     /// * `directed`: bool -
-    ///     Wether the graph should be directed or undirected.
+    ///     Whether the graph should be directed or undirected.
     /// * `ignore_duplicated_nodes`: bool -
-    ///     Wether to ignore duplicated nodes or to raise a proper exception.
+    ///     Whether to ignore duplicated nodes or to raise a proper exception.
     /// * `ignore_duplicated_edges`: bool -
-    ///     Wether to ignore duplicated edges or to raise a proper exception.
+    ///     Whether to ignore duplicated edges or to raise a proper exception.
     /// * `skip_selfloops`: bool -
-    ///     Wether to skip self loops while reading the the edges iterator.
+    ///     Whether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
@@ -12606,13 +12606,13 @@ impl Graph {
     /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
     /// * `directed`: bool -
-    ///     Wether the graph should be directed or undirected.
+    ///     Whether the graph should be directed or undirected.
     /// * `ignore_duplicated_nodes`: bool -
-    ///     Wether to ignore duplicated nodes or to raise a proper exception.
+    ///     Whether to ignore duplicated nodes or to raise a proper exception.
     /// * `ignore_duplicated_edges`: bool -
-    ///     Wether to ignore duplicated edges or to raise a proper exception.
+    ///     Whether to ignore duplicated edges or to raise a proper exception.
     /// * `skip_selfloops`: bool -
-    ///     Wether to skip self loops while reading the the edges iterator.
+    ///     Whether to skip self loops while reading the the edges iterator.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<
             Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,

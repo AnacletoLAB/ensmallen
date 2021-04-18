@@ -52,6 +52,8 @@ pub(crate) fn build_csv_file_reader(
             "skip_edge_types_if_unavailable",
             "skip_node_types_if_unavailable",
             "name",
+            "node_list_is_correct",
+            "edge_list_is_correct"
         ]
     )?;
 
@@ -59,6 +61,11 @@ pub(crate) fn build_csv_file_reader(
 
     let edges: EdgeFileReader = EdgeFileReader::new(edge_path)?
         .set_separator(extract_value_rust_result!(kwargs, "edge_separator", String))?
+        .set_csv_is_correct(extract_value_rust_result!(
+            kwargs,
+            "edge_list_is_correct",
+            bool
+        ))
         .set_skip_edge_types_if_unavailable(extract_value_rust_result!(
             kwargs,
             "skip_edge_types_if_unavailable",
@@ -111,6 +118,11 @@ pub(crate) fn build_csv_file_reader(
                             "node_file_comment_symbol",
                             String
                         ))?
+                        .set_csv_is_correct(extract_value_rust_result!(
+                            kwargs,
+                            "node_list_is_correct",
+                            bool
+                        ))
                         .set_header(extract_value_rust_result!(kwargs, "node_header", bool))
                         .set_rows_to_skip(extract_value_rust_result!(kwargs, "node_rows_to_skip", usize))
                         .set_nodes_column_number(extract_value_rust_result!(

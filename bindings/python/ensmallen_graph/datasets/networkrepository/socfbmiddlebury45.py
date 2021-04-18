@@ -78,7 +78,7 @@ The usage of this graph is relatively straightforward:
         train_size=0.8,
         # The random state is used to reproduce the holdout.
         random_state=42,
-        # Wether to show a loading bar.
+        # Whether to show a loading bar.
         verbose=True
     )
 
@@ -113,10 +113,10 @@ def SocfbMiddlebury45(
     Parameters
     -------------------
     directed: bool = False,
-        Wether to load the graph as directed or undirected.
+        Whether to load the graph as directed or undirected.
         By default false.
     verbose: int = 2,
-        Wether to show loading bars during the retrieval and building
+        Whether to show loading bars during the retrieval and building
         of the graph.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
@@ -200,7 +200,7 @@ def SocfbMiddlebury45(
 	        train_size=0.8,
 	        # The random state is used to reproduce the holdout.
 	        random_state=42,
-	        # Wether to show a loading bar.
+	        # Whether to show a loading bar.
 	        verbose=True
 	    )
 	

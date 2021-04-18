@@ -27,10 +27,10 @@ class AutomaticallyRetrievedGraph:
         dataset: str,
             Name of the dataset to load data from.
         directed: bool = False,
-            Wether to load the graph as directed or undirected.
+            Whether to load the graph as directed or undirected.
             By default false.
         verbose: int = 2,
-            Wether to show loading bars.
+            Whether to show loading bars.
         cache_path: str = "graphs",
             Where to store the downloaded graphs.
         callbacks: List[Callable] = (),

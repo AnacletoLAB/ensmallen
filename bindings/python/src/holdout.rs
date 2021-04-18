@@ -199,7 +199,7 @@ impl EnsmallenGraph {
     ///     The (optional) graph whose nodes are used as sources or destinations
     ///     of the generated negative edges.
     /// only_from_same_component: bool = True,
-    ///     Wether to sample negative edges only from the same node component.
+    ///     Whether to sample negative edges only from the same node component.
     ///     This avoids generating topologically impossible negative edges.
     /// verbose: bool = True,
     ///     whether to show the loading bar.
