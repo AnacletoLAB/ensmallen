@@ -322,7 +322,7 @@ impl Graph {
     ///
     pub fn remove_inplace_edge_types(mut self) -> Result<Graph, String> {
         self.must_have_edge_types()?;
-        self.must_be_multigraph()?;
+        self.must_not_be_multigraph()?;
         self.edge_types = None;
         Ok(self)
     }
