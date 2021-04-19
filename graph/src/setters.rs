@@ -131,6 +131,7 @@ impl Graph {
     ) -> Result<&Graph, String> {
         self.must_have_node_types()?;
         self.validate_node_type_id(Some(node_type_id))?;
+        self.invalidate_report();
         if let Some(node_types) = self.node_types.as_mut() {
             node_types
                 .ids
@@ -184,6 +185,7 @@ impl Graph {
             )
             .to_string()
         })?;
+        self.invalidate_report();
         self.validate_edge_type_id(Some(edge_type_id))?;
         if let Some(edge_types) = self.edge_types.as_mut() {
             edge_types
@@ -325,6 +327,7 @@ impl Graph {
     ///
     pub fn remove_inplace_node_types(&mut self) -> Result<&Graph, String> {
         self.must_have_node_types()?;
+        self.invalidate_report();
         self.node_types = None;
         Ok(self)
     }
@@ -353,6 +356,7 @@ impl Graph {
     pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
+        self.invalidate_report();
         self.edge_types = None;
         Ok(self)
     }
@@ -382,6 +386,7 @@ impl Graph {
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_weights()?;
+        self.invalidate_report();
         self.weights = None;
         Ok(self)
     }

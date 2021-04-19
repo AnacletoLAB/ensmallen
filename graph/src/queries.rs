@@ -951,10 +951,16 @@ impl Graph {
             .map(|nts| {
                 nts.get(node_type_name).map_or_else(
                     || {
-                        Err(format!(
-                    "The given node type name {} does not exists in the current graph instance.",
-                    node_type_name
-                ))
+                        Err(
+                            format!(
+                            concat!(
+                                "The given node type name {} does not exists in the current graph instance.\n",
+                                "The supported node types are {:?}."
+                            ),
+                            node_type_name,
+                            self.get_node_type_names()
+                        )
+                    )
                     },
                     |node_type_id| Ok(*node_type_id),
                 )
