@@ -68,6 +68,8 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
             _ => unreachable!()
         }}
     }}
+    
+    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
 
     Ok(())
 }}

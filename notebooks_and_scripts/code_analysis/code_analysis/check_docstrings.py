@@ -7,36 +7,37 @@ from .utils import build_path
 def check_doc(args):
 
     with open(build_path("results/analysis.json"), "r") as f:
-        functions = json.load(f)
+        analysis = json.load(f)
 
     with open(build_path("results/doc_analysis.json"), "r") as f:
         docs = json.load(f)
 
     result = {}
 
-    for function in functions:
-        if function.get("modifiers", "") != "pub":
-            continue
+    for file, values in analysis.items():
+        for function in values["functions"]:
+            if function.get("modifiers", "") != "pub":
+                continue
 
-        if function.get("struct", "") != "Graph":
-            continue
+            if function.get("struct", "") != "Graph":
+                continue
 
-        fn_name = function.get("name", "")
-        errors = docs[fn_name]["errors"]
+            fn_name = function.get("name", "")
+            errors = docs[fn_name]["errors"]
 
-        if errors:
-            file = function.get("file", "")
-            result.setdefault(file, {})
-            errs = [
-                "[{:>4}] {}".format(x["doc_line"], x["msg"])
-                for x in errors
-                if x["msg"] not in [
-                    "Missing Example",
-                    "The example section is missing or in the wrong order.",
+            if errors:
+                file = function.get("file", "")
+                result.setdefault(file, {})
+                errs = [
+                    "[{:>4}] {}".format(x["doc_line"], x["msg"])
+                    for x in errors
+                    if x["msg"] not in [
+                        "Missing Example",
+                        "The example section is missing or in the wrong order.",
+                    ]
                 ]
-            ]
-            if errs:
-                result[file][fn_name] = errs
+                if errs:
+                    result[file][fn_name] = errs
 
 
     print(json.dumps(result, indent=4))

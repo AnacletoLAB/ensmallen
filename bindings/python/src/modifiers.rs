@@ -7,11 +7,13 @@ impl EnsmallenGraph {
     ///
     /// Arguments
     /// ---------
-    /// * `edge_type`: str,
+    /// edge_type: str,
     ///     The edge type to assing to all the edges.
-    pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<EnsmallenGraph> {
+    /// verbose: bool,
+    ///     Whether to show a loading bar in the case of a multigraph.
+    pub fn set_all_edge_types(&self, edge_type: String, verbose: bool) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.clone().set_all_edge_types(edge_type))?,
+            graph: pe!(self.graph.clone().set_all_edge_types(edge_type, verbose))?,
         })
     }
 
@@ -20,7 +22,7 @@ impl EnsmallenGraph {
     ///
     /// Arguments
     /// ---------
-    /// * `node_type`: str,
+    /// node_type: str,
     ///     The node type to assing to all the nodes.
     pub fn set_all_node_types(&self, node_type: String) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {

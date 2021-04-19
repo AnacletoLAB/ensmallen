@@ -121,5 +121,14 @@ impl EnsmallenGraph {
 	fn validate_node_type_id(&self, node_type_id : Option<NodeTypeT>) -> PyResult<Option<NodeTypeT>> {
 		pe!(self.graph.validate_node_type_id(node_type_id))
 	}
+
+	#[text_signature = "($self)"]
+	/// Raises an error if the graph does not have edge types.
+	///
+	/// [Automatically generated binding]
+	/// [Automatically generated documentation]
+	fn must_not_be_multigraph(&self) -> PyResult<()> {
+		pe!(self.graph.must_not_be_multigraph())
+	}
 	
 }
