@@ -5,23 +5,23 @@ impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// # Arguments
-    /// * node_ids_to_keep: Option<Vec<NodeT>> - List of node IDs to keep during filtering.
-    /// * node_ids_to_filter: Option<Vec<NodeT>> - List of node IDs to remove during filtering.
-    /// * node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// * node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// * node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
-    /// * node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to remove during filtering. Any of node types must match with one of the node types given.
-    /// * edge_ids_to_keep: Option<Vec<EdgeT>> - List of edge IDs to keep during filtering.
-    /// * edge_ids_to_filter: Option<Vec<EdgeT>> - List of edge IDs to remove during filtering.
-    /// * edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to keep during filtering.
-    /// * edge_node_ids_to_filter: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to remove during filtering.
-    /// * edge_type_ids_to_keep: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to keep during filtering.
-    /// * edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to remove during filtering.
-    /// * min_edge_weight: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
-    /// * max_edge_weight: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * filter_singletons: bool - Whether to filter out singletons.
-    /// * filter_selfloops: bool - Whether to filter out selfloops.
-    /// * verbose: bool - Whether to show loading bar while building the graphs.
+    /// * `node_ids_to_keep`: Option<Vec<NodeT>> - List of node IDs to keep during filtering.
+    /// * `node_ids_to_filter`: Option<Vec<NodeT>> - List of node IDs to remove during filtering.
+    /// * `node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
+    /// * `node_type_id_to_filter`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to remove during filtering. Any of node types must match with one of the node types given.
+    /// * `edge_ids_to_keep`: Option<Vec<EdgeT>> - List of edge IDs to keep during filtering.
+    /// * `edge_ids_to_filter`: Option<Vec<EdgeT>> - List of edge IDs to remove during filtering.
+    /// * `edge_node_ids_to_keep`: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to keep during filtering.
+    /// * `edge_node_ids_to_filter`: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to remove during filtering.
+    /// * `edge_type_ids_to_keep`: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to keep during filtering.
+    /// * `edge_type_ids_to_filter`: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to remove during filtering.
+    /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
+    /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
+    /// * `filter_singletons`: bool - Whether to filter out singletons.
+    /// * `filter_selfloops`: bool - Whether to filter out selfloops.
+    /// * `verbose`: bool - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
     ///
@@ -249,21 +249,21 @@ impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// # Arguments
-    /// * node_ids_to_keep: Option<Vec<&str>> - List of node names to keep during filtering.
-    /// * node_names_to_filter: Option<Vec<&str>> - List of node names to remove during filtering.
-    /// * node_type_names_to_keep: Option<Vec<Option<Vec<String>>>> - List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// * node_type_names_to_filter: Option<Vec<Option<Vec<String>>>> - List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// * node_type_name_to_keep: Option<Vec<Option<String>>> - List of node type name to keep during filtering. Any of node types must match with one of the node types given.
-    /// * node_type_name_to_filter: Option<Vec<Option<String>>> - List of node type name to remove during filtering. Any of node types must match with one of the node types given.
-    /// * edge_node_names_to_keep: Option<Vec<(&str, &str)>> - List of tuple of node names to keep during filtering.
-    /// * edge_node_names_to_filter: Option<Vec<(&str, &str)>> - List of tuple of node names to remove during filtering.
-    /// * edge_type_names_to_keep: Option<Vec<Option<String>>> - List of edge type names to keep during filtering.
-    /// * edge_type_names_to_filter: Option<Vec<Option<String>>> - List of edge type names to remove during filtering.
-    /// * min_edge_weight: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
-    /// * max_edge_weight: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * filter_singletons: bool - Whether to filter out singletons.
-    /// * filter_selfloops: bool - Whether to filter out selfloops.
-    /// * verbose: bool - Whether to show loading bar while building the graphs.
+    /// * `node_names_to_keep`: Option<Vec<&str>> - List of node names to keep during filtering.
+    /// * `node_names_to_filter`: Option<Vec<&str>> - List of node names to remove during filtering.
+    /// * `node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name to keep during filtering. Any of node types must match with one of the node types given.
+    /// * `node_type_name_to_filter`: Option<Vec<Option<String>>> - List of node type name to remove during filtering. Any of node types must match with one of the node types given.
+    /// * `edge_node_names_to_keep`: Option<Vec<(&str, &str)>> - List of tuple of node names to keep during filtering.
+    /// * `edge_node_names_to_filter`: Option<Vec<(&str, &str)>> - List of tuple of node names to remove during filtering.
+    /// * `edge_type_names_to_keep`: Option<Vec<Option<String>>> - List of edge type names to keep during filtering.
+    /// * `edge_type_names_to_filter`: Option<Vec<Option<String>>> - List of edge type names to remove during filtering.
+    /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
+    /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
+    /// * `filter_singletons`: bool - Whether to filter out singletons.
+    /// * `filter_selfloops`: bool - Whether to filter out selfloops.
+    /// * `verbose`: bool - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
     ///

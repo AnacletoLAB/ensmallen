@@ -153,7 +153,7 @@ impl Graph {
     /// * If the given edge type ID does not exists in the graph.
     ///
     /// TODO!: add support for removal of edge types in the context of multigraphs when the user asks for removing an edge type.
-    pub fn remove_inplace_edge_type_id(mut self, edge_type_id: EdgeTypeT) -> Result<Graph, String> {
+    pub fn remove_inplace_edge_type_id(&mut self, edge_type_id: EdgeTypeT) -> Result<&mut Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph().map_err(|_| {
             concat!(
@@ -249,7 +249,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_inplace_edge_type_name(self, edge_type_name: &str) -> Result<Graph, String> {
+    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> Result<&mut Graph, String> {
         let edge_type_id = self
             .get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
             .unwrap();
@@ -269,7 +269,9 @@ impl Graph {
     /// * If the given edge type ID does not exists in the graph.
     ///
     pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<Graph, String> {
-        self.clone().remove_inplace_edge_type_id(edge_type_id)
+        let mut graph = self.clone();
+        graph.remove_inplace_edge_type_id(edge_type_id)?;
+        Ok(graph)
     }
 
     /// Remove given edge type name from all edges.
@@ -285,7 +287,9 @@ impl Graph {
     /// * If the given edge type name does not exists in the graph.
     ///
     pub fn remove_edge_type_name(&self, edge_type_name: &str) -> Result<Graph, String> {
-        self.clone().remove_inplace_edge_type_name(edge_type_name)
+        let mut graph = self.clone();
+        graph.remove_inplace_edge_type_name(edge_type_name)?;
+        Ok(graph)
     }
 
     /// Remove node types from the graph.
