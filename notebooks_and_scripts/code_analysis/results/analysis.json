@@ -160,7 +160,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "// one: left hand side of the operator\n    // deny_graph: right hand edges \"deny list\"\n    // must_have_graph: right hand edges \"must have list\n    let edges_iterator = graphs\n        .iter()\n        .flat_map(|(one, deny_graph, must_have_graph)| {\n            one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)\n                .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {\n                    // If the secondary graph is given\n                    // we filter out the edges that were previously added to avoid\n                    // introducing duplicates.\n                    // TODO: handle None type edge types and avoid duplicating those!\n                    if let Some(dg) = deny_graph {\n                        return !dg.has_edge_from_node_names_and_edge_type_name(\n                            src_name,\n                            dst_name,\n                            edge_type_name.as_ref(),\n                        );\n                    }\n                    if let Some(mhg) = must_have_graph {\n                        return mhg.has_edge_from_node_names_and_edge_type_name(\n                            src_name,\n                            dst_name,\n                            edge_type_name.as_ref(),\n                        );\n                    }\n                    true\n                })\n                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {\n                    Ok((src_name, dst_name, edge_type_name, weight))\n                })\n        });\n\n    // Chaining node types in a way that merges the information between\n    // two node type sets where one of the two has some unknown node types\n    let nodes_iterator = main\n        .iter_nodes()\n        .map(|(_, node_name, _, node_type_names)| {\n            let node_type_names = match node_type_names {\n                Some(ntns) => Some(ntns),\n                None => other\n                    .get_node_id_from_node_name(&node_name)\n                    .ok()\n                    .and_then(|node_id| other.get_node_type_name_from_node_id(node_id).unwrap()),\n            };\n            Ok((node_name, node_type_names))\n        })\n        .chain(\n            other\n                .iter_nodes()\n                .filter_map(|(_, node_name, _, node_type_names)| {\n                    match main.has_node_from_node_name(&node_name) {\n                        true => None,\n                        false => Some(Ok((node_name, node_type_names))),\n                    }\n                }),\n        );\n\n    Graph::from_string_unsorted(\n        edges_iterator,\n        Some(nodes_iterator),\n        main.directed,\n        false,\n        build_operator_graph_name(main, other, operator),\n        true,\n        true,\n        false,\n        true,\n        false,\n        false,\n        false,\n        false,\n        false,\n        main.has_node_types(),\n        main.has_edge_types(),\n        main.has_edge_weights(),\n        might_have_singletons,\n        might_have_singletons_with_selfloops,\n        might_have_trap_nodes,\n    )"
+                "body": "// one: left hand side of the operator\n    // deny_graph: right hand edges \"deny list\"\n    // must_have_graph: right hand edges \"must have list\n    let edges_iterator = graphs\n        .iter()\n        .flat_map(|(one, deny_graph, must_have_graph)| {\n            one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)\n                .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {\n                    // If the secondary graph is given\n                    // we filter out the edges that were previously added to avoid\n                    // introducing duplicates.\n                    // TODO: handle None type edge types and avoid duplicating those!\n                    if let Some(dg) = deny_graph {\n                        return !dg.has_edge_from_node_names_and_edge_type_name(\n                            src_name,\n                            dst_name,\n                            edge_type_name.as_deref(),\n                        );\n                    }\n                    if let Some(mhg) = must_have_graph {\n                        return mhg.has_edge_from_node_names_and_edge_type_name(\n                            src_name,\n                            dst_name,\n                            edge_type_name.as_deref(),\n                        );\n                    }\n                    true\n                })\n                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {\n                    Ok((src_name, dst_name, edge_type_name, weight))\n                })\n        });\n\n    // Chaining node types in a way that merges the information between\n    // two node type sets where one of the two has some unknown node types\n    let nodes_iterator = main\n        .iter_nodes()\n        .map(|(_, node_name, _, node_type_names)| {\n            let node_type_names = match node_type_names {\n                Some(ntns) => Some(ntns),\n                None => other\n                    .get_node_id_from_node_name(&node_name)\n                    .ok()\n                    .and_then(|node_id| other.get_node_type_name_from_node_id(node_id).unwrap()),\n            };\n            Ok((node_name, node_type_names))\n        })\n        .chain(\n            other\n                .iter_nodes()\n                .filter_map(|(_, node_name, _, node_type_names)| {\n                    match main.has_node_from_node_name(&node_name) {\n                        true => None,\n                        false => Some(Ok((node_name, node_type_names))),\n                    }\n                }),\n        );\n\n    Graph::from_string_unsorted(\n        edges_iterator,\n        Some(nodes_iterator),\n        main.directed,\n        false,\n        build_operator_graph_name(main, other, operator),\n        true,\n        true,\n        false,\n        true,\n        false,\n        false,\n        false,\n        false,\n        false,\n        main.has_node_types(),\n        main.has_edge_types(),\n        main.has_edge_weights(),\n        might_have_singletons,\n        might_have_singletons_with_selfloops,\n        might_have_trap_nodes,\n    )"
             },
             {
                 "file": "operators.rs",
@@ -1252,7 +1252,7 @@
                     ]
                 ],
                 "return_type": "(HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT)",
-                "body": "// If the graph does not have nodes, we return all\n        // results as empty to provide an uniform, though pathological,\n        // return value.\n        if !self.has_nodes() {\n            return (HashSet::new(), Vec::new(), 0, 0, 0);\n        }\n        // Similarly, when dealing with a graph with no edges, we define\n        // the spanning tree as empty and the components as the set of the\n        // nodes themselves. Since all nodes are singletons, both the\n        // maximum component size and minimum component size equals to one.\n        if !self.has_edges() {\n            return (\n                HashSet::new(),\n                self.get_nodes(),\n                self.get_nodes_number(),\n                1,\n                1,\n            );\n        }\n\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);\n        let mut components = vec![NOT_PRESENT; nodes_number];\n        let mut component_sizes: Vec<NodeT> = Vec::new();\n        let mut components_remapping: Vec<NodeT> = Vec::new();\n        let mut max_component_size: NodeT = 0;\n        let mut min_component_size = NodeT::MAX;\n\n        // When there are singleton nodes with self-loops,\n        // which is an arguability weird feature of some graphs,\n        // Kruskal fails to identify them because by definition\n        // a tree cannot contain self-loop.\n        // We call these nodes with one or more self-loops\n        // (in the case of a multigraph) `singletons with self-loops` for lack of\n        // a better term. These nodes are treated as nodes in their own\n        // component and their edges (the self-loops) are not added to the tree.\n        if self.has_singletons() {\n            // When there are singleton nodes, the minimum component size\n            // surely becomes one.\n            min_component_size = 1;\n            // Similarly we need to bump up the max component size, as if\n            // this graph is composed of only singleton nodes with self-loops\n            // we would not iterate thorugh them in the Kruskal loop\n            // since it skips self-loops.\n            max_component_size = 1;\n            // We iterate through the singleton nodes and the singleton nodes\n            // with self-loops.\n            self.iter_singleton_node_ids()\n                .chain(self.iter_singleton_with_selfloops_node_ids())\n                .enumerate()\n                .for_each(|(component_number, node_id)| {\n                    components[node_id as usize] = component_number as NodeT;\n                });\n            // We can re-initialize the component sizes as the vector with\n            // all ones bit as the singleton nodes number.\n            component_sizes = vec![1; self.get_singleton_nodes_number() as usize];\n            // Similarly, the components remapping can be initialized to a range.\n            components_remapping = (0..self.get_singleton_nodes_number()).collect::<Vec<NodeT>>();\n        }\n\n        edges.for_each(|(src, dst)| {\n            // If this is a self-loop we skip it.\n            if src == dst {\n                return;\n            }\n            let src_component = components[src as usize];\n            let dst_component = components[dst as usize];\n            match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {\n                // If neither nodes have a component, they must be inserted\n                // both in the components vector and in the tree.\n                // The edge must be added to the three.\n                (true, true) => {\n                    let new_component_id = components_remapping.len() as NodeT;\n                    components[src as usize] = new_component_id;\n                    components[dst as usize] = new_component_id;\n                    components_remapping.push(new_component_id);\n                    component_sizes.push(2);\n                    max_component_size = max_component_size.max(2);\n                }\n                // If both nodes have a component, the two components must be merged\n                // if they are not the same one.\n                // The edge must be added to the three.\n                // The components mapping must be updated and afterwards the other nodes\n                // must be updated accordingly to this update.\n                (false, false) => {\n                    if src_component == dst_component {\n                        return;\n                    }\n                    let src_component = components_remapping[src_component as usize];\n                    let dst_component = components_remapping[dst_component as usize];\n                    if src_component == dst_component {\n                        return;\n                    }\n                    let (node_id_to_update, min_component_id, max_component_id) =\n                        match src_component < dst_component {\n                            true => (dst, src_component, dst_component),\n                            false => (src, dst_component, src_component),\n                        };\n\n                    // We update the node to update with the new component ID.\n                    components[node_id_to_update as usize] = min_component_id;\n\n                    // We merge the two component sizes.\n                    component_sizes[min_component_id as usize] +=\n                        component_sizes[max_component_id as usize];\n\n                    // We check if we have a new component size record\n                    max_component_size =\n                        max_component_size.max(component_sizes[min_component_id as usize]);\n\n                    // If the component we have removed and integrated with\n                    // the component with the smaller has a size greater than\n                    // one, we may need to remap some element of the component\n                    // to this new component.\n                    // Since the components within this loops start from edges\n                    // they cannot be smaller in cardinality than\n                    // two nodes.\n                    components_remapping\n                        .iter_mut()\n                        .zip(component_sizes.iter_mut())\n                        .for_each(|(component_id, component_size)| {\n                            // If one of other components is being remapped to\n                            // the maximum component, we need to update its value\n                            // to the new value this component is being remapped to.\n                            if *component_id == max_component_id {\n                                *component_id = min_component_id;\n                                // We need to invalidate the size of the component\n                                // we have remapped because otherwise we may count it\n                                // when computing the minimum component size.\n                                *component_size = NOT_PRESENT;\n                            }\n                        });\n                }\n                // If only one node has a component, the second node must be added.\n                _ => {\n                    let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {\n                        true => (dst_component, src),\n                        false => (src_component, dst),\n                    };\n                    let component_id = components_remapping[component_id as usize];\n                    component_sizes[component_id as usize] += 1;\n                    max_component_size =\n                        max_component_size.max(component_sizes[component_id as usize]);\n                    components[not_inserted_node as usize] = component_id as NodeT;\n                }\n            };\n            tree.insert((src, dst));\n        });\n\n        // Remapping components to a dense remapping\n        let mut components_number = 0;\n        for i in 0..components_remapping.len() {\n            if components_remapping[i] >= components_number {\n                components_remapping[i] = components_number;\n                components_number += 1;\n            } else {\n                components_remapping[i] = components_remapping[components_remapping[i] as usize];\n            }\n        }\n\n        components.par_iter_mut().for_each(|remapped| {\n            *remapped = components_remapping[*remapped as usize];\n        });\n\n        // If the minimum component size is still bigger than one\n        // that is, we do not know alredy that there is a singleton\n        // we need to compute it.\n        if min_component_size > 1 {\n            min_component_size = match components_number {\n                1 => max_component_size,\n                2 => self.get_nodes_number() - max_component_size,\n                _ => component_sizes.into_par_iter().min().unwrap(),\n            };\n        }\n\n        (\n            tree,\n            components,\n            components_number as NodeT,\n            min_component_size,\n            max_component_size,\n        )"
+                "body": "// If the graph does not have nodes, we return all\n        // results as empty to provide an uniform, though pathological,\n        // return value.\n        if !self.has_nodes() {\n            return (HashSet::new(), Vec::new(), 0, 0, 0);\n        }\n        // Similarly, when dealing with a graph with no edges, we define\n        // the spanning tree as empty and the components as the set of the\n        // nodes themselves. Since all nodes are singletons, both the\n        // maximum component size and minimum component size equals to one.\n        if !self.has_edges() {\n            return (\n                HashSet::new(),\n                self.get_node_ids(),\n                self.get_nodes_number(),\n                1,\n                1,\n            );\n        }\n\n        let nodes_number = self.get_nodes_number() as usize;\n        let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);\n        let mut components = vec![NOT_PRESENT; nodes_number];\n        let mut component_sizes: Vec<NodeT> = Vec::new();\n        let mut components_remapping: Vec<NodeT> = Vec::new();\n        let mut max_component_size: NodeT = 0;\n        let mut min_component_size = NodeT::MAX;\n\n        // When there are singleton nodes with self-loops,\n        // which is an arguability weird feature of some graphs,\n        // Kruskal fails to identify them because by definition\n        // a tree cannot contain self-loop.\n        // We call these nodes with one or more self-loops\n        // (in the case of a multigraph) `singletons with self-loops` for lack of\n        // a better term. These nodes are treated as nodes in their own\n        // component and their edges (the self-loops) are not added to the tree.\n        if self.has_singletons() {\n            // When there are singleton nodes, the minimum component size\n            // surely becomes one.\n            min_component_size = 1;\n            // Similarly we need to bump up the max component size, as if\n            // this graph is composed of only singleton nodes with self-loops\n            // we would not iterate thorugh them in the Kruskal loop\n            // since it skips self-loops.\n            max_component_size = 1;\n            // We iterate through the singleton nodes and the singleton nodes\n            // with self-loops.\n            self.iter_singleton_node_ids()\n                .chain(self.iter_singleton_with_selfloops_node_ids())\n                .enumerate()\n                .for_each(|(component_number, node_id)| {\n                    components[node_id as usize] = component_number as NodeT;\n                });\n            // We can re-initialize the component sizes as the vector with\n            // all ones bit as the singleton nodes number.\n            component_sizes = vec![1; self.get_singleton_nodes_number() as usize];\n            // Similarly, the components remapping can be initialized to a range.\n            components_remapping = (0..self.get_singleton_nodes_number()).collect::<Vec<NodeT>>();\n        }\n\n        edges.for_each(|(src, dst)| {\n            // If this is a self-loop we skip it.\n            if src == dst {\n                return;\n            }\n            let src_component = components[src as usize];\n            let dst_component = components[dst as usize];\n            match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {\n                // If neither nodes have a component, they must be inserted\n                // both in the components vector and in the tree.\n                // The edge must be added to the three.\n                (true, true) => {\n                    let new_component_id = components_remapping.len() as NodeT;\n                    components[src as usize] = new_component_id;\n                    components[dst as usize] = new_component_id;\n                    components_remapping.push(new_component_id);\n                    component_sizes.push(2);\n                    max_component_size = max_component_size.max(2);\n                }\n                // If both nodes have a component, the two components must be merged\n                // if they are not the same one.\n                // The edge must be added to the three.\n                // The components mapping must be updated and afterwards the other nodes\n                // must be updated accordingly to this update.\n                (false, false) => {\n                    if src_component == dst_component {\n                        return;\n                    }\n                    let src_component = components_remapping[src_component as usize];\n                    let dst_component = components_remapping[dst_component as usize];\n                    if src_component == dst_component {\n                        return;\n                    }\n                    let (node_id_to_update, min_component_id, max_component_id) =\n                        match src_component < dst_component {\n                            true => (dst, src_component, dst_component),\n                            false => (src, dst_component, src_component),\n                        };\n\n                    // We update the node to update with the new component ID.\n                    components[node_id_to_update as usize] = min_component_id;\n\n                    // We merge the two component sizes.\n                    component_sizes[min_component_id as usize] +=\n                        component_sizes[max_component_id as usize];\n\n                    // We check if we have a new component size record\n                    max_component_size =\n                        max_component_size.max(component_sizes[min_component_id as usize]);\n\n                    // If the component we have removed and integrated with\n                    // the component with the smaller has a size greater than\n                    // one, we may need to remap some element of the component\n                    // to this new component.\n                    // Since the components within this loops start from edges\n                    // they cannot be smaller in cardinality than\n                    // two nodes.\n                    components_remapping\n                        .iter_mut()\n                        .zip(component_sizes.iter_mut())\n                        .for_each(|(component_id, component_size)| {\n                            // If one of other components is being remapped to\n                            // the maximum component, we need to update its value\n                            // to the new value this component is being remapped to.\n                            if *component_id == max_component_id {\n                                *component_id = min_component_id;\n                                // We need to invalidate the size of the component\n                                // we have remapped because otherwise we may count it\n                                // when computing the minimum component size.\n                                *component_size = NOT_PRESENT;\n                            }\n                        });\n                }\n                // If only one node has a component, the second node must be added.\n                _ => {\n                    let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {\n                        true => (dst_component, src),\n                        false => (src_component, dst),\n                    };\n                    let component_id = components_remapping[component_id as usize];\n                    component_sizes[component_id as usize] += 1;\n                    max_component_size =\n                        max_component_size.max(component_sizes[component_id as usize]);\n                    components[not_inserted_node as usize] = component_id as NodeT;\n                }\n            };\n            tree.insert((src, dst));\n        });\n\n        // Remapping components to a dense remapping\n        let mut components_number = 0;\n        for i in 0..components_remapping.len() {\n            if components_remapping[i] >= components_number {\n                components_remapping[i] = components_number;\n                components_number += 1;\n            } else {\n                components_remapping[i] = components_remapping[components_remapping[i] as usize];\n            }\n        }\n\n        components.par_iter_mut().for_each(|remapped| {\n            *remapped = components_remapping[*remapped as usize];\n        });\n\n        // If the minimum component size is still bigger than one\n        // that is, we do not know alredy that there is a singleton\n        // we need to compute it.\n        if min_component_size > 1 {\n            min_component_size = match components_number {\n                1 => max_component_size,\n                2 => self.get_nodes_number() - max_component_size,\n                _ => component_sizes.into_par_iter().min().unwrap(),\n            };\n        }\n\n        (\n            tree,\n            components,\n            components_number as NodeT,\n            min_component_size,\n            max_component_size,\n        )"
             },
             {
                 "file": "trees.rs",
@@ -1751,7 +1751,7 @@
                     ]
                 ],
                 "return_type": "Result<bool, String>",
-                "body": "Ok(match self.is_compatible(other)? {\n            true => other\n                .par_iter_edge_node_ids_and_edge_type_id(other.directed)\n                .any(|(_, src, dst, et)| {\n                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)\n                }),\n            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).any(\n                |(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                    self.has_edge_from_node_names_and_edge_type_name(\n                        &src_name,\n                        &dst_name,\n                        edge_type_name.as_ref(),\n                    )\n                },\n            ),\n        })"
+                "body": "Ok(match self.is_compatible(other)? {\n            true => other\n                .par_iter_edge_node_ids_and_edge_type_id(other.directed)\n                .any(|(_, src, dst, et)| {\n                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)\n                }),\n            false => other\n                .par_iter_edge_node_names_and_edge_type_name(other.directed)\n                .any(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                    self.has_edge_from_node_names_and_edge_type_name(\n                        &src_name,\n                        &dst_name,\n                        edge_type_name.as_deref(),\n                    )\n                }),\n        })"
             },
             {
                 "file": "graph.rs",
@@ -1788,7 +1788,7 @@
                     ]
                 ],
                 "return_type": "Result<bool, String>",
-                "body": "Ok(match self.is_compatible(other)? {\n            true => other\n                .par_iter_edge_node_ids_and_edge_type_id(other.directed)\n                .all(|(_, src, dst, et)| {\n                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)\n                }),\n            false => other.par_iter_edge_node_names_and_edge_type_name(other.directed).all(\n                |(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                    self.has_edge_from_node_names_and_edge_type_name(\n                        &src_name,\n                        &dst_name,\n                        edge_type_name.as_ref(),\n                    )\n                },\n            ),\n        })"
+                "body": "Ok(match self.is_compatible(other)? {\n            true => other\n                .par_iter_edge_node_ids_and_edge_type_id(other.directed)\n                .all(|(_, src, dst, et)| {\n                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)\n                }),\n            false => other\n                .par_iter_edge_node_names_and_edge_type_name(other.directed)\n                .all(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                    self.has_edge_from_node_names_and_edge_type_name(\n                        &src_name,\n                        &dst_name,\n                        edge_type_name.as_deref(),\n                    )\n                }),\n        })"
             }
         ]
     },
@@ -4222,18 +4222,18 @@
                     "",
                     " * `src_name`: &str - The source node name of the edge.",
                     " * `dst_name`: &str - The destination node name of the edge.",
-                    " * `edge_type_name`: Option<&String> - The (optional) edge type name.",
+                    " * `edge_type_name`: Option<&str> - The (optional) edge type name.",
                     "",
                     " # Example",
                     " To check if an edge with type in the graph you can use:",
                     " ```rust",
                     " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
-                    " let edge_type = \"red\".to_string();",
-                    " let unexistent_edge_type = \"NonExistent\".to_string();",
-                    " assert!(graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", Some(&edge_type)));",
-                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", Some(&unexistent_edge_type)));",
-                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", Some(&edge_type)));",
-                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", Some(&unexistent_edge_type)));",
+                    " let edge_type = Some(\"red\");",
+                    " let unexistent_edge_type = Some(\"NonExistent\");",
+                    " assert!(graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", edge_type));",
+                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", unexistent_edge_type));",
+                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", edge_type));",
+                    " assert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", unexistent_edge_type));",
                     " ```"
                 ],
                 "attrs": [],
@@ -4254,7 +4254,7 @@
                     ],
                     [
                         "edge_type_name",
-                        "Option<&String>"
+                        "Option<&str>"
                     ]
                 ],
                 "return_type": "bool",
@@ -4548,7 +4548,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, edge_type.as_ref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(\n        graph.get_node_type_counter().is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_counter().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
+                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_from_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singletons() || graph.has_singletons_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    if smallest == 0 {\n        assert!(\n            !graph.has_nodes(),\n            \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n            graph.textual_report(false)\n        );\n    }\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);\n        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            let clone_edge_type = edge_type.clone();\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(false)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(false)\n            );\n        }\n        assert!(\n            graph.has_node_from_node_name(&src_string)\n                && graph.has_node_from_node_name(&dst_string)\n        );\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_from_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(false)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.degrees_product(src, dst);\n            let _ = graph.jaccard_index(src, dst);\n            let _ = graph.adamic_adar_index(src, dst);\n            let _ = graph.resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_node_type_counts\n    assert_eq!(\n        graph.get_node_type_counter().is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_counter().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(42, &None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(false)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(false)\n            );\n        }\n    }\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -4586,7 +4586,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "for include_all_edge_types in &[false, true] {\n        let (train, test) =\n            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;\n        default_holdout_test_suite(graph, &train, &test)?;\n        let (train, test) =\n            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;\n        let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);\n        assert_eq!(\n            graph.get_connected_components_number(verbose),\n            train.get_connected_components_number(verbose),\n            \"The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.\",\n            nodes_number=graph.get_nodes_number().to_string()\n        );\n        if total == 1 {\n            assert_eq!(\n                min_comp,\n                graph.get_nodes_number(),\n                concat!(\n                    \"We expect for the minimum size of connected components \",\n                    \"in a graph with a single connected component to \",\n                    \"match the number of nodes of the graph, but we got \",\n                    \"the minimum component with size {} and the number \",\n                    \"of nodes in the graph equal to {}.\\n\",\n                    \"The graph report is: \\n {:?}\",\n                ),\n                min_comp,\n                graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp, graph.get_nodes_number());\n            assert_eq!(min_comp, test.get_nodes_number());\n            assert_eq!(max_comp, test.get_nodes_number());\n        }\n        if total == 2 {\n            assert_eq!(\n                max_comp + min_comp, graph.get_nodes_number(),\n                \"We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\\nThe graph report is:\\n {:?}\",\n                min_comp, max_comp, graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp + min_comp, test.get_nodes_number());\n        }\n        default_holdout_test_suite(graph, &train, &test)?;\n    }\n    Ok(())"
+                "body": "if !graph.has_edge_types() {\n        assert!(graph\n            .connected_holdout(4, 0.8, Some(vec![None]), false, verbose)\n            .is_err());\n    }\n    for include_all_edge_types in &[false, true] {\n        let (train, test) =\n            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;\n        default_holdout_test_suite(graph, &train, &test)?;\n        let (train, test) =\n            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;\n        let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);\n        assert_eq!(\n            graph.get_connected_components_number(verbose),\n            train.get_connected_components_number(verbose),\n            \"The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.\",\n            nodes_number=graph.get_nodes_number().to_string()\n        );\n        if total == 1 {\n            assert_eq!(\n                min_comp,\n                graph.get_nodes_number(),\n                concat!(\n                    \"We expect for the minimum size of connected components \",\n                    \"in a graph with a single connected component to \",\n                    \"match the number of nodes of the graph, but we got \",\n                    \"the minimum component with size {} and the number \",\n                    \"of nodes in the graph equal to {}.\\n\",\n                    \"The graph report is: \\n {:?}\",\n                ),\n                min_comp,\n                graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp, graph.get_nodes_number());\n            assert_eq!(min_comp, test.get_nodes_number());\n            assert_eq!(max_comp, test.get_nodes_number());\n        }\n        if total == 2 {\n            assert_eq!(\n                max_comp + min_comp, graph.get_nodes_number(),\n                \"We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\\nThe graph report is:\\n {:?}\",\n                min_comp, max_comp, graph.get_nodes_number(),\n                graph.textual_report(false)\n            );\n            assert_eq!(max_comp + min_comp, test.get_nodes_number());\n        }\n        default_holdout_test_suite(graph, &train, &test)?;\n    }\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -4719,7 +4719,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "assert!(graph\n        .filter(\n            Some(graph.get_node_names()),\n            graph\n                .get_node_type_names()\n                .ok()\n                .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n            graph\n                .get_edge_type_names()\n                .map(|etn| etn.into_iter().map(Option::Some).collect()),\n            Some(1000.0),\n            Some(10.0),\n            verbose,\n        )\n        .is_err());\n    let _ = graph.filter(\n        Some(graph.get_node_names()),\n        graph\n            .get_node_type_names()\n            .ok()\n            .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n        graph\n            .get_edge_type_names()\n            .map(|etn| etn.into_iter().map(Option::Some).collect()),\n        graph.get_min_edge_weight().ok(),\n        graph.get_max_edge_weight().ok(),\n        verbose,\n    );\n    Ok(())"
+                "body": "assert!(graph\n        .filter(\n            Some(graph.get_node_names()),\n            graph\n                .get_node_type_names()\n                .ok()\n                .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n            graph\n                .get_edge_type_names()\n                .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),\n            Some(1000.0),\n            Some(10.0),\n            verbose,\n        )\n        .is_err());\n    let _ = graph.filter(\n        Some(graph.get_node_names()),\n        graph\n            .get_node_type_names()\n            .ok()\n            .map(|ntn| ntn.into_iter().map(Option::Some).collect()),\n        graph\n            .get_edge_type_names()\n            .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),\n        graph.get_min_edge_weight().ok(),\n        graph.get_max_edge_weight().ok(),\n        verbose,\n    );\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -4795,7 +4795,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "{\n        let without_edge_types = graph.remove(\n            None, None, None, None, None, None, None, None, false, false, true, false, false,\n            verbose,\n        );\n        if let Some(we) = &without_edge_types.ok() {\n            validate_vocabularies(we);\n            assert_eq!(we.has_edge_types(), false);\n            assert_eq!(we.has_edge_weights(), graph.has_edge_weights());\n            assert_eq!(we.node_types, graph.node_types);\n            assert_eq!(\n                we.get_unique_edges_number(),\n                graph.get_unique_edges_number(),\n                concat!(\n                    \"Number of unique edges does not match in graph without edge types.\\n\",\n                    \"The report of the original graph is \\n{:?}\\n\",\n                    \"The report of the graph without edge types is \\n{:?}\",\n                ),\n                graph.textual_report(false),\n                we.textual_report(false),\n            );\n            assert_eq!(\n                we.get_unique_selfloop_number(),\n                graph.get_unique_selfloop_number(),\n                \"Number of unique self loops does not match in graph without edge types.\"\n            );\n            assert_eq!(we.nodes, graph.nodes);\n        }\n    }\n    {\n        let without_node_types = graph.remove(\n            None, None, None, None, None, None, None, None, false, true, false, false, false,\n            verbose,\n        );\n        if let Some(wn) = &without_node_types.ok() {\n            validate_vocabularies(wn);\n            assert_eq!(wn.has_node_types(), false);\n            assert_eq!(\n                wn.weights,\n                graph.weights,\n                concat!(\n                    \"We expected the weights not to change when removig node types.\",\n                    \"\\nThe report of the original graph is {:?}.\",\n                    \"\\nThe report of the filtered graph is {:?}.\"\n                ),\n                graph.textual_report(false),\n                wn.textual_report(false)\n            );\n            assert_eq!(wn.has_selfloops(), graph.has_selfloops());\n            assert_eq!(wn.nodes, graph.nodes);\n        }\n    }\n    {\n        let without_weights = graph.remove(\n            None, None, None, None, None, None, None, None, true, false, false, false, false,\n            verbose,\n        );\n        if let Some(ww) = &without_weights.ok() {\n            validate_vocabularies(ww);\n            assert_eq!(ww.has_edge_weights(), false);\n            assert_eq!(ww.node_types, graph.node_types);\n            assert_eq!(ww.has_selfloops(), graph.has_selfloops());\n            assert_eq!(ww.nodes, graph.nodes);\n        }\n    }\n\n    Ok(())"
+                "body": "{\n        let without_edge_types = graph.remove(\n            None, None, None, None, None, None, None, None, false, false, true, false, false,\n            verbose,\n        );\n        if let Some(we) = &without_edge_types.ok() {\n            validate_vocabularies(we);\n            assert_eq!(we.has_edge_types(), false);\n            assert_eq!(we.has_edge_weights(), graph.has_edge_weights());\n            assert_eq!(we.node_types, graph.node_types);\n            assert_eq!(\n                we.get_unique_edges_number(),\n                graph.get_unique_edges_number(),\n                concat!(\n                    \"Number of unique edges does not match in graph without edge types.\\n\",\n                    \"The report of the original graph is \\n{:?}\\n\",\n                    \"The report of the graph without edge types is \\n{:?}\",\n                ),\n                graph.textual_report(false),\n                we.textual_report(false),\n            );\n            assert_eq!(\n                we.get_unique_selfloop_number(),\n                graph.get_unique_selfloop_number(),\n                \"Number of unique self loops does not match in graph without edge types.\"\n            );\n            assert_eq!(we.nodes, graph.nodes);\n        }\n    }\n    {\n        let without_node_types = graph.remove(\n            None, None, None, None, None, None, None, None, false, true, false, false, false,\n            verbose,\n        );\n        if let Some(wn) = &without_node_types.ok() {\n            validate_vocabularies(wn);\n            assert_eq!(wn.has_node_types(), false);\n            assert_eq!(graph.is_multigraph(), wn.is_multigraph(), \"If the original graph is a multigraph, the removal of node types should not change that.\");\n            assert_eq!(\n                wn.weights,\n                graph.weights,\n                concat!(\n                    \"We expected the weights not to change when removig node types.\",\n                    \"\\nThe report of the original graph is {:?}.\",\n                    \"\\nThe report of the filtered graph is {:?}.\"\n                ),\n                graph.textual_report(false),\n                wn.textual_report(false)\n            );\n            assert_eq!(wn.has_selfloops(), graph.has_selfloops());\n            assert_eq!(wn.nodes, graph.nodes);\n        }\n    }\n    {\n        let without_weights = graph.remove(\n            None, None, None, None, None, None, None, None, true, false, false, false, false,\n            verbose,\n        );\n        if let Some(ww) = &without_weights.ok() {\n            validate_vocabularies(ww);\n            assert_eq!(ww.has_edge_weights(), false);\n            assert_eq!(ww.node_types, graph.node_types);\n            assert_eq!(ww.has_selfloops(), graph.has_selfloops());\n            assert_eq!(ww.nodes, graph.nodes);\n        }\n    }\n\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -4814,7 +4814,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "let mut clone = graph.clone();\n    clone = clone.set_all_edge_types(\"TEST_SET_ALL_EDGE_TYPES\")?;\n    clone = clone.set_all_node_types(\"TEST_SET_ALL_NODE_TYPES\")?;\n\n    assert_eq!(\n        clone.get_edge_types_number(),\n        1,\n        \"Number of edge types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),\n        graph.get_directed_edges_number(),\n        \"Number of edges with the unique edge type does not match number of edges in the graph.\"\n    );\n\n    assert_eq!(\n        clone.get_node_types_number(),\n        1,\n        \"Number of node types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_node_count_from_node_type_id(Some(0)),\n        graph.get_nodes_number(),\n        \"Number of nodes with the unique node type does not match number of nodes in the graph.\"\n    );\n\n    Ok(())"
+                "body": "let mut clone = graph.clone();\n    clone = clone.set_all_edge_types(\"TEST_SET_ALL_EDGE_TYPES\")?;\n    assert!(!clone.is_multigraph());\n        clone = clone.set_all_node_types(\"TEST_SET_ALL_NODE_TYPES\")?;\n\n    assert_eq!(\n        clone.get_edge_types_number(),\n        1,\n        \"Number of edge types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),\n        graph.get_directed_edges_number(),\n        \"Number of edges with the unique edge type does not match number of edges in the graph.\"\n    );\n\n    assert_eq!(\n        clone.get_node_types_number(),\n        1,\n        \"Number of node types of the graph is not 1.\"\n    );\n    assert_eq!(\n        clone.get_unchecked_node_count_from_node_type_id(Some(0)),\n        graph.get_nodes_number(),\n        \"Number of nodes with the unique node type does not match number of nodes in the graph.\"\n    );\n\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -4925,7 +4925,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "if vector_destinations {\n            if self.destinations.is_none() {\n                self.destinations = Some(self.get_destinations(true));\n            }\n        } else {\n            self.destinations = None;\n        }\n        if vector_sources {\n            if self.sources.is_none() {\n                self.sources = Some(self.get_sources(true));\n            }\n        } else {\n            self.sources = None;\n        }\n        if vector_cumulative_node_degrees {\n            if self.cumulative_node_degrees.is_none() {\n                self.cumulative_node_degrees = Some(self.get_cumulative_node_degrees());\n            }\n        } else {\n            self.cumulative_node_degrees = None;\n        }\n        if let Some(cs) = cache_size {\n            if vector_destinations {\n                return Err(\"You cannot use cache if you enable the destinations vector\".to_owned());\n            }\n            if cs <= 0.0 || cs >= 1.0 {\n                return Err(\"Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.\".to_owned());\n            }\n            let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;\n            if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {\n                return Err(\"Required cached nodes number cannot be 0 or all the nodes.\".to_owned());\n            }\n            self.cached_destinations = Some(\n                self.get_top_k_central_node_ids(cached_nodes_number)\n                    .par_iter()\n                    .map(|node_id| {\n                        (\n                            *node_id,\n                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)\n                                .collect::<Vec<NodeT>>(),\n                        )\n                    })\n                    .collect::<HashMap<NodeT, Vec<NodeT>>>(),\n            );\n        } else {\n            self.cached_destinations = None;\n        }\n        Ok(())"
+                "body": "if (vector_destinations || self.destinations.is_some()) && (cache_size.is_some() || self.cached_destinations.is_some()){\n            return Err(concat!(\n                \"It is not possible (nor would it make sense) to have both \",\n                \"partially cached destinations and completely cached vector \",\n                \"destinations at once.\\n\",\n                \"If you want to switch from one to the \",\n                \"other form of destinations cache remember to run the method \",\n                \"disable_all to disable all forms of time-memory tradeoffs.\\n\",\n                \"Once you have disabled again all trade-offs, you can \",\n                \"re-enable the any one you would like.\"\n            ).to_string());\n        }\n\n        if vector_destinations {\n            if self.destinations.is_none() {\n                self.destinations = Some(self.get_destination_node_ids(true));\n            }\n        } else {\n            self.destinations = None;\n        }\n        if vector_sources {\n            if self.sources.is_none() {\n                self.sources = Some(self.get_source_node_ids(true));\n            }\n        } else {\n            self.sources = None;\n        }\n        if vector_cumulative_node_degrees {\n            if self.cumulative_node_degrees.is_none() {\n                self.cumulative_node_degrees = Some(self.get_cumulative_node_degrees());\n            }\n        } else {\n            self.cumulative_node_degrees = None;\n        }\n        if let Some(cs) = cache_size {\n            if cs <= 0.0 || cs >= 1.0 {\n                return Err(\"Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.\".to_owned());\n            }\n            let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;\n            if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {\n                return Err(\"Required cached nodes number cannot be 0 or all the nodes.\".to_owned());\n            }\n            self.cached_destinations = Some(\n                self.get_top_k_central_node_ids(cached_nodes_number)\n                    .par_iter()\n                    .map(|node_id| {\n                        (\n                            *node_id,\n                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)\n                                .collect::<Vec<NodeT>>(),\n                        )\n                    })\n                    .collect::<HashMap<NodeT, Vec<NodeT>>>(),\n            );\n        } else {\n            self.cached_destinations = None;\n        }\n        Ok(())"
             },
             {
                 "file": "modifiers.rs",
@@ -6864,7 +6864,7 @@
                     " # Arguments",
                     " * `src`: &str - The node name of the source node.",
                     " * `dst`: &str - The node name of the destination node.",
-                    " * `edge_type`: Option<&String> - The edge type name of the edge.",
+                    " * `edge_type`: Option<&str> - The edge type name of the edge.",
                     "",
                     " # Example",
                     " To get the weight of a given `src` and `dst` and `edge_type` you can run:",
@@ -6872,8 +6872,8 @@
                     " # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
                     " let src = \"ENSP00000000233\";",
                     " let dst = \"ENSP00000432568\";",
-                    " let edge_type = Some(\"red\".to_string());",
-                    " assert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type.as_ref()).is_ok());",
+                    " let edge_type = Some(\"red\");",
+                    " assert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type).is_ok());",
                     " ```"
                 ],
                 "attrs": [],
@@ -6894,7 +6894,7 @@
                     ],
                     [
                         "edge_type",
-                        "Option<&String>"
+                        "Option<&str>"
                     ]
                 ],
                 "return_type": "Result<WeightT, String>",
@@ -7672,7 +7672,7 @@
                     " # Arguments",
                     " * `src_name`: &str - Source node name of the edge.",
                     " * `dst_name`: &str - Destination node name of the edge.",
-                    " * `edge_type_name`: Option<&String> - Edge type name.",
+                    " * `edge_type_name`: Option<&str> - Edge type name.",
                     ""
                 ],
                 "attrs": [],
@@ -7693,11 +7693,11 @@
                     ],
                     [
                         "edge_type_name",
-                        "Option<&String>"
+                        "Option<&str>"
                     ]
                 ],
                 "return_type": "Result<EdgeT, String>",
-                "body": "match (self.nodes.get(src_name), self.nodes.get(dst_name)) {\n            (Some(src), Some(dst)) => self\n                .get_edge_id_from_node_ids_and_edge_type_id(\n                    *src,\n                    *dst,\n                    self.get_edge_type_id_from_edge_type_name(edge_type_name.map(|x| x.as_str()))?,\n                )\n                .ok(),\n            _ => None,\n        }\n        .ok_or_else(|| {\n            format!(\n                concat!(\n                    \"The current graph instance does not contain the required edge composed of \",\n                    \"source node name {}, destination node name {} and edge name {:?}.\"\n                ),\n                src_name, dst_name, edge_type_name\n            )\n        })"
+                "body": "match (self.nodes.get(src_name), self.nodes.get(dst_name)) {\n            (Some(src), Some(dst)) => self\n                .get_edge_id_from_node_ids_and_edge_type_id(\n                    *src,\n                    *dst,\n                    self.get_edge_type_id_from_edge_type_name(edge_type_name)?,\n                )\n                .ok(),\n            _ => None,\n        }\n        .ok_or_else(|| {\n            format!(\n                concat!(\n                    \"The current graph instance does not contain the required edge composed of \",\n                    \"source node name {}, destination node name {} and edge name {:?}.\"\n                ),\n                src_name, dst_name, edge_type_name\n            )\n        })"
             },
             {
                 "file": "queries.rs",
@@ -8077,7 +8077,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Validates provided node ID.",
@@ -8117,7 +8119,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Validates provided edge ID.",
@@ -8157,7 +8161,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Validates provided node type ID.",
@@ -8197,7 +8203,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Validates provided edge type ID.",
@@ -8237,7 +8245,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have node types.",
@@ -8271,7 +8281,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have edge types.",
@@ -8305,7 +8317,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have edge types.",
@@ -8339,7 +8353,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have edge types.",
@@ -8364,7 +8380,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "if !self.is_multigraph() {\n            return Err(\"The current graph instance is not a multigraph.\".to_string());\n        }\n        Ok(())"
+                "body": "if !self.is_multigraph() {\n            return Err(\"The current graph instance must be a multigraph to run this method.\".to_string());\n        }\n        Ok(())"
             },
             {
                 "file": "validators.rs",
@@ -8373,7 +8389,45 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
+                ],
+                "doc": [
+                    " Raises an error if the graph does not have edge types.",
+                    "",
+                    " # Example",
+                    " In order to validate a graph instance, you can use:",
+                    "",
+                    " ```rust",
+                    " # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);",
+                    " # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);",
+                    " assert!(multigraph.must_be_multigraph().is_ok());",
+                    " assert!(homogeneous.must_be_multigraph().is_err());",
+                    " ```"
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "must_not_be_multigraph",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<(), String>",
+                "body": "if self.is_multigraph() {\n            return Err(\"The current graph instance must not be a multigraph to run this method.\".to_string());\n        }\n        Ok(())"
+            },
+            {
+                "file": "validators.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Validators",
+                    " The naming convention we follow is:",
+                    " * `validate_(.+)`",
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have weights.",
@@ -8407,7 +8461,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have any edge.",
@@ -8441,7 +8497,9 @@
                     " # Validators",
                     " The naming convention we follow is:",
                     " * `validate_(.+)`",
-                    " * `must_have_(.+)`"
+                    " * `must_have_(.+)`",
+                    " * `must_be_(.+)`",
+                    " * `must_not_be_(.+)`"
                 ],
                 "doc": [
                     " Raises an error if the graph does not have any node.",
@@ -8450,7 +8508,7 @@
                     " In order to validate a graph instance, you can use:",
                     "",
                     " ```rust",
-                    " # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();",
+                    " # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false);",
                     " # let graph_without_nodes = graph::test_utilities::load_empty_graph(false);",
                     " assert!(graph_with_nodes.must_have_nodes().is_ok());",
                     " assert!(graph_without_nodes.must_have_nodes().is_err());",
@@ -8711,7 +8769,10 @@
                     " function call even if you provide the flag singletons to true, but you",
                     " will need to call the method again if you want to get reed of also those",
                     " newly created singleton nodes.",
-                    ""
+                    "",
+                    " TODO: add support for min and max weight",
+                    " TOOD: rename the parameters",
+                    " TODO:"
                 ],
                 "attrs": [],
                 "modifiers": "pub",
@@ -9327,7 +9388,9 @@
     },
     "setters.rs": {
         "imports": [
-            "use super::*;"
+            "use super::*;",
+            "use rayon::iter::IntoParallelRefMutIterator;",
+            "use rayon::iter::ParallelIterator;"
         ],
         "functions": [
             {
@@ -9398,7 +9461,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "self.must_have_edges()?;\n        self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(edge_type.into())?;\n        vocabulary.build_reverse_mapping()?;\n        let edge_types = EdgeTypeVocabulary::from_structs(\n            vec![Some(0); self.get_directed_edges_number() as usize],\n            vocabulary,\n        );\n        self.edge_types = Some(edge_types);\n        Ok(self)"
+                "body": "// If the graph does not have edges, it does not make sense to\n        // try and set the edge types.\n        self.must_have_edges()?;\n        // Similarly, setting the edge types of a multigraph would make it\n        // collapse to a homogeneous graph, and this operation is not supported\n        // with the function set all edge types.\n        self.must_not_be_multigraph().map_err(|_| {\n            concat!(\n                \"The method set_all_edge_types does not support multigraphs because \",\n                \"setting the edge types of all edges to a single one in this type\",\n                \"of graphs will cause a multigraph to collapse to an homogeneous \",\n                \"graph, leading to multiple undefined behaviours, such as loosing \",\n                \"the parallel edges that would collapse to one: which one should we keep?\\n\",\n                \"This is a strongly undefined behaviour that can be first handled with \",\n                \"the remove method, that can let you remove edge types.\\n\",\n                \"Consider that when using the remove method, you will still collapse \",\n                \"the multigraph to an homogeneous graph, and it will keep the FIRST edge \",\n                \"of any group of multigraph edges between two given nodes.\"\n            )\n            .to_string()\n        })?;\n        self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(edge_type.into())?;\n        vocabulary.build_reverse_mapping()?;\n        let edge_types = EdgeTypeVocabulary::from_structs(\n            vec![Some(0); self.get_directed_edges_number() as usize],\n            vocabulary,\n        );\n        self.edge_types = Some(edge_types);\n        Ok(self)"
             },
             {
                 "file": "setters.rs",
@@ -9425,6 +9488,269 @@
                 ],
                 "return_type": "Result<Graph, String>",
                 "body": "self.must_have_nodes()?;\n        self.invalidate_report();\n        let mut vocabulary = Vocabulary::default();\n        vocabulary.insert(node_type.into())?;\n        vocabulary.build_reverse_mapping()?;\n        let node_types = NodeTypeVocabulary::from_structs(\n            vec![Some(vec![0]); self.get_nodes_number() as usize],\n            Some(vocabulary),\n        );\n        self.node_types = node_types;\n        Ok(self)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given node type ID from all nodes.",
+                    "",
+                    " If any given node remains with no node type, that node is labeled",
+                    " with node type None. Note that the modification happens inplace.",
+                    "",
+                    " # Arguments",
+                    " * `node_type_id`: NodeTypeT - The node type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have node types.",
+                    " * If the given node type ID does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_inplace_node_type_id",
+                "args": [
+                    [
+                        "self",
+                        "mut self"
+                    ],
+                    [
+                        "node_type_id",
+                        "NodeTypeT"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.must_have_node_types()?;\n        self.validate_node_type_id(Some(node_type_id))?;\n        if let Some(node_types) = self.node_types.as_mut() {\n            node_types\n                .ids\n                .par_iter_mut()\n                .filter(|maybe_node_type_ids| maybe_node_type_ids.is_some())\n                .for_each(|node_type_ids| {\n                    if let Some(ntis) = node_type_ids.as_mut() {\n                        // We remove the given node type if one was given.\n                        if let Some(pos) = ntis.iter().position(|x| *x == node_type_id) {\n                            ntis.remove(pos);\n                        }\n                    }\n                    // If after we have removed the node type the node does not have any\n                    // node type anymore, we replace its empty vector with a None.\n                    if node_type_ids.as_ref().map_or(false, |ntis| ntis.is_empty()) {\n                        *node_type_ids = None;\n                    }\n                });\n            node_types.counts[node_type_id as usize] = 0;\n        }\n        Ok(self)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given edge type ID from all edges.",
+                    "",
+                    " # Arguments",
+                    " * `edge_type_id`: EdgeTypeT - The edge type ID to remove.",
+                    "",
+                    " # Raises",
+                    " *",
+                    " * If the graph does not have edge types.",
+                    " * If the given edge type ID does not exists in the graph.",
+                    "",
+                    " TODO!: add support for removal of edge types in the context of multigraphs when the user asks for removing an edge type."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_inplace_edge_type_id",
+                "args": [
+                    [
+                        "self",
+                        "mut self"
+                    ],
+                    [
+                        "edge_type_id",
+                        "EdgeTypeT"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.must_have_edge_types()?;\n        self.validate_edge_type_id(Some(edge_type_id))?;\n        if let Some(edge_types) = self.edge_types.as_mut() {\n            edge_types\n                .ids\n                .par_iter_mut()\n                .for_each(|maybe_edge_type_id| {\n                    if maybe_edge_type_id\n                        .as_ref()\n                        .map_or(false, |et| *et == edge_type_id)\n                    {\n                        *maybe_edge_type_id = None;\n                    }\n                });\n            edge_types.counts[edge_type_id as usize] = 0;\n        }\n        Ok(self)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given node type name from all nodes.",
+                    "",
+                    " If any given node remains with no node type, that node is labeled",
+                    " with node type None. Note that the modification happens inplace.",
+                    "",
+                    " # Arguments",
+                    " * `node_type_name`: &str - The node type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have node types.",
+                    " * If the given node type name does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_inplace_node_type_name",
+                "args": [
+                    [
+                        "self",
+                        "self"
+                    ],
+                    [
+                        "node_type_name",
+                        "&str"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "let node_type_id = self.get_node_type_id_from_node_type_name(node_type_name)?;\n        self.remove_inplace_node_type_id(node_type_id)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given node type ID from all nodes.",
+                    "",
+                    " If any given node remains with no node type, that node is labeled",
+                    " with node type None. Note that the modification DOES NOT happen inplace.",
+                    "",
+                    " # Arguments",
+                    " * `node_type_id`: NodeTypeT - The node type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have node types.",
+                    " * If the given node type ID does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_node_type_id",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "node_type_id",
+                        "NodeTypeT"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.clone().remove_inplace_node_type_id(node_type_id)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given node type name from all nodes.",
+                    "",
+                    " If any given node remains with no node type, that node is labeled",
+                    " with node type None. Note that the modification DOES NOT happen inplace.",
+                    "",
+                    " # Arguments",
+                    " * `node_type_name`: &str - The node type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have node types.",
+                    " * If the given node type name does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_node_type_name",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "node_type_name",
+                        "&str"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.clone().remove_inplace_node_type_name(node_type_name)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given edge type name from all edges.",
+                    "",
+                    " If any given edge remains with no edge type, that edge is labeled",
+                    " with edge type None. Note that the modification happens inplace.",
+                    "",
+                    " # Arguments",
+                    " * `edge_type_name`: &str - The edge type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have edge types.",
+                    " * If the given edge type name does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_inplace_edge_type_name",
+                "args": [
+                    [
+                        "self",
+                        "self"
+                    ],
+                    [
+                        "edge_type_name",
+                        "&str"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "let edge_type_id = self.get_edge_type_id_from_edge_type_name(Some(edge_type_name))?.unwrap();\n        self.remove_inplace_edge_type_id(edge_type_id)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given edge type ID from all edges.",
+                    "",
+                    " If any given edge remains with no edge type, that edge is labeled",
+                    " with edge type None. Note that the modification DOES NOT happen inplace.",
+                    "",
+                    " # Arguments",
+                    " * `edge_type_id`: EdgeTypeT - The edge type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have edge types.",
+                    " * If the given edge type ID does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_edge_type_id",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "edge_type_id",
+                        "EdgeTypeT"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.clone().remove_inplace_edge_type_id(edge_type_id)"
+            },
+            {
+                "file": "setters.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Remove given edge type name from all edges.",
+                    "",
+                    " If any given edge remains with no edge type, that edge is labeled",
+                    " with edge type None. Note that the modification DOES NOT happen inplace.",
+                    "",
+                    " # Arguments",
+                    " * `edge_type_name`: &str - The edge type ID to remove.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have edge types.",
+                    " * If the given edge type name does not exists in the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "remove_edge_type_name",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "edge_type_name",
+                        "&str"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "self.clone().remove_inplace_edge_type_name(edge_type_name)"
             }
         ]
     },
@@ -10771,7 +11097,7 @@
                     ]
                 ],
                 "return_type": "Result<String, String>",
-                "body": "// Checking if overlap is allowed\n        self.validate_operator_terms(other)?;\n        // Get overlapping nodes\n        let overlapping_nodes_number = self\n            .iter_nodes()\n            .filter(|(_, node_name, _, node_type)| {\n                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())\n            })\n            .count();\n        // Get overlapping edges\n        let overlapping_edges_number = self\n            .par_iter_edge_node_names_and_edge_type_name(self.directed)\n            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                other.has_edge_from_node_names_and_edge_type_name(\n                    src_name,\n                    dst_name,\n                    edge_type_name.as_ref(),\n                )\n            })\n            .count();\n        // Get number of overlapping components\n        let first_nodes_components = self.get_node_connected_component_ids(verbose);\n        let second_nodes_components = other.get_node_connected_component_ids(verbose);\n        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;\n        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;\n        let first_shared_components_number =\n            self.shared_components_number(&first_nodes_components, other);\n        let second_shared_components_number =\n            other.shared_components_number(&second_nodes_components, self);\n        // Get number of overlapping components\n        let first_merged_components_number =\n            self.merged_components_number(&first_nodes_components, other);\n        let second_merged_components_number =\n            other.merged_components_number(&second_nodes_components, self);\n\n        let first_edges = match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        };\n        let second_edges = match other.directed {\n            true => other.get_directed_edges_number(),\n            false => other.get_undirected_edges_number(),\n        };\n        // Building up the report\n        Ok(format!(\n            concat!(\n                \"The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. \",\n                \"By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. \",\n                \"{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. \",\n                \"Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. \",\n                \"Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. \",\n            ),\n            first_graph=self.get_name(),\n            second_graph=other.get_name(),\n            nodes_number=overlapping_nodes_number,\n            edges_number=overlapping_edges_number,\n            first_nodes=self.get_nodes_number(),\n            second_nodes=other.get_nodes_number(),\n            first_edges=first_edges,\n            second_edges=second_edges,\n            first_components_statement = match second_shared_components_number== second_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{second_shared_components_number} of the {second_components_number}\",\n                    second_shared_components_number=second_shared_components_number,\n                    second_components_number=second_components_number\n                )\n            },\n            second_components_statement = match first_shared_components_number== first_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{first_shared_components_number} of the {first_components_number}\",\n                    first_shared_components_number=first_shared_components_number,\n                    first_components_number=first_components_number\n                )\n            },\n            first_merged_components_statement = match second_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {first_graph}\",\n                    first_graph=self.name,\n                    edges_number= match second_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==second_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", second_merged_components_number)\n                    })\n                },\n            second_merged_components_statement = match first_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {second_graph}\",\n                    second_graph=other.name,\n                    edges_number= match first_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==first_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", first_merged_components_number)\n                    })\n                },\n            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),\n            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),\n            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),\n            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),\n        ))"
+                "body": "// Checking if overlap is allowed\n        self.validate_operator_terms(other)?;\n        // Get overlapping nodes\n        let overlapping_nodes_number = self\n            .iter_nodes()\n            .filter(|(_, node_name, _, node_type)| {\n                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())\n            })\n            .count();\n        // Get overlapping edges\n        let overlapping_edges_number = self\n            .par_iter_edge_node_names_and_edge_type_name(self.directed)\n            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {\n                other.has_edge_from_node_names_and_edge_type_name(\n                    src_name,\n                    dst_name,\n                    edge_type_name.as_deref(),\n                )\n            })\n            .count();\n        // Get number of overlapping components\n        let first_nodes_components = self.get_node_connected_component_ids(verbose);\n        let second_nodes_components = other.get_node_connected_component_ids(verbose);\n        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;\n        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;\n        let first_shared_components_number =\n            self.shared_components_number(&first_nodes_components, other);\n        let second_shared_components_number =\n            other.shared_components_number(&second_nodes_components, self);\n        // Get number of overlapping components\n        let first_merged_components_number =\n            self.merged_components_number(&first_nodes_components, other);\n        let second_merged_components_number =\n            other.merged_components_number(&second_nodes_components, self);\n\n        let first_edges = match self.directed {\n            true => self.get_directed_edges_number(),\n            false => self.get_undirected_edges_number(),\n        };\n        let second_edges = match other.directed {\n            true => other.get_directed_edges_number(),\n            false => other.get_undirected_edges_number(),\n        };\n        // Building up the report\n        Ok(format!(\n            concat!(\n                \"The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. \",\n                \"By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. \",\n                \"{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. \",\n                \"Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. \",\n                \"Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. \",\n            ),\n            first_graph=self.get_name(),\n            second_graph=other.get_name(),\n            nodes_number=overlapping_nodes_number,\n            edges_number=overlapping_edges_number,\n            first_nodes=self.get_nodes_number(),\n            second_nodes=other.get_nodes_number(),\n            first_edges=first_edges,\n            second_edges=second_edges,\n            first_components_statement = match second_shared_components_number== second_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{second_shared_components_number} of the {second_components_number}\",\n                    second_shared_components_number=second_shared_components_number,\n                    second_components_number=second_components_number\n                )\n            },\n            second_components_statement = match first_shared_components_number== first_components_number{\n                true=> \"all the\".to_owned(),\n                false => format!(\n                    \"{first_shared_components_number} of the {first_components_number}\",\n                    first_shared_components_number=first_shared_components_number,\n                    first_components_number=first_components_number\n                )\n            },\n            first_merged_components_statement = match second_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {first_graph}\",\n                    first_graph=self.name,\n                    edges_number= match second_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==second_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", second_merged_components_number)\n                    })\n                },\n            second_merged_components_statement = match first_components_number > 1 {\n                false=>\"\".to_owned(),\n                true=>format!(\n                    \": of these, {edges_number} connected by edges of {second_graph}\",\n                    second_graph=other.name,\n                    edges_number= match first_merged_components_number {\n                        d if d==0=>\"none are\".to_owned(),\n                        d if d==1=>\"one is\".to_owned(),\n                        d if d==first_components_number=>\"all components are\".to_owned(),\n                        _ => format!(\"{} components are\", first_merged_components_number)\n                    })\n                },\n            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),\n            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),\n            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),\n            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),\n        ))"
             },
             {
                 "file": "report.rs",
@@ -11567,7 +11893,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_sources",
+                "name": "get_source_node_ids",
                 "args": [
                     [
                         "self",
@@ -11631,7 +11957,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_destinations",
+                "name": "get_destination_node_ids",
                 "args": [
                     [
                         "self",
@@ -11717,7 +12043,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_nodes",
+                "name": "get_node_ids",
                 "args": [
                     [
                         "self",
@@ -11742,7 +12068,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_edge_types",
+                "name": "get_edge_type_ids",
                 "args": [
                     [
                         "self",
@@ -11750,7 +12076,7 @@
                     ]
                 ],
                 "return_type": "Result<Vec<Option<EdgeTypeT>>, String>",
-                "body": "self.must_have_edge_types()?;\n        Ok(self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())"
+                "body": "self.must_have_edge_types().map(|_| \n            self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap()\n        )"
             },
             {
                 "file": "getters.rs",
@@ -11774,8 +12100,8 @@
                         "&self"
                     ]
                 ],
-                "return_type": "Option<Vec<String>>",
-                "body": "self.edge_types\n            .as_ref()\n            .map(|ets| ets.vocabulary.reverse_map.clone())"
+                "return_type": "Result<Vec<String>, String>",
+                "body": "self.must_have_edge_types().map(|_| {\n            self.edge_types\n                .as_ref()\n                .map(|ets| ets.vocabulary.reverse_map.clone())\n                .unwrap()\n        })"
             },
             {
                 "file": "getters.rs",
@@ -11952,7 +12278,7 @@
                     ]
                 ],
                 "return_type": "Result<Vec<String>, String>",
-                "body": "self.must_have_node_types()?;\n        Ok(self\n            .node_types\n            .as_ref()\n            .map(|nts| nts.vocabulary.reverse_map.clone())\n            .unwrap())"
+                "body": "self.must_have_node_types().map(|_| {\n            self.node_types\n                .as_ref()\n                .map(|nts| nts.vocabulary.reverse_map.clone())\n                .unwrap()\n        })"
             },
             {
                 "file": "getters.rs",
@@ -12022,7 +12348,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_edges",
+                "name": "get_edge_node_ids",
                 "args": [
                     [
                         "self",
@@ -13622,6 +13948,47 @@
                 ],
                 "return_type": "Result<NodeFileReader, String>",
                 "body": "if let Some(cs) = comment_symbol {\n            if cs.is_empty() {\n                return Err(\"The given comment symbol is empty.\".to_string());\n            }\n            self.reader.comment_symbol = Some(cs);\n        }\n        Ok(self)"
+            },
+            {
+                "file": "node_file_reader.rs",
+                "struct": "NodeFileReader",
+                "impl_doc": [
+                    " Structure that saves the reader specific to writing and reading a nodes csv file.",
+                    "",
+                    " # Attributes",
+                    " * reader: CSVFile - The common reader for reading and writing a csv.",
+                    " * default_node_type: Option<String> - The node type to use if a node has node type or its node type is \"\".",
+                    " * nodes_column_number: Option<usize> - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.",
+                    " * node_types_separator: Option<String> - Separator to split the node types.",
+                    " * node_types_column_number: Option<usize> - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.",
+                    " * numeric_node_ids: bool - Whether to load the node IDs as numeric.",
+                    " * numeric_node_type_ids: bool - Whether to load the node type IDs as numeric.",
+                    " * skip_node_types_if_unavailable: bool - Whether to skip attempting to load the node types if column is unavailable.",
+                    ""
+                ],
+                "doc": [
+                    " Set whether the CSV is expected to be well written.",
+                    "",
+                    " # Arguments",
+                    "",
+                    " * csv_is_correct: Option<bool> - Whether you pinky swear the node list is correct.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "set_csv_is_correct",
+                "args": [
+                    [
+                        "self",
+                        "mut self"
+                    ],
+                    [
+                        "csv_is_correct",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "NodeFileReader",
+                "body": "if let Some(cic) = csv_is_correct {\n            self.reader.csv_is_correct = cic;\n        }\n        self"
             },
             {
                 "file": "node_file_reader.rs",
@@ -16482,6 +16849,7 @@
                     " TODO! add computation of maximum node degree",
                     " TODO! add computation of maximum edge weight",
                     " TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.",
+                    " TODO! add support for a mask that writes down if an edge type is used in the context of a multigraph edge. It is necessary for some operations with multigraphs.",
                     " TODO! add docstring"
                 ],
                 "attrs": [],
@@ -16788,10 +17156,10 @@
                     "",
                     " * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.",
                     " * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.",
-                    " * `directed`: bool - Whether the graph should be directed or undirected.",
-                    " * `ignore_duplicated_nodes`: bool - Whether to ignore duplicated nodes or to raise a proper exception.",
-                    " * `ignore_duplicated_edges`: bool - Whether to ignore duplicated edges or to raise a proper exception.",
-                    " * `skip_selfloops`: bool - Whether to skip self loops while reading the the edges iterator."
+                    " * `directed`: bool - Wether the graph should be directed or undirected.",
+                    " * `ignore_duplicated_nodes`: bool - Wether to ignore duplicated nodes or to raise a proper exception.",
+                    " * `ignore_duplicated_edges`: bool - Wether to ignore duplicated edges or to raise a proper exception.",
+                    " * `skip_selfloops`: bool - Wether to skip self loops while reading the the edges iterator."
                 ],
                 "attrs": [],
                 "modifiers": "pub",
@@ -16895,10 +17263,10 @@
                     "",
                     " * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator of the edges.",
                     " * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> - Iterator of the nodes.",
-                    " * `directed`: bool - Whether the graph should be directed or undirected.",
-                    " * `ignore_duplicated_nodes`: bool - Whether to ignore duplicated nodes or to raise a proper exception.",
-                    " * `ignore_duplicated_edges`: bool - Whether to ignore duplicated edges or to raise a proper exception.",
-                    " * `skip_selfloops`: bool - Whether to skip self loops while reading the the edges iterator."
+                    " * `directed`: bool - Wether the graph should be directed or undirected.",
+                    " * `ignore_duplicated_nodes`: bool - Wether to ignore duplicated nodes or to raise a proper exception.",
+                    " * `ignore_duplicated_edges`: bool - Wether to ignore duplicated edges or to raise a proper exception.",
+                    " * `skip_selfloops`: bool - Wether to skip self loops while reading the the edges iterator."
                 ],
                 "attrs": [],
                 "modifiers": "pub",
@@ -17305,7 +17673,7 @@
                     ]
                 ],
                 "return_type": "Result<(Graph, Graph), String>",
-                "body": "if train_size <= 0.0 || train_size >= 1.0 {\n            return Err(String::from(\"Train rate must be strictly between 0 and 1.\"));\n        }\n\n        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {\n            Ok(Some(\n                self.get_edge_type_ids_from_edge_type_names(ets)?\n                    .into_iter()\n                    .collect::<HashSet<Option<EdgeTypeT>>>(),\n            ))\n        })?;\n\n        let tree = self\n            .random_spanning_arborescence_kruskal(random_state, &edge_type_ids, verbose)\n            .0;\n\n        let edge_factor = if self.is_directed() { 1 } else { 2 };\n        let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;\n        let mut valid_edges_number =\n            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;\n\n        if let Some(etis) = &edge_type_ids {\n            let selected_edges_number: EdgeT = etis\n                .iter()\n                .map(|et| self.get_unchecked_edge_count_from_edge_type_id(*et) as EdgeT)\n                .sum();\n            valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;\n        }\n\n        if tree.len() * edge_factor > train_edges_number {\n            return Err(format!(\n                concat!(\n                    \"The given spanning tree of the graph contains {} edges \",\n                    \"that is more than the required training edges number {}.\\n\",\n                    \"This makes impossible to create a validation set using \",\n                    \"{} edges.\\nIf possible, you should increase the \",\n                    \"train_size parameter which is currently equal to \",\n                    \"{}.\\nThe deny map, by itself, is requiring at least \",\n                    \"a train rate of {}.\"\n                ),\n                tree.len() * edge_factor,\n                train_edges_number,\n                valid_edges_number,\n                train_size,\n                (tree.len() * edge_factor) as f64 / train_edges_number as f64\n            ));\n        }\n\n        self.edge_holdout(\n            random_state,\n            valid_edges_number,\n            include_all_edge_types,\n            |_, src, dst, edge_type| {\n                let is_in_tree = tree.contains(&(src, dst));\n                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);\n                let correct_edge_type = edge_type_ids\n                    .as_ref()\n                    .map_or(true, |etis| etis.contains(&edge_type));\n                // The tree must not contain the provided edge ID\n                // And this is not a self-loop edge with degree 1\n                // And the edge type of the edge ID is within the provided edge type\n                !is_in_tree && !singleton_selfloop && correct_edge_type\n            },\n            verbose,\n            self.has_singletons(),\n            self.has_singletons_with_selfloops(),\n        )"
+                "body": "// If the user has requested to restrict the connected holdout to a \n        // limited set of edge types, the graph must have edge types.\n        if edge_types.is_some() {\n            self.must_have_edge_types()?;\n        }\n        if train_size <= 0.0 || train_size >= 1.0 {\n            return Err(String::from(\"Train rate must be strictly between 0 and 1.\"));\n        }\n\n        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {\n            Ok(Some(\n                self.get_edge_type_ids_from_edge_type_names(ets)?\n                    .into_iter()\n                    .collect::<HashSet<Option<EdgeTypeT>>>(),\n            ))\n        })?;\n\n        let tree = self\n            .random_spanning_arborescence_kruskal(random_state, &edge_type_ids, verbose)\n            .0;\n\n        let edge_factor = if self.is_directed() { 1 } else { 2 };\n        let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;\n        let mut valid_edges_number =\n            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;\n\n        // We need to check if the connected holdout can actually be built with\n        // the additional constraint of the edge types. \n        if let Some(etis) = &edge_type_ids {\n            let selected_edges_number: EdgeT = etis\n                .iter()\n                .map(|et| self.get_unchecked_edge_count_from_edge_type_id(*et) as EdgeT)\n                .sum();\n            valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;\n        }\n\n        if tree.len() * edge_factor > train_edges_number {\n            return Err(format!(\n                concat!(\n                    \"The given spanning tree of the graph contains {} edges \",\n                    \"that is more than the required training edges number {}.\\n\",\n                    \"This makes impossible to create a validation set using \",\n                    \"{} edges.\\nIf possible, you should increase the \",\n                    \"train_size parameter which is currently equal to \",\n                    \"{}.\\nThe deny map, by itself, is requiring at least \",\n                    \"a train rate of {}.\"\n                ),\n                tree.len() * edge_factor,\n                train_edges_number,\n                valid_edges_number,\n                train_size,\n                (tree.len() * edge_factor) as f64 / train_edges_number as f64\n            ));\n        }\n\n        self.edge_holdout(\n            random_state,\n            valid_edges_number,\n            include_all_edge_types,\n            |_, src, dst, edge_type| {\n                let is_in_tree = tree.contains(&(src, dst));\n                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);\n                let correct_edge_type = edge_type_ids\n                    .as_ref()\n                    .map_or(true, |etis| etis.contains(&edge_type));\n                // The tree must not contain the provided edge ID\n                // And this is not a self-loop edge with degree 1\n                // And the edge type of the edge ID is within the provided edge type\n                !is_in_tree && !singleton_selfloop && correct_edge_type\n            },\n            verbose,\n            self.has_singletons(),\n            self.has_singletons_with_selfloops(),\n        )"
             },
             {
                 "file": "holdouts.rs",
@@ -17364,7 +17732,7 @@
                     ]
                 ],
                 "return_type": "Result<(Graph, Graph), String>",
-                "body": "let (_, valid_edges_number) =\n            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;\n        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {\n            Ok(Some(\n                self.get_edge_type_ids_from_edge_type_names(ets)?\n                    .into_iter()\n                    .collect::<HashSet<Option<EdgeTypeT>>>(),\n            ))\n        })?;\n        if min_number_overlaps.is_some() {\n            self.must_be_multigraph()?;\n        }\n        self.edge_holdout(\n            random_state,\n            valid_edges_number,\n            include_all_edge_types,\n            |_, src, dst, edge_type| {\n                // If a list of edge types was provided and the edge type\n                // of the current edge is not within the provided list,\n                // we skip the current edge.\n                if !edge_type_ids\n                    .as_ref()\n                    .map_or(true, |etis| etis.contains(&edge_type))\n                {\n                    return false;\n                }\n                // If a minimum number of overlaps was provided and the current\n                // edge has not the required minimum amount of overlaps.\n                if let Some(mno) = min_number_overlaps {\n                    if self.get_unchecked_edge_degree_from_node_ids(src, dst) < mno {\n                        return false;\n                    }\n                }\n                // Otherwise we accept the provided edge for the validation set\n                true\n            },\n            verbose,\n            // Singletons may be generated during the holdouts process\n            true,\n            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph\n            self.has_selfloops(),\n        )"
+                "body": "// If the user has requested to restrict the connected holdout to a \n        // limited set of edge types, the graph must have edge types.\n        if edge_types.is_some() {\n            self.must_have_edge_types()?;\n        }\n        let (_, valid_edges_number) =\n            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;\n        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {\n            Ok(Some(\n                self.get_edge_type_ids_from_edge_type_names(ets)?\n                    .into_iter()\n                    .collect::<HashSet<Option<EdgeTypeT>>>(),\n            ))\n        })?;\n        if min_number_overlaps.is_some() {\n            self.must_be_multigraph()?;\n        }\n        self.edge_holdout(\n            random_state,\n            valid_edges_number,\n            include_all_edge_types,\n            |_, src, dst, edge_type| {\n                // If a list of edge types was provided and the edge type\n                // of the current edge is not within the provided list,\n                // we skip the current edge.\n                if !edge_type_ids\n                    .as_ref()\n                    .map_or(true, |etis| etis.contains(&edge_type))\n                {\n                    return false;\n                }\n                // If a minimum number of overlaps was provided and the current\n                // edge has not the required minimum amount of overlaps.\n                if let Some(mno) = min_number_overlaps {\n                    if self.get_unchecked_edge_degree_from_node_ids(src, dst) < mno {\n                        return false;\n                    }\n                }\n                // Otherwise we accept the provided edge for the validation set\n                true\n            },\n            verbose,\n            // Singletons may be generated during the holdouts process\n            true,\n            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph\n            self.has_selfloops(),\n        )"
             },
             {
                 "file": "holdouts.rs",

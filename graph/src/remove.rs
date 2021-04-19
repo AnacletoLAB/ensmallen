@@ -37,6 +37,9 @@ impl Graph {
     /// will need to call the method again if you want to get reed of also those
     /// newly created singleton nodes.
     ///
+    /// TODO: add support for min and max weight 
+    /// TOOD: rename the parameters
+    /// TODO: 
     pub fn remove(
         &self,
         allow_nodes_set: Option<HashSet<String>>,
