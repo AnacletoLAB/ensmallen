@@ -1100,70 +1100,67 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
 }
 
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    {
-        let without_edge_types = graph.remove_edge_types();
-        if let Some(we) = &without_edge_types.ok() {
-            validate_vocabularies(we);
-            assert_eq!(we.has_edge_types(), false);
-            assert_eq!(we.has_edge_weights(), graph.has_edge_weights());
-            assert_eq!(we.node_types, graph.node_types);
-            assert_eq!(
-                we.get_unique_edges_number(),
-                graph.get_unique_edges_number(),
-                concat!(
-                    "Number of unique edges does not match in graph without edge types.\n",
-                    "The report of the original graph is \n{:?}\n",
-                    "The report of the graph without edge types is \n{:?}",
-                ),
-                graph.textual_report(false),
-                we.textual_report(false),
-            );
-            assert_eq!(
-                we.get_unique_selfloop_number(),
-                graph.get_unique_selfloop_number(),
-                "Number of unique self loops does not match in graph without edge types."
-            );
-            assert_eq!(we.nodes, graph.nodes);
-        }
+    let without_edge_types = graph.remove_edge_types(verbose)?;
+    validate_vocabularies(&without_edge_types);
+    assert_eq!(without_edge_types.has_edge_types(), false);
+    assert_eq!(
+        without_edge_types.has_edge_weights(),
+        graph.has_edge_weights()
+    );
+    assert_eq!(without_edge_types.node_types, graph.node_types);
+    if !graph.is_multigraph() {
+        assert_eq!(
+            without_edge_types.get_unique_edges_number(),
+            graph.get_unique_edges_number(),
+            concat!(
+                "Number of unique edges does not match in graph without edge types.\n",
+                "The report of the original graph is \n{:?}\n",
+                "The report of the graph without edge types is \n{:?}",
+            ),
+            graph.textual_report(false),
+            without_edge_types.textual_report(false),
+        );
+        assert_eq!(
+            without_edge_types.get_unique_selfloop_number(),
+            graph.get_unique_selfloop_number(),
+            "Number of unique self loops does not match in graph without edge types."
+        );
     }
-    {
-        let without_node_types = graph.remove_node_types();
-        if let Some(wn) = &without_node_types.ok() {
-            validate_vocabularies(wn);
-            assert_eq!(wn.has_node_types(), false);
-            assert_eq!(graph.is_multigraph(), wn.is_multigraph(), "If the original graph is a multigraph, the removal of node types should not change that.");
-            assert_eq!(
-                wn.weights,
-                graph.weights,
-                concat!(
-                    "We expected the weights not to change when removig node types.",
-                    "\nThe report of the original graph is {:?}.",
-                    "\nThe report of the filtered graph is {:?}."
-                ),
-                graph.textual_report(false),
-                wn.textual_report(false)
-            );
-            assert_eq!(wn.has_selfloops(), graph.has_selfloops());
-            assert_eq!(wn.nodes, graph.nodes);
-        }
-    }
-    {
-        let without_weights = graph.remove_edge_weights();
-        if let Some(ww) = &without_weights.ok() {
-            validate_vocabularies(ww);
-            assert_eq!(ww.has_edge_weights(), false);
-            assert_eq!(ww.node_types, graph.node_types);
-            assert_eq!(ww.has_selfloops(), graph.has_selfloops());
-            assert_eq!(ww.nodes, graph.nodes);
-        }
-    }
+    assert_eq!(without_edge_types.nodes, graph.nodes);
+    let without_node_types = graph.remove_node_types()?;
+    validate_vocabularies(&without_node_types);
+    assert_eq!(without_node_types.has_node_types(), false);
+    assert_eq!(
+        graph.is_multigraph(),
+        without_node_types.is_multigraph(),
+        "If the original graph is a multigraph, the removal of node types should not change that."
+    );
+    assert_eq!(
+        without_node_types.weights,
+        graph.weights,
+        concat!(
+            "We expected the weights not to change when removig node types.",
+            "\nThe report of the original graph is {:?}.",
+            "\nThe report of the filtered graph is {:?}."
+        ),
+        graph.textual_report(false),
+        without_node_types.textual_report(false)
+    );
+    assert_eq!(without_node_types.has_selfloops(), graph.has_selfloops());
+    assert_eq!(without_node_types.nodes, graph.nodes);
+    let without_weights = graph.remove_edge_weights()?;
+    validate_vocabularies(&without_weights);
+    assert_eq!(without_weights.has_edge_weights(), false);
+    assert_eq!(without_weights.node_types, graph.node_types);
+    assert_eq!(without_weights.has_selfloops(), graph.has_selfloops());
+    assert_eq!(without_weights.nodes, graph.nodes);
 
     Ok(())
 }
 
-pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", verbose)?;
     assert!(!clone.is_multigraph());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
@@ -1172,11 +1169,13 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
         1,
         "Number of edge types of the graph is not 1."
     );
-    assert_eq!(
-        clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),
-        graph.get_directed_edges_number(),
-        "Number of edges with the unique edge type does not match number of edges in the graph."
-    );
+    if !graph.is_multigraph() {
+        assert_eq!(
+            clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),
+            graph.get_directed_edges_number(),
+            "Number of edges with the unique edge type does not match number of edges in the graph."
+        );
+    }
 
     assert_eq!(
         clone.get_node_types_number(),

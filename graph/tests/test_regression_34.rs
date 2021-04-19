@@ -36,6 +36,6 @@ fn test_regression_34() -> Result<(), String> {
         "Fuzz Graph", // Name of the graph
     )?;
 
-    assert!(graph.set_all_edge_types("test".to_string()).is_err());
+    graph.set_all_edge_types("test".to_string(), false).unwrap();
     Ok(())
 }

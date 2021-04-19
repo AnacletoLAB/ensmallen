@@ -27,9 +27,9 @@ impl Graph {
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
     pub fn set_inplace_all_edge_types<S: Into<String>>(
-        mut self,
+        &mut self,
         edge_type: S,
-    ) -> Result<Graph, String> {
+    ) -> Result<&Graph, String> {
         // If the graph does not have edges, it does not make sense to
         // try and set the edge types.
         self.must_have_edges()?;
@@ -43,8 +43,8 @@ impl Graph {
                 "of graphs will cause a multigraph to collapse to an homogeneous ",
                 "graph, leading to multiple undefined behaviours, such as loosing ",
                 "the parallel edges that would collapse to one: which one should we keep?\n",
-                "This is a strongly undefined behaviour that can be first handled with ",
-                "the remove method, that can let you remove edge types.\n",
+                "You can drop the parallell edges by calling the not INPLACE version ",
+                "of this method.\n",
                 "Consider that when using the remove method, you will still collapse ",
                 "the multigraph to an homogeneous graph, and it will keep the FIRST edge ",
                 "of any group of multigraph edges between two given nodes."
@@ -69,8 +69,15 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
-    pub fn set_all_edge_types<S: Into<String>>(&self, edge_type: S) -> Result<Graph, String> {
-        self.clone().set_inplace_all_edge_types(edge_type)
+    /// * `verbose`: bool - Whether to show a loading bar in the case of a multigraph.
+    pub fn set_all_edge_types<S: Into<String>>(
+        &self,
+        edge_type: S,
+        verbose: bool,
+    ) -> Result<Graph, String> {
+        let mut graph = self.drop_parallel_edges(verbose);
+        graph.set_inplace_all_edge_types(edge_type)?;
+        Ok(graph)
     }
 
     /// Replace all node types (if present) and set all the node to node_type.
@@ -78,9 +85,9 @@ impl Graph {
     /// # Arguments
     /// * `node_type`: S - The node type to assing to all the nodes.
     pub fn set_inplace_all_node_types<S: Into<String>>(
-        mut self,
+        &mut self,
         node_type: S,
-    ) -> Result<Graph, String> {
+    ) -> Result<&Graph, String> {
         self.must_have_nodes()?;
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
@@ -101,7 +108,9 @@ impl Graph {
     /// # Arguments
     /// * `node_type`: S - The node type to assing to all the nodes.
     pub fn set_all_node_types<S: Into<String>>(&self, node_type: S) -> Result<Graph, String> {
-        self.clone().set_inplace_all_node_types(node_type)
+        let mut graph = self.clone();
+        graph.set_inplace_all_node_types(node_type)?;
+        Ok(graph)
     }
 
     /// Remove given node type ID from all nodes.
@@ -116,7 +125,10 @@ impl Graph {
     /// * If the graph does not have node types.
     /// * If the given node type ID does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_id(mut self, node_type_id: NodeTypeT) -> Result<Graph, String> {
+    pub fn remove_inplace_node_type_id(
+        &mut self,
+        node_type_id: NodeTypeT,
+    ) -> Result<&Graph, String> {
         self.must_have_node_types()?;
         self.validate_node_type_id(Some(node_type_id))?;
         if let Some(node_types) = self.node_types.as_mut() {
@@ -148,12 +160,14 @@ impl Graph {
     /// * `edge_type_id`: EdgeTypeT - The edge type ID to remove.
     ///
     /// # Raises
-    /// *
+    /// * If the graph is a multigraph.
     /// * If the graph does not have edge types.
     /// * If the given edge type ID does not exists in the graph.
     ///
-    /// TODO!: add support for removal of edge types in the context of multigraphs when the user asks for removing an edge type.
-    pub fn remove_inplace_edge_type_id(&mut self, edge_type_id: EdgeTypeT) -> Result<&mut Graph, String> {
+    pub fn remove_inplace_edge_type_id(
+        &mut self,
+        edge_type_id: EdgeTypeT,
+    ) -> Result<&mut Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph().map_err(|_| {
             concat!(
@@ -162,8 +176,8 @@ impl Graph {
                 "of graphs will cause a multigraph to collapse to an homogeneous ",
                 "graph, leading to multiple undefined behaviours, such as loosing ",
                 "the parallel edges that would collapse to one: which one should we keep?\n",
-                "This is a strongly undefined behaviour that can be first handled with ",
-                "the remove method, that can let you remove edge types.\n",
+                "You can drop the parallell edges by calling the not INPLACE version ",
+                "of this method.\n",
                 "Consider that when using the remove method, you will still collapse ",
                 "the multigraph to an homogeneous graph, and it will keep the FIRST edge ",
                 "of any group of multigraph edges between two given nodes."
@@ -200,7 +214,10 @@ impl Graph {
     /// * If the graph does not have node types.
     /// * If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_name(self, node_type_name: &str) -> Result<Graph, String> {
+    pub fn remove_inplace_node_type_name(
+        &mut self,
+        node_type_name: &str,
+    ) -> Result<&Graph, String> {
         let node_type_id = self.get_node_type_id_from_node_type_name(node_type_name)?;
         self.remove_inplace_node_type_id(node_type_id)
     }
@@ -218,7 +235,9 @@ impl Graph {
     /// * If the given node type ID does not exists in the graph.
     ///
     pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Graph, String> {
-        self.clone().remove_inplace_node_type_id(node_type_id)
+        let mut graph = self.clone();
+        graph.remove_inplace_node_type_id(node_type_id)?;
+        Ok(graph)
     }
 
     /// Remove given node type name from all nodes.
@@ -234,7 +253,9 @@ impl Graph {
     /// * If the given node type name does not exists in the graph.
     ///
     pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph, String> {
-        self.clone().remove_inplace_node_type_name(node_type_name)
+        let mut graph = self.clone();
+        graph.remove_inplace_node_type_name(node_type_name)?;
+        Ok(graph)
     }
 
     /// Remove given edge type name from all edges.
@@ -249,7 +270,10 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> Result<&mut Graph, String> {
+    pub fn remove_inplace_edge_type_name(
+        &mut self,
+        edge_type_name: &str,
+    ) -> Result<&mut Graph, String> {
         let edge_type_id = self
             .get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
             .unwrap();
@@ -299,7 +323,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_inplace_node_types(mut self) -> Result<Graph, String> {
+    pub fn remove_inplace_node_types(&mut self) -> Result<&Graph, String> {
         self.must_have_node_types()?;
         self.node_types = None;
         Ok(self)
@@ -313,7 +337,9 @@ impl Graph {
     /// * If the graph does not have node types.
     ///
     pub fn remove_node_types(&self) -> Result<Graph, String> {
-        self.clone().remove_inplace_node_types()
+        let mut graph = self.clone();
+        graph.remove_inplace_node_types()?;
+        Ok(graph)
     }
 
     /// Remove edge types from the graph.
@@ -324,7 +350,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the graph is a multigraph.
     ///
-    pub fn remove_inplace_edge_types(mut self) -> Result<Graph, String> {
+    pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
         self.edge_types = None;
@@ -335,11 +361,16 @@ impl Graph {
     ///
     /// Note that the modification does not happen inplace.
     ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar in the case of a multigraph.
+    ///
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_edge_types(&self) -> Result<Graph, String> {
-        self.clone().remove_inplace_edge_types()
+    pub fn remove_edge_types(&self, verbose: bool) -> Result<Graph, String> {
+        let mut graph = self.drop_parallel_edges(verbose);
+        graph.remove_inplace_edge_types()?;
+        Ok(graph)
     }
 
     /// Remove edge weights from the graph.
@@ -349,7 +380,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge weights.
     ///
-    pub fn remove_inplace_edge_weights(mut self) -> Result<Graph, String> {
+    pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_weights()?;
         self.weights = None;
         Ok(self)
@@ -363,6 +394,8 @@ impl Graph {
     /// * If the graph does not have edge weights.
     ///
     pub fn remove_edge_weights(&self) -> Result<Graph, String> {
-        self.clone().remove_inplace_edge_weights()
+        let mut graph = self.clone();
+        graph.remove_inplace_edge_weights()?;
+        Ok(graph)
     }
 }

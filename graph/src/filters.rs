@@ -21,6 +21,7 @@ impl Graph {
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
     /// * `filter_singletons`: bool - Whether to filter out singletons.
     /// * `filter_selfloops`: bool - Whether to filter out selfloops.
+    /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
     /// * `verbose`: bool - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
@@ -54,6 +55,7 @@ impl Graph {
         max_edge_weight: Option<WeightT>,
         filter_singletons: bool,
         filter_selfloops: bool,
+        filter_parallel_edges: bool,
         verbose: bool,
     ) -> Graph {
         let pb_edges = get_loading_bar(
@@ -99,6 +101,7 @@ impl Graph {
                 edge_type_ids_to_filter.is_some(),
                 min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
                 filter_selfloops && self.has_selfloops(),
+                filter_parallel_edges && self.is_multigraph(),
             ]
             .iter()
             .any(|value| *value);
@@ -106,15 +109,19 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
+        let mut last_dst: Option<NodeT> = None;
+
+        let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
             NodeT,
             NodeT,
             Option<EdgeTypeT>,
             Option<WeightT>,
         )| {
-            edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
+            let result = edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
             edge_ids_to_filter.as_ref().map_or(true, |edge_ids| !edge_ids.contains(edge_id)) &&
+            // If parallel edges need to be filtered out.
+            (!filter_parallel_edges || last_dst.as_ref().map_or(true, |last_dst| *last_dst!=*dst)) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If the allow edge types set was provided
@@ -123,7 +130,9 @@ impl Graph {
             edge_node_ids_to_filter.as_ref().map_or(true, |edge_node_ids| !edge_node_ids.contains(&(*src, *dst))) &&
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
-            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
+            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
+            last_dst.replace(*dst);
+            result
         };
 
         let node_filter = |(node_id, _, node_type_ids, _): &(
@@ -263,6 +272,7 @@ impl Graph {
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
     /// * `filter_singletons`: bool - Whether to filter out singletons.
     /// * `filter_selfloops`: bool - Whether to filter out selfloops.
+    /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
     /// * `verbose`: bool - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
@@ -294,6 +304,7 @@ impl Graph {
         max_edge_weight: Option<WeightT>,
         filter_singletons: bool,
         filter_selfloops: bool,
+        filter_parallel_edges: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         Ok(self.filter_from_ids(
@@ -337,6 +348,7 @@ impl Graph {
             max_edge_weight,
             filter_singletons,
             filter_selfloops,
+            filter_parallel_edges,
             verbose,
         ))
     }
@@ -350,7 +362,7 @@ impl Graph {
     pub fn drop_singletons(&self, verbose: bool) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            true, false, verbose,
+            true, false, false, verbose,
         )
     }
 
@@ -361,7 +373,18 @@ impl Graph {
     pub fn drop_selfloops(&self, verbose: bool) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, true, verbose,
+            false, true, false, verbose,
+        )
+    }
+
+    /// Returns new graph without parallel edges.
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_parallel_edges(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+            false, false, true, verbose,
         )
     }
 }

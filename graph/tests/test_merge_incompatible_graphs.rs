@@ -10,7 +10,7 @@ fn test_merge_incompatible_graphs() -> Result<(), String> {
     assert!((&cora | &ppi.remove_edge_weights()?).is_ok());
     assert!((&ppi | &directed_ppi).is_err());
     assert!((&ppi | &ppi.remove_node_types()?).is_err());
-    assert!((&ppi | &ppi.remove_edge_types()?).is_err());
+    assert!((&ppi | &ppi.remove_edge_types(false)?).is_err());
     assert!((&ppi | &ppi.remove_edge_weights()?).is_err());
     Ok(())
 }
