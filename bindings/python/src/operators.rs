@@ -1,6 +1,9 @@
 use super::*;
+extern crate edit_distance;
+use edit_distance::edit_distance;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
+use pyo3::types::PyList;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
@@ -29,6 +32,7 @@ impl PyNumberProtocol for EnsmallenGraph {
     }
 }
 
+
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __str__(&'p self) -> PyResult<String> {
@@ -41,6 +45,42 @@ impl PyObjectProtocol for EnsmallenGraph {
     fn __hash__(&'p self) -> PyResult<isize> {
         Ok(self.hash() as isize)
     }
+
+    /* TO DEBUG
+    fn __getattr__(&'p self, name: String) -> PyResult<()> {
+        println!("{:?}", self);
+        let gil = Python::acquire_gil();
+        let py = gil.python();
+        let attrs = unsafe { py.from_owned_ptr::<PyList>(pyo3::ffi::PyObject_Dir(self as *const EnsmallenGraph as *mut EnsmallenGraph as _)) };
+        println!("{:?}", attrs);
+
+        let mut min = usize::MAX;
+        let mut closest = "METHOD NOT FOUND".to_string();
+
+        for attr in attrs.iter() {
+            let attr_name = attr.extract::<String>().map_err(|_| {
+                PyTypeError::new_err(format!(
+                    "The value passed {} cannot be casted as from {} to String",
+                    attr,
+                    attr.get_type().name().unwrap(),
+                ))
+            })?;
+            let distance = edit_distance(&name, &attr_name);
+
+            if distance < min {
+                min = distance;
+                closest = attr_name;
+            }
+        };
+
+        Err(PyTypeError::new_err(
+            format!(
+                "The method or attribute {} does not exists, did you mean {}?",
+                name, closest
+            )
+        ))
+    }
+    */
 }
 
 #[pymethods]
