@@ -358,8 +358,42 @@ impl Graph {
             .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
 
+    /// Return the unique edge type IDs of the graph edges.
+    ///
+    /// # Example
+    /// To retrieve the unique edge type IDs of the graph edges you can use:
+    /// ```rust
+    /// # let graph_with_edge_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_edge_types = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// assert!(graph_with_edge_types.get_unique_edge_type_ids().is_ok());
+    /// assert!(graph_without_edge_types.get_unique_edge_type_ids().is_err());
+    /// println!("The graph edge types are {:?}", graph_with_edge_types.get_unique_edge_type_ids());
+    /// ```
+    ///
+    pub fn get_unique_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>, String> {
+        self.must_have_edge_types()
+            .map(|_| self.iter_edge_type_ids().collect())
+    }
+
     /// Return the edge types names.
-    pub fn get_edge_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>, String> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .iter()
+                        .map(|edge_type_id| {
+                            self.get_unchecked_edge_type_name_from_edge_type_id(*edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the edge types names.
+    pub fn get_unique_edge_type_names(&self) -> Result<Vec<String>, String> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
                 .as_ref()
@@ -431,8 +465,8 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
-        self.must_have_node_types()?;
-        Ok(self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
+        self.must_have_node_types()
+            .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
     /// Return the node types names.
@@ -447,7 +481,44 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_names());
     /// ```
     ///
-    pub fn get_node_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_node_type_names(&self) -> Result<Vec<Option<Vec<String>>>, String> {
+        self.must_have_node_types().map(|_| {
+            self.iter_node_ids()
+                .map(|node_id| self.get_unchecked_node_type_names_from_node_id(node_id))
+                .collect::<Vec<Option<Vec<String>>>>()
+        })
+    }
+
+    /// Return the unique node type IDs of the graph nodes.
+    ///
+    /// # Example
+    /// To retrieve the unique node type IDs of the graph nodes you can use:
+    /// ```rust
+    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);
+    /// assert!(graph_with_node_types.get_unique_node_type_ids().is_ok());
+    /// assert!(graph_without_node_types.get_unique_node_type_ids().is_err());
+    /// println!("The graph node types are {:?}", graph_with_node_types.get_unique_node_type_ids());
+    /// ```
+    ///
+    pub fn get_unique_node_type_ids(&self) -> Result<Vec<NodeTypeT>, String> {
+        self.must_have_node_types()
+            .map(|_| self.iter_node_type_ids().collect())
+    }
+
+    /// Return the unique node types names.
+    ///
+    /// # Example
+    /// To retrieve the unique node type names of the graph nodes you can use:
+    /// ```rust
+    /// # let graph_with_node_types = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// # let graph_without_node_types = graph::test_utilities::load_ppi(false, true, true, true, false, false);
+    /// assert!(graph_with_node_types.get_unique_node_type_names().is_ok());
+    /// assert!(graph_without_node_types.get_unique_node_type_names().is_err());
+    /// println!("The graph node types are {:?}", graph_with_node_types.get_unique_node_type_names());
+    /// ```
+    ///
+    pub fn get_unique_node_type_names(&self) -> Result<Vec<String>, String> {
         self.must_have_node_types().map(|_| {
             self.node_types
                 .as_ref()

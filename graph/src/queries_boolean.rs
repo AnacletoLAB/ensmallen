@@ -165,7 +165,7 @@ impl Graph {
         match self.get_node_id_from_node_name(node_name) {
             Err(_) => false,
             Ok(node_id) => {
-                let our_node_types = self.get_node_type_name_from_node_id(node_id);
+                let our_node_types = self.get_node_type_names_from_node_id(node_id);
                 match (our_node_types, node_type_name) {
                     (Err(_), None) => true,
                     (Ok(None), None) => true,

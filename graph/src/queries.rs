@@ -551,18 +551,29 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose node types are to be returned.
-    pub fn get_node_type_name_from_node_id(
+    pub fn get_unchecked_node_type_names_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Option<Vec<String>> {
+        self.get_unchecked_node_type_id_from_node_id(node_id)
+            .map(|node_type_ids| {
+                self.get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
+            })
+    }
+
+    /// Returns result of option with the node type of the given node id.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose node types are to be returned.
+    pub fn get_node_type_names_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Result<Option<Vec<String>>, String> {
         self.must_have_node_types()?;
         Ok(self
             .get_node_type_id_from_node_id(node_id)?
-            .and_then(|node_type_ids| {
-                // This unwrap cannot fail because it is surely a vector
-                // of node type IDs from the current graph instance.
-                self.get_node_type_names_from_node_type_ids(node_type_ids)
-                    .ok()
+            .map(|node_type_ids| {
+                self.get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
             }))
     }
 
@@ -865,7 +876,7 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> Result<Option<Vec<String>>, String> {
-        self.get_node_type_name_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        self.get_node_type_names_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
     /// Return number of edges with given edge type ID.
@@ -958,7 +969,7 @@ impl Graph {
                                 "The supported node types are {:?}."
                             ),
                             node_type_name,
-                            self.get_node_type_names()
+                            self.get_unique_node_type_names()
                         )
                     )
                     },
@@ -1366,14 +1377,13 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_ids`: Vec<NodeTypeT> - Id of the node type.
-    pub fn get_node_type_names_from_node_type_ids(
+    pub fn get_unchecked_node_type_names_from_node_type_ids(
         &self,
         node_type_ids: Vec<NodeTypeT>,
-    ) -> Result<Vec<String>, String> {
-        self.must_have_node_types()?;
+    ) -> Vec<String> {
         self.node_types
             .as_ref()
-            .map(|nts| nts.translate_vector(node_type_ids))
+            .map(|nts| nts.unchecked_translate_vector(node_type_ids))
             .unwrap()
     }
 }

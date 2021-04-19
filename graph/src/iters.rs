@@ -12,9 +12,19 @@ use rayon::prelude::*;
 /// * `par_iter_(.+)`
 /// * `par_iter_unchecked_(.+)`
 impl Graph {
-    /// Return iterator on the node of the graph.
+    /// Return iterator on the node IDs of the graph.
     pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
         0..self.get_nodes_number()
+    }
+
+    /// Return iterator on the node type IDs of the graph.
+    pub fn iter_node_type_ids(&self) -> impl Iterator<Item = NodeTypeT> + '_ {
+        0..self.get_node_types_number()
+    }
+
+    /// Return iterator on the edge type IDs of the graph.
+    pub fn iter_edge_type_ids(&self) -> impl Iterator<Item = EdgeTypeT> + '_ {
+        0..self.get_edge_types_number()
     }
 
     /// Return iterator on the node of the graph.
@@ -179,8 +189,7 @@ impl Graph {
                     node_id,
                     self.nodes.unchecked_translate(node_id),
                     node_types,
-                    self.get_node_type_name_from_node_id(node_id)
-                        .unwrap_or(None),
+                    self.get_unchecked_node_type_names_from_node_id(node_id),
                 )
             })
     }
