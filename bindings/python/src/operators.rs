@@ -45,14 +45,18 @@ impl PyObjectProtocol for EnsmallenGraph {
     fn __hash__(&'p self) -> PyResult<isize> {
         Ok(self.hash() as isize)
     }
-
-    /* TO DEBUG
+    /*
     fn __getattr__(&'p self, name: String) -> PyResult<()> {
-        println!("{:?}", self);
         let gil = Python::acquire_gil();
         let py = gil.python();
-        let attrs = unsafe { py.from_owned_ptr::<PyList>(pyo3::ffi::PyObject_Dir(self as *const EnsmallenGraph as *mut EnsmallenGraph as _)) };
-        println!("{:?}", attrs);
+
+        // BLACK MAGIC START
+        let attrs = unsafe {py.from_owned_ptr::<PyList>(pyo3::ffi::PyObject_Dir(
+            ((self as *const EnsmallenGraph as usize) - 24) as _
+        ))};
+        // BLACK MAGIC END
+
+        println!("VIVO");
 
         let mut min = usize::MAX;
         let mut closest = "METHOD NOT FOUND".to_string();
@@ -82,6 +86,7 @@ impl PyObjectProtocol for EnsmallenGraph {
     }
     */
 }
+
 
 #[pymethods]
 impl EnsmallenGraph {

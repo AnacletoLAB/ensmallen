@@ -1830,12 +1830,12 @@
         "extra_headers": []
     },
     "set_csv_is_correct": {
-        "file": "edge_file_reader.rs",
+        "file": "node_file_reader.rs",
         "function": "set_csv_is_correct",
         "errors": [
             {
                 "doc_line": 4,
-                "msg": "The argument line '* csv_is_correct: Option<bool> - Whether you pinky swear the edge list is correct.' (doc_line: 4) is not in the standard format."
+                "msg": "The argument line '* csv_is_correct: Option<bool> - Whether you pinky swear the node list is correct.' (doc_line: 4) is not in the standard format."
             },
             {
                 "doc_line": "~",
@@ -2429,14 +2429,14 @@
                 },
                 {
                     "name": "edge_type_name",
-                    "type": "Option<&String>",
+                    "type": "Option<&str>",
                     "desc": "The (optional) edge type name"
                 }
             ]
         },
         "example": {
             "desc": "To check if an edge with type in the graph you can use:\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);\nlet edge_type = \"red\".to_string();\nlet unexistent_edge_type = \"NonExistent\".to_string();\nassert!(graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", Some(&edge_type)));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", Some(&unexistent_edge_type)));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", Some(&edge_type)));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", Some(&unexistent_edge_type)));\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);\nlet edge_type = Some(\"red\");\nlet unexistent_edge_type = Some(\"NonExistent\");\nassert!(graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", edge_type));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"ENSP00000432568\", unexistent_edge_type));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", edge_type));\nassert!(!graph.has_edge_from_node_names_and_edge_type_name(\"ENSP00000000233\", \"NonExistent\", unexistent_edge_type));\n"
         },
         "extra_headers": []
     },
@@ -2812,25 +2812,6 @@
     "test_embiggen_preprocessing": {
         "file": "test_utilities.rs",
         "function": "test_embiggen_preprocessing",
-        "errors": [
-            {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
-            }
-        ],
-        "args": {
-            "args": []
-        },
-        "example": {},
-        "extra_headers": []
-    },
-    "test_graph_filter": {
-        "file": "test_utilities.rs",
-        "function": "test_graph_filter",
         "errors": [
             {
                 "doc_line": 0,
@@ -4045,14 +4026,14 @@
                 },
                 {
                     "name": "edge_type",
-                    "type": "Option<&String>",
+                    "type": "Option<&str>",
                     "desc": "The edge type name of the edge"
                 }
             ]
         },
         "example": {
             "desc": "To get the weight of a given `src` and `dst` and `edge_type` you can run:\n",
-            "content": "```rust# let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);\nlet src = \"ENSP00000000233\";\nlet dst = \"ENSP00000432568\";\nlet edge_type = Some(\"red\".to_string());\nassert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type.as_ref()).is_ok());\n"
+            "content": "```rust# let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);\nlet src = \"ENSP00000000233\";\nlet dst = \"ENSP00000432568\";\nlet edge_type = Some(\"red\");\nassert!(weighted_graph.get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type).is_ok());\n"
         },
         "extra_headers": []
     },
@@ -4123,8 +4104,8 @@
         "function": "get_node_id_from_node_name",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": 5,
+                "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
@@ -4137,7 +4118,94 @@
             ]
         },
         "example": {},
-        "extra_headers": []
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* When the given node name does not exists in the current graph.\n"
+            }
+        ]
+    },
+    "get_node_ids_from_node_names": {
+        "file": "queries.rs",
+        "function": "get_node_ids_from_node_names",
+        "errors": [
+            {
+                "doc_line": 3,
+                "msg": "The argument 'node_name' does not exists in the current method. The available args are ['node_names']."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_names'."
+            },
+            {
+                "doc_line": 5,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* When any of the given node name does not exists in the current graph.\n"
+            }
+        ]
+    },
+    "get_edge_node_ids_from_edge_node_names": {
+        "file": "queries.rs",
+        "function": "get_edge_node_ids_from_edge_node_names",
+        "errors": [
+            {
+                "doc_line": 3,
+                "msg": "The argument 'edge_node_name' does not exists in the current method. The available args are ['edge_node_names']."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_node_names'."
+            },
+            {
+                "doc_line": 5,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* When any of the given node name does not exists in the current graph.\n"
+            }
+        ]
+    },
+    "get_edge_node_names_from_edge_node_ids": {
+        "file": "queries.rs",
+        "function": "get_edge_node_names_from_edge_node_ids",
+        "errors": [
+            {
+                "doc_line": 5,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_node_ids",
+                    "type": "Vec<(NodeT, NodeT)>",
+                    "desc": "The node names whose node names is to be returned"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* When any of the given node IDs does not exists in the current graph.\n"
+            }
+        ]
     },
     "get_node_type_id_from_node_name": {
         "file": "queries.rs",
@@ -4508,7 +4576,7 @@
                 },
                 {
                     "name": "edge_type_name",
-                    "type": "Option<&String>",
+                    "type": "Option<&str>",
                     "desc": "Edge type name"
                 }
             ]
@@ -4557,6 +4625,32 @@
         },
         "example": {},
         "extra_headers": []
+    },
+    "get_multiple_node_type_ids_from_node_type_names": {
+        "file": "queries.rs",
+        "function": "get_multiple_node_type_ids_from_node_type_names",
+        "errors": [
+            {
+                "doc_line": 6,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_names",
+                    "type": "Vec<Option<Vec<&str>>>",
+                    "desc": "Vector of node types to be converted"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n* If any of the given node type names do not exists in the graph.\n"
+            }
+        ]
     },
     "get_unchecked_minmax_edge_ids_from_source_node_id": {
         "file": "queries.rs",
@@ -4642,9 +4736,237 @@
         "example": {},
         "extra_headers": []
     },
-    "filter": {
+    "filter_from_ids": {
         "file": "filters.rs",
-        "function": "filter",
+        "function": "filter_from_ids",
+        "errors": [
+            {
+                "doc_line": 22,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_ids_to_keep",
+                    "type": "Option<Vec<NodeT>>",
+                    "desc": "List of node IDs to keep during filtering"
+                },
+                {
+                    "name": "node_ids_to_filter",
+                    "type": "Option<Vec<NodeT>>",
+                    "desc": "List of node IDs to remove during filtering"
+                },
+                {
+                    "name": "node_type_ids_to_keep",
+                    "type": "Option<Vec<Option<Vec<NodeTypeT>>>>",
+                    "desc": "List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided"
+                },
+                {
+                    "name": "node_type_ids_to_filter",
+                    "type": "Option<Vec<Option<Vec<NodeTypeT>>>>",
+                    "desc": "List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided"
+                },
+                {
+                    "name": "node_type_id_to_keep",
+                    "type": "Option<Vec<Option<NodeTypeT>>>",
+                    "desc": "List of node type IDs to keep during filtering. Any of node types must match with one of the node types given"
+                },
+                {
+                    "name": "node_type_id_to_filter",
+                    "type": "Option<Vec<Option<NodeTypeT>>>",
+                    "desc": "List of node type IDs to remove during filtering. Any of node types must match with one of the node types given"
+                },
+                {
+                    "name": "edge_ids_to_keep",
+                    "type": "Option<Vec<EdgeT>>",
+                    "desc": "List of edge IDs to keep during filtering"
+                },
+                {
+                    "name": "edge_ids_to_filter",
+                    "type": "Option<Vec<EdgeT>>",
+                    "desc": "List of edge IDs to remove during filtering"
+                },
+                {
+                    "name": "edge_node_ids_to_keep",
+                    "type": "Option<Vec<(NodeT, NodeT)>>",
+                    "desc": "List of tuple of node IDs to keep during filtering"
+                },
+                {
+                    "name": "edge_node_ids_to_filter",
+                    "type": "Option<Vec<(NodeT, NodeT)>>",
+                    "desc": "List of tuple of node IDs to remove during filtering"
+                },
+                {
+                    "name": "edge_type_ids_to_keep",
+                    "type": "Option<Vec<Option<EdgeTypeT>>>",
+                    "desc": "List of edge type IDs to keep during filtering"
+                },
+                {
+                    "name": "edge_type_ids_to_filter",
+                    "type": "Option<Vec<Option<EdgeTypeT>>>",
+                    "desc": "List of edge type IDs to remove during filtering"
+                },
+                {
+                    "name": "min_edge_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "Minimum edge weight. Values lower than this are removed"
+                },
+                {
+                    "name": "max_edge_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "Maximum edge weight. Values higher than this are removed"
+                },
+                {
+                    "name": "filter_singletons",
+                    "type": "bool",
+                    "desc": "Whether to filter out singletons"
+                },
+                {
+                    "name": "filter_selfloops",
+                    "type": "bool",
+                    "desc": "Whether to filter out selfloops"
+                },
+                {
+                    "name": "filter_parallel_edges",
+                    "type": "bool",
+                    "desc": "Whether to filter out parallel edges"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show loading bar while building the graphs"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "# Implementation details",
+                "content": ""
+            },
+            {
+                "name": "## How the collapse of multigraphs is handled",
+                "content": "We keep only the first edge when a multigraph is collapsed while removing\nthe edge types, in the order provided when first reading from the CSV file.\n"
+            },
+            {
+                "name": "## Generation of new singleton nodes when removing edges",
+                "content": "Some of the remove operations allowed in this method might lead to the\ngeneration of new singleton nodes that will not be handled within this\nfunction call even if you provide the flag singletons to true, but you\nwill need to call the method again if you want to get reed of also those\nnewly created singleton nodes.\n"
+            }
+        ]
+    },
+    "filter_from_names": {
+        "file": "filters.rs",
+        "function": "filter_from_names",
+        "errors": [
+            {
+                "doc_line": 20,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_names_to_keep",
+                    "type": "Option<Vec<&str>>",
+                    "desc": "List of node names to keep during filtering"
+                },
+                {
+                    "name": "node_names_to_filter",
+                    "type": "Option<Vec<&str>>",
+                    "desc": "List of node names to remove during filtering"
+                },
+                {
+                    "name": "node_type_names_to_keep",
+                    "type": "Option<Vec<Option<Vec<&str>>>>",
+                    "desc": "List of node type names to keep during filtering. The node types must match entirely the given node types vector provided"
+                },
+                {
+                    "name": "node_type_names_to_filter",
+                    "type": "Option<Vec<Option<Vec<&str>>>>",
+                    "desc": "List of node type names to remove during filtering. The node types must match entirely the given node types vector provided"
+                },
+                {
+                    "name": "node_type_name_to_keep",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "List of node type name to keep during filtering. Any of node types must match with one of the node types given"
+                },
+                {
+                    "name": "node_type_name_to_filter",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "List of node type name to remove during filtering. Any of node types must match with one of the node types given"
+                },
+                {
+                    "name": "edge_node_names_to_keep",
+                    "type": "Option<Vec<(&str, &str)>>",
+                    "desc": "List of tuple of node names to keep during filtering"
+                },
+                {
+                    "name": "edge_node_names_to_filter",
+                    "type": "Option<Vec<(&str, &str)>>",
+                    "desc": "List of tuple of node names to remove during filtering"
+                },
+                {
+                    "name": "edge_type_names_to_keep",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "List of edge type names to keep during filtering"
+                },
+                {
+                    "name": "edge_type_names_to_filter",
+                    "type": "Option<Vec<Option<String>>>",
+                    "desc": "List of edge type names to remove during filtering"
+                },
+                {
+                    "name": "min_edge_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "Minimum edge weight. Values lower than this are removed"
+                },
+                {
+                    "name": "max_edge_weight",
+                    "type": "Option<WeightT>",
+                    "desc": "Maximum edge weight. Values higher than this are removed"
+                },
+                {
+                    "name": "filter_singletons",
+                    "type": "bool",
+                    "desc": "Whether to filter out singletons"
+                },
+                {
+                    "name": "filter_selfloops",
+                    "type": "bool",
+                    "desc": "Whether to filter out selfloops"
+                },
+                {
+                    "name": "filter_parallel_edges",
+                    "type": "bool",
+                    "desc": "Whether to filter out parallel edges"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show loading bar while building the graphs"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "# Implementation details",
+                "content": ""
+            },
+            {
+                "name": "## How the collapse of multigraphs is handled",
+                "content": "We keep only the first edge when a multigraph is collapsed while removing\nthe edge types, in the order provided when first reading from the CSV file.\n"
+            },
+            {
+                "name": "## Generation of new singleton nodes when removing edges",
+                "content": "Some of the remove operations allowed in this method might lead to the\ngeneration of new singleton nodes that will not be handled within this\nfunction call even if you provide the flag singletons to true, but you\nwill need to call the method again if you want to get reed of also those\nnewly created singleton nodes.\n"
+            }
+        ]
+    },
+    "drop_singletons": {
+        "file": "filters.rs",
+        "function": "drop_singletons",
         "errors": [
             {
                 "doc_line": 0,
@@ -4654,34 +4976,51 @@
         "args": {
             "args": [
                 {
-                    "name": "node_names",
-                    "type": "Option<Vec<String>>",
-                    "desc": "The node names to keep"
-                },
-                {
-                    "name": "node_types",
-                    "type": "Option<Vec<Option<String>>>",
-                    "desc": "The node types to keep"
-                },
-                {
-                    "name": "edge_types",
-                    "type": "Option<Vec<Option<String>>>",
-                    "desc": "The edge types to keep"
-                },
-                {
-                    "name": "min_weight",
-                    "type": "Option<WeightT>",
-                    "desc": "Minimum weight to use to filter edges"
-                },
-                {
-                    "name": "max_weight",
-                    "type": "Option<WeightT>",
-                    "desc": "Maximum weight to use to filter edges"
-                },
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar while building the graph"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": []
+    },
+    "drop_selfloops": {
+        "file": "filters.rs",
+        "function": "drop_selfloops",
+        "errors": [
+            {
+                "doc_line": 0,
+                "msg": "Missing Example"
+            }
+        ],
+        "args": {
+            "args": [
                 {
                     "name": "verbose",
                     "type": "bool",
-                    "desc": "Whether to show the loading bar"
+                    "desc": "Whether to show a loading bar while building the graph"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": []
+    },
+    "drop_parallel_edges": {
+        "file": "filters.rs",
+        "function": "drop_parallel_edges",
+        "errors": [
+            {
+                "doc_line": 0,
+                "msg": "Missing Example"
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar while building the graph"
                 }
             ]
         },
@@ -4880,6 +5219,24 @@
         },
         "extra_headers": []
     },
+    "must_not_be_multigraph": {
+        "file": "validators.rs",
+        "function": "must_not_be_multigraph",
+        "errors": [
+            {
+                "doc_line": 9,
+                "msg": "In the example there isn't the current method!!!!"
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "desc": "In order to validate a graph instance, you can use:\n",
+            "content": "```rust# let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);\n# let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);\nassert!(multigraph.must_be_multigraph().is_ok());\nassert!(homogeneous.must_be_multigraph().is_err());\n"
+        },
+        "extra_headers": []
+    },
     "must_have_edge_weights": {
         "file": "validators.rs",
         "function": "must_have_edge_weights",
@@ -4915,7 +5272,7 @@
         },
         "example": {
             "desc": "In order to validate a graph instance, you can use:\n",
-            "content": "```rust# let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false).unwrap();\n# let graph_without_nodes = graph::test_utilities::load_empty_graph(false);\nassert!(graph_with_nodes.must_have_nodes().is_ok());\nassert!(graph_without_nodes.must_have_nodes().is_err());\n"
+            "content": "```rust# let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false);\n# let graph_without_nodes = graph::test_utilities::load_empty_graph(false);\nassert!(graph_with_nodes.must_have_nodes().is_ok());\nassert!(graph_without_nodes.must_have_nodes().is_err());\n"
         },
         "extra_headers": []
     },
@@ -5068,105 +5425,6 @@
             }
         ]
     },
-    "remove": {
-        "file": "remove.rs",
-        "function": "remove",
-        "errors": [
-            {
-                "doc_line": 18,
-                "msg": "The example section is missing or in the wrong order."
-            }
-        ],
-        "args": {
-            "args": [
-                {
-                    "name": "allow_nodes_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of nodes names to keep"
-                },
-                {
-                    "name": "deny_nodes_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of nodes names to remove"
-                },
-                {
-                    "name": "allow_node_types_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of node type names to keep"
-                },
-                {
-                    "name": "deny_node_types_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of node type names to remove"
-                },
-                {
-                    "name": "allow_edge_set",
-                    "type": "Option<HashSet<EdgeT>>",
-                    "desc": "Optional set of numeric edge IDs to keep"
-                },
-                {
-                    "name": "deny_edge_set",
-                    "type": "Option<HashSet<EdgeT>>",
-                    "desc": "Optional set of numeric edge IDs to remove"
-                },
-                {
-                    "name": "allow_edge_types_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of edge type names to keep"
-                },
-                {
-                    "name": "deny_edge_types_set",
-                    "type": "Option<HashSet<String>>",
-                    "desc": "Optional set of edge type names to remove"
-                },
-                {
-                    "name": "weights",
-                    "type": "bool",
-                    "desc": "Whether to remove the weights"
-                },
-                {
-                    "name": "node_types",
-                    "type": "bool",
-                    "desc": "Whether to remove the node types"
-                },
-                {
-                    "name": "edge_types",
-                    "type": "bool",
-                    "desc": "Whether to remove the edge types"
-                },
-                {
-                    "name": "singletons",
-                    "type": "bool",
-                    "desc": "Whether to remove the singleton nodes"
-                },
-                {
-                    "name": "selfloops",
-                    "type": "bool",
-                    "desc": "Whether to remove edges with self-loops"
-                },
-                {
-                    "name": "verbose",
-                    "type": "bool",
-                    "desc": "Whether to show a loading bar while building the graph"
-                }
-            ]
-        },
-        "example": {},
-        "extra_headers": [
-            {
-                "name": "# Implementation details",
-                "content": ""
-            },
-            {
-                "name": "## How the collapse of multigraphs is handled",
-                "content": "We keep only the first edge when a multigraph is collapsed while removing\nthe edge types, in the order provided when first reading from the CSV file.\n"
-            },
-            {
-                "name": "## Generation of new singleton nodes when removeping edges",
-                "content": "Some of the remove operations allowed in this method might lead to the\ngeneration of new singleton nodes that will not be handled within this\nfunction call even if you provide the flag singletons to true, but you\nwill need to call the method again if you want to get reed of also those\nnewly created singleton nodes.\n"
-            }
-        ]
-    },
     "remove_components": {
         "file": "remove.rs",
         "function": "remove_components",
@@ -5270,6 +5528,27 @@
         "example": {},
         "extra_headers": []
     },
+    "set_inplace_all_edge_types": {
+        "file": "setters.rs",
+        "function": "set_inplace_all_edge_types",
+        "errors": [
+            {
+                "doc_line": 0,
+                "msg": "Missing Example"
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type",
+                    "type": "S",
+                    "desc": "The edge type to assing to all the edges"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": []
+    },
     "set_all_edge_types": {
         "file": "setters.rs",
         "function": "set_all_edge_types",
@@ -5285,6 +5564,32 @@
                     "name": "edge_type",
                     "type": "S",
                     "desc": "The edge type to assing to all the edges"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar in the case of a multigraph"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": []
+    },
+    "set_inplace_all_node_types": {
+        "file": "setters.rs",
+        "function": "set_inplace_all_node_types",
+        "errors": [
+            {
+                "doc_line": 0,
+                "msg": "Missing Example"
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type",
+                    "type": "S",
+                    "desc": "The node type to assing to all the nodes"
                 }
             ]
         },
@@ -5311,6 +5616,340 @@
         },
         "example": {},
         "extra_headers": []
+    },
+    "remove_inplace_node_type_id": {
+        "file": "setters.rs",
+        "function": "remove_inplace_node_type_id",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_id",
+                    "type": "NodeTypeT",
+                    "desc": "The node type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n* If the given node type ID does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_inplace_edge_type_id": {
+        "file": "setters.rs",
+        "function": "remove_inplace_edge_type_id",
+        "errors": [
+            {
+                "doc_line": 5,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type_id",
+                    "type": "EdgeTypeT",
+                    "desc": "The edge type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph is a multigraph.\n* If the graph does not have edge types.\n* If the given edge type ID does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_inplace_node_type_name": {
+        "file": "setters.rs",
+        "function": "remove_inplace_node_type_name",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_name",
+                    "type": "&str",
+                    "desc": "The node type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n* If the given node type name does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_node_type_id": {
+        "file": "setters.rs",
+        "function": "remove_node_type_id",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_id",
+                    "type": "NodeTypeT",
+                    "desc": "The node type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n* If the given node type ID does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_node_type_name": {
+        "file": "setters.rs",
+        "function": "remove_node_type_name",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "node_type_name",
+                    "type": "&str",
+                    "desc": "The node type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n* If the given node type name does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_inplace_edge_type_name": {
+        "file": "setters.rs",
+        "function": "remove_inplace_edge_type_name",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type_name",
+                    "type": "&str",
+                    "desc": "The edge type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge types.\n* If the given edge type name does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_edge_type_id": {
+        "file": "setters.rs",
+        "function": "remove_edge_type_id",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type_id",
+                    "type": "EdgeTypeT",
+                    "desc": "The edge type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge types.\n* If the given edge type ID does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_edge_type_name": {
+        "file": "setters.rs",
+        "function": "remove_edge_type_name",
+        "errors": [
+            {
+                "doc_line": 8,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "edge_type_name",
+                    "type": "&str",
+                    "desc": "The edge type ID to remove"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge types.\n* If the given edge type name does not exists in the graph.\n"
+            }
+        ]
+    },
+    "remove_inplace_node_types": {
+        "file": "setters.rs",
+        "function": "remove_inplace_node_types",
+        "errors": [
+            {
+                "doc_line": 4,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n"
+            }
+        ]
+    },
+    "remove_node_types": {
+        "file": "setters.rs",
+        "function": "remove_node_types",
+        "errors": [
+            {
+                "doc_line": 4,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have node types.\n"
+            }
+        ]
+    },
+    "remove_inplace_edge_types": {
+        "file": "setters.rs",
+        "function": "remove_inplace_edge_types",
+        "errors": [
+            {
+                "doc_line": 4,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge types.\n* If the graph is a multigraph.\n"
+            }
+        ]
+    },
+    "remove_edge_types": {
+        "file": "setters.rs",
+        "function": "remove_edge_types",
+        "errors": [
+            {
+                "doc_line": 7,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show a loading bar in the case of a multigraph"
+                }
+            ]
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge types.\n"
+            }
+        ]
+    },
+    "remove_inplace_edge_weights": {
+        "file": "setters.rs",
+        "function": "remove_inplace_edge_weights",
+        "errors": [
+            {
+                "doc_line": 4,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge weights.\n"
+            }
+        ]
+    },
+    "remove_edge_weights": {
+        "file": "setters.rs",
+        "function": "remove_edge_weights",
+        "errors": [
+            {
+                "doc_line": 4,
+                "msg": "The example section is missing or in the wrong order."
+            }
+        ],
+        "args": {
+            "args": []
+        },
+        "example": {},
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the graph does not have edge weights.\n"
+            }
+        ]
     },
     "update_return_weight_transition": {
         "file": "walks.rs",
@@ -5536,15 +6175,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5552,7 +6183,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": 0,
@@ -5579,11 +6218,27 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'previous_destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'src'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5595,27 +6250,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'previous_destinations'."
+                "msg": "Missing the documentation for the argument 'edge_id'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'src'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": 0,
@@ -5681,19 +6320,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
@@ -5701,7 +6328,19 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
                 "doc_line": 0,
@@ -5879,15 +6518,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": 0,
@@ -6721,9 +7360,9 @@
         },
         "extra_headers": []
     },
-    "get_sources": {
+    "get_source_node_ids": {
         "file": "getters.rs",
-        "function": "get_sources",
+        "function": "get_source_node_ids",
         "errors": [
             {
                 "doc_line": 0,
@@ -6763,9 +7402,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_destinations": {
+    "get_destination_node_ids": {
         "file": "getters.rs",
-        "function": "get_destinations",
+        "function": "get_destination_node_ids",
         "errors": [
             {
                 "doc_line": 0,
@@ -6820,9 +7459,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_nodes": {
+    "get_node_ids": {
         "file": "getters.rs",
-        "function": "get_nodes",
+        "function": "get_node_ids",
         "errors": [
             {
                 "doc_line": 0,
@@ -6835,9 +7474,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_edge_types": {
+    "get_edge_type_ids": {
         "file": "getters.rs",
-        "function": "get_edge_types",
+        "function": "get_edge_type_ids",
         "errors": [
             {
                 "doc_line": 0,
@@ -6960,9 +7599,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_edges": {
+    "get_edge_node_ids": {
         "file": "getters.rs",
-        "function": "get_edges",
+        "function": "get_edge_node_ids",
         "errors": [
             {
                 "doc_line": 0,
@@ -8443,7 +9082,7 @@
             "args": []
         },
         "example": {
-            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);\nassert!(graph_with_singletons.has_singletons());\nlet graph_without_singletons = graph_with_singletons.remove(\nNone, None, None, None, None, None, None, None, false, false, true, true, false, false,\n).unwrap();\nassert!(!graph_without_singletons.has_singletons());\n"
+            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);\nassert!(graph_with_singletons.has_singletons());\nlet graph_without_singletons = graph_with_singletons.drop_singletons(false);\nassert!(!graph_without_singletons.has_singletons());\n"
         },
         "extra_headers": []
     },
@@ -8677,7 +9316,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
             },
             {
                 "doc_line": "~",
@@ -8685,11 +9324,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iter'."
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
             },
             {
                 "doc_line": 0,
@@ -8945,19 +9584,19 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
+                "msg": "Missing the documentation for the argument 'has_edge_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'name'."
             },
             {
                 "doc_line": "~",
@@ -8969,35 +9608,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
             },
             {
                 "doc_line": "~",
@@ -9005,7 +9616,35 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'directed_edge_list'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'verbose'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
             },
             {
                 "doc_line": 0,
@@ -9062,7 +9701,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
+                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
             },
             {
                 "doc_line": "~",
@@ -9070,7 +9709,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
+                "msg": "Missing the documentation for the argument 'name'."
             },
             {
                 "doc_line": "~",
@@ -9078,7 +9717,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
+                "msg": "Missing the documentation for the argument 'edges_iterator'."
             },
             {
                 "doc_line": "~",
@@ -9086,11 +9725,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+                "msg": "Missing the documentation for the argument 'verbose'."
             },
             {
                 "doc_line": "~",
@@ -9098,11 +9733,15 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
+                "msg": "Missing the documentation for the argument 'might_have_singletons'."
             },
             {
                 "doc_line": 0,

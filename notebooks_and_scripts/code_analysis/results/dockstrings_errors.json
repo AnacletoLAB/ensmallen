@@ -6,8 +6,22 @@
     "modifiers.rs": {},
     "iter_queries.rs": {},
     "tarjan.rs": {},
-    "queries.rs": {},
+    "queries.rs": {
+        "get_node_ids_from_node_names": [
+            "[   3] The argument 'node_name' does not exists in the current method. The available args are ['node_names'].",
+            "[   ~] Missing the documentation for the argument 'node_names'."
+        ],
+        "get_edge_node_ids_from_edge_node_names": [
+            "[   3] The argument 'edge_node_name' does not exists in the current method. The available args are ['edge_node_names'].",
+            "[   ~] Missing the documentation for the argument 'edge_node_names'."
+        ]
+    },
     "filters.rs": {},
+    "validators.rs": {
+        "must_not_be_multigraph": [
+            "[   9] In the example there isn't the current method!!!!"
+        ]
+    },
     "metrics.rs": {},
     "remove.rs": {},
     "setters.rs": {},
@@ -25,38 +39,38 @@
             "[   7] The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format.",
             "[  11] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes_iterator', 'directed', 'directed_edge_list', 'name', 'ignore_duplicated_nodes', 'node_list_is_correct', 'ignore_duplicated_edges', 'edge_list_is_correct', 'verbose', 'numeric_edge_type_ids', 'numeric_node_ids', 'numeric_edge_node_ids', 'numeric_node_types_ids', 'has_node_types', 'has_edge_types', 'has_edge_weights', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
             "[   ~] Missing the documentation for the argument 'verbose'.",
-            "[   ~] Missing the documentation for the argument 'has_node_types'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
-            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
             "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
-            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'.",
-            "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
-            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
             "[   ~] Missing the documentation for the argument 'directed_edge_list'.",
-            "[   ~] Missing the documentation for the argument 'has_edge_weights'."
+            "[   ~] Missing the documentation for the argument 'numeric_edge_type_ids'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_ids'.",
+            "[   ~] Missing the documentation for the argument 'numeric_node_types_ids'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
+            "[   ~] Missing the documentation for the argument 'nodes_iterator'.",
+            "[   ~] Missing the documentation for the argument 'node_list_is_correct'.",
+            "[   ~] Missing the documentation for the argument 'has_edge_types'.",
+            "[   ~] Missing the documentation for the argument 'has_node_types'.",
+            "[   ~] Missing the documentation for the argument 'numeric_edge_node_ids'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'edge_list_is_correct'."
         ],
         "from_integer_unsorted": [
             "[   4] The argument type 'impl Iterator<Item = Result<StringQuadruple, String>>' of 'edges_iterator' does not match the function declaration which is 'impl Iterator<\n            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,\n        >'.",
             "[   5] The argument 'nodes_iterator' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
             "[   7] The argument 'ignore_duplicated_nodes' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
             "[   9] The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes'].",
-            "[   ~] Missing the documentation for the argument 'verbose'.",
             "[   ~] Missing the documentation for the argument 'nodes'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
-            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
             "[   ~] Missing the documentation for the argument 'has_edge_types'.",
-            "[   ~] Missing the documentation for the argument 'might_have_singletons'.",
-            "[   ~] Missing the documentation for the argument 'name'.",
-            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
-            "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'verbose'.",
+            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'.",
             "[   ~] Missing the documentation for the argument 'has_edge_weights'.",
-            "[   ~] Missing the documentation for the argument 'might_have_trap_nodes'."
+            "[   ~] Missing the documentation for the argument 'node_types'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons_with_selfloops'.",
+            "[   ~] Missing the documentation for the argument 'edges_iterator'.",
+            "[   ~] Missing the documentation for the argument 'name'.",
+            "[   ~] Missing the documentation for the argument 'edge_types_vocabulary'.",
+            "[   ~] Missing the documentation for the argument 'might_have_singletons'."
         ],
         "from_string_sorted": [
             "[   0] Missing Arguments"

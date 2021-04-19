@@ -150,8 +150,10 @@ def bindgen(args):
                         result_type, _, _ = result_type.rpartition(",")
                         result_type += ">"
 
+                    result_type = result_type.replace("Graph", "EnsmallenGraph")
+
                     result += " -> %s "%result_type
-                
+
                 body = "\tself.graph." + function["name"]
                 body += "(" 
                 body += ", ".join(x[0] for x in function["args"][1:])
@@ -159,8 +161,18 @@ def bindgen(args):
 
                 if "return_type" in function:
                     result_type = function["return_type"]
+                    
                     if result_type.startswith("Result"):
-                        body = "\tpe!(%s)"%body[1:]
+                        if "Graph" in result_type:
+                            body = "\tOk(EnsmallenGraph{graph:pe!(%s)})"%body[1:]
+                        else:
+                            body = "\tpe!(%s)"%body[1:]
+                    else:
+                        if "Graph" in result_type:
+                            body = "\tEnsmallenGraph{graph:%s}"%body[1:]
+                        else:
+                            body = "\t%s"%body[1:]
+
 
                 result += "{\n"
                 result += body
