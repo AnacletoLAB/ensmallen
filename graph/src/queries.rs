@@ -589,9 +589,10 @@ impl Graph {
         edge_type_id: EdgeTypeT,
     ) -> Result<String, String> {
         self.must_have_edge_types()?;
-        self.edge_types.as_ref().map(
-            |ets| ets.translate(edge_type_id),
-        ).unwrap()
+        self.edge_types
+            .as_ref()
+            .map(|ets| ets.translate(edge_type_id))
+            .unwrap()
     }
 
     /// Returns weight of the given edge id.
@@ -749,10 +750,13 @@ impl Graph {
             .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
     }
 
-    /// Returns result with the node id.
+    /// Returns result with the node ID.
     ///
     /// # Arguments
     /// * `node_name`: &str - The node name whose node ID is to be returned.
+    ///
+    /// # Raises
+    /// * When the given node name does not exists in the current graph.
     pub fn get_node_id_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         match self.nodes.get(node_name) {
             Some(node_id) => Ok(*node_id),
@@ -761,6 +765,67 @@ impl Graph {
                 node_name
             )),
         }
+    }
+
+    /// Returns result with the node IDs.
+    ///
+    /// # Arguments
+    /// * `node_name`: Vec<&str> - The node names whose node IDs is to be returned.
+    ///
+    /// # Raises
+    /// * When any of the given node name does not exists in the current graph.
+    pub fn get_node_ids_from_node_names(
+        &self,
+        node_names: Vec<&str>,
+    ) -> Result<Vec<NodeT>, String> {
+        node_names
+            .into_iter()
+            .map(|node_name| self.get_node_id_from_node_name(node_name))
+            .collect::<Result<Vec<NodeT>, String>>()
+    }
+
+    /// Returns result with the edge node IDs.
+    ///
+    /// # Arguments
+    /// * `edge_node_name`: Vec<(&str, &str)> - The node names whose node IDs is to be returned.
+    ///
+    /// # Raises
+    /// * When any of the given node name does not exists in the current graph.
+    pub fn get_edge_node_ids_from_edge_node_names(
+        &self,
+        edge_node_names: Vec<(&str, &str)>,
+    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+        edge_node_names
+            .into_iter()
+            .map(|(src_name, dst_name)| {
+                Ok((
+                    self.get_node_id_from_node_name(src_name)?,
+                    self.get_node_id_from_node_name(dst_name)?,
+                ))
+            })
+            .collect::<Result<Vec<(NodeT, NodeT)>, String>>()
+    }
+
+    /// Returns result with the edge node names.
+    ///
+    /// # Arguments
+    /// * `edge_node_ids`: Vec<(NodeT, NodeT)> - The node names whose node names is to be returned.
+    ///
+    /// # Raises
+    /// * When any of the given node IDs does not exists in the current graph.
+    pub fn get_edge_node_names_from_edge_node_ids(
+        &self,
+        edge_node_ids: Vec<(NodeT, NodeT)>,
+    ) -> Result<Vec<(String, String)>, String> {
+        edge_node_ids
+            .into_iter()
+            .map(|(src_name, dst_name)| {
+                Ok((
+                    self.get_node_name_from_node_id(src_name)?,
+                    self.get_node_name_from_node_id(dst_name)?,
+                ))
+            })
+            .collect::<Result<Vec<(String, String)>, String>>()
     }
 
     /// Return node type ID for the given node name if available.
@@ -1189,6 +1254,39 @@ impl Graph {
                     .map(Some),
             })
             .collect::<Result<Vec<Option<NodeTypeT>>, String>>()
+    }
+
+    /// Return translated node types from string to internal node ID.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_type_names`: Vec<Option<Vec<&str>>> - Vector of node types to be converted.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If any of the given node type names do not exists in the graph.
+    pub fn get_multiple_node_type_ids_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<Vec<&str>>>,
+    ) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
+        self.must_have_node_types()?;
+        node_type_names
+            .iter()
+            .map(|maybe_node_type_names| {
+                maybe_node_type_names
+                    .as_ref()
+                    .map_or(Ok::<_, String>(None), |node_type_names| {
+                        Ok(Some(
+                            node_type_names
+                                .iter()
+                                .map(|node_type_name| {
+                                    self.get_node_type_id_from_node_type_name(node_type_name)
+                                })
+                                .collect::<Result<Vec<NodeTypeT>, String>>()?,
+                        ))
+                    })
+            })
+            .collect::<Result<Vec<Option<Vec<NodeTypeT>>>, String>>()
     }
 
     /// Return range of outbound edges IDs which have as source the given Node.

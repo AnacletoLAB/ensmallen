@@ -22,9 +22,14 @@ impl Graph {
 
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
+    /// This happens INPLACE, that is edits the current graph instance.
+    ///
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
-    pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Result<Graph, String> {
+    pub fn set_inplace_all_edge_types<S: Into<String>>(
+        mut self,
+        edge_type: S,
+    ) -> Result<Graph, String> {
         // If the graph does not have edges, it does not make sense to
         // try and set the edge types.
         self.must_have_edges()?;
@@ -58,11 +63,24 @@ impl Graph {
         Ok(self)
     }
 
+    /// Replace all edge types (if present) and set all the edge to edge_type.
+    ///
+    /// This DOES NOT happen inplace, but created a new instance of the graph.
+    ///
+    /// # Arguments
+    /// * `edge_type`: S - The edge type to assing to all the edges.
+    pub fn set_all_edge_types<S: Into<String>>(&self, edge_type: S) -> Result<Graph, String> {
+        self.clone().set_inplace_all_edge_types(edge_type)
+    }
+
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// # Arguments
     /// * `node_type`: S - The node type to assing to all the nodes.
-    pub fn set_all_node_types<S: Into<String>>(mut self, node_type: S) -> Result<Graph, String> {
+    pub fn set_inplace_all_node_types<S: Into<String>>(
+        mut self,
+        node_type: S,
+    ) -> Result<Graph, String> {
         self.must_have_nodes()?;
         self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
@@ -74,6 +92,16 @@ impl Graph {
         );
         self.node_types = node_types;
         Ok(self)
+    }
+
+    /// Replace all node types (if present) and set all the node to node_type.
+    ///
+    /// This DOES NOT happen inplace, but created a new instance of the graph.
+    ///
+    /// # Arguments
+    /// * `node_type`: S - The node type to assing to all the nodes.
+    pub fn set_all_node_types<S: Into<String>>(&self, node_type: S) -> Result<Graph, String> {
+        self.clone().set_inplace_all_node_types(node_type)
     }
 
     /// Remove given node type ID from all nodes.
@@ -127,6 +155,21 @@ impl Graph {
     /// TODO!: add support for removal of edge types in the context of multigraphs when the user asks for removing an edge type.
     pub fn remove_inplace_edge_type_id(mut self, edge_type_id: EdgeTypeT) -> Result<Graph, String> {
         self.must_have_edge_types()?;
+        self.must_not_be_multigraph().map_err(|_| {
+            concat!(
+                "The method remove_edge_type_id does not support multigraphs because ",
+                "setting the edge types of all edges to a single one in this type",
+                "of graphs will cause a multigraph to collapse to an homogeneous ",
+                "graph, leading to multiple undefined behaviours, such as loosing ",
+                "the parallel edges that would collapse to one: which one should we keep?\n",
+                "This is a strongly undefined behaviour that can be first handled with ",
+                "the remove method, that can let you remove edge types.\n",
+                "Consider that when using the remove method, you will still collapse ",
+                "the multigraph to an homogeneous graph, and it will keep the FIRST edge ",
+                "of any group of multigraph edges between two given nodes."
+            )
+            .to_string()
+        })?;
         self.validate_edge_type_id(Some(edge_type_id))?;
         if let Some(edge_types) = self.edge_types.as_mut() {
             edge_types
@@ -207,7 +250,9 @@ impl Graph {
     /// * If the given edge type name does not exists in the graph.
     ///
     pub fn remove_inplace_edge_type_name(self, edge_type_name: &str) -> Result<Graph, String> {
-        let edge_type_id = self.get_edge_type_id_from_edge_type_name(Some(edge_type_name))?.unwrap();
+        let edge_type_id = self
+            .get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
+            .unwrap();
         self.remove_inplace_edge_type_id(edge_type_id)
     }
 
@@ -241,5 +286,79 @@ impl Graph {
     ///
     pub fn remove_edge_type_name(&self, edge_type_name: &str) -> Result<Graph, String> {
         self.clone().remove_inplace_edge_type_name(edge_type_name)
+    }
+
+    /// Remove node types from the graph.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_node_types(mut self) -> Result<Graph, String> {
+        self.must_have_node_types()?;
+        self.node_types = None;
+        Ok(self)
+    }
+
+    /// Remove node types from the graph.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_node_types(&self) -> Result<Graph, String> {
+        self.clone().remove_inplace_node_types()
+    }
+
+    /// Remove edge types from the graph.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If the graph is a multigraph.
+    ///
+    pub fn remove_inplace_edge_types(mut self) -> Result<Graph, String> {
+        self.must_have_edge_types()?;
+        self.must_be_multigraph()?;
+        self.edge_types = None;
+        Ok(self)
+    }
+
+    /// Remove edge types from the graph.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_edge_types(&self) -> Result<Graph, String> {
+        self.clone().remove_inplace_edge_types()
+    }
+
+    /// Remove edge weights from the graph.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn remove_inplace_edge_weights(mut self) -> Result<Graph, String> {
+        self.must_have_edge_weights()?;
+        self.weights = None;
+        Ok(self)
+    }
+
+    /// Remove edge weights from the graph.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn remove_edge_weights(&self) -> Result<Graph, String> {
+        self.clone().remove_inplace_edge_weights()
     }
 }

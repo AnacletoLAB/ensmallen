@@ -98,9 +98,12 @@ impl Graph {
     /// assert!(graph.validate_edge_type_id(Some(0)).is_ok());
     /// assert!(graph.validate_edge_type_id(Some(1000)).is_err());
     /// ```
-    pub fn validate_edge_type_id(&self, edge_type_id: Option<EdgeTypeT>) -> Result<Option<EdgeTypeT>, String> {
+    pub fn validate_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Option<EdgeTypeT>, String> {
         self.must_have_edge_types()?;
-        if let Some(eti) = edge_type_id{
+        if let Some(eti) = edge_type_id {
             if self.get_edge_types_number() <= eti {
                 return Err(format!(
                     "Given edge type ID {:?} is bigger than number of edge types in the graph {}.",
@@ -179,7 +182,9 @@ impl Graph {
     /// ```
     pub fn must_be_multigraph(&self) -> Result<(), String> {
         if !self.is_multigraph() {
-            return Err("The current graph instance must be a multigraph to run this method.".to_string());
+            return Err(
+                "The current graph instance must be a multigraph to run this method.".to_string(),
+            );
         }
         Ok(())
     }
@@ -197,7 +202,10 @@ impl Graph {
     /// ```
     pub fn must_not_be_multigraph(&self) -> Result<(), String> {
         if self.is_multigraph() {
-            return Err("The current graph instance must not be a multigraph to run this method.".to_string());
+            return Err(
+                "The current graph instance must not be a multigraph to run this method."
+                    .to_string(),
+            );
         }
         Ok(())
     }

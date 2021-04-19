@@ -354,9 +354,8 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
-        self.must_have_edge_types().map(|_| 
-            self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap()
-        )
+        self.must_have_edge_types()
+            .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
 
     /// Return the edge types names.

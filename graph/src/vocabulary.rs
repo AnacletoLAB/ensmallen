@@ -116,8 +116,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "node id.\n",
                         "In this case, the value is {} and its index is {}."
                     ),
-                    k,
-                    i,
+                    k, i,
                 );
             }
             self.reverse_map[i] = k.clone();

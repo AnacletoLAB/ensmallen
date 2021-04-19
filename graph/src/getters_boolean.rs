@@ -116,9 +116,7 @@ impl Graph {
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_singletons());
-    /// let graph_without_singletons = graph_with_singletons.remove(
-    ///     None, None, None, None, None, None, None, None, false, false, true, true, false, false,
-    /// ).unwrap();
+    /// let graph_without_singletons = graph_with_singletons.drop_singletons(false);
     /// assert!(!graph_without_singletons.has_singletons());
     /// ```
     pub fn has_singletons(&self) -> bool {

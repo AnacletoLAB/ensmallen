@@ -476,7 +476,7 @@ impl Graph {
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        // If the user has requested to restrict the connected holdout to a 
+        // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
         if edge_types.is_some() {
             self.must_have_edge_types()?;
@@ -503,7 +503,7 @@ impl Graph {
             (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         // We need to check if the connected holdout can actually be built with
-        // the additional constraint of the edge types. 
+        // the additional constraint of the edge types.
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
@@ -576,7 +576,7 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        // If the user has requested to restrict the connected holdout to a 
+        // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
         if edge_types.is_some() {
             self.must_have_edge_types()?;

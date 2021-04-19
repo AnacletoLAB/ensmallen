@@ -12,7 +12,6 @@ use rayon::prelude::*;
 /// * `par_iter_(.+)`
 /// * `par_iter_unchecked_(.+)`
 impl Graph {
-
     /// Return iterator on the node of the graph.
     pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
         0..self.get_nodes_number()
@@ -104,7 +103,9 @@ impl Graph {
     /// assert!(graph_without_weights.iter_edge_weights().is_err());
     /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());
     /// ```
-    pub fn par_iter_edge_weights(&self) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
+    pub fn par_iter_edge_weights(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
         self.must_have_edge_weights()?;
         Ok(self
             .weights
@@ -117,7 +118,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn par_iter_source_node_ids(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
+    pub fn par_iter_source_node_ids(
+        &self,
+        directed: bool,
+    ) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_ids(directed).map(move |(_, src, _)| src)
     }
 
@@ -396,20 +400,21 @@ impl Graph {
             Option<WeightT>,
         ),
     > + '_ {
-        self.par_iter_edge_node_names_and_edge_type_name(directed).map(
-            move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| {
-                (
-                    edge_id,
-                    src,
-                    src_name,
-                    dst,
-                    dst_name,
-                    edge_type,
-                    edge_type_name,
-                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
-                )
-            },
-        )
+        self.par_iter_edge_node_names_and_edge_type_name(directed)
+            .map(
+                move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| {
+                    (
+                        edge_id,
+                        src,
+                        src_name,
+                        dst,
+                        dst_name,
+                        edge_type,
+                        edge_type_name,
+                        self.get_unchecked_edge_weight_from_edge_id(edge_id),
+                    )
+                },
+            )
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -456,8 +461,8 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_
     {
-        self.par_iter_edge_node_ids_and_edge_type_id(directed)
-            .map(move |(edge_id, src, dst, edge_type)| {
+        self.par_iter_edge_node_ids_and_edge_type_id(directed).map(
+            move |(edge_id, src, dst, edge_type)| {
                 (
                     edge_id,
                     src,
@@ -465,7 +470,8 @@ impl Graph {
                     edge_type,
                     self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
-            })
+            },
+        )
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -476,8 +482,8 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
-        self.iter_edge_node_ids_and_edge_type_id(directed)
-            .map(move |(edge_id, src, dst, edge_type)| {
+        self.iter_edge_node_ids_and_edge_type_id(directed).map(
+            move |(edge_id, src, dst, edge_type)| {
                 (
                     edge_id,
                     src,
@@ -485,7 +491,8 @@ impl Graph {
                     edge_type,
                     self.get_unchecked_edge_weight_from_edge_id(edge_id),
                 )
-            })
+            },
+        )
     }
 
     /// Return iterator on the edges of the graph.

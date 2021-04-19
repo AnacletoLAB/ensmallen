@@ -709,10 +709,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
 
 pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.remove(
-            None, None, None, None, None, None, None, None, false, false, false, false, true,
-            verbose,
-        )?;
+        let without_selfloops = graph.drop_selfloops(verbose);
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -721,9 +718,13 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "We expected the graph to have the same components once we remove the selfloops.\n",
                 "The report of the original graph is {:?}\n",
                 "The report of the filtered graph is {:?}\n",
+                "The edge node ids of the original graph are {:?}\n",
+                "The edge node ids of the filtered graph are {:?}\n"
             ),
             graph.textual_report(false),
             without_selfloops.textual_report(false),
+            graph.get_edge_node_ids(true),
+            without_selfloops.get_edge_node_ids(true),
         );
 
         let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);
@@ -759,12 +760,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             None,
             verbose,
         )?;
-        let no_selfloops = test.remove(
-            None, None, None, None, None, None, None, None, false, false, false, false, true,
-            verbose,
-        )?;
+        let without_selfloops = test.drop_selfloops(verbose);
         assert_eq!(
-            no_selfloops.get_connected_components_number(verbose).0,
+            without_selfloops.get_connected_components_number(verbose).0,
             1,
             concat!(
                 "Expected number of components (1) is not matched!\n",
@@ -774,7 +772,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             ),
             graph.textual_report(false),
             test.textual_report(false),
-            no_selfloops.textual_report(false)
+            without_selfloops.textual_report(false)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_from_node_type_id(0) {
             assert!(graph
@@ -971,38 +969,6 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
     Ok(())
 }
 
-pub fn test_graph_filter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    assert!(graph
-        .filter(
-            Some(graph.get_node_names()),
-            graph
-                .get_node_type_names()
-                .ok()
-                .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
-            graph
-                .get_edge_type_names()
-                .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),
-            Some(1000.0),
-            Some(10.0),
-            verbose,
-        )
-        .is_err());
-    let _ = graph.filter(
-        Some(graph.get_node_names()),
-        graph
-            .get_node_type_names()
-            .ok()
-            .map(|ntn| ntn.into_iter().map(Option::Some).collect()),
-        graph
-            .get_edge_type_names()
-            .map(|etn| etn.into_iter().map(Option::Some).collect()).ok(),
-        graph.get_min_edge_weight().ok(),
-        graph.get_max_edge_weight().ok(),
-        verbose,
-    );
-    Ok(())
-}
-
 pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     let _clique = graph.get_clique_edge_names(
         None,
@@ -1135,10 +1101,7 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
 
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     {
-        let without_edge_types = graph.remove(
-            None, None, None, None, None, None, None, None, false, false, true, false, false,
-            verbose,
-        );
+        let without_edge_types = graph.remove_edge_types();
         if let Some(we) = &without_edge_types.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
@@ -1164,10 +1127,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_node_types = graph.remove(
-            None, None, None, None, None, None, None, None, false, true, false, false, false,
-            verbose,
-        );
+        let without_node_types = graph.remove_node_types();
         if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
@@ -1188,10 +1148,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_weights = graph.remove(
-            None, None, None, None, None, None, None, None, true, false, false, false, false,
-            verbose,
-        );
+        let without_weights = graph.remove_edge_weights();
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_edge_weights(), false);
@@ -1208,7 +1165,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: bool) -> Result<(), S
     let mut clone = graph.clone();
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
     assert!(!clone.is_multigraph());
-        clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
+    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(
         clone.get_edge_types_number(),
@@ -1265,10 +1222,10 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let _ = test_edgelabel_holdouts(graph, verbose);
 
     warn!("Testing writing out graph to file.");
-    //let _ = test_dump_graph(graph, verbose);
+    let _ = test_dump_graph(graph, verbose);
 
-    warn!("Testing generic filtering mechanism.");
-    let _ = test_graph_filter(graph, verbose);
+    //warn!("Testing generic filtering mechanism.");
+    //let _ = test_graph_filter(graph, verbose);
 
     warn!("Testing the spanning arborescences.");
     let _ = test_spanning_arborescence_bader(graph, verbose);

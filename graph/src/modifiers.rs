@@ -18,7 +18,9 @@ impl Graph {
         vector_cumulative_node_degrees: bool,
         cache_size: Option<f64>,
     ) -> Result<(), String> {
-        if (vector_destinations || self.destinations.is_some()) && (cache_size.is_some() || self.cached_destinations.is_some()){
+        if (vector_destinations || self.destinations.is_some())
+            && (cache_size.is_some() || self.cached_destinations.is_some())
+        {
             return Err(concat!(
                 "It is not possible (nor would it make sense) to have both ",
                 "partially cached destinations and completely cached vector ",
@@ -28,7 +30,8 @@ impl Graph {
                 "disable_all to disable all forms of time-memory tradeoffs.\n",
                 "Once you have disabled again all trade-offs, you can ",
                 "re-enable the any one you would like."
-            ).to_string());
+            )
+            .to_string());
         }
 
         if vector_destinations {
