@@ -368,8 +368,24 @@ impl Graph {
             if self.has_homogeneous_node_types().unwrap() {
                 partial_reports.push("### Homogeneous node types".to_string());
                 partial_reports.push(concat!(
-                    
-                ));
+                    "The current graph instance has homogenous node types. ",
+                    "That is, all nodes share the same node type. ",
+                    "Graphs with a single node type are odd because if all ",
+                    "nodes have the same node type, they might as well have none. ",
+                    "A modelling issue often causes this: for instance, ",
+                    "when working on a graph such as STRING PPI, a ",
+                    "protein-protein interactions graph, it is well known ",
+                    "that all nodes represent a protein and hence it would ",
+                    "not make sense to add such a node type. Using homogeneous ",
+                    "node types only leads to a (slightly) higher memory ",
+                    "footprint and slower embedding if your embedding ",
+                    "algorithms also involves the node type.\n\n",
+                    "Consider avoiding loading homogenous node types ",
+                    "altogether or dropping the node types by using either ",
+                    "the method `remove_inplace_node_types` or `remove_node_types` ",
+                    "to remove the node types in place or creating a ",
+                    "new graph instance without the node types."
+                ).to_string());
             }
         }
 
