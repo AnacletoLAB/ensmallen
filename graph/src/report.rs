@@ -282,27 +282,27 @@ impl Graph {
         let mut partial_reports: Vec<String> = Vec::new();
 
         partial_reports.push(format!(
-            "# Peculiarities report for graph {}",
+            "# Peculiarities report for graph {}\n",
             self.get_name()
         ));
 
         if !self.has_nodes() {
-            partial_reports.push("## Absence of nodes".to_string());
+            partial_reports.push("## Absence of nodes\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any node. This may be caused by ",
-                    "an improper use of one of the filter methods."
+                    "an improper use of one of the filter methods.\n\n"
                 )
                 .to_string(),
             );
         }
 
         if !self.has_edges() {
-            partial_reports.push("## Absence of edges".to_string());
+            partial_reports.push("## Absence of edges\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any edge. This may be caused by ",
-                    "an improper use of one of the filter methods."
+                    "an improper use of one of the filter methods.\n\n"
                 )
                 .to_string(),
             );
@@ -310,7 +310,7 @@ impl Graph {
 
         // Detect weirdness relative to nodes
         if self.has_node_oddities() {
-            partial_reports.push("## Oddities relative to nodes".to_string());
+            partial_reports.push("## Oddities relative to nodes\n".to_string());
             if self.has_singleton_nodes() {
                 partial_reports.push("### Singleton nodes".to_string());
                 partial_reports.push(format!(
@@ -336,7 +336,7 @@ impl Graph {
                         "which will create a new graph instance before removing ",
                         "the singleton nodes.\n",
                         "If you need a more fine-grained control on what is ",
-                        "removed, you can use the `filter` method."
+                        "removed, you can use the `filter` method.",
                     ),
                     match self.get_singleton_node_types_number().unwrap() {
                         0 => unreachable!(
@@ -349,10 +349,22 @@ impl Graph {
                         ),
                     }
                 ));
+                partial_reports.push("#### List of the singleton nodes\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_node_names()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_nodes_number() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton nodes\n",
+                        self.get_singleton_nodes_number() - 10
+                    ))
+                }
             }
 
             if self.has_singleton_nodes_with_selfloops() {
-                partial_reports.push("### Singleton nodes with self loops".to_string());
+                partial_reports.push("### Singleton nodes with self loops\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: nodes that do not have any inbound or outbound edge, ",
@@ -379,7 +391,7 @@ impl Graph {
                         "which will create a new graph instance before removing ",
                         "the singleton nodes with selfloops.\n",
                         "If you need a more fine-grained control on what is ",
-                        "removed, you can use the `filter` method."
+                        "removed, you can use the `filter` method.\n"
                     ),
                     match self.get_singleton_node_types_number().unwrap() {
                         0 => unreachable!(
@@ -392,14 +404,27 @@ impl Graph {
                         ),
                     }
                 ));
+                partial_reports
+                    .push("#### List of the singleton nodes with selfloops\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_with_selfloops_node_names()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_nodes_number() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton nodes with selfloops\n",
+                        self.get_singleton_nodes_with_selfloops_number() - 10
+                    ))
+                }
             }
         }
 
         // Detect weirdness relative to node types.
         if self.has_node_types_oddities().map_or(false, |value| value) {
-            partial_reports.push("## Oddities relative to node types".to_string());
+            partial_reports.push("## Oddities relative to node types\n".to_string());
             if self.has_singleton_node_types().unwrap() {
-                partial_reports.push("### Singleton node types".to_string());
+                partial_reports.push("### Singleton node types\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: node types that only appear in one graph node. ",
@@ -438,7 +463,7 @@ impl Graph {
                         "An alternative solution is provided by the `replace` ",
                         "method: by providing the desired `node_type_names` ",
                         "parameter you can remap the singleton node types ",
-                        "to other node types."
+                        "to other node types.\n"
                     ),
                     match self.get_singleton_node_types_number().unwrap() {
                         0 => unreachable!(
@@ -451,6 +476,19 @@ impl Graph {
                         ),
                     }
                 ));
+                partial_reports.push("#### List of the singleton node types\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_node_type_names()
+                        .unwrap()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_node_types_number().unwrap() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton node types\n",
+                        self.get_singleton_node_types_number().unwrap() - 10
+                    ))
+                }
             }
             if self.has_homogeneous_node_types().unwrap() {
                 partial_reports.push("### Homogeneous node types".to_string());
@@ -563,6 +601,19 @@ impl Graph {
                         ),
                     }
                 ));
+                partial_reports.push("#### List of the singleton edge types\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_edge_type_names()
+                        .unwrap()
+                        .take(10)
+                        .map(|edge_name| format!("* {}\n", edge_name)),
+                );
+                if self.get_singleton_edge_types_number().unwrap() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton edge types\n",
+                        self.get_singleton_edge_types_number().unwrap() - 10
+                    ))
+                }
             }
             if self.has_homogeneous_edge_types().unwrap() {
                 partial_reports.push("### Homogeneous edge types".to_string());
@@ -626,7 +677,7 @@ impl Graph {
                 self.get_name()
             ));
         }
-        
+
         partial_reports.join("")
     }
 
