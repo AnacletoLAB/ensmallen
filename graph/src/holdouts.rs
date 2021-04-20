@@ -547,8 +547,8 @@ impl Graph {
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
-            self.has_singletons(),
-            self.has_singletons_with_selfloops(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
         )
     }
 

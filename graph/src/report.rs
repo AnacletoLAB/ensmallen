@@ -308,9 +308,96 @@ impl Graph {
             );
         }
 
+        // Detect weirdness relative to nodes
+        if self.has_node_oddities() {
+            partial_reports.push("## Oddities relative to nodes".to_string());
+            if self.has_singleton_nodes() {
+                partial_reports.push("### Singleton nodes".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: nodes that do not have any inbound or outbound edge. ",
+                        "We consider singleton nodes an oddity because they represent ",
+                        "a concept that is not connected to anything else ",
+                        "and is hardly ever useful when actually using the graph.\n",
+                        "For instance, in most node embedding methods, the ",
+                        "singleton nodes will often maintain a gaussian node ",
+                        "embedding, that is often visualized as a gaussian hyper-sphere.\n",
+                        "Such embeddings do not encode any information if not the fact ",
+                        "that the node has extremely low degree.\n",
+                        "\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase. The only solution is, if no bug ",
+                        "is identified in the data wrangling phase, to drop",
+                        "the singleton nodes.",
+                        "\n",
+                        "#### Solution dropping singleton node types\n",
+                        "It is possible to drop **all** of the singleton nodes ",
+                        "by using the method `graph.drop_singleton_nodes()`, ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton nodes.\n",
+                        "If you need a more fine-grained control on what is ",
+                        "removed, you can use the `filter` method."
+                    ),
+                    match self.get_singleton_node_types_number().unwrap() {
+                        0 => unreachable!(
+                            "There must be at least a singleton node if we got here.",
+                        ),
+                        1 => "There is a singleton node in the graph".to_string(),
+                        singleton_node_types_number => format!(
+                            "There are {} singleton nodes in the graph",
+                            singleton_node_types_number
+                        ),
+                    }
+                ));
+            }
+
+            if self.has_singleton_nodes_with_selfloops() {
+                partial_reports.push("### Singleton nodes with self loops".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: nodes that do not have any inbound or outbound edge, ",
+                        "with the exception of one or more selfloops.\n",
+                        "We consider singleton nodes with selfloops an oddity because they represent ",
+                        "a concept that is not connected to anything else ",
+                        "but themselves ",
+                        "and is hardly ever useful when actually using the graph.\n",
+                        "For instance, in most node embedding methods, the ",
+                        "singleton nodes with selfloops will often maintain a gaussian node ",
+                        "embedding, that is often visualized as a gaussian hyper-sphere.\n",
+                        "Such embeddings do not encode any information if not the fact ",
+                        "that the node has extremely low degree, similarly to what ",
+                        "happens with a *normal* singleton node.\n",
+                        "\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase. The only solution is, if no bug ",
+                        "is identified in the data wrangling phase, to drop",
+                        "the singleton nodes with selfloops.",
+                        "\n",
+                        "#### Solution dropping singleton node types\n",
+                        "It is possible to drop **all** of the singleton nodes with selfloops ",
+                        "by using the method `graph.drop_singleton_nodes_with_selfloops()`, ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton nodes with selfloops.\n",
+                        "If you need a more fine-grained control on what is ",
+                        "removed, you can use the `filter` method."
+                    ),
+                    match self.get_singleton_node_types_number().unwrap() {
+                        0 => unreachable!(
+                            "There must be at least a singleton node with selfloops if we got here.",
+                        ),
+                        1 => "There is a singleton node with selfloops in the graph".to_string(),
+                        singleton_node_types_number => format!(
+                            "There are {} singleton nodes with selfloops in the graph",
+                            singleton_node_types_number
+                        ),
+                    }
+                ));
+            }
+        }
+
         // Detect weirdness relative to node types.
         if self.has_node_types_oddities().map_or(false, |value| value) {
-            partial_reports.push("## Node types".to_string());
+            partial_reports.push("## Oddities relative to node types".to_string());
             if self.has_singleton_node_types().unwrap() {
                 partial_reports.push("### Singleton node types".to_string());
                 partial_reports.push(format!(
@@ -422,7 +509,7 @@ impl Graph {
 
         // Detect weirdness relative to edge types.
         if self.has_edge_types_oddities().map_or(false, |value| value) {
-            partial_reports.push("## edge types".to_string());
+            partial_reports.push("## Oddities relative to edge types".to_string());
             if self.has_singleton_edge_types().unwrap() {
                 partial_reports.push("### Singleton edge types".to_string());
                 partial_reports.push(format!(
@@ -532,10 +619,15 @@ impl Graph {
             }
         }
 
-        format!(
-            "Congratulations, the graph {} does not seem to have any weirdness!",
-            self.get_name()
-        )
+        // If there is only the title, then we have not detected any weirdness.
+        if partial_reports.len() == 1 {
+            partial_reports.push(format!(
+                "Congratulations, the graph {} does not seem to have any weirdness!",
+                self.get_name()
+            ));
+        }
+        
+        partial_reports.join("")
     }
 
     /// Return rendered textual report of the graph.
@@ -607,11 +699,11 @@ impl Graph {
                 },
                 false=>"".to_owned()
             },
-            singletons = match self.has_singletons() {
+            singletons = match self.has_singleton_nodes() {
                 true => format!(
                     " There are {singleton_number} singleton nodes{selfloop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    selfloop_singleton=match self.has_singletons_with_selfloops(){
+                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
                             true=>"all".to_owned(),
                             false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())

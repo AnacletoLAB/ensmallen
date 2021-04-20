@@ -369,15 +369,15 @@
 <path fill="none" stroke="black" d="M12479.56,-1223.98C12490.02,-1193.42 12514.61,-1127.97 12548,-1080 12612.64,-987.15 12650.17,-982.12 12728,-900 12772.38,-853.17 12772.65,-829.7 12825,-792 12857.63,-768.5 12885.94,-789.62 12908,-756 12920.76,-736.56 12902.16,-687.09 12890,-612 12886.64,-591.29 12882.96,-567.84 12880.22,-550.22"/>
 <polygon fill="black" stroke="black" points="12883.63,-549.41 12878.64,-540.07 12876.72,-550.49 12883.63,-549.41"/>
 </g>
-<!-- Graph::has_singletons_with_selfloops -->
+<!-- Graph::has_singleton_nodes_with_selfloops -->
 <g id="node237" class="node">
-<title>Graph::has_singletons_with_selfloops</title>
+<title>Graph::has_singleton_nodes_with_selfloops</title>
 <polygon fill="none" stroke="black" points="11639.5,-1044 11308.5,-1044 11308.5,-1008 11639.5,-1008 11639.5,-1044"/>
-<text text-anchor="middle" x="11474" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_singletons_with_selfloops</text>
+<text text-anchor="middle" x="11474" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_singleton_nodes_with_selfloops</text>
 </g>
-<!-- bitor&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- bitor&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge33" class="edge">
-<title>bitor&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>bitor&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M12446.84,-1241.03C12340.23,-1240.8 11950.72,-1236.58 11839,-1188 11773.5,-1159.52 11783.53,-1112.64 11720,-1080 11690.59,-1064.89 11657.08,-1054.09 11624.45,-1046.36"/>
 <polygon fill="black" stroke="black" points="11624.89,-1042.87 11614.36,-1044.06 11623.33,-1049.69 11624.89,-1042.87"/>
 </g>
@@ -969,9 +969,9 @@
 <path fill="none" stroke="black" d="M10988.21,-1079.85C11018.15,-1030.23 11106.59,-888.47 11154,-864 11276.78,-800.64 12275.2,-893.24 12397,-828 12509.38,-767.81 12431.7,-652.07 12534,-576 12543.85,-568.67 12680.56,-549.09 12778.11,-535.9"/>
 <polygon fill="black" stroke="black" points="12778.87,-539.33 12788.31,-534.52 12777.94,-532.39 12778.87,-539.33"/>
 </g>
-<!-- Graph::kruskal&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- Graph::kruskal&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge82" class="edge">
-<title>Graph::kruskal&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>Graph::kruskal&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M11039.32,-1088.35C11114.74,-1077.7 11244.85,-1059.34 11343.12,-1045.47"/>
 <polygon fill="black" stroke="black" points="11343.71,-1048.92 11353.12,-1044.06 11342.73,-1041.99 11343.71,-1048.92"/>
 </g>
@@ -1665,9 +1665,9 @@
 <path fill="none" stroke="black" d="M17300.37,-1079.98C17250.34,-1058.35 17158.63,-1022.14 17076,-1008 16730.22,-948.85 14261.74,-1046.78 13919,-972 13880.51,-963.6 13876.06,-946.18 13838,-936 13689.49,-896.3 13626.8,-977.43 13494,-900 13341.22,-810.92 13414.34,-667.5 13263,-576 13238.68,-561.3 13080.34,-543.13 12973.88,-532.34"/>
 <polygon fill="black" stroke="black" points="12974.05,-528.84 12963.75,-531.32 12973.35,-535.8 12974.05,-528.84"/>
 </g>
-<!-- Graph::remap&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- Graph::remap&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge161" class="edge">
-<title>Graph::remap&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>Graph::remap&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M17279.81,-1090.25C17244.37,-1086.46 17198.14,-1082.08 17157,-1080 16089,-1025.95 13414.27,-1058.43 12345,-1044 12104.12,-1040.75 11825.8,-1034.96 11649.88,-1031.05"/>
 <polygon fill="black" stroke="black" points="11649.83,-1027.55 11639.75,-1030.83 11649.67,-1034.55 11649.83,-1027.55"/>
 </g>
@@ -2493,9 +2493,9 @@
 <path fill="none" stroke="black" d="M9124.11,-1600.22C9553.68,-1595.94 11435.41,-1571.82 11677,-1476 11700.17,-1466.81 11700.05,-1454.95 11720,-1440 11881.28,-1319.14 11949.7,-1325.56 12097,-1188 12170.87,-1119.01 12149.06,-1059.55 12236,-1008 12323.86,-955.9 12364.74,-999.92 12463,-972 12542.72,-949.35 12570.73,-952.32 12635,-900 12680.12,-863.27 12660.71,-824.46 12709,-792 12771.65,-749.88 12827.61,-814.77 12875,-756 12885.04,-743.54 12882.93,-733.89 12875,-720 12859.39,-692.66 12829.61,-711.34 12814,-684 12806.07,-670.11 12810.35,-663.58 12814,-648 12822.58,-611.4 12843.54,-573.24 12858.72,-548.86"/>
 <polygon fill="black" stroke="black" points="12861.8,-550.54 12864.21,-540.23 12855.89,-546.78 12861.8,-550.54"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- test_graph_properties&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge259" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>test_graph_properties&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M9124.04,-1600.2C9322.51,-1597.69 9796.07,-1587.58 9856,-1548 9930.8,-1498.6 9871.33,-1416.06 9947,-1368 10063.45,-1294.04 11053.77,-1363.79 11188,-1332 11335.44,-1297.08 11415.58,-1315.78 11497,-1188 11523.38,-1146.61 11503.33,-1087.19 11487.74,-1053.31"/>
 <polygon fill="black" stroke="black" points="11490.78,-1051.57 11483.3,-1044.07 11484.47,-1054.6 11490.78,-1051.57"/>
 </g>
@@ -5091,9 +5091,9 @@
 <path fill="none" stroke="black" d="M11619.53,-1439.83C11664.92,-1419.74 11744.06,-1386.83 11815,-1368 11852.77,-1357.97 12476.62,-1280.31 12510,-1260 12560.8,-1229.08 12552.22,-1198.73 12589,-1152 12731.58,-970.85 12844.72,-972.47 12924,-756 12950.48,-683.71 12912.95,-593.16 12890.58,-549.27"/>
 <polygon fill="black" stroke="black" points="12893.54,-547.38 12885.81,-540.14 12887.34,-550.62 12893.54,-547.38"/>
 </g>
-<!-- Graph::textual_report&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- Graph::textual_report&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge583" class="edge">
-<title>Graph::textual_report&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>Graph::textual_report&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M11495.99,-1450.11C11465.73,-1443.05 11434.65,-1429.53 11416,-1404 11406.56,-1391.08 11410.5,-1383.03 11416,-1368 11451.97,-1269.66 11532.03,-1286.34 11568,-1188 11584.49,-1142.92 11592.21,-1121.45 11568,-1080 11560.25,-1066.73 11547.81,-1056.52 11534.49,-1048.78"/>
 <polygon fill="black" stroke="black" points="11536.12,-1045.68 11525.65,-1044.04 11532.81,-1051.85 11536.12,-1045.68"/>
 </g>
@@ -5385,9 +5385,9 @@
 <path fill="none" stroke="black" d="M14773.1,-1445.97C14800.75,-1443.57 14830.45,-1441.34 14858,-1440 15708.81,-1398.6 17841.49,-1466.63 18691,-1404 19620.42,-1335.48 19857.32,-1313.96 20768,-1116 21107.2,-1042.27 21452,-1086.12 21452,-739 21452,-739 21452,-739 21452,-593 21452,-549.45 21444.12,-532.28 21411,-504 21366.05,-465.63 21334.39,-497.17 21283,-468 21262.77,-456.52 21266.49,-440.92 21245,-432 21113.99,-377.64 20110.6,-404.23 19969,-396 19939.26,-394.27 19907,-391.71 19877.52,-389.09"/>
 <polygon fill="black" stroke="black" points="19877.5,-385.57 19867.22,-388.16 19876.87,-392.54 19877.5,-385.57"/>
 </g>
-<!-- Graph::remove_components&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- Graph::remove_components&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge628" class="edge">
-<title>Graph::remove_components&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>Graph::remove_components&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M14556.87,-1454.05C14411.08,-1448.91 14159.83,-1435.68 14074,-1404 13996.26,-1375.3 14000.69,-1322 13922,-1296 13736.07,-1234.57 12354.72,-1280.68 12160,-1260 11992.54,-1242.22 11946.52,-1244.83 11788,-1188 11693.27,-1154.04 11678.97,-1125.08 11589,-1080 11567.18,-1069.07 11542.67,-1057.65 11521.89,-1048.23"/>
 <polygon fill="black" stroke="black" points="11523.19,-1044.97 11512.63,-1044.04 11520.31,-1051.35 11523.19,-1044.97"/>
 </g>
@@ -6141,9 +6141,9 @@
 <path fill="none" stroke="black" d="M12881.69,-503.7C12884.25,-495.9 12887.33,-486.51 12890.18,-477.83"/>
 <polygon fill="black" stroke="black" points="12893.58,-478.7 12893.38,-468.1 12886.93,-476.51 12893.58,-478.7"/>
 </g>
-<!-- Graph::has_singletons_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number -->
+<!-- Graph::has_singleton_nodes_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number -->
 <g id="edge724" class="edge">
-<title>Graph::has_singletons_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number</title>
+<title>Graph::has_singleton_nodes_with_selfloops&#45;&gt;Graph::get_singleton_nodes_with_selfloops_number</title>
 <path fill="none" stroke="black" d="M11468.69,-1007.87C11461.16,-983.56 11447.3,-938.82 11438.37,-910.01"/>
 <polygon fill="black" stroke="black" points="11441.63,-908.71 11435.33,-900.19 11434.94,-910.78 11441.63,-908.71"/>
 </g>
@@ -7779,9 +7779,9 @@
 <path fill="none" stroke="black" d="M10611.56,-1223.86C10610.21,-1213.5 10608.68,-1200.02 10608,-1188 10605.18,-1138.02 10605.36,-1116.15 10640,-1080 10740.36,-975.26 10814.62,-1029.04 10948,-972 11027.22,-938.12 11026.94,-890.27 11109,-864 11241.33,-821.64 12236.51,-893.59 12359,-828 12393.57,-809.49 12390.22,-789.86 12410,-756 12454.63,-679.61 12423.72,-628.4 12495,-576 12497.87,-573.89 12666.12,-551.06 12778.05,-536.05"/>
 <polygon fill="black" stroke="black" points="12778.58,-539.52 12788.02,-534.72 12777.65,-532.58 12778.58,-539.52"/>
 </g>
-<!-- Graph::connected_holdout&#45;&gt;Graph::has_singletons_with_selfloops -->
+<!-- Graph::connected_holdout&#45;&gt;Graph::has_singleton_nodes_with_selfloops -->
 <g id="edge950" class="edge">
-<title>Graph::connected_holdout&#45;&gt;Graph::has_singletons_with_selfloops</title>
+<title>Graph::connected_holdout&#45;&gt;Graph::has_singleton_nodes_with_selfloops</title>
 <path fill="none" stroke="black" d="M10616.37,-1223.65C10620.04,-1203.54 10629,-1170.77 10650,-1152 10738.77,-1072.67 10790.93,-1101.64 10908,-1080 11037.53,-1056.06 11185.85,-1042.68 11298.16,-1035.35"/>
 <polygon fill="black" stroke="black" points="11298.47,-1038.84 11308.23,-1034.7 11298.02,-1031.85 11298.47,-1038.84"/>
 </g>

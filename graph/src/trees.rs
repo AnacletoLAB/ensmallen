@@ -203,7 +203,7 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singletons() {
+        if self.has_singleton_nodes() {
             // When there are singleton nodes, the minimum component size
             // surely becomes one.
             min_component_size = 1;
@@ -660,7 +660,7 @@ impl Graph {
                         }
 
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons()
+                        if self.has_singleton_nodes()
                             && (self.is_unchecked_singleton_from_node_id(src)
                                 || self.is_singleton_with_selfloops_from_node_id(src))
                         {

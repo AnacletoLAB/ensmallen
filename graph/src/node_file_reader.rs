@@ -153,7 +153,7 @@ impl NodeFileReader {
     ///
     /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
     ///
-    pub fn set_might_have_singletons(
+    pub fn set_might_have_singleton_nodes(
         mut self,
         might_have_singletons: Option<bool>,
     ) -> Result<NodeFileReader, String> {

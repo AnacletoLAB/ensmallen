@@ -5,7 +5,7 @@ Some(
         "has_edge_weights()",
         "par_iter_edge_node_names_and_edge_type_name(directed = false)",
         "random_subgraph(random_state = 3616721527081612852, nodes_number = 926234164, verbose = true)",
-        "has_singletons_with_selfloops()",
+        "has_singleton_nodes_with_selfloops()",
         "iter_edge_ids(directed = false)",
         "get_unique_selfloop_number()",
         "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",

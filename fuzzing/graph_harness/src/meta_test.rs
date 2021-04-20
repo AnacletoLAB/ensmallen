@@ -1179,14 +1179,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.filter_from_ids(data_for_current_test.filter_from_ids.node_ids_to_keep, data_for_current_test.filter_from_ids.node_ids_to_filter, data_for_current_test.filter_from_ids.node_type_ids_to_keep, data_for_current_test.filter_from_ids.node_type_ids_to_filter, data_for_current_test.filter_from_ids.node_type_id_to_keep, data_for_current_test.filter_from_ids.node_type_id_to_filter, data_for_current_test.filter_from_ids.edge_ids_to_keep, data_for_current_test.filter_from_ids.edge_ids_to_filter, data_for_current_test.filter_from_ids.edge_node_ids_to_keep, data_for_current_test.filter_from_ids.edge_node_ids_to_filter, data_for_current_test.filter_from_ids.edge_type_ids_to_keep, data_for_current_test.filter_from_ids.edge_type_ids_to_filter, data_for_current_test.filter_from_ids.min_edge_weight, data_for_current_test.filter_from_ids.max_edge_weight, data_for_current_test.filter_from_ids.filter_singletons, data_for_current_test.filter_from_ids.filter_selfloops, data_for_current_test.filter_from_ids.filter_parallel_edges, data_for_current_test.filter_from_ids.verbose);
 			},
 			46 => {
-				trace.push(format!("drop_singletons(verbose = {:?})", data_for_current_test.drop_singletons.verbose));
+				trace.push(format!("drop_singleton_nodes(verbose = {:?})", data_for_current_test.drop_singletons.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.drop_singletons(data_for_current_test.drop_singletons.verbose);
+				graph.drop_singleton_nodes(data_for_current_test.drop_singletons.verbose);
 			},
 			47 => {
 				trace.push(format!("drop_selfloops(verbose = {:?})", data_for_current_test.drop_selfloops.verbose));
@@ -2909,24 +2909,24 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.has_selfloops();
 			},
 			219 => {
-				trace.push(format!("has_singletons()", ));
+				trace.push(format!("has_singleton_nodes()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.has_singletons();
+				graph.has_singleton_nodes();
 			},
 			220 => {
-				trace.push(format!("has_singletons_with_selfloops()", ));
+				trace.push(format!("has_singleton_nodes_with_selfloops()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.has_singletons_with_selfloops();
+				graph.has_singleton_nodes_with_selfloops();
 			},
 			221 => {
 				trace.push(format!("has_node_types()", ));

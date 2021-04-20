@@ -359,7 +359,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 1 {
         assert!(
-            graph.has_singletons() || graph.has_singletons_with_selfloops(),
+            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
             graph.textual_report(false)
         );

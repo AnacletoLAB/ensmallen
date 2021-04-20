@@ -9928,13 +9928,13 @@
             "args": []
         },
         "example": {
-            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);\nassert!(graph_with_singletons.has_singletons());\nlet graph_without_singletons = graph_with_singletons.drop_singletons(false);\nassert!(!graph_without_singletons.has_singletons());\n"
+            "content": "```rust# let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);\nassert!(graph_with_singletons.has_singleton_nodes());\nlet graph_without_singletons = graph_with_singletons.drop_singleton_nodes(false);\nassert!(!graph_without_singletons.has_singleton_nodes());\n"
         },
         "extra_headers": []
     },
-    "has_singletons_with_selfloops": {
+    "has_singleton_nodes_with_selfloops": {
         "file": "getters_boolean.rs",
-        "function": "has_singletons_with_selfloops",
+        "function": "has_singleton_nodes_with_selfloops",
         "errors": [
             {
                 "doc_line": 0,
