@@ -353,6 +353,66 @@ impl Graph {
         ))
     }
 
+    /// Returns new graph without unknown node types and relative nodes.
+    ///
+    /// Note that this method will remove ALL nodes labeled with unknown node
+    /// type!
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_node_types(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(vec![None]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            verbose,
+        )
+    }
+
+    /// Returns new graph without unknown edge types and relative edges.
+    ///
+    /// Note that this method will remove ALL edges labeled with unknown edge
+    /// type!
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_edge_types(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(vec![None]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            verbose,
+        )
+    }
+
     /// Returns new graph without singleton nodes.
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.

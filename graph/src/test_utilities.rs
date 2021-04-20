@@ -1042,7 +1042,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         assert!(!test
-            .replace_unknown_node_types_with_node_type_name(vec!["HALLO!".to_string()], verbose)
+            .replace_unknown_node_types_with_node_type_name(vec!["HALLO!".to_string()], verbose)?
             .has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
         assert_eq!(remerged.node_types, graph.node_types);
@@ -1085,7 +1085,7 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(!test
-            .replace_unknown_edge_types_with_edge_type_name("HALLO!".to_string(), verbose)
+            .replace_unknown_edge_types_with_edge_type_name("HALLO!".to_string(), verbose)?
             .has_unknown_edge_types()?);
         assert!(
             train.edge_types.as_ref().map_or(false, |train_nts| {

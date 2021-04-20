@@ -367,25 +367,168 @@ impl Graph {
             }
             if self.has_homogeneous_node_types().unwrap() {
                 partial_reports.push("### Homogeneous node types".to_string());
-                partial_reports.push(concat!(
-                    "The current graph instance has homogenous node types. ",
-                    "That is, all nodes share the same node type. ",
-                    "Graphs with a single node type are odd because if all ",
-                    "nodes have the same node type, they might as well have none. ",
-                    "A modelling issue often causes this: for instance, ",
-                    "when working on a graph such as STRING PPI, a ",
-                    "protein-protein interactions graph, it is well known ",
-                    "that all nodes represent a protein and hence it would ",
-                    "not make sense to add such a node type. Using homogeneous ",
-                    "node types only leads to a (slightly) higher memory ",
-                    "footprint and slower embedding if your embedding ",
-                    "algorithms also involves the node type.\n\n",
-                    "Consider avoiding loading homogenous node types ",
-                    "altogether or dropping the node types by using either ",
-                    "the method `remove_inplace_node_types` or `remove_node_types` ",
-                    "to remove the node types in place or creating a ",
-                    "new graph instance without the node types."
-                ).to_string());
+                partial_reports.push(
+                    concat!(
+                        "The current graph instance has homogenous node types. ",
+                        "That is, all nodes share the same node type. ",
+                        "Graphs with a single node type are odd because if all ",
+                        "nodes have the same node type, they might as well have none. ",
+                        "A modelling issue often causes this: for instance, ",
+                        "when working on a graph such as STRING PPI, a ",
+                        "protein-protein interactions graph, it is well known ",
+                        "that all nodes represent a protein and hence it would ",
+                        "not make sense to add such a node type. Using homogeneous ",
+                        "node types only leads to a (slightly) higher memory ",
+                        "footprint and slower embedding if your embedding ",
+                        "algorithms also involves the node type.\n\n",
+                        "Consider avoiding loading homogenous node types ",
+                        "altogether or dropping the node types by using either ",
+                        "the method `remove_inplace_node_types` or `remove_node_types` ",
+                        "to remove the node types in place or creating a ",
+                        "new graph instance without the node types."
+                    )
+                    .to_string(),
+                );
+            }
+            if self.has_unknown_node_types().unwrap() {
+                partial_reports.push("### Unknown node types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "The following is less than an oddity and more ",
+                        "of a statement: the graph contains {} nodes with ",
+                        "unknown node types, composing {:.4} of the nodes.\n",
+                        "The presence of unknown node types should be a ",
+                        "conscious modelling choice for either actual ",
+                        "unknown node types or node types reserved for a ",
+                        "validation set of some kind and not related to a ",
+                        "data bug created while ingested malformed data sources.\n",
+                        "\n",
+                        "If you have a sound reason to have unknown node types ",
+                        "in your graph then you can absolutely ignore this warning.\n",
+                        "Conversely, if you want to remove the unknown node types ",
+                        "you can either use the `drop_unknown_node_types` method ",
+                        "to drop them and the related nodes, otherwise you can ",
+                        "remap the unknown node types to some other node type ",
+                        "if you have a generic node type, as is common in most ",
+                        "knowledge graphs: you can use the method ",
+                        "`replace_unknown_node_types_with_node_type_name` for",
+                        "this second solution."
+                    ),
+                    self.get_unknown_node_types_number().unwrap(),
+                    self.get_unknown_node_types_rate().unwrap() * 100.0,
+                ));
+            }
+        }
+
+        // Detect weirdness relative to edge types.
+        if self.has_edge_types_oddities().map_or(false, |value| value) {
+            partial_reports.push("## edge types".to_string());
+            if self.has_singleton_edge_types().unwrap() {
+                partial_reports.push("### Singleton edge types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: edge types that only appear in one graph edge. ",
+                        "We consider singleton edge types an oddity because it ",
+                        "identifies a single edge uniquely, and the edge name ",
+                        "already covers that function.\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase when attempting to normalize ",
+                        "the edge types: consider checking the normalization ",
+                        "step and see if these edge types fall in one of the other edge types.\n",
+                        "There are two possible solutions to the peculiarity ",
+                        "mentioned above: either drop the singleton edge types ",
+                        "or replace them with one of the other edge types. ",
+                        "The first solution may lead to edges with unknown ",
+                        "edge types that can be either dropped or imputed.\n",
+                        "\n",
+                        "#### Solution dropping singleton edge types\n",
+                        "It is possible to drop **all** of the singleton edge ",
+                        "types by using the method `graph.remove_inplace_singleton_edge_types()`, ",
+                        "which will remove *inplace* (from the current instance) ",
+                        "all of the singleton edge types or, similarly, ",
+                        "the method `graph.remove_singleton_edge_types()` ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton edge types.\n",
+                        "To drop only selected singleton edge types you can ",
+                        "use one of the following methods, according if you ",
+                        "intend to create a new graph instance or not and if ",
+                        "you want to execute the operation starting from ",
+                        "either the edge type ID or the edge type name:\n",
+                        "* `graph.remove_inplace_edge_type_id(edge_type_id)`\n",
+                        "* `graph.remove_edge_type_id(edge_type_id)`\n",
+                        "* `graph.remove_inplace_edge_type_name(edge_type_name)`\n",
+                        "* `graph.remove_edge_type_name(edge_type_name)`\n",
+                        "\n",
+                        "#### Solution replacing singleton edge types\n",
+                        "An alternative solution is provided by the `replace` ",
+                        "method: by providing the desired `edge_type_names` ",
+                        "parameter you can remap the singleton edge types ",
+                        "to other edge types."
+                    ),
+                    match self.get_singleton_edge_types_number().unwrap() {
+                        0 => unreachable!(
+                            "There must be at least a singleton edge type if we got here.",
+                        ),
+                        1 => "There is a singleton edge type in the graph".to_string(),
+                        singleton_edge_types_number => format!(
+                            "There are {} singleton edge types in the graph",
+                            singleton_edge_types_number
+                        ),
+                    }
+                ));
+            }
+            if self.has_homogeneous_edge_types().unwrap() {
+                partial_reports.push("### Homogeneous edge types".to_string());
+                partial_reports.push(
+                    concat!(
+                        "The current graph instance has homogenous edge types. ",
+                        "That is, all edges share the same edge type. ",
+                        "Graphs with a single edge type are odd because if all ",
+                        "edges have the same edge type, they might as well have none. ",
+                        "A modelling issue often causes this: for instance, ",
+                        "when working on a graph such as STRING PPI, a ",
+                        "protein-protein interactions graph, it is well known ",
+                        "that all edges represent a protein and hence it would ",
+                        "not make sense to add such a edge type. Using homogeneous ",
+                        "edge types only leads to a (slightly) higher memory ",
+                        "footprint and slower embedding if your embedding ",
+                        "algorithms also involves the edge type.\n\n",
+                        "Consider avoiding loading homogenous edge types ",
+                        "altogether or dropping the edge types by using either ",
+                        "the method `remove_inplace_edge_types` or `remove_edge_types` ",
+                        "to remove the edge types in place or creating a ",
+                        "new graph instance without the edge types."
+                    )
+                    .to_string(),
+                );
+            }
+            if self.has_unknown_edge_types().unwrap() {
+                partial_reports.push("### Unknown edge types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "The following is less than an oddity and more ",
+                        "of a statement: the graph contains {} edges with ",
+                        "unknown edge types, composing {:.4} of the edges.\n",
+                        "The presence of unknown edge types should be a ",
+                        "conscious modelling choice for either actual ",
+                        "unknown edge types or edge types reserved for a ",
+                        "validation set of some kind and not related to a ",
+                        "data bug created while ingested malformed data sources.\n",
+                        "\n",
+                        "If you have a sound reason to have unknown edge types ",
+                        "in your graph then you can absolutely ignore this warning.\n",
+                        "Conversely, if you want to remove the unknown edge types ",
+                        "you can either use the `drop_unknown_edge_types` method ",
+                        "to drop them and the related edges, otherwise you can ",
+                        "remap the unknown edge types to some other edge type ",
+                        "if you have a generic edge type, as is common in most ",
+                        "knowledge graphs: you can use the method ",
+                        "`replace_unknown_edge_types_with_edge_type_name` for",
+                        "this second solution."
+                    ),
+                    self.get_unknown_edge_types_number().unwrap(),
+                    self.get_unknown_edge_types_rate().unwrap() * 100.0,
+                ));
             }
         }
 
