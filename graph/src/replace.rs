@@ -136,7 +136,7 @@ impl Graph {
             true,
             false,
             true,
-            false,
+            true,
             true,
             self.get_directed_edges_number() as usize,
             self.get_nodes_number(),
@@ -160,9 +160,6 @@ impl Graph {
     /// # Arguments
     /// * `node_types`: Vec<NodeType> - The node types to replace the unknown with.
     /// * `verbose`: bool - Whether to show a loading bar.
-    ///
-    /// # Raises
-    /// * If the given node names mapping would lead to nodes duplication.
     pub fn replace_unknown_node_types_with_node_type_name(
         &self,
         node_type_names: Vec<String>,
@@ -173,6 +170,26 @@ impl Graph {
             None,
             Some([(None, Some(node_type_names))].iter().cloned().collect()),
             None,
+            verbose,
+        )
+        .unwrap()
+    }
+
+    /// Replace unknown edge types with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_types`: Vec<EdgeType> - The edge types to replace the unknown with.
+    /// * `verbose`: bool - Whether to show a loading bar.
+    pub fn replace_unknown_edge_types_with_edge_type_name(
+        &self,
+        edge_type_names: String,
+        verbose: bool,
+    ) -> Graph {
+        self.replace(
+            None,
+            None,
+            None,
+            Some([(None, Some(edge_type_names))].iter().cloned().collect()),
             verbose,
         )
         .unwrap()
