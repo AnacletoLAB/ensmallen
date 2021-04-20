@@ -158,10 +158,23 @@ impl Graph {
     /// Replace unknown node types with given node type.
     ///
     /// # Arguments
-    /// * `node_type`: NodeType - The node type to replace.
+    /// * `node_types`: Vec<NodeType> - The node types to replace the unknown with.
     /// * `verbose`: bool - Whether to show a loading bar.
     ///
     /// # Raises
     /// * If the given node names mapping would lead to nodes duplication.
-    pub fn replace_unknown_node_types_with_node_type_id(&self, node_type_id: NodeTypeT) {}
+    pub fn replace_unknown_node_types_with_node_type_name(
+        &self,
+        node_type_names: Vec<String>,
+        verbose: bool,
+    ) -> Graph {
+        self.replace(
+            None,
+            None,
+            Some([(None, Some(node_type_names))].iter().cloned().collect()),
+            None,
+            verbose,
+        )
+        .unwrap()
+    }
 }
