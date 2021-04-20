@@ -104,4 +104,112 @@ impl Graph {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_node_ids(src, dst)?;
         Ok(min_edge_id..max_edge_id)
     }
+
+    /// Returns iterator over edge IDs and their properties with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn iter_edge_node_ids_and_edge_type_id_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_, String> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.iter_edge_node_ids_and_edge_type_id(directed)
+                    .filter(move |(_, _, _, this_edge_type_id)| *this_edge_type_id == edge_type_id)
+            })
+    }
+
+    /// Returns iterator over node IDs and their properties with given node type.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: Option<NodeTypeT> - node type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the graph.
+    pub fn iter_node_ids_and_node_type_ids_from_node_type_id(
+        &self,
+        node_type_id: Option<NodeTypeT>,
+    ) -> Result<impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_, String> {
+        self.validate_node_type_id(node_type_id)
+            .map(|node_type_id| {
+                self.iter_node_ids_and_node_type_ids().filter(
+                    move |(_, this_node_type_ids)| match (this_node_type_ids, &node_type_id) {
+                        (Some(tntis), Some(nti)) => tntis.contains(nti),
+                        (None, None) => true,
+                        _ => false,
+                    },
+                )
+            })
+    }
+
+    /// Returns iterator over node names and their properties with given node type.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: Option<NodeTypeT> - node type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the graph.
+    pub fn iter_node_names_and_node_type_names_from_node_type_id(
+        &self,
+        node_type_id: Option<NodeTypeT>,
+    ) -> Result<
+        impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
+        String,
+    > {
+        self.validate_node_type_id(node_type_id)
+            .map(|node_type_id| {
+                self.iter_node_names_and_node_type_names().filter(
+                    move |(_, _, this_node_type_ids, _)| match (this_node_type_ids, &node_type_id) {
+                        (Some(tntis), Some(nti)) => tntis.contains(nti),
+                        (None, None) => true,
+                        _ => false,
+                    },
+                )
+            })
+    }
+
+    /// Returns iterator over edge node names and their properties with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn iter_edge_node_names_and_edge_type_name_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+        directed: bool,
+    ) -> Result<
+        impl Iterator<
+                Item = (
+                    EdgeT,
+                    NodeT,
+                    String,
+                    NodeT,
+                    String,
+                    Option<EdgeTypeT>,
+                    Option<String>,
+                ),
+            > + '_,
+        String,
+    > {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.iter_edge_node_names_and_edge_type_name(directed)
+                    .filter(move |(_, _, _, _, _, this_edge_type_id, _)| {
+                        *this_edge_type_id == edge_type_id
+                    })
+            })
+    }
 }

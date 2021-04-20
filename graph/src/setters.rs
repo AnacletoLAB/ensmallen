@@ -1,6 +1,7 @@
 use super::*;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
+use std::sync::atomic::{AtomicU32, AtomicU64, Ordering};
 
 impl Graph {
     /// Set the name of the graph.
@@ -26,6 +27,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
+    ///
+    /// # Raises
+    /// * If the graph does not have edges.
+    /// * If the graph is a multigraph.
     pub fn set_inplace_all_edge_types<S: Into<String>>(
         &mut self,
         edge_type: S,
@@ -133,6 +138,7 @@ impl Graph {
         self.validate_node_type_id(Some(node_type_id))?;
         self.invalidate_report();
         if let Some(node_types) = self.node_types.as_mut() {
+            let new_unknown_nodes = AtomicU32::new(0);
             node_types
                 .ids
                 .par_iter_mut()
@@ -148,9 +154,26 @@ impl Graph {
                     // node type anymore, we replace its empty vector with a None.
                     if node_type_ids.as_ref().map_or(false, |ntis| ntis.is_empty()) {
                         *node_type_ids = None;
+                        new_unknown_nodes.fetch_add(1, Ordering::SeqCst);
                     }
                 });
+            node_types.unknown_count += new_unknown_nodes.load(Ordering::SeqCst);
             node_types.counts[node_type_id as usize] = 0;
+        }
+        Ok(self)
+    }
+
+    /// Remove singleton node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_singleton_node_types(&mut self) -> Result<&mut Graph, String> {
+        for singleton_node_type_id in self.get_singleton_node_type_ids()? {
+            self.remove_inplace_node_type_id(singleton_node_type_id)?;
         }
         Ok(self)
     }
@@ -188,6 +211,7 @@ impl Graph {
         self.invalidate_report();
         self.validate_edge_type_id(Some(edge_type_id))?;
         if let Some(edge_types) = self.edge_types.as_mut() {
+            let new_unknown_edges = AtomicU64::new(0);
             edge_types
                 .ids
                 .par_iter_mut()
@@ -197,9 +221,26 @@ impl Graph {
                         .map_or(false, |et| *et == edge_type_id)
                     {
                         *maybe_edge_type_id = None;
+                        new_unknown_edges.fetch_add(1, Ordering::SeqCst);
                     }
                 });
+            edge_types.unknown_count += new_unknown_edges.load(Ordering::SeqCst);
             edge_types.counts[edge_type_id as usize] = 0;
+        }
+        Ok(self)
+    }
+
+    /// Remove singleton edge types from all edges.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_inplace_singleton_edge_types(&mut self) -> Result<&mut Graph, String> {
+        for singleton_edge_type_id in self.get_singleton_edge_type_ids()? {
+            self.remove_inplace_edge_type_id(singleton_edge_type_id)?;
         }
         Ok(self)
     }
@@ -239,6 +280,20 @@ impl Graph {
     pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Graph, String> {
         let mut graph = self.clone();
         graph.remove_inplace_node_type_id(node_type_id)?;
+        Ok(graph)
+    }
+
+    /// Remove singleton node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_singleton_node_types(&mut self) -> Result<Graph, String> {
+        let mut graph = self.clone();
+        graph.remove_inplace_singleton_node_types()?;
         Ok(graph)
     }
 
@@ -297,6 +352,20 @@ impl Graph {
     pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<Graph, String> {
         let mut graph = self.clone();
         graph.remove_inplace_edge_type_id(edge_type_id)?;
+        Ok(graph)
+    }
+
+    /// Remove singleton edge types from all edges.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_singleton_edge_types(&mut self) -> Result<Graph, String> {
+        let mut graph = self.clone();
+        graph.remove_inplace_singleton_edge_types()?;
         Ok(graph)
     }
 

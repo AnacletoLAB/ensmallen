@@ -2529,15 +2529,15 @@
 <path fill="none" stroke="black" d="M8949.7,-1600.66C8526.55,-1598.81 6698.9,-1588.51 6448,-1548 6341,-1530.72 6279.34,-1563.22 6215,-1476 6190.92,-1443.36 6231.1,-1421.03 6276.95,-1406.9"/>
 <polygon fill="black" stroke="black" points="6278.19,-1410.19 6286.8,-1404.01 6276.22,-1403.47 6278.19,-1410.19"/>
 </g>
-<!-- Graph::get_edge_type_counts_hashmap -->
+<!-- Graph::get_edge_type_id_counts_hashmap -->
 <g id="node277" class="node">
-<title>Graph::get_edge_type_counts_hashmap</title>
+<title>Graph::get_edge_type_id_counts_hashmap</title>
 <polygon fill="none" stroke="black" points="6522,-1476 6224,-1476 6224,-1440 6522,-1440 6522,-1476"/>
-<text text-anchor="middle" x="6373" y="-1454.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_type_counts_hashmap</text>
+<text text-anchor="middle" x="6373" y="-1454.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_type_id_counts_hashmap</text>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_edge_type_counts_hashmap -->
+<!-- test_graph_properties&#45;&gt;Graph::get_edge_type_id_counts_hashmap -->
 <g id="edge264" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_edge_type_counts_hashmap</title>
+<title>test_graph_properties&#45;&gt;Graph::get_edge_type_id_counts_hashmap</title>
 <path fill="none" stroke="black" d="M8949.76,-1600.31C8521.19,-1596.79 6654.81,-1579.67 6536,-1548 6486.45,-1534.79 6435.55,-1503.64 6404.11,-1481.94"/>
 <polygon fill="black" stroke="black" points="6405.97,-1478.97 6395.77,-1476.1 6401.95,-1484.71 6405.97,-1478.97"/>
 </g>
@@ -6465,9 +6465,9 @@
 <path fill="none" stroke="black" d="M5906.21,-727.08C6008.94,-718.81 6132.7,-704.97 6181,-684 6203.86,-674.08 6200.79,-657.08 6224,-648 6376.49,-588.34 6807.51,-671.66 6960,-612 6983.21,-602.92 6980.12,-585.88 7003,-576 7127.5,-522.24 7189.97,-610.21 7306,-540 7355.78,-509.88 7329.22,-460.41 7380,-432 7460.95,-386.71 8070.9,-379.88 8326.67,-379.03"/>
 <polygon fill="black" stroke="black" points="8326.74,-382.53 8336.73,-379 8326.72,-375.53 8326.74,-382.53"/>
 </g>
-<!-- Graph::get_edge_type_counts_hashmap&#45;&gt;Graph::get_edge_type_counts -->
+<!-- Graph::get_edge_type_id_counts_hashmap&#45;&gt;Graph::get_edge_type_counts -->
 <g id="edge759" class="edge">
-<title>Graph::get_edge_type_counts_hashmap&#45;&gt;Graph::get_edge_type_counts</title>
+<title>Graph::get_edge_type_id_counts_hashmap&#45;&gt;Graph::get_edge_type_counts</title>
 <path fill="none" stroke="black" d="M6373,-1439.7C6373,-1431.98 6373,-1422.71 6373,-1414.11"/>
 <polygon fill="black" stroke="black" points="6376.5,-1414.1 6373,-1404.1 6369.5,-1414.1 6376.5,-1414.1"/>
 </g>

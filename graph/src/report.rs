@@ -71,20 +71,18 @@ impl Graph {
             self.get_selfloop_nodes_number().to_string(),
         );
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
-        report.insert(
-            "unique_node_types_number",
-            self.get_node_types_number().to_string(),
-        );
-        report.insert(
-            "unique_edge_types_number",
-            self.get_edge_types_number().to_string(),
-        );
+        if let Ok(node_types_number) = self.get_node_types_number() {
+            report.insert("unique_node_types_number", node_types_number.to_string());
+        }
+        if let Ok(edge_types_number) = self.get_edge_types_number() {
+            report.insert("unique_edge_types_number", edge_types_number.to_string());
+        }
         report
     }
 
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter_map(
                 |(_, node_name, _, _)| match self.get_node_id_from_node_name(&node_name) {
                     Ok(node_id) => Some(nodes_components[node_id as usize]),
@@ -135,7 +133,7 @@ impl Graph {
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
         let overlapping_nodes_number = self
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter(|(_, node_name, _, node_type)| {
                 other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())
             })
@@ -273,48 +271,109 @@ impl Graph {
         )
     }
 
-    /// Return formatted node type list.
+    /// Return human-readable markdown report of the graph peculiarities.
+    ///
+    /// The report, by default, is rendered using Markdown.
     ///
     /// # Arguments
-    /// * `node_types_list`: &[NodeT] - list of nodes to be formatted.
-    fn format_node_type_list(
-        &self,
-        node_types_list: &[(NodeTypeT, usize)],
-    ) -> Result<String, String> {
-        self.format_list(
-            node_types_list
-                .iter()
-                .map(|(node_type_id, number)| {
-                    format!(
-                        "{node_type} (nodes number {node_degree})",
-                        node_type = self
-                            .get_node_type_name_from_node_type_id(*node_type_id)
-                            .unwrap(),
-                        node_degree = number
-                    )
-                })
-                .collect::<Vec<String>>()
-                .as_slice(),
-        )
-    }
+    /// * `verbose`: bool - Whether to show a loading bar in graph operations.
+    ///
+    pub fn get_peculiarities_report_markdown(&self) -> String {
+        let mut partial_reports: Vec<String> = Vec::new();
 
-    /// Return formatted edge type list.
-    ///
-    /// # Arguments
-    /// * `edge_types_list`: &[edgeT] - list of edges to be formatted.
-    fn format_edge_type_list(
-        &self,
-        edge_types_list: &[(EdgeTypeT, usize)],
-    ) -> Result<String, String> {
-        self.format_list(
-            edge_types_list
-                .iter()
-                .map(|(edge_type_id, _)| {
-                    self.get_edge_type_name_from_edge_type_id(*edge_type_id)
-                        .unwrap()
-                })
-                .collect::<Vec<String>>()
-                .as_slice(),
+        partial_reports.push(format!(
+            "# Peculiarities report for graph {}",
+            self.get_name()
+        ));
+
+        if !self.has_nodes() {
+            partial_reports.push("## Absence of nodes".to_string());
+            partial_reports.push(
+                concat!(
+                    "The graph does not have any node. This may be caused by ",
+                    "an improper use of one of the filter methods."
+                )
+                .to_string(),
+            );
+        }
+
+        if !self.has_edges() {
+            partial_reports.push("## Absence of edges".to_string());
+            partial_reports.push(
+                concat!(
+                    "The graph does not have any edge. This may be caused by ",
+                    "an improper use of one of the filter methods."
+                )
+                .to_string(),
+            );
+        }
+
+        // Detect weirdness relative to node types.
+        if self.has_node_types_oddities().map_or(false, |value| value) {
+            let mut partial_node_types_reports: Vec<String> = Vec::new();
+            if self.has_singleton_node_types().unwrap() {
+                partial_node_types_reports.push("### Singleton node types".to_string());
+                partial_node_types_reports.push(format!(
+                    concat!(
+                        "{}: node types that only appear in one graph node. ",
+                        "We consider singleton node types an oddity because it ",
+                        "identifies a single node uniquely, and the node name ",
+                        "already covers that function.\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase when attempting to normalize ",
+                        "the node types: consider checking the normalization ",
+                        "step and see if these node types fall in one of the other node types.\n",
+                        "There are two possible solutions to the peculiarity ",
+                        "mentioned above: either drop the singleton node types ",
+                        "or replace them with one of the other node types. ",
+                        "The first solution may lead to nodes with unknown ",
+                        "node types that can be either dropped or imputed.\n",
+                        "\n",
+                        "#### Solution dropping singleton node types\n",
+                        "It is possible to drop **all** of the singleton node ",
+                        "types by using the method `graph.remove_inplace_singleton_node_types()`, ",
+                        "which will remove *inplace* (from the current instance) ",
+                        "all of the singleton node types or, similarly, ",
+                        "the method `graph.remove_singleton_node_types()` ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton node types.\n",
+                        "To drop only selected singleton node types you can ",
+                        "use one of the following methods, according if you ",
+                        "intend to create a new graph instance or not and if ",
+                        "you want to execute the operation starting from ",
+                        "either the node type ID or the node type name:\n",
+                        "* `graph.remove_inplace_node_type_id(node_type_id)`\n",
+                        "* `graph.remove_node_type_id(node_type_id)`\n",
+                        "* `graph.remove_inplace_node_type_name(node_type_name)`\n",
+                        "* `graph.remove_node_type_name(node_type_name)`\n",
+                        "\n",
+                        "#### Solution replacing singleton node types\n",
+                        "An alternative solution is provided by the `replace` ",
+                        "method: by providing the desired `node_type_names` ",
+                        "parameter you can remap the singleton node types ",
+                        "to other node types."
+                    ),
+                    match self.get_singleton_node_types_number().unwrap() {
+                        0 => unreachable!(
+                            "There must be at least a singleton node type if we got here.",
+                        ),
+                        1 => "There is a singleton node type in the graph".to_string(),
+                        singleton_node_types_number => format!(
+                            "There are {} singleton node types in the graph",
+                            singleton_node_types_number
+                        ),
+                    }
+                ));
+            }
+            if !partial_node_types_reports.is_empty() {
+                partial_reports.push("## Node types".to_string());
+                partial_reports.extend(partial_node_types_reports);
+            }
+        }
+
+        format!(
+            "Congratulations, the graph {} does not seem to have any weirdness!",
+            self.get_name()
         )
     }
 
@@ -350,7 +409,7 @@ impl Graph {
 
         *ptr = Some(format!(
             concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. ",
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{singletons} and {edges_number} {weighted} edges, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
@@ -387,42 +446,6 @@ impl Graph {
                 },
                 false=>"".to_owned()
             },
-            node_types= match self.get_node_types_number() {
-                ntn if ntn==1 => format!(
-                    " with a single node type: {node_type}",
-                    node_type={
-                        let node_types = self.get_node_type_counter()?;
-                        self.format_node_type_list(node_types.most_common().as_slice())?
-                    }
-                ),
-                ntn if ntn > 1 => format!(
-                    " with {node_types_number} different {multilabel}node types: {most_common_node_types}{unknown_node_types}.",
-                    node_types_number=ntn,
-                    multilabel=match self.has_multilabel_node_types(){
-                        true=>"multi-label ",
-                        false=>""
-                    },
-                    most_common_node_types={
-                        let node_types = self.get_node_type_counter()?;
-                        let most_common = node_types.most_common();
-                        match most_common.len()>5 {
-                            true=>format!(" the 5 most common are {}", self.format_node_type_list(most_common[0..5].as_ref())?),
-                            false=>self.format_node_type_list(most_common.as_slice())?
-                        }
-                    },
-                    unknown_node_types={
-                        match self.has_unknown_node_types(){
-                            true=>{
-                                let unknown_nodes_number=self.get_unknown_node_types_number();
-                                let percentage = 100.0*(unknown_nodes_number as f64 / self.get_nodes_number() as f64);
-                                format!(" and there are {} unknown node types ({:.2}%)", unknown_nodes_number, percentage)
-                            },
-                            false=>"".to_owned()
-                        }
-                    }
-                ),
-                _ => "".to_owned()
-            },
             singletons = match self.has_singletons() {
                 true => format!(
                     " There are {singleton_number} singleton nodes{selfloop_singleton},", 
@@ -436,38 +459,6 @@ impl Graph {
                     }
                 ),
                 false => "".to_owned()
-            },
-            edge_types= match self.get_edge_types_number() {
-                etn if etn==1 => format!(
-                    " with a single edge type: {edge_type}",
-                    edge_type={
-                        let edge_types = self.get_edge_type_counter()?;
-                        self.format_edge_type_list(edge_types.most_common().as_slice())?
-                    }
-                ),
-                etn if etn > 1 => format!(
-                    " with {edge_types_number} different edge types: {most_common_edge_types}{unknown_edge_types}",
-                    edge_types_number=etn,
-                    most_common_edge_types={
-                        let edge_types = self.get_edge_type_counter()?;
-                        let most_common = edge_types.most_common();
-                        match most_common.len()>5 {
-                            true=>format!(" the 5 most common are {}", self.format_edge_type_list(most_common[0..5].as_ref())?),
-                            false=>self.format_edge_type_list(most_common.as_slice())?
-                        }
-                    },
-                    unknown_edge_types={
-                        match self.has_unknown_edge_types(){
-                            true=>{
-                                let unknown_edges_number=self.get_unknown_edge_types_number();
-                                let percentage = 100.0*(unknown_edges_number as f64 / self.get_directed_edges_number() as f64);
-                                format!(". There are {} unknown edge types ({:.2}%).", unknown_edges_number, percentage)
-                            },
-                            false=>"".to_owned()
-                        }
-                    }
-                ),
-                _ => "".to_owned()
             },
             quantized_density = match self.get_density().unwrap() {
                 d if d < 0.0001 => "extremely sparse".to_owned(),

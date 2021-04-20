@@ -49,7 +49,7 @@ impl Graph {
                 ));
             }
             Some(
-                sg.iter_nodes()
+                sg.iter_node_names_and_node_type_names()
                     .map(|(_, node_name, _, _)| {
                         self.get_unchecked_node_id_from_node_name(&node_name)
                     })
@@ -646,10 +646,10 @@ impl Graph {
     ) -> Result<(Graph, Graph), String> {
         self.must_have_node_types()?;
         if use_stratification {
-            if self.has_multilabel_node_types() {
+            if self.has_multilabel_node_types()? {
                 return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
             }
-            if self.get_minimum_node_types_number() < 2 {
+            if self.has_singleton_node_types()? {
                 return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
             }
         }
@@ -664,7 +664,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each node type
                     let mut node_sets: Vec<Vec<NodeT>> =
-                        vec![Vec::new(); self.get_node_types_number() as usize];
+                        vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
                     nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
@@ -757,14 +757,20 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed).unwrap();
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If stratification is required but the graph has singleton edge types.
     pub fn edge_label_holdout(
         &self,
         train_size: f64,
         use_stratification: bool,
         random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
-        self.must_have_edge_types()?;
-        if use_stratification && self.get_minimum_edge_types_number() < 2 {
+        if self.get_directed_edges_number() - self.get_unknown_edge_types_number()? < 2 {
+            return Err("The graph must have at least two edges!".to_string());
+        }
+        if use_stratification && self.has_singleton_edge_types()? {
             return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
         }
 
@@ -778,7 +784,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
-                        vec![Vec::new(); self.get_edge_types_number() as usize];
+                        vec![Vec::new(); self.get_edge_types_number().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
                     nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {

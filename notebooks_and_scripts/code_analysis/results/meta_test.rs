@@ -599,7 +599,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.iter_edges_with_type_ids(data.iter_edges_with_type_ids.directed).collect::<Vec<_>>();
 	let _ = graph.iter_node_degrees().collect::<Vec<_>>();
 	let _ = graph.iter_node_ids().collect::<Vec<_>>();
-	let _ = graph.iter_nodes().collect::<Vec<_>>();
+	let _ = graph.iter_node_names_and_node_type_names().collect::<Vec<_>>();
 	let _ = graph.iter_nodes_with_type_ids().collect::<Vec<_>>();
 	let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_singleton_node_ids().collect::<Vec<_>>();
@@ -702,7 +702,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_edge_id_from_node_ids(data.get_edge_id_from_node_ids.src, data.get_edge_id_from_node_ids.dst);
 	let _ = graph.get_edge_id_with_type_from_node_ids(data.get_edge_id_with_type_from_node_ids.src, data.get_edge_id_with_type_from_node_ids.dst, data.get_edge_id_with_type_from_node_ids.edge_type);
 	let _ = graph.get_edge_type_counts();
-	let _ = graph.get_edge_type_counts_hashmap();
+	let _ = graph.get_edge_type_id_counts_hashmap();
 	let _ = graph.get_edge_type_id_from_edge_id(data.get_edge_type_id_from_edge_id.edge_id);
 	let _ = graph.get_edge_type_ids_from_edge_type_names(data.get_edge_type_ids_from_edge_type_names.edge_types);
 	let _ = graph.get_edge_type_name_from_edge_id(data.get_edge_type_name_from_edge_id.edge_id);

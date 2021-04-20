@@ -193,7 +193,7 @@ impl EnsmallenGraph {
     /// }
     ///
     fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-        pe!(self.graph.get_edge_type_counts_hashmap())
+        pe!(self.graph.get_edge_type_id_counts_hashmap())
     }
 
     #[text_signature = "($self)"]
@@ -296,8 +296,8 @@ impl EnsmallenGraph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn get_edge_type_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-		pe!(self.graph.get_edge_type_counts_hashmap())
+	fn get_edge_type_id_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
+		pe!(self.graph.get_edge_type_id_counts_hashmap())
 	}
 	
 	#[text_signature = "($self)"]

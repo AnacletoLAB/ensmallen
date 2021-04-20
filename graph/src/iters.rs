@@ -17,14 +17,78 @@ impl Graph {
         0..self.get_nodes_number()
     }
 
-    /// Return iterator on the node type IDs of the graph.
-    pub fn iter_node_type_ids(&self) -> impl Iterator<Item = NodeTypeT> + '_ {
-        0..self.get_node_types_number()
+    /// Return iterator on the unique node type IDs of the graph.
+    pub fn iter_unique_node_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = NodeTypeT> + '_, String> {
+        Ok(0..self.get_node_types_number()?)
+    }
+
+    /// Return iterator on the unique node type IDs counts of the graph.
+    pub fn iter_node_type_counts(&self) -> Result<impl Iterator<Item = NodeT> + '_, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.counts.iter().cloned())
+    }
+
+    /// Return iterator on the unique node type IDs and their counts of the graph.
+    pub fn iter_unique_node_type_ids_and_counts(
+        &self,
+    ) -> Result<impl Iterator<Item = (NodeTypeT, NodeT)> + '_, String> {
+        Ok(self
+            .iter_unique_node_type_ids()?
+            .zip(self.iter_node_type_counts()?))
+    }
+
+    /// Return iterator on the unique node type names of the graph.
+    pub fn iter_unique_node_type_names(&self) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.vocabulary.reverse_map.iter().cloned())
+    }
+
+    /// Return iterator on the unique node type names and their counts of the graph.
+    pub fn iter_unique_node_type_names_and_counts(
+        &self,
+    ) -> Result<impl Iterator<Item = (String, NodeT)> + '_, String> {
+        Ok(self
+            .iter_unique_node_type_names()?
+            .zip(self.iter_node_type_counts()?))
     }
 
     /// Return iterator on the edge type IDs of the graph.
-    pub fn iter_edge_type_ids(&self) -> impl Iterator<Item = EdgeTypeT> + '_ {
-        0..self.get_edge_types_number()
+    pub fn iter_unique_edge_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeTypeT> + '_, String> {
+        Ok(0..self.get_edge_types_number()?)
+    }
+
+    /// Return iterator on the unique edge type IDs counts of the graph.
+    pub fn iter_edge_type_counts(&self) -> Result<impl Iterator<Item = EdgeT> + '_, String> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.counts.iter().cloned())
+    }
+
+    /// Return iterator on the unique edge type IDs and their counts of the graph.
+    pub fn iter_unique_edge_type_ids_and_counts(
+        &self,
+    ) -> Result<impl Iterator<Item = (EdgeTypeT, EdgeT)> + '_, String> {
+        Ok(self
+            .iter_unique_edge_type_ids()?
+            .zip(self.iter_edge_type_counts()?))
+    }
+
+    /// Return iterator on the unique edge type names and their counts of the graph.
+    pub fn iter_unique_edge_type_names_and_counts(
+        &self,
+    ) -> Result<impl Iterator<Item = (String, EdgeT)> + '_, String> {
+        Ok(self
+            .iter_unique_edge_type_names()?
+            .zip(self.iter_edge_type_counts()?))
+    }
+
+    /// Return iterator on the unique edge type names of the graph.
+    pub fn iter_unique_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.vocabulary.reverse_map.iter().cloned())
     }
 
     /// Return iterator on the node of the graph.
@@ -75,6 +139,84 @@ impl Graph {
             Some(nsns) => Box::new(nsns.iter()),
             _ => Box::new(::std::iter::empty()),
         }
+    }
+
+    /// Return iterator on the singleton node type IDs of the graph.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_singleton_node_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = NodeTypeT> + '_, String> {
+        self.iter_unique_node_type_ids_and_counts()
+            .map(|iter_unique_node_type_ids_and_counts| {
+                iter_unique_node_type_ids_and_counts.filter_map(|(node_type_id, count)| {
+                    if count == 1 {
+                        Some(node_type_id)
+                    } else {
+                        None
+                    }
+                })
+            })
+    }
+
+    /// Return iterator on the singleton edge type IDs of the graph.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_singleton_edge_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeTypeT> + '_, String> {
+        self.iter_unique_edge_type_ids_and_counts()
+            .map(|iter_unique_edge_type_ids_and_counts| {
+                iter_unique_edge_type_ids_and_counts.filter_map(|(edge_type_id, count)| {
+                    if count == 1 {
+                        Some(edge_type_id)
+                    } else {
+                        None
+                    }
+                })
+            })
+    }
+
+    /// Return iterator on the singleton node type names of the graph.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_singleton_node_type_names(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.iter_unique_node_type_names_and_counts().map(
+            |iter_unique_node_type_names_and_counts| {
+                iter_unique_node_type_names_and_counts.filter_map(|(node_type_id, count)| {
+                    if count == 1 {
+                        Some(node_type_id)
+                    } else {
+                        None
+                    }
+                })
+            },
+        )
+    }
+
+    /// Return iterator on the singleton edge type names of the graph.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_singleton_edge_type_names(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.iter_unique_edge_type_names_and_counts().map(
+            |iter_unique_edge_type_names_and_counts| {
+                iter_unique_edge_type_names_and_counts.filter_map(|(edge_type_id, count)| {
+                    if count == 1 {
+                        Some(edge_type_id)
+                    } else {
+                        None
+                    }
+                })
+            },
+        )
     }
 
     /// Return iterator on the (non unique) source nodes of the graph.
@@ -179,7 +321,7 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph as Strings.
-    pub fn iter_nodes(
+    pub fn iter_node_names_and_node_type_names(
         &self,
     ) -> impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {

@@ -371,8 +371,8 @@ impl Graph {
     /// ```
     ///
     pub fn get_unique_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>, String> {
-        self.must_have_edge_types()
-            .map(|_| self.iter_edge_type_ids().collect())
+        self.iter_unique_edge_type_ids()
+            .map(|edge_type_ids| edge_type_ids.collect())
     }
 
     /// Return the edge types names.
@@ -394,12 +394,8 @@ impl Graph {
 
     /// Return the edge types names.
     pub fn get_unique_edge_type_names(&self) -> Result<Vec<String>, String> {
-        self.must_have_edge_types().map(|_| {
-            self.edge_types
-                .as_ref()
-                .map(|ets| ets.vocabulary.reverse_map.clone())
-                .unwrap()
-        })
+        self.iter_unique_edge_type_names()
+            .map(|iter_unique_edge_type_names| iter_unique_edge_type_names.collect())
     }
 
     /// Return the weights of the graph edges.
@@ -502,8 +498,8 @@ impl Graph {
     /// ```
     ///
     pub fn get_unique_node_type_ids(&self) -> Result<Vec<NodeTypeT>, String> {
-        self.must_have_node_types()
-            .map(|_| self.iter_node_type_ids().collect())
+        self.iter_unique_node_type_ids()
+            .map(|iter_unique_node_type_ids| iter_unique_node_type_ids.collect())
     }
 
     /// Return the unique node types names.
@@ -519,12 +515,8 @@ impl Graph {
     /// ```
     ///
     pub fn get_unique_node_type_names(&self) -> Result<Vec<String>, String> {
-        self.must_have_node_types().map(|_| {
-            self.node_types
-                .as_ref()
-                .map(|nts| nts.vocabulary.reverse_map.clone())
-                .unwrap()
-        })
+        self.iter_unique_node_type_names()
+            .map(|iter_unique_node_type_names| iter_unique_node_type_names.collect())
     }
 
     /// Return number of the unique edges in the graph.
@@ -558,31 +550,87 @@ impl Graph {
     }
 
     /// Returns number of unknown node types.
-    pub fn get_unknown_node_types_number(&self) -> NodeT {
-        self.node_types
-            .as_ref()
-            .map_or(0, |nt| nt.get_unknown_count())
+    pub fn get_unknown_node_types_number(&self) -> Result<NodeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.get_unknown_count())
     }
 
     /// Returns minimum number of node types.
-    pub fn get_minimum_node_types_number(&self) -> NodeT {
-        self.node_types
-            .as_ref()
-            .map_or(0, |et| et.min_node_type_count())
+    pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.min_node_type_count())
+    }
+
+    /// Returns number of singleton node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_singleton_node_types_number(&self) -> Result<NodeTypeT, String> {
+        self.iter_node_type_counts().map(|iter_node_type_counts| {
+            iter_node_type_counts
+                .map(|node_type_count| (node_type_count == 1) as NodeTypeT)
+                .sum()
+        })
+    }
+
+    /// Returns vector of singleton node types IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_singleton_node_type_ids(&self) -> Result<Vec<NodeTypeT>, String> {
+        self.iter_singleton_node_type_ids()
+            .map(|iter_singleton_node_type_ids| iter_singleton_node_type_ids.collect())
+    }
+
+    /// Returns vector of singleton node types names.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_singleton_node_type_names(&self) -> Result<Vec<String>, String> {
+        self.iter_singleton_node_type_names()
+            .map(|iter_singleton_node_type_names| iter_singleton_node_type_names.collect())
     }
 
     /// Returns number of unknown edge types.
-    pub fn get_unknown_edge_types_number(&self) -> EdgeT {
-        self.edge_types
-            .as_ref()
-            .map_or(0, |et| et.get_unknown_count())
+    pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.get_unknown_count())
     }
 
     /// Returns minimum number of edge types.
-    pub fn get_minimum_edge_types_number(&self) -> EdgeT {
-        self.edge_types
-            .as_ref()
-            .map_or(0, |et| et.min_edge_type_count())
+    pub fn get_minimum_edge_types_number(&self) -> Result<EdgeT, String> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.min_edge_type_count())
+    }
+
+    /// Returns number of singleton edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_singleton_edge_types_number(&self) -> Result<EdgeTypeT, String> {
+        self.iter_edge_type_counts().map(|iter_edge_type_counts| {
+            iter_edge_type_counts
+                .map(|edge_type_count| (edge_type_count == 1) as EdgeTypeT)
+                .sum()
+        })
+    }
+
+    /// Returns vector of singleton edge types IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_singleton_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>, String> {
+        self.iter_singleton_edge_type_ids()
+            .map(|iter_singleton_edge_type_ids| iter_singleton_edge_type_ids.collect())
+    }
+
+    /// Returns vector of singleton edge types names.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_singleton_edge_type_names(&self) -> Result<Vec<String>, String> {
+        self.iter_singleton_edge_type_names()
+            .map(|iter_singleton_edge_type_names| iter_singleton_edge_type_names.collect())
     }
 
     /// Returns number of nodes in the graph.
@@ -610,17 +658,21 @@ impl Graph {
     }
 
     /// Returns number of edge types in the graph.
-    pub fn get_edge_types_number(&self) -> EdgeTypeT {
-        self.edge_types
-            .as_ref()
-            .map_or(0, |ets| ets.len() as EdgeTypeT)
+    ///
+    /// # Raises
+    /// * If there are no edge types in the current graph.
+    pub fn get_edge_types_number(&self) -> Result<EdgeTypeT, String> {
+        self.must_have_edge_types()
+            .map(|ets| ets.len() as EdgeTypeT)
     }
 
     /// Returns number of node types in the graph.
-    pub fn get_node_types_number(&self) -> NodeTypeT {
-        self.node_types
-            .as_ref()
-            .map_or(0, |nts| nts.len() as NodeTypeT)
+    ///
+    /// # Raises
+    /// * If there are no node types in the current graph.
+    pub fn get_node_types_number(&self) -> Result<NodeTypeT, String> {
+        self.must_have_node_types()
+            .map(|nts| nts.len() as NodeTypeT)
     }
 
     /// Returns the degree of every node in the graph.
@@ -671,72 +723,85 @@ impl Graph {
             .map_or(self.get_nodes_number(), |x| x.len() as NodeT)
     }
 
-    /// Returns edge type counts.
+    /// Returns edge type IDs counts hashmap.
     ///
     /// # Example
+    /// In order to compute an hashmap of the edge type IDs you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// for (edge_type_id, count) in graph.get_edge_type_counter().unwrap().iter() {
+    /// for (edge_type_id, count) in graph.get_edge_type_id_counts_hashmap().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
-    pub fn get_edge_type_counter(&self) -> Result<Counter<EdgeTypeT, usize>, String> {
-        self.must_have_edge_types()?;
-        Ok(self
-            .edge_types
-            .as_ref()
-            .map(|ets| Counter::init(ets.ids.iter().filter_map(|edge_type| *edge_type)))
-            .unwrap())
-    }
-
-    /// Returns edge type counts hashmap.
     ///
-    /// # Example
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// for (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {
-    ///     println!("edge type id {}: count: {}", edge_type_id, count);
-    /// }
-    /// ```
-    pub fn get_edge_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
-        Ok(self.get_edge_type_counter()?.into_map())
-    }
-
-    /// Returns node type counts.
-    ///
-    /// # Example
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// for (node_type_id, count) in graph.get_node_type_counter().unwrap().iter() {
-    ///     println!("node type id {}: count: {}", node_type_id, count);
-    /// }
-    /// ```
-    pub fn get_node_type_counter(&self) -> Result<Counter<NodeTypeT, usize>, String> {
-        self.must_have_node_types()?;
-        Ok(self
-            .node_types
-            .as_ref()
-            .map(|nts| {
-                Counter::init(
-                    nts.ids
-                        .iter()
-                        .filter_map(|node_type| node_type.clone())
-                        .flatten(),
-                )
+    /// # Raises
+    /// * If there are no edge types in the current graph instance.
+    pub fn get_edge_type_id_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, EdgeT>, String> {
+        self.iter_unique_edge_type_ids_and_counts()
+            .map(|iter_unique_edge_type_ids_and_counts| {
+                iter_unique_edge_type_ids_and_counts.collect()
             })
-            .unwrap())
     }
 
-    /// Returns node type counts hashmap.
+    /// Returns edge type names counts hashmap.
     ///
     /// # Example
+    /// In order to compute an hashmap of the edge type names you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// for (node_type_id, count) in graph.get_node_type_counts_hashmap().unwrap().iter() {
+    /// for (edge_type_id, count) in graph.get_edge_type_id_counts_hashmap().unwrap().iter() {
+    ///     println!("edge type name {}: count: {}", edge_type_id, count);
+    /// }
+    /// ```
+    ///
+    /// # Raises
+    /// * If there are no edge types in the current graph instance.
+    pub fn get_edge_type_names_counts_hashmap(&self) -> Result<HashMap<String, EdgeT>, String> {
+        self.iter_unique_edge_type_names_and_counts().map(
+            |iter_unique_edge_type_names_and_counts| {
+                iter_unique_edge_type_names_and_counts.collect()
+            },
+        )
+    }
+
+    /// Returns node type IDs counts hashmap.
+    ///
+    /// # Example
+    /// In order to compute an hashmap of the node type IDs you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// for (node_type_id, count) in graph.get_node_type_id_counts_hashmap().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```
-    pub fn get_node_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
-        Ok(self.get_node_type_counter()?.into_map())
+    ///
+    /// # Raises
+    /// * If there are no node types in the current graph instance.
+    pub fn get_node_type_id_counts_hashmap(&self) -> Result<HashMap<NodeTypeT, NodeT>, String> {
+        self.iter_unique_node_type_ids_and_counts()
+            .map(|iter_unique_node_type_ids_and_counts| {
+                iter_unique_node_type_ids_and_counts.collect()
+            })
+    }
+
+    /// Returns node type names counts hashmap.
+    ///
+    /// # Example
+    /// In order to compute an hashmap of the node type names you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// for (node_type_id, count) in graph.get_node_type_id_counts_hashmap().unwrap().iter() {
+    ///     println!("node type name {}: count: {}", node_type_id, count);
+    /// }
+    /// ```
+    ///
+    /// # Raises
+    /// * If there are no node types in the current graph instance.
+    pub fn get_node_type_names_counts_hashmap(&self) -> Result<HashMap<String, NodeT>, String> {
+        self.iter_unique_node_type_names_and_counts().map(
+            |iter_unique_node_type_names_and_counts| {
+                iter_unique_node_type_names_and_counts.collect()
+            },
+        )
     }
 }

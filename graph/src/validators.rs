@@ -72,17 +72,37 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<Option<NodeTypeT>, String> {
+        self.get_node_types_number().and_then(|node_types_number| {
+            node_type_id.map_or( Ok(None), |nti| {
+                if node_types_number <= nti {
+                    Err(format!(
+                        "Given node type ID {} is bigger than number of node types in the graph {}.",
+                        nti,
+                        node_types_number
+                    ))
+                } else {
+                    Ok(Some(nti))
+                }
+            })
+        })
+    }
+
+    /// Validates provided node type IDs.
+    ///
+    /// # Arguments
+    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - Vector of node type IDs to validate.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn validate_node_type_ids(
+        &self,
+        node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<Vec<Option<NodeTypeT>>, String> {
         self.must_have_node_types()?;
-        if let Some(nti) = node_type_id {
-            if self.get_node_types_number() <= nti {
-                return Err(format!(
-                    "Given node type ID {:?} is bigger than number of node types in the graph {}.",
-                    nti,
-                    self.get_node_types_number()
-                ));
-            }
-        }
-        Ok(node_type_id)
+        node_type_ids
+            .into_iter()
+            .map(|node_type| self.validate_node_type_id(node_type))
+            .collect()
     }
 
     /// Validates provided edge type ID.
@@ -102,17 +122,37 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Option<EdgeTypeT>, String> {
+        self.get_edge_types_number().and_then(|edge_types_number| {
+            edge_type_id.map_or( Ok(None), |eti| {
+                if edge_types_number <= eti {
+                    Err(format!(
+                        "Given edge type ID {} is bigger than number of edge types in the graph {}.",
+                        eti,
+                        edge_types_number
+                    ))
+                } else {
+                    Ok(Some(eti))
+                }
+            })
+        })
+    }
+
+    /// Validates provided edge type IDs.
+    ///
+    /// # Arguments
+    /// * `edge_type_ids`: Vec<Option<EdgeTypeT>> - Vector of edge type IDs to validate.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn validate_edge_type_ids(
+        &self,
+        edge_type_ids: Vec<Option<EdgeTypeT>>,
+    ) -> Result<Vec<Option<EdgeTypeT>>, String> {
         self.must_have_edge_types()?;
-        if let Some(eti) = edge_type_id {
-            if self.get_edge_types_number() <= eti {
-                return Err(format!(
-                    "Given edge type ID {:?} is bigger than number of edge types in the graph {}.",
-                    eti,
-                    self.get_edge_types_number()
-                ));
-            }
-        }
-        Ok(edge_type_id)
+        edge_type_ids
+            .into_iter()
+            .map(|edge_type| self.validate_edge_type_id(edge_type))
+            .collect()
     }
 
     /// Raises an error if the graph does not have node types.
@@ -126,11 +166,11 @@ impl Graph {
     /// assert!(graph_with_node_types.must_have_node_types().is_ok());
     /// assert!(graph_without_node_types.must_have_node_types().is_err());
     /// ```
-    pub fn must_have_node_types(&self) -> Result<(), String> {
+    pub fn must_have_node_types(&self) -> Result<&NodeTypeVocabulary, String> {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types.".to_string());
         }
-        Ok(())
+        Ok(self.node_types.as_ref().unwrap())
     }
 
     /// Raises an error if the graph does not have edge types.
@@ -144,11 +184,11 @@ impl Graph {
     /// assert!(graph_with_edge_types.must_have_edge_types().is_ok());
     /// assert!(graph_without_edge_types.must_have_edge_types().is_err());
     /// ```
-    pub fn must_have_edge_types(&self) -> Result<(), String> {
+    pub fn must_have_edge_types(&self) -> Result<&EdgeTypeVocabulary, String> {
         if !self.has_edge_types() {
             return Err("The current graph instance does not have edge types.".to_string());
         }
-        Ok(())
+        Ok(self.edge_types.as_ref().unwrap())
     }
 
     /// Raises an error if the graph does not have edge types.
@@ -221,11 +261,11 @@ impl Graph {
     /// assert!(graph_with_weights.must_have_edge_weights().is_ok());
     /// assert!(graph_without_weights.must_have_edge_weights().is_err());
     /// ```
-    pub fn must_have_edge_weights(&self) -> Result<(), String> {
+    pub fn must_have_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
-        Ok(())
+        Ok(self.weights.as_ref().unwrap())
     }
 
     /// Raises an error if the graph does not have any edge.

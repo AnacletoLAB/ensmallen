@@ -139,7 +139,7 @@ fn generic_string_operator(
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
     let nodes_iterator = main
-        .iter_nodes()
+        .iter_node_names_and_node_type_names()
         .map(|(_, node_name, _, node_type_names)| {
             let node_type_names = match node_type_names {
                 Some(ntns) => Some(ntns),
@@ -152,7 +152,7 @@ fn generic_string_operator(
         })
         .chain(
             other
-                .iter_nodes()
+                .iter_node_names_and_node_type_names()
                 .filter_map(|(_, node_name, _, node_type_names)| {
                     match main.has_node_by_node_name(&node_name) {
                         true => None,
@@ -2865,7 +2865,7 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.iter_nodes().all(|(_, node_name, _, node_type)| {
+        self.iter_node_names_and_node_type_names().all(|(_, node_name, _, node_type)| {
             other.has_node_with_type_by_node_name(&node_name, node_type)
         })
     }
@@ -4272,9 +4272,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
-    // Evaluate get_edge_type_counts_hashmap
+    // Evaluate get_edge_type_id_counts_hashmap
     assert_eq!(
-        graph.get_edge_type_counts_hashmap().is_ok(),
+        graph.get_edge_type_id_counts_hashmap().is_ok(),
         graph.has_edge_types()
     );
 
@@ -6897,7 +6897,7 @@ impl Graph {
 
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter_map(
                 |(_, node_name, _, _)| match self.get_node_id_by_node_name(&node_name) {
                     Ok(node_id) => Some(nodes_components[node_id as usize]),
@@ -6948,7 +6948,7 @@ impl Graph {
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
         let overlapping_nodes_number = self
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter(|(_, node_name, _, node_type)| {
                 other.has_node_with_type_by_node_name(node_name, node_type.clone())
             })
@@ -7490,7 +7490,7 @@ impl Graph {
                         )))
                     },
                 ),
-            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
+            Some(self.iter_node_names_and_node_type_names().progress_with(pb_nodes).filter_map(
                 |(node_id, node_name, _, node_type_names)| {
                     if singletons && self.is_singleton_by_node_name(&node_name).unwrap() {
                         return None;
@@ -7680,7 +7680,7 @@ impl Graph {
                         }
                     },
                 ),
-            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
+            Some(self.iter_node_names_and_node_type_names().progress_with(pb_nodes).filter_map(
                 |(node_id, node_name, _, node_type_names)| {
                     match keep_components.contains(components_vector[node_id as usize]) {
                         true => Some(Ok((node_name, node_type_names))),
@@ -8998,7 +8998,7 @@ impl Graph {
         ]
         .iter()
         .map(|(node_set, node_type_set)| {
-            self.iter_nodes()
+            self.iter_node_names_and_node_type_names()
                 .filter_map(|(node_id, node_name, _, node_type)| {
                     if let Some(ans) = &node_set {
                         if !ans.contains(&node_name) {
@@ -9155,7 +9155,7 @@ impl Graph {
         let allow_selfloops_unwrapped = allow_selfloops.unwrap_or_else(|| self.has_selfloops());
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter_map(|(node_id, node_name, _, node_type)| {
                 if let (Some(ants), Some(nt)) = (&allow_node_type_set, &node_type) {
                     if nt
@@ -9708,7 +9708,7 @@ impl Graph {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
-    pub fn get_edge_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+    pub fn get_edge_type_id_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         Ok(self.get_edge_type_counts()?.into_map())
     }
 
@@ -10828,7 +10828,7 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph as Strings.
-    pub fn iter_nodes(
+    pub fn iter_node_names_and_node_type_names(
         &self,
     ) -> impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {
@@ -12799,7 +12799,7 @@ impl Graph {
                 ));
             }
             Some(
-                sg.iter_nodes()
+                sg.iter_node_names_and_node_type_names()
                     .map(|(_, node_name, _, _)| self.get_unchecked_node_id_by_node_name(&node_name))
                     .collect::<RoaringBitmap>(),
             )

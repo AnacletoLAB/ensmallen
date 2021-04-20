@@ -134,20 +134,86 @@ impl Graph {
     }
 
     /// Returns boolean representing if graph has multilabel node types.
-    pub fn has_multilabel_node_types(&self) -> bool {
-        self.node_types
-            .as_ref()
-            .map_or(false, |nt| nt.is_multilabel())
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_multilabel_node_types(&self) -> Result<bool, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.is_multilabel())
     }
 
     /// Returns whether there are unknown node types.
-    pub fn has_unknown_node_types(&self) -> bool {
-        self.get_unknown_node_types_number() > 0
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_unknown_node_types(&self) -> Result<bool, String> {
+        Ok(self.get_unknown_node_types_number()? > 0)
     }
 
     /// Returns whether there are unknown edge types.
-    pub fn has_unknown_edge_types(&self) -> bool {
-        self.get_unknown_edge_types_number() > 0
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_unknown_edge_types(&self) -> Result<bool, String> {
+        Ok(self.get_unknown_edge_types_number()? > 0)
+    }
+
+    /// Returns whether the nodes have an homogenous node type.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_homogeneous_node_types(&self) -> Result<bool, String> {
+        Ok(self.get_node_types_number()? == 1)
+    }
+
+    /// Returns whether the edges have an homogenous edge type.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_homogeneous_edge_types(&self) -> Result<bool, String> {
+        Ok(self.get_edge_types_number()? == 1)
+    }
+
+    /// Returns whether there is at least singleton node type, that is a node type that only appears once.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_singleton_node_types(&self) -> Result<bool, String> {
+        Ok(self.get_minimum_node_types_number()? == 1)
+    }
+
+    /// Return whether the graph has any known node type-related graph oddities.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_node_types_oddities(&self) -> Result<bool, String> {
+        Ok([
+            self.has_singleton_node_types()?,
+            self.has_homogeneous_node_types()?,
+        ]
+        .iter()
+        .any(|value| *value))
+    }
+
+    /// Returns whether there is at least singleton edge type, that is a edge type that only appears once.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_singleton_edge_types(&self) -> Result<bool, String> {
+        Ok(self.get_minimum_edge_types_number()? == 1)
+    }
+
+    /// Return whether the graph has any known edge type-related graph oddities.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_edge_types_oddities(&self) -> Result<bool, String> {
+        Ok([
+            self.has_singleton_edge_types()?,
+            self.has_homogeneous_edge_types()?,
+        ]
+        .iter()
+        .any(|value| *value))
     }
 
     /// Return if there are multiple edges between two nodes

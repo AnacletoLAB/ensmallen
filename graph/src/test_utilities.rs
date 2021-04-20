@@ -486,21 +486,15 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         graph.has_edge_types()
     );
 
-    // Evaluate get_node_type_counts
-    assert_eq!(
-        graph.get_node_type_counter().is_ok(),
-        graph.has_node_types()
-    );
-
     // Evaluate get_edge_type_counts
     assert_eq!(
-        graph.get_edge_type_counter().is_ok(),
+        graph.get_edge_type_id_counts_hashmap().is_ok(),
         graph.has_edge_types()
     );
 
-    // Evaluate get_edge_type_counts_hashmap
+    // Evaluate get_edge_type_id_counts_hashmap
     assert_eq!(
-        graph.get_edge_type_counts_hashmap().is_ok(),
+        graph.get_edge_type_id_counts_hashmap().is_ok(),
         graph.has_edge_types()
     );
 
@@ -786,7 +780,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 )
                 .is_ok());
         }
-        if graph.has_unknown_node_types() {
+        if graph.has_unknown_node_types()? {
             let without_unknowns =
                 graph.remove_components(None, Some(vec![None]), None, None, None, verbose);
             assert!(
@@ -807,7 +801,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 )
                 .is_ok());
         }
-        if graph.has_unknown_edge_types() {
+        if graph.has_unknown_edge_types()? {
             assert!(graph
                 .remove_components(None, None, Some(vec![None]), None, None, verbose)
                 .is_ok());
@@ -1034,8 +1028,8 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
 pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification
-            && (graph.has_multilabel_node_types() || graph.get_minimum_node_types_number() < 2)
-            || graph.get_nodes_number() - graph.get_unknown_node_types_number() < 2
+            && (graph.has_multilabel_node_types()? || graph.get_minimum_node_types_number()? < 2)
+            || graph.get_nodes_number() - graph.get_unknown_node_types_number()? < 2
             || !graph.has_node_types()
         {
             assert!(graph
@@ -1073,8 +1067,8 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
 
 pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
-        if *use_stratification && graph.get_minimum_edge_types_number() < 2
-            || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number() < 2
+        if *use_stratification && graph.has_singleton_edge_types()?
+            || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number()? < 2
             || !graph.has_edge_types()
         {
             assert!(graph
@@ -1165,7 +1159,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), St
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(
-        clone.get_edge_types_number(),
+        clone.get_edge_types_number().unwrap(),
         1,
         "Number of edge types of the graph is not 1."
     );
@@ -1178,7 +1172,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), St
     }
 
     assert_eq!(
-        clone.get_node_types_number(),
+        clone.get_node_types_number().unwrap(),
         1,
         "Number of node types of the graph is not 1."
     );

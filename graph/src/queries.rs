@@ -433,7 +433,7 @@ impl Graph {
         (max_edge_id - min_edge_id) as NodeT
     }
 
-    /// Returns the number of outbound neighbours of given node.
+    /// Returns the number of outbound neighbours of given node ID.
     ///
     /// # Arguments
     /// * `node_id`: NodeT - Integer ID of the node.
@@ -441,6 +441,21 @@ impl Graph {
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         self.validate_node_id(node_id)
             .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+    }
+
+    /// Returns the number of outbound neighbours of given node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Integer ID of the node.
+    ///
+    /// # Raises
+    /// * If the given node name does not exist in the graph.
+    pub fn get_node_degree_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
+        Ok(
+            self.get_unchecked_node_degree_from_node_id(
+                self.get_node_id_from_node_name(node_name)?,
+            ),
+        )
     }
 
     /// Return vector with top k central node names.
@@ -891,17 +906,8 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Result<EdgeT, String> {
-        self.must_have_edge_types()?;
-        if let Some(et) = &edge_type_id {
-            if self.get_edge_types_number() <= *et {
-                return Err(format!(
-                    "Given edge type ID {} is bigger than number of edge types in the graph {}.",
-                    self.get_edge_types_number(),
-                    et
-                ));
-            }
-        }
-        Ok(self.get_unchecked_edge_count_from_edge_type_id(edge_type_id))
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| self.get_unchecked_edge_count_from_edge_type_id(edge_type_id))
     }
 
     /// Return edge type ID curresponding to given edge type name.
@@ -911,6 +917,7 @@ impl Graph {
     /// # Arguments
     /// * `edge_type_name`: Option<&str> - The edge type name whose ID is to be returned.
     ///
+    /// TODO: refactor this method using new validation methods.
     pub fn get_edge_type_id_from_edge_type_name(
         &self,
         edge_type_name: Option<&str>,

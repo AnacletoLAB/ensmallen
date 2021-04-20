@@ -24,7 +24,7 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.iter_nodes().all(|(_, node_name, _, node_type)| {
+        self.iter_node_names_and_node_type_names().all(|(_, node_name, _, node_type)| {
             other.has_node_from_node_name_and_node_type_name(&node_name, node_type)
         })
     }

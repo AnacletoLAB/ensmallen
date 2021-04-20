@@ -121,7 +121,7 @@ impl Graph {
                         }
                     },
                 ),
-            Some(self.iter_nodes().progress_with(pb_nodes).filter_map(
+            Some(self.iter_node_names_and_node_type_names().progress_with(pb_nodes).filter_map(
                 |(node_id, node_name, _, node_type_names)| {
                     match keep_components.contains(components_vector[node_id as usize]) {
                         true => Some(Ok((node_name, node_type_names))),

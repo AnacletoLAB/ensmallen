@@ -28,7 +28,7 @@ impl Graph {
         ]
         .iter()
         .map(|(node_set, node_type_set)| {
-            self.iter_nodes()
+            self.iter_node_names_and_node_type_names()
                 .filter_map(|(node_id, node_name, _, node_type)| {
                     if let Some(ans) = &node_set {
                         if !ans.contains(&node_name) {
@@ -186,7 +186,7 @@ impl Graph {
         let allow_selfloops_unwrapped = allow_selfloops.unwrap_or_else(|| self.has_selfloops());
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
-            .iter_nodes()
+            .iter_node_names_and_node_type_names()
             .filter_map(|(node_id, node_name, _, node_type)| {
                 if let (Some(ants), Some(nt)) = (&allow_node_type_set, &node_type) {
                     if nt

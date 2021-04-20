@@ -221,7 +221,7 @@ impl Graph {
                             Ok((src_name, dst_name, edge_type_name, weight))
                         }),
                     Some(
-                        self.iter_nodes()
+                        self.iter_node_names_and_node_type_names()
                             .progress_with(pb_nodes)
                             .filter(node_filter)
                             .map(|(_, node_name, _, node_types)| Ok((node_name, node_types))),

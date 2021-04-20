@@ -7881,15 +7881,15 @@
         },
         "extra_headers": []
     },
-    "get_edge_type_counts_hashmap": {
+    "get_edge_type_id_counts_hashmap": {
         "file": "getters.rs",
-        "function": "get_edge_type_counts_hashmap",
+        "function": "get_edge_type_id_counts_hashmap",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nfor (edge_type_id, count) in graph.get_edge_type_counts_hashmap().unwrap().iter() {\nprintln!(\"edge type id {}: count: {}\", edge_type_id, count);\n}\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nfor (edge_type_id, count) in graph.get_edge_type_id_counts_hashmap().unwrap().iter() {\nprintln!(\"edge type id {}: count: {}\", edge_type_id, count);\n}\n"
         },
         "extra_headers": []
     },

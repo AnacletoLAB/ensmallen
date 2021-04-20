@@ -48,6 +48,8 @@ pub mod validators;
 pub use self::validators::*;
 pub mod getters_boolean;
 pub use self::getters_boolean::*;
+pub mod replace;
+pub use self::replace::*;
 
 mod constructors;
 
