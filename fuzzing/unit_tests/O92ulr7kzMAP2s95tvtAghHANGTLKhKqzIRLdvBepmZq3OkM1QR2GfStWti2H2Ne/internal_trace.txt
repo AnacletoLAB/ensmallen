@@ -1,0 +1,13 @@
+Some(
+    [
+        "get_star_edge_names(central_node = \"\", removed_existing_edges = None, star_points_nodes_set = None, star_points_node_types_set = None)",
+        "get_destination_names(directed = false)",
+        "encode_edge(src = 4042260480, dst = 4042322160)",
+        "remove_inplace_edge_types()",
+        "get_node_ids_from_edge_id(edge_id = 17361641481138401520)",
+        "must_be_undirected()",
+        "has_edge_types_oddities()",
+        "iter_edges(directed = false)",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

@@ -1,0 +1,9 @@
+Some(
+    [
+        "par_iter_edge_weights()",
+        "iter_node_type_counts()",
+        "get_edge_id_from_node_ids_and_edge_type_id(src = 3010751389, dst = 803726489, edge_type = None)",
+        "is_multigraph()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

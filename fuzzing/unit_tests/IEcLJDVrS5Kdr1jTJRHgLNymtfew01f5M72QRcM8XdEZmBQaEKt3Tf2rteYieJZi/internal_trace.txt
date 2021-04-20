@@ -1,0 +1,7 @@
+Some(
+    [
+        "iter_non_singleton_node_ids()",
+        "get_minimum_edge_types_number()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

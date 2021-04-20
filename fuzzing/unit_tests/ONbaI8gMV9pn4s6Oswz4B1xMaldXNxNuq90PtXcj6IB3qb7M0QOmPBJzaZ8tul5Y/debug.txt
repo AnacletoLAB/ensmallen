@@ -1,0 +1,129 @@
+Graph {
+    edges: EliasFano {
+        universe:    3,
+        number_of_elements:    0,
+        low_bit_count:    0,
+        low_bit_mask:    0,
+        low_bits: [],
+        high_bits: RsDict {
+            len:    0,
+            num_ones:    0,
+            num_zeros:    0,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [],
+            select_one_inds: [],
+            select_zero_inds: [],
+            last_block: LastBlock {
+                bits:    0,
+                num_ones:    0,
+                num_zeros:    0,
+            },
+        },
+        last_high_value:    0,
+        last_value:    0,
+        last_index:    0,
+        current_number_of_elements:    0,
+    },
+    node_bits:    1,
+    node_bit_mask:    1,
+    weights: None,
+    node_types: Some(
+        NodeTypeVocabulary {
+            ids: [
+                None,
+            ],
+            vocabulary: Vocabulary {
+                map: {
+                    "j4o\u{18}":    0,
+                },
+                reverse_map: [
+                    "j4o\u{18}",
+                ],
+                numeric_ids: false,
+            },
+            counts: [
+                   0,
+            ],
+            unknown_count:    1,
+            multilabel: false,
+        },
+    ),
+    edge_types: None,
+    nodes: Vocabulary {
+        map: {
+            "&I":    0,
+        },
+        reverse_map: [
+            "&I",
+        ],
+        numeric_ids: false,
+    },
+    directed: false,
+    unique_selfloop_number:    0,
+    selfloop_number:    0,
+    not_singleton_nodes_number:    0,
+    singleton_nodes_with_selfloops_number:    0,
+    unique_edges_number:    0,
+    name: "MetaTest",
+    not_singleton_nodes: Some(
+        BitVec<bitvec::order::Lsb0, u8> {
+            addr: 0x55555ed23790,
+            head: 000,
+            bits:    1,
+            capacity:   64,
+        } [
+            0b0,
+        ],
+    ),
+    singleton_nodes_with_selfloops: Some(
+        RoaringBitmap<[]>,
+    ),
+    unique_sources: Some(
+        EliasFano {
+            universe:    1,
+            number_of_elements:    0,
+            low_bit_count:    0,
+            low_bit_mask:    0,
+            low_bits: [],
+            high_bits: RsDict {
+                len:    0,
+                num_ones:    0,
+                num_zeros:    0,
+                sb_classes: [],
+                sb_indices: VarintBuffer {
+                    buf: [],
+                    len:    0,
+                },
+                large_blocks: [],
+                select_one_inds: [],
+                select_zero_inds: [],
+                last_block: LastBlock {
+                    bits:    0,
+                    num_ones:    0,
+                    num_zeros:    0,
+                },
+            },
+            last_high_value:    0,
+            last_value:    0,
+            last_index:    0,
+            current_number_of_elements:    0,
+        },
+    ),
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The undirected graph MetaTest has 1 nodes There are 1 singleton nodes, and 0 unweighted edges, of which none are self-loops. The graph is extremely sparse as it has a density of 0.00000 and is connected, as it has a single component. The graph median node degree is 0, the mean node degree is 0.00, and the node degree mode is 0. The top 1 most central nodes are &I (degree 0). The hash of the graph is 16eccaddedec9608.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    cumulative_node_degrees: None,
+    cached_destinations: None,
+}

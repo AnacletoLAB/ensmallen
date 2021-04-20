@@ -1,0 +1,13 @@
+Some(
+    [
+        "remove_inplace_singleton_node_types()",
+        "set_inplace_all_edge_types(edge_type = \"\")",
+        "get_unique_directed_edges_number()",
+        "edge_label_holdout(train_size = -0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003635361573763388, use_stratification = false, random_state = 1229782938247303588)",
+        "has_node_types()",
+        "get_singleton_edge_type_ids()",
+        "get_minimum_node_types_number()",
+        "get_node_types_number()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

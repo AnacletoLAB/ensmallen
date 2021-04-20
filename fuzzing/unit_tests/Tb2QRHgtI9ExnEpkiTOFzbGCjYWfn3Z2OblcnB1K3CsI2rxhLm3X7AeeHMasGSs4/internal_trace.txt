@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_star_edges(central_node = \"\", removed_existing_edges = None, star_points_nodes_set = None, star_points_node_types_set = None)",
+        "set_all_edge_types(edge_type = \"\", verbose = false)",
+        "get_node_ids()",
+        "get_selfloop_nodes_number()",
+        "iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = false)",
+        "get_edge_weight_from_node_ids(src = 4042322160, dst = 4042322160)",
+        "must_be_undirected()",
+        "must_have_edge_types()",
+        "get_unknown_node_types_number()",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

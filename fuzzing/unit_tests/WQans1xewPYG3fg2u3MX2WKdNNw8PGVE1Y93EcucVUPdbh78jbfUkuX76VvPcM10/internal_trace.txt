@@ -1,0 +1,7 @@
+Some(
+    [
+        "remove_inplace_singleton_node_types()",
+        "get_destination_node_id_from_edge_id(edge_id = 17361641481138401520)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [\"*\\u{6}H\", \"\", \"\"], verbose = true)",
+    ],
+)

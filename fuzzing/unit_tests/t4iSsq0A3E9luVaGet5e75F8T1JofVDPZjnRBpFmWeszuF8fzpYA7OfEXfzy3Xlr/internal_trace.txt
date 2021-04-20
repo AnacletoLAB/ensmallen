@@ -1,0 +1,7 @@
+Some(
+    [
+        "remove_inplace_singleton_node_types()",
+        "remove_inplace_edge_types()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [\"*\\u{6}H\", \"\", \"\"], verbose = true)",
+    ],
+)

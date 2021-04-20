@@ -1,0 +1,7 @@
+Some(
+    [
+        "must_be_undirected()",
+        "remove_inplace_node_type_id(node_type_id = 0)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

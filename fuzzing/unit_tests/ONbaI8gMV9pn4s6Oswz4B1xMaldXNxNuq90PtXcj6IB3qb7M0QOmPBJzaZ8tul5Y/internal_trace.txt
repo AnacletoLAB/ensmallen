@@ -1,0 +1,11 @@
+Some(
+    [
+        "get_top_k_central_node_names(k = 3027463388)",
+        "connected_components(verbose = false)",
+        "iter_node_type_counts()",
+        "has_trap_nodes()",
+        "remove_inplace_singleton_node_types()",
+        "remove_inplace_edge_type_id(edge_type_id = 49151)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

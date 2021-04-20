@@ -1,0 +1,11 @@
+Some(
+    [
+        "iter_node_type_counts()",
+        "get_edge_weight_from_edge_id(edge_id = 6575267974700666871)",
+        "iter_node_ids_and_node_type_ids()",
+        "kfold(k = 9059585283637672968, k_index = 8357155, edge_types = None, random_state = 3125444519126555136, verbose = true)",
+        "get_edge_type_name_from_edge_id(edge_id = 14595199758965557410)",
+        "has_unknown_node_types()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

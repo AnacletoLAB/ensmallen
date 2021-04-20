@@ -1,0 +1,10 @@
+Some(
+    [
+        "is_trap_node_from_node_id(node_id = 1229539657)",
+        "iter_unique_edge_type_ids_and_counts()",
+        "connected_holdout(random_state = 6583102087109291623, train_size = -2220030165218778400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0, edge_types = None, include_all_edge_types = false, verbose = true)",
+        "validate_node_type_ids(node_type_ids = [None, Some(12855)])",
+        "get_singleton_nodes_number()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

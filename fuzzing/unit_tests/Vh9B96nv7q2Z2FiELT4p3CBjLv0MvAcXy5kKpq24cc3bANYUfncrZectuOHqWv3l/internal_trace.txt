@@ -1,0 +1,11 @@
+Some(
+    [
+        "has_singletons()",
+        "remove_components(node_names = None, node_types = None, edge_types = None, minimum_component_size = None, top_k_components = None, verbose = false)",
+        "iter_unique_source_node_ids()",
+        "get_max_node_degree()",
+        "remove_inplace_singleton_node_types()",
+        "iter_edges(directed = false)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

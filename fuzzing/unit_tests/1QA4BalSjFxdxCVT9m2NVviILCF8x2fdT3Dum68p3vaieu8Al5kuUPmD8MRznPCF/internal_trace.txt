@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_node_label_prediction_tuple_from_node_ids(node_ids = [], random_state = 10273377334353179131, include_central_node = true, offset = 458172113, max_neighbours = Some(290210341))",
+        "get_min_node_degree()",
+        "get_peculiarities_report_markdown()",
+        "drop_parallel_edges(verbose = false)",
+        "get_nodes_number()",
+        "get_singleton_nodes_number()",
+        "drop_singletons(verbose = false)",
+        "remove_node_types()",
+        "get_edge_count_from_edge_type_id(edge_type_id = None)",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

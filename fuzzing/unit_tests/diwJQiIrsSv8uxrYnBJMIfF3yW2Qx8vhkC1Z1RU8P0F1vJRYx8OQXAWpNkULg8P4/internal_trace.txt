@@ -1,0 +1,13 @@
+Some(
+    [
+        "has_singleton_edge_types()",
+        "iter_edge_node_names_and_edge_type_name_from_edge_type_id(edge_type_id = Some(21569), directed = false)",
+        "validate_node_type_id(node_type_id = Some(257))",
+        "par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = false)",
+        "has_singletons()",
+        "textual_report(verbose = false)",
+        "strongly_connected_components()",
+        "has_multilabel_node_types()",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

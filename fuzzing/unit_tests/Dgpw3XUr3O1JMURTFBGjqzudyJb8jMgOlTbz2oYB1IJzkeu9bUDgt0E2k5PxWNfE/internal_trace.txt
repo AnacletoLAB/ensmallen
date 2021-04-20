@@ -1,0 +1,13 @@
+Some(
+    [
+        "iter_node_ids_and_node_type_ids_from_node_type_id(node_type_id = None)",
+        "validate_node_type_id(node_type_id = None)",
+        "iter_node_names_and_node_type_names_from_node_type_id(node_type_id = None)",
+        "report()",
+        "get_edge_type_id_from_edge_id(edge_id = 8217012195332745904)",
+        "iter_node_degrees()",
+        "validate_node_type_id(node_type_id = None)",
+        "iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = true)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

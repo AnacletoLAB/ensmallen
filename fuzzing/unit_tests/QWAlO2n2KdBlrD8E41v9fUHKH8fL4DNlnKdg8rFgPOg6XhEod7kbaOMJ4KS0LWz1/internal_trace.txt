@@ -1,0 +1,12 @@
+Some(
+    [
+        "has_homogeneous_edge_types()",
+        "get_cumulative_node_degrees()",
+        "iter_unique_edge_type_names_and_counts()",
+        "iter_unique_edge_type_ids()",
+        "get_unique_directed_edges_number()",
+        "get_top_k_central_node_ids(k = 4042322125)",
+        "get_edge_node_names(directed = false)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

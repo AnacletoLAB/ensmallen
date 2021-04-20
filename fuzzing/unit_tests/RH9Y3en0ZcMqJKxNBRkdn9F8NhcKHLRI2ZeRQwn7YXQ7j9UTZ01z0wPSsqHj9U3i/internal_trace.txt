@@ -1,0 +1,14 @@
+Some(
+    [
+        "edge_label_holdout(train_size = -107730874267432140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0, use_stratification = false, random_state = 17361641481138401520)",
+        "par_iter_source_node_ids(directed = false)",
+        "get_node_type_names()",
+        "get_node_count_from_node_type_id(node_type_id = None)",
+        "get_unknown_edge_types_number()",
+        "drop_parallel_edges(verbose = false)",
+        "spanning_arborescence(verbose = false)",
+        "get_connected_components_number(verbose = false)",
+        "set_name(name = \"\")",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

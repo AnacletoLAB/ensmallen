@@ -1,0 +1,13 @@
+Some(
+    [
+        "get_singleton_nodes_with_selfloops_number()",
+        "get_singleton_node_type_ids()",
+        "enable(vector_sources = false, vector_destinations = false, vector_cumulative_node_degrees = false, cache_size = None)",
+        "is_directed()",
+        "par_iter_source_node_ids(directed = false)",
+        "iter_node_degrees()",
+        "has_edge_types()",
+        "iter_node_ids()",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)
