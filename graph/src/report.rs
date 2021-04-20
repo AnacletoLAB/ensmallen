@@ -310,10 +310,10 @@ impl Graph {
 
         // Detect weirdness relative to node types.
         if self.has_node_types_oddities().map_or(false, |value| value) {
-            let mut partial_node_types_reports: Vec<String> = Vec::new();
+            partial_reports.push("## Node types".to_string());
             if self.has_singleton_node_types().unwrap() {
-                partial_node_types_reports.push("### Singleton node types".to_string());
-                partial_node_types_reports.push(format!(
+                partial_reports.push("### Singleton node types".to_string());
+                partial_reports.push(format!(
                     concat!(
                         "{}: node types that only appear in one graph node. ",
                         "We consider singleton node types an oddity because it ",
@@ -365,9 +365,11 @@ impl Graph {
                     }
                 ));
             }
-            if !partial_node_types_reports.is_empty() {
-                partial_reports.push("## Node types".to_string());
-                partial_reports.extend(partial_node_types_reports);
+            if self.has_homogeneous_node_types().unwrap() {
+                partial_reports.push("### Homogeneous node types".to_string());
+                partial_reports.push(concat!(
+                    
+                ));
             }
         }
 

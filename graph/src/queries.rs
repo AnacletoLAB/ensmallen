@@ -796,7 +796,7 @@ impl Graph {
     /// Returns result with the node IDs.
     ///
     /// # Arguments
-    /// * `node_name`: Vec<&str> - The node names whose node IDs is to be returned.
+    /// * `node_names`: Vec<&str> - The node names whose node IDs is to be returned.
     ///
     /// # Raises
     /// * When any of the given node name does not exists in the current graph.
@@ -813,7 +813,7 @@ impl Graph {
     /// Returns result with the edge node IDs.
     ///
     /// # Arguments
-    /// * `edge_node_name`: Vec<(&str, &str)> - The node names whose node IDs is to be returned.
+    /// * `edge_node_names`: Vec<(&str, &str)> - The node names whose node IDs is to be returned.
     ///
     /// # Raises
     /// * When any of the given node name does not exists in the current graph.
