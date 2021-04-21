@@ -131,6 +131,7 @@ impl Graph {
             )),
             self.directed,
             true,
+            self.get_name(),
             false,
             true,
             true,
@@ -148,7 +149,6 @@ impl Graph {
             self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
-            self.get_name(),
         )
     }
 }

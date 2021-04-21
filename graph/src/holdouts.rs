@@ -236,10 +236,10 @@ impl Graph {
             false,
             false,
             false,
-            verbose,
             true,
             self.has_selfloops(),
             true,
+            verbose,
         )
     }
 

@@ -236,6 +236,7 @@ impl Graph {
                     ),
                     self.is_directed(),
                     true,
+                    self.get_name(),
                     false,
                     true,
                     false,
@@ -256,7 +257,6 @@ impl Graph {
                     true,
                     self.has_selfloops() && !filter_selfloops,
                     true,
-                    self.get_name(),
                 )
             }
         }
