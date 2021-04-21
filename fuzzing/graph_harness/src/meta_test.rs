@@ -234,13 +234,26 @@ pub struct FilterFromIdsParams {
 	pub edge_type_ids_to_filter : Option<Vec<Option<EdgeTypeT>>>,
 	pub min_edge_weight : Option<WeightT>,
 	pub max_edge_weight : Option<WeightT>,
-	pub filter_singletons : bool,
+	pub filter_singleton_nodes : bool,
+	pub filter_singleton_nodes_with_selfloop : bool,
 	pub filter_selfloops : bool,
 	pub filter_parallel_edges : bool,
 	pub verbose : bool,
 }
 #[derive(Arbitrary, Debug, Clone)]
-pub struct DropSingletonsParams {
+pub struct DropUnknownNodeTypesParams {
+	pub verbose : bool,
+}
+#[derive(Arbitrary, Debug, Clone)]
+pub struct DropUnknownEdgeTypesParams {
+	pub verbose : bool,
+}
+#[derive(Arbitrary, Debug, Clone)]
+pub struct DropSingletonNodesParams {
+	pub verbose : bool,
+}
+#[derive(Arbitrary, Debug, Clone)]
+pub struct DropSingletonNodesWithSelfloopsParams {
 	pub verbose : bool,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -415,7 +428,7 @@ pub struct ReplaceUnknownNodeTypesWithNodeTypeNameParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct ReplaceUnknownEdgeTypesWithEdgeTypeNameParams {
-	pub edge_type_names : String,
+	pub edge_type_name : String,
 	pub verbose : bool,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -612,7 +625,10 @@ pub struct MetaParams {
 	pub get_minmax_edge_ids_from_source_node_id: GetMinmaxEdgeIdsFromSourceNodeIdParams,
 	pub get_node_type_name_from_node_type_id: GetNodeTypeNameFromNodeTypeIdParams,
 	pub filter_from_ids: FilterFromIdsParams,
-	pub drop_singletons: DropSingletonsParams,
+	pub drop_unknown_node_types: DropUnknownNodeTypesParams,
+	pub drop_unknown_edge_types: DropUnknownEdgeTypesParams,
+	pub drop_singleton_nodes: DropSingletonNodesParams,
+	pub drop_singleton_nodes_with_selfloops: DropSingletonNodesWithSelfloopsParams,
 	pub drop_selfloops: DropSelfloopsParams,
 	pub drop_parallel_edges: DropParallelEdgesParams,
 	pub validate_node_id: ValidateNodeIdParams,
@@ -717,7 +733,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     for _ in 0..10 {
         let data_for_current_test = data_copy_for_tests.clone();
         let data_for_panic_handler = data_copy_for_tests.clone();
-        match rng.next() % 240 {
+        match rng.next() % 248 {
 			0 => {
 				trace.push(format!("random_spanning_arborescence_kruskal(random_state = {:?}, undesired_edge_types = {:?}, verbose = {:?})", data_for_current_test.random_spanning_arborescence_kruskal.random_state, &data_for_current_test.random_spanning_arborescence_kruskal.undesired_edge_types, data_for_current_test.random_spanning_arborescence_kruskal.verbose));
 				
@@ -1169,26 +1185,56 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.get_node_type_name_from_node_type_id(data_for_current_test.get_node_type_name_from_node_type_id.node_type_id);
 			},
 			45 => {
-				trace.push(format!("filter_from_ids(node_ids_to_keep = {:?}, node_ids_to_filter = {:?}, node_type_ids_to_keep = {:?}, node_type_ids_to_filter = {:?}, node_type_id_to_keep = {:?}, node_type_id_to_filter = {:?}, edge_ids_to_keep = {:?}, edge_ids_to_filter = {:?}, edge_node_ids_to_keep = {:?}, edge_node_ids_to_filter = {:?}, edge_type_ids_to_keep = {:?}, edge_type_ids_to_filter = {:?}, min_edge_weight = {:?}, max_edge_weight = {:?}, filter_singletons = {:?}, filter_selfloops = {:?}, filter_parallel_edges = {:?}, verbose = {:?})", data_for_current_test.filter_from_ids.node_ids_to_keep, data_for_current_test.filter_from_ids.node_ids_to_filter, data_for_current_test.filter_from_ids.node_type_ids_to_keep, data_for_current_test.filter_from_ids.node_type_ids_to_filter, data_for_current_test.filter_from_ids.node_type_id_to_keep, data_for_current_test.filter_from_ids.node_type_id_to_filter, data_for_current_test.filter_from_ids.edge_ids_to_keep, data_for_current_test.filter_from_ids.edge_ids_to_filter, data_for_current_test.filter_from_ids.edge_node_ids_to_keep, data_for_current_test.filter_from_ids.edge_node_ids_to_filter, data_for_current_test.filter_from_ids.edge_type_ids_to_keep, data_for_current_test.filter_from_ids.edge_type_ids_to_filter, data_for_current_test.filter_from_ids.min_edge_weight, data_for_current_test.filter_from_ids.max_edge_weight, data_for_current_test.filter_from_ids.filter_singletons, data_for_current_test.filter_from_ids.filter_selfloops, data_for_current_test.filter_from_ids.filter_parallel_edges, data_for_current_test.filter_from_ids.verbose));
+				trace.push(format!("filter_from_ids(node_ids_to_keep = {:?}, node_ids_to_filter = {:?}, node_type_ids_to_keep = {:?}, node_type_ids_to_filter = {:?}, node_type_id_to_keep = {:?}, node_type_id_to_filter = {:?}, edge_ids_to_keep = {:?}, edge_ids_to_filter = {:?}, edge_node_ids_to_keep = {:?}, edge_node_ids_to_filter = {:?}, edge_type_ids_to_keep = {:?}, edge_type_ids_to_filter = {:?}, min_edge_weight = {:?}, max_edge_weight = {:?}, filter_singleton_nodes = {:?}, filter_singleton_nodes_with_selfloop = {:?}, filter_selfloops = {:?}, filter_parallel_edges = {:?}, verbose = {:?})", data_for_current_test.filter_from_ids.node_ids_to_keep, data_for_current_test.filter_from_ids.node_ids_to_filter, data_for_current_test.filter_from_ids.node_type_ids_to_keep, data_for_current_test.filter_from_ids.node_type_ids_to_filter, data_for_current_test.filter_from_ids.node_type_id_to_keep, data_for_current_test.filter_from_ids.node_type_id_to_filter, data_for_current_test.filter_from_ids.edge_ids_to_keep, data_for_current_test.filter_from_ids.edge_ids_to_filter, data_for_current_test.filter_from_ids.edge_node_ids_to_keep, data_for_current_test.filter_from_ids.edge_node_ids_to_filter, data_for_current_test.filter_from_ids.edge_type_ids_to_keep, data_for_current_test.filter_from_ids.edge_type_ids_to_filter, data_for_current_test.filter_from_ids.min_edge_weight, data_for_current_test.filter_from_ids.max_edge_weight, data_for_current_test.filter_from_ids.filter_singleton_nodes, data_for_current_test.filter_from_ids.filter_singleton_nodes_with_selfloop, data_for_current_test.filter_from_ids.filter_selfloops, data_for_current_test.filter_from_ids.filter_parallel_edges, data_for_current_test.filter_from_ids.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.filter_from_ids(data_for_current_test.filter_from_ids.node_ids_to_keep, data_for_current_test.filter_from_ids.node_ids_to_filter, data_for_current_test.filter_from_ids.node_type_ids_to_keep, data_for_current_test.filter_from_ids.node_type_ids_to_filter, data_for_current_test.filter_from_ids.node_type_id_to_keep, data_for_current_test.filter_from_ids.node_type_id_to_filter, data_for_current_test.filter_from_ids.edge_ids_to_keep, data_for_current_test.filter_from_ids.edge_ids_to_filter, data_for_current_test.filter_from_ids.edge_node_ids_to_keep, data_for_current_test.filter_from_ids.edge_node_ids_to_filter, data_for_current_test.filter_from_ids.edge_type_ids_to_keep, data_for_current_test.filter_from_ids.edge_type_ids_to_filter, data_for_current_test.filter_from_ids.min_edge_weight, data_for_current_test.filter_from_ids.max_edge_weight, data_for_current_test.filter_from_ids.filter_singletons, data_for_current_test.filter_from_ids.filter_selfloops, data_for_current_test.filter_from_ids.filter_parallel_edges, data_for_current_test.filter_from_ids.verbose);
+				graph.filter_from_ids(data_for_current_test.filter_from_ids.node_ids_to_keep, data_for_current_test.filter_from_ids.node_ids_to_filter, data_for_current_test.filter_from_ids.node_type_ids_to_keep, data_for_current_test.filter_from_ids.node_type_ids_to_filter, data_for_current_test.filter_from_ids.node_type_id_to_keep, data_for_current_test.filter_from_ids.node_type_id_to_filter, data_for_current_test.filter_from_ids.edge_ids_to_keep, data_for_current_test.filter_from_ids.edge_ids_to_filter, data_for_current_test.filter_from_ids.edge_node_ids_to_keep, data_for_current_test.filter_from_ids.edge_node_ids_to_filter, data_for_current_test.filter_from_ids.edge_type_ids_to_keep, data_for_current_test.filter_from_ids.edge_type_ids_to_filter, data_for_current_test.filter_from_ids.min_edge_weight, data_for_current_test.filter_from_ids.max_edge_weight, data_for_current_test.filter_from_ids.filter_singleton_nodes, data_for_current_test.filter_from_ids.filter_singleton_nodes_with_selfloop, data_for_current_test.filter_from_ids.filter_selfloops, data_for_current_test.filter_from_ids.filter_parallel_edges, data_for_current_test.filter_from_ids.verbose);
 			},
 			46 => {
-				trace.push(format!("drop_singleton_nodes(verbose = {:?})", data_for_current_test.drop_singletons.verbose));
+				trace.push(format!("drop_unknown_node_types(verbose = {:?})", data_for_current_test.drop_unknown_node_types.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.drop_singleton_nodes(data_for_current_test.drop_singletons.verbose);
+				graph.drop_unknown_node_types(data_for_current_test.drop_unknown_node_types.verbose);
 			},
 			47 => {
+				trace.push(format!("drop_unknown_edge_types(verbose = {:?})", data_for_current_test.drop_unknown_edge_types.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.drop_unknown_edge_types(data_for_current_test.drop_unknown_edge_types.verbose);
+			},
+			48 => {
+				trace.push(format!("drop_singleton_nodes(verbose = {:?})", data_for_current_test.drop_singleton_nodes.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.drop_singleton_nodes(data_for_current_test.drop_singleton_nodes.verbose);
+			},
+			49 => {
+				trace.push(format!("drop_singleton_nodes_with_selfloops(verbose = {:?})", data_for_current_test.drop_singleton_nodes_with_selfloops.verbose));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.drop_singleton_nodes_with_selfloops(data_for_current_test.drop_singleton_nodes_with_selfloops.verbose);
+			},
+			50 => {
 				trace.push(format!("drop_selfloops(verbose = {:?})", data_for_current_test.drop_selfloops.verbose));
 				
 				let g_copy = graph.clone();
@@ -1198,7 +1244,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.drop_selfloops(data_for_current_test.drop_selfloops.verbose);
 			},
-			48 => {
+			51 => {
 				trace.push(format!("drop_parallel_edges(verbose = {:?})", data_for_current_test.drop_parallel_edges.verbose));
 				
 				let g_copy = graph.clone();
@@ -1208,7 +1254,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.drop_parallel_edges(data_for_current_test.drop_parallel_edges.verbose);
 			},
-			49 => {
+			52 => {
 				trace.push(format!("validate_node_id(node_id = {:?})", data_for_current_test.validate_node_id.node_id));
 				
 				let g_copy = graph.clone();
@@ -1218,7 +1264,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_node_id(data_for_current_test.validate_node_id.node_id);
 			},
-			50 => {
+			53 => {
 				trace.push(format!("validate_edge_id(edge_id = {:?})", data_for_current_test.validate_edge_id.edge_id));
 				
 				let g_copy = graph.clone();
@@ -1228,7 +1274,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_edge_id(data_for_current_test.validate_edge_id.edge_id);
 			},
-			51 => {
+			54 => {
 				trace.push(format!("validate_node_type_id(node_type_id = {:?})", data_for_current_test.validate_node_type_id.node_type_id));
 				
 				let g_copy = graph.clone();
@@ -1238,7 +1284,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_node_type_id(data_for_current_test.validate_node_type_id.node_type_id);
 			},
-			52 => {
+			55 => {
 				trace.push(format!("validate_node_type_ids(node_type_ids = {:?})", data_for_current_test.validate_node_type_ids.node_type_ids));
 				
 				let g_copy = graph.clone();
@@ -1248,7 +1294,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_node_type_ids(data_for_current_test.validate_node_type_ids.node_type_ids);
 			},
-			53 => {
+			56 => {
 				trace.push(format!("validate_edge_type_id(edge_type_id = {:?})", data_for_current_test.validate_edge_type_id.edge_type_id));
 				
 				let g_copy = graph.clone();
@@ -1258,7 +1304,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_edge_type_id(data_for_current_test.validate_edge_type_id.edge_type_id);
 			},
-			54 => {
+			57 => {
 				trace.push(format!("validate_edge_type_ids(edge_type_ids = {:?})", data_for_current_test.validate_edge_type_ids.edge_type_ids));
 				
 				let g_copy = graph.clone();
@@ -1268,7 +1314,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.validate_edge_type_ids(data_for_current_test.validate_edge_type_ids.edge_type_ids);
 			},
-			55 => {
+			58 => {
 				trace.push(format!("must_have_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1278,7 +1324,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_have_node_types();
 			},
-			56 => {
+			59 => {
 				trace.push(format!("must_have_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1288,7 +1334,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_have_edge_types();
 			},
-			57 => {
+			60 => {
 				trace.push(format!("must_be_undirected()", ));
 				
 				let g_copy = graph.clone();
@@ -1298,7 +1344,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_be_undirected();
 			},
-			58 => {
+			61 => {
 				trace.push(format!("must_be_multigraph()", ));
 				
 				let g_copy = graph.clone();
@@ -1308,7 +1354,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_be_multigraph();
 			},
-			59 => {
+			62 => {
 				trace.push(format!("must_not_be_multigraph()", ));
 				
 				let g_copy = graph.clone();
@@ -1318,7 +1364,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_not_be_multigraph();
 			},
-			60 => {
+			63 => {
 				trace.push(format!("must_have_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -1328,7 +1374,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_have_edge_weights();
 			},
-			61 => {
+			64 => {
 				trace.push(format!("must_have_edges()", ));
 				
 				let g_copy = graph.clone();
@@ -1338,7 +1384,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_have_edges();
 			},
-			62 => {
+			65 => {
 				trace.push(format!("must_have_nodes()", ));
 				
 				let g_copy = graph.clone();
@@ -1348,7 +1394,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.must_have_nodes();
 			},
-			63 => {
+			66 => {
 				trace.push(format!("degrees_product(one = {:?}, two = {:?})", data_for_current_test.degrees_product.one, data_for_current_test.degrees_product.two));
 				
 				let g_copy = graph.clone();
@@ -1358,7 +1404,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.degrees_product(data_for_current_test.degrees_product.one, data_for_current_test.degrees_product.two);
 			},
-			64 => {
+			67 => {
 				trace.push(format!("jaccard_index(one = {:?}, two = {:?})", data_for_current_test.jaccard_index.one, data_for_current_test.jaccard_index.two));
 				
 				let g_copy = graph.clone();
@@ -1368,7 +1414,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.jaccard_index(data_for_current_test.jaccard_index.one, data_for_current_test.jaccard_index.two);
 			},
-			65 => {
+			68 => {
 				trace.push(format!("adamic_adar_index(one = {:?}, two = {:?})", data_for_current_test.adamic_adar_index.one, data_for_current_test.adamic_adar_index.two));
 				
 				let g_copy = graph.clone();
@@ -1378,7 +1424,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.adamic_adar_index(data_for_current_test.adamic_adar_index.one, data_for_current_test.adamic_adar_index.two);
 			},
-			66 => {
+			69 => {
 				trace.push(format!("resource_allocation_index(one = {:?}, two = {:?})", data_for_current_test.resource_allocation_index.one, data_for_current_test.resource_allocation_index.two));
 				
 				let g_copy = graph.clone();
@@ -1388,7 +1434,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.resource_allocation_index(data_for_current_test.resource_allocation_index.one, data_for_current_test.resource_allocation_index.two);
 			},
-			67 => {
+			70 => {
 				trace.push(format!("remove_components(node_names = {:?}, node_types = {:?}, edge_types = {:?}, minimum_component_size = {:?}, top_k_components = {:?}, verbose = {:?})", data_for_current_test.remove_components.node_names, data_for_current_test.remove_components.node_types, data_for_current_test.remove_components.edge_types, data_for_current_test.remove_components.minimum_component_size, data_for_current_test.remove_components.top_k_components, data_for_current_test.remove_components.verbose));
 				
 				let g_copy = graph.clone();
@@ -1398,7 +1444,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_components(data_for_current_test.remove_components.node_names, data_for_current_test.remove_components.node_types, data_for_current_test.remove_components.edge_types, data_for_current_test.remove_components.minimum_component_size, data_for_current_test.remove_components.top_k_components, data_for_current_test.remove_components.verbose);
 			},
-			68 => {
+			71 => {
 				trace.push(format!("set_name(name = {:?})", data_for_current_test.set_name.name));
 				
 				let g_copy = graph.clone();
@@ -1408,7 +1454,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.set_name(data_for_current_test.set_name.name);
 			},
-			69 => {
+			72 => {
 				trace.push(format!("set_inplace_all_edge_types(edge_type = {:?})", data_for_current_test.set_inplace_all_edge_types.edge_type));
 				
 				let g_copy = graph.clone();
@@ -1418,7 +1464,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.set_inplace_all_edge_types(data_for_current_test.set_inplace_all_edge_types.edge_type);
 			},
-			70 => {
+			73 => {
 				trace.push(format!("set_all_edge_types(edge_type = {:?}, verbose = {:?})", data_for_current_test.set_all_edge_types.edge_type, data_for_current_test.set_all_edge_types.verbose));
 				
 				let g_copy = graph.clone();
@@ -1428,7 +1474,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.set_all_edge_types(data_for_current_test.set_all_edge_types.edge_type, data_for_current_test.set_all_edge_types.verbose);
 			},
-			71 => {
+			74 => {
 				trace.push(format!("set_inplace_all_node_types(node_type = {:?})", data_for_current_test.set_inplace_all_node_types.node_type));
 				
 				let g_copy = graph.clone();
@@ -1438,7 +1484,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.set_inplace_all_node_types(data_for_current_test.set_inplace_all_node_types.node_type);
 			},
-			72 => {
+			75 => {
 				trace.push(format!("set_all_node_types(node_type = {:?})", data_for_current_test.set_all_node_types.node_type));
 				
 				let g_copy = graph.clone();
@@ -1448,7 +1494,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.set_all_node_types(data_for_current_test.set_all_node_types.node_type);
 			},
-			73 => {
+			76 => {
 				trace.push(format!("remove_inplace_node_type_id(node_type_id = {:?})", data_for_current_test.remove_inplace_node_type_id.node_type_id));
 				
 				let g_copy = graph.clone();
@@ -1458,7 +1504,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_node_type_id(data_for_current_test.remove_inplace_node_type_id.node_type_id);
 			},
-			74 => {
+			77 => {
 				trace.push(format!("remove_inplace_singleton_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1468,7 +1514,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_singleton_node_types();
 			},
-			75 => {
+			78 => {
 				trace.push(format!("remove_inplace_edge_type_id(edge_type_id = {:?})", data_for_current_test.remove_inplace_edge_type_id.edge_type_id));
 				
 				let g_copy = graph.clone();
@@ -1478,7 +1524,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_edge_type_id(data_for_current_test.remove_inplace_edge_type_id.edge_type_id);
 			},
-			76 => {
+			79 => {
 				trace.push(format!("remove_inplace_singleton_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1488,7 +1534,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_singleton_edge_types();
 			},
-			77 => {
+			80 => {
 				trace.push(format!("remove_node_type_id(node_type_id = {:?})", data_for_current_test.remove_node_type_id.node_type_id));
 				
 				let g_copy = graph.clone();
@@ -1498,7 +1544,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_node_type_id(data_for_current_test.remove_node_type_id.node_type_id);
 			},
-			78 => {
+			81 => {
 				trace.push(format!("remove_singleton_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1508,7 +1554,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_singleton_node_types();
 			},
-			79 => {
+			82 => {
 				trace.push(format!("remove_edge_type_id(edge_type_id = {:?})", data_for_current_test.remove_edge_type_id.edge_type_id));
 				
 				let g_copy = graph.clone();
@@ -1518,7 +1564,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_edge_type_id(data_for_current_test.remove_edge_type_id.edge_type_id);
 			},
-			80 => {
+			83 => {
 				trace.push(format!("remove_singleton_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1528,7 +1574,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_singleton_edge_types();
 			},
-			81 => {
+			84 => {
 				trace.push(format!("remove_inplace_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1538,7 +1584,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_node_types();
 			},
-			82 => {
+			85 => {
 				trace.push(format!("remove_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1548,7 +1594,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_node_types();
 			},
-			83 => {
+			86 => {
 				trace.push(format!("remove_inplace_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -1558,7 +1604,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_edge_types();
 			},
-			84 => {
+			87 => {
 				trace.push(format!("remove_edge_types(verbose = {:?})", data_for_current_test.remove_edge_types.verbose));
 				
 				let g_copy = graph.clone();
@@ -1568,7 +1614,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_edge_types(data_for_current_test.remove_edge_types.verbose);
 			},
-			85 => {
+			88 => {
 				trace.push(format!("remove_inplace_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -1578,7 +1624,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_inplace_edge_weights();
 			},
-			86 => {
+			89 => {
 				trace.push(format!("remove_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -1588,7 +1634,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.remove_edge_weights();
 			},
-			87 => {
+			90 => {
 				trace.push(format!("encode_edge(src = {:?}, dst = {:?})", data_for_current_test.encode_edge.src, data_for_current_test.encode_edge.dst));
 				
 				let g_copy = graph.clone();
@@ -1598,7 +1644,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.encode_edge(data_for_current_test.encode_edge.src, data_for_current_test.encode_edge.dst);
 			},
-			88 => {
+			91 => {
 				trace.push(format!("decode_edge(edge = {:?})", data_for_current_test.decode_edge.edge));
 				
 				let g_copy = graph.clone();
@@ -1608,7 +1654,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.decode_edge(data_for_current_test.decode_edge.edge);
 			},
-			89 => {
+			92 => {
 				trace.push(format!("get_max_encodable_edge_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1618,7 +1664,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_max_encodable_edge_number();
 			},
-			90 => {
+			93 => {
 				trace.push(format!("get_bipartite_edges(removed_existing_edges = {:?}, first_nodes_set = {:?}, second_nodes_set = {:?}, first_node_types_set = {:?}, second_node_types_set = {:?})", data_for_current_test.get_bipartite_edges.removed_existing_edges, data_for_current_test.get_bipartite_edges.first_nodes_set, data_for_current_test.get_bipartite_edges.second_nodes_set, data_for_current_test.get_bipartite_edges.first_node_types_set, data_for_current_test.get_bipartite_edges.second_node_types_set));
 				
 				let g_copy = graph.clone();
@@ -1628,7 +1674,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_bipartite_edges(data_for_current_test.get_bipartite_edges.removed_existing_edges, data_for_current_test.get_bipartite_edges.first_nodes_set, data_for_current_test.get_bipartite_edges.second_nodes_set, data_for_current_test.get_bipartite_edges.first_node_types_set, data_for_current_test.get_bipartite_edges.second_node_types_set);
 			},
-			91 => {
+			94 => {
 				trace.push(format!("get_bipartite_edge_names(removed_existing_edges = {:?}, first_nodes_set = {:?}, second_nodes_set = {:?}, first_node_types_set = {:?}, second_node_types_set = {:?})", data_for_current_test.get_bipartite_edge_names.removed_existing_edges, data_for_current_test.get_bipartite_edge_names.first_nodes_set, data_for_current_test.get_bipartite_edge_names.second_nodes_set, data_for_current_test.get_bipartite_edge_names.first_node_types_set, data_for_current_test.get_bipartite_edge_names.second_node_types_set));
 				
 				let g_copy = graph.clone();
@@ -1638,7 +1684,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_bipartite_edge_names(data_for_current_test.get_bipartite_edge_names.removed_existing_edges, data_for_current_test.get_bipartite_edge_names.first_nodes_set, data_for_current_test.get_bipartite_edge_names.second_nodes_set, data_for_current_test.get_bipartite_edge_names.first_node_types_set, data_for_current_test.get_bipartite_edge_names.second_node_types_set);
 			},
-			92 => {
+			95 => {
 				trace.push(format!("get_star_edges(central_node = {:?}, removed_existing_edges = {:?}, star_points_nodes_set = {:?}, star_points_node_types_set = {:?})", data_for_current_test.get_star_edges.central_node, data_for_current_test.get_star_edges.removed_existing_edges, data_for_current_test.get_star_edges.star_points_nodes_set, data_for_current_test.get_star_edges.star_points_node_types_set));
 				
 				let g_copy = graph.clone();
@@ -1648,7 +1694,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_star_edges(data_for_current_test.get_star_edges.central_node, data_for_current_test.get_star_edges.removed_existing_edges, data_for_current_test.get_star_edges.star_points_nodes_set, data_for_current_test.get_star_edges.star_points_node_types_set);
 			},
-			93 => {
+			96 => {
 				trace.push(format!("get_star_edge_names(central_node = {:?}, removed_existing_edges = {:?}, star_points_nodes_set = {:?}, star_points_node_types_set = {:?})", data_for_current_test.get_star_edge_names.central_node, data_for_current_test.get_star_edge_names.removed_existing_edges, data_for_current_test.get_star_edge_names.star_points_nodes_set, data_for_current_test.get_star_edge_names.star_points_node_types_set));
 				
 				let g_copy = graph.clone();
@@ -1658,7 +1704,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_star_edge_names(data_for_current_test.get_star_edge_names.central_node, data_for_current_test.get_star_edge_names.removed_existing_edges, data_for_current_test.get_star_edge_names.star_points_nodes_set, data_for_current_test.get_star_edge_names.star_points_node_types_set);
 			},
-			94 => {
+			97 => {
 				trace.push(format!("get_clique_edges(directed = {:?}, allow_selfloops = {:?}, removed_existing_edges = {:?}, allow_node_type_set = {:?}, allow_node_set = {:?})", data_for_current_test.get_clique_edges.directed, data_for_current_test.get_clique_edges.allow_selfloops, data_for_current_test.get_clique_edges.removed_existing_edges, data_for_current_test.get_clique_edges.allow_node_type_set, data_for_current_test.get_clique_edges.allow_node_set));
 				
 				let g_copy = graph.clone();
@@ -1668,7 +1714,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_clique_edges(data_for_current_test.get_clique_edges.directed, data_for_current_test.get_clique_edges.allow_selfloops, data_for_current_test.get_clique_edges.removed_existing_edges, data_for_current_test.get_clique_edges.allow_node_type_set, data_for_current_test.get_clique_edges.allow_node_set);
 			},
-			95 => {
+			98 => {
 				trace.push(format!("get_clique_edge_names(directed = {:?}, allow_selfloops = {:?}, removed_existing_edges = {:?}, allow_node_type_set = {:?}, allow_node_set = {:?})", data_for_current_test.get_clique_edge_names.directed, data_for_current_test.get_clique_edge_names.allow_selfloops, data_for_current_test.get_clique_edge_names.removed_existing_edges, data_for_current_test.get_clique_edge_names.allow_node_type_set, data_for_current_test.get_clique_edge_names.allow_node_set));
 				
 				let g_copy = graph.clone();
@@ -1678,7 +1724,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_clique_edge_names(data_for_current_test.get_clique_edge_names.directed, data_for_current_test.get_clique_edge_names.allow_selfloops, data_for_current_test.get_clique_edge_names.removed_existing_edges, data_for_current_test.get_clique_edge_names.allow_node_type_set, data_for_current_test.get_clique_edge_names.allow_node_set);
 			},
-			96 => {
+			99 => {
 				trace.push(format!("replace(node_name_mapping = {:?}, node_type_name_mapping = {:?}, node_type_names_mapping = {:?}, edge_type_name_mapping = {:?}, verbose = {:?})", data_for_current_test.replace.node_name_mapping, data_for_current_test.replace.node_type_name_mapping, data_for_current_test.replace.node_type_names_mapping, data_for_current_test.replace.edge_type_name_mapping, data_for_current_test.replace.verbose));
 				
 				let g_copy = graph.clone();
@@ -1688,7 +1734,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.replace(data_for_current_test.replace.node_name_mapping, data_for_current_test.replace.node_type_name_mapping, data_for_current_test.replace.node_type_names_mapping, data_for_current_test.replace.edge_type_name_mapping, data_for_current_test.replace.verbose);
 			},
-			97 => {
+			100 => {
 				trace.push(format!("replace_unknown_node_types_with_node_type_name(node_type_names = {:?}, verbose = {:?})", data_for_current_test.replace_unknown_node_types_with_node_type_name.node_type_names, data_for_current_test.replace_unknown_node_types_with_node_type_name.verbose));
 				
 				let g_copy = graph.clone();
@@ -1696,19 +1742,19 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.replace_unknown_node_types_with_node_type_name(data_for_current_test.replace_unknown_node_types_with_node_type_name.node_type_names, data_for_current_test.replace_unknown_node_types_with_node_type_name.verbose);
+				let _ = graph.replace_unknown_node_types_with_node_type_name(data_for_current_test.replace_unknown_node_types_with_node_type_name.node_type_names, data_for_current_test.replace_unknown_node_types_with_node_type_name.verbose);
 			},
-			98 => {
-				trace.push(format!("replace_unknown_edge_types_with_edge_type_name(edge_type_names = {:?}, verbose = {:?})", data_for_current_test.replace_unknown_edge_types_with_edge_type_name.edge_type_names, data_for_current_test.replace_unknown_edge_types_with_edge_type_name.verbose));
+			101 => {
+				trace.push(format!("replace_unknown_edge_types_with_edge_type_name(edge_type_name = {:?}, verbose = {:?})", data_for_current_test.replace_unknown_edge_types_with_edge_type_name.edge_type_name, data_for_current_test.replace_unknown_edge_types_with_edge_type_name.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.replace_unknown_edge_types_with_edge_type_name(data_for_current_test.replace_unknown_edge_types_with_edge_type_name.edge_type_names, data_for_current_test.replace_unknown_edge_types_with_edge_type_name.verbose);
+				let _ = graph.replace_unknown_edge_types_with_edge_type_name(data_for_current_test.replace_unknown_edge_types_with_edge_type_name.edge_type_name, data_for_current_test.replace_unknown_edge_types_with_edge_type_name.verbose);
 			},
-			99 => {
+			102 => {
 				trace.push(format!("report()", ));
 				
 				let g_copy = graph.clone();
@@ -1718,7 +1764,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.report();
 			},
-			100 => {
+			103 => {
 				trace.push(format!("get_peculiarities_report_markdown()", ));
 				
 				let g_copy = graph.clone();
@@ -1728,7 +1774,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_peculiarities_report_markdown();
 			},
-			101 => {
+			104 => {
 				trace.push(format!("textual_report(verbose = {:?})", data_for_current_test.textual_report.verbose));
 				
 				let g_copy = graph.clone();
@@ -1738,7 +1784,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.textual_report(data_for_current_test.textual_report.verbose);
 			},
-			102 => {
+			105 => {
 				trace.push(format!("get_connected_components_number(verbose = {:?})", data_for_current_test.get_connected_components_number.verbose));
 				
 				let g_copy = graph.clone();
@@ -1748,7 +1794,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_connected_components_number(data_for_current_test.get_connected_components_number.verbose);
 			},
-			103 => {
+			106 => {
 				trace.push(format!("get_singleton_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1758,7 +1804,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_singleton_nodes_number();
 			},
-			104 => {
+			107 => {
 				trace.push(format!("get_singleton_nodes_with_selfloops_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1768,7 +1814,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_singleton_nodes_with_selfloops_number();
 			},
-			105 => {
+			108 => {
 				trace.push(format!("get_not_singleton_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1778,7 +1824,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_not_singleton_nodes_number();
 			},
-			106 => {
+			109 => {
 				trace.push(format!("get_density()", ));
 				
 				let g_copy = graph.clone();
@@ -1788,7 +1834,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_density();
 			},
-			107 => {
+			110 => {
 				trace.push(format!("get_trap_nodes_rate()", ));
 				
 				let g_copy = graph.clone();
@@ -1798,7 +1844,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_trap_nodes_rate();
 			},
-			108 => {
+			111 => {
 				trace.push(format!("get_node_degrees_mean()", ));
 				
 				let g_copy = graph.clone();
@@ -1808,7 +1854,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_degrees_mean();
 			},
-			109 => {
+			112 => {
 				trace.push(format!("get_undirected_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1818,7 +1864,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_undirected_edges_number();
 			},
-			110 => {
+			113 => {
 				trace.push(format!("get_unique_undirected_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1828,7 +1874,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_unique_undirected_edges_number();
 			},
-			111 => {
+			114 => {
 				trace.push(format!("get_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1838,7 +1884,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_edges_number();
 			},
-			112 => {
+			115 => {
 				trace.push(format!("get_unique_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1848,7 +1894,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_unique_edges_number();
 			},
-			113 => {
+			116 => {
 				trace.push(format!("get_node_degrees_median()", ));
 				
 				let g_copy = graph.clone();
@@ -1858,7 +1904,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_degrees_median();
 			},
-			114 => {
+			117 => {
 				trace.push(format!("get_max_node_degree()", ));
 				
 				let g_copy = graph.clone();
@@ -1868,7 +1914,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_max_node_degree();
 			},
-			115 => {
+			118 => {
 				trace.push(format!("get_min_node_degree()", ));
 				
 				let g_copy = graph.clone();
@@ -1878,7 +1924,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_min_node_degree();
 			},
-			116 => {
+			119 => {
 				trace.push(format!("get_node_degrees_mode()", ));
 				
 				let g_copy = graph.clone();
@@ -1888,7 +1934,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_degrees_mode();
 			},
-			117 => {
+			120 => {
 				trace.push(format!("get_selfloop_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1898,7 +1944,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_selfloop_nodes_number();
 			},
-			118 => {
+			121 => {
 				trace.push(format!("get_unique_selfloop_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1908,7 +1954,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_unique_selfloop_number();
 			},
-			119 => {
+			122 => {
 				trace.push(format!("get_selfloop_nodes_rate()", ));
 				
 				let g_copy = graph.clone();
@@ -1918,7 +1964,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_selfloop_nodes_rate();
 			},
-			120 => {
+			123 => {
 				trace.push(format!("get_name()", ));
 				
 				let g_copy = graph.clone();
@@ -1928,7 +1974,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_name();
 			},
-			121 => {
+			124 => {
 				trace.push(format!("get_trap_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -1938,7 +1984,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_trap_nodes_number();
 			},
-			122 => {
+			125 => {
 				trace.push(format!("get_source_node_ids(directed = {:?})", data_for_current_test.get_source_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -1948,7 +1994,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_source_node_ids(data_for_current_test.get_source_node_ids.directed);
 			},
-			123 => {
+			126 => {
 				trace.push(format!("get_source_names(directed = {:?})", data_for_current_test.get_source_names.directed));
 				
 				let g_copy = graph.clone();
@@ -1958,7 +2004,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_source_names(data_for_current_test.get_source_names.directed);
 			},
-			124 => {
+			127 => {
 				trace.push(format!("get_destination_node_ids(directed = {:?})", data_for_current_test.get_destination_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -1968,7 +2014,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_destination_node_ids(data_for_current_test.get_destination_node_ids.directed);
 			},
-			125 => {
+			128 => {
 				trace.push(format!("get_destination_names(directed = {:?})", data_for_current_test.get_destination_names.directed));
 				
 				let g_copy = graph.clone();
@@ -1978,7 +2024,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_destination_names(data_for_current_test.get_destination_names.directed);
 			},
-			126 => {
+			129 => {
 				trace.push(format!("get_node_names()", ));
 				
 				let g_copy = graph.clone();
@@ -1988,7 +2034,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_node_names();
 			},
-			127 => {
+			130 => {
 				trace.push(format!("get_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -1998,7 +2044,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_node_ids();
 			},
-			128 => {
+			131 => {
 				trace.push(format!("get_edge_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2008,7 +2054,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_type_ids();
 			},
-			129 => {
+			132 => {
 				trace.push(format!("get_unique_edge_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2018,7 +2064,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unique_edge_type_ids();
 			},
-			130 => {
+			133 => {
 				trace.push(format!("get_edge_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2028,7 +2074,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_type_names();
 			},
-			131 => {
+			134 => {
 				trace.push(format!("get_unique_edge_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2038,7 +2084,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unique_edge_type_names();
 			},
-			132 => {
+			135 => {
 				trace.push(format!("get_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -2048,7 +2094,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_weights();
 			},
-			133 => {
+			136 => {
 				trace.push(format!("get_min_edge_weight()", ));
 				
 				let g_copy = graph.clone();
@@ -2058,7 +2104,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_min_edge_weight();
 			},
-			134 => {
+			137 => {
 				trace.push(format!("get_max_edge_weight()", ));
 				
 				let g_copy = graph.clone();
@@ -2068,7 +2114,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_max_edge_weight();
 			},
-			135 => {
+			138 => {
 				trace.push(format!("get_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2078,7 +2124,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_type_ids();
 			},
-			136 => {
+			139 => {
 				trace.push(format!("get_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2088,7 +2134,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_type_names();
 			},
-			137 => {
+			140 => {
 				trace.push(format!("get_unique_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2098,7 +2144,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unique_node_type_ids();
 			},
-			138 => {
+			141 => {
 				trace.push(format!("get_unique_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2108,7 +2154,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unique_node_type_names();
 			},
-			139 => {
+			142 => {
 				trace.push(format!("get_unique_directed_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2118,7 +2164,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_unique_directed_edges_number();
 			},
-			140 => {
+			143 => {
 				trace.push(format!("get_nodes_mapping()", ));
 				
 				let g_copy = graph.clone();
@@ -2128,7 +2174,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_nodes_mapping();
 			},
-			141 => {
+			144 => {
 				trace.push(format!("get_edge_node_ids(directed = {:?})", data_for_current_test.get_edge_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2138,7 +2184,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_edge_node_ids(data_for_current_test.get_edge_node_ids.directed);
 			},
-			142 => {
+			145 => {
 				trace.push(format!("get_edge_node_names(directed = {:?})", data_for_current_test.get_edge_node_names.directed));
 				
 				let g_copy = graph.clone();
@@ -2148,7 +2194,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_edge_node_names(data_for_current_test.get_edge_node_names.directed);
 			},
-			143 => {
+			146 => {
 				trace.push(format!("get_unknown_node_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2158,7 +2204,17 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unknown_node_types_number();
 			},
-			144 => {
+			147 => {
+				trace.push(format!("get_unknown_node_types_rate()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_unknown_node_types_rate();
+			},
+			148 => {
 				trace.push(format!("get_minimum_node_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2168,7 +2224,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_minimum_node_types_number();
 			},
-			145 => {
+			149 => {
 				trace.push(format!("get_singleton_node_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2178,7 +2234,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_node_types_number();
 			},
-			146 => {
+			150 => {
 				trace.push(format!("get_singleton_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2188,7 +2244,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_node_type_ids();
 			},
-			147 => {
+			151 => {
 				trace.push(format!("get_singleton_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2198,7 +2254,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_node_type_names();
 			},
-			148 => {
+			152 => {
 				trace.push(format!("get_unknown_edge_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2208,7 +2264,17 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_unknown_edge_types_number();
 			},
-			149 => {
+			153 => {
+				trace.push(format!("get_unknown_edge_types_rate()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.get_unknown_edge_types_rate();
+			},
+			154 => {
 				trace.push(format!("get_minimum_edge_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2218,7 +2284,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_minimum_edge_types_number();
 			},
-			150 => {
+			155 => {
 				trace.push(format!("get_singleton_edge_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2228,7 +2294,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_edge_types_number();
 			},
-			151 => {
+			156 => {
 				trace.push(format!("get_singleton_edge_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2238,7 +2304,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_edge_type_ids();
 			},
-			152 => {
+			157 => {
 				trace.push(format!("get_singleton_edge_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2248,7 +2314,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_singleton_edge_type_names();
 			},
-			153 => {
+			158 => {
 				trace.push(format!("get_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2258,7 +2324,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_nodes_number();
 			},
-			154 => {
+			159 => {
 				trace.push(format!("get_node_connected_component_ids(verbose = {:?})", data_for_current_test.get_node_connected_component_ids.verbose));
 				
 				let g_copy = graph.clone();
@@ -2268,7 +2334,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_node_connected_component_ids(data_for_current_test.get_node_connected_component_ids.verbose);
 			},
-			155 => {
+			160 => {
 				trace.push(format!("get_directed_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2278,7 +2344,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_directed_edges_number();
 			},
-			156 => {
+			161 => {
 				trace.push(format!("get_edge_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2288,7 +2354,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_types_number();
 			},
-			157 => {
+			162 => {
 				trace.push(format!("get_node_types_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2298,7 +2364,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_types_number();
 			},
-			158 => {
+			163 => {
 				trace.push(format!("get_node_degrees()", ));
 				
 				let g_copy = graph.clone();
@@ -2308,7 +2374,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_node_degrees();
 			},
-			159 => {
+			164 => {
 				trace.push(format!("get_not_singletons_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2318,7 +2384,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_not_singletons_node_ids();
 			},
-			160 => {
+			165 => {
 				trace.push(format!("get_dense_nodes_mapping()", ));
 				
 				let g_copy = graph.clone();
@@ -2328,7 +2394,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_dense_nodes_mapping();
 			},
-			161 => {
+			166 => {
 				trace.push(format!("get_multigraph_edges_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2338,7 +2404,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_multigraph_edges_number();
 			},
-			162 => {
+			167 => {
 				trace.push(format!("get_cumulative_node_degrees()", ));
 				
 				let g_copy = graph.clone();
@@ -2348,7 +2414,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_cumulative_node_degrees();
 			},
-			163 => {
+			168 => {
 				trace.push(format!("get_unique_source_nodes_number()", ));
 				
 				let g_copy = graph.clone();
@@ -2358,7 +2424,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.get_unique_source_nodes_number();
 			},
-			164 => {
+			169 => {
 				trace.push(format!("get_edge_type_id_counts_hashmap()", ));
 				
 				let g_copy = graph.clone();
@@ -2368,7 +2434,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_type_id_counts_hashmap();
 			},
-			165 => {
+			170 => {
 				trace.push(format!("get_edge_type_names_counts_hashmap()", ));
 				
 				let g_copy = graph.clone();
@@ -2378,7 +2444,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_edge_type_names_counts_hashmap();
 			},
-			166 => {
+			171 => {
 				trace.push(format!("get_node_type_id_counts_hashmap()", ));
 				
 				let g_copy = graph.clone();
@@ -2388,7 +2454,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_type_id_counts_hashmap();
 			},
-			167 => {
+			172 => {
 				trace.push(format!("get_node_type_names_counts_hashmap()", ));
 				
 				let g_copy = graph.clone();
@@ -2398,7 +2464,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.get_node_type_names_counts_hashmap();
 			},
-			168 => {
+			173 => {
 				trace.push(format!("iter_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2408,7 +2474,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_node_ids().collect::<Vec<_>>();
 			},
-			169 => {
+			174 => {
 				trace.push(format!("iter_unique_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2418,7 +2484,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_node_type_ids();
 			},
-			170 => {
+			175 => {
 				trace.push(format!("iter_node_type_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2428,7 +2494,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_node_type_counts();
 			},
-			171 => {
+			176 => {
 				trace.push(format!("iter_unique_node_type_ids_and_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2438,7 +2504,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_node_type_ids_and_counts();
 			},
-			172 => {
+			177 => {
 				trace.push(format!("iter_unique_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2448,7 +2514,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_node_type_names();
 			},
-			173 => {
+			178 => {
 				trace.push(format!("iter_unique_node_type_names_and_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2458,7 +2524,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_node_type_names_and_counts();
 			},
-			174 => {
+			179 => {
 				trace.push(format!("iter_unique_edge_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2468,7 +2534,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_edge_type_ids();
 			},
-			175 => {
+			180 => {
 				trace.push(format!("iter_edge_type_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2478,7 +2544,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_type_counts();
 			},
-			176 => {
+			181 => {
 				trace.push(format!("iter_unique_edge_type_ids_and_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2488,7 +2554,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_edge_type_ids_and_counts();
 			},
-			177 => {
+			182 => {
 				trace.push(format!("iter_unique_edge_type_names_and_counts()", ));
 				
 				let g_copy = graph.clone();
@@ -2498,7 +2564,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_edge_type_names_and_counts();
 			},
-			178 => {
+			183 => {
 				trace.push(format!("iter_unique_edge_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2508,7 +2574,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_edge_type_names();
 			},
-			179 => {
+			184 => {
 				trace.push(format!("par_iter_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2518,7 +2584,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_node_ids().collect::<Vec<_>>();
 			},
-			180 => {
+			185 => {
 				trace.push(format!("iter_node_degrees()", ));
 				
 				let g_copy = graph.clone();
@@ -2528,7 +2594,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_node_degrees().collect::<Vec<_>>();
 			},
-			181 => {
+			186 => {
 				trace.push(format!("par_iter_node_degrees()", ));
 				
 				let g_copy = graph.clone();
@@ -2538,7 +2604,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
 			},
-			182 => {
+			187 => {
 				trace.push(format!("iter_non_singleton_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2548,7 +2614,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
 			},
-			183 => {
+			188 => {
 				trace.push(format!("iter_singleton_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2558,7 +2624,17 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_node_ids().collect::<Vec<_>>();
 			},
-			184 => {
+			189 => {
+				trace.push(format!("iter_singleton_node_names()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_singleton_node_names().collect::<Vec<_>>();
+			},
+			190 => {
 				trace.push(format!("iter_singleton_with_selfloops_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2568,7 +2644,17 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_with_selfloops_node_ids().collect::<Vec<_>>();
 			},
-			185 => {
+			191 => {
+				trace.push(format!("iter_singleton_with_selfloops_node_names()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				let _ = graph.iter_singleton_with_selfloops_node_names().collect::<Vec<_>>();
+			},
+			192 => {
 				trace.push(format!("iter_singleton_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2578,7 +2664,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_node_type_ids();
 			},
-			186 => {
+			193 => {
 				trace.push(format!("iter_singleton_edge_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2588,7 +2674,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_edge_type_ids();
 			},
-			187 => {
+			194 => {
 				trace.push(format!("iter_singleton_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2598,7 +2684,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_node_type_names();
 			},
-			188 => {
+			195 => {
 				trace.push(format!("iter_singleton_edge_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2608,7 +2694,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_singleton_edge_type_names();
 			},
-			189 => {
+			196 => {
 				trace.push(format!("iter_source_node_ids(directed = {:?})", data_for_current_test.iter_source_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2618,7 +2704,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_source_node_ids(data_for_current_test.iter_source_node_ids.directed).collect::<Vec<_>>();
 			},
-			190 => {
+			197 => {
 				trace.push(format!("iter_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -2628,7 +2714,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_weights();
 			},
-			191 => {
+			198 => {
 				trace.push(format!("par_iter_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -2638,7 +2724,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_weights();
 			},
-			192 => {
+			199 => {
 				trace.push(format!("par_iter_source_node_ids(directed = {:?})", data_for_current_test.par_iter_source_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2648,7 +2734,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_source_node_ids(data_for_current_test.par_iter_source_node_ids.directed).collect::<Vec<_>>();
 			},
-			193 => {
+			200 => {
 				trace.push(format!("iter_destination_node_ids(directed = {:?})", data_for_current_test.iter_destination_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2658,7 +2744,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_destination_node_ids(data_for_current_test.iter_destination_node_ids.directed).collect::<Vec<_>>();
 			},
-			194 => {
+			201 => {
 				trace.push(format!("par_iter_destination_node_ids(directed = {:?})", data_for_current_test.par_iter_destination_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2668,7 +2754,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_destination_node_ids(data_for_current_test.par_iter_destination_node_ids.directed).collect::<Vec<_>>();
 			},
-			195 => {
+			202 => {
 				trace.push(format!("iter_node_ids_and_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2678,7 +2764,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
 			},
-			196 => {
+			203 => {
 				trace.push(format!("par_iter_node_ids_and_node_type_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2688,7 +2774,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_node_ids_and_node_type_ids().collect::<Vec<_>>();
 			},
-			197 => {
+			204 => {
 				trace.push(format!("iter_node_names_and_node_type_names()", ));
 				
 				let g_copy = graph.clone();
@@ -2698,7 +2784,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_node_names_and_node_type_names().collect::<Vec<_>>();
 			},
-			198 => {
+			205 => {
 				trace.push(format!("iter_edge_ids(directed = {:?})", data_for_current_test.iter_edge_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2708,7 +2794,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_ids(data_for_current_test.iter_edge_ids.directed).collect::<Vec<_>>();
 			},
-			199 => {
+			206 => {
 				trace.push(format!("iter_edges(directed = {:?})", data_for_current_test.iter_edges.directed));
 				
 				let g_copy = graph.clone();
@@ -2718,7 +2804,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edges(data_for_current_test.iter_edges.directed).collect::<Vec<_>>();
 			},
-			200 => {
+			207 => {
 				trace.push(format!("par_iter_edge_ids(directed = {:?})", data_for_current_test.par_iter_edge_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2728,7 +2814,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_ids(data_for_current_test.par_iter_edge_ids.directed).collect::<Vec<_>>();
 			},
-			201 => {
+			208 => {
 				trace.push(format!("par_iter_edges(directed = {:?})", data_for_current_test.par_iter_edges.directed));
 				
 				let g_copy = graph.clone();
@@ -2738,7 +2824,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edges(data_for_current_test.par_iter_edges.directed).collect::<Vec<_>>();
 			},
-			202 => {
+			209 => {
 				trace.push(format!("iter_edge_node_ids_and_edge_type_id(directed = {:?})", data_for_current_test.iter_edge_node_ids_and_edge_type_id.directed));
 				
 				let g_copy = graph.clone();
@@ -2748,7 +2834,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_node_ids_and_edge_type_id(data_for_current_test.iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
 			},
-			203 => {
+			210 => {
 				trace.push(format!("iter_edge_node_names_and_edge_type_name(directed = {:?})", data_for_current_test.iter_edge_node_names_and_edge_type_name.directed));
 				
 				let g_copy = graph.clone();
@@ -2758,7 +2844,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_node_names_and_edge_type_name(data_for_current_test.iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
 			},
-			204 => {
+			211 => {
 				trace.push(format!("par_iter_edge_node_names_and_edge_type_name(directed = {:?})", data_for_current_test.par_iter_edge_node_names_and_edge_type_name.directed));
 				
 				let g_copy = graph.clone();
@@ -2768,7 +2854,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_node_names_and_edge_type_name(data_for_current_test.par_iter_edge_node_names_and_edge_type_name.directed).collect::<Vec<_>>();
 			},
-			205 => {
+			212 => {
 				trace.push(format!("par_iter_edge_node_ids_and_edge_type_id(directed = {:?})", data_for_current_test.par_iter_edge_node_ids_and_edge_type_id.directed));
 				
 				let g_copy = graph.clone();
@@ -2778,7 +2864,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_node_ids_and_edge_type_id(data_for_current_test.par_iter_edge_node_ids_and_edge_type_id.directed).collect::<Vec<_>>();
 			},
-			206 => {
+			213 => {
 				trace.push(format!("par_iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = {:?})", data_for_current_test.par_iter_edge_node_names_and_edge_type_name_and_edge_weight.directed));
 				
 				let g_copy = graph.clone();
@@ -2788,7 +2874,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(data_for_current_test.par_iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
 			},
-			207 => {
+			214 => {
 				trace.push(format!("iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = {:?})", data_for_current_test.iter_edge_node_names_and_edge_type_name_and_edge_weight.directed));
 				
 				let g_copy = graph.clone();
@@ -2798,7 +2884,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_node_names_and_edge_type_name_and_edge_weight(data_for_current_test.iter_edge_node_names_and_edge_type_name_and_edge_weight.directed).collect::<Vec<_>>();
 			},
-			208 => {
+			215 => {
 				trace.push(format!("par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = {:?})", data_for_current_test.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed));
 				
 				let g_copy = graph.clone();
@@ -2808,7 +2894,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(data_for_current_test.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
 			},
-			209 => {
+			216 => {
 				trace.push(format!("iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed = {:?})", data_for_current_test.iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed));
 				
 				let g_copy = graph.clone();
@@ -2818,7 +2904,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_edge_node_ids_and_edge_type_id_and_edge_weight(data_for_current_test.iter_edge_node_ids_and_edge_type_id_and_edge_weight.directed).collect::<Vec<_>>();
 			},
-			210 => {
+			217 => {
 				trace.push(format!("iter_unique_edge_node_ids(directed = {:?})", data_for_current_test.iter_unique_edge_node_ids.directed));
 				
 				let g_copy = graph.clone();
@@ -2828,7 +2914,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_edge_node_ids(data_for_current_test.iter_unique_edge_node_ids.directed).collect::<Vec<_>>();
 			},
-			211 => {
+			218 => {
 				trace.push(format!("iter_unique_source_node_ids()", ));
 				
 				let g_copy = graph.clone();
@@ -2838,7 +2924,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.iter_unique_source_node_ids().collect::<Vec<_>>();
 			},
-			212 => {
+			219 => {
 				trace.push(format!("has_nodes()", ));
 				
 				let g_copy = graph.clone();
@@ -2848,7 +2934,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_nodes();
 			},
-			213 => {
+			220 => {
 				trace.push(format!("has_edges()", ));
 				
 				let g_copy = graph.clone();
@@ -2858,7 +2944,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_edges();
 			},
-			214 => {
+			221 => {
 				trace.push(format!("has_trap_nodes()", ));
 				
 				let g_copy = graph.clone();
@@ -2868,7 +2954,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_trap_nodes();
 			},
-			215 => {
+			222 => {
 				trace.push(format!("is_directed()", ));
 				
 				let g_copy = graph.clone();
@@ -2878,7 +2964,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.is_directed();
 			},
-			216 => {
+			223 => {
 				trace.push(format!("has_edge_weights()", ));
 				
 				let g_copy = graph.clone();
@@ -2888,7 +2974,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_edge_weights();
 			},
-			217 => {
+			224 => {
 				trace.push(format!("has_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2898,7 +2984,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_edge_types();
 			},
-			218 => {
+			225 => {
 				trace.push(format!("has_selfloops()", ));
 				
 				let g_copy = graph.clone();
@@ -2908,7 +2994,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_selfloops();
 			},
-			219 => {
+			226 => {
 				trace.push(format!("has_singleton_nodes()", ));
 				
 				let g_copy = graph.clone();
@@ -2918,7 +3004,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_singleton_nodes();
 			},
-			220 => {
+			227 => {
 				trace.push(format!("has_singleton_nodes_with_selfloops()", ));
 				
 				let g_copy = graph.clone();
@@ -2928,7 +3014,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_singleton_nodes_with_selfloops();
 			},
-			221 => {
+			228 => {
 				trace.push(format!("has_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2938,7 +3024,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.has_node_types();
 			},
-			222 => {
+			229 => {
 				trace.push(format!("has_multilabel_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2948,7 +3034,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_multilabel_node_types();
 			},
-			223 => {
+			230 => {
 				trace.push(format!("has_unknown_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2958,7 +3044,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_unknown_node_types();
 			},
-			224 => {
+			231 => {
 				trace.push(format!("has_unknown_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2968,7 +3054,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_unknown_edge_types();
 			},
-			225 => {
+			232 => {
 				trace.push(format!("has_homogeneous_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2978,7 +3064,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_homogeneous_node_types();
 			},
-			226 => {
+			233 => {
 				trace.push(format!("has_homogeneous_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2988,7 +3074,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_homogeneous_edge_types();
 			},
-			227 => {
+			234 => {
 				trace.push(format!("has_singleton_node_types()", ));
 				
 				let g_copy = graph.clone();
@@ -2998,7 +3084,17 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_singleton_node_types();
 			},
-			228 => {
+			235 => {
+				trace.push(format!("has_node_oddities()", ));
+				
+				let g_copy = graph.clone();
+				let trace2 = trace.clone();
+				std::panic::set_hook(Box::new(move |info| {
+					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+				}));
+				graph.has_node_oddities();
+			},
+			236 => {
 				trace.push(format!("has_node_types_oddities()", ));
 				
 				let g_copy = graph.clone();
@@ -3008,7 +3104,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_node_types_oddities();
 			},
-			229 => {
+			237 => {
 				trace.push(format!("has_singleton_edge_types()", ));
 				
 				let g_copy = graph.clone();
@@ -3018,7 +3114,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_singleton_edge_types();
 			},
-			230 => {
+			238 => {
 				trace.push(format!("has_edge_types_oddities()", ));
 				
 				let g_copy = graph.clone();
@@ -3028,7 +3124,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.has_edge_types_oddities();
 			},
-			231 => {
+			239 => {
 				trace.push(format!("is_multigraph()", ));
 				
 				let g_copy = graph.clone();
@@ -3038,7 +3134,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.is_multigraph();
 			},
-			232 => {
+			240 => {
 				trace.push(format!("compute_hash()", ));
 				
 				let g_copy = graph.clone();
@@ -3048,7 +3144,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				graph.compute_hash();
 			},
-			233 => {
+			241 => {
 				trace.push(format!("connected_holdout(random_state = {:?}, train_size = {:?}, edge_types = {:?}, include_all_edge_types = {:?}, verbose = {:?})", data_for_current_test.connected_holdout.random_state, data_for_current_test.connected_holdout.train_size, data_for_current_test.connected_holdout.edge_types, data_for_current_test.connected_holdout.include_all_edge_types, data_for_current_test.connected_holdout.verbose));
 				
 				let g_copy = graph.clone();
@@ -3058,7 +3154,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.connected_holdout(data_for_current_test.connected_holdout.random_state, data_for_current_test.connected_holdout.train_size, data_for_current_test.connected_holdout.edge_types, data_for_current_test.connected_holdout.include_all_edge_types, data_for_current_test.connected_holdout.verbose);
 			},
-			234 => {
+			242 => {
 				trace.push(format!("random_holdout(random_state = {:?}, train_size = {:?}, include_all_edge_types = {:?}, edge_types = {:?}, min_number_overlaps = {:?}, verbose = {:?})", data_for_current_test.random_holdout.random_state, data_for_current_test.random_holdout.train_size, data_for_current_test.random_holdout.include_all_edge_types, data_for_current_test.random_holdout.edge_types, data_for_current_test.random_holdout.min_number_overlaps, data_for_current_test.random_holdout.verbose));
 				
 				let g_copy = graph.clone();
@@ -3068,7 +3164,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.random_holdout(data_for_current_test.random_holdout.random_state, data_for_current_test.random_holdout.train_size, data_for_current_test.random_holdout.include_all_edge_types, data_for_current_test.random_holdout.edge_types, data_for_current_test.random_holdout.min_number_overlaps, data_for_current_test.random_holdout.verbose);
 			},
-			235 => {
+			243 => {
 				trace.push(format!("node_label_holdout(train_size = {:?}, use_stratification = {:?}, random_state = {:?})", data_for_current_test.node_label_holdout.train_size, data_for_current_test.node_label_holdout.use_stratification, data_for_current_test.node_label_holdout.random_state));
 				
 				let g_copy = graph.clone();
@@ -3078,7 +3174,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.node_label_holdout(data_for_current_test.node_label_holdout.train_size, data_for_current_test.node_label_holdout.use_stratification, data_for_current_test.node_label_holdout.random_state);
 			},
-			236 => {
+			244 => {
 				trace.push(format!("edge_label_holdout(train_size = {:?}, use_stratification = {:?}, random_state = {:?})", data_for_current_test.edge_label_holdout.train_size, data_for_current_test.edge_label_holdout.use_stratification, data_for_current_test.edge_label_holdout.random_state));
 				
 				let g_copy = graph.clone();
@@ -3088,7 +3184,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.edge_label_holdout(data_for_current_test.edge_label_holdout.train_size, data_for_current_test.edge_label_holdout.use_stratification, data_for_current_test.edge_label_holdout.random_state);
 			},
-			237 => {
+			245 => {
 				trace.push(format!("random_subgraph(random_state = {:?}, nodes_number = {:?}, verbose = {:?})", data_for_current_test.random_subgraph.random_state, data_for_current_test.random_subgraph.nodes_number, data_for_current_test.random_subgraph.verbose));
 				
 				let g_copy = graph.clone();
@@ -3098,7 +3194,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.random_subgraph(data_for_current_test.random_subgraph.random_state, data_for_current_test.random_subgraph.nodes_number, data_for_current_test.random_subgraph.verbose);
 			},
-			238 => {
+			246 => {
 				trace.push(format!("kfold(k = {:?}, k_index = {:?}, edge_types = {:?}, random_state = {:?}, verbose = {:?})", data_for_current_test.kfold.k, data_for_current_test.kfold.k_index, data_for_current_test.kfold.edge_types, data_for_current_test.kfold.random_state, data_for_current_test.kfold.verbose));
 				
 				let g_copy = graph.clone();
@@ -3108,7 +3204,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				}));
 				let _ = graph.kfold(data_for_current_test.kfold.k, data_for_current_test.kfold.k_index, data_for_current_test.kfold.edge_types, data_for_current_test.kfold.random_state, data_for_current_test.kfold.verbose);
 			},
-		239 => {let _ = graph::test_utilities::default_test_suite(&mut graph, false);}
+		247 => {let _ = graph::test_utilities::default_test_suite(&mut graph, false);}
             _ => unreachable!()
         }
     }

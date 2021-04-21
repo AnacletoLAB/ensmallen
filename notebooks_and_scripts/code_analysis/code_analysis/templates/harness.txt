@@ -1,6 +1,6 @@
 use super::*;
 use arbitrary::Arbitrary;
-use std::collections::{HashSet, HashMap};
+use std::collections::{{HashSet, HashMap}};
 use rayon::iter::ParallelIterator;
 
 struct Rng{{

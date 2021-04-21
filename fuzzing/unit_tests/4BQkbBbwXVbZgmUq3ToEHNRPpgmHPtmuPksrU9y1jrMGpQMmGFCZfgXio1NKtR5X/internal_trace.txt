@@ -1,9 +1,0 @@
-Some(
-    [
-        "get_minmax_edge_ids_from_source_node_id(src = 1836055116)",
-        "get_edge_type_name_from_edge_id(edge_id = 14595199758965557410)",
-        "get_max_edge_weight()",
-        "iter_unique_node_type_ids()",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
-    ],
-)

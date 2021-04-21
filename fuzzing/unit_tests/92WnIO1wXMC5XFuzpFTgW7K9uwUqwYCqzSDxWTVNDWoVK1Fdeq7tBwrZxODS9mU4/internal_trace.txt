@@ -1,9 +1,0 @@
-Some(
-    [
-        "random_spanning_arborescence_kruskal(random_state = 7655043331955828993, undesired_edge_types = Some({}), verbose = true)",
-        "validate_node_type_ids(node_type_ids = [])",
-        "get_destination_node_ids(directed = false)",
-        "get_star_edge_names(central_node = \"\", removed_existing_edges = None, star_points_nodes_set = None, star_points_node_types_set = None)",
-        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
-    ],
-)

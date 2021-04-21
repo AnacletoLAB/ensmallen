@@ -1,7 +1,0 @@
-Some(
-    [
-        "par_iter_node_degrees()",
-        "has_edge_weights()",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
-    ],
-)

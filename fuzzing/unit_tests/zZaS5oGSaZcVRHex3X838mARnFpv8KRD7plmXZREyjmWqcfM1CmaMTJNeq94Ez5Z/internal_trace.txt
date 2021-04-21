@@ -1,8 +1,0 @@
-Some(
-    [
-        "validate_edge_id(edge_id = 7104510569738619437)",
-        "edge_label_holdout(train_size = -0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020446926318613016, use_stratification = true, random_state = 9002172347169062818)",
-        "get_not_singletons_node_ids()",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
-    ],
-)

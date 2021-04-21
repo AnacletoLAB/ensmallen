@@ -70,6 +70,15 @@ class MyTransformer(Transformer):
             "functions": values[3],
         }
 
+    def SELF(self, values):
+        return {
+            "name":"self",
+            "type":{
+                "type":"self_type",
+                ""
+            }
+        }
+
     def type(self, values):
         return values[0]
 

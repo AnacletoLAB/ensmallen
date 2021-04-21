@@ -1,9 +1,0 @@
-Some(
-    [
-        "par_iter_edge_weights()",
-        "remove_inplace_singleton_node_types()",
-        "set_inplace_all_node_types(node_type = \"\")",
-        "get_destination_node_id_from_edge_id(edge_id = 7668058505519721066)",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
-    ],
-)

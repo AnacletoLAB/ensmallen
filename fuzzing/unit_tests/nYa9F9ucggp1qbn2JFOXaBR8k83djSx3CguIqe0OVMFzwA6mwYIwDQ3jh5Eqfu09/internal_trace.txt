@@ -1,9 +1,0 @@
-Some(
-    [
-        "get_edge_weight_from_node_ids_and_edge_type_id(src = 235802126, dst = 235802126, edge_type = None)",
-        "get_node_ids_from_edge_id(edge_id = 1012762419733073422)",
-        "get_edge_node_names(directed = false)",
-        "get_singleton_nodes_number()",
-        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
-    ],
-)

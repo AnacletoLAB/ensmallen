@@ -1,7 +1,0 @@
-Some(
-    [
-        "get_node_type_names_counts_hashmap()",
-        "get_singleton_nodes_with_selfloops_number()",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [\"*\\u{6}H\", \"\", \"\"], verbose = true)",
-    ],
-)

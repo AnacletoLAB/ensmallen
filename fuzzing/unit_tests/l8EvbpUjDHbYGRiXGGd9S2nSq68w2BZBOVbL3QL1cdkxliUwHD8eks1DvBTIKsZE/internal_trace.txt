@@ -1,8 +1,0 @@
-Some(
-    [
-        "iter_edge_node_names_and_edge_type_name_from_edge_type_id(edge_type_id = Some(7713), directed = false)",
-        "get_bipartite_edges(removed_existing_edges = None, first_nodes_set = Some({\"Y\", \"\"}), second_nodes_set = Some({\"\\u{1d},$\"}), first_node_types_set = None, second_node_types_set = None)",
-        "resource_allocation_index(one = 65613, two = 3862110464)",
-        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
-    ],
-)
