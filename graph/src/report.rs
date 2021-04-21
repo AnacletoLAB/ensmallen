@@ -336,7 +336,7 @@ impl Graph {
                         "which will create a new graph instance before removing ",
                         "the singleton nodes.\n",
                         "If you need a more fine-grained control on what is ",
-                        "removed, you can use the `filter` method.",
+                        "removed, you can use the `filter` method.\n",
                     ),
                     match self.get_singleton_nodes_number() {
                         0 => unreachable!(
