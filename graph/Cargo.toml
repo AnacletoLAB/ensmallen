@@ -38,6 +38,7 @@ arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master"}
+tags = {path="./tags/"}
 
 [profile.release]
 opt-level = 3
