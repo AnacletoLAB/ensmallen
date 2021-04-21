@@ -40,6 +40,28 @@ impl Graph {
         self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
+    /// Returns vector of singleton node IDs of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph singleton node IDs are {:?}.", graph.get_singleton_node_ids());
+    /// ```
+    pub fn get_singleton_node_ids(&self) -> Vec<NodeT> {
+        self.iter_singleton_node_ids().collect()
+    }
+
+    /// Returns vector of singleton node names of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph singleton node names are {:?}.", graph.get_singleton_node_names());
+    /// ```
+    pub fn get_singleton_node_names(&self) -> Vec<String> {
+        self.iter_singleton_node_names().collect()
+    }
+
     /// Returns number of singleton nodes with self-loops within the graph.
     ///
     /// # Example
@@ -49,6 +71,28 @@ impl Graph {
     /// ```
     pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
         self.singleton_nodes_with_selfloops_number
+    }
+
+    /// Returns vector of singleton_with_selfloops node IDs of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph singleton_with_selfloops node IDs are {:?}.", graph.get_singleton_with_selfloops_node_ids());
+    /// ```
+    pub fn get_singleton_with_selfloops_node_ids(&self) -> Vec<NodeT> {
+        self.iter_singleton_with_selfloops_node_ids().collect()
+    }
+
+    /// Returns vector of singleton_with_selfloops node names of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph singleton_with_selfloops node names are {:?}.", graph.get_singleton_with_selfloops_node_names());
+    /// ```
+    pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
+        self.iter_singleton_with_selfloops_node_names().collect()
     }
 
     /// Returns number of not singleton nodes within the graph.
