@@ -411,7 +411,7 @@ impl Graph {
                         .take(10)
                         .map(|node_name| format!("* {}\n", node_name)),
                 );
-                if self.get_singleton_nodes_number() > 10 {
+                if self.get_singleton_nodes_with_selfloops_number() > 10 {
                     partial_reports.push(format!(
                         "* Plus other {} singleton nodes with selfloops\n",
                         self.get_singleton_nodes_with_selfloops_number() - 10
