@@ -46,18 +46,23 @@ impl EnsmallenGraph {
     ///     Rate of nodes destinations to cache.
     ///     Must be a value between 0 and 1.
     ///     This cannot be used with the vector destinations.
-    /// 
+    ///
     /// Raises
     /// -------------------
     /// ValueError,
     ///     If the cache_size parameter is given and vector destinations is enabled.
-    /// 
+    ///
     pub fn enable(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pe!(validate_kwargs(
             kwargs,
-            &["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
+            &[
+                "vector_sources",
+                "vector_destinations",
+                "vector_outbounds",
+                "cache_size"
+            ]
         ))?;
 
         pe!(self.graph.enable(

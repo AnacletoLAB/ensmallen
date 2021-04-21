@@ -34,7 +34,8 @@ impl EnsmallenGraph {
     fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_edge_type_id(edge_type_id))?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self, edge_type_name)"]
@@ -57,7 +58,8 @@ impl EnsmallenGraph {
     fn remove_edge_type_name(&self, edge_type_name: String) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_edge_type_name(&edge_type_name))?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self)"]
@@ -78,7 +80,8 @@ impl EnsmallenGraph {
     fn remove_edge_types(&self, verbose: bool) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_edge_types(verbose))?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self)"]
@@ -94,7 +97,8 @@ impl EnsmallenGraph {
     fn remove_edge_weights(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_edge_weights())?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self, node_type_id)"]
@@ -117,7 +121,8 @@ impl EnsmallenGraph {
     fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_node_type_id(node_type_id))?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self, node_type_name)"]
@@ -140,7 +145,8 @@ impl EnsmallenGraph {
     fn remove_node_type_name(&self, node_type_name: String) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_node_type_name(&node_type_name))?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self)"]
@@ -156,7 +162,8 @@ impl EnsmallenGraph {
     fn remove_node_types(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_node_types())?,
-        }.to_owned())
+        }
+        .to_owned())
     }
 
     #[text_signature = "($self, edge_type_id)"]
@@ -180,7 +187,6 @@ impl EnsmallenGraph {
         pe!(self.graph.remove_inplace_edge_type_id(edge_type_id))?;
         Ok(())
     }
-
 
     #[text_signature = "($self, edge_type_name)"]
     /// Remove given edge type name from all edges.
@@ -324,5 +330,71 @@ impl EnsmallenGraph {
     fn set_inplace_all_node_types(&mut self, node_type: String) -> PyResult<()> {
         pe!(self.graph.set_inplace_all_node_types(node_type))?;
         Ok(())
+    }
+
+    #[text_signature = "($self)"]
+    /// Remove singleton edge types from all edges.
+    ///
+    ///  If any given edge remains with no edge type, that edge is labeled
+    ///  with edge type None. Note that the modification happens inplace.
+    ///
+    ///  # Raises
+    ///  * If the graph does not have edge types.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn remove_inplace_singleton_edge_types(&mut self) -> PyResult<()> {
+        pe!(self.graph.remove_inplace_singleton_edge_types())?;
+        Ok(())
+    }
+
+    #[text_signature = "($self)"]
+    /// Remove singleton node types from all nodes.
+    ///
+    ///  If any given node remains with no node type, that node is labeled
+    ///  with node type None. Note that the modification happens inplace.
+    ///
+    ///  # Raises
+    ///  * If the graph does not have node types.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn remove_inplace_singleton_node_types(&mut self) -> PyResult<()> {
+        pe!(self.graph.remove_inplace_singleton_node_types())?;
+        Ok(())
+    }
+
+    #[text_signature = "($self)"]
+    /// Remove singleton edge types from all edges.
+    ///
+    ///  If any given edge remains with no edge type, that edge is labeled
+    ///  with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    ///  # Raises
+    ///  * If the graph does not have edge types.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn remove_singleton_edge_types(&mut self) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.remove_singleton_edge_types())?,
+        })
+    }
+
+    #[text_signature = "($self)"]
+    /// Remove singleton node types from all nodes.
+    ///
+    ///  If any given node remains with no node type, that node is labeled
+    ///  with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    ///  # Raises
+    ///  * If the graph does not have node types.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn remove_singleton_node_types(&mut self) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.remove_singleton_node_types())?,
+        })
     }
 }

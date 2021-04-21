@@ -1,5 +1,5 @@
 use super::*;
-use graph::{NodeT, EdgeTypeT, EdgeT};
+use graph::{EdgeT, EdgeTypeT, NodeT};
 use numpy::{PyArray, PyArray1, PyArray2};
 use std::collections::HashSet;
 
@@ -47,7 +47,7 @@ impl EnsmallenGraph {
             max_size,
         ))
     }
-    
+
     #[text_signature = "($self, verbose)"]
     /// Returns set of edges forming the spanning tree of given graph.
     ///
@@ -72,8 +72,7 @@ impl EnsmallenGraph {
     /// by David A. Bader and Guojing Cong.
     fn spanning_arborescence(&self, verbose: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
-        let (edges_number, iter) =
-            pe!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
+        let (edges_number, iter) = pe!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
         let array = ThreadSafe {
             t: PyArray2::new(py.python(), [edges_number, 2], false),
         };
@@ -86,40 +85,52 @@ impl EnsmallenGraph {
         Ok(array.t.to_owned())
     }
 
-	#[text_signature = "($self, random_state, undesired_edge_types, verbose)"]
-	/// Returns set of edges composing a spanning tree and connected components.
-	/// 
-	///  The spanning tree is NOT minimal.
-	///  The given random_state is NOT the root of the tree.
-	/// 
-	/// Parameters
-	/// --------------
-	/// random_state: int,
-	/// 	The random_state to use for the holdout,
-	/// undesired_edge_types: Union[Dict[Option<int, None]]>,
-	/// 	Which edge types id to try to avoid.
-	/// verbose: bool,
-	/// 	Whether to show a loading bar or not.
-	///
-	/// [Automatically generated binding]
-	/// [Automatically generated documentation]
-	fn random_spanning_arborescence_kruskal(&self, random_state : EdgeT, undesired_edge_types : Option<HashSet<Option<EdgeTypeT>>>, verbose : bool) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-		self.graph.random_spanning_arborescence_kruskal(random_state, &undesired_edge_types, verbose)
-	}
-	
-	#[text_signature = "($self, verbose)"]
-	/// Returns consistent spanning arborescence using Kruskal.
-	/// 
-	///  The spanning tree is NOT minimal.
-	/// 
-	/// Parameters
-	/// --------------
-	/// verbose: bool,
-	/// 	Whether to show a loading bar or not.
-	///
-	/// [Automatically generated binding]
-	/// [Automatically generated documentation]
-	fn spanning_arborescence_kruskal(&self, verbose : bool) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-		self.graph.spanning_arborescence_kruskal(verbose)
-	}
+    #[text_signature = "($self, random_state, undesired_edge_types, verbose)"]
+    /// Returns set of edges composing a spanning tree and connected components.
+    ///
+    ///  The spanning tree is NOT minimal.
+    ///  The given random_state is NOT the root of the tree.
+    ///
+    /// Parameters
+    /// --------------
+    /// random_state: int,
+    /// 	The random_state to use for the holdout,
+    /// undesired_edge_types: Union[Dict[Option<int, None]]>,
+    /// 	Which edge types id to try to avoid.
+    /// verbose: bool,
+    /// 	Whether to show a loading bar or not.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn random_spanning_arborescence_kruskal(
+        &self,
+        random_state: EdgeT,
+        undesired_edge_types: Option<HashSet<Option<EdgeTypeT>>>,
+        verbose: bool,
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        self.graph.random_spanning_arborescence_kruskal(
+            random_state,
+            &undesired_edge_types,
+            verbose,
+        )
+    }
+
+    #[text_signature = "($self, verbose)"]
+    /// Returns consistent spanning arborescence using Kruskal.
+    ///
+    ///  The spanning tree is NOT minimal.
+    ///
+    /// Parameters
+    /// --------------
+    /// verbose: bool,
+    /// 	Whether to show a loading bar or not.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn spanning_arborescence_kruskal(
+        &self,
+        verbose: bool,
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        self.graph.spanning_arborescence_kruskal(verbose)
+    }
 }

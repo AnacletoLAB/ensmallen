@@ -84,17 +84,13 @@ fn cooccurence_matrix(
     let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
     let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
 
-    iter.enumerate().for_each(|(i, (src, dst, freq))| {
-        unsafe{
-            *srcs.uget_mut(i) = src;
-            *dsts.uget_mut(i) = dst;
-            *frequencies.uget_mut(i) = freq;
-        }
+    iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
+        *srcs.uget_mut(i) = src;
+        *dsts.uget_mut(i) = dst;
+        *frequencies.uget_mut(i) = freq;
     });
-    
-    Ok((
-        srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()
-    ))
+
+    Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
 }
 
 #[pymethods]
@@ -178,17 +174,13 @@ impl EnsmallenGraph {
         let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
         let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
 
-        iter.enumerate().for_each(|(i, (src, dst, freq))| {
-            unsafe{
-                *srcs.uget_mut(i) = src;
-                *dsts.uget_mut(i) = dst;
-                *frequencies.uget_mut(i) = freq;
-            }
+        iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
+            *srcs.uget_mut(i) = src;
+            *dsts.uget_mut(i) = dst;
+            *frequencies.uget_mut(i) = freq;
         });
-        
-        Ok((
-            srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()
-        ))
+
+        Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
     }
 
     #[args(py_kwargs = "**")]
@@ -396,8 +388,7 @@ impl EnsmallenGraph {
         // We create the vector of zeros where to allocate the neighbours
         // This vector has `nodes_number` rows, that is the number of required
         // node IDs, and `max_degree` rows, that is the maximum degree.
-        let neighbours =
-            PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
+        let neighbours = PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
         // We create the vector of zeros for the one-hot encoded labels.
         // This is also used for the multi-label case.
         // This vector has the same number of rows as the previous vector,
@@ -405,16 +396,21 @@ impl EnsmallenGraph {
         // of columns is the number of node types in the graph.
         let labels = PyArray2::zeros(
             gil.python(),
-            [nodes_number, self.graph.get_node_types_number() as usize],
+            [
+                nodes_number,
+                pe!(self.graph.get_node_types_number())? as usize,
+            ],
             false,
         );
 
         // We iterate over the batch.
         iter.enumerate()
             .for_each(|(i, (neighbours_iterator, node_types))| {
-                neighbours_iterator.enumerate().for_each(|(j, node_id)| unsafe {
-                    *neighbours.uget_mut([i, j]) = node_id;
-                });
+                neighbours_iterator
+                    .enumerate()
+                    .for_each(|(j, node_id)| unsafe {
+                        *neighbours.uget_mut([i, j]) = node_id;
+                    });
                 if let Some(nts) = node_types {
                     nts.into_iter().for_each(|label| unsafe {
                         *labels.uget_mut([i, label as usize]) = 1;

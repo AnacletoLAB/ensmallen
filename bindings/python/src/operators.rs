@@ -1,9 +1,7 @@
 use super::*;
 extern crate edit_distance;
-use edit_distance::edit_distance;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
-use pyo3::types::PyList;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
@@ -31,7 +29,6 @@ impl PyNumberProtocol for EnsmallenGraph {
         })
     }
 }
-
 
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
@@ -86,7 +83,6 @@ impl PyObjectProtocol for EnsmallenGraph {
     }
     */
 }
-
 
 #[pymethods]
 impl EnsmallenGraph {

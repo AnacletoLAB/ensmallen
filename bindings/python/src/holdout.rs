@@ -93,10 +93,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pe!(validate_kwargs(
-            kwargs,
-            &["random_state", "verbose"]
-        ))?;
+        pe!(validate_kwargs(kwargs, &["random_state", "verbose"]))?;
 
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.random_subgraph(
