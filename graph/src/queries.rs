@@ -592,6 +592,17 @@ impl Graph {
             }))
     }
 
+    /// Returns result of option with the node type of the given node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name whose node types are to be returned.
+    pub fn get_node_type_names_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<Option<Vec<String>>, String> {
+        self.get_node_type_names_from_node_id(self.get_node_id_from_node_name(node_name)?)
+    }
+
     /// Returns option with the edge type of the given edge id.
     ///
     /// # Arguments
