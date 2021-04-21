@@ -1,0 +1,27 @@
+   0:     0x5555555ffb43 - backtrace::capture::Backtrace::new::h28c07dbc9a61c5f9
+   1:     0x555555844c69 - graph_harness::handle_panics::dump_backtrace::h06f702533ef9b864
+   2:     0x555555845a87 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h92897015ccdc7a8d
+   3:     0x55555586984a - graph_harness::meta_test::meta_test::{{closure}}::heaa19804b484162d
+   4:     0x555555a60d5c - std::panicking::rust_panic_with_hook::h81b8facc50f34daa
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:595:17
+   5:     0x555555a7d0ae - std::panicking::begin_panic_handler::{{closure}}::ha376ab85d95a000e
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:495:13
+   6:     0x555555a7d04e - std::sys_common::backtrace::__rust_end_short_backtrace::h6795c8afdd1a77e6
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/sys_common/backtrace.rs:141:18
+   7:     0x555555a7cffd - rust_begin_unwind
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:493:5
+   8:     0x5555555a5130 - core::panicking::panic_fmt::hbe99dddd3092ba3c
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/core/src/panicking.rs:92:14
+   9:     0x5555555a507c - core::panicking::panic::h3de4db67bd397eb3
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/core/src/panicking.rs:50:5
+  10:     0x5555556f1026 - graph::report::<impl graph::graph::Graph>::get_peculiarities_report_markdown::hb513e5602e3aebbf
+  11:     0x5555556898bf - graph::test_utilities::test_graph_properties::hb231c693eee08eb5
+  12:     0x55555567e485 - graph::test_utilities::_default_test_suite::hf9fd1c33c460e3af
+  13:     0x55555567e295 - graph::test_utilities::default_test_suite::h8daabb1f3ed12679
+  14:     0x5555558b9c7c - graph_harness::meta_test::meta_test::h5a91f4bda01bbce7
+  15:     0x5555555cec2f - meta_test::main::h22ffefbd85166f0c
+  16:     0x5555555ce41e - std::sys_common::backtrace::__rust_begin_short_backtrace::hb86ef86758e820fc
+  17:     0x5555555ce901 - main
+  18:     0x7ffff6e22bf7 - __libc_start_main
+  19:     0x5555555cddfa - _start
+  20:                0x0 - <unknown>
