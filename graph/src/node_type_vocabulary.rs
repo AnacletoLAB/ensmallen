@@ -79,8 +79,44 @@ impl NodeTypeVocabulary {
         self.counts = counts;
     }
 
+    /// Computes the reverse terms mapping.
+    ///
+    /// # Raises
+    /// * If the terms mapping is found to be not dense.
     pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
         self.vocabulary.build_reverse_mapping()
+    }
+
+    /// Returns ids of given values inserted.
+    ///
+    /// This method will crash if improper parameters are used.
+    ///
+    /// # Arguments
+    ///
+    /// * `maybe_values`: Option<Vec<S>> - The values to be inserted.
+    pub fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
+        &mut self,
+        maybe_values: Option<Vec<S>>,
+    ) -> Option<Vec<NodeTypeT>> {
+        match maybe_values {
+            Some(values) => {
+                // Retrieve the ID
+                let ids = values
+                    .into_iter()
+                    .map(|value| self.vocabulary.unchecked_insert(value.into()))
+                    .collect::<Vec<NodeTypeT>>();
+
+                self.multilabel = self.multilabel || ids.len() > 1;
+
+                // Push the sorted IDs
+                self.ids.push(Some(ids.clone()));
+                Some(ids)
+            }
+            None => {
+                self.ids.push(None);
+                None
+            }
+        }
     }
 
     /// Returns ids of given values inserted.
@@ -101,7 +137,11 @@ impl NodeTypeVocabulary {
                 // Retrieve the ID
                 let mut ids = values
                     .iter()
-                    .map(|value| self.vocabulary.insert(value.as_ref()))
+                    .map(|value| {
+                        self.vocabulary
+                            .insert(value.as_ref())
+                            .map(|values| values.0)
+                    })
                     .collect::<Result<Vec<NodeTypeT>, String>>()?;
                 // Sort the slice
                 ids.sort_unstable();

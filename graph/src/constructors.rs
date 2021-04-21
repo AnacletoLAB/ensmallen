@@ -41,6 +41,18 @@ macro_rules! optionify {
     };
 }
 
+/// Returns result representing if the given combination of numeric node ids and edge node ids is valid.
+///
+/// The error message given within the method should contain all informations
+/// relative to the logic of this check.
+///
+/// # Arguments
+/// * `has_nodes_list`: bool - Whether the graph has a node list.
+/// * `numeric_node_ids`: bool - Whether the node IDs should be loaded as integers.
+/// * `numeric_edge_node_ids`: bool - Whether the edge node IDs should be loaded as integers.
+///
+/// # Raises
+/// * If the given combination of numeric nodes is not feaseable.
 fn check_numeric_ids_compatibility(
     has_nodes_list: bool,
     numeric_node_ids: bool,
@@ -61,7 +73,6 @@ fn check_numeric_ids_compatibility(
 /// Returns iterator of nodes handling the node IDs.
 ///
 /// # Arguments
-///
 /// nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
 ///     Iterator over the node list.
 /// ignore_duplicated_nodes: bool,
@@ -82,123 +93,199 @@ pub(crate) fn parse_node_ids<'a, 'b>(
     ignore_duplicated_nodes: bool,
     node_list_is_correct: bool,
     nodes: &'b mut Vocabulary<NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a>
 where
     'b: 'a,
 {
-    nodes_iter.filter_map(move |row| {
-        row.map_or_else(|err| Some(Err(err)), |(node_name, node_type)| {
-            if node_list_is_correct {
-                Some(Ok((nodes.unchecked_insert(node_name), node_type)))
-            } else {
-                if node_name.is_empty() {
-                    return Some(Err("Found an empty node name. Node names cannot be empty.".to_owned()));
-                }
-                if nodes.contains_key(&node_name){
-                    if ignore_duplicated_nodes {
-                        return None;
+    // If the user is telling us that the node list is **surely correct**,
+    // we can skip a significant amount of checks and therefore create
+    // a simpler iterator.
+    if node_list_is_correct {
+        Box::new(
+            nodes_iter.map_ok(move |(node_name, node_type)| {
+                (nodes.unchecked_insert(node_name), node_type)
+            }),
+        )
+    } else {
+        Box::new(nodes_iter.filter_map(move |row| {
+            row.map_or_else(|err| Some(Err(err)),  |(node_name, node_type)| {
+                nodes.insert(node_name.as_str()).map_or_else(|err| Some(Err(err)), |(node_id, already_present_in_vocabulary)|{
+                    if already_present_in_vocabulary{
+                        if ignore_duplicated_nodes {
+                            None
+                        } else {
+                            Some(Err(format!(
+                                concat!(
+                                    "The node {node_name} appears multiple times in the node list.\n",
+                                    "The node type of the row is {node_type:?}.\n",
+                                    "The library does not currently support multiple node types for a single node."
+                                ),
+                                node_name = node_name,
+                                node_type = node_type
+                            )))
+                        }
+                    } else {
+                        Some(Ok((node_id, node_type)))
                     }
-                    return Some(Err(format!(
-                        concat!(
-                            "The node {node_name} appears multiple times in the node list.\n",
-                            "The node type of the row is {node_type:?}.\n",
-                            "The library does not currently support multiple node types for a single node."
-                        ),
-                        node_name = node_name,
-                        node_type = node_type
-                    )));
-                }
-                Some(nodes.insert(node_name).map(|node_id| (node_id, node_type)))
-            }
-        })
-    })
+                })
+            })
+        }))
+    }
 }
 
 /// Returns iterator of nodes handling the node type IDs.
+///
+/// # Arguments
+/// nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
+///     Iterator over the node list.
+/// node_list_is_correct: bool,
+///     Parameter to pinky promise that the node list is correct.
+///     If you provide a broken node list to this method while promising
+///     that the node list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the node list is actually
+///     correct.
+///     We assume that any provided node list is broken until disproved.
+/// node_types_vocabulary: &'b mut NodeTypeVocabulary,
+///     Node types vocabulary to be populated.
 pub(crate) fn parse_node_type_ids<'a, 'b>(
     nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
+    node_list_is_correct: bool,
     node_types_vocabulary: &'b mut NodeTypeVocabulary,
-) -> impl Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a>
 where
     'b: 'a,
 {
-    nodes_iter.map(move |row| match row {
-        Ok((node_id, node_types)) => {
-            Ok((node_id, node_types_vocabulary.insert_values(node_types)?))
-        }
-        Err(e) => Err(e),
-    })
+    if node_list_is_correct {
+        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| {
+            (
+                node_id,
+                node_types_vocabulary.unchecked_insert_values(node_type_names),
+            )
+        }))
+    } else {
+        Box::new(nodes_iter.map(move |row| {
+            row.and_then(|(node_id, node_type_names)| {
+                Ok((
+                    node_id,
+                    node_types_vocabulary.insert_values(node_type_names)?,
+                ))
+            })
+        }))
+    }
 }
 
+/// Returns modified iterator, adding what is need to digest edge node names into edge node IDs.
+/// edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
+///     Iterator over the edge node names list.
+/// edge_list_is_correct: bool,
+///     Parameter to pinky promise that the edge list is correct.
+///     If you provide a broken edge list to this method while promising
+///     that the edge list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the edge list is actually
+///     correct.
+///     We assume that any provided edge list is broken until disproved.
+/// nodes: &'b mut Vocabulary<NodeT>,
+///     Vocabulary of the nodes to be populated.
 pub(crate) fn parse_edges_node_ids<'a, 'b>(
     edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
     edge_list_is_correct: bool,
     nodes: &'b mut Vocabulary<NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a
+) -> Box<dyn Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a>
 where
     'b: 'a,
 {
     let empty_nodes_mapping = nodes.is_empty();
-    edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
-        Ok((src_name, dst_name, edge_type, weight)) => {
-            let node_ids = [src_name, dst_name]
-                .iter()
-                .map(|node_name| {
-                    // the source and destination nodes must either be
-                    //  - both numeric node ids
-                    //      - if the node list was provided
-                    //          - The nodes must be less than the max nodes
-                    //      - if the node list was not provided
-                    //          - the nodes must be added to the node list which should be numeric.
-                    //  - if the edge node ids are not numeric
-                    //      - if the node list was provided
-                    //          - the nodes must be added to the node list.
-                    //      - if the node list was no provided
-                    //          - the nodes must be added to the node list.
-                    if empty_nodes_mapping {
-                        if edge_list_is_correct {
-                            Ok(nodes.unchecked_insert(node_name.to_owned()))
-                        } else {
-                            nodes.insert(node_name.to_owned())
-                        }
-                    } else if let Some(node_id) = nodes.get(&node_name) {
-                        Ok(*node_id)
-                    } else {
+    // If the user is telling us that the edge list is **surely correct**,
+    // we can skip a significant amount of checks and therefore create
+    // a simpler iterator.
+    if edge_list_is_correct {
+        Box::new(
+            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| {
+                (
+                    nodes.unchecked_insert(src_name),
+                    nodes.unchecked_insert(dst_name),
+                    edge_type,
+                    weight,
+                )
+            }),
+        )
+    } else {
+        Box::new(
+            edges_iterator.map(move |row: Result<StringQuadruple, String>| {
+                row.and_then(|(src_name, dst_name, edge_type, weight)| {
+                    let (source_node_id, source_was_present) = nodes.insert(src_name.as_str())?;
+                    let (destination_node_id, destination_was_present) =
+                        nodes.insert(dst_name.as_str())?;
+                    if !empty_nodes_mapping && (!source_was_present || !destination_was_present) {
                         Err(format!(
                             concat!(
-                                "In the edge list was found the node {} ",
-                                "which is not present in the given node list."
+                                "In the edge list was found the edge ({} => {}) ",
+                                "containing nodes that do not appear in the given node list."
                             ),
-                            node_name
+                            src_name, dst_name
                         ))
+                    } else {
+                        Ok((source_node_id, destination_node_id, edge_type, weight))
                     }
                 })
-                .collect::<Result<Vec<NodeT>, String>>()?;
-            Ok((node_ids[0], node_ids[1], edge_type, weight))
-        }
-        Err(e) => Err(e),
-    })
+            }),
+        )
+    }
 }
 
 /// Returns iterator of edges handling the edge type IDs.
+///
+/// # Arguments
+/// edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a,
+///     Iterator over the edge node names list.
+/// edge_list_is_correct: bool,
+///     Parameter to pinky promise that the edge list is correct.
+///     If you provide a broken edge list to this method while promising
+///     that the edge list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the edge list is actually
+///     correct.
+///     We assume that any provided edge list is broken until disproved.
+/// edge_types: &'b mut Vocabulary<EdgeTypeT>,
+///     Vocabulary of the edge types to be populated.
 pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>>
         + 'a,
+    edge_list_is_correct: bool,
     edge_types: &'b mut Vocabulary<EdgeTypeT>,
-) -> impl Iterator<Item = Result<Quadruple, String>> + 'a
+) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a>
 where
     'b: 'a,
 {
-    edges_iter.map(move |row| match row {
-        Ok((src, dst, edge_type, weight)) => {
-            let edge_type_id = match edge_type {
-                Some(et) => Some(edge_types.insert(et)?),
-                None => None,
-            };
-            Ok((src, dst, edge_type_id, weight))
-        }
-        Err(e) => Err(e),
-    })
+    if edge_list_is_correct {
+        Box::new(edges_iter.map_ok(move |(src, dst, edge_type, weight)| {
+            (
+                src,
+                dst,
+                edge_type.map(|et| edge_types.unchecked_insert(et)),
+                weight,
+            )
+        }))
+    } else {
+        Box::new(edges_iter.map(move |row| {
+            row.and_then(|(src, dst, edge_type, weight)| {
+                Ok((
+                    src,
+                    dst,
+                    edge_type.map_or_else(
+                        || Ok::<_, String>(None),
+                        |et| Ok(Some(edge_types.insert(et)?.0)),
+                    )?,
+                    weight,
+                ))
+            })
+        }))
+    }
 }
 
 /// TODO: I think this method can be made better!
@@ -288,6 +375,7 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
     Ok(parse_unsorted_quadruples(edge_quadruples, verbose))
 }
 
+/// TODO: LUCA: I Think this method can be made better
 pub(crate) fn parse_string_unsorted_edges<'a>(
     // This parameter does not NEED a lifetime because it does NOT survive the function call
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -316,7 +404,11 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         let edges_iter = parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes);
         let edges_iter: Box<dyn Iterator<Item = Result<Quadruple, String>>> =
             if let Some(ets) = &mut edge_types_vocabulary {
-                Box::new(parse_edge_type_ids_vocabulary(edges_iter, ets))
+                Box::new(parse_edge_type_ids_vocabulary(
+                    edges_iter,
+                    edge_list_is_correct,
+                    ets,
+                ))
             } else {
                 Box::new(edges_iter.map_ok(|(src, dst, _, weight)| (src, dst, None, weight)))
             };
@@ -717,7 +809,7 @@ fn parse_nodes(
         if has_node_types {
             let mut node_types =
                 NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            for row in parse_node_type_ids(node_iterator, &mut node_types) {
+            for row in parse_node_type_ids(node_iterator, node_list_is_correct, &mut node_types) {
                 row?;
             }
             node_types.build_reverse_mapping()?;
@@ -773,6 +865,7 @@ pub(crate) fn parse_string_edges(
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
             parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes),
+            edge_list_is_correct,
             &mut edge_types_vocabulary,
         ),
         directed,

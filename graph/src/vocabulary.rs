@@ -1,5 +1,6 @@
 use super::types::*;
 use arbitrary::Arbitrary;
+use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]
@@ -62,7 +63,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         let numeric_ids = self.numeric_ids;
         *self.map.entry(value).or_insert_with_key(|value| {
             IndexT::from_usize(if numeric_ids {
-                value.parse::<usize>().unwrap()
+                unsafe { value.parse::<usize>().unwrap_unchecked() }
             } else {
                 current_length
             })
@@ -74,7 +75,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
+    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
         let value = value.as_ref();
 
         if value.is_empty() {
@@ -83,7 +84,10 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
         let (normalized_value, index) = self.normalize_value(value)?;
 
-        Ok(*self.map.entry(normalized_value).or_insert(index))
+        Ok(match self.map.entry(normalized_value) {
+            Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
+            Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
+        })
     }
 
     /// Compute the reverse mapping vector for fast decoding
