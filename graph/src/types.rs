@@ -38,7 +38,7 @@ pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
 pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
-    /// create an usize frm the type
+    /// create an usize from the type
     fn to_usize(v: Self) -> usize;
 }
 

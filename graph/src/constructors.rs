@@ -29,18 +29,6 @@ type ParsedStringEdgesType = Result<
     String,
 >;
 
-#[macro_export]
-/// Take a vector and make it a None if its empty, Some(vector) otherwise
-macro_rules! optionify {
-    ($val:expr) => {
-        if $val.is_empty() {
-            None
-        } else {
-            Some($val)
-        }
-    };
-}
-
 fn check_numeric_ids_compatibility(
     has_nodes_list: bool,
     numeric_node_ids: bool,
@@ -77,14 +65,12 @@ fn check_numeric_ids_compatibility(
 ///     We assume that any provided node list is broken until disproved.
 /// nodes: &'b mut Vocabulary<NodeT>,
 ///     Vocabulary of the nodes to be populated.
-pub(crate) fn parse_node_ids<'a, 'b>(
+pub(crate) fn parse_node_ids<'a>(
     nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
     ignore_duplicated_nodes: bool,
     node_list_is_correct: bool,
-    nodes: &'b mut Vocabulary<NodeT>,
+    nodes: &'a mut Vocabulary<NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a
-where
-    'b: 'a,
 {
     nodes_iter.filter_map(move |row| {
         row.map_or_else(|err| Some(Err(err)), |(node_name, node_type)| {
@@ -115,12 +101,10 @@ where
 }
 
 /// Returns iterator of nodes handling the node type IDs.
-pub(crate) fn parse_node_type_ids<'a, 'b>(
+pub(crate) fn parse_node_type_ids<'a>(
     nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
-    node_types_vocabulary: &'b mut NodeTypeVocabulary,
+    node_types_vocabulary: &'a mut NodeTypeVocabulary,
 ) -> impl Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a
-where
-    'b: 'a,
 {
     nodes_iter.map(move |row| match row {
         Ok((node_id, node_types)) => {
@@ -130,13 +114,11 @@ where
     })
 }
 
-pub(crate) fn parse_edges_node_ids<'a, 'b>(
+pub(crate) fn parse_edges_node_ids<'a>(
     edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
     edge_list_is_correct: bool,
-    nodes: &'b mut Vocabulary<NodeT>,
+    nodes: &'a mut Vocabulary<NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a
-where
-    'b: 'a,
 {
     let empty_nodes_mapping = nodes.is_empty();
     edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
@@ -181,13 +163,11 @@ where
 }
 
 /// Returns iterator of edges handling the edge type IDs.
-pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
+pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>>
         + 'a,
-    edge_types: &'b mut Vocabulary<EdgeTypeT>,
+    edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a
-where
-    'b: 'a,
 {
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
@@ -289,7 +269,6 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
 }
 
 pub(crate) fn parse_string_unsorted_edges<'a>(
-    // This parameter does not NEED a lifetime because it does NOT survive the function call
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     mut nodes: Vocabulary<NodeT>,
     directed: bool,

@@ -5,88 +5,111 @@ from lark import Lark, Transformer
 with open("./grammar.lark", "r") as f:
     grammar = f.read()
     
-rust_parser = Lark(grammar, debug=True)
+rust_parser = Lark(grammar, parser="lalr")
 
-with open("../../graph/src/bitmaps.rs", "r") as f:
-    text = f.read()
-
-tree = rust_parser.parse(text)
+class Type:
 
 class MyTransformer(Transformer):
     def doc(self, values):
         return {"doc":"".join([x.value for x in values])}
 
     def use_statement(self, values):
-        pass
+        return {
+            "use":values,
+        }
 
     def function_body(self, values): 
-        return "".join([x for x in values])
+        return {
+            "function_body":values[0]
+        }
 
     def function_name(self, values):
         result = {
-            "name": values[0],
+            "function_name": values[0],
         }
         if len(values) > 1:
             result["generics"] = values[1]
         return result
 
+    def function_statements(self, values):
+        return {
+            "functions":values
+        }
 
     def function_statement(self, values):
-        pprint(values)
-        return {k: v for d in values for k, v in d.items()}
+        return merge_dicts(values)
 
     def VISIBILITY(self, values):
         return {
-            "visibility":values
+            "visibility":values.value
         }
 
-    def standard_type(self, values):
+    def simple_type(self, values):
         result = {
-            "type":"standard_type",
             "identifier":values[0],
         }
         if len(values) > 1:
             result["generics"] = values[1]
-        return result
+        return "simple_type", result
 
     def impl_type(self, values):
-        return {
-            "type":"impl_type",
+        return "impl_type", {
             "inner":values[0],
             "traits": values[1:] or None
         }
 
     def tuple_type(self, values):
+        return "tuple_type", values
+
+    def struct_type(self, values):
         return {
-            "type":"tuple_type",
-            "values":values,
+            "struct_type":values
+        }
+
+    def trait_type(self, values):
+        return {
+            "trait_type":values
+        }
+
+    def return_type(self, values):
+        return {
+            "return_type":values
         }
 
     def impl_statement(self, values):
+        return merge_dicts(values)
+
+    def type(self, values):
         return {
-            "doc": values[0],
-            "struct": values[2],
-            "trait": values[1],
-            "functions": values[3],
+            "variant":values[0][0],
+            "value":values[0][1]   
+        }
+
+    def args(self, args):
+        return {
+            "args":list(args)
         }
 
     def SELF(self, values):
         return {
-            "name":"self",
-            "type":{
-                "type":"self_type",
-                ""
-            }
+            "type":"self",
+            "modifiers":values[0]
         }
 
-    def type(self, values):
-        return values[0]
+    def arg(self, arg):
+        return {
+            "identifier":arg[0],
+            "type":arg[1],
+        }
+
+    def MODIFIER(self, values):
+        print("MOD:", values)
 
     def IDENTIFIER(self, values):
         return values.value
 
     def generics(self, values):
-        return values[0]
+        return values
 
     def lifetime(self, values):
         return {
@@ -94,5 +117,31 @@ class MyTransformer(Transformer):
             "identifier":values[0],
         }
 
-print(MyTransformer().transform(tree))
-print(json.dumps(MyTransformer().transform(tree), indent=4))
+    def start(self, values):
+        return merge_dicts(values)
+
+from glob import glob
+
+result = {}
+for file in glob("../../graph/src/bitmaps.rs"):
+    print(file)
+    if "test_utilities" in file:
+        continue
+    if "types" in file:
+        continue
+    if "lib.rs" in file:
+        continue
+    if "utils.rs" in file:
+        continue
+    with open(file, "r") as f:
+        text = f.read()
+
+    tree = rust_parser.parse(text)
+    print(tree.pretty())
+    parsed = MyTransformer().transform(tree)
+    pprint(parsed)
+    result[file] = parsed
+
+pprint(result)
+with open("new_analysis.json", "w") as f:
+    json.dump(result, f, indent=4)

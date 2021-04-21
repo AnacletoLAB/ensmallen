@@ -4,7 +4,7 @@ use std::collections::HashMap;
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap walk weights.
 pub struct WalkWeights {
-    pub(crate) return_weight: ParamsT,
+    pub return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
     pub(crate) change_node_type_weight: ParamsT,
     pub(crate) change_edge_type_weight: ParamsT,

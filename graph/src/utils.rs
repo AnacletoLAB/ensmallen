@@ -1,6 +1,18 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 
+#[macro_export]
+/// Take a vector and make it a None if its empty, Some(vector) otherwise
+macro_rules! optionify {
+    ($val:expr) => {
+        if $val.is_empty() {
+            None
+        } else {
+            Some($val)
+        }
+    };
+}
+
 pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
