@@ -1,0 +1,67 @@
+%ignore /[ \t\f\r]+/
+
+doc: ("///" /.*\n/)+
+
+%ignore /[\n]+/
+
+
+start: _statement*
+
+_statement: 
+    | use_statement
+    | struct_statement
+    | type_statement
+    | impl_statement
+    | function_statement
+
+// USE STATEMENT
+use_statement: "use" _use_inner ";"
+_use_inner:
+    | IDENTIFIER ("{" _sequential_use ("," _sequential_use)* "}")
+    | _sequential_use
+_sequential_use: IDENTIFIER ("::" (IDENTIFIER | "*"))*
+
+// General objects
+attribute: "#[" IDENTIFIER ( "(" IDENTIFIER ")" )* "]"
+
+// TYPE STATEMENT
+type_statement: "type" IDENTIFIER "=" type ";"
+
+// STRUCT STATEMENT
+struct_statement: MODIFIER? "struct" "{" struct_fields "}"
+struct_fields: struct_field*
+struct_field: IDENTIFIER ":" type ","
+
+// IMPL STATEMENT
+impl_statement: doc? "impl" (type "for")? type "{" function_statements "}"
+
+/// FUNCTION STATEMENT
+function_statements: function_statement*
+function_statement: doc? VISIBILITY? "fn" function_name "(" args ")" ( "->" type)? function_body
+function_name: IDENTIFIER generics?
+function_body: 
+    | "{" /.+/ (function_body /.+/)* "}"
+
+VISIBILITY: "pub" "(crate)"?
+MODIFIER: "mut" | "&" | "&" "'" IDENTIFIER | "&" "mut" | "&" "mut" "'" IDENTIFIER
+SELF: MODIFIER? "self"
+
+args: 
+    | [arg ("," arg)* ","?]
+    | SELF ("," arg)* ","?
+
+arg: IDENTIFIER ":" type
+lifetime: "'" IDENTIFIER
+
+type: 
+    | standard_type
+    | impl_type
+    | tuple_type
+
+standard_type: IDENTIFIER generics?
+tuple_type: "(" [type ("," type)*] ")" 
+impl_type: "impl" type ("+" type)*
+
+generics: "<" [(lifetime | type) ("," (lifetime | type))*] ">"
+
+IDENTIFIER: /([a-zA-Z][a-zA-Z0-9_]*|_[a-zA-Z0-9_])/

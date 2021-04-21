@@ -1,23 +1,26 @@
+from .utils import *
+
 class Modifiers:
     def __init__(self):
         self.mutable = False
         self.reference = False
         self.reference_lifetime = None
 
-    def set_reference(self):
-        self.reference = True
+    def parse(text: str) -> Tuple[str, Self]:
+        modifiers = Modifiers()
+        text = text.lstrip()
+        if text[0] == "&":
+            modifiers.reference = True
+            _, *text = text
+            text = text.lstrip()
 
-    def is_reference(self):
-        return self.reference
+            if text[0] == "'":
+                _, *text = text
+                text, lifetime_ident = Identifier.parse(text)
+                text = text.lstrip()
+                modifiers.reference_lifetime = lifetime_ident
         
-    def set_reference_lifetime(self):
-        self.reference_lifetime = True
-
-    def get_reference_lifetime(self):
-        return self.reference_lifetime
-
-    def set_mutable(self):
-        self.mutable = True
-
-    def is_mutable(self):
-        return self.mutable
+        if text.startswith("mut"):
+            modifiers.mutable = True
+            text = text[3:].lstrip()
+        return text, modifiers

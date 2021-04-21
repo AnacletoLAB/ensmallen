@@ -1,14 +1,20 @@
 import re
 from typing import *
 
-def parse_identifier(text: str) -> (str, str):
-    """Parse an identifier, return the not-used text and the parsed identifier"""
-    match = re.match(r"([a-zA-Z][a-zA-Z0-9_]*|_[a-zA-Z0-9_])")
-    
-    if match is None:
-        raise ValueError("Cannot parse the current text as an identifier. The text is: %s"%text.split("\n")[0])
+class Self:
+    """The point of this is to be a syntactic sugar to type the parse method of
+    all the objects."""
+    pass
 
-    return text[m.span()[1]:], match.group()    
+class Identifier:
+    """Parse an identifier, return the not-used text and the parsed identifier"""
+    def parse(text: str) -> Tuple[str, Self]:
+        match = re.match(r"([a-zA-Z][a-zA-Z0-9_]*|_[a-zA-Z0-9_])")
+        
+        if match is None:
+            raise ValueError("Cannot parse the current text as an identifier. The text is: %s"%text.split("\n")[0])
+
+        return text[m.span()[1]:], match.group()
 
 def skip_to_match(text:str) -> (str, str):
     """Find the next matching parenthesis and return all the text whitin."""

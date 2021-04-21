@@ -4,6 +4,8 @@ import json
 from ensmallen_graph import EnsmallenGraph
 from .utils import build_path
 
+# TODO! aggiungere invalidazione del report su tutti i metodi con inplace
+
 RETURN_TYPE_BLACKLIST = [
     "Counter",
 ]

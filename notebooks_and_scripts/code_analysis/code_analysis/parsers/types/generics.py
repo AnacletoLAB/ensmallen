@@ -1,7 +1,6 @@
 from typing import *
 from .utils import *
 from .lifetime import Lifetime
-from .modifiers import Modifiers
 
 class Type:
     def __init__(self):
@@ -33,11 +32,3 @@ class Type:
             return Type._parse_dyn(text)
         else:
             return Type._parse_common_type(text)
-
-    def dump(self):
-        pass
-
-    def load(self):
-        pass
-
-        
