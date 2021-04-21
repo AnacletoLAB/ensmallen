@@ -158,7 +158,7 @@ impl Graph {
     /// Replace unknown node types with given node type.
     ///
     /// # Arguments
-    /// * `node_types`: Vec<NodeType> - The node types to replace the unknown with.
+    /// * `node_type_names`: Vec<String> - The node types to replace the unknown with.
     /// * `verbose`: bool - Whether to show a loading bar.
     pub fn replace_unknown_node_types_with_node_type_name(
         &self,
@@ -180,10 +180,10 @@ impl Graph {
         )
     }
 
-    /// Replace unknown edge types with given edge type.
+    /// Replace unknown edge types with given edge type name.
     ///
     /// # Arguments
-    /// * `edge_type_name`: EdgeType - The edge type to replace the unknown with.
+    /// * `edge_type_name`: String - The edge type name to replace the unknown with.
     /// * `verbose`: bool - Whether to show a loading bar.
     pub fn replace_unknown_edge_types_with_edge_type_name(
         &self,
