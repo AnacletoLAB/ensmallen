@@ -1081,7 +1081,6 @@ impl Graph {
     /// * `node_list_is_correct`: bool - Whether the user pinky promises that the node list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
     /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
     /// * `edge_list_is_correct`: bool - Whether the user pinky promises that the edge list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
-    /// * `verbose`: bool - Whether we should show loading bars while building the graph.
     /// * `numeric_edge_type_ids`: bool - Whether the edge type IDs should be loaded as numeric, casting them to integers. The range of edge type IDs MUST be dense.
     /// * `numeric_node_ids`: bool - Whether the node IDs should be loaded as numeric, casting them to integers. The range of node IDs MUST be dense.
     /// * `numeric_edge_node_ids`: bool - Whether the edge node IDs should be loaded as numeric, casting them to integers. The range of edge node IDs MUST be dense.
@@ -1092,6 +1091,7 @@ impl Graph {
     /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `verbose`: bool - Whether we should show loading bars while building the graph.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
@@ -1102,7 +1102,6 @@ impl Graph {
         node_list_is_correct: bool,
         ignore_duplicated_edges: bool,
         edge_list_is_correct: bool,
-        verbose: bool,
         numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
@@ -1113,6 +1112,7 @@ impl Graph {
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
+        verbose: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
@@ -1174,11 +1174,21 @@ impl Graph {
     /// Create new Graph object from unsorted source.
     ///
     /// # Arguments
-    ///
+    /// * `edges_iterator`: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>> - Iterator over the egde node IDs.
+    /// * `nodes`: Vocabulary<NodeT> - Vocabulary of the node IDs.
+    /// * `node_types`: Option<NodeTypeVocabulary> - Option of the vocabulary of the node type IDs.
+    /// * `edge_types_vocabulary`: Option<Vocabulary<EdgeTypeT>> - Option of the Vocabulary of the edge type IDs.
+    /// * `directed`: bool - Whether to load the graph as directed or undirected.
+    /// * `name`: String - Name of the graph.
+    /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
+    /// * `has_edge_types`: bool - Whether the graph has edge types.
+    /// * `has_edge_weights`: bool - Whether the graph has edge weights.
+    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
-        edges_iterator: impl Iterator<
-            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
-        >,
+        edges_iterator: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
         nodes: Vocabulary<NodeT>,
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
@@ -1187,10 +1197,10 @@ impl Graph {
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        verbose: bool,
         might_have_singletons: bool,
         might_have_singletons_with_selfloops: bool,
         might_have_trap_nodes: bool,
+        verbose: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
             parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;

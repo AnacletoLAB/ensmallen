@@ -75,10 +75,10 @@ impl Graph {
             false,
             self.has_edge_types(),
             self.has_edge_weights(),
-            verbose,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
+            verbose,
         )
     }
 }

@@ -101,13 +101,13 @@ fn generic_string_operator(
         false,
         false,
         false,
-        false,
         main.has_node_types(),
         main.has_edge_types(),
         main.has_edge_weights(),
         might_have_singletons,
         might_have_singletons_with_selfloops,
         might_have_trap_nodes,
+        false,
     )
 }
 
@@ -189,10 +189,10 @@ fn generic_integer_operator(
         false,
         main.has_edge_types(),
         main.has_edge_weights(),
-        false,
         might_have_singletons,
         might_have_singletons_with_selfloops,
         might_have_trap_nodes,
+        false,
     )
 }
 

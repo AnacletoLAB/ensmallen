@@ -31,6 +31,7 @@ impl Graph {
                 .map_or(Ok::<_, String>(None), |nfr| Ok(Some(nfr.read_lines()?)))?,
             directed,
             directed_edge_list,
+            name,
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.reader.ignore_duplicates),
@@ -59,7 +60,6 @@ impl Graph {
                 .map_or(false, |nfr| nfr.might_have_singletons),
             edge_file_reader.might_have_singletons_with_selfloops,
             edge_file_reader.might_have_trap_nodes,
-            name,
         )
     }
 
@@ -97,7 +97,6 @@ impl Graph {
                 .map_or(false, |nfr| nfr.reader.csv_is_correct),
             edge_file_reader.reader.ignore_duplicates,
             edge_file_reader.reader.csv_is_correct,
-            edge_file_reader.reader.verbose,
             edge_file_reader.numeric_edge_type_ids,
             node_file_reader
                 .as_ref()
@@ -116,6 +115,7 @@ impl Graph {
                 .map_or(false, |nfr| nfr.might_have_singletons),
             edge_file_reader.might_have_singletons_with_selfloops,
             edge_file_reader.might_have_trap_nodes,
+            edge_file_reader.reader.verbose,
         )
     }
 }

@@ -134,6 +134,7 @@ impl Graph {
             ),
             self.is_directed(),
             true,
+            self.get_name(),
             false,
             true,
             true,
@@ -151,7 +152,6 @@ impl Graph {
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
-            self.get_name(),
         )
     }
 

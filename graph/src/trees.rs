@@ -566,7 +566,6 @@ impl Graph {
     ///  #     true,     // node_list_is_correct
     ///  #     false,     // ignore_duplicated_nodes
     ///  #     true,     // node_list_is_correct
-    ///  #     false,     // verbose
     ///  #     false,     // numeric_edge_types_ids
     ///  #     false,     // numeric_node_ids
     ///  #     false,     // numeric_edge_node_ids
@@ -574,9 +573,10 @@ impl Graph {
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_edge_weights
-    ///  #     true,
-    ///  #     true,
-    ///  #     true,
+    ///  #     true,    // maybe_has_singleton
+    ///  #     true,    // maybe_has_singleton_with_selfloops
+    ///  #     true,    // maybe_has_node_traps
+    ///  #     false,     // verbose
     ///  # ).unwrap();
     /// let (components, number_of_components, smallest, biggest) =
     ///     graph.connected_components(false).unwrap();
