@@ -510,7 +510,7 @@ impl Graph {
                         "altogether or dropping the node types by using either ",
                         "the method `remove_inplace_node_types` or `remove_node_types` ",
                         "to remove the node types in place or creating a ",
-                        "new graph instance without the node types."
+                        "new graph instance without the node types.\n"
                     )
                     .to_string(),
                 );
@@ -537,7 +537,7 @@ impl Graph {
                         "if you have a generic node type, as is common in most ",
                         "knowledge graphs: you can use the method ",
                         "`replace_unknown_node_types_with_node_type_name` for",
-                        "this second solution."
+                        "this second solution.\n"
                     ),
                     self.get_unknown_node_types_number().unwrap(),
                     self.get_unknown_node_types_rate().unwrap() * 100.0,
@@ -588,7 +588,7 @@ impl Graph {
                         "An alternative solution is provided by the `replace` ",
                         "method: by providing the desired `edge_type_names` ",
                         "parameter you can remap the singleton edge types ",
-                        "to other edge types."
+                        "to other edge types.\n"
                     ),
                     match self.get_singleton_edge_types_number().unwrap() {
                         0 => unreachable!(
@@ -635,7 +635,7 @@ impl Graph {
                         "altogether or dropping the edge types by using either ",
                         "the method `remove_inplace_edge_types` or `remove_edge_types` ",
                         "to remove the edge types in place or creating a ",
-                        "new graph instance without the edge types."
+                        "new graph instance without the edge types.\n"
                     )
                     .to_string(),
                 );
@@ -662,7 +662,7 @@ impl Graph {
                         "if you have a generic edge type, as is common in most ",
                         "knowledge graphs: you can use the method ",
                         "`replace_unknown_edge_types_with_edge_type_name` for",
-                        "this second solution."
+                        "this second solution.\n"
                     ),
                     self.get_unknown_edge_types_number().unwrap(),
                     self.get_unknown_edge_types_rate().unwrap() * 100.0,
@@ -673,7 +673,7 @@ impl Graph {
         // If there is only the title, then we have not detected any weirdness.
         if partial_reports.len() == 1 {
             partial_reports.push(format!(
-                "Congratulations, the graph {} does not seem to have any weirdness!",
+                "Congratulations, the graph {} does not seem to have any weirdness!\n",
                 self.get_name()
             ));
         }
@@ -685,6 +685,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show loading bar.
+    /// TODO: UPDATE THIS METHOD!
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();
