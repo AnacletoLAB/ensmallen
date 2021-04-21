@@ -282,12 +282,12 @@ impl Graph {
         let mut partial_reports: Vec<String> = Vec::new();
 
         partial_reports.push(format!(
-            "# Peculiarities report for graph {}\n",
+            "## Peculiarities report for graph {}\n",
             self.get_name()
         ));
 
         if !self.has_nodes() {
-            partial_reports.push("## Absence of nodes\n".to_string());
+            partial_reports.push("### Absence of nodes\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any node. This may be caused by ",
@@ -298,7 +298,7 @@ impl Graph {
         }
 
         if !self.has_edges() {
-            partial_reports.push("## Absence of edges\n".to_string());
+            partial_reports.push("### Absence of edges\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any edge. This may be caused by ",
@@ -310,9 +310,9 @@ impl Graph {
 
         // Detect weirdness relative to nodes
         if self.has_node_oddities() {
-            partial_reports.push("## Oddities relative to nodes\n".to_string());
+            partial_reports.push("### Oddities relative to nodes\n".to_string());
             if self.has_singleton_nodes() {
-                partial_reports.push("### Singleton nodes".to_string());
+                partial_reports.push("#### Singleton nodes\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: nodes that do not have any inbound or outbound edge. ",
@@ -330,7 +330,7 @@ impl Graph {
                         "is identified in the data wrangling phase, to drop",
                         "the singleton nodes.",
                         "\n",
-                        "#### Solution dropping singleton node types\n",
+                        "##### Solution dropping singleton node types\n",
                         "It is possible to drop **all** of the singleton nodes ",
                         "by using the method `graph.drop_singleton_nodes()`, ",
                         "which will create a new graph instance before removing ",
@@ -349,7 +349,7 @@ impl Graph {
                         ),
                     }
                 ));
-                partial_reports.push("#### List of the singleton nodes\n".to_string());
+                partial_reports.push("##### List of the singleton nodes\n".to_string());
                 partial_reports.extend(
                     self.iter_singleton_node_names()
                         .take(10)
@@ -364,7 +364,7 @@ impl Graph {
             }
 
             if self.has_singleton_nodes_with_selfloops() {
-                partial_reports.push("### Singleton nodes with self loops\n".to_string());
+                partial_reports.push("#### Singleton nodes with self loops\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: nodes that do not have any inbound or outbound edge, ",
@@ -385,7 +385,7 @@ impl Graph {
                         "is identified in the data wrangling phase, to drop",
                         "the singleton nodes with selfloops.",
                         "\n",
-                        "#### Solution dropping singleton node types\n",
+                        "##### Solution dropping singleton node types\n",
                         "It is possible to drop **all** of the singleton nodes with selfloops ",
                         "by using the method `graph.drop_singleton_nodes_with_selfloops()`, ",
                         "which will create a new graph instance before removing ",
@@ -405,7 +405,7 @@ impl Graph {
                     }
                 ));
                 partial_reports
-                    .push("#### List of the singleton nodes with selfloops\n".to_string());
+                    .push("##### List of the singleton nodes with selfloops\n".to_string());
                 partial_reports.extend(
                     self.iter_singleton_with_selfloops_node_names()
                         .take(10)
@@ -422,9 +422,9 @@ impl Graph {
 
         // Detect weirdness relative to node types.
         if self.has_node_types_oddities().map_or(false, |value| value) {
-            partial_reports.push("## Oddities relative to node types\n".to_string());
+            partial_reports.push("### Oddities relative to node types\n".to_string());
             if self.has_singleton_node_types().unwrap() {
-                partial_reports.push("### Singleton node types\n".to_string());
+                partial_reports.push("#### Singleton node types\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: node types that only appear in one graph node. ",
@@ -441,7 +441,7 @@ impl Graph {
                         "The first solution may lead to nodes with unknown ",
                         "node types that can be either dropped or imputed.\n",
                         "\n",
-                        "#### Solution dropping singleton node types\n",
+                        "##### Solution dropping singleton node types\n",
                         "It is possible to drop **all** of the singleton node ",
                         "types by using the method `graph.remove_inplace_singleton_node_types()`, ",
                         "which will remove *inplace* (from the current instance) ",
@@ -459,7 +459,7 @@ impl Graph {
                         "* `graph.remove_inplace_node_type_name(node_type_name)`\n",
                         "* `graph.remove_node_type_name(node_type_name)`\n",
                         "\n",
-                        "#### Solution replacing singleton node types\n",
+                        "##### Solution replacing singleton node types\n",
                         "An alternative solution is provided by the `replace` ",
                         "method: by providing the desired `node_type_names` ",
                         "parameter you can remap the singleton node types ",
@@ -476,7 +476,7 @@ impl Graph {
                         ),
                     }
                 ));
-                partial_reports.push("#### List of the singleton node types\n".to_string());
+                partial_reports.push("##### List of the singleton node types\n".to_string());
                 partial_reports.extend(
                     self.iter_singleton_node_type_names()
                         .unwrap()
@@ -491,7 +491,7 @@ impl Graph {
                 }
             }
             if self.has_homogeneous_node_types().unwrap() {
-                partial_reports.push("### Homogeneous node types".to_string());
+                partial_reports.push("#### Homogeneous node types\n".to_string());
                 partial_reports.push(
                     concat!(
                         "The current graph instance has homogenous node types. ",
@@ -516,7 +516,7 @@ impl Graph {
                 );
             }
             if self.has_unknown_node_types().unwrap() {
-                partial_reports.push("### Unknown node types".to_string());
+                partial_reports.push("#### Unknown node types\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "The following is less than an oddity and more ",
@@ -547,9 +547,9 @@ impl Graph {
 
         // Detect weirdness relative to edge types.
         if self.has_edge_types_oddities().map_or(false, |value| value) {
-            partial_reports.push("## Oddities relative to edge types".to_string());
+            partial_reports.push("### Oddities relative to edge types\n".to_string());
             if self.has_singleton_edge_types().unwrap() {
-                partial_reports.push("### Singleton edge types".to_string());
+                partial_reports.push("#### Singleton edge types\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "{}: edge types that only appear in one graph edge. ",
@@ -566,7 +566,7 @@ impl Graph {
                         "The first solution may lead to edges with unknown ",
                         "edge types that can be either dropped or imputed.\n",
                         "\n",
-                        "#### Solution dropping singleton edge types\n",
+                        "##### Solution dropping singleton edge types\n",
                         "It is possible to drop **all** of the singleton edge ",
                         "types by using the method `graph.remove_inplace_singleton_edge_types()`, ",
                         "which will remove *inplace* (from the current instance) ",
@@ -584,7 +584,7 @@ impl Graph {
                         "* `graph.remove_inplace_edge_type_name(edge_type_name)`\n",
                         "* `graph.remove_edge_type_name(edge_type_name)`\n",
                         "\n",
-                        "#### Solution replacing singleton edge types\n",
+                        "##### Solution replacing singleton edge types\n",
                         "An alternative solution is provided by the `replace` ",
                         "method: by providing the desired `edge_type_names` ",
                         "parameter you can remap the singleton edge types ",
@@ -601,7 +601,7 @@ impl Graph {
                         ),
                     }
                 ));
-                partial_reports.push("#### List of the singleton edge types\n".to_string());
+                partial_reports.push("##### List of the singleton edge types\n".to_string());
                 partial_reports.extend(
                     self.iter_singleton_edge_type_names()
                         .unwrap()
@@ -616,7 +616,7 @@ impl Graph {
                 }
             }
             if self.has_homogeneous_edge_types().unwrap() {
-                partial_reports.push("### Homogeneous edge types".to_string());
+                partial_reports.push("#### Homogeneous edge types\n".to_string());
                 partial_reports.push(
                     concat!(
                         "The current graph instance has homogenous edge types. ",
@@ -641,7 +641,7 @@ impl Graph {
                 );
             }
             if self.has_unknown_edge_types().unwrap() {
-                partial_reports.push("### Unknown edge types".to_string());
+                partial_reports.push("#### Unknown edge types\n".to_string());
                 partial_reports.push(format!(
                     concat!(
                         "The following is less than an oddity and more ",
