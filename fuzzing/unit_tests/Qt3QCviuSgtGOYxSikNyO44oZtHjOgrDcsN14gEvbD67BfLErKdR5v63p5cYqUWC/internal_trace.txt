@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_nodes_mapping()",
+        "strongly_connected_components()",
+        "spanning_arborescence_kruskal(verbose = false)",
+        "get_max_node_degree()",
+        "get_unique_undirected_edges_number()",
+        "must_be_undirected()",
+        "get_not_singleton_nodes_number()",
+        "get_singleton_node_type_ids()",
+        "par_iter_node_ids()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

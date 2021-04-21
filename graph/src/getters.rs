@@ -555,6 +555,14 @@ impl Graph {
             .map(|node_types| node_types.get_unknown_count())
     }
 
+    /// Returns rate of unknown node types over total nodes number.
+    pub fn get_unknown_node_types_rate(&self) -> Result<f64, String> {
+        self.get_unknown_node_types_number()
+            .map(|unknown_node_types_number| {
+                unknown_node_types_number as f64 / self.get_nodes_number() as f64
+            })
+    }
+
     /// Returns minimum number of node types.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
@@ -595,6 +603,14 @@ impl Graph {
     pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
+    }
+
+    /// Returns rate of unknown edge types over total edges number.
+    pub fn get_unknown_edge_types_rate(&self) -> Result<f64, String> {
+        self.get_unknown_edge_types_number()
+            .map(|unknown_edge_types_number| {
+                unknown_edge_types_number as f64 / self.get_directed_edges_number() as f64
+            })
     }
 
     /// Returns minimum number of edge types.

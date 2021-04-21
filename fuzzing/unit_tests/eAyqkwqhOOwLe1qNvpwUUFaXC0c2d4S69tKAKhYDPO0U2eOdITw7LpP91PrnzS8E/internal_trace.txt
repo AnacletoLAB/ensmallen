@@ -1,0 +1,10 @@
+Some(
+    [
+        "get_node_degrees_mode()",
+        "has_edge_from_node_ids(src = 0, dst = 4042322160)",
+        "is_singleton_with_selfloops_from_node_id(node_id = 1203322288)",
+        "set_all_node_types(node_type = \"\")",
+        "must_not_be_multigraph()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [\"*\\u{6}H\", \"\", \"\"], verbose = true)",
+    ],
+)

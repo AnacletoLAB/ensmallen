@@ -43,8 +43,8 @@ impl EnsmallenGraph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn has_singletons(&self) -> bool {
-		self.graph.has_singletons()
+	fn has_singleton_nodes(&self) -> bool {
+		self.graph.has_singleton_nodes()
 	}
 	
 	#[text_signature = "($self)"]
@@ -52,8 +52,8 @@ impl EnsmallenGraph {
 	///
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
-	fn has_singletons_with_selfloops(&self) -> bool {
-		self.graph.has_singletons_with_selfloops()
+	fn has_singleton_nodes_with_selfloops(&self) -> bool {
+		self.graph.has_singleton_nodes_with_selfloops()
 	}
 	
 	#[text_signature = "($self)"]

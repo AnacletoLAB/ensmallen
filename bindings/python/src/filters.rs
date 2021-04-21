@@ -45,9 +45,9 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_singletons(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_singleton_nodes(&self, verbose: bool) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_singletons(verbose),
+            graph: self.graph.drop_singleton_nodes(verbose),
         }
     }
 

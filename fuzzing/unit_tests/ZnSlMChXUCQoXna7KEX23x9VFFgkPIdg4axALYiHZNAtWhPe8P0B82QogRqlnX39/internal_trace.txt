@@ -1,0 +1,12 @@
+Some(
+    [
+        "enable(vector_sources = false, vector_destinations = false, vector_cumulative_node_degrees = false, cache_size = None)",
+        "get_node_ids_and_edge_type_id_from_edge_id(edge_id = 17361641481138401520)",
+        "get_edges_number()",
+        "get_edge_types_number()",
+        "remove_inplace_singleton_node_types()",
+        "iter_source_node_ids(directed = false)",
+        "random_holdout(random_state = 17361641481138401520, train_size = -107730831079996120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0, include_all_edge_types = false, edge_types = None, min_number_overlaps = None, verbose = false)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [\"*\\u{6}H\", \"\", \"\"], verbose = true)",
+    ],
+)

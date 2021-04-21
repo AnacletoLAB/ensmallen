@@ -359,19 +359,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 1 {
         assert!(
-            graph.has_singletons() || graph.has_singletons_with_selfloops(),
+            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
             graph.textual_report(false)
         );
     }
 
-    if smallest == 0 {
-        assert!(
-            !graph.has_nodes(),
-            "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
-            graph.textual_report(false)
-        );
-    }
+    assert_eq!(
+        !graph.has_nodes(),
+        smallest == 0,
+        "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
+        graph.textual_report(false)
+    );
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
@@ -443,6 +442,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Test the generation of the textual report, this includes the connected components algorithm.
     graph.report();
     graph.textual_report(verbose)?;
+    graph.overlap_textual_report(&graph, verbose)?;
+    graph.get_peculiarities_report_markdown();
 
     // Compute degrees metrics
     for src in 0..5 {
@@ -1042,7 +1043,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         assert!(!test
-            .replace_unknown_node_types_with_node_type_name(vec!["HALLO!".to_string()], verbose)
+            .replace_unknown_node_types_with_node_type_name(vec!["HALLO!".to_string()], verbose)?
             .has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
         assert_eq!(remerged.node_types, graph.node_types);
@@ -1085,7 +1086,7 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(!test
-            .replace_unknown_edge_types_with_edge_type_name("HALLO!".to_string(), verbose)
+            .replace_unknown_edge_types_with_edge_type_name("HALLO!".to_string(), verbose)?
             .has_unknown_edge_types()?);
         assert!(
             train.edge_types.as_ref().map_or(false, |train_nts| {

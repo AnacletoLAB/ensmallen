@@ -1,0 +1,8 @@
+Some(
+    [
+        "drop_parallel_edges(verbose = false)",
+        "validate_node_type_id(node_type_id = Some(44527))",
+        "get_unique_selfloop_number()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

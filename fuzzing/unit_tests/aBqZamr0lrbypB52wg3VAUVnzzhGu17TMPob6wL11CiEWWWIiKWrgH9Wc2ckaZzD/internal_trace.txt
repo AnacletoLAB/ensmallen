@@ -1,0 +1,9 @@
+Some(
+    [
+        "validate_node_type_ids(node_type_ids = [])",
+        "has_singleton_edge_types()",
+        "get_edge_types_number()",
+        "get_node_degrees_mean()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

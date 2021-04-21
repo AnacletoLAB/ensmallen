@@ -1,0 +1,13 @@
+Some(
+    [
+        "iter_edges(directed = false)",
+        "edge_label_holdout(train_size = 0.000000000000000000000000000000000000000000000000000000000000000000000008225575163267597, use_stratification = false, random_state = 1229782938887206452)",
+        "iter_node_names_and_node_type_names_from_node_type_id(node_type_id = None)",
+        "remove_inplace_singleton_node_types()",
+        "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id = 72340172838076673)",
+        "has_homogeneous_node_types()",
+        "get_nodes_mapping()",
+        "has_homogeneous_node_types()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

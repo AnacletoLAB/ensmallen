@@ -38,9 +38,9 @@ fn test_components_size() {
         );
 
         assert!(
-            !(smallest == 1 && (!g.has_singletons()) && (!g.has_selfloops())),
+            !(smallest == 1 && (!g.has_singleton_nodes()) && (!g.has_selfloops())),
             "singletons: {} selfloops: {} smallest: {} biggest: {}, components: {:?}",
-            g.has_singletons(),
+            g.has_singleton_nodes(),
             g.has_selfloops(),
             smallest,
             biggest,

@@ -1,0 +1,8 @@
+Some(
+    [
+        "remove_singleton_node_types()",
+        "get_multigraph_edges_number()",
+        "get_selfloop_nodes_rate()",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

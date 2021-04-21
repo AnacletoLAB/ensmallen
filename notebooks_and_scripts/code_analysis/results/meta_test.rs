@@ -646,7 +646,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.get_nodes_mapping();
 	graph.get_nodes_number();
 	graph.get_not_singleton_nodes_number();
-	graph.get_not_singletons();
+	graph.get_not_singleton_nodes();
 	graph.get_outbounds();
 	graph.get_selfloop_number();
 	graph.get_singleton_nodes_number();
@@ -672,8 +672,8 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.has_node_types();
 	graph.has_nodes();
 	graph.has_selfloops();
-	graph.has_singletons_with_selfloops();
-	graph.has_singletons();
+	graph.has_singleton_nodes_with_selfloops();
+	graph.has_singleton_nodes();
 	graph.has_trap_nodes();
 	graph.has_unknown_edge_types();
 	graph.has_unknown_node_types();

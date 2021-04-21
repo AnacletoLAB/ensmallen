@@ -317,9 +317,9 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
             "|".to_owned(),
             vec![(self, None, None), (other, Some(self), None)],
             // TODO: it is possible to make the following more precise!
-            self.has_singletons() || other.has_singletons(),
+            self.has_singleton_nodes() || other.has_singleton_nodes(),
             // TODO: it is possible to make the following more precise!
-            self.has_singletons_with_selfloops() || other.has_singletons_with_selfloops(),
+            self.has_singleton_nodes_with_selfloops() || other.has_singleton_nodes_with_selfloops(),
             // TODO: it is possible to make the following more precise!
             self.has_trap_nodes() || other.has_trap_nodes(),
         )

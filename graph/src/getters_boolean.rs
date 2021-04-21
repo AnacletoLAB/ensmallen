@@ -115,16 +115,16 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// assert!(graph_with_singletons.has_singletons());
-    /// let graph_without_singletons = graph_with_singletons.drop_singletons(false);
-    /// assert!(!graph_without_singletons.has_singletons());
+    /// assert!(graph_with_singletons.has_singleton_nodes());
+    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes(false);
+    /// assert!(!graph_without_singletons.has_singleton_nodes());
     /// ```
-    pub fn has_singletons(&self) -> bool {
+    pub fn has_singleton_nodes(&self) -> bool {
         self.get_singleton_nodes_number() > 0
     }
 
     /// Returns boolean representing if graph has singletons.
-    pub fn has_singletons_with_selfloops(&self) -> bool {
+    pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
         self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
@@ -180,6 +180,13 @@ impl Graph {
     /// * If the graph does not have node types.
     pub fn has_singleton_node_types(&self) -> Result<bool, String> {
         Ok(self.get_minimum_node_types_number()? == 1)
+    }
+
+    /// Return whether the graph has any known node-related graph oddities.
+    pub fn has_node_oddities(&self) -> bool {
+        [self.has_singleton_nodes(), self.has_singleton_nodes_with_selfloops()]
+            .iter()
+            .any(|value| *value)
     }
 
     /// Return whether the graph has any known node type-related graph oddities.

@@ -1,0 +1,12 @@
+Some(
+    [
+        "has_edge_from_node_ids(src = 1229539657, dst = 1229539657)",
+        "has_edge_types()",
+        "has_singleton_nodes()",
+        "get_edge_types_number()",
+        "get_destination_names(directed = true)",
+        "iter_unique_source_node_ids()",
+        "get_unique_directed_edges_number()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

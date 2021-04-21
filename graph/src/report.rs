@@ -70,7 +70,7 @@ impl Graph {
             "selfloops_number",
             self.get_selfloop_nodes_number().to_string(),
         );
-        report.insert("singletons", self.get_singleton_nodes_number().to_string());
+        report.insert("singleton_nodes_number", self.get_singleton_nodes_number().to_string());
         if let Ok(node_types_number) = self.get_node_types_number() {
             report.insert("unique_node_types_number", node_types_number.to_string());
         }
@@ -282,38 +282,150 @@ impl Graph {
         let mut partial_reports: Vec<String> = Vec::new();
 
         partial_reports.push(format!(
-            "# Peculiarities report for graph {}",
+            "# Peculiarities report for graph {}\n",
             self.get_name()
         ));
 
         if !self.has_nodes() {
-            partial_reports.push("## Absence of nodes".to_string());
+            partial_reports.push("## Absence of nodes\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any node. This may be caused by ",
-                    "an improper use of one of the filter methods."
+                    "an improper use of one of the filter methods.\n\n"
                 )
                 .to_string(),
             );
         }
 
         if !self.has_edges() {
-            partial_reports.push("## Absence of edges".to_string());
+            partial_reports.push("## Absence of edges\n".to_string());
             partial_reports.push(
                 concat!(
                     "The graph does not have any edge. This may be caused by ",
-                    "an improper use of one of the filter methods."
+                    "an improper use of one of the filter methods.\n\n"
                 )
                 .to_string(),
             );
         }
 
+        // Detect weirdness relative to nodes
+        if self.has_node_oddities() {
+            partial_reports.push("## Oddities relative to nodes\n".to_string());
+            if self.has_singleton_nodes() {
+                partial_reports.push("### Singleton nodes".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: nodes that do not have any inbound or outbound edge. ",
+                        "We consider singleton nodes an oddity because they represent ",
+                        "a concept that is not connected to anything else ",
+                        "and is hardly ever useful when actually using the graph.\n",
+                        "For instance, in most node embedding methods, the ",
+                        "singleton nodes will often maintain a gaussian node ",
+                        "embedding, that is often visualized as a gaussian hyper-sphere.\n",
+                        "Such embeddings do not encode any information if not the fact ",
+                        "that the node has extremely low degree.\n",
+                        "\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase. The only solution is, if no bug ",
+                        "is identified in the data wrangling phase, to drop",
+                        "the singleton nodes.",
+                        "\n",
+                        "#### Solution dropping singleton node types\n",
+                        "It is possible to drop **all** of the singleton nodes ",
+                        "by using the method `graph.drop_singleton_nodes()`, ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton nodes.\n",
+                        "If you need a more fine-grained control on what is ",
+                        "removed, you can use the `filter` method.",
+                    ),
+                    match self.get_singleton_nodes_number() {
+                        0 => unreachable!(
+                            "There must be at least a singleton node if we got here.",
+                        ),
+                        1 => "There is a singleton node in the graph".to_string(),
+                        singleton_node_types_number => format!(
+                            "There are {} singleton nodes in the graph",
+                            singleton_node_types_number
+                        ),
+                    }
+                ));
+                partial_reports.push("#### List of the singleton nodes\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_node_names()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_nodes_number() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton nodes\n",
+                        self.get_singleton_nodes_number() - 10
+                    ))
+                }
+            }
+
+            if self.has_singleton_nodes_with_selfloops() {
+                partial_reports.push("### Singleton nodes with self loops\n".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: nodes that do not have any inbound or outbound edge, ",
+                        "with the exception of one or more selfloops.\n",
+                        "We consider singleton nodes with selfloops an oddity because they represent ",
+                        "a concept that is not connected to anything else ",
+                        "but themselves ",
+                        "and is hardly ever useful when actually using the graph.\n",
+                        "For instance, in most node embedding methods, the ",
+                        "singleton nodes with selfloops will often maintain a gaussian node ",
+                        "embedding, that is often visualized as a gaussian hyper-sphere.\n",
+                        "Such embeddings do not encode any information if not the fact ",
+                        "that the node has extremely low degree, similarly to what ",
+                        "happens with a *normal* singleton node.\n",
+                        "\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase. The only solution is, if no bug ",
+                        "is identified in the data wrangling phase, to drop",
+                        "the singleton nodes with selfloops.",
+                        "\n",
+                        "#### Solution dropping singleton node types\n",
+                        "It is possible to drop **all** of the singleton nodes with selfloops ",
+                        "by using the method `graph.drop_singleton_nodes_with_selfloops()`, ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton nodes with selfloops.\n",
+                        "If you need a more fine-grained control on what is ",
+                        "removed, you can use the `filter` method.\n"
+                    ),
+                    match self.get_singleton_nodes_with_selfloops_number() {
+                        0 => unreachable!(
+                            "There must be at least a singleton node with selfloops if we got here.",
+                        ),
+                        1 => "There is a singleton node with selfloops in the graph".to_string(),
+                        singleton_node_types_number => format!(
+                            "There are {} singleton nodes with selfloops in the graph",
+                            singleton_node_types_number
+                        ),
+                    }
+                ));
+                partial_reports
+                    .push("#### List of the singleton nodes with selfloops\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_with_selfloops_node_names()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_nodes_number() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton nodes with selfloops\n",
+                        self.get_singleton_nodes_with_selfloops_number() - 10
+                    ))
+                }
+            }
+        }
+
         // Detect weirdness relative to node types.
         if self.has_node_types_oddities().map_or(false, |value| value) {
-            let mut partial_node_types_reports: Vec<String> = Vec::new();
+            partial_reports.push("## Oddities relative to node types\n".to_string());
             if self.has_singleton_node_types().unwrap() {
-                partial_node_types_reports.push("### Singleton node types".to_string());
-                partial_node_types_reports.push(format!(
+                partial_reports.push("### Singleton node types\n".to_string());
+                partial_reports.push(format!(
                     concat!(
                         "{}: node types that only appear in one graph node. ",
                         "We consider singleton node types an oddity because it ",
@@ -351,7 +463,7 @@ impl Graph {
                         "An alternative solution is provided by the `replace` ",
                         "method: by providing the desired `node_type_names` ",
                         "parameter you can remap the singleton node types ",
-                        "to other node types."
+                        "to other node types.\n"
                     ),
                     match self.get_singleton_node_types_number().unwrap() {
                         0 => unreachable!(
@@ -364,23 +476,216 @@ impl Graph {
                         ),
                     }
                 ));
+                partial_reports.push("#### List of the singleton node types\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_node_type_names()
+                        .unwrap()
+                        .take(10)
+                        .map(|node_name| format!("* {}\n", node_name)),
+                );
+                if self.get_singleton_node_types_number().unwrap() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton node types\n",
+                        self.get_singleton_node_types_number().unwrap() - 10
+                    ))
+                }
             }
-            if !partial_node_types_reports.is_empty() {
-                partial_reports.push("## Node types".to_string());
-                partial_reports.extend(partial_node_types_reports);
+            if self.has_homogeneous_node_types().unwrap() {
+                partial_reports.push("### Homogeneous node types".to_string());
+                partial_reports.push(
+                    concat!(
+                        "The current graph instance has homogenous node types. ",
+                        "That is, all nodes share the same node type. ",
+                        "Graphs with a single node type are odd because if all ",
+                        "nodes have the same node type, they might as well have none. ",
+                        "A modelling issue often causes this: for instance, ",
+                        "when working on a graph such as STRING PPI, a ",
+                        "protein-protein interactions graph, it is well known ",
+                        "that all nodes represent a protein and hence it would ",
+                        "not make sense to add such a node type. Using homogeneous ",
+                        "node types only leads to a (slightly) higher memory ",
+                        "footprint and slower embedding if your embedding ",
+                        "algorithms also involves the node type.\n\n",
+                        "Consider avoiding loading homogenous node types ",
+                        "altogether or dropping the node types by using either ",
+                        "the method `remove_inplace_node_types` or `remove_node_types` ",
+                        "to remove the node types in place or creating a ",
+                        "new graph instance without the node types.\n"
+                    )
+                    .to_string(),
+                );
+            }
+            if self.has_unknown_node_types().unwrap() {
+                partial_reports.push("### Unknown node types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "The following is less than an oddity and more ",
+                        "of a statement: the graph contains {} nodes with ",
+                        "unknown node types, composing {:.4} of the nodes.\n",
+                        "The presence of unknown node types should be a ",
+                        "conscious modelling choice for either actual ",
+                        "unknown node types or node types reserved for a ",
+                        "validation set of some kind and not related to a ",
+                        "data bug created while ingested malformed data sources.\n",
+                        "\n",
+                        "If you have a sound reason to have unknown node types ",
+                        "in your graph then you can absolutely ignore this warning.\n",
+                        "Conversely, if you want to remove the unknown node types ",
+                        "you can either use the `drop_unknown_node_types` method ",
+                        "to drop them and the related nodes, otherwise you can ",
+                        "remap the unknown node types to some other node type ",
+                        "if you have a generic node type, as is common in most ",
+                        "knowledge graphs: you can use the method ",
+                        "`replace_unknown_node_types_with_node_type_name` for",
+                        "this second solution.\n"
+                    ),
+                    self.get_unknown_node_types_number().unwrap(),
+                    self.get_unknown_node_types_rate().unwrap() * 100.0,
+                ));
             }
         }
 
-        format!(
-            "Congratulations, the graph {} does not seem to have any weirdness!",
-            self.get_name()
-        )
+        // Detect weirdness relative to edge types.
+        if self.has_edge_types_oddities().map_or(false, |value| value) {
+            partial_reports.push("## Oddities relative to edge types".to_string());
+            if self.has_singleton_edge_types().unwrap() {
+                partial_reports.push("### Singleton edge types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "{}: edge types that only appear in one graph edge. ",
+                        "We consider singleton edge types an oddity because it ",
+                        "identifies a single edge uniquely, and the edge name ",
+                        "already covers that function.\n",
+                        "Often these cases are caused by some error in the ",
+                        "data wrangling phase when attempting to normalize ",
+                        "the edge types: consider checking the normalization ",
+                        "step and see if these edge types fall in one of the other edge types.\n",
+                        "There are two possible solutions to the peculiarity ",
+                        "mentioned above: either drop the singleton edge types ",
+                        "or replace them with one of the other edge types. ",
+                        "The first solution may lead to edges with unknown ",
+                        "edge types that can be either dropped or imputed.\n",
+                        "\n",
+                        "#### Solution dropping singleton edge types\n",
+                        "It is possible to drop **all** of the singleton edge ",
+                        "types by using the method `graph.remove_inplace_singleton_edge_types()`, ",
+                        "which will remove *inplace* (from the current instance) ",
+                        "all of the singleton edge types or, similarly, ",
+                        "the method `graph.remove_singleton_edge_types()` ",
+                        "which will create a new graph instance before removing ",
+                        "the singleton edge types.\n",
+                        "To drop only selected singleton edge types you can ",
+                        "use one of the following methods, according if you ",
+                        "intend to create a new graph instance or not and if ",
+                        "you want to execute the operation starting from ",
+                        "either the edge type ID or the edge type name:\n",
+                        "* `graph.remove_inplace_edge_type_id(edge_type_id)`\n",
+                        "* `graph.remove_edge_type_id(edge_type_id)`\n",
+                        "* `graph.remove_inplace_edge_type_name(edge_type_name)`\n",
+                        "* `graph.remove_edge_type_name(edge_type_name)`\n",
+                        "\n",
+                        "#### Solution replacing singleton edge types\n",
+                        "An alternative solution is provided by the `replace` ",
+                        "method: by providing the desired `edge_type_names` ",
+                        "parameter you can remap the singleton edge types ",
+                        "to other edge types.\n"
+                    ),
+                    match self.get_singleton_edge_types_number().unwrap() {
+                        0 => unreachable!(
+                            "There must be at least a singleton edge type if we got here.",
+                        ),
+                        1 => "There is a singleton edge type in the graph".to_string(),
+                        singleton_edge_types_number => format!(
+                            "There are {} singleton edge types in the graph",
+                            singleton_edge_types_number
+                        ),
+                    }
+                ));
+                partial_reports.push("#### List of the singleton edge types\n".to_string());
+                partial_reports.extend(
+                    self.iter_singleton_edge_type_names()
+                        .unwrap()
+                        .take(10)
+                        .map(|edge_name| format!("* {}\n", edge_name)),
+                );
+                if self.get_singleton_edge_types_number().unwrap() > 10 {
+                    partial_reports.push(format!(
+                        "* Plus other {} singleton edge types\n",
+                        self.get_singleton_edge_types_number().unwrap() - 10
+                    ))
+                }
+            }
+            if self.has_homogeneous_edge_types().unwrap() {
+                partial_reports.push("### Homogeneous edge types".to_string());
+                partial_reports.push(
+                    concat!(
+                        "The current graph instance has homogenous edge types. ",
+                        "That is, all edges share the same edge type. ",
+                        "Graphs with a single edge type are odd because if all ",
+                        "edges have the same edge type, they might as well have none. ",
+                        "A modelling issue often causes this: for instance, ",
+                        "when working on a graph such as STRING PPI, a ",
+                        "protein-protein interactions graph, it is well known ",
+                        "that all edges represent a protein and hence it would ",
+                        "not make sense to add such a edge type. Using homogeneous ",
+                        "edge types only leads to a (slightly) higher memory ",
+                        "footprint and slower embedding if your embedding ",
+                        "algorithms also involves the edge type.\n\n",
+                        "Consider avoiding loading homogenous edge types ",
+                        "altogether or dropping the edge types by using either ",
+                        "the method `remove_inplace_edge_types` or `remove_edge_types` ",
+                        "to remove the edge types in place or creating a ",
+                        "new graph instance without the edge types.\n"
+                    )
+                    .to_string(),
+                );
+            }
+            if self.has_unknown_edge_types().unwrap() {
+                partial_reports.push("### Unknown edge types".to_string());
+                partial_reports.push(format!(
+                    concat!(
+                        "The following is less than an oddity and more ",
+                        "of a statement: the graph contains {} edges with ",
+                        "unknown edge types, composing {:.4} of the edges.\n",
+                        "The presence of unknown edge types should be a ",
+                        "conscious modelling choice for either actual ",
+                        "unknown edge types or edge types reserved for a ",
+                        "validation set of some kind and not related to a ",
+                        "data bug created while ingested malformed data sources.\n",
+                        "\n",
+                        "If you have a sound reason to have unknown edge types ",
+                        "in your graph then you can absolutely ignore this warning.\n",
+                        "Conversely, if you want to remove the unknown edge types ",
+                        "you can either use the `drop_unknown_edge_types` method ",
+                        "to drop them and the related edges, otherwise you can ",
+                        "remap the unknown edge types to some other edge type ",
+                        "if you have a generic edge type, as is common in most ",
+                        "knowledge graphs: you can use the method ",
+                        "`replace_unknown_edge_types_with_edge_type_name` for",
+                        "this second solution.\n"
+                    ),
+                    self.get_unknown_edge_types_number().unwrap(),
+                    self.get_unknown_edge_types_rate().unwrap() * 100.0,
+                ));
+            }
+        }
+
+        // If there is only the title, then we have not detected any weirdness.
+        if partial_reports.len() == 1 {
+            partial_reports.push(format!(
+                "Congratulations, the graph {} does not seem to have any weirdness!\n",
+                self.get_name()
+            ));
+        }
+
+        partial_reports.join("")
     }
 
     /// Return rendered textual report of the graph.
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show loading bar.
+    /// TODO: UPDATE THIS METHOD!
     pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();
@@ -446,11 +751,11 @@ impl Graph {
                 },
                 false=>"".to_owned()
             },
-            singletons = match self.has_singletons() {
+            singletons = match self.has_singleton_nodes() {
                 true => format!(
                     " There are {singleton_number} singleton nodes{selfloop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    selfloop_singleton=match self.has_singletons_with_selfloops(){
+                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
                             true=>"all".to_owned(),
                             false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())

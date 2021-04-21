@@ -1,0 +1,8 @@
+Some(
+    [
+        "is_multigraph()",
+        "get_node_type_names_from_node_id(node_id = 4056177171)",
+        "is_directed()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

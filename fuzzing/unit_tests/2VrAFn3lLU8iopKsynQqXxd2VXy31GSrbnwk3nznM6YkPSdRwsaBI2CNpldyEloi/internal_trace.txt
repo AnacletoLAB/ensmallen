@@ -1,0 +1,10 @@
+Some(
+    [
+        "spanning_arborescence_kruskal(verbose = false)",
+        "get_unknown_node_types_number()",
+        "get_node_types_number()",
+        "get_source_node_ids(directed = true)",
+        "iter_singleton_node_ids()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

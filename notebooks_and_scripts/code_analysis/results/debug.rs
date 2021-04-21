@@ -368,10 +368,10 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
             "|".to_owned(),
             vec![(self, None, None), (other, Some(self), None)],
             // TODO: it is possible to make the following more precise!
-            self.has_singletons() || other.has_singletons(),
+            self.has_singleton_nodes() || other.has_singleton_nodes(),
             // TODO: it is possible to make the following more precise!
-            self.has_singletons_with_selfloops()
-                || other.has_singletons_with_selfloops(),
+            self.has_singleton_nodes_with_selfloops()
+                || other.has_singleton_nodes_with_selfloops(),
             // TODO: it is possible to make the following more precise!
             self.has_trap_nodes() || other.has_trap_nodes(),
         )
@@ -1242,7 +1242,7 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singletons() || self.has_singletons_with_selfloops() {
+        if self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops() {
             min_component_size = 1;
             max_component_size = 1;
             (0..self.get_nodes_number())
@@ -1460,7 +1460,7 @@ impl Graph {
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons()
+                        if self.has_singleton_nodes()
                             && self.is_singleton_by_node_id(src as NodeT).unwrap()
                         {
                             // We set singletons as self-loops for now.
@@ -1681,7 +1681,7 @@ impl Graph {
                         }
 
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons()
+                        if self.has_singleton_nodes()
                             && (self.is_singleton_by_node_id(src).unwrap()
                                 || self.is_singleton_with_selfloops_by_node_id(src))
                         {
@@ -2917,8 +2917,8 @@ impl Graph {
             self.has_edge_types(),
             self.has_edge_weights(),
             verbose,
-            self.has_singletons(),
-            self.has_singletons_with_selfloops(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
         )
     }
@@ -3577,7 +3577,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_by_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.has_singletons()
+        Ok(self.has_singleton_nodes()
             && self.get_node_degree_by_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
@@ -4142,7 +4142,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     if smallest == 1 {
         assert!(
-            graph.has_singletons() || graph.has_singletons_with_selfloops(),
+            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
             graph.textual_report(false)
         );
@@ -7229,11 +7229,11 @@ impl Graph {
                 ),
                 _ => "".to_owned()
             },
-            singletons = match self.has_singletons() {
+            singletons = match self.has_singleton_nodes() {
                 true => format!(
                     " There are {singleton_number} singleton nodes{selfloop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
-                    selfloop_singleton=match self.has_singletons_with_selfloops(){
+                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){
                         true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
                             true=>"all".to_owned(),
                             false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())
@@ -7704,7 +7704,7 @@ impl Graph {
             self.has_edge_types(),
             self.has_edge_weights(),
             min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_singletons_with_selfloops()
+            self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
             self.get_name(),
@@ -9374,18 +9374,18 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// assert!(graph_with_singletons.has_singletons());
+    /// assert!(graph_with_singletons.has_singleton_nodes());
     /// let graph_without_singletons = graph_with_singletons.remove(
     ///     None, None, None, None, None, None, None, None, false, false, true, true, false, false,
     /// ).unwrap();
-    /// assert!(!graph_without_singletons.has_singletons());
+    /// assert!(!graph_without_singletons.has_singleton_nodes());
     /// ```
-    pub fn has_singletons(&self) -> bool {
+    pub fn has_singleton_nodes(&self) -> bool {
         self.get_singleton_nodes_number() > 0
     }
 
     /// Returns boolean representing if graph has singletons.
-    pub fn has_singletons_with_selfloops(&self) -> bool {
+    pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
         self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
@@ -9625,7 +9625,7 @@ impl Graph {
     }
 
     /// Return set of nodes that are not singletons.
-    pub fn get_not_singletons(&self) -> Vec<NodeT> {
+    pub fn get_not_singleton_nodes(&self) -> Vec<NodeT> {
         self.iter_edge_ids(false)
             .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
             .unique()
@@ -9634,7 +9634,7 @@ impl Graph {
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.get_not_singletons()
+        self.get_not_singleton_nodes()
             .into_iter()
             .enumerate()
             .map(|(i, node)| (node as NodeT, i as NodeT))
@@ -10316,7 +10316,7 @@ impl NodeFileReader {
     ///
     /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
     ///
-    pub fn set_might_have_singletons(
+    pub fn set_might_have_singleton_nodes(
         mut self,
         might_have_singletons: Option<bool>,
     ) -> Result<NodeFileReader, String> {
@@ -13274,8 +13274,8 @@ impl Graph {
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
-            self.has_singletons(),
-            self.has_singletons_with_selfloops(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
         )
     }
 

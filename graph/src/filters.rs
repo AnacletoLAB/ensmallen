@@ -19,7 +19,8 @@ impl Graph {
     /// * `edge_type_ids_to_filter`: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * `filter_singletons`: bool - Whether to filter out singletons.
+    /// * `filter_singleton_nodes`: bool - Whether to filter out singleton nodes.
+    /// * `filter_singleton_nodes_with_selfloop`: bool - Whether to filter out singleton nodes with selfloops.
     /// * `filter_selfloops`: bool - Whether to filter out selfloops.
     /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
     /// * `verbose`: bool - Whether to show loading bar while building the graphs.
@@ -53,7 +54,8 @@ impl Graph {
         edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singletons: bool,
+        filter_singleton_nodes: bool,
+        filter_singleton_nodes_with_selfloop: bool,
         filter_selfloops: bool,
         filter_parallel_edges: bool,
         verbose: bool,
@@ -86,7 +88,8 @@ impl Graph {
                 node_type_ids_to_filter.is_some(),
                 node_type_id_to_keep.is_some(),
                 node_type_id_to_filter.is_some(),
-                filter_singletons && self.has_singletons(),
+                filter_singleton_nodes && self.has_singleton_nodes(),
+                filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
             ]
             .iter()
             .any(|value| *value);
@@ -102,6 +105,7 @@ impl Graph {
                 min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
                 filter_selfloops && self.has_selfloops(),
                 filter_parallel_edges && self.is_multigraph(),
+                filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
             ]
             .iter()
             .any(|value| *value);
@@ -124,6 +128,8 @@ impl Graph {
             (!filter_parallel_edges || last_dst.as_ref().map_or(true, |last_dst| *last_dst!=*dst)) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
+            // If singleton nodes with selfloops need to be filtered out
+            (!filter_singleton_nodes_with_selfloop || src != dst || !self.is_singleton_with_selfloops_from_node_id(*src)) &&
             // If the allow edge types set was provided
             edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst))) &&
             // If the deny edge types set was provided
@@ -169,10 +175,12 @@ impl Graph {
                             .all(|node_type_id| node_type_ids.contains(node_type_id)),
                         None => !ntitf.contains(&None),
                     })
-                && !(filter_singletons && self.is_unchecked_singleton_from_node_id(*node_id))
-                && !(filter_singletons
+                && !(filter_singleton_nodes && self.is_unchecked_singleton_from_node_id(*node_id))
+                && !(filter_singleton_nodes
                     && filter_selfloops
-                    && self.is_singleton_with_selfloops_from_node_id(*node_id))
+                    && self.is_singleton_with_selfloops_from_node_id(*node_id)) &&
+                // If singleton nodes with selfloops need to be filtered out
+                (!filter_singleton_nodes_with_selfloop || !self.is_singleton_with_selfloops_from_node_id(*node_id))
         };
 
         match (has_node_filters, has_edge_filters) {
@@ -193,7 +201,7 @@ impl Graph {
                 self.has_edge_types(),
                 self.has_edge_weights(),
                 true,
-                self.has_singletons_with_selfloops() && !filter_selfloops,
+                self.has_singleton_nodes_with_selfloops() && !filter_selfloops,
                 true,
             ),
             (true, _) => {
@@ -270,7 +278,8 @@ impl Graph {
     /// * `edge_type_names_to_filter`: Option<Vec<Option<String>>> - List of edge type names to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * `filter_singletons`: bool - Whether to filter out singletons.
+    /// * `filter_singleton_nodes`: bool - Whether to filter out singletons.
+    /// * `filter_singleton_nodes_with_selfloop`: bool - Whether to filter out singleton nodes with selfloops.
     /// * `filter_selfloops`: bool - Whether to filter out selfloops.
     /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
     /// * `verbose`: bool - Whether to show loading bar while building the graphs.
@@ -302,7 +311,8 @@ impl Graph {
         edge_type_names_to_filter: Option<Vec<Option<String>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singletons: bool,
+        filter_singleton_nodes: bool,
+        filter_singleton_nodes_with_selfloop: bool,
         filter_selfloops: bool,
         filter_parallel_edges: bool,
         verbose: bool,
@@ -346,11 +356,74 @@ impl Graph {
             })?,
             min_edge_weight,
             max_edge_weight,
-            filter_singletons,
+            filter_singleton_nodes,
+            filter_singleton_nodes_with_selfloop,
             filter_selfloops,
             filter_parallel_edges,
             verbose,
         ))
+    }
+
+    /// Returns new graph without unknown node types and relative nodes.
+    ///
+    /// Note that this method will remove ALL nodes labeled with unknown node
+    /// type!
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_node_types(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(vec![None]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        )
+    }
+
+    /// Returns new graph without unknown edge types and relative edges.
+    ///
+    /// Note that this method will remove ALL edges labeled with unknown edge
+    /// type!
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_edge_types(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(vec![None]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        )
     }
 
     /// Returns new graph without singleton nodes.
@@ -359,10 +432,23 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_singletons(&self, verbose: bool) -> Graph {
+    pub fn drop_singleton_nodes(&self, verbose: bool) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            true, false, false, verbose,
+            true, false, false, false, verbose,
+        )
+    }
+
+    /// Returns new graph without singleton nodes with selfloops.
+    ///
+    /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: bool) -> Graph {
+        self.filter_from_ids(
+            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+            false, true, false, false, verbose,
         )
     }
 
@@ -373,7 +459,7 @@ impl Graph {
     pub fn drop_selfloops(&self, verbose: bool) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, true, false, verbose,
+            false, false, true, false, verbose,
         )
     }
 
@@ -384,7 +470,7 @@ impl Graph {
     pub fn drop_parallel_edges(&self, verbose: bool) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, false, true, verbose,
+            false, false, false, true, verbose,
         )
     }
 }

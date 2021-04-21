@@ -1,0 +1,11 @@
+Some(
+    [
+        "get_node_type_names_counts_hashmap()",
+        "par_iter_edge_node_names_and_edge_type_name(directed = false)",
+        "remove_inplace_singleton_node_types()",
+        "get_node_type_ids_from_node_type_names(node_type_names = [])",
+        "get_singleton_edge_type_names()",
+        "get_node_degree_from_node_id(node_id = 16851457)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

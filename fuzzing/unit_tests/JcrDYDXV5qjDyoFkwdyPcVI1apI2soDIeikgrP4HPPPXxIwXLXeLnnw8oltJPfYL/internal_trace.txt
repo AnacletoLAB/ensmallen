@@ -1,0 +1,14 @@
+Some(
+    [
+        "must_not_be_multigraph()",
+        "get_unique_selfloop_number()",
+        "iter_edge_node_ids_and_edge_type_id(directed = false)",
+        "random_holdout(random_state = 1774897918758253678, train_size = -111539847741250570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0, include_all_edge_types = false, edge_types = None, min_number_overlaps = None, verbose = true)",
+        "get_destination_node_id_from_edge_id(edge_id = 13545018463826658152)",
+        "is_multigraph()",
+        "must_have_edge_types()",
+        "remove_inplace_singleton_edge_types()",
+        "must_have_nodes()",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)

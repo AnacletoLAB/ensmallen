@@ -148,8 +148,8 @@ impl Graph {
             self.has_node_types(),
             self.has_edge_types(),
             self.has_edge_weights(),
-            self.has_singletons(),
-            self.has_singletons_with_selfloops(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
             self.get_name(),
         )
@@ -164,7 +164,13 @@ impl Graph {
         &self,
         node_type_names: Vec<String>,
         verbose: bool,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
+        if node_type_names
+            .iter()
+            .any(|node_type_name| node_type_name.is_empty())
+        {
+            return Err("One or more of the given node types are empty!".to_string());
+        }
         self.replace(
             None,
             None,
@@ -172,26 +178,27 @@ impl Graph {
             None,
             verbose,
         )
-        .unwrap()
     }
 
     /// Replace unknown edge types with given edge type.
     ///
     /// # Arguments
-    /// * `edge_types`: Vec<EdgeType> - The edge types to replace the unknown with.
+    /// * `edge_type_name`: EdgeType - The edge type to replace the unknown with.
     /// * `verbose`: bool - Whether to show a loading bar.
     pub fn replace_unknown_edge_types_with_edge_type_name(
         &self,
-        edge_type_names: String,
+        edge_type_name: String,
         verbose: bool,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
+        if edge_type_name.is_empty() {
+            return Err("The given edge type is empty!".to_string());
+        }
         self.replace(
             None,
             None,
             None,
-            Some([(None, Some(edge_type_names))].iter().cloned().collect()),
+            Some([(None, Some(edge_type_name))].iter().cloned().collect()),
             verbose,
         )
-        .unwrap()
     }
 }

@@ -1,0 +1,9 @@
+Some(
+    [
+        "get_node_type_names()",
+        "get_singleton_nodes_number()",
+        "get_max_edge_weight()",
+        "par_iter_edge_node_ids_and_edge_type_id(directed = false)",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

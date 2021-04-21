@@ -1,0 +1,4 @@
+file,"/home/luca/github/ensmallen_graph/graph/src/replace.rs"
+line,195
+col,10
+message,called `Result::unwrap()` on an `Err` value: "The value given to the vocabulary was empty"

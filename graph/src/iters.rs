@@ -125,7 +125,7 @@ impl Graph {
         }
     }
 
-    /// Return iterator on the singleton nodes of the graph.
+    /// Return iterator on the singleton nodes IDs of the graph.
     pub fn iter_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match self.not_singleton_nodes.as_ref() {
             Some(nsns) => Box::new(nsns.iter_zeros().map(|node_id| node_id as NodeT)),
@@ -133,12 +133,24 @@ impl Graph {
         }
     }
 
-    /// Return iterator on the singleton with selfloops nodes of the graph.
+    /// Return iterator on the singleton nodes names of the graph.
+    pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
+        self.iter_singleton_node_ids()
+            .map(move |node_id| self.nodes.unchecked_translate(node_id))
+    }
+
+    /// Return iterator on the singleton with selfloops node IDs of the graph.
     pub fn iter_singleton_with_selfloops_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match self.singleton_nodes_with_selfloops.as_ref() {
             Some(nsns) => Box::new(nsns.iter()),
             _ => Box::new(::std::iter::empty()),
         }
+    }
+
+    /// Return iterator on the singleton with selfloops node names of the graph.
+    pub fn iter_singleton_with_selfloops_node_names(&self) -> impl Iterator<Item = String> + '_ {
+        self.iter_singleton_with_selfloops_node_ids()
+            .map(move |node_id| self.nodes.unchecked_translate(node_id))
     }
 
     /// Return iterator on the singleton node type IDs of the graph.

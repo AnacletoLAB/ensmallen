@@ -1,0 +1,12 @@
+Some(
+    [
+        "get_node_type_names()",
+        "has_singleton_node_types()",
+        "get_singleton_nodes_with_selfloops_number()",
+        "get_node_type_ids_from_node_type_names(node_type_names = [])",
+        "get_node_degrees_median()",
+        "get_not_singleton_nodes_number()",
+        "get_bipartite_edge_names(removed_existing_edges = None, first_nodes_set = None, second_nodes_set = None, first_node_types_set = None, second_node_types_set = None)",
+        "replace_unknown_edge_types_with_edge_type_name(edge_type_names = \"\", verbose = false)",
+    ],
+)

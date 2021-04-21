@@ -1,0 +1,24 @@
+   0:     0x5555555fee03 - backtrace::capture::Backtrace::new::h28c07dbc9a61c5f9
+   1:     0x555555835609 - graph_harness::handle_panics::dump_backtrace::h06f702533ef9b864
+   2:     0x555555836427 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h3e43cd570b97849c
+   3:     0x55555585fb0a - graph_harness::meta_test::meta_test::{{closure}}::h1dfe8ecb02b88cdc
+   4:     0x555555a4ed8c - std::panicking::rust_panic_with_hook::h81b8facc50f34daa
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:595:17
+   5:     0x555555a6b108 - std::panicking::begin_panic_handler::{{closure}}::ha376ab85d95a000e
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:497:13
+   6:     0x555555a6b07e - std::sys_common::backtrace::__rust_end_short_backtrace::h6795c8afdd1a77e6
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/sys_common/backtrace.rs:141:18
+   7:     0x555555a6b02d - rust_begin_unwind
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/std/src/panicking.rs:493:5
+   8:     0x5555555a43f0 - core::panicking::panic_fmt::hbe99dddd3092ba3c
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/core/src/panicking.rs:92:14
+   9:     0x5555555a4ae2 - core::result::unwrap_failed::hf79563fef9d11ab8
+                               at /rustc/d0695c9081b16077d0aed368bccaf437d77ff497/library/core/src/result.rs:1355:5
+  10:     0x55555572b239 - graph::replace::<impl graph::graph::Graph>::replace_unknown_node_types_with_node_type_name::haec6b24c1c3e1690
+  11:     0x555555890179 - graph_harness::meta_test::meta_test::hb450f24fb41ede23
+  12:     0x5555555cdeef - meta_test::main::h22ffefbd85166f0c
+  13:     0x5555555cd6de - std::sys_common::backtrace::__rust_begin_short_backtrace::hb86ef86758e820fc
+  14:     0x5555555cdbc1 - main
+  15:     0x7ffff6e22bf7 - __libc_start_main
+  16:     0x5555555cd0ba - _start
+  17:                0x0 - <unknown>

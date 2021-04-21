@@ -237,8 +237,8 @@ impl Graph {
     /// ```rust
     /// # let multigraph = graph::test_utilities::load_ppi(false, true, false, false, false, false);
     /// # let homogeneous = graph::test_utilities::load_ppi(false, false, false, false, false, false);
-    /// assert!(multigraph.must_be_multigraph().is_ok());
-    /// assert!(homogeneous.must_be_multigraph().is_err());
+    /// assert!(multigraph.must_not_be_multigraph().is_err());
+    /// assert!(homogeneous.must_not_be_multigraph().is_ok());
     /// ```
     pub fn must_not_be_multigraph(&self) -> Result<(), String> {
         if self.is_multigraph() {

@@ -1,0 +1,11 @@
+Some(
+    [
+        "get_node_names()",
+        "par_iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = false)",
+        "iter_edge_node_names_and_edge_type_name_and_edge_weight(directed = true)",
+        "get_edge_id_from_node_ids_and_edge_type_id(src = 3010751389, dst = 803726489, edge_type = None)",
+        "iter_edge_ids_from_node_ids(src = 18761, dst = 3145662464)",
+        "remove_edge_types(verbose = false)",
+        "replace_unknown_node_types_with_node_type_name(node_type_names = [], verbose = false)",
+    ],
+)
