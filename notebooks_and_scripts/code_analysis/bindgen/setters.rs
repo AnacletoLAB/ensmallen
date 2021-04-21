@@ -13,7 +13,7 @@ impl Graph {
 	/// [Automatically generated binding]
 	/// [Automatically generated documentation]
 	fn remove_inplace_singleton_edge_types(&mut self) -> PyResult<&mut EnsmallenGraph> {
-		Ok(EnsmallenGraph{graph:pe!(self.graph.remove_inplace_singleton_edge_types())?})
+		Ok(EnsmallenGraph{graph:pe!(self.graph.remove_inplace_singleton_edge_types())})
 	}
 	
 	#[text_signature = "($self)"]
