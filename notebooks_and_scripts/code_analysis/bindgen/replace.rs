@@ -27,12 +27,12 @@ impl Graph {
 	}
 	
 	#[text_signature = "($self, edge_type_name, verbose)"]
-	/// Replace unknown edge types with given edge type.
+	/// Replace unknown edge types with given edge type name.
 	/// 
 	/// Parameters
 	/// --------------
-	/// edge_type_name: intype,
-	/// 	The edge type to replace the unknown with.
+	/// edge_type_name: str,
+	/// 	The edge type name to replace the unknown with.
 	/// verbose: bool,
 	/// 	Whether to show a loading bar.
 	///
@@ -47,7 +47,7 @@ impl Graph {
 	/// 
 	/// Parameters
 	/// --------------
-	/// node_types: List[intype],
+	/// node_type_names: List[str],
 	/// 	The node types to replace the unknown with.
 	/// verbose: bool,
 	/// 	Whether to show a loading bar.
