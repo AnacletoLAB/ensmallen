@@ -361,6 +361,7 @@ impl Graph {
                         self.get_singleton_nodes_number() - 10
                     ))
                 }
+                partial_reports.push("\n");
             }
 
             if self.has_singleton_nodes_with_selfloops() {
@@ -417,6 +418,7 @@ impl Graph {
                         self.get_singleton_nodes_with_selfloops_number() - 10
                     ))
                 }
+                partial_reports.push("\n");
             }
         }
 
@@ -489,6 +491,7 @@ impl Graph {
                         self.get_singleton_node_types_number().unwrap() - 10
                     ))
                 }
+                partial_reports.push("\n");
             }
             if self.has_homogeneous_node_types().unwrap() {
                 partial_reports.push("#### Homogeneous node types\n".to_string());
@@ -614,6 +617,7 @@ impl Graph {
                         self.get_singleton_edge_types_number().unwrap() - 10
                     ))
                 }
+                partial_reports.push("\n");
             }
             if self.has_homogeneous_edge_types().unwrap() {
                 partial_reports.push("#### Homogeneous edge types\n".to_string());
