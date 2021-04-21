@@ -70,7 +70,7 @@ impl Graph {
             "selfloops_number",
             self.get_selfloop_nodes_number().to_string(),
         );
-        report.insert("singletons", self.get_singleton_nodes_number().to_string());
+        report.insert("singleton_nodes_number", self.get_singleton_nodes_number().to_string());
         if let Ok(node_types_number) = self.get_node_types_number() {
             report.insert("unique_node_types_number", node_types_number.to_string());
         }
@@ -338,7 +338,7 @@ impl Graph {
                         "If you need a more fine-grained control on what is ",
                         "removed, you can use the `filter` method.",
                     ),
-                    match self.get_singleton_node_types_number().unwrap() {
+                    match self.get_singleton_nodes_number() {
                         0 => unreachable!(
                             "There must be at least a singleton node if we got here.",
                         ),
@@ -393,7 +393,7 @@ impl Graph {
                         "If you need a more fine-grained control on what is ",
                         "removed, you can use the `filter` method.\n"
                     ),
-                    match self.get_singleton_node_types_number().unwrap() {
+                    match self.get_singleton_nodes_with_selfloops_number() {
                         0 => unreachable!(
                             "There must be at least a singleton node with selfloops if we got here.",
                         ),

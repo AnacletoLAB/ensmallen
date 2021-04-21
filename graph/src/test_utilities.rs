@@ -365,13 +365,12 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         );
     }
 
-    if smallest == 0 {
-        assert!(
-            !graph.has_nodes(),
-            "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
-            graph.textual_report(false)
-        );
-    }
+    assert_eq!(
+        !graph.has_nodes(),
+        smallest == 0,
+        "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
+        graph.textual_report(false)
+    );
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
@@ -443,6 +442,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Test the generation of the textual report, this includes the connected components algorithm.
     graph.report();
     graph.textual_report(verbose)?;
+    graph.overlap_textual_report(&graph, verbose)?;
+    graph.get_peculiarities_report_markdown();
 
     // Compute degrees metrics
     for src in 0..5 {
