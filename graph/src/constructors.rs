@@ -81,8 +81,7 @@ pub(crate) fn parse_node_ids<'a>(
     ignore_duplicated_nodes: bool,
     node_list_is_correct: bool,
     nodes: &'a mut Vocabulary<NodeT>,
-) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a>
-{
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a> {
     // If the user is telling us that the node list is **surely correct**,
     // we can skip a significant amount of checks and therefore create
     // a simpler iterator.
@@ -139,8 +138,7 @@ pub(crate) fn parse_node_type_ids<'a>(
     nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
     node_list_is_correct: bool,
     node_types_vocabulary: &'a mut NodeTypeVocabulary,
-) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a>
-{
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a> {
     if node_list_is_correct {
         Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| {
             (
@@ -240,8 +238,7 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
         + 'a,
     edge_list_is_correct: bool,
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
-) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a>
-{
+) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
     if edge_list_is_correct {
         Box::new(edges_iter.map_ok(move |(src, dst, edge_type, weight)| {
             (
@@ -747,6 +744,11 @@ pub(crate) fn build_edges(
         );
     }
 
+    // If the singleton_nodes_with_selfloops bitmap if empty, we return a None instead.
+    if singleton_nodes_with_selfloops.as_ref().map_or(false, |bitmap| bitmap.is_empty()) {
+        singleton_nodes_with_selfloops = None;
+    }
+
     Ok((
         edges,
         unique_sources,
@@ -1167,7 +1169,9 @@ impl Graph {
     /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
-        edges_iterator: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
+        edges_iterator: impl Iterator<
+            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
+        >,
         nodes: Vocabulary<NodeT>,
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,

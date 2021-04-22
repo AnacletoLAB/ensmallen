@@ -17,6 +17,12 @@ impl Graph {
         0..self.get_nodes_number()
     }
 
+    /// Return iterator on the node names of the graph.
+    pub fn iter_node_names(&self) -> impl Iterator<Item = String> + '_ {
+        self.iter_node_ids()
+            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
+    }
+
     /// Return iterator on the unique node type IDs of the graph.
     pub fn iter_unique_node_type_ids(
         &self,
@@ -136,7 +142,7 @@ impl Graph {
     /// Return iterator on the singleton nodes names of the graph.
     pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_node_ids()
-            .map(move |node_id| self.nodes.unchecked_translate(node_id))
+            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
     }
 
     /// Return iterator on the singleton with selfloops node IDs of the graph.
@@ -150,7 +156,7 @@ impl Graph {
     /// Return iterator on the singleton with selfloops node names of the graph.
     pub fn iter_singleton_with_selfloops_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_with_selfloops_node_ids()
-            .map(move |node_id| self.nodes.unchecked_translate(node_id))
+            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
     }
 
     /// Return iterator on the singleton node type IDs of the graph.
@@ -308,7 +314,7 @@ impl Graph {
         self.par_iter_edge_ids(directed).map(move |(_, _, dst)| dst)
     }
 
-    /// Return iterator on the node of the graph.
+    /// Return iterator on the node IDs and ther node type IDs.
     pub fn iter_node_ids_and_node_type_ids(
         &self,
     ) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
@@ -341,7 +347,7 @@ impl Graph {
             .map(move |(node_id, node_types)| {
                 (
                     node_id,
-                    self.nodes.unchecked_translate(node_id),
+                    self.get_unchecked_node_name_from_node_id(node_id),
                     node_types,
                     self.get_unchecked_node_type_names_from_node_id(node_id),
                 )

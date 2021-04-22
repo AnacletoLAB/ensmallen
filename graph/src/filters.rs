@@ -164,16 +164,16 @@ impl Graph {
                     .map_or(true, |ntitk| match node_type_ids {
                         Some(node_type_ids) => node_type_ids
                             .iter()
-                            .all(|node_type_id| ntitk.contains(&Some(*node_type_id))),
+                            .any(|node_type_id| ntitk.contains(&Some(*node_type_id))),
                         None => ntitk.contains(&None),
                     })
-                && node_type_id_to_filter
+                && !node_type_id_to_filter
                     .as_ref()
-                    .map_or(true, |ntitf| match node_type_ids {
-                        Some(node_type_ids) => !node_type_ids
+                    .map_or(false, |ntitf| match node_type_ids {
+                        Some(node_type_ids) => node_type_ids
                             .iter()
-                            .all(|node_type_id| node_type_ids.contains(node_type_id)),
-                        None => !ntitf.contains(&None),
+                            .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
+                        None => ntitf.contains(&None),
                     })
                 && !(filter_singleton_nodes && self.is_unchecked_singleton_from_node_id(*node_id))
                 && !(filter_singleton_nodes

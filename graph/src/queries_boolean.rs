@@ -79,6 +79,84 @@ impl Graph {
         self.get_node_id_from_node_name(node_name).is_ok()
     }
 
+    /// Returns whether the graph has the given node type id.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_type_id`: NodeTypeT - id of the node.
+    ///
+    /// # Example
+    /// To check if a node appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let node_type_id = 0;
+    /// let unexistent_node_type_id = 34567;
+    /// assert!(graph.has_node_type_from_node_type_id(node_type_id));
+    /// assert!(!graph.has_node_type_from_node_type_id(unexistent_node_type_id));
+    /// ```
+    pub fn has_node_type_from_node_type_id(&self, node_type_id: NodeTypeT) -> bool {
+        self.validate_node_type_id(Some(node_type_id)).is_ok()
+    }
+
+    /// Returns whether the graph has the given node type name.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_type_name`: &str - Name of the node.
+    ///
+    /// # Example
+    /// To check if a node appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let node_type_name = "biolink:Gene";
+    /// let unexistent_node_type_name = "I_do_not_exist!";
+    /// assert!(graph.has_node_type_from_node_type_name(node_type_name));
+    /// assert!(!graph.has_node_type_from_node_type_name(unexistent_node_type_name));
+    /// ```
+    pub fn has_node_type_from_node_type_name(&self, node_type_name: &str) -> bool {
+        self.get_node_type_id_from_node_type_name(node_type_name)
+            .is_ok()
+    }
+
+    /// Returns whether the graph has the given edge type id.
+    ///
+    /// # Arguments
+    ///
+    /// * `edge_type_id`: EdgeTypeT - id of the edge.
+    ///
+    /// # Example
+    /// To check if a edge appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let edge_type_id = 0;
+    /// let unexistent_edge_type_id = 567;
+    /// assert!(graph.has_edge_type_from_edge_type_id(edge_type_id));
+    /// assert!(!graph.has_edge_type_from_edge_type_id(unexistent_edge_type_id));
+    /// ```
+    pub fn has_edge_type_from_edge_type_id(&self, edge_type_id: EdgeTypeT) -> bool {
+        self.validate_edge_type_id(Some(edge_type_id)).is_ok()
+    }
+
+    /// Returns whether the graph has the given edge type name.
+    ///
+    /// # Arguments
+    ///
+    /// * `edge_type_name`: &str - Name of the edge.
+    ///
+    /// # Example
+    /// To check if a edge appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let edge_type_name = "red";
+    /// let unexistent_edge_type_name = "I_do_not_exist!";
+    /// assert!(graph.has_edge_type_from_edge_type_name(edge_type_name));
+    /// assert!(!graph.has_edge_type_from_edge_type_name(unexistent_edge_type_name));
+    /// ```
+    pub fn has_edge_type_from_edge_type_name(&self, edge_type_name: &str) -> bool {
+        self.get_edge_type_id_from_edge_type_name(Some(edge_type_name))
+            .is_ok()
+    }
+
     /// Returns whether edge passing between given node ids exists.
     ///
     /// # Arguments

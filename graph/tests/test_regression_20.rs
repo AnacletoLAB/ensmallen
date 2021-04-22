@@ -42,7 +42,7 @@ fn test_regression_20() -> Result<(), String> {
         nodes_reader,
         true,    // Directed
         true,    // Directed edge list
-        "\u{1}", // Name of the graph
+        "RegressionGraph20", // Name of the graph
     )?;
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     Ok(())

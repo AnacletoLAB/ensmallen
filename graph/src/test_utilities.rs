@@ -19,7 +19,6 @@ static DEFAULT_PATH: &str = "";
 
 const NONEXISTENT: &str = "Cthulhu is a fictional cosmic entity created by writer H. P. Lovecraft and first introduced in the short story The Call of Cthulhu,[2] published in the American pulp magazine Weird Tales in 1928. Considered a Great Old One within the pantheon of Lovecraftian cosmic entities, the creature has since been featured in numerous popular culture references. Lovecraft depicts it as a gigantic entity worshipped by cultists, in shape like an octopus, a dragon, and a caricature of human form. Its name was given to the Lovecraft-inspired universe where it and its fellow entities existed, the Cthulhu Mythos.";
 
-
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 /// Computes a random string of the chosen length
@@ -327,6 +326,15 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         !(graph.has_node_from_node_name(NONEXISTENT)),
         "The graph seems to have a non-existing node."
     );
+
+    // Singletons with selfloops can only exist if the graph has nodes AND selfloops
+    if graph.has_singleton_nodes() {
+        assert!(graph.has_nodes());
+    }
+    if graph.has_singleton_nodes_with_selfloops() {
+        assert!(graph.has_nodes());
+        assert!(graph.has_selfloops());
+    }
 
     // Test translate_edge|node_types()
     assert!(
@@ -1105,6 +1113,130 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
     Ok(())
 }
 
+pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
+    let unfiltered = graph.filter_from_ids(
+        None, None, None, None, None, None, None, None, None, None, None, None, None, None, false,
+        false, false, false, verbose,
+    );
+    assert_eq!(&unfiltered, graph);
+    assert!(graph
+        .filter_from_names(
+            None,
+            Some(vec![NONEXISTENT]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        )
+        .is_err());
+    for node_name in graph.iter_node_names().take(10) {
+        // The following test should remove ONLY the given node name
+        let graph_without_given_name_result = graph.filter_from_names(
+            None,
+            Some(vec![node_name.as_str()]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        );
+        assert!(graph_without_given_name_result.is_ok());
+        let graph_without_given_id = graph_without_given_name_result.unwrap();
+        assert_eq!(
+            graph_without_given_id.has_nodes(),
+            graph.get_nodes_number() > 1
+        );
+        assert!(!graph_without_given_id.has_node_from_node_name(node_name.as_str()));
+
+        // The following test should keep ONLY the given node name
+        let graph_with_given_name_result = graph.filter_from_names(
+            Some(vec![node_name.as_str()]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        );
+        assert!(graph_with_given_name_result.is_ok());
+        let graph_with_given_node_name = graph_with_given_name_result.unwrap();
+        assert_eq!(
+            graph_with_given_node_name.has_selfloops(),
+            graph.has_edge_from_node_names(node_name.as_ref(), node_name.as_ref())
+        );
+        assert_eq!(
+            graph_with_given_node_name.has_edges(),
+            graph_with_given_node_name.has_selfloops()
+        );
+        assert_eq!(graph_with_given_node_name.get_nodes_number(), 1);
+        assert!(graph_with_given_node_name.has_node_from_node_name(node_name.as_str()));
+    }
+
+    for node_type_name in graph.iter_unique_node_type_names()?.take(10) {
+        // The following test should remove ONLY the given node name
+        let graph_without_given_node_type_name_result = graph.filter_from_names(
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(vec![Some(node_type_name.clone())]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            false,
+            false,
+            false,
+            false,
+            verbose,
+        );
+        assert!(graph_without_given_node_type_name_result.is_ok());
+        let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
+        assert!(graph_without_given_node_type_name.has_nodes());
+        if graph.get_node_types_number()? > 1 && !graph.has_multilabel_node_types()? {
+            assert!(graph_without_given_node_type_name.has_node_types());
+        }
+        assert!(!graph_without_given_node_type_name
+            .has_node_type_from_node_type_name(node_type_name.as_str()));
+    }
+
+    Ok(())
+}
+
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let without_edge_types = graph.remove_edge_types(verbose)?;
     validate_vocabularies(&without_edge_types);
@@ -1229,8 +1361,8 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Testing writing out graph to file.");
     let _ = test_dump_graph(graph, verbose);
 
-    //warn!("Testing generic filtering mechanism.");
-    //let _ = test_graph_filter(graph, verbose);
+    warn!("Testing generic filtering mechanism.");
+    let _ = test_graph_filter(graph, verbose);
 
     warn!("Testing the spanning arborescences.");
     let _ = test_spanning_arborescence_bader(graph, verbose);

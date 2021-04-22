@@ -73,7 +73,13 @@ impl Graph {
         node_type_id: Option<NodeTypeT>,
     ) -> Result<Option<NodeTypeT>, String> {
         self.get_node_types_number().and_then(|node_types_number| {
-            node_type_id.map_or( Ok(None), |nti| {
+            node_type_id.map_or_else( || if !self.has_unknown_node_types()?{
+                Err(
+                    "An unknown node type was given but the graph does not contain unknown node types.".to_string()
+                )
+            } else {
+                Ok(None)
+            }, |nti| {
                 if node_types_number <= nti {
                     Err(format!(
                         "Given node type ID {} is bigger than number of node types in the graph {}.",
@@ -123,7 +129,13 @@ impl Graph {
         edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Option<EdgeTypeT>, String> {
         self.get_edge_types_number().and_then(|edge_types_number| {
-            edge_type_id.map_or( Ok(None), |eti| {
+            edge_type_id.map_or_else( || if !self.has_unknown_edge_types()?{
+                Err(
+                    "An unknown edge type was given but the graph does not contain unknown edge types.".to_string()
+                )
+            } else {
+                Ok(None)
+            }, |eti| {
                 if edge_types_number <= eti {
                     Err(format!(
                         "Given edge type ID {} is bigger than number of edge types in the graph {}.",
