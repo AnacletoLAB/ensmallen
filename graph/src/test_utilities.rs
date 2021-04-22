@@ -319,11 +319,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Test has_node_from_name
     assert!(
-        !(graph.has_node_from_node_name_and_node_type_name(NONEXISTENT, None)),
+        !(graph.has_node_name_and_node_type_name(NONEXISTENT, None)),
         "The graph seems to have a non-existing node."
     );
     assert!(
-        !(graph.has_node_from_node_name(NONEXISTENT)),
+        !(graph.has_node_name(NONEXISTENT)),
         "The graph seems to have a non-existing node."
     );
 
@@ -407,15 +407,15 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             );
         }
         assert!(
-            graph.has_node_from_node_name(&src_string)
-                && graph.has_node_from_node_name(&dst_string)
+            graph.has_node_name(&src_string)
+                && graph.has_node_name(&dst_string)
         );
         if graph.has_node_types() {
             assert!(
-                graph.has_node_from_node_name_and_node_type_name(
+                graph.has_node_name_and_node_type_name(
                     &src_string,
                     graph.get_node_type_name_from_node_name(&src_string)?
-                ) && graph.has_node_from_node_name_and_node_type_name(
+                ) && graph.has_node_name_and_node_type_name(
                     &dst_string,
                     graph.get_node_type_name_from_node_name(&dst_string)?
                 ),
@@ -430,11 +430,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 dst_string,
                 graph.get_node_type_name_from_node_name(&src_string),
                 graph.get_node_type_name_from_node_name(&dst_string),
-                graph.has_node_from_node_name_and_node_type_name(
+                graph.has_node_name_and_node_type_name(
                     &src_string,
                     graph.get_node_type_name_from_node_name(&src_string)?
                 ),
-                graph.has_node_from_node_name_and_node_type_name(
+                graph.has_node_name_and_node_type_name(
                     &dst_string,
                     graph.get_node_type_name_from_node_name(&dst_string)?
                 ),
@@ -1167,7 +1167,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             graph_without_given_id.has_nodes(),
             graph.get_nodes_number() > 1
         );
-        assert!(!graph_without_given_id.has_node_from_node_name(node_name.as_str()));
+        assert!(!graph_without_given_id.has_node_name(node_name.as_str()));
 
         // The following test should keep ONLY the given node name
         let graph_with_given_name_result = graph.filter_from_names(
@@ -1200,7 +1200,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             graph_with_given_node_name.has_selfloops()
         );
         assert_eq!(graph_with_given_node_name.get_nodes_number(), 1);
-        assert!(graph_with_given_node_name.has_node_from_node_name(node_name.as_str()));
+        assert!(graph_with_given_node_name.has_node_name(node_name.as_str()));
     }
 
     for node_type_name in graph.iter_unique_node_type_names()?.take(10) {
@@ -1231,7 +1231,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert!(graph_without_given_node_type_name.has_node_types());
         }
         assert!(!graph_without_given_node_type_name
-            .has_node_type_from_node_type_name(node_type_name.as_str()));
+            .has_node_type_name(node_type_name.as_str()));
     }
 
     Ok(())

@@ -2247,9 +2247,9 @@
         "example": {},
         "extra_headers": []
     },
-    "has_node_from_node_name": {
+    "has_node_name": {
         "file": "queries_boolean.rs",
-        "function": "has_node_from_node_name",
+        "function": "has_node_name",
         "errors": [],
         "args": {
             "args": [
@@ -2262,7 +2262,7 @@
         },
         "example": {
             "desc": "To check if a node appears in the graph you can use:\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet node_name = \"ENSP00000000233\";\nlet unexistent_node_name = \"I_do_not_exist!\";\nassert!(graph.has_node_from_node_name(node_name));\nassert!(!graph.has_node_from_node_name(unexistent_node_name));\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet node_name = \"ENSP00000000233\";\nlet unexistent_node_name = \"I_do_not_exist!\";\nassert!(graph.has_node_name(node_name));\nassert!(!graph.has_node_name(unexistent_node_name));\n"
         },
         "extra_headers": []
     },
@@ -2361,9 +2361,9 @@
         "example": {},
         "extra_headers": []
     },
-    "has_node_from_node_name_and_node_type_name": {
+    "has_node_name_and_node_type_name": {
         "file": "queries_boolean.rs",
-        "function": "has_node_from_node_name_and_node_type_name",
+        "function": "has_node_name_and_node_type_name",
         "errors": [
             {
                 "doc_line": 0,

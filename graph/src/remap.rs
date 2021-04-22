@@ -25,7 +25,7 @@ impl Graph {
             return false;
         }
         self.iter_node_names_and_node_type_names().all(|(_, node_name, _, node_type)| {
-            other.has_node_from_node_name_and_node_type_name(&node_name, node_type)
+            other.has_node_name_and_node_type_name(&node_name, node_type)
         })
     }
 

@@ -96,8 +96,8 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn has_node_from_node_name(&self, node_name: &str) -> bool {
-        self.graph.has_node_from_node_name(node_name)
+    fn has_node_name(&self, node_name: &str) -> bool {
+        self.graph.has_node_name(node_name)
     }
 
     #[text_signature = "($self, node_name, node_type_name)"]
@@ -112,13 +112,13 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn has_node_from_node_name_and_node_type_name(
+    fn has_node_name_and_node_type_name(
         &self,
         node_name: &str,
         node_type_name: Option<Vec<String>>,
     ) -> bool {
         self.graph
-            .has_node_from_node_name_and_node_type_name(node_name, node_type_name)
+            .has_node_name_and_node_type_name(node_name, node_type_name)
     }
 
     #[text_signature = "($self, node_id)"]

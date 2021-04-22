@@ -135,7 +135,7 @@ impl Graph {
         let overlapping_nodes_number = self
             .iter_node_names_and_node_type_names()
             .filter(|(_, node_name, _, node_type)| {
-                other.has_node_from_node_name_and_node_type_name(node_name, node_type.clone())
+                other.has_node_name_and_node_type_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges

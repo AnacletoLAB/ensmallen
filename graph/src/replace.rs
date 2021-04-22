@@ -42,7 +42,7 @@ impl Graph {
                     );
                     continue;
                 }
-                if self.has_node_from_node_name(new_node_name) {
+                if self.has_node_name(new_node_name) {
                     return Err(format!(
                         concat!(
                             "One of the new node names ({new_node_name}) already exists in the graph ",

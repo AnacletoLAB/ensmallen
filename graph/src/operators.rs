@@ -80,7 +80,7 @@ fn generic_string_operator(
             other
                 .iter_node_names_and_node_type_names()
                 .filter_map(|(_, node_name, _, node_type_names)| {
-                    match main.has_node_from_node_name(&node_name) {
+                    match main.has_node_name(&node_name) {
                         true => None,
                         false => Some(Ok((node_name, node_type_names))),
                     }
