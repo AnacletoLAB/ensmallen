@@ -197,6 +197,7 @@ impl Graph {
         Ok([
             self.has_singleton_node_types()?,
             self.has_homogeneous_node_types()?,
+            self.has_unknown_node_types()?
         ]
         .iter()
         .any(|value| *value))
@@ -218,6 +219,7 @@ impl Graph {
         Ok([
             self.has_singleton_edge_types()?,
             self.has_homogeneous_edge_types()?,
+            self.has_unknown_edge_types()?
         ]
         .iter()
         .any(|value| *value))
