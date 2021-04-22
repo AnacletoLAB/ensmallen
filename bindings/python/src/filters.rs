@@ -184,11 +184,11 @@ impl EnsmallenGraph {
         edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singletons: bool,
-        filter_singleton_nodes_with_selfloop: bool,
-        filter_selfloops: bool,
-        filter_parallel_edges: bool,
-        verbose: bool,
+        filter_singletons: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
+        verbose: Option<bool>,
     ) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.filter_from_ids(
@@ -206,11 +206,11 @@ impl EnsmallenGraph {
                 edge_type_ids_to_filter,
                 min_edge_weight,
                 max_edge_weight,
-                filter_singletons,
-                filter_singleton_nodes_with_selfloop,
-                filter_selfloops,
-                filter_parallel_edges,
-                verbose,
+                filter_singletons.unwrap_or(false),
+                filter_singleton_nodes_with_selfloop.unwrap_or(false),
+                filter_selfloops.unwrap_or(false),
+                filter_parallel_edges.unwrap_or(false),
+                verbose.unwrap_or(false),
             ),
         }
     }
@@ -284,11 +284,11 @@ impl EnsmallenGraph {
         edge_type_names_to_filter: Option<Vec<Option<String>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singletons: bool,
-        filter_singleton_nodes_with_selfloop: bool,
-        filter_selfloops: bool,
-        filter_parallel_edges: bool,
-        verbose: bool,
+        filter_singletons: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
+        verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.filter_from_names(
@@ -304,11 +304,11 @@ impl EnsmallenGraph {
                 edge_type_names_to_filter,
                 min_edge_weight,
                 max_edge_weight,
-                filter_singletons,
-                filter_singleton_nodes_with_selfloop,
-                filter_selfloops,
-                filter_parallel_edges,
-                verbose
+                filter_singletons.unwrap_or(false),
+                filter_singleton_nodes_with_selfloop.unwrap_or(false),
+                filter_selfloops.unwrap_or(false),
+                filter_parallel_edges.unwrap_or(false),
+                verbose.unwrap_or(false),
             ))?,
         })
     }
