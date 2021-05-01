@@ -5,7 +5,6 @@ use itertools::Itertools;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
 use std::collections::VecDeque;
 use std::sync::atomic::Ordering;
-use vec_rand::splitmix64;
 
 impl Graph {
     /// Returns iterator over degree centrality for all nodes.
@@ -34,9 +33,8 @@ impl Graph {
     ///
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
-    fn get_generic_betweenness_centrality<'a>(
-        &'a self,
-        get_iterator: impl Fn(NodeT, NodeT) -> Box<dyn Iterator<Item = NodeT> + 'a> + Sync + Send + 'a,
+    pub fn get_betweenness_centrality(
+        &self,
         normalize: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
@@ -69,20 +67,21 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
-                    get_iterator(src_node_id, current_node_id).for_each(|neighbour_node_id| {
-                        if distance_from_root[neighbour_node_id as usize] == u64::MAX {
-                            nodes_to_visit.push_back(neighbour_node_id);
-                            distance_from_root[neighbour_node_id as usize] =
-                                distance_from_root[current_node_id as usize] + 1;
-                        }
-                        if distance_from_root[neighbour_node_id as usize]
-                            == distance_from_root[current_node_id as usize] + 1
-                        {
-                            shortest_path_counts[neighbour_node_id as usize] +=
-                                shortest_path_counts[current_node_id as usize];
-                            node_lists[neighbour_node_id as usize].push(current_node_id);
-                        }
-                    });
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                        .for_each(|neighbour_node_id| {
+                            if distance_from_root[neighbour_node_id as usize] == u64::MAX {
+                                nodes_to_visit.push_back(neighbour_node_id);
+                                distance_from_root[neighbour_node_id as usize] =
+                                    distance_from_root[current_node_id as usize] + 1;
+                            }
+                            if distance_from_root[neighbour_node_id as usize]
+                                == distance_from_root[current_node_id as usize] + 1
+                            {
+                                shortest_path_counts[neighbour_node_id as usize] +=
+                                    shortest_path_counts[current_node_id as usize];
+                                node_lists[neighbour_node_id as usize].push(current_node_id);
+                            }
+                        });
                 }
                 let mut dependencies = vec![0.0; nodes_number];
                 stack.into_iter().rev().for_each(|current_node_id| {
@@ -113,66 +112,5 @@ impl Graph {
             });
         }
         centralities
-    }
-
-    /// Returns vector of approximated betweenness centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `max_neighbours`: NodeT - The number of neighbours to randomly sample.
-    /// * `random_state`: u64 - Random state to make the sampling reproducible.
-    /// * `normalize`: Option<bool> - Whether to normalize the values. By default, it is false.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
-    ///
-    pub fn get_approximated_betweenness_centrality(
-        &self,
-        max_neighbours: NodeT,
-        random_state: u64,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Vec<f64> {
-        let factor = 0xDEAD;
-        let random_state = splitmix64(random_state.wrapping_mul(factor));
-        self.get_generic_betweenness_centrality(
-            |src_node_id, current_node_id| {
-                Box::new(
-                    self.get_unchecked_destination_node_ids_from_node_id(
-                        current_node_id,
-                        splitmix64(
-                            random_state
-                                + src_node_id.wrapping_mul(factor as u32) as u64
-                                + current_node_id.wrapping_mul(factor as u32) as u64,
-                        ),
-                        Some(max_neighbours),
-                    )
-                    .into_iter(),
-                )
-            },
-            normalize,
-            verbose,
-        )
-    }
-
-    /// Returns vector of betweenness centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the values. By default, it is false.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
-    ///
-    /// # References
-    /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
-    pub fn get_betweenness_centrality(
-        &self,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Vec<f64> {
-        self.get_generic_betweenness_centrality(
-            |_, current_node_id| {
-                Box::new(
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id),
-                )
-            },
-            normalize,
-            verbose,
-        )
     }
 }
