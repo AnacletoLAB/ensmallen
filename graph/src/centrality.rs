@@ -28,12 +28,18 @@ impl Graph {
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `normalize`: bool - Whether to normalize the values.
-    /// * `verbose`: bool - Whether to show a loading bar.
-    pub fn get_betweenness_centrality(&self, normalize: bool, verbose: bool) -> Vec<f64> {
+    /// * `normalize`: Option<bool> - Whether to normalize the values. By default, it is false.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
+    pub fn get_betweenness_centrality(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Vec<f64> {
         if !self.has_nodes() {
             return Vec::new();
         }
+        let normalize = normalize.unwrap_or(false);
+        let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
         let centralities: Vec<AtomicF64> =
             self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();

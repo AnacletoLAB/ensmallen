@@ -34,6 +34,7 @@ mod holdout;
 mod operators;
 mod queries;
 mod queries_boolean;
+mod centrality;
 mod remove;
 mod replace;
 mod report;

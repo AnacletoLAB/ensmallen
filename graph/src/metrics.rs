@@ -1,6 +1,5 @@
 use super::types::*;
 use super::*;
-use rayon::prelude::*;
 use std::collections::HashSet;
 
 /// # Properties and measurements of the graph
@@ -62,8 +61,8 @@ impl Graph {
             ));
         }
 
-        if self.is_trap_node_from_node_id(one).unwrap()
-            || self.is_trap_node_from_node_id(two).unwrap()
+        if self.is_unchecked_trap_node_from_node_id(one)
+            || self.is_unchecked_trap_node_from_node_id(two)
         {
             return Ok(0.0f64);
         }
@@ -121,7 +120,7 @@ impl Graph {
             .collect();
 
         Ok(intersections
-            .par_iter()
+            .iter()
             .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
             .map(|node| 1.0 / (self.get_unchecked_node_degree_from_node_id(*node) as f64).ln())
             .sum())
@@ -167,8 +166,8 @@ impl Graph {
             .collect();
 
         Ok(intersections
-            .par_iter()
-            .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
+            .iter()
+            .filter(|node| !self.is_unchecked_trap_node_from_node_id(**node))
             .map(|node| 1.0 / self.get_unchecked_node_degree_from_node_id(*node) as f64)
             .sum())
     }

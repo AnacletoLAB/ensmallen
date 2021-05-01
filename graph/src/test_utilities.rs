@@ -564,7 +564,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
     assert!(node_degree_centralities
         .into_iter()
         .all(|value| value <= 1.0));
-    let node_betweenness_centralities = graph.get_betweenness_centrality(false, verbose);
+    let node_betweenness_centralities = graph.get_betweenness_centrality(None, Some(verbose));
     assert_eq!(
         node_betweenness_centralities.len(),
         graph.get_nodes_number() as usize
