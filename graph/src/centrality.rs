@@ -30,6 +30,9 @@ impl Graph {
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the values. By default, it is false.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
+    ///
+    /// # References
+    /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     pub fn get_betweenness_centrality(
         &self,
         normalize: Option<bool>,
@@ -80,9 +83,7 @@ impl Graph {
                             }
                         });
                 }
-                let mut dependencies =
-                    unsafe { std::mem::transmute::<Vec<u64>, Vec<f64>>(distance_from_root) };
-                dependencies.fill(0.0);
+                let mut dependencies = vec![0.0; nodes_number];
                 stack.into_iter().rev().for_each(|current_node_id| {
                     node_lists[current_node_id as usize]
                         .iter()
