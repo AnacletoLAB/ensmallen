@@ -774,11 +774,3 @@ impl Graph {
         ))
     }
 }
-
-use std::cell::UnsafeCell;
-
-struct ThreadSafe<T> {
-    value: UnsafeCell<T>,
-}
-
-unsafe impl<T> Sync for ThreadSafe<T> {}
