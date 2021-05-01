@@ -43,36 +43,18 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let centralities: Vec<AtomicF64> =
             self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();
-        let cpu_number = rayon::current_num_threads();
-        let mut shortest_path_counts_matrix = vec![vec![0; nodes_number]; cpu_number];
-        let mut distance_from_root_matrix = vec![vec![-1; nodes_number]; cpu_number];
-        let mut dependencies_matrix = vec![vec![0.0; nodes_number]; cpu_number];
-        let unsafe_shortest_path_counts = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut shortest_path_counts_matrix),
-        };
-        let unsafe_distance_from_root = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut distance_from_root_matrix),
-        };
-        let unsafe_dependencies = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut dependencies_matrix),
-        };
         let factor = if self.is_directed() { 1.0 } else { 2.0 };
         let pb = get_loading_bar(verbose, "Computing betweennes centralities", nodes_number);
         self.par_iter_node_ids()
             .progress_with(pb)
-            .for_each(|src_node_id| unsafe {
-                // This might crash when dealing with graphs that only have one node
-                // in those cases we always extract the first vector out of the matrix.
-                let thread_id = rayon::current_thread_index().unwrap_or(0);
-                let shortest_path_counts = unsafe_shortest_path_counts.value.get();
-                let distance_from_root = unsafe_distance_from_root.value.get();
+            .for_each(|src_node_id| {
                 let mut stack: Vec<NodeT> = Vec::new();
                 let mut node_lists: Vec<Vec<NodeT>> =
                     self.iter_node_ids().map(|_| Vec::new()).collect();
-                (*shortest_path_counts)[thread_id].fill(0);
-                (*shortest_path_counts)[thread_id][src_node_id as usize] = 1;
-                (*distance_from_root)[thread_id].fill(-1);
-                (*distance_from_root)[thread_id][src_node_id as usize] = 0;
+                let mut shortest_path_counts = vec![0; nodes_number];
+                shortest_path_counts[src_node_id as usize] = 1;
+                let mut distance_from_root = vec![u64::MAX; nodes_number];
+                distance_from_root[src_node_id as usize] = 0;
                 let mut nodes_to_visit: VecDeque<NodeT> = VecDeque::new();
                 nodes_to_visit.push_back(src_node_id);
                 while !nodes_to_visit.is_empty() {
@@ -84,36 +66,35 @@ impl Graph {
                     // it is not possible to Box a parallel iterator from Rayon.
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
                         .for_each(|neighbour_node_id| {
-                            if (*distance_from_root)[thread_id][neighbour_node_id as usize] < 0 {
+                            if distance_from_root[neighbour_node_id as usize] == u64::MAX {
                                 nodes_to_visit.push_back(neighbour_node_id);
-                                (*distance_from_root)[thread_id][neighbour_node_id as usize] =
-                                    (*distance_from_root)[thread_id][current_node_id as usize] + 1;
+                                distance_from_root[neighbour_node_id as usize] =
+                                    distance_from_root[current_node_id as usize] + 1;
                             }
-                            if (*distance_from_root)[thread_id][neighbour_node_id as usize]
-                                == (*distance_from_root)[thread_id][current_node_id as usize] + 1
+                            if distance_from_root[neighbour_node_id as usize]
+                                == distance_from_root[current_node_id as usize] + 1
                             {
-                                (*shortest_path_counts)[thread_id][neighbour_node_id as usize] +=
-                                    (*shortest_path_counts)[thread_id][current_node_id as usize];
+                                shortest_path_counts[neighbour_node_id as usize] +=
+                                    shortest_path_counts[current_node_id as usize];
                                 node_lists[neighbour_node_id as usize].push(current_node_id);
                             }
                         });
                 }
-                let dependencies = unsafe_dependencies.value.get();
-                (*dependencies)[thread_id].fill(0.0);
+                let mut dependencies =
+                    unsafe { std::mem::transmute::<Vec<u64>, Vec<f64>>(distance_from_root) };
+                dependencies.fill(0.0);
                 stack.into_iter().rev().for_each(|current_node_id| {
                     node_lists[current_node_id as usize]
                         .iter()
                         .for_each(|&neighbour_node_id| {
-                            (*dependencies)[thread_id][neighbour_node_id as usize] += (*shortest_path_counts)
-                                [thread_id][neighbour_node_id as usize]
-                                as f64
-                                / (*shortest_path_counts)[thread_id][current_node_id as usize]
-                                    as f64
-                                * (1.0 + (*dependencies)[thread_id][current_node_id as usize]);
+                            dependencies[neighbour_node_id as usize] +=
+                                shortest_path_counts[neighbour_node_id as usize] as f64
+                                    / shortest_path_counts[current_node_id as usize] as f64
+                                    * (1.0 + dependencies[current_node_id as usize]);
                         });
                     if current_node_id != src_node_id {
                         centralities[current_node_id as usize].fetch_add(
-                            (*dependencies)[thread_id][current_node_id as usize] / factor,
+                            dependencies[current_node_id as usize] / factor,
                             Ordering::SeqCst,
                         );
                     }
