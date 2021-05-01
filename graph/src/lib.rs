@@ -52,6 +52,9 @@ pub use self::getters_boolean::*;
 pub mod replace;
 pub use self::replace::*;
 
+mod dijkstra;
+pub use self::dijkstra::*;
+
 mod constructors;
 
 pub mod utils;
@@ -77,6 +80,7 @@ mod tarjan;
 mod trees;
 mod types;
 mod walks;
+mod centrality;
 pub mod walks_parameters;
 
 mod report;

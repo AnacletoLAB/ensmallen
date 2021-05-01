@@ -406,10 +406,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 graph.textual_report(false)
             );
         }
-        assert!(
-            graph.has_node_name(&src_string)
-                && graph.has_node_name(&dst_string)
-        );
+        assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));
         if graph.has_node_types() {
             assert!(
                 graph.has_node_name_and_node_type_name(
@@ -555,6 +552,31 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             );
         }
     }
+    Ok(())
+}
+
+pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    let node_degree_centralities = graph.get_degree_centrality();
+    assert_eq!(
+        node_degree_centralities.len(),
+        graph.get_nodes_number() as usize
+    );
+    assert!(node_degree_centralities
+        .into_iter()
+        .all(|value| value <= 1.0));
+    let node_betweenness_centralities = graph.get_betweenness_centrality(false, verbose);
+    assert_eq!(
+        node_betweenness_centralities.len(),
+        graph.get_nodes_number() as usize
+    );
+    node_betweenness_centralities
+        .into_iter()
+        .enumerate()
+        .for_each(|(node_id, value)| {
+            if graph.is_unchecked_singleton_from_node_id(node_id as NodeT) {
+                assert!(value.abs() < f64::EPSILON);
+            }
+        });
     Ok(())
 }
 
@@ -1230,8 +1252,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
         if graph.get_node_types_number()? > 1 && !graph.has_multilabel_node_types()? {
             assert!(graph_without_given_node_type_name.has_node_types());
         }
-        assert!(!graph_without_given_node_type_name
-            .has_node_type_name(node_type_name.as_str()));
+        assert!(!graph_without_given_node_type_name.has_node_type_name(node_type_name.as_str()));
     }
 
     Ok(())
@@ -1240,7 +1261,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let without_edge_types = graph.remove_edge_types(verbose)?;
     validate_vocabularies(&without_edge_types);
-    assert_eq!(without_edge_types.has_edge_types(), false);
+    assert!(!without_edge_types.has_edge_types());
     assert_eq!(
         without_edge_types.has_edge_weights(),
         graph.has_edge_weights()
@@ -1256,7 +1277,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
                 "The report of the graph without edge types is \n{:?}",
             ),
             graph.textual_report(false),
-            without_edge_types.textual_report(false),
+            without_edge_types.textual_report(false)
         );
         assert_eq!(
             without_edge_types.get_unique_selfloop_number(),
@@ -1267,7 +1288,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
     assert_eq!(without_edge_types.nodes, graph.nodes);
     let without_node_types = graph.remove_node_types()?;
     validate_vocabularies(&without_node_types);
-    assert_eq!(without_node_types.has_node_types(), false);
+    assert!(!without_node_types.has_node_types());
     assert_eq!(
         graph.is_multigraph(),
         without_node_types.is_multigraph(),
@@ -1288,7 +1309,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
     assert_eq!(without_node_types.nodes, graph.nodes);
     let without_weights = graph.remove_edge_weights()?;
     validate_vocabularies(&without_weights);
-    assert_eq!(without_weights.has_edge_weights(), false);
+    assert!(!without_weights.has_edge_weights());
     assert_eq!(without_weights.node_types, graph.node_types);
     assert_eq!(without_weights.has_selfloops(), graph.has_selfloops());
     assert_eq!(without_weights.nodes, graph.nodes);
@@ -1393,6 +1414,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing random walks.");
     let _ = test_random_walks(graph, verbose);
+
+    warn!("Testing node centralities.");
+    let _ = test_node_centralities(graph, verbose);
 
     Ok(())
 }

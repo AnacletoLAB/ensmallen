@@ -70,7 +70,10 @@ impl Graph {
             "selfloops_number",
             self.get_selfloop_nodes_number().to_string(),
         );
-        report.insert("singleton_nodes_number", self.get_singleton_nodes_number().to_string());
+        report.insert(
+            "singleton_nodes_number",
+            self.get_singleton_nodes_number().to_string(),
+        );
         if let Ok(node_types_number) = self.get_node_types_number() {
             report.insert("unique_node_types_number", node_types_number.to_string());
         }
@@ -271,12 +274,86 @@ impl Graph {
         )
     }
 
-    /// Return human-readable markdown report of the graph peculiarities.
+    /// Return human-readable markdown report of the given node.
     ///
     /// The report, by default, is rendered using Markdown.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar in graph operations.
+    /// * `node_id`: NodeT - Whether to show a loading bar in graph operations.
+    ///
+    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
+        self.validate_node_id(node_id)?;
+        let mut partial_reports: Vec<String> = Vec::new();
+        let node_name = self.get_unchecked_node_name_from_node_id(node_id);
+        //partial_reports.push(format!("## Report for node {}\n", node_name));
+
+        partial_reports.push(if self.is_unchecked_singleton_from_node_id(node_id) {
+            match self.get_singleton_nodes_number() {
+                1 => format!(
+                    concat!("The given node {} is the only singleton node of the graph."),
+                    node_name
+                ),
+                singleton_nodes_number => {
+                    format!(
+                        concat!("The given node {} is one of {} singleton nodes."),
+                        node_name, singleton_nodes_number
+                    )
+                }
+            }
+        } else if self.is_singleton_with_selfloops_from_node_id(node_id) {
+            match self.get_singleton_nodes_with_selfloops_number() {
+                1 => format!(
+                    concat!(
+                        "The given node {} is the only singleton node with selfloops in the graph."
+                    ),
+                    node_name
+                ),
+                singleton_nodes_with_selfloops_number => {
+                    format!(
+                        concat!("The given node {} is one of {} singleton nodes with selfloops."),
+                        node_name, singleton_nodes_with_selfloops_number
+                    )
+                }
+            }
+        } else if self.is_unchecked_trap_node_from_node_id(node_id) {
+            match self.get_trap_nodes_number() {
+                1 => format!(
+                    concat!("The given node {} is the only trap node in the graph."),
+                    node_name
+                ),
+                trap_nodes_number => {
+                    format!(
+                        concat!("The given node {} is one of {} trap nodes in the graph."),
+                        node_name, trap_nodes_number
+                    )
+                }
+            }
+        } else {
+            format!(
+                concat!("The given node {} has degree {}"),
+                node_name,
+                self.get_unchecked_node_degree_from_node_id(node_id)
+            )
+        });
+
+        Ok(partial_reports.join(""))
+    }
+
+    /// Return human-readable markdown report of the given node.
+    ///
+    /// The report, by default, is rendered using Markdown.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Whether to show a loading bar in graph operations.
+    ///
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String, String> {
+        self.get_node_id_from_node_name(node_name)
+            .and_then(|node_id| self.get_node_report_from_node_id(node_id))
+    }
+
+    /// Return human-readable markdown report of the graph peculiarities.
+    ///
+    /// The report, by default, is rendered using Markdown.
     ///
     pub fn get_peculiarities_report_markdown(&self) -> String {
         let mut partial_reports: Vec<String> = Vec::new();

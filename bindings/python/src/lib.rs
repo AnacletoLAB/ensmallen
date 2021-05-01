@@ -26,6 +26,7 @@ pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 mod modifiers;
+mod dijkstra;
 
 mod compression;
 mod getters_boolean;
