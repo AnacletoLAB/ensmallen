@@ -1,4 +1,5 @@
 use super::*;
+use graph::NodeT;
 use numpy::{PyArray, PyArray1};
 
 #[pymethods]
