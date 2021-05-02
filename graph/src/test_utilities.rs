@@ -569,7 +569,6 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
         node_betweenness_centralities.len(),
         graph.get_nodes_number() as usize
     );
-    println!("{:?}", node_betweenness_centralities);
     node_betweenness_centralities
         .into_iter()
         .enumerate()

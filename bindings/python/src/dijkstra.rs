@@ -30,7 +30,7 @@ impl EnsmallenGraph {
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>)> {
+    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
         pe!(self.graph.get_unweighted_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
@@ -69,7 +69,7 @@ impl EnsmallenGraph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>)> {
+    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
         pe!(self.graph.get_unweighted_dijkstra_from_node_names(
             src_node_name,
             maybe_dst_node_name,
@@ -105,7 +105,7 @@ impl EnsmallenGraph {
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>)> {
+    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
         pe!(self.graph.get_weighted_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
@@ -144,7 +144,7 @@ impl EnsmallenGraph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>)> {
+    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
         pe!(self.graph.get_weighted_dijkstra_from_node_names(
             src_node_name,
             maybe_dst_node_name,

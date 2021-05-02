@@ -53,7 +53,7 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> (Vec<NodeT>, Option<Vec<NodeT>>) {
+    ) -> (Vec<NodeT>, Option<Vec<NodeT>>, NodeT) {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
@@ -74,12 +74,14 @@ impl Graph {
             || self.is_singleton_with_selfloops_from_node_id(src_node_id)
             || self.is_unchecked_trap_node_from_node_id(src_node_id)
         {
-            return (distances, parents);
+            return (distances, parents, NodeT::MAX);
         }
 
         let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<NodeT>> =
             KeyedPriorityQueue::new();
         nodes_to_explore.push(src_node_id, Reverse(0));
+
+        let mut maximal_distance = 0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
@@ -112,6 +114,7 @@ impl Graph {
                 let new_neighbour_distance = distances[closest_node_id as usize] + 1;
                 if new_neighbour_distance < distances[neighbour_node_id as usize] {
                     distances[neighbour_node_id as usize] = new_neighbour_distance;
+                    maximal_distance = maximal_distance.max(new_neighbour_distance);
                     if let Some(parents) = &mut parents {
                         parents[neighbour_node_id as usize] = closest_node_id;
                     }
@@ -119,7 +122,7 @@ impl Graph {
                 }
             }
         }
-        (distances, parents)
+        (distances, parents, maximal_distance)
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
@@ -137,7 +140,7 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> (Vec<f64>, Option<Vec<NodeT>>) {
+    ) -> (Vec<f64>, Option<Vec<NodeT>>, f64) {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
@@ -158,12 +161,13 @@ impl Graph {
             || self.is_singleton_with_selfloops_from_node_id(src_node_id)
             || self.is_unchecked_trap_node_from_node_id(src_node_id)
         {
-            return (distances, parents);
+            return (distances, parents, f64::INFINITY);
         }
 
         let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<OrdFloat64>> =
             KeyedPriorityQueue::new();
         nodes_to_explore.push(src_node_id, Reverse(OrdFloat64(0.0)));
+        let mut maximal_distance: f64 = 0.0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
@@ -194,6 +198,7 @@ impl Graph {
                 let new_neighbour_distance = distances[closest_node_id as usize] + weight as f64;
                 if new_neighbour_distance < distances[neighbour_node_id as usize] {
                     distances[neighbour_node_id as usize] = new_neighbour_distance;
+                    maximal_distance = maximal_distance.max(new_neighbour_distance);
                     if let Some(parents) = &mut parents {
                         parents[neighbour_node_id as usize] = closest_node_id;
                     }
@@ -204,7 +209,7 @@ impl Graph {
                 }
             }
         }
-        (distances, parents)
+        (distances, parents, maximal_distance)
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
@@ -226,7 +231,7 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>), String> {
+    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         // If given, check if the given destination node ID exists in the graph
@@ -268,7 +273,7 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>), String> {
+    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         self.must_have_edge_weights()?;
@@ -324,10 +329,7 @@ impl Graph {
                     Some(false),
                     Some(false),
                 )
-                .0
-                .into_iter()
-                .filter(|distance| !ignore_infinity || *distance != NodeT::MAX)
-                .fold(0, NodeT::max)
+                .2
             })
             .reduce(|| 0, NodeT::max))
     }
@@ -365,10 +367,7 @@ impl Graph {
                     Some(false),
                     Some(false),
                 )
-                .0
-                .into_iter()
-                .filter(|distance| !ignore_infinity || *distance != f64::INFINITY)
-                .fold(f64::NEG_INFINITY, f64::max)
+                .2
             })
             .reduce(|| f64::NEG_INFINITY, f64::max))
     }
@@ -393,7 +392,7 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>), String> {
+    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
         self.get_unweighted_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
@@ -431,7 +430,7 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>), String> {
+    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
         self.get_weighted_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
