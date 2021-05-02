@@ -4,7 +4,7 @@ use roaring::RoaringBitmap;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "($self, src)"]
+    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, use_graph_weights, compute_predecessors, verbose)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -19,8 +19,6 @@ impl EnsmallenGraph {
     ///     Whether to use the graph weights as edge distances.
     /// compute_predecessors: bool = True,
     ///     Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
-    /// avoid_visits_above_root: bool,
-    ///     Whether to avoid computing the paths that include nodes with ID lower than root. By default false.
     /// verbose: bool = True,
     ///     Whether to show an indicative progress bar.
     ///
@@ -35,7 +33,6 @@ impl EnsmallenGraph {
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         use_graph_weights: Option<bool>,
         compute_predecessors: Option<bool>,
-        avoid_visits_above_root: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>)> {
         pe!(self.graph.get_dijkstra_from_node_ids(
@@ -47,7 +44,6 @@ impl EnsmallenGraph {
             }),
             use_graph_weights,
             compute_predecessors,
-            avoid_visits_above_root,
             verbose,
         ))
     }

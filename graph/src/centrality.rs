@@ -55,7 +55,6 @@ impl Graph {
                 None,
                 use_graph_weights,
                 Some(false),
-                None,
                 verbose,
             )
             .0
@@ -145,7 +144,6 @@ impl Graph {
             None,
             use_graph_weights,
             Some(false),
-            None,
             verbose,
         )
         .0
