@@ -137,15 +137,13 @@ impl Graph {
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
-    /// This version will treat the graph as unweighted.
-    ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Node ID root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `use_graph_weights`: bool - Whether to use the graph weights as edge distances.
-    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
-    /// * `verbose`: bool - Whether to show an indicative progress bar.
+    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the weights are to be used and the graph does not have weights.
@@ -237,8 +235,6 @@ impl Graph {
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
-    ///
-    /// This version will treat the graph as unweighted.
     ///
     /// # Arguments
     /// * `src_node_name`: &str - Node name root of the tree of minimum paths.
