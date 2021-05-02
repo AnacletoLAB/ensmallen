@@ -22,6 +22,29 @@ impl Graph {
         min_edge_id as usize..max_edge_id as usize
     }
 
+    /// Returns iterator over the edge weights that have given node ID as source.
+    ///
+    /// This method assumes that the given source node ID exists in the graph.
+    /// Additionally it assumes that the graph has weights.
+    /// If either one of the above assumptions are not true, it will panic.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The source node whose weights are to be returned.
+    ///
+    pub fn iter_unchecked_edge_weights_from_source_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> impl Iterator<Item = WeightT> + '_ {
+        self.weights
+            .as_ref()
+            .map(|weights| {
+                weights[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
+                    .iter()
+                    .cloned()
+            })
+            .unwrap()
+    }
+
     /// Returns range of the edge ids of edges starting from the given source node.
     ///
     /// # Arguments

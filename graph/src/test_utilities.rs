@@ -580,6 +580,11 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
+pub fn test_dijkstra(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+    //graph.get_dijkstra_from_node_ids(0)?;
+    Ok(())
+}
+
 pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
@@ -1414,6 +1419,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing random walks.");
     let _ = test_random_walks(graph, verbose);
+
+    warn!("Testing dijkstra.");
+    let _ = test_dijkstra(graph, verbose);
 
     warn!("Testing node centralities.");
     let _ = test_node_centralities(graph, verbose);
