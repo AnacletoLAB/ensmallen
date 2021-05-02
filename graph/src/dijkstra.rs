@@ -109,11 +109,6 @@ impl Graph {
                     break;
                 }
             }
-            // If the distance to the closest node is infinite, we have
-            // completed the exploration of the nodes connected to the source node.
-            if distances[closest_node_id as usize] == f64::INFINITY {
-                break;
-            }
             let weights_iterator: Box<dyn Iterator<Item = WeightT>> = if use_graph_weights {
                 Box::new(self.iter_unchecked_edge_weights_from_source_node_id(closest_node_id))
             } else {
