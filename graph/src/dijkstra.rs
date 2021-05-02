@@ -73,16 +73,16 @@ impl Graph {
         // - singleton with selfloops
         // - trap node
         // we have already completed the Dijkstra.
-        if self.is_unchecked_singleton_from_node_id(src_node_id) || self.is_singleton_with_selfloops_from_node_id(src_node_id) || self.is_unchecked_trap_node_from_node_id(src_node_id){
+        if self.is_unchecked_singleton_from_node_id(src_node_id)
+            || self.is_singleton_with_selfloops_from_node_id(src_node_id)
+            || self.is_unchecked_trap_node_from_node_id(src_node_id)
+        {
             return (distances, parents);
         }
 
-        let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<OrdFloat64>> = distances
-            .iter()
-            .enumerate()
-            .map(|(node_id, &distance)| {
-                (node_id as NodeT, Reverse(OrdFloat64(distance)))
-            }).collect();
+        let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<OrdFloat64>> =
+            KeyedPriorityQueue::new();
+        nodes_to_explore.push(src_node_id, Reverse(OrdFloat64(0.0)));
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
@@ -131,12 +131,10 @@ impl Graph {
                     if let Some(parents) = &mut parents {
                         parents[neighbour_node_id as usize] = closest_node_id;
                     }
-                    nodes_to_explore
-                        .set_priority(
-                            &neighbour_node_id,
-                            Reverse(OrdFloat64(new_neighbour_distance)),
-                        )
-                        .unwrap();
+                    nodes_to_explore.push(
+                        neighbour_node_id,
+                        Reverse(OrdFloat64(new_neighbour_distance)),
+                    );
                 }
             }
         }
