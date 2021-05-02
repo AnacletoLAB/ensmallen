@@ -32,28 +32,59 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     ///
-    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
-    pub fn get_unchecked_closeness_centrality_from_node_id(
+    pub fn get_unchecked_unweighted_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
-            .get_unchecked_dijkstra_from_node_ids(
+            .get_unchecked_unweighted_dijkstra_from_node_ids(
                 node_id,
                 None,
                 None,
-                use_graph_weights,
+                Some(false),
+                verbose,
+            )
+            .0
+            .into_iter()
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .map(u64::from)
+            .sum::<u64>() as f64
+    }
+
+    /// Return closeness centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    pub fn get_unchecked_weighted_closeness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> f64 {
+        let ignore_infinity = ignore_infinity.unwrap_or(true);
+        1.0 / self
+            .get_unchecked_weighted_dijkstra_from_node_ids(
+                node_id,
+                None,
+                None,
                 Some(false),
                 verbose,
             )
@@ -66,15 +97,13 @@ impl Graph {
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn par_iter_closeness_centrality(
+    pub fn par_iter_unweighted_closeness_centrality(
         &self,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> impl ParallelIterator<Item = f64> + '_ {
@@ -87,9 +116,38 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| {
-                self.get_unchecked_closeness_centrality_from_node_id(
+                self.get_unchecked_unweighted_closeness_centrality_from_node_id(
                     node_id,
-                    use_graph_weights,
+                    ignore_infinity,
+                    Some(false),
+                )
+            })
+    }
+
+    /// Return parallel iterator over closeness centrality for all nodes.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    pub fn par_iter_weighted_closeness_centrality(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> impl ParallelIterator<Item = f64> + '_ {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing closeness centrality",
+            self.get_nodes_number() as usize,
+        );
+        self.par_iter_node_ids()
+            .progress_with(pb)
+            .map(move |node_id| {
+                self.get_unchecked_weighted_closeness_centrality_from_node_id(
+                    node_id,
                     ignore_infinity,
                     Some(false),
                 )
@@ -99,19 +157,34 @@ impl Graph {
     /// Return closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(
+    pub fn get_unweighted_closeness_centrality(
         &self,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.par_iter_closeness_centrality(use_graph_weights, ignore_infinity, verbose)
+        self.par_iter_unweighted_closeness_centrality(ignore_infinity, verbose)
+            .collect()
+    }
+
+    /// Return closeness centrality for all nodes.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    pub fn get_weighted_closeness_centrality(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Vec<f64> {
+        self.par_iter_weighted_closeness_centrality(ignore_infinity, verbose)
             .collect()
     }
 
@@ -122,27 +195,57 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose harmonic centrality is to be computed.
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
-    pub fn get_unchecked_harmonic_centrality_from_node_id(
+    pub fn get_unchecked_unweighted_harmonic_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
-        self.get_unchecked_dijkstra_from_node_ids(
+        self.get_unchecked_unweighted_dijkstra_from_node_ids(
             node_id,
             None,
             None,
-            use_graph_weights,
+            Some(false),
+            verbose,
+        )
+        .0
+        .into_iter()
+        .filter(|&distance| !ignore_infinity || distance != NodeT::MAX && distance > 0)
+        .map(|distance| 1.0 / distance as f64)
+        .sum::<f64>()
+    }
+
+    /// Return harmonic centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose harmonic centrality is to be computed.
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    ///
+    pub fn get_unchecked_weighted_harmonic_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> f64 {
+        let ignore_infinity = ignore_infinity.unwrap_or(true);
+        self.get_unchecked_weighted_dijkstra_from_node_ids(
+            node_id,
+            None,
+            None,
             Some(false),
             verbose,
         )
@@ -158,15 +261,13 @@ impl Graph {
     /// Return parallel iterator over harmonic centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn par_iter_harmonic_centrality(
+    pub fn par_iter_unweighted_harmonic_centrality(
         &self,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> impl ParallelIterator<Item = f64> + '_ {
@@ -179,9 +280,38 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| {
-                self.get_unchecked_harmonic_centrality_from_node_id(
+                self.get_unchecked_unweighted_harmonic_centrality_from_node_id(
                     node_id,
-                    use_graph_weights,
+                    ignore_infinity,
+                    Some(false),
+                )
+            })
+    }
+
+    /// Return parallel iterator over harmonic centrality for all nodes.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    pub fn par_iter_weighted_harmonic_centrality(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> impl ParallelIterator<Item = f64> + '_ {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing harmonic centrality",
+            self.get_nodes_number() as usize,
+        );
+        self.par_iter_node_ids()
+            .progress_with(pb)
+            .map(move |node_id| {
+                self.get_unchecked_weighted_harmonic_centrality_from_node_id(
+                    node_id,
                     ignore_infinity,
                     Some(false),
                 )
@@ -191,19 +321,34 @@ impl Graph {
     /// Return harmonic centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_harmonic_centrality(
+    pub fn get_unweighted_harmonic_centrality(
         &self,
-        use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.par_iter_harmonic_centrality(use_graph_weights, ignore_infinity, verbose)
+        self.par_iter_unweighted_harmonic_centrality(ignore_infinity, verbose)
+            .collect()
+    }
+
+    /// Return harmonic centrality for all nodes.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    pub fn get_weighted_harmonic_centrality(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Vec<f64> {
+        self.par_iter_weighted_harmonic_centrality(ignore_infinity, verbose)
             .collect()
     }
 
@@ -216,7 +361,7 @@ impl Graph {
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     ///
-    /// /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
+    /// TODO: I think this method can be bettered for the undirected case.
     pub fn get_stress_centrality(
         &self,
         normalize: Option<bool>,
@@ -306,7 +451,7 @@ impl Graph {
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     ///
-    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
+    /// TODO: I think this method can be bettered for the undirected case.
     pub fn get_betweenness_centrality(
         &self,
         normalize: Option<bool>,
