@@ -170,7 +170,7 @@ impl EnsmallenGraph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<f64> {
+    ) -> PyResult<NodeT> {
         pe!(self.graph.get_unweighted_diameter(ignore_infinity, verbose))
     }
 
