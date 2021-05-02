@@ -35,6 +35,9 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     pub fn get_unchecked_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
@@ -64,6 +67,9 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     pub fn iter_closeness_centrality(
         &self,
         use_graph_weights: Option<bool>,
@@ -94,6 +100,9 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     pub fn get_closeness_centrality(
         &self,
         use_graph_weights: Option<bool>,
@@ -114,6 +123,9 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     pub fn get_unchecked_harmonic_centrality_from_node_id(
         &self,
         node_id: NodeT,
@@ -145,7 +157,10 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    pub fn iter_harmonic_centrality(
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    pub fn par_iter_harmonic_centrality(
         &self,
         use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
@@ -175,13 +190,16 @@ impl Graph {
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     pub fn get_harmonic_centrality(
         &self,
         use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.iter_harmonic_centrality(use_graph_weights, ignore_infinity, verbose)
+        self.par_iter_harmonic_centrality(use_graph_weights, ignore_infinity, verbose)
             .collect()
     }
 
