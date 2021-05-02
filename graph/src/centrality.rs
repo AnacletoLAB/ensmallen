@@ -70,7 +70,7 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn iter_closeness_centrality(
+    pub fn par_iter_closeness_centrality(
         &self,
         use_graph_weights: Option<bool>,
         ignore_infinity: Option<bool>,
@@ -109,7 +109,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.iter_closeness_centrality(use_graph_weights, ignore_infinity, verbose)
+        self.par_iter_closeness_centrality(use_graph_weights, ignore_infinity, verbose)
             .collect()
     }
 
