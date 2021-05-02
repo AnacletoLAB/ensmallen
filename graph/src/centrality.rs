@@ -361,7 +361,6 @@ impl Graph {
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     ///
-    /// TODO: I think this method can be bettered for the undirected case.
     pub fn get_stress_centrality(
         &self,
         normalize: Option<bool>,
@@ -375,7 +374,6 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let centralities: Vec<AtomicF64> =
             self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();
-        let factor = if self.is_directed() { 1.0 } else { 2.0 };
         let pb = get_loading_bar(verbose, "Computing stress centralities", nodes_number);
         self.par_iter_node_ids()
             .progress_with(pb)
@@ -421,11 +419,11 @@ impl Graph {
                                 shortest_path_counts[neighbour_node_id as usize] as f64
                                     * (1.0 + dependencies[current_node_id as usize]);
                         });
-                    if current_node_id != src_node_id {
-                        centralities[current_node_id as usize].fetch_add(
-                            dependencies[current_node_id as usize] / factor,
-                            Ordering::SeqCst,
-                        );
+                    if current_node_id != src_node_id
+                        && (self.is_directed() || current_node_id > src_node_id)
+                    {
+                        centralities[current_node_id as usize]
+                            .fetch_add(dependencies[current_node_id as usize], Ordering::SeqCst);
                     }
                 });
             });
@@ -465,7 +463,6 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let centralities: Vec<AtomicF64> =
             self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();
-        let factor = if self.is_directed() { 1.0 } else { 2.0 };
         let pb = get_loading_bar(verbose, "Computing betweennes centralities", nodes_number);
         self.par_iter_node_ids()
             .progress_with(pb)
@@ -512,11 +509,11 @@ impl Graph {
                                     / shortest_path_counts[current_node_id as usize] as f64
                                     * (1.0 + dependencies[current_node_id as usize]);
                         });
-                    if current_node_id != src_node_id {
-                        centralities[current_node_id as usize].fetch_add(
-                            dependencies[current_node_id as usize] / factor,
-                            Ordering::SeqCst,
-                        );
+                    if current_node_id != src_node_id
+                        && (self.is_directed() || current_node_id > src_node_id)
+                    {
+                        centralities[current_node_id as usize]
+                            .fetch_add(dependencies[current_node_id as usize], Ordering::SeqCst);
                     }
                 });
             });
