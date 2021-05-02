@@ -68,13 +68,21 @@ impl Graph {
         let mut distances: Vec<f64> = vec![f64::INFINITY; nodes_number];
         distances[src_node_id as usize] = 0.0;
 
-        let mut nodes_to_explore = KeyedPriorityQueue::with_capacity(nodes_number);
-        distances
+        // If the given root node is either a:
+        // - singleton
+        // - singleton with selfloops
+        // - trap node
+        // we have already completed the Dijkstra.
+        if self.is_unchecked_singleton_from_node_id(src_node_id) || self.is_singleton_with_selfloops_from_node_id(src_node_id) || self.is_unchecked_trap_node_from_node_id(src_node_id){
+            return (distances, parents);
+        }
+
+        let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<OrdFloat64>> = distances
             .iter()
             .enumerate()
-            .for_each(|(node_id, &distance)| {
-                nodes_to_explore.push(node_id as NodeT, Reverse(OrdFloat64(distance)));
-            });
+            .map(|(node_id, &distance)| {
+                (node_id as NodeT, Reverse(OrdFloat64(distance)))
+            }).collect();
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
