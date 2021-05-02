@@ -38,6 +38,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
     pub fn get_unchecked_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
@@ -53,6 +55,7 @@ impl Graph {
                 None,
                 use_graph_weights,
                 Some(false),
+                None,
                 verbose,
             )
             .0
@@ -126,6 +129,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    ///
+    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
     pub fn get_unchecked_harmonic_centrality_from_node_id(
         &self,
         node_id: NodeT,
@@ -140,6 +145,7 @@ impl Graph {
             None,
             use_graph_weights,
             Some(false),
+            None,
             verbose,
         )
         .0
@@ -211,6 +217,8 @@ impl Graph {
     ///
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
+    ///
+    /// /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
     pub fn get_stress_centrality(
         &self,
         normalize: Option<bool>,
@@ -299,6 +307,8 @@ impl Graph {
     ///
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
+    ///
+    /// TODO: this could be possibly sped up when working with undirected graphs by using properly the avoid_visits_above_root flag.
     pub fn get_betweenness_centrality(
         &self,
         normalize: Option<bool>,

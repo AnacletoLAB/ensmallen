@@ -46,6 +46,7 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `use_graph_weights`: bool - Whether to use the graph weights as edge distances.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `avoid_visits_above_root`: bool - Whether to avoid computing the paths that include nodes with ID lower than root. By default false.
     /// * `verbose`: bool - Whether to show an indicative progress bar.
     pub fn get_unchecked_dijkstra_from_node_ids(
         &self,
@@ -54,10 +55,12 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         use_graph_weights: Option<bool>,
         compute_predecessors: Option<bool>,
+        avoid_visits_above_root: Option<bool>,
         verbose: Option<bool>,
     ) -> (Vec<f64>, Option<Vec<NodeT>>) {
         let use_graph_weights = use_graph_weights.unwrap_or(false);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
+        let avoid_visits_above_root = avoid_visits_above_root.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
@@ -123,6 +126,15 @@ impl Graph {
                 .iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id)
                 .zip(weights_iterator)
             {
+                // If the user has asked to avoid to compute the paths that go
+                // downwards from the current root node ID, which is a usefull
+                // thing when computing for instance the diameter of the graph
+                // since the path X is surely identified from the other direction
+                // if the graph is undirected (the same DOES NOT work for directed graphs)
+                // we can avoid a considerable amount of iterations.
+                if avoid_visits_above_root && neighbour_node_id <= src_node_id {
+                    continue;
+                }
                 // Since we are not taking in consideration the weights
                 // all the node neighbours have distance 1.
                 let new_neighbour_distance = distances[closest_node_id as usize] + weight as f64;
@@ -149,6 +161,7 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `avoid_visits_above_root`: bool - Whether to avoid computing the paths that include nodes with ID lower than root. By default false.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
@@ -162,6 +175,7 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         use_graph_weights: Option<bool>,
         compute_predecessors: Option<bool>,
+        avoid_visits_above_root: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<f64>, Option<Vec<NodeT>>), String> {
         // Check if the given root exists in the graph
@@ -187,6 +201,7 @@ impl Graph {
             maybe_dst_node_ids,
             use_graph_weights,
             compute_predecessors,
+            avoid_visits_above_root,
             verbose,
         ))
     }
@@ -230,6 +245,7 @@ impl Graph {
                     None,
                     use_graph_weights,
                     Some(false),
+                    Some(!self.is_directed()),
                     Some(false),
                 )
                 .0
@@ -248,6 +264,7 @@ impl Graph {
     /// * `maybe_dst_node_names`: Option<Vec<&str>> - Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `use_graph_weights`: Option<bool> - Whether to use the graph weights as edge distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `avoid_visits_above_root`: bool - Whether to avoid computing the paths that include nodes with ID lower than root. By default false.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
@@ -261,6 +278,7 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         use_graph_weights: Option<bool>,
         compute_predecessors: Option<bool>,
+        avoid_visits_above_root: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<f64>, Option<Vec<NodeT>>), String> {
         self.get_dijkstra_from_node_ids(
@@ -277,6 +295,7 @@ impl Graph {
             })?,
             use_graph_weights,
             compute_predecessors,
+            avoid_visits_above_root,
             verbose,
         )
     }
