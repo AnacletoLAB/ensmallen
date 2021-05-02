@@ -331,6 +331,7 @@ impl Graph {
                 )
                 .2
             })
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
             .reduce(|| 0, NodeT::max))
     }
 
@@ -369,6 +370,7 @@ impl Graph {
                 )
                 .2
             })
+            .filter(|&distance| !ignore_infinity || distance != f64::INFINITY)
             .reduce(|| f64::NEG_INFINITY, f64::max))
     }
 
