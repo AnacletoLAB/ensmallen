@@ -5,6 +5,7 @@ use keyed_priority_queue::KeyedPriorityQueue;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
+use std::collections::VecDeque;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
 // use std::collections::BinaryHeap;
 
@@ -127,12 +128,13 @@ impl Graph {
             return (distances, parents, NodeT::MAX);
         }
 
-        let mut nodes_to_explore = vec![(src_node_id, 0)];
+        let mut nodes_to_explore = VecDeque::new();
+        nodes_to_explore.push_back((src_node_id, 0));
         let mut maximal_distance = 0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
-        while let Some((node_id, depth)) = nodes_to_explore.pop() {
+        while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // We increase the loading bar by one.
             pb.inc(1);
 
@@ -185,7 +187,7 @@ impl Graph {
                 };
                 if !is_node_visited {
                     maximal_distance = maximal_distance.max(new_neighbour_distance);
-                    nodes_to_explore.push((neighbour_node_id, new_neighbour_distance));
+                    nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                 }
             }
         }
