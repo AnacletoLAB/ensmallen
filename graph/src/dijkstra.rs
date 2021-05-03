@@ -5,6 +5,7 @@ use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
+use std::collections::BinaryHeap;
 
 #[derive(Debug, Copy, Clone)]
 struct OrdFloat64(f64);
@@ -34,6 +35,34 @@ impl Ord for OrdFloat64 {
             } else {
                 Ordering::Greater
             })
+    }
+}
+
+#[derive(Copy, Clone, Eq, PartialEq)]
+struct State {
+    distance: NodeT,
+    node_id: NodeT,
+}
+
+// The priority queue depends on `Ord`.
+// Explicitly implement the trait so the queue becomes a min-heap
+// instead of a max-heap.
+impl Ord for State {
+    fn cmp(&self, other: &Self) -> Ordering {
+        // Notice that the we flip the ordering on distances.
+        // In case of a tie we compare node_ids - this step is necessary
+        // to make implementations of `PartialEq` and `Ord` consistent.
+        other
+            .distance
+            .cmp(&self.distance)
+            .then_with(|| self.node_id.cmp(&other.node_id))
+    }
+}
+
+// `PartialOrd` needs to be implemented as well.
+impl PartialOrd for State {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
     }
 }
 
@@ -77,28 +106,28 @@ impl Graph {
             return (distances, parents, NodeT::MAX);
         }
 
-        let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<NodeT>> =
-            KeyedPriorityQueue::new();
-        nodes_to_explore.push(src_node_id, Reverse(0));
+        let mut nodes_to_explore = BinaryHeap::new();
+        nodes_to_explore.push(State {
+            distance: 0,
+            node_id: src_node_id,
+        });
 
         let mut maximal_distance = 0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
-        while !nodes_to_explore.is_empty() {
-            // TODO: Use the distance that is returned from the queue instead of getting the one from the vector.
-            let (closest_node_id, _) = nodes_to_explore.pop().unwrap();
+        while let Some(State { distance, node_id }) = nodes_to_explore.pop() {
             // We increase the loading bar by one.
             pb.inc(1);
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
-            if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id) {
+            if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
                 break;
             }
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(closest_node_id);
+                dst_node_ids.remove(node_id);
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.
@@ -107,18 +136,21 @@ impl Graph {
             }
 
             for neighbour_node_id in
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id)
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
                 // Since we are not taking in consideration the weights
                 // all the node neighbours have distance 1.
-                let new_neighbour_distance = distances[closest_node_id as usize] + 1;
+                let new_neighbour_distance = distance + 1;
                 if new_neighbour_distance < distances[neighbour_node_id as usize] {
                     distances[neighbour_node_id as usize] = new_neighbour_distance;
                     maximal_distance = maximal_distance.max(new_neighbour_distance);
                     if let Some(parents) = &mut parents {
-                        parents[neighbour_node_id as usize] = closest_node_id;
+                        parents[neighbour_node_id as usize] = node_id;
                     }
-                    nodes_to_explore.push(neighbour_node_id, Reverse(new_neighbour_distance));
+                    nodes_to_explore.push(State {
+                        distance: new_neighbour_distance,
+                        node_id: neighbour_node_id,
+                    });
                 }
             }
         }
@@ -171,9 +203,7 @@ impl Graph {
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
-        while !nodes_to_explore.is_empty() {
-            // TODO: Use the distance that is returned from the queue instead of getting the one from the vector.
-            let (closest_node_id, _) = nodes_to_explore.pop().unwrap();
+        while let Some((closest_node_id, closest_distance)) = nodes_to_explore.pop() {
             // We increase the loading bar by one.
             pb.inc(1);
             // If the closest node is the optional destination node, we have
