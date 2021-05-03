@@ -108,11 +108,11 @@ impl Graph {
             None
         };
 
-        let mut visited: Option<_> = if parents.is_some() || distances.is_some() {
+        let mut visited: Option<Vec<bool>> = if parents.is_some() || distances.is_some() {
             None
         } else {
-            let mut visited = bitvec![Lsb0, u8; 0; nodes_number as usize];
-            visited.insert(src_node_id as usize, true);
+            let mut visited = vec![false; nodes_number];
+            visited[src_node_id as usize] = true;
             Some(visited)
         };
 
@@ -171,7 +171,7 @@ impl Graph {
                 };
                 if !is_node_visited {
                     if let Some(visited) = &mut visited {
-                        visited.insert(neighbour_node_id as usize, true);
+                        visited[src_node_id as usize] = true;
                     }
                     if let Some(distances) = &mut distances {
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
