@@ -5,8 +5,8 @@ use keyed_priority_queue::KeyedPriorityQueue;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
-use std::collections::VecDeque;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
+use std::collections::VecDeque;
 // use std::collections::BinaryHeap;
 
 #[derive(Debug, Copy, Clone)]
@@ -168,24 +168,20 @@ impl Graph {
                         is_node_visited
                     }
                     (Some(distances), _, None) => {
-                        let is_node_visited = distances[neighbour_node_id as usize] != NodeT::MAX;
-                        if !is_node_visited {
-                            distances[neighbour_node_id as usize] = new_neighbour_distance;
-                        }
-                        is_node_visited
+                        distances[neighbour_node_id as usize] != NodeT::MAX
                     }
-                    (None, Some(parents), None) => {
-                        let is_node_visited = parents[neighbour_node_id as usize].is_some();
-                        if !is_node_visited {
-                            parents[neighbour_node_id as usize] = Some(node_id);
-                        }
-                        is_node_visited
-                    }
+                    (None, Some(parents), None) => parents[neighbour_node_id as usize].is_some(),
                     _ => {
                         unreachable!("Either the distances, parents or visited must surely exist.")
                     }
                 };
                 if !is_node_visited {
+                    if let Some(distances) = &mut distances {
+                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+                    }
+                    if let Some(parents) = &mut parents {
+                        parents[neighbour_node_id as usize] = Some(node_id);
+                    }
                     maximal_distance = maximal_distance.max(new_neighbour_distance);
                     nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                 }
