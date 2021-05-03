@@ -125,7 +125,7 @@ impl Graph {
             return (distances, parents, NodeT::MAX, NodeT::MAX);
         }
 
-        let mut was_visited = |neighbour_node_id, new_neighbour_distance, node_id| match (
+        let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
             &mut distances,
             &mut parents,
             &mut visited,
@@ -156,15 +156,10 @@ impl Graph {
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
-        // We are counting the number of elements in the queue because the
-        // internal .len() method does a lot more stuff than it is needed.
-        let mut elements_in_queue: NodeT = 1;
         let mut maximal_distance = 0;
         let mut total_distance = 0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
-            // Reduce number of elements in queue
-            elements_in_queue -= 1;
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -184,16 +179,19 @@ impl Graph {
 
             total_distance += depth;
             let new_neighbour_distance = depth + 1;
-            let queue_length = elements_in_queue;
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                if !was_visited(neighbour_node_id, new_neighbour_distance, node_id) {
+                if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
+                    let mut previous_node_in_chain = node_id;
                     let mut next_node_in_chain = neighbour_node_id;
                     let mut new_neighbour_chain_distance = new_neighbour_distance;
+                    let mut should_push = true;
                     // We mark all the nodes in the chain of the tendril as visited,
                     // as no node on a tendril chain can be the source of the largest path.
-                    while self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2 {
+                    while !self.is_directed()
+                        && self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2
+                    {
                         // In a chain we expect the edge that goes back towards already visited
                         // nodes and the other edge that explores the yet unviseted edges.
                         // Since this might be a multigraph or the graph consists of a simple
@@ -203,25 +201,26 @@ impl Graph {
                                 next_node_in_chain,
                             )
                             .find(|&node_id| {
-                                !was_visited(
+                                to_be_added(
                                     node_id,
                                     new_neighbour_chain_distance,
-                                    next_node_in_chain,
+                                    previous_node_in_chain,
                                 )
                             })
                         {
+                            previous_node_in_chain = next_node_in_chain;
                             next_node_in_chain = new_node_id;
                             new_neighbour_chain_distance += 1;
                         } else {
+                            should_push = false;
                             break;
                         }
                     }
-                    nodes_to_explore.push_back((next_node_in_chain, new_neighbour_distance));
-                    elements_in_queue += 1;
+                    if should_push {
+                        maximal_distance = maximal_distance.max(new_neighbour_chain_distance);
+                    }
+                    nodes_to_explore.push_back((next_node_in_chain, new_neighbour_chain_distance));
                 }
-            }
-            if queue_length < elements_in_queue {
-                maximal_distance = maximal_distance.max(new_neighbour_distance);
             }
         }
         (distances, parents, maximal_distance, total_distance)
@@ -506,6 +505,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
+        self.must_have_edge_weights()?;
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
