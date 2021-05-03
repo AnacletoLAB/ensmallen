@@ -128,7 +128,7 @@ impl Graph {
             return (distances, parents, NodeT::MAX);
         }
 
-        let mut nodes_to_explore = VecDeque::new();
+        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
         let mut maximal_distance = 0;
 
