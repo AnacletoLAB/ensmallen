@@ -1,11 +1,12 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use keyed_priority_queue::KeyedPriorityQueue;
-use rayon::iter::ParallelIterator;
+use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
+use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
-use std::collections::VecDeque;
+use std::collections::{HashSet, VecDeque};
 // use std::collections::BinaryHeap;
 
 #[derive(Debug, Copy, Clone)]
@@ -387,6 +388,72 @@ impl Graph {
                     Some(false),
                 )
                 .2
+            })
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .reduce(|| 0, NodeT::max))
+    }
+
+    /// Returns diameter of the graph.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    /// # Raises
+    /// * If the graph does not contain nodes.
+    /// * If the graph does not have weights and weights have been requested.
+    pub fn get_experimental_unweighted_diameter(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Result<NodeT, String> {
+        if self.is_directed(){
+            return self.get_unweighted_diameter(ignore_infinity, verbose);
+        }
+        self.must_have_nodes()?;
+        let ignore_infinity = ignore_infinity.unwrap_or(true);
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing approximated unweighted diameter",
+            self.get_nodes_number() as usize,
+        );
+        let components = self.get_node_connected_component_ids(verbose);
+        let node_degrees = self.par_iter_node_degrees().collect::<Vec<NodeT>>();
+        let components_with_tendrils = components
+            .par_iter()
+            .cloned()
+            .zip(node_degrees.par_iter().cloned())
+            .filter_map(|(component_id, degree)| {
+                if degree == 1 {
+                    Some(component_id)
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<NodeT>>()
+            .into_iter()
+            .collect::<HashSet<NodeT>>();
+        Ok(self
+            .par_iter_node_ids()
+            .zip(components.into_par_iter())
+            .zip(node_degrees.par_iter().cloned())
+            .progress_with(pb)
+            .filter_map(|((node_id, component_id), degree)| {
+                if components_with_tendrils.contains(&component_id) && degree != 1 {
+                    None
+                } else {
+                    Some(
+                        self.get_unchecked_breath_first_search(
+                            node_id,
+                            None,
+                            None,
+                            Some(false),
+                            Some(false),
+                        )
+                        .2,
+                    )
+                }
             })
             .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
             .reduce(|| 0, NodeT::max))

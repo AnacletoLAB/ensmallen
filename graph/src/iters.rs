@@ -98,7 +98,7 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph.
-    pub fn par_iter_node_ids(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+    pub fn par_iter_node_ids(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number()).into_par_iter()
     }
 
@@ -109,7 +109,7 @@ impl Graph {
     }
 
     /// Return iterator on the node degrees of the graph.
-    pub fn par_iter_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+    pub fn par_iter_node_degrees(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids()
             .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
     }
