@@ -147,32 +147,39 @@ impl Graph {
             }
 
             let new_neighbour_distance = depth + 1;
+            let queue_length = nodes_to_explore.len();
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                let is_node_visited = match (&mut distances, &mut parents, &mut visited) {
-                    (None, None, Some(visited)) => visited[neighbour_node_id as usize],
-                    (Some(distances), _, None) => {
-                        distances[neighbour_node_id as usize] != NodeT::MAX
+                match (&mut distances, &mut parents, &mut visited) {
+                    (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
+                            visited[neighbour_node_id as usize] = true;
+                            nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
-                    (None, Some(parents), None) => parents[neighbour_node_id as usize].is_some(),
-                    _ => {
-                        unreachable!("Either the distances, parents or visited must surely exist.")
-                    }
-                };
-                if !is_node_visited {
-                    if let Some(visited) = &mut visited {
-                        visited[neighbour_node_id as usize] = true;
-                    }
-                    if let Some(distances) = &mut distances {
+                    (Some(distances), None, None)
+                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
+                    {
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
-                    if let Some(parents) = &mut parents {
+                    (None, Some(parents), None)
+                        if parents[neighbour_node_id as usize].is_none() =>
+                    {
                         parents[neighbour_node_id as usize] = Some(node_id);
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
-                    maximal_distance = maximal_distance.max(new_neighbour_distance);
-                    nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                }
+                    (Some(distances), Some(parents), None)
+                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
+                    {
+                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+                        parents[neighbour_node_id as usize] = Some(node_id);
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    }
+                    _ => {}
+                };
+            }
+            if queue_length < nodes_to_explore.len() {
+                maximal_distance = maximal_distance.max(new_neighbour_distance);
             }
         }
         (distances, parents, maximal_distance)
@@ -402,13 +409,8 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(|node_id| {
-                self.get_unchecked_dijkstra_from_node_ids(
-                    node_id,
-                    None,
-                    None,
-                    Some(false),
-                )
-                .2
+                self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
+                    .2
             })
             .filter(|&distance| !ignore_infinity || distance != f64::INFINITY)
             .reduce(|| f64::NEG_INFINITY, f64::max))
