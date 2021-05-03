@@ -128,7 +128,7 @@ impl Graph {
         nodes_to_explore.push_back((src_node_id, 0));
         // We are counting the number of elements in the queue because the
         // internal .len() method does a lot more stuff than it is needed.
-        let mut elements_in_queue = 1;
+        let mut elements_in_queue: NodeT = 1;
         let mut maximal_distance = 0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
