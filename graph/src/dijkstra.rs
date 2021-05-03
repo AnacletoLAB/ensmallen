@@ -92,7 +92,9 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
 
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
-            Some(vec![None; nodes_number])
+            let mut parents = vec![None; nodes_number];
+            parents[src_node_id as usize] = Some(src_node_id);
+            Some(parents)
         } else {
             None
         };
@@ -108,7 +110,9 @@ impl Graph {
         let mut visited: Option<_> = if parents.is_some() || distances.is_some() {
             None
         } else {
-            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
+            let mut visited = bitvec![Lsb0, u8; 0; nodes_number as usize];
+            visited.insert(src_node_id as usize, true);
+            Some(visited)
         };
 
         // If the given root node is either a:
@@ -123,9 +127,7 @@ impl Graph {
             return (distances, parents, NodeT::MAX);
         }
 
-        let mut nodes_to_explore = Vec::with_capacity(nodes_number);
-        nodes_to_explore.push((src_node_id, 0));
-
+        let mut nodes_to_explore = vec![(src_node_id, 0)];
         let mut maximal_distance = 0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
