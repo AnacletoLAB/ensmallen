@@ -178,26 +178,6 @@ impl EnsmallenGraph {
     /// # Raises
     /// * If the graph does not contain nodes.
     /// * If the graph does not have weights and weights have been requested.
-    pub fn get_experimental_unweighted_diameter(
-        &self,
-        ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<NodeT> {
-        pe!(self.graph.get_experimental_unweighted_diameter(ignore_infinity, verbose))
-    }
-
-    /// Returns diameter of the graph.
-    ///
-    /// # Arguments
-    ///     Whether to use the graph weights as edge distances. By default, false.
-    /// ignore_infinity: bool = True,
-    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
-    /// verbose: bool = True,
-    ///     Whether to show a loading bar.
-    ///
-    /// # Raises
-    /// * If the graph does not contain nodes.
-    /// * If the graph does not have weights and weights have been requested.
     pub fn get_weighted_diameter(
         &self,
         ignore_infinity: Option<bool>,
