@@ -4,7 +4,7 @@ use roaring::RoaringBitmap;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_distances, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_distances, compute_predecessors)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -19,8 +19,6 @@ impl EnsmallenGraph {
     ///     Whether to compute the vector of distances.
     /// compute_predecessors: bool = True,
     ///     Whether to compute the vector of predecessors.
-    /// verbose: bool = True,
-    ///     Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
@@ -32,7 +30,6 @@ impl EnsmallenGraph {
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT)> {
         pe!(self.graph.get_breath_first_search_from_node_ids(
             src_node_id,
@@ -43,11 +40,10 @@ impl EnsmallenGraph {
             }),
             compute_distances,
             compute_predecessors,
-            verbose,
         ))
     }
 
-    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_distances, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_distances, compute_predecessors)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// Parameters
@@ -62,8 +58,6 @@ impl EnsmallenGraph {
     ///     Whether to compute the vector of distances.
     /// compute_predecessors: bool = True,
     ///     Whether to compute the vector of predecessors.
-    /// verbose: bool = True,
-    ///     Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the given source node name does not exist in the current graph.
@@ -75,7 +69,6 @@ impl EnsmallenGraph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT)> {
         pe!(self.graph.get_breath_first_search_from_node_names(
             src_node_name,
@@ -83,11 +76,10 @@ impl EnsmallenGraph {
             maybe_dst_node_names,
             compute_distances,
             compute_predecessors,
-            verbose,
         ))
     }
 
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -100,8 +92,6 @@ impl EnsmallenGraph {
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// compute_predecessors: bool = True,
     ///     Whether to compute the vector of predecessors.
-    /// verbose: bool = True,
-    ///     Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
@@ -112,7 +102,6 @@ impl EnsmallenGraph {
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
         pe!(self.graph.get_dijkstra_from_node_ids(
             src_node_id,
@@ -122,11 +111,10 @@ impl EnsmallenGraph {
                 RoaringBitmap::from_sorted_iter(dst_node_ids)
             }),
             compute_predecessors,
-            verbose,
         ))
     }
 
-    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// Parameters
@@ -139,8 +127,6 @@ impl EnsmallenGraph {
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// compute_predecessors: bool = True,
     ///     Whether to compute the vector of predecessors.
-    /// verbose: bool = True,
-    ///     Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the given source node name does not exist in the current graph.
@@ -151,14 +137,12 @@ impl EnsmallenGraph {
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
         pe!(self.graph.get_dijkstra_from_node_names(
             src_node_name,
             maybe_dst_node_name,
             maybe_dst_node_names,
             compute_predecessors,
-            verbose,
         ))
     }
 

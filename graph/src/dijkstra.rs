@@ -1,5 +1,4 @@
 use super::*;
-use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use keyed_priority_queue::KeyedPriorityQueue;
 use rayon::iter::ParallelIterator;
@@ -77,7 +76,6 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     pub fn get_unchecked_breath_first_search(
         &self,
         src_node_id: NodeT,
@@ -85,11 +83,9 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> (Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT) {
         let compute_distances = compute_distances.unwrap_or(true);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
 
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
@@ -132,12 +128,7 @@ impl Graph {
         nodes_to_explore.push_back((src_node_id, 0));
         let mut maximal_distance = 0;
 
-        let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
-
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
-            // We increase the loading bar by one.
-            pb.inc(1);
-
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -193,19 +184,15 @@ impl Graph {
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
-    /// * `verbose`: bool - Whether to show an indicative progress bar.
     pub fn get_unchecked_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> (Vec<f64>, Option<Vec<NodeT>>, f64) {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
             Some(vec![0; nodes_number])
@@ -232,11 +219,7 @@ impl Graph {
         nodes_to_explore.push(src_node_id, Reverse(OrdFloat64(0.0)));
         let mut maximal_distance: f64 = 0.0;
 
-        let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
-
         while let Some((closest_node_id, closest_distance)) = nodes_to_explore.pop() {
-            // We increase the loading bar by one.
-            pb.inc(1);
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id) {
@@ -281,7 +264,6 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
@@ -293,7 +275,6 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
@@ -313,7 +294,6 @@ impl Graph {
             maybe_dst_node_ids,
             compute_distances,
             compute_predecessors,
-            verbose,
         ))
     }
 
@@ -324,7 +304,6 @@ impl Graph {
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the weights are to be used and the graph does not have weights.
@@ -336,7 +315,6 @@ impl Graph {
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
@@ -356,7 +334,6 @@ impl Graph {
             maybe_dst_node_id,
             maybe_dst_node_ids,
             compute_predecessors,
-            verbose,
         ))
     }
 
@@ -390,7 +367,6 @@ impl Graph {
                     node_id,
                     None,
                     None,
-                    Some(false),
                     Some(false),
                     Some(false),
                 )
@@ -431,7 +407,6 @@ impl Graph {
                     None,
                     None,
                     Some(false),
-                    Some(false),
                 )
                 .2
             })
@@ -447,7 +422,6 @@ impl Graph {
     /// * `maybe_dst_node_names`: Option<Vec<&str>> - Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the weights are to be used and the graph does not have weights.
@@ -460,7 +434,6 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT), String> {
         Ok(self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
@@ -476,7 +449,6 @@ impl Graph {
             })?,
             compute_distances,
             compute_predecessors,
-            verbose,
         ))
     }
 
@@ -487,7 +459,6 @@ impl Graph {
     /// * `maybe_dst_node_name`: Option<&str> - Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_names`: Option<Vec<&str>> - Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
     /// * If the weights are to be used and the graph does not have weights.
@@ -499,7 +470,6 @@ impl Graph {
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
         self.get_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
@@ -514,7 +484,6 @@ impl Graph {
                 Ok(Some(bitmap))
             })?,
             compute_predecessors,
-            verbose,
         )
     }
 }

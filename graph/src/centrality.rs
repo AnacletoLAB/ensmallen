@@ -42,7 +42,6 @@ impl Graph {
         &self,
         node_id: NodeT,
         ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
@@ -52,7 +51,6 @@ impl Graph {
                 None,
                 Some(true),
                 Some(false),
-                verbose,
             )
             .0
             .unwrap_unchecked()
@@ -70,7 +68,6 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
@@ -79,11 +76,10 @@ impl Graph {
         &self,
         node_id: NodeT,
         ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
-            .get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false), verbose)
+            .get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .0
             .into_iter()
             .filter(|&distance| !ignore_infinity || distance != f64::INFINITY)
@@ -115,7 +111,6 @@ impl Graph {
                 self.get_unchecked_unweighted_closeness_centrality_from_node_id(
                     node_id,
                     ignore_infinity,
-                    Some(false),
                 )
             })
     }
@@ -145,7 +140,6 @@ impl Graph {
                 self.get_unchecked_weighted_closeness_centrality_from_node_id(
                     node_id,
                     ignore_infinity,
-                    Some(false),
                 )
             })
     }
@@ -192,7 +186,6 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose harmonic centrality is to be computed.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
@@ -201,7 +194,6 @@ impl Graph {
         &self,
         node_id: NodeT,
         ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         self.get_unchecked_breath_first_search(
@@ -210,7 +202,6 @@ impl Graph {
             None,
             Some(true),
             Some(false),
-            verbose,
         )
         .0
         .unwrap_unchecked()
@@ -228,7 +219,6 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose harmonic centrality is to be computed.
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
@@ -237,10 +227,9 @@ impl Graph {
         &self,
         node_id: NodeT,
         ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
-        self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false), verbose)
+        self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .0
             .into_iter()
             .filter(|&distance| {
@@ -275,7 +264,6 @@ impl Graph {
                 self.get_unchecked_unweighted_harmonic_centrality_from_node_id(
                     node_id,
                     ignore_infinity,
-                    Some(false),
                 )
             })
     }
@@ -305,7 +293,6 @@ impl Graph {
                 self.get_unchecked_weighted_harmonic_centrality_from_node_id(
                     node_id,
                     ignore_infinity,
-                    Some(false),
                 )
             })
     }
