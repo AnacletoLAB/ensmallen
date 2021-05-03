@@ -181,12 +181,11 @@ impl Graph {
             let new_neighbour_distance = depth + 1;
 
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .filter(|&neighbour_node_id| {
-                    to_be_added(neighbour_node_id, new_neighbour_distance, node_id)
-                })
                 .for_each(|neighbour_node_id| {
-                    maximal_distance = maximal_distance.max(neighbour_node_id);
-                    nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
+                        maximal_distance = maximal_distance.max(neighbour_node_id);
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    }
                 });
         }
         (distances, parents, maximal_distance, total_distance)
