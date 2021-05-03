@@ -1,12 +1,12 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use keyed_priority_queue::KeyedPriorityQueue;
-use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
-use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
-use std::collections::{HashSet, VecDeque};
+use std::collections::VecDeque;
 // use std::collections::BinaryHeap;
 
 #[derive(Debug, Copy, Clone)]
@@ -125,6 +125,35 @@ impl Graph {
             return (distances, parents, NodeT::MAX, NodeT::MAX);
         }
 
+        let mut was_visited = |neighbour_node_id, new_neighbour_distance, node_id| match (
+            &mut distances,
+            &mut parents,
+            &mut visited,
+        ) {
+            (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
+                visited[neighbour_node_id as usize] = true;
+                true
+            }
+            (Some(distances), None, None)
+                if distances[neighbour_node_id as usize] == NodeT::MAX =>
+            {
+                distances[neighbour_node_id as usize] = new_neighbour_distance;
+                true
+            }
+            (None, Some(parents), None) if parents[neighbour_node_id as usize].is_none() => {
+                parents[neighbour_node_id as usize] = Some(node_id);
+                true
+            }
+            (Some(distances), Some(parents), None)
+                if distances[neighbour_node_id as usize] == NodeT::MAX =>
+            {
+                distances[neighbour_node_id as usize] = new_neighbour_distance;
+                parents[neighbour_node_id as usize] = Some(node_id);
+                true
+            }
+            _ => false,
+        };
+
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
         // We are counting the number of elements in the queue because the
@@ -159,36 +188,32 @@ impl Graph {
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                match (&mut distances, &mut parents, &mut visited) {
-                    (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
-                        visited[neighbour_node_id as usize] = true;
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                        elements_in_queue += 1;
-                    }
-                    (Some(distances), None, None)
-                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
-                    {
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                        elements_in_queue += 1;
-                    }
-                    (None, Some(parents), None)
-                        if parents[neighbour_node_id as usize].is_none() =>
-                    {
-                        parents[neighbour_node_id as usize] = Some(node_id);
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                        elements_in_queue += 1;
-                    }
-                    (Some(distances), Some(parents), None)
-                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
-                    {
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
-                        parents[neighbour_node_id as usize] = Some(node_id);
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                        elements_in_queue += 1;
-                    }
-                    _ => {}
-                };
+                if !was_visited(neighbour_node_id, new_neighbour_distance, node_id) {
+                    let mut next_node_in_chain = neighbour_node_id;
+                    let mut new_neighbour_chain_distance = new_neighbour_distance;
+                    // We mark all the nodes in the chain of the tendril as visited,
+                    // as no node on a tendril chain can be the source of the largest path.
+                    while self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2 {
+                        // In a chain we expect the edge that goes back towards already visited
+                        // nodes and the other edge that explores the yet unviseted edges.
+                        // Since this might be a multigraph or the graph consists of a simple
+                        // chain, we may find ourselves with an empty iterator.
+                        if let Some(new_node_id) = self
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                next_node_in_chain,
+                            )
+                            .filter(|&node_id| !was_visited(node_id, new_neighbour_chain_distance, next_node_in_chain))
+                            .next()
+                        {
+                            next_node_in_chain = new_node_id;
+                            new_neighbour_chain_distance += 1;
+                        } else {
+                            break;
+                        }
+                    } 
+                    nodes_to_explore.push_back((next_node_in_chain, new_neighbour_distance));
+                    elements_in_queue += 1;
+                }
             }
             if queue_length < elements_in_queue {
                 maximal_distance = maximal_distance.max(new_neighbour_distance);
@@ -373,14 +398,74 @@ impl Graph {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
+
+        let (already_visited, max_tendrils) = if !self.is_directed() {
+            let pb_tendrils = get_loading_bar(
+                verbose,
+                "Preprocessing tendrils diameter",
+                self.get_nodes_number() as usize,
+            );
+            let mut already_visited = vec![false; self.get_nodes_number() as usize];
+            let shared_already_visited = ThreadSafe {
+                value: std::cell::UnsafeCell::new(&mut already_visited),
+            };
+            let max_tendrils = self
+                .par_iter_node_ids()
+                .zip(self.par_iter_node_degrees())
+                .progress_with(pb_tendrils)
+                // We only want to process the leafs of the tendrils
+                .filter(|&(_, degree)| degree == 1)
+                .map(|(node_id, degree)| unsafe {
+                    let already_visited = shared_already_visited.value.get();
+                    let mut next_node_in_chain = node_id;
+                    // We mark all the nodes in the chain of the tendril as visited,
+                    // as no node on a tendril chain can be the source of the largest path.
+                    while self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2 {
+                        (*already_visited)[next_node_in_chain as usize] = true;
+                        // In a chain we expect the edge that goes back towards already visited
+                        // nodes and the other edge that explores the yet unviseted edges.
+                        // Since this might be a multigraph or the graph consists of a simple
+                        // chain, we may find ourselves with an empty iterator.
+                        if let Some(new_node_id) = self
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                next_node_in_chain,
+                            )
+                            .filter(|&node_id| !(*already_visited)[node_id as usize])
+                            .next()
+                        {
+                            next_node_in_chain = new_node_id;
+                        } else {
+                            break;
+                        }
+                    }
+                    // Then we compute paths tree.
+                    self.get_unchecked_breath_first_search(
+                        node_id,
+                        None,
+                        None,
+                        Some(false),
+                        Some(false),
+                    )
+                    .2
+                })
+                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+                .max()
+                .unwrap_or(0);
+            (Some(already_visited), max_tendrils)
+        } else {
+            (None, 0)
+        };
+
         let pb = get_loading_bar(
             verbose,
             "Computing unweighted diameter",
             self.get_nodes_number() as usize,
         );
+
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
+            .filter(|&node_id| already_visited.as_ref().map_or(true, |av| !av[node_id as usize]))
             .map(|node_id| {
                 self.get_unchecked_breath_first_search(
                     node_id,
@@ -391,9 +476,11 @@ impl Graph {
                 )
                 .2
             })
-            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .filter(|&distance| {
+                (!ignore_infinity || distance != NodeT::MAX) && distance > max_tendrils
+            })
             .max()
-            .unwrap_or(0))
+            .unwrap_or(max_tendrils))
     }
 
     /// Returns diameter of the graph.

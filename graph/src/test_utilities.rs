@@ -285,10 +285,6 @@ pub fn default_holdout_test_suite(
 
     let graph = graph.drop_selfloops(false);
 
-    assert_eq!(
-        graph.get_experimental_unweighted_diameter(None, None),
-        graph.get_unweighted_diameter(None, None)
-    );
     Ok(())
 }
 
