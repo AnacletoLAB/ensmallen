@@ -33,7 +33,7 @@ impl EnsmallenGraph {
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
+    ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<NodeT>>, NodeT)> {
         pe!(self.graph.get_breath_first_search_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
@@ -76,7 +76,7 @@ impl EnsmallenGraph {
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
+    ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<NodeT>>, NodeT)> {
         pe!(self.graph.get_breath_first_search_from_node_names(
             src_node_name,
             maybe_dst_node_name,
