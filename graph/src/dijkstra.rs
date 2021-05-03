@@ -171,7 +171,7 @@ impl Graph {
                 };
                 if !is_node_visited {
                     if let Some(visited) = &mut visited {
-                        visited[src_node_id as usize] = true;
+                        visited[neighbour_node_id as usize] = true;
                     }
                     if let Some(distances) = &mut distances {
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
