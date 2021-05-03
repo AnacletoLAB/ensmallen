@@ -177,13 +177,13 @@ impl Graph {
                 }
             }
 
-            total_distance += depth;
             let new_neighbour_distance = depth + 1;
 
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
                     if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
                         maximal_distance = maximal_distance.max(neighbour_node_id);
+                        total_distance += new_neighbour_distance;
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
