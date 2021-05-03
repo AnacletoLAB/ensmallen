@@ -5,7 +5,7 @@ use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Reverse;
 use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
-use std::collections::BinaryHeap;
+// use std::collections::BinaryHeap;
 
 #[derive(Debug, Copy, Clone)]
 struct OrdFloat64(f64);
@@ -75,7 +75,7 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
     /// * `verbose`: bool - Whether to show an indicative progress bar.
-    pub fn get_unchecked_unweighted_dijkstra_from_node_ids(
+    pub fn get_unchecked_breath_first_search(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -106,17 +106,14 @@ impl Graph {
             return (distances, parents, NodeT::MAX);
         }
 
-        let mut nodes_to_explore = BinaryHeap::new();
-        nodes_to_explore.push(State {
-            distance: 0,
-            node_id: src_node_id,
-        });
+        let mut nodes_to_explore = Vec::with_capacity(nodes_number);
+        nodes_to_explore.push((src_node_id, 0));
 
         let mut maximal_distance = 0;
 
         let pb = get_loading_bar(verbose, "Computing Dijkstra", nodes_number);
 
-        while let Some(State { distance, node_id }) = nodes_to_explore.pop() {
+        while let Some((node_id, depth)) = nodes_to_explore.pop() {
             // We increase the loading bar by one.
             pb.inc(1);
             // If the closest node is the optional destination node, we have
@@ -135,22 +132,17 @@ impl Graph {
                 }
             }
 
+            let new_neighbour_distance = depth + 1;
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                // Since we are not taking in consideration the weights
-                // all the node neighbours have distance 1.
-                let new_neighbour_distance = distance + 1;
-                if new_neighbour_distance < distances[neighbour_node_id as usize] {
+                if distances[neighbour_node_id as usize] == 0 {
                     distances[neighbour_node_id as usize] = new_neighbour_distance;
                     maximal_distance = maximal_distance.max(new_neighbour_distance);
                     if let Some(parents) = &mut parents {
                         parents[neighbour_node_id as usize] = node_id;
                     }
-                    nodes_to_explore.push(State {
-                        distance: new_neighbour_distance,
-                        node_id: neighbour_node_id,
-                    });
+                    nodes_to_explore.push((neighbour_node_id, new_neighbour_distance));
                 }
             }
         }
@@ -165,7 +157,7 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
     /// * `verbose`: bool - Whether to show an indicative progress bar.
-    pub fn get_unchecked_weighted_dijkstra_from_node_ids(
+    pub fn get_unchecked_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -254,7 +246,7 @@ impl Graph {
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_unweighted_dijkstra_from_node_ids(
+    pub fn get_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -274,7 +266,7 @@ impl Graph {
                 self.validate_node_id(dst_node_id)?;
             }
         }
-        Ok(self.get_unchecked_unweighted_dijkstra_from_node_ids(
+        Ok(self.get_unchecked_breath_first_search(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
@@ -296,7 +288,7 @@ impl Graph {
     /// * If the weights are to be used and the graph does not have weights.
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_weighted_dijkstra_from_node_ids(
+    pub fn get_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -317,7 +309,7 @@ impl Graph {
                 self.validate_node_id(dst_node_id)?;
             }
         }
-        Ok(self.get_unchecked_weighted_dijkstra_from_node_ids(
+        Ok(self.get_unchecked_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
@@ -352,7 +344,7 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(|node_id| {
-                self.get_unchecked_unweighted_dijkstra_from_node_ids(
+                self.get_unchecked_breath_first_search(
                     node_id,
                     None,
                     None,
@@ -391,7 +383,7 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(|node_id| {
-                self.get_unchecked_weighted_dijkstra_from_node_ids(
+                self.get_unchecked_dijkstra_from_node_ids(
                     node_id,
                     None,
                     None,
@@ -417,7 +409,7 @@ impl Graph {
     /// * If the weights are to be used and the graph does not have weights.
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_unweighted_dijkstra_from_node_names(
+    pub fn get_breath_first_search_from_node_names(
         &self,
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
@@ -425,7 +417,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
-        self.get_unweighted_dijkstra_from_node_ids(
+        self.get_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                 Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
@@ -455,7 +447,7 @@ impl Graph {
     /// * If the weights are to be used and the graph does not have weights.
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_weighted_dijkstra_from_node_names(
+    pub fn get_dijkstra_from_node_names(
         &self,
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
@@ -463,7 +455,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
-        self.get_weighted_dijkstra_from_node_ids(
+        self.get_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                 Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))

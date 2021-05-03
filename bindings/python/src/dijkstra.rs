@@ -23,7 +23,7 @@ impl EnsmallenGraph {
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_unweighted_dijkstra_from_node_ids(
+    pub fn get_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -31,7 +31,7 @@ impl EnsmallenGraph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
-        pe!(self.graph.get_unweighted_dijkstra_from_node_ids(
+        pe!(self.graph.get_breath_first_search_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids.map(|mut dst_node_ids| {
@@ -62,7 +62,7 @@ impl EnsmallenGraph {
     /// # Raises
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_unweighted_dijkstra_from_node_names(
+    pub fn get_breath_first_search_from_node_names(
         &self,
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
@@ -70,7 +70,7 @@ impl EnsmallenGraph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
-        pe!(self.graph.get_unweighted_dijkstra_from_node_names(
+        pe!(self.graph.get_breath_first_search_from_node_names(
             src_node_name,
             maybe_dst_node_name,
             maybe_dst_node_names,
@@ -98,7 +98,7 @@ impl EnsmallenGraph {
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_weighted_dijkstra_from_node_ids(
+    pub fn get_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -106,7 +106,7 @@ impl EnsmallenGraph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
-        pe!(self.graph.get_weighted_dijkstra_from_node_ids(
+        pe!(self.graph.get_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids.map(|mut dst_node_ids| {
@@ -137,7 +137,7 @@ impl EnsmallenGraph {
     /// # Raises
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_weighted_dijkstra_from_node_names(
+    pub fn get_dijkstra_from_node_names(
         &self,
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
@@ -145,7 +145,7 @@ impl EnsmallenGraph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
-        pe!(self.graph.get_weighted_dijkstra_from_node_names(
+        pe!(self.graph.get_dijkstra_from_node_names(
             src_node_name,
             maybe_dst_node_name,
             maybe_dst_node_names,

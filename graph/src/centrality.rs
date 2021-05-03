@@ -46,7 +46,7 @@ impl Graph {
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
-            .get_unchecked_unweighted_dijkstra_from_node_ids(
+            .get_unchecked_breath_first_search(
                 node_id,
                 None,
                 None,
@@ -81,7 +81,7 @@ impl Graph {
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
-            .get_unchecked_weighted_dijkstra_from_node_ids(
+            .get_unchecked_dijkstra_from_node_ids(
                 node_id,
                 None,
                 None,
@@ -208,7 +208,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
-        self.get_unchecked_unweighted_dijkstra_from_node_ids(
+        self.get_unchecked_breath_first_search(
             node_id,
             None,
             None,
@@ -242,7 +242,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
-        self.get_unchecked_weighted_dijkstra_from_node_ids(
+        self.get_unchecked_dijkstra_from_node_ids(
             node_id,
             None,
             None,
