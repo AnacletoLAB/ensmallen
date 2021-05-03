@@ -161,7 +161,7 @@ impl Graph {
                         }
                         is_node_visited
                     }
-                    (Some(distances), None, None) => {
+                    (Some(distances), _, None) => {
                         let is_node_visited = distances[neighbour_node_id as usize] != NodeT::MAX;
                         if !is_node_visited {
                             distances[neighbour_node_id as usize] = new_neighbour_distance;
