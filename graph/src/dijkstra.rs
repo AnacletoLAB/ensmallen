@@ -417,7 +417,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
-        self.get_breath_first_search(
+        Ok(self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                 Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
@@ -431,7 +431,7 @@ impl Graph {
             })?,
             compute_predecessors,
             verbose,
-        )
+        ))
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
