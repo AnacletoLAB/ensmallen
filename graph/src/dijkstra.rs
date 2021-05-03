@@ -126,9 +126,14 @@ impl Graph {
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
+        // We are counting the number of elements in the queue because the
+        // internal .len() method does a lot more stuff than it is needed.
+        let mut elements_in_queue = 1;
         let mut maximal_distance = 0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
+            // Reduce number of elements in queue
+            elements_in_queue -= 1;
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -147,38 +152,37 @@ impl Graph {
             }
 
             let new_neighbour_distance = depth + 1;
-            let queue_length = nodes_to_explore.len();
+            let queue_length = elements_in_queue;
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                match (&mut distances, &mut parents, &mut visited) {
-                    (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
-                        visited[neighbour_node_id as usize] = true;
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                let is_node_visited = match (&mut distances, &mut parents, &mut visited) {
+                    (None, None, Some(visited)) => {
+                        visited[neighbour_node_id as usize]
+                    },
+                    (Some(distances), _, None) => {
+                        distances[neighbour_node_id as usize] != NodeT::MAX
                     }
-                    (Some(distances), None, None)
-                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
-                    {
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    (None, Some(parents), None) => parents[neighbour_node_id as usize].is_some(),
+                    _ => {
+                        unreachable!("Either the distances, parents or visited must surely exist.")
                     }
-                    (None, Some(parents), None)
-                        if parents[neighbour_node_id as usize].is_none() =>
-                    {
-                        parents[neighbour_node_id as usize] = Some(node_id);
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                    }
-                    (Some(distances), Some(parents), None)
-                        if distances[neighbour_node_id as usize] == NodeT::MAX =>
-                    {
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
-                        parents[neighbour_node_id as usize] = Some(node_id);
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                    }
-                    _ => {}
                 };
+                if !is_node_visited {
+                    if let Some(visited) = &mut visited {
+                        visited[neighbour_node_id as usize] = true;
+                    }
+                    if let Some(distances) = &mut distances {
+                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+                    }
+                    if let Some(parents) = &mut parents {
+                        parents[neighbour_node_id as usize] = Some(node_id);
+                    }
+                    nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    elements_in_queue += 1;
+                }
             }
-            if queue_length < nodes_to_explore.len() {
+            if queue_length < elements_in_queue {
                 maximal_distance = maximal_distance.max(new_neighbour_distance);
             }
         }
