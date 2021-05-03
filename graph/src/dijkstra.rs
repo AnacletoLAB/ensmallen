@@ -179,49 +179,15 @@ impl Graph {
 
             total_distance += depth;
             let new_neighbour_distance = depth + 1;
-            for neighbour_node_id in
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-            {
-                if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
-                    let mut previous_node_in_chain = node_id;
-                    let mut next_node_in_chain = neighbour_node_id;
-                    let mut new_neighbour_chain_distance = new_neighbour_distance;
-                    let mut should_push = true;
-                    // We mark all the nodes in the chain of the tendril as visited,
-                    // as no node on a tendril chain can be the source of the largest path.
-                    while !self.is_directed()
-                        && self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2
-                    {
-                        // In a chain we expect the edge that goes back towards already visited
-                        // nodes and the other edge that explores the yet unviseted edges.
-                        // Since this might be a multigraph or the graph consists of a simple
-                        // chain, we may find ourselves with an empty iterator.
-                        if let Some(new_node_id) = self
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                next_node_in_chain,
-                            )
-                            .find(|&node_id| {
-                                to_be_added(
-                                    node_id,
-                                    new_neighbour_chain_distance,
-                                    previous_node_in_chain,
-                                )
-                            })
-                        {
-                            previous_node_in_chain = next_node_in_chain;
-                            next_node_in_chain = new_node_id;
-                            new_neighbour_chain_distance += 1;
-                        } else {
-                            should_push = false;
-                            break;
-                        }
-                    }
-                    if should_push {
-                        maximal_distance = maximal_distance.max(new_neighbour_chain_distance);
-                    }
-                    nodes_to_explore.push_back((next_node_in_chain, new_neighbour_chain_distance));
-                }
-            }
+
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .filter(|&neighbour_node_id| {
+                    to_be_added(neighbour_node_id, new_neighbour_distance, node_id)
+                })
+                .for_each(|neighbour_node_id| {
+                    maximal_distance = maximal_distance.max(neighbour_node_id);
+                    nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                });
         }
         (distances, parents, maximal_distance, total_distance)
     }
