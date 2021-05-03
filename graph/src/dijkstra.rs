@@ -202,15 +202,20 @@ impl Graph {
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(
                                 next_node_in_chain,
                             )
-                            .filter(|&node_id| !was_visited(node_id, new_neighbour_chain_distance, next_node_in_chain))
-                            .next()
+                            .find(|&node_id| {
+                                !was_visited(
+                                    node_id,
+                                    new_neighbour_chain_distance,
+                                    next_node_in_chain,
+                                )
+                            })
                         {
                             next_node_in_chain = new_node_id;
                             new_neighbour_chain_distance += 1;
                         } else {
                             break;
                         }
-                    } 
+                    }
                     nodes_to_explore.push_back((next_node_in_chain, new_neighbour_distance));
                     elements_in_queue += 1;
                 }
@@ -415,7 +420,7 @@ impl Graph {
                 .progress_with(pb_tendrils)
                 // We only want to process the leafs of the tendrils
                 .filter(|&(_, degree)| degree == 1)
-                .map(|(node_id, degree)| unsafe {
+                .map(|(node_id, _)| unsafe {
                     let already_visited = shared_already_visited.value.get();
                     let mut next_node_in_chain = node_id;
                     // We mark all the nodes in the chain of the tendril as visited,
@@ -430,8 +435,7 @@ impl Graph {
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(
                                 next_node_in_chain,
                             )
-                            .filter(|&node_id| !(*already_visited)[node_id as usize])
-                            .next()
+                            .find(|&node_id| !(*already_visited)[node_id as usize])
                         {
                             next_node_in_chain = new_node_id;
                         } else {
@@ -465,7 +469,11 @@ impl Graph {
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
-            .filter(|&node_id| already_visited.as_ref().map_or(true, |av| !av[node_id as usize]))
+            .filter(|&node_id| {
+                already_visited
+                    .as_ref()
+                    .map_or(true, |av| !av[node_id as usize])
+            })
             .map(|node_id| {
                 self.get_unchecked_breath_first_search(
                     node_id,
