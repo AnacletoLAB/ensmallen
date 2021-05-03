@@ -153,8 +153,8 @@ impl Graph {
             {
                 match (&mut distances, &mut parents, &mut visited) {
                     (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
-                            visited[neighbour_node_id as usize] = true;
-                            nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                        visited[neighbour_node_id as usize] = true;
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                     (Some(distances), None, None)
                         if distances[neighbour_node_id as usize] == NodeT::MAX =>
