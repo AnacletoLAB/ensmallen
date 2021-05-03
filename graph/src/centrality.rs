@@ -32,7 +32,6 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
-    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
@@ -41,23 +40,10 @@ impl Graph {
     pub unsafe fn get_unchecked_unweighted_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        ignore_infinity: Option<bool>,
     ) -> f64 {
-        let ignore_infinity = ignore_infinity.unwrap_or(true);
         1.0 / self
-            .get_unchecked_breath_first_search(
-                node_id,
-                None,
-                None,
-                Some(true),
-                Some(false),
-            )
-            .0
-            .unwrap_unchecked()
-            .into_iter()
-            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
-            .map(u64::from)
-            .sum::<u64>() as f64
+            .get_unchecked_breath_first_search(node_id, None, None, Some(true), Some(false))
+            .3 as f64
     }
 
     /// Return closeness centrality of the requested node.
@@ -89,14 +75,12 @@ impl Graph {
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     pub fn par_iter_unweighted_closeness_centrality(
         &self,
-        ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> impl ParallelIterator<Item = f64> + '_ {
         let verbose = verbose.unwrap_or(true);
@@ -108,10 +92,7 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_unweighted_closeness_centrality_from_node_id(
-                    node_id,
-                    ignore_infinity,
-                )
+                self.get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)
             })
     }
 
@@ -147,17 +128,15 @@ impl Graph {
     /// Return closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default true.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     pub fn get_unweighted_closeness_centrality(
         &self,
-        ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.par_iter_unweighted_closeness_centrality(ignore_infinity, verbose)
+        self.par_iter_unweighted_closeness_centrality(verbose)
             .collect()
     }
 
@@ -196,19 +175,13 @@ impl Graph {
         ignore_infinity: Option<bool>,
     ) -> f64 {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
-        self.get_unchecked_breath_first_search(
-            node_id,
-            None,
-            None,
-            Some(true),
-            Some(false),
-        )
-        .0
-        .unwrap_unchecked()
-        .into_iter()
-        .filter(|&distance| !ignore_infinity || distance != NodeT::MAX && distance > 0)
-        .map(|distance| 1.0 / distance as f64)
-        .sum::<f64>()
+        self.get_unchecked_breath_first_search(node_id, None, None, Some(true), Some(false))
+            .0
+            .unwrap_unchecked()
+            .into_iter()
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX && distance > 0)
+            .map(|distance| 1.0 / distance as f64)
+            .sum::<f64>()
     }
 
     /// Return harmonic centrality of the requested node.

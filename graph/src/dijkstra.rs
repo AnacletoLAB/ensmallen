@@ -84,7 +84,7 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> (Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT) {
+    ) -> (Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT) {
         let compute_distances = compute_distances.unwrap_or(true);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
@@ -122,7 +122,7 @@ impl Graph {
             || self.is_singleton_with_selfloops_from_node_id(src_node_id)
             || self.is_unchecked_trap_node_from_node_id(src_node_id)
         {
-            return (distances, parents, NodeT::MAX);
+            return (distances, parents, NodeT::MAX, NodeT::MAX);
         }
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
@@ -131,6 +131,7 @@ impl Graph {
         // internal .len() method does a lot more stuff than it is needed.
         let mut elements_in_queue: NodeT = 1;
         let mut maximal_distance = 0;
+        let mut total_distance = 0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // Reduce number of elements in queue
@@ -152,6 +153,7 @@ impl Graph {
                 }
             }
 
+            total_distance += depth;
             let new_neighbour_distance = depth + 1;
             let queue_length = elements_in_queue;
             for neighbour_node_id in
@@ -192,7 +194,7 @@ impl Graph {
                 maximal_distance = maximal_distance.max(new_neighbour_distance);
             }
         }
-        (distances, parents, maximal_distance)
+        (distances, parents, maximal_distance, total_distance)
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
@@ -292,7 +294,7 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT), String> {
+    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         // If given, check if the given destination node ID exists in the graph
@@ -512,7 +514,7 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT), String> {
+    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT), String> {
         Ok(self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
