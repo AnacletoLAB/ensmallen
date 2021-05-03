@@ -179,14 +179,12 @@ impl Graph {
                     (Some(distances), Some(parents), None)
                         if distances[neighbour_node_id as usize] == NodeT::MAX =>
                     {
-                        parents[neighbour_node_id as usize] = Some(node_id);
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
+                        parents[neighbour_node_id as usize] = Some(node_id);
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                         elements_in_queue += 1;
                     }
-                    _ => {
-                        unreachable!("Either the distances, parents or visited must surely exist.")
-                    }
+                    _ => {}
                 };
             }
             if queue_length < elements_in_queue {
