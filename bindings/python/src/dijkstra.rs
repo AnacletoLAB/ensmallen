@@ -4,7 +4,7 @@ use roaring::RoaringBitmap;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_distances, compute_predecessors, verbose)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -15,8 +15,10 @@ impl EnsmallenGraph {
     ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// maybe_dst_node_ids: Union[List[int], None] = None,
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_distances: bool = True,
+    ///     Whether to compute the vector of distances.
     /// compute_predecessors: bool = True,
-    ///     Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    ///     Whether to compute the vector of predecessors.
     /// verbose: bool = True,
     ///     Whether to show an indicative progress bar.
     ///
@@ -28,6 +30,7 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
@@ -38,12 +41,13 @@ impl EnsmallenGraph {
                 dst_node_ids.sort();
                 RoaringBitmap::from_sorted_iter(dst_node_ids)
             }),
+            compute_distances,
             compute_predecessors,
             verbose,
         ))
     }
 
-    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, verbose)"]
+    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_distances, compute_predecessors, verbose)"]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// Parameters
@@ -54,8 +58,10 @@ impl EnsmallenGraph {
     ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// maybe_dst_node_names: Union[List[int], None] = None,
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_distances: bool = True,
+    ///     Whether to compute the vector of distances.
     /// compute_predecessors: bool = True,
-    ///     Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    ///     Whether to compute the vector of predecessors.
     /// verbose: bool = True,
     ///     Whether to show an indicative progress bar.
     ///
@@ -67,6 +73,7 @@ impl EnsmallenGraph {
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
+        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT)> {
@@ -74,6 +81,7 @@ impl EnsmallenGraph {
             src_node_name,
             maybe_dst_node_name,
             maybe_dst_node_names,
+            compute_distances,
             compute_predecessors,
             verbose,
         ))
@@ -91,7 +99,7 @@ impl EnsmallenGraph {
     /// maybe_dst_node_ids: Union[List[int], None] = None,
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// compute_predecessors: bool = True,
-    ///     Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    ///     Whether to compute the vector of predecessors.
     /// verbose: bool = True,
     ///     Whether to show an indicative progress bar.
     ///
@@ -130,7 +138,7 @@ impl EnsmallenGraph {
     /// maybe_dst_node_names: Union[List[int], None] = None,
     ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// compute_predecessors: bool = True,
-    ///     Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    ///     Whether to compute the vector of predecessors.
     /// verbose: bool = True,
     ///     Whether to show an indicative progress bar.
     ///

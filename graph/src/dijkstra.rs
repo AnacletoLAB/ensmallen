@@ -1,4 +1,5 @@
 use super::*;
+use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use keyed_priority_queue::KeyedPriorityQueue;
 use rayon::iter::ParallelIterator;
@@ -73,26 +74,42 @@ impl Graph {
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
-    /// * `verbose`: bool - Whether to show an indicative progress bar.
+    /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     pub fn get_unchecked_breath_first_search(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
+        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> (Vec<NodeT>, Option<Vec<NodeT>>, NodeT) {
+    ) -> (Option<Vec<NodeT>>, Option<Vec<NodeT>>, NodeT) {
+        let compute_distances = compute_distances.unwrap_or(true);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
+
         let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
-            Some(vec![0; nodes_number])
+            Some(vec![NodeT::MAX; nodes_number])
         } else {
             None
         };
-        let mut distances: Vec<NodeT> = vec![NodeT::MAX; nodes_number];
-        distances[src_node_id as usize] = 0;
+
+        let mut distances: Option<Vec<NodeT>> = if compute_distances {
+            let mut distances: Vec<NodeT> = vec![NodeT::MAX; nodes_number];
+            distances[src_node_id as usize] = 0;
+            Some(distances)
+        } else {
+            None
+        };
+
+        let mut visited: Option<_> = if parents.is_some() || distances.is_some() {
+            None
+        } else {
+            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
+        };
 
         // If the given root node is either a:
         // - singleton
@@ -136,12 +153,34 @@ impl Graph {
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                if distances[neighbour_node_id as usize] == 0 {
-                    distances[neighbour_node_id as usize] = new_neighbour_distance;
-                    maximal_distance = maximal_distance.max(new_neighbour_distance);
-                    if let Some(parents) = &mut parents {
-                        parents[neighbour_node_id as usize] = node_id;
+                let is_node_visited = match (&mut distances, &mut parents, &mut visited) {
+                    (None, None, Some(visited)) => {
+                        let is_node_visited = visited[neighbour_node_id as usize];
+                        if !is_node_visited {
+                            visited.insert(neighbour_node_id as usize, true);
+                        }
+                        is_node_visited
                     }
+                    (Some(distances), None, None) => {
+                        let is_node_visited = distances[neighbour_node_id as usize] != NodeT::MAX;
+                        if !is_node_visited {
+                            distances[neighbour_node_id as usize] = new_neighbour_distance;
+                        }
+                        is_node_visited
+                    }
+                    (None, Some(parents), None) => {
+                        let is_node_visited = parents[neighbour_node_id as usize] != NodeT::MAX;
+                        if !is_node_visited {
+                            parents[neighbour_node_id as usize] = node_id;
+                        }
+                        is_node_visited
+                    }
+                    _ => {
+                        unreachable!("Either the distances, parents or visited must surely exist.")
+                    }
+                };
+                if !is_node_visited {
+                    maximal_distance = maximal_distance.max(new_neighbour_distance);
                     nodes_to_explore.push((neighbour_node_id, new_neighbour_distance));
                 }
             }
@@ -155,7 +194,8 @@ impl Graph {
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
+    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
     /// * `verbose`: bool - Whether to show an indicative progress bar.
     pub fn get_unchecked_dijkstra_from_node_ids(
         &self,
@@ -240,7 +280,8 @@ impl Graph {
     /// * `src_node_id`: NodeT - Node ID root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
@@ -251,9 +292,10 @@ impl Graph {
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<RoaringBitmap>,
+        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
+    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<NodeT>>, NodeT), String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         // If given, check if the given destination node ID exists in the graph
@@ -270,6 +312,7 @@ impl Graph {
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
+            compute_distances,
             compute_predecessors,
             verbose,
         ))
@@ -281,7 +324,7 @@ impl Graph {
     /// * `src_node_id`: NodeT - Node ID root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
@@ -350,6 +393,7 @@ impl Graph {
                     None,
                     Some(false),
                     Some(false),
+                    Some(false),
                 )
                 .2
             })
@@ -402,7 +446,8 @@ impl Graph {
     /// * `src_node_name`: &str - Node name root of the tree of minimum paths.
     /// * `maybe_dst_node_name`: Option<&str> - Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_names`: Option<Vec<&str>> - Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
@@ -414,9 +459,10 @@ impl Graph {
         src_node_name: &str,
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
+        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, Option<Vec<NodeT>>, NodeT), String> {
+    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<NodeT>>, NodeT), String> {
         Ok(self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
@@ -429,6 +475,7 @@ impl Graph {
                 }
                 Ok(Some(bitmap))
             })?,
+            compute_distances,
             compute_predecessors,
             verbose,
         ))
@@ -440,7 +487,7 @@ impl Graph {
     /// * `src_node_name`: &str - Node name root of the tree of minimum paths.
     /// * `maybe_dst_node_name`: Option<&str> - Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_names`: Option<Vec<&str>> - Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors or to limit the allocation to exclusively the distances.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # Raises
