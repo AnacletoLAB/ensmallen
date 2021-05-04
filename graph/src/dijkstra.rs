@@ -1,6 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
+use rayon::iter::{IntoParallelIterator, IntoParallelRefIterator};
 use roaring::RoaringBitmap;
 use std::cmp::Ord;
 use std::collections::VecDeque;
@@ -134,7 +135,7 @@ impl Graph {
     ///
     pub fn get_unchecked_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search(node_id, None, None, None, None)
-            .3
+            .2
     }
 
     /// Returns weighted eccentricity of the given node.
@@ -146,7 +147,7 @@ impl Graph {
     ///
     pub fn get_unchecked_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> f64 {
         self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, None)
-            .3
+            .2
     }
 
     /// Returns unweighted eccentricity of the given node ID.
@@ -384,7 +385,7 @@ impl Graph {
                 .collect::<Vec<NodeT>>();
             pb.inc(nodes_to_explore.len() as u64);
             let maximal_eccentricity = nodes_to_explore
-                .into_iter()
+                .into_par_iter()
                 .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
                 .max()
                 .unwrap();
