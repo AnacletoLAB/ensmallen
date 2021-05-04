@@ -1,6 +1,8 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
+use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
+use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::cmp::Ord;
@@ -348,18 +350,9 @@ impl Graph {
 
     /// Returns diameter of an UNDIRECTED and UNWEIGHTED graph.
     ///
-    /// # Arguments
-    /// * `verbose`: bool - Whether to show the loading bar.
-    ///
     /// # Referencences
-    /// This method implements what is described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn ifub(&self, verbose: bool) -> NodeT {
-        let pb = get_loading_bar(
-            verbose,
-            "Computing unweighted diameter with ifub",
-            self.get_nodes_number() as usize,
-        );
-
+    /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
+    fn ifub(&self) -> NodeT {
         let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
         let (distances, _, mut root_eccentricity, _, _) = self.get_unchecked_breath_first_search(
             most_central_node_id,
@@ -372,29 +365,21 @@ impl Graph {
         let distances = unsafe { distances.unwrap_unchecked() };
         let mut upper_bound_diameter = 2 * root_eccentricity;
         while lower_bound_diameter != upper_bound_diameter {
-            let nodes_to_explore = distances
-                .iter()
+            if let Some(maximal_eccentricity) = distances
+                .par_iter()
                 .enumerate()
-                .filter_map(|(node_id, &distance)| {
-                    if distance == root_eccentricity {
-                        Some(node_id as NodeT)
-                    } else {
-                        None
-                    }
+                .filter(|(_, &distance)| distance == root_eccentricity)
+                .map(|(node_id, _)| {
+                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id as NodeT)
                 })
-                .collect::<Vec<NodeT>>();
-            pb.inc(nodes_to_explore.len() as u64);
-            let maximal_eccentricity = nodes_to_explore
-                .into_par_iter()
-                .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
                 .max()
-                .unwrap();
-
-            lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-            root_eccentricity -= 1;
-            upper_bound_diameter = 2 * root_eccentricity;
-            if lower_bound_diameter > upper_bound_diameter {
-                break;
+            {
+                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
+                root_eccentricity -= 1;
+                upper_bound_diameter = 2 * root_eccentricity;
+                if lower_bound_diameter > upper_bound_diameter {
+                    break;
+                }
             }
         }
         lower_bound_diameter
@@ -446,7 +431,7 @@ impl Graph {
                 .max()
                 .unwrap_or(0) as f64)
         } else {
-            Ok(self.ifub(verbose) as f64)
+            Ok(self.ifub() as f64)
         }
     }
 
