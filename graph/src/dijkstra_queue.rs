@@ -14,16 +14,6 @@ pub struct DijkstraQueue {
 }
 
 impl DijkstraQueue {
-    /// Initialize a new empty heap which is guaranteed to hold at least 
-    /// `capacity` elements without triggering a re-allocation.
-    pub fn with_capacity(capacity: usize) -> Self {
-        DijkstraQueue{
-            heap: Vec::with_capacity(capacity),
-            distances: vec![f64::INFINITY; capacity],
-            map: vec![usize::MAX; capacity],
-        }
-    }
-
     /// Initialize the queue with the given root, in this case the capacity
     /// should always be equal to the number of nodes in the graph.
     pub fn with_capacity_from_root(capacity: usize, root_node_id: usize,) -> Self {
@@ -62,11 +52,6 @@ impl DijkstraQueue {
 
     /// add a value to the heap
     pub fn push(&mut self, node_id: usize, distance: f64) {
-        // Insert the value and get its index
-        let mut idx = self.heap.len();
-
-        let ptr = unsafe{self.distances.get_mut(node_id as usize).unwrap_unchecked()};
-
         debug_assert!(
             self.distances[node_id as usize] > distance, 
             "We think that we are ensured that a node is pushed IFF its distance is smaller than the older ones."
@@ -85,7 +70,7 @@ impl DijkstraQueue {
         self.heap.push(node_id);
         self.distances[node_id as usize] = distance;
         // fix the heap
-        self.bubble_up(idx, distance);
+        self.bubble_up(self.heap.len() - 1, distance);
     }
 
     /// Return the computed distances
@@ -96,7 +81,7 @@ impl DijkstraQueue {
     /// remove and return the smallest value 
     pub fn pop(&mut self) -> Option<usize> {
         // if the queue is empty we can early-stop.
-        if self.heap.is_empty() {
+        if self.is_empty() {
             return None;
         }
 
@@ -112,7 +97,7 @@ impl DijkstraQueue {
         // remove the minimum from the tree
         let result = self.heap.pop();
 
-        if !self.heap.is_empty() {
+        if !self.is_empty() {
             self.bubble_down(0, self.distances[self.heap[0] as usize]);
         }
 
