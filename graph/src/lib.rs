@@ -108,3 +108,6 @@ pub use self::walks_parameters::*;
 pub use preprocessing::*;
 
 use tags::*;
+
+mod dijkstra_queue;
+use dijkstra_queue::*;
