@@ -125,6 +125,76 @@ impl Graph {
         )
     }
 
+    /// Returns unweighted eccentricity of the given node.
+    ///
+    /// This method will panic if the given node ID does not exists in the graph.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node for which to compute the eccentricity.
+    ///
+    pub fn get_unchecked_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.get_unchecked_breath_first_search(node_id, None, None, None, None)
+            .3
+    }
+
+    /// Returns weighted eccentricity of the given node.
+    ///
+    /// This method will panic if the given node ID does not exists in the graph.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node for which to compute the eccentricity.
+    ///
+    pub fn get_unchecked_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, None)
+            .3
+    }
+
+    /// Returns unweighted eccentricity of the given node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node for which to compute the eccentricity.
+    ///
+    pub fn get_unweighted_eccentricity_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Result<NodeT, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
+    }
+
+    /// Returns weighted eccentricity of the given node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node for which to compute the eccentricity.
+    ///
+    pub fn get_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<f64, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
+    }
+
+    /// Returns unweighted eccentricity of the given node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Node for which to compute the eccentricity.
+    ///
+    pub fn get_unweighted_eccentricity_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<NodeT, String> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
+    }
+
+    /// Returns weighted eccentricity of the given node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Node for which to compute the eccentricity.
+    ///
+    pub fn get_weighted_eccentricity_from_node_name(&self, node_name: &str) -> Result<f64, String> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
+    }
+
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -275,6 +345,60 @@ impl Graph {
         ))
     }
 
+    /// Returns diameter of an UNDIRECTED and UNWEIGHTED graph.
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show the loading bar.
+    ///
+    /// # Referencences
+    /// This method implements what is described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
+    fn ifub(&self, verbose: bool) -> NodeT {
+        let pb = get_loading_bar(
+            verbose,
+            "Computing unweighted diameter with ifub",
+            self.get_nodes_number() as usize,
+        );
+
+        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
+        let (distances, _, mut root_eccentricity, _, _) = self.get_unchecked_breath_first_search(
+            most_central_node_id,
+            None,
+            None,
+            Some(true),
+            Some(false),
+        );
+        let mut lower_bound_diameter = root_eccentricity;
+        let distances = unsafe { distances.unwrap_unchecked() };
+        let mut upper_bound_diameter = 2 * root_eccentricity;
+        while lower_bound_diameter != upper_bound_diameter {
+            let nodes_to_explore = distances
+                .iter()
+                .enumerate()
+                .filter_map(|(node_id, &distance)| {
+                    if distance == root_eccentricity {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                })
+                .collect::<Vec<NodeT>>();
+            pb.inc(nodes_to_explore.len() as u64);
+            let maximal_eccentricity = nodes_to_explore
+                .into_iter()
+                .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
+                .max()
+                .unwrap();
+
+            lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
+            root_eccentricity -= 1;
+            upper_bound_diameter = 2 * root_eccentricity;
+            if lower_bound_diameter > upper_bound_diameter {
+                break;
+            }
+        }
+        lower_bound_diameter
+    }
+
     /// Returns diameter of the graph.
     ///
     /// # Arguments
@@ -288,33 +412,41 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<NodeT, String> {
+    ) -> Result<f64, String> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 
-        let pb = get_loading_bar(
-            verbose,
-            "Computing unweighted diameter",
-            self.get_nodes_number() as usize,
-        );
+        if !ignore_infinity && self.get_connected_components_number(verbose).0 > 1 {
+            return Ok(f64::INFINITY);
+        }
 
-        Ok(self
-            .par_iter_node_ids()
-            .progress_with(pb)
-            .map(|node_id| {
-                self.get_unchecked_breath_first_search(
-                    node_id,
-                    None,
-                    None,
-                    Some(false),
-                    Some(false),
-                )
-                .2
-            })
-            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
-            .max()
-            .unwrap_or(0))
+        if self.is_directed() {
+            let pb = get_loading_bar(
+                verbose,
+                "Computing unweighted diameter",
+                self.get_nodes_number() as usize,
+            );
+            // TODO: Add a better implementation for the directed case
+            Ok(self
+                .par_iter_node_ids()
+                .progress_with(pb)
+                .map(|node_id| {
+                    self.get_unchecked_breath_first_search(
+                        node_id,
+                        None,
+                        None,
+                        Some(false),
+                        Some(false),
+                    )
+                    .2
+                })
+                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+                .max()
+                .unwrap_or(0) as f64)
+        } else {
+            Ok(self.ifub(verbose) as f64)
+        }
     }
 
     /// Returns diameter of the graph.
