@@ -15,6 +15,18 @@ impl DijkstraQueue {
         }
     }
 
+    /// Initialize the queue with the given root, in this case the capacity
+    /// should always be equal to the number of nodes in the graph.
+    pub fn with_capacity_from_root(capacity: usize, root_node_id: usize,) -> Self {
+        let mut res = DijkstraQueue{
+            heap: Vec::with_capacity(capacity),
+            distances: vec![f64::INFINITY; capacity],
+        };
+        res.heap.push(root_node_id);
+        res.distances[root_node_id] = 0.0;
+        res
+    }
+
     /// Get the index of the father of the given node
     #[inline]
     fn parent(node: usize) -> usize {
