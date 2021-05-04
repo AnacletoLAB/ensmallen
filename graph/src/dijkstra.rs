@@ -418,7 +418,7 @@ impl Graph {
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
-        if !ignore_infinity && self.get_connected_components_number(verbose).0 > 1 {
+        if !ignore_infinity && self.is_connected(Some(verbose)) {
             return Ok(f64::INFINITY);
         }
 
