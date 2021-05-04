@@ -1,7 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
-use rayon::iter::{IntoParallelIterator};
 use roaring::RoaringBitmap;
 use std::cmp::Ord;
 use std::collections::VecDeque;
