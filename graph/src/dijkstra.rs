@@ -414,7 +414,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
-        let ignore_infinity = ignore_infinity.unwrap_or(true);
+        let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
         if !ignore_infinity && self.get_connected_components_number(verbose).0 > 1 {
