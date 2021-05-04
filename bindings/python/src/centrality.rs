@@ -47,10 +47,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ------------------------
     /// Numpy array with unweighted closeness centralities for each node.
-    fn get_unweighted_closeness_centrality(
-        &self,
-        verbose: Option<bool>,
-    ) -> Py<PyArray1<f64>> {
+    fn get_unweighted_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
@@ -59,28 +56,22 @@ impl EnsmallenGraph {
         )
     }
 
-    #[text_signature = "($self, ignore_infinity, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Return numpy array with unweighted harmonic centrality of the nodes in the considered graph.
     ///
     /// Parameters
     /// ------------------------
-    /// ignore_infinity: bool = False,
-    ///     Whether to ignore infinite distances.
     /// verbose: bool = True,
     ///     Whether to show a loading bar,
     ///
     /// Returns
     /// ------------------------
     /// Numpy array with unweighted harmonic centralities for each node.
-    fn get_unweighted_harmonic_centrality(
-        &self,
-        ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Py<PyArray1<f64>> {
+    fn get_unweighted_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.graph.get_unweighted_harmonic_centrality(ignore_infinity, verbose),
+            self.graph.get_unweighted_harmonic_centrality(verbose),
             f64
         )
     }

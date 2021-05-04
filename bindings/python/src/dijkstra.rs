@@ -1,5 +1,5 @@
 use super::*;
-use graph::NodeT;
+use graph::{NodeT, ShortestPathsDjkstra, ShortestPathsResultBFS};
 use roaring::RoaringBitmap;
 
 #[pymethods]
@@ -30,7 +30,7 @@ impl EnsmallenGraph {
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT)> {
+    ) -> PyResult<ShortestPathsResultBFS> {
         pe!(self.graph.get_breath_first_search_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
@@ -69,7 +69,7 @@ impl EnsmallenGraph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> PyResult<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT)> {
+    ) -> PyResult<ShortestPathsResultBFS> {
         pe!(self.graph.get_breath_first_search_from_node_names(
             src_node_name,
             maybe_dst_node_name,
@@ -102,7 +102,7 @@ impl EnsmallenGraph {
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
-    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
+    ) -> PyResult<ShortestPathsDjkstra> {
         pe!(self.graph.get_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
@@ -137,7 +137,7 @@ impl EnsmallenGraph {
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
-    ) -> PyResult<(Vec<f64>, Option<Vec<NodeT>>, f64)> {
+    ) -> PyResult<ShortestPathsDjkstra> {
         pe!(self.graph.get_dijkstra_from_node_names(
             src_node_name,
             maybe_dst_node_name,
