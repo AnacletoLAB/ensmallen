@@ -1,72 +1,9 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use keyed_priority_queue::KeyedPriorityQueue;
-use rayon::iter::IndexedParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
-use std::cmp::Reverse;
-use std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
+use std::cmp::Ord;
 use std::collections::VecDeque;
-// use std::collections::BinaryHeap;
-
-#[derive(Debug, Copy, Clone)]
-struct OrdFloat64(f64);
-
-impl PartialOrd for OrdFloat64 {
-    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        Some(self.cmp(&other))
-    }
-}
-
-impl Eq for OrdFloat64 {}
-
-impl PartialEq for OrdFloat64 {
-    fn eq(&self, other: &Self) -> bool {
-        self.cmp(&other) == Ordering::Equal
-    }
-}
-
-impl Ord for OrdFloat64 {
-    fn cmp(&self, other: &Self) -> Ordering {
-        self.0
-            .partial_cmp(&other.0)
-            .unwrap_or(if self.0.is_nan() && other.0.is_nan() {
-                Ordering::Equal
-            } else if self.0.is_nan() {
-                Ordering::Less
-            } else {
-                Ordering::Greater
-            })
-    }
-}
-
-#[derive(Copy, Clone, Eq, PartialEq)]
-struct State {
-    distance: NodeT,
-    node_id: NodeT,
-}
-
-// The priority queue depends on `Ord`.
-// Explicitly implement the trait so the queue becomes a min-heap
-// instead of a max-heap.
-impl Ord for State {
-    fn cmp(&self, other: &Self) -> Ordering {
-        // Notice that the we flip the ordering on distances.
-        // In case of a tie we compare node_ids - this step is necessary
-        // to make implementations of `PartialEq` and `Ord` consistent.
-        other
-            .distance
-            .cmp(&self.distance)
-            .then_with(|| self.node_id.cmp(&other.node_id))
-    }
-}
-
-// `PartialOrd` needs to be implemented as well.
-impl PartialOrd for State {
-    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        Some(self.cmp(other))
-    }
-}
 
 impl Graph {
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
@@ -84,7 +21,7 @@ impl Graph {
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> (Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT) {
+    ) -> ShortestPathsResultBFS {
         let compute_distances = compute_distances.unwrap_or(true);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
@@ -112,18 +49,6 @@ impl Graph {
             visited[src_node_id as usize] = true;
             Some(visited)
         };
-
-        // If the given root node is either a:
-        // - singleton
-        // - singleton with selfloops
-        // - trap node
-        // we have already completed the Dijkstra.
-        if self.is_unchecked_singleton_from_node_id(src_node_id)
-            || self.is_singleton_with_selfloops_from_node_id(src_node_id)
-            || self.is_unchecked_trap_node_from_node_id(src_node_id)
-        {
-            return (distances, parents, NodeT::MAX, NodeT::MAX);
-        }
 
         let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
             &mut distances,
@@ -158,8 +83,13 @@ impl Graph {
         nodes_to_explore.push_back((src_node_id, 0));
         let mut maximal_distance = 0;
         let mut total_distance = 0;
+        let mut total_harmonic_distance: f64 = 0.0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
+            // Update the metrics
+            maximal_distance = maximal_distance.max(depth);
+            total_distance += depth;
+            total_harmonic_distance += 1.0 / depth as f64;
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -182,50 +112,17 @@ impl Graph {
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
                     if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
-                        total_distance += new_neighbour_distance;
-                        let mut previous_node_in_chain = node_id;
-                        let mut next_node_in_chain = neighbour_node_id;
-                        let mut new_neighbour_chain_distance = new_neighbour_distance + 1;
-                        let mut should_push = true;
-                        // We mark all the nodes in the chain of the tendril as visited,
-                        // as no node on a tendril chain can be the source of the largest path.
-                        while !self.is_directed()
-                            && self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2
-                        {
-                            // In a chain we expect the edge that goes back towards already visited
-                            // nodes and the other edge that explores the yet unviseted edges.
-                            // Since this might be a multigraph or the graph consists of a simple
-                            // chain, we may find ourselves with an empty iterator.
-                            if let Some(new_node_id) = self
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    next_node_in_chain,
-                                )
-                                .find(|&node_id| {
-                                    to_be_added(
-                                        node_id,
-                                        new_neighbour_chain_distance,
-                                        previous_node_in_chain,
-                                    )
-                                })
-                            {
-                                previous_node_in_chain = next_node_in_chain;
-                                next_node_in_chain = new_node_id;
-                                total_distance += new_neighbour_chain_distance;
-                                new_neighbour_chain_distance += 1;
-                            } else {
-                                should_push = false;
-                                break;
-                            }
-                        }
-                        maximal_distance = maximal_distance.max(new_neighbour_chain_distance);
-                        if should_push {
-                            nodes_to_explore
-                                .push_back((next_node_in_chain, new_neighbour_chain_distance));
-                        }
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
         }
-        (distances, parents, maximal_distance, total_distance)
+        (
+            distances,
+            parents,
+            maximal_distance,
+            total_distance,
+            total_harmonic_distance,
+        )
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
@@ -241,69 +138,60 @@ impl Graph {
         maybe_dst_node_id: Option<NodeT>,
         mut maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
-    ) -> (Vec<f64>, Option<Vec<NodeT>>, f64) {
+    ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
-        let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
-            Some(vec![0; nodes_number])
+        let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
+            Some(vec![None; nodes_number])
         } else {
             None
         };
-        let mut distances: Vec<f64> = vec![f64::INFINITY; nodes_number];
-        distances[src_node_id as usize] = 0.0;
 
-        // If the given root node is either a:
-        // - singleton
-        // - singleton with selfloops
-        // - trap node
-        // we have already completed the Dijkstra.
-        if self.is_unchecked_singleton_from_node_id(src_node_id)
-            || self.is_singleton_with_selfloops_from_node_id(src_node_id)
-            || self.is_unchecked_trap_node_from_node_id(src_node_id)
-        {
-            return (distances, parents, f64::INFINITY);
-        }
-
-        let mut nodes_to_explore: KeyedPriorityQueue<NodeT, Reverse<OrdFloat64>> =
-            KeyedPriorityQueue::new();
-        nodes_to_explore.push(src_node_id, Reverse(OrdFloat64(0.0)));
+        let mut nodes_to_explore: DijkstraQueue =
+            DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);
         let mut maximal_distance: f64 = 0.0;
+        let mut total_distance: f64 = 0.0;
+        let mut total_harmonic_distance: f64 = 0.0;
 
-        while let Some((closest_node_id, closest_distance)) = nodes_to_explore.pop() {
+        while let Some(closest_node_id) = nodes_to_explore.pop() {
+            // Update the distances metrics
+            maximal_distance = maximal_distance.max(nodes_to_explore[closest_node_id]);
+            total_distance += nodes_to_explore[closest_node_id];
+            total_harmonic_distance += 1.0 / nodes_to_explore[closest_node_id];
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
-            if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id) {
+            if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
                 break;
             }
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(closest_node_id);
+                dst_node_ids.remove(closest_node_id as NodeT);
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.
                     break;
                 }
             }
-            for (neighbour_node_id, weight) in self
-                .iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id)
-                .zip(self.iter_unchecked_edge_weights_from_source_node_id(closest_node_id))
-            {
-                let new_neighbour_distance = distances[closest_node_id as usize] + weight as f64;
-                if new_neighbour_distance < distances[neighbour_node_id as usize] {
-                    distances[neighbour_node_id as usize] = new_neighbour_distance;
-                    maximal_distance = maximal_distance.max(new_neighbour_distance);
-                    if let Some(parents) = &mut parents {
-                        parents[neighbour_node_id as usize] = closest_node_id;
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id as NodeT)
+                .zip(self.iter_unchecked_edge_weights_from_source_node_id(closest_node_id as NodeT))
+                .for_each(|(neighbour_node_id, weight)| {
+                    let new_neighbour_distance = nodes_to_explore[closest_node_id] + weight as f64;
+                    if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
+                        if let Some(parents) = &mut parents {
+                            parents[neighbour_node_id as usize] = Some(closest_node_id as NodeT);
+                        }
+                        nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
                     }
-                    nodes_to_explore.push(
-                        neighbour_node_id,
-                        Reverse(OrdFloat64(new_neighbour_distance)),
-                    );
-                }
-            }
+                });
         }
-        (distances, parents, maximal_distance)
+        (
+            nodes_to_explore.unwrap(),
+            parents,
+            maximal_distance,
+            total_distance,
+            total_harmonic_distance,
+        )
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
@@ -325,7 +213,7 @@ impl Graph {
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT), String> {
+    ) -> Result<ShortestPathsResultBFS, String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         // If given, check if the given destination node ID exists in the graph
@@ -365,7 +253,7 @@ impl Graph {
         maybe_dst_node_id: Option<NodeT>,
         maybe_dst_node_ids: Option<RoaringBitmap>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
+    ) -> Result<ShortestPathsDjkstra, String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         self.must_have_edge_weights()?;
@@ -405,62 +293,6 @@ impl Graph {
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 
-        let (already_visited, max_tendrils) = if !self.is_directed() {
-            let pb_tendrils = get_loading_bar(
-                verbose,
-                "Preprocessing tendrils diameter",
-                self.get_nodes_number() as usize,
-            );
-            let mut already_visited = vec![false; self.get_nodes_number() as usize];
-            let shared_already_visited = ThreadSafe {
-                value: std::cell::UnsafeCell::new(&mut already_visited),
-            };
-            let max_tendrils = self
-                .par_iter_node_ids()
-                .zip(self.par_iter_node_degrees())
-                .progress_with(pb_tendrils)
-                // We only want to process the leafs of the tendrils
-                .filter(|&(_, degree)| degree == 1)
-                .map(|(node_id, _)| unsafe {
-                    let already_visited = shared_already_visited.value.get();
-                    let mut next_node_in_chain = node_id;
-                    // We mark all the nodes in the chain of the tendril as visited,
-                    // as no node on a tendril chain can be the source of the largest path.
-                    while self.get_unchecked_node_degree_from_node_id(next_node_in_chain) <= 2 {
-                        (*already_visited)[next_node_in_chain as usize] = true;
-                        // In a chain we expect the edge that goes back towards already visited
-                        // nodes and the other edge that explores the yet unviseted edges.
-                        // Since this might be a multigraph or the graph consists of a simple
-                        // chain, we may find ourselves with an empty iterator.
-                        if let Some(new_node_id) = self
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                next_node_in_chain,
-                            )
-                            .find(|&node_id| !(*already_visited)[node_id as usize])
-                        {
-                            next_node_in_chain = new_node_id;
-                        } else {
-                            break;
-                        }
-                    }
-                    // Then we compute paths tree.
-                    self.get_unchecked_breath_first_search(
-                        node_id,
-                        None,
-                        None,
-                        Some(false),
-                        Some(false),
-                    )
-                    .2
-                })
-                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
-                .max()
-                .unwrap_or(0);
-            (Some(already_visited), max_tendrils)
-        } else {
-            (None, 0)
-        };
-
         let pb = get_loading_bar(
             verbose,
             "Computing unweighted diameter",
@@ -470,11 +302,6 @@ impl Graph {
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
-            .filter(|&node_id| {
-                already_visited
-                    .as_ref()
-                    .map_or(true, |av| !av[node_id as usize])
-            })
             .map(|node_id| {
                 self.get_unchecked_breath_first_search(
                     node_id,
@@ -485,11 +312,9 @@ impl Graph {
                 )
                 .2
             })
-            .filter(|&distance| {
-                (!ignore_infinity || distance != NodeT::MAX) && distance > max_tendrils
-            })
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
             .max()
-            .unwrap_or(max_tendrils))
+            .unwrap_or(0))
     }
 
     /// Returns diameter of the graph.
@@ -546,7 +371,7 @@ impl Graph {
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Option<Vec<NodeT>>, Option<Vec<Option<NodeT>>>, NodeT, NodeT), String> {
+    ) -> Result<ShortestPathsResultBFS, String> {
         Ok(self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
@@ -582,7 +407,7 @@ impl Graph {
         maybe_dst_node_name: Option<&str>,
         maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
-    ) -> Result<(Vec<f64>, Option<Vec<NodeT>>, f64), String> {
+    ) -> Result<ShortestPathsDjkstra, String> {
         self.get_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
