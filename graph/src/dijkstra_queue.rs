@@ -1,8 +1,16 @@
 
 /// Reference classic binary heap
 pub struct DijkstraQueue {
+    /// This is the actual heap, it contains the node_ids and are ordered based on
+    /// self.distances[id]
     heap: Vec<usize>,
+
+    /// The distance of every node in the graph
     distances: Vec<f64>,
+
+    /// The mapping from each node to its position in the heap.
+    /// This is only needed because we don't want to insert duplicated nodes.
+    map: Vec<usize>,
 }
 
 impl DijkstraQueue {
@@ -12,6 +20,7 @@ impl DijkstraQueue {
         DijkstraQueue{
             heap: Vec::with_capacity(capacity),
             distances: vec![f64::INFINITY; capacity],
+            map: vec![usize::MAX; capacity],
         }
     }
 
@@ -21,6 +30,7 @@ impl DijkstraQueue {
         let mut res = DijkstraQueue{
             heap: Vec::with_capacity(capacity),
             distances: vec![f64::INFINITY; capacity],
+            map: vec![usize::MAX; capacity],
         };
         res.heap.push(root_node_id);
         res.distances[root_node_id] = 0.0;
@@ -54,26 +64,28 @@ impl DijkstraQueue {
     pub fn push(&mut self, node_id: usize, distance: f64) {
         // Insert the value and get its index
         let mut idx = self.heap.len();
+
+        let ptr = unsafe{self.distances.get_mut(node_id as usize).unwrap_unchecked()};
+
+        debug_assert!(
+            self.distances[node_id as usize] > distance, 
+            "We think that we are ensured that a node is pushed IFF its distance is smaller than the older ones."
+        );
+        // If the distance is finite, the node **IS** already present,
+        // we check if the new distance is smaller, in that case we have to
+        // fix the heap.
+        if self.map[node_id as usize] != usize::MAX{
+            self.distances[node_id as usize] = distance;
+            self.bubble_up(self.map[node_id as usize], distance);
+            return;
+        }
+
+        // otherwise its th
+        // add the node as the last value in the tree
         self.heap.push(node_id);
         self.distances[node_id as usize] = distance;
-        
-        // bubble up the value until the heap property holds
-        loop {
-            let parent_idx = DijkstraQueue::parent(idx);
-
-            // The heap condition is respected so we can stop.
-            // This also handles the case of the node at the root since
-            // self.parent(0) == 0 => current_value == parent_value
-            if distance >= self.distances[self.heap[parent_idx] as usize] {
-                break
-            }
-
-            // swap the parent and the child
-            self.heap.swap(idx, parent_idx);
-
-            // Update the mutables
-            idx = parent_idx;
-        }
+        // fix the heap
+        self.bubble_up(idx, distance);
     }
 
     /// Return the computed distances
@@ -92,18 +104,23 @@ impl DijkstraQueue {
         // this is done so we can pop from the end of the vector
         // so we are ensured O(1) complexity.
         let number_of_elements = self.heap.len() - 1;
+        // Reset its position in the map
+        self.map[self.heap[0] as usize] = usize::MAX;
+        self.map[self.heap[number_of_elements]] = 0;
+        // swap the value with the last
         self.heap.swap(0, number_of_elements);
-
         // remove the minimum from the tree
         let result = self.heap.pop();
 
-        if self.heap.is_empty() {
-            return result;
+        if !self.heap.is_empty() {
+            self.bubble_down(0, self.distances[self.heap[0] as usize]);
         }
 
+        result
+    }
+
+    fn bubble_down(&mut self, mut idx:usize, distance:f64) {
         // fix the heap by bubbling down the value
-        let mut idx = 0;
-        let value = self.distances[self.heap[0]];
         loop {
             // get the indices of the right and left child
             let left_i = DijkstraQueue::left(idx);
@@ -119,9 +136,11 @@ impl DijkstraQueue {
             };
 
             // and the heap rule is violated
-            if smallest_v < value {
+            if smallest_v < distance {
                 // fix it and keep bubbling down
                 self.heap.swap(idx, smallest_i);
+                self.map[self.heap[idx]] = smallest_i;
+                self.map[self.heap[smallest_i]] = idx;
                 idx = smallest_i;   
                 continue;
             }
@@ -129,9 +148,31 @@ impl DijkstraQueue {
             // the min heap rule holds for both childs so we can exit.
             break;
         }
-
-        result
     }
+
+    // bubble up the value until the heap property holds
+    fn bubble_up(&mut self, mut idx: usize, distance: f64) {
+        loop {
+            let parent_idx = DijkstraQueue::parent(idx);
+
+            // The heap condition is respected so we can stop.
+            // This also handles the case of the node at the root since
+            // self.parent(0) == 0 => current_value == parent_value
+            if distance >= self.distances[self.heap[parent_idx] as usize] {
+                break
+            }
+
+            // swap the parent and the child
+            self.heap.swap(idx, parent_idx);
+            self.map[self.heap[idx]] = parent_idx;
+            self.map[self.heap[parent_idx]] = idx;
+
+
+            // Update the mutables
+            idx = parent_idx;
+        }
+    }
+
 }
 
 use std::ops::{Index, IndexMut};
