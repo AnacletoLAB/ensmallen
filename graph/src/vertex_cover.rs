@@ -1,4 +1,5 @@
 use super::*;
+use bitvec::prelude::*;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use rayon::iter::{IndexedParallelIterator, ParallelBridge};
@@ -13,6 +14,7 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
         let mut vertex_cover = HashSet::new();
+        let mut covered_nodes = bitvec![Lsb0, u8; 0; nodes_number as usize];
         let mut degrees = self.get_node_degrees();
         let pb = get_loading_bar(
             verbose,
@@ -22,7 +24,7 @@ impl Graph {
         while let Some((max_degree_node_id, &degree)) = degrees
             .par_iter()
             .enumerate()
-            .filter(|(_, &degree)| degree != 0)
+            .filter(|(node_id, _)| !covered_nodes[*node_id])
             .max_by_key(|&(_, value)| value)
         {
             // We do not check for the selfloop or multigrapjs, but since is only for porposes
@@ -30,17 +32,22 @@ impl Graph {
             // to bother with additional checks.
             pb.inc(1 + degree as u64);
             vertex_cover.insert(max_degree_node_id as NodeT);
-            degrees[max_degree_node_id] = 0;
+            unsafe {
+                *covered_nodes.get_unchecked_mut(max_degree_node_id) = true;
+            }
             let thread_shared_degrees = ThreadSafe {
                 value: std::cell::UnsafeCell::new(&mut degrees),
             };
+            let thread_shared_covered_nodes = ThreadSafe {
+                value: std::cell::UnsafeCell::new(&mut covered_nodes),
+            };
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(max_degree_node_id as NodeT)
-                .map(|neighbour_node_id| {
-                    unsafe { (*thread_shared_degrees.value.get())[neighbour_node_id as usize] = 0 };
-                    neighbour_node_id
-                })
                 .par_bridge()
                 .for_each(|neighbour_node_id| {
+                    unsafe {
+                        *(*thread_shared_covered_nodes.value.get())
+                            .get_unchecked_mut(max_degree_node_id) = true;
+                    }
                     let degrees = thread_shared_degrees.value.get();
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(neighbour_node_id)
                         .for_each(|second_order_neighbour_id| {

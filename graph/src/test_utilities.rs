@@ -283,8 +283,6 @@ pub fn default_holdout_test_suite(
         "Main graph anded test does not contain training graph."
     );
 
-    let graph = graph.drop_selfloops(false);
-
     Ok(())
 }
 
@@ -583,8 +581,18 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
-pub fn test_dijkstra(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
-    //graph.get_dijkstra_from_node_ids(0)?;
+pub fn test_vertex_cover(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    let vertex_cover = graph.approximated_vertex_cover(Some(verbose));
+    graph
+        .par_iter_edge_ids(true)
+        .for_each(|(_, src_node_id, dst_node_id)| {
+            assert!(
+                vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
+                "We expected for either the node {} or {} to be in the vertex cover.",
+                src_node_id,
+                dst_node_id
+            );
+        });
     Ok(())
 }
 
@@ -1423,8 +1431,11 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Testing random walks.");
     let _ = test_random_walks(graph, verbose);
 
-    warn!("Testing dijkstra.");
-    let _ = test_dijkstra(graph, verbose);
+    //warn!("Testing dijkstra.");
+    //let _ = test_dijkstra(graph, verbose);
+
+    warn!("Testing approximated vertex cover");
+    let _ = test_vertex_cover(graph, verbose);
 
     warn!("Testing node centralities.");
     let _ = test_node_centralities(graph, verbose);
