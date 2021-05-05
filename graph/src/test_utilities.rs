@@ -581,8 +581,8 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
-pub fn test_vertex_cover(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let vertex_cover = graph.approximated_vertex_cover(Some(verbose));
+pub fn test_vertex_cover(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+    let vertex_cover = graph.approximated_vertex_cover();
     graph
         .par_iter_edge_ids(true)
         .for_each(|(_, src_node_id, dst_node_id)| {
