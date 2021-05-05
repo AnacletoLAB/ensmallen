@@ -12,7 +12,7 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn approximated_vertex_cover(&self, verbose: Option<bool>) -> HashSet<NodeT> {
+    fn approximated_vertex_cover(&self, verbose: Option<bool>) -> Vec<NodeT> {
         self.graph.approximated_vertex_cover(verbose)
     }
 }
