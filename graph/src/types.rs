@@ -35,7 +35,7 @@ pub type ShortestPathsResultBFS = (
     Option<Vec<Option<NodeT>>>,
     NodeT,
     NodeT,
-    f64,
+    f64
 );
 pub type ShortestPathsDjkstra = (Vec<f64>, Option<Vec<Option<NodeT>>>, f64, f64, f64);
 

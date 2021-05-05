@@ -79,6 +79,7 @@ mod setters;
 mod tarjan;
 mod trees;
 mod types;
+mod vertex_cover;
 mod walks;
 mod centrality;
 pub mod walks_parameters;
@@ -106,8 +107,6 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use preprocessing::*;
-
-use tags::*;
 
 mod dijkstra_queue;
 use dijkstra_queue::*;

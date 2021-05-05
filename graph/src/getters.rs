@@ -259,7 +259,7 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_unchecked_argmax_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
     /// ```
     pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
         self.par_iter_node_degrees()
@@ -765,7 +765,7 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.iter_node_degrees().collect()
+        self.par_iter_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.

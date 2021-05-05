@@ -1,7 +1,7 @@
 use super::*;
+use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
@@ -45,11 +45,11 @@ impl Graph {
             None
         };
 
-        let mut visited: Option<Vec<bool>> = if parents.is_some() || distances.is_some() {
+        let mut visited: Option<_> = if parents.is_some() || distances.is_some() {
             None
         } else {
-            let mut visited = vec![false; nodes_number];
-            visited[src_node_id as usize] = true;
+            let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+            unsafe { *visited.get_unchecked_mut(src_node_id as usize) = true };
             Some(visited)
         };
 
@@ -59,7 +59,7 @@ impl Graph {
             &mut visited,
         ) {
             (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
-                visited[neighbour_node_id as usize] = true;
+                unsafe { *visited.get_unchecked_mut(neighbour_node_id as usize) = true };
                 true
             }
             (Some(distances), None, None)
@@ -377,9 +377,6 @@ impl Graph {
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
                 root_eccentricity -= 1;
                 upper_bound_diameter = 2 * root_eccentricity;
-                if lower_bound_diameter > upper_bound_diameter {
-                    break;
-                }
             }
         }
         lower_bound_diameter
@@ -395,11 +392,11 @@ impl Graph {
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
         let mut lower_bound_diameter = root_eccentricity;
         let mut upper_bound_diameter = 2.0 * root_eccentricity;
-        while lower_bound_diameter != upper_bound_diameter {
+        while upper_bound_diameter - lower_bound_diameter > f64::EPSILON {
             if let Some(maximal_eccentricity) = distances
                 .par_iter()
                 .enumerate()
-                .filter(|(_, &distance)| distance == root_eccentricity)
+                .filter(|(_, &distance)| (distance - root_eccentricity).abs() < f64::EPSILON)
                 .map(|(node_id, _)| {
                     Some(self.get_unchecked_weighted_eccentricity_from_node_id(node_id as NodeT))
                 })
@@ -417,9 +414,6 @@ impl Graph {
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
                 root_eccentricity -= 1.0;
                 upper_bound_diameter = 2.0 * root_eccentricity;
-                if lower_bound_diameter > upper_bound_diameter {
-                    break;
-                }
             }
         }
         lower_bound_diameter
