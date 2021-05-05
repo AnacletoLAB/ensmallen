@@ -829,7 +829,7 @@
             ]
         },
         "example": {
-            "content": "```rust# #![feature(impl_trait_in_bindings)]\n# use graph::Graph;\n// Graph is a weightless graph with the edges\n// [(0, 1), (1, 4), (2, 3)]\n# let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![\n#        Ok((\"0\".to_string(), \"1\".to_string(), None, None)),\n#        Ok((\"1\".to_string(), \"4\".to_string(), None, None)),\n#        Ok((\"2\".to_string(), \"3\".to_string(), None, None)),\n#     ];\n#\n# let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());\n#\n# let graph = Graph::from_string_unsorted(\n#     edge.into_iter(),\n#     nodes,      // nodes\n#     false,     // directed\n#     false,      // directe edge list\n#     \"test graph\",// name\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // verbose\n#     false,     // numeric_edge_types_ids\n#     false,     // numeric_node_ids\n#     false,     // numeric_edge_node_ids\n#     false,     // numeric_node_types_ids\n#     false,     // has_node_types\n#     false,     // has_edge_types\n#     false,     // has_edge_weights\n#     true,\n#     true,\n#     true,\n# ).unwrap();\nlet (components, number_of_components, smallest, biggest) =\ngraph.connected_components(false).unwrap();\n//   nodes names:       0  1  4  2  3\nassert_eq!(components, [0, 0, 0, 1, 1].to_vec());\nassert_eq!(number_of_components, 2);\nassert_eq!(smallest, 2); // the size of the smallest component\nassert_eq!(biggest, 3);  // the size of the biggest component\n"
+            "content": "```rust# #![feature(impl_trait_in_bindings)]\n# use graph::Graph;\n// Graph is a weightless graph with the edges\n// [(0, 1), (1, 4), (2, 3)]\n# let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![\n#        Ok((\"0\".to_string(), \"1\".to_string(), None, None)),\n#        Ok((\"1\".to_string(), \"4\".to_string(), None, None)),\n#        Ok((\"2\".to_string(), \"3\".to_string(), None, None)),\n#     ];\n#\n# let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());\n#\n# let graph = Graph::from_string_unsorted(\n#     edge.into_iter(),\n#     nodes,      // nodes\n#     false,     // directed\n#     false,      // directe edge list\n#     \"test graph\",// name\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // ignore_duplicated_nodes\n#     true,     // node_list_is_correct\n#     false,     // numeric_edge_types_ids\n#     false,     // numeric_node_ids\n#     false,     // numeric_edge_node_ids\n#     false,     // numeric_node_types_ids\n#     false,     // has_node_types\n#     false,     // has_edge_types\n#     false,     // has_edge_weights\n#     true,    // maybe_has_singleton\n#     true,    // maybe_has_singleton_with_selfloops\n#     true,    // maybe_has_node_traps\n#     false,     // verbose\n# ).unwrap();\nlet (components, number_of_components, smallest, biggest) =\ngraph.connected_components(false).unwrap();\n//   nodes names:       0  1  4  2  3\nassert_eq!(components, [0, 0, 0, 1, 1].to_vec());\nassert_eq!(number_of_components, 2);\nassert_eq!(smallest, 2); // the size of the smallest component\nassert_eq!(biggest, 3);  // the size of the biggest component\n"
         },
         "extra_headers": []
     },
@@ -3544,7 +3544,7 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'max_neighbours'."
             },
             {
                 "doc_line": "~",
@@ -3552,7 +3552,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_neighbours'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -6534,6 +6534,14 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'destinations'."
             },
             {
@@ -6542,19 +6550,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
             },
             {
                 "doc_line": 0,
@@ -6581,34 +6581,6 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'max_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'min_edge_id'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_selfloop'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'previous_destinations'."
             },
             {
@@ -6617,7 +6589,35 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'probabilistic_indices'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'has_selfloop'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'dst'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'max_edge_id'."
             },
             {
                 "doc_line": 0,
@@ -6644,11 +6644,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -6679,23 +6679,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'destinations'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'probabilistic_indices'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'walk_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
@@ -6703,7 +6687,23 @@
             },
             {
                 "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'destinations'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'random_state'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node'."
+            },
+            {
+                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'min_edge_id'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'walk_weights'."
             },
             {
                 "doc_line": 0,
@@ -6842,15 +6842,15 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'to_node'."
             },
             {
                 "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'quantity'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": 0,
@@ -6881,7 +6881,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'parameters'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": "~",
@@ -6889,7 +6889,7 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'parameters'."
             },
             {
                 "doc_line": 0,
@@ -6916,11 +6916,11 @@
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node'."
+                "msg": "Missing the documentation for the argument 'random_state'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'random_state'."
+                "msg": "Missing the documentation for the argument 'node'."
             },
             {
                 "doc_line": 0,
@@ -7579,6 +7579,30 @@
         },
         "extra_headers": []
     },
+    "get_singleton_node_ids": {
+        "file": "getters.rs",
+        "function": "get_singleton_node_ids",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The graph singleton node IDs are {:?}.\", graph.get_singleton_node_ids());\n"
+        },
+        "extra_headers": []
+    },
+    "get_singleton_node_names": {
+        "file": "getters.rs",
+        "function": "get_singleton_node_names",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The graph singleton node names are {:?}.\", graph.get_singleton_node_names());\n"
+        },
+        "extra_headers": []
+    },
     "get_singleton_nodes_with_selfloops_number": {
         "file": "getters.rs",
         "function": "get_singleton_nodes_with_selfloops_number",
@@ -7588,6 +7612,30 @@
         },
         "example": {
             "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The graph contains {} singleton nodes with self-loops\", graph.get_singleton_nodes_with_selfloops_number());\n"
+        },
+        "extra_headers": []
+    },
+    "get_singleton_with_selfloops_node_ids": {
+        "file": "getters.rs",
+        "function": "get_singleton_with_selfloops_node_ids",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The graph singleton_with_selfloops node IDs are {:?}.\", graph.get_singleton_with_selfloops_node_ids());\n"
+        },
+        "extra_headers": []
+    },
+    "get_singleton_with_selfloops_node_names": {
+        "file": "getters.rs",
+        "function": "get_singleton_with_selfloops_node_names",
+        "errors": [],
+        "args": {
+            "args": []
+        },
+        "example": {
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The graph singleton_with_selfloops node names are {:?}.\", graph.get_singleton_with_selfloops_node_names());\n"
         },
         "extra_headers": []
     },
@@ -8669,15 +8717,20 @@
         "function": "build_reverse_mapping",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": 2,
+                "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
             "args": []
         },
         "example": {},
-        "extra_headers": []
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the terms mapping is found to be not dense.\n"
+            }
+        ]
     },
     "is_empty": {
         "file": "edge_type_vocabulary.rs",
@@ -8895,6 +8948,27 @@
         ],
         "args": {
             "args": []
+        },
+        "example": {},
+        "extra_headers": []
+    },
+    "unchecked_insert_values": {
+        "file": "node_type_vocabulary.rs",
+        "function": "unchecked_insert_values",
+        "errors": [
+            {
+                "doc_line": 0,
+                "msg": "Missing Example"
+            }
+        ],
+        "args": {
+            "args": [
+                {
+                    "name": "maybe_values",
+                    "type": "Option<Vec<S>>",
+                    "desc": "The values to be inserted"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -10411,19 +10485,36 @@
         "function": "check_numeric_ids_compatibility",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
-                "msg": "Missing Example"
+                "doc_line": 10,
+                "msg": "The example section is missing or in the wrong order."
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "has_nodes_list",
+                    "type": "bool",
+                    "desc": "Whether the graph has a node list"
+                },
+                {
+                    "name": "numeric_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the node IDs should be loaded as integers"
+                },
+                {
+                    "name": "numeric_edge_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the edge node IDs should be loaded as integers"
+                }
+            ]
         },
         "example": {},
-        "extra_headers": []
+        "extra_headers": [
+            {
+                "name": "Raises",
+                "content": "* If the given combination of numeric nodes is not feaseable.\n"
+            }
+        ]
     },
     "parse_node_ids": {
         "file": "constructors.rs",
@@ -10431,19 +10522,19 @@
         "errors": [
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
                 "msg": "Missing the documentation for the argument 'nodes'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iter'."
+                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
             },
             {
                 "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'ignore_duplicated_nodes'."
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
             },
             {
                 "doc_line": 0,
@@ -10462,8 +10553,16 @@
         "function": "parse_node_type_ids",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'nodes_iter'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'node_types_vocabulary'."
             },
             {
                 "doc_line": 0,
@@ -10471,7 +10570,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "desc": "nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,\nIterator over the node list.\nnode_list_is_correct: bool,\nParameter to pinky promise that the node list is correct.\nIf you provide a broken node list to this method while promising\nthat the node list is correct, be prepared to deal with the fallout.\nThis parameter is mainly meant to be used internally when creating\ngraphs that CANNOT BE BROKEN by design. If you use this parameter\nfrom any of the bindings, be SURE that the node list is actually\ncorrect.\nWe assume that any provided node list is broken until disproved.\nnode_types_vocabulary: &'b mut NodeTypeVocabulary,\nNode types vocabulary to be populated.\n"
         },
         "example": {},
         "extra_headers": []
@@ -10500,8 +10600,16 @@
         "function": "parse_edge_type_ids_vocabulary",
         "errors": [
             {
-                "doc_line": 0,
-                "msg": "Missing Arguments"
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edge_types'."
+            },
+            {
+                "doc_line": "~",
+                "msg": "Missing the documentation for the argument 'edges_iter'."
             },
             {
                 "doc_line": 0,
@@ -10509,7 +10617,8 @@
             }
         ],
         "args": {
-            "args": []
+            "args": [],
+            "desc": "edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a,\nIterator over the edge node names list.\nedge_list_is_correct: bool,\nParameter to pinky promise that the edge list is correct.\nIf you provide a broken edge list to this method while promising\nthat the edge list is correct, be prepared to deal with the fallout.\nThis parameter is mainly meant to be used internally when creating\ngraphs that CANNOT BE BROKEN by design. If you use this parameter\nfrom any of the bindings, be SURE that the edge list is actually\ncorrect.\nWe assume that any provided edge list is broken until disproved.\nedge_types: &'b mut Vocabulary<EdgeTypeT>,\nVocabulary of the edge types to be populated.\n"
         },
         "example": {},
         "extra_headers": []
@@ -10690,78 +10799,6 @@
         "function": "from_string_unsorted",
         "errors": [
             {
-                "doc_line": 7,
-                "msg": "The argument line '* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<String>), String>>> -Iterator of the nodes.' (doc_line: 7) is not in the standard format."
-            },
-            {
-                "doc_line": 11,
-                "msg": "The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes_iterator', 'directed', 'directed_edge_list', 'name', 'ignore_duplicated_nodes', 'node_list_is_correct', 'ignore_duplicated_edges', 'edge_list_is_correct', 'verbose', 'numeric_edge_type_ids', 'numeric_node_ids', 'numeric_edge_node_ids', 'numeric_node_types_ids', 'has_node_types', 'has_edge_types', 'has_edge_weights', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_node_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_node_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_list_is_correct'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_types_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'directed_edge_list'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_edge_type_ids'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'numeric_node_ids'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -10771,25 +10808,104 @@
                 {
                     "name": "edges_iterator",
                     "type": "impl Iterator<Item = Result<StringQuadruple, String>>",
-                    "desc": "Iterator of the edges"
+                    "desc": "Iterator on the edge list composed of strings"
+                },
+                {
+                    "name": "nodes_iterator",
+                    "type": "Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>",
+                    "desc": "Option of an iterator on the node list composed of strings"
                 },
                 {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "Wether the graph should be directed or undirected"
+                    "desc": "Whether the edge list should be loaded as directed or undirected"
+                },
+                {
+                    "name": "directed_edge_list",
+                    "type": "bool",
+                    "desc": "Whether the edge list is expressed as directed. If this is an undirected graph, we expect a directed edge list to contain edges in BOTH directions"
+                },
+                {
+                    "name": "name",
+                    "type": "S",
+                    "desc": "The name of the graph"
                 },
                 {
                     "name": "ignore_duplicated_nodes",
                     "type": "bool",
-                    "desc": "Wether to ignore duplicated nodes or to raise a proper exception"
+                    "desc": "Whether to ignore and skip the detected duplicated node names or to raise an error"
+                },
+                {
+                    "name": "node_list_is_correct",
+                    "type": "bool",
+                    "desc": "Whether the user pinky promises that the node list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct"
                 },
                 {
                     "name": "ignore_duplicated_edges",
                     "type": "bool",
-                    "desc": "Wether to ignore duplicated edges or to raise a proper exception"
+                    "desc": "Whether to ignore and skip the detected duplicated edges or to raise an error"
+                },
+                {
+                    "name": "edge_list_is_correct",
+                    "type": "bool",
+                    "desc": "Whether the user pinky promises that the edge list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "numeric_edge_type_ids",
+                    "type": "bool",
+                    "desc": "Whether the edge type IDs should be loaded as numeric, casting them to integers. The range of edge type IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the node IDs should be loaded as numeric, casting them to integers. The range of node IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_edge_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the edge node IDs should be loaded as numeric, casting them to integers. The range of edge node IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_node_types_ids",
+                    "type": "bool",
+                    "desc": "Whether the node type IDs should be loaded as numeric, casting them to integers. The range of node type IDs MUST be dense"
+                },
+                {
+                    "name": "has_node_types",
+                    "type": "bool",
+                    "desc": "Whether the graph has node types"
+                },
+                {
+                    "name": "has_edge_types",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge types"
+                },
+                {
+                    "name": "has_edge_weights",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge weights"
+                },
+                {
+                    "name": "might_have_singletons",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_singletons_with_selfloops",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_trap_nodes",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether we should show loading bars while building the graph"
                 }
-            ],
-            "desc": "TODO: UPDATE THE DOCSTRING!\n"
+            ]
         },
         "example": {},
         "extra_headers": []
@@ -10799,66 +10915,6 @@
         "function": "from_integer_unsorted",
         "errors": [
             {
-                "doc_line": 4,
-                "msg": "The argument type 'impl Iterator<Item = Result<StringQuadruple, String>>' of 'edges_iterator' does not match the function declaration which is 'impl Iterator<\n            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,\n        >'."
-            },
-            {
-                "doc_line": 5,
-                "msg": "The argument 'nodes_iterator' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes']."
-            },
-            {
-                "doc_line": 7,
-                "msg": "The argument 'ignore_duplicated_nodes' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes']."
-            },
-            {
-                "doc_line": 9,
-                "msg": "The argument 'skip_selfloops' does not exists in the current method. The available args are ['edges_iterator', 'nodes', 'node_types', 'edge_types_vocabulary', 'directed', 'name', 'ignore_duplicated_edges', 'has_edge_types', 'has_edge_weights', 'verbose', 'might_have_singletons', 'might_have_singletons_with_selfloops', 'might_have_trap_nodes']."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_singletons_with_selfloops'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_weights'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'verbose'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'might_have_trap_nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edges_iterator'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'edge_types_vocabulary'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'nodes'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'name'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'has_edge_types'."
-            },
-            {
-                "doc_line": "~",
-                "msg": "Missing the documentation for the argument 'node_types'."
-            },
-            {
                 "doc_line": 0,
                 "msg": "Missing Example"
             }
@@ -10866,14 +10922,69 @@
         "args": {
             "args": [
                 {
+                    "name": "edges_iterator",
+                    "type": "impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>",
+                    "desc": "Iterator over the egde node IDs"
+                },
+                {
+                    "name": "nodes",
+                    "type": "Vocabulary<NodeT>",
+                    "desc": "Vocabulary of the node IDs"
+                },
+                {
+                    "name": "node_types",
+                    "type": "Option<NodeTypeVocabulary>",
+                    "desc": "Option of the vocabulary of the node type IDs"
+                },
+                {
+                    "name": "edge_types_vocabulary",
+                    "type": "Option<Vocabulary<EdgeTypeT>>",
+                    "desc": "Option of the Vocabulary of the edge type IDs"
+                },
+                {
                     "name": "directed",
                     "type": "bool",
-                    "desc": "Wether the graph should be directed or undirected"
+                    "desc": "Whether to load the graph as directed or undirected"
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "desc": "Name of the graph"
                 },
                 {
                     "name": "ignore_duplicated_edges",
                     "type": "bool",
-                    "desc": "Wether to ignore duplicated edges or to raise a proper exception"
+                    "desc": "Whether to ignore and skip the detected duplicated edges or to raise an error"
+                },
+                {
+                    "name": "has_edge_types",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge types"
+                },
+                {
+                    "name": "has_edge_weights",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge weights"
+                },
+                {
+                    "name": "might_have_singletons",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_singletons_with_selfloops",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_trap_nodes",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "verbose",
+                    "type": "bool",
+                    "desc": "Whether to show theloading bars while loading the graph"
                 }
             ]
         },
@@ -10886,15 +10997,117 @@
         "errors": [
             {
                 "doc_line": 0,
-                "msg": "Missing Arguments"
-            },
-            {
-                "doc_line": 0,
                 "msg": "Missing Example"
             }
         ],
         "args": {
-            "args": []
+            "args": [
+                {
+                    "name": "edges_iterator",
+                    "type": "impl Iterator<Item = Result<StringQuadruple, String>>",
+                    "desc": "Iterator on the edge list composed of strings"
+                },
+                {
+                    "name": "nodes_iterator",
+                    "type": "Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>",
+                    "desc": "Option of an iterator on the node list composed of strings"
+                },
+                {
+                    "name": "directed",
+                    "type": "bool",
+                    "desc": "Whether the edge list should be loaded as directed or undirected"
+                },
+                {
+                    "name": "directed_edge_list",
+                    "type": "bool",
+                    "desc": "Whether the edge list is expressed as directed. If this is an undirected graph, we expect a directed edge list to contain edges in BOTH directions"
+                },
+                {
+                    "name": "name",
+                    "type": "S",
+                    "desc": "The name of the graph"
+                },
+                {
+                    "name": "ignore_duplicated_nodes",
+                    "type": "bool",
+                    "desc": "Whether to ignore and skip the detected duplicated node names or to raise an error"
+                },
+                {
+                    "name": "node_list_is_correct",
+                    "type": "bool",
+                    "desc": "Whether the user pinky promises that the node list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "ignore_duplicated_edges",
+                    "type": "bool",
+                    "desc": "Whether to ignore and skip the detected duplicated edges or to raise an error"
+                },
+                {
+                    "name": "edge_list_is_correct",
+                    "type": "bool",
+                    "desc": "Whether the user pinky promises that the edge list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "edges_number",
+                    "type": "usize",
+                    "desc": "Exact number of edges in the graph"
+                },
+                {
+                    "name": "nodes_number",
+                    "type": "NodeT",
+                    "desc": "Exact number of nodes in the graph"
+                },
+                {
+                    "name": "numeric_edge_type_ids",
+                    "type": "bool",
+                    "desc": "Whether the edge type IDs should be loaded as numeric, casting them to integers. The range of edge type IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the node IDs should be loaded as numeric, casting them to integers. The range of node IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_edge_node_ids",
+                    "type": "bool",
+                    "desc": "Whether the edge node IDs should be loaded as numeric, casting them to integers. The range of edge node IDs MUST be dense"
+                },
+                {
+                    "name": "numeric_node_types_ids",
+                    "type": "bool",
+                    "desc": "Whether the node type IDs should be loaded as numeric, casting them to integers. The range of node type IDs MUST be dense"
+                },
+                {
+                    "name": "has_node_types",
+                    "type": "bool",
+                    "desc": "Whether the graph has node types"
+                },
+                {
+                    "name": "has_edge_types",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge types"
+                },
+                {
+                    "name": "has_edge_weights",
+                    "type": "bool",
+                    "desc": "Whether the graph has edge weights"
+                },
+                {
+                    "name": "might_have_singletons",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_singletons_with_selfloops",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                },
+                {
+                    "name": "might_have_trap_nodes",
+                    "type": "bool",
+                    "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
+                }
+            ]
         },
         "example": {},
         "extra_headers": []

@@ -6,6 +6,8 @@ use rayon::prelude::*;
 /// * `get_(.+?)_from_(.+)`
 /// * `get_unchecked_(.+?)_from_(.+)`
 impl Graph {
+    
+    #[no_inverse_method]
     /// Returns option with the weight of the given edge id.
     ///
     /// This method will raise a panic if the given edge ID is higher than

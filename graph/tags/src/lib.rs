@@ -15,4 +15,9 @@ macro_rules! create_tag {
 // Here we create the tags we use for meta-analysis in the code.
 // These do not change stuff but allows us to add a signature
 // to methods without touching the documentation.
-create_tag!(no_doc no_example no_args);
+create_tag!(
+    no_doc 
+    no_example 
+    no_args 
+    no_inverse_method
+);
