@@ -35,8 +35,8 @@ impl Graph {
             unsafe {
                 *covered_nodes.get_unchecked_mut(max_degree_node_id) = true;
             }
-            if degree == 0{
-                continue
+            if degree == 0 {
+                continue;
             }
             let thread_shared_degrees = ThreadSafe {
                 value: std::cell::UnsafeCell::new(&mut degrees),
@@ -47,7 +47,7 @@ impl Graph {
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(max_degree_node_id as NodeT)
                 .par_bridge()
                 .filter(|&neighbour_node_id| unsafe {
-                    (*thread_shared_covered_nodes.value.get())[neighbour_node_id as usize]
+                    !(*thread_shared_covered_nodes.value.get())[neighbour_node_id as usize]
                 })
                 .for_each(|neighbour_node_id| {
                     unsafe {
