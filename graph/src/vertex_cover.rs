@@ -35,6 +35,9 @@ impl Graph {
             unsafe {
                 *covered_nodes.get_unchecked_mut(max_degree_node_id) = true;
             }
+            if degree == 0{
+                continue
+            }
             let thread_shared_degrees = ThreadSafe {
                 value: std::cell::UnsafeCell::new(&mut degrees),
             };
