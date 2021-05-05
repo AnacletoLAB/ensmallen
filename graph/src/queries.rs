@@ -402,7 +402,8 @@ impl Graph {
     /// TODO: This can be refactored to run faster!
     pub fn get_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
         let k = k.min(self.get_nodes_number());
-        let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
+        let mut nodes_degrees: Vec<(NodeT, NodeT)> = self
+            .iter_node_ids()
             .map(|node_id| {
                 (
                     self.get_unchecked_node_degree_from_node_id(node_id),

@@ -598,13 +598,14 @@ impl Graph {
         }
         if self.get_edges_number() == 0 {
             return Ok((
-                (0..self.get_nodes_number()).collect(),
+                self.iter_node_ids().collect(),
                 self.get_nodes_number(),
                 1,
                 1,
             ));
         }
-        let components = (0..self.get_nodes_number())
+        let components = self
+            .iter_node_ids()
             .map(|_| AtomicU32::new(NOT_PRESENT))
             .collect::<Vec<_>>();
         let mut min_component_size: NodeT = NodeT::MAX;
@@ -651,7 +652,7 @@ impl Graph {
                 let min_component_size = thread_safe_min_component_size.value.get();
                 let max_component_size = thread_safe_max_component_size.value.get();
                 let components_number = thread_safe_components_number.value.get();
-                (0..self.get_nodes_number())
+                self.iter_node_ids()
                     .progress_with(pb)
                     .for_each(|src| {
                         // If the node has already been explored we skip ahead.
@@ -767,7 +768,7 @@ impl Graph {
         }
 
         Ok((
-            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<u32>>(components) },
+            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(components) },
             components_number,
             min_component_size,
             max_component_size,
