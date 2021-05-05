@@ -75,6 +75,7 @@ mod operators;
 mod preprocessing;
 mod remap;
 mod remove;
+mod polygons;
 mod setters;
 mod tarjan;
 mod trees;

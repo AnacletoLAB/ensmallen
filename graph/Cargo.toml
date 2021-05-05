@@ -33,6 +33,7 @@ bitvec = "0.21"
 glob = "0.3.0"
 keyed_priority_queue = "0.3.2"
 num_cpus = "1.13.0"
+iter-set = "2.0.1"
 atomic_float = "0.1.0"
 linked_hash_set = "0.1.4"
 indicatif = {version="0.15.0", features = ["rayon"]}

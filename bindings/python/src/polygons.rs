@@ -5,11 +5,11 @@ use std::collections::HashSet;
 #[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self)"]
-    /// Returns a 2-approximated vertex cover.
+    /// Returns number of triangles in the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn approximated_vertex_cover(&self) -> HashSet<NodeT> {
-        self.graph.approximated_vertex_cover_set()
+    fn get_triangles_number(&self) -> EdgeT {
+        self.graph.get_triangles_number()
     }
 }

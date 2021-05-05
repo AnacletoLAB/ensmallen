@@ -99,6 +99,57 @@ impl Graph {
         }
     }
 
+    /// Return iterator over neighbours intersection.
+    ///
+    /// # Arguments
+    /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
+    /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
+    ///
+    pub fn iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+        &self,
+        first_src_node_id: NodeT,
+        second_src_node_id: NodeT,
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        iter_set::intersection(
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(first_src_node_id),
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(second_src_node_id),
+        )
+    }
+
+    /// Return iterator over neighbours union.
+    ///
+    /// # Arguments
+    /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
+    /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
+    ///
+    pub fn iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
+        &self,
+        first_src_node_id: NodeT,
+        second_src_node_id: NodeT,
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        iter_set::union(
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(first_src_node_id),
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(second_src_node_id),
+        )
+    }
+
+    /// Return iterator over neighbours difference.
+    ///
+    /// # Arguments
+    /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
+    /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
+    ///
+    pub fn iter_unchecked_neighbour_node_ids_difference_from_source_node_ids(
+        &self,
+        first_src_node_id: NodeT,
+        second_src_node_id: NodeT,
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        iter_set::difference(
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(first_src_node_id),
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(second_src_node_id),
+        )
+    }
+
     /// Return iterator over NodeT of destinations of the given node src.
     ///
     /// # Arguments
