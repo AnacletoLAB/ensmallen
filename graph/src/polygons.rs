@@ -121,7 +121,7 @@ impl Graph {
                             // We compute the intersection of the neighbours.
                             intersection
                                 .into_iter()
-                                .map(|inner_node_id| {
+                                .for_each(|inner_node_id| {
                                     // If the inner node is as well in the vertex cover
                                     // we only count this as one, as we will encounter
                                     // combinations of these nodes multiple times
@@ -134,13 +134,11 @@ impl Graph {
                                         // three times.
                                         not_in_vertex_cover += 1;
                                     }
-                                    (intersection_length
-                                        * (intersection_length - 1)
-                                        +  not_in_vertex_cover * (not_in_vertex_cover - 1)
+                                });
+                                (intersection_length * (intersection_length - 1)
+                                        + not_in_vertex_cover * (not_in_vertex_cover - 1)
                                         + 2 * in_vertex_cover * (not_in_vertex_cover - 1))
                                         as EdgeT
-                                })
-                                .sum::<EdgeT>()
                         }
                     })
                     .sum::<EdgeT>()
