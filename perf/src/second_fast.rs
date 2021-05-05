@@ -10,7 +10,7 @@ pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping()))
         .set_random_state(Some(43)))
 }
 

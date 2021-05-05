@@ -7,7 +7,7 @@ pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(1_000)?
         .set_iterations(Some(50_000))?
         .set_random_state(Some(43))
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
 fn main() {
