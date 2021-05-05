@@ -247,9 +247,37 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
     pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().max().ok_or_else(|| {
+        self.par_iter_node_degrees().max().ok_or_else(|| {
             "The maximum node degree of a graph with no nodes is not defined.".to_string()
         })
+    }
+
+    /// Returns maximum node degree of the graph.
+    ///
+    /// This method fails with a panic if the graph does not have any node.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The maximum node degree of the graph is  {}", graph.get_unchecked_argmax_node_degree().unwrap());
+    /// ```
+    pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
+        self.par_iter_node_degrees()
+            .enumerate()
+            .max_by_key(|&(_, value)| value)
+            .map(|(idx, _)| idx)
+            .unwrap_unchecked() as NodeT
+    }
+    /// Returns maximum node degree of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The maximum node degree of the graph is  {}", graph.get_argmax_node_degree().unwrap());
+    /// ```
+    pub fn get_argmax_node_degree(&self) -> Result<NodeT, String> {
+        self.must_have_nodes()
+            .map(|_| unsafe { self.get_unchecked_argmax_node_degree() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.

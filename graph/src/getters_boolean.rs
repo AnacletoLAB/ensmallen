@@ -128,6 +128,17 @@ impl Graph {
         self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
+    /// Returns whether the graph is connected.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show the loading bar while computing the connected components, if necessary.
+    pub fn is_connected(&self, verbose: bool) -> bool {
+        self.get_nodes_number() <= 1
+            || !self.has_singleton_nodes()
+                && !self.has_singleton_nodes_with_selfloops()
+                && self.get_connected_components_number(verbose).0 == 1
+    }
+
     /// Returns boolean representing if graph has node types.
     pub fn has_node_types(&self) -> bool {
         self.node_types.is_some()
@@ -184,9 +195,12 @@ impl Graph {
 
     /// Return whether the graph has any known node-related graph oddities.
     pub fn has_node_oddities(&self) -> bool {
-        [self.has_singleton_nodes(), self.has_singleton_nodes_with_selfloops()]
-            .iter()
-            .any(|value| *value)
+        [
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+        ]
+        .iter()
+        .any(|value| *value)
     }
 
     /// Return whether the graph has any known node type-related graph oddities.
@@ -197,7 +211,7 @@ impl Graph {
         Ok([
             self.has_singleton_node_types()?,
             self.has_homogeneous_node_types()?,
-            self.has_unknown_node_types()?
+            self.has_unknown_node_types()?,
         ]
         .iter()
         .any(|value| *value))
@@ -219,7 +233,7 @@ impl Graph {
         Ok([
             self.has_singleton_edge_types()?,
             self.has_homogeneous_edge_types()?,
-            self.has_unknown_edge_types()?
+            self.has_unknown_edge_types()?,
         ]
         .iter()
         .any(|value| *value))

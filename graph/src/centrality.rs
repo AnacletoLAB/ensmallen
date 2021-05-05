@@ -186,7 +186,7 @@ impl Graph {
         );
         self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| unsafe {
+            .map(move |node_id| {
                 self.get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)
             })
     }
