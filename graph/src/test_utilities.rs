@@ -607,8 +607,7 @@ pub fn test_polygons(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>()
-            / 3
-            / if graph.is_directed() { 1 } else { 2 },
+            / 3,
         graph.get_number_of_triangles()
     );
     Ok(())

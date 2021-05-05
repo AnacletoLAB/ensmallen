@@ -2,6 +2,7 @@ use super::*;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::{AtomicU32, Ordering};
 
@@ -133,18 +134,11 @@ impl Graph {
                                         // three times.
                                         not_in_vertex_cover += 1;
                                     }
-                                    ((if not_in_vertex_cover != 0 {
-                                        intersection_length
-                                            * (intersection_length - 1)
-                                            * not_in_vertex_cover
-                                            * (not_in_vertex_cover - 1)
-                                    } else {
-                                        0
-                                    }) + (if in_vertex_cover != 0 {
-                                        2 * not_in_vertex_cover * (in_vertex_cover - 1)
-                                    } else {
-                                        0
-                                    })) as EdgeT
+                                    (intersection_length
+                                        * (intersection_length - 1)
+                                        +  not_in_vertex_cover * (not_in_vertex_cover - 1)
+                                        + 2 * in_vertex_cover * (not_in_vertex_cover - 1))
+                                        as EdgeT
                                 })
                                 .sum::<EdgeT>()
                         }
@@ -213,7 +207,14 @@ impl Graph {
                     }
                 });
             });
-        unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_triangles_number) }
+        let mut node_triangles_number =
+            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_triangles_number) };
+        node_triangles_number
+            .par_iter_mut()
+            .for_each(|triangles_number| {
+                *triangles_number /= 2;
+            });
+        node_triangles_number
     }
 
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
