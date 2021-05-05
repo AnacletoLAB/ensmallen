@@ -1,6 +1,5 @@
 use super::*;
-use graph::NodeT;
-use std::collections::HashSet;
+use graph::EdgeT;
 
 #[pymethods]
 impl EnsmallenGraph {
