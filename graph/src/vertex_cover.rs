@@ -43,10 +43,13 @@ impl Graph {
             };
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(max_degree_node_id as NodeT)
                 .par_bridge()
+                .filter(|&neighbour_node_id| unsafe {
+                    (*thread_shared_covered_nodes.value.get())[neighbour_node_id as usize]
+                })
                 .for_each(|neighbour_node_id| {
                     unsafe {
                         *(*thread_shared_covered_nodes.value.get())
-                            .get_unchecked_mut(max_degree_node_id) = true;
+                            .get_unchecked_mut(neighbour_node_id as usize) = true;
                     }
                     let degrees = thread_shared_degrees.value.get();
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(neighbour_node_id)
