@@ -588,11 +588,29 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: bool) -> Result<(), String
         .for_each(|(_, src_node_id, dst_node_id)| {
             assert!(
                 vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
-                "We expected for either the node {} or {} to be in the vertex cover.",
+                concat!(
+                    "We expected for either the node {} or {} to be in the vertex cover.\n",
+                    "The vertex cover is {:?}"
+                ),
                 src_node_id,
-                dst_node_id
+                dst_node_id,
+                vertex_cover
             );
         });
+    Ok(())
+}
+
+pub fn test_polygons(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+    assert_eq!(
+        graph
+            .get_number_of_triangles_per_node()
+            .into_iter()
+            .map(|triangles_number| triangles_number as EdgeT)
+            .sum::<EdgeT>()
+            / 3
+            / if graph.is_directed() { 1 } else { 2 },
+        graph.get_number_of_triangles()
+    );
     Ok(())
 }
 
@@ -1439,6 +1457,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing node centralities.");
     let _ = test_node_centralities(graph, verbose);
+
+    warn!("Testing polygons.");
+    let _ = test_polygons(graph, verbose);
 
     Ok(())
 }

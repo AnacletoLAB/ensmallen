@@ -1,7 +1,7 @@
 use super::*;
 use bitvec::prelude::*;
 use rayon::iter::ParallelIterator;
-use std::collections::HashSet;
+use std::{collections::HashSet, sync::atomic::AtomicU8};
 
 impl Graph {
     /// Returns 2-approximated verted cover bitvec using greedy algorithm.
@@ -10,7 +10,7 @@ impl Graph {
     /// This implementation is described in ["A local-ratio theorem for approximating the weighted vertex cover problem"](http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf).
     pub fn approximated_vertex_cover_bitvec(&self) -> BitVec<Lsb0, u8> {
         let nodes_number = self.get_nodes_number() as usize;
-        let mut vertex_cover = bitvec![Lsb0, u8; 0; nodes_number];
+        let mut vertex_cover = bitvec![Lsb0, AtomicU8; 0; nodes_number];
         let thread_shared_vertex_cover = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut vertex_cover),
         };
@@ -24,7 +24,8 @@ impl Graph {
                 }
             },
         );
-        vertex_cover
+
+        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(vertex_cover) }
     }
 
     /// Returns 2-approximated verted cover set using greedy algorithm.

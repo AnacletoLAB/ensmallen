@@ -13,6 +13,15 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
+    /// Returns number of squares in the graph.
+    ///
+    /// [Automatically generated binding]
+    /// [Automatically generated documentation]
+    fn get_number_of_squares(&self) -> EdgeT {
+        self.graph.get_number_of_squares()
+    }
+
+    #[text_signature = "($self)"]
     /// Returns number of triangles for all nodes in the graph.
     ///
     /// [Automatically generated binding]
