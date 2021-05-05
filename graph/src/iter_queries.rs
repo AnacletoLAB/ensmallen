@@ -84,7 +84,7 @@ impl Graph {
     pub fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
-    ) -> Box<dyn Iterator<Item = NodeT> + '_> {
+    ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
         match &self.destinations {
             Some(dsts) => Box::new(
                 dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]

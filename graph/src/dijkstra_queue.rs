@@ -50,6 +50,11 @@ impl DijkstraQueue {
         self.heap.is_empty()
     }
 
+    // Returns number of elements in the heap.
+    pub fn len(&self) -> usize {
+        self.heap.len()
+    }
+
     /// add a value to the heap
     pub fn push(&mut self, node_id: usize, distance: f64) {
         debug_assert!(
@@ -70,7 +75,7 @@ impl DijkstraQueue {
         self.heap.push(node_id);
         self.distances[node_id as usize] = distance;
         // fix the heap
-        self.bubble_up(self.heap.len() - 1, distance);
+        self.bubble_up(self.len() - 1, distance);
     }
 
     /// Return the computed distances
@@ -88,7 +93,7 @@ impl DijkstraQueue {
         // swap the minimum with the last value
         // this is done so we can pop from the end of the vector
         // so we are ensured O(1) complexity.
-        let number_of_elements = self.heap.len() - 1;
+        let number_of_elements = self.len() - 1;
         // Reset its position in the map
         self.map[self.heap[0] as usize] = usize::MAX;
         self.map[self.heap[number_of_elements]] = 0;

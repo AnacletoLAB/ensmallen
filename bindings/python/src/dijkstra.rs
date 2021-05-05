@@ -146,10 +146,10 @@ impl EnsmallenGraph {
         ))
     }
 
+    #[text_signature = "($self, ignore_infinity, verbose)"]
     /// Returns diameter of the graph.
     ///
     /// # Arguments
-    ///     Whether to use the graph weights as edge distances. By default, false.
     /// ignore_infinity: bool = True,
     ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
     /// verbose: bool = True,
@@ -166,6 +166,7 @@ impl EnsmallenGraph {
         pe!(self.graph.get_unweighted_diameter(ignore_infinity, verbose))
     }
 
+    #[text_signature = "($self, ignore_infinity, verbose)"]
     /// Returns diameter of the graph.
     ///
     /// # Arguments
