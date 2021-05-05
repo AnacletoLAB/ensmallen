@@ -118,8 +118,6 @@ impl Graph {
                                 // Otherwise we won't encounter again this
                                 // node and we need to count the triangles
                                 // three times.
-                                node_triangles_number[node_id as usize]
-                                    .fetch_add(1, Ordering::Relaxed);
                                 node_triangles_number[neighbour_node_id as usize]
                                     .fetch_add(1, Ordering::Relaxed);
                                 node_triangles_number[inner_node_id as usize]
@@ -165,5 +163,13 @@ impl Graph {
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     pub fn get_clustering_coefficient(&self) -> f64 {
         self.iter_clustering_coefficient_per_node().sum()
+    }
+
+    /// Returns the graph average clustering coefficient.
+    ///
+    /// # References
+    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    pub fn get_average_clustering_coefficient(&self) -> f64 {
+        self.get_clustering_coefficient() / self.get_nodes_number() as f64
     }
 }
