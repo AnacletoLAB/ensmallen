@@ -583,17 +583,16 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
 
 pub fn test_vertex_cover(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let vertex_cover = graph.approximated_vertex_cover(Some(verbose));
-    assert_eq!(
-        vertex_cover
-            .into_iter()
-            .map(|node_id| vec![node_id]
-                .into_iter()
-                .chain(graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)))
-            .flatten()
-            .unique()
-            .count() as NodeT,
-        graph.get_nodes_number()
-    );
+    graph
+        .par_iter_edge_ids(true)
+        .for_each(|(_, src_node_id, dst_node_id)| {
+            assert!(
+                vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
+                "We expected for either the node {} or {} to be in the vertex cover.",
+                src_node_id,
+                dst_node_id
+            );
+        });
     Ok(())
 }
 
