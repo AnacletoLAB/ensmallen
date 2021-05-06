@@ -21,9 +21,8 @@ fn main() {
     let mut cora = Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, graph_name.clone()).unwrap();
 
     cora.enable(true, true, true, None).unwrap();
-    for _ in 0..10 {
-        for i in 0..cora.get_nodes_number() {
-            let _ = cora.get_unchecked_dijkstra_from_node_ids(i, None, None, None);
-        }
+    
+    for _ in 0..1000{
+        cora.approximated_vertex_cover(Some(false));
     }
 }   

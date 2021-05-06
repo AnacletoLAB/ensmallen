@@ -110,3 +110,5 @@ pub use preprocessing::*;
 
 mod dijkstra_queue;
 use dijkstra_queue::*;
+
+use tags::*;

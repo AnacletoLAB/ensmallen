@@ -872,6 +872,7 @@ impl Graph {
             })
     }
 
+    #[no_inverse_method]
     /// Returns node type names counts hashmap.
     ///
     /// # Example
