@@ -3,8 +3,8 @@ use rayon::prelude::*;
 
 /// # Queries
 /// The naming convention we follow is:
-/// * `get_(.+?)_from_(.+)`
-/// * `get_unchecked_(.+?)_from_(.+)`
+/// * `/get_(.+?)_from_(.+)/`
+/// * `/get_unchecked_(.+?)_from_(.+)/`
 impl Graph {
     
     #[no_inverse_method]

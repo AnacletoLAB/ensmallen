@@ -1,12 +1,13 @@
 use super::*;
 
-/// # Getters
+/// # Boolean Getters
 /// The naming convention we follow is:
-/// * `has_(.+)`
-/// * `is_(.+)`
+/// * `/has_(.+)/`
+/// * `/is_(.+)/`
+/// 
 /// The naming convention for unchecked methods follows:
-/// * `has_unchecked_(.+)`
-/// * `is_unchecked_(.+)`.
+/// * `/has_unchecked_(.+)/`
+/// * `/is_unchecked_(.+)/`.
 impl Graph {
     /// Return if the graph has any nodes.
     ///

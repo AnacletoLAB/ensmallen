@@ -45,11 +45,11 @@ mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
 
-pub mod validators;
+mod validators;
 pub use self::validators::*;
-pub mod getters_boolean;
+mod getters_boolean;
 pub use self::getters_boolean::*;
-pub mod replace;
+mod replace;
 pub use self::replace::*;
 
 mod dijkstra;

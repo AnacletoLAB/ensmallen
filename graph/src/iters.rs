@@ -7,10 +7,10 @@ use rayon::prelude::*;
 /// By default all the methods retruns both the ids and the name of the item and
 /// if the method has the suffix `_ids` then it will returns **only** the ids.
 /// Therefore, the naming convetions are:
-/// * `iter_(.+)`
-/// * `iter_unchecked_(.+)`
-/// * `par_iter_(.+)`
-/// * `par_iter_unchecked_(.+)`
+/// * `/iter_(.+)/`
+/// * `/iter_unchecked_(.+)/`
+/// * `/par_iter_(.+)/`
+/// * `/par_iter_unchecked_(.+)/`
 impl Graph {
     /// Return iterator on the node IDs of the graph.
     pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {

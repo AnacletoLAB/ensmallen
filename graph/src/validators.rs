@@ -2,10 +2,10 @@ use super::*;
 
 /// # Validators
 /// The naming convention we follow is:
-/// * `validate_(.+)`
-/// * `must_have_(.+)`
-/// * `must_be_(.+)`
-/// * `must_not_be_(.+)`
+/// * `/validate_(.+)/`
+/// * `/must_have_(.+)/`
+/// * `/must_be_(.+)/`
+/// * `/must_not_be_(.+)/`
 impl Graph {
     /// Validates provided node ID.
     ///

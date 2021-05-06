@@ -6,9 +6,10 @@ use std::collections::HashMap;
 
 /// # Getters
 /// The naming convention we follow is:
-/// * `get_(.+)`
+/// * `/get_(.+)/`
+/// 
 /// The naming convention for unchecked methods follows:
-/// * `get_unchecked_(.+)`
+/// * `/get_unchecked_(.+)/`
 impl Graph {
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     ///

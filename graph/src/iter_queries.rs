@@ -2,10 +2,11 @@ use super::*;
 use rayon::prelude::*;
 
 /// # Iterators
-/// * `iter_(.+?)_from_(.+)`
-/// * `iter_unchecked_(.+?)_from_(.+)`
-/// * `par_iter_(.+?)_from_(.+)`
-/// * `par_iter_unchecked_(.+?)_from_(.+)`
+/// The methods must follow the following naming convenction
+/// * `/iter_(.+?)_from_(.+)/`
+/// * `/iter_unchecked_(.+?)_from_(.+)/`
+/// * `/par_iter_(.+?)_from_(.+)/`
+/// * `/par_iter_unchecked_(.+?)_from_(.+)/`
 impl Graph {
     /// Returns range of the edge ids of edges starting from the given source node.
     ///
