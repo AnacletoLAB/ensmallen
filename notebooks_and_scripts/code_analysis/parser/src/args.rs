@@ -2,17 +2,17 @@ use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Arg{
-    name: String,
-    arg_modifier: TypeModifiers,
-    arg_type: Type,
+    pub name: String,
+    pub arg_modifier: TypeModifiers,
+    pub arg_type: Type,
 }
 
 #[derive(Debug, Clone, PartialEq)]
-pub struct Args(Vec<Arg>);
+pub struct Args(pub Vec<Arg>);
 
 
 impl Parse for Args {
-    fn parse(mut data: &[u8]) -> (&[u8], Self) {
+    fn parse(data: &[u8]) -> (&[u8], Self) {
         let (data, mut args_content) = get_next_matching(data, b'(', b')');
         let mut result = Vec::new();
         loop {

@@ -13,8 +13,8 @@ pub enum Type {
         traits: Vec<Type>,
     },
     FnType{
-        args: Vec<Type>,
-        return_type: Box<Type>,
+        args: Vec<Arg>,
+        return_type: Option<Box<Type>>,
     },
     TupleType(Vec<Type>),
     ImplType(Box<Type>),
@@ -64,8 +64,50 @@ impl Parse for Type {
             },
             // Fn type
             x if x.starts_with(b"Fn") => {
-                // TODO!
-                panic!("not implemneted yet");
+                if x.starts_with(b"FnMut") {
+                    data = skip_whitespace(&data[5..]);
+                } else if x.starts_with(b"FnOnce") {
+                    data = skip_whitespace(&data[6..]);
+                } else {
+                    data = skip_whitespace(&data[2..]);
+                }
+
+                let (inner, mut args_content) = get_next_matching(data, b'(', b')');
+                data = inner;
+                let mut args = Vec::new();
+                loop {
+                    args_content = skip_whitespace(args_content);
+                    if args_content.starts_with(b",") {
+                        args_content = skip_whitespace(&args_content[1..]);
+                    }
+        
+                    if args_content.is_empty() {
+                        break;
+                    }
+        
+                    let modifier = parse!(args_content, TypeModifiers);
+                    let arg_type = parse!(args_content, Type);
+                    
+                    args.push(Arg{
+                        name: format!("{}", args.len()),
+                        arg_modifier: modifier,
+                        arg_type: arg_type,
+                    });
+                }
+
+                // skip the )
+                data = skip_whitespace(&data[1..]);
+
+                let mut return_type = None;
+                if data.starts_with(b"->") {
+                    data = &data[2..];
+                    return_type = Some(Box::new(parse!(data, Type)));
+                }
+        
+                Type::FnType{
+                    args:args,
+                    return_type: return_type,
+                }
             },
             // Impl type
             x if x.starts_with(b"impl") => {
