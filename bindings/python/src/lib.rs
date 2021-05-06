@@ -17,6 +17,7 @@ mod preprocessing;
 mod remap;
 mod setters;
 mod tarjan;
+mod polygons;
 mod vertex_cover;
 mod trees;
 mod utilities;
