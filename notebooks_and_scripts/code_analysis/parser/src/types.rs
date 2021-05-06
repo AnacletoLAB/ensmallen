@@ -64,6 +64,7 @@ impl Parse for Type {
             },
             // Fn type
             x if x.starts_with(b"Fn") => {
+                // TODO! Save which variant it is
                 if x.starts_with(b"FnMut") {
                     data = skip_whitespace(&data[5..]);
                 } else if x.starts_with(b"FnOnce") {
@@ -169,6 +170,73 @@ impl Parse for Type {
             },
         };
         (data, result)
+    }
+}
+
+impl From<Type> for String{
+    fn from(x: Type) -> String {
+        match x {
+            Type::SelfType => {
+                "self".to_string()
+            }
+            Type::SimpleType{
+                name,
+                modifiers,
+                generics,
+                traits,
+            } => {
+                let mut result: String = modifiers.into();
+                result.push_str(&String::from(name));
+                result.push_str(&String::from(generics));
+                for traitt in traits {
+                    result.push_str(" + ");
+                    let traitt: String = traitt.into();
+                    result.push_str(&traitt);
+                }
+                result
+            }
+            Type::DynType(val) => {
+                format!("dyn {}", String::from(*val))
+            }
+            Type::ImplType(val) => {
+                format!("impl {}", String::from(*val))
+            }
+            Type::TupleType(vals) => {
+                let mut result = "(".to_string();
+
+                for val in vals {
+                    result.push_str(&String::from(val));
+                    result.push_str(" ,");
+                }
+                result = result.trim_end_matches(&", ").to_string();
+
+                result.push(')');
+                result
+            }
+            Type::SliceType(val) => {
+                format!("[{}]", &String::from(*val))
+            }
+            Type::None => panic!("The user should not be able to have a None Type"),
+            Type::FnType{
+                args,
+                return_type
+            } => {
+                // TODO! change the str based on the type (Fn FnMut FnOnce)
+                let mut result = "Fn(".to_string();
+                for arg in args{
+                    result.push_str(&String::from(arg.arg_type));
+                    result.push_str(" ,");
+                }
+                result = result.trim_end_matches(&", ").to_string();
+                result.push(')');
+
+                if let Some(rt) = return_type {
+                    result.push_str(" -> ");
+                    result.push_str(&String::from(*rt));
+                }
+                result
+            }
+        }
     }
 }
 

@@ -25,6 +25,11 @@ fn main() {
         let contents = fs::read_to_string(path)
             .expect("File not found");
         let (_reminder, parsing) = Module::parse(contents.as_bytes());
-        println!("{:#4?}", parsing);
+        for im in parsing.impls {
+            println!("doc:'{}'\nimpl: {}", im.doc, String::from(im.struct_name));
+            for method in im.methods {
+                println!("\t{:?} {:?} {}", method.visibility, method.attributes, method.name);
+            }
+        }
     }
 }

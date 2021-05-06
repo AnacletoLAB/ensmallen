@@ -33,6 +33,25 @@ impl Parse for GenericValue {
     }
 }
 
+impl From<GenericValue> for String {
+    fn from(x: GenericValue) -> String {
+        match x {
+            GenericValue::Lifetime(lt) => {
+                format!("'{}", lt.0)
+            }
+            GenericValue::Type(t) => {
+                String::from(t)
+            }
+            GenericValue::TypeAssignement(t1, t2) => {
+                format!("{} = {}", String::from(t1), String::from(t2))
+            }
+            GenericValue::TypeInheritance(t1, t2) => {
+                format!("{} : {}", String::from(t1), String::from(t2))
+            }
+        }
+    }
+}
+
 #[derive(Debug, Clone, PartialEq)]
 pub struct Generics(pub Vec<GenericValue>);
 
@@ -63,5 +82,22 @@ impl Parse for Generics {
 impl Default for Generics {
     fn default() -> Self {
         Generics(Vec::new())
+    }
+}
+
+impl From<Generics> for String {
+    fn from(x: Generics) -> String {
+        if x.0.is_empty(){
+            return String::new();
+        }
+        let mut result = "<".to_string();
+
+        for gen_val in x.0 {
+            result.push_str(&String::from(gen_val));
+            result.push_str(", ");
+        }
+        result = result.trim_end_matches(&", ").to_string();
+        result.push('>');
+        result
     }
 }

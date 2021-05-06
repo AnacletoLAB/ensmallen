@@ -57,7 +57,7 @@ impl Parse for TypeModifiers {
         if data.starts_with(b"'") {
             lifetime = Some(parse!(data, Lifetime));
         }
-        
+
         if data.starts_with(b"mut") {
             mutable = true;
             data = skip_whitespace(&data[4..]);
@@ -74,6 +74,42 @@ impl Parse for TypeModifiers {
                 lifetime,
             }
         )
+    }
+}
+
+impl From<TypeModifiers> for String {
+    fn from(x: TypeModifiers) -> String{
+        if x.reference {
+            let mut result = "&".to_string();
+            if x.mutable {
+                result.push_str(" mut");
+            }
+            if let Some(lt) = x.lifetime {
+                result.push_str("'");
+                result.push_str(&lt.0)
+            }
+            return result;
+        }
+        if x.pointer {
+            let mut result = "*".to_string();
+            if x.mutable {
+                result.push_str(" mut");
+            }
+            if x.constant {
+                result.push_str(" const");
+            }
+            if let Some(lt) = x.lifetime {
+                result.push_str(" '");
+                result.push_str(&lt.0);
+            }
+            return result;
+        }
+
+        let mut result = "".to_string();
+        if x.mutable{
+            result.push_str("mut ");
+        }
+        result
     }
 }
 
