@@ -13,12 +13,12 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
-    /// Returns number of squares in the graph.
+    /// Returns transitivity of the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_number_of_squares(&self) -> EdgeT {
-        self.graph.get_number_of_squares()
+    fn get_transitivity(&self) -> EdgeT {
+        self.graph.get_transitivity()
     }
 
     #[text_signature = "($self)"]
