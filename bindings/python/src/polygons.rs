@@ -17,7 +17,7 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_transitivity(&self) -> EdgeT {
+    fn get_transitivity(&self) -> f64 {
         self.graph.get_transitivity()
     }
 
