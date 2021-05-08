@@ -8,8 +8,8 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_number_of_triangles(&self) -> EdgeT {
-        self.graph.get_number_of_triangles()
+    fn get_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+        self.graph.get_number_of_triangles(normalize)
     }
 
     #[text_signature = "($self)"]
@@ -26,8 +26,8 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_number_of_triangles_per_node(&self) -> Vec<NodeT> {
-        self.graph.get_number_of_triangles_per_node()
+    fn get_number_of_triangles_per_node(&self, normalize: Option<bool>) -> Vec<NodeT> {
+        self.graph.get_number_of_triangles_per_node(normalize)
     }
 
     #[text_signature = "($self)"]
