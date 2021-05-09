@@ -2,6 +2,9 @@ use super::*;
 use atomic_float::AtomicF64;
 use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
+use num_traits::pow::Pow;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
 use std::collections::VecDeque;
 use std::sync::atomic::Ordering;
@@ -417,5 +420,121 @@ impl Graph {
             });
         }
         centralities
+    }
+
+    /// Returns vector with unweighted eigenvector centrality.
+    ///
+    /// # Arguments
+    /// * `maximum_iterations_number`: Option<usize> - The maximum number of iterations to consider.
+    /// * `tollerance`: Option<f64> - The maximum error tollerance for convergence.
+    pub fn get_unweighted_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f64>,
+    ) -> Result<Vec<f64>, String> {
+        let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
+        let mut centralities: Vec<AtomicF64> = self
+            .iter_node_ids()
+            .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))
+            .collect();
+        let mut last_centralities =
+            vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
+        for _ in 0..maximum_iterations_number {
+            self.par_iter_node_ids().for_each(|src| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    .for_each(|dst| {
+                        centralities[dst as usize]
+                            .fetch_add(last_centralities[src as usize], Ordering::Relaxed);
+                    });
+            });
+            let norm: f64 = centralities
+                .par_iter()
+                .map(|centrality| centrality.load(Ordering::Relaxed).pow(2))
+                .sum::<f64>()
+                .sqrt();
+            centralities.par_iter_mut().for_each(|centrality| {
+                centrality
+                    .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |x| Some(x / norm))
+                    .unwrap();
+            });
+            let updated_centrality = centralities
+                .iter()
+                .map(|centrality| centrality.load(Ordering::Relaxed))
+                .collect::<Vec<f64>>();
+            let differences = updated_centrality
+                .par_iter()
+                .zip(last_centralities.par_iter())
+                .map(|(centrality, old_centrality)| (centrality - old_centrality).abs())
+                .sum::<f64>();
+            if differences < tollerance {
+                return Ok(updated_centrality);
+            }
+            last_centralities = updated_centrality;
+        }
+        Err(format!(
+            "Unable to reach convergence in {} iterations.",
+            maximum_iterations_number
+        ))
+    }
+
+    /// Returns vector with unweighted eigenvector centrality.
+    ///
+    /// # Arguments
+    /// * `maximum_iterations_number`: Option<usize> - The maximum number of iterations to consider.
+    /// * `tollerance`: Option<f64> - The maximum error tollerance for convergence.
+    pub fn get_weighted_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f64>,
+    ) -> Result<Vec<f64>, String> {
+        self.must_have_edge_weights()?;
+        let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
+        let mut centralities: Vec<AtomicF64> = self
+            .iter_node_ids()
+            .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))
+            .collect();
+        let mut last_centralities =
+            vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
+        for _ in 0..maximum_iterations_number {
+            self.par_iter_node_ids().for_each(|src| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    .for_each(|dst| {
+                        centralities[dst as usize].fetch_add(
+                            last_centralities[src as usize]
+                                * self.get_unchecked_edge_weight_from_node_ids(src, dst) as f64,
+                            Ordering::Relaxed,
+                        );
+                    });
+            });
+            let norm: f64 = centralities
+                .par_iter()
+                .map(|centrality| centrality.load(Ordering::Relaxed).pow(2))
+                .sum::<f64>()
+                .sqrt();
+            centralities.par_iter_mut().for_each(|centrality| {
+                centrality
+                    .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |x| Some(x / norm))
+                    .unwrap();
+            });
+            let updated_centrality = centralities
+                .iter()
+                .map(|centrality| centrality.load(Ordering::Relaxed))
+                .collect::<Vec<f64>>();
+            let differences = updated_centrality
+                .par_iter()
+                .zip(last_centralities.par_iter())
+                .map(|(centrality, old_centrality)| (centrality - old_centrality).abs())
+                .sum::<f64>();
+            if differences < tollerance {
+                return Ok(updated_centrality);
+            }
+            last_centralities = updated_centrality;
+        }
+        Err(format!(
+            "Unable to reach convergence in {} iterations.",
+            maximum_iterations_number
+        ))
     }
 }
