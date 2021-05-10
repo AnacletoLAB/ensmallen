@@ -75,4 +75,50 @@ impl EnsmallenGraph {
             f64
         )
     }
+
+    /// Returns vector with unweighted eigenvector centrality.
+    ///
+    /// Parameters
+    /// ----------------
+    /// maximum_iterations_number: int = 1000,
+    ///     The maximum number of iterations to consider.
+    /// tollerance: float = 1e-6,
+    ///     The maximum error tollerance for convergence.
+    pub fn get_unweighted_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f64>,
+    ) -> PyResult<Py<PyArray1<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unweighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+            f64
+        ))
+    }
+
+    /// Returns vector with weighted eigenvector centrality.
+    ///
+    /// Parameters
+    /// ----------------
+    /// maximum_iterations_number: int = 1000,
+    ///     The maximum number of iterations to consider.
+    /// tollerance: float = 1e-6,
+    ///     The maximum error tollerance for convergence.
+    pub fn get_weighted_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f64>,
+    ) -> PyResult<Py<PyArray1<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_weighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+            f64
+        ))
+    }
 }

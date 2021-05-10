@@ -20,6 +20,23 @@ impl Graph {
         self.weights.as_ref().map(|ws| ws[edge_id as usize])
     }
 
+    /// Returns option with the weight of the given node ids.
+    ///
+    /// This method will raise a panic if the given node IDs are higher than
+    /// the number of nodes in the graph.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node ID.
+    /// * `dst`: NodeT - The destination node ID.
+    pub fn get_unchecked_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> WeightT {
+        unsafe {
+            self.get_unchecked_edge_weight_from_edge_id(
+                self.get_unchecked_edge_id_from_node_ids(src, dst),
+            )
+            .unwrap_unchecked()
+        }
+    }
+
     /// Returns node id from given node name raising a panic if used unproperly.
     ///
     /// # Arguments
