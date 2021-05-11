@@ -36,6 +36,32 @@ impl EnsmallenGraph {
         )
     }
 
+    #[text_signature = "($self, normalize, verbose)"]
+    /// Return numpy array with stress centrality of the nodes in the considered graph.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// normalize: bool = False,
+    ///     Whether to normalize the values between 0 and 1.
+    /// verbose: bool = True,
+    ///     Whether to show a loading bar,
+    ///
+    /// Returns
+    /// ------------------------
+    /// Numpy array with stress centralities for each node.
+    fn get_stress_centrality(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.graph.get_stress_centrality(normalize, verbose),
+            f64
+        )
+    }
+
     #[text_signature = "($self, verbose)"]
     /// Return numpy array with unweighted closeness centrality of the nodes in the considered graph.
     ///
@@ -57,6 +83,26 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self, verbose)"]
+    /// Return numpy array with weighted closeness centrality of the nodes in the considered graph.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// verbose: bool = True,
+    ///     Whether to show a loading bar,
+    ///
+    /// Returns
+    /// ------------------------
+    /// Numpy array with weighted closeness centralities for each node.
+    fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.graph.get_weighted_closeness_centrality(verbose),
+            f64
+        )
+    }
+
+    #[text_signature = "($self, verbose)"]
     /// Return numpy array with unweighted harmonic centrality of the nodes in the considered graph.
     ///
     /// Parameters
@@ -72,6 +118,26 @@ impl EnsmallenGraph {
         to_ndarray_1d!(
             gil,
             self.graph.get_unweighted_harmonic_centrality(verbose),
+            f64
+        )
+    }
+
+    #[text_signature = "($self, verbose)"]
+    /// Return numpy array with weighted harmonic centrality of the nodes in the considered graph.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// verbose: bool = True,
+    ///     Whether to show a loading bar,
+    ///
+    /// Returns
+    /// ------------------------
+    /// Numpy array with unweighted harmonic centralities for each node.
+    fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.graph.get_weighted_harmonic_centrality(verbose),
             f64
         )
     }
