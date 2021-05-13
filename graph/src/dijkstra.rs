@@ -128,6 +128,54 @@ impl Graph {
         )
     }
 
+    /// Returns vector of k minimum paths distances and vector of nodes predecessors.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `k`: usize - Number of paths to find.
+    pub fn get_unchecked_unweighted_k_shortest_path(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> Vec<Vec<NodeT>> {
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut counts = vec![0; nodes_number];
+        let mut paths = Vec::new();
+
+        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
+        nodes_to_explore.push_back(vec![src_node_id]);
+
+        while let Some(path) = nodes_to_explore.pop_front() {
+            // If we have found all the required paths we can exit
+            if counts[dst_node_id as usize] >= k {
+                break;
+            }
+            let node_id = *path.last().unwrap();
+            counts[node_id as usize] += 1;
+
+            if node_id == dst_node_id {
+                paths.push(path);
+                continue;
+            }
+
+            // If the number of identified paths to
+            // node ID is greater than k, we can continue.
+            if counts[node_id as usize] > k {
+                continue;
+            }
+
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .for_each(|neighbour_node_id| {
+                    let mut new_path = path.clone();
+                    new_path.push(neighbour_node_id);
+                    nodes_to_explore.push_back(new_path);
+                });
+        }
+        paths
+    }
+
     /// Returns unweighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
