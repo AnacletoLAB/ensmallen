@@ -968,8 +968,10 @@ impl Graph {
 
         pb1.finish();
 
-        let edges_bitmap =
-            RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
+        let edges_bitmap: RoaringTreemap = unique_nodes
+            .iter()
+            .progress_with(pb2)
+            .flat_map(|src| {
                 let (min_edge_id, max_edge_id) =
                     self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                 (min_edge_id..max_edge_id)
@@ -978,7 +980,8 @@ impl Graph {
                             .contains(self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
                     })
                     .collect::<Vec<EdgeT>>()
-            }));
+            })
+            .collect();
 
         Graph::build_graph(
             edges_bitmap.iter().progress_with(pb3).map(|edge_id| {
