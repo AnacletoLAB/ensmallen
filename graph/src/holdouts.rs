@@ -1038,7 +1038,9 @@ impl Graph {
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         if k <= 1 {
-            return Err(String::from("Cannot do a k-fold with only one or zero folds."));
+            return Err(String::from(
+                "Cannot do a k-fold with only one or zero folds.",
+            ));
         }
         if k_index >= k {
             return Err(String::from(
@@ -1098,8 +1100,10 @@ impl Graph {
             indices.len() as EdgeT,
             (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT,
         );
-        let chunk =
-            RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
+        let chunk: RoaringTreemap = indices[start as usize..end as usize]
+            .iter()
+            .cloned()
+            .collect();
         // Create the two graphs
         self.edge_holdout(
             random_state,
