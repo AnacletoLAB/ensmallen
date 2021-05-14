@@ -645,6 +645,11 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If stratification is requested but the graph has a single node type.
+    /// * If stratification is requested but the graph has a multilabel node types.
     pub fn node_label_holdout(
         &self,
         train_size: f64,
@@ -890,6 +895,9 @@ impl Graph {
     ///   let random_graph = graph.random_subgraph(0xbad5eed, 1000, true).unwrap();
     /// ```
     ///
+    /// # Raises
+    /// * If the requested number of nodes is one or less.
+    /// * If the graph has less than the requested number of nodes.
     pub fn random_subgraph(
         &self,
         random_state: usize,
@@ -1016,6 +1024,11 @@ impl Graph {
     /// If We pass a vector of edge types, the K-fold will be executed only on the edges which match
     /// that type. All the other edges will always appear in the traning set.
     ///
+    /// # Raises
+    /// * If the number of requested k folds is one or zero.
+    /// * If the given k fold index is greater than the number of k folds.
+    /// * If edge types have been specified but it's an empty list.
+    /// * If the number of k folds is higher than the number of edges in the graph.
     pub fn kfold(
         &self,
         k: EdgeT,
@@ -1024,8 +1037,8 @@ impl Graph {
         random_state: EdgeT,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        if k == 1 {
-            return Err(String::from("Cannot do a k-fold with only one fold."));
+        if k <= 1 {
+            return Err(String::from("Cannot do a k-fold with only one or zero folds."));
         }
         if k_index >= k {
             return Err(String::from(
