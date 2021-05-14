@@ -244,6 +244,12 @@ impl Graph {
     }
 
     /// Compute the training and validation elements number from the training rate
+    ///
+    /// # Raises
+    /// * If the training size is either greater than one or negative.
+    /// * If the graph instance has only one edge.
+    /// * If the resulting training edges number is 0.
+    /// * If the resulting validation edges number is 0.
     fn get_holdouts_elements_number(
         &self,
         train_size: f64,
@@ -274,30 +280,6 @@ impl Graph {
         }
 
         Ok((train_elements_number, valid_elements_number))
-    }
-
-    /// Compute the training and validation edges number from the training rate
-    fn get_holdouts_edges_number(
-        &self,
-        train_size: f64,
-        include_all_edge_types: bool,
-    ) -> Result<(EdgeT, EdgeT), String> {
-        if self.directed && self.get_directed_edges_number() == 1
-            || !self.directed && self.get_directed_edges_number() == 2
-        {
-            return Err(String::from(
-                "The current graph instance has only one edge. You cannot build an holdout with one edge.",
-            ));
-        }
-        let total_edges_number = if include_all_edge_types {
-            self.unique_edges_number
-        } else {
-            self.get_directed_edges_number()
-        };
-
-        let (train_edges, test_edges) =
-            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
-        Ok((train_edges as EdgeT, test_edges as EdgeT))
     }
 
     /// Returns training and validation graph.
@@ -479,7 +461,10 @@ impl Graph {
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
-    ///
+    /// # Raises
+    /// * If the edge types have been specified but the graph does not have edge types.
+    /// * If the required training size is not a real value between 0 and 1.
+    /// * If the current graph does not allow for the creation of a spanning tree for the requested training size.
     pub fn connected_holdout(
         &self,
         random_state: EdgeT,
@@ -579,6 +564,10 @@ impl Graph {
     /// * `min_number_overlaps`: Option<EdgeT> - The minimum number of overlaps to include the edge into the validation set.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
+    /// # Raises
+    /// * If the edge types have been specified but the graph does not have edge types.
+    /// * If the minimum number of overlaps have been specified but the graph is not a multigraph.
+    /// * If one or more of the given edge type names is not present in the graph.
     pub fn random_holdout(
         &self,
         random_state: EdgeT,
@@ -593,8 +582,14 @@ impl Graph {
         if edge_types.is_some() {
             self.must_have_edge_types()?;
         }
+        let total_edges_number = if include_all_edge_types {
+            self.unique_edges_number
+        } else {
+            self.get_directed_edges_number()
+        };
+
         let (_, validation_edges_number) =
-            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
+            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
                 self.get_edge_type_ids_from_edge_type_names(ets)?
@@ -607,7 +602,7 @@ impl Graph {
         }
         self.edge_holdout(
             random_state,
-            validation_edges_number,
+            validation_edges_number as EdgeT,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
