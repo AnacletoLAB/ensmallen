@@ -118,7 +118,7 @@ impl Graph {
         max_neighbours: Option<NodeT>,
     ) -> Vec<NodeT> {
         let (min_edge_id, max_edge_id, destinations, _) =
-            self.get_node_edges_and_destinations(max_neighbours, random_state, node);
+            self.get_edges_and_destinations_from_source_node_id(max_neighbours, random_state, node);
         self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations)
             .to_owned()
     }

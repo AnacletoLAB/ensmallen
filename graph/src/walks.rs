@@ -742,7 +742,7 @@ impl Graph {
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let (min_edge_id, max_edge_id, destinations, indices) =
-            self.get_node_edges_and_destinations(parameters.max_neighbours, random_state, node);
+            self.get_edges_and_destinations_from_source_node_id(parameters.max_neighbours, random_state, node);
         let (dst, edge) = self.extract_node(
             node,
             random_state,
@@ -767,7 +767,7 @@ impl Graph {
 
         for i in 2..parameters.walk_length {
             let (min_edge_id, max_edge_id, destinations, indices) = self
-                .get_node_edges_and_destinations(
+                .get_edges_and_destinations_from_source_node_id(
                     parameters.max_neighbours,
                     random_state + i,
                     previous_dst,

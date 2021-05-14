@@ -4,15 +4,24 @@ use vec_rand::sorted_unique_sub_sampling;
 /// # Walk Queries
 /// These are the queries that are used mainly in the random walk.
 impl Graph {
-    pub(crate) fn get_node_edges_and_destinations(
+    /// Returns quadruple with minimum and maximum edge ids, destination nodes and its indices if subsampling was required.
+    ///
+    /// If max neighbours was provided the subsampling is done by using the
+    /// sorted unique sub-sampling (SUSS) algorithm.
+    ///
+    /// # Arguments
+    /// * `max_neighbours`: Option<NodeT> - Optional maximum number of neighbours to consider.
+    /// * `random_state`: u64 - The random state to use for the sampling if the maximum neighbours are asked.
+    /// * `source_node_id`: NodeT - The source node ID to extract edge IDs and destination node IDs.
+    pub(crate) fn get_edges_and_destinations_from_source_node_id(
         &self,
         max_neighbours: Option<NodeT>,
         random_state: u64,
-        node: NodeT,
+        source_node_id: NodeT,
     ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         // We retrieve the range of edge ids, the minimum and maximum value.
         let (min_edge_id, max_edge_id) =
-            self.get_unchecked_minmax_edge_ids_from_source_node_id(node);
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(source_node_id);
 
         // We check if subsampling is enabled and if so, if it makes sense:
         // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
@@ -23,7 +32,7 @@ impl Graph {
             let destinations: Vec<NodeT> = match self
                 .cached_destinations
                 .as_ref()
-                .and_then(|cds| cds.get(&node))
+                .and_then(|cds| cds.get(&source_node_id))
             {
                 Some(dsts) => indices
                     .iter()
@@ -46,11 +55,11 @@ impl Graph {
         let destinations = match self
             .cached_destinations
             .as_ref()
-            .map_or(false, |cds| cds.contains_key(&node))
+            .map_or(false, |cds| cds.contains_key(&source_node_id))
         {
             true => None,
             false => Some(
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node)
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id)
                     .collect(),
             ),
         };
@@ -58,17 +67,23 @@ impl Graph {
     }
 
     /// Returns slice of destinations corresponding to given minmax edge ID and node.
+    /// 
+    /// # Arguments
+    /// * `min_edge_id`: EdgeT - Minimum edge ID for the slice.
+    /// * `max_edge_id`: EdgeT - Maximum edge ID for the slice.
+    /// * `source_node_id`: NodeT - The source node ID.
+    /// * `destinations`: &'a Option<Vec<NodeT>> - The optional destinations slice that may have been provided when working with subsampling.
     pub(crate) fn get_destinations_slice<'a>(
         &'a self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-        node: NodeT,
+        source_node_id: NodeT,
         destinations: &'a Option<Vec<NodeT>>,
     ) -> &'a [NodeT] {
         match (&self.destinations, &self.cached_destinations, destinations) {
             (_, _, Some(dsts)) => &dsts.as_slice(),
             (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
-            (None, Some(dsts), None) => dsts.get(&node).unwrap(),
+            (None, Some(dsts), None) => dsts.get(&source_node_id).unwrap(),
             _ => unreachable!(
                 "It is not possible to have both destinations and cached destinations at once."
             ),
