@@ -96,7 +96,9 @@ impl Graph {
             // Update the metrics
             maximal_distance = maximal_distance.max(depth);
             total_distance += depth;
-            total_harmonic_distance += 1.0 / depth as f64;
+            if depth != 0 {
+                total_harmonic_distance += 1.0 / depth as f64;
+            }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -292,7 +294,9 @@ impl Graph {
             // Update the distances metrics
             maximal_distance = maximal_distance.max(nodes_to_explore[closest_node_id]);
             total_distance += nodes_to_explore[closest_node_id];
-            total_harmonic_distance += 1.0 / nodes_to_explore[closest_node_id];
+            if nodes_to_explore[closest_node_id] > 0.0 {
+                total_harmonic_distance += 1.0 / nodes_to_explore[closest_node_id];
+            }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
