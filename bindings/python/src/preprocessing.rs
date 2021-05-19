@@ -592,7 +592,6 @@ impl EnsmallenGraph {
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
 
-    #[args(py_kwargs = "**")]
     #[text_signature = "($self, source_node_ids, destination_node_ids)"]
     /// Returns all available edge prediction metrics for given edges.
     ///
@@ -636,4 +635,81 @@ impl EnsmallenGraph {
 
         batch_metrics.t.to_owned()
     }
+
+    #[text_signature = "($self, k, verbose)"]
+    /// Returns node type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// k: int,
+    ///     Maximum distance to consider.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_node_types_cooccurrence_matrix(
+        &self,
+        k: usize,
+        verbose: Option<bool>
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let cooccurrences = ThreadSafe {
+            t: PyArray2::new(gil.python(), [self.graph.get_nodes_number() as usize, pe!(self.graph.get_node_types_number())? as usize], false),
+        };
+
+        unsafe {
+            self.graph
+                .par_iter_node_types_cooccurrence_matrix(k, verbose)?
+                .enumerate()
+                .for_each(|(i, cos)| {
+                    cos.into_iter().enumerate().for_each(|(j, co)| {
+                        *(cooccurrences.t.uget_mut([i, j])) = co;
+                    });
+                });
+        }
+
+        Ok(cooccurrences.t.to_owned())
+    }
+
+    #[text_signature = "($self, k, verbose)"]
+    /// Returns edge type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// k: int,
+    ///     Maximum distance to consider.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_edge_types_cooccurrence_matrix(
+        &self,
+        k: usize,
+        verbose: Option<bool>
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let cooccurrences = ThreadSafe {
+            t: PyArray2::new(gil.python(), [self.graph.get_nodes_number() as usize, pe!(self.graph.get_edge_types_number())? as usize], false),
+        };
+
+        unsafe {
+            self.graph
+                .par_iter_edge_types_cooccurrence_matrix(k, verbose)?
+                .enumerate()
+                .for_each(|(i, cos)| {
+                    cos.into_iter().enumerate().for_each(|(j, co)| {
+                        *(cooccurrences.t.uget_mut([i, j])) = co;
+                    });
+                });
+        }
+
+        Ok(cooccurrences.t.to_owned())
+    }
+    
 }

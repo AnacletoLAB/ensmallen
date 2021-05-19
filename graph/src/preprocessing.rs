@@ -1,10 +1,11 @@
 use super::*;
-use indicatif::ProgressIterator;
+use bitvec::prelude::*;
+use indicatif::{ParallelProgressIterator, ProgressIterator};
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
-use std::collections::HashMap;
+use std::collections::{HashMap, VecDeque};
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
@@ -464,13 +465,13 @@ impl Graph {
     }
 
     /// Returns all available edge prediction metrics for given edges.
-    /// 
+    ///
     /// The metrics returned are, in order:
     /// - Adamic Adar index
     /// - Jaccard Coefficient
     /// - Resource Allocation index
     /// - Normalized preferential attachment score
-    /// 
+    ///
     /// # Arguments
     /// source_node_ids: Vec<NodeT> - List of source node IDs.
     /// destination_node_ids: Vec<NodeT> - List of destination node IDs.
@@ -503,5 +504,131 @@ impl Graph {
                     ),
                 ]
             })
+    }
+
+    /// Returns node types co-occurence within given distance k.
+    ///
+    /// # Arguments
+    /// * `k`: usize - The distance to consider for the cooccurrences.
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn par_iter_node_types_cooccurrence_matrix(
+        &self,
+        k: usize,
+        verbose: Option<bool>,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<f64>> + '_, String> {
+        self.must_have_node_types()?;
+        let node_types_number = self.get_node_types_number().unwrap() as usize;
+        let nodes_number = self.get_nodes_number() as usize;
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing node types co-occurrence",
+            nodes_number,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(move |node_id| {
+                let mut cooccurrences = vec![0.0; node_types_number];
+                let mut neighbours_types_number: NodeT = 0;
+                let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
+                neighbours_stack.push_front((node_id, 0));
+                let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+                unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
+                while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
+                    let new_distance = distance + 1;
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                        .for_each(|neighbour_node_id| {
+                            if visited[neighbour_node_id as usize] {
+                                return;
+                            }
+                            unsafe {
+                                *visited.get_unchecked_mut(neighbour_node_id as usize) = true
+                            };
+                            if let Some(node_types) =
+                                self.get_unchecked_node_type_id_from_node_id(neighbour_node_id)
+                            {
+                                node_types.into_iter().for_each(|node_type| {
+                                    neighbours_types_number += 1;
+                                    cooccurrences[node_type as usize] += 1.0;
+                                });
+                            }
+                            if new_distance < k {
+                                neighbours_stack.push_front((neighbour_node_id, new_distance));
+                            }
+                        });
+                }
+                cooccurrences.iter_mut().for_each(|cooccurrence| {
+                    *cooccurrence /= neighbours_types_number as f64;
+                });
+                cooccurrences
+            }))
+    }
+
+    /// Returns edge types co-occurence within given distance k.
+    ///
+    /// # Arguments
+    /// * `k`: usize - The distance to consider for the cooccurrences.
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn par_iter_edge_types_cooccurrence_matrix(
+        &self,
+        k: usize,
+        verbose: Option<bool>,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<f64>> + '_, String> {
+        self.must_have_edge_types()?;
+        let edge_types_number = self.get_edge_types_number().unwrap() as usize;
+        let nodes_number = self.get_nodes_number() as usize;
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing edge types co-occurrence",
+            nodes_number,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(move |node_id| {
+                let mut cooccurrences = vec![0.0; edge_types_number];
+                let mut neighbours_types_number: NodeT = 0;
+                let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
+                neighbours_stack.push_front((node_id, 0));
+                let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+                unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
+                while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
+                    let new_distance = distance + 1;
+                    self.iter_unchecked_edge_ids_from_source_node_id(current_node_id)
+                        .into_iter()
+                        .zip(
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                current_node_id,
+                            ),
+                        )
+                        .for_each(|(edge_id, neighbour_node_id)| {
+                            if visited[neighbour_node_id as usize] {
+                                return;
+                            }
+                            unsafe {
+                                *visited.get_unchecked_mut(neighbour_node_id as usize) = true
+                            };
+                            if let Some(edge_type) =
+                                self.get_unchecked_edge_type_id_from_edge_id(edge_id as EdgeT)
+                            {
+                                neighbours_types_number += 1;
+                                cooccurrences[edge_type as usize] += 1.0;
+                            }
+                            if new_distance < k {
+                                neighbours_stack.push_front((neighbour_node_id, new_distance));
+                            }
+                        });
+                }
+                cooccurrences.iter_mut().for_each(|cooccurrence| {
+                    *cooccurrence /= neighbours_types_number as f64;
+                });
+                cooccurrences
+            }))
     }
 }
