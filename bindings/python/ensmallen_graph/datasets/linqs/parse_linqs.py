@@ -21,7 +21,7 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
     """
     return pd.DataFrame({
         node_name: {
-            source_name: graph.get_weight_from_node_names(source_name, node_name) if graph.has_edge_weights() else 1
+            source_name: graph.get_edge_weight_from_node_names(source_name, node_name) if graph.has_edge_weights() else 1
             for source_name in graph.get_neighbour_node_names_from_node_name(node_name)
         }
         for node_name in tqdm(

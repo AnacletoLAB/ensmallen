@@ -5664,9 +5664,9 @@ impl Graph {
     /// # let weighted_graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src_name = "ENSP00000000233";
     /// let dst_name = "ENSP00000432568";
-    /// assert!(weighted_graph.get_weight_from_node_names(src_name, dst_name).is_ok());
+    /// assert!(weighted_graph.get_edge_weight_from_node_names(src_name, dst_name).is_ok());
     /// ```
-    pub fn get_weight_from_node_names(
+    pub fn get_edge_weight_from_node_names(
         &self,
         src_name: &str,
         dst_name: &str,

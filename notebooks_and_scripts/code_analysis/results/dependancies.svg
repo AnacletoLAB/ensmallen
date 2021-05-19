@@ -3849,21 +3849,21 @@
 <path fill="none" stroke="black" d="M928.68,-504.54C815.8,-493.76 668.37,-479.68 553.02,-468.67"/>
 <polygon fill="black" stroke="black" points="553.3,-465.18 543.02,-467.71 552.64,-472.15 553.3,-465.18"/>
 </g>
-<!-- Graph::get_weight_from_node_names -->
+<!-- Graph::get_edge_weight_from_node_names -->
 <g id="node124" class="node">
-<title>Graph::get_weight_from_node_names</title>
+<title>Graph::get_edge_weight_from_node_names</title>
 <polygon fill="none" stroke="black" points="5281.5,-1548 5014.5,-1548 5014.5,-1512 5281.5,-1512 5281.5,-1548"/>
-<text text-anchor="middle" x="5148" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_from_node_names</text>
+<text text-anchor="middle" x="5148" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_weight_from_node_names</text>
 </g>
-<!-- Graph::get_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
+<!-- Graph::get_edge_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
 <g id="edge418" class="edge">
-<title>Graph::get_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
+<title>Graph::get_edge_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
 <path fill="none" stroke="black" d="M5120.91,-1511.86C5089.57,-1492.54 5035.99,-1461.1 4987,-1440 4841.77,-1377.45 4766.39,-1436.83 4648,-1332 4568.94,-1261.99 4571.52,-1219.17 4549,-1116 4545.59,-1100.37 4548.65,-1096 4549,-1080 4552.11,-935.9 4559.89,-900.1 4563,-756 4563.35,-740 4573.89,-731.72 4563,-720 4488.36,-639.7 4157.95,-750.76 4071,-684 4007.33,-635.11 4008.33,-568.59 4056,-504 4078.43,-473.6 4112.72,-499.87 4133,-468 4141.59,-454.5 4144.13,-443.49 4133,-432 4089.73,-387.32 3076.16,-398.23 3014,-396 2912.61,-392.36 2797.76,-387.79 2712.43,-384.3"/>
 <polygon fill="black" stroke="black" points="2712.57,-380.8 2702.43,-383.89 2712.28,-387.8 2712.57,-380.8"/>
 </g>
-<!-- Graph::get_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names -->
+<!-- Graph::get_edge_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names -->
 <g id="edge419" class="edge">
-<title>Graph::get_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names</title>
+<title>Graph::get_edge_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names</title>
 <path fill="none" stroke="black" d="M5073.29,-1511.97C5028.73,-1501.8 4972.01,-1488.87 4925.78,-1478.33"/>
 <polygon fill="black" stroke="black" points="4926.3,-1474.86 4915.78,-1476.05 4924.75,-1481.69 4926.3,-1474.86"/>
 </g>
