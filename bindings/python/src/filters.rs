@@ -8,12 +8,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_parallel_edges(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_parallel_edges(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_parallel_edges(verbose),
         }
@@ -24,12 +24,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_selfloops(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_selfloops(verbose),
         }
@@ -42,12 +42,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_singleton_nodes(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_singleton_nodes(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_singleton_nodes(verbose),
         }
@@ -60,12 +60,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_singleton_nodes_with_selfloops(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_singleton_nodes_with_selfloops(verbose),
         }
@@ -79,12 +79,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_unknown_edge_types(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_unknown_edge_types(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_unknown_edge_types(verbose),
         }
@@ -98,12 +98,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show a loading bar while building the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn drop_unknown_node_types(&self, verbose: bool) -> EnsmallenGraph {
+    fn drop_unknown_node_types(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_unknown_node_types(verbose),
         }
@@ -150,7 +150,7 @@ impl EnsmallenGraph {
     /// 	Whether to filter out selfloops.
     /// filter_parallel_edges: bool,
     ///     Whether to filter out parallel edges.
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show loading bar while building the graphs.
     ///
     ///  ## Implementation details
@@ -210,7 +210,7 @@ impl EnsmallenGraph {
                 filter_singleton_nodes_with_selfloop.unwrap_or(false),
                 filter_selfloops.unwrap_or(false),
                 filter_parallel_edges.unwrap_or(false),
-                verbose.unwrap_or(false),
+                verbose,
             ),
         }
     }
@@ -252,7 +252,7 @@ impl EnsmallenGraph {
     /// 	Whether to filter out selfloops.
     /// filter_parallel_edges: bool,
     ///     Whether to filter out parallel edges.
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     /// 	Whether to show loading bar while building the graphs.
     ///
     ///  ## Implementation details
@@ -308,7 +308,7 @@ impl EnsmallenGraph {
                 filter_singleton_nodes_with_selfloop.unwrap_or(false),
                 filter_selfloops.unwrap_or(false),
                 filter_parallel_edges.unwrap_or(false),
-                verbose.unwrap_or(false),
+                verbose
             ))?,
         })
     }

@@ -53,6 +53,10 @@ impl Graph {
             Some(visited)
         };
 
+        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+            return (distances, parents, NodeT::MAX, NodeT::MAX, 0.0);
+        }
+
         let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
             &mut distances,
             &mut parents,
@@ -267,6 +271,16 @@ impl Graph {
         } else {
             None
         };
+
+        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+            return (
+                vec![f64::INFINITY; nodes_number],
+                parents,
+                f64::INFINITY,
+                f64::INFINITY,
+                0.0,
+            );
+        }
 
         let mut nodes_to_explore: DijkstraQueue =
             DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);

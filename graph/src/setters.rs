@@ -74,11 +74,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
-    /// * `verbose`: bool - Whether to show a loading bar in the case of a multigraph.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar in the case of a multigraph.
     pub fn set_all_edge_types<S: Into<String>>(
         &self,
         edge_type: S,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
         let mut graph = self.drop_parallel_edges(verbose);
         graph.set_inplace_all_edge_types(edge_type)?;
@@ -435,12 +435,12 @@ impl Graph {
     /// Note that the modification does not happen inplace.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar in the case of a multigraph.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar in the case of a multigraph.
     ///
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_edge_types(&self, verbose: bool) -> Result<Graph, String> {
+    pub fn remove_edge_types(&self, verbose: Option<bool>) -> Result<Graph, String> {
         let mut graph = self.drop_parallel_edges(verbose);
         graph.remove_inplace_edge_types()?;
         Ok(graph)
