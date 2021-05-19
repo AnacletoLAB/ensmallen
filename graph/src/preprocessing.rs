@@ -552,7 +552,7 @@ impl Graph {
                             {
                                 node_types.into_iter().for_each(|node_type| {
                                     neighbours_types_number += 1;
-                                    cooccurrences[node_type as usize] += 1.0;
+                                    cooccurrences[node_type as usize] += 1.0 / distance as f64;
                                 });
                             }
                             if new_distance < k {
@@ -620,7 +620,7 @@ impl Graph {
                                 self.get_unchecked_edge_type_id_from_edge_id(edge_id as EdgeT)
                             {
                                 neighbours_types_number += 1;
-                                cooccurrences[edge_type as usize] += 1.0;
+                                cooccurrences[edge_type as usize] += 1.0 / distance as f64;
                             }
                             if new_distance < k {
                                 neighbours_stack.push_front((neighbour_node_id, new_distance));
