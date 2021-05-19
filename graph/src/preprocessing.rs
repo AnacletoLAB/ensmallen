@@ -534,7 +534,7 @@ impl Graph {
                 let mut cooccurrences = vec![0.0; node_types_number];
                 let mut neighbours_types_number: NodeT = 0;
                 let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
-                neighbours_stack.push_front((node_id, 0));
+                neighbours_stack.push_front((node_id, 1));
                 let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
                 unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
                 while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
@@ -555,7 +555,7 @@ impl Graph {
                                     cooccurrences[node_type as usize] += 1.0 / distance as f64;
                                 });
                             }
-                            if new_distance < k {
+                            if new_distance <= k {
                                 neighbours_stack.push_front((neighbour_node_id, new_distance));
                             }
                         });
@@ -597,7 +597,7 @@ impl Graph {
                 let mut cooccurrences = vec![0.0; edge_types_number];
                 let mut neighbours_types_number: NodeT = 0;
                 let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
-                neighbours_stack.push_front((node_id, 0));
+                neighbours_stack.push_front((node_id, 1));
                 let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
                 unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
                 while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
@@ -622,7 +622,7 @@ impl Graph {
                                 neighbours_types_number += 1;
                                 cooccurrences[edge_type as usize] += 1.0 / distance as f64;
                             }
-                            if new_distance < k {
+                            if new_distance <= k {
                                 neighbours_stack.push_front((neighbour_node_id, new_distance));
                             }
                         });
