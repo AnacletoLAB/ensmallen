@@ -661,8 +661,8 @@ impl EnsmallenGraph {
         };
 
         unsafe {
-            self.graph
-                .par_iter_node_types_cooccurrence_matrix(k, verbose)?
+            pe!(self.graph
+                .par_iter_node_types_cooccurrence_matrix(k, verbose))?
                 .enumerate()
                 .for_each(|(i, cos)| {
                     cos.into_iter().enumerate().for_each(|(j, co)| {
@@ -699,8 +699,8 @@ impl EnsmallenGraph {
         };
 
         unsafe {
-            self.graph
-                .par_iter_edge_types_cooccurrence_matrix(k, verbose)?
+            pe!(self.graph
+                .par_iter_edge_types_cooccurrence_matrix(k, verbose))?
                 .enumerate()
                 .for_each(|(i, cos)| {
                     cos.into_iter().enumerate().for_each(|(j, co)| {
