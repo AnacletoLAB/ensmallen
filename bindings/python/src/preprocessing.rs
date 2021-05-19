@@ -591,4 +591,49 @@ impl EnsmallenGraph {
 
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, source_node_ids, destination_node_ids)"]
+    /// Returns all available edge prediction metrics for given edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Normalized preferential attachment score
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// source_node_ids: List[int],
+    ///     List of source node IDs.
+    /// destination_node_ids: List[int],
+    ///     List of destination node IDs.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with metrics.
+    fn get_unchecked_edge_prediction_metrics(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+    ) -> Py<PyArray2<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let batch_metrics = ThreadSafe {
+            t: PyArray2::new(gil.python(), [source_node_ids.len(), 4], false),
+        };
+
+        unsafe {
+            self.graph
+                .par_iter_unchecked_edge_prediction_metrics(source_node_ids, destination_node_ids)
+                .enumerate()
+                .for_each(|(i, metrics)| {
+                    metrics.into_iter().enumerate().for_each(|(j, metric)| {
+                        *(batch_metrics.t.uget_mut([i, j])) = metric;
+                    });
+                });
+        }
+
+        batch_metrics.t.to_owned()
+    }
 }

@@ -465,6 +465,12 @@ impl Graph {
 
     /// Returns all available edge prediction metrics for given edges.
     /// 
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Normalized preferential attachment score
+    /// 
     /// # Arguments
     /// source_node_ids: Vec<NodeT> - List of source node IDs.
     /// destination_node_ids: Vec<NodeT> - List of destination node IDs.
@@ -474,7 +480,7 @@ impl Graph {
     /// higher than the number of nodes in the graph, the method will panic
     /// and crash.
     ///
-    pub unsafe fn get_unchecked_edge_prediction_metrics(
+    pub unsafe fn par_iter_unchecked_edge_prediction_metrics(
         &self,
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
