@@ -288,13 +288,14 @@ impl Graph {
     /// To retrieve the edge ID curresponding to the given source and destination node IDs you can use the following:
     ///
     /// ```rust
-    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, true, false, false);
-    /// assert!(
-    ///     graph_without_singletons.iter_node_ids()
-    ///         .all(|node_id|
-    ///             graph_without_singletons.get_unchecked_unique_source_node_id(node_id) == node_id)
-    /// );
+    /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, false, false, false);
+    /// for node_id in graph_without_singletons.iter_node_ids(){
+    ///     assert_eq!(
+    ///         graph_without_singletons.get_unchecked_unique_source_node_id(node_id),
+    ///         node_id,
+    ///         "The expected node ID does not match the obtained node ID."
+    ///     );
+    /// }
     /// ```
     pub fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         // If there are no singletons or trap nodes in the graph

@@ -13,7 +13,7 @@ impl Graph {
     /// Returns iterator over degree centrality for all nodes.
     pub fn iter_degree_centrality(&self) -> Box<dyn Iterator<Item = f64> + '_> {
         if self.has_nodes() {
-            let max_degree = self.get_max_node_degree().unwrap() as f64;
+            let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };
             Box::new(
                 self.iter_node_degrees()
                     .map(move |degree| degree as f64 / max_degree),

@@ -310,6 +310,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
+    // Testing that the degrees computation is correct
+    assert_eq!(
+        graph.get_max_node_degree()?,
+        graph.iter_node_degrees().max().unwrap(),
+        "The cached maximum degree does not match the one computed from the node degrees."
+    );
+    assert_eq!(
+        graph.get_min_node_degree()?,
+        graph.iter_node_degrees().min().unwrap(),
+        "The cached minimum degree does not match the one computed from the node degrees."
+    );
+
     // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(
         graph
@@ -455,10 +467,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.degrees_product(src, dst);
-            let _ = graph.jaccard_index(src, dst);
-            let _ = graph.adamic_adar_index(src, dst);
-            let _ = graph.resource_allocation_index(src, dst);
+            let _ = graph.get_preferential_attachment(src, dst, true);
+            let _ = graph.get_preferential_attachment(src, dst, false);
+            let _ = graph.get_jaccard_coefficient(src, dst);
+            let _ = graph.get_adamic_adar_index(src, dst);
+            let _ = graph.get_resource_allocation_index(src, dst);
         }
     }
 
@@ -562,9 +575,10 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
         node_degree_centralities.len(),
         graph.get_nodes_number() as usize
     );
+
     assert!(node_degree_centralities
         .into_iter()
-        .all(|value| value <= 1.0));
+        .all(|value| value <= 1.0), "All node degrees centralities are expected to be within 0 and 1.");
     let node_betweenness_centralities = graph.get_betweenness_centrality(None, Some(verbose));
     assert_eq!(
         node_betweenness_centralities.len(),

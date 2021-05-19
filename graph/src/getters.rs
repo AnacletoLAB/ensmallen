@@ -241,15 +241,27 @@ impl Graph {
 
     /// Returns maximum node degree of the graph.
     ///
+    /// # Safety
+    /// The method will return an undefined value (0) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_max_node_degree(&self) -> NodeT {
+        self.max_node_degree
+    }
+
+    /// Returns maximum node degree of the graph.
+    ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain any node (is an empty graph).
     pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
-        self.par_iter_node_degrees().max().ok_or_else(|| {
-            "The maximum node degree of a graph with no nodes is not defined.".to_string()
-        })
+        self.must_have_nodes()
+            .map(|_| unsafe { self.get_unchecked_max_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -282,15 +294,27 @@ impl Graph {
 
     /// Returns minimum node degree of the graph.
     ///
+    /// # Safety
+    /// The method will return an undefined value (NodeT::MAX) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_min_node_degree(&self) -> NodeT {
+        self.min_node_degree
+    }
+
+    /// Returns minimum node degree of the graph.
+    ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain any node (is an empty graph).
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().min().ok_or_else(|| {
-            "The minimum node degree of a graph with no nodes is not defined.".to_string()
-        })
+        self.must_have_nodes()
+            .map(|_| unsafe { self.get_unchecked_min_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
