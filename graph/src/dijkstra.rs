@@ -125,6 +125,12 @@ impl Graph {
                     }
                 });
         }
+        if total_distance == 0 {
+            total_distance = NodeT::MAX;
+        }
+        if maximal_distance == 0 {
+            maximal_distance = NodeT::MAX;
+        }
         (
             distances,
             parents,
@@ -323,6 +329,12 @@ impl Graph {
                         nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
                     }
                 });
+        }
+        if total_distance < f64::EPSILON {
+            total_distance = f64::INFINITY;
+        }
+        if maximal_distance < f64::EPSILON {
+            maximal_distance = f64::INFINITY;
         }
         (
             nodes_to_explore.unwrap(),
