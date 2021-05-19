@@ -462,4 +462,40 @@ impl Graph {
                 }
             }))
     }
+
+    /// Returns all available edge prediction metrics for given edges.
+    /// 
+    /// # Arguments
+    /// source_node_ids: Vec<NodeT> - List of source node IDs.
+    /// destination_node_ids: Vec<NodeT> - List of destination node IDs.
+    ///
+    /// # Safety
+    /// If one of the given nodes does not exists in the graph, i.e. that is
+    /// higher than the number of nodes in the graph, the method will panic
+    /// and crash.
+    ///
+    pub unsafe fn get_unchecked_edge_prediction_metrics(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
+        source_node_ids
+            .into_par_iter()
+            .zip(destination_node_ids.into_par_iter())
+            .map(move |(source_node_id, destination_node_id)| {
+                vec![
+                    self.get_unchecked_adamic_adar_index(source_node_id, destination_node_id),
+                    self.get_unchecked_jaccard_coefficient(source_node_id, destination_node_id),
+                    self.get_unchecked_resource_allocation_index(
+                        source_node_id,
+                        destination_node_id,
+                    ),
+                    self.get_unchecked_preferential_attachment(
+                        source_node_id,
+                        destination_node_id,
+                        true,
+                    ),
+                ]
+            })
+    }
 }
