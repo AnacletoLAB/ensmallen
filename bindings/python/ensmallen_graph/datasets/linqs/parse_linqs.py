@@ -21,15 +21,15 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
     """
     return pd.DataFrame({
         node_name: {
-            source_name: graph.get_weight_by_node_names(source_name, node_name) if graph.has_edge_weights() else 1
-            for source_name in graph.get_neighbour_node_names_by_node_name(node_name)
+            source_name: graph.get_weight_from_node_names(source_name, node_name) if graph.has_edge_weights() else 1
+            for source_name in graph.get_neighbour_node_names_from_node_name(node_name)
         }
         for node_name in tqdm(
             graph.get_node_names(),
             desc="Extracting words features",
             leave=False
         )
-        if graph.get_node_type_name_by_node_name(node_name)[0] == "Word"
+        if graph.get_node_type_name_from_node_name(node_name)[0] == "Word"
     }).fillna(0)
 
 

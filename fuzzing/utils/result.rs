@@ -23,7 +23,7 @@ pub struct Connected_components_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_label_prediction_tuple_by_node_ids_Params {
+pub struct Get_node_label_prediction_tuple_from_node_ids_Params {
 	pub node_ids : Vec<NodeT>,
 	pub random_state : u64,
 	pub include_central_node : bool,
@@ -33,26 +33,26 @@ pub struct Get_node_label_prediction_tuple_by_node_ids_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_singleton_by_node_id_Params {
+pub struct Is_singleton_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_singleton_with_selfloops_by_node_id_Params {
+pub struct Is_singleton_with_selfloops_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Has_edge_by_node_ids_Params {
+pub struct Has_edge_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Has_edge_with_type_by_node_ids_Params {
+pub struct Has_edge_with_type_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 	pub edge_type : Option<EdgeTypeT>,
@@ -60,7 +60,7 @@ pub struct Has_edge_with_type_by_node_ids_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Is_trap_node_by_node_id_Params {
+pub struct Is_trap_node_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -99,7 +99,7 @@ pub struct Get_top_k_central_node_names_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_type_id_by_node_id_Params {
+pub struct Get_node_type_id_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -111,7 +111,7 @@ pub struct Get_edge_type_id_by_edge_id_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_type_name_by_node_id_Params {
+pub struct Get_node_type_name_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -135,14 +135,14 @@ pub struct Get_weight_by_edge_id_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_weight_by_node_ids_Params {
+pub struct Get_weight_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_weight_with_type_by_node_ids_Params {
+pub struct Get_weight_with_type_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 	pub edge_type : Option<EdgeTypeT>,
@@ -150,7 +150,7 @@ pub struct Get_weight_with_type_by_node_ids_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_name_by_node_id_Params {
+pub struct Get_node_name_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -162,7 +162,7 @@ pub struct Get_edge_count_by_edge_type_id_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_count_by_node_type_id_Params {
+pub struct Get_node_count_from_node_type_id_Params {
 	pub node_type : Option<NodeTypeT>,
 }
 
@@ -174,13 +174,13 @@ pub struct Get_destination_node_id_by_edge_id_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_neighbours_by_node_id_Params {
+pub struct Get_node_neighbours_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_edge_id_with_type_by_node_ids_Params {
+pub struct Get_edge_id_with_type_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 	pub edge_type : Option<EdgeTypeT>,
@@ -194,25 +194,25 @@ pub struct Get_edge_type_ids_by_edge_type_names_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_type_ids_by_node_type_names_Params {
+pub struct Get_node_type_ids_from_node_type_names_Params {
 	pub node_types : Vec<Option<String>>,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_type_name_by_node_type_id_Params {
+pub struct Get_node_type_name_from_node_type_id_Params {
 	pub node_type_id : NodeTypeT,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_type_names_by_node_type_ids_Params {
+pub struct Get_node_type_names_from_node_type_ids_Params {
 	pub node_type_ids : Vec<NodeTypeT>,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_degree_by_node_id_Params {
+pub struct Get_node_degree_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -312,7 +312,7 @@ pub struct Decode_edge_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_edge_id_by_node_ids_Params {
+pub struct Get_edge_id_from_node_ids_Params {
 	pub src : NodeT,
 	pub dst : NodeT,
 }
@@ -580,36 +580,36 @@ pub struct TheUltimateFuzzer {
 	pub spanning_arborescence_kruskal : Spanning_arborescence_kruskal_Params,
 	pub spanning_arborescence : Spanning_arborescence_Params,
 	pub connected_components : Connected_components_Params,
-	pub get_node_label_prediction_tuple_by_node_ids : Get_node_label_prediction_tuple_by_node_ids_Params,
-	pub is_singleton_by_node_id : Is_singleton_by_node_id_Params,
-	pub is_singleton_with_selfloops_by_node_id : Is_singleton_with_selfloops_by_node_id_Params,
-	pub has_edge_by_node_ids : Has_edge_by_node_ids_Params,
-	pub has_edge_with_type_by_node_ids : Has_edge_with_type_by_node_ids_Params,
-	pub is_trap_node_by_node_id : Is_trap_node_by_node_id_Params,
+	pub get_node_label_prediction_tuple_from_node_ids : Get_node_label_prediction_tuple_from_node_ids_Params,
+	pub is_singleton_from_node_id : Is_singleton_from_node_id_Params,
+	pub is_singleton_with_selfloops_from_node_id : Is_singleton_with_selfloops_from_node_id_Params,
+	pub has_edge_from_node_ids : Has_edge_from_node_ids_Params,
+	pub has_edge_with_type_from_node_ids : Has_edge_with_type_from_node_ids_Params,
+	pub is_trap_node_from_node_id : Is_trap_node_from_node_id_Params,
 	pub enable : Enable_Params,
 	pub get_edge_quadruple : Get_edge_quadruple_Params,
 	pub get_edge_triple : Get_edge_triple_Params,
 	pub get_top_k_central_nodes_ids : Get_top_k_central_nodes_ids_Params,
 	pub get_top_k_central_node_names : Get_top_k_central_node_names_Params,
-	pub get_node_type_id_by_node_id : Get_node_type_id_by_node_id_Params,
+	pub get_node_type_id_from_node_id : Get_node_type_id_from_node_id_Params,
 	pub get_edge_type_id_by_edge_id : Get_edge_type_id_by_edge_id_Params,
-	pub get_node_type_name_by_node_id : Get_node_type_name_by_node_id_Params,
+	pub get_node_type_name_from_node_id : Get_node_type_name_from_node_id_Params,
 	pub get_edge_type_name_by_edge_id : Get_edge_type_name_by_edge_id_Params,
 	pub get_edge_type_name_by_edge_type_id : Get_edge_type_name_by_edge_type_id_Params,
 	pub get_weight_by_edge_id : Get_weight_by_edge_id_Params,
-	pub get_weight_by_node_ids : Get_weight_by_node_ids_Params,
-	pub get_weight_with_type_by_node_ids : Get_weight_with_type_by_node_ids_Params,
-	pub get_node_name_by_node_id : Get_node_name_by_node_id_Params,
+	pub get_weight_from_node_ids : Get_weight_from_node_ids_Params,
+	pub get_weight_with_type_from_node_ids : Get_weight_with_type_from_node_ids_Params,
+	pub get_node_name_from_node_id : Get_node_name_from_node_id_Params,
 	pub get_edge_count_by_edge_type_id : Get_edge_count_by_edge_type_id_Params,
-	pub get_node_count_by_node_type_id : Get_node_count_by_node_type_id_Params,
+	pub get_node_count_from_node_type_id : Get_node_count_from_node_type_id_Params,
 	pub get_destination_node_id_by_edge_id : Get_destination_node_id_by_edge_id_Params,
-	pub get_node_neighbours_by_node_id : Get_node_neighbours_by_node_id_Params,
-	pub get_edge_id_with_type_by_node_ids : Get_edge_id_with_type_by_node_ids_Params,
+	pub get_node_neighbours_from_node_id : Get_node_neighbours_from_node_id_Params,
+	pub get_edge_id_with_type_from_node_ids : Get_edge_id_with_type_from_node_ids_Params,
 	pub get_edge_type_ids_by_edge_type_names : Get_edge_type_ids_by_edge_type_names_Params,
-	pub get_node_type_ids_by_node_type_names : Get_node_type_ids_by_node_type_names_Params,
-	pub get_node_type_name_by_node_type_id : Get_node_type_name_by_node_type_id_Params,
-	pub get_node_type_names_by_node_type_ids : Get_node_type_names_by_node_type_ids_Params,
-	pub get_node_degree_by_node_id : Get_node_degree_by_node_id_Params,
+	pub get_node_type_ids_from_node_type_names : Get_node_type_ids_from_node_type_names_Params,
+	pub get_node_type_name_from_node_type_id : Get_node_type_name_from_node_type_id_Params,
+	pub get_node_type_names_from_node_type_ids : Get_node_type_names_from_node_type_ids_Params,
+	pub get_node_degree_from_node_id : Get_node_degree_from_node_id_Params,
 	pub filter : Filter_Params,
 	pub degrees_product : Degrees_product_Params,
 	pub jaccard_index : Jaccard_index_Params,
@@ -621,7 +621,7 @@ pub struct TheUltimateFuzzer {
 	pub remove_components : Remove_components_Params,
 	pub encode_edge : Encode_edge_Params,
 	pub decode_edge : Decode_edge_Params,
-	pub get_edge_id_by_node_ids : Get_edge_id_by_node_ids_Params,
+	pub get_edge_id_from_node_ids : Get_edge_id_from_node_ids_Params,
 	pub get_bipartite_edges : Get_bipartite_edges_Params,
 	pub get_bipartite_edge_names : Get_bipartite_edge_names_Params,
 	pub get_star_edges : Get_star_edges_Params,
@@ -683,16 +683,16 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.connected_components(data.connected_components.verbose)?;
 
 
-	graph.get_node_label_prediction_tuple_by_node_ids(data.get_node_label_prediction_tuple_by_node_ids.node_ids, data.get_node_label_prediction_tuple_by_node_ids.random_state, data.get_node_label_prediction_tuple_by_node_ids.include_central_node, data.get_node_label_prediction_tuple_by_node_ids.offset, data.get_node_label_prediction_tuple_by_node_ids.max_neighbours)?;
+	graph.get_node_label_prediction_tuple_from_node_ids(data.get_node_label_prediction_tuple_from_node_ids.node_ids, data.get_node_label_prediction_tuple_from_node_ids.random_state, data.get_node_label_prediction_tuple_from_node_ids.include_central_node, data.get_node_label_prediction_tuple_from_node_ids.offset, data.get_node_label_prediction_tuple_from_node_ids.max_neighbours)?;
 
 
-	graph.is_singleton_by_node_id(data.is_singleton_by_node_id.node_id)?;
-	graph.is_singleton_with_selfloops_by_node_id(data.is_singleton_with_selfloops_by_node_id.node_id);
+	graph.is_singleton_from_node_id(data.is_singleton_from_node_id.node_id)?;
+	graph.is_singleton_with_selfloops_from_node_id(data.is_singleton_with_selfloops_from_node_id.node_id);
 
 
-	graph.has_edge_by_node_ids(data.has_edge_by_node_ids.src, data.has_edge_by_node_ids.dst);
-	graph.has_edge_with_type_by_node_ids(data.has_edge_with_type_by_node_ids.src, data.has_edge_with_type_by_node_ids.dst, data.has_edge_with_type_by_node_ids.edge_type);
-	graph.is_trap_node_by_node_id(data.is_trap_node_by_node_id.node_id)?;
+	graph.has_edge_from_node_ids(data.has_edge_from_node_ids.src, data.has_edge_from_node_ids.dst);
+	graph.has_edge_with_type_from_node_ids(data.has_edge_with_type_from_node_ids.src, data.has_edge_with_type_from_node_ids.dst, data.has_edge_with_type_from_node_ids.edge_type);
+	graph.is_trap_node_from_node_id(data.is_trap_node_from_node_id.node_id)?;
 
 
 
@@ -701,17 +701,17 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.get_edge_triple(data.get_edge_triple.edge_id);
 	graph.get_top_k_central_nodes_ids(data.get_top_k_central_nodes_ids.k);
 	graph.get_top_k_central_node_names(data.get_top_k_central_node_names.k);
-	graph.get_node_type_id_by_node_id(data.get_node_type_id_by_node_id.node_id)?;
+	graph.get_node_type_id_from_node_id(data.get_node_type_id_from_node_id.node_id)?;
 	graph.get_edge_type_id_by_edge_id(data.get_edge_type_id_by_edge_id.edge_id)?;
-	graph.get_node_type_name_by_node_id(data.get_node_type_name_by_node_id.node_id)?;
+	graph.get_node_type_name_from_node_id(data.get_node_type_name_from_node_id.node_id)?;
 	graph.get_edge_type_name_by_edge_id(data.get_edge_type_name_by_edge_id.edge_id)?;
 	graph.get_edge_type_name_by_edge_type_id(data.get_edge_type_name_by_edge_type_id.edge_type_id)?;
 	graph.get_weight_by_edge_id(data.get_weight_by_edge_id.edge_id)?;
-	graph.get_weight_by_node_ids(data.get_weight_by_node_ids.src, data.get_weight_by_node_ids.dst)?;
-	graph.get_weight_with_type_by_node_ids(data.get_weight_with_type_by_node_ids.src, data.get_weight_with_type_by_node_ids.dst, data.get_weight_with_type_by_node_ids.edge_type)?;
+	graph.get_weight_from_node_ids(data.get_weight_from_node_ids.src, data.get_weight_from_node_ids.dst)?;
+	graph.get_weight_with_type_from_node_ids(data.get_weight_with_type_from_node_ids.src, data.get_weight_with_type_from_node_ids.dst, data.get_weight_with_type_from_node_ids.edge_type)?;
 
 
-	graph.get_node_name_by_node_id(data.get_node_name_by_node_id.node_id)?;
+	graph.get_node_name_from_node_id(data.get_node_name_from_node_id.node_id)?;
 
 
 
@@ -719,20 +719,20 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 
 
 
-	graph.get_node_count_by_node_type_id(data.get_node_count_by_node_type_id.node_type)?;
+	graph.get_node_count_from_node_type_id(data.get_node_count_from_node_type_id.node_type)?;
 
 	graph.get_destination_node_id_by_edge_id(data.get_destination_node_id_by_edge_id.edge_id)?;
-	graph.get_node_neighbours_by_node_id(data.get_node_neighbours_by_node_id.node_id)?;
+	graph.get_node_neighbours_from_node_id(data.get_node_neighbours_from_node_id.node_id)?;
 
 
-	graph.get_edge_id_with_type_by_node_ids(data.get_edge_id_with_type_by_node_ids.src, data.get_edge_id_with_type_by_node_ids.dst, data.get_edge_id_with_type_by_node_ids.edge_type)?;
+	graph.get_edge_id_with_type_from_node_ids(data.get_edge_id_with_type_from_node_ids.src, data.get_edge_id_with_type_from_node_ids.dst, data.get_edge_id_with_type_from_node_ids.edge_type)?;
 
 
 	graph.get_edge_type_ids_by_edge_type_names(data.get_edge_type_ids_by_edge_type_names.edge_types)?;
-	graph.get_node_type_ids_by_node_type_names(data.get_node_type_ids_by_node_type_names.node_types)?;
-	graph.get_node_type_name_by_node_type_id(data.get_node_type_name_by_node_type_id.node_type_id)?;
-	graph.get_node_type_names_by_node_type_ids(data.get_node_type_names_by_node_type_ids.node_type_ids)?;
-	graph.get_node_degree_by_node_id(data.get_node_degree_by_node_id.node_id)?;
+	graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types)?;
+	graph.get_node_type_name_from_node_type_id(data.get_node_type_name_from_node_type_id.node_type_id)?;
+	graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids)?;
+	graph.get_node_degree_from_node_id(data.get_node_degree_from_node_id.node_id)?;
 	graph.filter(data.filter.node_names, data.filter.node_types, data.filter.edge_types, data.filter.min_weight, data.filter.max_weight, data.filter.verbose)?;
 	graph.degrees_product(data.degrees_product.one, data.degrees_product.two)?;
 	graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two)?;
@@ -745,7 +745,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.remove_components(data.remove_components.node_names, data.remove_components.node_types, data.remove_components.edge_types, data.remove_components.minimum_component_size, data.remove_components.top_k_components, data.remove_components.verbose)?;
 	graph.encode_edge(data.encode_edge.src, data.encode_edge.dst);
 	graph.decode_edge(data.decode_edge.edge);
-	graph.get_edge_id_by_node_ids(data.get_edge_id_by_node_ids.src, data.get_edge_id_by_node_ids.dst)?;
+	graph.get_edge_id_from_node_ids(data.get_edge_id_from_node_ids.src, data.get_edge_id_from_node_ids.dst)?;
 	graph.get_bipartite_edges(data.get_bipartite_edges.removed_existing_edges, data.get_bipartite_edges.first_nodes_set, data.get_bipartite_edges.second_nodes_set, data.get_bipartite_edges.first_node_types_set, data.get_bipartite_edges.second_node_types_set)?;
 	graph.get_bipartite_edge_names(data.get_bipartite_edge_names.removed_existing_edges, data.get_bipartite_edge_names.first_nodes_set, data.get_bipartite_edge_names.second_nodes_set, data.get_bipartite_edge_names.first_node_types_set, data.get_bipartite_edge_names.second_node_types_set)?;
 	graph.get_star_edges(data.get_star_edges.central_node, data.get_star_edges.removed_existing_edges, data.get_star_edges.star_points_nodes_set, data.get_star_edges.star_points_node_types_set)?;

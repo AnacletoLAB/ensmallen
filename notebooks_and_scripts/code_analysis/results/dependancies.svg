@@ -75,51 +75,51 @@
 <path fill="none" stroke="black" d="M16765.59,-1079.97C16795.47,-1070.1 16833.26,-1057.62 16864.66,-1047.25"/>
 <polygon fill="black" stroke="black" points="16865.78,-1050.57 16874.18,-1044.11 16863.59,-1043.92 16865.78,-1050.57"/>
 </g>
-<!-- Graph::has_node_by_node_name -->
+<!-- Graph::has_node_from_node_name -->
 <g id="node73" class="node">
-<title>Graph::has_node_by_node_name</title>
+<title>Graph::has_node_from_node_name</title>
 <polygon fill="none" stroke="black" points="14715.5,-1044 14468.5,-1044 14468.5,-1008 14715.5,-1008 14715.5,-1044"/>
-<text text-anchor="middle" x="14592" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_node_by_node_name</text>
+<text text-anchor="middle" x="14592" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::has_node_from_node_name</text>
 </g>
-<!-- generic_string_operator&#45;&gt;Graph::has_node_by_node_name -->
+<!-- generic_string_operator&#45;&gt;Graph::has_node_from_node_name -->
 <g id="edge5" class="edge">
-<title>generic_string_operator&#45;&gt;Graph::has_node_by_node_name</title>
+<title>generic_string_operator&#45;&gt;Graph::has_node_from_node_name</title>
 <path fill="none" stroke="black" d="M16619.71,-1095.68C16277.88,-1090.72 15104.21,-1071.98 14730,-1044 14728.68,-1043.9 14727.35,-1043.8 14726.02,-1043.69"/>
 <polygon fill="black" stroke="black" points="14725.96,-1040.18 14715.7,-1042.82 14725.37,-1047.15 14725.96,-1040.18"/>
 </g>
-<!-- Graph::has_edge_with_type_by_node_names -->
+<!-- Graph::has_edge_with_type_from_node_names -->
 <g id="node79" class="node">
-<title>Graph::has_edge_with_type_by_node_names</title>
+<title>Graph::has_edge_with_type_from_node_names</title>
 <polygon fill="none" stroke="black" points="587.5,-540 256.5,-540 256.5,-504 587.5,-504 587.5,-540"/>
-<text text-anchor="middle" x="422" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_with_type_by_node_names</text>
+<text text-anchor="middle" x="422" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_with_type_from_node_names</text>
 </g>
-<!-- generic_string_operator&#45;&gt;Graph::has_edge_with_type_by_node_names -->
+<!-- generic_string_operator&#45;&gt;Graph::has_edge_with_type_from_node_names -->
 <g id="edge6" class="edge">
-<title>generic_string_operator&#45;&gt;Graph::has_edge_with_type_by_node_names</title>
+<title>generic_string_operator&#45;&gt;Graph::has_edge_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M16619.74,-1096.49C16240.64,-1094.16 14843.43,-1082.97 14758,-1044 14738.25,-1034.99 14744.85,-1016.77 14725,-1008 14651.61,-975.58 3251.88,-979.47 3172,-972 3084.69,-963.83 3065.19,-945.42 2978,-936 2726.89,-908.88 2090.21,-946.71 1842,-900 1700.68,-873.41 1677.66,-821.88 1537,-792 1336.84,-749.48 1273.36,-816.9 1078,-756 959.24,-718.98 941.05,-681.68 838,-612 815.61,-596.86 814.01,-586.24 789,-576 754.08,-561.7 674.17,-549.39 597.81,-540.23"/>
 <polygon fill="black" stroke="black" points="597.89,-536.72 587.55,-539.02 597.07,-543.67 597.89,-536.72"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_id -->
+<!-- Graph::get_node_type_name_from_node_id -->
 <g id="node117" class="node">
-<title>Graph::get_node_type_name_by_node_id</title>
+<title>Graph::get_node_type_name_from_node_id</title>
 <polygon fill="none" stroke="black" points="15484,-612 15180,-612 15180,-576 15484,-576 15484,-612"/>
-<text text-anchor="middle" x="15332" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_by_node_id</text>
+<text text-anchor="middle" x="15332" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_from_node_id</text>
 </g>
-<!-- generic_string_operator&#45;&gt;Graph::get_node_type_name_by_node_id -->
+<!-- generic_string_operator&#45;&gt;Graph::get_node_type_name_from_node_id -->
 <g id="edge7" class="edge">
-<title>generic_string_operator&#45;&gt;Graph::get_node_type_name_by_node_id</title>
+<title>generic_string_operator&#45;&gt;Graph::get_node_type_name_from_node_id</title>
 <path fill="none" stroke="black" d="M16678.43,-1080C16541.1,-1014.96 16031.06,-779.04 15589,-648 15542.31,-634.16 15489.79,-622.63 15444.46,-613.91"/>
 <polygon fill="black" stroke="black" points="15445.08,-610.46 15434.61,-612.03 15443.77,-617.34 15445.08,-610.46"/>
 </g>
-<!-- Graph::get_node_id_by_node_name -->
+<!-- Graph::get_node_id_from_node_name -->
 <g id="node126" class="node">
-<title>Graph::get_node_id_by_node_name</title>
+<title>Graph::get_node_id_from_node_name</title>
 <polygon fill="none" stroke="black" points="14929,-612 14663,-612 14663,-576 14929,-576 14929,-612"/>
-<text text-anchor="middle" x="14796" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_id_by_node_name</text>
+<text text-anchor="middle" x="14796" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_id_from_node_name</text>
 </g>
-<!-- generic_string_operator&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- generic_string_operator&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge8" class="edge">
-<title>generic_string_operator&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>generic_string_operator&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M16620,-1096.39C16401.78,-1094.29 15844.07,-1085 15380,-1044 15262.92,-1033.65 15234.77,-1021.38 15118,-1008 15031.09,-998.04 14791.73,-1029.73 14726,-972 14695.54,-945.25 14706,-923.54 14706,-883 14706,-883 14706,-883 14706,-809 14706,-764.27 14720.85,-751.1 14753,-720 14779.29,-694.57 14807.6,-715.01 14827,-684 14839.36,-664.24 14828.37,-638.92 14816.18,-620.34"/>
 <polygon fill="black" stroke="black" points="14819,-618.25 14810.39,-612.07 14813.26,-622.27 14819,-618.25"/>
 </g>
@@ -219,15 +219,15 @@
 <path fill="none" stroke="black" d="M17018.91,-1079.88C17002.68,-1070.64 16982.46,-1059.13 16965.03,-1049.21"/>
 <polygon fill="black" stroke="black" points="16966.63,-1046.09 16956.2,-1044.19 16963.16,-1052.18 16966.63,-1046.09"/>
 </g>
-<!-- Graph::has_edge_with_type_by_node_ids -->
+<!-- Graph::has_edge_with_type_from_node_ids -->
 <g id="node75" class="node">
-<title>Graph::has_edge_with_type_by_node_ids</title>
+<title>Graph::has_edge_with_type_from_node_ids</title>
 <polygon fill="none" stroke="black" points="910.5,-540 605.5,-540 605.5,-504 910.5,-504 910.5,-540"/>
-<text text-anchor="middle" x="758" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_with_type_by_node_ids</text>
+<text text-anchor="middle" x="758" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_with_type_from_node_ids</text>
 </g>
-<!-- generic_integer_operator&#45;&gt;Graph::has_edge_with_type_by_node_ids -->
+<!-- generic_integer_operator&#45;&gt;Graph::has_edge_with_type_from_node_ids -->
 <g id="edge17" class="edge">
-<title>generic_integer_operator&#45;&gt;Graph::has_edge_with_type_by_node_ids</title>
+<title>generic_integer_operator&#45;&gt;Graph::has_edge_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M16950.29,-1088.6C16909.11,-1085.4 16860.77,-1082.03 16817,-1080 16008.38,-1042.41 15802.57,-1112.68 14996,-1044 14889.4,-1034.92 14864.67,-1016.19 14758,-1008 14598.33,-995.74 3380.78,-1019.99 3228,-972 3201.18,-963.58 3202.71,-944.77 3176,-936 2914.3,-850.06 2205.3,-962.34 1937,-900 1824.25,-873.8 1812.24,-820.32 1700,-792 1467.64,-733.36 1391.3,-825.67 1162,-756 1083.33,-732.1 875.2,-599.47 792.55,-545.67"/>
 <polygon fill="black" stroke="black" points="794.31,-542.65 784.02,-540.12 790.49,-548.51 794.31,-542.65"/>
 </g>
@@ -441,11 +441,11 @@
 <path fill="none" stroke="black" d="M17656.72,-1223.92C17641.36,-1190.16 17602.2,-1115.13 17544,-1080 17497.79,-1052.1 17474.29,-1071.77 17428,-1044 17330.44,-985.47 17348.13,-914.12 17246,-864 17134.51,-809.29 16900.47,-890.59 16976,-792 17013.37,-743.22 17182.43,-730.37 17243,-720 17295.06,-711.08 17681.09,-722.74 17717,-684 17727.88,-672.27 17727.53,-660.05 17717,-648 17677.6,-602.93 17508.41,-625.14 17450,-612 17398.58,-600.43 17388.92,-585.1 17337,-576 16932.42,-505.08 16819.37,-584.44 16406.3,-539.9"/>
 <polygon fill="black" stroke="black" points="16406.49,-536.4 16396.17,-538.79 16405.73,-543.36 16406.49,-536.4"/>
 </g>
-<!-- Graph::get_unchecked_node_name_by_node_id -->
+<!-- Graph::get_unchecked_node_name_from_node_id -->
 <g id="node13" class="node">
-<title>Graph::get_unchecked_node_name_by_node_id</title>
+<title>Graph::get_unchecked_node_name_from_node_id</title>
 <polygon fill="none" stroke="black" points="14000,-396 13652,-396 13652,-360 14000,-360 14000,-396"/>
-<text text-anchor="middle" x="13826" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_name_by_node_id</text>
+<text text-anchor="middle" x="13826" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_name_from_node_id</text>
 </g>
 <!-- unchecked_translate -->
 <g id="node284" class="node">
@@ -453,9 +453,9 @@
 <polygon fill="none" stroke="black" points="14389,-324 14225,-324 14225,-288 14389,-288 14389,-324"/>
 <text text-anchor="middle" x="14307" y="-302.3" font-family="Times,serif" font-size="14.00">unchecked_translate</text>
 </g>
-<!-- Graph::get_unchecked_node_name_by_node_id&#45;&gt;unchecked_translate -->
+<!-- Graph::get_unchecked_node_name_from_node_id&#45;&gt;unchecked_translate -->
 <g id="edge40" class="edge">
-<title>Graph::get_unchecked_node_name_by_node_id&#45;&gt;unchecked_translate</title>
+<title>Graph::get_unchecked_node_name_from_node_id&#45;&gt;unchecked_translate</title>
 <path fill="none" stroke="black" d="M13943.05,-359.97C14026.62,-347.8 14137.46,-331.67 14214.78,-320.42"/>
 <polygon fill="black" stroke="black" points="14215.59,-323.84 14224.99,-318.94 14214.59,-316.91 14215.59,-323.84"/>
 </g>
@@ -465,9 +465,9 @@
 <polygon fill="none" stroke="black" points="13866.5,-324 13785.5,-324 13785.5,-288 13866.5,-288 13866.5,-324"/>
 <text text-anchor="middle" x="13826" y="-302.3" font-family="Times,serif" font-size="14.00">translate</text>
 </g>
-<!-- Graph::get_unchecked_node_name_by_node_id&#45;&gt;translate -->
+<!-- Graph::get_unchecked_node_name_from_node_id&#45;&gt;translate -->
 <g id="edge41" class="edge">
-<title>Graph::get_unchecked_node_name_by_node_id&#45;&gt;translate</title>
+<title>Graph::get_unchecked_node_name_from_node_id&#45;&gt;translate</title>
 <path fill="none" stroke="black" d="M13826,-359.7C13826,-351.98 13826,-342.71 13826,-334.11"/>
 <polygon fill="black" stroke="black" points="13829.5,-334.1 13826,-324.1 13822.5,-334.1 13829.5,-334.1"/>
 </g>
@@ -483,17 +483,17 @@
 <polygon fill="none" stroke="black" points="16657.5,-612 16340.5,-612 16340.5,-576 16657.5,-576 16657.5,-612"/>
 <text text-anchor="middle" x="16499" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_weight_by_edge_id</text>
 </g>
-<!-- Graph::get_unchecked_node_type_id_by_node_id -->
+<!-- Graph::get_unchecked_node_type_id_from_node_id -->
 <g id="node16" class="node">
-<title>Graph::get_unchecked_node_type_id_by_node_id</title>
+<title>Graph::get_unchecked_node_type_id_from_node_id</title>
 <polygon fill="none" stroke="black" points="18088.5,-540 17727.5,-540 17727.5,-504 18088.5,-504 18088.5,-540"/>
-<text text-anchor="middle" x="17908" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_type_id_by_node_id</text>
+<text text-anchor="middle" x="17908" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_type_id_from_node_id</text>
 </g>
-<!-- Graph::get_unchecked_node_id_by_node_name -->
+<!-- Graph::get_unchecked_node_id_from_node_name -->
 <g id="node17" class="node">
-<title>Graph::get_unchecked_node_id_by_node_name</title>
+<title>Graph::get_unchecked_node_id_from_node_name</title>
 <polygon fill="none" stroke="black" points="19138,-684 18790,-684 18790,-648 19138,-648 19138,-684"/>
-<text text-anchor="middle" x="18964" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_id_by_node_name</text>
+<text text-anchor="middle" x="18964" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_id_from_node_name</text>
 </g>
 <!-- Graph::get_unchecked_edge_type_id_by_edge_type_name -->
 <g id="node18" class="node">
@@ -525,35 +525,35 @@
 <polygon fill="none" stroke="black" points="4507.5,-540 4120.5,-540 4120.5,-504 4507.5,-504 4507.5,-540"/>
 <text text-anchor="middle" x="4314" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_count_by_edge_type_id</text>
 </g>
-<!-- Graph::get_unchecked_node_count_by_node_type_id -->
+<!-- Graph::get_unchecked_node_count_from_node_type_id -->
 <g id="node21" class="node">
-<title>Graph::get_unchecked_node_count_by_node_type_id</title>
+<title>Graph::get_unchecked_node_count_from_node_type_id</title>
 <polygon fill="none" stroke="black" points="5405.5,-540 5018.5,-540 5018.5,-504 5405.5,-504 5405.5,-540"/>
-<text text-anchor="middle" x="5212" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_count_by_node_type_id</text>
+<text text-anchor="middle" x="5212" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_count_from_node_type_id</text>
 </g>
-<!-- Graph::get_unchecked_node_destinations_by_node_id -->
+<!-- Graph::get_unchecked_node_destinations_from_node_id -->
 <g id="node22" class="node">
-<title>Graph::get_unchecked_node_destinations_by_node_id</title>
+<title>Graph::get_unchecked_node_destinations_from_node_id</title>
 <polygon fill="none" stroke="black" points="8861.5,-684 8464.5,-684 8464.5,-648 8861.5,-648 8861.5,-684"/>
-<text text-anchor="middle" x="8663" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_destinations_by_node_id</text>
+<text text-anchor="middle" x="8663" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_node_destinations_from_node_id</text>
 </g>
-<!-- Graph::get_unchecked_node_destinations_by_node_id&#45;&gt;Graph::get_node_edges_and_destinations -->
+<!-- Graph::get_unchecked_node_destinations_from_node_id&#45;&gt;Graph::get_node_edges_and_destinations -->
 <g id="edge44" class="edge">
-<title>Graph::get_unchecked_node_destinations_by_node_id&#45;&gt;Graph::get_node_edges_and_destinations</title>
+<title>Graph::get_unchecked_node_destinations_from_node_id&#45;&gt;Graph::get_node_edges_and_destinations</title>
 <path fill="none" stroke="black" d="M8464.3,-648.43C8461.18,-648.28 8458.08,-648.13 8455,-648 7045.46,-586.5 3520.01,-688.08 2092.05,-612.01"/>
 <polygon fill="black" stroke="black" points="2092.03,-608.51 2081.86,-611.46 2091.66,-615.5 2092.03,-608.51"/>
 </g>
-<!-- Graph::get_unchecked_node_destinations_by_node_id&#45;&gt;Graph::get_destinations_slice -->
+<!-- Graph::get_unchecked_node_destinations_from_node_id&#45;&gt;Graph::get_destinations_slice -->
 <g id="edge45" class="edge">
-<title>Graph::get_unchecked_node_destinations_by_node_id&#45;&gt;Graph::get_destinations_slice</title>
+<title>Graph::get_unchecked_node_destinations_from_node_id&#45;&gt;Graph::get_destinations_slice</title>
 <path fill="none" stroke="black" d="M8464.29,-648.59C8461.17,-648.39 8458.07,-648.19 8455,-648 8091.13,-625.22 7996.11,-644.86 7628.67,-612"/>
 <polygon fill="black" stroke="black" points="7628.82,-608.5 7618.55,-611.09 7628.2,-615.47 7628.82,-608.5"/>
 </g>
-<!-- Graph::get_unchecked_edge_id_by_node_ids -->
+<!-- Graph::get_unchecked_edge_id_from_node_ids -->
 <g id="node23" class="node">
-<title>Graph::get_unchecked_edge_id_by_node_ids</title>
+<title>Graph::get_unchecked_edge_id_from_node_ids</title>
 <polygon fill="none" stroke="black" points="2501,-1044 2171,-1044 2171,-1008 2501,-1008 2501,-1044"/>
-<text text-anchor="middle" x="2336" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_id_by_node_ids</text>
+<text text-anchor="middle" x="2336" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_id_from_node_ids</text>
 </g>
 <!-- Graph::get_unchecked_edge_ids_range -->
 <g id="node24" class="node">
@@ -561,9 +561,9 @@
 <polygon fill="none" stroke="black" points="1967.5,-972 1674.5,-972 1674.5,-936 1967.5,-936 1967.5,-972"/>
 <text text-anchor="middle" x="1821" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_ids_range</text>
 </g>
-<!-- Graph::get_unchecked_edge_id_by_node_ids&#45;&gt;Graph::get_unchecked_edge_ids_range -->
+<!-- Graph::get_unchecked_edge_id_from_node_ids&#45;&gt;Graph::get_unchecked_edge_ids_range -->
 <g id="edge46" class="edge">
-<title>Graph::get_unchecked_edge_id_by_node_ids&#45;&gt;Graph::get_unchecked_edge_ids_range</title>
+<title>Graph::get_unchecked_edge_id_from_node_ids&#45;&gt;Graph::get_unchecked_edge_ids_range</title>
 <path fill="none" stroke="black" d="M2210.68,-1007.97C2133.73,-997.51 2035.17,-984.11 1956.43,-973.41"/>
 <polygon fill="black" stroke="black" points="1956.82,-969.93 1946.44,-972.05 1955.88,-976.87 1956.82,-969.93"/>
 </g>
@@ -573,39 +573,39 @@
 <polygon fill="none" stroke="black" points="1263.5,-180 942.5,-180 942.5,-144 1263.5,-144 1263.5,-180"/>
 <text text-anchor="middle" x="1103" y="-158.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_id_from_tuple</text>
 </g>
-<!-- Graph::get_unchecked_edge_id_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
+<!-- Graph::get_unchecked_edge_id_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
 <g id="edge47" class="edge">
-<title>Graph::get_unchecked_edge_id_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
+<title>Graph::get_unchecked_edge_id_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
 <path fill="none" stroke="black" d="M2170.93,-1021.48C1918,-1015.41 1419.44,-1000.75 997,-972 791.85,-958.04 76,-1088.62 76,-883 76,-883 76,-883 76,-449 76,-390.29 250.79,-231.56 285,-216 342.17,-190 709.49,-174.66 932.01,-167.63"/>
 <polygon fill="black" stroke="black" points="932.28,-171.13 942.17,-167.32 932.06,-164.13 932.28,-171.13"/>
 </g>
-<!-- Graph::get_unchecked_minmax_edge_ids_by_node_ids -->
+<!-- Graph::get_unchecked_minmax_edge_ids_from_node_ids -->
 <g id="node25" class="node">
-<title>Graph::get_unchecked_minmax_edge_ids_by_node_ids</title>
+<title>Graph::get_unchecked_minmax_edge_ids_from_node_ids</title>
 <polygon fill="none" stroke="black" points="1393.5,-900 992.5,-900 992.5,-864 1393.5,-864 1393.5,-900"/>
-<text text-anchor="middle" x="1193" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_minmax_edge_ids_by_node_ids</text>
+<text text-anchor="middle" x="1193" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_minmax_edge_ids_from_node_ids</text>
 </g>
-<!-- Graph::get_unchecked_edge_ids_range&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids -->
+<!-- Graph::get_unchecked_edge_ids_range&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids -->
 <g id="edge48" class="edge">
-<title>Graph::get_unchecked_edge_ids_range&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids</title>
+<title>Graph::get_unchecked_edge_ids_range&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids</title>
 <path fill="none" stroke="black" d="M1674.16,-936.63C1578.75,-926 1454.27,-912.12 1355.83,-901.15"/>
 <polygon fill="black" stroke="black" points="1356.11,-897.66 1345.79,-900.03 1355.34,-904.62 1356.11,-897.66"/>
 </g>
-<!-- Graph::get_unchecked_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
+<!-- Graph::get_unchecked_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
 <g id="edge49" class="edge">
-<title>Graph::get_unchecked_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
+<title>Graph::get_unchecked_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
 <path fill="none" stroke="black" d="M992.26,-874.55C680.16,-861.79 114,-826.59 114,-739 114,-739 114,-739 114,-521 114,-388.22 178.08,-338.22 301,-288 433.9,-233.7 479.99,-273.07 622,-252 757.9,-231.83 914.12,-201.61 1010.71,-182.1"/>
 <polygon fill="black" stroke="black" points="1011.63,-185.48 1020.74,-180.07 1010.24,-178.62 1011.63,-185.48"/>
 </g>
-<!-- Graph::get_unchecked_edge_degreee_by_node_ids -->
+<!-- Graph::get_unchecked_edge_degreee_from_node_ids -->
 <g id="node26" class="node">
-<title>Graph::get_unchecked_edge_degreee_by_node_ids</title>
+<title>Graph::get_unchecked_edge_degreee_from_node_ids</title>
 <polygon fill="none" stroke="black" points="1380,-972 1006,-972 1006,-936 1380,-936 1380,-972"/>
-<text text-anchor="middle" x="1193" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_degreee_by_node_ids</text>
+<text text-anchor="middle" x="1193" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::get_unchecked_edge_degreee_from_node_ids</text>
 </g>
-<!-- Graph::get_unchecked_edge_degreee_by_node_ids&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids -->
+<!-- Graph::get_unchecked_edge_degreee_from_node_ids&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids -->
 <g id="edge50" class="edge">
-<title>Graph::get_unchecked_edge_degreee_by_node_ids&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids</title>
+<title>Graph::get_unchecked_edge_degreee_from_node_ids&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids</title>
 <path fill="none" stroke="black" d="M1193,-935.7C1193,-927.98 1193,-918.71 1193,-910.11"/>
 <polygon fill="black" stroke="black" points="1196.5,-910.1 1193,-900.1 1189.5,-910.1 1196.5,-910.1"/>
 </g>
@@ -909,27 +909,27 @@
 <path fill="none" stroke="black" d="M11039.4,-1096.7C11571.78,-1094.07 15392.43,-1074.17 15631,-1044 15697.73,-1035.56 15711.8,-1019.94 15778,-1008 16048.4,-959.23 16118.54,-962.69 16392,-936 16801.52,-896.03 16904.17,-886.89 17315,-864 17374.72,-860.67 18347.53,-869.08 18391,-828 18449.3,-772.91 18428.85,-724.26 18404,-648 18379.46,-572.69 18360.84,-553.5 18299,-504 18267.61,-478.87 18238.06,-501.62 18216,-468 18207.22,-454.62 18207.12,-445.31 18216,-432 18286.57,-326.19 18697.95,-309.75 18854,-307.35"/>
 <polygon fill="black" stroke="black" points="18854.4,-310.84 18864.35,-307.2 18854.3,-303.84 18854.4,-310.84"/>
 </g>
-<!-- Graph::is_singleton_by_node_id -->
+<!-- Graph::is_singleton_from_node_id -->
 <g id="node70" class="node">
-<title>Graph::is_singleton_by_node_id</title>
+<title>Graph::is_singleton_from_node_id</title>
 <polygon fill="none" stroke="black" points="9442,-612 9202,-612 9202,-576 9442,-576 9442,-612"/>
-<text text-anchor="middle" x="9322" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_by_node_id</text>
+<text text-anchor="middle" x="9322" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_from_node_id</text>
 </g>
-<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_by_node_id -->
+<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_from_node_id -->
 <g id="edge76" class="edge">
-<title>Graph::kruskal&#45;&gt;Graph::is_singleton_by_node_id</title>
+<title>Graph::kruskal&#45;&gt;Graph::is_singleton_from_node_id</title>
 <path fill="none" stroke="black" d="M10934.32,-1079.94C10805.53,-1030.11 10415.4,-882.59 10082,-792 9851.7,-729.42 9773.62,-781.97 9556,-684 9531.68,-673.05 9531.89,-659.85 9508,-648 9479.37,-633.79 9446.31,-622.82 9416.07,-614.65"/>
 <polygon fill="black" stroke="black" points="9416.93,-611.25 9406.37,-612.09 9415.15,-618.02 9416.93,-611.25"/>
 </g>
-<!-- Graph::is_singleton_with_selfloops_by_node_id -->
+<!-- Graph::is_singleton_with_selfloops_from_node_id -->
 <g id="node71" class="node">
-<title>Graph::is_singleton_with_selfloops_by_node_id</title>
+<title>Graph::is_singleton_with_selfloops_from_node_id</title>
 <polygon fill="none" stroke="black" points="11949.5,-684 11594.5,-684 11594.5,-648 11949.5,-648 11949.5,-684"/>
-<text text-anchor="middle" x="11772" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_with_selfloops_by_node_id</text>
+<text text-anchor="middle" x="11772" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_with_selfloops_from_node_id</text>
 </g>
-<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
+<!-- Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id -->
 <g id="edge77" class="edge">
-<title>Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
+<title>Graph::kruskal&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id</title>
 <path fill="none" stroke="black" d="M10980.77,-1079.85C10988.46,-1037.51 11013.9,-926.89 11078,-864 11199.24,-745.05 11268.32,-765.38 11432,-720 11486.74,-704.82 11547.72,-693.61 11602.75,-685.51"/>
 <polygon fill="black" stroke="black" points="11603.56,-688.93 11612.95,-684.03 11602.56,-682 11603.56,-688.93"/>
 </g>
@@ -1083,9 +1083,9 @@
 <path fill="none" stroke="black" d="M11111.74,-1311.78C11398.57,-1308.84 12152.01,-1301.26 12781,-1296 12850.36,-1295.42 17713.47,-1292.03 17775,-1260 17862.07,-1214.68 17817.34,-1127.95 17903,-1080 18005.82,-1022.45 18328.46,-1100.24 18432,-1044 18484.72,-1015.36 18460.5,-965.04 18513,-936 18597.1,-889.47 18850.56,-922.5 18944,-900 18984.98,-890.13 19271.52,-791.01 19295,-756 19308.28,-736.19 19295.47,-710.72 19281.59,-692.11"/>
 <polygon fill="black" stroke="black" points="19284.18,-689.74 19275.22,-684.08 19278.69,-694.09 19284.18,-689.74"/>
 </g>
-<!-- Graph::spanning_arborescence&#45;&gt;Graph::is_singleton_by_node_id -->
+<!-- Graph::spanning_arborescence&#45;&gt;Graph::is_singleton_from_node_id -->
 <g id="edge94" class="edge">
-<title>Graph::spanning_arborescence&#45;&gt;Graph::is_singleton_by_node_id</title>
+<title>Graph::spanning_arborescence&#45;&gt;Graph::is_singleton_from_node_id</title>
 <path fill="none" stroke="black" d="M10874.48,-1297.51C10869.59,-1296.98 10864.75,-1296.47 10860,-1296 10748.49,-1284.89 10458.53,-1307.43 10357,-1260 10311.65,-1238.81 10084.92,-964.83 10044,-936 9885.29,-824.2 9820.57,-840.93 9646,-756 9583.79,-725.73 9566.15,-721.47 9508,-684 9486.18,-669.94 9484.62,-660.74 9462,-648 9439.01,-635.05 9412.24,-624.04 9388.3,-615.46"/>
 <polygon fill="black" stroke="black" points="9389.18,-612.06 9378.59,-612.06 9386.87,-618.67 9389.18,-612.06"/>
 </g>
@@ -1137,15 +1137,15 @@
 <path fill="none" stroke="black" d="M9872.08,-1310.81C10075.18,-1307.12 10503.76,-1299.72 10866,-1296 10913.71,-1295.51 17694.86,-1282.38 17737,-1260 17779.79,-1237.27 17818.07,-1104.26 17860,-1080 17949.13,-1028.43 18225.13,-1078.94 18322,-1044 18400.3,-1015.76 18397.26,-965.75 18475,-936 18603.72,-886.74 18650.77,-938.87 18783,-900 18904.18,-864.38 18928.63,-833.97 19028,-756 19047.61,-740.61 19048.96,-731.64 19071,-720 19090.93,-709.47 19140.86,-695.59 19184.26,-684.67"/>
 <polygon fill="black" stroke="black" points="19185.12,-688.06 19193.98,-682.24 19183.43,-681.27 19185.12,-688.06"/>
 </g>
-<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_by_node_id -->
+<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_from_node_id -->
 <g id="edge102" class="edge">
-<title>Graph::connected_components&#45;&gt;Graph::is_singleton_by_node_id</title>
+<title>Graph::connected_components&#45;&gt;Graph::is_singleton_from_node_id</title>
 <path fill="none" stroke="black" d="M9741.62,-1295.75C9735.17,-1285.8 9727.84,-1272.76 9724,-1260 9700.95,-1183.37 9673.89,-1138.95 9728,-1080 9779.93,-1023.42 9848.68,-1103.69 9897,-1044 9907.07,-1031.56 9904.53,-1022.12 9897,-1008 9815.9,-855.95 9719.42,-886.02 9575,-792 9549.89,-775.65 9540.31,-776 9518,-756 9472.31,-715.04 9479.95,-686.28 9432,-648 9415.99,-635.22 9396.39,-624.53 9378.19,-616.18"/>
 <polygon fill="black" stroke="black" points="9379.39,-612.89 9368.83,-612.03 9376.55,-619.29 9379.39,-612.89"/>
 </g>
-<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
+<!-- Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id -->
 <g id="edge103" class="edge">
-<title>Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
+<title>Graph::connected_components&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id</title>
 <path fill="none" stroke="black" d="M9757.05,-1295.92C9765.56,-1253.25 9793.49,-1141.06 9861,-1080 9897.59,-1046.91 9919.44,-1060.3 9966,-1044 10190.5,-965.43 10240.17,-925.28 10470,-864 10819.08,-770.93 10912.35,-771 11270,-720 11373.59,-705.23 11489.75,-692.71 11584.22,-683.55"/>
 <polygon fill="black" stroke="black" points="11584.85,-687.01 11594.46,-682.56 11584.17,-680.04 11584.85,-687.01"/>
 </g>
@@ -1257,15 +1257,15 @@
 <path fill="none" stroke="black" d="M13253.51,-590.44C13349.03,-586.78 13532.15,-580.06 13688,-576 14573.18,-552.95 14795.6,-583.58 15680,-540 15718.42,-538.11 15760.69,-534.92 15797.24,-531.81"/>
 <polygon fill="black" stroke="black" points="15797.73,-535.29 15807.39,-530.94 15797.13,-528.31 15797.73,-535.29"/>
 </g>
-<!-- Graph::overlaps&#45;&gt;Graph::has_edge_with_type_by_node_ids -->
+<!-- Graph::overlaps&#45;&gt;Graph::has_edge_with_type_from_node_ids -->
 <g id="edge116" class="edge">
-<title>Graph::overlaps&#45;&gt;Graph::has_edge_with_type_by_node_ids</title>
+<title>Graph::overlaps&#45;&gt;Graph::has_edge_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M13122.3,-591.23C12984.29,-587.59 12654.06,-579.34 12377,-576 11743.65,-568.37 1654.82,-574.2 920.72,-539.96"/>
 <polygon fill="black" stroke="black" points="920.76,-536.45 910.59,-539.45 920.41,-543.44 920.76,-536.45"/>
 </g>
-<!-- Graph::overlaps&#45;&gt;Graph::has_edge_with_type_by_node_names -->
+<!-- Graph::overlaps&#45;&gt;Graph::has_edge_with_type_from_node_names -->
 <g id="edge117" class="edge">
-<title>Graph::overlaps&#45;&gt;Graph::has_edge_with_type_by_node_names</title>
+<title>Graph::overlaps&#45;&gt;Graph::has_edge_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M13122.31,-591.22C12984.29,-587.58 12654.06,-579.33 12377,-576 11725.66,-568.18 1349.17,-572.81 597.87,-540.03"/>
 <polygon fill="black" stroke="black" points="597.9,-536.53 587.75,-539.56 597.58,-543.52 597.9,-536.53"/>
 </g>
@@ -1299,15 +1299,15 @@
 <path fill="none" stroke="black" d="M12368.17,-591.48C12505.88,-588.3 12836.61,-580.85 13114,-576 14254.38,-556.05 14540.71,-593.83 15680,-540 15718.42,-538.18 15760.69,-535.01 15797.25,-531.9"/>
 <polygon fill="black" stroke="black" points="15797.73,-535.37 15807.4,-531.02 15797.13,-528.39 15797.73,-535.37"/>
 </g>
-<!-- Graph::contains&#45;&gt;Graph::has_edge_with_type_by_node_ids -->
+<!-- Graph::contains&#45;&gt;Graph::has_edge_with_type_from_node_ids -->
 <g id="edge121" class="edge">
-<title>Graph::contains&#45;&gt;Graph::has_edge_with_type_by_node_ids</title>
+<title>Graph::contains&#45;&gt;Graph::has_edge_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M12237.92,-591.31C12096.79,-587.73 11751.97,-579.42 11463,-576 10880.39,-569.11 1603.02,-571.58 920.67,-539.95"/>
 <polygon fill="black" stroke="black" points="920.76,-536.45 910.59,-539.45 920.41,-543.44 920.76,-536.45"/>
 </g>
-<!-- Graph::contains&#45;&gt;Graph::has_edge_with_type_by_node_names -->
+<!-- Graph::contains&#45;&gt;Graph::has_edge_with_type_from_node_names -->
 <g id="edge122" class="edge">
-<title>Graph::contains&#45;&gt;Graph::has_edge_with_type_by_node_names</title>
+<title>Graph::contains&#45;&gt;Graph::has_edge_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M12237.92,-591.31C12096.79,-587.72 11751.97,-579.4 11463,-576 10259.02,-561.82 1849.33,-600.55 598.15,-540.07"/>
 <polygon fill="black" stroke="black" points="597.91,-536.55 587.75,-539.55 597.57,-543.54 597.91,-536.55"/>
 </g>
@@ -1425,51 +1425,51 @@
 <path fill="none" stroke="black" d="M5766.52,-863.81C5772.46,-845.8 5779.54,-816.73 5774,-792 5771.99,-783.01 5768.27,-773.75 5764.3,-765.53"/>
 <polygon fill="black" stroke="black" points="5767.32,-763.73 5759.63,-756.44 5761.09,-766.94 5767.32,-763.73"/>
 </g>
-<!-- Graph::get_neighbours_by_node_id -->
+<!-- Graph::get_neighbours_from_node_id -->
 <g id="node59" class="node">
-<title>Graph::get_neighbours_by_node_id</title>
+<title>Graph::get_neighbours_from_node_id</title>
 <polygon fill="none" stroke="black" points="12330,-756 12064,-756 12064,-720 12330,-720 12330,-756"/>
-<text text-anchor="middle" x="12197" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbours_by_node_id</text>
+<text text-anchor="middle" x="12197" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbours_from_node_id</text>
 </g>
-<!-- Graph::get_neighbours_by_node_id&#45;&gt;Graph::get_unchecked_node_destinations_by_node_id -->
+<!-- Graph::get_neighbours_from_node_id&#45;&gt;Graph::get_unchecked_node_destinations_from_node_id -->
 <g id="edge134" class="edge">
-<title>Graph::get_neighbours_by_node_id&#45;&gt;Graph::get_unchecked_node_destinations_by_node_id</title>
+<title>Graph::get_neighbours_from_node_id&#45;&gt;Graph::get_unchecked_node_destinations_from_node_id</title>
 <path fill="none" stroke="black" d="M12063.63,-720.61C12060.73,-720.39 12057.85,-720.19 12055,-720 11352.18,-674.09 9594.25,-716.44 8871.73,-684"/>
 <polygon fill="black" stroke="black" points="8871.85,-680.5 8861.7,-683.54 8871.53,-687.5 8871.85,-680.5"/>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_id -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_id -->
 <g id="node60" class="node">
-<title>Graph::get_node_label_prediction_tuple_by_node_id</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_id</title>
 <polygon fill="none" stroke="black" points="17592,-828 17208,-828 17208,-792 17592,-792 17592,-828"/>
-<text text-anchor="middle" x="17400" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::get_node_label_prediction_tuple_by_node_id</text>
+<text text-anchor="middle" x="17400" y="-806.3" font-family="Times,serif" font-size="14.00">Graph::get_node_label_prediction_tuple_from_node_id</text>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_id&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_id&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id -->
 <g id="edge135" class="edge">
-<title>Graph::get_node_label_prediction_tuple_by_node_id&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_id&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M17581.09,-791.95C17622.89,-784.11 17666.39,-772.68 17705,-756 17729.48,-745.42 17728.37,-730.23 17753,-720 17804.43,-698.63 17964.56,-726.11 18001,-684 18010.38,-673.16 18014.66,-602.4 17999,-576 17991.27,-562.97 17979,-552.82 17965.95,-545.06"/>
 <polygon fill="black" stroke="black" points="17967.29,-541.8 17956.84,-540.05 17963.92,-547.93 17967.29,-541.8"/>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_id&#45;&gt;Graph::get_neighbours_by_node_id -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_id&#45;&gt;Graph::get_neighbours_from_node_id -->
 <g id="edge136" class="edge">
-<title>Graph::get_node_label_prediction_tuple_by_node_id&#45;&gt;Graph::get_neighbours_by_node_id</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_id&#45;&gt;Graph::get_neighbours_from_node_id</title>
 <path fill="none" stroke="black" d="M17207.92,-808.18C16343.52,-804.32 12835.02,-786.88 12344,-756 12342.88,-755.93 12341.75,-755.86 12340.62,-755.78"/>
 <polygon fill="black" stroke="black" points="12340.58,-752.27 12330.35,-755.04 12340.07,-759.25 12340.58,-752.27"/>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_ids -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_ids -->
 <g id="node61" class="node">
-<title>Graph::get_node_label_prediction_tuple_by_node_ids</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_ids</title>
 <polygon fill="none" stroke="black" points="19730,-900 19338,-900 19338,-864 19730,-864 19730,-900"/>
-<text text-anchor="middle" x="19534" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_node_label_prediction_tuple_by_node_ids</text>
+<text text-anchor="middle" x="19534" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_node_label_prediction_tuple_from_node_ids</text>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_ids&#45;&gt;Graph::get_node_label_prediction_tuple_by_node_id -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_ids&#45;&gt;Graph::get_node_label_prediction_tuple_from_node_id -->
 <g id="edge137" class="edge">
-<title>Graph::get_node_label_prediction_tuple_by_node_ids&#45;&gt;Graph::get_node_label_prediction_tuple_by_node_id</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_ids&#45;&gt;Graph::get_node_label_prediction_tuple_from_node_id</title>
 <path fill="none" stroke="black" d="M19337.85,-864.76C19333.19,-864.49 19328.57,-864.24 19324,-864 18609.66,-827.13 18429.77,-855.28 17715,-828 17678.58,-826.61 17639.8,-824.79 17602.36,-822.87"/>
 <polygon fill="black" stroke="black" points="17602.53,-819.37 17592.36,-822.35 17602.16,-826.36 17602.53,-819.37"/>
 </g>
-<!-- Graph::get_node_label_prediction_tuple_by_node_ids&#45;&gt;Graph::has_node_types -->
+<!-- Graph::get_node_label_prediction_tuple_from_node_ids&#45;&gt;Graph::has_node_types -->
 <g id="edge138" class="edge">
-<title>Graph::get_node_label_prediction_tuple_by_node_ids&#45;&gt;Graph::has_node_types</title>
+<title>Graph::get_node_label_prediction_tuple_from_node_ids&#45;&gt;Graph::has_node_types</title>
 <path fill="none" stroke="black" d="M19730.08,-869.66C19770.7,-867.56 19813.24,-865.55 19853,-864 20015.81,-857.66 21163.54,-876.8 21319,-828 21462.66,-782.91 21489.52,-732.35 21580,-612 21634.11,-540.02 21614.77,-500.68 21673,-432 21682.61,-420.67 21695.07,-410.35 21706.86,-401.88"/>
 <polygon fill="black" stroke="black" points="21709.05,-404.63 21715.28,-396.06 21705.07,-398.87 21709.05,-404.63"/>
 </g>
@@ -1491,15 +1491,15 @@
 <path fill="none" stroke="black" d="M1408.37,-719.97C1473.73,-709.4 1557.63,-695.84 1624.16,-685.08"/>
 <polygon fill="black" stroke="black" points="1624.96,-688.5 1634.27,-683.45 1623.84,-681.59 1624.96,-688.5"/>
 </g>
-<!-- Graph::get_node_degree_by_node_id -->
+<!-- Graph::get_node_degree_from_node_id -->
 <g id="node149" class="node">
-<title>Graph::get_node_degree_by_node_id</title>
+<title>Graph::get_node_degree_from_node_id</title>
 <polygon fill="none" stroke="black" points="5014,-468 4738,-468 4738,-432 5014,-432 5014,-468"/>
-<text text-anchor="middle" x="4876" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_node_degree_by_node_id</text>
+<text text-anchor="middle" x="4876" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_node_degree_from_node_id</text>
 </g>
-<!-- Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge140" class="edge">
-<title>Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M1422.67,-723.78C1438.9,-722.31 1455.35,-720.99 1471,-720 2085.97,-680.95 2242.68,-732.17 2857,-684 2979.56,-674.39 3835.31,-572.02 3954,-540 3994.01,-529.21 3999.65,-513.44 4040,-504 4166.46,-474.41 4523.4,-460.31 4727.66,-454.49"/>
 <polygon fill="black" stroke="black" points="4727.98,-457.98 4737.87,-454.2 4727.78,-450.98 4727.98,-457.98"/>
 </g>
@@ -1521,15 +1521,15 @@
 <path fill="none" stroke="black" d="M1713.51,-647.7C1702.04,-638.88 1687.94,-628.03 1675.52,-618.47"/>
 <polygon fill="black" stroke="black" points="1677.3,-615.43 1667.24,-612.1 1673.03,-620.98 1677.3,-615.43"/>
 </g>
-<!-- Graph::has_edge_by_node_ids -->
+<!-- Graph::has_edge_from_node_ids -->
 <g id="node74" class="node">
-<title>Graph::has_edge_by_node_ids</title>
+<title>Graph::has_edge_from_node_ids</title>
 <polygon fill="none" stroke="black" points="1558.5,-612 1329.5,-612 1329.5,-576 1558.5,-576 1558.5,-612"/>
-<text text-anchor="middle" x="1444" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_by_node_ids</text>
+<text text-anchor="middle" x="1444" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_from_node_ids</text>
 </g>
-<!-- Graph::link_prediction_ids&#45;&gt;Graph::has_edge_by_node_ids -->
+<!-- Graph::link_prediction_ids&#45;&gt;Graph::has_edge_from_node_ids -->
 <g id="edge143" class="edge">
-<title>Graph::link_prediction_ids&#45;&gt;Graph::has_edge_by_node_ids</title>
+<title>Graph::link_prediction_ids&#45;&gt;Graph::has_edge_from_node_ids</title>
 <path fill="none" stroke="black" d="M1664.94,-647.97C1622.65,-637.83 1568.84,-624.93 1524.91,-614.4"/>
 <polygon fill="black" stroke="black" points="1525.66,-610.98 1515.12,-612.05 1524.03,-617.78 1525.66,-610.98"/>
 </g>
@@ -1569,9 +1569,9 @@
 <polygon fill="none" stroke="black" points="2556,-972 2304,-972 2304,-936 2556,-936 2556,-972"/>
 <text text-anchor="middle" x="2430" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::compute_edge_ids_vector</text>
 </g>
-<!-- Graph::compute_edge_ids_vector&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids -->
+<!-- Graph::compute_edge_ids_vector&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids -->
 <g id="edge149" class="edge">
-<title>Graph::compute_edge_ids_vector&#45;&gt;Graph::get_unchecked_minmax_edge_ids_by_node_ids</title>
+<title>Graph::compute_edge_ids_vector&#45;&gt;Graph::get_unchecked_minmax_edge_ids_from_node_ids</title>
 <path fill="none" stroke="black" d="M2303.62,-946.03C2122.05,-936 1776.86,-916.84 1483,-900 1457.44,-898.54 1430.61,-896.98 1404.03,-895.44"/>
 <polygon fill="black" stroke="black" points="1404.04,-891.93 1393.85,-894.84 1403.63,-898.92 1404.04,-891.93"/>
 </g>
@@ -1587,15 +1587,15 @@
 <polygon fill="none" stroke="black" points="15621.5,-1044 15388.5,-1044 15388.5,-1008 15621.5,-1008 15621.5,-1044"/>
 <text text-anchor="middle" x="15505" y="-1022.3" font-family="Times,serif" font-size="14.00">Graph::are_nodes_remappable</text>
 </g>
-<!-- Graph::has_node_with_type_by_node_name -->
+<!-- Graph::has_node_with_type_from_node_name -->
 <g id="node77" class="node">
-<title>Graph::has_node_with_type_by_node_name</title>
+<title>Graph::has_node_with_type_from_node_name</title>
 <polygon fill="none" stroke="black" points="15057.5,-972 14734.5,-972 14734.5,-936 15057.5,-936 15057.5,-972"/>
-<text text-anchor="middle" x="14896" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::has_node_with_type_by_node_name</text>
+<text text-anchor="middle" x="14896" y="-950.3" font-family="Times,serif" font-size="14.00">Graph::has_node_with_type_from_node_name</text>
 </g>
-<!-- Graph::are_nodes_remappable&#45;&gt;Graph::has_node_with_type_by_node_name -->
+<!-- Graph::are_nodes_remappable&#45;&gt;Graph::has_node_with_type_from_node_name -->
 <g id="edge150" class="edge">
-<title>Graph::are_nodes_remappable&#45;&gt;Graph::has_node_with_type_by_node_name</title>
+<title>Graph::are_nodes_remappable&#45;&gt;Graph::has_node_with_type_from_node_name</title>
 <path fill="none" stroke="black" d="M15388.24,-1009.74C15383.43,-1009.14 15378.67,-1008.56 15374,-1008 15272.03,-995.73 15157.68,-983.02 15066.4,-973.12"/>
 <polygon fill="black" stroke="black" points="15066.56,-969.61 15056.24,-972.01 15065.8,-976.57 15066.56,-969.61"/>
 </g>
@@ -1617,9 +1617,9 @@
 <polygon fill="none" stroke="black" points="17396,-1116 17280,-1116 17280,-1080 17396,-1080 17396,-1116"/>
 <text text-anchor="middle" x="17338" y="-1094.3" font-family="Times,serif" font-size="14.00">Graph::remap</text>
 </g>
-<!-- Graph::remap&#45;&gt;Graph::get_unchecked_node_id_by_node_name -->
+<!-- Graph::remap&#45;&gt;Graph::get_unchecked_node_id_from_node_name -->
 <g id="edge153" class="edge">
-<title>Graph::remap&#45;&gt;Graph::get_unchecked_node_id_by_node_name</title>
+<title>Graph::remap&#45;&gt;Graph::get_unchecked_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M17396.32,-1083.17C17435.16,-1073.45 17487.1,-1059.46 17532,-1044 17571.18,-1030.51 17577.69,-1017.59 17618,-1008 17839.07,-955.43 17906.93,-1024.57 18128,-972 18168.31,-962.41 18173.85,-946.23 18214,-936 18365.54,-897.39 18418.38,-956.99 18564,-900 18588.83,-890.28 18587.48,-874.47 18612,-864 18702.31,-825.44 18766.47,-902.88 18830,-828 18840.35,-815.8 18837.78,-805.98 18830,-792 18815.25,-765.49 18786.75,-782.51 18772,-756 18764.22,-742.02 18762.31,-732.73 18772,-720 18782.63,-706.04 18814.99,-694.82 18850.19,-686.36"/>
 <polygon fill="black" stroke="black" points="18851.22,-689.72 18860.18,-684.05 18849.64,-682.9 18851.22,-689.72"/>
 </g>
@@ -1689,123 +1689,123 @@
 <path fill="none" stroke="black" d="M17396.04,-1092.76C17510.62,-1084.3 17773.94,-1064.37 17995,-1044 18007.03,-1042.89 18019.56,-1041.69 18032.08,-1040.45"/>
 <polygon fill="black" stroke="black" points="18032.52,-1043.92 18042.12,-1039.45 18031.82,-1036.95 18032.52,-1043.92"/>
 </g>
-<!-- Graph::is_singleton_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::is_singleton_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge165" class="edge">
-<title>Graph::is_singleton_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::is_singleton_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M9201.97,-588.97C9085.66,-585.17 8904.25,-579.56 8747,-576 8237.96,-564.48 6963.75,-578.09 6456,-540 6336.59,-531.04 6308.29,-514.43 6189,-504 5767.78,-467.18 5268.27,-455.9 5024.61,-452.47"/>
 <polygon fill="black" stroke="black" points="5024.31,-448.97 5014.27,-452.33 5024.22,-455.96 5024.31,-448.97"/>
 </g>
-<!-- Graph::is_singleton_by_node_id&#45;&gt;Graph::has_singletons -->
+<!-- Graph::is_singleton_from_node_id&#45;&gt;Graph::has_singletons -->
 <g id="edge166" class="edge">
-<title>Graph::is_singleton_by_node_id&#45;&gt;Graph::has_singletons</title>
+<title>Graph::is_singleton_from_node_id&#45;&gt;Graph::has_singletons</title>
 <path fill="none" stroke="black" d="M9442.12,-576.69C9445.11,-576.44 9448.07,-576.21 9451,-576 10145.5,-526.43 11888.15,-564.24 12584,-540 12648.75,-537.74 12721.49,-533.51 12778.17,-529.84"/>
 <polygon fill="black" stroke="black" points="12778.45,-533.33 12788.2,-529.18 12778,-526.34 12778.45,-533.33"/>
 </g>
-<!-- Graph::is_singleton_with_selfloops_by_node_id&#45;&gt;Graph::contains -->
+<!-- Graph::is_singleton_with_selfloops_from_node_id&#45;&gt;Graph::contains -->
 <g id="edge167" class="edge">
-<title>Graph::is_singleton_with_selfloops_by_node_id&#45;&gt;Graph::contains</title>
+<title>Graph::is_singleton_with_selfloops_from_node_id&#45;&gt;Graph::contains</title>
 <path fill="none" stroke="black" d="M11901.22,-647.97C12003.58,-634.47 12143.03,-616.09 12227.84,-604.91"/>
 <polygon fill="black" stroke="black" points="12228.45,-608.36 12237.9,-603.58 12227.53,-601.42 12228.45,-608.36"/>
 </g>
-<!-- Graph::is_singleton_by_node_name -->
+<!-- Graph::is_singleton_from_node_name -->
 <g id="node72" class="node">
-<title>Graph::is_singleton_by_node_name</title>
+<title>Graph::is_singleton_from_node_name</title>
 <polygon fill="none" stroke="black" points="14072,-684 13806,-684 13806,-648 14072,-648 14072,-684"/>
-<text text-anchor="middle" x="13939" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_by_node_name</text>
+<text text-anchor="middle" x="13939" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::is_singleton_from_node_name</text>
 </g>
-<!-- Graph::is_singleton_by_node_name&#45;&gt;Graph::is_singleton_by_node_id -->
+<!-- Graph::is_singleton_from_node_name&#45;&gt;Graph::is_singleton_from_node_id -->
 <g id="edge168" class="edge">
-<title>Graph::is_singleton_by_node_name&#45;&gt;Graph::is_singleton_by_node_id</title>
+<title>Graph::is_singleton_from_node_name&#45;&gt;Graph::is_singleton_from_node_id</title>
 <path fill="none" stroke="black" d="M13805.66,-663.14C13572.66,-659.92 13076.27,-653.13 12657,-648 11947.87,-639.32 10178.21,-662.42 9452.2,-612.02"/>
 <polygon fill="black" stroke="black" points="9452.34,-608.52 9442.12,-611.31 9451.85,-615.5 9452.34,-608.52"/>
 </g>
-<!-- Graph::is_singleton_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::is_singleton_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge169" class="edge">
-<title>Graph::is_singleton_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::is_singleton_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14072.17,-652.18C14087.95,-650.73 14103.83,-649.31 14119,-648 14303.2,-632.09 14515.78,-615.78 14652.85,-605.54"/>
 <polygon fill="black" stroke="black" points="14653.28,-609.01 14662.99,-604.78 14652.76,-602.03 14653.28,-609.01"/>
 </g>
-<!-- Graph::has_node_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::has_node_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge170" class="edge">
-<title>Graph::has_node_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::has_node_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14488.14,-1007.97C14469.25,-1000.09 14451.81,-988.63 14440,-972 14430.73,-958.96 14433.98,-950.82 14440,-936 14490.37,-811.94 14535.38,-789.21 14650,-720 14698.4,-690.78 14732.5,-724.44 14772,-684 14787.94,-667.68 14793.57,-641.92 14795.43,-622.31"/>
 <polygon fill="black" stroke="black" points="14798.94,-622.36 14796.12,-612.15 14791.95,-621.89 14798.94,-622.36"/>
 </g>
-<!-- Graph::get_edge_id_by_node_ids -->
+<!-- Graph::get_edge_id_from_node_ids -->
 <g id="node218" class="node">
-<title>Graph::get_edge_id_by_node_ids</title>
+<title>Graph::get_edge_id_from_node_ids</title>
 <polygon fill="none" stroke="black" points="352,-180 104,-180 104,-144 352,-144 352,-180"/>
-<text text-anchor="middle" x="228" y="-158.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_by_node_ids</text>
+<text text-anchor="middle" x="228" y="-158.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_from_node_ids</text>
 </g>
-<!-- Graph::has_edge_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- Graph::has_edge_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge171" class="edge">
-<title>Graph::has_edge_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>Graph::has_edge_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M1329.28,-593.02C1048.54,-592.35 342.79,-586.05 247,-540 142.34,-489.69 169.99,-403.85 178,-288 180.23,-255.77 175.65,-245.85 188,-216 192.1,-206.09 198.5,-196.39 204.99,-188.05"/>
 <polygon fill="black" stroke="black" points="207.78,-190.16 211.42,-180.21 202.37,-185.72 207.78,-190.16"/>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_ids -->
+<!-- Graph::get_edge_id_with_type_from_node_ids -->
 <g id="node140" class="node">
-<title>Graph::get_edge_id_with_type_by_node_ids</title>
+<title>Graph::get_edge_id_with_type_from_node_ids</title>
 <polygon fill="none" stroke="black" points="542,-396 218,-396 218,-360 542,-360 542,-396"/>
-<text text-anchor="middle" x="380" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_with_type_by_node_ids</text>
+<text text-anchor="middle" x="380" y="-374.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_with_type_from_node_ids</text>
 </g>
-<!-- Graph::has_edge_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_with_type_by_node_ids -->
+<!-- Graph::has_edge_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_with_type_from_node_ids -->
 <g id="edge172" class="edge">
-<title>Graph::has_edge_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_with_type_by_node_ids</title>
+<title>Graph::has_edge_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M721.65,-503.86C680.87,-484.97 612.49,-454.31 552,-432 519.2,-419.9 482.21,-408.25 450.97,-398.97"/>
 <polygon fill="black" stroke="black" points="451.62,-395.52 441.04,-396.05 449.64,-402.23 451.62,-395.52"/>
 </g>
-<!-- Graph::is_trap_node_by_node_id -->
+<!-- Graph::is_trap_node_from_node_id -->
 <g id="node76" class="node">
-<title>Graph::is_trap_node_by_node_id</title>
+<title>Graph::is_trap_node_from_node_id</title>
 <polygon fill="none" stroke="black" points="4809.5,-540 4564.5,-540 4564.5,-504 4809.5,-504 4809.5,-540"/>
-<text text-anchor="middle" x="4687" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::is_trap_node_by_node_id</text>
+<text text-anchor="middle" x="4687" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::is_trap_node_from_node_id</text>
 </g>
-<!-- Graph::is_trap_node_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge173" class="edge">
-<title>Graph::is_trap_node_by_node_id&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4733.23,-503.88C4759.53,-494.14 4792.64,-481.87 4820.36,-471.61"/>
 <polygon fill="black" stroke="black" points="4821.75,-474.82 4829.92,-468.07 4819.32,-468.26 4821.75,-474.82"/>
 </g>
-<!-- Graph::has_node_with_type_by_node_name&#45;&gt;Graph::get_node_type_name_by_node_id -->
+<!-- Graph::has_node_with_type_from_node_name&#45;&gt;Graph::get_node_type_name_from_node_id -->
 <g id="edge174" class="edge">
-<title>Graph::has_node_with_type_by_node_name&#45;&gt;Graph::get_node_type_name_by_node_id</title>
+<title>Graph::has_node_with_type_from_node_name&#45;&gt;Graph::get_node_type_name_from_node_id</title>
 <path fill="none" stroke="black" d="M14921.53,-935.78C14983.19,-894.66 15145.99,-789.09 15292,-720 15333.94,-700.15 15363.44,-722.05 15390,-684 15399.16,-670.88 15396.45,-662.64 15390,-648 15385.01,-636.69 15376.29,-626.74 15367.1,-618.62"/>
 <polygon fill="black" stroke="black" points="15369.28,-615.88 15359.34,-612.23 15364.83,-621.28 15369.28,-615.88"/>
 </g>
-<!-- Graph::has_node_with_type_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::has_node_with_type_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge175" class="edge">
-<title>Graph::has_node_with_type_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::has_node_with_type_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14879.09,-935.93C14848.75,-903.93 14786.06,-831.37 14763,-756 14758.32,-740.7 14753.41,-732.8 14763,-720 14797.15,-674.42 14851.85,-729.58 14886,-684 14895.59,-671.2 14893.94,-661.89 14886,-648 14878.54,-634.95 14866.48,-624.8 14853.58,-617.03"/>
 <polygon fill="black" stroke="black" points="14855,-613.82 14844.56,-612.03 14851.61,-619.94 14855,-613.82"/>
 </g>
-<!-- Graph::has_edge_by_node_names -->
+<!-- Graph::has_edge_from_node_names -->
 <g id="node78" class="node">
-<title>Graph::has_edge_by_node_names</title>
+<title>Graph::has_edge_from_node_names</title>
 <polygon fill="none" stroke="black" points="4996,-1548 4742,-1548 4742,-1512 4996,-1512 4996,-1548"/>
-<text text-anchor="middle" x="4869" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_by_node_names</text>
+<text text-anchor="middle" x="4869" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::has_edge_from_node_names</text>
 </g>
-<!-- Graph::get_edge_id_by_node_names -->
+<!-- Graph::get_edge_id_from_node_names -->
 <g id="node141" class="node">
-<title>Graph::get_edge_id_by_node_names</title>
+<title>Graph::get_edge_id_from_node_names</title>
 <polygon fill="none" stroke="black" points="4977.5,-1476 4704.5,-1476 4704.5,-1440 4977.5,-1440 4977.5,-1476"/>
-<text text-anchor="middle" x="4841" y="-1454.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_by_node_names</text>
+<text text-anchor="middle" x="4841" y="-1454.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_from_node_names</text>
 </g>
-<!-- Graph::has_edge_by_node_names&#45;&gt;Graph::get_edge_id_by_node_names -->
+<!-- Graph::has_edge_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names -->
 <g id="edge176" class="edge">
-<title>Graph::has_edge_by_node_names&#45;&gt;Graph::get_edge_id_by_node_names</title>
+<title>Graph::has_edge_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names</title>
 <path fill="none" stroke="black" d="M4862.08,-1511.7C4858.93,-1503.81 4855.12,-1494.3 4851.62,-1485.55"/>
 <polygon fill="black" stroke="black" points="4854.81,-1484.09 4847.84,-1476.1 4848.31,-1486.69 4854.81,-1484.09"/>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_names -->
+<!-- Graph::get_edge_id_with_type_from_node_names -->
 <g id="node142" class="node">
-<title>Graph::get_edge_id_with_type_by_node_names</title>
+<title>Graph::get_edge_id_with_type_from_node_names</title>
 <polygon fill="none" stroke="black" points="543,-468 193,-468 193,-432 543,-432 543,-468"/>
-<text text-anchor="middle" x="368" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_with_type_by_node_names</text>
+<text text-anchor="middle" x="368" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_edge_id_with_type_from_node_names</text>
 </g>
-<!-- Graph::has_edge_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_names -->
+<!-- Graph::has_edge_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_names -->
 <g id="edge177" class="edge">
-<title>Graph::has_edge_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_names</title>
+<title>Graph::has_edge_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M408.65,-503.7C402.24,-495.39 394.44,-485.28 387.39,-476.14"/>
 <polygon fill="black" stroke="black" points="390.07,-473.88 381.19,-468.1 384.53,-478.16 390.07,-473.88"/>
 </g>
@@ -1827,21 +1827,21 @@
 <path fill="none" stroke="black" d="M14458.08,-935.98C14345.9,-914.62 14143.17,-878.98 13968,-864 13910.31,-859.07 11933.49,-858.06 11884,-828 11840.38,-801.51 11810.26,-757.39 11845,-720 11919.16,-640.17 12259.84,-763.83 12334,-684 12350.3,-666.46 12337.83,-639.89 12324.16,-620.34"/>
 <polygon fill="black" stroke="black" points="12326.87,-618.12 12318.1,-612.18 12321.25,-622.3 12326.87,-618.12"/>
 </g>
-<!-- Graph::get_filter_bitmap&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_filter_bitmap&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge180" class="edge">
-<title>Graph::get_filter_bitmap&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_filter_bitmap&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14550.09,-935.71C14566.18,-892.56 14614.01,-779.35 14692,-720 14735.63,-686.79 14777.37,-728.07 14810,-684 14823.24,-666.12 14817.45,-640.64 14809.68,-621.52"/>
 <polygon fill="black" stroke="black" points="14812.79,-619.9 14805.54,-612.18 14806.39,-622.74 14812.79,-619.9"/>
 </g>
-<!-- Graph::get_node_type_ids_by_node_type_names -->
+<!-- Graph::get_node_type_ids_from_node_type_names -->
 <g id="node144" class="node">
-<title>Graph::get_node_type_ids_by_node_type_names</title>
+<title>Graph::get_node_type_ids_from_node_type_names</title>
 <polygon fill="none" stroke="black" points="12609.5,-900 12252.5,-900 12252.5,-864 12609.5,-864 12609.5,-900"/>
-<text text-anchor="middle" x="12431" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_ids_by_node_type_names</text>
+<text text-anchor="middle" x="12431" y="-878.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_ids_from_node_type_names</text>
 </g>
-<!-- Graph::get_filter_bitmap&#45;&gt;Graph::get_node_type_ids_by_node_type_names -->
+<!-- Graph::get_filter_bitmap&#45;&gt;Graph::get_node_type_ids_from_node_type_names -->
 <g id="edge181" class="edge">
-<title>Graph::get_filter_bitmap&#45;&gt;Graph::get_node_type_ids_by_node_type_names</title>
+<title>Graph::get_filter_bitmap&#45;&gt;Graph::get_node_type_ids_from_node_type_names</title>
 <path fill="none" stroke="black" d="M14448.41,-948.82C14364.3,-945.2 14238.53,-939.95 14129,-936 13581.02,-916.22 12933.4,-897.22 12619.88,-888.3"/>
 <polygon fill="black" stroke="black" points="12619.88,-884.79 12609.79,-888.01 12619.68,-891.79 12619.88,-884.79"/>
 </g>
@@ -2223,27 +2223,27 @@
 <path fill="none" stroke="black" d="M9028.68,-1583.87C9009.23,-1541.1 8966.56,-1428.68 9023,-1368 9063.06,-1324.93 9426.63,-1316.43 9625.46,-1315.03"/>
 <polygon fill="black" stroke="black" points="9625.71,-1318.53 9635.68,-1314.96 9625.66,-1311.53 9625.71,-1318.53"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_node_by_node_name -->
+<!-- test_graph_properties&#45;&gt;Graph::has_node_from_node_name -->
 <g id="edge229" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_node_by_node_name</title>
+<title>test_graph_properties&#45;&gt;Graph::has_node_from_node_name</title>
 <path fill="none" stroke="black" d="M9124.06,-1601.07C9819.01,-1601.33 14440,-1597.85 14440,-1459 14440,-1459 14440,-1459 14440,-1169 14440,-1112.19 14497.4,-1071.58 14541.65,-1048.71"/>
 <polygon fill="black" stroke="black" points="14543.49,-1051.7 14550.87,-1044.1 14540.36,-1045.44 14543.49,-1051.7"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_node_with_type_by_node_name -->
+<!-- test_graph_properties&#45;&gt;Graph::has_node_with_type_from_node_name -->
 <g id="edge230" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_node_with_type_by_node_name</title>
+<title>test_graph_properties&#45;&gt;Graph::has_node_with_type_from_node_name</title>
 <path fill="none" stroke="black" d="M9124.14,-1600.52C9831.3,-1596.62 14605.75,-1569.49 14675,-1548 14729.75,-1531.01 14744.34,-1519.22 14782,-1476 14857.74,-1389.08 14896,-1358.29 14896,-1243 14896,-1243 14896,-1243 14896,-1097 14896,-1057 14896,-1010.65 14896,-982.08"/>
 <polygon fill="black" stroke="black" points="14899.5,-982.05 14896,-972.05 14892.5,-982.05 14899.5,-982.05"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_edge_by_node_names -->
+<!-- test_graph_properties&#45;&gt;Graph::has_edge_from_node_names -->
 <g id="edge231" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_edge_by_node_names</title>
+<title>test_graph_properties&#45;&gt;Graph::has_edge_from_node_names</title>
 <path fill="none" stroke="black" d="M8949.77,-1601.16C8439.24,-1601.93 5832.94,-1603.07 5006.45,-1547.96"/>
 <polygon fill="black" stroke="black" points="5006.42,-1544.45 4996.21,-1547.27 5005.95,-1551.44 5006.42,-1544.45"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::has_edge_with_type_by_node_names -->
+<!-- test_graph_properties&#45;&gt;Graph::has_edge_with_type_from_node_names -->
 <g id="edge232" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::has_edge_with_type_by_node_names</title>
+<title>test_graph_properties&#45;&gt;Graph::has_edge_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M8949.74,-1600.69C8433.34,-1598.72 5794.36,-1586.77 5628,-1548 5591.6,-1539.52 5586.83,-1525.56 5552,-1512 5350.4,-1433.49 5298.81,-1412.08 5087,-1368 4088.45,-1160.2 3794.28,-1368.18 2806,-1116 2683.56,-1084.76 2664.89,-1041.33 2543,-1008 2435.57,-978.62 2404.33,-993.27 2295,-972 2228.97,-959.15 2214.54,-945.83 2148,-936 1999.4,-914.04 1611.01,-959.3 1473,-900 1451.63,-890.82 1455.05,-875.8 1435,-864 1412.11,-850.52 1233.07,-797.12 1207,-792 1015.34,-754.36 953.36,-820.52 769,-756 634.2,-708.82 501.56,-596.46 447.45,-547.03"/>
 <polygon fill="black" stroke="black" points="449.77,-544.41 440.04,-540.21 445.02,-549.56 449.77,-544.41"/>
 </g>
@@ -2265,15 +2265,15 @@
 <path fill="none" stroke="black" d="M8949.66,-1600.55C8520.97,-1598.17 6658.21,-1585.65 6612,-1548 6610.81,-1547.03 6414.17,-685.53 6414,-684 6412.2,-668.1 6402.82,-659.45 6414,-648 6473.68,-586.9 7891.32,-673.1 7951,-612 7962.18,-600.55 7958.73,-590.01 7951,-576 7943.9,-563.12 7932.2,-552.94 7919.76,-545.08"/>
 <polygon fill="black" stroke="black" points="7921.47,-542.03 7911.07,-540.02 7917.95,-548.08 7921.47,-542.03"/>
 </g>
-<!-- Graph::get_node_type_id_by_node_id -->
+<!-- Graph::get_node_type_id_from_node_id -->
 <g id="node115" class="node">
-<title>Graph::get_node_type_id_by_node_id</title>
+<title>Graph::get_node_type_id_from_node_id</title>
 <polygon fill="none" stroke="black" points="14174,-540 13896,-540 13896,-504 14174,-504 14174,-540"/>
-<text text-anchor="middle" x="14035" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_by_node_id</text>
+<text text-anchor="middle" x="14035" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_from_node_id</text>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_node_type_id_by_node_id -->
+<!-- test_graph_properties&#45;&gt;Graph::get_node_type_id_from_node_id -->
 <g id="edge235" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_node_type_id_by_node_id</title>
+<title>test_graph_properties&#45;&gt;Graph::get_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M9124.07,-1600.74C9652.56,-1599.06 12410.32,-1588.35 12487,-1548 12643.28,-1465.76 12609.28,-1363.94 12717,-1224 12742.41,-1190.99 12747.36,-1181.27 12777,-1152 12831.18,-1098.5 12854.57,-1096.21 12910,-1044 12989,-969.59 12984.53,-923.93 13075,-864 13094.99,-850.76 13770.54,-615.06 13976.19,-543.46"/>
 <polygon fill="black" stroke="black" points="13977.62,-546.67 13985.91,-540.08 13975.32,-540.06 13977.62,-546.67"/>
 </g>
@@ -2301,39 +2301,39 @@
 <path fill="none" stroke="black" d="M9124.13,-1601.19C9525.52,-1601.77 11236.72,-1600.86 12639,-1548 12677.08,-1546.56 12718.05,-1544.42 12756.58,-1542.13"/>
 <polygon fill="black" stroke="black" points="12757.07,-1545.61 12766.84,-1541.51 12756.65,-1538.62 12757.07,-1545.61"/>
 </g>
-<!-- Graph::get_node_name_by_node_id -->
+<!-- Graph::get_node_name_from_node_id -->
 <g id="node125" class="node">
-<title>Graph::get_node_name_by_node_id</title>
+<title>Graph::get_node_name_from_node_id</title>
 <polygon fill="none" stroke="black" points="13558,-468 13292,-468 13292,-432 13558,-432 13558,-468"/>
-<text text-anchor="middle" x="13425" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_node_name_by_node_id</text>
+<text text-anchor="middle" x="13425" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_node_name_from_node_id</text>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- test_graph_properties&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge238" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>test_graph_properties&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M9124.15,-1600.72C9500.27,-1599.24 10986.49,-1590.77 11452,-1548 11848.83,-1511.54 11963.28,-1542.36 12337,-1404 12452.23,-1361.34 12476.48,-1336.04 12573,-1260 12768.27,-1106.16 12785.57,-1032.87 12968,-864 13094.54,-746.86 13134.81,-727.33 13263,-612 13297.59,-580.88 13305.94,-572.74 13339,-540 13345.2,-533.86 13378.15,-499.69 13401.41,-475.52"/>
 <polygon fill="black" stroke="black" points="13404.17,-477.71 13408.58,-468.08 13399.12,-472.85 13404.17,-477.71"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_name -->
+<!-- Graph::get_node_type_name_from_node_name -->
 <g id="node128" class="node">
-<title>Graph::get_node_type_name_by_node_name</title>
+<title>Graph::get_node_type_name_from_node_name</title>
 <polygon fill="none" stroke="black" points="15380.5,-684 15051.5,-684 15051.5,-648 15380.5,-648 15380.5,-684"/>
-<text text-anchor="middle" x="15216" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_by_node_name</text>
+<text text-anchor="middle" x="15216" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_from_node_name</text>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_node_type_name_by_node_name -->
+<!-- test_graph_properties&#45;&gt;Graph::get_node_type_name_from_node_name -->
 <g id="edge239" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_node_type_name_by_node_name</title>
+<title>test_graph_properties&#45;&gt;Graph::get_node_type_name_from_node_name</title>
 <path fill="none" stroke="black" d="M9124.08,-1600.59C9834.71,-1597.2 14656.34,-1573.31 14725,-1548 14810.22,-1516.59 14822.34,-1481.32 14870,-1404 14966.91,-1246.77 14878.16,-1150.22 14996,-1008 15018.57,-980.76 15042.17,-997.2 15067,-972 15148.96,-888.81 15193.32,-751.65 15209.17,-693.93"/>
 <polygon fill="black" stroke="black" points="15212.6,-694.67 15211.8,-684.11 15205.83,-692.86 15212.6,-694.67"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_by_node_names -->
+<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_from_node_names -->
 <g id="edge240" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_edge_id_by_node_names</title>
+<title>test_graph_properties&#45;&gt;Graph::get_edge_id_from_node_names</title>
 <path fill="none" stroke="black" d="M8949.91,-1600.76C8343.26,-1598.99 4771.44,-1586.92 4733,-1548 4721.76,-1536.62 4724.54,-1525.58 4733,-1512 4741.51,-1498.35 4754.67,-1488.11 4768.92,-1480.48"/>
 <polygon fill="black" stroke="black" points="4770.48,-1483.61 4777.9,-1476.05 4767.38,-1477.33 4770.48,-1483.61"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_with_type_by_node_names -->
+<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_with_type_from_node_names -->
 <g id="edge241" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_edge_id_with_type_by_node_names</title>
+<title>test_graph_properties&#45;&gt;Graph::get_edge_id_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M8949.97,-1600.59C8444.34,-1598.09 5895.16,-1583.77 5548,-1548 5295.43,-1521.97 5238.12,-1477.52 4987,-1440 4465.8,-1362.12 3079.21,-1461.9 2629,-1188 2588.03,-1163.08 2551.06,-1032.77 2510,-1008 2440.78,-966.24 2227.89,-984.35 2148,-972 2071.24,-960.14 2053.94,-946.6 1977,-936 1857.42,-919.53 1543.82,-952.24 1435,-900 1415.43,-890.61 1421.16,-874.2 1402,-864 1366.44,-845.07 723.64,-767.37 685,-756 460.58,-689.96 332.02,-736.45 205,-540 183.35,-506.51 220.66,-484.61 265.02,-470.91"/>
 <polygon fill="black" stroke="black" points="266.26,-474.2 274.87,-468.03 264.29,-467.48 266.26,-474.2"/>
 </g>
@@ -2349,9 +2349,9 @@
 <path fill="none" stroke="black" d="M9124.24,-1600.38C9311.23,-1598.26 9745.07,-1588.95 9886,-1548 10045.31,-1501.71 10053.04,-1411.98 10213,-1368 10443.68,-1304.57 11055.01,-1381.85 11289,-1332 11372.06,-1314.31 11388.11,-1293.86 11466,-1260 11710.37,-1153.77 11761.46,-1104.07 12010,-1008 12041.83,-995.7 12077.83,-984.1 12108.4,-974.91"/>
 <polygon fill="black" stroke="black" points="12109.53,-978.22 12118.12,-972.01 12107.53,-971.51 12109.53,-978.22"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_node_type_ids_by_node_type_names -->
+<!-- test_graph_properties&#45;&gt;Graph::get_node_type_ids_from_node_type_names -->
 <g id="edge243" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_node_type_ids_by_node_type_names</title>
+<title>test_graph_properties&#45;&gt;Graph::get_node_type_ids_from_node_type_names</title>
 <path fill="none" stroke="black" d="M9124.09,-1599.77C9285.84,-1596.62 9643.36,-1585.63 9942,-1548 10025.11,-1537.53 10044.43,-1526.08 10127,-1512 10670.32,-1419.33 10811.34,-1428.5 11354,-1332 11363.61,-1330.29 12034.81,-1194.6 12042,-1188 12103.52,-1131.51 12032.43,-1062.17 12096,-1008 12188.48,-929.2 12262.77,-1034.44 12367,-972 12391.24,-957.48 12408.89,-929.86 12419.44,-909.22"/>
 <polygon fill="black" stroke="black" points="12422.69,-910.55 12423.92,-900.02 12416.4,-907.49 12422.69,-910.55"/>
 </g>
@@ -2463,9 +2463,9 @@
 <path fill="none" stroke="black" d="M8949.96,-1597.25C8790.57,-1587.99 8468,-1557.12 8468,-1459 8468,-1459 8468,-1459 8468,-1097 8468,-957.69 8638.63,-869.49 8731.08,-831.93"/>
 <polygon fill="black" stroke="black" points="8732.61,-835.09 8740.6,-828.13 8730.01,-828.59 8732.61,-835.09"/>
 </g>
-<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- test_graph_properties&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge254" class="edge">
-<title>test_graph_properties&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>test_graph_properties&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M8949.77,-1600.92C8416.2,-1600.3 5587.12,-1594.81 4721,-1548 4052.24,-1511.86 3886.27,-1481.22 3221,-1404 2500.75,-1320.4 0,-1608.08 0,-883 0,-883 0,-883 0,-305 0,-258.73 17.47,-244.39 54,-216 72.76,-201.42 95.53,-190.83 118.33,-183.15"/>
 <polygon fill="black" stroke="black" points="119.63,-186.41 128.09,-180.03 117.5,-179.74 119.63,-186.41"/>
 </g>
@@ -2691,15 +2691,15 @@
 <path fill="none" stroke="black" d="M14468.36,-1527.48C14144.93,-1521.63 13130.79,-1496.03 13019,-1404 13001.04,-1389.21 12995.4,-1362.64 12993.89,-1342.37"/>
 <polygon fill="black" stroke="black" points="12997.38,-1341.98 12993.43,-1332.15 12990.39,-1342.3 12997.38,-1341.98"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_type_id -->
+<!-- Graph::get_node_type_name_from_node_type_id -->
 <g id="node147" class="node">
-<title>Graph::get_node_type_name_by_node_type_id</title>
+<title>Graph::get_node_type_name_from_node_type_id</title>
 <polygon fill="none" stroke="black" points="13913,-1332 13571,-1332 13571,-1296 13913,-1296 13913,-1332"/>
-<text text-anchor="middle" x="13742" y="-1310.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_by_node_type_id</text>
+<text text-anchor="middle" x="13742" y="-1310.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_name_from_node_type_id</text>
 </g>
-<!-- test_remove_components&#45;&gt;Graph::get_node_type_name_by_node_type_id -->
+<!-- test_remove_components&#45;&gt;Graph::get_node_type_name_from_node_type_id -->
 <g id="edge282" class="edge">
-<title>test_remove_components&#45;&gt;Graph::get_node_type_name_by_node_type_id</title>
+<title>test_remove_components&#45;&gt;Graph::get_node_type_name_from_node_type_id</title>
 <path fill="none" stroke="black" d="M14468.26,-1526.07C14305.6,-1520.43 13995.18,-1505.86 13955,-1476 13913.53,-1445.18 13949.91,-1403.1 13912,-1368 13896.43,-1353.58 13876.99,-1343.09 13856.88,-1335.45"/>
 <polygon fill="black" stroke="black" points="13857.88,-1332.09 13847.28,-1332.03 13855.53,-1338.68 13857.88,-1332.09"/>
 </g>
@@ -3069,9 +3069,9 @@
 <polygon fill="none" stroke="black" points="14120,-972 13928,-972 13928,-936 14120,-936 14120,-972"/>
 <text text-anchor="middle" x="14024" y="-950.3" font-family="Times,serif" font-size="14.00">test_edgelist_generation</text>
 </g>
-<!-- test_edgelist_generation&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- test_edgelist_generation&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge324" class="edge">
-<title>test_edgelist_generation&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>test_edgelist_generation&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M14015.28,-935.84C14003.19,-912.69 13981.33,-873.29 13968,-864 13904.65,-819.82 13863.58,-868.78 13798,-828 13746.13,-795.74 13758.98,-760.21 13713,-720 13689.3,-699.28 13677.71,-702.17 13652,-684 13611.29,-655.24 13603.64,-644.68 13566,-612 13529.88,-580.64 13517.52,-575.98 13486,-540 13468.68,-520.23 13452.03,-495.4 13440.51,-476.99"/>
 <polygon fill="black" stroke="black" points="13443.36,-474.95 13435.13,-468.27 13437.4,-478.62 13443.36,-474.95"/>
 </g>
@@ -3345,9 +3345,9 @@
 <path fill="none" stroke="black" d="M6320.15,-863.96C6246.3,-829.77 6071.05,-753.21 5915,-720 5576.2,-647.9 4649.45,-802.28 4360,-612 4338.61,-597.94 4326.62,-570.64 4320.28,-549.97"/>
 <polygon fill="black" stroke="black" points="4323.6,-548.84 4317.53,-540.15 4316.86,-550.72 4323.6,-548.84"/>
 </g>
-<!-- test_clone_and_setters&#45;&gt;Graph::get_unchecked_node_count_by_node_type_id -->
+<!-- test_clone_and_setters&#45;&gt;Graph::get_unchecked_node_count_from_node_type_id -->
 <g id="edge354" class="edge">
-<title>test_clone_and_setters&#45;&gt;Graph::get_unchecked_node_count_by_node_type_id</title>
+<title>test_clone_and_setters&#45;&gt;Graph::get_unchecked_node_count_from_node_type_id</title>
 <path fill="none" stroke="black" d="M6347.3,-863.94C6336.39,-844.11 6315.93,-811.61 6290,-792 6217.97,-737.53 6188.16,-739.56 6100,-720 5889.85,-673.38 5826.77,-732.32 5617,-684 5545.61,-667.56 5350.49,-583.87 5259.67,-544.07"/>
 <polygon fill="black" stroke="black" points="5260.99,-540.83 5250.43,-540.02 5258.18,-547.24 5260.99,-540.83"/>
 </g>
@@ -3711,9 +3711,9 @@
 <path fill="none" stroke="black" d="M13425.88,-951.37C13232.13,-947.93 12761.49,-939.93 12367,-936 9253.78,-904.97 8475.08,-942.97 5362,-900 5272.99,-898.77 2245.93,-841.92 2158,-828 2103,-819.3 2092.81,-801.83 2038,-792 1975.86,-780.86 1514.2,-802.03 1471,-756 1460.05,-744.33 1459.95,-731.57 1471,-720 1501.55,-688.04 2222.32,-690.85 2266,-684 2281.05,-681.64 2781.68,-547.38 2795,-540 2815.64,-528.58 2812.36,-513.39 2834,-504 2934.57,-460.38 3228.77,-518.63 3326,-468 3353.46,-453.7 3386.25,-373.73 3414,-360 3481.4,-326.65 4541.65,-312.45 4931.56,-308.35"/>
 <polygon fill="black" stroke="black" points="4931.81,-311.84 4941.77,-308.24 4931.73,-304.84 4931.81,-311.84"/>
 </g>
-<!-- Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge401" class="edge">
-<title>Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M6979.95,-514.95C6899.91,-511.5 6796.71,-507.23 6705,-504 6080.72,-482.04 5336.34,-462.55 5024.71,-454.69"/>
 <polygon fill="black" stroke="black" points="5024.34,-451.18 5014.26,-454.42 5024.17,-458.17 5024.34,-451.18"/>
 </g>
@@ -3735,9 +3735,9 @@
 <path fill="none" stroke="black" d="M7200.6,-575.88C7186.09,-566.81 7168.08,-555.55 7152.41,-545.76"/>
 <polygon fill="black" stroke="black" points="7153.84,-542.52 7143.5,-540.19 7150.13,-548.46 7153.84,-542.52"/>
 </g>
-<!-- Graph::get_top_k_central_node_names&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::get_top_k_central_node_names&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge404" class="edge">
-<title>Graph::get_top_k_central_node_names&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::get_top_k_central_node_names&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M7373.17,-576.62C7376.48,-576.4 7379.76,-576.19 7383,-576 7526.32,-567.66 12416.24,-589.49 12551,-540 12574.4,-531.41 12570.82,-513.16 12594,-504 12728.76,-450.78 13100.52,-478.81 13245,-468 13256.98,-467.1 13269.4,-466.1 13281.86,-465.03"/>
 <polygon fill="black" stroke="black" points="13282.2,-468.51 13291.86,-464.16 13281.59,-461.54 13282.2,-468.51"/>
 </g>
@@ -3747,21 +3747,21 @@
 <path fill="none" stroke="black" d="M15081.68,-1439.94C15269.61,-1392.82 15739.85,-1243.48 15702,-936 15679.97,-757.05 15674.73,-659.62 15515,-576 15430.57,-531.8 15180.41,-491.68 15019.01,-469.38"/>
 <polygon fill="black" stroke="black" points="15019.37,-465.9 15008.99,-468.01 15018.42,-472.83 15019.37,-465.9"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_id&#45;&gt;Graph::get_node_type_id_by_node_id -->
+<!-- Graph::get_node_type_name_from_node_id&#45;&gt;Graph::get_node_type_id_from_node_id -->
 <g id="edge406" class="edge">
-<title>Graph::get_node_type_name_by_node_id&#45;&gt;Graph::get_node_type_id_by_node_id</title>
+<title>Graph::get_node_type_name_from_node_id&#45;&gt;Graph::get_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M15179.91,-576.67C15176.92,-576.44 15173.94,-576.21 15171,-576 14766.41,-546.69 14663.98,-563.35 14259,-540 14234.87,-538.61 14209.3,-536.9 14184.4,-535.1"/>
 <polygon fill="black" stroke="black" points="14184.38,-531.59 14174.15,-534.35 14183.87,-538.57 14184.38,-531.59"/>
 </g>
-<!-- Graph::get_node_type_names_by_node_type_ids -->
+<!-- Graph::get_node_type_names_from_node_type_ids -->
 <g id="node148" class="node">
-<title>Graph::get_node_type_names_by_node_type_ids</title>
+<title>Graph::get_node_type_names_from_node_type_ids</title>
 <polygon fill="none" stroke="black" points="16771.5,-540 16414.5,-540 16414.5,-504 16771.5,-504 16771.5,-540"/>
-<text text-anchor="middle" x="16593" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_names_by_node_type_ids</text>
+<text text-anchor="middle" x="16593" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_names_from_node_type_ids</text>
 </g>
-<!-- Graph::get_node_type_name_by_node_id&#45;&gt;Graph::get_node_type_names_by_node_type_ids -->
+<!-- Graph::get_node_type_name_from_node_id&#45;&gt;Graph::get_node_type_names_from_node_type_ids -->
 <g id="edge407" class="edge">
-<title>Graph::get_node_type_name_by_node_id&#45;&gt;Graph::get_node_type_names_by_node_type_ids</title>
+<title>Graph::get_node_type_name_from_node_id&#45;&gt;Graph::get_node_type_names_from_node_type_ids</title>
 <path fill="none" stroke="black" d="M15484.04,-587.45C15689.95,-579.48 16069.2,-563.25 16404,-540.05"/>
 <polygon fill="black" stroke="black" points="16404.66,-543.51 16414.4,-539.33 16404.18,-536.53 16404.66,-543.51"/>
 </g>
@@ -3795,123 +3795,123 @@
 <path fill="none" stroke="black" d="M2702.42,-371.53C2788.62,-367.72 2908.57,-362.82 3014,-360 3750.52,-340.3 6084.52,-314.91 6691.55,-308.51"/>
 <polygon fill="black" stroke="black" points="6691.71,-312.01 6701.67,-308.41 6691.64,-305.01 6691.71,-312.01"/>
 </g>
-<!-- Graph::get_weight_by_node_ids -->
+<!-- Graph::get_weight_from_node_ids -->
 <g id="node121" class="node">
-<title>Graph::get_weight_by_node_ids</title>
+<title>Graph::get_weight_from_node_ids</title>
 <polygon fill="none" stroke="black" points="1953,-468 1711,-468 1711,-432 1953,-432 1953,-468"/>
-<text text-anchor="middle" x="1832" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_by_node_ids</text>
+<text text-anchor="middle" x="1832" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_from_node_ids</text>
 </g>
-<!-- Graph::get_weight_by_node_ids&#45;&gt;Graph::get_weight_by_edge_id -->
+<!-- Graph::get_weight_from_node_ids&#45;&gt;Graph::get_weight_by_edge_id -->
 <g id="edge412" class="edge">
-<title>Graph::get_weight_by_node_ids&#45;&gt;Graph::get_weight_by_edge_id</title>
+<title>Graph::get_weight_from_node_ids&#45;&gt;Graph::get_weight_by_edge_id</title>
 <path fill="none" stroke="black" d="M1953.08,-432.98C1956.08,-432.65 1959.06,-432.32 1962,-432 2133.28,-413.53 2331.62,-397.59 2457.65,-388.14"/>
 <polygon fill="black" stroke="black" points="2458.02,-391.62 2467.73,-387.39 2457.5,-384.64 2458.02,-391.62"/>
 </g>
-<!-- Graph::get_weight_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- Graph::get_weight_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge413" class="edge">
-<title>Graph::get_weight_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>Graph::get_weight_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M1710.95,-432.74C1707.94,-432.48 1704.95,-432.23 1702,-432 1660.64,-428.81 237.98,-425.69 209,-396 154.76,-340.44 192.2,-237.79 214.59,-189.46"/>
 <polygon fill="black" stroke="black" points="217.82,-190.82 218.96,-180.28 211.5,-187.8 217.82,-190.82"/>
 </g>
-<!-- Graph::get_weight_with_type_by_node_ids -->
+<!-- Graph::get_weight_with_type_from_node_ids -->
 <g id="node122" class="node">
-<title>Graph::get_weight_with_type_by_node_ids</title>
+<title>Graph::get_weight_with_type_from_node_ids</title>
 <polygon fill="none" stroke="black" points="2557,-468 2239,-468 2239,-432 2557,-432 2557,-468"/>
-<text text-anchor="middle" x="2398" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_with_type_by_node_ids</text>
+<text text-anchor="middle" x="2398" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_with_type_from_node_ids</text>
 </g>
-<!-- Graph::get_weight_with_type_by_node_ids&#45;&gt;Graph::get_weight_by_edge_id -->
+<!-- Graph::get_weight_with_type_from_node_ids&#45;&gt;Graph::get_weight_by_edge_id -->
 <g id="edge414" class="edge">
-<title>Graph::get_weight_with_type_by_node_ids&#45;&gt;Graph::get_weight_by_edge_id</title>
+<title>Graph::get_weight_with_type_from_node_ids&#45;&gt;Graph::get_weight_by_edge_id</title>
 <path fill="none" stroke="black" d="M2443.75,-431.88C2469.76,-422.14 2502.53,-409.87 2529.95,-399.61"/>
 <polygon fill="black" stroke="black" points="2531.26,-402.85 2539.4,-396.07 2528.81,-396.3 2531.26,-402.85"/>
 </g>
-<!-- Graph::get_weight_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_with_type_by_node_ids -->
+<!-- Graph::get_weight_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_with_type_from_node_ids -->
 <g id="edge415" class="edge">
-<title>Graph::get_weight_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_with_type_by_node_ids</title>
+<title>Graph::get_weight_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M2238.85,-432.57C2235.88,-432.37 2232.93,-432.18 2230,-432 1488.37,-386.6 1297.76,-440.46 552.62,-396.07"/>
 <polygon fill="black" stroke="black" points="552.63,-392.56 542.44,-395.46 552.21,-399.55 552.63,-392.56"/>
 </g>
-<!-- Graph::get_weight_with_type_by_node_names -->
+<!-- Graph::get_weight_with_type_from_node_names -->
 <g id="node123" class="node">
-<title>Graph::get_weight_with_type_by_node_names</title>
+<title>Graph::get_weight_with_type_from_node_names</title>
 <polygon fill="none" stroke="black" points="1273,-540 929,-540 929,-504 1273,-504 1273,-540"/>
-<text text-anchor="middle" x="1101" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_with_type_by_node_names</text>
+<text text-anchor="middle" x="1101" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_with_type_from_node_names</text>
 </g>
-<!-- Graph::get_weight_with_type_by_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
+<!-- Graph::get_weight_with_type_from_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
 <g id="edge416" class="edge">
-<title>Graph::get_weight_with_type_by_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
+<title>Graph::get_weight_with_type_from_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
 <path fill="none" stroke="black" d="M1273.43,-504.54C1276.31,-504.35 1279.16,-504.17 1282,-504 1353.23,-499.66 2511.16,-513.66 2566,-468 2583.6,-453.35 2587.36,-426.76 2587.31,-406.44"/>
 <polygon fill="black" stroke="black" points="2590.8,-406.08 2586.97,-396.2 2583.81,-406.31 2590.8,-406.08"/>
 </g>
-<!-- Graph::get_weight_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_names -->
+<!-- Graph::get_weight_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_names -->
 <g id="edge417" class="edge">
-<title>Graph::get_weight_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_names</title>
+<title>Graph::get_weight_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M928.68,-504.54C815.8,-493.76 668.37,-479.68 553.02,-468.67"/>
 <polygon fill="black" stroke="black" points="553.3,-465.18 543.02,-467.71 552.64,-472.15 553.3,-465.18"/>
 </g>
-<!-- Graph::get_weight_by_node_names -->
+<!-- Graph::get_weight_from_node_names -->
 <g id="node124" class="node">
-<title>Graph::get_weight_by_node_names</title>
+<title>Graph::get_weight_from_node_names</title>
 <polygon fill="none" stroke="black" points="5281.5,-1548 5014.5,-1548 5014.5,-1512 5281.5,-1512 5281.5,-1548"/>
-<text text-anchor="middle" x="5148" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_by_node_names</text>
+<text text-anchor="middle" x="5148" y="-1526.3" font-family="Times,serif" font-size="14.00">Graph::get_weight_from_node_names</text>
 </g>
-<!-- Graph::get_weight_by_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
+<!-- Graph::get_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id -->
 <g id="edge418" class="edge">
-<title>Graph::get_weight_by_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
+<title>Graph::get_weight_from_node_names&#45;&gt;Graph::get_weight_by_edge_id</title>
 <path fill="none" stroke="black" d="M5120.91,-1511.86C5089.57,-1492.54 5035.99,-1461.1 4987,-1440 4841.77,-1377.45 4766.39,-1436.83 4648,-1332 4568.94,-1261.99 4571.52,-1219.17 4549,-1116 4545.59,-1100.37 4548.65,-1096 4549,-1080 4552.11,-935.9 4559.89,-900.1 4563,-756 4563.35,-740 4573.89,-731.72 4563,-720 4488.36,-639.7 4157.95,-750.76 4071,-684 4007.33,-635.11 4008.33,-568.59 4056,-504 4078.43,-473.6 4112.72,-499.87 4133,-468 4141.59,-454.5 4144.13,-443.49 4133,-432 4089.73,-387.32 3076.16,-398.23 3014,-396 2912.61,-392.36 2797.76,-387.79 2712.43,-384.3"/>
 <polygon fill="black" stroke="black" points="2712.57,-380.8 2702.43,-383.89 2712.28,-387.8 2712.57,-380.8"/>
 </g>
-<!-- Graph::get_weight_by_node_names&#45;&gt;Graph::get_edge_id_by_node_names -->
+<!-- Graph::get_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names -->
 <g id="edge419" class="edge">
-<title>Graph::get_weight_by_node_names&#45;&gt;Graph::get_edge_id_by_node_names</title>
+<title>Graph::get_weight_from_node_names&#45;&gt;Graph::get_edge_id_from_node_names</title>
 <path fill="none" stroke="black" d="M5073.29,-1511.97C5028.73,-1501.8 4972.01,-1488.87 4925.78,-1478.33"/>
 <polygon fill="black" stroke="black" points="4926.3,-1474.86 4915.78,-1476.05 4924.75,-1481.69 4926.3,-1474.86"/>
 </g>
-<!-- Graph::get_node_name_by_node_id&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::get_node_name_from_node_id&#45;&gt;Graph::get_nodes_number -->
 <g id="edge420" class="edge">
-<title>Graph::get_node_name_by_node_id&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::get_node_name_from_node_id&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M13291.9,-435.13C13276.11,-433.87 13260.2,-432.78 13245,-432 12273.13,-382.2 9838.86,-419.36 8866,-396 8759.16,-393.43 8637.36,-388.37 8551.26,-384.44"/>
 <polygon fill="black" stroke="black" points="8551.36,-380.94 8541.21,-383.98 8551.04,-387.93 8551.36,-380.94"/>
 </g>
-<!-- Graph::get_node_name_by_node_id&#45;&gt;unchecked_translate -->
+<!-- Graph::get_node_name_from_node_id&#45;&gt;unchecked_translate -->
 <g id="edge421" class="edge">
-<title>Graph::get_node_name_by_node_id&#45;&gt;unchecked_translate</title>
+<title>Graph::get_node_name_from_node_id&#45;&gt;unchecked_translate</title>
 <path fill="none" stroke="black" d="M13457.55,-431.98C13499.27,-411.06 13574.4,-376.33 13643,-360 13749.03,-334.77 14058.88,-317.96 14214.94,-310.85"/>
 <polygon fill="black" stroke="black" points="14215.16,-314.34 14224.99,-310.4 14214.84,-307.35 14215.16,-314.34"/>
 </g>
-<!-- Graph::get_node_name_by_node_id&#45;&gt;translate -->
+<!-- Graph::get_node_name_from_node_id&#45;&gt;translate -->
 <g id="edge422" class="edge">
-<title>Graph::get_node_name_by_node_id&#45;&gt;translate</title>
+<title>Graph::get_node_name_from_node_id&#45;&gt;translate</title>
 <path fill="none" stroke="black" d="M13440.52,-431.87C13460.17,-411.33 13496.06,-377.5 13534,-360 13613.17,-323.49 13715.25,-312.09 13775.37,-308.55"/>
 <polygon fill="black" stroke="black" points="13775.57,-312.05 13785.37,-308.02 13775.2,-305.06 13775.57,-312.05"/>
 </g>
-<!-- Graph::get_node_type_id_by_node_name -->
+<!-- Graph::get_node_type_id_from_node_name -->
 <g id="node127" class="node">
-<title>Graph::get_node_type_id_by_node_name</title>
+<title>Graph::get_node_type_id_from_node_name</title>
 <polygon fill="none" stroke="black" points="14432,-684 14128,-684 14128,-648 14432,-648 14432,-684"/>
-<text text-anchor="middle" x="14280" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_by_node_name</text>
+<text text-anchor="middle" x="14280" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_from_node_name</text>
 </g>
-<!-- Graph::get_node_type_id_by_node_name&#45;&gt;Graph::get_node_type_id_by_node_id -->
+<!-- Graph::get_node_type_id_from_node_name&#45;&gt;Graph::get_node_type_id_from_node_id -->
 <g id="edge423" class="edge">
-<title>Graph::get_node_type_id_by_node_name&#45;&gt;Graph::get_node_type_id_by_node_id</title>
+<title>Graph::get_node_type_id_from_node_name&#45;&gt;Graph::get_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M14250.15,-647.85C14232.14,-637.49 14208.74,-624.01 14188,-612 14148.79,-589.3 14103.99,-563.22 14073.05,-545.19"/>
 <polygon fill="black" stroke="black" points="14074.71,-542.11 14064.31,-540.1 14071.19,-548.16 14074.71,-542.11"/>
 </g>
-<!-- Graph::get_node_type_id_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_node_type_id_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge424" class="edge">
-<title>Graph::get_node_type_id_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_node_type_id_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14405.57,-647.97C14482.67,-637.51 14581.41,-624.11 14660.31,-613.41"/>
 <polygon fill="black" stroke="black" points="14660.88,-616.86 14670.32,-612.05 14659.94,-609.93 14660.88,-616.86"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_name&#45;&gt;Graph::get_node_type_name_by_node_id -->
+<!-- Graph::get_node_type_name_from_node_name&#45;&gt;Graph::get_node_type_name_from_node_id -->
 <g id="edge425" class="edge">
-<title>Graph::get_node_type_name_by_node_name&#45;&gt;Graph::get_node_type_name_by_node_id</title>
+<title>Graph::get_node_type_name_from_node_name&#45;&gt;Graph::get_node_type_name_from_node_id</title>
 <path fill="none" stroke="black" d="M15244.38,-647.88C15259.54,-638.72 15278.41,-627.34 15294.74,-617.48"/>
 <polygon fill="black" stroke="black" points="15296.76,-620.35 15303.51,-612.19 15293.14,-614.36 15296.76,-620.35"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_node_type_name_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge426" class="edge">
-<title>Graph::get_node_type_name_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_node_type_name_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M15113.79,-647.97C15051.68,-637.61 14972.3,-624.38 14908.42,-613.74"/>
 <polygon fill="black" stroke="black" points="14908.74,-610.24 14898.3,-612.05 14907.59,-617.15 14908.74,-610.24"/>
 </g>
@@ -3963,51 +3963,51 @@
 <path fill="none" stroke="black" d="M5841.71,-648.56C5838.78,-648.36 5835.88,-648.18 5833,-648 5179.35,-608.13 5014.21,-641.3 4360,-612 4114.17,-600.99 3423.25,-719.57 3255,-540 3203.58,-485.12 3321.22,-475.78 3326,-468 3334.37,-454.37 3337.23,-443.4 3326,-432 3280.13,-385.44 1095.57,-398.9 912.73,-395.79"/>
 <polygon fill="black" stroke="black" points="912.56,-392.29 902.47,-395.51 912.37,-399.28 912.56,-392.29"/>
 </g>
-<!-- Graph::get_node_type_id_by_node_type_name -->
+<!-- Graph::get_node_type_id_from_node_type_name -->
 <g id="node132" class="node">
-<title>Graph::get_node_type_id_by_node_type_name</title>
+<title>Graph::get_node_type_id_from_node_type_name</title>
 <polygon fill="none" stroke="black" points="10962,-612 10620,-612 10620,-576 10962,-576 10962,-612"/>
-<text text-anchor="middle" x="10791" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_by_node_type_name</text>
+<text text-anchor="middle" x="10791" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_type_id_from_node_type_name</text>
 </g>
-<!-- Graph::get_node_count_by_node_type_id -->
+<!-- Graph::get_node_count_from_node_type_id -->
 <g id="node133" class="node">
-<title>Graph::get_node_count_by_node_type_id</title>
+<title>Graph::get_node_count_from_node_type_id</title>
 <polygon fill="none" stroke="black" points="10487.5,-612 10182.5,-612 10182.5,-576 10487.5,-576 10487.5,-612"/>
-<text text-anchor="middle" x="10335" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_count_by_node_type_id</text>
+<text text-anchor="middle" x="10335" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_count_from_node_type_id</text>
 </g>
-<!-- Graph::get_node_count_by_node_type_id&#45;&gt;Graph::get_unchecked_node_count_by_node_type_id -->
+<!-- Graph::get_node_count_from_node_type_id&#45;&gt;Graph::get_unchecked_node_count_from_node_type_id -->
 <g id="edge432" class="edge">
-<title>Graph::get_node_count_by_node_type_id&#45;&gt;Graph::get_unchecked_node_count_by_node_type_id</title>
+<title>Graph::get_node_count_from_node_type_id&#45;&gt;Graph::get_unchecked_node_count_from_node_type_id</title>
 <path fill="none" stroke="black" d="M10182.41,-576.57C10179.24,-576.37 10176.11,-576.17 10173,-576 9120.65,-516.94 6488.05,-587.7 5415.85,-540.01"/>
 <polygon fill="black" stroke="black" points="5415.8,-536.5 5405.65,-539.55 5415.49,-543.49 5415.8,-536.5"/>
 </g>
-<!-- Graph::get_node_count_by_node_type_id&#45;&gt;Graph::has_node_types -->
+<!-- Graph::get_node_count_from_node_type_id&#45;&gt;Graph::has_node_types -->
 <g id="edge433" class="edge">
-<title>Graph::get_node_count_by_node_type_id&#45;&gt;Graph::has_node_types</title>
+<title>Graph::get_node_count_from_node_type_id&#45;&gt;Graph::has_node_types</title>
 <path fill="none" stroke="black" d="M10487.85,-582C10527.9,-579.55 10571.05,-577.3 10611,-576 10753.18,-571.38 20713.9,-569.77 20853,-540 20891.52,-531.75 20896.35,-515.6 20934,-504 21105.38,-451.21 21153.79,-459.42 21331,-432 21437.06,-415.59 21559.01,-400.39 21642.75,-390.51"/>
 <polygon fill="black" stroke="black" points="21643.24,-393.98 21652.76,-389.33 21642.42,-387.03 21643.24,-393.98"/>
 </g>
-<!-- Graph::get_node_count_by_node_type_id&#45;&gt;Graph::get_node_types_number -->
+<!-- Graph::get_node_count_from_node_type_id&#45;&gt;Graph::get_node_types_number -->
 <g id="edge434" class="edge">
-<title>Graph::get_node_count_by_node_type_id&#45;&gt;Graph::get_node_types_number</title>
+<title>Graph::get_node_count_from_node_type_id&#45;&gt;Graph::get_node_types_number</title>
 <path fill="none" stroke="black" d="M10182.4,-576.72C10179.24,-576.47 10176.1,-576.23 10173,-576 9760.86,-545.75 9271.64,-531.32 9042.15,-525.8"/>
 <polygon fill="black" stroke="black" points="9042.17,-522.3 9032.09,-525.56 9042,-529.3 9042.17,-522.3"/>
 </g>
-<!-- Graph::get_node_count_by_node_type_name -->
+<!-- Graph::get_node_count_from_node_type_name -->
 <g id="node134" class="node">
-<title>Graph::get_node_count_by_node_type_name</title>
+<title>Graph::get_node_count_from_node_type_name</title>
 <polygon fill="none" stroke="black" points="10490,-684 10160,-684 10160,-648 10490,-648 10490,-684"/>
-<text text-anchor="middle" x="10325" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_count_by_node_type_name</text>
+<text text-anchor="middle" x="10325" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_node_count_from_node_type_name</text>
 </g>
-<!-- Graph::get_node_count_by_node_type_name&#45;&gt;Graph::get_node_type_id_by_node_type_name -->
+<!-- Graph::get_node_count_from_node_type_name&#45;&gt;Graph::get_node_type_id_from_node_type_name -->
 <g id="edge435" class="edge">
-<title>Graph::get_node_count_by_node_type_name&#45;&gt;Graph::get_node_type_id_by_node_type_name</title>
+<title>Graph::get_node_count_from_node_type_name&#45;&gt;Graph::get_node_type_id_from_node_type_name</title>
 <path fill="none" stroke="black" d="M10438.4,-647.97C10507.74,-637.55 10596.48,-624.22 10667.58,-613.54"/>
 <polygon fill="black" stroke="black" points="10668.13,-617 10677.5,-612.05 10667.09,-610.07 10668.13,-617"/>
 </g>
-<!-- Graph::get_node_count_by_node_type_name&#45;&gt;Graph::get_node_count_by_node_type_id -->
+<!-- Graph::get_node_count_from_node_type_name&#45;&gt;Graph::get_node_count_from_node_type_id -->
 <g id="edge436" class="edge">
-<title>Graph::get_node_count_by_node_type_name&#45;&gt;Graph::get_node_count_by_node_type_id</title>
+<title>Graph::get_node_count_from_node_type_name&#45;&gt;Graph::get_node_count_from_node_type_id</title>
 <path fill="none" stroke="black" d="M10327.47,-647.7C10328.57,-639.98 10329.9,-630.71 10331.13,-622.11"/>
 <polygon fill="black" stroke="black" points="10334.61,-622.5 10332.56,-612.1 10327.68,-621.51 10334.61,-622.5"/>
 </g>
@@ -4035,51 +4035,51 @@
 <path fill="none" stroke="black" d="M5629.03,-503.97C5715.03,-469.97 5918.03,-394.02 6096,-360 6300.33,-320.94 6541.33,-310.06 6691.69,-307.36"/>
 <polygon fill="black" stroke="black" points="6691.97,-310.85 6701.91,-307.18 6691.85,-303.85 6691.97,-310.85"/>
 </g>
-<!-- Graph::get_node_neighbours_by_node_id -->
+<!-- Graph::get_node_neighbours_from_node_id -->
 <g id="node137" class="node">
-<title>Graph::get_node_neighbours_by_node_id</title>
+<title>Graph::get_node_neighbours_from_node_id</title>
 <polygon fill="none" stroke="black" points="6815.5,-612 6508.5,-612 6508.5,-576 6815.5,-576 6815.5,-612"/>
-<text text-anchor="middle" x="6662" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_neighbours_by_node_id</text>
+<text text-anchor="middle" x="6662" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::get_node_neighbours_from_node_id</text>
 </g>
-<!-- Graph::get_node_neighbours_by_node_id&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::get_node_neighbours_from_node_id&#45;&gt;Graph::get_nodes_number -->
 <g id="edge440" class="edge">
-<title>Graph::get_node_neighbours_by_node_id&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::get_node_neighbours_from_node_id&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M6815.55,-576.73C6818.73,-576.48 6821.88,-576.23 6825,-576 6914.4,-569.35 7547.45,-572.49 7631,-540 7654.23,-530.97 7650.84,-513.2 7674,-504 7925.58,-404.08 8027.84,-561.16 8282,-468 8307.04,-458.82 8307.24,-445.89 8330,-432 8349.06,-420.36 8371.05,-409.27 8390.27,-400.26"/>
 <polygon fill="black" stroke="black" points="8391.84,-403.39 8399.45,-396.02 8388.91,-397.03 8391.84,-403.39"/>
 </g>
-<!-- Graph::get_node_neighbours_by_node_id&#45;&gt;Graph::iter_node_neighbours_ids -->
+<!-- Graph::get_node_neighbours_from_node_id&#45;&gt;Graph::iter_node_neighbours_ids -->
 <g id="edge441" class="edge">
-<title>Graph::get_node_neighbours_by_node_id&#45;&gt;Graph::iter_node_neighbours_ids</title>
+<title>Graph::get_node_neighbours_from_node_id&#45;&gt;Graph::iter_node_neighbours_ids</title>
 <path fill="none" stroke="black" d="M6508.38,-590.94C6259.45,-587.62 5752.49,-580.97 5323,-576 4556.34,-567.13 2638.59,-581.32 1873,-540 1860.68,-539.34 1847.89,-538.45 1835.09,-537.44"/>
 <polygon fill="black" stroke="black" points="1835.08,-533.93 1824.83,-536.6 1834.51,-540.9 1835.08,-533.93"/>
 </g>
-<!-- Graph::get_neighbour_node_ids_by_node_name -->
+<!-- Graph::get_neighbour_node_ids_from_node_name -->
 <g id="node138" class="node">
-<title>Graph::get_neighbour_node_ids_by_node_name</title>
+<title>Graph::get_neighbour_node_ids_from_node_name</title>
 <polygon fill="none" stroke="black" points="10027.5,-684 9674.5,-684 9674.5,-648 10027.5,-648 10027.5,-684"/>
-<text text-anchor="middle" x="9851" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_ids_by_node_name</text>
+<text text-anchor="middle" x="9851" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_ids_from_node_name</text>
 </g>
-<!-- Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_neighbour_node_ids_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge442" class="edge">
-<title>Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_neighbour_node_ids_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M10027.82,-653.65C10068.28,-651.42 10111.12,-649.36 10151,-648 10208.65,-646.04 13876.7,-605.21 14652.76,-596.59"/>
 <polygon fill="black" stroke="black" points="14652.91,-600.09 14662.87,-596.48 14652.83,-593.09 14652.91,-600.09"/>
 </g>
-<!-- Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id -->
+<!-- Graph::get_neighbour_node_ids_from_node_name&#45;&gt;Graph::get_node_neighbours_from_node_id -->
 <g id="edge443" class="edge">
-<title>Graph::get_neighbour_node_ids_by_node_name&#45;&gt;Graph::get_node_neighbours_by_node_id</title>
+<title>Graph::get_neighbour_node_ids_from_node_name&#45;&gt;Graph::get_node_neighbours_from_node_id</title>
 <path fill="none" stroke="black" d="M9674.34,-660.42C9529.01,-656.75 9317.66,-651.63 9133,-648 8110.68,-627.92 7850.78,-672.97 6825.73,-612"/>
 <polygon fill="black" stroke="black" points="6825.73,-608.5 6815.54,-611.39 6825.31,-615.48 6825.73,-608.5"/>
 </g>
-<!-- Graph::get_neighbour_node_names_by_node_name -->
+<!-- Graph::get_neighbour_node_names_from_node_name -->
 <g id="node139" class="node">
-<title>Graph::get_neighbour_node_names_by_node_name</title>
+<title>Graph::get_neighbour_node_names_from_node_name</title>
 <polygon fill="none" stroke="black" points="10886,-684 10508,-684 10508,-648 10886,-648 10886,-684"/>
-<text text-anchor="middle" x="10697" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_names_by_node_name</text>
+<text text-anchor="middle" x="10697" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::get_neighbour_node_names_from_node_name</text>
 </g>
-<!-- Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::get_neighbour_node_names_from_node_name&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge444" class="edge">
-<title>Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::get_neighbour_node_names_from_node_name&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M10886.17,-657.14C10970.57,-653.88 11071.25,-650.32 11162,-648 11860,-630.15 14067.23,-603.55 14652.43,-596.67"/>
 <polygon fill="black" stroke="black" points="14652.65,-600.17 14662.61,-596.55 14652.57,-593.17 14652.65,-600.17"/>
 </g>
@@ -4089,45 +4089,45 @@
 <polygon fill="none" stroke="black" points="10164,-612 9940,-612 9940,-576 10164,-576 10164,-612"/>
 <text text-anchor="middle" x="10052" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::iter_node_neighbours</text>
 </g>
-<!-- Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::iter_node_neighbours -->
+<!-- Graph::get_neighbour_node_names_from_node_name&#45;&gt;Graph::iter_node_neighbours -->
 <g id="edge445" class="edge">
-<title>Graph::get_neighbour_node_names_by_node_name&#45;&gt;Graph::iter_node_neighbours</title>
+<title>Graph::get_neighbour_node_names_from_node_name&#45;&gt;Graph::iter_node_neighbours</title>
 <path fill="none" stroke="black" d="M10512.26,-647.98C10414.8,-638.59 10293,-626.19 10174.33,-612.01"/>
 <polygon fill="black" stroke="black" points="10174.67,-608.53 10164.32,-610.81 10173.84,-615.48 10174.67,-608.53"/>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- Graph::get_edge_id_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge446" class="edge">
-<title>Graph::get_edge_id_with_type_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>Graph::get_edge_id_with_type_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M346.07,-359.9C330.76,-350.87 313.38,-338.62 301,-324 266.66,-283.46 245.39,-224.14 235.21,-189.97"/>
 <polygon fill="black" stroke="black" points="238.53,-188.86 232.4,-180.22 231.8,-190.79 238.53,-188.86"/>
 </g>
-<!-- Graph::iter_edge_ids_by_node_ids -->
+<!-- Graph::iter_edge_ids_from_node_ids -->
 <g id="node313" class="node">
-<title>Graph::iter_edge_ids_by_node_ids</title>
+<title>Graph::iter_edge_ids_from_node_ids</title>
 <polygon fill="none" stroke="black" points="567.5,-324 310.5,-324 310.5,-288 567.5,-288 567.5,-324"/>
-<text text-anchor="middle" x="439" y="-302.3" font-family="Times,serif" font-size="14.00">Graph::iter_edge_ids_by_node_ids</text>
+<text text-anchor="middle" x="439" y="-302.3" font-family="Times,serif" font-size="14.00">Graph::iter_edge_ids_from_node_ids</text>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_ids&#45;&gt;Graph::iter_edge_ids_by_node_ids -->
+<!-- Graph::get_edge_id_with_type_from_node_ids&#45;&gt;Graph::iter_edge_ids_from_node_ids -->
 <g id="edge447" class="edge">
-<title>Graph::get_edge_id_with_type_by_node_ids&#45;&gt;Graph::iter_edge_ids_by_node_ids</title>
+<title>Graph::get_edge_id_with_type_from_node_ids&#45;&gt;Graph::iter_edge_ids_from_node_ids</title>
 <path fill="none" stroke="black" d="M394.58,-359.7C401.66,-351.3 410.28,-341.07 418.05,-331.86"/>
 <polygon fill="black" stroke="black" points="420.81,-334.01 424.58,-324.1 415.46,-329.49 420.81,-334.01"/>
 </g>
-<!-- Graph::get_edge_id_by_node_names&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- Graph::get_edge_id_from_node_names&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge448" class="edge">
-<title>Graph::get_edge_id_by_node_names&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>Graph::get_edge_id_from_node_names&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M4704.32,-1454.66C4388.53,-1447.84 3584.39,-1422.28 2919,-1332 2685.1,-1300.26 2631.17,-1266.6 2399,-1224 1672.42,-1090.69 1487.59,-1063.97 751,-1008 678.87,-1002.52 164.3,-1007 101,-972 58.59,-948.55 38,-931.46 38,-883 38,-883 38,-883 38,-305 38,-242.75 104.26,-204.5 158.52,-183.61"/>
 <polygon fill="black" stroke="black" points="159.99,-186.8 168.14,-180.04 157.55,-180.24 159.99,-186.8"/>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_names&#45;&gt;Graph::get_edge_type_id_by_edge_type_name -->
+<!-- Graph::get_edge_id_with_type_from_node_names&#45;&gt;Graph::get_edge_type_id_by_edge_type_name -->
 <g id="edge449" class="edge">
-<title>Graph::get_edge_id_with_type_by_node_names&#45;&gt;Graph::get_edge_type_id_by_edge_type_name</title>
+<title>Graph::get_edge_id_with_type_from_node_names&#45;&gt;Graph::get_edge_type_id_by_edge_type_name</title>
 <path fill="none" stroke="black" d="M456.34,-431.97C509.58,-421.7 577.5,-408.6 632.48,-398"/>
 <polygon fill="black" stroke="black" points="633.43,-401.38 642.58,-396.05 632.1,-394.51 633.43,-401.38"/>
 </g>
-<!-- Graph::get_edge_id_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_ids -->
+<!-- Graph::get_edge_id_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_ids -->
 <g id="edge450" class="edge">
-<title>Graph::get_edge_id_with_type_by_node_names&#45;&gt;Graph::get_edge_id_with_type_by_node_ids</title>
+<title>Graph::get_edge_id_with_type_from_node_names&#45;&gt;Graph::get_edge_id_with_type_from_node_ids</title>
 <path fill="none" stroke="black" d="M370.97,-431.7C372.29,-423.98 373.88,-414.71 375.35,-406.11"/>
 <polygon fill="black" stroke="black" points="378.83,-406.55 377.07,-396.1 371.93,-405.37 378.83,-406.55"/>
 </g>
@@ -4143,27 +4143,27 @@
 <path fill="none" stroke="black" d="M12186.27,-935.98C12196.1,-915.22 12215.72,-880.84 12244,-864 12346.89,-802.74 12395.39,-859.19 12511,-828 12512.44,-827.61 12513.9,-827.18 12515.36,-826.73"/>
 <polygon fill="black" stroke="black" points="12516.72,-829.96 12525,-823.35 12514.4,-823.35 12516.72,-829.96"/>
 </g>
-<!-- Graph::get_node_type_ids_by_node_type_names&#45;&gt;keys -->
+<!-- Graph::get_node_type_ids_from_node_type_names&#45;&gt;keys -->
 <g id="edge452" class="edge">
-<title>Graph::get_node_type_ids_by_node_type_names&#45;&gt;keys</title>
+<title>Graph::get_node_type_ids_from_node_type_names&#45;&gt;keys</title>
 <path fill="none" stroke="black" d="M12460.6,-863.88C12477.28,-854.23 12498.25,-842.1 12515.89,-831.89"/>
 <polygon fill="black" stroke="black" points="12517.87,-834.79 12524.77,-826.75 12514.37,-828.73 12517.87,-834.79"/>
 </g>
-<!-- Graph::get_minmax_edge_ids_by_node_ids -->
+<!-- Graph::get_minmax_edge_ids_from_node_ids -->
 <g id="node145" class="node">
-<title>Graph::get_minmax_edge_ids_by_node_ids</title>
+<title>Graph::get_minmax_edge_ids_from_node_ids</title>
 <polygon fill="none" stroke="black" points="613.5,-252 294.5,-252 294.5,-216 613.5,-216 613.5,-252"/>
-<text text-anchor="middle" x="454" y="-230.3" font-family="Times,serif" font-size="14.00">Graph::get_minmax_edge_ids_by_node_ids</text>
+<text text-anchor="middle" x="454" y="-230.3" font-family="Times,serif" font-size="14.00">Graph::get_minmax_edge_ids_from_node_ids</text>
 </g>
-<!-- Graph::get_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids -->
+<!-- Graph::get_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids -->
 <g id="edge453" class="edge">
-<title>Graph::get_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_edge_id_by_node_ids</title>
+<title>Graph::get_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M399,-215.97C367.01,-206.06 326.52,-193.51 292.96,-183.12"/>
 <polygon fill="black" stroke="black" points="293.83,-179.73 283.24,-180.11 291.76,-186.41 293.83,-179.73"/>
 </g>
-<!-- Graph::get_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
+<!-- Graph::get_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple -->
 <g id="edge454" class="edge">
-<title>Graph::get_minmax_edge_ids_by_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
+<title>Graph::get_minmax_edge_ids_from_node_ids&#45;&gt;Graph::get_unchecked_edge_id_from_tuple</title>
 <path fill="none" stroke="black" d="M611.93,-215.97C709.78,-205.41 835.36,-191.87 935.03,-181.12"/>
 <polygon fill="black" stroke="black" points="935.64,-184.57 945.2,-180.02 934.89,-177.61 935.64,-184.57"/>
 </g>
@@ -4173,21 +4173,21 @@
 <path fill="none" stroke="black" d="M1103,-359.85C1103,-322.83 1103,-235.18 1103,-190.39"/>
 <polygon fill="black" stroke="black" points="1106.5,-190.23 1103,-180.23 1099.5,-190.23 1106.5,-190.23"/>
 </g>
-<!-- Graph::get_node_type_name_by_node_type_id&#45;&gt;translate -->
+<!-- Graph::get_node_type_name_from_node_type_id&#45;&gt;translate -->
 <g id="edge456" class="edge">
-<title>Graph::get_node_type_name_by_node_type_id&#45;&gt;translate</title>
+<title>Graph::get_node_type_name_from_node_type_id&#45;&gt;translate</title>
 <path fill="none" stroke="black" d="M13728,-1295.82C13708.63,-1270.26 13676,-1219.93 13676,-1171 13676,-1171 13676,-1171 13676,-1097 13676,-971.91 13822.01,-1039.73 13943,-1008 14024.45,-986.64 14075.42,-1036.95 14129,-972 14209.2,-874.79 14106.32,-786.07 13999,-720 13921.34,-672.19 13878.55,-724.82 13797,-684 13713.21,-642.06 13680.31,-625.96 13643,-540 13611.15,-466.61 13594.94,-423.95 13643,-360 13658.95,-338.77 13726.9,-323.32 13775.33,-314.75"/>
 <polygon fill="black" stroke="black" points="13776.08,-318.17 13785.34,-313.03 13774.89,-311.28 13776.08,-318.17"/>
 </g>
-<!-- Graph::get_node_degree_by_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id -->
+<!-- Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id -->
 <g id="edge457" class="edge">
-<title>Graph::get_node_degree_by_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id</title>
+<title>Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id</title>
 <path fill="none" stroke="black" d="M4737.7,-445.61C4588.49,-442.01 4343.92,-436.26 4133,-432 3061,-410.36 1775.55,-389.59 1295.87,-382.01"/>
 <polygon fill="black" stroke="black" points="1295.79,-378.51 1285.73,-381.85 1295.68,-385.51 1295.79,-378.51"/>
 </g>
-<!-- Graph::get_node_degree_by_node_id&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number -->
 <g id="edge458" class="edge">
-<title>Graph::get_node_degree_by_node_id&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M5014.03,-446.29C5590.75,-434.96 7801.91,-391.52 8326.77,-381.2"/>
 <polygon fill="black" stroke="black" points="8327.06,-384.7 8336.99,-381 8326.93,-377.7 8327.06,-384.7"/>
 </g>
@@ -4281,9 +4281,9 @@
 <path fill="none" stroke="black" d="M12630.24,-679.49C12640.02,-679.78 12648,-675.28 12648,-666 12648,-660.2 12644.88,-656.27 12640.16,-654.21"/>
 <polygon fill="black" stroke="black" points="12640.69,-650.75 12630.24,-652.51 12639.51,-657.65 12640.69,-650.75"/>
 </g>
-<!-- Graph::degrees_product&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::degrees_product&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge471" class="edge">
-<title>Graph::degrees_product&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::degrees_product&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M5990.4,-505.07C5987.23,-504.68 5984.09,-504.33 5981,-504 5639.91,-468.06 5237,-456.47 5024.49,-452.75"/>
 <polygon fill="black" stroke="black" points="5024.26,-449.25 5014.2,-452.57 5024.14,-456.24 5024.26,-449.25"/>
 </g>
@@ -4293,9 +4293,9 @@
 <path fill="none" stroke="black" d="M6122.94,-503.97C6172.89,-482.51 6264,-446.67 6346,-432 6540.89,-397.14 7920.03,-383.23 8326.52,-379.86"/>
 <polygon fill="black" stroke="black" points="8326.84,-383.35 8336.81,-379.77 8326.78,-376.36 8326.84,-383.35"/>
 </g>
-<!-- Graph::jaccard_index&#45;&gt;Graph::is_trap_node_by_node_id -->
+<!-- Graph::jaccard_index&#45;&gt;Graph::is_trap_node_from_node_id -->
 <g id="edge473" class="edge">
-<title>Graph::jaccard_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
+<title>Graph::jaccard_index&#45;&gt;Graph::is_trap_node_from_node_id</title>
 <path fill="none" stroke="black" d="M4688.51,-575.7C4688.29,-567.98 4688.02,-558.71 4687.77,-550.11"/>
 <polygon fill="black" stroke="black" points="4691.27,-550 4687.49,-540.1 4684.28,-550.2 4691.27,-550"/>
 </g>
@@ -4311,15 +4311,15 @@
 <path fill="none" stroke="black" d="M4605.37,-583.09C4578.47,-580.29 4548.51,-577.58 4521,-576 3345.93,-508.69 3048.19,-605.28 1873,-540 1860.68,-539.32 1847.9,-538.42 1835.09,-537.4"/>
 <polygon fill="black" stroke="black" points="1835.08,-533.89 1824.83,-536.55 1834.51,-540.86 1835.08,-533.89"/>
 </g>
-<!-- Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_by_node_id -->
+<!-- Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_from_node_id -->
 <g id="edge476" class="edge">
-<title>Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
+<title>Graph::adamic_adar_index&#45;&gt;Graph::is_trap_node_from_node_id</title>
 <path fill="none" stroke="black" d="M4887.72,-1079.82C4840.1,-1058.46 4772,-1017.05 4772,-955 4772,-955 4772,-955 4772,-809 4772,-691.89 4638.6,-721.47 4597,-612 4591.32,-597.04 4589.06,-589.89 4597,-576 4604.46,-562.95 4616.52,-552.8 4629.42,-545.03"/>
 <polygon fill="black" stroke="black" points="4631.39,-547.94 4638.44,-540.03 4628,-541.82 4631.39,-547.94"/>
 </g>
-<!-- Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge477" class="edge">
-<title>Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4851.84,-1079.93C4828.83,-1072 4805.14,-1060.53 4787,-1044 4669.28,-936.75 4765.23,-810.21 4634,-720 4545.85,-659.4 4237.11,-751.34 4154,-684 4090.17,-632.29 4055.96,-564.06 4112,-504 4153,-460.06 4517.12,-451.75 4727.53,-450.66"/>
 <polygon fill="black" stroke="black" points="4727.76,-454.16 4737.74,-450.61 4727.73,-447.16 4727.76,-454.16"/>
 </g>
@@ -4335,15 +4335,15 @@
 <path fill="none" stroke="black" d="M4829.91,-1080.99C4826.91,-1080.64 4823.93,-1080.31 4821,-1080 4030.64,-996.28 3826.25,-1056.77 3036,-972 2931.81,-960.82 2907.33,-945.74 2803,-936 2682.13,-924.71 1821.17,-950.99 1711,-900 1652.18,-872.78 1671.37,-820.18 1613,-792 1503.1,-738.94 1151.46,-842.13 1065,-756 1030.96,-722.09 1031.62,-686.78 1060,-648 1122.51,-562.59 1183.65,-598.84 1287,-576 1338.14,-564.7 1463.9,-549.15 1563.13,-537.83"/>
 <polygon fill="black" stroke="black" points="1563.71,-541.28 1573.25,-536.67 1562.92,-534.33 1563.71,-541.28"/>
 </g>
-<!-- Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_by_node_id -->
+<!-- Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_from_node_id -->
 <g id="edge480" class="edge">
-<title>Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_by_node_id</title>
+<title>Graph::resource_allocation_index&#45;&gt;Graph::is_trap_node_from_node_id</title>
 <path fill="none" stroke="black" d="M4686.35,-1079.76C4689.96,-1024.31 4695.7,-846.8 4634,-720 4624.24,-699.93 4611.82,-702.27 4599,-684 4578.56,-654.88 4571.98,-646.67 4564,-612 4560.41,-596.41 4555.21,-589.37 4564,-576 4573.05,-562.25 4586.5,-552.05 4601.23,-544.49"/>
 <polygon fill="black" stroke="black" points="4602.98,-547.53 4610.54,-540.11 4600,-541.2 4602.98,-547.53"/>
 </g>
-<!-- Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge481" class="edge">
-<title>Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4661.37,-1079.97C4630.96,-1055.89 4582,-1008.75 4582,-955 4582,-955 4582,-955 4582,-881 4582,-809.17 4644.86,-772.64 4596,-720 4522.78,-641.12 4201.36,-745.46 4113,-684 4046.53,-637.77 4027.68,-561.18 4085,-504 4129.36,-459.75 4510.89,-451.63 4727.43,-450.64"/>
 <polygon fill="black" stroke="black" points="4727.63,-454.14 4737.62,-450.59 4727.6,-447.14 4727.63,-454.14"/>
 </g>
@@ -4365,15 +4365,15 @@
 <polygon fill="none" stroke="black" points="4511.5,-612 4368.5,-612 4368.5,-576 4511.5,-576 4511.5,-612"/>
 <text text-anchor="middle" x="4440" y="-590.3" font-family="Times,serif" font-size="14.00">Graph::traps_rate</text>
 </g>
-<!-- Graph::traps_rate&#45;&gt;Graph::is_trap_node_by_node_id -->
+<!-- Graph::traps_rate&#45;&gt;Graph::is_trap_node_from_node_id -->
 <g id="edge484" class="edge">
-<title>Graph::traps_rate&#45;&gt;Graph::is_trap_node_by_node_id</title>
+<title>Graph::traps_rate&#45;&gt;Graph::is_trap_node_from_node_id</title>
 <path fill="none" stroke="black" d="M4500.11,-575.97C4535.37,-565.97 4580.09,-553.3 4616.94,-542.85"/>
 <polygon fill="black" stroke="black" points="4617.96,-546.2 4626.62,-540.11 4616.05,-539.47 4617.96,-546.2"/>
 </g>
-<!-- Graph::traps_rate&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::traps_rate&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge485" class="edge">
-<title>Graph::traps_rate&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::traps_rate&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4466.69,-575.99C4481.82,-566.01 4500.9,-552.87 4517,-540 4535.43,-525.28 4534.81,-514.36 4556,-504 4608.85,-478.16 4671.86,-464.58 4727.94,-457.56"/>
 <polygon fill="black" stroke="black" points="4728.45,-461.03 4737.96,-456.37 4727.62,-454.08 4728.45,-461.03"/>
 </g>
@@ -4767,9 +4767,9 @@
 <polygon fill="none" stroke="black" points="15046,-756 14772,-756 14772,-720 15046,-720 15046,-756"/>
 <text text-anchor="middle" x="14909" y="-734.3" font-family="Times,serif" font-size="14.00">Graph::shared_components_number</text>
 </g>
-<!-- Graph::shared_components_number&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::shared_components_number&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge537" class="edge">
-<title>Graph::shared_components_number&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::shared_components_number&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14918.62,-719.75C14927.85,-700.63 14938.45,-669.63 14924,-648 14914.76,-634.17 14901.17,-623.95 14886.26,-616.39"/>
 <polygon fill="black" stroke="black" points="14887.38,-613.05 14876.83,-612.02 14884.43,-619.4 14887.38,-613.05"/>
 </g>
@@ -4785,9 +4785,9 @@
 <polygon fill="none" stroke="black" points="14730,-684 14450,-684 14450,-648 14730,-648 14730,-684"/>
 <text text-anchor="middle" x="14590" y="-662.3" font-family="Times,serif" font-size="14.00">Graph::merged_components_number</text>
 </g>
-<!-- Graph::merged_components_number&#45;&gt;Graph::get_node_id_by_node_name -->
+<!-- Graph::merged_components_number&#45;&gt;Graph::get_node_id_from_node_name -->
 <g id="edge539" class="edge">
-<title>Graph::merged_components_number&#45;&gt;Graph::get_node_id_by_node_name</title>
+<title>Graph::merged_components_number&#45;&gt;Graph::get_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M14640.13,-647.97C14669.04,-638.14 14705.57,-625.73 14736,-615.39"/>
 <polygon fill="black" stroke="black" points="14737.3,-618.64 14745.65,-612.11 14735.05,-612.01 14737.3,-618.64"/>
 </g>
@@ -4815,15 +4815,15 @@
 <path fill="none" stroke="black" d="M14196.34,-1452.14C14291.02,-1448.34 14428.12,-1443.18 14548,-1440 15504.69,-1414.63 15745.24,-1453.1 16701,-1404 18004.1,-1337.05 18325.93,-1263.19 19626,-1152 19661.33,-1148.98 20874.01,-1070.11 20898,-1044 21005.71,-926.76 20723.45,-942.45 20570,-900 20556.58,-896.29 20342.86,-833.33 20330,-828 20236.69,-789.29 20225.32,-753.45 20130,-720 20045.6,-690.38 20019.17,-704.04 19932,-684 19873.99,-670.66 19861.51,-658.92 19803,-648 19640.15,-617.62 19585.32,-674.75 19432,-612 19364.41,-584.34 19309.05,-514.69 19282.68,-476.7"/>
 <polygon fill="black" stroke="black" points="19285.42,-474.51 19276.9,-468.21 19279.63,-478.44 19285.42,-474.51"/>
 </g>
-<!-- Graph::overlap_textual_report&#45;&gt;Graph::has_node_with_type_by_node_name -->
+<!-- Graph::overlap_textual_report&#45;&gt;Graph::has_node_with_type_from_node_name -->
 <g id="edge542" class="edge">
-<title>Graph::overlap_textual_report&#45;&gt;Graph::has_node_with_type_by_node_name</title>
+<title>Graph::overlap_textual_report&#45;&gt;Graph::has_node_with_type_from_node_name</title>
 <path fill="none" stroke="black" d="M14148.63,-1439.9C14171.78,-1431.75 14196.64,-1420.15 14216,-1404 14374.77,-1271.6 14285.93,-1119.52 14460,-1008 14471.52,-1000.62 14607.24,-984.85 14724.24,-972.42"/>
 <polygon fill="black" stroke="black" points="14724.84,-975.87 14734.42,-971.34 14724.1,-968.91 14724.84,-975.87"/>
 </g>
-<!-- Graph::overlap_textual_report&#45;&gt;Graph::has_edge_with_type_by_node_names -->
+<!-- Graph::overlap_textual_report&#45;&gt;Graph::has_edge_with_type_from_node_names -->
 <g id="edge543" class="edge">
-<title>Graph::overlap_textual_report&#45;&gt;Graph::has_edge_with_type_by_node_names</title>
+<title>Graph::overlap_textual_report&#45;&gt;Graph::has_edge_with_type_from_node_names</title>
 <path fill="none" stroke="black" d="M13963.86,-1455.98C13486.33,-1451.59 11693.87,-1433.25 11577,-1404 11542.68,-1395.41 11540.34,-1376.51 11506,-1368 11387.94,-1338.75 9438.59,-1335.06 9317,-1332 9140.34,-1327.55 3133.05,-1146.56 2959,-1116 2795.75,-1087.34 2753.77,-1062.64 2615,-972 2592.07,-957.03 2590.91,-944.85 2565,-936 2343.22,-860.26 1727.2,-990.46 1511,-900 1489.54,-891.02 1491.84,-877.65 1473,-864 1418.58,-824.55 1404.57,-810.69 1340,-792 1225.75,-758.93 905.45,-821.24 806,-756 730.71,-706.61 785.39,-629.56 713,-576 692.83,-561.07 645.64,-549.82 595.01,-541.61"/>
 <polygon fill="black" stroke="black" points="595.27,-538.11 584.85,-540.01 594.18,-545.02 595.27,-538.11"/>
 </g>
@@ -4911,15 +4911,15 @@
 <polygon fill="none" stroke="black" points="12235,-1404 12047,-1404 12047,-1368 12235,-1368 12235,-1404"/>
 <text text-anchor="middle" x="12141" y="-1382.3" font-family="Times,serif" font-size="14.00">Graph::format_node_list</text>
 </g>
-<!-- Graph::format_node_list&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::format_node_list&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge555" class="edge">
-<title>Graph::format_node_list&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::format_node_list&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M12230.98,-1367.95C12285.07,-1357.03 12348.27,-1342.93 12374,-1332 12400.89,-1320.58 12402.16,-1307.54 12429,-1296 12492.78,-1268.58 12519.25,-1291.72 12581,-1260 12646.01,-1226.61 12646.15,-1195.34 12705,-1152 12778.6,-1097.8 12811.71,-1104.75 12880,-1044 12910.49,-1016.87 12913.54,-1005.4 12937,-972 12969.47,-925.78 12958.96,-898.09 13004,-864 13050.1,-829.11 13080.49,-859.45 13129,-828 13273.09,-734.59 13377.21,-546.82 13412.18,-477.5"/>
 <polygon fill="black" stroke="black" points="13415.5,-478.67 13416.83,-468.16 13409.24,-475.55 13415.5,-478.67"/>
 </g>
-<!-- Graph::format_node_list&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::format_node_list&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge556" class="edge">
-<title>Graph::format_node_list&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::format_node_list&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M12046.61,-1380.74C11957.92,-1376.88 11821.48,-1371.31 11703,-1368 11234.45,-1354.91 10060.32,-1379.48 9594,-1332 8991.12,-1270.61 8855.5,-1153.7 8254,-1080 7431.21,-979.19 7219.5,-1020.97 6392,-972 6259.44,-964.16 5326.33,-937.72 5199,-900 5041.82,-853.43 4976.89,-828.79 4900,-684 4864.33,-616.84 4867.97,-523.46 4872.52,-478.01"/>
 <polygon fill="black" stroke="black" points="4876,-478.37 4873.61,-468.04 4869.04,-477.6 4876,-478.37"/>
 </g>
@@ -4935,9 +4935,9 @@
 <polygon fill="none" stroke="black" points="13869.5,-1404 13642.5,-1404 13642.5,-1368 13869.5,-1368 13869.5,-1404"/>
 <text text-anchor="middle" x="13756" y="-1382.3" font-family="Times,serif" font-size="14.00">Graph::format_node_type_list</text>
 </g>
-<!-- Graph::format_node_type_list&#45;&gt;Graph::get_node_type_name_by_node_type_id -->
+<!-- Graph::format_node_type_list&#45;&gt;Graph::get_node_type_name_from_node_type_id -->
 <g id="edge558" class="edge">
-<title>Graph::format_node_type_list&#45;&gt;Graph::get_node_type_name_by_node_type_id</title>
+<title>Graph::format_node_type_list&#45;&gt;Graph::get_node_type_name_from_node_type_id</title>
 <path fill="none" stroke="black" d="M13752.54,-1367.7C13751,-1359.98 13749.14,-1350.71 13747.42,-1342.11"/>
 <polygon fill="black" stroke="black" points="13750.81,-1341.22 13745.42,-1332.1 13743.95,-1342.6 13750.81,-1341.22"/>
 </g>
@@ -5217,15 +5217,15 @@
 <path fill="none" stroke="black" d="M11668.06,-1456.44C11980.2,-1454.25 13077.96,-1446.17 13982,-1440 17414.81,-1416.59 21657.77,-1390.15 22099.48,-1387.26"/>
 <polygon fill="black" stroke="black" points="22099.8,-1390.76 22109.77,-1387.19 22099.75,-1383.76 22099.8,-1390.76"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id -->
+<!-- Graph::remove&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id -->
 <g id="edge601" class="edge">
-<title>Graph::remove&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id</title>
+<title>Graph::remove&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M17374.76,-733.18C17537.76,-722.97 17967.82,-695.03 17978,-684 18010.56,-648.74 17999.37,-618.98 17978,-576 17972,-563.93 17961.79,-553.87 17950.99,-545.88"/>
 <polygon fill="black" stroke="black" points="17952.91,-542.95 17942.68,-540.17 17948.94,-548.71 17952.91,-542.95"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::get_unchecked_node_id_by_node_name -->
+<!-- Graph::remove&#45;&gt;Graph::get_unchecked_node_id_from_node_name -->
 <g id="edge602" class="edge">
-<title>Graph::remove&#45;&gt;Graph::get_unchecked_node_id_by_node_name</title>
+<title>Graph::remove&#45;&gt;Graph::get_unchecked_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M17374.71,-734.38C17603.94,-724.66 18412.17,-690.4 18779.66,-674.82"/>
 <polygon fill="black" stroke="black" points="18780.02,-678.3 18789.87,-674.38 18779.73,-671.31 18780.02,-678.3"/>
 </g>
@@ -5241,21 +5241,21 @@
 <path fill="none" stroke="black" d="M17374.8,-735.21C17481.93,-732.11 17709.08,-725.55 17901,-720 18454.78,-703.99 18595.22,-733.66 19147,-684 19158.86,-682.93 19171.37,-681.42 19183.57,-679.73"/>
 <polygon fill="black" stroke="black" points="19184.32,-683.16 19193.72,-678.28 19183.33,-676.23 19184.32,-683.16"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id -->
+<!-- Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id -->
 <g id="edge605" class="edge">
-<title>Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_by_node_id</title>
+<title>Graph::remove&#45;&gt;Graph::is_singleton_with_selfloops_from_node_id</title>
 <path fill="none" stroke="black" d="M17251.44,-736.55C16843.46,-733.52 14486.69,-715.24 12567,-684 12359.12,-680.62 12120.7,-675.33 11959.61,-671.55"/>
 <polygon fill="black" stroke="black" points="11959.68,-668.05 11949.6,-671.32 11959.51,-675.05 11959.68,-668.05"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::is_singleton_by_node_name -->
+<!-- Graph::remove&#45;&gt;Graph::is_singleton_from_node_name -->
 <g id="edge606" class="edge">
-<title>Graph::remove&#45;&gt;Graph::is_singleton_by_node_name</title>
+<title>Graph::remove&#45;&gt;Graph::is_singleton_from_node_name</title>
 <path fill="none" stroke="black" d="M17251.28,-736.82C16861.34,-735.55 14735.09,-726.76 14086,-684 14084.88,-683.93 14083.75,-683.85 14082.62,-683.77"/>
 <polygon fill="black" stroke="black" points="14082.58,-680.26 14072.35,-683 14082.06,-687.24 14082.58,-680.26"/>
 </g>
-<!-- Graph::remove&#45;&gt;Graph::get_node_type_names_by_node_type_ids -->
+<!-- Graph::remove&#45;&gt;Graph::get_node_type_names_from_node_type_ids -->
 <g id="edge607" class="edge">
-<title>Graph::remove&#45;&gt;Graph::get_node_type_names_by_node_type_ids</title>
+<title>Graph::remove&#45;&gt;Graph::get_node_type_names_from_node_type_ids</title>
 <path fill="none" stroke="black" d="M17374.75,-732.82C17507.85,-723.51 17811.04,-700.58 17826,-684 17836.72,-672.12 17833.58,-662.09 17826,-648 17798.5,-596.87 17772.19,-594.01 17717,-576 17630.84,-547.88 17078.92,-532.68 16781.8,-526.44"/>
 <polygon fill="black" stroke="black" points="16781.85,-522.94 16771.78,-526.23 16781.7,-529.94 16781.85,-522.94"/>
 </g>
@@ -5979,15 +5979,15 @@
 <path fill="none" stroke="black" d="M5206.24,-303.54C6046.55,-294.28 10629.13,-243.75 11332.41,-236"/>
 <polygon fill="black" stroke="black" points="11332.52,-239.5 11342.48,-235.89 11332.44,-232.5 11332.52,-239.5"/>
 </g>
-<!-- Graph::get_edge_id_by_node_ids&#45;&gt;encode_edge -->
+<!-- Graph::get_edge_id_from_node_ids&#45;&gt;encode_edge -->
 <g id="edge699" class="edge">
-<title>Graph::get_edge_id_by_node_ids&#45;&gt;encode_edge</title>
+<title>Graph::get_edge_id_from_node_ids&#45;&gt;encode_edge</title>
 <path fill="none" stroke="black" d="M352.06,-145.53C593.69,-115.41 1119.73,-49.83 1302.72,-27.01"/>
 <polygon fill="black" stroke="black" points="1303.24,-30.48 1312.73,-25.77 1302.37,-23.53 1303.24,-30.48"/>
 </g>
-<!-- Graph::get_edge_id_by_node_ids&#45;&gt;Graph::encode_edge -->
+<!-- Graph::get_edge_id_from_node_ids&#45;&gt;Graph::encode_edge -->
 <g id="edge700" class="edge">
-<title>Graph::get_edge_id_by_node_ids&#45;&gt;Graph::encode_edge</title>
+<title>Graph::get_edge_id_from_node_ids&#45;&gt;Graph::encode_edge</title>
 <path fill="none" stroke="black" d="M352.12,-153.72C593.21,-139.59 1119.69,-108.72 1331.28,-96.32"/>
 <polygon fill="black" stroke="black" points="1331.64,-99.8 1341.42,-95.72 1331.23,-92.82 1331.64,-99.8"/>
 </g>
@@ -6015,9 +6015,9 @@
 <path fill="none" stroke="black" d="M13492.3,-725.41C13238.15,-697.54 12597.66,-627.31 12378.17,-603.24"/>
 <polygon fill="black" stroke="black" points="12378.36,-599.74 12368.04,-602.13 12377.6,-606.7 12378.36,-599.74"/>
 </g>
-<!-- Graph::get_bipartite_edges&#45;&gt;Graph::has_edge_by_node_ids -->
+<!-- Graph::get_bipartite_edges&#45;&gt;Graph::has_edge_from_node_ids -->
 <g id="edge704" class="edge">
-<title>Graph::get_bipartite_edges&#45;&gt;Graph::has_edge_by_node_ids</title>
+<title>Graph::get_bipartite_edges&#45;&gt;Graph::has_edge_from_node_ids</title>
 <path fill="none" stroke="black" d="M13492.34,-733.84C13351.52,-729.79 13094.55,-722.93 12875,-720 12718.15,-717.91 1731.33,-728.8 1581,-684 1538.32,-671.28 1496.46,-640.69 1470.47,-618.93"/>
 <polygon fill="black" stroke="black" points="1472.48,-616.04 1462.61,-612.21 1467.93,-621.36 1472.48,-616.04"/>
 </g>
@@ -6033,9 +6033,9 @@
 <path fill="none" stroke="black" d="M13703.54,-726.4C13731.61,-723.92 13761.93,-721.56 13790,-720 14500.2,-680.61 14681.15,-742.82 15390,-684 15401.6,-683.04 15413.8,-681.68 15425.78,-680.14"/>
 <polygon fill="black" stroke="black" points="15426.32,-683.6 15435.77,-678.81 15425.39,-676.66 15426.32,-683.6"/>
 </g>
-<!-- Graph::get_bipartite_edge_names&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::get_bipartite_edge_names&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge707" class="edge">
-<title>Graph::get_bipartite_edge_names&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::get_bipartite_edge_names&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M13540.37,-791.84C13499.67,-772.64 13441.7,-737.08 13422,-684 13408.27,-647.01 13417.2,-531.11 13422.24,-478.03"/>
 <polygon fill="black" stroke="black" points="13425.73,-478.3 13423.21,-468 13418.76,-477.62 13425.73,-478.3"/>
 </g>
@@ -6069,9 +6069,9 @@
 <path fill="none" stroke="black" d="M13798.32,-727.35C13629.79,-710.47 13268.97,-674.82 12964,-648 12751.78,-629.34 12500.99,-609.96 12378.28,-600.66"/>
 <polygon fill="black" stroke="black" points="12378.47,-597.16 12368.23,-599.9 12377.94,-604.14 12378.47,-597.16"/>
 </g>
-<!-- Graph::get_clique_edges&#45;&gt;Graph::has_edge_by_node_ids -->
+<!-- Graph::get_clique_edges&#45;&gt;Graph::has_edge_from_node_ids -->
 <g id="edge712" class="edge">
-<title>Graph::get_clique_edges&#45;&gt;Graph::has_edge_by_node_ids</title>
+<title>Graph::get_clique_edges&#45;&gt;Graph::has_edge_from_node_ids</title>
 <path fill="none" stroke="black" d="M13798.3,-726.38C13770.8,-723.77 13740.74,-721.34 13713,-720 13545.32,-711.89 1788.74,-725.21 1626,-684 1593.23,-675.7 1589.25,-663.08 1559,-648 1537.16,-637.11 1512.64,-625.7 1491.87,-616.27"/>
 <polygon fill="black" stroke="black" points="1493.17,-613.02 1482.61,-612.08 1490.28,-619.39 1493.17,-613.02"/>
 </g>
@@ -6087,9 +6087,9 @@
 <path fill="none" stroke="black" d="M13989.59,-734.96C14274.72,-728.67 15116.43,-708.48 15390,-684 15401.6,-682.96 15413.79,-681.56 15425.77,-680"/>
 <polygon fill="black" stroke="black" points="15426.31,-683.46 15435.76,-678.66 15425.38,-676.52 15426.31,-683.46"/>
 </g>
-<!-- Graph::get_clique_edge_names&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::get_clique_edge_names&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge715" class="edge">
-<title>Graph::get_clique_edge_names&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::get_clique_edge_names&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M13870.32,-791.91C13845.02,-782.92 13815.09,-770.7 13790,-756 13768.2,-743.23 13765.61,-735.93 13746,-720 13686.62,-671.78 13670.77,-660.96 13612,-612 13581.4,-586.51 13496.61,-513.12 13452.48,-474.85"/>
 <polygon fill="black" stroke="black" points="13454.59,-472.05 13444.74,-468.14 13450,-477.33 13454.59,-472.05"/>
 </g>
@@ -6177,9 +6177,9 @@
 <polygon fill="none" stroke="black" points="12542,-540 12342,-540 12342,-504 12542,-504 12542,-540"/>
 <text text-anchor="middle" x="12442" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_source_names</text>
 </g>
-<!-- Graph::get_source_names&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::get_source_names&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge727" class="edge">
-<title>Graph::get_source_names&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::get_source_names&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M12542.02,-505.53C12546.74,-504.97 12551.42,-504.46 12556,-504 12861.1,-473.35 12939.18,-490.42 13245,-468 13256.98,-467.12 13269.4,-466.13 13281.86,-465.07"/>
 <polygon fill="black" stroke="black" points="13282.2,-468.55 13291.86,-464.21 13281.6,-461.58 13282.2,-468.55"/>
 </g>
@@ -6225,9 +6225,9 @@
 <polygon fill="none" stroke="black" points="12150.5,-540 11917.5,-540 11917.5,-504 12150.5,-504 12150.5,-540"/>
 <text text-anchor="middle" x="12034" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::get_destination_names</text>
 </g>
-<!-- Graph::get_destination_names&#45;&gt;Graph::get_node_name_by_node_id -->
+<!-- Graph::get_destination_names&#45;&gt;Graph::get_node_name_from_node_id -->
 <g id="edge732" class="edge">
-<title>Graph::get_destination_names&#45;&gt;Graph::get_node_name_by_node_id</title>
+<title>Graph::get_destination_names&#45;&gt;Graph::get_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M12150.66,-504.84C12153.8,-504.54 12156.92,-504.26 12160,-504 12640.8,-463.69 12763.49,-498.7 13245,-468 13256.99,-467.24 13269.41,-466.32 13281.88,-465.32"/>
 <polygon fill="black" stroke="black" points="13282.2,-468.8 13291.88,-464.49 13281.62,-461.82 13282.2,-468.8"/>
 </g>
@@ -6579,9 +6579,9 @@
 <path fill="none" stroke="black" d="M1094.72,-431.7C1095.93,-423.98 1097.39,-414.71 1098.74,-406.11"/>
 <polygon fill="black" stroke="black" points="1102.22,-406.53 1100.31,-396.1 1095.3,-405.44 1102.22,-406.53"/>
 </g>
-<!-- Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge772" class="edge">
-<title>Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M7421.97,-513.48C7373.41,-510.08 7314.19,-506.32 7261,-504 6415.05,-467.07 5399.13,-455.32 5024.28,-452.09"/>
 <polygon fill="black" stroke="black" points="5024.22,-448.59 5014.19,-452 5024.16,-455.59 5024.22,-448.59"/>
 </g>
@@ -6597,9 +6597,9 @@
 <polygon fill="none" stroke="black" points="6695.5,-540 6464.5,-540 6464.5,-504 6695.5,-504 6695.5,-540"/>
 <text text-anchor="middle" x="6580" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::par_iter_node_degrees</text>
 </g>
-<!-- Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge774" class="edge">
-<title>Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M6464.49,-514.45C6403.66,-511.11 6327.8,-507.1 6260,-504 5809.93,-483.43 5277.27,-464.58 5024.03,-455.95"/>
 <polygon fill="black" stroke="black" points="5024.14,-452.45 5014.03,-455.61 5023.9,-459.45 5024.14,-452.45"/>
 </g>
@@ -6645,9 +6645,9 @@
 <path fill="none" stroke="black" d="M1573.45,-505.71C1568.57,-505.13 1563.74,-504.56 1559,-504 1457.85,-492.12 1344.31,-479.22 1254.52,-469.13"/>
 <polygon fill="black" stroke="black" points="1254.85,-465.64 1244.52,-468 1254.07,-472.6 1254.85,-465.64"/>
 </g>
-<!-- Graph::iter_node_neighbours&#45;&gt;Graph::get_unchecked_node_name_by_node_id -->
+<!-- Graph::iter_node_neighbours&#45;&gt;Graph::get_unchecked_node_name_from_node_id -->
 <g id="edge782" class="edge">
-<title>Graph::iter_node_neighbours&#45;&gt;Graph::get_unchecked_node_name_by_node_id</title>
+<title>Graph::iter_node_neighbours&#45;&gt;Graph::get_unchecked_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M10164.29,-576.82C10167.56,-576.52 10170.8,-576.25 10174,-576 10708.48,-534.93 12053.68,-603.17 12586,-540 12658.38,-531.41 12673.75,-513.63 12746,-504 13108.03,-455.72 13208.16,-536.05 13567,-468 13587.3,-464.15 13699.44,-424.5 13769.35,-399.43"/>
 <polygon fill="black" stroke="black" points="13770.69,-402.67 13778.92,-396 13768.32,-396.08 13770.69,-402.67"/>
 </g>
@@ -6693,9 +6693,9 @@
 <path fill="none" stroke="black" d="M12037.08,-432.99C12040.42,-432.64 12043.73,-432.31 12047,-432 12298.03,-407.89 12593.89,-391.59 12749.25,-383.96"/>
 <polygon fill="black" stroke="black" points="12749.46,-387.45 12759.28,-383.47 12749.12,-380.46 12749.46,-387.45"/>
 </g>
-<!-- Graph::iter_node_ids&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id -->
+<!-- Graph::iter_node_ids&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id -->
 <g id="edge790" class="edge">
-<title>Graph::iter_node_ids&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id</title>
+<title>Graph::iter_node_ids&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M15162.25,-576.99C15165.2,-576.62 15168.12,-576.29 15171,-576 15709.26,-522.14 17064.39,-559.16 17605,-540 17641.22,-538.72 17679.85,-536.9 17716.98,-534.92"/>
 <polygon fill="black" stroke="black" points="17717.61,-538.39 17727.41,-534.36 17717.23,-531.4 17717.61,-538.39"/>
 </g>
@@ -6705,9 +6705,9 @@
 <path fill="none" stroke="black" d="M14997.92,-581.62C14978.32,-579.33 14957.45,-577.25 14938,-576 14075.97,-520.58 11913.63,-585.32 11051,-540 10549.39,-513.65 10427.24,-464.54 9926,-432 9455.61,-401.46 9337.06,-413.38 8866,-396 8759.2,-392.06 8637.4,-387.17 8551.29,-383.65"/>
 <polygon fill="black" stroke="black" points="8551.37,-380.15 8541.23,-383.24 8551.08,-387.14 8551.37,-380.15"/>
 </g>
-<!-- Graph::iter_nodes&#45;&gt;Graph::get_node_type_name_by_node_id -->
+<!-- Graph::iter_nodes&#45;&gt;Graph::get_node_type_name_from_node_id -->
 <g id="edge792" class="edge">
-<title>Graph::iter_nodes&#45;&gt;Graph::get_node_type_name_by_node_id</title>
+<title>Graph::iter_nodes&#45;&gt;Graph::get_node_type_name_from_node_id</title>
 <path fill="none" stroke="black" d="M15464.95,-647.88C15440.67,-638.22 15410.16,-626.09 15384.49,-615.88"/>
 <polygon fill="black" stroke="black" points="15385.5,-612.51 15374.91,-612.07 15382.91,-619.02 15385.5,-612.51"/>
 </g>
@@ -6759,9 +6759,9 @@
 <path fill="none" stroke="black" d="M11766.77,-372.11C11696.27,-368.13 11591.99,-362.74 11501,-360 9720.61,-306.42 7556.45,-305.79 6982.41,-306.67"/>
 <polygon fill="black" stroke="black" points="6982.01,-303.17 6972.02,-306.69 6982.02,-310.17 6982.01,-303.17"/>
 </g>
-<!-- Graph::iter_edges&#45;&gt;Graph::get_unchecked_node_name_by_node_id -->
+<!-- Graph::iter_edges&#45;&gt;Graph::get_unchecked_node_name_from_node_id -->
 <g id="edge801" class="edge">
-<title>Graph::iter_edges&#45;&gt;Graph::get_unchecked_node_name_by_node_id</title>
+<title>Graph::iter_edges&#45;&gt;Graph::get_unchecked_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M14067.96,-432.94C14021.63,-422.61 13961.18,-409.14 13912.29,-398.24"/>
 <polygon fill="black" stroke="black" points="13912.88,-394.78 13902.36,-396.02 13911.36,-401.61 13912.88,-394.78"/>
 </g>
@@ -6783,9 +6783,9 @@
 <path fill="none" stroke="black" d="M12842.18,-359.72C12822.64,-338.35 12786.02,-302.97 12746,-288 12631.49,-245.17 11793.61,-236.92 11513.74,-235.36"/>
 <polygon fill="black" stroke="black" points="11513.64,-231.86 11503.62,-235.3 11513.6,-238.86 11513.64,-231.86"/>
 </g>
-<!-- Graph::par_iter_edges&#45;&gt;Graph::get_unchecked_node_name_by_node_id -->
+<!-- Graph::par_iter_edges&#45;&gt;Graph::get_unchecked_node_name_from_node_id -->
 <g id="edge805" class="edge">
-<title>Graph::par_iter_edges&#45;&gt;Graph::get_unchecked_node_name_by_node_id</title>
+<title>Graph::par_iter_edges&#45;&gt;Graph::get_unchecked_node_name_from_node_id</title>
 <path fill="none" stroke="black" d="M13789.87,-431.7C13795.5,-423.47 13802.35,-413.48 13808.57,-404.42"/>
 <polygon fill="black" stroke="black" points="13811.5,-406.33 13814.27,-396.1 13805.73,-402.37 13811.5,-406.33"/>
 </g>
@@ -6969,9 +6969,9 @@
 <path fill="none" stroke="black" d="M11027,-361.31C11022.27,-360.81 11017.59,-360.37 11013,-360 10605.36,-327.17 7672.71,-311.04 6982.3,-307.68"/>
 <polygon fill="black" stroke="black" points="6982.06,-304.17 6972.05,-307.63 6982.03,-311.17 6982.06,-304.17"/>
 </g>
-<!-- Graph::iter_edge_ids_by_node_ids&#45;&gt;Graph::get_minmax_edge_ids_by_node_ids -->
+<!-- Graph::iter_edge_ids_from_node_ids&#45;&gt;Graph::get_minmax_edge_ids_from_node_ids -->
 <g id="edge833" class="edge">
-<title>Graph::iter_edge_ids_by_node_ids&#45;&gt;Graph::get_minmax_edge_ids_by_node_ids</title>
+<title>Graph::iter_edge_ids_from_node_ids&#45;&gt;Graph::get_minmax_edge_ids_from_node_ids</title>
 <path fill="none" stroke="black" d="M442.71,-287.7C444.36,-279.98 446.35,-270.71 448.19,-262.11"/>
 <polygon fill="black" stroke="black" points="451.66,-262.62 450.33,-252.1 444.82,-261.15 451.66,-262.62"/>
 </g>
@@ -7515,9 +7515,9 @@
 <path fill="none" stroke="black" d="M20368.85,-647.97C20425.16,-637.05 20497.97,-622.93 20554.26,-612.01"/>
 <polygon fill="black" stroke="black" points="20555.06,-615.42 20564.21,-610.08 20553.73,-608.55 20555.06,-615.42"/>
 </g>
-<!-- Graph::sample_negatives&#45;&gt;Graph::get_unchecked_node_id_by_node_name -->
+<!-- Graph::sample_negatives&#45;&gt;Graph::get_unchecked_node_id_from_node_name -->
 <g id="edge909" class="edge">
-<title>Graph::sample_negatives&#45;&gt;Graph::get_unchecked_node_id_by_node_name</title>
+<title>Graph::sample_negatives&#45;&gt;Graph::get_unchecked_node_id_from_node_name</title>
 <path fill="none" stroke="black" d="M15525.83,-1456.35C16027.48,-1452.89 18273.87,-1435.68 18418,-1404 18513.82,-1382.94 18620,-1413.11 18620,-1315 18620,-1315 18620,-1315 18620,-1169 18620,-1055.05 18439.8,-1023.33 18513,-936 18571.86,-865.78 18629.59,-930.47 18716,-900 18778.65,-877.9 18797.16,-871.93 18847,-828 18892.37,-788.01 18930.4,-727.43 18949.91,-693.12"/>
 <polygon fill="black" stroke="black" points="18953.09,-694.61 18954.91,-684.18 18946.98,-691.2 18953.09,-694.61"/>
 </g>
@@ -7539,9 +7539,9 @@
 <path fill="none" stroke="black" d="M15525.54,-1456.59C16020.14,-1454.36 18220.34,-1442.32 18523,-1404 18813.2,-1367.25 19545.89,-1119.71 19739,-900 19794.14,-837.26 19849.73,-781.3 19793,-720 19759.56,-683.86 19415.44,-691.27 19334.3,-684.34"/>
 <polygon fill="black" stroke="black" points="19334.47,-680.84 19324.14,-683.18 19333.68,-687.79 19334.47,-680.84"/>
 </g>
-<!-- Graph::sample_negatives&#45;&gt;Graph::has_edge_by_node_ids -->
+<!-- Graph::sample_negatives&#45;&gt;Graph::has_edge_from_node_ids -->
 <g id="edge913" class="edge">
-<title>Graph::sample_negatives&#45;&gt;Graph::has_edge_by_node_ids</title>
+<title>Graph::sample_negatives&#45;&gt;Graph::has_edge_from_node_ids</title>
 <path fill="none" stroke="black" d="M15328.5,-1449.64C15276.61,-1446.07 15211.9,-1442.11 15154,-1440 14409.34,-1412.84 12543.46,-1467.29 11801,-1404 11700.53,-1395.44 11677.45,-1376.82 11577,-1368 11070.44,-1323.54 9797.35,-1344.52 9289,-1332 6423.37,-1261.45 5704.97,-1277.09 2843,-1116 2437.93,-1093.2 2337.3,-1077.74 1933,-1044 1750.71,-1028.79 1705.37,-1022.25 1523,-1008 1464.6,-1003.44 1040.9,-1010.78 997,-972 901.93,-888.02 1022.2,-785.22 1131,-720 1176.21,-692.9 1194.74,-702.74 1244,-684 1298.42,-663.29 1359.34,-635.49 1399.49,-616.51"/>
 <polygon fill="black" stroke="black" points="1401.2,-619.57 1408.73,-612.12 1398.19,-613.25 1401.2,-619.57"/>
 </g>
@@ -7647,9 +7647,9 @@
 <polygon fill="none" stroke="black" points="14135.5,-1116 13970.5,-1116 13970.5,-1080 14135.5,-1080 14135.5,-1116"/>
 <text text-anchor="middle" x="14053" y="-1094.3" font-family="Times,serif" font-size="14.00">Graph::edge_holdout</text>
 </g>
-<!-- Graph::edge_holdout&#45;&gt;Graph::get_unchecked_edge_id_by_node_ids -->
+<!-- Graph::edge_holdout&#45;&gt;Graph::get_unchecked_edge_id_from_node_ids -->
 <g id="edge928" class="edge">
-<title>Graph::edge_holdout&#45;&gt;Graph::get_unchecked_edge_id_by_node_ids</title>
+<title>Graph::edge_holdout&#45;&gt;Graph::get_unchecked_edge_id_from_node_ids</title>
 <path fill="none" stroke="black" d="M13970.32,-1096.51C13005.32,-1090.74 3892.76,-1036.3 2511.17,-1028.05"/>
 <polygon fill="black" stroke="black" points="2511.19,-1024.55 2501.17,-1027.99 2511.15,-1031.55 2511.19,-1024.55"/>
 </g>
@@ -7761,9 +7761,9 @@
 <path fill="none" stroke="black" d="M10612.06,-1223.98C10610.69,-1205.32 10610.77,-1175 10622,-1152 10642.56,-1109.9 10656.52,-1099.77 10699,-1080 10942.91,-966.5 11032.06,-1032.11 11300,-1008 11366.56,-1002.01 11752.31,-979.48 11990.14,-965.79"/>
 <polygon fill="black" stroke="black" points="11990.51,-969.28 12000.29,-965.21 11990.11,-962.29 11990.51,-969.28"/>
 </g>
-<!-- Graph::connected_holdout&#45;&gt;Graph::get_node_degree_by_node_id -->
+<!-- Graph::connected_holdout&#45;&gt;Graph::get_node_degree_from_node_id -->
 <g id="edge947" class="edge">
-<title>Graph::connected_holdout&#45;&gt;Graph::get_node_degree_by_node_id</title>
+<title>Graph::connected_holdout&#45;&gt;Graph::get_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M10512.31,-1231.97C10220.31,-1206.22 9354.08,-1130.97 8634,-1080 7572.95,-1004.89 7307.39,-988.87 6245,-936 6041.32,-925.86 5526.05,-948.64 5328,-900 5149.75,-856.23 5090.86,-827.17 4976,-684 4948.96,-650.29 4904.57,-531.23 4885.35,-477.57"/>
 <polygon fill="black" stroke="black" points="4888.62,-476.29 4881.96,-468.05 4882.02,-478.64 4888.62,-476.29"/>
 </g>
@@ -7797,9 +7797,9 @@
 <path fill="none" stroke="black" d="M10715.75,-1240.59C11036.75,-1238.89 12056.73,-1230.29 12900,-1188 13294.72,-1168.2 13764.16,-1126.23 13960.01,-1107.89"/>
 <polygon fill="black" stroke="black" points="13960.63,-1111.34 13970.26,-1106.93 13959.97,-1104.38 13960.63,-1111.34"/>
 </g>
-<!-- Graph::random_holdout&#45;&gt;Graph::get_unchecked_edge_degreee_by_node_ids -->
+<!-- Graph::random_holdout&#45;&gt;Graph::get_unchecked_edge_degreee_from_node_ids -->
 <g id="edge953" class="edge">
-<title>Graph::random_holdout&#45;&gt;Graph::get_unchecked_edge_degreee_by_node_ids</title>
+<title>Graph::random_holdout&#45;&gt;Graph::get_unchecked_edge_degreee_from_node_ids</title>
 <path fill="none" stroke="black" d="M11847.12,-1164.54C11757.5,-1160.45 11618,-1154.63 11497,-1152 8409.69,-1084.78 7636.56,-1170.56 4549,-1116 4018.4,-1106.62 2690.39,-1093.3 2162,-1044 2059.42,-1034.43 2035.36,-1019.69 1933,-1008 1749.58,-987.05 1539.58,-972.95 1390.26,-964.59"/>
 <polygon fill="black" stroke="black" points="1390.24,-961.08 1380.06,-964.02 1389.85,-968.07 1390.24,-961.08"/>
 </g>
@@ -7839,9 +7839,9 @@
 <path fill="none" stroke="black" d="M12032.83,-1165.92C12381.65,-1154.37 13611.7,-1113.62 13960.3,-1102.07"/>
 <polygon fill="black" stroke="black" points="13960.47,-1105.57 13970.35,-1101.74 13960.24,-1098.57 13960.47,-1105.57"/>
 </g>
-<!-- Graph::node_label_holdout&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id -->
+<!-- Graph::node_label_holdout&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id -->
 <g id="edge960" class="edge">
-<title>Graph::node_label_holdout&#45;&gt;Graph::get_unchecked_node_type_id_by_node_id</title>
+<title>Graph::node_label_holdout&#45;&gt;Graph::get_unchecked_node_type_id_from_node_id</title>
 <path fill="none" stroke="black" d="M21935.85,-591.25C21388.61,-581.98 18822.68,-538.5 18098.65,-526.23"/>
 <polygon fill="black" stroke="black" points="18098.71,-522.73 18088.65,-526.06 18098.59,-529.73 18098.71,-522.73"/>
 </g>
@@ -7947,9 +7947,9 @@
 <path fill="none" stroke="black" d="M15284.82,-1096.36C15495.7,-1094.21 16001.83,-1084.84 16424,-1044 16530.48,-1033.7 16555.45,-1017.57 16662,-1008 17212.46,-958.58 17355.41,-1030.34 17905,-972 17992.64,-962.7 18012.95,-949.74 18100,-936 18221.32,-916.84 18252.72,-919.44 18374,-900 18458.86,-886.4 18672.02,-853.81 18754,-828 18772.59,-822.14 18897.81,-766.86 18914,-756 18933.32,-743.04 18931.2,-730.43 18952,-720 18962.36,-714.81 19096.46,-692.81 19183.96,-678.84"/>
 <polygon fill="black" stroke="black" points="19184.54,-682.29 19193.86,-677.26 19183.44,-675.38 19184.54,-682.29"/>
 </g>
-<!-- Graph::random_subgraph&#45;&gt;Graph::is_trap_node_by_node_id -->
+<!-- Graph::random_subgraph&#45;&gt;Graph::is_trap_node_from_node_id -->
 <g id="edge978" class="edge">
-<title>Graph::random_subgraph&#45;&gt;Graph::is_trap_node_by_node_id</title>
+<title>Graph::random_subgraph&#45;&gt;Graph::is_trap_node_from_node_id</title>
 <path fill="none" stroke="black" d="M15085.35,-1094.52C14890.84,-1089.18 14447.07,-1074.52 14075,-1044 13937.2,-1032.7 13903.97,-1016.95 13766,-1008 13473.03,-988.99 8775.56,-939.69 8482,-936 8308.67,-933.82 5531.09,-938.16 5362,-900 5232.26,-870.72 4900.4,-665.59 4824,-612 4803.87,-597.88 4802.17,-590.06 4782,-576 4765.79,-564.7 4746.96,-553.78 4730.36,-544.83"/>
 <polygon fill="black" stroke="black" points="4731.87,-541.67 4721.4,-540.06 4728.59,-547.85 4731.87,-541.67"/>
 </g>
