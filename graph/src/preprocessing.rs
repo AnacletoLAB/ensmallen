@@ -560,9 +560,11 @@ impl Graph {
                             }
                         });
                 }
-                cooccurrences.iter_mut().for_each(|cooccurrence| {
-                    *cooccurrence /= neighbours_types_number as f64;
-                });
+                if neighbours_types_number > 1 {
+                    cooccurrences.iter_mut().for_each(|cooccurrence| {
+                        *cooccurrence /= neighbours_types_number as f64;
+                    });    
+                }
                 cooccurrences
             }))
     }
@@ -625,9 +627,11 @@ impl Graph {
                             }
                         });
                 }
-                cooccurrences.iter_mut().for_each(|cooccurrence| {
-                    *cooccurrence /= neighbours_types_number as f64;
-                });
+                if neighbours_types_number > 1{
+                    cooccurrences.iter_mut().for_each(|cooccurrence| {
+                        *cooccurrence /= neighbours_types_number as f64;
+                    });    
+                }
                 cooccurrences
             }))
     }
