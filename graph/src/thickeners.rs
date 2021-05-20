@@ -142,7 +142,7 @@ impl Graph {
             .collect::<Vec<Vec<NodeT>>>();
 
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(self.is_directed())
+            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {
                     Ok((src_node_id, dst_node_id, edge_type, weight))
                 })
@@ -152,9 +152,19 @@ impl Graph {
                         .enumerate()
                         .filter(|(_, new_neighbours)| !new_neighbours.is_empty())
                         .map(|(source_node_id, new_neighbours)| {
-                            new_neighbours.into_iter().map(move |destination_node_id| {
-                                Ok((source_node_id as NodeT, destination_node_id, None, None))
-                            })
+                            new_neighbours
+                                .into_iter()
+                                .map(move |destination_node_id| {
+                                    if !self.is_directed() {
+                                        vec![
+                                            Ok((source_node_id as NodeT, destination_node_id, None, None)),
+                                            Ok((destination_node_id, source_node_id as NodeT, None, None)),
+                                        ]
+                                    } else {
+                                        vec![Ok((source_node_id as NodeT, destination_node_id, None, None))]
+                                    }
+                                })
+                                .flatten()
                         })
                         .flatten(),
                 ),
