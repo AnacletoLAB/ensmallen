@@ -70,6 +70,7 @@ mod holdouts;
 mod iter_queries;
 mod iters;
 mod edge_metrics;
+mod thickeners;
 mod modifiers;
 mod operators;
 mod preprocessing;
