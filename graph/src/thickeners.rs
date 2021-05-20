@@ -10,6 +10,7 @@ impl Graph {
     /// # Arguments
     /// * `node_features`: Vec<Vec<f64>> - node_features to use to identify the new neighbours.
     /// * `neighbours_number`: Option<NodeT> - Number of neighbours to add.
+    /// * `distance_name`: Option<&str> - Name of distance to use. Can either be L2 or COSINE. By default COSINE.
     /// * `verbose`: Option<bool> - Whether to show loading bars.
     ///
     /// # Raises
@@ -21,6 +22,7 @@ impl Graph {
         &self,
         node_features: Vec<Vec<f64>>,
         neighbours_number: Option<NodeT>,
+        distance_name: Option<&str>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
         self.must_have_nodes()?;
@@ -50,6 +52,7 @@ impl Graph {
         }
 
         let verbose = verbose.unwrap_or(true);
+        let distance_name = distance_name.unwrap_or("COSINE");
         let neighbours_number =
             neighbours_number.unwrap_or(self.get_node_degrees_mean()?.ceil() as NodeT);
         if neighbours_number == 0 {
@@ -65,18 +68,42 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(|source_node_id| {
-                let current_node_metric = &node_features[source_node_id as usize];
+                let current_node_features = &node_features[source_node_id as usize];
                 let mut closest_nodes_distances = vec![f64::INFINITY; neighbours_number as usize];
                 let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
                 node_features.iter().zip(self.iter_node_ids()).for_each(
                     |(node_node_features, destination_node_id)| {
-                        // MSE DISTANCE
-                        let distance = node_node_features
-                            .iter()
-                            .zip(current_node_metric.iter())
-                            .map(|(&left, &right)| (left - right).pow(2))
-                            .sum();
-                        // COSINE DISTANCE
+                        if source_node_id == destination_node_id {
+                            return;
+                        }
+                        let distance = match distance_name {
+                            "L2" => current_node_features
+                                .iter()
+                                .zip(node_node_features.iter())
+                                .map(|(&left, &right)| (left - right).pow(2))
+                                .sum(),
+                            "COSINE" => {
+                                let numerator = current_node_features
+                                    .iter()
+                                    .zip(node_node_features.iter())
+                                    .map(|(&left, &right)| left * right)
+                                    .sum::<f64>();
+                                let denominator_left = current_node_features
+                                    .iter()
+                                    .map(|&left| left.pow(2))
+                                    .sum::<f64>()
+                                    .sqrt();
+                                let denominator_right = node_node_features
+                                    .iter()
+                                    .map(|&right| right.pow(2))
+                                    .sum::<f64>()
+                                    .sqrt();
+                                numerator / (denominator_left * denominator_right)
+                            }
+                            _ => {
+                                unreachable!("The check for the distance name should happen above.")
+                            }
+                        };
                         let (i, max_distance) = unsafe {
                             closest_nodes_distances
                                 .iter()
