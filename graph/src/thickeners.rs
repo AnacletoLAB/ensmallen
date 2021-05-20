@@ -98,7 +98,7 @@ impl Graph {
                                     .map(|&right| right.pow(2))
                                     .sum::<f64>()
                                     .sqrt();
-                                numerator / (denominator_left * denominator_right)
+                                numerator / (denominator_left * denominator_right + f64::EPSILON)
                             }
                             _ => {
                                 unreachable!("The check for the distance name should happen above.")
