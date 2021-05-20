@@ -1,6 +1,7 @@
 use super::*;
 use bitvec::prelude::*;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
+use num_traits::Pow;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -506,22 +507,41 @@ impl Graph {
             })
     }
 
-    /// Returns node types co-occurence within given distance k.
+    /// Returns node types co-occurence within given maximal distance.
     ///
     /// # Arguments
-    /// * `k`: usize - The distance to consider for the cooccurrences.
+    /// * `maximal_distance`: Option<usize> - The distance to consider for the cooccurrences. The default value is 3.
+    /// * `k1`: Option<f64> - The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// * `b`: Option<f64> - The b parameter from okapi. Tipicaly 0.75.
     /// * `verbose`: Option<bool> - Whether to show loading bar.
     ///
     /// # Raises
     /// * If the graph does not have node types.
     pub fn par_iter_node_types_cooccurrence_matrix(
         &self,
-        k: usize,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
         verbose: Option<bool>,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<f64>> + '_, String> {
         self.must_have_node_types()?;
+        self.must_have_nodes()?;
+        let maximal_distance = maximal_distance.unwrap_or(3);
+        let k1 = k1.unwrap_or(1.5);
+        let b = b.unwrap_or(0.75);
         let node_types_number = self.get_node_types_number().unwrap() as usize;
         let nodes_number = self.get_nodes_number() as usize;
+        let inverse_document_frequencies = self
+            .iter_node_type_counts()?
+            .map(|node_type_count| {
+                ((nodes_number as f64 - node_type_count as f64 + 0.5)
+                    / (node_type_count as f64 + 0.5)
+                    + 1.0)
+                    .ln()
+            })
+            .collect::<Vec<f64>>();
+        // The average degree is a relatively good proxy of the average cardinality of the neighbourshoods.
+        let average_degree = (self.get_node_degrees_mean().unwrap() + 1.0).pow(maximal_distance as f64);
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing node types co-occurrence",
@@ -555,82 +575,23 @@ impl Graph {
                                     cooccurrences[node_type as usize] += 1.0 / distance as f64;
                                 });
                             }
-                            if new_distance <= k {
+                            if new_distance <= maximal_distance {
                                 neighbours_stack.push_front((neighbour_node_id, new_distance));
                             }
                         });
                 }
-                if neighbours_types_number > 1 {
-                    cooccurrences.iter_mut().for_each(|cooccurrence| {
-                        *cooccurrence /= neighbours_types_number as f64;
-                    });    
-                }
-                cooccurrences
-            }))
-    }
-
-    /// Returns edge types co-occurence within given distance k.
-    ///
-    /// # Arguments
-    /// * `k`: usize - The distance to consider for the cooccurrences.
-    /// * `verbose`: Option<bool> - Whether to show loading bar.
-    ///
-    /// # Raises
-    /// * If the graph does not have edge types.
-    pub fn par_iter_edge_types_cooccurrence_matrix(
-        &self,
-        k: usize,
-        verbose: Option<bool>,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<f64>> + '_, String> {
-        self.must_have_edge_types()?;
-        let edge_types_number = self.get_edge_types_number().unwrap() as usize;
-        let nodes_number = self.get_nodes_number() as usize;
-        let pb = get_loading_bar(
-            verbose.unwrap_or(true),
-            "Computing edge types co-occurrence",
-            nodes_number,
-        );
-        Ok(self
-            .par_iter_node_ids()
-            .progress_with(pb)
-            .map(move |node_id| {
-                let mut cooccurrences = vec![0.0; edge_types_number];
-                let mut neighbours_types_number: NodeT = 0;
-                let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
-                neighbours_stack.push_front((node_id, 1));
-                let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
-                unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
-                while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
-                    let new_distance = distance + 1;
-                    self.iter_unchecked_edge_ids_from_source_node_id(current_node_id)
-                        .into_iter()
-                        .zip(
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                current_node_id,
-                            ),
-                        )
-                        .for_each(|(edge_id, neighbour_node_id)| {
-                            if visited[neighbour_node_id as usize] {
-                                return;
-                            }
-                            unsafe {
-                                *visited.get_unchecked_mut(neighbour_node_id as usize) = true
-                            };
-                            if let Some(edge_type) =
-                                self.get_unchecked_edge_type_id_from_edge_id(edge_id as EdgeT)
-                            {
-                                neighbours_types_number += 1;
-                                cooccurrences[edge_type as usize] += 1.0 / distance as f64;
-                            }
-                            if new_distance <= k {
-                                neighbours_stack.push_front((neighbour_node_id, new_distance));
-                            }
+                if neighbours_types_number > 0 {
+                    cooccurrences
+                        .iter_mut()
+                        .enumerate()
+                        .for_each(|(node_type, cooccurrence)| {
+                            *cooccurrence = inverse_document_frequencies[node_type]
+                                * ((*cooccurrence * (k1 + 1.0))
+                                    / (*cooccurrence
+                                        + k1 * (1.0 - b
+                                            + b * neighbours_types_number as f64
+                                                / average_degree)));
                         });
-                }
-                if neighbours_types_number > 1{
-                    cooccurrences.iter_mut().for_each(|cooccurrence| {
-                        *cooccurrence /= neighbours_types_number as f64;
-                    });    
                 }
                 cooccurrences
             }))
