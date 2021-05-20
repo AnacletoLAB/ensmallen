@@ -439,10 +439,18 @@ impl Graph {
             Some(true),
             Some(false),
         );
+        debug_assert!(
+            root_eccentricity != NodeT::MAX,
+            "The central node eccentricity cannot be infinite!"
+        );
+        debug_assert!(
+            root_eccentricity != 0,
+            "The central node eccentricity cannot be zero!"
+        );
         let mut lower_bound_diameter = root_eccentricity;
         let distances = unsafe { distances.unwrap_unchecked() };
         let mut upper_bound_diameter = 2 * root_eccentricity;
-        while lower_bound_diameter != upper_bound_diameter {
+        while lower_bound_diameter < upper_bound_diameter {
             if let Some(maximal_eccentricity) = distances
                 .par_iter()
                 .enumerate()
@@ -452,6 +460,18 @@ impl Graph {
                 })
                 .max()
             {
+                debug_assert!(
+                    maximal_eccentricity != NodeT::MAX,
+                    "The maximal eccentricity here cannot be infinite!"
+                );
+                debug_assert!(
+                    maximal_eccentricity != 0,
+                    "The maximal eccentricity here cannot be zero!"
+                );
+                debug_assert!(
+                    root_eccentricity != 0,
+                    "The root eccentricity cannot be zero!"
+                );
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
                 root_eccentricity -= 1;
                 upper_bound_diameter = 2 * root_eccentricity;
@@ -470,7 +490,7 @@ impl Graph {
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
         let mut lower_bound_diameter = root_eccentricity;
         let mut upper_bound_diameter = 2.0 * root_eccentricity;
-        while upper_bound_diameter - lower_bound_diameter > f64::EPSILON {
+        while upper_bound_diameter < lower_bound_diameter {
             if let Some(maximal_eccentricity) = distances
                 .par_iter()
                 .enumerate()
