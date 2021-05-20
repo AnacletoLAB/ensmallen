@@ -70,11 +70,13 @@ impl Graph {
                 let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
                 node_features.iter().zip(self.iter_node_ids()).for_each(
                     |(node_node_features, destination_node_id)| {
+                        // MSE DISTANCE
                         let distance = node_node_features
                             .iter()
                             .zip(current_node_metric.iter())
                             .map(|(&left, &right)| (left - right).pow(2))
                             .sum();
+                        // COSINE DISTANCE
                         let (i, max_distance) = unsafe {
                             closest_nodes_distances
                                 .iter()
