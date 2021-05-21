@@ -430,8 +430,11 @@ impl Graph {
     ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_unweighted_ifub(&self) -> NodeT {
+    fn get_unweighted_ifub(&self) -> f64 {
         let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
+        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
+            return f64::INFINITY;
+        }
         let (distances, _, mut root_eccentricity, _, _) = self.get_unchecked_breath_first_search(
             most_central_node_id,
             None,
@@ -477,7 +480,7 @@ impl Graph {
                 upper_bound_diameter = 2 * root_eccentricity;
             }
         }
-        lower_bound_diameter
+        lower_bound_diameter as f64
     }
 
     /// Returns diameter of an UNDIRECTED and WEIGHTED graph.
@@ -486,6 +489,9 @@ impl Graph {
     /// This method is based on the algorithm described in ["On Computing the Diameter of Real-World Directed (Weighted) Graphs" by Crescenzi et al](https://link.springer.com/chapter/10.1007/978-3-642-30850-5_10).
     fn get_weighted_ifub(&self) -> f64 {
         let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
+        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
+            return f64::INFINITY;
+        }
         let (distances, _, mut root_eccentricity, _, _) = self
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
         let mut lower_bound_diameter = root_eccentricity;
@@ -563,7 +569,7 @@ impl Graph {
                 .max()
                 .unwrap_or(0) as f64)
         } else {
-            Ok(self.get_unweighted_ifub() as f64)
+            Ok(self.get_unweighted_ifub())
         }
     }
 

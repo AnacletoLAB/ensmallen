@@ -14,6 +14,11 @@
 //!
 //!
 //! ```
+//! # Definitions
+//! * `edge`: an arch between to nodes
+//! * `selfloop`: An edge which source and destination are equal
+//! * `singleton`: A node not connected to any other nodes, this includes also the "special" case of a node with only self-loops
+
 #![warn(unused_macros)]
 #![feature(map_first_last)]
 #![type_length_limit = "3764086"]

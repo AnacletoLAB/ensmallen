@@ -105,3 +105,27 @@ pub fn parse_weight(weight: String) -> Result<WeightT, String> {
         .parse::<WeightT>()
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }
+
+
+pub trait ArgMax<T> {
+    fn argmax(&self) -> Option<(usize, T)>; 
+}
+
+impl<T: PartialOrd + Copy> ArgMax<T> for Vec<T> {
+    fn argmax(&self) -> Option<(usize, T)> {
+        self.iter()
+            .enumerate()
+            .fold(None, |current_max, (i, &value)| {
+                current_max.map_or(
+                    Some((i, value)),
+                    |(j, current_max_value)| {
+                        Some(if value > current_max_value {
+                            (i, value)
+                        } else {
+                            (j, current_max_value)
+                        })
+                    },
+                )
+            })
+    }
+}

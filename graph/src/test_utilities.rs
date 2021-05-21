@@ -1428,6 +1428,46 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), Stri
     Ok(())
 }
 
+pub fn test_graph_diameter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+    // TODO! update this when we will support the graph diameter on directed graphs
+    if graph.is_directed(){
+        return Ok(());
+    }
+    let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
+
+    let verbose = Some(verbose);
+    match n_of_components {
+        0 => {
+            // on an empty graph this should always fail
+            assert!(graph.get_unweighted_diameter(Some(false), verbose).is_err());
+            assert!(graph.get_unweighted_diameter(Some(true), verbose).is_err());
+        }
+
+        1 => {
+            // by definition the diameter of a graph with a single component
+            // cannot be infinite unless it's just a singleton.
+            if graph.get_nodes_number() == 1 {
+                assert_eq!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
+                assert_eq!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+            } else {
+                assert_ne!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
+                assert_ne!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+            }
+        } 
+
+        _ => {
+            assert_eq!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
+
+            // if all the nodes are singletons then the diameter should be infinite
+            if biggest == 1 {
+                assert_eq!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+            }
+        }
+    }
+
+    Ok(())
+}
+
 /// Executes near-complete test of all functions for the given graph.
 fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     warn!("Starting default test suite.");
@@ -1453,6 +1493,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     warn!("Testing the spanning arborescences.");
     let _ = test_spanning_arborescence_bader(graph, verbose);
+
+    warn!("Testing the graph diameter.");
+    let _  = test_graph_diameter(graph, verbose);
 
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);
