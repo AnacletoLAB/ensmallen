@@ -2,6 +2,24 @@ use super::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::Pow;
 use rayon::prelude::*;
+use std::convert::TryFrom;
+
+pub enum Distance {
+    L2,
+    Cosine,
+}
+
+impl TryFrom<&str> for Distance {
+    type Error = String;
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
+        match value {
+            "L2" => Ok(Distance::L2),
+            "COSINE" =>  Ok(Distance::Cosine),
+            _ => Err(format!("Unknown distance metric {}", value))
+        }
+    }
+}
 
 /// # Methods to thicken the graph.
 impl Graph {
@@ -52,7 +70,6 @@ impl Graph {
         }
 
         let verbose = verbose.unwrap_or(true);
-        let distance_name = distance_name.unwrap_or("COSINE");
         let neighbours_number =
             neighbours_number.unwrap_or(self.get_node_degrees_mean()?.ceil() as NodeT);
         if neighbours_number == 0 {
@@ -64,6 +81,42 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
 
+        let distance_metric = match Distance::try_from(distance_name.unwrap_or("COSINE"))? {
+            Distance::L2 => {
+                |current_node_features: &Vec<f64>, node_node_features: &Vec<f64>| -> f64 {
+                    current_node_features
+                    .iter()
+                    .zip(node_node_features.iter())
+                    .map(|(&left, &right)| (left - right).pow(2))
+                    .sum()
+                }
+            }
+            Distance::Cosine => {
+                |current_node_features: &Vec<f64>, node_node_features: &Vec<f64>| -> f64 {
+                    let numerator = current_node_features
+                        .iter()
+                        .zip(node_node_features.iter())
+                        .map(|(&left, &right)| left * right)
+                        .sum::<f64>();
+                    let denominator_left = current_node_features
+                        .iter()
+                        .map(|&left| left.pow(2))
+                        .sum::<f64>()
+                        .sqrt();
+                    let denominator_right = node_node_features
+                        .iter()
+                        .map(|&right| right.pow(2))
+                        .sum::<f64>()
+                        .sqrt();
+                    numerator / (denominator_left * denominator_right + f64::EPSILON)
+                }
+            }
+            _ => {
+                unreachable!("The check for the distance name should happen above.")
+            }
+        };
+
+
         let new_edges = self
             .par_iter_node_ids()
             .progress_with(pb)
@@ -71,39 +124,14 @@ impl Graph {
                 let current_node_features = &node_features[source_node_id as usize];
                 let mut closest_nodes_distances = vec![f64::INFINITY; neighbours_number as usize];
                 let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
-                node_features.iter().zip(self.iter_node_ids()).for_each(
+
+                node_features.iter().zip(self.iter_node_ids())
+                .for_each(
                     |(node_node_features, destination_node_id)| {
                         if source_node_id == destination_node_id {
                             return;
                         }
-                        let distance = match distance_name {
-                            "L2" => current_node_features
-                                .iter()
-                                .zip(node_node_features.iter())
-                                .map(|(&left, &right)| (left - right).pow(2))
-                                .sum(),
-                            "COSINE" => {
-                                let numerator = current_node_features
-                                    .iter()
-                                    .zip(node_node_features.iter())
-                                    .map(|(&left, &right)| left * right)
-                                    .sum::<f64>();
-                                let denominator_left = current_node_features
-                                    .iter()
-                                    .map(|&left| left.pow(2))
-                                    .sum::<f64>()
-                                    .sqrt();
-                                let denominator_right = node_node_features
-                                    .iter()
-                                    .map(|&right| right.pow(2))
-                                    .sum::<f64>()
-                                    .sqrt();
-                                numerator / (denominator_left * denominator_right + f64::EPSILON)
-                            }
-                            _ => {
-                                unreachable!("The check for the distance name should happen above.")
-                            }
-                        };
+                        let distance = distance_metric(current_node_features, node_node_features);
                         let (i, max_distance) = unsafe {
                             closest_nodes_distances
                                 .iter()
