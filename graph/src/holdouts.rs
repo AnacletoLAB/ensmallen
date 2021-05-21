@@ -906,14 +906,14 @@ impl Graph {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
-        let not_singleton_nodes_number = self.get_not_singleton_nodes_number();
-        if nodes_number > not_singleton_nodes_number {
+        let connected_nodes_number = self.get_connected_nodes_number();
+        if nodes_number > connected_nodes_number {
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
                     "number of nodes ({}) that have edges in current graph."
                 ),
-                nodes_number, not_singleton_nodes_number
+                nodes_number, connected_nodes_number
             ));
         }
 

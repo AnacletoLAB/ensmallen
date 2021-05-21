@@ -11,21 +11,19 @@ use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns iterator over degree centrality for all nodes.
-    pub fn iter_degree_centrality(&self) -> Box<dyn Iterator<Item = f64> + '_> {
-        if self.has_nodes() {
-            let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };
-            Box::new(
-                self.iter_node_degrees()
-                    .map(move |degree| degree as f64 / max_degree),
-            )
-        } else {
-            Box::new(::std::iter::empty())
-        }
+    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
+        self.must_have_edges()?;
+
+        let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };
+        Ok(
+            self.iter_node_degrees()
+                .map(move |degree| degree as f64 / max_degree),
+        )
     }
 
     /// Returns vector of degree centrality for all nodes.
-    pub fn get_degree_centrality(&self) -> Vec<f64> {
-        self.iter_degree_centrality().collect()
+    pub fn get_degree_centrality(&self) -> Result<Vec<f64>, String> {
+        Ok(self.iter_degree_centrality()?.collect())
     }
 
     /// Return closeness centrality of the requested node.

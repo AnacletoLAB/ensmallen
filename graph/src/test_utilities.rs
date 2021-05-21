@@ -322,6 +322,25 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         "The cached minimum degree does not match the one computed from the node degrees."
     );
 
+    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {
+        assert!(graph.has_singleton_nodes());
+    }
+
+    if graph.has_singleton_nodes() {
+        assert!(graph.unique_sources.is_some());
+    }
+
+    assert_eq!(
+        graph.singleton_nodes_with_selfloops.is_some(),
+        graph.has_singleton_nodes_with_selfloops(),
+    );
+
+
+    assert_eq!(
+        graph.singleton_nodes_with_selfloops.as_ref().map_or(0, |x| x.len() as NodeT),
+        graph.get_singleton_nodes_with_selfloops_number(),
+    );
+
     // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(
         graph
@@ -365,9 +384,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     assert_eq!(
-        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
+        graph.get_connected_nodes_number() + graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),
         graph.get_nodes_number(),
         "Sum of singleton and non singleton nodes number does not match."
+    );
+
+    assert_eq!(
+        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),
+        "Sum of singleton and singleton with selfloops does not match the number of disconnected nodes."
     );
 
     warn!("Running connected components tests.");
@@ -570,7 +594,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 }
 
 pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let node_degree_centralities = graph.get_degree_centrality();
+    let node_degree_centralities = graph.get_degree_centrality()?;
     assert_eq!(
         node_degree_centralities.len(),
         graph.get_nodes_number() as usize
@@ -969,10 +993,10 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
 }
 
 pub fn test_subgraph_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
+    let expected_nodes = graph.get_connected_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
+    assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
 }
 
@@ -1314,9 +1338,9 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
         );
         assert!(graph_without_given_node_type_name_result.is_ok());
         let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
-        assert!(graph_without_given_node_type_name.has_nodes());
         if graph.get_node_types_number()? > 1 && !graph.has_multilabel_node_types()? {
             assert!(graph_without_given_node_type_name.has_node_types());
+            assert!(graph_without_given_node_type_name.has_nodes());
         }
         assert!(!graph_without_given_node_type_name.has_node_type_name(node_type_name.as_str()));
     }

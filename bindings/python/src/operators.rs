@@ -42,46 +42,6 @@ impl PyObjectProtocol for EnsmallenGraph {
     fn __hash__(&'p self) -> PyResult<isize> {
         Ok(self.hash() as isize)
     }
-    /*
-    fn __getattr__(&'p self, name: String) -> PyResult<()> {
-        let gil = Python::acquire_gil();
-        let py = gil.python();
-
-        // BLACK MAGIC START
-        let attrs = unsafe {py.from_owned_ptr::<PyList>(pyo3::ffi::PyObject_Dir(
-            ((self as *const EnsmallenGraph as usize) - 24) as _
-        ))};
-        // BLACK MAGIC END
-
-        println!("VIVO");
-
-        let mut min = usize::MAX;
-        let mut closest = "METHOD NOT FOUND".to_string();
-
-        for attr in attrs.iter() {
-            let attr_name = attr.extract::<String>().map_err(|_| {
-                PyTypeError::new_err(format!(
-                    "The value passed {} cannot be casted as from {} to String",
-                    attr,
-                    attr.get_type().name().unwrap(),
-                ))
-            })?;
-            let distance = edit_distance(&name, &attr_name);
-
-            if distance < min {
-                min = distance;
-                closest = attr_name;
-            }
-        };
-
-        Err(PyTypeError::new_err(
-            format!(
-                "The method or attribute {} does not exists, did you mean {}?",
-                name, closest
-            )
-        ))
-    }
-    */
 }
 
 #[pymethods]

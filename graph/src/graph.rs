@@ -81,7 +81,7 @@ pub struct Graph {
     /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
     pub(crate) selfloop_number: EdgeT,
     /// Number of nodes that have at least an edge inbound or outbound.
-    pub(crate) not_singleton_nodes_number: NodeT,
+    pub(crate) connected_nodes_number: NodeT,
     /// Number of singleton nodes that have a self-loop
     pub(crate) singleton_nodes_with_selfloops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
@@ -122,7 +122,7 @@ impl Graph {
         directed: bool,
         unique_selfloop_number: NodeT,
         selfloop_number: EdgeT,
-        not_singleton_nodes_number: NodeT,
+        connected_nodes_number: NodeT,
         singleton_nodes_with_selfloops_number: NodeT,
         unique_edges_number: EdgeT,
         edges: EliasFano,
@@ -143,7 +143,7 @@ impl Graph {
             directed,
             unique_selfloop_number,
             selfloop_number,
-            not_singleton_nodes_number,
+            connected_nodes_number,
             singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,

@@ -523,7 +523,7 @@ pub(crate) fn build_edges(
     let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
-    let mut not_singleton_node_number: NodeT =
+    let mut connected_nodes_number: NodeT =
         if might_have_singletons || might_have_singletons_with_selfloops {
             0
         } else {
@@ -634,7 +634,7 @@ pub(crate) fn build_edges(
                         if !*ptr {
                             *ptr = true;
                             if !selfloop || singleton_nodes_with_selfloops.is_none() {
-                                not_singleton_node_number += 1;
+                                connected_nodes_number += 1;
                             } else {
                                 if let Some(bitmap) = &mut singleton_nodes_with_selfloops {
                                     bitmap.insert(*node);
@@ -646,7 +646,7 @@ pub(crate) fn build_edges(
                                 .as_mut()
                                 .map_or(false, |bitmap| bitmap.remove(*node))
                         {
-                            not_singleton_node_number += 1;
+                            connected_nodes_number += 1;
                         }
                     }
                 }
@@ -727,10 +727,10 @@ pub(crate) fn build_edges(
         }
     }
 
-    if not_singleton_node_number > nodes_number {
+    if connected_nodes_number > nodes_number {
         panic!(
             "There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'",
-            not_singleton_node_number, nodes_number
+            connected_nodes_number, nodes_number
         );
     }
 
@@ -752,7 +752,7 @@ pub(crate) fn build_edges(
     // nodes with edges now to normalize the returned values.
     if might_have_singletons
         && unique_sources.is_none()
-        && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
+        && nodes_number != connected_nodes_number + singleton_nodes_with_selfloops_number
     {
         unique_sources = not_singleton_nodes
             .as_ref()
@@ -760,7 +760,7 @@ pub(crate) fn build_edges(
                 Ok(Some(EliasFano::from_iter(
                     nsns.iter_ones().into_iter().map(|x| x as u64),
                     nodes_number as u64,
-                    not_singleton_node_number as usize
+                    connected_nodes_number as usize
                         + singleton_nodes_with_selfloops_number as usize,
                 )?))
             })?;
@@ -769,11 +769,11 @@ pub(crate) fn build_edges(
     if !directed
         && unique_sources
             .as_ref()
-            .map_or(false, |x| not_singleton_node_number > x.len() as NodeT)
+            .map_or(false, |x| connected_nodes_number > x.len() as NodeT)
     {
         panic!(
             "There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'",
-            not_singleton_node_number, unique_sources.unwrap().len()
+            connected_nodes_number, unique_sources.unwrap().len()
         );
     }
 
@@ -788,10 +788,13 @@ pub(crate) fn build_edges(
     // If we have found singleton nodes, information that when there are
     // singleton nodes we know only after parsing both the node list and the
     // edge list, we need to update the min node degree to 0.
-    if nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
+    if nodes_number > connected_nodes_number + singleton_nodes_with_selfloops_number
+        // this check is needed only if the graph is directed to verify if it 
+        // has trap nodes, when there are trapnodes the number of unique sources
+        // is less than the number of nodes
         || unique_sources
             .as_ref()
-            .map_or(false, |us| us.len() as NodeT != nodes_number)
+            .map_or(false, |us| (us.len() as NodeT) < nodes_number)
     {
         min_node_degree = 0;
     }
@@ -804,7 +807,7 @@ pub(crate) fn build_edges(
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
-        not_singleton_node_number,
+        connected_nodes_number,
         singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,

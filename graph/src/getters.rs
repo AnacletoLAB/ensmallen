@@ -38,9 +38,22 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_not_singleton_nodes_number()
+        self.get_nodes_number() - self.get_connected_nodes_number() - self.get_singleton_nodes_with_selfloops_number()
     }
 
+    /// Returns number of disconnected nodes within the graph.
+    /// A Disconnected node is a node which is nor a singleton nor a singleton
+    /// with selfloops.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph contains {} disconnected nodes", graph.get_disconnected_nodes_number());
+    /// ```
+    pub fn get_disconnected_nodes_number(&self) -> NodeT {
+        self.get_nodes_number() - self.get_connected_nodes_number()
+    }
+    
     /// Returns vector of singleton node IDs of the graph.
     ///
     /// # Example
@@ -101,10 +114,10 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
+    /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
     /// ```
-    pub fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.not_singleton_nodes_number
+    pub fn get_connected_nodes_number(&self) -> NodeT {
+        self.connected_nodes_number
     }
 
     /// Returns density of the graph.
@@ -399,7 +412,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_trap_nodes_number(&self) -> EdgeT {
-        (self.get_not_singleton_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
+        (self.get_connected_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
             - self.get_unique_source_nodes_number()) as EdgeT
     }
 

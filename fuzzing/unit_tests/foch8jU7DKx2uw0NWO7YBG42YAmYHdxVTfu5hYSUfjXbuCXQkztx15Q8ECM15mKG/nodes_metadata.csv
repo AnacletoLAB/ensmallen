@@ -1,0 +1,15 @@
+verbose,Some(false)
+separator,Some(",")
+header,Some(false)
+rows_to_skip,Some(0)
+ignore_duplicates,Some(false)
+max_rows_number,None
+default_node_type,None
+node_types_separator,Some("|")
+numeric_node_ids,Some(true)
+numeric_node_type_ids,Some(true)
+skip_node_types_if_unavailable,Some(false)
+nodes_column,None
+nodes_column_number,Some(0)
+node_types_column,None
+node_types_column_number,Some(1)

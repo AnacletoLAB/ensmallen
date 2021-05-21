@@ -203,7 +203,7 @@ impl Graph {
         // (in the case of a multigraph) `singletons with self-loops` for lack of
         // a better term. These nodes are treated as nodes in their own
         // component and their edges (the self-loops) are not added to the tree.
-        if self.has_singleton_nodes() {
+        if self.has_disconnected_nodes() {
             // When there are singleton nodes, the minimum component size
             // surely becomes one.
             min_component_size = 1;
@@ -222,9 +222,9 @@ impl Graph {
                 });
             // We can re-initialize the component sizes as the vector with
             // all ones bit as the singleton nodes number.
-            component_sizes = vec![1; self.get_singleton_nodes_number() as usize];
+            component_sizes = vec![1; self.get_disconnected_nodes_number() as usize];
             // Similarly, the components remapping can be initialized to a range.
-            components_remapping = (0..self.get_singleton_nodes_number()).collect::<Vec<NodeT>>();
+            components_remapping = (0..self.get_disconnected_nodes_number()).collect::<Vec<NodeT>>();
         }
 
         edges.for_each(|(src, dst)| {
@@ -661,7 +661,7 @@ impl Graph {
                         }
 
                         // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singleton_nodes()
+                        if self.has_disconnected_nodes()
                             && (self.is_unchecked_singleton_from_node_id(src)
                                 || self.is_singleton_with_selfloops_from_node_id(src))
                         {

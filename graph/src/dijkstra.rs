@@ -538,6 +538,11 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
+
+        if !self.has_edges() {
+            return Ok(f64::INFINITY);
+        }
+        
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
@@ -589,6 +594,10 @@ impl Graph {
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
         self.must_have_edge_weights()?;
+        
+        if !self.has_edges() {
+            return Ok(f64::INFINITY);
+        }
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 

@@ -111,6 +111,20 @@ impl Graph {
         self.selfloop_number > 0
     }
 
+    /// Returns boolean representing if nodes which are nor singletons nor
+    /// singletons with selfloops.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// assert!(graph_with_singletons.has_disconnected_nodes());
+    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes(Some(false));
+    /// assert!(!graph_without_singletons.has_disconnected_nodes());
+    /// ```
+    pub fn has_disconnected_nodes(&self) -> bool {
+        self.get_disconnected_nodes_number() > 0
+    }
+
     /// Returns boolean representing if graph has singletons.
     ///
     /// # Example

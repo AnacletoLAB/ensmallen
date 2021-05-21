@@ -49,16 +49,160 @@ fn get_binding_names() -> HashSet<String> {
     method_names
 }
 
-fn gen_binding(method: &Function) -> String {
+fn translate_doc(doc: String) -> String {
+    let mut result = String::new();
 
+    // parse the documentation into sections
+    let (_, doc) = Doc::parse(doc.as_bytes());
+    let sections = doc.sections;
+
+    for section in sections {
+        match section {
+            DocSection::Introduction(intro) => {
+                result.extend(intro.chars());
+                result.push('\n');
+            }
+            DocSection::Arguments{
+                prologue,
+                arguments,
+                epilogue,
+            } => {
+
+                result.extend("\nParameters\n----------\n".chars());
+
+                //args_sec.extend(prologue.chars());
+
+                for argument in arguments {
+                    match argument {
+                        Argument::Parsable(DocArg{
+                            name,
+                            arg_type,
+                            description,
+                        }) => {
+                            result.extend(
+                                format!(
+                                    "{name}: {arg_type},\n    {description}\n",
+                                    name=name,
+                                    arg_type=arg_type,
+                                    description=description,
+                                ).chars()
+                            )
+                        },
+                        Argument::NotParsable(_) => {}
+                    }
+                }
+
+
+                //args_sec.extend(epilogue.chars());
+            }
+            DocSection::Raises{
+                prologue,
+                exceptions,
+                epilogue,
+            } => {
+                result.extend("\nRaises\n----------\n".chars());
+            }
+            _ => {}
+        }
+    }
+
+    result.split("\n")
+    .map(|x| format!("    /// {}", x))
+    .collect::<Vec<_>>()
+    .join("\n")
+}
+
+fn gen_binding(method: &Function) -> String {
+    // build the doc
+    let doc = translate_doc(method.doc.clone());
+
+    // parse the arguments
+    let mut args = String::new();
+    let mut args_names = String::new();
+    for arg in &method.args.0 {
+        match arg.arg_type {
+            Type::SelfType => {
+                args.extend(format!(
+                    "{}self, ",
+                    String::from(arg.arg_modifier.clone())
+                ).chars());
+            }
+            _ => {
+                args.extend(format!(
+                    "{}: {}, ", 
+                    arg.name, 
+                    String::from(arg.arg_type.clone())
+                ).chars());
+                args_names.extend(format!(
+                    "{}, ",
+                    arg.name
+                ).chars());
+            }
+        }
+    }
+
+    // build the call
+    let mut body = format!(
+        "self.{name}({args_names})",
+        name=method.name,
+        args_names=&args_names[..args_names.len().saturating_sub(2)],
+    );
     
 
+    // parse the return type
+    let return_type = match &method.return_type {
+        None => String::new(),
+        Some(r_type) => {
+            match &r_type {
+                Type::SimpleType{
+                    name,
+                    modifiers,
+                    generics,
+                    traits,
+                } => {
+                    match name.as_str() {
+                        "Result" => {
+                            body = format!("pe!({})", body);
+                            format!(
+                                " -> {} ",
+                                String::from(Type::SimpleType{
+                                    name:"PyResult".to_string(),
+                                    modifiers: modifiers.clone(),
+                                    generics: Generics(vec![generics.0[0].clone()]),
+                                    traits: traits.clone(),
+                                })
+                            )
+                        }
+                        _ => {
+                            format!(
+                                " -> {} ",
+                                String::from(r_type.clone())
+                            )
+                        }
+                    }
+                }
+                _ => {
+                    format!(
+                        " -> {} ",
+                        String::from(r_type.clone())
+                    )
+                }
+            }
+        }
+    };
+
+    // build the binding
     format!(r#"
-    pub fn {name}(&self) {{
-        self.{name}()
+{doc}
+    pub fn {name}({args}){return_type}{{
+        {body}
     }}
         "#, 
-        name=method.name
+        doc=doc,
+        name=method.name,
+        return_type=return_type,
+        args=&args[..args.len().saturating_sub(2)],
+        body=body,
     )
 }
 
@@ -94,7 +238,7 @@ fn main() {
                     && !method.name.starts_with("par_iter") 
                     && method.visibility == Visibility::Public
                 {
-                    println!("MISSING {:?}", gen_binding(&method));
+                    println!("MISSING {}", gen_binding(&method));
                 }
             }
         }

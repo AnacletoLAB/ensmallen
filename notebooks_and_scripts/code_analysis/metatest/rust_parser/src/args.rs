@@ -10,7 +10,6 @@ pub struct Arg{
 #[derive(Debug, Clone, PartialEq)]
 pub struct Args(pub Vec<Arg>);
 
-
 impl Parse for Args {
     fn parse(data: &[u8]) -> (&[u8], Self) {
         let (data, mut args_content) = get_next_matching(data, b'(', b')');

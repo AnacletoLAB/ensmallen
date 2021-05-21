@@ -16,7 +16,7 @@ def read_files(path):
 
 def analysis(args):
     parser = argparse.ArgumentParser(description='Generate a json with the informations about all the methods in the selected files.')  
-    parser.add_argument('-p', "--path", type=str, default="../../graph/src/*.rs", help='A glob path of which files to parse. Default: %(default)s')
+    parser.add_argument('-p', "--path", type=str, default="../../../graph/src/*.rs", help='A glob path of which files to parse. Default: %(default)s')
     args = parser.parse_args(args)
 
     path = build_path(args.path)   

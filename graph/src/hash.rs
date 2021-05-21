@@ -62,7 +62,7 @@ impl Hash for Graph {
         // self.node_bit_mask.hash(state);
         // self.unique_selfloop_number.hash(state);
         // self.selfloop_number.hash(state);
-        // self.not_singleton_nodes_number.hash(state);
+        // self.connected_nodes_number.hash(state);
         // self.singleton_nodes_with_selfloops_number.hash(state);
         // self.unique_edges_number.hash(state);
 
