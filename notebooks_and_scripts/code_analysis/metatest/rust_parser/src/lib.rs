@@ -1,5 +1,14 @@
 #[allow(unused_imports)]
 
+mod arg;
+pub use arg::*;
+
+mod doc;
+pub use doc::*;
+
+mod doc_section;
+pub use doc_section::*;
+
 mod args;
 pub use args::*;
 
@@ -47,6 +56,9 @@ pub use identifier::*;
 
 mod generics;
 pub use generics::*;
+
+mod trait_definition;
+pub use trait_definition::*;
 
 mod type_definition;
 pub use type_definition::*;

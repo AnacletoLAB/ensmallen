@@ -91,6 +91,15 @@ pub fn skip_whitespace(mut data: &[u8]) -> &[u8] {
     data
 }
 
+pub fn bytes_to_string(data: Vec<u8>) -> String{
+    String::from_utf8(data.to_vec()).unwrap()
+}
+
+pub fn trim(data: Vec<u8>) -> Vec<u8> {
+    // TODO!: implement
+    data
+}
+
 #[cfg(test)]
 mod test {
     use super::*;

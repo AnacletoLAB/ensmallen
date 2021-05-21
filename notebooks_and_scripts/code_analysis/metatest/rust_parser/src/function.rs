@@ -13,6 +13,40 @@ pub struct Function{
     pub is_unsafe: bool,
 }
 
+
+impl Function {
+    /// Returns if the current function has any arguments
+    /// EXCLUDING THE SELF
+    pub fn has_arguments(&self) -> bool {
+        self.args.0.iter().any(|x| {
+            match x.arg_type {
+                Type::SelfType => false,
+                _ => true,
+            }
+        })
+    }
+    
+    /// Return if the current function is unsafe
+    pub fn is_unsafe(&self) -> bool {
+        self.is_unsafe
+    }
+
+    /// Returns if the current function returns a result
+    pub fn returns_result(&self) -> bool {
+        match &self.return_type {
+            Some(Type::SimpleType{
+                name,
+                modifiers,
+                generics,
+                traits,
+            }) => {
+                name == "Result"
+            }
+            _ => false,
+        }
+    }
+}
+
 impl CanParse for Function {
     fn can_parse(mut data: &[u8]) -> bool {
         data = skip_whitespace(data);

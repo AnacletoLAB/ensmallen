@@ -1,5 +1,5 @@
 use super::*;
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Module {
     pub doc: String,
     pub file: String,
@@ -7,12 +7,31 @@ pub struct Module {
     pub uses: Vec<Use>,
     pub structs: Vec<Struct>,
     pub types: Vec<TypeDefinition>,
+    pub traits: Vec<TraitDefinition>,
     pub consts: Vec<Const>,
     pub statics: Vec<Static>,
     pub impls: Vec<Impl>,
     pub functions: Vec<Function>,
     pub externs: Vec<Extern>,
     pub mods: Vec<Module>,
+}
+
+impl Module {
+    pub fn get_function_names(&self) -> Vec<String> {
+        let mut result = Vec::new();
+
+        result.extend(
+            self.functions.iter().map(|x| x.name.clone())
+        );
+
+        for imp in &self.impls {
+            result.extend(
+                imp.methods.iter().map(|x| x.name.clone())
+            );
+        }
+
+        result
+    }
 }
 
 impl Default for Module {
@@ -23,6 +42,7 @@ impl Default for Module {
             name: String::new(),
             uses: Vec::new(),
             types: Vec::new(),
+            traits: Vec::new(),
             structs: Vec::new(),
             consts: Vec::new(),
             statics: Vec::new(),
@@ -98,6 +118,15 @@ impl Parse for Module {
                 result.types.push(typedef);
                 continue;
             }
+            if TraitDefinition::can_parse(data) {
+                let mut traitdef = parse!(data, TraitDefinition);
+                traitdef.doc = doc;
+                doc = String::new();
+                traitdef.attributes = attrs;
+                attrs = Vec::new();
+                result.traits.push(traitdef);
+                continue;
+            }
             if Impl::can_parse(data) {
                 let mut current_impl = parse!(data, Impl);
                 current_impl.doc = doc;
@@ -122,6 +151,11 @@ impl Parse for Module {
             if Attribute::can_parse(data){
                 let attr: String = parse!(data, Attribute).into();
                 attrs.push(attr);
+                continue;
+            }
+            if Extern::can_parse(data){
+                let exter = parse!(data, Extern);
+                result.externs.push(exter);
                 continue;
             }
             if data.starts_with(b"//") {
