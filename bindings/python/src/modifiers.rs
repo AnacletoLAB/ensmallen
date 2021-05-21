@@ -9,9 +9,9 @@ impl EnsmallenGraph {
     /// ---------
     /// edge_type: str,
     ///     The edge type to assing to all the edges.
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     ///     Whether to show a loading bar in the case of a multigraph.
-    pub fn set_all_edge_types(&self, edge_type: String, verbose: bool) -> PyResult<EnsmallenGraph> {
+    pub fn set_all_edge_types(&self, edge_type: String, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.clone().set_all_edge_types(edge_type, verbose))?,
         })

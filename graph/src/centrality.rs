@@ -13,7 +13,7 @@ impl Graph {
     /// Returns iterator over degree centrality for all nodes.
     pub fn iter_degree_centrality(&self) -> Box<dyn Iterator<Item = f64> + '_> {
         if self.has_nodes() {
-            let max_degree = self.get_max_node_degree().unwrap() as f64;
+            let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };
             Box::new(
                 self.iter_node_degrees()
                     .map(move |degree| degree as f64 / max_degree),
@@ -45,7 +45,7 @@ impl Graph {
         node_id: NodeT,
     ) -> f64 {
         1.0 / self
-            .get_unchecked_breath_first_search(node_id, None, None, Some(true), Some(false))
+            .get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
             .3 as f64
     }
 
@@ -150,7 +150,7 @@ impl Graph {
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
     pub fn get_unchecked_unweighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
-        self.get_unchecked_breath_first_search(node_id, None, None, Some(true), Some(false))
+        self.get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
             .4
     }
 

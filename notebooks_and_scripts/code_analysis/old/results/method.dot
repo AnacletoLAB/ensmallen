@@ -14,29 +14,29 @@ digraph deps {
 	"get_node_bits" [color=black];
 	"Graph::filter" [color=red];
 	"Graph::decode_edge" [color=red];
-	"Graph::get_edge_id_with_type_by_node_ids" [color=red];
-	"Graph::is_singleton_with_selfloops_by_node_id" [color=red];
+	"Graph::get_edge_id_with_type_from_node_ids" [color=red];
+	"Graph::is_singleton_with_selfloops_from_node_id" [color=red];
 	"Graph::get_undirected_edges_number" [color=red];
-	"Graph::get_unchecked_node_id_by_node_name" [color=red];
-	"Graph::get_unchecked_node_name_by_node_id" [color=red];
+	"Graph::get_unchecked_node_id_from_node_name" [color=red];
+	"Graph::get_unchecked_node_name_from_node_id" [color=red];
 	"Graph::par_iter_edge_with_type" [color=red];
 	"generic_string_operator" [color=black];
 	"decode_edge" [color=black];
 	"generic_integer_operator" [color=black];
-	"Graph::has_edge_with_type_by_node_names" [color=red];
+	"Graph::has_edge_with_type_from_node_names" [color=red];
 	"keys" [color=black];
 	"Graph::get_nodes_number" [color=red];
 	"build_reverse_mapping" [color=black];
 	"Graph::has_node_types" [color=red];
-	"Graph::iter_edge_ids_by_node_ids" [color=red];
+	"Graph::iter_edge_ids_from_node_ids" [color=red];
 	"Graph::get_not_singleton_nodes_number" [color=red];
 	"parse_sorted_edges" [color=black];
 	"parse_unsorted_quadruples" [color=black];
 	"Graph::from_integer_unsorted" [color=red];
-	"Graph::get_edge_id_with_type_by_node_names" [color=red];
+	"Graph::get_edge_id_with_type_from_node_names" [color=red];
 	"Graph::new" [color=red];
 	"Graph::iter_edge_with_type_and_weight_ids" [color=red];
-	"Graph::get_node_type_id_by_node_id" [color=red];
+	"Graph::get_node_type_id_from_node_id" [color=red];
 	"Graph::from_string_sorted" [color=red];
 	"Graph::contains" [color=red];
 	"Graph::has_selfloops" [color=red];
@@ -47,9 +47,9 @@ digraph deps {
 	"Graph::get_unchecked_edge_type_name_by_edge_type_id" [color=red];
 	"Graph::get_minmax_edge_ids_by_source_node_id" [color=red];
 	"Graph::iter_edges_with_type" [color=red];
-	"Graph::get_edge_id_by_node_ids" [color=red];
+	"Graph::get_edge_id_from_node_ids" [color=red];
 	"parse_integer_edges" [color=black];
-	"Graph::get_node_type_name_by_node_id" [color=red];
+	"Graph::get_node_type_name_from_node_id" [color=red];
 	"Graph::get_edge_type_ids_by_edge_type_names" [color=red];
 	"check_numeric_ids_compatibility" [color=black];
 	"Graph::iter_edges_with_type_ids" [color=red];
@@ -67,34 +67,34 @@ digraph deps {
 	"Graph::build_graph" [color=red];
 	"Graph::get_unchecked_edge_id_from_tuple" [color=red];
 	"parse_node_type_ids" [color=black];
-	"Graph::is_singleton_by_node_name" [color=red];
+	"Graph::is_singleton_from_node_name" [color=red];
 	"unchecked_insert" [color=black];
 	"Graph::iter_edge_ids" [color=red];
-	"Graph::has_edge_with_type_by_node_ids" [color=red];
-	"Graph::get_unchecked_node_type_id_by_node_id" [color=red];
+	"Graph::has_edge_with_type_from_node_ids" [color=red];
+	"Graph::get_unchecked_node_type_id_from_node_id" [color=red];
 	"Graph::iter_node_ids" [color=red];
 	"encode_edge" [color=black];
 	"Graph::iter_nodes" [color=red];
 	"Graph::encode_edge" [color=red];
 	"validate_weight" [color=black];
-	"Graph::get_node_type_names_by_node_type_ids" [color=red];
-	"Graph::get_minmax_edge_ids_by_node_ids" [color=red];
+	"Graph::get_node_type_names_from_node_type_ids" [color=red];
+	"Graph::get_minmax_edge_ids_from_node_ids" [color=red];
 	"build_operator_graph_name" [color=black];
-	"Graph::get_node_degree_by_node_id" [color=red];
+	"Graph::get_node_degree_from_node_id" [color=red];
 	"unchecked_translate" [color=black];
 	"Graph::par_iter_edges" [color=red];
 	"Graph::has_edge_types" [color=red];
 	"Graph::par_iter_edge_with_type_ids" [color=red];
-	"Graph::is_singleton_by_node_id" [color=red];
-	"Graph::has_node_by_node_name" [color=red];
+	"Graph::is_singleton_from_node_id" [color=red];
+	"Graph::has_node_from_node_name" [color=red];
 	"Graph::get_directed_edges_number" [color=red];
 	"Graph::get_unchecked_weight_by_edge_id" [color=red];
 	"Graph::has_singletons" [color=red];
 	"Graph::iter_edges" [color=red];
 	"Graph::get_name" [color=red];
-	"Graph::get_node_type_ids_by_node_type_names" [color=red];
+	"Graph::get_node_type_ids_from_node_type_names" [color=red];
 	"Graph::get_singleton_nodes_number" [color=red];
-	"Graph::get_node_id_by_node_name" [color=red];
+	"Graph::get_node_id_from_node_name" [color=red];
 	"Graph::get_edge_type_id_by_edge_type_name" [color=red];
 	"Graph::generic_operator" [color=red];
 	"parse_string_edges" [color=black];
@@ -103,16 +103,16 @@ digraph deps {
 
 	"Graph::par_iter_edge_ids" -> "decode_edge"
 	"Graph::par_iter_edge_ids" -> "Graph::decode_edge"
-	"Graph::get_node_type_name_by_node_id" -> "Graph::get_node_type_id_by_node_id"
-	"Graph::get_node_type_name_by_node_id" -> "Graph::get_node_type_names_by_node_type_ids"
+	"Graph::get_node_type_name_from_node_id" -> "Graph::get_node_type_id_from_node_id"
+	"Graph::get_node_type_name_from_node_id" -> "Graph::get_node_type_names_from_node_type_ids"
 	"Graph::build_graph" -> "Graph::new"
 	"Graph::build_graph" -> "parse_integer_edges"
 	"Graph::get_unchecked_edge_type_name_by_edge_type_id" -> "unchecked_translate"
 	"Graph::get_unchecked_edge_type_name_by_edge_type_id" -> "translate"
 	"parse_sorted_edges" -> "Graph::new"
 	"parse_sorted_edges" -> "is_empty"
-	"Graph::is_singleton_by_node_name" -> "Graph::is_singleton_by_node_id"
-	"Graph::is_singleton_by_node_name" -> "Graph::get_node_id_by_node_name"
+	"Graph::is_singleton_from_node_name" -> "Graph::is_singleton_from_node_id"
+	"Graph::is_singleton_from_node_name" -> "Graph::get_node_id_from_node_name"
 	"Graph::iter_node_neighbours_ids" -> "Graph::new"
 	"Graph::iter_node_neighbours_ids" -> "encode_edge"
 	"Graph::iter_node_neighbours_ids" -> "decode_edge"
@@ -134,7 +134,7 @@ digraph deps {
 	"validate_operator_terms" -> "Graph::has_edge_weights"
 	"validate_operator_terms" -> "Graph::has_edge_types"
 	"validate_operator_terms" -> "Graph::has_node_types"
-	"Graph::iter_edges" -> "Graph::get_unchecked_node_name_by_node_id"
+	"Graph::iter_edges" -> "Graph::get_unchecked_node_name_from_node_id"
 	"Graph::iter_edges" -> "Graph::iter_edge_ids"
 	"parse_string_edges" -> "default"
 	"parse_string_edges" -> "default"
@@ -145,8 +145,8 @@ digraph deps {
 	"parse_string_edges" -> "parse_edge_type_ids_vocabulary"
 	"parse_string_edges" -> "parse_sorted_edges"
 	"parse_string_edges" -> "build_edges"
-	"Graph::is_singleton_by_node_id" -> "Graph::get_node_degree_by_node_id"
-	"Graph::is_singleton_by_node_id" -> "Graph::has_singletons"
+	"Graph::is_singleton_from_node_id" -> "Graph::get_node_degree_from_node_id"
+	"Graph::is_singleton_from_node_id" -> "Graph::has_singletons"
 	"Graph::get_node_ids_from_edge_id" -> "decode_edge"
 	"Graph::get_node_ids_from_edge_id" -> "Graph::decode_edge"
 	"Graph::par_iter_edge_with_type_ids" -> "Graph::get_unchecked_edge_type_by_edge_id"
@@ -157,8 +157,8 @@ digraph deps {
 	"Graph::par_iter_edge_with_type" -> "Graph::iter_edges"
 	"Graph::par_iter_edge_with_type" -> "Graph::par_iter_edges"
 	"Graph::has_nodes" -> "Graph::get_nodes_number"
-	"Graph::get_minmax_edge_ids_by_node_ids" -> "Graph::get_edge_id_by_node_ids"
-	"Graph::get_minmax_edge_ids_by_node_ids" -> "Graph::get_unchecked_edge_id_from_tuple"
+	"Graph::get_minmax_edge_ids_from_node_ids" -> "Graph::get_edge_id_from_node_ids"
+	"Graph::get_minmax_edge_ids_from_node_ids" -> "Graph::get_unchecked_edge_id_from_tuple"
 	"Graph::new" -> "Graph::new"
 	"Graph::new" -> "set_numeric_ids"
 	"build_edges" -> "WalkWeights::validate_weight"
@@ -170,7 +170,7 @@ digraph deps {
 	"build_edges" -> "get_node_bits"
 	"build_edges" -> "Graph::encode_edge"
 	"build_edges" -> "is_empty"
-	"Graph::has_edge_with_type_by_node_ids" -> "Graph::get_edge_id_with_type_by_node_ids"
+	"Graph::has_edge_with_type_from_node_ids" -> "Graph::get_edge_id_with_type_from_node_ids"
 	"Graph::from_string_unsorted" -> "is_empty"
 	"Graph::from_string_unsorted" -> "check_numeric_ids_compatibility"
 	"Graph::from_string_unsorted" -> "parse_string_unsorted_edges"
@@ -178,18 +178,18 @@ digraph deps {
 	"Graph::from_string_unsorted" -> "Graph::build_graph"
 	"Graph::get_filter_bitmap" -> "Graph::new"
 	"Graph::get_filter_bitmap" -> "Graph::contains"
-	"Graph::get_filter_bitmap" -> "Graph::get_node_id_by_node_name"
-	"Graph::get_filter_bitmap" -> "Graph::get_node_type_ids_by_node_type_names"
+	"Graph::get_filter_bitmap" -> "Graph::get_node_id_from_node_name"
+	"Graph::get_filter_bitmap" -> "Graph::get_node_type_ids_from_node_type_names"
 	"Graph::get_filter_bitmap" -> "Graph::iter_node_ids"
-	"Graph::iter_node_ids" -> "Graph::get_unchecked_node_type_id_by_node_id"
+	"Graph::iter_node_ids" -> "Graph::get_unchecked_node_type_id_from_node_id"
 	"Graph::iter_node_ids" -> "Graph::get_nodes_number"
-	"Graph::remove" -> "Graph::get_unchecked_node_type_id_by_node_id"
-	"Graph::remove" -> "Graph::get_unchecked_node_id_by_node_name"
+	"Graph::remove" -> "Graph::get_unchecked_node_type_id_from_node_id"
+	"Graph::remove" -> "Graph::get_unchecked_node_id_from_node_name"
 	"Graph::remove" -> "Graph::contains"
 	"Graph::remove" -> "get_loading_bar"
-	"Graph::remove" -> "Graph::is_singleton_with_selfloops_by_node_id"
-	"Graph::remove" -> "Graph::is_singleton_by_node_name"
-	"Graph::remove" -> "Graph::get_node_type_names_by_node_type_ids"
+	"Graph::remove" -> "Graph::is_singleton_with_selfloops_from_node_id"
+	"Graph::remove" -> "Graph::is_singleton_from_node_name"
+	"Graph::remove" -> "Graph::get_node_type_names_from_node_type_ids"
 	"Graph::remove" -> "Graph::get_name"
 	"Graph::remove" -> "Graph::has_edge_weights"
 	"Graph::remove" -> "Graph::has_edge_types"
@@ -203,16 +203,16 @@ digraph deps {
 	"Graph::get_edges_number" -> "Graph::get_undirected_edges_number"
 	"Graph::get_edges_number" -> "Graph::get_directed_edges_number"
 	"Graph::is_compatible" -> "validate_operator_terms"
-	"Graph::get_node_degree_by_node_id" -> "Graph::get_minmax_edge_ids_by_source_node_id"
-	"Graph::get_node_degree_by_node_id" -> "Graph::get_nodes_number"
+	"Graph::get_node_degree_from_node_id" -> "Graph::get_minmax_edge_ids_by_source_node_id"
+	"Graph::get_node_degree_from_node_id" -> "Graph::get_nodes_number"
 	"from_usize" -> "from_usize"
-	"Graph::get_node_type_ids_by_node_type_names" -> "keys"
+	"Graph::get_node_type_ids_from_node_type_names" -> "keys"
 	"Graph::get_unchecked_edge_id_from_tuple" -> "encode_edge"
 	"Graph::get_unchecked_edge_id_from_tuple" -> "Graph::encode_edge"
 	"Graph::get_minmax_edge_ids_by_source_node_id" -> "Graph::get_unchecked_edge_id_from_tuple"
 	"Graph::decode_edge" -> "decode_edge"
 	"Graph::decode_edge" -> "Graph::decode_edge"
-	"Graph::iter_edge_ids_by_node_ids" -> "Graph::get_minmax_edge_ids_by_node_ids"
+	"Graph::iter_edge_ids_from_node_ids" -> "Graph::get_minmax_edge_ids_from_node_ids"
 	"Graph::from_string_sorted" -> "Graph::new"
 	"Graph::from_string_sorted" -> "is_empty"
 	"Graph::from_string_sorted" -> "check_numeric_ids_compatibility"
@@ -220,8 +220,8 @@ digraph deps {
 	"Graph::from_string_sorted" -> "parse_string_edges"
 	"parse_edges_node_ids" -> "unchecked_insert"
 	"parse_edges_node_ids" -> "is_empty"
-	"Graph::get_unchecked_node_name_by_node_id" -> "unchecked_translate"
-	"Graph::get_unchecked_node_name_by_node_id" -> "translate"
+	"Graph::get_unchecked_node_name_from_node_id" -> "unchecked_translate"
+	"Graph::get_unchecked_node_name_from_node_id" -> "translate"
 	"sub" -> "Graph::generic_operator"
 	"sub" -> "Graph::has_selfloops"
 	"Graph::iter_edge_with_type_and_weight" -> "Graph::get_unchecked_weight_by_edge_id"
@@ -230,9 +230,9 @@ digraph deps {
 	"Graph::encode_edge" -> "Graph::encode_edge"
 	"Graph::has_singletons" -> "Graph::get_singleton_nodes_number"
 	"get_loading_bar" -> "Graph::new"
-	"Graph::has_edge_with_type_by_node_names" -> "Graph::get_edge_id_with_type_by_node_names"
-	"Graph::get_edge_id_with_type_by_node_names" -> "Graph::get_edge_type_id_by_edge_type_name"
-	"Graph::get_edge_id_with_type_by_node_names" -> "Graph::get_edge_id_with_type_by_node_ids"
+	"Graph::has_edge_with_type_from_node_names" -> "Graph::get_edge_id_with_type_from_node_names"
+	"Graph::get_edge_id_with_type_from_node_names" -> "Graph::get_edge_type_id_by_edge_type_name"
+	"Graph::get_edge_id_with_type_from_node_names" -> "Graph::get_edge_id_with_type_from_node_ids"
 	"Graph::get_edge_type_ids_by_edge_type_names" -> "keys"
 	"default" -> "Graph::new"
 	"Graph::iter_unchecked_edge_ids_by_source_node_id" -> "Graph::get_minmax_edge_ids_by_source_node_id"
@@ -245,7 +245,7 @@ digraph deps {
 	"parse_nodes" -> "parse_node_type_ids"
 	"Graph::get_singleton_nodes_number" -> "Graph::get_not_singleton_nodes_number"
 	"Graph::get_singleton_nodes_number" -> "Graph::get_nodes_number"
-	"Graph::is_singleton_with_selfloops_by_node_id" -> "Graph::contains"
+	"Graph::is_singleton_with_selfloops_from_node_id" -> "Graph::contains"
 	"Graph::iter_edges_with_type_ids" -> "Graph::get_unchecked_edge_type_by_edge_id"
 	"Graph::iter_edges_with_type_ids" -> "Graph::iter_edge_ids"
 	"is_empty" -> "is_empty"
@@ -253,7 +253,7 @@ digraph deps {
 	"Graph::generic_operator" -> "generic_integer_operator"
 	"Graph::generic_operator" -> "Graph::is_compatible"
 	"generic_integer_operator" -> "build_operator_graph_name"
-	"generic_integer_operator" -> "Graph::has_edge_with_type_by_node_ids"
+	"generic_integer_operator" -> "Graph::has_edge_with_type_from_node_ids"
 	"generic_integer_operator" -> "Graph::filter"
 	"generic_integer_operator" -> "Graph::has_edge_weights"
 	"generic_integer_operator" -> "Graph::has_edge_types"
@@ -280,35 +280,35 @@ digraph deps {
 	"Graph::iter_edge_with_type_and_weight_ids" -> "Graph::iter_edges_with_type_ids"
 	"Graph::get_undirected_edges_number" -> "Graph::get_selfloop_number"
 	"Graph::get_undirected_edges_number" -> "Graph::get_directed_edges_number"
-	"Graph::iter_nodes" -> "Graph::get_node_type_name_by_node_id"
+	"Graph::iter_nodes" -> "Graph::get_node_type_name_from_node_id"
 	"Graph::iter_nodes" -> "unchecked_translate"
 	"Graph::iter_nodes" -> "translate"
 	"Graph::iter_nodes" -> "Graph::iter_node_ids"
 	"Graph::from_integer_unsorted" -> "parse_integer_unsorted_edges"
 	"Graph::from_integer_unsorted" -> "Graph::build_graph"
-	"Graph::get_edge_id_by_node_ids" -> "encode_edge"
-	"Graph::get_edge_id_by_node_ids" -> "Graph::encode_edge"
-	"Graph::get_edge_id_with_type_by_node_ids" -> "Graph::get_edge_id_by_node_ids"
-	"Graph::get_edge_id_with_type_by_node_ids" -> "Graph::iter_edge_ids_by_node_ids"
+	"Graph::get_edge_id_from_node_ids" -> "encode_edge"
+	"Graph::get_edge_id_from_node_ids" -> "Graph::encode_edge"
+	"Graph::get_edge_id_with_type_from_node_ids" -> "Graph::get_edge_id_from_node_ids"
+	"Graph::get_edge_id_with_type_from_node_ids" -> "Graph::iter_edge_ids_from_node_ids"
 	"parse_integer_unsorted_edges" -> "parse_unsorted_quadruples"
 	"keys" -> "keys"
 	"Graph::contains" -> "Graph::is_compatible"
-	"Graph::contains" -> "Graph::has_edge_with_type_by_node_ids"
-	"Graph::contains" -> "Graph::has_edge_with_type_by_node_names"
+	"Graph::contains" -> "Graph::has_edge_with_type_from_node_ids"
+	"Graph::contains" -> "Graph::has_edge_with_type_from_node_names"
 	"Graph::contains" -> "Graph::par_iter_edge_with_type"
 	"Graph::contains" -> "Graph::par_iter_edge_with_type_ids"
-	"Graph::has_node_by_node_name" -> "Graph::get_node_id_by_node_name"
+	"Graph::has_node_from_node_name" -> "Graph::get_node_id_from_node_name"
 	"Graph::iter_edges_with_type" -> "Graph::get_unchecked_edge_type_by_edge_id"
 	"Graph::iter_edges_with_type" -> "Graph::get_unchecked_edge_type_name_by_edge_type_id"
 	"Graph::iter_edges_with_type" -> "Graph::iter_edges"
-	"Graph::par_iter_edges" -> "Graph::get_unchecked_node_name_by_node_id"
+	"Graph::par_iter_edges" -> "Graph::get_unchecked_node_name_from_node_id"
 	"Graph::par_iter_edges" -> "Graph::iter_edge_ids"
 	"Graph::par_iter_edges" -> "Graph::par_iter_edge_ids"
 	"generic_string_operator" -> "build_operator_graph_name"
-	"generic_string_operator" -> "Graph::has_node_by_node_name"
-	"generic_string_operator" -> "Graph::has_edge_with_type_by_node_names"
-	"generic_string_operator" -> "Graph::get_node_type_name_by_node_id"
-	"generic_string_operator" -> "Graph::get_node_id_by_node_name"
+	"generic_string_operator" -> "Graph::has_node_from_node_name"
+	"generic_string_operator" -> "Graph::has_edge_with_type_from_node_names"
+	"generic_string_operator" -> "Graph::get_node_type_name_from_node_id"
+	"generic_string_operator" -> "Graph::get_node_id_from_node_name"
 	"generic_string_operator" -> "Graph::filter"
 	"generic_string_operator" -> "Graph::has_edge_weights"
 	"generic_string_operator" -> "Graph::has_edge_types"

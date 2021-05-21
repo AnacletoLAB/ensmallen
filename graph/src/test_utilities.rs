@@ -310,6 +310,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
+    // Testing that the degrees computation is correct
+    assert_eq!(
+        graph.get_max_node_degree()?,
+        graph.iter_node_degrees().max().unwrap(),
+        "The cached maximum degree does not match the one computed from the node degrees."
+    );
+    assert_eq!(
+        graph.get_min_node_degree()?,
+        graph.iter_node_degrees().min().unwrap(),
+        "The cached minimum degree does not match the one computed from the node degrees."
+    );
+
     // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(
         graph
@@ -455,10 +467,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.degrees_product(src, dst);
-            let _ = graph.jaccard_index(src, dst);
-            let _ = graph.adamic_adar_index(src, dst);
-            let _ = graph.resource_allocation_index(src, dst);
+            let _ = graph.get_preferential_attachment(src, dst, true);
+            let _ = graph.get_preferential_attachment(src, dst, false);
+            let _ = graph.get_jaccard_coefficient(src, dst);
+            let _ = graph.get_adamic_adar_index(src, dst);
+            let _ = graph.get_resource_allocation_index(src, dst);
         }
     }
 
@@ -562,9 +575,13 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
         node_degree_centralities.len(),
         graph.get_nodes_number() as usize
     );
-    assert!(node_degree_centralities
-        .into_iter()
-        .all(|value| value <= 1.0));
+
+    assert!(
+        node_degree_centralities
+            .into_iter()
+            .all(|value| value <= 1.0),
+        "All node degrees centralities are expected to be within 0 and 1."
+    );
     let node_betweenness_centralities = graph.get_betweenness_centrality(None, Some(verbose));
     assert_eq!(
         node_betweenness_centralities.len(),
@@ -767,7 +784,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
 
 pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.drop_selfloops(verbose);
+        let without_selfloops = graph.drop_selfloops(Some(verbose));
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -818,7 +835,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             None,
             verbose,
         )?;
-        let without_selfloops = test.drop_selfloops(verbose);
+        let without_selfloops = test.drop_selfloops(Some(verbose));
         assert_eq!(
             without_selfloops.get_connected_components_number(verbose).0,
             1,
@@ -1169,8 +1186,25 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
 
 pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
     let unfiltered = graph.filter_from_ids(
-        None, None, None, None, None, None, None, None, None, None, None, None, None, None, false,
-        false, false, false, verbose,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        false,
+        false,
+        false,
+        false,
+        Some(verbose),
     );
     assert_eq!(&unfiltered, graph);
     assert!(graph
@@ -1191,7 +1225,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             false,
             false,
             false,
-            verbose,
+            Some(verbose),
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
@@ -1213,7 +1247,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             false,
             false,
             false,
-            verbose,
+            Some(verbose),
         );
         assert!(graph_without_given_name_result.is_ok());
         let graph_without_given_id = graph_without_given_name_result.unwrap();
@@ -1241,7 +1275,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             false,
             false,
             false,
-            verbose,
+            Some(verbose),
         );
         assert!(graph_with_given_name_result.is_ok());
         let graph_with_given_node_name = graph_with_given_name_result.unwrap();
@@ -1276,7 +1310,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             false,
             false,
             false,
-            verbose,
+            Some(verbose),
         );
         assert!(graph_without_given_node_type_name_result.is_ok());
         let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
@@ -1291,7 +1325,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
 }
 
 pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let without_edge_types = graph.remove_edge_types(verbose)?;
+    let without_edge_types = graph.remove_edge_types(Some(verbose))?;
     validate_vocabularies(&without_edge_types);
     assert!(!without_edge_types.has_edge_types());
     assert_eq!(
@@ -1351,7 +1385,7 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
 
 pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", verbose)?;
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", Some(verbose))?;
     assert!(!clone.is_multigraph());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 

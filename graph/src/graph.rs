@@ -86,6 +86,10 @@ pub struct Graph {
     pub(crate) singleton_nodes_with_selfloops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
+    /// Minimum outbound node degree.
+    pub(crate) min_node_degree: NodeT,
+    /// Maximum outbound node degree.
+    pub(crate) max_node_degree: NodeT,
     /// Graph name
     pub(crate) name: String,
     pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
@@ -132,6 +136,8 @@ impl Graph {
         node_types: Option<NodeTypeVocabulary>,
         not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
+        min_node_degree: NodeT,
+        max_node_degree: NodeT,
     ) -> Graph {
         Graph {
             directed,
@@ -145,6 +151,8 @@ impl Graph {
             node_bit_mask,
             node_bits,
             weights,
+            min_node_degree,
+            max_node_degree,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
             edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
             nodes: nodes.set_numeric_ids(false),

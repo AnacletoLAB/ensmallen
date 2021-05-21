@@ -37,7 +37,7 @@ iter-set = "2.0.1"
 atomic_float = "0.1.0"
 num-traits = "0.2.14"
 linked_hash_set = "0.1.4"
-indicatif = {version="0.15.0", features = ["rayon"]}
+indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }

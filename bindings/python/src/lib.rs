@@ -13,6 +13,7 @@ mod getters;
 mod hash;
 mod metrics;
 mod node_file_writer;
+mod thickeners;
 mod preprocessing;
 mod remap;
 mod setters;

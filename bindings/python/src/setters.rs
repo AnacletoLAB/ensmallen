@@ -69,7 +69,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// --------------
-    /// verbose: bool,
+    /// verbose: Optional[bool],
     ///     Whether to show a loading bar in the case of a multigraph.
     ///
     ///  # Raises
@@ -77,7 +77,7 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn remove_edge_types(&self, verbose: bool) -> PyResult<EnsmallenGraph> {
+    fn remove_edge_types(&self, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.remove_edge_types(verbose))?,
         }

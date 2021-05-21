@@ -58,8 +58,9 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: bool,
         filter_selfloops: bool,
         filter_parallel_edges: bool,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Graph {
+        let verbose = verbose.unwrap_or(true);
         let pb_edges = get_loading_bar(
             verbose,
             format!(
@@ -315,7 +316,7 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: bool,
         filter_selfloops: bool,
         filter_parallel_edges: bool,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
         Ok(self.filter_from_ids(
             node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
@@ -370,8 +371,8 @@ impl Graph {
     /// type!
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_node_types(&self, verbose: bool) -> Graph {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_node_types(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -401,8 +402,8 @@ impl Graph {
     /// type!
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_edge_types(&self, verbose: bool) -> Graph {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    pub fn drop_unknown_edge_types(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -431,8 +432,8 @@ impl Graph {
     /// A node is singleton when does not have neither incoming or outgoing edges.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes(&self, verbose: bool) -> Graph {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    pub fn drop_singleton_nodes(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
             true, false, false, false, verbose,
@@ -445,7 +446,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: bool) -> Graph {
+    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
             false, true, false, false, verbose,
@@ -456,7 +457,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_selfloops(&self, verbose: bool) -> Graph {
+    pub fn drop_selfloops(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
             false, false, true, false, verbose,
@@ -467,7 +468,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar while building the graph.
-    pub fn drop_parallel_edges(&self, verbose: bool) -> Graph {
+    pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
             false, false, false, true, verbose,

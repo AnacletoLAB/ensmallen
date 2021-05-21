@@ -53,6 +53,10 @@ impl Graph {
             Some(visited)
         };
 
+        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+            return (distances, parents, NodeT::MAX, NodeT::MAX, 0.0);
+        }
+
         let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
             &mut distances,
             &mut parents,
@@ -92,7 +96,9 @@ impl Graph {
             // Update the metrics
             maximal_distance = maximal_distance.max(depth);
             total_distance += depth;
-            total_harmonic_distance += 1.0 / depth as f64;
+            if depth != 0 {
+                total_harmonic_distance += 1.0 / depth as f64;
+            }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
@@ -118,6 +124,12 @@ impl Graph {
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
+        }
+        if total_distance == 0 {
+            total_distance = NodeT::MAX;
+        }
+        if maximal_distance == 0 {
+            maximal_distance = NodeT::MAX;
         }
         (
             distances,
@@ -268,6 +280,16 @@ impl Graph {
             None
         };
 
+        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+            return (
+                vec![f64::INFINITY; nodes_number],
+                parents,
+                f64::INFINITY,
+                f64::INFINITY,
+                0.0,
+            );
+        }
+
         let mut nodes_to_explore: DijkstraQueue =
             DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);
         let mut maximal_distance: f64 = 0.0;
@@ -278,7 +300,9 @@ impl Graph {
             // Update the distances metrics
             maximal_distance = maximal_distance.max(nodes_to_explore[closest_node_id]);
             total_distance += nodes_to_explore[closest_node_id];
-            total_harmonic_distance += 1.0 / nodes_to_explore[closest_node_id];
+            if nodes_to_explore[closest_node_id] > 0.0 {
+                total_harmonic_distance += 1.0 / nodes_to_explore[closest_node_id];
+            }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
@@ -305,6 +329,12 @@ impl Graph {
                         nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
                     }
                 });
+        }
+        if total_distance < f64::EPSILON {
+            total_distance = f64::INFINITY;
+        }
+        if maximal_distance < f64::EPSILON {
+            maximal_distance = f64::INFINITY;
         }
         (
             nodes_to_explore.unwrap(),
@@ -409,10 +439,18 @@ impl Graph {
             Some(true),
             Some(false),
         );
+        debug_assert!(
+            root_eccentricity != NodeT::MAX,
+            "The central node eccentricity cannot be infinite!"
+        );
+        debug_assert!(
+            root_eccentricity != 0,
+            "The central node eccentricity cannot be zero!"
+        );
         let mut lower_bound_diameter = root_eccentricity;
         let distances = unsafe { distances.unwrap_unchecked() };
         let mut upper_bound_diameter = 2 * root_eccentricity;
-        while lower_bound_diameter != upper_bound_diameter {
+        while lower_bound_diameter < upper_bound_diameter {
             if let Some(maximal_eccentricity) = distances
                 .par_iter()
                 .enumerate()
@@ -422,6 +460,18 @@ impl Graph {
                 })
                 .max()
             {
+                debug_assert!(
+                    maximal_eccentricity != NodeT::MAX,
+                    "The maximal eccentricity here cannot be infinite!"
+                );
+                debug_assert!(
+                    maximal_eccentricity != 0,
+                    "The maximal eccentricity here cannot be zero!"
+                );
+                debug_assert!(
+                    root_eccentricity != 0,
+                    "The root eccentricity cannot be zero!"
+                );
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
                 root_eccentricity -= 1;
                 upper_bound_diameter = 2 * root_eccentricity;
@@ -440,7 +490,7 @@ impl Graph {
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
         let mut lower_bound_diameter = root_eccentricity;
         let mut upper_bound_diameter = 2.0 * root_eccentricity;
-        while upper_bound_diameter - lower_bound_diameter > f64::EPSILON {
+        while upper_bound_diameter < lower_bound_diameter {
             if let Some(maximal_eccentricity) = distances
                 .par_iter()
                 .enumerate()

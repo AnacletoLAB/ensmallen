@@ -25,6 +25,8 @@ type ParsedStringEdgesType = Result<
         u8,
         Option<BitVec<Lsb0, u8>>,
         Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 >;
@@ -412,9 +414,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
-/// TODO! add computation of minimum node degree
 /// TODO! add computation of minimum edge weight
-/// TODO! add computation of maximum node degree
 /// TODO! add computation of maximum edge weight
 /// TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.
 /// TODO! add support for a mask that writes down if an edge type is used in the context of a multigraph edge. It is necessary for some operations with multigraphs.
@@ -446,6 +446,8 @@ pub(crate) fn build_edges(
         u64,
         Option<BitVec<Lsb0, u8>>,
         Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 > {
@@ -512,6 +514,9 @@ pub(crate) fn build_edges(
     // Last source inserted
     let mut last_src: NodeT = 0;
     let mut last_dst: NodeT = 0;
+    let mut min_node_degree: NodeT = NodeT::MAX;
+    let mut max_node_degree: NodeT = 0;
+    let mut current_node_degree: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
     let mut unique_edges_number: EdgeT = 0;
     let mut unique_selfloop_number: NodeT = 0;
@@ -618,6 +623,9 @@ pub(crate) fn build_edges(
         if selfloop {
             selfloop_number += 1;
         }
+        // If either the source node or the destination node in the
+        // edge list has changed (keep in mind that the edge list
+        // at this point is sorted)
         if different_src || different_dst {
             if let Some(nwe) = &mut not_singleton_nodes {
                 for node in &[src, dst] {
@@ -647,16 +655,41 @@ pub(crate) fn build_edges(
             if selfloop {
                 unique_selfloop_number += 1;
             }
+            // If the src has changed we need to update multiple things,
+            // including the set of unique source nodes and the
+            // minimum and maximum node degrees.
             if different_src {
                 if let Some(us) = &mut unique_sources {
                     us.unchecked_push(src as u64);
                 }
+                // If it is not the first edge
+                if !first {
+                    // We update the minimum node degree
+                    min_node_degree = min_node_degree.min(current_node_degree);
+                    // And the maximum node degree
+                    max_node_degree = max_node_degree.max(current_node_degree);
+                    // And reset the current node degree to 0.
+                    current_node_degree = 0;
+                }
             }
         }
+        // We increase the current source node ID degree.
+        current_node_degree += 1;
+
         last_src = src;
         last_dst = dst;
         first = false;
     }
+
+    // We need to update the minimum and maximum node degrees
+    // for the last edge.
+
+    // We update the minimum node degree
+    if current_node_degree > 0 {
+        min_node_degree = min_node_degree.min(current_node_degree);
+    }
+    // And the maximum node degree
+    max_node_degree = max_node_degree.max(current_node_degree);
 
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
@@ -709,7 +742,7 @@ pub(crate) fn build_edges(
     // provide a wrong value for nodes_number when loading a sorted csv.
     // If this happens, it might cause a slow down in the walk and other
     // currently unforseen consequences.
-    if nodes_number == not_singleton_node_number + singleton_nodes_with_selfloops_number {
+    if unique_sources.as_ref().map_or(false, |us| us.len() as NodeT == nodes_number) {
         unique_sources = None;
     }
 
@@ -745,8 +778,22 @@ pub(crate) fn build_edges(
     }
 
     // If the singleton_nodes_with_selfloops bitmap if empty, we return a None instead.
-    if singleton_nodes_with_selfloops.as_ref().map_or(false, |bitmap| bitmap.is_empty()) {
+    if singleton_nodes_with_selfloops
+        .as_ref()
+        .map_or(false, |bitmap| bitmap.is_empty())
+    {
         singleton_nodes_with_selfloops = None;
+    }
+
+    // If we have found singleton nodes, information that when there are
+    // singleton nodes we know only after parsing both the node list and the
+    // edge list, we need to update the min node degree to 0.
+    if nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
+        || unique_sources
+            .as_ref()
+            .map_or(false, |us| us.len() as NodeT != nodes_number)
+    {
+        min_node_degree = 0;
     }
 
     Ok((
@@ -763,6 +810,8 @@ pub(crate) fn build_edges(
         node_bit_mask,
         not_singleton_nodes,
         singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
@@ -867,6 +916,8 @@ pub(crate) fn parse_string_edges(
         node_bit_mask,
         not_singleton_nodes,
         singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -901,6 +952,8 @@ pub(crate) fn parse_string_edges(
         node_bits,
         not_singleton_nodes,
         singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
@@ -932,6 +985,8 @@ pub(crate) fn parse_integer_edges(
         u8,
         Option<BitVec<Lsb0, u8>>,
         Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 > {
@@ -949,6 +1004,8 @@ pub(crate) fn parse_integer_edges(
         node_bit_mask,
         not_singleton_nodes,
         singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -979,6 +1036,8 @@ pub(crate) fn parse_integer_edges(
         node_bits,
         not_singleton_nodes,
         singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
@@ -1014,6 +1073,8 @@ impl Graph {
             node_bits,
             not_singleton_nodes,
             singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -1047,6 +1108,8 @@ impl Graph {
             node_types,
             not_singleton_nodes,
             singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ))
     }
 
@@ -1287,6 +1350,8 @@ impl Graph {
             node_bits,
             not_singleton_nodes,
             singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -1322,6 +1387,8 @@ impl Graph {
             node_types,
             not_singleton_nodes,
             singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ))
     }
 }

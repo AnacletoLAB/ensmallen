@@ -10,7 +10,6 @@ use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
-use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 use vec_rand::{gen_random_vec, sample_uniform};
 
@@ -244,6 +243,12 @@ impl Graph {
     }
 
     /// Compute the training and validation elements number from the training rate
+    ///
+    /// # Raises
+    /// * If the training size is either greater than one or negative.
+    /// * If the graph instance has only one edge.
+    /// * If the resulting training edges number is 0.
+    /// * If the resulting validation edges number is 0.
     fn get_holdouts_elements_number(
         &self,
         train_size: f64,
@@ -276,45 +281,33 @@ impl Graph {
         Ok((train_elements_number, valid_elements_number))
     }
 
-    /// Compute the training and validation edges number from the training rate
-    fn get_holdouts_edges_number(
-        &self,
-        train_size: f64,
-        include_all_edge_types: bool,
-    ) -> Result<(EdgeT, EdgeT), String> {
-        if self.directed && self.get_directed_edges_number() == 1
-            || !self.directed && self.get_directed_edges_number() == 2
-        {
-            return Err(String::from(
-                "The current graph instance has only one edge. You cannot build an holdout with one edge.",
-            ));
-        }
-        let total_edges_number = if include_all_edge_types {
-            self.unique_edges_number
-        } else {
-            self.get_directed_edges_number()
-        };
-
-        let (train_edges, test_edges) =
-            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
-        Ok((train_edges as EdgeT, test_edges as EdgeT))
-    }
-
-    /// TODO add doc
+    /// Returns training and validation graph.
+    ///
+    /// # Arguments
+    /// * `random_state`: EdgeT - The random state to reproduce the holdout.
+    /// * `validation_edges_number`: EdgeT - The number of edges to reserve for the validation graph.
+    /// * `include_all_edge_types`: bool - Whether to include all the edge types in the graph, if the graph is a multigraph.
+    /// * `user_condition_for_validation_edges`: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool - The function to use to put edges in validation set.
+    /// * `verbose`: bool - Whether to show the loading bar or not.
+    /// * `train_graph_might_have_singletons`: bool - Whether it is known that the resulting training graph may have singletons.
+    /// * `train_graph_might_have_singletons_with_selfloops`: bool - Whether it is known that the resulting training graph may have singletons with selfloops.
+    ///
+    /// # Raises
+    /// * If the sampled validation edges are not enough for the required validation edges number.
     fn edge_holdout(
         &self,
         random_state: EdgeT,
-        valid_edges_number: EdgeT,
+        validation_edges_number: EdgeT,
         include_all_edge_types: bool,
-        user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
+        user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
         train_graph_might_have_singletons: bool,
         train_graph_might_have_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph), String> {
-        let pb1 = get_loading_bar(
+        let validation_edges_pb = get_loading_bar(
             verbose,
             "Picking validation edges",
-            valid_edges_number as usize,
+            validation_edges_number as usize,
         );
 
         // generate and shuffle the indices of the edges
@@ -338,7 +331,7 @@ impl Graph {
             }
 
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(edge_id, src, dst, edge_type) {
+            if user_condition_for_validation_edges(edge_id, src, dst, edge_type) {
                 // Compute the forward edge ids that are required.
                 valid_edges_bitmap.extend(self.compute_edge_ids_vector(
                     edge_id,
@@ -359,38 +352,38 @@ impl Graph {
                         include_all_edge_types,
                     ));
                 }
-                pb1.inc(valid_edges_bitmap.len() - last_length);
+                validation_edges_pb.inc(valid_edges_bitmap.len() - last_length);
                 last_length = valid_edges_bitmap.len();
             }
 
             // We stop the iteration when we found all the edges.
-            if valid_edges_bitmap.len() >= valid_edges_number {
+            if valid_edges_bitmap.len() >= validation_edges_number {
                 break;
             }
         }
 
-        if valid_edges_bitmap.len() < valid_edges_number {
-            let actual_valid_edges_number = valid_edges_bitmap.len();
+        if valid_edges_bitmap.len() < validation_edges_number {
+            let actual_validation_edges_number = valid_edges_bitmap.len();
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
-                    "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
-                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n"
+                    "generate a validation set composed of {validation_edges_number} edges from the current graph.\n",
+                    "The validation set can be composed of at most {actual_validation_edges_number} edges.\n"
                 ),
-                valid_edges_number=valid_edges_number,
-                actual_valid_edges_number=actual_valid_edges_number,
+                validation_edges_number=validation_edges_number,
+                actual_validation_edges_number=actual_validation_edges_number,
             ));
         }
 
         // Creating the loading bar for the building of both the training and validation.
         let pb_valid = get_loading_bar(
             verbose,
-            "Building the valid partition",
+            "Building the validation graph",
             valid_edges_bitmap.len() as usize,
         );
         let pb_train = get_loading_bar(
             verbose,
-            "Building the train partition",
+            "Building the train graph",
             (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
@@ -467,7 +460,10 @@ impl Graph {
     /// * `include_all_edge_types`: bool - Whether to include all the edges between two nodes.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
-    ///
+    /// # Raises
+    /// * If the edge types have been specified but the graph does not have edge types.
+    /// * If the required training size is not a real value between 0 and 1.
+    /// * If the current graph does not allow for the creation of a spanning tree for the requested training size.
     pub fn connected_holdout(
         &self,
         random_state: EdgeT,
@@ -499,7 +495,7 @@ impl Graph {
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
         let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;
-        let mut valid_edges_number =
+        let mut validation_edges_number =
             (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         // We need to check if the connected holdout can actually be built with
@@ -509,7 +505,7 @@ impl Graph {
                 .iter()
                 .map(|et| self.get_unchecked_edge_count_from_edge_type_id(*et) as EdgeT)
                 .sum();
-            valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
+            validation_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
 
         if tree.len() * edge_factor > train_edges_number {
@@ -525,7 +521,7 @@ impl Graph {
                 ),
                 tree.len() * edge_factor,
                 train_edges_number,
-                valid_edges_number,
+                validation_edges_number,
                 train_size,
                 (tree.len() * edge_factor) as f64 / train_edges_number as f64
             ));
@@ -533,7 +529,7 @@ impl Graph {
 
         self.edge_holdout(
             random_state,
-            valid_edges_number,
+            validation_edges_number,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
@@ -567,6 +563,10 @@ impl Graph {
     /// * `min_number_overlaps`: Option<EdgeT> - The minimum number of overlaps to include the edge into the validation set.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
+    /// # Raises
+    /// * If the edge types have been specified but the graph does not have edge types.
+    /// * If the minimum number of overlaps have been specified but the graph is not a multigraph.
+    /// * If one or more of the given edge type names is not present in the graph.
     pub fn random_holdout(
         &self,
         random_state: EdgeT,
@@ -581,8 +581,14 @@ impl Graph {
         if edge_types.is_some() {
             self.must_have_edge_types()?;
         }
-        let (_, valid_edges_number) =
-            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
+        let total_edges_number = if include_all_edge_types {
+            self.unique_edges_number
+        } else {
+            self.get_directed_edges_number()
+        };
+
+        let (_, validation_edges_number) =
+            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
                 self.get_edge_type_ids_from_edge_type_names(ets)?
@@ -595,7 +601,7 @@ impl Graph {
         }
         self.edge_holdout(
             random_state,
-            valid_edges_number,
+            validation_edges_number as EdgeT,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
@@ -638,6 +644,11 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     ///   let (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If stratification is requested but the graph has a single node type.
+    /// * If stratification is requested but the graph has a multilabel node types.
     pub fn node_label_holdout(
         &self,
         train_size: f64,
@@ -883,6 +894,9 @@ impl Graph {
     ///   let random_graph = graph.random_subgraph(0xbad5eed, 1000, true).unwrap();
     /// ```
     ///
+    /// # Raises
+    /// * If the requested number of nodes is one or less.
+    /// * If the graph has less than the requested number of nodes.
     pub fn random_subgraph(
         &self,
         random_state: usize,
@@ -953,8 +967,10 @@ impl Graph {
 
         pb1.finish();
 
-        let edges_bitmap =
-            RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
+        let edges_bitmap: RoaringTreemap = unique_nodes
+            .iter()
+            .progress_with(pb2)
+            .flat_map(|src| {
                 let (min_edge_id, max_edge_id) =
                     self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                 (min_edge_id..max_edge_id)
@@ -963,7 +979,8 @@ impl Graph {
                             .contains(self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
                     })
                     .collect::<Vec<EdgeT>>()
-            }));
+            })
+            .collect();
 
         Graph::build_graph(
             edges_bitmap.iter().progress_with(pb3).map(|edge_id| {
@@ -1009,6 +1026,11 @@ impl Graph {
     /// If We pass a vector of edge types, the K-fold will be executed only on the edges which match
     /// that type. All the other edges will always appear in the traning set.
     ///
+    /// # Raises
+    /// * If the number of requested k folds is one or zero.
+    /// * If the given k fold index is greater than the number of k folds.
+    /// * If edge types have been specified but it's an empty list.
+    /// * If the number of k folds is higher than the number of edges in the graph.
     pub fn kfold(
         &self,
         k: EdgeT,
@@ -1017,8 +1039,10 @@ impl Graph {
         random_state: EdgeT,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        if k == 1 {
-            return Err(String::from("Cannot do a k-fold with only one fold."));
+        if k <= 1 {
+            return Err(String::from(
+                "Cannot do a k-fold with only one or zero folds.",
+            ));
         }
         if k_index >= k {
             return Err(String::from(
@@ -1078,8 +1102,10 @@ impl Graph {
             indices.len() as EdgeT,
             (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT,
         );
-        let chunk =
-            RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
+        let chunk: RoaringTreemap = indices[start as usize..end as usize]
+            .iter()
+            .cloned()
+            .collect();
         // Create the two graphs
         self.edge_holdout(
             random_state,

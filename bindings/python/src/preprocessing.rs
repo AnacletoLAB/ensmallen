@@ -591,4 +591,103 @@ impl EnsmallenGraph {
 
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
+
+    #[text_signature = "($self, source_node_ids, destination_node_ids)"]
+    /// Returns all available edge prediction metrics for given edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Normalized preferential attachment score
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// source_node_ids: List[int],
+    ///     List of source node IDs.
+    /// destination_node_ids: List[int],
+    ///     List of destination node IDs.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with metrics.
+    fn get_unchecked_edge_prediction_metrics(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+    ) -> Py<PyArray2<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let batch_metrics = ThreadSafe {
+            t: PyArray2::new(gil.python(), [source_node_ids.len(), 4], false),
+        };
+
+        unsafe {
+            self.graph
+                .par_iter_unchecked_edge_prediction_metrics(source_node_ids, destination_node_ids)
+                .enumerate()
+                .for_each(|(i, metrics)| {
+                    metrics.into_iter().enumerate().for_each(|(j, metric)| {
+                        *(batch_metrics.t.uget_mut([i, j])) = metric;
+                    });
+                });
+        }
+
+        batch_metrics.t.to_owned()
+    }
+
+    #[text_signature = "($self, k, verbose)"]
+    /// Returns node type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// maximal_distance: Optional[int],
+    ///     The distance to consider for the cooccurrences. The default value is 3.
+    /// k1: Optional[float],
+    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// b: Optional[float],
+    ///     The b parameter from okapi. Tipicaly 0.75.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_node_types_cooccurrence_matrix(
+        &self,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let cooccurrences = ThreadSafe {
+            t: PyArray2::new(
+                gil.python(),
+                [
+                    self.graph.get_nodes_number() as usize,
+                    pe!(self.graph.get_node_types_number())? as usize,
+                ],
+                false,
+            ),
+        };
+
+        unsafe {
+            pe!(self.graph.par_iter_node_types_cooccurrence_matrix(
+                maximal_distance,
+                k1,
+                b,
+                verbose
+            ))?
+            .enumerate()
+            .for_each(|(i, cos)| {
+                cos.into_iter().enumerate().for_each(|(j, co)| {
+                    *(cooccurrences.t.uget_mut([i, j])) = co;
+                });
+            });
+        }
+
+        Ok(cooccurrences.t.to_owned())
+    }
 }
