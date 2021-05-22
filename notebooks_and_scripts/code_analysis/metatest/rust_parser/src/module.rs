@@ -5,6 +5,7 @@ pub struct Module {
     pub file: String,
     pub name: String,
     pub uses: Vec<Use>,
+    pub enums: Vec<Enum>,
     pub structs: Vec<Struct>,
     pub types: Vec<TypeDefinition>,
     pub traits: Vec<TraitDefinition>,
@@ -41,6 +42,7 @@ impl Default for Module {
             file: String::new(),
             name: String::new(),
             uses: Vec::new(),
+            enums: Vec::new(),
             types: Vec::new(),
             traits: Vec::new(),
             structs: Vec::new(),
@@ -89,6 +91,15 @@ impl Parse for Module {
                 struc.attributes = attrs;
                 attrs = Vec::new();
                 result.structs.push(struc);
+                continue;
+            }
+            if Enum::can_parse(data) {
+                let mut struc = parse!(data, Enum);
+                struc.doc = doc;
+                doc = String::new();
+                struc.attributes = attrs;
+                attrs = Vec::new();
+                result.enums.push(struc);
                 continue;
             }
             if Const::can_parse(data) {

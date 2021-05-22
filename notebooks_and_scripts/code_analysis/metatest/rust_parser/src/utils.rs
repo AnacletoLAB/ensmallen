@@ -91,12 +91,31 @@ pub fn skip_whitespace(mut data: &[u8]) -> &[u8] {
     data
 }
 
-pub fn bytes_to_string(data: Vec<u8>) -> String{
+pub fn bytes_to_string(data: &[u8]) -> String{
     String::from_utf8(data.to_vec()).unwrap()
 }
 
-pub fn trim(data: Vec<u8>) -> Vec<u8> {
-    // TODO!: implement
+pub fn trim(mut data: &[u8]) -> &[u8] {
+    while !data.is_empty() && b"\n\r\t ".contains(&data[0]){
+        data = &data[1..];
+    }
+
+    while !data.is_empty() && b"\n\r\t ".contains(&data[data.len().saturating_sub(1)]){
+        data = &data[..data.len().saturating_sub(2)];
+    }
+
+    data
+}
+
+pub fn trim_str(mut data: String) -> String {
+    while !data.is_empty() && b"\n\r\t ".contains(&data.as_bytes()[0]){
+        data.remove(0);
+    }
+
+    while !data.is_empty() && b"\n\r\t ".contains(&data.as_bytes()[data.len().saturating_sub(1)]){
+        data.pop();
+    }
+
     data
 }
 

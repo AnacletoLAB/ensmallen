@@ -6,6 +6,9 @@ pub use arg::*;
 mod doc;
 pub use doc::*;
 
+mod enums;
+pub use enums::*;
+
 mod doc_section;
 pub use doc_section::*;
 

@@ -9,6 +9,7 @@ use std::cmp::Ord;
 use std::collections::VecDeque;
 
 impl Graph {
+    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -258,6 +259,7 @@ impl Graph {
             .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
     }
 
+    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -345,6 +347,7 @@ impl Graph {
         )
     }
 
+    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
@@ -386,6 +389,7 @@ impl Graph {
         ))
     }
 
+    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments

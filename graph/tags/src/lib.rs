@@ -16,8 +16,6 @@ macro_rules! create_tag {
 // These do not change stuff but allows us to add a signature
 // to methods without touching the documentation.
 create_tag!(
-    no_doc 
-    no_example 
-    no_args 
+    no_binding
     no_inverse_method
 );

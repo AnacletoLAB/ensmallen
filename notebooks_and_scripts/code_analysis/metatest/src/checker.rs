@@ -57,6 +57,9 @@ impl Checker {
 
         // iters
         // if iter_X exits then par_iter_X must exists (can be disabled with #[no_par_iter])
+
+        // nei bindings verbose deve essere sempre un Option<bool> perche'
+        // vogliamo i default nel metodo rust
     }
 
     pub fn display(&self){

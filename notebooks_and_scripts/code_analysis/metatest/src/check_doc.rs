@@ -62,7 +62,7 @@ impl Checker {
                         if method.is_unsafe() && find_section!(sections, DocSection::Unsafe{..}).is_none() {
                             self.log(Error::MissingSection{
                                 method_name: method_name.clone(),
-                                section_name: "Unsafe".to_string()
+                                section_name: "Safety".to_string()
                             });
                         }
                         if method.returns_result() && find_section!(sections, DocSection::Raises{..}).is_none() {

@@ -206,12 +206,13 @@ impl From<Type> for String{
 
                 for val in vals {
                     result.push_str(&String::from(val));
-                    result.push_str(" ,");
+                    result.push_str(", ");
                 }
-                result = result.trim_end_matches(&", ").to_string();
 
+                result = (&result[.. result.len().saturating_sub(2)]).to_string();
                 result.push(')');
                 result
+
             }
             Type::SliceType(val) => {
                 format!("[{}]", &String::from(*val))

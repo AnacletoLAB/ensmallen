@@ -49,6 +49,69 @@ fn get_binding_names() -> HashSet<String> {
     method_names
 }
 
+fn translate_type_str(value: String) -> String {
+    let (_, t) = Type::parse(value.as_bytes());
+    translate_type(t)
+}
+
+fn translate_type(value: Type) -> String {
+    match value.clone() {
+        Type::SimpleType{
+            name,
+            modifiers,
+            generics,
+            traits
+        } => {
+            match name.as_str() {
+                "Graph" => "EnsmallenGraph".to_string(),
+                "NodeT" => "int".to_string(),
+                "usize" => "int".to_string(),
+                "EdgeT" => "int".to_string(),
+                "bool" => "bool".to_string(),
+                "str" => "str".to_string(),
+                "String" => "str".to_string(),
+                "NodeTypeT" => "int".to_string(),
+                "EdgeTypeT" => "int".to_string(),
+                "S" => "str".to_string(),
+                "RoaringBitmap" => "List[int]".to_string(),
+                "Option" => {
+                    let mut result = "Optional[".to_string();
+                    for value in generics.0 {
+                        match value {
+                            GenericValue::Type(t) => {
+                                result.extend(translate_type(t).chars())
+                            }
+                            _ => panic!("Cannot traduce to python the generic value {:?}", value)
+                        }
+                    }
+                    result.push(']');
+                    result
+                }
+                "Vec" => {
+                    let mut result = "List[".to_string();
+                    for value in generics.0 {
+                        match value {
+                            GenericValue::Type(t) => {
+                                result.extend(translate_type(t).chars())
+                            }
+                            _ => panic!("Cannot traduce to python the generic value {:?}", value)
+                        }
+                    }
+                    
+                    result.push(']');
+                    result
+                }
+                _ => {
+                    panic!("Cannot translate '{:?}' as a python unknown type", value);
+                }
+            }
+        }
+        _ => {
+            panic!("Cannot translate '{:?}' as a python type", value);
+        }
+    }
+}
+
 fn translate_doc(doc: String) -> String {
     let mut result = String::new();
 
@@ -59,7 +122,7 @@ fn translate_doc(doc: String) -> String {
     for section in sections {
         match section {
             DocSection::Introduction(intro) => {
-                result.extend(intro.chars());
+                result.extend(bytes_to_string(trim(intro.as_bytes())).chars());
                 result.push('\n');
             }
             DocSection::Arguments{
@@ -83,7 +146,7 @@ fn translate_doc(doc: String) -> String {
                                 format!(
                                     "{name}: {arg_type},\n    {description}\n",
                                     name=name,
-                                    arg_type=arg_type,
+                                    arg_type=translate_type_str(arg_type),
                                     description=description,
                                 ).chars()
                             )
@@ -100,11 +163,26 @@ fn translate_doc(doc: String) -> String {
                 exceptions,
                 epilogue,
             } => {
-                result.extend("\nRaises\n----------\n".chars());
+                result.extend("\nRaises\n-------\n".chars());
+
+                for excp in exceptions {
+                    result.extend(format!(
+                        "ValueError\n    {}",
+                        excp
+                    ).chars());
+                }
+            }
+            DocSection::Unsafe{
+                text,
+            } => {
+                result.extend("\nSafety\n------\n".chars());
+                result.extend(text.chars());
             }
             _ => {}
         }
     }
+
+    result.push('\n');
 
     result.split("\n")
     .map(|x| format!("    /// {}", x))
@@ -236,7 +314,9 @@ fn main() {
                 if !method_names.contains(&method.name)
                     && !method.name.starts_with("iter") 
                     && !method.name.starts_with("par_iter") 
+                    && !method.name.starts_with("from") 
                     && method.visibility == Visibility::Public
+                    && !method.attributes.contains(&"no_binding".to_string())
                 {
                     println!("MISSING {}", gen_binding(&method));
                 }

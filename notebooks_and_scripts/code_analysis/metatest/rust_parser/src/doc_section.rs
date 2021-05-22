@@ -36,13 +36,20 @@ impl DocSection {
         let title   = String::from_utf8(title).unwrap();
         match title.as_str() {
             "Introduction" => {
-                DocSection::Introduction(bytes_to_string(content))
+                DocSection::Introduction(
+                    bytes_to_string(
+                        &content
+                    ).split("\n")
+                    .map(|x| trim_str(x.to_string()))
+                    .collect::<Vec<_>>()
+                    .join("\n")
+                )
             }
-            "Unsafe" => {
-                DocSection::Unsafe{text:bytes_to_string(content)}
+            "Safety" => {
+                DocSection::Unsafe{text:trim_str(bytes_to_string(&content))}
             }
             "References" => {
-                DocSection::References{text:bytes_to_string(content)}
+                DocSection::References{text:trim_str(bytes_to_string(&content))}
             }
             "Arguments" => {
                 let mut data = &content[..];
@@ -71,9 +78,9 @@ impl DocSection {
                 }
 
                 DocSection::Arguments{
-                    prologue: bytes_to_string(trim(prologue)),
+                    prologue: bytes_to_string(trim(&prologue)),
                     arguments: args,
-                    epilogue: bytes_to_string(trim(epilogue)),
+                    epilogue: bytes_to_string(trim(&epilogue)),
                 }
             }
             "Example" => {
@@ -102,9 +109,9 @@ impl DocSection {
                 }
 
                 DocSection::Example{
-                    prologue: bytes_to_string(trim(prologue)),
-                    code: bytes_to_string(trim(code)),
-                    epilogue: bytes_to_string(trim(epilogue)),
+                    prologue: bytes_to_string(trim(&prologue)),
+                    code: bytes_to_string(trim(&code)),
+                    epilogue: bytes_to_string(trim(&epilogue)),
                 }
             }
             "Raises" => {
@@ -127,7 +134,7 @@ impl DocSection {
                         data = &data[1..];
                     }
                     data = skip_whitespace(&data[1..]);
-                    lines.push(bytes_to_string(line));
+                    lines.push(bytes_to_string(&line));
                 }
 
                 while !data.is_empty(){
@@ -136,15 +143,15 @@ impl DocSection {
                 }
 
                 DocSection::Raises{
-                    prologue: bytes_to_string(trim(prologue)),
+                    prologue: bytes_to_string(trim(&prologue)),
                     exceptions: lines,
-                    epilogue: bytes_to_string(trim(epilogue)),
+                    epilogue: bytes_to_string(trim(&epilogue)),
                 }
             }
             _ => {
                 DocSection::CustomSection{
                     title: title,
-                    content: bytes_to_string(content),
+                    content: bytes_to_string(&content),
                 }
             }
         }

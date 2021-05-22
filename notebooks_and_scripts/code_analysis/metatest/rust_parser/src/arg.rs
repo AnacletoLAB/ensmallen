@@ -19,7 +19,7 @@ pub enum Argument {
 impl Argument {
     pub fn new(data: Vec<u8>) -> Argument {
         let re = Regex::new(ARGUMENT_REGEX).unwrap();
-        let data = bytes_to_string(data);
+        let data = bytes_to_string(&data);
 
         if re.is_match(&data) {
             let caps = re.captures(&data).unwrap();
