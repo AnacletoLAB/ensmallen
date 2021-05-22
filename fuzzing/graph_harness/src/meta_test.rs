@@ -423,7 +423,7 @@ pub struct GetUnweightedEigenvectorCentralityParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetWeightedEigenvectorCentralityParams {
-	pub maximum_iterations_number : Option<usize>,
+	pub maximum_iterations_number : Option<u8>,
 	pub tollerance : Option<f64>,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -1899,7 +1899,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_weighted_eigenvector_centrality(data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_weighted_eigenvector_centrality.tollerance);
+				let _ = graph.get_weighted_eigenvector_centrality(data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number.map(|x| x as usize), data_for_current_test.get_weighted_eigenvector_centrality.tollerance);
 			},
 			102 => {
 				trace.push(format!("set_name(name = {:?})", data_for_current_test.set_name.name));
