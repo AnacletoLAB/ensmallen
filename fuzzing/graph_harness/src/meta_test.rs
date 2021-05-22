@@ -857,7 +857,6 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         false,
         data.from_vec.ignore_duplicated_edges,
         false,
-        data.from_vec.verbose,
         data.from_vec.numeric_edge_types_ids,
         data.from_vec.numeric_node_ids,
         data.from_vec.numeric_edge_node_ids,
@@ -868,6 +867,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         true,
         true,
         true,
+        data.from_vec.verbose,
     )?;
 
     let mut rng = Rng::new();

@@ -28,7 +28,6 @@ pub fn features_harness(data: FromVecHarnessParams) -> Result<(), String> {
         false,
         data.ignore_duplicated_edges,
         false,
-        data.verbose,
         data.numeric_edge_types_ids,
         data.numeric_node_ids,
         data.numeric_edge_node_ids,
@@ -39,6 +38,7 @@ pub fn features_harness(data: FromVecHarnessParams) -> Result<(), String> {
         true,
         true,
         true,
+        data.verbose,
     )?;
 
     let graph_copy_for_panic_handling = graph.clone();
