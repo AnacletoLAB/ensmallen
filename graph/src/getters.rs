@@ -659,10 +659,15 @@ impl Graph {
             .collect()
     }
 
-    /// Returns number of unknown node types.
+    /// Returns number of nodes with unknown node type.
     pub fn get_unknown_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_unknown_count())
+    }
+
+    /// Returns the number of node with known node type.
+    pub fn get_known_node_types_number(&self) -> Result<NodeT, String> {
+        Ok(self.get_nodes_number() - self.get_unknown_node_types_number()?)
     }
 
     /// Returns rate of unknown node types over total nodes number.
@@ -713,6 +718,11 @@ impl Graph {
     pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
+    }
+
+    /// Returns the number of edge with known edge type.
+    pub fn get_known_edge_types_number(&self) -> Result<EdgeT, String> {
+        Ok(self.get_directed_edges_number() - self.get_unknown_edge_types_number()?)
     }
 
     /// Returns rate of unknown edge types over total edges number.

@@ -62,10 +62,6 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         );
     }));
 
-    std::thread::sleep(std::time::Duration::from_millis(
-        1000
-    ));
-
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
     let _ = graph::test_utilities::default_test_suite(&mut graph, false);

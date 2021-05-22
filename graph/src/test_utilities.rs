@@ -1131,19 +1131,20 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
 }
 
 pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    for use_stratification in [true, false].iter() {
-        if *use_stratification
-            && (graph.has_multilabel_node_types()? || graph.get_minimum_node_types_number()? < 2)
-            || graph.get_nodes_number() - graph.get_unknown_node_types_number()? < 2
-            || !graph.has_node_types()
+    for use_stratification in [true, false] {
+        if graph.get_known_node_types_number()? < 2
+            ||
+            (use_stratification
+            && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?)
+            )
         {
             assert!(graph
-                .node_label_holdout(0.8, *use_stratification, 42)
+                .node_label_holdout(0.8, use_stratification, 42)
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, *use_stratification, 42)?;
+        let (train, test) = graph.node_label_holdout(0.8, use_stratification, 42)?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         assert!(!test

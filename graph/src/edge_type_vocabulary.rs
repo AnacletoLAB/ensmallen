@@ -135,4 +135,20 @@ impl EdgeTypeVocabulary {
     pub fn min_edge_type_count(&self) -> EdgeT {
         *self.counts.iter().min().unwrap_or(&0)
     }
+
+    /// Remove a edge type from the vocabulary
+    pub unsafe fn unchecked_remove_values(&mut self, edge_type_ids_to_remove: Vec<EdgeTypeT>) -> Vec<Option<usize>>{
+        // this assumes that the new ids are obtained by "removing" the values
+        // so the new ids will keep the relative ordering between each others
+        self.counts = self.counts.iter().enumerate()
+            .filter_map(|(i, v)| {
+                if !edge_type_ids_to_remove.contains(&(i as EdgeTypeT)) {
+                    Some(*v)
+                } else {
+                    None
+                }
+            }).collect();
+
+        self.vocabulary.unchecked_remove_values(edge_type_ids_to_remove)
+    }
 }

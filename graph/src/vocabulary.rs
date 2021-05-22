@@ -191,4 +191,34 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self.numeric_ids = numeric_ids;
         self
     }
+
+    /// Remove a value from the vocabulary
+    pub unsafe fn unchecked_remove_values(&mut self, type_ids_to_remove: Vec<IndexT>) -> Vec<Option<usize>> {
+        // compute the new dense mapping of the indices
+        let new_type_ids_map = (0..self.reverse_map.len()).scan(
+            0,
+            |offset, type_id| {
+                if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
+                    *offset += 1;
+                    return Some(None);
+                }
+                Some(Some(type_id - *offset))
+            }
+        ).collect::<Vec<_>>();
+
+        // update the mapping
+        self.map = self.map.iter()
+            .filter_map(|(key, val)|{
+                new_type_ids_map[IndexT::to_usize(*val)]
+                    .map(|x| (key.clone(), IndexT::from_usize(x)))
+            }).collect();
+
+        // re-build the reverse mapping
+        // since we start from a valid state this should never fail
+        // unless there are bugs in the code
+        self.reverse_map.clear();
+        self.build_reverse_mapping().unwrap();
+
+        new_type_ids_map
+    }
 }

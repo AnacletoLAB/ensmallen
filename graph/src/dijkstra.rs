@@ -54,7 +54,7 @@ impl Graph {
             Some(visited)
         };
 
-        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+        if self.is_unchecked_disconnected_from_node_id(src_node_id) {
             return (distances, parents, NodeT::MAX, NodeT::MAX, 0.0);
         }
 
@@ -125,12 +125,6 @@ impl Graph {
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
-        }
-        if total_distance == 0 {
-            total_distance = NodeT::MAX;
-        }
-        if maximal_distance == 0 {
-            maximal_distance = NodeT::MAX;
         }
         (
             distances,
@@ -232,6 +226,7 @@ impl Graph {
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
     pub fn get_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
         self.validate_node_id(node_id)
             .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
     }
@@ -282,9 +277,11 @@ impl Graph {
             None
         };
 
-        if self.is_unchecked_singleton_from_node_id(src_node_id) {
+        if self.is_unchecked_disconnected_from_node_id(src_node_id) {
+            let mut distances = vec![f64::INFINITY; nodes_number];
+            distances[src_node_id as usize] = 0.0; 
             return (
-                vec![f64::INFINITY; nodes_number],
+                distances,
                 parents,
                 f64::INFINITY,
                 f64::INFINITY,
@@ -332,12 +329,7 @@ impl Graph {
                     }
                 });
         }
-        if total_distance < f64::EPSILON {
-            total_distance = f64::INFINITY;
-        }
-        if maximal_distance < f64::EPSILON {
-            maximal_distance = f64::INFINITY;
-        }
+
         (
             nodes_to_explore.unwrap(),
             parents,
@@ -446,11 +438,11 @@ impl Graph {
             Some(true),
             Some(false),
         );
-        debug_assert!(
+        assert!(
             root_eccentricity != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
         );
-        debug_assert!(
+        assert!(
             root_eccentricity != 0,
             "The central node eccentricity cannot be zero!"
         );
@@ -467,22 +459,22 @@ impl Graph {
                 })
                 .max()
             {
-                debug_assert!(
+                assert!(
                     maximal_eccentricity != NodeT::MAX,
                     "The maximal eccentricity here cannot be infinite!"
                 );
-                debug_assert!(
+                assert!(
                     maximal_eccentricity != 0,
                     "The maximal eccentricity here cannot be zero!"
                 );
-                debug_assert!(
+                assert!(
                     root_eccentricity != 0,
                     "The root eccentricity cannot be zero!"
                 );
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-                root_eccentricity -= 1;
-                upper_bound_diameter = 2 * root_eccentricity;
             }
+            root_eccentricity -= 1;
+            upper_bound_diameter = 2 * root_eccentricity;
         }
         lower_bound_diameter as f64
     }
@@ -498,6 +490,15 @@ impl Graph {
         }
         let (distances, _, mut root_eccentricity, _, _) = self
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
+        
+        assert!(
+            root_eccentricity != f64::INFINITY,
+            "The central node eccentricity cannot be infinite!"
+        );
+        assert!(
+            root_eccentricity != 0.0,
+            "The central node eccentricity cannot be zero!"
+        );
         let mut lower_bound_diameter = root_eccentricity;
         let mut upper_bound_diameter = 2.0 * root_eccentricity;
         while upper_bound_diameter < lower_bound_diameter {
@@ -519,10 +520,22 @@ impl Graph {
                     },
                 )
             {
+                assert!(
+                    maximal_eccentricity != f64::INFINITY,
+                    "The maximal eccentricity here cannot be infinite!"
+                );
+                assert!(
+                    maximal_eccentricity != 0.0,
+                    "The maximal eccentricity here cannot be zero!"
+                );
+                assert!(
+                    root_eccentricity != 0.0,
+                    "The root eccentricity cannot be zero!"
+                );
                 lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-                root_eccentricity -= 1.0;
-                upper_bound_diameter = 2.0 * root_eccentricity;
             }
+            root_eccentricity -= 1.0;
+            upper_bound_diameter = 2.0 * root_eccentricity;
         }
         lower_bound_diameter
     }

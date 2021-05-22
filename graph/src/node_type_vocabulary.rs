@@ -30,8 +30,8 @@ impl PartialEq for NodeTypeVocabulary {
     }
 }
 
-impl NodeTypeVocabulary {
-    pub fn default() -> NodeTypeVocabulary {
+impl Default for NodeTypeVocabulary {
+    fn default() -> NodeTypeVocabulary {
         NodeTypeVocabulary {
             ids: Vec::new(),
             vocabulary: Vocabulary::default(),
@@ -40,7 +40,9 @@ impl NodeTypeVocabulary {
             multilabel: false,
         }
     }
+}
 
+impl NodeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<Vec<NodeTypeT>>>,
         vocabulary: Option<Vocabulary<NodeTypeT>>,
@@ -257,5 +259,21 @@ impl NodeTypeVocabulary {
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> NodeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
         self
+    }
+    
+    /// Remove a node type from the vocabulary
+    pub unsafe fn unchecked_remove_values(&mut self, node_type_ids_to_remove: Vec<NodeTypeT>) -> Vec<Option<usize>>{
+        // this assumes that the new ids are obtained by "removing" the values
+        // so the new ids will keep the relative ordering between each others
+        self.counts = self.counts.iter().enumerate()
+            .filter_map(|(i, v)| {
+                if !node_type_ids_to_remove.contains(&(i as NodeTypeT)) {
+                    Some(*v)
+                } else {
+                    None
+                }
+            }).collect();
+
+        self.vocabulary.unchecked_remove_values(node_type_ids_to_remove)
     }
 }

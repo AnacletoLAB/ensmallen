@@ -665,6 +665,10 @@ impl Graph {
             }
         }
 
+        if self.get_known_node_types_number()? < 2 {
+            return Err("It is not possible to create a node label holdout when the number of nodes with known node type is less than two.".to_string());
+        }
+
         // Compute the vectors with the indices of the nodes which node type matches
         // therefore the expected shape is:
         // (node_types_number, number of nodes of that node type)
@@ -778,8 +782,8 @@ impl Graph {
         use_stratification: bool,
         random_state: EdgeT,
     ) -> Result<(Graph, Graph), String> {
-        if self.get_directed_edges_number() - self.get_unknown_edge_types_number()? < 2 {
-            return Err("The graph must have at least two edges!".to_string());
+        if self.get_known_edge_types_number()? < 2 {
+            return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         if use_stratification && self.has_singleton_edge_types()? {
             return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());

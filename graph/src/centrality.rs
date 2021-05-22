@@ -98,18 +98,19 @@ impl Graph {
     pub fn par_iter_weighted_closeness_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
+        self.must_have_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
             "Computing closeness centrality",
             self.get_nodes_number() as usize,
         );
-        self.par_iter_node_ids()
+        Ok(self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| {
                 self.get_unchecked_weighted_closeness_centrality_from_node_id(node_id)
-            })
+            }))
     }
 
     /// Return closeness centrality for all nodes.
@@ -131,9 +132,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_weighted_closeness_centrality(verbose)
-            .collect()
+    pub fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
+        self.par_iter_weighted_closeness_centrality(verbose).map(|x| x.collect())
     }
 
     /// Return harmonic centrality of the requested node.
@@ -202,18 +202,19 @@ impl Graph {
     pub fn par_iter_weighted_harmonic_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
+        self.must_have_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
             "Computing harmonic centrality",
             self.get_nodes_number() as usize,
         );
-        self.par_iter_node_ids()
+        Ok(self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| {
                 self.get_unchecked_weighted_harmonic_centrality_from_node_id(node_id)
-            })
+            }))
     }
 
     /// Return harmonic centrality for all nodes.
@@ -235,9 +236,9 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
+    pub fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
         self.par_iter_weighted_harmonic_centrality(verbose)
-            .collect()
+            .map(|x| x.collect())
     }
 
     /// Returns vector of stress centrality for all nodes.
@@ -432,6 +433,9 @@ impl Graph {
     ) -> Result<Vec<f64>, String> {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
+        if tollerance < f64::EPSILON {
+            return Err("The tollerance must be a non-zero positive value bigger than epislon (1e-16).".to_string());
+        }
         let mut centralities: Vec<AtomicF64> = self
             .iter_node_ids()
             .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))
@@ -489,6 +493,9 @@ impl Graph {
         self.must_have_edge_weights()?;
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
+        if tollerance < f64::EPSILON {
+            return Err("The tollerance must be a non-zero positive value bigger than epislon (1e-16).".to_string());
+        }
         let mut centralities: Vec<AtomicF64> = self
             .iter_node_ids()
             .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))

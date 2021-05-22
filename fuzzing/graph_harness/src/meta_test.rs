@@ -418,7 +418,7 @@ pub struct GetBetweennessCentralityParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetUnweightedEigenvectorCentralityParams {
-	pub maximum_iterations_number : Option<usize>,
+	pub maximum_iterations_number : Option<u8>,
 	pub tollerance : Option<f64>,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -449,11 +449,11 @@ pub struct SetAllNodeTypesParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RemoveInplaceNodeTypeIdParams {
-	pub node_type_id : NodeTypeT,
+	pub node_type_id : Vec<NodeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RemoveInplaceEdgeTypeIdParams {
-	pub edge_type_id : EdgeTypeT,
+	pub edge_type_id : Vec<EdgeTypeT>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct RemoveNodeTypeIdParams {
@@ -1799,7 +1799,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.par_iter_weighted_closeness_centrality(data_for_current_test.par_iter_weighted_closeness_centrality.verbose).collect::<Vec<_>>();
+				let _ = graph.par_iter_weighted_closeness_centrality(data_for_current_test.par_iter_weighted_closeness_centrality.verbose).map(|x| x.collect::<Vec<_>>());
 			},
 			92 => {
 				trace.push(format!("get_unweighted_closeness_centrality(verbose = {:?})", data_for_current_test.get_unweighted_closeness_centrality.verbose));
@@ -1839,7 +1839,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.par_iter_weighted_harmonic_centrality(data_for_current_test.par_iter_weighted_harmonic_centrality.verbose).collect::<Vec<_>>();
+				let _ = graph.par_iter_weighted_harmonic_centrality(data_for_current_test.par_iter_weighted_harmonic_centrality.verbose).map(|x| x.collect::<Vec<_>>());
 			},
 			96 => {
 				trace.push(format!("get_unweighted_harmonic_centrality(verbose = {:?})", data_for_current_test.get_unweighted_harmonic_centrality.verbose));
@@ -1889,7 +1889,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_unweighted_eigenvector_centrality(data_for_current_test.get_unweighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_unweighted_eigenvector_centrality.tollerance);
+				let _ = graph.get_unweighted_eigenvector_centrality(data_for_current_test.get_unweighted_eigenvector_centrality.maximum_iterations_number.map(|x| x as usize), data_for_current_test.get_unweighted_eigenvector_centrality.tollerance);
 			},
 			101 => {
 				trace.push(format!("get_weighted_eigenvector_centrality(maximum_iterations_number = {:?}, tollerance = {:?})", data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_weighted_eigenvector_centrality.tollerance));
@@ -1952,14 +1952,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.set_all_node_types(data_for_current_test.set_all_node_types.node_type);
 			},
 			107 => {
-				trace.push(format!("remove_inplace_node_type_id(node_type_id = {:?})", data_for_current_test.remove_inplace_node_type_id.node_type_id));
+				trace.push(format!("remove_inplace_node_type_ids(node_type_id = {:?})", data_for_current_test.remove_inplace_node_type_id.node_type_id));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.remove_inplace_node_type_id(data_for_current_test.remove_inplace_node_type_id.node_type_id);
+				let _ = graph.remove_inplace_node_type_ids(data_for_current_test.remove_inplace_node_type_id.node_type_id);
 			},
 			108 => {
 				trace.push(format!("remove_inplace_singleton_node_types()", ));
@@ -1972,14 +1972,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.remove_inplace_singleton_node_types();
 			},
 			109 => {
-				trace.push(format!("remove_inplace_edge_type_id(edge_type_id = {:?})", data_for_current_test.remove_inplace_edge_type_id.edge_type_id));
+				trace.push(format!("remove_inplace_edge_type_ids(edge_type_id = {:?})", data_for_current_test.remove_inplace_edge_type_id.edge_type_id));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.remove_inplace_edge_type_id(data_for_current_test.remove_inplace_edge_type_id.edge_type_id);
+				let _ = graph.remove_inplace_edge_type_ids(data_for_current_test.remove_inplace_edge_type_id.edge_type_id);
 			},
 			110 => {
 				trace.push(format!("remove_inplace_singleton_edge_types()", ));

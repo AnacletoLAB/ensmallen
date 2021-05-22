@@ -18,6 +18,16 @@ impl Graph {
             .map_or(true, |nsns| !nsns[node_id as usize])
     }
 
+    /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - The node to be checked for.
+    pub fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
+        self.is_unchecked_singleton_from_node_id(node_id) || self.is_singleton_with_selfloops_from_node_id(node_id)
+    }
+
+
     /// Returns boolean representing if given node is a singleton.
     ///
     /// # Arguments
