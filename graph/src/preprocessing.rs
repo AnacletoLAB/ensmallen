@@ -595,8 +595,8 @@ impl Graph {
                         .enumerate()
                         .for_each(|(node_type, cooccurrence)| {
                             *cooccurrence = inverse_document_frequencies[node_type]
-                                * ((*cooccurrence / total_cooccurrence * (k1 + 1.0))
-                                    / (*cooccurrence / total_cooccurrence
+                                * ((*cooccurrence * (k1 + 1.0))
+                                    / (*cooccurrence
                                         + k1 * (1.0 - b
                                             + b * total_cooccurrence / average_degree)));
                         });
