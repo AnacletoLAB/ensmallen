@@ -428,7 +428,7 @@ impl WalksParameters {
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
     /// # use graph::walks_parameters::WalksParameters;
-    /// # let cora = graph::test_utilities::load_cora().unwrap();
+    /// # let cora = graph::test_utilities::load_cora();
     /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let mut parameters = WalksParameters::new(32).unwrap();
     /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&cora).is_err());

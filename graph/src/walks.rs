@@ -625,6 +625,10 @@ impl Graph {
     /// * `quantity`: NodeT - Number of random walk to compute.
     /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
     ///
+    /// # Raises
+    /// * If the graph does not contain edges.
+    /// * If the graph is directed.
+    /// * If the given walks parameters are not compatible with the current graph instance.
     pub fn iter_random_walks<'a>(
         &'a self,
         quantity: NodeT,
@@ -656,6 +660,10 @@ impl Graph {
     ///
     /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
     ///
+    /// # Raises
+    /// * If the graph does not contain edges.
+    /// * If the graph is directed.
+    /// * If the given walks parameters are not compatible with the current graph instance.
     pub fn iter_complete_walks<'a>(
         &'a self,
         parameters: &'a WalksParameters,
@@ -683,6 +691,9 @@ impl Graph {
     ///
     /// * `parameters`: WalksParameters - the weighted walks parameters.
     ///
+    /// # Raises
+    /// * If the graph is directed.
+    /// * If the given walks parameters are not compatible with the current graph instance. 
     fn iter_walk<'a>(
         &'a self,
         quantity: NodeT,
@@ -730,8 +741,7 @@ impl Graph {
     /// This method assumes that there are no traps in the graph.
     ///
     /// # Arguments
-    ///
-    /// * node: NodeT - Node from where to start the random walks.
+    /// * `node`: NodeT - Node from where to start the random walks.
     /// * `random_state`: usize, the random_state to use for extracting the nodes and edges.
     /// * `parameters`: SingleWalkParameters - Parameters for the single walk.
     ///
@@ -807,8 +817,7 @@ impl Graph {
     /// This method assumes that there are no traps in the graph.
     ///
     /// # Arguments
-    ///
-    /// * node: NodeT - Node from where to start the random walks.
+    /// * `node`: NodeT - Node from where to start the random walks.
     /// * `random_state`: usize - the random_state to use for extracting the nodes and edges.
     /// * `walk_length`: u64 - Length of the random walk.
     ///

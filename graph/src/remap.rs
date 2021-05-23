@@ -15,7 +15,7 @@ impl Graph {
     /// ```
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
-    /// # let cora = graph::test_utilities::load_cora().unwrap();
+    /// # let cora = graph::test_utilities::load_cora();
     /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(!cora.are_nodes_remappable(&ppi));
     /// ```
