@@ -113,7 +113,7 @@ impl Graph {
                         .map(|&right| right.pow(2))
                         .sum::<f64>()
                         .sqrt();
-                    numerator / (denominator_left * denominator_right + f64::EPSILON)
+                    1.0 - numerator / (denominator_left * denominator_right + f64::EPSILON)
                 }
             }
         };
