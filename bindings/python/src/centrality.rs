@@ -7,7 +7,7 @@ impl EnsmallenGraph {
     /// Return numpy array with degree centrality of the nodes in the considered graph.
     fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(gil, pe!(self.graph.get_degree_centrality()), f64))
+        Ok(to_ndarray_1d!(gil, pe!(self.graph.get_degree_centrality())?, f64))
     }
 
     #[text_signature = "($self, normalize, verbose)"]
@@ -97,7 +97,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_weighted_closeness_centrality(verbose)),
+            pe!(self.graph.get_weighted_closeness_centrality(verbose))?,
             f64
         ))
     }
