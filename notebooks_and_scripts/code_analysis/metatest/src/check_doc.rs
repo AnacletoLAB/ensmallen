@@ -2,6 +2,8 @@ use super::*;
 
 use std::collections::HashSet;
 
+const INCLUDE_EXAMPLE: bool = false;
+
 macro_rules! find_section {
     ($sections:expr, $sec:pat) => {
         $sections.iter().find(|sec| match sec {
@@ -28,6 +30,10 @@ impl Checker {
                 let struct_name = String::from(impls.struct_name.clone());
                 if struct_name == "Graph" {
                     for method in &impls.methods {
+                        if method.visibility != Visibility::Public {
+                            continue;
+                        }
+
                         let method_name = format!("{}::{}", struct_name, method.name);
 
                         // all methods must have doc
@@ -53,7 +59,7 @@ impl Checker {
                                 section_name: "Arguments".to_string()
                             });
                         }
-                        if find_section!(sections, DocSection::Example{..}).is_none() {
+                        if INCLUDE_EXAMPLE && find_section!(sections, DocSection::Example{..}).is_none() {
                             self.log(Error::MissingSection{
                                 method_name: method_name.clone(),
                                 section_name: "Example".to_string()
@@ -87,6 +93,14 @@ impl Checker {
                                             method_name: method_name.clone()
                                         });
                                     }
+
+                                    if intro.starts_with("Return true if") 
+                                        || intro.starts_with("Return false if") {
+                                            self.log(Error::TypoInDoc{
+                                                method_name: method_name.clone(),
+                                                error_msg: "Use return whether".to_string()
+                                            })
+                                        }
                                 }
                                 DocSection::Example{
                                     code,

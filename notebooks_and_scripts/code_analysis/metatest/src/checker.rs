@@ -67,6 +67,12 @@ impl Checker {
 
         // nei bindings verbose deve essere sempre un Option<bool> perche'
         // vogliamo i default nel metodo rust
+
+        // if no_binding come attr -> NO BINDING
+        // if manual_binding come attr deve esistere il binding
+        // if no attr -> deve esistere il binding
+        // if deve essere generato il binding, parametri e ritorno devono
+        // avere tipi "semplici"
     }
 
     pub fn display(&self){
