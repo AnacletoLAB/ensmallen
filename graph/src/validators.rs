@@ -196,6 +196,9 @@ impl Graph {
     /// assert!(graph_with_edge_types.must_have_edge_types().is_ok());
     /// assert!(graph_without_edge_types.must_have_edge_types().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn must_have_edge_types(&self) -> Result<&EdgeTypeVocabulary, String> {
         if !self.has_edge_types() {
             return Err("The current graph instance does not have edge types.".to_string());

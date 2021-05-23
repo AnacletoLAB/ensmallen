@@ -662,17 +662,26 @@ impl Graph {
     }
 
     /// Returns number of nodes with unknown node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
     pub fn get_unknown_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_unknown_count())
     }
 
     /// Returns the number of node with known node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
     pub fn get_known_node_types_number(&self) -> Result<NodeT, String> {
         Ok(self.get_nodes_number() - self.get_unknown_node_types_number()?)
     }
 
     /// Returns rate of unknown node types over total nodes number.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
     pub fn get_unknown_node_types_rate(&self) -> Result<f64, String> {
         self.get_unknown_node_types_number()
             .map(|unknown_node_types_number| {
@@ -681,6 +690,9 @@ impl Graph {
     }
 
     /// Returns rate of known node types over total nodes number.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
     pub fn get_known_node_types_rate(&self) -> Result<f64, String> {
         self.get_known_node_types_number()
             .map(|known_node_types_number| {
@@ -689,6 +701,9 @@ impl Graph {
     }
 
     /// Returns minimum number of node types.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
             .map(|node_types| node_types.min_node_type_count())
@@ -725,17 +740,26 @@ impl Graph {
     }
 
     /// Returns number of unknown edge types.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
     }
 
     /// Returns the number of edge with known edge type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_number(&self) -> Result<EdgeT, String> {
         Ok(self.get_directed_edges_number() - self.get_unknown_edge_types_number()?)
     }
 
     /// Returns rate of unknown edge types over total edges number.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn get_unknown_edge_types_rate(&self) -> Result<f64, String> {
         self.get_unknown_edge_types_number()
             .map(|unknown_edge_types_number| {
@@ -744,6 +768,9 @@ impl Graph {
     }
 
     /// Returns rate of known edge types over total edges number.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_rate(&self) -> Result<f64, String> {
         self.get_known_edge_types_number()
             .map(|known_edge_types_number| {
@@ -752,6 +779,9 @@ impl Graph {
     }
 
     /// Returns minimum number of edge types.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
     pub fn get_minimum_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.min_edge_type_count())
