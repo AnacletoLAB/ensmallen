@@ -540,10 +540,11 @@ impl Graph {
         let b = b.unwrap_or(0.75);
         let node_types_number = self.get_node_types_number().unwrap() as usize;
         let nodes_number = self.get_nodes_number() as usize;
+        let known_node_types_number = self.get_known_node_types_number()? as usize;
         let inverse_document_frequencies = self
             .iter_node_type_counts()?
             .map(|node_type_count| {
-                ((nodes_number as f64 - node_type_count as f64 + 0.5)
+                ((known_node_types_number as f64 - node_type_count as f64 + 0.5)
                     / (node_type_count as f64 + 0.5)
                     + 1.0)
                     .ln()

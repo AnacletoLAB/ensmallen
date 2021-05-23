@@ -7,7 +7,7 @@ use std::collections::HashMap;
 /// # Getters
 /// The naming convention we follow is:
 /// * `/get_(.+)/`
-/// 
+///
 /// The naming convention for unchecked methods follows:
 /// * `/get_unchecked_(.+)/`
 impl Graph {
@@ -38,7 +38,9 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_connected_nodes_number() - self.get_singleton_nodes_with_selfloops_number()
+        self.get_nodes_number()
+            - self.get_connected_nodes_number()
+            - self.get_singleton_nodes_with_selfloops_number()
     }
 
     /// Returns number of disconnected nodes within the graph.
@@ -53,7 +55,7 @@ impl Graph {
     pub fn get_disconnected_nodes_number(&self) -> NodeT {
         self.get_nodes_number() - self.get_connected_nodes_number()
     }
-    
+
     /// Returns vector of singleton node IDs of the graph.
     ///
     /// # Example
@@ -678,6 +680,14 @@ impl Graph {
             })
     }
 
+    /// Returns rate of known node types over total nodes number.
+    pub fn get_known_node_types_rate(&self) -> Result<f64, String> {
+        self.get_known_node_types_number()
+            .map(|known_node_types_number| {
+                known_node_types_number as f64 / self.get_nodes_number() as f64
+            })
+    }
+
     /// Returns minimum number of node types.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
@@ -730,6 +740,14 @@ impl Graph {
         self.get_unknown_edge_types_number()
             .map(|unknown_edge_types_number| {
                 unknown_edge_types_number as f64 / self.get_directed_edges_number() as f64
+            })
+    }
+
+    /// Returns rate of known edge types over total edges number.
+    pub fn get_known_edge_types_rate(&self) -> Result<f64, String> {
+        self.get_known_edge_types_number()
+            .map(|known_edge_types_number| {
+                known_edge_types_number as f64 / self.get_directed_edges_number() as f64
             })
     }
 
