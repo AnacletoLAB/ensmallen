@@ -4,6 +4,10 @@ pub enum Error {
     NoDoc{
         method_name: String,
     },
+    TypoInDoc{
+        method_name: String,
+        error_msg: String,
+    },
     EmptyArgumentDescription{
         method_name: String,
         arg_name: String,

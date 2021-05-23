@@ -5,24 +5,6 @@ SKIPPING
 SKIPPING
 [
     MissingSection {
-        method_name: "Graph::get_edges_and_destinations_from_source_node_id",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::get_destinations_slice",
-        section_name: "Example",
-    },
-    NotParsableArgument {
-        method_name: "Graph::get_destinations_slice",
-        line: "* `destinations`: &'a Option<Vec<NodeT>> - The optional destinations slice that may have been provided when working with subsampling.",
-    },
-    ExtraArguments {
-        method_name: "Graph::get_destinations_slice",
-        arguments: [
-            "destinations",
-        ],
-    },
-    MissingSection {
         method_name: "Graph::validate_operator_terms",
         section_name: "Example",
     },
@@ -34,60 +16,6 @@ SKIPPING
         method_name: "Graph::validate_operator_terms",
         truth_type: "&'bGraph",
         doc_type: "&Graph",
-    },
-    MissingSection {
-        method_name: "Graph::is_compatible",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::is_compatible",
-        section_name: "Raises",
-    },
-    MissingSection {
-        method_name: "Graph::generic_operator",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::generic_operator",
-        section_name: "Raises",
-    },
-    NotParsableArgument {
-        method_name: "Graph::generic_operator",
-        line: "* `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.",
-    },
-    ExtraArguments {
-        method_name: "Graph::generic_operator",
-        arguments: [
-            "graphs",
-        ],
-    },
-    MissingSection {
-        method_name: "Graph::iter_edges_from_random_state",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::iter_on_edges_with_preference_from_random_state",
-        section_name: "Example",
-    },
-    NotParsableArgument {
-        method_name: "Graph::iter_on_edges_with_preference_from_random_state",
-        line: "* `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.",
-    },
-    ExtraArguments {
-        method_name: "Graph::iter_on_edges_with_preference_from_random_state",
-        arguments: [
-            "undesired_edge_types",
-        ],
-    },
-    MissingSection {
-        method_name: "Graph::kruskal",
-        section_name: "Example",
-    },
-    ExtraArguments {
-        method_name: "Graph::kruskal",
-        arguments: [
-            "edges",
-        ],
     },
     MissingSection {
         method_name: "Graph::random_spanning_arborescence_kruskal",
@@ -108,9 +36,6 @@ SKIPPING
     MissingSection {
         method_name: "Graph::connected_components",
         section_name: "Raises",
-    },
-    NoDoc {
-        method_name: "Graph::new",
     },
     MissingSection {
         method_name: "Graph::overlaps",
@@ -165,14 +90,6 @@ SKIPPING
         ],
     },
     MissingSection {
-        method_name: "Graph::get_neighbours_from_node_id",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::get_node_label_prediction_tuple_from_node_id",
-        section_name: "Example",
-    },
-    MissingSection {
         method_name: "Graph::get_node_label_prediction_tuple_from_node_ids",
         section_name: "Raises",
     },
@@ -219,8 +136,8 @@ SKIPPING
     ExtraArguments {
         method_name: "Graph::par_iter_unchecked_edge_prediction_metrics",
         arguments: [
-            "source_node_ids",
             "destination_node_ids",
+            "source_node_ids",
         ],
     },
     MissingSection {
@@ -233,6 +150,10 @@ SKIPPING
     },
     MissingSection {
         method_name: "Graph::is_unchecked_singleton_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_unchecked_disconnected_from_node_id",
         section_name: "Example",
     },
     MissingSection {
@@ -324,29 +245,6 @@ SKIPPING
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_resource_allocation_index",
-    },
-    MissingSection {
-        method_name: "Graph::get_filter_bitmap",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::get_filter_bitmap",
-        section_name: "Raises",
-    },
-    NotParsableArgument {
-        method_name: "Graph::get_filter_bitmap",
-        line: "* `node_names` - The nodes to keep as strings",
-    },
-    NotParsableArgument {
-        method_name: "Graph::get_filter_bitmap",
-        line: "* `node_types` - The nodes types to keep as strings",
-    },
-    ExtraArguments {
-        method_name: "Graph::get_filter_bitmap",
-        arguments: [
-            "node_names",
-            "node_types",
-        ],
     },
     MissingSection {
         method_name: "Graph::enable",
@@ -462,14 +360,6 @@ SKIPPING
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_dijkstra_from_node_ids",
-    },
-    MissingSection {
-        method_name: "Graph::get_unweighted_ifub",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::get_weighted_ifub",
-        section_name: "Example",
     },
     MissingSection {
         method_name: "Graph::get_unweighted_diameter",
@@ -588,41 +478,11 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_node_count_from_node_type_id",
-        section_name: "Example",
-    },
-    NotParsableArgument {
-        method_name: "Graph::get_unchecked_node_count_from_node_type_id",
-        line: "* node_type: Option<NodeTypeT> - The node type to retrieve count of.",
-    },
-    ExtraArguments {
-        method_name: "Graph::get_unchecked_node_count_from_node_type_id",
-        arguments: [
-            "node_type",
-        ],
-    },
-    MissingSection {
-        method_name: "Graph::get_unchecked_destination_node_ids_from_node_id",
-        section_name: "Example",
-    },
-    ExtraArguments {
-        method_name: "Graph::get_unchecked_destination_node_ids_from_node_id",
-        arguments: [
-            "node",
-            "random_state",
-            "max_neighbours",
-        ],
-    },
-    MissingSection {
         method_name: "Graph::get_unchecked_edge_id_from_node_ids_and_edge_type_id",
         section_name: "Example",
     },
     MissingSection {
         method_name: "Graph::get_unchecked_minmax_edge_ids_from_node_ids",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::get_unchecked_edge_degree_from_node_ids",
         section_name: "Example",
     },
     MissingSection {
@@ -835,10 +695,6 @@ SKIPPING
         section_name: "Raises",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_destination_node_id_from_edge_id",
-        section_name: "Example",
-    },
-    MissingSection {
         method_name: "Graph::get_destination_node_id_from_edge_id",
         section_name: "Example",
     },
@@ -986,8 +842,8 @@ SKIPPING
     ExtraArguments {
         method_name: "Graph::filter_from_names",
         arguments: [
-            "edge_node_names_to_filter",
             "edge_node_names_to_keep",
+            "edge_node_names_to_filter",
         ],
     },
     WrongTypeArgument {
@@ -1148,6 +1004,10 @@ SKIPPING
         method_name: "Graph::par_iter_weighted_closeness_centrality",
         section_name: "Example",
     },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_closeness_centrality",
+        section_name: "Raises",
+    },
     DuplicatedIntroduction {
         method_name: "Graph::par_iter_weighted_closeness_centrality",
     },
@@ -1158,6 +1018,10 @@ SKIPPING
     MissingSection {
         method_name: "Graph::get_weighted_closeness_centrality",
         section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_closeness_centrality",
+        section_name: "Raises",
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_weighted_closeness_centrality",
@@ -1181,6 +1045,10 @@ SKIPPING
         method_name: "Graph::par_iter_weighted_harmonic_centrality",
         section_name: "Example",
     },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_harmonic_centrality",
+        section_name: "Raises",
+    },
     DuplicatedIntroduction {
         method_name: "Graph::par_iter_weighted_harmonic_centrality",
     },
@@ -1191,6 +1059,10 @@ SKIPPING
     MissingSection {
         method_name: "Graph::get_weighted_harmonic_centrality",
         section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_harmonic_centrality",
+        section_name: "Raises",
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_weighted_harmonic_centrality",
@@ -1227,10 +1099,6 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::invalidate_report",
-        section_name: "Example",
-    },
-    MissingSection {
         method_name: "Graph::set_inplace_all_edge_types",
         section_name: "Example",
     },
@@ -1259,16 +1127,40 @@ SKIPPING
         section_name: "Raises",
     },
     MissingSection {
-        method_name: "Graph::remove_inplace_node_type_id",
+        method_name: "Graph::remove_inplace_node_type_ids",
         section_name: "Example",
+    },
+    MissingArguments {
+        method_name: "Graph::remove_inplace_node_type_ids",
+        arguments: [
+            "node_type_id_to_remove",
+        ],
+    },
+    ExtraArguments {
+        method_name: "Graph::remove_inplace_node_type_ids",
+        arguments: [
+            "node_type_ids_to_remove",
+        ],
     },
     MissingSection {
         method_name: "Graph::remove_inplace_singleton_node_types",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::remove_inplace_edge_type_id",
+        method_name: "Graph::remove_inplace_edge_type_ids",
         section_name: "Example",
+    },
+    MissingArguments {
+        method_name: "Graph::remove_inplace_edge_type_ids",
+        arguments: [
+            "edge_type_id",
+        ],
+    },
+    ExtraArguments {
+        method_name: "Graph::remove_inplace_edge_type_ids",
+        arguments: [
+            "edge_type_ids_to_remove",
+        ],
     },
     MissingSection {
         method_name: "Graph::remove_inplace_singleton_edge_types",
@@ -1408,10 +1300,10 @@ SKIPPING
     ExtraArguments {
         method_name: "Graph::replace",
         arguments: [
-            "node_type_names_mapping",
             "edge_type_name_mapping",
-            "node_type_name_mapping",
             "node_name_mapping",
+            "node_type_names_mapping",
+            "node_type_name_mapping",
         ],
     },
     MissingSection {
@@ -1442,18 +1334,6 @@ SKIPPING
         method_name: "Graph::report",
         section_name: "Example",
     },
-    NoDoc {
-        method_name: "Graph::shared_components_number",
-    },
-    MissingSection {
-        method_name: "Graph::merged_components_number",
-        section_name: "Example",
-    },
-    WrongTypeArgument {
-        method_name: "Graph::merged_components_number",
-        truth_type: "[NodeT]",
-        doc_type: "&[NodeT]",
-    },
     MissingSection {
         method_name: "Graph::overlap_textual_report",
         section_name: "Example",
@@ -1461,22 +1341,6 @@ SKIPPING
     MissingSection {
         method_name: "Graph::overlap_textual_report",
         section_name: "Raises",
-    },
-    NoDoc {
-        method_name: "Graph::format_list",
-    },
-    MissingSection {
-        method_name: "Graph::format_node_list",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::format_node_list",
-        section_name: "Raises",
-    },
-    WrongTypeArgument {
-        method_name: "Graph::format_node_list",
-        truth_type: "[NodeT]",
-        doc_type: "&[NodeT]",
     },
     MissingSection {
         method_name: "Graph::get_node_report_from_node_id",
@@ -1669,6 +1533,14 @@ SKIPPING
         section_name: "Raises",
     },
     MissingSection {
+        method_name: "Graph::get_known_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_node_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
         method_name: "Graph::get_unknown_node_types_rate",
         section_name: "Example",
     },
@@ -1702,6 +1574,14 @@ SKIPPING
     },
     MissingSection {
         method_name: "Graph::get_unknown_edge_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_edge_types_number",
         section_name: "Raises",
     },
     MissingSection {
@@ -2125,18 +2005,9 @@ SKIPPING
     NoDoc {
         method_name: "Graph::compute_hash",
     },
-    NoDoc {
-        method_name: "Graph::eq",
-    },
-    NoDoc {
-        method_name: "Graph::hash",
-    },
     MissingSection {
         method_name: "Graph::generate_new_edges_from_node_features",
         section_name: "Example",
-    },
-    NoDoc {
-        method_name: "Graph::build_graph",
     },
     MissingSection {
         method_name: "Graph::from_string_unsorted",
@@ -2157,8 +2028,8 @@ SKIPPING
     ExtraArguments {
         method_name: "Graph::from_string_unsorted",
         arguments: [
-            "nodes_iterator",
             "edges_iterator",
+            "nodes_iterator",
         ],
     },
     MissingSection {
@@ -2214,28 +2085,6 @@ SKIPPING
         section_name: "Raises",
     },
     MissingSection {
-        method_name: "Graph::get_holdouts_elements_number",
-        section_name: "Arguments",
-    },
-    MissingSection {
-        method_name: "Graph::get_holdouts_elements_number",
-        section_name: "Example",
-    },
-    MissingSection {
-        method_name: "Graph::edge_holdout",
-        section_name: "Example",
-    },
-    NotParsableArgument {
-        method_name: "Graph::edge_holdout",
-        line: "* `user_condition_for_validation_edges`: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool - The function to use to put edges in validation set.",
-    },
-    ExtraArguments {
-        method_name: "Graph::edge_holdout",
-        arguments: [
-            "user_condition_for_validation_edges",
-        ],
-    },
-    MissingSection {
         method_name: "Graph::connected_holdout",
         section_name: "Example",
     },
@@ -2244,4 +2093,4 @@ SKIPPING
         section_name: "Example",
     },
 ]
-found 558 errors
+found 522 errors

@@ -92,7 +92,7 @@ pub struct Graph {
     pub(crate) max_node_degree: NodeT,
     /// Graph name
     pub(crate) name: String,
-    pub(crate) not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
     pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
 
@@ -133,7 +133,7 @@ impl Graph {
         name: S,
         weights: Option<Vec<WeightT>>,
         node_types: Option<NodeTypeVocabulary>,
-        not_singleton_nodes: Option<BitVec<Lsb0, u8>>,
+        connected_nodes: Option<BitVec<Lsb0, u8>>,
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
         min_node_degree: NodeT,
         max_node_degree: NodeT,
@@ -160,7 +160,7 @@ impl Graph {
             cumulative_node_degrees: None,
             cached_destinations: None,
             name: name.into(),
-            not_singleton_nodes,
+            connected_nodes,
             singleton_nodes_with_selfloops,
             cached_report: ClonableRwLock::new(None),
         }

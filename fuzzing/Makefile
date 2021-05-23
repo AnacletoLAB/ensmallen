@@ -60,6 +60,15 @@ hfuzz_meta_test:
 	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/meta_test/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS)  --tmout_sigvtalrm --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run meta_test; \
 	)
 
+hfuzz_features:
+	rm -rfd ./unit_tests/*
+	mkdir -p corpus/features
+	(\
+	cd honggfuzz/features;\
+	cargo update;\
+	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/features/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS)  --tmout_sigvtalrm --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run features; \
+	)
+
 hfuzz_builder:
 	rm -rfd ./unit_tests/*
 	mkdir -p corpus/builder

@@ -17,5 +17,6 @@ macro_rules! create_tag {
 // to methods without touching the documentation.
 create_tag!(
     no_binding
+    manual_binding
     no_inverse_method
 );

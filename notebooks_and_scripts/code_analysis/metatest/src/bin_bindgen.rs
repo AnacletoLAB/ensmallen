@@ -167,7 +167,7 @@ fn translate_doc(doc: String) -> String {
 
                 for excp in exceptions {
                     result.extend(format!(
-                        "ValueError\n    {}",
+                        "ValueError\n    {}\n",
                         excp
                     ).chars());
                 }
@@ -225,7 +225,17 @@ fn gen_binding(method: &Function) -> String {
         name=method.name,
         args_names=&args_names[..args_names.len().saturating_sub(2)],
     );
+
+    // if &mut self e Graph in return:
+    // pe!(body())?;
+    // Ok(())
+
+    // if &self e Graph in return
+    // EnsmallenGraph{graph: pe!(body())?}
     
+    // if &self e &Graph in return
+    // Ok(EnsmallenGraph{graph: pe!(body)?}.to_owned())
+
 
     // parse the return type
     let return_type = match &method.return_type {
@@ -317,6 +327,7 @@ fn main() {
                     && !method.name.starts_with("from") 
                     && method.visibility == Visibility::Public
                     && !method.attributes.contains(&"no_binding".to_string())
+                    && !method.attributes.contains(&"manual_binding".to_string())
                 {
                     println!("MISSING {}", gen_binding(&method));
                 }
