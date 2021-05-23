@@ -124,7 +124,7 @@ impl Graph {
     /// Since the following requires to be boxed, we cannot create the
     /// parallel version of this iterator.
     ///
-    pub fn iter_non_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
+    pub fn iter_connected_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match self.not_singleton_nodes.as_ref() {
             Some(nsns) => Box::new(nsns.iter_ones().map(|node_id| node_id as NodeT)),
             _ => Box::new(self.iter_node_ids()),

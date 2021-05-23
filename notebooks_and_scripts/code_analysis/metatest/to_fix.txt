@@ -1882,7 +1882,7 @@ SKIPPING
         method_name: "Graph::par_iter_node_degrees",
     },
     MissingSection {
-        method_name: "Graph::iter_non_singleton_node_ids",
+        method_name: "Graph::iter_connected_node_ids",
         section_name: "Example",
     },
     MissingSection {

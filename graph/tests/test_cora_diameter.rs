@@ -4,7 +4,7 @@ use graph::test_utilities::*;
 
 #[test]
 fn test_cora_diameter() -> Result<(), String> {
-    let cora = load_cora().unwrap();
+    let cora = load_cora();
     let cora_with_no_words = cora
         .filter_from_names(
             None,

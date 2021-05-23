@@ -4,7 +4,7 @@ use graph::test_utilities::*;
 
 #[test]
 fn test_merge_incompatible_graphs() -> Result<(), String> {
-    let cora = load_cora().unwrap();
+    let cora = load_cora();
     let ppi = load_ppi(true, true, true, false, false, false);
     let directed_ppi = load_ppi(true, true, false, true, false, false);
     assert!((&cora | &ppi.remove_edge_weights()?).is_ok());

@@ -818,12 +818,12 @@ impl Graph {
 
     /// Return set of nodes that are not singletons.
     pub fn get_not_singletons_node_ids(&self) -> Vec<NodeT> {
-        self.iter_non_singleton_node_ids().collect()
+        self.iter_connected_node_ids().collect()
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.iter_non_singleton_node_ids()
+        self.iter_connected_node_ids()
             .enumerate()
             .map(|(i, node)| (node as NodeT, i as NodeT))
             .collect()

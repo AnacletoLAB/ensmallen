@@ -9453,9 +9453,9 @@
         "example": {},
         "extra_headers": []
     },
-    "iter_non_singleton_node_ids": {
+    "iter_connected_node_ids": {
         "file": "iters.rs",
-        "function": "iter_non_singleton_node_ids",
+        "function": "iter_connected_node_ids",
         "errors": [
             {
                 "doc_line": 0,

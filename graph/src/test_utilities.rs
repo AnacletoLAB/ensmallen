@@ -164,7 +164,8 @@ pub fn load_empty_graph(directed: bool) -> Graph {
 /// This is our default graph we use on tests with node types.
 pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv").unwrap()
+    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
+        .unwrap()
         .set_separator(Some("\t"))
         .unwrap()
         .set_verbose(Some(false))
@@ -348,6 +349,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             .map_or(0, |x| x.len() as NodeT),
         graph.get_singleton_nodes_with_selfloops_number(),
     );
+
+    for singleton_node_id in graph.iter_singleton_node_ids() {
+        assert!(graph.get_unchecked_node_degree_from_node_id(singleton_node_id) == 0);
+        assert!(graph.is_unchecked_singleton_from_node_id(singleton_node_id));
+    }
+
+    if !graph.is_directed() {
+        for node_id in graph.iter_node_ids() {
+            assert_eq!(
+                graph.is_unchecked_singleton_from_node_id(node_id),
+                graph.get_unchecked_node_degree_from_node_id(node_id) == 0
+            );
+        }
+    }
 
     // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(

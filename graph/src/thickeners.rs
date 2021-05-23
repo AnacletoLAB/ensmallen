@@ -165,7 +165,6 @@ impl Graph {
                     new_edges
                         .into_iter()
                         .enumerate()
-                        .filter(|(_, new_neighbours)| !new_neighbours.is_empty())
                         .map(|(source_node_id, new_neighbours)| {
                             new_neighbours
                                 .into_iter()

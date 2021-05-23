@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader, NodeFileReader};
+use graph::Graph;
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -12,14 +12,15 @@ use graph::{Graph, EdgeFileReader, NodeFileReader};
 fn test_regression_36() -> Result<(), String> {
     let mut graph = Graph::from_string_unsorted(
         Vec::new().into_iter(),
-        Some(vec![
-            Ok(("0".to_string(), Some(vec![
-                    "0".to_string(),
-                    "1".to_string(),
-            ]))),
-        ].into_iter()),
-        false, // Directed
-        true, // Directed edge list
+        Some(
+            vec![Ok((
+                "0".to_string(),
+                Some(vec!["0".to_string(), "1".to_string()]),
+            ))]
+            .into_iter(),
+        ),
+        false,        // Directed
+        true,         // Directed edge list
         "Fuzz Graph", // Name of the graph
         true,
         false,
