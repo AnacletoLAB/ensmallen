@@ -390,12 +390,12 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self)"]
-    /// Returns number of not singleton nodes within the graph.
+    /// Returns number of connected nodes within the graph.
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.graph.get_not_singleton_nodes_number()
+    fn get_connected_nodes_number(&self) -> NodeT {
+        self.graph.get_connected_nodes_number()
     }
 
     #[text_signature = "($self)"]

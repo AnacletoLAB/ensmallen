@@ -166,28 +166,6 @@ impl EnsmallenGraph {
         .to_owned())
     }
 
-    #[text_signature = "($self, edge_type_id)"]
-    /// Remove given edge type ID from all edges.
-    ///
-    /// Parameters
-    /// --------------
-    /// edge_type_id: int,
-    /// 	The edge type ID to remove.
-    ///
-    ///  # Raises
-    ///  *
-    ///  * If the graph does not have edge types.
-    ///  * If the given edge type ID does not exists in the graph.
-    ///
-    ///  TODO!: add support for removal of edge types in the context of multigraphs when the user asks for removing an edge type.
-    ///
-    /// [Automatically generated binding]
-    /// [Automatically generated documentation]
-    fn remove_inplace_edge_type_id(&mut self, edge_type_id: EdgeTypeT) -> PyResult<()> {
-        pe!(self.graph.remove_inplace_edge_type_id(edge_type_id))?;
-        Ok(())
-    }
-
     #[text_signature = "($self, edge_type_name)"]
     /// Remove given edge type name from all edges.
     ///
@@ -238,28 +216,6 @@ impl EnsmallenGraph {
     /// [Automatically generated documentation]
     fn remove_inplace_edge_weights(&mut self) -> PyResult<()> {
         pe!(self.graph.remove_inplace_edge_weights())?;
-        Ok(())
-    }
-
-    #[text_signature = "($self, node_type_id)"]
-    /// Remove given node type ID from all nodes.
-    ///
-    ///  If any given node remains with no node type, that node is labeled
-    ///  with node type None. Note that the modification happens inplace.
-    ///
-    /// Parameters
-    /// --------------
-    /// node_type_id: int,
-    /// 	The node type ID to remove.
-    ///
-    ///  # Raises
-    ///  * If the graph does not have node types.
-    ///  * If the given node type ID does not exists in the graph.
-    ///
-    /// [Automatically generated binding]
-    /// [Automatically generated documentation]
-    fn remove_inplace_node_type_id(&mut self, node_type_id: NodeTypeT) -> PyResult<()> {
-        pe!(self.graph.remove_inplace_node_type_id(node_type_id))?;
         Ok(())
     }
 
