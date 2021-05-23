@@ -13,9 +13,9 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
-        self.not_singleton_nodes
+        self.connected_nodes
             .as_ref()
-            .map_or(true, |nsns| !nsns[node_id as usize])
+            .map_or(false, |nsns| !nsns[node_id as usize])
     }
 
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
@@ -222,7 +222,7 @@ impl Graph {
     pub fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.get_unchecked_node_degree_from_node_id(node_id) == 0
             && self
-                .not_singleton_nodes
+                .connected_nodes
                 .as_ref()
                 .map_or(true, |nsns| nsns[node_id as usize])
     }

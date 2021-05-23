@@ -57,6 +57,9 @@ impl Graph {
             ));
         }
         let expected_node_features_length = features.first().unwrap().len();
+        if expected_node_features_length == 0 {
+            return Err("The node features length must be greater than zero.".to_string());
+        }
         for node_features in features.iter() {
             if expected_node_features_length != node_features.len() {
                 return Err(format!(

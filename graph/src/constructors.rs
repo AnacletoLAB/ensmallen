@@ -504,7 +504,7 @@ pub(crate) fn build_edges(
     // Additionally, since we need this support data structure when computing the
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
-    let mut not_singleton_nodes: Option<_> =
+    let mut connected_nodes: Option<_> =
         if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
@@ -627,7 +627,7 @@ pub(crate) fn build_edges(
         // edge list has changed (keep in mind that the edge list
         // at this point is sorted)
         if different_src || different_dst {
-            if let Some(nwe) = &mut not_singleton_nodes {
+            if let Some(nwe) = &mut connected_nodes {
                 for node in &[src, dst] {
                     unsafe {
                         let mut ptr = nwe.get_unchecked_mut(*node as usize);
@@ -754,7 +754,7 @@ pub(crate) fn build_edges(
         && unique_sources.is_none()
         && nodes_number != connected_nodes_number + singleton_nodes_with_selfloops_number
     {
-        unique_sources = not_singleton_nodes
+        unique_sources = connected_nodes
             .as_ref()
             .map_or(Ok::<_, String>(None), |nsns| {
                 Ok(Some(EliasFano::from_iter(
@@ -811,7 +811,7 @@ pub(crate) fn build_edges(
         singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
-        not_singleton_nodes,
+        connected_nodes,
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
@@ -913,11 +913,11 @@ pub(crate) fn parse_string_edges(
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
-        not_singleton_nodes_number,
+        connected_nodes_number,
         singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
-        not_singleton_nodes,
+        connected_nodes,
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
@@ -949,11 +949,11 @@ pub(crate) fn parse_string_edges(
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
-        not_singleton_nodes_number,
+        connected_nodes_number,
         singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
-        not_singleton_nodes,
+        connected_nodes,
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
@@ -1001,11 +1001,11 @@ pub(crate) fn parse_integer_edges(
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
-        not_singleton_nodes_number,
+        connected_nodes_number,
         singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
-        not_singleton_nodes,
+        connected_nodes,
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
@@ -1033,11 +1033,11 @@ pub(crate) fn parse_integer_edges(
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
-        not_singleton_nodes_number,
+        connected_nodes_number,
         singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
-        not_singleton_nodes,
+        connected_nodes,
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
@@ -1070,11 +1070,11 @@ impl Graph {
             unique_edges_number,
             selfloop_number,
             unique_selfloop_number,
-            not_singleton_nodes_number,
+            connected_nodes_number,
             singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
-            not_singleton_nodes,
+            connected_nodes,
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
@@ -1097,7 +1097,7 @@ impl Graph {
             directed,
             unique_selfloop_number,
             selfloop_number,
-            not_singleton_nodes_number,
+            connected_nodes_number,
             singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
@@ -1109,7 +1109,7 @@ impl Graph {
             name,
             weights,
             node_types,
-            not_singleton_nodes,
+            connected_nodes,
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
@@ -1347,11 +1347,11 @@ impl Graph {
             unique_edges_number,
             selfloop_number,
             unique_selfloop_number,
-            not_singleton_nodes_number,
+            connected_nodes_number,
             singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
-            not_singleton_nodes,
+            connected_nodes,
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
@@ -1376,7 +1376,7 @@ impl Graph {
             directed,
             unique_selfloop_number,
             selfloop_number,
-            not_singleton_nodes_number,
+            connected_nodes_number,
             singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
@@ -1388,7 +1388,7 @@ impl Graph {
             name,
             weights,
             node_types,
-            not_singleton_nodes,
+            connected_nodes,
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
