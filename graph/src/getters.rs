@@ -282,6 +282,7 @@ impl Graph {
 
     /// Returns maximum node degree of the graph.
     ///
+    /// # Safety
     /// This method fails with a panic if the graph does not have any node.
     ///
     /// # Example

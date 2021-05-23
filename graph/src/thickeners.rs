@@ -15,8 +15,8 @@ impl TryFrom<&str> for Distance {
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         match value {
             "L2" => Ok(Distance::L2),
-            "COSINE" =>  Ok(Distance::Cosine),
-            _ => Err(format!("Unknown distance metric {}", value))
+            "COSINE" => Ok(Distance::Cosine),
+            _ => Err(format!("Unknown distance metric {}", value)),
         }
     }
 }
@@ -25,9 +25,13 @@ impl TryFrom<&str> for Distance {
 impl Graph {
     /// Returns graph with edges added extracted from given node_features.
     ///
+    /// This operation might distrupt the graph topology.
+    /// Proceed with caution!
+    ///
     /// # Arguments
     /// * `features`: Vec<Vec<f64>> - node_features to use to identify the new neighbours.
     /// * `neighbours_number`: Option<NodeT> - Number of neighbours to add.
+    /// * `max_degree`: Option<NodeT> - The maximum degree a node can have its neighbours augmented. By default 0, that is, only singletons are augmented.
     /// * `distance_name`: Option<&str> - Name of distance to use. Can either be L2 or COSINE. By default COSINE.
     /// * `verbose`: Option<bool> - Whether to show loading bars.
     ///
@@ -40,6 +44,7 @@ impl Graph {
         &self,
         features: Vec<Vec<f64>>,
         neighbours_number: Option<NodeT>,
+        max_degree: Option<NodeT>,
         distance_name: Option<&str>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
@@ -56,6 +61,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
+        let max_degree = max_degree.unwrap_or(0);
         let expected_node_features_length = features.first().unwrap().len();
         if expected_node_features_length == 0 {
             return Err("The node features length must be greater than zero.".to_string());
@@ -90,15 +96,13 @@ impl Graph {
 
         // initialize the distance metric
         let distance_metric = match Distance::try_from(distance_name.unwrap_or("COSINE"))? {
-            Distance::L2 => {
-                |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {
-                    current_node_features
+            Distance::L2 => |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {
+                current_node_features
                     .iter()
                     .zip(node_features.iter())
                     .map(|(&left, &right)| (left - right).pow(2))
                     .sum()
-                }
-            }
+            },
             Distance::Cosine => {
                 |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {
                     let numerator = current_node_features
@@ -124,41 +128,44 @@ impl Graph {
         // compute the new edges to add
         let new_edges = self
             .par_iter_node_ids()
+            .zip(self.par_iter_node_degrees())
             .progress_with(pb)
-            .map(|source_node_id| {
-                // for each node find the k closest nodes (based on the distance choosen and their features)
-                let current_node_features = &features[source_node_id as usize];
-                let mut closest_nodes_distances = vec![f64::INFINITY; neighbours_number as usize];
-                let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
+            .map(|(source_node_id, node_degree)| {
+                if node_degree <= max_degree {
+                    let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
+                    // for each node find the k closest nodes (based on the distance choosen and their features)
+                    let current_node_features = &features[source_node_id as usize];
+                    let mut closest_nodes_distances =
+                        vec![f64::INFINITY; neighbours_number as usize];
 
-                features.iter().zip(self.iter_node_ids())
-                // every node is the closest to itself so we filter it out
-                .filter( |(_, destination_node_id)| source_node_id != *destination_node_id)
-                .for_each(
-                    |(node_features, destination_node_id)| {
-                        // compute the distance
-                        let distance = distance_metric(current_node_features, node_features);
-                        // get the max distance in the currently cosest nodes
-                        let (i, max_distance) = unsafe {
-                            closest_nodes_distances.argmax().unwrap_unchecked()
-                        };
-                        // update the closest nodes inserting the current node if needed
-                        if max_distance > distance {
-                            if max_distance == f64::INFINITY {
-                                closest_nodes.push(destination_node_id);
-                            } else {
-                                closest_nodes[i] = destination_node_id;
+                    features
+                        .iter()
+                        .zip(self.iter_node_ids())
+                        // every node is the closest to itself so we filter it out
+                        .filter(|(_, destination_node_id)| source_node_id != *destination_node_id)
+                        .for_each(|(node_features, destination_node_id)| {
+                            // compute the distance
+                            let distance = distance_metric(current_node_features, node_features);
+                            // get the max distance in the currently cosest nodes
+                            let (i, max_distance) =
+                                unsafe { closest_nodes_distances.argmax().unwrap_unchecked() };
+                            // update the closest nodes inserting the current node if needed
+                            if max_distance > distance {
+                                if max_distance == f64::INFINITY {
+                                    closest_nodes.push(destination_node_id);
+                                } else {
+                                    closest_nodes[i] = destination_node_id;
+                                }
+                                closest_nodes_distances[i] = distance;
                             }
-                            closest_nodes_distances[i] = distance;
-                        }
-                    },
-                );
-
-                closest_nodes
+                        });
+                    closest_nodes
+                } else {
+                    Vec::new()
+                }
             })
             .collect::<Vec<Vec<NodeT>>>();
 
-        
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {
@@ -174,11 +181,26 @@ impl Graph {
                                 .map(move |destination_node_id| {
                                     if !self.is_directed() {
                                         vec![
-                                            Ok((source_node_id as NodeT, destination_node_id, None, None)),
-                                            Ok((destination_node_id, source_node_id as NodeT, None, None)),
+                                            Ok((
+                                                source_node_id as NodeT,
+                                                destination_node_id,
+                                                None,
+                                                None,
+                                            )),
+                                            Ok((
+                                                destination_node_id,
+                                                source_node_id as NodeT,
+                                                None,
+                                                None,
+                                            )),
                                         ]
                                     } else {
-                                        vec![Ok((source_node_id as NodeT, destination_node_id, None, None))]
+                                        vec![Ok((
+                                            source_node_id as NodeT,
+                                            destination_node_id,
+                                            None,
+                                            None,
+                                        ))]
                                     }
                                 })
                                 .flatten()

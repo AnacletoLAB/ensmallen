@@ -551,8 +551,7 @@ impl Graph {
             })
             .collect::<Vec<f64>>();
         // The average degree is a relatively good proxy of the average cardinality of the neighbourshoods.
-        let average_degree =
-            (self.get_node_degrees_mean().unwrap() + 1.0).pow(maximal_distance as f64);
+        let average_degree = self.get_node_degrees_mean().unwrap() + 1.0;
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing node types co-occurrence",
@@ -563,7 +562,6 @@ impl Graph {
             .progress_with(pb)
             .map(move |node_id| {
                 let mut cooccurrences = vec![0.0; node_types_number];
-                let mut neighbours_types_number: NodeT = 0;
                 let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
                 neighbours_stack.push_front((node_id, 1));
                 let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
@@ -582,7 +580,6 @@ impl Graph {
                                 self.get_unchecked_node_type_id_from_node_id(neighbour_node_id)
                             {
                                 node_types.into_iter().for_each(|node_type| {
-                                    neighbours_types_number += 1;
                                     cooccurrences[node_type as usize] += 1.0 / distance as f64;
                                 });
                             }
@@ -591,17 +588,17 @@ impl Graph {
                             }
                         });
                 }
-                if neighbours_types_number > 0 {
+                let total_cooccurrence = cooccurrences.iter().sum::<f64>();
+                if total_cooccurrence > 0.0 {
                     cooccurrences
                         .iter_mut()
                         .enumerate()
                         .for_each(|(node_type, cooccurrence)| {
                             *cooccurrence = inverse_document_frequencies[node_type]
-                                * ((*cooccurrence * (k1 + 1.0))
-                                    / (*cooccurrence
+                                * ((*cooccurrence / total_cooccurrence * (k1 + 1.0))
+                                    / (*cooccurrence / total_cooccurrence
                                         + k1 * (1.0 - b
-                                            + b * neighbours_types_number as f64
-                                                / average_degree)));
+                                            + b * total_cooccurrence / average_degree)));
                         });
                 }
                 cooccurrences
