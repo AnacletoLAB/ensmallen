@@ -3152,14 +3152,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
 			},
 			227 => {
-				trace.push(format!("iter_non_singleton_node_ids()", ));
+				trace.push(format!("iter_connected_node_ids()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
+				let _ = graph.iter_connected_node_ids().collect::<Vec<_>>();
 			},
 			228 => {
 				trace.push(format!("iter_singleton_node_ids()", ));

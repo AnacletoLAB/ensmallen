@@ -601,7 +601,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.iter_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_node_names_and_node_type_names().collect::<Vec<_>>();
 	let _ = graph.iter_nodes_with_type_ids().collect::<Vec<_>>();
-	let _ = graph.iter_non_singleton_node_ids().collect::<Vec<_>>();
+	let _ = graph.iter_connected_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_singleton_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_singleton_with_selfloops_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_sources_ids(data.iter_sources_ids.directed).collect::<Vec<_>>();

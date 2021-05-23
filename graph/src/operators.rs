@@ -197,12 +197,18 @@ fn generic_integer_operator(
 }
 
 impl<'a, 'b> Graph {
-    /// Return true if the graphs can be elaborated through graph algebra.
+    /// Return result containing either empty tuple or error representing what makes impossible to combine the two graphs.
     ///
     /// # Arguments
     ///
-    /// * `other`: &Graph - The other graph.
-    pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
+    /// * `other`: &Graph - The other graph to validate operation with.
+    /// 
+    /// # Raises
+    /// * If a graph is directed and the other is undirected.
+    /// * If one of the two graphs has edge weights and the other does not.
+    /// * If one of the two graphs has node types and the other does not.
+    /// * If one of the two graphs has edge types and the other does not.
+    pub(crate) fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
             return Err(String::from(
                 "The graphs must either be both directed or undirected.",
@@ -237,6 +243,12 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The other graph.
+    /// 
+    /// # Raises
+    /// * If a graph is directed and the other is undirected.
+    /// * If one of the two graphs has edge weights and the other does not.
+    /// * If one of the two graphs has node types and the other does not.
+    /// * If one of the two graphs has edge types and the other does not.
     pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool, String> {
         self.validate_operator_terms(other)?;
         if self.nodes != other.nodes {

@@ -224,7 +224,8 @@ impl Graph {
             // all ones bit as the singleton nodes number.
             component_sizes = vec![1; self.get_disconnected_nodes_number() as usize];
             // Similarly, the components remapping can be initialized to a range.
-            components_remapping = (0..self.get_disconnected_nodes_number()).collect::<Vec<NodeT>>();
+            components_remapping =
+                (0..self.get_disconnected_nodes_number()).collect::<Vec<NodeT>>();
         }
 
         edges.for_each(|(src, dst)| {
@@ -356,12 +357,42 @@ impl Graph {
     /// The spanning tree is NOT minimal.
     /// The given random_state is NOT the root of the tree.
     ///
+    /// This method, additionally, allows for undesired edge types to be
+    /// used to build the spanning tree only in extremis when it is utterly
+    /// necessary in order to complete the spanning arborescence.
+    ///
+    /// The quintuple returned contains:
+    /// - Set of the edges used in order to build the spanning arborescence.
+    /// - Vector of the connected component of each node.
+    /// - Number of connected components.
+    /// - Minimum component size.
+    /// - Maximum component size.
+    ///
     /// # Arguments
     ///
     /// * `random_state`: EdgeT - The random_state to use for the holdout,
     /// * `undesired_edge_types`: &Option<HashSet<Option<EdgeTypeT>>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
+    /// # Example
+    /// To compute a random spanning arborescence using Kruskal you can use the following:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let (
+    ///     spanning_arborescence_set,
+    ///     connected_components_number,
+    ///     number_of_connected_components,
+    ///     minimum_component_size,
+    ///     maximum_component_size
+    /// ) = graph.random_spanning_arborescence_kruskal(
+    ///     42,
+    ///     &None,
+    ///     false
+    /// );
+    /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
+    /// assert!(minimum_component_size <= maximum_component_size);
+    /// assert!(maximum_component_size <= graph.get_nodes_number());
+    /// ```
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
@@ -379,10 +410,33 @@ impl Graph {
     ///
     /// The spanning tree is NOT minimal.
     ///
-    /// # Arguments
+    /// The quintuple returned contains:
+    /// - Set of the edges used in order to build the spanning arborescence.
+    /// - Vector of the connected component of each node.
+    /// - Number of connected components.
+    /// - Minimum component size.
+    /// - Maximum component size.
     ///
+    /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
+    /// # Example
+    /// To compute a spanning arborescence using Kruskal you can use the following:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let (
+    ///     spanning_arborescence_set,
+    ///     connected_components_number,
+    ///     number_of_connected_components,
+    ///     minimum_component_size,
+    ///     maximum_component_size
+    /// ) = graph.spanning_arborescence_kruskal(
+    ///     false
+    /// );
+    /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
+    /// assert!(minimum_component_size <= maximum_component_size);
+    /// assert!(maximum_component_size <= graph.get_nodes_number());
+    /// ```
     pub fn spanning_arborescence_kruskal(
         &self,
         verbose: bool,
@@ -400,15 +454,22 @@ impl Graph {
                 .progress_with(pb),
         )
     }
-    /// Returns set of edges composing a spanning tree.
+
+    /// Returns set of edges composing a spanning arborescence.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     ///
-    /// # Arguments
+    /// The returned tuple contains:
+    /// - The number edges required in order to build the spanning arborescence.
+    /// - Iterator over the edges used in order to build the spanning arborescence.
     ///
+    /// # Arguments
     /// * `verbose`: bool - Whether to show a loading bar or not.
     ///
+    /// # Raises
+    /// * If this method is called on a directed graph.
+    /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn spanning_arborescence(
         &self,
         verbose: bool,
@@ -529,14 +590,17 @@ impl Graph {
     }
 
     /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
+    ///
     /// **This works only for undirected graphs.**
     ///
     /// This method is **not thread save and not deterministic** but by design of the algorithm this
     /// shouldn't matter but if we will encounter non-detemristic bugs here is where we want to look.
     ///
-    /// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
-    /// We assign to each node the index of its component, so nodes in the same components will have the same index.
-    /// This component index is the returned Components membership vector.
+    /// The returned quadruple contains:
+    /// - Vector of the connected component for each node.
+    /// - Number of connected components.
+    /// - Minimum connected component size.
+    /// - Maximum connected component size.
     ///
     /// # Arguments
     ///
@@ -588,6 +652,10 @@ impl Graph {
     /// assert_eq!(smallest, 2); // the size of the smallest component
     /// assert_eq!(biggest, 3);  // the size of the biggest component
     /// ```
+    ///
+    /// # Raises
+    /// * If the given graph is directed.
+    /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn connected_components(
         &self,
         verbose: bool,

@@ -16854,7 +16854,7 @@
                     ]
                 ],
                 "return_type": "Vec<NodeT>",
-                "body": "self.iter_non_singleton_node_ids().collect()"
+                "body": "self.iter_connected_node_ids().collect()"
             },
             {
                 "file": "getters.rs",
@@ -16880,7 +16880,7 @@
                     ]
                 ],
                 "return_type": "HashMap<NodeT, NodeT>",
-                "body": "self.iter_non_singleton_node_ids()\n            .enumerate()\n            .map(|(i, node)| (node as NodeT, i as NodeT))\n            .collect()"
+                "body": "self.iter_connected_node_ids()\n            .enumerate()\n            .map(|(i, node)| (node as NodeT, i as NodeT))\n            .collect()"
             },
             {
                 "file": "getters.rs",
@@ -19533,7 +19533,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "iter_non_singleton_node_ids",
+                "name": "iter_connected_node_ids",
                 "args": [
                     [
                         "self",

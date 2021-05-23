@@ -162,24 +162,31 @@ pub fn load_empty_graph(directed: bool) -> Graph {
 
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
-pub fn load_cora() -> Result<Graph, String> {
+pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")?
-        .set_separator(Some("\t"))?
+    let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
+        .unwrap()
+        .set_separator(Some("\t"))
+        .unwrap()
         .set_verbose(Some(false))
-        .set_sources_column(Some("subject"))?
-        .set_destinations_column(Some("object"))?
-        .set_edge_types_column(Some("edge_type"))?;
+        .set_sources_column(Some("subject"))
+        .unwrap()
+        .set_destinations_column(Some("object"))
+        .unwrap()
+        .set_edge_types_column(Some("edge_type"))
+        .unwrap();
     let nodes_reader = Some(
-        NodeFileReader::new("tests/data/cora/nodes.tsv")?
-            .set_separator(Some("\t"))?
-            .set_nodes_column(Some("id"))?
+        NodeFileReader::new("tests/data/cora/nodes.tsv")
+            .unwrap()
+            .set_separator(Some("\t"))
+            .unwrap()
+            .set_nodes_column(Some("id"))
+            .unwrap()
             .set_verbose(Some(false))
-            .set_node_types_column(Some("node_type"))?,
+            .set_node_types_column(Some("node_type"))
+            .unwrap(),
     );
-    let cora =
-        Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, graph_name.clone())?;
-    Ok(cora)
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, graph_name.clone()).unwrap()
 }
 
 /// Return WalksParameters to execute a first order walk.
@@ -335,11 +342,27 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         graph.has_singleton_nodes_with_selfloops(),
     );
 
-
     assert_eq!(
-        graph.singleton_nodes_with_selfloops.as_ref().map_or(0, |x| x.len() as NodeT),
+        graph
+            .singleton_nodes_with_selfloops
+            .as_ref()
+            .map_or(0, |x| x.len() as NodeT),
         graph.get_singleton_nodes_with_selfloops_number(),
     );
+
+    for singleton_node_id in graph.iter_singleton_node_ids() {
+        assert!(graph.get_unchecked_node_degree_from_node_id(singleton_node_id) == 0);
+        assert!(graph.is_unchecked_singleton_from_node_id(singleton_node_id));
+    }
+
+    if !graph.is_directed() {
+        for node_id in graph.iter_node_ids() {
+            assert_eq!(
+                graph.is_unchecked_singleton_from_node_id(node_id),
+                graph.get_unchecked_node_degree_from_node_id(node_id) == 0
+            );
+        }
+    }
 
     // Test get_edge_id_from_node_names_and_edge_type_name()
     assert!(
@@ -384,7 +407,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     assert_eq!(
-        graph.get_connected_nodes_number() + graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),
+        graph.get_connected_nodes_number()
+            + graph.get_singleton_nodes_number()
+            + graph.get_singleton_nodes_with_selfloops_number(),
         graph.get_nodes_number(),
         "Sum of singleton and non singleton nodes number does not match."
     );
@@ -1133,10 +1158,8 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
 pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     for use_stratification in [true, false] {
         if graph.get_known_node_types_number()? < 2
-            ||
-            (use_stratification
-            && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?)
-            )
+            || (use_stratification
+                && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
             assert!(graph
                 .node_label_holdout(0.8, use_stratification, 42)
@@ -1455,7 +1478,7 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), Stri
 
 pub fn test_graph_diameter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // TODO! update this when we will support the graph diameter on directed graphs
-    if graph.is_directed(){
+    if graph.is_directed() {
         return Ok(());
     }
     let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
@@ -1472,20 +1495,38 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: bool) -> Result<(), Strin
             // by definition the diameter of a graph with a single component
             // cannot be infinite unless it's just a singleton.
             if graph.get_nodes_number() == 1 {
-                assert_eq!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
-                assert_eq!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+                assert_eq!(
+                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
+                    f64::INFINITY
+                );
+                assert_eq!(
+                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
+                    f64::INFINITY
+                );
             } else {
-                assert_ne!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
-                assert_ne!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+                assert_ne!(
+                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
+                    f64::INFINITY
+                );
+                assert_ne!(
+                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
+                    f64::INFINITY
+                );
             }
-        } 
+        }
 
         _ => {
-            assert_eq!(graph.get_unweighted_diameter(Some(false), verbose).unwrap(), f64::INFINITY);
+            assert_eq!(
+                graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
+                f64::INFINITY
+            );
 
             // if all the nodes are singletons then the diameter should be infinite
             if biggest == 1 {
-                assert_eq!(graph.get_unweighted_diameter(Some(true), verbose).unwrap(), f64::INFINITY);
+                assert_eq!(
+                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
+                    f64::INFINITY
+                );
             }
         }
     }
@@ -1520,7 +1561,7 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     let _ = test_spanning_arborescence_bader(graph, verbose);
 
     warn!("Testing the graph diameter.");
-    let _  = test_graph_diameter(graph, verbose);
+    let _ = test_graph_diameter(graph, verbose);
 
     warn!("Running node-label holdouts tests.");
     let _ = test_nodelabel_holdouts(graph, verbose);

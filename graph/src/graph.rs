@@ -15,7 +15,7 @@ use std::collections::HashMap;
 /// Load the graph Cora:
 /// ```rust
 /// use graph::*;
-/// 
+///
 /// // Create the edge file reader
 /// let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv").unwrap()
 ///     .set_separator(Some("\t")).unwrap()
@@ -24,7 +24,7 @@ use std::collections::HashMap;
 ///     .set_destinations_column(Some("object")).unwrap()
 ///     .set_default_weight(Some(1.0))
 ///     .set_edge_types_column(Some("edge_type")).unwrap();
-/// 
+///
 /// // Create the node file reader
 /// let nodes_reader = Some(
 ///     NodeFileReader::new("tests/data/cora/nodes.tsv").unwrap()
@@ -33,16 +33,16 @@ use std::collections::HashMap;
 ///         .set_verbose(Some(false))
 ///         .set_node_types_column(Some("node_type")).unwrap(),
 /// );
-/// 
+///
 /// // Load the graph
 /// let mut cora = Graph::from_unsorted_csv(
-///     edges_reader, 
-///     nodes_reader, 
+///     edges_reader,
+///     nodes_reader,
 ///     false,          // if the graph is Directed
 ///     false,          // if the edge list is Directed
 ///     "Cora".to_string()
 ///    ).unwrap();
-/// 
+///
 /// // Enable Speed-ups but it uses more memory.
 /// cora.enable(true, true, true, None).unwrap();
 /// ```
@@ -105,7 +105,6 @@ pub struct Graph {
     // /////////////////////////////////////////////////////////////////////////
     // Elias-Fano Caching related attributes
     // /////////////////////////////////////////////////////////////////////////
-
     /// Vector of destinations to execute fast walks if required.
     pub(crate) destinations: Option<Vec<NodeT>>,
     /// Vector of sources to execute fast link prediction sequences if required.
@@ -167,12 +166,42 @@ impl Graph {
         }
     }
 
-    /// Return true if given graph has any edge overlapping with current graph.
+    /// Return whether given graph has any edge overlapping with current graph.
     ///
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to check against.
     ///
+    /// # Example
+    /// You can whether two graphs are overlapping as follows:
+    /// ```rust
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, false, false, false, false);
+    /// # let cora = graph::test_utilities::load_cora();
+    /// assert!(ppi.overlaps(&ppi).unwrap());
+    /// assert!(cora.overlaps(&cora).unwrap());
+    /// assert!(!ppi.overlaps(&cora).unwrap());
+    /// assert!(!cora.overlaps(&ppi).unwrap());
+    /// let (train, test) = ppi.random_holdout(
+    ///     42,
+    ///     0.8,
+    ///     false,
+    ///     None,
+    ///     None,
+    ///     false
+    /// ).unwrap();
+    /// assert!(ppi.overlaps(&train).unwrap());
+    /// assert!(ppi.overlaps(&test).unwrap());
+    /// assert!(train.overlaps(&ppi).unwrap());
+    /// assert!(test.overlaps(&ppi).unwrap());
+    /// assert!(!train.overlaps(&test).unwrap());
+    /// assert!(!test.overlaps(&train).unwrap());
+    /// ```
+    ///
+    /// # Raises
+    /// * If a graph is directed and the other is undirected.
+    /// * If one of the two graphs has edge weights and the other does not.
+    /// * If one of the two graphs has node types and the other does not.
+    /// * If one of the two graphs has edge types and the other does not.
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
@@ -198,6 +227,31 @@ impl Graph {
     ///
     /// * `other`: &Graph - The graph to check against.
     ///
+    /// # Example
+    /// You can whether two graphs contain one another as follows:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, false, false, false, false);
+    /// let (train, test) = graph.random_holdout(
+    ///     42,
+    ///     0.8,
+    ///     false,
+    ///     None,
+    ///     None,
+    ///     false
+    /// ).unwrap();
+    /// assert!(graph.contains(&train).unwrap());
+    /// assert!(graph.contains(&test).unwrap());
+    /// assert!(!train.contains(&graph).unwrap());
+    /// assert!(!test.contains(&graph).unwrap());
+    /// assert!(!train.contains(&test).unwrap());
+    /// assert!(!test.contains(&train).unwrap());
+    /// ```
+    ///
+    /// # Raises
+    /// * If a graph is directed and the other is undirected.
+    /// * If one of the two graphs has edge weights and the other does not.
+    /// * If one of the two graphs has node types and the other does not.
+    /// * If one of the two graphs has edge types and the other does not.
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other

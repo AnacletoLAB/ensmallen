@@ -36,8 +36,8 @@ fn fast_u32_modulo(val: u32, n: u32) -> u32 {
 pub fn word2vec<'a>(
     sequences: impl ParallelIterator<Item = Vec<NodeT>> + 'a,
     window_size: usize,
-) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
-    Ok(sequences.flat_map_iter(move |sequence| {
+) -> impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a {
+    sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
         if sequence_length < window_size * 2 + 1 {
             panic!(
@@ -58,7 +58,7 @@ pub fn word2vec<'a>(
                 sequence[i],
             )
         })
-    }))
+    })
 }
 
 /// Return triple with CSR representation of cooccurrence matrix.
@@ -148,17 +148,20 @@ impl Graph {
     /// * `quantity`: NodeT - Number of nodes to consider.
     /// * `window_size`: usize - Window size to consider for the sequences.
     ///
+    /// # Raises
+    /// * If the graph does not contain edges.
+    /// * If the graph is directed.
+    /// * If the given walks parameters are not compatible with the current graph instance.
     pub fn node2vec<'a>(
         &'a self,
         walk_parameters: &'a WalksParameters,
         quantity: NodeT,
         window_size: usize,
     ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
-        // do the walks and check the result
-        word2vec(
+        Ok(word2vec(
             self.iter_random_walks(quantity, walk_parameters)?,
             window_size,
-        )
+        ))
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.
@@ -307,6 +310,8 @@ impl Graph {
     /// });
     /// ```
     ///
+    /// # Raises
+    /// * If the graph does not contain node type IDs.
     pub fn get_node_label_prediction_tuple_from_node_ids(
         &self,
         node_ids: Vec<NodeT>,
@@ -330,53 +335,6 @@ impl Graph {
         }))
     }
 
-    /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
-    /// This method is just for setting the lowerbound on the simplest possible model.
-    ///
-    /// # Arguments
-    ///
-    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * `negative_samples`: f64 - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    ///
-    pub fn link_prediction_degrees<'a>(
-        &'a self,
-        idx: u64,
-        batch_size: usize,
-        normalize: bool,
-        negative_samples: f64,
-        avoid_false_negatives: bool,
-        maximal_sampling_attempts: usize,
-        graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String> {
-        let iter = self.link_prediction_ids(
-            idx,
-            batch_size,
-            negative_samples,
-            avoid_false_negatives,
-            maximal_sampling_attempts,
-            graph_to_avoid,
-        )?;
-
-        let max_degree = match normalize {
-            true => self.get_max_node_degree()? as f64,
-            false => 1.0,
-        };
-
-        Ok(iter.map(move |(index, src, dst, label)| {
-            (
-                index,
-                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
-                label,
-            )
-        }))
-    }
-
     /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
     ///
     /// # Arguments
@@ -388,6 +346,8 @@ impl Graph {
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
     pub fn link_prediction_ids<'a>(
         &'a self,
         idx: u64,
@@ -463,6 +423,55 @@ impl Graph {
                     );
                 }
             }))
+    }
+
+    /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
+    /// This method is just for setting the lowerbound on the simplest possible model.
+    ///
+    /// # Arguments
+    ///
+    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
+    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    pub fn link_prediction_degrees<'a>(
+        &'a self,
+        idx: u64,
+        batch_size: usize,
+        normalize: bool,
+        negative_samples: f64,
+        avoid_false_negatives: bool,
+        maximal_sampling_attempts: usize,
+        graph_to_avoid: &'a Option<&Graph>,
+    ) -> Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String> {
+        let iter = self.link_prediction_ids(
+            idx,
+            batch_size,
+            negative_samples,
+            avoid_false_negatives,
+            maximal_sampling_attempts,
+            graph_to_avoid,
+        )?;
+
+        let max_degree = match normalize {
+            true => self.get_max_node_degree()? as f64,
+            false => 1.0,
+        };
+
+        Ok(iter.map(move |(index, src, dst, label)| {
+            (
+                index,
+                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
+                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
+                label,
+            )
+        }))
     }
 
     /// Returns all available edge prediction metrics for given edges.
@@ -541,7 +550,8 @@ impl Graph {
             })
             .collect::<Vec<f64>>();
         // The average degree is a relatively good proxy of the average cardinality of the neighbourshoods.
-        let average_degree = (self.get_node_degrees_mean().unwrap() + 1.0).pow(maximal_distance as f64);
+        let average_degree =
+            (self.get_node_degrees_mean().unwrap() + 1.0).pow(maximal_distance as f64);
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing node types co-occurrence",

@@ -35,14 +35,14 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// window_size: int,
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
+fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWords) {
     let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
-        pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
+        rust_word2vec(sequences.into_par_iter(), window_size).unzip();
     let gil = pyo3::Python::acquire_gil();
-    Ok((
+    (
         to_nparray_2d!(gil, contexts, NodeT),
         to_ndarray_1d!(gil, words, NodeT),
-    ))
+    )
 }
 
 #[pyfunction(py_kwargs = "**")]

@@ -5,9 +5,9 @@ use numpy::{PyArray, PyArray1};
 impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Return numpy array with degree centrality of the nodes in the considered graph.
-    fn get_degree_centrality(&self) -> Py<PyArray1<f64>> {
+    fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_degree_centrality(), f64)
+        Ok(to_ndarray_1d!(gil, pe!(self.graph.get_degree_centrality())?, f64))
     }
 
     #[text_signature = "($self, normalize, verbose)"]
@@ -93,13 +93,13 @@ impl EnsmallenGraph {
     /// Returns
     /// ------------------------
     /// Numpy array with weighted closeness centralities for each node.
-    fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
+        Ok(to_ndarray_1d!(
             gil,
-            self.graph.get_weighted_closeness_centrality(verbose),
+            pe!(self.graph.get_weighted_closeness_centrality(verbose))?,
             f64
-        )
+        ))
     }
 
     #[text_signature = "($self, verbose)"]
@@ -133,13 +133,13 @@ impl EnsmallenGraph {
     /// Returns
     /// ------------------------
     /// Numpy array with unweighted harmonic centralities for each node.
-    fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
+        Ok(to_ndarray_1d!(
             gil,
-            self.graph.get_weighted_harmonic_centrality(verbose),
+            pe!(self.graph.get_weighted_harmonic_centrality(verbose))?,
             f64
-        )
+        ))
     }
 
     /// Returns vector with unweighted eigenvector centrality.
