@@ -12,6 +12,8 @@ impl EnsmallenGraph {
     ///     Node_features to use to identify the new neighbours.
     /// neighbours_number: Option<NodeT>,
     ///     Number of neighbours to add.
+    /// max_degree: Optional[int],
+    ///     The maximum degree a node can have its neighbours augmented. By default 0, that is, only singletons are augmented.
     /// distance_name: Optional[str],
     ///     Name of distance to use. Can either be L2 or COSINE. By default COSINE.
     /// verbose: Option<bool>,
@@ -20,6 +22,7 @@ impl EnsmallenGraph {
         &self,
         node_features: Vec<Vec<f64>>,
         neighbours_number: Option<NodeT>,
+        max_degree: Option<NodeT>,
         distance_name: Option<&str>,
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
@@ -27,6 +30,7 @@ impl EnsmallenGraph {
             graph: pe!(self.graph.generate_new_edges_from_node_features(
                 node_features,
                 neighbours_number,
+                max_degree,
                 distance_name,
                 verbose
             ))?,
