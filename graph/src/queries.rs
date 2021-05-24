@@ -508,7 +508,10 @@ impl Graph {
     /// println!("The node type id of node {} is {:?}", 0, graph.get_unchecked_node_type_id_from_node_id(0));
     /// ```
     ///
-    pub fn get_unchecked_node_type_id_from_node_id(
+    /// # Safety
+    /// Even though the method will return an option when the node types are
+    /// not available for the current graph, the behaviour is undefined.
+    pub unsafe fn get_unchecked_node_type_id_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Option<Vec<NodeTypeT>> {
@@ -535,7 +538,7 @@ impl Graph {
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
-            .map(|node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
+            .map(|node_id| unsafe {self.get_unchecked_node_type_id_from_node_id(node_id)})
     }
 
     /// Returns edge type of given edge.
@@ -587,7 +590,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose node types are to be returned.
-    pub fn get_unchecked_node_type_names_from_node_id(
+    ///
+
+    pub unsafe fn get_unchecked_node_type_names_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Option<Vec<String>> {
@@ -601,6 +606,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose node types are to be returned.
+    ///
+    /// # Raises
+    /// * If the node types are not available for the current graph instance.
     pub fn get_node_type_names_from_node_id(
         &self,
         node_id: NodeT,
@@ -608,7 +616,7 @@ impl Graph {
         self.must_have_node_types()?;
         Ok(self
             .get_node_type_id_from_node_id(node_id)?
-            .map(|node_type_ids| {
+            .map(|node_type_ids| unsafe {
                 self.get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
             }))
     }
@@ -1416,13 +1424,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_ids`: Vec<NodeTypeT> - Id of the node type.
-    pub fn get_unchecked_node_type_names_from_node_type_ids(
+    ///
+    /// # Safety
+    /// The method will panic if the graph does not contain node types.
+    pub unsafe fn get_unchecked_node_type_names_from_node_type_ids(
         &self,
         node_type_ids: Vec<NodeTypeT>,
     ) -> Vec<String> {
         self.node_types
             .as_ref()
             .map(|nts| nts.unchecked_translate_vector(node_type_ids))
-            .unwrap()
+            .unwrap_unchecked()
     }
 }

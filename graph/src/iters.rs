@@ -318,7 +318,7 @@ impl Graph {
     pub fn iter_node_ids_and_node_type_ids(
         &self,
     ) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
-        self.iter_node_ids().map(move |node_id| {
+        self.iter_node_ids().map(move |node_id| unsafe {
             (
                 node_id,
                 self.get_unchecked_node_type_id_from_node_id(node_id),
@@ -326,8 +326,35 @@ impl Graph {
         })
     }
 
+    /// Return iterator on the node type IDs.
+    pub unsafe fn iter_unchecked_node_type_ids(
+        &self,
+    ) -> impl Iterator<Item = Option<Vec<NodeTypeT>>> + '_ {
+        self.iter_node_ids()
+            .map(move |node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
+    }
+
+    /// Return iterator on the one-hot encoded node type IDs.
+    pub fn iter_one_hot_encoded_node_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = Vec<bool>> + '_, String> {
+        let node_types_number = self.get_node_types_number()?;
+        Ok(unsafe {
+            self.iter_unchecked_node_type_ids()
+                .map(move |maybe_node_types| {
+                    let mut dummies = vec![false; node_types_number as usize];
+                    if let Some(node_types) = maybe_node_types {
+                        node_types.into_iter().for_each(|node_type| {
+                            dummies[node_type as usize] = true;
+                        });
+                    }
+                    dummies
+                })
+        })
+    }
+
     /// Return iterator on the node of the graph.
-    pub fn par_iter_node_ids_and_node_type_ids(
+    pub unsafe fn par_iter_unchecked_node_ids_and_node_type_ids(
         &self,
     ) -> impl ParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
         self.par_iter_node_ids().map(move |node_id| {
@@ -344,7 +371,7 @@ impl Graph {
     ) -> impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {
         self.iter_node_ids_and_node_type_ids()
-            .map(move |(node_id, node_types)| {
+            .map(move |(node_id, node_types)| unsafe {
                 (
                     node_id,
                     self.get_unchecked_node_name_from_node_id(node_id),
@@ -462,6 +489,26 @@ impl Graph {
                     self.get_unchecked_edge_type_id_from_edge_id(edge_id),
                 )
             })
+    }
+
+    /// Return iterator on the one-hot encoded edge type IDs.
+    ///
+    /// # Raises
+    /// * If the current graph instance does not contain edge types.
+    pub fn iter_one_hot_encoded_edge_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = Vec<bool>> + '_, String> {
+        let edge_types_number = self.get_edge_types_number()?;
+        Ok(self
+            .get_edge_type_ids()?
+            .into_iter()
+            .map(move |maybe_edge_type| {
+                let mut dummies = vec![false; edge_types_number as usize];
+                if let Some(edge_type) = maybe_edge_type {
+                    dummies[edge_type as usize] = true;
+                }
+                dummies
+            }))
     }
 
     /// Return iterator on the edges of the graph with the string name.

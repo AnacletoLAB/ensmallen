@@ -29,6 +29,49 @@ pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> Pr
     }
 }
 
+/// Validated the provided features.
+///
+/// Specifically, the features must:
+/// - Be provided for all of the expected elements.
+/// - Be non-empty.
+/// - Be of a consistent size, that is the number of features for each element must be equal.
+///
+/// # Arguments
+/// * `features`: Vec<Vec<f64>> - The features to validate.
+/// * `expected_elements_number`: usize - The number of expected elements.
+pub(crate) fn validate_features(
+    features: &Vec<Vec<f64>>,
+    expected_elements_number: usize,
+) -> Result<(), String> {
+    if features.len() != expected_elements_number {
+        return Err(format!(
+            concat!(
+                "The expected features vector length was expected to be {}, ",
+                "but is {}."
+            ),
+            expected_elements_number,
+            features.len()
+        ));
+    }
+    let expected_node_features_length = features.first().unwrap().len();
+    if expected_node_features_length == 0 {
+        return Err("The node features length must be greater than zero.".to_string());
+    }
+    for node_features in features.iter() {
+        if expected_node_features_length != node_features.len() {
+            return Err(format!(
+                concat!(
+                    "The node features length needs to be consistent: the expected ",
+                    "size was {} while the found length was {}."
+                ),
+                expected_node_features_length,
+                node_features.len()
+            ));
+        }
+    }
+    Ok(())
+}
+
 /// Return true if the given weight is near to one.
 pub(crate) fn not_one(weight: WeightT) -> bool {
     (weight - 1.0).abs() > WeightT::EPSILON
@@ -106,9 +149,8 @@ pub fn parse_weight(weight: String) -> Result<WeightT, String> {
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }
 
-
 pub trait ArgMax<T> {
-    fn argmax(&self) -> Option<(usize, T)>; 
+    fn argmax(&self) -> Option<(usize, T)>;
 }
 
 impl<T: PartialOrd + Copy> ArgMax<T> for Vec<T> {
@@ -116,16 +158,13 @@ impl<T: PartialOrd + Copy> ArgMax<T> for Vec<T> {
         self.iter()
             .enumerate()
             .fold(None, |current_max, (i, &value)| {
-                current_max.map_or(
-                    Some((i, value)),
-                    |(j, current_max_value)| {
-                        Some(if value > current_max_value {
-                            (i, value)
-                        } else {
-                            (j, current_max_value)
-                        })
-                    },
-                )
+                current_max.map_or(Some((i, value)), |(j, current_max_value)| {
+                    Some(if value > current_max_value {
+                        (i, value)
+                    } else {
+                        (j, current_max_value)
+                    })
+                })
             })
     }
 }

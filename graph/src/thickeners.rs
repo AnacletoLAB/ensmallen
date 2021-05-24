@@ -50,34 +50,8 @@ impl Graph {
     ) -> Result<Graph, String> {
         // check that the parameters are sane
         self.must_have_nodes()?;
-        if features.len() != self.get_nodes_number() as usize {
-            return Err(format!(
-                concat!(
-                    "The node features length need to be provided for each of the node, ",
-                    "but the provided node features length is {} while the number of ",
-                    "nodes in the graph is {}."
-                ),
-                features.len(),
-                self.get_nodes_number()
-            ));
-        }
+        validate_features(&features, self.get_nodes_number() as usize)?;
         let max_degree = max_degree.unwrap_or(0);
-        let expected_node_features_length = features.first().unwrap().len();
-        if expected_node_features_length == 0 {
-            return Err("The node features length must be greater than zero.".to_string());
-        }
-        for node_features in features.iter() {
-            if expected_node_features_length != node_features.len() {
-                return Err(format!(
-                    concat!(
-                        "The node features length needs to be consistent: the expected ",
-                        "size was {} while the found length was {}."
-                    ),
-                    expected_node_features_length,
-                    node_features.len()
-                ));
-            }
-        }
 
         // compute the neighbours nodes to add
         let neighbours_number =

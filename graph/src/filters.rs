@@ -210,7 +210,7 @@ impl Graph {
                     self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                         .progress_with(pb_edges)
                         .filter(
-                            |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| {
+                            |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
                                 edge_filter(&(*edge_id, *src, *dst, *edge_type, *weight))
                                     && node_filter(&(
                                         *src,

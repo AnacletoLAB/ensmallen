@@ -578,6 +578,22 @@ impl Graph {
             .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
+    /// Returns one-hot encoded node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_one_hot_encoded_node_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_node_type_ids()?.collect())
+    }
+
+    /// Returns one-hot encoded edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_one_hot_encoded_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_edge_type_ids()?.collect())
+    }
+
     /// Return the node types names.
     ///
     /// # Example
@@ -593,7 +609,7 @@ impl Graph {
     pub fn get_node_type_names(&self) -> Result<Vec<Option<Vec<String>>>, String> {
         self.must_have_node_types().map(|_| {
             self.iter_node_ids()
-                .map(|node_id| self.get_unchecked_node_type_names_from_node_id(node_id))
+                .map(|node_id| unsafe { self.get_unchecked_node_type_names_from_node_id(node_id) })
                 .collect::<Vec<Option<Vec<String>>>>()
         })
     }

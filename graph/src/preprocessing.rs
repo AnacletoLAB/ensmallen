@@ -1,7 +1,7 @@
 use super::*;
+use atomic_float::AtomicF64;
 use bitvec::prelude::*;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
-use num_traits::Pow;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -246,7 +246,10 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    pub(crate) fn get_node_label_prediction_tuple_from_node_id(
+    /// # Safety
+    /// The method will return a None node type also when the graph does
+    /// not contain node types.
+    pub(crate) unsafe fn get_node_label_prediction_tuple_from_node_id(
         &self,
         node_id: NodeT,
         random_state: u64,
@@ -324,7 +327,7 @@ impl Graph {
         String,
     > {
         self.must_have_node_types()?;
-        Ok(node_ids.into_iter().map(move |node_id| {
+        Ok(node_ids.into_iter().map(move |node_id| unsafe {
             self.get_node_label_prediction_tuple_from_node_id(
                 node_id,
                 random_state,
@@ -516,92 +519,215 @@ impl Graph {
             })
     }
 
-    /// Returns node types co-occurence within given maximal distance.
+    /// Returns okapi node features propagation within given maximal distance.
     ///
     /// # Arguments
+    /// * `features`: Vec<Option<Vec<f64>>> - The features to propagate. Use None to represent eventual unknown features.
+    /// * `iterations`: Option<usize> - The number of iterations to execute. By default one.
     /// * `maximal_distance`: Option<usize> - The distance to consider for the cooccurrences. The default value is 3.
-    /// * `k1`: Option<f64> - The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// * `k1`: Option<f64> - The k1 parameter from okapi. Tipicaly between 1.2 and 2.0. It can be seen as a smoothing.
+    /// * `b`: Option<f64> - The b parameter from okapi. Tipicaly 0.75.
+    /// * `include_central_node`: Option<bool> - Whether to include the central node. By default true.
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    /// # References
+    /// The algorithm implemented is a generalization of the OKAPI BM25 TFIDF
+    /// algorithm generalized for graphs.
+    pub fn get_okapi_bm25_node_feature_propagation(
+        &self,
+        mut features: Vec<Vec<f64>>,
+        iterations: Option<usize>,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
+        include_central_node: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<Vec<f64>>, String> {
+        // The graph must have nodes to support node feature propagation
+        self.must_have_nodes()?;
+        // Validate the provided features
+        validate_features(&features, self.get_nodes_number() as usize)?;
+        // We use as default distance 3
+        let maximal_distance = maximal_distance.unwrap_or(3);
+        // K1 values are typically between 1.2 and 2.0 in absence of additional
+        // tuning of the model.
+        let k1 = k1.unwrap_or(1.5);
+        // b values are tipically equal to 0.75 in abscence of additional tuning.
+        let b = b.unwrap_or(0.75);
+        // By default we only execute 1 iteration
+        let iterations = iterations.unwrap_or(1);
+        // The number of iterations must be equal or greater than one.
+        if iterations == 0 {
+            return Err(
+                "The number of iterations must be a strictly positive integer.".to_string(),
+            );
+        }
+        // By default we include the features of the central node.
+        // This is a bias in the context of labels.
+        let include_central_node = include_central_node.unwrap_or(true);
+        // Get the number of possible elements in the features vocabulary
+        let features_number = features[0].len() as usize;
+        // Get the number of 'documents'
+        let nodes_number = self.get_nodes_number() as usize;
+        // Loading bar
+        let iterations_progress_bar = get_loading_bar(
+            verbose.unwrap_or(true) && iterations > 1,
+            "Iterating features propagation",
+            nodes_number,
+        );
+        // Execute the propagation
+        for _ in (0..iterations).progress_with(iterations_progress_bar) {
+            // Total sum per feature
+            let total_sum_per_feature = (0..features_number)
+                .map(|i| {
+                    self.iter_node_ids()
+                        .map(|node_id| features[node_id as usize][i])
+                        .sum::<f64>()
+                })
+                .collect::<Vec<f64>>();
+            // Total sum of features
+            let total_features_sum = total_sum_per_feature.iter().sum::<f64>();
+            // Computing the inverse document features (IDF)
+            let inverse_document_frequencies = total_sum_per_feature
+                .iter()
+                .map(|feature_sum| {
+                    // Definition of the IDF from Okapi, generalized for the
+                    // real frequencies.
+                    ((total_features_sum - *feature_sum + 0.5) / (*feature_sum + 0.5) + 1.0).ln()
+                })
+                .collect::<Vec<f64>>();
+            let total_document_size = AtomicF64::new(0.0);
+            // Creating loading bar
+            let pb = get_loading_bar(
+                verbose.unwrap_or(true),
+                "Computing new co-occurrences",
+                nodes_number,
+            );
+            // Update features
+            features = self
+                .par_iter_node_ids()
+                .progress_with(pb)
+                .map(|node_id| {
+                    // Create a new empty queue.
+                    let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
+                    // Put the distance of the original node as 0.
+                    neighbours_stack.push_front((node_id, 0));
+                    // Create a binary mask for the visited node.
+                    let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+                    // Initialize the sum of the features
+                    let mut document_features_sum = 0.0;
+                    // We set the current root node as visited
+                    unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
+                    // We initialize the local weighted co-occurrences
+                    let mut cooccurrences = if include_central_node {
+                        features[node_id as usize].clone()
+                    } else {
+                        vec![0.0; features_number]
+                    };
+                    // Iterating over
+                    while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
+                        let new_distance = distance + 1;
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                            .for_each(|neighbour_node_id| {
+                                if visited[neighbour_node_id as usize] {
+                                    return;
+                                }
+                                unsafe {
+                                    *visited.get_unchecked_mut(neighbour_node_id as usize) = true
+                                };
+                                features[node_id as usize]
+                                    .iter()
+                                    .cloned()
+                                    .enumerate()
+                                    .for_each(|(i, feature)| {
+                                        let normalized_feature = feature / new_distance as f64;
+                                        document_features_sum += normalized_feature;
+                                        cooccurrences[i] += normalized_feature;
+                                    });
+                                if new_distance <= maximal_distance {
+                                    neighbours_stack.push_front((neighbour_node_id, new_distance));
+                                }
+                            });
+                    }
+                    total_document_size
+                        .fetch_add(document_features_sum, std::sync::atomic::Ordering::Relaxed);
+                    cooccurrences
+                })
+                .collect::<Vec<Vec<f64>>>();
+            // Computing average document size
+            let average_document_size = total_document_size
+                .load(std::sync::atomic::Ordering::Relaxed)
+                / nodes_number as f64;
+            // Creating loading bar
+            let pb = get_loading_bar(
+                verbose.unwrap_or(true),
+                "Propagating features",
+                nodes_number,
+            );
+            features
+                .par_iter_mut()
+                .progress_with(pb)
+                .for_each(|node_cooccurrences| {
+                    let document_features_sum = node_cooccurrences.iter().sum::<f64>();
+                    if document_features_sum > 0.0 {
+                        node_cooccurrences.iter_mut().enumerate().for_each(
+                            |(node_type, cooccurrence)| {
+                                *cooccurrence = inverse_document_frequencies[node_type]
+                                    * ((*cooccurrence * (k1 + 1.0))
+                                        / (*cooccurrence
+                                            + k1 * (1.0 - b
+                                                + b * document_features_sum
+                                                    / average_document_size)));
+                            },
+                        );
+                    }
+                });
+        }
+        Ok(features)
+    }
+
+    /// Returns okapi node label propagation within given maximal distance.
+    ///
+    /// # Arguments
+    /// * `iterations`: Option<usize> - The number of iterations to execute. By default one.
+    /// * `maximal_distance`: Option<usize> - The distance to consider for the cooccurrences. The default value is 3.
+    /// * `k1`: Option<f64> - The k1 parameter from okapi. Tipicaly between 1.2 and 2.0. It can be seen as a smoothing.
     /// * `b`: Option<f64> - The b parameter from okapi. Tipicaly 0.75.
     /// * `verbose`: Option<bool> - Whether to show loading bar.
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn par_iter_node_types_cooccurrence_matrix(
+    ///
+    /// # References
+    /// The algorithm implemented is a generalization of the OKAPI BM25 TFIDF
+    /// algorithm generalized for graphs.
+    pub fn get_okapi_bm25_node_label_propagation(
         &self,
+        iterations: Option<usize>,
         maximal_distance: Option<usize>,
         k1: Option<f64>,
         b: Option<f64>,
         verbose: Option<bool>,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<f64>> + '_, String> {
-        self.must_have_node_types()?;
-        self.must_have_nodes()?;
-        let maximal_distance = maximal_distance.unwrap_or(3);
-        let k1 = k1.unwrap_or(1.5);
-        let b = b.unwrap_or(0.75);
-        let node_types_number = self.get_node_types_number().unwrap() as usize;
-        let nodes_number = self.get_nodes_number() as usize;
-        let known_node_types_number = self.get_known_node_types_number()? as usize;
-        let inverse_document_frequencies = self
-            .iter_node_type_counts()?
-            .map(|node_type_count| {
-                ((known_node_types_number as f64 - node_type_count as f64 + 0.5)
-                    / (node_type_count as f64 + 0.5)
-                    + 1.0)
-                    .ln()
-            })
-            .collect::<Vec<f64>>();
-        // The average degree is a relatively good proxy of the average cardinality of the neighbourshoods.
-        let average_degree = self.get_node_degrees_mean().unwrap() + 1.0;
-        let pb = get_loading_bar(
-            verbose.unwrap_or(true),
-            "Computing node types co-occurrence",
-            nodes_number,
-        );
-        Ok(self
-            .par_iter_node_ids()
-            .progress_with(pb)
-            .map(move |node_id| {
-                let mut cooccurrences = vec![0.0; node_types_number];
-                let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
-                neighbours_stack.push_front((node_id, 1));
-                let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
-                unsafe { *visited.get_unchecked_mut(node_id as usize) = true };
-                while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
-                    let new_distance = distance + 1;
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
-                        .for_each(|neighbour_node_id| {
-                            if visited[neighbour_node_id as usize] {
-                                return;
-                            }
-                            unsafe {
-                                *visited.get_unchecked_mut(neighbour_node_id as usize) = true
-                            };
-                            if let Some(node_types) =
-                                self.get_unchecked_node_type_id_from_node_id(neighbour_node_id)
-                            {
-                                node_types.into_iter().for_each(|node_type| {
-                                    cooccurrences[node_type as usize] += 1.0 / distance as f64;
-                                });
-                            }
-                            if new_distance <= maximal_distance {
-                                neighbours_stack.push_front((neighbour_node_id, new_distance));
-                            }
-                        });
-                }
-                let total_cooccurrence = cooccurrences.iter().sum::<f64>();
-                if total_cooccurrence > 0.0 {
-                    cooccurrences
-                        .iter_mut()
-                        .enumerate()
-                        .for_each(|(node_type, cooccurrence)| {
-                            *cooccurrence = inverse_document_frequencies[node_type]
-                                * ((*cooccurrence * (k1 + 1.0))
-                                    / (*cooccurrence
-                                        + k1 * (1.0 - b
-                                            + b * total_cooccurrence / average_degree)));
-                        });
-                }
-                cooccurrences
-            }))
+    ) -> Result<Vec<Vec<f64>>, String> {
+        self.get_okapi_bm25_node_feature_propagation(
+            self.get_one_hot_encoded_node_types()?
+                .into_iter()
+                .map(|dummies| {
+                    dummies
+                        .into_iter()
+                        .map(|dummie| if dummie { 1.0 } else { 0.0 })
+                        .collect()
+                })
+                .collect(),
+            iterations,
+            maximal_distance,
+            k1,
+            b,
+            Some(false),
+            verbose,
+        )
     }
 }

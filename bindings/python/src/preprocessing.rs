@@ -636,11 +636,62 @@ impl EnsmallenGraph {
         batch_metrics.t.to_owned()
     }
 
-    #[text_signature = "($self, k, verbose)"]
+    #[text_signature = "($self, features, iterations, maximal_distance, k1, b, verbose)"]
     /// Returns node type co-occurrences for maximal distances k.
     ///
     /// Parameters
     /// -----------------------------
+    /// features: List[List[f64]],
+    ///     List of the features to propagate.
+    /// iterations: Optional[int] = 1,
+    ///     Number of iterations of propagation to execute.
+    /// maximal_distance: Optional[int],
+    ///     The distance to consider for the cooccurrences. The default value is 3.
+    /// k1: Optional[float],
+    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// b: Optional[float],
+    ///     The b parameter from okapi. Tipicaly 0.75.
+    /// include_central_node: Optional[bool],
+    ///     Whether to include the central node. By default true.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_okapi_bm25_node_feature_propagation(
+        &self,
+        features: Vec<Vec<f64>>,
+        iterations: Option<usize>,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
+        include_central_node: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(
+            gil,
+            pe!(self.graph.get_okapi_bm25_node_feature_propagation(
+                features,
+                iterations,
+                maximal_distance,
+                k1,
+                b,
+                include_central_node,
+                verbose
+            ))?,
+            f64
+        ))
+    }
+
+    #[text_signature = "($self, iterations, maximal_distance, k1, b, verbose)"]
+    /// Returns node type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// iterations: Optional[int] = 1,
+    ///     Number of iterations of propagation to execute.
     /// maximal_distance: Optional[int],
     ///     The distance to consider for the cooccurrences. The default value is 3.
     /// k1: Optional[float],
@@ -653,41 +704,25 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// 2D numpy array with cooccurrences.
-    fn get_node_types_cooccurrence_matrix(
+    fn get_okapi_bm25_node_label_propagation(
         &self,
+        iterations: Option<usize>,
         maximal_distance: Option<usize>,
         k1: Option<f64>,
         b: Option<f64>,
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray2<f64>>> {
         let gil = pyo3::Python::acquire_gil();
-
-        let cooccurrences = ThreadSafe {
-            t: PyArray2::new(
-                gil.python(),
-                [
-                    self.graph.get_nodes_number() as usize,
-                    pe!(self.graph.get_node_types_number())? as usize,
-                ],
-                false,
-            ),
-        };
-
-        unsafe {
-            pe!(self.graph.par_iter_node_types_cooccurrence_matrix(
+        Ok(to_nparray_2d!(
+            gil,
+            pe!(self.graph.get_okapi_bm25_node_label_propagation(
+                iterations,
                 maximal_distance,
                 k1,
                 b,
                 verbose
-            ))?
-            .enumerate()
-            .for_each(|(i, cos)| {
-                cos.into_iter().enumerate().for_each(|(j, co)| {
-                    *(cooccurrences.t.uget_mut([i, j])) = co;
-                });
-            });
-        }
-
-        Ok(cooccurrences.t.to_owned())
+            ))?,
+            f64
+        ))
     }
 }

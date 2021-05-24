@@ -719,11 +719,11 @@ impl Graph {
             // Compute how many of these nodes belongs to the training set
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
-            node_set[..train_size].iter().for_each(|node_id| {
+            node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] =
                     self.get_unchecked_node_type_id_from_node_id(*node_id)
             });
-            node_set[train_size..].iter().for_each(|node_id| {
+            node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] =
                     self.get_unchecked_node_type_id_from_node_id(*node_id)
             });
