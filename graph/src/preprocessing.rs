@@ -638,7 +638,7 @@ impl Graph {
                                 unsafe {
                                     *visited.get_unchecked_mut(neighbour_node_id as usize) = true
                                 };
-                                features[node_id as usize]
+                                features[neighbour_node_id as usize]
                                     .iter()
                                     .cloned()
                                     .enumerate()
