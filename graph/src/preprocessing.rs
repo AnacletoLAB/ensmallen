@@ -2,6 +2,8 @@ use super::*;
 use atomic_float::AtomicF64;
 use bitvec::prelude::*;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
+use itertools::Itertools;
+use num_traits::Pow;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -638,7 +640,8 @@ impl Graph {
                                     .cloned()
                                     .enumerate()
                                     .for_each(|(i, feature)| {
-                                        let normalized_feature = feature / new_distance as f64;
+                                        let normalized_feature =
+                                            feature / (new_distance as f64).pow(2);
                                         document_features_sum += normalized_feature;
                                         cooccurrences[i] += normalized_feature;
                                     });
@@ -680,6 +683,26 @@ impl Graph {
                         );
                     }
                 });
+            // We have to run a min-max scaling because otherwise
+            // the biases caused by a large BFS exploration will obscure the
+            // local variance.
+            let min_max = (0..features_number)
+                .map(|feature_number| {
+                    self.iter_node_ids()
+                        .map(|node_id| features[node_id as usize][feature_number])
+                        .minmax()
+                        .into_option()
+                        .unwrap()
+                })
+                .collect::<Vec<_>>();
+            features.par_iter_mut().for_each(|node_features| {
+                node_features.iter_mut().zip(min_max.iter()).for_each(
+                    |(feature, &(min_feature, max_feature))| {
+                        *feature =
+                            (*feature - min_feature) / (max_feature - min_feature + f64::EPSILON);
+                    },
+                );
+            });
         }
         Ok(features)
     }
