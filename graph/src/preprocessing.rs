@@ -580,23 +580,18 @@ impl Graph {
         );
         // Execute the propagation
         for _ in (0..iterations).progress_with(iterations_progress_bar) {
-            // Total sum per feature
-            let total_sum_per_feature = (0..features_number)
-                .map(|i| {
-                    self.iter_node_ids()
-                        .map(|node_id| features[node_id as usize][i])
-                        .sum::<f64>()
-                })
-                .collect::<Vec<f64>>();
-            // Total sum of features
-            let total_features_sum = total_sum_per_feature.iter().sum::<f64>();
             // Computing the inverse document features (IDF)
-            let inverse_document_frequencies = total_sum_per_feature
-                .iter()
-                .map(|feature_sum| {
+            let inverse_document_frequencies = (0..features_number)
+                .map(|feature_number| {
+                    let feature_sum = self
+                        .iter_node_ids()
+                        .map(|node_id| (features[node_id as usize][feature_number] > 0.0) as NodeT)
+                        .sum::<NodeT>();
                     // Definition of the IDF from Okapi, generalized for the
                     // real frequencies.
-                    ((total_features_sum - *feature_sum + 0.5) / (*feature_sum + 0.5) + 1.0).ln()
+                    ((nodes_number as f64 - feature_sum as f64 + 0.5) / (feature_sum as f64 + 0.5)
+                        + 1.0)
+                        .ln()
                 })
                 .collect::<Vec<f64>>();
             let total_document_size = AtomicF64::new(0.0);
