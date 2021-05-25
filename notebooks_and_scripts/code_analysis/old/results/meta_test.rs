@@ -81,7 +81,7 @@ pub struct Get_top_k_central_nodes_ids_Params {
 	pub k : NodeT,
 }
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_degree_from_node_id_Params {
+pub struct get_unweighted_node_degree_from_node_id_Params {
 	pub node_id : NodeT,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -475,7 +475,7 @@ pub struct MetaParams {
 	pub get_node_ids_and_type_from_edge_id: Get_node_ids_and_type_from_edge_id_Params,
 	pub get_node_ids_type_and_weight_from_edge_id: Get_node_ids_type_and_weight_from_edge_id_Params,
 	pub get_top_k_central_nodes_ids: Get_top_k_central_nodes_ids_Params,
-	pub get_node_degree_from_node_id: Get_node_degree_from_node_id_Params,
+	pub get_unweighted_node_degree_from_node_id: get_unweighted_node_degree_from_node_id_Params,
 	pub get_top_k_central_node_names: Get_top_k_central_node_names_Params,
 	pub get_node_type_id_from_node_id: Get_node_type_id_from_node_id_Params,
 	pub get_edge_type_id_from_edge_id: Get_edge_type_id_from_edge_id_Params,
@@ -597,7 +597,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.iter_edges(data.iter_edges.directed).collect::<Vec<_>>();
 	let _ = graph.iter_edges_with_type(data.iter_edges_with_type.directed).collect::<Vec<_>>();
 	let _ = graph.iter_edges_with_type_ids(data.iter_edges_with_type_ids.directed).collect::<Vec<_>>();
-	let _ = graph.iter_node_degrees().collect::<Vec<_>>();
+	let _ = graph.iter_unweighted_node_degrees().collect::<Vec<_>>();
 	let _ = graph.iter_node_ids().collect::<Vec<_>>();
 	let _ = graph.iter_node_names_and_node_type_names().collect::<Vec<_>>();
 	let _ = graph.iter_nodes_with_type_ids().collect::<Vec<_>>();
@@ -614,7 +614,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.par_iter_edge_with_type_and_weight_ids(data.par_iter_edge_with_type_and_weight_ids.directed).collect::<Vec<_>>();
 	let _ = graph.par_iter_edge_with_type_ids(data.par_iter_edge_with_type_ids.directed).collect::<Vec<_>>();
 	let _ = graph.par_iter_edges(data.par_iter_edges.directed).collect::<Vec<_>>();
-	let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
+	let _ = graph.par_iter_unweighted_node_degrees().collect::<Vec<_>>();
 	let _ = graph.par_iter_node_ids().collect::<Vec<_>>();
 	let _ = graph.par_iter_sources_ids(data.par_iter_sources_ids.directed).collect::<Vec<_>>();
 	graph.compute_hash();
@@ -715,7 +715,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_minmax_edge_ids_from_node_ids(data.get_minmax_edge_ids_from_node_ids.src, data.get_minmax_edge_ids_from_node_ids.dst);
 	let _ = graph.get_minmax_edge_ids_from_source_node_id(data.get_minmax_edge_ids_from_source_node_id.src);
 	let _ = graph.get_node_count_from_node_type_id(data.get_node_count_from_node_type_id.node_type);
-	let _ = graph.get_node_degree_from_node_id(data.get_node_degree_from_node_id.node_id);
+	let _ = graph.get_unweighted_node_degree_from_node_id(data.get_unweighted_node_degree_from_node_id.node_id);
 	let _ = graph.get_node_degrees_mean();
 	let _ = graph.get_node_degrees_median();
 	let _ = graph.get_node_degrees_mode();

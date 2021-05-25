@@ -734,7 +734,7 @@ pub struct MetaParams {
 	pub get_node_ids_and_edge_type_id_from_edge_id: GetNodeIdsAndEdgeTypeIdFromEdgeIdParams,
 	pub get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id: GetNodeIdsAndEdgeTypeIdAndEdgeWeightFromEdgeIdParams,
 	pub get_top_k_central_node_ids: GetTopKCentralNodeIdsParams,
-	pub get_node_degree_from_node_id: GetNodeDegreeFromNodeIdParams,
+	pub get_unweighted_node_degree_from_node_id: GetNodeDegreeFromNodeIdParams,
 	pub get_top_k_central_node_names: GetTopKCentralNodeNamesParams,
 	pub get_node_type_id_from_node_id: GetNodeTypeIdFromNodeIdParams,
 	pub get_edge_type_id_from_edge_id: GetEdgeTypeIdFromEdgeIdParams,
@@ -1319,14 +1319,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.get_top_k_central_node_ids(data_for_current_test.get_top_k_central_node_ids.k);
 			},
 			44 => {
-				trace.push(format!("get_node_degree_from_node_id(node_id = {:?})", data_for_current_test.get_node_degree_from_node_id.node_id));
+				trace.push(format!("get_unweighted_node_degree_from_node_id(node_id = {:?})", data_for_current_test.get_unweighted_node_degree_from_node_id.node_id));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_node_degree_from_node_id(data_for_current_test.get_node_degree_from_node_id.node_id);
+				let _ = graph.get_unweighted_node_degree_from_node_id(data_for_current_test.get_unweighted_node_degree_from_node_id.node_id);
 			},
 			45 => {
 				trace.push(format!("get_top_k_central_node_names(k = {:?})", data_for_current_test.get_top_k_central_node_names.k));
@@ -3132,24 +3132,24 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.par_iter_node_ids().collect::<Vec<_>>();
 			},
 			225 => {
-				trace.push(format!("iter_node_degrees()", ));
+				trace.push(format!("iter_unweighted_node_degrees()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.iter_node_degrees().collect::<Vec<_>>();
+				let _ = graph.iter_unweighted_node_degrees().collect::<Vec<_>>();
 			},
 			226 => {
-				trace.push(format!("par_iter_node_degrees()", ));
+				trace.push(format!("par_iter_unweighted_node_degrees()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
+				let _ = graph.par_iter_unweighted_node_degrees().collect::<Vec<_>>();
 			},
 			227 => {
 				trace.push(format!("iter_connected_node_ids()", ));

@@ -212,7 +212,7 @@ pub struct Get_node_type_names_from_node_type_ids_Params {
 
 
 #[derive(Arbitrary, Debug, Clone)]
-pub struct Get_node_degree_from_node_id_Params {
+pub struct get_unweighted_node_degree_from_node_id_Params {
 	pub node_id : NodeT,
 }
 
@@ -609,7 +609,7 @@ pub struct TheUltimateFuzzer {
 	pub get_node_type_ids_from_node_type_names : Get_node_type_ids_from_node_type_names_Params,
 	pub get_node_type_name_from_node_type_id : Get_node_type_name_from_node_type_id_Params,
 	pub get_node_type_names_from_node_type_ids : Get_node_type_names_from_node_type_ids_Params,
-	pub get_node_degree_from_node_id : Get_node_degree_from_node_id_Params,
+	pub get_unweighted_node_degree_from_node_id : get_unweighted_node_degree_from_node_id_Params,
 	pub filter : Filter_Params,
 	pub degrees_product : Degrees_product_Params,
 	pub jaccard_index : Jaccard_index_Params,
@@ -732,7 +732,7 @@ pub fn mega_test(data: TheUltimateFuzzer) -> Result<(), String> {
 	graph.get_node_type_ids_from_node_type_names(data.get_node_type_ids_from_node_type_names.node_types)?;
 	graph.get_node_type_name_from_node_type_id(data.get_node_type_name_from_node_type_id.node_type_id)?;
 	graph.get_node_type_names_from_node_type_ids(data.get_node_type_names_from_node_type_ids.node_type_ids)?;
-	graph.get_node_degree_from_node_id(data.get_node_degree_from_node_id.node_id)?;
+	graph.get_unweighted_node_degree_from_node_id(data.get_unweighted_node_degree_from_node_id.node_id)?;
 	graph.filter(data.filter.node_names, data.filter.node_types, data.filter.edge_types, data.filter.min_weight, data.filter.max_weight, data.filter.verbose)?;
 	graph.degrees_product(data.degrees_product.one, data.degrees_product.two)?;
 	graph.jaccard_index(data.jaccard_index.one, data.jaccard_index.two)?;

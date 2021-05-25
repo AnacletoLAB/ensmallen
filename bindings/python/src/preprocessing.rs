@@ -351,7 +351,7 @@ impl EnsmallenGraph {
         // just above that the list cannot be empty.
         let mut max_degree = node_ids
             .iter()
-            .map(|node_id| self.graph.get_node_degree_from_node_id(*node_id).unwrap())
+            .map(|node_id| self.graph.get_unweighted_node_degree_from_node_id(*node_id).unwrap())
             .max()
             .unwrap();
 

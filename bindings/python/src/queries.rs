@@ -457,8 +457,8 @@ impl EnsmallenGraph {
     ///
     /// [Automatically generated binding]
     /// [Automatically generated documentation]
-    fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        pe!(self.graph.get_node_degree_from_node_id(node_id))
+    fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_node_degree_from_node_id(node_id))
     }
 
     #[text_signature = "($self, node_name)"]
