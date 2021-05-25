@@ -1,4 +1,5 @@
 use super::*;
+extern crate edit_distance;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
 
@@ -49,7 +50,6 @@ impl EnsmallenGraph {
         Ok(format!(
             r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
             self.graph.get_name(),
-            // TODO! Investigate when this thing can actually crash!
             pe!(self.__repr__())?
         ))
     }

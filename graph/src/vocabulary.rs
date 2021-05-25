@@ -1,9 +1,13 @@
 use super::types::*;
 use arbitrary::Arbitrary;
+use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
+    /// TODO: refactor the following to work with shared references
+    /// in order to avoid doubling the amount of mempry required to store
+    /// the string names into memory.
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
     pub numeric_ids: bool,
@@ -18,19 +22,20 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         }
     }
 
-    fn normalize_value(&self, value: &str) -> Result<(String, usize), String> {
+    fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
-            let parsed_value = match value.parse::<usize>() {
-                Ok(val) => Ok(val),
-                Err(_) => Err(format!(
+            let parsed_value = value.parse::<usize>().map_err(|_| {
+                format!(
                     "The given ID `{}` is not a numeric positive integer.",
                     value
-                )),
-            }?;
+                )
+            })?;
+
+            let string_parsed_value = parsed_value.to_string();
 
             // Check that there are no extra zeros or separators in the number
             // E.g. 000 is not supported since it will be traduced to 0
-            if value != parsed_value.to_string() {
+            if value != string_parsed_value {
                 return Err(format!(
                     concat!(
                         "The given ID is numeric but is not symmetric.\n",
@@ -38,14 +43,13 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "and the second one is the result of parsing the value as an ",
                         " integer and casting back to string."
                     ),
-                    value,
-                    parsed_value.to_string()
+                    value, string_parsed_value
                 ));
             }
 
-            (parsed_value.to_string(), parsed_value)
+            (string_parsed_value, IndexT::from_usize(parsed_value))
         } else {
-            (value.to_string(), self.map.len())
+            (value.to_string(), IndexT::from_usize(self.map.len()))
         })
     }
 
@@ -54,7 +58,24 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
+    pub(crate) fn unchecked_insert(&mut self, value: String) -> IndexT {
+        let current_length = self.map.len();
+        let numeric_ids = self.numeric_ids;
+        *self.map.entry(value).or_insert_with_key(|value| {
+            IndexT::from_usize(if numeric_ids {
+                unsafe { value.parse::<usize>().unwrap_unchecked() }
+            } else {
+                current_length
+            })
+        })
+    }
+
+    /// Returns id of given value inserted.
+    ///
+    /// # Arguments
+    ///
+    /// * `value`: String - The value to be inserted.
+    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
         let value = value.as_ref();
 
         if value.is_empty() {
@@ -63,12 +84,10 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
         let (normalized_value, index) = self.normalize_value(value)?;
 
-        if !self.map.contains_key(&normalized_value) {
-            self.map
-                .insert(normalized_value.clone(), IndexT::from_usize(index));
-        }
-
-        Ok(*self.get(&normalized_value).unwrap())
+        Ok(match self.map.entry(normalized_value) {
+            Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
+            Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
+        })
     }
 
     /// Compute the reverse mapping vector for fast decoding
@@ -91,7 +110,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
             }
             let i = IndexT::to_usize(*v);
             if !self.reverse_map[i].is_empty() {
-                return Err(format!(
+                panic!(
                     concat!(
                         "During the building of the reverse mapping, ",
                         "one of the elements of the reverse mapping was attempted ",
@@ -101,8 +120,8 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                         "node id.\n",
                         "In this case, the value is {} and its index is {}."
                     ),
-                    k, i
-                ));
+                    k, i,
+                );
             }
             self.reverse_map[i] = k.clone();
         }
@@ -128,9 +147,9 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `id`: IndexT - Id to be translated.
-    pub fn translate(&self, id: IndexT) -> Result<&String, String> {
+    pub fn translate(&self, id: IndexT) -> Result<String, String> {
         match self.reverse_map.get(IndexT::to_usize(id)) {
-            Some(name) => Ok(name),
+            Some(name) => Ok(name.clone()),
             None => Err("The requested ID is not available in current dictionary.".to_string()),
         }
     }
@@ -163,13 +182,43 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self.map.len()
     }
 
-    /// Set wether to load IDs as numeric.
+    /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - Wether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> Vocabulary<IndexT> {
         self.numeric_ids = numeric_ids;
         self
+    }
+
+    /// Remove a value from the vocabulary
+    pub unsafe fn unchecked_remove_values(&mut self, type_ids_to_remove: Vec<IndexT>) -> Vec<Option<usize>> {
+        // compute the new dense mapping of the indices
+        let new_type_ids_map = (0..self.reverse_map.len()).scan(
+            0,
+            |offset, type_id| {
+                if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
+                    *offset += 1;
+                    return Some(None);
+                }
+                Some(Some(type_id - *offset))
+            }
+        ).collect::<Vec<_>>();
+
+        // update the mapping
+        self.map = self.map.iter()
+            .filter_map(|(key, val)|{
+                new_type_ids_map[IndexT::to_usize(*val)]
+                    .map(|x| (key.clone(), IndexT::from_usize(x)))
+            }).collect();
+
+        // re-build the reverse mapping
+        // since we start from a valid state this should never fail
+        // unless there are bugs in the code
+        self.reverse_map.clear();
+        self.build_reverse_mapping().unwrap();
+
+        new_type_ids_map
     }
 }

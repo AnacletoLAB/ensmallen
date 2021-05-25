@@ -1,5 +1,5 @@
 use super::*;
-use graph::{NodeT};
+use graph::NodeT;
 use std::collections::HashSet;
 
 #[pymethods]

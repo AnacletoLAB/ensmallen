@@ -116,6 +116,24 @@
             "edge_types_column": "edge_label",
             "nodes_column": "id",
             "node_types_column": "category",
+            "default_node_type": "biolink:NamedThing",
+            "node_types_separator": "|"
+        }
+    },
+    "Monarch": {
+        "urls": [
+            "https://archive.monarchinitiative.org/latest/kgx/sri-reference-kg_edges.tsv.gz",
+            "https://archive.monarchinitiative.org/latest/kgx/sri-reference-kg_nodes.tsv.gz"
+        ],
+        "arguments": {
+            "edge_path": "kg-covid-19/sri-reference-kg_edges.tsv",
+            "node_path": "kg-covid-19/sri-reference-kg_nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "relation",
+            "nodes_column": "id",
+            "node_types_column": "category",
+            "node_types_separator": "|",
             "default_node_type": "biolink:NamedThing"
         }
     }

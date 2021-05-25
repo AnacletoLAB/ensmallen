@@ -1,0 +1,2096 @@
+SKIPPING
+SKIPPING
+SKIPPING
+SKIPPING
+SKIPPING
+[
+    MissingSection {
+        method_name: "Graph::validate_operator_terms",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::validate_operator_terms",
+        section_name: "Raises",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::validate_operator_terms",
+        truth_type: "&'bGraph",
+        doc_type: "&Graph",
+    },
+    MissingSection {
+        method_name: "Graph::random_spanning_arborescence_kruskal",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::spanning_arborescence_kruskal",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::spanning_arborescence",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::spanning_arborescence",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::connected_components",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::overlaps",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::overlaps",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::contains",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::contains",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::node2vec",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::node2vec",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::node2vec",
+        line: "* `walk_parameters`: &'a WalksParameters - the weighted walks parameters.",
+    },
+    ExtraArguments {
+        method_name: "Graph::node2vec",
+        arguments: [
+            "walk_parameters",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::cooccurence_matrix",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::cooccurence_matrix",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::cooccurence_matrix",
+        line: "* `walks_parameters`: &'a WalksParameters - the walks parameters.",
+    },
+    ExtraArguments {
+        method_name: "Graph::cooccurence_matrix",
+        arguments: [
+            "walks_parameters",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::get_node_label_prediction_tuple_from_node_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::link_prediction_degrees",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::link_prediction_degrees",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::link_prediction_degrees",
+        line: "* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
+    },
+    ExtraArguments {
+        method_name: "Graph::link_prediction_degrees",
+        arguments: [
+            "graph_to_avoid",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::link_prediction_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::link_prediction_ids",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::link_prediction_ids",
+        line: "* `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,",
+    },
+    ExtraArguments {
+        method_name: "Graph::link_prediction_ids",
+        arguments: [
+            "graph_to_avoid",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_unchecked_edge_prediction_metrics",
+        section_name: "Example",
+    },
+    ExtraArguments {
+        method_name: "Graph::par_iter_unchecked_edge_prediction_metrics",
+        arguments: [
+            "destination_node_ids",
+            "source_node_ids",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_node_types_cooccurrence_matrix",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remap",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::is_unchecked_singleton_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_unchecked_disconnected_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_singleton_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_singleton_from_node_id",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::is_singleton_from_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::is_singleton_with_selfloops_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_unchecked_singleton_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_singleton_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_singleton_from_node_name",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::is_singleton_from_node_name",
+    },
+    MissingSection {
+        method_name: "Graph::is_unchecked_trap_node_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_trap_node_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_trap_node_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::has_node_name_and_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_min_preferential_attachment",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_max_preferential_attachment",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_preferential_attachment",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_preferential_attachment",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_preferential_attachment",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_jaccard_coefficient",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_adamic_adar_index",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_adamic_adar_index",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_adamic_adar_index",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_resource_allocation_index",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_resource_allocation_index",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_resource_allocation_index",
+    },
+    MissingSection {
+        method_name: "Graph::enable",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::enable",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::disable_all",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_number_of_triangles",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_triads_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_transitivity",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_number_of_triangles_per_node",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_clustering_coefficient_per_node",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_clustering_coefficient_per_node",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_clustering_coefficient",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_average_clustering_coefficient",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_breath_first_search",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_unweighted_k_shortest_path",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_unweighted_eccentricity_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_weighted_eccentricity_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eccentricity_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eccentricity_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eccentricity_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eccentricity_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eccentricity_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eccentricity_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eccentricity_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eccentricity_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_dijkstra_from_node_ids",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unchecked_dijkstra_from_node_ids",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::get_unchecked_dijkstra_from_node_ids",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::get_breath_first_search_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_dijkstra_from_node_ids",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_dijkstra_from_node_ids",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_diameter",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_diameter",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_weighted_diameter",
+    },
+    MissingSection {
+        method_name: "Graph::get_breath_first_search_from_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_dijkstra_from_node_names",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_dijkstra_from_node_names",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_edge_ids_from_source_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_edge_weights_from_source_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_unchecked_edge_ids_from_source_node_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_unchecked_edge_ids_from_source_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_edge_ids_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_neighbour_node_ids_from_source_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_neighbour_node_ids_union_from_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_neighbour_node_ids_difference_from_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unchecked_neighbour_node_names_from_source_node_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_unchecked_neighbour_node_names_from_source_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_ids_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_ids_from_node_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_ids_and_edge_type_id_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_ids_and_node_type_ids_from_node_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_names_and_node_type_names_from_node_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_names_and_edge_type_name_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::strongly_connected_components",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_weight_from_edge_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_weight_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_node_id_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_type_id_from_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_type_name_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_count_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_edge_id_from_node_ids_and_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_minmax_edge_ids_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_ids_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_ids",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unchecked_unique_source_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_ids_and_edge_type_id_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_top_k_central_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_node_degree_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degree_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degree_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degree_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_top_k_central_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_id_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_id_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_node_type_names_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_names_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_names_from_node_id",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_node_type_names_from_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_names_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_names_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_name_from_edge_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_name_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_name_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_name_from_edge_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weight_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weight_from_node_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weight_from_node_ids_and_edge_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weight_from_node_names_and_edge_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weight_from_node_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_name_from_node_id",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_node_name_from_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_id_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_ids_from_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_node_ids_from_edge_node_names",
+        section_name: "Example",
+    },
+    NotParsableArgument {
+        method_name: "Graph::get_edge_node_ids_from_edge_node_names",
+        line: "* `edge_node_names`: Vec<(&str, &str)> - The node names whose node IDs is to be returned.",
+    },
+    ExtraArguments {
+        method_name: "Graph::get_edge_node_ids_from_edge_node_names",
+        arguments: [
+            "edge_node_names",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_node_names_from_edge_node_ids",
+        section_name: "Example",
+    },
+    NotParsableArgument {
+        method_name: "Graph::get_edge_node_names_from_edge_node_ids",
+        line: "* `edge_node_ids`: Vec<(NodeT, NodeT)> - The node names whose node names is to be returned.",
+    },
+    ExtraArguments {
+        method_name: "Graph::get_edge_node_names_from_edge_node_ids",
+        arguments: [
+            "edge_node_ids",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_id_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_name_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_count_from_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_count_from_edge_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_id_from_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_id_from_edge_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_count_from_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_count_from_edge_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_id_from_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_id_from_node_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_count_from_node_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_count_from_node_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_count_from_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_count_from_node_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_destination_node_id_from_edge_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_destination_node_id_from_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_neighbour_node_ids_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_neighbour_node_ids_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_neighbour_node_names_from_node_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_minmax_edge_ids_from_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_minmax_edge_ids_from_node_ids",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_minmax_edge_ids_from_node_ids",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_ids_and_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_ids_and_edge_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_names_and_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_id_from_node_names_and_edge_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_ids_from_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_ids_from_edge_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_ids_from_node_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_ids_from_node_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_multiple_node_type_ids_from_node_type_names",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_multiple_node_type_ids_from_node_type_names",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_minmax_edge_ids_from_source_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_minmax_edge_ids_from_source_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_minmax_edge_ids_from_source_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_name_from_node_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_name_from_node_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_node_type_names_from_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::filter_from_ids",
+        section_name: "Example",
+    },
+    NotParsableArgument {
+        method_name: "Graph::filter_from_ids",
+        line: "* `edge_node_ids_to_keep`: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to keep during filtering.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::filter_from_ids",
+        line: "* `edge_node_ids_to_filter`: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to remove during filtering.",
+    },
+    ExtraArguments {
+        method_name: "Graph::filter_from_ids",
+        arguments: [
+            "edge_node_ids_to_filter",
+            "edge_node_ids_to_keep",
+        ],
+    },
+    WrongTypeArgument {
+        method_name: "Graph::filter_from_ids",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::filter_from_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::filter_from_names",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::filter_from_names",
+    },
+    NotParsableArgument {
+        method_name: "Graph::filter_from_names",
+        line: "* `edge_node_names_to_keep`: Option<Vec<(&str, &str)>> - List of tuple of node names to keep during filtering.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::filter_from_names",
+        line: "* `edge_node_names_to_filter`: Option<Vec<(&str, &str)>> - List of tuple of node names to remove during filtering.",
+    },
+    ExtraArguments {
+        method_name: "Graph::filter_from_names",
+        arguments: [
+            "edge_node_names_to_keep",
+            "edge_node_names_to_filter",
+        ],
+    },
+    WrongTypeArgument {
+        method_name: "Graph::filter_from_names",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::drop_unknown_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::drop_unknown_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::drop_singleton_nodes",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::drop_singleton_nodes_with_selfloops",
+        section_name: "Example",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::drop_singleton_nodes_with_selfloops",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::drop_selfloops",
+        section_name: "Example",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::drop_selfloops",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::drop_parallel_edges",
+        section_name: "Example",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::drop_parallel_edges",
+        truth_type: "Option<bool>",
+        doc_type: "bool",
+    },
+    MissingSection {
+        method_name: "Graph::validate_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::validate_edge_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::validate_node_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::validate_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::validate_edge_type_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::validate_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::must_have_node_types",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::must_have_edge_types",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::must_be_undirected",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::must_be_undirected",
+    },
+    MissingSection {
+        method_name: "Graph::must_be_multigraph",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::must_be_multigraph",
+    },
+    MissingSection {
+        method_name: "Graph::must_not_be_multigraph",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::must_not_be_multigraph",
+    },
+    MissingSection {
+        method_name: "Graph::must_have_edge_weights",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::must_have_edges",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::must_have_nodes",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::remove_components",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_components",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_degree_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_degree_centrality",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_degree_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_degree_centrality",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_unweighted_closeness_centrality_from_node_id",
+        section_name: "Example",
+    },
+    MissingArguments {
+        method_name: "Graph::get_unchecked_unweighted_closeness_centrality_from_node_id",
+        arguments: [
+            "verbose",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_weighted_closeness_centrality_from_node_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unchecked_weighted_closeness_centrality_from_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_unweighted_closeness_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_closeness_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_closeness_centrality",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_weighted_closeness_centrality",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_closeness_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_closeness_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_closeness_centrality",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_weighted_closeness_centrality",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_unweighted_harmonic_centrality_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_weighted_harmonic_centrality_from_node_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unchecked_weighted_harmonic_centrality_from_node_id",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_unweighted_harmonic_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_harmonic_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_weighted_harmonic_centrality",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_weighted_harmonic_centrality",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_harmonic_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_harmonic_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_harmonic_centrality",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_weighted_harmonic_centrality",
+    },
+    MissingSection {
+        method_name: "Graph::get_stress_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_betweenness_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eigenvector_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unweighted_eigenvector_centrality",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eigenvector_centrality",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_weighted_eigenvector_centrality",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_weighted_eigenvector_centrality",
+    },
+    MissingSection {
+        method_name: "Graph::set_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::set_inplace_all_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::set_all_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::set_all_edge_types",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::set_inplace_all_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::set_inplace_all_node_types",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::set_all_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::set_all_node_types",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_node_type_ids",
+        section_name: "Example",
+    },
+    MissingArguments {
+        method_name: "Graph::remove_inplace_node_type_ids",
+        arguments: [
+            "node_type_id_to_remove",
+        ],
+    },
+    ExtraArguments {
+        method_name: "Graph::remove_inplace_node_type_ids",
+        arguments: [
+            "node_type_ids_to_remove",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_singleton_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingArguments {
+        method_name: "Graph::remove_inplace_edge_type_ids",
+        arguments: [
+            "edge_type_id",
+        ],
+    },
+    ExtraArguments {
+        method_name: "Graph::remove_inplace_edge_type_ids",
+        arguments: [
+            "edge_type_ids_to_remove",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_singleton_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_node_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_singleton_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_edge_type_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_singleton_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_inplace_edge_weights",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::remove_edge_weights",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::encode_edge",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::decode_edge",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_max_encodable_edge_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_bipartite_edges",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_bipartite_edges",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_bipartite_edge_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_bipartite_edge_names",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_bipartite_edge_names",
+    },
+    MissingSection {
+        method_name: "Graph::get_star_edges",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_star_edges",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_star_edge_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_star_edge_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_clique_edges",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_clique_edge_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::replace",
+        section_name: "Example",
+    },
+    NotParsableArgument {
+        method_name: "Graph::replace",
+        line: "* `node_name_mapping`: Option<HashMap<String, String>> - The node names to replace.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::replace",
+        line: "* `node_type_name_mapping`: Option<HashMap<String, String>> - The node type names to replace.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::replace",
+        line: "* `node_type_names_mapping`: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>> - The node type names (as vectors) to replace.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::replace",
+        line: "* `edge_type_name_mapping`: Option<HashMap<Option<String>, Option<String>>> - The edge type names to replace.",
+    },
+    ExtraArguments {
+        method_name: "Graph::replace",
+        arguments: [
+            "edge_type_name_mapping",
+            "node_name_mapping",
+            "node_type_names_mapping",
+            "node_type_name_mapping",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::replace_unknown_node_types_with_node_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::replace_unknown_node_types_with_node_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::replace_unknown_edge_types_with_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::replace_unknown_edge_types_with_edge_type_name",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::approximated_vertex_cover_bitvec",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::approximated_vertex_cover_set",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::report",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::overlap_textual_report",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::overlap_textual_report",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_report_from_node_id",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_report_from_node_id",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_report_from_node_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_report_from_node_name",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_node_report_from_node_name",
+    },
+    MissingSection {
+        method_name: "Graph::get_peculiarities_report_markdown",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::textual_report",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::textual_report",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_connected_components_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_density",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degrees_mean",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unique_undirected_edges_number",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degrees_median",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_max_node_degree",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_max_node_degree",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_argmax_node_degree",
+        section_name: "Safety",
+    },
+    MissingSection {
+        method_name: "Graph::get_argmax_node_degree",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_argmax_node_degree",
+    },
+    MissingSection {
+        method_name: "Graph::get_unchecked_min_node_degree",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_min_node_degree",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degrees_mode",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_selfloop_nodes_rate",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_source_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_destination_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_destination_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_edge_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_edge_type_names",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::get_unique_edge_type_names",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_weights",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_min_edge_weight",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_max_edge_weight",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_node_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_node_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unique_directed_edges_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_nodes_mapping",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_node_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_node_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_node_types_rate",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_node_types_rate",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_minimum_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_minimum_node_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_node_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_edge_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_known_edge_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_edge_types_rate",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_unknown_edge_types_rate",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_minimum_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_minimum_edge_types_number",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_singleton_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_nodes_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_connected_component_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_directed_edges_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_edge_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_types_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_node_degrees",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_not_singletons_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_dense_nodes_mapping",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_multigraph_edges_number",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::get_cumulative_node_degrees",
+        section_name: "Example",
+    },
+    MethodNotInExample {
+        method_name: "Graph::get_edge_type_names_counts_hashmap",
+    },
+    MethodNotInExample {
+        method_name: "Graph::get_node_type_names_counts_hashmap",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_type_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_type_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_ids_and_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_ids_and_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_names_and_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_node_type_names_and_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_ids",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_type_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_type_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_ids_and_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_ids_and_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_names_and_counts",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_names_and_counts",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_type_names",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_degrees",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_node_degrees",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_node_degrees",
+    },
+    MissingSection {
+        method_name: "Graph::iter_connected_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_with_selfloops_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_with_selfloops_node_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_edge_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_node_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_singleton_edge_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_weights",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_weights",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_destination_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_destination_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_ids_and_node_type_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_node_ids_and_node_type_ids",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_node_ids_and_node_type_ids",
+    },
+    MissingSection {
+        method_name: "Graph::iter_node_names_and_node_type_names",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edges",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_ids",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_edge_ids",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edges",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_edges",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_ids_and_edge_type_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_edge_node_ids_and_edge_type_id",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_names_and_edge_type_name",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_edge_node_names_and_edge_type_name",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_node_names_and_edge_type_name",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_node_ids_and_edge_type_id",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_edge_node_ids_and_edge_type_id",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_node_names_and_edge_type_name_and_edge_weight",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_edge_node_names_and_edge_type_name_and_edge_weight",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_names_and_edge_type_name_and_edge_weight",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_edge_node_names_and_edge_type_name_and_edge_weight",
+    },
+    MissingSection {
+        method_name: "Graph::par_iter_edge_node_ids_and_edge_type_id_and_edge_weight",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::par_iter_edge_node_ids_and_edge_type_id_and_edge_weight",
+    },
+    MissingSection {
+        method_name: "Graph::iter_edge_node_ids_and_edge_type_id_and_edge_weight",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_edge_node_ids_and_edge_type_id_and_edge_weight",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_edge_node_ids",
+        section_name: "Example",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::iter_unique_edge_node_ids",
+    },
+    MissingSection {
+        method_name: "Graph::iter_unique_source_node_ids",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_singleton_nodes_with_selfloops",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_connected",
+        section_name: "Example",
+    },
+    WrongTypeArgument {
+        method_name: "Graph::is_connected",
+        truth_type: "bool",
+        doc_type: "Option<bool>",
+    },
+    MissingSection {
+        method_name: "Graph::has_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_multilabel_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_unknown_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_unknown_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_homogeneous_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_homogeneous_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_singleton_node_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_node_oddities",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_node_types_oddities",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_singleton_edge_types",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::has_edge_types_oddities",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::is_multigraph",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_sorted_csv",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_sorted_csv",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::from_unsorted_csv",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_unsorted_csv",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::from_unsorted_csv",
+    },
+    NoDoc {
+        method_name: "Graph::compute_hash",
+    },
+    MissingSection {
+        method_name: "Graph::generate_new_edges_from_node_features",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_string_unsorted",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_string_unsorted",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::from_string_unsorted",
+        line: "* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator on the edge list composed of strings.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::from_string_unsorted",
+        line: "* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>> - Option of an iterator on the node list composed of strings.",
+    },
+    ExtraArguments {
+        method_name: "Graph::from_string_unsorted",
+        arguments: [
+            "edges_iterator",
+            "nodes_iterator",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::from_integer_unsorted",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_integer_unsorted",
+        section_name: "Raises",
+    },
+    DuplicatedIntroduction {
+        method_name: "Graph::from_integer_unsorted",
+    },
+    NotParsableArgument {
+        method_name: "Graph::from_integer_unsorted",
+        line: "* `edges_iterator`: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>> - Iterator over the egde node IDs.",
+    },
+    ExtraArguments {
+        method_name: "Graph::from_integer_unsorted",
+        arguments: [
+            "edges_iterator",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::from_string_sorted",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::from_string_sorted",
+        section_name: "Raises",
+    },
+    NotParsableArgument {
+        method_name: "Graph::from_string_sorted",
+        line: "* `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator on the edge list composed of strings.",
+    },
+    NotParsableArgument {
+        method_name: "Graph::from_string_sorted",
+        line: "* `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>> - Option of an iterator on the node list composed of strings.",
+    },
+    ExtraArguments {
+        method_name: "Graph::from_string_sorted",
+        arguments: [
+            "edges_iterator",
+            "nodes_iterator",
+        ],
+    },
+    MissingSection {
+        method_name: "Graph::sample_negatives",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::sample_negatives",
+        section_name: "Raises",
+    },
+    MissingSection {
+        method_name: "Graph::connected_holdout",
+        section_name: "Example",
+    },
+    MissingSection {
+        method_name: "Graph::random_holdout",
+        section_name: "Example",
+    },
+]
+found 522 errors

@@ -8,7 +8,6 @@ pub struct FromCsvHarnessParams {
     pub directed_edge_list: bool,
     pub edge_reader: EdgeFileReaderParams,
     pub nodes_reader: Option<NodeFileReaderParams>,
-    pub name: String,
 }
 
 #[derive(Arbitrary, Debug, Clone)]
@@ -49,7 +48,7 @@ pub struct EdgeFileReaderParams {
     pub weights_column: Option<String>,
     pub default_weight: Option<WeightT>,
     pub default_edge_type: Option<String>,
-    pub skip_self_loops: Option<bool>,
+    pub skip_selfloops: Option<bool>,
     pub numeric_edge_type_ids: Option<bool>,
     pub numeric_node_ids: Option<bool>,
     pub skip_weights_if_unavailable: Option<bool>,
@@ -64,7 +63,7 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     let data_copy = data.clone();
     let data_copy2 = data.clone();
     std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_csv(info, data_copy.clone());
+        handle_panics_from_csv(Some(info), data_copy.clone());
     }));
 
     let graph = load_graph(&edges_path, &nodes_path, data);
@@ -72,9 +71,9 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     if let Ok(mut g) = graph {
         let g_copy = g.clone();
         std::panic::set_hook(Box::new(move |info| {
-            handle_panics_from_csv_once_loaded(info, data_copy2.clone(), g_copy.clone());
+            handle_panics_from_csv_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
         }));
-    
+
         let _ = graph::test_utilities::default_test_suite(&mut g, false);
     }
 
@@ -82,10 +81,14 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
     let _ = remove_file(nodes_path);
 }
 
-fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) -> Result<Graph, String> {
+fn load_graph(
+    edges_path: &str,
+    nodes_path: &str,
+    data: FromCsvHarnessParams,
+) -> Result<Graph, String> {
     // create the edge file
     std::fs::write(edges_path, data.edge_reader.file).expect("Cannot write the edges file.");
-    
+
     // create the reader
     let edges_reader = EdgeFileReader::new(edges_path.to_string())?
         // Csv reader
@@ -106,7 +109,7 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
         .set_weights_column(data.edge_reader.weights_column)?
         .set_default_weight(data.edge_reader.default_weight)
         .set_default_edge_type(data.edge_reader.default_edge_type)
-        .set_skip_self_loops(data.edge_reader.skip_self_loops)
+        .set_skip_selfloops(data.edge_reader.skip_selfloops)
         .set_numeric_edge_type_ids(data.edge_reader.numeric_edge_type_ids)
         .set_numeric_node_ids(data.edge_reader.numeric_node_ids)
         .set_skip_weights_if_unavailable(data.edge_reader.skip_weights_if_unavailable)
@@ -115,7 +118,6 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
     let nodes_reader = match data.nodes_reader {
         None => None,
         Some(nr) => {
-
             // create the node file
             std::fs::write(nodes_path, nr.file).expect("Cannot write the nodes file.");
 
@@ -138,12 +140,18 @@ fn load_graph(edges_path: &str, nodes_path: &str, data: FromCsvHarnessParams) ->
                     .set_numeric_node_type_ids(nr.numeric_node_type_ids)
                     .set_skip_node_types_if_unavailable(nr.skip_node_types_if_unavailable)?
                     .set_nodes_column(nr.nodes_column)?
-                    .set_node_types_column(nr.node_types_column)?
+                    .set_node_types_column(nr.node_types_column)?,
             )
         }
     };
 
-    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, data.directed_edge_list, data.name)?;
+    let g = Graph::from_unsorted_csv(
+        edges_reader,
+        nodes_reader,
+        data.directed,
+        data.directed_edge_list,
+        "Fuzz Graph",
+    )?;
 
     Ok(g)
 }

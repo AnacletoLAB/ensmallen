@@ -2,21 +2,21 @@ use super::*;
 use indicatif::ProgressIterator;
 
 impl Graph {
-    /// Return wether nodes are remappable to those of the given graph.
+    /// Return whether nodes are remappable to those of the given graph.
     ///
     /// # Arguments
-    /// other: &Graph - graph towards remap the nodes to.
+    /// * `other`: &Graph - graph towards remap the nodes to.
     ///
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(graph.are_nodes_remappable(&graph));
     /// ```
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
-    /// # let cora = graph::test_utilities::load_cora().unwrap();
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let cora = graph::test_utilities::load_cora();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(!cora.are_nodes_remappable(&ppi));
     /// ```
     ///
@@ -24,23 +24,22 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.get_nodes_names_iter()
-            .all(|(_, node_name, node_type)| {
-                other.has_node_with_type_by_name(&node_name, node_type)
-            })
+        self.iter_node_names_and_node_type_names().all(|(_, node_name, _, node_type)| {
+            other.has_node_name_and_node_type_name(&node_name, node_type)
+        })
     }
 
     /// Return graph remapped towards nodes of the given graph.
     ///
     /// # Arguments
     ///
-    /// * other: &Graph - The graph to remap towards.
-    /// * verbose: bool - Wether to show a loding bar.
+    /// * `other`: &Graph - The graph to remap towards.
+    /// * `verbose`: bool - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
     /// ```
     ///
@@ -56,13 +55,15 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.get_edges_string_quadruples(true)
+            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
-                .map(|(_, src_name, dst_name, edge_type, weight)| {
+                .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| {
                     Ok((
-                        other.get_unchecked_node_id(&src_name),
-                        other.get_unchecked_node_id(&dst_name),
-                        edge_type.and_then(|et| self.get_unchecked_edge_type_id(Some(et.as_str()))),
+                        other.get_unchecked_node_id_from_node_name(&src_name),
+                        other.get_unchecked_node_id_from_node_name(&dst_name),
+                        edge_type.and_then(|et| {
+                            self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
+                        }),
                         weight,
                     ))
                 }),
@@ -73,7 +74,10 @@ impl Graph {
             self.name.clone(),
             false,
             self.has_edge_types(),
-            self.has_weights(),
+            self.has_edge_weights(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+            self.has_trap_nodes(),
             verbose,
         )
     }

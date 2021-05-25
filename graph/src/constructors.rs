@@ -5,13 +5,14 @@ use indicatif::ProgressIterator;
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::ParallelSliceMut;
+use roaring::RoaringBitmap;
 use std::cmp::Ordering;
 use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Vocabulary<NodeT>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
@@ -22,22 +23,26 @@ type ParsedStringEdgesType = Result<
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 >;
 
-#[macro_export]
-/// Take a vector and make it a None if its empty, Some(vector) otherwise
-macro_rules! optionify {
-    ($val:expr) => {
-        if $val.is_empty() {
-            None
-        } else {
-            Some($val)
-        }
-    };
-}
-
+/// Returns result representing if the given combination of numeric node ids and edge node ids is valid.
+///
+/// The error message given within the method should contain all informations
+/// relative to the logic of this check.
+///
+/// # Arguments
+/// * `has_nodes_list`: bool - Whether the graph has a node list.
+/// * `numeric_node_ids`: bool - Whether the node IDs should be loaded as integers.
+/// * `numeric_edge_node_ids`: bool - Whether the edge node IDs should be loaded as integers.
+///
+/// # Raises
+/// * If the given combination of numeric nodes is not feaseable.
 fn check_numeric_ids_compatibility(
     has_nodes_list: bool,
     numeric_node_ids: bool,
@@ -56,136 +61,213 @@ fn check_numeric_ids_compatibility(
 }
 
 /// Returns iterator of nodes handling the node IDs.
-pub(crate) fn parse_node_ids<'a, 'b>(
+///
+/// # Arguments
+/// nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
+///     Iterator over the node list.
+/// ignore_duplicated_nodes: bool,
+///     Whether to just ignore the duplicated node types.
+/// node_list_is_correct: bool,
+///     Parameter to pinky promise that the node list is correct.
+///     If you provide a broken node list to this method while promising
+///     that the node list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the node list is actually
+///     correct.
+///     We assume that any provided node list is broken until disproved.
+/// nodes: &'b mut Vocabulary<NodeT>,
+///     Vocabulary of the nodes to be populated.
+pub(crate) fn parse_node_ids<'a>(
     nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
     ignore_duplicated_nodes: bool,
-    nodes: &'b mut Vocabulary<NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a
-where
-    'b: 'a,
-{
-    nodes_iter.filter_map(move |row|{
-        match row{
-            Ok((node_name, node_type)) =>  {
-                if node_name.is_empty() {
-                    return Some(Err("Found an empty node name. Node names cannot be empty.".to_owned()))
-                }
-                if let Some(node_type_string) = &node_type{
-                    if node_type_string.is_empty() {
-                        return Some(Err("Found an empty node type name. Node type names cannot be empty.".to_owned()))
-                    }
-                }
-                match nodes.get(&node_name){
-                Some(_) => {
-                    if ignore_duplicated_nodes {
-                        None
+    node_list_is_correct: bool,
+    nodes: &'a mut Vocabulary<NodeT>,
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a> {
+    // If the user is telling us that the node list is **surely correct**,
+    // we can skip a significant amount of checks and therefore create
+    // a simpler iterator.
+    if node_list_is_correct {
+        Box::new(
+            nodes_iter.map_ok(move |(node_name, node_type)| {
+                (nodes.unchecked_insert(node_name), node_type)
+            }),
+        )
+    } else {
+        Box::new(nodes_iter.filter_map(move |row| {
+            row.map_or_else(|err| Some(Err(err)),  |(node_name, node_type)| {
+                nodes.insert(node_name.as_str()).map_or_else(|err| Some(Err(err)), |(node_id, already_present_in_vocabulary)|{
+                    if already_present_in_vocabulary{
+                        if ignore_duplicated_nodes {
+                            None
+                        } else {
+                            Some(Err(format!(
+                                concat!(
+                                    "The node {node_name} appears multiple times in the node list.\n",
+                                    "The node type of the row is {node_type:?}.\n",
+                                    "The library does not currently support multiple node types for a single node."
+                                ),
+                                node_name = node_name,
+                                node_type = node_type
+                            )))
+                        }
                     } else {
-                        Some(Err(format!(
-                            concat!(
-                                "\nFound duplicated nodes!\n",
-                                "The node is {node_name}.\n",
-                                "The node type of the row is {node_type:?}.\n",
-                                "The library does not currently support multiple node types for a single node."
-                            ),
-                            node_name = node_name,
-                            node_type = node_type
-                        )))
+                        Some(Ok((node_id, node_type)))
                     }
-                },
-                None=>{
-                    Some(match nodes.insert(node_name){
-                        Ok(node_id) => Ok((node_id, node_type)),
-                        Err(e) => Err(e)
-                    })
-                }
-            }},
-            Err(e) => Some(Err(e))
-        }
-    })
+                })
+            })
+        }))
+    }
 }
 
 /// Returns iterator of nodes handling the node type IDs.
-pub(crate) fn parse_node_type_ids<'a, 'b>(
+///
+/// # Arguments
+/// nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
+///     Iterator over the node list.
+/// node_list_is_correct: bool,
+///     Parameter to pinky promise that the node list is correct.
+///     If you provide a broken node list to this method while promising
+///     that the node list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the node list is actually
+///     correct.
+///     We assume that any provided node list is broken until disproved.
+/// node_types_vocabulary: &'b mut NodeTypeVocabulary,
+///     Node types vocabulary to be populated.
+pub(crate) fn parse_node_type_ids<'a>(
     nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
-    node_types_vocabulary: &'b mut NodeTypeVocabulary,
-) -> impl Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a
-where
-    'b: 'a,
-{
-    nodes_iter.map(move |row| match row {
-        Ok((node_id, node_types)) => {
-            Ok((node_id, node_types_vocabulary.insert_values(node_types)?))
-        }
-        Err(e) => Err(e),
-    })
+    node_list_is_correct: bool,
+    node_types_vocabulary: &'a mut NodeTypeVocabulary,
+) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a> {
+    if node_list_is_correct {
+        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| {
+            (
+                node_id,
+                node_types_vocabulary.unchecked_insert_values(node_type_names),
+            )
+        }))
+    } else {
+        Box::new(nodes_iter.map(move |row| {
+            row.and_then(|(node_id, node_type_names)| {
+                Ok((
+                    node_id,
+                    node_types_vocabulary.insert_values(node_type_names)?,
+                ))
+            })
+        }))
+    }
 }
 
-pub(crate) fn parse_edges_node_ids<'a, 'b>(
+/// Returns modified iterator, adding what is need to digest edge node names into edge node IDs.
+/// edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
+///     Iterator over the edge node names list.
+/// edge_list_is_correct: bool,
+///     Parameter to pinky promise that the edge list is correct.
+///     If you provide a broken edge list to this method while promising
+///     that the edge list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the edge list is actually
+///     correct.
+///     We assume that any provided edge list is broken until disproved.
+/// nodes: &'b mut Vocabulary<NodeT>,
+///     Vocabulary of the nodes to be populated.
+pub(crate) fn parse_edges_node_ids<'a>(
     edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
-    nodes: &'b mut Vocabulary<NodeT>,
-) -> impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a
-where
-    'b: 'a,
+    edge_list_is_correct: bool,
+    nodes: &'a mut Vocabulary<NodeT>,
+) -> Box<dyn Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a>
 {
     let empty_nodes_mapping = nodes.is_empty();
-    edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
-        Ok((src_name, dst_name, edge_type, weight)) => {
-            let node_ids = [src_name, dst_name]
-                .iter()
-                .map(|node_name| {
-                    // the source and destination nodes must either be
-                    //  - both numeric node ids
-                    //      - if the node list was provided
-                    //          - The nodes must be less than the max nodes
-                    //      - if the node list was not provided
-                    //          - the nodes must be added to the node list which should be numeric.
-                    //  - if the edge node ids are not numeric
-                    //      - if the node list was provided
-                    //          - the nodes must be added to the node list.
-                    //      - if the node list was no provided
-                    //          - the nodes must be added to the node list.
-                    if empty_nodes_mapping {
-                        nodes.insert(node_name.to_owned())
-                    } else if let Some(node_id) = nodes.get(&node_name) {
-                        Ok(*node_id)
-                    } else {
+    // If the user is telling us that the edge list is **surely correct**,
+    // we can skip a significant amount of checks and therefore create
+    // a simpler iterator.
+    if edge_list_is_correct {
+        Box::new(
+            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| {
+                (
+                    nodes.unchecked_insert(src_name),
+                    nodes.unchecked_insert(dst_name),
+                    edge_type,
+                    weight,
+                )
+            }),
+        )
+    } else {
+        Box::new(
+            edges_iterator.map(move |row: Result<StringQuadruple, String>| {
+                row.and_then(|(src_name, dst_name, edge_type, weight)| {
+                    let (source_node_id, source_was_present) = nodes.insert(src_name.as_str())?;
+                    let (destination_node_id, destination_was_present) =
+                        nodes.insert(dst_name.as_str())?;
+                    if !empty_nodes_mapping && (!source_was_present || !destination_was_present) {
                         Err(format!(
                             concat!(
-                                "In the edge list was found the node {} ",
-                                "which is not present in the given node list."
+                                "In the edge list was found the edge ({} => {}) ",
+                                "containing nodes that do not appear in the given node list."
                             ),
-                            node_name
+                            src_name, dst_name
                         ))
+                    } else {
+                        Ok((source_node_id, destination_node_id, edge_type, weight))
                     }
                 })
-                .collect::<Result<Vec<NodeT>, String>>()?;
-            Ok((node_ids[0], node_ids[1], edge_type, weight))
-        }
-        Err(e) => Err(e),
-    })
+            }),
+        )
+    }
 }
 
 /// Returns iterator of edges handling the edge type IDs.
-pub(crate) fn parse_edge_type_ids_vocabulary<'a, 'b>(
+///
+/// # Arguments
+/// edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a,
+///     Iterator over the edge node names list.
+/// edge_list_is_correct: bool,
+///     Parameter to pinky promise that the edge list is correct.
+///     If you provide a broken edge list to this method while promising
+///     that the edge list is correct, be prepared to deal with the fallout.
+///     This parameter is mainly meant to be used internally when creating
+///     graphs that CANNOT BE BROKEN by design. If you use this parameter
+///     from any of the bindings, be SURE that the edge list is actually
+///     correct.
+///     We assume that any provided edge list is broken until disproved.
+/// edge_types: &'b mut Vocabulary<EdgeTypeT>,
+///     Vocabulary of the edge types to be populated.
+pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>>
         + 'a,
-    edge_types: &'b mut Vocabulary<EdgeTypeT>,
-) -> impl Iterator<Item = Result<Quadruple, String>> + 'a
-where
-    'b: 'a,
-{
-    edges_iter.map(move |row| match row {
-        Ok((src, dst, edge_type, weight)) => {
-            let edge_type_id = match edge_type {
-                Some(et) => Some(edge_types.insert(et)?),
-                None => None,
-            };
-            Ok((src, dst, edge_type_id, weight))
-        }
-        Err(e) => Err(e),
-    })
+    edge_list_is_correct: bool,
+    edge_types: &'a mut Vocabulary<EdgeTypeT>,
+) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
+    if edge_list_is_correct {
+        Box::new(edges_iter.map_ok(move |(src, dst, edge_type, weight)| {
+            (
+                src,
+                dst,
+                edge_type.map(|et| edge_types.unchecked_insert(et)),
+                weight,
+            )
+        }))
+    } else {
+        Box::new(edges_iter.map(move |row| {
+            row.and_then(|(src, dst, edge_type, weight)| {
+                Ok((
+                    src,
+                    dst,
+                    edge_type.map_or_else(
+                        || Ok::<_, String>(None),
+                        |et| Ok(Some(edge_types.insert(et)?.0)),
+                    )?,
+                    weight,
+                ))
+            })
+        }))
+    }
 }
 
+/// TODO: I think this method can be made better!
 pub(crate) fn parse_sorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     directed: bool,
@@ -236,20 +318,17 @@ pub(crate) fn parse_unsorted_quadruples(
     mut edges: Vec<Quadruple>,
     verbose: bool,
 ) -> (usize, impl Iterator<Item = Result<Quadruple, String>>) {
-    let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
-
     info!("Sorting edges.");
     edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)| {
-        (*src2, *dst2, *edt2).cmp(&(*src1, *dst1, *edt1))
+        (*src1, *dst1, *edt1).cmp(&(*src2, *dst2, *edt2))
     });
 
     let edges_number = edges.len();
+    let pb = get_loading_bar(verbose, "Building sorted graph", edges_number);
 
     (
         edges_number,
-        (0..edges_number)
-            .progress_with(pb)
-            .map(move |_| Ok(edges.pop().unwrap())),
+        edges.into_iter().progress_with(pb).map(Result::Ok),
     )
 }
 
@@ -275,12 +354,13 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
     Ok(parse_unsorted_quadruples(edge_quadruples, verbose))
 }
 
+/// TODO: LUCA: I Think this method can be made better
 pub(crate) fn parse_string_unsorted_edges<'a>(
-    // This parameter does not NEED a lifetime because it does NOT survive the function call
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     directed_edge_list: bool,
+    edge_list_is_correct: bool,
     has_edge_types: bool,
     verbose: bool,
     numeric_edge_type_ids: bool,
@@ -299,10 +379,14 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         None
     };
     let (edges_number, edges_iter) = {
-        let edges_iter = parse_edges_node_ids(edges_iter, &mut nodes);
+        let edges_iter = parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes);
         let edges_iter: Box<dyn Iterator<Item = Result<Quadruple, String>>> =
             if let Some(ets) = &mut edge_types_vocabulary {
-                Box::new(parse_edge_type_ids_vocabulary(edges_iter, ets))
+                Box::new(parse_edge_type_ids_vocabulary(
+                    edges_iter,
+                    edge_list_is_correct,
+                    ets,
+                ))
             } else {
                 Box::new(edges_iter.map_ok(|(src, dst, _, weight)| (src, dst, None, weight)))
             };
@@ -330,19 +414,27 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
+/// TODO! add computation of minimum edge weight
+/// TODO! add computation of maximum edge weight
+/// TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.
+/// TODO! add support for a mask that writes down if an edge type is used in the context of a multigraph edge. It is necessary for some operations with multigraphs.
+/// TODO! add docstring
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,
     nodes_number: NodeT,
     ignore_duplicated_edges: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
     has_edge_types: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
     directed: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
 ) -> Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Option<Vec<Option<EdgeTypeT>>>,
         Option<Vec<WeightT>>,
         EdgeT,
@@ -352,6 +444,10 @@ pub(crate) fn build_edges(
         NodeT,
         u8,
         u64,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 > {
@@ -361,41 +457,92 @@ pub(crate) fn build_edges(
     let mut edges: EliasFano =
         EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;
 
+    // The graph might still contain duplicated edges, therefore the provided edges
+    // number is a maximal value.
     let mut edge_type_ids: Option<Vec<Option<EdgeTypeT>>> = if has_edge_types {
         Some(Vec::with_capacity(edges_number))
     } else {
         None
     };
 
-    let mut weights: Option<Vec<WeightT>> = if has_weights {
+    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {
         Some(Vec::with_capacity(edges_number))
     } else {
         None
     };
 
-    // TODO: the following data structure could be better to be a bitvector.
-    // This is because universe == number of elements
-    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize)?;
+    // The unique sources variable is equal to the set of nodes of the graph when
+    // there are no singletons and the graph is undirected. Otherwise, if there is
+    // a singleton node, that must not appear in this set.
+    // We will use this set during the random walks and other graph algorithms
+    // in order to obtain the nth source node. For this reason we cannot
+    // use a bitvec here, since we need to execute an unchecked select when the
+    // object is not equal to the set of the nodes to remap the nth source node
+    // to the nth unique source node, excluding the eventual; singleton nodes.
+    // Similarly, in directed graphs, only a subset of the nodes might be a
+    // source as there might be traps.
+    // In the case of directed graphs, we have additionally the might have trap nodes
+    // parameter which allows to specify whether the graph is known to contain
+    // trap nodes. The parameter only makes sense in directed graphs.
+    // Since we expect that the average use case (when we arew not dealing with pathological graphs)
+    // the following set should be relatively dense, when we know that the set of unique
+    // sources will be needed but it will be equal to the nodes with edges set, we compute it
+    // afterwards. This is because it is known that an Elias Fano data structure
+    // uses more than twice the memory required by a bitvec to memorize a set of
+    // dense values.
+    let mut unique_sources: Option<EliasFano> =
+        if directed && (might_have_trap_nodes || might_have_singletons) {
+            Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)
+        } else {
+            None
+        };
+    // When the graph is either undirected or directed without trap nodes, the unique sources set and the
+    // nodes with edges set are equal one another.
+    // We need to compute the following set when it is not trivial, that is when
+    // either the graph is undirected and there are no singletons or alternatively
+    // when the graph is directed and there are neither trap nodes nor singletons.
+    // Additionally, since we need this support data structure when computing the
+    // number of singletons with selfloops, we need to create it also when it has
+    // been specified that there might be singletons with selfloops.
+    let mut connected_nodes: Option<_> =
+        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {
+            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
+        } else {
+            None
+        };
+
     // Last source inserted
     let mut last_src: NodeT = 0;
     let mut last_dst: NodeT = 0;
+    let mut min_node_degree: NodeT = NodeT::MAX;
+    let mut max_node_degree: NodeT = 0;
+    let mut current_node_degree: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
     let mut unique_edges_number: EdgeT = 0;
-    let mut unique_self_loop_number: NodeT = 0;
-    let mut self_loop_number: EdgeT = 0;
+    let mut unique_selfloop_number: NodeT = 0;
+    let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
-    let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
-    let mut not_singleton_node_number: NodeT = 0;
-    let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
-    let mut singleton_nodes_with_self_loops_number: NodeT = 0;
-    let mut first = true;
+    let mut connected_nodes_number: NodeT =
+        if might_have_singletons || might_have_singletons_with_selfloops {
+            0
+        } else {
+            nodes_number
+        };
+    // This bitvec should be really sparse ON SANE GRAPHS
+    // so we use a roaring bitvec to save memory.
+    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {
+        Some(RoaringBitmap::new())
+    } else {
+        None
+    };
 
+    let mut first = true;
     for value in edges_iter {
         let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
-        let self_loop = src == dst;
+        let selfloop = src == dst;
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
@@ -416,7 +563,7 @@ pub(crate) fn build_edges(
             }
             (None, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
-                "because the has_weights flag has been set to false."
+                "because the has_edge_weights flag has been set to false."
             )),
             (Some(_), None) => Err(concat!(
                 "A None weight was found.\n",
@@ -429,7 +576,7 @@ pub(crate) fn build_edges(
             _ => Ok(()),
         }?;
 
-        if !directed && !automatic_directed_edge_list {
+        if !directed && !edge_list_is_correct {
             match src.cmp(&dst) {
                 Ordering::Greater => {
                     // We retrieve the edge id of the forward edge, the one going from
@@ -447,12 +594,14 @@ pub(crate) fn build_edges(
                     });
                     // Finally now we need to check if the weights of the two edges, if given
                     // are actually equal.
-                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
-                        weights.as_ref().map_or(false, |ws| {
-                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
-                        })
-                    });
-                    if has_unbalanced_undirected_edge {
+                    // For the time being we do not allow for undirected graphs to have
+                    // asymmetrical weights.
+                    // let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
+                    //     weights.as_ref().map_or(false, |ws| {
+                    //         (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
+                    //     })
+                    // });
+                    if maybe_edge_id.is_none() {
                         return Err(concat!(
                             "You are trying to load an undirected ",
                             "graph using the directed edge list ",
@@ -471,41 +620,76 @@ pub(crate) fn build_edges(
         }
         last_edge_type = edge_type;
         edges.unchecked_push(encode_edge(src, dst, node_bits));
-        if self_loop {
-            self_loop_number += 1;
+        if selfloop {
+            selfloop_number += 1;
         }
+        // If either the source node or the destination node in the
+        // edge list has changed (keep in mind that the edge list
+        // at this point is sorted)
         if different_src || different_dst {
-            for node in &[src, dst] {
-                if !nodes_with_edges[*node as usize] {
-                    nodes_with_edges.set(*node as usize, true);
-                    if !self_loop {
-                        not_singleton_node_number += 1;
-                    } else {
-                        singleton_nodes_with_self_loops.set(*node as usize, true);
-                        singleton_nodes_with_self_loops_number += 1;
+            if let Some(nwe) = &mut connected_nodes {
+                for node in &[src, dst] {
+                    unsafe {
+                        let mut ptr = nwe.get_unchecked_mut(*node as usize);
+                        if !*ptr {
+                            *ptr = true;
+                            if !selfloop || singleton_nodes_with_selfloops.is_none() {
+                                connected_nodes_number += 1;
+                            } else {
+                                if let Some(bitmap) = &mut singleton_nodes_with_selfloops {
+                                    bitmap.insert(*node);
+                                }
+                                break;
+                            }
+                        } else if !selfloop
+                            && singleton_nodes_with_selfloops
+                                .as_mut()
+                                .map_or(false, |bitmap| bitmap.remove(*node))
+                        {
+                            connected_nodes_number += 1;
+                        }
                     }
-                } else if !self_loop && singleton_nodes_with_self_loops[*node as usize] {
-                    singleton_nodes_with_self_loops.set(*node as usize, false);
-                    singleton_nodes_with_self_loops_number -= 1;
-                    not_singleton_node_number += 1;
                 }
             }
             unique_edges_number += 1;
-            if self_loop {
-                unique_self_loop_number += 1;
+            if selfloop {
+                unique_selfloop_number += 1;
             }
+            // If the src has changed we need to update multiple things,
+            // including the set of unique source nodes and the
+            // minimum and maximum node degrees.
             if different_src {
-                unique_sources.unchecked_push(src as u64);
-                last_src = src;
-            }
-            if different_dst {
-                last_dst = dst;
+                if let Some(us) = &mut unique_sources {
+                    us.unchecked_push(src as u64);
+                }
+                // If it is not the first edge
+                if !first {
+                    // We update the minimum node degree
+                    min_node_degree = min_node_degree.min(current_node_degree);
+                    // And the maximum node degree
+                    max_node_degree = max_node_degree.max(current_node_degree);
+                    // And reset the current node degree to 0.
+                    current_node_degree = 0;
+                }
             }
         }
-        if first {
-            first = false;
-        }
+        // We increase the current source node ID degree.
+        current_node_degree += 1;
+
+        last_src = src;
+        last_dst = dst;
+        first = false;
     }
+
+    // We need to update the minimum and maximum node degrees
+    // for the last edge.
+
+    // We update the minimum node degree
+    if current_node_degree > 0 {
+        min_node_degree = min_node_degree.min(current_node_degree);
+    }
+    // And the maximum node degree
+    max_node_degree = max_node_degree.max(current_node_degree);
 
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
@@ -516,16 +700,6 @@ pub(crate) fn build_edges(
         .to_owned());
     }
 
-    if edges.is_empty() {
-        return Err(
-            concat!(
-                "The edge list you are trying to load is empty. ",
-                "This is likely caused by either an excessive parametrization ",
-                "of a remove or filter call."
-            ).to_string()
-        );
-    }
-
     if let Some(ws) = &weights {
         if edges.len() != ws.len() {
             panic!(
@@ -533,6 +707,9 @@ pub(crate) fn build_edges(
                 ws.len(),
                 edges.len()
             );
+        }
+        if ws.is_empty() {
+            weights = None;
         }
     }
 
@@ -544,6 +721,82 @@ pub(crate) fn build_edges(
                 edges.len()
             );
         }
+
+        if ets.is_empty() {
+            edge_type_ids = None;
+        }
+    }
+
+    if connected_nodes_number > nodes_number {
+        panic!(
+            "There is an error in the constructor, the not singleton  node number '{}' is bigger than node number '{}'",
+            connected_nodes_number, nodes_number
+        );
+    }
+
+    let singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops
+        .as_ref()
+        .map_or(0, |bitmap| bitmap.len() as NodeT);
+
+    // While on internal methods nodes_number is always exact, the user may
+    // provide a wrong value for nodes_number when loading a sorted csv.
+    // If this happens, it might cause a slow down in the walk and other
+    // currently unforseen consequences.
+    if unique_sources.as_ref().map_or(false, |us| us.len() as NodeT == nodes_number) {
+        unique_sources = None;
+    }
+
+    // When we have computed the nodes with edges set but we have left None
+    // the unique sources elias fano, this is done to avoid using extra memory
+    // for no reason. We need to create the elias fano object starting from the
+    // nodes with edges now to normalize the returned values.
+    if might_have_singletons
+        && unique_sources.is_none()
+        && nodes_number != connected_nodes_number + singleton_nodes_with_selfloops_number
+    {
+        unique_sources = connected_nodes
+            .as_ref()
+            .map_or(Ok::<_, String>(None), |nsns| {
+                Ok(Some(EliasFano::from_iter(
+                    nsns.iter_ones().into_iter().map(|x| x as u64),
+                    nodes_number as u64,
+                    connected_nodes_number as usize
+                        + singleton_nodes_with_selfloops_number as usize,
+                )?))
+            })?;
+    }
+
+    if !directed
+        && unique_sources
+            .as_ref()
+            .map_or(false, |x| connected_nodes_number > x.len() as NodeT)
+    {
+        panic!(
+            "There is an error in the constructor, the not singleton node number '{}' is bigger than the len of unique sources which is '{}'",
+            connected_nodes_number, unique_sources.unwrap().len()
+        );
+    }
+
+    // If the singleton_nodes_with_selfloops bitmap if empty, we return a None instead.
+    if singleton_nodes_with_selfloops
+        .as_ref()
+        .map_or(false, |bitmap| bitmap.is_empty())
+    {
+        singleton_nodes_with_selfloops = None;
+    }
+
+    // If we have found singleton nodes, information that when there are
+    // singleton nodes we know only after parsing both the node list and the
+    // edge list, we need to update the min node degree to 0.
+    if nodes_number > connected_nodes_number + singleton_nodes_with_selfloops_number
+        // this check is needed only if the graph is directed to verify if it 
+        // has trap nodes, when there are trapnodes the number of unique sources
+        // is less than the number of nodes
+        || unique_sources
+            .as_ref()
+            .map_or(false, |us| (us.len() as NodeT) < nodes_number)
+    {
+        min_node_degree = 0;
     }
 
     Ok((
@@ -552,18 +805,23 @@ pub(crate) fn build_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
-        not_singleton_node_number,
-        singleton_nodes_with_self_loops_number,
+        selfloop_number,
+        unique_selfloop_number,
+        connected_nodes_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
+        connected_nodes,
+        singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
 fn parse_nodes(
     nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
     ignore_duplicated_nodes: bool,
+    node_list_is_correct: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
     numeric_edge_node_ids: bool,
@@ -574,30 +832,30 @@ fn parse_nodes(
 
     let node_types = if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
-        let node_iterator = parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes);
+        let node_iterator = parse_node_ids(
+            ni,
+            ignore_duplicated_nodes,
+            node_list_is_correct,
+            &mut nodes,
+        );
         // In the case there is a node types we need to add its proper iterator.
         if has_node_types {
             let mut node_types =
                 NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            let mut iterations = 0;
-            for row in parse_node_type_ids(node_iterator, &mut node_types) {
+            for row in parse_node_type_ids(node_iterator, node_list_is_correct, &mut node_types) {
                 row?;
-                iterations += 1;
-            }
-            if iterations == 0 {
-                return Err("The provided node list is empty!".to_string());
             }
             node_types.build_reverse_mapping()?;
             node_types.build_counts();
-            Ok::<_, String>(Some(node_types))
+
+            if node_types.is_empty() {
+                Ok(None)
+            } else {
+                Ok::<_, String>(Some(node_types))
+            }
         } else {
-            let mut iterations = 0;
             for row in node_iterator {
                 row?;
-                iterations += 1;
-            }
-            if iterations == 0 {
-                return Err("The provided node list is empty!".to_string());
             }
             Ok::<_, String>(None)
         }?
@@ -616,17 +874,31 @@ pub(crate) fn parse_string_edges(
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_type_ids: bool,
     directed_edge_list: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> ParsedStringEdgesType {
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> =
         Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
 
+    // This is not equivalent to nodes_iterator.is_some() because the iterator
+    // could also be empty, this is a corner-case that might happen when over-filtering
+    // or fuzzing or loading an empty file with improper configurations.
+    // There might be singletons if the user has told us that there might be singletons
+    // and the node list is not empty. If the node list is empty, then it is not possible
+    // to have singletons.
+    let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+    // If the graph is undirected there cannot be trap nodes
+    let might_have_trap_nodes = directed && might_have_trap_nodes;
+
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
-            parse_edges_node_ids(edges_iter, &mut nodes),
+            parse_edges_node_ids(edges_iter, edge_list_is_correct, &mut nodes),
+            edge_list_is_correct,
             &mut edge_types_vocabulary,
         ),
         directed,
@@ -639,21 +911,28 @@ pub(crate) fn parse_string_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
-        not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        selfloop_number,
+        unique_selfloop_number,
+        connected_nodes_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
+        connected_nodes,
+        singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
         directed,
-        automatic_directed_edge_list,
+        edge_list_is_correct,
     )?;
 
     nodes.build_reverse_mapping()?;
@@ -668,12 +947,16 @@ pub(crate) fn parse_string_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
-        not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        selfloop_number,
+        unique_selfloop_number,
+        connected_nodes_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
+        connected_nodes,
+        singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
@@ -684,13 +967,16 @@ pub(crate) fn parse_integer_edges(
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ignore_duplicated_edges: bool,
     directed: bool,
-    automatic_directed_edge_list: bool,
+    edge_list_is_correct: bool,
     has_edge_types: bool,
-    has_weights: bool,
+    has_edge_weights: bool,
+    might_have_singletons: bool,
+    might_have_singletons_with_selfloops: bool,
+    might_have_trap_nodes: bool,
 ) -> Result<
     (
         EliasFano,
-        EliasFano,
+        Option<EliasFano>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
         EdgeT,
@@ -700,6 +986,10 @@ pub(crate) fn parse_integer_edges(
         NodeT,
         u64,
         u8,
+        Option<BitVec<Lsb0, u8>>,
+        Option<RoaringBitmap>,
+        NodeT,
+        NodeT,
     ),
     String,
 > {
@@ -709,21 +999,28 @@ pub(crate) fn parse_integer_edges(
         edge_type_ids,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
-        not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        selfloop_number,
+        unique_selfloop_number,
+        connected_nodes_number,
+        singleton_nodes_with_selfloops_number,
         node_bits,
         node_bit_mask,
+        connected_nodes,
+        singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
-        has_weights,
+        has_edge_weights,
         has_edge_types,
+        might_have_singletons,
+        might_have_singletons_with_selfloops,
+        might_have_trap_nodes,
         directed,
-        automatic_directed_edge_list,
+        edge_list_is_correct,
     )?;
 
     let edge_types = EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary);
@@ -734,12 +1031,16 @@ pub(crate) fn parse_integer_edges(
         edge_types,
         weights,
         unique_edges_number,
-        self_loop_number,
-        unique_self_loop_number,
-        not_singleton_nodes_number,
-        singleton_nodes_with_self_loops_number,
+        selfloop_number,
+        unique_selfloop_number,
+        connected_nodes_number,
+        singleton_nodes_with_selfloops_number,
         node_bit_mask,
         node_bits,
+        connected_nodes,
+        singleton_nodes_with_selfloops,
+        min_node_degree,
+        max_node_degree,
     ))
 }
 
@@ -752,11 +1053,14 @@ impl Graph {
         node_types: Option<NodeTypeVocabulary>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        automatic_directed_edge_list: bool,
+        edge_list_is_correct: bool,
         name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -764,12 +1068,16 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
-            not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            selfloop_number,
+            unique_selfloop_number,
+            connected_nodes_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
+            connected_nodes,
+            singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -777,17 +1085,20 @@ impl Graph {
             edge_types_vocabulary,
             ignore_duplicated_edges,
             directed,
-            automatic_directed_edge_list,
+            edge_list_is_correct,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )?;
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
-            not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            unique_selfloop_number,
+            selfloop_number,
+            connected_nodes_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -798,27 +1109,36 @@ impl Graph {
             name,
             weights,
             node_types,
+            connected_nodes,
+            singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ))
     }
 
     /// Create new Graph object from unsorted source.
     ///
     /// # Arguments
-    ///
-    /// TODO: UPDATE THE DOCSTRING!
-    ///
-    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
-    ///     Iterator of the edges.
-    /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
-    ///     Iterator of the nodes.
-    /// * directed: bool,
-    ///     Wether the graph should be directed or undirected.
-    /// * ignore_duplicated_nodes: bool,
-    ///     Wether to ignore duplicated nodes or to raise a proper exception.
-    /// * ignore_duplicated_edges: bool,
-    ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
-    ///     Wether to skip self loops while reading the the edges iterator.
+    /// * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator on the edge list composed of strings.
+    /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>> - Option of an iterator on the node list composed of strings.
+    /// * `directed`: bool - Whether the edge list should be loaded as directed or undirected.
+    /// * `directed_edge_list`: bool - Whether the edge list is expressed as directed. If this is an undirected graph, we expect a directed edge list to contain edges in BOTH directions.
+    /// * `name`: S - The name of the graph.
+    /// * `ignore_duplicated_nodes`: bool - Whether to ignore and skip the detected duplicated node names or to raise an error.
+    /// * `node_list_is_correct`: bool - Whether the user pinky promises that the node list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
+    /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
+    /// * `edge_list_is_correct`: bool - Whether the user pinky promises that the edge list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
+    /// * `numeric_edge_type_ids`: bool - Whether the edge type IDs should be loaded as numeric, casting them to integers. The range of edge type IDs MUST be dense.
+    /// * `numeric_node_ids`: bool - Whether the node IDs should be loaded as numeric, casting them to integers. The range of node IDs MUST be dense.
+    /// * `numeric_edge_node_ids`: bool - Whether the edge node IDs should be loaded as numeric, casting them to integers. The range of edge node IDs MUST be dense.
+    /// * `numeric_node_types_ids`: bool - Whether the node type IDs should be loaded as numeric, casting them to integers. The range of node type IDs MUST be dense.
+    /// * `has_node_types`: bool - Whether the graph has node types.
+    /// * `has_edge_types`: bool - Whether the graph has edge types.
+    /// * `has_edge_weights`: bool - Whether the graph has edge weights.
+    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `verbose`: bool - Whether we should show loading bars while building the graph.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
@@ -826,29 +1146,46 @@ impl Graph {
         directed_edge_list: bool,
         name: S,
         ignore_duplicated_nodes: bool,
+        node_list_is_correct: bool,
         ignore_duplicated_edges: bool,
-        verbose: bool,
+        edge_list_is_correct: bool,
         numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
+        verbose: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
             numeric_node_ids,
             numeric_edge_node_ids,
         )?;
+
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
+            node_list_is_correct,
             numeric_node_ids,
             numeric_node_types_ids,
             numeric_edge_node_ids,
             has_node_types,
         )?;
+
+        // This is not equivalent to nodes_iterator.is_some() because the iterator
+        // could also be empty, this is a corner-case that might happen when over-filtering
+        // or fuzzing or loading an empty file with improper configurations.
+        // There might be singletons if the user has told us that there might be singletons
+        // and the node list is not empty. If the node list is empty, then it is not possible
+        // to have singletons.
+        let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+        // If the graph is undirected there cannot be trap nodes
+        let might_have_trap_nodes = directed && might_have_trap_nodes;
 
         info!("Parse unsorted edges.");
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
@@ -857,6 +1194,7 @@ impl Graph {
                 nodes,
                 directed,
                 directed_edge_list,
+                edge_list_is_correct,
                 has_edge_types,
                 verbose,
                 numeric_edge_type_ids,
@@ -869,30 +1207,33 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
-            !directed_edge_list,
+            edge_list_is_correct || !directed_edge_list,
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )
     }
 
     /// Create new Graph object from unsorted source.
     ///
     /// # Arguments
-    ///
-    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
-    ///     Iterator of the edges.
-    /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
-    ///     Iterator of the nodes.
-    /// * directed: bool,
-    ///     Wether the graph should be directed or undirected.
-    /// * ignore_duplicated_nodes: bool,
-    ///     Wether to ignore duplicated nodes or to raise a proper exception.
-    /// * ignore_duplicated_edges: bool,
-    ///     Wether to ignore duplicated edges or to raise a proper exception.
-    /// * skip_self_loops: bool,
-    ///     Wether to skip self loops while reading the the edges iterator.
+    /// * `edges_iterator`: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>> - Iterator over the egde node IDs.
+    /// * `nodes`: Vocabulary<NodeT> - Vocabulary of the node IDs.
+    /// * `node_types`: Option<NodeTypeVocabulary> - Option of the vocabulary of the node type IDs.
+    /// * `edge_types_vocabulary`: Option<Vocabulary<EdgeTypeT>> - Option of the Vocabulary of the edge type IDs.
+    /// * `directed`: bool - Whether to load the graph as directed or undirected.
+    /// * `name`: String - Name of the graph.
+    /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
+    /// * `has_edge_types`: bool - Whether the graph has edge types.
+    /// * `has_edge_weights`: bool - Whether the graph has edge weights.
+    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<
             Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
@@ -904,7 +1245,10 @@ impl Graph {
         name: String,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
-        has_weights: bool,
+        has_edge_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
@@ -921,29 +1265,59 @@ impl Graph {
             name,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )
     }
 
     /// Create new Graph object from sorted sources.
+    ///
+    /// # Arguments
+    /// * `edges_iterator`: impl Iterator<Item = Result<StringQuadruple, String>> - Iterator on the edge list composed of strings.
+    /// * `nodes_iterator`: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>> - Option of an iterator on the node list composed of strings.
+    /// * `directed`: bool - Whether the edge list should be loaded as directed or undirected.
+    /// * `directed_edge_list`: bool - Whether the edge list is expressed as directed. If this is an undirected graph, we expect a directed edge list to contain edges in BOTH directions.
+    /// * `name`: S - The name of the graph.
+    /// * `ignore_duplicated_nodes`: bool - Whether to ignore and skip the detected duplicated node names or to raise an error.
+    /// * `node_list_is_correct`: bool - Whether the user pinky promises that the node list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
+    /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
+    /// * `edge_list_is_correct`: bool - Whether the user pinky promises that the edge list is correct. This feature will lead to panics if used improperly by an over-optimistic user. Enable this flag only if you are sure you are correct.
+    /// * `edges_number`: usize - Exact number of edges in the graph.
+    /// * `nodes_number`: NodeT - Exact number of nodes in the graph.
+    /// * `numeric_edge_type_ids`: bool - Whether the edge type IDs should be loaded as numeric, casting them to integers. The range of edge type IDs MUST be dense.
+    /// * `numeric_node_ids`: bool - Whether the node IDs should be loaded as numeric, casting them to integers. The range of node IDs MUST be dense.
+    /// * `numeric_edge_node_ids`: bool - Whether the edge node IDs should be loaded as numeric, casting them to integers. The range of edge node IDs MUST be dense.
+    /// * `numeric_node_types_ids`: bool - Whether the node type IDs should be loaded as numeric, casting them to integers. The range of node type IDs MUST be dense.
+    /// * `has_node_types`: bool - Whether the graph has node types.
+    /// * `has_edge_types`: bool - Whether the graph has edge types.
+    /// * `has_edge_weights`: bool - Whether the graph has edge weights.
+    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     pub fn from_string_sorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
         directed: bool,
         directed_edge_list: bool,
-        automatic_directed_edge_list: bool,
+        name: S,
         ignore_duplicated_nodes: bool,
+        node_list_is_correct: bool,
         ignore_duplicated_edges: bool,
+        edge_list_is_correct: bool,
         edges_number: usize,
-        nodes_number: NodeT,
+        mut nodes_number: NodeT,
         numeric_edge_type_ids: bool,
         numeric_node_ids: bool,
         numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
         has_node_types: bool,
         has_edge_types: bool,
-        has_weights: bool,
-        name: S,
+        has_edge_weights: bool,
+        might_have_singletons: bool,
+        might_have_singletons_with_selfloops: bool,
+        might_have_trap_nodes: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
@@ -953,11 +1327,16 @@ impl Graph {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
+            node_list_is_correct,
             numeric_node_ids,
             numeric_node_types_ids,
             numeric_edge_node_ids,
             has_node_types,
         )?;
+
+        if !nodes.is_empty() {
+            nodes_number = nodes.len() as NodeT;
+        }
 
         let (
             edges,
@@ -966,12 +1345,16 @@ impl Graph {
             edge_types,
             weights,
             unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
-            not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            selfloop_number,
+            unique_selfloop_number,
+            connected_nodes_number,
+            singleton_nodes_with_selfloops_number,
             node_bit_mask,
             node_bits,
+            connected_nodes,
+            singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -980,18 +1363,21 @@ impl Graph {
             nodes,
             numeric_edge_type_ids,
             directed_edge_list,
-            automatic_directed_edge_list,
+            edge_list_is_correct,
             ignore_duplicated_edges,
             has_edge_types,
-            has_weights,
+            has_edge_weights,
+            might_have_singletons,
+            might_have_singletons_with_selfloops,
+            might_have_trap_nodes,
         )?;
 
         Ok(Graph::new(
             directed,
-            unique_self_loop_number,
-            self_loop_number,
-            not_singleton_nodes_number,
-            singleton_nodes_with_self_loops_number,
+            unique_selfloop_number,
+            selfloop_number,
+            connected_nodes_number,
+            singleton_nodes_with_selfloops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -1002,6 +1388,10 @@ impl Graph {
             name,
             weights,
             node_types,
+            connected_nodes,
+            singleton_nodes_with_selfloops,
+            min_node_degree,
+            max_node_degree,
         ))
     }
 }

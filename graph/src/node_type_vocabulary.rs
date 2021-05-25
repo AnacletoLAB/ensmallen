@@ -30,8 +30,8 @@ impl PartialEq for NodeTypeVocabulary {
     }
 }
 
-impl NodeTypeVocabulary {
-    pub fn default() -> NodeTypeVocabulary {
+impl Default for NodeTypeVocabulary {
+    fn default() -> NodeTypeVocabulary {
         NodeTypeVocabulary {
             ids: Vec::new(),
             vocabulary: Vocabulary::default(),
@@ -40,7 +40,9 @@ impl NodeTypeVocabulary {
             multilabel: false,
         }
     }
+}
 
+impl NodeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<Vec<NodeTypeT>>>,
         vocabulary: Option<Vocabulary<NodeTypeT>>,
@@ -65,10 +67,6 @@ impl NodeTypeVocabulary {
     }
 
     pub fn build_counts(&mut self) {
-        if self.ids.is_empty() {
-            panic!("The node type ids vector passed was empty!");
-        }
-
         let mut counts = vec![NodeT::from_usize(0); self.vocabulary.len()];
         for index in self.ids.iter() {
             match index {
@@ -83,8 +81,44 @@ impl NodeTypeVocabulary {
         self.counts = counts;
     }
 
+    /// Computes the reverse terms mapping.
+    ///
+    /// # Raises
+    /// * If the terms mapping is found to be not dense.
     pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
         self.vocabulary.build_reverse_mapping()
+    }
+
+    /// Returns ids of given values inserted.
+    ///
+    /// This method will crash if improper parameters are used.
+    ///
+    /// # Arguments
+    ///
+    /// * `maybe_values`: Option<Vec<S>> - The values to be inserted.
+    pub fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
+        &mut self,
+        maybe_values: Option<Vec<S>>,
+    ) -> Option<Vec<NodeTypeT>> {
+        match maybe_values {
+            Some(values) => {
+                // Retrieve the ID
+                let ids = values
+                    .into_iter()
+                    .map(|value| self.vocabulary.unchecked_insert(value.into()))
+                    .collect::<Vec<NodeTypeT>>();
+
+                self.multilabel = self.multilabel || ids.len() > 1;
+
+                // Push the sorted IDs
+                self.ids.push(Some(ids.clone()));
+                Some(ids)
+            }
+            None => {
+                self.ids.push(None);
+                None
+            }
+        }
     }
 
     /// Returns ids of given values inserted.
@@ -98,10 +132,18 @@ impl NodeTypeVocabulary {
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         Ok(match maybe_values {
             Some(values) => {
+                // Check if there is at least one node type
+                if values.is_empty() {
+                    return Err("The given node types vector is empty.".to_owned());
+                }
                 // Retrieve the ID
                 let mut ids = values
                     .iter()
-                    .map(|value| self.vocabulary.insert(value.as_ref()))
+                    .map(|value| {
+                        self.vocabulary
+                            .insert(value.as_ref())
+                            .map(|values| values.0)
+                    })
                     .collect::<Result<Vec<NodeTypeT>, String>>()?;
                 // Sort the slice
                 ids.sort_unstable();
@@ -166,7 +208,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: NodeTypeT - Node Type ID to be translated.
-    pub fn translate(&self, id: NodeTypeT) -> Result<&String, String> {
+    pub fn translate(&self, id: NodeTypeT) -> Result<String, String> {
         self.vocabulary.translate(id)
     }
 
@@ -175,7 +217,18 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<&String>, String> {
+    pub fn unchecked_translate_vector(&self, ids: Vec<NodeTypeT>) -> Vec<String> {
+        ids.into_iter()
+            .map(|id| self.unchecked_translate(id))
+            .collect()
+    }
+
+    /// Returns string name of given id.
+    ///
+    /// # Arguments
+    ///
+    /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
+    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>, String> {
         ids.into_iter().map(|id| self.translate(id)).collect()
     }
 
@@ -198,13 +251,29 @@ impl NodeTypeVocabulary {
         self.counts.len()
     }
 
-    /// Set wether to load IDs as numeric.
+    /// Set whether to load IDs as numeric.
     ///
     /// # Arguments
-    /// * numeric_ids: bool - Wether to load the IDs as numeric
+    /// * numeric_ids: bool - Whether to load the IDs as numeric
     ///
     pub fn set_numeric_ids(mut self, numeric_ids: bool) -> NodeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
         self
+    }
+    
+    /// Remove a node type from the vocabulary
+    pub unsafe fn unchecked_remove_values(&mut self, node_type_ids_to_remove: Vec<NodeTypeT>) -> Vec<Option<usize>>{
+        // this assumes that the new ids are obtained by "removing" the values
+        // so the new ids will keep the relative ordering between each others
+        self.counts = self.counts.iter().enumerate()
+            .filter_map(|(i, v)| {
+                if !node_type_ids_to_remove.contains(&(i as NodeTypeT)) {
+                    Some(*v)
+                } else {
+                    None
+                }
+            }).collect();
+
+        self.vocabulary.unchecked_remove_values(node_type_ids_to_remove)
     }
 }

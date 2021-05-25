@@ -9,10 +9,12 @@ impl EnsmallenGraph {
     /// ---------
     /// edge_type: str,
     ///     The edge type to assing to all the edges.
-    pub fn set_all_edge_types(&self, edge_type: String) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.clone().set_all_edge_types(edge_type),
-        }
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar in the case of a multigraph.
+    pub fn set_all_edge_types(&self, edge_type: String, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.clone().set_all_edge_types(edge_type, verbose))?,
+        })
     }
 
     #[text_signature = "($self, node_type)"]
@@ -22,10 +24,10 @@ impl EnsmallenGraph {
     /// ---------
     /// node_type: str,
     ///     The node type to assing to all the nodes.
-    pub fn set_all_node_types(&self, node_type: String) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.clone().set_all_node_types(node_type),
-        }
+    pub fn set_all_node_types(&self, node_type: String) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.clone().set_all_node_types(node_type))?,
+        })
     }
 
     #[args(py_kwargs = "**")]
@@ -35,27 +37,32 @@ impl EnsmallenGraph {
     /// Arguments
     /// ------------------
     /// vector_sources: bool = False,
-    ///     Wether to cache sources into a vector for faster walks.
+    ///     Whether to cache sources into a vector for faster walks.
     /// vector_destinations: bool = True,
-    ///     Wether to cache destinations into a vector for faster walks.
+    ///     Whether to cache destinations into a vector for faster walks.
     /// vector_outbounds: bool = True,
-    ///     Wether to cache outbounds into a vector for faster walks.
+    ///     Whether to cache outbounds into a vector for faster walks.
     /// cache_size: float = None,
     ///     Rate of nodes destinations to cache.
     ///     Must be a value between 0 and 1.
     ///     This cannot be used with the vector destinations.
-    /// 
+    ///
     /// Raises
     /// -------------------
     /// ValueError,
     ///     If the cache_size parameter is given and vector destinations is enabled.
-    /// 
+    ///
     pub fn enable(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pe!(validate_kwargs(
             kwargs,
-            &["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
+            &[
+                "vector_sources",
+                "vector_destinations",
+                "vector_outbounds",
+                "cache_size"
+            ]
         ))?;
 
         pe!(self.graph.enable(

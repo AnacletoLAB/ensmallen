@@ -18,7 +18,7 @@ impl Graph {
         let mut components: Vec<HashSet<NodeT>> = Vec::new();
         let mut common_index = 0;
         let mut recurse: bool;
-        for node in 0..self.get_nodes_number() {
+        for node in self.iter_node_ids() {
             if !indexed_mask[node as usize] {
                 let mut to_visit: Vec<(NodeT, usize)> = vec![(node, 0)];
                 while !to_visit.is_empty() {
@@ -32,10 +32,10 @@ impl Graph {
                         components_stack.push(src);
                     }
                     recurse = false;
-                    let (_min, _max) = self.get_destinations_min_max_edge_ids(src);
+                    let (_min, _max) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                     // Consider successors of source node
                     for (j, dst) in ((_min + i as EdgeT).._max)
-                        .map(|edge_id| self.get_destination(edge_id).unwrap())
+                        .map(|edge_id| self.get_unchecked_destination_node_id_from_edge_id(edge_id))
                         .enumerate()
                     {
                         if !indexed_mask[dst as usize] {
@@ -49,7 +49,8 @@ impl Graph {
                             // If w is not on stack, then (v, w) is an edge pointing to an SCC already found and must be ignored
                             // Note: The next line may look odd - but is correct.
                             // It says w.index not w.lowlink; that is deliberate and from the original paper
-                            low_indices[src as usize] = min(low_indices[src as usize], indices[dst as usize]);
+                            low_indices[src as usize] =
+                                min(low_indices[src as usize], indices[dst as usize]);
                         }
                     }
 
@@ -74,7 +75,8 @@ impl Graph {
 
                     if !to_visit.is_empty() {
                         let (root, _) = to_visit.last().unwrap();
-                        low_indices[*root as usize] = min(low_indices[*root as usize], low_indices[src as usize]);
+                        low_indices[*root as usize] =
+                            min(low_indices[*root as usize], low_indices[src as usize]);
                     }
                 }
             }

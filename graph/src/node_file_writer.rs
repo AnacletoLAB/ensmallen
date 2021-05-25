@@ -98,7 +98,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
         if let Some(v) = verbose {
@@ -124,7 +124,7 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to write out an header or not.
+    /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileWriter {
         if let Some(v) = header {
@@ -162,7 +162,7 @@ impl NodeFileWriter {
 
                 if graph.has_node_types() {
                     line.push((
-                        match graph.get_node_type_name(node_id).unwrap() {
+                        match graph.get_node_type_names_from_node_id(node_id).unwrap() {
                             Some(values) => values.join(&self.node_types_separator),
                             None => "".to_string(),
                         },

@@ -1,12 +1,12 @@
 use super::*;
-use indicatif::{ProgressIterator};
-use std::{fs::File, io::BufWriter, io::prelude::*};
+use indicatif::ProgressIterator;
+use std::{fs::File, io::prelude::*, io::BufWriter};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
 /// # Attributes
 /// * path: String - The path where to save the file. E.g. "/tmp/test.csv"
-/// * verbose: bool - If the progress bars and logging must be displayed.
+/// * `verbose`: bool - If the progress bars and logging must be displayed.
 /// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
 /// * header: bool - If the file (will / must) have the header with the titles of the columns.
 pub struct CSVFileWriter {
@@ -80,9 +80,7 @@ impl CSVFileWriter {
 
         match stream.flush() {
             Ok(_) => Ok(()),
-            Err(_) => Err(
-                "Unable to close file. There might have been an I/O error.".to_string()
-            )
+            Err(_) => Err("Unable to close file. There might have been an I/O error.".to_string()),
         }
     }
 }

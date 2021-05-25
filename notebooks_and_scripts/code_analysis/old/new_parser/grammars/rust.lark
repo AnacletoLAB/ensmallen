@@ -1,0 +1,101 @@
+%ignore /[ \t\f\r]+/
+DOC_LINE: "///" /[^\n]*\n/
+FILE_DOC: "//!" /[^\n]*\n/
+COMMENT: "//" /[^\n]*\n/
+%ignore /[\n]+/
+
+WILDCARD: "*"
+NOT_BRACE: /[^{}]+/
+attribute.2: "#[" IDENTIFIER ["(" /[^)]+/ ")"] "]"
+visibility.2: "pub" ["(" ( "crate" | "super" ) ")"]
+IDENTIFIER: /([a-zA-Z][a-zA-Z0-9_]*|_[a-zA-Z0-9_]*)/
+lifetime: "'" IDENTIFIER
+
+start: FILE_DOC* _statement*
+
+_statement: use_statement
+    | struct_statement
+    | type_statement
+    | const_statement
+    | static_statement
+    | trait_statement
+    | impl_statement
+    | function_statement
+    | extern_statement
+    | mod_statement
+
+mod_statement: doc? "mod" IDENTIFIER "{" _statement* "}"
+
+const_statement: attribute? "const" IDENTIFIER ":" type "=" /[^;]+/ ";"
+static_statement: attribute? "static" IDENTIFIER ":" type "=" /[^;]+/ ";"
+
+trait_statement: doc? visibility? "trait" IDENTIFIER (":" IDENTIFIER ("+" IDENTIFIER)*)? "{" trait_function_prototipe* "}"
+trait_function_prototipe: doc? visibility? "fn" function_name "(" args ")" ( "->" type)? ";"
+
+extern_statement: "extern" "\"C\"" "{" trait_function_prototipe* "}"
+
+// USE STATEMENT
+use_statement: "use" _use_inner ";"
+_use_inner: IDENTIFIER "::" _use_inner 
+    | IDENTIFIER ("as" IDENTIFIER)?
+    | WILDCARD
+    | "{" _use_inner ("," _use_inner)*"}"
+
+
+// General objects
+doc: (DOC_LINE | attribute | COMMENT)+
+
+// TYPE STATEMENT
+type_statement: doc? visibility? "type" IDENTIFIER "=" type ";"
+
+// STRUCT STATEMENT
+struct_statement: doc? visibility? "struct" type "{" struct_fields "}"
+struct_fields: struct_field*
+struct_field: doc? visibility? IDENTIFIER ":" type ","?
+
+// IMPL STATEMENT
+impl_statement: "unsafe"? doc? "impl" generics? (trait_type "for")? struct_type "{" impl_content "}"
+
+impl_content: (function_statement | type_statement)*
+
+/// FUNCTION STATEMENT
+function_statement: doc? visibility? "fn" function_name "(" args ")" ( "->" type)? "{" function_body "}"
+function_name: IDENTIFIER generics?
+
+function_body: NOT_BRACE?
+    | NOT_BRACE? ( "{" function_body "}" NOT_BRACE?)+
+
+!modifier: "mut" | "&" lifetime? "mut"? | "*" ("const" | "mut")
+self: modifier? "self"
+
+args: /// EMPTY ARGS 
+    | self ("," arg)* ","?
+    | arg ("," arg)* ","?
+
+arg: modifier? IDENTIFIER ":" type
+
+trait_type: (IDENTIFIER "::")*type
+struct_type: type
+
+type:  modifier? simple_type
+    |  modifier? impl_type
+    |  modifier? dyn_type
+    |  modifier? tuple_type
+    |  modifier? slice_type
+    |  modifier? fn_type
+
+!fn_type: ("Fn" | "FnOnce" | "FnMut") "(" type ("," type)* ")" ("->" type)?
+!simple_type: IDENTIFIER ("::" IDENTIFIER)* generics? ("+" (type | lifetime))*
+!tuple_type: "(" [type ("," type)*] ","? ")" 
+!impl_type: "impl" type ("+" (type | lifetime))*
+!dyn_type:  "dyn" type ("+" (type | lifetime))*
+!slice_type: "[" type "]"
+
+!generics: "<" generic_value ("," generic_value)* ","? ">"
+generic_value: lifetime 
+    | type 
+    | type_assignment
+    | type_inheritance
+!type_assignment: type "=" type
+!type_inheritance: type ":" type
+

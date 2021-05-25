@@ -1,24 +1,30 @@
 //! Ensmallen its an efficient graph manipulation library.
-//! 
+//!
 //! # Example:
-//! 
+//!
 //! ```rust
 //! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv").unwrap()
+//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv",).unwrap()
 //!     .set_separator(Some(",")).unwrap()
 //!     .set_verbose(Some(false))
 //!     .set_numeric_node_ids(Some(true))
 //!     .set_header(Some(false));
 //!  
 //! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph").unwrap();
-//! 
-//! 
+//!
+//!
 //! ```
+//! # Definitions
+//! * `edge`: an arch between to nodes
+//! * `selfloop`: An edge which source and destination are equal
+//! * `singleton`: A node with in degree and out degree 0
+//! * `singleton_with_selfloop`: A node which has only selfloops
+//! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
+
 #![warn(unused_macros)]
 #![feature(map_first_last)]
-#![feature(thread_id_value)]
-#![type_length_limit="3764086"] // WTF why, this is due to atomic_f64_hashmap
-//#![feature(unsafe_cell_get_mut)]
+#![type_length_limit = "3764086"]
+#![feature(option_result_unwrap_unchecked)]
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
@@ -46,6 +52,16 @@ mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
 
+mod validators;
+pub use self::validators::*;
+mod getters_boolean;
+pub use self::getters_boolean::*;
+mod replace;
+pub use self::replace::*;
+
+mod dijkstra;
+pub use self::dijkstra::*;
+
 mod constructors;
 
 pub mod utils;
@@ -56,28 +72,42 @@ mod edge_lists;
 mod filters;
 mod getters;
 mod graph;
+mod hash;
 mod holdouts;
+mod iter_queries;
 mod iters;
-mod metrics;
+mod edge_metrics;
+mod thickeners;
 mod modifiers;
 mod operators;
 mod preprocessing;
 mod remap;
 mod remove;
+mod polygons;
 mod setters;
 mod tarjan;
 mod trees;
 mod types;
+mod vertex_cover;
 mod walks;
+mod centrality;
 pub mod walks_parameters;
-mod hash;
+
+mod report;
+pub use self::report::*;
+
+mod queries;
+mod queries_boolean;
+mod queries_walk;
+pub use self::queries::*;
+pub use self::queries_boolean::*;
 
 pub mod test_utilities;
 
 pub use self::getters::*;
 pub use self::graph::Graph;
 pub use self::holdouts::*;
-pub use self::metrics::*;
+pub use self::edge_metrics::*;
 pub use self::operators::*;
 pub use self::setters::*;
 pub use self::tarjan::*;
@@ -86,3 +116,8 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use preprocessing::*;
+
+mod dijkstra_queue;
+use dijkstra_queue::*;
+
+use tags::*;

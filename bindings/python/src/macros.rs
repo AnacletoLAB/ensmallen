@@ -78,7 +78,8 @@ macro_rules! to_ndarray_1d {
 #[macro_export]
 macro_rules! to_nparray_2d {
     ($gil: expr, $value: expr, $_type: ty) => {
-        PyArray::from_vec2($gil.python(), &$value).unwrap()
+        PyArray::from_vec2($gil.python(), &$value)
+            .unwrap()
             .cast::<$_type>(false)
             .unwrap()
             .to_owned()
@@ -96,7 +97,11 @@ pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
         "iterations",
         "dense_node_mapping",
     ];
-    default.into_iter().chain(parameters.into_iter()).map(|x| *x).collect()
+    default
+        .into_iter()
+        .chain(parameters.into_iter())
+        .map(|x| *x)
+        .collect()
 }
 
 /// Validate given kwargs.

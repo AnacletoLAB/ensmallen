@@ -13,11 +13,13 @@ pub struct EdgeFileReader {
     pub(crate) default_edge_type: Option<String>,
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
-    pub(crate) skip_self_loops: bool,
+    pub(crate) skip_selfloops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
     pub(crate) skip_edge_types_if_unavailable: bool,
+    pub(crate) might_have_singletons_with_selfloops: bool,
+    pub(crate) might_have_trap_nodes: bool,
 }
 
 impl EdgeFileReader {
@@ -29,18 +31,20 @@ impl EdgeFileReader {
     ///
     pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
         Ok(EdgeFileReader {
-            reader: CSVFileReader::new(path)?,
+            reader: CSVFileReader::new(path, "edge list".to_owned())?,
             sources_column_number: 0,
             destinations_column_number: 1,
             edge_types_column_number: None,
             default_edge_type: None,
             weights_column_number: None,
             default_weight: None,
-            skip_self_loops: false,
+            skip_selfloops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
             skip_edge_types_if_unavailable: false,
+            might_have_singletons_with_selfloops: true,
+            might_have_trap_nodes: true,
         })
     }
 
@@ -271,11 +275,11 @@ impl EdgeFileReader {
         Ok(self)
     }
 
-    /// Set wether to automatically skip weights if they are not avaitable instead of raising an exception.
+    /// Set whether to automatically skip weights if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
     ///
-    /// * skip_weights_if_unavailable: Option<bool> - Wether to skip weights if they are not available.
+    /// * skip_weights_if_unavailable: Option<bool> - Whether to skip weights if they are not available.
     ///
     pub fn set_skip_weights_if_unavailable(
         mut self,
@@ -287,11 +291,11 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set wether to automatically skip edge types if they are not avaitable instead of raising an exception.
+    /// Set whether to automatically skip edge types if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
     ///
-    /// * skip_edge_types_if_unavailable: Option<bool> - Wether to skip edge types if they are not available.
+    /// * skip_edge_types_if_unavailable: Option<bool> - Whether to skip edge types if they are not available.
     ///
     pub fn set_skip_edge_types_if_unavailable(
         mut self,
@@ -314,6 +318,17 @@ impl EdgeFileReader {
         self
     }
 
+    /// Set the name of the graph to be loaded.
+    ///
+    /// # Arguments
+    ///
+    /// * graph_name: String - The name of the graph to be loaded.
+    ///
+    pub(crate) fn set_graph_name(mut self, graph_name: String) -> EdgeFileReader {
+        self.reader.graph_name = graph_name;
+        self
+    }
+
     /// Set the default edge type.
     ///
     /// # Arguments
@@ -328,15 +343,29 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set if the reader should ignore or not duplicated edges.
+    /// Set whether should ignore or not selfloops.
     ///
     /// # Arguments
     ///
-    /// * skip_self_loops: Option<bool> - if the reader should ignore or not duplicated edges.
+    /// * `skip_selfloops`: Option<bool> - Whether should ignore or not selfloops.
     ///
-    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
-        if let Some(ssl) = skip_self_loops {
-            self.skip_self_loops = ssl;
+    pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
+        if let Some(ssl) = skip_selfloops {
+            self.skip_selfloops = ssl;
+            self.might_have_singletons_with_selfloops = !ssl;
+        }
+        self
+    }
+
+    /// Set whether the CSV is expected to be well written.
+    ///
+    /// # Arguments
+    ///
+    /// * csv_is_correct: Option<bool> - Whether you pinky swear the edge list is correct.
+    ///
+    pub fn set_csv_is_correct(mut self, csv_is_correct: Option<bool>) -> EdgeFileReader {
+        if let Some(cic) = csv_is_correct {
+            self.reader.csv_is_correct = cic;
         }
         self
     }
@@ -364,7 +393,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
@@ -373,11 +402,40 @@ impl EdgeFileReader {
         self
     }
 
-    /// Set the numeric_id.
+    /// Set whether you pinky promise that this graph has singletons with self-loops or not.
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
+    ///
+    pub fn set_might_have_singletons_with_selfloops(
+        mut self,
+        might_have_singletons_with_selfloops: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(skip) = might_have_singletons_with_selfloops {
+            self.might_have_singletons_with_selfloops = !self.skip_selfloops && skip;
+        }
+        self
+    }
+
+    /// Set whether you pinky promise that this graph has trap nodes or not.
+    ///
+    /// # Arguments
+    ///
+    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
+    ///
+    pub fn set_might_have_trap_nodes(
+        mut self,
+        might_have_trap_nodes: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(skip) = might_have_trap_nodes {
+            self.might_have_trap_nodes = skip;
+        }
+        self
+    }
+
+    ///
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_edge_type_ids(
         mut self,
@@ -393,7 +451,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -406,7 +464,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> EdgeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -439,7 +497,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to expect an header or not.
+    /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
         if let Some(v) = header {
@@ -452,7 +510,7 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
         if let Some(v) = rows_to_skip {
@@ -478,7 +536,7 @@ impl EdgeFileReader {
     }
 
     /// Return boolean representing if the weight types exist.
-    pub fn has_weights(&self) -> bool {
+    pub fn has_edge_weights(&self) -> bool {
         self.default_weight.is_some() || self.weights_column_number.is_some()
     }
 
@@ -575,7 +633,7 @@ impl EdgeFileReader {
                 Err(e) => Err(e),
             })
             .filter_ok(move |(source_node_name, destination_node_name, _, _)| {
-                !self.skip_self_loops || source_node_name != destination_node_name
+                !self.skip_selfloops || source_node_name != destination_node_name
             }))
     }
 }

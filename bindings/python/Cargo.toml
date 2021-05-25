@@ -31,8 +31,10 @@ numpy = "0.13.1"
 edit-distance = "2.1.0"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
+roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 
 [profile.release]
+debug = true             # Include debug info.
 # The opt-level setting controls the number of optimizations Rust will apply to 
 # your code, with a range of 0 to 3. Applying more optimizations extends 
 # compiling time, so if you’re in development and compiling your code often, 

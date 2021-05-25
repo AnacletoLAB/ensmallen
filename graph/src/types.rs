@@ -1,6 +1,7 @@
 use std::fmt::Display;
-use std::ops::AddAssign;
 use std::hash::Hash;
+use std::ops::AddAssign;
+use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -28,6 +29,15 @@ pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
 pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
 pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
+/// Return type for shortest paths algorithms
+pub type ShortestPathsResultBFS = (
+    Option<Vec<NodeT>>,
+    Option<Vec<Option<NodeT>>>,
+    NodeT,
+    NodeT,
+    f64
+);
+pub type ShortestPathsDjkstra = (Vec<f64>, Option<Vec<Option<NodeT>>>, f64, f64, f64);
 
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.
@@ -37,7 +47,7 @@ pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
 pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
-    /// create an usize frm the type
+    /// create an usize from the type
     fn to_usize(v: Self) -> usize;
 }
 
@@ -61,3 +71,39 @@ macro_rules! impl_to_from_usize {
 }
 
 impl_to_from_usize!(u8 u16 u32 u64 usize);
+
+#[derive(Debug)]
+pub(crate) struct ClonableRwLock<T: Clone + std::fmt::Debug> {
+    value: RwLock<T>,
+}
+
+impl<T: Clone + std::fmt::Debug> ClonableRwLock<T> {
+    pub fn new(val: T) -> ClonableRwLock<T> {
+        ClonableRwLock {
+            value: RwLock::new(val),
+        }
+    }
+
+    pub fn read(&self) -> RwLockReadGuard<T> {
+        self.value.read().unwrap()
+    }
+    pub fn write(&self) -> RwLockWriteGuard<T> {
+        self.value.write().unwrap()
+    }
+}
+
+impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T> {
+    fn clone(&self) -> ClonableRwLock<T> {
+        ClonableRwLock {
+            value: RwLock::new(self.read().clone()),
+        }
+    }
+}
+
+use std::cell::UnsafeCell;
+
+pub(crate) struct ThreadSafe<T> {
+    pub(crate) value: UnsafeCell<T>,
+}
+
+unsafe impl<T> Sync for ThreadSafe<T> {}

@@ -1,27 +1,45 @@
+use indicatif::ProgressIterator;
 use itertools::Itertools;
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
+use crate::utils::get_loading_bar;
+
 /// Structure that saves the common parameters for reading csv files.
-///
-/// # Attributes
-/// * path: String - The of the file to read. E.g. "/tmp/test.csv"
-/// * verbose: bool - If the progress bars and logging must be displayed.
-/// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
-/// * header: bool - If the file (will / must) have the header with the titles of the columns.
-/// * rows_to_skip: usize - When reading, how many lines to skip before starting to read the file.
-/// * ignore_duplicates: bool -if the program should raise an exception or not when the file contains duplicated edges / nodes.
-/// * max_rows_number: Option<u64> -if the program should stop reading after a certain number of rows.
 #[derive(Clone)]
 pub struct CSVFileReader {
+    /// The of the file to read. E.g. "/tmp/test.csv"
     pub(crate) path: String,
+
+    /// If the progress bars and logging must be displayed.
     pub(crate) verbose: bool,
+
+    /// The separator to use, usually, this is "\t" for tsv and "," for csv.
     pub(crate) separator: String,
+
+    /// If the file (will / must) have the header with the titles of the columns
     pub(crate) header: bool,
+
+    /// When reading, how many lines to skip before starting to read the file.
     pub(crate) rows_to_skip: usize,
+
+    /// Whether the program should raise an exception or not when the file contains duplicated edges / nodes.
     pub(crate) ignore_duplicates: bool,
+
+    /// Whether the user pinky promises that the csv is not malformed and thus it
+    /// can be loaded without additional checks, hence going faster.
+    pub(crate) csv_is_correct: bool,
+
+    /// Pinky promise that the file is well made.
     pub(crate) max_rows_number: Option<u64>,
+
+    /// if the program should stop reading after a certain number of rows.
     pub(crate) comment_symbol: Option<String>,
+
+    /// The name of the list that is being loaded.
+    pub(crate) list_name: String,
+
+    /// The name of graph that is being loaded.
+    pub(crate) graph_name: String,
 }
 
 /// # Builder methods
@@ -31,8 +49,9 @@ impl CSVFileReader {
     /// # Arguments
     ///
     /// * path: String - Path where to store/load the file.
+    /// * list_name: String - Name of the list that is being loaded.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(path: S, list_name: String) -> Result<CSVFileReader, String> {
         let path = path.into();
         // check file existance
         match File::open(&path) {
@@ -43,21 +62,30 @@ impl CSVFileReader {
                 header: true,
                 rows_to_skip: 0,
                 ignore_duplicates: true,
+                csv_is_correct: false,
                 max_rows_number: None,
                 comment_symbol: None,
+                list_name,
+                graph_name: "Graph".to_string(),
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
     }
 
-    /// Read the whole file and return how many rows it has.
-    pub(crate) fn count_rows(&self) -> usize {
-        std::cmp::min(
-            BufReader::new(File::open(&self.path).unwrap())
-                .lines()
-                .count(),
-            self.max_rows_number.unwrap_or(u64::MAX) as usize
+    fn get_buffer_reader(&self) -> Result<BufReader<File>, String> {
+        let file = File::open(&self.path);
+        file.map_or_else(
+            |_| Err(format!("Cannot open the file at {}", self.path)),
+            |file| Ok(BufReader::new(file)),
         )
+    }
+
+    /// Read the whole file and return how many rows it has.
+    pub(crate) fn count_rows(&self) -> Result<usize, String> {
+        Ok(std::cmp::min(
+            self.get_buffer_reader()?.lines().count(),
+            self.max_rows_number.unwrap_or(u64::MAX) as usize,
+        ))
     }
 
     /// Return list of components of the header.
@@ -81,13 +109,13 @@ impl CSVFileReader {
                 Some(v) => Ok(v),
                 None => Err(concat!(
                     "This overflow was caused because rows to skip = 2**64 - 1",
-                    "and header is setted to true which causes to skip one extra line.",
+                    "and header is set to true which causes to skip one extra line.",
                     "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
                 )),
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
-        Ok(BufReader::new(File::open(&self.path).unwrap())
+        Ok(self.get_buffer_reader()?
             .lines()
             .map(|line| match line {
                 Ok(l)=>Ok(l),
@@ -111,7 +139,7 @@ impl CSVFileReader {
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
-            }, 
+            },
             None => Err(concat!(
                 "Unable to read the first non skipped line of the file.\n",
                 "The file has possibly less than the expected amount of lines"
@@ -122,34 +150,31 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>>  + '_, String> {
-        let pb = if self.verbose {
-            let pb = ProgressBar::new(self.count_rows() as u64);
-            pb.set_draw_delta(std::cmp::max(self.count_rows() as u64 / 1000, 1));
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>> + '_, String> {
+        let pb = get_loading_bar(
+            self.verbose,
+            format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
+            if self.verbose { self.count_rows()? } else { 0 },
+        );
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
-        Ok(self.get_lines_iterator(true)?
+        Ok(self
+            .get_lines_iterator(true)?
             .progress_with(pb)
             // skip empty lines
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             // Handling NaN values and padding them to the number of rows
-            .map_ok(move |line|{
-                let mut elements:Vec<Option<String>> = line.split(&self.separator).map(|element| 
-                    match element.is_empty() {
-                    true=>None,
-                    false=>Some(element.to_string())
-                }).collect();
+            .map_ok(move |line| {
+                let mut elements: Vec<Option<String>> = line
+                    .split(&self.separator)
+                    .map(|element| match element.is_empty() {
+                        true => None,
+                        false => Some(element.to_string()),
+                    })
+                    .collect();
                 elements.resize(number_of_elements_per_line, None);
                 elements
-            })
-        )
+            }))
     }
 
     /// Return number of the given column in header.

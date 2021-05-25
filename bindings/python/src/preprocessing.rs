@@ -6,7 +6,7 @@ use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicUsize, Ordering};
-use thread_safe::ThreadSafe;
+use types::ThreadSafe;
 
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -35,15 +35,14 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// window_size: int,
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
-    let _ = ctrlc::set_handler(|| std::process::exit(2));
+fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWords) {
     let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
-        pe!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
+        rust_word2vec(sequences.into_par_iter(), window_size).unzip();
     let gil = pyo3::Python::acquire_gil();
-    Ok((
+    (
         to_nparray_2d!(gil, contexts, NodeT),
         to_ndarray_1d!(gil, words, NodeT),
-    ))
+    )
 }
 
 #[pyfunction(py_kwargs = "**")]
@@ -73,18 +72,25 @@ fn cooccurence_matrix(
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
     pe!(validate_kwargs(kwargs, &["window_size", "verbose"]))?;
     let len = sequences.len();
-    let (words, contexts, frequencies) = pe!(rust_cooccurence_matrix(
+
+    let (number_of_elements, iter) = pe!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
         extract_value!(kwargs, "window_size", usize).unwrap_or(3),
         len,
         extract_value!(kwargs, "verbose", bool).unwrap_or(true),
     ))?;
 
-    Ok((
-        to_ndarray_1d!(gil, words, NodeT),
-        to_ndarray_1d!(gil, contexts, NodeT),
-        to_ndarray_1d!(gil, frequencies, f64),
-    ))
+    let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
+    let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
+    let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
+
+    iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
+        *srcs.uget_mut(i) = src;
+        *dsts.uget_mut(i) = dst;
+        *frequencies.uget_mut(i) = freq;
+    });
+
+    Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
 }
 
 #[pymethods]
@@ -158,17 +164,23 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (words, contexts, frequencies) = pe!(self.graph.cooccurence_matrix(
+        let (number_of_elements, iter) = pe!(self.graph.cooccurence_matrix(
             &parameters,
             extract_value!(kwargs, "window_size", usize).unwrap_or(3),
             extract_value!(kwargs, "verbose", bool).unwrap_or(true),
         ))?;
 
-        Ok((
-            to_ndarray_1d!(gil, words, NodeT),
-            to_ndarray_1d!(gil, contexts, NodeT),
-            to_ndarray_1d!(gil, frequencies, f64),
-        ))
+        let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
+        let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
+        let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
+
+        iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
+            *srcs.uget_mut(i) = src;
+            *dsts.uget_mut(i) = dst;
+            *frequencies.uget_mut(i) = freq;
+        });
+
+        Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
     }
 
     #[args(py_kwargs = "**")]
@@ -303,7 +315,7 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// Tuple with input nodes and output node types.
     ///
-    fn get_node_label_prediction_tuple_by_node_ids(
+    fn get_node_label_prediction_tuple_from_node_ids(
         &self,
         node_ids: Vec<NodeT>,
         py_kwargs: Option<&PyDict>,
@@ -339,7 +351,7 @@ impl EnsmallenGraph {
         // just above that the list cannot be empty.
         let mut max_degree = node_ids
             .iter()
-            .map(|node_id| self.graph.get_node_degree(*node_id).unwrap())
+            .map(|node_id| self.graph.get_node_degree_from_node_id(*node_id).unwrap())
             .max()
             .unwrap();
 
@@ -365,7 +377,7 @@ impl EnsmallenGraph {
         }
 
         // We retrieve the batch iterator.
-        let iter = pe!(self.graph.get_node_label_prediction_tuple_by_node_ids(
+        let iter = pe!(self.graph.get_node_label_prediction_tuple_from_node_ids(
             node_ids,
             extract_value!(kwargs, "random_state", u64).unwrap_or(42),
             include_central_node,
@@ -376,8 +388,7 @@ impl EnsmallenGraph {
         // We create the vector of zeros where to allocate the neighbours
         // This vector has `nodes_number` rows, that is the number of required
         // node IDs, and `max_degree` rows, that is the maximum degree.
-        let neighbours =
-            PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
+        let neighbours = PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
         // We create the vector of zeros for the one-hot encoded labels.
         // This is also used for the multi-label case.
         // This vector has the same number of rows as the previous vector,
@@ -385,16 +396,21 @@ impl EnsmallenGraph {
         // of columns is the number of node types in the graph.
         let labels = PyArray2::zeros(
             gil.python(),
-            [nodes_number, self.graph.get_node_types_number() as usize],
+            [
+                nodes_number,
+                pe!(self.graph.get_node_types_number())? as usize,
+            ],
             false,
         );
 
         // We iterate over the batch.
         iter.enumerate()
             .for_each(|(i, (neighbours_iterator, node_types))| {
-                neighbours_iterator.enumerate().for_each(|(j, node_id)| unsafe {
-                    *neighbours.uget_mut([i, j]) = node_id;
-                });
+                neighbours_iterator
+                    .enumerate()
+                    .for_each(|(j, node_id)| unsafe {
+                        *neighbours.uget_mut([i, j]) = node_id;
+                    });
                 if let Some(nts) = node_types {
                     nts.into_iter().for_each(|label| unsafe {
                         *labels.uget_mut([i, label as usize]) = 1;
@@ -420,7 +436,7 @@ impl EnsmallenGraph {
     ///     For example, with a batch size of 128 and negative_samples equal
     ///     to 1.0, there will be 64 positives and 64 negatives.
     /// avoid_false_negatives: bool = False,
-    ///     Wether to filter out false negatives.
+    ///     Whether to filter out false negatives.
     ///     By default False.
     ///     Enabling this will slow down the batch generation while (likely) not
     ///     introducing any significant gain to the model performance.
@@ -506,7 +522,7 @@ impl EnsmallenGraph {
     ///     For example, with a batch size of 128 and negative_samples equal
     ///     to 1.0, there will be 64 positives and 64 negatives.
     /// avoid_false_negatives: bool = False,
-    ///     Wether to filter out false negatives.
+    ///     Whether to filter out false negatives.
     ///     By default False.
     ///     Enabling this will slow down the batch generation while (likely) not
     ///     introducing any significant gain to the model performance.
@@ -574,5 +590,139 @@ impl EnsmallenGraph {
         }
 
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
+    }
+
+    #[text_signature = "($self, source_node_ids, destination_node_ids)"]
+    /// Returns all available edge prediction metrics for given edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Normalized preferential attachment score
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// source_node_ids: List[int],
+    ///     List of source node IDs.
+    /// destination_node_ids: List[int],
+    ///     List of destination node IDs.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with metrics.
+    fn get_unchecked_edge_prediction_metrics(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+    ) -> Py<PyArray2<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let batch_metrics = ThreadSafe {
+            t: PyArray2::new(gil.python(), [source_node_ids.len(), 4], false),
+        };
+
+        unsafe {
+            self.graph
+                .par_iter_unchecked_edge_prediction_metrics(source_node_ids, destination_node_ids)
+                .enumerate()
+                .for_each(|(i, metrics)| {
+                    metrics.into_iter().enumerate().for_each(|(j, metric)| {
+                        *(batch_metrics.t.uget_mut([i, j])) = metric;
+                    });
+                });
+        }
+
+        batch_metrics.t.to_owned()
+    }
+
+    #[text_signature = "($self, features, iterations, maximal_distance, k1, b, verbose)"]
+    /// Returns node type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// features: List[List[f64]],
+    ///     List of the features to propagate.
+    /// iterations: Optional[int] = 1,
+    ///     Number of iterations of propagation to execute.
+    /// maximal_distance: Optional[int],
+    ///     The distance to consider for the cooccurrences. The default value is 3.
+    /// k1: Optional[float],
+    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// b: Optional[float],
+    ///     The b parameter from okapi. Tipicaly 0.75.
+    /// include_central_node: Optional[bool],
+    ///     Whether to include the central node. By default true.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_okapi_bm25_node_feature_propagation(
+        &self,
+        features: Vec<Vec<f64>>,
+        iterations: Option<usize>,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
+        include_central_node: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(
+            gil,
+            pe!(self.graph.get_okapi_bm25_node_feature_propagation(
+                features,
+                iterations,
+                maximal_distance,
+                k1,
+                b,
+                include_central_node,
+                verbose
+            ))?,
+            f64
+        ))
+    }
+
+    #[text_signature = "($self, iterations, maximal_distance, k1, b, verbose)"]
+    /// Returns node type co-occurrences for maximal distances k.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// iterations: Optional[int] = 1,
+    ///     Number of iterations of propagation to execute.
+    /// maximal_distance: Optional[int],
+    ///     The distance to consider for the cooccurrences. The default value is 3.
+    /// k1: Optional[float],
+    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
+    /// b: Optional[float],
+    ///     The b parameter from okapi. Tipicaly 0.75.
+    /// verbose: Optional[bool],
+    ///     Whether to show loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with cooccurrences.
+    fn get_okapi_bm25_node_label_propagation(
+        &self,
+        iterations: Option<usize>,
+        maximal_distance: Option<usize>,
+        k1: Option<f64>,
+        b: Option<f64>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray2<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(
+            gil,
+            pe!(self.graph.get_okapi_bm25_node_label_propagation(
+                iterations,
+                maximal_distance,
+                k1,
+                b,
+                verbose
+            ))?,
+            f64
+        ))
     }
 }

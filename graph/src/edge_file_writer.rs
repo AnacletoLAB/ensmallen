@@ -172,7 +172,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = verbose {
@@ -185,7 +185,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * numeric_id: Option<bool> - whether to convert numeric Ids to Node Id.
+    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
         if let Some(nni) = numeric_node_ids {
@@ -211,7 +211,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to write out an header or not.
+    /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
         if let Some(v) = header {
@@ -224,7 +224,7 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * directed: Option<bool> - whether to write out the graph as directed or not.
+    /// * `directed`: Option<bool> - Whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
         self.directed = directed;
@@ -254,7 +254,7 @@ impl EdgeFileWriter {
             ));
         }
 
-        if graph.has_weights() {
+        if graph.has_edge_weights() {
             header.push((self.weights_column.clone(), self.weights_column_number));
         }
 
@@ -264,7 +264,7 @@ impl EdgeFileWriter {
             graph.get_directed_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
-                .get_edges_quadruples(directed)
+                .iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed)
                 .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (

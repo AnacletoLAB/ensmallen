@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, NodeT};
+use graph::NodeT;
 use numpy::{PyArray, PyArray1};
 use std::collections::HashMap;
 
@@ -7,54 +7,32 @@ use std::collections::HashMap;
 impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns mean node degree of the graph.
-    pub fn degrees_mean(&self) -> f64 {
-        self.graph.degrees_mean()
-    }
-
-    #[text_signature = "($self, verbose)"]
-    /// Returns number of connected components in graph.
-    ///
-    /// Returns
-    /// ------------------------
-    /// Number of connected components.
-    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
-        self.graph.connected_components_number(verbose)
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns number of self-loops.
-    pub fn get_selfloops_number(&self) -> EdgeT {
-        self.graph.get_self_loop_number()
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns ratio of self-loops.
-    pub fn get_selfloops_rate(&self) -> f64 {
-        self.graph.get_self_loop_rate()
+    pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
+        pe!(self.graph.get_node_degrees_mean())
     }
 
     #[text_signature = "($self)"]
     /// Returns median node degree of the graph.
-    pub fn degrees_median(&self) -> NodeT {
-        self.graph.degrees_median()
+    pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_median())
     }
 
     #[text_signature = "($self)"]
     /// Returns max node degree of the graph.
-    pub fn max_degree(&self) -> NodeT {
-        self.graph.max_degree()
+    pub fn get_max_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_max_node_degree())
     }
 
     #[text_signature = "($self)"]
     /// Returns min node degree of the graph.
-    pub fn min_degree(&self) -> NodeT {
-        self.graph.min_degree()
+    pub fn get_min_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_min_node_degree())
     }
 
     #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
-    pub fn degrees_mode(&self) -> NodeT {
-        self.graph.degrees_mode()
+    pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_mode())
     }
 
     #[text_signature = "($self)"]
@@ -82,7 +60,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -------------------
-    /// other: &EnsmallenGraph,
+    /// `other`: &EnsmallenGraph,
     ///     Graph to compute the overlaps with.
     /// verbose: bool = True,
     ///     Wether to show loading bars.
@@ -100,22 +78,6 @@ impl EnsmallenGraph {
             .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
 
-    #[text_signature = "($self, node)"]
-    /// Return the degree for the given node.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// node: int,
-    ///     Node ID to use to compute degrees product.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// degrees product for the two given nodes.
-    ///
-    fn degree(&self, node: NodeT) -> PyResult<NodeT> {
-        pe!(self.graph.get_node_degree(node))
-    }
-
     #[text_signature = "($self)"]
     /// Return all the degrees of the nodes graph.
     ///
@@ -127,86 +89,5 @@ impl EnsmallenGraph {
         let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(gil, degrees, NodeT))
-    }
-
-    #[text_signature = "($self, one, two)"]
-    /// Return the Jaccard Index for the two given nodes.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// one: int,
-    ///     First node ID to use to compute Jaccard Index.
-    /// two: int,
-    ///     Second node ID to use to compute Jaccard Index.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Jaccard Index for the two given nodes.
-    ///
-    fn jaccard_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.jaccard_index(one, two))
-    }
-
-    #[text_signature = "($self, one, two)"]
-    /// Return the Adamic/Adar for the two given nodes.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// one: int,
-    ///     First node ID to use to compute Adamic/Adar.
-    /// two: int,
-    ///     Second node ID to use to compute Adamic/Adar.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Adamic/Adar for the two given nodes.
-    ///
-    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.adamic_adar_index(one, two))
-    }
-
-    #[text_signature = "($self, one, two)"]
-    /// Return the Resource Allocation Index for the two given nodes.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// one: int,
-    ///     First node ID to use to compute Resource Allocation Index.
-    /// two: int,
-    ///     Second node ID to use to compute Resource Allocation Index.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Resource Allocation Index for the two given nodes.
-    ///
-    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.resource_allocation_index(one, two))
-    }
-
-    #[text_signature = "($self, one, two)"]
-    /// Return the degrees product for the two given nodes.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// one: int,
-    ///     First node ID to use to compute degrees product.
-    /// two: int,
-    ///     Second node ID to use to compute degrees product.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// degrees product for the two given nodes.
-    ///
-    fn degrees_product(&self, one: NodeT, two: NodeT) -> PyResult<usize> {
-        pe!(self.graph.degrees_product(one, two))
-    }
-
-    #[text_signature = "(self)"]
-    /// Return the traps rate of the graph.
-    ///
-    /// This feature is EXPERIMENTAL and still required proving.
-    ///
-    fn traps_rate(&self) -> f64 {
-        self.graph.traps_rate()
     }
 }

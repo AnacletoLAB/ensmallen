@@ -22,6 +22,7 @@ pub struct NodeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
+    pub(crate) might_have_singletons: bool,
 }
 
 impl NodeFileReader {
@@ -33,7 +34,7 @@ impl NodeFileReader {
     ///
     pub fn new<S: Into<String>>(path: S) -> Result<NodeFileReader, String> {
         Ok(NodeFileReader {
-            reader: CSVFileReader::new(path)?,
+            reader: CSVFileReader::new(path, "node list".to_owned())?,
             default_node_type: None,
             nodes_column_number: None,
             node_types_separator: None,
@@ -41,6 +42,7 @@ impl NodeFileReader {
             numeric_node_ids: false,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
+            might_have_singletons: true,
         })
     }
 
@@ -72,6 +74,17 @@ impl NodeFileReader {
     ///t
     pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileReader {
         self.nodes_column_number = nodes_column_number;
+        self
+    }
+
+    /// Set the name of the graph to be loaded.
+    ///
+    /// # Arguments
+    ///
+    /// * graph_name: String - The name of the graph to be loaded.
+    ///
+    pub(crate) fn set_graph_name(mut self, graph_name: String) -> NodeFileReader {
+        self.reader.graph_name = graph_name;
         self
     }
 
@@ -118,11 +131,11 @@ impl NodeFileReader {
         self
     }
 
-    /// Set wether to automatically skip node_types if they are not avaitable instead of raising an exception.
+    /// Set whether to automatically skip node_types if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
     ///
-    /// * skip_node_types_if_unavailable: Option<bool> - Wether to skip node_types if they are not available.
+    /// * skip_node_types_if_unavailable: Option<bool> - Whether to skip node_types if they are not available.
     ///
     pub fn set_skip_node_types_if_unavailable(
         mut self,
@@ -130,6 +143,22 @@ impl NodeFileReader {
     ) -> Result<NodeFileReader, String> {
         if let Some(skip) = skip_node_types_if_unavailable {
             self.skip_node_types_if_unavailable = skip;
+        }
+        Ok(self)
+    }
+
+    /// Set whether you pinky promise that this graph has singletons or not.
+    ///
+    /// # Arguments
+    ///
+    /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
+    ///
+    pub fn set_might_have_singleton_nodes(
+        mut self,
+        might_have_singletons: Option<bool>,
+    ) -> Result<NodeFileReader, String> {
+        if let Some(skip) = might_have_singletons {
+            self.might_have_singletons = skip;
         }
         Ok(self)
     }
@@ -153,13 +182,29 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Set whether the CSV is expected to be well written.
+    ///
+    /// # Arguments
+    ///
+    /// * csv_is_correct: Option<bool> - Whether you pinky swear the node list is correct.
+    ///
+    pub fn set_csv_is_correct(mut self, csv_is_correct: Option<bool>) -> NodeFileReader {
+        if let Some(cic) = csv_is_correct {
+            self.reader.csv_is_correct = cic;
+        }
+        self
+    }
+
     /// Set the default node type.
     ///
     /// # Arguments
     ///
     /// * default_node_type: Option<String> - The node type to use when node type is missing.
     ///
-    pub fn set_default_node_type<S: Into<String>>(mut self, default_node_type: Option<S>) -> NodeFileReader {
+    pub fn set_default_node_type<S: Into<String>>(
+        mut self,
+        default_node_type: Option<S>,
+    ) -> NodeFileReader {
         self.default_node_type = default_node_type.map(|val| val.into());
         self
     }
@@ -168,7 +213,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - whether to show the loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {
@@ -181,7 +226,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_type_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_type_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_type_ids(
         mut self,
@@ -197,7 +242,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * numeric_node_ids: Option<bool> - whether to convert numeric node type Ids to Node Type Ids.
+    /// * numeric_node_ids: Option<bool> - Whether to convert numeric node type Ids to Node Type Ids.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> NodeFileReader {
         if let Some(nni) = numeric_node_ids {
@@ -210,7 +255,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * ignore_duplicates: Option<bool> - whether to ignore detected duplicates or raise exception.
+    /// * ignore_duplicates: Option<bool> - Whether to ignore detected duplicates or raise exception.
     ///
     pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> NodeFileReader {
         if let Some(v) = ignore_duplicates {
@@ -272,7 +317,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<bool> - whether to expect an header or not.
+    /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileReader {
         if let Some(v) = header {
@@ -285,7 +330,7 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * rows_to_skip: Option<bool> - whether to show the loading bar or not.
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> NodeFileReader {
         if let Some(v) = rows_to_skip {

@@ -1,11 +1,10 @@
 use super::*;
-use rayon::prelude::*;
 use std::collections::HashMap;
 
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap walk weights.
 pub struct WalkWeights {
-    pub(crate) return_weight: ParamsT,
+    pub return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
     pub(crate) change_node_type_weight: ParamsT,
     pub(crate) change_edge_type_weight: ParamsT,
@@ -47,9 +46,10 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * weight_name: &str - name of the weight, used for building the exception.
-    /// * weight: Option<WeightT> - Value of the weight.
+    /// * `weight_name`: &str - name of the weight, used for building the exception.
+    /// * `weight`: Option<WeightT> - Value of the weight.
     ///
+    /// TODO: is this a duplicate?
     fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT, String> {
         if weight <= 0.0 || !weight.is_finite() {
             Err(format!(
@@ -92,7 +92,7 @@ impl SingleWalkParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: usize - Maximal walk_length of the walk.
+    /// * `walk_length`: usize - Maximal walk_length of the walk.
     ///
     /// # Example
     /// You can create a single walk parameters struct as follows:
@@ -142,7 +142,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * walk_length: NodeT - Maximal walk_length of the walk.
+    /// * `walk_length`: NodeT - Maximal walk_length of the walk.
     ///
     pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
@@ -157,7 +157,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<NodeT> - whether to show the loading bar or not.
+    /// * `iterations`: Option<NodeT> - Whether to show the loading bar or not.
     ///
     /// # Example
     /// You can change the `iterations` parameter as follows:
@@ -208,7 +208,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
+    /// * `max_neighbours`: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
     /// # Example
     /// You can change the `max_neighbours` parameter as follows:
@@ -245,7 +245,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * random_state: Option<usize> - random_state for reproducible random walks.
+    /// * `random_state`: Option<usize> - random_state for reproducible random walks.
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
         if let Some(s) = random_state {
@@ -261,7 +261,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * dense_node_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    /// * `dense_node_mapping`: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
     pub fn set_dense_node_mapping(
         mut self,
@@ -275,7 +275,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
+    /// * `return_weight`: Option<WeightT> - weight for the exploitation factor.
     ///
     /// # Example
     /// You can change the `return_weight` parameter as follows:
@@ -310,7 +310,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
+    /// * `explore_weight`: Option<WeightT> - weight for the exploration factor.
     ///
     /// # Example
     /// You can change the `explore_weight` parameter as follows:
@@ -345,7 +345,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_node_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_node_type_weight` parameter as follows:
@@ -380,7 +380,7 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    /// * `change_edge_type_weight`: Option<WeightT> - weight for the exploration of different node types.
     ///
     /// # Example
     /// You can change the `change_edge_type_weight` parameter as follows:
@@ -415,29 +415,29 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * graph: Graph - Graph object for which parameters are to be validated.
+    /// * `graph`: Graph - Graph object for which parameters are to be validated.
     ///
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
     /// # use graph::walks_parameters::WalksParameters;
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let mut parameters = WalksParameters::new(32).unwrap();
-    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&ppi).is_ok());
+    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&ppi).is_ok());
     /// ```
     /// Two different graphs, like Cora and STRING, are not remappable:
     /// ```rust
     /// # use graph::walks_parameters::WalksParameters;
-    /// # let cora = graph::test_utilities::load_cora().unwrap();
-    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// # let cora = graph::test_utilities::load_cora();
+    /// # let ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// # let mut parameters = WalksParameters::new(32).unwrap();
-    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_node_mapping())).validate(&cora).is_err());
+    /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&cora).is_err());
     /// ```
     ///
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
-                .get_unique_sources_par_iter()
+                .iter_unique_source_node_ids()
                 .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
             {
                 return Err(String::from(concat!(
