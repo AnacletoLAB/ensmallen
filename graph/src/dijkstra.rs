@@ -50,7 +50,7 @@ impl Graph {
             None
         } else {
             let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
-            unsafe { *visited.get_unchecked_mut(src_node_id as usize) = true };
+            *visited.get_unchecked_mut(src_node_id as usize) = true;
             Some(visited)
         };
 

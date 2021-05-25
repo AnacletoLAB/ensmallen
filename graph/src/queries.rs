@@ -28,12 +28,10 @@ impl Graph {
     /// * `src`: NodeT - The source node ID.
     /// * `dst`: NodeT - The destination node ID.
     pub unsafe fn get_unchecked_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> WeightT {
-        unsafe {
-            self.get_unchecked_edge_weight_from_edge_id(
-                self.get_unchecked_edge_id_from_node_ids(src, dst),
-            )
-            .unwrap_unchecked()
-        }
+        self.get_unchecked_edge_weight_from_edge_id(
+            self.get_unchecked_edge_id_from_node_ids(src, dst),
+        )
+        .unwrap_unchecked()
     }
 
     /// Returns node id from given node name raising a panic if used unproperly.
@@ -201,7 +199,7 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
-    /// let (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id);
+    /// let (src, dst) = unsafe { graph.get_unchecked_node_ids_from_edge_id(edge_id) };
     /// println!("The edge with ID {} has source node ID {} and destination node ID {}.", edge_id, src, dst);
     /// ```
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
@@ -247,7 +245,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
     /// let src = 0;
     /// let dst = 1;
-    /// let edge_id = graph.get_unchecked_edge_id_from_node_ids(src, dst);
+    /// let edge_id = unsafe { graph.get_unchecked_edge_id_from_node_ids(src, dst) };
     /// println!("The source node ID {} and destination node ID {} corrrespond to the edge with ID {}.", src, dst, edge_id);
     /// ```
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
@@ -292,7 +290,7 @@ impl Graph {
     /// # let graph_without_singletons = graph::test_utilities::load_ppi(false, true, true, false, false, false);
     /// for node_id in graph_without_singletons.iter_node_ids(){
     ///     assert_eq!(
-    ///         graph_without_singletons.get_unchecked_unique_source_node_id(node_id),
+    ///         unsafe { graph_without_singletons.get_unchecked_unique_source_node_id(node_id)},
     ///         node_id,
     ///         "The expected node ID does not match the obtained node ID."
     ///     );
@@ -322,7 +320,7 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
-    /// let (src, dst, edge_type) = graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);
+    /// let (src, dst, edge_type) = unsafe { graph.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id) };
     /// println!("The edge with ID {} has source node ID {}, destination node ID {} and edge type ID {:?}", edge_id, src, dst, edge_type);
     /// ```
     pub unsafe fn get_unchecked_node_ids_and_edge_type_id_from_edge_id(
@@ -371,7 +369,7 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let edge_id = 0;
-    /// let (src, dst, edge_type, weight) = graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);
+    /// let (src, dst, edge_type, weight) = unsafe { graph.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id) };
     /// println!("The edge with ID {} has source node ID {}, destination node ID {}, edge type ID {:?} and weight {:?}.", edge_id, src, dst, edge_type, weight);
     /// ```
     pub unsafe fn get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
@@ -483,6 +481,7 @@ impl Graph {
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
     pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<WeightT, String> {
+        self.must_have_edge_weights()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)})
     }
@@ -577,7 +576,7 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
 
-    /// assert_eq!(graph.get_unchecked_edge_type_id_from_edge_id(0), Some(0));
+    /// assert_eq!(unsafe{ graph.get_unchecked_edge_type_id_from_edge_id(0) }, Some(0));
     /// ```
     pub unsafe fn get_unchecked_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
         self.edge_types
@@ -817,7 +816,7 @@ impl Graph {
     /// To get the name of a node you can use:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// assert_eq!(graph.get_unchecked_node_name_from_node_id(0), "ENSG00000004059".to_string());
+    /// assert_eq!(unsafe { graph.get_unchecked_node_name_from_node_id(0) }, "ENSG00000004059".to_string());
     /// ```
     pub unsafe fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
         self.nodes.unchecked_translate(node_id)

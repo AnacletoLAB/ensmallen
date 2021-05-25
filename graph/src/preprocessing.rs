@@ -557,8 +557,18 @@ impl Graph {
         // K1 values are typically between 1.2 and 2.0 in absence of additional
         // tuning of the model.
         let k1 = k1.unwrap_or(1.5);
+        if k1 <= 0.0 {
+            return Err(
+                "The value of k1 must be a strictly positive real number.".to_string()
+            );
+        }
         // b values are tipically equal to 0.75 in abscence of additional tuning.
         let b = b.unwrap_or(0.75);
+        if k1 <= 0.0 {
+            return Err(
+                "The value of b must be a strictly positive real number.".to_string()
+            );
+        }
         // By default we only execute 1 iteration
         let iterations = iterations.unwrap_or(1);
         // The number of iterations must be equal or greater than one.
@@ -577,8 +587,8 @@ impl Graph {
         // Loading bar
         let iterations_progress_bar = get_loading_bar(
             verbose.unwrap_or(true) && iterations > 1,
-            "Iterating features propagation",
-            nodes_number,
+            "[Iterating features] propagation",
+            iterations,
         );
         // Execute the propagation
         for _ in (0..iterations).progress_with(iterations_progress_bar) {

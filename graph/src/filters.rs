@@ -206,7 +206,7 @@ impl Graph {
                 true,
             ),
             (true, _) => {
-                Graph::from_string_sorted(
+                Graph::from_string_unsorted(
                     self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                         .progress_with(pb_edges)
                         .filter(
@@ -242,8 +242,6 @@ impl Graph {
                     true,
                     false,
                     true,
-                    self.get_directed_edges_number() as usize,
-                    self.get_nodes_number(),
                     // TODO: UPDATE THE FOLLOWING FOUR BOOLEANS
                     false,
                     false,
@@ -258,6 +256,7 @@ impl Graph {
                     true,
                     self.has_selfloops() && !filter_selfloops,
                     true,
+                    verbose,
                 )
             }
         }

@@ -797,6 +797,10 @@ pub(crate) fn build_edges(
         );
     }
 
+    if edges_number == 0 && nodes_number > 0 {
+        assert!(unique_sources.is_some());
+    }
+
     // If the singleton_nodes_with_selfloops bitmap if empty, we return a None instead.
     if singleton_nodes_with_selfloops
         .as_ref()

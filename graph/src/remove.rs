@@ -64,8 +64,9 @@ impl Graph {
         }
 
         // Create the components counter
+        let counter = Counter::init(components_vector.clone());
         let component_counts: Vec<(NodeT, NodeT)> =
-            Counter::init(components_vector.clone()).most_common_ordered();
+            counter.most_common_ordered();
 
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
@@ -106,10 +107,10 @@ impl Graph {
 
         let min_component_size = keep_components
             .iter()
-            .map(|component_id| component_counts[component_id as usize].1)
+            .map(|component_id| *counter.get(&component_id).unwrap())
             .min();
-
-        Graph::from_string_sorted(
+            
+        Graph::from_string_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
                 .filter_map(
@@ -135,9 +136,7 @@ impl Graph {
             false,
             true,
             true,
-            true,
-            self.get_directed_edges_number() as usize, // Approximation of expected edges number.
-            self.get_nodes_number(),                   // Approximation of expected nodes number.
+            true,                  // Approximation of expected nodes number.
             false,
             false,
             false,
@@ -149,6 +148,7 @@ impl Graph {
             self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
+            verbose,
         )
     }
 }

@@ -99,7 +99,7 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -203,7 +203,7 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -490,7 +490,7 @@ impl Graph {
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
     ) -> Result<Vec<f64>, String> {
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {

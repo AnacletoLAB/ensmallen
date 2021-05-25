@@ -53,7 +53,7 @@ pub struct GetNodeLabelPredictionTupleFromNodeIdsParams {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetOkapiBm25NodeFeaturePropagationParams {
 	pub features : Vec<Vec<f64>>,
-	pub iterations : Option<usize>,
+	pub iterations : Option<u8>,
 	pub maximal_distance : Option<usize>,
 	pub k1 : Option<f64>,
 	pub b : Option<f64>,
@@ -62,7 +62,7 @@ pub struct GetOkapiBm25NodeFeaturePropagationParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetOkapiBm25NodeLabelPropagationParams {
-	pub iterations : Option<usize>,
+	pub iterations : Option<u8>,
 	pub maximal_distance : Option<usize>,
 	pub k1 : Option<f64>,
 	pub b : Option<f64>,
@@ -431,12 +431,12 @@ pub struct GetBetweennessCentralityParams {
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetUnweightedEigenvectorCentralityParams {
-	pub maximum_iterations_number : Option<usize>,
+	pub maximum_iterations_number : Option<u8>,
 	pub tollerance : Option<f64>,
 }
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetWeightedEigenvectorCentralityParams {
-	pub maximum_iterations_number : Option<usize>,
+	pub maximum_iterations_number : Option<u8>,
 	pub tollerance : Option<f64>,
 }
 #[derive(Arbitrary, Debug, Clone)]
@@ -912,7 +912,6 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         false,
         data.from_vec.ignore_duplicated_edges,
         false,
-        data.from_vec.verbose,
         data.from_vec.numeric_edge_types_ids,
         data.from_vec.numeric_node_ids,
         data.from_vec.numeric_edge_node_ids,
@@ -923,6 +922,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         true,
         true,
         true,
+        data.from_vec.verbose,
     )?;
 
     let mut rng = Rng::new();
@@ -982,24 +982,24 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.get_node_label_prediction_tuple_from_node_ids(data_for_current_test.get_node_label_prediction_tuple_from_node_ids.node_ids, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.random_state, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.include_central_node, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.offset, data_for_current_test.get_node_label_prediction_tuple_from_node_ids.max_neighbours);
 			},
 			5 => {
-				trace.push(format!("get_okapi_bm25_node_feature_propagation(features = {:?}, iterations = {:?}, maximal_distance = {:?}, k1 = {:?}, b = {:?}, include_central_node = {:?}, verbose = {:?})", data_for_current_test.get_okapi_bm25_node_feature_propagation.features, data_for_current_test.get_okapi_bm25_node_feature_propagation.iterations, data_for_current_test.get_okapi_bm25_node_feature_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_feature_propagation.k1, data_for_current_test.get_okapi_bm25_node_feature_propagation.b, data_for_current_test.get_okapi_bm25_node_feature_propagation.include_central_node, data_for_current_test.get_okapi_bm25_node_feature_propagation.verbose));
+				trace.push(format!("get_okapi_bm25_node_feature_propagation(features = {:?}, iterations = {:?}, maximal_distance = {:?}, k1 = {:?}, b = {:?}, include_central_node = {:?}, verbose = {:?})", data_for_current_test.get_okapi_bm25_node_feature_propagation.features, data_for_current_test.get_okapi_bm25_node_feature_propagation.iterations.map(|x| x as usize), data_for_current_test.get_okapi_bm25_node_feature_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_feature_propagation.k1, data_for_current_test.get_okapi_bm25_node_feature_propagation.b, data_for_current_test.get_okapi_bm25_node_feature_propagation.include_central_node, data_for_current_test.get_okapi_bm25_node_feature_propagation.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_okapi_bm25_node_feature_propagation(data_for_current_test.get_okapi_bm25_node_feature_propagation.features, data_for_current_test.get_okapi_bm25_node_feature_propagation.iterations, data_for_current_test.get_okapi_bm25_node_feature_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_feature_propagation.k1, data_for_current_test.get_okapi_bm25_node_feature_propagation.b, data_for_current_test.get_okapi_bm25_node_feature_propagation.include_central_node, data_for_current_test.get_okapi_bm25_node_feature_propagation.verbose);
+				let _ = graph.get_okapi_bm25_node_feature_propagation(data_for_current_test.get_okapi_bm25_node_feature_propagation.features, data_for_current_test.get_okapi_bm25_node_feature_propagation.iterations.map(|x| x as usize), data_for_current_test.get_okapi_bm25_node_feature_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_feature_propagation.k1, data_for_current_test.get_okapi_bm25_node_feature_propagation.b, data_for_current_test.get_okapi_bm25_node_feature_propagation.include_central_node, data_for_current_test.get_okapi_bm25_node_feature_propagation.verbose);
 			},
 			6 => {
-				trace.push(format!("get_okapi_bm25_node_label_propagation(iterations = {:?}, maximal_distance = {:?}, k1 = {:?}, b = {:?}, verbose = {:?})", data_for_current_test.get_okapi_bm25_node_label_propagation.iterations, data_for_current_test.get_okapi_bm25_node_label_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_label_propagation.k1, data_for_current_test.get_okapi_bm25_node_label_propagation.b, data_for_current_test.get_okapi_bm25_node_label_propagation.verbose));
+				trace.push(format!("get_okapi_bm25_node_label_propagation(iterations = {:?}, maximal_distance = {:?}, k1 = {:?}, b = {:?}, verbose = {:?})", data_for_current_test.get_okapi_bm25_node_label_propagation.iterations.map(|x| x as usize), data_for_current_test.get_okapi_bm25_node_label_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_label_propagation.k1, data_for_current_test.get_okapi_bm25_node_label_propagation.b, data_for_current_test.get_okapi_bm25_node_label_propagation.verbose));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_okapi_bm25_node_label_propagation(data_for_current_test.get_okapi_bm25_node_label_propagation.iterations, data_for_current_test.get_okapi_bm25_node_label_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_label_propagation.k1, data_for_current_test.get_okapi_bm25_node_label_propagation.b, data_for_current_test.get_okapi_bm25_node_label_propagation.verbose);
+				let _ = graph.get_okapi_bm25_node_label_propagation(data_for_current_test.get_okapi_bm25_node_label_propagation.iterations.map(|x| x as usize), data_for_current_test.get_okapi_bm25_node_label_propagation.maximal_distance, data_for_current_test.get_okapi_bm25_node_label_propagation.k1, data_for_current_test.get_okapi_bm25_node_label_propagation.b, data_for_current_test.get_okapi_bm25_node_label_propagation.verbose);
 			},
 			7 => {
 				trace.push(format!("is_singleton_from_node_id(node_id = {:?})", data_for_current_test.is_singleton_from_node_id.node_id));
@@ -1969,7 +1969,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_unweighted_eigenvector_centrality(data_for_current_test.get_unweighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_unweighted_eigenvector_centrality.tollerance);
+				let _ = graph.get_unweighted_eigenvector_centrality(data_for_current_test.get_unweighted_eigenvector_centrality.maximum_iterations_number.map(|x| x as usize), data_for_current_test.get_unweighted_eigenvector_centrality.tollerance);
 			},
 			104 => {
 				trace.push(format!("get_weighted_eigenvector_centrality(maximum_iterations_number = {:?}, tollerance = {:?})", data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_weighted_eigenvector_centrality.tollerance));
@@ -1979,7 +1979,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_weighted_eigenvector_centrality(data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number, data_for_current_test.get_weighted_eigenvector_centrality.tollerance);
+				let _ = graph.get_weighted_eigenvector_centrality(data_for_current_test.get_weighted_eigenvector_centrality.maximum_iterations_number.map(|x| x as usize), data_for_current_test.get_weighted_eigenvector_centrality.tollerance);
 			},
 			105 => {
 				trace.push(format!("set_name(name = {:?})", data_for_current_test.set_name.name));
