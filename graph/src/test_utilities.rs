@@ -351,16 +351,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
-        assert!(graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) == 0);
-        assert!(graph.is_unchecked_singleton_from_node_id(singleton_node_id));
+        assert!(unsafe{graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id)} == 0);
+        assert!(unsafe{graph.is_unchecked_singleton_from_node_id(singleton_node_id)});
     }
 
     if !graph.is_directed() {
         for node_id in graph.iter_node_ids() {
-            assert_eq!(
+            unsafe{assert_eq!(
                 graph.is_unchecked_singleton_from_node_id(node_id),
                 graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
-            );
+            )};
         }
     }
 
@@ -445,8 +445,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
-        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);
-        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);
+        let src_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.0)};
+        let dst_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.1)};
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
@@ -640,7 +640,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
         .into_iter()
         .enumerate()
         .for_each(|(node_id, value)| {
-            if graph.is_unchecked_singleton_from_node_id(node_id as NodeT) {
+            if unsafe{graph.is_unchecked_singleton_from_node_id(node_id as NodeT)} {
                 assert!(value.abs() < f64::EPSILON);
             }
         });
@@ -1115,13 +1115,13 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
-                [graph.get_unchecked_node_name_from_node_id(0)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(0)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
             ),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1130,10 +1130,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edges(
-            graph.get_unchecked_node_name_from_node_id(0),
+            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
             Some(false),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1141,10 +1141,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            graph.get_unchecked_node_name_from_node_id(0),
+            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
             Some(false),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1444,7 +1444,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), St
     );
     if !graph.is_multigraph() {
         assert_eq!(
-            clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),
+            unsafe{clone.get_unchecked_edge_count_from_edge_type_id(Some(0))},
             graph.get_directed_edges_number(),
             "Number of edges with the unique edge type does not match number of edges in the graph."
         );

@@ -390,7 +390,7 @@ impl Graph {
             .map(move |i| {
                 let mut sampled = random_values[i];
                 if i < positive_number{
-                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(sampled % edges_number);
+                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(sampled % edges_number)};
                     (indices[i], src, dst, true)
                 } else {
                     for _ in 0..maximal_sampling_attempts {
@@ -469,7 +469,7 @@ impl Graph {
             false => 1.0,
         };
 
-        Ok(iter.map(move |(index, src, dst, label)| {
+        Ok(iter.map(move |(index, src, dst, label)| unsafe {
             (
                 index,
                 self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
@@ -627,7 +627,7 @@ impl Graph {
                     // Iterating over
                     while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
                         let new_distance = distance + 1;
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                        unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)}
                             .for_each(|neighbour_node_id| {
                                 if visited[neighbour_node_id as usize] {
                                     return;

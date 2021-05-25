@@ -176,7 +176,7 @@ impl Graph {
                             .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
                         None => ntitf.contains(&None),
                     })
-                && !(filter_singleton_nodes && self.is_unchecked_singleton_from_node_id(*node_id))
+                && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(*node_id)})
                 && !(filter_singleton_nodes
                     && filter_selfloops
                     && self.is_singleton_with_selfloops_from_node_id(*node_id)) &&

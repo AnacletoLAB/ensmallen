@@ -23,7 +23,7 @@ impl Graph {
         let mut number_of_triangles = vertex_cover_set
             .par_iter()
             // For each node in the cover
-            .map(|&node_id| {
+            .map(|&node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -105,7 +105,7 @@ impl Graph {
         vertex_cover_set
             .par_iter()
             // For each node in the cover
-            .for_each(|&node_id| {
+            .for_each(|&node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.

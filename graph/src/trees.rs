@@ -90,7 +90,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+            let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -121,14 +121,14 @@ impl Graph {
             Box::new(
                 self.iter_edges_from_random_state(random_state)
                     .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {
+                        if uet.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)}) {
                             return None;
                         }
                         Some((src, dst))
                     })
                     .chain(self.iter_edges_from_random_state(random_state).filter_map(
                         move |(edge_id, src, dst)| {
-                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+                            if !uet.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)})
                             {
                                 return None;
                             }
@@ -506,29 +506,28 @@ impl Graph {
                     nodes_number,
                 );
                 let parents = thread_safe_parents.value.get();
-                (0..nodes_number).progress_with(pb).for_each(|src| {
+                (0..nodes_number).progress_with(pb).for_each(|src| unsafe {
                     // If the node has already been explored we skip ahead.
-                    if unsafe { (*parents)[src] != NOT_PRESENT} {
+                    if (*parents)[src] != NOT_PRESENT {
                         return;
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
                     if self.is_unchecked_singleton_from_node_id(src as NodeT) {
                         // We set singletons as self-loops for now.
-                        unsafe{ (*parents)[src] = src as NodeT };
+                        (*parents)[src] = src as NodeT;
                         return;
                     }
                     loop {
-                        if unsafe { (*parents)[src] != NOT_PRESENT} {
+                        if (*parents)[src] != NOT_PRESENT {
                             break;
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                            if unsafe { (*parents)[src] != NOT_PRESENT} {
+                            if (*parents)[src] != NOT_PRESENT {
                                 break;
                             }
-                            unsafe {
-                                (*parents)[src] = src as NodeT;
-                            }
+                            (*parents)[src] = src as NodeT;
+            
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
@@ -557,7 +556,7 @@ impl Graph {
                         }
                     };
                     let parents = thread_safe_parents.value.get();
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| unsafe {
                             if (*parents)[dst as usize] == NOT_PRESENT {
                                 (*parents)[dst as usize] = src;
@@ -730,7 +729,7 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_disconnected_nodes()
-                            && (self.is_unchecked_singleton_from_node_id(src)
+                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)}
                                 || self.is_singleton_with_selfloops_from_node_id(src))
                         {
                             // We set singletons as self-loops for now.
@@ -811,7 +810,7 @@ impl Graph {
                     };
 
                     let src_component = components[src as usize].load(Ordering::Relaxed);
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| {
                             if components[dst as usize].swap(src_component, Ordering::SeqCst)
                                 == NOT_PRESENT

@@ -66,7 +66,7 @@ impl Graph {
             self.cached_destinations = Some(
                 self.get_top_k_central_node_ids(cached_nodes_number)
                     .par_iter()
-                    .map(|node_id| {
+                    .map(|node_id| unsafe {
                         (
                             *node_id,
                             self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)

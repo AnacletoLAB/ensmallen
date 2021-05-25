@@ -15,7 +15,7 @@ impl Graph {
                         dst,
                         edge_type,
                         Some(if src == dst {
-                            self.get_unchecked_unweighted_node_degree_from_node_id(src) as WeightT
+                            unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(src) as WeightT}
                         } else {
                             -1.0
                         }),
@@ -55,7 +55,7 @@ impl Graph {
                         Some(if src == dst {
                             1.0
                         } else {
-                            -1.0 / self.get_unchecked_unweighted_node_degree_from_node_id(src)
+                            -1.0 / unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(src)}
                                 as WeightT
                         }),
                     ))
@@ -90,7 +90,7 @@ impl Graph {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| {
+                .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -135,7 +135,7 @@ impl Graph {
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
                 .filter(|(_, src, dst, _)| src != dst)
-                .map(|(_, src, dst, edge_type)| {
+                .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -177,7 +177,7 @@ impl Graph {
         self.must_have_edge_weights()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .map(|(_, src, dst, edge_type, edge_weight)| {
+                .map(|(_, src, dst, edge_type, edge_weight)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -220,7 +220,7 @@ impl Graph {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| {
+                .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -267,7 +267,7 @@ impl Graph {
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
                 .filter(|(_, src, dst, _)| src != dst)
-                .map(|(_, src, dst, edge_type)| {
+                .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -310,7 +310,7 @@ impl Graph {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| {
+                .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,

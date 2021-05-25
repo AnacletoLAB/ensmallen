@@ -49,7 +49,7 @@ impl Graph {
             }
             Some(
                 sg.iter_node_names_and_node_type_names()
-                    .map(|(_, node_name, _, _)| {
+                    .map(|(_, node_name, _, _)| unsafe {
                         self.get_unchecked_node_id_from_node_name(&node_name)
                     })
                     .collect::<RoaringBitmap>(),
@@ -321,7 +321,7 @@ impl Graph {
         for (edge_id, (src, dst, edge_type)) in edge_indices.into_iter().map(|edge_id| {
             (
                 edge_id,
-                self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id),
+                unsafe{self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id)},
             )
         }) {
             // If the graph is undirected and we have extracted an edge that is a
@@ -344,9 +344,9 @@ impl Graph {
                 if !self.directed {
                     // we compute also the backward edge ids that are required.
                     valid_edges_bitmap.extend(self.compute_edge_ids_vector(
-                        self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+                        unsafe{self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(
                             dst, src, edge_type,
-                        ),
+                        )},
                         dst,
                         src,
                         include_all_edge_types,
@@ -392,7 +392,7 @@ impl Graph {
                 (0..self.get_directed_edges_number())
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
-                    .map(|edge_id| {
+                    .map(|edge_id| unsafe {
                         Ok(self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
@@ -416,7 +416,7 @@ impl Graph {
                 valid_edges_bitmap
                     .iter()
                     .progress_with(pb_valid)
-                    .map(|edge_id| {
+                    .map(|edge_id| unsafe {
                         Ok(self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
@@ -503,7 +503,7 @@ impl Graph {
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
-                .map(|et| self.get_unchecked_edge_count_from_edge_type_id(*et) as EdgeT)
+                .map(|et| unsafe{self.get_unchecked_edge_count_from_edge_type_id(*et)} as EdgeT)
                 .sum();
             validation_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
@@ -841,11 +841,11 @@ impl Graph {
             // add the edges to the relative vectors
             edge_set[..train_size].iter().for_each(|edge_id| {
                 train_edge_types[*edge_id as usize] =
-                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id)
+                unsafe{self.get_unchecked_edge_type_id_from_edge_id(*edge_id)}
             });
             edge_set[train_size..].iter().for_each(|edge_id| {
                 test_edge_types[*edge_id as usize] =
-                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id)
+                unsafe{self.get_unchecked_edge_type_id_from_edge_id(*edge_id)}
             });
         }
 
@@ -952,7 +952,7 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) {
+                for dst in unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)} {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
@@ -974,7 +974,7 @@ impl Graph {
         let edges_bitmap: RoaringTreemap = unique_nodes
             .iter()
             .progress_with(pb2)
-            .flat_map(|src| {
+            .flat_map(|src| unsafe {
                 let (min_edge_id, max_edge_id) =
                     self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
                 (min_edge_id..max_edge_id)
@@ -987,7 +987,7 @@ impl Graph {
             .collect();
 
         Graph::build_graph(
-            edges_bitmap.iter().progress_with(pb3).map(|edge_id| {
+            edges_bitmap.iter().progress_with(pb3).map(|edge_id| unsafe {
                 Ok(self
                     .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))
             }),

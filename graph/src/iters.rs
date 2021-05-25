@@ -20,7 +20,7 @@ impl Graph {
     /// Return iterator on the node names of the graph.
     pub fn iter_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_node_ids()
-            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
+            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
     }
 
     /// Return iterator on the unique node type IDs of the graph.
@@ -108,7 +108,7 @@ impl Graph {
     /// has weights, the degree will not take them into consideration.
     pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_node_ids()
-            .map(move |node| self.get_unchecked_unweighted_node_degree_from_node_id(node))
+            .map(move |node| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node)})
     }
 
     /// Return iterator on the unweighted node degrees of the graph.
@@ -119,7 +119,7 @@ impl Graph {
         &self,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids()
-            .map(move |node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
+            .map(move |node_id| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)})
     }
 
     /// Return iterator on the weighted node degrees of the graph.
@@ -131,9 +131,10 @@ impl Graph {
     /// the resulting node degree may be negative.
     /// This check is **NOT** done by this method, as in some situations
     /// this may be desired by the user.
-    pub fn iter_weighted_node_degrees(&self) -> impl Iterator<Item = WeightT> + '_ {
-        self.iter_node_ids()
-            .map(move |node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
+    pub fn iter_weighted_node_degrees(&self) -> Result<impl Iterator<Item = WeightT> + '_, String> {
+        self.must_have_edge_weights()?;
+        Ok(self.iter_node_ids()
+            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
     }
 
     /// Return iterator on the weighted node degrees of the graph.
@@ -147,9 +148,10 @@ impl Graph {
     /// this may be desired by the user.
     pub fn par_iter_weighted_node_degrees(
         &self,
-    ) -> impl IndexedParallelIterator<Item = WeightT> + '_ {
-        self.par_iter_node_ids()
-            .map(move |node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
+    ) -> Result<impl IndexedParallelIterator<Item = WeightT> + '_, String> {
+        self.must_have_edge_weights()?;
+        Ok(self.par_iter_node_ids()
+            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
     }
 
     /// Return iterator on the non-singleton nodes of the graph.
@@ -180,7 +182,7 @@ impl Graph {
     /// Return iterator on the singleton nodes names of the graph.
     pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_node_ids()
-            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
+            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
     }
 
     /// Return iterator on the singleton with selfloops node IDs of the graph.
@@ -194,7 +196,7 @@ impl Graph {
     /// Return iterator on the singleton with selfloops node names of the graph.
     pub fn iter_singleton_with_selfloops_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_with_selfloops_node_ids()
-            .map(move |node_id| self.get_unchecked_node_name_from_node_id(node_id))
+            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
     }
 
     /// Return iterator on the singleton node type IDs of the graph.
@@ -430,7 +432,7 @@ impl Graph {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
                 (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
-                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
                     if !directed && src > dst {
                         return None;
                     }
@@ -460,7 +462,7 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, String, NodeT, String)> + '_ {
         self.iter_edge_ids(directed)
-            .map(move |(edge_id, src, dst)| {
+            .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
                     src,
@@ -499,7 +501,7 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, String, NodeT, String)> + '_ {
         self.par_iter_edge_ids(directed)
-            .map(move |(edge_id, src, dst)| {
+            .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
                     src,
@@ -519,7 +521,7 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
         self.iter_edge_ids(directed)
-            .map(move |(edge_id, src, dst)| {
+            .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
                     src,
@@ -568,7 +570,7 @@ impl Graph {
         ),
     > + '_ {
         self.iter_edges(directed)
-            .map(move |(edge_id, src, src_name, dst, dst_name)| {
+            .map(move |(edge_id, src, src_name, dst, dst_name)| unsafe {
                 let edge_type_id = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
                 (
                     edge_id,
@@ -602,7 +604,7 @@ impl Graph {
         ),
     > + '_ {
         self.par_iter_edges(directed)
-            .map(move |(edge_id, src, src_name, dst, dst_name)| {
+            .map(move |(edge_id, src, src_name, dst, dst_name)| unsafe {
                 let edge_type_id = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
                 (
                     edge_id,
@@ -625,7 +627,7 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
         self.par_iter_edge_ids(directed)
-            .map(move |(edge_id, src, dst)| {
+            .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
                     src,
@@ -656,7 +658,7 @@ impl Graph {
     > + '_ {
         self.par_iter_edge_node_names_and_edge_type_name(directed)
             .map(
-                move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| {
+                move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| unsafe {
                     (
                         edge_id,
                         src,
@@ -691,7 +693,7 @@ impl Graph {
         ),
     > + '_ {
         self.iter_edge_node_names_and_edge_type_name(directed).map(
-            move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| {
+            move |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)| unsafe {
                 (
                     edge_id,
                     src,
@@ -716,7 +718,7 @@ impl Graph {
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_
     {
         self.par_iter_edge_node_ids_and_edge_type_id(directed).map(
-            move |(edge_id, src, dst, edge_type)| {
+            move |(edge_id, src, dst, edge_type)| unsafe {
                 (
                     edge_id,
                     src,
@@ -737,7 +739,7 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
         self.iter_edge_node_ids_and_edge_type_id(directed).map(
-            move |(edge_id, src, dst, edge_type)| {
+            move |(edge_id, src, dst, edge_type)| unsafe {
                 (
                     edge_id,
                     src,
@@ -759,7 +761,7 @@ impl Graph {
     ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
-                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                (0..self.get_directed_edges_number()).filter_map(move |edge_id| unsafe {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     if edge_id > 0 {
                         let (last_src, last_dst) =

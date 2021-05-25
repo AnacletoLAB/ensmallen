@@ -17,7 +17,7 @@ pub fn features_harness(data: FuzzFeaturesHarnessParams) -> Result<(), String> {
 
 
     // register_handler(libc::SIGABRT, abrt_handler, data_for_signal_handling);
-
+    /*
     let mut graph = graph::Graph::from_string_unsorted(
         data.from_vec.edges.into_iter(),
         data.from_vec.nodes.map(|ns| ns.into_iter()),
@@ -39,7 +39,7 @@ pub fn features_harness(data: FuzzFeaturesHarnessParams) -> Result<(), String> {
         true,
         true,
         data.from_vec.verbose,
-    )?;
+    )?;*/
 
     // let graph_copy_for_panic_handling = graph.clone();
     // std::panic::set_hook(Box::new(move |info| {
@@ -51,18 +51,18 @@ pub fn features_harness(data: FuzzFeaturesHarnessParams) -> Result<(), String> {
     // }));
 
     // thicc-en the graph
-    let mut graph = graph.generate_new_edges_from_node_features(
-        data.features,
-        None,
-        None,
-        Some(false),
-    )?;
+    // let mut graph = graph.generate_new_edges_from_node_features(
+    //     data.features,
+    //     None,
+    //     None,
+    //     Some(false),
+    // )?;
 
-    println!("{:#4?}", graph);
+    //println!("{:#4?}", graph);
 
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    //let _ = graph::test_utilities::default_test_suite(&mut graph, false);
     
     Ok(())
 }

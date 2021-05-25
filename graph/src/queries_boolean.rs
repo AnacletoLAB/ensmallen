@@ -12,7 +12,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `node_id`: NodeT - The node to be checked for.
-    pub fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
+    pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
             .as_ref()
             .map_or(false, |nsns| !nsns[node_id as usize])
@@ -23,7 +23,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `node_id`: NodeT - The node to be checked for.
-    pub fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
+    pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
         self.is_unchecked_singleton_from_node_id(node_id) || self.is_singleton_with_selfloops_from_node_id(node_id)
     }
 
@@ -35,7 +35,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| self.is_unchecked_singleton_from_node_id(node_id))
+            .map(|node_id| unsafe{self.is_unchecked_singleton_from_node_id(node_id)})
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -56,7 +56,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_name`: &str - The node name to be checked for.
-    pub fn is_unchecked_singleton_from_node_name(&self, node_name: &str) -> bool {
+    pub unsafe fn is_unchecked_singleton_from_node_name(&self, node_name: &str) -> bool {
         self.is_unchecked_singleton_from_node_id(
             self.get_unchecked_node_id_from_node_name(node_name),
         )
@@ -67,7 +67,7 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - The node name to be checked for.
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool, String> {
-        Ok(self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?))
+        Ok(unsafe{self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)})
     }
 
     /// Returns whether the graph has the given node name.
@@ -219,7 +219,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
+    pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
             && self
                 .connected_nodes
@@ -235,7 +235,7 @@ impl Graph {
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| self.is_unchecked_trap_node_from_node_id(node_id))
+            .map(|node_id| unsafe{self.is_unchecked_trap_node_from_node_id(node_id)})
     }
 
     /// Returns whether the given node name and node type name exist in current graph.

@@ -195,8 +195,11 @@ fn gen_binding(method: &Function) -> String {
     let doc = translate_doc(method.doc.clone());
 
     // parse the arguments
+    let mut is_self_ref = false;
+    let mut is_self_mut = false;
     let mut args = String::new();
     let mut args_names = String::new();
+    let mut args_signatures = vec!["$self".to_string()];
     for arg in &method.args.0 {
         match arg.arg_type {
             Type::SelfType => {
@@ -204,6 +207,9 @@ fn gen_binding(method: &Function) -> String {
                     "{}self, ",
                     String::from(arg.arg_modifier.clone())
                 ).chars());
+
+                is_self_ref = arg.arg_modifier.reference;
+                is_self_mut = arg.arg_modifier.mutable;
             }
             _ => {
                 args.extend(format!(
@@ -215,9 +221,15 @@ fn gen_binding(method: &Function) -> String {
                     "{}, ",
                     arg.name
                 ).chars());
+                args_signatures.push(arg.name.clone());
             }
         }
     }
+
+    let text_signature = format!(
+        "#[text_signature = \"({})\"]",
+        args_signatures.join(", ")
+    );
 
     // build the call
     let mut body = format!(
@@ -226,15 +238,6 @@ fn gen_binding(method: &Function) -> String {
         args_names=&args_names[..args_names.len().saturating_sub(2)],
     );
 
-    // if &mut self e Graph in return:
-    // pe!(body())?;
-    // Ok(())
-
-    // if &self e Graph in return
-    // EnsmallenGraph{graph: pe!(body())?}
-    
-    // if &self e &Graph in return
-    // Ok(EnsmallenGraph{graph: pe!(body)?}.to_owned())
 
 
     // parse the return type
@@ -249,14 +252,70 @@ fn gen_binding(method: &Function) -> String {
                     traits,
                 } => {
                     match name.as_str() {
+                        "Graph" => {
+                            match (is_self_ref, is_self_mut, modifiers.reference) {
+                                (true, true, _) => {
+                                    "".to_string()
+                                },
+                                (true, false, false) => {
+                                    body = format!("EnsmallenGraph{{graph: {}}}", body);
+                                    "-> EnsmallenGraph".to_string()
+                                },
+                                (true, false, true) => {
+                                    body = format!("EnsmallenGraph{{graph: {}}}.to_owned()", body);
+                                    "-> EnsmallenGraph".to_string()
+                                }
+                                _ => {
+                                    panic!("Not implemented yet!");
+                                }
+                            }
+                        }
                         "Result" => {
                             body = format!("pe!({})", body);
+
+
+                            let mut ok_type = match generics.0[0].clone() {
+                                GenericValue::Type(Type::SimpleType {
+                                    name: mut ok_name, 
+                                    modifiers: ok_modifiers,
+                                    generics: ok_generics,
+                                    traits: ok_traits,
+                                }) => {
+                                    if ok_name == "Graph" {
+                                        ok_name = "EnsmallenGraph".to_string();
+        
+                                        match (is_self_ref, is_self_mut, ok_modifiers.reference) {
+                                            (true, true, _) => {
+                                                body = format!("{body}?;\n\tOk(())", body=body);
+                                            },
+                                            (true, false, false) => {
+                                                body = format!("Ok(EnsmallenGraph{{graph: {}?}})", body);
+                                            },
+                                            (true, false, true) => {
+                                                body = format!("Ok(EnsmallenGraph{{graph: {}?}}.to_owned())", body);
+                                            }
+                                            _ => {
+                                                panic!("Not implemented yet!");
+                                            }
+                                        }
+                                    }
+                                    
+                                    GenericValue::Type(Type::SimpleType{
+                                        name:ok_name,
+                                        modifiers: ok_modifiers,
+                                        generics: ok_generics,
+                                        traits: ok_traits,
+                                    })
+                                }
+                                x @ _ => x 
+                            };
+
                             format!(
                                 " -> {} ",
                                 String::from(Type::SimpleType{
                                     name:"PyResult".to_string(),
                                     modifiers: modifiers.clone(),
-                                    generics: Generics(vec![generics.0[0].clone()]),
+                                    generics: Generics(vec![ok_type]),
                                     traits: traits.clone(),
                                 })
                             )
@@ -281,12 +340,14 @@ fn gen_binding(method: &Function) -> String {
 
     // build the binding
     format!(r#"
+    {text_signature}
 {doc}
     pub fn {name}({args}){return_type}{{
         {body}
     }}
         "#, 
         doc=doc,
+        text_signature=text_signature,
         name=method.name,
         return_type=return_type,
         args=&args[..args.len().saturating_sub(2)],

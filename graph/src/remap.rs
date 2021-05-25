@@ -57,7 +57,7 @@ impl Graph {
         Graph::from_integer_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
-                .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| {
+                .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
                     Ok((
                         other.get_unchecked_node_id_from_node_name(&src_name),
                         other.get_unchecked_node_id_from_node_name(&dst_name),

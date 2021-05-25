@@ -265,8 +265,8 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = self.get_unchecked_node_name_from_node_id(*node_id),
-                        node_degree = self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)
+                        node_name = unsafe{self.get_unchecked_node_name_from_node_id(*node_id)},
+                        node_degree = unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)}
                     )
                 })
                 .collect::<Vec<String>>()
@@ -284,10 +284,10 @@ impl Graph {
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
-        let node_name = self.get_unchecked_node_name_from_node_id(node_id);
+        let node_name = unsafe{self.get_unchecked_node_name_from_node_id(node_id)};
         //partial_reports.push(format!("## Report for node {}\n", node_name));
 
-        partial_reports.push(if self.is_unchecked_singleton_from_node_id(node_id) {
+        partial_reports.push(if unsafe{self.is_unchecked_singleton_from_node_id(node_id)} {
             match self.get_singleton_nodes_number() {
                 1 => format!(
                     concat!("The given node {} is the only singleton node of the graph."),
@@ -315,7 +315,7 @@ impl Graph {
                     )
                 }
             }
-        } else if self.is_unchecked_trap_node_from_node_id(node_id) {
+        } else if unsafe{self.is_unchecked_trap_node_from_node_id(node_id)} {
             match self.get_trap_nodes_number() {
                 1 => format!(
                     concat!("The given node {} is the only trap node in the graph."),
@@ -332,7 +332,7 @@ impl Graph {
             format!(
                 concat!("The given node {} has degree {}"),
                 node_name,
-                self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+                unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)}
             )
         });
 

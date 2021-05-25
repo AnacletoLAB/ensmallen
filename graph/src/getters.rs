@@ -155,7 +155,7 @@ impl Graph {
     /// ```
     pub fn get_trap_nodes_rate(&self) -> f64 {
         self.par_iter_node_ids()
-            .map(|node_id| {
+            .map(|node_id| unsafe {
                 if !self.is_unchecked_trap_node_from_node_id(node_id) {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
@@ -433,7 +433,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_source_node_ids(directed)
-            .map(|src| self.get_unchecked_node_name_from_node_id(src))
+            .map(|src| unsafe{self.get_unchecked_node_name_from_node_id(src)})
             .collect()
     }
 
@@ -451,7 +451,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destination_node_ids(directed)
-            .map(|dst| self.get_unchecked_node_name_from_node_id(dst))
+            .map(|dst| unsafe{self.get_unchecked_node_name_from_node_id(dst)})
             .collect()
     }
 
@@ -496,7 +496,7 @@ impl Graph {
                 .map(|ets| {
                     ets.ids
                         .iter()
-                        .map(|edge_type_id| {
+                        .map(|edge_type_id| unsafe {
                             self.get_unchecked_edge_type_name_from_edge_type_id(*edge_type_id)
                         })
                         .collect()
@@ -908,7 +908,7 @@ impl Graph {
         self.cumulative_node_degrees.as_ref().map_or_else(
             || {
                 self.par_iter_node_ids()
-                    .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))
+                    .map(|src| unsafe{self.get_unchecked_edge_id_from_node_ids(src + 1, 0)})
                     .collect()
             },
             |cumulative_node_degrees| cumulative_node_degrees.clone(),

@@ -38,7 +38,7 @@ impl Graph {
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     ///
-    pub fn get_unchecked_unweighted_closeness_centrality_from_node_id(
+    pub unsafe fn get_unchecked_unweighted_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
     ) -> f64 {
@@ -58,7 +58,7 @@ impl Graph {
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     ///
-    pub fn get_unchecked_weighted_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         1.0 / self
             .get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .2
@@ -83,7 +83,7 @@ impl Graph {
         );
         self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| {
+            .map(move |node_id| unsafe{
                 self.get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)
             })
     }
@@ -108,7 +108,7 @@ impl Graph {
         );
         Ok(self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| {
+            .map(move |node_id| unsafe{
                 self.get_unchecked_weighted_closeness_centrality_from_node_id(node_id)
             }))
     }
@@ -147,7 +147,7 @@ impl Graph {
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub fn get_unchecked_unweighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_unweighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         self.get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
             .4
     }
@@ -163,7 +163,7 @@ impl Graph {
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub fn get_unchecked_weighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .3
     }
@@ -187,7 +187,7 @@ impl Graph {
         );
         self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| {
+            .map(move |node_id| unsafe{
                 self.get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)
             })
     }
@@ -212,7 +212,7 @@ impl Graph {
         );
         Ok(self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| {
+            .map(move |node_id| unsafe{
                 self.get_unchecked_weighted_harmonic_centrality_from_node_id(node_id)
             }))
     }
@@ -284,7 +284,7 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)}
                         .for_each(|neighbour_node_id| {
                             if distance_from_root[neighbour_node_id as usize] == u64::MAX {
                                 nodes_to_visit.push_back(neighbour_node_id);
@@ -374,7 +374,7 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)}
                         .for_each(|neighbour_node_id| {
                             if distance_from_root[neighbour_node_id as usize] == u64::MAX {
                                 nodes_to_visit.push_back(neighbour_node_id);
@@ -444,7 +444,7 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                     .for_each(|dst| {
                         centralities[dst as usize]
                             .fetch_add(last_centralities[src as usize], Ordering::Relaxed);
@@ -504,8 +504,8 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
-                    .for_each(|dst| {
+                unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
+                    .for_each(|dst| unsafe{
                         centralities[dst as usize].fetch_add(
                             last_centralities[src as usize]
                                 * self.get_unchecked_edge_weight_from_node_ids(src, dst) as f64,
