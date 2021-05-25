@@ -1623,7 +1623,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(Some(verbose))?,
         graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(Some(verbose))?,
     ] {
-        println!("{:?}\n========", transformed_graph.textual_report(false));
         let _ = _default_test_suite(&mut transformed_graph, verbose);
     }
     Ok(())
