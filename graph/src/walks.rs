@@ -693,15 +693,17 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph is directed.
-    /// * If the given walks parameters are not compatible with the current graph instance. 
+    /// * If the given walks parameters are not compatible with the current graph instance.
+    /// * If the graph contains negative edge weights.
     fn iter_walk<'a>(
         &'a self,
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
-        if self.directed {
-            return Err("Not supporting directed walks as of now.".to_owned());
+        self.must_be_undirected()?;
+        if self.has_edge_weights() {
+            self.must_have_positive_edge_weights()?;
         }
 
         // Validate if given parameters are compatible with current graph.
@@ -751,8 +753,12 @@ impl Graph {
         random_state: u64,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
-        let (min_edge_id, max_edge_id, destinations, indices) =
-            self.get_edges_and_destinations_from_source_node_id(parameters.max_neighbours, random_state, node);
+        let (min_edge_id, max_edge_id, destinations, indices) = self
+            .get_edges_and_destinations_from_source_node_id(
+                parameters.max_neighbours,
+                random_state,
+                node,
+            );
         let (dst, edge) = self.extract_node(
             node,
             random_state,

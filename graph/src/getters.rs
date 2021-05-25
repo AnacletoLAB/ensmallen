@@ -538,10 +538,12 @@ impl Graph {
     /// assert!(graph_without_weights.get_min_edge_weight().is_err());
     /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_min_edge_weight());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
     pub fn get_min_edge_weight(&self) -> Result<WeightT, String> {
-        Ok(self
-            .par_iter_edge_weights()?
-            .reduce(|| f32::INFINITY, |a, b| a.min(b)))
+        self.must_have_edge_weights()
+            .map(|_| self.min_edge_weight.unwrap())
     }
 
     /// Return the maximum weight, if graph has weights.
@@ -555,10 +557,12 @@ impl Graph {
     /// assert!(graph_without_weights.get_max_edge_weight().is_err());
     /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_max_edge_weight());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
     pub fn get_max_edge_weight(&self) -> Result<WeightT, String> {
-        Ok(self
-            .par_iter_edge_weights()?
-            .reduce(|| f32::NEG_INFINITY, |a, b| a.max(b)))
+        self.must_have_edge_weights()
+            .map(|_| self.max_edge_weight.unwrap())
     }
 
     /// Return the node types of the graph nodes.

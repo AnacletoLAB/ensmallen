@@ -16,6 +16,8 @@ type ParsedStringEdgesType = Result<
         Vocabulary<NodeT>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
+        Option<WeightT>,
+        Option<WeightT>,
         EdgeT,
         EdgeT,
         NodeT,
@@ -414,10 +416,6 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
-/// TODO! add computation of minimum edge weight
-/// TODO! add computation of maximum edge weight
-/// TODO! add support for negative weights, add check for them in algorithms that do not work on graphs with negative weights.
-/// TODO! add support for a mask that writes down if an edge type is used in the context of a multigraph edge. It is necessary for some operations with multigraphs.
 /// TODO! add docstring
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
@@ -437,6 +435,8 @@ pub(crate) fn build_edges(
         Option<EliasFano>,
         Option<Vec<Option<EdgeTypeT>>>,
         Option<Vec<WeightT>>,
+        Option<WeightT>,
+        Option<WeightT>,
         EdgeT,
         EdgeT,
         NodeT,
@@ -465,10 +465,18 @@ pub(crate) fn build_edges(
         None
     };
 
-    let mut weights: Option<Vec<WeightT>> = if has_edge_weights {
-        Some(Vec::with_capacity(edges_number))
+    let (mut weights, mut min_edge_weight, mut max_edge_weight): (
+        Option<Vec<WeightT>>,
+        Option<WeightT>,
+        Option<WeightT>,
+    ) = if has_edge_weights {
+        (
+            Some(Vec::with_capacity(edges_number)),
+            Some(WeightT::INFINITY),
+            Some(WeightT::NEG_INFINITY),
+        )
     } else {
-        None
+        (None, None, None)
     };
 
     // The unique sources variable is equal to the set of nodes of the graph when
@@ -555,17 +563,24 @@ pub(crate) fn build_edges(
         if let Some(ets) = &mut edge_type_ids {
             ets.push(edge_type);
         }
-        match (&mut weights, weight) {
-            (Some(ws), Some(w)) => {
+        match (
+            &mut weights,
+            &mut min_edge_weight,
+            &mut max_edge_weight,
+            weight,
+        ) {
+            (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
                 validate_weight(w)?;
+                *min_w = (*min_w).min(w);
+                *max_w = (*max_w).max(w);
                 ws.push(w);
                 Ok(())
             }
-            (None, Some(_)) => Err(concat!(
+            (None, _, _, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
                 "because the has_edge_weights flag has been set to false."
             )),
-            (Some(_), None) => Err(concat!(
+            (Some(_), _, _, None) => Err(concat!(
                 "A None weight was found.\n",
                 "This might mean you have either provided a None weight to the edge list or ",
                 "you may have an empty weight in your edge list file.\n",
@@ -710,6 +725,8 @@ pub(crate) fn build_edges(
         }
         if ws.is_empty() {
             weights = None;
+            min_edge_weight = None;
+            max_edge_weight = None;
         }
     }
 
@@ -742,7 +759,10 @@ pub(crate) fn build_edges(
     // provide a wrong value for nodes_number when loading a sorted csv.
     // If this happens, it might cause a slow down in the walk and other
     // currently unforseen consequences.
-    if unique_sources.as_ref().map_or(false, |us| us.len() as NodeT == nodes_number) {
+    if unique_sources
+        .as_ref()
+        .map_or(false, |us| us.len() as NodeT == nodes_number)
+    {
         unique_sources = None;
     }
 
@@ -804,6 +824,8 @@ pub(crate) fn build_edges(
         unique_sources,
         edge_type_ids,
         weights,
+        min_edge_weight,
+        max_edge_weight,
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
@@ -910,6 +932,8 @@ pub(crate) fn parse_string_edges(
         unique_sources,
         edge_type_ids,
         weights,
+        min_edge_weight,
+        max_edge_weight,
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
@@ -946,6 +970,8 @@ pub(crate) fn parse_string_edges(
         nodes,
         edge_types,
         weights,
+        min_edge_weight,
+        max_edge_weight,
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
@@ -979,6 +1005,8 @@ pub(crate) fn parse_integer_edges(
         Option<EliasFano>,
         Option<EdgeTypeVocabulary>,
         Option<Vec<WeightT>>,
+        Option<WeightT>,
+        Option<WeightT>,
         EdgeT,
         EdgeT,
         NodeT,
@@ -998,6 +1026,8 @@ pub(crate) fn parse_integer_edges(
         unique_sources,
         edge_type_ids,
         weights,
+        min_edge_weight,
+        max_edge_weight,
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
@@ -1030,6 +1060,8 @@ pub(crate) fn parse_integer_edges(
         unique_sources,
         edge_types,
         weights,
+        min_edge_weight,
+        max_edge_weight,
         unique_edges_number,
         selfloop_number,
         unique_selfloop_number,
@@ -1067,6 +1099,8 @@ impl Graph {
             unique_sources,
             edge_types,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             unique_edges_number,
             selfloop_number,
             unique_selfloop_number,
@@ -1108,6 +1142,8 @@ impl Graph {
             edge_types,
             name,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             node_types,
             connected_nodes,
             singleton_nodes_with_selfloops,
@@ -1344,6 +1380,8 @@ impl Graph {
             nodes,
             edge_types,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             unique_edges_number,
             selfloop_number,
             unique_selfloop_number,
@@ -1387,6 +1425,8 @@ impl Graph {
             edge_types,
             name,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             node_types,
             connected_nodes,
             singleton_nodes_with_selfloops,

@@ -526,7 +526,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The node type id of node {} is {:?}", 0, graph.get_unchecked_node_type_id_from_node_id(0));
+    /// println!("The node type id of node {} is {:?}", 0, unsafe{ graph.get_unchecked_node_type_id_from_node_id(0) });
     /// ```
     ///
     /// # Safety

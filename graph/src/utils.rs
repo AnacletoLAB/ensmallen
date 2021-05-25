@@ -110,17 +110,17 @@ impl Graph {
 /// ```rust
 /// # use graph::utils::validate_weight;
 /// assert!(validate_weight(0.0).is_err());
-/// assert!(validate_weight(-1.0).is_err());
+/// assert!(validate_weight(-1.0).is_ok());
 /// assert!(validate_weight(2.0).is_ok());
 /// assert_eq!(validate_weight(2.0).unwrap(), 2.0);
 /// ```
 ///
 pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
-    if weight.is_finite() && weight > 0.0 {
+    if weight.is_finite() && weight != 0.0 {
         Ok(weight)
     } else {
         Err(format!(
-            "The weight is '{}' but the weights must be strictly positives and finite.",
+            "The weight is '{}' but the weights must be non-zero and finite.",
             weight
         ))
     }

@@ -226,7 +226,7 @@ impl Graph {
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
     pub fn get_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<f64, String> {
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         self.validate_node_id(node_id)
             .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
     }
@@ -279,14 +279,8 @@ impl Graph {
 
         if self.is_unchecked_disconnected_from_node_id(src_node_id) {
             let mut distances = vec![f64::INFINITY; nodes_number];
-            distances[src_node_id as usize] = 0.0; 
-            return (
-                distances,
-                parents,
-                f64::INFINITY,
-                f64::INFINITY,
-                0.0,
-            );
+            distances[src_node_id as usize] = 0.0;
+            return (distances, parents, f64::INFINITY, f64::INFINITY, 0.0);
         }
 
         let mut nodes_to_explore: DijkstraQueue =
@@ -403,7 +397,7 @@ impl Graph {
     ) -> Result<ShortestPathsDjkstra, String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         // If given, check if the given destination node ID exists in the graph
         if let Some(dst) = &maybe_dst_node_id {
             self.validate_node_id(*dst)?;
@@ -490,7 +484,7 @@ impl Graph {
         }
         let (distances, _, mut root_eccentricity, _, _) = self
             .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
-        
+
         assert!(
             root_eccentricity != f64::INFINITY,
             "The central node eccentricity cannot be infinite!"
@@ -559,7 +553,7 @@ impl Graph {
         if !self.has_edges() {
             return Ok(f64::INFINITY);
         }
-        
+
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
@@ -610,8 +604,8 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
-        self.must_have_edge_weights()?;
-        
+        self.must_have_positive_edge_weights()?;
+
         if !self.has_edges() {
             return Ok(f64::INFINITY);
         }

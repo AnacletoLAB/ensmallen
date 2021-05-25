@@ -1612,5 +1612,19 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     warn!("Starting default test suite with speedups enabled.");
     graph.enable(true, true, true, None)?;
     let _ = _default_test_suite(graph, verbose);
+    warn!("Starting default test suite on transformed graphs.");
+    for mut transformed_graph in [
+        graph.get_unweighted_laplacian_transformed_graph(Some(verbose)),
+        graph.get_unweighted_symmetric_normalized_transformed_graph(Some(verbose))?,
+        graph.get_unweighted_symmetric_normalized_laplacian_transformed_graph(Some(verbose))?,
+        graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(Some(verbose)),
+        graph.get_weighted_laplacian_transformed_graph(Some(verbose))?,
+        graph.get_weighted_symmetric_normalized_transformed_graph(Some(verbose))?,
+        graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(Some(verbose))?,
+        graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(Some(verbose))?,
+    ] {
+        println!("{:?}\n========", transformed_graph.textual_report(false));
+        let _ = _default_test_suite(&mut transformed_graph, verbose);
+    }
     Ok(())
 }

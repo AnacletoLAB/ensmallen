@@ -90,6 +90,10 @@ pub struct Graph {
     pub(crate) min_node_degree: NodeT,
     /// Maximum outbound node degree.
     pub(crate) max_node_degree: NodeT,
+    /// Minimum edge weight. Is None if weights are not defined.
+    pub(crate) min_edge_weight: Option<WeightT>,
+    /// Maximum edge weight. Is None if weights are not defined.
+    pub(crate) max_edge_weight: Option<WeightT>,
     /// Graph name
     pub(crate) name: String,
     pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
@@ -132,6 +136,8 @@ impl Graph {
         edge_types: Option<EdgeTypeVocabulary>,
         name: S,
         weights: Option<Vec<WeightT>>,
+        min_edge_weight: Option<WeightT>,
+        max_edge_weight: Option<WeightT>,
         node_types: Option<NodeTypeVocabulary>,
         connected_nodes: Option<BitVec<Lsb0, u8>>,
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
@@ -150,6 +156,8 @@ impl Graph {
             node_bit_mask,
             node_bits,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             min_node_degree,
             max_node_degree,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),

@@ -283,6 +283,28 @@ impl Graph {
         Ok(self.weights.as_ref().unwrap())
     }
 
+    /// Raises an error if the graph has negative edge weights.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));
+    /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
+    /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    /// * If the graph contains negative edge weights.
+    pub fn must_have_positive_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
+        if self.has_negative_edge_weights()? {
+            return Err("The current graph instance contains negative edge weights.".to_string());
+        }
+        Ok(self.weights.as_ref().unwrap())
+    }
+
     /// Raises an error if the graph does not have any edge.
     ///
     /// # Example
