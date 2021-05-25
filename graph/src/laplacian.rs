@@ -120,6 +120,49 @@ impl Graph {
         )
     }
 
+    /// Returns unweighted symmetric normalized transformation of the graph.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    ///
+    /// # Raises
+    /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
+    pub fn get_unweighted_symmetric_normalized_transformed_graph(
+        &self,
+        verbose: Option<bool>,
+    ) -> Result<Graph, String> {
+        self.must_be_undirected()?;
+        Graph::from_integer_unsorted(
+            self.iter_edge_node_ids_and_edge_type_id(true)
+                .filter(|(_, src, dst, _)| src != dst)
+                .map(|(_, src, dst, edge_type)| {
+                    Ok((
+                        src,
+                        dst,
+                        edge_type,
+                        Some(
+                            1.0 / ((self.get_unchecked_unweighted_node_degree_from_node_id(src)
+                                * self.get_unchecked_unweighted_node_degree_from_node_id(dst))
+                                as WeightT)
+                                .sqrt(),
+                        ),
+                    ))
+                }),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.is_directed(),
+            self.get_name(),
+            true,
+            self.has_edge_types(),
+            self.has_edge_weights(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+            self.has_trap_nodes(),
+            verbose.unwrap_or(true),
+        )
+    }
+
     /// Returns weighted laplacian transformation of the graph.
     ///
     /// # Arguments
@@ -190,6 +233,50 @@ impl Graph {
                                 as WeightT)
                                 .sqrt()
                         }),
+                    ))
+                }),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.is_directed(),
+            self.get_name(),
+            true,
+            self.has_edge_types(),
+            self.has_edge_weights(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+            self.has_trap_nodes(),
+            verbose.unwrap_or(true),
+        )
+    }
+
+    /// Returns weighted symmetric normalized transformation of the graph.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    ///
+    /// # Raises
+    /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
+    /// * If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
+    pub fn get_weighted_symmetric_normalized_transformed_graph(
+        &self,
+        verbose: Option<bool>,
+    ) -> Result<Graph, String> {
+        self.must_have_edge_weights()?;
+        self.must_be_undirected()?;
+        Graph::from_integer_unsorted(
+            self.iter_edge_node_ids_and_edge_type_id(true)
+                .filter(|(_, src, dst, _)| src != dst)
+                .map(|(_, src, dst, edge_type)| {
+                    Ok((
+                        src,
+                        dst,
+                        edge_type,
+                        Some(
+                            1.0 / (self.get_unchecked_weighted_node_degree_from_node_id(src)
+                                * self.get_unchecked_weighted_node_degree_from_node_id(dst))
+                            .sqrt(),
+                        ),
                     ))
                 }),
             self.nodes.clone(),
