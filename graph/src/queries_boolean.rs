@@ -220,7 +220,7 @@ impl Graph {
     /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
-        self.get_unchecked_node_degree_from_node_id(node_id) == 0
+        self.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
             && self
                 .connected_nodes
                 .as_ref()

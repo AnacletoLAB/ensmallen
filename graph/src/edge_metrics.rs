@@ -37,9 +37,9 @@ impl Graph {
         two: NodeT,
         normalize: bool,
     ) -> f64 {
-        let mut preferential_attachment_score = self.get_unchecked_node_degree_from_node_id(one)
+        let mut preferential_attachment_score = self.get_unchecked_unweighted_node_degree_from_node_id(one)
             as f64
-            * self.get_unchecked_node_degree_from_node_id(two) as f64;
+            * self.get_unchecked_unweighted_node_degree_from_node_id(two) as f64;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_min_preferential_attachment();
@@ -155,7 +155,7 @@ impl Graph {
     /// number of nodes in the graph.
     pub unsafe fn get_unchecked_adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(one, two)
-            .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+            .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
             .filter(|&node_degree| node_degree > 1)
             .map(|node_degree| 1.0 / (node_degree as f64).ln())
             .sum()
@@ -212,7 +212,7 @@ impl Graph {
     /// number of nodes in the graph.
     pub unsafe fn get_unchecked_resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(one, two)
-            .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+            .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
             .filter(|&node_degree| node_degree > 0)
             .map(|node_degree| 1.0 / node_degree as f64)
             .sum()

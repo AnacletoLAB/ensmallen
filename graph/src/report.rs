@@ -266,7 +266,7 @@ impl Graph {
                     format!(
                         "{node_name} (degree {node_degree})",
                         node_name = self.get_unchecked_node_name_from_node_id(*node_id),
-                        node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)
+                        node_degree = self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)
                     )
                 })
                 .collect::<Vec<String>>()
@@ -332,7 +332,7 @@ impl Graph {
             format!(
                 concat!("The given node {} has degree {}"),
                 node_name,
-                self.get_unchecked_node_degree_from_node_id(node_id)
+                self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
             )
         });
 

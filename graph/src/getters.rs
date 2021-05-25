@@ -160,7 +160,7 @@ impl Graph {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
                         .sum::<f64>()
-                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64
+                        / self.get_unchecked_unweighted_node_degree_from_node_id(node_id) as f64
                 } else {
                     1.0
                 }
@@ -291,7 +291,7 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
     /// ```
     pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.par_iter_node_degrees()
+        self.par_iter_unweighted_node_degrees()
             .enumerate()
             .max_by_key(|&(_, value)| value)
             .map(|(idx, _)| idx)
@@ -347,7 +347,7 @@ impl Graph {
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
+        let counter: Counter<NodeT, usize> = Counter::init(self.iter_unweighted_node_degrees());
         Ok(*counter
             .iter()
             .max_by_key(|&(_, count)| count)
@@ -878,7 +878,7 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.par_iter_node_degrees().collect()
+        self.par_iter_unweighted_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.

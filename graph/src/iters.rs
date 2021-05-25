@@ -102,16 +102,54 @@ impl Graph {
         (0..self.get_nodes_number()).into_par_iter()
     }
 
-    /// Return iterator on the node degrees of the graph.
-    pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
+    /// Return iterator on the unweighted node degrees of the graph.
+    ///
+    /// Note that with unweighted it is meant that if this graph instance
+    /// has weights, the degree will not take them into consideration.
+    pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_node_ids()
-            .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
+            .map(move |node| self.get_unchecked_unweighted_node_degree_from_node_id(node))
     }
 
-    /// Return iterator on the node degrees of the graph.
-    pub fn par_iter_node_degrees(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+    /// Return iterator on the unweighted node degrees of the graph.
+    ///
+    /// Note that with unweighted it is meant that if this graph instance
+    /// has weights, the degree will not take them into consideration.
+    pub fn par_iter_unweighted_node_degrees(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids()
-            .map(move |node| self.get_unchecked_node_degree_from_node_id(node))
+            .map(move |node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
+    }
+
+    /// Return iterator on the weighted node degrees of the graph.
+    ///
+    /// Note that with weighted it is meant that if this graph instance
+    /// has weights, the degree will be weighted on the edge weight.
+    ///
+    /// Note that if one or more edges have a negative edge weight,
+    /// the resulting node degree may be negative.
+    /// This check is **NOT** done by this method, as in some situations
+    /// this may be desired by the user.
+    pub fn iter_weighted_node_degrees(&self) -> impl Iterator<Item = WeightT> + '_ {
+        self.iter_node_ids()
+            .map(move |node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
+    }
+
+    /// Return iterator on the weighted node degrees of the graph.
+    ///
+    /// Note that with weighted it is meant that if this graph instance
+    /// has weights, the degree will not take them into consideration.
+    ///
+    /// Note that if one or more edges have a negative edge weight,
+    /// the resulting node degree may be negative.
+    /// This check is **NOT** done by this method, as in some situations
+    /// this may be desired by the user.
+    pub fn par_iter_weighted_node_degrees(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = WeightT> + '_ {
+        self.par_iter_node_ids()
+            .map(move |node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
     }
 
     /// Return iterator on the non-singleton nodes of the graph.
@@ -690,7 +728,7 @@ impl Graph {
         )
     }
 
-    /// Return iterator on the edges of the graph with the string name.
+    /// Return iterator on the edges of the graph including node IDs, edge type and edge weight.
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.

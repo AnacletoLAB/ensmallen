@@ -320,12 +320,12 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     // Testing that the degrees computation is correct
     assert_eq!(
         graph.get_max_node_degree()?,
-        graph.iter_node_degrees().max().unwrap(),
+        graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
     assert_eq!(
         graph.get_min_node_degree()?,
-        graph.iter_node_degrees().min().unwrap(),
+        graph.iter_unweighted_node_degrees().min().unwrap(),
         "The cached minimum degree does not match the one computed from the node degrees."
     );
 
@@ -351,7 +351,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
-        assert!(graph.get_unchecked_node_degree_from_node_id(singleton_node_id) == 0);
+        assert!(graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) == 0);
         assert!(graph.is_unchecked_singleton_from_node_id(singleton_node_id));
     }
 
@@ -359,7 +359,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         for node_id in graph.iter_node_ids() {
             assert_eq!(
                 graph.is_unchecked_singleton_from_node_id(node_id),
-                graph.get_unchecked_node_degree_from_node_id(node_id) == 0
+                graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
             );
         }
     }

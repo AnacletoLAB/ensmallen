@@ -6,7 +6,6 @@ use rayon::prelude::*;
 /// * `/get_(.+?)_from_(.+)/`
 /// * `/get_unchecked_(.+?)_from_(.+)/`
 impl Graph {
-    
     #[no_inverse_method]
     /// Returns option with the weight of the given edge id.
     ///
@@ -426,7 +425,7 @@ impl Graph {
             .iter_node_ids()
             .map(|node_id| {
                 (
-                    self.get_unchecked_node_degree_from_node_id(node_id),
+                    self.get_unchecked_unweighted_node_degree_from_node_id(node_id),
                     node_id,
                 )
             })
@@ -448,10 +447,24 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
-    pub fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
+    pub fn get_unchecked_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
         let (min_edge_id, max_edge_id) =
             self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
         (max_edge_id - min_edge_id) as NodeT
+    }
+
+    /// Returns the weighted sum of outbound neighbours of given node.
+    ///
+    /// The method will panic if the given node id is higher than the number of
+    /// nodes in the graph.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    pub fn get_unchecked_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> WeightT {
+        self.iter_unchecked_edge_weights_from_source_node_id(node_id)
+            .sum::<WeightT>()
     }
 
     /// Returns the number of outbound neighbours of given node ID.
@@ -459,9 +472,19 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
-    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+            .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
+    }
+
+    /// Returns the weighted sum of outbound neighbours of given node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<WeightT, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
     }
 
     /// Returns the number of outbound neighbours of given node name.
@@ -472,11 +495,9 @@ impl Graph {
     /// # Raises
     /// * If the given node name does not exist in the graph.
     pub fn get_node_degree_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
-        Ok(
-            self.get_unchecked_node_degree_from_node_id(
-                self.get_node_id_from_node_name(node_name)?,
-            ),
-        )
+        Ok(self.get_unchecked_unweighted_node_degree_from_node_id(
+            self.get_node_id_from_node_name(node_name)?,
+        ))
     }
 
     /// Return vector with top k central node names.
@@ -538,7 +559,7 @@ impl Graph {
     ) -> Result<Option<Vec<NodeTypeT>>, String> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
-            .map(|node_id| unsafe {self.get_unchecked_node_type_id_from_node_id(node_id)})
+            .map(|node_id| unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) })
     }
 
     /// Returns edge type of given edge.
@@ -591,7 +612,9 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose node types are to be returned.
     ///
-
+    /// # Safety
+    /// This method will return an iterator of None values when the graph
+    /// does not contain node types.
     pub unsafe fn get_unchecked_node_type_names_from_node_id(
         &self,
         node_id: NodeT,

@@ -80,6 +80,7 @@ mod edge_metrics;
 mod thickeners;
 mod modifiers;
 mod operators;
+mod laplacian;
 mod preprocessing;
 mod remap;
 mod remove;

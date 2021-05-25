@@ -472,8 +472,8 @@ impl Graph {
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
+                self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
+                self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,
                 label,
             )
         }))

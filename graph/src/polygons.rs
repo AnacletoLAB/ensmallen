@@ -75,7 +75,7 @@ impl Graph {
 
     /// Returns total number of triads in the graph.
     pub fn get_triads_number(&self) -> EdgeT {
-        self.par_iter_node_degrees()
+        self.par_iter_unweighted_node_degrees()
             .map(|degree| (degree * degree.saturating_sub(1)) as EdgeT)
             .sum()
     }
@@ -168,7 +168,7 @@ impl Graph {
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
         self.get_number_of_triangles_per_node(Some(false))
             .into_par_iter()
-            .zip(self.par_iter_node_degrees())
+            .zip(self.par_iter_unweighted_node_degrees())
             .map(|(triangles_number, degree)| {
                 if degree < 2 {
                     0.0
