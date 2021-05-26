@@ -34,16 +34,17 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to remap towards.
-    /// * `verbose`: bool - Whether to show a loding bar.
+    /// * `verbose`: Option<bool> - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// assert_eq!(graph, graph.remap(&graph, false).unwrap());
+    /// assert_eq!(graph, graph.remap(&graph, None).unwrap());
     /// ```
     ///
-    pub fn remap(&self, other: &Graph, verbose: bool) -> Result<Graph, String> {
+    pub fn remap(&self, other: &Graph, verbose: Option<bool>) -> Result<Graph, String> {
+        let verbose = verbose.unwrap_or(false);
         let pb = get_loading_bar(
             verbose,
             format!("Building remapped {}", self.name).as_ref(),

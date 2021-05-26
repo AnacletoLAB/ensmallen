@@ -34,6 +34,28 @@ impl Graph {
         Ok(node_id)
     }
 
+    /// Validates all provided node IDs.
+    ///
+    /// # Arguments
+    /// * `node_ids`: Vec<NodeT> - node IDs to validate.
+    ///
+    /// # Example
+    /// In order to validate the given node IDs, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(graph.validate_node_ids(vec![0, 1, 2]).is_ok());
+    /// assert!(graph.validate_node_ids(vec![100000000, u32::MAX]).is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If any of the given node ID does not exists in the graph.
+    pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<NodeT>, String> {
+        node_ids.into_iter()
+            .map(|node_id| self.validate_node_id(node_id))
+            .collect()
+    }
+
     /// Validates provided edge ID.
     ///
     /// # Arguments
@@ -59,6 +81,28 @@ impl Graph {
             ));
         }
         Ok(edge_id)
+    }
+
+    /// Validates provided edge IDs.
+    ///
+    /// # Arguments
+    /// * `edge_ids`: Vec<EdgeT> - Edge IDs to validate.
+    ///
+    /// # Example
+    /// In order to validate a given edge ID, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(graph.validate_edge_ids(vec![0, 1, 2]).is_ok());
+    /// assert!(graph.validate_edge_ids(vec![10000000000, u64::MAX]).is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If any of the given edge ID does not exists in the graph.
+    pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> Result<Vec<EdgeT>, String> {
+        edge_ids.into_iter()
+            .map(|edge_id| self.validate_edge_id(edge_id))
+            .collect()
     }
 
     /// Validates provided node type ID.

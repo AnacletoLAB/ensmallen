@@ -22,6 +22,6 @@ fn test_regression_12() -> Result<(), String> {
         "\r\"", // Name of the graph
     )?;
 
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

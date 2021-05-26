@@ -39,7 +39,7 @@ impl Graph {
         self.get_edges_number() > 0
     }
 
-    // Return whether the graph has trap nodes.
+    /// Return whether the graph has trap nodes.
     ///
     /// # Example
     /// ```rust
@@ -164,7 +164,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show the loading bar while computing the connected components, if necessary.
-    pub fn is_connected(&self, verbose: bool) -> bool {
+    pub fn is_connected(&self, verbose: Option<bool>) -> bool {
         self.get_nodes_number() <= 1
             || !self.has_singleton_nodes()
                 && !self.has_singleton_nodes_with_selfloops()

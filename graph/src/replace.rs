@@ -13,7 +13,7 @@ impl Graph {
     /// * `node_type_name_mapping`: Option<HashMap<String, String>> - The node type names to replace.
     /// * `node_type_names_mapping`: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>> - The node type names (as vectors) to replace.
     /// * `edge_type_name_mapping`: Option<HashMap<Option<String>, Option<String>>> - The edge type names to replace.
-    /// * `verbose`: bool - Whether to show a loading bar.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # Raises
     /// * If the given node names mapping would lead to nodes duplication.
@@ -23,8 +23,9 @@ impl Graph {
         node_type_name_mapping: Option<HashMap<String, String>>,
         node_type_names_mapping: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>>,
         edge_type_name_mapping: Option<HashMap<Option<String>, Option<String>>>,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
+        let verbose = verbose.unwrap_or(false);
         if node_type_names_mapping.is_some() && node_type_name_mapping.is_some() {
             return Err(
                 "Using at once node_type_name_mapping and node_type_names_mapping is not supported.".to_string()
@@ -159,11 +160,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_names`: Vec<String> - The node types to replace the unknown with.
-    /// * `verbose`: bool - Whether to show a loading bar.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn replace_unknown_node_types_with_node_type_name(
         &self,
         node_type_names: Vec<String>,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
         if node_type_names
             .iter()
@@ -184,11 +185,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_name`: String - The edge type name to replace the unknown with.
-    /// * `verbose`: bool - Whether to show a loading bar.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn replace_unknown_edge_types_with_edge_type_name(
         &self,
         edge_type_name: String,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
         if edge_type_name.is_empty() {
             return Err("The given edge type is empty!".to_string());

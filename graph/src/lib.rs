@@ -26,8 +26,6 @@
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
 
-const SEED_XOR: usize = 0xbad5eedbad5eed11;
-
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
 mod node_type_vocabulary;
@@ -120,5 +118,7 @@ pub use preprocessing::*;
 
 mod dijkstra_queue;
 use dijkstra_queue::*;
+
+use vec_rand::splitmix64;
 
 use tags::*;

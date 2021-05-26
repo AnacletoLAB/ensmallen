@@ -69,7 +69,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
         }}
     }}
     
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
 
     Ok(())
 }}

@@ -19,11 +19,11 @@ impl Graph {
     /// * `edge_type_ids_to_filter`: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * `filter_singleton_nodes`: bool - Whether to filter out singleton nodes.
-    /// * `filter_singleton_nodes_with_selfloop`: bool - Whether to filter out singleton nodes with selfloops.
-    /// * `filter_selfloops`: bool - Whether to filter out selfloops.
-    /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
-    /// * `verbose`: bool - Whether to show loading bar while building the graphs.
+    /// * `filter_singleton_nodes`: Option<bool> - Whether to filter out singleton nodes.
+    /// * `filter_singleton_nodes_with_selfloop`: Option<bool> - Whether to filter out singleton nodes with selfloops.
+    /// * `filter_selfloops`: Option<bool> - Whether to filter out selfloops.
+    /// * `filter_parallel_edges`: Option<bool> - Whether to filter out parallel edges.
+    /// * `verbose`: Option<bool> - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
     ///
@@ -54,12 +54,17 @@ impl Graph {
         edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singleton_nodes: bool,
-        filter_singleton_nodes_with_selfloop: bool,
-        filter_selfloops: bool,
-        filter_parallel_edges: bool,
+        filter_singleton_nodes: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
     ) -> Graph {
+        let filter_singleton_nodes = filter_singleton_nodes.unwrap_or(false);
+        let filter_singleton_nodes_with_selfloop =
+            filter_singleton_nodes_with_selfloop.unwrap_or(false);
+        let filter_selfloops = filter_selfloops.unwrap_or(false);
+        let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
         let pb_edges = get_loading_bar(
             verbose,
@@ -278,11 +283,11 @@ impl Graph {
     /// * `edge_type_names_to_filter`: Option<Vec<Option<String>>> - List of edge type names to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
-    /// * `filter_singleton_nodes`: bool - Whether to filter out singletons.
-    /// * `filter_singleton_nodes_with_selfloop`: bool - Whether to filter out singleton nodes with selfloops.
-    /// * `filter_selfloops`: bool - Whether to filter out selfloops.
-    /// * `filter_parallel_edges`: bool - Whether to filter out parallel edges.
-    /// * `verbose`: bool - Whether to show loading bar while building the graphs.
+    /// * `filter_singleton_nodes`: Option<bool> - Whether to filter out singletons.
+    /// * `filter_singleton_nodes_with_selfloop`: Option<bool> - Whether to filter out singleton nodes with selfloops.
+    /// * `filter_selfloops`: Option<bool> - Whether to filter out selfloops.
+    /// * `filter_parallel_edges`: Option<bool> - Whether to filter out parallel edges.
+    /// * `verbose`: Option<bool> - Whether to show loading bar while building the graphs.
     ///
     /// ## Implementation details
     ///
@@ -311,10 +316,10 @@ impl Graph {
         edge_type_names_to_filter: Option<Vec<Option<String>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
-        filter_singleton_nodes: bool,
-        filter_singleton_nodes_with_selfloop: bool,
-        filter_selfloops: bool,
-        filter_parallel_edges: bool,
+        filter_singleton_nodes: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
         Ok(self.filter_from_ids(
@@ -387,10 +392,10 @@ impl Graph {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
+            None,
+            None,
+            None,
+            None,
             verbose,
         )
     }
@@ -418,10 +423,10 @@ impl Graph {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
+            None,
+            None,
+            None,
+            None,
             verbose,
         )
     }
@@ -434,8 +439,25 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn drop_singleton_nodes(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
-            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            true, false, false, false, verbose,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(true),
+            None,
+            None,
+            None,
+            verbose,
         )
     }
 
@@ -444,33 +466,84 @@ impl Graph {
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
-            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, true, false, false, verbose,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(true),
+            None,
+            None,
+            verbose,
         )
     }
 
     /// Returns new graph without selfloops.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn drop_selfloops(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
-            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, false, true, false, verbose,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(true),
+            None,
+            verbose,
         )
     }
 
     /// Returns new graph without parallel edges.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar while building the graph.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
-            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            false, false, false, true, verbose,
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None, 
+            None,
+            None, 
+            None, 
+            None, 
+            Some(true), 
+            verbose,
         )
     }
 }

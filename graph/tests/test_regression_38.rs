@@ -32,6 +32,6 @@ fn test_regression_38() -> Result<(), String> {
         true,
         false,
     )?;
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

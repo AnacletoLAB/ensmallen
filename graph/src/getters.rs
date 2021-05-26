@@ -15,8 +15,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - Whether to show a loading bar or not.
-    pub fn get_connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
+    pub fn get_connected_components_number(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
             let (_, _, components_number, min_component_size, max_component_size) =
@@ -849,8 +849,8 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show the loading bar.
-    pub fn get_node_connected_component_ids(&self, verbose: bool) -> Vec<NodeT> {
+    /// * `verbose`: Option<bool> - Whether to show the loading bar.
+    pub fn get_node_connected_component_ids(&self, verbose: Option<bool>) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
             false => self.connected_components(verbose).unwrap().0,

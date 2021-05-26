@@ -35,6 +35,6 @@ fn test_regression_13() -> Result<(), String> {
         "FRANCO", // Name of the graph
     )?;
 
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

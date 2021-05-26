@@ -19,11 +19,11 @@ fn test_cora_diameter() -> Result<(), String> {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
-            Some(false),
+            None,
+            None,
+            None,
+            None,
+            None,
         )
         .unwrap();
     assert_eq!(

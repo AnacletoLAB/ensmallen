@@ -44,7 +44,7 @@ use std::collections::HashMap;
 ///    ).unwrap();
 ///
 /// // Enable Speed-ups but it uses more memory.
-/// cora.enable(true, true, true, None).unwrap();
+/// cora.enable(Some(true), Some(true), Some(true), None).unwrap();
 /// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
@@ -190,12 +190,12 @@ impl Graph {
     /// assert!(!ppi.overlaps(&cora).unwrap());
     /// assert!(!cora.overlaps(&ppi).unwrap());
     /// let (train, test) = ppi.random_holdout(
-    ///     42,
     ///     0.8,
-    ///     false,
+    ///     Some(42),
+    ///     Some(false),
     ///     None,
     ///     None,
-    ///     false
+    ///     None,
     /// ).unwrap();
     /// assert!(ppi.overlaps(&train).unwrap());
     /// assert!(ppi.overlaps(&test).unwrap());
@@ -240,12 +240,12 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, false, false, false, false);
     /// let (train, test) = graph.random_holdout(
-    ///     42,
     ///     0.8,
-    ///     false,
+    ///     Some(42),
+    ///     Some(false),
     ///     None,
     ///     None,
-    ///     false
+    ///     None,
     /// ).unwrap();
     /// assert!(graph.contains(&train).unwrap());
     /// assert!(graph.contains(&test).unwrap());

@@ -102,8 +102,8 @@ impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T> {
 
 use std::cell::UnsafeCell;
 
-pub(crate) struct ThreadSafe<T> {
+pub(crate) struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,
 }
 
-unsafe impl<T> Sync for ThreadSafe<T> {}
+unsafe impl<T> Sync for ThreadDataRaceAware<T> {}

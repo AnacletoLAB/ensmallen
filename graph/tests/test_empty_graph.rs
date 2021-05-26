@@ -6,7 +6,7 @@ use graph::test_utilities::*;
 fn test_empty_graph() -> Result<(), String> {
     for directed in &[true, false] {
         let mut empty_graph = load_empty_graph(*directed);
-        let _ = graph::test_utilities::default_test_suite(&mut empty_graph, false);
+        let _ = graph::test_utilities::default_test_suite(&mut empty_graph, None);
     }
     Ok(())
 }

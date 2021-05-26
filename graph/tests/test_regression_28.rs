@@ -38,14 +38,14 @@ fn test_regression_28() -> Result<(), String> {
         "Fuzz Graph", // Name of the graph
     )?;
 
-    graph.enable(true, true, true, None)?;
+    graph.enable(Some(true), Some(true), Some(true), None)?;
     let iterations = 1_000;
     let pb =
         graph::utils::get_loading_bar(true, "Running non-deterministic component test", iterations);
 
     for _ in 0..iterations {
         pb.inc(1);
-        let _ = graph::test_utilities::test_remove_components(&mut graph, false);
+        let _ = graph::test_utilities::test_remove_components(&mut graph, None);
     }
     Ok(())
 }

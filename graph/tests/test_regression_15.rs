@@ -35,6 +35,6 @@ fn test_regression_15() -> Result<(), String> {
         false, // Directed edge list
         "TestGraph" // Name of the graph
     )?;
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

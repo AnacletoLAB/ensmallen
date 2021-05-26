@@ -44,6 +44,6 @@ fn test_regression_20() -> Result<(), String> {
         true,    // Directed edge list
         "RegressionGraph20", // Name of the graph
     )?;
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

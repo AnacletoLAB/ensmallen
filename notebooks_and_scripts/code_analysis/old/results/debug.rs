@@ -1431,7 +1431,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadSafe {
+        let thread_safe_parents = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
 
@@ -1640,13 +1640,13 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadSafe {
+        let thread_safe_min_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut min_component_size),
         };
-        let thread_safe_max_component_size = ThreadSafe {
+        let thread_safe_max_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut max_component_size),
         };
-        let thread_safe_components_number = ThreadSafe {
+        let thread_safe_components_number = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut components_number),
         };
 
@@ -1798,11 +1798,11 @@ impl Graph {
 
 use std::cell::UnsafeCell;
 
-struct ThreadSafe<T> {
+struct ThreadDataRaceAware<T> {
     value: UnsafeCell<T>,
 }
 
-unsafe impl<T> Sync for ThreadSafe<T> {}
+unsafe impl<T> Sync for ThreadDataRaceAware<T> {}
 
 use super::*;
 use indicatif::ProgressIterator;

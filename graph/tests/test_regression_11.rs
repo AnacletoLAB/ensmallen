@@ -22,9 +22,9 @@ fn test_regression_11() -> Result<(), String> {
     )?;
 
     for _ in 0..1000 {
-        let _ = graph::test_utilities::test_vertex_cover(&mut graph, false);
+        let _ = graph::test_utilities::test_vertex_cover(&mut graph, None);
     }
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
 
     Ok(())
 }

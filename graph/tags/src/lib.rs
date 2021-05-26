@@ -19,4 +19,6 @@ create_tag!(
     no_binding
     manual_binding
     no_inverse_method
+    automatically_generated_binding
+    no_numpy_binding
 );

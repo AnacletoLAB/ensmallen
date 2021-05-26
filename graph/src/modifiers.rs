@@ -7,17 +7,20 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool - Whether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool - Whether to cache destinations into a vector for faster walks.
-    /// * `vector_cumulative_node_degrees`: bool - Whether to cache cumulative_node_degrees into a vector for faster walks.
+    /// * `vector_sources`: Option<bool> - Whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: Option<bool> - Whether to cache destinations into a vector for faster walks.
+    /// * `vector_cumulative_node_degrees`: Option<bool> - Whether to cache cumulative_node_degrees into a vector for faster walks.
     /// * `cache_size`: Option<f64> - percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
-        vector_sources: bool,
-        vector_destinations: bool,
-        vector_cumulative_node_degrees: bool,
+        vector_sources: Option<bool>,
+        vector_destinations: Option<bool>,
+        vector_cumulative_node_degrees: Option<bool>,
         cache_size: Option<f64>,
     ) -> Result<(), String> {
+        let vector_sources = vector_sources.unwrap_or(false);
+        let vector_destinations = vector_destinations.unwrap_or(true);
+        let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);
         if (vector_destinations || self.destinations.is_some())
             && (cache_size.is_some() || self.cached_destinations.is_some())
         {

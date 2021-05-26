@@ -4,6 +4,7 @@ use rayon::iter::ParallelIterator;
 use std::{collections::HashSet, sync::atomic::AtomicU8};
 
 impl Graph {
+    #[no_binding]
     /// Returns 2-approximated verted cover bitvec using greedy algorithm.
     ///
     /// # References
@@ -11,7 +12,7 @@ impl Graph {
     pub fn approximated_vertex_cover_bitvec(&self) -> BitVec<Lsb0, u8> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut vertex_cover = bitvec![Lsb0, AtomicU8; 0; nodes_number];
-        let thread_shared_vertex_cover = ThreadSafe {
+        let thread_shared_vertex_cover = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut vertex_cover),
         };
         self.par_iter_edge_ids(self.is_directed()).for_each(

@@ -6,7 +6,7 @@ use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicUsize, Ordering};
-use types::ThreadSafe;
+use types::ThreadDataRaceAware;
 
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -269,10 +269,10 @@ impl EnsmallenGraph {
             * batch_size as usize
             * parameters.get_iterations() as usize;
 
-        let contexts = ThreadSafe {
+        let contexts = ThreadDataRaceAware {
             t: PyArray2::new(gil.python(), [elements_per_batch, window_size * 2], false),
         };
-        let words = ThreadSafe {
+        let words = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [elements_per_batch], false),
         };
         let global_i = AtomicUsize::new(0);
@@ -351,7 +351,11 @@ impl EnsmallenGraph {
         // just above that the list cannot be empty.
         let mut max_degree = node_ids
             .iter()
-            .map(|node_id| self.graph.get_unweighted_node_degree_from_node_id(*node_id).unwrap())
+            .map(|node_id| {
+                self.graph
+                    .get_unweighted_node_degree_from_node_id(*node_id)
+                    .unwrap()
+            })
             .max()
             .unwrap();
 
@@ -483,13 +487,13 @@ impl EnsmallenGraph {
             &maybe_graph,
         ))?;
 
-        let srcs = ThreadSafe {
+        let srcs = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        let dsts = ThreadSafe {
+        let dsts = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        let labels = ThreadSafe {
+        let labels = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
 
@@ -571,13 +575,13 @@ impl EnsmallenGraph {
             &maybe_graph,
         ))?;
 
-        let srcs = ThreadSafe {
+        let srcs = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        let dsts = ThreadSafe {
+        let dsts = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        let labels = ThreadSafe {
+        let labels = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
 
@@ -618,7 +622,7 @@ impl EnsmallenGraph {
     ) -> Py<PyArray2<f64>> {
         let gil = pyo3::Python::acquire_gil();
 
-        let batch_metrics = ThreadSafe {
+        let batch_metrics = ThreadDataRaceAware {
             t: PyArray2::new(gil.python(), [source_node_ids.len(), 4], false),
         };
 
@@ -634,95 +638,5 @@ impl EnsmallenGraph {
         }
 
         batch_metrics.t.to_owned()
-    }
-
-    #[text_signature = "($self, features, iterations, maximal_distance, k1, b, verbose)"]
-    /// Returns node type co-occurrences for maximal distances k.
-    ///
-    /// Parameters
-    /// -----------------------------
-    /// features: List[List[f64]],
-    ///     List of the features to propagate.
-    /// iterations: Optional[int] = 1,
-    ///     Number of iterations of propagation to execute.
-    /// maximal_distance: Optional[int],
-    ///     The distance to consider for the cooccurrences. The default value is 3.
-    /// k1: Optional[float],
-    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
-    /// b: Optional[float],
-    ///     The b parameter from okapi. Tipicaly 0.75.
-    /// include_central_node: Optional[bool],
-    ///     Whether to include the central node. By default true.
-    /// verbose: Optional[bool],
-    ///     Whether to show loading bar.
-    ///
-    /// Returns
-    /// -----------------------------
-    /// 2D numpy array with cooccurrences.
-    fn get_okapi_bm25_node_feature_propagation(
-        &self,
-        features: Vec<Vec<f64>>,
-        iterations: Option<usize>,
-        maximal_distance: Option<usize>,
-        k1: Option<f64>,
-        b: Option<f64>,
-        include_central_node: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray2<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_2d!(
-            gil,
-            pe!(self.graph.get_okapi_bm25_node_feature_propagation(
-                features,
-                iterations,
-                maximal_distance,
-                k1,
-                b,
-                include_central_node,
-                verbose
-            ))?,
-            f64
-        ))
-    }
-
-    #[text_signature = "($self, iterations, maximal_distance, k1, b, verbose)"]
-    /// Returns node type co-occurrences for maximal distances k.
-    ///
-    /// Parameters
-    /// -----------------------------
-    /// iterations: Optional[int] = 1,
-    ///     Number of iterations of propagation to execute.
-    /// maximal_distance: Optional[int],
-    ///     The distance to consider for the cooccurrences. The default value is 3.
-    /// k1: Optional[float],
-    ///     The k1 parameter from okapi. Tipicaly between 1.2 and 2.0.
-    /// b: Optional[float],
-    ///     The b parameter from okapi. Tipicaly 0.75.
-    /// verbose: Optional[bool],
-    ///     Whether to show loading bar.
-    ///
-    /// Returns
-    /// -----------------------------
-    /// 2D numpy array with cooccurrences.
-    fn get_okapi_bm25_node_label_propagation(
-        &self,
-        iterations: Option<usize>,
-        maximal_distance: Option<usize>,
-        k1: Option<f64>,
-        b: Option<f64>,
-        verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray2<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_2d!(
-            gil,
-            pe!(self.graph.get_okapi_bm25_node_label_propagation(
-                iterations,
-                maximal_distance,
-                k1,
-                b,
-                verbose
-            ))?,
-            f64
-        ))
     }
 }
