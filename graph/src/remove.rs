@@ -15,7 +15,7 @@ impl Graph {
     /// * `edge_types`: Option<Vec<Option<String>>> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
-    /// * `verbose`: bool - Whether to show the loading bar.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
@@ -23,10 +23,11 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<Graph, String> {
+        let verbose = verbose.unwrap_or(false);
         let mut keep_components = RoaringBitmap::new();
-        let components_vector = self.get_node_connected_component_ids(verbose);
+        let components_vector = self.get_node_connected_component_ids(Some(verbose));
 
         // Extend the components so the include the given node Ids and node types.
         if let Some(node_ids) = self.get_filter_bitmap(node_names, node_types)? {
@@ -64,8 +65,9 @@ impl Graph {
         }
 
         // Create the components counter
+        let counter = Counter::init(components_vector.clone());
         let component_counts: Vec<(NodeT, NodeT)> =
-            Counter::init(components_vector.clone()).most_common_ordered();
+            counter.most_common_ordered();
 
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
@@ -106,10 +108,10 @@ impl Graph {
 
         let min_component_size = keep_components
             .iter()
-            .map(|component_id| component_counts[component_id as usize].1)
+            .map(|component_id| *counter.get(&component_id).unwrap())
             .min();
-
-        Graph::from_string_sorted(
+            
+        Graph::from_string_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
                 .filter_map(
@@ -135,9 +137,7 @@ impl Graph {
             false,
             true,
             true,
-            true,
-            self.get_directed_edges_number() as usize, // Approximation of expected edges number.
-            self.get_nodes_number(),                   // Approximation of expected nodes number.
+            true,                  // Approximation of expected nodes number.
             false,
             false,
             false,
@@ -149,6 +149,7 @@ impl Graph {
             self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_trap_nodes(),
+            verbose,
         )
     }
 }

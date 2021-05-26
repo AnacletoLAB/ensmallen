@@ -33,7 +33,7 @@ impl PyNumberProtocol for EnsmallenGraph {
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __str__(&'p self) -> PyResult<String> {
-        pe!(self.graph.textual_report(true))
+        pe!(self.graph.textual_report(Some(true)))
     }
     fn __repr__(&'p self) -> PyResult<String> {
         self.__str__()
@@ -52,36 +52,5 @@ impl EnsmallenGraph {
             self.graph.get_name(),
             pe!(self.__repr__())?
         ))
-    }
-}
-
-#[pymethods]
-impl EnsmallenGraph {
-    /// Return true if given graph has any edge overlapping with current graph.
-    ///
-    /// Parameters
-    /// ----------------------------
-    /// graph: EnsmallenGraph,
-    ///     The graph to check against.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Boolean representing if any overlapping edge was found.
-    pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pe!(self.graph.overlaps(&graph.graph))
-    }
-
-    /// Return true if given graph edges are all contained within current graph.
-    ///
-    /// Parameters
-    /// ----------------------------
-    /// graph: EnsmallenGraph,
-    ///     The graph to check against.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Boolean representing if graph contains completely the othe graph.
-    pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pe!(self.graph.contains(&graph.graph))
     }
 }

@@ -44,6 +44,6 @@ fn test_regression_3() -> Result<(), String> {
         false, // Directed edge list
         "Q",   // Name of the graph
     )?;
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

@@ -509,15 +509,15 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_node_degree_from_node_id",
+        method_name: "Graph::get_unchecked_unweighted_node_degree_from_node_id",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_node_degree_from_node_id",
+        method_name: "Graph::get_unweighted_node_degree_from_node_id",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_node_degree_from_node_id",
+        method_name: "Graph::get_unweighted_node_degree_from_node_id",
         section_name: "Raises",
     },
     MissingSection {
@@ -1751,15 +1751,15 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::iter_node_degrees",
+        method_name: "Graph::iter_unweighted_node_degrees",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::par_iter_node_degrees",
+        method_name: "Graph::par_iter_unweighted_node_degrees",
         section_name: "Example",
     },
     DuplicatedIntroduction {
-        method_name: "Graph::par_iter_node_degrees",
+        method_name: "Graph::par_iter_unweighted_node_degrees",
     },
     MissingSection {
         method_name: "Graph::iter_connected_node_ids",

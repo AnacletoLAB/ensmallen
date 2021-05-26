@@ -21,6 +21,18 @@ impl Default for TypeModifiers {
     }
 }
 
+impl std::fmt::Display for TypeModifiers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.to_string())
+    }
+}
+
+impl TypeModifiers {
+    fn to_string(&self) -> String {
+        String::from(self.clone())
+    }
+}
+
 impl Parse for TypeModifiers {
     fn parse(mut data: &[u8]) -> (&[u8], Self) {
         let mut mutable = false;
@@ -82,32 +94,34 @@ impl From<TypeModifiers> for String {
         if x.reference {
             let mut result = "&".to_string();
             if x.mutable {
-                result.push_str(" mut");
+                result.push_str(" mut ");
             }
             if let Some(lt) = x.lifetime {
                 result.push_str("'");
-                result.push_str(&lt.0)
+                result.push_str(&lt.0);
+                result.push_str(" ");
             }
             return result;
         }
         if x.pointer {
             let mut result = "*".to_string();
             if x.mutable {
-                result.push_str(" mut");
+                result.push_str(" mut ");
             }
             if x.constant {
-                result.push_str(" const");
+                result.push_str(" const ");
             }
             if let Some(lt) = x.lifetime {
                 result.push_str(" '");
                 result.push_str(&lt.0);
+                result.push_str(" ");
             }
             return result;
         }
 
         let mut result = "".to_string();
         if x.mutable{
-            result.push_str("mut ");
+            result.push_str(" mut ");
         }
         result
     }

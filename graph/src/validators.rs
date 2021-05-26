@@ -20,6 +20,9 @@ impl Graph {
     /// assert!(graph.validate_node_id(0).is_ok());
     /// assert!(graph.validate_node_id(100000000).is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the given node ID does not exists in the graph.
     pub fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(
@@ -29,6 +32,28 @@ impl Graph {
             ));
         }
         Ok(node_id)
+    }
+
+    /// Validates all provided node IDs.
+    ///
+    /// # Arguments
+    /// * `node_ids`: Vec<NodeT> - node IDs to validate.
+    ///
+    /// # Example
+    /// In order to validate the given node IDs, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(graph.validate_node_ids(vec![0, 1, 2]).is_ok());
+    /// assert!(graph.validate_node_ids(vec![100000000, u32::MAX]).is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If any of the given node ID does not exists in the graph.
+    pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<NodeT>, String> {
+        node_ids.into_iter()
+            .map(|node_id| self.validate_node_id(node_id))
+            .collect()
     }
 
     /// Validates provided edge ID.
@@ -44,6 +69,9 @@ impl Graph {
     /// assert!(graph.validate_edge_id(0).is_ok());
     /// assert!(graph.validate_edge_id(10000000000).is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the given edge ID does not exists in the graph.
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> Result<EdgeT, String> {
         if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
@@ -53,6 +81,28 @@ impl Graph {
             ));
         }
         Ok(edge_id)
+    }
+
+    /// Validates provided edge IDs.
+    ///
+    /// # Arguments
+    /// * `edge_ids`: Vec<EdgeT> - Edge IDs to validate.
+    ///
+    /// # Example
+    /// In order to validate a given edge ID, you can use the following:
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(graph.validate_edge_ids(vec![0, 1, 2]).is_ok());
+    /// assert!(graph.validate_edge_ids(vec![10000000000, u64::MAX]).is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If any of the given edge ID does not exists in the graph.
+    pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> Result<Vec<EdgeT>, String> {
+        edge_ids.into_iter()
+            .map(|edge_id| self.validate_edge_id(edge_id))
+            .collect()
     }
 
     /// Validates provided node type ID.
@@ -68,6 +118,9 @@ impl Graph {
     /// assert!(graph.validate_node_type_id(Some(0)).is_ok());
     /// assert!(graph.validate_node_type_id(Some(1000)).is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the given node type ID does not exists in the graph.
     pub fn validate_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
@@ -124,6 +177,9 @@ impl Graph {
     /// assert!(graph.validate_edge_type_id(Some(0)).is_ok());
     /// assert!(graph.validate_edge_type_id(Some(1000)).is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the given edge type ID does not exists in the graph.
     pub fn validate_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
@@ -167,6 +223,7 @@ impl Graph {
             .collect()
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have node types.
     ///
     /// # Example
@@ -178,6 +235,9 @@ impl Graph {
     /// assert!(graph_with_node_types.must_have_node_types().is_ok());
     /// assert!(graph_without_node_types.must_have_node_types().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
     pub fn must_have_node_types(&self) -> Result<&NodeTypeVocabulary, String> {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types.".to_string());
@@ -185,6 +245,7 @@ impl Graph {
         Ok(self.node_types.as_ref().unwrap())
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have edge types.
     ///
     /// # Example
@@ -217,6 +278,9 @@ impl Graph {
     /// assert!(undirecte_graph.must_be_undirected().is_ok());
     /// assert!(directed_graph.must_be_undirected().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph is directed.
     pub fn must_be_undirected(&self) -> Result<(), String> {
         if self.is_directed() {
             return Err("The current graph instance is not undirected.".to_string());
@@ -235,6 +299,9 @@ impl Graph {
     /// assert!(multigraph.must_be_multigraph().is_ok());
     /// assert!(homogeneous.must_be_multigraph().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph is not a multigraph.
     pub fn must_be_multigraph(&self) -> Result<(), String> {
         if !self.is_multigraph() {
             return Err(
@@ -255,6 +322,9 @@ impl Graph {
     /// assert!(multigraph.must_not_be_multigraph().is_err());
     /// assert!(homogeneous.must_not_be_multigraph().is_ok());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph is a multigraph.
     pub fn must_not_be_multigraph(&self) -> Result<(), String> {
         if self.is_multigraph() {
             return Err(
@@ -265,6 +335,7 @@ impl Graph {
         Ok(())
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have weights.
     ///
     /// # Example
@@ -276,9 +347,35 @@ impl Graph {
     /// assert!(graph_with_weights.must_have_edge_weights().is_ok());
     /// assert!(graph_without_weights.must_have_edge_weights().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
     pub fn must_have_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
+        }
+        Ok(self.weights.as_ref().unwrap())
+    }
+
+    #[no_binding]
+    /// Raises an error if the graph has negative edge weights.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));
+    /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
+    /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    /// * If the graph contains negative edge weights.
+    pub fn must_have_positive_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
+        if self.has_negative_edge_weights()? {
+            return Err("The current graph instance contains negative edge weights.".to_string());
         }
         Ok(self.weights.as_ref().unwrap())
     }
@@ -294,6 +391,9 @@ impl Graph {
     /// assert!(graph_with_edges.must_have_edges().is_ok());
     /// assert!(graph_without_edges.must_have_edges().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edges.
     pub fn must_have_edges(&self) -> Result<(), String> {
         if !self.has_edges() {
             return Err("The current graph instance does not have any edge.".to_string());
@@ -312,6 +412,9 @@ impl Graph {
     /// assert!(graph_with_nodes.must_have_nodes().is_ok());
     /// assert!(graph_without_nodes.must_have_nodes().is_err());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have nodes.
     pub fn must_have_nodes(&self) -> Result<(), String> {
         if !self.has_nodes() {
             return Err("The current graph instance does not have any node.".to_string());

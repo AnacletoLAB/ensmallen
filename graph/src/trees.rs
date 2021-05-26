@@ -87,10 +87,10 @@ impl Graph {
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         let edges_number = self.get_directed_edges_number();
         // We execute two times the xorshift to improve the randomness of the seed.
-        let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
+        let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+            let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -101,15 +101,17 @@ impl Graph {
     /// Returns iterator over shuffled edge IDs and node IDs with preference to given edge types.
     ///
     /// # Arguments
-    /// * `random_state`: u64 - The random state to reproduce the given edge sampling.
-    /// * `undesired_edge_types`: &'a Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.
-    /// * `verbose`: bool - Whether to show a loading bar.
-    fn iter_on_edges_with_preference_from_random_state<'a>(
-        &'a self,
-        random_state: u64,
-        undesired_edge_types: &'a Option<HashSet<Option<EdgeTypeT>>>,
-        verbose: bool,
-    ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
+    /// * `random_state`: Option<u64> - The random state to reproduce the given edge sampling.
+    /// * `undesired_edge_types`: Option<HashSet<Option<EdgeTypeT>>> - The edge types whose edges are to leave as last.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    fn iter_on_edges_with_preference_from_random_state(
+        &self,
+        random_state: Option<u64>,
+        undesired_edge_types: Option<HashSet<Option<EdgeTypeT>>>,
+        verbose: Option<bool>,
+    ) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
+        let random_state = random_state.unwrap_or(0xbadf00d);
+        let verbose = verbose.unwrap_or(false);
         let pb = get_loading_bar(
             verbose,
             format!("Building random spanning tree for {}", self.name).as_ref(),
@@ -118,17 +120,21 @@ impl Graph {
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =
             (undesired_edge_types, &self.edge_types)
         {
+            // We cannot retrun two different iters that reference data owned by
+            // this function, so we clone it. This is fine since it should contains
+            // only few values
+            let uet_copy = uet.clone(); 
             Box::new(
                 self.iter_edges_from_random_state(random_state)
                     .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id)) {
+                        if uet.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)}) {
                             return None;
                         }
                         Some((src, dst))
                     })
                     .chain(self.iter_edges_from_random_state(random_state).filter_map(
                         move |(edge_id, src, dst)| {
-                            if !uet.contains(&self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+                            if !uet_copy.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)})
                             {
                                 return None;
                             }
@@ -370,9 +376,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `random_state`: EdgeT - The random_state to use for the holdout,
+    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
     /// * `undesired_edge_types`: &Option<HashSet<Option<EdgeTypeT>>> - Which edge types id to try to avoid.
-    /// * `verbose`: bool - Whether to show a loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Example
     /// To compute a random spanning arborescence using Kruskal you can use the following:
@@ -385,9 +391,9 @@ impl Graph {
     ///     minimum_component_size,
     ///     maximum_component_size
     /// ) = graph.random_spanning_arborescence_kruskal(
-    ///     42,
-    ///     &None,
-    ///     false
+    ///     Some(42),
+    ///     None,
+    ///     Some(false)
     /// );
     /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
     /// assert!(minimum_component_size <= maximum_component_size);
@@ -395,9 +401,9 @@ impl Graph {
     /// ```
     pub fn random_spanning_arborescence_kruskal(
         &self,
-        random_state: EdgeT,
-        undesired_edge_types: &Option<HashSet<Option<EdgeTypeT>>>,
-        verbose: bool,
+        random_state: Option<EdgeT>,
+        undesired_edge_types: Option<HashSet<Option<EdgeTypeT>>>,
+        verbose: Option<bool>,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.kruskal(self.iter_on_edges_with_preference_from_random_state(
             random_state,
@@ -418,7 +424,7 @@ impl Graph {
     /// - Maximum component size.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Example
     /// To compute a spanning arborescence using Kruskal you can use the following:
@@ -430,17 +436,16 @@ impl Graph {
     ///     number_of_connected_components,
     ///     minimum_component_size,
     ///     maximum_component_size
-    /// ) = graph.spanning_arborescence_kruskal(
-    ///     false
-    /// );
+    /// ) = graph.spanning_arborescence_kruskal(None);
     /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
     /// assert!(minimum_component_size <= maximum_component_size);
     /// assert!(maximum_component_size <= graph.get_nodes_number());
     /// ```
     pub fn spanning_arborescence_kruskal(
         &self,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        let verbose = verbose.unwrap_or(false);
         let pb = get_loading_bar(
             verbose,
             &format!(
@@ -455,6 +460,7 @@ impl Graph {
         )
     }
 
+    #[manual_binding]
     /// Returns set of edges composing a spanning arborescence.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
@@ -465,16 +471,17 @@ impl Graph {
     /// - Iterator over the edges used in order to build the spanning arborescence.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show a loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Raises
     /// * If this method is called on a directed graph.
     /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn spanning_arborescence(
         &self,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
         self.must_be_undirected()?;
+        let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let (cpu_number, pool) = get_thread_pool()?;
@@ -486,7 +493,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadSafe {
+        let thread_safe_parents = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
 
@@ -506,29 +513,28 @@ impl Graph {
                     nodes_number,
                 );
                 let parents = thread_safe_parents.value.get();
-                (0..nodes_number).progress_with(pb).for_each(|src| {
+                (0..nodes_number).progress_with(pb).for_each(|src| unsafe {
                     // If the node has already been explored we skip ahead.
-                    if unsafe { (*parents)[src] != NOT_PRESENT} {
+                    if (*parents)[src] != NOT_PRESENT {
                         return;
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
                     if self.is_unchecked_singleton_from_node_id(src as NodeT) {
                         // We set singletons as self-loops for now.
-                        unsafe{ (*parents)[src] = src as NodeT };
+                        (*parents)[src] = src as NodeT;
                         return;
                     }
                     loop {
-                        if unsafe { (*parents)[src] != NOT_PRESENT} {
+                        if (*parents)[src] != NOT_PRESENT {
                             break;
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                            if unsafe { (*parents)[src] != NOT_PRESENT} {
+                            if (*parents)[src] != NOT_PRESENT {
                                 break;
                             }
-                            unsafe {
-                                (*parents)[src] = src as NodeT;
-                            }
+                            (*parents)[src] = src as NodeT;
+            
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
@@ -557,7 +563,7 @@ impl Graph {
                         }
                     };
                     let parents = thread_safe_parents.value.get();
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| unsafe {
                             if (*parents)[dst as usize] == NOT_PRESENT {
                                 (*parents)[dst as usize] = src;
@@ -604,7 +610,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - Whether to show a loading bar or not.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Example
     /// ```rust
@@ -643,7 +649,7 @@ impl Graph {
     ///  #     false,     // verbose
     ///  # ).unwrap();
     /// let (components, number_of_components, smallest, biggest) =
-    ///     graph.connected_components(false).unwrap();
+    ///     graph.connected_components(None).unwrap();
     ///
     /// //   nodes names:       0  1  4  2  3
     /// assert_eq!(components, [0, 0, 0, 1, 1].to_vec());
@@ -658,7 +664,7 @@ impl Graph {
     /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn connected_components(
         &self,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
         self.must_be_undirected()?;
         if !self.has_nodes() {
@@ -672,6 +678,8 @@ impl Graph {
                 1,
             ));
         }
+        let verbose = verbose.unwrap_or(false);
+
         let components = self
             .iter_node_ids()
             .map(|_| AtomicU32::new(NOT_PRESENT))
@@ -688,13 +696,13 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadSafe {
+        let thread_safe_min_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut min_component_size),
         };
-        let thread_safe_max_component_size = ThreadSafe {
+        let thread_safe_max_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut max_component_size),
         };
-        let thread_safe_components_number = ThreadSafe {
+        let thread_safe_components_number = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut components_number),
         };
 
@@ -730,7 +738,7 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_disconnected_nodes()
-                            && (self.is_unchecked_singleton_from_node_id(src)
+                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)}
                                 || self.is_singleton_with_selfloops_from_node_id(src))
                         {
                             // We set singletons as self-loops for now.
@@ -811,7 +819,7 @@ impl Graph {
                     };
 
                     let src_component = components[src as usize].load(Ordering::Relaxed);
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| {
                             if components[dst as usize].swap(src_component, Ordering::SeqCst)
                                 == NOT_PRESENT

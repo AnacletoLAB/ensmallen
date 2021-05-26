@@ -134,7 +134,7 @@ pub fn load_ppi(
         !skip_selfloops,
         skip_selfloops,
         ppi.has_selfloops(),
-        ppi.textual_report(false)
+        ppi.textual_report(None)
     );
     ppi
 }
@@ -218,7 +218,7 @@ fn validate_vocabularies(graph: &Graph) {
     if let Some(ets) = &graph.edge_types {
         assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
             "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
     }
 
@@ -233,7 +233,7 @@ fn validate_vocabularies(graph: &Graph) {
                 "We expect the edge weights vector to NOT be empty if the graph says it has weights.\n",
                 "The graph report is:\n{:?}"
             ),
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
     }
 }
@@ -294,10 +294,10 @@ pub fn default_holdout_test_suite(
 }
 
 /// Test that the spanning arborescence algorithm from bader is working correctly.
-pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
+pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: Option<bool>) {
     let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
     let random_kruskal_tree = graph
-        .random_spanning_arborescence_kruskal(42, &None, verbose)
+        .random_spanning_arborescence_kruskal(Some(42), None, verbose)
         .0;
     if !graph.directed {
         let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
@@ -305,7 +305,7 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
         assert_eq!(
             spanning_arborescence_bader.len(), kruskal_tree.len(),
             "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{:?}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
-            graph.textual_report(false), spanning_arborescence_bader, kruskal_tree,
+            graph.textual_report(None), spanning_arborescence_bader, kruskal_tree,
         );
     } else {
         assert!(graph.spanning_arborescence(verbose).is_err());
@@ -313,19 +313,19 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: bool) {
     assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }
 
-pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
     // Testing that the degrees computation is correct
     assert_eq!(
         graph.get_max_node_degree()?,
-        graph.iter_node_degrees().max().unwrap(),
+        graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
     assert_eq!(
         graph.get_min_node_degree()?,
-        graph.iter_node_degrees().min().unwrap(),
+        graph.iter_unweighted_node_degrees().min().unwrap(),
         "The cached minimum degree does not match the one computed from the node degrees."
     );
 
@@ -351,16 +351,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
-        assert!(graph.get_unchecked_node_degree_from_node_id(singleton_node_id) == 0);
-        assert!(graph.is_unchecked_singleton_from_node_id(singleton_node_id));
+        assert!(unsafe{graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id)} == 0);
+        assert!(unsafe{graph.is_unchecked_singleton_from_node_id(singleton_node_id)});
     }
 
     if !graph.is_directed() {
         for node_id in graph.iter_node_ids() {
-            assert_eq!(
+            unsafe{assert_eq!(
                 graph.is_unchecked_singleton_from_node_id(node_id),
-                graph.get_unchecked_node_degree_from_node_id(node_id) == 0
-            );
+                graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
+            )};
         }
     }
 
@@ -420,7 +420,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
     );
 
     warn!("Running connected components tests.");
-    let (_components_number, smallest, biggest) = graph.get_connected_components_number(false);
+    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);
     assert!(
         biggest >= smallest,
         "smallest: {} biggest: {}",
@@ -432,7 +432,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         assert!(
             graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
     }
 
@@ -440,13 +440,13 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
         !graph.has_nodes(),
         smallest == 0,
         "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
-        graph.textual_report(false)
+        graph.textual_report(None)
     );
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
-        let src_string = graph.get_unchecked_node_name_from_node_id(edge.0);
-        let dst_string = graph.get_unchecked_node_name_from_node_id(edge.1);
+        let src_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.0)};
+        let dst_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.1)};
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
@@ -457,7 +457,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 src_string,
                 dst_string,
                 edge_type,
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
         } else {
             assert!(
@@ -465,7 +465,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
         }
         assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));
@@ -497,7 +497,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                     &dst_string,
                     graph.get_node_type_name_from_node_name(&dst_string)?
                 ),
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
         }
         assert_eq!(
@@ -573,7 +573,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
 
     // Checking that the connected components are a dense range.
     let (_, connected_components, total_connected_components, _, _) =
-        graph.random_spanning_arborescence_kruskal(42, &None, verbose);
+        graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);
     let actual_components_number = connected_components.iter().unique().count() as NodeT;
     assert_eq!(
         actual_components_number,
@@ -589,7 +589,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
             total_connected_components as usize - 1,
             "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
             connected_components,
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
     }
     if !graph.is_directed() {
@@ -611,14 +611,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: bool) -> Result<(), Str
                 total_connected_components as usize - 1,
                 "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
                 connected_components,
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
         }
     }
     Ok(())
 }
 
-pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let node_degree_centralities = graph.get_degree_centrality()?;
     assert_eq!(
         node_degree_centralities.len(),
@@ -631,7 +631,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
             .all(|value| value <= 1.0),
         "All node degrees centralities are expected to be within 0 and 1."
     );
-    let node_betweenness_centralities = graph.get_betweenness_centrality(None, Some(verbose));
+    let node_betweenness_centralities = graph.get_betweenness_centrality(None,verbose);
     assert_eq!(
         node_betweenness_centralities.len(),
         graph.get_nodes_number() as usize
@@ -640,14 +640,14 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: bool) -> Result<(), St
         .into_iter()
         .enumerate()
         .for_each(|(node_id, value)| {
-            if graph.is_unchecked_singleton_from_node_id(node_id as NodeT) {
+            if unsafe{graph.is_unchecked_singleton_from_node_id(node_id as NodeT)} {
                 assert!(value.abs() < f64::EPSILON);
             }
         });
     Ok(())
 }
 
-pub fn test_vertex_cover(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     let vertex_cover = graph.approximated_vertex_cover_set();
     graph
         .par_iter_edge_ids(true)
@@ -666,7 +666,7 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: bool) -> Result<(), String
     Ok(())
 }
 
-pub fn test_polygons(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
             .get_number_of_triangles_per_node(Some(false))
@@ -678,7 +678,7 @@ pub fn test_polygons(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     assert_eq!(walker.clone(), walker);
@@ -689,7 +689,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
         warn!("Executing random walks tests.");
         for mode in 0..3 {
             if mode == 1 {
-                graph.enable(false, true, true, None)?;
+                graph.enable(None, None, None, None)?;
                 if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
@@ -706,7 +706,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
                 }
             }
             if mode == 2 {
-                graph.enable(false, false, false, Some(0.05))?;
+                graph.enable(Some(false), Some(false), Some(false), Some(0.05))?;
                 assert!(
                     graph.cached_destinations.is_some(),
                     "Cached destinations are not None when cache is enabled."
@@ -778,18 +778,18 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: bool) -> Result<(), String
     Ok(())
 }
 
-pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     if !graph.has_edge_types() {
         assert!(graph
-            .connected_holdout(4, 0.8, Some(vec![None]), false, verbose)
+            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
         let (train, test) =
-            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+            graph.random_holdout(0.6, None, Some(*include_all_edge_types), None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
-            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
+            graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
         let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -811,7 +811,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
                 ),
                 min_comp,
                 graph.get_nodes_number(),
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
             assert_eq!(max_comp, graph.get_nodes_number());
             assert_eq!(min_comp, test.get_nodes_number());
@@ -822,7 +822,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
                 max_comp + min_comp, graph.get_nodes_number(),
                 "We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\nThe graph report is:\n {:?}",
                 min_comp, max_comp, graph.get_nodes_number(),
-                graph.textual_report(false)
+                graph.textual_report(None)
             );
             assert_eq!(max_comp + min_comp, test.get_nodes_number());
         }
@@ -831,9 +831,9 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String
     Ok(())
 }
 
-pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.drop_selfloops(Some(verbose));
+        let without_selfloops = graph.drop_selfloops(verbose);
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -845,8 +845,8 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The edge node ids of the original graph are {:?}\n",
                 "The edge node ids of the filtered graph are {:?}\n"
             ),
-            graph.textual_report(false),
-            without_selfloops.textual_report(false),
+            graph.textual_report(None),
+            without_selfloops.textual_report(None),
             graph.get_edge_node_ids(true),
             without_selfloops.get_edge_node_ids(true),
         );
@@ -859,7 +859,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The error is:\n{:?}\nand the graph report is:\n{:?}"
             ),
             single_component,
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
         let single_component_number = single_component
             .unwrap()
@@ -873,7 +873,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "with {} components, which is not one.\nThe report of the graph is:{:?}\n"
             ),
             single_component_number,
-            graph.textual_report(false)
+            graph.textual_report(None)
         );
 
         let test = graph.remove_components(
@@ -884,7 +884,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             None,
             verbose,
         )?;
-        let without_selfloops = test.drop_selfloops(Some(verbose));
+        let without_selfloops = test.drop_selfloops(verbose);
         assert_eq!(
             without_selfloops.get_connected_components_number(verbose).0,
             1,
@@ -894,9 +894,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
                 "The report of the graph with only one component is {:?}\n",
                 "The report of the graph without selfloops is {:?}\n",
             ),
-            graph.textual_report(false),
-            test.textual_report(false),
-            without_selfloops.textual_report(false)
+            graph.textual_report(None),
+            test.textual_report(None),
+            without_selfloops.textual_report(None)
         );
         if let Ok(node_type_name) = graph.get_node_type_name_from_node_type_id(0) {
             assert!(graph
@@ -916,7 +916,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
-                without_unknowns, graph.textual_report(false)
+                without_unknowns, graph.textual_report(None)
             );
         }
         if let Ok(edge_type_name) = graph.get_edge_type_name_from_edge_type_id(0) {
@@ -948,10 +948,10 @@ pub fn test_remove_components(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
-pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     let k = 3;
     for i in 0..k {
-        let (train, test) = graph.kfold(k, i, None, 42, false)?;
+        let (train, test) = graph.kfold(k, i, None, None, None)?;
         assert!(
             test.get_edges_number() <= (graph.get_edges_number() / k) + 1,
             concat!(
@@ -964,9 +964,9 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
                 "The holdout index is {}.\n",
             ),
             k,
-            graph.textual_report(false),
-            train.textual_report(false),
-            test.textual_report(false),
+            graph.textual_report(None),
+            train.textual_report(None),
+            test.textual_report(None),
             (graph.get_edges_number() / k) + 1,
             test.get_edges_number(),
             i
@@ -976,7 +976,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
 
     if let Ok(edge_t) = graph.get_edge_type_name_from_edge_type_id(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), 1337, false)?;
+            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
@@ -984,13 +984,13 @@ pub fn test_kfold(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     for only_from_same_component in &[true, false] {
         let negatives = graph.sample_negatives(
-            4,
             graph.get_edges_number(),
             None,
-            *only_from_same_component,
+            None,
+            Some(*only_from_same_component),
             verbose,
         )?;
         assert_eq!(
@@ -1007,7 +1007,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
         }
         // Testing holdouts executed on negative edges.
         let (neg_train, neg_test) =
-            negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+            negatives.random_holdout(0.8, None, None, None, None, verbose)?;
 
         neg_test.get_trap_nodes_number();
 
@@ -1017,18 +1017,18 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: bool) -> Resul
     Ok(())
 }
 
-pub fn test_subgraph_generation(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let expected_nodes = graph.get_connected_nodes_number() / 10;
-    let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
+    let subgraph = graph.random_subgraph(expected_nodes, None , verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
 }
 
-pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
-        .set_verbose(Some(verbose))
+        .set_verbose(verbose)
         .set_separator(Some("\t"))
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
@@ -1040,7 +1040,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 
     let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
-        .set_verbose(Some(verbose))
+        .set_verbose(verbose)
         .set_separator(Some("\t"))
         .set_header(Some(true))
         .set_edge_types_column(Some("edge_types"))
@@ -1058,7 +1058,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
         let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
@@ -1081,19 +1081,32 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: bool) -> Result<(
     }
     if graph.has_edges() {
         graph
-            .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
-            .unwrap()
+            .link_prediction_degrees(
+                0, 
+                256, 
+                true, 
+                10.0, 
+                false, 
+                10, 
+                &None
+            ).unwrap()
             .collect::<Vec<_>>();
         graph
-            .link_prediction_ids(0, 256, 10.0, false, 10, &None)
-            .unwrap()
+            .link_prediction_ids(
+                0, 
+                256, 
+                10.0, 
+                false, 
+                10, 
+                &None
+            ).unwrap()
             .collect::<Vec<_>>();
     }
 
     Ok(())
 }
 
-pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(), String> {
+pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     let _clique = graph.get_clique_edge_names(
         None,
         None,
@@ -1115,13 +1128,13 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
-                [graph.get_unchecked_node_name_from_node_id(0)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(0)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
             ),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1130,10 +1143,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edges(
-            graph.get_unchecked_node_name_from_node_id(0),
+            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
             Some(false),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1141,10 +1154,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            graph.get_unchecked_node_name_from_node_id(0),
+            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
             Some(false),
             Some(
-                [graph.get_unchecked_node_name_from_node_id(1)]
+                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1155,19 +1168,19 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: bool) -> Result<(),
     Ok(())
 }
 
-pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     for use_stratification in [true, false] {
         if graph.get_known_node_types_number()? < 2
             || (use_stratification
                 && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
             assert!(graph
-                .node_label_holdout(0.8, use_stratification, 42)
+                .node_label_holdout(0.8, Some(use_stratification), Some(42))
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, use_stratification, 42)?;
+        let (train, test) = graph.node_label_holdout(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         assert!(!test
@@ -1199,18 +1212,18 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
     Ok(())
 }
 
-pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.has_singleton_edge_types()?
             || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number()? < 2
             || !graph.has_edge_types()
         {
             assert!(graph
-                .edge_label_holdout(0.8, *use_stratification, 42)
+                .edge_label_holdout(0.8, Some(*use_stratification), None)
                 .is_err());
             continue;
         }
-        let (train, test) = graph.edge_label_holdout(0.8, *use_stratification, 42)?;
+        let (train, test) = graph.edge_label_holdout(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(!test
@@ -1232,7 +1245,7 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: bool) -> Result<(), S
     Ok(())
 }
 
-pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
+pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
     let unfiltered = graph.filter_from_ids(
         None,
         None,
@@ -1248,11 +1261,11 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
         None,
         None,
         None,
-        false,
-        false,
-        false,
-        false,
-        Some(verbose),
+        None,
+        None,
+        None,
+        None,
+        verbose,
     );
     assert_eq!(&unfiltered, graph);
     assert!(graph
@@ -1269,11 +1282,11 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
-            Some(verbose),
+            None,
+            None,
+            None,
+            None,
+            verbose,
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
@@ -1291,11 +1304,11 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
-            Some(verbose),
+            None,
+            None,
+            None,
+            None,
+            verbose,
         );
         assert!(graph_without_given_name_result.is_ok());
         let graph_without_given_id = graph_without_given_name_result.unwrap();
@@ -1319,11 +1332,11 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
-            Some(verbose),
+            None,
+            None,
+            None,
+            None,
+            verbose,
         );
         assert!(graph_with_given_name_result.is_ok());
         let graph_with_given_node_name = graph_with_given_name_result.unwrap();
@@ -1354,11 +1367,11 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
             None,
             None,
             None,
-            false,
-            false,
-            false,
-            false,
-            Some(verbose),
+            None,
+            None,
+            None,
+            None,
+            verbose,
         );
         assert!(graph_without_given_node_type_name_result.is_ok());
         let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
@@ -1372,8 +1385,8 @@ pub fn test_graph_filter(graph: &Graph, verbose: bool) -> Result<(), String> {
     Ok(())
 }
 
-pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String> {
-    let without_edge_types = graph.remove_edge_types(Some(verbose))?;
+pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    let without_edge_types = graph.remove_edge_types(verbose)?;
     validate_vocabularies(&without_edge_types);
     assert!(!without_edge_types.has_edge_types());
     assert_eq!(
@@ -1390,8 +1403,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
                 "The report of the original graph is \n{:?}\n",
                 "The report of the graph without edge types is \n{:?}",
             ),
-            graph.textual_report(false),
-            without_edge_types.textual_report(false)
+            graph.textual_report(None),
+            without_edge_types.textual_report(None)
         );
         assert_eq!(
             without_edge_types.get_unique_selfloop_number(),
@@ -1416,8 +1429,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
             "\nThe report of the original graph is {:?}.",
             "\nThe report of the filtered graph is {:?}."
         ),
-        graph.textual_report(false),
-        without_node_types.textual_report(false)
+        graph.textual_report(None),
+        without_node_types.textual_report(None)
     );
     assert_eq!(without_node_types.has_selfloops(), graph.has_selfloops());
     assert_eq!(without_node_types.nodes, graph.nodes);
@@ -1431,9 +1444,9 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: bool) -> Result<(), String
     Ok(())
 }
 
-pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_clone_and_setters(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", Some(verbose))?;
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", verbose)?;
     assert!(!clone.is_multigraph());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
@@ -1444,7 +1457,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), St
     );
     if !graph.is_multigraph() {
         assert_eq!(
-            clone.get_unchecked_edge_count_from_edge_type_id(Some(0)),
+            unsafe{clone.get_unchecked_edge_count_from_edge_type_id(Some(0))},
             graph.get_directed_edges_number(),
             "Number of edges with the unique edge type does not match number of edges in the graph."
         );
@@ -1464,7 +1477,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: bool) -> Result<(), St
     Ok(())
 }
 
-pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     assert!(
         graph.are_nodes_remappable(&graph),
         "Graph always should be remappable to itself."
@@ -1476,14 +1489,13 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: bool) -> Result<(), Stri
     Ok(())
 }
 
-pub fn test_graph_diameter(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // TODO! update this when we will support the graph diameter on directed graphs
     if graph.is_directed() {
         return Ok(());
     }
     let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
 
-    let verbose = Some(verbose);
     match n_of_components {
         0 => {
             // on an empty graph this should always fail
@@ -1535,7 +1547,7 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: bool) -> Result<(), Strin
 }
 
 /// Executes near-complete test of all functions for the given graph.
-fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     warn!("Starting default test suite.");
     let _ = test_graph_properties(graph, verbose);
 
@@ -1606,11 +1618,24 @@ fn _default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
 }
 
 /// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
+pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     warn!("Starting default test suite.");
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite with speedups enabled.");
-    graph.enable(true, true, true, None)?;
+    graph.enable(Some(true), Some(true), Some(true), None)?;
     let _ = _default_test_suite(graph, verbose);
+    warn!("Starting default test suite on transformed graphs.");
+    for mut transformed_graph in [
+        graph.get_unweighted_laplacian_transformed_graph(verbose),
+        graph.get_unweighted_symmetric_normalized_transformed_graph(verbose)?,
+        graph.get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
+        graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose),
+        graph.get_weighted_laplacian_transformed_graph(verbose)?,
+        graph.get_weighted_symmetric_normalized_transformed_graph(verbose)?,
+        graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
+        graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,
+    ] {
+        let _ = _default_test_suite(&mut transformed_graph, verbose);
+    }
     Ok(())
 }

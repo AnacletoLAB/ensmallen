@@ -343,7 +343,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_singleton_node_types(&mut self) -> Result<Graph, String> {
+    pub fn remove_singleton_node_types(&self) -> Result<Graph, String> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_node_types()?;
         Ok(graph)
@@ -415,7 +415,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_singleton_edge_types(&mut self) -> Result<Graph, String> {
+    pub fn remove_singleton_edge_types(&self) -> Result<Graph, String> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_edge_types()?;
         Ok(graph)

@@ -4,7 +4,7 @@ use super::*;
 /// The naming convention we follow is:
 /// * `/has_(.+)/`
 /// * `/is_(.+)/`
-/// 
+///
 /// The naming convention for unchecked methods follows:
 /// * `/has_unchecked_(.+)/`
 /// * `/is_unchecked_(.+)/`.
@@ -39,7 +39,7 @@ impl Graph {
         self.get_edges_number() > 0
     }
 
-    // Return whether the graph has trap nodes.
+    /// Return whether the graph has trap nodes.
     ///
     /// # Example
     /// ```rust
@@ -81,6 +81,23 @@ impl Graph {
     ///
     pub fn has_edge_weights(&self) -> bool {
         self.weights.is_some()
+    }
+
+    /// Returns boolean representing whether graph has negative weights.
+    ///
+    /// # Example
+    /// ```rust
+    /// let weights_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(weights_string_ppi.has_edge_weights());
+    /// let unweights_string_ppi = graph::test_utilities::load_ppi(true, true, false, true, false, false);
+    /// assert!(!unweights_string_ppi.has_edge_weights());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain weights.
+    pub fn has_negative_edge_weights(&self) -> Result<bool, String> {
+        self.get_min_edge_weight()
+            .map(|min_edge_weight| min_edge_weight < 0.0)
     }
 
     /// Returns boolean representing whether graph has edge types.
@@ -147,7 +164,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show the loading bar while computing the connected components, if necessary.
-    pub fn is_connected(&self, verbose: bool) -> bool {
+    pub fn is_connected(&self, verbose: Option<bool>) -> bool {
         self.get_nodes_number() <= 1
             || !self.has_singleton_nodes()
                 && !self.has_singleton_nodes_with_selfloops()

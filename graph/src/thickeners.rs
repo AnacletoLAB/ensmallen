@@ -102,7 +102,7 @@ impl Graph {
         // compute the new edges to add
         let new_edges = self
             .par_iter_node_ids()
-            .zip(self.par_iter_node_degrees())
+            .zip(self.par_iter_unweighted_node_degrees())
             .progress_with(pb)
             .map(|(source_node_id, node_degree)| {
                 if node_degree <= max_degree {

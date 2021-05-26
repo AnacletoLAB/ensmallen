@@ -4,25 +4,23 @@ use indicatif::ParallelProgressIterator;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
-use roaring::RoaringBitmap;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 
 impl Graph {
-    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
-    pub fn get_unchecked_breath_first_search(
+    pub unsafe fn get_unchecked_breath_first_search(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
-        mut maybe_dst_node_ids: Option<RoaringBitmap>,
+        mut maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
     ) -> ShortestPathsResultBFS {
@@ -50,7 +48,7 @@ impl Graph {
             None
         } else {
             let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
-            unsafe { *visited.get_unchecked_mut(src_node_id as usize) = true };
+            *visited.get_unchecked_mut(src_node_id as usize) = true;
             Some(visited)
         };
 
@@ -109,7 +107,7 @@ impl Graph {
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(node_id);
+                dst_node_ids.remove(node_id as usize);
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.
@@ -135,13 +133,14 @@ impl Graph {
         )
     }
 
+    #[no_numpy_binding]
     /// Returns vector of k minimum paths distances and vector of nodes predecessors.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
-    pub fn get_unchecked_unweighted_k_shortest_path(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -190,7 +189,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
-    pub fn get_unchecked_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
+    pub unsafe fn get_unchecked_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search(node_id, None, None, None, None)
             .2
     }
@@ -202,7 +201,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
-    pub fn get_unchecked_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> f64 {
         self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, None)
             .2
     }
@@ -217,7 +216,7 @@ impl Graph {
         node_id: NodeT,
     ) -> Result<NodeT, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
+            .map(|node_id| unsafe{self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)})
     }
 
     /// Returns weighted eccentricity of the given node ID.
@@ -226,9 +225,9 @@ impl Graph {
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
     pub fn get_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<f64, String> {
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         self.validate_node_id(node_id)
-            .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
+            .map(|node_id| unsafe{self.get_unchecked_weighted_eccentricity_from_node_id(node_id)})
     }
 
     /// Returns unweighted eccentricity of the given node name.
@@ -241,7 +240,7 @@ impl Graph {
         node_name: &str,
     ) -> Result<NodeT, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| self.get_unchecked_unweighted_eccentricity_from_node_id(node_id))
+            .map(|node_id| unsafe{self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)})
     }
 
     /// Returns weighted eccentricity of the given node name.
@@ -251,22 +250,21 @@ impl Graph {
     ///
     pub fn get_weighted_eccentricity_from_node_name(&self, node_name: &str) -> Result<f64, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| self.get_unchecked_weighted_eccentricity_from_node_id(node_id))
+            .map(|node_id| unsafe{self.get_unchecked_weighted_eccentricity_from_node_id(node_id)})
     }
 
-    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
-    pub fn get_unchecked_dijkstra_from_node_ids(
+    pub unsafe fn get_unchecked_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
-        mut maybe_dst_node_ids: Option<RoaringBitmap>,
+        mut maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
@@ -279,14 +277,8 @@ impl Graph {
 
         if self.is_unchecked_disconnected_from_node_id(src_node_id) {
             let mut distances = vec![f64::INFINITY; nodes_number];
-            distances[src_node_id as usize] = 0.0; 
-            return (
-                distances,
-                parents,
-                f64::INFINITY,
-                f64::INFINITY,
-                0.0,
-            );
+            distances[src_node_id as usize] = 0.0;
+            return (distances, parents, f64::INFINITY, f64::INFINITY, 0.0);
         }
 
         let mut nodes_to_explore: DijkstraQueue =
@@ -310,7 +302,7 @@ impl Graph {
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(closest_node_id as NodeT);
+                dst_node_ids.remove(closest_node_id);
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.
@@ -339,13 +331,12 @@ impl Graph {
         )
     }
 
-    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Node ID root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     ///
@@ -356,7 +347,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<RoaringBitmap>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
     ) -> Result<ShortestPathsResultBFS, String> {
@@ -367,27 +358,27 @@ impl Graph {
             self.validate_node_id(*dst)?;
         }
         // If given, check if the given destination node IDs exist in the graph
-        if let Some(dst_node_ids) = &maybe_dst_node_ids {
-            for dst_node_id in dst_node_ids.iter() {
-                self.validate_node_id(dst_node_id)?;
+        let maybe_dst_node_ids = maybe_dst_node_ids.map_or(
+            Ok::<_, String>(None),
+            |node_ids| {
+                Ok(Some(self.validate_node_ids(node_ids)?))
             }
-        }
-        Ok(self.get_unchecked_breath_first_search(
+        )?;
+        Ok(unsafe{self.get_unchecked_breath_first_search(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
             compute_distances,
             compute_predecessors,
-        ))
+        )})
     }
 
-    #[no_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Node ID root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// * `maybe_dst_node_ids`: Option<RoaringBitmap> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     ///
     /// # Raises
@@ -398,28 +389,30 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<RoaringBitmap>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
     ) -> Result<ShortestPathsDjkstra, String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
-        self.must_have_edge_weights()?;
+        self.must_have_positive_edge_weights()?;
         // If given, check if the given destination node ID exists in the graph
         if let Some(dst) = &maybe_dst_node_id {
             self.validate_node_id(*dst)?;
         }
-        // If given, check if the given destination node IDs exist in the graph
-        if let Some(dst_node_ids) = &maybe_dst_node_ids {
-            for dst_node_id in dst_node_ids.iter() {
-                self.validate_node_id(dst_node_id)?;
+
+        let maybe_dst_node_ids = maybe_dst_node_ids.map_or(
+            Ok::<_, String>(None),
+            |node_ids| {
+                Ok(Some(self.validate_node_ids(node_ids)?))
             }
-        }
-        Ok(self.get_unchecked_dijkstra_from_node_ids(
+        )?;
+
+        Ok(unsafe{self.get_unchecked_dijkstra_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
             compute_predecessors,
-        ))
+        )})
     }
 
     /// Returns diameter of an UNDIRECTED and UNWEIGHTED graph.
@@ -431,13 +424,13 @@ impl Graph {
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
             return f64::INFINITY;
         }
-        let (distances, _, mut root_eccentricity, _, _) = self.get_unchecked_breath_first_search(
+        let (distances, _, mut root_eccentricity, _, _) = unsafe{self.get_unchecked_breath_first_search(
             most_central_node_id,
             None,
             None,
             Some(true),
             Some(false),
-        );
+        )};
         assert!(
             root_eccentricity != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
@@ -454,7 +447,7 @@ impl Graph {
                 .par_iter()
                 .enumerate()
                 .filter(|(_, &distance)| distance == root_eccentricity)
-                .map(|(node_id, _)| {
+                .map(|(node_id, _)| unsafe{
                     self.get_unchecked_unweighted_eccentricity_from_node_id(node_id as NodeT)
                 })
                 .max()
@@ -488,9 +481,9 @@ impl Graph {
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
             return f64::INFINITY;
         }
-        let (distances, _, mut root_eccentricity, _, _) = self
-            .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false));
-        
+        let (distances, _, mut root_eccentricity, _, _) = unsafe{ self
+            .get_unchecked_dijkstra_from_node_ids(most_central_node_id, None, None, Some(false)) };
+
         assert!(
             root_eccentricity != f64::INFINITY,
             "The central node eccentricity cannot be infinite!"
@@ -506,7 +499,7 @@ impl Graph {
                 .par_iter()
                 .enumerate()
                 .filter(|(_, &distance)| (distance - root_eccentricity).abs() < f64::EPSILON)
-                .map(|(node_id, _)| {
+                .map(|(node_id, _)| unsafe{
                     Some(self.get_unchecked_weighted_eccentricity_from_node_id(node_id as NodeT))
                 })
                 .reduce(
@@ -559,11 +552,11 @@ impl Graph {
         if !self.has_edges() {
             return Ok(f64::INFINITY);
         }
-        
+
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
-        if !ignore_infinity && !self.is_connected(verbose) {
+        if !ignore_infinity && !self.is_connected(Some(verbose)) {
             return Ok(f64::INFINITY);
         }
 
@@ -577,7 +570,7 @@ impl Graph {
             Ok(self
                 .par_iter_node_ids()
                 .progress_with(pb)
-                .map(|node_id| {
+                .map(|node_id| unsafe{
                     self.get_unchecked_breath_first_search(
                         node_id,
                         None,
@@ -610,15 +603,15 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f64, String> {
         self.must_have_nodes()?;
-        self.must_have_edge_weights()?;
-        
+        self.must_have_positive_edge_weights()?;
+
         if !self.has_edges() {
             return Ok(f64::INFINITY);
         }
         let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 
-        if !ignore_infinity && !self.is_connected(verbose) {
+        if !ignore_infinity && !self.is_connected(Some(verbose)) {
             return Ok(f64::INFINITY);
         }
 
@@ -631,7 +624,7 @@ impl Graph {
             Ok(self
                 .par_iter_node_ids()
                 .progress_with(pb)
-                .map(|node_id| {
+                .map(|node_id| unsafe {
                     self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
                         .2
                 })
@@ -663,21 +656,23 @@ impl Graph {
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
     ) -> Result<ShortestPathsResultBFS, String> {
-        Ok(self.get_unchecked_breath_first_search(
+        Ok(unsafe{ self.get_unchecked_breath_first_search(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                 Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
             })?,
             maybe_dst_node_names.map_or(Ok::<_, String>(None), |dst_node_names| {
-                let mut bitmap = RoaringBitmap::new();
-                for node_name in dst_node_names.iter() {
-                    bitmap.push(self.get_node_id_from_node_name(node_name)?);
-                }
-                Ok(Some(bitmap))
+                Ok(Some(
+                    dst_node_names.into_iter()
+                    .map(|node_name| 
+                        self.get_node_id_from_node_name(node_name)
+                    )
+                    .collect::<Result<_, _>>()?
+                ))
             })?,
             compute_distances,
             compute_predecessors,
-        ))
+        )})
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
@@ -705,11 +700,13 @@ impl Graph {
                 Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
             })?,
             maybe_dst_node_names.map_or(Ok::<_, String>(None), |dst_node_names| {
-                let mut bitmap = RoaringBitmap::new();
-                for node_name in dst_node_names.iter() {
-                    bitmap.push(self.get_node_id_from_node_name(node_name)?);
-                }
-                Ok(Some(bitmap))
+                Ok(Some(
+                    dst_node_names.into_iter()
+                    .map(|node_name| 
+                        self.get_node_id_from_node_name(node_name)
+                    )
+                    .collect::<Result<_, _>>()?
+                ))
             })?,
             compute_predecessors,
         )

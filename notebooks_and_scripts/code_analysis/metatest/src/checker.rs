@@ -64,6 +64,8 @@ impl Checker {
 
         // iters
         // if iter_X exits then par_iter_X must exists (can be disabled with #[no_par_iter])
+        // se eiste iter_x deve esister get_x unless tag
+        // se eiste par_iter_x deve esistere get_x (con priorita' rispetto ad iter_x) unless tag
 
         // nei bindings verbose deve essere sempre un Option<bool> perche'
         // vogliamo i default nel metodo rust
@@ -73,6 +75,19 @@ impl Checker {
         // if no attr -> deve esistere il binding
         // if deve essere generato il binding, parametri e ritorno devono
         // avere tipi "semplici"
+
+        // se il tipo e' una tupla, ci deve essere la sezione Tuple Content che
+        // descrive cosa ritorna, e.g. ShortestPathsResultBFS
+        // la desc deve essere una lista che segue una regex e lunga quanto la tupla
+
+        // non possono esserci righe di doc e commenti mischiate bcuz probabbly typo
+
+        // check common parameters, se e' verbose allora il tipod eve essere bool
+        // se e' random_state allora deve essere u64
+        // verbose se presente deve essere l'ultimo argomento
+        
+        // if &mut self ci deve essere inplace nel nome.
+
     }
 
     pub fn display(&self){

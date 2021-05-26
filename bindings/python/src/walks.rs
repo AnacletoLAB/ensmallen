@@ -3,7 +3,7 @@ use graph::NodeT;
 use numpy::PyArray2;
 use rayon::iter::IndexedParallelIterator;
 use rayon::prelude::*;
-use types::ThreadSafe;
+use types::ThreadDataRaceAware;
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -79,7 +79,7 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pe!(self.graph.iter_random_walks(quantity, &parameters))?;
-        let array = ThreadSafe {
+        let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
                 [
@@ -168,7 +168,7 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pe!(self.graph.iter_complete_walks(&parameters))?;
-        let array = ThreadSafe {
+        let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
                 [

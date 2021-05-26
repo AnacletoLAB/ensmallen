@@ -3,7 +3,7 @@ use super::*;
 use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
-use std::collections::HashMap as DefaultHashMap;
+use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
 /// # Human readable report of the properties of the graph
@@ -12,25 +12,15 @@ impl Graph {
     ///
     /// The report includes a few useful metrics like:
     ///
-    /// * degrees_median: the median degree of the nodes.
-    /// * degrees_mean: the mean degree of the nodes.
-    /// * degrees_mode: the mode degree of the nodes.
-    /// * min_degree: the max degree of the nodes.
-    /// * max_degree: the min degree of the nodes.
-    /// * nodes_number: the number of nodes in the graph.
-    /// * edges_number: the number of edges in the graph.
-    /// * unique_node_types_number: the number of different node types in the graph.
-    /// * unique_edge_types_number: the number of different edge types in the graph.
-    /// * traps_rate: probability to end up in a trap when starting into any given node.
-    /// * selfloops_rate: pecentage of edges that are selfloops.
-    /// * bidirectional_rate: rate of edges that are bidirectional.
+    /// TODO!: update this doc with all the returned metrics
     ///
+    /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.report();
     /// ```
-    pub fn report(&self) -> DefaultHashMap<&str, String> {
-        let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
+    pub fn report(&self) -> HashMap<&str, String> {
+        let mut report: HashMap<&str, String> = HashMap::new();
 
         if self.has_nodes() {
             report.insert("density", self.get_density().unwrap().to_string());
@@ -130,8 +120,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - graph to create overlap report with.
-    /// * `verbose`: bool - Whether to shor the loading bars.
-    pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
+    /// * `verbose`: Option<bool> - Whether to shor the loading bars.
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -265,8 +255,8 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = self.get_unchecked_node_name_from_node_id(*node_id),
-                        node_degree = self.get_unchecked_node_degree_from_node_id(*node_id)
+                        node_name = unsafe{self.get_unchecked_node_name_from_node_id(*node_id)},
+                        node_degree = unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)}
                     )
                 })
                 .collect::<Vec<String>>()
@@ -284,10 +274,10 @@ impl Graph {
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
-        let node_name = self.get_unchecked_node_name_from_node_id(node_id);
+        let node_name = unsafe{self.get_unchecked_node_name_from_node_id(node_id)};
         //partial_reports.push(format!("## Report for node {}\n", node_name));
 
-        partial_reports.push(if self.is_unchecked_singleton_from_node_id(node_id) {
+        partial_reports.push(if unsafe{self.is_unchecked_singleton_from_node_id(node_id)} {
             match self.get_singleton_nodes_number() {
                 1 => format!(
                     concat!("The given node {} is the only singleton node of the graph."),
@@ -315,7 +305,7 @@ impl Graph {
                     )
                 }
             }
-        } else if self.is_unchecked_trap_node_from_node_id(node_id) {
+        } else if unsafe{self.is_unchecked_trap_node_from_node_id(node_id)} {
             match self.get_trap_nodes_number() {
                 1 => format!(
                     concat!("The given node {} is the only trap node in the graph."),
@@ -332,7 +322,7 @@ impl Graph {
             format!(
                 concat!("The given node {} has degree {}"),
                 node_name,
-                self.get_unchecked_node_degree_from_node_id(node_id)
+                unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)}
             )
         });
 
@@ -791,9 +781,9 @@ impl Graph {
     /// Return rendered textual report of the graph.
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show loading bar.
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
     /// TODO: UPDATE THIS METHOD!
-    pub fn textual_report(&self, verbose: bool) -> Result<String, String> {
+    pub fn textual_report(&self, verbose: Option<bool>) -> Result<String, String> {
         {
             let ptr = self.cached_report.read();
             if let Some(report) = &*ptr {

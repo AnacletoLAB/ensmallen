@@ -29,7 +29,7 @@ fn test_components_size() {
     // THIS IS NOT DETERMINISTIC
     for _ in 0..10_000 {
         let (components, _components_number, smallest, biggest) =
-            g.connected_components(false).unwrap();
+            g.connected_components(None).unwrap();
         assert!(
             biggest >= smallest,
             "smallest: {} biggest: {}",
@@ -49,14 +49,14 @@ fn test_components_size() {
     }
 
     let (components, number_of_components, smallest, biggest) =
-        g.connected_components(false).unwrap();
+        g.connected_components(None).unwrap();
 
     assert_eq!(components, [0, 0, 1, 1, 2, 2].to_vec());
     assert_eq!(number_of_components, 3);
     assert_eq!(smallest, 2); // the size of the smallest component
     assert_eq!(biggest, 2); // the size of the biggest component
 
-    let (number_of_components2, smallest2, biggest2) = g.get_connected_components_number(false);
+    let (number_of_components2, smallest2, biggest2) = g.get_connected_components_number(None);
     assert_eq!(number_of_components, number_of_components2, "There is a difference between the number of components returned by the connected_components method and the connected_components_number.");
     assert_eq!(smallest, smallest2, "There is a difference between the smallest returned by the connected_components method and the connected_components_number.");
     assert_eq!(biggest, biggest2, "There is a difference between the biggest returned by the connected_components method and the connected_components_number.");

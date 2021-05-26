@@ -12,14 +12,7 @@ use std::collections::{HashMap, VecDeque};
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
-#[inline(always)]
-/// Computes val % n using lemires fast method for u32.
-/// https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
-/// This is supposed to be ~5 times faster.
-fn fast_u32_modulo(val: u32, n: u32) -> u32 {
-    ((val as u64 * n as u64) >> 32) as u32
-}
-
+#[manual_binding]
 /// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
@@ -63,6 +56,7 @@ pub fn word2vec<'a>(
     })
 }
 
+#[manual_binding]
 /// Return triple with CSR representation of cooccurrence matrix.
 ///
 /// The first vector has the sources, the second vector the destinations
@@ -78,8 +72,9 @@ pub fn cooccurence_matrix(
     sequences: impl ParallelIterator<Item = Vec<NodeT>>,
     window_size: usize,
     number_of_sequences: usize,
-    verbose: bool,
+    verbose: Option<bool>,
 ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>), String> {
+    let verbose = verbose.unwrap_or(false);
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let mut max_frequency = 0.0;
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
@@ -134,6 +129,7 @@ pub fn cooccurence_matrix(
 
 /// # Preprocessing for ML algorithms on graph.
 impl Graph {
+    #[manual_binding]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -166,6 +162,7 @@ impl Graph {
         ))
     }
 
+    #[manual_binding]
     /// Return triple with CSR representation of cooccurrence matrix.
     ///
     /// The first vector has the sources, the second vector the destinations
@@ -175,13 +172,13 @@ impl Graph {
     ///
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `verbose`: bool - Whether to show the progress bars. The default behaviour is false.
+    /// * `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.
     ///     
     pub fn cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        verbose: bool,
+        verbose: Option<bool>,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a), String> {
         self.must_have_edges()?;
         let walks = self.iter_complete_walks(walks_parameters)?;
@@ -193,6 +190,7 @@ impl Graph {
         )
     }
 
+    #[manual_binding]
     /// Return iterator over neighbours for the given node ID, optionally including given node ID.
     ///
     /// This method is meant to be used to predict node labels using the NoLaN model.
@@ -271,6 +269,7 @@ impl Graph {
         )
     }
 
+    #[manual_binding]
     /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
     ///
     /// This method is meant to be used to predict node labels using the NoLaN model.
@@ -340,6 +339,7 @@ impl Graph {
         }))
     }
 
+    #[manual_binding]
     /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
     ///
     /// # Arguments
@@ -362,9 +362,8 @@ impl Graph {
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
     ) -> Result<impl ParallelIterator<Item = (usize, NodeT, NodeT, bool)> + 'a, String> {
-        // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
-        // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
-        let random_state = idx ^ SEED_XOR as u64;
+        let random_state = splitmix64(idx);
+        assert_ne!(random_state, 0);
 
         if negative_samples < 0.0 || !negative_samples.is_finite() {
             return Err("Negative sample must be a posive real value.".to_string());
@@ -390,14 +389,14 @@ impl Graph {
             .map(move |i| {
                 let mut sampled = random_values[i];
                 if i < positive_number{
-                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(sampled % edges_number);
+                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(sampled % edges_number)};
                     (indices[i], src, dst, true)
                 } else {
                     for _ in 0..maximal_sampling_attempts {
                         // split the random u64 into 2 u32 and mod them to have
                         // usable nodes (this is slightly biased towards low values)
-                        let src = fast_u32_modulo((sampled & 0xffffffff) as u32, nodes_number);
-                        let dst = fast_u32_modulo((sampled >> 32) as u32, nodes_number);
+                        let src = (sampled & 0xffffffff) as u32 % nodes_number;
+                        let dst = (sampled >> 32) as u32 % nodes_number;
 
                         if avoid_false_negatives && self.has_edge_from_node_ids(src, dst) {
                             sampled = xorshift(sampled);
@@ -430,6 +429,7 @@ impl Graph {
             }))
     }
 
+    #[manual_binding]
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
     /// This method is just for setting the lowerbound on the simplest possible model.
     ///
@@ -469,16 +469,17 @@ impl Graph {
             false => 1.0,
         };
 
-        Ok(iter.map(move |(index, src, dst, label)| {
+        Ok(iter.map(move |(index, src, dst, label)| unsafe {
             (
                 index,
-                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
+                self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
+                self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,
                 label,
             )
         }))
     }
 
+    #[manual_binding]
     /// Returns all available edge prediction metrics for given edges.
     ///
     /// The metrics returned are, in order:
@@ -557,8 +558,14 @@ impl Graph {
         // K1 values are typically between 1.2 and 2.0 in absence of additional
         // tuning of the model.
         let k1 = k1.unwrap_or(1.5);
+        if k1 <= 0.0 {
+            return Err("The value of k1 must be a strictly positive real number.".to_string());
+        }
         // b values are tipically equal to 0.75 in abscence of additional tuning.
         let b = b.unwrap_or(0.75);
+        if k1 <= 0.0 {
+            return Err("The value of b must be a strictly positive real number.".to_string());
+        }
         // By default we only execute 1 iteration
         let iterations = iterations.unwrap_or(1);
         // The number of iterations must be equal or greater than one.
@@ -577,8 +584,8 @@ impl Graph {
         // Loading bar
         let iterations_progress_bar = get_loading_bar(
             verbose.unwrap_or(true) && iterations > 1,
-            "Iterating features propagation",
-            nodes_number,
+            "[Iterating features] propagation",
+            iterations,
         );
         // Execute the propagation
         for _ in (0..iterations).progress_with(iterations_progress_bar) {
@@ -627,28 +634,31 @@ impl Graph {
                     // Iterating over
                     while let Some((current_node_id, distance)) = neighbours_stack.pop_back() {
                         let new_distance = distance + 1;
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
-                            .for_each(|neighbour_node_id| {
-                                if visited[neighbour_node_id as usize] {
-                                    return;
-                                }
-                                unsafe {
-                                    *visited.get_unchecked_mut(neighbour_node_id as usize) = true
-                                };
-                                features[neighbour_node_id as usize]
-                                    .iter()
-                                    .cloned()
-                                    .enumerate()
-                                    .for_each(|(i, feature)| {
-                                        let normalized_feature =
-                                            feature / (new_distance as f64).pow(2);
-                                        document_features_sum += normalized_feature;
-                                        cooccurrences[i] += normalized_feature;
-                                    });
-                                if new_distance <= maximal_distance {
-                                    neighbours_stack.push_front((neighbour_node_id, new_distance));
-                                }
-                            });
+                        unsafe {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                current_node_id,
+                            )
+                        }
+                        .for_each(|neighbour_node_id| {
+                            if visited[neighbour_node_id as usize] {
+                                return;
+                            }
+                            unsafe {
+                                *visited.get_unchecked_mut(neighbour_node_id as usize) = true
+                            };
+                            features[neighbour_node_id as usize]
+                                .iter()
+                                .cloned()
+                                .enumerate()
+                                .for_each(|(i, feature)| {
+                                    let normalized_feature = feature / (new_distance as f64).pow(2);
+                                    document_features_sum += normalized_feature;
+                                    cooccurrences[i] += normalized_feature;
+                                });
+                            if new_distance <= maximal_distance {
+                                neighbours_stack.push_front((neighbour_node_id, new_distance));
+                            }
+                        });
                     }
                     total_document_size
                         .fetch_add(document_features_sum, std::sync::atomic::Ordering::Relaxed);

@@ -33,6 +33,15 @@ impl Parse for GenericValue {
     }
 }
 
+impl PartialEq<&str> for GenericValue {
+    fn eq(&self, other:&&str) -> bool {
+        match self {
+            GenericValue::Type(t) => t == other,
+            _ => false,
+        }
+    }
+}
+
 impl From<GenericValue> for String {
     fn from(x: GenericValue) -> String {
         match x {
@@ -54,6 +63,14 @@ impl From<GenericValue> for String {
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Generics(pub Vec<GenericValue>);
+
+impl std::ops::Index<usize> for Generics {
+    type Output = GenericValue;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        &self.0[index]
+    }
+}
 
 impl CanParse for Generics {
     fn can_parse(mut data: &[u8]) -> bool {

@@ -1431,7 +1431,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadSafe {
+        let thread_safe_parents = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
 
@@ -1640,13 +1640,13 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadSafe {
+        let thread_safe_min_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut min_component_size),
         };
-        let thread_safe_max_component_size = ThreadSafe {
+        let thread_safe_max_component_size = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut max_component_size),
         };
-        let thread_safe_components_number = ThreadSafe {
+        let thread_safe_components_number = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut components_number),
         };
 
@@ -1798,11 +1798,11 @@ impl Graph {
 
 use std::cell::UnsafeCell;
 
-struct ThreadSafe<T> {
+struct ThreadDataRaceAware<T> {
     value: UnsafeCell<T>,
 }
 
-unsafe impl<T> Sync for ThreadSafe<T> {}
+unsafe impl<T> Sync for ThreadDataRaceAware<T> {}
 
 use super::*;
 use indicatif::ProgressIterator;
@@ -2463,8 +2463,8 @@ impl Graph {
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_node_degree_from_node_id(src).unwrap() as f64 / max_degree,
-                self.get_node_degree_from_node_id(dst).unwrap() as f64 / max_degree,
+                self.get_unweighted_node_degree_from_node_id(src).unwrap() as f64 / max_degree,
+                self.get_unweighted_node_degree_from_node_id(dst).unwrap() as f64 / max_degree,
                 label,
             )
         }))
@@ -3578,7 +3578,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.has_singleton_nodes()
-            && self.get_node_degree_from_node_id(node_id)? == 0
+            && self.get_unweighted_node_degree_from_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
                 .as_ref()
@@ -3673,7 +3673,7 @@ impl Graph {
     /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.get_node_degree_from_node_id(node_id)? == 0
+        Ok(self.get_unweighted_node_degree_from_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
                 .as_ref()
@@ -5424,7 +5424,7 @@ impl Graph {
     /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
-            .map(|node_id| (self.get_node_degree_from_node_id(node_id).unwrap(), node_id))
+            .map(|node_id| (self.get_unweighted_node_degree_from_node_id(node_id).unwrap(), node_id))
             .collect();
         nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
@@ -6230,7 +6230,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
-    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The node ID {} is higher than the number of available nodes {}.",
@@ -6458,8 +6458,8 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_node_degree_from_node_id(one).unwrap() as usize
-            * self.get_node_degree_from_node_id(two).unwrap() as usize)
+        Ok(self.get_unweighted_node_degree_from_node_id(one).unwrap() as usize
+            * self.get_unweighted_node_degree_from_node_id(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -6541,7 +6541,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / (self.get_node_degree_from_node_id(*node).unwrap() as f64).ln())
+            .map(|node| 1.0 / (self.get_unweighted_node_degree_from_node_id(*node).unwrap() as f64).ln())
             .sum())
     }
 
@@ -6582,7 +6582,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / self.get_node_degree_from_node_id(*node).unwrap() as f64)
+            .map(|node| 1.0 / self.get_unweighted_node_degree_from_node_id(*node).unwrap() as f64)
             .sum())
     }
 
@@ -6602,7 +6602,7 @@ impl Graph {
                     self.iter_node_neighbours_ids(node)
                         .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_node_degree_from_node_id(node).unwrap() as f64
+                        / self.get_unweighted_node_degree_from_node_id(node).unwrap() as f64
                 } else {
                     1.0
                 }
@@ -7074,7 +7074,7 @@ impl Graph {
                     format!(
                         "{node_name} (degree {node_degree})",
                         node_name = self.get_node_name_from_node_id(*node_id).unwrap(),
-                        node_degree = self.get_node_degree_from_node_id(*node_id).unwrap()
+                        node_degree = self.get_unweighted_node_degree_from_node_id(*node_id).unwrap()
                     )
                 })
                 .collect::<Vec<String>>()
@@ -9621,7 +9621,7 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.iter_node_degrees().collect()
+        self.iter_unweighted_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.
@@ -10747,15 +10747,15 @@ impl Graph {
     }
 
     /// Return iterator on the node degrees of the graph.
-    pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).map(move |node| self.get_node_degree_from_node_id(node).unwrap())
+    pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number()).map(move |node| self.get_unweighted_node_degree_from_node_id(node).unwrap())
     }
 
     /// Return iterator on the node degrees of the graph.
-    pub fn par_iter_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+    pub fn par_iter_unweighted_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
+            .map(move |node| self.get_unweighted_node_degree_from_node_id(node).unwrap())
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
@@ -13264,7 +13264,7 @@ impl Graph {
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
                 let singleton_selfloop =
-                    src == dst && self.get_node_degree_from_node_id(src).unwrap() == 1;
+                    src == dst && self.get_unweighted_node_degree_from_node_id(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));

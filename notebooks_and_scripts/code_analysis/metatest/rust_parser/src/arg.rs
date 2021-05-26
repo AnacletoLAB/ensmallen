@@ -1,7 +1,7 @@
 use super::*;
 use regex::Regex;
 
-pub const ARGUMENT_REGEX: &str = r"\* `([^`]+)`: ([^ ]+) - (.+)";
+pub const ARGUMENT_REGEX: &str = r"\* `([^`]+)`: ([^-\n]+) - (.+)";
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct DocArg {

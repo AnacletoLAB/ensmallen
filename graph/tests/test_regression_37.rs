@@ -33,6 +33,6 @@ fn test_regression_37() -> Result<(), String> {
         false,
     )?;
     graph.remove_inplace_singleton_node_types().unwrap();
-    let _ = graph::test_utilities::default_test_suite(&mut graph, false);
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())
 }

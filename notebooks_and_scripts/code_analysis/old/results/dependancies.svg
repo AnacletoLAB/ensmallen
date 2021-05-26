@@ -1491,15 +1491,15 @@
 <path fill="none" stroke="black" d="M1408.37,-719.97C1473.73,-709.4 1557.63,-695.84 1624.16,-685.08"/>
 <polygon fill="black" stroke="black" points="1624.96,-688.5 1634.27,-683.45 1623.84,-681.59 1624.96,-688.5"/>
 </g>
-<!-- Graph::get_node_degree_from_node_id -->
+<!-- Graph::get_unweighted_node_degree_from_node_id -->
 <g id="node149" class="node">
-<title>Graph::get_node_degree_from_node_id</title>
+<title>Graph::get_unweighted_node_degree_from_node_id</title>
 <polygon fill="none" stroke="black" points="5014,-468 4738,-468 4738,-432 5014,-432 5014,-468"/>
-<text text-anchor="middle" x="4876" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_node_degree_from_node_id</text>
+<text text-anchor="middle" x="4876" y="-446.3" font-family="Times,serif" font-size="14.00">Graph::get_unweighted_node_degree_from_node_id</text>
 </g>
-<!-- Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::link_prediction_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge140" class="edge">
-<title>Graph::link_prediction_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::link_prediction_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M1422.67,-723.78C1438.9,-722.31 1455.35,-720.99 1471,-720 2085.97,-680.95 2242.68,-732.17 2857,-684 2979.56,-674.39 3835.31,-572.02 3954,-540 3994.01,-529.21 3999.65,-513.44 4040,-504 4166.46,-474.41 4523.4,-460.31 4727.66,-454.49"/>
 <polygon fill="black" stroke="black" points="4727.98,-457.98 4737.87,-454.2 4727.78,-450.98 4727.98,-457.98"/>
 </g>
@@ -1689,9 +1689,9 @@
 <path fill="none" stroke="black" d="M17396.04,-1092.76C17510.62,-1084.3 17773.94,-1064.37 17995,-1044 18007.03,-1042.89 18019.56,-1041.69 18032.08,-1040.45"/>
 <polygon fill="black" stroke="black" points="18032.52,-1043.92 18042.12,-1039.45 18031.82,-1036.95 18032.52,-1043.92"/>
 </g>
-<!-- Graph::is_singleton_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::is_singleton_from_node_id&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge165" class="edge">
-<title>Graph::is_singleton_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::is_singleton_from_node_id&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M9201.97,-588.97C9085.66,-585.17 8904.25,-579.56 8747,-576 8237.96,-564.48 6963.75,-578.09 6456,-540 6336.59,-531.04 6308.29,-514.43 6189,-504 5767.78,-467.18 5268.27,-455.9 5024.61,-452.47"/>
 <polygon fill="black" stroke="black" points="5024.31,-448.97 5014.27,-452.33 5024.22,-455.96 5024.31,-448.97"/>
 </g>
@@ -1761,9 +1761,9 @@
 <polygon fill="none" stroke="black" points="4809.5,-540 4564.5,-540 4564.5,-504 4809.5,-504 4809.5,-540"/>
 <text text-anchor="middle" x="4687" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::is_trap_node_from_node_id</text>
 </g>
-<!-- Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge173" class="edge">
-<title>Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::is_trap_node_from_node_id&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4733.23,-503.88C4759.53,-494.14 4792.64,-481.87 4820.36,-471.61"/>
 <polygon fill="black" stroke="black" points="4821.75,-474.82 4829.92,-468.07 4819.32,-468.26 4821.75,-474.82"/>
 </g>
@@ -3711,9 +3711,9 @@
 <path fill="none" stroke="black" d="M13425.88,-951.37C13232.13,-947.93 12761.49,-939.93 12367,-936 9253.78,-904.97 8475.08,-942.97 5362,-900 5272.99,-898.77 2245.93,-841.92 2158,-828 2103,-819.3 2092.81,-801.83 2038,-792 1975.86,-780.86 1514.2,-802.03 1471,-756 1460.05,-744.33 1459.95,-731.57 1471,-720 1501.55,-688.04 2222.32,-690.85 2266,-684 2281.05,-681.64 2781.68,-547.38 2795,-540 2815.64,-528.58 2812.36,-513.39 2834,-504 2934.57,-460.38 3228.77,-518.63 3326,-468 3353.46,-453.7 3386.25,-373.73 3414,-360 3481.4,-326.65 4541.65,-312.45 4931.56,-308.35"/>
 <polygon fill="black" stroke="black" points="4931.81,-311.84 4941.77,-308.24 4931.73,-304.84 4931.81,-311.84"/>
 </g>
-<!-- Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge401" class="edge">
-<title>Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::get_top_k_central_nodes_ids&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M6979.95,-514.95C6899.91,-511.5 6796.71,-507.23 6705,-504 6080.72,-482.04 5336.34,-462.55 5024.71,-454.69"/>
 <polygon fill="black" stroke="black" points="5024.34,-451.18 5014.26,-454.42 5024.17,-458.17 5024.34,-451.18"/>
 </g>
@@ -4179,15 +4179,15 @@
 <path fill="none" stroke="black" d="M13728,-1295.82C13708.63,-1270.26 13676,-1219.93 13676,-1171 13676,-1171 13676,-1171 13676,-1097 13676,-971.91 13822.01,-1039.73 13943,-1008 14024.45,-986.64 14075.42,-1036.95 14129,-972 14209.2,-874.79 14106.32,-786.07 13999,-720 13921.34,-672.19 13878.55,-724.82 13797,-684 13713.21,-642.06 13680.31,-625.96 13643,-540 13611.15,-466.61 13594.94,-423.95 13643,-360 13658.95,-338.77 13726.9,-323.32 13775.33,-314.75"/>
 <polygon fill="black" stroke="black" points="13776.08,-318.17 13785.34,-313.03 13774.89,-311.28 13776.08,-318.17"/>
 </g>
-<!-- Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id -->
+<!-- Graph::get_unweighted_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id -->
 <g id="edge457" class="edge">
-<title>Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id</title>
+<title>Graph::get_unweighted_node_degree_from_node_id&#45;&gt;Graph::get_minmax_edge_ids_by_source_node_id</title>
 <path fill="none" stroke="black" d="M4737.7,-445.61C4588.49,-442.01 4343.92,-436.26 4133,-432 3061,-410.36 1775.55,-389.59 1295.87,-382.01"/>
 <polygon fill="black" stroke="black" points="1295.79,-378.51 1285.73,-381.85 1295.68,-385.51 1295.79,-378.51"/>
 </g>
-<!-- Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::get_unweighted_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number -->
 <g id="edge458" class="edge">
-<title>Graph::get_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::get_unweighted_node_degree_from_node_id&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M5014.03,-446.29C5590.75,-434.96 7801.91,-391.52 8326.77,-381.2"/>
 <polygon fill="black" stroke="black" points="8327.06,-384.7 8336.99,-381 8326.93,-377.7 8327.06,-384.7"/>
 </g>
@@ -4281,9 +4281,9 @@
 <path fill="none" stroke="black" d="M12630.24,-679.49C12640.02,-679.78 12648,-675.28 12648,-666 12648,-660.2 12644.88,-656.27 12640.16,-654.21"/>
 <polygon fill="black" stroke="black" points="12640.69,-650.75 12630.24,-652.51 12639.51,-657.65 12640.69,-650.75"/>
 </g>
-<!-- Graph::degrees_product&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::degrees_product&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge471" class="edge">
-<title>Graph::degrees_product&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::degrees_product&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M5990.4,-505.07C5987.23,-504.68 5984.09,-504.33 5981,-504 5639.91,-468.06 5237,-456.47 5024.49,-452.75"/>
 <polygon fill="black" stroke="black" points="5024.26,-449.25 5014.2,-452.57 5024.14,-456.24 5024.26,-449.25"/>
 </g>
@@ -4317,9 +4317,9 @@
 <path fill="none" stroke="black" d="M4887.72,-1079.82C4840.1,-1058.46 4772,-1017.05 4772,-955 4772,-955 4772,-955 4772,-809 4772,-691.89 4638.6,-721.47 4597,-612 4591.32,-597.04 4589.06,-589.89 4597,-576 4604.46,-562.95 4616.52,-552.8 4629.42,-545.03"/>
 <polygon fill="black" stroke="black" points="4631.39,-547.94 4638.44,-540.03 4628,-541.82 4631.39,-547.94"/>
 </g>
-<!-- Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::adamic_adar_index&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge477" class="edge">
-<title>Graph::adamic_adar_index&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::adamic_adar_index&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4851.84,-1079.93C4828.83,-1072 4805.14,-1060.53 4787,-1044 4669.28,-936.75 4765.23,-810.21 4634,-720 4545.85,-659.4 4237.11,-751.34 4154,-684 4090.17,-632.29 4055.96,-564.06 4112,-504 4153,-460.06 4517.12,-451.75 4727.53,-450.66"/>
 <polygon fill="black" stroke="black" points="4727.76,-454.16 4737.74,-450.61 4727.73,-447.16 4727.76,-454.16"/>
 </g>
@@ -4341,9 +4341,9 @@
 <path fill="none" stroke="black" d="M4686.35,-1079.76C4689.96,-1024.31 4695.7,-846.8 4634,-720 4624.24,-699.93 4611.82,-702.27 4599,-684 4578.56,-654.88 4571.98,-646.67 4564,-612 4560.41,-596.41 4555.21,-589.37 4564,-576 4573.05,-562.25 4586.5,-552.05 4601.23,-544.49"/>
 <polygon fill="black" stroke="black" points="4602.98,-547.53 4610.54,-540.11 4600,-541.2 4602.98,-547.53"/>
 </g>
-<!-- Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::resource_allocation_index&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge481" class="edge">
-<title>Graph::resource_allocation_index&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::resource_allocation_index&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4661.37,-1079.97C4630.96,-1055.89 4582,-1008.75 4582,-955 4582,-955 4582,-955 4582,-881 4582,-809.17 4644.86,-772.64 4596,-720 4522.78,-641.12 4201.36,-745.46 4113,-684 4046.53,-637.77 4027.68,-561.18 4085,-504 4129.36,-459.75 4510.89,-451.63 4727.43,-450.64"/>
 <polygon fill="black" stroke="black" points="4727.63,-454.14 4737.62,-450.59 4727.6,-447.14 4727.63,-454.14"/>
 </g>
@@ -4371,9 +4371,9 @@
 <path fill="none" stroke="black" d="M4500.11,-575.97C4535.37,-565.97 4580.09,-553.3 4616.94,-542.85"/>
 <polygon fill="black" stroke="black" points="4617.96,-546.2 4626.62,-540.11 4616.05,-539.47 4617.96,-546.2"/>
 </g>
-<!-- Graph::traps_rate&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::traps_rate&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge485" class="edge">
-<title>Graph::traps_rate&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::traps_rate&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M4466.69,-575.99C4481.82,-566.01 4500.9,-552.87 4517,-540 4535.43,-525.28 4534.81,-514.36 4556,-504 4608.85,-478.16 4671.86,-464.58 4727.94,-457.56"/>
 <polygon fill="black" stroke="black" points="4728.45,-461.03 4737.96,-456.37 4727.62,-454.08 4728.45,-461.03"/>
 </g>
@@ -4917,9 +4917,9 @@
 <path fill="none" stroke="black" d="M12230.98,-1367.95C12285.07,-1357.03 12348.27,-1342.93 12374,-1332 12400.89,-1320.58 12402.16,-1307.54 12429,-1296 12492.78,-1268.58 12519.25,-1291.72 12581,-1260 12646.01,-1226.61 12646.15,-1195.34 12705,-1152 12778.6,-1097.8 12811.71,-1104.75 12880,-1044 12910.49,-1016.87 12913.54,-1005.4 12937,-972 12969.47,-925.78 12958.96,-898.09 13004,-864 13050.1,-829.11 13080.49,-859.45 13129,-828 13273.09,-734.59 13377.21,-546.82 13412.18,-477.5"/>
 <polygon fill="black" stroke="black" points="13415.5,-478.67 13416.83,-468.16 13409.24,-475.55 13415.5,-478.67"/>
 </g>
-<!-- Graph::format_node_list&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::format_node_list&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge556" class="edge">
-<title>Graph::format_node_list&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::format_node_list&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M12046.61,-1380.74C11957.92,-1376.88 11821.48,-1371.31 11703,-1368 11234.45,-1354.91 10060.32,-1379.48 9594,-1332 8991.12,-1270.61 8855.5,-1153.7 8254,-1080 7431.21,-979.19 7219.5,-1020.97 6392,-972 6259.44,-964.16 5326.33,-937.72 5199,-900 5041.82,-853.43 4976.89,-828.79 4900,-684 4864.33,-616.84 4867.97,-523.46 4872.52,-478.01"/>
 <polygon fill="black" stroke="black" points="4876,-478.37 4873.61,-468.04 4869.04,-477.6 4876,-478.37"/>
 </g>
@@ -6405,15 +6405,15 @@
 <path fill="none" stroke="black" d="M13061.25,-1382.03C12899.81,-1378.61 12626.2,-1372.83 12391,-1368 11426.95,-1348.2 10264.62,-1325.11 9882.53,-1317.54"/>
 <polygon fill="black" stroke="black" points="9882.34,-1314.04 9872.27,-1317.34 9882.2,-1321.04 9882.34,-1314.04"/>
 </g>
-<!-- Graph::iter_node_degrees -->
+<!-- Graph::iter_unweighted_node_degrees -->
 <g id="node290" class="node">
-<title>Graph::iter_node_degrees</title>
+<title>Graph::iter_unweighted_node_degrees</title>
 <polygon fill="none" stroke="black" points="7622,-540 7422,-540 7422,-504 7622,-504 7622,-540"/>
-<text text-anchor="middle" x="7522" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::iter_node_degrees</text>
+<text text-anchor="middle" x="7522" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::iter_unweighted_node_degrees</text>
 </g>
-<!-- Graph::get_node_degrees&#45;&gt;Graph::iter_node_degrees -->
+<!-- Graph::get_node_degrees&#45;&gt;Graph::iter_unweighted_node_degrees -->
 <g id="edge751" class="edge">
-<title>Graph::get_node_degrees&#45;&gt;Graph::iter_node_degrees</title>
+<title>Graph::get_node_degrees&#45;&gt;Graph::iter_unweighted_node_degrees</title>
 <path fill="none" stroke="black" d="M8301.84,-585.91C8167.12,-576.17 7918.77,-557.82 7707,-540 7682.85,-537.97 7656.93,-535.66 7632.37,-533.42"/>
 <polygon fill="black" stroke="black" points="7632.59,-529.93 7622.31,-532.5 7631.95,-536.9 7632.59,-529.93"/>
 </g>
@@ -6579,33 +6579,33 @@
 <path fill="none" stroke="black" d="M1094.72,-431.7C1095.93,-423.98 1097.39,-414.71 1098.74,-406.11"/>
 <polygon fill="black" stroke="black" points="1102.22,-406.53 1100.31,-396.1 1095.3,-405.44 1102.22,-406.53"/>
 </g>
-<!-- Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::iter_unweighted_node_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge772" class="edge">
-<title>Graph::iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::iter_unweighted_node_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M7421.97,-513.48C7373.41,-510.08 7314.19,-506.32 7261,-504 6415.05,-467.07 5399.13,-455.32 5024.28,-452.09"/>
 <polygon fill="black" stroke="black" points="5024.22,-448.59 5014.19,-452 5024.16,-455.59 5024.22,-448.59"/>
 </g>
-<!-- Graph::iter_node_degrees&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::iter_unweighted_node_degrees&#45;&gt;Graph::get_nodes_number -->
 <g id="edge773" class="edge">
-<title>Graph::iter_node_degrees&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::iter_unweighted_node_degrees&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M7622.03,-505.57C7626.75,-505 7631.42,-504.48 7636,-504 7770.62,-490 8116.92,-514.58 8244,-468 8269.04,-458.82 8268.53,-444.66 8292,-432 8316.35,-418.86 8344.62,-407.78 8369.83,-399.21"/>
 <polygon fill="black" stroke="black" points="8370.95,-402.52 8379.33,-396.04 8368.74,-395.88 8370.95,-402.52"/>
 </g>
-<!-- Graph::par_iter_node_degrees -->
+<!-- Graph::par_iter_unweighted_node_degrees -->
 <g id="node291" class="node">
-<title>Graph::par_iter_node_degrees</title>
+<title>Graph::par_iter_unweighted_node_degrees</title>
 <polygon fill="none" stroke="black" points="6695.5,-540 6464.5,-540 6464.5,-504 6695.5,-504 6695.5,-540"/>
-<text text-anchor="middle" x="6580" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::par_iter_node_degrees</text>
+<text text-anchor="middle" x="6580" y="-518.3" font-family="Times,serif" font-size="14.00">Graph::par_iter_unweighted_node_degrees</text>
 </g>
-<!-- Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::par_iter_unweighted_node_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge774" class="edge">
-<title>Graph::par_iter_node_degrees&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::par_iter_unweighted_node_degrees&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M6464.49,-514.45C6403.66,-511.11 6327.8,-507.1 6260,-504 5809.93,-483.43 5277.27,-464.58 5024.03,-455.95"/>
 <polygon fill="black" stroke="black" points="5024.14,-452.45 5014.03,-455.61 5023.9,-459.45 5024.14,-452.45"/>
 </g>
-<!-- Graph::par_iter_node_degrees&#45;&gt;Graph::get_nodes_number -->
+<!-- Graph::par_iter_unweighted_node_degrees&#45;&gt;Graph::get_nodes_number -->
 <g id="edge775" class="edge">
-<title>Graph::par_iter_node_degrees&#45;&gt;Graph::get_nodes_number</title>
+<title>Graph::par_iter_unweighted_node_degrees&#45;&gt;Graph::get_nodes_number</title>
 <path fill="none" stroke="black" d="M6695.9,-515.55C6773.69,-511.99 6878.49,-507.4 6971,-504 7037.76,-501.55 8112.26,-495.81 8173,-468 8192.73,-458.96 8187.23,-442.9 8206,-432 8242.54,-410.78 8286.88,-398.05 8327.04,-390.42"/>
 <polygon fill="black" stroke="black" points="8327.67,-393.87 8336.88,-388.64 8326.42,-386.98 8327.67,-393.87"/>
 </g>
@@ -7761,9 +7761,9 @@
 <path fill="none" stroke="black" d="M10612.06,-1223.98C10610.69,-1205.32 10610.77,-1175 10622,-1152 10642.56,-1109.9 10656.52,-1099.77 10699,-1080 10942.91,-966.5 11032.06,-1032.11 11300,-1008 11366.56,-1002.01 11752.31,-979.48 11990.14,-965.79"/>
 <polygon fill="black" stroke="black" points="11990.51,-969.28 12000.29,-965.21 11990.11,-962.29 11990.51,-969.28"/>
 </g>
-<!-- Graph::connected_holdout&#45;&gt;Graph::get_node_degree_from_node_id -->
+<!-- Graph::connected_holdout&#45;&gt;Graph::get_unweighted_node_degree_from_node_id -->
 <g id="edge947" class="edge">
-<title>Graph::connected_holdout&#45;&gt;Graph::get_node_degree_from_node_id</title>
+<title>Graph::connected_holdout&#45;&gt;Graph::get_unweighted_node_degree_from_node_id</title>
 <path fill="none" stroke="black" d="M10512.31,-1231.97C10220.31,-1206.22 9354.08,-1130.97 8634,-1080 7572.95,-1004.89 7307.39,-988.87 6245,-936 6041.32,-925.86 5526.05,-948.64 5328,-900 5149.75,-856.23 5090.86,-827.17 4976,-684 4948.96,-650.29 4904.57,-531.23 4885.35,-477.57"/>
 <polygon fill="black" stroke="black" points="4888.62,-476.29 4881.96,-468.05 4882.02,-478.64 4888.62,-476.29"/>
 </g>

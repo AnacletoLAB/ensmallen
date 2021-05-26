@@ -15,8 +15,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `verbose`: bool - Whether to show a loading bar or not.
-    pub fn get_connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
+    pub fn get_connected_components_number(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
             let (_, _, components_number, min_component_size, max_component_size) =
@@ -155,12 +155,12 @@ impl Graph {
     /// ```
     pub fn get_trap_nodes_rate(&self) -> f64 {
         self.par_iter_node_ids()
-            .map(|node_id| {
+            .map(|node_id| unsafe {
                 if !self.is_unchecked_trap_node_from_node_id(node_id) {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
                         .sum::<f64>()
-                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64
+                        / self.get_unchecked_unweighted_node_degree_from_node_id(node_id) as f64
                 } else {
                     1.0
                 }
@@ -291,7 +291,7 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
     /// ```
     pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.par_iter_node_degrees()
+        self.par_iter_unweighted_node_degrees()
             .enumerate()
             .max_by_key(|&(_, value)| value)
             .map(|(idx, _)| idx)
@@ -347,7 +347,7 @@ impl Graph {
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
+        let counter: Counter<NodeT, usize> = Counter::init(self.iter_unweighted_node_degrees());
         Ok(*counter
             .iter()
             .max_by_key(|&(_, count)| count)
@@ -433,7 +433,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_source_node_ids(directed)
-            .map(|src| self.get_unchecked_node_name_from_node_id(src))
+            .map(|src| unsafe{self.get_unchecked_node_name_from_node_id(src)})
             .collect()
     }
 
@@ -451,7 +451,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destination_node_ids(directed)
-            .map(|dst| self.get_unchecked_node_name_from_node_id(dst))
+            .map(|dst| unsafe{self.get_unchecked_node_name_from_node_id(dst)})
             .collect()
     }
 
@@ -496,7 +496,7 @@ impl Graph {
                 .map(|ets| {
                     ets.ids
                         .iter()
-                        .map(|edge_type_id| {
+                        .map(|edge_type_id| unsafe {
                             self.get_unchecked_edge_type_name_from_edge_type_id(*edge_type_id)
                         })
                         .collect()
@@ -538,10 +538,12 @@ impl Graph {
     /// assert!(graph_without_weights.get_min_edge_weight().is_err());
     /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_min_edge_weight());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
     pub fn get_min_edge_weight(&self) -> Result<WeightT, String> {
-        Ok(self
-            .par_iter_edge_weights()?
-            .reduce(|| f32::INFINITY, |a, b| a.min(b)))
+        self.must_have_edge_weights()
+            .map(|_| self.min_edge_weight.unwrap())
     }
 
     /// Return the maximum weight, if graph has weights.
@@ -555,10 +557,12 @@ impl Graph {
     /// assert!(graph_without_weights.get_max_edge_weight().is_err());
     /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_max_edge_weight());
     /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
     pub fn get_max_edge_weight(&self) -> Result<WeightT, String> {
-        Ok(self
-            .par_iter_edge_weights()?
-            .reduce(|| f32::NEG_INFINITY, |a, b| a.max(b)))
+        self.must_have_edge_weights()
+            .map(|_| self.max_edge_weight.unwrap())
     }
 
     /// Return the node types of the graph nodes.
@@ -845,8 +849,8 @@ impl Graph {
     /// `[0, 1, 0, 0, 1, 1]`
     ///
     /// # Arguments
-    /// * `verbose`: bool - Whether to show the loading bar.
-    pub fn get_node_connected_component_ids(&self, verbose: bool) -> Vec<NodeT> {
+    /// * `verbose`: Option<bool> - Whether to show the loading bar.
+    pub fn get_node_connected_component_ids(&self, verbose: Option<bool>) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
             false => self.connected_components(verbose).unwrap().0,
@@ -878,7 +882,7 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.par_iter_node_degrees().collect()
+        self.par_iter_unweighted_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.
@@ -904,7 +908,7 @@ impl Graph {
         self.cumulative_node_degrees.as_ref().map_or_else(
             || {
                 self.par_iter_node_ids()
-                    .map(|src| self.get_unchecked_edge_id_from_node_ids(src + 1, 0))
+                    .map(|src| unsafe{self.get_unchecked_edge_id_from_node_ids(src + 1, 0)})
                     .collect()
             },
             |cumulative_node_degrees| cumulative_node_degrees.clone(),

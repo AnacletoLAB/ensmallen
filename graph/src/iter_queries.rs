@@ -14,7 +14,7 @@ impl Graph {
     ///
     /// * `src`: NodeT - Source node of the edge.
     ///
-    pub fn iter_unchecked_edge_ids_from_source_node_id(
+    pub unsafe fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> std::ops::Range<usize> {
@@ -32,7 +32,7 @@ impl Graph {
     /// # Arguments
     /// * `source_node_id`: NodeT - The source node whose weights are to be returned.
     ///
-    pub fn iter_unchecked_edge_weights_from_source_node_id(
+    pub unsafe fn iter_unchecked_edge_weights_from_source_node_id(
         &self,
         source_node_id: NodeT,
     ) -> impl Iterator<Item = WeightT> + '_ {
@@ -52,7 +52,7 @@ impl Graph {
     ///
     /// * `src`: NodeT - Source node of the edge.
     ///
-    pub fn par_iter_unchecked_edge_ids_from_source_node_id(
+    pub unsafe fn par_iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
@@ -68,7 +68,7 @@ impl Graph {
     /// * `src`: NodeT - Source node of the edge.
     /// * `dst`: NodeT -  Destination node of the edge.
     ///
-    pub fn iter_unchecked_edge_ids_from_node_ids(
+    pub unsafe fn iter_unchecked_edge_ids_from_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
@@ -82,7 +82,7 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbours are to be retrieved.
     ///
-    pub fn iter_unchecked_neighbour_node_ids_from_source_node_id(
+    pub unsafe fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
@@ -106,7 +106,7 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
-    pub fn iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+    pub unsafe fn iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
         second_src_node_id: NodeT,
@@ -123,7 +123,7 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
-    pub fn iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
+    pub unsafe fn iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
         second_src_node_id: NodeT,
@@ -140,7 +140,7 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
-    pub fn iter_unchecked_neighbour_node_ids_difference_from_source_node_ids(
+    pub unsafe fn iter_unchecked_neighbour_node_ids_difference_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
         second_src_node_id: NodeT,
@@ -156,7 +156,7 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
     ///
-    pub fn iter_unchecked_neighbour_node_names_from_source_node_id(
+    pub unsafe fn iter_unchecked_neighbour_node_names_from_source_node_id(
         &self,
         src: NodeT,
     ) -> impl Iterator<Item = String> + '_ {

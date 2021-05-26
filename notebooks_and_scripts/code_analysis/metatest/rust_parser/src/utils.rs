@@ -4,6 +4,30 @@
 pub trait Parse {
     /// Parse the object and return the unused data.
     fn parse(data: &[u8]) -> (&[u8], Self);
+
+    /// Parse data and ignore the unused data
+    fn parse_lossy(data: &[u8]) -> Self 
+    where Self: Sized 
+    {
+        let (_reminder, result) = Self::parse(data);
+        result
+    }
+
+    /// Parse data and ignore the unused data
+    fn parse_lossy_str(data: &str) -> Self 
+    where Self: Sized 
+    {
+        let (_reminder, result) = Self::parse(data.as_bytes());
+        result
+    }
+
+    /// Parse data and ignore the unused data
+    fn parse_lossy_string(data: String) -> Self 
+    where Self: Sized 
+    {
+        let (_reminder, result) = Self::parse(data.as_bytes());
+        result
+    }
 }
 
 /// This trait is needed on ambiguous object so we can decide which object shall pare the data.

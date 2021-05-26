@@ -148,7 +148,7 @@ impl WalksParameters {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(walk_length)?,
             iterations: 1,
-            random_state: (42 ^ SEED_XOR) as NodeT,
+            random_state: splitmix64(42) as NodeT,
             dense_node_mapping: None,
         })
     }
@@ -249,7 +249,7 @@ impl WalksParameters {
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
         if let Some(s) = random_state {
-            self.random_state = (s ^ SEED_XOR) as NodeT;
+            self.random_state = splitmix64(s as u64) as NodeT;
         }
         self
     }

@@ -12,8 +12,8 @@ pub type PyContexts = Py<PyArray2<NodeT>>;
 pub type PyWords = Py<PyArray1<NodeT>>;
 pub type PyFrequencies = Py<PyArray1<f64>>;
 
-pub struct ThreadSafe<'a, T> {
+pub struct ThreadDataRaceAware<'a, T> {
     pub(crate) t: &'a T,
 }
 
-unsafe impl<'a, T> Sync for ThreadSafe<'a, T> {}
+unsafe impl<'a, T> Sync for ThreadDataRaceAware<'a, T> {}

@@ -44,7 +44,7 @@ use std::collections::HashMap;
 ///    ).unwrap();
 ///
 /// // Enable Speed-ups but it uses more memory.
-/// cora.enable(true, true, true, None).unwrap();
+/// cora.enable(Some(true), Some(true), Some(true), None).unwrap();
 /// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
@@ -90,6 +90,10 @@ pub struct Graph {
     pub(crate) min_node_degree: NodeT,
     /// Maximum outbound node degree.
     pub(crate) max_node_degree: NodeT,
+    /// Minimum edge weight. Is None if weights are not defined.
+    pub(crate) min_edge_weight: Option<WeightT>,
+    /// Maximum edge weight. Is None if weights are not defined.
+    pub(crate) max_edge_weight: Option<WeightT>,
     /// Graph name
     pub(crate) name: String,
     pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
@@ -132,6 +136,8 @@ impl Graph {
         edge_types: Option<EdgeTypeVocabulary>,
         name: S,
         weights: Option<Vec<WeightT>>,
+        min_edge_weight: Option<WeightT>,
+        max_edge_weight: Option<WeightT>,
         node_types: Option<NodeTypeVocabulary>,
         connected_nodes: Option<BitVec<Lsb0, u8>>,
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
@@ -150,6 +156,8 @@ impl Graph {
             node_bit_mask,
             node_bits,
             weights,
+            min_edge_weight,
+            max_edge_weight,
             min_node_degree,
             max_node_degree,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
@@ -182,12 +190,12 @@ impl Graph {
     /// assert!(!ppi.overlaps(&cora).unwrap());
     /// assert!(!cora.overlaps(&ppi).unwrap());
     /// let (train, test) = ppi.random_holdout(
-    ///     42,
     ///     0.8,
-    ///     false,
+    ///     Some(42),
+    ///     Some(false),
     ///     None,
     ///     None,
-    ///     false
+    ///     None,
     /// ).unwrap();
     /// assert!(ppi.overlaps(&train).unwrap());
     /// assert!(ppi.overlaps(&test).unwrap());
@@ -232,12 +240,12 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, false, false, false, false);
     /// let (train, test) = graph.random_holdout(
-    ///     42,
     ///     0.8,
-    ///     false,
+    ///     Some(42),
+    ///     Some(false),
     ///     None,
     ///     None,
-    ///     false
+    ///     None,
     /// ).unwrap();
     /// assert!(graph.contains(&train).unwrap());
     /// assert!(graph.contains(&test).unwrap());

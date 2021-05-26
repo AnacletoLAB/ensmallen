@@ -1,6 +1,6 @@
 use super::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone)]
 /// Enumeration of the possible types
 /// Here we need to use boxes because otherwise
 /// the type would be recursive and thus of infinite size
@@ -21,11 +21,93 @@ pub enum Type {
     DynType(Box<Type>),
     SliceType(Box<Type>),
     None,
+    DontCare,
+    Primitive,
 }
 
 impl Default for Type {
     fn default() -> Self {
         Type::None
+    }
+}
+
+impl std::ops::Index<usize> for Type {
+    type Output = Type;
+    
+    fn index(&self, index: usize) -> &Self::Output {
+        use Type::*;
+        match self {
+            SimpleType{
+                generics,
+                ..
+            } => {
+                match &generics[index] {
+                    GenericValue::Type(t) => t,
+                    _ => panic!("Cannot index a non type generic value"),
+                }
+            },
+            _ => panic!("It's not possible to index the current kind of type"),
+        }
+    }
+}
+
+impl PartialEq for Type {
+    fn eq(&self, other:&Self) -> bool {
+        use Type::*;
+        match (self, other) {
+            (DontCare, _) => true,
+            (_, DontCare) => true,
+            (SelfType, SelfType) => true,
+            (None, None) => true,
+            (SliceType(t1), SliceType(t2)) => t1 == t2,
+            (DynType(t1), DynType(t2))     => t1 == t2,
+            (ImplType(t1), ImplType(t2))   => t1 == t2,
+            (TupleType(t1), TupleType(t2)) => t1 == t2,
+            (FnType{
+                args:a1,
+                return_type:r1
+            },
+            FnType{
+                args:a2,
+                return_type:r2
+            }) => a1 == a2 && r1 == r2,
+            (
+                SimpleType{
+                    name: n1,
+                    modifiers: m1,
+                    generics: g1,
+                    traits: t1,
+                },
+                SimpleType{
+                    name: n2,
+                    modifiers: m2,
+                    generics: g2,
+                    traits: t2,
+                },
+            ) => n1 == n2 && m1 == m2 && g1 == g2 && t1 == t2,
+            (Primitive, SimpleType{name, ..}) | (SimpleType{name, ..}, Primitive) => {
+                match name.as_str() {
+                    "f64" | "NodeT" | "EdgeT" 
+                    | "WeightT" | "NodeTypeT" 
+                    | "EdgeTypeT" | "usize" 
+                    | "bool"  => true,
+                    _ => false,
+                }
+            }
+            _ => false,
+        }
+    }
+}
+
+impl PartialEq<&str> for Type {
+    fn eq(&self, other:&&str) -> bool {
+        self == &Type::parse_lossy(other.as_bytes())
+    }
+}
+
+impl PartialEq<str> for Type {
+    fn eq(&self, other:&str) -> bool {
+        self == &Type::parse_lossy(other.as_bytes())
     }
 }
 
@@ -41,6 +123,10 @@ impl Parse for Type {
                 let (_, inner) = Type::parse(matching);
                 Type::SliceType(Box::new(inner))
             },
+            x if x.starts_with(b"()") => {
+                data = &data[2..];
+                Type::None
+            }
             // Tuple type
             x if x.starts_with(b"(") => {
                 let (tmp, mut matching) = get_next_matching(data, b'(',b')');
@@ -127,6 +213,14 @@ impl Parse for Type {
                 // parse the name of the type
                 let mut name: String = parse!(data, Identifier).into();
 
+                if name == "_" {
+                    return (data, Type::DontCare);
+                }
+
+                if name == "Primitive" {
+                    return (data, Type::Primitive);
+                }
+
                 if name == "self" {
                     return (data, Type::SelfType);
                 }
@@ -173,9 +267,30 @@ impl Parse for Type {
     }
 }
 
+impl std::fmt::Display for Type {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.to_string())
+    }
+}
+
+impl Type {
+    fn to_string(&self) -> String {
+        String::from(self.clone())
+    }
+}
+
 impl From<Type> for String{
     fn from(x: Type) -> String {
         match x {
+            Type::None => {
+                "()".to_string()
+            }
+            Type::DontCare => {
+                "_".to_string()
+            }
+            Type::Primitive => {
+                "Primitive".to_string()
+            }
             Type::SelfType => {
                 "self".to_string()
             }
@@ -217,7 +332,6 @@ impl From<Type> for String{
             Type::SliceType(val) => {
                 format!("[{}]", &String::from(*val))
             }
-            Type::None => panic!("The user should not be able to have a None Type"),
             Type::FnType{
                 args,
                 return_type
@@ -261,7 +375,7 @@ mod test {
                 assert_eq!(name, "u64");
                 assert_eq!(modifiers, TypeModifiers::default());
                 assert_eq!(generics, Generics::default());
-                assert_eq!(traits, Vec::new());
+                assert!(traits.is_empty());
             },
             _ => panic!("The value is expected to be parsed as a simple type.s")
         }
@@ -351,7 +465,7 @@ mod test {
                 traits,
             } => {
                 assert_eq!(name, "Option");
-                assert_eq!(traits, Vec::new());
+                assert!(traits.is_empty());
                 assert_eq!(modifiers, TypeModifiers::default());
                 assert_eq!(
                     generics, 
@@ -396,7 +510,7 @@ mod test {
                     constant: false,
                     lifetime: Some(Lifetime("a".to_string())),
                 });
-                assert_eq!(traits, Vec::new());
+                assert!(traits.is_empty());
                 assert_eq!(
                     generics, 
                     Generics(vec![
@@ -410,7 +524,7 @@ mod test {
                                 lifetime: None,
                             },
                             generics: Generics::default(),
-                            traits: Vec::new(),
+                            traits: vec![],
                         }),
                         GenericValue::Type(Type::SimpleType{
                             name:"String".to_string(),
@@ -422,7 +536,7 @@ mod test {
                                 lifetime: None,
                             },
                             generics: Generics::default(),
-                            traits: Vec::new(),
+                            traits: vec![],
                         }),
                     ])
                 );
@@ -431,5 +545,101 @@ mod test {
         }
     }
 
+    #[test]
+    fn test_equivalence() {
+        let data = "Result<Vec<f64>, String>".as_bytes();
+        let (reminder, res) = Type::parse(data);
+        assert_eq!(reminder, "".as_bytes());
+        assert_eq!(
+            res,
+            Type::SimpleType{
+                name: "Result".to_string(),
+                modifiers: TypeModifiers::default(),
+                generics: Generics(vec![
+                    GenericValue::Type(Type::SimpleType{
+                        name: "Vec".to_string(),
+                        modifiers: TypeModifiers::default(),
+                        generics: Generics(vec![
+                            GenericValue::Type(Type::SimpleType{
+                                name: "f64".to_string(),
+                                modifiers: TypeModifiers::default(),
+                                generics: Generics::default(),
+                                traits: vec![],
+                            })
+                        ]),
+                        traits: vec![],
+                    }),
+                    GenericValue::Type(Type::SimpleType{
+                        name: "String".to_string(),
+                        modifiers: TypeModifiers::default(),
+                        generics: Generics::default(),
+                        traits: vec![],
+                    })
+                ]),
+                traits: vec![],
+            }
+        );
+        assert_eq!(
+            res,
+            Type::SimpleType{
+                name: "Result".to_string(),
+                modifiers: TypeModifiers::default(),
+                generics: Generics(vec![
+                    GenericValue::Type(Type::SimpleType{
+                        name: "Vec".to_string(),
+                        modifiers: TypeModifiers::default(),
+                        generics: Generics(vec![
+                            GenericValue::Type(Type::DontCare)
+                        ]),
+                        traits: vec![],
+                    }),
+                    GenericValue::Type(Type::SimpleType{
+                        name: "String".to_string(),
+                        modifiers: TypeModifiers::default(),
+                        generics: Generics::default(),
+                        traits: vec![],
+                    })
+                ]),
+                traits: vec![],
+            }
+        );
+        assert_eq!(
+            res,
+            Type::SimpleType{
+                name: "Result".to_string(),
+                modifiers: TypeModifiers::default(),
+                generics: Generics(vec![
+                    GenericValue::Type(Type::DontCare),
+                    GenericValue::Type(Type::SimpleType{
+                        name: "String".to_string(),
+                        modifiers: TypeModifiers::default(),
+                        generics: Generics::default(),
+                        traits: vec![],
+                    })
+                ]),
+                traits: vec![],
+            }
+        );
+        assert_eq!(
+            res,
+            Type::SimpleType{
+                name: "Result".to_string(),
+                modifiers: TypeModifiers::default(),
+                generics: Generics(vec![
+                    GenericValue::Type(Type::DontCare),
+                    GenericValue::Type(Type::DontCare),
+                ]),
+                traits: vec![],
+            }
+        );
+        assert_eq!(
+            res,
+            Type::DontCare,
+        );
+        assert_eq!(
+            res,
+            "Result<Vec<_>, _>",
+        );
+    }
 
 }

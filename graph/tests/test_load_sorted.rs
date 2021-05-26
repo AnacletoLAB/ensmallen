@@ -26,5 +26,5 @@ fn test_load_sorted() {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&mut g, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
 }
