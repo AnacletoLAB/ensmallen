@@ -437,7 +437,7 @@ fn gen_binding(method: &Function) -> String {
                         inner_type=inner_type,
                     );
                     format!(" -> {} ", Type::parse_lossy_string(format!(
-                        "PyResult<Py<PyArray1<{}>>>",
+                        "PyResult<Py<PyArray2<{}>>>",
                         inner_type
                     )))
                     

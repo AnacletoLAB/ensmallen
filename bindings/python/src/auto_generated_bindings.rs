@@ -185,7 +185,7 @@ impl EnsmallenGraph {
         b: Option<f64>,
         include_central_node: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray1<f64>>> {
+    ) -> PyResult<Py<PyArray2<f64>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
@@ -232,7 +232,7 @@ impl EnsmallenGraph {
         k1: Option<f64>,
         b: Option<f64>,
         verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray1<f64>>> {
+    ) -> PyResult<Py<PyArray2<f64>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
@@ -3939,7 +3939,7 @@ impl EnsmallenGraph {
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
@@ -4009,7 +4009,7 @@ impl EnsmallenGraph {
         removed_existing_edges: Option<bool>,
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
@@ -4708,7 +4708,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn get_one_hot_encoded_node_types(&self) -> PyResult<Py<PyArray1<bool>>> {
+    pub fn get_one_hot_encoded_node_types(&self) -> PyResult<Py<PyArray2<bool>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
@@ -4726,7 +4726,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have edge types.
     ///
-    pub fn get_one_hot_encoded_edge_types(&self) -> PyResult<Py<PyArray1<bool>>> {
+    pub fn get_one_hot_encoded_edge_types(&self) -> PyResult<Py<PyArray2<bool>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_2d!(
             gil,
