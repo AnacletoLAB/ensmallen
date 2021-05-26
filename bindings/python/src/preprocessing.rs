@@ -40,7 +40,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWo
         rust_word2vec(sequences.into_par_iter(), window_size).unzip();
     let gil = pyo3::Python::acquire_gil();
     (
-        to_nparray_2d!(gil, contexts, NodeT),
+        to_ndarray_2d!(gil, contexts, NodeT),
         to_ndarray_1d!(gil, words, NodeT),
     )
 }
@@ -77,7 +77,7 @@ fn cooccurence_matrix(
         sequences.into_par_iter(),
         extract_value!(kwargs, "window_size", usize).unwrap_or(3),
         len,
-        extract_value!(kwargs, "verbose", bool).unwrap_or(true),
+        extract_value!(kwargs, "verbose", bool)
     ))?;
 
     let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
@@ -167,7 +167,7 @@ impl EnsmallenGraph {
         let (number_of_elements, iter) = pe!(self.graph.cooccurence_matrix(
             &parameters,
             extract_value!(kwargs, "window_size", usize).unwrap_or(3),
-            extract_value!(kwargs, "verbose", bool).unwrap_or(true),
+            extract_value!(kwargs, "verbose", bool)
         ))?;
 
         let srcs = PyArray1::new(gil.python(), [number_of_elements], false);

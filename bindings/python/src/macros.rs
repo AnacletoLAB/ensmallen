@@ -76,7 +76,7 @@ macro_rules! to_ndarray_1d {
 }
 
 #[macro_export]
-macro_rules! to_nparray_2d {
+macro_rules! to_ndarray_2d {
     ($gil: expr, $value: expr, $_type: ty) => {
         PyArray::from_vec2($gil.python(), &$value)
             .unwrap()
