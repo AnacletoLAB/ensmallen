@@ -223,6 +223,7 @@ impl Graph {
             .collect()
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have node types.
     ///
     /// # Example
@@ -244,6 +245,7 @@ impl Graph {
         Ok(self.node_types.as_ref().unwrap())
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have edge types.
     ///
     /// # Example
@@ -333,6 +335,7 @@ impl Graph {
         Ok(())
     }
 
+    #[no_binding]
     /// Raises an error if the graph does not have weights.
     ///
     /// # Example
@@ -354,6 +357,7 @@ impl Graph {
         Ok(self.weights.as_ref().unwrap())
     }
 
+    #[no_binding]
     /// Raises an error if the graph has negative edge weights.
     ///
     /// # Example

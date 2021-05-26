@@ -1,7 +1,4 @@
 use super::*;
-use graph::{EdgeT, EdgeTypeT, NodeT};
-use numpy::{PyArray, PyArray1, PyArray2};
-use std::collections::HashSet;
 
 #[pymethods]
 impl EnsmallenGraph {
