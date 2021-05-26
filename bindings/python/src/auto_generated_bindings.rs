@@ -2969,32 +2969,6 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Raises an error if the graph does not have node types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain node types.
-    ///
-    pub fn must_have_node_types(&self) -> PyResult<&NodeTypeVocabulary> {
-        pe!(self.graph.must_have_node_types())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Raises an error if the graph does not have edge types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If there are no edge types in the graph.
-    ///
-    pub fn must_have_edge_types(&self) -> PyResult<&EdgeTypeVocabulary> {
-        pe!(self.graph.must_have_edge_types())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -3030,34 +3004,6 @@ impl EnsmallenGraph {
     ///
     pub fn must_not_be_multigraph(&self) -> PyResult<()> {
         pe!(self.graph.must_not_be_multigraph())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Raises an error if the graph does not have weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have edge weights.
-    ///
-    pub fn must_have_edge_weights(&self) -> PyResult<&Vec<WeightT>> {
-        pe!(self.graph.must_have_edge_weights())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Raises an error if the graph has negative edge weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    /// ValueError
-    ///     If the graph contains negative edge weights.
-    ///
-    pub fn must_have_positive_edge_weights(&self) -> PyResult<&Vec<WeightT>> {
-        pe!(self.graph.must_have_positive_edge_weights())
     }
 
     #[automatically_generated_binding]
