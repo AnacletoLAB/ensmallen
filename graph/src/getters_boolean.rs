@@ -83,6 +83,16 @@ impl Graph {
         self.weights.is_some()
     }
 
+    /// Returns whether a graph has one or more weighted singleton nodes.
+    ///
+    /// A weighted singleton node is a node whose weighted node degree is 0.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn has_weighted_singleton_nodes(&self) -> Result<bool, String> {
+        Ok(self.get_weighted_singleton_nodes_number()? > 0)
+    }
+
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// # Example

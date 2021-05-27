@@ -137,6 +137,10 @@ impl EdgeTypeVocabulary {
     }
 
     /// Remove a edge type from the vocabulary
+    ///
+    /// # Safety
+    /// If any of the given values to be removed to not exist in the vocabulary
+    /// this method will panic.
     pub unsafe fn unchecked_remove_values(&mut self, edge_type_ids_to_remove: Vec<EdgeTypeT>) -> Vec<Option<usize>>{
         // this assumes that the new ids are obtained by "removing" the values
         // so the new ids will keep the relative ordering between each others

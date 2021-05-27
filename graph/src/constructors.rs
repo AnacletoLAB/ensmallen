@@ -29,6 +29,9 @@ type ParsedStringEdgesType = Result<
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        Option<f64>,
+        Option<f64>,
+        Option<NodeT>,
     ),
     String,
 >;
@@ -448,6 +451,9 @@ pub(crate) fn build_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        Option<f64>,
+        Option<f64>,
+        Option<NodeT>,
     ),
     String,
 > {
@@ -465,18 +471,34 @@ pub(crate) fn build_edges(
         None
     };
 
-    let (mut weights, mut min_edge_weight, mut max_edge_weight): (
+    let (
+        mut weights,
+        mut min_edge_weight,
+        mut max_edge_weight,
+        mut min_weighted_node_degree,
+        mut max_weighted_node_degree,
+        mut weighted_singleton_nodes_number,
+        mut current_weighted_node_degree,
+    ): (
         Option<Vec<WeightT>>,
         Option<WeightT>,
         Option<WeightT>,
+        Option<f64>,
+        Option<f64>,
+        Option<NodeT>,
+        Option<f64>,
     ) = if has_edge_weights {
         (
             Some(Vec::with_capacity(edges_number)),
             Some(WeightT::INFINITY),
             Some(WeightT::NEG_INFINITY),
+            Some(f64::INFINITY),
+            Some(f64::NEG_INFINITY),
+            Some(0),
+            Some(0.0),
         )
     } else {
-        (None, None, None)
+        (None, None, None, None, None, None, None)
     };
 
     // The unique sources variable is equal to the set of nodes of the graph when
@@ -560,9 +582,6 @@ pub(crate) fn build_edges(
             }
         }
 
-        if let Some(ets) = &mut edge_type_ids {
-            ets.push(edge_type);
-        }
         match (
             &mut weights,
             &mut min_edge_weight,
@@ -570,7 +589,16 @@ pub(crate) fn build_edges(
             weight,
         ) {
             (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
-                validate_weight(w)?;
+                // If a zero weight was found we filter out this edge
+                if w == 0.0 {
+                    continue;
+                }
+                if w.is_infinite(){
+                    return Err("Provided weight is infinite.".to_string());
+                }
+                if w.is_nan(){
+                    return Err("Provided weight is NaN.".to_string());
+                }
                 *min_w = (*min_w).min(w);
                 *max_w = (*max_w).max(w);
                 ws.push(w);
@@ -590,6 +618,10 @@ pub(crate) fn build_edges(
             )),
             _ => Ok(()),
         }?;
+
+        if let Some(ets) = &mut edge_type_ids {
+            ets.push(edge_type);
+        }
 
         if !directed && !edge_list_is_correct {
             match src.cmp(&dst) {
@@ -685,11 +717,36 @@ pub(crate) fn build_edges(
                     max_node_degree = max_node_degree.max(current_node_degree);
                     // And reset the current node degree to 0.
                     current_node_degree = 0;
+                    // We update the weighted node degrees if the weights are provided
+                    if let (
+                        Some(min_weighted_node_degree),
+                        Some(max_weighted_node_degree),
+                        Some(weighted_singleton_nodes_number),
+                        Some(current_weighted_node_degree),
+                    ) = (
+                        &mut min_weighted_node_degree,
+                        &mut max_weighted_node_degree,
+                        &mut weighted_singleton_nodes_number,
+                        &mut current_weighted_node_degree,
+                    ) {
+                        *min_weighted_node_degree =
+                            (*min_weighted_node_degree).min(*current_weighted_node_degree);
+                        *max_weighted_node_degree =
+                            (*max_weighted_node_degree).max(*current_weighted_node_degree);
+                        if *current_weighted_node_degree == 0.0 {
+                            *weighted_singleton_nodes_number += 1;
+                        }
+                        *current_weighted_node_degree = 0.0;
+                    }
                 }
             }
         }
         // We increase the current source node ID degree.
         current_node_degree += 1;
+        // We increase the current source node ID weighted degree.
+        if let Some(cwnd) = &mut current_weighted_node_degree {
+            *cwnd += weight.unwrap() as f64;
+        }
 
         last_src = src;
         last_dst = dst;
@@ -706,6 +763,28 @@ pub(crate) fn build_edges(
     // And the maximum node degree
     max_node_degree = max_node_degree.max(current_node_degree);
 
+    // We update the minimum weighted node degree
+    if let (
+        Some(cwnd),
+        Some(min_weighted_node_degree),
+        Some(max_weighted_node_degree),
+        Some(weighted_singleton_nodes_number),
+    ) = (
+        current_weighted_node_degree,
+        &mut min_weighted_node_degree,
+        &mut max_weighted_node_degree,
+        &mut weighted_singleton_nodes_number,
+    ) {
+        if current_node_degree > 0 {
+            *min_weighted_node_degree = (*min_weighted_node_degree).min(cwnd);
+            if cwnd == 0.0 {
+                *weighted_singleton_nodes_number += 1;
+            }
+        }
+        // And the maximum weighted node degree
+        *max_weighted_node_degree = (*max_weighted_node_degree).max(cwnd);
+    }
+
     if forward_undirected_edges_counter != backward_undirected_edges_counter {
         return Err(concat!(
             "You are trying to load an undirected graph ",
@@ -713,6 +792,10 @@ pub(crate) fn build_edges(
             "complete."
         )
         .to_owned());
+    }
+
+    if !edges.is_empty() && max_node_degree == 0 {
+        panic!("When the graph has at least an edge the maximum node degree cannot be zero.")
     }
 
     if let Some(ws) = &weights {
@@ -727,6 +810,9 @@ pub(crate) fn build_edges(
             weights = None;
             min_edge_weight = None;
             max_edge_weight = None;
+            min_weighted_node_degree = None;
+            max_weighted_node_degree = None;
+            weighted_singleton_nodes_number = None;
         }
     }
 
@@ -821,6 +907,32 @@ pub(crate) fn build_edges(
             .map_or(false, |us| (us.len() as NodeT) < nodes_number)
     {
         min_node_degree = 0;
+        min_weighted_node_degree = Some(0.0);
+    }
+
+    if !directed
+        && !edges.is_empty()
+        && nodes_number == connected_nodes_number + singleton_nodes_with_selfloops_number
+        && min_node_degree == 0
+    {
+        panic!(concat!(
+            "When the graph is undirected and has at least an edge ",
+            "and there are no singletons, ",
+            "the minimum node degree cannot be zero."
+        ));
+    }
+
+    if edges.len() < (nodes_number / 2) as usize && min_node_degree != 0 {
+        panic!(
+            concat!(
+                "When the graph has less than N/2 edges, ",
+                "it must contain singletons.\n",
+                "This error is likely caused by an improper use of the ",
+                "`might_have_singletons` parameters, which was passed as ",
+                "{}."
+            ),
+            might_have_singletons
+        );
     }
 
     Ok((
@@ -841,6 +953,9 @@ pub(crate) fn build_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        min_weighted_node_degree,
+        max_weighted_node_degree,
+        weighted_singleton_nodes_number,
     ))
 }
 
@@ -949,6 +1064,9 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        min_weighted_node_degree,
+        max_weighted_node_degree,
+        weighted_singleton_nodes_number,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -987,6 +1105,9 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        min_weighted_node_degree,
+        max_weighted_node_degree,
+        weighted_singleton_nodes_number,
     ))
 }
 
@@ -1022,6 +1143,9 @@ pub(crate) fn parse_integer_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        Option<f64>,
+        Option<f64>,
+        Option<NodeT>,
     ),
     String,
 > {
@@ -1043,6 +1167,9 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        min_weighted_node_degree,
+        max_weighted_node_degree,
+        weighted_singleton_nodes_number,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -1077,12 +1204,15 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        min_weighted_node_degree,
+        max_weighted_node_degree,
+        weighted_singleton_nodes_number,
     ))
 }
 
 /// # Graph Constructors
 impl Graph {
-    pub(crate) fn build_graph<S: Into<String>>(
+    pub(crate) fn from_integer_sorted<S: Into<String>>(
         edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: usize,
         nodes: Vocabulary<NodeT>,
@@ -1116,6 +1246,9 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            min_weighted_node_degree,
+            max_weighted_node_degree,
+            weighted_singleton_nodes_number,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -1153,6 +1286,9 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            min_weighted_node_degree,
+            max_weighted_node_degree,
+            weighted_singleton_nodes_number,
         ))
     }
 
@@ -1240,7 +1376,7 @@ impl Graph {
                 numeric_edge_type_ids,
             )?;
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_iterator,
             edges_number,
             nodes,
@@ -1294,7 +1430,7 @@ impl Graph {
         let (edges_number, edges_iterator) =
             parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_iterator,
             edges_number,
             nodes,
@@ -1397,6 +1533,9 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            min_weighted_node_degree,
+            max_weighted_node_degree,
+            weighted_singleton_nodes_number,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -1436,6 +1575,9 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            min_weighted_node_degree,
+            max_weighted_node_degree,
+            weighted_singleton_nodes_number,
         ))
     }
 }

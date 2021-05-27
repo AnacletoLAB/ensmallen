@@ -2456,7 +2456,7 @@ impl Graph {
         )?;
 
         let max_degree = match normalize {
-            true => self.get_max_node_degree()? as f64,
+            true => self.get_unweighted_max_node_degree()? as f64,
             false => 1.0,
         };
 
@@ -6288,7 +6288,7 @@ impl Graph {
         });
         let edge_types_ids = edge_types_ids?;
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             self.iter_edge_with_type_and_weight_ids(true)
                 .progress_with(pb)
                 .filter_map(|(_, src, dst, edge_type, weight)| {
@@ -6614,9 +6614,9 @@ impl Graph {
     /// Returns mean node degree of the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
+    /// println!("The mean node degree of the graph is  {}", graph.get_unweighted_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_unweighted_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
@@ -6672,15 +6672,15 @@ impl Graph {
     /// Returns median node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
+    /// println!("The median node degree of the graph is  {}", graph.get_unweighted_node_degrees_median().unwrap());
     /// ```
-    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_node_degrees_median(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The median of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let mut degrees = self.get_node_degrees();
+        let mut degrees = self.get_unweighted_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
@@ -6688,10 +6688,10 @@ impl Graph {
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_max_node_degree().unwrap());
     /// ```
-    pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().max().ok_or_else(|| {
+    pub fn get_unweighted_max_node_degree(&self) -> Result<NodeT, String> {
+        self.get_unweighted_node_degrees().into_iter().max().ok_or_else(|| {
             "The maximum node degree of a graph with no nodes is not defined.".to_string()
         })
     }
@@ -6702,7 +6702,7 @@ impl Graph {
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
-        self.get_node_degrees().into_iter().min().ok_or_else(|| {
+        self.get_unweighted_node_degrees().into_iter().min().ok_or_else(|| {
             "The minimum node degree of a graph with no nodes is not defined.".to_string()
         })
     }
@@ -6710,9 +6710,9 @@ impl Graph {
     /// Returns mode node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
+    /// println!("The mode node degree of the graph is  {}", graph.get_unweighted_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
@@ -6721,7 +6721,7 @@ impl Graph {
 
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
-        for value in self.get_node_degrees() {
+        for value in self.get_unweighted_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
         Ok(occurrences
@@ -6856,11 +6856,11 @@ impl Graph {
             );
             report.insert(
                 "max_degree",
-                self.get_max_node_degree().unwrap().to_string(),
+                self.get_unweighted_max_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "degree_mean",
-                self.get_node_degrees_mean().unwrap().to_string(),
+                self.get_unweighted_node_degrees_mean().unwrap().to_string(),
             );
         }
 
@@ -7301,9 +7301,9 @@ impl Graph {
                 ),
                 false=>"is connected, as it has a single component".to_owned()
             },
-            median_node_degree=self.get_node_degrees_median().unwrap(),
-            mean_node_degree=self.get_node_degrees_mean().unwrap(),
-            mode_node_degree=self.get_node_degrees_mode().unwrap(),
+            median_node_degree=self.get_unweighted_node_degrees_median().unwrap(),
+            mean_node_degree=self.get_unweighted_node_degrees_mean().unwrap(),
+            mode_node_degree=self.get_unweighted_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
             central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ));
@@ -9620,7 +9620,7 @@ impl Graph {
     }
 
     /// Returns the degree of every node in the graph.
-    pub fn get_node_degrees(&self) -> Vec<NodeT> {
+    pub fn get_unweighted_node_degrees(&self) -> Vec<NodeT> {
         self.iter_unweighted_node_degrees().collect()
     }
 
@@ -12434,7 +12434,7 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
-    pub(crate) fn build_graph<S: Into<String>>(
+    pub(crate) fn from_integer_sorted<S: Into<String>>(
         edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: usize,
         nodes: Vocabulary<NodeT>,
@@ -12579,7 +12579,7 @@ impl Graph {
                 numeric_edge_type_ids,
             )?;
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_iterator,
             edges_number,
             nodes,
@@ -12633,7 +12633,7 @@ impl Graph {
         let (edges_number, edges_iterator) =
             parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_iterator,
             edges_number,
             nodes,
@@ -13138,7 +13138,7 @@ impl Graph {
         );
 
         Ok((
-            Graph::build_graph(
+            Graph::from_integer_sorted(
                 (0..self.get_directed_edges_number())
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
@@ -13157,7 +13157,7 @@ impl Graph {
                 train_graph_might_have_singletons_with_selfloops,
                 true,
             )?,
-            Graph::build_graph(
+            Graph::from_integer_sorted(
                 valid_edges_bitmap
                     .iter()
                     .progress_with(pb_valid)
@@ -13659,7 +13659,7 @@ impl Graph {
                     .collect::<Vec<EdgeT>>()
             }));
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_bitmap
                 .iter()
                 .progress_with(pb3)

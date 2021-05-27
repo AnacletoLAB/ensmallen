@@ -465,7 +465,7 @@ impl Graph {
         )?;
 
         let max_degree = match normalize {
-            true => self.get_max_node_degree()? as f64,
+            true => self.get_unweighted_max_node_degree()? as f64,
             false => 1.0,
         };
 

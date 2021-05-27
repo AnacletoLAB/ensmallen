@@ -2462,14 +2462,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.get_trap_nodes_rate();
 			},
 			153 => {
-				trace.push(format!("get_node_degrees_mean()", ));
+				trace.push(format!("get_unweighted_node_degrees_mean()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_node_degrees_mean();
+				let _ = graph.get_unweighted_node_degrees_mean();
 			},
 			154 => {
 				trace.push(format!("get_undirected_edges_number()", ));
@@ -2512,24 +2512,24 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.get_unique_edges_number();
 			},
 			158 => {
-				trace.push(format!("get_node_degrees_median()", ));
+				trace.push(format!("get_unweighted_node_degrees_median()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_node_degrees_median();
+				let _ = graph.get_unweighted_node_degrees_median();
 			},
 			159 => {
-				trace.push(format!("get_max_node_degree()", ));
+				trace.push(format!("get_unweighted_max_node_degree()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_max_node_degree();
+				let _ = graph.get_unweighted_max_node_degree();
 			},
 			160 => {
 				trace.push(format!("get_argmax_node_degree()", ));
@@ -2552,14 +2552,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.get_min_node_degree();
 			},
 			162 => {
-				trace.push(format!("get_node_degrees_mode()", ));
+				trace.push(format!("get_unweighted_node_degrees_mode()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.get_node_degrees_mode();
+				let _ = graph.get_unweighted_node_degrees_mode();
 			},
 			163 => {
 				trace.push(format!("get_selfloop_nodes_number()", ));
@@ -3052,14 +3052,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.get_node_types_number();
 			},
 			212 => {
-				trace.push(format!("get_node_degrees()", ));
+				trace.push(format!("get_unweighted_node_degrees()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.get_node_degrees();
+				graph.get_unweighted_node_degrees();
 			},
 			213 => {
 				trace.push(format!("get_not_singletons_node_ids()", ));

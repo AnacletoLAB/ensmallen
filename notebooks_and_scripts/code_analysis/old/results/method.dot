@@ -64,7 +64,7 @@ digraph deps {
 	"Graph::get_filter_bitmap" [color=red];
 	"parse_string_unsorted_edges" [color=black];
 	"Graph::has_edge_weights" [color=red];
-	"Graph::build_graph" [color=red];
+	"Graph::from_integer_sorted" [color=red];
 	"Graph::get_unchecked_edge_id_from_tuple" [color=red];
 	"parse_node_type_ids" [color=black];
 	"Graph::is_singleton_from_node_name" [color=red];
@@ -105,8 +105,8 @@ digraph deps {
 	"Graph::par_iter_edge_ids" -> "Graph::decode_edge"
 	"Graph::get_node_type_name_from_node_id" -> "Graph::get_node_type_id_from_node_id"
 	"Graph::get_node_type_name_from_node_id" -> "Graph::get_node_type_names_from_node_type_ids"
-	"Graph::build_graph" -> "Graph::new"
-	"Graph::build_graph" -> "parse_integer_edges"
+	"Graph::from_integer_sorted" -> "Graph::new"
+	"Graph::from_integer_sorted" -> "parse_integer_edges"
 	"Graph::get_unchecked_edge_type_name_by_edge_type_id" -> "unchecked_translate"
 	"Graph::get_unchecked_edge_type_name_by_edge_type_id" -> "translate"
 	"parse_sorted_edges" -> "Graph::new"
@@ -175,7 +175,7 @@ digraph deps {
 	"Graph::from_string_unsorted" -> "check_numeric_ids_compatibility"
 	"Graph::from_string_unsorted" -> "parse_string_unsorted_edges"
 	"Graph::from_string_unsorted" -> "parse_nodes"
-	"Graph::from_string_unsorted" -> "Graph::build_graph"
+	"Graph::from_string_unsorted" -> "Graph::from_integer_sorted"
 	"Graph::get_filter_bitmap" -> "Graph::new"
 	"Graph::get_filter_bitmap" -> "Graph::contains"
 	"Graph::get_filter_bitmap" -> "Graph::get_node_id_from_node_name"
@@ -272,7 +272,7 @@ digraph deps {
 	"Graph::filter" -> "Graph::has_edge_types"
 	"Graph::filter" -> "Graph::get_directed_edges_number"
 	"Graph::filter" -> "Graph::iter_edge_with_type_and_weight_ids"
-	"Graph::filter" -> "Graph::build_graph"
+	"Graph::filter" -> "Graph::from_integer_sorted"
 	"unchecked_insert" -> "from_usize"
 	"parse_integer_edges" -> "build_edges"
 	"parse_unsorted_quadruples" -> "get_loading_bar"
@@ -285,7 +285,7 @@ digraph deps {
 	"Graph::iter_nodes" -> "translate"
 	"Graph::iter_nodes" -> "Graph::iter_node_ids"
 	"Graph::from_integer_unsorted" -> "parse_integer_unsorted_edges"
-	"Graph::from_integer_unsorted" -> "Graph::build_graph"
+	"Graph::from_integer_unsorted" -> "Graph::from_integer_sorted"
 	"Graph::get_edge_id_from_node_ids" -> "encode_edge"
 	"Graph::get_edge_id_from_node_ids" -> "Graph::encode_edge"
 	"Graph::get_edge_id_with_type_from_node_ids" -> "Graph::get_edge_id_from_node_ids"

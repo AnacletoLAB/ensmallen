@@ -231,7 +231,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             super().is_graph_unsupported(graph_name)
         )
 
-    def build_graph_parameters(
+    def from_integer_sorted_parameters(
         self,
         graph_name: str,
         edge_path: str,
@@ -485,7 +485,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             node_types_column_number = None
 
         return {
-            **super().build_graph_parameters(
+            **super().from_integer_sorted_parameters(
                 graph_name,
                 edge_path,
                 node_path

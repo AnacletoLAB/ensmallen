@@ -191,7 +191,7 @@ impl Graph {
 
         match (has_node_filters, has_edge_filters) {
             (false, false) => Ok(self.clone()),
-            (false, true) => Graph::build_graph(
+            (false, true) => Graph::from_integer_sorted(
                 self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                     .progress_with(pb_edges)
                     .filter(edge_filter)

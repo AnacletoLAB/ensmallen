@@ -14,6 +14,8 @@ impl Graph {
     ///
     /// * `src`: NodeT - Source node of the edge.
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
@@ -32,6 +34,8 @@ impl Graph {
     /// # Arguments
     /// * `source_node_id`: NodeT - The source node whose weights are to be returned.
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_edge_weights_from_source_node_id(
         &self,
         source_node_id: NodeT,
@@ -52,6 +56,8 @@ impl Graph {
     ///
     /// * `src`: NodeT - Source node of the edge.
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn par_iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
@@ -68,6 +74,8 @@ impl Graph {
     /// * `src`: NodeT - Source node of the edge.
     /// * `dst`: NodeT -  Destination node of the edge.
     ///
+    /// # Safety
+    /// If any the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_edge_ids_from_node_ids(
         &self,
         src: NodeT,
@@ -82,6 +90,8 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbours are to be retrieved.
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
@@ -106,6 +116,8 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
@@ -123,6 +135,8 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
@@ -140,6 +154,8 @@ impl Graph {
     /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
     /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
     ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_ids_difference_from_source_node_ids(
         &self,
         first_src_node_id: NodeT,
@@ -156,6 +172,8 @@ impl Graph {
     /// # Arguments
     /// * `src`: NodeT - The node whose neighbour names are to be retrieved.
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_names_from_source_node_id(
         &self,
         src: NodeT,

@@ -94,6 +94,12 @@ pub struct Graph {
     pub(crate) min_edge_weight: Option<WeightT>,
     /// Maximum edge weight. Is None if weights are not defined.
     pub(crate) max_edge_weight: Option<WeightT>,
+    /// Minimum weighted node degree. Is None if weights are not defined.
+    pub(crate) min_weighted_node_degree: Option<f64>,
+    /// Maximum weighted node degree. Is None if weights are not defined.
+    pub(crate) max_weighted_node_degree: Option<f64>,
+    /// Number of nodes with zero weighted node degree.
+    pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
     /// Graph name
     pub(crate) name: String,
     pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
@@ -143,6 +149,9 @@ impl Graph {
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
         min_node_degree: NodeT,
         max_node_degree: NodeT,
+        min_weighted_node_degree: Option<f64>,
+        max_weighted_node_degree: Option<f64>,
+        weighted_singleton_nodes_number: Option<NodeT>,
     ) -> Graph {
         Graph {
             directed,
@@ -171,6 +180,9 @@ impl Graph {
             connected_nodes,
             singleton_nodes_with_selfloops,
             cached_report: ClonableRwLock::new(None),
+            min_weighted_node_degree,
+            max_weighted_node_degree,
+            weighted_singleton_nodes_number,
         }
     }
 

@@ -393,7 +393,7 @@ impl Graph {
         );
 
         Ok((
-            Graph::build_graph(
+            Graph::from_integer_sorted(
                 (0..self.get_directed_edges_number())
                     .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                     .progress_with(pb_train)
@@ -417,7 +417,7 @@ impl Graph {
                 train_graph_might_have_singletons_with_selfloops,
                 true,
             )?,
-            Graph::build_graph(
+            Graph::from_integer_sorted(
                 valid_edges_bitmap
                     .iter()
                     .progress_with(pb_valid)
@@ -999,7 +999,7 @@ impl Graph {
             })
             .collect();
 
-        Graph::build_graph(
+        Graph::from_integer_sorted(
             edges_bitmap.iter().progress_with(pb3).map(|edge_id| unsafe {
                 Ok(self
                     .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))

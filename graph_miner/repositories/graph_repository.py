@@ -79,7 +79,7 @@ class GraphRepository:
             "The method get_graph_citations must be implemented in child classes."
         )
 
-    def build_graph_reports_directory(self) -> str:
+    def from_integer_sorted_reports_directory(self) -> str:
         """Return directory path where graph reports are stored.
 
         Returns
@@ -92,7 +92,7 @@ class GraphRepository:
             "reports",
         )
 
-    def build_graph_report_path(self, graph_name: str) -> str:
+    def from_integer_sorted_report_path(self, graph_name: str) -> str:
         """Return path where graph report is stored.
 
         Parameters
@@ -105,7 +105,7 @@ class GraphRepository:
         String with path.
         """
         return os.path.join(
-            self.build_graph_reports_directory(),
+            self.from_integer_sorted_reports_directory(),
             "{}.json.gz".format(
                 self.build_stored_graph_name(graph_name)
             )
@@ -124,7 +124,7 @@ class GraphRepository:
         Metadata relative to the given graph.
         """
         return compress_json.load(
-            self.build_graph_report_path(graph_name)
+            self.from_integer_sorted_report_path(graph_name)
         )
 
     def dump_graph_report(
@@ -170,7 +170,7 @@ class GraphRepository:
                 "datetime": str(datetime.datetime.now()),
                 "arguments": arguments,
             },
-            self.build_graph_report_path(graph_name)
+            self.from_integer_sorted_report_path(graph_name)
         )
 
     def is_graph_cached(self, graph_name: str) -> bool:
@@ -185,7 +185,7 @@ class GraphRepository:
         -----------------------
         Wether the cache if cached.
         """
-        return os.path.exists(self.build_graph_report_path(graph_name))
+        return os.path.exists(self.from_integer_sorted_report_path(graph_name))
 
     @property
     def name(self) -> str:
@@ -334,7 +334,7 @@ class GraphRepository:
             "The method get_graph_paths must be implemented in child classes."
         )
 
-    def build_graph_parameters(
+    def from_integer_sorted_parameters(
         self,
         graph_name: str,
         edge_path: str,
@@ -650,7 +650,7 @@ class GraphRepository:
                     graph_name, download_report)
                 edge_path = self.get_edge_list_path(
                     graph_name, download_report)
-                arguments = self.build_graph_parameters(
+                arguments = self.from_integer_sorted_parameters(
                     graph_name,
                     edge_path=edge_path,
                     node_path=node_path,
@@ -914,7 +914,7 @@ class GraphRepository:
             self.repository_package_name,
         )
         for graph_report_path in tqdm(
-            glob("{}/*.json.gz".format(self.build_graph_reports_directory())),
+            glob("{}/*.json.gz".format(self.from_integer_sorted_reports_directory())),
             desc="Building graph retrieval methods for {}".format(self.name),
             leave=False
         ):

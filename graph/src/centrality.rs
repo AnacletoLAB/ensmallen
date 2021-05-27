@@ -10,20 +10,39 @@ use std::collections::VecDeque;
 use std::sync::atomic::Ordering;
 
 impl Graph {
-    /// Returns iterator over degree centrality for all nodes.
-    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
+    /// Returns iterator over the unweighted degree centrality for all nodes.
+    pub fn iter_unweighted_degree_centrality(
+        &self,
+    ) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };
-        Ok(
-            self.iter_unweighted_node_degrees()
-                .map(move |degree| degree as f64 / max_degree),
-        )
+        let max_degree = unsafe { self.get_unchecked_unweighted_max_node_degree() as f64 };
+        Ok(self
+            .iter_unweighted_node_degrees()
+            .map(move |degree| degree as f64 / max_degree))
     }
 
-    /// Returns vector of degree centrality for all nodes.
-    pub fn get_degree_centrality(&self) -> Result<Vec<f64>, String> {
-        Ok(self.iter_degree_centrality()?.collect())
+    /// Returns iterator over the weighted degree centrality for all nodes.
+    pub fn par_iter_weighted_degree_centrality(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = f64> + '_, String> {
+        self.must_have_edges()?;
+        self.must_have_positive_edge_weights()?;
+
+        let weighted_max_degree = self.get_weighted_max_node_degree()? as f64;
+        Ok(self
+            .par_iter_weighted_node_degrees()?
+            .map(move |degree| degree as f64 / weighted_max_degree))
+    }
+
+    /// Returns vector of unweighted degree centrality for all nodes.
+    pub fn get_unweighted_degree_centrality(&self) -> Result<Vec<f64>, String> {
+        Ok(self.iter_unweighted_degree_centrality()?.collect())
+    }
+
+    /// Returns vector of weighted degree centrality for all nodes.
+    pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f64>, String> {
+        Ok(self.par_iter_weighted_degree_centrality()?.collect())
     }
 
     /// Return closeness centrality of the requested node.
@@ -38,6 +57,8 @@ impl Graph {
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_unweighted_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
@@ -58,7 +79,12 @@ impl Graph {
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
     ///
-    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> f64 {
         1.0 / self
             .get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .2
@@ -83,7 +109,7 @@ impl Graph {
         );
         self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| unsafe{
+            .map(move |node_id| unsafe {
                 self.get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)
             })
     }
@@ -106,9 +132,10 @@ impl Graph {
             "Computing closeness centrality",
             self.get_nodes_number() as usize,
         );
-        Ok(self.par_iter_node_ids()
+        Ok(self
+            .par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| unsafe{
+            .map(move |node_id| unsafe {
                 self.get_unchecked_weighted_closeness_centrality_from_node_id(node_id)
             }))
     }
@@ -132,8 +159,12 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
-        self.par_iter_weighted_closeness_centrality(verbose).map(|x| x.collect())
+    pub fn get_weighted_closeness_centrality(
+        &self,
+        verbose: Option<bool>,
+    ) -> Result<Vec<f64>, String> {
+        self.par_iter_weighted_closeness_centrality(verbose)
+            .map(|x| x.collect())
     }
 
     /// Return harmonic centrality of the requested node.
@@ -147,7 +178,12 @@ impl Graph {
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub unsafe fn get_unchecked_unweighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_unweighted_harmonic_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> f64 {
         self.get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
             .4
     }
@@ -163,7 +199,12 @@ impl Graph {
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> f64 {
         self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
             .3
     }
@@ -187,7 +228,7 @@ impl Graph {
         );
         self.par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| unsafe{
+            .map(move |node_id| unsafe {
                 self.get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)
             })
     }
@@ -210,9 +251,10 @@ impl Graph {
             "Computing harmonic centrality",
             self.get_nodes_number() as usize,
         );
-        Ok(self.par_iter_node_ids()
+        Ok(self
+            .par_iter_node_ids()
             .progress_with(pb)
-            .map(move |node_id| unsafe{
+            .map(move |node_id| unsafe {
                 self.get_unchecked_weighted_harmonic_centrality_from_node_id(node_id)
             }))
     }
@@ -236,7 +278,10 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_weighted_harmonic_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
+    pub fn get_weighted_harmonic_centrality(
+        &self,
+        verbose: Option<bool>,
+    ) -> Result<Vec<f64>, String> {
         self.par_iter_weighted_harmonic_centrality(verbose)
             .map(|x| x.collect())
     }
@@ -284,21 +329,23 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
-                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)}
-                        .for_each(|neighbour_node_id| {
-                            if distance_from_root[neighbour_node_id as usize] == u64::MAX {
-                                nodes_to_visit.push_back(neighbour_node_id);
-                                distance_from_root[neighbour_node_id as usize] =
-                                    distance_from_root[current_node_id as usize] + 1;
-                            }
-                            if distance_from_root[neighbour_node_id as usize]
-                                == distance_from_root[current_node_id as usize] + 1
-                            {
-                                shortest_path_counts[neighbour_node_id as usize] +=
-                                    shortest_path_counts[current_node_id as usize];
-                                node_lists[neighbour_node_id as usize].push(current_node_id);
-                            }
-                        });
+                    unsafe {
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                    }
+                    .for_each(|neighbour_node_id| {
+                        if distance_from_root[neighbour_node_id as usize] == u64::MAX {
+                            nodes_to_visit.push_back(neighbour_node_id);
+                            distance_from_root[neighbour_node_id as usize] =
+                                distance_from_root[current_node_id as usize] + 1;
+                        }
+                        if distance_from_root[neighbour_node_id as usize]
+                            == distance_from_root[current_node_id as usize] + 1
+                        {
+                            shortest_path_counts[neighbour_node_id as usize] +=
+                                shortest_path_counts[current_node_id as usize];
+                            node_lists[neighbour_node_id as usize].push(current_node_id);
+                        }
+                    });
                 }
                 let mut dependencies = vec![0.0; nodes_number];
                 stack.into_iter().rev().for_each(|current_node_id| {
@@ -374,21 +421,23 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
-                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)}
-                        .for_each(|neighbour_node_id| {
-                            if distance_from_root[neighbour_node_id as usize] == u64::MAX {
-                                nodes_to_visit.push_back(neighbour_node_id);
-                                distance_from_root[neighbour_node_id as usize] =
-                                    distance_from_root[current_node_id as usize] + 1;
-                            }
-                            if distance_from_root[neighbour_node_id as usize]
-                                == distance_from_root[current_node_id as usize] + 1
-                            {
-                                shortest_path_counts[neighbour_node_id as usize] +=
-                                    shortest_path_counts[current_node_id as usize];
-                                node_lists[neighbour_node_id as usize].push(current_node_id);
-                            }
-                        });
+                    unsafe {
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
+                    }
+                    .for_each(|neighbour_node_id| {
+                        if distance_from_root[neighbour_node_id as usize] == u64::MAX {
+                            nodes_to_visit.push_back(neighbour_node_id);
+                            distance_from_root[neighbour_node_id as usize] =
+                                distance_from_root[current_node_id as usize] + 1;
+                        }
+                        if distance_from_root[neighbour_node_id as usize]
+                            == distance_from_root[current_node_id as usize] + 1
+                        {
+                            shortest_path_counts[neighbour_node_id as usize] +=
+                                shortest_path_counts[current_node_id as usize];
+                            node_lists[neighbour_node_id as usize].push(current_node_id);
+                        }
+                    });
                 }
                 let mut dependencies = vec![0.0; nodes_number];
                 stack.into_iter().rev().for_each(|current_node_id| {
@@ -434,7 +483,10 @@ impl Graph {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {
-            return Err("The tollerance must be a non-zero positive value bigger than epislon (1e-16).".to_string());
+            return Err(
+                "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
+                    .to_string(),
+            );
         }
         let mut centralities: Vec<AtomicF64> = self
             .iter_node_ids()
@@ -444,7 +496,7 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
-                unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
+                unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .for_each(|dst| {
                         centralities[dst as usize]
                             .fetch_add(last_centralities[src as usize], Ordering::Relaxed);
@@ -494,7 +546,10 @@ impl Graph {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {
-            return Err("The tollerance must be a non-zero positive value bigger than epislon (1e-16).".to_string());
+            return Err(
+                "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
+                    .to_string(),
+            );
         }
         let mut centralities: Vec<AtomicF64> = self
             .iter_node_ids()
@@ -504,8 +559,8 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
-                unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
-                    .for_each(|dst| unsafe{
+                unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
+                    .for_each(|dst| unsafe {
                         centralities[dst as usize].fetch_add(
                             last_centralities[src as usize]
                                 * self.get_unchecked_edge_weight_from_node_ids(src, dst) as f64,

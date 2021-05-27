@@ -16,6 +16,9 @@ impl Graph {
     /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_distances`: Option<bool> - Whether to compute the vector of distances.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_breath_first_search(
         &self,
         src_node_id: NodeT,
@@ -140,6 +143,9 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_unweighted_k_shortest_path(
         &self,
         src_node_id: NodeT,
@@ -189,6 +195,8 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search(node_id, None, None, None, None)
             .2
@@ -201,6 +209,8 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node for which to compute the eccentricity.
     ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_weighted_eccentricity_from_node_id(&self, node_id: NodeT) -> f64 {
         self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, None)
             .2
@@ -260,6 +270,9 @@ impl Graph {
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_dijkstra_from_node_ids(
         &self,
         src_node_id: NodeT,
