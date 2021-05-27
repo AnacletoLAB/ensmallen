@@ -907,7 +907,8 @@ pub(crate) fn build_edges(
             .map_or(false, |us| (us.len() as NodeT) < nodes_number)
     {
         min_node_degree = 0;
-        min_weighted_node_degree = Some(0.0);
+        min_weighted_node_degree = min_weighted_node_degree.map(|val| val.min(0.0));
+        max_weighted_node_degree = max_weighted_node_degree.map(|val| val.max(0.0));
     }
 
     if !directed

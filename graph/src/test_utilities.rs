@@ -338,12 +338,19 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                     .unwrap())
             .abs()
                 < f64::EPSILON,
-            "The cached weighted maximum degree ({}) does not match the one computed from the node degrees ({}).",
+            concat!(
+                "The cached weighted maximum degree ({}) ",
+                "does not match the one computed from the node degrees ({}), ",
+                "where the node degrees list is {:?}.\n",
+                "Additionally the number of weighted singleton nodes is {:?}."
+            ),
             graph.get_weighted_max_node_degree()?,
             graph
                     .iter_weighted_node_degrees()?
                     .max_by(|a, b| a.partial_cmp(b).unwrap())
-                    .unwrap()
+                    .unwrap(),
+            graph.get_weighted_node_degrees(),
+            graph.get_weighted_singleton_nodes_number()
         );
         assert!(
             (graph.get_weighted_min_node_degree()?

@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader, NodeFileReader};
+use graph::{Graph, EdgeFileReader};
 
 #[test]
 /// This is a regression test that has been automatically generated
