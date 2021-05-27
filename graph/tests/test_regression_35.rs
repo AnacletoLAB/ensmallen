@@ -33,6 +33,7 @@ fn test_regression_35() -> Result<(), String> {
         true, // Directed edge list
         "Fuzz Graph" // Name of the graph
     )?;
+    
     let _ = graph::test_utilities::default_test_suite(&mut graph, Some(false));
     Ok(())
 }

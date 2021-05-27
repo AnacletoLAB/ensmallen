@@ -591,7 +591,7 @@ pub(crate) fn build_edges(
             (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
                 // If a zero weight was found we filter out this edge
                 if w == 0.0 {
-                    continue;
+                    return Err("Provided weight is zero.".to_string());
                 }
                 if w.is_infinite(){
                     return Err("Provided weight is infinite.".to_string());

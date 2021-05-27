@@ -28,13 +28,12 @@ fn test_regression_36() -> Result<(), String> {
 
     let nodes_reader = None;
 
-    let mut graph = Graph::from_unsorted_csv(
+    assert!(Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
         false, // Directed
         false, // Directed edge list
         "Fuzz Graph" // Name of the graph
-    )?;
-    let _ = graph::test_utilities::default_test_suite(&mut graph, Some(false));
+    ).is_err());
     Ok(())
 }
