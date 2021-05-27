@@ -6,6 +6,9 @@ use error::*;
 mod check_doc;
 pub use check_doc::*;
 
+mod check_method_names;
+pub use check_method_names::*;
+
 mod checker;
 pub use checker::*;
 

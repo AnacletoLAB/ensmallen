@@ -7,7 +7,7 @@ edition = "2018"
 
 [dependencies]
 rust_parser = {path = "./rust_parser" }
-
+regex = "1.5.4"
 
 [lib]
 name = "libmetatest"

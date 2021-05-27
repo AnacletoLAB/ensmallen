@@ -39,7 +39,10 @@ impl Checker {
     }
 
     pub fn check(&mut self) {
-        self.check_doc();
+
+        self.check_method_names();  
+
+        //self.check_doc();
 
         // if regexes in the impl doc, the methods MUST follow the rule, can be disable with #[ignore_regex_name]
 
