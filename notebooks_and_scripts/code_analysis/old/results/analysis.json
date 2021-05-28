@@ -5374,7 +5374,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "assert_eq!(\n        graph\n            .get_number_of_triangles_per_node(Some(false))\n            .into_iter()\n            .map(|triangles_number| triangles_number as EdgeT)\n            .sum::<EdgeT>(),\n        graph.get_number_of_triangles(Some(false))\n    );\n    Ok(())"
+                "body": "assert_eq!(\n        graph\n            .get_unweighted_number_of_triangles_per_node(Some(false))\n            .into_iter()\n            .map(|triangles_number| triangles_number as EdgeT)\n            .sum::<EdgeT>(),\n        graph.get_unweighted_number_of_triangles(Some(false))\n    );\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5816,7 +5816,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_number_of_triangles",
+                "name": "get_unweighted_number_of_triangles",
                 "args": [
                     [
                         "self",
@@ -5838,7 +5838,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_triads_number",
+                "name": "get_unweighted_triads_number",
                 "args": [
                     [
                         "self",
@@ -5856,7 +5856,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_transitivity",
+                "name": "get_unweighted_transitivity",
                 "args": [
                     [
                         "self",
@@ -5864,7 +5864,7 @@
                     ]
                 ],
                 "return_type": "f64",
-                "body": "self.get_number_of_triangles(Some(false)) as f64 / self.get_triads_number() as f64"
+                "body": "self.get_unweighted_number_of_triangles(Some(false)) as f64 / self.get_unweighted_triads_number() as f64"
             },
             {
                 "file": "polygons.rs",
@@ -5880,7 +5880,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_number_of_triangles_per_node",
+                "name": "get_unweighted_number_of_triangles_per_node",
                 "args": [
                     [
                         "self",
@@ -5913,7 +5913,7 @@
                     ]
                 ],
                 "return_type": "impl IndexedParallelIterator<Item = f64> + '_",
-                "body": "self.get_number_of_triangles_per_node(Some(false))\n            .into_par_iter()\n            .zip(self.par_iter_unweighted_node_degrees())\n            .map(|(triangles_number, degree)| {\n                if degree < 2 {\n                    0.0\n                } else {\n                    triangles_number as f64 / (degree * (degree - 1)) as f64\n                }\n            })"
+                "body": "self.get_unweighted_number_of_triangles_per_node(Some(false))\n            .into_par_iter()\n            .zip(self.par_iter_unweighted_node_degrees())\n            .map(|(triangles_number, degree)| {\n                if degree < 2 {\n                    0.0\n                } else {\n                    triangles_number as f64 / (degree * (degree - 1)) as f64\n                }\n            })"
             },
             {
                 "file": "polygons.rs",

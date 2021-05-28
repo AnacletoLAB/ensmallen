@@ -772,8 +772,8 @@ pub struct MetaParams {
 	pub get_adamic_adar_index: GetAdamicAdarIndexParams,
 	pub get_resource_allocation_index: GetResourceAllocationIndexParams,
 	pub enable: EnableParams,
-	pub get_number_of_triangles: GetNumberOfTrianglesParams,
-	pub get_number_of_triangles_per_node: GetNumberOfTrianglesPerNodeParams,
+	pub get_unweighted_number_of_triangles: GetNumberOfTrianglesParams,
+	pub get_unweighted_number_of_triangles_per_node: GetNumberOfTrianglesPerNodeParams,
 	pub get_unweighted_eccentricity_from_node_id: GetUnweightedEccentricityFromNodeIdParams,
 	pub get_weighted_eccentricity_from_node_id: GetWeightedEccentricityFromNodeIdParams,
 	pub get_breath_first_search_from_node_ids: GetBreathFirstSearchFromNodeIdsParams,
@@ -1144,44 +1144,44 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				graph.disable_all();
 			},
 			20 => {
-				trace.push(format!("get_number_of_triangles(normalize = {:?})", data_for_current_test.get_number_of_triangles.normalize));
+				trace.push(format!("get_unweighted_number_of_triangles(normalize = {:?})", data_for_current_test.get_unweighted_number_of_triangles.normalize));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.get_number_of_triangles(data_for_current_test.get_number_of_triangles.normalize);
+				graph.get_unweighted_number_of_triangles(data_for_current_test.get_unweighted_number_of_triangles.normalize);
 			},
 			21 => {
-				trace.push(format!("get_triads_number()", ));
+				trace.push(format!("get_unweighted_triads_number()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.get_triads_number();
+				graph.get_unweighted_triads_number();
 			},
 			22 => {
-				trace.push(format!("get_transitivity()", ));
+				trace.push(format!("get_unweighted_transitivity()", ));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.get_transitivity();
+				graph.get_unweighted_transitivity();
 			},
 			23 => {
-				trace.push(format!("get_number_of_triangles_per_node(normalize = {:?})", data_for_current_test.get_number_of_triangles_per_node.normalize));
+				trace.push(format!("get_unweighted_number_of_triangles_per_node(normalize = {:?})", data_for_current_test.get_unweighted_number_of_triangles_per_node.normalize));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				graph.get_number_of_triangles_per_node(data_for_current_test.get_number_of_triangles_per_node.normalize);
+				graph.get_unweighted_number_of_triangles_per_node(data_for_current_test.get_unweighted_number_of_triangles_per_node.normalize);
 			},
 			24 => {
 				trace.push(format!("iter_clustering_coefficient_per_node()", ));

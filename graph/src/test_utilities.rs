@@ -761,11 +761,11 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
-            .get_number_of_triangles_per_node(Some(false))
+            .get_unweighted_number_of_triangles_per_node(Some(false))
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>(),
-        graph.get_number_of_triangles(Some(false))
+        graph.get_unweighted_number_of_triangles(Some(false))
     );
     Ok(())
 }

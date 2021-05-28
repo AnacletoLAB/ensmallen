@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader, NodeFileReader};
+use graph::{Graph, EdgeFileReader};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -18,7 +18,7 @@ fn test_non_determinism_triangles() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_weights_column_number(Some(3))?
-        .set_ignore_duplicates(Some(false))
+        .set_ignore_duplicates(Some(true))
         .set_skip_selfloops(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_numeric_node_ids(Some(false))

@@ -795,22 +795,22 @@ impl EnsmallenGraph {
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
     ///
-    pub fn get_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
-        self.graph.get_number_of_triangles(normalize)
+    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+        self.graph.get_unweighted_number_of_triangles(normalize)
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns total number of triads in the graph
-    pub fn get_triads_number(&self) -> EdgeT {
-        self.graph.get_triads_number()
+    pub fn get_unweighted_triads_number(&self) -> EdgeT {
+        self.graph.get_unweighted_triads_number()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns transitivity of the graph
-    pub fn get_transitivity(&self) -> f64 {
-        self.graph.get_transitivity()
+    pub fn get_unweighted_transitivity(&self) -> f64 {
+        self.graph.get_unweighted_transitivity()
     }
 
     #[automatically_generated_binding]
@@ -822,11 +822,11 @@ impl EnsmallenGraph {
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
     ///
-    pub fn get_number_of_triangles_per_node(&self, normalize: Option<bool>) -> Py<PyArray1<NodeT>> {
+    pub fn get_unweighted_number_of_triangles_per_node(&self, normalize: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.graph.get_number_of_triangles_per_node(normalize),
+            self.graph.get_unweighted_number_of_triangles_per_node(normalize),
             NodeT
         )
     }

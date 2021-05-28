@@ -259,19 +259,19 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_number_of_triangles",
+        method_name: "Graph::get_unweighted_number_of_triangles",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_triads_number",
+        method_name: "Graph::get_unweighted_triads_number",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_transitivity",
+        method_name: "Graph::get_unweighted_transitivity",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_number_of_triangles_per_node",
+        method_name: "Graph::get_unweighted_number_of_triangles_per_node",
         section_name: "Example",
     },
     MissingSection {
