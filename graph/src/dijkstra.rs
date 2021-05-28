@@ -110,7 +110,11 @@ impl Graph {
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(node_id as usize);
+                let node_id_idx = dst_node_ids.iter().position(|x| *x == node_id);
+
+                if let Some(nii) = node_id_idx {
+                    dst_node_ids.remove(nii);
+                }
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.
@@ -315,7 +319,11 @@ impl Graph {
             // If the closest node is in the set of the destination nodes
             if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
                 // We remove it
-                dst_node_ids.remove(closest_node_id);
+                let node_id_idx = dst_node_ids.iter().position(|x| *x as usize == closest_node_id);
+                
+                if let Some(nii) = node_id_idx {
+                    dst_node_ids.remove(nii);
+                }
                 // And if now the roaringbitmap is empty
                 if dst_node_ids.is_empty() {
                     // We have completed the requested task.

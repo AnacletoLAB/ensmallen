@@ -1,0 +1,17 @@
+   0:     0x5555555eda73 - backtrace::capture::Backtrace::new::h23c7f25eb1053b44
+   1:     0x5555557f45a9 - graph_harness::handle_panics::dump_backtrace::h7e356d638da83897
+   2:     0x5555557f5c31 - graph_harness::handle_panics::handle_panics_from_vec::h88111e8269ca0aa7
+   3:     0x5555557e66a8 - graph_harness::signal_handler::abrt_handler::he6c0e64bab972f15
+   4:     0x7ffff7c79f80 - <unknown>
+   5:     0x7ffff7c79ef5 - raise
+   6:     0x7ffff7c63862 - abort
+   7:     0x555555970b57 - std::sys::unix::abort_internal::hca71caeef6bfcd32
+                               at /rustc/3e99439f4dacc8ba0d2ca48d221694362d587927/library/std/src/sys/unix/mod.rs:206:14
+   8:     0x5555555bdeb6 - std::process::abort::h3031b3df07eaf794
+                               at /rustc/3e99439f4dacc8ba0d2ca48d221694362d587927/library/std/src/process.rs:1814:5
+   9:     0x5555555c286d - from_vec::main::hfd9c14086a18de72
+  10:     0x5555555bf34e - std::sys_common::backtrace::__rust_begin_short_backtrace::h28e23f359e121643
+  11:     0x5555555c24ce - main
+  12:     0x7ffff7c64b25 - __libc_start_main
+  13:     0x5555555beb1e - _start
+  14:                0x0 - <unknown>
