@@ -20,15 +20,15 @@ pub struct FromVecHarnessParams {
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-    let data_for_panic_handling1 = data.clone();
+    // let data_for_panic_handling1 = data.clone();
     let data_for_panic_handling2 = data.clone();
-    let data_for_signal_handling = data.clone();
-    std::panic::set_hook(Box::new(move |info| {
-        handle_panics_from_vec(Some(info), data_for_panic_handling1.clone(), None);
-    }));
+    // let data_for_signal_handling = data.clone();
+    // std::panic::set_hook(Box::new(move |info| {
+    //     handle_panics_from_vec(Some(info), data_for_panic_handling1.clone(), None);
+    // }));
 
 
-    register_handler(libc::SIGABRT, abrt_handler, data_for_signal_handling);
+    //register_handler(libc::SIGABRT, abrt_handler, data_for_signal_handling);
 
     let mut graph = graph::Graph::from_string_unsorted(
         data.edges.into_iter(),
