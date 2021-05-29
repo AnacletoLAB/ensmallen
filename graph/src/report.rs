@@ -30,11 +30,11 @@ impl Graph {
             );
             report.insert(
                 "max_degree",
-                self.get_max_node_degree().unwrap().to_string(),
+                self.get_unweighted_max_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "degree_mean",
-                self.get_node_degrees_mean().unwrap().to_string(),
+                self.get_unweighted_node_degrees_mean().unwrap().to_string(),
             );
         }
 
@@ -888,9 +888,9 @@ impl Graph {
                 ),
                 false=>"is connected, as it has a single component".to_owned()
             },
-            median_node_degree=self.get_node_degrees_median().unwrap(),
-            mean_node_degree=self.get_node_degrees_mean().unwrap(),
-            mode_node_degree=self.get_node_degrees_mode().unwrap(),
+            median_node_degree=self.get_unweighted_node_degrees_median().unwrap(),
+            mean_node_degree=self.get_unweighted_node_degrees_mean().unwrap(),
+            mode_node_degree=self.get_unweighted_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
             central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ));

@@ -639,7 +639,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	graph.get_multigraph_edges_number();
 	graph.get_name();
 	graph.get_node_components_vector(data.get_node_components_vector.verbose);
-	graph.get_node_degrees();
+	graph.get_unweighted_node_degrees();
 	graph.get_node_names();
 	graph.get_node_types_number();
 	graph.get_nodes();
@@ -708,7 +708,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_edge_type_name_from_edge_id(data.get_edge_type_name_from_edge_id.edge_id);
 	let _ = graph.get_edge_type_name_from_edge_type_id(data.get_edge_type_name_from_edge_type_id.edge_type_id);
 	let _ = graph.get_edge_types();
-	let _ = graph.get_max_node_degree();
+	let _ = graph.get_unweighted_max_node_degree();
 	let _ = graph.get_max_weight();
 	let _ = graph.get_min_node_degree();
 	let _ = graph.get_min_weight();
@@ -716,9 +716,9 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.get_minmax_edge_ids_from_source_node_id(data.get_minmax_edge_ids_from_source_node_id.src);
 	let _ = graph.get_node_count_from_node_type_id(data.get_node_count_from_node_type_id.node_type);
 	let _ = graph.get_unweighted_node_degree_from_node_id(data.get_unweighted_node_degree_from_node_id.node_id);
-	let _ = graph.get_node_degrees_mean();
-	let _ = graph.get_node_degrees_median();
-	let _ = graph.get_node_degrees_mode();
+	let _ = graph.get_unweighted_node_degrees_mean();
+	let _ = graph.get_unweighted_node_degrees_median();
+	let _ = graph.get_unweighted_node_degrees_mode();
 	let _ = graph.get_node_ids_and_type_from_edge_id(data.get_node_ids_and_type_from_edge_id.edge_id);
 	let _ = graph.get_node_ids_from_edge_id(data.get_node_ids_from_edge_id.edge_id);
 	let _ = graph.get_node_ids_type_and_weight_from_edge_id(data.get_node_ids_type_and_weight_from_edge_id.edge_id);

@@ -259,19 +259,19 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_number_of_triangles",
+        method_name: "Graph::get_unweighted_number_of_triangles",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_triads_number",
+        method_name: "Graph::get_unweighted_triads_number",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_transitivity",
+        method_name: "Graph::get_unweighted_transitivity",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_number_of_triangles_per_node",
+        method_name: "Graph::get_unweighted_number_of_triangles_per_node",
         section_name: "Example",
     },
     MissingSection {
@@ -291,11 +291,11 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_breath_first_search",
+        method_name: "Graph::get_unchecked_breath_first_search_from_node_ids",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_unweighted_k_shortest_path",
+        method_name: "Graph::get_unchecked_unweighted_k_shortest_path_from_node_ids",
         section_name: "Example",
     },
     MissingSection {
@@ -1382,22 +1382,22 @@ SKIPPING
         section_name: "Raises",
     },
     MissingSection {
-        method_name: "Graph::get_node_degrees_mean",
+        method_name: "Graph::get_unweighted_node_degrees_mean",
         section_name: "Raises",
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_unique_undirected_edges_number",
     },
     MissingSection {
-        method_name: "Graph::get_node_degrees_median",
+        method_name: "Graph::get_unweighted_node_degrees_median",
         section_name: "Raises",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_max_node_degree",
+        method_name: "Graph::get_unchecked_unweighted_max_node_degree",
         section_name: "Example",
     },
     DuplicatedIntroduction {
-        method_name: "Graph::get_max_node_degree",
+        method_name: "Graph::get_unweighted_max_node_degree",
     },
     MissingSection {
         method_name: "Graph::get_unchecked_argmax_node_degree",
@@ -1411,14 +1411,14 @@ SKIPPING
         method_name: "Graph::get_argmax_node_degree",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_min_node_degree",
+        method_name: "Graph::get_unchecked_unweighted_min_node_degree",
         section_name: "Example",
     },
     DuplicatedIntroduction {
         method_name: "Graph::get_min_node_degree",
     },
     MissingSection {
-        method_name: "Graph::get_node_degrees_mode",
+        method_name: "Graph::get_unweighted_node_degrees_mode",
         section_name: "Raises",
     },
     MissingSection {
@@ -1633,7 +1633,7 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_node_degrees",
+        method_name: "Graph::get_unweighted_node_degrees",
         section_name: "Example",
     },
     MissingSection {

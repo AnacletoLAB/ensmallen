@@ -72,7 +72,7 @@ pub fn handle_panics_from_csv_once_loaded(
         dump_nodes_metadata(format!("{}/nodes_metadata.csv", path), &nodes_reader);
     }
 
-    if let Ok(r) = graph.textual_report(false) {
+    if let Ok(r) = graph.textual_report(Some(false)) {
         std::fs::write(format!("{}/report.txt", path), r).expect("Cannot write the edge file");
     }
 
@@ -137,7 +137,7 @@ pub fn handle_panics_from_vec_once_loaded(
         dump_nodes_metadata_from_vec(format!("{}/nodes_metadata.csv", path), &data);
     }
 
-    if let Ok(r) = graph.textual_report(false) {
+    if let Ok(r) = graph.textual_report(Some(false)) {
         std::fs::write(format!("{}/report.txt", path), r).expect("Cannot write the edge file");
     }
 

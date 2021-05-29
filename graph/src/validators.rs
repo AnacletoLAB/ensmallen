@@ -51,7 +51,8 @@ impl Graph {
     /// # Raises
     /// * If any of the given node ID does not exists in the graph.
     pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<NodeT>, String> {
-        node_ids.into_iter()
+        node_ids
+            .into_iter()
             .map(|node_id| self.validate_node_id(node_id))
             .collect()
     }
@@ -100,7 +101,8 @@ impl Graph {
     /// # Raises
     /// * If any of the given edge ID does not exists in the graph.
     pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> Result<Vec<EdgeT>, String> {
-        edge_ids.into_iter()
+        edge_ids
+            .into_iter()
             .map(|edge_id| self.validate_edge_id(edge_id))
             .collect()
     }
@@ -358,13 +360,40 @@ impl Graph {
     }
 
     #[no_binding]
+    /// Raises an error if the graph does not have weights.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
+    /// assert!(graph_with_weights.must_have_edge_weights_representing_probabilities().is_err());
+    /// assert!(normalized.must_have_edge_weights_representing_probabilities().is_ok());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    pub fn must_have_edge_weights_representing_probabilities(
+        &self,
+    ) -> Result<&Vec<WeightT>, String> {
+        if !self.has_edge_weights_representing_probabilities()? {
+            return Err(
+                "The current graph instance does not contain weights representing probabilities."
+                    .to_string(),
+            );
+        }
+        Ok(self.weights.as_ref().unwrap())
+    }
+
+    #[no_binding]
     /// Raises an error if the graph has negative edge weights.
     ///
     /// # Example
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, false, false, false);
     /// # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));
     /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
     /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());
@@ -380,7 +409,22 @@ impl Graph {
         Ok(self.weights.as_ref().unwrap())
     }
 
-    /// Raises an error if the graph does not have any edge.
+    /// Raises an error if the graph contains zero weighted degree.
+    ///
+    /// # Raises
+    /// * If the graph does not have edges.
+    pub fn must_not_contain_weighted_singleton_nodes(&self) -> Result<(), String> {
+        if self.has_weighted_singleton_nodes()? {
+            return Err(concat!(
+                "The current graph instance contains weighted ",
+                "singleton nodes, that is nodes with weighted degree zero."
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph has a maximal weighted
     ///
     /// # Example
     /// In order to validate a graph instance, you can use:

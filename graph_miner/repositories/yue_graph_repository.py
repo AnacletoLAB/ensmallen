@@ -96,7 +96,7 @@ class YueGraphRepository(GraphRepository):
         """
         return None
 
-    def build_graph_parameters(
+    def from_integer_sorted_parameters(
         self,
         graph_name: str,
         edge_path: str,
@@ -118,7 +118,7 @@ class YueGraphRepository(GraphRepository):
         Dictionary to build the graph object.
         """
         return {
-            **super().build_graph_parameters(
+            **super().from_integer_sorted_parameters(
                 graph_name,
                 edge_path,
                 node_path

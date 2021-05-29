@@ -141,7 +141,7 @@ pub fn load_ppi(
 
 /// Load an empty graph instance
 pub fn load_empty_graph(directed: bool) -> Graph {
-    Graph::build_graph(
+    Graph::from_integer_sorted(
         std::iter::empty(),
         0,
         Vocabulary::default(),
@@ -317,12 +317,68 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
+    // Test that the weights do not contain zeros.
+    if graph.has_edge_weights() {
+        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));
+    }
+
     // Testing that the degrees computation is correct
     assert_eq!(
-        graph.get_max_node_degree()?,
+        graph.get_unweighted_max_node_degree()?,
         graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
+
+    if graph.has_edge_weights() {
+        assert!(
+            (graph.get_weighted_max_node_degree()?
+                - graph
+                    .iter_weighted_node_degrees()?
+                    .max_by(|a, b| a.partial_cmp(b).unwrap())
+                    .unwrap())
+            .abs()
+                < f64::EPSILON,
+            concat!(
+                "The cached weighted maximum degree ({}) ",
+                "does not match the one computed from the node degrees ({}), ",
+                "where the node degrees list is {:?}.\n",
+                "Additionally the number of weighted singleton nodes is {:?}."
+            ),
+            graph.get_weighted_max_node_degree()?,
+            graph
+                    .iter_weighted_node_degrees()?
+                    .max_by(|a, b| a.partial_cmp(b).unwrap())
+                    .unwrap(),
+            graph.get_weighted_node_degrees(),
+            graph.get_weighted_singleton_nodes_number()
+        );
+        assert!(
+            (graph.get_weighted_min_node_degree()?
+                - graph
+                    .iter_weighted_node_degrees()?
+                    .min_by(|a, b| a.partial_cmp(b).unwrap())
+                    .unwrap())
+            .abs()
+                < f64::EPSILON,
+            "The cached weighted minimum degree ({}) does not match the one computed from the node degrees ({}).",
+            graph.get_weighted_min_node_degree()?,
+            graph
+                    .iter_weighted_node_degrees()?
+                    .min_by(|a, b| a.partial_cmp(b).unwrap())
+                    .unwrap()
+        );
+    }
+
+    if graph.has_singleton_nodes() {
+        assert!(graph.get_min_node_degree()? == 0);
+        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
+    }
+
+    if !graph.is_directed() && !graph.has_singleton_nodes() {
+        assert!(graph.get_min_node_degree()? > 0);
+        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
+    }
+
     assert_eq!(
         graph.get_min_node_degree()?,
         graph.iter_unweighted_node_degrees().min().unwrap(),
@@ -351,16 +407,21 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
-        assert!(unsafe{graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id)} == 0);
-        assert!(unsafe{graph.is_unchecked_singleton_from_node_id(singleton_node_id)});
+        assert!(
+            unsafe { graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) }
+                == 0
+        );
+        assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });
     }
 
     if !graph.is_directed() {
         for node_id in graph.iter_node_ids() {
-            unsafe{assert_eq!(
-                graph.is_unchecked_singleton_from_node_id(node_id),
-                graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
-            )};
+            unsafe {
+                assert_eq!(
+                    graph.is_unchecked_singleton_from_node_id(node_id),
+                    graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
+                )
+            };
         }
     }
 
@@ -445,8 +506,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Get one edge from the graph if there are any presents
     if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {
-        let src_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.0)};
-        let dst_string = unsafe{graph.get_unchecked_node_name_from_node_id(edge.1)};
+        let src_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.0) };
+        let dst_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.1) };
         let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;
         if graph.has_edge_types() {
             let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;
@@ -619,7 +680,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 }
 
 pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
-    let node_degree_centralities = graph.get_degree_centrality()?;
+    let node_degree_centralities = graph.get_unweighted_degree_centrality()?;
+
     assert_eq!(
         node_degree_centralities.len(),
         graph.get_nodes_number() as usize
@@ -627,11 +689,41 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 
     assert!(
         node_degree_centralities
-            .into_iter()
-            .all(|value| value <= 1.0),
-        "All node degrees centralities are expected to be within 0 and 1."
+            .iter()
+            .cloned()
+            .all(|value| value <= 1.0 && value >= 0.0),
+        "All node degrees centralities are expected to be within 0 and 1, but are {:?}.",
+        node_degree_centralities
     );
-    let node_betweenness_centralities = graph.get_betweenness_centrality(None,verbose);
+
+    if graph.has_edge_weights() {
+        let node_degree_centralities = graph.get_weighted_degree_centrality()?;
+
+        assert_eq!(
+            node_degree_centralities.len(),
+            graph.get_nodes_number() as usize
+        );
+
+        assert!(
+            node_degree_centralities
+                .iter()
+                .cloned()
+                .all(|value| value <= 1.0 && value >= 0.0),
+            concat!(
+                "All weighted node degrees centralities ",
+                "are expected to be within 0 and 1, ",
+                "but are {:?} and the node degrees are {:?}, with the ",
+                "minimum weighted node degree being {} and ",
+                "maximum weighted node degree being {}.",
+            ),
+            node_degree_centralities,
+            graph.get_weighted_node_degrees(),
+            graph.get_weighted_min_node_degree()?,
+            graph.get_weighted_max_node_degree()?,
+        );
+    }
+
+    let node_betweenness_centralities = graph.get_betweenness_centrality(None, verbose);
     assert_eq!(
         node_betweenness_centralities.len(),
         graph.get_nodes_number() as usize
@@ -640,7 +732,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         .into_iter()
         .enumerate()
         .for_each(|(node_id, value)| {
-            if unsafe{graph.is_unchecked_singleton_from_node_id(node_id as NodeT)} {
+            if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {
                 assert!(value.abs() < f64::EPSILON);
             }
         });
@@ -669,11 +761,11 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
-            .get_number_of_triangles_per_node(Some(false))
+            .get_unweighted_number_of_triangles_per_node(Some(false))
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>(),
-        graph.get_number_of_triangles(Some(false))
+        graph.get_unweighted_number_of_triangles(Some(false))
     );
     Ok(())
 }
@@ -785,8 +877,14 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
-        let (train, test) =
-            graph.random_holdout(0.6, None, Some(*include_all_edge_types), None, None, verbose)?;
+        let (train, test) = graph.random_holdout(
+            0.6,
+            None,
+            Some(*include_all_edge_types),
+            None,
+            None,
+            verbose,
+        )?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
@@ -984,7 +1082,10 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), Strin
     Ok(())
 }
 
-pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+pub fn test_negative_edges_generation(
+    graph: &mut Graph,
+    verbose: Option<bool>,
+) -> Result<(), String> {
     for only_from_same_component in &[true, false] {
         let negatives = graph.sample_negatives(
             graph.get_edges_number(),
@@ -1019,7 +1120,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
 
 pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let expected_nodes = graph.get_connected_nodes_number() / 10;
-    let subgraph = graph.random_subgraph(expected_nodes, None , verbose)?;
+    let subgraph = graph.random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
@@ -1081,25 +1182,12 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
     }
     if graph.has_edges() {
         graph
-            .link_prediction_degrees(
-                0, 
-                256, 
-                true, 
-                10.0, 
-                false, 
-                10, 
-                &None
-            ).unwrap()
+            .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
+            .unwrap()
             .collect::<Vec<_>>();
         graph
-            .link_prediction_ids(
-                0, 
-                256, 
-                10.0, 
-                false, 
-                10, 
-                &None
-            ).unwrap()
+            .link_prediction_ids(0, 256, 10.0, false, 10, &None)
+            .unwrap()
             .collect::<Vec<_>>();
     }
 
@@ -1128,13 +1216,13 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
-                [unsafe{graph.get_unchecked_node_name_from_node_id(0)}]
+                [unsafe { graph.get_unchecked_node_name_from_node_id(0) }]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
             ),
             Some(
-                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
+                [unsafe { graph.get_unchecked_node_name_from_node_id(1) }]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1143,10 +1231,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
             None,
         )?;
         let _star = graph.get_star_edges(
-            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
+            unsafe { graph.get_unchecked_node_name_from_node_id(0) },
             Some(false),
             Some(
-                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
+                [unsafe { graph.get_unchecked_node_name_from_node_id(1) }]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1154,10 +1242,10 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            unsafe{graph.get_unchecked_node_name_from_node_id(0)},
+            unsafe { graph.get_unchecked_node_name_from_node_id(0) },
             Some(false),
             Some(
-                [unsafe{graph.get_unchecked_node_name_from_node_id(1)}]
+                [unsafe { graph.get_unchecked_node_name_from_node_id(1) }]
                     .iter()
                     .cloned()
                     .collect::<HashSet<String>>(),
@@ -1247,25 +1335,8 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
 
 pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
     let unfiltered = graph.filter_from_ids(
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        verbose,
+        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+        None, None, None, verbose,
     );
     assert_eq!(&unfiltered, graph);
     assert!(graph

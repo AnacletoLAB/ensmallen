@@ -131,7 +131,7 @@ impl Graph {
     /// the resulting node degree may be negative.
     /// This check is **NOT** done by this method, as in some situations
     /// this may be desired by the user.
-    pub fn iter_weighted_node_degrees(&self) -> Result<impl Iterator<Item = WeightT> + '_, String> {
+    pub fn iter_weighted_node_degrees(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edge_weights()?;
         Ok(self.iter_node_ids()
             .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
@@ -148,7 +148,7 @@ impl Graph {
     /// this may be desired by the user.
     pub fn par_iter_weighted_node_degrees(
         &self,
-    ) -> Result<impl IndexedParallelIterator<Item = WeightT> + '_, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = f64> + '_, String> {
         self.must_have_edge_weights()?;
         Ok(self.par_iter_node_ids()
             .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
@@ -367,6 +367,10 @@ impl Graph {
     }
 
     /// Return iterator on the node type IDs.
+    ///
+    /// # Safety
+    /// If the graph does not contain node types, this iterator will be an
+    /// iterator over None values.
     pub unsafe fn iter_unchecked_node_type_ids(
         &self,
     ) -> impl Iterator<Item = Option<Vec<NodeTypeT>>> + '_ {
@@ -394,6 +398,10 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph.
+    ///
+    /// # Safety
+    /// If the graph does not contain node types, this iterator will be an
+    /// iterator over None values as node types.
     pub unsafe fn par_iter_unchecked_node_ids_and_node_type_ids(
         &self,
     ) -> impl ParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {

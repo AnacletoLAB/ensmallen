@@ -74,7 +74,7 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
             handle_panics_from_csv_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
         }));
 
-        let _ = graph::test_utilities::default_test_suite(&mut g, false);
+        let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
     }
 
     let _ = remove_file(edges_path);

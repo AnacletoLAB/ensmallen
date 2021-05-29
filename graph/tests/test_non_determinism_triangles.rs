@@ -6,11 +6,11 @@ use graph::{Graph, EdgeFileReader};
 /// This is a regression test that has been automatically generated
 /// by the fuzzer harness.
 /// The test originally caused a panic in the file test_utilities.rs,
-/// specifically (at the time) line 333 and column 9.
-/// The provided message was: 'The cached weighted maximum degree (-4048.01611328125) does not match the one computed from the node degrees (0).'
+/// specifically (at the time) line 762 and column 5.
+/// The provided message was: 'assertion failed: `(left == right)`  left: `0`, right: `3`'
 ///
-fn test_regression_35() -> Result<(), String> {
-    let edges_reader = EdgeFileReader::new("tests/data/regression/35.edges")?
+fn test_non_determinism_triangles() -> Result<(), String> {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/37.edges")?
         .set_rows_to_skip(Some(0))
         .set_header(Some(false))
         .set_separator(Some(","))?
@@ -18,7 +18,7 @@ fn test_regression_35() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_weights_column_number(Some(3))?
-        .set_ignore_duplicates(Some(false))
+        .set_ignore_duplicates(Some(true))
         .set_skip_selfloops(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_numeric_node_ids(Some(false))
@@ -33,7 +33,8 @@ fn test_regression_35() -> Result<(), String> {
         true, // Directed edge list
         "Fuzz Graph" // Name of the graph
     )?;
-    
-    let _ = graph::test_utilities::default_test_suite(&mut graph, Some(false));
+    for _ in 0..10_000 {
+        let _ = graph::test_utilities::test_polygons(&mut graph, Some(false));
+    }
     Ok(())
 }

@@ -43,6 +43,19 @@ impl Graph {
             - self.get_singleton_nodes_with_selfloops_number()
     }
 
+    /// Return number of weighted singleton nodes within the graph.
+    ///
+    /// This number represents the number of nodes that have weighted node
+    /// degree equal to 0, which may happen when the graph contains edges
+    /// with negative edge weights.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn get_weighted_singleton_nodes_number(&self) -> Result<NodeT, String> {
+        self.must_have_edge_weights()?;
+        Ok(self.weighted_singleton_nodes_number.unwrap())
+    }
+
     /// Returns number of disconnected nodes within the graph.
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
@@ -174,9 +187,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
+    /// println!("The mean node degree of the graph is  {}", graph.get_unweighted_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_unweighted_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
@@ -237,32 +250,49 @@ impl Graph {
         }
     }
 
-    /// Returns median node degree of the graph
+    /// Returns unweighted median node degree of the graph
     ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
+    /// println!("The median node degree of the graph is  {}", graph.get_unweighted_node_degrees_median().unwrap());
     /// ```
-    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
-        if !self.has_nodes() {
-            return Err(
-                "The median of the node degrees is not defined on an empty graph".to_string(),
-            );
-        }
-        let mut degrees = self.get_node_degrees();
+    pub fn get_unweighted_node_degrees_median(&self) -> Result<NodeT, String> {
+        self.must_have_nodes()?;
+        let mut degrees = self.get_unweighted_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
 
-    /// Returns maximum node degree of the graph.
+    /// Returns weighted median node degree of the graph
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The weighted median node degree of the graph is  {}", graph.get_weighted_node_degrees_median().unwrap());
+    /// ```
+    pub fn get_weighted_node_degrees_median(&self) -> Result<f64, String> {
+        self.must_have_nodes()?;
+        self.must_have_edge_weights()?;
+        let mut weighted_degrees = self.get_weighted_node_degrees()?;
+        weighted_degrees.par_sort_unstable_by(|a, b| a.partial_cmp(b).unwrap());
+        Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
+    }
+
+    /// Returns maximum unweighted node degree of the graph.
     ///
     /// # Safety
     /// The method will return an undefined value (0) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_max_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_unweighted_max_node_degree(&self) -> NodeT {
         self.max_node_degree
+    }
+
+    /// Returns maximum weighted node degree of the graph.
+    pub fn get_weighted_max_node_degree(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(self.max_weighted_node_degree.unwrap())
     }
 
     /// Returns maximum node degree of the graph.
@@ -270,14 +300,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_max_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_max_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_max_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_unweighted_max_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -315,8 +345,14 @@ impl Graph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_min_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_unweighted_min_node_degree(&self) -> NodeT {
         self.min_node_degree
+    }
+
+    /// Returns minimum weighted node degree of the graph.
+    pub fn get_weighted_min_node_degree(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(self.min_weighted_node_degree.unwrap())
     }
 
     /// Returns minimum node degree of the graph.
@@ -331,7 +367,7 @@ impl Graph {
     /// * If the graph does not contain any node (is an empty graph).
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_min_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_unweighted_min_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
@@ -339,9 +375,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
+    /// println!("The mode node degree of the graph is  {}", graph.get_unweighted_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
@@ -433,7 +469,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_source_node_ids(directed)
-            .map(|src| unsafe{self.get_unchecked_node_name_from_node_id(src)})
+            .map(|src| unsafe { self.get_unchecked_node_name_from_node_id(src) })
             .collect()
     }
 
@@ -451,7 +487,7 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.par_iter_destination_node_ids(directed)
-            .map(|dst| unsafe{self.get_unchecked_node_name_from_node_id(dst)})
+            .map(|dst| unsafe { self.get_unchecked_node_name_from_node_id(dst) })
             .collect()
     }
 
@@ -880,9 +916,14 @@ impl Graph {
             .map(|nts| nts.len() as NodeTypeT)
     }
 
-    /// Returns the degree of every node in the graph.
-    pub fn get_node_degrees(&self) -> Vec<NodeT> {
+    /// Returns the unweighted degree of every node in the graph.
+    pub fn get_unweighted_node_degrees(&self) -> Vec<NodeT> {
         self.par_iter_unweighted_node_degrees().collect()
+    }
+
+    /// Returns the weighted degree of every node in the graph.
+    pub fn get_weighted_node_degrees(&self) -> Result<Vec<f64>, String> {
+        Ok(self.par_iter_weighted_node_degrees()?.collect())
     }
 
     /// Return set of nodes that are not singletons.
@@ -908,7 +949,7 @@ impl Graph {
         self.cumulative_node_degrees.as_ref().map_or_else(
             || {
                 self.par_iter_node_ids()
-                    .map(|src| unsafe{self.get_unchecked_edge_id_from_node_ids(src + 1, 0)})
+                    .map(|src| unsafe { self.get_unchecked_edge_id_from_node_ids(src + 1, 0) })
                     .collect()
             },
             |cumulative_node_degrees| cumulative_node_degrees.clone(),

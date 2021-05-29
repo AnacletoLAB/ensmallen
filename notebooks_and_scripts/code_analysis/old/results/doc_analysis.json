@@ -7675,15 +7675,15 @@
         },
         "extra_headers": []
     },
-    "get_node_degrees_mean": {
+    "get_unweighted_node_degrees_mean": {
         "file": "getters.rs",
-        "function": "get_node_degrees_mean",
+        "function": "get_unweighted_node_degrees_mean",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mean node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mean().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -7735,27 +7735,27 @@
         },
         "extra_headers": []
     },
-    "get_node_degrees_median": {
+    "get_unweighted_node_degrees_median": {
         "file": "getters.rs",
-        "function": "get_node_degrees_median",
+        "function": "get_unweighted_node_degrees_median",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The median node degree of the graph is  {}\", graph.get_unweighted_node_degrees_median().unwrap());\n"
         },
         "extra_headers": []
     },
-    "get_max_node_degree": {
+    "get_unweighted_max_node_degree": {
         "file": "getters.rs",
-        "function": "get_max_node_degree",
+        "function": "get_unweighted_max_node_degree",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The maximum node degree of the graph is  {}\", graph.get_unweighted_max_node_degree().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -7771,15 +7771,15 @@
         },
         "extra_headers": []
     },
-    "get_node_degrees_mode": {
+    "get_unweighted_node_degrees_mode": {
         "file": "getters.rs",
-        "function": "get_node_degrees_mode",
+        "function": "get_unweighted_node_degrees_mode",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mode node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mode().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -8480,9 +8480,9 @@
             }
         ]
     },
-    "get_node_degrees": {
+    "get_unweighted_node_degrees": {
         "file": "getters.rs",
-        "function": "get_node_degrees",
+        "function": "get_unweighted_node_degrees",
         "errors": [
             {
                 "doc_line": 0,
@@ -10775,9 +10775,9 @@
         "example": {},
         "extra_headers": []
     },
-    "build_graph": {
+    "from_integer_sorted": {
         "file": "constructors.rs",
-        "function": "build_graph",
+        "function": "from_integer_sorted",
         "errors": [
             {
                 "doc_line": 0,

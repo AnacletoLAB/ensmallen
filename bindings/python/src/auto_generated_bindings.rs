@@ -795,22 +795,22 @@ impl EnsmallenGraph {
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
     ///
-    pub fn get_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
-        self.graph.get_number_of_triangles(normalize)
+    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+        self.graph.get_unweighted_number_of_triangles(normalize)
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns total number of triads in the graph
-    pub fn get_triads_number(&self) -> EdgeT {
-        self.graph.get_triads_number()
+    pub fn get_unweighted_triads_number(&self) -> EdgeT {
+        self.graph.get_unweighted_triads_number()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns transitivity of the graph
-    pub fn get_transitivity(&self) -> f64 {
-        self.graph.get_transitivity()
+    pub fn get_unweighted_transitivity(&self) -> f64 {
+        self.graph.get_unweighted_transitivity()
     }
 
     #[automatically_generated_binding]
@@ -822,11 +822,11 @@ impl EnsmallenGraph {
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
     ///
-    pub fn get_number_of_triangles_per_node(&self, normalize: Option<bool>) -> Py<PyArray1<NodeT>> {
+    pub fn get_unweighted_number_of_triangles_per_node(&self, normalize: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.graph.get_number_of_triangles_per_node(normalize),
+            self.graph.get_unweighted_number_of_triangles_per_node(normalize),
             NodeT
         )
     }
@@ -870,7 +870,7 @@ impl EnsmallenGraph {
     /// compute_predecessors: Optional[bool],
     ///     Whether to compute the vector of predecessors.
     ///
-    pub unsafe fn get_unchecked_breath_first_search(
+    pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -878,7 +878,7 @@ impl EnsmallenGraph {
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
     ) -> ShortestPathsResultBFS {
-        self.graph.get_unchecked_breath_first_search(
+        self.graph.get_unchecked_breath_first_search_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
@@ -900,14 +900,14 @@ impl EnsmallenGraph {
     /// k: int,
     ///     Number of paths to find.
     ///
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_unweighted_k_shortest_path(src_node_id, dst_node_id, k)
+            .get_unchecked_unweighted_k_shortest_path_from_node_ids(src_node_id, dst_node_id, k)
     }
 
     #[automatically_generated_binding]
@@ -4345,8 +4345,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns mean node degree of the graph.
-    pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
-        pe!(self.graph.get_node_degrees_mean())
+    pub fn get_unweighted_node_degrees_mean(&self) -> PyResult<f64> {
+        pe!(self.graph.get_unweighted_node_degrees_mean())
     }
 
     #[automatically_generated_binding]
@@ -4380,8 +4380,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns median node degree of the graph
-    pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_node_degrees_median())
+    pub fn get_unweighted_node_degrees_median(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_node_degrees_median())
     }
 
     #[automatically_generated_binding]
@@ -4393,8 +4393,8 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (0) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_max_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_max_node_degree()
+    pub unsafe fn get_unchecked_unweighted_max_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_unweighted_max_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -4406,8 +4406,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     ///
-    pub fn get_max_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_max_node_degree())
+    pub fn get_unweighted_max_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_max_node_degree())
     }
 
     #[automatically_generated_binding]
@@ -4437,8 +4437,8 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_min_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_min_node_degree()
+    pub unsafe fn get_unchecked_unweighted_min_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_unweighted_min_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -4457,8 +4457,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
-    pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_node_degrees_mode())
+    pub fn get_unweighted_node_degrees_mode(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_node_degrees_mode())
     }
 
     #[automatically_generated_binding]
@@ -5030,9 +5030,9 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns the degree of every node in the graph
-    pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
+    pub fn get_unweighted_node_degrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_node_degrees(), NodeT)
+        to_ndarray_1d!(gil, self.graph.get_unweighted_node_degrees(), NodeT)
     }
 
     #[automatically_generated_binding]
