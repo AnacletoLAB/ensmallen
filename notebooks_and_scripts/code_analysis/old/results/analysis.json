@@ -4170,7 +4170,7 @@
                     ]
                 ],
                 "return_type": "Result<bool, String>",
-                "body": "self.validate_node_id(node_id)\n            .map(|node_id| unsafe{self.is_unchecked_singleton_from_node_id(node_id)})"
+                "body": "self.validate_node_id(node_id)\n            .map(|node_id| unsafe { self.is_unchecked_singleton_from_node_id(node_id) })"
             },
             {
                 "file": "queries_boolean.rs",
@@ -4246,7 +4246,7 @@
                     ]
                 ],
                 "return_type": "Result<bool, String>",
-                "body": "Ok(unsafe{self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)})"
+                "body": "Ok(unsafe {\n            self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)\n        })"
             },
             {
                 "file": "queries_boolean.rs",
@@ -4527,6 +4527,47 @@
                     " * `/has_unchecked_(.+?)_from_(.+)/`"
                 ],
                 "doc": [
+                    " Returns whether the given node ID has a selfloop.",
+                    "",
+                    " # Arguments",
+                    " * `node_id`: NodeT - Source node id.",
+                    "",
+                    " # Example",
+                    " To check if a selfloop appears in the graph you can use:",
+                    " ```rust",
+                    " # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);",
+                    " assert!(graph.has_selfloop_from_node_id(0));",
+                    " assert!(!graph.has_selfloop_from_node_id(4565));",
+                    " ```"
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "has_selfloop_from_node_id",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "node_id",
+                        "NodeT"
+                    ]
+                ],
+                "return_type": "bool",
+                "body": "self.has_edge_from_node_ids(node_id, node_id)"
+            },
+            {
+                "file": "queries_boolean.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Boolean Queries",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/is_(.+?)_from_(.+)/`",
+                    " * `/has_(.+?)_from_(.+)/`",
+                    " * `/is_unchecked_(.+?)_from_(.+)/`",
+                    " * `/has_unchecked_(.+?)_from_(.+)/`"
+                ],
+                "doc": [
                     " Returns whether edge with the given type passing between given nodes exists.",
                     "",
                     " # Arguments",
@@ -4611,7 +4652,7 @@
                     ]
                 ],
                 "return_type": "Result<bool, String>",
-                "body": "self.validate_node_id(node_id)\n            .map(|node_id| unsafe{self.is_unchecked_trap_node_from_node_id(node_id)})"
+                "body": "self.validate_node_id(node_id)\n            .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })"
             },
             {
                 "file": "queries_boolean.rs",
@@ -5317,7 +5358,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test that the weights do not contain zeros.\n    if graph.has_edge_weights() {\n        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));\n    }\n\n    // Testing that the degrees computation is correct\n    assert_eq!(\n        graph.get_unweighted_max_node_degree()?,\n        graph.iter_unweighted_node_degrees().max().unwrap(),\n        \"The cached maximum degree does not match the one computed from the node degrees.\"\n    );\n\n    if graph.has_edge_weights() {\n        assert!(\n            (graph.get_weighted_max_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .max_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            concat!(\n                \"The cached weighted maximum degree ({}) \",\n                \"does not match the one computed from the node degrees ({}), \",\n                \"where the node degrees list is {:?}.\\n\",\n                \"Additionally the number of weighted singleton nodes is {:?}.\"\n            ),\n            graph.get_weighted_max_node_degree()?,\n            graph\n                    .iter_weighted_node_degrees()?\n                    .max_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap(),\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_singleton_nodes_number()\n        );\n        assert!(\n            (graph.get_weighted_min_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            \"The cached weighted minimum degree ({}) does not match the one computed from the node degrees ({}).\",\n            graph.get_weighted_min_node_degree()?,\n            graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap()\n        );\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? == 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);\n    }\n\n    if !graph.is_directed() && !graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? > 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);\n    }\n\n    assert_eq!(\n        graph.get_min_node_degree()?,\n        graph.iter_unweighted_node_degrees().min().unwrap(),\n        \"The cached minimum degree does not match the one computed from the node degrees.\"\n    );\n\n    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {\n        assert!(graph.has_singleton_nodes());\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.unique_sources.is_some());\n    }\n\n    assert_eq!(\n        graph.singleton_nodes_with_selfloops.is_some(),\n        graph.has_singleton_nodes_with_selfloops(),\n    );\n\n    assert_eq!(\n        graph\n            .singleton_nodes_with_selfloops\n            .as_ref()\n            .map_or(0, |x| x.len() as NodeT),\n        graph.get_singleton_nodes_with_selfloops_number(),\n    );\n\n    for singleton_node_id in graph.iter_singleton_node_ids() {\n        assert!(\n            unsafe { graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) }\n                == 0\n        );\n        assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });\n    }\n\n    if !graph.is_directed() {\n        for node_id in graph.iter_node_ids() {\n            unsafe {\n                assert_eq!(\n                    graph.is_unchecked_singleton_from_node_id(node_id),\n                    graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0\n                )\n            };\n        }\n    }\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Singletons with selfloops can only exist if the graph has nodes AND selfloops\n    if graph.has_singleton_nodes() {\n        assert!(graph.has_nodes());\n    }\n    if graph.has_singleton_nodes_with_selfloops() {\n        assert!(graph.has_nodes());\n        assert!(graph.has_selfloops());\n    }\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_connected_nodes_number()\n            + graph.get_singleton_nodes_number()\n            + graph.get_singleton_nodes_with_selfloops_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    assert_eq!(\n        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),\n        \"Sum of singleton and singleton with selfloops does not match the number of disconnected nodes.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(None)\n        );\n    }\n\n    assert_eq!(\n        !graph.has_nodes(),\n        smallest == 0,\n        \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n        graph.textual_report(None)\n    );\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.0) };\n        let dst_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.1) };\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            let clone_edge_type = edge_type.clone();\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(None)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(None)\n            );\n        }\n        assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(None)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n    graph.overlap_textual_report(&graph, verbose)?;\n    graph.get_peculiarities_report_markdown();\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.get_preferential_attachment(src, dst, true);\n            let _ = graph.get_preferential_attachment(src, dst, false);\n            let _ = graph.get_jaccard_coefficient(src, dst);\n            let _ = graph.get_adamic_adar_index(src, dst);\n            let _ = graph.get_resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_id_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(None)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(None)\n            );\n        }\n    }\n    Ok(())"
+                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test that the weights do not contain zeros.\n    if graph.has_edge_weights() {\n        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));\n    }\n\n    // Testing that the degrees computation is correct\n    assert_eq!(\n        graph.get_unweighted_max_node_degree()?,\n        graph.iter_unweighted_node_degrees().max().unwrap(),\n        \"The cached maximum degree does not match the one computed from the node degrees.\"\n    );\n\n    if graph.has_edge_weights() {\n        assert!(\n            (graph.get_weighted_max_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .max_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            concat!(\n                \"The cached weighted maximum degree ({}) \",\n                \"does not match the one computed from the node degrees ({}), \",\n                \"where the node degrees list is {:?}.\\n\",\n                \"Additionally the number of weighted singleton nodes is {:?}.\"\n            ),\n            graph.get_weighted_max_node_degree()?,\n            graph\n                .iter_weighted_node_degrees()?\n                .max_by(|a, b| a.partial_cmp(b).unwrap())\n                .unwrap(),\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_singleton_nodes_number()\n        );\n        assert!(\n            (graph.get_weighted_min_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            \"The cached weighted minimum degree ({}) does not match the one computed from the node degrees ({}).\",\n            graph.get_weighted_min_node_degree()?,\n            graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap()\n        );\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? == 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);\n    }\n\n    if !graph.is_directed() && !graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? > 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);\n    }\n\n    assert_eq!(\n        graph.get_min_node_degree()?,\n        graph.iter_unweighted_node_degrees().min().unwrap(),\n        \"The cached minimum degree does not match the one computed from the node degrees.\"\n    );\n\n    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {\n        assert!(graph.has_singleton_nodes());\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.unique_sources.is_some());\n    }\n\n    assert_eq!(\n        graph.singleton_nodes_with_selfloops.is_some(),\n        graph.has_singleton_nodes_with_selfloops(),\n    );\n\n    assert_eq!(\n        graph\n            .singleton_nodes_with_selfloops\n            .as_ref()\n            .map_or(0, |x| x.len() as NodeT),\n        graph.get_singleton_nodes_with_selfloops_number(),\n    );\n\n    for singleton_node_id in graph.iter_singleton_node_ids() {\n        assert!(\n            unsafe { graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) }\n                == 0\n        );\n        assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });\n    }\n\n    if !graph.is_directed() {\n        for node_id in graph.iter_node_ids() {\n            unsafe {\n                assert_eq!(\n                    graph.is_unchecked_singleton_from_node_id(node_id),\n                    graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0\n                )\n            };\n        }\n    }\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Singletons with selfloops can only exist if the graph has nodes AND selfloops\n    if graph.has_singleton_nodes() {\n        assert!(graph.has_nodes());\n    }\n    if graph.has_singleton_nodes_with_selfloops() {\n        assert!(graph.has_nodes());\n        assert!(graph.has_selfloops());\n    }\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_connected_nodes_number()\n            + graph.get_singleton_nodes_number()\n            + graph.get_singleton_nodes_with_selfloops_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    assert_eq!(\n        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),\n        \"Sum of singleton and singleton with selfloops does not match the number of disconnected nodes.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(None)\n        );\n    }\n\n    assert_eq!(\n        !graph.has_nodes(),\n        smallest == 0,\n        \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n        graph.textual_report(None)\n    );\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.0) };\n        let dst_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.1) };\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            let clone_edge_type = edge_type.clone();\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(None)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(None)\n            );\n        }\n        assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(None)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n    graph.overlap_textual_report(&graph, verbose)?;\n    graph.get_peculiarities_report_markdown();\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.get_preferential_attachment(src, dst, true);\n            let _ = graph.get_preferential_attachment(src, dst, false);\n            let _ = graph.get_jaccard_coefficient(src, dst);\n            let _ = graph.get_adamic_adar_index(src, dst);\n            let _ = graph.get_resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_id_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(None)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(None)\n            );\n        }\n    }\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5375,6 +5416,44 @@
                 ],
                 "return_type": "Result<(), String>",
                 "body": "assert_eq!(\n        graph\n            .get_unweighted_number_of_triangles_per_node(Some(false))\n            .into_iter()\n            .map(|triangles_number| triangles_number as EdgeT)\n            .sum::<EdgeT>(),\n        graph.get_unweighted_number_of_triangles(Some(false))\n    );\n    Ok(())"
+            },
+            {
+                "file": "test_utilities.rs",
+                "doc": [],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "test_transitivity",
+                "args": [
+                    [
+                        "graph",
+                        "&mut Graph"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Result<(), String>",
+                "body": "// We skip this test of graph with more than 1000 nodes to avoid slowing down\n    // too much the test suite.\n    if graph.get_nodes_number() > 1000{\n        return Ok(());\n    }\n    let mut transitive_closure = graph.get_transitive_closure(None, verbose);\n    let connected_components = graph.get_node_connected_component_ids(verbose);\n    if !graph.is_directed() {\n        for (src_node_id, src_component_id) in connected_components.iter().cloned().enumerate() {\n            if unsafe { graph.is_unchecked_singleton_from_node_id(src_node_id as NodeT) } {\n                continue;\n            }\n            for (dst_node_id, dst_component_id) in connected_components.iter().cloned().enumerate()\n            {\n                assert_eq!(\n                    transitive_closure\n                        .has_edge_from_node_ids(src_node_id as NodeT, dst_node_id as NodeT),\n                    src_component_id == dst_component_id,\n                    concat!(\n                        \"In an undirected graph, the transitive closure of the graph should \",\n                        \"contain an edge between all nodes in the same component, but \",\n                        \"the node {} and {} have as component IDs {} and {} respectively, \",\n                        \"and the test has edge has returned {}.\"\n                    ),\n                    src_node_id,\n                    dst_node_id,\n                    src_component_id,\n                    dst_component_id,\n                    transitive_closure\n                        .has_edge_from_node_ids(src_node_id as NodeT, dst_node_id as NodeT)\n                );\n            }\n        }\n    }\n    test_graph_properties(&mut transitive_closure, verbose)?;\n    Ok(())"
+            },
+            {
+                "file": "test_utilities.rs",
+                "doc": [],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "test_selfloops",
+                "args": [
+                    [
+                        "graph",
+                        "&mut Graph"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Result<(), String>",
+                "body": "assert_eq!(\n        graph.add_selfloops(None, Some(1.0), verbose).is_ok(),\n        graph.has_edge_weights()\n    );\n    let mut graph_with_selfloops = graph\n        .add_selfloops(\n            None,\n            if graph.has_edge_weights() {\n                Some(1.0)\n            } else {\n                None\n            },\n            verbose,\n        )\n        .unwrap();\n    for node_id in graph.iter_node_ids() {\n        assert!(graph_with_selfloops.has_selfloop_from_node_id(node_id));\n    }\n    test_graph_properties(&mut graph_with_selfloops, verbose)?;\n\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5699,7 +5778,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "warn!(\"Starting default test suite.\");\n    let _ = test_graph_properties(graph, verbose);\n\n    warn!(\"Testing SkipGram / CBOW / GloVe preprocessing.\");\n    let _ = test_embiggen_preprocessing(graph, verbose);\n\n    warn!(\"Testing subgraph generation.\");\n    let _ = test_subgraph_generation(graph, verbose);\n\n    warn!(\"Testing clone and setters.\");\n    let _ = test_clone_and_setters(graph, verbose);\n\n    warn!(\"Testing edge-label holdouts tests.\");\n    let _ = test_edgelabel_holdouts(graph, verbose);\n\n    warn!(\"Testing writing out graph to file.\");\n    let _ = test_dump_graph(graph, verbose);\n\n    warn!(\"Testing generic filtering mechanism.\");\n    let _ = test_graph_filter(graph, verbose);\n\n    warn!(\"Testing the spanning arborescences.\");\n    let _ = test_spanning_arborescence_bader(graph, verbose);\n\n    warn!(\"Testing the graph diameter.\");\n    let _ = test_graph_diameter(graph, verbose);\n\n    warn!(\"Running node-label holdouts tests.\");\n    let _ = test_nodelabel_holdouts(graph, verbose);\n\n    warn!(\"Running remove components tests.\");\n    let _ = test_remove_components(graph, verbose);\n\n    warn!(\"Testing removes.\");\n    let _ = test_graph_removes(graph, verbose);\n\n    warn!(\"Testing negative edges generation.\");\n    let _ = test_negative_edges_generation(graph, verbose);\n\n    warn!(\"Executing edge holdouts tests.\");\n    let _ = test_edge_holdouts(graph, verbose);\n\n    warn!(\"Testing k-fold holdouts.\");\n    let _ = test_kfold(graph, verbose);\n\n    warn!(\"Testing edge lists generation.\");\n    let _ = test_edgelist_generation(graph, verbose);\n\n    warn!(\"Testing graph remapping.\");\n    let _ = test_graph_remapping(graph, verbose);\n\n    warn!(\"Testing random walks.\");\n    let _ = test_random_walks(graph, verbose);\n\n    //warn!(\"Testing dijkstra.\");\n    //let _ = test_dijkstra(graph, verbose);\n\n    warn!(\"Testing approximated vertex cover\");\n    let _ = test_vertex_cover(graph, verbose);\n\n    warn!(\"Testing node centralities.\");\n    let _ = test_node_centralities(graph, verbose);\n\n    warn!(\"Testing polygons.\");\n    let _ = test_polygons(graph, verbose);\n\n    Ok(())"
+                "body": "warn!(\"Starting default test suite.\");\n    let _ = test_graph_properties(graph, verbose);\n\n    warn!(\"Testing SkipGram / CBOW / GloVe preprocessing.\");\n    let _ = test_embiggen_preprocessing(graph, verbose);\n\n    warn!(\"Testing subgraph generation.\");\n    let _ = test_subgraph_generation(graph, verbose);\n\n    warn!(\"Testing clone and setters.\");\n    let _ = test_clone_and_setters(graph, verbose);\n\n    warn!(\"Testing edge-label holdouts tests.\");\n    let _ = test_edgelabel_holdouts(graph, verbose);\n\n    warn!(\"Testing writing out graph to file.\");\n    let _ = test_dump_graph(graph, verbose);\n\n    warn!(\"Testing generic filtering mechanism.\");\n    let _ = test_graph_filter(graph, verbose);\n\n    warn!(\"Testing the spanning arborescences.\");\n    let _ = test_spanning_arborescence_bader(graph, verbose);\n\n    warn!(\"Testing the graph diameter.\");\n    let _ = test_graph_diameter(graph, verbose);\n\n    warn!(\"Running node-label holdouts tests.\");\n    let _ = test_nodelabel_holdouts(graph, verbose);\n\n    warn!(\"Running remove components tests.\");\n    let _ = test_remove_components(graph, verbose);\n\n    warn!(\"Testing removes.\");\n    let _ = test_graph_removes(graph, verbose);\n\n    warn!(\"Testing negative edges generation.\");\n    let _ = test_negative_edges_generation(graph, verbose);\n\n    warn!(\"Executing edge holdouts tests.\");\n    let _ = test_edge_holdouts(graph, verbose);\n\n    warn!(\"Testing k-fold holdouts.\");\n    let _ = test_kfold(graph, verbose);\n\n    warn!(\"Testing edge lists generation.\");\n    let _ = test_edgelist_generation(graph, verbose);\n\n    warn!(\"Testing graph remapping.\");\n    let _ = test_graph_remapping(graph, verbose);\n\n    warn!(\"Testing random walks.\");\n    let _ = test_random_walks(graph, verbose);\n\n    //warn!(\"Testing dijkstra.\");\n    //let _ = test_dijkstra(graph, verbose);\n\n    warn!(\"Testing approximated vertex cover\");\n    let _ = test_vertex_cover(graph, verbose);\n\n    warn!(\"Testing node centralities.\");\n    let _ = test_node_centralities(graph, verbose);\n\n    warn!(\"Testing polygons.\");\n    let _ = test_polygons(graph, verbose);\n\n    warn!(\"Testing transitivity.\");\n    let _ = test_transitivity(graph, verbose);\n\n    warn!(\"Testing generation of selfloops.\");\n    let _ = test_selfloops(graph, verbose);\n\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -7251,12 +7330,127 @@
                 "impl_doc": [
                     " # Transitivity."
                 ],
-                "doc": [],
+                "doc": [
+                    " Returns graph to the i-th transitivity closure iteration.",
+                    "",
+                    " # Implementative details",
+                    " If the given iterations is None, it will return the complete",
+                    " number of transitivity.",
+                    "",
+                    " If the number of iterations given is 0, the method will return",
+                    " the same graph.",
+                    "",
+                    " # Arguments",
+                    " * `iterations`: Option<NodeT> - The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.",
+                    " * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.",
+                    ""
+                ],
                 "attrs": [],
                 "modifiers": "pub",
                 "name": "get_transitive_closure",
-                "args": [],
-                "body": ""
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "iterations",
+                        "Option<NodeT>"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Graph",
+                "body": "let verbose = verbose.unwrap_or(true);\n        Graph::from_integer_unsorted(\n            self.iter_node_ids()\n                .filter(|src_node_id| unsafe {\n                    !self.is_unchecked_singleton_from_node_id(*src_node_id)\n                })\n                .map(|src_node_id| unsafe {\n                    self.get_unchecked_breath_first_search_from_node_ids(\n                        src_node_id,\n                        None,\n                        None,\n                        Some(false),\n                        Some(false),\n                        Some(true),\n                        iterations,\n                    )\n                    .2\n                    .unwrap()\n                    .into_iter()\n                    .enumerate()\n                    .filter(|(_, flag)| *flag)\n                    .map(move |(dst_node_id, _)| {\n                        Ok((src_node_id, dst_node_id as NodeT, None, None))\n                    })\n                })\n                .flatten(),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            false,\n            false,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose,\n        )\n        .unwrap()"
+            },
+            {
+                "file": "transitivity.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Transitivity."
+                ],
+                "doc": [
+                    " Returns graph with unweighted shortest paths computed up to the given depth.",
+                    "",
+                    " # Implementative details",
+                    " If the given iterations is None, it will return the complete",
+                    " sparse matrix of shortest paths.",
+                    "",
+                    " If the number of iterations given is 0, the method will return",
+                    " the same graph.",
+                    "",
+                    " # Arguments",
+                    " * `iterations`: Option<NodeT> - The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.",
+                    " * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_unweighted_all_shortest_paths",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "iterations",
+                        "Option<NodeT>"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Graph",
+                "body": "let verbose = verbose.unwrap_or(true);\n        Graph::from_integer_unsorted(\n            self.iter_node_ids()\n                .filter(|src_node_id| unsafe {\n                    !self.is_unchecked_singleton_from_node_id(*src_node_id)\n                })\n                .map(|src_node_id| unsafe {\n                    self.get_unchecked_breath_first_search_from_node_ids(\n                        src_node_id,\n                        None,\n                        None,\n                        Some(true),\n                        Some(false),\n                        Some(false),\n                        iterations,\n                    )\n                    .0\n                    .unwrap()\n                    .into_iter()\n                    .enumerate()\n                    .filter(|(_, distance)| *distance == NodeT::MAX)\n                    .map(move |(dst_node_id, distance)| {\n                        Ok((\n                            src_node_id,\n                            dst_node_id as NodeT,\n                            None,\n                            Some(distance as WeightT),\n                        ))\n                    })\n                })\n                .flatten(),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            false,\n            self.has_edge_weights(),\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose,\n        )\n        .unwrap()"
+            },
+            {
+                "file": "transitivity.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Transitivity."
+                ],
+                "doc": [
+                    " Returns graph with weighted shortest paths computed up to the given depth.",
+                    "",
+                    " # Implementative details",
+                    " If the given iterations is None, it will return the complete",
+                    " sparse matrix of shortest paths.",
+                    "",
+                    " If the number of iterations given is 0, the method will return",
+                    " the same graph.",
+                    "",
+                    " # Arguments",
+                    " * `iterations`: Option<NodeT> - The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.",
+                    " * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.",
+                    " * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.",
+                    ""
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_weighted_all_shortest_paths",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "iterations",
+                        "Option<NodeT>"
+                    ],
+                    [
+                        "use_edge_weights_as_probabilities",
+                        "Option<bool>"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Graph",
+                "body": "let verbose = verbose.unwrap_or(true);\n        Graph::from_integer_unsorted(\n            self.iter_node_ids()\n                .filter(|src_node_id| unsafe {\n                    !self.is_unchecked_singleton_from_node_id(*src_node_id)\n                })\n                .map(|src_node_id| unsafe {\n                    self.get_unchecked_dijkstra_from_node_ids(\n                        src_node_id,\n                        None,\n                        None,\n                        Some(true),\n                        iterations,\n                        use_edge_weights_as_probabilities,\n                    )\n                    .0\n                    .into_iter()\n                    .enumerate()\n                    .filter(|(_, distance)| distance.is_finite())\n                    .map(move |(dst_node_id, distance)| {\n                        Ok((\n                            src_node_id,\n                            dst_node_id as NodeT,\n                            None,\n                            Some(distance as WeightT),\n                        ))\n                    })\n                })\n                .flatten(),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            false,\n            self.has_edge_weights(),\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose,\n        )\n        .unwrap()"
             }
         ]
     },
@@ -16021,6 +16215,35 @@
                     " * `/get_unchecked_(.+)/`"
                 ],
                 "doc": [
+                    " Returns one-hot encoded known node types.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have node types."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_one_hot_encoded_known_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<Vec<bool>>, String>",
+                "body": "Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
                     " Returns one-hot encoded edge types.",
                     "",
                     " # Raises",
@@ -16037,6 +16260,35 @@
                 ],
                 "return_type": "Result<Vec<Vec<bool>>, String>",
                 "body": "Ok(self.iter_one_hot_encoded_edge_type_ids()?.collect())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns one-hot encoded known edge types.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have edge types."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_one_hot_encoded_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<Vec<bool>>, String>",
+                "body": "Ok(self.iter_one_hot_encoded_known_edge_type_ids()?.collect())"
             },
             {
                 "file": "getters.rs",
@@ -16527,6 +16779,122 @@
                 ],
                 "return_type": "Result<EdgeT, String>",
                 "body": "self.must_have_edge_types()\n            .map(|edge_types| edge_types.get_unknown_count())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns edge IDs of the edges with unknown edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_edge_ids_with_unknown_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<EdgeT>, String>",
+                "body": "self.iter_edge_ids_with_unknown_edge_types()\n            .map(|x| x.collect())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns edge IDs of the edges with known edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_edge_ids_with_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<EdgeT>, String>",
+                "body": "self.iter_edge_ids_with_known_edge_types()\n            .map(|x| x.collect())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns node IDs of the nodes with unknown node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_node_ids_with_unknown_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<NodeT>, String>",
+                "body": "self.iter_node_ids_with_unknown_node_types()\n            .map(|x| x.collect())"
+            },
+            {
+                "file": "getters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Getters",
+                    " The naming convention we follow is:",
+                    " * `/get_(.+)/`",
+                    "",
+                    " The naming convention for unchecked methods follows:",
+                    " * `/get_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns node IDs of the nodes with known node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_node_ids_with_known_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<Vec<NodeT>, String>",
+                "body": "self.iter_node_ids_with_known_node_types()\n            .map(|x| x.collect())"
             },
             {
                 "file": "getters.rs",
@@ -17218,6 +17586,75 @@
                 ],
                 "return_type": "Result<HashMap<String, NodeT>, String>",
                 "body": "self.iter_unique_node_type_names_and_counts().map(\n            |iter_unique_node_type_names_and_counts| {\n                iter_unique_node_type_names_and_counts.collect()\n            },\n        )"
+            }
+        ]
+    },
+    "dense.rs": {
+        "imports": [
+            "use std::cell::UnsafeCell;",
+            "use rayon::iter::ParallelIterator;",
+            "use super::*;"
+        ],
+        "functions": [
+            {
+                "file": "dense.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Returns binary dense adjacency matrix.",
+                    "",
+                    " Beware of using this method on big graphs!",
+                    " It'll use all of your RAM!",
+                    "",
+                    " # Implementative notes",
+                    " On multigraphs this method will ignore multi-edges and treat",
+                    " those occurrences as would an homogeneous graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_dense_binary_adjacency_matrix",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Vec<Vec<bool>>",
+                "body": "// We create the dense binary adjacency matrix.\n        let mut ajacency =\n            vec![vec![false; self.get_nodes_number() as usize]; self.get_nodes_number() as usize];\n        // We wrap the adjacency into an object we can share between threads\n        let thread_ajacency = ThreadDataRaceAware {\n            value: UnsafeCell::new(&mut ajacency),\n        };\n        // We iterate on the edges and populate the matrix.\n        self.par_iter_edge_ids(true).for_each(|(_, src, dst)| unsafe {\n            (*thread_ajacency.value.get())[src as usize][dst as usize] = true;\n        });\n        ajacency"
+            },
+            {
+                "file": "dense.rs",
+                "struct": "Graph",
+                "doc": [
+                    " Returns binary weighted adjacency matrix.",
+                    "",
+                    " Beware of using this method on big graphs!",
+                    " It'll use all of your RAM!",
+                    "",
+                    " # Arguments",
+                    " * `weight`: Option<WeightT> - The weight value to use for absent edges. By default, `0.0`.",
+                    "",
+                    " # Implementative notes",
+                    " On multigraphs this method will ignore multi-edges and treat",
+                    " those occurrences as would an homogeneous graph.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not have edge weights."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "get_dense_weighted_adjacency_matrix",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "weight",
+                        "Option<WeightT>"
+                    ]
+                ],
+                "return_type": "Result<Vec<Vec<WeightT>>, String>",
+                "body": "// If the graph does not have edge weights we raise an error.\n        self.must_have_edge_weights()?;\n        // Unwrap the weight to the default 0.0 if it was not given.\n        let weight = weight.unwrap_or(0.0);\n        // We create the dense binary adjacency matrix.\n        let mut ajacency =\n            vec![vec![weight; self.get_nodes_number() as usize]; self.get_nodes_number() as usize];\n        // We wrap the adjacency into an object we can share between threads\n        let thread_ajacency = ThreadDataRaceAware {\n            value: UnsafeCell::new(&mut ajacency),\n        };\n        // We iterate on the edges and populate the matrix.\n        self.par_iter_edge_node_ids_and_edge_weight()?.for_each(|(_, src, dst, weight)| unsafe {\n            (*thread_ajacency.value.get())[src as usize][dst as usize] = weight;\n        });\n        Ok(ajacency)"
             }
         ]
     },
@@ -19215,7 +19652,7 @@
                     ]
                 ],
                 "return_type": "impl Iterator<Item = String> + '_",
-                "body": "self.iter_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})"
+                "body": "self.iter_node_ids()\n            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })"
             },
             {
                 "file": "iters.rs",
@@ -19578,7 +20015,7 @@
                     ]
                 ],
                 "return_type": "impl Iterator<Item = NodeT> + '_",
-                "body": "self.iter_node_ids()\n            .map(move |node| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node)})"
+                "body": "self.iter_node_ids().map(move |node| unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(node)\n        })"
             },
             {
                 "file": "iters.rs",
@@ -19611,7 +20048,7 @@
                     ]
                 ],
                 "return_type": "impl IndexedParallelIterator<Item = NodeT> + '_",
-                "body": "self.par_iter_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)})"
+                "body": "self.par_iter_node_ids().map(move |node_id| unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)\n        })"
             },
             {
                 "file": "iters.rs",
@@ -19649,7 +20086,7 @@
                     ]
                 ],
                 "return_type": "Result<impl Iterator<Item = f64> + '_, String>",
-                "body": "self.must_have_edge_weights()?;\n        Ok(self.iter_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))"
+                "body": "self.must_have_edge_weights()?;\n        Ok(self.iter_node_ids().map(move |node_id| unsafe {\n            self.get_unchecked_weighted_node_degree_from_node_id(node_id)\n        }))"
             },
             {
                 "file": "iters.rs",
@@ -19687,7 +20124,7 @@
                     ]
                 ],
                 "return_type": "Result<impl IndexedParallelIterator<Item = f64> + '_, String>",
-                "body": "self.must_have_edge_weights()?;\n        Ok(self.par_iter_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))"
+                "body": "self.must_have_edge_weights()?;\n        Ok(self.par_iter_node_ids().map(move |node_id| unsafe {\n            self.get_unchecked_weighted_node_degree_from_node_id(node_id)\n        }))"
             },
             {
                 "file": "iters.rs",
@@ -19786,7 +20223,7 @@
                     ]
                 ],
                 "return_type": "impl Iterator<Item = String> + '_",
-                "body": "self.iter_singleton_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})"
+                "body": "self.iter_singleton_node_ids()\n            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })"
             },
             {
                 "file": "iters.rs",
@@ -19846,7 +20283,7 @@
                     ]
                 ],
                 "return_type": "impl Iterator<Item = String> + '_",
-                "body": "self.iter_singleton_with_selfloops_node_ids()\n            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})"
+                "body": "self.iter_singleton_with_selfloops_node_ids()\n            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })"
             },
             {
                 "file": "iters.rs",
@@ -20095,7 +20532,7 @@
                         "&self"
                     ]
                 ],
-                "return_type": "Result<impl ParallelIterator<Item = WeightT> + '_, String>",
+                "return_type": "Result<impl IndexedParallelIterator<Item = WeightT> + '_, String>",
                 "body": "self.must_have_edge_weights()?;\n        Ok(self\n            .weights\n            .as_ref()\n            .map(|ws| ws.par_iter().cloned())\n            .unwrap())"
             },
             {
@@ -20260,7 +20697,10 @@
                     " # Safety",
                     " If the graph does not contain node types, this iterator will be an",
                     " iterator over None values.",
-                    " Return iterator on the one-hot encoded node type IDs."
+                    " Return iterator on the one-hot encoded node type IDs.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not contain node types."
                 ],
                 "attrs": [],
                 "modifiers": "pub",
@@ -20273,6 +20713,39 @@
                 ],
                 "return_type": "Result<impl Iterator<Item = Vec<bool>> + '_, String>",
                 "body": "let node_types_number = self.get_node_types_number()?;\n        Ok(unsafe {\n            self.iter_unchecked_node_type_ids()\n                .map(move |maybe_node_types| {\n                    let mut dummies = vec![false; node_types_number as usize];\n                    if let Some(node_types) = maybe_node_types {\n                        node_types.into_iter().for_each(|node_type| {\n                            dummies[node_type as usize] = true;\n                        });\n                    }\n                    dummies\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Return iterator on the known one-hot encoded node type IDs.",
+                    "",
+                    " # Raises",
+                    " * If the graph does not contain node types."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_one_hot_encoded_known_node_type_ids",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = Vec<bool>> + '_, String>",
+                "body": "let node_types_number = self.get_node_types_number()?;\n        Ok(unsafe {\n            self.iter_unchecked_node_type_ids()\n                .filter_map(move |maybe_node_types| {\n                    if let Some(node_types) = maybe_node_types {\n                        let mut dummies = vec![false; node_types_number as usize];\n                        node_types.into_iter().for_each(|node_type| {\n                            dummies[node_type as usize] = true;\n                        });\n                        Some(dummies)\n                    } else {\n                        None\n                    }\n                })\n        })"
             },
             {
                 "file": "iters.rs",
@@ -20344,7 +20817,7 @@
                     ]
                 ],
                 "return_type": "Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_>",
-                "body": "if self.sources.is_some() && self.destinations.is_some() {\n            return Box::new(\n                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {\n                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((edge_id, src, dst))\n                }),\n            );\n        }\n        Box::new(\n            self.edges\n                .iter()\n                .enumerate()\n                .filter_map(move |(edge_id, edge)| {\n                    let (src, dst) = self.decode_edge(edge);\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((edge_id as EdgeT, src, dst))\n                }),\n        )"
+                "body": "if self.sources.is_some() && self.destinations.is_some() {\n            return Box::new(\n                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {\n                    let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((edge_id, src, dst))\n                }),\n            );\n        }\n        Box::new(\n            self.edges\n                .iter()\n                .enumerate()\n                .filter_map(move |(edge_id, edge)| {\n                    let (src, dst) = self.decode_edge(edge);\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((edge_id as EdgeT, src, dst))\n                }),\n        )"
             },
             {
                 "file": "iters.rs",
@@ -20418,7 +20891,37 @@
                     ]
                 ],
                 "return_type": "impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_",
-                "body": "self.edges\n            .par_enumerate()\n            .filter_map(move |(edge_id, edge)| {\n                let (src, dst) = self.decode_edge(edge);\n                if !directed && src > dst {\n                    return None;\n                }\n                Some((edge_id as EdgeT, src, dst))\n            })"
+                "body": "self.edges\n            .par_iter()\n            .enumerate()\n            .filter_map(move |(edge_id, edge)| {\n                let (src, dst) = self.decode_edge(edge);\n                if !directed && src > dst {\n                    return None;\n                }\n                Some((edge_id as EdgeT, src, dst))\n            })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Return iterator on the directed edges of the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_directed_edge_ids",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_",
+                "body": "self.edges\n            .par_iter()\n            .enumerate()\n            .map(move |(edge_id, edge)| {\n                let (src, dst) = self.decode_edge(edge);\n                (edge_id as EdgeT, src, dst)\n            })"
             },
             {
                 "file": "iters.rs",
@@ -20473,7 +20976,73 @@
                     " * `/par_iter_unchecked_(.+)/`"
                 ],
                 "doc": [
-                    " Return iterator on the edges of the graph.",
+                    " Return iterator on the edges node IDs of the graph and their weights.",
+                    "",
+                    " # Raises",
+                    " * If the current graph instance does not contain edge weights."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_edge_node_ids_and_edge_weight",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_, String>",
+                "body": "Ok(self\n            .iter_edge_ids(true)\n            .zip(self.iter_edge_weights()?)\n            .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Return parallel iterator on the edges node IDs of the graph and their weights.",
+                    "",
+                    " # Raises",
+                    " * If the current graph instance does not contain edge weights."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_edge_node_ids_and_edge_weight",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_, String>",
+                "body": "Ok(self\n            .par_iter_directed_edge_ids()\n            .zip(self.par_iter_edge_weights()?)\n            .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Return iterator on the edge node IDs of the graph and their edge type ID",
                     "",
                     " # Arguments",
                     " * `directed`: bool - Whether to filter out the undirected edges."
@@ -20526,6 +21095,39 @@
                 ],
                 "return_type": "Result<impl Iterator<Item = Vec<bool>> + '_, String>",
                 "body": "let edge_types_number = self.get_edge_types_number()?;\n        Ok(self\n            .get_edge_type_ids()?\n            .into_iter()\n            .map(move |maybe_edge_type| {\n                let mut dummies = vec![false; edge_types_number as usize];\n                if let Some(edge_type) = maybe_edge_type {\n                    dummies[edge_type as usize] = true;\n                }\n                dummies\n            }))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Return iterator on the one-hot encoded known edge type IDs.",
+                    "",
+                    " # Raises",
+                    " * If the current graph instance does not contain edge types."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_one_hot_encoded_known_edge_type_ids",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = Vec<bool>> + '_, String>",
+                "body": "let edge_types_number = self.get_edge_types_number()?;\n        Ok(self\n            .get_edge_type_ids()?\n            .into_iter()\n            .filter_map(move |maybe_edge_type| {\n                if let Some(edge_type) = maybe_edge_type {\n                    let mut dummies = vec![false; edge_types_number as usize];\n                    dummies[edge_type as usize] = true;\n                    Some(dummies)\n                } else {\n                    None\n                }\n            }))"
             },
             {
                 "file": "iters.rs",
@@ -20822,7 +21424,7 @@
                     ]
                 ],
                 "return_type": "Box<dyn Iterator<Item = (NodeT, NodeT)> + '_>",
-                "body": "if self.sources.is_some() && self.destinations.is_some() {\n            return Box::new(\n                (0..self.get_directed_edges_number()).filter_map(move |edge_id| unsafe {\n                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);\n                    if edge_id > 0 {\n                        let (last_src, last_dst) =\n                            self.get_unchecked_node_ids_from_edge_id(edge_id - 1);\n                        if last_src == src && last_dst == dst {\n                            return None;\n                        }\n                    }\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((src, dst))\n                }),\n            );\n        }\n        Box::new(self.edges.iter_uniques().filter_map(move |edge| {\n            let (src, dst) = self.decode_edge(edge);\n            if !directed && src > dst {\n                return None;\n            }\n            Some((src, dst))\n        }))"
+                "body": "if self.sources.is_some() && self.destinations.is_some() {\n            return Box::new((0..self.get_directed_edges_number()).filter_map(\n                move |edge_id| unsafe {\n                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);\n                    if edge_id > 0 {\n                        let (last_src, last_dst) =\n                            self.get_unchecked_node_ids_from_edge_id(edge_id - 1);\n                        if last_src == src && last_dst == dst {\n                            return None;\n                        }\n                    }\n                    if !directed && src > dst {\n                        return None;\n                    }\n                    Some((src, dst))\n                },\n            ));\n        }\n        Box::new(self.edges.iter_uniques().filter_map(move |edge| {\n            let (src, dst) = self.decode_edge(edge);\n            if !directed && src > dst {\n                return None;\n            }\n            Some((src, dst))\n        }))"
             },
             {
                 "file": "iters.rs",
@@ -20853,6 +21455,430 @@
                 ],
                 "return_type": "Box<dyn Iterator<Item = NodeT> + '_>",
                 "body": "if let Some(x) = &self.unique_sources {\n            return Box::new(x.iter().map(|source| source as NodeT));\n        }\n        Box::new(self.iter_node_ids())"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over edge IDs of the edges with unknown edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_edge_ids_with_unknown_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = EdgeT> + '_, String>",
+                "body": "self.must_have_edge_types().map(|edge_types| {\n            edge_types\n                .ids\n                .iter()\n                .enumerate()\n                .filter_map(|(edge_id, edge_type_id)| {\n                    if edge_type_id.is_some() {\n                        None\n                    } else {\n                        Some(edge_id as EdgeT)\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over edge IDs of the edges with known edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_edge_ids_with_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = EdgeT> + '_, String>",
+                "body": "self.must_have_edge_types().map(|edge_types| {\n            edge_types\n                .ids\n                .iter()\n                .enumerate()\n                .filter_map(|(edge_id, edge_type_id)| {\n                    if edge_type_id.is_some() {\n                        Some(edge_id as EdgeT)\n                    } else {\n                        None\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over edge node IDs of the edges with unknown edge types",
+                    "",
+                    " # Arguments",
+                    " * `directed`: bool - Whether to load the edges as directed or undirected.",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_edge_node_ids_with_unknown_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "directed",
+                        "bool"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = (NodeT, NodeT)> + '_, String>",
+                "body": "self.must_have_edge_types()?;\n        Ok(self\n            .iter_edge_node_ids_and_edge_type_id(directed)\n            .filter_map(|(_, src, dst, edge_type)| {\n                if edge_type.is_none() {\n                    Some((src, dst))\n                } else {\n                    None\n                }\n            }))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over edge node IDs of the edges with known edge types",
+                    "",
+                    " # Arguments",
+                    " * `directed`: bool - Whether to load the edges as directed or undirected.",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_edge_node_ids_with_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "directed",
+                        "bool"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = (NodeT, NodeT)> + '_, String>",
+                "body": "self.must_have_edge_types()?;\n        Ok(self\n            .iter_edge_node_ids_and_edge_type_id(directed)\n            .filter_map(|(_, src, dst, edge_type)| {\n                if edge_type.is_some() {\n                    Some((src, dst))\n                } else {\n                    None\n                }\n            }))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over node IDs of the nodes with unknown node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_node_ids_with_unknown_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = NodeT> + '_, String>",
+                "body": "self.must_have_node_types().map(|node_types| {\n            node_types\n                .ids\n                .iter()\n                .enumerate()\n                .filter_map(|(node_id, node_type_id)| {\n                    if node_type_id.is_some() {\n                        None\n                    } else {\n                        Some(node_id as NodeT)\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns iterator over node IDs of the nodes with known node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "iter_node_ids_with_known_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl Iterator<Item = NodeT> + '_, String>",
+                "body": "self.must_have_node_types().map(|node_types| {\n            node_types\n                .ids\n                .iter()\n                .enumerate()\n                .filter_map(|(node_id, node_type_id)| {\n                    if node_type_id.is_some() {\n                        Some(node_id as NodeT)\n                    } else {\n                        None\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over edge IDs of the edges with unknown edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_edge_ids_with_unknown_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = EdgeT> + '_, String>",
+                "body": "self.must_have_edge_types().map(|edge_types| {\n            edge_types\n                .ids\n                .par_iter()\n                .enumerate()\n                .filter_map(|(edge_id, edge_type_id)| {\n                    if edge_type_id.is_some() {\n                        None\n                    } else {\n                        Some(edge_id as EdgeT)\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over edge IDs of the edges with known edge types",
+                    "",
+                    " # Raises",
+                    " * If there are no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_edge_ids_with_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = EdgeT> + '_, String>",
+                "body": "self.must_have_edge_types().map(|edge_types| {\n            edge_types\n                .ids\n                .par_iter()\n                .enumerate()\n                .filter_map(|(edge_id, edge_type_id)| {\n                    if edge_type_id.is_some() {\n                        Some(edge_id as EdgeT)\n                    } else {\n                        None\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over edge node IDs of the edges with unknown edge types",
+                    "",
+                    " # Arguments",
+                    " * `directed`: bool - Whether to load the edges as directed or undirected.",
+                    "",
+                    " # Raises",
+                    " * If there arIndexedParallele no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_edge_node_ids_with_unknown_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "directed",
+                        "bool"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_, String>",
+                "body": "self.must_have_edge_types()?;\n        Ok(self\n            .par_iter_edge_node_ids_and_edge_type_id(directed)\n            .filter_map(|(_, src, dst, edge_type)| {\n                if edge_type.is_none() {\n                    Some((src, dst))\n                } else {\n                    None\n                }\n            }))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over edge node IDs of the edges with known edge types",
+                    "",
+                    " # Arguments",
+                    " * `directed`: bool - Whether to load the edges as directed or undirected.",
+                    "",
+                    " # Raises",
+                    " * If there arIndexedParallele no edge types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_edge_node_ids_with_known_edge_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "directed",
+                        "bool"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_, String>",
+                "body": "self.must_have_edge_types()?;\n        Ok(self\n            .par_iter_edge_node_ids_and_edge_type_id(directed)\n            .filter_map(|(_, src, dst, edge_type)| {\n                if edge_type.is_some() {\n                    Some((src, dst))\n                } else {\n                    None\n                }\n            }))"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over node IDs of the nodes with unknown node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_node_ids_with_unknown_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = NodeT> + '_, String>",
+                "body": "self.must_have_node_types().map(|node_types| {\n            node_types\n                .ids\n                .par_iter()\n                .enumerate()\n                .filter_map(|(node_id, node_type_id)| {\n                    if node_type_id.is_some() {\n                        None\n                    } else {\n                        Some(node_id as NodeT)\n                    }\n                })\n        })"
+            },
+            {
+                "file": "iters.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Iterators",
+                    " The naming convention for the iterators is:",
+                    " If the method has the `par_` prefix then it should return a parallel iterator.",
+                    " By default all the methods retruns both the ids and the name of the item and",
+                    " if the method has the suffix `_ids` then it will returns **only** the ids.",
+                    " Therefore, the naming convetions are:",
+                    " * `/iter_(.+)/`",
+                    " * `/iter_unchecked_(.+)/`",
+                    " * `/par_iter_(.+)/`",
+                    " * `/par_iter_unchecked_(.+)/`"
+                ],
+                "doc": [
+                    " Returns parallel iterator over node IDs of the nodes with known node types",
+                    "",
+                    " # Raises",
+                    " * If there are no node types in the graph."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "par_iter_node_ids_with_known_node_types",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ]
+                ],
+                "return_type": "Result<impl ParallelIterator<Item = NodeT> + '_, String>",
+                "body": "self.must_have_node_types().map(|node_types| {\n            node_types\n                .ids\n                .par_iter()\n                .enumerate()\n                .filter_map(|(node_id, node_type_id)| {\n                    if node_type_id.is_some() {\n                        Some(node_id as NodeT)\n                    } else {\n                        None\n                    }\n                })\n        })"
             }
         ]
     },
@@ -23301,6 +24327,56 @@
                 ],
                 "return_type": "Result<Graph, String>",
                 "body": "check_numeric_ids_compatibility(\n            nodes_iterator.is_some(),\n            numeric_node_ids,\n            numeric_edge_node_ids,\n        )?;\n        let (nodes, node_types) = parse_nodes(\n            nodes_iterator,\n            ignore_duplicated_nodes,\n            node_list_is_correct,\n            numeric_node_ids,\n            numeric_node_types_ids,\n            numeric_edge_node_ids,\n            has_node_types,\n        )?;\n\n        if !nodes.is_empty() {\n            nodes_number = nodes.len() as NodeT;\n        }\n\n        let (\n            edges,\n            unique_sources,\n            nodes,\n            edge_types,\n            weights,\n            min_edge_weight,\n            max_edge_weight,\n            unique_edges_number,\n            selfloop_number,\n            unique_selfloop_number,\n            connected_nodes_number,\n            singleton_nodes_with_selfloops_number,\n            node_bit_mask,\n            node_bits,\n            connected_nodes,\n            singleton_nodes_with_selfloops,\n            min_node_degree,\n            max_node_degree,\n            min_weighted_node_degree,\n            max_weighted_node_degree,\n            weighted_singleton_nodes_number,\n        ) = parse_string_edges(\n            edges_iterator,\n            edges_number,\n            nodes_number,\n            directed,\n            nodes,\n            numeric_edge_type_ids,\n            directed_edge_list,\n            edge_list_is_correct,\n            ignore_duplicated_edges,\n            has_edge_types,\n            has_edge_weights,\n            might_have_singletons,\n            might_have_singletons_with_selfloops,\n            might_have_trap_nodes,\n        )?;\n\n        Ok(Graph::new(\n            directed,\n            unique_selfloop_number,\n            selfloop_number,\n            connected_nodes_number,\n            singleton_nodes_with_selfloops_number,\n            unique_edges_number,\n            edges,\n            unique_sources,\n            nodes,\n            node_bit_mask,\n            node_bits,\n            edge_types,\n            name,\n            weights,\n            min_edge_weight,\n            max_edge_weight,\n            node_types,\n            connected_nodes,\n            singleton_nodes_with_selfloops,\n            min_node_degree,\n            max_node_degree,\n            min_weighted_node_degree,\n            max_weighted_node_degree,\n            weighted_singleton_nodes_number,\n        ))"
+            }
+        ]
+    },
+    "selfloops.rs": {
+        "imports": [
+            "use super::*;"
+        ],
+        "functions": [
+            {
+                "file": "selfloops.rs",
+                "struct": "Graph",
+                "impl_doc": [
+                    " # Selfloops."
+                ],
+                "doc": [
+                    " Returns new graph with added in missing self-loops with given edge type and weight.",
+                    "",
+                    " # Arguments",
+                    " `edge_type_name`: Option<&str> - The edge type to use for the selfloops.",
+                    " `weight`: Option<WeightT> - The weight to use for the new selfloops edges.",
+                    " `verbose`: Option<bool> - Whether to show loading bars while building the graph.",
+                    "",
+                    " # Raises",
+                    " * If the edge type for the new singletons is provided but the graph does not have edge types.",
+                    " * If the edge weight for the new singletons is provided but the graph does not have edge weights.",
+                    " * If the edge weight for the new singletons is NOT provided but the graph does have edge weights."
+                ],
+                "attrs": [],
+                "modifiers": "pub",
+                "name": "add_selfloops",
+                "args": [
+                    [
+                        "self",
+                        "&self"
+                    ],
+                    [
+                        "edge_type_name",
+                        "Option<&str>"
+                    ],
+                    [
+                        "weight",
+                        "Option<WeightT>"
+                    ],
+                    [
+                        "verbose",
+                        "Option<bool>"
+                    ]
+                ],
+                "return_type": "Result<Graph, String>",
+                "body": "let verbose = verbose.unwrap_or(true);\n        let edge_type_id = if edge_type_name.is_some() {\n            self.get_edge_type_id_from_edge_type_name(edge_type_name)?\n        } else {\n            None\n        };\n        if weight.is_some() ^ self.has_edge_weights() {\n            return Err(concat!(\n                \"The weight for the self-loops must be specified \",\n                \"only and exclusively if the graph has edge weights.\"\n            )\n            .to_string());\n        }\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)\n                .map(|(_, src, dst, edge_type_id, weight)| Ok((src, dst, edge_type_id, weight)))\n                .chain(\n                    self.iter_node_ids()\n                        .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))\n                        .map(|node_id| Ok((node_id, node_id, edge_type_id, weight))),\n                ),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            self.has_edge_weights(),\n            false,\n            self.has_singleton_nodes_with_selfloops() || self.has_singleton_nodes(),\n            self.has_trap_nodes(),\n            verbose,\n        )"
             }
         ]
     },

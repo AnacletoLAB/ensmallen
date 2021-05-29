@@ -63,6 +63,8 @@ impl Graph {
     }
 
     /// Returns graph with unweighted shortest paths computed up to the given depth.
+    /// 
+    /// The returned graph will have no selfloops.
     ///
     /// # Implementative details
     /// If the given iterations is None, it will return the complete
@@ -118,9 +120,9 @@ impl Graph {
             self.get_name(),
             true,
             false,
-            self.has_edge_weights(),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            true,
+            true,
+            false,
             self.has_trap_nodes(),
             verbose,
         )
@@ -128,6 +130,8 @@ impl Graph {
     }
 
     /// Returns graph with weighted shortest paths computed up to the given depth.
+    ///
+    /// The returned graph will have no selfloops.
     ///
     /// # Implementative details
     /// If the given iterations is None, it will return the complete
@@ -141,12 +145,21 @@ impl Graph {
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
+    /// # Raises
+    /// * If weights are requested to be treated as probabilities but are not between 0 and 1.
+    /// * If the graph contains negative weights.
     pub fn get_weighted_all_shortest_paths(
         &self,
         iterations: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
+        if let Some(uewap) = use_edge_weights_as_probabilities {
+            if uewap {
+                self.must_have_edge_weights_representing_probabilities()?;
+            }
+        }
+        self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         Graph::from_integer_unsorted(
             self.iter_node_ids()
@@ -183,12 +196,11 @@ impl Graph {
             self.get_name(),
             true,
             false,
-            self.has_edge_weights(),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            true,
+            true,
+            false,
             self.has_trap_nodes(),
             verbose,
         )
-        .unwrap()
     }
 }
