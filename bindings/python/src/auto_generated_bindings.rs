@@ -870,7 +870,7 @@ impl EnsmallenGraph {
     /// compute_predecessors: Optional[bool],
     ///     Whether to compute the vector of predecessors.
     ///
-    pub unsafe fn get_unchecked_breath_first_search(
+    pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -878,7 +878,7 @@ impl EnsmallenGraph {
         compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
     ) -> ShortestPathsResultBFS {
-        self.graph.get_unchecked_breath_first_search(
+        self.graph.get_unchecked_breath_first_search_from_node_ids(
             src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
@@ -900,14 +900,14 @@ impl EnsmallenGraph {
     /// k: int,
     ///     Number of paths to find.
     ///
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_unweighted_k_shortest_path(src_node_id, dst_node_id, k)
+            .get_unchecked_unweighted_k_shortest_path_from_node_ids(src_node_id, dst_node_id, k)
     }
 
     #[automatically_generated_binding]

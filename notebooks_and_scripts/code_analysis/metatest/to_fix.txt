@@ -291,11 +291,11 @@ SKIPPING
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_breath_first_search",
+        method_name: "Graph::get_unchecked_breath_first_search_from_node_ids",
         section_name: "Example",
     },
     MissingSection {
-        method_name: "Graph::get_unchecked_unweighted_k_shortest_path",
+        method_name: "Graph::get_unchecked_unweighted_k_shortest_path_from_node_ids",
         section_name: "Example",
     },
     MissingSection {

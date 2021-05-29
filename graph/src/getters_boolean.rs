@@ -83,6 +83,20 @@ impl Graph {
         self.weights.is_some()
     }
 
+    /// Returns whether graph has weights that can represent probabilities.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// assert!(!graph_with_weights.has_edge_weights_representing_probabilities().unwrap());
+    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
+    /// assert!(normalized.has_edge_weights_representing_probabilities().unwrap());
+    /// ```
+    ///
+    pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool, String> {
+        Ok(self.get_min_edge_weight()? > 0.0 && self.get_max_edge_weight()? <= 1.0)
+    }
+
     /// Returns whether a graph has one or more weighted singleton nodes.
     ///
     /// A weighted singleton node is a node whose weighted node degree is 0.

@@ -360,13 +360,40 @@ impl Graph {
     }
 
     #[no_binding]
+    /// Raises an error if the graph does not have weights.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
+    /// assert!(graph_with_weights.must_have_edge_weights_representing_probabilities().is_err());
+    /// assert!(normalized.must_have_edge_weights_representing_probabilities().is_ok());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    pub fn must_have_edge_weights_representing_probabilities(
+        &self,
+    ) -> Result<&Vec<WeightT>, String> {
+        if !self.has_edge_weights_representing_probabilities()? {
+            return Err(
+                "The current graph instance does not contain weights representing probabilities."
+                    .to_string(),
+            );
+        }
+        Ok(self.weights.as_ref().unwrap())
+    }
+
+    #[no_binding]
     /// Raises an error if the graph has negative edge weights.
     ///
     /// # Example
     /// In order to validate a graph instance, you can use:
     ///
     /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, false, false, false);
     /// # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));
     /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
     /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());

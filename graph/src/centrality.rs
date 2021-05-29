@@ -64,7 +64,15 @@ impl Graph {
         node_id: NodeT,
     ) -> f64 {
         1.0 / self
-            .get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
+            .get_unchecked_breath_first_search_from_node_ids(
+                node_id,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            )
             .3 as f64
     }
 
@@ -75,19 +83,43 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
+    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Implementative notes
+    /// When the user provides the information that the graph contains weights
+    /// representing probabilities (which is impossible to detect automatically)
+    /// we return instead of `1 / total_distance` directly the total distance,
+    /// as `1 / total_distance` when the weights represent a distance basically
+    /// represent the probability to sample all those paths. This value is
+    /// already captured by the product of the probabilities, which composes
+    /// the `total_distance` value when it is known that the graph is composed
+    /// of probabilities.
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
+        use_edge_weights_as_probabilities: bool,
     ) -> f64 {
-        1.0 / self
-            .get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
-            .2
+        let total_distance = self
+            .get_unchecked_dijkstra_from_node_ids(
+                node_id,
+                None,
+                None,
+                Some(false),
+                None,
+                Some(use_edge_weights_as_probabilities),
+            )
+            .2;
+        if use_edge_weights_as_probabilities {
+            total_distance
+        } else {
+            1.0 / total_distance
+        }
     }
 
     /// Return parallel iterator over closeness centrality for all nodes.
@@ -117,15 +149,39 @@ impl Graph {
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
     /// # Arguments
+    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Implementative notes
+    /// When the user provides the information that the graph contains weights
+    /// representing probabilities (which is impossible to detect automatically)
+    /// we return instead of `1 / total_distance` directly the total distance,
+    /// as `1 / total_distance` when the weights represent a distance basically
+    /// represent the probability to sample all those paths. This value is
+    /// already captured by the product of the probabilities, which composes
+    /// the `total_distance` value when it is known that the graph is composed
+    /// of probabilities.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     pub fn par_iter_weighted_closeness_centrality(
         &self,
+        use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
         self.must_have_positive_edge_weights()?;
+        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
+        if use_edge_weights_as_probabilities {
+            self.must_have_edge_weights_representing_probabilities()?;
+        }
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -136,7 +192,10 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_weighted_closeness_centrality_from_node_id(node_id)
+                self.get_unchecked_weighted_closeness_centrality_from_node_id(
+                    node_id,
+                    use_edge_weights_as_probabilities,
+                )
             }))
     }
 
@@ -155,15 +214,32 @@ impl Graph {
     /// Return closeness centrality for all nodes.
     ///
     /// # Arguments
+    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Implementative notes
+    /// When the user provides the information that the graph contains weights
+    /// representing probabilities (which is impossible to detect automatically)
+    /// we return instead of `1 / total_distance` directly the total distance,
+    /// as `1 / total_distance` when the weights represent a distance basically
+    /// represent the probability to sample all those paths. This value is
+    /// already captured by the product of the probabilities, which composes
+    /// the `total_distance` value when it is known that the graph is composed
+    /// of probabilities.
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     pub fn get_weighted_closeness_centrality(
         &self,
+        use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Vec<f64>, String> {
-        self.par_iter_weighted_closeness_centrality(verbose)
+        self.par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
 
@@ -184,8 +260,16 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> f64 {
-        self.get_unchecked_breath_first_search(node_id, None, None, Some(false), Some(false))
-            .4
+        self.get_unchecked_breath_first_search_from_node_ids(
+            node_id,
+            None,
+            None,
+            Some(false),
+            Some(false),
+            Some(false),
+            None,
+        )
+        .5
     }
 
     /// Return harmonic centrality of the requested node.
@@ -195,6 +279,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose harmonic centrality is to be computed.
+    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
@@ -204,9 +289,17 @@ impl Graph {
     pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(
         &self,
         node_id: NodeT,
+        use_edge_weights_as_probabilities: bool,
     ) -> f64 {
-        self.get_unchecked_dijkstra_from_node_ids(node_id, None, None, Some(false))
-            .3
+        self.get_unchecked_dijkstra_from_node_ids(
+            node_id,
+            None,
+            None,
+            Some(false),
+            None,
+            Some(use_edge_weights_as_probabilities),
+        )
+        .3
     }
 
     /// Return parallel iterator over harmonic centrality for all nodes.
@@ -216,6 +309,7 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    ///
     pub fn par_iter_unweighted_harmonic_centrality(
         &self,
         verbose: Option<bool>,
@@ -236,15 +330,27 @@ impl Graph {
     /// Return parallel iterator over harmonic centrality for all nodes.
     ///
     /// # Arguments
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     pub fn par_iter_weighted_harmonic_centrality(
         &self,
+        use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
         self.must_have_positive_edge_weights()?;
+        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
+        if use_edge_weights_as_probabilities {
+            self.must_have_edge_weights_representing_probabilities()?;
+        }
+
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -255,7 +361,10 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_weighted_harmonic_centrality_from_node_id(node_id)
+                self.get_unchecked_weighted_harmonic_centrality_from_node_id(
+                    node_id,
+                    use_edge_weights_as_probabilities,
+                )
             }))
     }
 
@@ -274,15 +383,17 @@ impl Graph {
     /// Return harmonic centrality for all nodes.
     ///
     /// # Arguments
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     pub fn get_weighted_harmonic_centrality(
         &self,
+        use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Vec<f64>, String> {
-        self.par_iter_weighted_harmonic_centrality(verbose)
+        self.par_iter_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
 
