@@ -28,9 +28,9 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
-        self.is_unchecked_singleton_from_node_id(node_id) || self.is_singleton_with_selfloops_from_node_id(node_id)
+        self.is_unchecked_singleton_from_node_id(node_id)
+            || self.is_singleton_with_selfloops_from_node_id(node_id)
     }
-
 
     /// Returns boolean representing if given node is a singleton.
     ///
@@ -38,7 +38,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| unsafe{self.is_unchecked_singleton_from_node_id(node_id)})
+            .map(|node_id| unsafe { self.is_unchecked_singleton_from_node_id(node_id) })
     }
 
     /// Returns boolean representing if given node is a singleton with self-loops.
@@ -72,7 +72,9 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - The node name to be checked for.
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool, String> {
-        Ok(unsafe{self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)})
+        Ok(unsafe {
+            self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        })
     }
 
     /// Returns whether the graph has the given node name.
@@ -190,6 +192,22 @@ impl Graph {
         self.get_edge_id_from_node_ids(src, dst).is_ok()
     }
 
+    /// Returns whether the given node ID has a selfloop.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Source node id.
+    ///
+    /// # Example
+    /// To check if a selfloop appears in the graph you can use:
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, true, true, true, false, false);
+    /// assert!(graph.has_selfloop_from_node_id(0));
+    /// assert!(!graph.has_selfloop_from_node_id(4565));
+    /// ```
+    pub fn has_selfloop_from_node_id(&self, node_id: NodeT) -> bool {
+        self.has_edge_from_node_ids(node_id, node_id)
+    }
+
     /// Returns whether edge with the given type passing between given nodes exists.
     ///
     /// # Arguments
@@ -242,7 +260,7 @@ impl Graph {
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| unsafe{self.is_unchecked_trap_node_from_node_id(node_id)})
+            .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
     }
 
     /// Returns whether the given node name and node type name exist in current graph.

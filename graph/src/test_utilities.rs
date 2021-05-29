@@ -346,9 +346,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
             ),
             graph.get_weighted_max_node_degree()?,
             graph
-                    .iter_weighted_node_degrees()?
-                    .max_by(|a, b| a.partial_cmp(b).unwrap())
-                    .unwrap(),
+                .iter_weighted_node_degrees()?
+                .max_by(|a, b| a.partial_cmp(b).unwrap())
+                .unwrap(),
             graph.get_weighted_node_degrees(),
             graph.get_weighted_singleton_nodes_number()
         );
@@ -767,6 +767,69 @@ pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), St
             .sum::<EdgeT>(),
         graph.get_unweighted_number_of_triangles(Some(false))
     );
+    Ok(())
+}
+
+pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    // We skip this test of graph with more than 1000 nodes to avoid slowing down
+    // too much the test suite.
+    if graph.get_nodes_number() > 1000{
+        return Ok(());
+    }
+    let mut transitive_closure = graph.get_transitive_closure(None, verbose);
+    let connected_components = graph.get_node_connected_component_ids(verbose);
+    if !graph.is_directed() {
+        for (src_node_id, src_component_id) in connected_components.iter().cloned().enumerate() {
+            if unsafe { graph.is_unchecked_singleton_from_node_id(src_node_id as NodeT) } {
+                continue;
+            }
+            for (dst_node_id, dst_component_id) in connected_components.iter().cloned().enumerate()
+            {
+                assert_eq!(
+                    transitive_closure
+                        .has_edge_from_node_ids(src_node_id as NodeT, dst_node_id as NodeT),
+                    src_component_id == dst_component_id,
+                    concat!(
+                        "In an undirected graph, the transitive closure of the graph should ",
+                        "contain an edge between all nodes in the same component, but ",
+                        "the node {} and {} have as component IDs {} and {} respectively, ",
+                        "and the test has edge has returned {}."
+                    ),
+                    src_node_id,
+                    dst_node_id,
+                    src_component_id,
+                    dst_component_id,
+                    transitive_closure
+                        .has_edge_from_node_ids(src_node_id as NodeT, dst_node_id as NodeT)
+                );
+            }
+        }
+    }
+    test_graph_properties(&mut transitive_closure, verbose)?;
+    Ok(())
+}
+
+pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    assert_eq!(
+        graph.add_selfloops(None, Some(1.0), verbose).is_ok(),
+        graph.has_edge_weights()
+    );
+    let mut graph_with_selfloops = graph
+        .add_selfloops(
+            None,
+            if graph.has_edge_weights() {
+                Some(1.0)
+            } else {
+                None
+            },
+            verbose,
+        )
+        .unwrap();
+    for node_id in graph.iter_node_ids() {
+        assert!(graph_with_selfloops.has_selfloop_from_node_id(node_id));
+    }
+    test_graph_properties(&mut graph_with_selfloops, verbose)?;
+
     Ok(())
 }
 
@@ -1684,6 +1747,12 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
 
     warn!("Testing polygons.");
     let _ = test_polygons(graph, verbose);
+
+    warn!("Testing transitivity.");
+    let _ = test_transitivity(graph, verbose);
+
+    warn!("Testing generation of selfloops.");
+    let _ = test_selfloops(graph, verbose);
 
     Ok(())
 }

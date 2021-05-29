@@ -626,12 +626,28 @@ impl Graph {
         Ok(self.iter_one_hot_encoded_node_type_ids()?.collect())
     }
 
+    /// Returns one-hot encoded known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())
+    }
+
     /// Returns one-hot encoded edge types.
     ///
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn get_one_hot_encoded_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
         Ok(self.iter_one_hot_encoded_edge_type_ids()?.collect())
+    }
+
+    /// Returns one-hot encoded known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_one_hot_encoded_known_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_known_edge_type_ids()?.collect())
     }
 
     /// Return the node types names.
@@ -803,6 +819,42 @@ impl Graph {
     pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
+    }
+
+    /// Returns edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+        self.iter_edge_ids_with_unknown_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+        self.iter_edge_ids_with_known_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_unknown_node_types(&self) -> Result<Vec<NodeT>, String> {
+        self.iter_node_ids_with_unknown_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>, String> {
+        self.iter_node_ids_with_known_node_types()
+            .map(|x| x.collect())
     }
 
     /// Returns the number of edge with known edge type.

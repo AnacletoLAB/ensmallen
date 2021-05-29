@@ -20,7 +20,7 @@ impl Graph {
     /// Return iterator on the node names of the graph.
     pub fn iter_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
+            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
     }
 
     /// Return iterator on the unique node type IDs of the graph.
@@ -107,8 +107,9 @@ impl Graph {
     /// Note that with unweighted it is meant that if this graph instance
     /// has weights, the degree will not take them into consideration.
     pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_node_ids()
-            .map(move |node| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node)})
+        self.iter_node_ids().map(move |node| unsafe {
+            self.get_unchecked_unweighted_node_degree_from_node_id(node)
+        })
     }
 
     /// Return iterator on the unweighted node degrees of the graph.
@@ -118,8 +119,9 @@ impl Graph {
     pub fn par_iter_unweighted_node_degrees(
         &self,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)})
+        self.par_iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+        })
     }
 
     /// Return iterator on the weighted node degrees of the graph.
@@ -133,8 +135,9 @@ impl Graph {
     /// this may be desired by the user.
     pub fn iter_weighted_node_degrees(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edge_weights()?;
-        Ok(self.iter_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
+        Ok(self.iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_weighted_node_degree_from_node_id(node_id)
+        }))
     }
 
     /// Return iterator on the weighted node degrees of the graph.
@@ -150,8 +153,9 @@ impl Graph {
         &self,
     ) -> Result<impl IndexedParallelIterator<Item = f64> + '_, String> {
         self.must_have_edge_weights()?;
-        Ok(self.par_iter_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_weighted_node_degree_from_node_id(node_id)}))
+        Ok(self.par_iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_weighted_node_degree_from_node_id(node_id)
+        }))
     }
 
     /// Return iterator on the non-singleton nodes of the graph.
@@ -182,7 +186,7 @@ impl Graph {
     /// Return iterator on the singleton nodes names of the graph.
     pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
+            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
     }
 
     /// Return iterator on the singleton with selfloops node IDs of the graph.
@@ -196,7 +200,7 @@ impl Graph {
     /// Return iterator on the singleton with selfloops node names of the graph.
     pub fn iter_singleton_with_selfloops_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_with_selfloops_node_ids()
-            .map(move |node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)})
+            .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
     }
 
     /// Return iterator on the singleton node type IDs of the graph.
@@ -315,7 +319,7 @@ impl Graph {
     /// ```
     pub fn par_iter_edge_weights(
         &self,
-    ) -> Result<impl ParallelIterator<Item = WeightT> + '_, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = WeightT> + '_, String> {
         self.must_have_edge_weights()?;
         Ok(self
             .weights
@@ -379,6 +383,9 @@ impl Graph {
     }
 
     /// Return iterator on the one-hot encoded node type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
     pub fn iter_one_hot_encoded_node_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_, String> {
@@ -393,6 +400,30 @@ impl Graph {
                         });
                     }
                     dummies
+                })
+        })
+    }
+
+    /// Return iterator on the known one-hot encoded node type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    pub fn iter_one_hot_encoded_known_node_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = Vec<bool>> + '_, String> {
+        let node_types_number = self.get_node_types_number()?;
+        Ok(unsafe {
+            self.iter_unchecked_node_type_ids()
+                .filter_map(move |maybe_node_types| {
+                    if let Some(node_types) = maybe_node_types {
+                        let mut dummies = vec![false; node_types_number as usize];
+                        node_types.into_iter().for_each(|node_type| {
+                            dummies[node_type as usize] = true;
+                        });
+                        Some(dummies)
+                    } else {
+                        None
+                    }
                 })
         })
     }
@@ -440,7 +471,7 @@ impl Graph {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
                 (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
-                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
+                    let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
                     if !directed && src > dst {
                         return None;
                     }
@@ -490,13 +521,27 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         self.edges
-            .par_enumerate()
+            .par_iter()
+            .enumerate()
             .filter_map(move |(edge_id, edge)| {
                 let (src, dst) = self.decode_edge(edge);
                 if !directed && src > dst {
                     return None;
                 }
                 Some((edge_id as EdgeT, src, dst))
+            })
+    }
+
+    /// Return iterator on the directed edges of the graph.
+    pub fn par_iter_directed_edge_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        self.edges
+            .par_iter()
+            .enumerate()
+            .map(move |(edge_id, edge)| {
+                let (src, dst) = self.decode_edge(edge);
+                (edge_id as EdgeT, src, dst)
             })
     }
 
@@ -520,7 +565,34 @@ impl Graph {
             })
     }
 
-    /// Return iterator on the edges of the graph.
+    /// Return iterator on the edges node IDs of the graph and their weights.
+    ///
+    /// # Raises
+    /// * If the current graph instance does not contain edge weights.
+    pub fn iter_edge_node_ids_and_edge_weight(
+        &self,
+    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_, String> {
+        Ok(self
+            .iter_edge_ids(true)
+            .zip(self.iter_edge_weights()?)
+            .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))
+    }
+
+    /// Return parallel iterator on the edges node IDs of the graph and their weights.
+    ///
+    /// # Raises
+    /// * If the current graph instance does not contain edge weights.
+    pub fn par_iter_edge_node_ids_and_edge_weight(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_, String>
+    {
+        Ok(self
+            .par_iter_directed_edge_ids()
+            .zip(self.par_iter_edge_weights()?)
+            .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))
+    }
+
+    /// Return iterator on the edge node IDs of the graph and their edge type ID
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
@@ -556,6 +628,28 @@ impl Graph {
                     dummies[edge_type as usize] = true;
                 }
                 dummies
+            }))
+    }
+
+    /// Return iterator on the one-hot encoded known edge type IDs.
+    ///
+    /// # Raises
+    /// * If the current graph instance does not contain edge types.
+    pub fn iter_one_hot_encoded_known_edge_type_ids(
+        &self,
+    ) -> Result<impl Iterator<Item = Vec<bool>> + '_, String> {
+        let edge_types_number = self.get_edge_types_number()?;
+        Ok(self
+            .get_edge_type_ids()?
+            .into_iter()
+            .filter_map(move |maybe_edge_type| {
+                if let Some(edge_type) = maybe_edge_type {
+                    let mut dummies = vec![false; edge_types_number as usize];
+                    dummies[edge_type as usize] = true;
+                    Some(dummies)
+                } else {
+                    None
+                }
             }))
     }
 
@@ -768,8 +862,8 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new(
-                (0..self.get_directed_edges_number()).filter_map(move |edge_id| unsafe {
+            return Box::new((0..self.get_directed_edges_number()).filter_map(
+                move |edge_id| unsafe {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     if edge_id > 0 {
                         let (last_src, last_dst) =
@@ -782,8 +876,8 @@ impl Graph {
                         return None;
                     }
                     Some((src, dst))
-                }),
-            );
+                },
+            ));
         }
         Box::new(self.edges.iter_uniques().filter_map(move |edge| {
             let (src, dst) = self.decode_edge(edge);
@@ -800,5 +894,273 @@ impl Graph {
             return Box::new(x.iter().map(|source| source as NodeT));
         }
         Box::new(self.iter_node_ids())
+    }
+
+    /// Returns iterator over edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_ids_with_unknown_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_, String> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(|(edge_id, edge_type_id)| {
+                    if edge_type_id.is_some() {
+                        None
+                    } else {
+                        Some(edge_id as EdgeT)
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_ids_with_known_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_, String> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(|(edge_id, edge_type_id)| {
+                    if edge_type_id.is_some() {
+                        Some(edge_id as EdgeT)
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over edge node IDs of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_node_ids_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_, String> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .iter_edge_node_ids_and_edge_type_id(directed)
+            .filter_map(|(_, src, dst, edge_type)| {
+                if edge_type.is_none() {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            }))
+    }
+
+    /// Returns iterator over edge node IDs of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_node_ids_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_, String> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .iter_edge_node_ids_and_edge_type_id(directed)
+            .filter_map(|(_, src, dst, edge_type)| {
+                if edge_type.is_some() {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            }))
+    }
+
+    /// Returns iterator over node IDs of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_node_ids_with_unknown_node_types(
+        &self,
+    ) -> Result<impl Iterator<Item = NodeT> + '_, String> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(|(node_id, node_type_id)| {
+                    if node_type_id.is_some() {
+                        None
+                    } else {
+                        Some(node_id as NodeT)
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over node IDs of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_node_ids_with_known_node_types(
+        &self,
+    ) -> Result<impl Iterator<Item = NodeT> + '_, String> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(|(node_id, node_type_id)| {
+                    if node_type_id.is_some() {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns parallel iterator over edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn par_iter_edge_ids_with_unknown_edge_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_, String> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .par_iter()
+                .enumerate()
+                .filter_map(|(edge_id, edge_type_id)| {
+                    if edge_type_id.is_some() {
+                        None
+                    } else {
+                        Some(edge_id as EdgeT)
+                    }
+                })
+        })
+    }
+
+    /// Returns parallel iterator over edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn par_iter_edge_ids_with_known_edge_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_, String> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .par_iter()
+                .enumerate()
+                .filter_map(|(edge_id, edge_type_id)| {
+                    if edge_type_id.is_some() {
+                        Some(edge_id as EdgeT)
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns parallel iterator over edge node IDs of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there arIndexedParallele no edge types in the graph.
+    pub fn par_iter_edge_node_ids_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_, String> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_edge_node_ids_and_edge_type_id(directed)
+            .filter_map(|(_, src, dst, edge_type)| {
+                if edge_type.is_none() {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            }))
+    }
+
+    /// Returns parallel iterator over edge node IDs of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there arIndexedParallele no edge types in the graph.
+    pub fn par_iter_edge_node_ids_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_, String> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_edge_node_ids_and_edge_type_id(directed)
+            .filter_map(|(_, src, dst, edge_type)| {
+                if edge_type.is_some() {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            }))
+    }
+
+    /// Returns parallel iterator over node IDs of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn par_iter_node_ids_with_unknown_node_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_, String> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .enumerate()
+                .filter_map(|(node_id, node_type_id)| {
+                    if node_type_id.is_some() {
+                        None
+                    } else {
+                        Some(node_id as NodeT)
+                    }
+                })
+        })
+    }
+
+    /// Returns parallel iterator over node IDs of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn par_iter_node_ids_with_known_node_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_, String> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .enumerate()
+                .filter_map(|(node_id, node_type_id)| {
+                    if node_type_id.is_some() {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                })
+        })
     }
 }
