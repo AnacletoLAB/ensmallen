@@ -317,14 +317,12 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Raises
-    /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
     /// * If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
     pub fn get_weighted_random_walk_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
         self.must_have_edge_weights()?;
-        self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, src, dst, edge_type)| unsafe {
@@ -343,7 +341,7 @@ impl Graph {
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
+            true,
             self.get_name(),
             true,
             self.has_edge_types(),

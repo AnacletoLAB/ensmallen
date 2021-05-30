@@ -329,10 +329,51 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         "The cached maximum degree does not match the one computed from the node degrees."
     );
 
+    if graph.has_singleton_nodes() {
+        assert!(graph.get_min_node_degree()? == 0);
+        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
+    }
+
+    if !graph.is_directed() && !graph.has_singleton_nodes() {
+        assert!(graph.get_min_node_degree()? > 0);
+        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
+    }
+
+    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {
+        assert!(graph.has_singleton_nodes());
+    }
+
+    if graph.has_singleton_nodes() {
+        assert!(graph.unique_sources.is_some());
+    }
+
+    if !graph.has_disconnected_nodes() && !graph.has_trap_nodes() {
+        assert!(graph.get_min_node_degree()? > 0);
+        assert!(
+            graph.iter_unweighted_node_degrees().min().unwrap() > 0,
+            concat!(
+                "Since the graph does not contain disconnected nodes nor it ",
+                "contains trap nodes, the minimum outbound node degree must be ",
+                "greater than zero.\n\n",
+                "The graph data structure is: {:4?}"
+            ),
+            graph
+        );
+    }
+
+    assert_eq!(
+        graph.singleton_nodes_with_selfloops.is_some(),
+        graph.has_singleton_nodes_with_selfloops(),
+    );
+
     assert_eq!(
         graph.get_min_node_degree()?,
         graph.iter_unweighted_node_degrees().min().unwrap(),
-        "The cached minimum degree does not match the one computed from the node degrees."
+        concat!(
+            "The cached minimum degree does not match the one computed from the node degrees.\n",
+            "The outbound node degrees are: {:?}"
+        ),
+        graph.get_unweighted_node_degrees()
     );
 
     if graph.has_edge_weights() {
@@ -374,29 +415,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                     .unwrap()
         );
     }
-
-    if graph.has_singleton_nodes() {
-        assert!(graph.get_min_node_degree()? == 0);
-        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
-    }
-
-    if !graph.is_directed() && !graph.has_singleton_nodes() {
-        assert!(graph.get_min_node_degree()? > 0);
-        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
-    }
-
-    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {
-        assert!(graph.has_singleton_nodes());
-    }
-
-    if graph.has_singleton_nodes() {
-        assert!(graph.unique_sources.is_some());
-    }
-
-    assert_eq!(
-        graph.singleton_nodes_with_selfloops.is_some(),
-        graph.has_singleton_nodes_with_selfloops(),
-    );
 
     assert_eq!(
         graph
@@ -809,7 +827,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
     Ok(())
 }
 
-pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
+pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // We avoid running this test on too big graphs so to avoid slowing down the test suite
     if graph.get_nodes_number() > 100 {
         return Ok(());
@@ -867,12 +885,13 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), St
                         "destination {}. The path from source to destination ",
                         "is {:?}, while the path from destination to source ",
                         "is {:?}. The two paths should be symmetric and with ",
-                        "the same distance."
+                        "the same distance.\nThe graph report is:\n{:?}"
                     ),
                     src_to_dst_distance,
                     dst_to_src_distance,
                     src_to_dst,
-                    dst_to_src
+                    dst_to_src,
+                    graph.textual_report(verbose)
                 );
                 src_to_dst
                     .into_iter()
