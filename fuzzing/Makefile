@@ -79,13 +79,13 @@ hfuzz_builder:
 	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/builder/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run builder; \
 	)
 
-hfuzz_components:
+hfuzz_queue:
 	rm -rfd ./unit_tests/*
-	mkdir -p corpus/components
+	mkdir -p corpus/queue
 	(\
-	cd honggfuzz/components;\
+	cd honggfuzz/queue;\
 	cargo update;\
-	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/components/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run components; \
+	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../../$(CORPUS_FOLDER)/queue/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS) --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run queue; \
 	)
 
 afl_from_csv:

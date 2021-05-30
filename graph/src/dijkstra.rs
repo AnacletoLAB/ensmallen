@@ -1,14 +1,75 @@
 use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
+use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 
-impl Graph {
+pub struct ShortestPathsResultBFS {
+    pub(crate) distances: Option<Vec<NodeT>>,
+    pub(crate) parents: Option<Vec<Option<NodeT>>>,
+    pub(crate) visited: Option<BitVec<Lsb0, u8>>,
+    pub(crate) dst_node_distance: Option<NodeT>,
+    pub(crate) eccentricity: NodeT,
+    pub(crate) total_distance: NodeT,
+    pub(crate) total_harmonic_distance: f64,
+}
 
+impl ShortestPathsResultBFS {
+    pub(crate) fn new(
+        distances: Option<Vec<NodeT>>,
+        parents: Option<Vec<Option<NodeT>>>,
+        visited: Option<BitVec<Lsb0, u8>>,
+        dst_node_distance: Option<NodeT>,
+        eccentricity: NodeT,
+        total_distance: NodeT,
+        total_harmonic_distance: f64,
+    ) -> ShortestPathsResultBFS {
+        ShortestPathsResultBFS {
+            distances,
+            parents,
+            visited,
+            dst_node_distance,
+            eccentricity,
+            total_distance,
+            total_harmonic_distance,
+        }
+    }
+}
+
+pub struct ShortestPathsDjkstra {
+    pub(crate) distances: Vec<f64>,
+    pub(crate) parents: Option<Vec<Option<NodeT>>>,
+    pub(crate) dst_node_distance: Option<f64>,
+    pub(crate) eccentricity: f64,
+    pub(crate) total_distance: f64,
+    pub(crate) total_harmonic_distance: f64,
+}
+
+impl ShortestPathsDjkstra {
+    pub(crate) fn new(
+        distances: Vec<f64>,
+        parents: Option<Vec<Option<NodeT>>>,
+        dst_node_distance: Option<f64>,
+        eccentricity: f64,
+        total_distance: f64,
+        total_harmonic_distance: f64,
+    ) -> ShortestPathsDjkstra {
+        ShortestPathsDjkstra {
+            distances,
+            parents,
+            dst_node_distance,
+            eccentricity,
+            total_distance,
+            total_harmonic_distance,
+        }
+    }
+}
+
+impl Graph {
     #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
@@ -37,6 +98,7 @@ impl Graph {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let compute_visited = compute_visited.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
+        let mut dst_node_distance = maybe_dst_node_id.map(|_| NodeT::MAX);
 
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
             let mut parents = vec![None; nodes_number];
@@ -64,7 +126,15 @@ impl Graph {
         };
 
         if self.is_unchecked_disconnected_from_node_id(src_node_id) {
-            return (distances, parents, visited, NodeT::MAX, NodeT::MAX, 0.0);
+            return ShortestPathsResultBFS::new(
+                distances,
+                parents,
+                visited,
+                dst_node_distance,
+                NodeT::MAX,
+                NodeT::MAX,
+                0.0,
+            );
         }
 
         let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
@@ -106,13 +176,13 @@ impl Graph {
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
-        let mut maximal_distance = 0;
+        let mut eccentricity = 0;
         let mut total_distance = 0;
         let mut total_harmonic_distance: f64 = 0.0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // Update the metrics
-            maximal_distance = maximal_distance.max(depth);
+            eccentricity = eccentricity.max(depth);
             total_distance += depth;
             if depth != 0 {
                 total_harmonic_distance += 1.0 / depth as f64;
@@ -120,6 +190,7 @@ impl Graph {
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
+                dst_node_distance.insert(depth);
                 break;
             }
 
@@ -153,18 +224,145 @@ impl Graph {
                     }
                 });
         }
-        (
+        ShortestPathsResultBFS::new(
             distances,
             parents,
             visited,
-            maximal_distance,
+            dst_node_distance,
+            eccentricity,
             total_distance,
             total_harmonic_distance,
         )
     }
 
+    /// Returns minimum path node IDs and distance from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> Vec<NodeT> {
+        let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+            src_node_id,
+            Some(dst_node_id),
+            None,
+            Some(false),
+            Some(true),
+            Some(false),
+            None,
+        );
+        let parents = bfs.parents.unwrap();
+        let path_length = bfs.dst_node_distance.unwrap();
+        // If the distance is infinite, the destination node is not connected.
+        if path_length == NodeT::MAX {
+            return Vec::new();
+        }
+        let mut path_length = path_length as usize;
+        let mut path = vec![0; path_length];
+        let mut parent = dst_node_id;
+        loop {
+            path_length -= 1;
+            path[path_length] = parent;
+            if parent == src_node_id {
+                break;
+            }
+            if let Some(new_parent) = parents[parent as usize] {
+                parent = new_parent;
+            }
+        }
+        path
+    }
+
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> Vec<String> {
+        self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id)
+            .into_iter()
+            .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+            .collect()
+    }
+
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    ///
+    /// # Raises
+    /// * If any of the given node IDs do not exist in the current graph.
+    pub fn get_unweighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> Result<Vec<NodeT>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                self.validate_node_id(src_node_id)?,
+                self.validate_node_id(dst_node_id)?,
+            )
+        })
+    }
+
+    /// Returns minimum path node names from given node names.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    ///
+    /// # Raises
+    /// * If any of the given node names do not exist in the current graph.
+    pub fn get_unweighted_minimum_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+    ) -> Result<Vec<NodeT>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+            )
+        })
+    }
+
+    /// Returns minimum path node names from given node names.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    ///
+    /// # Raises
+    /// * If any of the given node names do not exist in the current graph.
+    pub fn get_unweighted_minimum_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+    ) -> Result<Vec<String>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+            )
+        })
+    }
+
     #[no_numpy_binding]
-    /// Returns vector of k minimum paths distances and vector of nodes predecessors.
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
@@ -177,7 +375,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -219,6 +417,103 @@ impl Graph {
         paths
     }
 
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node IDs does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                self.validate_node_id(src_node_id)?,
+                self.validate_node_id(dst_node_id)?,
+                k,
+            )
+        })
+    }
+
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node name.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node names does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+                k,
+            )
+        })
+    }
+
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node names between given source node and destination node name.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node names does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> Result<Vec<Vec<String>>, String> {
+        self.get_unweighted_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k,
+        )
+        .map(|paths| {
+            paths
+                .into_iter()
+                .map(|path| {
+                    path.into_iter()
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_node_name_from_node_id(node_id)
+                        })
+                        .collect()
+                })
+                .collect()
+        })
+    }
+
     /// Returns unweighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
@@ -241,7 +536,7 @@ impl Graph {
             Some(false),
             None,
         )
-        .3
+        .eccentricity
     }
 
     /// Returns weighted eccentricity of the given node.
@@ -267,7 +562,7 @@ impl Graph {
             None,
             use_edge_weights_as_probabilities,
         )
-        .2
+        .eccentricity
     }
 
     /// Returns unweighted eccentricity of the given node ID.
@@ -387,6 +682,13 @@ impl Graph {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
+        let mut dst_node_distance = maybe_dst_node_id.map(|_| {
+            if use_edge_weights_as_probabilities {
+                0.0
+            } else {
+                f64::INFINITY
+            }
+        });
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
             Some(vec![None; nodes_number])
         } else {
@@ -396,12 +698,24 @@ impl Graph {
         if self.is_unchecked_disconnected_from_node_id(src_node_id) {
             if use_edge_weights_as_probabilities {
                 let mut distances = vec![0.0; nodes_number];
-                distances[src_node_id as usize] = 1.0;
-                return (distances, parents, 0.0, 0.0, 0.0);
+                return ShortestPathsDjkstra::new(
+                    distances,
+                    parents,
+                    dst_node_distance,
+                    0.0,
+                    0.0,
+                    0.0,
+                );
             } else {
                 let mut distances = vec![f64::INFINITY; nodes_number];
-                distances[src_node_id as usize] = 0.0;
-                return (distances, parents, f64::INFINITY, f64::INFINITY, 0.0);
+                return ShortestPathsDjkstra::new(
+                    distances,
+                    parents,
+                    dst_node_distance,
+                    f64::INFINITY,
+                    f64::INFINITY,
+                    0.0,
+                );
             }
         }
 
@@ -415,20 +729,20 @@ impl Graph {
                 Some(true),
                 maximal_depth,
             )
-            .2
+            .visited
         } else {
             None
         };
 
         let mut nodes_to_explore: DijkstraQueue =
             DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);
-        let mut maximal_distance: f64 = 0.0;
+        let mut eccentricity: f64 = 0.0;
         let mut total_distance: f64 = 0.0;
         let mut total_harmonic_distance: f64 = 0.0;
 
         while let Some(closest_node_id) = nodes_to_explore.pop() {
             // Update the distances metrics
-            maximal_distance = maximal_distance.max(nodes_to_explore[closest_node_id]);
+            eccentricity = eccentricity.max(nodes_to_explore[closest_node_id]);
             total_distance += nodes_to_explore[closest_node_id];
             if nodes_to_explore[closest_node_id] > 0.0 {
                 total_harmonic_distance += if use_edge_weights_as_probabilities {
@@ -440,6 +754,11 @@ impl Graph {
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
+                dst_node_distance.insert(if use_edge_weights_as_probabilities {
+                    (-nodes_to_explore[closest_node_id]).exp()
+                } else {
+                    nodes_to_explore[closest_node_id]
+                });
                 break;
             }
             // If the closest node is in the set of the destination nodes
@@ -488,17 +807,192 @@ impl Graph {
             distances
                 .iter_mut()
                 .for_each(|distance| *distance = (-*distance).exp());
-            maximal_distance = (-maximal_distance).exp();
+            eccentricity = (-eccentricity).exp();
             total_distance = (-total_distance).exp();
         }
 
-        (
+        ShortestPathsDjkstra {
             distances,
             parents,
-            maximal_distance,
+            dst_node_distance,
+            eccentricity,
             total_distance,
             total_harmonic_distance,
+        }
+    }
+
+    /// Returns minimum path node IDs and distance from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> (f64, Vec<NodeT>) {
+        let dijkstra = self.get_unchecked_dijkstra_from_node_ids(
+            src_node_id,
+            Some(dst_node_id),
+            None,
+            Some(true),
+            None,
+            use_edge_weights_as_probabilities,
+        );
+        let parents = dijkstra.parents.unwrap();
+        let path_length = dijkstra.dst_node_distance.unwrap();
+        if let Some(uewp) = use_edge_weights_as_probabilities {
+            // If the path length is to be treated as a probability and the
+            // resulting probability is 0, it means that it is impossible
+            // to get from the requested source node to the requested
+            // destination node.
+            if uewp && path_length.is_zero() {
+                return (0.0, Vec::new());
+            }
+        }
+        // If the path length is infinite, it means that there is no path
+        // between the given source node and the given destination node.
+        if path_length.is_infinite() {
+            return (f64::INFINITY, Vec::new());
+        }
+        // Since we need to visit the parents vector we will be building
+        // the path backwards and we will need to invert it afterwards.
+        let mut reverse_path = Vec::new();
+        let mut parent = dst_node_id;
+        loop {
+            reverse_path.push(parent);
+            if parent == src_node_id {
+                break;
+            }
+            if let Some(new_parent) = parents[parent as usize] {
+                parent = new_parent;
+            }
+        }
+        // Now we revert the path.
+        (path_length, reverse_path.into_iter().rev().collect())
+    }
+
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> (f64, Vec<String>) {
+        let (path_length, path) = self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+            src_node_id,
+            dst_node_id,
+            use_edge_weights_as_probabilities,
+        );
+        (
+            path_length,
+            path.into_iter()
+                .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+                .collect(),
         )
+    }
+
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Raises
+    /// * If any of the given node IDs do not exist in the current graph.
+    pub fn get_weighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> Result<(f64, Vec<NodeT>), String> {
+        self.must_have_positive_edge_weights()?;
+        if let Some(uewp) = use_edge_weights_as_probabilities {
+            if uewp {
+                self.must_have_edge_weights_representing_probabilities()?;
+            }
+        }
+        Ok(unsafe {
+            self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                self.validate_node_id(src_node_id)?,
+                self.validate_node_id(dst_node_id)?,
+                use_edge_weights_as_probabilities,
+            )
+        })
+    }
+
+    /// Returns minimum path node names from given node names.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Raises
+    /// * If any of the given node names do not exist in the current graph.
+    pub fn get_weighted_minimum_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> Result<(f64, Vec<NodeT>), String> {
+        self.must_have_positive_edge_weights()?;
+        if let Some(uewp) = use_edge_weights_as_probabilities {
+            if uewp {
+                self.must_have_edge_weights_representing_probabilities()?;
+            }
+        }
+        Ok(unsafe {
+            self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+                use_edge_weights_as_probabilities,
+            )
+        })
+    }
+
+    /// Returns minimum path node names from given node names.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Raises
+    /// * If any of the given node names do not exist in the current graph.
+    pub fn get_weighted_minimum_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> Result<(f64, Vec<String>), String> {
+        self.must_have_positive_edge_weights()?;
+        if let Some(uewp) = use_edge_weights_as_probabilities {
+            if uewp {
+                self.must_have_edge_weights_representing_probabilities()?;
+            }
+        }
+        Ok(unsafe {
+            self.get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+                use_edge_weights_as_probabilities,
+            )
+        })
     }
 
     #[manual_binding]
@@ -615,7 +1109,7 @@ impl Graph {
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
             return f64::INFINITY;
         }
-        let (distances, _, _, mut root_eccentricity, _, _) = unsafe {
+        let bfs = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
                 most_central_node_id,
                 None,
@@ -626,6 +1120,8 @@ impl Graph {
                 None,
             )
         };
+        let mut root_eccentricity = bfs.eccentricity;
+        let distances = bfs.distances.unwrap();
         assert!(
             root_eccentricity != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
@@ -635,7 +1131,6 @@ impl Graph {
             "The central node eccentricity cannot be zero!"
         );
         let mut lower_bound_diameter = root_eccentricity;
-        let distances = unsafe { distances.unwrap_unchecked() };
         let mut upper_bound_diameter = 2 * root_eccentricity;
         while lower_bound_diameter < upper_bound_diameter {
             if let Some(maximal_eccentricity) = distances
@@ -685,7 +1180,7 @@ impl Graph {
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
             return f64::INFINITY;
         }
-        let (distances, _, mut root_eccentricity, _, _) = unsafe {
+        let dijkstra = unsafe {
             self.get_unchecked_dijkstra_from_node_ids(
                 most_central_node_id,
                 None,
@@ -695,6 +1190,9 @@ impl Graph {
                 use_edge_weights_as_probabilities,
             )
         };
+
+        let mut root_eccentricity = dijkstra.eccentricity;
+        let distances = dijkstra.distances;
 
         assert!(
             root_eccentricity != f64::INFINITY,
@@ -785,16 +1283,7 @@ impl Graph {
                 .par_iter_node_ids()
                 .progress_with(pb)
                 .map(|node_id| unsafe {
-                    self.get_unchecked_breath_first_search_from_node_ids(
-                        node_id,
-                        None,
-                        None,
-                        Some(false),
-                        Some(false),
-                        Some(false),
-                        None,
-                    )
-                    .3
+                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
                 })
                 .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
                 .max()
@@ -814,7 +1303,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain nodes.
     /// * If the graph does not have weights.
-    /// * If the graph contina negative weights.
+    /// * If the graph contains negative weights.
     /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     ///
     /// TODO! Add better implementation for directed graphs
@@ -853,17 +1342,19 @@ impl Graph {
                 .par_iter_node_ids()
                 .progress_with(pb)
                 .map(|node_id| unsafe {
-                    self.get_unchecked_dijkstra_from_node_ids(
+                    self.get_unchecked_weighted_eccentricity_from_node_id(
                         node_id,
-                        None,
-                        None,
-                        Some(false),
-                        None,
                         Some(use_edge_weights_as_probabilities),
                     )
-                    .2
                 })
-                .filter(|&distance| !ignore_infinity || distance != f64::INFINITY)
+                .filter(|&distance| {
+                    !ignore_infinity
+                        || if use_edge_weights_as_probabilities {
+                            !distance.is_zero()
+                        } else {
+                            distance.is_finite()
+                        }
+                })
                 .reduce(|| f64::NEG_INFINITY, f64::max))
         } else {
             Ok(self.get_weighted_ifub(Some(use_edge_weights_as_probabilities)) as f64)

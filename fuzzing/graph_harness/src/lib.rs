@@ -23,3 +23,6 @@ pub use meta_test::*;
 
 mod fuzz_features;
 pub use fuzz_features::*;
+
+mod queue;
+pub use queue::*;

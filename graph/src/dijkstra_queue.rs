@@ -17,13 +17,14 @@ pub struct DijkstraQueue {
 impl DijkstraQueue {
     /// Initialize the queue with the given root, in this case the capacity
     /// should always be equal to the number of nodes in the graph.
-    pub fn with_capacity_from_root(capacity: usize, root_node_id: usize,) -> Self {
+    pub fn with_capacity_from_root(capacity: usize, root_node_id: usize) -> Self {
         let mut res = DijkstraQueue{
             heap: Vec::with_capacity(capacity),
             distances: vec![f64::INFINITY; capacity],
             map: vec![usize::MAX; capacity],
         };
         res.heap.push(root_node_id);
+        res.map[root_node_id] = 0;
         res.distances[root_node_id] = 0.0;
         res
     }
@@ -58,16 +59,15 @@ impl DijkstraQueue {
 
     /// add a value to the heap
     pub fn push(&mut self, node_id: usize, distance: f64) {
-        debug_assert!(
-            self.distances[node_id as usize] > distance, 
-            "We think that we are ensured that a node is pushed IFF its distance is smaller than the older ones."
-        );
         // If the distance is finite, the node **IS** already present,
         // we check if the new distance is smaller, in that case we have to
         // fix the heap.
-        if self.map[node_id as usize] != usize::MAX && self.distances[node_id as usize] > distance{
-            self.distances[node_id as usize] = distance;
-            self.bubble_up(self.map[node_id as usize], distance);
+        if self.map[node_id as usize] != usize::MAX {
+            let old_distance = self.distances[node_id as usize];
+            if old_distance > distance {
+                self.distances[node_id as usize] = distance;
+                self.bubble_up(self.map[node_id as usize], distance);
+            }
             return;
         }
 
@@ -77,6 +77,37 @@ impl DijkstraQueue {
         self.distances[node_id as usize] = distance;
         // fix the heap
         self.bubble_up(self.len() - 1, distance);
+    }
+
+    // bubble up the value until the heap property holds
+    fn bubble_up(&mut self, mut idx: usize, distance: f64) {
+        let mut count = 0;
+        let mut old_idx = idx;
+        loop {
+            let parent_idx = DijkstraQueue::parent(idx);
+
+            // The heap condition is respected so we can stop.
+            // This also handles the case of the node at the root since
+            // self.parent(0) == 0 => current_value == parent_value
+            if parent_idx == 0 && idx == 0 {
+                count += 1;
+                if count > 1000 {
+                    panic!("Deus Queue");
+                }
+            }
+            if distance >= self.distances[self.heap[parent_idx] as usize] {
+                break
+            }
+
+            // swap the parent and the child
+            self.map[self.heap[idx]] = parent_idx;
+            self.map[self.heap[parent_idx]] = idx;
+            self.heap.swap(idx, parent_idx);
+
+            count += 1;
+            // Update the mutables
+            idx = parent_idx;
+        }
     }
 
     /// Return the computed distances
@@ -129,43 +160,15 @@ impl DijkstraQueue {
             // and the heap rule is violated
             if smallest_v < distance {
                 // fix it and keep bubbling down
-                self.heap.swap(idx, smallest_i);
                 self.map[self.heap[idx]] = smallest_i;
                 self.map[self.heap[smallest_i]] = idx;
+                self.heap.swap(idx, smallest_i);
                 idx = smallest_i;   
                 continue;
             }
             
             // the min heap rule holds for both childs so we can exit.
             break;
-        }
-    }
-
-    // bubble up the value until the heap property holds
-    fn bubble_up(&mut self, mut idx: usize, distance: f64) {
-        let mut count = 0;
-        let mut old_idx = idx;
-        loop {
-            let parent_idx = DijkstraQueue::parent(idx);
-
-            // The heap condition is respected so we can stop.
-            // This also handles the case of the node at the root since
-            // self.parent(0) == 0 => current_value == parent_value
-            if count > 1000 {
-                dbg!(old_idx, idx, parent_idx, distance, &self.distances[self.heap[parent_idx] as usize], distance.is_finite(), distance.is_nan(), &self);
-            }
-            if distance >= self.distances[self.heap[parent_idx] as usize] {
-                break
-            }
-
-            // swap the parent and the child
-            self.heap.swap(idx, parent_idx);
-            self.map[self.heap[idx]] = parent_idx;
-            self.map[self.heap[parent_idx]] = idx;
-
-            count += 1;
-            // Update the mutables
-            idx = parent_idx;
         }
     }
 
@@ -183,3 +186,19 @@ impl IndexMut<usize> for DijkstraQueue {
         &mut self.distances[node_id]
     }
 } 
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_queue() {
+        let mut queue = DijkstraQueue::with_capacity_from_root(4, 0);
+        println!("{:?}", queue);
+        queue.push(0, 3.0);
+        println!("{:?}", queue);
+        queue.push(1, 2.0);
+        println!("{:?}", queue);
+        queue.push(0, 1.0);
+    }
+}

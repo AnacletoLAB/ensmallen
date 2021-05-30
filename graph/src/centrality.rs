@@ -73,7 +73,7 @@ impl Graph {
                 Some(false),
                 None,
             )
-            .3 as f64
+            .total_distance as f64
     }
 
     /// Return closeness centrality of the requested node.
@@ -114,7 +114,7 @@ impl Graph {
                 None,
                 Some(use_edge_weights_as_probabilities),
             )
-            .2;
+            .total_distance;
         if use_edge_weights_as_probabilities {
             total_distance
         } else {
@@ -269,7 +269,7 @@ impl Graph {
             Some(false),
             None,
         )
-        .5
+        .total_harmonic_distance
     }
 
     /// Return harmonic centrality of the requested node.
@@ -299,7 +299,7 @@ impl Graph {
             None,
             Some(use_edge_weights_as_probabilities),
         )
-        .3
+        .total_harmonic_distance
     }
 
     /// Return parallel iterator over harmonic centrality for all nodes.

@@ -1,4 +1,3 @@
-use bitvec::prelude::*;
 use std::fmt::Display;
 use std::hash::Hash;
 use std::ops::AddAssign;
@@ -30,22 +29,6 @@ pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
 pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
 pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
-/// Return type for shortest paths algorithms
-pub type ShortestPathsResultBFS = (
-    Option<Vec<NodeT>>,
-    Option<Vec<Option<NodeT>>>,
-    Option<BitVec<Lsb0, u8>>,
-    NodeT,
-    NodeT,
-    f64,
-);
-pub type ShortestPathsDjkstra = (
-    Vec<f64>,
-    Option<Vec<Option<NodeT>>>,
-    f64,
-    f64,
-    f64,
-);
 
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.

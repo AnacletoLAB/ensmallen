@@ -4,6 +4,7 @@ use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use log::info;
+use num_traits::Zero;
 use rayon::prelude::ParallelSliceMut;
 use roaring::RoaringBitmap;
 use std::cmp::Ordering;
@@ -590,13 +591,13 @@ pub(crate) fn build_edges(
         ) {
             (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
                 // If a zero weight was found we filter out this edge
-                if w == 0.0 {
+                if w.is_zero() {
                     return Err("Provided weight is zero.".to_string());
                 }
-                if w.is_infinite(){
+                if w.is_infinite() {
                     return Err("Provided weight is infinite.".to_string());
                 }
-                if w.is_nan(){
+                if w.is_nan() {
                     return Err("Provided weight is NaN.".to_string());
                 }
                 *min_w = (*min_w).min(w);
@@ -895,6 +896,12 @@ pub(crate) fn build_edges(
         singleton_nodes_with_selfloops = None;
     }
 
+    assert_eq!(
+        singleton_nodes_with_selfloops_number,
+        singleton_nodes_with_selfloops
+            .as_ref()
+            .map_or(0, |x| x.len() as NodeT)
+    );
     // If we have found singleton nodes, information that when there are
     // singleton nodes we know only after parsing both the node list and the
     // edge list, we need to update the min node degree to 0.

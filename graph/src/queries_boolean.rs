@@ -32,6 +32,16 @@ impl Graph {
             || self.is_singleton_with_selfloops_from_node_id(node_id)
     }
 
+    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node to be checked for.
+    ///
+    /// # Safety
+    /// If the given node ID does not exists in the graph this method will panic.
+    pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
+        !self.is_unchecked_disconnected_from_node_id(node_id)
+    }
     /// Returns boolean representing if given node is a singleton.
     ///
     /// # Arguments
