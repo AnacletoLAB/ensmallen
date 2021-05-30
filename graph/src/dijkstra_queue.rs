@@ -180,19 +180,3 @@ impl IndexMut<usize> for DijkstraQueue {
         &mut self.distances[node_id]
     }
 }
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn test_queue() {
-        let mut queue = DijkstraQueue::with_capacity_from_root(4, 0);
-        println!("{:?}", queue);
-        queue.push(0, 3.0);
-        println!("{:?}", queue);
-        queue.push(1, 2.0);
-        println!("{:?}", queue);
-        queue.push(0, 1.0);
-    }
-}

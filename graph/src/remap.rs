@@ -56,8 +56,6 @@ impl Graph {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
 
-        println!("{:?}", self.textual_report(Some(verbose)));
-
         Graph::from_integer_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)

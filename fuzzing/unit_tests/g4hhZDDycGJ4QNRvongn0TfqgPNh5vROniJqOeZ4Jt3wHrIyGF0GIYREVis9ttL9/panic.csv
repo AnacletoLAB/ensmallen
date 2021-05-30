@@ -1,6 +1,0 @@
-file,"/io/ensmallen_graph/graph/src/test_utilities.rs"
-line,876
-col,17
-message,The path from source to destination has distance 350014818536912800000000000000000 while the distance from destination to source has destination 350014818536912900000000000000000. The path from source to destination is [2, 1, 0, 3], while the path from destination to source is [3, 0, 1, 2]. The two paths should be symmetric and with the same distance.
-The graph report is:
-Ok("The undirected graph Fuzz Graph has 5 nodes There are 1 singleton nodes, and 3 weighted edges, of which none are self-loops. The graph is quite dense as it has a density of 0.30000 and has 2 connected components, where the component with most nodes has 4 nodes and the component with the least nodes has a single node. The graph median node degree is 1, the mean node degree is 1.20, and the node degree mode is 2. The top 5 most central nodes are \t\t\t\t\t (degree 2), ????? (degree 2), ????\u{5} (degree 1), \u{1}\u{0}\t\t\t (degree 1) and \u{5}\u{5}\u{5}\u{5}\u{5} (degree 0). The hash of the graph is 5072c2ff2c16ab5c.")
