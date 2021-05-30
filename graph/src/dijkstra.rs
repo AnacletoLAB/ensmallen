@@ -243,11 +243,18 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// # Raises
+    /// * If the given node is a selfloop.
+    /// * If there is no path between the two given nodes.
     pub unsafe fn get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
-    ) -> Vec<NodeT> {
+    ) -> Result<Vec<NodeT>, String> {
+        if src_node_id == dst_node_id {
+            return Err("The minimum path on a selfloop is not defined.".to_string());
+        }
         let bfs = self.get_unchecked_breath_first_search_from_node_ids(
             src_node_id,
             Some(dst_node_id),
@@ -261,22 +268,20 @@ impl Graph {
         let path_length = bfs.dst_node_distance.unwrap();
         // If the distance is infinite, the destination node is not connected.
         if path_length == NodeT::MAX {
-            return Vec::new();
+            return Err(format!(
+                "There is no path starting from the given source node {} and reaching the given destination node {}.",
+                src_node_id, dst_node_id
+            ));
         }
-        let mut path_length = path_length as usize;
+        let path_length = path_length as usize + 1;
         let mut path = vec![0; path_length];
+
         let mut parent = dst_node_id;
-        loop {
-            path_length -= 1;
-            path[path_length] = parent;
-            if parent == src_node_id {
-                break;
-            }
-            if let Some(new_parent) = parents[parent as usize] {
-                parent = new_parent;
-            }
-        }
-        path
+        (0..path_length).for_each(|index| {
+            path[path_length - index - 1] = parent;
+            parent = parents[parent as usize].unwrap();
+        });
+        Ok(path)
     }
 
     /// Returns minimum path node names from given node ids.
@@ -291,11 +296,12 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
-    ) -> Vec<String> {
-        self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id)
+    ) -> Result<Vec<String>, String> {
+        Ok(self
+            .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id)?
             .into_iter()
             .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
-            .collect()
+            .collect())
     }
 
     /// Returns minimum path node names from given node ids.
@@ -315,7 +321,7 @@ impl Graph {
             self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
-            )
+            )?
         })
     }
 
@@ -336,7 +342,7 @@ impl Graph {
             self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
-            )
+            )?
         })
     }
 
@@ -357,7 +363,7 @@ impl Graph {
             self.get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
-            )
+            )?
         })
     }
 
