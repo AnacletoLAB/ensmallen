@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 /// Reference classic binary heap
 pub struct DijkstraQueue {
     /// This is the actual heap, it contains the node_ids and are ordered based on
@@ -64,7 +65,7 @@ impl DijkstraQueue {
         // If the distance is finite, the node **IS** already present,
         // we check if the new distance is smaller, in that case we have to
         // fix the heap.
-        if self.map[node_id as usize] != usize::MAX{
+        if self.map[node_id as usize] != usize::MAX && self.distances[node_id as usize] > distance{
             self.distances[node_id as usize] = distance;
             self.bubble_up(self.map[node_id as usize], distance);
             return;
@@ -142,12 +143,17 @@ impl DijkstraQueue {
 
     // bubble up the value until the heap property holds
     fn bubble_up(&mut self, mut idx: usize, distance: f64) {
+        let mut count = 0;
+        let mut old_idx = idx;
         loop {
             let parent_idx = DijkstraQueue::parent(idx);
 
             // The heap condition is respected so we can stop.
             // This also handles the case of the node at the root since
             // self.parent(0) == 0 => current_value == parent_value
+            if count > 1000 {
+                dbg!(old_idx, idx, parent_idx, distance, &self.distances[self.heap[parent_idx] as usize], distance.is_finite(), distance.is_nan(), &self);
+            }
             if distance >= self.distances[self.heap[parent_idx] as usize] {
                 break
             }
@@ -157,7 +163,7 @@ impl DijkstraQueue {
             self.map[self.heap[idx]] = parent_idx;
             self.map[self.heap[parent_idx]] = idx;
 
-
+            count += 1;
             // Update the mutables
             idx = parent_idx;
         }

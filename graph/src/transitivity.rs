@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ProgressIterator;
 
 /// # Transitivity.
 impl Graph {
@@ -83,8 +84,10 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(verbose, "Computing all unweighted shortest paths", self.get_nodes_number() as usize);
         Graph::from_integer_unsorted(
             self.iter_node_ids()
+                .progress_with(pb)
                 .filter(|src_node_id| unsafe {
                     !self.is_unchecked_singleton_from_node_id(*src_node_id)
                 })
@@ -102,7 +105,7 @@ impl Graph {
                     .unwrap()
                     .into_iter()
                     .enumerate()
-                    .filter(|(_, distance)| *distance == NodeT::MAX)
+                    .filter(|(_, distance)| *distance == NodeT::MAX && *distance != 0)
                     .map(move |(dst_node_id, distance)| {
                         Ok((
                             src_node_id,
@@ -161,8 +164,10 @@ impl Graph {
         }
         self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(verbose, "Computing all weighted shortest paths", self.get_nodes_number() as usize);
         Graph::from_integer_unsorted(
             self.iter_node_ids()
+                .progress_with(pb)
                 .filter(|src_node_id| unsafe {
                     !self.is_unchecked_singleton_from_node_id(*src_node_id)
                 })
@@ -171,14 +176,14 @@ impl Graph {
                         src_node_id,
                         None,
                         None,
-                        Some(true),
+                        Some(false),
                         iterations,
                         use_edge_weights_as_probabilities,
                     )
                     .0
                     .into_iter()
                     .enumerate()
-                    .filter(|(_, distance)| distance.is_finite())
+                    .filter(|(_, distance)| distance.is_finite() && *distance != 0.0)
                     .map(move |(dst_node_id, distance)| {
                         Ok((
                             src_node_id,

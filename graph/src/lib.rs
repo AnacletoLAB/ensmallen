@@ -120,7 +120,7 @@ pub use self::walks_parameters::*;
 pub use preprocessing::*;
 
 mod dijkstra_queue;
-use dijkstra_queue::*;
+pub use dijkstra_queue::*;
 
 use vec_rand::splitmix64;
 

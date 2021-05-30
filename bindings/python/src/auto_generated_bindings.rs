@@ -1317,6 +1317,8 @@ impl EnsmallenGraph {
     #[text_signature = "($self, iterations, verbose)"]
     /// Returns graph with unweighted shortest paths computed up to the given depth.
     ///
+    /// The returned graph will have no selfloops.
+    ///
     /// Parameters
     /// ----------
     /// iterations: Optional[int],
@@ -1340,6 +1342,8 @@ impl EnsmallenGraph {
     #[text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)"]
     /// Returns graph with weighted shortest paths computed up to the given depth.
     ///
+    /// The returned graph will have no selfloops.
+    ///
     /// Parameters
     /// ----------
     /// iterations: Optional[int],
@@ -1349,19 +1353,27 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar while building the graph.
     ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    ///
     pub fn get_weighted_all_shortest_paths(
         &self,
         iterations: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.get_weighted_all_shortest_paths(
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.get_weighted_all_shortest_paths(
                 iterations,
                 use_edge_weights_as_probabilities,
-                verbose,
-            ),
-        }
+                verbose
+            ))?,
+        })
     }
 
     #[automatically_generated_binding]
