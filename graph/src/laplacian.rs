@@ -1,4 +1,5 @@
 use indicatif::ProgressIterator;
+use num_traits::Zero;
 
 use super::*;
 
@@ -282,18 +283,19 @@ impl Graph {
         Graph::from_integer_sorted(
             self.iter_edge_node_ids_and_edge_type_id(true)
                 .progress_with(loading_bar)
-                .filter(|(_, src, dst, _)| src != dst)
-                .map(|(_, src, dst, edge_type)| {
-                    Ok((
-                        src,
-                        dst,
-                        edge_type,
-                        Some(
-                            (1.0 / (weighted_node_degrees[src as usize]
-                                * weighted_node_degrees[dst as usize])
-                                .sqrt()) as WeightT,
-                        ),
-                    ))
+                .filter_map(|(_, src, dst, edge_type)| {
+                    if src == dst {
+                        return None;
+                    }
+                    let distance = 1.0
+                        / (weighted_node_degrees[src as usize]
+                            * weighted_node_degrees[dst as usize])
+                            .sqrt() as WeightT;
+                    if distance.is_finite() && !distance.is_zero() {
+                        Some(Ok((src, dst, edge_type, Some(distance))))
+                    } else {
+                        None
+                    }
                 }),
             (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) as usize,
             self.nodes.clone(),

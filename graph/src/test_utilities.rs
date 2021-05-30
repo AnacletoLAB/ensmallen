@@ -878,7 +878,8 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
                     // my be infinite, and therefore the epsilon check
                     // may not be enough.
                     src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                        || (src_to_dst_distance - dst_to_src_distance).abs() < f64::EPSILON,
+                        || (src_to_dst_distance as WeightT - dst_to_src_distance as WeightT).abs()
+                            < WeightT::EPSILON,
                     concat!(
                         "The path from source to destination has distance {} ",
                         "while the distance from destination to source has ",
@@ -1959,6 +1960,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
         graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
         graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,
     ] {
+        println!("KEBABBISGDFGH",);
         let _ = _default_test_suite(&mut transformed_graph, verbose);
     }
     Ok(())
