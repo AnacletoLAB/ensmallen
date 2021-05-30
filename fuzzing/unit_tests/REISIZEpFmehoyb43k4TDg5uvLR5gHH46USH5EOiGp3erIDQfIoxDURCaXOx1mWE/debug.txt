@@ -1,0 +1,114 @@
+Graph {
+    edges: EliasFano {
+        universe:   10,
+        number_of_elements:    2,
+        low_bit_count:    2,
+        low_bit_mask:    3,
+        low_bits: [
+               5,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    3,
+            num_ones:    2,
+            num_zeros:    1,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:    5,
+                num_ones:    2,
+                num_zeros:    1,
+            },
+        },
+        last_high_value:    1,
+        last_value:    5,
+        last_index:    2,
+        current_number_of_elements:    2,
+    },
+    node_bits:    2,
+    node_bit_mask:    3,
+    weights: Some(
+        [
+            0.7470588,
+            0.7470588,
+        ],
+    ),
+    node_types: None,
+    edge_types: None,
+    nodes: Vocabulary {
+        map: {
+            "?????":    1,
+            "\u{1f}????":    0,
+        },
+        reverse_map: [
+            "\u{1f}????",
+            "?????",
+        ],
+        numeric_ids: false,
+    },
+    directed: true,
+    unique_selfloop_number:    1,
+    selfloop_number:    1,
+    connected_nodes_number:    2,
+    singleton_nodes_with_selfloops_number:    0,
+    unique_edges_number:    2,
+    min_node_degree:    1,
+    max_node_degree:    1,
+    min_edge_weight: Some(
+        0.7470588,
+    ),
+    max_edge_weight: Some(
+        0.7470588,
+    ),
+    min_weighted_node_degree: Some(
+        0.7470588088035583,
+    ),
+    max_weighted_node_degree: Some(
+        0.7470588088035583,
+    ),
+    weighted_singleton_nodes_number: Some(
+           0,
+    ),
+    name: "Fuzz Graph",
+    connected_nodes: Some(
+        BitVec<bitvec::order::Lsb0, u8> {
+            addr: 0x55555ec00a30,
+            head: 000,
+            bits:    2,
+            capacity:   64,
+        } [
+            0b11,
+        ],
+    ),
+    singleton_nodes_with_selfloops: None,
+    unique_sources: None,
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The directed graph Fuzz Graph has 2 nodes and 2 weighted edges, of which 1 are self-loops. The graph is extremely dense as it has a density of 0.50000 and is connected, as it has a single component. The graph median node degree is 1, the mean node degree is 1.00, and the node degree mode is 1. The top 2 most central nodes are ????? (degree 1) and \u{1f}???? (degree 1). The hash of the graph is e0b2388c40789704.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    cumulative_node_degrees: None,
+    cached_destinations: None,
+}
