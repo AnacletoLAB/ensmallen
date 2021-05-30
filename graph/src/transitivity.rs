@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
-use num_traits::{Signed, Zero};
+use num_traits::Signed;
 
 /// # Transitivity.
 impl Graph {
@@ -22,7 +22,6 @@ impl Graph {
         iterations: Option<NodeT>,
         verbose: Option<bool>,
     ) -> Graph {
-
         if let Some(i) = iterations {
             if i == 0 {
                 return self.clone();
@@ -220,17 +219,18 @@ impl Graph {
                     .distances
                     .into_iter()
                     .enumerate()
+                    // We need to convert the distance to WeightT before
+                    // the checks because the distance is an f64 while currently
+                    // the WeightT is an f32, and values outside the resolution of
+                    // f32 and within f64 will convert to zeros and infinities.
                     .map(|(dst_node_id, distance)| (dst_node_id, distance as WeightT))
                     .filter(move |(dst_node_id, distance)| {
-                        distance.is_finite() && src_node_id != *dst_node_id as NodeT  && distance.is_positive()
+                        distance.is_finite()
+                            && src_node_id != *dst_node_id as NodeT
+                            && distance.is_positive()
                     })
                     .map(move |(dst_node_id, distance)| {
-                        Ok((
-                            src_node_id,
-                            dst_node_id as NodeT,
-                            None,
-                            Some(distance),
-                        ))
+                        Ok((src_node_id, dst_node_id as NodeT, None, Some(distance)))
                     })
                 })
                 .flatten(),

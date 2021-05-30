@@ -697,9 +697,8 @@ impl Graph {
 
         if self.is_unchecked_disconnected_from_node_id(src_node_id) {
             if use_edge_weights_as_probabilities {
-                let mut distances = vec![0.0; nodes_number];
                 return ShortestPathsDjkstra::new(
-                    distances,
+                    vec![0.0; nodes_number],
                     parents,
                     dst_node_distance,
                     0.0,
@@ -707,9 +706,8 @@ impl Graph {
                     0.0,
                 );
             } else {
-                let mut distances = vec![f64::INFINITY; nodes_number];
                 return ShortestPathsDjkstra::new(
-                    distances,
+                    vec![f64::INFINITY; nodes_number],
                     parents,
                     dst_node_distance,
                     f64::INFINITY,

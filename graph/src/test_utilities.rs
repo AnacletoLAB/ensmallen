@@ -328,7 +328,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
-    
+
     assert_eq!(
         graph.get_min_node_degree()?,
         graph.iter_unweighted_node_degrees().min().unwrap(),
@@ -894,13 +894,11 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
     if graph.get_nodes_number() > 1000 {
         return Ok(());
     }
-    println!("{:?}", graph.textual_report(None));
     for iteration in [None, Some(0), Some(1), Some(2)] {
-        let mut unweighted_all_paths = graph.get_unweighted_all_shortest_paths(iteration.clone(), verbose);
-        println!("{:?} {:?}", iteration, unweighted_all_paths.textual_report(None));
+        let mut unweighted_all_paths =
+            graph.get_unweighted_all_shortest_paths(iteration.clone(), verbose);
         test_graph_properties(&mut unweighted_all_paths, verbose)?;
     }
-
 
     if !graph.has_edge_weights() || graph.has_negative_edge_weights().unwrap() {
         assert!(graph
@@ -915,7 +913,6 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
             .unwrap();
         test_graph_properties(&mut weighted_all_paths, verbose)?;
     }
-
 
     Ok(())
 }
