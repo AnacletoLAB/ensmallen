@@ -1,4 +1,0 @@
-file,"/io/ensmallen_graph/graph/src/test_utilities.rs"
-line,858
-col,17
-message,The path from source to destination has distance 0.06048208102583885 while the distance from destination to source has destination 0.057867418974637985. The path from source to destination is [0, 1], while the path from destination to source is [1, 0]. The two paths should be symmetric and with the same distance.
