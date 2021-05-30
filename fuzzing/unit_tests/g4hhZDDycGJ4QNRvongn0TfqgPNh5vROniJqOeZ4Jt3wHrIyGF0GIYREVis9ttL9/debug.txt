@@ -1,0 +1,129 @@
+Graph {
+    edges: EliasFano {
+        universe:   45,
+        number_of_elements:   11,
+        low_bit_count:    2,
+        low_bit_mask:    3,
+        low_bits: [
+            6452,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:   18,
+            num_ones:    9,
+            num_zeros:    9,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits: 140519,
+                num_ones:    9,
+                num_zeros:    9,
+            },
+        },
+        last_high_value:    9,
+        last_value:   36,
+        last_index:    9,
+        current_number_of_elements:    9,
+    },
+    node_bits:    3,
+    node_bit_mask:    7,
+    weights: Some(
+        [
+            0.7470588,
+            0.0000000000000000000000000000000016495023,
+            0.000000000000000000000000000000000006254552,
+            0.0000000000000000000000000000000016495023,
+            0.0000000000000000000000000000000016495023,
+            0.0000000000000000000000000000000016495023,
+            0.0000000000000000000000000000000016495023,
+            0.000000000000000000000000000000000006254552,
+            0.0000000000000000000000000000000000000000018,
+        ],
+    ),
+    node_types: None,
+    edge_types: None,
+    nodes: Vocabulary {
+        map: {
+            "\t\t\t\t\t":    1,
+            "?????":    0,
+            "????\u{5}":    3,
+            "\u{1}\u{0}\t\t\t":    2,
+            "\u{5}\u{5}\u{5}\u{5}\u{5}":    4,
+        },
+        reverse_map: [
+            "?????",
+            "\t\t\t\t\t",
+            "\u{1}\u{0}\t\t\t",
+            "????\u{5}",
+            "\u{5}\u{5}\u{5}\u{5}\u{5}",
+        ],
+        numeric_ids: false,
+    },
+    directed: false,
+    unique_selfloop_number:    3,
+    selfloop_number:    3,
+    connected_nodes_number:    4,
+    singleton_nodes_with_selfloops_number:    1,
+    unique_edges_number:    9,
+    min_node_degree:    1,
+    max_node_degree:    3,
+    min_edge_weight: Some(
+        0.0000000000000000000000000000000000000000018,
+    ),
+    max_edge_weight: Some(
+        0.7470588,
+    ),
+    min_weighted_node_degree: Some(
+        0.00000000000000000000000000000000000000000180066852665739,
+    ),
+    max_weighted_node_degree: Some(
+        0.7470588088035583,
+    ),
+    weighted_singleton_nodes_number: Some(
+           0,
+    ),
+    name: "Fuzz Graph",
+    connected_nodes: Some(
+        BitVec<bitvec::order::Lsb0, u8> {
+            addr: 0x55555ec0e630,
+            head: 000,
+            bits:    5,
+            capacity:   64,
+        } [
+            0b11111,
+        ],
+    ),
+    singleton_nodes_with_selfloops: Some(
+        RoaringBitmap<[4]>,
+    ),
+    unique_sources: None,
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The undirected graph Fuzz Graph has 5 nodes and 6 weighted edges, of which 3 are self-loops. The graph is quite dense as it has a density of 0.36000 and has 2 connected components, where the component with most nodes has 4 nodes and the component with the least nodes has a single node. The graph median node degree is 1, the mean node degree is 1.80, and the node degree mode is 1. The top 5 most central nodes are \t\t\t\t\t (degree 3), ????? (degree 3), \u{5}\u{5}\u{5}\u{5}\u{5} (degree 1), ????\u{5} (degree 1) and \u{1}\u{0}\t\t\t (degree 1). The hash of the graph is 8bf4d9df3a183e6f.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    cumulative_node_degrees: None,
+    cached_destinations: None,
+}
