@@ -48,6 +48,11 @@ fn main() {
     // If it's a dir, run all the files in the folder.
     for filename in std::fs::read_dir(path).expect("CANNOT READ CORPUS") {
         let filename = filename.expect("Cannot get file in dir").path();
-        test_file(filename.into_os_string().into_string().unwrap(), number_of_test_runs);
+        if metadata(&filename).unwrap().is_file() {
+            test_file(
+                filename.into_os_string().into_string().unwrap(), 
+                number_of_test_runs
+            );
+        }
     }
 }

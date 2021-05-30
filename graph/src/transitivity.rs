@@ -63,6 +63,8 @@ impl Graph {
     }
 
     /// Returns graph with unweighted shortest paths computed up to the given depth.
+    /// 
+    /// The returned graph will have no selfloops.
     ///
     /// # Implementative details
     /// If the given iterations is None, it will return the complete
@@ -131,6 +133,8 @@ impl Graph {
 
     /// Returns graph with weighted shortest paths computed up to the given depth.
     ///
+    /// The returned graph will have no selfloops.
+    ///
     /// # Implementative details
     /// If the given iterations is None, it will return the complete
     /// sparse matrix of shortest paths.
@@ -154,11 +158,12 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
-        self.must_have_positive_edge_weights()?;
-        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
-        if use_edge_weights_as_probabilities {
-            self.must_have_edge_weights_representing_probabilities()?;
+        if let Some(uewap) = use_edge_weights_as_probabilities {
+            if uewap {
+                self.must_have_edge_weights_representing_probabilities()?;
+            }
         }
+        self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
         Graph::from_integer_unsorted(
             self.iter_node_ids()
@@ -172,7 +177,7 @@ impl Graph {
                         None,
                         Some(true),
                         iterations,
-                        Some(use_edge_weights_as_probabilities),
+                        use_edge_weights_as_probabilities,
                     )
                     .distances
                     .into_iter()
@@ -197,7 +202,7 @@ impl Graph {
             self.get_name(),
             true,
             false,
-            self.has_edge_weights(),
+            true,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             false,
             self.has_trap_nodes(),

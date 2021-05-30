@@ -70,6 +70,8 @@ impl ShortestPathsDjkstra {
 }
 
 impl Graph {
+
+    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -899,6 +901,7 @@ impl Graph {
         })
     }
 
+    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
@@ -1264,6 +1267,7 @@ impl Graph {
         }
     }
 
+    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// # Arguments

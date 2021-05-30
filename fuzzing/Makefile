@@ -3,7 +3,7 @@ TIMEOUT := 10 # seconds
 MAX_RAM := 8192 # Mb
 MAX_LEN := 81920 # bytes
 CORPUS_FOLDER := corpus
-THREADS := 12
+THREADS := "`python -c 'import multiprocessing as mp; print(int(0.5 * mp.cpu_count()))'`"
 
 
 libfuzz_from_csv:
@@ -43,6 +43,7 @@ hfuzz_from_csv:
 	)
 
 hfuzz_from_vec:
+	echo $(THREADS)
 	rm -rfd ./unit_tests/*
 	mkdir -p corpus/from_vec
 	(\
