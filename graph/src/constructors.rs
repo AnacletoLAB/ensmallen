@@ -663,23 +663,33 @@ pub(crate) fn build_edges(
                                 .find(|edge_id| ets[*edge_id as usize] == edge_type)
                         })
                     });
-                    // Finally now we need to check if the weights of the two edges, if given
-                    // are actually equal.
-                    // For the time being we do not allow for undirected graphs to have
-                    // asymmetrical weights.
-                    // let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
-                    //     weights.as_ref().map_or(false, |ws| {
-                    //         (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
-                    //     })
-                    // });
                     if maybe_edge_id.is_none() {
                         return Err(concat!(
                             "You are trying to load an undirected ",
                             "graph using the directed edge list ",
-                            "paremeter that requires for ALL edges to ",
+                            "parameter that requires for ALL edges to ",
                             "be fully defined in both directions.\n",
                             "The edge list you have provided does not ",
                             "provide the edges in both directions.",
+                        )
+                        .to_string());
+                    }
+                    // Finally now we need to check if the weights of the two edges, if given
+                    // are actually equal.
+                    // For the time being we do not allow for undirected graphs to have
+                    // asymmetrical weights.
+                    let has_unbalanced_undirected_edge = maybe_edge_id.map_or(true, |edge_id| {
+                        weights.as_ref().map_or(false, |ws| {
+                            (ws[edge_id as usize] - weight.unwrap()).abs() >= f32::EPSILON
+                        })
+                    });
+                    if has_unbalanced_undirected_edge {
+                        return Err(concat!(
+                            "You are trying to load an undirected ",
+                            "graph using the directed edge list method ",
+                            "with different weights in the different ",
+                            "directions. To do so you need to load ",
+                            "the graph as directed."
                         )
                         .to_string());
                     }
