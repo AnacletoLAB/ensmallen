@@ -36,7 +36,7 @@ impl Graph {
                         Some(true),
                         iterations,
                     )
-                    .2
+                    .visited
                     .unwrap()
                     .into_iter()
                     .enumerate()
@@ -96,11 +96,13 @@ impl Graph {
                         Some(false),
                         iterations,
                     )
-                    .0
+                    .distances
                     .unwrap()
                     .into_iter()
                     .enumerate()
-                    .filter(|(_, distance)| *distance == NodeT::MAX)
+                    .filter(move |(dst_node_id, distance)| {
+                        *distance == NodeT::MAX && src_node_id != *dst_node_id as NodeT
+                    })
                     .map(move |(dst_node_id, distance)| {
                         Ok((
                             src_node_id,
@@ -119,8 +121,8 @@ impl Graph {
             true,
             false,
             self.has_edge_weights(),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
+            false,
             self.has_trap_nodes(),
             verbose,
         )
@@ -141,12 +143,22 @@ impl Graph {
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
+    ///
     pub fn get_weighted_all_shortest_paths(
         &self,
         iterations: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
+        self.must_have_positive_edge_weights()?;
+        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
+        if use_edge_weights_as_probabilities {
+            self.must_have_edge_weights_representing_probabilities()?;
+        }
         let verbose = verbose.unwrap_or(true);
         Graph::from_integer_unsorted(
             self.iter_node_ids()
@@ -160,12 +172,14 @@ impl Graph {
                         None,
                         Some(true),
                         iterations,
-                        use_edge_weights_as_probabilities,
+                        Some(use_edge_weights_as_probabilities),
                     )
-                    .0
+                    .distances
                     .into_iter()
                     .enumerate()
-                    .filter(|(_, distance)| distance.is_finite())
+                    .filter(move |(dst_node_id, distance)| {
+                        distance.is_finite() && src_node_id != *dst_node_id as NodeT
+                    })
                     .map(move |(dst_node_id, distance)| {
                         Ok((
                             src_node_id,
@@ -184,11 +198,10 @@ impl Graph {
             true,
             false,
             self.has_edge_weights(),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
+            false,
             self.has_trap_nodes(),
             verbose,
         )
-        .unwrap()
     }
 }

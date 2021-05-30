@@ -17,10 +17,20 @@ impl Graph {
         0..self.get_nodes_number()
     }
 
+    /// Return parallel iterator on the node of the graph.
+    pub fn par_iter_node_ids(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number()).into_par_iter()
+    }
+
     /// Return iterator on the node names of the graph.
     pub fn iter_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_node_ids()
             .map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+    }
+
+    /// Return parallel iterator on the node names of the graph.
+    pub fn par_iter_node_names(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
+        self.nodes.reverse_map.par_iter().cloned()
     }
 
     /// Return iterator on the unique node type IDs of the graph.
@@ -95,11 +105,6 @@ impl Graph {
     pub fn iter_unique_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.vocabulary.reverse_map.iter().cloned())
-    }
-
-    /// Return iterator on the node of the graph.
-    pub fn par_iter_node_ids(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).into_par_iter()
     }
 
     /// Return iterator on the unweighted node degrees of the graph.

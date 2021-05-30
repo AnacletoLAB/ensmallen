@@ -758,6 +758,97 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
     Ok(())
 }
 
+pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
+    // We avoid running this test on too big graphs so to avoid slowing down the test suite
+    if graph.get_nodes_number() > 100 {
+        return Ok(());
+    }
+    // If the graph is empty the other tests on Dijkstra make little sense
+    if !graph.has_nodes() {
+        assert!(graph
+            .get_dijkstra_from_node_ids(0, None, None, None, None, None)
+            .is_err());
+        return Ok(());
+    }
+    // Dijkstra on unweighted graphs does not make sense
+    if !graph.has_edge_weights() {
+        assert!(graph
+            .get_dijkstra_from_node_names(
+                unsafe { graph.get_unchecked_node_name_from_node_id(0).as_ref() },
+                None,
+                None,
+                None,
+                None,
+                None
+            )
+            .is_err());
+        return Ok(());
+    }
+    // Dijkstra on weighted graphs with negative weights does not make sense
+    if graph.has_negative_edge_weights().unwrap() {
+        assert!(graph
+            .get_dijkstra_from_node_names(
+                unsafe { graph.get_unchecked_node_name_from_node_id(0).as_ref() },
+                None,
+                None,
+                None,
+                None,
+                None
+            )
+            .is_err());
+        return Ok(());
+    }
+    // Dijkstra on an unweighted graph gives simmetric results.
+    if !graph.is_directed() {
+        graph.iter_node_ids().for_each(|src_node_id| {
+            graph.iter_node_ids().for_each(|dst_node_id| unsafe {
+                // Check that the obtained results are simmetric
+                let (src_to_dst_distance, src_to_dst) = graph
+                    .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        src_node_id,
+                        dst_node_id,
+                        None,
+                    );
+                let (dst_to_src_distance, dst_to_src) = graph
+                    .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        dst_node_id,
+                        src_node_id,
+                        None,
+                    );
+                // Check that the two paths have the same length
+                assert_eq!(src_to_dst.len(), dst_to_src.len());
+                assert!(
+                    // We need both checks because both distances
+                    // my be infinite, and therefore the epsilon check
+                    // may not be enough.
+                    src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
+                        || (src_to_dst_distance - dst_to_src_distance).abs() < f64::EPSILON,
+                    concat!(
+                        "The path from source to destination has distance {} ",
+                        "while the distance from destination to source has ",
+                        "destination {}. The path from source to destination ",
+                        "is {:?}, while the path from destination to source ",
+                        "is {:?}. The two paths should be symmetric and with ",
+                        "the same distance."
+                    ),
+                    src_to_dst_distance,
+                    dst_to_src_distance,
+                    src_to_dst,
+                    dst_to_src
+                );
+                src_to_dst
+                    .into_iter()
+                    .rev()
+                    .zip(dst_to_src.into_iter())
+                    .for_each(|(node_left, node_right)| {
+                        assert_eq!(node_left, node_right);
+                    });
+            });
+        });
+    }
+    Ok(())
+}
+
 pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
@@ -773,7 +864,7 @@ pub fn test_polygons(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), St
 pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // We skip this test of graph with more than 1000 nodes to avoid slowing down
     // too much the test suite.
-    if graph.get_nodes_number() > 1000{
+    if graph.get_nodes_number() > 1000 {
         return Ok(());
     }
     let mut transitive_closure = graph.get_transitive_closure(None, verbose);
@@ -1424,7 +1515,7 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<(), Str
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
-        // The following test should remove ONLY the given node name
+        // The following test should remove ONLY the given node dijkstra
         let graph_without_given_name_result = graph.filter_from_names(
             None,
             Some(vec![node_name.as_str()]),
@@ -1736,8 +1827,8 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
     warn!("Testing random walks.");
     let _ = test_random_walks(graph, verbose);
 
-    //warn!("Testing dijkstra.");
-    //let _ = test_dijkstra(graph, verbose);
+    warn!("Testing dijkstra.");
+    let _ = test_dijkstra(graph, verbose);
 
     warn!("Testing approximated vertex cover");
     let _ = test_vertex_cover(graph, verbose);
