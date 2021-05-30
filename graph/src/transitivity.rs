@@ -1,3 +1,5 @@
+use indicatif::ProgressIterator;
+
 use super::*;
 
 /// # Transitivity.
@@ -21,8 +23,14 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing transitive closure",
+            self.get_nodes_number() as usize,
+        );
         Graph::from_integer_unsorted(
             self.iter_node_ids()
+                .progress_with(pb)
                 .filter(|src_node_id| unsafe {
                     !self.is_unchecked_singleton_from_node_id(*src_node_id)
                 })
@@ -63,7 +71,7 @@ impl Graph {
     }
 
     /// Returns graph with unweighted shortest paths computed up to the given depth.
-    /// 
+    ///
     /// The returned graph will have no selfloops.
     ///
     /// # Implementative details
@@ -83,8 +91,14 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing all unweighted shortest paths",
+            self.get_nodes_number() as usize,
+        );
         Graph::from_integer_unsorted(
             self.iter_node_ids()
+                .progress_with(pb)
                 .filter(|src_node_id| unsafe {
                     !self.is_unchecked_singleton_from_node_id(*src_node_id)
                 })
@@ -103,7 +117,7 @@ impl Graph {
                     .into_iter()
                     .enumerate()
                     .filter(move |(dst_node_id, distance)| {
-                        *distance == NodeT::MAX && src_node_id != *dst_node_id as NodeT
+                        *distance != NodeT::MAX && src_node_id != *dst_node_id as NodeT
                     })
                     .map(move |(dst_node_id, distance)| {
                         Ok((
@@ -122,7 +136,7 @@ impl Graph {
             self.get_name(),
             true,
             false,
-            self.has_edge_weights(),
+            true,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             false,
             self.has_trap_nodes(),
@@ -165,8 +179,14 @@ impl Graph {
         }
         self.must_have_positive_edge_weights()?;
         let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing all unweighted shortest paths",
+            self.get_nodes_number() as usize,
+        );
         Graph::from_integer_unsorted(
             self.iter_node_ids()
+                .progress_with(pb)
                 .filter(|src_node_id| unsafe {
                     !self.is_unchecked_singleton_from_node_id(*src_node_id)
                 })

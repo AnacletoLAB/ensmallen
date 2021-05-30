@@ -70,7 +70,6 @@ impl ShortestPathsDjkstra {
 }
 
 impl Graph {
-
     #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
@@ -363,7 +362,7 @@ impl Graph {
     }
 
     #[no_numpy_binding]
-    /// Returns vector of k minimum paths distances and vector of nodes predecessors.
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
@@ -376,7 +375,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -416,6 +415,103 @@ impl Graph {
                 });
         }
         paths
+    }
+
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Source node ID.
+    /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node IDs does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                self.validate_node_id(src_node_id)?,
+                self.validate_node_id(dst_node_id)?,
+                k,
+            )
+        })
+    }
+
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node name.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node names does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
+        Ok(unsafe {
+            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                self.get_node_id_from_node_name(src_node_name)?,
+                self.get_node_id_from_node_name(dst_node_name)?,
+                k,
+            )
+        })
+    }
+
+    #[no_numpy_binding]
+    /// Return vector of the k minimum paths node names between given source node and destination node name.
+    ///
+    /// # Arguments
+    /// * `src_node_name`: &str - Source node name.
+    /// * `dst_node_name`: &str - Destination node name.
+    /// * `k`: usize - Number of paths to find.
+    ///
+    /// # Implementative details
+    /// This method is not converted to a numpy array because it would have
+    /// to be a ragged array, as the different paths have different lengths.
+    ///
+    /// # Raises
+    /// * If any of the given node names does not exist in the graph.
+    pub fn get_unweighted_k_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> Result<Vec<Vec<String>>, String> {
+        self.get_unweighted_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k,
+        )
+        .map(|paths| {
+            paths
+                .into_iter()
+                .map(|path| {
+                    path.into_iter()
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_node_name_from_node_id(node_id)
+                        })
+                        .collect()
+                })
+                .collect()
+        })
     }
 
     /// Returns unweighted eccentricity of the given node.

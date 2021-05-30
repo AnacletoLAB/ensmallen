@@ -771,21 +771,8 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), St
         return Ok(());
     }
     // Dijkstra on unweighted graphs does not make sense
-    if !graph.has_edge_weights() {
-        assert!(graph
-            .get_dijkstra_from_node_names(
-                unsafe { graph.get_unchecked_node_name_from_node_id(0).as_ref() },
-                None,
-                None,
-                None,
-                None,
-                None
-            )
-            .is_err());
-        return Ok(());
-    }
     // Dijkstra on weighted graphs with negative weights does not make sense
-    if graph.has_negative_edge_weights().unwrap() {
+    if !graph.has_edge_weights() || graph.has_negative_edge_weights().unwrap() {
         assert!(graph
             .get_dijkstra_from_node_names(
                 unsafe { graph.get_unchecked_node_name_from_node_id(0).as_ref() },
@@ -897,6 +884,31 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<(),
         }
     }
     test_graph_properties(&mut transitive_closure, verbose)?;
+
+    Ok(())
+}
+
+pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    // We skip this test of graph with more than 1000 nodes to avoid slowing down
+    // too much the test suite.
+    if graph.get_nodes_number() > 1000 {
+        return Ok(());
+    }
+    let mut unweighted_all_paths = graph.get_unweighted_all_shortest_paths(None, verbose);
+    test_graph_properties(&mut unweighted_all_paths, verbose)?;
+
+    if !graph.has_edge_weights() || graph.has_negative_edge_weights().unwrap() {
+        assert!(graph
+            .get_weighted_all_shortest_paths(None, None, verbose)
+            .is_err());
+        return Ok(());
+    }
+
+    let mut weighted_all_paths = graph
+        .get_weighted_all_shortest_paths(None, None, verbose)
+        .unwrap();
+    test_graph_properties(&mut weighted_all_paths, verbose)?;
+
     Ok(())
 }
 
@@ -1732,38 +1744,38 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
             // by definition the diameter of a graph with a single component
             // cannot be infinite unless it's just a singleton.
             if graph.get_nodes_number() == 1 {
-                assert_eq!(
-                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
-                    f64::INFINITY
-                );
-                assert_eq!(
-                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
-                    f64::INFINITY
-                );
+                assert!(graph
+                    .get_unweighted_diameter(Some(false), verbose)
+                    .unwrap()
+                    .is_infinite());
+                assert!(graph
+                    .get_unweighted_diameter(Some(true), verbose)
+                    .unwrap()
+                    .is_infinite());
             } else {
-                assert_ne!(
-                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
-                    f64::INFINITY
-                );
-                assert_ne!(
-                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
-                    f64::INFINITY
-                );
+                assert!(graph
+                    .get_unweighted_diameter(Some(false), verbose)
+                    .unwrap()
+                    .is_finite());
+                assert!(graph
+                    .get_unweighted_diameter(Some(true), verbose)
+                    .unwrap()
+                    .is_finite());
             }
         }
 
         _ => {
-            assert_eq!(
-                graph.get_unweighted_diameter(Some(false), verbose).unwrap(),
-                f64::INFINITY
-            );
+            assert!(graph
+                .get_unweighted_diameter(Some(false), verbose)
+                .unwrap()
+                .is_infinite());
 
             // if all the nodes are singletons then the diameter should be infinite
             if biggest == 1 {
-                assert_eq!(
-                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),
-                    f64::INFINITY
-                );
+                assert!(graph
+                    .get_unweighted_diameter(Some(true), verbose)
+                    .unwrap()
+                    .is_infinite());
             }
         }
     }
@@ -1841,6 +1853,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
 
     warn!("Testing transitivity.");
     let _ = test_transitivity(graph, verbose);
+
+    warn!("Testing all paths.");
+    let _ = test_all_paths(graph, verbose);
 
     warn!("Testing generation of selfloops.");
     let _ = test_selfloops(graph, verbose);
