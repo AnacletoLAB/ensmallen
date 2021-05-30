@@ -70,7 +70,7 @@ impl Graph {
             false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
+            self.has_trap_nodes() || self.has_selfloops(),
             verbose,
         )
         .unwrap()
@@ -151,7 +151,7 @@ impl Graph {
             true,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
+            self.has_trap_nodes() || self.has_selfloops(),
             verbose,
         )
         .unwrap()
@@ -244,7 +244,7 @@ impl Graph {
             true,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
+            self.has_trap_nodes() || self.has_selfloops(),
             verbose,
         )
     }

@@ -355,9 +355,9 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                 "Since the graph does not contain disconnected nodes nor it ",
                 "contains trap nodes, the minimum outbound node degree must be ",
                 "greater than zero.\n\n",
-                "The graph data structure is: {:4?}"
+                "The graph edges are: {:?}"
             ),
-            graph
+            graph.get_edge_node_ids(true)
         );
     }
 

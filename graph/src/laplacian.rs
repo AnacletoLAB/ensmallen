@@ -348,7 +348,7 @@ impl Graph {
             true,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
+            true,
             verbose.unwrap_or(true),
         )
     }

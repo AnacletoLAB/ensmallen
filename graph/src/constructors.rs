@@ -458,6 +458,29 @@ pub(crate) fn build_edges(
     ),
     String,
 > {
+    // Before starting to build the actual graph we execute
+    // a sanity check of the arguments provided, as some may get complex
+    // in some situations.
+
+    // If the graph has a single edge and is directed, surely it must
+    // contain trap nodes. The only exception is when the edge in question
+    // is a self-loop, and it has been correctly parametrized that the
+    // graph may contain singleton nodes with self-loops.
+    if !might_have_trap_nodes
+        && !might_have_singletons_with_selfloops
+        && directed
+        && edges_number == 1
+    {
+        panic!(concat!(
+            "It has been specified that the graph cannot have trap ",
+            "nodes, but is a directed graph with a single edge.\n",
+            "Therefore, it must have a trap node and the parametrization ",
+            "provided is mistaken.\n",
+            "This often is caused by a misparametrization of a builder ",
+            "method that was not expected to be able to build this case."
+        ));
+    }
+
     info!("Started building of EliasFano edges data structure.");
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;

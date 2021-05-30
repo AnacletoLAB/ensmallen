@@ -24,9 +24,10 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.iter_node_names_and_node_type_names().all(|(_, node_name, _, node_type)| {
-            other.has_node_name_and_node_type_name(&node_name, node_type)
-        })
+        self.iter_node_names_and_node_type_names()
+            .all(|(_, node_name, _, node_type)| {
+                other.has_node_name_and_node_type_name(&node_name, node_type)
+            })
     }
 
     /// Return graph remapped towards nodes of the given graph.
@@ -55,23 +56,27 @@ impl Graph {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
 
+        println!("{:?}", self.textual_report(Some(verbose)));
+
         Graph::from_integer_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
-                .map(|(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
-                    Ok((
-                        other.get_unchecked_node_id_from_node_name(&src_name),
-                        other.get_unchecked_node_id_from_node_name(&dst_name),
-                        edge_type.and_then(|et| {
-                            self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
-                        }),
-                        weight,
-                    ))
-                }),
+                .map(
+                    |(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
+                        Ok((
+                            other.get_unchecked_node_id_from_node_name(&src_name),
+                            other.get_unchecked_node_id_from_node_name(&dst_name),
+                            edge_type.and_then(|et| {
+                                self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
+                            }),
+                            weight,
+                        ))
+                    },
+                ),
             other.nodes.clone(),
             other.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.directed,
+            self.is_directed(),
             self.name.clone(),
             false,
             self.has_edge_types(),
