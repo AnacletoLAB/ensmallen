@@ -1091,7 +1091,7 @@ impl Graph {
                 })
                 .collect::<Vec<EdgeT>>()
         } else {
-            self.iter_edge_ids(self.directed)
+            self.iter_edge_node_ids(self.directed)
                 .map(|(edge_id, _, _)| edge_id)
                 .collect::<Vec<EdgeT>>()
         };

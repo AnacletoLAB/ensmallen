@@ -22,7 +22,7 @@ impl Graph {
             value: UnsafeCell::new(&mut ajacency),
         };
         // We iterate on the edges and populate the matrix.
-        self.par_iter_edge_ids(true).for_each(|(_, src, dst)| unsafe {
+        self.par_iter_edge_node_ids(true).for_each(|(_, src, dst)| unsafe {
             (*thread_ajacency.value.get())[src as usize][dst as usize] = true;
         });
         ajacency

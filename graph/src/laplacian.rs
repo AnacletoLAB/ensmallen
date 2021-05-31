@@ -70,7 +70,7 @@ impl Graph {
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
+            true,
             self.get_name(),
             true,
             self.has_edge_types(),

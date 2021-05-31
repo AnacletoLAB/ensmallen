@@ -719,7 +719,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edge_node_ids(&self, directed: bool) -> Vec<Vec<NodeT>> {
-        self.par_iter_edge_ids(directed)
+        self.par_iter_edge_node_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }

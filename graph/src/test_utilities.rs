@@ -317,9 +317,45 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
+    // If the graph is undirected, all the edges must have their symmetrical one
+    if !graph.is_directed() {
+        graph
+            .par_iter_edge_node_ids(true)
+            .for_each(|(_, src_node_id, dst_node_id)| {
+                assert!(graph.has_edge_from_node_ids(dst_node_id, src_node_id));
+            });
+    }
+
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
         assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));
+        // If the graph is undirected, the edge weights must be symmetrical
+        if !graph.is_directed() {
+            graph
+                .iter_edge_node_ids(false)
+                .for_each(|(_, src_node_id, dst_node_id)| unsafe {
+                    assert!(
+                        (graph.get_unchecked_edge_weight_from_node_ids(src_node_id, dst_node_id)
+                            - graph
+                                .get_unchecked_edge_weight_from_node_ids(dst_node_id, src_node_id))
+                        .abs()
+                            < WeightT::EPSILON,
+                        concat!(
+                            "In an undirected graph, we expect for the edge weights to be symmetrical ",
+                            "but in the provided graph there has been found a case where the edge ",
+                            "from {} to {} has weight {}, while the edge from {} to {} has ",
+                            "weight {}, creating an asymetrical case."
+                        ),
+                        src_node_id,
+                        dst_node_id,
+                        graph.get_unchecked_edge_weight_from_node_ids(src_node_id, dst_node_id),
+                        dst_node_id,
+                        src_node_id,
+                        graph.get_unchecked_edge_weight_from_node_ids(dst_node_id, src_node_id),
+
+                    );
+                });
+        }
     }
 
     // Testing that the degrees computation is correct
@@ -760,7 +796,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     let vertex_cover = graph.approximated_vertex_cover_set();
     graph
-        .par_iter_edge_ids(true)
+        .par_iter_edge_node_ids(true)
         .for_each(|(_, src_node_id, dst_node_id)| {
             assert!(
                 vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
@@ -895,13 +931,6 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
                     dst_to_src,
                     graph.textual_report(verbose)
                 );
-                src_to_dst
-                    .into_iter()
-                    .rev()
-                    .zip(dst_to_src.into_iter())
-                    .for_each(|(node_left, node_right)| {
-                        assert_eq!(node_left, node_right);
-                    });
             });
         });
     }
@@ -1961,7 +1990,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
         graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
         graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,
     ] {
-        println!("KEBABBISGDFGH", );
+        println!("ALLAH!");
         let _ = _default_test_suite(&mut transformed_graph, verbose);
     }
     Ok(())

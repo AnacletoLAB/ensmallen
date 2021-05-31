@@ -291,7 +291,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_source_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_edge_ids(directed).map(move |(_, src, _)| src)
+        self.iter_edge_node_ids(directed).map(move |(_, src, _)| src)
     }
 
     /// Return iterator on the edges' weights.
@@ -341,7 +341,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_edge_ids(directed).map(move |(_, src, _)| src)
+        self.par_iter_edge_node_ids(directed).map(move |(_, src, _)| src)
     }
 
     /// Return iterator on the (non unique) destination nodes of the graph.
@@ -349,7 +349,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_destination_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_edge_ids(directed).map(move |(_, _, dst)| dst)
+        self.iter_edge_node_ids(directed).map(move |(_, _, dst)| dst)
     }
 
     /// Return parallel iterator on the (non unique) destination nodes of the graph.
@@ -360,7 +360,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_edge_ids(directed).map(move |(_, _, dst)| dst)
+        self.par_iter_edge_node_ids(directed).map(move |(_, _, dst)| dst)
     }
 
     /// Return iterator on the node IDs and ther node type IDs.
@@ -469,7 +469,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn iter_edge_ids(
+    pub fn iter_edge_node_ids(
         &self,
         directed: bool,
     ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
@@ -505,7 +505,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, String, NodeT, String)> + '_ {
-        self.iter_edge_ids(directed)
+        self.iter_edge_node_ids(directed)
             .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
@@ -521,7 +521,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
-    pub fn par_iter_edge_ids(
+    pub fn par_iter_edge_node_ids(
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
@@ -558,7 +558,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, String, NodeT, String)> + '_ {
-        self.par_iter_edge_ids(directed)
+        self.par_iter_edge_node_ids(directed)
             .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
@@ -578,7 +578,7 @@ impl Graph {
         &self,
     ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_, String> {
         Ok(self
-            .iter_edge_ids(true)
+            .iter_edge_node_ids(true)
             .zip(self.iter_edge_weights()?)
             .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))
     }
@@ -605,7 +605,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.iter_edge_ids(directed)
+        self.iter_edge_node_ids(directed)
             .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
@@ -733,7 +733,7 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.par_iter_edge_ids(directed)
+        self.par_iter_edge_node_ids(directed)
             .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,

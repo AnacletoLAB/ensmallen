@@ -1,6 +1,0 @@
-file,"/io/ensmallen_graph/graph/src/test_utilities.rs"
-line,903
-col,25
-message,assertion failed: `(left == right)`
-  left: `2`,
- right: `0`

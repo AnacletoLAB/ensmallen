@@ -15,7 +15,7 @@ impl Graph {
         let thread_shared_vertex_cover = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut vertex_cover),
         };
-        self.par_iter_edge_ids(self.is_directed()).for_each(
+        self.par_iter_edge_node_ids(self.is_directed()).for_each(
             |(_, src_node_id, dst_node_id)| unsafe {
                 let vertex_cover = thread_shared_vertex_cover.value.get();
                 let is_src_inserted = (*vertex_cover)[src_node_id as usize];
