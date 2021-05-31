@@ -3823,14 +3823,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.iter_node_names_and_node_type_names().collect::<Vec<_>>();
 			},
 			282 => {
-				trace.push(format!("iter_edge_ids(directed = {:?})", data_for_current_test.iter_edge_ids.directed));
+				trace.push(format!("iter_edge_node_ids(directed = {:?})", data_for_current_test.iter_edge_ids.directed));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.iter_edge_ids(data_for_current_test.iter_edge_ids.directed).collect::<Vec<_>>();
+				let _ = graph.iter_edge_node_ids(data_for_current_test.iter_edge_ids.directed).collect::<Vec<_>>();
 			},
 			283 => {
 				trace.push(format!("iter_edges(directed = {:?})", data_for_current_test.iter_edges.directed));
@@ -3843,14 +3843,14 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 				let _ = graph.iter_edges(data_for_current_test.iter_edges.directed).collect::<Vec<_>>();
 			},
 			284 => {
-				trace.push(format!("par_iter_edge_ids(directed = {:?})", data_for_current_test.par_iter_edge_ids.directed));
+				trace.push(format!("par_iter_edge_node_ids(directed = {:?})", data_for_current_test.par_iter_edge_ids.directed));
 				
 				let g_copy = graph.clone();
 				let trace2 = trace.clone();
 				std::panic::set_hook(Box::new(move |info| {
 					handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
 				}));
-				let _ = graph.par_iter_edge_ids(data_for_current_test.par_iter_edge_ids.directed).collect::<Vec<_>>();
+				let _ = graph.par_iter_edge_node_ids(data_for_current_test.par_iter_edge_ids.directed).collect::<Vec<_>>();
 			},
 			285 => {
 				trace.push(format!("par_iter_directed_edge_ids()", ));
