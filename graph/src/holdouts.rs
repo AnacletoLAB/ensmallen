@@ -222,7 +222,7 @@ impl Graph {
         pb1.finish();
 
         Graph::from_integer_unsorted(
-            negative_edges_hashset.into_iter().flat_map(|edge| {
+            negative_edges_hashset.into_par_iter().flat_map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
                 if !self.is_directed() && src != dst {
                     vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]

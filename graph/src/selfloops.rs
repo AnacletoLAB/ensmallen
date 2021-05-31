@@ -1,4 +1,5 @@
 use super::*;
+use rayon::iter::ParallelIterator;
 
 /// # Selfloops.
 impl Graph {
@@ -33,10 +34,10 @@ impl Graph {
             .to_string());
         }
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .map(|(_, src, dst, edge_type_id, weight)| Ok((src, dst, edge_type_id, weight)))
                 .chain(
-                    self.iter_node_ids()
+                    self.par_iter_node_ids()
                         .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
                         .map(|node_id| Ok((node_id, node_id, edge_type_id, weight))),
                 ),

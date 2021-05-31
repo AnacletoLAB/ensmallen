@@ -1,6 +1,7 @@
 use super::*;
-use indicatif::ProgressIterator;
+use indicatif::ParallelProgressIterator;
 use num_traits::Signed;
+use rayon::iter::ParallelIterator;
 
 /// # Transitivity.
 impl Graph {
@@ -35,29 +36,33 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
         Graph::from_integer_unsorted(
-            self.iter_node_ids()
+            self.par_iter_node_ids()
                 .progress_with(pb)
-                .filter(|src_node_id| unsafe {
-                    !self.is_unchecked_singleton_from_node_id(*src_node_id)
-                })
-                .map(|src_node_id| unsafe {
-                    self.get_unchecked_breath_first_search_from_node_ids(
-                        src_node_id,
-                        None,
-                        None,
-                        Some(false),
-                        Some(false),
-                        Some(true),
-                        iterations,
-                    )
-                    .visited
-                    .unwrap()
-                    .into_iter()
-                    .enumerate()
-                    .filter(|(_, flag)| *flag)
-                    .map(move |(dst_node_id, _)| {
-                        Ok((src_node_id, dst_node_id as NodeT, None, None))
-                    })
+                .filter_map(|src_node_id| unsafe {
+                    if self.is_unchecked_singleton_from_node_id(src_node_id) {
+                        None
+                    } else {
+                        Some(
+                            self.get_unchecked_breath_first_search_from_node_ids(
+                                src_node_id,
+                                None,
+                                None,
+                                Some(false),
+                                Some(false),
+                                Some(true),
+                                iterations,
+                            )
+                            .visited
+                            .unwrap()
+                            .into_iter()
+                            .enumerate()
+                            .filter(|(_, flag)| *flag)
+                            .map(move |(dst_node_id, _)| {
+                                Ok((src_node_id, dst_node_id as NodeT, None, None))
+                            })
+                            .collect::<Vec<_>>(),
+                        )
+                    }
                 })
                 .flatten(),
             self.nodes.clone(),
@@ -110,42 +115,46 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
         Graph::from_integer_unsorted(
-            self.iter_node_ids()
+            self.par_iter_node_ids()
                 .progress_with(pb)
-                .filter(|src_node_id| unsafe {
-                    self.is_unchecked_connected_from_node_id(*src_node_id)
-                })
-                .map(|src_node_id| unsafe {
-                    self.get_unchecked_breath_first_search_from_node_ids(
-                        src_node_id,
-                        None,
-                        None,
-                        Some(true),
-                        Some(false),
-                        Some(false),
-                        iterations,
-                    )
-                    .distances
-                    .unwrap()
-                    .into_iter()
-                    .enumerate()
-                    .filter(move |(dst_node_id, distance)| {
-                        *distance != NodeT::MAX && src_node_id != *dst_node_id as NodeT
-                    })
-                    .map(move |(dst_node_id, distance)| {
-                        Ok((
-                            src_node_id,
-                            dst_node_id as NodeT,
-                            None,
-                            Some(distance as WeightT),
-                        ))
-                    })
+                .filter_map(|src_node_id| unsafe {
+                    if self.is_unchecked_connected_from_node_id(src_node_id) {
+                        Some(
+                            self.get_unchecked_breath_first_search_from_node_ids(
+                                src_node_id,
+                                None,
+                                None,
+                                Some(true),
+                                Some(false),
+                                Some(false),
+                                iterations,
+                            )
+                            .distances
+                            .unwrap()
+                            .into_iter()
+                            .enumerate()
+                            .filter(move |(dst_node_id, distance)| {
+                                *distance != NodeT::MAX && src_node_id != *dst_node_id as NodeT
+                            })
+                            .map(move |(dst_node_id, distance)| {
+                                Ok((
+                                    src_node_id,
+                                    dst_node_id as NodeT,
+                                    None,
+                                    Some(distance as WeightT),
+                                ))
+                            })
+                            .collect::<Vec<_>>(),
+                        )
+                    } else {
+                        None
+                    }
                 })
                 .flatten(),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            iterations.is_some() || self.is_directed(),
+            self.is_directed(),
             self.get_name(),
             true,
             false,
@@ -204,36 +213,40 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
         Graph::from_integer_unsorted(
-            self.iter_node_ids()
+            self.par_iter_node_ids()
                 .progress_with(pb)
-                .filter(|src_node_id| unsafe {
-                    self.is_unchecked_connected_from_node_id(*src_node_id)
-                })
-                .map(|src_node_id| unsafe {
-                    self.get_unchecked_dijkstra_from_node_ids(
-                        src_node_id,
-                        None,
-                        None,
-                        Some(false),
-                        iterations,
-                        use_edge_weights_as_probabilities,
-                    )
-                    .distances
-                    .into_iter()
-                    .enumerate()
-                    // We need to convert the distance to WeightT before
-                    // the checks because the distance is an f64 while currently
-                    // the WeightT is an f32, and values outside the resolution of
-                    // f32 and within f64 will convert to zeros and infinities.
-                    .map(|(dst_node_id, distance)| (dst_node_id, distance as WeightT))
-                    .filter(move |(dst_node_id, distance)| {
-                        distance.is_finite()
-                            && src_node_id != *dst_node_id as NodeT
-                            && distance.is_positive()
-                    })
-                    .map(move |(dst_node_id, distance)| {
-                        Ok((src_node_id, dst_node_id as NodeT, None, Some(distance)))
-                    })
+                .filter_map(|src_node_id| unsafe {
+                    if self.is_unchecked_connected_from_node_id(src_node_id) {
+                        Some(
+                            self.get_unchecked_dijkstra_from_node_ids(
+                                src_node_id,
+                                None,
+                                None,
+                                Some(false),
+                                iterations,
+                                use_edge_weights_as_probabilities,
+                            )
+                            .distances
+                            .into_iter()
+                            .enumerate()
+                            // We need to convert the distance to WeightT before
+                            // the checks because the distance is an f64 while currently
+                            // the WeightT is an f32, and values outside the resolution of
+                            // f32 and within f64 will convert to zeros and infinities.
+                            .map(|(dst_node_id, distance)| (dst_node_id, distance as WeightT))
+                            .filter(move |(dst_node_id, distance)| {
+                                distance.is_finite()
+                                    && src_node_id != *dst_node_id as NodeT
+                                    && distance.is_positive()
+                            })
+                            .map(move |(dst_node_id, distance)| {
+                                Ok((src_node_id, dst_node_id as NodeT, None, Some(distance)))
+                            })
+                            .collect::<Vec<_>>(),
+                        )
+                    } else {
+                        None
+                    }
                 })
                 .flatten(),
             self.nodes.clone(),

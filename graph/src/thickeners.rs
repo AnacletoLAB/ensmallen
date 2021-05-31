@@ -99,55 +99,54 @@ impl Graph {
             }
         };
 
-        // compute the new edges to add
-        let new_edges = self
-            .par_iter_node_ids()
-            .zip(self.par_iter_unweighted_node_degrees())
-            .progress_with(pb)
-            .map(|(source_node_id, node_degree)| {
-                if node_degree <= max_degree {
-                    let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);
-                    // for each node find the k closest nodes (based on the distance choosen and their features)
-                    let current_node_features = &features[source_node_id as usize];
-                    let mut closest_nodes_distances =
-                        vec![f64::INFINITY; neighbours_number as usize];
-
-                    features
-                        .iter()
-                        .zip(self.iter_node_ids())
-                        // every node is the closest to itself so we filter it out
-                        .filter(|(_, destination_node_id)| source_node_id != *destination_node_id)
-                        .for_each(|(node_features, destination_node_id)| {
-                            // compute the distance
-                            let distance = distance_metric(current_node_features, node_features);
-                            // get the max distance in the currently cosest nodes
-                            let (i, max_distance) =
-                                unsafe { closest_nodes_distances.argmax().unwrap_unchecked() };
-                            // update the closest nodes inserting the current node if needed
-                            if max_distance > distance {
-                                if max_distance == f64::INFINITY {
-                                    closest_nodes.push(destination_node_id);
-                                } else {
-                                    closest_nodes[i] = destination_node_id;
-                                }
-                                closest_nodes_distances[i] = distance;
-                            }
-                        });
-                    closest_nodes
-                } else {
-                    Vec::new()
-                }
-            })
-            .collect::<Vec<Vec<NodeT>>>();
-
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {
                     Ok((src_node_id, dst_node_id, edge_type, weight))
                 })
                 .chain(
-                    new_edges
-                        .into_iter()
+                    self.par_iter_node_ids()
+                        .zip(self.par_iter_unweighted_node_degrees())
+                        .progress_with(pb)
+                        .map(|(source_node_id, node_degree)| {
+                            if node_degree <= max_degree {
+                                let mut closest_nodes =
+                                    Vec::with_capacity(neighbours_number as usize);
+                                // for each node find the k closest nodes (based on the distance choosen and their features)
+                                let current_node_features = &features[source_node_id as usize];
+                                let mut closest_nodes_distances =
+                                    vec![f64::INFINITY; neighbours_number as usize];
+
+                                features
+                                    .iter()
+                                    .zip(self.iter_node_ids())
+                                    // every node is the closest to itself so we filter it out
+                                    .filter(|(_, destination_node_id)| {
+                                        source_node_id != *destination_node_id
+                                    })
+                                    .for_each(|(node_features, destination_node_id)| {
+                                        // compute the distance
+                                        let distance =
+                                            distance_metric(current_node_features, node_features);
+                                        // get the max distance in the currently cosest nodes
+                                        let (i, max_distance) = unsafe {
+                                            closest_nodes_distances.argmax().unwrap_unchecked()
+                                        };
+                                        // update the closest nodes inserting the current node if needed
+                                        if max_distance > distance {
+                                            if max_distance == f64::INFINITY {
+                                                closest_nodes.push(destination_node_id);
+                                            } else {
+                                                closest_nodes[i] = destination_node_id;
+                                            }
+                                            closest_nodes_distances[i] = distance;
+                                        }
+                                    });
+                                closest_nodes
+                            } else {
+                                Vec::new()
+                            }
+                        })
                         .enumerate()
                         .map(|(source_node_id, new_neighbours)| {
                             new_neighbours
@@ -178,6 +177,7 @@ impl Graph {
                                     }
                                 })
                                 .flatten()
+                                .collect::<Vec<_>>()
                         })
                         .flatten(),
                 ),

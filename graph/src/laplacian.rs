@@ -1,5 +1,6 @@
 use indicatif::ProgressIterator;
 use num_traits::Zero;
+use rayon::iter::ParallelIterator;
 
 use super::*;
 
@@ -11,7 +12,7 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn get_unweighted_laplacian_transformed_graph(&self, verbose: Option<bool>) -> Graph {
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
+            self.par_iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, src, dst, edge_type)| {
                     Ok((
                         src,
@@ -53,7 +54,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
+            self.par_iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, src, dst, edge_type)| {
                     Ok((
                         src,
@@ -98,8 +99,8 @@ impl Graph {
     ) -> Result<Graph, String> {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| unsafe {
+            self.par_iter_edge_node_ids_and_edge_type_id(true).map(
+                |(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -114,7 +115,8 @@ impl Graph {
                                 .sqrt() as WeightT
                         }),
                     ))
-                }),
+                },
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
@@ -144,7 +146,7 @@ impl Graph {
     ) -> Result<Graph, String> {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
+            self.par_iter_edge_node_ids_and_edge_type_id(true)
                 .filter(|(_, src, dst, _)| src != dst)
                 .map(|(_, src, dst, edge_type)| unsafe {
                     Ok((
@@ -189,7 +191,7 @@ impl Graph {
         self.must_have_edge_weights()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .filter_map(|(_, src, dst, edge_type, edge_weight)| unsafe {
                     let weight = if src == dst {
                         self.get_unchecked_weighted_node_degree_from_node_id(src) as WeightT
@@ -233,8 +235,8 @@ impl Graph {
         self.must_be_undirected()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| unsafe {
+            self.par_iter_edge_node_ids_and_edge_type_id(true).map(
+                |(_, src, dst, edge_type)| unsafe {
                     Ok((
                         src,
                         dst,
@@ -248,7 +250,8 @@ impl Graph {
                                 .sqrt()) as WeightT
                         }),
                     ))
-                }),
+                },
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
@@ -334,8 +337,8 @@ impl Graph {
         self.must_have_edge_weights()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true).filter_map(
-                |(_, src, dst, edge_type)| unsafe {
+            self.par_iter_edge_node_ids_and_edge_type_id(true)
+                .filter_map(|(_, src, dst, edge_type)| unsafe {
                     let weight = if src == dst {
                         1.0
                     } else {
@@ -348,8 +351,7 @@ impl Graph {
                         return None;
                     }
                     Some(Ok((src, dst, edge_type, Some(weight))))
-                },
-            ),
+                }),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

@@ -1,3 +1,5 @@
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
+
 use super::*;
 use std::ops;
 
@@ -76,16 +78,12 @@ fn generic_string_operator(
             };
             Ok((node_name, node_type_names))
         })
-        .chain(
-            other
-                .iter_node_names_and_node_type_names()
-                .filter_map(|(_, node_name, _, node_type_names)| {
-                    match main.has_node_name(&node_name) {
-                        true => None,
-                        false => Some(Ok((node_name, node_type_names))),
-                    }
-                }),
-        );
+        .chain(other.iter_node_names_and_node_type_names().filter_map(
+            |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                true => None,
+                false => Some(Ok((node_name, node_type_names))),
+            },
+        ));
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -140,9 +138,9 @@ fn generic_integer_operator(
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
     let edges_iterator = graphs
-        .iter()
+        .into_par_iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.iter_edge_node_ids_and_edge_type_id_and_edge_weight(main.directed)
+            one.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -156,6 +154,7 @@ fn generic_integer_operator(
                     true
                 })
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
+                .collect::<Vec<_>>()
         });
 
     let node_types = match (&main.node_types, &other.node_types) {
@@ -204,7 +203,7 @@ impl<'a, 'b> Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The other graph to validate operation with.
-    /// 
+    ///
     /// # Raises
     /// * If a graph is directed and the other is undirected.
     /// * If one of the two graphs has edge weights and the other does not.
@@ -245,7 +244,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The other graph.
-    /// 
+    ///
     /// # Raises
     /// * If a graph is directed and the other is undirected.
     /// * If one of the two graphs has edge weights and the other does not.

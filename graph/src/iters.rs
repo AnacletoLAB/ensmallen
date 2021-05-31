@@ -291,7 +291,8 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_source_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_edge_node_ids(directed).map(move |(_, src, _)| src)
+        self.iter_edge_node_ids(directed)
+            .map(move |(_, src, _)| src)
     }
 
     /// Return iterator on the edges' weights.
@@ -341,7 +342,8 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_edge_node_ids(directed).map(move |(_, src, _)| src)
+        self.par_iter_edge_node_ids(directed)
+            .map(move |(_, src, _)| src)
     }
 
     /// Return iterator on the (non unique) destination nodes of the graph.
@@ -349,7 +351,8 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn iter_destination_node_ids(&self, directed: bool) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_edge_node_ids(directed).map(move |(_, _, dst)| dst)
+        self.iter_edge_node_ids(directed)
+            .map(move |(_, _, dst)| dst)
     }
 
     /// Return parallel iterator on the (non unique) destination nodes of the graph.
@@ -360,7 +363,8 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_edge_node_ids(directed).map(move |(_, _, dst)| dst)
+        self.par_iter_edge_node_ids(directed)
+            .map(move |(_, _, dst)| dst)
     }
 
     /// Return iterator on the node IDs and ther node type IDs.
@@ -463,6 +467,25 @@ impl Graph {
                     self.get_unchecked_node_type_names_from_node_id(node_id),
                 )
             })
+    }
+
+    /// Return parallell iterator on the node of the graph as Strings.
+    pub fn par_iter_node_names_and_node_type_names(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
+    {
+        unsafe {
+            self.par_iter_unchecked_node_ids_and_node_type_ids().map(
+                move |(node_id, node_types)| {
+                    (
+                        node_id,
+                        self.get_unchecked_node_name_from_node_id(node_id),
+                        node_types,
+                        self.get_unchecked_node_type_names_from_node_id(node_id),
+                    )
+                },
+            )
+        }
     }
 
     /// Return iterator on the edges of the graph.

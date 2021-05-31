@@ -1,5 +1,6 @@
 use super::*;
-use indicatif::ProgressIterator;
+use indicatif::ParallelProgressIterator;
+use rayon::iter::ParallelIterator;
 
 impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
@@ -24,7 +25,7 @@ impl Graph {
         if self.get_nodes_number() != other.get_nodes_number() {
             return false;
         }
-        self.iter_node_names_and_node_type_names()
+        self.par_iter_node_names_and_node_type_names()
             .all(|(_, node_name, _, node_type)| {
                 other.has_node_name_and_node_type_name(&node_name, node_type)
             })
@@ -57,7 +58,7 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
+            self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
                 .map(
                     |(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {

@@ -5,6 +5,7 @@ use indicatif::ProgressIterator;
 use itertools::Itertools;
 use log::info;
 use num_traits::Zero;
+use rayon::iter::ParallelIterator;
 use rayon::prelude::ParallelSliceMut;
 use roaring::RoaringBitmap;
 use std::cmp::Ordering;
@@ -339,7 +340,7 @@ pub(crate) fn parse_unsorted_quadruples(
 }
 
 pub(crate) fn parse_integer_unsorted_edges<'a>(
-    edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
+    edges_iter: impl ParallelIterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
     directed: bool,
     directed_edge_list: bool,
     verbose: bool,
@@ -1467,7 +1468,7 @@ impl Graph {
     /// * `might_contain_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
-        edges_iterator: impl Iterator<
+        edges_iterator: impl ParallelIterator<
             Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
         >,
         nodes: Vocabulary<NodeT>,
