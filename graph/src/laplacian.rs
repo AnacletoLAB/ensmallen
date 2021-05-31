@@ -235,23 +235,21 @@ impl Graph {
         self.must_be_undirected()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id(true).map(
-                |(_, src, dst, edge_type)| unsafe {
-                    Ok((
-                        src,
-                        dst,
-                        edge_type,
-                        Some(if src == dst {
-                            1.0
-                        } else {
-                            (-1.0
-                                / (self.get_unchecked_weighted_node_degree_from_node_id(src)
-                                    * self.get_unchecked_weighted_node_degree_from_node_id(dst))
-                                .sqrt()) as WeightT
-                        }),
-                    ))
-                },
-            ),
+            self.par_iter_edge_node_ids_and_edge_type_id(true)
+                .filter_map(|(_, src, dst, edge_type)| unsafe {
+                    let weight = if src == dst {
+                        1.0
+                    } else {
+                        (-1.0
+                            / (self.get_unchecked_weighted_node_degree_from_node_id(src)
+                                * self.get_unchecked_weighted_node_degree_from_node_id(dst))
+                            .sqrt()) as WeightT
+                    };
+                    if weight.is_zero() || weight.is_infinite() {
+                        return None;
+                    }
+                    Some(Ok((src, dst, edge_type, Some(weight))))
+                }),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
@@ -261,9 +259,18 @@ impl Graph {
             self.has_edge_types(),
             true,
             false,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
+            // This method may produce singletons though to
+            // problems of numerical instability, even though if either
+            // weights are in 'normal' ranges it will not happen or
+            // if the type used for the weights used will have, in the future
+            // use a higher resolution, like an f64.
+            true,
+            // As per above, also this might introduce singletons
+            // in the presence of numerical instability.
+            true,
+            // As per above, also this might introduce singletons
+            // in the presence of numerical instability.
+            true,
             verbose.unwrap_or(true),
         )
     }
@@ -361,8 +368,16 @@ impl Graph {
             self.has_edge_types(),
             true,
             false,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            // This method may produce singletons though to
+            // problems of numerical instability, even though if either
+            // weights are in 'normal' ranges it will not happen or
+            // if the type used for the weights used will have, in the future
+            // use a higher resolution, like an f64.
+            true,
+            // As per above, also this might introduce singletons
+            // in the presence of numerical instability.
+            true,
+            // The graph produce is directed, and may introduce new trap nodes.
             true,
             verbose.unwrap_or(true),
         )

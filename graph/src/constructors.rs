@@ -339,28 +339,6 @@ pub(crate) fn parse_unsorted_quadruples(
     )
 }
 
-pub(crate) fn parse_integer_unsorted_edges<'a>(
-    edges_iter: impl ParallelIterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
-    directed: bool,
-    directed_edge_list: bool,
-    verbose: bool,
-) -> Result<(usize, impl Iterator<Item = Result<Quadruple, String>> + 'a), String> {
-    let edge_quadruples: Vec<Quadruple> = edges_iter
-        .flat_map(|tuple| match tuple {
-            Ok((src, dst, edt, weight)) => {
-                if !directed && src != dst && !directed_edge_list {
-                    vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
-                } else {
-                    vec![Ok((src, dst, edt, weight))]
-                }
-            }
-            Err(e) => vec![Err(e)],
-        })
-        .collect::<Result<Vec<Quadruple>, String>>()?;
-
-    Ok(parse_unsorted_quadruples(edge_quadruples, verbose))
-}
-
 /// TODO: LUCA: I Think this method can be made better
 pub(crate) fn parse_string_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -1486,7 +1464,7 @@ impl Graph {
         verbose: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
-            parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
+            parse_unsorted_quadruples(edges_iterator.collect::<Result<Vec<_>, String>>()?, verbose);
 
         Graph::from_integer_sorted(
             edges_iterator,

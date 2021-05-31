@@ -329,10 +329,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
-        assert!(!graph
-            .iter_edge_weights()
-            .unwrap()
-            .any(|w| { w.is_zero() || w.is_infinite() || w.is_nan() }));
+        graph.iter_edge_weights().unwrap().for_each(|w| {
+            assert!(!w.is_zero(), "The graph cannot contain a zero weight. ");
+            assert!(
+                !w.is_infinite(),
+                "The graph cannot contain an infinite weight. "
+            );
+            assert!(!w.is_nan(), "The graph cannot contain a nan weight. ");
+        });
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
             graph
