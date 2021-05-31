@@ -245,7 +245,7 @@ impl Graph {
                                 * self.get_unchecked_weighted_node_degree_from_node_id(dst))
                             .sqrt()) as WeightT
                     };
-                    if weight.is_zero() || weight.is_infinite() {
+                    if weight.is_nan() || weight.is_zero() || weight.is_infinite() {
                         return None;
                     }
                     Some(Ok((src, dst, edge_type, Some(weight))))
@@ -306,10 +306,10 @@ impl Graph {
                         / (weighted_node_degrees[src as usize]
                             * weighted_node_degrees[dst as usize])
                             .sqrt()) as WeightT;
-                    if distance.is_finite() && !distance.is_zero() {
-                        Some(Ok((src, dst, edge_type, Some(distance))))
-                    } else {
+                    if distance.is_nan() || distance.is_infinite() || distance.is_zero() {
                         None
+                    } else {
+                        Some(Ok((src, dst, edge_type, Some(distance))))
                     }
                 }),
             (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) as usize,
@@ -354,7 +354,7 @@ impl Graph {
                     // Even if we do the weighted singleton nodes check,
                     // we may still endup with infinities though to numerical
                     // instability in the conversion from f64 to f32.
-                    if weight.is_zero() || weight.is_infinite() {
+                    if weight.is_nan() || weight.is_zero() || weight.is_infinite() {
                         return None;
                     }
                     Some(Ok((src, dst, edge_type, Some(weight))))
