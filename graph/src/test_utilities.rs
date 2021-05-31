@@ -1,4 +1,5 @@
 //! Test functions used both for testing and fuzzing.
+#[macro_use]
 
 use super::*;
 use itertools::Itertools;
@@ -902,10 +903,14 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
     }
     // Dijkstra on an unweighted graph gives simmetric results.
     if !graph.is_directed() {
+        println!("{:#4?}", graph.get_dense_weighted_adjacency_matrix(None));
+
         for maximal_depth in [None, Some(1), Some(2), Some(3)] {
+            dbg!(maximal_depth);
+            println!("{}", graph.to_dot(None));
             for use_edge_weights_as_probabilities in [true, false] {
                 if use_edge_weights_as_probabilities
-                    && graph.has_edge_weights_representing_probabilities().unwrap()
+                    && !graph.has_edge_weights_representing_probabilities().unwrap()
                 {
                     continue;
                 }
@@ -928,8 +933,6 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
                             );
                         let src_to_dst_distance = src_to_dst_distance as WeightT;
                         let dst_to_src_distance = dst_to_src_distance as WeightT;
-                        // Check that the two paths have the same length
-                        assert_eq!(src_to_dst.len(), dst_to_src.len());
                         assert!(
                             // We need both checks because both distances
                             // my be infinite, and therefore the epsilon check
@@ -1994,6 +1997,20 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
     Ok(())
 }
 
+
+macro_rules! test_mut_graph {
+    ($graph:expr, $func:ident, $verbose:expr) => {{
+        println!("Testing the graph transoformation: {}", stringify!($func));
+        let mut transformed_graph = $graph.$func($verbose);
+        let _ = _default_test_suite(&mut transformed_graph, $verbose);
+    }};
+    ($graph:expr, $func:ident, $verbose:expr, result) => {{
+        println!("Testing the graph transoformation: {}", stringify!($func));
+        let mut transformed_graph = $graph.$func($verbose)?;
+        let _ = _default_test_suite(&mut transformed_graph, $verbose);
+    }};
+}
+
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     warn!("Starting default test suite.");
@@ -2002,18 +2019,15 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     graph.enable(Some(true), Some(true), Some(true), None)?;
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
-    for mut transformed_graph in [
-        graph.get_unweighted_laplacian_transformed_graph(verbose),
-        graph.get_unweighted_symmetric_normalized_transformed_graph(verbose)?,
-        graph.get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
-        graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose),
-        graph.get_weighted_laplacian_transformed_graph(verbose)?,
-        graph.get_weighted_symmetric_normalized_transformed_graph(verbose)?,
-        graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,
-        graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,
-    ] {
-        println!("ALLAH!");
-        let _ = _default_test_suite(&mut transformed_graph, verbose);
-    }
+
+    test_mut_graph!(graph, get_unweighted_laplacian_transformed_graph, verbose);
+    test_mut_graph!(graph, get_unweighted_symmetric_normalized_transformed_graph, verbose, result);
+    test_mut_graph!(graph, get_unweighted_symmetric_normalized_laplacian_transformed_graph, verbose, result);
+    test_mut_graph!(graph, get_unweighted_random_walk_normalized_laplacian_transformed_graph, verbose);
+    test_mut_graph!(graph, get_weighted_laplacian_transformed_graph, verbose, result);
+    test_mut_graph!(graph, get_weighted_symmetric_normalized_transformed_graph, verbose, result);
+    test_mut_graph!(graph, get_weighted_symmetric_normalized_laplacian_transformed_graph, verbose, result);
+    test_mut_graph!(graph, get_weighted_random_walk_normalized_laplacian_transformed_graph, verbose, result);
+
     Ok(())
 }

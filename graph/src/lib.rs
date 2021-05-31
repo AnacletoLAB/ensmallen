@@ -125,3 +125,6 @@ pub use dijkstra_queue::*;
 use vec_rand::splitmix64;
 
 use tags::*;
+
+mod visualizations;
+pub use visualizations::*;

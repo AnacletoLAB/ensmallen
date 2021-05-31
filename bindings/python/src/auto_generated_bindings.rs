@@ -313,6 +313,23 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
+    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     The node to be checked for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exists in the graph this method will panic.
+    pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
+        self.graph.is_unchecked_connected_from_node_id(node_id)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -904,8 +921,171 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    /// Returns minimum path node IDs and distance from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int,
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node is a selfloop.
+    /// ValueError
+    ///     If there is no path between the two given nodes.
+    ///
+    pub unsafe fn get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                    src_node_id,
+                    dst_node_id
+                ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int,
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> PyResult<Vec<String>> {
+        pe!(self
+            .graph
+            .get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+                src_node_id,
+                dst_node_id
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int,
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node IDs do not exist in the current graph.
+    ///
+    pub fn get_unweighted_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name)"]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_unweighted_minimum_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unweighted_minimum_path_node_ids_from_node_names(
+                    src_node_name,
+                    dst_node_name
+                ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name)"]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_unweighted_minimum_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+    ) -> PyResult<Vec<String>> {
+        pe!(self
+            .graph
+            .get_unweighted_minimum_path_node_names_from_node_names(src_node_name, dst_node_name))
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, src_node_id, dst_node_id, k)"]
-    /// Returns vector of k minimum paths distances and vector of nodes predecessors.
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
     /// ----------
@@ -920,14 +1100,116 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_unweighted_k_shortest_path_from_node_ids(src_node_id, dst_node_id, k)
+            .get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                k,
+            )
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int,
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
+    /// k: int,
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node IDs does not exist in the graph.
+    ///
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self
+            .graph
+            .get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    /// k: int,
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names does not exist in the graph.
+    ///
+    pub fn get_unweighted_k_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self
+            .graph
+            .get_unweighted_k_shortest_path_node_ids_from_node_names(
+                src_node_name,
+                dst_node_name,
+                k
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    /// Return vector of the k minimum paths node names between given source node and destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    /// k: int,
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names does not exist in the graph.
+    ///
+    pub fn get_unweighted_k_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<String>>> {
+        pe!(self
+            .graph
+            .get_unweighted_k_shortest_path_node_names_from_node_names(
+                src_node_name,
+                dst_node_name,
+                k
+            ))
     }
 
     #[automatically_generated_binding]
@@ -1086,21 +1368,15 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
     /// ----------
     /// src_node_id: int,
-    ///     Root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int],
-    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_ids: Optional[List[int]],
-    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: bool,
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int],
-    ///     The maximal number of iterations to execute Dijkstra for.
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
     ///
@@ -1108,41 +1384,61 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_dijkstra_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
-        maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
+        dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> ShortestPathsDjkstra {
-        self.graph.get_unchecked_dijkstra_from_node_ids(
-            src_node_id,
-            maybe_dst_node_id,
-            maybe_dst_node_ids,
-            compute_predecessors,
-            maximal_depth,
-            use_edge_weights_as_probabilities,
-        )
+    ) -> (f64, Vec<NodeT>) {
+        self.graph
+            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+            )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
     /// ----------
     /// src_node_id: int,
-    ///     Node ID root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int],
-    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_ids: Optional[List[int]],
-    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: Optional[bool],
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int],
-    ///     The maximal depth to execute the DFS for.
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
+    /// use_edge_weights_as_probabilities: Optional[bool],
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> (f64, Vec<String>) {
+        self.graph
+            .get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+            )
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int,
+    ///     Source node ID.
+    /// dst_node_id: int,
+    ///     Destination node ID.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
     ///
@@ -1150,33 +1446,87 @@ impl EnsmallenGraph {
     /// Raises
     /// -------
     /// ValueError
-    ///     If the weights are to be used and the graph does not have weights.
-    /// ValueError
-    ///     If the given source node ID does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node ID does not exist in the current graph.
-    /// ValueError
-    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
-    /// ValueError
-    ///     If the graph contains negative weights.
+    ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_dijkstra_from_node_ids(
+    pub fn get_weighted_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
-        maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
+        dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<ShortestPathsDjkstra> {
-        pe!(self.graph.get_dijkstra_from_node_ids(
+    ) -> PyResult<(f64, Vec<NodeT>)> {
+        pe!(self.graph.get_weighted_minimum_path_node_ids_from_node_ids(
             src_node_id,
-            maybe_dst_node_id,
-            maybe_dst_node_ids,
-            compute_predecessors,
-            maximal_depth,
+            dst_node_id,
             use_edge_weights_as_probabilities
         ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities)"]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    /// use_edge_weights_as_probabilities: Optional[bool],
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_minimum_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<(f64, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_weighted_minimum_path_node_ids_from_node_names(
+                src_node_name,
+                dst_node_name,
+                use_edge_weights_as_probabilities
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities)"]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str,
+    ///     Source node name.
+    /// dst_node_name: str,
+    ///     Destination node name.
+    /// use_edge_weights_as_probabilities: Optional[bool],
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_minimum_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<(f64, Vec<String>)> {
+        pe!(self
+            .graph
+            .get_weighted_minimum_path_node_names_from_node_names(
+                src_node_name,
+                dst_node_name,
+                use_edge_weights_as_probabilities
+            ))
     }
 
     #[automatically_generated_binding]
@@ -1227,7 +1577,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have weights.
     /// ValueError
-    ///     If the graph contina negative weights.
+    ///     If the graph contains negative weights.
     /// ValueError
     ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     ///
@@ -1241,54 +1591,6 @@ impl EnsmallenGraph {
             ignore_infinity,
             use_edge_weights_as_probabilities,
             verbose
-        ))
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str,
-    ///     Node name root of the tree of minimum paths.
-    /// maybe_dst_node_name: Optional[str],
-    ///     Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_names: Optional[List[str]],
-    ///     Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: Optional[bool],
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int],
-    ///     The maximal depth to execute the DFS for.
-    /// use_edge_weights_as_probabilities: Optional[bool],
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the weights are to be used and the graph does not have weights.
-    /// ValueError
-    ///     If the given source node name does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node name does not exist in the current graph.
-    ///
-    pub fn get_dijkstra_from_node_names(
-        &self,
-        src_node_name: &str,
-        maybe_dst_node_name: Option<&str>,
-        maybe_dst_node_names: Option<Vec<&str>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<ShortestPathsDjkstra> {
-        pe!(self.graph.get_dijkstra_from_node_names(
-            src_node_name,
-            maybe_dst_node_name,
-            maybe_dst_node_names,
-            compute_predecessors,
-            maximal_depth,
-            use_edge_weights_as_probabilities
         ))
     }
 
@@ -1357,9 +1659,11 @@ impl EnsmallenGraph {
     /// Raises
     /// -------
     /// ValueError
-    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
+    ///     If the graph does not have weights.
     /// ValueError
     ///     If the graph contains negative weights.
+    /// ValueError
+    ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     ///
     pub fn get_weighted_all_shortest_paths(
         &self,
@@ -5768,8 +6072,6 @@ impl EnsmallenGraph {
     ///
     /// Raises
     /// -------
-    /// ValueError
-    ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     /// ValueError
     ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
     ///
