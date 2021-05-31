@@ -145,6 +145,7 @@ impl Graph {
             self.has_node_types(),
             self.has_edge_types(),
             self.has_edge_weights(),
+            false,
             min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),

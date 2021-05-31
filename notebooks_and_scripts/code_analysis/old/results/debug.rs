@@ -91,17 +91,17 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -179,9 +179,9 @@ fn generic_string_operator(
         main.has_node_types(),
         main.has_edge_types(),
         main.has_edge_weights(),
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
     )
 }
 
@@ -197,17 +197,17 @@ fn generic_string_operator(
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -264,9 +264,9 @@ fn generic_integer_operator(
         main.has_edge_types(),
         main.has_edge_weights(),
         false,
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
     )
 }
 
@@ -325,9 +325,9 @@ impl Graph {
         other: &Graph,
         operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
             true => generic_integer_operator(
@@ -335,18 +335,18 @@ impl Graph {
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
             ),
             false => generic_string_operator(
                 self,
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
             ),
         }
     }
@@ -2944,8 +2944,8 @@ pub struct EdgeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
     pub(crate) skip_edge_types_if_unavailable: bool,
-    pub(crate) might_have_singletons_with_selfloops: bool,
-    pub(crate) might_have_trap_nodes: bool,
+    pub(crate) might_contain_singletons_with_selfloops: bool,
+    pub(crate) might_contain_trap_nodes: bool,
 }
 
 impl EdgeFileReader {
@@ -2969,8 +2969,8 @@ impl EdgeFileReader {
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
             skip_edge_types_if_unavailable: false,
-            might_have_singletons_with_selfloops: true,
-            might_have_trap_nodes: true,
+            might_contain_singletons_with_selfloops: true,
+            might_contain_trap_nodes: true,
         })
     }
 
@@ -3278,7 +3278,7 @@ impl EdgeFileReader {
     pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_selfloops {
             self.skip_selfloops = ssl;
-            self.might_have_singletons_with_selfloops = !ssl;
+            self.might_contain_singletons_with_selfloops = !ssl;
         }
         self
     }
@@ -3332,14 +3332,14 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
+    /// * `might_contain_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
     ///
-    pub fn set_might_have_singletons_with_selfloops(
+    pub fn set_might_contain_singletons_with_selfloops(
         mut self,
-        might_have_singletons_with_selfloops: Option<bool>,
+        might_contain_singletons_with_selfloops: Option<bool>,
     ) -> EdgeFileReader {
-        if let Some(skip) = might_have_singletons_with_selfloops {
-            self.might_have_singletons_with_selfloops = !self.skip_selfloops && skip;
+        if let Some(skip) = might_contain_singletons_with_selfloops {
+            self.might_contain_singletons_with_selfloops = !self.skip_selfloops && skip;
         }
         self
     }
@@ -3348,14 +3348,14 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
+    /// * `might_contain_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
     ///
-    pub fn set_might_have_trap_nodes(
+    pub fn set_might_contain_trap_nodes(
         mut self,
-        might_have_trap_nodes: Option<bool>,
+        might_contain_trap_nodes: Option<bool>,
     ) -> EdgeFileReader {
-        if let Some(skip) = might_have_trap_nodes {
-            self.might_have_trap_nodes = skip;
+        if let Some(skip) = might_contain_trap_nodes {
+            self.might_contain_trap_nodes = skip;
         }
         self
     }
@@ -10185,7 +10185,7 @@ pub struct NodeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
-    pub(crate) might_have_singletons: bool,
+    pub(crate) might_contain_singletons: bool,
 }
 
 impl NodeFileReader {
@@ -10205,7 +10205,7 @@ impl NodeFileReader {
             numeric_node_ids: false,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
-            might_have_singletons: true,
+            might_contain_singletons: true,
         })
     }
 
@@ -10314,14 +10314,14 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `might_have_singletons`: Option<bool> - Whether this graph has singletons.
+    /// * `might_contain_singletons`: Option<bool> - Whether this graph has singletons.
     ///
-    pub fn set_might_have_singleton_nodes(
+    pub fn set_might_contain_singleton_nodes(
         mut self,
-        might_have_singletons: Option<bool>,
+        might_contain_singletons: Option<bool>,
     ) -> Result<NodeFileReader, String> {
-        if let Some(skip) = might_have_singletons {
-            self.might_have_singletons = skip;
+        if let Some(skip) = might_contain_singletons {
+            self.might_contain_singletons = skip;
         }
         Ok(self)
     }
@@ -11266,9 +11266,9 @@ impl Graph {
             edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
-                .map_or(false, |nfr| nfr.might_have_singletons),
-            edge_file_reader.might_have_singletons_with_selfloops,
-            edge_file_reader.might_have_trap_nodes,
+                .map_or(false, |nfr| nfr.might_contain_singletons),
+            edge_file_reader.might_contain_singletons_with_selfloops,
+            edge_file_reader.might_contain_trap_nodes,
             name,
         )
     }
@@ -11322,9 +11322,9 @@ impl Graph {
             edge_file_reader.has_edge_weights(),
             node_file_reader
                 .as_ref()
-                .map_or(false, |nfr| nfr.might_have_singletons),
-            edge_file_reader.might_have_singletons_with_selfloops,
-            edge_file_reader.might_have_trap_nodes,
+                .map_or(false, |nfr| nfr.might_contain_singletons),
+            edge_file_reader.might_contain_singletons_with_selfloops,
+            edge_file_reader.might_contain_trap_nodes,
         )
     }
 }
@@ -11884,9 +11884,9 @@ pub(crate) fn build_edges(
     ignore_duplicated_edges: bool,
     has_edge_weights: bool,
     has_edge_types: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
     directed: bool,
     edge_list_is_correct: bool,
 ) -> Result<
@@ -11947,7 +11947,7 @@ pub(crate) fn build_edges(
     // uses more than twice the memory required by a bitvec to memorize a set of
     // dense values.
     let mut unique_sources: Option<EliasFano> =
-        if directed && (might_have_trap_nodes || might_have_singletons) {
+        if directed && (might_contain_trap_nodes || might_contain_singletons) {
             Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)
         } else {
             None
@@ -11961,7 +11961,7 @@ pub(crate) fn build_edges(
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
     let mut not_singleton_nodes: Option<_> =
-        if might_have_singletons || might_have_singletons_with_selfloops {
+        if might_contain_singletons || might_contain_singletons_with_selfloops {
             Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
         } else {
             None
@@ -11977,14 +11977,14 @@ pub(crate) fn build_edges(
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut not_singleton_node_number: NodeT =
-        if might_have_singletons || might_have_singletons_with_selfloops {
+        if might_contain_singletons || might_contain_singletons_with_selfloops {
             0
         } else {
             nodes_number
         };
     // This bitvec should be really sparse ON SANE GRAPHS
     // so we use a roaring bitvec to save memory.
-    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {
+    let mut singleton_nodes_with_selfloops = if might_contain_singletons_with_selfloops {
         Some(RoaringBitmap::new())
     } else {
         None
@@ -12173,7 +12173,7 @@ pub(crate) fn build_edges(
     // the unique sources elias fano, this is done to avoid using extra memory
     // for no reason. We need to create the elias fano object starting from the
     // nodes with edges now to normalize the returned values.
-    if might_have_singletons
+    if might_contain_singletons
         && unique_sources.is_none()
         && nodes_number != not_singleton_node_number + singleton_nodes_with_selfloops_number
     {
@@ -12277,9 +12277,9 @@ pub(crate) fn parse_string_edges(
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
     has_edge_weights: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> ParsedStringEdgesType {
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> =
         Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
@@ -12290,9 +12290,9 @@ pub(crate) fn parse_string_edges(
     // There might be singletons if the user has told us that there might be singletons
     // and the node list is not empty. If the node list is empty, then it is not possible
     // to have singletons.
-    let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+    let might_contain_singletons = !nodes.is_empty() && might_contain_singletons;
     // If the graph is undirected there cannot be trap nodes
-    let might_have_trap_nodes = directed && might_have_trap_nodes;
+    let might_contain_trap_nodes = directed && might_contain_trap_nodes;
 
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
@@ -12324,9 +12324,9 @@ pub(crate) fn parse_string_edges(
         ignore_duplicated_edges,
         has_edge_weights,
         has_edge_types,
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -12364,9 +12364,9 @@ pub(crate) fn parse_integer_edges(
     edge_list_is_correct: bool,
     has_edge_types: bool,
     has_edge_weights: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<
     (
         EliasFano,
@@ -12406,9 +12406,9 @@ pub(crate) fn parse_integer_edges(
         ignore_duplicated_edges,
         has_edge_weights,
         has_edge_types,
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -12446,9 +12446,9 @@ impl Graph {
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -12474,9 +12474,9 @@ impl Graph {
             edge_list_is_correct,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )?;
 
         Ok(Graph::new(
@@ -12536,9 +12536,9 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
@@ -12562,9 +12562,9 @@ impl Graph {
         // There might be singletons if the user has told us that there might be singletons
         // and the node list is not empty. If the node list is empty, then it is not possible
         // to have singletons.
-        let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+        let might_contain_singletons = !nodes.is_empty() && might_contain_singletons;
         // If the graph is undirected there cannot be trap nodes
-        let might_have_trap_nodes = directed && might_have_trap_nodes;
+        let might_contain_trap_nodes = directed && might_contain_trap_nodes;
 
         info!("Parse unsorted edges.");
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
@@ -12591,9 +12591,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )
     }
 
@@ -12626,9 +12626,9 @@ impl Graph {
         has_edge_types: bool,
         has_edge_weights: bool,
         verbose: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
             parse_integer_unsorted_edges(edges_iterator, directed, true, verbose)?;
@@ -12645,9 +12645,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )
     }
 
@@ -12670,9 +12670,9 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
         name: S,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
@@ -12721,9 +12721,9 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )?;
 
         Ok(Graph::new(
@@ -13055,8 +13055,8 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
-        train_graph_might_have_singletons: bool,
-        train_graph_might_have_singletons_with_selfloops: bool,
+        train_graph_might_contain_singletons: bool,
+        train_graph_might_contain_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph), String> {
         let pb1 = get_loading_bar(
             verbose,
@@ -13153,8 +13153,8 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_edge_weights(),
-                train_graph_might_have_singletons,
-                train_graph_might_have_singletons_with_selfloops,
+                train_graph_might_contain_singletons,
+                train_graph_might_contain_singletons_with_selfloops,
                 true,
             )?,
             Graph::from_integer_sorted(

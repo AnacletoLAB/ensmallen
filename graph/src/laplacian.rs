@@ -35,6 +35,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
@@ -75,6 +76,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
@@ -121,6 +123,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
@@ -164,6 +167,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             false,
             self.has_trap_nodes(),
@@ -186,17 +190,16 @@ impl Graph {
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
             self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .map(|(_, src, dst, edge_type, edge_weight)| unsafe {
-                    Ok((
-                        src,
-                        dst,
-                        edge_type,
-                        Some(if src == dst {
-                            self.get_unchecked_weighted_node_degree_from_node_id(src) as WeightT
-                        } else {
-                            -edge_weight.unwrap()
-                        }),
-                    ))
+                .filter_map(|(_, src, dst, edge_type, edge_weight)| unsafe {
+                    let weight = if src == dst {
+                        self.get_unchecked_weighted_node_degree_from_node_id(src) as WeightT
+                    } else {
+                        -edge_weight.unwrap()
+                    };
+                    if weight.is_zero() || weight.is_infinite() {
+                        return None;
+                    }
+                    Some(Ok((src, dst, edge_type, Some(weight))))
                 }),
             self.nodes.clone(),
             self.node_types.clone(),
@@ -206,6 +209,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
@@ -253,6 +257,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
@@ -287,10 +292,10 @@ impl Graph {
                     if src == dst {
                         return None;
                     }
-                    let distance = 1.0
+                    let distance = (1.0
                         / (weighted_node_degrees[src as usize]
                             * weighted_node_degrees[dst as usize])
-                            .sqrt() as WeightT;
+                            .sqrt()) as WeightT;
                     if distance.is_finite() && !distance.is_zero() {
                         Some(Ok((src, dst, edge_type, Some(distance))))
                     } else {
@@ -307,6 +312,7 @@ impl Graph {
             false,
             self.has_edge_types(),
             true,
+            false,
             true,
             false,
             true,
@@ -320,26 +326,30 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
+    /// * If the graph contains nodes with zero weighted degree.
     pub fn get_weighted_random_walk_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
         self.must_have_edge_weights()?;
+        self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
-            self.iter_edge_node_ids_and_edge_type_id(true)
-                .map(|(_, src, dst, edge_type)| unsafe {
-                    Ok((
-                        src,
-                        dst,
-                        edge_type,
-                        Some(if src == dst {
-                            1.0
-                        } else {
-                            -1.0 / self.get_unchecked_weighted_node_degree_from_node_id(src)
-                                as WeightT
-                        }),
-                    ))
-                }),
+            self.iter_edge_node_ids_and_edge_type_id(true).filter_map(
+                |(_, src, dst, edge_type)| unsafe {
+                    let weight = if src == dst {
+                        1.0
+                    } else {
+                        -1.0 / self.get_unchecked_weighted_node_degree_from_node_id(src) as WeightT
+                    };
+                    // Even if we do the weighted singleton nodes check,
+                    // we may still endup with infinities though to numerical
+                    // instability in the conversion from f64 to f32.
+                    if weight.is_zero() || weight.is_infinite() {
+                        return None;
+                    }
+                    Some(Ok((src, dst, edge_type, Some(weight))))
+                },
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
@@ -348,6 +358,7 @@ impl Graph {
             true,
             self.has_edge_types(),
             true,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             true,

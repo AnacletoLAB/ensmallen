@@ -643,6 +643,7 @@ impl Graph {
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_edge_weights
+    ///  #     false,    // maybe_contains_invalid_weights
     ///  #     true,    // maybe_has_singleton
     ///  #     true,    // maybe_has_singleton_with_selfloops
     ///  #     true,    // maybe_has_node_traps

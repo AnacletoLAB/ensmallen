@@ -658,7 +658,7 @@ impl Graph {
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {
             return Err(
-                "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
+                "The tollerance must be a non-zero positive value bigger than epsilon (1e-16)."
                     .to_string(),
             );
         }
@@ -670,6 +670,7 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
+                // TODO: this can be done in a faster way
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .for_each(|dst| unsafe {
                         centralities[dst as usize].fetch_add(

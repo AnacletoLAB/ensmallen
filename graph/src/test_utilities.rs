@@ -3,6 +3,7 @@
 use super::*;
 use itertools::Itertools;
 use log::warn;
+use num_traits::Zero;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
@@ -150,6 +151,7 @@ pub fn load_empty_graph(directed: bool) -> Graph {
         directed,
         false,
         "Empty graph",
+        false,
         false,
         false,
         false,
@@ -328,7 +330,10 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
-        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));
+        assert!(!graph
+            .iter_edge_weights()
+            .unwrap()
+            .any(|w| { w.is_zero() || w.is_infinite() || w.is_nan() }));
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
             graph
@@ -829,36 +834,41 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
     // BFS on an unweighted graph gives simmetric results.
     if !graph.is_directed() {
         let components_ids = graph.get_node_connected_component_ids(verbose);
-        graph.iter_node_ids().for_each(|src_node_id| {
-            graph.iter_node_ids().for_each(|dst_node_id| unsafe {
-                // Check that the obtained results are simmetric
-                let src_to_dst = graph
-                    .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
-                        src_node_id,
-                        dst_node_id,
-                    );
-                let dst_to_src = graph
-                    .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
-                        dst_node_id,
-                        src_node_id,
-                    );
-                if src_node_id == dst_node_id {
-                    assert!(src_to_dst.is_err());
-                    assert!(dst_to_src.is_err());
-                    return;
-                }
-                if components_ids[src_node_id as usize] != components_ids[dst_node_id as usize] {
-                    assert!(src_to_dst.is_err());
-                    assert!(dst_to_src.is_err());
-                    return;
-                }
-                let src_to_dst = src_to_dst.unwrap();
-                let dst_to_src = dst_to_src.unwrap();
-                // Check that the two paths have the same length
-                assert_eq!(src_to_dst.len(), dst_to_src.len());
-                assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
+        for maximal_depth in [None, Some(1), Some(2), Some(3)] {
+            graph.iter_node_ids().for_each(|src_node_id| {
+                graph.iter_node_ids().for_each(|dst_node_id| unsafe {
+                    // Check that the obtained results are simmetric
+                    let src_to_dst = graph
+                        .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                            src_node_id,
+                            dst_node_id,
+                            maximal_depth,
+                        );
+                    let dst_to_src = graph
+                        .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                            dst_node_id,
+                            src_node_id,
+                            maximal_depth,
+                        );
+                    if src_node_id == dst_node_id {
+                        assert!(src_to_dst.is_err());
+                        assert!(dst_to_src.is_err());
+                        return;
+                    }
+                    if components_ids[src_node_id as usize] != components_ids[dst_node_id as usize]
+                    {
+                        assert!(src_to_dst.is_err());
+                        assert!(dst_to_src.is_err());
+                        return;
+                    }
+                    if let (Ok(src_to_dst), Ok(dst_to_src)) = (src_to_dst, dst_to_src) {
+                        // Check that the two paths have the same length
+                        assert_eq!(src_to_dst.len(), dst_to_src.len());
+                        assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
+                    }
+                });
             });
-        });
+        }
     }
     Ok(())
 }
@@ -892,47 +902,59 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
     }
     // Dijkstra on an unweighted graph gives simmetric results.
     if !graph.is_directed() {
-        graph.iter_node_ids().for_each(|src_node_id| {
-            graph.iter_node_ids().for_each(|dst_node_id| unsafe {
-                // Check that the obtained results are simmetric
-                let (src_to_dst_distance, src_to_dst) = graph
-                    .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
-                        src_node_id,
-                        dst_node_id,
-                        None,
-                    );
-                let (dst_to_src_distance, dst_to_src) = graph
-                    .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
-                        dst_node_id,
-                        src_node_id,
-                        None,
-                    );
-                let src_to_dst_distance = src_to_dst_distance as WeightT;
-                let dst_to_src_distance = dst_to_src_distance as WeightT;
-                // Check that the two paths have the same length
-                assert_eq!(src_to_dst.len(), dst_to_src.len());
-                assert!(
-                    // We need both checks because both distances
-                    // my be infinite, and therefore the epsilon check
-                    // may not be enough.
-                    src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                        || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON,
-                    concat!(
-                        "The path from source to destination has distance {} ",
-                        "while the distance from destination to source has ",
-                        "destination {}. The path from source to destination ",
-                        "is {:?}, while the path from destination to source ",
-                        "is {:?}. The two paths should be symmetric and with ",
-                        "the same distance.\nThe graph report is:\n{:?}"
-                    ),
-                    src_to_dst_distance,
-                    dst_to_src_distance,
-                    src_to_dst,
-                    dst_to_src,
-                    graph.textual_report(verbose)
-                );
-            });
-        });
+        for maximal_depth in [None, Some(1), Some(2), Some(3)] {
+            for use_edge_weights_as_probabilities in [true, false] {
+                if use_edge_weights_as_probabilities
+                    && graph.has_edge_weights_representing_probabilities().unwrap()
+                {
+                    continue;
+                }
+                graph.iter_node_ids().for_each(|src_node_id| {
+                    graph.iter_node_ids().for_each(|dst_node_id| unsafe {
+                        // Check that the obtained results are simmetric
+                        let (src_to_dst_distance, src_to_dst) = graph
+                            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                                src_node_id,
+                                dst_node_id,
+                                Some(use_edge_weights_as_probabilities),
+                                maximal_depth,
+                            );
+                        let (dst_to_src_distance, dst_to_src) = graph
+                            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                                dst_node_id,
+                                src_node_id,
+                                Some(use_edge_weights_as_probabilities),
+                                maximal_depth,
+                            );
+                        let src_to_dst_distance = src_to_dst_distance as WeightT;
+                        let dst_to_src_distance = dst_to_src_distance as WeightT;
+                        // Check that the two paths have the same length
+                        assert_eq!(src_to_dst.len(), dst_to_src.len());
+                        assert!(
+                            // We need both checks because both distances
+                            // my be infinite, and therefore the epsilon check
+                            // may not be enough.
+                            src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
+                                || (src_to_dst_distance - dst_to_src_distance).abs()
+                                    < WeightT::EPSILON,
+                            concat!(
+                                "The path from source to destination has distance {} ",
+                                "while the distance from destination to source has ",
+                                "destination {}. The path from source to destination ",
+                                "is {:?}, while the path from destination to source ",
+                                "is {:?}. The two paths should be symmetric and with ",
+                                "the same distance.\nThe graph report is:\n{:?}"
+                            ),
+                            src_to_dst_distance,
+                            dst_to_src_distance,
+                            src_to_dst,
+                            dst_to_src,
+                            graph.textual_report(verbose)
+                        );
+                    });
+                });
+            }
+        }
     }
     Ok(())
 }
@@ -997,7 +1019,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
     }
     for iteration in [None, Some(0), Some(1), Some(2)] {
         let mut unweighted_all_paths =
-            graph.get_unweighted_all_shortest_paths(iteration.clone(), verbose);
+            graph.get_unweighted_all_shortest_paths(iteration, verbose);
         test_graph_properties(&mut unweighted_all_paths, verbose)?;
     }
 

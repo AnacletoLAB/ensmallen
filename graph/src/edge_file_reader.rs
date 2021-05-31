@@ -18,8 +18,8 @@ pub struct EdgeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
     pub(crate) skip_edge_types_if_unavailable: bool,
-    pub(crate) might_have_singletons_with_selfloops: bool,
-    pub(crate) might_have_trap_nodes: bool,
+    pub(crate) might_contain_singletons_with_selfloops: bool,
+    pub(crate) might_contain_trap_nodes: bool,
 }
 
 impl EdgeFileReader {
@@ -43,8 +43,8 @@ impl EdgeFileReader {
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
             skip_edge_types_if_unavailable: false,
-            might_have_singletons_with_selfloops: true,
-            might_have_trap_nodes: true,
+            might_contain_singletons_with_selfloops: true,
+            might_contain_trap_nodes: true,
         })
     }
 
@@ -352,7 +352,7 @@ impl EdgeFileReader {
     pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
         if let Some(ssl) = skip_selfloops {
             self.skip_selfloops = ssl;
-            self.might_have_singletons_with_selfloops = !ssl;
+            self.might_contain_singletons_with_selfloops = !ssl;
         }
         self
     }
@@ -406,14 +406,14 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `might_have_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
+    /// * `might_contain_singletons_with_selfloops`: Option<bool> - Whether this graph has singletons with self-loops.
     ///
-    pub fn set_might_have_singletons_with_selfloops(
+    pub fn set_might_contain_singletons_with_selfloops(
         mut self,
-        might_have_singletons_with_selfloops: Option<bool>,
+        might_contain_singletons_with_selfloops: Option<bool>,
     ) -> EdgeFileReader {
-        if let Some(skip) = might_have_singletons_with_selfloops {
-            self.might_have_singletons_with_selfloops = !self.skip_selfloops && skip;
+        if let Some(skip) = might_contain_singletons_with_selfloops {
+            self.might_contain_singletons_with_selfloops = !self.skip_selfloops && skip;
         }
         self
     }
@@ -422,14 +422,14 @@ impl EdgeFileReader {
     ///
     /// # Arguments
     ///
-    /// * `might_have_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
+    /// * `might_contain_trap_nodes`: Option<bool> - Whether this graph has trap nodes with self-loops.
     ///
-    pub fn set_might_have_trap_nodes(
+    pub fn set_might_contain_trap_nodes(
         mut self,
-        might_have_trap_nodes: Option<bool>,
+        might_contain_trap_nodes: Option<bool>,
     ) -> EdgeFileReader {
-        if let Some(skip) = might_have_trap_nodes {
-            self.might_have_trap_nodes = skip;
+        if let Some(skip) = might_contain_trap_nodes {
+            self.might_contain_trap_nodes = skip;
         }
         self
     }

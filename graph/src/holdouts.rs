@@ -238,6 +238,7 @@ impl Graph {
             false,
             false,
             false,
+            false,
             true,
             self.has_selfloops(),
             true,
@@ -292,8 +293,8 @@ impl Graph {
     /// * `include_all_edge_types`: bool - Whether to include all the edge types in the graph, if the graph is a multigraph.
     /// * `user_condition_for_validation_edges`: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool - The function to use to put edges in validation set.
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
-    /// * `train_graph_might_have_singletons`: bool - Whether it is known that the resulting training graph may have singletons.
-    /// * `train_graph_might_have_singletons_with_selfloops`: bool - Whether it is known that the resulting training graph may have singletons with selfloops.
+    /// * `train_graph_might_contain_singletons`: bool - Whether it is known that the resulting training graph may have singletons.
+    /// * `train_graph_might_contain_singletons_with_selfloops`: bool - Whether it is known that the resulting training graph may have singletons with selfloops.
     ///
     /// # Raises
     /// * If the sampled validation edges are not enough for the required validation edges number.
@@ -304,8 +305,8 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
-        train_graph_might_have_singletons: bool,
-        train_graph_might_have_singletons_with_selfloops: bool,
+        train_graph_might_contain_singletons: bool,
+        train_graph_might_contain_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph), String> {
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
@@ -413,8 +414,9 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_edge_weights(),
-                train_graph_might_have_singletons,
-                train_graph_might_have_singletons_with_selfloops,
+                false,
+                train_graph_might_contain_singletons,
+                train_graph_might_contain_singletons_with_selfloops,
                 true,
             )?,
             Graph::from_integer_sorted(
@@ -437,6 +439,7 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_edge_weights(),
+                false,
                 true,
                 self.has_selfloops(),
                 true,
@@ -1014,6 +1017,7 @@ impl Graph {
             false,
             self.has_edge_types(),
             self.has_edge_weights(),
+            false,
             true,
             self.has_selfloops(),
             true,

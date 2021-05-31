@@ -240,6 +240,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
@@ -251,6 +252,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>, String> {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
@@ -262,7 +264,7 @@ impl Graph {
             Some(false),
             Some(true),
             Some(false),
-            None,
+            maximal_depth,
         );
         let parents = bfs.parents.unwrap();
         let path_length = bfs.dst_node_distance.unwrap();
@@ -289,6 +291,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
@@ -296,9 +299,14 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>, String> {
         Ok(self
-            .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id)?
+            .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                maximal_depth,
+            )?
             .into_iter()
             .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
             .collect())
@@ -309,6 +317,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     ///
     /// # Raises
     /// * If any of the given node IDs do not exist in the current graph.
@@ -316,11 +325,13 @@ impl Graph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>, String> {
         Ok(unsafe {
             self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
+                maximal_depth,
             )?
         })
     }
@@ -330,6 +341,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
@@ -337,11 +349,13 @@ impl Graph {
         &self,
         src_node_name: &str,
         dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>, String> {
         Ok(unsafe {
             self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
+                maximal_depth,
             )?
         })
     }
@@ -351,6 +365,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
@@ -358,11 +373,13 @@ impl Graph {
         &self,
         src_node_name: &str,
         dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>, String> {
         Ok(unsafe {
             self.get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
+                maximal_depth,
             )?
         })
     }
@@ -429,6 +446,7 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `k`: usize - Number of paths to find.
     ///
     /// # Implementative details
@@ -723,7 +741,7 @@ impl Graph {
             }
         }
 
-        let to_visit = if maximal_depth.is_some() {
+        let to_visit = maximal_depth.and_then(|md| {
             self.get_unchecked_breath_first_search_from_node_ids(
                 src_node_id,
                 maybe_dst_node_id,
@@ -731,12 +749,10 @@ impl Graph {
                 Some(false),
                 Some(false),
                 Some(true),
-                maximal_depth,
+                Some(md),
             )
             .visited
-        } else {
-            None
-        };
+        });
 
         let mut nodes_to_explore: DijkstraQueue =
             DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);
@@ -830,7 +846,9 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
@@ -839,13 +857,14 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<NodeT>) {
         let dijkstra = self.get_unchecked_dijkstra_from_node_ids(
             src_node_id,
             Some(dst_node_id),
             None,
             Some(true),
-            None,
+            maximal_depth,
             use_edge_weights_as_probabilities,
         );
         let parents = dijkstra.parents.unwrap();
@@ -886,7 +905,9 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
@@ -895,11 +916,13 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
         let (path_length, path) = self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
             src_node_id,
             dst_node_id,
             use_edge_weights_as_probabilities,
+            maximal_depth,
         );
         (
             path_length,
@@ -914,7 +937,9 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
     /// # Raises
     /// * If any of the given node IDs do not exist in the current graph.
@@ -923,6 +948,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> Result<(f64, Vec<NodeT>), String> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
@@ -935,6 +961,7 @@ impl Graph {
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 use_edge_weights_as_probabilities,
+                maximal_depth,
             )
         })
     }
@@ -945,6 +972,7 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
@@ -953,6 +981,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> Result<(f64, Vec<NodeT>), String> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
@@ -965,6 +994,7 @@ impl Graph {
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 use_edge_weights_as_probabilities,
+                maximal_depth,
             )
         })
     }
@@ -975,6 +1005,7 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
@@ -983,6 +1014,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> Result<(f64, Vec<String>), String> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
@@ -995,6 +1027,7 @@ impl Graph {
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 use_edge_weights_as_probabilities,
+                maximal_depth,
             )
         })
     }

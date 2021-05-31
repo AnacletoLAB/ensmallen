@@ -192,7 +192,14 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self
     }
 
-    /// Remove a value from the vocabulary
+    /// Removegiven values from the vocabulary
+    ///
+    /// # Arguments
+    /// * `type_ids_to_remove`: Vec<IndexT> - The values to be removed.
+    ///
+    /// # Safety
+    /// This method will panic if you try to remove values that do not exist
+    /// in the current vocabulary.
     pub unsafe fn unchecked_remove_values(&mut self, type_ids_to_remove: Vec<IndexT>) -> Vec<Option<usize>> {
         // compute the new dense mapping of the indices
         let new_type_ids_map = (0..self.reverse_map.len()).scan(

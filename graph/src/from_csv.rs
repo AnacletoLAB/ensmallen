@@ -55,11 +55,13 @@ impl Graph {
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
             edge_file_reader.has_edge_weights(),
+            // TODO: expose this parameter to use in the future.
+            true,
             node_file_reader
                 .as_ref()
-                .map_or(false, |nfr| nfr.might_have_singletons),
-            edge_file_reader.might_have_singletons_with_selfloops,
-            edge_file_reader.might_have_trap_nodes,
+                .map_or(false, |nfr| nfr.might_contain_singletons),
+            edge_file_reader.might_contain_singletons_with_selfloops,
+            edge_file_reader.might_contain_trap_nodes,
         )
     }
 
@@ -110,11 +112,13 @@ impl Graph {
                 .map_or(false, |nfr| nfr.has_node_types()),
             edge_file_reader.has_edge_types(),
             edge_file_reader.has_edge_weights(),
+            // TODO: expose this parameter to use in the future.
+            true,
             node_file_reader
                 .as_ref()
-                .map_or(false, |nfr| nfr.might_have_singletons),
-            edge_file_reader.might_have_singletons_with_selfloops,
-            edge_file_reader.might_have_trap_nodes,
+                .map_or(false, |nfr| nfr.might_contain_singletons),
+            edge_file_reader.might_contain_singletons_with_selfloops,
+            edge_file_reader.might_contain_trap_nodes,
             edge_file_reader.reader.verbose,
         )
     }

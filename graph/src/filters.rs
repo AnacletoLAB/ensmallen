@@ -206,6 +206,7 @@ impl Graph {
                 false,
                 self.has_edge_types(),
                 self.has_edge_weights(),
+                false,
                 true,
                 self.has_singleton_nodes_with_selfloops() && !filter_selfloops,
                 true,
@@ -255,6 +256,7 @@ impl Graph {
                     self.has_node_types(),
                     self.has_edge_types(),
                     self.has_edge_weights(),
+                    false,
                     // TODO: Almost any edge filtering procedure may produce singletons.
                     // Consider refining the following for the subset that do not
                     // which should basically be only those that remove singletons.

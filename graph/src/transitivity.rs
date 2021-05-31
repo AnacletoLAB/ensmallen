@@ -68,6 +68,7 @@ impl Graph {
             true,
             false,
             false,
+            false,
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes() || self.has_selfloops(),
@@ -149,6 +150,7 @@ impl Graph {
             true,
             false,
             true,
+            false,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes() || self.has_selfloops(),
@@ -201,6 +203,7 @@ impl Graph {
             "Computing all unweighted shortest paths",
             self.get_nodes_number() as usize,
         );
+        println!("START\n========\n\n======");
         Graph::from_integer_unsorted(
             self.iter_node_ids()
                 .progress_with(pb)
@@ -230,6 +233,11 @@ impl Graph {
                             && distance.is_positive()
                     })
                     .map(move |(dst_node_id, distance)| {
+                        dbg!(
+                            src_node_id,
+                            dst_node_id,
+                            distance
+                        );
                         Ok((src_node_id, dst_node_id as NodeT, None, Some(distance)))
                     })
                 })
@@ -242,6 +250,7 @@ impl Graph {
             true,
             false,
             true,
+            false,
             self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes() || self.has_selfloops(),

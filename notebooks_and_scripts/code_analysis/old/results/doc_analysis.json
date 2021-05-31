@@ -88,17 +88,17 @@
                     "desc": "Graph list for the operation"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons with self-loops"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have trap nodes"
                 }
@@ -139,17 +139,17 @@
                     "desc": "Graph list for the operation"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons with self-loops"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have trap nodes"
                 }
@@ -229,17 +229,17 @@
                     "desc": "Graph list for the operation"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have singletons with self-loops"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether we expect the graph to have trap nodes"
                 }
@@ -1896,9 +1896,9 @@
         "example": {},
         "extra_headers": []
     },
-    "set_might_have_singletons_with_selfloops": {
+    "set_might_contain_singletons_with_selfloops": {
         "file": "edge_file_reader.rs",
-        "function": "set_might_have_singletons_with_selfloops",
+        "function": "set_might_contain_singletons_with_selfloops",
         "errors": [
             {
                 "doc_line": 0,
@@ -1908,7 +1908,7 @@
         "args": {
             "args": [
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "Option<bool>",
                     "desc": "Whether this graph has singletons with self-loops"
                 }
@@ -1917,9 +1917,9 @@
         "example": {},
         "extra_headers": []
     },
-    "set_might_have_trap_nodes": {
+    "set_might_contain_trap_nodes": {
         "file": "edge_file_reader.rs",
-        "function": "set_might_have_trap_nodes",
+        "function": "set_might_contain_trap_nodes",
         "errors": [
             {
                 "doc_line": 0,
@@ -1929,7 +1929,7 @@
         "args": {
             "args": [
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "Option<bool>",
                     "desc": "Whether this graph has trap nodes with self-loops"
                 }
@@ -9104,9 +9104,9 @@
         "example": {},
         "extra_headers": []
     },
-    "set_might_have_singleton_nodes": {
+    "set_might_contain_singleton_nodes": {
         "file": "node_file_reader.rs",
-        "function": "set_might_have_singleton_nodes",
+        "function": "set_might_contain_singleton_nodes",
         "errors": [
             {
                 "doc_line": 0,
@@ -9116,7 +9116,7 @@
         "args": {
             "args": [
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "Option<bool>",
                     "desc": "Whether this graph has singletons"
                 }
@@ -10886,17 +10886,17 @@
                     "desc": "Whether the graph has edge weights"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
@@ -10967,17 +10967,17 @@
                     "desc": "Whether the graph has edge weights"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
@@ -11093,17 +11093,17 @@
                     "desc": "Whether the graph has edge weights"
                 },
                 {
-                    "name": "might_have_singletons",
+                    "name": "might_contain_singletons",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_singletons_with_selfloops",
+                    "name": "might_contain_singletons_with_selfloops",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 },
                 {
-                    "name": "might_have_trap_nodes",
+                    "name": "might_contain_trap_nodes",
                     "type": "bool",
                     "desc": "Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct"
                 }

@@ -428,9 +428,10 @@ pub(crate) fn build_edges(
     ignore_duplicated_edges: bool,
     has_edge_weights: bool,
     has_edge_types: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_invalid_weights: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
     directed: bool,
     edge_list_is_correct: bool,
 ) -> Result<
@@ -466,8 +467,8 @@ pub(crate) fn build_edges(
     // contain trap nodes. The only exception is when the edge in question
     // is a self-loop, and it has been correctly parametrized that the
     // graph may contain singleton nodes with self-loops.
-    if !might_have_trap_nodes
-        && !might_have_singletons_with_selfloops
+    if !might_contain_trap_nodes
+        && !might_contain_singletons_with_selfloops
         && directed
         && edges_number == 1
     {
@@ -545,7 +546,7 @@ pub(crate) fn build_edges(
     // uses more than twice the memory required by a bitvec to memorize a set of
     // dense values.
     let mut unique_sources: Option<EliasFano> =
-        if directed && (might_have_trap_nodes || might_have_singletons) {
+        if directed && (might_contain_trap_nodes || might_contain_singletons) {
             Some(EliasFano::new(nodes_number as u64, nodes_number as usize)?)
         } else {
             None
@@ -558,12 +559,14 @@ pub(crate) fn build_edges(
     // Additionally, since we need this support data structure when computing the
     // number of singletons with selfloops, we need to create it also when it has
     // been specified that there might be singletons with selfloops.
-    let mut connected_nodes: Option<_> =
-        if (might_have_singletons || might_have_singletons_with_selfloops) && nodes_number > 0 {
-            Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
-        } else {
-            None
-        };
+    let mut connected_nodes: Option<_> = if (might_contain_singletons
+        || might_contain_singletons_with_selfloops)
+        && nodes_number > 0
+    {
+        Some(bitvec![Lsb0, u8; 0; nodes_number as usize])
+    } else {
+        None
+    };
 
     // Last source inserted
     let mut last_src: NodeT = 0;
@@ -578,14 +581,14 @@ pub(crate) fn build_edges(
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut connected_nodes_number: NodeT =
-        if might_have_singletons || might_have_singletons_with_selfloops {
+        if might_contain_singletons || might_contain_singletons_with_selfloops {
             0
         } else {
             nodes_number
         };
     // This bitvec should be really sparse ON SANE GRAPHS
     // so we use a roaring bitvec to save memory.
-    let mut singleton_nodes_with_selfloops = if might_have_singletons_with_selfloops {
+    let mut singleton_nodes_with_selfloops = if might_contain_singletons_with_selfloops {
         Some(RoaringBitmap::new())
     } else {
         None
@@ -613,15 +616,17 @@ pub(crate) fn build_edges(
             weight,
         ) {
             (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
-                // If a zero weight was found we filter out this edge
-                if w.is_zero() {
-                    return Err("Provided weight is zero.".to_string());
-                }
-                if w.is_infinite() {
-                    return Err("Provided weight is infinite.".to_string());
-                }
-                if w.is_nan() {
-                    return Err("Provided weight is NaN.".to_string());
+                if might_contain_invalid_weights {
+                    // If a zero weight was found we filter out this edge
+                    if w.is_zero() {
+                        return Err("Provided weight is zero.".to_string());
+                    }
+                    if w.is_infinite() {
+                        return Err("Provided weight is infinite.".to_string());
+                    }
+                    if w.is_nan() {
+                        return Err("Provided weight is NaN.".to_string());
+                    }
                 }
                 *min_w = (*min_w).min(w);
                 *max_w = (*max_w).max(w);
@@ -890,7 +895,7 @@ pub(crate) fn build_edges(
     // the unique sources elias fano, this is done to avoid using extra memory
     // for no reason. We need to create the elias fano object starting from the
     // nodes with edges now to normalize the returned values.
-    if might_have_singletons
+    if might_contain_singletons
         && unique_sources.is_none()
         && nodes_number != connected_nodes_number + singleton_nodes_with_selfloops_number
     {
@@ -969,10 +974,10 @@ pub(crate) fn build_edges(
                 "When the graph has less than N/2 edges, ",
                 "it must contain singletons.\n",
                 "This error is likely caused by an improper use of the ",
-                "`might_have_singletons` parameters, which was passed as ",
+                "`might_contain_singletons` parameters, which was passed as ",
                 "{}."
             ),
-            might_have_singletons
+            might_contain_singletons
         );
     }
 
@@ -1048,6 +1053,7 @@ fn parse_nodes(
     Ok((nodes, node_types))
 }
 
+// TODO!: add docstring
 pub(crate) fn parse_string_edges(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     edges_number: usize,
@@ -1060,9 +1066,10 @@ pub(crate) fn parse_string_edges(
     ignore_duplicated_edges: bool,
     has_edge_types: bool,
     has_edge_weights: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_invalid_weights: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> ParsedStringEdgesType {
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> =
         Vocabulary::default().set_numeric_ids(numeric_edge_type_ids);
@@ -1073,9 +1080,9 @@ pub(crate) fn parse_string_edges(
     // There might be singletons if the user has told us that there might be singletons
     // and the node list is not empty. If the node list is empty, then it is not possible
     // to have singletons.
-    let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+    let might_contain_singletons = !nodes.is_empty() && might_contain_singletons;
     // If the graph is undirected there cannot be trap nodes
-    let might_have_trap_nodes = directed && might_have_trap_nodes;
+    let might_contain_trap_nodes = directed && might_contain_trap_nodes;
 
     let edges_iter = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
@@ -1115,9 +1122,10 @@ pub(crate) fn parse_string_edges(
         ignore_duplicated_edges,
         has_edge_weights,
         has_edge_types,
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_invalid_weights,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -1152,6 +1160,7 @@ pub(crate) fn parse_string_edges(
     ))
 }
 
+/// TODO: add docstring
 pub(crate) fn parse_integer_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,
@@ -1162,9 +1171,10 @@ pub(crate) fn parse_integer_edges(
     edge_list_is_correct: bool,
     has_edge_types: bool,
     has_edge_weights: bool,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_invalid_weights: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<
     (
         EliasFano,
@@ -1218,9 +1228,10 @@ pub(crate) fn parse_integer_edges(
         ignore_duplicated_edges,
         has_edge_weights,
         has_edge_types,
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        might_contain_invalid_weights,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         directed,
         edge_list_is_correct,
     )?;
@@ -1265,9 +1276,10 @@ impl Graph {
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_invalid_weights: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -1300,9 +1312,10 @@ impl Graph {
             edge_list_is_correct,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_invalid_weights,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )?;
 
         Ok(Graph::new(
@@ -1352,9 +1365,9 @@ impl Graph {
     /// * `has_node_types`: bool - Whether the graph has node types.
     /// * `has_edge_types`: bool - Whether the graph has edge types.
     /// * `has_edge_weights`: bool - Whether the graph has edge weights.
-    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `verbose`: bool - Whether we should show loading bars while building the graph.
     pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -1373,9 +1386,10 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_invalid_weights: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
@@ -1400,9 +1414,9 @@ impl Graph {
         // There might be singletons if the user has told us that there might be singletons
         // and the node list is not empty. If the node list is empty, then it is not possible
         // to have singletons.
-        let might_have_singletons = !nodes.is_empty() && might_have_singletons;
+        let might_contain_singletons = !nodes.is_empty() && might_contain_singletons;
         // If the graph is undirected there cannot be trap nodes
-        let might_have_trap_nodes = directed && might_have_trap_nodes;
+        let might_contain_trap_nodes = directed && might_contain_trap_nodes;
 
         info!("Parse unsorted edges.");
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
@@ -1429,9 +1443,10 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_invalid_weights,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )
     }
 
@@ -1447,9 +1462,9 @@ impl Graph {
     /// * `ignore_duplicated_edges`: bool - Whether to ignore and skip the detected duplicated edges or to raise an error.
     /// * `has_edge_types`: bool - Whether the graph has edge types.
     /// * `has_edge_weights`: bool - Whether the graph has edge weights.
-    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
         edges_iterator: impl Iterator<
@@ -1463,9 +1478,10 @@ impl Graph {
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_invalid_weights: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
@@ -1483,9 +1499,10 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_invalid_weights,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )
     }
 
@@ -1510,9 +1527,10 @@ impl Graph {
     /// * `has_node_types`: bool - Whether the graph has node types.
     /// * `has_edge_types`: bool - Whether the graph has edge types.
     /// * `has_edge_weights`: bool - Whether the graph has edge weights.
-    /// * `might_have_singletons`: bool - Whether the graph is KNOWN to have or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_singletons_with_selfloops`: bool - Whether the graph is KNOWN to have or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
-    /// * `might_have_trap_nodes`: bool - Whether the graph is KNOWN to have or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_invalid_weights`: bool - Whether the graph may contain or not invalid weights. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons`: bool - Whether the graph may contain or not singleton nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_singletons_with_selfloops`: bool - Whether the graph may contain or not singleton nodes with selfloops. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
+    /// * `might_contain_trap_nodes`: bool - Whether the graph may contain or not trap nodes. Beware that improper use of this flag might lead to panics. Enable this flag only if you are sure you are correct.
     pub fn from_string_sorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
@@ -1532,9 +1550,10 @@ impl Graph {
         has_node_types: bool,
         has_edge_types: bool,
         has_edge_weights: bool,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_invalid_weights: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
@@ -1589,9 +1608,10 @@ impl Graph {
             ignore_duplicated_edges,
             has_edge_types,
             has_edge_weights,
-            might_have_singletons,
-            might_have_singletons_with_selfloops,
-            might_have_trap_nodes,
+            might_contain_invalid_weights,
+            might_contain_singletons,
+            might_contain_singletons_with_selfloops,
+            might_contain_trap_nodes,
         )?;
 
         Ok(Graph::new(

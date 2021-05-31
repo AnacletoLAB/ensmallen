@@ -17,17 +17,17 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -104,9 +104,10 @@ fn generic_string_operator(
         main.has_node_types(),
         main.has_edge_types(),
         main.has_edge_weights(),
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        false,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         false,
     )
 }
@@ -123,17 +124,17 @@ fn generic_string_operator(
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -189,9 +190,10 @@ fn generic_integer_operator(
         false,
         main.has_edge_types(),
         main.has_edge_weights(),
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        false,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         false,
     )
 }
@@ -278,17 +280,17 @@ impl Graph {
     /// * `other`: &Graph - The other graph.
     /// * `operator`: String - The operator used.
     /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-    /// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-    /// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-    /// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+    /// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+    /// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+    /// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
     pub(crate) fn generic_operator(
         &self,
         other: &Graph,
         operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
             true => generic_integer_operator(
@@ -296,18 +298,18 @@ impl Graph {
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
             ),
             false => generic_string_operator(
                 self,
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
             ),
         }
     }

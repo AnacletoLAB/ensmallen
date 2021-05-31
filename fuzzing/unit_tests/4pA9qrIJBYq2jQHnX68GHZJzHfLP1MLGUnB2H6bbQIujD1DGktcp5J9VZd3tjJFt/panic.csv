@@ -1,4 +1,0 @@
-file,"/io/ensmallen_graph/graph/src/test_utilities.rs"
-line,337
-col,21
-message,In an undirected graph, we expect for the edge weights to be symmetrical but in the provided graph there has been found a case where the edge from 1 to 3 has weight 1.3193052, while the edge from 3 to 1 has weight 0.77283114, creating an asymetrical case.

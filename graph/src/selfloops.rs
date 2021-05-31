@@ -49,6 +49,7 @@ impl Graph {
             self.has_edge_types(),
             self.has_edge_weights(),
             false,
+            false,
             self.has_singleton_nodes_with_selfloops() || self.has_singleton_nodes(),
             self.has_trap_nodes(),
             verbose,
