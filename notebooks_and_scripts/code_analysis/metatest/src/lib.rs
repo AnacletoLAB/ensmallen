@@ -9,6 +9,9 @@ pub use check_doc::*;
 mod checker;
 pub use checker::*;
 
+mod utils;
+pub use utils::*;
+
 #[macro_export]
 macro_rules! log {
     ($($arg:tt)*) => {

@@ -20,3 +20,7 @@ path = "src/bin_check.rs"
 [[bin]]
 name = "bindgen"
 path = "src/bin_bindgen.rs"
+
+[[bin]]
+name = "metatest"
+path = "src/bin_metatest.rs"

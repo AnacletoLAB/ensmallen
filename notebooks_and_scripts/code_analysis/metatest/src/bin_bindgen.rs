@@ -4,28 +4,6 @@ use std::fs;
 use std::fs::read_dir;
 use std::collections::HashSet;
 
-/// List of the files we will skip in the analysis
-/// becasue they have features we don't have implmented yet
-/// nor we care about.
-const BLACKLIST: &'static [&'static str] = &[
-    "utils.rs", // macro rules
-    "types.rs", // macro rules
-    "walks.rs", // mods
-    "lib.rs",   // mods
-    "core.c",   // it is C
-    "macros.rs"
-];
-
-fn skip_file(path: &str) -> bool {
-    for deny in BLACKLIST.iter(){
-        if path.contains(deny) {
-            eprintln!("SKIPPING");
-            return true;
-        }
-    }
-    false
-}
-
 fn get_binding_names() -> HashSet<String> {
     let bindings_files: Vec<String> = read_dir("../../../bindings/python/src")
     .unwrap()
@@ -493,24 +471,11 @@ fn gen_binding(method: &Function) -> String {
 fn main() {
     let method_names = get_binding_names();
 
-    let src_files: Vec<String> = read_dir("../../../graph/src")
-        .unwrap()
-        .map(|path| 
-            path.unwrap().path().into_os_string()
-                .into_string().unwrap().to_string()
-        )
-        .filter(|path| !skip_file(&path))
-        .collect();
 
     let mut bindings = vec![];
 
-    for path in src_files{
-        // read the file
-        let contents = fs::read_to_string(path).expect("File not found");
-        // parse the file
-        let (_reminder, module) = Module::parse(contents.as_bytes());
-
-
+    let modules = get_library_sources();
+    for module in modules {
         for imp in module.impls {
             if imp.struct_name != "Graph" {
                 continue

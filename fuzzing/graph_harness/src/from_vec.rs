@@ -50,6 +50,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         true,
         true,
         true,
+        true,
         data.verbose,
     )?;
 

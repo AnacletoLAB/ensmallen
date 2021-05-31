@@ -20,20 +20,6 @@ impl Checker {
         }
     }
 
-    pub fn parse_files(files: Vec<String>) -> Checker {
-        let mut modules = Vec::new();
-
-        for path in files{
-            // read the file
-            let contents = fs::read_to_string(path).expect("File not found");
-            // parse the file
-            let (_reminder, module) = Module::parse(contents.as_bytes());
-            modules.push(module);
-        }
-
-        Checker::new(modules)
-    }    
-
     pub(crate) fn log(&self, error: Error){
         self.errors.lock().unwrap().push(error);
     }
