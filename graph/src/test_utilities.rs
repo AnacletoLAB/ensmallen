@@ -1,6 +1,4 @@
 //! Test functions used both for testing and fuzzing.
-#[macro_use]
-
 use super::*;
 use itertools::Itertools;
 use log::warn;
@@ -903,60 +901,53 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
     }
     // Dijkstra on an unweighted graph gives simmetric results.
     if !graph.is_directed() {
-        println!("{:#4?}", graph.get_dense_weighted_adjacency_matrix(None));
-
-        for maximal_depth in [None, Some(1), Some(2), Some(3)] {
-            dbg!(maximal_depth);
-            println!("{}", graph.to_dot(None));
-            for use_edge_weights_as_probabilities in [true, false] {
-                if use_edge_weights_as_probabilities
-                    && !graph.has_edge_weights_representing_probabilities().unwrap()
-                {
-                    continue;
-                }
-                graph.iter_node_ids().for_each(|src_node_id| {
-                    graph.iter_node_ids().for_each(|dst_node_id| unsafe {
-                        // Check that the obtained results are simmetric
-                        let (src_to_dst_distance, src_to_dst) = graph
-                            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
-                                src_node_id,
-                                dst_node_id,
-                                Some(use_edge_weights_as_probabilities),
-                                maximal_depth,
-                            );
-                        let (dst_to_src_distance, dst_to_src) = graph
-                            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
-                                dst_node_id,
-                                src_node_id,
-                                Some(use_edge_weights_as_probabilities),
-                                maximal_depth,
-                            );
-                        let src_to_dst_distance = src_to_dst_distance as WeightT;
-                        let dst_to_src_distance = dst_to_src_distance as WeightT;
-                        assert!(
-                            // We need both checks because both distances
-                            // my be infinite, and therefore the epsilon check
-                            // may not be enough.
-                            src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                                || (src_to_dst_distance - dst_to_src_distance).abs()
-                                    < WeightT::EPSILON,
-                            concat!(
-                                "The path from source to destination has distance {} ",
-                                "while the distance from destination to source has ",
-                                "destination {}. The path from source to destination ",
-                                "is {:?}, while the path from destination to source ",
-                                "is {:?}. The two paths should be symmetric and with ",
-                                "the same distance.\nThe graph report is:\n{:?}"
-                            ),
-                            src_to_dst_distance,
-                            dst_to_src_distance,
-                            src_to_dst,
-                            dst_to_src,
-                            graph.textual_report(verbose)
-                        );
-                    });
-                });
+        for use_edge_weights_as_probabilities in [true, false] {
+            if use_edge_weights_as_probabilities
+                && !graph.has_edge_weights_representing_probabilities().unwrap()
+            {
+                continue;
             }
+            graph.iter_node_ids().for_each(|src_node_id| {
+                graph.iter_node_ids().for_each(|dst_node_id| unsafe {
+                    // Check that the obtained results are simmetric
+                    let (src_to_dst_distance, src_to_dst) = graph
+                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                            src_node_id,
+                            dst_node_id,
+                            Some(use_edge_weights_as_probabilities),
+                            None,
+                        );
+                    let (dst_to_src_distance, dst_to_src) = graph
+                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                            dst_node_id,
+                            src_node_id,
+                            Some(use_edge_weights_as_probabilities),
+                            None,
+                        );
+                    let src_to_dst_distance = src_to_dst_distance as WeightT;
+                    let dst_to_src_distance = dst_to_src_distance as WeightT;
+                    assert!(
+                        // We need both checks because both distances
+                        // my be infinite, and therefore the epsilon check
+                        // may not be enough.
+                        src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
+                            || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON,
+                        concat!(
+                            "The path from source to destination has distance {} ",
+                            "while the distance from destination to source has ",
+                            "destination {}. The path from source to destination ",
+                            "is {:?}, while the path from destination to source ",
+                            "is {:?}. The two paths should be symmetric and with ",
+                            "the same distance.\nThe graph report is:\n{:?}"
+                        ),
+                        src_to_dst_distance,
+                        dst_to_src_distance,
+                        src_to_dst,
+                        dst_to_src,
+                        graph.textual_report(verbose)
+                    );
+                });
+            });
         }
     }
     Ok(())
@@ -1021,8 +1012,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
         return Ok(());
     }
     for iteration in [None, Some(0), Some(1), Some(2)] {
-        let mut unweighted_all_paths =
-            graph.get_unweighted_all_shortest_paths(iteration, verbose);
+        let mut unweighted_all_paths = graph.get_unweighted_all_shortest_paths(iteration, verbose);
         test_graph_properties(&mut unweighted_all_paths, verbose)?;
     }
 
@@ -1997,7 +1987,6 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
     Ok(())
 }
 
-
 macro_rules! test_mut_graph {
     ($graph:expr, $func:ident, $verbose:expr) => {{
         println!("Testing the graph transoformation: {}", stringify!($func));
@@ -2021,13 +2010,47 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     warn!("Starting default test suite on transformed graphs.");
 
     test_mut_graph!(graph, get_unweighted_laplacian_transformed_graph, verbose);
-    test_mut_graph!(graph, get_unweighted_symmetric_normalized_transformed_graph, verbose, result);
-    test_mut_graph!(graph, get_unweighted_symmetric_normalized_laplacian_transformed_graph, verbose, result);
-    test_mut_graph!(graph, get_unweighted_random_walk_normalized_laplacian_transformed_graph, verbose);
-    test_mut_graph!(graph, get_weighted_laplacian_transformed_graph, verbose, result);
-    test_mut_graph!(graph, get_weighted_symmetric_normalized_transformed_graph, verbose, result);
-    test_mut_graph!(graph, get_weighted_symmetric_normalized_laplacian_transformed_graph, verbose, result);
-    test_mut_graph!(graph, get_weighted_random_walk_normalized_laplacian_transformed_graph, verbose, result);
+    test_mut_graph!(
+        graph,
+        get_unweighted_symmetric_normalized_transformed_graph,
+        verbose,
+        result
+    );
+    test_mut_graph!(
+        graph,
+        get_unweighted_symmetric_normalized_laplacian_transformed_graph,
+        verbose,
+        result
+    );
+    test_mut_graph!(
+        graph,
+        get_unweighted_random_walk_normalized_laplacian_transformed_graph,
+        verbose
+    );
+    test_mut_graph!(
+        graph,
+        get_weighted_laplacian_transformed_graph,
+        verbose,
+        result
+    );
+    test_mut_graph!(
+        graph,
+        get_weighted_symmetric_normalized_transformed_graph,
+        verbose,
+        result
+    );
+    test_mut_graph!(
+        graph,
+        get_weighted_symmetric_normalized_laplacian_transformed_graph,
+        verbose,
+        result
+    );
+    test_mut_graph!(
+        graph,
+        get_weighted_random_walk_normalized_laplacian_transformed_graph,
+        verbose,
+        result
+    );
 
     Ok(())
 }
