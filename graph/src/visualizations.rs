@@ -1,6 +1,8 @@
 use super::*;
 
 impl Graph {
+
+    /// Print the current graph in a format compatible with Graphviz dot's format.
     pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
         let use_node_names = use_node_names.unwrap_or(false);
 

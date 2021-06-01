@@ -99,6 +99,64 @@ impl PartialEq for Type {
     }
 }
 
+impl CmpWithoutModifiers for Type {
+    fn cmp_without_modifiers(&self, other:&Type) -> bool {
+        use Type::*;
+        match (self, other) {
+            (DontCare, _) => true,
+            (_, DontCare) => true,
+            (SelfType, SelfType) => true,
+            (None, None) => true,
+            (SliceType(t1), SliceType(t2)) => t1.cmp_without_modifiers(t2),
+            (DynType(t1), DynType(t2))     => t1.cmp_without_modifiers(t2),
+            (ImplType(t1), ImplType(t2))   => t1.cmp_without_modifiers(t2),
+            (TupleType(t1), TupleType(t2)) => {
+                if t1.len() != t2.len() {
+                    return false;
+                }
+                for i in 0..t1.len() {
+                    if !t1[i].cmp_without_modifiers(&t2[i]) {
+                        return false;
+                    }
+                }
+                true
+            },
+            (FnType{
+                args:a1,
+                return_type:r1
+            },
+            FnType{
+                args:a2,
+                return_type:r2
+            }) => a1 == a2 && r1 == r2,
+            (
+                SimpleType{
+                    name: n1,
+                    modifiers: m1,
+                    generics: g1,
+                    traits: t1,
+                },
+                SimpleType{
+                    name: n2,
+                    modifiers: m2,
+                    generics: g2,
+                    traits: t2,
+                },
+            ) => n1 == n2 && g1.cmp_without_modifiers(g2),
+            (Primitive, SimpleType{name, ..}) | (SimpleType{name, ..}, Primitive) => {
+                match name.as_str() {
+                    "f64" | "NodeT" | "EdgeT" 
+                    | "WeightT" | "NodeTypeT" 
+                    | "EdgeTypeT" | "usize" 
+                    | "bool"  => true,
+                    _ => false,
+                }
+            }
+            _ => false,
+        }
+    }
+}
+
 impl PartialEq<&str> for Type {
     fn eq(&self, other:&&str) -> bool {
         self == &Type::parse_lossy(other.as_bytes())
@@ -543,6 +601,25 @@ mod test {
             },
             _ => panic!("The value is expected to be parsed as a simple type.s")
         }
+    }
+
+
+    #[test]
+    fn test_impls_equivalence() {
+        assert_eq!(
+            Type::parse_lossy("Result<impl ParallelIterator<Item=_>, _>".as_bytes()),
+            Type::parse_lossy("Result<impl ParallelIterator<Item=(u64, Vec<f64>, )>, String>".as_bytes())
+        );
+
+        assert_ne!(
+            Type::parse_lossy("Result<impl ParallelIterator<Item=_>, _>".as_bytes()),
+            Type::parse_lossy("Result<impl ParallelIterator<Item=(u64, Vec<f64>, )> + '_, String>".as_bytes())
+        );
+        
+        assert!(
+            Type::parse_lossy("Result<impl ParallelIterator<Item=_>, _>".as_bytes())
+                .cmp_str_without_modifiers(&"Result<impl ParallelIterator<Item=(u64, Vec<f64>, )> + '_, String>")
+        );
     }
 
     #[test]

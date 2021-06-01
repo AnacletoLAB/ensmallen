@@ -11,7 +11,8 @@ const BLACKLIST: &'static [&'static str] = &[
     "walks.rs", // mods
     "lib.rs",   // mods
     "core.c",   // it is C
-    "macros.rs"
+    "macros.rs",
+    "test_utilities.rs",
 ];
 
 pub fn skip_file(path: &str) -> bool {
@@ -37,6 +38,7 @@ pub fn get_library_sources() -> Vec<Module> {
     let mut modules = Vec::new();
     for path in src_files {
         // read the file
+        println!("Parsing: {:?}", path);
         let contents = fs::read_to_string(path).expect("File not found");
         // parse the file
         let (_reminder, module) = Module::parse(contents.as_bytes());

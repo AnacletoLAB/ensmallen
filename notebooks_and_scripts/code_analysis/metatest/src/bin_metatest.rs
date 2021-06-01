@@ -2,7 +2,226 @@ use rust_parser::*;
 use libmetatest::*;
 use std::collections::HashSet;
 
-const TEMPLATE: &'static str = r#"
+const METHODS_BLACKLIST: &'static [&'static str] = &[
+    "eq",
+    "hash",
+];
+
+const TYPES_BLACKLIST: &'static [&'static str] = &[
+    "Fn", 
+    "NodeFileReader", 
+    "EdgeFileReader", 
+    "Graph", 
+    "Compute_hash_Params",
+    "str",
+    "S",
+    "[u32]",
+    "SingleWalkParameters",
+    "WalksParameters",
+    "WalkWeights",
+    "Self",
+    "[String]",
+];
+
+fn build(method_id: usize, method: Function) -> Option<(String, String, String)> {
+    let struct_name = method.name.split("_").map(|x| {
+        let mut x = x.to_string();
+        x.get_mut(0..1).map(|s| {s.make_ascii_uppercase(); &*s});
+        x
+    }).collect::<Vec<_>>().join("");
+
+    let struct_field_name = method.name.split("_").collect::<Vec<_>>().join("");
+    
+    let mut fields = Vec::new();
+    let mut call_args = Vec::new();
+    for arg in method.args.0.clone() {
+        // check if the type is banned or not
+        for deny_type in TYPES_BLACKLIST {
+            if String::from(arg.arg_type.clone()).contains(deny_type) {
+                return None;
+            }
+        }
+
+        match arg.arg_type {
+            x if x == "self" || x == "&self" || x == "&mut self" => {},
+            Type::SimpleType{
+                name,
+                mut modifiers,
+                generics,
+                traits,
+            } => {
+                fields.push((arg.name.clone(), Type::SimpleType{
+                    name,
+                    modifiers: TypeModifiers::default(),
+                    generics,
+                    traits,
+                }.to_string()));
+                modifiers.lifetime = None;
+                call_args.push(format!("{}data.{}.{}", modifiers, struct_field_name, arg.name));
+            }
+            _ => {
+                fields.push((arg.name.clone(), arg.arg_type.to_string()));
+                call_args.push(format!("data.{}.{}", struct_field_name, arg.name));
+            }
+        }
+    }
+
+    let (struct_string, field_string) = if fields.len() > 0 {
+        (format!(
+r#"
+#[derive(Arbitrary, Debug, Clone)]
+pub struct {struct_name} {{
+{fields}
+}}
+"#,
+            struct_name=struct_name,
+            fields=fields.iter().map(|(name, field_type)| {
+                format!("    pub {} : {},", name, field_type)
+            }).collect::<Vec<_>>().join("\n"),
+        ), 
+        format!("    pub {} : {},", struct_field_name, struct_name)
+    )
+    } else {
+        (String::new(), String::new())
+    };
+
+    let mut method_call = format!(
+        "graph.{}({})", 
+        method.name, 
+        call_args.iter()
+            .map(|x| format!("{}.clone()", x))
+            .collect::<Vec<_>>().join(", ")
+    );
+
+    if let Some(rt) = method.return_type.clone() {
+        method_call = match rt {
+            x if x == "Graph" => {
+                format!("graph = {};", method_call)
+            }
+            x if x  == "Result<Graph, _>" => {
+                format!(
+        r#"
+        if let Ok(res) = {} {{
+            graph = res;
+        }}
+        "#,     
+                method_call)
+            }
+            x if x  == "Result<(Graph, Graph), _>" => {
+                format!(
+        r#"
+        if let Ok((res1, res2)) = {} {{
+            if rng.next() % 2 == 0 {{
+                graph = res1;
+            }} else {{
+                graph = res2;
+            }}
+        }}
+        "#,     
+                method_call)
+            }
+            x if x.cmp_str_without_modifiers("impl Iterator<Item=_>")
+                || x.cmp_str_without_modifiers("impl IndexedParallelIterator<Item=_>")
+                || x.cmp_str_without_modifiers("Box<impl Iterator<Item=_>>")
+                || x.cmp_str_without_modifiers("impl ParallelIterator<Item=_>") => {
+                format!(
+            r#"
+            let _ = {}.collect::<Vec<_>>();
+            "#,
+                method_call)
+            }
+            x if x.cmp_str_without_modifiers("Result<impl Iterator<Item = _>, _>") 
+                || x.cmp_str_without_modifiers("Result<impl IndexedParallelIterator<Item = _>, _>") 
+                || x.cmp_str_without_modifiers("Result<impl ParallelIterator<Item = _>, _>") => {
+                format!(
+            r#"
+            let _ = {}.map(|x| x.collect::<Vec<_>>());
+            "#,
+                method_call)
+            }
+            x @ _ => {
+                format!("let _ = {};", method_call)
+            }
+        };
+    }
+
+    if method.is_unsafe() {
+        method_call = format!("unsafe{{{}}}", method_call);
+    }
+
+    method_call = format!( r#"
+    {method_id} => {{
+        trace.push(format!("{func_name}({args_format})", {args_from_data}));
+    
+        let g_copy = graph.clone();
+        let trace2 = trace.clone();
+    
+        std::panic::set_hook(Box::new(move |info| {{
+            handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
+        }}));
+        {method_call}
+    }}
+    "#,
+        method_id=method_id,
+        func_name=method.name,
+        method_call=method_call,
+        args_format=(0..call_args.len()).map(|x| "{:?}".to_string()).collect::<Vec<_>>().join(", "),
+        args_from_data=call_args.iter().map(|x| format!("&{}", x)).collect::<Vec<_>>().join(", "),
+    );
+
+    Some((
+        struct_string,
+        field_string,
+        method_call,
+    ))
+}
+
+fn main() {
+    let mut counter = 0;
+    let mut calls = Vec::new();
+    let mut structs = Vec::new();
+    let mut fields = Vec::new();
+    for module in get_library_sources() {
+        for imp in module.impls {
+            if imp.struct_name != "Graph" {
+                continue
+            }
+            for method in imp.methods {
+
+                if METHODS_BLACKLIST.contains(&method.name.as_str()) 
+                    || method.name.starts_with("from")
+                    || method.visibility != Visibility::Public {
+                    continue
+                }
+
+                if let Some((struct_string, struct_field, method_call)) = build(counter, method) {
+                    if struct_string != "" {
+                        structs.push(struct_string);
+                    }
+                    calls.push(method_call);
+                    fields.push(struct_field);
+                    counter += 1;
+                }
+            }
+        }
+    }
+
+    println!("Generated the harnesses for {} methods.", counter - 1);
+
+    let meta_struct = format!(
+r#"
+#[derive(Arbitrary, Debug, Clone)]
+pub struct MetaParams {{
+    pub seed: u64,
+{fields}
+    pub from_vec: FromVecHarnessParams,
+}}
+"#,
+        fields=fields.join("\n"),
+    );
+
+    let result = format!(
+        r#"
 use super::*;
 use arbitrary::Arbitrary;
 use std::collections::{{HashSet, HashMap}};
@@ -13,14 +232,15 @@ struct Rng{{
 }}
 
 impl Rng {{
-    pub fn new() -> Rng {{
+    pub fn new(seed: u64) -> Rng {{
         Rng{{
-            seed: 0xbad5eed ^ unsafe{{core::arch::x86_64::_rdtsc()}}
+            seed: seed,
         }}
     }}
 
     pub fn next(&mut self) -> u64 {{
         let mut x = self.seed;
+        x = x.wrapping_add(0xbadf00ddeadbeef);
         x ^= x << 17;
         x ^= x >> 7;
         x ^= x << 13;
@@ -60,10 +280,11 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
         true,
         true,
         true,
+        true,
         data.from_vec.verbose,
     )?;
 
-    let mut rng = Rng::new();
+    let mut rng = Rng::new(data.seed);
     let mut trace = Vec::new();
     for _ in 0..10 {{
         let data_for_current_test = data_copy_for_tests.clone();
@@ -78,52 +299,12 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
 
     Ok(())
 }}
-"#;
+"#,
+        n_of_calls=counter,
+        calls=calls.join("\n"),
+        structs=structs.join("\n"),
+        meta_struct=meta_struct,
+    );
 
-const STRUCT_TEMPLATE: &'static str = r#"
-#[derive(Arbitrary, Debug, Clone)]
-pub struct {struct_name} {{
-{fields}
-}}
-"#;
-
-const FUNCTION_CALL_TEMPLATE: &'static str = r#"
-{method_id} => {{
-    trace.push(format!("{func_name}({args_format})", {args_from_data}));
-
-    let g_copy = graph.clone();
-    let trace2 = trace.clone();
-
-    std::panic::set_hook(Box::new(move |info| {
-        handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
-    }));
-    {method_call}
-}}
-"#;
-
-fn build(method: Function){
-    let struct_name = method.name.split("_").map(|x| {
-        let mut x = x.to_string();
-        x.get_mut(0..1).map(|s| {s.make_ascii_uppercase(); &*s});
-        x
-    }).collect::<Vec<_>>().join("");
-    println!("sname : {}", struct_name);
-    for arg in method.args.0 {
-
-    }
-
-
-}
-
-fn main() {
-    for module in get_library_sources() {
-        for imp in module.impls {
-            if imp.struct_name != "Graph" {
-                continue
-            }
-            for method in imp.methods {
-                build(method);
-            }
-        }
-    }
+    std::fs::write("../../../fuzzing/graph_harness/src/meta_test.rs", result);
 }

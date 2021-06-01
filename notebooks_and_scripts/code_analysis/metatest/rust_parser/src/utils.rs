@@ -1,4 +1,14 @@
 
+pub trait CmpWithoutModifiers {
+    fn cmp_without_modifiers(self: &Self, other: &Self) -> bool;
+
+    fn cmp_str_without_modifiers(self: &Self, other: &str) -> bool
+    where Self: Parse + Sized
+    {
+        self.cmp_without_modifiers(&Self::parse_lossy(other.as_bytes()))
+    }
+}
+
 /// General trait that each object must implemnet 
 /// This is the foundation of this recursive parser.
 pub trait Parse {
@@ -71,7 +81,7 @@ pub fn get_next_matching(data: &[u8], start_char: u8, end_char: u8) -> (&[u8], &
 
     // byte pointer that is increased at each cycle 
     let mut tmp_data = data;
-    while !data.is_empty() {
+    while !tmp_data.is_empty() {
 
         // get the next char
         let char = next_char!(tmp_data);
