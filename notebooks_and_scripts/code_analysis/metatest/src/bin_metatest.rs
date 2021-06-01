@@ -34,6 +34,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String)>
     
     let mut fields = Vec::new();
     let mut call_args = Vec::new();
+    let mut arg_names = Vec::new();
     for arg in method.args.0.clone() {
         // check if the type is banned or not
         for deny_type in TYPES_BLACKLIST {
@@ -45,6 +46,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String)>
         match arg.arg_type {
             x if x == "self" || x == "&self" || x == "&mut self" => {},
             x if x == "Option<usize>" && arg.name.contains("iter") => {
+                arg_names.push(arg.name.clone());
                 fields.push((arg.name.clone(), "Option<u8>".to_string()));
                 call_args.push(format!("data.{}.{}.map(|x| x as usize)", struct_field_name, arg.name));
             }
@@ -54,6 +56,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String)>
                 generics,
                 traits,
             } => {
+                arg_names.push(arg.name.clone());
                 fields.push((arg.name.clone(), Type::SimpleType{
                     name,
                     modifiers: TypeModifiers::default(),
@@ -64,6 +67,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String)>
                 call_args.push(format!("{}data.{}.{}", modifiers, struct_field_name, arg.name));
             }
             _ => {
+                arg_names.push(arg.name.clone());
                 fields.push((arg.name.clone(), arg.arg_type.to_string()));
                 call_args.push(format!("data.{}.{}", struct_field_name, arg.name));
             }
@@ -165,7 +169,7 @@ pub struct {struct_name} {{
         method_id=method_id,
         func_name=method.name,
         method_call=method_call,
-        args_format=(0..call_args.len()).map(|x| "{:?}".to_string()).collect::<Vec<_>>().join(", "),
+        args_format=arg_names.iter().map(|x| format!("{}: {{:?}}", x)).collect::<Vec<_>>().join(", "),
         args_from_data=call_args.iter().map(|x| format!("&{}", x)).collect::<Vec<_>>().join(", "),
     );
 

@@ -248,6 +248,13 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, use_node_names)"]
+    /// Print the current graph in a format compatible with Graphviz dot's format
+    pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
+        self.graph.to_dot(use_node_names)
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, other)"]
     /// Return whether nodes are remappable to those of the given graph.
     ///
@@ -921,7 +928,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -930,6 +937,8 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     ///
     ///
     /// Safety
@@ -947,6 +956,7 @@ impl EnsmallenGraph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
@@ -955,14 +965,15 @@ impl EnsmallenGraph {
                 .graph
                 .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
                     src_node_id,
-                    dst_node_id
+                    dst_node_id,
+                    maximal_depth
                 ))?,
             NodeT
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -971,6 +982,8 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     ///
     ///
     /// Safety
@@ -980,17 +993,19 @@ impl EnsmallenGraph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
         pe!(self
             .graph
             .get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
                 src_node_id,
-                dst_node_id
+                dst_node_id,
+                maximal_depth
             ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -999,6 +1014,8 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     ///
     ///
     /// Raises
@@ -1010,19 +1027,24 @@ impl EnsmallenGraph {
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
             pe!(self
                 .graph
-                .get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id, dst_node_id))?,
+                .get_unweighted_minimum_path_node_ids_from_node_ids(
+                    src_node_id,
+                    dst_node_id,
+                    maximal_depth
+                ))?,
             NodeT
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -1031,6 +1053,8 @@ impl EnsmallenGraph {
     ///     Source node name.
     /// dst_node_name: str,
     ///     Destination node name.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     ///
     ///
     /// Raises
@@ -1042,6 +1066,7 @@ impl EnsmallenGraph {
         &self,
         src_node_name: &str,
         dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
@@ -1050,14 +1075,15 @@ impl EnsmallenGraph {
                 .graph
                 .get_unweighted_minimum_path_node_ids_from_node_names(
                     src_node_name,
-                    dst_node_name
+                    dst_node_name,
+                    maximal_depth
                 ))?,
             NodeT
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -1066,6 +1092,8 @@ impl EnsmallenGraph {
     ///     Source node name.
     /// dst_node_name: str,
     ///     Destination node name.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     ///
     ///
     /// Raises
@@ -1077,10 +1105,15 @@ impl EnsmallenGraph {
         &self,
         src_node_name: &str,
         dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
         pe!(self
             .graph
-            .get_unweighted_minimum_path_node_names_from_node_names(src_node_name, dst_node_name))
+            .get_unweighted_minimum_path_node_names_from_node_names(
+                src_node_name,
+                dst_node_name,
+                maximal_depth
+            ))
     }
 
     #[automatically_generated_binding]
@@ -1124,6 +1157,8 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     /// k: int,
     ///     Number of paths to find.
     ///
@@ -1236,34 +1271,6 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
-    /// Returns weighted eccentricity of the given node.
-    ///
-    /// This method will panic if the given node ID does not exists in the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int,
-    ///     Node for which to compute the eccentricity.
-    /// use_edge_weights_as_probabilities: Optional[bool],
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> f64 {
-        self.graph.get_unchecked_weighted_eccentricity_from_node_id(
-            node_id,
-            use_edge_weights_as_probabilities,
-        )
-    }
-
-    #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     /// Returns unweighted eccentricity of the given node ID.
     ///
@@ -1368,7 +1375,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -1377,8 +1384,12 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int],
+    ///     The maximal number of iterations to execute Dijkstra for.
     ///
     ///
     /// Safety
@@ -1389,17 +1400,19 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<NodeT>) {
         self.graph
             .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
+                maximal_depth,
             )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -1408,8 +1421,12 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int],
+    ///     The maximal number of iterations to execute Dijkstra for.
     ///
     ///
     /// Safety
@@ -1420,17 +1437,19 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
         self.graph
             .get_unchecked_weighted_minimum_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
+                maximal_depth,
             )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -1439,8 +1458,12 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
+    /// maximal_depth: Optional[int],
+    ///     The maximal depth to execute the BFS for.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int],
+    ///     The maximal number of iterations to execute Dijkstra for.
     ///
     ///
     /// Raises
@@ -1453,16 +1476,18 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self.graph.get_weighted_minimum_path_node_ids_from_node_ids(
             src_node_id,
             dst_node_id,
-            use_edge_weights_as_probabilities
+            use_edge_weights_as_probabilities,
+            maximal_depth
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -1473,6 +1498,8 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int],
+    ///     The maximal number of iterations to execute Dijkstra for.
     ///
     ///
     /// Raises
@@ -1485,18 +1512,20 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self
             .graph
             .get_weighted_minimum_path_node_ids_from_node_names(
                 src_node_name,
                 dst_node_name,
-                use_edge_weights_as_probabilities
+                use_edge_weights_as_probabilities,
+                maximal_depth
             ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -1507,6 +1536,8 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// use_edge_weights_as_probabilities: Optional[bool],
     ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int],
+    ///     The maximal number of iterations to execute Dijkstra for.
     ///
     ///
     /// Raises
@@ -1519,13 +1550,15 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<String>)> {
         pe!(self
             .graph
             .get_weighted_minimum_path_node_names_from_node_names(
                 src_node_name,
                 dst_node_name,
-                use_edge_weights_as_probabilities
+                use_edge_weights_as_probabilities,
+                maximal_depth
             ))
     }
 
@@ -6074,6 +6107,8 @@ impl EnsmallenGraph {
     /// -------
     /// ValueError
     ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
+    /// ValueError
+    ///     If the graph contains nodes with zero weighted degree.
     ///
     pub fn get_weighted_random_walk_normalized_laplacian_transformed_graph(
         &self,
