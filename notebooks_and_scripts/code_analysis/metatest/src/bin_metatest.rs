@@ -145,10 +145,6 @@ pub struct {struct_name} {{
         };
     }
 
-    if method.is_unsafe() {
-        method_call = format!("unsafe{{{}}}", method_call);
-    }
-
     method_call = format!( r#"
     {method_id} => {{
         trace.push(format!("{func_name}({args_format})", {args_from_data}));
@@ -190,7 +186,8 @@ fn main() {
 
                 if METHODS_BLACKLIST.contains(&method.name.as_str()) 
                     || method.name.starts_with("from")
-                    || method.visibility != Visibility::Public {
+                    || method.visibility != Visibility::Public
+                    || method.is_unsafe() {
                     continue
                 }
 
