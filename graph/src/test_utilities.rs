@@ -329,10 +329,14 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
-        assert!(!graph
-            .iter_edge_weights()
-            .unwrap()
-            .any(|w| { w.is_zero() || w.is_infinite() || w.is_nan() }));
+        graph.iter_edge_weights().unwrap().for_each(|w| {
+            assert!(!w.is_zero(), "The graph cannot contain a zero weight. ");
+            assert!(
+                !w.is_infinite(),
+                "The graph cannot contain an infinite weight. "
+            );
+            assert!(!w.is_nan(), "The graph cannot contain a nan weight. ");
+        });
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
             graph
@@ -864,6 +868,14 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                         // Check that the two paths have the same length
                         assert_eq!(src_to_dst.len(), dst_to_src.len());
                         assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
+                        // Test that the k-paths return a compatible result
+                        let kpaths = graph.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                            src_node_id,
+                            dst_node_id,
+                            5
+                        );
+                        let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
+                        assert_eq!(min_length, src_to_dst.len());
                     }
                 });
             });
