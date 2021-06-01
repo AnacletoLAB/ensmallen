@@ -58,7 +58,7 @@ pub struct GetNodeLabelPredictionTupleFromNodeIds {
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetOkapiBm25NodeFeaturePropagation {
     pub features : Vec<Vec<f64>>,
-    pub iterations : Option<usize>,
+    pub iterations : Option<u8>,
     pub maximal_distance : Option<usize>,
     pub k1 : Option<f64>,
     pub b : Option<f64>,
@@ -69,7 +69,7 @@ pub struct GetOkapiBm25NodeFeaturePropagation {
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetOkapiBm25NodeLabelPropagation {
-    pub iterations : Option<usize>,
+    pub iterations : Option<u8>,
     pub maximal_distance : Option<usize>,
     pub k1 : Option<f64>,
     pub b : Option<f64>,
@@ -654,14 +654,14 @@ pub struct GetBetweennessCentrality {
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetUnweightedEigenvectorCentrality {
-    pub maximum_iterations_number : Option<usize>,
+    pub maximum_iterations_number : Option<u8>,
     pub tollerance : Option<f64>,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetWeightedEigenvectorCentrality {
-    pub maximum_iterations_number : Option<usize>,
+    pub maximum_iterations_number : Option<u8>,
     pub tollerance : Option<f64>,
 }
 
@@ -1417,7 +1417,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     4 => {
-        trace.push(format!("get_okapi_bm25_node_feature_propagation({:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodefeaturepropagation.features, &data.getokapibm25nodefeaturepropagation.iterations, &data.getokapibm25nodefeaturepropagation.maximal_distance, &data.getokapibm25nodefeaturepropagation.k1, &data.getokapibm25nodefeaturepropagation.b, &data.getokapibm25nodefeaturepropagation.include_central_node, &data.getokapibm25nodefeaturepropagation.verbose));
+        trace.push(format!("get_okapi_bm25_node_feature_propagation({:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodefeaturepropagation.features, &data.getokapibm25nodefeaturepropagation.iterations.map(|x| x as usize), &data.getokapibm25nodefeaturepropagation.maximal_distance, &data.getokapibm25nodefeaturepropagation.k1, &data.getokapibm25nodefeaturepropagation.b, &data.getokapibm25nodefeaturepropagation.include_central_node, &data.getokapibm25nodefeaturepropagation.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1425,12 +1425,12 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_okapi_bm25_node_feature_propagation(data.getokapibm25nodefeaturepropagation.features.clone(), data.getokapibm25nodefeaturepropagation.iterations.clone(), data.getokapibm25nodefeaturepropagation.maximal_distance.clone(), data.getokapibm25nodefeaturepropagation.k1.clone(), data.getokapibm25nodefeaturepropagation.b.clone(), data.getokapibm25nodefeaturepropagation.include_central_node.clone(), data.getokapibm25nodefeaturepropagation.verbose.clone());
+        let _ = graph.get_okapi_bm25_node_feature_propagation(data.getokapibm25nodefeaturepropagation.features.clone(), data.getokapibm25nodefeaturepropagation.iterations.map(|x| x as usize).clone(), data.getokapibm25nodefeaturepropagation.maximal_distance.clone(), data.getokapibm25nodefeaturepropagation.k1.clone(), data.getokapibm25nodefeaturepropagation.b.clone(), data.getokapibm25nodefeaturepropagation.include_central_node.clone(), data.getokapibm25nodefeaturepropagation.verbose.clone());
     }
     
 
     5 => {
-        trace.push(format!("get_okapi_bm25_node_label_propagation({:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodelabelpropagation.iterations, &data.getokapibm25nodelabelpropagation.maximal_distance, &data.getokapibm25nodelabelpropagation.k1, &data.getokapibm25nodelabelpropagation.b, &data.getokapibm25nodelabelpropagation.verbose));
+        trace.push(format!("get_okapi_bm25_node_label_propagation({:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodelabelpropagation.iterations.map(|x| x as usize), &data.getokapibm25nodelabelpropagation.maximal_distance, &data.getokapibm25nodelabelpropagation.k1, &data.getokapibm25nodelabelpropagation.b, &data.getokapibm25nodelabelpropagation.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1438,7 +1438,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_okapi_bm25_node_label_propagation(data.getokapibm25nodelabelpropagation.iterations.clone(), data.getokapibm25nodelabelpropagation.maximal_distance.clone(), data.getokapibm25nodelabelpropagation.k1.clone(), data.getokapibm25nodelabelpropagation.b.clone(), data.getokapibm25nodelabelpropagation.verbose.clone());
+        let _ = graph.get_okapi_bm25_node_label_propagation(data.getokapibm25nodelabelpropagation.iterations.map(|x| x as usize).clone(), data.getokapibm25nodelabelpropagation.maximal_distance.clone(), data.getokapibm25nodelabelpropagation.k1.clone(), data.getokapibm25nodelabelpropagation.b.clone(), data.getokapibm25nodelabelpropagation.verbose.clone());
     }
     
 
@@ -2871,7 +2871,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     114 => {
-        trace.push(format!("get_unweighted_eigenvector_centrality({:?}, {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number, &data.getunweightedeigenvectorcentrality.tollerance));
+        trace.push(format!("get_unweighted_eigenvector_centrality({:?}, {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2879,12 +2879,12 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_unweighted_eigenvector_centrality(data.getunweightedeigenvectorcentrality.maximum_iterations_number.clone(), data.getunweightedeigenvectorcentrality.tollerance.clone());
+        let _ = graph.get_unweighted_eigenvector_centrality(data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize).clone(), data.getunweightedeigenvectorcentrality.tollerance.clone());
     }
     
 
     115 => {
-        trace.push(format!("get_weighted_eigenvector_centrality({:?}, {:?})", &data.getweightedeigenvectorcentrality.maximum_iterations_number, &data.getweightedeigenvectorcentrality.tollerance));
+        trace.push(format!("get_weighted_eigenvector_centrality({:?}, {:?})", &data.getweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getweightedeigenvectorcentrality.tollerance));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2892,7 +2892,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_weighted_eigenvector_centrality(data.getweightedeigenvectorcentrality.maximum_iterations_number.clone(), data.getweightedeigenvectorcentrality.tollerance.clone());
+        let _ = graph.get_weighted_eigenvector_centrality(data.getweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize).clone(), data.getweightedeigenvectorcentrality.tollerance.clone());
     }
     
 

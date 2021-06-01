@@ -44,6 +44,10 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String)>
 
         match arg.arg_type {
             x if x == "self" || x == "&self" || x == "&mut self" => {},
+            x if x == "Option<usize>" && arg.name.contains("iter") => {
+                fields.push((arg.name.clone(), "Option<u8>".to_string()));
+                call_args.push(format!("data.{}.{}.map(|x| x as usize)", struct_field_name, arg.name));
+            }
             Type::SimpleType{
                 name,
                 mut modifiers,
