@@ -1,6 +1,5 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use num_traits::Signed;
 use rayon::iter::ParallelIterator;
 
 /// # Transitivity.
@@ -237,7 +236,7 @@ impl Graph {
                             .filter(move |(dst_node_id, distance)| {
                                 distance.is_finite()
                                     && src_node_id != *dst_node_id as NodeT
-                                    && distance.is_positive()
+                                    && *distance > 0.0
                             })
                             .map(move |(dst_node_id, distance)| {
                                 Ok((src_node_id, dst_node_id as NodeT, None, Some(distance)))
