@@ -1,0 +1,18 @@
+   0:     0x5555555ffea3 - backtrace::capture::Backtrace::new::h47087cdad01c5352
+   1:     0x555555916979 - graph_harness::handle_panics::dump_backtrace::h910e6ca16f887716
+   2:     0x555555917797 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h5c4ada0710dfa884
+   3:     0x5555559354ca - graph_harness::meta_test::meta_test::{{closure}}::hfeaafa3c8c42e225
+   4:     0x555555b6850e - std::panicking::rust_panic_with_hook::hb5a01416e02405ad
+                               at /rustc/c1e8f3a5857c3c8d095fd212acc6ed442f4cc58b/library/std/src/panicking.rs:626:17
+   5:     0x555555823c42 - std::panicking::begin_panic::{{closure}}::h9a04f4f68d144940
+   6:     0x555555823c0e - std::sys_common::backtrace::__rust_end_short_backtrace::hefbf2faa98300df2
+   7:     0x5555555bfb7a - std::panicking::begin_panic::h18d273101c9a1da0
+   8:     0x555555661567 - graph::test_utilities::test_graph_properties::h5343f8c83752286f
+   9:     0x55555564a75f - graph::test_utilities::_default_test_suite::hf7725fb40dfce331
+  10:     0x5555559ad8be - graph_harness::meta_test::meta_test::h4b0a618f7ed81d5b
+  11:     0x5555555d3f9f - meta_test::main::h5ec536183a44e915
+  12:     0x5555555d418e - std::sys_common::backtrace::__rust_begin_short_backtrace::hde77647b401487a0
+  13:     0x5555555d3bee - main
+  14:     0x7ffff6e24b97 - __libc_start_main
+  15:     0x5555555d383a - _start
+  16:                0x0 - <unknown>

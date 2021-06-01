@@ -1,0 +1,105 @@
+Graph {
+    edges: EliasFano {
+        universe:   10,
+        number_of_elements:    2,
+        low_bit_count:    2,
+        low_bit_mask:    3,
+        low_bits: [
+               1,
+               0,
+               0,
+        ],
+        high_bits: RsDict {
+            len:    3,
+            num_ones:    2,
+            num_zeros:    1,
+            sb_classes: [],
+            sb_indices: VarintBuffer {
+                buf: [],
+                len:    0,
+            },
+            large_blocks: [
+                LargeBlock {
+                    pointer:    0,
+                    rank:    0,
+                },
+            ],
+            select_one_inds: [
+                   0,
+            ],
+            select_zero_inds: [
+                   0,
+            ],
+            last_block: LastBlock {
+                bits:    5,
+                num_ones:    2,
+                num_zeros:    1,
+            },
+        },
+        last_high_value:    1,
+        last_value:    4,
+        last_index:    2,
+        current_number_of_elements:    2,
+    },
+    node_bits:    2,
+    node_bit_mask:    3,
+    weights: Some(
+        [
+            0.000000000000000000000000000000000000000068993,
+             0.0,
+        ],
+    ),
+    node_types: None,
+    edge_types: None,
+    nodes: Vocabulary {
+        map: {
+            "SSSSSSSSSSSSSSSSSS":    0,
+            "SSS":    1,
+        },
+        reverse_map: [
+            "SSSSSSSSSSSSSSSSSS",
+            "SSS",
+        ],
+        numeric_ids: false,
+    },
+    directed: true,
+    unique_selfloop_number:    0,
+    selfloop_number:    0,
+    connected_nodes_number:    2,
+    singleton_nodes_with_selfloops_number:    0,
+    unique_edges_number:    2,
+    min_node_degree:    1,
+    max_node_degree:    1,
+    min_edge_weight: Some(
+         0.0,
+    ),
+    max_edge_weight: Some(
+        0.000000000000000000000000000000000000000068993,
+    ),
+    min_weighted_node_degree: Some(
+         0.0,
+    ),
+    max_weighted_node_degree: Some(
+        0.00000000000000000000000000000000000000006899292989103237,
+    ),
+    weighted_singleton_nodes_number: Some(
+           1,
+    ),
+    name: "MetaTest",
+    connected_nodes: None,
+    singleton_nodes_with_selfloops: None,
+    unique_sources: None,
+    cached_report: ClonableRwLock {
+        value: RwLock {
+            data: Some(
+                "The directed graph MetaTest has 2 nodes and 2 weighted edges, of which none are self-loops. The graph is complete as it has a density of 1.00000 and is connected, as it has a single component. The graph median node degree is 1, the mean node degree is 1.00, and the node degree mode is 1. The top 2 most central nodes are SSS (degree 1) and SSSSSSSSSSSSSSSSSS (degree 1). The hash of the graph is 55b3300935b29036.",
+            ),
+            poisoned: false,
+            ..
+        },
+    },
+    destinations: None,
+    sources: None,
+    cumulative_node_degrees: None,
+    cached_destinations: None,
+}
