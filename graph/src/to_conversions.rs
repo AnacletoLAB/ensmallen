@@ -191,6 +191,49 @@ impl Graph {
         .unwrap()
     }
 
+    /// Return the graph from the bidiagonal adjacency matrix.
+    ///
+    /// # Implementative details
+    /// The resulting graph will include only the edges present on either
+    /// the diagonal or anti-diagonal matrix.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn to_bidiagonal(&self, verbose: Option<bool>) -> Graph {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Building the bidiagonal matrix",
+            self.get_directed_edges_number() as usize,
+        );
+        let nodes_number = self.get_nodes_number();
+        Graph::from_integer_unsorted(
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+                .progress_with(pb)
+                .filter_map(|(_, src, dst, edge_type, weight)| {
+                    if src==dst || src == nodes_number - dst {
+                        Some(Ok((src, dst, edge_type, weight)))
+                    } else {
+                        None
+                    }
+                }),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.is_directed(),
+            self.get_name(),
+            true,
+            self.has_edge_types(),
+            self.has_edge_weights(),
+            false,
+            true,
+            true,
+            true,
+            verbose,
+        )
+        .unwrap()
+    }
+
     /// Return the graph from the arrowhead adjacency matrix.
     ///
     /// # Arguments
