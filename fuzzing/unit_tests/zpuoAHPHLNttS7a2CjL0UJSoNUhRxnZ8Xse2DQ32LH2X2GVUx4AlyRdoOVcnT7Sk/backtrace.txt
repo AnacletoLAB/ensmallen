@@ -1,0 +1,37 @@
+   0:     0x5555555fef43 - backtrace::capture::Backtrace::new::h23c7f25eb1053b44
+   1:     0x5555558ac8f9 - graph_harness::handle_panics::dump_backtrace::h8e7bf065d4414e97
+   2:     0x5555558ad717 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h088465f4f59dd485
+   3:     0x5555558d23fa - graph_harness::meta_test::meta_test::{{closure}}::hdaa968cc7a6fcdb5
+   4:     0x555555b64c30 - std::panicking::rust_panic_with_hook::hde05f051c0c95c4a
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/std/src/panicking.rs:626:17
+   5:     0x555555b7f70e - std::panicking::begin_panic_handler::{{closure}}::h49a1ef32b3e38727
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/std/src/panicking.rs:517:13
+   6:     0x555555b7f6ae - std::sys_common::backtrace::__rust_end_short_backtrace::hed2471df08b67583
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/std/src/sys_common/backtrace.rs:141:18
+   7:     0x555555b7f65d - rust_begin_unwind
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/std/src/panicking.rs:515:5
+   8:     0x5555555ab190 - core::panicking::panic_fmt::hbe99dddd3092ba3c
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/core/src/panicking.rs:92:14
+   9:     0x5555555ab0dc - core::panicking::panic::h3de4db67bd397eb3
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/core/src/panicking.rs:50:5
+  10:     0x55555579f00c - rayon::iter::plumbing::bridge_producer_consumer::helper::h79fb219737c023ee
+  11:     0x5555558875f0 - rayon_core::job::StackJob<L,F,R>::run_inline::he509318bdf1e3d07
+  12:     0x55555579ecaa - rayon::iter::plumbing::bridge_producer_consumer::helper::h79fb219737c023ee
+  13:     0x55555564d57b - std::panic::catch_unwind::h11f5ef1206e9013d
+  14:     0x55555579ea2d - rayon::iter::plumbing::bridge_producer_consumer::helper::h79fb219737c023ee
+  15:     0x5555558875f0 - rayon_core::job::StackJob<L,F,R>::run_inline::he509318bdf1e3d07
+  16:     0x55555579ecaa - rayon::iter::plumbing::bridge_producer_consumer::helper::h79fb219737c023ee
+  17:     0x55555564d57b - std::panic::catch_unwind::h11f5ef1206e9013d
+  18:     0x555555837cb6 - <rayon_core::job::StackJob<L,F,R> as rayon_core::job::Job>::execute::hf29cdf435fa0ec27
+  19:     0x5555555c9d71 - rayon_core::registry::WorkerThread::wait_until_cold::h10dc1c61aa5863d4
+  20:     0x555555a741ca - std::sys_common::backtrace::__rust_begin_short_backtrace::hd624e8b05b1969c7
+  21:     0x555555a73444 - core::ops::function::FnOnce::call_once{{vtable.shim}}::h8dfcb048862a6b66
+  22:     0x555555b852c7 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h79456d14677dd3c1
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/alloc/src/boxed.rs:1575:9
+                           <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h5c40c73501d779c0
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/alloc/src/boxed.rs:1575:9
+                           std::sys::unix::thread::Thread::new::thread_start::h55fc0fe77abc7cf7
+                               at /rustc/f58631b4503b5cd34163cf9c3ff19dc3e0c8a09e/library/std/src/sys/unix/thread.rs:71:17
+  23:     0x7ffff7f5e299 - start_thread
+  24:     0x7ffff7d3b053 - clone
+  25:                0x0 - <unknown>

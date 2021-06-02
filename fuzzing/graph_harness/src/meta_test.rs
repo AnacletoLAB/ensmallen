@@ -1365,7 +1365,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
         match rng.next() % 339 {
 
     0 => {
-        trace.push(format!("spanning_arborescence_kruskal({:?})", &data.spanningarborescencekruskal.verbose));
+        trace.push(format!("spanning_arborescence_kruskal(verbose: {:?})", &data.spanningarborescencekruskal.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1378,7 +1378,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     1 => {
-        trace.push(format!("spanning_arborescence({:?})", &data.spanningarborescence.verbose));
+        trace.push(format!("spanning_arborescence(verbose: {:?})", &data.spanningarborescence.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1391,7 +1391,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     2 => {
-        trace.push(format!("connected_components({:?})", &data.connectedcomponents.verbose));
+        trace.push(format!("connected_components(verbose: {:?})", &data.connectedcomponents.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1404,7 +1404,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     3 => {
-        trace.push(format!("get_node_label_prediction_tuple_from_node_ids({:?}, {:?}, {:?}, {:?}, {:?})", &data.getnodelabelpredictiontuplefromnodeids.node_ids, &data.getnodelabelpredictiontuplefromnodeids.random_state, &data.getnodelabelpredictiontuplefromnodeids.include_central_node, &data.getnodelabelpredictiontuplefromnodeids.offset, &data.getnodelabelpredictiontuplefromnodeids.max_neighbours));
+        trace.push(format!("get_node_label_prediction_tuple_from_node_ids(node_ids: {:?}, random_state: {:?}, include_central_node: {:?}, offset: {:?}, max_neighbours: {:?})", &data.getnodelabelpredictiontuplefromnodeids.node_ids, &data.getnodelabelpredictiontuplefromnodeids.random_state, &data.getnodelabelpredictiontuplefromnodeids.include_central_node, &data.getnodelabelpredictiontuplefromnodeids.offset, &data.getnodelabelpredictiontuplefromnodeids.max_neighbours));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1417,7 +1417,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     4 => {
-        trace.push(format!("get_okapi_bm25_node_feature_propagation({:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodefeaturepropagation.features, &data.getokapibm25nodefeaturepropagation.iterations.map(|x| x as usize), &data.getokapibm25nodefeaturepropagation.maximal_distance, &data.getokapibm25nodefeaturepropagation.k1, &data.getokapibm25nodefeaturepropagation.b, &data.getokapibm25nodefeaturepropagation.include_central_node, &data.getokapibm25nodefeaturepropagation.verbose));
+        trace.push(format!("get_okapi_bm25_node_feature_propagation(features: {:?}, iterations: {:?}, maximal_distance: {:?}, k1: {:?}, b: {:?}, include_central_node: {:?}, verbose: {:?})", &data.getokapibm25nodefeaturepropagation.features, &data.getokapibm25nodefeaturepropagation.iterations.map(|x| x as usize), &data.getokapibm25nodefeaturepropagation.maximal_distance, &data.getokapibm25nodefeaturepropagation.k1, &data.getokapibm25nodefeaturepropagation.b, &data.getokapibm25nodefeaturepropagation.include_central_node, &data.getokapibm25nodefeaturepropagation.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1430,7 +1430,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     5 => {
-        trace.push(format!("get_okapi_bm25_node_label_propagation({:?}, {:?}, {:?}, {:?}, {:?})", &data.getokapibm25nodelabelpropagation.iterations.map(|x| x as usize), &data.getokapibm25nodelabelpropagation.maximal_distance, &data.getokapibm25nodelabelpropagation.k1, &data.getokapibm25nodelabelpropagation.b, &data.getokapibm25nodelabelpropagation.verbose));
+        trace.push(format!("get_okapi_bm25_node_label_propagation(iterations: {:?}, maximal_distance: {:?}, k1: {:?}, b: {:?}, verbose: {:?})", &data.getokapibm25nodelabelpropagation.iterations.map(|x| x as usize), &data.getokapibm25nodelabelpropagation.maximal_distance, &data.getokapibm25nodelabelpropagation.k1, &data.getokapibm25nodelabelpropagation.b, &data.getokapibm25nodelabelpropagation.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1443,7 +1443,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     6 => {
-        trace.push(format!("to_dot({:?})", &data.todot.use_node_names));
+        trace.push(format!("to_dot(use_node_names: {:?})", &data.todot.use_node_names));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1456,7 +1456,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     7 => {
-        trace.push(format!("is_singleton_from_node_id({:?})", &data.issingletonfromnodeid.node_id));
+        trace.push(format!("is_singleton_from_node_id(node_id: {:?})", &data.issingletonfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1469,7 +1469,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     8 => {
-        trace.push(format!("is_singleton_with_selfloops_from_node_id({:?})", &data.issingletonwithselfloopsfromnodeid.node_id));
+        trace.push(format!("is_singleton_with_selfloops_from_node_id(node_id: {:?})", &data.issingletonwithselfloopsfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1482,7 +1482,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     9 => {
-        trace.push(format!("has_node_type_id({:?})", &data.hasnodetypeid.node_type_id));
+        trace.push(format!("has_node_type_id(node_type_id: {:?})", &data.hasnodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1495,7 +1495,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     10 => {
-        trace.push(format!("has_edge_type_id({:?})", &data.hasedgetypeid.edge_type_id));
+        trace.push(format!("has_edge_type_id(edge_type_id: {:?})", &data.hasedgetypeid.edge_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1508,7 +1508,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     11 => {
-        trace.push(format!("has_edge_from_node_ids({:?}, {:?})", &data.hasedgefromnodeids.src, &data.hasedgefromnodeids.dst));
+        trace.push(format!("has_edge_from_node_ids(src: {:?}, dst: {:?})", &data.hasedgefromnodeids.src, &data.hasedgefromnodeids.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1521,7 +1521,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     12 => {
-        trace.push(format!("has_selfloop_from_node_id({:?})", &data.hasselfloopfromnodeid.node_id));
+        trace.push(format!("has_selfloop_from_node_id(node_id: {:?})", &data.hasselfloopfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1534,7 +1534,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     13 => {
-        trace.push(format!("has_edge_from_node_ids_and_edge_type_id({:?}, {:?}, {:?})", &data.hasedgefromnodeidsandedgetypeid.src, &data.hasedgefromnodeidsandedgetypeid.dst, &data.hasedgefromnodeidsandedgetypeid.edge_type));
+        trace.push(format!("has_edge_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.hasedgefromnodeidsandedgetypeid.src, &data.hasedgefromnodeidsandedgetypeid.dst, &data.hasedgefromnodeidsandedgetypeid.edge_type));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1547,7 +1547,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     14 => {
-        trace.push(format!("is_trap_node_from_node_id({:?})", &data.istrapnodefromnodeid.node_id));
+        trace.push(format!("is_trap_node_from_node_id(node_id: {:?})", &data.istrapnodefromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1560,7 +1560,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     15 => {
-        trace.push(format!("get_preferential_attachment({:?}, {:?}, {:?})", &data.getpreferentialattachment.one, &data.getpreferentialattachment.two, &data.getpreferentialattachment.normalize));
+        trace.push(format!("get_preferential_attachment(one: {:?}, two: {:?}, normalize: {:?})", &data.getpreferentialattachment.one, &data.getpreferentialattachment.two, &data.getpreferentialattachment.normalize));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1573,7 +1573,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     16 => {
-        trace.push(format!("get_jaccard_coefficient({:?}, {:?})", &data.getjaccardcoefficient.one, &data.getjaccardcoefficient.two));
+        trace.push(format!("get_jaccard_coefficient(one: {:?}, two: {:?})", &data.getjaccardcoefficient.one, &data.getjaccardcoefficient.two));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1586,7 +1586,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     17 => {
-        trace.push(format!("get_adamic_adar_index({:?}, {:?})", &data.getadamicadarindex.one, &data.getadamicadarindex.two));
+        trace.push(format!("get_adamic_adar_index(one: {:?}, two: {:?})", &data.getadamicadarindex.one, &data.getadamicadarindex.two));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1599,7 +1599,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     18 => {
-        trace.push(format!("get_resource_allocation_index({:?}, {:?})", &data.getresourceallocationindex.one, &data.getresourceallocationindex.two));
+        trace.push(format!("get_resource_allocation_index(one: {:?}, two: {:?})", &data.getresourceallocationindex.one, &data.getresourceallocationindex.two));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1612,7 +1612,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     19 => {
-        trace.push(format!("enable({:?}, {:?}, {:?}, {:?})", &data.enable.vector_sources, &data.enable.vector_destinations, &data.enable.vector_cumulative_node_degrees, &data.enable.cache_size));
+        trace.push(format!("enable(vector_sources: {:?}, vector_destinations: {:?}, vector_cumulative_node_degrees: {:?}, cache_size: {:?})", &data.enable.vector_sources, &data.enable.vector_destinations, &data.enable.vector_cumulative_node_degrees, &data.enable.cache_size));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1638,7 +1638,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     21 => {
-        trace.push(format!("get_unweighted_number_of_triangles({:?})", &data.getunweightednumberoftriangles.normalize));
+        trace.push(format!("get_unweighted_number_of_triangles(normalize: {:?})", &data.getunweightednumberoftriangles.normalize));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1690,7 +1690,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     25 => {
-        trace.push(format!("get_unweighted_number_of_triangles_per_node({:?})", &data.getunweightednumberoftrianglespernode.normalize));
+        trace.push(format!("get_unweighted_number_of_triangles_per_node(normalize: {:?})", &data.getunweightednumberoftrianglespernode.normalize));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1757,7 +1757,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     30 => {
-        trace.push(format!("get_unweighted_minimum_path_node_ids_from_node_ids({:?}, {:?}, {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth));
+        trace.push(format!("get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1770,7 +1770,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     31 => {
-        trace.push(format!("get_unweighted_k_shortest_path_node_ids_from_node_ids({:?}, {:?}, {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k));
+        trace.push(format!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1783,7 +1783,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     32 => {
-        trace.push(format!("get_unweighted_eccentricity_from_node_id({:?})", &data.getunweightedeccentricityfromnodeid.node_id));
+        trace.push(format!("get_unweighted_eccentricity_from_node_id(node_id: {:?})", &data.getunweightedeccentricityfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1796,7 +1796,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     33 => {
-        trace.push(format!("get_weighted_eccentricity_from_node_id({:?}, {:?})", &data.getweightedeccentricityfromnodeid.node_id, &data.getweightedeccentricityfromnodeid.use_edge_weights_as_probabilities));
+        trace.push(format!("get_weighted_eccentricity_from_node_id(node_id: {:?}, use_edge_weights_as_probabilities: {:?})", &data.getweightedeccentricityfromnodeid.node_id, &data.getweightedeccentricityfromnodeid.use_edge_weights_as_probabilities));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1809,7 +1809,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     34 => {
-        trace.push(format!("get_weighted_minimum_path_node_ids_from_node_ids({:?}, {:?}, {:?}, {:?})", &data.getweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getweightedminimumpathnodeidsfromnodeids.use_edge_weights_as_probabilities, &data.getweightedminimumpathnodeidsfromnodeids.maximal_depth));
+        trace.push(format!("get_weighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, use_edge_weights_as_probabilities: {:?}, maximal_depth: {:?})", &data.getweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getweightedminimumpathnodeidsfromnodeids.use_edge_weights_as_probabilities, &data.getweightedminimumpathnodeidsfromnodeids.maximal_depth));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1822,7 +1822,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     35 => {
-        trace.push(format!("get_breath_first_search_from_node_ids({:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.getbreathfirstsearchfromnodeids.src_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_ids, &data.getbreathfirstsearchfromnodeids.compute_distances, &data.getbreathfirstsearchfromnodeids.compute_predecessors, &data.getbreathfirstsearchfromnodeids.compute_visited, &data.getbreathfirstsearchfromnodeids.maximal_depth));
+        trace.push(format!("get_breath_first_search_from_node_ids(src_node_id: {:?}, maybe_dst_node_id: {:?}, maybe_dst_node_ids: {:?}, compute_distances: {:?}, compute_predecessors: {:?}, compute_visited: {:?}, maximal_depth: {:?})", &data.getbreathfirstsearchfromnodeids.src_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_ids, &data.getbreathfirstsearchfromnodeids.compute_distances, &data.getbreathfirstsearchfromnodeids.compute_predecessors, &data.getbreathfirstsearchfromnodeids.compute_visited, &data.getbreathfirstsearchfromnodeids.maximal_depth));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1835,7 +1835,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     36 => {
-        trace.push(format!("get_dijkstra_from_node_ids({:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.getdijkstrafromnodeids.src_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_ids, &data.getdijkstrafromnodeids.compute_predecessors, &data.getdijkstrafromnodeids.maximal_depth, &data.getdijkstrafromnodeids.use_edge_weights_as_probabilities));
+        trace.push(format!("get_dijkstra_from_node_ids(src_node_id: {:?}, maybe_dst_node_id: {:?}, maybe_dst_node_ids: {:?}, compute_predecessors: {:?}, maximal_depth: {:?}, use_edge_weights_as_probabilities: {:?})", &data.getdijkstrafromnodeids.src_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_ids, &data.getdijkstrafromnodeids.compute_predecessors, &data.getdijkstrafromnodeids.maximal_depth, &data.getdijkstrafromnodeids.use_edge_weights_as_probabilities));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1848,7 +1848,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     37 => {
-        trace.push(format!("get_unweighted_diameter({:?}, {:?})", &data.getunweighteddiameter.ignore_infinity, &data.getunweighteddiameter.verbose));
+        trace.push(format!("get_unweighted_diameter(ignore_infinity: {:?}, verbose: {:?})", &data.getunweighteddiameter.ignore_infinity, &data.getunweighteddiameter.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1861,7 +1861,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     38 => {
-        trace.push(format!("get_weighted_diameter({:?}, {:?}, {:?})", &data.getweighteddiameter.ignore_infinity, &data.getweighteddiameter.use_edge_weights_as_probabilities, &data.getweighteddiameter.verbose));
+        trace.push(format!("get_weighted_diameter(ignore_infinity: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweighteddiameter.ignore_infinity, &data.getweighteddiameter.use_edge_weights_as_probabilities, &data.getweighteddiameter.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1874,7 +1874,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     39 => {
-        trace.push(format!("iter_edge_ids_from_node_ids({:?}, {:?})", &data.iteredgeidsfromnodeids.src, &data.iteredgeidsfromnodeids.dst));
+        trace.push(format!("iter_edge_ids_from_node_ids(src: {:?}, dst: {:?})", &data.iteredgeidsfromnodeids.src, &data.iteredgeidsfromnodeids.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1889,7 +1889,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     40 => {
-        trace.push(format!("iter_edge_node_ids_and_edge_type_id_from_edge_type_id({:?}, {:?})", &data.iteredgenodeidsandedgetypeidfromedgetypeid.edge_type_id, &data.iteredgenodeidsandedgetypeidfromedgetypeid.directed));
+        trace.push(format!("iter_edge_node_ids_and_edge_type_id_from_edge_type_id(edge_type_id: {:?}, directed: {:?})", &data.iteredgenodeidsandedgetypeidfromedgetypeid.edge_type_id, &data.iteredgenodeidsandedgetypeidfromedgetypeid.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1904,7 +1904,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     41 => {
-        trace.push(format!("iter_node_ids_and_node_type_ids_from_node_type_id({:?})", &data.iternodeidsandnodetypeidsfromnodetypeid.node_type_id));
+        trace.push(format!("iter_node_ids_and_node_type_ids_from_node_type_id(node_type_id: {:?})", &data.iternodeidsandnodetypeidsfromnodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1919,7 +1919,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     42 => {
-        trace.push(format!("iter_node_names_and_node_type_names_from_node_type_id({:?})", &data.iternodenamesandnodetypenamesfromnodetypeid.node_type_id));
+        trace.push(format!("iter_node_names_and_node_type_names_from_node_type_id(node_type_id: {:?})", &data.iternodenamesandnodetypenamesfromnodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1932,7 +1932,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     43 => {
-        trace.push(format!("iter_edge_node_names_and_edge_type_name_from_edge_type_id({:?}, {:?})", &data.iteredgenodenamesandedgetypenamefromedgetypeid.edge_type_id, &data.iteredgenodenamesandedgetypenamefromedgetypeid.directed));
+        trace.push(format!("iter_edge_node_names_and_edge_type_name_from_edge_type_id(edge_type_id: {:?}, directed: {:?})", &data.iteredgenodenamesandedgetypenamefromedgetypeid.edge_type_id, &data.iteredgenodenamesandedgetypenamefromedgetypeid.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1945,7 +1945,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     44 => {
-        trace.push(format!("get_transitive_closure({:?}, {:?})", &data.gettransitiveclosure.iterations, &data.gettransitiveclosure.verbose));
+        trace.push(format!("get_transitive_closure(iterations: {:?}, verbose: {:?})", &data.gettransitiveclosure.iterations, &data.gettransitiveclosure.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1958,7 +1958,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     45 => {
-        trace.push(format!("get_unweighted_all_shortest_paths({:?}, {:?})", &data.getunweightedallshortestpaths.iterations, &data.getunweightedallshortestpaths.verbose));
+        trace.push(format!("get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})", &data.getunweightedallshortestpaths.iterations, &data.getunweightedallshortestpaths.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -1971,7 +1971,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     46 => {
-        trace.push(format!("get_weighted_all_shortest_paths({:?}, {:?}, {:?})", &data.getweightedallshortestpaths.iterations, &data.getweightedallshortestpaths.use_edge_weights_as_probabilities, &data.getweightedallshortestpaths.verbose));
+        trace.push(format!("get_weighted_all_shortest_paths(iterations: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedallshortestpaths.iterations, &data.getweightedallshortestpaths.use_edge_weights_as_probabilities, &data.getweightedallshortestpaths.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2001,7 +2001,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     48 => {
-        trace.push(format!("get_node_ids_from_edge_id({:?})", &data.getnodeidsfromedgeid.edge_id));
+        trace.push(format!("get_node_ids_from_edge_id(edge_id: {:?})", &data.getnodeidsfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2014,7 +2014,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     49 => {
-        trace.push(format!("get_edge_id_from_node_ids({:?}, {:?})", &data.getedgeidfromnodeids.src, &data.getedgeidfromnodeids.dst));
+        trace.push(format!("get_edge_id_from_node_ids(src: {:?}, dst: {:?})", &data.getedgeidfromnodeids.src, &data.getedgeidfromnodeids.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2027,7 +2027,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     50 => {
-        trace.push(format!("get_node_ids_and_edge_type_id_from_edge_id({:?})", &data.getnodeidsandedgetypeidfromedgeid.edge_id));
+        trace.push(format!("get_node_ids_and_edge_type_id_from_edge_id(edge_id: {:?})", &data.getnodeidsandedgetypeidfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2040,7 +2040,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     51 => {
-        trace.push(format!("get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id({:?})", &data.getnodeidsandedgetypeidandedgeweightfromedgeid.edge_id));
+        trace.push(format!("get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id: {:?})", &data.getnodeidsandedgetypeidandedgeweightfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2053,7 +2053,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     52 => {
-        trace.push(format!("get_top_k_central_node_ids({:?})", &data.gettopkcentralnodeids.k));
+        trace.push(format!("get_top_k_central_node_ids(k: {:?})", &data.gettopkcentralnodeids.k));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2066,7 +2066,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     53 => {
-        trace.push(format!("get_unweighted_node_degree_from_node_id({:?})", &data.getunweightednodedegreefromnodeid.node_id));
+        trace.push(format!("get_unweighted_node_degree_from_node_id(node_id: {:?})", &data.getunweightednodedegreefromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2079,7 +2079,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     54 => {
-        trace.push(format!("get_weighted_node_degree_from_node_id({:?})", &data.getweightednodedegreefromnodeid.node_id));
+        trace.push(format!("get_weighted_node_degree_from_node_id(node_id: {:?})", &data.getweightednodedegreefromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2092,7 +2092,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     55 => {
-        trace.push(format!("get_top_k_central_node_names({:?})", &data.gettopkcentralnodenames.k));
+        trace.push(format!("get_top_k_central_node_names(k: {:?})", &data.gettopkcentralnodenames.k));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2105,7 +2105,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     56 => {
-        trace.push(format!("get_node_type_id_from_node_id({:?})", &data.getnodetypeidfromnodeid.node_id));
+        trace.push(format!("get_node_type_id_from_node_id(node_id: {:?})", &data.getnodetypeidfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2118,7 +2118,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     57 => {
-        trace.push(format!("get_edge_type_id_from_edge_id({:?})", &data.getedgetypeidfromedgeid.edge_id));
+        trace.push(format!("get_edge_type_id_from_edge_id(edge_id: {:?})", &data.getedgetypeidfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2131,7 +2131,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     58 => {
-        trace.push(format!("get_node_type_names_from_node_id({:?})", &data.getnodetypenamesfromnodeid.node_id));
+        trace.push(format!("get_node_type_names_from_node_id(node_id: {:?})", &data.getnodetypenamesfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2144,7 +2144,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     59 => {
-        trace.push(format!("get_edge_type_name_from_edge_id({:?})", &data.getedgetypenamefromedgeid.edge_id));
+        trace.push(format!("get_edge_type_name_from_edge_id(edge_id: {:?})", &data.getedgetypenamefromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2157,7 +2157,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     60 => {
-        trace.push(format!("get_edge_type_name_from_edge_type_id({:?})", &data.getedgetypenamefromedgetypeid.edge_type_id));
+        trace.push(format!("get_edge_type_name_from_edge_type_id(edge_type_id: {:?})", &data.getedgetypenamefromedgetypeid.edge_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2170,7 +2170,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     61 => {
-        trace.push(format!("get_edge_weight_from_edge_id({:?})", &data.getedgeweightfromedgeid.edge_id));
+        trace.push(format!("get_edge_weight_from_edge_id(edge_id: {:?})", &data.getedgeweightfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2183,7 +2183,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     62 => {
-        trace.push(format!("get_edge_weight_from_node_ids({:?}, {:?})", &data.getedgeweightfromnodeids.src, &data.getedgeweightfromnodeids.dst));
+        trace.push(format!("get_edge_weight_from_node_ids(src: {:?}, dst: {:?})", &data.getedgeweightfromnodeids.src, &data.getedgeweightfromnodeids.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2196,7 +2196,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     63 => {
-        trace.push(format!("get_edge_weight_from_node_ids_and_edge_type_id({:?}, {:?}, {:?})", &data.getedgeweightfromnodeidsandedgetypeid.src, &data.getedgeweightfromnodeidsandedgetypeid.dst, &data.getedgeweightfromnodeidsandedgetypeid.edge_type));
+        trace.push(format!("get_edge_weight_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.getedgeweightfromnodeidsandedgetypeid.src, &data.getedgeweightfromnodeidsandedgetypeid.dst, &data.getedgeweightfromnodeidsandedgetypeid.edge_type));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2209,7 +2209,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     64 => {
-        trace.push(format!("get_node_name_from_node_id({:?})", &data.getnodenamefromnodeid.node_id));
+        trace.push(format!("get_node_name_from_node_id(node_id: {:?})", &data.getnodenamefromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2222,7 +2222,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     65 => {
-        trace.push(format!("get_edge_node_names_from_edge_node_ids({:?})", &data.getedgenodenamesfromedgenodeids.edge_node_ids));
+        trace.push(format!("get_edge_node_names_from_edge_node_ids(edge_node_ids: {:?})", &data.getedgenodenamesfromedgenodeids.edge_node_ids));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2235,7 +2235,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     66 => {
-        trace.push(format!("get_edge_count_from_edge_type_id({:?})", &data.getedgecountfromedgetypeid.edge_type_id));
+        trace.push(format!("get_edge_count_from_edge_type_id(edge_type_id: {:?})", &data.getedgecountfromedgetypeid.edge_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2248,7 +2248,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     67 => {
-        trace.push(format!("get_node_count_from_node_type_id({:?})", &data.getnodecountfromnodetypeid.node_type_id));
+        trace.push(format!("get_node_count_from_node_type_id(node_type_id: {:?})", &data.getnodecountfromnodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2261,7 +2261,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     68 => {
-        trace.push(format!("get_destination_node_id_from_edge_id({:?})", &data.getdestinationnodeidfromedgeid.edge_id));
+        trace.push(format!("get_destination_node_id_from_edge_id(edge_id: {:?})", &data.getdestinationnodeidfromedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2274,7 +2274,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     69 => {
-        trace.push(format!("get_neighbour_node_ids_from_node_id({:?})", &data.getneighbournodeidsfromnodeid.node_id));
+        trace.push(format!("get_neighbour_node_ids_from_node_id(node_id: {:?})", &data.getneighbournodeidsfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2287,7 +2287,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     70 => {
-        trace.push(format!("get_minmax_edge_ids_from_node_ids({:?}, {:?})", &data.getminmaxedgeidsfromnodeids.src, &data.getminmaxedgeidsfromnodeids.dst));
+        trace.push(format!("get_minmax_edge_ids_from_node_ids(src: {:?}, dst: {:?})", &data.getminmaxedgeidsfromnodeids.src, &data.getminmaxedgeidsfromnodeids.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2300,7 +2300,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     71 => {
-        trace.push(format!("get_edge_id_from_node_ids_and_edge_type_id({:?}, {:?}, {:?})", &data.getedgeidfromnodeidsandedgetypeid.src, &data.getedgeidfromnodeidsandedgetypeid.dst, &data.getedgeidfromnodeidsandedgetypeid.edge_type));
+        trace.push(format!("get_edge_id_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.getedgeidfromnodeidsandedgetypeid.src, &data.getedgeidfromnodeidsandedgetypeid.dst, &data.getedgeidfromnodeidsandedgetypeid.edge_type));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2313,7 +2313,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     72 => {
-        trace.push(format!("get_minmax_edge_ids_from_source_node_id({:?})", &data.getminmaxedgeidsfromsourcenodeid.src));
+        trace.push(format!("get_minmax_edge_ids_from_source_node_id(src: {:?})", &data.getminmaxedgeidsfromsourcenodeid.src));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2326,7 +2326,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     73 => {
-        trace.push(format!("get_node_type_name_from_node_type_id({:?})", &data.getnodetypenamefromnodetypeid.node_type_id));
+        trace.push(format!("get_node_type_name_from_node_type_id(node_type_id: {:?})", &data.getnodetypenamefromnodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2339,7 +2339,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     74 => {
-        trace.push(format!("filter_from_ids({:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?}, {:?})", &data.filterfromids.node_ids_to_keep, &data.filterfromids.node_ids_to_filter, &data.filterfromids.node_type_ids_to_keep, &data.filterfromids.node_type_ids_to_filter, &data.filterfromids.node_type_id_to_keep, &data.filterfromids.node_type_id_to_filter, &data.filterfromids.edge_ids_to_keep, &data.filterfromids.edge_ids_to_filter, &data.filterfromids.edge_node_ids_to_keep, &data.filterfromids.edge_node_ids_to_filter, &data.filterfromids.edge_type_ids_to_keep, &data.filterfromids.edge_type_ids_to_filter, &data.filterfromids.min_edge_weight, &data.filterfromids.max_edge_weight, &data.filterfromids.filter_singleton_nodes, &data.filterfromids.filter_singleton_nodes_with_selfloop, &data.filterfromids.filter_selfloops, &data.filterfromids.filter_parallel_edges, &data.filterfromids.verbose));
+        trace.push(format!("filter_from_ids(node_ids_to_keep: {:?}, node_ids_to_filter: {:?}, node_type_ids_to_keep: {:?}, node_type_ids_to_filter: {:?}, node_type_id_to_keep: {:?}, node_type_id_to_filter: {:?}, edge_ids_to_keep: {:?}, edge_ids_to_filter: {:?}, edge_node_ids_to_keep: {:?}, edge_node_ids_to_filter: {:?}, edge_type_ids_to_keep: {:?}, edge_type_ids_to_filter: {:?}, min_edge_weight: {:?}, max_edge_weight: {:?}, filter_singleton_nodes: {:?}, filter_singleton_nodes_with_selfloop: {:?}, filter_selfloops: {:?}, filter_parallel_edges: {:?}, verbose: {:?})", &data.filterfromids.node_ids_to_keep, &data.filterfromids.node_ids_to_filter, &data.filterfromids.node_type_ids_to_keep, &data.filterfromids.node_type_ids_to_filter, &data.filterfromids.node_type_id_to_keep, &data.filterfromids.node_type_id_to_filter, &data.filterfromids.edge_ids_to_keep, &data.filterfromids.edge_ids_to_filter, &data.filterfromids.edge_node_ids_to_keep, &data.filterfromids.edge_node_ids_to_filter, &data.filterfromids.edge_type_ids_to_keep, &data.filterfromids.edge_type_ids_to_filter, &data.filterfromids.min_edge_weight, &data.filterfromids.max_edge_weight, &data.filterfromids.filter_singleton_nodes, &data.filterfromids.filter_singleton_nodes_with_selfloop, &data.filterfromids.filter_selfloops, &data.filterfromids.filter_parallel_edges, &data.filterfromids.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2352,7 +2352,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     75 => {
-        trace.push(format!("drop_unknown_node_types({:?})", &data.dropunknownnodetypes.verbose));
+        trace.push(format!("drop_unknown_node_types(verbose: {:?})", &data.dropunknownnodetypes.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2365,7 +2365,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     76 => {
-        trace.push(format!("drop_unknown_edge_types({:?})", &data.dropunknownedgetypes.verbose));
+        trace.push(format!("drop_unknown_edge_types(verbose: {:?})", &data.dropunknownedgetypes.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2378,7 +2378,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     77 => {
-        trace.push(format!("drop_singleton_nodes({:?})", &data.dropsingletonnodes.verbose));
+        trace.push(format!("drop_singleton_nodes(verbose: {:?})", &data.dropsingletonnodes.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2391,7 +2391,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     78 => {
-        trace.push(format!("drop_singleton_nodes_with_selfloops({:?})", &data.dropsingletonnodeswithselfloops.verbose));
+        trace.push(format!("drop_singleton_nodes_with_selfloops(verbose: {:?})", &data.dropsingletonnodeswithselfloops.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2404,7 +2404,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     79 => {
-        trace.push(format!("drop_selfloops({:?})", &data.dropselfloops.verbose));
+        trace.push(format!("drop_selfloops(verbose: {:?})", &data.dropselfloops.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2417,7 +2417,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     80 => {
-        trace.push(format!("drop_parallel_edges({:?})", &data.dropparalleledges.verbose));
+        trace.push(format!("drop_parallel_edges(verbose: {:?})", &data.dropparalleledges.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2430,7 +2430,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     81 => {
-        trace.push(format!("validate_node_id({:?})", &data.validatenodeid.node_id));
+        trace.push(format!("validate_node_id(node_id: {:?})", &data.validatenodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2443,7 +2443,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     82 => {
-        trace.push(format!("validate_node_ids({:?})", &data.validatenodeids.node_ids));
+        trace.push(format!("validate_node_ids(node_ids: {:?})", &data.validatenodeids.node_ids));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2456,7 +2456,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     83 => {
-        trace.push(format!("validate_edge_id({:?})", &data.validateedgeid.edge_id));
+        trace.push(format!("validate_edge_id(edge_id: {:?})", &data.validateedgeid.edge_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2469,7 +2469,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     84 => {
-        trace.push(format!("validate_edge_ids({:?})", &data.validateedgeids.edge_ids));
+        trace.push(format!("validate_edge_ids(edge_ids: {:?})", &data.validateedgeids.edge_ids));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2482,7 +2482,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     85 => {
-        trace.push(format!("validate_node_type_id({:?})", &data.validatenodetypeid.node_type_id));
+        trace.push(format!("validate_node_type_id(node_type_id: {:?})", &data.validatenodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2495,7 +2495,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     86 => {
-        trace.push(format!("validate_node_type_ids({:?})", &data.validatenodetypeids.node_type_ids));
+        trace.push(format!("validate_node_type_ids(node_type_ids: {:?})", &data.validatenodetypeids.node_type_ids));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2508,7 +2508,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     87 => {
-        trace.push(format!("validate_edge_type_id({:?})", &data.validateedgetypeid.edge_type_id));
+        trace.push(format!("validate_edge_type_id(edge_type_id: {:?})", &data.validateedgetypeid.edge_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2521,7 +2521,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     88 => {
-        trace.push(format!("validate_edge_type_ids({:?})", &data.validateedgetypeids.edge_type_ids));
+        trace.push(format!("validate_edge_type_ids(edge_type_ids: {:?})", &data.validateedgetypeids.edge_type_ids));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2733,7 +2733,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     104 => {
-        trace.push(format!("par_iter_unweighted_closeness_centrality({:?})", &data.pariterunweightedclosenesscentrality.verbose));
+        trace.push(format!("par_iter_unweighted_closeness_centrality(verbose: {:?})", &data.pariterunweightedclosenesscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2748,7 +2748,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     105 => {
-        trace.push(format!("par_iter_weighted_closeness_centrality({:?}, {:?})", &data.pariterweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.pariterweightedclosenesscentrality.verbose));
+        trace.push(format!("par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.pariterweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.pariterweightedclosenesscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2763,7 +2763,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     106 => {
-        trace.push(format!("get_unweighted_closeness_centrality({:?})", &data.getunweightedclosenesscentrality.verbose));
+        trace.push(format!("get_unweighted_closeness_centrality(verbose: {:?})", &data.getunweightedclosenesscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2776,7 +2776,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     107 => {
-        trace.push(format!("get_weighted_closeness_centrality({:?}, {:?})", &data.getweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.getweightedclosenesscentrality.verbose));
+        trace.push(format!("get_weighted_closeness_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.getweightedclosenesscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2789,7 +2789,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     108 => {
-        trace.push(format!("par_iter_unweighted_harmonic_centrality({:?})", &data.pariterunweightedharmoniccentrality.verbose));
+        trace.push(format!("par_iter_unweighted_harmonic_centrality(verbose: {:?})", &data.pariterunweightedharmoniccentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2804,7 +2804,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     109 => {
-        trace.push(format!("par_iter_weighted_harmonic_centrality({:?}, {:?})", &data.pariterweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.pariterweightedharmoniccentrality.verbose));
+        trace.push(format!("par_iter_weighted_harmonic_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.pariterweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.pariterweightedharmoniccentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2819,7 +2819,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     110 => {
-        trace.push(format!("get_unweighted_harmonic_centrality({:?})", &data.getunweightedharmoniccentrality.verbose));
+        trace.push(format!("get_unweighted_harmonic_centrality(verbose: {:?})", &data.getunweightedharmoniccentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2832,7 +2832,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     111 => {
-        trace.push(format!("get_weighted_harmonic_centrality({:?}, {:?})", &data.getweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.getweightedharmoniccentrality.verbose));
+        trace.push(format!("get_weighted_harmonic_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.getweightedharmoniccentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2845,7 +2845,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     112 => {
-        trace.push(format!("get_stress_centrality({:?}, {:?})", &data.getstresscentrality.normalize, &data.getstresscentrality.verbose));
+        trace.push(format!("get_stress_centrality(normalize: {:?}, verbose: {:?})", &data.getstresscentrality.normalize, &data.getstresscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2858,7 +2858,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     113 => {
-        trace.push(format!("get_betweenness_centrality({:?}, {:?})", &data.getbetweennesscentrality.normalize, &data.getbetweennesscentrality.verbose));
+        trace.push(format!("get_betweenness_centrality(normalize: {:?}, verbose: {:?})", &data.getbetweennesscentrality.normalize, &data.getbetweennesscentrality.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2871,7 +2871,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     114 => {
-        trace.push(format!("get_unweighted_eigenvector_centrality({:?}, {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance));
+        trace.push(format!("get_unweighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2884,7 +2884,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     115 => {
-        trace.push(format!("get_weighted_eigenvector_centrality({:?}, {:?})", &data.getweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getweightedeigenvectorcentrality.tollerance));
+        trace.push(format!("get_weighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getweightedeigenvectorcentrality.tollerance));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2897,7 +2897,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     116 => {
-        trace.push(format!("remove_inplace_node_type_ids({:?})", &data.removeinplacenodetypeids.node_type_ids_to_remove));
+        trace.push(format!("remove_inplace_node_type_ids(node_type_ids_to_remove: {:?})", &data.removeinplacenodetypeids.node_type_ids_to_remove));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2923,7 +2923,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     118 => {
-        trace.push(format!("remove_inplace_edge_type_ids({:?})", &data.removeinplaceedgetypeids.edge_type_ids_to_remove));
+        trace.push(format!("remove_inplace_edge_type_ids(edge_type_ids_to_remove: {:?})", &data.removeinplaceedgetypeids.edge_type_ids_to_remove));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2949,7 +2949,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     120 => {
-        trace.push(format!("remove_node_type_id({:?})", &data.removenodetypeid.node_type_id));
+        trace.push(format!("remove_node_type_id(node_type_id: {:?})", &data.removenodetypeid.node_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2983,7 +2983,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     122 => {
-        trace.push(format!("remove_edge_type_id({:?})", &data.removeedgetypeid.edge_type_id));
+        trace.push(format!("remove_edge_type_id(edge_type_id: {:?})", &data.removeedgetypeid.edge_type_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3060,7 +3060,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     127 => {
-        trace.push(format!("remove_edge_types({:?})", &data.removeedgetypes.verbose));
+        trace.push(format!("remove_edge_types(verbose: {:?})", &data.removeedgetypes.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3107,7 +3107,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     130 => {
-        trace.push(format!("encode_edge({:?}, {:?})", &data.encodeedge.src, &data.encodeedge.dst));
+        trace.push(format!("encode_edge(src: {:?}, dst: {:?})", &data.encodeedge.src, &data.encodeedge.dst));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3120,7 +3120,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     131 => {
-        trace.push(format!("decode_edge({:?})", &data.decodeedge.edge));
+        trace.push(format!("decode_edge(edge: {:?})", &data.decodeedge.edge));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3185,7 +3185,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     136 => {
-        trace.push(format!("get_node_report_from_node_id({:?})", &data.getnodereportfromnodeid.node_id));
+        trace.push(format!("get_node_report_from_node_id(node_id: {:?})", &data.getnodereportfromnodeid.node_id));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3211,7 +3211,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     138 => {
-        trace.push(format!("textual_report({:?})", &data.textualreport.verbose));
+        trace.push(format!("textual_report(verbose: {:?})", &data.textualreport.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3224,7 +3224,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     139 => {
-        trace.push(format!("get_connected_components_number({:?})", &data.getconnectedcomponentsnumber.verbose));
+        trace.push(format!("get_connected_components_number(verbose: {:?})", &data.getconnectedcomponentsnumber.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3614,7 +3614,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     169 => {
-        trace.push(format!("get_source_node_ids({:?})", &data.getsourcenodeids.directed));
+        trace.push(format!("get_source_node_ids(directed: {:?})", &data.getsourcenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3627,7 +3627,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     170 => {
-        trace.push(format!("get_source_names({:?})", &data.getsourcenames.directed));
+        trace.push(format!("get_source_names(directed: {:?})", &data.getsourcenames.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3640,7 +3640,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     171 => {
-        trace.push(format!("get_destination_node_ids({:?})", &data.getdestinationnodeids.directed));
+        trace.push(format!("get_destination_node_ids(directed: {:?})", &data.getdestinationnodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3653,7 +3653,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     172 => {
-        trace.push(format!("get_destination_names({:?})", &data.getdestinationnames.directed));
+        trace.push(format!("get_destination_names(directed: {:?})", &data.getdestinationnames.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3913,7 +3913,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     192 => {
-        trace.push(format!("get_edge_node_ids({:?})", &data.getedgenodeids.directed));
+        trace.push(format!("get_edge_node_ids(directed: {:?})", &data.getedgenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -3926,7 +3926,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     193 => {
-        trace.push(format!("get_edge_node_names({:?})", &data.getedgenodenames.directed));
+        trace.push(format!("get_edge_node_names(directed: {:?})", &data.getedgenodenames.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4212,7 +4212,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     215 => {
-        trace.push(format!("get_node_connected_component_ids({:?})", &data.getnodeconnectedcomponentids.verbose));
+        trace.push(format!("get_node_connected_component_ids(verbose: {:?})", &data.getnodeconnectedcomponentids.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4420,7 +4420,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     231 => {
-        trace.push(format!("get_dense_weighted_adjacency_matrix({:?})", &data.getdenseweightedadjacencymatrix.weight));
+        trace.push(format!("get_dense_weighted_adjacency_matrix(weight: {:?})", &data.getdenseweightedadjacencymatrix.weight));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4838,7 +4838,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     259 => {
-        trace.push(format!("iter_source_node_ids({:?})", &data.itersourcenodeids.directed));
+        trace.push(format!("iter_source_node_ids(directed: {:?})", &data.itersourcenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4883,7 +4883,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     262 => {
-        trace.push(format!("par_iter_source_node_ids({:?})", &data.paritersourcenodeids.directed));
+        trace.push(format!("par_iter_source_node_ids(directed: {:?})", &data.paritersourcenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4898,7 +4898,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     263 => {
-        trace.push(format!("iter_destination_node_ids({:?})", &data.iterdestinationnodeids.directed));
+        trace.push(format!("iter_destination_node_ids(directed: {:?})", &data.iterdestinationnodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4913,7 +4913,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     264 => {
-        trace.push(format!("par_iter_destination_node_ids({:?})", &data.pariterdestinationnodeids.directed));
+        trace.push(format!("par_iter_destination_node_ids(directed: {:?})", &data.pariterdestinationnodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5003,7 +5003,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     270 => {
-        trace.push(format!("iter_edge_node_ids({:?})", &data.iteredgenodeids.directed));
+        trace.push(format!("iter_edge_node_ids(directed: {:?})", &data.iteredgenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5018,7 +5018,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     271 => {
-        trace.push(format!("iter_edges({:?})", &data.iteredges.directed));
+        trace.push(format!("iter_edges(directed: {:?})", &data.iteredges.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5033,7 +5033,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     272 => {
-        trace.push(format!("par_iter_edge_node_ids({:?})", &data.pariteredgenodeids.directed));
+        trace.push(format!("par_iter_edge_node_ids(directed: {:?})", &data.pariteredgenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5063,7 +5063,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     274 => {
-        trace.push(format!("par_iter_edges({:?})", &data.pariteredges.directed));
+        trace.push(format!("par_iter_edges(directed: {:?})", &data.pariteredges.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5108,7 +5108,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     277 => {
-        trace.push(format!("iter_edge_node_ids_and_edge_type_id({:?})", &data.iteredgenodeidsandedgetypeid.directed));
+        trace.push(format!("iter_edge_node_ids_and_edge_type_id(directed: {:?})", &data.iteredgenodeidsandedgetypeid.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5153,7 +5153,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     280 => {
-        trace.push(format!("iter_edge_node_names_and_edge_type_name({:?})", &data.iteredgenodenamesandedgetypename.directed));
+        trace.push(format!("iter_edge_node_names_and_edge_type_name(directed: {:?})", &data.iteredgenodenamesandedgetypename.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5166,7 +5166,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     281 => {
-        trace.push(format!("par_iter_edge_node_names_and_edge_type_name({:?})", &data.pariteredgenodenamesandedgetypename.directed));
+        trace.push(format!("par_iter_edge_node_names_and_edge_type_name(directed: {:?})", &data.pariteredgenodenamesandedgetypename.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5179,7 +5179,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     282 => {
-        trace.push(format!("par_iter_edge_node_ids_and_edge_type_id({:?})", &data.pariteredgenodeidsandedgetypeid.directed));
+        trace.push(format!("par_iter_edge_node_ids_and_edge_type_id(directed: {:?})", &data.pariteredgenodeidsandedgetypeid.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5194,7 +5194,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     283 => {
-        trace.push(format!("par_iter_edge_node_names_and_edge_type_name_and_edge_weight({:?})", &data.pariteredgenodenamesandedgetypenameandedgeweight.directed));
+        trace.push(format!("par_iter_edge_node_names_and_edge_type_name_and_edge_weight(directed: {:?})", &data.pariteredgenodenamesandedgetypenameandedgeweight.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5207,7 +5207,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     284 => {
-        trace.push(format!("iter_edge_node_names_and_edge_type_name_and_edge_weight({:?})", &data.iteredgenodenamesandedgetypenameandedgeweight.directed));
+        trace.push(format!("iter_edge_node_names_and_edge_type_name_and_edge_weight(directed: {:?})", &data.iteredgenodenamesandedgetypenameandedgeweight.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5220,7 +5220,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     285 => {
-        trace.push(format!("par_iter_edge_node_ids_and_edge_type_id_and_edge_weight({:?})", &data.pariteredgenodeidsandedgetypeidandedgeweight.directed));
+        trace.push(format!("par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed: {:?})", &data.pariteredgenodeidsandedgetypeidandedgeweight.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5235,7 +5235,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     286 => {
-        trace.push(format!("iter_edge_node_ids_and_edge_type_id_and_edge_weight({:?})", &data.iteredgenodeidsandedgetypeidandedgeweight.directed));
+        trace.push(format!("iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed: {:?})", &data.iteredgenodeidsandedgetypeidandedgeweight.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5250,7 +5250,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     287 => {
-        trace.push(format!("iter_unique_edge_node_ids({:?})", &data.iteruniqueedgenodeids.directed));
+        trace.push(format!("iter_unique_edge_node_ids(directed: {:?})", &data.iteruniqueedgenodeids.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5310,7 +5310,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     291 => {
-        trace.push(format!("iter_edge_node_ids_with_unknown_edge_types({:?})", &data.iteredgenodeidswithunknownedgetypes.directed));
+        trace.push(format!("iter_edge_node_ids_with_unknown_edge_types(directed: {:?})", &data.iteredgenodeidswithunknownedgetypes.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5325,7 +5325,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     292 => {
-        trace.push(format!("iter_edge_node_ids_with_known_edge_types({:?})", &data.iteredgenodeidswithknownedgetypes.directed));
+        trace.push(format!("iter_edge_node_ids_with_known_edge_types(directed: {:?})", &data.iteredgenodeidswithknownedgetypes.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5400,7 +5400,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     297 => {
-        trace.push(format!("par_iter_edge_node_ids_with_unknown_edge_types({:?})", &data.pariteredgenodeidswithunknownedgetypes.directed));
+        trace.push(format!("par_iter_edge_node_ids_with_unknown_edge_types(directed: {:?})", &data.pariteredgenodeidswithunknownedgetypes.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5415,7 +5415,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     298 => {
-        trace.push(format!("par_iter_edge_node_ids_with_known_edge_types({:?})", &data.pariteredgenodeidswithknownedgetypes.directed));
+        trace.push(format!("par_iter_edge_node_ids_with_known_edge_types(directed: {:?})", &data.pariteredgenodeidswithknownedgetypes.directed));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5460,7 +5460,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     301 => {
-        trace.push(format!("get_unweighted_laplacian_transformed_graph({:?})", &data.getunweightedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_unweighted_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5473,7 +5473,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     302 => {
-        trace.push(format!("get_unweighted_random_walk_normalized_laplacian_transformed_graph({:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5486,7 +5486,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     303 => {
-        trace.push(format!("get_unweighted_symmetric_normalized_laplacian_transformed_graph({:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5503,7 +5503,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     304 => {
-        trace.push(format!("get_unweighted_symmetric_normalized_transformed_graph({:?})", &data.getunweightedsymmetricnormalizedtransformedgraph.verbose));
+        trace.push(format!("get_unweighted_symmetric_normalized_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedtransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5520,7 +5520,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     305 => {
-        trace.push(format!("get_weighted_laplacian_transformed_graph({:?})", &data.getweightedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_weighted_laplacian_transformed_graph(verbose: {:?})", &data.getweightedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5537,7 +5537,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     306 => {
-        trace.push(format!("get_weighted_symmetric_normalized_laplacian_transformed_graph({:?})", &data.getweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5554,7 +5554,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     307 => {
-        trace.push(format!("get_weighted_symmetric_normalized_transformed_graph({:?})", &data.getweightedsymmetricnormalizedtransformedgraph.verbose));
+        trace.push(format!("get_weighted_symmetric_normalized_transformed_graph(verbose: {:?})", &data.getweightedsymmetricnormalizedtransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5571,7 +5571,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     308 => {
-        trace.push(format!("get_weighted_random_walk_normalized_laplacian_transformed_graph({:?})", &data.getweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
+        trace.push(format!("get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5757,7 +5757,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     322 => {
-        trace.push(format!("is_connected({:?})", &data.isconnected.verbose));
+        trace.push(format!("is_connected(verbose: {:?})", &data.isconnected.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5939,7 +5939,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     336 => {
-        trace.push(format!("node_label_holdout({:?}, {:?}, {:?})", &data.nodelabelholdout.train_size, &data.nodelabelholdout.use_stratification, &data.nodelabelholdout.random_state));
+        trace.push(format!("node_label_holdout(train_size: {:?}, use_stratification: {:?}, random_state: {:?})", &data.nodelabelholdout.train_size, &data.nodelabelholdout.use_stratification, &data.nodelabelholdout.random_state));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5960,7 +5960,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     337 => {
-        trace.push(format!("edge_label_holdout({:?}, {:?}, {:?})", &data.edgelabelholdout.train_size, &data.edgelabelholdout.use_stratification, &data.edgelabelholdout.random_state));
+        trace.push(format!("edge_label_holdout(train_size: {:?}, use_stratification: {:?}, random_state: {:?})", &data.edgelabelholdout.train_size, &data.edgelabelholdout.use_stratification, &data.edgelabelholdout.random_state));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -5981,7 +5981,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
     
 
     338 => {
-        trace.push(format!("random_subgraph({:?}, {:?}, {:?})", &data.randomsubgraph.nodes_number, &data.randomsubgraph.random_state, &data.randomsubgraph.verbose));
+        trace.push(format!("random_subgraph(nodes_number: {:?}, random_state: {:?}, verbose: {:?})", &data.randomsubgraph.nodes_number, &data.randomsubgraph.random_state, &data.randomsubgraph.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
