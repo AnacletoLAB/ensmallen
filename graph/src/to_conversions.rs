@@ -246,7 +246,7 @@ impl Graph {
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .progress_with(pb)
-                .map(|(_, src, dst, edge_type, weight)| Some(Ok((dst, src, edge_type, weight)))),
+                .map(|(_, src, dst, edge_type, weight)| Ok((dst, src, edge_type, weight))),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
