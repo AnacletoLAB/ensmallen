@@ -22,7 +22,7 @@ impl Graph {
         new_graph
     }
 
-    /// Return the directed graph from the upper triangular incidence matrix.
+    /// Return the directed graph from the upper triangular adjacency matrix.
     ///
     /// # Implementative details
     /// Filtering a graph to the upper triangular matrix means that the
@@ -64,7 +64,7 @@ impl Graph {
         .unwrap()
     }
 
-    /// Return the directed graph from the lower triangular incidence matrix.
+    /// Return the directed graph from the lower triangular adjacency matrix.
     ///
     /// # Implementative details
     /// Filtering a graph to the lower triangular matrix means that the
@@ -106,7 +106,7 @@ impl Graph {
         .unwrap()
     }
 
-    /// Return the graph from the main diagonal incidence matrix.
+    /// Return the graph from the main diagonal adjacency matrix.
     ///
     /// # Implementative details
     /// The resulting graph will only contain the selfloops present in the
@@ -148,7 +148,7 @@ impl Graph {
         .unwrap()
     }
 
-    /// Return the graph from the anti-diagonal incidence matrix.
+    /// Return the graph from the anti-diagonal adjacency matrix.
     ///
     /// # Implementative details
     /// The resulting graph will include only the edges present on the
@@ -177,7 +177,7 @@ impl Graph {
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            true,
+            self.is_directed(),
             self.get_name(),
             true,
             self.has_edge_types(),
@@ -186,6 +186,79 @@ impl Graph {
             true,
             true,
             true,
+            verbose,
+        )
+        .unwrap()
+    }
+
+    /// Return the graph from the arrowhead adjacency matrix.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn to_arrowhead(&self, verbose: Option<bool>) -> Graph {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Building the arrowhead matrix",
+            self.get_directed_edges_number() as usize,
+        );
+        Graph::from_integer_unsorted(
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+                .progress_with(pb)
+                .filter_map(|(_, src, dst, edge_type, weight)| {
+                    if src == 1 || dst == 1 || src == dst {
+                        Some(Ok((src, dst, edge_type, weight)))
+                    } else {
+                        None
+                    }
+                }),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.is_directed(),
+            self.get_name(),
+            true,
+            self.has_edge_types(),
+            self.has_edge_weights(),
+            false,
+            true,
+            true,
+            true,
+            verbose,
+        )
+        .unwrap()
+    }
+
+    /// Return the graph from the transposed adjacency matrix.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn to_transposed(&self, verbose: Option<bool>) -> Graph {
+        if !self.is_directed() {
+            return self.clone();
+        }
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Building the transposed matrix",
+            self.get_directed_edges_number() as usize,
+        );
+        Graph::from_integer_unsorted(
+            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+                .progress_with(pb)
+                .map(|(_, src, dst, edge_type, weight)| Some(Ok((dst, src, edge_type, weight)))),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            true,
+            self.get_name(),
+            true,
+            self.has_edge_types(),
+            self.has_edge_weights(),
+            false,
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+            self.has_trap_nodes(),
             verbose,
         )
         .unwrap()
