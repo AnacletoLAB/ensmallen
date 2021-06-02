@@ -190,4 +190,51 @@ impl Graph {
         )
         .unwrap()
     }
+
+    /// Return the complementary graph.
+    ///
+    /// # Implementative details
+    /// Note that the resulting graph may require a significant amount
+    /// of memory.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn to_complementary(&self, verbose: Option<bool>) -> Graph {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Building the complementary graph",
+            self.get_nodes_number() as usize,
+        );
+        Graph::from_integer_unsorted(
+            self.par_iter_node_ids()
+                .progress_with(pb)
+                .map(|src| {
+                    self.iter_node_ids()
+                        .filter_map(|dst| {
+                            if self.has_edge_from_node_ids(src, dst) {
+                                None
+                            } else {
+                                Some(Ok((src, dst, None, None)))
+                            }
+                        })
+                        .collect::<Vec<_>>()
+                })
+                .flatten(),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.is_directed(),
+            self.get_name(),
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            verbose,
+        )
+        .unwrap()
+    }
 }
