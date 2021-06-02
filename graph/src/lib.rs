@@ -88,6 +88,7 @@ mod transitivity;
 mod selfloops;
 mod tarjan;
 mod trees;
+mod to_conversions;
 mod dense;
 mod types;
 mod vertex_cover;

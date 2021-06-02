@@ -323,7 +323,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         graph
             .par_iter_edge_node_ids(true)
             .for_each(|(_, src_node_id, dst_node_id)| {
-                assert!(graph.has_edge_from_node_ids(dst_node_id, src_node_id));
+                assert!(
+                    graph.has_edge_from_node_ids(dst_node_id, src_node_id),
+                    concat!(
+                        "In an undirected graph, for every edge there must ",
+                        "have its own symmetric edge.\n",
+                        "In the provided graph instance, for the edge from ",
+                        "the source node ID {} to the destination node ID {} ",
+                        "the symmetric edge does not exist.\n",
+                        "This error is likely caused by some mis-parametrization ",
+                        "in a method that is expected to produce a simmetric graph."
+                    ),
+                    src_node_id,
+                    dst_node_id
+                );
             });
     }
 
@@ -869,11 +882,12 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                         assert_eq!(src_to_dst.len(), dst_to_src.len());
                         assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
                         // Test that the k-paths return a compatible result
-                        let kpaths = graph.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
-                            src_node_id,
-                            dst_node_id,
-                            5
-                        );
+                        let kpaths = graph
+                            .get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                                src_node_id,
+                                dst_node_id,
+                                5,
+                            );
                         let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
                         assert_eq!(min_length, src_to_dst.len());
                     }
