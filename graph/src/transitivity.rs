@@ -27,7 +27,6 @@ impl Graph {
                 return self.clone();
             }
         }
-
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,

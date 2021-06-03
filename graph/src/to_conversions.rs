@@ -211,7 +211,7 @@ impl Graph {
             self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .progress_with(pb)
                 .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src==dst || src == nodes_number - dst {
+                    if src == dst || src == nodes_number - dst {
                         Some(Ok((src, dst, edge_type, weight)))
                     } else {
                         None

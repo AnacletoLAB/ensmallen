@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ParallelProgressIterator;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
@@ -11,6 +12,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
@@ -21,19 +23,28 @@ impl Graph {
     unsafe fn get_unweighted_undirected_number_of_triangles(
         &self,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> EdgeT {
         // The current graph must be undirected.
         if self.is_directed() {
             panic!("This method cannot be called on directed graphs!");
         }
+        let verbose = verbose.unwrap_or(true);
+
         // By default we want to normalize the triangles number
         let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover_set = self.approximated_vertex_cover_set();
+        let vertex_cover_set = self.approximated_vertex_cover_set(Some(verbose));
+        let pb = get_loading_bar(
+            verbose,
+            "Computing number of triangles",
+            self.get_nodes_number() as usize,
+        );
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         let mut number_of_triangles = vertex_cover_set
             .par_iter()
+            .progress_with(pb)
             // For each node in the cover
             .map(|&node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
@@ -91,18 +102,28 @@ impl Graph {
     /// This is a naive implementation and is considerably less efficient
     /// than Bader's version in the case of undirected graphs.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # Safety
     /// This method will raise a panic if called on an undirected graph becase
     /// there is a more efficient one for these cases.
     /// There is a method that automatically dispatches the more efficient method
     /// according to the instance.
-    unsafe fn get_unweighted_naive_number_of_triangles(&self) -> EdgeT {
+    unsafe fn get_unweighted_naive_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
         if !self.is_directed() {
             panic!("This method should not be called on undirected graphs! Use the efficient one!");
         }
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing number of triangles",
+            self.get_nodes_number() as usize,
+        );
         // We start iterating over the nodes using rayon to parallelize the procedure.
         let number_of_triangles: EdgeT = self
             .par_iter_node_ids()
+            .progress_with(pb)
             // For each node in the cover
             .map(|node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
@@ -143,11 +164,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn get_unweighted_number_of_triangles(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> EdgeT {
         if self.is_directed() {
-            unsafe { self.get_unweighted_naive_number_of_triangles() }
+            unsafe { self.get_unweighted_naive_number_of_triangles(verbose) }
         } else {
-            unsafe { self.get_unweighted_undirected_number_of_triangles(normalize) }
+            unsafe { self.get_unweighted_undirected_number_of_triangles(normalize, verbose) }
         }
     }
 
@@ -173,8 +199,11 @@ impl Graph {
     }
 
     /// Returns transitivity of the graph without taking into account weights.
-    pub fn get_unweighted_transitivity(&self) -> f64 {
-        self.get_unweighted_number_of_triangles(Some(false)) as f64
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn get_unweighted_transitivity(&self, verbose: Option<bool>) -> f64 {
+        self.get_unweighted_number_of_triangles(Some(false), verbose) as f64
             / self.get_unweighted_triads_number() as f64
     }
 
@@ -182,6 +211,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
@@ -192,21 +222,27 @@ impl Graph {
     unsafe fn get_unweighted_undirected_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> Vec<NodeT> {
         if self.is_directed() {
             panic!("This method does not work for directed graphs!");
         }
         let normalize = normalize.unwrap_or(true);
-        // First, we compute the set of nodes composing a vertex cover set.
-        // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover_set = self.approximated_vertex_cover_set();
         let node_triangles_number = self
             .iter_node_ids()
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
+        let verbose = verbose.unwrap_or(true);
+        let vertex_cover_set = self.approximated_vertex_cover_set(Some(verbose));
+        let pb = get_loading_bar(
+            verbose,
+            "Computing number of triangles per node",
+            vertex_cover_set.len(),
+        );
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         vertex_cover_set
             .par_iter()
+            .progress_with(pb)
             // For each node in the cover
             .for_each(|&node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
@@ -267,10 +303,15 @@ impl Graph {
     /// This is a naive implementation and is considerably less efficient
     /// than Bader's version in the case of undirected graphs.
     ///
+    /// # Arguments
+    ///
     /// # Safety
     /// This method will raise a panic if called on an directed graph becase
     /// there is a more efficient one for these cases.
-    unsafe fn get_unweighted_naive_number_of_triangles_per_node(&self) -> Vec<NodeT> {
+    unsafe fn get_unweighted_naive_number_of_triangles_per_node(
+        &self,
+        verbose: Option<bool>,
+    ) -> Vec<NodeT> {
         if !self.is_directed() {
             panic!("This method should not be called on directed graphs as there is a more efficient one!");
         }
@@ -279,8 +320,15 @@ impl Graph {
             .iter_node_ids()
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing number of triangles per node",
+            self.get_nodes_number() as usize,
+        );
         // We start iterating over the nodes using rayon to parallelize the procedure.
         self.par_iter_node_ids()
+            .progress_with(pb)
             // For each node in the cover
             .for_each(|node_id| unsafe {
                 // We obtain the neighbours and collect them into a vector
@@ -322,26 +370,34 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     pub fn get_unweighted_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> Vec<NodeT> {
         if self.is_directed() {
-            unsafe { self.get_unweighted_naive_number_of_triangles_per_node() }
+            unsafe { self.get_unweighted_naive_number_of_triangles_per_node(verbose) }
         } else {
-            unsafe { self.get_unweighted_undirected_number_of_triangles_per_node(normalize) }
+            unsafe {
+                self.get_unweighted_undirected_number_of_triangles_per_node(normalize, verbose)
+            }
         }
     }
 
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     pub fn iter_clustering_coefficient_per_node(
         &self,
+        verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_unweighted_number_of_triangles_per_node(Some(false))
+        self.get_unweighted_number_of_triangles_per_node(Some(false), verbose)
             .into_par_iter()
             .zip(self.par_iter_unweighted_node_degrees())
             .map(|(triangles_number, degree)| {
@@ -355,25 +411,34 @@ impl Graph {
 
     /// Returns clustering coefficients for all nodes in the graph.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient_per_node(&self) -> Vec<f64> {
-        self.iter_clustering_coefficient_per_node().collect()
+    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Vec<f64> {
+        self.iter_clustering_coefficient_per_node(verbose).collect()
     }
 
     /// Returns the graph clustering coefficient.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient(&self) -> f64 {
-        self.iter_clustering_coefficient_per_node().sum()
+    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.iter_clustering_coefficient_per_node(verbose).sum()
     }
 
     /// Returns the graph average clustering coefficient.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_average_clustering_coefficient(&self) -> f64 {
-        self.get_clustering_coefficient() / self.get_nodes_number() as f64
+    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.get_clustering_coefficient(verbose) / self.get_nodes_number() as f64
     }
 }
