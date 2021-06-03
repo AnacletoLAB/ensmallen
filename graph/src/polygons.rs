@@ -133,23 +133,43 @@ impl Graph {
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .filter(|&neighbour_node_id| node_id != neighbour_node_id)
                     .collect::<Vec<NodeT>>();
-                // We iterate over the neighbours
-                neighbours
-                    .iter()
-                    // If the neighbour is a selfloop
-                    // we return 0 new triangles.
-                    .map(|&neighbour_node_id| {
-                        // We compute the intersection of the neighbours.
-                        iter_set::intersection(
-                            neighbours.iter().cloned(),
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                neighbour_node_id,
-                            ),
-                        )
-                        .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                        .count() as EdgeT
-                    })
-                    .sum::<EdgeT>()
+                if neighbours.len() < 1000 {
+                    // We iterate over the neighbours
+                    neighbours
+                        .iter()
+                        // If the neighbour is a selfloop
+                        // we return 0 new triangles.
+                        .map(|&neighbour_node_id| {
+                            // We compute the intersection of the neighbours.
+                            iter_set::intersection(
+                                neighbours.iter().cloned(),
+                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    neighbour_node_id,
+                                ),
+                            )
+                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
+                            .count() as EdgeT
+                        })
+                        .sum::<EdgeT>()
+                } else {
+                    // We iterate over the neighbours
+                    neighbours
+                        .par_iter()
+                        // If the neighbour is a selfloop
+                        // we return 0 new triangles.
+                        .map(|&neighbour_node_id| {
+                            // We compute the intersection of the neighbours.
+                            iter_set::intersection(
+                                neighbours.iter().cloned(),
+                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    neighbour_node_id,
+                                ),
+                            )
+                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
+                            .count() as EdgeT
+                        })
+                        .sum::<EdgeT>()
+                }
             })
             .sum::<EdgeT>();
         number_of_triangles
