@@ -306,12 +306,16 @@ fn gen_binding(method: &Function) -> String {
 
     // parse the return type
     let return_type = match &method.return_type {
-        None => String::new(),
+        None => {
+            body = format!("{};", body);
+            String::new()
+        }
         Some(r_type) => {
             match r_type {
                 x if x == "Graph" || x == "&Graph" || x == "&mut Graph"=> {
                     match (is_self_ref, is_self_mut) {
                         (true, true) => {
+                            body = format!("{};", body);
                             "".to_string()
                         },
                         (true, false) => {
@@ -445,8 +449,6 @@ fn gen_binding(method: &Function) -> String {
                 _ => format!(" -> {} ", r_type)
             }
         }
-    } else {
-        method_call = format!("{};", method_call);
     };
 
     // build the binding

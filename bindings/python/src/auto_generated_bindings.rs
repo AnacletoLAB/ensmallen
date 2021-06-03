@@ -836,11 +836,11 @@ impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Disable all extra perks, reducing memory impact but incresing time requirements
     pub fn disable_all(&mut self) {
-        self.graph.disable_all()
+        self.graph.disable_all();
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize)"]
+    #[text_signature = "($self, normalize, verbose)"]
     /// Returns total number of triangles ignoring the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -852,9 +852,16 @@ impl EnsmallenGraph {
     /// ----------
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
     ///
-    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
-        self.graph.get_unweighted_number_of_triangles(normalize)
+    pub fn get_unweighted_number_of_triangles(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> EdgeT {
+        self.graph
+            .get_unweighted_number_of_triangles(normalize, verbose)
     }
 
     #[automatically_generated_binding]
@@ -872,14 +879,20 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns transitivity of the graph without taking into account weights
-    pub fn get_unweighted_transitivity(&self) -> f64 {
-        self.graph.get_unweighted_transitivity()
+    #[text_signature = "($self, verbose)"]
+    /// Returns transitivity of the graph without taking into account weights.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_unweighted_transitivity(&self, verbose: Option<bool>) -> f64 {
+        self.graph.get_unweighted_transitivity(verbose)
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize)"]
+    #[text_signature = "($self, normalize, verbose)"]
     /// Returns number of triangles in the graph without taking into account the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -891,40 +904,65 @@ impl EnsmallenGraph {
     /// ----------
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
     ///
     pub fn get_unweighted_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
             self.graph
-                .get_unweighted_number_of_triangles_per_node(normalize),
+                .get_unweighted_number_of_triangles_per_node(normalize, verbose),
             NodeT
         )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns clustering coefficients for all nodes in the graph.
-    pub fn get_clustering_coefficient_per_node(&self) -> Py<PyArray1<f64>> {
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_clustering_coefficient_per_node(), f64)
+        to_ndarray_1d!(
+            gil,
+            self.graph.get_clustering_coefficient_per_node(verbose),
+            f64
+        )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns the graph clustering coefficient.
-    pub fn get_clustering_coefficient(&self) -> f64 {
-        self.graph.get_clustering_coefficient()
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.graph.get_clustering_coefficient(verbose)
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns the graph average clustering coefficient.
-    pub fn get_average_clustering_coefficient(&self) -> f64 {
-        self.graph.get_average_clustering_coefficient()
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.graph.get_average_clustering_coefficient(verbose)
     }
 
     #[automatically_generated_binding]
@@ -3953,7 +3991,7 @@ impl EnsmallenGraph {
     ///     Name of the graph.
     ///
     pub fn set_name(&mut self, name: String) {
-        self.graph.set_name(name)
+        self.graph.set_name(name);
     }
 
     #[automatically_generated_binding]
@@ -4759,10 +4797,16 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns 2-approximated verted cover set using greedy algorithm.
-    pub fn approximated_vertex_cover_set(&self) -> HashSet<NodeT> {
-        self.graph.approximated_vertex_cover_set()
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn approximated_vertex_cover_set(&self, verbose: Option<bool>) -> HashSet<NodeT> {
+        self.graph.approximated_vertex_cover_set(verbose)
     }
 
     #[automatically_generated_binding]
