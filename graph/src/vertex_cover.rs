@@ -25,6 +25,9 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .filter_map(move |src_node_id| unsafe {
+                if self.is_unchecked_singleton_from_node_id(src_node_id) {
+                    return None;
+                }
                 let vertex_cover = thread_shared_vertex_cover.value.get();
                 if self
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src_node_id)
