@@ -90,7 +90,6 @@ impl Graph {
                     .sum::<EdgeT>()
             })
             .sum::<EdgeT>();
-        assert!(number_of_triangles % 3 == 0);
         if normalize {
             number_of_triangles /= 3;
         }
