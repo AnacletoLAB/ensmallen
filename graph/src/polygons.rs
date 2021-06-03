@@ -39,7 +39,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles",
-            self.get_nodes_number() as usize,
+            vertex_cover_set.len(),
         );
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         let mut number_of_triangles = vertex_cover_set
