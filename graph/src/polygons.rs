@@ -35,7 +35,7 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover_set = self.approximated_vertex_cover_set(Some(verbose));
+        let vertex_cover_set = self.approximated_vertex_cover_set();
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles",
@@ -233,7 +233,7 @@ impl Graph {
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
         let verbose = verbose.unwrap_or(true);
-        let vertex_cover_set = self.approximated_vertex_cover_set(Some(verbose));
+        let vertex_cover_set = self.approximated_vertex_cover_set();
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles per node",
