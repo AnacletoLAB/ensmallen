@@ -107,6 +107,30 @@ impl Graph {
             .collect()
     }
 
+    /// Raises an error if the graph contains unknown node types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    /// * If the graph contains unknown node types.
+    pub fn must_not_contain_unknown_node_types(&self) -> Result<(), String> {
+        if self.has_unknown_node_types()? {
+            return Err("The graph contains unknown node types.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph contains unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    /// * If the graph contains unknown edge types.
+    pub fn must_not_contain_unknown_edge_types(&self) -> Result<(), String> {
+        if self.has_unknown_edge_types()? {
+            return Err("The graph contains unknown edge types.".to_string());
+        }
+        Ok(())
+    }
+
     /// Validates provided node type ID.
     ///
     /// # Arguments

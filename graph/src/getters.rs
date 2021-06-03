@@ -779,7 +779,16 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
-            .map(|node_types| node_types.min_node_type_count())
+            .map(|node_types| node_types.get_min_node_type_count())
+    }
+
+    /// Returns maximum number of node types.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_maximum_node_types_number(&self) -> Result<NodeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.get_max_node_type_count())
     }
 
     /// Returns number of singleton node types.
@@ -839,6 +848,36 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown node type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_edge_ids_with_unknown_edge_types().map(|x| {
+            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown edge type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_edge_ids_with_known_edge_types().map(|x| {
+            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
     /// Returns node IDs of the nodes with unknown node types
     ///
     /// # Raises
@@ -855,6 +894,36 @@ impl Graph {
     pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>, String> {
         self.iter_node_ids_with_known_node_types()
             .map(|x| x.collect())
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_node_ids_with_unknown_node_types().map(|x| {
+            let mut mask = vec![false; self.get_nodes_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// known node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_node_ids_with_known_node_types().map(|x| {
+            let mut mask = vec![false; self.get_nodes_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
     }
 
     /// Returns the number of edge with known edge type.

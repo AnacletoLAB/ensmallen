@@ -1535,11 +1535,28 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
     }
     if graph.has_edges() {
         graph
-            .link_prediction_degrees(0, 256, true, 10.0, false, 10, &None)
+            .link_prediction_degrees(
+                0,
+                Some(256),
+                Some(true),
+                Some(10.0),
+                Some(false),
+                Some(10),
+                None,
+            )
             .unwrap()
             .collect::<Vec<_>>();
         graph
-            .link_prediction_ids(0, 256, 10.0, false, 10, &None)
+            .link_prediction_ids(
+                0,
+                Some(256),
+                Some(10.0),
+                None,
+                None,
+                Some(false),
+                Some(10),
+                None,
+            )
             .unwrap()
             .collect::<Vec<_>>();
     }

@@ -425,66 +425,73 @@ impl EnsmallenGraph {
         Ok((neighbours.to_owned(), labels.to_owned()))
     }
 
-    #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
-    /// Returns ids for a link prediction training batch.
+    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
-    /// -----------------------------
-    /// idx:int,
-    ///     Index corresponding to batch to be rendered.
-    /// batch_size: int,
-    ///     The batch size to use.
-    /// negative_samples: float = 1.0,
-    ///     Factor of negatives to use in every batch.
-    ///     For example, with a batch size of 128 and negative_samples equal
-    ///     to 1.0, there will be 64 positives and 64 negatives.
-    /// avoid_false_negatives: bool = False,
-    ///     Whether to filter out false negatives.
-    ///     By default False.
-    ///     Enabling this will slow down the batch generation while (likely) not
-    ///     introducing any significant gain to the model performance.
-    /// maximal_sampling_attempts: usize = 100,
+    /// -------------
+    /// idx: int,
+    ///     The index of the batch to generate, behaves like a random random_state,
+    /// batch_size: Optional[int],
+    ///     The maximal size of the batch to generate,
+    /// negative_samples: Optional[float],
+    ///     The component of netagetive samples to use.
+    /// return_node_types: Optional[bool],
+    ///     Whether to return the source and destination nodes node types.
+    /// return_edge_types: Optional[bool],
+    ///     Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// avoid_false_negatives: Optional[bool],
+    ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// maximal_sampling_attempts: Optional[int],
     ///     Number of attempts to execute to sample the negative edges.
-    /// graph_to_avoid: EnsmallenGraph = None,
-    ///     Graph to avoid when generating the links.
-    ///     This can be the validation component of the graph, for example.
+    /// graph_to_avoid: Optional[EnsmallenGraph],
+    ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
-    /// Returns
-    /// -----------------------------
-    /// Triple with source and destination nodes and labels.
-    ///
+    /// Raises
+    /// ---------
+    /// ValueError
+    ///     If the given amount of negative samples is not a positive finite real value.
+    /// ValueError
+    ///     If node types are requested but the graph does not contain any.
+    /// ValueError
+    ///     If node types are requested but the graph contains unknown node types.
+    /// ValueError
+    ///     If edge types are requested but the graph does not contain any.
+    /// ValueError
+    ///     If edge types are requested but the graph contains unknown edge types.
     fn link_prediction_ids(
         &self,
         idx: u64,
-        batch_size: usize,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<bool>>)> {
+        batch_size: Option<usize>,
+        negative_samples_rate: Option<f64>,
+        return_node_types: Option<bool>,
+        return_edge_types: Option<bool>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        graph_to_avoid: Option<EnsmallenGraph>,
+    ) -> PyResult<(
+        Py<PyArray1<NodeT>>,
+        Option<Py<PyArray2<NodeTypeT>>>,
+        Py<PyArray1<NodeT>>,
+        Option<Py<PyArray2<NodeTypeT>>>,
+        Option<Py<PyArray1<EdgeTypeT>>>,
+        Py<PyArray1<bool>>,
+    )> {
         let gil = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+        let return_node_types = return_node_types.unwrap_or(false);
+        let return_edge_types = return_edge_types.unwrap_or(false);
+        let batch_size = batch_size.unwrap_or(1024);
 
-        pe!(validate_kwargs(
-            kwargs,
-            &[
-                "negative_samples",
-                "avoid_false_negatives",
-                "maximal_sampling_attempts",
-                "graph_to_avoid",
-            ],
-        ))?;
-        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
-        let maybe_graph = match &graph_to_avoid {
-            Some(g) => Some(&g.graph),
-            None => None,
-        };
-
-        let iter = pe!(self.graph.link_prediction_ids(
+        let graph_to_avoid = graph_to_avoid.map(|ensmallen_graph| ensmallen_graph.graph);
+        let par_iter = pe!(self.graph.link_prediction_ids(
             idx,
-            batch_size,
-            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
-            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
-            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
-            &maybe_graph,
+            Some(batch_size),
+            negative_samples_rate,
+            Some(return_node_types),
+            Some(return_edge_types),
+            avoid_false_negatives,
+            maximal_sampling_attempts,
+            graph_to_avoid.as_ref(),
         ))?;
 
         let srcs = ThreadDataRaceAware {
@@ -493,107 +500,65 @@ impl EnsmallenGraph {
         let dsts = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
-        let labels = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
+        let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
+            let max_node_type_count = pe!(self.graph.get_maximum_node_types_number())? as usize;
+            (
+                Some(ThreadDataRaceAware {
+                    t: PyArray2::new(gil.python(), [batch_size, max_node_type_count], false),
+                }),
+                Some(ThreadDataRaceAware {
+                    t: PyArray2::new(gil.python(), [batch_size, max_node_type_count], false),
+                }),
+            )
+        } else {
+            (None, None)
         };
-
-        unsafe {
-            iter.for_each(|(i, src, dst, label)| {
-                *(dsts.t.uget_mut([i])) = src;
-                *(srcs.t.uget_mut([i])) = dst;
-                *(labels.t.uget_mut([i])) = label;
-            });
-        }
-
-        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
-    }
-
-    #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, normalize, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
-    /// Returns
-    ///
-    ///
-    /// Parameters
-    /// -----------------------------
-    /// idx:int,
-    ///     Index corresponding to batch to be rendered.
-    /// batch_size: int,
-    ///     The batch size to use.
-    /// normalize: bool=True,
-    ///      Divide the degrees by the max, this way the values are in [0, 1].
-    /// negative_samples: float = 1.0,
-    ///     Factor of negatives to use in every batch.
-    ///     For example, with a batch size of 128 and negative_samples equal
-    ///     to 1.0, there will be 64 positives and 64 negatives.
-    /// avoid_false_negatives: bool = False,
-    ///     Whether to filter out false negatives.
-    ///     By default False.
-    ///     Enabling this will slow down the batch generation while (likely) not
-    ///     introducing any significant gain to the model performance.
-    /// maximal_sampling_attempts: usize = 100,
-    ///     Number of attempts to execute to sample the negative edges.
-    /// graph_to_avoid: EnsmallenGraph = None,
-    ///     Graph to avoid when generating the links.
-    ///     This can be the validation component of the graph, for example.
-    ///
-    /// Returns
-    /// -----------------------------
-    /// Tuple containing training and validation graphs.
-    ///
-    fn link_prediction_degrees(
-        &self,
-        idx: u64,
-        batch_size: usize,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<bool>>)> {
-        let gil = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-
-        pe!(validate_kwargs(
-            kwargs,
-            &[
-                "normalize",
-                "negative_samples",
-                "avoid_false_negatives",
-                "maximal_sampling_attempts",
-                "graph_to_avoid",
-            ],
-        ))?;
-        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
-        let maybe_graph = match &graph_to_avoid {
-            Some(g) => Some(&g.graph),
-            None => None,
-        };
-
-        let iter = pe!(self.graph.link_prediction_degrees(
-            idx,
-            batch_size,
-            extract_value!(kwargs, "normalize", bool).unwrap_or(true),
-            extract_value!(kwargs, "negative_samples", f64).unwrap_or(1.0),
-            extract_value!(kwargs, "avoid_false_negatives", bool).unwrap_or(false),
-            extract_value!(kwargs, "maximal_sampling_attempts", usize).unwrap_or(100),
-            &maybe_graph,
-        ))?;
-
-        let srcs = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-        let dsts = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
+        let edge_type_ids = if return_edge_types {
+            Some(ThreadDataRaceAware {
+                t: PyArray1::new(gil.python(), [batch_size], false),
+            })
+        } else {
+            None
         };
         let labels = ThreadDataRaceAware {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
 
         unsafe {
-            iter.for_each(|(i, src, dst, label)| {
-                *(dsts.t.uget_mut([i])) = src;
-                *(srcs.t.uget_mut([i])) = dst;
-                *(labels.t.uget_mut([i])) = label;
-            });
+            par_iter.for_each(
+                |(i, src, src_node_type, dst, dst_node_type, edge_type, label)| {
+                    *(dsts.t.uget_mut([i])) = src;
+                    *(srcs.t.uget_mut([i])) = dst;
+                    if let (Some(src_node_type_ids), Some(dst_node_type_ids)) =
+                        (src_node_type_ids.as_ref(), dst_node_type_ids.as_ref())
+                    {
+                        src_node_type.unwrap().into_iter().enumerate().for_each(
+                            |(j, node_type)| {
+                                *(src_node_type_ids.t.uget_mut([i, j])) = node_type;
+                            },
+                        );
+                        dst_node_type.unwrap().into_iter().enumerate().for_each(
+                            |(j, node_type)| {
+                                *(dst_node_type_ids.t.uget_mut([i, j])) = node_type;
+                            },
+                        );
+                    }
+                    if let Some(edge_type_ids) = edge_type_ids.as_ref() {
+                        *(edge_type_ids.t.uget_mut([i])) = edge_type.unwrap();
+                    }
+                    *(labels.t.uget_mut([i])) = label;
+                },
+            );
         }
 
-        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
+        Ok((
+            srcs.t.to_owned(),
+            src_node_type_ids.map(|x| x.t.to_owned()),
+            dsts.t.to_owned(),
+            dst_node_type_ids.map(|x| x.t.to_owned()),
+            edge_type_ids.map(|x| x.t.to_owned()),
+            labels.t.to_owned(),
+        ))
     }
 
     #[text_signature = "($self, source_node_ids, destination_node_ids)"]

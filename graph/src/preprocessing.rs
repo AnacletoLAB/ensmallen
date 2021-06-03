@@ -340,57 +340,136 @@ impl Graph {
     }
 
     #[manual_binding]
-    /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// # Arguments
-    ///
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `negative_samples`: f64 - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `batch_size`: Option<usize> - The maximal size of the batch to generate,
+    /// * `negative_samples`: Option<f64> - The component of netagetive samples to use.
+    /// * `return_node_types`: Option<bool> - Whether to return the source and destination nodes node types.
+    /// * `return_edge_types`: Option<bool> - Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
     /// * If the given amount of negative samples is not a positive finite real value.
+    /// * If node types are requested but the graph does not contain any.
+    /// * If node types are requested but the graph contains unknown node types.
+    /// * If edge types are requested but the graph does not contain any.
+    /// * If edge types are requested but the graph contains unknown edge types.
     pub fn link_prediction_ids<'a>(
         &'a self,
         idx: u64,
-        batch_size: usize,
-        negative_samples: f64,
-        avoid_false_negatives: bool,
-        maximal_sampling_attempts: usize,
-        graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, NodeT, NodeT, bool)> + 'a, String> {
+        batch_size: Option<usize>,
+        negative_samples_rate: Option<f64>,
+        return_node_types: Option<bool>,
+        return_edge_types: Option<bool>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        graph_to_avoid: Option<&'a Graph>,
+    ) -> Result<
+        impl ParallelIterator<
+                Item = (
+                    usize,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    Option<EdgeTypeT>,
+                    bool,
+                ),
+            > + 'a,
+        String,
+    > {
+        let batch_size = batch_size.unwrap_or(1024);
+        let negative_samples_rate = negative_samples_rate.unwrap_or(1.0);
+        let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
+        let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
+
+        let return_node_types = return_node_types.unwrap_or(false);
+        let (maximum_node_types_number, multi_label) = if return_node_types {
+            self.must_not_contain_unknown_node_types()?;
+            (
+                self.get_maximum_node_types_number()? as usize,
+                self.has_multilabel_node_types()?,
+            )
+        } else {
+            (0, false)
+        };
+
+        let return_edge_types = return_edge_types.unwrap_or(false);
+        let edge_types_number = if return_edge_types {
+            self.must_not_contain_unknown_edge_types()?;
+            self.get_edge_types_number()?
+        } else {
+            0
+        };
+
         let random_state = splitmix64(idx);
         assert_ne!(random_state, 0);
 
-        if negative_samples < 0.0 || !negative_samples.is_finite() {
+        if negative_samples_rate < 0.0 || !negative_samples_rate.is_finite() {
             return Err("Negative sample must be a posive real value.".to_string());
         }
 
         // The number of negatives is given by computing their fraction of batchsize
         let negative_number: usize =
-            ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
+            ((batch_size as f64 / (1.0 + negative_samples_rate)) * negative_samples_rate) as usize;
         // All the remaining values then are positives
         let positive_number: usize = batch_size - negative_number;
         let graph_has_no_selfloops = !self.has_selfloops();
 
-        let edges_number = self.get_directed_edges_number() as u64;
-        let nodes_number = self.get_nodes_number() as u32;
+        let edges_number = self.get_directed_edges_number();
+        let nodes_number = self.get_nodes_number();
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
         let random_values = gen_random_vec(batch_size, random_state);
         let mut indices: Vec<usize> = (0..batch_size).collect();
         indices.shuffle(&mut rng);
 
+        let get_node_type_ids =
+            move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
+                if return_node_types {
+                    let node_type_ids =
+                        unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
+                    if multi_label {
+                        let mut padded_node_type_ids = vec![0; maximum_node_types_number];
+                        node_type_ids.unwrap().into_iter().enumerate().for_each(
+                            |(i, node_type)| {
+                                // We need to add one because we need to reserve 0 for the mask.
+                                padded_node_type_ids[i] = node_type + 1;
+                            },
+                        );
+                        Some(padded_node_type_ids)
+                    } else {
+                        node_type_ids
+                    }
+                } else {
+                    None
+                }
+            };
+
         Ok((0..batch_size)
             .into_par_iter()
-            .map(move |i| {
+            .map(move |i| unsafe {
                 let mut sampled = random_values[i];
                 if i < positive_number{
-                    let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(sampled % edges_number)};
-                    (indices[i], src, dst, true)
+                    let edge_id = sampled % edges_number;
+                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                    (
+                        indices[i],
+                        src,
+                        get_node_type_ids(src),
+                        dst,
+                        get_node_type_ids(dst),
+                        if return_edge_types {
+                            self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                        } else {
+                            None
+                        },
+                        true
+                    )
                 } else {
                     for _ in 0..maximal_sampling_attempts {
                         // split the random u64 into 2 u32 and mod them to have
@@ -415,7 +494,19 @@ impl Graph {
                             continue;
                         }
 
-                        return (indices[i], src, dst, false);
+                        return (
+                            indices[i],
+                            src,
+                            get_node_type_ids(src),
+                            dst,
+                            get_node_type_ids(dst),
+                            if return_edge_types {
+                                Some(sampled as EdgeTypeT % edge_types_number)
+                            } else {
+                                None
+                            },
+                            false
+                        );
                     }
                     panic!(
                         concat!(
@@ -448,28 +539,32 @@ impl Graph {
     pub fn link_prediction_degrees<'a>(
         &'a self,
         idx: u64,
-        batch_size: usize,
-        normalize: bool,
-        negative_samples: f64,
-        avoid_false_negatives: bool,
-        maximal_sampling_attempts: usize,
-        graph_to_avoid: &'a Option<&Graph>,
+        batch_size: Option<usize>,
+        normalize: Option<bool>,
+        negative_samples: Option<f64>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        graph_to_avoid:Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String> {
         let iter = self.link_prediction_ids(
             idx,
             batch_size,
             negative_samples,
+            Some(false),
+            Some(false),
             avoid_false_negatives,
             maximal_sampling_attempts,
             graph_to_avoid,
         )?;
+
+        let normalize = normalize.unwrap_or(true);
 
         let max_degree = match normalize {
             true => self.get_unweighted_max_node_degree()? as f64,
             false => 1.0,
         };
 
-        Ok(iter.map(move |(index, src, dst, label)| unsafe {
+        Ok(iter.map(move |(index, src, _, dst, _, _, label)| unsafe {
             (
                 index,
                 self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
