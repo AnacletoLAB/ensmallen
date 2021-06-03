@@ -445,6 +445,8 @@ fn gen_binding(method: &Function) -> String {
                 _ => format!(" -> {} ", r_type)
             }
         }
+    } else {
+        method_call = format!("{};", method_call);
     };
 
     // build the binding

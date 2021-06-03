@@ -6458,6 +6458,142 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Convert inplace the graph to directed.
+    pub fn to_directed_inplace(&mut self) {
+        self.graph.to_directed_inplace();
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return a new instance of the current graph as directed
+    pub fn to_directed(&self) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_directed(),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the directed graph from the upper triangular adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_upper_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_upper_triangular(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the directed graph from the lower triangular adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_lower_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_lower_triangular(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the graph from the main diagonal adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_main_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_main_diagonal(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the graph from the anti-diagonal adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_anti_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_anti_diagonal(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the graph from the bidiagonal adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_bidiagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_bidiagonal(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the graph from the arrowhead adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_arrowhead(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_arrowhead(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the graph from the transposed adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_transposed(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_transposed(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Return the complementary graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    pub fn to_complementary(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.to_complementary(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, negatives_number, random_state, seed_graph, only_from_same_component, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
