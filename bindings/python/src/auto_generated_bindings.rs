@@ -4797,16 +4797,10 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns 2-approximated verted cover set using greedy algorithm.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn approximated_vertex_cover_set(&self, verbose: Option<bool>) -> HashSet<NodeT> {
-        self.graph.approximated_vertex_cover_set(verbose)
+    pub fn approximated_vertex_cover_set(&self) -> HashSet<NodeT> {
+        self.graph.approximated_vertex_cover_set()
     }
 
     #[automatically_generated_binding]
