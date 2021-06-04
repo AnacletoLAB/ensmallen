@@ -473,9 +473,6 @@ fn gen_binding(method: &Function) -> String {
 
 
 fn main() {
-    let method_names = get_binding_names();
-
-
     let mut bindings = vec![];
 
     let modules = get_library_sources();
@@ -512,6 +509,21 @@ impl EnsmallenGraph {{
     );
 
     fs::write("../../../bindings/python/src/auto_generated_bindings.rs", file_content);
+
+
+
+    let method_names = get_binding_names();
+    let method_names_list = format!(
+r#"const METHODS_NAMES: &'static [&'static str] = &[
+{}
+];"#,
+        method_names.iter()
+            .map(|x| format!("    \"{}\",", x))
+            .collect::<Vec<String>>()
+            .join("\n"),
+    );
+    fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list);
+
 
     assert!(
         std::process::Command::new("cargo").args(&["fmt"])
