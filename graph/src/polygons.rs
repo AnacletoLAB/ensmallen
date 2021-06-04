@@ -56,7 +56,7 @@ impl Graph {
                     .collect::<Vec<NodeT>>();
                 // We iterate over the neighbours
                 neighbours
-                    .iter()
+                    .par_iter()
                     // If the neighbour either is a selfloop
                     // or is not present in the vertex cover
                     // we return 0 new triangles.
@@ -90,7 +90,6 @@ impl Graph {
                     .sum::<EdgeT>()
             })
             .sum::<EdgeT>();
-        assert!(number_of_triangles % 3 == 0);
         if normalize {
             number_of_triangles /= 3;
         }

@@ -399,7 +399,21 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
 }
 
-/// TODO! add docstring
+/// Returns informations necessary to build a new EnsmallenGraph object.
+///
+/// # Arguments
+/// edges_iter: impl Iterator<Item = Result<Quadruple, String>> - Iterator over edge informations.
+/// edges_number: usize - Number of the edges in the graph. This information is needed both for evaluation of the graph properties and building elias-fano.
+/// nodes_number: NodeT - Number of the nodes in the graph. This information is needed both for evaluation of the graph properties and building elias-fano.
+/// ignore_duplicated_edges: bool - Whether to ignore duplicated edges while reading the graph.
+/// has_edge_weights: bool - Whether the graph has weights.
+/// has_edge_types: bool - Whether the graph has edge types.
+/// might_contain_invalid_weights: bool - Whether we need to validate the weights.
+/// might_contain_singletons: bool - Whether we need to expect singleton nodes. If the graph does not have singletons, we can build it faster.
+/// might_contain_singletons_with_selfloops: bool - Whether we need to expect singleton nodes with selfloops. If the graph does not have singletons with selfloops, we can build it faster.
+/// might_contain_trap_nodes: bool - Whether we need to expect trap nodes. If the graph does not have trap nodes we can build it faster.
+/// directed: bool - Whether the graph is directed.
+/// edge_list_is_correct: bool - Whether the edge list is correct and therefore we can skip validating it.
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,

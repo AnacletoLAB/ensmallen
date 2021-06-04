@@ -107,6 +107,18 @@ impl Graph {
         Ok(self.get_weighted_singleton_nodes_number()? > 0)
     }
 
+    /// Returns whether the graph has constant weights.
+    ///
+    /// # Implementative details
+    /// If the minimum edge weight is closer than the maximum edge weight
+    /// then the f32 epsilon we consider the weights functionally constant.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
+        Ok((self.get_max_edge_weight()? - self.get_min_edge_weight()?).abs() < WeightT::EPSILON)
+    }
+
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// # Example
