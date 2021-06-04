@@ -501,7 +501,7 @@ impl EnsmallenGraph {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
         let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
-            let max_node_type_count = pe!(self.graph.get_maximum_node_types_number())? as usize;
+            let max_node_type_count = pe!(self.graph.get_maximum_multilabel_count())? as usize;
             (
                 Some(ThreadDataRaceAware {
                     t: PyArray2::new(gil.python(), [batch_size, max_node_type_count], false),
