@@ -51,8 +51,6 @@ impl PyObjectProtocol for EnsmallenGraph {
 
         distances.sort_by(|(_, d1), (_, d2)| d1.cmp(d2));
 
-        
-
         Err(PyTypeError::new_err(
             format!(
                 "The method {} does not exists, did you mean {:?}?",

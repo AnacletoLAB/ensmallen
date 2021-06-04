@@ -779,7 +779,7 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
-            .map(|node_types| node_types.get_min_node_type_count())
+            .map(|node_types| node_types.get_minimum_node_type_count())
     }
 
     /// Returns maximum number of node types.
@@ -788,7 +788,16 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_maximum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
-            .map(|node_types| node_types.get_max_node_type_count())
+            .map(|node_types| node_types.get_maximum_node_type_count())
+    }
+
+    /// Returns number of maximum multilabel count.
+    ///
+    /// This value is the maximum number of multilabel counts
+    /// that appear in any given node in the graph.
+    pub fn get_maximum_multilabel_count(&self) -> Result<NodeTypeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.get_maximum_multilabel_count())
     }
 
     /// Returns number of singleton node types.

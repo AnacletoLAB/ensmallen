@@ -14,6 +14,9 @@ pub struct NodeTypeVocabulary {
     pub counts: Vec<NodeT>,
     pub min_count: NodeT,
     pub max_count: NodeT,
+    /// Maximum number of node type given to any node.
+    /// TODO: update this value in a way that is always correct and minimal.
+    pub max_multilabel_count: NodeTypeT,
     pub unknown_count: NodeT,
     pub multilabel: bool,
 }
@@ -40,6 +43,7 @@ impl Default for NodeTypeVocabulary {
             counts: Vec::new(),
             min_count: 0,
             max_count: 0,
+            max_multilabel_count: 0,
             unknown_count: NodeT::from_usize(0),
             multilabel: false,
         }
@@ -62,6 +66,7 @@ impl NodeTypeVocabulary {
                     counts: Vec::new(),
                     min_count: 0,
                     max_count: 0,
+                    max_multilabel_count: 0,
                     unknown_count: NodeT::from_usize(0),
                     multilabel,
                 };
@@ -121,6 +126,7 @@ impl NodeTypeVocabulary {
                     .collect::<Vec<NodeTypeT>>();
 
                 self.multilabel = self.multilabel || ids.len() > 1;
+                self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
 
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
@@ -175,6 +181,7 @@ impl NodeTypeVocabulary {
                     ));
                 }
                 self.multilabel = self.multilabel || ids.len() > 1;
+                self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
                 Some(ids)
@@ -197,13 +204,21 @@ impl NodeTypeVocabulary {
     }
 
     /// Returns number of minimum node-count.
-    pub fn get_min_node_type_count(&self) -> NodeT {
+    pub fn get_minimum_node_type_count(&self) -> NodeT {
         self.min_count
     }
 
     /// Returns number of maximum node-count.
-    pub fn get_max_node_type_count(&self) -> NodeT {
+    pub fn get_maximum_node_type_count(&self) -> NodeT {
         self.max_count
+    }
+
+    /// Returns number of maximum multilabel count.
+    /// 
+    /// This value is the maximum number of multilabel counts
+    /// that appear in any given node in the graph.
+    pub fn get_maximum_multilabel_count(&self) -> NodeTypeT {
+        self.max_multilabel_count
     }
 
     /// Returns number of unknown nodes.

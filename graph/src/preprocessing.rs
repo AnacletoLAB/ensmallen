@@ -391,7 +391,7 @@ impl Graph {
         let (maximum_node_types_number, multi_label) = if return_node_types {
             self.must_not_contain_unknown_node_types()?;
             (
-                self.get_maximum_node_types_number()? as usize,
+                self.get_maximum_multilabel_count()? as usize,
                 self.has_multilabel_node_types()?,
             )
         } else {
