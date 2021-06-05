@@ -526,12 +526,26 @@ impl EnsmallenGraph {{
 r#"const METHODS_NAMES: &'static [&'static str] = &[
 {}
 ];
+
+const TFIDF_DOCUMENTS: &'static[&'static str] = &[
+{:?}
+];
+
+const TFIDF_FREQUENCIES: &'staitc[&'static[f64]] = &[
+{}
+];
 "#,
         method_names.iter()
             .map(|x| format!("    \"{}\",", x))
             .collect::<Vec<String>>()
             .join("\n"),
 
+        vocabulary.reverse_map,
+
+        tfidf.iter()
+            .map(|vals| format!("&{:?}", vals))
+            .collect::<Vec<String>>()
+            .join("\n"),
     );
     fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list).expect("Cannot write the method names list file");
 

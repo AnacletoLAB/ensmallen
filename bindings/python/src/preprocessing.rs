@@ -1,6 +1,10 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT, NodeTypeT,
+    cooccurence_matrix as rust_cooccurence_matrix, 
+    word2vec as rust_word2vec,
+    okapi_bm25_tfidf as rust_okapi_bm25_tfidf, 
+    NodeT,
+    NodeTypeT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -13,6 +17,32 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
     Ok(())
+}
+
+#[pyfunction(py_kwargs = "**")]
+#[text_signature = "(sequences, window_size)"]
+/// Return vocabulary and TFIDF matrix of given documents.
+///
+///
+/// Arguments
+/// ---------
+/// documents: List[List[String]],
+///     The documents to parse
+/// k1: Optional[float],
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float],
+///     The default parameter for b, tipically equal to 0.75.
+/// verbose: Optional[bool],
+///     Whether to show a loading bar.
+///
+fn okapi_bm25_tfidf(
+    documents: Vec<Vec<String>>,
+    k1: Option<f64>,
+    b: Option<f64>,
+    verbose: Option<bool>,
+) -> PyResult<(Vec<String>, Vec<Vec<f64>>)> {
+    let (vocabulary, tfidf) = pe!(rust_okapi_bm25_tfidf(&documents, k1, b, verbose))?;
+    Ok((vocabulary.reverse_map, tfidf))
 }
 
 #[pyfunction(py_kwargs = "**")]
