@@ -443,7 +443,7 @@ impl Graph {
         Ok(gen_random_vec(batch_size, splitmix64(idx))
             .into_par_iter()
             .map(move |mut sampled| unsafe {
-                if  sampled > negative_samples_threshold{
+                if sampled > negative_samples_threshold{
                     let edge_id = sampled % edges_number;
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     let edge_type = if return_edge_types {
