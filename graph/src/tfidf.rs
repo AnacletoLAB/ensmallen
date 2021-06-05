@@ -6,13 +6,13 @@ use super::*;
 /// Return vocabulary and TFIDF matrix of given documents.
 ///
 /// # Arguments
-/// * `documents`: &[Vec<String>] - The documents to parse
+/// * `documents`: &[&[String]] - The documents to parse
 /// * `k1`: Option<f64> - The default parameter for k1, tipically between 1.2 and 2.0.
 /// * `b`: Option<f64> - The default parameter for b, tipically equal to 0.75.
 /// * `verbose`: Option<bool> - Whether to show a loading bar.
 ///
 pub fn okapi_bm25_tfidf(
-    documents: &[Vec<String>],
+    documents: &[&[String]],
     k1: Option<f64>,
     b: Option<f64>,
     verbose: Option<bool>,
@@ -31,7 +31,7 @@ pub fn okapi_bm25_tfidf(
     let pb = get_loading_bar(verbose, "Building vocabulary", number_of_documents);
     for document in documents.iter().progress_with(pb) {
         total_documents_length += document.len();
-        for word in document {
+        for word in document.iter() {
             let (index, is_new) = vocabulary.insert(word)?;
             if is_new {
                 word_counts.push(1);
