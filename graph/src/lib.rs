@@ -76,6 +76,7 @@ mod iter_queries;
 mod iters;
 mod edge_metrics;
 mod thickeners;
+mod tfidf;
 mod modifiers;
 mod operators;
 mod laplacian;
@@ -119,6 +120,7 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use preprocessing::*;
+pub use tfidf::*;
 
 mod dijkstra_queue;
 pub use dijkstra_queue::*;

@@ -4,6 +4,8 @@ use std::fs;
 use std::fs::read_dir;
 use std::collections::HashSet;
 
+use graph::okapi_bm25_tfidf;
+
 fn get_binding_names() -> HashSet<String> {
     let bindings_files: Vec<String> = read_dir("../../../bindings/python/src")
     .unwrap()
@@ -514,23 +516,22 @@ impl EnsmallenGraph {{
 
     let method_names = get_binding_names();
 
+    let documents = method_names.iter()
+        .map(|x| split_words(x))
+        .collect::<Vec<Vec<String>>>();
+    let (vocabulary, tfidf) = okapi_bm25_tfidf(&documents, None, None, None).unwrap();
+
+    
     let method_names_list = format!(
 r#"const METHODS_NAMES: &'static [&'static str] = &[
 {}
 ];
-
-const TFIDF_DOCUMENTS: &'static[&'static [&'static str]] = &[
-{}
-];"#,
+"#,
         method_names.iter()
             .map(|x| format!("    \"{}\",", x))
             .collect::<Vec<String>>()
             .join("\n"),
 
-        method_names.iter()
-            .map(|x| format!("    &{:?},", split_words(x)))
-            .collect::<Vec<String>>()
-            .join("\n"),
     );
     fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list).expect("Cannot write the method names list file");
 

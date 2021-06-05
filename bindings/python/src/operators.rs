@@ -43,23 +43,21 @@ impl PyObjectProtocol for EnsmallenGraph {
     }
 
     fn __getattr__(&self, name: String) -> PyResult<()> {
-        let mut distances = METHODS_NAMES.iter()
-            .map(|method_name| {
-                (method_name, levenshtein(&name, &method_name))
-            }).collect::<Vec<(&&str, usize)>>();
-            
+        let mut distances = METHODS_NAMES
+            .iter()
+            .map(|method_name| (method_name, levenshtein(&name, &method_name)))
+            .collect::<Vec<(&&str, usize)>>();
 
         distances.sort_by(|(_, d1), (_, d2)| d1.cmp(d2));
 
-        
-
-        Err(PyTypeError::new_err(
-            format!(
-                "The method {} does not exists, did you mean {:?}?",
-                name,
-                &distances[..10].iter().map(|(method, _distance)| *method).collect::<Vec<&&str>>(),
-            )
-        ))
+        Err(PyTypeError::new_err(format!(
+            "The method {} does not exists, did you mean {:?}?",
+            name,
+            &distances[..10]
+                .iter()
+                .map(|(method, _distance)| *method)
+                .collect::<Vec<&&str>>(),
+        )))
     }
 }
 
