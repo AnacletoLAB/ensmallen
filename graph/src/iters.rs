@@ -1058,6 +1058,74 @@ impl Graph {
         })
     }
 
+    /// Returns iterator over edge node names of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_node_names_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (String, String)> + '_, String> {
+        self.iter_edge_node_ids_with_unknown_edge_types(directed)
+            .map(|x| {
+                x.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns iterator over edge node names of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_edge_node_names_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (String, String)> + '_, String> {
+        self.iter_edge_node_ids_with_known_edge_types(directed)
+            .map(|x| {
+                x.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns iterator over node names of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_node_names_with_unknown_node_types(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.iter_node_ids_with_unknown_node_types().map(|x| {
+            x.map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+        })
+    }
+
+    /// Returns iterator over node names of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn iter_node_names_with_known_node_types(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_, String> {
+        self.iter_node_ids_with_known_node_types().map(|x| {
+            x.map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+        })
+    }
+
     /// Returns parallel iterator over edge IDs of the edges with unknown edge types
     ///
     /// # Raises
@@ -1189,6 +1257,74 @@ impl Graph {
                         None
                     }
                 })
+        })
+    }
+
+    /// Returns parallel iterator over edge node names of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn par_iter_edge_node_names_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_, String> {
+        self.par_iter_edge_node_ids_with_unknown_edge_types(directed)
+            .map(|x| {
+                x.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns parallel iterator over edge node names of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn par_iter_edge_node_names_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_, String> {
+        self.par_iter_edge_node_ids_with_known_edge_types(directed)
+            .map(|x| {
+                x.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns parallel iterator over node names of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn par_iter_node_names_with_unknown_node_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = String> + '_, String> {
+        self.par_iter_node_ids_with_unknown_node_types().map(|x| {
+            x.map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+        })
+    }
+
+    /// Returns parallel iterator over node names of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn par_iter_node_names_with_known_node_types(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = String> + '_, String> {
+        self.par_iter_node_ids_with_known_node_types().map(|x| {
+            x.map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
         })
     }
 }
