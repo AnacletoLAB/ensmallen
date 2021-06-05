@@ -26,7 +26,6 @@ pub fn okapi_bm25_tfidf(
     let number_of_documents = documents.len();
     let mut total_documents_length = 0;
     let mut vocabulary = Vocabulary::<usize>::default();
-    vocabulary.build_reverse_mapping()?;
     let mut word_counts: Vec<usize> = Vec::new();
     let pb = get_loading_bar(verbose, "Building vocabulary", number_of_documents);
     for document in documents.iter().progress_with(pb) {
@@ -40,6 +39,8 @@ pub fn okapi_bm25_tfidf(
             }
         }
     }
+    // Build the reverse mapping
+    vocabulary.build_reverse_mapping()?;
     // Computing vocabulary size
     let vocabulary_size = word_counts.len();
     // Computing average document size
