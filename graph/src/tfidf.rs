@@ -6,13 +6,13 @@ use super::*;
 /// Return vocabulary and TFIDF matrix of given documents.
 ///
 /// # Arguments
-/// * `documents`: &[&[String]] - The documents to parse
+/// * `documents`: &[Vec<String>] - The documents to parse
 /// * `k1`: Option<f64> - The default parameter for k1, tipically between 1.2 and 2.0.
 /// * `b`: Option<f64> - The default parameter for b, tipically equal to 0.75.
 /// * `verbose`: Option<bool> - Whether to show a loading bar.
 ///
 pub fn okapi_bm25_tfidf(
-    documents: &[&[String]],
+    documents: &[Vec<String>],
     k1: Option<f64>,
     b: Option<f64>,
     verbose: Option<bool>,

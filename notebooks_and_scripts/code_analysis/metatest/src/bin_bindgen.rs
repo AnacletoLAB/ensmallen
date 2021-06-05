@@ -4,6 +4,8 @@ use std::fs;
 use std::fs::read_dir;
 use std::collections::HashSet;
 
+use graph::okapi_bm25_tfidf;
+
 fn get_binding_names() -> HashSet<String> {
     let bindings_files: Vec<String> = read_dir("../../../bindings/python/src")
     .unwrap()
@@ -508,21 +510,42 @@ impl EnsmallenGraph {{
     bindings.join("")
     );
 
-    fs::write("../../../bindings/python/src/auto_generated_bindings.rs", file_content);
+    fs::write("../../../bindings/python/src/auto_generated_bindings.rs", file_content).expect("Cannot weite the automatically generated bindings file");
 
 
 
     let method_names = get_binding_names();
+
+    let documents = method_names.iter()
+        .map(|x| split_words(x))
+        .collect::<Vec<Vec<String>>>();
+    let (vocabulary, tfidf) = okapi_bm25_tfidf(&documents, None, None, None).unwrap();
+
+    
     let method_names_list = format!(
-r#"const METHODS_NAMES: &'static [&'static str] = &[
+r#"pub const METHODS_NAMES: &'static [&'static str] = &[
 {}
-];"#,
+];
+
+pub const TFIDF_TERMS: &'static[&'static str] = &{:?};
+
+pub const TFIDF_FREQUENCIES: &'static [&'static [f64]] = &[
+{}
+];
+"#,
         method_names.iter()
             .map(|x| format!("    \"{}\",", x))
             .collect::<Vec<String>>()
             .join("\n"),
+
+        vocabulary.reverse_map,
+
+        tfidf.iter()
+            .map(|vals| format!("&{:?},", vals))
+            .collect::<Vec<String>>()
+            .join("\n"),
     );
-    fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list);
+    fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list).expect("Cannot write the method names list file");
 
 
     assert!(
@@ -532,4 +555,28 @@ r#"const METHODS_NAMES: &'static [&'static str] = &[
             .expect("Could not run format on the python bindings").success(), 
         "The cargo format failed and returned non-zero exit status"
     );
+}
+
+fn split_words(method_name: &str) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    for word in method_name.split("_") {
+        match word {
+            "type" | "types" | "id" | "ids" => {
+                match result.last_mut() {
+                    Some(last) => {
+                        last.push('_');
+                        last.extend(word.chars());
+                    }
+                    None => {
+                        result.push(word.to_string());
+                    }
+                }
+            }
+            _ => {
+                result.push(word.to_string());
+            }
+        };
+    }
+
+    result.into_iter().filter(|x| !x.is_empty()).collect()
 }
