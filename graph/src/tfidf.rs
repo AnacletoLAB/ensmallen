@@ -32,11 +32,11 @@ pub fn okapi_bm25_tfidf(
     for document in documents.iter().progress_with(pb) {
         total_documents_length += document.len();
         for word in document.iter() {
-            let (index, is_new) = vocabulary.insert(word)?;
-            if is_new {
-                word_counts.push(1);
-            } else {
+            let (index, not_new) = vocabulary.insert(word)?;
+            if not_new {
                 word_counts[index] += 1;
+            } else {
+                word_counts.push(1);
             }
         }
     }
