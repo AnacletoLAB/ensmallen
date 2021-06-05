@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -29,11 +29,11 @@ fn test_regression_35() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         None,
-        true, // Directed
-        true, // Directed edge list
-        "Fuzz Graph" // Name of the graph
+        true,         // Directed
+        true,         // Directed edge list
+        "Fuzz Graph", // Name of the graph
     )?;
-    
+
     let _ = graph::test_utilities::default_test_suite(&mut graph, Some(false));
     Ok(())
 }

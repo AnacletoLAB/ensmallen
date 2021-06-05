@@ -67,7 +67,8 @@ impl Graph {
                 "graph as the resulting graph may become a directed graph.\n",
                 "If you still want to remove this edges, convert the graph ",
                 "to directed by using `to_directed` or `to_directed_inplace`."
-            ).to_string());
+            )
+            .to_string());
         }
 
         let filter_singleton_nodes = filter_singleton_nodes.unwrap_or(false);
@@ -408,7 +409,8 @@ impl Graph {
             None,
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without unknown edge types and relative edges.
@@ -439,7 +441,8 @@ impl Graph {
             None,
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without singleton nodes.
@@ -469,7 +472,8 @@ impl Graph {
             None,
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without singleton nodes with selfloops.
@@ -499,7 +503,8 @@ impl Graph {
             None,
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without disconnected nodes.
@@ -529,7 +534,8 @@ impl Graph {
             None,
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without selfloops.
@@ -557,7 +563,8 @@ impl Graph {
             Some(true),
             None,
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without parallel edges.
@@ -585,6 +592,7 @@ impl Graph {
             None,
             Some(true),
             verbose,
-        ).unwrap()
+        )
+        .unwrap()
     }
 }

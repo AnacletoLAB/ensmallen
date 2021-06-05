@@ -40,8 +40,8 @@ fn test_regression_20() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
-        true,    // Directed
-        true,    // Directed edge list
+        true,                // Directed
+        true,                // Directed edge list
         "RegressionGraph20", // Name of the graph
     )?;
     let _ = graph::test_utilities::default_test_suite(&mut graph, None);

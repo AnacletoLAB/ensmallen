@@ -21,7 +21,7 @@ impl Graph {
     ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         // We retrieve the range of edge ids, the minimum and maximum value.
         let (min_edge_id, max_edge_id) =
-        unsafe{self.get_unchecked_minmax_edge_ids_from_source_node_id(source_node_id)};
+            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(source_node_id) };
 
         // We check if subsampling is enabled and if so, if it makes sense:
         // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
@@ -59,15 +59,17 @@ impl Graph {
         {
             true => None,
             false => Some(
-                unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id)}
-                    .collect(),
+                unsafe {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id)
+                }
+                .collect(),
             ),
         };
         (min_edge_id, max_edge_id, destinations, None)
     }
 
     /// Returns slice of destinations corresponding to given minmax edge ID and node.
-    /// 
+    ///
     /// # Arguments
     /// * `min_edge_id`: EdgeT - Minimum edge ID for the slice.
     /// * `max_edge_id`: EdgeT - Maximum edge ID for the slice.

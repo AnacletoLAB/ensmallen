@@ -31,6 +31,11 @@ fn test_cora_diameter() -> Result<(), String> {
         f64::INFINITY
     );
     assert_eq!(cora.get_unweighted_diameter(Some(true), None).unwrap(), 6.0);
-    assert_eq!(cora_with_no_words.get_unweighted_diameter(Some(true), None).unwrap(), 19.0);
+    assert_eq!(
+        cora_with_no_words
+            .get_unweighted_diameter(Some(true), None)
+            .unwrap(),
+        19.0
+    );
     Ok(())
 }

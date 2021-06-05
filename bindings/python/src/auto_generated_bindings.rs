@@ -3646,6 +3646,100 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node IDs of the edges with unknown edge types
+    ///
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    ///
+    pub fn get_edge_node_ids_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> PyResult<Vec<(NodeT, NodeT)>> {
+        pe!(self
+            .graph
+            .get_edge_node_ids_with_unknown_edge_types(directed))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node IDs of the edges with known edge types
+    ///
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    ///
+    pub fn get_edge_node_ids_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> PyResult<Vec<(NodeT, NodeT)>> {
+        pe!(self.graph.get_edge_node_ids_with_known_edge_types(directed))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node names of the edges with unknown edge types
+    ///
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    ///
+    pub fn get_edge_node_names_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> PyResult<Vec<(String, String)>> {
+        pe!(self
+            .graph
+            .get_edge_node_names_with_unknown_edge_types(directed))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node names of the edges with known edge types
+    ///
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    ///
+    pub fn get_edge_node_names_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> PyResult<Vec<(String, String)>> {
+        pe!(self
+            .graph
+            .get_edge_node_names_with_known_edge_types(directed))
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
@@ -3717,6 +3811,32 @@ impl EnsmallenGraph {
             pe!(self.graph.get_node_ids_with_known_node_types())?,
             NodeT
         ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns node names of the nodes with unknown node types
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no node types in the graph.
+    ///
+    pub fn get_node_names_with_unknown_node_types(&self) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_node_names_with_unknown_node_types())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns node names of the nodes with known node types
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no node types in the graph.
+    ///
+    pub fn get_node_names_with_known_node_types(&self) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_node_names_with_known_node_types())
     }
 
     #[automatically_generated_binding]
@@ -4395,9 +4515,9 @@ impl EnsmallenGraph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
-    ) -> EnsmallenGraph {
-        EnsmallenGraph {
-            graph: self.graph.filter_from_ids(
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.filter_from_ids(
                 node_ids_to_keep,
                 node_ids_to_filter,
                 node_type_ids_to_keep,
@@ -4416,9 +4536,9 @@ impl EnsmallenGraph {
                 filter_singleton_nodes_with_selfloop,
                 filter_selfloops,
                 filter_parallel_edges,
-                verbose,
-            ),
-        }
+                verbose
+            ))?,
+        })
     }
 
     #[automatically_generated_binding]
@@ -4572,6 +4692,23 @@ impl EnsmallenGraph {
     pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self.graph.drop_singleton_nodes_with_selfloops(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Returns new graph without disconnected nodes.
+    ///
+    /// A disconnected node is a node with no connection to any other node.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.drop_disconnected_nodes(verbose),
         }
     }
 
