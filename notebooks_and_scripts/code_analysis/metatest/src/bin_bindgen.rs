@@ -508,21 +508,31 @@ impl EnsmallenGraph {{
     bindings.join("")
     );
 
-    fs::write("../../../bindings/python/src/auto_generated_bindings.rs", file_content);
+    fs::write("../../../bindings/python/src/auto_generated_bindings.rs", file_content).expect("Cannot weite the automatically generated bindings file");
 
 
 
     let method_names = get_binding_names();
+
     let method_names_list = format!(
 r#"const METHODS_NAMES: &'static [&'static str] = &[
+{}
+];
+
+const TFIDF_DOCUMENTS: &'static[&'static [&'static str]] = &[
 {}
 ];"#,
         method_names.iter()
             .map(|x| format!("    \"{}\",", x))
             .collect::<Vec<String>>()
             .join("\n"),
+
+        method_names.iter()
+            .map(|x| format!("    &{:?},", split_words(x)))
+            .collect::<Vec<String>>()
+            .join("\n"),
     );
-    fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list);
+    fs::write("../../../bindings/python/src/method_names_list.rs", method_names_list).expect("Cannot write the method names list file");
 
 
     assert!(
@@ -532,4 +542,28 @@ r#"const METHODS_NAMES: &'static [&'static str] = &[
             .expect("Could not run format on the python bindings").success(), 
         "The cargo format failed and returned non-zero exit status"
     );
+}
+
+fn split_words(method_name: &str) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    for word in method_name.split("_") {
+        match word {
+            "type" | "types" | "id" | "ids" => {
+                match result.last_mut() {
+                    Some(last) => {
+                        last.push('_');
+                        last.extend(word.chars());
+                    }
+                    None => {
+                        result.push(word.to_string());
+                    }
+                }
+            }
+            _ => {
+                result.push(word.to_string());
+            }
+        };
+    }
+
+    result
 }
