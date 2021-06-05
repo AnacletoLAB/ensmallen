@@ -16,6 +16,7 @@ use types::ThreadDataRaceAware;
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
+    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf))?;
     Ok(())
 }
 

@@ -523,15 +523,13 @@ impl EnsmallenGraph {{
 
     
     let method_names_list = format!(
-r#"const METHODS_NAMES: &'static [&'static str] = &[
+r#"pub const METHODS_NAMES: &'static [&'static str] = &[
 {}
 ];
 
-const TFIDF_DOCUMENTS: &'static[&'static str] = &[
-{:?}
-];
+pub const TFIDF_TERMS: &'static[&'static str] = &{:?};
 
-const TFIDF_FREQUENCIES: &'staitc[&'static[f64]] = &[
+pub const TFIDF_FREQUENCIES: &'static [&'static [f64]] = &[
 {}
 ];
 "#,
@@ -543,7 +541,7 @@ const TFIDF_FREQUENCIES: &'staitc[&'static[f64]] = &[
         vocabulary.reverse_map,
 
         tfidf.iter()
-            .map(|vals| format!("&{:?}", vals))
+            .map(|vals| format!("&{:?},", vals))
             .collect::<Vec<String>>()
             .join("\n"),
     );
@@ -580,5 +578,5 @@ fn split_words(method_name: &str) -> Vec<String> {
         };
     }
 
-    result
+    result.into_iter().filter(|x| !x.is_empty()).collect()
 }

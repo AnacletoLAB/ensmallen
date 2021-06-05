@@ -1528,6 +1528,82 @@ Ok(to_ndarray_1d!(gil, pe!(self.graph.get_edge_ids_with_known_edge_types())?, Ed
     }
         
     #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node IDs of the edges with unknown edge types
+    /// 
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// 
+    pub fn get_edge_node_ids_with_unknown_edge_types(&self, directed: bool) -> PyResult<Vec<(NodeT, NodeT)>> {
+        pe!(self.graph.get_edge_node_ids_with_unknown_edge_types(directed))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node IDs of the edges with known edge types
+    /// 
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// 
+    pub fn get_edge_node_ids_with_known_edge_types(&self, directed: bool) -> PyResult<Vec<(NodeT, NodeT)>> {
+        pe!(self.graph.get_edge_node_ids_with_known_edge_types(directed))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node names of the edges with unknown edge types
+    /// 
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// 
+    pub fn get_edge_node_names_with_unknown_edge_types(&self, directed: bool) -> PyResult<Vec<(String, String)>> {
+        pe!(self.graph.get_edge_node_names_with_unknown_edge_types(directed))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, directed)"]
+    /// Returns edge node names of the edges with known edge types
+    /// 
+    /// Parameters
+    /// ----------
+    /// directed: bool,
+    ///     Whether to iterated the edges as a directed or undirected edge list.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// 
+    pub fn get_edge_node_names_with_known_edge_types(&self, directed: bool) -> PyResult<Vec<(String, String)>> {
+        pe!(self.graph.get_edge_node_names_with_known_edge_types(directed))
+    }
+        
+    #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
@@ -1583,6 +1659,32 @@ Ok(to_ndarray_1d!(gil, pe!(self.graph.get_node_ids_with_unknown_node_types())?, 
     pub fn get_node_ids_with_known_node_types(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
 Ok(to_ndarray_1d!(gil, pe!(self.graph.get_node_ids_with_known_node_types())?, NodeT))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns node names of the nodes with unknown node types
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no node types in the graph.
+    /// 
+    pub fn get_node_names_with_unknown_node_types(&self) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_node_names_with_unknown_node_types())
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns node names of the nodes with known node types
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no node types in the graph.
+    /// 
+    pub fn get_node_names_with_known_node_types(&self) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_node_names_with_known_node_types())
     }
         
     #[automatically_generated_binding]

@@ -6,8 +6,6 @@ use pyo3::types::PyDict;
 use pyo3::wrap_pymodule;
 use std::collections::{HashMap, HashSet};
 
-pub(crate) use levenshtein::levenshtein;
-
 use graph::*;
 use tags::*;
 
@@ -26,11 +24,15 @@ mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
+mod operators;
 
+
+// automatically generated files
 mod auto_generated_bindings;
 mod method_names_list;
-mod operators;
 pub(crate) use method_names_list::*;
+
+
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
