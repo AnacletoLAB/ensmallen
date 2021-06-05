@@ -1704,10 +1704,12 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
 }
 
 pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
-    let unfiltered = graph.filter_from_ids(
-        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-        None, None, None, verbose,
-    );
+    let unfiltered = graph
+        .filter_from_ids(
+            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+            None, None, None, None, verbose,
+        )
+        .unwrap();
     assert_eq!(&unfiltered, graph);
     assert!(graph
         .filter_from_names(

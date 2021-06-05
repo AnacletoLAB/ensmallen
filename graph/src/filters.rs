@@ -59,7 +59,17 @@ impl Graph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
+        if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_node_ids_to_filter.is_some())
+        {
+            return Err(concat!(
+                "It is not possible to filter by edge ids on an undirected ",
+                "graph as the resulting graph may become a directed graph.\n",
+                "If you still want to remove this edges, convert the graph ",
+                "to directed by using `to_directed` or `to_directed_inplace`."
+            ).to_string());
+        }
+
         let filter_singleton_nodes = filter_singleton_nodes.unwrap_or(false);
         let filter_singleton_nodes_with_selfloop =
             filter_singleton_nodes_with_selfloop.unwrap_or(false);
@@ -137,9 +147,9 @@ impl Graph {
             // If singleton nodes with selfloops need to be filtered out
             (!filter_singleton_nodes_with_selfloop || src != dst || !self.is_singleton_with_selfloops_from_node_id(*src)) &&
             // If the allow edge types set was provided
-            edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst))) &&
+            edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             // If the deny edge types set was provided
-            edge_node_ids_to_filter.as_ref().map_or(true, |edge_node_ids| !edge_node_ids.contains(&(*src, *dst))) &&
+            !edge_node_ids_to_filter.as_ref().map_or(false, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
@@ -267,7 +277,6 @@ impl Graph {
                 )
             }
         }
-        .unwrap()
     }
 
     /// Returns a **NEW** Graph that does not have the required attributes.
@@ -324,7 +333,7 @@ impl Graph {
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
-        Ok(self.filter_from_ids(
+        self.filter_from_ids(
             node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
                 Ok(Some(self.get_node_ids_from_node_names(nntk)?))
             })?,
@@ -368,7 +377,7 @@ impl Graph {
             filter_selfloops,
             filter_parallel_edges,
             verbose,
-        ))
+        )
     }
 
     /// Returns new graph without unknown node types and relative nodes.
@@ -399,7 +408,7 @@ impl Graph {
             None,
             None,
             verbose,
-        )
+        ).unwrap()
     }
 
     /// Returns new graph without unknown edge types and relative edges.
@@ -430,7 +439,7 @@ impl Graph {
             None,
             None,
             verbose,
-        )
+        ).unwrap()
     }
 
     /// Returns new graph without singleton nodes.
@@ -460,7 +469,7 @@ impl Graph {
             None,
             None,
             verbose,
-        )
+        ).unwrap()
     }
 
     /// Returns new graph without singleton nodes with selfloops.
@@ -490,7 +499,37 @@ impl Graph {
             None,
             None,
             verbose,
-        )
+        ).unwrap()
+    }
+
+    /// Returns new graph without disconnected nodes.
+    ///
+    /// A disconnected node is a node with no connection to any other node.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
+    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> Graph {
+        self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(true),
+            Some(true),
+            None,
+            None,
+            verbose,
+        ).unwrap()
     }
 
     /// Returns new graph without selfloops.
@@ -518,7 +557,7 @@ impl Graph {
             Some(true),
             None,
             verbose,
-        )
+        ).unwrap()
     }
 
     /// Returns new graph without parallel edges.
@@ -527,25 +566,25 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> Graph {
         self.filter_from_ids(
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
-            None, 
             None,
-            None, 
-            None, 
-            None, 
-            Some(true), 
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            Some(true),
             verbose,
-        )
+        ).unwrap()
     }
 }
