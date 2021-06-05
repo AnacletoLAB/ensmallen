@@ -857,6 +857,66 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns edge node IDs of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_ids_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+        self.iter_edge_node_ids_with_unknown_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node IDs of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_ids_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+        self.iter_edge_node_ids_with_known_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node names of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_names_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(String, String)>, String> {
+        self.iter_edge_node_names_with_unknown_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node names of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_names_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(String, String)>, String> {
+        self.iter_edge_node_names_with_known_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
     ///
@@ -902,6 +962,24 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>, String> {
         self.iter_node_ids_with_known_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_with_unknown_node_types(&self) -> Result<Vec<String>, String> {
+        self.iter_node_names_with_unknown_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_with_known_node_types(&self) -> Result<Vec<String>, String> {
+        self.iter_node_names_with_known_node_types()
             .map(|x| x.collect())
     }
 
