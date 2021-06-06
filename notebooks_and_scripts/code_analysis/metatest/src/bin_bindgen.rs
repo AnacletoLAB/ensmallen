@@ -519,17 +519,40 @@ impl EnsmallenGraph {{
     let documents = method_names.iter()
         .map(|x| split_words(x))
         .collect::<Vec<Vec<String>>>();
-    let (vocabulary, tfidf) = okapi_bm25_tfidf(&documents, None, None, None).unwrap();
+    let vals = documents.iter()
+        .map(|x| x.iter().map(|y| y.as_str()).collect::<Vec<&str>>())
+        .collect::<Vec<Vec<&str>>>();
 
+    let tfidf = okapi_bm25_tfidf(
+        &vals[..], 
+        None, 
+        None, 
+        None, 
+        None,
+    ).unwrap();
+
+    let mut terms = HashSet::new();
+    documents.iter().for_each(
+        |document| {
+            document.iter()
+                .for_each(
+                    |term| {
+                        terms.insert(term);
+                    }
+                );
+        }
+    );
     
     let method_names_list = format!(
 r#"pub const METHODS_NAMES: &'static [&'static str] = &[
 {}
 ];
 
-pub const TFIDF_TERMS: &'static[&'static str] = &{:?};
+pub const TERMS: &'static [&'static str] = &[
+{}
+];
 
-pub const TFIDF_FREQUENCIES: &'static [&'static [f64]] = &[
+pub const TFIDF_FREQUENCIES: &'static [&'static [(&'static str, f64)]] = &[
 {}
 ];
 "#,
@@ -537,11 +560,12 @@ pub const TFIDF_FREQUENCIES: &'static [&'static [f64]] = &[
             .map(|x| format!("    \"{}\",", x))
             .collect::<Vec<String>>()
             .join("\n"),
-
-        vocabulary.reverse_map,
-
+        terms.iter()
+            .map(|x| format!("    \"{}\",", x))
+            .collect::<Vec<String>>()
+            .join("\n"),
         tfidf.iter()
-            .map(|vals| format!("&{:?},", vals))
+            .map(|vals| format!("&{:?},", vals.iter().collect::<Vec<(&String, &f64)>>()))
             .collect::<Vec<String>>()
             .join("\n"),
     );

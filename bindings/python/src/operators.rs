@@ -2,7 +2,7 @@ use super::*;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
 use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
-use strsim::damerau_levenshtein;
+use strsim::*;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
@@ -86,34 +86,44 @@ impl PyObjectProtocol for EnsmallenGraph {
         // split the query into tokens
         let tokens = split_words(&name);
 
-        // Compute the similarity between each token in the query
-        // and the vector of terms for the pre-computed tfidf matrix 
-        let edit_distances = tokens.iter()
+        dbg!(&tokens);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens.iter()
             .map(|token| {
-                TFIDF_TERMS.iter()
-                    .map(|&term| {
-                        1.0 - (
-                            damerau_levenshtein(&token, &term) as f64 
-                            / std::cmp::max(token.len(), term.len()) as f64
+                let mut similarities = TERMS.iter()
+                    .map(move |term| {
+                        (
+                            *term,
+                            jaro_winkler(token, term) as f64
                         )
                     })
-                    .collect::<Vec<f64>>()
-            })
-            .collect::<Vec<Vec<f64>>>();
+                    .collect::<Vec<(&str, f64)>>();
 
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            }).flatten().collect::<Vec<(&str, f64)>>();
+        
+        dbg!(&tokens_expanded);
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
         let mut doc_scores = TFIDF_FREQUENCIES.par_iter()
             .enumerate()
+            // for each document
             .map(|(id, frequencies_doc)| {
-                (id, frequencies_doc.iter()
-                    .zip(edit_distances.iter())
-                    .map(|(term_frequency, term_similarities)| {
-                        term_similarities.iter()
-                            .map(|term_similarity| term_similarity.exp() * term_frequency)
-                            .sum::<f64>()
-                    }).sum::<f64>())
+                (id, 
+                    (jaro_winkler(&name, METHODS_NAMES[id]).exp() - 1.0) *
+                    frequencies_doc.iter()
+                        .map(|(term, weight)| {
+                            match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                None => 0.0,
+                            }
+                        })
+                        .sum::<f64>()
+                )
             })
             .collect::<Vec<(usize, f64)>>();
         
@@ -123,20 +133,15 @@ impl PyObjectProtocol for EnsmallenGraph {
         println!("{:?}", doc_scores.iter().map(|(id, score)| (METHODS_NAMES[*id], *score)).collect::<Vec<(&str, f64)>>());
 
         Err(PyTypeError::new_err(format!(
-            "The method {} does not exists, did you mean {:?}?",
-            name,
+            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            &name,
             doc_scores.iter()
-                .map(|(method_id, _)| METHODS_NAMES[*method_id].to_string())
-                .collect::<Vec<String>>(),
+                .map(|(method_id, _)| {
+                    format!("* '{}'", METHODS_NAMES[*method_id].to_string())
+                })
+                .take(3)
+                .collect::<Vec<String>>().join("\n"),
         )))
-        
-        // Err(PyTypeError::new_err(format!(
-        //     "The method {} does not exists, did you mean one of the followings?\n{:#4?}",
-        //     name,
-        //     &methods_scores[..5].iter()
-        //         .map(|(method, _)| method.to_string())
-        //         .collect::<Vec<String>>(),
-        // )))
     }
 }
 
