@@ -1,7 +1,4 @@
 use super::*;
-use rayon::iter::IntoParallelRefIterator;
-use rayon::iter::ParallelIterator;
-use std::collections::HashMap;
 
 impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
@@ -10,32 +7,15 @@ impl Graph {
     /// * `vector_sources`: Option<bool> - Whether to cache sources into a vector for faster walks.
     /// * `vector_destinations`: Option<bool> - Whether to cache destinations into a vector for faster walks.
     /// * `vector_cumulative_node_degrees`: Option<bool> - Whether to cache cumulative_node_degrees into a vector for faster walks.
-    /// * `cache_size`: Option<f64> - percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
         vector_sources: Option<bool>,
         vector_destinations: Option<bool>,
         vector_cumulative_node_degrees: Option<bool>,
-        cache_size: Option<f64>,
     ) -> Result<(), String> {
         let vector_sources = vector_sources.unwrap_or(false);
         let vector_destinations = vector_destinations.unwrap_or(true);
         let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);
-        if (vector_destinations || self.destinations.is_some())
-            && (cache_size.is_some() || self.cached_destinations.is_some())
-        {
-            return Err(concat!(
-                "It is not possible (nor would it make sense) to have both ",
-                "partially cached destinations and completely cached vector ",
-                "destinations at once.\n",
-                "If you want to switch from one to the ",
-                "other form of destinations cache remember to run the method ",
-                "disable_all to disable all forms of time-memory tradeoffs.\n",
-                "Once you have disabled again all trade-offs, you can ",
-                "re-enable the any one you would like."
-            )
-            .to_string());
-        }
 
         if vector_destinations {
             if self.destinations.is_none() {
@@ -58,29 +38,6 @@ impl Graph {
         } else {
             self.cumulative_node_degrees = None;
         }
-        if let Some(cs) = cache_size {
-            if cs <= 0.0 || cs >= 1.0 {
-                return Err("Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.".to_owned());
-            }
-            let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;
-            if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {
-                return Err("Required cached nodes number cannot be 0 or all the nodes.".to_owned());
-            }
-            self.cached_destinations = Some(
-                self.get_top_k_central_node_ids(cached_nodes_number)
-                    .par_iter()
-                    .map(|node_id| unsafe {
-                        (
-                            *node_id,
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
-                                .collect::<Vec<NodeT>>(),
-                        )
-                    })
-                    .collect::<HashMap<NodeT, Vec<NodeT>>>(),
-            );
-        } else {
-            self.cached_destinations = None;
-        }
         Ok(())
     }
 
@@ -89,6 +46,5 @@ impl Graph {
         self.destinations = None;
         self.sources = None;
         self.cumulative_node_degrees = None;
-        self.cached_destinations = None;
     }
 }

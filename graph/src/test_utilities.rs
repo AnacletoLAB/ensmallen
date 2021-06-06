@@ -1132,9 +1132,9 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 
     if !graph.directed {
         warn!("Executing random walks tests.");
-        for mode in 0..3 {
+        for mode in 0..2 {
             if mode == 1 {
-                graph.enable(None, None, None, None)?;
+                graph.enable(None, None, None)?;
                 if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
@@ -1149,13 +1149,6 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
                         "Length of destinations does not match number of edges in the graph."
                     );
                 }
-            }
-            if mode == 2 {
-                graph.enable(Some(false), Some(false), Some(false), Some(0.05))?;
-                assert!(
-                    graph.cached_destinations.is_some(),
-                    "Cached destinations are not None when cache is enabled."
-                );
             }
             assert_eq!(
                 graph
@@ -2091,7 +2084,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     warn!("Starting default test suite.");
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite with speedups enabled.");
-    graph.enable(Some(true), Some(true), Some(true), None)?;
+    graph.enable(Some(true), Some(true), Some(true))?;
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 

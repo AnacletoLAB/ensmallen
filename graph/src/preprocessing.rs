@@ -412,9 +412,6 @@ impl Graph {
         let negative_samples_threshold =
             (negative_samples_percentage * u64::MAX as f64).ceil() as u64;
 
-        // All the remaining values then are positives
-        let graph_has_no_selfloops = !self.has_selfloops();
-
         let edges_number = self.get_directed_edges_number();
         let nodes_number = self.get_nodes_number();
 
@@ -467,7 +464,6 @@ impl Graph {
                     let dst = (sampled >> 32) as u32 % nodes_number;
 
                     if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
-                        || graph_has_no_selfloops && src == dst
                         || graph_to_avoid.as_ref().map_or(false, |g| g.has_edge_from_node_ids(src, dst)){
                         sampled = xorshift(sampled);
                         continue;

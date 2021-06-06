@@ -140,7 +140,7 @@ impl Graph {
     ) -> Vec<NodeT> {
         let (min_edge_id, max_edge_id, destinations, _) =
             self.get_edges_and_destinations_from_source_node_id(max_neighbours, random_state, node);
-        self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations)
+        self.get_destinations_slice(min_edge_id, max_edge_id, &destinations)
             .to_owned()
     }
 
@@ -1463,13 +1463,7 @@ impl Graph {
                 let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_node_ids(src, 0);
                 (
                     min_edge_id,
-                    match &self.cached_destinations {
-                        Some(cds) => match cds.get(&src) {
-                            Some(destinations) => destinations.len() as EdgeT + min_edge_id,
-                            None => self.get_unchecked_edge_id_from_node_ids(src + 1, 0),
-                        },
-                        None => self.get_unchecked_edge_id_from_node_ids(src + 1, 0),
-                    },
+                    self.get_unchecked_edge_id_from_node_ids(src + 1, 0),
                 )
             }
         }
