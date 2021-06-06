@@ -17,8 +17,8 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-#[pyfunction(py_kwargs = "**")]
-#[text_signature = "(sequences, window_size)"]
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
 /// Return vocabulary and TFIDF matrix of given documents.
 ///
 ///
@@ -30,17 +30,25 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float],
 ///     The default parameter for b, tipically equal to 0.75.
+/// vocabulary_size: Optional[usize],
+///     The expected vocabulary size.
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
 ///
 fn okapi_bm25_tfidf(
-    documents: Vec<Vec<String>>,
+    documents: Vec<Vec<&str>>,
     k1: Option<f64>,
     b: Option<f64>,
+    vocabulary_size: Option<usize>,
     verbose: Option<bool>,
-) -> PyResult<(Vec<String>, Vec<Vec<f64>>)> {
-    let (vocabulary, tfidf) = pe!(rust_okapi_bm25_tfidf(&documents, k1, b, verbose))?;
-    Ok((vocabulary.reverse_map, tfidf))
+) -> PyResult<Vec<HashMap<String, f64>>> {
+    pe!(rust_okapi_bm25_tfidf(
+        &documents,
+        k1,
+        b,
+        vocabulary_size,
+        verbose
+    ))
 }
 
 #[pyfunction(py_kwargs = "**")]
