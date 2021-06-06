@@ -598,13 +598,19 @@ impl Graph {
             .zip(destination_node_ids.into_par_iter())
             .map(move |(source_node_id, destination_node_id)| {
                 vec![
-                    self.get_unchecked_adamic_adar_index(source_node_id, destination_node_id),
-                    self.get_unchecked_jaccard_coefficient(source_node_id, destination_node_id),
-                    self.get_unchecked_resource_allocation_index(
+                    self.get_unchecked_adamic_adar_index_from_node_ids(
                         source_node_id,
                         destination_node_id,
                     ),
-                    self.get_unchecked_preferential_attachment(
+                    self.get_unchecked_jaccard_coefficient_from_node_ids(
+                        source_node_id,
+                        destination_node_id,
+                    ),
+                    self.get_unchecked_resource_allocation_index_from_node_ids(
+                        source_node_id,
+                        destination_node_id,
+                    ),
+                    self.get_unchecked_preferential_attachment_from_node_ids(
                         source_node_id,
                         destination_node_id,
                         true,

@@ -652,11 +652,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.get_preferential_attachment(src, dst, true);
-            let _ = graph.get_preferential_attachment(src, dst, false);
-            let _ = graph.get_jaccard_coefficient(src, dst);
-            let _ = graph.get_adamic_adar_index(src, dst);
-            let _ = graph.get_resource_allocation_index(src, dst);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, true);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, false);
+            let _ = graph.get_jaccard_coefficient_from_node_ids(src, dst);
+            let _ = graph.get_adamic_adar_index_from_node_ids(src, dst);
+            let _ = graph.get_resource_allocation_index_from_node_ids(src, dst);
         }
     }
 
@@ -1532,7 +1532,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 0,
                 Some(256),
                 Some(true),
-                Some(10.0),
+                Some(0.3),
                 Some(false),
                 Some(10),
                 None,
@@ -1543,7 +1543,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
             .link_prediction_ids(
                 0,
                 Some(256),
-                Some(10.0),
+                Some(0.4),
                 None,
                 None,
                 Some(false),

@@ -43,7 +43,7 @@ use roaring::RoaringBitmap;
 ///    ).unwrap();
 ///
 /// // Enable Speed-ups but it uses more memory.
-/// cora.enable(Some(true), Some(true), Some(true), None).unwrap();
+/// cora.enable(Some(true), Some(true), Some(true)).unwrap();
 /// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
