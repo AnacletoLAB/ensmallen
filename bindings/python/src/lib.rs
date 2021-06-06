@@ -26,13 +26,10 @@ mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 mod operators;
 
-
 // automatically generated files
 mod auto_generated_bindings;
 mod method_names_list;
 pub(crate) use method_names_list::*;
-
-
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {

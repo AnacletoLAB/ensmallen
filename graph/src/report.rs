@@ -121,7 +121,11 @@ impl Graph {
     ///
     /// * `other`: &Graph - graph to create overlap report with.
     /// * `verbose`: Option<bool> - Whether to shor the loading bars.
-    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> Result<String, String> {
+    pub fn overlap_textual_report(
+        &self,
+        other: &Graph,
+        verbose: Option<bool>,
+    ) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -255,8 +259,10 @@ impl Graph {
                 .map(|node_id| {
                     format!(
                         "{node_name} (degree {node_degree})",
-                        node_name = unsafe{self.get_unchecked_node_name_from_node_id(*node_id)},
-                        node_degree = unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)}
+                        node_name = unsafe { self.get_unchecked_node_name_from_node_id(*node_id) },
+                        node_degree = unsafe {
+                            self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)
+                        }
                     )
                 })
                 .collect::<Vec<String>>()
@@ -274,57 +280,61 @@ impl Graph {
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
-        let node_name = unsafe{self.get_unchecked_node_name_from_node_id(node_id)};
+        let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
         //partial_reports.push(format!("## Report for node {}\n", node_name));
 
-        partial_reports.push(if unsafe{self.is_unchecked_singleton_from_node_id(node_id)} {
-            match self.get_singleton_nodes_number() {
-                1 => format!(
-                    concat!("The given node {} is the only singleton node of the graph."),
-                    node_name
-                ),
-                singleton_nodes_number => {
-                    format!(
-                        concat!("The given node {} is one of {} singleton nodes."),
-                        node_name, singleton_nodes_number
-                    )
+        partial_reports.push(
+            if unsafe { self.is_unchecked_singleton_from_node_id(node_id) } {
+                match self.get_singleton_nodes_number() {
+                    1 => format!(
+                        concat!("The given node {} is the only singleton node of the graph."),
+                        node_name
+                    ),
+                    singleton_nodes_number => {
+                        format!(
+                            concat!("The given node {} is one of {} singleton nodes."),
+                            node_name, singleton_nodes_number
+                        )
+                    }
                 }
-            }
-        } else if self.is_singleton_with_selfloops_from_node_id(node_id) {
-            match self.get_singleton_nodes_with_selfloops_number() {
-                1 => format!(
-                    concat!(
+            } else if self.is_singleton_with_selfloops_from_node_id(node_id) {
+                match self.get_singleton_nodes_with_selfloops_number() {
+                    1 => format!(
+                        concat!(
                         "The given node {} is the only singleton node with selfloops in the graph."
                     ),
-                    node_name
-                ),
-                singleton_nodes_with_selfloops_number => {
-                    format!(
-                        concat!("The given node {} is one of {} singleton nodes with selfloops."),
-                        node_name, singleton_nodes_with_selfloops_number
-                    )
+                        node_name
+                    ),
+                    singleton_nodes_with_selfloops_number => {
+                        format!(
+                            concat!(
+                                "The given node {} is one of {} singleton nodes with selfloops."
+                            ),
+                            node_name, singleton_nodes_with_selfloops_number
+                        )
+                    }
                 }
-            }
-        } else if unsafe{self.is_unchecked_trap_node_from_node_id(node_id)} {
-            match self.get_trap_nodes_number() {
-                1 => format!(
-                    concat!("The given node {} is the only trap node in the graph."),
-                    node_name
-                ),
-                trap_nodes_number => {
-                    format!(
-                        concat!("The given node {} is one of {} trap nodes in the graph."),
-                        node_name, trap_nodes_number
-                    )
+            } else if unsafe { self.is_unchecked_trap_node_from_node_id(node_id) } {
+                match self.get_trap_nodes_number() {
+                    1 => format!(
+                        concat!("The given node {} is the only trap node in the graph."),
+                        node_name
+                    ),
+                    trap_nodes_number => {
+                        format!(
+                            concat!("The given node {} is one of {} trap nodes in the graph."),
+                            node_name, trap_nodes_number
+                        )
+                    }
                 }
-            }
-        } else {
-            format!(
-                concat!("The given node {} has degree {}"),
-                node_name,
-                unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)}
-            )
-        });
+            } else {
+                format!(
+                    concat!("The given node {} has degree {}"),
+                    node_name,
+                    unsafe { self.get_unchecked_unweighted_node_degree_from_node_id(node_id) }
+                )
+            },
+        );
 
         Ok(partial_reports.join(""))
     }

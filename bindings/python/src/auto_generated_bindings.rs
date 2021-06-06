@@ -2360,7 +2360,7 @@ to_ndarray_1d!(gil, self.graph.get_cumulative_node_degrees(), EdgeT)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, vector_sources, vector_destinations, vector_cumulative_node_degrees, cache_size)"]
+    #[text_signature = "($self, vector_sources, vector_destinations, vector_cumulative_node_degrees)"]
     /// Enable extra perks that buys you time as you accept to spend more memory.
     /// 
     /// Parameters
@@ -2371,11 +2371,9 @@ to_ndarray_1d!(gil, self.graph.get_cumulative_node_degrees(), EdgeT)
     ///     Whether to cache destinations into a vector for faster walks.
     /// vector_cumulative_node_degrees: Optional[bool],
     ///     Whether to cache cumulative_node_degrees into a vector for faster walks.
-    /// cache_size: Optional[float],
-    ///     percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     /// 
-    pub fn enable(& mut self, vector_sources: Option<bool>, vector_destinations: Option<bool>, vector_cumulative_node_degrees: Option<bool>, cache_size: Option<f64>) -> PyResult<()> {
-        pe!(self.graph.enable(vector_sources, vector_destinations, vector_cumulative_node_degrees, cache_size))
+    pub fn enable(& mut self, vector_sources: Option<bool>, vector_destinations: Option<bool>, vector_cumulative_node_degrees: Option<bool>) -> PyResult<()> {
+        pe!(self.graph.enable(vector_sources, vector_destinations, vector_cumulative_node_degrees))
     }
         
     #[automatically_generated_binding]

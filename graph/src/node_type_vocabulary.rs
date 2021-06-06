@@ -214,7 +214,7 @@ impl NodeTypeVocabulary {
     }
 
     /// Returns number of maximum multilabel count.
-    /// 
+    ///
     /// This value is the maximum number of multilabel counts
     /// that appear in any given node in the graph.
     pub fn get_maximum_multilabel_count(&self) -> NodeTypeT {

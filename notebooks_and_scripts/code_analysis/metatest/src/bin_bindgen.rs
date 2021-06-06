@@ -561,7 +561,7 @@ fn split_words(method_name: &str) -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
     for word in method_name.split("_") {
         match word {
-            "type" | "types" | "id" | "ids" => {
+            "type" | "types" | "id" | "ids" | "name" | "names" => {
                 match result.last_mut() {
                     Some(last) => {
                         last.push('_');

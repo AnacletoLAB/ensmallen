@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{Graph, EdgeFileReader};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// This is a regression test that has been automatically generated
@@ -29,9 +29,9 @@ fn test_non_determinism_triangles() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         None,
-        true, // Directed
-        true, // Directed edge list
-        "Fuzz Graph" // Name of the graph
+        true,         // Directed
+        true,         // Directed edge list
+        "Fuzz Graph", // Name of the graph
     )?;
     for _ in 0..10_000 {
         let _ = graph::test_utilities::test_polygons(&mut graph, Some(false));

@@ -114,7 +114,7 @@ impl Graph {
             .map(|nodes| {
                 nodes
                     .iter()
-                    .map(|node| unsafe{self.get_unchecked_node_name_from_node_id(*node)})
+                    .map(|node| unsafe { self.get_unchecked_node_name_from_node_id(*node) })
                     .collect::<Vec<String>>()
             })
             .collect::<Vec<Vec<String>>>())
@@ -256,7 +256,7 @@ impl Graph {
         .map(|nodes| {
             nodes
                 .iter()
-                .map(|node| unsafe{self.get_unchecked_node_name_from_node_id(*node)})
+                .map(|node| unsafe { self.get_unchecked_node_name_from_node_id(*node) })
                 .collect::<Vec<String>>()
         })
         .collect::<Vec<Vec<String>>>()

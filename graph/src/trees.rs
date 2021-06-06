@@ -90,7 +90,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
+            let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -117,37 +117,39 @@ impl Graph {
             format!("Building random spanning tree for {}", self.name).as_ref(),
             self.get_directed_edges_number() as usize,
         );
-        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =
-            (undesired_edge_types, &self.edge_types)
-        {
-            // We cannot retrun two different iters that reference data owned by
-            // this function, so we clone it. This is fine since it should contains
-            // only few values
-            let uet_copy = uet.clone(); 
-            Box::new(
-                self.iter_edges_from_random_state(random_state)
-                    .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)}) {
-                            return None;
-                        }
-                        Some((src, dst))
-                    })
-                    .chain(self.iter_edges_from_random_state(random_state).filter_map(
-                        move |(edge_id, src, dst)| {
-                            if !uet_copy.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)})
-                            {
+        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
+            if let (Some(uet), _) = (undesired_edge_types, &self.edge_types) {
+                // We cannot retrun two different iters that reference data owned by
+                // this function, so we clone it. This is fine since it should contains
+                // only few values
+                let uet_copy = uet.clone();
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .filter_map(move |(edge_id, src, dst)| {
+                            if uet.contains(&unsafe {
+                                self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                            }) {
                                 return None;
                             }
                             Some((src, dst))
-                        },
-                    )),
-            )
-        } else {
-            Box::new(
-                self.iter_edges_from_random_state(random_state)
-                    .map(|(_, src, dst)| (src, dst)),
-            )
-        };
+                        })
+                        .chain(self.iter_edges_from_random_state(random_state).filter_map(
+                            move |(edge_id, src, dst)| {
+                                if !uet_copy.contains(&unsafe {
+                                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                                }) {
+                                    return None;
+                                }
+                                Some((src, dst))
+                            },
+                        )),
+                )
+            } else {
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .map(|(_, src, dst)| (src, dst)),
+                )
+            };
 
         result.progress_with(pb)
     }
@@ -534,7 +536,7 @@ impl Graph {
                                 break;
                             }
                             (*parents)[src] = src as NodeT;
-            
+
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);

@@ -506,18 +506,11 @@ impl Graph {
     /// * `random_state`: u64, the random_state to use for extracting the node.
     ///
     fn extract_uniform_node(&self, node: NodeT, random_state: u64) -> NodeT {
-        let (min_edge, max_edge) = unsafe{self.get_unchecked_minmax_edge_ids_from_source_node_id(node)};
+        let (min_edge, max_edge) =
+            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node) };
         let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state);
 
-        match self
-            .cached_destinations
-            .as_ref()
-            .and_then(|cds| cds.get(&node))
-        {
-            Some(dsts) => dsts[sampled_offset],
-            None => self
-                .get_unchecked_destination_node_id_from_edge_id(min_edge + sampled_offset as EdgeT),
-        }
+        self.get_unchecked_destination_node_id_from_edge_id(min_edge + sampled_offset as EdgeT)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -551,15 +544,10 @@ impl Graph {
             None => min_edge_id + sampled_offset as EdgeT,
         };
 
-        let destination = match self
-            .cached_destinations
-            .as_ref()
-            .and_then(|cds| cds.get(&node))
-        {
-            Some(dsts) => dsts[sampled_offset],
-            None => self.get_unchecked_destination_node_id_from_edge_id(edge_id),
-        };
-        (destination, edge_id)
+        (
+            self.get_unchecked_destination_node_id_from_edge_id(edge_id),
+            edge_id,
+        )
     }
 
     /// Return new random edge with given weights.
@@ -607,15 +595,10 @@ impl Graph {
             Some(inds) => inds[sampled_offset],
             None => min_edge_id + sampled_offset as EdgeT,
         };
-        let destination = match self
-            .cached_destinations
-            .as_ref()
-            .and_then(|cds| cds.get(&dst))
-        {
-            Some(dsts) => dsts[sampled_offset],
-            None => self.get_unchecked_destination_node_id_from_edge_id(edge_id),
-        };
-        (destination, edge_id)
+        (
+            self.get_unchecked_destination_node_id_from_edge_id(edge_id),
+            edge_id,
+        )
     }
 
     /// Return vector of walks run on each non-trap node of the graph.
@@ -645,9 +628,11 @@ impl Graph {
                     splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    unsafe{self.get_unchecked_unique_source_node_id(
-                        random_source_id % self.get_unique_source_nodes_number(),
-                    )},
+                    unsafe {
+                        self.get_unchecked_unique_source_node_id(
+                            random_source_id % self.get_unique_source_nodes_number(),
+                        )
+                    },
                 )
             },
             parameters,
@@ -676,9 +661,11 @@ impl Graph {
             move |index| {
                 (
                     splitmix64(random_state + index.wrapping_mul(factor) as u64),
-                    unsafe{self.get_unchecked_unique_source_node_id(
-                        index as NodeT % self.get_unique_source_nodes_number(),
-                    )},
+                    unsafe {
+                        self.get_unchecked_unique_source_node_id(
+                            index as NodeT % self.get_unique_source_nodes_number(),
+                        )
+                    },
                 )
             },
             parameters,
@@ -765,7 +752,7 @@ impl Graph {
             &parameters.weights,
             min_edge_id,
             max_edge_id,
-            self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations),
+            self.get_destinations_slice(min_edge_id, max_edge_id, &destinations),
             &indices,
         );
 
@@ -796,11 +783,10 @@ impl Graph {
                 &parameters.weights,
                 min_edge_id,
                 max_edge_id,
-                self.get_destinations_slice(min_edge_id, max_edge_id, previous_dst, &destinations),
+                self.get_destinations_slice(min_edge_id, max_edge_id, &destinations),
                 self.get_destinations_slice(
                     previous_min_edge_id,
                     previous_max_edge_id,
-                    previous_src,
                     &previous_destinations,
                 ),
                 &indices,

@@ -1,6 +1,6 @@
-use strsim::levenshtein;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
+use strsim::levenshtein;
 
 #[macro_export]
 macro_rules! normalize_kwargs {

@@ -4,7 +4,6 @@ use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
-use std::collections::HashMap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -121,8 +120,6 @@ pub struct Graph {
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
-    // Hashmap of cached destinations to execute faster walks if required.
-    pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
 }
 
 /// # Graph utility methods
@@ -175,7 +172,6 @@ impl Graph {
             sources: None,
             destinations: None,
             cumulative_node_degrees: None,
-            cached_destinations: None,
             name: name.into(),
             connected_nodes,
             singleton_nodes_with_selfloops,

@@ -41,9 +41,9 @@ fn test_regression_17() -> Result<(), String> {
     let mut graph = Graph::from_unsorted_csv(
         edges_reader,
         nodes_reader,
-        false, // Directed
-        false, // Directed edge list
-        "regression17" // Name of the graph
+        false,          // Directed
+        false,          // Directed edge list
+        "regression17", // Name of the graph
     )?;
     let _ = graph::test_utilities::default_test_suite(&mut graph, None);
     Ok(())

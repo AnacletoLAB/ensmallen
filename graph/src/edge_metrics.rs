@@ -37,9 +37,9 @@ impl Graph {
         two: NodeT,
         normalize: bool,
     ) -> f64 {
-        let mut preferential_attachment_score = self.get_unchecked_unweighted_node_degree_from_node_id(one)
-            as f64
-            * self.get_unchecked_unweighted_node_degree_from_node_id(two) as f64;
+        let mut preferential_attachment_score =
+            self.get_unchecked_unweighted_node_degree_from_node_id(one) as f64
+                * self.get_unchecked_unweighted_node_degree_from_node_id(two) as f64;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_min_preferential_attachment();

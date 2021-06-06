@@ -1,10 +1,7 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix, 
-    word2vec as rust_word2vec,
-    okapi_bm25_tfidf as rust_okapi_bm25_tfidf, 
-    NodeT,
-    NodeTypeT,
+    cooccurence_matrix as rust_cooccurence_matrix, okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
+    word2vec as rust_word2vec, NodeT, NodeTypeT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -456,7 +453,7 @@ impl EnsmallenGraph {
         Ok((neighbours.to_owned(), labels.to_owned()))
     }
 
-    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples_percentage, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -494,7 +491,7 @@ impl EnsmallenGraph {
         &self,
         idx: u64,
         batch_size: Option<usize>,
-        negative_samples_rate: Option<f64>,
+        negative_samples_percentage: Option<f64>,
         return_node_types: Option<bool>,
         return_edge_types: Option<bool>,
         avoid_false_negatives: Option<bool>,
@@ -517,7 +514,7 @@ impl EnsmallenGraph {
         let par_iter = pe!(self.graph.link_prediction_ids(
             idx,
             Some(batch_size),
-            negative_samples_rate,
+            negative_samples_percentage,
             Some(return_node_types),
             Some(return_edge_types),
             avoid_false_negatives,
@@ -556,8 +553,8 @@ impl EnsmallenGraph {
         };
 
         unsafe {
-            par_iter.for_each(
-                |(i, src, src_node_type, dst, dst_node_type, edge_type, label)| {
+            par_iter.enumerate().for_each(
+                |(i, (src, src_node_type, dst, dst_node_type, edge_type, label))| {
                     *(dsts.t.uget_mut([i])) = src;
                     *(srcs.t.uget_mut([i])) = dst;
                     if let (Some(src_node_type_ids), Some(dst_node_type_ids)) =
@@ -636,4 +633,3 @@ impl EnsmallenGraph {
         batch_metrics.t.to_owned()
     }
 }
-

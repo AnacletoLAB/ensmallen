@@ -200,25 +200,30 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Safety
     /// This method will panic if you try to remove values that do not exist
     /// in the current vocabulary.
-    pub unsafe fn unchecked_remove_values(&mut self, type_ids_to_remove: Vec<IndexT>) -> Vec<Option<usize>> {
+    pub unsafe fn unchecked_remove_values(
+        &mut self,
+        type_ids_to_remove: Vec<IndexT>,
+    ) -> Vec<Option<usize>> {
         // compute the new dense mapping of the indices
-        let new_type_ids_map = (0..self.reverse_map.len()).scan(
-            0,
-            |offset, type_id| {
+        let new_type_ids_map = (0..self.reverse_map.len())
+            .scan(0, |offset, type_id| {
                 if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
                     *offset += 1;
                     return Some(None);
                 }
                 Some(Some(type_id - *offset))
-            }
-        ).collect::<Vec<_>>();
+            })
+            .collect::<Vec<_>>();
 
         // update the mapping
-        self.map = self.map.iter()
-            .filter_map(|(key, val)|{
+        self.map = self
+            .map
+            .iter()
+            .filter_map(|(key, val)| {
                 new_type_ids_map[IndexT::to_usize(*val)]
                     .map(|x| (key.clone(), IndexT::from_usize(x)))
-            }).collect();
+            })
+            .collect();
 
         // re-build the reverse mapping
         // since we start from a valid state this should never fail
