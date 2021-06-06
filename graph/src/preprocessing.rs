@@ -415,6 +415,8 @@ impl Graph {
         let edges_number = self.get_directed_edges_number();
         let nodes_number = self.get_nodes_number();
 
+        let does_not_require_resampling = !(avoid_false_negatives || graph_to_avoid.is_some());
+
         let get_node_type_ids =
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
                 if return_node_types {
@@ -455,6 +457,26 @@ impl Graph {
                         get_node_type_ids(dst),
                         edge_type,
                         true
+                    );
+                }
+                if does_not_require_resampling {
+                    // split the random u64 into 2 u32 and mod them to have
+                    // usable nodes (this is slightly biased towards low values)
+                    let src = (sampled & 0xffffffff) as u32 % nodes_number;
+                    let dst = (sampled >> 32) as u32 % nodes_number;
+                    let edge_type = if return_edge_types {
+                        Some(sampled as EdgeTypeT % edge_types_number)
+                    } else {
+                        None
+                    };
+
+                    return (
+                        src,
+                        get_node_type_ids(src),
+                        dst,
+                        get_node_type_ids(dst),
+                        edge_type,
+                        false
                     );
                 }
                 for _ in 0..maximal_sampling_attempts {
