@@ -5865,8 +5865,8 @@ to_ndarray_1d!(gil, self.graph.get_clustering_coefficient_per_node(verbose), f64
     /// verbose: Optional[bool],
     ///     Whether to show loading bar while building the graphs.
     /// 
-    pub fn filter_from_ids(&self, node_ids_to_keep: Option<Vec<NodeT>>, node_ids_to_filter: Option<Vec<NodeT>>, node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>, node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>, node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>, node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>>, edge_ids_to_keep: Option<Vec<EdgeT>>, edge_ids_to_filter: Option<Vec<EdgeT>>, edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>>, edge_node_ids_to_filter: Option<Vec<(NodeT, NodeT)>>, edge_type_ids_to_keep: Option<Vec<Option<EdgeTypeT>>>, edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>, min_edge_weight: Option<WeightT>, max_edge_weight: Option<WeightT>, filter_singleton_nodes: Option<bool>, filter_singleton_nodes_with_selfloop: Option<bool>, filter_selfloops: Option<bool>, filter_parallel_edges: Option<bool>, verbose: Option<bool>) -> EnsmallenGraph {
-        EnsmallenGraph{graph: self.graph.filter_from_ids(node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges, verbose)}
+    pub fn filter_from_ids(&self, node_ids_to_keep: Option<Vec<NodeT>>, node_ids_to_filter: Option<Vec<NodeT>>, node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>, node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>, node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>, node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>>, edge_ids_to_keep: Option<Vec<EdgeT>>, edge_ids_to_filter: Option<Vec<EdgeT>>, edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>>, edge_node_ids_to_filter: Option<Vec<(NodeT, NodeT)>>, edge_type_ids_to_keep: Option<Vec<Option<EdgeTypeT>>>, edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>, min_edge_weight: Option<WeightT>, max_edge_weight: Option<WeightT>, filter_singleton_nodes: Option<bool>, filter_singleton_nodes_with_selfloop: Option<bool>, filter_selfloops: Option<bool>, filter_parallel_edges: Option<bool>, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph{graph: pe!(self.graph.filter_from_ids(node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges, verbose))?})
     }
         
     #[automatically_generated_binding]
@@ -5974,6 +5974,21 @@ to_ndarray_1d!(gil, self.graph.get_clustering_coefficient_per_node(verbose), f64
     /// 
     pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph{graph: self.graph.drop_singleton_nodes_with_selfloops(verbose)}
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Returns new graph without disconnected nodes.
+    /// 
+    /// A disconnected node is a node with no connection to any other node.
+    /// 
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    /// 
+    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph{graph: self.graph.drop_disconnected_nodes(verbose)}
     }
         
     #[automatically_generated_binding]

@@ -74,77 +74,75 @@ impl PyObjectProtocol for EnsmallenGraph {
 
         // Compute the similarity between each token in the query
         // and the vector of terms for the pre-computed tfidf matrix 
-        // let edit_distances = tokens.iter()
-        //     .map(|token| {
-        //         TFIDF_TERMS.iter()
-        //             .map(|&term| {
-        //                 1.0 - (
-        //                     damerau_levenshtein(&token, &term) as f64 
-        //                     / std::cmp::max(token.len(), term.len()) as f64
-        //                 )
-        //             })
-        //             .collect::<Vec<f64>>()
-        //     })
-        //     .collect::<Vec<Vec<f64>>>();
+        let edit_distances = tokens.iter()
+            .map(|token| {
+                TFIDF_TERMS.iter()
+                    .map(|&term| {
+                        1.0 - (
+                            damerau_levenshtein(&token, &term) as f64 
+                            / std::cmp::max(token.len(), term.len()) as f64
+                        )
+                    })
+                    .collect::<Vec<f64>>()
+            })
+            .collect::<Vec<Vec<f64>>>();
 
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
-        // let mut doc_scores = TFIDF_FREQUENCIES.par_iter()
-        //     .enumerate()
-        //     .map(|(id, frequencies_doc)| {
-        //         (id, frequencies_doc.iter()
-        //             .zip(edit_distances.iter())
-        //             .map(|(term_frequency, term_similarities)| {
-        //                 term_similarities.iter()
-        //                     .map(|term_similarity| term_similarity * term_frequency)
-        //                     .sum::<f64>()
-        //             }).sum::<f64>())
-        //     })
-        //     .collect::<Vec<(usize, f64)>>();
+        let mut doc_scores = TFIDF_FREQUENCIES.par_iter()
+            .enumerate()
+            .map(|(id, frequencies_doc)| {
+                (id, frequencies_doc.iter()
+                    .zip(edit_distances.iter())
+                    .map(|(term_frequency, term_similarities)| {
+                        term_similarities.iter()
+                            .map(|term_similarity| term_similarity.exp() * term_frequency)
+                            .sum::<f64>()
+                    }).sum::<f64>())
+            })
+            .collect::<Vec<(usize, f64)>>();
         
         
         // sort the scores in a decreasing order
-        // doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
-        // println!("{:?}", doc_scores.iter().map(|(id, score)| (METHODS_NAMES[*id], *score)).collect::<Vec<(&str, f64)>>());
-
-        
-
-        // Err(PyTypeError::new_err(format!(
-        //     "The method {} does not exists, did you mean {:?}?",
-        //     name,
-        //     &doc_scores[..10].iter()
-        //         .map(|(id, _sim)| {
-        //             METHODS_NAMES[*id]
-        //         })
-        //         .collect::<Vec<&'static str>>()
-        // )))
-
-        let mut methods_scores = METHODS_NAMES.iter()
-            .map(|method_name| {
-                let method_tokens = split_words(method_name);
-                (
-                    *method_name,
-                    tokens.iter()
-                    .map(|token| {
-                        method_tokens.iter()
-                            .map(|method_token| {
-                                damerau_levenshtein(&token, &method_token) as f64 
-                                / std::cmp::max(token.len(), method_token.len()) as f64
-                            }).min_by(|a, b| a.partial_cmp(b).unwrap()).unwrap()
-                    }).sum::<f64>()
-                )
-            }).collect::<Vec<(&str, f64)>>();
-
-            methods_scores.sort_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap());
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+        println!("{:?}", doc_scores.iter().map(|(id, score)| (METHODS_NAMES[*id], *score)).collect::<Vec<(&str, f64)>>());
 
         Err(PyTypeError::new_err(format!(
             "The method {} does not exists, did you mean {:?}?",
             name,
-            &methods_scores[..5].iter()
-                .map(|(method, _)| method.to_string())
-                .collect::<Vec<String>>(),
+            &doc_scores[..10].iter()
+                .map(|(id, _sim)| {
+                    METHODS_NAMES[*id]
+                })
+                .collect::<Vec<&'static str>>()
         )))
+
+        // let mut methods_scores = METHODS_NAMES.iter()
+        //     .map(|method_name| {
+        //         let method_tokens = split_words(method_name);
+        //         (
+        //             *method_name,
+        //             tokens.iter()
+        //             .map(|token| {
+        //                 method_tokens.iter()
+        //                     .map(|method_token| {
+        //                         damerau_levenshtein(&token, &method_token) as f64 
+        //                         / std::cmp::max(token.len(), method_token.len()) as f64
+        //                     }).min_by(|a, b| a.partial_cmp(b).unwrap()).unwrap()
+        //             }).sum::<f64>()
+        //         )
+        //     }).collect::<Vec<(&str, f64)>>();
+        // 
+        //     methods_scores.sort_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap());
+        // 
+        // Err(PyTypeError::new_err(format!(
+        //     "The method {} does not exists, did you mean one of the followings?\n{:#4?}",
+        //     name,
+        //     &methods_scores[..5].iter()
+        //         .map(|(method, _)| method.to_string())
+        //         .collect::<Vec<String>>(),
+        // )))
     }
 }
 
