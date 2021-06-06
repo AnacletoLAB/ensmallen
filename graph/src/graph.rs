@@ -97,6 +97,8 @@ pub struct Graph {
     pub(crate) min_weighted_node_degree: Option<f64>,
     /// Maximum weighted node degree. Is None if weights are not defined.
     pub(crate) max_weighted_node_degree: Option<f64>,
+    // Total edge weights
+    pub(crate) total_weights: Option<f64>,
     /// Number of nodes with zero weighted node degree.
     pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
     /// Graph name
@@ -148,6 +150,7 @@ impl Graph {
         max_node_degree: NodeT,
         min_weighted_node_degree: Option<f64>,
         max_weighted_node_degree: Option<f64>,
+        total_weights: Option<f64>,
         weighted_singleton_nodes_number: Option<NodeT>,
     ) -> Graph {
         Graph {
@@ -178,6 +181,7 @@ impl Graph {
             cached_report: ClonableRwLock::new(None),
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
         }
     }
