@@ -1,10 +1,7 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix, 
-    word2vec as rust_word2vec,
-    okapi_bm25_tfidf as rust_okapi_bm25_tfidf, 
-    NodeT,
-    NodeTypeT,
+    cooccurence_matrix as rust_cooccurence_matrix, okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
+    word2vec as rust_word2vec, NodeT, NodeTypeT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -636,4 +633,3 @@ impl EnsmallenGraph {
         batch_metrics.t.to_owned()
     }
 }
-
