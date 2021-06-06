@@ -10,9 +10,38 @@ use std::hash::{Hash, Hasher};
 impl Graph {
     /// Returns report relative to the graph metrics
     ///
-    /// The report includes a few useful metrics like:
+    /// The report includes the following metrics by default:
+    /// * Name of the graph
+    /// * Whether the graph is directed or undirected
+    /// * Number of singleton nodes
+    /// * Number of nodes
+    ///     - If the graph has nodes, we also compute:
+    ///         * Minimum unweighted node degree
+    ///         * Maximum unweighted node degree
+    ///         * Unweighted node degree mean
+    /// * Number of edges
+    /// * Number of self-loops
+    /// * Number of singleton with self-loops
+    /// * Whether the graph is a multigraph
+    /// * Number of parallel edges
+    /// * Number of directed edges
+    ///     - If the graph has edges, we also compute:
+    ///         * Rate of self-loops
+    /// * Whether the graph has weighted edges
+    ///     - If the graph has weights, we also compute:
+    ///         * Minimum weighted node degree
+    ///         * Maximum weighted node degree
+    ///         * Weighted node degree mean
+    /// * Whether the graph has node types
+    ///     - If the graph has node types, we also compute:
+    ///         * Whether the graph has singleton node types
+    ///         * The number of node types
+    /// * Whether the graph has edge types
+    ///     - If the graph has edge types, we also compute:
+    ///         * Whether the graph has singleton edge types
+    ///         * The number of edge types
     ///
-    /// TODO!: update this doc with all the returned metrics
+    /// On request, since it takes more time to compute it, the method also provides:
     ///
     /// # Examples
     /// ```rust
@@ -22,54 +51,93 @@ impl Graph {
     pub fn report(&self) -> HashMap<&str, String> {
         let mut report: HashMap<&str, String> = HashMap::new();
 
+        // Adding the default metrics
+        report.insert("name", self.name.clone());
+        report.insert("directed", self.is_directed().to_string());
+        report.insert("nodes_number", self.get_nodes_number().to_string());
+        report.insert(
+            "singleton_nodes_number",
+            self.get_singleton_nodes_number().to_string(),
+        );
         if self.has_nodes() {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
-                "min_degree",
-                self.get_min_node_degree().unwrap().to_string(),
+                "minimum_unweighted_node_degree",
+                self.get_unweighted_min_node_degree().unwrap().to_string(),
             );
             report.insert(
-                "max_degree",
+                "maximum_unweighted_node_degree",
                 self.get_unweighted_max_node_degree().unwrap().to_string(),
             );
             report.insert(
-                "degree_mean",
+                "unweighted_node_degrees_mean",
                 self.get_unweighted_node_degrees_mean().unwrap().to_string(),
             );
         }
-
+        report.insert(
+            "directed_edges_number",
+            self.get_directed_edges_number().to_string(),
+        );
+        report.insert(
+            "selfloops_number",
+            self.get_selfloop_nodes_number().to_string(),
+        );
+        report.insert(
+            "singleton_nodes_with_selfloops_number",
+            self.get_singleton_nodes_with_selfloops_number().to_string(),
+        );
+        report.insert(
+            "multigraph",
+            self.is_multigraph().to_string(),
+        );
+        report.insert(
+            "parallel_edges_number",
+            self.get_parallel_edges_number().to_string(),
+        );
         if self.has_edges() {
             report.insert(
                 "selfloops_rate",
                 self.get_selfloop_nodes_rate().unwrap().to_string(),
             );
         }
-
-        report.insert("name", self.name.clone());
-        report.insert("nodes_number", self.get_nodes_number().to_string());
-        report.insert("edges_number", self.get_directed_edges_number().to_string());
-        report.insert(
-            "undirected_edges_number",
-            self.get_undirected_edges_number().to_string(),
-        );
-        report.insert("directed", self.is_directed().to_string());
         report.insert("has_edge_weights", self.has_edge_weights().to_string());
-        report.insert("has_edge_types", self.has_edge_types().to_string());
+        if self.has_edge_weights() {
+            report.insert(
+                "minimum_weighted_node_degree",
+                self.get_weighted_min_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "maximum_weighted_node_degree",
+                self.get_weighted_max_node_degree().unwrap().to_string(),
+            );
+            report.insert(
+                "unweighted_node_degrees_mean",
+                self.get_weighted_node_degrees_mean().unwrap().to_string(),
+            );
+        }
         report.insert("has_node_types", self.has_node_types().to_string());
-        report.insert(
-            "selfloops_number",
-            self.get_selfloop_nodes_number().to_string(),
-        );
-        report.insert(
-            "singleton_nodes_number",
-            self.get_singleton_nodes_number().to_string(),
-        );
-        if let Ok(node_types_number) = self.get_node_types_number() {
-            report.insert("unique_node_types_number", node_types_number.to_string());
+        if self.has_node_types() {
+            report.insert(
+                "has_singleton_node_types",
+                self.has_singleton_node_types().unwrap().to_string(),
+            );
+            report.insert(
+                "node_types_number",
+                self.get_node_types_number().unwrap().to_string(),
+            );
         }
-        if let Ok(edge_types_number) = self.get_edge_types_number() {
-            report.insert("unique_edge_types_number", edge_types_number.to_string());
+        report.insert("has_edge_types", self.has_edge_types().to_string());
+        if self.has_edge_types() {
+            report.insert(
+                "has_singleton_edge_types",
+                self.has_singleton_edge_types().unwrap().to_string(),
+            );
+            report.insert(
+                "edge_types_number",
+                self.get_edge_types_number().unwrap().to_string(),
+            );
         }
+
         report
     }
 
@@ -852,8 +920,8 @@ impl Graph {
                 false => "".to_owned()
             },
             multigraph_edges = match self.is_multigraph() {
-                true=>match self.get_multigraph_edges_number()>0 {
-                    true => format!("{} are parallel", self.get_multigraph_edges_number()),
+                true=>match self.get_parallel_edges_number()>0 {
+                    true => format!("{} are parallel", self.get_parallel_edges_number()),
                     false => "none are parallel".to_owned()
                 },
                 false=>"".to_owned()

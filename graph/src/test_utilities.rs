@@ -387,16 +387,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     );
 
     if graph.has_singleton_nodes() {
-        assert!(graph.get_min_node_degree()? == 0);
+        assert!(graph.get_unweighted_min_node_degree()? == 0);
         assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
     }
 
     if !graph.is_directed() && !graph.has_singleton_nodes() {
-        assert!(graph.get_min_node_degree()? > 0);
+        assert!(graph.get_unweighted_min_node_degree()? > 0);
         assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
     }
 
-    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {
+    if !graph.is_directed() && graph.get_unweighted_min_node_degree()? == 0 {
         assert!(graph.has_singleton_nodes());
     }
 
@@ -405,7 +405,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     }
 
     if !graph.has_disconnected_nodes() && !graph.has_trap_nodes() {
-        assert!(graph.get_min_node_degree()? > 0);
+        assert!(graph.get_unweighted_min_node_degree()? > 0);
         assert!(
             graph.iter_unweighted_node_degrees().min().unwrap() > 0,
             concat!(
@@ -424,7 +424,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     );
 
     assert_eq!(
-        graph.get_min_node_degree()?,
+        graph.get_unweighted_min_node_degree()?,
         graph.iter_unweighted_node_degrees().min().unwrap(),
         concat!(
             "The cached minimum degree does not match the one computed from the node degrees.\n",
@@ -652,11 +652,11 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.get_preferential_attachment(src, dst, true);
-            let _ = graph.get_preferential_attachment(src, dst, false);
-            let _ = graph.get_jaccard_coefficient(src, dst);
-            let _ = graph.get_adamic_adar_index(src, dst);
-            let _ = graph.get_resource_allocation_index(src, dst);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, true);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, false);
+            let _ = graph.get_jaccard_coefficient_from_node_ids(src, dst);
+            let _ = graph.get_adamic_adar_index_from_node_ids(src, dst);
+            let _ = graph.get_resource_allocation_index_from_node_ids(src, dst);
         }
     }
 
@@ -982,11 +982,11 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
 pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
-            .get_unweighted_number_of_triangles_per_node(Some(false), verbose)
+            .get_unweighted_number_of_triangles_per_node(Some(false), None, verbose)
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>(),
-        graph.get_unweighted_number_of_triangles(Some(false), verbose)
+        graph.get_unweighted_number_of_triangles(Some(false), None, verbose)
     );
     Ok(())
 }
@@ -1532,7 +1532,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 0,
                 Some(256),
                 Some(true),
-                Some(10.0),
+                Some(0.3),
                 Some(false),
                 Some(10),
                 None,
@@ -1543,7 +1543,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
             .link_prediction_ids(
                 0,
                 Some(256),
-                Some(10.0),
+                Some(0.4),
                 None,
                 None,
                 Some(false),

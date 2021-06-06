@@ -182,7 +182,7 @@ impl Graph {
             / self.get_nodes_number() as f64
     }
 
-    /// Returns mean node degree of the graph.
+    /// Returns unweighted mean node degree of the graph.
     ///
     /// # Example
     ///```rust
@@ -196,6 +196,17 @@ impl Graph {
             );
         }
         Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
+    }
+
+    /// Returns weighted mean node degree of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
+    /// ```
+    pub fn get_weighted_node_degrees_mean(&self) -> Result<f64, String> {
+        Ok(self.get_total_edge_weights()? / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -360,12 +371,12 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
+    /// println!("The minimum node degree of the graph is  {}", graph.get_unweighted_min_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_min_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_unweighted_min_node_degree() })
     }
@@ -561,6 +572,25 @@ impl Graph {
     pub fn get_edge_weights(&self) -> Result<Vec<WeightT>, String> {
         self.must_have_edge_weights()?;
         Ok(self.weights.clone().unwrap())
+    }
+
+    /// Return total edge weights, if graph has weights.
+    ///
+    /// # Example
+    /// To get the total edge weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.get_total_edge_weights().is_ok());
+    /// assert!(graph_without_weights.get_total_edge_weights().is_err());
+    /// println!("The graph total edge weights is {:?}.", graph_with_weights.get_total_edge_weights());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn get_total_edge_weights(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()
+            .map(|_| self.total_weights.unwrap())
     }
 
     /// Return the minimum weight, if graph has weights.
@@ -1148,7 +1178,7 @@ impl Graph {
     }
 
     /// Return number of edges that have multigraph syblings.
-    pub fn get_multigraph_edges_number(&self) -> EdgeT {
+    pub fn get_parallel_edges_number(&self) -> EdgeT {
         self.get_directed_edges_number() - self.unique_edges_number
     }
 

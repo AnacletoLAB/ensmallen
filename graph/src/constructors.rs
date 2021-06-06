@@ -33,6 +33,7 @@ type ParsedStringEdgesType = Result<
         NodeT,
         Option<f64>,
         Option<f64>,
+        Option<f64>,
         Option<NodeT>,
     ),
     String,
@@ -448,6 +449,7 @@ pub(crate) fn build_edges(
         NodeT,
         Option<f64>,
         Option<f64>,
+        Option<f64>,
         Option<NodeT>,
     ),
     String,
@@ -495,12 +497,14 @@ pub(crate) fn build_edges(
         mut max_edge_weight,
         mut min_weighted_node_degree,
         mut max_weighted_node_degree,
+        mut total_weights,
         mut weighted_singleton_nodes_number,
         mut current_weighted_node_degree,
     ): (
         Option<Vec<WeightT>>,
         Option<WeightT>,
         Option<WeightT>,
+        Option<f64>,
         Option<f64>,
         Option<f64>,
         Option<NodeT>,
@@ -512,11 +516,12 @@ pub(crate) fn build_edges(
             Some(WeightT::NEG_INFINITY),
             Some(f64::INFINITY),
             Some(f64::NEG_INFINITY),
+            Some(0.0),
             Some(0),
             Some(0.0),
         )
     } else {
-        (None, None, None, None, None, None, None)
+        (None, None, None, None, None, None, None, None)
     };
 
     // The unique sources variable is equal to the set of nodes of the graph when
@@ -606,9 +611,10 @@ pub(crate) fn build_edges(
             &mut weights,
             &mut min_edge_weight,
             &mut max_edge_weight,
+            &mut total_weights,
             weight,
         ) {
-            (Some(ws), Some(min_w), Some(max_w), Some(w)) => {
+            (Some(ws), Some(min_w), Some(max_w), Some(total_weights), Some(w)) => {
                 if might_contain_invalid_weights {
                     // If a zero weight was found we filter out this edge
                     if w.is_zero() {
@@ -623,14 +629,15 @@ pub(crate) fn build_edges(
                 }
                 *min_w = (*min_w).min(w);
                 *max_w = (*max_w).max(w);
+                *total_weights += w as f64;
                 ws.push(w);
                 Ok(())
             }
-            (None, _, _, Some(_)) => Err(concat!(
+            (None, _, _, _, Some(_)) => Err(concat!(
                 "A non-None weight was provided but no weights are expected ",
                 "because the has_edge_weights flag has been set to false."
             )),
-            (Some(_), _, _, None) => Err(concat!(
+            (Some(_), _, _, _, None) => Err(concat!(
                 "A None weight was found.\n",
                 "This might mean you have either provided a None weight to the edge list or ",
                 "you may have an empty weight in your edge list file.\n",
@@ -844,6 +851,7 @@ pub(crate) fn build_edges(
             max_edge_weight = None;
             min_weighted_node_degree = None;
             max_weighted_node_degree = None;
+            total_weights = None;
             weighted_singleton_nodes_number = None;
         }
     }
@@ -994,6 +1002,7 @@ pub(crate) fn build_edges(
         max_node_degree,
         min_weighted_node_degree,
         max_weighted_node_degree,
+        total_weights,
         weighted_singleton_nodes_number,
     ))
 }
@@ -1107,6 +1116,7 @@ pub(crate) fn parse_string_edges(
         max_node_degree,
         min_weighted_node_degree,
         max_weighted_node_degree,
+        total_weights,
         weighted_singleton_nodes_number,
     ) = build_edges(
         edges_iter,
@@ -1149,6 +1159,7 @@ pub(crate) fn parse_string_edges(
         max_node_degree,
         min_weighted_node_degree,
         max_weighted_node_degree,
+        total_weights,
         weighted_singleton_nodes_number,
     ))
 }
@@ -1189,6 +1200,7 @@ pub(crate) fn parse_integer_edges(
         NodeT,
         Option<f64>,
         Option<f64>,
+        Option<f64>,
         Option<NodeT>,
     ),
     String,
@@ -1213,6 +1225,7 @@ pub(crate) fn parse_integer_edges(
         max_node_degree,
         min_weighted_node_degree,
         max_weighted_node_degree,
+        total_weights,
         weighted_singleton_nodes_number,
     ) = build_edges(
         edges_iter,
@@ -1251,6 +1264,7 @@ pub(crate) fn parse_integer_edges(
         max_node_degree,
         min_weighted_node_degree,
         max_weighted_node_degree,
+        total_weights,
         weighted_singleton_nodes_number,
     ))
 }
@@ -1294,6 +1308,7 @@ impl Graph {
             max_node_degree,
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
         ) = parse_integer_edges(
             edges_iter,
@@ -1335,6 +1350,7 @@ impl Graph {
             max_node_degree,
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
         ))
     }
@@ -1588,6 +1604,7 @@ impl Graph {
             max_node_degree,
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
         ) = parse_string_edges(
             edges_iterator,
@@ -1631,6 +1648,7 @@ impl Graph {
             max_node_degree,
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
         ))
     }

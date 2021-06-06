@@ -38,7 +38,7 @@ fn test_regression_28() -> Result<(), String> {
         "Fuzz Graph", // Name of the graph
     )?;
 
-    graph.enable(Some(true), Some(true), Some(true), None)?;
+    graph.enable(Some(true), Some(true), Some(true))?;
     let iterations = 1_000;
     let pb =
         graph::utils::get_loading_bar(true, "Running non-deterministic component test", iterations);
