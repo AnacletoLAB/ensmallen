@@ -86,8 +86,6 @@ impl PyObjectProtocol for EnsmallenGraph {
         // split the query into tokens
         let tokens = split_words(&name);
 
-        dbg!(&tokens);
-
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens.iter()
             .map(|token| {
@@ -105,7 +103,6 @@ impl PyObjectProtocol for EnsmallenGraph {
                 similarities.into_iter().take(1)
             }).flatten().collect::<Vec<(&str, f64)>>();
         
-        dbg!(&tokens_expanded);
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
@@ -130,9 +127,8 @@ impl PyObjectProtocol for EnsmallenGraph {
         
         // sort the scores in a decreasing order
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
-        println!("{:?}", doc_scores.iter().map(|(id, score)| (METHODS_NAMES[*id], *score)).collect::<Vec<(&str, f64)>>());
 
-        Err(PyTypeError::new_err(format!(
+        Err(PyAttributeError::new_err(format!(
             "The method '{}' does not exists, did you mean one of the following?\n{}",
             &name,
             doc_scores.iter()

@@ -73,6 +73,9 @@ impl Checker {
         // verbose se presente deve essere l'ultimo argomento
         
         // if &mut self ci deve essere inplace nel nome.
+        
+        // no #[inline] se il metodo ritorna result
+        // _vector deve essere in fondo
 
     }
 

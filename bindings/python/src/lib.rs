@@ -1,6 +1,9 @@
 use numpy::{PyArray, PyArray1, PyArray2};
-use pyo3::exceptions::PyTypeError;
-use pyo3::exceptions::PyValueError;
+use pyo3::exceptions::{
+    PyValueError,
+    PyAttributeError,
+    PyTypeError,
+};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use pyo3::wrap_pymodule;

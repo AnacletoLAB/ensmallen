@@ -925,9 +925,16 @@ to_ndarray_1d!(gil, self.graph.get_singleton_with_selfloops_node_ids(), NodeT)
         
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns mean node degree of the graph.
+    /// Returns unweighted mean node degree of the graph.
     pub fn get_unweighted_node_degrees_mean(&self) -> PyResult<f64> {
         pe!(self.graph.get_unweighted_node_degrees_mean())
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns weighted mean node degree of the graph.
+    pub fn get_weighted_node_degrees_mean(&self) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_node_degrees_mean())
     }
         
     #[automatically_generated_binding]
@@ -1052,8 +1059,8 @@ to_ndarray_1d!(gil, self.graph.get_singleton_with_selfloops_node_ids(), NodeT)
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     /// 
-    pub fn get_min_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_min_node_degree())
+    pub fn get_unweighted_min_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_min_node_degree())
     }
         
     #[automatically_generated_binding]
@@ -1204,6 +1211,19 @@ Ok(to_ndarray_1d!(gil, pe!(self.graph.get_unique_edge_type_ids())?, EdgeTypeT))
     pub fn get_edge_weights(&self) -> PyResult<Py<PyArray1<WeightT>>> {
         let gil = pyo3::Python::acquire_gil();
 Ok(to_ndarray_1d!(gil, pe!(self.graph.get_edge_weights())?, WeightT))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return total edge weights, if graph has weights.
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    /// 
+    pub fn get_total_edge_weights(&self) -> PyResult<f64> {
+        pe!(self.graph.get_total_edge_weights())
     }
         
     #[automatically_generated_binding]
@@ -1900,8 +1920,8 @@ to_ndarray_1d!(gil, self.graph.get_not_singletons_node_ids(), NodeT)
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return number of edges that have multigraph syblings
-    pub fn get_multigraph_edges_number(&self) -> EdgeT {
-        self.graph.get_multigraph_edges_number()
+    pub fn get_parallel_edges_number(&self) -> EdgeT {
+        self.graph.get_parallel_edges_number()
     }
         
     #[automatically_generated_binding]
@@ -2734,9 +2754,38 @@ Ok(to_ndarray_1d!(gil, pe!(self.graph.validate_edge_ids(edge_ids))?, EdgeT))
     #[text_signature = "($self)"]
     /// Returns report relative to the graph metrics
     /// 
-    /// The report includes a few useful metrics like:
+    /// The report includes the following metrics by default:
+    /// * Name of the graph
+    /// * Whether the graph is directed or undirected
+    /// * Number of singleton nodes
+    /// * Number of nodes
+    /// - If the graph has nodes, we also compute:
+    /// * Minimum unweighted node degree
+    /// * Maximum unweighted node degree
+    /// * Unweighted node degree mean
+    /// * Number of edges
+    /// * Number of self-loops
+    /// * Number of singleton with self-loops
+    /// * Whether the graph is a multigraph
+    /// * Number of parallel edges
+    /// * Number of directed edges
+    /// - If the graph has edges, we also compute:
+    /// * Rate of self-loops
+    /// * Whether the graph has weighted edges
+    /// - If the graph has weights, we also compute:
+    /// * Minimum weighted node degree
+    /// * Maximum weighted node degree
+    /// * Weighted node degree mean
+    /// * Whether the graph has node types
+    /// - If the graph has node types, we also compute:
+    /// * Whether the graph has singleton node types
+    /// * The number of node types
+    /// * Whether the graph has edge types
+    /// - If the graph has edge types, we also compute:
+    /// * Whether the graph has singleton edge types
+    /// * The number of edge types
     /// 
-    /// TODO!: update this doc with all the returned metrics
+    /// On request, since it takes more time to compute it, the method also provides:
     pub fn report(&self) -> HashMap<&str, String> {
         self.graph.report()
     }
@@ -2901,15 +2950,15 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_dense_weighted_adjacency_matrix(weight
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two, normalize)"]
-    /// Returns the preferential attachment.
+    #[text_signature = "($self, first_node_id, second_node_id, normalize)"]
+    /// Returns the preferential attachment from the given node IDs.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// normalize: bool,
     ///     Whether to normalize within 0 to 1.
     /// 
@@ -2918,20 +2967,20 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_dense_weighted_adjacency_matrix(weight
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_preferential_attachment(&self, one: NodeT, two: NodeT, normalize: bool) -> f64 {
-        self.graph.get_unchecked_preferential_attachment(one, two, normalize)
+    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT, normalize: bool) -> f64 {
+        self.graph.get_unchecked_preferential_attachment_from_node_ids(first_node_id, second_node_id, normalize)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two, normalize)"]
-    /// Returns the preferential attachment.
+    #[text_signature = "($self, first_node_id, second_node_id, normalize)"]
+    /// Returns the preferential attachment from the given node IDs.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// normalize: bool,
     ///     Whether to normalize by the square of maximum degree.
     /// 
@@ -2939,133 +2988,219 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_dense_weighted_adjacency_matrix(weight
     /// Raises
     /// -------
     /// ValueError
-    ///     If eithert of the node IDs are higher than the number of nodes in the graph.
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
     /// 
-    pub fn get_preferential_attachment(&self, one: NodeT, two: NodeT, normalize: bool) -> PyResult<f64> {
-        pe!(self.graph.get_preferential_attachment(one, two, normalize))
+    pub fn get_preferential_attachment_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT, normalize: bool) -> PyResult<f64> {
+        pe!(self.graph.get_preferential_attachment_from_node_ids(first_node_id, second_node_id, normalize))
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Jaccard index for the two given nodes.
+    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
+    /// Returns the preferential attachment from the given node names.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize by the square of maximum degree.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    /// 
+    pub fn get_preferential_attachment_from_node_names(&self, first_node_name: &str, second_node_name: &str, normalize: bool) -> PyResult<f64> {
+        pe!(self.graph.get_preferential_attachment_from_node_names(first_node_name, second_node_name, normalize))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Jaccard index for the two given nodes from the given node IDs.
+    /// 
+    /// Parameters
+    /// ----------
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Safety
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_jaccard_coefficient(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.get_unchecked_jaccard_coefficient(one, two)
+    pub unsafe fn get_unchecked_jaccard_coefficient_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> f64 {
+        self.graph.get_unchecked_jaccard_coefficient_from_node_ids(first_node_id, second_node_id)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Jaccard index for the two given nodes.
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Jaccard index for the two given nodes from the given node IDs.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Raises
     /// -------
     /// ValueError
-    ///     If eithert of the node IDs are higher than the number of nodes in the graph.
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
     /// 
-    pub fn get_jaccard_coefficient(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.get_jaccard_coefficient(one, two))
+    pub fn get_jaccard_coefficient_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> PyResult<f64> {
+        pe!(self.graph.get_jaccard_coefficient_from_node_ids(first_node_id, second_node_id))
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Adamic/Adar Index for the given pair of nodes.
+    #[text_signature = "($self, first_node_name, second_node_name)"]
+    /// Returns the Jaccard index for the two given nodes from the given node names.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    /// 
+    pub fn get_jaccard_coefficient_from_node_names(&self, first_node_name: &str, second_node_name: &str) -> PyResult<f64> {
+        pe!(self.graph.get_jaccard_coefficient_from_node_names(first_node_name, second_node_name))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
+    /// 
+    /// Parameters
+    /// ----------
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Safety
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.get_unchecked_adamic_adar_index(one, two)
+    pub unsafe fn get_unchecked_adamic_adar_index_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> f64 {
+        self.graph.get_unchecked_adamic_adar_index_from_node_ids(first_node_id, second_node_id)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Adamic/Adar Index for the given pair of nodes.
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Raises
     /// -------
     /// ValueError
-    ///     If eithert of the node IDs are higher than the number of nodes in the graph.
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
     /// 
-    pub fn get_adamic_adar_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.get_adamic_adar_index(one, two))
+    pub fn get_adamic_adar_index_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> PyResult<f64> {
+        pe!(self.graph.get_adamic_adar_index_from_node_ids(first_node_id, second_node_id))
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Resource Allocation Index for the given pair of nodes.
+    #[text_signature = "($self, first_node_name, second_node_name)"]
+    /// Returns the Adamic/Adar Index for the given pair of nodes from the given node names.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    /// 
+    pub fn get_adamic_adar_index_from_node_names(&self, first_node_name: &str, second_node_name: &str) -> PyResult<f64> {
+        pe!(self.graph.get_adamic_adar_index_from_node_names(first_node_name, second_node_name))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
+    /// 
+    /// Parameters
+    /// ----------
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Safety
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.get_unchecked_resource_allocation_index(one, two)
+    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> f64 {
+        self.graph.get_unchecked_resource_allocation_index_from_node_ids(first_node_id, second_node_id)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, one, two)"]
-    /// Returns the Resource Allocation Index for the given pair of nodes.
+    #[text_signature = "($self, first_node_id, second_node_id)"]
+    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
     /// 
     /// Parameters
     /// ----------
-    /// one: int,
-    ///     Integer ID of the first node.
-    /// two: int,
-    ///     Integer ID of the second node.
+    /// first_node_id: int,
+    ///     Node ID of the first node.
+    /// second_node_id: int,
+    ///     Node ID of the second node.
     /// 
     /// 
     /// Raises
     /// -------
     /// ValueError
-    ///     If eithert of the node IDs are higher than the number of nodes in the graph.
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
     /// 
-    pub fn get_resource_allocation_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        pe!(self.graph.get_resource_allocation_index(one, two))
+    pub fn get_resource_allocation_index_from_node_ids(&self, first_node_id: NodeT, second_node_id: NodeT) -> PyResult<f64> {
+        pe!(self.graph.get_resource_allocation_index_from_node_ids(first_node_id, second_node_id))
+    }
+        
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
+    /// Returns the Resource Allocation Index for the given pair of nodes from the given node names.
+    /// 
+    /// Parameters
+    /// ----------
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    /// 
+    /// 
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    /// 
+    pub fn get_resource_allocation_index_from_node_names(&self, first_node_name: &str, second_node_name: &str) -> PyResult<f64> {
+        pe!(self.graph.get_resource_allocation_index_from_node_names(first_node_name, second_node_name))
     }
         
     #[automatically_generated_binding]
@@ -5236,7 +5371,7 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_okapi_bm25_node_label_propagation(iter
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, verbose)"]
+    #[text_signature = "($self, normalize, low_centrality, verbose)"]
     /// Returns total number of triangles ignoring the weights.
     /// 
     /// The method dispatches the fastest method according to the current
@@ -5248,11 +5383,13 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_okapi_bm25_node_label_propagation(iter
     /// ----------
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>, verbose: Option<bool>) -> EdgeT {
-        self.graph.get_unweighted_number_of_triangles(normalize, verbose)
+    pub fn get_unweighted_number_of_triangles(&self, normalize: Option<bool>, low_centrality: Option<usize>, verbose: Option<bool>) -> EdgeT {
+        self.graph.get_unweighted_number_of_triangles(normalize, low_centrality, verbose)
     }
         
     #[automatically_generated_binding]
@@ -5270,20 +5407,22 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_okapi_bm25_node_label_propagation(iter
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns transitivity of the graph without taking into account weights.
     /// 
     /// Parameters
     /// ----------
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_unweighted_transitivity(&self, verbose: Option<bool>) -> f64 {
-        self.graph.get_unweighted_transitivity(verbose)
+    pub fn get_unweighted_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
+        self.graph.get_unweighted_transitivity(low_centrality, verbose)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, verbose)"]
+    #[text_signature = "($self, normalize, low_centrality, verbose)"]
     /// Returns number of triangles in the graph without taking into account the weights.
     /// 
     /// The method dispatches the fastest method according to the current
@@ -5295,52 +5434,60 @@ Ok(to_ndarray_2d!(gil, pe!(self.graph.get_okapi_bm25_node_label_propagation(iter
     /// ----------
     /// normalize: Optional[bool],
     ///     Whether to normalize the number of triangles.
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_unweighted_number_of_triangles_per_node(&self, normalize: Option<bool>, verbose: Option<bool>) -> Py<PyArray1<NodeT>> {
+    pub fn get_unweighted_number_of_triangles_per_node(&self, normalize: Option<bool>, low_centrality: Option<usize>, verbose: Option<bool>) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-to_ndarray_1d!(gil, self.graph.get_unweighted_number_of_triangles_per_node(normalize, verbose), NodeT)
+to_ndarray_1d!(gil, self.graph.get_unweighted_number_of_triangles_per_node(normalize, low_centrality, verbose), NodeT)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns clustering coefficients for all nodes in the graph.
     /// 
     /// Parameters
     /// ----------
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    pub fn get_clustering_coefficient_per_node(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
-to_ndarray_1d!(gil, self.graph.get_clustering_coefficient_per_node(verbose), f64)
+to_ndarray_1d!(gil, self.graph.get_clustering_coefficient_per_node(low_centrality, verbose), f64)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns the graph clustering coefficient.
     /// 
     /// Parameters
     /// ----------
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
-        self.graph.get_clustering_coefficient(verbose)
+    pub fn get_clustering_coefficient(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
+        self.graph.get_clustering_coefficient(low_centrality, verbose)
     }
         
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns the graph average clustering coefficient.
     /// 
     /// Parameters
     /// ----------
+    /// low_centrality: Optional[int],
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     /// 
-    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
-        self.graph.get_average_clustering_coefficient(verbose)
+    pub fn get_average_clustering_coefficient(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
+        self.graph.get_average_clustering_coefficient(low_centrality, verbose)
     }
         
     #[automatically_generated_binding]
