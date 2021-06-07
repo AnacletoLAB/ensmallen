@@ -301,7 +301,7 @@ impl Graph {
     }
 
     /// Returns maximum weighted node degree of the graph.
-    pub fn get_weighted_max_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_maximum_node_degree(&self) -> Result<f64, String> {
         self.must_have_edge_weights()?;
         Ok(self.max_weighted_node_degree.unwrap())
     }
@@ -361,7 +361,7 @@ impl Graph {
     }
 
     /// Returns minimum weighted node degree of the graph.
-    pub fn get_weighted_min_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_mininum_node_degree(&self) -> Result<f64, String> {
         self.must_have_edge_weights()?;
         Ok(self.min_weighted_node_degree.unwrap())
     }
@@ -600,14 +600,14 @@ impl Graph {
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_min_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_min_edge_weight().is_err());
-    /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_min_edge_weight());
+    /// assert!(graph_with_weights.get_mininum_edge_weight().is_ok());
+    /// assert!(graph_without_weights.get_mininum_edge_weight().is_err());
+    /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_mininum_edge_weight());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_min_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_mininum_edge_weight(&self) -> Result<WeightT, String> {
         self.must_have_edge_weights()
             .map(|_| self.min_edge_weight.unwrap())
     }
@@ -619,14 +619,14 @@ impl Graph {
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_max_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_max_edge_weight().is_err());
-    /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_max_edge_weight());
+    /// assert!(graph_with_weights.get_maximum_edge_weight().is_ok());
+    /// assert!(graph_without_weights.get_maximum_edge_weight().is_err());
+    /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_maximum_edge_weight());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_max_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_maximum_edge_weight(&self) -> Result<WeightT, String> {
         self.must_have_edge_weights()
             .map(|_| self.max_edge_weight.unwrap())
     }

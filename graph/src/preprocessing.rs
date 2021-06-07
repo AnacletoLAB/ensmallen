@@ -203,7 +203,7 @@ impl Graph {
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    pub(crate) fn get_neighbours_from_node_id(
+    pub(crate) unsafe fn get_neighbours_from_node_id(
         &self,
         central_node_id: NodeT,
         random_state: u64,

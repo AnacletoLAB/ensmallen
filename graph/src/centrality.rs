@@ -29,7 +29,7 @@ impl Graph {
         self.must_have_edges()?;
         self.must_have_positive_edge_weights()?;
 
-        let weighted_max_degree = self.get_weighted_max_node_degree()? as f64;
+        let weighted_max_degree = self.get_weighted_maximum_node_degree()? as f64;
         Ok(self
             .par_iter_weighted_node_degrees()?
             .map(move |degree| degree as f64 / weighted_max_degree))

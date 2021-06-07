@@ -13,7 +13,7 @@ impl Graph {
     /// * `max_neighbours`: Option<NodeT> - Optional maximum number of neighbours to consider.
     /// * `random_state`: u64 - The random state to use for the sampling if the maximum neighbours are asked.
     /// * `source_node_id`: NodeT - The source node ID to extract edge IDs and destination node IDs.
-    pub(crate) fn get_edges_and_destinations_from_source_node_id(
+    pub(crate) unsafe fn get_unchecked_edges_and_destinations_from_source_node_id(
         &self,
         max_neighbours: Option<NodeT>,
         random_state: u64,
@@ -21,7 +21,7 @@ impl Graph {
     ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         // We retrieve the range of edge ids, the minimum and maximum value.
         let (min_edge_id, max_edge_id) =
-            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(source_node_id) };
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(source_node_id);
 
         // We check if subsampling is enabled and if so, if it makes sense:
         // that is, if the range of neighbours (max_edge_id-min_edge_id) is smaller
@@ -43,7 +43,7 @@ impl Graph {
 
         // Finally if we are using the cache without sub-sampling
         let destinations = Some(
-            unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id) }
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id)
                 .collect(),
         );
         (min_edge_id, max_edge_id, destinations, None)

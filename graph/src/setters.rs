@@ -11,15 +11,7 @@ impl Graph {
     ///
     /// * `name`: String - Name of the graph.
     pub fn set_name(&mut self, name: String) {
-        self.invalidate_report();
         self.name = name;
-    }
-
-    /// Invalidate the cache for the textual report.
-    /// This should be called as the first line of every methods that either get
-    /// a mutable reference to self or get ownership of self.
-    pub(crate) fn invalidate_report(&self) {
-        *self.cached_report.write() = None;
     }
 
     /// Replace all edge types (if present) and set all the edge to edge_type.
@@ -57,7 +49,6 @@ impl Graph {
             )
             .to_string()
         })?;
-        self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(edge_type.into())?;
         vocabulary.build_reverse_mapping()?;
@@ -95,7 +86,6 @@ impl Graph {
         node_type: S,
     ) -> Result<&Graph, String> {
         self.must_have_nodes()?;
-        self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(node_type.into())?;
         vocabulary.build_reverse_mapping()?;
@@ -152,9 +142,6 @@ impl Graph {
                     .to_string(),
             );
         }
-
-        // we modify the graph so we must invalidate the report
-        self.invalidate_report();
 
         if let Some(node_types) = self.node_types.as_mut() {
             // compute the new node ids once the given ones are removed
@@ -259,8 +246,6 @@ impl Graph {
                     .to_string(),
             );
         }
-
-        self.invalidate_report();
 
         if let Some(edge_types) = self.edge_types.as_mut() {
             // compute the new edge ids once the given ones are removed
@@ -446,7 +431,6 @@ impl Graph {
     ///
     pub fn remove_inplace_node_types(&mut self) -> Result<&Graph, String> {
         self.must_have_node_types()?;
-        self.invalidate_report();
         self.node_types = None;
         Ok(self)
     }
@@ -475,7 +459,6 @@ impl Graph {
     pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
-        self.invalidate_report();
         self.edge_types = None;
         Ok(self)
     }
@@ -505,7 +488,6 @@ impl Graph {
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_weights()?;
-        self.invalidate_report();
         self.weights = None;
         Ok(self)
     }

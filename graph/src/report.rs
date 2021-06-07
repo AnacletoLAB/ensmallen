@@ -2,9 +2,7 @@ use super::types::*;
 use super::*;
 use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
-use std::hash::{Hash, Hasher};
 
 /// # Human readable report of the properties of the graph
 impl Graph {
@@ -32,14 +30,19 @@ impl Graph {
     ///         * Minimum weighted node degree
     ///         * Maximum weighted node degree
     ///         * Weighted node degree mean
+    ///         * The total edge weights
     /// * Whether the graph has node types
     ///     - If the graph has node types, we also compute:
     ///         * Whether the graph has singleton node types
     ///         * The number of node types
+    ///         * The number of nodes with unknown node types
+    ///         * The number of nodes with known node types
     /// * Whether the graph has edge types
     ///     - If the graph has edge types, we also compute:
     ///         * Whether the graph has singleton edge types
     ///         * The number of edge types
+    ///         * The number of edges with unknown edge types
+    ///         * The number of edges with known edge types
     ///
     /// On request, since it takes more time to compute it, the method also provides:
     ///
@@ -86,10 +89,7 @@ impl Graph {
             "singleton_nodes_with_selfloops_number",
             self.get_singleton_nodes_with_selfloops_number().to_string(),
         );
-        report.insert(
-            "multigraph",
-            self.is_multigraph().to_string(),
-        );
+        report.insert("multigraph", self.is_multigraph().to_string());
         report.insert(
             "parallel_edges_number",
             self.get_parallel_edges_number().to_string(),
@@ -104,15 +104,19 @@ impl Graph {
         if self.has_edge_weights() {
             report.insert(
                 "minimum_weighted_node_degree",
-                self.get_weighted_min_node_degree().unwrap().to_string(),
+                self.get_weighted_mininum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "maximum_weighted_node_degree",
-                self.get_weighted_max_node_degree().unwrap().to_string(),
+                self.get_weighted_maximum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
                 self.get_weighted_node_degrees_mean().unwrap().to_string(),
+            );
+            report.insert(
+                "total_edge_weights",
+                self.get_total_edge_weights().unwrap().to_string(),
             );
         }
         report.insert("has_node_types", self.has_node_types().to_string());
@@ -125,6 +129,14 @@ impl Graph {
                 "node_types_number",
                 self.get_node_types_number().unwrap().to_string(),
             );
+            report.insert(
+                "unknown_node_types_number",
+                self.get_unknown_node_types_number().unwrap().to_string(),
+            );
+            report.insert(
+                "known_node_types_number",
+                self.get_known_node_types_number().unwrap().to_string(),
+            );
         }
         report.insert("has_edge_types", self.has_edge_types().to_string());
         if self.has_edge_types() {
@@ -135,6 +147,14 @@ impl Graph {
             report.insert(
                 "edge_types_number",
                 self.get_edge_types_number().unwrap().to_string(),
+            );
+            report.insert(
+                "unknown_edge_types_number",
+                self.get_unknown_edge_types_number().unwrap().to_string(),
+            );
+            report.insert(
+                "known_edge_types_number",
+                self.get_known_edge_types_number().unwrap().to_string(),
             );
         }
 
@@ -301,40 +321,22 @@ impl Graph {
         ))
     }
 
-    fn format_list(&self, list: &[String]) -> Result<String, String> {
+    /// Returns given list in a uman readable format.
+    ///
+    /// # Safety
+    /// If the list is empty the method will raise a panic.
+    unsafe fn get_unchecked_formatted_list(&self, list: &[String]) -> String {
         if list.is_empty() {
-            return Err("Cannot format a list with no elements.".to_owned());
+            panic!("Cannot format a list with no elements.");
         }
         if list.len() == 1 {
-            return Ok(list.first().unwrap().clone());
+            return list.first().unwrap().clone();
         }
         let all_minus_last: String = list[0..list.len() - 1].join(", ");
-        Ok(format!(
+        format!(
             "{all_minus_last} and {last}",
             all_minus_last = all_minus_last,
             last = list.last().unwrap()
-        ))
-    }
-
-    /// Return formatted node list.
-    ///
-    /// # Arguments
-    /// * `node_list`: &[NodeT] - list of nodes to be formatted.
-    fn format_node_list(&self, node_list: &[NodeT]) -> Result<String, String> {
-        self.format_list(
-            node_list
-                .iter()
-                .map(|node_id| {
-                    format!(
-                        "{node_name} (degree {node_degree})",
-                        node_name = unsafe { self.get_unchecked_node_name_from_node_id(*node_id) },
-                        node_degree = unsafe {
-                            self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)
-                        }
-                    )
-                })
-                .collect::<Vec<String>>()
-                .as_slice(),
         )
     }
 
@@ -508,11 +510,14 @@ impl Graph {
                     }
                 ));
                 partial_reports.push("##### List of the singleton nodes\n".to_string());
-                partial_reports.extend(
-                    self.iter_singleton_node_names()
-                        .take(10)
-                        .map(|node_name| format!("* {}\n", node_name)),
-                );
+                partial_reports.extend(self.iter_singleton_node_ids().take(10).map(
+                    |node_id| unsafe {
+                        format!(
+                            "* {}\n",
+                            self.get_unchecked_succinct_node_description(node_id)
+                        )
+                    },
+                ));
                 if self.get_singleton_nodes_number() > 10 {
                     partial_reports.push(format!(
                         "* Plus other {} singleton nodes\n",
@@ -578,11 +583,14 @@ impl Graph {
                 ));
                 partial_reports
                     .push("##### List of the singleton nodes with selfloops\n".to_string());
-                partial_reports.extend(
-                    self.iter_singleton_with_selfloops_node_names()
-                        .take(10)
-                        .map(|node_name| format!("* {}\n", node_name)),
-                );
+                partial_reports.extend(self.iter_singleton_with_selfloops_node_ids().take(10).map(
+                    |node_id| unsafe {
+                        format!(
+                            "* {}\n",
+                            self.get_unchecked_succinct_node_description(node_id)
+                        )
+                    },
+                ));
                 if self.get_singleton_nodes_with_selfloops_number() > 10 {
                     partial_reports.push(format!(
                         "* Plus other {} singleton nodes with selfloops\n",
@@ -651,10 +659,16 @@ impl Graph {
                 ));
                 partial_reports.push("##### List of the singleton node types\n".to_string());
                 partial_reports.extend(
-                    self.iter_singleton_node_type_names()
-                        .unwrap()
-                        .take(10)
-                        .map(|node_name| format!("* {}\n", node_name)),
+                    self.iter_singleton_node_type_names().unwrap().take(10).map(
+                        |node_type_name| {
+                            format!(
+                                "* {}\n",
+                                get_node_type_source_markdown_url_from_node_type_name(
+                                    node_type_name.as_ref()
+                                )
+                            )
+                        },
+                    ),
                 );
                 if self.get_singleton_node_types_number().unwrap() > 10 {
                     partial_reports.push(format!(
@@ -780,7 +794,14 @@ impl Graph {
                     self.iter_singleton_edge_type_names()
                         .unwrap()
                         .take(10)
-                        .map(|edge_name| format!("* {}\n", edge_name)),
+                        .map(|edge_type_name| {
+                            format!(
+                                "* {}\n",
+                                get_node_type_source_markdown_url_from_node_type_name(
+                                    edge_type_name.as_ref()
+                                )
+                            )
+                        }),
                 );
                 if self.get_singleton_edge_types_number().unwrap() > 10 {
                     partial_reports.push(format!(
@@ -856,123 +877,397 @@ impl Graph {
         partial_reports.join("")
     }
 
-    /// Return rendered textual report of the graph.
+    /// Returns markdown formatting for the given node name URLs.
     ///
     /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show loading bar.
-    /// TODO: UPDATE THIS METHOD!
-    pub fn textual_report(&self, verbose: Option<bool>) -> Result<String, String> {
-        {
-            let ptr = self.cached_report.read();
-            if let Some(report) = &*ptr {
-                return Ok(report.clone());
-            }
-        }
-
-        if !self.has_nodes() {
-            return Ok(format!("The graph {} is empty.", self.get_name()));
-        }
-
-        let mut ptr = self.cached_report.write();
-        // THis is not a duplicate of above because we need to
-        // check if another thread already filled the cache
-        if let Some(report) = &*ptr {
-            return Ok(report.clone());
-        }
-
-        let (connected_components_number, minimum_connected_component, maximum_connected_component) =
-            self.get_connected_components_number(verbose);
-
-        let mut hasher = DefaultHasher::new();
-        self.hash(&mut hasher);
-        let hash = hasher.finish();
-
-        *ptr = Some(format!(
-            concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{singletons} and {edges_number} {weighted} edges, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. ",
-                "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
-                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
-                "The top {most_common_nodes_number} most central nodes are {central_nodes}. ",
-                "The hash of the graph is {hash:08x}."
-            ),
-            hash = hash,
-            direction = match self.directed {
-                true=> "directed",
-                false => "undirected"
-            }.to_owned(),
-            graph_type = match self.is_multigraph() {
-                true=> "multigraph",
-                false => "graph"
-            }.to_owned(),
-            name = self.name,
-            nodes_number = self.get_nodes_number(),
-            edges_number = self.get_edges_number(),
-            weighted = match self.has_edge_weights(){
-                true=> "weighted",
-                false=> "unweighted"
-            }.to_owned(),
-            selfloops = match self.has_selfloops() {
-                true => format!("{} are self-loops", self.get_selfloop_nodes_number()),
-                false => "none are self-loops".to_owned()
-            },
-            selfloops_multigraph_connector = match self.is_multigraph() {
-                true => " and ".to_owned(),
-                false => "".to_owned()
-            },
-            multigraph_edges = match self.is_multigraph() {
-                true=>match self.get_parallel_edges_number()>0 {
-                    true => format!("{} are parallel", self.get_parallel_edges_number()),
-                    false => "none are parallel".to_owned()
+    /// * `node_id`: NodeT - Node ID to query for.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given node ID does not exist.
+    unsafe fn get_unchecked_succinct_node_description(&self, node_id: NodeT) -> String {
+        let node_name = self.get_unchecked_node_name_from_node_id(node_id);
+        let node_name = get_node_source_markdown_url_from_node_name(node_name.as_ref());
+        let node_degree = self.get_unchecked_unweighted_node_degree_from_node_id(node_id);
+        let node_type = if self.has_node_types() {
+            match self.get_unchecked_node_type_names_from_node_id(0) {
+                Some(node_type_names) => match node_type_names.len() {
+                    1 => {
+                        format!(
+                            " and node type {}",
+                            get_node_type_source_markdown_url_from_node_type_name(
+                                node_type_names.first().unwrap().as_ref()
+                            )
+                        )
+                    }
+                    _ => {
+                        format!(
+                            " and node types {}",
+                            self.get_unchecked_formatted_list(
+                                node_type_names
+                                    .iter()
+                                    .map(|node_type_name| {
+                                        get_node_type_source_markdown_url_from_node_type_name(
+                                            node_type_name,
+                                        )
+                                    })
+                                    .collect::<Vec<_>>()
+                                    .as_ref()
+                            )
+                        )
+                    }
                 },
-                false=>"".to_owned()
-            },
-            singletons = match self.has_singleton_nodes() {
-                true => format!(
-                    " There are {singleton_number} singleton nodes{selfloop_singleton},", 
-                    singleton_number=self.get_singleton_nodes_number(),
-                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){
-                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){
-                            true=>"all".to_owned(),
-                            false=>format!("{} of these", self.get_singleton_nodes_with_selfloops_number())
-                        }),
-                        false=>"".to_owned()
+                None => " and unknown node type".to_string(),
+            }
+        } else {
+            "".to_string()
+        };
+        let weighted_node_degree = if self.has_edge_weights() {
+            format!(
+                ", weighted node degree {:.2}",
+                self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+            )
+        } else {
+            "".to_string()
+        };
+        format!(
+            "{node_name}(node degree {node_degree}{weighted_node_degree}{node_type})",
+            node_name = node_name,
+            node_type = node_type,
+            node_degree = node_degree,
+            weighted_node_degree = weighted_node_degree
+        )
+    }
+
+    /// Return markdown short textual report of the graph.
+    ///
+    /// # Implementative details
+    /// This textual report is meant to give a brief sneak peak of the graph
+    /// structure, with the very minimal informations that can be computed
+    /// in a blink of an eye. In order to get a rich graph report, use the
+    /// `complete_textual_report` method.
+    pub fn short_textual_report(&self) -> String {
+        let name = if self.has_default_graph_name() {
+            "".to_string()
+        } else {
+            format!(" {}", self.get_name())
+        };
+        if !self.has_nodes() {
+            return format!(
+                concat!(
+                    "The graph{name} is *empty*, that is has neither nodes nor edges.\n",
+                    "If this is unexpected, it may have happened because of a ",
+                    "mis-parametrization of a filter method uphill."
+                ),
+                name = name
+            );
+        }
+        let nodes_number = unsafe {
+            match self.get_nodes_number() {
+                1 => format!(
+                    "a single node called {node_name_description}",
+                    node_name_description = self.get_unchecked_succinct_node_description(0),
+                ),
+                nodes_number => format!("{nodes_number} nodes", nodes_number = nodes_number),
+            }
+        };
+
+        if !self.has_edges() {
+            return format!(
+                concat!(
+                    "The graph{name} contains {nodes_number} and no edges.\n",
+                    "If this is unexpected, it may have happened because of a ",
+                    "mis-parametrization of a filter method uphill."
+                ),
+                name = name,
+                nodes_number = nodes_number
+            );
+        }
+
+        let edges_number = unsafe {
+            match self.get_edges_number() {
+                1 => format!(
+                    "a single edge between the source node {source_node_description:?} and the destination node {destination_node_description:?}{edge_type}",
+                    source_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_source_node_id_from_edge_id(0)),
+                    destination_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_destination_node_id_from_edge_id(0)),
+                    edge_type = if self.has_edge_types() {
+                        match self.get_edge_type_name_from_edge_id(0).unwrap() {
+                            Some(edge_type_name) => {
+                                format!(
+                                    " with edge type {}",
+                                    get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name.as_ref())
+                                )
+                            },
+                            None => " with unknown edge type".to_string(),
+                        }
+                    } else {
+                        "".to_string()
                     }
                 ),
-                false => "".to_owned()
-            },
-            quantized_density = match self.get_density().unwrap() {
-                d if d < 0.0001 => "extremely sparse".to_owned(),
-                d if d < 0.001 => "quite sparse".to_owned(),
-                d if d < 0.01 => "sparse".to_owned(),
-                d if d < 0.1 => "dense".to_owned(),
-                d if d < 0.5 => "quite dense".to_owned(),
-                d if (d - 1.0).abs() < f64::EPSILON => "complete".to_owned(),
-                d if d <= 1.0 => "extremely dense".to_owned(),
-                d => unreachable!(format!("Unreacheable density case {}", d))
-            },
-            density=self.get_density().unwrap(),
-            connected_components=match connected_components_number> 1{
-                true=>format!(
-                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}",
-                    components_number=connected_components_number,
-                    maximum_connected_component=match maximum_connected_component==1{
-                        true=>"a single node".to_owned(),
-                        false=>format!("{} nodes", maximum_connected_component)
-                    },
-                    minimum_connected_component=match minimum_connected_component==1{
-                        true=>"a single node".to_owned(),
-                        false=>format!("{} nodes", minimum_connected_component)
-                    }
+                edges_number => format!("{edges_number} edges", edges_number = edges_number),
+            }
+        };
+
+        let most_central_nodes = unsafe {
+            format!(
+                concat!(
+                    "### Degree centrality\n",
+                    "The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
+                    "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree} and the node degree median is {node_degree_median}.\n",
+                    "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
                 ),
-                false=>"is connected, as it has a single component".to_owned()
+                minimum_node_degree = self.get_unweighted_min_node_degree().unwrap(),
+                maximum_node_degree = self.get_unweighted_max_node_degree().unwrap(),
+                mode_node_degree = self.get_unweighted_node_degrees_mode().unwrap(),
+                mean_node_degree = self.get_unweighted_node_degrees_mean().unwrap(),
+                node_degree_median = self.get_unweighted_node_degrees_median().unwrap(),
+                list_of_most_central_nodes = self.get_unchecked_formatted_list(
+                    self.get_unweighted_top_k_central_node_ids(5)
+                        .into_iter()
+                        .filter(|node_id| {
+                            self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                        })
+                        .map(|node_id| {
+                            self.get_unchecked_succinct_node_description(node_id)
+                        })
+                        .collect::<Vec<_>>()
+                        .as_ref()
+                )
+            )
+        };
+
+        let weights = unsafe {
+            if self.has_edge_weights() {
+                format!(
+                    concat!(
+                        "### Weights\n",
+                        "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.\n",
+                        "### Weighted degree centrality\n",
+                        "The minimum node degree is {weighted_minimum_node_degree}, the maximum node degree is {weighted_maximum_node_degree}, ",
+                        "the mean degree is {weighted_mean_node_degree} and the node degree median is {weighted_node_degree_median}.\n",
+                        "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
+                    ),
+                    minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
+                    maximum_edge_weight= self.get_mininum_edge_weight().unwrap(),
+                    total_edge_weight=self.get_total_edge_weights().unwrap(),
+                    weighted_minimum_node_degree = self.get_weighted_mininum_node_degree().unwrap(),
+                    weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
+                    weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
+                    weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
+                    weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
+                        self.get_weighted_top_k_central_node_ids(5).unwrap()
+                            .into_iter()
+                            .filter(|node_id| {
+                                self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                            })
+                            .map(|node_id| {
+                                self.get_unchecked_succinct_node_description(node_id)
+                            })
+                            .collect::<Vec<_>>()
+                            .as_ref()
+                    )
+                )
+            } else {
+                "".to_string()
+            }
+        };
+
+        let node_types = if self.has_node_types() {
+            unsafe {
+                format!(
+                    concat!("### Node types\n", "The graph has {node_types_number}."),
+                    node_types_number = match self.get_node_types_number().unwrap() {
+                        1 => format!(
+                            "a single node type, which is {node_type_description}",
+                            node_type_description =
+                                get_node_type_source_markdown_url_from_node_type_name(
+                                    self.get_node_type_name_from_node_type_id(0)
+                                        .unwrap()
+                                        .as_ref()
+                                )
+                        ),
+                        node_types_number => {
+                            let mut node_type_counts = self
+                                .get_node_type_names_counts_hashmap()
+                                .unwrap()
+                                .into_iter()
+                                .collect::<Vec<_>>();
+                            node_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                            let node_type_descriptions = self.get_unchecked_formatted_list(
+                                    node_type_counts.into_iter().take(5)
+                                    .map(|(node_type_name, count)| {
+                                        format!(
+                                            "{markdown_url} ({count} nodes)",
+                                            markdown_url=get_node_type_source_markdown_url_from_node_type_name(node_type_name.as_ref()),
+                                            count=count
+                                        )
+                                    })
+                                    .collect::<Vec<_>>()
+                                    .as_ref()
+                            );
+                            format!(
+                                "{node_types_number} node types, {top_five_caveat}which are {node_type_description}",
+                                node_types_number = node_types_number,
+                                top_five_caveat= if node_types_number > 5 {
+                                    "of which the 5 most common are "
+                                } else {
+                                    ""
+                                },
+                                node_type_description = node_type_descriptions
+                            )
+                        }
+                    }
+                )
+            }
+        } else {
+            "".to_string()
+        };
+
+        let unknown_node_types = if self.has_node_types() && self.has_unknown_node_types().unwrap()
+        {
+            format!(
+                concat!(
+                    "#### Unknown node types\n",
+                    "The graph contains {unknown_node_types_number} unknown node types, making up the {unknown_node_types_rate:.2}% of the nodes.\n",
+                ),
+                unknown_node_types_number = self.get_unknown_node_types_number().unwrap(),
+                unknown_node_types_rate = self.get_unknown_node_types_rate().unwrap()*100.0,
+            )
+        } else {
+            "".to_string()
+        };
+
+        let edge_types = if self.has_edge_types() {
+            unsafe {
+                format!(
+                    concat!("### edge types\n", "The graph has {edge_types_number}."),
+                    edge_types_number = match self.get_edge_types_number().unwrap() {
+                        1 => format!(
+                            "a single edge type, which is {edge_type_description}",
+                            edge_type_description =
+                                get_edge_type_source_markdown_url_from_edge_type_name(
+                                    self.get_edge_type_name_from_edge_type_id(0)
+                                        .unwrap()
+                                        .as_ref()
+                                )
+                        ),
+                        edge_types_number => {
+                            let mut edge_type_counts = self
+                                .get_edge_type_names_counts_hashmap()
+                                .unwrap()
+                                .into_iter()
+                                .collect::<Vec<_>>();
+                            edge_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                            let edge_type_descriptions = self.get_unchecked_formatted_list(
+                                    edge_type_counts.into_iter().take(5)
+                                    .map(|(edge_type_name, count)| {
+                                        format!(
+                                            "{markdown_url} ({count} edges)",
+                                            markdown_url=get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name.as_ref()),
+                                            count=count
+                                        )
+                                    })
+                                    .collect::<Vec<_>>()
+                                    .as_ref()
+                            );
+                            format!(
+                                "{edge_types_number} edge types, {top_five_caveat}which are {edge_type_description}",
+                                edge_types_number = edge_types_number,
+                                top_five_caveat= if edge_types_number > 5 {
+                                    "of which the 5 most common are "
+                                } else {
+                                    ""
+                                },
+                                edge_type_description = edge_type_descriptions
+                            )
+                        }
+                    }
+                )
+            }
+        } else {
+            "".to_string()
+        };
+
+        let unknown_edge_types = if self.has_edge_types() && self.has_unknown_edge_types().unwrap()
+        {
+            format!(
+                concat!(
+                    "#### Unknown edge types\n",
+                    "The graph contains {unknown_edge_types_number} unknown edge types, making up the {unknown_edge_types_rate:.2}% of the edges.\n",
+                ),
+                unknown_edge_types_number = self.get_unknown_edge_types_number().unwrap(),
+                unknown_edge_types_rate = self.get_unknown_edge_types_rate().unwrap()*100.0,
+            )
+        } else {
+            "".to_string()
+        };
+
+        format!(
+            concat!(
+                "## Graph{} report summary\n",
+                "The {directionality}{multigraph} graph{name} has {nodes_number} and {edges_number}.\n",
+                "{most_central_nodes}",
+                "{weights}",
+                "{node_types}",
+                "{unknown_node_types}",
+                "{edge_types}",
+                "{unknown_edge_types}",
+                "\n",
+                "*To get a more exaustive report including also more ",
+                "computationally expensive graph properties, ",
+                "use the `graph.complete_textual_report()` method.*"
+            ),
+            directionality = if self.is_directed() {
+                "directed"
+            } else {
+                "undirected"
             },
-            median_node_degree=self.get_unweighted_node_degrees_median().unwrap(),
-            mean_node_degree=self.get_unweighted_node_degrees_mean().unwrap(),
-            mode_node_degree=self.get_unweighted_node_degrees_mode().unwrap(),
-            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
+            multigraph = if self.is_multigraph() {
+                " multigraph"
+            } else {
+                ""
+            },
+            name = name,
+            nodes_number = nodes_number,
+            edges_number = edges_number,
+            most_central_nodes=most_central_nodes,
+            weights=weights,
+            node_types=node_types,
+            unknown_node_types = unknown_node_types,
+            edge_types=edge_types,
+            unknown_edge_types = unknown_edge_types
+        )
+    }
+
+    /// Return markdown complete textual report of the graph.
+    ///
+    /// # Arguments
+    /// *
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
+    pub fn complete_textual_report(&self, verbose: Option<bool>) -> String {
+        let mut partial_reports: Vec<String> = Vec::new();
+
+        partial_reports.push(format!(
+            "## Peculiarities report for graph {}\n",
+            self.get_name()
         ));
 
-        Ok(ptr.clone().unwrap())
+        // Basic report
+        if self.has_nodes() {
+            partial_reports.push("### Graph nodes\n".to_string());
+            partial_reports.push(concat!("The graph contains {} ").to_string());
+        }
+
+        // Singleton nodes
+        // Singleton nodes with self-loops
+        // Weighted singleton nodes
+        // Multigraph
+        // Node types
+        // Edge types
+
+        // Connected components report
+
+        // Triangles, clustering and transitivity
+
+        partial_reports.join("")
     }
 }

@@ -9,6 +9,14 @@ use super::*;
 /// * `/has_unchecked_(.+)/`
 /// * `/is_unchecked_(.+)/`.
 impl Graph {
+
+    /// Return if graph has name that is not the default one.
+    ///
+    /// TODO: use a default for the default graph name!
+    pub fn has_default_graph_name(&self) -> bool {
+        self.get_name() == "Graph"
+    }
+
     /// Return if the graph has any nodes.
     ///
     /// # Example
@@ -23,6 +31,7 @@ impl Graph {
     pub fn has_nodes(&self) -> bool {
         self.get_nodes_number() > 0
     }
+    
 
     /// Return if the graph has any edges.
     ///
@@ -94,7 +103,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool, String> {
-        Ok(self.get_min_edge_weight()? > 0.0 && self.get_max_edge_weight()? <= 1.0)
+        Ok(self.get_mininum_edge_weight()? > 0.0 && self.get_maximum_edge_weight()? <= 1.0)
     }
 
     /// Returns whether a graph has one or more weighted singleton nodes.
@@ -116,7 +125,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
-        Ok((self.get_max_edge_weight()? - self.get_min_edge_weight()?).abs() < WeightT::EPSILON)
+        Ok((self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs() < WeightT::EPSILON)
     }
 
     /// Returns boolean representing whether graph has negative weights.
@@ -132,7 +141,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain weights.
     pub fn has_negative_edge_weights(&self) -> Result<bool, String> {
-        self.get_min_edge_weight()
+        self.get_mininum_edge_weight()
             .map(|min_edge_weight| min_edge_weight < 0.0)
     }
 
