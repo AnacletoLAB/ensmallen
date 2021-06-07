@@ -87,56 +87,57 @@ impl PyObjectProtocol for EnsmallenGraph {
         let tokens = split_words(&name);
 
         // compute the similarities between all the terms and tokens
-        let tokens_expanded = tokens.iter()
+        let tokens_expanded = tokens
+            .iter()
             .map(|token| {
-                let mut similarities = TERMS.iter()
-                    .map(move |term| {
-                        (
-                            *term,
-                            jaro_winkler(token, term) as f64
-                        )
-                    })
+                let mut similarities = TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
-            }).flatten().collect::<Vec<(&str, f64)>>();
-        
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
-        let mut doc_scores = TFIDF_FREQUENCIES.par_iter()
+        let mut doc_scores = TFIDF_FREQUENCIES
+            .par_iter()
             .enumerate()
             // for each document
             .map(|(id, frequencies_doc)| {
-                (id, 
-                    (jaro_winkler(&name, METHODS_NAMES[id]).exp() - 1.0) *
-                    frequencies_doc.iter()
-                        .map(|(term, weight)| {
-                            match tokens_expanded.iter().find(|(token, _)| token == term) {
-                                Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
-                                None => 0.0,
-                            }
-                        })
-                        .sum::<f64>()
+                (
+                    id,
+                    (jaro_winkler(&name, METHODS_NAMES[id]).exp() - 1.0)
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
                 )
             })
             .collect::<Vec<(usize, f64)>>();
-        
-        
+
         // sort the scores in a decreasing order
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
             "The method '{}' does not exists, did you mean one of the following?\n{}",
             &name,
-            doc_scores.iter()
-                .map(|(method_id, _)| {
-                    format!("* '{}'", METHODS_NAMES[*method_id].to_string())
-                })
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| { format!("* '{}'", METHODS_NAMES[*method_id].to_string()) })
                 .take(3)
-                .collect::<Vec<String>>().join("\n"),
+                .collect::<Vec<String>>()
+                .join("\n"),
         )))
     }
 }
