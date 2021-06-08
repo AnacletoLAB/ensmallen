@@ -145,7 +145,6 @@ impl PyObjectProtocol for EnsmallenGraph {
 #[pymethods]
 impl EnsmallenGraph {
     fn _repr_html_(&self) -> String {
-        let msg = self.__repr__();
-        markdown::to_html(&msg)
+        self.__repr__()
     }
 }

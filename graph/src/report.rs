@@ -340,9 +340,9 @@ impl Graph {
         )
     }
 
-    /// Return human-readable markdown report of the given node.
+    /// Return human-readable html report of the given node.
     ///
-    /// The report, by default, is rendered using Markdown.
+    /// The report, by default, is rendered using html.
     ///
     /// # Arguments
     /// * `node_id`: NodeT - Whether to show a loading bar in graph operations.
@@ -351,7 +351,6 @@ impl Graph {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
         let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
-        //partial_reports.push(format!("## Report for node {}\n", node_name));
 
         partial_reports.push(
             if unsafe { self.is_unchecked_singleton_from_node_id(node_id) } {
@@ -409,9 +408,9 @@ impl Graph {
         Ok(partial_reports.join(""))
     }
 
-    /// Return human-readable markdown report of the given node.
+    /// Return human-readable html report of the given node.
     ///
-    /// The report, by default, is rendered using Markdown.
+    /// The report, by default, is rendered using html.
     ///
     /// # Arguments
     /// * `node_name`: &str - Whether to show a loading bar in graph operations.
@@ -421,7 +420,7 @@ impl Graph {
             .and_then(|node_id| self.get_node_report_from_node_id(node_id))
     }
 
-    /// Returns markdown formatting for the given node name URLs.
+    /// Returns html formatting for the given node name URLs.
     ///
     /// # Arguments
     /// * `node_id`: NodeT - Node ID to query for.
@@ -430,13 +429,13 @@ impl Graph {
     /// This method will cause an out of bound if the given node ID does not exist.
     unsafe fn get_unchecked_succinct_node_description(&self, node_id: NodeT) -> String {
         let node_name = self.get_unchecked_node_name_from_node_id(node_id);
-        let node_name = get_node_source_markdown_url_from_node_name(node_name.as_ref());
+        let node_name = get_node_source_html_url_from_node_name(node_name.as_ref());
         let node_type = if self.has_node_types() {
             match self.get_unchecked_node_type_names_from_node_id(0) {
                 Some(node_type_names) => match node_type_names.len() {
                     1 => Some(format!(
                         "node type {}",
-                        get_node_type_source_markdown_url_from_node_type_name(
+                        get_node_type_source_html_url_from_node_type_name(
                             node_type_names.first().unwrap().as_ref()
                         )
                     )),
@@ -446,7 +445,7 @@ impl Graph {
                             node_type_names
                                 .iter()
                                 .map(|node_type_name| {
-                                    get_node_type_source_markdown_url_from_node_type_name(
+                                    get_node_type_source_html_url_from_node_type_name(
                                         node_type_name,
                                     )
                                 })
@@ -509,7 +508,7 @@ impl Graph {
         )
     }
 
-    /// Returns markdown formatting for the given node name URLs.
+    /// Returns html formatting for the given node name URLs.
     ///
     /// # Arguments
     /// * `edge_id`: EdgeT - Node ID to query for.
@@ -526,7 +525,7 @@ impl Graph {
                     Some(edge_type_name) => {
                         format!(
                             " with edge type {}",
-                            get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name.as_ref())
+                            get_edge_type_source_html_url_from_edge_type_name(edge_type_name.as_ref())
                         )
                     },
                     None => " with unknown edge type".to_string(),
@@ -552,7 +551,7 @@ impl Graph {
         let name = if self.has_default_graph_name() {
             None
         } else {
-            report.push(format!("## {} report", self.get_name()));
+            report.push(format!("<h2>{} report</h2>\n", self.get_name()));
             Some(format!(" {}", self.get_name()))
         };
 
@@ -561,7 +560,7 @@ impl Graph {
         if !self.has_nodes() {
             report.push(format!(
                 concat!(
-                    "The graph{name} is *empty*, that is, it has neither nodes nor edges.\n",
+                    "The graph{name} is <b>empty</b>, that is, it has neither nodes nor edges.\n",
                     "If this is unexpected, it may have happened because of a ",
                     "mis-parametrization of a filter method uphill."
                 ),
@@ -637,7 +636,7 @@ impl Graph {
     unsafe fn get_unweighted_node_degree_centrality_report(&self) -> String {
         format!(
             concat!(
-                "### Degree centrality\n",
+                "<h3>Degree centrality</h3>\n",
                 "The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree} and the node degree median is {node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
@@ -670,10 +669,10 @@ impl Graph {
     unsafe fn get_singleton_nodes_report(&self) -> String {
         format!(
             concat!(
-                "#### Singleton nodes\n",
+                "<h4>Singleton nodes</h4>\n",
                 "Singleton nodes are nodes with no edge to other nodes ",
                 "nor selfloops.\n",
-                "The graph contains {singleton_nodes_number}\n."
+                "The graph contains {singleton_nodes_number}.\n"
             ),
             singleton_nodes_number = match self.get_singleton_nodes_number() {
                 1 => format!(
@@ -721,16 +720,16 @@ impl Graph {
     unsafe fn get_singleton_nodes_with_selfloops_report(&self) -> String {
         format!(
             concat!(
-                "#### Singleton nodes with selfloops\n",
+                "<h4>Singleton nodes with selfloops</h4>\n",
                 "Singleton nodes with selfloops are nodes with no edge to other nodes ",
                 "and have exclusively selfloops.\n",
-                "The graph contains {singleton_nodes_with_selfloops_number}"
+                "The graph contains {singleton_nodes_with_selfloops_number}.\n"
             ),
             singleton_nodes_with_selfloops_number = match self
                 .get_singleton_nodes_with_selfloops_number()
             {
                 1 => format!(
-                    "a singleton node with selfloop, which is {}.",
+                    "a singleton node with selfloop, which is {}",
                     self.get_unchecked_succinct_node_description(
                         self.iter_singleton_nodes_with_selfloops_node_ids()
                             .next()
@@ -742,7 +741,7 @@ impl Graph {
                         concat!(
                             "{singleton_nodes_with_selfloops_number} singleton nodes with selfloops, which are ",
                             "{singleton_nodes_list}",
-                            "{additional_singleton_nodes_with_selfloop}.\n"
+                            "{additional_singleton_nodes_with_selfloop}"
                         ),
                         singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number,
                         singleton_nodes_list = self.get_unchecked_formatted_list(
@@ -779,7 +778,7 @@ impl Graph {
 
         paragraphs.push(format!(
             concat!(
-                "### Disconnected nodes\n",
+                "<h3>Disconnected nodes</h3>\n",
                 "Disconnected nodes are nodes that are not connected ",
                 "to any other node.",
                 "The graph contains {disconnected_nodes_number}.\n"
@@ -809,9 +808,9 @@ impl Graph {
     unsafe fn get_edge_weights_report(&self) -> String {
         format!(
             concat!(
-                "### Weights\n",
+                "<h3>Weights</h3>\n",
                 "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.\n",
-                "### Weighted degree centrality\n",
+                "<h4>Weighted degree centrality</h4>\n",
                 "The minimum node degree is {weighted_minimum_node_degree}, the maximum node degree is {weighted_maximum_node_degree}, ",
                 "the mean degree is {weighted_mean_node_degree} and the node degree median is {weighted_node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
@@ -846,17 +845,17 @@ impl Graph {
     unsafe fn get_singleton_nodes_types_report(&self) -> String {
         format!(
             concat!(
-                "#### Singleton node types\n",
+                "<h4>Singleton node types</h4>\n",
                 "Singleton node types are node types that are assigned ",
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "then the name of node itself.\n",
-                "The graph contains {singleton_nodes_types_number}"
+                "The graph contains {singleton_nodes_types_number}.\n"
             ),
             singleton_nodes_types_number = match self.get_singleton_node_types_number().unwrap() {
                 1 => format!(
-                    "a singleton node type, which is {}.",
-                    get_node_type_source_markdown_url_from_node_type_name(
+                    "a singleton node type, which is {}",
+                    get_node_type_source_html_url_from_node_type_name(
                         self.iter_singleton_node_type_names()
                             .unwrap()
                             .next()
@@ -869,7 +868,7 @@ impl Graph {
                         concat!(
                             "{singleton_nodes_types_number} singleton node types, which are ",
                             "{singleton_node_types_list}",
-                            "{additional_singleton_nodes_with_selfloop}.\n"
+                            "{additional_singleton_nodes_with_selfloop}"
                         ),
                         singleton_nodes_types_number = singleton_nodes_types_number,
                         singleton_node_types_list = self.get_unchecked_formatted_list(
@@ -877,7 +876,7 @@ impl Graph {
                                 .unwrap()
                                 .take(5)
                                 .map(|node_type_name| {
-                                    get_node_type_source_markdown_url_from_node_type_name(
+                                    get_node_type_source_html_url_from_node_type_name(
                                         node_type_name.as_ref(),
                                     )
                                 })
@@ -907,16 +906,16 @@ impl Graph {
     unsafe fn get_unknown_node_types_report(&self) -> String {
         format!(
             concat!(
-                "#### Unknown node types\n",
+                "<h4>Unknown node types</h4>\n",
                 "unknown types are node types that are assigned ",
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "then the name of node itself.\n",
-                "The graph contains {unknown_types_number}"
+                "The graph contains {unknown_types_number}.\n"
             ),
             unknown_types_number = match self.get_unknown_node_types_number().unwrap() {
                 1 => format!(
-                    "a node with unknown node type, which is {}.",
+                    "a node with unknown node type, which is {}",
                     self.get_unchecked_succinct_node_description(
                         self.iter_node_ids_with_unknown_node_types()
                             .unwrap()
@@ -929,7 +928,7 @@ impl Graph {
                         concat!(
                             "{unknown_types_number} nodes with unknown node type, which are ",
                             "{unknown_node_types_list}",
-                            "{additional_unknown_nodes}.\n"
+                            "{additional_unknown_nodes}"
                         ),
                         unknown_types_number = unknown_types_number,
                         unknown_node_types_list = self.get_unchecked_formatted_list(
@@ -968,11 +967,11 @@ impl Graph {
         let mut paragraphs = Vec::new();
 
         paragraphs.push(format!(
-            concat!("### Node types\n", "The graph has {node_types_number}.\n"),
+            concat!("<h3>Node types</h3>\n", "The graph has {node_types_number}.\n"),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
                     "a single node type, which is {node_type_description}",
-                    node_type_description = get_node_type_source_markdown_url_from_node_type_name(
+                    node_type_description = get_node_type_source_html_url_from_node_type_name(
                         self.get_node_type_name_from_node_type_id(0)
                             .unwrap()
                             .as_ref()
@@ -991,9 +990,9 @@ impl Graph {
                             .take(5)
                             .map(|(node_type_name, count)| {
                                 format!(
-                                    "{markdown_url} ({count} nodes, {percentage:.2}%)",
-                                    markdown_url =
-                                        get_node_type_source_markdown_url_from_node_type_name(
+                                    "{html_url} ({count} nodes, {percentage:.2}%)",
+                                    html_url =
+                                        get_node_type_source_html_url_from_node_type_name(
                                             node_type_name.as_ref()
                                         ),
                                     count = count,
@@ -1039,7 +1038,7 @@ impl Graph {
     unsafe fn get_singleton_edges_types_report(&self) -> String {
         format!(
             concat!(
-                "#### Singleton edge types\n",
+                "<h4>Singleton edge types</h4>\n",
                 "Singleton edge types are edge types that are assigned ",
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
@@ -1049,7 +1048,7 @@ impl Graph {
             singleton_edges_types_number = match self.get_singleton_edge_types_number().unwrap() {
                 1 => format!(
                     "a singleton edge type, which is {}.",
-                    get_edge_type_source_markdown_url_from_edge_type_name(
+                    get_edge_type_source_html_url_from_edge_type_name(
                         self.iter_singleton_edge_type_names()
                             .unwrap()
                             .next()
@@ -1070,7 +1069,7 @@ impl Graph {
                                 .unwrap()
                                 .take(5)
                                 .map(|edge_type_name| {
-                                    get_edge_type_source_markdown_url_from_edge_type_name(
+                                    get_edge_type_source_html_url_from_edge_type_name(
                                         edge_type_name.as_ref(),
                                     )
                                 })
@@ -1100,7 +1099,7 @@ impl Graph {
     unsafe fn get_unknown_edge_types_report(&self) -> String {
         format!(
             concat!(
-                "#### Unknown edge types\n",
+                "<h4>Unknown edge types</h4>\n",
                 "unknown types are edge types that are assigned ",
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
@@ -1161,11 +1160,11 @@ impl Graph {
         let mut paragraphs = Vec::new();
 
         paragraphs.push(format!(
-            concat!("### edge types\n", "The graph has {edge_types_number}.\n"),
+            concat!("<h3>Edge types</h3>\n", "The graph has {edge_types_number}.\n"),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(
                     "a single edge type, which is {edge_type_description}",
-                    edge_type_description = get_edge_type_source_markdown_url_from_edge_type_name(
+                    edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
                         self.get_edge_type_name_from_edge_type_id(0)
                             .unwrap()
                             .as_ref()
@@ -1184,9 +1183,9 @@ impl Graph {
                             .take(5)
                             .map(|(edge_type_name, count)| {
                                 format!(
-                                    "{markdown_url} ({count} edges, {percentage:.2}%)",
-                                    markdown_url =
-                                        get_edge_type_source_markdown_url_from_edge_type_name(
+                                    "{html_url} ({count} edges, {percentage:.2}%)",
+                                    html_url =
+                                        get_edge_type_source_html_url_from_edge_type_name(
                                             edge_type_name.as_ref()
                                         ),
                                     count = count,
@@ -1224,7 +1223,7 @@ impl Graph {
         paragraphs.join("")
     }
 
-    /// Return markdown short textual report of the graph.
+    /// Return html short textual report of the graph.
     ///
     /// TODO! Add reports on triangles
     /// TODO! Add reports on connected components

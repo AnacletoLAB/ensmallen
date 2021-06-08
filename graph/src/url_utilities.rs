@@ -1387,17 +1387,17 @@ fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
     )
 }
 
-/// Returns markdown-formatted source of given node name if known.
+/// Returns html-formatted source of given node name if known.
 ///
 /// # Implementative details
 /// If an URL is detected from the provided node name then a standard
-/// markdown URL formatting is returned, otherwise the node name is returned.
+/// html URL formatting is returned, otherwise the node name is returned.
 /// Refer to the `get_node_source_url_from_node_name` method documentation
 /// to see which node databases are supported currently.
 ///
 /// # Arguments
 /// * `node_name`: &str - Node name to query for.
-pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
+pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
     match get_node_source_url_from_node_name(node_name) {
         Ok(url) => get_url_formatted(
             url.as_str(),
@@ -1408,34 +1408,34 @@ pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
     }
 }
 
-/// Returns markdown-formatted source of given node type name if known.
+/// Returns html-formatted source of given node type name if known.
 ///
 /// # Implementative details
 /// If an URL is detected from the provided node type name then a standard
-/// markdown URL formatting is returned, otherwise the node type name is returned.
+/// html URL formatting is returned, otherwise the node type name is returned.
 /// Refer to the `get_node_source_url_from_node_type_name` method documentation
 /// to see which node databases are supported currently.
 ///
 /// # Arguments
 /// * `node_type_name`: &str - Node name to query for.
-pub fn get_node_type_source_markdown_url_from_node_type_name(node_type_name: &str) -> String {
+pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
         Ok(url) => get_url_formatted(url.as_str(), node_type_name, "BioLink"),
         Err(_) => node_type_name.to_string(),
     }
 }
 
-/// Returns markdown-formatted source of given edge type name if known.
+/// Returns html-formatted source of given edge type name if known.
 ///
 /// # Implementative details
 /// If an URL is detected from the provided edge type name then a standard
-/// markdown URL formatting is returned, otherwise the edge type name is returned.
+/// html URL formatting is returned, otherwise the edge type name is returned.
 /// Refer to the `get_edge_source_url_from_edge_type_name` method documentation
 /// to see which edge databases are supported currently.
 ///
 /// # Arguments
 /// * `edge_type_name`: &str - edge name to query for.
-pub fn get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name: &str) -> String {
+pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -> String {
     match get_edge_type_source_url_from_edge_type_name(edge_type_name) {
         Ok(url) => get_url_formatted(url.as_str(), edge_type_name, "BioLink"),
         Err(_) => edge_type_name.to_string(),
