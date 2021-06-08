@@ -1269,6 +1269,15 @@ pub fn get_edge_type_source_url_from_edge_type_name(
     ))
 }
 
+/// Returns built url for given element
+fn get_url_formatted(url: &str, content: &str) -> String {
+    format!(
+        "<a href='{url}' target='_blank'>{content}</a>",
+        url = url,
+        content = content
+    )
+}
+
 /// Returns markdown-formatted source of given node name if known.
 ///
 /// # Implementative details
@@ -1281,7 +1290,7 @@ pub fn get_edge_type_source_url_from_edge_type_name(
 /// * `node_name`: &str - Node name to query for.
 pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
     match get_node_source_url_from_node_name(node_name) {
-        Ok(url) => format!("[{node_name}]({url})", node_name = node_name, url = url),
+        Ok(url) => get_url_formatted(url.as_str(), node_name),
         Err(_) => node_name.to_string(),
     }
 }
@@ -1298,11 +1307,7 @@ pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
 /// * `node_type_name`: &str - Node name to query for.
 pub fn get_node_type_source_markdown_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
-        Ok(url) => format!(
-            "[{node_type_name}]({url})",
-            node_type_name = node_type_name,
-            url = url
-        ),
+        Ok(url) => get_url_formatted(url.as_str(), node_type_name),
         Err(_) => node_type_name.to_string(),
     }
 }
@@ -1319,11 +1324,7 @@ pub fn get_node_type_source_markdown_url_from_node_type_name(node_type_name: &st
 /// * `edge_type_name`: &str - edge name to query for.
 pub fn get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name: &str) -> String {
     match get_edge_type_source_url_from_edge_type_name(edge_type_name) {
-        Ok(url) => format!(
-            "[{edge_type_name}]({url})",
-            edge_type_name = edge_type_name,
-            url = url
-        ),
+        Ok(url) => get_url_formatted(url.as_str(), edge_type_name),
         Err(_) => edge_type_name.to_string(),
     }
 }
