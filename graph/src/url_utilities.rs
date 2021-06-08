@@ -968,7 +968,7 @@ pub fn is_valid_ncbi_mesh_node_name(node_name: &str) -> bool {
 /// may cause a panic if the aforementioned assumption is not true.
 unsafe fn format_ncbi_mesh_url_from_node_name(node_name: &str) -> String {
     format_url_from_node_name(
-        "ncbi.nlm.nih.gov/mesh/?term={node_name}",
+        "https://ncbi.nlm.nih.gov/mesh/?term={node_name}",
         node_name,
         Some(":"),
     )
