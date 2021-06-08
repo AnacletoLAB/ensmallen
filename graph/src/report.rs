@@ -755,7 +755,7 @@ impl Graph {
                         ),
                         additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 5 {
                             format!(
-                                ", plus other {singleton_nodes_with_selfloops_number} singleton nodes",
+                                ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with selfloops",
                                 singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number - 5
                             )
                         } else {
@@ -907,13 +907,14 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Unknown node types</h4>\n",
-                "unknown types are node types that are assigned ",
-                "exclusively to a single node, making the node type ",
-                "relatively meaningless, as it adds no more information ",
-                "then the name of node itself.\n",
-                "The graph contains {unknown_types_number}.\n"
+                "Nodes with unknown node types are nodes with a ",
+                "node type that was not provided during the creation of ",
+                "the graph, which may be desired as the output of a ",
+                "node-label holdout.\n",
+                "The graph contains {unknown_node_types_number}, making up {unknown_node_types_percentage:.2} of the nodes.\n"
             ),
-            unknown_types_number = match self.get_unknown_node_types_number().unwrap() {
+            unknown_node_types_percentage = self.get_unknown_node_types_rate().unwrap() * 100.0,
+            unknown_node_types_number = match self.get_unknown_node_types_number().unwrap() {
                 1 => format!(
                     "a node with unknown node type, which is {}",
                     self.get_unchecked_succinct_node_description(
@@ -923,14 +924,14 @@ impl Graph {
                             .unwrap()
                     )
                 ),
-                unknown_types_number => {
+                unknown_node_types_number => {
                     format!(
                         concat!(
-                            "{unknown_types_number} nodes with unknown node type, which are ",
+                            "{unknown_node_types_number} nodes with unknown node type, which are ",
                             "{unknown_node_types_list}",
                             "{additional_unknown_nodes}"
                         ),
-                        unknown_types_number = unknown_types_number,
+                        unknown_node_types_number = unknown_node_types_number,
                         unknown_node_types_list = self.get_unchecked_formatted_list(
                             self.iter_node_ids_with_unknown_node_types()
                                 .unwrap()
@@ -941,10 +942,10 @@ impl Graph {
                                 .collect::<Vec<_>>()
                                 .as_ref()
                         ),
-                        additional_unknown_nodes = if unknown_types_number > 5 {
+                        additional_unknown_nodes = if unknown_node_types_number > 5 {
                             format!(
-                                ", plus other {unknown_types_number} unknown types",
-                                unknown_types_number = unknown_types_number - 5
+                                ", plus other {unknown_node_types_number} nodes with unknown node types",
+                                unknown_node_types_number = unknown_node_types_number - 5
                             )
                         } else {
                             "".to_string()
@@ -1047,7 +1048,7 @@ impl Graph {
             ),
             singleton_edges_types_number = match self.get_singleton_edge_types_number().unwrap() {
                 1 => format!(
-                    "a singleton edge type, which is {}.",
+                    "a edge with singleton edge type, which is {}.",
                     get_edge_type_source_html_url_from_edge_type_name(
                         self.iter_singleton_edge_type_names()
                             .unwrap()
@@ -1059,9 +1060,9 @@ impl Graph {
                 singleton_edges_types_number => {
                     format!(
                         concat!(
-                            "{singleton_edges_types_number} singleton edge types, which are ",
+                            "{singleton_edges_types_number} edges with singleton edge types, which are ",
                             "{singleton_edge_types_list}",
-                            "{additional_singleton_edges_with_selfloop}.\n"
+                            "{additional_edgges_with_singleton_edge_types}.\n"
                         ),
                         singleton_edges_types_number = singleton_edges_types_number,
                         singleton_edge_types_list = self.get_unchecked_formatted_list(
@@ -1076,10 +1077,10 @@ impl Graph {
                                 .collect::<Vec<_>>()
                                 .as_ref()
                         ),
-                        additional_singleton_edges_with_selfloop =
+                        additional_edgges_with_singleton_edge_types =
                             if singleton_edges_types_number > 5 {
                                 format!(
-                                ", plus other {singleton_edges_types_number} singleton edge types",
+                                ", plus other {singleton_edges_types_number} edges with singleton edge types",
                                 singleton_edges_types_number = singleton_edges_types_number - 5
                             )
                             } else {
@@ -1100,13 +1101,14 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Unknown edge types</h4>\n",
-                "unknown types are edge types that are assigned ",
-                "exclusively to a single edge, making the edge type ",
-                "relatively meaningless, as it adds no more information ",
-                "then the name of edge itself.\n",
-                "The graph contains {unknown_types_number}"
+                "Edges with unknown edge types are edges with a ",
+                "edge type that was not provided during the creation of ",
+                "the graph, which may be desired as the output of a ",
+                "edge-label holdout.\n",
+                "The graph contains {unknown_edge_types_number}, making up {unknown_edge_types_percentage:.2} of the edges.\n"
             ),
-            unknown_types_number = match self.get_unknown_edge_types_number().unwrap() {
+            unknown_edge_types_percentage = self.get_unknown_edge_types_rate().unwrap() * 100.0,
+            unknown_edge_types_number = match self.get_unknown_edge_types_number().unwrap() {
                 1 => format!(
                     "a edge with unknown edge type, which is {}.",
                     self.get_unchecked_succinct_edge_description(
@@ -1136,7 +1138,7 @@ impl Graph {
                         ),
                         additional_unknown_edges = if unknown_types_number > 5 {
                             format!(
-                                ", plus other {unknown_types_number} unknown types",
+                                ", plus other {unknown_types_number} edges with unknown edge types",
                                 unknown_types_number = unknown_types_number - 5
                             )
                         } else {
