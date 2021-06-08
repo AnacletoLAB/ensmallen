@@ -54,5 +54,11 @@ pub enum Error {
         method_name: String,
         truth_type: String,
         doc_type: String,
+    },
+    MissingUnsafe{
+        method_name: String,
+    },
+    MissingUnchecked{
+        method_name: String,
     }
 }

@@ -144,10 +144,18 @@ impl PyObjectProtocol for EnsmallenGraph {
 #[pymethods]
 impl EnsmallenGraph {
     fn _repr_html_(&self) -> PyResult<String> {
-        Ok(format!(
-            r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
-            self.graph.get_name(),
-            pe!(self.__repr__())?
-        ))
+        match self.__repr__() {
+            Ok(msg) => {
+                let err = markdown::to_html(&msg);
+                Ok(format!(
+                    r#"<h4>{}</h4>{}"#,
+                    self.graph.get_name(),
+                    err,
+                ))
+            }
+            Err(err) => {
+                pe!(Err(err))
+            }
+        }
     }
 }
