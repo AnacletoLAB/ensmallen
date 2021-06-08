@@ -781,7 +781,7 @@ impl Graph {
                 "<h3>Disconnected nodes</h3>\n",
                 "Disconnected nodes are nodes that are not connected ",
                 "to any other node.",
-                "The graph contains {disconnected_nodes_number}.\n"
+                "The graph contains {disconnected_nodes_number} disconnected nodes.\n"
             ),
             disconnected_nodes_number = self.get_disconnected_nodes_number()
         ));
