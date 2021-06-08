@@ -1281,17 +1281,17 @@ impl Graph {
         // We add the report on the node types
         // TODO! for the time being I am dropping this section of the report when the graph
         // contains exclusively unknown node types.
-        if self.has_node_types() && self.has_known_node_types().unwrap(){
+        if self.has_node_types() && self.has_known_node_types().unwrap() {
             paragraphs.push(unsafe { self.get_node_types_report() });
         }
 
         // We add the report on the edge types
         // TODO! for the time being I am dropping this section of the report when the graph
         // contains exclusively unknown edge types.
-        if self.has_edge_types() && self.has_known_edge_types().unwrap(){
+        if self.has_edge_types() && self.has_known_edge_types().unwrap() {
             paragraphs.push(unsafe { self.get_edge_types_report() });
         }
 
-        paragraphs.join("")
+        paragraphs.join("").replace("\n", "<br>")
     }
 }
