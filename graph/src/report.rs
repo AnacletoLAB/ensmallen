@@ -686,7 +686,7 @@ impl Graph {
                         concat!(
                             "{singleton_nodes_number} singleton nodes, which are ",
                             "{singleton_nodes_list}",
-                            "{additional_singleton_nodes}\n"
+                            "{additional_singleton_nodes}"
                         ),
                         singleton_nodes_number = singleton_nodes_number,
                         singleton_nodes_list = self.get_unchecked_formatted_list(
@@ -700,7 +700,7 @@ impl Graph {
                         ),
                         additional_singleton_nodes = if singleton_nodes_number > 5 {
                             format!(
-                                ", plus other {singleton_nodes_number} singleton nodes.",
+                                ", plus other {singleton_nodes_number} singleton nodes",
                                 singleton_nodes_number = singleton_nodes_number - 5
                             )
                         } else {

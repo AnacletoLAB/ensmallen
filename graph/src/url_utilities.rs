@@ -1060,6 +1060,134 @@ unsafe fn format_jax_url_from_node_name(node_name: &str) -> String {
     )
 }
 
+/// Returns whether the given node name respects the wikidata nodes pattern.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Example
+/// To validate a node you can use:
+/// ```rust
+/// # use graph::*;
+/// let wikidata_node_name = "WD:Q30";
+/// let not_wikidata_node_name = "PizzaQuattroStagioni";
+/// assert!(is_valid_wikidata_node_name(wikidata_node_name));
+/// assert!(!is_valid_wikidata_node_name(not_wikidata_node_name));
+/// ```
+pub fn is_valid_wikidata_node_name(node_name: &str) -> bool {
+    is_valid_node_name_from_seeds(node_name, Some("WD"), None, Some(":"), None, None, None).is_ok()
+}
+
+/// Returns URL from given WikiData node name.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Safety
+/// This method assumes that the provided node name is a WikiData node name and
+/// may cause a panic if the aforementioned assumption is not true.
+unsafe fn format_wikidata_url_from_node_name(node_name: &str) -> String {
+    format_url_from_node_name(
+        "https://www.wikidata.org/wiki/{node_name}",
+        node_name,
+        Some(":"),
+    )
+}
+
+/// Returns whether the given node name respects the Therapeutic Target Database nodes pattern.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Example
+/// To validate a node you can use:
+/// ```rust
+/// # use graph::*;
+/// let therapeutic_target_database_node_name1 = "ttd.drug:D0O1KD";
+/// let therapeutic_target_database_node_name2 = "ttd.drug:D06FHW";
+/// let therapeutic_target_database_node_name3 = "ttd.drug:D09RZX";
+/// let therapeutic_target_database_node_name4 = "ttd.drug:D0G2MM";
+/// let not_therapeutic_target_database_node_name = "PizzaQuattroStagioni";
+/// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name1));
+/// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name2));
+/// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name3));
+/// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name4));
+/// assert!(!is_valid_therapeutic_target_database_node_name(not_therapeutic_target_database_node_name));
+/// ```
+pub fn is_valid_therapeutic_target_database_node_name(node_name: &str) -> bool {
+    is_valid_node_name_from_seeds(
+        node_name,
+        Some("ttd.drug"),
+        Some(15),
+        Some(":"),
+        None,
+        None,
+        None,
+    )
+    .is_ok()
+}
+
+/// Returns URL from given Therapeutic Target Database node name.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Safety
+/// This method assumes that the provided node name is a therapeutic_target_database node name and
+/// may cause a panic if the aforementioned assumption is not true.
+unsafe fn format_therapeutic_target_database_url_from_node_name(node_name: &str) -> String {
+    format_url_from_node_name(
+        "http://db.idrblab.net/ttd/search/ttd/target?search_api_fulltext={node_name}",
+        node_name,
+        Some(":"),
+    )
+}
+
+/// Returns whether the given node name respects the Reactome nodes pattern.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Example
+/// To validate a node you can use:
+/// ```rust
+/// # use graph::*;
+/// let reactome_node_name1 = "REACT:R-HSA-8851222";
+/// let reactome_node_name2 = "REACT:R-HSA-77267";
+/// let not_reactome_node_name = "PizzaQuattroStagioni";
+/// assert!(is_valid_reactome_node_name(reactome_node_name1));
+/// assert!(is_valid_reactome_node_name(reactome_node_name2));
+/// assert!(!is_valid_reactome_node_name(not_reactome_node_name));
+/// ```
+pub fn is_valid_reactome_node_name(node_name: &str) -> bool {
+    is_valid_node_name_from_seeds(
+        node_name,
+        Some("REACT"),
+        None,
+        Some(":"),
+        None,
+        None,
+        None,
+    )
+    .is_ok()
+}
+
+/// Returns URL from given Reactome node name.
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to check pattern with.
+///
+/// # Safety
+/// This method assumes that the provided node name is a Reactome node name and
+/// may cause a panic if the aforementioned assumption is not true.
+unsafe fn format_reactome_url_from_node_name(node_name: &str) -> String {
+    format_url_from_node_name(
+        "https://reactome.org/content/detail/{node_name}",
+        node_name,
+        Some(":"),
+    )
+}
+
 /// Returns url describing the given node name if a pattern is known.
 ///
 /// # Implementative details
@@ -1086,6 +1214,9 @@ unsafe fn format_jax_url_from_node_name(node_name: &str) -> String {
 /// * [NCBI MESH](https://www.ncbi.nlm.nih.gov/mesh/)
 /// * [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy)
 /// * [JAX](https://www.jax.org/strain)
+/// * [WikiData](https://www.wikidata.org/wiki/Wikidata:Main_Page)
+/// * [Therapeutic Target Database](http://db.idrblab.net/ttd/)
+/// * [Reactome](https://reactome.org/)
 ///
 /// # Arguments
 /// * `node_name`: &str - Node name to query for.
@@ -1159,6 +1290,16 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String, Str
     if is_valid_jax_node_name(node_name) {
         return Ok(unsafe { format_jax_url_from_node_name(node_name) });
     }
+    if is_valid_therapeutic_target_database_node_name(node_name) {
+        return Ok(unsafe { format_therapeutic_target_database_url_from_node_name(node_name) });
+    }
+    if is_valid_wikidata_node_name(node_name) {
+        return Ok(unsafe { format_wikidata_url_from_node_name(node_name) });
+    }
+    if is_valid_reactome_node_name(node_name) {
+        return Ok(unsafe { format_reactome_url_from_node_name(node_name) });
+    }
+
     Err(format!(
         concat!(
             "There is no known url with a pattern for the provided node name {:?}.\n",
@@ -1195,6 +1336,9 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String, Str
 /// * [NCBI MESH](https://www.ncbi.nlm.nih.gov/mesh/)
 /// * [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy)
 /// * [JAX](https://www.jax.org/strain)
+/// * [WikiData](https://www.wikidata.org/wiki/Wikidata:Main_Page)
+/// * [Therapeutic Target Database](http://db.idrblab.net/ttd/)
+/// * [Reactome](https://reactome.org/)
 ///
 /// # Arguments
 /// * `node_name`: &str - Node name to query for.
@@ -1267,6 +1411,15 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str, Strin
     }
     if is_valid_jax_node_name(node_name) {
         return Ok("JAX");
+    }
+    if is_valid_wikidata_node_name(node_name) {
+        return Ok("WikiData");
+    }
+    if is_valid_therapeutic_target_database_node_name(node_name) {
+        return Ok("Therapeutic Target Database");
+    }
+    if is_valid_reactome_node_name(node_name) {
+        return Ok("Reactome");
     }
     Err(format!(
         concat!(
