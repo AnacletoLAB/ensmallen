@@ -110,7 +110,7 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node IDs are {:?}.", graph.get_singleton_with_selfloops_node_ids());
     /// ```
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Vec<NodeT> {
-        self.iter_singleton_with_selfloops_node_ids().collect()
+        self.iter_singleton_nodes_with_selfloops_node_ids().collect()
     }
 
     /// Returns vector of singleton_with_selfloops node names of the graph.
@@ -121,7 +121,7 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node names are {:?}.", graph.get_singleton_with_selfloops_node_names());
     /// ```
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
-        self.iter_singleton_with_selfloops_node_names().collect()
+        self.iter_singleton_nodes_with_selfloops_node_names().collect()
     }
 
     /// Returns number of not singleton nodes within the graph.
