@@ -134,7 +134,7 @@ pub fn load_ppi(
         !skip_selfloops,
         skip_selfloops,
         ppi.has_selfloops(),
-        ppi.complete_textual_report(None)
+        ppi.textual_report()
     );
     ppi
 }
@@ -219,7 +219,7 @@ fn validate_vocabularies(graph: &Graph) {
     if let Some(ets) = &graph.edge_types {
         assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
             "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
     }
 
@@ -234,7 +234,7 @@ fn validate_vocabularies(graph: &Graph) {
                 "We expect the edge weights vector to NOT be empty if the graph says it has weights.\n",
                 "The graph report is:\n{:?}"
             ),
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
     }
 }
@@ -306,7 +306,7 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: Option<bool>) {
         assert_eq!(
             spanning_arborescence_bader.len(), kruskal_tree.len(),
             "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{:?}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
-            graph.complete_textual_report(None), spanning_arborescence_bader, kruskal_tree,
+            graph.textual_report(), spanning_arborescence_bader, kruskal_tree,
         );
     } else {
         assert!(graph.spanning_arborescence(verbose).is_err());
@@ -568,7 +568,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         assert!(
             graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),
             "When the smallest component is one the graph must have singletons! Graph report: \n{:?}",
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
     }
 
@@ -576,7 +576,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         !graph.has_nodes(),
         smallest == 0,
         "When the smallest component is zero the graph must be empty! Graph report: \n{:?}",
-        graph.complete_textual_report(None)
+        graph.textual_report()
     );
 
     // Get one edge from the graph if there are any presents
@@ -593,7 +593,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                 src_string,
                 dst_string,
                 edge_type,
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
         } else {
             assert!(
@@ -601,7 +601,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                 "I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}",
                 src_string,
                 dst_string,
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
         }
         assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));
@@ -633,7 +633,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                     &dst_string,
                     graph.get_node_type_names_from_node_name(&dst_string)?
                 ),
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
         }
         assert_eq!(
@@ -645,9 +645,8 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Test the generation of the textual report, this includes the connected components algorithm.
     graph.report();
-    graph.complete_textual_report(verbose);
+    graph.textual_report();
     graph.overlap_textual_report(&graph, verbose)?;
-    graph.get_peculiarities_report_markdown();
 
     // Compute degrees metrics
     for src in 0..5 {
@@ -725,7 +724,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
             total_connected_components as usize - 1,
             "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
             connected_components,
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
     }
     if !graph.is_directed() {
@@ -747,7 +746,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
                 total_connected_components as usize - 1,
                 "We expected the connected components to be a dense set.\n The obtained components are: \n{:?}\n The graph report is:\n{:?}",
                 connected_components,
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
         }
     }
@@ -898,7 +897,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
     Ok(())
 }
 
-pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     // We avoid running this test on too big graphs so to avoid slowing down the test suite
     if graph.get_nodes_number() > 100 {
         return Ok(());
@@ -970,7 +969,7 @@ pub fn test_dijkstra(graph: &mut Graph, verbose: Option<bool>) -> Result<(), Str
                         dst_to_src_distance,
                         src_to_dst,
                         dst_to_src,
-                        graph.complete_textual_report(verbose)
+                        graph.textual_report()
                     );
                 });
             });
@@ -1255,7 +1254,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()
                 ),
                 min_comp,
                 graph.get_nodes_number(),
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
             assert_eq!(max_comp, graph.get_nodes_number());
             assert_eq!(min_comp, test.get_nodes_number());
@@ -1266,7 +1265,7 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()
                 max_comp + min_comp, graph.get_nodes_number(),
                 "We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\nThe graph report is:\n {:?}",
                 min_comp, max_comp, graph.get_nodes_number(),
-                graph.complete_textual_report(None)
+                graph.textual_report()
             );
             assert_eq!(max_comp + min_comp, test.get_nodes_number());
         }
@@ -1289,8 +1288,8 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 "The edge node ids of the original graph are {:?}\n",
                 "The edge node ids of the filtered graph are {:?}\n"
             ),
-            graph.complete_textual_report(None),
-            without_selfloops.complete_textual_report(None),
+            graph.textual_report(),
+            without_selfloops.textual_report(),
             graph.get_edge_node_ids(true),
             without_selfloops.get_edge_node_ids(true),
         );
@@ -1303,7 +1302,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 "The error is:\n{:?}\nand the graph report is:\n{:?}"
             ),
             single_component,
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
         let single_component_number = single_component
             .unwrap()
@@ -1317,7 +1316,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 "with {} components, which is not one.\nThe report of the graph is:{:?}\n"
             ),
             single_component_number,
-            graph.complete_textual_report(None)
+            graph.textual_report()
         );
 
         let test = graph.remove_components(
@@ -1338,9 +1337,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 "The report of the graph with only one component is {:?}\n",
                 "The report of the graph without selfloops is {:?}\n",
             ),
-            graph.complete_textual_report(None),
-            test.complete_textual_report(None),
-            without_selfloops.complete_textual_report(None)
+            graph.textual_report(),
+            test.textual_report(),
+            without_selfloops.textual_report()
         );
         if let Ok(node_type_name) = graph.get_node_type_name_from_node_type_id(0) {
             assert!(graph
@@ -1360,7 +1359,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
-                without_unknowns, graph.complete_textual_report(None)
+                without_unknowns, graph.textual_report()
             );
         }
         if let Ok(edge_type_name) = graph.get_edge_type_name_from_edge_type_id(0) {
@@ -1408,9 +1407,9 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), Strin
                 "The holdout index is {}.\n",
             ),
             k,
-            graph.complete_textual_report(None),
-            train.complete_textual_report(None),
-            test.complete_textual_report(None),
+            graph.textual_report(),
+            train.textual_report(),
+            test.textual_report(),
             (graph.get_edges_number() / k) + 1,
             test.get_edges_number(),
             i
@@ -1839,8 +1838,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<()
                 "The report of the original graph is \n{:?}\n",
                 "The report of the graph without edge types is \n{:?}",
             ),
-            graph.complete_textual_report(None),
-            without_edge_types.complete_textual_report(None)
+            graph.textual_report(),
+            without_edge_types.textual_report()
         );
         assert_eq!(
             without_edge_types.get_unique_selfloop_number(),
@@ -1865,8 +1864,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<()
             "\nThe report of the original graph is {:?}.",
             "\nThe report of the filtered graph is {:?}."
         ),
-        graph.complete_textual_report(None),
-        without_node_types.complete_textual_report(None)
+        graph.textual_report(),
+        without_node_types.textual_report()
     );
     assert_eq!(without_node_types.has_selfloops(), graph.has_selfloops());
     assert_eq!(without_node_types.nodes, graph.nodes);

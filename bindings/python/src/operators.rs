@@ -72,7 +72,7 @@ fn split_words(method_name: &str) -> Vec<String> {
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __str__(&'p self) -> String {
-        self.graph.short_textual_report()
+        self.graph.textual_report()
     }
     fn __repr__(&'p self) -> String {
         self.__str__()
@@ -145,10 +145,6 @@ impl PyObjectProtocol for EnsmallenGraph {
 #[pymethods]
 impl EnsmallenGraph {
     fn _repr_html_(&self) -> String {
-        format!(
-            r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
-            self.graph.get_name(),
-            self.__repr__()
-        )
+        self.__repr__()
     }
 }

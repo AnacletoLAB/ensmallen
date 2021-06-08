@@ -4432,31 +4432,17 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return human-readable markdown report of the graph peculiarities.
-    ///
-    /// The report, by default, is rendered using Markdown.
-    pub fn get_peculiarities_report_markdown(&self) -> String {
-        self.graph.get_peculiarities_report_markdown()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
     /// Return markdown short textual report of the graph.
-    pub fn short_textual_report(&self) -> String {
-        self.graph.short_textual_report()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Return markdown complete textual report of the graph.
     ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show loading bar.
-    ///
-    pub fn complete_textual_report(&self, verbose: Option<bool>) -> String {
-        self.graph.complete_textual_report(verbose)
+    /// TODO! Add reports on triangles
+    /// TODO! Add reports on connected components
+    /// TODO! Add reports on various node metrics
+    /// TODO! Add reports on various edge metrics
+    /// NOTE! Most of the above TODOs will require first to implement the
+    /// support for the fast computation of the inbound edges in a directed
+    /// graphs
+    pub fn textual_report(&self) -> String {
+        self.graph.textual_report()
     }
 
     #[automatically_generated_binding]
