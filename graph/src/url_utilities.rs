@@ -1156,9 +1156,117 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String, Str
     if is_valid_ncbi_taxonomy_node_name(node_name) {
         return Ok(unsafe { format_ncbi_taxonomy_url_from_node_name(node_name) });
     }
-
     if is_valid_jax_node_name(node_name) {
         return Ok(unsafe { format_jax_url_from_node_name(node_name) });
+    }
+    Err(format!(
+        concat!(
+            "There is no known url with a pattern for the provided node name {:?}.\n",
+            "If you believe there should be one, please do open a pull request to ",
+            "add it to the library!"
+        ),
+        node_name
+    ))
+}
+
+/// Returns name of the graph repository from the given node name.
+///
+/// # Implementative details
+/// Currently we have support for building the URLs for:
+/// * [Sequence Ontology](http://www.sequenceontology.org/)
+/// * [FlyBase](http://flybase.org/)
+/// * [Mouse Genome Informations](http://www.informatics.jax.org/)
+/// * [Pubmed NCBI](https://www.ncbi.nlm.nih.gov/)
+/// * [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/)
+/// * [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
+/// * [WormBase](https://wormbase.org)
+/// * [Ensembl](https://www.ensembl.org/index.html)
+/// * [ZFIN](http://zfin.org/)
+/// * [DOI](https://www.doi.org/)
+/// * [CHEBI](https://www.ebi.ac.uk/chebi/init.do)
+/// * [BioGrid](https://thebiogrid.org/)
+/// * [OMIM](https://www.omim.org/)
+/// * [Rat Genome DataBase](https://rgd.mcw.edu/rgdweb/homepage/)
+/// * [MMRRC](https://www.mmrrc.org/)
+/// * [GO](http://amigo.geneontology.org/amigo/landing)
+/// * [UniProtKB](https://www.uniprot.org/)
+/// * [Coriell](https://coriell.org/)
+/// * [DrugCentral](https://drugcentral.org/)
+/// * [NCBI MESH](https://www.ncbi.nlm.nih.gov/mesh/)
+/// * [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy)
+/// * [JAX](https://www.jax.org/strain)
+///
+/// # Arguments
+/// * `node_name`: &str - Node name to query for.
+///
+/// # Raises
+/// * If there is no known url source for the given node name.
+pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str, String> {
+    if is_valid_flybase_node_name(node_name) {
+        return Ok("FlyBase");
+    }
+    if is_valid_sequence_ontology_node_name(node_name) {
+        return Ok("Sequence Ontology");
+    }
+    if is_valid_mmrrc_node_name(node_name) {
+        return Ok("MMRRC");
+    }
+    if is_valid_wormbase_node_name(node_name) {
+        return Ok("WormBase");
+    }
+    if is_valid_mouse_genome_informatics_node_name(node_name) {
+        return Ok("Mouse Genome Informatics");
+    }
+    if is_valid_pubmed_ncbi_node_name(node_name) {
+        return Ok("Pubmed NCBI");
+    }
+    if is_valid_ncbi_gene_node_name(node_name) {
+        return Ok("NCBI Gene");
+    }
+    if is_valid_ncbi_clinvar_node_name(node_name) {
+        return Ok("NCBI ClinVar");
+    }
+    if is_valid_ensembl_node_name(node_name) {
+        return Ok("ENSEMBL");
+    }
+    if is_valid_zfin_node_name(node_name) {
+        return Ok("ZFIN");
+    }
+    if is_valid_doi_node_name(node_name) {
+        return Ok("DOI");
+    }
+    if is_valid_chebi_node_name(node_name) {
+        return Ok("CHEBI");
+    }
+    if is_valid_biogrid_node_name(node_name) {
+        return Ok("BIOGRID");
+    }
+    if is_valid_omim_node_name(node_name) {
+        return Ok("OMIN");
+    }
+    if is_valid_rat_genome_database_node_name(node_name) {
+        return Ok("Rat Genome Database");
+    }
+    if is_valid_gene_ontology_node_name(node_name) {
+        return Ok("Gene Ontology");
+    }
+    if is_valid_uniprotkb_node_name(node_name) {
+        return Ok("UniProtKB");
+    }
+    if is_valid_coriell_node_name(node_name) {
+        return Ok("Coriell");
+    }
+    if is_valid_drugcentral_node_name(node_name) {
+        return Ok("DrugCentral");
+    }
+    if is_valid_ncbi_mesh_node_name(node_name) {
+        return Ok("NCBI Mesh");
+    }
+    if is_valid_ncbi_taxonomy_node_name(node_name) {
+        return Ok("NCBI Taxonomy");
+    }
+    if is_valid_jax_node_name(node_name) {
+        return Ok("JAX");
     }
     Err(format!(
         concat!(
@@ -1270,11 +1378,12 @@ pub fn get_edge_type_source_url_from_edge_type_name(
 }
 
 /// Returns built url for given element
-fn get_url_formatted(url: &str, content: &str) -> String {
+fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
     format!(
-        "<a href='{url}' target='_blank'>{content}</a>",
+        "<a href='{url}' target='_blank' title='Go to {repository} to get more informations about {content}'>{content}</a>",
         url = url,
-        content = content
+        content = content,
+        repository=repository
     )
 }
 
@@ -1290,7 +1399,11 @@ fn get_url_formatted(url: &str, content: &str) -> String {
 /// * `node_name`: &str - Node name to query for.
 pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
     match get_node_source_url_from_node_name(node_name) {
-        Ok(url) => get_url_formatted(url.as_str(), node_name),
+        Ok(url) => get_url_formatted(
+            url.as_str(),
+            node_name,
+            get_node_repository_from_node_name(node_name).unwrap(),
+        ),
         Err(_) => node_name.to_string(),
     }
 }
@@ -1307,7 +1420,7 @@ pub fn get_node_source_markdown_url_from_node_name(node_name: &str) -> String {
 /// * `node_type_name`: &str - Node name to query for.
 pub fn get_node_type_source_markdown_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
-        Ok(url) => get_url_formatted(url.as_str(), node_type_name),
+        Ok(url) => get_url_formatted(url.as_str(), node_type_name, "BioLink"),
         Err(_) => node_type_name.to_string(),
     }
 }
@@ -1324,7 +1437,7 @@ pub fn get_node_type_source_markdown_url_from_node_type_name(node_type_name: &st
 /// * `edge_type_name`: &str - edge name to query for.
 pub fn get_edge_type_source_markdown_url_from_edge_type_name(edge_type_name: &str) -> String {
     match get_edge_type_source_url_from_edge_type_name(edge_type_name) {
-        Ok(url) => get_url_formatted(url.as_str(), edge_type_name),
+        Ok(url) => get_url_formatted(url.as_str(), edge_type_name, "BioLink"),
         Err(_) => edge_type_name.to_string(),
     }
 }
