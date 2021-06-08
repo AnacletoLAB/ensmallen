@@ -1,7 +1,6 @@
 use std::fmt::Display;
 use std::hash::Hash;
 use std::ops::AddAssign;
-use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -62,34 +61,6 @@ macro_rules! impl_to_from_usize {
 }
 
 impl_to_from_usize!(u8 u16 u32 u64 usize);
-
-#[derive(Debug)]
-pub(crate) struct ClonableRwLock<T: Clone + std::fmt::Debug> {
-    value: RwLock<T>,
-}
-
-impl<T: Clone + std::fmt::Debug> ClonableRwLock<T> {
-    pub fn new(val: T) -> ClonableRwLock<T> {
-        ClonableRwLock {
-            value: RwLock::new(val),
-        }
-    }
-
-    pub fn read(&self) -> RwLockReadGuard<T> {
-        self.value.read().unwrap()
-    }
-    pub fn write(&self) -> RwLockWriteGuard<T> {
-        self.value.write().unwrap()
-    }
-}
-
-impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T> {
-    fn clone(&self) -> ClonableRwLock<T> {
-        ClonableRwLock {
-            value: RwLock::new(self.read().clone()),
-        }
-    }
-}
 
 use std::cell::UnsafeCell;
 

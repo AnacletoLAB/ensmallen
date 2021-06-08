@@ -1,5 +1,4 @@
 use super::*;
-use rayon::prelude::*;
 
 /// # Queries
 /// The naming convention we follow is:
@@ -132,14 +131,18 @@ impl Graph {
     /// `node`: NodeT - Node whose neighbours are to return.
     /// `random_state`: u64 - Random state to subsample neighbours.
     /// `max_neighbours`: Option<NodeT> - Optionally number of neighbours to consider.
-    pub(crate) fn get_unchecked_destination_node_ids_from_node_id(
+    pub(crate) unsafe fn get_unchecked_destination_node_ids_from_node_id(
         &self,
         node: NodeT,
         random_state: u64,
         max_neighbours: Option<NodeT>,
     ) -> Vec<NodeT> {
-        let (min_edge_id, max_edge_id, destinations, _) =
-            self.get_edges_and_destinations_from_source_node_id(max_neighbours, random_state, node);
+        let (min_edge_id, max_edge_id, destinations, _) = self
+            .get_unchecked_edges_and_destinations_from_source_node_id(
+                max_neighbours,
+                random_state,
+                node,
+            );
         self.get_destinations_slice(min_edge_id, max_edge_id, &destinations)
             .to_owned()
     }
@@ -237,8 +240,138 @@ impl Graph {
         self.decode_edge(self.edges.unchecked_select(edge_id))
     }
 
-    #[inline(always)]
-    /// Returns node IDs corresponding to given edge ID.
+    /// Returns node names corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_names_from_edge_id(&self, edge_id: EdgeT) -> (String, String) {
+        let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+        (
+            self.get_unchecked_node_name_from_node_id(src),
+            self.get_unchecked_node_name_from_node_id(dst),
+        )
+    }
+
+    /// Returns the source of given edge id without making any boundary check.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source is to be retrieved.
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
+    pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.sources.as_ref().map_or_else(
+            || self.get_unchecked_node_ids_from_edge_id(edge_id).0,
+            |srscs| srscs[edge_id as usize],
+        )
+    }
+
+    /// Returns the destination of given edge id without making any boundary check.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
+    pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.destinations.as_ref().map_or_else(
+            || self.get_unchecked_node_ids_from_edge_id(edge_id).1,
+            |dsts| dsts[edge_id as usize],
+        )
+    }
+
+    /// Returns source node ID corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source node ID is to be retrieved.
+    ///
+    /// # Raises
+    /// * If the given edge ID does not exist in the current graph.
+    pub fn get_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| unsafe { self.get_unchecked_source_node_id_from_edge_id(edge_id) })
+    }
+
+    /// Returns destination node ID corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose destination node ID is to be retrieved.
+    ///
+    /// # Raises
+    /// * If the given edge ID does not exist in the current graph.
+    pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| unsafe { self.get_unchecked_destination_node_id_from_edge_id(edge_id) })
+    }
+
+    /// Returns source node name corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source node name is to be retrieved.
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> String {
+        self.get_unchecked_node_name_from_node_id(
+            self.get_unchecked_source_node_id_from_edge_id(edge_id),
+        )
+    }
+
+    /// Returns destination node name corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose destination node name is to be retrieved.
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_destination_node_name_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> String {
+        self.get_unchecked_node_name_from_node_id(
+            self.get_unchecked_destination_node_id_from_edge_id(edge_id),
+        )
+    }
+
+    /// Returns source node name corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source node name is to be retrieved.
+    ///
+    /// # Raises
+    /// If the given edge ID does not exist in the current graph.
+    pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> Result<String, String> {
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| unsafe { self.get_unchecked_source_node_name_from_edge_id(edge_id) })
+    }
+
+    /// Returns destination node name corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose destination node name is to be retrieved.
+    ///
+    /// # Raises
+    /// If the given edge ID does not exist in the current graph.
+    pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> Result<String, String> {
+        self.validate_edge_id(edge_id).map(|edge_id| unsafe {
+            self.get_unchecked_destination_node_name_from_edge_id(edge_id)
+        })
+    }
+
+    /// Returns node names corresponding to given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> Result<(String, String), String> {
+        self.validate_edge_id(edge_id)
+            .map(|edge_id| unsafe { self.get_unchecked_node_names_from_edge_id(edge_id) })
+    }
+
+    /// Returns node names corresponding to given edge ID.
     ///
     /// # Arguments
     /// * `edge_id`: EdgeT - The edge ID whose source and destination node IDs are to e retrieved.
@@ -449,32 +582,64 @@ impl Graph {
         })
     }
 
-    /// Return vector with top k central node Ids.
+    /// Return vector with unweighted top k central node Ids.
     ///
     /// If the k passed is bigger than the number of nodes this method will return
     /// all the nodes in the graph.
     ///
     /// # Arguments
-    ///
     /// * `k`: NodeT - Number of central nodes to extract.
-    /// TODO: This can be refactored to run faster!
-    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
+    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
         let k = k.min(self.get_nodes_number());
-        let mut nodes_degrees: Vec<(NodeT, NodeT)> = self
-            .iter_node_ids()
-            .map(|node_id| unsafe {
-                (
-                    self.get_unchecked_unweighted_node_degree_from_node_id(node_id),
-                    node_id,
-                )
-            })
-            .collect();
-        nodes_degrees.par_sort_unstable();
-        nodes_degrees.reverse();
-        nodes_degrees[0..k as usize]
-            .iter()
-            .map(|(_, node_id)| *node_id)
-            .collect()
+        let mut most_central_node_degrees = vec![0; k as usize];
+        let mut most_central_node_ids = vec![0; k as usize];
+        self.iter_node_ids().for_each(|node_id| unsafe {
+            let degree = self.get_unchecked_unweighted_node_degree_from_node_id(node_id);
+            let (argmin, min_degree) = most_central_node_degrees
+                .iter_mut()
+                .enumerate()
+                .min_by(|(_, node_degree_one), (_, node_degree_two)| {
+                    (**node_degree_one).cmp(*node_degree_two)
+                })
+                .unwrap();
+            if *min_degree <= degree {
+                *min_degree = degree;
+                most_central_node_ids[argmin] = node_id;
+            }
+        });
+        most_central_node_ids
+    }
+
+    /// Return vector with weighted top k central node Ids.
+    ///
+    /// If the k passed is bigger than the number of nodes this method will return
+    /// all the nodes in the graph.
+    ///
+    /// # Arguments
+    /// * `k`: NodeT - Number of central nodes to extract.
+    ///
+    /// # Raises
+    /// * If the current graph instance does not contain edge weights.
+    pub fn get_weighted_top_k_central_node_ids(&self, k: NodeT) -> Result<Vec<NodeT>, String> {
+        self.must_have_edge_weights()?;
+        let k = k.min(self.get_nodes_number());
+        let mut most_central_node_degrees = vec![0.0; k as usize];
+        let mut most_central_node_ids = vec![0; k as usize];
+        self.iter_node_ids().for_each(|node_id| unsafe {
+            let degree = self.get_unchecked_weighted_node_degree_from_node_id(node_id);
+            let (argmin, min_degree) = most_central_node_degrees
+                .iter_mut()
+                .enumerate()
+                .min_by(|(_, node_degree_one), (_, node_degree_two)| {
+                    (**node_degree_one).partial_cmp(*node_degree_two).unwrap()
+                })
+                .unwrap();
+            if *min_degree <= degree {
+                *min_degree = degree;
+                most_central_node_ids[argmin] = node_id;
+            }
+        });
+        Ok(most_central_node_ids)
     }
 
     /// Returns the number of outbound neighbours of given node.
@@ -555,7 +720,7 @@ impl Graph {
     ///
     /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
-        self.get_top_k_central_node_ids(k)
+        self.get_unweighted_top_k_central_node_ids(k)
             .into_iter()
             .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
             .collect()
@@ -1142,28 +1307,6 @@ impl Graph {
                 Ok(Some(self.get_node_type_id_from_node_type_name(ntn)?))
             })?,
         )
-    }
-
-    /// Returns the destination of given edge id without making any boundary check.
-    ///
-    /// # Arguments
-    ///
-    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
-    pub(crate) fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.destinations.as_ref().map_or_else(
-            || unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id).1 },
-            |dsts| dsts[edge_id as usize],
-        )
-    }
-
-    /// Returns the destination of given edge id.
-    ///
-    /// # Arguments
-    ///
-    /// * `edge_id`: EdgeT - The edge ID whose destination is to be retrieved.
-    pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT, String> {
-        self.validate_edge_id(edge_id)
-            .map(|edge_id| self.get_unchecked_destination_node_id_from_edge_id(edge_id))
     }
 
     /// Return vector of destinations for the given source node ID.

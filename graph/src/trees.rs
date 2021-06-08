@@ -223,7 +223,7 @@ impl Graph {
             // We iterate through the singleton nodes and the singleton nodes
             // with self-loops.
             self.iter_singleton_node_ids()
-                .chain(self.iter_singleton_with_selfloops_node_ids())
+                .chain(self.iter_singleton_nodes_with_selfloops_node_ids())
                 .enumerate()
                 .for_each(|(component_number, node_id)| {
                     components[node_id as usize] = component_number as NodeT;

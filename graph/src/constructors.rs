@@ -415,6 +415,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
 /// might_contain_trap_nodes: bool - Whether we need to expect trap nodes. If the graph does not have trap nodes we can build it faster.
 /// directed: bool - Whether the graph is directed.
 /// edge_list_is_correct: bool - Whether the edge list is correct and therefore we can skip validating it.
+///
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,
