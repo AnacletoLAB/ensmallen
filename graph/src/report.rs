@@ -488,7 +488,7 @@ impl Graph {
         let description = if node_degree.is_some() || node_type.is_some() {
             let node_degree_is_some = node_degree.is_some();
             format!(
-                "({node_degree}{join_term}{node_type})",
+                " ({node_degree}{join_term}{node_type})",
                 node_degree = node_degree.unwrap_or_else(|| "".to_string()),
                 join_term = if node_degree_is_some && node_type.is_some() {
                     " and "
