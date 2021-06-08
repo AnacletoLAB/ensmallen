@@ -562,7 +562,7 @@ impl Graph {
                 concat!(
                     "The graph{name} is <b>empty</b>, that is, it has neither nodes nor edges.\n",
                     "If this is unexpected, it may have happened because of a ",
-                    "mis-parametrization of a filter method uphill."
+                    "mis-parametrization of a filter method uphill.\n"
                 ),
                 name = name.unwrap_or_else(|| "".to_string())
             ));
@@ -588,7 +588,7 @@ impl Graph {
                 concat!(
                     "The graph{name} contains {nodes_number} and no edges.\n",
                     "If this is unexpected, it may have happened because of a ",
-                    "mis-parametrization of a filter method uphill."
+                    "mis-parametrization of a filter method uphill.\n"
                 ),
                 name = name.unwrap_or_else(|| "".to_string()),
                 nodes_number = nodes_number
@@ -780,7 +780,7 @@ impl Graph {
             concat!(
                 "<h3>Disconnected nodes</h3>\n",
                 "Disconnected nodes are nodes that are not connected ",
-                "to any other node.",
+                "to any other node.\n",
                 "The graph contains {disconnected_nodes_number} disconnected nodes.\n"
             ),
             disconnected_nodes_number = self.get_disconnected_nodes_number()
