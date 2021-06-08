@@ -551,7 +551,7 @@ impl Graph {
         let name = if self.has_default_graph_name() {
             None
         } else {
-            report.push(format!("<h2>{} report</h2>\n", self.get_name()));
+            report.push(format!("<h2>{}</h2>\n", self.get_name()));
             Some(format!(" {}", self.get_name()))
         };
 
@@ -577,7 +577,15 @@ impl Graph {
                     "a single node called {node_name_description}",
                     node_name_description = self.get_unchecked_succinct_node_description(0),
                 ),
-                nodes_number => format!("{nodes_number} nodes", nodes_number = nodes_number),
+                nodes_number => format!(
+                    "{heterogeneous_nodes}{nodes_number} nodes",
+                    nodes_number = nodes_number,
+                    heterogeneous_nodes = if self.has_node_types() {
+                        "heterogenous "
+                    } else {
+                        ""
+                    },
+                ),
             }
         };
 
@@ -604,7 +612,15 @@ impl Graph {
                     "a single {edge_description}",
                     edge_description = self.get_unchecked_succinct_edge_description(0)
                 ),
-                edges_number => format!("{edges_number} edges", edges_number = edges_number),
+                edges_number => format!(
+                    "{heterogeneous_edges}{edges_number} edges",
+                    edges_number = edges_number,
+                    heterogeneous_edges = if self.has_edge_types() {
+                        "heterogenous "
+                    } else {
+                        ""
+                    }
+                ),
             }
         };
 
@@ -638,7 +654,7 @@ impl Graph {
             concat!(
                 "<h3>Degree centrality</h3>\n",
                 "The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
-                "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree} and the node degree median is {node_degree_median}.\n",
+                "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
             ),
             minimum_node_degree = self.get_unweighted_min_node_degree().unwrap(),
@@ -811,8 +827,8 @@ impl Graph {
                 "<h3>Weights</h3>\n",
                 "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.\n",
                 "<h4>Weighted degree centrality</h4>\n",
-                "The minimum node degree is {weighted_minimum_node_degree}, the maximum node degree is {weighted_maximum_node_degree}, ",
-                "the mean degree is {weighted_mean_node_degree} and the node degree median is {weighted_node_degree_median}.\n",
+                "The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
+                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.\n",
                 "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
@@ -825,9 +841,6 @@ impl Graph {
             weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
                 self.get_weighted_top_k_central_node_ids(5).unwrap()
                     .into_iter()
-                    .filter(|node_id| {
-                        self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
-                    })
                     .map(|node_id| {
                         self.get_unchecked_succinct_node_description(node_id)
                     })
@@ -963,12 +976,16 @@ impl Graph {
     /// without node types.
     ///
     /// TODO! Add paragraph about homogeneous node types.
+    /// TODO! Add paragram handling the corner case where all node types are unknown.
     unsafe fn get_node_types_report(&self) -> String {
         // First we define the list of paragraphs of the report.
         let mut paragraphs = Vec::new();
 
         paragraphs.push(format!(
-            concat!("<h3>Node types</h3>\n", "The graph has {node_types_number}.\n"),
+            concat!(
+                "<h3>Node types</h3>\n",
+                "The graph has {node_types_number}.\n"
+            ),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
                     "a single node type, which is {node_type_description}",
@@ -992,10 +1009,9 @@ impl Graph {
                             .map(|(node_type_name, count)| {
                                 format!(
                                     "{html_url} ({count} nodes, {percentage:.2}%)",
-                                    html_url =
-                                        get_node_type_source_html_url_from_node_type_name(
-                                            node_type_name.as_ref()
-                                        ),
+                                    html_url = get_node_type_source_html_url_from_node_type_name(
+                                        node_type_name.as_ref()
+                                    ),
                                     count = count,
                                     percentage =
                                         (count as f64 / self.get_nodes_number() as f64) * 100.0
@@ -1157,12 +1173,16 @@ impl Graph {
     /// without edge types.
     ///
     /// TODO! Add paragraph about homogeneous edge types.
+    /// TODO! Add paragram handling the corner case where all edge types are unknown.
     unsafe fn get_edge_types_report(&self) -> String {
         // First we define the list of paragraphs of the report.
         let mut paragraphs = Vec::new();
 
         paragraphs.push(format!(
-            concat!("<h3>Edge types</h3>\n", "The graph has {edge_types_number}.\n"),
+            concat!(
+                "<h3>Edge types</h3>\n",
+                "The graph has {edge_types_number}.\n"
+            ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(
                     "a single edge type, which is {edge_type_description}",
@@ -1186,13 +1206,13 @@ impl Graph {
                             .map(|(edge_type_name, count)| {
                                 format!(
                                     "{html_url} ({count} edges, {percentage:.2}%)",
-                                    html_url =
-                                        get_edge_type_source_html_url_from_edge_type_name(
-                                            edge_type_name.as_ref()
-                                        ),
+                                    html_url = get_edge_type_source_html_url_from_edge_type_name(
+                                        edge_type_name.as_ref()
+                                    ),
                                     count = count,
-                                    percentage =
-                                        (count as f64 / self.get_directed_edges_number() as f64) * 100.0
+                                    percentage = (count as f64
+                                        / self.get_directed_edges_number() as f64)
+                                        * 100.0
                                 )
                             })
                             .collect::<Vec<_>>()
@@ -1259,12 +1279,16 @@ impl Graph {
         }
 
         // We add the report on the node types
-        if self.has_node_types() {
+        // TODO! for the time being I am dropping this section of the report when the graph
+        // contains exclusively unknown node types.
+        if self.has_node_types() && self.has_known_node_types().unwrap(){
             paragraphs.push(unsafe { self.get_node_types_report() });
         }
 
         // We add the report on the edge types
-        if self.has_edge_types() {
+        // TODO! for the time being I am dropping this section of the report when the graph
+        // contains exclusively unknown edge types.
+        if self.has_edge_types() && self.has_known_edge_types().unwrap(){
             paragraphs.push(unsafe { self.get_edge_types_report() });
         }
 

@@ -238,12 +238,28 @@ impl Graph {
         Ok(self.get_unknown_node_types_number()? > 0)
     }
 
+    /// Returns whether there are known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_known_node_types(&self) -> Result<bool, String> {
+        Ok(self.get_known_node_types_number()? > 0)
+    }
+
     /// Returns whether there are unknown edge types.
     ///
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_unknown_edge_types(&self) -> Result<bool, String> {
         Ok(self.get_unknown_edge_types_number()? > 0)
+    }
+
+    /// Returns whether there are known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_known_edge_types(&self) -> Result<bool, String> {
+        Ok(self.get_known_edge_types_number()? > 0)
     }
 
     /// Returns whether the nodes have an homogenous node type.
