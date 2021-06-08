@@ -1190,7 +1190,7 @@ impl Graph {
                                         ),
                                     count = count,
                                     percentage =
-                                        (count as f64 / self.get_edges_number() as f64) * 100.0
+                                        (count as f64 / self.get_directed_edges_number() as f64) * 100.0
                                 )
                             })
                             .collect::<Vec<_>>()
