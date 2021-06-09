@@ -25,6 +25,16 @@ fn is_valid_node_name_from_seeds(
     }
     let mut validated = false;
     let mut node_name = node_name.to_string();
+    // If the separator was provided, it must appear exactly once
+    if let Some(separator) = separator {
+        if node_name.matches(separator).count() != 1 {
+            return Err(format!(
+                "We expect for the given separator {} to appear exactly once in the given object '{}'.",
+                separator,
+                node_name
+            ));
+        }
+    }
     // First of all, we check if the node name starts with the base name
     // and the base name was provided.
     if let Some(base_name) = base_name {
@@ -1160,16 +1170,8 @@ unsafe fn format_therapeutic_target_database_url_from_node_name(node_name: &str)
 /// assert!(!is_valid_reactome_node_name(not_reactome_node_name));
 /// ```
 pub fn is_valid_reactome_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some("REACT"),
-        None,
-        Some(":"),
-        None,
-        None,
-        None,
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some("REACT"), None, Some(":"), None, None, None)
+        .is_ok()
 }
 
 /// Returns URL from given Reactome node name.

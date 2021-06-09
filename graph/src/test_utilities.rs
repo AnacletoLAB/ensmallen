@@ -1534,6 +1534,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(0.3),
                 Some(false),
                 Some(10),
+                Some(false),
                 None,
             )
             .unwrap()
@@ -1547,6 +1548,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 None,
                 Some(false),
                 Some(10),
+                Some(false),
                 None,
             )
             .unwrap()

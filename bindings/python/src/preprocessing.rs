@@ -461,7 +461,7 @@ impl EnsmallenGraph {
         Ok((neighbours.to_owned(), labels.to_owned()))
     }
 
-    #[text_signature = "($self, idx, batch_size, negative_samples_percentage, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples_percentage, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -480,6 +480,8 @@ impl EnsmallenGraph {
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// maximal_sampling_attempts: Optional[int],
     ///     Number of attempts to execute to sample the negative edges.
+    /// shuffle: Optional[bool],
+    ///     Whether to shuffle the samples within the batch.
     /// graph_to_avoid: Optional[EnsmallenGraph],
     ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
@@ -504,6 +506,7 @@ impl EnsmallenGraph {
         return_edge_types: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
+        shuffle: Option<bool>,
         graph_to_avoid: Option<EnsmallenGraph>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
@@ -527,6 +530,7 @@ impl EnsmallenGraph {
             Some(return_edge_types),
             avoid_false_negatives,
             maximal_sampling_attempts,
+            shuffle,
             graph_to_avoid.as_ref(),
         ))?;
 

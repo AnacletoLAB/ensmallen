@@ -6,7 +6,6 @@ use itertools::Itertools;
 use num_traits::Pow;
 use rayon::prelude::*;
 use std::collections::{HashMap, VecDeque};
-use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
 #[manual_binding]
@@ -347,6 +346,7 @@ impl Graph {
     /// * `return_edge_types`: Option<bool> - Whether to return the edge types. The negative edges edge type will be samples at random.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
+    /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -364,6 +364,7 @@ impl Graph {
         return_edge_types: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
+        shuffle: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<
         impl IndexedParallelIterator<
@@ -382,6 +383,7 @@ impl Graph {
         let negative_samples_percentage = negative_samples_percentage.unwrap_or(0.5);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
+        let shuffle = shuffle.unwrap_or(true);
 
         let return_node_types = return_node_types.unwrap_or(false);
         let (maximum_node_types_number, multi_label) = if return_node_types {
@@ -411,6 +413,9 @@ impl Graph {
 
         let negative_samples_threshold =
             (negative_samples_percentage * u64::MAX as f64).ceil() as u64;
+        let expected_negative_samples_number =
+            (batch_size as f64 * negative_samples_percentage).ceil() as usize;
+        let expected_positive_samples_number = batch_size - expected_negative_samples_number;
 
         let edges_number = self.get_directed_edges_number();
         let nodes_number = self.get_nodes_number();
@@ -439,82 +444,88 @@ impl Graph {
                 }
             };
 
-        Ok(gen_random_vec(batch_size, splitmix64(idx))
-            .into_par_iter()
-            .map(move |mut sampled| unsafe {
-                if sampled > negative_samples_threshold{
-                    let edge_id = sampled % edges_number;
-                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-                    let edge_type = if return_edge_types {
-                        self.get_unchecked_edge_type_id_from_edge_id(edge_id)
-                    } else {
-                        None
-                    };
-                    return (
-                        src,
-                        get_node_type_ids(src),
-                        dst,
-                        get_node_type_ids(dst),
-                        edge_type,
-                        true
-                    );
-                }
-                if does_not_require_resampling {
-                    // split the random u64 into 2 u32 and mod them to have
-                    // usable nodes (this is slightly biased towards low values)
-                    let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                    let dst = (sampled >> 32) as u32 % nodes_number;
-                    let edge_type = if return_edge_types {
-                        Some(sampled as EdgeTypeT % edge_types_number)
-                    } else {
-                        None
-                    };
+        let idx = splitmix64(idx);
 
-                    return (
-                        src,
-                        get_node_type_ids(src),
-                        dst,
-                        get_node_type_ids(dst),
-                        edge_type,
-                        false
-                    );
-                }
-                for _ in 0..maximal_sampling_attempts {
-                    // split the random u64 into 2 u32 and mod them to have
-                    // usable nodes (this is slightly biased towards low values)
-                    let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                    let dst = (sampled >> 32) as u32 % nodes_number;
-
-                    if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
-                        || graph_to_avoid.as_ref().map_or(false, |g| g.has_edge_from_node_ids(src, dst)){
-                        sampled = xorshift(sampled);
-                        continue;
-                    }
-
-                    let edge_type = if return_edge_types {
-                        Some(sampled as EdgeTypeT % edge_types_number)
-                    } else {
-                        None
-                    };
-
-                    return (
-                        src,
-                        get_node_type_ids(src),
-                        dst,
-                        get_node_type_ids(dst),
-                        edge_type,
-                        false
-                    );
-                }
-                panic!(
-                    concat!(
-                        "Executed more than {} attempts to sample a negative edge.\n",
-                        "If your graph is so small that you see this error, you may want to consider ",
-                        "using one of the edge embedding transformer from the Embiggen library."
-                    ),
-                    maximal_sampling_attempts
+        Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
+            let mut sampled = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
+            if shuffle && sampled > negative_samples_threshold
+                || !shuffle && i < expected_positive_samples_number
+            {
+                let edge_id = sampled % edges_number;
+                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                let edge_type = if return_edge_types {
+                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                } else {
+                    None
+                };
+                return (
+                    src,
+                    get_node_type_ids(src),
+                    dst,
+                    get_node_type_ids(dst),
+                    edge_type,
+                    true,
                 );
-            }))
+            }
+            if does_not_require_resampling {
+                // split the random u64 into 2 u32 and mod them to have
+                // usable nodes (this is slightly biased towards low values)
+                let src = (sampled & 0xffffffff) as u32 % nodes_number;
+                let dst = (sampled >> 32) as u32 % nodes_number;
+                let edge_type = if return_edge_types {
+                    Some(sampled as EdgeTypeT % edge_types_number)
+                } else {
+                    None
+                };
+
+                return (
+                    src,
+                    get_node_type_ids(src),
+                    dst,
+                    get_node_type_ids(dst),
+                    edge_type,
+                    false,
+                );
+            }
+            for _ in 0..maximal_sampling_attempts {
+                // split the random u64 into 2 u32 and mod them to have
+                // usable nodes (this is slightly biased towards low values)
+                let src = (sampled & 0xffffffff) as u32 % nodes_number;
+                let dst = (sampled >> 32) as u32 % nodes_number;
+
+                if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
+                    || graph_to_avoid
+                        .as_ref()
+                        .map_or(false, |g| g.has_edge_from_node_ids(src, dst))
+                {
+                    sampled = xorshift(sampled);
+                    continue;
+                }
+
+                let edge_type = if return_edge_types {
+                    Some(sampled as EdgeTypeT % edge_types_number)
+                } else {
+                    None
+                };
+
+                return (
+                    src,
+                    get_node_type_ids(src),
+                    dst,
+                    get_node_type_ids(dst),
+                    edge_type,
+                    false,
+                );
+            }
+            panic!(
+                concat!(
+                    "Executed more than {} attempts to sample a negative edge.\n",
+                    "If your graph is so small that you see this error, you may want to consider ",
+                    "using one of the edge embedding transformer from the Embiggen library."
+                ),
+                maximal_sampling_attempts
+            );
+        }))
     }
 
     #[manual_binding]
@@ -529,6 +540,7 @@ impl Graph {
     /// * `negative_samples`: f64 - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
+    /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -541,6 +553,7 @@ impl Graph {
         negative_samples: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
+        shuffle: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a, String> {
         let iter = self.link_prediction_ids(
@@ -551,6 +564,7 @@ impl Graph {
             Some(false),
             avoid_false_negatives,
             maximal_sampling_attempts,
+            shuffle,
             graph_to_avoid,
         )?;
 
