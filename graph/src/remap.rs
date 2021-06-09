@@ -53,7 +53,7 @@ impl Graph {
             self.get_directed_edges_number() as usize,
         );
 
-        if !self.are_nodes_remappable(&other) {
+        if !self.are_nodes_remappable(other) {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
 

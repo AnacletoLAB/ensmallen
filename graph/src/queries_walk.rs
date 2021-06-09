@@ -63,7 +63,7 @@ impl Graph {
         destinations: &'a Option<Vec<NodeT>>,
     ) -> &'a [NodeT] {
         match (&self.destinations, destinations) {
-            (_, Some(dsts)) => &dsts.as_slice(),
+            (_, Some(dsts)) => dsts.as_slice(),
             (Some(dsts), None) => &dsts[min_edge_id as usize..max_edge_id as usize],
             _ => unreachable!(
                 "It is not possible to have both destinations and cached destinations at once."
