@@ -66,11 +66,11 @@ impl Graph {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
                 "minimum_unweighted_node_degree",
-                self.get_unweighted_min_node_degree().unwrap().to_string(),
+                self.get_unweighted_minimum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "maximum_unweighted_node_degree",
-                self.get_unweighted_max_node_degree().unwrap().to_string(),
+                self.get_unweighted_maximum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
@@ -431,7 +431,7 @@ impl Graph {
         let node_name = self.get_unchecked_node_name_from_node_id(node_id);
         let node_name = get_node_source_html_url_from_node_name(node_name.as_ref());
         let node_type = if self.has_node_types() {
-            match self.get_unchecked_node_type_names_from_node_id(0) {
+            match self.get_unchecked_node_type_names_from_node_id(node_id) {
                 Some(node_type_names) => match node_type_names.len() {
                     1 => Some(format!(
                         "node type {}",
@@ -657,8 +657,8 @@ impl Graph {
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
             ),
-            minimum_node_degree = self.get_unweighted_min_node_degree().unwrap(),
-            maximum_node_degree = self.get_unweighted_max_node_degree().unwrap(),
+            minimum_node_degree = self.get_unweighted_minimum_node_degree().unwrap(),
+            maximum_node_degree = self.get_unweighted_maximum_node_degree().unwrap(),
             mode_node_degree = self.get_unweighted_node_degrees_mode().unwrap(),
             mean_node_degree = self.get_unweighted_node_degrees_mean().unwrap(),
             node_degree_median = self.get_unweighted_node_degrees_median().unwrap(),

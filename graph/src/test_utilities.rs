@@ -381,22 +381,22 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     // Testing that the degrees computation is correct
     assert_eq!(
-        graph.get_unweighted_max_node_degree()?,
+        graph.get_unweighted_maximum_node_degree()?,
         graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
 
     if graph.has_singleton_nodes() {
-        assert!(graph.get_unweighted_min_node_degree()? == 0);
+        assert!(graph.get_unweighted_minimum_node_degree()? == 0);
         assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
     }
 
     if !graph.is_directed() && !graph.has_singleton_nodes() {
-        assert!(graph.get_unweighted_min_node_degree()? > 0);
+        assert!(graph.get_unweighted_minimum_node_degree()? > 0);
         assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
     }
 
-    if !graph.is_directed() && graph.get_unweighted_min_node_degree()? == 0 {
+    if !graph.is_directed() && graph.get_unweighted_minimum_node_degree()? == 0 {
         assert!(graph.has_singleton_nodes());
     }
 
@@ -405,7 +405,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     }
 
     if !graph.has_disconnected_nodes() && !graph.has_trap_nodes() {
-        assert!(graph.get_unweighted_min_node_degree()? > 0);
+        assert!(graph.get_unweighted_minimum_node_degree()? > 0);
         assert!(
             graph.iter_unweighted_node_degrees().min().unwrap() > 0,
             concat!(
@@ -424,7 +424,7 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     );
 
     assert_eq!(
-        graph.get_unweighted_min_node_degree()?,
+        graph.get_unweighted_minimum_node_degree()?,
         graph.iter_unweighted_node_degrees().min().unwrap(),
         concat!(
             "The cached minimum degree does not match the one computed from the node degrees.\n",
@@ -651,11 +651,16 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, true);
-            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, false);
+            let _ = graph.get_unweighted_preferential_attachment_from_node_ids(src, dst, true);
+            let _ = graph.get_unweighted_preferential_attachment_from_node_ids(src, dst, false);
             let _ = graph.get_jaccard_coefficient_from_node_ids(src, dst);
             let _ = graph.get_adamic_adar_index_from_node_ids(src, dst);
-            let _ = graph.get_resource_allocation_index_from_node_ids(src, dst);
+            let _ = graph.get_unweighted_resource_allocation_index_from_node_ids(src, dst);
+            if graph.has_edge_weights() {
+                let _ = graph.get_weighted_preferential_attachment_from_node_ids(src, dst, true);
+                let _ = graph.get_weighted_preferential_attachment_from_node_ids(src, dst, false);
+                let _ = graph.get_weighted_resource_allocation_index_from_node_ids(src, dst);
+            }
         }
     }
 
@@ -1546,6 +1551,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(0.4),
                 None,
                 None,
+                Some(false),
                 Some(false),
                 Some(10),
                 Some(false),

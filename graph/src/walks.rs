@@ -306,7 +306,11 @@ impl Graph {
     /// * `max_edge_id`: EdgeT - The maximum edge id.
     /// * `probabilistic_indices`: &Option<Vec<u64>> - Optional list of the indices used to subsample.
     ///
-    fn get_edge_weighted_transitions(
+    /// # Safety
+    /// Calling this method with either edge ID ranges that do not exist in this
+    /// graph or calling this method on a graph without edge weights will cause
+    /// this method to panic.
+    pub(crate) unsafe fn get_edge_weighted_transitions(
         &self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,

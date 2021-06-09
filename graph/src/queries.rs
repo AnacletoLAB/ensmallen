@@ -121,32 +121,6 @@ impl Graph {
         }
     }
 
-    /// Return (subsampled) vector of destinations of given node.
-    ///
-    /// If the max neighbours parameter is given, and is smaller than the
-    /// number of the neighbours of the given node, the subsampling
-    /// mechanism is given.
-    ///
-    /// # Arguments
-    /// `node`: NodeT - Node whose neighbours are to return.
-    /// `random_state`: u64 - Random state to subsample neighbours.
-    /// `max_neighbours`: Option<NodeT> - Optionally number of neighbours to consider.
-    pub(crate) unsafe fn get_unchecked_destination_node_ids_from_node_id(
-        &self,
-        node: NodeT,
-        random_state: u64,
-        max_neighbours: Option<NodeT>,
-    ) -> Vec<NodeT> {
-        let (min_edge_id, max_edge_id, destinations, _) = self
-            .get_unchecked_edges_and_destinations_from_source_node_id(
-                max_neighbours,
-                random_state,
-                node,
-            );
-        self.get_destinations_slice(min_edge_id, max_edge_id, &destinations)
-            .to_owned()
-    }
-
     /// Return edge ID without any checks for given tuple of nodes and edge type.
     ///
     /// # Arguments

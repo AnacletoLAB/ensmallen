@@ -3103,15 +3103,58 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (0) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_unweighted_max_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_unweighted_max_node_degree()
+    pub unsafe fn get_unchecked_unweighted_maximum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_unweighted_maximum_node_degree()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns maximum weighted node degree of the graph
+    /// Returns maximum weighted node degree of the graph.
+    ///
+    /// Safety
+    /// ------
+    /// This method will cause a panic on graphs without
+    ///  edge weights.
+    pub unsafe fn get_unchecked_weighted_maximum_node_degree(&self) -> f64 {
+        self.graph.get_unchecked_weighted_maximum_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns maximum weighted node degree of the graph.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the current graph does not contain edge weights.
+    ///
     pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_maximum_node_degree())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// Safety
+    /// ------
+    /// This method will cause a panic on graphs without
+    ///  edge weights.
+    pub unsafe fn get_unchecked_weighted_minimum_node_degree(&self) -> f64 {
+        self.graph.get_unchecked_weighted_minimum_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the current graph does not contain edge weights.
+    ///
+    pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_minimum_node_degree())
     }
 
     #[automatically_generated_binding]
@@ -3123,8 +3166,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     ///
-    pub fn get_unweighted_max_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_max_node_degree())
+    pub fn get_unweighted_maximum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_maximum_node_degree())
     }
 
     #[automatically_generated_binding]
@@ -3154,8 +3197,8 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_unweighted_min_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_unweighted_min_node_degree()
+    pub unsafe fn get_unchecked_unweighted_minimum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_unweighted_minimum_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -3174,8 +3217,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     ///
-    pub fn get_unweighted_min_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_min_node_degree())
+    pub fn get_unweighted_minimum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_unweighted_minimum_node_degree())
     }
 
     #[automatically_generated_binding]
@@ -4402,9 +4445,9 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
-    /// Return human-readable markdown report of the given node.
+    /// Return human-readable html report of the given node.
     ///
-    /// The report, by default, is rendered using Markdown.
+    /// The report, by default, is rendered using html.
     ///
     /// Parameters
     /// ----------
@@ -4417,9 +4460,9 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_name)"]
-    /// Return human-readable markdown report of the given node.
+    /// Return human-readable html report of the given node.
     ///
-    /// The report, by default, is rendered using Markdown.
+    /// The report, by default, is rendered using html.
     ///
     /// Parameters
     /// ----------
@@ -4432,7 +4475,7 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return markdown short textual report of the graph.
+    /// Return html short textual report of the graph.
     ///
     /// TODO! Add reports on triangles
     /// TODO! Add reports on connected components
@@ -5237,6 +5280,19 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
+    /// Returns whether there are known node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_known_node_types(&self) -> PyResult<bool> {
+        pe!(self.graph.has_known_node_types())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
     /// Returns whether there are unknown edge types.
     ///
     /// Raises
@@ -5246,6 +5302,19 @@ impl EnsmallenGraph {
     ///
     pub fn has_unknown_edge_types(&self) -> PyResult<bool> {
         pe!(self.graph.has_unknown_edge_types())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns whether there are known edge types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn has_known_edge_types(&self) -> PyResult<bool> {
+        pe!(self.graph.has_known_edge_types())
     }
 
     #[automatically_generated_binding]
@@ -7310,35 +7379,61 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns the minumum preferential attachment score.
+    /// Returns the minumum unweighted preferential attachment score.
     ///
     /// Safety
     /// ------
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_min_preferential_attachment(&self) -> f64 {
-        self.graph.get_unchecked_min_preferential_attachment()
+    pub unsafe fn get_unchecked_unweighted_minimum_preferential_attachment(&self) -> f64 {
+        self.graph
+            .get_unchecked_unweighted_minimum_preferential_attachment()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns the maximum preferential attachment score.
+    /// Returns the maximum unweighted preferential attachment score.
     ///
     /// Safety
     /// ------
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_max_preferential_attachment(&self) -> f64 {
-        self.graph.get_unchecked_max_preferential_attachment()
+    pub unsafe fn get_unchecked_unweighted_maximum_preferential_attachment(&self) -> f64 {
+        self.graph
+            .get_unchecked_unweighted_maximum_preferential_attachment()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id, normalize)"]
-    /// Returns the preferential attachment from the given node IDs.
+    #[text_signature = "($self)"]
+    /// Returns the minumum weighted preferential attachment score.
+    ///
+    /// Safety
+    /// ------
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
+        self.graph
+            .get_unchecked_weighted_minimum_preferential_attachment()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns the maximum weighted preferential attachment score.
+    ///
+    /// Safety
+    /// ------
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
+        self.graph
+            .get_unchecked_weighted_maximum_preferential_attachment()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     /// normalize: bool,
     ///     Whether to normalize within 0 to 1.
@@ -7348,29 +7443,29 @@ impl EnsmallenGraph {
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_preferential_attachment_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
         self.graph
-            .get_unchecked_preferential_attachment_from_node_ids(
-                first_node_id,
-                second_node_id,
+            .get_unchecked_unweighted_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
                 normalize,
             )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id, normalize)"]
-    /// Returns the preferential attachment from the given node IDs.
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     /// normalize: bool,
     ///     Whether to normalize by the square of maximum degree.
@@ -7381,22 +7476,24 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the node IDs are higher than the number of nodes in the graph.
     ///
-    pub fn get_preferential_attachment_from_node_ids(
+    pub fn get_unweighted_preferential_attachment_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
         normalize: bool,
     ) -> PyResult<f64> {
-        pe!(self.graph.get_preferential_attachment_from_node_ids(
-            first_node_id,
-            second_node_id,
-            normalize
-        ))
+        pe!(self
+            .graph
+            .get_unweighted_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize
+            ))
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
-    /// Returns the preferential attachment from the given node names.
+    /// Returns the unweighted preferential attachment from the given node names.
     ///
     /// Parameters
     /// ----------
@@ -7413,28 +7510,130 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the given node names do not exist in the current graph.
     ///
-    pub fn get_preferential_attachment_from_node_names(
+    pub fn get_unweighted_preferential_attachment_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f64> {
-        pe!(self.graph.get_preferential_attachment_from_node_names(
-            first_node_name,
-            second_node_name,
-            normalize
-        ))
+        pe!(self
+            .graph
+            .get_unweighted_preferential_attachment_from_node_names(
+                first_node_name,
+                second_node_name,
+                normalize
+            ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns the weighted preferential attachment from the given node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize within 0 to 1.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If either of the provided one and two node IDs are higher than the
+    ///  number of nodes in the graph.
+    pub unsafe fn get_unchecked_weighted_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> f64 {
+        self.graph
+            .get_unchecked_weighted_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize,
+            )
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns the weighted preferential attachment from the given node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize by the square of maximum degree.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
+    ///
+    pub fn get_weighted_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_weighted_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
+    /// Returns the weighted preferential attachment from the given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize by the square of maximum degree.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_preferential_attachment_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+        normalize: bool,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_weighted_preferential_attachment_from_node_names(
+                first_node_name,
+                second_node_name,
+                normalize
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7444,22 +7643,22 @@ impl EnsmallenGraph {
     ///  number of nodes in the graph.
     pub unsafe fn get_unchecked_jaccard_coefficient_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.graph
-            .get_unchecked_jaccard_coefficient_from_node_ids(first_node_id, second_node_id)
+            .get_unchecked_jaccard_coefficient_from_node_ids(source_node_id, destination_node_id)
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7470,12 +7669,12 @@ impl EnsmallenGraph {
     ///
     pub fn get_jaccard_coefficient_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_jaccard_coefficient_from_node_ids(first_node_id, second_node_id))
+            .get_jaccard_coefficient_from_node_ids(source_node_id, destination_node_id))
     }
 
     #[automatically_generated_binding]
@@ -7506,14 +7705,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7523,22 +7722,22 @@ impl EnsmallenGraph {
     ///  number of nodes in the graph.
     pub unsafe fn get_unchecked_adamic_adar_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.graph
-            .get_unchecked_adamic_adar_index_from_node_ids(first_node_id, second_node_id)
+            .get_unchecked_adamic_adar_index_from_node_ids(source_node_id, destination_node_id)
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7549,12 +7748,12 @@ impl EnsmallenGraph {
     ///
     pub fn get_adamic_adar_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_adamic_adar_index_from_node_ids(first_node_id, second_node_id))
+            .get_adamic_adar_index_from_node_ids(source_node_id, destination_node_id))
     }
 
     #[automatically_generated_binding]
@@ -7585,14 +7784,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7600,24 +7799,55 @@ impl EnsmallenGraph {
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_resource_allocation_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.graph
-            .get_unchecked_resource_allocation_index_from_node_ids(first_node_id, second_node_id)
+            .get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
     /// ----------
-    /// first_node_id: int,
+    /// source_node_id: int,
     ///     Node ID of the first node.
-    /// second_node_id: int,
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If either of the provided one and two node IDs are higher than the
+    ///  number of nodes in the graph.
+    pub unsafe fn get_unchecked_weighted_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> f64 {
+        self.graph
+            .get_unchecked_weighted_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
     ///     Node ID of the second node.
     ///
     ///
@@ -7626,19 +7856,22 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the node IDs are higher than the number of nodes in the graph.
     ///
-    pub fn get_resource_allocation_index_from_node_ids(
+    pub fn get_unweighted_resource_allocation_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_resource_allocation_index_from_node_ids(first_node_id, second_node_id))
+            .get_unweighted_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id
+            ))
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, first_node_name, second_node_name)"]
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node names.
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
     /// ----------
@@ -7653,13 +7886,117 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the given node names do not exist in the current graph.
     ///
-    pub fn get_resource_allocation_index_from_node_names(
+    pub fn get_unweighted_resource_allocation_index_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))
+            .get_unweighted_resource_allocation_index_from_node_names(
+                first_node_name,
+                second_node_name
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the node IDs are higher than the number of nodes in the graph.
+    ///
+    pub fn get_weighted_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_weighted_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// first_node_name: str,
+    ///     Node name of the first node.
+    /// second_node_name: str,
+    ///     Node name of the second node.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If either of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_resource_allocation_index_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_weighted_resource_allocation_index_from_node_names(
+                first_node_name,
+                second_node_name
+            ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns all the implemented edge metrics for the two given node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize within 0 to 1.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node IDs do not exist in the graph this method will panic.
+    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.graph.get_unchecked_all_edge_metrics_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize
+            ),
+            f64
+        )
     }
 }

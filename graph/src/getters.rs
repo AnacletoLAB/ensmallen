@@ -110,7 +110,8 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node IDs are {:?}.", graph.get_singleton_with_selfloops_node_ids());
     /// ```
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Vec<NodeT> {
-        self.iter_singleton_nodes_with_selfloops_node_ids().collect()
+        self.iter_singleton_nodes_with_selfloops_node_ids()
+            .collect()
     }
 
     /// Returns vector of singleton_with_selfloops node names of the graph.
@@ -121,7 +122,8 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node names are {:?}.", graph.get_singleton_with_selfloops_node_names());
     /// ```
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
-        self.iter_singleton_nodes_with_selfloops_node_names().collect()
+        self.iter_singleton_nodes_with_selfloops_node_names()
+            .collect()
     }
 
     /// Returns number of not singleton nodes within the graph.
@@ -296,14 +298,44 @@ impl Graph {
     /// The method will return an undefined value (0) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_max_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_unweighted_maximum_node_degree(&self) -> NodeT {
         self.max_node_degree
     }
 
     /// Returns maximum weighted node degree of the graph.
+    ///
+    /// # Safety
+    /// This method will cause a panic on graphs without
+    /// edge weights.
+    pub unsafe fn get_unchecked_weighted_maximum_node_degree(&self) -> f64 {
+        self.max_weighted_node_degree.unwrap()
+    }
+
+    /// Returns maximum weighted node degree of the graph.
+    ///
+    /// # Raises
+    /// * If the current graph does not contain edge weights.
     pub fn get_weighted_maximum_node_degree(&self) -> Result<f64, String> {
         self.must_have_edge_weights()?;
-        Ok(self.max_weighted_node_degree.unwrap())
+        Ok(unsafe { self.get_unchecked_weighted_maximum_node_degree() })
+    }
+
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// # Safety
+    /// This method will cause a panic on graphs without
+    /// edge weights.
+    pub unsafe fn get_unchecked_weighted_minimum_node_degree(&self) -> f64 {
+        self.max_weighted_node_degree.unwrap()
+    }
+
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// # Raises
+    /// * If the current graph does not contain edge weights.
+    pub fn get_weighted_minimum_node_degree(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe { self.get_unchecked_weighted_minimum_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -311,14 +343,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_max_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_maximum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_unweighted_max_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_maximum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_max_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_unweighted_maximum_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -356,7 +388,7 @@ impl Graph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_min_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_unweighted_minimum_node_degree(&self) -> NodeT {
         self.min_node_degree
     }
 
@@ -371,14 +403,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The minimum node degree of the graph is  {}", graph.get_unweighted_min_node_degree().unwrap());
+    /// println!("The minimum node degree of the graph is  {}", graph.get_unweighted_minimum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_unweighted_min_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_unweighted_minimum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_min_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_unweighted_minimum_node_degree() })
     }
 
     /// Returns mode node degree of the graph.

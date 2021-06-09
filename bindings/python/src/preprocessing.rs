@@ -355,7 +355,10 @@ impl EnsmallenGraph {
         &self,
         node_ids: Vec<NodeT>,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray2<NodeTypeT>>)> {
+    ) -> PyResult<(
+        (Py<PyArray2<NodeT>>, Option<Py<PyArray2<WeightT>>>),
+        Py<PyArray2<NodeTypeT>>,
+    )> {
         let gil = pyo3::Python::acquire_gil();
 
         // First we normalize the kwargs so that we always at least
@@ -369,6 +372,7 @@ impl EnsmallenGraph {
             &[
                 "random_state",
                 "include_central_node",
+                "return_edge_weights",
                 "offset",
                 "max_neighbours",
             ],
@@ -396,12 +400,15 @@ impl EnsmallenGraph {
             .unwrap();
 
         // We get the number of the requested nodes IDs.
-        let nodes_number = node_ids.len();
+        let batch_size = node_ids.len();
         // Extract the maximum neighbours parameter.
         let max_neighbours = extract_value!(kwargs, "max_neighbours", NodeT);
+        // And whether to include or not the edge weights
+        let return_edge_weights =
+            extract_value!(kwargs, "return_edge_weights", bool).unwrap_or(false);
         // And whether to include or not the central node.
         let include_central_node =
-            extract_value!(kwargs, "include_central_node", bool).unwrap_or(true);
+            extract_value!(kwargs, "include_central_node", bool).unwrap_or(false);
 
         // If the maximum neighbours was provided, we set the minimum value
         // between max degree and maximum neighbours as the size of the
@@ -420,48 +427,76 @@ impl EnsmallenGraph {
         let iter = pe!(self.graph.get_node_label_prediction_tuple_from_node_ids(
             node_ids,
             extract_value!(kwargs, "random_state", u64).unwrap_or(42),
-            include_central_node,
+            Some(include_central_node),
+            Some(return_edge_weights),
             extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
             max_neighbours,
         ))?;
 
         // We create the vector of zeros where to allocate the neighbours
-        // This vector has `nodes_number` rows, that is the number of required
+        // This vector has `batch_size` rows, that is the number of required
         // node IDs, and `max_degree` rows, that is the maximum degree.
-        let neighbours = PyArray2::zeros(gil.python(), [nodes_number, max_degree as usize], false);
+        let neighbours = ThreadDataRaceAware {
+            t: PyArray2::zeros(gil.python(), [batch_size, max_degree as usize], false),
+        };
         // We create the vector of zeros for the one-hot encoded labels.
         // This is also used for the multi-label case.
         // This vector has the same number of rows as the previous vector,
         // that is the number of requested node IDs, while the number
         // of columns is the number of node types in the graph.
-        let labels = PyArray2::zeros(
-            gil.python(),
-            [
-                nodes_number,
-                pe!(self.graph.get_node_types_number())? as usize,
-            ],
-            false,
-        );
+        let labels = ThreadDataRaceAware {
+            t: PyArray2::zeros(
+                gil.python(),
+                [
+                    batch_size,
+                    pe!(self.graph.get_node_types_number())? as usize,
+                ],
+                false,
+            ),
+        };
+
+        // If the use has requested to return the edge weights, we also
+        // return that
+        let edge_weights = if return_edge_weights {
+            Some(ThreadDataRaceAware {
+                t: PyArray2::zeros(gil.python(), [batch_size, max_degree as usize], false),
+            })
+        } else {
+            None
+        };
 
         // We iterate over the batch.
         iter.enumerate()
-            .for_each(|(i, (neighbours_iterator, node_types))| {
-                neighbours_iterator
+            .for_each(|(i, ((destinations, weights), node_types))| {
+                destinations
+                    .into_iter()
                     .enumerate()
                     .for_each(|(j, node_id)| unsafe {
-                        *neighbours.uget_mut([i, j]) = node_id;
+                        *neighbours.t.uget_mut([i, j]) = node_id;
                     });
+                if let Some(edge_weights) = edge_weights.as_ref() {
+                    weights
+                        .unwrap()
+                        .into_iter()
+                        .enumerate()
+                        .for_each(|(j, edge_weight)| unsafe {
+                            *edge_weights.t.uget_mut([i, j]) = edge_weight;
+                        });
+                }
                 if let Some(nts) = node_types {
                     nts.into_iter().for_each(|label| unsafe {
-                        *labels.uget_mut([i, label as usize]) = 1;
+                        *labels.t.uget_mut([i, label as usize]) = 1;
                     });
                 }
             });
 
-        Ok((neighbours.to_owned(), labels.to_owned()))
+        Ok((
+            (neighbours.t.to_owned(), edge_weights.map(|x| x.t.to_owned())),
+            labels.t.to_owned(),
+        ))
     }
 
-    #[text_signature = "($self, idx, batch_size, negative_samples_percentage, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -476,6 +511,8 @@ impl EnsmallenGraph {
     ///     Whether to return the source and destination nodes node types.
     /// return_edge_types: Optional[bool],
     ///     Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// return_edge_metrics: Option<bool>,
+    ///     Whether to return the edge metrics.
     /// avoid_false_negatives: Optional[bool],
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// maximal_sampling_attempts: Optional[int],
@@ -501,9 +538,10 @@ impl EnsmallenGraph {
         &self,
         idx: u64,
         batch_size: Option<usize>,
-        negative_samples_percentage: Option<f64>,
+        negative_samples_rate: Option<f64>,
         return_node_types: Option<bool>,
         return_edge_types: Option<bool>,
+        return_edge_metrics: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
@@ -513,21 +551,24 @@ impl EnsmallenGraph {
         Option<Py<PyArray2<NodeTypeT>>>,
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
+        Option<Py<PyArray2<f64>>>,
         Option<Py<PyArray1<EdgeTypeT>>>,
         Py<PyArray1<bool>>,
     )> {
         let gil = pyo3::Python::acquire_gil();
         let return_node_types = return_node_types.unwrap_or(false);
         let return_edge_types = return_edge_types.unwrap_or(false);
+        let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let batch_size = batch_size.unwrap_or(1024);
 
         let graph_to_avoid = graph_to_avoid.map(|ensmallen_graph| ensmallen_graph.graph);
         let par_iter = pe!(self.graph.link_prediction_ids(
             idx,
             Some(batch_size),
-            negative_samples_percentage,
+            negative_samples_rate,
             Some(return_node_types),
             Some(return_edge_types),
+            Some(return_edge_metrics),
             avoid_false_negatives,
             maximal_sampling_attempts,
             shuffle,
@@ -553,6 +594,13 @@ impl EnsmallenGraph {
         } else {
             (None, None)
         };
+        let edges_metrics = if return_edge_metrics {
+            Some(ThreadDataRaceAware {
+                t: PyArray2::new(gil.python(), [batch_size, 4], false),
+            })
+        } else {
+            None
+        };
         let edge_type_ids = if return_edge_types {
             Some(ThreadDataRaceAware {
                 t: PyArray1::new(gil.python(), [batch_size], false),
@@ -566,7 +614,7 @@ impl EnsmallenGraph {
 
         unsafe {
             par_iter.enumerate().for_each(
-                |(i, (src, src_node_type, dst, dst_node_type, edge_type, label))| {
+                |(i, (src, src_node_type, dst, dst_node_type, edge_features, edge_type, label))| {
                     *(dsts.t.uget_mut([i])) = src;
                     *(srcs.t.uget_mut([i])) = dst;
                     if let (Some(src_node_type_ids), Some(dst_node_type_ids)) =
@@ -583,6 +631,15 @@ impl EnsmallenGraph {
                             },
                         );
                     }
+                    if let Some(edges_metrics) = edges_metrics.as_ref() {
+                        edge_features
+                            .unwrap()
+                            .into_iter()
+                            .enumerate()
+                            .for_each(|(j, metric)| {
+                                *(edges_metrics.t.uget_mut([i, j])) = metric;
+                            });
+                    }
                     if let Some(edge_type_ids) = edge_type_ids.as_ref() {
                         *(edge_type_ids.t.uget_mut([i])) = edge_type.unwrap();
                     }
@@ -596,12 +653,13 @@ impl EnsmallenGraph {
             src_node_type_ids.map(|x| x.t.to_owned()),
             dsts.t.to_owned(),
             dst_node_type_ids.map(|x| x.t.to_owned()),
+            edges_metrics.map(|x| x.t.to_owned()),
             edge_type_ids.map(|x| x.t.to_owned()),
             labels.t.to_owned(),
         ))
     }
 
-    #[text_signature = "($self, source_node_ids, destination_node_ids)"]
+    #[text_signature = "($self, source_node_ids, destination_node_ids, normalize)"]
     /// Returns all available edge prediction metrics for given edges.
     ///
     /// The metrics returned are, in order:
@@ -616,6 +674,8 @@ impl EnsmallenGraph {
     ///     List of source node IDs.
     /// destination_node_ids: List[int],
     ///     List of destination node IDs.
+    /// normalize: Optional[bool] = True,
+    ///     Whether to normalize the metrics.
     ///
     /// Returns
     /// -----------------------------
@@ -624,6 +684,7 @@ impl EnsmallenGraph {
         &self,
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
+        normalize: Option<bool>,
     ) -> Py<PyArray2<f64>> {
         let gil = pyo3::Python::acquire_gil();
 
@@ -633,7 +694,11 @@ impl EnsmallenGraph {
 
         unsafe {
             self.graph
-                .par_iter_unchecked_edge_prediction_metrics(source_node_ids, destination_node_ids)
+                .par_iter_unchecked_edge_prediction_metrics(
+                    source_node_ids,
+                    destination_node_ids,
+                    normalize,
+                )
                 .enumerate()
                 .for_each(|(i, metrics)| {
                     metrics.into_iter().enumerate().for_each(|(j, metric)| {

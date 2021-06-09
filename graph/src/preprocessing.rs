@@ -187,85 +187,6 @@ impl Graph {
     }
 
     #[manual_binding]
-    /// Return iterator over neighbours for the given node ID, optionally including given node ID.
-    ///
-    /// This method is meant to be used to predict node labels using the NoLaN model.
-    ///
-    /// If you need to predict the node label of a node, not during training,
-    /// use `max_neighbours=None`.
-    ///
-    /// # Arguments
-    ///
-    /// * `central_node_id`: NodeT - The node ID to retrieve neighbours for.
-    /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
-    /// * `offset`: NodeT - Offset for padding porposes.
-    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
-    ///
-    pub(crate) unsafe fn get_neighbours_from_node_id(
-        &self,
-        central_node_id: NodeT,
-        random_state: u64,
-        include_central_node: bool,
-        offset: NodeT,
-        max_neighbours: Option<NodeT>,
-    ) -> impl Iterator<Item = NodeT> + '_ {
-        (if include_central_node {
-            vec![central_node_id]
-        } else {
-            vec![]
-        })
-        .into_iter()
-        .chain(
-            self.get_unchecked_destination_node_ids_from_node_id(
-                central_node_id,
-                random_state,
-                max_neighbours,
-            )
-            .into_iter(),
-        )
-        .map(move |node_id| node_id + offset)
-    }
-
-    /// Return tuple with iterator over neighbours for the given node ID, optionally including given node ID, and node type.
-    ///
-    /// This method is meant to be used to predict node labels using the NoLaN model.
-    ///
-    /// If you need to predict the node label of a node, not during training,
-    /// use `max_neighbours=None`.
-    ///
-    /// # Arguments
-    ///
-    /// * `node_id`: NodeT - The node ID to retrieve neighbours for.
-    /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
-    /// * `offset`: NodeT - Offset for padding porposes.
-    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
-    ///
-    /// # Safety
-    /// The method will return a None node type also when the graph does
-    /// not contain node types.
-    pub(crate) unsafe fn get_node_label_prediction_tuple_from_node_id(
-        &self,
-        node_id: NodeT,
-        random_state: u64,
-        include_central_node: bool,
-        offset: NodeT,
-        max_neighbours: Option<NodeT>,
-    ) -> (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>) {
-        (
-            self.get_neighbours_from_node_id(
-                node_id,
-                random_state,
-                include_central_node,
-                offset,
-                max_neighbours,
-            ),
-            self.get_unchecked_node_type_id_from_node_id(node_id),
-        )
-    }
-
-    #[manual_binding]
     /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
     ///
     /// This method is meant to be used to predict node labels using the NoLaN model.
@@ -277,60 +198,80 @@ impl Graph {
     ///
     /// * `node_ids`: Vec<NodeT> - The node ID to retrieve neighbours for.
     /// * `random_state`: u64 - The random state to use to extract the neighbours.
-    /// * `include_central_node`: bool - Whether to include the node ID in the returned iterator.
+    /// * `include_central_node`: Option<bool> - Whether to include the node ID in the returned iterator.
+    /// * `return_edge_weights`: Option<bool> - Whether to include the edge weights.
     /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
-    /// # Example
-    /// Suppose you want to the get the neighbours of the first 10 nodes:
-    /// ```rust
-    /// # use rayon::iter::ParallelIterator;
-    /// # use graph::NodeT;
-    /// # use rayon::iter::IndexedParallelIterator;
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// let node_ids = (0..10).collect::<Vec<NodeT>>();
-    /// let include_central_nodes = true;
-    /// let offset = 0;
-    /// let max_neighbours = 5;
-    /// let iterator = graph.get_node_label_prediction_tuple_from_node_ids(
-    ///    node_ids.clone(), 42, include_central_nodes, offset, Some(max_neighbours)
-    /// ).unwrap();
-    /// iterator.enumerate().for_each(|(i, (neighbours_iter, labels))|{
-    ///     for (j, node_id) in neighbours_iter.enumerate(){
-    ///         if j==0 && include_central_nodes{
-    ///             assert!(node_id==node_ids[i]);
-    ///         }
-    ///         assert!(
-    ///             max_neighbours + include_central_nodes as NodeT > j as NodeT,
-    ///             "The index {} is higher than the given maximum neighbours number {}!",
-    ///             j,
-    ///             max_neighbours
-    ///         );
-    ///     }
-    /// });
-    /// ```
-    ///
     /// # Raises
     /// * If the graph does not contain node type IDs.
+    /// * If the edge weights have been requested but the graph does not have any.
+    /// * If the central node ID is to be included and the edge weights are requested as well.
     pub fn get_node_label_prediction_tuple_from_node_ids(
         &self,
         node_ids: Vec<NodeT>,
         random_state: u64,
-        include_central_node: bool,
+        include_central_node: Option<bool>,
+        return_edge_weights: Option<bool>,
         offset: NodeT,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl Iterator<Item = (impl Iterator<Item = NodeT> + '_, Option<Vec<NodeTypeT>>)> + '_,
+        impl IndexedParallelIterator<
+                Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Option<Vec<NodeTypeT>>),
+            > + '_,
         String,
     > {
+        if let Some(return_edge_weights) = return_edge_weights {
+            if return_edge_weights {
+                self.must_have_edge_weights()?;
+            }
+        }
+        let return_edge_weights = return_edge_weights.unwrap_or(false);
+        let include_central_node = include_central_node.unwrap_or(false);
+        if return_edge_weights && include_central_node {
+            return Err(concat!(
+                "The edge weights have been ",
+                "requested, but also the central node ID has been requested.\n",
+                "It is not possible to return the central node ID with the ",
+                "requested parameters, as we do not have its edge weight.\n",
+                "If you want to include the central node ID still, consider ",
+                "adding self-loops to the graph by using the method ",
+                "`graph.add_selfloops()`."
+            )
+            .to_string());
+        }
         self.must_have_node_types()?;
-        Ok(node_ids.into_iter().map(move |node_id| unsafe {
-            self.get_node_label_prediction_tuple_from_node_id(
-                node_id,
-                random_state,
-                include_central_node,
-                offset,
-                max_neighbours,
+        Ok(node_ids.into_par_iter().map(move |node_id| unsafe {
+            let (min_edge_id, max_edge_id, destinations, probabilistic_indices) = self
+                .get_unchecked_edges_and_destinations_from_source_node_id(
+                    max_neighbours,
+                    random_state,
+                    node_id,
+                );
+            let mut destinations = self
+                .get_destinations_slice(min_edge_id, max_edge_id, &destinations)
+                .to_owned();
+            let node_type = self.get_unchecked_node_type_id_from_node_id(node_id);
+            if include_central_node {
+                destinations.push(node_id);
+            }
+            (
+                (
+                    destinations
+                        .into_iter()
+                        .map(|node_id| node_id + offset)
+                        .collect(),
+                    if return_edge_weights {
+                        Some(self.get_edge_weighted_transitions(
+                            min_edge_id,
+                            max_edge_id,
+                            &probabilistic_indices,
+                        ))
+                    } else {
+                        None
+                    },
+                ),
+                node_type,
             )
         }))
     }
@@ -341,9 +282,10 @@ impl Graph {
     /// # Arguments
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
     /// * `batch_size`: Option<usize> - The maximal size of the batch to generate,
-    /// * `negative_samples_percentage`: Option<f64> - The component of netagetive samples to use.
+    /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `return_node_types`: Option<bool> - Whether to return the source and destination nodes node types.
     /// * `return_edge_types`: Option<bool> - Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// * `return_edge_metrics`: Option<bool> - Whether to return the edge metrics.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
@@ -359,9 +301,10 @@ impl Graph {
         &'a self,
         idx: u64,
         batch_size: Option<usize>,
-        negative_samples_percentage: Option<f64>,
+        negative_samples_rate: Option<f64>,
         return_node_types: Option<bool>,
         return_edge_types: Option<bool>,
+        return_edge_metrics: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
@@ -373,6 +316,7 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
+                    Option<Vec<f64>>,
                     Option<EdgeTypeT>,
                     bool,
                 ),
@@ -380,7 +324,7 @@ impl Graph {
         String,
     > {
         let batch_size = batch_size.unwrap_or(1024);
-        let negative_samples_percentage = negative_samples_percentage.unwrap_or(0.5);
+        let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let shuffle = shuffle.unwrap_or(true);
@@ -397,6 +341,7 @@ impl Graph {
         };
 
         let return_edge_types = return_edge_types.unwrap_or(false);
+        let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let edge_types_number = if return_edge_types {
             self.must_not_contain_unknown_edge_types()?;
             self.get_edge_types_number()?
@@ -404,17 +349,17 @@ impl Graph {
             0
         };
 
-        if negative_samples_percentage <= 0.0
-            || negative_samples_percentage >= 1.0
-            || !negative_samples_percentage.is_finite()
+        if negative_samples_rate <= 0.0
+            || negative_samples_rate >= 1.0
+            || !negative_samples_rate.is_finite()
         {
             return Err("Negative sample must be a posive real value between 0 and 1.".to_string());
         }
 
         let negative_samples_threshold =
-            (negative_samples_percentage * u64::MAX as f64).ceil() as u64;
+            (negative_samples_rate * u64::MAX as f64).ceil() as u64;
         let expected_negative_samples_number =
-            (batch_size as f64 * negative_samples_percentage).ceil() as usize;
+            (batch_size as f64 * negative_samples_rate).ceil() as usize;
         let expected_positive_samples_number = batch_size - expected_negative_samples_number;
 
         let edges_number = self.get_directed_edges_number();
@@ -444,6 +389,14 @@ impl Graph {
                 }
             };
 
+        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f64>> {
+            if return_edge_metrics {
+                Some(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true) })
+            } else {
+                None
+            }
+        };
+
         let idx = splitmix64(idx);
 
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
@@ -463,6 +416,7 @@ impl Graph {
                     get_node_type_ids(src),
                     dst,
                     get_node_type_ids(dst),
+                    get_edge_metrics(src, dst),
                     edge_type,
                     true,
                 );
@@ -483,6 +437,7 @@ impl Graph {
                     get_node_type_ids(src),
                     dst,
                     get_node_type_ids(dst),
+                    get_edge_metrics(src, dst),
                     edge_type,
                     false,
                 );
@@ -513,6 +468,7 @@ impl Graph {
                     get_node_type_ids(src),
                     dst,
                     get_node_type_ids(dst),
+                    get_edge_metrics(src, dst),
                     edge_type,
                     false,
                 );
@@ -562,6 +518,7 @@ impl Graph {
             negative_samples,
             Some(false),
             Some(false),
+            Some(false),
             avoid_false_negatives,
             maximal_sampling_attempts,
             shuffle,
@@ -571,11 +528,11 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
 
         let max_degree = match normalize {
-            true => self.get_unweighted_max_node_degree()? as f64,
+            true => self.get_unweighted_maximum_node_degree()? as f64,
             false => 1.0,
         };
 
-        Ok(iter.map(move |(src, _, dst, _, _, label)| unsafe {
+        Ok(iter.map(move |(src, _, dst, _, _, _, label)| unsafe {
             (
                 self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
                 self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,
@@ -591,11 +548,12 @@ impl Graph {
     /// - Adamic Adar index
     /// - Jaccard Coefficient
     /// - Resource Allocation index
-    /// - Normalized preferential attachment score
+    /// - Preferential attachment score
     ///
     /// # Arguments
-    /// source_node_ids: Vec<NodeT> - List of source node IDs.
-    /// destination_node_ids: Vec<NodeT> - List of destination node IDs.
+    /// `source_node_ids`: Vec<NodeT> - List of source node IDs.
+    /// `destination_node_ids`: Vec<NodeT> - List of destination node IDs.
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
     ///
     /// # Safety
     /// If one of the given nodes does not exists in the graph, i.e. that is
@@ -606,30 +564,18 @@ impl Graph {
         &self,
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
+        normalize: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
+        let normalize = normalize.unwrap_or(true);
         source_node_ids
             .into_par_iter()
             .zip(destination_node_ids.into_par_iter())
             .map(move |(source_node_id, destination_node_id)| {
-                vec![
-                    self.get_unchecked_adamic_adar_index_from_node_ids(
-                        source_node_id,
-                        destination_node_id,
-                    ),
-                    self.get_unchecked_jaccard_coefficient_from_node_ids(
-                        source_node_id,
-                        destination_node_id,
-                    ),
-                    self.get_unchecked_resource_allocation_index_from_node_ids(
-                        source_node_id,
-                        destination_node_id,
-                    ),
-                    self.get_unchecked_preferential_attachment_from_node_ids(
-                        source_node_id,
-                        destination_node_id,
-                        true,
-                    ),
-                ]
+                self.get_unchecked_all_edge_metrics_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                    normalize,
+                )
             })
     }
 

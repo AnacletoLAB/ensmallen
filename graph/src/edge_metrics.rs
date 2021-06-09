@@ -1,50 +1,67 @@
 use super::types::*;
 use super::*;
 use num_traits::Pow;
+use num_traits::Zero;
 
 /// # Properties and measurements of the graph
 impl Graph {
-    /// Returns the minumum preferential attachment score.
+    /// Returns the minumum unweighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_min_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_unweighted_min_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_unweighted_minimum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_unweighted_minimum_node_degree() as f64).pow(2)
     }
 
-    /// Returns the maximum preferential attachment score.
+    /// Returns the maximum unweighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_max_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_unweighted_max_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_unweighted_maximum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_unweighted_maximum_node_degree() as f64).pow(2)
     }
 
-    /// Returns the preferential attachment from the given node IDs.
+    /// Returns the minumum weighted preferential attachment score.
+    ///
+    /// # Safety
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_weighted_minimum_node_degree() as f64).pow(2)
+    }
+
+    /// Returns the maximum weighted preferential attachment score.
+    ///
+    /// # Safety
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_weighted_maximum_node_degree() as f64).pow(2)
+    }
+
+    /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// # Arguments
-    ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     /// * `normalize`: bool - Whether to normalize within 0 to 1.
     ///
     /// # Safety
     /// If either of the provided one and two node IDs are higher than the
     /// number of nodes in the graph.
-    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_preferential_attachment_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
-        let mut preferential_attachment_score =
-            self.get_unchecked_unweighted_node_degree_from_node_id(first_node_id) as f64
-                * self.get_unchecked_unweighted_node_degree_from_node_id(second_node_id) as f64;
+        let mut preferential_attachment_score = self
+            .get_unchecked_unweighted_node_degree_from_node_id(source_node_id)
+            as f64
+            * self.get_unchecked_unweighted_node_degree_from_node_id(destination_node_id) as f64;
         if normalize {
             let min_preferential_attachment_score =
-                self.get_unchecked_min_preferential_attachment();
+                self.get_unchecked_unweighted_minimum_preferential_attachment();
             let max_preferential_attachment_score =
-                self.get_unchecked_max_preferential_attachment();
+                self.get_unchecked_unweighted_maximum_preferential_attachment();
             preferential_attachment_score = (preferential_attachment_score
                 - min_preferential_attachment_score)
                 / (max_preferential_attachment_score - min_preferential_attachment_score);
@@ -52,32 +69,32 @@ impl Graph {
         preferential_attachment_score
     }
 
-    /// Returns the preferential attachment from the given node IDs.
+    /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     /// * `normalize`: bool - Whether to normalize by the square of maximum degree.
     ///
     /// # Raises
     /// * If either of the node IDs are higher than the number of nodes in the graph.
-    pub fn get_preferential_attachment_from_node_ids(
+    pub fn get_unweighted_preferential_attachment_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
         normalize: bool,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_preferential_attachment_from_node_ids(
-                self.validate_node_id(first_node_id)?,
-                self.validate_node_id(second_node_id)?,
+            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
                 normalize,
             )
         })
     }
 
-    /// Returns the preferential attachment from the given node names.
+    /// Returns the unweighted preferential attachment from the given node names.
     ///
     /// # Arguments
     ///
@@ -87,14 +104,98 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the given node names do not exist in the current graph.
-    pub fn get_preferential_attachment_from_node_names(
+    pub fn get_unweighted_preferential_attachment_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_preferential_attachment_from_node_ids(
+            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+                self.get_node_id_from_node_name(first_node_name)?,
+                self.get_node_id_from_node_name(second_node_name)?,
+                normalize,
+            )
+        })
+    }
+
+    /// Returns the weighted preferential attachment from the given node IDs.
+    ///
+    /// # Arguments
+    ///
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Safety
+    /// If either of the provided one and two node IDs are higher than the
+    /// number of nodes in the graph.
+    pub unsafe fn get_unchecked_weighted_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> f64 {
+        let mut preferential_attachment_score =
+            self.get_unchecked_weighted_node_degree_from_node_id(source_node_id) as f64
+                * self.get_unchecked_weighted_node_degree_from_node_id(destination_node_id) as f64;
+        if normalize {
+            let min_preferential_attachment_score =
+                self.get_unchecked_weighted_minimum_preferential_attachment();
+            let max_preferential_attachment_score =
+                self.get_unchecked_weighted_maximum_preferential_attachment();
+            preferential_attachment_score = (preferential_attachment_score
+                - min_preferential_attachment_score)
+                / (max_preferential_attachment_score - min_preferential_attachment_score);
+        }
+        preferential_attachment_score
+    }
+
+    /// Returns the weighted preferential attachment from the given node IDs.
+    ///
+    /// # Arguments
+    ///
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize by the square of maximum degree.
+    ///
+    /// # Raises
+    /// * If either of the node IDs are higher than the number of nodes in the graph.
+    pub fn get_weighted_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe {
+            self.get_unchecked_weighted_preferential_attachment_from_node_ids(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
+                normalize,
+            )
+        })
+    }
+
+    /// Returns the weighted preferential attachment from the given node names.
+    ///
+    /// # Arguments
+    ///
+    /// * `first_node_name`: &str - Node name of the first node.
+    /// * `second_node_name`: &str - Node name of the second node.
+    /// * `normalize`: bool - Whether to normalize by the square of maximum degree.
+    ///
+    /// # Raises
+    /// * If either of the given node names do not exist in the current graph.
+    pub fn get_weighted_preferential_attachment_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+        normalize: bool,
+    ) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe {
+            self.get_unchecked_weighted_preferential_attachment_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
                 self.get_node_id_from_node_name(second_node_name)?,
                 normalize,
@@ -106,8 +207,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # References
     /// [D. Liben-Nowell, J. Kleinberg.
@@ -124,18 +225,18 @@ impl Graph {
     /// number of nodes in the graph.
     pub unsafe fn get_unchecked_jaccard_coefficient_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-            first_node_id,
-            second_node_id,
+            source_node_id,
+            destination_node_id,
         )
         .count() as f64
             / self
                 .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
-                    first_node_id,
-                    second_node_id,
+                    source_node_id,
+                    destination_node_id,
                 )
                 .count() as f64
     }
@@ -144,8 +245,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # References
     /// [D. Liben-Nowell, J. Kleinberg.
@@ -161,13 +262,13 @@ impl Graph {
     /// * If either of the node IDs are higher than the number of nodes in the graph.
     pub fn get_jaccard_coefficient_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> Result<f64, String> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
-                self.validate_node_id(first_node_id)?,
-                self.validate_node_id(second_node_id)?,
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
             )
         })
     }
@@ -202,8 +303,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
@@ -220,12 +321,12 @@ impl Graph {
     /// number of nodes in the graph.
     pub unsafe fn get_unchecked_adamic_adar_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-            first_node_id,
-            second_node_id,
+            source_node_id,
+            destination_node_id,
         )
         .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 1)
@@ -237,8 +338,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
@@ -254,13 +355,13 @@ impl Graph {
     /// * If either of the node IDs are higher than the number of nodes in the graph.
     pub fn get_adamic_adar_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> Result<f64, String> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
-                self.validate_node_id(first_node_id)?,
-                self.validate_node_id(second_node_id)?,
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
             )
         })
     }
@@ -297,12 +398,12 @@ impl Graph {
         })
     }
 
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # References
     /// [T. Zhou, L. Lu, Y.-C. Zhang.
@@ -318,14 +419,14 @@ impl Graph {
     /// # Safety
     /// If either of the provided one and two node IDs are higher than the
     /// number of nodes in the graph.
-    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(
+    pub unsafe fn get_unchecked_unweighted_resource_allocation_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> f64 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-            first_node_id,
-            second_node_id,
+            source_node_id,
+            destination_node_id,
         )
         .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 0)
@@ -333,12 +434,48 @@ impl Graph {
         .sum()
     }
 
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node IDs.
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// # Arguments
     ///
-    /// * `first_node_id`: NodeT - Node ID of the first node.
-    /// * `second_node_id`: NodeT - Node ID of the second node.
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    ///
+    /// # References
+    /// [T. Zhou, L. Lu, Y.-C. Zhang.
+    /// Predicting missing links via local information.
+    /// Eur. Phys. J. B 71 (2009) 623.](http://arxiv.org/pdf/0901.0553.pdf)
+    ///
+    /// # Implementation details
+    /// Since the Resource Allocation Index is only defined for graph not
+    /// containing node traps (nodes without any outbound edge) and
+    /// must support all kind of graphs, the sinks node are excluded from
+    /// the computation because they would result in an infinity.
+    ///
+    /// # Safety
+    /// If either of the provided one and two node IDs are higher than the
+    /// number of nodes in the graph.
+    pub unsafe fn get_unchecked_weighted_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> f64 {
+        self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+            source_node_id,
+            destination_node_id,
+        )
+        .map(|node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
+        .filter(|&node_degree| !node_degree.is_zero())
+        .map(|node_degree| 1.0 / node_degree as f64)
+        .sum()
+    }
+
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
+    ///
+    /// # Arguments
+    ///
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
     ///
     /// # References
     /// [T. Zhou, L. Lu, Y.-C. Zhang.
@@ -353,20 +490,20 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the node IDs are higher than the number of nodes in the graph.
-    pub fn get_resource_allocation_index_from_node_ids(
+    pub fn get_unweighted_resource_allocation_index_from_node_ids(
         &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_resource_allocation_index_from_node_ids(
-                self.validate_node_id(first_node_id)?,
-                self.validate_node_id(second_node_id)?,
+            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
             )
         })
     }
 
-    /// Returns the Resource Allocation Index for the given pair of nodes from the given node names.
+    /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// # Arguments
     ///
@@ -386,16 +523,123 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the given node names do not exist in the current graph.
-    pub fn get_resource_allocation_index_from_node_names(
+    pub fn get_unweighted_resource_allocation_index_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_resource_allocation_index_from_node_ids(
+            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
                 self.get_node_id_from_node_name(second_node_name)?,
             )
         })
+    }
+
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
+    ///
+    /// # Arguments
+    ///
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    ///
+    /// # References
+    /// [T. Zhou, L. Lu, Y.-C. Zhang.
+    /// Predicting missing links via local information.
+    /// Eur. Phys. J. B 71 (2009) 623.](http://arxiv.org/pdf/0901.0553.pdf)
+    ///
+    /// # Implementation details
+    /// Since the Resource Allocation Index is only defined for graph not
+    /// containing node traps (nodes without any outbound edge) and
+    /// must support all kind of graphs, the sinks node are excluded from
+    /// the computation because they would result in an infinity.
+    ///
+    /// # Raises
+    /// * If either of the node IDs are higher than the number of nodes in the graph.
+    pub fn get_weighted_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe {
+            self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
+            )
+        })
+    }
+
+    /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node names.
+    ///
+    /// # Arguments
+    ///
+    /// * `first_node_name`: &str - Node name of the first node.
+    /// * `second_node_name`: &str - Node name of the second node.
+    ///
+    /// # References
+    /// [T. Zhou, L. Lu, Y.-C. Zhang.
+    /// Predicting missing links via local information.
+    /// Eur. Phys. J. B 71 (2009) 623.](http://arxiv.org/pdf/0901.0553.pdf)
+    ///
+    /// # Implementation details
+    /// Since the Resource Allocation Index is only defined for graph not
+    /// containing node traps (nodes without any outbound edge) and
+    /// must support all kind of graphs, the sinks node are excluded from
+    /// the computation because they would result in an infinity.
+    ///
+    /// # Raises
+    /// * If either of the given node names do not exist in the current graph.
+    pub fn get_weighted_resource_allocation_index_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe {
+            self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
+                self.get_node_id_from_node_name(first_node_name)?,
+                self.get_node_id_from_node_name(second_node_name)?,
+            )
+        })
+    }
+
+    /// Returns all the implemented edge metrics for the two given node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Safety
+    /// If the given node IDs do not exist in the graph this method will panic.
+    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> Vec<f64> {
+        vec![
+            self.get_unchecked_adamic_adar_index_from_node_ids(source_node_id, destination_node_id),
+            self.get_unchecked_jaccard_coefficient_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            ),
+            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            ),
+            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize,
+            ),
+        ]
     }
 }

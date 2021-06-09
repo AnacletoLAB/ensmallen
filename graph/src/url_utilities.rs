@@ -25,16 +25,7 @@ fn is_valid_node_name_from_seeds(
     }
     let mut validated = false;
     let mut node_name = node_name.to_string();
-    // If the separator was provided, it must appear exactly once
-    if let Some(separator) = separator {
-        if node_name.matches(separator).count() != 1 {
-            return Err(format!(
-                "We expect for the given separator {} to appear exactly once in the given object '{}'.",
-                separator,
-                node_name
-            ));
-        }
-    }
+
     // First of all, we check if the node name starts with the base name
     // and the base name was provided.
     if let Some(base_name) = base_name {
@@ -53,7 +44,8 @@ fn is_valid_node_name_from_seeds(
             node_name = node_name[base_name.len()..node_name.len()].to_string();
             // The provided separator must exist in the given node name
             if let Some(separator) = separator {
-                if node_name.contains(separator) {
+                // If the separator was provided, it must appear exactly once
+                if node_name.matches(separator).count() == 1 {
                     node_name = node_name
                         .split(separator)
                         .collect::<Vec<_>>()
@@ -62,8 +54,9 @@ fn is_valid_node_name_from_seeds(
                         .to_string();
                 } else {
                     return Err(format!(
-                        "The given node name {} does not contain the given separator {}.",
-                        node_name, separator
+                        "We expect for the given separator {} to appear exactly once in the given object '{}'.",
+                        separator,
+                        node_name
                     ));
                 }
             }
@@ -251,9 +244,11 @@ unsafe fn format_sequence_ontology_url_from_node_name(node_name: &str) -> String
 /// To validate a node you can use:
 /// ```rust
 /// # use graph::*;
-/// let mouse_genome_informatics_node_name = "MGI:2159965";
+/// let mouse_genome_informatics_node_name1 = "MGI:2159965";
+/// let mouse_genome_informatics_node_name2 = "MGI:MGI:2159965";
 /// let not_mouse_genome_informatics_node_name = "PizzaQuattroStagioni";
-/// assert!(is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name));
+/// assert!(is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name1));
+/// assert!(!is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name2));
 /// assert!(!is_valid_mouse_genome_informatics_node_name(not_mouse_genome_informatics_node_name));
 /// ```
 pub fn is_valid_mouse_genome_informatics_node_name(node_name: &str) -> bool {

@@ -16,7 +16,7 @@ impl Graph {
     ) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_unweighted_max_node_degree() as f64 };
+        let max_degree = unsafe { self.get_unchecked_unweighted_maximum_node_degree() as f64 };
         Ok(self
             .iter_unweighted_node_degrees()
             .map(move |degree| degree as f64 / max_degree))
