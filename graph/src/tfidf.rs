@@ -2,7 +2,7 @@ use counter::Counter;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use rayon::iter::{IntoParallelIterator, IntoParallelRefIterator, ParallelIterator};
 use std::collections::hash_map::Entry::{Occupied, Vacant};
-use std::{collections::HashMap, iter::FromIterator};
+use std::collections::HashMap;
 
 use super::*;
 
@@ -66,7 +66,7 @@ pub fn okapi_bm25_tfidf(
         .progress_with(pb)
         .map(|document| {
             let document_len = document.len() as f64;
-            let counts: Counter<&str, usize> = Counter::from_iter(document.iter().cloned());
+            let counts: Counter<&str, usize> = document.iter().cloned().collect();
             counts
                 .into_iter()
                 .map(|(word_name, word_count)| {
