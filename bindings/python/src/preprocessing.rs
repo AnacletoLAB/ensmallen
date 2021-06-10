@@ -744,13 +744,17 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
 
         let batch_metrics = ThreadDataRaceAware {
-            t: PyArray2::new(gil.python(), [self.graph.get_directed_edges_number(), 4], false),
+            t: PyArray2::new(
+                gil.python(),
+                [self.graph.get_directed_edges_number() as usize, 4],
+                false,
+            ),
         };
 
         self.graph
             .par_iter_edge_prediction_metrics(normalize, verbose)
             .enumerate()
-            .for_each(|(_, metrics)| {
+            .for_each(|(i, metrics)| {
                 metrics
                     .into_iter()
                     .enumerate()
