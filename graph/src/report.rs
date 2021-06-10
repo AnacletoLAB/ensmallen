@@ -582,14 +582,14 @@ impl Graph {
                     node_name_description = self.get_unchecked_succinct_node_description(0),
                 ),
                 nodes_number => format!(
-                    "{heterogeneous_nodes}{nodes_number} nodes",
+                    "{nodes_number}{heterogeneous_nodes} nodes",
                     nodes_number = nodes_number,
                     heterogeneous_nodes = match self.get_node_types_number() {
                         Ok(n) =>
                             if n == 1 {
-                                "homogeneous "
+                                " homogeneous"
                             } else {
-                                "heterogenous "
+                                " heterogenous"
                             },
                         Err(_) => "",
                     },
@@ -621,14 +621,14 @@ impl Graph {
                     edge_description = self.get_unchecked_succinct_edge_description(0)
                 ),
                 edges_number => format!(
-                    "{heterogeneous_edges}{edges_number} edges",
+                    "{edges_number}{heterogeneous_edges} edges",
                     edges_number = edges_number,
                     heterogeneous_edges = match self.get_edge_types_number() {
                         Ok(n) =>
                             if n == 1 {
-                                "homogeneous "
+                                " homogeneous"
                             } else {
-                                "heterogenous "
+                                " heterogenous"
                             },
                         Err(_) => "",
                     },
