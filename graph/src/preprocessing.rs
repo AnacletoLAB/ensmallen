@@ -356,8 +356,7 @@ impl Graph {
             return Err("Negative sample must be a posive real value between 0 and 1.".to_string());
         }
 
-        let negative_samples_threshold =
-            (negative_samples_rate * u64::MAX as f64).ceil() as u64;
+        let negative_samples_threshold = (negative_samples_rate * u64::MAX as f64).ceil() as u64;
         let expected_negative_samples_number =
             (batch_size as f64 * negative_samples_rate).ceil() as usize;
         let expected_positive_samples_number = batch_size - expected_negative_samples_number;
@@ -554,22 +553,32 @@ impl Graph {
     /// `source_node_ids`: Vec<NodeT> - List of source node IDs.
     /// `destination_node_ids`: Vec<NodeT> - List of destination node IDs.
     /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
+    /// `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    /// # Implementative details
+    /// We do not check whether node IDs exist in the graph or not
+    /// in this method because it would take too much time.
     ///
     /// # Safety
     /// If one of the given nodes does not exists in the graph, i.e. that is
     /// higher than the number of nodes in the graph, the method will panic
-    /// and crash.
+    /// and crash. Additionally, we also do not check if the two provided
+    /// lists have the same length.
     ///
     pub unsafe fn par_iter_unchecked_edge_prediction_metrics(
         &self,
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
         let normalize = normalize.unwrap_or(true);
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(verbose, "Computing edge metrics", source_node_ids.len());
         source_node_ids
             .into_par_iter()
             .zip(destination_node_ids.into_par_iter())
+            .progress_with(pb)
             .map(move |(source_node_id, destination_node_id)| {
                 self.get_unchecked_all_edge_metrics_from_node_ids(
                     source_node_id,
@@ -577,6 +586,42 @@ impl Graph {
                     normalize,
                 )
             })
+    }
+
+    #[manual_binding]
+    /// Returns all available edge prediction metrics for all edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
+    /// `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    pub fn par_iter_edge_prediction_metrics(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
+        let normalize = normalize.unwrap_or(true);
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing edge metrics",
+            self.get_directed_edges_number() as usize
+        );
+        self.par_iter_directed_edge_ids().progress_with(pb).map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_all_edge_metrics_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                    normalize,
+                )
+            },
+        )
     }
 
     /// Returns okapi node features propagation within given maximal distance.

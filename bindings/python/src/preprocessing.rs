@@ -491,7 +491,10 @@ impl EnsmallenGraph {
             });
 
         Ok((
-            (neighbours.t.to_owned(), edge_weights.map(|x| x.t.to_owned())),
+            (
+                neighbours.t.to_owned(),
+                edge_weights.map(|x| x.t.to_owned()),
+            ),
             labels.t.to_owned(),
         ))
     }
@@ -659,7 +662,7 @@ impl EnsmallenGraph {
         ))
     }
 
-    #[text_signature = "($self, source_node_ids, destination_node_ids, normalize)"]
+    #[text_signature = "($self, source_node_ids, destination_node_ids, normalize, verbose)"]
     /// Returns all available edge prediction metrics for given edges.
     ///
     /// The metrics returned are, in order:
@@ -676,6 +679,8 @@ impl EnsmallenGraph {
     ///     List of destination node IDs.
     /// normalize: Optional[bool] = True,
     ///     Whether to normalize the metrics.
+    /// verbose: Optional[bool] = True,
+    ///     Whether to show a loading bar.
     ///
     /// Returns
     /// -----------------------------
@@ -685,6 +690,7 @@ impl EnsmallenGraph {
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
         normalize: Option<bool>,
+        verbose: Option<bool>,
     ) -> Py<PyArray2<f64>> {
         let gil = pyo3::Python::acquire_gil();
 
@@ -698,6 +704,7 @@ impl EnsmallenGraph {
                     source_node_ids,
                     destination_node_ids,
                     normalize,
+                    verbose,
                 )
                 .enumerate()
                 .for_each(|(i, metrics)| {
@@ -706,6 +713,51 @@ impl EnsmallenGraph {
                     });
                 });
         }
+
+        batch_metrics.t.to_owned()
+    }
+
+    #[text_signature = "($self, normalize, verbose)"]
+    /// Returns all available edge prediction metrics for given edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic Adar index
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Normalized preferential attachment score
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// normalize: Optional[bool] = True,
+    ///     Whether to normalize the metrics.
+    /// verbose: Optional[bool] = True,
+    ///     Whether to show a loading bar.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// 2D numpy array with metrics.
+    fn get_edge_prediction_metrics(
+        &self,
+        normalize: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Py<PyArray2<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let batch_metrics = ThreadDataRaceAware {
+            t: PyArray2::new(gil.python(), [source_node_ids.len(), 4], false),
+        };
+
+        self.graph
+            .par_iter_edge_prediction_metrics(normalize, verbose)
+            .enumerate()
+            .for_each(|(_, metrics)| {
+                metrics
+                    .into_iter()
+                    .enumerate()
+                    .for_each(|(j, metric)| unsafe {
+                        *(batch_metrics.t.uget_mut([i, j])) = metric;
+                    });
+            });
 
         batch_metrics.t.to_owned()
     }
