@@ -66,11 +66,15 @@ impl Graph {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
                 "minimum_unweighted_node_degree",
-                self.get_unweighted_minimum_node_degree().unwrap().to_string(),
+                self.get_unweighted_minimum_node_degree()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "maximum_unweighted_node_degree",
-                self.get_unweighted_maximum_node_degree().unwrap().to_string(),
+                self.get_unweighted_maximum_node_degree()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
@@ -580,10 +584,14 @@ impl Graph {
                 nodes_number => format!(
                     "{heterogeneous_nodes}{nodes_number} nodes",
                     nodes_number = nodes_number,
-                    heterogeneous_nodes = if self.has_node_types() {
-                        "heterogenous "
-                    } else {
-                        ""
+                    heterogeneous_nodes = match self.get_node_types_number() {
+                        Ok(n) =>
+                            if n == 1 {
+                                "homogeneous "
+                            } else {
+                                "heterogenous "
+                            },
+                        Err(_) => "",
                     },
                 ),
             }
@@ -615,11 +623,15 @@ impl Graph {
                 edges_number => format!(
                     "{heterogeneous_edges}{edges_number} edges",
                     edges_number = edges_number,
-                    heterogeneous_edges = if self.has_edge_types() {
-                        "heterogenous "
-                    } else {
-                        ""
-                    }
+                    heterogeneous_edges = match self.get_edge_types_number() {
+                        Ok(n) =>
+                            if n == 1 {
+                                "homogeneous "
+                            } else {
+                                "heterogenous "
+                            },
+                        Err(_) => "",
+                    },
                 ),
             }
         };
@@ -975,7 +987,6 @@ impl Graph {
     /// This method may raise a panic when called on graph instances
     /// without node types.
     ///
-    /// TODO! Add paragraph about homogeneous node types.
     /// TODO! Add paragram handling the corner case where all node types are unknown.
     unsafe fn get_node_types_report(&self) -> String {
         // First we define the list of paragraphs of the report.
@@ -988,7 +999,11 @@ impl Graph {
             ),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
-                    "a single node type, which is {node_type_description}",
+                    concat!(
+                        "a single node type, which is {node_type_description}. ",
+                        "Note that this means that all nodes have the same ",
+                        "node type, that is, all nodes are homogeneous.",
+                    ),
                     node_type_description = get_node_type_source_html_url_from_node_type_name(
                         self.get_node_type_name_from_node_type_id(0)
                             .unwrap()
@@ -1172,7 +1187,6 @@ impl Graph {
     /// This method may raise a panic when called on graph instances
     /// without edge types.
     ///
-    /// TODO! Add paragraph about homogeneous edge types.
     /// TODO! Add paragram handling the corner case where all edge types are unknown.
     unsafe fn get_edge_types_report(&self) -> String {
         // First we define the list of paragraphs of the report.
@@ -1185,7 +1199,11 @@ impl Graph {
             ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(
-                    "a single edge type, which is {edge_type_description}",
+                    concat!(
+                        "a single edge type, which is {edge_type_description}. ",
+                        "Note that this means that all edges have the same ",
+                        "edge type, that is, all edges are homogeneous.",
+                    ),
                     edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
                         self.get_edge_type_name_from_edge_type_id(0)
                             .unwrap()
