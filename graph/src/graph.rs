@@ -101,6 +101,10 @@ pub struct Graph {
     pub(crate) total_weights: Option<f64>,
     /// Number of nodes with zero weighted node degree.
     pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
+    /// Whether the node IDs are provided sorted by decreasing outbound node degree.
+    pub(crate) nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
+    /// Whether the node IDs are provided sorted by increasing outbound node degree.
+    pub(crate) nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     /// Graph name
     pub(crate) name: String,
     pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
@@ -146,6 +150,8 @@ impl Graph {
         max_weighted_node_degree: Option<f64>,
         total_weights: Option<f64>,
         weighted_singleton_nodes_number: Option<NodeT>,
+        nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
+        nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     ) -> Graph {
         Graph {
             directed,
@@ -176,6 +182,8 @@ impl Graph {
             max_weighted_node_degree,
             total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         }
     }
 

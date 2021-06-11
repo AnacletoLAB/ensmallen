@@ -9,7 +9,6 @@ use super::*;
 /// * `/has_unchecked_(.+)/`
 /// * `/is_unchecked_(.+)/`.
 impl Graph {
-
     /// Return if graph has name that is not the default one.
     ///
     /// TODO: use a default for the default graph name!
@@ -31,7 +30,6 @@ impl Graph {
     pub fn has_nodes(&self) -> bool {
         self.get_nodes_number() > 0
     }
-    
 
     /// Return if the graph has any edges.
     ///
@@ -125,7 +123,10 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
-        Ok((self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs() < WeightT::EPSILON)
+        Ok(
+            (self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs()
+                < WeightT::EPSILON,
+        )
     }
 
     /// Returns boolean representing whether graph has negative weights.
@@ -335,5 +336,31 @@ impl Graph {
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
         self.get_parallel_edges_number() > 0
+    }
+
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    ///
+    /// # Implications
+    /// The implications of having a graph with node IDs sorted by the
+    /// outbound node degrees are multiple.
+    /// For instance, it makes it possible to create a NCE loss that
+    /// is able to better approximate a complete Softmax by sampling
+    /// the output labels using a Zipfian distribution, which is what
+    /// most graphs follow.
+    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
+        self.nodes_are_sorted_by_decreasing_outbound_node_degree
+    }
+
+    /// Returns whether the node IDs are sorted by increasing outbound node degree.
+    ///
+    /// # Implications
+    /// The implications of having a graph with node IDs sorted by the
+    /// outbound node degrees are multiple.
+    /// For instance, it makes it possible to create a NCE loss that
+    /// is able to better approximate a complete Softmax by sampling
+    /// the output labels using a Zipfian distribution, which is what
+    /// most graphs follow.
+    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
+        self.nodes_are_sorted_by_increasing_outbound_node_degree
     }
 }

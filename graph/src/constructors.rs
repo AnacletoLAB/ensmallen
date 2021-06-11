@@ -35,6 +35,8 @@ type ParsedStringEdgesType = Result<
         Option<f64>,
         Option<f64>,
         Option<NodeT>,
+        bool,
+        bool,
     ),
     String,
 >;
@@ -416,6 +418,9 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
 /// directed: bool - Whether the graph is directed.
 /// edge_list_is_correct: bool - Whether the edge list is correct and therefore we can skip validating it.
 ///
+/// # Returned informations
+/// The returned informations include:
+/// - TODO! list.
 pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: usize,
@@ -452,6 +457,8 @@ pub(crate) fn build_edges(
         Option<f64>,
         Option<f64>,
         Option<NodeT>,
+        bool,
+        bool,
     ),
     String,
 > {
@@ -481,6 +488,13 @@ pub(crate) fn build_edges(
     info!("Started building of EliasFano edges data structure.");
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
+
+    // Before checking any edge, we assume that the node IDs
+    // are sorted by the outbound node degree.
+    // The first flag will be used to check if it is in a decreasing order.
+    let mut nodes_are_sorted_by_decreasing_outbound_node_degree: bool = true;
+    // The first flag will be used to check if it is in a increasing order.
+    let mut nodes_are_sorted_by_increasing_outbound_node_degree: bool = true;
     let mut edges: EliasFano =
         EliasFano::new(encode_max_edge(nodes_number, node_bits), edges_number)?;
 
@@ -573,6 +587,7 @@ pub(crate) fn build_edges(
     let mut min_node_degree: NodeT = NodeT::MAX;
     let mut max_node_degree: NodeT = 0;
     let mut current_node_degree: NodeT = 0;
+    let mut previous_node_degree: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
     let mut unique_edges_number: EdgeT = 0;
     let mut unique_selfloop_number: NodeT = 0;
@@ -606,6 +621,14 @@ pub(crate) fn build_edges(
             } else {
                 return Err("A duplicated edge was found while building the graph.".to_owned());
             }
+        }
+
+        // If this is the first source node and it is not zero,
+        // there must be singletons before it, hence nodes with node
+        // degree zero. Therefore, the node IDs cannot be sorted by
+        // decreating outbound node degree.
+        if first && src > 0 {
+            nodes_are_sorted_by_decreasing_outbound_node_degree = false;
         }
 
         match (
@@ -755,6 +778,25 @@ pub(crate) fn build_edges(
                     min_node_degree = min_node_degree.min(current_node_degree);
                     // And the maximum node degree
                     max_node_degree = max_node_degree.max(current_node_degree);
+                    // Check if the node IDs are provided sorted by decreasing
+                    // outbound node degree.
+                    if previous_node_degree != 0 {
+                        if previous_node_degree < current_node_degree {
+                            nodes_are_sorted_by_decreasing_outbound_node_degree = false;
+                        } else if previous_node_degree > current_node_degree {
+                            nodes_are_sorted_by_increasing_outbound_node_degree = false;
+                        }
+                    }
+                    // If there are more than one node skipped when changing
+                    // the source node, since we are parsing a sorted edge list,
+                    // that node must surely be a trap or a singleton.
+                    // Either way, the node list is not sorted.
+                    if src - last_src > 1 {
+                        nodes_are_sorted_by_decreasing_outbound_node_degree = false;
+                        nodes_are_sorted_by_increasing_outbound_node_degree = false;
+                    }
+                    // Update the previous node degree
+                    previous_node_degree = current_node_degree;
                     // And reset the current node degree to 0.
                     current_node_degree = 0;
                     // We update the weighted node degrees if the weights are provided
@@ -802,6 +844,26 @@ pub(crate) fn build_edges(
     }
     // And the maximum node degree
     max_node_degree = max_node_degree.max(current_node_degree);
+
+    // We check if the last node is sorted.
+    if previous_node_degree != 0 {
+        if previous_node_degree < current_node_degree {
+            nodes_are_sorted_by_decreasing_outbound_node_degree = false;
+        } else if previous_node_degree > current_node_degree {
+            nodes_are_sorted_by_increasing_outbound_node_degree = false;
+        }
+    }
+
+    // If this is the last source node and it is not equal to the number
+    // of nodes in the graph minus one
+    // there must be singletons after it, hence nodes with node
+    // degree zero. Therefore, the node IDs cannot be sorted by
+    // increasing outbound node degree.
+    // The only case where this is not the case, is when all the nodes
+    // in the graph are singletons, and the graph does not have any edge.
+    if !edges.is_empty() && last_src != nodes_number - 1 {
+        nodes_are_sorted_by_increasing_outbound_node_degree = false;
+    }
 
     // We update the minimum weighted node degree
     if let (
@@ -1005,6 +1067,8 @@ pub(crate) fn build_edges(
         max_weighted_node_degree,
         total_weights,
         weighted_singleton_nodes_number,
+        nodes_are_sorted_by_decreasing_outbound_node_degree,
+        nodes_are_sorted_by_increasing_outbound_node_degree,
     ))
 }
 
@@ -1119,6 +1183,8 @@ pub(crate) fn parse_string_edges(
         max_weighted_node_degree,
         total_weights,
         weighted_singleton_nodes_number,
+        nodes_are_sorted_by_decreasing_outbound_node_degree,
+        nodes_are_sorted_by_increasing_outbound_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -1162,6 +1228,8 @@ pub(crate) fn parse_string_edges(
         max_weighted_node_degree,
         total_weights,
         weighted_singleton_nodes_number,
+        nodes_are_sorted_by_decreasing_outbound_node_degree,
+        nodes_are_sorted_by_increasing_outbound_node_degree,
     ))
 }
 
@@ -1203,6 +1271,8 @@ pub(crate) fn parse_integer_edges(
         Option<f64>,
         Option<f64>,
         Option<NodeT>,
+        bool,
+        bool,
     ),
     String,
 > {
@@ -1228,6 +1298,8 @@ pub(crate) fn parse_integer_edges(
         max_weighted_node_degree,
         total_weights,
         weighted_singleton_nodes_number,
+        nodes_are_sorted_by_decreasing_outbound_node_degree,
+        nodes_are_sorted_by_increasing_outbound_node_degree,
     ) = build_edges(
         edges_iter,
         edges_number,
@@ -1267,6 +1339,8 @@ pub(crate) fn parse_integer_edges(
         max_weighted_node_degree,
         total_weights,
         weighted_singleton_nodes_number,
+        nodes_are_sorted_by_decreasing_outbound_node_degree,
+        nodes_are_sorted_by_increasing_outbound_node_degree,
     ))
 }
 
@@ -1311,6 +1385,8 @@ impl Graph {
             max_weighted_node_degree,
             total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         ) = parse_integer_edges(
             edges_iter,
             edges_number,
@@ -1353,6 +1429,8 @@ impl Graph {
             max_weighted_node_degree,
             total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         ))
     }
 
@@ -1607,6 +1685,8 @@ impl Graph {
             max_weighted_node_degree,
             total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         ) = parse_string_edges(
             edges_iterator,
             edges_number,
@@ -1651,6 +1731,8 @@ impl Graph {
             max_weighted_node_degree,
             total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         ))
     }
 }

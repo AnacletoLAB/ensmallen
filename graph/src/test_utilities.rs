@@ -340,6 +340,42 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
             });
     }
 
+    assert_eq!(
+        graph.iter_unweighted_node_degrees().is_sorted(),
+        graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+        concat!(
+            "The cached value for the method ",
+            "has_nodes_sorted_by_increasing_outbound_node_degree ",
+            "does not match the computed method.\n",
+            "The degrees of this graph are:\n {:?}\n",
+            "The reported order was: {}"
+        ),
+        graph.get_unweighted_node_degrees(),
+        graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+    );
+    let mut degrees = graph.get_unweighted_node_degrees();
+    degrees.reverse();
+    assert_eq!(
+        degrees.is_sorted(),
+        graph.has_nodes_sorted_by_decreasing_outbound_node_degree(),
+        concat!(
+            "The cached value for the method ",
+            "has_nodes_sorted_by_decreasing_outbound_node_degree ",
+            "does not match the computed method."
+        )
+    );
+
+    if let (Ok(min_degree), Ok(max_degree)) = (
+        graph.get_unweighted_minimum_node_degree(),
+        graph.get_unweighted_maximum_node_degree(),
+    ) {
+        assert_eq!(
+            graph.has_nodes_sorted_by_decreasing_outbound_node_degree()
+                && graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+            min_degree == max_degree
+        );
+    }
+
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
         graph.iter_edge_weights().unwrap().for_each(|w| {

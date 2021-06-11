@@ -22,6 +22,7 @@
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
 #![warn(unused_macros)]
+#![feature(is_sorted)]
 #![feature(map_first_last)]
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
