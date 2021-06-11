@@ -21,7 +21,7 @@ fn main() {
         .set_header(Some(true));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
 
-    graph.enable(true, true, true, None).unwrap();
+    graph.enable(Some(true), Some(true), Some(true)).unwrap();
 
     let walker = first_order_walker(&graph).unwrap();
     let _ = graph.iter_random_walks(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
