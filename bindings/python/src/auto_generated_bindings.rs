@@ -6169,13 +6169,19 @@ impl EnsmallenGraph {
     /// k: int,
     ///     Number of central nodes to extract.
     ///
-    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> Py<PyArray1<NodeT>> {
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given value k is zero.
+    ///
+    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
+        Ok(to_ndarray_1d!(
             gil,
-            self.graph.get_unweighted_top_k_central_node_ids(k),
+            pe!(self.graph.get_unweighted_top_k_central_node_ids(k))?,
             NodeT
-        )
+        ))
     }
 
     #[automatically_generated_binding]
@@ -6195,6 +6201,8 @@ impl EnsmallenGraph {
     /// -------
     /// ValueError
     ///     If the current graph instance does not contain edge weights.
+    /// ValueError
+    ///     If the given value k is zero.
     ///
     pub fn get_weighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6301,8 +6309,8 @@ impl EnsmallenGraph {
     /// k: int,
     ///     Number of central nodes to extract.
     ///
-    pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
-        self.graph.get_top_k_central_node_names(k)
+    pub fn get_top_k_central_node_names(&self, k: NodeT) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_top_k_central_node_names(k))
     }
 
     #[automatically_generated_binding]
