@@ -95,6 +95,7 @@ mod to_conversions;
 mod transitivity;
 mod trees;
 mod types;
+mod sort;
 mod vertex_cover;
 mod walks;
 pub mod walks_parameters;

@@ -1163,6 +1163,15 @@ pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
     Ok(())
 }
 
+pub fn test_sorting(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    let sorted_increasing = graph.sort_by_increasing_outbound_node_degree(verbose);
+    assert!(sorted_increasing.has_nodes_sorted_by_increasing_outbound_node_degree());
+    let sorted_decreasing = graph.sort_by_decreasing_outbound_node_degree(verbose);
+    assert!(sorted_decreasing.has_nodes_sorted_by_decreasing_outbound_node_degree());
+
+    Ok(())
+}
+
 pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
@@ -1962,7 +1971,7 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<
         "Graph always should be remappable to itself."
     );
     assert!(
-        graph.remap(&graph, verbose).is_ok(),
+        graph.remap_from_graph(&graph, verbose).is_ok(),
         "Graph always should be remappable to itself."
     );
     Ok(())
@@ -2105,6 +2114,9 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
 
     warn!("Testing generation of selfloops.");
     let _ = test_selfloops(graph, verbose);
+
+    warn!("Testing sorting of the graph.");
+    let _ = test_sorting(graph, verbose);
 
     Ok(())
 }

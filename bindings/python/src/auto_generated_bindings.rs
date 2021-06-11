@@ -529,6 +529,36 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Returns graph with node IDs sorted by increasing outbound node degree.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn sort_by_increasing_outbound_node_degree(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.sort_by_increasing_outbound_node_degree(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, verbose)"]
+    /// Returns graph with node IDs sorted by decreasing outbound node degree.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn sort_by_decreasing_outbound_node_degree(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.sort_by_decreasing_outbound_node_degree(verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns binary dense adjacency matrix.
     ///
@@ -1897,6 +1927,91 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, node_ids, verbose)"]
+    /// Returns graph remapped using given node IDs ordering.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int],
+    ///     The node Ids to remap the graph to.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// This method will cause a panic if the node IDs are either:
+    ///  * Not unique
+    ///  * Not available for each of the node IDs of the graph.
+    pub unsafe fn remap_unchecked_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        verbose: Option<bool>,
+    ) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.remap_unchecked_from_node_ids(node_ids, verbose),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_ids, verbose)"]
+    /// Returns graph remapped using given node IDs ordering.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int],
+    ///     The node Ids to remap the graph to.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node IDs are not unique.
+    /// ValueError
+    ///     If the given node IDs are not available for all the values in the graph.
+    ///
+    pub fn remap_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        verbose: Option<bool>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.remap_from_node_ids(node_ids, verbose))?,
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_names, verbose)"]
+    /// Returns graph remapped using given node names ordering.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_names: List[str],
+    ///     The node names to remap the graph to.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node names are not unique.
+    /// ValueError
+    ///     If the given node names are not available for all the values in the graph.
+    ///
+    pub fn remap_from_node_names(
+        &self,
+        node_names: Vec<&str>,
+        verbose: Option<bool>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self.graph.remap_from_node_names(node_names, verbose))?,
+        })
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, other, verbose)"]
     /// Return graph remapped towards nodes of the given graph.
     ///
@@ -1907,9 +2022,13 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loding bar.
     ///
-    pub fn remap(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
+    pub fn remap_from_graph(
+        &self,
+        other: &EnsmallenGraph,
+        verbose: Option<bool>,
+    ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.remap(&other.graph, verbose))?,
+            graph: pe!(self.graph.remap_from_graph(&other.graph, verbose))?,
         })
     }
 
@@ -5407,6 +5526,22 @@ impl EnsmallenGraph {
     /// Return if there are multiple edges between two node
     pub fn is_multigraph(&self) -> bool {
         self.graph.is_multigraph()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
+        self.graph
+            .has_nodes_sorted_by_decreasing_outbound_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns whether the node IDs are sorted by increasing outbound node degree.
+    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
+        self.graph
+            .has_nodes_sorted_by_increasing_outbound_node_degree()
     }
 
     #[automatically_generated_binding]

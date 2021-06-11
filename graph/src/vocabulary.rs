@@ -21,7 +21,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
             numeric_ids: false,
         }
     }
-
+    
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
             let parsed_value = value.parse::<usize>().map_err(|_| {
