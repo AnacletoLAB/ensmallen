@@ -555,7 +555,7 @@ impl Graph {
         let name = if self.has_default_graph_name() {
             None
         } else {
-            report.push(format!("<h2>{}</h2>\n", self.get_name()));
+            report.push(format!("<h2>{}</h2>", self.get_name()));
             Some(format!(" {}", self.get_name()))
         };
 
@@ -664,7 +664,7 @@ impl Graph {
     unsafe fn get_unweighted_node_degree_centrality_report(&self) -> String {
         format!(
             concat!(
-                "<h3>Degree centrality</h3>\n",
+                "<h3>Degree centrality</h3>",
                 "The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
@@ -674,18 +674,19 @@ impl Graph {
             mode_node_degree = self.get_unweighted_node_degrees_mode().unwrap(),
             mean_node_degree = self.get_unweighted_node_degrees_mean().unwrap(),
             node_degree_median = self.get_unweighted_node_degrees_median().unwrap(),
-            list_of_most_central_nodes = self.get_unchecked_formatted_list(
-                self.get_unweighted_top_k_central_node_ids(5)
-                    .into_iter()
-                    .filter(|node_id| {
-                        self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
-                    })
-                    .map(|node_id| {
-                        self.get_unchecked_succinct_node_description(node_id)
-                    })
-                    .collect::<Vec<_>>()
-                    .as_ref()
-            )
+            list_of_most_central_nodes = "DEUS",
+            // list_of_most_central_nodes = self.get_unchecked_formatted_list(
+            //     self.get_unweighted_top_k_central_node_ids(5)
+            //         .into_iter()
+            //         .filter(|node_id| {
+            //             self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+            //         })
+            //         .map(|node_id| {
+            //             self.get_unchecked_succinct_node_description(node_id)
+            //         })
+            //         .collect::<Vec<_>>()
+            //         .as_ref()
+            // )
         )
     }
 
@@ -697,7 +698,7 @@ impl Graph {
     unsafe fn get_singleton_nodes_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Singleton nodes</h4>\n",
+                "<h4>Singleton nodes</h4>",
                 "Singleton nodes are nodes with no edge to other nodes ",
                 "nor selfloops.\n",
                 "The graph contains {singleton_nodes_number}.\n"
@@ -748,7 +749,7 @@ impl Graph {
     unsafe fn get_singleton_nodes_with_selfloops_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Singleton nodes with selfloops</h4>\n",
+                "<h4>Singleton nodes with selfloops</h4>",
                 "Singleton nodes with selfloops are nodes with no edge to other nodes ",
                 "and have exclusively selfloops.\n",
                 "The graph contains {singleton_nodes_with_selfloops_number}.\n"
@@ -806,7 +807,7 @@ impl Graph {
 
         paragraphs.push(format!(
             concat!(
-                "<h3>Disconnected nodes</h3>\n",
+                "<h3>Disconnected nodes</h3>",
                 "Disconnected nodes are nodes that are not connected ",
                 "to any other node.\n",
                 "The graph contains {disconnected_nodes_number} disconnected nodes.\n"
@@ -836,9 +837,9 @@ impl Graph {
     unsafe fn get_edge_weights_report(&self) -> String {
         format!(
             concat!(
-                "<h3>Weights</h3>\n",
+                "<h3>Weights</h3>",
                 "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.\n",
-                "<h4>Weighted degree centrality</h4>\n",
+                "<h4>Weighted degree centrality</h4>",
                 "The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
                 "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.\n",
                 "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
@@ -850,15 +851,16 @@ impl Graph {
             weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
-            weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
-                self.get_weighted_top_k_central_node_ids(5).unwrap()
-                    .into_iter()
-                    .map(|node_id| {
-                        self.get_unchecked_succinct_node_description(node_id)
-                    })
-                    .collect::<Vec<_>>()
-                    .as_ref()
-            )
+            weighted_list_of_most_central_nodes = "DESU",
+            // weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
+            //     self.get_weighted_top_k_central_node_ids(5).unwrap()
+            //         .into_iter()
+            //         .map(|node_id| {
+            //             self.get_unchecked_succinct_node_description(node_id)
+            //         })
+            //         .collect::<Vec<_>>()
+            //         .as_ref()
+            // )
         )
     }
 
@@ -870,7 +872,7 @@ impl Graph {
     unsafe fn get_singleton_nodes_types_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Singleton node types</h4>\n",
+                "<h4>Singleton node types</h4>",
                 "Singleton node types are node types that are assigned ",
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
@@ -931,7 +933,7 @@ impl Graph {
     unsafe fn get_unknown_node_types_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Unknown node types</h4>\n",
+                "<h4>Unknown node types</h4>",
                 "Nodes with unknown node types are nodes with a ",
                 "node type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
@@ -994,7 +996,7 @@ impl Graph {
 
         paragraphs.push(format!(
             concat!(
-                "<h3>Node types</h3>\n",
+                "<h3>Node types</h3>",
                 "The graph has {node_types_number}.\n"
             ),
             node_types_number = match self.get_node_types_number().unwrap() {
@@ -1016,7 +1018,7 @@ impl Graph {
                         .unwrap()
                         .into_iter()
                         .collect::<Vec<_>>();
-                    node_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                    node_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
                     let node_type_descriptions = self.get_unchecked_formatted_list(
                         node_type_counts
                             .into_iter()
@@ -1070,7 +1072,7 @@ impl Graph {
     unsafe fn get_singleton_edges_types_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Singleton edge types</h4>\n",
+                "<h4>Singleton edge types</h4>",
                 "Singleton edge types are edge types that are assigned ",
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
@@ -1131,7 +1133,7 @@ impl Graph {
     unsafe fn get_unknown_edge_types_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Unknown edge types</h4>\n",
+                "<h4>Unknown edge types</h4>",
                 "Edges with unknown edge types are edges with a ",
                 "edge type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
@@ -1194,7 +1196,7 @@ impl Graph {
 
         paragraphs.push(format!(
             concat!(
-                "<h3>Edge types</h3>\n",
+                "<h3>Edge types</h3>",
                 "The graph has {edge_types_number}.\n"
             ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
@@ -1216,7 +1218,7 @@ impl Graph {
                         .unwrap()
                         .into_iter()
                         .collect::<Vec<_>>();
-                    edge_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                    edge_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
                     let edge_type_descriptions = self.get_unchecked_formatted_list(
                         edge_type_counts
                             .into_iter()

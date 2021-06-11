@@ -1060,20 +1060,20 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<(),
                 .to_dot(Some(false)),
         );
         // Doing multiple iterations should be equal to doing the same iteration multiple times
-        let three_iterations = graph_with_selfloops.get_transitive_closure(Some(3), verbose);
+        let four_iterations = graph_with_selfloops.get_transitive_closure(Some(4), verbose);
         let two_times_two = graph_with_selfloops
             .get_transitive_closure(Some(2), verbose)
             .get_transitive_closure(Some(2), verbose);
         assert_eq!(
-            three_iterations,
+            four_iterations,
             two_times_two,
             concat!(
-                "We expected the graph after 3 transitive closures to be ",
+                "We expected the graph after 4 transitive closures to be ",
                 "equal to the graph after two times two transitive closures.\n",
                 "The to_dot of the first graph is: \n {}\n",
                 "The to_dot of the second graph is: \n {}\n",
             ),
-            three_iterations.to_dot(Some(false)),
+            four_iterations.to_dot(Some(false)),
             two_times_two.to_dot(Some(false))
         );
     }
@@ -2107,7 +2107,7 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<(), S
 
     warn!("Testing transitivity.");
     // TODO! temporarily commented out!
-    // let _ = test_transitivity(graph, verbose);
+    let _ = test_transitivity(graph, verbose);
 
     warn!("Testing all paths.");
     let _ = test_all_paths(graph, verbose);
