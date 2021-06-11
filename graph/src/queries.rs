@@ -1,4 +1,5 @@
 use super::*;
+use permutation::permutation;
 
 /// # Queries
 /// The naming convention we follow is:
@@ -563,7 +564,15 @@ impl Graph {
     ///
     /// # Arguments
     /// * `k`: NodeT - Number of central nodes to extract.
-    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> Vec<NodeT> {
+    ///
+    /// # Raises
+    /// * If the given value k is zero.
+    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> Result<Vec<NodeT>, String> {
+        if k == 0 {
+            return Err(
+                "K must be strictly a positive integer value greater than zero.".to_string(),
+            );
+        }
         let k = k.min(self.get_nodes_number());
         let mut most_central_node_degrees = vec![0; k as usize];
         let mut most_central_node_ids = vec![0; k as usize];
@@ -581,7 +590,9 @@ impl Graph {
                 most_central_node_ids[argmin] = node_id;
             }
         });
-        most_central_node_ids
+        let degree_permutation = permutation::sort_by(most_central_node_degrees, |a, b| b.cmp(a));
+        most_central_node_ids = degree_permutation.apply_slice(most_central_node_ids);
+        Ok(most_central_node_ids)
     }
 
     /// Return vector with weighted top k central node Ids.
@@ -594,8 +605,16 @@ impl Graph {
     ///
     /// # Raises
     /// * If the current graph instance does not contain edge weights.
+    /// * If the given value k is zero.
+    ///
+    /// TODO! Sort the returned values!
     pub fn get_weighted_top_k_central_node_ids(&self, k: NodeT) -> Result<Vec<NodeT>, String> {
         self.must_have_edge_weights()?;
+        if k == 0 {
+            return Err(
+                "K must be strictly a positive integer value greater than zero.".to_string(),
+            );
+        }
         let k = k.min(self.get_nodes_number());
         let mut most_central_node_degrees = vec![0.0; k as usize];
         let mut most_central_node_ids = vec![0; k as usize];
@@ -613,6 +632,7 @@ impl Graph {
                 most_central_node_ids[argmin] = node_id;
             }
         });
+
         Ok(most_central_node_ids)
     }
 
@@ -693,11 +713,12 @@ impl Graph {
     /// # Arguments
     ///
     /// * `k`: NodeT - Number of central nodes to extract.
-    pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
-        self.get_unweighted_top_k_central_node_ids(k)
-            .into_iter()
+    pub fn get_top_k_central_node_names(&self, k: NodeT) -> Result<Vec<String>, String> {
+        self.get_unweighted_top_k_central_node_ids(k).map(
+            |x|
+            x.into_iter()
             .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
-            .collect()
+            .collect())
     }
 
     /// Returns option with vector of node types of given node.
