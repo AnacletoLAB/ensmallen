@@ -125,7 +125,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        if self.has_nodes() {
+        if !self.has_nodes() {
             return Ok(self.clone());
         }
         let (min, max) = node_ids.iter().cloned().minmax().into_option().unwrap();
