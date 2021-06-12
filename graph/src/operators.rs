@@ -44,18 +44,22 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_from_node_names_and_edge_type_name(
+                        if dg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_deref(),
-                        );
+                        ) {
+                            return false;
+                        }
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_from_node_names_and_edge_type_name(
+                        if !mhg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_deref(),
-                        );
+                        ) {
+                            return false;
+                        }
                     }
                     true
                 })
@@ -146,10 +150,14 @@ fn generic_integer_operator(
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
+                        if dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
+                            return false;
+                        }
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
+                        if !mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
+                            return false;
+                        }
                     }
                     true
                 })
