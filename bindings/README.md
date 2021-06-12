@@ -14,7 +14,7 @@ pip install ensmallen_graph
 
 The pre-compiled wheels needs glibc >= 2.12.
 
-To build it locally running the following command should be enought.
+To build it locally running the following command should be enough.
 ```bash
 make python
 ```

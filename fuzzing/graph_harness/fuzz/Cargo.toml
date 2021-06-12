@@ -29,12 +29,6 @@ test = false
 doc = false
 
 [[bin]]
-name = "queue"
-path = "fuzz_targets/queue.rs"
-test = false
-doc = false
-
-[[bin]]
 name = "from_vec"
 path = "fuzz_targets/from_vec.rs"
 test = false

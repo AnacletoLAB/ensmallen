@@ -5,10 +5,10 @@ extern crate graph_harness;
 use graph_harness::*;
 fn main() {
     loop {
-        fuzz!(|data: MetaParams| {
+        fuzz!(|data: FromVecHarnessParams| {
             // We ignore this error because we execute only the fuzzing to find
             // the panic situations that are NOT just errors, but unhandled errors.
-            let _ = meta_test(data);
+            let _ = from_vec_harness_with_panic_handling(data);
         });
     }
 }

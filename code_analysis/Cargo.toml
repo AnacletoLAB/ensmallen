@@ -1,5 +1,5 @@
 [package]
-name = "metatest"
+name = "code-analysis"
 version = "0.1.0"
 edition = "2018"
 
@@ -7,11 +7,11 @@ edition = "2018"
 
 [dependencies]
 rust_parser = {path = "./rust_parser" }
-graph = {path = "../../../graph" }
+graph = {path = "../graph" }
 
 
 [lib]
-name = "libmetatest"
+name = "libcodeanalysis"
 path = "src/lib.rs"
 
 [[bin]]

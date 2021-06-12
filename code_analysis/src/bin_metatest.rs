@@ -1,5 +1,5 @@
 use rust_parser::*;
-use libmetatest::*;
+use libcodeanalysis::*;
 use std::collections::HashSet;
 
 const METHODS_BLACKLIST: &'static [&'static str] = &[
@@ -23,7 +23,7 @@ const TYPES_BLACKLIST: &'static [&'static str] = &[
     "[String]",
 ];
 
-fn build(method_id: usize, method: Function) -> Option<(String, String, String)> {
+fn build(method_id: usize, method: Function) -> Option<(String, String, String, String)> {
     let struct_name = method.name.split("_").map(|x| {
         let mut x = x.to_string();
         x.get_mut(0..1).map(|s| {s.make_ascii_uppercase(); &*s});
@@ -153,6 +153,15 @@ pub struct {struct_name} {{
         };
     }
 
+    let method_calls_without_handling = format!( r#"
+    {method_id} => {{
+        {method_call}
+    }}
+    "#,
+        method_id=method_id,
+        method_call=method_call,
+    );
+
     method_call = format!( r#"
     {method_id} => {{
         trace.push(format!("{func_name}({args_format})", {args_from_data}));
@@ -177,12 +186,14 @@ pub struct {struct_name} {{
         struct_string,
         field_string,
         method_call,
+        method_calls_without_handling,
     ))
 }
 
 fn main() {
     let mut counter = 0;
     let mut calls = Vec::new();
+    let mut calls_no_panic = Vec::new();
     let mut structs = Vec::new();
     let mut fields = Vec::new();
     for module in get_library_sources() {
@@ -199,11 +210,12 @@ fn main() {
                     continue
                 }
 
-                if let Some((struct_string, struct_field, method_call)) = build(counter, method) {
+                if let Some((struct_string, struct_field, method_call, method_calls_without_handling)) = build(counter, method) {
                     if struct_string != "" {
                         structs.push(struct_string);
                     }
                     calls.push(method_call);
+                    calls_no_panic.push(method_calls_without_handling);
                     fields.push(struct_field);
                     counter += 1;
                 }
@@ -258,7 +270,7 @@ impl Rng {{
 
 {meta_struct}
 
-pub fn meta_test(data: MetaParams) -> Result<(), String> {{
+pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), String> {{
     let panic_handler_data_before_load = data.clone();
     let data_copy_for_tests = data.clone();
     std::panic::set_hook(Box::new(move |info| {{
@@ -304,12 +316,52 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
 
     Ok(())
 }}
+
+pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {{
+
+    let mut graph = graph::Graph::from_string_unsorted(
+        data.from_vec.edges.into_iter(),
+        data.from_vec.nodes.map(|ns| ns.into_iter()),
+        data.from_vec.directed,
+        data.from_vec.directed_edge_list,
+        "MetaTest",
+        data.from_vec.ignore_duplicated_nodes,
+        false,
+        data.from_vec.ignore_duplicated_edges,
+        false,
+        data.from_vec.numeric_edge_types_ids,
+        data.from_vec.numeric_node_ids,
+        data.from_vec.numeric_edge_node_ids,
+        data.from_vec.numeric_node_types_ids,
+        data.from_vec.has_node_types,
+        data.from_vec.has_edge_types,
+        data.from_vec.has_edge_weights,
+        true,
+        true,
+        true,
+        true,
+        data.from_vec.verbose,
+    )?;
+
+    let mut rng = Rng::new(data.seed);
+    for _ in 0..10 {{
+        match rng.next() % {n_of_calls} {{
+{calls_no_panic}
+            _ => unreachable!()
+        }}
+    }}
+    
+    let _ = graph::test_utilities::default_test_suite(&mut graph, None);
+
+    Ok(())
+}}
 "#,
         n_of_calls=counter,
         calls=calls.join("\n"),
+        calls_no_panic=calls_no_panic.join("\n"),
         structs=structs.join("\n"),
         meta_struct=meta_struct,
     );
 
-    std::fs::write("../../../fuzzing/graph_harness/src/meta_test.rs", result);
+    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result);
 }
