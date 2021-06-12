@@ -333,8 +333,6 @@ pub(crate) fn parse_unsorted_quadruples(
         (*src1, *dst1, *edt1).cmp(&(*src2, *dst2, *edt2))
     });
 
-    println!("{:?}", edges);
-
     let edges_number = edges.len();
     let pb = get_loading_bar(verbose, "Building sorted graph", edges_number);
 
