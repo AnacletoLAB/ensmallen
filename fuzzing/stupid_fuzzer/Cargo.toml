@@ -28,3 +28,10 @@ path = "src/debug.rs"
 [[bin]]
 name = "sigabrttest"
 path = "src/sigabrttest.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+overflow-checks = true   # Disable integer overflow checks.
+debug = true             # Include debug info.
+debug-assertions = true  # Enables debug assertions.
