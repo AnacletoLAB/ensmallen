@@ -479,9 +479,19 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
             assert!(graph.get_edge_ids_with_unknown_edge_types().unwrap().len() > 0);
         }
         if graph.has_known_edge_types().unwrap() {
-            assert!(graph
-                .iter_edge_node_ids_and_edge_type_id(true)
-                .any(|(_, _, _, edge_type)| edge_type.is_some()));
+            assert!(
+                graph
+                    .iter_edge_node_ids_and_edge_type_id(true)
+                    .any(|(_, _, _, edge_type)| edge_type.is_some()),
+                concat!(
+                    "We expected for the graph to contain at least one edge ",
+                    "with a known edge type, but apparently it does not contain ",
+                    "any. The graph contains {} edges and would have seemed to contain ",
+                    "{} edges with known edge types."
+                ),
+                graph.get_directed_edges_number(),
+                graph.get_known_edge_types_number().unwrap()
+            );
             assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
         }
     }
