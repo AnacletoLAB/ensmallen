@@ -887,12 +887,15 @@ pub(crate) fn build_edges(
         panic!(
             concat!(
                 "It has been specified that within the graph we are currently trying to build ",
-                "there are no singletons nor trap nodes, but nodes with outbound node degree ",
+                "there are no singletons nor trap nodes, but nodes with outbound node degree zero ",
                 "where found. The graph is {}. It is likely that this is caused by some constructor ",
                 "misparametrization of either the might_contain_singletons parameter or the ",
-                "might_contain_trap_nodes parameter."
+                "might_contain_trap_nodes parameter.",
+                "The last source node ID of the graph is {} and the nodes number is {}."
             ),
-            if directed {"directed"} else {"undirected"}
+            if directed {"directed"} else {"undirected"},
+            last_src,
+            nodes_number
         );
     }
 
