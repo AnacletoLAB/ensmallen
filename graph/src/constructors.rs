@@ -858,7 +858,11 @@ pub(crate) fn build_edges(
         }
     }
 
-    if edges.len() != edges_number - duplicated_edges_number {
+    // We do not do an equality check because it gets very hard (computationally)
+    // to compute exactly how many edges a graph has, expecially when taking into
+    // consideration cases including numerical instability, like during the
+    // computation of Laplacian transformations of the given input graph.
+    if edges.len() > edges_number - duplicated_edges_number {
         panic!(
             concat!(
                 "The provided number of edges {} does not match the number of edges {} obtained after ",

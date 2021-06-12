@@ -111,21 +111,15 @@ impl Graph {
             .iter()
             .any(|value| *value);
 
-        let edges_number_is_impredictable = [
-            edge_ids_to_keep.is_some(),
-            edge_ids_to_filter.is_some(),
-            edge_node_ids_to_keep.is_some(),
-            edge_node_ids_to_filter.is_some(),
-            edge_type_ids_to_keep.is_some(),
-            edge_type_ids_to_filter.is_some(),
-            min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
-        ]
-        .iter()
-        .any(|value| *value);
-
         let has_edge_filters = self.has_edges()
             && [
-                edges_number_is_impredictable,
+                edge_ids_to_keep.is_some(),
+                edge_ids_to_filter.is_some(),
+                edge_node_ids_to_keep.is_some(),
+                edge_node_ids_to_filter.is_some(),
+                edge_type_ids_to_keep.is_some(),
+                edge_type_ids_to_filter.is_some(),
+                min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
                 filter_selfloops && self.has_selfloops(),
                 filter_parallel_edges && self.is_multigraph(),
                 filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
@@ -216,10 +210,7 @@ impl Graph {
             edges_number -= self.get_selfloop_number();
         }
 
-        match (
-            has_node_filters || edges_number_is_impredictable,
-            has_edge_filters,
-        ) {
+        match (has_node_filters, has_edge_filters) {
             (false, false) => Ok(self.clone()),
             (false, true) => Graph::from_integer_sorted(
                 self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
