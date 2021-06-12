@@ -72,7 +72,7 @@ pub const METHODS_NAMES: &'static [&'static str] = &[
     "remove_edge_types",
     "spanning_arborescence",
     "get_node_type_names_from_node_name",
-    "get_selfloop_nodes_number",
+    "get_selfloop_number",
     "edge_label_holdout",
     "get_unchecked_weighted_closeness_centrality_from_node_id",
     "remove_node_type_id",
