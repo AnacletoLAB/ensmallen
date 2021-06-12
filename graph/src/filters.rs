@@ -111,15 +111,21 @@ impl Graph {
             .iter()
             .any(|value| *value);
 
+        let edges_number_is_impredictable = [
+            edge_ids_to_keep.is_some(),
+            edge_ids_to_filter.is_some(),
+            edge_node_ids_to_keep.is_some(),
+            edge_node_ids_to_filter.is_some(),
+            edge_type_ids_to_keep.is_some(),
+            edge_type_ids_to_filter.is_some(),
+            min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
+        ]
+        .iter()
+        .any(|value| *value);
+
         let has_edge_filters = self.has_edges()
             && [
-                edge_ids_to_keep.is_some(),
-                edge_ids_to_filter.is_some(),
-                edge_node_ids_to_keep.is_some(),
-                edge_node_ids_to_filter.is_some(),
-                edge_type_ids_to_keep.is_some(),
-                edge_type_ids_to_filter.is_some(),
-                min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
+                edges_number_is_impredictable,
                 filter_selfloops && self.has_selfloops(),
                 filter_parallel_edges && self.is_multigraph(),
                 filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
@@ -130,7 +136,7 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let mut last_dst: Option<NodeT> = None;
+        let mut last_edge: Option<(NodeT, NodeT)> = None;
 
         let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
@@ -142,7 +148,7 @@ impl Graph {
             let result = edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
             edge_ids_to_filter.as_ref().map_or(true, |edge_ids| !edge_ids.contains(edge_id)) &&
             // If parallel edges need to be filtered out.
-            (!filter_parallel_edges || last_dst.as_ref().map_or(true, |last_dst| *last_dst!=*dst)) &&
+            (!filter_parallel_edges || last_edge.as_ref().map_or(true, |(last_src, last_dst)| *last_dst!=*dst || *last_src!=*src)) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If singleton nodes with selfloops need to be filtered out
@@ -154,7 +160,7 @@ impl Graph {
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
-            last_dst.replace(*dst);
+            last_edge.replace((*src, *dst));
             result
         };
 
@@ -200,14 +206,27 @@ impl Graph {
                 (!filter_singleton_nodes_with_selfloop || !self.is_singleton_with_selfloops_from_node_id(*node_id))
         };
 
-        match (has_node_filters, has_edge_filters) {
+        let mut edges_number = self.get_directed_edges_number();
+
+        if filter_parallel_edges {
+            edges_number -= self.get_parallel_edges_number();
+        }
+
+        if filter_selfloops {
+            edges_number -= self.get_selfloop_number();
+        }
+
+        match (
+            has_node_filters || edges_number_is_impredictable,
+            has_edge_filters,
+        ) {
             (false, false) => Ok(self.clone()),
             (false, true) => Graph::from_integer_sorted(
                 self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                     .progress_with(pb_edges)
                     .filter(edge_filter)
                     .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
-                self.get_directed_edges_number() as usize,
+                edges_number as usize,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

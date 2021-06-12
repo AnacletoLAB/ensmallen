@@ -20,8 +20,8 @@ fn test_components_size() {
         None,
         false,
         false,
-        6108,
-        242,
+        6,
+        6,
         graph_name.clone(),
     )
     .unwrap();

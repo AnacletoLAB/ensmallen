@@ -312,7 +312,7 @@ impl Graph {
                         Some(Ok((src, dst, edge_type, Some(distance))))
                     }
                 }),
-            (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) as usize,
+            (self.get_directed_edges_number() - self.get_selfloop_number()) as usize,
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

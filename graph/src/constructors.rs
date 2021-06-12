@@ -595,6 +595,7 @@ pub(crate) fn build_edges(
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
     let mut has_detect_singletons_or_trap_nodes: bool = false;
+    let mut duplicated_edges_number: usize = 0;
     let mut connected_nodes_number: NodeT =
         if might_contain_singletons || might_contain_singletons_with_selfloops {
             0
@@ -618,6 +619,7 @@ pub(crate) fn build_edges(
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
+                duplicated_edges_number += 1;
                 continue;
             } else {
                 return Err("A duplicated edge was found while building the graph.".to_owned());
@@ -854,6 +856,17 @@ pub(crate) fn build_edges(
         } else if previous_node_degree > current_node_degree {
             nodes_are_sorted_by_increasing_outbound_node_degree = false;
         }
+    }
+
+    if edges.len() != edges_number - duplicated_edges_number {
+        panic!(
+            concat!(
+                "The provided number of edges {} does not match the number of edges {} obtained after ",
+                "building the Elias-Fano data structure."
+            ),
+            edges_number - duplicated_edges_number,
+            edges.len()
+        );
     }
 
     // If this is the last source node and it is not equal to the number
