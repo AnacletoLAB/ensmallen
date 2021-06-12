@@ -372,7 +372,21 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         assert_eq!(
             graph.has_nodes_sorted_by_decreasing_outbound_node_degree()
                 && graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
-            min_degree == max_degree
+            min_degree == max_degree,
+            concat!(
+                "When the the nodes are sorted both by decreasing and increasing node degree ",
+                "the minimum and maximum node degrees must be equal, and viceversa.\n",
+                "The computed minimum node degree is {}.\n",
+                "The computed maximum node degree is {}.\n",
+                "The result of has_nodes_sorted_by_decreasing_outbound_node_degree is {}.\n",
+                "The result of has_nodes_sorted_by_increasing_outbound_node_degree is {}.\n",
+                "The node degrees are:\n{:?}."
+            ),
+            min_degree,
+            max_degree,
+            graph.has_nodes_sorted_by_decreasing_outbound_node_degree(),
+            graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+            graph.get_unweighted_node_degrees()
         );
     }
 
