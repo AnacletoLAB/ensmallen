@@ -454,6 +454,38 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         );
     }
 
+    if graph.has_node_types() {
+        assert!(graph.has_nodes());
+        if graph.has_unknown_node_types().unwrap() {
+            assert!(graph
+                .iter_node_ids_and_node_type_ids()
+                .any(|(_, node_type)| node_type.is_none()));
+            assert!(graph.get_node_ids_with_unknown_node_types().unwrap().len() > 0);
+        }
+        if graph.has_known_node_types().unwrap() {
+            assert!(graph
+                .iter_node_ids_and_node_type_ids()
+                .any(|(_, node_type)| node_type.is_some()));
+            assert!(graph.get_node_ids_with_known_node_types().unwrap().len() > 0);
+        }
+    }
+
+    if graph.has_edge_types() {
+        assert!(graph.has_edges());
+        if graph.has_unknown_edge_types().unwrap() {
+            assert!(graph
+                .iter_edge_node_ids_and_edge_type_id(true)
+                .any(|(_, _, _, edge_type)| edge_type.is_none()));
+            assert!(graph.get_edge_ids_with_unknown_edge_types().unwrap().len() > 0);
+        }
+        if graph.has_known_edge_types().unwrap() {
+            assert!(graph
+                .iter_edge_node_ids_and_edge_type_id(true)
+                .any(|(_, _, _, edge_type)| edge_type.is_some()));
+            assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
+        }
+    }
+
     assert_eq!(
         graph.singleton_nodes_with_selfloops.is_some(),
         graph.has_singleton_nodes_with_selfloops(),
