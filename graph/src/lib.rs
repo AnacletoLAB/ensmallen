@@ -10,7 +10,7 @@
 //!     .set_numeric_node_ids(Some(true))
 //!     .set_header(Some(false));
 //!  
-//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph").unwrap();
+//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6, 6, "Graph").unwrap();
 //!
 //!
 //! ```

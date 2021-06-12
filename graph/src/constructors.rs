@@ -798,6 +798,7 @@ pub(crate) fn build_edges(
                     if src - last_src > 1 {
                         nodes_are_sorted_by_decreasing_outbound_node_degree = false;
                         nodes_are_sorted_by_increasing_outbound_node_degree = false;
+                        has_detect_singletons_or_trap_nodes = true;
                     }
                     // Update the previous node degree
                     previous_node_degree = current_node_degree;
@@ -892,14 +893,18 @@ pub(crate) fn build_edges(
             concat!(
                 "It has been specified that within the graph we are currently trying to build ",
                 "there are no singletons nor trap nodes, but nodes with outbound node degree zero ",
-                "where found. The graph is {}. It is likely that this is caused by some constructor ",
+                "where found.\n",
+                "The graph is {}.\n",
+                "It is likely that this is caused by some constructor ",
                 "misparametrization of either the might_contain_singletons parameter or the ",
-                "might_contain_trap_nodes parameter.",
-                "The last source node ID of the graph is {} and the nodes number is {}."
+                "might_contain_trap_nodes parameter.\n",
+                "The last source node ID of the graph is {} and the nodes number is {}.\n",
+                "The graph contains {} edges."
             ),
             if directed {"directed"} else {"undirected"},
             last_src,
-            nodes_number
+            nodes_number,
+            edges.len()
         );
     }
 
