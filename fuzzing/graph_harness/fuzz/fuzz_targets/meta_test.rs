@@ -6,5 +6,5 @@ use graph_harness::*;
 fuzz_target!(|data: MetaParams| {
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
-    let _ = meta_test(data);
+    let _ = meta_test_harness(data);
 });

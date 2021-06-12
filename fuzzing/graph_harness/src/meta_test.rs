@@ -1584,7 +1584,7 @@ pub struct MetaParams {
 }
 
 
-pub fn meta_test(data: MetaParams) -> Result<(), String> {
+pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
     let panic_handler_data_before_load = data.clone();
     let data_copy_for_tests = data.clone();
     std::panic::set_hook(Box::new(move |info| {

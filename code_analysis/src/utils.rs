@@ -26,7 +26,7 @@ pub fn skip_file(path: &str) -> bool {
 }
 
 pub fn get_library_sources() -> Vec<Module> {
-    let src_files: Vec<String> = read_dir("../../../graph/src")
+    let src_files: Vec<String> = read_dir("../graph/src")
         .unwrap()
         .map(|path| 
             path.unwrap().path().into_os_string()

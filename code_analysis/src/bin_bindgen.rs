@@ -1,4 +1,4 @@
-use libmetatest::*;
+use libcodeanalysis::*;
 use rust_parser::*;
 use std::collections::HashSet;
 use std::fs;
@@ -7,7 +7,7 @@ use std::fs::read_dir;
 use graph::okapi_bm25_tfidf;
 
 fn get_binding_names() -> HashSet<String> {
-    let bindings_files: Vec<String> = read_dir("../../../bindings/python/src")
+    let bindings_files: Vec<String> = read_dir("../bindings/python/src")
         .unwrap()
         .map(|path| {
             path.unwrap()
@@ -466,7 +466,7 @@ impl EnsmallenGraph {{
     );
 
     fs::write(
-        "../../../bindings/python/src/auto_generated_bindings.rs",
+        "../bindings/python/src/auto_generated_bindings.rs",
         file_content,
     )
     .expect("Cannot weite the automatically generated bindings file");
@@ -521,7 +521,7 @@ pub const TFIDF_FREQUENCIES: &'static [&'static [(&'static str, f64)]] = &[
             .join("\n"),
     );
     fs::write(
-        "../../../bindings/python/src/method_names_list.rs",
+        "../bindings/python/src/method_names_list.rs",
         method_names_list,
     )
     .expect("Cannot write the method names list file");
@@ -529,7 +529,7 @@ pub const TFIDF_FREQUENCIES: &'static [&'static [(&'static str, f64)]] = &[
     assert!(
         std::process::Command::new("cargo")
             .args(&["fmt"])
-            .current_dir("../../../bindings/python")
+            .current_dir("../bindings/python")
             .status()
             .expect("Could not run format on the python bindings")
             .success(),

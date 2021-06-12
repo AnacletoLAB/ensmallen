@@ -1,5 +1,5 @@
 use rust_parser::*;
-use libmetatest::*;
+use libcodeanalysis::*;
 use std::collections::HashSet;
 
 const METHODS_BLACKLIST: &'static [&'static str] = &[
@@ -258,7 +258,7 @@ impl Rng {{
 
 {meta_struct}
 
-pub fn meta_test(data: MetaParams) -> Result<(), String> {{
+pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {{
     let panic_handler_data_before_load = data.clone();
     let data_copy_for_tests = data.clone();
     std::panic::set_hook(Box::new(move |info| {{
@@ -311,5 +311,5 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {{
         meta_struct=meta_struct,
     );
 
-    std::fs::write("../../../fuzzing/graph_harness/src/meta_test.rs", result);
+    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result);
 }

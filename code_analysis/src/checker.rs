@@ -24,6 +24,17 @@ impl Checker {
         self.errors.lock().unwrap().push(error);
     }
 
+    pub fn exit(&self) {
+        let errors = self.errors.lock().unwrap();
+        std::process::exit(
+            if errors.is_empty() {
+                0
+            } else {
+                1
+            }
+        )
+    }
+
     pub fn check(&mut self) {
         self.check_doc();
         self.check_names();
