@@ -841,6 +841,15 @@ pub(crate) fn build_edges(
         first = false;
     }
 
+    if forward_undirected_edges_counter != backward_undirected_edges_counter {
+        return Err(concat!(
+            "You are trying to load an undirected graph ",
+            "from a directed edge list but the edge list is not ",
+            "complete."
+        )
+        .to_owned());
+    }
+
     // We need to update the minimum and maximum node degrees
     // for the last edge.
 
@@ -902,7 +911,7 @@ pub(crate) fn build_edges(
                 "The last source node ID of the graph is {} and the nodes number is {}.\n",
                 "The graph contains {} edges."
             ),
-            if directed {"directed"} else {"undirected"},
+            if directed { "directed" } else { "undirected" },
             last_src,
             nodes_number,
             edges.len()
@@ -929,15 +938,6 @@ pub(crate) fn build_edges(
         }
         // And the maximum weighted node degree
         *max_weighted_node_degree = (*max_weighted_node_degree).max(cwnd);
-    }
-
-    if forward_undirected_edges_counter != backward_undirected_edges_counter {
-        return Err(concat!(
-            "You are trying to load an undirected graph ",
-            "from a directed edge list but the edge list is not ",
-            "complete."
-        )
-        .to_owned());
     }
 
     if !edges.is_empty() && max_node_degree == 0 {
