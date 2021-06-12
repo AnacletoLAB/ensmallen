@@ -594,6 +594,7 @@ pub(crate) fn build_edges(
     let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
+    let mut has_detect_singletons_or_trap_nodes: bool = false;
     let mut connected_nodes_number: NodeT =
         if might_contain_singletons || might_contain_singletons_with_selfloops {
             0
@@ -629,6 +630,7 @@ pub(crate) fn build_edges(
         // decreating outbound node degree.
         if first && src > 0 {
             nodes_are_sorted_by_decreasing_outbound_node_degree = false;
+            has_detect_singletons_or_trap_nodes = true;
         }
 
         match (
@@ -863,6 +865,24 @@ pub(crate) fn build_edges(
     // in the graph are singletons, and the graph does not have any edge.
     if !edges.is_empty() && last_src != nodes_number - 1 {
         nodes_are_sorted_by_increasing_outbound_node_degree = false;
+        has_detect_singletons_or_trap_nodes = true;
+    }
+
+    if has_detect_singletons_or_trap_nodes
+        && !(might_contain_singletons || might_contain_trap_nodes)
+    {
+        panic!(
+            concat!(
+                "It has been specified that within the graph we are currently trying to build ",
+                "there are no singletons ({}) nor trap nodes ({}), but nodes with outbound node degree ",
+                "where found. The graph {}. It is likely that this is caused by some constructor ",
+                "misparametrization of either the might_contain_singletons parameter or the ",
+                "might_contain_trap_nodes parameter."
+            ),
+            might_contain_singletons,
+            might_contain_trap_nodes,
+            if directed {"directed"} else {"undirected"}
+        );
     }
 
     // We update the minimum weighted node degree
