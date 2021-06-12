@@ -612,7 +612,6 @@ pub(crate) fn build_edges(
 
     let mut first = true;
     for value in edges_iter {
-        println!("{:?}", value);
         let (src, dst, edge_type, weight) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
