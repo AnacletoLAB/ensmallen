@@ -1,0 +1,14 @@
+Some(
+    [
+        "has_singleton_edge_types()",
+        "get_one_hot_encoded_known_node_types()",
+        "get_singleton_with_selfloops_node_names()",
+        "iter_unique_node_type_ids_and_counts()",
+        "get_unique_node_type_ids()",
+        "to_dot(use_node_names: Some(true))",
+        "get_singleton_edge_type_names()",
+        "to_transposed(verbose: None)",
+        "iter_unique_edge_type_ids()",
+        "iter_edge_node_names_and_edge_type_name_and_edge_weight(directed: false)",
+    ],
+)

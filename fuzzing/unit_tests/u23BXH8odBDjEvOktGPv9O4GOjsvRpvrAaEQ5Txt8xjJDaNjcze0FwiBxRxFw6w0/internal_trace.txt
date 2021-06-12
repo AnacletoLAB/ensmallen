@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_known_node_types_number()",
+        "par_iter_source_node_ids(directed: false)",
+        "get_unweighted_eigenvector_centrality(maximum_iterations_number: Some(67), tollerance: Some(10843961455707782.0))",
+        "iter_node_names_with_unknown_node_types()",
+        "get_weighted_top_k_central_node_ids(k: 3003121664)",
+        "get_unweighted_node_degrees()",
+        "get_edge_type_id_from_edge_id(edge_id: 14707834144357945051)",
+        "iter_connected_node_ids()",
+        "iter_node_names_and_node_type_names()",
+        "remove_inplace_singleton_edge_types()",
+    ],
+)

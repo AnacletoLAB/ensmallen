@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_edge_weight_from_node_ids_and_edge_type_id(src: 724249387, dst: 724249387, edge_type: Some(11051))",
+        "remove_inplace_edge_weights()",
+        "get_weighted_eccentricity_from_node_id(node_id: 16843009, use_edge_weights_as_probabilities: Some(true))",
+        "filter_from_ids(node_ids_to_keep: None, node_ids_to_filter: None, node_type_ids_to_keep: None, node_type_ids_to_filter: None, node_type_id_to_keep: None, node_type_id_to_filter: None, edge_ids_to_keep: None, edge_ids_to_filter: None, edge_node_ids_to_keep: None, edge_node_ids_to_filter: None, edge_type_ids_to_keep: None, edge_type_ids_to_filter: None, min_edge_weight: None, max_edge_weight: None, filter_singleton_nodes: None, filter_singleton_nodes_with_selfloop: None, filter_selfloops: None, filter_parallel_edges: None, verbose: None)",
+        "validate_edge_id(edge_id: 0)",
+        "get_parallel_edges_number()",
+        "has_weighted_singleton_nodes()",
+        "must_not_be_multigraph()",
+        "get_undirected_edges_number()",
+        "remove_edge_type_id(edge_type_id: 0)",
+    ],
+)

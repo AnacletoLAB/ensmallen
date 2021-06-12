@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_selfloop_nodes_number()",
+        "get_edge_type_names()",
+        "get_singleton_node_names()",
+        "has_selfloop_from_node_id(node_id: 235802126)",
+        "par_iter_edge_node_names_with_known_edge_types(directed: false)",
+        "get_singleton_node_types_number()",
+        "get_node_type_names_counts_hashmap()",
+        "spanning_arborescence_kruskal(verbose: None)",
+        "get_max_encodable_edge_number()",
+        "remove_singleton_edge_types()",
+    ],
+)

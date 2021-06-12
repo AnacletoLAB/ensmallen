@@ -1,4 +1,0 @@
-file,"/Workspace/Github/ensmallen_graph/graph/src/remap.rs"
-line,131
-col,74
-message,called `Option::unwrap()` on a `None` value

@@ -1,0 +1,29 @@
+   0:     0x555555605423 - backtrace::capture::Backtrace::new::h4238892e79b6a940
+   1:     0x555555a5cc69 - graph_harness::handle_panics::dump_backtrace::h549e01b29ab620d3
+   2:     0x555555a5d242 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h41f3bc2eb84415e2
+   3:     0x55555594896a - graph_harness::meta_test::meta_test::{{closure}}::h3e60f9d219754305
+   4:     0x555555c22220 - std::panicking::rust_panic_with_hook::hb5a01416e02405ad
+                               at /rustc/c1e8f3a5857c3c8d095fd212acc6ed442f4cc58b/library/std/src/panicking.rs:626:17
+   5:     0x55555564d5a2 - std::panicking::begin_panic::{{closure}}::h315372075420ce5a
+   6:     0x55555564d56e - std::sys_common::backtrace::__rust_end_short_backtrace::h37ec810070b6fd9c
+   7:     0x5555555b0d2a - std::panicking::begin_panic::h4d6225dd103afce2
+   8:     0x5555557aefb6 - graph::report::<impl graph::graph::Graph>::get_unchecked_formatted_list::hbafdc5ba60d267ba
+   9:     0x5555557a467f - graph::report::<impl graph::graph::Graph>::textual_report::h66e7d5cf39e06968
+  10:     0x555555a5d806 - graph_harness::handle_panics::handle_panics_meta_test_once_loaded::h41f3bc2eb84415e2
+  11:     0x55555594896a - graph_harness::meta_test::meta_test::{{closure}}::h3e60f9d219754305
+  12:     0x555555c22220 - std::panicking::rust_panic_with_hook::hb5a01416e02405ad
+                               at /rustc/c1e8f3a5857c3c8d095fd212acc6ed442f4cc58b/library/std/src/panicking.rs:626:17
+  13:     0x55555564d5a2 - std::panicking::begin_panic::{{closure}}::h315372075420ce5a
+  14:     0x55555564d56e - std::sys_common::backtrace::__rust_end_short_backtrace::h37ec810070b6fd9c
+  15:     0x5555555b0d2a - std::panicking::begin_panic::h4d6225dd103afce2
+  16:     0x5555557aefb6 - graph::report::<impl graph::graph::Graph>::get_unchecked_formatted_list::hbafdc5ba60d267ba
+  17:     0x5555557a467f - graph::report::<impl graph::graph::Graph>::textual_report::h66e7d5cf39e06968
+  18:     0x5555556b4ad0 - graph::test_utilities::test_graph_properties::h9c32e5214dd42f95
+  19:     0x55555569c82f - graph::test_utilities::_default_test_suite::h0d68a56b63ecb4ca
+  20:     0x5555559d930f - graph_harness::meta_test::meta_test::h6603506ce2da5dce
+  21:     0x5555555d7de4 - meta_test::main::hb2b6c3d13351494d
+  22:     0x5555555d7f7e - std::sys_common::backtrace::__rust_begin_short_backtrace::h4125a10c788edc47
+  23:     0x5555555d7a2b - main
+  24:     0x7ffff6e22bf7 - __libc_start_main
+  25:     0x5555555d6d4a - _start
+  26:                0x0 - <unknown>

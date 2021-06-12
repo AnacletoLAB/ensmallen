@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_weighted_triads_number()",
+        "textual_report()",
+        "validate_node_ids(node_ids: [])",
+        "textual_report()",
+        "to_dot(use_node_names: None)",
+        "par_iter_node_names_with_known_node_types()",
+        "get_weighted_top_k_central_node_ids(k: 0)",
+        "validate_node_type_ids(node_type_ids: [None])",
+        "get_node_ids_with_known_node_types()",
+        "remove_edge_type_id(edge_type_id: 0)",
+    ],
+)

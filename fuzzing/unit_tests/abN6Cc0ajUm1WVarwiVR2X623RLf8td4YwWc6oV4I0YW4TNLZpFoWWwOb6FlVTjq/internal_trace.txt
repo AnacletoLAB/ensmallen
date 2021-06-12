@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_node_ids_with_unknown_node_types()",
+        "to_transposed(verbose: None)",
+        "has_edges()",
+        "iter_edge_node_names_and_edge_type_name(directed: false)",
+        "iter_node_names_with_unknown_node_types()",
+        "iter_singleton_node_type_ids()",
+        "get_name()",
+        "get_max_encodable_edge_number()",
+        "get_unweighted_eigenvector_centrality(maximum_iterations_number: None, tollerance: None)",
+        "get_maximum_multilabel_count()",
+    ],
+)

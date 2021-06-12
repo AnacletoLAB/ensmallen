@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_mininum_edge_weight()",
+        "has_unknown_edge_types()",
+        "get_edge_type_id_counts_hashmap()",
+        "par_iter_edge_node_ids_with_known_edge_types(directed: true)",
+        "get_edge_node_names_with_unknown_edge_types(directed: false)",
+        "iter_unique_node_type_ids_and_counts()",
+        "must_have_edge_weights_representing_probabilities()",
+        "sort_by_increasing_outbound_node_degree(verbose: None)",
+        "par_iter_node_names_with_unknown_node_types()",
+        "remove_inplace_singleton_edge_types()",
+    ],
+)

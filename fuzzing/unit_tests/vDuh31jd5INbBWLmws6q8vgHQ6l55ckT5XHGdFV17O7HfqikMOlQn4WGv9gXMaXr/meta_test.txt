@@ -1,0 +1,885 @@
+MetaParams {
+    seed: 2030944120229101012,
+    getunweightedlaplaciantransformedgraph: GetUnweightedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getunweightedrandomwalknormalizedlaplaciantransformedgraph: GetUnweightedRandomWalkNormalizedLaplacianTransformedGraph {
+        verbose: Some(
+            true,
+        ),
+    },
+    getunweightedsymmetricnormalizedlaplaciantransformedgraph: GetUnweightedSymmetricNormalizedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getunweightedsymmetricnormalizedtransformedgraph: GetUnweightedSymmetricNormalizedTransformedGraph {
+        verbose: Some(
+            true,
+        ),
+    },
+    getweightedlaplaciantransformedgraph: GetWeightedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getweightedsymmetricnormalizedlaplaciantransformedgraph: GetWeightedSymmetricNormalizedLaplacianTransformedGraph {
+        verbose: Some(
+            false,
+        ),
+    },
+    getweightedsymmetricnormalizedtransformedgraph: GetWeightedSymmetricNormalizedTransformedGraph {
+        verbose: Some(
+            false,
+        ),
+    },
+    getweightedrandomwalknormalizedlaplaciantransformedgraph: GetWeightedRandomWalkNormalizedLaplacianTransformedGraph {
+        verbose: Some(
+            false,
+        ),
+    },
+    issingletonfromnodeid: IsSingletonFromNodeId {
+        node_id: 200872774,
+    },
+    issingletonwithselfloopsfromnodeid: IsSingletonWithSelfloopsFromNodeId {
+        node_id: 1072124804,
+    },
+    hasnodetypeid: HasNodeTypeId {
+        node_type_id: 3423,
+    },
+    hasedgetypeid: HasEdgeTypeId {
+        edge_type_id: 44410,
+    },
+    hasedgefromnodeids: HasEdgeFromNodeIds {
+        src: 3179180367,
+        dst: 1138013546,
+    },
+    hasselfloopfromnodeid: HasSelfloopFromNodeId {
+        node_id: 2249347657,
+    },
+    hasedgefromnodeidsandedgetypeid: HasEdgeFromNodeIdsAndEdgeTypeId {
+        src: 1591403925,
+        dst: 1714716331,
+        edge_type: Some(
+            54059,
+        ),
+    },
+    istrapnodefromnodeid: IsTrapNodeFromNodeId {
+        node_id: 161334477,
+    },
+    sortbyincreasingoutboundnodedegree: SortByIncreasingOutboundNodeDegree {
+        verbose: Some(
+            false,
+        ),
+    },
+    sortbydecreasingoutboundnodedegree: SortByDecreasingOutboundNodeDegree {
+        verbose: None,
+    },
+    getdenseweightedadjacencymatrix: GetDenseWeightedAdjacencyMatrix {
+        weight: None,
+    },
+    iteredgeidsfromnodeids: IterEdgeIdsFromNodeIds {
+        src: 1333681966,
+        dst: 3550900353,
+    },
+    iteredgenodeidsandedgetypeidfromedgetypeid: IterEdgeNodeIdsAndEdgeTypeIdFromEdgeTypeId {
+        edge_type_id: None,
+        directed: false,
+    },
+    iternodeidsandnodetypeidsfromnodetypeid: IterNodeIdsAndNodeTypeIdsFromNodeTypeId {
+        node_type_id: None,
+    },
+    iternodenamesandnodetypenamesfromnodetypeid: IterNodeNamesAndNodeTypeNamesFromNodeTypeId {
+        node_type_id: Some(
+            39752,
+        ),
+    },
+    iteredgenodenamesandedgetypenamefromedgetypeid: IterEdgeNodeNamesAndEdgeTypeNameFromEdgeTypeId {
+        edge_type_id: None,
+        directed: true,
+    },
+    encodeedge: EncodeEdge {
+        src: 636766544,
+        dst: 1132086472,
+    },
+    decodeedge: DecodeEdge {
+        edge: 16930105873343520715,
+    },
+    validatenodeid: ValidateNodeId {
+        node_id: 479624843,
+    },
+    validatenodeids: ValidateNodeIds {
+        node_ids: [
+            2486394702,
+            3463344111,
+            1591942278,
+        ],
+    },
+    validateedgeid: ValidateEdgeId {
+        edge_id: 7955095668349417312,
+    },
+    validateedgeids: ValidateEdgeIds {
+        edge_ids: [
+            3535714091956294002,
+        ],
+    },
+    validatenodetypeid: ValidateNodeTypeId {
+        node_type_id: Some(
+            3937,
+        ),
+    },
+    validatenodetypeids: ValidateNodeTypeIds {
+        node_type_ids: [
+            None,
+        ],
+    },
+    validateedgetypeid: ValidateEdgeTypeId {
+        edge_type_id: None,
+    },
+    validateedgetypeids: ValidateEdgeTypeIds {
+        edge_type_ids: [],
+    },
+    itersourcenodeids: IterSourceNodeIds {
+        directed: true,
+    },
+    paritersourcenodeids: ParIterSourceNodeIds {
+        directed: true,
+    },
+    iterdestinationnodeids: IterDestinationNodeIds {
+        directed: false,
+    },
+    pariterdestinationnodeids: ParIterDestinationNodeIds {
+        directed: true,
+    },
+    iteredgenodeids: IterEdgeNodeIds {
+        directed: true,
+    },
+    iteredges: IterEdges {
+        directed: false,
+    },
+    pariteredgenodeids: ParIterEdgeNodeIds {
+        directed: false,
+    },
+    pariteredges: ParIterEdges {
+        directed: false,
+    },
+    iteredgenodeidsandedgetypeid: IterEdgeNodeIdsAndEdgeTypeId {
+        directed: true,
+    },
+    iteredgenodenamesandedgetypename: IterEdgeNodeNamesAndEdgeTypeName {
+        directed: false,
+    },
+    pariteredgenodenamesandedgetypename: ParIterEdgeNodeNamesAndEdgeTypeName {
+        directed: false,
+    },
+    pariteredgenodeidsandedgetypeid: ParIterEdgeNodeIdsAndEdgeTypeId {
+        directed: true,
+    },
+    pariteredgenodenamesandedgetypenameandedgeweight: ParIterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeight {
+        directed: true,
+    },
+    iteredgenodenamesandedgetypenameandedgeweight: IterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeight {
+        directed: false,
+    },
+    pariteredgenodeidsandedgetypeidandedgeweight: ParIterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeight {
+        directed: false,
+    },
+    iteredgenodeidsandedgetypeidandedgeweight: IterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeight {
+        directed: false,
+    },
+    iteruniqueedgenodeids: IterUniqueEdgeNodeIds {
+        directed: true,
+    },
+    iteredgenodeidswithunknownedgetypes: IterEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodeidswithknownedgetypes: IterEdgeNodeIdsWithKnownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodenameswithunknownedgetypes: IterEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodenameswithknownedgetypes: IterEdgeNodeNamesWithKnownEdgeTypes {
+        directed: false,
+    },
+    pariteredgenodeidswithunknownedgetypes: ParIterEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: true,
+    },
+    pariteredgenodeidswithknownedgetypes: ParIterEdgeNodeIdsWithKnownEdgeTypes {
+        directed: true,
+    },
+    pariteredgenodenameswithunknownedgetypes: ParIterEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: true,
+    },
+    pariteredgenodenameswithknownedgetypes: ParIterEdgeNodeNamesWithKnownEdgeTypes {
+        directed: true,
+    },
+    removeinplacenodetypeids: RemoveInplaceNodeTypeIds {
+        node_type_ids_to_remove: [],
+    },
+    removeinplaceedgetypeids: RemoveInplaceEdgeTypeIds {
+        edge_type_ids_to_remove: [
+            53123,
+        ],
+    },
+    removenodetypeid: RemoveNodeTypeId {
+        node_type_id: 59315,
+    },
+    removeedgetypeid: RemoveEdgeTypeId {
+        edge_type_id: 64280,
+    },
+    removeedgetypes: RemoveEdgeTypes {
+        verbose: Some(
+            false,
+        ),
+    },
+    getunweightednumberoftriangles: GetUnweightedNumberOfTriangles {
+        normalize: Some(
+            true,
+        ),
+        low_centrality: Some(
+            6122180630185775409,
+        ),
+        verbose: Some(
+            false,
+        ),
+    },
+    getunweightedtransitivity: GetUnweightedTransitivity {
+        low_centrality: Some(
+            9608010553109751164,
+        ),
+        verbose: None,
+    },
+    getunweightednumberoftrianglespernode: GetUnweightedNumberOfTrianglesPerNode {
+        normalize: Some(
+            false,
+        ),
+        low_centrality: None,
+        verbose: None,
+    },
+    iterclusteringcoefficientpernode: IterClusteringCoefficientPerNode {
+        low_centrality: Some(
+            302269611119918742,
+        ),
+        verbose: Some(
+            false,
+        ),
+    },
+    getclusteringcoefficientpernode: GetClusteringCoefficientPerNode {
+        low_centrality: None,
+        verbose: None,
+    },
+    getclusteringcoefficient: GetClusteringCoefficient {
+        low_centrality: Some(
+            4068630803003224628,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getaverageclusteringcoefficient: GetAverageClusteringCoefficient {
+        low_centrality: None,
+        verbose: None,
+    },
+    remapfromnodeids: RemapFromNodeIds {
+        node_ids: [
+            66891883,
+            2261358546,
+            3423200613,
+            1010096122,
+            363919010,
+        ],
+        verbose: None,
+    },
+    nodelabelholdout: NodeLabelHoldout {
+        train_size: -0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040952782051283955,
+        use_stratification: None,
+        random_state: None,
+    },
+    edgelabelholdout: EdgeLabelHoldout {
+        train_size: -147632582215695120000000.0,
+        use_stratification: Some(
+            false,
+        ),
+        random_state: Some(
+            13624771614930319289,
+        ),
+    },
+    randomsubgraph: RandomSubgraph {
+        nodes_number: 1038458216,
+        random_state: Some(
+            13638179016550105232,
+        ),
+        verbose: Some(
+            false,
+        ),
+    },
+    getunweightedminimumpathnodeidsfromnodeids: GetUnweightedMinimumPathNodeIdsFromNodeIds {
+        src_node_id: 2196913129,
+        dst_node_id: 1400005930,
+        maximal_depth: None,
+    },
+    getunweightedkshortestpathnodeidsfromnodeids: GetUnweightedKShortestPathNodeIdsFromNodeIds {
+        src_node_id: 1775125951,
+        dst_node_id: 1042653578,
+        k: 3854066868536278222,
+    },
+    getunweightedeccentricityfromnodeid: GetUnweightedEccentricityFromNodeId {
+        node_id: 2221824291,
+    },
+    getweightedeccentricityfromnodeid: GetWeightedEccentricityFromNodeId {
+        node_id: 193054238,
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+    },
+    getweightedminimumpathnodeidsfromnodeids: GetWeightedMinimumPathNodeIdsFromNodeIds {
+        src_node_id: 1195591640,
+        dst_node_id: 1195853639,
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        maximal_depth: Some(
+            1195853639,
+        ),
+    },
+    getbreathfirstsearchfromnodeids: GetBreathFirstSearchFromNodeIds {
+        src_node_id: 1195853639,
+        maybe_dst_node_id: Some(
+            1195853639,
+        ),
+        maybe_dst_node_ids: Some(
+            [
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                1195853639,
+                2256947015,
+            ],
+        ),
+        compute_distances: None,
+        compute_predecessors: None,
+        compute_visited: None,
+        maximal_depth: None,
+    },
+    getdijkstrafromnodeids: GetDijkstraFromNodeIds {
+        src_node_id: 2256963206,
+        maybe_dst_node_id: None,
+        maybe_dst_node_ids: None,
+        compute_predecessors: None,
+        maximal_depth: None,
+        use_edge_weights_as_probabilities: None,
+    },
+    getunweighteddiameter: GetUnweightedDiameter {
+        ignore_infinity: None,
+        verbose: None,
+    },
+    getweighteddiameter: GetWeightedDiameter {
+        ignore_infinity: None,
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        verbose: Some(
+            false,
+        ),
+    },
+    getconnectedcomponentsnumber: GetConnectedComponentsNumber {
+        verbose: None,
+    },
+    getsourcenodeids: GetSourceNodeIds {
+        directed: false,
+    },
+    getsourcenames: GetSourceNames {
+        directed: false,
+    },
+    getdestinationnodeids: GetDestinationNodeIds {
+        directed: false,
+    },
+    getdestinationnames: GetDestinationNames {
+        directed: false,
+    },
+    getedgenodeids: GetEdgeNodeIds {
+        directed: false,
+    },
+    getedgenodenames: GetEdgeNodeNames {
+        directed: false,
+    },
+    getedgenodeidswithunknownedgetypes: GetEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: false,
+    },
+    getedgenodeidswithknownedgetypes: GetEdgeNodeIdsWithKnownEdgeTypes {
+        directed: false,
+    },
+    getedgenodenameswithunknownedgetypes: GetEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: false,
+    },
+    getedgenodenameswithknownedgetypes: GetEdgeNodeNamesWithKnownEdgeTypes {
+        directed: true,
+    },
+    getnodeconnectedcomponentids: GetNodeConnectedComponentIds {
+        verbose: Some(
+            true,
+        ),
+    },
+    touppertriangular: ToUpperTriangular {
+        verbose: None,
+    },
+    tolowertriangular: ToLowerTriangular {
+        verbose: Some(
+            true,
+        ),
+    },
+    tomaindiagonal: ToMainDiagonal {
+        verbose: Some(
+            false,
+        ),
+    },
+    toantidiagonal: ToAntiDiagonal {
+        verbose: Some(
+            true,
+        ),
+    },
+    tobidiagonal: ToBidiagonal {
+        verbose: None,
+    },
+    toarrowhead: ToArrowhead {
+        verbose: None,
+    },
+    totransposed: ToTransposed {
+        verbose: None,
+    },
+    tocomplementary: ToComplementary {
+        verbose: None,
+    },
+    getnodereportfromnodeid: GetNodeReportFromNodeId {
+        node_id: 2778174858,
+    },
+    filterfromids: FilterFromIds {
+        node_ids_to_keep: None,
+        node_ids_to_filter: Some(
+            [],
+        ),
+        node_type_ids_to_keep: None,
+        node_type_ids_to_filter: Some(
+            [
+                Some(
+                    [
+                        53462,
+                        24887,
+                    ],
+                ),
+                None,
+                None,
+                None,
+            ],
+        ),
+        node_type_id_to_keep: Some(
+            [],
+        ),
+        node_type_id_to_filter: None,
+        edge_ids_to_keep: Some(
+            [],
+        ),
+        edge_ids_to_filter: None,
+        edge_node_ids_to_keep: None,
+        edge_node_ids_to_filter: Some(
+            [],
+        ),
+        edge_type_ids_to_keep: Some(
+            [
+                Some(
+                    49885,
+                ),
+            ],
+        ),
+        edge_type_ids_to_filter: Some(
+            [
+                Some(
+                    22016,
+                ),
+            ],
+        ),
+        min_edge_weight: None,
+        max_edge_weight: Some(
+            -0.00000000000000000000006316311,
+        ),
+        filter_singleton_nodes: None,
+        filter_singleton_nodes_with_selfloop: Some(
+            true,
+        ),
+        filter_selfloops: Some(
+            true,
+        ),
+        filter_parallel_edges: Some(
+            true,
+        ),
+        verbose: None,
+    },
+    dropunknownnodetypes: DropUnknownNodeTypes {
+        verbose: None,
+    },
+    dropunknownedgetypes: DropUnknownEdgeTypes {
+        verbose: None,
+    },
+    dropsingletonnodes: DropSingletonNodes {
+        verbose: Some(
+            true,
+        ),
+    },
+    dropsingletonnodeswithselfloops: DropSingletonNodesWithSelfloops {
+        verbose: Some(
+            false,
+        ),
+    },
+    dropdisconnectednodes: DropDisconnectedNodes {
+        verbose: Some(
+            true,
+        ),
+    },
+    dropselfloops: DropSelfloops {
+        verbose: None,
+    },
+    dropparalleledges: DropParallelEdges {
+        verbose: None,
+    },
+    spanningarborescencekruskal: SpanningArborescenceKruskal {
+        verbose: Some(
+            true,
+        ),
+    },
+    spanningarborescence: SpanningArborescence {
+        verbose: Some(
+            true,
+        ),
+    },
+    connectedcomponents: ConnectedComponents {
+        verbose: None,
+    },
+    enable: Enable {
+        vector_sources: None,
+        vector_destinations: None,
+        vector_cumulative_node_degrees: None,
+    },
+    getnodelabelpredictiontuplefromnodeids: GetNodeLabelPredictionTupleFromNodeIds {
+        node_ids: [
+            1855787544,
+        ],
+        random_state: 17680696272439410523,
+        include_central_node: Some(
+            true,
+        ),
+        return_edge_weights: Some(
+            false,
+        ),
+        offset: 3050231506,
+        max_neighbours: Some(
+            1794705309,
+        ),
+    },
+    pariteredgepredictionmetrics: ParIterEdgePredictionMetrics {
+        normalize: None,
+        verbose: None,
+    },
+    getokapibm25nodefeaturepropagation: GetOkapiBm25NodeFeaturePropagation {
+        features: [
+            [],
+            [],
+        ],
+        iterations: Some(
+             204,
+        ),
+        maximal_distance: None,
+        k1: None,
+        b: None,
+        include_central_node: Some(
+            false,
+        ),
+        verbose: None,
+    },
+    getokapibm25nodelabelpropagation: GetOkapiBm25NodeLabelPropagation {
+        iterations: Some(
+             110,
+        ),
+        maximal_distance: Some(
+            2161953733740811950,
+        ),
+        k1: None,
+        b: None,
+        verbose: Some(
+            false,
+        ),
+    },
+    isconnected: IsConnected {
+        verbose: Some(
+            true,
+        ),
+    },
+    gettransitiveclosure: GetTransitiveClosure {
+        iterations: Some(
+            2314604533,
+        ),
+        verbose: None,
+    },
+    getunweightedallshortestpaths: GetUnweightedAllShortestPaths {
+        iterations: None,
+        verbose: None,
+    },
+    getweightedallshortestpaths: GetWeightedAllShortestPaths {
+        iterations: Some(
+            4128240989,
+        ),
+        use_edge_weights_as_probabilities: Some(
+            false,
+        ),
+        verbose: None,
+    },
+    getsourcenodeidfromedgeid: GetSourceNodeIdFromEdgeId {
+        edge_id: 9953433737236424506,
+    },
+    getdestinationnodeidfromedgeid: GetDestinationNodeIdFromEdgeId {
+        edge_id: 15645312204315290795,
+    },
+    getsourcenodenamefromedgeid: GetSourceNodeNameFromEdgeId {
+        edge_id: 18347044829126414087,
+    },
+    getdestinationnodenamefromedgeid: GetDestinationNodeNameFromEdgeId {
+        edge_id: 4469475335932849808,
+    },
+    getnodenamesfromedgeid: GetNodeNamesFromEdgeId {
+        edge_id: 16174416714240165432,
+    },
+    getnodeidsfromedgeid: GetNodeIdsFromEdgeId {
+        edge_id: 11248237321269712612,
+    },
+    getedgeidfromnodeids: GetEdgeIdFromNodeIds {
+        src: 16777215,
+        dst:    0,
+    },
+    getnodeidsandedgetypeidfromedgeid: GetNodeIdsAndEdgeTypeIdFromEdgeId {
+        edge_id: 4278190080,
+    },
+    getnodeidsandedgetypeidandedgeweightfromedgeid: GetNodeIdsAndEdgeTypeIdAndEdgeWeightFromEdgeId {
+        edge_id:    0,
+    },
+    getunweightedtopkcentralnodeids: GetUnweightedTopKCentralNodeIds {
+        k: 4278190080,
+    },
+    getweightedtopkcentralnodeids: GetWeightedTopKCentralNodeIds {
+        k:    0,
+    },
+    getunweightednodedegreefromnodeid: GetUnweightedNodeDegreeFromNodeId {
+        node_id:    0,
+    },
+    getweightednodedegreefromnodeid: GetWeightedNodeDegreeFromNodeId {
+        node_id:    0,
+    },
+    gettopkcentralnodenames: GetTopKCentralNodeNames {
+        k: 164213504,
+    },
+    getnodetypeidfromnodeid: GetNodeTypeIdFromNodeId {
+        node_id: 1132244039,
+    },
+    getedgetypeidfromedgeid: GetEdgeTypeIdFromEdgeId {
+        edge_id: 9994687170200312298,
+    },
+    getnodetypenamesfromnodeid: GetNodeTypeNamesFromNodeId {
+        node_id: 249294868,
+    },
+    getedgetypenamefromedgeid: GetEdgeTypeNameFromEdgeId {
+        edge_id: 5421151000209298897,
+    },
+    getedgetypenamefromedgetypeid: GetEdgeTypeNameFromEdgeTypeId {
+        edge_type_id: 23239,
+    },
+    getedgeweightfromedgeid: GetEdgeWeightFromEdgeId {
+        edge_id: 3690471420426661294,
+    },
+    getedgeweightfromnodeids: GetEdgeWeightFromNodeIds {
+        src: 892940343,
+        dst: 825635125,
+    },
+    getedgeweightfromnodeidsandedgetypeid: GetEdgeWeightFromNodeIdsAndEdgeTypeId {
+        src:    0,
+        dst:    0,
+        edge_type: None,
+    },
+    getnodenamefromnodeid: GetNodeNameFromNodeId {
+        node_id:    0,
+    },
+    getedgenodenamesfromedgenodeids: GetEdgeNodeNamesFromEdgeNodeIds {
+        edge_node_ids: [],
+    },
+    getedgecountfromedgetypeid: GetEdgeCountFromEdgeTypeId {
+        edge_type_id: None,
+    },
+    getnodecountfromnodetypeid: GetNodeCountFromNodeTypeId {
+        node_type_id: None,
+    },
+    getneighbournodeidsfromnodeid: GetNeighbourNodeIdsFromNodeId {
+        node_id:    0,
+    },
+    getminmaxedgeidsfromnodeids: GetMinmaxEdgeIdsFromNodeIds {
+        src:    0,
+        dst:    0,
+    },
+    getedgeidfromnodeidsandedgetypeid: GetEdgeIdFromNodeIdsAndEdgeTypeId {
+        src:    0,
+        dst:    0,
+        edge_type: None,
+    },
+    getminmaxedgeidsfromsourcenodeid: GetMinmaxEdgeIdsFromSourceNodeId {
+        src:    0,
+    },
+    getnodetypenamefromnodetypeid: GetNodeTypeNameFromNodeTypeId {
+        node_type_id:    0,
+    },
+    pariterunweightedclosenesscentrality: ParIterUnweightedClosenessCentrality {
+        verbose: None,
+    },
+    pariterweightedclosenesscentrality: ParIterWeightedClosenessCentrality {
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getunweightedclosenesscentrality: GetUnweightedClosenessCentrality {
+        verbose: Some(
+            true,
+        ),
+    },
+    getweightedclosenesscentrality: GetWeightedClosenessCentrality {
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    pariterunweightedharmoniccentrality: ParIterUnweightedHarmonicCentrality {
+        verbose: Some(
+            true,
+        ),
+    },
+    pariterweightedharmoniccentrality: ParIterWeightedHarmonicCentrality {
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getunweightedharmoniccentrality: GetUnweightedHarmonicCentrality {
+        verbose: Some(
+            true,
+        ),
+    },
+    getweightedharmoniccentrality: GetWeightedHarmonicCentrality {
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getstresscentrality: GetStressCentrality {
+        normalize: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getbetweennesscentrality: GetBetweennessCentrality {
+        normalize: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getunweightedeigenvectorcentrality: GetUnweightedEigenvectorCentrality {
+        maximum_iterations_number: Some(
+              67,
+        ),
+        tollerance: Some(
+            10843961455707782.0,
+        ),
+    },
+    getweightedeigenvectorcentrality: GetWeightedEigenvectorCentrality {
+        maximum_iterations_number: Some(
+              67,
+        ),
+        tollerance: Some(
+            10843961455707782.0,
+        ),
+    },
+    todot: ToDot {
+        use_node_names: Some(
+            true,
+        ),
+    },
+    getunweightedpreferentialattachmentfromnodeids: GetUnweightedPreferentialAttachmentFromNodeIds {
+        source_node_id: 1128481603,
+        destination_node_id: 1128481603,
+        normalize: true,
+    },
+    getweightedpreferentialattachmentfromnodeids: GetWeightedPreferentialAttachmentFromNodeIds {
+        source_node_id: 1128481603,
+        destination_node_id: 1128481603,
+        normalize: true,
+    },
+    getjaccardcoefficientfromnodeids: GetJaccardCoefficientFromNodeIds {
+        source_node_id: 1128481603,
+        destination_node_id: 1128481603,
+    },
+    getadamicadarindexfromnodeids: GetAdamicAdarIndexFromNodeIds {
+        source_node_id: 3544400707,
+        destination_node_id: 1128481603,
+    },
+    getunweightedresourceallocationindexfromnodeids: GetUnweightedResourceAllocationIndexFromNodeIds {
+        source_node_id: 1128481603,
+        destination_node_id: 1128481603,
+    },
+    getweightedresourceallocationindexfromnodeids: GetWeightedResourceAllocationIndexFromNodeIds {
+        source_node_id: 1128481603,
+        destination_node_id: 1128481603,
+    },
+    from_vec: FromVecHarnessParams {
+        directed: true,
+        directed_edge_list: true,
+        ignore_duplicated_nodes: true,
+        ignore_duplicated_edges: true,
+        verbose: true,
+        numeric_edge_types_ids: false,
+        numeric_node_ids: false,
+        numeric_edge_node_ids: false,
+        numeric_node_types_ids: true,
+        has_node_types: true,
+        has_edge_types: true,
+        has_edge_weights: false,
+        edges: [
+            Ok(
+                (
+                    "CCCCCCCCCMCCCCCCCCCCCCCCCC",
+                    "C",
+                    Some(
+                        "CCCCCCC",
+                    ),
+                    None,
+                ),
+            ),
+            Ok(
+                (
+                    "CCCCCCCCCC\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}",
+                    "\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\u{0}\t",
+                    None,
+                    None,
+                ),
+            ),
+        ],
+        nodes: None,
+    },
+}

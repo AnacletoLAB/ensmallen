@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_node_ids_from_edge_id(edge_id: 14457405049444688294)",
+        "iter_unique_node_type_ids_and_counts()",
+        "get_unweighted_minimum_node_degree()",
+        "remove_edge_weights()",
+        "get_unweighted_top_k_central_node_ids(k: 3587560917)",
+        "iter_edge_ids_with_unknown_edge_types()",
+        "iter_connected_node_ids()",
+        "get_source_node_id_from_edge_id(edge_id: 12153149036796881064)",
+        "iter_singleton_node_ids()",
+        "remove_inplace_singleton_edge_types()",
+    ],
+)

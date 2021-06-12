@@ -1,0 +1,14 @@
+Some(
+    [
+        "spanning_arborescence(verbose: Some(true))",
+        "iter_edge_node_ids_and_edge_weight()",
+        "get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id: 145103553, dst_node_id: 2372226985, maximal_depth: Some(648371374))",
+        "get_dense_binary_adjacency_matrix()",
+        "iter_unique_edge_node_ids(directed: false)",
+        "iter_node_ids()",
+        "get_singleton_nodes_number()",
+        "compute_hash()",
+        "get_singleton_edge_type_names()",
+        "remove_edge_type_id(edge_type_id: 0)",
+    ],
+)
