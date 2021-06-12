@@ -137,14 +137,14 @@ fn generic_integer_operator(
     might_contain_singletons: bool,
     might_contain_singletons_with_selfloops: bool,
     might_contain_trap_nodes: bool,
-) -> Result<Graph, String> {
+) -> Graph {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
     let edges_iterator = graphs
         .into_par_iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(main.directed)
+            one.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -203,6 +203,7 @@ fn generic_integer_operator(
         might_contain_trap_nodes,
         false,
     )
+    .unwrap()
 }
 
 impl<'a, 'b> Graph {
@@ -300,7 +301,7 @@ impl Graph {
         might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
-            true => generic_integer_operator(
+            true => Ok(generic_integer_operator(
                 self,
                 other,
                 operator,
@@ -308,7 +309,7 @@ impl Graph {
                 might_contain_singletons,
                 might_contain_singletons_with_selfloops,
                 might_contain_trap_nodes,
-            ),
+            )),
             false => generic_string_operator(
                 self,
                 other,

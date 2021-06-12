@@ -248,6 +248,8 @@ pub fn default_holdout_test_suite(
     for g in &[graph, train, test] {
         validate_vocabularies(g);
     }
+    test_graph_properties(train, None)?;
+    test_graph_properties(test, None)?;
     assert!(
         !train.overlaps(&test)?,
         "Training graph overlaps with test graph!"
@@ -314,7 +316,7 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: Option<bool>) {
     assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }
 
-pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
@@ -835,7 +837,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         graph.has_edge_types()
     );
 
-    graph.set_name(graph.get_name());
     graph.strongly_connected_components();
 
     // Checking that the connected components are a dense range.
