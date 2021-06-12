@@ -456,6 +456,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     if graph.has_node_types() {
         assert!(graph.has_nodes());
+        assert_eq!(
+            graph.get_known_node_types_number().unwrap(),
+            graph
+                .iter_node_ids_and_node_type_ids()
+                .map(|(_, node_type)| node_type.is_some() as NodeT)
+                .sum()
+        );
+        assert_eq!(
+            graph.get_unknown_node_types_number().unwrap(),
+            graph
+                .iter_node_ids_and_node_type_ids()
+                .map(|(_, node_type)| node_type.is_none() as NodeT)
+                .sum()
+        );
         if graph.has_unknown_node_types().unwrap() {
             assert!(graph
                 .iter_node_ids_and_node_type_ids()
@@ -472,6 +486,20 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
 
     if graph.has_edge_types() {
         assert!(graph.has_edges());
+        assert_eq!(
+            graph.get_known_edge_types_number().unwrap(),
+            graph
+                .iter_edge_node_ids_and_edge_type_id(true)
+                .map(|(_, _, _, edge_type)| edge_type.is_some() as EdgeT)
+                .sum()
+        );
+        assert_eq!(
+            graph.get_unknown_edge_types_number().unwrap(),
+            graph
+                .iter_edge_node_ids_and_edge_type_id(true)
+                .map(|(_, _, _, edge_type)| edge_type.is_none() as EdgeT)
+                .sum()
+        );
         if graph.has_unknown_edge_types().unwrap() {
             assert!(graph
                 .iter_edge_node_ids_and_edge_type_id(true)
