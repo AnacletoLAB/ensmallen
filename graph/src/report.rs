@@ -674,19 +674,18 @@ impl Graph {
             mode_node_degree = self.get_unweighted_node_degrees_mode().unwrap(),
             mean_node_degree = self.get_unweighted_node_degrees_mean().unwrap(),
             node_degree_median = self.get_unweighted_node_degrees_median().unwrap(),
-            list_of_most_central_nodes = "DEUS",
-            // list_of_most_central_nodes = self.get_unchecked_formatted_list(
-            //     self.get_unweighted_top_k_central_node_ids(5)
-            //         .into_iter()
-            //         .filter(|node_id| {
-            //             self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
-            //         })
-            //         .map(|node_id| {
-            //             self.get_unchecked_succinct_node_description(node_id)
-            //         })
-            //         .collect::<Vec<_>>()
-            //         .as_ref()
-            // )
+            list_of_most_central_nodes = self.get_unchecked_formatted_list(
+                self.get_unweighted_top_k_central_node_ids(5).unwrap()
+                    .into_iter()
+                    .filter(|node_id| {
+                        self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                    })
+                    .map(|node_id| {
+                        self.get_unchecked_succinct_node_description(node_id)
+                    })
+                    .collect::<Vec<_>>()
+                    .as_ref()
+            )
         )
     }
 
@@ -851,16 +850,15 @@ impl Graph {
             weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
-            weighted_list_of_most_central_nodes = "DESU",
-            // weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
-            //     self.get_weighted_top_k_central_node_ids(5).unwrap()
-            //         .into_iter()
-            //         .map(|node_id| {
-            //             self.get_unchecked_succinct_node_description(node_id)
-            //         })
-            //         .collect::<Vec<_>>()
-            //         .as_ref()
-            // )
+            weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
+                self.get_weighted_top_k_central_node_ids(5).unwrap()
+                    .into_iter()
+                    .map(|node_id| {
+                        self.get_unchecked_succinct_node_description(node_id)
+                    })
+                    .collect::<Vec<_>>()
+                    .as_ref()
+            )
         )
     }
 
