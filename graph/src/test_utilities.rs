@@ -365,6 +365,18 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         )
     );
 
+    if graph.has_nodes() && (graph.has_singleton_nodes() || graph.has_trap_nodes()) {
+        assert!(
+            graph.get_unweighted_minimum_node_degree().unwrap() == 0,
+            concat!(
+                "When the graph either contains singleton nodes or trap nodes ",
+                "we expect for the minimum node degree to be zero, but is {}."
+            ),
+            graph.get_unweighted_minimum_node_degree().unwrap()
+        );
+        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
+    }
+
     if let (Ok(min_degree), Ok(max_degree)) = (
         graph.get_unweighted_minimum_node_degree(),
         graph.get_unweighted_maximum_node_degree(),
@@ -435,11 +447,6 @@ pub fn test_graph_properties(graph: &mut Graph, verbose: Option<bool>) -> Result
         graph.iter_unweighted_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
-
-    if graph.has_singleton_nodes() {
-        assert!(graph.get_unweighted_minimum_node_degree()? == 0);
-        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
-    }
 
     if !graph.is_directed() && !graph.has_singleton_nodes() {
         assert!(graph.get_unweighted_minimum_node_degree()? > 0);
