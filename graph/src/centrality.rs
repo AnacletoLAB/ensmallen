@@ -581,6 +581,7 @@ impl Graph {
         centralities
     }
 
+    #[fuzz_type(maximum_iterations_number: Option<u8>)]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// # Arguments
@@ -643,6 +644,7 @@ impl Graph {
         ))
     }
 
+    #[fuzz_type(maximum_iterations_number: Option<u8>)]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// # Arguments

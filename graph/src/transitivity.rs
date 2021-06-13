@@ -4,6 +4,8 @@ use rayon::iter::ParallelIterator;
 
 /// # Transitivity.
 impl Graph {
+
+    #[fuzz_type(iterations: Option<u8>)]
     /// Returns graph to the i-th transitivity closure iteration.
     ///
     /// # Implementative details
@@ -80,6 +82,7 @@ impl Graph {
         .unwrap()
     }
 
+    #[fuzz_type(iterations: Option<u8>)]
     /// Returns graph with unweighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.
@@ -166,6 +169,7 @@ impl Graph {
         .unwrap()
     }
 
+    #[fuzz_type(iterations: Option<u8>)]
     /// Returns graph with weighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.

@@ -4,7 +4,7 @@ use super::*;
 pub struct Enum {
     pub visibility: Visibility,
     pub doc: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub body: Vec<u8>,
     pub enum_type: Type,
 }

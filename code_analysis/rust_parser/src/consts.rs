@@ -6,7 +6,7 @@ pub struct Const {
     pub name: String,
     pub const_type: Type,
     pub value: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub visibility: Visibility,
 }
 

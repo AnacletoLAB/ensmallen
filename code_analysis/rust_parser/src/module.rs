@@ -160,7 +160,7 @@ impl Parse for Module {
                 continue;
             }
             if Attribute::can_parse(data){
-                let attr: String = parse!(data, Attribute).into();
+                let attr = parse!(data, Attribute);
                 attrs.push(attr);
                 continue;
             }

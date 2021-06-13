@@ -31,6 +31,10 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
     }).collect::<Vec<_>>().join("");
 
     let struct_field_name = method.name.split("_").collect::<Vec<_>>().join("");
+
+    let fuzz_types = method.attributes.iter()
+        .filter_map(|attr| attr.parse_fuzz_type())
+        .collect::<Vec<_>>();
     
     let mut fields = Vec::new();
     let mut call_args = Vec::new();
@@ -43,13 +47,44 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
             }
         }
 
+        match fuzz_types.iter().find(|x| x.0 == arg.name) {
+            Some((fuzz_name, fuzz_type)) => {
+                match (fuzz_type, arg.arg_type) {
+                    (x, y) if x == "Option<_>" && y == "Option<_>" => {
+                        arg_names.push(arg.name.clone());
+                        fields.push((arg.name.clone(), fuzz_type.to_string()));
+
+                        // Extract the value inside the option
+                        let prim_type = match y {
+                            Type::SimpleType{
+                                generics,
+                                ..
+                            } => {
+                                match &generics[0] {
+                                    GenericValue::Type(result) => result.clone(),
+                                    _ => unreachable!("An option should only have a type as generics"),
+                                }
+                            }
+                            _ => unreachable!("The if should already have checked this."),
+                        };
+
+                        call_args.push(format!("data.{}.{}.map(|x| x as {})", struct_field_name, arg.name, prim_type));
+                    }
+                    (x, y) if x == "Primitive" && y == "Primitive" => {
+                        arg_names.push(arg.name.clone());
+                        fields.push((arg.name.clone(), x.to_string()));
+                        call_args.push(format!("data.{}.{} as {}", struct_field_name, arg.name, y));
+                    }
+                    _ => panic!("The fuzz type attribute was called with not-supported types."),
+                }
+                continue;
+            }
+            None => {}
+        };
+
+
         match arg.arg_type {
             x if x == "self" || x == "&self" || x == "&mut self" => {},
-            x if x == "Option<usize>" && arg.name.contains("iter") => {
-                arg_names.push(arg.name.clone());
-                fields.push((arg.name.clone(), "Option<u8>".to_string()));
-                call_args.push(format!("data.{}.{}.map(|x| x as usize)", struct_field_name, arg.name));
-            }
             Type::SimpleType{
                 name,
                 mut modifiers,

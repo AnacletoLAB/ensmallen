@@ -6,7 +6,7 @@ pub struct Static {
     pub name: String,
     pub static_type: Type,
     pub value: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub visibility: Visibility,
 }
 

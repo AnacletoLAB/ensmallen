@@ -4,7 +4,7 @@ use super::*;
 pub struct Struct {
     pub visibility: Visibility,
     pub doc: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub fields: Vec<StructField>,
     pub struct_type: Type,
 }

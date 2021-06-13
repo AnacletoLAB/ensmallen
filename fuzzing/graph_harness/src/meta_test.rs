@@ -375,21 +375,21 @@ pub struct IterEdgeNodeNamesAndEdgeTypeNameFromEdgeTypeId {
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetTransitiveClosure {
-    pub iterations : Option<NodeT>,
+    pub iterations : Option<u8>,
     pub verbose : Option<bool>,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetUnweightedAllShortestPaths {
-    pub iterations : Option<NodeT>,
+    pub iterations : Option<u8>,
     pub verbose : Option<bool>,
 }
 
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct GetWeightedAllShortestPaths {
-    pub iterations : Option<NodeT>,
+    pub iterations : Option<u8>,
     pub use_edge_weights_as_probabilities : Option<bool>,
     pub verbose : Option<bool>,
 }
@@ -2287,7 +2287,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
     
 
     50 => {
-        trace.push(format!("get_transitive_closure(iterations: {:?}, verbose: {:?})", &data.gettransitiveclosure.iterations, &data.gettransitiveclosure.verbose));
+        trace.push(format!("get_transitive_closure(iterations: {:?}, verbose: {:?})", &data.gettransitiveclosure.iterations.map(|x| x as NodeT), &data.gettransitiveclosure.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2295,12 +2295,12 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        graph = graph.get_transitive_closure(data.gettransitiveclosure.iterations.clone(), data.gettransitiveclosure.verbose.clone());
+        graph = graph.get_transitive_closure(data.gettransitiveclosure.iterations.map(|x| x as NodeT).clone(), data.gettransitiveclosure.verbose.clone());
     }
     
 
     51 => {
-        trace.push(format!("get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})", &data.getunweightedallshortestpaths.iterations, &data.getunweightedallshortestpaths.verbose));
+        trace.push(format!("get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})", &data.getunweightedallshortestpaths.iterations.map(|x| x as NodeT), &data.getunweightedallshortestpaths.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2308,12 +2308,12 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        graph = graph.get_unweighted_all_shortest_paths(data.getunweightedallshortestpaths.iterations.clone(), data.getunweightedallshortestpaths.verbose.clone());
+        graph = graph.get_unweighted_all_shortest_paths(data.getunweightedallshortestpaths.iterations.map(|x| x as NodeT).clone(), data.getunweightedallshortestpaths.verbose.clone());
     }
     
 
     52 => {
-        trace.push(format!("get_weighted_all_shortest_paths(iterations: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedallshortestpaths.iterations, &data.getweightedallshortestpaths.use_edge_weights_as_probabilities, &data.getweightedallshortestpaths.verbose));
+        trace.push(format!("get_weighted_all_shortest_paths(iterations: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedallshortestpaths.iterations.map(|x| x as NodeT), &data.getweightedallshortestpaths.use_edge_weights_as_probabilities, &data.getweightedallshortestpaths.verbose));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2322,7 +2322,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
         
-        if let Ok(res) = graph.get_weighted_all_shortest_paths(data.getweightedallshortestpaths.iterations.clone(), data.getweightedallshortestpaths.use_edge_weights_as_probabilities.clone(), data.getweightedallshortestpaths.verbose.clone()) {
+        if let Ok(res) = graph.get_weighted_all_shortest_paths(data.getweightedallshortestpaths.iterations.map(|x| x as NodeT).clone(), data.getweightedallshortestpaths.use_edge_weights_as_probabilities.clone(), data.getweightedallshortestpaths.verbose.clone()) {
             graph = res;
         }
         
@@ -7262,18 +7262,18 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
     
 
     50 => {
-        graph = graph.get_transitive_closure(data.gettransitiveclosure.iterations.clone(), data.gettransitiveclosure.verbose.clone());
+        graph = graph.get_transitive_closure(data.gettransitiveclosure.iterations.map(|x| x as NodeT).clone(), data.gettransitiveclosure.verbose.clone());
     }
     
 
     51 => {
-        graph = graph.get_unweighted_all_shortest_paths(data.getunweightedallshortestpaths.iterations.clone(), data.getunweightedallshortestpaths.verbose.clone());
+        graph = graph.get_unweighted_all_shortest_paths(data.getunweightedallshortestpaths.iterations.map(|x| x as NodeT).clone(), data.getunweightedallshortestpaths.verbose.clone());
     }
     
 
     52 => {
         
-        if let Ok(res) = graph.get_weighted_all_shortest_paths(data.getweightedallshortestpaths.iterations.clone(), data.getweightedallshortestpaths.use_edge_weights_as_probabilities.clone(), data.getweightedallshortestpaths.verbose.clone()) {
+        if let Ok(res) = graph.get_weighted_all_shortest_paths(data.getweightedallshortestpaths.iterations.map(|x| x as NodeT).clone(), data.getweightedallshortestpaths.use_edge_weights_as_probabilities.clone(), data.getweightedallshortestpaths.verbose.clone()) {
             graph = res;
         }
         

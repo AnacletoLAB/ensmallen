@@ -6,7 +6,7 @@ pub struct TraitDefinition{
     pub value: Type,
     pub visibility: Visibility,
     pub doc: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub body: String,
 }
 

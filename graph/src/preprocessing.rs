@@ -624,6 +624,7 @@ impl Graph {
         )
     }
 
+    #[fuzz_type(iterations: Option<u8>)]
     /// Returns okapi node features propagation within given maximal distance.
     ///
     /// # Arguments
@@ -819,6 +820,7 @@ impl Graph {
         Ok(features)
     }
 
+    #[fuzz_type(iterations: Option<u8>)]
     /// Returns okapi node label propagation within given maximal distance.
     ///
     /// # Arguments
