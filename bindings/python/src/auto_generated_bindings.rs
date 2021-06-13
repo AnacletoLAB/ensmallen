@@ -6174,6 +6174,8 @@ impl EnsmallenGraph {
     /// -------
     /// ValueError
     ///     If the given value k is zero.
+    /// ValueError
+    ///     If the graph has no nodes.
     ///
     pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
