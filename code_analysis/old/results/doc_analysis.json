@@ -7783,15 +7783,15 @@
         },
         "extra_headers": []
     },
-    "get_selfloop_nodes_number": {
+    "get_selfloop_number": {
         "file": "getters.rs",
-        "function": "get_selfloop_nodes_number",
+        "function": "get_selfloop_number",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_nodes_number());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The number of self-loops in the graph is  {}\", graph.get_selfloop_number());\n"
         },
         "extra_headers": []
     },

@@ -3350,8 +3350,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns number of self-loops, including also those in eventual multi-edges.
-    pub fn get_selfloop_nodes_number(&self) -> EdgeT {
-        self.graph.get_selfloop_nodes_number()
+    pub fn get_selfloop_number(&self) -> EdgeT {
+        self.graph.get_selfloop_number()
     }
 
     #[automatically_generated_binding]

@@ -258,8 +258,15 @@ impl Graph {
                 .ids
                 .par_iter_mut()
                 .for_each(|maybe_edge_type_id| {
-                    *maybe_edge_type_id = maybe_edge_type_id
-                        .and_then(|x| new_edge_type_ids[x as usize].map(|x| x as EdgeTypeT));
+                    *maybe_edge_type_id = maybe_edge_type_id.and_then(|x| {
+                        new_edge_type_ids[x as usize].map_or_else(
+                            || {
+                                new_unknown_edges.fetch_add(1, Ordering::SeqCst);
+                                None
+                            },
+                            |x| Some(x as EdgeTypeT),
+                        )
+                    });
                 });
             edge_types.unknown_count += new_unknown_edges.load(Ordering::SeqCst);
         }

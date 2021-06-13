@@ -594,6 +594,8 @@ pub(crate) fn build_edges(
     let mut selfloop_number: EdgeT = 0;
     let mut forward_undirected_edges_counter: EdgeT = 0;
     let mut backward_undirected_edges_counter: EdgeT = 0;
+    let mut has_detect_singletons_or_trap_nodes: bool = false;
+    let mut duplicated_edges_number: usize = 0;
     let mut connected_nodes_number: NodeT =
         if might_contain_singletons || might_contain_singletons_with_selfloops {
             0
@@ -617,6 +619,7 @@ pub(crate) fn build_edges(
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type) {
             if ignore_duplicated_edges {
+                duplicated_edges_number += 1;
                 continue;
             } else {
                 return Err("A duplicated edge was found while building the graph.".to_owned());
@@ -629,6 +632,7 @@ pub(crate) fn build_edges(
         // decreating outbound node degree.
         if first && src > 0 {
             nodes_are_sorted_by_decreasing_outbound_node_degree = false;
+            has_detect_singletons_or_trap_nodes = true;
         }
 
         match (
@@ -794,6 +798,7 @@ pub(crate) fn build_edges(
                     if src - last_src > 1 {
                         nodes_are_sorted_by_decreasing_outbound_node_degree = false;
                         nodes_are_sorted_by_increasing_outbound_node_degree = false;
+                        has_detect_singletons_or_trap_nodes = true;
                     }
                     // Update the previous node degree
                     previous_node_degree = current_node_degree;
@@ -835,6 +840,15 @@ pub(crate) fn build_edges(
         first = false;
     }
 
+    if forward_undirected_edges_counter != backward_undirected_edges_counter {
+        return Err(concat!(
+            "You are trying to load an undirected graph ",
+            "from a directed edge list but the edge list is not ",
+            "complete."
+        )
+        .to_owned());
+    }
+
     // We need to update the minimum and maximum node degrees
     // for the last edge.
 
@@ -854,6 +868,21 @@ pub(crate) fn build_edges(
         }
     }
 
+    // We do not do an equality check because it gets very hard (computationally)
+    // to compute exactly how many edges a graph has, expecially when taking into
+    // consideration cases including numerical instability, like during the
+    // computation of Laplacian transformations of the given input graph.
+    if edges.len() > edges_number - duplicated_edges_number {
+        panic!(
+            concat!(
+                "The provided number of edges {} does not match the number of edges {} obtained after ",
+                "building the Elias-Fano data structure."
+            ),
+            edges_number - duplicated_edges_number,
+            edges.len()
+        );
+    }
+
     // If this is the last source node and it is not equal to the number
     // of nodes in the graph minus one
     // there must be singletons after it, hence nodes with node
@@ -863,6 +892,29 @@ pub(crate) fn build_edges(
     // in the graph are singletons, and the graph does not have any edge.
     if !edges.is_empty() && last_src != nodes_number - 1 {
         nodes_are_sorted_by_increasing_outbound_node_degree = false;
+        has_detect_singletons_or_trap_nodes = true;
+    }
+
+    if has_detect_singletons_or_trap_nodes
+        && !(might_contain_singletons || might_contain_trap_nodes)
+    {
+        panic!(
+            concat!(
+                "It has been specified that within the graph we are currently trying to build ",
+                "there are no singletons nor trap nodes, but nodes with outbound node degree zero ",
+                "where found.\n",
+                "The graph is {}.\n",
+                "It is likely that this is caused by some constructor ",
+                "misparametrization of either the might_contain_singletons parameter or the ",
+                "might_contain_trap_nodes parameter.\n",
+                "The last source node ID of the graph is {} and the nodes number is {}.\n",
+                "The graph contains {} edges."
+            ),
+            if directed { "directed" } else { "undirected" },
+            last_src,
+            nodes_number,
+            edges.len()
+        );
     }
 
     // We update the minimum weighted node degree
@@ -885,15 +937,6 @@ pub(crate) fn build_edges(
         }
         // And the maximum weighted node degree
         *max_weighted_node_degree = (*max_weighted_node_degree).max(cwnd);
-    }
-
-    if forward_undirected_edges_counter != backward_undirected_edges_counter {
-        return Err(concat!(
-            "You are trying to load an undirected graph ",
-            "from a directed edge list but the edge list is not ",
-            "complete."
-        )
-        .to_owned());
     }
 
     if !edges.is_empty() && max_node_degree == 0 {

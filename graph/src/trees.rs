@@ -269,14 +269,8 @@ impl Graph {
                     if src_component == dst_component {
                         return;
                     }
-                    let (node_id_to_update, min_component_id, max_component_id) =
-                        match src_component < dst_component {
-                            true => (dst, src_component, dst_component),
-                            false => (src, dst_component, src_component),
-                        };
-
-                    // We update the node to update with the new component ID.
-                    components[node_id_to_update as usize] = min_component_id;
+                    let min_component_id = src_component.min(dst_component);
+                    let max_component_id = src_component.max(dst_component);
 
                     // We merge the two component sizes.
                     component_sizes[min_component_id as usize] +=
@@ -305,17 +299,16 @@ impl Graph {
                                 // We need to invalidate the size of the component
                                 // we have remapped because otherwise we may count it
                                 // when computing the minimum component size.
-                                *component_size = NOT_PRESENT;
+                                *component_size = 0;
                             }
                         });
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
                     let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {
-                        true => (dst_component, src),
-                        false => (src_component, dst),
+                        true => (components_remapping[dst_component as usize], src),
+                        false => (components_remapping[src_component as usize], dst),
                     };
-                    let component_id = components_remapping[component_id as usize];
                     component_sizes[component_id as usize] += 1;
                     max_component_size =
                         max_component_size.max(component_sizes[component_id as usize]);
@@ -347,7 +340,11 @@ impl Graph {
             min_component_size = match components_number {
                 1 => max_component_size,
                 2 => self.get_nodes_number() - max_component_size,
-                _ => component_sizes.into_par_iter().min().unwrap(),
+                _ => component_sizes
+                    .into_par_iter()
+                    .filter(|val| *val > 0)
+                    .min()
+                    .unwrap(),
             };
         }
 

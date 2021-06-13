@@ -60,7 +60,7 @@ impl Graph {
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
-        if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_node_ids_to_filter.is_some())
+        if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some())
         {
             return Err(concat!(
                 "It is not possible to filter by edge ids on an undirected ",
@@ -130,7 +130,7 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let mut last_dst: Option<NodeT> = None;
+        let mut last_edge: Option<(NodeT, NodeT)> = None;
 
         let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
@@ -142,7 +142,7 @@ impl Graph {
             let result = edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
             edge_ids_to_filter.as_ref().map_or(true, |edge_ids| !edge_ids.contains(edge_id)) &&
             // If parallel edges need to be filtered out.
-            (!filter_parallel_edges || last_dst.as_ref().map_or(true, |last_dst| *last_dst!=*dst)) &&
+            (!filter_parallel_edges || last_edge.as_ref().map_or(true, |(last_src, last_dst)| *last_dst!=*dst || *last_src!=*src)) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If singleton nodes with selfloops need to be filtered out
@@ -154,7 +154,7 @@ impl Graph {
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
-            last_dst.replace(*dst);
+            last_edge.replace((*src, *dst));
             result
         };
 
@@ -200,6 +200,17 @@ impl Graph {
                 (!filter_singleton_nodes_with_selfloop || !self.is_singleton_with_selfloops_from_node_id(*node_id))
         };
 
+        let mut edges_number = self.get_directed_edges_number();
+
+        if filter_parallel_edges {
+            edges_number -= self.get_parallel_edges_number();
+            if filter_selfloops {
+                edges_number -= self.get_unique_selfloop_number() as EdgeT;
+            }
+        } else if filter_selfloops {
+            edges_number -= self.get_selfloop_number();
+        }
+
         match (has_node_filters, has_edge_filters) {
             (false, false) => Ok(self.clone()),
             (false, true) => Graph::from_integer_sorted(
@@ -207,7 +218,7 @@ impl Graph {
                     .progress_with(pb_edges)
                     .filter(edge_filter)
                     .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
-                self.get_directed_edges_number() as usize,
+                edges_number as usize,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

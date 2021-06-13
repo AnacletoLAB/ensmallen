@@ -4014,7 +4014,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
     
 
     179 => {
-        trace.push(format!("get_selfloop_nodes_number()", ));
+        trace.push(format!("get_selfloop_number()", ));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -4022,7 +4022,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_selfloop_nodes_number();
+        let _ = graph.get_selfloop_number();
     }
     
 
@@ -7957,7 +7957,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
     
 
     179 => {
-        let _ = graph.get_selfloop_nodes_number();
+        let _ = graph.get_selfloop_number();
     }
     
 

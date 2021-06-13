@@ -87,7 +87,7 @@ impl Graph {
         );
         report.insert(
             "selfloops_number",
-            self.get_selfloop_nodes_number().to_string(),
+            self.get_selfloop_number().to_string(),
         );
         report.insert(
             "singleton_nodes_with_selfloops_number",

@@ -219,8 +219,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) / 2
-            + self.get_selfloop_nodes_number()
+        (self.get_directed_edges_number() - self.get_selfloop_number()) / 2
+            + self.get_selfloop_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -439,9 +439,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_nodes_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
     /// ```
-    pub fn get_selfloop_nodes_number(&self) -> EdgeT {
+    pub fn get_selfloop_number(&self) -> EdgeT {
         self.selfloop_number
     }
 
@@ -467,7 +467,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloop_nodes_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)
     }
     /// Return name of the graph.
     ///

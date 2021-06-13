@@ -189,7 +189,6 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
         self.must_have_edge_weights()?;
-        self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .filter_map(|(_, src, dst, edge_type, edge_weight)| unsafe {
@@ -212,7 +211,12 @@ impl Graph {
             self.has_edge_types(),
             true,
             false,
-            self.has_singleton_nodes(),
+            // Because of numerical instability or simply because of existance
+            // of negative edge weights, the weighted node degrees may be result
+            // in being equal to zero.
+            // This will cause the singleton nodes with selfloops to become
+            // simply singleton nodes.
+            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
             self.has_singleton_nodes_with_selfloops(),
             self.has_trap_nodes(),
             verbose.unwrap_or(true),
@@ -312,7 +316,7 @@ impl Graph {
                         Some(Ok((src, dst, edge_type, Some(distance))))
                     }
                 }),
-            (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) as usize,
+            (self.get_directed_edges_number() - self.get_selfloop_number()) as usize,
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
