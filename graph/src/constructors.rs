@@ -851,8 +851,12 @@ pub(crate) fn build_edges(
 
     // If the number of selfloops is equal to the number of edges
     // the provided graph MUST contain singleton with selfloops.
+    // Clearly, the graph must also not be empty.
     // This is not a sufficient check, but is a necessary one.
-    if !might_contain_singletons_with_selfloops && selfloop_number == edges.len() as EdgeT {
+    if selfloop_number > 0
+        && !might_contain_singletons_with_selfloops
+        && selfloop_number == edges.len() as EdgeT
+    {
         panic!(concat!(
             "The provided graph has as many selfloops as edges, and therefore ",
             "must contain singleton nodes with selfloops.\n",

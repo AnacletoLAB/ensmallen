@@ -330,35 +330,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
         .iter_node_ids()
         .filter(|node_id| !not_singleton_nodes.contains(node_id))
         .collect::<HashSet<NodeT>>();
-    let singleton_nodes_with_selfloops = graph
-        .iter_node_ids()
-        .filter(|node_id| unsafe {
-            graph.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
-                && graph
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
-                    .all(|dst| dst == *node_id)
-        })
-        .collect::<HashSet<NodeT>>();
+
     assert_eq!(!singleton_nodes.is_empty(), graph.has_singleton_nodes());
     assert_eq!(
         singleton_nodes.len(),
         graph.get_singleton_nodes_number() as usize
     );
-    assert_eq!(
-        !singleton_nodes_with_selfloops.is_empty(),
-        graph.has_singleton_nodes_with_selfloops(),
-        concat!(
-            "Singleton nodes with selfloops were found within ",
-            "the provided, but the graph would not seem to ",
-            "contain any.\n",
-            "The graph edge list is:\n{:?}."
-        ),
-        graph.get_edge_node_ids(true)
-    );
-    assert_eq!(
-        singleton_nodes_with_selfloops.len(),
-        graph.get_singleton_nodes_with_selfloops_number() as usize
-    );
+
     assert!(unsafe {
         singleton_nodes
             .iter()
@@ -369,17 +347,47 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
             .iter()
             .all(|node_id| graph.get_unchecked_unweighted_node_degree_from_node_id(*node_id) == 0)
     });
-    assert!(
-        singleton_nodes_with_selfloops
-            .iter()
-            .all(|node_id| graph.is_singleton_with_selfloops_from_node_id(*node_id)),
-        concat!(
-            "The singleton with self-loops are defined as the set of nodes that ",
-            "exclusively have self-loop edges.\n",
-            "We have found the following list of singleton nodes with selfloops: {:?}\n"
-        ),
-        singleton_nodes_with_selfloops
-    );
+
+    // For now we limit this test to undirected graphs
+    // to avoid the complexity of computing the indegree.
+    if !graph.is_directed() {
+        let singleton_nodes_with_selfloops = graph
+            .iter_node_ids()
+            .filter(|node_id| unsafe {
+                graph.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                    && graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                        .all(|dst| dst == *node_id)
+            })
+            .collect::<HashSet<NodeT>>();
+
+        assert_eq!(
+            !singleton_nodes_with_selfloops.is_empty(),
+            graph.has_singleton_nodes_with_selfloops(),
+            concat!(
+                "Singleton nodes with selfloops were found within ",
+                "the provided, but the graph would not seem to ",
+                "contain any.\n",
+                "The graph edge list is:\n{:?}."
+            ),
+            graph.get_edge_node_ids(true)
+        );
+        assert_eq!(
+            singleton_nodes_with_selfloops.len(),
+            graph.get_singleton_nodes_with_selfloops_number() as usize
+        );
+        assert!(
+            singleton_nodes_with_selfloops
+                .iter()
+                .all(|node_id| graph.is_singleton_with_selfloops_from_node_id(*node_id)),
+            concat!(
+                "The singleton with self-loops are defined as the set of nodes that ",
+                "exclusively have self-loop edges.\n",
+                "We have found the following list of singleton nodes with selfloops: {:?}\n"
+            ),
+            singleton_nodes_with_selfloops
+        );
+    }
 
     // If the graph is undirected, all the edges must have their symmetrical one
     if !graph.is_directed() {
