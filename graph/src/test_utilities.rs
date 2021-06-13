@@ -346,7 +346,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     );
     assert_eq!(
         !singleton_nodes_with_selfloops.is_empty(),
-        graph.has_singleton_nodes_with_selfloops()
+        graph.has_singleton_nodes_with_selfloops(),
+        concat!(
+            "Singleton nodes with selfloops were found within ",
+            "the provided, but the graph would not seem to ",
+            "contain any.\n",
+            "The graph edge list is:\n{:?}."
+        ),
+        graph.get_edge_node_ids(true)
     );
     assert_eq!(
         singleton_nodes_with_selfloops.len(),
