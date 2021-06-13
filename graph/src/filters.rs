@@ -60,8 +60,7 @@ impl Graph {
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
-        if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some())
-        {
+        if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some()) {
             return Err(concat!(
                 "It is not possible to filter by edge ids on an undirected ",
                 "graph as the resulting graph may become a directed graph.\n",
@@ -230,7 +229,7 @@ impl Graph {
                 self.has_edge_weights(),
                 false,
                 true,
-                self.has_singleton_nodes_with_selfloops() && !filter_selfloops,
+                self.has_selfloops() && !filter_selfloops,
                 true,
             ),
             (true, _) => {

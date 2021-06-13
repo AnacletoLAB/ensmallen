@@ -1311,6 +1311,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
 }
 
 pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+    assert!(!graph.drop_selfloops(verbose).has_selfloops());
     assert_eq!(
         graph.add_selfloops(None, Some(1.0), verbose).is_ok(),
         graph.has_edge_weights()
