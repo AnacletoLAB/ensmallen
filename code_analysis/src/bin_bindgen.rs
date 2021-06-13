@@ -334,7 +334,7 @@ fn gen_binding(method: &Function) -> String {
                         Type::parse_lossy_string(format!("Py<PyArray1<{}>>", inner_type))
                     )
                 }
-                x if !method.attributes.contains(&"no_numpy_binding".to_string())
+                x if! method.attributes.iter().any(|x| x == "no_numpy_binding")
                     && x == "Vec<Vec<Primitive>>" =>
                 {
                     let inner_type = r_type[0][0].to_string();
@@ -366,7 +366,7 @@ fn gen_binding(method: &Function) -> String {
                         Type::parse_lossy_string(format!("PyResult<Py<PyArray1<{}>>>", inner_type))
                     )
                 }
-                x if !method.attributes.contains(&"no_numpy_binding".to_string())
+                x if !method.attributes.iter().any(|x| x == "no_numpy_binding")
                     && x == "Result<Vec<Vec<Primitive>>, _>" =>
                 {
                     let inner_type = r_type[0][0][0].to_string();
@@ -444,8 +444,8 @@ fn main() {
                     && !method.name.starts_with("par_iter")
                     && !method.name.starts_with("from")
                     && method.visibility == Visibility::Public
-                    && !method.attributes.contains(&"no_binding".to_string())
-                    && !method.attributes.contains(&"manual_binding".to_string())
+                    && !method.attributes.iter().any(|x| x == "no_binding")
+                    && !method.attributes.iter().any(|x| x == "manual_binding")
                 {
                     let binding = gen_binding(&method);
                     println!("{}", binding);
