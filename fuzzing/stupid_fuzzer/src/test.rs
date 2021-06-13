@@ -82,7 +82,7 @@ fn main() {
 
     // If its only one file, run it
     if md.is_file() {
-        test_file_function(opts.corpus_path.clone(), opts.number_of_iterations);
+        test_file_function(opts.corpus_path.clone(), opts.number_of_iterations, opts.verbose > 0);
         return;
     }
 
@@ -95,6 +95,7 @@ fn main() {
             .into_string().unwrap()
         ).collect::<Vec<String>>();
 
+
     // If it's a dir, run all the files in the folder.
     filenames.into_iter()
         .filter(|filename| {
@@ -104,6 +105,7 @@ fn main() {
             test_file_function(
                 filename, 
                 opts.number_of_iterations,
+                opts.verbose > 0,
             );
         });
 }
