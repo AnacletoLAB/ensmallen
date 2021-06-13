@@ -895,7 +895,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 }
 
 pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
-    if graph.has_nodes() {
+    if graph.has_edges() {
         let node_degree_centralities = graph.get_unweighted_degree_centrality().unwrap();
 
         assert_eq!(
