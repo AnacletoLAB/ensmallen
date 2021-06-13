@@ -38,19 +38,6 @@ struct Opts {
     verbose: usize,
 }
 
-pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: u64) -> ProgressBar {
-    if verbose {
-        let pb = ProgressBar::new(total_iterations);
-        pb.set_style(ProgressStyle::default_bar().template(&format!(
-            "{desc} {{spinner:.green}} [{{elapsed_precise}}] [{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})",
-            desc=desc
-        )));
-        pb
-    } else {
-        ProgressBar::hidden()
-    }
-}
-
 macro_rules! define_harness {
     ($harness_struct:ty, $harness_func:ident) => {{
         |file_name: String,  number_of_test_runs:u64, verbose: bool| {
@@ -65,14 +52,9 @@ macro_rules! define_harness {
             let maybe_params = <$harness_struct>::arbitrary(&mut raw_data);
 
             if let Ok(params) = maybe_params {
-                let bar = get_loading_bar(number_of_test_runs != 1, "Running the test", number_of_test_runs);
                 for _ in (0..number_of_test_runs) {
-        
                     let _harness_result = $harness_func(params.clone());
-        
-                    bar.inc(1);
                 }
-                bar.finish();
             }
         }}
     };
@@ -113,11 +95,9 @@ fn main() {
             .into_string().unwrap()
         ).collect::<Vec<String>>();
 
-    let bar = get_loading_bar(true, "Running the corpus folder", filenames.len() as u64);
 
     // If it's a dir, run all the files in the folder.
     filenames.into_iter()
-        .progress_with(bar)
         .filter(|filename| {
             metadata(&filename).unwrap().is_file()
         })

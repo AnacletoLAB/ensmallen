@@ -23,7 +23,7 @@ const TYPES_BLACKLIST: &'static [&'static str] = &[
     "[String]",
 ];
 
-fn build(method_id: usize, method: Function) -> Option<(String, String, String, String)> {
+fn build(method_id: usize, method: Function) -> Option<(String, String, String, String, String)> {
     let struct_name = method.name.split("_").map(|x| {
         let mut x = x.to_string();
         x.get_mut(0..1).map(|s| {s.make_ascii_uppercase(); &*s});
@@ -51,9 +51,6 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
             Some((fuzz_name, fuzz_type)) => {
                 match (fuzz_type, arg.arg_type) {
                     (x, y) if x == "Option<_>" && y == "Option<_>" => {
-                        arg_names.push(arg.name.clone());
-                        fields.push((arg.name.clone(), fuzz_type.to_string()));
-
                         // Extract the value inside the option
                         let prim_type = match y {
                             Type::SimpleType{
@@ -68,6 +65,8 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
                             _ => unreachable!("The if should already have checked this."),
                         };
 
+                        arg_names.push(arg.name.clone());
+                        fields.push((arg.name.clone(), fuzz_type.to_string()));
                         call_args.push(format!("data.{}.{}.map(|x| x as {})", struct_field_name, arg.name, prim_type));
                     }
                     (x, y) if x == "Primitive" && y == "Primitive" => {
@@ -197,6 +196,17 @@ pub struct {struct_name} {{
         method_call=method_call,
     );
 
+    let trace_call = format!( r#"
+    {method_id} => {{
+        println!("{func_name}({args_format})", {args_from_data});
+    }}
+    "#,
+        method_id=method_id,
+        func_name=method.name,
+        args_format=arg_names.iter().map(|x| format!("{}: {{:?}}", x)).collect::<Vec<_>>().join(", "),
+        args_from_data=call_args.iter().map(|x| format!("&{}", x)).collect::<Vec<_>>().join(", "),
+    );
+
     method_call = format!( r#"
     {method_id} => {{
         trace.push(format!("{func_name}({args_format})", {args_from_data}));
@@ -222,6 +232,7 @@ pub struct {struct_name} {{
         field_string,
         method_call,
         method_calls_without_handling,
+        trace_call,
     ))
 }
 
@@ -229,6 +240,7 @@ fn main() {
     let mut counter = 0;
     let mut calls = Vec::new();
     let mut calls_no_panic = Vec::new();
+    let mut trace_calls = Vec::new();
     let mut structs = Vec::new();
     let mut fields = Vec::new();
     for module in get_library_sources() {
@@ -245,13 +257,14 @@ fn main() {
                     continue
                 }
 
-                if let Some((struct_string, struct_field, method_call, method_calls_without_handling)) = build(counter, method) {
+                if let Some((struct_string, struct_field, method_call, method_calls_without_handling, trace_call)) = build(counter, method) {
                     if struct_string != "" {
                         structs.push(struct_string);
                     }
                     calls.push(method_call);
                     calls_no_panic.push(method_calls_without_handling);
                     fields.push(struct_field);
+                    trace_calls.push(trace_call);
                     counter += 1;
                 }
             }
@@ -390,10 +403,48 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {{
 
     Ok(())
 }}
+
+pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {{
+    let mut graph = graph::Graph::from_string_unsorted(
+        data.from_vec.edges.into_iter(),
+        data.from_vec.nodes.map(|ns| ns.into_iter()),
+        data.from_vec.directed,
+        data.from_vec.directed_edge_list,
+        "MetaTest",
+        data.from_vec.ignore_duplicated_nodes,
+        false,
+        data.from_vec.ignore_duplicated_edges,
+        false,
+        data.from_vec.numeric_edge_types_ids,
+        data.from_vec.numeric_node_ids,
+        data.from_vec.numeric_edge_node_ids,
+        data.from_vec.numeric_node_types_ids,
+        data.from_vec.has_node_types,
+        data.from_vec.has_edge_types,
+        data.from_vec.has_edge_weights,
+        true,
+        true,
+        true,
+        true,
+        data.from_vec.verbose,
+    )?;
+    println!("{{}}\n\n", graph.textual_report());
+
+    let mut rng = Rng::new(data.seed);
+    for _ in 0..10 {{
+        match rng.next() % {n_of_calls} {{
+{trace_calls}
+            _ => unreachable!()
+        }}
+    }}
+
+    Ok(())
+}}
 "#,
         n_of_calls=counter,
         calls=calls.join("\n"),
         calls_no_panic=calls_no_panic.join("\n"),
+        trace_calls=trace_calls.join("\n"),
         structs=structs.join("\n"),
         meta_struct=meta_struct,
     );
