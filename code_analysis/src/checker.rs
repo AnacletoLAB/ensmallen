@@ -89,6 +89,8 @@ impl Checker {
         // no #[inline] se il metodo ritorna result
         // _vector deve essere in fondo
 
+        // check that fuzz_type arguments are int he function args
+
     }
 
     pub fn display(&self){

@@ -2,7 +2,7 @@ use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Impl {
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub doc: String,
     pub struct_name: Type,
     pub impl_trait: Option<Type>,
@@ -87,8 +87,7 @@ impl Parse for Impl {
                 continue;
             }
             if Attribute::can_parse(impl_content){
-                let attr: String = parse!(impl_content, Attribute).into();
-                attrs.push(attr);
+                attrs.push(parse!(impl_content, Attribute));
                 continue;
             }
             if impl_content.starts_with(b"//") {

@@ -21,4 +21,5 @@ create_tag!(
     no_inverse_method
     automatically_generated_binding
     no_numpy_binding
+    fuzz_type
 );

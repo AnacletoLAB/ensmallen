@@ -6,7 +6,7 @@ pub struct TypeDefinition{
     pub value: Type,
     pub visibility: Visibility,
     pub doc: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
 }
 
 impl CanParse for TypeDefinition {

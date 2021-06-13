@@ -14,7 +14,7 @@ const BLACKLIST: &'static [&'static str] = &[
 
 #[test]
 fn test_parsing() {
-    'outer: for path in fs::read_dir("../../../../graph/src").unwrap() {
+    'outer: for path in fs::read_dir("../../graph/src").unwrap() {
         let path = path.unwrap().path().into_os_string().into_string().unwrap();
         println!("Parsing file: {}", path);
 

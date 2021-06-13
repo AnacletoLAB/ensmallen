@@ -3,7 +3,7 @@ use super::*;
 #[derive(Debug, Clone, PartialEq)]
 pub struct Function{
     pub doc: String,
-    pub attributes: Vec<String>,
+    pub attributes: Vec<Attribute>,
     pub name: String,
     pub visibility: Visibility,
     pub generics: Generics,
