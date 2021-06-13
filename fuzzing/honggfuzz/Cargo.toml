@@ -14,8 +14,8 @@ path = "../graph_harness"
 
 [profile.release]
 opt-level = 3
-codgen-units=1
-lto = "fat"
+#codgen-units=1
+#lto = "fat"
 overflow-checks = false     # Disable integer overflow checks.
 debug = false             # Include debug info.
 debug-assertions = false  # Enables debug assertions.

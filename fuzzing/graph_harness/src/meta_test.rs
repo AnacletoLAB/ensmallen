@@ -9213,3 +9213,1995 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
 
     Ok(())
 }
+
+pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
+    let mut graph = graph::Graph::from_string_unsorted(
+        data.from_vec.edges.into_iter(),
+        data.from_vec.nodes.map(|ns| ns.into_iter()),
+        data.from_vec.directed,
+        data.from_vec.directed_edge_list,
+        "MetaTest",
+        data.from_vec.ignore_duplicated_nodes,
+        false,
+        data.from_vec.ignore_duplicated_edges,
+        false,
+        data.from_vec.numeric_edge_types_ids,
+        data.from_vec.numeric_node_ids,
+        data.from_vec.numeric_edge_node_ids,
+        data.from_vec.numeric_node_types_ids,
+        data.from_vec.has_node_types,
+        data.from_vec.has_edge_types,
+        data.from_vec.has_edge_weights,
+        true,
+        true,
+        true,
+        true,
+        data.from_vec.verbose,
+    )?;
+
+    let mut rng = Rng::new(data.seed);
+    for _ in 0..10 {
+        match rng.next() % 391 {
+
+    0 => {
+        println!("spanning_arborescence_kruskal(verbose: {:?})", &data.spanningarborescencekruskal.verbose);
+    }
+    
+
+    1 => {
+        println!("spanning_arborescence(verbose: {:?})", &data.spanningarborescence.verbose);
+    }
+    
+
+    2 => {
+        println!("connected_components(verbose: {:?})", &data.connectedcomponents.verbose);
+    }
+    
+
+    3 => {
+        println!("get_node_label_prediction_tuple_from_node_ids(node_ids: {:?}, random_state: {:?}, include_central_node: {:?}, return_edge_weights: {:?}, offset: {:?}, max_neighbours: {:?})", &data.getnodelabelpredictiontuplefromnodeids.node_ids, &data.getnodelabelpredictiontuplefromnodeids.random_state, &data.getnodelabelpredictiontuplefromnodeids.include_central_node, &data.getnodelabelpredictiontuplefromnodeids.return_edge_weights, &data.getnodelabelpredictiontuplefromnodeids.offset, &data.getnodelabelpredictiontuplefromnodeids.max_neighbours);
+    }
+    
+
+    4 => {
+        println!("par_iter_edge_prediction_metrics(normalize: {:?}, verbose: {:?})", &data.pariteredgepredictionmetrics.normalize, &data.pariteredgepredictionmetrics.verbose);
+    }
+    
+
+    5 => {
+        println!("get_okapi_bm25_node_feature_propagation(features: {:?}, iterations: {:?}, maximal_distance: {:?}, k1: {:?}, b: {:?}, include_central_node: {:?}, verbose: {:?})", &data.getokapibm25nodefeaturepropagation.features, &data.getokapibm25nodefeaturepropagation.iterations.map(|x| x as usize), &data.getokapibm25nodefeaturepropagation.maximal_distance, &data.getokapibm25nodefeaturepropagation.k1, &data.getokapibm25nodefeaturepropagation.b, &data.getokapibm25nodefeaturepropagation.include_central_node, &data.getokapibm25nodefeaturepropagation.verbose);
+    }
+    
+
+    6 => {
+        println!("get_okapi_bm25_node_label_propagation(iterations: {:?}, maximal_distance: {:?}, k1: {:?}, b: {:?}, verbose: {:?})", &data.getokapibm25nodelabelpropagation.iterations.map(|x| x as usize), &data.getokapibm25nodelabelpropagation.maximal_distance, &data.getokapibm25nodelabelpropagation.k1, &data.getokapibm25nodelabelpropagation.b, &data.getokapibm25nodelabelpropagation.verbose);
+    }
+    
+
+    7 => {
+        println!("sort_by_increasing_outbound_node_degree(verbose: {:?})", &data.sortbyincreasingoutboundnodedegree.verbose);
+    }
+    
+
+    8 => {
+        println!("sort_by_decreasing_outbound_node_degree(verbose: {:?})", &data.sortbydecreasingoutboundnodedegree.verbose);
+    }
+    
+
+    9 => {
+        println!("to_dot(use_node_names: {:?})", &data.todot.use_node_names);
+    }
+    
+
+    10 => {
+        println!("remap_from_node_ids(node_ids: {:?}, verbose: {:?})", &data.remapfromnodeids.node_ids, &data.remapfromnodeids.verbose);
+    }
+    
+
+    11 => {
+        println!("is_singleton_from_node_id(node_id: {:?})", &data.issingletonfromnodeid.node_id);
+    }
+    
+
+    12 => {
+        println!("is_singleton_with_selfloops_from_node_id(node_id: {:?})", &data.issingletonwithselfloopsfromnodeid.node_id);
+    }
+    
+
+    13 => {
+        println!("has_node_type_id(node_type_id: {:?})", &data.hasnodetypeid.node_type_id);
+    }
+    
+
+    14 => {
+        println!("has_edge_type_id(edge_type_id: {:?})", &data.hasedgetypeid.edge_type_id);
+    }
+    
+
+    15 => {
+        println!("has_edge_from_node_ids(src: {:?}, dst: {:?})", &data.hasedgefromnodeids.src, &data.hasedgefromnodeids.dst);
+    }
+    
+
+    16 => {
+        println!("has_selfloop_from_node_id(node_id: {:?})", &data.hasselfloopfromnodeid.node_id);
+    }
+    
+
+    17 => {
+        println!("has_edge_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.hasedgefromnodeidsandedgetypeid.src, &data.hasedgefromnodeidsandedgetypeid.dst, &data.hasedgefromnodeidsandedgetypeid.edge_type);
+    }
+    
+
+    18 => {
+        println!("is_trap_node_from_node_id(node_id: {:?})", &data.istrapnodefromnodeid.node_id);
+    }
+    
+
+    19 => {
+        println!("get_unweighted_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getunweightedpreferentialattachmentfromnodeids.source_node_id, &data.getunweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getunweightedpreferentialattachmentfromnodeids.normalize);
+    }
+    
+
+    20 => {
+        println!("get_weighted_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getweightedpreferentialattachmentfromnodeids.source_node_id, &data.getweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getweightedpreferentialattachmentfromnodeids.normalize);
+    }
+    
+
+    21 => {
+        println!("get_jaccard_coefficient_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getjaccardcoefficientfromnodeids.source_node_id, &data.getjaccardcoefficientfromnodeids.destination_node_id);
+    }
+    
+
+    22 => {
+        println!("get_adamic_adar_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getadamicadarindexfromnodeids.source_node_id, &data.getadamicadarindexfromnodeids.destination_node_id);
+    }
+    
+
+    23 => {
+        println!("get_unweighted_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getunweightedresourceallocationindexfromnodeids.source_node_id, &data.getunweightedresourceallocationindexfromnodeids.destination_node_id);
+    }
+    
+
+    24 => {
+        println!("get_weighted_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getweightedresourceallocationindexfromnodeids.source_node_id, &data.getweightedresourceallocationindexfromnodeids.destination_node_id);
+    }
+    
+
+    25 => {
+        println!("enable(vector_sources: {:?}, vector_destinations: {:?}, vector_cumulative_node_degrees: {:?})", &data.enable.vector_sources, &data.enable.vector_destinations, &data.enable.vector_cumulative_node_degrees);
+    }
+    
+
+    26 => {
+        println!("disable_all()", );
+    }
+    
+
+    27 => {
+        println!("get_unweighted_number_of_triangles(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftriangles.normalize, &data.getunweightednumberoftriangles.low_centrality, &data.getunweightednumberoftriangles.verbose);
+    }
+    
+
+    28 => {
+        println!("get_unweighted_triads_number()", );
+    }
+    
+
+    29 => {
+        println!("get_weighted_triads_number()", );
+    }
+    
+
+    30 => {
+        println!("get_unweighted_transitivity(low_centrality: {:?}, verbose: {:?})", &data.getunweightedtransitivity.low_centrality, &data.getunweightedtransitivity.verbose);
+    }
+    
+
+    31 => {
+        println!("get_unweighted_number_of_triangles_per_node(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftrianglespernode.normalize, &data.getunweightednumberoftrianglespernode.low_centrality, &data.getunweightednumberoftrianglespernode.verbose);
+    }
+    
+
+    32 => {
+        println!("iter_clustering_coefficient_per_node(low_centrality: {:?}, verbose: {:?})", &data.iterclusteringcoefficientpernode.low_centrality, &data.iterclusteringcoefficientpernode.verbose);
+    }
+    
+
+    33 => {
+        println!("get_clustering_coefficient_per_node(low_centrality: {:?}, verbose: {:?})", &data.getclusteringcoefficientpernode.low_centrality, &data.getclusteringcoefficientpernode.verbose);
+    }
+    
+
+    34 => {
+        println!("get_clustering_coefficient(low_centrality: {:?}, verbose: {:?})", &data.getclusteringcoefficient.low_centrality, &data.getclusteringcoefficient.verbose);
+    }
+    
+
+    35 => {
+        println!("get_average_clustering_coefficient(low_centrality: {:?}, verbose: {:?})", &data.getaverageclusteringcoefficient.low_centrality, &data.getaverageclusteringcoefficient.verbose);
+    }
+    
+
+    36 => {
+        println!("get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth);
+    }
+    
+
+    37 => {
+        println!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k);
+    }
+    
+
+    38 => {
+        println!("get_unweighted_eccentricity_from_node_id(node_id: {:?})", &data.getunweightedeccentricityfromnodeid.node_id);
+    }
+    
+
+    39 => {
+        println!("get_weighted_eccentricity_from_node_id(node_id: {:?}, use_edge_weights_as_probabilities: {:?})", &data.getweightedeccentricityfromnodeid.node_id, &data.getweightedeccentricityfromnodeid.use_edge_weights_as_probabilities);
+    }
+    
+
+    40 => {
+        println!("get_weighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, use_edge_weights_as_probabilities: {:?}, maximal_depth: {:?})", &data.getweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getweightedminimumpathnodeidsfromnodeids.use_edge_weights_as_probabilities, &data.getweightedminimumpathnodeidsfromnodeids.maximal_depth);
+    }
+    
+
+    41 => {
+        println!("get_breath_first_search_from_node_ids(src_node_id: {:?}, maybe_dst_node_id: {:?}, maybe_dst_node_ids: {:?}, compute_distances: {:?}, compute_predecessors: {:?}, compute_visited: {:?}, maximal_depth: {:?})", &data.getbreathfirstsearchfromnodeids.src_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_id, &data.getbreathfirstsearchfromnodeids.maybe_dst_node_ids, &data.getbreathfirstsearchfromnodeids.compute_distances, &data.getbreathfirstsearchfromnodeids.compute_predecessors, &data.getbreathfirstsearchfromnodeids.compute_visited, &data.getbreathfirstsearchfromnodeids.maximal_depth);
+    }
+    
+
+    42 => {
+        println!("get_dijkstra_from_node_ids(src_node_id: {:?}, maybe_dst_node_id: {:?}, maybe_dst_node_ids: {:?}, compute_predecessors: {:?}, maximal_depth: {:?}, use_edge_weights_as_probabilities: {:?})", &data.getdijkstrafromnodeids.src_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_id, &data.getdijkstrafromnodeids.maybe_dst_node_ids, &data.getdijkstrafromnodeids.compute_predecessors, &data.getdijkstrafromnodeids.maximal_depth, &data.getdijkstrafromnodeids.use_edge_weights_as_probabilities);
+    }
+    
+
+    43 => {
+        println!("get_unweighted_diameter(ignore_infinity: {:?}, verbose: {:?})", &data.getunweighteddiameter.ignore_infinity, &data.getunweighteddiameter.verbose);
+    }
+    
+
+    44 => {
+        println!("get_weighted_diameter(ignore_infinity: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweighteddiameter.ignore_infinity, &data.getweighteddiameter.use_edge_weights_as_probabilities, &data.getweighteddiameter.verbose);
+    }
+    
+
+    45 => {
+        println!("iter_edge_ids_from_node_ids(src: {:?}, dst: {:?})", &data.iteredgeidsfromnodeids.src, &data.iteredgeidsfromnodeids.dst);
+    }
+    
+
+    46 => {
+        println!("iter_edge_node_ids_and_edge_type_id_from_edge_type_id(edge_type_id: {:?}, directed: {:?})", &data.iteredgenodeidsandedgetypeidfromedgetypeid.edge_type_id, &data.iteredgenodeidsandedgetypeidfromedgetypeid.directed);
+    }
+    
+
+    47 => {
+        println!("iter_node_ids_and_node_type_ids_from_node_type_id(node_type_id: {:?})", &data.iternodeidsandnodetypeidsfromnodetypeid.node_type_id);
+    }
+    
+
+    48 => {
+        println!("iter_node_names_and_node_type_names_from_node_type_id(node_type_id: {:?})", &data.iternodenamesandnodetypenamesfromnodetypeid.node_type_id);
+    }
+    
+
+    49 => {
+        println!("iter_edge_node_names_and_edge_type_name_from_edge_type_id(edge_type_id: {:?}, directed: {:?})", &data.iteredgenodenamesandedgetypenamefromedgetypeid.edge_type_id, &data.iteredgenodenamesandedgetypenamefromedgetypeid.directed);
+    }
+    
+
+    50 => {
+        println!("get_transitive_closure(iterations: {:?}, verbose: {:?})", &data.gettransitiveclosure.iterations.map(|x| x as NodeT), &data.gettransitiveclosure.verbose);
+    }
+    
+
+    51 => {
+        println!("get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})", &data.getunweightedallshortestpaths.iterations.map(|x| x as NodeT), &data.getunweightedallshortestpaths.verbose);
+    }
+    
+
+    52 => {
+        println!("get_weighted_all_shortest_paths(iterations: {:?}, use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedallshortestpaths.iterations.map(|x| x as NodeT), &data.getweightedallshortestpaths.use_edge_weights_as_probabilities, &data.getweightedallshortestpaths.verbose);
+    }
+    
+
+    53 => {
+        println!("strongly_connected_components()", );
+    }
+    
+
+    54 => {
+        println!("get_source_node_id_from_edge_id(edge_id: {:?})", &data.getsourcenodeidfromedgeid.edge_id);
+    }
+    
+
+    55 => {
+        println!("get_destination_node_id_from_edge_id(edge_id: {:?})", &data.getdestinationnodeidfromedgeid.edge_id);
+    }
+    
+
+    56 => {
+        println!("get_source_node_name_from_edge_id(edge_id: {:?})", &data.getsourcenodenamefromedgeid.edge_id);
+    }
+    
+
+    57 => {
+        println!("get_destination_node_name_from_edge_id(edge_id: {:?})", &data.getdestinationnodenamefromedgeid.edge_id);
+    }
+    
+
+    58 => {
+        println!("get_node_names_from_edge_id(edge_id: {:?})", &data.getnodenamesfromedgeid.edge_id);
+    }
+    
+
+    59 => {
+        println!("get_node_ids_from_edge_id(edge_id: {:?})", &data.getnodeidsfromedgeid.edge_id);
+    }
+    
+
+    60 => {
+        println!("get_edge_id_from_node_ids(src: {:?}, dst: {:?})", &data.getedgeidfromnodeids.src, &data.getedgeidfromnodeids.dst);
+    }
+    
+
+    61 => {
+        println!("get_node_ids_and_edge_type_id_from_edge_id(edge_id: {:?})", &data.getnodeidsandedgetypeidfromedgeid.edge_id);
+    }
+    
+
+    62 => {
+        println!("get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id: {:?})", &data.getnodeidsandedgetypeidandedgeweightfromedgeid.edge_id);
+    }
+    
+
+    63 => {
+        println!("get_unweighted_top_k_central_node_ids(k: {:?})", &data.getunweightedtopkcentralnodeids.k);
+    }
+    
+
+    64 => {
+        println!("get_weighted_top_k_central_node_ids(k: {:?})", &data.getweightedtopkcentralnodeids.k);
+    }
+    
+
+    65 => {
+        println!("get_unweighted_node_degree_from_node_id(node_id: {:?})", &data.getunweightednodedegreefromnodeid.node_id);
+    }
+    
+
+    66 => {
+        println!("get_weighted_node_degree_from_node_id(node_id: {:?})", &data.getweightednodedegreefromnodeid.node_id);
+    }
+    
+
+    67 => {
+        println!("get_top_k_central_node_names(k: {:?})", &data.gettopkcentralnodenames.k);
+    }
+    
+
+    68 => {
+        println!("get_node_type_id_from_node_id(node_id: {:?})", &data.getnodetypeidfromnodeid.node_id);
+    }
+    
+
+    69 => {
+        println!("get_edge_type_id_from_edge_id(edge_id: {:?})", &data.getedgetypeidfromedgeid.edge_id);
+    }
+    
+
+    70 => {
+        println!("get_node_type_names_from_node_id(node_id: {:?})", &data.getnodetypenamesfromnodeid.node_id);
+    }
+    
+
+    71 => {
+        println!("get_edge_type_name_from_edge_id(edge_id: {:?})", &data.getedgetypenamefromedgeid.edge_id);
+    }
+    
+
+    72 => {
+        println!("get_edge_type_name_from_edge_type_id(edge_type_id: {:?})", &data.getedgetypenamefromedgetypeid.edge_type_id);
+    }
+    
+
+    73 => {
+        println!("get_edge_weight_from_edge_id(edge_id: {:?})", &data.getedgeweightfromedgeid.edge_id);
+    }
+    
+
+    74 => {
+        println!("get_edge_weight_from_node_ids(src: {:?}, dst: {:?})", &data.getedgeweightfromnodeids.src, &data.getedgeweightfromnodeids.dst);
+    }
+    
+
+    75 => {
+        println!("get_edge_weight_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.getedgeweightfromnodeidsandedgetypeid.src, &data.getedgeweightfromnodeidsandedgetypeid.dst, &data.getedgeweightfromnodeidsandedgetypeid.edge_type);
+    }
+    
+
+    76 => {
+        println!("get_node_name_from_node_id(node_id: {:?})", &data.getnodenamefromnodeid.node_id);
+    }
+    
+
+    77 => {
+        println!("get_edge_node_names_from_edge_node_ids(edge_node_ids: {:?})", &data.getedgenodenamesfromedgenodeids.edge_node_ids);
+    }
+    
+
+    78 => {
+        println!("get_edge_count_from_edge_type_id(edge_type_id: {:?})", &data.getedgecountfromedgetypeid.edge_type_id);
+    }
+    
+
+    79 => {
+        println!("get_node_count_from_node_type_id(node_type_id: {:?})", &data.getnodecountfromnodetypeid.node_type_id);
+    }
+    
+
+    80 => {
+        println!("get_neighbour_node_ids_from_node_id(node_id: {:?})", &data.getneighbournodeidsfromnodeid.node_id);
+    }
+    
+
+    81 => {
+        println!("get_minmax_edge_ids_from_node_ids(src: {:?}, dst: {:?})", &data.getminmaxedgeidsfromnodeids.src, &data.getminmaxedgeidsfromnodeids.dst);
+    }
+    
+
+    82 => {
+        println!("get_edge_id_from_node_ids_and_edge_type_id(src: {:?}, dst: {:?}, edge_type: {:?})", &data.getedgeidfromnodeidsandedgetypeid.src, &data.getedgeidfromnodeidsandedgetypeid.dst, &data.getedgeidfromnodeidsandedgetypeid.edge_type);
+    }
+    
+
+    83 => {
+        println!("get_minmax_edge_ids_from_source_node_id(src: {:?})", &data.getminmaxedgeidsfromsourcenodeid.src);
+    }
+    
+
+    84 => {
+        println!("get_node_type_name_from_node_type_id(node_type_id: {:?})", &data.getnodetypenamefromnodetypeid.node_type_id);
+    }
+    
+
+    85 => {
+        println!("filter_from_ids(node_ids_to_keep: {:?}, node_ids_to_filter: {:?}, node_type_ids_to_keep: {:?}, node_type_ids_to_filter: {:?}, node_type_id_to_keep: {:?}, node_type_id_to_filter: {:?}, edge_ids_to_keep: {:?}, edge_ids_to_filter: {:?}, edge_node_ids_to_keep: {:?}, edge_node_ids_to_filter: {:?}, edge_type_ids_to_keep: {:?}, edge_type_ids_to_filter: {:?}, min_edge_weight: {:?}, max_edge_weight: {:?}, filter_singleton_nodes: {:?}, filter_singleton_nodes_with_selfloop: {:?}, filter_selfloops: {:?}, filter_parallel_edges: {:?}, verbose: {:?})", &data.filterfromids.node_ids_to_keep, &data.filterfromids.node_ids_to_filter, &data.filterfromids.node_type_ids_to_keep, &data.filterfromids.node_type_ids_to_filter, &data.filterfromids.node_type_id_to_keep, &data.filterfromids.node_type_id_to_filter, &data.filterfromids.edge_ids_to_keep, &data.filterfromids.edge_ids_to_filter, &data.filterfromids.edge_node_ids_to_keep, &data.filterfromids.edge_node_ids_to_filter, &data.filterfromids.edge_type_ids_to_keep, &data.filterfromids.edge_type_ids_to_filter, &data.filterfromids.min_edge_weight, &data.filterfromids.max_edge_weight, &data.filterfromids.filter_singleton_nodes, &data.filterfromids.filter_singleton_nodes_with_selfloop, &data.filterfromids.filter_selfloops, &data.filterfromids.filter_parallel_edges, &data.filterfromids.verbose);
+    }
+    
+
+    86 => {
+        println!("drop_unknown_node_types(verbose: {:?})", &data.dropunknownnodetypes.verbose);
+    }
+    
+
+    87 => {
+        println!("drop_unknown_edge_types(verbose: {:?})", &data.dropunknownedgetypes.verbose);
+    }
+    
+
+    88 => {
+        println!("drop_singleton_nodes(verbose: {:?})", &data.dropsingletonnodes.verbose);
+    }
+    
+
+    89 => {
+        println!("drop_singleton_nodes_with_selfloops(verbose: {:?})", &data.dropsingletonnodeswithselfloops.verbose);
+    }
+    
+
+    90 => {
+        println!("drop_disconnected_nodes(verbose: {:?})", &data.dropdisconnectednodes.verbose);
+    }
+    
+
+    91 => {
+        println!("drop_selfloops(verbose: {:?})", &data.dropselfloops.verbose);
+    }
+    
+
+    92 => {
+        println!("drop_parallel_edges(verbose: {:?})", &data.dropparalleledges.verbose);
+    }
+    
+
+    93 => {
+        println!("validate_node_id(node_id: {:?})", &data.validatenodeid.node_id);
+    }
+    
+
+    94 => {
+        println!("validate_node_ids(node_ids: {:?})", &data.validatenodeids.node_ids);
+    }
+    
+
+    95 => {
+        println!("validate_edge_id(edge_id: {:?})", &data.validateedgeid.edge_id);
+    }
+    
+
+    96 => {
+        println!("validate_edge_ids(edge_ids: {:?})", &data.validateedgeids.edge_ids);
+    }
+    
+
+    97 => {
+        println!("must_not_contain_unknown_node_types()", );
+    }
+    
+
+    98 => {
+        println!("must_not_contain_unknown_edge_types()", );
+    }
+    
+
+    99 => {
+        println!("validate_node_type_id(node_type_id: {:?})", &data.validatenodetypeid.node_type_id);
+    }
+    
+
+    100 => {
+        println!("validate_node_type_ids(node_type_ids: {:?})", &data.validatenodetypeids.node_type_ids);
+    }
+    
+
+    101 => {
+        println!("validate_edge_type_id(edge_type_id: {:?})", &data.validateedgetypeid.edge_type_id);
+    }
+    
+
+    102 => {
+        println!("validate_edge_type_ids(edge_type_ids: {:?})", &data.validateedgetypeids.edge_type_ids);
+    }
+    
+
+    103 => {
+        println!("must_have_node_types()", );
+    }
+    
+
+    104 => {
+        println!("must_have_edge_types()", );
+    }
+    
+
+    105 => {
+        println!("must_be_undirected()", );
+    }
+    
+
+    106 => {
+        println!("must_be_multigraph()", );
+    }
+    
+
+    107 => {
+        println!("must_not_be_multigraph()", );
+    }
+    
+
+    108 => {
+        println!("must_have_edge_weights()", );
+    }
+    
+
+    109 => {
+        println!("must_have_edge_weights_representing_probabilities()", );
+    }
+    
+
+    110 => {
+        println!("must_have_positive_edge_weights()", );
+    }
+    
+
+    111 => {
+        println!("must_not_contain_weighted_singleton_nodes()", );
+    }
+    
+
+    112 => {
+        println!("must_have_edges()", );
+    }
+    
+
+    113 => {
+        println!("must_have_nodes()", );
+    }
+    
+
+    114 => {
+        println!("iter_unweighted_degree_centrality()", );
+    }
+    
+
+    115 => {
+        println!("par_iter_weighted_degree_centrality()", );
+    }
+    
+
+    116 => {
+        println!("get_unweighted_degree_centrality()", );
+    }
+    
+
+    117 => {
+        println!("get_weighted_degree_centrality()", );
+    }
+    
+
+    118 => {
+        println!("par_iter_unweighted_closeness_centrality(verbose: {:?})", &data.pariterunweightedclosenesscentrality.verbose);
+    }
+    
+
+    119 => {
+        println!("par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.pariterweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.pariterweightedclosenesscentrality.verbose);
+    }
+    
+
+    120 => {
+        println!("get_unweighted_closeness_centrality(verbose: {:?})", &data.getunweightedclosenesscentrality.verbose);
+    }
+    
+
+    121 => {
+        println!("get_weighted_closeness_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedclosenesscentrality.use_edge_weights_as_probabilities, &data.getweightedclosenesscentrality.verbose);
+    }
+    
+
+    122 => {
+        println!("par_iter_unweighted_harmonic_centrality(verbose: {:?})", &data.pariterunweightedharmoniccentrality.verbose);
+    }
+    
+
+    123 => {
+        println!("par_iter_weighted_harmonic_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.pariterweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.pariterweightedharmoniccentrality.verbose);
+    }
+    
+
+    124 => {
+        println!("get_unweighted_harmonic_centrality(verbose: {:?})", &data.getunweightedharmoniccentrality.verbose);
+    }
+    
+
+    125 => {
+        println!("get_weighted_harmonic_centrality(use_edge_weights_as_probabilities: {:?}, verbose: {:?})", &data.getweightedharmoniccentrality.use_edge_weights_as_probabilities, &data.getweightedharmoniccentrality.verbose);
+    }
+    
+
+    126 => {
+        println!("get_stress_centrality(normalize: {:?}, verbose: {:?})", &data.getstresscentrality.normalize, &data.getstresscentrality.verbose);
+    }
+    
+
+    127 => {
+        println!("get_betweenness_centrality(normalize: {:?}, verbose: {:?})", &data.getbetweennesscentrality.normalize, &data.getbetweennesscentrality.verbose);
+    }
+    
+
+    128 => {
+        println!("get_unweighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance);
+    }
+    
+
+    129 => {
+        println!("get_weighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getweightedeigenvectorcentrality.tollerance);
+    }
+    
+
+    130 => {
+        println!("remove_inplace_node_type_ids(node_type_ids_to_remove: {:?})", &data.removeinplacenodetypeids.node_type_ids_to_remove);
+    }
+    
+
+    131 => {
+        println!("remove_inplace_singleton_node_types()", );
+    }
+    
+
+    132 => {
+        println!("remove_inplace_edge_type_ids(edge_type_ids_to_remove: {:?})", &data.removeinplaceedgetypeids.edge_type_ids_to_remove);
+    }
+    
+
+    133 => {
+        println!("remove_inplace_singleton_edge_types()", );
+    }
+    
+
+    134 => {
+        println!("remove_node_type_id(node_type_id: {:?})", &data.removenodetypeid.node_type_id);
+    }
+    
+
+    135 => {
+        println!("remove_singleton_node_types()", );
+    }
+    
+
+    136 => {
+        println!("remove_edge_type_id(edge_type_id: {:?})", &data.removeedgetypeid.edge_type_id);
+    }
+    
+
+    137 => {
+        println!("remove_singleton_edge_types()", );
+    }
+    
+
+    138 => {
+        println!("remove_inplace_node_types()", );
+    }
+    
+
+    139 => {
+        println!("remove_node_types()", );
+    }
+    
+
+    140 => {
+        println!("remove_inplace_edge_types()", );
+    }
+    
+
+    141 => {
+        println!("remove_edge_types(verbose: {:?})", &data.removeedgetypes.verbose);
+    }
+    
+
+    142 => {
+        println!("remove_inplace_edge_weights()", );
+    }
+    
+
+    143 => {
+        println!("remove_edge_weights()", );
+    }
+    
+
+    144 => {
+        println!("encode_edge(src: {:?}, dst: {:?})", &data.encodeedge.src, &data.encodeedge.dst);
+    }
+    
+
+    145 => {
+        println!("decode_edge(edge: {:?})", &data.decodeedge.edge);
+    }
+    
+
+    146 => {
+        println!("get_max_encodable_edge_number()", );
+    }
+    
+
+    147 => {
+        println!("par_iter_approximated_vertex_cover()", );
+    }
+    
+
+    148 => {
+        println!("approximated_vertex_cover_set()", );
+    }
+    
+
+    149 => {
+        println!("report()", );
+    }
+    
+
+    150 => {
+        println!("get_node_report_from_node_id(node_id: {:?})", &data.getnodereportfromnodeid.node_id);
+    }
+    
+
+    151 => {
+        println!("textual_report()", );
+    }
+    
+
+    152 => {
+        println!("get_connected_components_number(verbose: {:?})", &data.getconnectedcomponentsnumber.verbose);
+    }
+    
+
+    153 => {
+        println!("get_singleton_nodes_number()", );
+    }
+    
+
+    154 => {
+        println!("get_weighted_singleton_nodes_number()", );
+    }
+    
+
+    155 => {
+        println!("get_disconnected_nodes_number()", );
+    }
+    
+
+    156 => {
+        println!("get_singleton_node_ids()", );
+    }
+    
+
+    157 => {
+        println!("get_singleton_node_names()", );
+    }
+    
+
+    158 => {
+        println!("get_singleton_nodes_with_selfloops_number()", );
+    }
+    
+
+    159 => {
+        println!("get_singleton_with_selfloops_node_ids()", );
+    }
+    
+
+    160 => {
+        println!("get_singleton_with_selfloops_node_names()", );
+    }
+    
+
+    161 => {
+        println!("get_connected_nodes_number()", );
+    }
+    
+
+    162 => {
+        println!("get_density()", );
+    }
+    
+
+    163 => {
+        println!("get_trap_nodes_rate()", );
+    }
+    
+
+    164 => {
+        println!("get_unweighted_node_degrees_mean()", );
+    }
+    
+
+    165 => {
+        println!("get_weighted_node_degrees_mean()", );
+    }
+    
+
+    166 => {
+        println!("get_undirected_edges_number()", );
+    }
+    
+
+    167 => {
+        println!("get_unique_undirected_edges_number()", );
+    }
+    
+
+    168 => {
+        println!("get_edges_number()", );
+    }
+    
+
+    169 => {
+        println!("get_unique_edges_number()", );
+    }
+    
+
+    170 => {
+        println!("get_unweighted_node_degrees_median()", );
+    }
+    
+
+    171 => {
+        println!("get_weighted_node_degrees_median()", );
+    }
+    
+
+    172 => {
+        println!("get_weighted_maximum_node_degree()", );
+    }
+    
+
+    173 => {
+        println!("get_weighted_minimum_node_degree()", );
+    }
+    
+
+    174 => {
+        println!("get_unweighted_maximum_node_degree()", );
+    }
+    
+
+    175 => {
+        println!("get_argmax_node_degree()", );
+    }
+    
+
+    176 => {
+        println!("get_weighted_mininum_node_degree()", );
+    }
+    
+
+    177 => {
+        println!("get_unweighted_minimum_node_degree()", );
+    }
+    
+
+    178 => {
+        println!("get_unweighted_node_degrees_mode()", );
+    }
+    
+
+    179 => {
+        println!("get_selfloop_number()", );
+    }
+    
+
+    180 => {
+        println!("get_unique_selfloop_number()", );
+    }
+    
+
+    181 => {
+        println!("get_selfloop_nodes_rate()", );
+    }
+    
+
+    182 => {
+        println!("get_name()", );
+    }
+    
+
+    183 => {
+        println!("get_trap_nodes_number()", );
+    }
+    
+
+    184 => {
+        println!("get_source_node_ids(directed: {:?})", &data.getsourcenodeids.directed);
+    }
+    
+
+    185 => {
+        println!("get_source_names(directed: {:?})", &data.getsourcenames.directed);
+    }
+    
+
+    186 => {
+        println!("get_destination_node_ids(directed: {:?})", &data.getdestinationnodeids.directed);
+    }
+    
+
+    187 => {
+        println!("get_destination_names(directed: {:?})", &data.getdestinationnames.directed);
+    }
+    
+
+    188 => {
+        println!("get_node_names()", );
+    }
+    
+
+    189 => {
+        println!("get_node_ids()", );
+    }
+    
+
+    190 => {
+        println!("get_edge_type_ids()", );
+    }
+    
+
+    191 => {
+        println!("get_unique_edge_type_ids()", );
+    }
+    
+
+    192 => {
+        println!("get_edge_type_names()", );
+    }
+    
+
+    193 => {
+        println!("get_unique_edge_type_names()", );
+    }
+    
+
+    194 => {
+        println!("get_edge_weights()", );
+    }
+    
+
+    195 => {
+        println!("get_total_edge_weights()", );
+    }
+    
+
+    196 => {
+        println!("get_mininum_edge_weight()", );
+    }
+    
+
+    197 => {
+        println!("get_maximum_edge_weight()", );
+    }
+    
+
+    198 => {
+        println!("get_node_type_ids()", );
+    }
+    
+
+    199 => {
+        println!("get_one_hot_encoded_node_types()", );
+    }
+    
+
+    200 => {
+        println!("get_one_hot_encoded_known_node_types()", );
+    }
+    
+
+    201 => {
+        println!("get_one_hot_encoded_edge_types()", );
+    }
+    
+
+    202 => {
+        println!("get_one_hot_encoded_known_edge_types()", );
+    }
+    
+
+    203 => {
+        println!("get_node_type_names()", );
+    }
+    
+
+    204 => {
+        println!("get_unique_node_type_ids()", );
+    }
+    
+
+    205 => {
+        println!("get_unique_node_type_names()", );
+    }
+    
+
+    206 => {
+        println!("get_unique_directed_edges_number()", );
+    }
+    
+
+    207 => {
+        println!("get_nodes_mapping()", );
+    }
+    
+
+    208 => {
+        println!("get_edge_node_ids(directed: {:?})", &data.getedgenodeids.directed);
+    }
+    
+
+    209 => {
+        println!("get_edge_node_names(directed: {:?})", &data.getedgenodenames.directed);
+    }
+    
+
+    210 => {
+        println!("get_unknown_node_types_number()", );
+    }
+    
+
+    211 => {
+        println!("get_known_node_types_number()", );
+    }
+    
+
+    212 => {
+        println!("get_unknown_node_types_rate()", );
+    }
+    
+
+    213 => {
+        println!("get_known_node_types_rate()", );
+    }
+    
+
+    214 => {
+        println!("get_minimum_node_types_number()", );
+    }
+    
+
+    215 => {
+        println!("get_maximum_node_types_number()", );
+    }
+    
+
+    216 => {
+        println!("get_maximum_multilabel_count()", );
+    }
+    
+
+    217 => {
+        println!("get_singleton_node_types_number()", );
+    }
+    
+
+    218 => {
+        println!("get_singleton_node_type_ids()", );
+    }
+    
+
+    219 => {
+        println!("get_singleton_node_type_names()", );
+    }
+    
+
+    220 => {
+        println!("get_unknown_edge_types_number()", );
+    }
+    
+
+    221 => {
+        println!("get_edge_ids_with_unknown_edge_types()", );
+    }
+    
+
+    222 => {
+        println!("get_edge_ids_with_known_edge_types()", );
+    }
+    
+
+    223 => {
+        println!("get_edge_node_ids_with_unknown_edge_types(directed: {:?})", &data.getedgenodeidswithunknownedgetypes.directed);
+    }
+    
+
+    224 => {
+        println!("get_edge_node_ids_with_known_edge_types(directed: {:?})", &data.getedgenodeidswithknownedgetypes.directed);
+    }
+    
+
+    225 => {
+        println!("get_edge_node_names_with_unknown_edge_types(directed: {:?})", &data.getedgenodenameswithunknownedgetypes.directed);
+    }
+    
+
+    226 => {
+        println!("get_edge_node_names_with_known_edge_types(directed: {:?})", &data.getedgenodenameswithknownedgetypes.directed);
+    }
+    
+
+    227 => {
+        println!("get_edge_ids_with_unknown_edge_types_mask()", );
+    }
+    
+
+    228 => {
+        println!("get_edge_ids_with_known_edge_types_mask()", );
+    }
+    
+
+    229 => {
+        println!("get_node_ids_with_unknown_node_types()", );
+    }
+    
+
+    230 => {
+        println!("get_node_ids_with_known_node_types()", );
+    }
+    
+
+    231 => {
+        println!("get_node_names_with_unknown_node_types()", );
+    }
+    
+
+    232 => {
+        println!("get_node_names_with_known_node_types()", );
+    }
+    
+
+    233 => {
+        println!("get_node_ids_with_unknown_node_types_mask()", );
+    }
+    
+
+    234 => {
+        println!("get_node_ids_with_known_node_types_mask()", );
+    }
+    
+
+    235 => {
+        println!("get_known_edge_types_number()", );
+    }
+    
+
+    236 => {
+        println!("get_unknown_edge_types_rate()", );
+    }
+    
+
+    237 => {
+        println!("get_known_edge_types_rate()", );
+    }
+    
+
+    238 => {
+        println!("get_minimum_edge_types_number()", );
+    }
+    
+
+    239 => {
+        println!("get_singleton_edge_types_number()", );
+    }
+    
+
+    240 => {
+        println!("get_singleton_edge_type_ids()", );
+    }
+    
+
+    241 => {
+        println!("get_singleton_edge_type_names()", );
+    }
+    
+
+    242 => {
+        println!("get_nodes_number()", );
+    }
+    
+
+    243 => {
+        println!("get_node_connected_component_ids(verbose: {:?})", &data.getnodeconnectedcomponentids.verbose);
+    }
+    
+
+    244 => {
+        println!("get_directed_edges_number()", );
+    }
+    
+
+    245 => {
+        println!("get_edge_types_number()", );
+    }
+    
+
+    246 => {
+        println!("get_node_types_number()", );
+    }
+    
+
+    247 => {
+        println!("get_unweighted_node_degrees()", );
+    }
+    
+
+    248 => {
+        println!("get_weighted_node_degrees()", );
+    }
+    
+
+    249 => {
+        println!("get_not_singletons_node_ids()", );
+    }
+    
+
+    250 => {
+        println!("get_dense_nodes_mapping()", );
+    }
+    
+
+    251 => {
+        println!("get_parallel_edges_number()", );
+    }
+    
+
+    252 => {
+        println!("get_cumulative_node_degrees()", );
+    }
+    
+
+    253 => {
+        println!("get_unique_source_nodes_number()", );
+    }
+    
+
+    254 => {
+        println!("get_edge_type_id_counts_hashmap()", );
+    }
+    
+
+    255 => {
+        println!("get_edge_type_names_counts_hashmap()", );
+    }
+    
+
+    256 => {
+        println!("get_node_type_id_counts_hashmap()", );
+    }
+    
+
+    257 => {
+        println!("get_node_type_names_counts_hashmap()", );
+    }
+    
+
+    258 => {
+        println!("get_dense_binary_adjacency_matrix()", );
+    }
+    
+
+    259 => {
+        println!("get_dense_weighted_adjacency_matrix(weight: {:?})", &data.getdenseweightedadjacencymatrix.weight);
+    }
+    
+
+    260 => {
+        println!("iter_node_ids()", );
+    }
+    
+
+    261 => {
+        println!("par_iter_node_ids()", );
+    }
+    
+
+    262 => {
+        println!("iter_node_names()", );
+    }
+    
+
+    263 => {
+        println!("par_iter_node_names()", );
+    }
+    
+
+    264 => {
+        println!("iter_unique_node_type_ids()", );
+    }
+    
+
+    265 => {
+        println!("iter_node_type_counts()", );
+    }
+    
+
+    266 => {
+        println!("iter_unique_node_type_ids_and_counts()", );
+    }
+    
+
+    267 => {
+        println!("iter_unique_node_type_names()", );
+    }
+    
+
+    268 => {
+        println!("iter_unique_node_type_names_and_counts()", );
+    }
+    
+
+    269 => {
+        println!("iter_unique_edge_type_ids()", );
+    }
+    
+
+    270 => {
+        println!("iter_edge_type_counts()", );
+    }
+    
+
+    271 => {
+        println!("iter_unique_edge_type_ids_and_counts()", );
+    }
+    
+
+    272 => {
+        println!("iter_unique_edge_type_names_and_counts()", );
+    }
+    
+
+    273 => {
+        println!("iter_unique_edge_type_names()", );
+    }
+    
+
+    274 => {
+        println!("iter_unweighted_node_degrees()", );
+    }
+    
+
+    275 => {
+        println!("par_iter_unweighted_node_degrees()", );
+    }
+    
+
+    276 => {
+        println!("iter_weighted_node_degrees()", );
+    }
+    
+
+    277 => {
+        println!("par_iter_weighted_node_degrees()", );
+    }
+    
+
+    278 => {
+        println!("iter_connected_node_ids()", );
+    }
+    
+
+    279 => {
+        println!("iter_singleton_node_ids()", );
+    }
+    
+
+    280 => {
+        println!("iter_singleton_node_names()", );
+    }
+    
+
+    281 => {
+        println!("iter_singleton_nodes_with_selfloops_node_ids()", );
+    }
+    
+
+    282 => {
+        println!("iter_singleton_nodes_with_selfloops_node_names()", );
+    }
+    
+
+    283 => {
+        println!("iter_singleton_node_type_ids()", );
+    }
+    
+
+    284 => {
+        println!("iter_singleton_edge_type_ids()", );
+    }
+    
+
+    285 => {
+        println!("iter_singleton_node_type_names()", );
+    }
+    
+
+    286 => {
+        println!("iter_singleton_edge_type_names()", );
+    }
+    
+
+    287 => {
+        println!("iter_source_node_ids(directed: {:?})", &data.itersourcenodeids.directed);
+    }
+    
+
+    288 => {
+        println!("iter_edge_weights()", );
+    }
+    
+
+    289 => {
+        println!("par_iter_edge_weights()", );
+    }
+    
+
+    290 => {
+        println!("par_iter_source_node_ids(directed: {:?})", &data.paritersourcenodeids.directed);
+    }
+    
+
+    291 => {
+        println!("iter_destination_node_ids(directed: {:?})", &data.iterdestinationnodeids.directed);
+    }
+    
+
+    292 => {
+        println!("par_iter_destination_node_ids(directed: {:?})", &data.pariterdestinationnodeids.directed);
+    }
+    
+
+    293 => {
+        println!("iter_node_ids_and_node_type_ids()", );
+    }
+    
+
+    294 => {
+        println!("iter_one_hot_encoded_node_type_ids()", );
+    }
+    
+
+    295 => {
+        println!("iter_one_hot_encoded_known_node_type_ids()", );
+    }
+    
+
+    296 => {
+        println!("iter_node_names_and_node_type_names()", );
+    }
+    
+
+    297 => {
+        println!("par_iter_node_names_and_node_type_names()", );
+    }
+    
+
+    298 => {
+        println!("iter_edge_node_ids(directed: {:?})", &data.iteredgenodeids.directed);
+    }
+    
+
+    299 => {
+        println!("iter_edges(directed: {:?})", &data.iteredges.directed);
+    }
+    
+
+    300 => {
+        println!("par_iter_edge_node_ids(directed: {:?})", &data.pariteredgenodeids.directed);
+    }
+    
+
+    301 => {
+        println!("par_iter_directed_edge_ids()", );
+    }
+    
+
+    302 => {
+        println!("par_iter_edges(directed: {:?})", &data.pariteredges.directed);
+    }
+    
+
+    303 => {
+        println!("iter_edge_node_ids_and_edge_weight()", );
+    }
+    
+
+    304 => {
+        println!("par_iter_edge_node_ids_and_edge_weight()", );
+    }
+    
+
+    305 => {
+        println!("iter_edge_node_ids_and_edge_type_id(directed: {:?})", &data.iteredgenodeidsandedgetypeid.directed);
+    }
+    
+
+    306 => {
+        println!("iter_one_hot_encoded_edge_type_ids()", );
+    }
+    
+
+    307 => {
+        println!("iter_one_hot_encoded_known_edge_type_ids()", );
+    }
+    
+
+    308 => {
+        println!("iter_edge_node_names_and_edge_type_name(directed: {:?})", &data.iteredgenodenamesandedgetypename.directed);
+    }
+    
+
+    309 => {
+        println!("par_iter_edge_node_names_and_edge_type_name(directed: {:?})", &data.pariteredgenodenamesandedgetypename.directed);
+    }
+    
+
+    310 => {
+        println!("par_iter_edge_node_ids_and_edge_type_id(directed: {:?})", &data.pariteredgenodeidsandedgetypeid.directed);
+    }
+    
+
+    311 => {
+        println!("par_iter_edge_node_names_and_edge_type_name_and_edge_weight(directed: {:?})", &data.pariteredgenodenamesandedgetypenameandedgeweight.directed);
+    }
+    
+
+    312 => {
+        println!("iter_edge_node_names_and_edge_type_name_and_edge_weight(directed: {:?})", &data.iteredgenodenamesandedgetypenameandedgeweight.directed);
+    }
+    
+
+    313 => {
+        println!("par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed: {:?})", &data.pariteredgenodeidsandedgetypeidandedgeweight.directed);
+    }
+    
+
+    314 => {
+        println!("iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed: {:?})", &data.iteredgenodeidsandedgetypeidandedgeweight.directed);
+    }
+    
+
+    315 => {
+        println!("iter_unique_edge_node_ids(directed: {:?})", &data.iteruniqueedgenodeids.directed);
+    }
+    
+
+    316 => {
+        println!("iter_unique_source_node_ids()", );
+    }
+    
+
+    317 => {
+        println!("iter_edge_ids_with_unknown_edge_types()", );
+    }
+    
+
+    318 => {
+        println!("iter_edge_ids_with_known_edge_types()", );
+    }
+    
+
+    319 => {
+        println!("iter_edge_node_ids_with_unknown_edge_types(directed: {:?})", &data.iteredgenodeidswithunknownedgetypes.directed);
+    }
+    
+
+    320 => {
+        println!("iter_edge_node_ids_with_known_edge_types(directed: {:?})", &data.iteredgenodeidswithknownedgetypes.directed);
+    }
+    
+
+    321 => {
+        println!("iter_node_ids_with_unknown_node_types()", );
+    }
+    
+
+    322 => {
+        println!("iter_node_ids_with_known_node_types()", );
+    }
+    
+
+    323 => {
+        println!("iter_edge_node_names_with_unknown_edge_types(directed: {:?})", &data.iteredgenodenameswithunknownedgetypes.directed);
+    }
+    
+
+    324 => {
+        println!("iter_edge_node_names_with_known_edge_types(directed: {:?})", &data.iteredgenodenameswithknownedgetypes.directed);
+    }
+    
+
+    325 => {
+        println!("iter_node_names_with_unknown_node_types()", );
+    }
+    
+
+    326 => {
+        println!("iter_node_names_with_known_node_types()", );
+    }
+    
+
+    327 => {
+        println!("par_iter_edge_ids_with_unknown_edge_types()", );
+    }
+    
+
+    328 => {
+        println!("par_iter_edge_ids_with_known_edge_types()", );
+    }
+    
+
+    329 => {
+        println!("par_iter_edge_node_ids_with_unknown_edge_types(directed: {:?})", &data.pariteredgenodeidswithunknownedgetypes.directed);
+    }
+    
+
+    330 => {
+        println!("par_iter_edge_node_ids_with_known_edge_types(directed: {:?})", &data.pariteredgenodeidswithknownedgetypes.directed);
+    }
+    
+
+    331 => {
+        println!("par_iter_node_ids_with_unknown_node_types()", );
+    }
+    
+
+    332 => {
+        println!("par_iter_node_ids_with_known_node_types()", );
+    }
+    
+
+    333 => {
+        println!("par_iter_edge_node_names_with_unknown_edge_types(directed: {:?})", &data.pariteredgenodenameswithunknownedgetypes.directed);
+    }
+    
+
+    334 => {
+        println!("par_iter_edge_node_names_with_known_edge_types(directed: {:?})", &data.pariteredgenodenameswithknownedgetypes.directed);
+    }
+    
+
+    335 => {
+        println!("par_iter_node_names_with_unknown_node_types()", );
+    }
+    
+
+    336 => {
+        println!("par_iter_node_names_with_known_node_types()", );
+    }
+    
+
+    337 => {
+        println!("get_unweighted_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    338 => {
+        println!("get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    339 => {
+        println!("get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    340 => {
+        println!("get_unweighted_symmetric_normalized_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedtransformedgraph.verbose);
+    }
+    
+
+    341 => {
+        println!("get_weighted_laplacian_transformed_graph(verbose: {:?})", &data.getweightedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    342 => {
+        println!("get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getweightedsymmetricnormalizedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    343 => {
+        println!("get_weighted_symmetric_normalized_transformed_graph(verbose: {:?})", &data.getweightedsymmetricnormalizedtransformedgraph.verbose);
+    }
+    
+
+    344 => {
+        println!("get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getweightedrandomwalknormalizedlaplaciantransformedgraph.verbose);
+    }
+    
+
+    345 => {
+        println!("has_default_graph_name()", );
+    }
+    
+
+    346 => {
+        println!("has_nodes()", );
+    }
+    
+
+    347 => {
+        println!("has_edges()", );
+    }
+    
+
+    348 => {
+        println!("has_trap_nodes()", );
+    }
+    
+
+    349 => {
+        println!("is_directed()", );
+    }
+    
+
+    350 => {
+        println!("has_edge_weights()", );
+    }
+    
+
+    351 => {
+        println!("has_edge_weights_representing_probabilities()", );
+    }
+    
+
+    352 => {
+        println!("has_weighted_singleton_nodes()", );
+    }
+    
+
+    353 => {
+        println!("has_constant_edge_weights()", );
+    }
+    
+
+    354 => {
+        println!("has_negative_edge_weights()", );
+    }
+    
+
+    355 => {
+        println!("has_edge_types()", );
+    }
+    
+
+    356 => {
+        println!("has_selfloops()", );
+    }
+    
+
+    357 => {
+        println!("has_disconnected_nodes()", );
+    }
+    
+
+    358 => {
+        println!("has_singleton_nodes()", );
+    }
+    
+
+    359 => {
+        println!("has_singleton_nodes_with_selfloops()", );
+    }
+    
+
+    360 => {
+        println!("is_connected(verbose: {:?})", &data.isconnected.verbose);
+    }
+    
+
+    361 => {
+        println!("has_node_types()", );
+    }
+    
+
+    362 => {
+        println!("has_multilabel_node_types()", );
+    }
+    
+
+    363 => {
+        println!("has_unknown_node_types()", );
+    }
+    
+
+    364 => {
+        println!("has_known_node_types()", );
+    }
+    
+
+    365 => {
+        println!("has_unknown_edge_types()", );
+    }
+    
+
+    366 => {
+        println!("has_known_edge_types()", );
+    }
+    
+
+    367 => {
+        println!("has_homogeneous_node_types()", );
+    }
+    
+
+    368 => {
+        println!("has_homogeneous_edge_types()", );
+    }
+    
+
+    369 => {
+        println!("has_singleton_node_types()", );
+    }
+    
+
+    370 => {
+        println!("has_node_oddities()", );
+    }
+    
+
+    371 => {
+        println!("has_node_types_oddities()", );
+    }
+    
+
+    372 => {
+        println!("has_singleton_edge_types()", );
+    }
+    
+
+    373 => {
+        println!("has_edge_types_oddities()", );
+    }
+    
+
+    374 => {
+        println!("is_multigraph()", );
+    }
+    
+
+    375 => {
+        println!("has_nodes_sorted_by_decreasing_outbound_node_degree()", );
+    }
+    
+
+    376 => {
+        println!("has_nodes_sorted_by_increasing_outbound_node_degree()", );
+    }
+    
+
+    377 => {
+        println!("compute_hash()", );
+    }
+    
+
+    378 => {
+        println!("to_directed_inplace()", );
+    }
+    
+
+    379 => {
+        println!("to_directed()", );
+    }
+    
+
+    380 => {
+        println!("to_upper_triangular(verbose: {:?})", &data.touppertriangular.verbose);
+    }
+    
+
+    381 => {
+        println!("to_lower_triangular(verbose: {:?})", &data.tolowertriangular.verbose);
+    }
+    
+
+    382 => {
+        println!("to_main_diagonal(verbose: {:?})", &data.tomaindiagonal.verbose);
+    }
+    
+
+    383 => {
+        println!("to_anti_diagonal(verbose: {:?})", &data.toantidiagonal.verbose);
+    }
+    
+
+    384 => {
+        println!("to_bidiagonal(verbose: {:?})", &data.tobidiagonal.verbose);
+    }
+    
+
+    385 => {
+        println!("to_arrowhead(verbose: {:?})", &data.toarrowhead.verbose);
+    }
+    
+
+    386 => {
+        println!("to_transposed(verbose: {:?})", &data.totransposed.verbose);
+    }
+    
+
+    387 => {
+        println!("to_complementary(verbose: {:?})", &data.tocomplementary.verbose);
+    }
+    
+
+    388 => {
+        println!("node_label_holdout(train_size: {:?}, use_stratification: {:?}, random_state: {:?})", &data.nodelabelholdout.train_size, &data.nodelabelholdout.use_stratification, &data.nodelabelholdout.random_state);
+    }
+    
+
+    389 => {
+        println!("edge_label_holdout(train_size: {:?}, use_stratification: {:?}, random_state: {:?})", &data.edgelabelholdout.train_size, &data.edgelabelholdout.use_stratification, &data.edgelabelholdout.random_state);
+    }
+    
+
+    390 => {
+        println!("random_subgraph(nodes_number: {:?}, random_state: {:?}, verbose: {:?})", &data.randomsubgraph.nodes_number, &data.randomsubgraph.random_state, &data.randomsubgraph.verbose);
+    }
+    
+            _ => unreachable!()
+        }
+    }
+    
+    println!("{}", graph.textual_report());
+
+    Ok(())
+}

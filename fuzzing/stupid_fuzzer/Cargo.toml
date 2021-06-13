@@ -22,16 +22,12 @@ name = "test"
 path = "src/test.rs"
 
 [[bin]]
-name = "debug"
-path = "src/debug.rs"
-
-[[bin]]
-name = "sigabrttest"
-path = "src/sigabrttest.rs"
+name = "trace"
+path = "src/trace.rs"
 
 [profile.release]
 opt-level = 3
-lto = "fat"
+#lto = "fat"
 overflow-checks = true   # Disable integer overflow checks.
 debug = true             # Include debug info.
 debug-assertions = true  # Enables debug assertions.
