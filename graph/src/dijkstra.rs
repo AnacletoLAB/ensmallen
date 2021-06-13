@@ -440,6 +440,7 @@ impl Graph {
         paths
     }
 
+    #[fuzz_type(k: u8)]
     #[no_numpy_binding]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
@@ -470,6 +471,7 @@ impl Graph {
         })
     }
 
+    #[fuzz_type(k: u8)]
     #[no_numpy_binding]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
     ///
@@ -499,6 +501,7 @@ impl Graph {
         })
     }
 
+    #[fuzz_type(k: u8)]
     #[no_numpy_binding]
     /// Return vector of the k minimum paths node names between given source node and destination node name.
     ///
