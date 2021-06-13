@@ -23,10 +23,9 @@ pub fn from_vec_harness_with_panic_handling(data: FromVecHarnessParams) -> Resul
     let data_for_panic_handling1 = data.clone();
     let data_for_panic_handling2 = data.clone();
     let data_for_signal_handling = data.clone();
-     std::panic::set_hook(Box::new(move |info| {
+    std::panic::set_hook(Box::new(move |info| {
         handle_panics_from_vec(Some(info), data_for_panic_handling1.clone(), None);
     }));
-
 
     //register_handler(libc::SIGABRT, abrt_handler, data_for_signal_handling);
 
@@ -59,19 +58,18 @@ pub fn from_vec_harness_with_panic_handling(data: FromVecHarnessParams) -> Resul
         handle_panics_from_vec_once_loaded(
             Some(info),
             data_for_panic_handling2.clone(),
-            graph_copy_for_panic_handling.clone()
+            graph_copy_for_panic_handling.clone(),
         );
     }));
 
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
     let _ = graph::test_utilities::default_test_suite(&mut graph, None);
-    
+
     Ok(())
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-
     let mut graph = graph::Graph::from_string_unsorted(
         data.edges.into_iter(),
         data.nodes.map(|ns| ns.into_iter()),
@@ -99,6 +97,6 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
     let _ = graph::test_utilities::default_test_suite(&mut graph, None);
-    
+
     Ok(())
 }
