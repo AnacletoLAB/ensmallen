@@ -74,7 +74,12 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
                         fields.push((arg.name.clone(), x.to_string()));
                         call_args.push(format!("data.{}.{} as {}", struct_field_name, arg.name, y));
                     }
-                    _ => panic!("The fuzz type attribute was called with not-supported types."),
+                    (x, y) => {
+                        panic!(
+                            "The fuzz type attribute was called with not-supported types: {} and {}", 
+                            x, y
+                        )
+                    },
                 }
                 continue;
             }

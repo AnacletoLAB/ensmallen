@@ -276,7 +276,7 @@ pub struct GetUnweightedMinimumPathNodeIdsFromNodeIds {
 pub struct GetUnweightedKShortestPathNodeIdsFromNodeIds {
     pub src_node_id : NodeT,
     pub dst_node_id : NodeT,
-    pub k : usize,
+    pub k : u8,
 }
 
 
@@ -2112,7 +2112,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
     
 
     37 => {
-        trace.push(format!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k));
+        trace.push(format!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k as usize));
     
         let g_copy = graph.clone();
         let trace2 = trace.clone();
@@ -2120,7 +2120,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
         std::panic::set_hook(Box::new(move |info| {
             handle_panics_meta_test_once_loaded(Some(info), data_for_panic_handler.clone(), g_copy.clone(), Some(trace2.clone()));
         }));
-        let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.k.clone());
+        let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.k as usize.clone());
     }
     
 
@@ -7191,7 +7191,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
     
 
     37 => {
-        let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.k.clone());
+        let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id.clone(), data.getunweightedkshortestpathnodeidsfromnodeids.k as usize.clone());
     }
     
 
@@ -9238,6 +9238,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
         true,
         data.from_vec.verbose,
     )?;
+    println!("{}\n\n", graph.textual_report());
 
     let mut rng = Rng::new(data.seed);
     for _ in 0..10 {
@@ -9429,7 +9430,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
     
 
     37 => {
-        println!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k);
+        println!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.k as usize);
     }
     
 
@@ -11200,8 +11201,6 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             _ => unreachable!()
         }
     }
-    
-    println!("{}", graph.textual_report());
 
     Ok(())
 }

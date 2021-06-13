@@ -1,5 +1,28 @@
 use super::*;
 
+pub const PRIMITIVE_TYPES: &'static [&'static str] = &[
+    "bool",
+    "usize",
+    "u8",
+    "u16",
+    "u32",
+    "u64",
+    "u128",
+    "isize",
+    "i8",
+    "i16",
+    "i32",
+    "i64",
+    "i128",
+    "f32",
+    "f64",
+    "NodeT",
+    "EdgeT",
+    "WeightT",
+    "NodeTypeT",
+    "EdgeTypeT",
+];
+
 #[derive(Debug, Clone)]
 /// Enumeration of the possible types
 /// Here we need to use boxes because otherwise
@@ -86,13 +109,7 @@ impl PartialEq for Type {
                 },
             ) => n1 == n2 && m1 == m2 && g1 == g2 && t1 == t2,
             (Primitive, SimpleType{name, ..}) | (SimpleType{name, ..}, Primitive) => {
-                match name.as_str() {
-                    "f64" | "NodeT" | "EdgeT" 
-                    | "WeightT" | "NodeTypeT" 
-                    | "EdgeTypeT" | "usize" 
-                    | "bool"  => true,
-                    _ => false,
-                }
+                PRIMITIVE_TYPES.contains(&name.as_str())
             }
             _ => false,
         }
@@ -144,13 +161,7 @@ impl CmpWithoutModifiers for Type {
                 },
             ) => n1 == n2 && g1.cmp_without_modifiers(g2),
             (Primitive, SimpleType{name, ..}) | (SimpleType{name, ..}, Primitive) => {
-                match name.as_str() {
-                    "f64" | "NodeT" | "EdgeT" 
-                    | "WeightT" | "NodeTypeT" 
-                    | "EdgeTypeT" | "usize" 
-                    | "bool"  => true,
-                    _ => false,
-                }
+                PRIMITIVE_TYPES.contains(&name.as_str())
             }
             _ => false,
         }
@@ -436,6 +447,13 @@ mod test {
                 assert!(traits.is_empty());
             },
             _ => panic!("The value is expected to be parsed as a simple type.s")
+        }
+    }
+
+    #[test]
+    fn test_primitive_type() {
+        for ptype in PRIMITIVE_TYPES {
+            assert_eq!(Type::parse_lossy_str(ptype), "Primitive");
         }
     }
 
