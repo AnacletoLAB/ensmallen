@@ -1,5 +1,5 @@
 random_state := 1337420
-TIMEOUT := 10 # seconds
+TIMEOUT := 60 # seconds
 MAX_RAM := 8192 # Mb
 MAX_LEN := 81920 # bytes
 CORPUS_FOLDER := corpus
