@@ -857,12 +857,17 @@ pub(crate) fn build_edges(
         && !might_contain_singletons_with_selfloops
         && selfloop_number == edges.len() as EdgeT
     {
-        panic!(concat!(
-            "The provided graph has as many selfloops as edges, and therefore ",
-            "must contain singleton nodes with selfloops.\n",
-            "The parameter might_contain_singletons_with_selfloops was provided ",
-            "as false: it is likely a wrong parametrization."
-        ));
+        panic!(
+            concat!(
+                "The provided graph has as many selfloops ({}) as edges ({}), and therefore ",
+                "must contain singleton nodes with selfloops.\n",
+                "The parameter might_contain_singletons_with_selfloops ({}) was provided ",
+                "as false: it is likely a wrong parametrization."
+            ),
+            selfloop_number,
+            edges.len(),
+            might_contain_singletons_with_selfloops
+        );
     }
 
     // We need to update the minimum and maximum node degrees
