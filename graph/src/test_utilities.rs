@@ -2375,6 +2375,14 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
         verbose,
         result
     );
+    test_mut_graph!(graph, to_upper_triangular, verbose);
+    test_mut_graph!(graph, to_lower_triangular, verbose);
+    test_mut_graph!(graph, to_main_diagonal, verbose);
+    test_mut_graph!(graph, to_anti_diagonal, verbose);
+    test_mut_graph!(graph, to_bidiagonal, verbose);
+    test_mut_graph!(graph, to_arrowhead, verbose);
+    test_mut_graph!(graph, to_transposed, verbose);
+    test_mut_graph!(graph, to_complementary, verbose);
 
     Ok(())
 }
