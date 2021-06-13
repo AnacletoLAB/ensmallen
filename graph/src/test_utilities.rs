@@ -334,10 +334,12 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
                         "the source node ID {} to the destination node ID {} ",
                         "the symmetric edge does not exist.\n",
                         "This error is likely caused by some mis-parametrization ",
-                        "in a method that is expected to produce a simmetric graph."
+                        "in a method that is expected to produce a simmetric graph.\n",
+                        "The complete set of edges in the graph is:\n{:?}"
                     ),
                     src_node_id,
-                    dst_node_id
+                    dst_node_id,
+                    graph.get_edge_node_ids(true)
                 );
             });
     }
