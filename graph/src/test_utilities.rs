@@ -323,7 +323,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     // If the graph is undirected, all the edges must have their symmetrical one
     if !graph.is_directed() {
         graph
-            .par_iter_edge_node_ids(true)
+            .iter_edge_node_ids(true)
             .for_each(|(_, src_node_id, dst_node_id)| {
                 assert!(
                     graph.has_edge_from_node_ids(dst_node_id, src_node_id),
@@ -843,13 +843,19 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     let (_, connected_components, total_connected_components, _, _) =
         graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);
     let actual_components_number = connected_components.iter().unique().count() as NodeT;
+
     assert_eq!(
-        actual_components_number,
-        total_connected_components,
-        "The measured number of connected components ({}) does not match the computed number of connected components ({}).",
-        actual_components_number,
-        total_connected_components
+        actual_components_number, total_connected_components,
+        concat!(
+            "The measured number of connected components ({}) ",
+            "does not match the computed number of connected components ({}).\n",
+            "That is, the components are not a dense set.\n",
+            "This is likely caused by a problem with the remapping of the ",
+            "components."
+        ),
+        actual_components_number, total_connected_components,
     );
+
     let max_component_id = connected_components.iter().max();
     if let Some(mci) = max_component_id {
         assert_eq!(
@@ -863,7 +869,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     if !graph.is_directed() {
         // Checking that the connected components are a dense range.
         let (connected_components, total_connected_components, _, _) =
-            graph.connected_components(verbose)?;
+            graph.connected_components(verbose).unwrap();
         let actual_components_number = connected_components.iter().unique().count() as NodeT;
         assert_eq!(
             actual_components_number,
@@ -887,24 +893,26 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 }
 
 pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
-    let node_degree_centralities = graph.get_unweighted_degree_centrality()?;
+    if graph.has_nodes() {
+        let node_degree_centralities = graph.get_unweighted_degree_centrality().unwrap();
 
-    assert_eq!(
-        node_degree_centralities.len(),
-        graph.get_nodes_number() as usize
-    );
+        assert_eq!(
+            node_degree_centralities.len(),
+            graph.get_nodes_number() as usize
+        );
 
-    assert!(
-        node_degree_centralities
-            .iter()
-            .cloned()
-            .all(|value| value <= 1.0 && value >= 0.0),
-        "All node degrees centralities are expected to be within 0 and 1, but are {:?}.",
-        node_degree_centralities
-    );
+        assert!(
+            node_degree_centralities
+                .iter()
+                .cloned()
+                .all(|value| value <= 1.0 && value >= 0.0),
+            "All node degrees centralities are expected to be within 0 and 1, but are {:?}.",
+            node_degree_centralities
+        );
+    }
 
-    if graph.has_edge_weights() {
-        let node_degree_centralities = graph.get_weighted_degree_centrality()?;
+    if graph.has_edge_weights() && !graph.has_negative_edge_weights().unwrap() {
+        let node_degree_centralities = graph.get_weighted_degree_centrality().unwrap();
 
         assert_eq!(
             node_degree_centralities.len(),
@@ -925,8 +933,8 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
             ),
             node_degree_centralities,
             graph.get_weighted_node_degrees(),
-            graph.get_weighted_mininum_node_degree()?,
-            graph.get_weighted_maximum_node_degree()?,
+            graph.get_weighted_mininum_node_degree().unwrap(),
+            graph.get_weighted_maximum_node_degree().unwrap(),
         );
     }
 
@@ -1357,7 +1365,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
     Ok(())
 }
 
-pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
+pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
     if !graph.has_edge_types() {
         assert!(graph
             .connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
@@ -1375,42 +1383,76 @@ pub fn test_edge_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
-        let (total, min_comp, max_comp) = graph.get_connected_components_number(verbose);
-        assert_eq!(
-            graph.get_connected_components_number(verbose),
-            train.get_connected_components_number(verbose),
-            "The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.",
-            nodes_number=graph.get_nodes_number().to_string()
-        );
-        if total == 1 {
+        assert_eq!(graph.get_nodes_number(), train.get_nodes_number());
+        assert_eq!(graph.get_nodes_number(), test.get_nodes_number());
+
+        let (original_total, original_min_comp, original_max_comp) =
+            graph.get_connected_components_number(verbose);
+        let (train_total, train_min_comp, train_max_comp) =
+            train.get_connected_components_number(verbose);
+        if original_total == 1 {
+            assert!(original_min_comp == original_max_comp);
+            assert_eq!(original_min_comp, graph.get_nodes_number());
+        }
+        if original_total == 2 {
+            assert!(original_min_comp <= original_max_comp);
             assert_eq!(
-                min_comp,
+                original_min_comp + original_max_comp,
                 graph.get_nodes_number(),
                 concat!(
-                    "We expect for the minimum size of connected components ",
-                    "in a graph with a single connected component to ",
-                    "match the number of nodes of the graph, but we got ",
-                    "the minimum component with size {} and the number ",
-                    "of nodes in the graph equal to {}.\n",
-                    "The graph report is: \n {:?}",
+                    "When a graph contains two connected components, ",
+                    "summing the two connected components should give ",
+                    "the number of nodes in the graph.\n",
+                    "The graph is {}."
                 ),
-                min_comp,
-                graph.get_nodes_number(),
-                graph.textual_report()
+                if graph.is_directed() {
+                    "directed"
+                } else {
+                    "undirected"
+                }
             );
-            assert_eq!(max_comp, graph.get_nodes_number());
-            assert_eq!(min_comp, test.get_nodes_number());
-            assert_eq!(max_comp, test.get_nodes_number());
         }
-        if total == 2 {
-            assert_eq!(
-                max_comp + min_comp, graph.get_nodes_number(),
-                "We expected that the number of the minimum component ({}) plus the maximum component ({}), when the components are two, made up the graph nodes ({}).\nThe graph report is:\n {:?}",
-                min_comp, max_comp, graph.get_nodes_number(),
-                graph.textual_report()
-            );
-            assert_eq!(max_comp + min_comp, test.get_nodes_number());
+        if train_total == 1 {
+            assert!(train_min_comp == train_max_comp);
+            assert_eq!(train_min_comp, graph.get_nodes_number());
         }
+        if train_total == 2 {
+            assert!(train_min_comp <= train_max_comp);
+            assert_eq!(train_min_comp + train_max_comp, train.get_nodes_number());
+        }
+        assert_eq!(
+            train_total, original_total,
+            concat!(
+                "In a connected holdout the training graph must have the ",
+                "same number of connected components as in the original ",
+                "graph, but here the training graph has {} components ",
+                "while the original graph has {} components."
+            ),
+            train_total, original_total
+        );
+        assert_eq!(
+            train_min_comp, original_min_comp,
+            concat!(
+                "In a connected holdout the training graph must have the ",
+                "same number of connected components as in the original ",
+                "graph, but here the minimum connected component size ",
+                "of the training graph has size {} while the corresponding one ",
+                "from the original graph has size {}."
+            ),
+            train_min_comp, original_min_comp
+        );
+        assert_eq!(
+            train_max_comp, original_max_comp,
+            concat!(
+                "In a connected holdout the training graph must have the ",
+                "same number of connected components as in the original ",
+                "graph, but here the maximum connected component size ",
+                "of the training graph has size {} while the corresponding one ",
+                "from the original graph has size {}."
+            ),
+            train_max_comp, original_max_comp
+        );
+
         default_holdout_test_suite(graph, &train, &test)?;
     }
     Ok(())
