@@ -72,7 +72,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
                     (x, y) if x == "Primitive" && y == "Primitive" => {
                         arg_names.push(arg.name.clone());
                         fields.push((arg.name.clone(), x.to_string()));
-                        call_args.push(format!("data.{}.{} as {}", struct_field_name, arg.name, y));
+                        call_args.push(format!("(data.{}.{} as {})", struct_field_name, arg.name, y));
                     }
                     (x, y) => {
                         panic!(

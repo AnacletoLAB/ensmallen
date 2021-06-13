@@ -2,13 +2,13 @@
 BUILD_COMMAND=make build
 MANYLINUX=sudo docker run --rm -v "$${PWD}:/io" manylinux2010
 
-python:
+python: 
 	(cd bindings/python; ${BUILD_COMMAND})
 
-python_manylinux2010:
+python_manylinux2010: bindgen
 	${MANYLINUX} make python
 
-build_manylinux2010:
+build_manylinux2010: 
 	sudo docker build -t manylinux2010 -f ./setup/DockerFileManylinux2010 ./setup
 
 
@@ -49,7 +49,7 @@ test_from_csv:
 test_from_vec:
 	$(MAKE) -C "./fuzzing/stupid_fuzzer" test_from_vec
 
-test_meta_test:
+test_meta_test: build_metatest_harness
 	$(MAKE) -C "./fuzzing/stupid_fuzzer" test_meta_test
 
 
