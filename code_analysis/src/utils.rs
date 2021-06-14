@@ -6,12 +6,10 @@ use std::fs::read_dir;
 /// becasue they have features we don't have implmented yet
 /// nor we care about.
 const BLACKLIST: &'static [&'static str] = &[
-    "utils.rs", // macro rules
-    "types.rs", // macro rules
+    "types.rs", // macro calls
     "walks.rs", // mods
     "lib.rs",   // mods
     "core.c",   // it is C
-    "macros.rs",
     "test_utilities.rs",
 ];
 

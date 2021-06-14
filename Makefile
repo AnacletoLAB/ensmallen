@@ -49,7 +49,7 @@ test_from_csv:
 test_from_vec:
 	$(MAKE) -C "./fuzzing/stupid_fuzzer" test_from_vec
 
-test_meta_test: build_metatest_harness
+test_meta_test:
 	$(MAKE) -C "./fuzzing/stupid_fuzzer" test_meta_test
 
 
