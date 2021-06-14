@@ -118,7 +118,7 @@ impl Graph {
                 edge_node_ids_to_filter.is_some(),
                 edge_type_ids_to_keep.is_some(),
                 edge_type_ids_to_filter.is_some(),
-                min_edge_weight.is_some() && max_edge_weight.is_some() && self.has_edge_weights(),
+                (min_edge_weight.is_some() || max_edge_weight.is_some()) && self.has_edge_weights(),
                 filter_selfloops && self.has_selfloops(),
                 filter_parallel_edges && self.is_multigraph(),
                 filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
