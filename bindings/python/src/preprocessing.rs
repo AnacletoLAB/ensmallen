@@ -326,119 +326,49 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, node_ids, *, random_state, include_central_node, offset, max_neighbours)"]
-    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
-    ///
-    /// This method is meant to be used to predict node labels using the NoLaN model.
-    ///
-    /// If you need to predict the node label of a node, not during training,
-    /// use `max_neighbours=None`.
+    #[text_signature = "($self, idx, batch_size, include_central_node, return_edge_weights, max_neighbours)"]
+    /// Return iterator over neighbours for the given node
     ///
     /// Parameters
     /// -----------------------------
-    /// - node_ids: List[int],
-    ///     The node ID to retrieve neighbours for.
-    /// - random_state: int = 42,
-    ///     The random state to use to extract the neighbours.
-    /// - include_central_node: bool = True,
-    ///     Whether to include the node ID in the returned iterator.
-    /// - offset: int = 1,
-    ///     Offset for padding porposes.
-    /// - max_neighbours: int = None,
-    ///     Number of maximum neighbours to consider.
+    /// `idx`: int - Seed for the batch.
+    /// `batch_size`: Optional[int] = 1024 - The dimension of the batch.
+    /// `include_central_node`: Optional[bool] - Whether to include the central node.
+    /// `return_edge_weights`: Optional[bool] - Whether to return the edge weights.
+    /// `max_neighbours`: Optional[int] - Maximal number of neighbours to sample.
     ///
     /// Returns
     /// -----------------------------
-    /// Tuple with input nodes and output node types.
+    /// Tuple with input nodes, optionally edge weights and one-hot encoded node types.
     ///
-    fn get_node_label_prediction_tuple_from_node_ids(
+    fn get_node_label_prediction_mini_batch(
         &self,
-        node_ids: Vec<NodeT>,
-        py_kwargs: Option<&PyDict>,
+        idx: u64,
+        batch_size: Option<NodeT>,
+        include_central_node: Option<bool>,
+        return_edge_weights: Option<bool>,
+        max_neighbours: Option<NodeT>,
     ) -> PyResult<(
-        (Py<PyArray2<NodeT>>, Option<Py<PyArray2<WeightT>>>),
+        (Vec<Vec<NodeT>>, Option<Vec<Vec<WeightT>>>),
         Py<PyArray2<NodeTypeT>>,
     )> {
         let gil = pyo3::Python::acquire_gil();
 
-        // First we normalize the kwargs so that we always at least
-        // an empty dictionary
-        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-
-        // Then we validate the provided kwargs, that is we verify
-        // that the valid kwarg names are provided.
-        pe!(validate_kwargs(
-            kwargs,
-            &[
-                "random_state",
-                "include_central_node",
-                "return_edge_weights",
-                "offset",
-                "max_neighbours",
-            ],
-        ))?;
-
-        // We check that the provided list is not empty.
-        if node_ids.is_empty() {
-            return pe!(Err("Given list of node IDs is empty!".to_string()));
-        }
-
-        // We get the maximum degree among the provided nodes.
-        // We will use this as a maximal value for the size of the batch.
-        // This way if there are no high-degree centrality nodes in this
-        // batch we do not allocate extra memory for no reason.
-        // We can always unwrap this value because we have requested
-        // just above that the list cannot be empty.
-        let mut max_degree = node_ids
-            .iter()
-            .map(|node_id| {
-                self.graph
-                    .get_unweighted_node_degree_from_node_id(*node_id)
-                    .unwrap()
-            })
-            .max()
-            .unwrap();
-
-        // We get the number of the requested nodes IDs.
-        let batch_size = node_ids.len();
-        // Extract the maximum neighbours parameter.
-        let max_neighbours = extract_value!(kwargs, "max_neighbours", NodeT);
-        // And whether to include or not the edge weights
-        let return_edge_weights =
-            extract_value!(kwargs, "return_edge_weights", bool).unwrap_or(false);
-        // And whether to include or not the central node.
-        let include_central_node =
-            extract_value!(kwargs, "include_central_node", bool).unwrap_or(false);
-
-        // If the maximum neighbours was provided, we set the minimum value
-        // between max degree and maximum neighbours as the size of the
-        // bacth vector to return.
-        if let Some(mn) = &max_neighbours {
-            max_degree = std::cmp::min(max_degree, *mn);
-        }
-
-        // If the batch includes also the central node we need to add an
-        // additional column for it.
-        if include_central_node {
-            max_degree += 1;
-        }
+        let nodes_number = self.graph.get_nodes_number();
+        // Get the batch size
+        let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
+        // Whether to include or not the edge weights
+        let return_edge_weights = return_edge_weights.unwrap_or(false);
 
         // We retrieve the batch iterator.
-        let iter = pe!(self.graph.get_node_label_prediction_tuple_from_node_ids(
-            node_ids,
-            extract_value!(kwargs, "random_state", u64).unwrap_or(42),
-            Some(include_central_node),
+        let iter = pe!(self.graph.get_node_label_prediction_mini_batch(
+            idx,
+            Some(batch_size),
+            include_central_node,
             Some(return_edge_weights),
-            extract_value!(kwargs, "offset", NodeT).unwrap_or(1),
             max_neighbours,
         ))?;
 
-        // We create the vector of zeros where to allocate the neighbours
-        // This vector has `batch_size` rows, that is the number of required
-        // node IDs, and `max_degree` rows, that is the maximum degree.
-        let neighbours = ThreadDataRaceAware {
-            t: PyArray2::zeros(gil.python(), [batch_size, max_degree as usize], false),
-        };
         // We create the vector of zeros for the one-hot encoded labels.
         // This is also used for the multi-label case.
         // This vector has the same number of rows as the previous vector,
@@ -448,55 +378,40 @@ impl EnsmallenGraph {
             t: PyArray2::zeros(
                 gil.python(),
                 [
-                    batch_size,
+                    batch_size as usize,
                     pe!(self.graph.get_node_types_number())? as usize,
                 ],
                 false,
             ),
         };
 
-        // If the use has requested to return the edge weights, we also
-        // return that
-        let edge_weights = if return_edge_weights {
-            Some(ThreadDataRaceAware {
-                t: PyArray2::zeros(gil.python(), [batch_size, max_degree as usize], false),
-            })
-        } else {
-            None
-        };
-
         // We iterate over the batch.
-        iter.enumerate()
-            .for_each(|(i, ((destinations, weights), node_types))| {
-                destinations
-                    .into_iter()
-                    .enumerate()
-                    .for_each(|(j, node_id)| unsafe {
-                        *neighbours.t.uget_mut([i, j]) = node_id;
-                    });
-                if let Some(edge_weights) = edge_weights.as_ref() {
-                    weights
-                        .unwrap()
-                        .into_iter()
-                        .enumerate()
-                        .for_each(|(j, edge_weight)| unsafe {
-                            *edge_weights.t.uget_mut([i, j]) = edge_weight;
-                        });
-                }
-                if let Some(nts) = node_types {
-                    nts.into_iter().for_each(|label| unsafe {
+        let (destinations, edge_weights) = if return_edge_weights {
+            let (destinations, edge_weights): (Vec<Vec<NodeT>>, Vec<Vec<WeightT>>) = iter
+                .enumerate()
+                .map(|(i, ((destinations, weights), node_types))| {
+                    node_types.into_iter().for_each(|label| unsafe {
                         *labels.t.uget_mut([i, label as usize]) = 1;
                     });
-                }
-            });
-
-        Ok((
+                    (destinations, weights.unwrap())
+                })
+                .unzip();
+            (destinations, Some(edge_weights))
+        } else {
             (
-                neighbours.t.to_owned(),
-                edge_weights.map(|x| x.t.to_owned()),
-            ),
-            labels.t.to_owned(),
-        ))
+                iter.enumerate()
+                    .map(|(i, ((destinations, _), node_types))| {
+                        node_types.into_iter().for_each(|label| unsafe {
+                            *labels.t.uget_mut([i, label as usize]) = 1;
+                        });
+                        destinations
+                    })
+                    .collect::<Vec<Vec<NodeT>>>(),
+                None,
+            )
+        };
+
+        Ok(((destinations, edge_weights), labels.t.to_owned()))
     }
 
     #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
@@ -537,7 +452,7 @@ impl EnsmallenGraph {
     ///     If edge types are requested but the graph does not contain any.
     /// ValueError
     ///     If edge types are requested but the graph contains unknown edge types.
-    fn link_prediction_ids(
+    fn get_edge_prediction_mini_batch(
         &self,
         idx: u64,
         batch_size: Option<usize>,
@@ -565,7 +480,7 @@ impl EnsmallenGraph {
         let batch_size = batch_size.unwrap_or(1024);
 
         let graph_to_avoid = graph_to_avoid.map(|ensmallen_graph| ensmallen_graph.graph);
-        let par_iter = pe!(self.graph.link_prediction_ids(
+        let par_iter = pe!(self.graph.get_edge_prediction_mini_batch(
             idx,
             Some(batch_size),
             negative_samples_rate,

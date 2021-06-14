@@ -1796,7 +1796,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
             .unwrap()
             .collect::<Vec<_>>();
         graph
-            .link_prediction_ids(
+            .get_edge_prediction_mini_batch(
                 0,
                 Some(256),
                 Some(0.4),

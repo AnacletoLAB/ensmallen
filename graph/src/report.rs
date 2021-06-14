@@ -844,7 +844,7 @@ impl Graph {
                 "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
-            maximum_edge_weight= self.get_mininum_edge_weight().unwrap(),
+            maximum_edge_weight= self.get_maximum_edge_weight().unwrap(),
             total_edge_weight=self.get_total_edge_weights().unwrap(),
             weighted_minimum_node_degree = self.get_weighted_mininum_node_degree().unwrap(),
             weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
