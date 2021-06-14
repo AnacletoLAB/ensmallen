@@ -187,38 +187,36 @@ impl Graph {
     }
 
     #[manual_binding]
-    /// Return iterator over neighbours for the given node IDs, optionally including given the node IDs, and node type.
-    ///
-    /// This method is meant to be used to predict node labels using the NoLaN model.
-    ///
-    /// If you need to predict the node label of a node, not during training,
-    /// use `max_neighbours=None`.
+    /// Return iterator over neighbours of random nodes, optionally including the central node IDs, and its node type.
     ///
     /// # Arguments
-    ///
-    /// * `node_ids`: Vec<NodeT> - The node ID to retrieve neighbours for.
-    /// * `random_state`: u64 - The random state to use to extract the neighbours.
+    /// * `ids`: u64 -  The index of the batch to generate, behaves like a random random_state.
+    /// * `batch_size`: Option<NodeT> - Number of nodes to sample.
     /// * `include_central_node`: Option<bool> - Whether to include the node ID in the returned iterator.
     /// * `return_edge_weights`: Option<bool> - Whether to include the edge weights.
-    /// * `offset`: NodeT - Offset for padding porposes.
     /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
     ///
     /// # Raises
     /// * If the graph does not contain node type IDs.
+    /// * If the graph does not contain known node type IDs.
+    /// * If the graph does not contain unknown node type IDs.
     /// * If the edge weights have been requested but the graph does not have any.
     /// * If the central node ID is to be included and the edge weights are requested as well.
-    pub fn get_node_label_prediction_tuple_from_node_ids(
+    ///
+    /// TODO!: Add balanced mini-batch option.
+    /// TODO!: Add option to return other edge metrics than weights, like Jaccard.
+    /// TODO!: Add option to generate random neighborhoods.
+    /// TODO!: Add option to sample neighbours with distance k.
+    /// TODO!: Add option to return stuff like the path length to random nodes.
+    pub fn get_node_label_prediction_mini_batch(
         &self,
-        node_ids: Vec<NodeT>,
-        random_state: u64,
+        idx: u64,
+        batch_size: Option<NodeT>,
         include_central_node: Option<bool>,
         return_edge_weights: Option<bool>,
-        offset: NodeT,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<
-                Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Option<Vec<NodeTypeT>>),
-            > + '_,
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_,
         String,
     > {
         if let Some(return_edge_weights) = return_edge_weights {
@@ -226,6 +224,10 @@ impl Graph {
                 self.must_have_edge_weights()?;
             }
         }
+        self.must_have_known_node_types()?;
+        self.must_have_unknown_node_types()?;
+        let nodes_number = self.get_nodes_number();
+        let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
         let return_edge_weights = return_edge_weights.unwrap_or(false);
         let include_central_node = include_central_node.unwrap_or(false);
         if return_edge_weights && include_central_node {
@@ -240,27 +242,32 @@ impl Graph {
             )
             .to_string());
         }
-        self.must_have_node_types()?;
-        Ok(node_ids.into_par_iter().map(move |node_id| unsafe {
+        let idx = splitmix64(idx);
+        Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
+            let mut sample = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
+            let (node_id, node_type_ids) = loop {
+                let node_id = sample as u32 % nodes_number;
+                let node_type_ids = self.get_unchecked_node_type_id_from_node_id(node_id);
+                if node_type_ids.is_some() {
+                    break (node_id, node_type_ids.unwrap());
+                }
+                sample = xorshift(sample);
+            };
             let (min_edge_id, max_edge_id, destinations, probabilistic_indices) = self
                 .get_unchecked_edges_and_destinations_from_source_node_id(
                     max_neighbours,
-                    random_state,
+                    idx,
                     node_id,
                 );
             let mut destinations = self
                 .get_destinations_slice(min_edge_id, max_edge_id, &destinations)
                 .to_owned();
-            let node_type = self.get_unchecked_node_type_id_from_node_id(node_id);
             if include_central_node {
                 destinations.push(node_id);
             }
             (
                 (
-                    destinations
-                        .into_iter()
-                        .map(|node_id| node_id + offset)
-                        .collect(),
+                    destinations,
                     if return_edge_weights {
                         Some(self.get_edge_weighted_transitions(
                             min_edge_id,
@@ -271,7 +278,7 @@ impl Graph {
                         None
                     },
                 ),
-                node_type,
+                node_type_ids,
             )
         }))
     }
@@ -297,7 +304,7 @@ impl Graph {
     /// * If node types are requested but the graph contains unknown node types.
     /// * If edge types are requested but the graph does not contain any.
     /// * If edge types are requested but the graph contains unknown edge types.
-    pub fn link_prediction_ids<'a>(
+    pub fn get_edge_prediction_mini_batch<'a>(
         &'a self,
         idx: u64,
         batch_size: Option<usize>,
@@ -349,8 +356,8 @@ impl Graph {
             0
         };
 
-        if negative_samples_rate <= 0.0
-            || negative_samples_rate >= 1.0
+        if negative_samples_rate < 0.0
+            || negative_samples_rate > 1.0
             || !negative_samples_rate.is_finite()
         {
             return Err("Negative sample must be a posive real value between 0 and 1.".to_string());
@@ -511,7 +518,7 @@ impl Graph {
         shuffle: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a, String> {
-        let iter = self.link_prediction_ids(
+        let iter = self.get_edge_prediction_mini_batch(
             idx,
             batch_size,
             negative_samples,
@@ -611,7 +618,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing edge metrics",
-            self.get_directed_edges_number() as usize
+            self.get_directed_edges_number() as usize,
         );
         self.par_iter_directed_edge_ids().progress_with(pb).map(
             move |(_, source_node_id, destination_node_id)| unsafe {

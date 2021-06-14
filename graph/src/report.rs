@@ -836,15 +836,15 @@ impl Graph {
     unsafe fn get_edge_weights_report(&self) -> String {
         format!(
             concat!(
-                "<h3>Weights</h3>",
-                "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.\n",
+                "<h3>Weights</h3>\n",
+                "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>\n",
                 "<h4>Weighted degree centrality</h4>",
-                "The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
-                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.\n",
-                "The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.\n"
+                "<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
+                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>\n",
+                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>\n"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
-            maximum_edge_weight= self.get_mininum_edge_weight().unwrap(),
+            maximum_edge_weight= self.get_maximum_edge_weight().unwrap(),
             total_edge_weight=self.get_total_edge_weights().unwrap(),
             weighted_minimum_node_degree = self.get_weighted_mininum_node_degree().unwrap(),
             weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
