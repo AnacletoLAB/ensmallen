@@ -1172,8 +1172,12 @@ impl Graph {
         // To call this method the graph must have at least an edge
         // that is not a selfloop
         // and therefore have at least two nodes.
-        let mut last_change = 0;
-        for i in 1..sorted_distances.len() {
+        // Surely, there is a number of nodes to skip
+        // equal to the singleton nodes.
+        // Afterwards we will have to skip nodes from the other
+        // disconnected components, of which we do not know the number.
+        let mut last_change = self.get_singleton_nodes_number() as usize;
+        for i in last_change..sorted_distances.len() {
             if sorted_distances[i] == NodeT::MAX{
                 last_change = i;
                 continue;
