@@ -4,6 +4,7 @@ use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
+use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
@@ -1170,53 +1171,42 @@ impl Graph {
         let distances_permutation = permutation::sort_by(distances.clone(), |a, b| b.cmp(a));
         let sorted_distances = distances_permutation.apply_slice(distances.as_slice());
         let remapped_nodes = distances_permutation.apply_slice(self.get_node_ids());
-        let mut node_id_clusters: Vec<&[NodeT]> = Vec::new();
-        // To call this method the graph must have at least an edge
-        // that is not a selfloop
-        // and therefore have at least two nodes.
-        // Surely, there is a number of nodes to skip
-        // equal to the singleton nodes.
-        // Afterwards we will have to skip nodes from the other
-        // disconnected components, of which we do not know the number.
-        let mut last_change = self.get_singleton_nodes_number() as usize;
-        for i in (last_change + 1)..sorted_distances.len() {
-            if sorted_distances[i] == NodeT::MAX {
-                last_change = i;
-                continue;
-            }
-            // If the cluster has changed
-            if sorted_distances[i] < sorted_distances[i - 1] {
-                node_id_clusters.push(&remapped_nodes[last_change..i]);
-                last_change = i;
-            }
-        }
+        let singleton_nodes_number = self.get_singleton_nodes_number() as usize;
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing diameter",
-            node_id_clusters.len(),
+            self.get_nodes_number() as usize - singleton_nodes_number,
         );
 
-        node_id_clusters
-            .into_iter()
+        sorted_distances[singleton_nodes_number..]
+            .into_par_iter()
+            .zip(remapped_nodes[singleton_nodes_number..].into_par_iter())
             .progress_with(pb)
-            .enumerate()
-            .for_each(|(offset, node_ids)| {
-                let upper_limit = (root_eccentricity - offset as NodeT) * 2;
-                if current_best_diameter_estimate.load(Ordering::Relaxed) < upper_limit {
-                    node_ids
-                        .into_par_iter()
-                        .filter(|node_id| unsafe {
-                            self.is_unchecked_connected_from_node_id(**node_id)
-                                && current_best_diameter_estimate.load(Ordering::Relaxed)
-                                    < upper_limit
-                        })
-                        .for_each(|node_id| unsafe {
-                            current_best_diameter_estimate.fetch_max(
-                                self.get_unchecked_eccentricity_from_node_id(*node_id),
-                                Ordering::Relaxed,
-                            );
-                        });
+            .for_each(|(&distance, &node_id)| unsafe {
+                // If the current node is among one of the disconnected nodes
+                // we just skip it and move forward.
+                if distance == NodeT::MAX {
+                    return;
+                }
+                // Alternatively, we proceed to retrieve the current diameter.
+                // We store the value locally so to avoid to fetch
+                // the value if the new estimated diameter is not better.
+                // Fetching the value is slow!
+                // Note that this value may be modified in the meantime by the other threads.
+                let cached_best_diameter = current_best_diameter_estimate.load(Ordering::Relaxed);
+                // If we have not yet reached the bound
+                if cached_best_diameter < distance * 2 {
+                    // We compute the new candidate diameter.
+                    let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
+                    // If the candidate diameter is higher than the previous cached
+                    // candidate diameter, we do the fetch max operation to
+                    // update the previous best candidate.
+                    // We do not do this first because fetching a value takes time
+                    // and possibly blocks the operations for the other threads.
+                    if cached_best_diameter < new_candidate {
+                        current_best_diameter_estimate.fetch_max(new_candidate, Ordering::Relaxed);
+                    }
                 }
             });
 
