@@ -1205,88 +1205,46 @@ impl Graph {
         lower_bound_diameter as f64
     }
 
-    /// Returns diameter of an UNDIRECTED and WEIGHTED graph.
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
     ///
     /// # Arguments
-    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
-    /// # Safety
-    /// This method will raise a panic if it is called on a directed graph.
-    ///
-    /// # Referencences
-    /// This method is based on the algorithm described in ["On Computing the Diameter of Real-World Directed (Weighted) Graphs" by Crescenzi et al](https://link.springer.com/chapter/10.1007/978-3-642-30850-5_10).
-    fn get_weighted_ifub(&self, use_edge_weights_as_probabilities: Option<bool>) -> f64 {
-        if self.is_directed() {
-            panic!("This method is not defined for directed graphs!")
-        }
-        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
-        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
-            return f64::INFINITY;
-        }
-        let dijkstra = unsafe {
-            self.get_unchecked_dijkstra_from_node_ids(
-                most_central_node_id,
-                None,
-                None,
-                Some(false),
-                None,
-                use_edge_weights_as_probabilities,
-            )
-        };
+    /// # Raises
+    /// * If the graph does not contain nodes.
+    pub fn get_unweighted_diameter_naive(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Result<f64, String> {
+        self.must_have_nodes()?;
+        let ignore_infinity = ignore_infinity.unwrap_or(false);
+        let verbose = verbose.unwrap_or(true);
 
-        let mut root_eccentricity = dijkstra.eccentricity;
-        let distances = dijkstra.distances;
-
-        assert!(
-            root_eccentricity != f64::INFINITY,
-            "The central node eccentricity cannot be infinite!"
-        );
-        assert!(
-            root_eccentricity != 0.0,
-            "The central node eccentricity cannot be zero!"
-        );
-        let mut lower_bound_diameter = root_eccentricity;
-        let mut upper_bound_diameter = 2.0 * root_eccentricity;
-        while upper_bound_diameter < lower_bound_diameter {
-            if let Some(maximal_eccentricity) = distances
-                .par_iter()
-                .enumerate()
-                .filter(|(_, &distance)| (distance - root_eccentricity).abs() < f64::EPSILON)
-                .map(|(node_id, _)| unsafe {
-                    Some(self.get_unchecked_weighted_eccentricity_from_node_id(
-                        node_id as NodeT,
-                        use_edge_weights_as_probabilities,
-                    ))
-                })
-                .reduce(
-                    || None,
-                    |old, new| {
-                        if let (Some(old), Some(new)) = (old, new) {
-                            Some(f64::max(old, new))
-                        } else {
-                            new
-                        }
-                    },
-                )
-            {
-                assert!(
-                    maximal_eccentricity != f64::INFINITY,
-                    "The maximal eccentricity here cannot be infinite!"
-                );
-                assert!(
-                    maximal_eccentricity != 0.0,
-                    "The maximal eccentricity here cannot be zero!"
-                );
-                assert!(
-                    root_eccentricity != 0.0,
-                    "The root eccentricity cannot be zero!"
-                );
-                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-            }
-            root_eccentricity -= 1.0;
-            upper_bound_diameter = 2.0 * root_eccentricity;
+        if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
+            return Ok(f64::INFINITY);
         }
-        lower_bound_diameter
+
+        let pb = get_loading_bar(
+            verbose,
+            "Computing unweighted diameter",
+            self.get_nodes_number() as usize,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(|node_id| unsafe {
+                self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
+            })
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .max()
+            .unwrap_or(0) as f64)
     }
 
     /// Returns diameter of the graph.
@@ -1297,7 +1255,6 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain nodes.
-    /// * If the graph does not have weights and weights have been requested.
     ///
     /// TODO! Add better implementation for directed graphs
     /// To make the better implementation for directed graphs we will first
@@ -1316,27 +1273,18 @@ impl Graph {
         }
 
         if self.is_directed() {
-            let pb = get_loading_bar(
-                verbose,
-                "Computing unweighted diameter",
-                self.get_nodes_number() as usize,
-            );
-            // TODO: Add a better implementation for the directed case
-            Ok(self
-                .par_iter_node_ids()
-                .progress_with(pb)
-                .map(|node_id| unsafe {
-                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
-                })
-                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
-                .max()
-                .unwrap_or(0) as f64)
+            self.get_unweighted_diameter_naive(Some(true), Some(verbose))
         } else {
             Ok(self.get_unweighted_ifub())
         }
     }
 
-    /// Returns diameter of the graph.
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
     ///
     /// # Arguments
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
@@ -1352,7 +1300,7 @@ impl Graph {
     /// TODO! Add better implementation for directed graphs
     /// To make the better implementation for directed graphs we will first
     /// need to make the Elias-Fano encode the directed graph in a better way.
-    pub fn get_weighted_diameter(
+    pub fn get_weighted_diameter_naive(
         &self,
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
@@ -1375,33 +1323,29 @@ impl Graph {
             });
         }
 
-        if self.is_directed() {
-            let pb = get_loading_bar(
-                verbose,
-                "Computing weighted diameter",
-                self.get_nodes_number() as usize,
-            );
-            Ok(self
-                .par_iter_node_ids()
-                .progress_with(pb)
-                .map(|node_id| unsafe {
-                    self.get_unchecked_weighted_eccentricity_from_node_id(
-                        node_id,
-                        Some(use_edge_weights_as_probabilities),
-                    )
-                })
-                .filter(|&distance| {
-                    !ignore_infinity
-                        || if use_edge_weights_as_probabilities {
-                            !distance.is_zero()
-                        } else {
-                            distance.is_finite()
-                        }
-                })
-                .reduce(|| f64::NEG_INFINITY, f64::max))
-        } else {
-            Ok(self.get_weighted_ifub(Some(use_edge_weights_as_probabilities)) as f64)
-        }
+        let pb = get_loading_bar(
+            verbose,
+            "Computing weighted diameter",
+            self.get_nodes_number() as usize,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(|node_id| unsafe {
+                self.get_unchecked_weighted_eccentricity_from_node_id(
+                    node_id,
+                    Some(use_edge_weights_as_probabilities),
+                )
+            })
+            .filter(|&distance| {
+                !ignore_infinity
+                    || if use_edge_weights_as_probabilities {
+                        !distance.is_zero()
+                    } else {
+                        distance.is_finite()
+                    }
+            })
+            .reduce(|| f64::NEG_INFINITY, f64::max))
     }
 
     #[manual_binding]

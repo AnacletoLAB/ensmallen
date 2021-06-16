@@ -2185,10 +2185,12 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<
 
 pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // TODO! update this when we will support the graph diameter on directed graphs
-    if graph.is_directed() {
-        return Ok(());
-    }
     let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
+
+    assert_eq!(
+        graph.get_unweighted_diameter_naive(Some(false), verbose),
+        graph.get_unweighted_diameter(Some(false), verbose),
+    );
 
     match n_of_components {
         0 => {

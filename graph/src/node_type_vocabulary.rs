@@ -113,7 +113,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `maybe_values`: Option<Vec<S>> - The values to be inserted.
-    pub fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
+    pub unsafe fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
         &mut self,
         maybe_values: Option<Vec<S>>,
     ) -> Option<Vec<NodeTypeT>> {

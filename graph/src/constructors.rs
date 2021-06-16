@@ -98,11 +98,9 @@ pub(crate) fn parse_node_ids<'a>(
     // we can skip a significant amount of checks and therefore create
     // a simpler iterator.
     if node_list_is_correct {
-        Box::new(
-            nodes_iter.map_ok(move |(node_name, node_type)| {
-                (nodes.unchecked_insert(node_name), node_type)
-            }),
-        )
+        Box::new(nodes_iter.map_ok(move |(node_name, node_type)| unsafe {
+            (nodes.unchecked_insert(node_name), node_type)
+        }))
     } else {
         Box::new(nodes_iter.filter_map(move |row| {
             row.map_or_else(|err| Some(Err(err)),  |(node_name, node_type)| {
@@ -152,7 +150,7 @@ pub(crate) fn parse_node_type_ids<'a>(
     node_types_vocabulary: &'a mut NodeTypeVocabulary,
 ) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a> {
     if node_list_is_correct {
-        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| {
+        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| unsafe {
             (
                 node_id,
                 node_types_vocabulary.unchecked_insert_values(node_type_names),
@@ -196,7 +194,7 @@ pub(crate) fn parse_edges_node_ids<'a>(
     // a simpler iterator.
     if edge_list_is_correct {
         Box::new(
-            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| {
+            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| unsafe {
                 (
                     nodes.unchecked_insert(src_name),
                     nodes.unchecked_insert(dst_name),
@@ -252,14 +250,16 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
     if edge_list_is_correct {
-        Box::new(edges_iter.map_ok(move |(src, dst, edge_type, weight)| {
-            (
-                src,
-                dst,
-                edge_type.map(|et| edge_types.unchecked_insert(et)),
-                weight,
-            )
-        }))
+        Box::new(
+            edges_iter.map_ok(move |(src, dst, edge_type, weight)| unsafe {
+                (
+                    src,
+                    dst,
+                    edge_type.map(|et| edge_types.unchecked_insert(et)),
+                    weight,
+                )
+            }),
+        )
     } else {
         Box::new(edges_iter.map(move |row| {
             row.and_then(|(src, dst, edge_type, weight)| {

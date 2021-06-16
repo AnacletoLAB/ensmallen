@@ -304,6 +304,10 @@ impl Graph {
     /// * If node types are requested but the graph contains unknown node types.
     /// * If edge types are requested but the graph does not contain any.
     /// * If edge types are requested but the graph contains unknown edge types.
+    ///
+    /// TODO! Add the possibility for returning only known edges
+    /// TODO! When returning only known edges, add the possibility for balanced
+    /// edge types.
     pub fn get_edge_prediction_mini_batch<'a>(
         &'a self,
         idx: u64,
