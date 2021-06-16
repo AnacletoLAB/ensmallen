@@ -1174,6 +1174,10 @@ impl Graph {
         // and therefore have at least two nodes.
         let mut last_change = 0;
         for i in 1..sorted_distances.len() {
+            if sorted_distances[i] == NodeT::MAX{
+                last_change = i;
+                continue;
+            }
             // If the cluster has changed
             if sorted_distances[i] < sorted_distances[i - 1] {
                 node_id_clusters.push(&remapped_nodes[last_change..i]);
