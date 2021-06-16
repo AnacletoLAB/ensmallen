@@ -20,7 +20,6 @@ fn populate_vocabulary(
 
 #[bench]
 fn bench_vocabulary_with_unknown_size(b: &mut Bencher) {
-    let mut graph = load_cora();
     b.iter(|| {
         let _ = black_box(populate_vocabulary(0, 1000000));
     });
@@ -28,7 +27,6 @@ fn bench_vocabulary_with_unknown_size(b: &mut Bencher) {
 
 #[bench]
 fn bench_vocabulary_with_known_size(b: &mut Bencher) {
-    let mut graph = load_cora();
     b.iter(|| {
         let _ = black_box(populate_vocabulary(1000000, 1000000));
     });

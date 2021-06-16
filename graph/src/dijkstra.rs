@@ -4,7 +4,6 @@ use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
-use rayon::slice::ParallelSliceMut;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::sync::atomic::{AtomicU32, Ordering};
@@ -1164,13 +1163,14 @@ impl Graph {
         );
         let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
 
-        let distances = bfs.distances.unwrap();
-        let mut distances_and_node_ids = distances
+        let mut distances_and_node_ids = bfs
+            .distances
+            .unwrap()
             .into_iter()
             .zip(self.iter_node_ids())
             .filter(|&(distance, _)| distance != NodeT::MAX)
             .collect::<Vec<(NodeT, NodeT)>>();
-        distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
+        distances_and_node_ids.sort_by(|(a, _), &(b, _)| b.cmp(a));
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
@@ -1182,13 +1182,14 @@ impl Graph {
             .into_par_iter()
             .progress_with(pb)
             .for_each(|(distance, node_id)| unsafe {
+                let cached = current_best_diameter_estimate.load(Ordering::Relaxed);
                 // If we have not yet reached the bound
-                if current_best_diameter_estimate.load(Ordering::Relaxed) < distance * 2 {
+                if cached < distance * 2 {
                     // We compute the new candidate diameter.
-                    current_best_diameter_estimate.fetch_max(
-                        self.get_unchecked_eccentricity_from_node_id(node_id),
-                        Ordering::Relaxed,
-                    );
+                    let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
+                    if cached < new_candidate {
+                        current_best_diameter_estimate.fetch_max(new_candidate, Ordering::Relaxed);
+                    }
                 }
             });
 
