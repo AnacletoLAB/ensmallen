@@ -1170,7 +1170,7 @@ impl Graph {
             .zip(self.iter_node_ids())
             .filter(|&(distance, _)| distance != NodeT::MAX)
             .collect::<Vec<(NodeT, NodeT)>>();
-        distances_and_node_ids.par_sort_unstable();
+        distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
