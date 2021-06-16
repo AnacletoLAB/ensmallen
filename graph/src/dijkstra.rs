@@ -1161,14 +1161,13 @@ impl Graph {
             root_eccentricity != 0,
             "The central node eccentricity cannot be zero!"
         );
-        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
 
         let mut distances_and_node_ids = bfs
             .distances
             .unwrap()
             .into_iter()
             .zip(self.iter_node_ids())
-            .filter(|&(distance, _)| distance != NodeT::MAX)
+            .filter(|&(distance, _)| distance != NodeT::MAX && root_eccentricity < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
         distances_and_node_ids.sort_by(|(a, _), &(b, _)| b.cmp(a));
 
@@ -1177,6 +1176,8 @@ impl Graph {
             "Computing diameter",
             distances_and_node_ids.len(),
         );
+
+        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
 
         distances_and_node_ids
             .into_par_iter()
