@@ -2,11 +2,13 @@ use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
+use permutation::permutation;
 use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::sync::atomic::AtomicU32;
 
 pub struct ShortestPathsResultBFS {
     pub(crate) distances: Option<Vec<NodeT>>,
@@ -522,23 +524,19 @@ impl Graph {
         dst_node_name: &str,
         k: usize,
     ) -> Result<Vec<Vec<String>>, String> {
-        self.get_k_shortest_path_node_ids_from_node_names(
-            src_node_name,
-            dst_node_name,
-            k,
-        )
-        .map(|paths| {
-            paths
-                .into_iter()
-                .map(|path| {
-                    path.into_iter()
-                        .map(|node_id| unsafe {
-                            self.get_unchecked_node_name_from_node_id(node_id)
-                        })
-                        .collect()
-                })
-                .collect()
-        })
+        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
+            .map(|paths| {
+                paths
+                    .into_iter()
+                    .map(|path| {
+                        path.into_iter()
+                            .map(|node_id| unsafe {
+                                self.get_unchecked_node_name_from_node_id(node_id)
+                            })
+                            .collect()
+                    })
+                    .collect()
+            })
     }
 
     /// Returns unweighted eccentricity of the given node.
@@ -550,10 +548,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> NodeT {
+    pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search_from_node_ids(
             node_id,
             None,
@@ -601,13 +596,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
-    pub fn get_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> Result<NodeT, String> {
-        self.validate_node_id(node_id).map(|node_id| unsafe {
-            self.get_unchecked_eccentricity_from_node_id(node_id)
-        })
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node ID.
@@ -646,14 +637,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node name does not exist in the current graph instance.
-    pub fn get_eccentricity_from_node_name(
-        &self,
-        node_name: &str,
-    ) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| unsafe {
-                self.get_unchecked_eccentricity_from_node_id(node_id)
-            })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node name.
@@ -1142,11 +1128,16 @@ impl Graph {
 
     /// Returns diameter of an UNDIRECTED graph.
     ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_ifub(&self) -> f64 {
+    fn get_ifub(&self, verbose: Option<bool>) -> f64 {
         if self.is_directed() {
-            panic!("This method is not defined for directed graphs!")
+            panic!(
+                "This method is not defined YET for directed graphs! We will add it in the future!"
+            )
         }
         let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
@@ -1163,8 +1154,7 @@ impl Graph {
                 None,
             )
         };
-        let mut root_eccentricity = bfs.eccentricity;
-        let distances = bfs.distances.unwrap();
+        let root_eccentricity = bfs.eccentricity;
         assert!(
             root_eccentricity != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
@@ -1173,36 +1163,56 @@ impl Graph {
             root_eccentricity != 0,
             "The central node eccentricity cannot be zero!"
         );
-        let mut lower_bound_diameter = root_eccentricity;
-        let mut upper_bound_diameter = 2 * root_eccentricity;
-        while lower_bound_diameter < upper_bound_diameter {
-            if let Some(maximal_eccentricity) = distances
-                .par_iter()
-                .enumerate()
-                .filter(|(_, &distance)| distance == root_eccentricity)
-                .map(|(node_id, _)| unsafe {
-                    self.get_unchecked_eccentricity_from_node_id(node_id as NodeT)
-                })
-                .max()
-            {
-                assert!(
-                    maximal_eccentricity != NodeT::MAX,
-                    "The maximal eccentricity here cannot be infinite!"
-                );
-                assert!(
-                    maximal_eccentricity != 0,
-                    "The maximal eccentricity here cannot be zero!"
-                );
-                assert!(
-                    root_eccentricity != 0,
-                    "The root eccentricity cannot be zero!"
-                );
-                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
+        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
+        let distances = bfs.distances.unwrap();
+
+        let distances_permutation = permutation::sort_by(distances.clone(), |a, b| b.cmp(a));
+        let sorted_distances = distances_permutation.apply_slice(distances.as_slice());
+        let remapped_nodes = distances_permutation.apply_slice(self.get_node_ids());
+        let mut node_id_clusters: Vec<&[NodeT]> = Vec::new();
+        // To call this method the graph must have at least an edge
+        // that is not a selfloop
+        // and therefore have at least two nodes.
+        let mut last_change = 0;
+        for i in 1..sorted_distances.len() {
+            // If the cluster has changed
+            if sorted_distances[i] < sorted_distances[i - 1] {
+                node_id_clusters.push(&remapped_nodes[last_change..i]);
+                last_change = i;
             }
-            root_eccentricity -= 1;
-            upper_bound_diameter = 2 * root_eccentricity;
         }
-        lower_bound_diameter as f64
+
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing diameter",
+            node_id_clusters.len(),
+        );
+
+        node_id_clusters
+            .into_par_iter()
+            .progress_with(pb)
+            .enumerate()
+            .for_each(|(offset, node_ids)| {
+                if current_best_diameter_estimate.load(std::sync::atomic::Ordering::Relaxed)
+                    < (root_eccentricity - offset as NodeT) * 2
+                {
+                    if let Some(candidate) = node_ids
+                        .into_par_iter()
+                        .filter(|node_id| unsafe {
+                            self.is_unchecked_connected_from_node_id(**node_id)
+                        })
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_eccentricity_from_node_id(*node_id)
+                        })
+                        .max()
+                    {
+                        current_best_diameter_estimate
+                            .fetch_max(candidate, std::sync::atomic::Ordering::Relaxed);
+                    }
+                }
+            });
+
+        current_best_diameter_estimate.load(std::sync::atomic::Ordering::Relaxed) as f64
     }
 
     /// Returns diameter of the graph using naive method.
@@ -1231,17 +1241,19 @@ impl Graph {
             return Ok(f64::INFINITY);
         }
 
+        if self.get_nodes_number() == 1 {
+            return Ok(1.0);
+        }
+
         let pb = get_loading_bar(
             verbose,
-            "Computing unweighted diameter",
+            "Computing diameter",
             self.get_nodes_number() as usize,
         );
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
-            .map(|node_id| unsafe {
-                self.get_unchecked_eccentricity_from_node_id(node_id)
-            })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
             .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
             .max()
             .unwrap_or(0) as f64)
@@ -1272,10 +1284,14 @@ impl Graph {
             return Ok(f64::INFINITY);
         }
 
+        if self.get_nodes_number() == 1 {
+            return Ok(1.0);
+        }
+
         if self.is_directed() {
             self.get_diameter_naive(Some(true), Some(verbose))
         } else {
-            Ok(self.get_ifub())
+            Ok(self.get_ifub(Some(verbose)))
         }
     }
 
