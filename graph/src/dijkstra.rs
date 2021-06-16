@@ -1,7 +1,6 @@
 use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
-use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
 use rayon::iter::IndexedParallelIterator;
