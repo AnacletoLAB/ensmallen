@@ -1192,15 +1192,10 @@ impl Graph {
                 // If we have not yet reached the bound
                 if current_best_diameter_estimate.load(Ordering::Relaxed) < distance * 2 {
                     // We compute the new candidate diameter.
-                    let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
-                    // If the candidate diameter is higher than the previous cached
-                    // candidate diameter, we do the fetch max operation to
-                    // update the previous best candidate.
-                    // We do not do this first because fetching a value takes time
-                    // and possibly blocks the operations for the other threads.
-                    if new_candidate >= distance * 2 {
-                        current_best_diameter_estimate.fetch_max(new_candidate, Ordering::Relaxed);
-                    }
+                    current_best_diameter_estimate.fetch_max(
+                        self.get_unchecked_eccentricity_from_node_id(node_id),
+                        Ordering::Relaxed,
+                    );
                 }
             });
 
