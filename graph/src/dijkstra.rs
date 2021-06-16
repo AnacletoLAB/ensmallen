@@ -1189,13 +1189,8 @@ impl Graph {
                     return;
                 }
                 // Alternatively, we proceed to retrieve the current diameter.
-                // We store the value locally so to avoid to fetch
-                // the value if the new estimated diameter is not better.
-                // Fetching the value is slow!
-                // Note that this value may be modified in the meantime by the other threads.
-                let cached_best_diameter = current_best_diameter_estimate.load(Ordering::Relaxed);
                 // If we have not yet reached the bound
-                if cached_best_diameter < distance * 2 {
+                if current_best_diameter_estimate.load(Ordering::Relaxed) < distance * 2 {
                     // We compute the new candidate diameter.
                     let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
                     // If the candidate diameter is higher than the previous cached
@@ -1209,7 +1204,7 @@ impl Graph {
                 }
             });
 
-        current_best_diameter_estimate.load(Ordering::Relaxed) as f64
+        current_best_diameter_estimate.into_inner() as f64
     }
 
     /// Returns diameter of the graph using naive method.
