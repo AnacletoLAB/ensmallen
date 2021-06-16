@@ -361,25 +361,21 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
+    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
-    pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.par_iter_node_degrees()
-            .enumerate()
-            .max_by_key(|&(_, value)| value)
-            .map(|(idx, _)| idx)
-            .unwrap_unchecked() as NodeT
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+        self.most_central_node_id
     }
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_argmax_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_most_central_node_id().unwrap());
     /// ```
-    pub fn get_argmax_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_most_central_node_id(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_argmax_node_degree() as NodeT })
+            .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.

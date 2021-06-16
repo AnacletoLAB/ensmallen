@@ -3296,15 +3296,15 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// This method fails with a panic if the graph does not have any node.
-    pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_argmax_node_degree()
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+        self.graph.get_unchecked_most_central_node_id()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
-    pub fn get_argmax_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_argmax_node_degree())
+    pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_most_central_node_id())
     }
 
     #[automatically_generated_binding]

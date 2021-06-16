@@ -31,6 +31,7 @@ type ParsedStringEdgesType = Result<
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -453,6 +454,7 @@ pub(crate) fn build_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -586,6 +588,7 @@ pub(crate) fn build_edges(
     let mut last_dst: NodeT = 0;
     let mut min_node_degree: NodeT = NodeT::MAX;
     let mut max_node_degree: NodeT = 0;
+    let mut most_central_node_id: NodeT = 0;
     let mut current_node_degree: NodeT = 0;
     let mut previous_node_degree: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
@@ -781,7 +784,10 @@ pub(crate) fn build_edges(
                     // We update the minimum node degree
                     min_node_degree = min_node_degree.min(current_node_degree);
                     // And the maximum node degree
-                    max_node_degree = max_node_degree.max(current_node_degree);
+                    if max_node_degree < current_node_degree {
+                        max_node_degree = current_node_degree;
+                        most_central_node_id = last_src;
+                    }
                     // Check if the node IDs are provided sorted by decreasing
                     // outbound node degree.
                     if previous_node_degree != 0 {
@@ -878,7 +884,10 @@ pub(crate) fn build_edges(
         min_node_degree = min_node_degree.min(current_node_degree);
     }
     // And the maximum node degree
-    max_node_degree = max_node_degree.max(current_node_degree);
+    if max_node_degree < current_node_degree {
+        max_node_degree = current_node_degree;
+        most_central_node_id = last_src;
+    }
 
     // We check if the last node is sorted.
     if previous_node_degree != 0 {
@@ -1127,6 +1136,7 @@ pub(crate) fn build_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1243,6 +1253,7 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1288,6 +1299,7 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1331,6 +1343,7 @@ pub(crate) fn parse_integer_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -1358,6 +1371,7 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1399,6 +1413,7 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1445,6 +1460,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1489,6 +1505,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1745,6 +1762,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1791,6 +1809,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,

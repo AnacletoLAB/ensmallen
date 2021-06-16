@@ -1,7 +1,6 @@
 use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
-use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
 use rayon::iter::IndexedParallelIterator;
@@ -1140,7 +1139,7 @@ impl Graph {
                 "This method is not defined YET for directed graphs! We will add it in the future!"
             )
         }
-        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
+        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
             return f64::INFINITY;
         }
