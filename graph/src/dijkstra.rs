@@ -1204,7 +1204,7 @@ impl Graph {
                     // update the previous best candidate.
                     // We do not do this first because fetching a value takes time
                     // and possibly blocks the operations for the other threads.
-                    if cached_best_diameter < new_candidate {
+                    if new_candidate >= distance * 2 {
                         current_best_diameter_estimate.fetch_max(new_candidate, Ordering::Relaxed);
                     }
                 }
