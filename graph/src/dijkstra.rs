@@ -1269,10 +1269,11 @@ impl Graph {
             .progress_with(pb)
             .for_each(|(distance, node_id)| unsafe {
                 // First of all we get the thread ID of this thread.
-                let thread_id = rayon::current_thread_index().expect(concat!(
-                    "current_thread_id not called from a rayon thread.\n",
-                    "This should not be possible because this is in a Rayon Thread Pool."
-                ));
+                // In cases where the distances are already filtered down to one
+                // or generally speaking, so little that it does not make sense
+                // for rayon to allocate a thread pool, the thread ID does not
+                // actually exist, and we can set it to zero.
+                let thread_id = rayon::current_thread_index().unwrap_or(0);
                 // We get the best diameters
                 let best_diameters = thread_shared_best_diameters_per_thread.value.get();
                 // If we have not yet reached the bound
