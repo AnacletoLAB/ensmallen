@@ -1194,7 +1194,7 @@ impl Graph {
                 }
             });
 
-        current_best_diameter_estimate.into_inner() as f64
+        current_best_diameter_estimate.load(Ordering::Relaxed) as f64
     }
 
     /// Returns diameter of the graph using naive method.
