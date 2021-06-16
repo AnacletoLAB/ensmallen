@@ -4,9 +4,9 @@ use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::slice::ParallelSliceMut;
 use std::cmp::Ord;
 use std::collections::VecDeque;
-use std::sync::atomic::{AtomicU32, Ordering};
 
 pub struct ShortestPathsResultBFS {
     pub(crate) distances: Option<Vec<NodeT>>,
@@ -1169,7 +1169,7 @@ impl Graph {
             .zip(self.iter_node_ids())
             .filter(|&(distance, _)| distance != NodeT::MAX && root_eccentricity < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
-        distances_and_node_ids.sort_by(|(a, _), &(b, _)| b.cmp(a));
+        distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
@@ -1177,24 +1177,52 @@ impl Graph {
             distances_and_node_ids.len(),
         );
 
-        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
+        // We retrieve the number of threads that we can use
+        // for this operation.
+        let threads_number = rayon::current_num_threads();
+        // We allocate a vector with our tentative best diameter.
+        // We will use the thread 0 and the position 0 of this vector
+        // as position where to store the actual diameter.
+        let mut best_diameters_per_thread = vec![root_eccentricity; threads_number];
+        // We wrap the object into an unsafe cell to be able to
+        // access with the various threads without having the compiler
+        // ranting about what we are doing: we are adults here,
+        // I know what I am doing, let me be.
+        // Yes, I am still talking about the code.
+        let thread_shared_best_diameters_per_thread = ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(&mut best_diameters_per_thread),
+        };
 
         distances_and_node_ids
             .into_par_iter()
             .progress_with(pb)
             .for_each(|(distance, node_id)| unsafe {
-                let cached = current_best_diameter_estimate.load(Ordering::Relaxed);
+                // First of all we get the thread ID of this thread.
+                let thread_id = rayon::current_thread_index().expect(concat!(
+                    "current_thread_id not called from a rayon thread.\n",
+                    "This should not be possible because this is in a Rayon Thread Pool."
+                ));
+                // We get the best diameters
+                let best_diameters = thread_shared_best_diameters_per_thread.value.get();
                 // If we have not yet reached the bound
-                if cached < distance * 2 {
+                if (*best_diameters)[0] < distance * 2 {
                     // We compute the new candidate diameter.
                     let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
-                    if cached < new_candidate {
-                        current_best_diameter_estimate.fetch_max(new_candidate, Ordering::Relaxed);
-                    }
+                    (*best_diameters)[thread_id] = (*best_diameters)[thread_id].max(new_candidate);
+                }
+                // We make the thread 0 deal with the book keeping and
+                // keeping the maximum current value in the cell 0.
+                // This does not guarantee to always have the absolute maximum
+                // in the cell 0, but we expect to often have that there.
+                // Surely, we won't have collisions because of this.
+                if thread_id == 0 {
+                    (*best_diameters)[0] = (*best_diameters).iter().cloned().max().unwrap();
                 }
             });
 
-        current_best_diameter_estimate.load(Ordering::Relaxed) as f64
+        // We get the maximum value by consuming the vector
+        // of best diameters for each thread.
+        best_diameters_per_thread.into_iter().max().unwrap() as f64
     }
 
     /// Returns diameter of the graph using naive method.
