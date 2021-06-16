@@ -4,6 +4,7 @@ use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
+use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
@@ -1198,7 +1199,7 @@ impl Graph {
         );
 
         node_id_clusters
-            .into_iter()
+            .into_par_iter()
             .progress_with(pb)
             .enumerate()
             .for_each(|(offset, node_ids)| {
