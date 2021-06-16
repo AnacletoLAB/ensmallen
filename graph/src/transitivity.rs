@@ -98,7 +98,7 @@ impl Graph {
     /// * `iterations`: Option<NodeT> - The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
-    pub fn get_unweighted_all_shortest_paths(
+    pub fn get_all_shortest_paths(
         &self,
         iterations: Option<NodeT>,
         verbose: Option<bool>,

@@ -2456,15 +2456,15 @@ impl Graph {
         )?;
 
         let max_degree = match normalize {
-            true => self.get_unweighted_max_node_degree()? as f64,
+            true => self.get_max_node_degree()? as f64,
             false => 1.0,
         };
 
         Ok(iter.map(move |(index, src, dst, label)| {
             (
                 index,
-                self.get_unweighted_node_degree_from_node_id(src).unwrap() as f64 / max_degree,
-                self.get_unweighted_node_degree_from_node_id(dst).unwrap() as f64 / max_degree,
+                self.get_node_degree_from_node_id(src).unwrap() as f64 / max_degree,
+                self.get_node_degree_from_node_id(dst).unwrap() as f64 / max_degree,
                 label,
             )
         }))
@@ -3578,7 +3578,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node to be checked for.
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
         Ok(self.has_singleton_nodes()
-            && self.get_unweighted_node_degree_from_node_id(node_id)? == 0
+            && self.get_node_degree_from_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
                 .as_ref()
@@ -3673,7 +3673,7 @@ impl Graph {
     /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
-        Ok(self.get_unweighted_node_degree_from_node_id(node_id)? == 0
+        Ok(self.get_node_degree_from_node_id(node_id)? == 0
             && self
                 .not_singleton_nodes
                 .as_ref()
@@ -5424,7 +5424,7 @@ impl Graph {
     /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes_ids(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
-            .map(|node_id| (self.get_unweighted_node_degree_from_node_id(node_id).unwrap(), node_id))
+            .map(|node_id| (self.get_node_degree_from_node_id(node_id).unwrap(), node_id))
             .collect();
         nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
@@ -6230,7 +6230,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
-    pub fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The node ID {} is higher than the number of available nodes {}.",
@@ -6458,8 +6458,8 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.get_unweighted_node_degree_from_node_id(one).unwrap() as usize
-            * self.get_unweighted_node_degree_from_node_id(two).unwrap() as usize)
+        Ok(self.get_node_degree_from_node_id(one).unwrap() as usize
+            * self.get_node_degree_from_node_id(two).unwrap() as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -6541,7 +6541,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / (self.get_unweighted_node_degree_from_node_id(*node).unwrap() as f64).ln())
+            .map(|node| 1.0 / (self.get_node_degree_from_node_id(*node).unwrap() as f64).ln())
             .sum())
     }
 
@@ -6582,7 +6582,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_trap_node_from_node_id(**node).unwrap())
-            .map(|node| 1.0 / self.get_unweighted_node_degree_from_node_id(*node).unwrap() as f64)
+            .map(|node| 1.0 / self.get_node_degree_from_node_id(*node).unwrap() as f64)
             .sum())
     }
 
@@ -6602,7 +6602,7 @@ impl Graph {
                     self.iter_node_neighbours_ids(node)
                         .map(|dst| self.is_trap_node_from_node_id(dst).unwrap() as usize as f64)
                         .sum::<f64>()
-                        / self.get_unweighted_node_degree_from_node_id(node).unwrap() as f64
+                        / self.get_node_degree_from_node_id(node).unwrap() as f64
                 } else {
                     1.0
                 }
@@ -6614,9 +6614,9 @@ impl Graph {
     /// Returns mean node degree of the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mean node degree of the graph is  {}", graph.get_unweighted_node_degrees_mean().unwrap());
+    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
@@ -6672,15 +6672,15 @@ impl Graph {
     /// Returns median node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The median node degree of the graph is  {}", graph.get_unweighted_node_degrees_median().unwrap());
+    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_median(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The median of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let mut degrees = self.get_unweighted_node_degrees();
+        let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
@@ -6688,10 +6688,10 @@ impl Graph {
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_max_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_max_node_degree().unwrap());
     /// ```
-    pub fn get_unweighted_max_node_degree(&self) -> Result<NodeT, String> {
-        self.get_unweighted_node_degrees().into_iter().max().ok_or_else(|| {
+    pub fn get_max_node_degree(&self) -> Result<NodeT, String> {
+        self.get_node_degrees().into_iter().max().ok_or_else(|| {
             "The maximum node degree of a graph with no nodes is not defined.".to_string()
         })
     }
@@ -6702,7 +6702,7 @@ impl Graph {
     /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
     /// ```
     pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
-        self.get_unweighted_node_degrees().into_iter().min().ok_or_else(|| {
+        self.get_node_degrees().into_iter().min().ok_or_else(|| {
             "The minimum node degree of a graph with no nodes is not defined.".to_string()
         })
     }
@@ -6710,9 +6710,9 @@ impl Graph {
     /// Returns mode node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mode node degree of the graph is  {}", graph.get_unweighted_node_degrees_mode().unwrap());
+    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
@@ -6721,7 +6721,7 @@ impl Graph {
 
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
-        for value in self.get_unweighted_node_degrees() {
+        for value in self.get_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
         Ok(occurrences
@@ -6856,11 +6856,11 @@ impl Graph {
             );
             report.insert(
                 "max_degree",
-                self.get_unweighted_max_node_degree().unwrap().to_string(),
+                self.get_max_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "degree_mean",
-                self.get_unweighted_node_degrees_mean().unwrap().to_string(),
+                self.get_node_degrees_mean().unwrap().to_string(),
             );
         }
 
@@ -7074,7 +7074,7 @@ impl Graph {
                     format!(
                         "{node_name} (degree {node_degree})",
                         node_name = self.get_node_name_from_node_id(*node_id).unwrap(),
-                        node_degree = self.get_unweighted_node_degree_from_node_id(*node_id).unwrap()
+                        node_degree = self.get_node_degree_from_node_id(*node_id).unwrap()
                     )
                 })
                 .collect::<Vec<String>>()
@@ -7301,9 +7301,9 @@ impl Graph {
                 ),
                 false=>"is connected, as it has a single component".to_owned()
             },
-            median_node_degree=self.get_unweighted_node_degrees_median().unwrap(),
-            mean_node_degree=self.get_unweighted_node_degrees_mean().unwrap(),
-            mode_node_degree=self.get_unweighted_node_degrees_mode().unwrap(),
+            median_node_degree=self.get_node_degrees_median().unwrap(),
+            mean_node_degree=self.get_node_degrees_mean().unwrap(),
+            mode_node_degree=self.get_node_degrees_mode().unwrap(),
             most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
             central_nodes = self.format_node_list(self.get_top_k_central_nodes_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ));
@@ -9620,8 +9620,8 @@ impl Graph {
     }
 
     /// Returns the degree of every node in the graph.
-    pub fn get_unweighted_node_degrees(&self) -> Vec<NodeT> {
-        self.iter_unweighted_node_degrees().collect()
+    pub fn get_node_degrees(&self) -> Vec<NodeT> {
+        self.iter_node_degrees().collect()
     }
 
     /// Return set of nodes that are not singletons.
@@ -10747,15 +10747,15 @@ impl Graph {
     }
 
     /// Return iterator on the node degrees of the graph.
-    pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).map(move |node| self.get_unweighted_node_degree_from_node_id(node).unwrap())
+    pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number()).map(move |node| self.get_node_degree_from_node_id(node).unwrap())
     }
 
     /// Return iterator on the node degrees of the graph.
-    pub fn par_iter_unweighted_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+    pub fn par_iter_node_degrees(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(move |node| self.get_unweighted_node_degree_from_node_id(node).unwrap())
+            .map(move |node| self.get_node_degree_from_node_id(node).unwrap())
     }
 
     /// Return iterator over NodeT of destinations of the given node src.
@@ -13264,7 +13264,7 @@ impl Graph {
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
                 let singleton_selfloop =
-                    src == dst && self.get_unweighted_node_degree_from_node_id(src).unwrap() == 1;
+                    src == dst && self.get_node_degree_from_node_id(src).unwrap() == 1;
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));

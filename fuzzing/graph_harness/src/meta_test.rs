@@ -1705,7 +1705,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             19 => {
-                trace.push(format!("get_unweighted_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getunweightedpreferentialattachmentfromnodeids.source_node_id, &data.getunweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getunweightedpreferentialattachmentfromnodeids.normalize));
+                trace.push(format!("get_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getunweightedpreferentialattachmentfromnodeids.source_node_id, &data.getunweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getunweightedpreferentialattachmentfromnodeids.normalize));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -1718,7 +1718,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_preferential_attachment_from_node_ids(
+                let _ = graph.get_preferential_attachment_from_node_ids(
                     data.getunweightedpreferentialattachmentfromnodeids
                         .source_node_id
                         .clone(),
@@ -1803,7 +1803,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             23 => {
-                trace.push(format!("get_unweighted_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getunweightedresourceallocationindexfromnodeids.source_node_id, &data.getunweightedresourceallocationindexfromnodeids.destination_node_id));
+                trace.push(format!("get_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getunweightedresourceallocationindexfromnodeids.source_node_id, &data.getunweightedresourceallocationindexfromnodeids.destination_node_id));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -1816,7 +1816,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_resource_allocation_index_from_node_ids(
+                let _ = graph.get_resource_allocation_index_from_node_ids(
                     data.getunweightedresourceallocationindexfromnodeids
                         .source_node_id
                         .clone(),
@@ -1889,7 +1889,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             27 => {
-                trace.push(format!("get_unweighted_number_of_triangles(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftriangles.normalize, &data.getunweightednumberoftriangles.low_centrality, &data.getunweightednumberoftriangles.verbose));
+                trace.push(format!("get_number_of_triangles(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftriangles.normalize, &data.getunweightednumberoftriangles.low_centrality, &data.getunweightednumberoftriangles.verbose));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -1902,7 +1902,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_number_of_triangles(
+                let _ = graph.get_number_of_triangles(
                     data.getunweightednumberoftriangles.normalize.clone(),
                     data.getunweightednumberoftriangles.low_centrality.clone(),
                     data.getunweightednumberoftriangles.verbose.clone(),
@@ -1910,7 +1910,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             28 => {
-                trace.push(format!("get_unweighted_triads_number()",));
+                trace.push(format!("get_triads_number()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -1923,7 +1923,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_triads_number();
+                let _ = graph.get_triads_number();
             }
 
             29 => {
@@ -1945,7 +1945,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             30 => {
                 trace.push(format!(
-                    "get_unweighted_transitivity(low_centrality: {:?}, verbose: {:?})",
+                    "get_transitivity(low_centrality: {:?}, verbose: {:?})",
                     &data.getunweightedtransitivity.low_centrality,
                     &data.getunweightedtransitivity.verbose
                 ));
@@ -1961,14 +1961,14 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_transitivity(
+                let _ = graph.get_transitivity(
                     data.getunweightedtransitivity.low_centrality.clone(),
                     data.getunweightedtransitivity.verbose.clone(),
                 );
             }
 
             31 => {
-                trace.push(format!("get_unweighted_number_of_triangles_per_node(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftrianglespernode.normalize, &data.getunweightednumberoftrianglespernode.low_centrality, &data.getunweightednumberoftrianglespernode.verbose));
+                trace.push(format!("get_number_of_triangles_per_node(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftrianglespernode.normalize, &data.getunweightednumberoftrianglespernode.low_centrality, &data.getunweightednumberoftrianglespernode.verbose));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -1981,7 +1981,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_number_of_triangles_per_node(
+                let _ = graph.get_number_of_triangles_per_node(
                     data.getunweightednumberoftrianglespernode.normalize.clone(),
                     data.getunweightednumberoftrianglespernode
                         .low_centrality
@@ -2090,7 +2090,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             36 => {
-                trace.push(format!("get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth));
+                trace.push(format!("get_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -2103,7 +2103,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_minimum_path_node_ids_from_node_ids(
+                let _ = graph.get_minimum_path_node_ids_from_node_ids(
                     data.getunweightedminimumpathnodeidsfromnodeids
                         .src_node_id
                         .clone(),
@@ -2117,7 +2117,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             37 => {
-                trace.push(format!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &(data.getunweightedkshortestpathnodeidsfromnodeids.k as usize)));
+                trace.push(format!("get_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &(data.getunweightedkshortestpathnodeidsfromnodeids.k as usize)));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -2130,7 +2130,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(
+                let _ = graph.get_k_shortest_path_node_ids_from_node_ids(
                     data.getunweightedkshortestpathnodeidsfromnodeids
                         .src_node_id
                         .clone(),
@@ -2143,7 +2143,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             38 => {
                 trace.push(format!(
-                    "get_unweighted_eccentricity_from_node_id(node_id: {:?})",
+                    "get_eccentricity_from_node_id(node_id: {:?})",
                     &data.getunweightedeccentricityfromnodeid.node_id
                 ));
 
@@ -2158,7 +2158,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_eccentricity_from_node_id(
+                let _ = graph.get_eccentricity_from_node_id(
                     data.getunweightedeccentricityfromnodeid.node_id.clone(),
                 );
             }
@@ -2276,7 +2276,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             43 => {
                 trace.push(format!(
-                    "get_unweighted_diameter(ignore_infinity: {:?}, verbose: {:?})",
+                    "get_diameter(ignore_infinity: {:?}, verbose: {:?})",
                     &data.getunweighteddiameter.ignore_infinity,
                     &data.getunweighteddiameter.verbose
                 ));
@@ -2292,7 +2292,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_diameter(
+                let _ = graph.get_diameter(
                     data.getunweighteddiameter.ignore_infinity.clone(),
                     data.getunweighteddiameter.verbose.clone(),
                 );
@@ -2480,7 +2480,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             51 => {
                 trace.push(format!(
-                    "get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})",
+                    "get_all_shortest_paths(iterations: {:?}, verbose: {:?})",
                     &data
                         .getunweightedallshortestpaths
                         .iterations
@@ -2499,7 +2499,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                graph = graph.get_unweighted_all_shortest_paths(
+                graph = graph.get_all_shortest_paths(
                     data.getunweightedallshortestpaths
                         .iterations
                         .map(|x| x as NodeT)
@@ -2754,7 +2754,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             63 => {
                 trace.push(format!(
-                    "get_unweighted_top_k_central_node_ids(k: {:?})",
+                    "get_top_k_central_node_ids(k: {:?})",
                     &data.getunweightedtopkcentralnodeids.k
                 ));
 
@@ -2769,7 +2769,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_top_k_central_node_ids(
+                let _ = graph.get_top_k_central_node_ids(
                     data.getunweightedtopkcentralnodeids.k.clone(),
                 );
             }
@@ -2798,7 +2798,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             65 => {
                 trace.push(format!(
-                    "get_unweighted_node_degree_from_node_id(node_id: {:?})",
+                    "get_node_degree_from_node_id(node_id: {:?})",
                     &data.getunweightednodedegreefromnodeid.node_id
                 ));
 
@@ -2813,7 +2813,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_node_degree_from_node_id(
+                let _ = graph.get_node_degree_from_node_id(
                     data.getunweightednodedegreefromnodeid.node_id.clone(),
                 );
             }
@@ -3800,7 +3800,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             114 => {
-                trace.push(format!("iter_unweighted_degree_centrality()",));
+                trace.push(format!("iter_degree_centrality()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -3815,7 +3815,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                 }));
 
                 let _ = graph
-                    .iter_unweighted_degree_centrality()
+                    .iter_degree_centrality()
                     .map(|x| x.collect::<Vec<_>>());
             }
 
@@ -3840,7 +3840,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             116 => {
-                trace.push(format!("get_unweighted_degree_centrality()",));
+                trace.push(format!("get_degree_centrality()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -3853,7 +3853,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_degree_centrality();
+                let _ = graph.get_degree_centrality();
             }
 
             117 => {
@@ -3875,7 +3875,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             118 => {
                 trace.push(format!(
-                    "par_iter_unweighted_closeness_centrality(verbose: {:?})",
+                    "par_iter_closeness_centrality(verbose: {:?})",
                     &data.pariterunweightedclosenesscentrality.verbose
                 ));
 
@@ -3892,7 +3892,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                 }));
 
                 let _ = graph
-                    .par_iter_unweighted_closeness_centrality(
+                    .par_iter_closeness_centrality(
                         data.pariterunweightedclosenesscentrality.verbose.clone(),
                     )
                     .collect::<Vec<_>>();
@@ -3925,7 +3925,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             120 => {
                 trace.push(format!(
-                    "get_unweighted_closeness_centrality(verbose: {:?})",
+                    "get_closeness_centrality(verbose: {:?})",
                     &data.getunweightedclosenesscentrality.verbose
                 ));
 
@@ -3940,7 +3940,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_closeness_centrality(
+                let _ = graph.get_closeness_centrality(
                     data.getunweightedclosenesscentrality.verbose.clone(),
                 );
             }
@@ -3969,7 +3969,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             122 => {
                 trace.push(format!(
-                    "par_iter_unweighted_harmonic_centrality(verbose: {:?})",
+                    "par_iter_harmonic_centrality(verbose: {:?})",
                     &data.pariterunweightedharmoniccentrality.verbose
                 ));
 
@@ -3986,7 +3986,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                 }));
 
                 let _ = graph
-                    .par_iter_unweighted_harmonic_centrality(
+                    .par_iter_harmonic_centrality(
                         data.pariterunweightedharmoniccentrality.verbose.clone(),
                     )
                     .collect::<Vec<_>>();
@@ -4019,7 +4019,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             124 => {
                 trace.push(format!(
-                    "get_unweighted_harmonic_centrality(verbose: {:?})",
+                    "get_harmonic_centrality(verbose: {:?})",
                     &data.getunweightedharmoniccentrality.verbose
                 ));
 
@@ -4034,7 +4034,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_harmonic_centrality(
+                let _ = graph.get_harmonic_centrality(
                     data.getunweightedharmoniccentrality.verbose.clone(),
                 );
             }
@@ -4109,7 +4109,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             128 => {
-                trace.push(format!("get_unweighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance));
+                trace.push(format!("get_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -4122,7 +4122,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_eigenvector_centrality(
+                let _ = graph.get_eigenvector_centrality(
                     data.getunweightedeigenvectorcentrality
                         .maximum_iterations_number
                         .map(|x| x as usize)
@@ -4796,7 +4796,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             164 => {
-                trace.push(format!("get_unweighted_node_degrees_mean()",));
+                trace.push(format!("get_node_degrees_mean()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -4809,7 +4809,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_node_degrees_mean();
+                let _ = graph.get_node_degrees_mean();
             }
 
             165 => {
@@ -4898,7 +4898,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             170 => {
-                trace.push(format!("get_unweighted_node_degrees_median()",));
+                trace.push(format!("get_node_degrees_median()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -4911,7 +4911,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_node_degrees_median();
+                let _ = graph.get_node_degrees_median();
             }
 
             171 => {
@@ -4966,7 +4966,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             174 => {
-                trace.push(format!("get_unweighted_maximum_node_degree()",));
+                trace.push(format!("get_maximum_node_degree()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -4979,7 +4979,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_maximum_node_degree();
+                let _ = graph.get_maximum_node_degree();
             }
 
             175 => {
@@ -5017,7 +5017,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             177 => {
-                trace.push(format!("get_unweighted_minimum_node_degree()",));
+                trace.push(format!("get_minimum_node_degree()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -5030,11 +5030,11 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_minimum_node_degree();
+                let _ = graph.get_minimum_node_degree();
             }
 
             178 => {
-                trace.push(format!("get_unweighted_node_degrees_mode()",));
+                trace.push(format!("get_node_degrees_mode()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -5047,7 +5047,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_node_degrees_mode();
+                let _ = graph.get_node_degrees_mode();
             }
 
             179 => {
@@ -6250,7 +6250,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             247 => {
-                trace.push(format!("get_unweighted_node_degrees()",));
+                trace.push(format!("get_node_degrees()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -6263,7 +6263,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                let _ = graph.get_unweighted_node_degrees();
+                let _ = graph.get_node_degrees();
             }
 
             248 => {
@@ -6744,7 +6744,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             274 => {
-                trace.push(format!("iter_unweighted_node_degrees()",));
+                trace.push(format!("iter_node_degrees()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -6758,11 +6758,11 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                     );
                 }));
 
-                let _ = graph.iter_unweighted_node_degrees().collect::<Vec<_>>();
+                let _ = graph.iter_node_degrees().collect::<Vec<_>>();
             }
 
             275 => {
-                trace.push(format!("par_iter_unweighted_node_degrees()",));
+                trace.push(format!("par_iter_node_degrees()",));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -6776,7 +6776,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                     );
                 }));
 
-                let _ = graph.par_iter_unweighted_node_degrees().collect::<Vec<_>>();
+                let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
             }
 
             276 => {
@@ -8092,7 +8092,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             337 => {
                 trace.push(format!(
-                    "get_unweighted_laplacian_transformed_graph(verbose: {:?})",
+                    "get_laplacian_transformed_graph(verbose: {:?})",
                     &data.getunweightedlaplaciantransformedgraph.verbose
                 ));
 
@@ -8107,13 +8107,13 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                graph = graph.get_unweighted_laplacian_transformed_graph(
+                graph = graph.get_laplacian_transformed_graph(
                     data.getunweightedlaplaciantransformedgraph.verbose.clone(),
                 );
             }
 
             338 => {
-                trace.push(format!("get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
+                trace.push(format!("get_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -8126,7 +8126,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                         Some(trace2.clone()),
                     );
                 }));
-                graph = graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(
+                graph = graph.get_random_walk_normalized_laplacian_transformed_graph(
                     data.getunweightedrandomwalknormalizedlaplaciantransformedgraph
                         .verbose
                         .clone(),
@@ -8134,7 +8134,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
             }
 
             339 => {
-                trace.push(format!("get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
+                trace.push(format!("get_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose));
 
                 let g_copy = graph.clone();
                 let trace2 = trace.clone();
@@ -8149,7 +8149,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                 }));
 
                 if let Ok(res) = graph
-                    .get_unweighted_symmetric_normalized_laplacian_transformed_graph(
+                    .get_symmetric_normalized_laplacian_transformed_graph(
                         data.getunweightedsymmetricnormalizedlaplaciantransformedgraph
                             .verbose
                             .clone(),
@@ -8161,7 +8161,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
 
             340 => {
                 trace.push(format!(
-                    "get_unweighted_symmetric_normalized_transformed_graph(verbose: {:?})",
+                    "get_symmetric_normalized_transformed_graph(verbose: {:?})",
                     &data
                         .getunweightedsymmetricnormalizedtransformedgraph
                         .verbose
@@ -8179,7 +8179,7 @@ pub fn meta_test_harness_with_panic_handling(data: MetaParams) -> Result<(), Str
                     );
                 }));
 
-                if let Ok(res) = graph.get_unweighted_symmetric_normalized_transformed_graph(
+                if let Ok(res) = graph.get_symmetric_normalized_transformed_graph(
                     data.getunweightedsymmetricnormalizedtransformedgraph
                         .verbose
                         .clone(),
@@ -9324,7 +9324,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             19 => {
-                let _ = graph.get_unweighted_preferential_attachment_from_node_ids(
+                let _ = graph.get_preferential_attachment_from_node_ids(
                     data.getunweightedpreferentialattachmentfromnodeids
                         .source_node_id
                         .clone(),
@@ -9370,7 +9370,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             23 => {
-                let _ = graph.get_unweighted_resource_allocation_index_from_node_ids(
+                let _ = graph.get_resource_allocation_index_from_node_ids(
                     data.getunweightedresourceallocationindexfromnodeids
                         .source_node_id
                         .clone(),
@@ -9402,7 +9402,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             26 => graph.disable_all(),
 
             27 => {
-                let _ = graph.get_unweighted_number_of_triangles(
+                let _ = graph.get_number_of_triangles(
                     data.getunweightednumberoftriangles.normalize.clone(),
                     data.getunweightednumberoftriangles.low_centrality.clone(),
                     data.getunweightednumberoftriangles.verbose.clone(),
@@ -9410,7 +9410,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             28 => {
-                let _ = graph.get_unweighted_triads_number();
+                let _ = graph.get_triads_number();
             }
 
             29 => {
@@ -9418,14 +9418,14 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             30 => {
-                let _ = graph.get_unweighted_transitivity(
+                let _ = graph.get_transitivity(
                     data.getunweightedtransitivity.low_centrality.clone(),
                     data.getunweightedtransitivity.verbose.clone(),
                 );
             }
 
             31 => {
-                let _ = graph.get_unweighted_number_of_triangles_per_node(
+                let _ = graph.get_number_of_triangles_per_node(
                     data.getunweightednumberoftrianglespernode.normalize.clone(),
                     data.getunweightednumberoftrianglespernode
                         .low_centrality
@@ -9465,7 +9465,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             36 => {
-                let _ = graph.get_unweighted_minimum_path_node_ids_from_node_ids(
+                let _ = graph.get_minimum_path_node_ids_from_node_ids(
                     data.getunweightedminimumpathnodeidsfromnodeids
                         .src_node_id
                         .clone(),
@@ -9479,7 +9479,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             37 => {
-                let _ = graph.get_unweighted_k_shortest_path_node_ids_from_node_ids(
+                let _ = graph.get_k_shortest_path_node_ids_from_node_ids(
                     data.getunweightedkshortestpathnodeidsfromnodeids
                         .src_node_id
                         .clone(),
@@ -9491,7 +9491,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             38 => {
-                let _ = graph.get_unweighted_eccentricity_from_node_id(
+                let _ = graph.get_eccentricity_from_node_id(
                     data.getunweightedeccentricityfromnodeid.node_id.clone(),
                 );
             }
@@ -9556,7 +9556,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             43 => {
-                let _ = graph.get_unweighted_diameter(
+                let _ = graph.get_diameter(
                     data.getunweighteddiameter.ignore_infinity.clone(),
                     data.getunweighteddiameter.verbose.clone(),
                 );
@@ -9634,7 +9634,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             51 => {
-                graph = graph.get_unweighted_all_shortest_paths(
+                graph = graph.get_all_shortest_paths(
                     data.getunweightedallshortestpaths
                         .iterations
                         .map(|x| x as NodeT)
@@ -9717,7 +9717,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             63 => {
-                let _ = graph.get_unweighted_top_k_central_node_ids(
+                let _ = graph.get_top_k_central_node_ids(
                     data.getunweightedtopkcentralnodeids.k.clone(),
                 );
             }
@@ -9729,7 +9729,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             65 => {
-                let _ = graph.get_unweighted_node_degree_from_node_id(
+                let _ = graph.get_node_degree_from_node_id(
                     data.getunweightednodedegreefromnodeid.node_id.clone(),
                 );
             }
@@ -9994,7 +9994,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
 
             114 => {
                 let _ = graph
-                    .iter_unweighted_degree_centrality()
+                    .iter_degree_centrality()
                     .map(|x| x.collect::<Vec<_>>());
             }
 
@@ -10005,7 +10005,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             116 => {
-                let _ = graph.get_unweighted_degree_centrality();
+                let _ = graph.get_degree_centrality();
             }
 
             117 => {
@@ -10014,7 +10014,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
 
             118 => {
                 let _ = graph
-                    .par_iter_unweighted_closeness_centrality(
+                    .par_iter_closeness_centrality(
                         data.pariterunweightedclosenesscentrality.verbose.clone(),
                     )
                     .collect::<Vec<_>>();
@@ -10032,7 +10032,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             120 => {
-                let _ = graph.get_unweighted_closeness_centrality(
+                let _ = graph.get_closeness_centrality(
                     data.getunweightedclosenesscentrality.verbose.clone(),
                 );
             }
@@ -10048,7 +10048,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
 
             122 => {
                 let _ = graph
-                    .par_iter_unweighted_harmonic_centrality(
+                    .par_iter_harmonic_centrality(
                         data.pariterunweightedharmoniccentrality.verbose.clone(),
                     )
                     .collect::<Vec<_>>();
@@ -10066,7 +10066,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             124 => {
-                let _ = graph.get_unweighted_harmonic_centrality(
+                let _ = graph.get_harmonic_centrality(
                     data.getunweightedharmoniccentrality.verbose.clone(),
                 );
             }
@@ -10095,7 +10095,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             128 => {
-                let _ = graph.get_unweighted_eigenvector_centrality(
+                let _ = graph.get_eigenvector_centrality(
                     data.getunweightedeigenvectorcentrality
                         .maximum_iterations_number
                         .map(|x| x as usize)
@@ -10282,7 +10282,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             164 => {
-                let _ = graph.get_unweighted_node_degrees_mean();
+                let _ = graph.get_node_degrees_mean();
             }
 
             165 => {
@@ -10306,7 +10306,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             170 => {
-                let _ = graph.get_unweighted_node_degrees_median();
+                let _ = graph.get_node_degrees_median();
             }
 
             171 => {
@@ -10322,7 +10322,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             174 => {
-                let _ = graph.get_unweighted_maximum_node_degree();
+                let _ = graph.get_maximum_node_degree();
             }
 
             175 => {
@@ -10334,11 +10334,11 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             177 => {
-                let _ = graph.get_unweighted_minimum_node_degree();
+                let _ = graph.get_minimum_node_degree();
             }
 
             178 => {
-                let _ = graph.get_unweighted_node_degrees_mode();
+                let _ = graph.get_node_degrees_mode();
             }
 
             179 => {
@@ -10624,7 +10624,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             247 => {
-                let _ = graph.get_unweighted_node_degrees();
+                let _ = graph.get_node_degrees();
             }
 
             248 => {
@@ -10750,11 +10750,11 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             274 => {
-                let _ = graph.iter_unweighted_node_degrees().collect::<Vec<_>>();
+                let _ = graph.iter_node_degrees().collect::<Vec<_>>();
             }
 
             275 => {
-                let _ = graph.par_iter_unweighted_node_degrees().collect::<Vec<_>>();
+                let _ = graph.par_iter_node_degrees().collect::<Vec<_>>();
             }
 
             276 => {
@@ -11142,13 +11142,13 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             337 => {
-                graph = graph.get_unweighted_laplacian_transformed_graph(
+                graph = graph.get_laplacian_transformed_graph(
                     data.getunweightedlaplaciantransformedgraph.verbose.clone(),
                 );
             }
 
             338 => {
-                graph = graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(
+                graph = graph.get_random_walk_normalized_laplacian_transformed_graph(
                     data.getunweightedrandomwalknormalizedlaplaciantransformedgraph
                         .verbose
                         .clone(),
@@ -11157,7 +11157,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
 
             339 => {
                 if let Ok(res) = graph
-                    .get_unweighted_symmetric_normalized_laplacian_transformed_graph(
+                    .get_symmetric_normalized_laplacian_transformed_graph(
                         data.getunweightedsymmetricnormalizedlaplaciantransformedgraph
                             .verbose
                             .clone(),
@@ -11168,7 +11168,7 @@ pub fn meta_test_harness(data: MetaParams) -> Result<(), String> {
             }
 
             340 => {
-                if let Ok(res) = graph.get_unweighted_symmetric_normalized_transformed_graph(
+                if let Ok(res) = graph.get_symmetric_normalized_transformed_graph(
                     data.getunweightedsymmetricnormalizedtransformedgraph
                         .verbose
                         .clone(),
@@ -11587,7 +11587,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             19 => {
-                println!("get_unweighted_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getunweightedpreferentialattachmentfromnodeids.source_node_id, &data.getunweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getunweightedpreferentialattachmentfromnodeids.normalize);
+                println!("get_preferential_attachment_from_node_ids(source_node_id: {:?}, destination_node_id: {:?}, normalize: {:?})", &data.getunweightedpreferentialattachmentfromnodeids.source_node_id, &data.getunweightedpreferentialattachmentfromnodeids.destination_node_id, &data.getunweightedpreferentialattachmentfromnodeids.normalize);
             }
 
             20 => {
@@ -11603,7 +11603,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             23 => {
-                println!("get_unweighted_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getunweightedresourceallocationindexfromnodeids.source_node_id, &data.getunweightedresourceallocationindexfromnodeids.destination_node_id);
+                println!("get_resource_allocation_index_from_node_ids(source_node_id: {:?}, destination_node_id: {:?})", &data.getunweightedresourceallocationindexfromnodeids.source_node_id, &data.getunweightedresourceallocationindexfromnodeids.destination_node_id);
             }
 
             24 => {
@@ -11619,11 +11619,11 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             27 => {
-                println!("get_unweighted_number_of_triangles(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftriangles.normalize, &data.getunweightednumberoftriangles.low_centrality, &data.getunweightednumberoftriangles.verbose);
+                println!("get_number_of_triangles(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftriangles.normalize, &data.getunweightednumberoftriangles.low_centrality, &data.getunweightednumberoftriangles.verbose);
             }
 
             28 => {
-                println!("get_unweighted_triads_number()",);
+                println!("get_triads_number()",);
             }
 
             29 => {
@@ -11632,14 +11632,14 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             30 => {
                 println!(
-                    "get_unweighted_transitivity(low_centrality: {:?}, verbose: {:?})",
+                    "get_transitivity(low_centrality: {:?}, verbose: {:?})",
                     &data.getunweightedtransitivity.low_centrality,
                     &data.getunweightedtransitivity.verbose
                 );
             }
 
             31 => {
-                println!("get_unweighted_number_of_triangles_per_node(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftrianglespernode.normalize, &data.getunweightednumberoftrianglespernode.low_centrality, &data.getunweightednumberoftrianglespernode.verbose);
+                println!("get_number_of_triangles_per_node(normalize: {:?}, low_centrality: {:?}, verbose: {:?})", &data.getunweightednumberoftrianglespernode.normalize, &data.getunweightednumberoftrianglespernode.low_centrality, &data.getunweightednumberoftrianglespernode.verbose);
             }
 
             32 => {
@@ -11675,16 +11675,16 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             36 => {
-                println!("get_unweighted_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth);
+                println!("get_minimum_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, maximal_depth: {:?})", &data.getunweightedminimumpathnodeidsfromnodeids.src_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.dst_node_id, &data.getunweightedminimumpathnodeidsfromnodeids.maximal_depth);
             }
 
             37 => {
-                println!("get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &(data.getunweightedkshortestpathnodeidsfromnodeids.k as usize));
+                println!("get_k_shortest_path_node_ids_from_node_ids(src_node_id: {:?}, dst_node_id: {:?}, k: {:?})", &data.getunweightedkshortestpathnodeidsfromnodeids.src_node_id, &data.getunweightedkshortestpathnodeidsfromnodeids.dst_node_id, &(data.getunweightedkshortestpathnodeidsfromnodeids.k as usize));
             }
 
             38 => {
                 println!(
-                    "get_unweighted_eccentricity_from_node_id(node_id: {:?})",
+                    "get_eccentricity_from_node_id(node_id: {:?})",
                     &data.getunweightedeccentricityfromnodeid.node_id
                 );
             }
@@ -11707,7 +11707,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             43 => {
                 println!(
-                    "get_unweighted_diameter(ignore_infinity: {:?}, verbose: {:?})",
+                    "get_diameter(ignore_infinity: {:?}, verbose: {:?})",
                     &data.getunweighteddiameter.ignore_infinity,
                     &data.getunweighteddiameter.verbose
                 );
@@ -11758,7 +11758,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             51 => {
                 println!(
-                    "get_unweighted_all_shortest_paths(iterations: {:?}, verbose: {:?})",
+                    "get_all_shortest_paths(iterations: {:?}, verbose: {:?})",
                     &data
                         .getunweightedallshortestpaths
                         .iterations
@@ -11840,7 +11840,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             63 => {
                 println!(
-                    "get_unweighted_top_k_central_node_ids(k: {:?})",
+                    "get_top_k_central_node_ids(k: {:?})",
                     &data.getunweightedtopkcentralnodeids.k
                 );
             }
@@ -11854,7 +11854,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             65 => {
                 println!(
-                    "get_unweighted_node_degree_from_node_id(node_id: {:?})",
+                    "get_node_degree_from_node_id(node_id: {:?})",
                     &data.getunweightednodedegreefromnodeid.node_id
                 );
             }
@@ -12145,7 +12145,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             114 => {
-                println!("iter_unweighted_degree_centrality()",);
+                println!("iter_degree_centrality()",);
             }
 
             115 => {
@@ -12153,7 +12153,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             116 => {
-                println!("get_unweighted_degree_centrality()",);
+                println!("get_degree_centrality()",);
             }
 
             117 => {
@@ -12162,7 +12162,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             118 => {
                 println!(
-                    "par_iter_unweighted_closeness_centrality(verbose: {:?})",
+                    "par_iter_closeness_centrality(verbose: {:?})",
                     &data.pariterunweightedclosenesscentrality.verbose
                 );
             }
@@ -12173,7 +12173,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             120 => {
                 println!(
-                    "get_unweighted_closeness_centrality(verbose: {:?})",
+                    "get_closeness_centrality(verbose: {:?})",
                     &data.getunweightedclosenesscentrality.verbose
                 );
             }
@@ -12184,7 +12184,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             122 => {
                 println!(
-                    "par_iter_unweighted_harmonic_centrality(verbose: {:?})",
+                    "par_iter_harmonic_centrality(verbose: {:?})",
                     &data.pariterunweightedharmoniccentrality.verbose
                 );
             }
@@ -12195,7 +12195,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             124 => {
                 println!(
-                    "get_unweighted_harmonic_centrality(verbose: {:?})",
+                    "get_harmonic_centrality(verbose: {:?})",
                     &data.getunweightedharmoniccentrality.verbose
                 );
             }
@@ -12220,7 +12220,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             128 => {
-                println!("get_unweighted_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance);
+                println!("get_eigenvector_centrality(maximum_iterations_number: {:?}, tollerance: {:?})", &data.getunweightedeigenvectorcentrality.maximum_iterations_number.map(|x| x as usize), &data.getunweightedeigenvectorcentrality.tollerance);
             }
 
             129 => {
@@ -12388,7 +12388,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             164 => {
-                println!("get_unweighted_node_degrees_mean()",);
+                println!("get_node_degrees_mean()",);
             }
 
             165 => {
@@ -12412,7 +12412,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             170 => {
-                println!("get_unweighted_node_degrees_median()",);
+                println!("get_node_degrees_median()",);
             }
 
             171 => {
@@ -12428,7 +12428,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             174 => {
-                println!("get_unweighted_maximum_node_degree()",);
+                println!("get_maximum_node_degree()",);
             }
 
             175 => {
@@ -12440,11 +12440,11 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             177 => {
-                println!("get_unweighted_minimum_node_degree()",);
+                println!("get_minimum_node_degree()",);
             }
 
             178 => {
-                println!("get_unweighted_node_degrees_mode()",);
+                println!("get_node_degrees_mode()",);
             }
 
             179 => {
@@ -12753,7 +12753,7 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             247 => {
-                println!("get_unweighted_node_degrees()",);
+                println!("get_node_degrees()",);
             }
 
             248 => {
@@ -12864,11 +12864,11 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
             }
 
             274 => {
-                println!("iter_unweighted_node_degrees()",);
+                println!("iter_node_degrees()",);
             }
 
             275 => {
-                println!("par_iter_unweighted_node_degrees()",);
+                println!("par_iter_node_degrees()",);
             }
 
             276 => {
@@ -13191,22 +13191,22 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {
 
             337 => {
                 println!(
-                    "get_unweighted_laplacian_transformed_graph(verbose: {:?})",
+                    "get_laplacian_transformed_graph(verbose: {:?})",
                     &data.getunweightedlaplaciantransformedgraph.verbose
                 );
             }
 
             338 => {
-                println!("get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose);
+                println!("get_random_walk_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedrandomwalknormalizedlaplaciantransformedgraph.verbose);
             }
 
             339 => {
-                println!("get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose);
+                println!("get_symmetric_normalized_laplacian_transformed_graph(verbose: {:?})", &data.getunweightedsymmetricnormalizedlaplaciantransformedgraph.verbose);
             }
 
             340 => {
                 println!(
-                    "get_unweighted_symmetric_normalized_transformed_graph(verbose: {:?})",
+                    "get_symmetric_normalized_transformed_graph(verbose: {:?})",
                     &data
                         .getunweightedsymmetricnormalizedtransformedgraph
                         .verbose

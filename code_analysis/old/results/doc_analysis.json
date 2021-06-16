@@ -3852,9 +3852,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_unchecked_unweighted_node_degree_from_node_id": {
+    "get_unchecked_node_degree_from_node_id": {
         "file": "queries.rs",
-        "function": "get_unchecked_unweighted_node_degree_from_node_id",
+        "function": "get_unchecked_node_degree_from_node_id",
         "errors": [
             {
                 "doc_line": 0,
@@ -3873,9 +3873,9 @@
         "example": {},
         "extra_headers": []
     },
-    "get_unweighted_node_degree_from_node_id": {
+    "get_node_degree_from_node_id": {
         "file": "queries.rs",
-        "function": "get_unweighted_node_degree_from_node_id",
+        "function": "get_node_degree_from_node_id",
         "errors": [
             {
                 "doc_line": 0,
@@ -7675,15 +7675,15 @@
         },
         "extra_headers": []
     },
-    "get_unweighted_node_degrees_mean": {
+    "get_node_degrees_mean": {
         "file": "getters.rs",
-        "function": "get_unweighted_node_degrees_mean",
+        "function": "get_node_degrees_mean",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mean node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mean().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -7735,27 +7735,27 @@
         },
         "extra_headers": []
     },
-    "get_unweighted_node_degrees_median": {
+    "get_node_degrees_median": {
         "file": "getters.rs",
-        "function": "get_unweighted_node_degrees_median",
+        "function": "get_node_degrees_median",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The median node degree of the graph is  {}\", graph.get_unweighted_node_degrees_median().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());\n"
         },
         "extra_headers": []
     },
-    "get_unweighted_max_node_degree": {
+    "get_max_node_degree": {
         "file": "getters.rs",
-        "function": "get_unweighted_max_node_degree",
+        "function": "get_max_node_degree",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The maximum node degree of the graph is  {}\", graph.get_unweighted_max_node_degree().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -7771,15 +7771,15 @@
         },
         "extra_headers": []
     },
-    "get_unweighted_node_degrees_mode": {
+    "get_node_degrees_mode": {
         "file": "getters.rs",
-        "function": "get_unweighted_node_degrees_mode",
+        "function": "get_node_degrees_mode",
         "errors": [],
         "args": {
             "args": []
         },
         "example": {
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mode node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mode().unwrap());\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nprintln!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());\n"
         },
         "extra_headers": []
     },
@@ -8480,9 +8480,9 @@
             }
         ]
     },
-    "get_unweighted_node_degrees": {
+    "get_node_degrees": {
         "file": "getters.rs",
-        "function": "get_unweighted_node_degrees",
+        "function": "get_node_degrees",
         "errors": [
             {
                 "doc_line": 0,
@@ -9423,9 +9423,9 @@
         "example": {},
         "extra_headers": []
     },
-    "iter_unweighted_node_degrees": {
+    "iter_node_degrees": {
         "file": "iters.rs",
-        "function": "iter_unweighted_node_degrees",
+        "function": "iter_node_degrees",
         "errors": [
             {
                 "doc_line": 0,
@@ -9438,9 +9438,9 @@
         "example": {},
         "extra_headers": []
     },
-    "par_iter_unweighted_node_degrees": {
+    "par_iter_node_degrees": {
         "file": "iters.rs",
-        "function": "par_iter_unweighted_node_degrees",
+        "function": "par_iter_node_degrees",
         "errors": [
             {
                 "doc_line": 0,

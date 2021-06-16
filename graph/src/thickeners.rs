@@ -55,7 +55,7 @@ impl Graph {
 
         // compute the neighbours nodes to add
         let neighbours_number =
-            neighbours_number.unwrap_or(self.get_unweighted_node_degrees_mean()?.ceil() as NodeT);
+            neighbours_number.unwrap_or(self.get_node_degrees_mean()?.ceil() as NodeT);
         if neighbours_number == 0 {
             return Err("The number of neighbours to add per node cannot be zero!".to_string());
         }
@@ -106,7 +106,7 @@ impl Graph {
                 })
                 .chain(
                     self.par_iter_node_ids()
-                        .zip(self.par_iter_unweighted_node_degrees())
+                        .zip(self.par_iter_node_degrees())
                         .progress_with(pb)
                         .map(|(source_node_id, node_degree)| {
                             if node_degree <= max_degree {

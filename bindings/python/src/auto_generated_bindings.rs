@@ -11,14 +11,9 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar while building the graph.
     ///
-    pub fn get_unweighted_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> EnsmallenGraph {
+    pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self
-                .graph
-                .get_unweighted_laplacian_transformed_graph(verbose),
+            graph: self.graph.get_laplacian_transformed_graph(verbose),
         }
     }
 
@@ -31,14 +26,14 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar while building the graph.
     ///
-    pub fn get_unweighted_random_walk_normalized_laplacian_transformed_graph(
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self
                 .graph
-                .get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose),
+                .get_random_walk_normalized_laplacian_transformed_graph(verbose),
         }
     }
 
@@ -57,14 +52,14 @@ impl EnsmallenGraph {
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_unweighted_symmetric_normalized_laplacian_transformed_graph(
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose))?,
+                .get_symmetric_normalized_laplacian_transformed_graph(verbose))?,
         })
     }
 
@@ -83,14 +78,14 @@ impl EnsmallenGraph {
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_unweighted_symmetric_normalized_transformed_graph(
+    pub fn get_symmetric_normalized_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .get_unweighted_symmetric_normalized_transformed_graph(verbose))?,
+                .get_symmetric_normalized_transformed_graph(verbose))?,
         })
     }
 
@@ -1768,21 +1763,21 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     ///
-    pub fn get_unweighted_number_of_triangles(
+    pub fn get_number_of_triangles(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> EdgeT {
         self.graph
-            .get_unweighted_number_of_triangles(normalize, low_centrality, verbose)
+            .get_number_of_triangles(normalize, low_centrality, verbose)
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns total number of triads in the graph without taking into account weights
-    pub fn get_unweighted_triads_number(&self) -> EdgeT {
-        self.graph.get_unweighted_triads_number()
+    pub fn get_triads_number(&self) -> EdgeT {
+        self.graph.get_triads_number()
     }
 
     #[automatically_generated_binding]
@@ -1803,13 +1798,8 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     ///
-    pub fn get_unweighted_transitivity(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> f64 {
-        self.graph
-            .get_unweighted_transitivity(low_centrality, verbose)
+    pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
+        self.graph.get_transitivity(low_centrality, verbose)
     }
 
     #[automatically_generated_binding]
@@ -1830,7 +1820,7 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     ///
-    pub fn get_unweighted_number_of_triangles_per_node(
+    pub fn get_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
@@ -1839,11 +1829,8 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.graph.get_unweighted_number_of_triangles_per_node(
-                normalize,
-                low_centrality,
-                verbose
-            ),
+            self.graph
+                .get_number_of_triangles_per_node(normalize, low_centrality, verbose),
             NodeT
         )
     }
@@ -2372,7 +2359,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If there is no path between the two given nodes.
     ///
-    pub unsafe fn get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -2383,7 +2370,7 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                .get_unchecked_minimum_path_node_ids_from_node_ids(
                     src_node_id,
                     dst_node_id,
                     maximal_depth
@@ -2409,7 +2396,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -2417,7 +2404,7 @@ impl EnsmallenGraph {
     ) -> PyResult<Vec<String>> {
         pe!(self
             .graph
-            .get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+            .get_unchecked_minimum_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth
@@ -2443,7 +2430,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_unweighted_minimum_path_node_ids_from_node_ids(
+    pub fn get_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -2452,13 +2439,11 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self
-                .graph
-                .get_unweighted_minimum_path_node_ids_from_node_ids(
-                    src_node_id,
-                    dst_node_id,
-                    maximal_depth
-                ))?,
+            pe!(self.graph.get_minimum_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                maximal_depth
+            ))?,
             NodeT
         ))
     }
@@ -2482,7 +2467,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_unweighted_minimum_path_node_ids_from_node_names(
+    pub fn get_minimum_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -2491,13 +2476,11 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self
-                .graph
-                .get_unweighted_minimum_path_node_ids_from_node_names(
-                    src_node_name,
-                    dst_node_name,
-                    maximal_depth
-                ))?,
+            pe!(self.graph.get_minimum_path_node_ids_from_node_names(
+                src_node_name,
+                dst_node_name,
+                maximal_depth
+            ))?,
             NodeT
         ))
     }
@@ -2521,19 +2504,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_unweighted_minimum_path_node_names_from_node_names(
+    pub fn get_minimum_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
-        pe!(self
-            .graph
-            .get_unweighted_minimum_path_node_names_from_node_names(
-                src_node_name,
-                dst_node_name,
-                maximal_depth
-            ))
+        pe!(self.graph.get_minimum_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            maximal_depth
+        ))
     }
 
     #[automatically_generated_binding]
@@ -2553,18 +2534,14 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
-                src_node_id,
-                dst_node_id,
-                k,
-            )
+            .get_unchecked_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k)
     }
 
     #[automatically_generated_binding]
@@ -2588,7 +2565,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs does not exist in the graph.
     ///
-    pub fn get_unweighted_k_shortest_path_node_ids_from_node_ids(
+    pub fn get_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -2596,7 +2573,7 @@ impl EnsmallenGraph {
     ) -> PyResult<Vec<Vec<NodeT>>> {
         pe!(self
             .graph
-            .get_unweighted_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
+            .get_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
     }
 
     #[automatically_generated_binding]
@@ -2618,19 +2595,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names does not exist in the graph.
     ///
-    pub fn get_unweighted_k_shortest_path_node_ids_from_node_names(
+    pub fn get_k_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        pe!(self
-            .graph
-            .get_unweighted_k_shortest_path_node_ids_from_node_names(
-                src_node_name,
-                dst_node_name,
-                k
-            ))
+        pe!(self.graph.get_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k
+        ))
     }
 
     #[automatically_generated_binding]
@@ -2652,19 +2627,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names does not exist in the graph.
     ///
-    pub fn get_unweighted_k_shortest_path_node_names_from_node_names(
+    pub fn get_k_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<String>>> {
-        pe!(self
-            .graph
-            .get_unweighted_k_shortest_path_node_names_from_node_names(
-                src_node_name,
-                dst_node_name,
-                k
-            ))
+        pe!(self.graph.get_k_shortest_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k
+        ))
     }
 
     #[automatically_generated_binding]
@@ -2682,12 +2655,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> NodeT {
-        self.graph
-            .get_unchecked_unweighted_eccentricity_from_node_id(node_id)
+    pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.graph.get_unchecked_eccentricity_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -2707,8 +2676,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node ID does not exist in the graph.
     ///
-    pub fn get_unweighted_eccentricity_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_eccentricity_from_node_id(node_id))
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        pe!(self.graph.get_eccentricity_from_node_id(node_id))
     }
 
     #[automatically_generated_binding]
@@ -2757,10 +2726,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node name does not exist in the current graph instance.
     ///
-    pub fn get_unweighted_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        pe!(self
-            .graph
-            .get_unweighted_eccentricity_from_node_name(node_name))
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        pe!(self.graph.get_eccentricity_from_node_name(node_name))
     }
 
     #[automatically_generated_binding]
@@ -2984,6 +2951,36 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, ignore_infinity, verbose)"]
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
+    ///
+    /// Parameters
+    /// ----------
+    /// ignore_infinity: Optional[bool],
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain nodes.
+    ///
+    pub fn get_diameter_naive(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_diameter_naive(ignore_infinity, verbose))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, ignore_infinity, verbose)"]
     /// Returns diameter of the graph.
     ///
     /// Parameters
@@ -2998,20 +2995,23 @@ impl EnsmallenGraph {
     /// -------
     /// ValueError
     ///     If the graph does not contain nodes.
-    /// ValueError
-    ///     If the graph does not have weights and weights have been requested.
     ///
-    pub fn get_unweighted_diameter(
+    pub fn get_diameter(
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f64> {
-        pe!(self.graph.get_unweighted_diameter(ignore_infinity, verbose))
+        pe!(self.graph.get_diameter(ignore_infinity, verbose))
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, ignore_infinity, use_edge_weights_as_probabilities, verbose)"]
-    /// Returns diameter of the graph.
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
     ///
     /// Parameters
     /// ----------
@@ -3034,13 +3034,13 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     ///
-    pub fn get_weighted_diameter(
+    pub fn get_weighted_diameter_naive(
         &self,
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f64> {
-        pe!(self.graph.get_weighted_diameter(
+        pe!(self.graph.get_weighted_diameter_naive(
             ignore_infinity,
             use_edge_weights_as_probabilities,
             verbose
@@ -3160,8 +3160,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns unweighted mean node degree of the graph.
-    pub fn get_unweighted_node_degrees_mean(&self) -> PyResult<f64> {
-        pe!(self.graph.get_unweighted_node_degrees_mean())
+    pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
+        pe!(self.graph.get_node_degrees_mean())
     }
 
     #[automatically_generated_binding]
@@ -3202,8 +3202,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns unweighted median node degree of the graph
-    pub fn get_unweighted_node_degrees_median(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_node_degrees_median())
+    pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_median())
     }
 
     #[automatically_generated_binding]
@@ -3222,8 +3222,8 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (0) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_unweighted_maximum_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_unweighted_maximum_node_degree()
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_maximum_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -3285,8 +3285,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     ///
-    pub fn get_unweighted_maximum_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_maximum_node_degree())
+    pub fn get_maximum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_maximum_node_degree())
     }
 
     #[automatically_generated_binding]
@@ -3316,8 +3316,8 @@ impl EnsmallenGraph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     ///  does not contain nodes. In those cases the value is not properly
     ///  defined.
-    pub unsafe fn get_unchecked_unweighted_minimum_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_unweighted_minimum_node_degree()
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_minimum_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -3336,15 +3336,15 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not contain any node (is an empty graph).
     ///
-    pub fn get_unweighted_minimum_node_degree(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_minimum_node_degree())
+    pub fn get_minimum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_minimum_node_degree())
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
-    pub fn get_unweighted_node_degrees_mode(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_node_degrees_mode())
+    pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_mode())
     }
 
     #[automatically_generated_binding]
@@ -4256,9 +4256,9 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns the unweighted degree of every node in the graph
-    pub fn get_unweighted_node_degrees(&self) -> Py<PyArray1<NodeT>> {
+    pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.graph.get_unweighted_node_degrees(), NodeT)
+        to_ndarray_1d!(gil, self.graph.get_node_degrees(), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -5578,15 +5578,13 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar while building the graph.
     ///
-    pub fn get_unweighted_all_shortest_paths(
+    pub fn get_all_shortest_paths(
         &self,
         iterations: Option<NodeT>,
         verbose: Option<bool>,
     ) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self
-                .graph
-                .get_unweighted_all_shortest_paths(iterations, verbose),
+            graph: self.graph.get_all_shortest_paths(iterations, verbose),
         }
     }
 
@@ -6177,11 +6175,11 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph has no nodes.
     ///
-    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
+    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_unweighted_top_k_central_node_ids(k))?,
+            pe!(self.graph.get_top_k_central_node_ids(k))?,
             NodeT
         ))
     }
@@ -6228,12 +6226,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exist in the current graph the method will raise a panic.
-    pub unsafe fn get_unchecked_unweighted_node_degree_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> NodeT {
-        self.graph
-            .get_unchecked_unweighted_node_degree_from_node_id(node_id)
+    pub unsafe fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.graph.get_unchecked_node_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -6266,8 +6260,8 @@ impl EnsmallenGraph {
     /// node_id: int,
     ///     Integer ID of the node.
     ///
-    pub fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        pe!(self.graph.get_unweighted_node_degree_from_node_id(node_id))
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degree_from_node_id(node_id))
     }
 
     #[automatically_generated_binding]
@@ -7186,11 +7180,11 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns vector of unweighted degree centrality for all nodes
-    pub fn get_unweighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
+    pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_unweighted_degree_centrality())?,
+            pe!(self.graph.get_degree_centrality())?,
             f64
         ))
     }
@@ -7225,12 +7219,9 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_closeness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         self.graph
-            .get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)
+            .get_unchecked_closeness_centrality_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -7272,13 +7263,9 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show an indicative progress bar.
     ///
-    pub fn get_unweighted_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
-            gil,
-            self.graph.get_unweighted_closeness_centrality(verbose),
-            f64
-        )
+        to_ndarray_1d!(gil, self.graph.get_closeness_centrality(verbose), f64)
     }
 
     #[automatically_generated_binding]
@@ -7333,12 +7320,9 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_harmonic_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         self.graph
-            .get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)
+            .get_unchecked_harmonic_centrality_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -7380,13 +7364,9 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show an indicative progress bar.
     ///
-    pub fn get_unweighted_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
-            gil,
-            self.graph.get_unweighted_harmonic_centrality(verbose),
-            f64
-        )
+        to_ndarray_1d!(gil, self.graph.get_harmonic_centrality(verbose), f64)
     }
 
     #[automatically_generated_binding]
@@ -7474,7 +7454,7 @@ impl EnsmallenGraph {
     /// tollerance: Optional[float],
     ///     The maximum error tollerance for convergence.
     ///
-    pub fn get_unweighted_eigenvector_centrality(
+    pub fn get_eigenvector_centrality(
         &self,
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
@@ -7484,7 +7464,7 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_unweighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+                .get_eigenvector_centrality(maximum_iterations_number, tollerance))?,
             f64
         ))
     }
@@ -7529,9 +7509,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_unweighted_minimum_preferential_attachment(&self) -> f64 {
-        self.graph
-            .get_unchecked_unweighted_minimum_preferential_attachment()
+    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
+        self.graph.get_unchecked_minimum_preferential_attachment()
     }
 
     #[automatically_generated_binding]
@@ -7541,9 +7520,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_unweighted_maximum_preferential_attachment(&self) -> f64 {
-        self.graph
-            .get_unchecked_unweighted_maximum_preferential_attachment()
+    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
+        self.graph.get_unchecked_maximum_preferential_attachment()
     }
 
     #[automatically_generated_binding]
@@ -7588,14 +7566,14 @@ impl EnsmallenGraph {
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_unweighted_preferential_attachment_from_node_ids(
+    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
         self.graph
-            .get_unchecked_unweighted_preferential_attachment_from_node_ids(
+            .get_unchecked_preferential_attachment_from_node_ids(
                 source_node_id,
                 destination_node_id,
                 normalize,
@@ -7621,19 +7599,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the node IDs are higher than the number of nodes in the graph.
     ///
-    pub fn get_unweighted_preferential_attachment_from_node_ids(
+    pub fn get_preferential_attachment_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
     ) -> PyResult<f64> {
-        pe!(self
-            .graph
-            .get_unweighted_preferential_attachment_from_node_ids(
-                source_node_id,
-                destination_node_id,
-                normalize
-            ))
+        pe!(self.graph.get_preferential_attachment_from_node_ids(
+            source_node_id,
+            destination_node_id,
+            normalize
+        ))
     }
 
     #[automatically_generated_binding]
@@ -7655,19 +7631,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the given node names do not exist in the current graph.
     ///
-    pub fn get_unweighted_preferential_attachment_from_node_names(
+    pub fn get_preferential_attachment_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f64> {
-        pe!(self
-            .graph
-            .get_unweighted_preferential_attachment_from_node_names(
-                first_node_name,
-                second_node_name,
-                normalize
-            ))
+        pe!(self.graph.get_preferential_attachment_from_node_names(
+            first_node_name,
+            second_node_name,
+            normalize
+        ))
     }
 
     #[automatically_generated_binding]
@@ -7944,13 +7918,13 @@ impl EnsmallenGraph {
     /// ------
     /// If either of the provided one and two node IDs are higher than the
     ///  number of nodes in the graph.
-    pub unsafe fn get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> f64 {
         self.graph
-            .get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+            .get_unchecked_resource_allocation_index_from_node_ids(
                 source_node_id,
                 destination_node_id,
             )
@@ -8001,17 +7975,14 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the node IDs are higher than the number of nodes in the graph.
     ///
-    pub fn get_unweighted_resource_allocation_index_from_node_ids(
+    pub fn get_resource_allocation_index_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_unweighted_resource_allocation_index_from_node_ids(
-                source_node_id,
-                destination_node_id
-            ))
+            .get_resource_allocation_index_from_node_ids(source_node_id, destination_node_id))
     }
 
     #[automatically_generated_binding]
@@ -8031,17 +8002,14 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If either of the given node names do not exist in the current graph.
     ///
-    pub fn get_unweighted_resource_allocation_index_from_node_names(
+    pub fn get_resource_allocation_index_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_unweighted_resource_allocation_index_from_node_names(
-                first_node_name,
-                second_node_name
-            ))
+            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))
     }
 
     #[automatically_generated_binding]

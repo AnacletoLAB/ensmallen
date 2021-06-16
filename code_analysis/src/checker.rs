@@ -47,8 +47,8 @@ impl Checker {
         // if get_X_from_Y exists then get_Y_from_X must exists (can be disable with #[no_inverse_method])
         // if get_X_from_Y exists and get_Y_from_Z then get_X_from_Z must exist
         
-        // if il metodo contiene _weighted_ deve esistere anche _unweighted_ eccetto se con #[no_unweighted]
-        // if il metodo contiene _unweighted_ deve esistere anche _weighted_ eccetto se con #[no_weighted]
+        // if il metodo contiene _weighted_ deve esistere anche _ eccetto se con #[no_unweighted]
+        // if il metodo contiene _ deve esistere anche _weighted_ eccetto se con #[no_weighted]
 
         // if il metodo contiene known deve esistere anche unknown eccetto se con #[no_unknown]
         // if il metodo contiene unknown deve esistere anche known eccetto se con #[no_known]

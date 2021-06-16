@@ -80,7 +80,7 @@ digraph deps {
 	"Graph::get_node_type_names_from_node_type_ids" [color=red];
 	"Graph::get_minmax_edge_ids_from_node_ids" [color=red];
 	"build_operator_graph_name" [color=black];
-	"Graph::get_unweighted_node_degree_from_node_id" [color=red];
+	"Graph::get_node_degree_from_node_id" [color=red];
 	"unchecked_translate" [color=black];
 	"Graph::par_iter_edges" [color=red];
 	"Graph::has_edge_types" [color=red];
@@ -145,7 +145,7 @@ digraph deps {
 	"parse_string_edges" -> "parse_edge_type_ids_vocabulary"
 	"parse_string_edges" -> "parse_sorted_edges"
 	"parse_string_edges" -> "build_edges"
-	"Graph::is_singleton_from_node_id" -> "Graph::get_unweighted_node_degree_from_node_id"
+	"Graph::is_singleton_from_node_id" -> "Graph::get_node_degree_from_node_id"
 	"Graph::is_singleton_from_node_id" -> "Graph::has_singletons"
 	"Graph::get_node_ids_from_edge_id" -> "decode_edge"
 	"Graph::get_node_ids_from_edge_id" -> "Graph::decode_edge"
@@ -203,8 +203,8 @@ digraph deps {
 	"Graph::get_edges_number" -> "Graph::get_undirected_edges_number"
 	"Graph::get_edges_number" -> "Graph::get_directed_edges_number"
 	"Graph::is_compatible" -> "validate_operator_terms"
-	"Graph::get_unweighted_node_degree_from_node_id" -> "Graph::get_minmax_edge_ids_by_source_node_id"
-	"Graph::get_unweighted_node_degree_from_node_id" -> "Graph::get_nodes_number"
+	"Graph::get_node_degree_from_node_id" -> "Graph::get_minmax_edge_ids_by_source_node_id"
+	"Graph::get_node_degree_from_node_id" -> "Graph::get_nodes_number"
 	"from_usize" -> "from_usize"
 	"Graph::get_node_type_ids_from_node_type_names" -> "keys"
 	"Graph::get_unchecked_edge_id_from_tuple" -> "encode_edge"

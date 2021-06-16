@@ -568,7 +568,7 @@ impl Graph {
     /// # Raises
     /// * If the given value k is zero.
     /// * If the graph has no nodes.
-    pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> Result<Vec<NodeT>, String> {
+    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> Result<Vec<NodeT>, String> {
         if k == 0 {
             return Err(
                 "K must be strictly a positive integer value greater than zero.".to_string(),
@@ -581,7 +581,7 @@ impl Graph {
         let mut most_central_node_degrees = vec![0; k as usize];
         let mut most_central_node_ids = vec![0; k as usize];
         self.iter_node_ids().for_each(|node_id| unsafe {
-            let degree = self.get_unchecked_unweighted_node_degree_from_node_id(node_id);
+            let degree = self.get_unchecked_node_degree_from_node_id(node_id);
             let (argmin, min_degree) = most_central_node_degrees
                 .iter_mut()
                 .enumerate()
@@ -653,7 +653,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the current graph the method will raise a panic.
-    pub unsafe fn get_unchecked_unweighted_node_degree_from_node_id(
+    pub unsafe fn get_unchecked_node_degree_from_node_id(
         &self,
         node_id: NodeT,
     ) -> NodeT {
@@ -684,9 +684,9 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
-    pub fn get_unweighted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         self.validate_node_id(node_id).map(|node_id| unsafe {
-            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+            self.get_unchecked_node_degree_from_node_id(node_id)
         })
     }
 
@@ -711,7 +711,7 @@ impl Graph {
     /// * If the given node name does not exist in the graph.
     pub fn get_node_degree_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_node_degree_from_node_id(
+            self.get_unchecked_node_degree_from_node_id(
                 self.get_node_id_from_node_name(node_name)?,
             )
         })
@@ -723,7 +723,7 @@ impl Graph {
     ///
     /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Result<Vec<String>, String> {
-        self.get_unweighted_top_k_central_node_ids(k).map(|x| {
+        self.get_top_k_central_node_ids(k).map(|x| {
             x.into_iter()
                 .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
                 .collect()

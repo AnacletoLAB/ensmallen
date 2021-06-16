@@ -21,7 +21,7 @@ impl Graph {
     /// # Safety
     /// This method will raise a panic if called on an directed graph as those
     /// instances are not supported by this method.
-    unsafe fn get_unweighted_undirected_number_of_triangles(
+    unsafe fn get_undirected_number_of_triangles(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
@@ -152,7 +152,7 @@ impl Graph {
     /// there is a more efficient one for these cases.
     /// There is a method that automatically dispatches the more efficient method
     /// according to the instance.
-    unsafe fn get_unweighted_naive_number_of_triangles(
+    unsafe fn get_naive_number_of_triangles(
         &self,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
@@ -233,17 +233,17 @@ impl Graph {
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_unweighted_number_of_triangles(
+    pub fn get_number_of_triangles(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> EdgeT {
         if self.is_directed() {
-            unsafe { self.get_unweighted_naive_number_of_triangles(low_centrality, verbose) }
+            unsafe { self.get_naive_number_of_triangles(low_centrality, verbose) }
         } else {
             unsafe {
-                self.get_unweighted_undirected_number_of_triangles(
+                self.get_undirected_number_of_triangles(
                     normalize,
                     low_centrality,
                     verbose,
@@ -253,8 +253,8 @@ impl Graph {
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
-    pub fn get_unweighted_triads_number(&self) -> EdgeT {
-        self.par_iter_unweighted_node_degrees()
+    pub fn get_triads_number(&self) -> EdgeT {
+        self.par_iter_node_degrees()
             .map(|degree| (degree * degree.saturating_sub(1)) as EdgeT)
             .sum()
     }
@@ -278,13 +278,13 @@ impl Graph {
     /// # Arguments
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_unweighted_transitivity(
+    pub fn get_transitivity(
         &self,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> f64 {
-        self.get_unweighted_number_of_triangles(Some(false), low_centrality, verbose) as f64
-            / self.get_unweighted_triads_number() as f64
+        self.get_number_of_triangles(Some(false), low_centrality, verbose) as f64
+            / self.get_triads_number() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
@@ -300,7 +300,7 @@ impl Graph {
     /// # Safety
     /// This method does not support directed graphs and will raise a panic.
     /// It should automatically dispatched the naive version for these cases.
-    unsafe fn get_unweighted_undirected_number_of_triangles_per_node(
+    unsafe fn get_undirected_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
@@ -431,7 +431,7 @@ impl Graph {
     /// # Safety
     /// This method will raise a panic if called on an directed graph becase
     /// there is a more efficient one for these cases.
-    unsafe fn get_unweighted_naive_number_of_triangles_per_node(
+    unsafe fn get_naive_number_of_triangles_per_node(
         &self,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
@@ -524,7 +524,7 @@ impl Graph {
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
-    pub fn get_unweighted_number_of_triangles_per_node(
+    pub fn get_number_of_triangles_per_node(
         &self,
         normalize: Option<bool>,
         low_centrality: Option<usize>,
@@ -532,11 +532,11 @@ impl Graph {
     ) -> Vec<NodeT> {
         if self.is_directed() {
             unsafe {
-                self.get_unweighted_naive_number_of_triangles_per_node(low_centrality, verbose)
+                self.get_naive_number_of_triangles_per_node(low_centrality, verbose)
             }
         } else {
             unsafe {
-                self.get_unweighted_undirected_number_of_triangles_per_node(
+                self.get_undirected_number_of_triangles_per_node(
                     normalize,
                     low_centrality,
                     verbose,
@@ -558,9 +558,9 @@ impl Graph {
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_unweighted_number_of_triangles_per_node(Some(false), low_centrality, verbose)
+        self.get_number_of_triangles_per_node(Some(false), low_centrality, verbose)
             .into_par_iter()
-            .zip(self.par_iter_unweighted_node_degrees())
+            .zip(self.par_iter_node_degrees())
             .map(|(triangles_number, degree)| {
                 if degree < 2 {
                     0.0

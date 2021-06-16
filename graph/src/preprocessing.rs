@@ -538,14 +538,14 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
 
         let max_degree = match normalize {
-            true => self.get_unweighted_maximum_node_degree()? as f64,
+            true => self.get_maximum_node_degree()? as f64,
             false => 1.0,
         };
 
         Ok(iter.map(move |(src, _, dst, _, _, _, label)| unsafe {
             (
-                self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,
+                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
+                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
                 label,
             )
         }))
