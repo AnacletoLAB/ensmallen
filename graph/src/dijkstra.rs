@@ -1,6 +1,7 @@
 use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
 use rayon::iter::IndexedParallelIterator;
@@ -1163,7 +1164,7 @@ impl Graph {
             root_eccentricity != 0,
             "The central node eccentricity cannot be zero!"
         );
-        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
+        let mut current_best_diameter_estimate = root_eccentricity;
         let distances = bfs.distances.unwrap();
 
         let distances_permutation = permutation::sort_by(distances.clone(), |a, b| b.cmp(a));
@@ -1189,13 +1190,11 @@ impl Graph {
         );
 
         node_id_clusters
-            .into_par_iter()
+            .into_iter()
             .progress_with(pb)
             .enumerate()
             .for_each(|(offset, node_ids)| {
-                if current_best_diameter_estimate.load(std::sync::atomic::Ordering::Relaxed)
-                    < (root_eccentricity - offset as NodeT) * 2
-                {
+                if current_best_diameter_estimate < (root_eccentricity - offset as NodeT) * 2 {
                     if let Some(candidate) = node_ids
                         .into_par_iter()
                         .filter(|node_id| unsafe {
@@ -1206,13 +1205,13 @@ impl Graph {
                         })
                         .max()
                     {
-                        current_best_diameter_estimate
-                            .fetch_max(candidate, std::sync::atomic::Ordering::Relaxed);
+                        current_best_diameter_estimate =
+                            current_best_diameter_estimate.max(candidate);
                     }
                 }
             });
 
-        current_best_diameter_estimate.load(std::sync::atomic::Ordering::Relaxed) as f64
+        current_best_diameter_estimate as f64
     }
 
     /// Returns diameter of the graph using naive method.
