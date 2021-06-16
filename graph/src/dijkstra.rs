@@ -8,6 +8,7 @@ use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 pub struct ShortestPathsResultBFS {
     pub(crate) distances: Option<Vec<NodeT>>,
@@ -1162,7 +1163,8 @@ impl Graph {
             root_eccentricity != 0,
             "The central node eccentricity cannot be zero!"
         );
-        let mut current_best_diameter_estimate = root_eccentricity;
+        let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
+
         let distances = bfs.distances.unwrap();
 
         let distances_permutation = permutation::sort_by(distances.clone(), |a, b| b.cmp(a));
@@ -1177,8 +1179,8 @@ impl Graph {
         // Afterwards we will have to skip nodes from the other
         // disconnected components, of which we do not know the number.
         let mut last_change = self.get_singleton_nodes_number() as usize;
-        for i in last_change..sorted_distances.len() {
-            if sorted_distances[i] == NodeT::MAX{
+        for i in (last_change + 1)..sorted_distances.len() {
+            if sorted_distances[i] == NodeT::MAX {
                 last_change = i;
                 continue;
             }
@@ -1200,24 +1202,25 @@ impl Graph {
             .progress_with(pb)
             .enumerate()
             .for_each(|(offset, node_ids)| {
-                if current_best_diameter_estimate < (root_eccentricity - offset as NodeT) * 2 {
-                    if let Some(candidate) = node_ids
+                let upper_limit = (root_eccentricity - offset as NodeT) * 2;
+                if current_best_diameter_estimate.load(Ordering::Relaxed) < upper_limit {
+                    node_ids
                         .into_par_iter()
                         .filter(|node_id| unsafe {
                             self.is_unchecked_connected_from_node_id(**node_id)
+                                && current_best_diameter_estimate.load(Ordering::Relaxed)
+                                    < upper_limit
                         })
-                        .map(|node_id| unsafe {
-                            self.get_unchecked_eccentricity_from_node_id(*node_id)
-                        })
-                        .max()
-                    {
-                        current_best_diameter_estimate =
-                            current_best_diameter_estimate.max(candidate);
-                    }
+                        .for_each(|node_id| unsafe {
+                            current_best_diameter_estimate.fetch_max(
+                                self.get_unchecked_eccentricity_from_node_id(*node_id),
+                                Ordering::Relaxed,
+                            );
+                        });
                 }
             });
 
-        current_best_diameter_estimate as f64
+        current_best_diameter_estimate.load(Ordering::Relaxed) as f64
     }
 
     /// Returns diameter of the graph using naive method.
