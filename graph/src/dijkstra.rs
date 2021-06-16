@@ -1243,7 +1243,7 @@ impl Graph {
         distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
 
         let pb = get_loading_bar(
-            verbose.unwrap_or(true),
+            verbose.unwrap_or(true) && distances_and_node_ids.len() > 1,
             "Computing diameter",
             distances_and_node_ids.len(),
         );
