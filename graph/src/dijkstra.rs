@@ -2,10 +2,9 @@ use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
-use permutation::permutation;
-use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::slice::ParallelSliceMut;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::sync::atomic::{AtomicU32, Ordering};
@@ -1166,29 +1165,23 @@ impl Graph {
         let current_best_diameter_estimate = AtomicU32::new(root_eccentricity);
 
         let distances = bfs.distances.unwrap();
-
-        let distances_permutation = permutation::sort_by(distances.clone(), |a, b| b.cmp(a));
-        let sorted_distances = distances_permutation.apply_slice(distances.as_slice());
-        let remapped_nodes = distances_permutation.apply_slice(self.get_node_ids());
-        let singleton_nodes_number = self.get_singleton_nodes_number() as usize;
+        let mut distances_and_node_ids = distances
+            .into_iter()
+            .zip(self.iter_node_ids())
+            .filter(|&(distance, _)| distance != NodeT::MAX)
+            .collect::<Vec<(NodeT, NodeT)>>();
+        distances_and_node_ids.par_sort_unstable();
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing diameter",
-            self.get_nodes_number() as usize - singleton_nodes_number,
+            distances_and_node_ids.len(),
         );
 
-        sorted_distances[singleton_nodes_number..]
+        distances_and_node_ids
             .into_par_iter()
-            .zip(remapped_nodes[singleton_nodes_number..].into_par_iter())
             .progress_with(pb)
-            .for_each(|(&distance, &node_id)| unsafe {
-                // If the current node is among one of the disconnected nodes
-                // we just skip it and move forward.
-                if distance == NodeT::MAX {
-                    return;
-                }
-                // Alternatively, we proceed to retrieve the current diameter.
+            .for_each(|(distance, node_id)| unsafe {
                 // If we have not yet reached the bound
                 if current_best_diameter_estimate.load(Ordering::Relaxed) < distance * 2 {
                     // We compute the new candidate diameter.
