@@ -14,6 +14,7 @@ pub struct ShortestPathsResultBFS {
     pub(crate) visited: Option<BitVec<Lsb0, u8>>,
     pub(crate) dst_node_distance: Option<NodeT>,
     pub(crate) eccentricity: NodeT,
+    pub(crate) most_distant_reacheable_node: NodeT,
     pub(crate) total_distance: NodeT,
     pub(crate) total_harmonic_distance: f64,
 }
@@ -25,6 +26,7 @@ impl ShortestPathsResultBFS {
         visited: Option<BitVec<Lsb0, u8>>,
         dst_node_distance: Option<NodeT>,
         eccentricity: NodeT,
+        most_distant_reacheable_node: NodeT,
         total_distance: NodeT,
         total_harmonic_distance: f64,
     ) -> ShortestPathsResultBFS {
@@ -34,6 +36,7 @@ impl ShortestPathsResultBFS {
             visited,
             dst_node_distance,
             eccentricity,
+            most_distant_reacheable_node,
             total_distance,
             total_harmonic_distance,
         }
@@ -98,6 +101,7 @@ impl Graph {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let compute_visited = compute_visited.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
+        let mut most_distant_reacheable_node = src_node_id;
         let mut dst_node_distance = maybe_dst_node_id.map(|_| NodeT::MAX);
 
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
@@ -132,6 +136,7 @@ impl Graph {
                 visited,
                 dst_node_distance,
                 NodeT::MAX,
+                most_distant_reacheable_node,
                 NodeT::MAX,
                 0.0,
             );
@@ -182,7 +187,10 @@ impl Graph {
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // Update the metrics
-            eccentricity = eccentricity.max(depth);
+            if eccentricity < depth {
+                eccentricity = depth;
+                most_distant_reacheable_node = node_id;
+            }
             total_distance += depth;
             if depth != 0 {
                 total_harmonic_distance += 1.0 / depth as f64;
@@ -230,6 +238,7 @@ impl Graph {
             visited,
             dst_node_distance,
             eccentricity,
+            most_distant_reacheable_node,
             total_distance,
             total_harmonic_distance,
         )
@@ -1124,6 +1133,71 @@ impl Graph {
         })
     }
 
+    /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
+    fn get_four_sweep(&self) -> (NodeT, NodeT) {
+        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
+        let a1 = unsafe {
+            self.get_unchecked_breath_first_search_from_node_ids(
+                most_central_node_id,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            )
+            .most_distant_reacheable_node
+        };
+        let (b1, eccentricity_a1) = unsafe {
+            let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+                a1,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            );
+            (bfs.most_distant_reacheable_node, bfs.eccentricity)
+        };
+        let path = unsafe {
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(a1, b1, None)
+                .unwrap()
+        };
+        let r2 = path[path.len() / 2];
+        let a2 = unsafe {
+            self.get_unchecked_breath_first_search_from_node_ids(
+                r2,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            )
+            .most_distant_reacheable_node
+        };
+        let (b2, eccentricity_a2) = unsafe {
+            let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+                a2,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            );
+            (bfs.most_distant_reacheable_node, bfs.eccentricity)
+        };
+        let path = unsafe {
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(a2, b2, None)
+                .unwrap()
+        };
+        let u = path[path.len() / 2];
+        let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
+        (lower_bound_diameter, u)
+    }
+
     /// Returns diameter of an UNDIRECTED graph.
     ///
     /// # Arguments
@@ -1137,13 +1211,10 @@ impl Graph {
                 "This method is not defined YET for directed graphs! We will add it in the future!"
             )
         }
-        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
-        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
-            return f64::INFINITY;
-        }
+        let (tentative_diameter, low_eccentricity_node) = self.get_four_sweep();
         let bfs = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
-                most_central_node_id,
+                low_eccentricity_node,
                 None,
                 None,
                 Some(true),
@@ -1152,13 +1223,13 @@ impl Graph {
                 None,
             )
         };
-        let root_eccentricity = bfs.eccentricity;
+        let tentative_diameter = tentative_diameter.max(bfs.eccentricity);
         assert!(
-            root_eccentricity != NodeT::MAX,
+            tentative_diameter != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
         );
         assert!(
-            root_eccentricity != 0,
+            tentative_diameter != 0,
             "The central node eccentricity cannot be zero!"
         );
 
@@ -1167,7 +1238,7 @@ impl Graph {
             .unwrap()
             .into_iter()
             .zip(self.iter_node_ids())
-            .filter(|&(distance, _)| distance != NodeT::MAX && root_eccentricity < distance * 2)
+            .filter(|&(distance, _)| distance != NodeT::MAX && tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
         distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
 
@@ -1183,7 +1254,7 @@ impl Graph {
         // We allocate a vector with our tentative best diameter.
         // We will use the thread 0 and the position 0 of this vector
         // as position where to store the actual diameter.
-        let mut best_diameters_per_thread = vec![root_eccentricity; threads_number];
+        let mut best_diameters_per_thread = vec![tentative_diameter; threads_number];
         // We wrap the object into an unsafe cell to be able to
         // access with the various threads without having the compiler
         // ranting about what we are doing: we are adults here,
