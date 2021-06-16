@@ -4,12 +4,10 @@ use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use num_traits::Zero;
 use permutation::permutation;
-use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
-use std::sync::atomic::AtomicU32;
 
 pub struct ShortestPathsResultBFS {
     pub(crate) distances: Option<Vec<NodeT>>,
