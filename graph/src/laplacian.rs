@@ -10,7 +10,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn get_unweighted_laplacian_transformed_graph(&self, verbose: Option<bool>) -> Graph {
+    pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> Graph {
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, src, dst, edge_type)| {
@@ -20,7 +20,7 @@ impl Graph {
                         edge_type,
                         Some(if src == dst {
                             unsafe {
-                                self.get_unchecked_unweighted_node_degree_from_node_id(src)
+                                self.get_unchecked_node_degree_from_node_id(src)
                                     as WeightT
                             }
                         } else {
@@ -49,7 +49,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn get_unweighted_random_walk_normalized_laplacian_transformed_graph(
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> Graph {
@@ -64,7 +64,7 @@ impl Graph {
                             1.0
                         } else {
                             -1.0 / unsafe {
-                                self.get_unchecked_unweighted_node_degree_from_node_id(src)
+                                self.get_unchecked_node_degree_from_node_id(src)
                             } as WeightT
                         }),
                     ))
@@ -93,7 +93,7 @@ impl Graph {
     ///
     /// # Raises
     /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
-    pub fn get_unweighted_symmetric_normalized_laplacian_transformed_graph(
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
@@ -108,9 +108,9 @@ impl Graph {
                         Some(if src == dst {
                             1.0
                         } else {
-                            -1.0 / (self.get_unchecked_unweighted_node_degree_from_node_id(src)
+                            -1.0 / (self.get_unchecked_node_degree_from_node_id(src)
                                 as f64
-                                * self.get_unchecked_unweighted_node_degree_from_node_id(dst)
+                                * self.get_unchecked_node_degree_from_node_id(dst)
                                     as f64)
                                 .sqrt() as WeightT
                         }),
@@ -140,7 +140,7 @@ impl Graph {
     ///
     /// # Raises
     /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
-    pub fn get_unweighted_symmetric_normalized_transformed_graph(
+    pub fn get_symmetric_normalized_transformed_graph(
         &self,
         verbose: Option<bool>,
     ) -> Result<Graph, String> {
@@ -154,8 +154,8 @@ impl Graph {
                         dst,
                         edge_type,
                         Some(
-                            1.0 / ((self.get_unchecked_unweighted_node_degree_from_node_id(src)
-                                * self.get_unchecked_unweighted_node_degree_from_node_id(dst))
+                            1.0 / ((self.get_unchecked_node_degree_from_node_id(src)
+                                * self.get_unchecked_node_degree_from_node_id(dst))
                                 as WeightT)
                                 .sqrt(),
                         ),

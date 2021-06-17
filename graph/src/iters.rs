@@ -111,9 +111,9 @@ impl Graph {
     ///
     /// Note that with unweighted it is meant that if this graph instance
     /// has weights, the degree will not take them into consideration.
-    pub fn iter_unweighted_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
+    pub fn iter_node_degrees(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_node_ids().map(move |node| unsafe {
-            self.get_unchecked_unweighted_node_degree_from_node_id(node)
+            self.get_unchecked_node_degree_from_node_id(node)
         })
     }
 
@@ -121,11 +121,11 @@ impl Graph {
     ///
     /// Note that with unweighted it is meant that if this graph instance
     /// has weights, the degree will not take them into consideration.
-    pub fn par_iter_unweighted_node_degrees(
+    pub fn par_iter_node_degrees(
         &self,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids().map(move |node_id| unsafe {
-            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+            self.get_unchecked_node_degree_from_node_id(node_id)
         })
     }
 

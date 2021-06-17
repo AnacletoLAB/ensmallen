@@ -175,7 +175,7 @@ impl Graph {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
                         .sum::<f64>()
-                        / self.get_unchecked_unweighted_node_degree_from_node_id(node_id) as f64
+                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64
                 } else {
                     1.0
                 }
@@ -189,9 +189,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mean node degree of the graph is  {}", graph.get_unweighted_node_degrees_mean().unwrap());
+    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
@@ -268,11 +268,11 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The median node degree of the graph is  {}", graph.get_unweighted_node_degrees_median().unwrap());
+    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_median(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
         self.must_have_nodes()?;
-        let mut degrees = self.get_unweighted_node_degrees();
+        let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
@@ -298,7 +298,7 @@ impl Graph {
     /// The method will return an undefined value (0) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_maximum_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
         self.max_node_degree
     }
 
@@ -343,14 +343,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_maximum_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_maximum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_unweighted_maximum_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_maximum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_maximum_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -361,25 +361,21 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
+    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
-    pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.par_iter_unweighted_node_degrees()
-            .enumerate()
-            .max_by_key(|&(_, value)| value)
-            .map(|(idx, _)| idx)
-            .unwrap_unchecked() as NodeT
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+        self.most_central_node_id
     }
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_argmax_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_most_central_node_id().unwrap());
     /// ```
-    pub fn get_argmax_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_most_central_node_id(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_argmax_node_degree() as NodeT })
+            .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.
@@ -388,7 +384,7 @@ impl Graph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_minimum_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
         self.min_node_degree
     }
 
@@ -403,14 +399,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The minimum node degree of the graph is  {}", graph.get_unweighted_minimum_node_degree().unwrap());
+    /// println!("The minimum node degree of the graph is  {}", graph.get_minimum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_unweighted_minimum_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_minimum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_minimum_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_minimum_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
@@ -418,15 +414,15 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mode node degree of the graph is  {}", graph.get_unweighted_node_degrees_mode().unwrap());
+    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let counter: Counter<NodeT, usize> = Counter::init(self.iter_unweighted_node_degrees());
+        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
         Ok(*counter
             .iter()
             .max_by_key(|&(_, count)| count)
@@ -1187,8 +1183,8 @@ impl Graph {
     }
 
     /// Returns the unweighted degree of every node in the graph.
-    pub fn get_unweighted_node_degrees(&self) -> Vec<NodeT> {
-        self.par_iter_unweighted_node_degrees().collect()
+    pub fn get_node_degrees(&self) -> Vec<NodeT> {
+        self.par_iter_node_degrees().collect()
     }
 
     /// Returns the weighted degree of every node in the graph.

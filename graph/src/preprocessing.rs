@@ -304,6 +304,10 @@ impl Graph {
     /// * If node types are requested but the graph contains unknown node types.
     /// * If edge types are requested but the graph does not contain any.
     /// * If edge types are requested but the graph contains unknown edge types.
+    ///
+    /// TODO! Add the possibility for returning only known edges
+    /// TODO! When returning only known edges, add the possibility for balanced
+    /// edge types.
     pub fn get_edge_prediction_mini_batch<'a>(
         &'a self,
         idx: u64,
@@ -534,14 +538,14 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
 
         let max_degree = match normalize {
-            true => self.get_unweighted_maximum_node_degree()? as f64,
+            true => self.get_maximum_node_degree()? as f64,
             false => 1.0,
         };
 
         Ok(iter.map(move |(src, _, dst, _, _, _, label)| unsafe {
             (
-                self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,
+                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
+                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
                 label,
             )
         }))

@@ -8,6 +8,7 @@ edition = "2018"
 [dependencies]
 rust_parser = {path = "./rust_parser" }
 graph = {path = "../graph" }
+regex = "1.5.4"
 
 
 [lib]

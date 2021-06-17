@@ -345,7 +345,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     assert!(unsafe {
         singleton_nodes
             .iter()
-            .all(|node_id| graph.get_unchecked_unweighted_node_degree_from_node_id(*node_id) == 0)
+            .all(|node_id| graph.get_unchecked_node_degree_from_node_id(*node_id) == 0)
     });
 
     // For now we limit this test to undirected graphs
@@ -354,7 +354,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
         let singleton_nodes_with_selfloops = graph
             .iter_node_ids()
             .filter(|node_id| unsafe {
-                graph.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                graph.get_unchecked_node_degree_from_node_id(*node_id) > 0
                     && graph
                         .iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
                         .all(|dst| dst == *node_id)
@@ -414,7 +414,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     }
 
     assert_eq!(
-        graph.iter_unweighted_node_degrees().is_sorted(),
+        graph.iter_node_degrees().is_sorted(),
         graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
         concat!(
             "The cached value for the method ",
@@ -423,10 +423,10 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
             "The degrees of this graph are:\n {:?}\n",
             "The reported order was: {}"
         ),
-        graph.get_unweighted_node_degrees(),
+        graph.get_node_degrees(),
         graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
     );
-    let mut degrees = graph.get_unweighted_node_degrees();
+    let mut degrees = graph.get_node_degrees();
     degrees.reverse();
     assert_eq!(
         degrees.is_sorted(),
@@ -440,19 +440,19 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 
     if graph.has_nodes() && (graph.has_singleton_nodes() || graph.has_trap_nodes()) {
         assert!(
-            graph.get_unweighted_minimum_node_degree().unwrap() == 0,
+            graph.get_minimum_node_degree().unwrap() == 0,
             concat!(
                 "When the graph either contains singleton nodes or trap nodes ",
                 "we expect for the minimum node degree to be zero, but is {}."
             ),
-            graph.get_unweighted_minimum_node_degree().unwrap()
+            graph.get_minimum_node_degree().unwrap()
         );
-        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);
+        assert!(graph.iter_node_degrees().min().unwrap() == 0);
     }
 
     if let (Ok(min_degree), Ok(max_degree)) = (
-        graph.get_unweighted_minimum_node_degree(),
-        graph.get_unweighted_maximum_node_degree(),
+        graph.get_minimum_node_degree(),
+        graph.get_maximum_node_degree(),
     ) {
         assert_eq!(
             graph.has_nodes_sorted_by_decreasing_outbound_node_degree()
@@ -471,7 +471,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
             max_degree,
             graph.has_nodes_sorted_by_decreasing_outbound_node_degree(),
             graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
-            graph.get_unweighted_node_degrees()
+            graph.get_node_degrees()
         );
     }
 
@@ -516,17 +516,17 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 
     // Testing that the degrees computation is correct
     assert_eq!(
-        graph.get_unweighted_maximum_node_degree()?,
-        graph.iter_unweighted_node_degrees().max().unwrap(),
+        graph.get_maximum_node_degree()?,
+        graph.iter_node_degrees().max().unwrap(),
         "The cached maximum degree does not match the one computed from the node degrees."
     );
 
     if !graph.is_directed() && !graph.has_singleton_nodes() {
-        assert!(graph.get_unweighted_minimum_node_degree()? > 0);
-        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);
+        assert!(graph.get_minimum_node_degree()? > 0);
+        assert!(graph.iter_node_degrees().min().unwrap() > 0);
     }
 
-    if !graph.is_directed() && graph.get_unweighted_minimum_node_degree()? == 0 {
+    if !graph.is_directed() && graph.get_minimum_node_degree()? == 0 {
         assert!(graph.has_singleton_nodes());
     }
 
@@ -535,9 +535,9 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     }
 
     if !graph.has_disconnected_nodes() && !graph.has_trap_nodes() {
-        assert!(graph.get_unweighted_minimum_node_degree()? > 0);
+        assert!(graph.get_minimum_node_degree()? > 0);
         assert!(
-            graph.iter_unweighted_node_degrees().min().unwrap() > 0,
+            graph.iter_node_degrees().min().unwrap() > 0,
             concat!(
                 "Since the graph does not contain disconnected nodes nor it ",
                 "contains trap nodes, the minimum outbound node degree must be ",
@@ -624,13 +624,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     );
 
     assert_eq!(
-        graph.get_unweighted_minimum_node_degree()?,
-        graph.iter_unweighted_node_degrees().min().unwrap(),
+        graph.get_minimum_node_degree()?,
+        graph.iter_node_degrees().min().unwrap(),
         concat!(
             "The cached minimum degree does not match the one computed from the node degrees.\n",
             "The outbound node degrees are: {:?}"
         ),
-        graph.get_unweighted_node_degrees()
+        graph.get_node_degrees()
     );
 
     if graph.has_edge_weights() {
@@ -683,7 +683,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
         assert!(
-            unsafe { graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) }
+            unsafe { graph.get_unchecked_node_degree_from_node_id(singleton_node_id) }
                 == 0
         );
         assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });
@@ -694,7 +694,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
             unsafe {
                 assert_eq!(
                     graph.is_unchecked_singleton_from_node_id(node_id),
-                    graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
+                    graph.get_unchecked_node_degree_from_node_id(node_id) == 0
                 )
             };
         }
@@ -851,11 +851,11 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     // Compute degrees metrics
     for src in 0..5 {
         for dst in 0..5 {
-            let _ = graph.get_unweighted_preferential_attachment_from_node_ids(src, dst, true);
-            let _ = graph.get_unweighted_preferential_attachment_from_node_ids(src, dst, false);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, true);
+            let _ = graph.get_preferential_attachment_from_node_ids(src, dst, false);
             let _ = graph.get_jaccard_coefficient_from_node_ids(src, dst);
             let _ = graph.get_adamic_adar_index_from_node_ids(src, dst);
-            let _ = graph.get_unweighted_resource_allocation_index_from_node_ids(src, dst);
+            let _ = graph.get_resource_allocation_index_from_node_ids(src, dst);
             if graph.has_edge_weights() {
                 let _ = graph.get_weighted_preferential_attachment_from_node_ids(src, dst, true);
                 let _ = graph.get_weighted_preferential_attachment_from_node_ids(src, dst, false);
@@ -965,7 +965,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
 
 pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     if graph.has_edges() {
-        let node_degree_centralities = graph.get_unweighted_degree_centrality().unwrap();
+        let node_degree_centralities = graph.get_degree_centrality().unwrap();
 
         assert_eq!(
             node_degree_centralities.len(),
@@ -1066,13 +1066,13 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
                     let src_to_dst = graph
-                        .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_minimum_path_node_ids_from_node_ids(
                             src_node_id,
                             dst_node_id,
                             maximal_depth,
                         );
                     let dst_to_src = graph
-                        .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_minimum_path_node_ids_from_node_ids(
                             dst_node_id,
                             src_node_id,
                             maximal_depth,
@@ -1094,7 +1094,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                         assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
                         // Test that the k-paths return a compatible result
                         let kpaths = graph
-                            .get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+                            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
                                 src_node_id,
                                 dst_node_id,
                                 5,
@@ -1193,11 +1193,11 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), St
 pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     assert_eq!(
         graph
-            .get_unweighted_number_of_triangles_per_node(Some(false), None, verbose)
+            .get_number_of_triangles_per_node(Some(false), None, verbose)
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>(),
-        graph.get_unweighted_number_of_triangles(Some(false), None, verbose)
+        graph.get_number_of_triangles(Some(false), None, verbose)
     );
     Ok(())
 }
@@ -1289,7 +1289,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<(), St
         return Ok(());
     }
     for iteration in [None, Some(0), Some(1), Some(2)] {
-        let mut unweighted_all_paths = graph.get_unweighted_all_shortest_paths(iteration, verbose);
+        let mut unweighted_all_paths = graph.get_all_shortest_paths(iteration, verbose);
         test_graph_properties(&mut unweighted_all_paths, verbose)?;
     }
 
@@ -2185,16 +2185,18 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<
 
 pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // TODO! update this when we will support the graph diameter on directed graphs
-    if graph.is_directed() {
-        return Ok(());
-    }
     let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
+
+    assert_eq!(
+        graph.get_diameter_naive(Some(false), verbose),
+        graph.get_diameter(Some(false), verbose),
+    );
 
     match n_of_components {
         0 => {
             // on an empty graph this should always fail
-            assert!(graph.get_unweighted_diameter(Some(false), verbose).is_err());
-            assert!(graph.get_unweighted_diameter(Some(true), verbose).is_err());
+            assert!(graph.get_diameter(Some(false), verbose).is_err());
+            assert!(graph.get_diameter(Some(true), verbose).is_err());
         }
 
         1 => {
@@ -2202,20 +2204,20 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
             // cannot be infinite unless it's just a singleton.
             if graph.get_nodes_number() == 1 {
                 assert!(graph
-                    .get_unweighted_diameter(Some(false), verbose)
+                    .get_diameter(Some(false), verbose)
                     .unwrap()
                     .is_infinite());
                 assert!(graph
-                    .get_unweighted_diameter(Some(true), verbose)
+                    .get_diameter(Some(true), verbose)
                     .unwrap()
                     .is_infinite());
             } else {
                 assert!(graph
-                    .get_unweighted_diameter(Some(false), verbose)
+                    .get_diameter(Some(false), verbose)
                     .unwrap()
                     .is_finite());
                 assert!(graph
-                    .get_unweighted_diameter(Some(true), verbose)
+                    .get_diameter(Some(true), verbose)
                     .unwrap()
                     .is_finite());
             }
@@ -2223,14 +2225,14 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
 
         _ => {
             assert!(graph
-                .get_unweighted_diameter(Some(false), verbose)
+                .get_diameter(Some(false), verbose)
                 .unwrap()
                 .is_infinite());
 
             // if all the nodes are singletons then the diameter should be infinite
             if biggest == 1 {
                 assert!(graph
-                    .get_unweighted_diameter(Some(true), verbose)
+                    .get_diameter(Some(true), verbose)
                     .unwrap()
                     .is_infinite());
             }
@@ -2349,22 +2351,22 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 
-    test_mut_graph!(graph, get_unweighted_laplacian_transformed_graph, verbose);
+    test_mut_graph!(graph, get_laplacian_transformed_graph, verbose);
     test_mut_graph!(
         graph,
-        get_unweighted_symmetric_normalized_transformed_graph,
+        get_symmetric_normalized_transformed_graph,
         verbose,
         result
     );
     test_mut_graph!(
         graph,
-        get_unweighted_symmetric_normalized_laplacian_transformed_graph,
+        get_symmetric_normalized_laplacian_transformed_graph,
         verbose,
         result
     );
     test_mut_graph!(
         graph,
-        get_unweighted_random_walk_normalized_laplacian_transformed_graph,
+        get_random_walk_normalized_laplacian_transformed_graph,
         verbose
     );
     test_mut_graph!(

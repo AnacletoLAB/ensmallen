@@ -2550,7 +2550,7 @@
                     ]
                 ],
                 "return_type": "Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String>",
-                "body": "let iter = self.link_prediction_ids(\n            idx,\n            batch_size,\n            negative_samples,\n            avoid_false_negatives,\n            maximal_sampling_attempts,\n            graph_to_avoid,\n        )?;\n\n        let max_degree = match normalize {\n            true => self.get_unweighted_max_node_degree()? as f64,\n            false => 1.0,\n        };\n\n        Ok(iter.map(move |(index, src, dst, label)| unsafe {\n            (\n                index,\n                self.get_unchecked_unweighted_node_degree_from_node_id(src) as f64 / max_degree,\n                self.get_unchecked_unweighted_node_degree_from_node_id(dst) as f64 / max_degree,\n                label,\n            )\n        }))"
+                "body": "let iter = self.link_prediction_ids(\n            idx,\n            batch_size,\n            negative_samples,\n            avoid_false_negatives,\n            maximal_sampling_attempts,\n            graph_to_avoid,\n        )?;\n\n        let max_degree = match normalize {\n            true => self.get_max_node_degree()? as f64,\n            false => 1.0,\n        };\n\n        Ok(iter.map(move |(index, src, dst, label)| unsafe {\n            (\n                index,\n                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,\n                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,\n                label,\n            )\n        }))"
             },
             {
                 "file": "preprocessing.rs",
@@ -5358,7 +5358,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test that the weights do not contain zeros.\n    if graph.has_edge_weights() {\n        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));\n    }\n\n    // Testing that the degrees computation is correct\n    assert_eq!(\n        graph.get_unweighted_max_node_degree()?,\n        graph.iter_unweighted_node_degrees().max().unwrap(),\n        \"The cached maximum degree does not match the one computed from the node degrees.\"\n    );\n\n    if graph.has_edge_weights() {\n        assert!(\n            (graph.get_weighted_max_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .max_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            concat!(\n                \"The cached weighted maximum degree ({}) \",\n                \"does not match the one computed from the node degrees ({}), \",\n                \"where the node degrees list is {:?}.\\n\",\n                \"Additionally the number of weighted singleton nodes is {:?}.\"\n            ),\n            graph.get_weighted_max_node_degree()?,\n            graph\n                .iter_weighted_node_degrees()?\n                .max_by(|a, b| a.partial_cmp(b).unwrap())\n                .unwrap(),\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_singleton_nodes_number()\n        );\n        assert!(\n            (graph.get_weighted_min_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            \"The cached weighted minimum degree ({}) does not match the one computed from the node degrees ({}).\",\n            graph.get_weighted_min_node_degree()?,\n            graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap()\n        );\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? == 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() == 0);\n    }\n\n    if !graph.is_directed() && !graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? > 0);\n        assert!(graph.iter_unweighted_node_degrees().min().unwrap() > 0);\n    }\n\n    assert_eq!(\n        graph.get_min_node_degree()?,\n        graph.iter_unweighted_node_degrees().min().unwrap(),\n        \"The cached minimum degree does not match the one computed from the node degrees.\"\n    );\n\n    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {\n        assert!(graph.has_singleton_nodes());\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.unique_sources.is_some());\n    }\n\n    assert_eq!(\n        graph.singleton_nodes_with_selfloops.is_some(),\n        graph.has_singleton_nodes_with_selfloops(),\n    );\n\n    assert_eq!(\n        graph\n            .singleton_nodes_with_selfloops\n            .as_ref()\n            .map_or(0, |x| x.len() as NodeT),\n        graph.get_singleton_nodes_with_selfloops_number(),\n    );\n\n    for singleton_node_id in graph.iter_singleton_node_ids() {\n        assert!(\n            unsafe { graph.get_unchecked_unweighted_node_degree_from_node_id(singleton_node_id) }\n                == 0\n        );\n        assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });\n    }\n\n    if !graph.is_directed() {\n        for node_id in graph.iter_node_ids() {\n            unsafe {\n                assert_eq!(\n                    graph.is_unchecked_singleton_from_node_id(node_id),\n                    graph.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0\n                )\n            };\n        }\n    }\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Singletons with selfloops can only exist if the graph has nodes AND selfloops\n    if graph.has_singleton_nodes() {\n        assert!(graph.has_nodes());\n    }\n    if graph.has_singleton_nodes_with_selfloops() {\n        assert!(graph.has_nodes());\n        assert!(graph.has_selfloops());\n    }\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_connected_nodes_number()\n            + graph.get_singleton_nodes_number()\n            + graph.get_singleton_nodes_with_selfloops_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    assert_eq!(\n        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),\n        \"Sum of singleton and singleton with selfloops does not match the number of disconnected nodes.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(None)\n        );\n    }\n\n    assert_eq!(\n        !graph.has_nodes(),\n        smallest == 0,\n        \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n        graph.textual_report(None)\n    );\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.0) };\n        let dst_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.1) };\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            let clone_edge_type = edge_type.clone();\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(None)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(None)\n            );\n        }\n        assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(None)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n    graph.overlap_textual_report(&graph, verbose)?;\n    graph.get_peculiarities_report_markdown();\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.get_preferential_attachment(src, dst, true);\n            let _ = graph.get_preferential_attachment(src, dst, false);\n            let _ = graph.get_jaccard_coefficient(src, dst);\n            let _ = graph.get_adamic_adar_index(src, dst);\n            let _ = graph.get_resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_id_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(None)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(None)\n            );\n        }\n    }\n    Ok(())"
+                "body": "// Testing that vocabularies are properly loaded\n    validate_vocabularies(graph);\n\n    // Test that the weights do not contain zeros.\n    if graph.has_edge_weights() {\n        assert!(graph.iter_edge_weights().unwrap().all(|w| w != 0.0));\n    }\n\n    // Testing that the degrees computation is correct\n    assert_eq!(\n        graph.get_max_node_degree()?,\n        graph.iter_node_degrees().max().unwrap(),\n        \"The cached maximum degree does not match the one computed from the node degrees.\"\n    );\n\n    if graph.has_edge_weights() {\n        assert!(\n            (graph.get_weighted_max_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .max_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            concat!(\n                \"The cached weighted maximum degree ({}) \",\n                \"does not match the one computed from the node degrees ({}), \",\n                \"where the node degrees list is {:?}.\\n\",\n                \"Additionally the number of weighted singleton nodes is {:?}.\"\n            ),\n            graph.get_weighted_max_node_degree()?,\n            graph\n                .iter_weighted_node_degrees()?\n                .max_by(|a, b| a.partial_cmp(b).unwrap())\n                .unwrap(),\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_singleton_nodes_number()\n        );\n        assert!(\n            (graph.get_weighted_min_node_degree()?\n                - graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap())\n            .abs()\n                < f64::EPSILON,\n            \"The cached weighted minimum degree ({}) does not match the one computed from the node degrees ({}).\",\n            graph.get_weighted_min_node_degree()?,\n            graph\n                    .iter_weighted_node_degrees()?\n                    .min_by(|a, b| a.partial_cmp(b).unwrap())\n                    .unwrap()\n        );\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? == 0);\n        assert!(graph.iter_node_degrees().min().unwrap() == 0);\n    }\n\n    if !graph.is_directed() && !graph.has_singleton_nodes() {\n        assert!(graph.get_min_node_degree()? > 0);\n        assert!(graph.iter_node_degrees().min().unwrap() > 0);\n    }\n\n    assert_eq!(\n        graph.get_min_node_degree()?,\n        graph.iter_node_degrees().min().unwrap(),\n        \"The cached minimum degree does not match the one computed from the node degrees.\"\n    );\n\n    if !graph.is_directed() && graph.get_min_node_degree()? == 0 {\n        assert!(graph.has_singleton_nodes());\n    }\n\n    if graph.has_singleton_nodes() {\n        assert!(graph.unique_sources.is_some());\n    }\n\n    assert_eq!(\n        graph.singleton_nodes_with_selfloops.is_some(),\n        graph.has_singleton_nodes_with_selfloops(),\n    );\n\n    assert_eq!(\n        graph\n            .singleton_nodes_with_selfloops\n            .as_ref()\n            .map_or(0, |x| x.len() as NodeT),\n        graph.get_singleton_nodes_with_selfloops_number(),\n    );\n\n    for singleton_node_id in graph.iter_singleton_node_ids() {\n        assert!(\n            unsafe { graph.get_unchecked_node_degree_from_node_id(singleton_node_id) }\n                == 0\n        );\n        assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });\n    }\n\n    if !graph.is_directed() {\n        for node_id in graph.iter_node_ids() {\n            unsafe {\n                assert_eq!(\n                    graph.is_unchecked_singleton_from_node_id(node_id),\n                    graph.get_unchecked_node_degree_from_node_id(node_id) == 0\n                )\n            };\n        }\n    }\n\n    // Test get_edge_id_from_node_names_and_edge_type_name()\n    assert!(\n        graph\n            .get_edge_id_from_node_names_and_edge_type_name(NONEXISTENT, NONEXISTENT, None)\n            .is_err(),\n        \"Graph contains non-existing edge.\"\n    );\n\n    // Test has_node_from_name\n    assert!(\n        !(graph.has_node_name_and_node_type_name(NONEXISTENT, None)),\n        \"The graph seems to have a non-existing node.\"\n    );\n    assert!(\n        !(graph.has_node_name(NONEXISTENT)),\n        \"The graph seems to have a non-existing node.\"\n    );\n\n    // Singletons with selfloops can only exist if the graph has nodes AND selfloops\n    if graph.has_singleton_nodes() {\n        assert!(graph.has_nodes());\n    }\n    if graph.has_singleton_nodes_with_selfloops() {\n        assert!(graph.has_nodes());\n        assert!(graph.has_selfloops());\n    }\n\n    // Test translate_edge|node_types()\n    assert!(\n        graph\n            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing edge type.\"\n    );\n\n    assert!(\n        graph\n            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])\n            .is_err(),\n        \"The graph seems to have a non-existing node type.\"\n    );\n\n    assert_eq!(\n        graph.get_connected_nodes_number()\n            + graph.get_singleton_nodes_number()\n            + graph.get_singleton_nodes_with_selfloops_number(),\n        graph.get_nodes_number(),\n        \"Sum of singleton and non singleton nodes number does not match.\"\n    );\n\n    assert_eq!(\n        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),\n        \"Sum of singleton and singleton with selfloops does not match the number of disconnected nodes.\"\n    );\n\n    warn!(\"Running connected components tests.\");\n    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);\n    assert!(\n        biggest >= smallest,\n        \"smallest: {} biggest: {}\",\n        smallest,\n        biggest\n    );\n\n    if smallest == 1 {\n        assert!(\n            graph.has_singleton_nodes() || graph.has_singleton_nodes_with_selfloops(),\n            \"When the smallest component is one the graph must have singletons! Graph report: \\n{:?}\",\n            graph.textual_report(None)\n        );\n    }\n\n    assert_eq!(\n        !graph.has_nodes(),\n        smallest == 0,\n        \"When the smallest component is zero the graph must be empty! Graph report: \\n{:?}\",\n        graph.textual_report(None)\n    );\n\n    // Get one edge from the graph if there are any presents\n    if let Some(edge) = graph.iter_unique_edge_node_ids(true).next() {\n        let src_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.0) };\n        let dst_string = unsafe { graph.get_unchecked_node_name_from_node_id(edge.1) };\n        let edge_id = graph.get_edge_id_from_node_names(&src_string, &dst_string)?;\n        if graph.has_edge_types() {\n            let edge_type = graph.get_edge_type_name_from_edge_id(edge_id)?;\n            let clone_edge_type = edge_type.clone();\n            assert!(\n                graph.has_edge_from_node_names_and_edge_type_name(&src_string, &dst_string, clone_edge_type.as_deref()),\n                \"I was expecting for the edge ({}, {}, {:?}) to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                edge_type,\n                graph.textual_report(None)\n            );\n        } else {\n            assert!(\n                graph.has_edge_from_node_names(&src_string, &dst_string),\n                \"I was expecting for the edge ({}, {}) without type to exist, but it seems to not exist in graph {:?}\",\n                src_string,\n                dst_string,\n                graph.textual_report(None)\n            );\n        }\n        assert!(graph.has_node_name(&src_string) && graph.has_node_name(&dst_string));\n        if graph.has_node_types() {\n            assert!(\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ) && graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                concat!(\n                    \"The nodes {:?} and {:?} with node types are not present in the graph.\\n\",\n                    \"The node types are {:?} and {:?}.\\n\",\n                    \"The first node existance is {}\\n\",\n                    \"The second node existance is {}\\n\",\n                    \"The graph report is {:?}\"\n                ),\n                src_string,\n                dst_string,\n                graph.get_node_type_name_from_node_name(&src_string),\n                graph.get_node_type_name_from_node_name(&dst_string),\n                graph.has_node_name_and_node_type_name(\n                    &src_string,\n                    graph.get_node_type_name_from_node_name(&src_string)?\n                ),\n                graph.has_node_name_and_node_type_name(\n                    &dst_string,\n                    graph.get_node_type_name_from_node_name(&dst_string)?\n                ),\n                graph.textual_report(None)\n            );\n        }\n        assert_eq!(\n            graph.get_edge_id_from_node_names(&src_string, &dst_string)?,\n            graph.get_edge_id_from_node_ids(edge.0, edge.1).unwrap(),\n            \"Check of given edge ID does not match.\"\n        );\n    }\n\n    // Test the generation of the textual report, this includes the connected components algorithm.\n    graph.report();\n    graph.textual_report(verbose)?;\n    graph.overlap_textual_report(&graph, verbose)?;\n    graph.get_peculiarities_report_markdown();\n\n    // Compute degrees metrics\n    for src in 0..5 {\n        for dst in 0..5 {\n            let _ = graph.get_preferential_attachment(src, dst, true);\n            let _ = graph.get_preferential_attachment(src, dst, false);\n            let _ = graph.get_jaccard_coefficient(src, dst);\n            let _ = graph.get_adamic_adar_index(src, dst);\n            let _ = graph.get_resource_allocation_index(src, dst);\n        }\n    }\n\n    assert_eq!(\n        graph.has_node_types(),\n        graph.get_node_type_id_from_node_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested.\"\n    );\n\n    assert_eq!(\n        graph.has_edge_types(),\n        graph.get_edge_type_id_from_edge_id(0).is_ok()\n    );\n\n    assert!(\n        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),\n        \"Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested.\"\n    );\n\n    // Evaluate get_node_type\n    assert_eq!(\n        graph.get_node_type_id_from_node_id(0).is_ok(),\n        graph.has_node_types()\n    );\n\n    // Evaluate get_edge_type\n    assert_eq!(\n        graph.get_edge_type_id_from_edge_id(0).is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_counts\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    // Evaluate get_edge_type_id_counts_hashmap\n    assert_eq!(\n        graph.get_edge_type_id_counts_hashmap().is_ok(),\n        graph.has_edge_types()\n    );\n\n    graph.set_name(graph.get_name());\n    graph.strongly_connected_components();\n\n    // Checking that the connected components are a dense range.\n    let (_, connected_components, total_connected_components, _, _) =\n        graph.random_spanning_arborescence_kruskal(Some(42), None, verbose);\n    let actual_components_number = connected_components.iter().unique().count() as NodeT;\n    assert_eq!(\n        actual_components_number,\n        total_connected_components,\n        \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n        actual_components_number,\n        total_connected_components\n    );\n    let max_component_id = connected_components.iter().max();\n    if let Some(mci) = max_component_id {\n        assert_eq!(\n            *mci as usize,\n            total_connected_components as usize - 1,\n            \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n            connected_components,\n            graph.textual_report(None)\n        );\n    }\n    if !graph.is_directed() {\n        // Checking that the connected components are a dense range.\n        let (connected_components, total_connected_components, _, _) =\n            graph.connected_components(verbose)?;\n        let actual_components_number = connected_components.iter().unique().count() as NodeT;\n        assert_eq!(\n            actual_components_number,\n            total_connected_components,\n            \"The measured number of connected components ({}) does not match the computed number of connected components ({}).\",\n            actual_components_number,\n            total_connected_components\n        );\n        let max_component_id = connected_components.iter().max();\n        if let Some(mci) = max_component_id {\n            assert_eq!(\n                *mci as usize,\n                total_connected_components as usize - 1,\n                \"We expected the connected components to be a dense set.\\n The obtained components are: \\n{:?}\\n The graph report is:\\n{:?}\",\n                connected_components,\n                graph.textual_report(None)\n            );\n        }\n    }\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5377,7 +5377,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "let node_degree_centralities = graph.get_unweighted_degree_centrality()?;\n\n    assert_eq!(\n        node_degree_centralities.len(),\n        graph.get_nodes_number() as usize\n    );\n\n    assert!(\n        node_degree_centralities\n            .iter()\n            .cloned()\n            .all(|value| value <= 1.0 && value >= 0.0),\n        \"All node degrees centralities are expected to be within 0 and 1, but are {:?}.\",\n        node_degree_centralities\n    );\n\n    if graph.has_edge_weights() {\n        let node_degree_centralities = graph.get_weighted_degree_centrality()?;\n\n        assert_eq!(\n            node_degree_centralities.len(),\n            graph.get_nodes_number() as usize\n        );\n\n        assert!(\n            node_degree_centralities\n                .iter()\n                .cloned()\n                .all(|value| value <= 1.0 && value >= 0.0),\n            concat!(\n                \"All weighted node degrees centralities \",\n                \"are expected to be within 0 and 1, \",\n                \"but are {:?} and the node degrees are {:?}, with the \",\n                \"minimum weighted node degree being {} and \",\n                \"maximum weighted node degree being {}.\",\n            ),\n            node_degree_centralities,\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_min_node_degree()?,\n            graph.get_weighted_max_node_degree()?,\n        );\n    }\n\n    let node_betweenness_centralities = graph.get_betweenness_centrality(None, verbose);\n    assert_eq!(\n        node_betweenness_centralities.len(),\n        graph.get_nodes_number() as usize\n    );\n    node_betweenness_centralities\n        .into_iter()\n        .enumerate()\n        .for_each(|(node_id, value)| {\n            if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {\n                assert!(value.abs() < f64::EPSILON);\n            }\n        });\n    Ok(())"
+                "body": "let node_degree_centralities = graph.get_degree_centrality()?;\n\n    assert_eq!(\n        node_degree_centralities.len(),\n        graph.get_nodes_number() as usize\n    );\n\n    assert!(\n        node_degree_centralities\n            .iter()\n            .cloned()\n            .all(|value| value <= 1.0 && value >= 0.0),\n        \"All node degrees centralities are expected to be within 0 and 1, but are {:?}.\",\n        node_degree_centralities\n    );\n\n    if graph.has_edge_weights() {\n        let node_degree_centralities = graph.get_weighted_degree_centrality()?;\n\n        assert_eq!(\n            node_degree_centralities.len(),\n            graph.get_nodes_number() as usize\n        );\n\n        assert!(\n            node_degree_centralities\n                .iter()\n                .cloned()\n                .all(|value| value <= 1.0 && value >= 0.0),\n            concat!(\n                \"All weighted node degrees centralities \",\n                \"are expected to be within 0 and 1, \",\n                \"but are {:?} and the node degrees are {:?}, with the \",\n                \"minimum weighted node degree being {} and \",\n                \"maximum weighted node degree being {}.\",\n            ),\n            node_degree_centralities,\n            graph.get_weighted_node_degrees(),\n            graph.get_weighted_min_node_degree()?,\n            graph.get_weighted_max_node_degree()?,\n        );\n    }\n\n    let node_betweenness_centralities = graph.get_betweenness_centrality(None, verbose);\n    assert_eq!(\n        node_betweenness_centralities.len(),\n        graph.get_nodes_number() as usize\n    );\n    node_betweenness_centralities\n        .into_iter()\n        .enumerate()\n        .for_each(|(node_id, value)| {\n            if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {\n                assert!(value.abs() < f64::EPSILON);\n            }\n        });\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5415,7 +5415,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "assert_eq!(\n        graph\n            .get_unweighted_number_of_triangles_per_node(Some(false))\n            .into_iter()\n            .map(|triangles_number| triangles_number as EdgeT)\n            .sum::<EdgeT>(),\n        graph.get_unweighted_number_of_triangles(Some(false))\n    );\n    Ok(())"
+                "body": "assert_eq!(\n        graph\n            .get_number_of_triangles_per_node(Some(false))\n            .into_iter()\n            .map(|triangles_number| triangles_number as EdgeT)\n            .sum::<EdgeT>(),\n        graph.get_number_of_triangles(Some(false))\n    );\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5757,7 +5757,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "// TODO! update this when we will support the graph diameter on directed graphs\n    if graph.is_directed() {\n        return Ok(());\n    }\n    let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);\n\n    match n_of_components {\n        0 => {\n            // on an empty graph this should always fail\n            assert!(graph.get_unweighted_diameter(Some(false), verbose).is_err());\n            assert!(graph.get_unweighted_diameter(Some(true), verbose).is_err());\n        }\n\n        1 => {\n            // by definition the diameter of a graph with a single component\n            // cannot be infinite unless it's just a singleton.\n            if graph.get_nodes_number() == 1 {\n                assert_eq!(\n                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),\n                    f64::INFINITY\n                );\n                assert_eq!(\n                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            } else {\n                assert_ne!(\n                    graph.get_unweighted_diameter(Some(false), verbose).unwrap(),\n                    f64::INFINITY\n                );\n                assert_ne!(\n                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            }\n        }\n\n        _ => {\n            assert_eq!(\n                graph.get_unweighted_diameter(Some(false), verbose).unwrap(),\n                f64::INFINITY\n            );\n\n            // if all the nodes are singletons then the diameter should be infinite\n            if biggest == 1 {\n                assert_eq!(\n                    graph.get_unweighted_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            }\n        }\n    }\n\n    Ok(())"
+                "body": "// TODO! update this when we will support the graph diameter on directed graphs\n    if graph.is_directed() {\n        return Ok(());\n    }\n    let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);\n\n    match n_of_components {\n        0 => {\n            // on an empty graph this should always fail\n            assert!(graph.get_diameter(Some(false), verbose).is_err());\n            assert!(graph.get_diameter(Some(true), verbose).is_err());\n        }\n\n        1 => {\n            // by definition the diameter of a graph with a single component\n            // cannot be infinite unless it's just a singleton.\n            if graph.get_nodes_number() == 1 {\n                assert_eq!(\n                    graph.get_diameter(Some(false), verbose).unwrap(),\n                    f64::INFINITY\n                );\n                assert_eq!(\n                    graph.get_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            } else {\n                assert_ne!(\n                    graph.get_diameter(Some(false), verbose).unwrap(),\n                    f64::INFINITY\n                );\n                assert_ne!(\n                    graph.get_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            }\n        }\n\n        _ => {\n            assert_eq!(\n                graph.get_diameter(Some(false), verbose).unwrap(),\n                f64::INFINITY\n            );\n\n            // if all the nodes are singletons then the diameter should be infinite\n            if biggest == 1 {\n                assert_eq!(\n                    graph.get_diameter(Some(true), verbose).unwrap(),\n                    f64::INFINITY\n                );\n            }\n        }\n    }\n\n    Ok(())"
             },
             {
                 "file": "test_utilities.rs",
@@ -5799,7 +5799,7 @@
                     ]
                 ],
                 "return_type": "Result<(), String>",
-                "body": "warn!(\"Starting default test suite.\");\n    let _ = _default_test_suite(graph, verbose);\n    warn!(\"Starting default test suite with speedups enabled.\");\n    graph.enable(Some(true), Some(true), Some(true), None)?;\n    let _ = _default_test_suite(graph, verbose);\n    warn!(\"Starting default test suite on transformed graphs.\");\n    for mut transformed_graph in [\n        graph.get_unweighted_laplacian_transformed_graph(verbose),\n        graph.get_unweighted_symmetric_normalized_transformed_graph(verbose)?,\n        graph.get_unweighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,\n        graph.get_unweighted_random_walk_normalized_laplacian_transformed_graph(verbose),\n        graph.get_weighted_laplacian_transformed_graph(verbose)?,\n        graph.get_weighted_symmetric_normalized_transformed_graph(verbose)?,\n        graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,\n        graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,\n    ] {\n        let _ = _default_test_suite(&mut transformed_graph, verbose);\n    }\n    Ok(())"
+                "body": "warn!(\"Starting default test suite.\");\n    let _ = _default_test_suite(graph, verbose);\n    warn!(\"Starting default test suite with speedups enabled.\");\n    graph.enable(Some(true), Some(true), Some(true), None)?;\n    let _ = _default_test_suite(graph, verbose);\n    warn!(\"Starting default test suite on transformed graphs.\");\n    for mut transformed_graph in [\n        graph.get_laplacian_transformed_graph(verbose),\n        graph.get_symmetric_normalized_transformed_graph(verbose)?,\n        graph.get_symmetric_normalized_laplacian_transformed_graph(verbose)?,\n        graph.get_random_walk_normalized_laplacian_transformed_graph(verbose),\n        graph.get_weighted_laplacian_transformed_graph(verbose)?,\n        graph.get_weighted_symmetric_normalized_transformed_graph(verbose)?,\n        graph.get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose)?,\n        graph.get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose)?,\n    ] {\n        let _ = _default_test_suite(&mut transformed_graph, verbose);\n    }\n    Ok(())"
             }
         ]
     },
@@ -5918,7 +5918,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_number_of_triangles",
+                "name": "get_number_of_triangles",
                 "args": [
                     [
                         "self",
@@ -5930,7 +5930,7 @@
                     ]
                 ],
                 "return_type": "EdgeT",
-                "body": "if self.is_directed() {\n            unsafe { self.get_unweighted_naive_number_of_triangles() }\n        } else {\n            unsafe { self.get_unweighted_undirected_number_of_triangles(normalize) }\n        }"
+                "body": "if self.is_directed() {\n            unsafe { self.get_naive_number_of_triangles() }\n        } else {\n            unsafe { self.get_undirected_number_of_triangles(normalize) }\n        }"
             },
             {
                 "file": "polygons.rs",
@@ -5940,7 +5940,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_triads_number",
+                "name": "get_triads_number",
                 "args": [
                     [
                         "self",
@@ -5948,7 +5948,7 @@
                     ]
                 ],
                 "return_type": "EdgeT",
-                "body": "self.par_iter_unweighted_node_degrees()\n            .map(|degree| (degree * degree.saturating_sub(1)) as EdgeT)\n            .sum()"
+                "body": "self.par_iter_node_degrees()\n            .map(|degree| (degree * degree.saturating_sub(1)) as EdgeT)\n            .sum()"
             },
             {
                 "file": "polygons.rs",
@@ -5976,7 +5976,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_transitivity",
+                "name": "get_transitivity",
                 "args": [
                     [
                         "self",
@@ -5984,7 +5984,7 @@
                     ]
                 ],
                 "return_type": "f64",
-                "body": "self.get_unweighted_number_of_triangles(Some(false)) as f64\n            / self.get_unweighted_triads_number() as f64"
+                "body": "self.get_number_of_triangles(Some(false)) as f64\n            / self.get_triads_number() as f64"
             },
             {
                 "file": "polygons.rs",
@@ -6022,7 +6022,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_number_of_triangles_per_node",
+                "name": "get_number_of_triangles_per_node",
                 "args": [
                     [
                         "self",
@@ -6034,7 +6034,7 @@
                     ]
                 ],
                 "return_type": "Vec<NodeT>",
-                "body": "if self.is_directed() {\n            unsafe { self.get_unweighted_naive_number_of_triangles_per_node() }\n        } else {\n            unsafe { self.get_unweighted_undirected_number_of_triangles_per_node(normalize) }\n        }"
+                "body": "if self.is_directed() {\n            unsafe { self.get_naive_number_of_triangles_per_node() }\n        } else {\n            unsafe { self.get_undirected_number_of_triangles_per_node(normalize) }\n        }"
             },
             {
                 "file": "polygons.rs",
@@ -6055,7 +6055,7 @@
                     ]
                 ],
                 "return_type": "impl IndexedParallelIterator<Item = f64> + '_",
-                "body": "self.get_unweighted_number_of_triangles_per_node(Some(false))\n            .into_par_iter()\n            .zip(self.par_iter_unweighted_node_degrees())\n            .map(|(triangles_number, degree)| {\n                if degree < 2 {\n                    0.0\n                } else {\n                    triangles_number as f64 / (degree * (degree - 1)) as f64\n                }\n            })"
+                "body": "self.get_number_of_triangles_per_node(Some(false))\n            .into_par_iter()\n            .zip(self.par_iter_node_degrees())\n            .map(|(triangles_number, degree)| {\n                if degree < 2 {\n                    0.0\n                } else {\n                    triangles_number as f64 / (degree * (degree - 1)) as f64\n                }\n            })"
             },
             {
                 "file": "polygons.rs",
@@ -6547,7 +6547,7 @@
                     "#[no_numpy_binding]"
                 ],
                 "modifiers": "pub",
-                "name": "get_unweighted_eccentricity_from_node_id",
+                "name": "get_eccentricity_from_node_id",
                 "args": [
                     [
                         "self",
@@ -6559,7 +6559,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.validate_node_id(node_id).map(|node_id| unsafe {\n            self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)\n        })"
+                "body": "self.validate_node_id(node_id).map(|node_id| unsafe {\n            self.get_unchecked_eccentricity_from_node_id(node_id)\n        })"
             },
             {
                 "file": "dijkstra.rs",
@@ -6610,7 +6610,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_eccentricity_from_node_name",
+                "name": "get_eccentricity_from_node_name",
                 "args": [
                     [
                         "self",
@@ -6622,7 +6622,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.get_node_id_from_node_name(node_name)\n            .map(|node_id| unsafe {\n                self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)\n            })"
+                "body": "self.get_node_id_from_node_name(node_name)\n            .map(|node_id| unsafe {\n                self.get_unchecked_eccentricity_from_node_id(node_id)\n            })"
             },
             {
                 "file": "dijkstra.rs",
@@ -6798,7 +6798,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "",
-                "name": "get_unweighted_ifub",
+                "name": "get_ifub",
                 "args": [
                     [
                         "self",
@@ -6806,7 +6806,7 @@
                     ]
                 ],
                 "return_type": "f64",
-                "body": "if self.is_directed() {\n            panic!(\"This method is not defined for directed graphs!\")\n        }\n        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };\n        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {\n            return f64::INFINITY;\n        }\n        let (distances, _, _, mut root_eccentricity, _, _) = unsafe {\n            self.get_unchecked_breath_first_search_from_node_ids(\n                most_central_node_id,\n                None,\n                None,\n                Some(true),\n                Some(false),\n                Some(false),\n                None,\n            )\n        };\n        assert!(\n            root_eccentricity != NodeT::MAX,\n            \"The central node eccentricity cannot be infinite!\"\n        );\n        assert!(\n            root_eccentricity != 0,\n            \"The central node eccentricity cannot be zero!\"\n        );\n        let mut lower_bound_diameter = root_eccentricity;\n        let distances = unsafe { distances.unwrap_unchecked() };\n        let mut upper_bound_diameter = 2 * root_eccentricity;\n        while lower_bound_diameter < upper_bound_diameter {\n            if let Some(maximal_eccentricity) = distances\n                .par_iter()\n                .enumerate()\n                .filter(|(_, &distance)| distance == root_eccentricity)\n                .map(|(node_id, _)| unsafe {\n                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id as NodeT)\n                })\n                .max()\n            {\n                assert!(\n                    maximal_eccentricity != NodeT::MAX,\n                    \"The maximal eccentricity here cannot be infinite!\"\n                );\n                assert!(\n                    maximal_eccentricity != 0,\n                    \"The maximal eccentricity here cannot be zero!\"\n                );\n                assert!(\n                    root_eccentricity != 0,\n                    \"The root eccentricity cannot be zero!\"\n                );\n                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);\n            }\n            root_eccentricity -= 1;\n            upper_bound_diameter = 2 * root_eccentricity;\n        }\n        lower_bound_diameter as f64"
+                "body": "if self.is_directed() {\n            panic!(\"This method is not defined for directed graphs!\")\n        }\n        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };\n        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {\n            return f64::INFINITY;\n        }\n        let (distances, _, _, mut root_eccentricity, _, _) = unsafe {\n            self.get_unchecked_breath_first_search_from_node_ids(\n                most_central_node_id,\n                None,\n                None,\n                Some(true),\n                Some(false),\n                Some(false),\n                None,\n            )\n        };\n        assert!(\n            root_eccentricity != NodeT::MAX,\n            \"The central node eccentricity cannot be infinite!\"\n        );\n        assert!(\n            root_eccentricity != 0,\n            \"The central node eccentricity cannot be zero!\"\n        );\n        let mut lower_bound_diameter = root_eccentricity;\n        let distances = unsafe { distances.unwrap_unchecked() };\n        let mut upper_bound_diameter = 2 * root_eccentricity;\n        while lower_bound_diameter < upper_bound_diameter {\n            if let Some(maximal_eccentricity) = distances\n                .par_iter()\n                .enumerate()\n                .filter(|(_, &distance)| distance == root_eccentricity)\n                .map(|(node_id, _)| unsafe {\n                    self.get_unchecked_eccentricity_from_node_id(node_id as NodeT)\n                })\n                .max()\n            {\n                assert!(\n                    maximal_eccentricity != NodeT::MAX,\n                    \"The maximal eccentricity here cannot be infinite!\"\n                );\n                assert!(\n                    maximal_eccentricity != 0,\n                    \"The maximal eccentricity here cannot be zero!\"\n                );\n                assert!(\n                    root_eccentricity != 0,\n                    \"The root eccentricity cannot be zero!\"\n                );\n                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);\n            }\n            root_eccentricity -= 1;\n            upper_bound_diameter = 2 * root_eccentricity;\n        }\n        lower_bound_diameter as f64"
             },
             {
                 "file": "dijkstra.rs",
@@ -6859,7 +6859,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_diameter",
+                "name": "get_diameter",
                 "args": [
                     [
                         "self",
@@ -6875,7 +6875,7 @@
                     ]
                 ],
                 "return_type": "Result<f64, String>",
-                "body": "self.must_have_nodes()?;\n        let ignore_infinity = ignore_infinity.unwrap_or(false);\n        let verbose = verbose.unwrap_or(true);\n\n        if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {\n            return Ok(f64::INFINITY);\n        }\n\n        if self.is_directed() {\n            let pb = get_loading_bar(\n                verbose,\n                \"Computing unweighted diameter\",\n                self.get_nodes_number() as usize,\n            );\n            // TODO: Add a better implementation for the directed case\n            Ok(self\n                .par_iter_node_ids()\n                .progress_with(pb)\n                .map(|node_id| unsafe {\n                    self.get_unchecked_breath_first_search_from_node_ids(\n                        node_id,\n                        None,\n                        None,\n                        Some(false),\n                        Some(false),\n                        Some(false),\n                        None,\n                    )\n                    .3\n                })\n                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)\n                .max()\n                .unwrap_or(0) as f64)\n        } else {\n            Ok(self.get_unweighted_ifub())\n        }"
+                "body": "self.must_have_nodes()?;\n        let ignore_infinity = ignore_infinity.unwrap_or(false);\n        let verbose = verbose.unwrap_or(true);\n\n        if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {\n            return Ok(f64::INFINITY);\n        }\n\n        if self.is_directed() {\n            let pb = get_loading_bar(\n                verbose,\n                \"Computing unweighted diameter\",\n                self.get_nodes_number() as usize,\n            );\n            // TODO: Add a better implementation for the directed case\n            Ok(self\n                .par_iter_node_ids()\n                .progress_with(pb)\n                .map(|node_id| unsafe {\n                    self.get_unchecked_breath_first_search_from_node_ids(\n                        node_id,\n                        None,\n                        None,\n                        Some(false),\n                        Some(false),\n                        Some(false),\n                        None,\n                    )\n                    .3\n                })\n                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)\n                .max()\n                .unwrap_or(0) as f64)\n        } else {\n            Ok(self.get_ifub())\n        }"
             },
             {
                 "file": "dijkstra.rs",
@@ -7388,7 +7388,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_all_shortest_paths",
+                "name": "get_all_shortest_paths",
                 "args": [
                     [
                         "self",
@@ -7993,7 +7993,7 @@
                     ]
                 ],
                 "return_type": "Vec<NodeT>",
-                "body": "let k = k.min(self.get_nodes_number());\n        let mut nodes_degrees: Vec<(NodeT, NodeT)> = self\n            .iter_node_ids()\n            .map(|node_id| unsafe {\n                (\n                    self.get_unchecked_unweighted_node_degree_from_node_id(node_id),\n                    node_id,\n                )\n            })\n            .collect();\n        nodes_degrees.par_sort_unstable();\n        nodes_degrees.reverse();\n        nodes_degrees[0..k as usize]\n            .iter()\n            .map(|(_, node_id)| *node_id)\n            .collect()"
+                "body": "let k = k.min(self.get_nodes_number());\n        let mut nodes_degrees: Vec<(NodeT, NodeT)> = self\n            .iter_node_ids()\n            .map(|node_id| unsafe {\n                (\n                    self.get_unchecked_node_degree_from_node_id(node_id),\n                    node_id,\n                )\n            })\n            .collect();\n        nodes_degrees.par_sort_unstable();\n        nodes_degrees.reverse();\n        nodes_degrees[0..k as usize]\n            .iter()\n            .map(|(_, node_id)| *node_id)\n            .collect()"
             },
             {
                 "file": "queries.rs",
@@ -8032,7 +8032,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_node_degree_from_node_id",
+                "name": "get_node_degree_from_node_id",
                 "args": [
                     [
                         "self",
@@ -8044,7 +8044,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.validate_node_id(node_id).map(|node_id| unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)\n        })"
+                "body": "self.validate_node_id(node_id).map(|node_id| unsafe {\n            self.get_unchecked_node_degree_from_node_id(node_id)\n        })"
             },
             {
                 "file": "queries.rs",
@@ -8110,7 +8110,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "Ok(unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(\n                self.get_node_id_from_node_name(node_name)?,\n            )\n        })"
+                "body": "Ok(unsafe {\n            self.get_unchecked_node_degree_from_node_id(\n                self.get_node_id_from_node_name(node_name)?,\n            )\n        })"
             },
             {
                 "file": "queries.rs",
@@ -10820,7 +10820,7 @@
                     "",
                     " ```rust",
                     " # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, false, false, false);",
-                    " # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));",
+                    " # let graph_with_negative_weights = graph_with_weights.get_laplacian_transformed_graph(Some(false));",
                     " assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());",
                     " assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());",
                     " ```",
@@ -11041,7 +11041,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "iter_unweighted_degree_centrality",
+                "name": "iter_degree_centrality",
                 "args": [
                     [
                         "self",
@@ -11049,7 +11049,7 @@
                     ]
                 ],
                 "return_type": "Result<impl Iterator<Item = f64> + '_, String>",
-                "body": "self.must_have_edges()?;\n\n        let max_degree = unsafe { self.get_unchecked_unweighted_max_node_degree() as f64 };\n        Ok(self\n            .iter_unweighted_node_degrees()\n            .map(move |degree| degree as f64 / max_degree))"
+                "body": "self.must_have_edges()?;\n\n        let max_degree = unsafe { self.get_unchecked_max_node_degree() as f64 };\n        Ok(self\n            .iter_node_degrees()\n            .map(move |degree| degree as f64 / max_degree))"
             },
             {
                 "file": "centrality.rs",
@@ -11077,7 +11077,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_degree_centrality",
+                "name": "get_degree_centrality",
                 "args": [
                     [
                         "self",
@@ -11085,7 +11085,7 @@
                     ]
                 ],
                 "return_type": "Result<Vec<f64>, String>",
-                "body": "Ok(self.iter_unweighted_degree_centrality()?.collect())"
+                "body": "Ok(self.iter_degree_centrality()?.collect())"
             },
             {
                 "file": "centrality.rs",
@@ -11157,7 +11157,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "par_iter_unweighted_closeness_centrality",
+                "name": "par_iter_closeness_centrality",
                 "args": [
                     [
                         "self",
@@ -11169,7 +11169,7 @@
                     ]
                 ],
                 "return_type": "impl ParallelIterator<Item = f64> + '_",
-                "body": "let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing closeness centrality\",\n            self.get_nodes_number() as usize,\n        );\n        self.par_iter_node_ids()\n            .progress_with(pb)\n            .map(move |node_id| unsafe {\n                self.get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)\n            })"
+                "body": "let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing closeness centrality\",\n            self.get_nodes_number() as usize,\n        );\n        self.par_iter_node_ids()\n            .progress_with(pb)\n            .map(move |node_id| unsafe {\n                self.get_unchecked_closeness_centrality_from_node_id(node_id)\n            })"
             },
             {
                 "file": "centrality.rs",
@@ -11236,7 +11236,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_closeness_centrality",
+                "name": "get_closeness_centrality",
                 "args": [
                     [
                         "self",
@@ -11248,7 +11248,7 @@
                     ]
                 ],
                 "return_type": "Vec<f64>",
-                "body": "self.par_iter_unweighted_closeness_centrality(verbose)\n            .collect()"
+                "body": "self.par_iter_closeness_centrality(verbose)\n            .collect()"
             },
             {
                 "file": "centrality.rs",
@@ -11340,7 +11340,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "par_iter_unweighted_harmonic_centrality",
+                "name": "par_iter_harmonic_centrality",
                 "args": [
                     [
                         "self",
@@ -11352,7 +11352,7 @@
                     ]
                 ],
                 "return_type": "impl ParallelIterator<Item = f64> + '_",
-                "body": "let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing harmonic centrality\",\n            self.get_nodes_number() as usize,\n        );\n        self.par_iter_node_ids()\n            .progress_with(pb)\n            .map(move |node_id| unsafe {\n                self.get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)\n            })"
+                "body": "let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing harmonic centrality\",\n            self.get_nodes_number() as usize,\n        );\n        self.par_iter_node_ids()\n            .progress_with(pb)\n            .map(move |node_id| unsafe {\n                self.get_unchecked_harmonic_centrality_from_node_id(node_id)\n            })"
             },
             {
                 "file": "centrality.rs",
@@ -11406,7 +11406,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_harmonic_centrality",
+                "name": "get_harmonic_centrality",
                 "args": [
                     [
                         "self",
@@ -11418,7 +11418,7 @@
                     ]
                 ],
                 "return_type": "Vec<f64>",
-                "body": "self.par_iter_unweighted_harmonic_centrality(verbose)\n            .collect()"
+                "body": "self.par_iter_harmonic_centrality(verbose)\n            .collect()"
             },
             {
                 "file": "centrality.rs",
@@ -11534,7 +11534,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_eigenvector_centrality",
+                "name": "get_eigenvector_centrality",
                 "args": [
                     [
                         "self",
@@ -14462,7 +14462,7 @@
                     ]
                 ],
                 "return_type": "HashMap<&str, String>",
-                "body": "let mut report: HashMap<&str, String> = HashMap::new();\n\n        if self.has_nodes() {\n            report.insert(\"density\", self.get_density().unwrap().to_string());\n            report.insert(\n                \"min_degree\",\n                self.get_min_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"max_degree\",\n                self.get_unweighted_max_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"degree_mean\",\n                self.get_unweighted_node_degrees_mean().unwrap().to_string(),\n            );\n        }\n\n        if self.has_edges() {\n            report.insert(\n                \"selfloops_rate\",\n                self.get_selfloop_nodes_rate().unwrap().to_string(),\n            );\n        }\n\n        report.insert(\"name\", self.name.clone());\n        report.insert(\"nodes_number\", self.get_nodes_number().to_string());\n        report.insert(\"edges_number\", self.get_directed_edges_number().to_string());\n        report.insert(\n            \"undirected_edges_number\",\n            self.get_undirected_edges_number().to_string(),\n        );\n        report.insert(\"directed\", self.is_directed().to_string());\n        report.insert(\"has_edge_weights\", self.has_edge_weights().to_string());\n        report.insert(\"has_edge_types\", self.has_edge_types().to_string());\n        report.insert(\"has_node_types\", self.has_node_types().to_string());\n        report.insert(\n            \"selfloops_number\",\n            self.get_selfloop_number().to_string(),\n        );\n        report.insert(\n            \"singleton_nodes_number\",\n            self.get_singleton_nodes_number().to_string(),\n        );\n        if let Ok(node_types_number) = self.get_node_types_number() {\n            report.insert(\"unique_node_types_number\", node_types_number.to_string());\n        }\n        if let Ok(edge_types_number) = self.get_edge_types_number() {\n            report.insert(\"unique_edge_types_number\", edge_types_number.to_string());\n        }\n        report"
+                "body": "let mut report: HashMap<&str, String> = HashMap::new();\n\n        if self.has_nodes() {\n            report.insert(\"density\", self.get_density().unwrap().to_string());\n            report.insert(\n                \"min_degree\",\n                self.get_min_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"max_degree\",\n                self.get_max_node_degree().unwrap().to_string(),\n            );\n            report.insert(\n                \"degree_mean\",\n                self.get_node_degrees_mean().unwrap().to_string(),\n            );\n        }\n\n        if self.has_edges() {\n            report.insert(\n                \"selfloops_rate\",\n                self.get_selfloop_nodes_rate().unwrap().to_string(),\n            );\n        }\n\n        report.insert(\"name\", self.name.clone());\n        report.insert(\"nodes_number\", self.get_nodes_number().to_string());\n        report.insert(\"edges_number\", self.get_directed_edges_number().to_string());\n        report.insert(\n            \"undirected_edges_number\",\n            self.get_undirected_edges_number().to_string(),\n        );\n        report.insert(\"directed\", self.is_directed().to_string());\n        report.insert(\"has_edge_weights\", self.has_edge_weights().to_string());\n        report.insert(\"has_edge_types\", self.has_edge_types().to_string());\n        report.insert(\"has_node_types\", self.has_node_types().to_string());\n        report.insert(\n            \"selfloops_number\",\n            self.get_selfloop_number().to_string(),\n        );\n        report.insert(\n            \"singleton_nodes_number\",\n            self.get_singleton_nodes_number().to_string(),\n        );\n        if let Ok(node_types_number) = self.get_node_types_number() {\n            report.insert(\"unique_node_types_number\", node_types_number.to_string());\n        }\n        if let Ok(edge_types_number) = self.get_edge_types_number() {\n            report.insert(\"unique_edge_types_number\", edge_types_number.to_string());\n        }\n        report"
             },
             {
                 "file": "report.rs",
@@ -14607,7 +14607,7 @@
                     ]
                 ],
                 "return_type": "Result<String, String>",
-                "body": "self.format_list(\n            node_list\n                .iter()\n                .map(|node_id| {\n                    format!(\n                        \"{node_name} (degree {node_degree})\",\n                        node_name = unsafe{self.get_unchecked_node_name_from_node_id(*node_id)},\n                        node_degree = unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(*node_id)}\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
+                "body": "self.format_list(\n            node_list\n                .iter()\n                .map(|node_id| {\n                    format!(\n                        \"{node_name} (degree {node_degree})\",\n                        node_name = unsafe{self.get_unchecked_node_name_from_node_id(*node_id)},\n                        node_degree = unsafe{self.get_unchecked_node_degree_from_node_id(*node_id)}\n                    )\n                })\n                .collect::<Vec<String>>()\n                .as_slice(),\n        )"
             },
             {
                 "file": "report.rs",
@@ -14638,7 +14638,7 @@
                     ]
                 ],
                 "return_type": "Result<String, String>",
-                "body": "self.validate_node_id(node_id)?;\n        let mut partial_reports: Vec<String> = Vec::new();\n        let node_name = unsafe{self.get_unchecked_node_name_from_node_id(node_id)};\n        //partial_reports.push(format!(\"## Report for node {}\\n\", node_name));\n\n        partial_reports.push(if unsafe{self.is_unchecked_singleton_from_node_id(node_id)} {\n            match self.get_singleton_nodes_number() {\n                1 => format!(\n                    concat!(\"The given node {} is the only singleton node of the graph.\"),\n                    node_name\n                ),\n                singleton_nodes_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} singleton nodes.\"),\n                        node_name, singleton_nodes_number\n                    )\n                }\n            }\n        } else if self.is_singleton_with_selfloops_from_node_id(node_id) {\n            match self.get_singleton_nodes_with_selfloops_number() {\n                1 => format!(\n                    concat!(\n                        \"The given node {} is the only singleton node with selfloops in the graph.\"\n                    ),\n                    node_name\n                ),\n                singleton_nodes_with_selfloops_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} singleton nodes with selfloops.\"),\n                        node_name, singleton_nodes_with_selfloops_number\n                    )\n                }\n            }\n        } else if unsafe{self.is_unchecked_trap_node_from_node_id(node_id)} {\n            match self.get_trap_nodes_number() {\n                1 => format!(\n                    concat!(\"The given node {} is the only trap node in the graph.\"),\n                    node_name\n                ),\n                trap_nodes_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} trap nodes in the graph.\"),\n                        node_name, trap_nodes_number\n                    )\n                }\n            }\n        } else {\n            format!(\n                concat!(\"The given node {} has degree {}\"),\n                node_name,\n                unsafe{self.get_unchecked_unweighted_node_degree_from_node_id(node_id)}\n            )\n        });\n\n        Ok(partial_reports.join(\"\"))"
+                "body": "self.validate_node_id(node_id)?;\n        let mut partial_reports: Vec<String> = Vec::new();\n        let node_name = unsafe{self.get_unchecked_node_name_from_node_id(node_id)};\n        //partial_reports.push(format!(\"## Report for node {}\\n\", node_name));\n\n        partial_reports.push(if unsafe{self.is_unchecked_singleton_from_node_id(node_id)} {\n            match self.get_singleton_nodes_number() {\n                1 => format!(\n                    concat!(\"The given node {} is the only singleton node of the graph.\"),\n                    node_name\n                ),\n                singleton_nodes_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} singleton nodes.\"),\n                        node_name, singleton_nodes_number\n                    )\n                }\n            }\n        } else if self.is_singleton_with_selfloops_from_node_id(node_id) {\n            match self.get_singleton_nodes_with_selfloops_number() {\n                1 => format!(\n                    concat!(\n                        \"The given node {} is the only singleton node with selfloops in the graph.\"\n                    ),\n                    node_name\n                ),\n                singleton_nodes_with_selfloops_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} singleton nodes with selfloops.\"),\n                        node_name, singleton_nodes_with_selfloops_number\n                    )\n                }\n            }\n        } else if unsafe{self.is_unchecked_trap_node_from_node_id(node_id)} {\n            match self.get_trap_nodes_number() {\n                1 => format!(\n                    concat!(\"The given node {} is the only trap node in the graph.\"),\n                    node_name\n                ),\n                trap_nodes_number => {\n                    format!(\n                        concat!(\"The given node {} is one of {} trap nodes in the graph.\"),\n                        node_name, trap_nodes_number\n                    )\n                }\n            }\n        } else {\n            format!(\n                concat!(\"The given node {} has degree {}\"),\n                node_name,\n                unsafe{self.get_unchecked_node_degree_from_node_id(node_id)}\n            )\n        });\n\n        Ok(partial_reports.join(\"\"))"
             },
             {
                 "file": "report.rs",
@@ -14722,7 +14722,7 @@
                     ]
                 ],
                 "return_type": "Result<String, String>",
-                "body": "{\n            let ptr = self.cached_report.read();\n            if let Some(report) = &*ptr {\n                return Ok(report.clone());\n            }\n        }\n\n        if !self.has_nodes() {\n            return Ok(format!(\"The graph {} is empty.\", self.get_name()));\n        }\n\n        let mut ptr = self.cached_report.write();\n        // THis is not a duplicate of above because we need to\n        // check if another thread already filled the cache\n        if let Some(report) = &*ptr {\n            return Ok(report.clone());\n        }\n\n        let (connected_components_number, minimum_connected_component, maximum_connected_component) =\n            self.get_connected_components_number(verbose);\n\n        let mut hasher = DefaultHasher::new();\n        self.hash(&mut hasher);\n        let hash = hasher.finish();\n\n        *ptr = Some(format!(\n            concat!(\n                \"The {direction} {graph_type} {name} has {nodes_number} nodes{singletons} and {edges_number} {weighted} edges, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. \",\n                \"The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. \",\n                \"The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. \",\n                \"The top {most_common_nodes_number} most central nodes are {central_nodes}. \",\n                \"The hash of the graph is {hash:08x}.\"\n            ),\n            hash = hash,\n            direction = match self.directed {\n                true=> \"directed\",\n                false => \"undirected\"\n            }.to_owned(),\n            graph_type = match self.is_multigraph() {\n                true=> \"multigraph\",\n                false => \"graph\"\n            }.to_owned(),\n            name = self.name,\n            nodes_number = self.get_nodes_number(),\n            edges_number = self.get_edges_number(),\n            weighted = match self.has_edge_weights(){\n                true=> \"weighted\",\n                false=> \"unweighted\"\n            }.to_owned(),\n            selfloops = match self.has_selfloops() {\n                true => format!(\"{} are self-loops\", self.get_selfloop_number()),\n                false => \"none are self-loops\".to_owned()\n            },\n            selfloops_multigraph_connector = match self.is_multigraph() {\n                true => \" and \".to_owned(),\n                false => \"\".to_owned()\n            },\n            multigraph_edges = match self.is_multigraph() {\n                true=>match self.get_multigraph_edges_number()>0 {\n                    true => format!(\"{} are parallel\", self.get_multigraph_edges_number()),\n                    false => \"none are parallel\".to_owned()\n                },\n                false=>\"\".to_owned()\n            },\n            singletons = match self.has_singleton_nodes() {\n                true => format!(\n                    \" There are {singleton_number} singleton nodes{selfloop_singleton},\", \n                    singleton_number=self.get_singleton_nodes_number(),\n                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){\n                        true=>format!(\" ({} have self-loops)\", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){\n                            true=>\"all\".to_owned(),\n                            false=>format!(\"{} of these\", self.get_singleton_nodes_with_selfloops_number())\n                        }),\n                        false=>\"\".to_owned()\n                    }\n                ),\n                false => \"\".to_owned()\n            },\n            quantized_density = match self.get_density().unwrap() {\n                d if d < 0.0001 => \"extremely sparse\".to_owned(),\n                d if d < 0.001 => \"quite sparse\".to_owned(),\n                d if d < 0.01 => \"sparse\".to_owned(),\n                d if d < 0.1 => \"dense\".to_owned(),\n                d if d < 0.5 => \"quite dense\".to_owned(),\n                d if (d - 1.0).abs() < f64::EPSILON => \"complete\".to_owned(),\n                d if d <= 1.0 => \"extremely dense\".to_owned(),\n                d => unreachable!(format!(\"Unreacheable density case {}\", d))\n            },\n            density=self.get_density().unwrap(),\n            connected_components=match connected_components_number> 1{\n                true=>format!(\n                    \"has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}\",\n                    components_number=connected_components_number,\n                    maximum_connected_component=match maximum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", maximum_connected_component)\n                    },\n                    minimum_connected_component=match minimum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", minimum_connected_component)\n                    }\n                ),\n                false=>\"is connected, as it has a single component\".to_owned()\n            },\n            median_node_degree=self.get_unweighted_node_degrees_median().unwrap(),\n            mean_node_degree=self.get_unweighted_node_degrees_mean().unwrap(),\n            mode_node_degree=self.get_unweighted_node_degrees_mode().unwrap(),\n            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),\n            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?\n        ));\n\n        Ok(ptr.clone().unwrap())"
+                "body": "{\n            let ptr = self.cached_report.read();\n            if let Some(report) = &*ptr {\n                return Ok(report.clone());\n            }\n        }\n\n        if !self.has_nodes() {\n            return Ok(format!(\"The graph {} is empty.\", self.get_name()));\n        }\n\n        let mut ptr = self.cached_report.write();\n        // THis is not a duplicate of above because we need to\n        // check if another thread already filled the cache\n        if let Some(report) = &*ptr {\n            return Ok(report.clone());\n        }\n\n        let (connected_components_number, minimum_connected_component, maximum_connected_component) =\n            self.get_connected_components_number(verbose);\n\n        let mut hasher = DefaultHasher::new();\n        self.hash(&mut hasher);\n        let hash = hasher.finish();\n\n        *ptr = Some(format!(\n            concat!(\n                \"The {direction} {graph_type} {name} has {nodes_number} nodes{singletons} and {edges_number} {weighted} edges, of which {selfloops}{selfloops_multigraph_connector}{multigraph_edges}. \",\n                \"The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. \",\n                \"The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. \",\n                \"The top {most_common_nodes_number} most central nodes are {central_nodes}. \",\n                \"The hash of the graph is {hash:08x}.\"\n            ),\n            hash = hash,\n            direction = match self.directed {\n                true=> \"directed\",\n                false => \"undirected\"\n            }.to_owned(),\n            graph_type = match self.is_multigraph() {\n                true=> \"multigraph\",\n                false => \"graph\"\n            }.to_owned(),\n            name = self.name,\n            nodes_number = self.get_nodes_number(),\n            edges_number = self.get_edges_number(),\n            weighted = match self.has_edge_weights(){\n                true=> \"weighted\",\n                false=> \"unweighted\"\n            }.to_owned(),\n            selfloops = match self.has_selfloops() {\n                true => format!(\"{} are self-loops\", self.get_selfloop_number()),\n                false => \"none are self-loops\".to_owned()\n            },\n            selfloops_multigraph_connector = match self.is_multigraph() {\n                true => \" and \".to_owned(),\n                false => \"\".to_owned()\n            },\n            multigraph_edges = match self.is_multigraph() {\n                true=>match self.get_multigraph_edges_number()>0 {\n                    true => format!(\"{} are parallel\", self.get_multigraph_edges_number()),\n                    false => \"none are parallel\".to_owned()\n                },\n                false=>\"\".to_owned()\n            },\n            singletons = match self.has_singleton_nodes() {\n                true => format!(\n                    \" There are {singleton_number} singleton nodes{selfloop_singleton},\", \n                    singleton_number=self.get_singleton_nodes_number(),\n                    selfloop_singleton=match self.has_singleton_nodes_with_selfloops(){\n                        true=>format!(\" ({} have self-loops)\", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_selfloops_number(){\n                            true=>\"all\".to_owned(),\n                            false=>format!(\"{} of these\", self.get_singleton_nodes_with_selfloops_number())\n                        }),\n                        false=>\"\".to_owned()\n                    }\n                ),\n                false => \"\".to_owned()\n            },\n            quantized_density = match self.get_density().unwrap() {\n                d if d < 0.0001 => \"extremely sparse\".to_owned(),\n                d if d < 0.001 => \"quite sparse\".to_owned(),\n                d if d < 0.01 => \"sparse\".to_owned(),\n                d if d < 0.1 => \"dense\".to_owned(),\n                d if d < 0.5 => \"quite dense\".to_owned(),\n                d if (d - 1.0).abs() < f64::EPSILON => \"complete\".to_owned(),\n                d if d <= 1.0 => \"extremely dense\".to_owned(),\n                d => unreachable!(format!(\"Unreacheable density case {}\", d))\n            },\n            density=self.get_density().unwrap(),\n            connected_components=match connected_components_number> 1{\n                true=>format!(\n                    \"has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}\",\n                    components_number=connected_components_number,\n                    maximum_connected_component=match maximum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", maximum_connected_component)\n                    },\n                    minimum_connected_component=match minimum_connected_component==1{\n                        true=>\"a single node\".to_owned(),\n                        false=>format!(\"{} nodes\", minimum_connected_component)\n                    }\n                ),\n                false=>\"is connected, as it has a single component\".to_owned()\n            },\n            median_node_degree=self.get_node_degrees_median().unwrap(),\n            mean_node_degree=self.get_node_degrees_mean().unwrap(),\n            mode_node_degree=self.get_node_degrees_mode().unwrap(),\n            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),\n            central_nodes = self.format_node_list(self.get_top_k_central_node_ids(std::cmp::min(5, self.get_nodes_number())).as_slice())?\n        ));\n\n        Ok(ptr.clone().unwrap())"
             }
         ]
     },
@@ -15124,7 +15124,7 @@
                     ]
                 ],
                 "return_type": "f64",
-                "body": "self.par_iter_node_ids()\n            .map(|node_id| unsafe {\n                if !self.is_unchecked_trap_node_from_node_id(node_id) {\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)\n                        .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_unweighted_node_degree_from_node_id(node_id) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
+                "body": "self.par_iter_node_ids()\n            .map(|node_id| unsafe {\n                if !self.is_unchecked_trap_node_from_node_id(node_id) {\n                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)\n                        .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)\n                        .sum::<f64>()\n                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64\n                } else {\n                    1.0\n                }\n            })\n            .sum::<f64>()\n            / self.get_nodes_number() as f64"
             },
             {
                 "file": "getters.rs",
@@ -15143,12 +15143,12 @@
                     " # Example",
                     "```rust",
                     " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
-                    " println!(\"The mean node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mean().unwrap());",
+                    " println!(\"The mean node degree of the graph is  {}\", graph.get_node_degrees_mean().unwrap());",
                     " ```"
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_node_degrees_mean",
+                "name": "get_node_degrees_mean",
                 "args": [
                     [
                         "self",
@@ -15303,12 +15303,12 @@
                     " # Example",
                     "```rust",
                     " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
-                    " println!(\"The median node degree of the graph is  {}\", graph.get_unweighted_node_degrees_median().unwrap());",
+                    " println!(\"The median node degree of the graph is  {}\", graph.get_node_degrees_median().unwrap());",
                     " ```"
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_node_degrees_median",
+                "name": "get_node_degrees_median",
                 "args": [
                     [
                         "self",
@@ -15316,7 +15316,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.must_have_nodes()?;\n        let mut degrees = self.get_unweighted_node_degrees();\n        degrees.par_sort_unstable();\n        Ok(degrees[(self.get_nodes_number() / 2) as usize])"
+                "body": "self.must_have_nodes()?;\n        let mut degrees = self.get_node_degrees();\n        degrees.par_sort_unstable();\n        Ok(degrees[(self.get_nodes_number() / 2) as usize])"
             },
             {
                 "file": "getters.rs",
@@ -15399,7 +15399,7 @@
                     " # Example",
                     "```rust",
                     " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
-                    " println!(\"The maximum node degree of the graph is  {}\", graph.get_unweighted_max_node_degree().unwrap());",
+                    " println!(\"The maximum node degree of the graph is  {}\", graph.get_max_node_degree().unwrap());",
                     " ```",
                     "",
                     " # Raises",
@@ -15407,7 +15407,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_max_node_degree",
+                "name": "get_max_node_degree",
                 "args": [
                     [
                         "self",
@@ -15415,7 +15415,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.must_have_nodes()\n            .map(|_| unsafe { self.get_unchecked_unweighted_max_node_degree() })"
+                "body": "self.must_have_nodes()\n            .map(|_| unsafe { self.get_unchecked_max_node_degree() })"
             },
             {
                 "file": "getters.rs",
@@ -15524,7 +15524,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "self.must_have_nodes()\n            .map(|_| unsafe { self.get_unchecked_unweighted_min_node_degree() })"
+                "body": "self.must_have_nodes()\n            .map(|_| unsafe { self.get_unchecked_min_node_degree() })"
             },
             {
                 "file": "getters.rs",
@@ -15543,12 +15543,12 @@
                     " # Example",
                     "```rust",
                     " # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);",
-                    " println!(\"The mode node degree of the graph is  {}\", graph.get_unweighted_node_degrees_mode().unwrap());",
+                    " println!(\"The mode node degree of the graph is  {}\", graph.get_node_degrees_mode().unwrap());",
                     " ```"
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_node_degrees_mode",
+                "name": "get_node_degrees_mode",
                 "args": [
                     [
                         "self",
@@ -15556,7 +15556,7 @@
                     ]
                 ],
                 "return_type": "Result<NodeT, String>",
-                "body": "if !self.has_nodes() {\n            return Err(\n                \"The mode of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let counter: Counter<NodeT, usize> = Counter::init(self.iter_unweighted_node_degrees());\n        Ok(*counter\n            .iter()\n            .max_by_key(|&(_, count)| count)\n            .map(|(degree, _)| degree)\n            .unwrap())"
+                "body": "if !self.has_nodes() {\n            return Err(\n                \"The mode of the node degrees is not defined on an empty graph\".to_string(),\n            );\n        }\n        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());\n        Ok(*counter\n            .iter()\n            .max_by_key(|&(_, count)| count)\n            .map(|(degree, _)| degree)\n            .unwrap())"
             },
             {
                 "file": "getters.rs",
@@ -17261,7 +17261,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_node_degrees",
+                "name": "get_node_degrees",
                 "args": [
                     [
                         "self",
@@ -17269,7 +17269,7 @@
                     ]
                 ],
                 "return_type": "Vec<NodeT>",
-                "body": "self.par_iter_unweighted_node_degrees().collect()"
+                "body": "self.par_iter_node_degrees().collect()"
             },
             {
                 "file": "getters.rs",
@@ -20007,7 +20007,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "iter_unweighted_node_degrees",
+                "name": "iter_node_degrees",
                 "args": [
                     [
                         "self",
@@ -20015,7 +20015,7 @@
                     ]
                 ],
                 "return_type": "impl Iterator<Item = NodeT> + '_",
-                "body": "self.iter_node_ids().map(move |node| unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(node)\n        })"
+                "body": "self.iter_node_ids().map(move |node| unsafe {\n            self.get_unchecked_node_degree_from_node_id(node)\n        })"
             },
             {
                 "file": "iters.rs",
@@ -20040,7 +20040,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "par_iter_unweighted_node_degrees",
+                "name": "par_iter_node_degrees",
                 "args": [
                     [
                         "self",
@@ -20048,7 +20048,7 @@
                     ]
                 ],
                 "return_type": "impl IndexedParallelIterator<Item = NodeT> + '_",
-                "body": "self.par_iter_node_ids().map(move |node_id| unsafe {\n            self.get_unchecked_unweighted_node_degree_from_node_id(node_id)\n        })"
+                "body": "self.par_iter_node_ids().map(move |node_id| unsafe {\n            self.get_unchecked_node_degree_from_node_id(node_id)\n        })"
             },
             {
                 "file": "iters.rs",
@@ -21902,7 +21902,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_laplacian_transformed_graph",
+                "name": "get_laplacian_transformed_graph",
                 "args": [
                     [
                         "self",
@@ -21914,7 +21914,7 @@
                     ]
                 ],
                 "return_type": "Graph",
-                "body": "Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            unsafe {\n                                self.get_unchecked_unweighted_node_degree_from_node_id(src)\n                                    as WeightT\n                            }\n                        } else {\n                            -1.0\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )\n        .unwrap()"
+                "body": "Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            unsafe {\n                                self.get_unchecked_node_degree_from_node_id(src)\n                                    as WeightT\n                            }\n                        } else {\n                            -1.0\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )\n        .unwrap()"
             },
             {
                 "file": "laplacian.rs",
@@ -21930,7 +21930,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_random_walk_normalized_laplacian_transformed_graph",
+                "name": "get_random_walk_normalized_laplacian_transformed_graph",
                 "args": [
                     [
                         "self",
@@ -21942,7 +21942,7 @@
                     ]
                 ],
                 "return_type": "Graph",
-                "body": "Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            1.0\n                        } else {\n                            -1.0 / unsafe {\n                                self.get_unchecked_unweighted_node_degree_from_node_id(src)\n                            } as WeightT\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )\n        .unwrap()"
+                "body": "Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            1.0\n                        } else {\n                            -1.0 / unsafe {\n                                self.get_unchecked_node_degree_from_node_id(src)\n                            } as WeightT\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )\n        .unwrap()"
             },
             {
                 "file": "laplacian.rs",
@@ -21961,7 +21961,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_symmetric_normalized_laplacian_transformed_graph",
+                "name": "get_symmetric_normalized_laplacian_transformed_graph",
                 "args": [
                     [
                         "self",
@@ -21973,7 +21973,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "self.must_be_undirected()?;\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| unsafe {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            1.0\n                        } else {\n                            -1.0 / (self.get_unchecked_unweighted_node_degree_from_node_id(src)\n                                as f64\n                                * self.get_unchecked_unweighted_node_degree_from_node_id(dst)\n                                    as f64)\n                                .sqrt() as WeightT\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )"
+                "body": "self.must_be_undirected()?;\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .map(|(_, src, dst, edge_type)| unsafe {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(if src == dst {\n                            1.0\n                        } else {\n                            -1.0 / (self.get_unchecked_node_degree_from_node_id(src)\n                                as f64\n                                * self.get_unchecked_node_degree_from_node_id(dst)\n                                    as f64)\n                                .sqrt() as WeightT\n                        }),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )"
             },
             {
                 "file": "laplacian.rs",
@@ -21992,7 +21992,7 @@
                 ],
                 "attrs": [],
                 "modifiers": "pub",
-                "name": "get_unweighted_symmetric_normalized_transformed_graph",
+                "name": "get_symmetric_normalized_transformed_graph",
                 "args": [
                     [
                         "self",
@@ -22004,7 +22004,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "self.must_be_undirected()?;\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .filter(|(_, src, dst, _)| src != dst)\n                .map(|(_, src, dst, edge_type)| unsafe {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(\n                            1.0 / ((self.get_unchecked_unweighted_node_degree_from_node_id(src)\n                                * self.get_unchecked_unweighted_node_degree_from_node_id(dst))\n                                as WeightT)\n                                .sqrt(),\n                        ),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),\n            false,\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )"
+                "body": "self.must_be_undirected()?;\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id(true)\n                .filter(|(_, src, dst, _)| src != dst)\n                .map(|(_, src, dst, edge_type)| unsafe {\n                    Ok((\n                        src,\n                        dst,\n                        edge_type,\n                        Some(\n                            1.0 / ((self.get_unchecked_node_degree_from_node_id(src)\n                                * self.get_unchecked_node_degree_from_node_id(dst))\n                                as WeightT)\n                                .sqrt(),\n                        ),\n                    ))\n                }),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            true,\n            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),\n            false,\n            self.has_trap_nodes(),\n            verbose.unwrap_or(true),\n        )"
             },
             {
                 "file": "laplacian.rs",
@@ -23364,7 +23364,7 @@
                     ]
                 ],
                 "return_type": "Result<Graph, String>",
-                "body": "// check that the parameters are sane\n        self.must_have_nodes()?;\n        validate_features(&features, self.get_nodes_number() as usize)?;\n        let max_degree = max_degree.unwrap_or(0);\n\n        // compute the neighbours nodes to add\n        let neighbours_number =\n            neighbours_number.unwrap_or(self.get_unweighted_node_degrees_mean()?.ceil() as NodeT);\n        if neighbours_number == 0 {\n            return Err(\"The number of neighbours to add per node cannot be zero!\".to_string());\n        }\n\n        // initialize the progress bar\n        let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing additional edges to thicken graph\",\n            self.get_nodes_number() as usize,\n        );\n\n        // initialize the distance metric\n        let distance_metric = match Distance::try_from(distance_name.unwrap_or(\"COSINE\"))? {\n            Distance::L2 => |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {\n                current_node_features\n                    .iter()\n                    .zip(node_features.iter())\n                    .map(|(&left, &right)| (left - right).pow(2))\n                    .sum()\n            },\n            Distance::Cosine => {\n                |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {\n                    let numerator = current_node_features\n                        .iter()\n                        .zip(node_features.iter())\n                        .map(|(&left, &right)| left * right)\n                        .sum::<f64>();\n                    let denominator_left = current_node_features\n                        .iter()\n                        .map(|&left| left.pow(2))\n                        .sum::<f64>()\n                        .sqrt();\n                    let denominator_right = node_features\n                        .iter()\n                        .map(|&right| right.pow(2))\n                        .sum::<f64>()\n                        .sqrt();\n                    1.0 - numerator / (denominator_left * denominator_right + f64::EPSILON)\n                }\n            }\n        };\n\n        // compute the new edges to add\n        let new_edges = self\n            .par_iter_node_ids()\n            .zip(self.par_iter_unweighted_node_degrees())\n            .progress_with(pb)\n            .map(|(source_node_id, node_degree)| {\n                if node_degree <= max_degree {\n                    let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);\n                    // for each node find the k closest nodes (based on the distance choosen and their features)\n                    let current_node_features = &features[source_node_id as usize];\n                    let mut closest_nodes_distances =\n                        vec![f64::INFINITY; neighbours_number as usize];\n\n                    features\n                        .iter()\n                        .zip(self.iter_node_ids())\n                        // every node is the closest to itself so we filter it out\n                        .filter(|(_, destination_node_id)| source_node_id != *destination_node_id)\n                        .for_each(|(node_features, destination_node_id)| {\n                            // compute the distance\n                            let distance = distance_metric(current_node_features, node_features);\n                            // get the max distance in the currently cosest nodes\n                            let (i, max_distance) =\n                                unsafe { closest_nodes_distances.argmax().unwrap_unchecked() };\n                            // update the closest nodes inserting the current node if needed\n                            if max_distance > distance {\n                                if max_distance == f64::INFINITY {\n                                    closest_nodes.push(destination_node_id);\n                                } else {\n                                    closest_nodes[i] = destination_node_id;\n                                }\n                                closest_nodes_distances[i] = distance;\n                            }\n                        });\n                    closest_nodes\n                } else {\n                    Vec::new()\n                }\n            })\n            .collect::<Vec<Vec<NodeT>>>();\n\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)\n                .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {\n                    Ok((src_node_id, dst_node_id, edge_type, weight))\n                })\n                .chain(\n                    new_edges\n                        .into_iter()\n                        .enumerate()\n                        .map(|(source_node_id, new_neighbours)| {\n                            new_neighbours\n                                .into_iter()\n                                .map(move |destination_node_id| {\n                                    if !self.is_directed() {\n                                        vec![\n                                            Ok((\n                                                source_node_id as NodeT,\n                                                destination_node_id,\n                                                None,\n                                                None,\n                                            )),\n                                            Ok((\n                                                destination_node_id,\n                                                source_node_id as NodeT,\n                                                None,\n                                                None,\n                                            )),\n                                        ]\n                                    } else {\n                                        vec![Ok((\n                                            source_node_id as NodeT,\n                                            destination_node_id,\n                                            None,\n                                            None,\n                                        ))]\n                                    }\n                                })\n                                .flatten()\n                        })\n                        .flatten(),\n                ),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            self.has_edge_weights(),\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose,\n        )"
+                "body": "// check that the parameters are sane\n        self.must_have_nodes()?;\n        validate_features(&features, self.get_nodes_number() as usize)?;\n        let max_degree = max_degree.unwrap_or(0);\n\n        // compute the neighbours nodes to add\n        let neighbours_number =\n            neighbours_number.unwrap_or(self.get_node_degrees_mean()?.ceil() as NodeT);\n        if neighbours_number == 0 {\n            return Err(\"The number of neighbours to add per node cannot be zero!\".to_string());\n        }\n\n        // initialize the progress bar\n        let verbose = verbose.unwrap_or(true);\n        let pb = get_loading_bar(\n            verbose,\n            \"Computing additional edges to thicken graph\",\n            self.get_nodes_number() as usize,\n        );\n\n        // initialize the distance metric\n        let distance_metric = match Distance::try_from(distance_name.unwrap_or(\"COSINE\"))? {\n            Distance::L2 => |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {\n                current_node_features\n                    .iter()\n                    .zip(node_features.iter())\n                    .map(|(&left, &right)| (left - right).pow(2))\n                    .sum()\n            },\n            Distance::Cosine => {\n                |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {\n                    let numerator = current_node_features\n                        .iter()\n                        .zip(node_features.iter())\n                        .map(|(&left, &right)| left * right)\n                        .sum::<f64>();\n                    let denominator_left = current_node_features\n                        .iter()\n                        .map(|&left| left.pow(2))\n                        .sum::<f64>()\n                        .sqrt();\n                    let denominator_right = node_features\n                        .iter()\n                        .map(|&right| right.pow(2))\n                        .sum::<f64>()\n                        .sqrt();\n                    1.0 - numerator / (denominator_left * denominator_right + f64::EPSILON)\n                }\n            }\n        };\n\n        // compute the new edges to add\n        let new_edges = self\n            .par_iter_node_ids()\n            .zip(self.par_iter_node_degrees())\n            .progress_with(pb)\n            .map(|(source_node_id, node_degree)| {\n                if node_degree <= max_degree {\n                    let mut closest_nodes = Vec::with_capacity(neighbours_number as usize);\n                    // for each node find the k closest nodes (based on the distance choosen and their features)\n                    let current_node_features = &features[source_node_id as usize];\n                    let mut closest_nodes_distances =\n                        vec![f64::INFINITY; neighbours_number as usize];\n\n                    features\n                        .iter()\n                        .zip(self.iter_node_ids())\n                        // every node is the closest to itself so we filter it out\n                        .filter(|(_, destination_node_id)| source_node_id != *destination_node_id)\n                        .for_each(|(node_features, destination_node_id)| {\n                            // compute the distance\n                            let distance = distance_metric(current_node_features, node_features);\n                            // get the max distance in the currently cosest nodes\n                            let (i, max_distance) =\n                                unsafe { closest_nodes_distances.argmax().unwrap_unchecked() };\n                            // update the closest nodes inserting the current node if needed\n                            if max_distance > distance {\n                                if max_distance == f64::INFINITY {\n                                    closest_nodes.push(destination_node_id);\n                                } else {\n                                    closest_nodes[i] = destination_node_id;\n                                }\n                                closest_nodes_distances[i] = distance;\n                            }\n                        });\n                    closest_nodes\n                } else {\n                    Vec::new()\n                }\n            })\n            .collect::<Vec<Vec<NodeT>>>();\n\n        Graph::from_integer_unsorted(\n            self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)\n                .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {\n                    Ok((src_node_id, dst_node_id, edge_type, weight))\n                })\n                .chain(\n                    new_edges\n                        .into_iter()\n                        .enumerate()\n                        .map(|(source_node_id, new_neighbours)| {\n                            new_neighbours\n                                .into_iter()\n                                .map(move |destination_node_id| {\n                                    if !self.is_directed() {\n                                        vec![\n                                            Ok((\n                                                source_node_id as NodeT,\n                                                destination_node_id,\n                                                None,\n                                                None,\n                                            )),\n                                            Ok((\n                                                destination_node_id,\n                                                source_node_id as NodeT,\n                                                None,\n                                                None,\n                                            )),\n                                        ]\n                                    } else {\n                                        vec![Ok((\n                                            source_node_id as NodeT,\n                                            destination_node_id,\n                                            None,\n                                            None,\n                                        ))]\n                                    }\n                                })\n                                .flatten()\n                        })\n                        .flatten(),\n                ),\n            self.nodes.clone(),\n            self.node_types.clone(),\n            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),\n            self.is_directed(),\n            self.get_name(),\n            true,\n            self.has_edge_types(),\n            self.has_edge_weights(),\n            self.has_singleton_nodes(),\n            self.has_singleton_nodes_with_selfloops(),\n            self.has_trap_nodes(),\n            verbose,\n        )"
             }
         ]
     },

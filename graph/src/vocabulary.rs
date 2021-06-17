@@ -21,7 +21,15 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
             numeric_ids: false,
         }
     }
-    
+
+    pub fn with_capacity(capacity: usize) -> Vocabulary<IndexT> {
+        Vocabulary {
+            map: HashMap::with_capacity(capacity),
+            reverse_map: Vec::new(),
+            numeric_ids: false,
+        }
+    }
+
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
             let parsed_value = value.parse::<usize>().map_err(|_| {
@@ -58,7 +66,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub(crate) fn unchecked_insert(&mut self, value: String) -> IndexT {
+    pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         let current_length = self.map.len();
         let numeric_ids = self.numeric_ids;
         *self.map.entry(value).or_insert_with_key(|value| {
@@ -75,7 +83,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
+    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
         let value = value.as_ref();
 
         if value.is_empty() {

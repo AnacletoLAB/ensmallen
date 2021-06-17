@@ -89,6 +89,8 @@ pub struct Graph {
     pub(crate) min_node_degree: NodeT,
     /// Maximum outbound node degree.
     pub(crate) max_node_degree: NodeT,
+    // Id of one the nodes with max_node_degree.
+    pub(crate) most_central_node_id: NodeT,
     /// Minimum edge weight. Is None if weights are not defined.
     pub(crate) min_edge_weight: Option<WeightT>,
     /// Maximum edge weight. Is None if weights are not defined.
@@ -146,6 +148,7 @@ impl Graph {
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
         min_node_degree: NodeT,
         max_node_degree: NodeT,
+        most_central_node_id: NodeT,
         min_weighted_node_degree: Option<f64>,
         max_weighted_node_degree: Option<f64>,
         total_weights: Option<f64>,
@@ -169,6 +172,7 @@ impl Graph {
             max_edge_weight,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
             edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
             nodes: nodes.set_numeric_ids(false),

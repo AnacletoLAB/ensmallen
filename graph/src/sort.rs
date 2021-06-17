@@ -12,7 +12,7 @@ impl Graph {
         if self.has_nodes_sorted_by_increasing_outbound_node_degree() {
             return self.clone();
         }
-        let sorted_node_ids_permutation = permutation::sort(self.get_unweighted_node_degrees());
+        let sorted_node_ids_permutation = permutation::sort(self.get_node_degrees());
         let new_sorted_node_ids =
             sorted_node_ids_permutation.apply_slice(self.iter_node_ids().collect::<Vec<NodeT>>());
         unsafe { self.remap_unchecked_from_node_ids(new_sorted_node_ids, verbose) }
@@ -28,7 +28,7 @@ impl Graph {
             return self.clone();
         }
         let sorted_node_ids_permutation =
-            permutation::sort_by(self.get_unweighted_node_degrees(), |a, b| b.cmp(a));
+            permutation::sort_by(self.get_node_degrees(), |a, b| b.cmp(a));
         let new_sorted_node_ids =
             sorted_node_ids_permutation.apply_slice(self.iter_node_ids().collect::<Vec<NodeT>>());
         unsafe { self.remap_unchecked_from_node_ids(new_sorted_node_ids, verbose) }

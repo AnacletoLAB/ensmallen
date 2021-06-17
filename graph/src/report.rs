@@ -65,20 +65,20 @@ impl Graph {
         if self.has_nodes() {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
-                "minimum_unweighted_node_degree",
-                self.get_unweighted_minimum_node_degree()
+                "minimum_node_degree",
+                self.get_minimum_node_degree()
                     .unwrap()
                     .to_string(),
             );
             report.insert(
-                "maximum_unweighted_node_degree",
-                self.get_unweighted_maximum_node_degree()
+                "maximum_node_degree",
+                self.get_maximum_node_degree()
                     .unwrap()
                     .to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
-                self.get_unweighted_node_degrees_mean().unwrap().to_string(),
+                self.get_node_degrees_mean().unwrap().to_string(),
             );
         }
         report.insert(
@@ -404,7 +404,7 @@ impl Graph {
                 format!(
                     concat!("The given node {} has degree {}"),
                     node_name,
-                    unsafe { self.get_unchecked_unweighted_node_degree_from_node_id(node_id) }
+                    unsafe { self.get_unchecked_node_degree_from_node_id(node_id) }
                 )
             },
         );
@@ -463,7 +463,7 @@ impl Graph {
         } else {
             None
         };
-        let mut node_degree = match self.get_unweighted_node_degree_from_node_id(node_id) {
+        let mut node_degree = match self.get_node_degree_from_node_id(node_id) {
             Ok(degree) => {
                 if degree == 0 {
                     None
@@ -483,7 +483,7 @@ impl Graph {
                     // of the description we add the correct join term
                     join_term = if node_type.is_some() { "," } else { " and" },
                     weighted_degree =
-                        self.get_unchecked_unweighted_node_degree_from_node_id(node_id)
+                        self.get_unchecked_node_degree_from_node_id(node_id)
                 )
             });
         }
@@ -661,7 +661,7 @@ impl Graph {
     ///
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
-    unsafe fn get_unweighted_node_degree_centrality_report(&self) -> String {
+    unsafe fn get_node_degree_centrality_report(&self) -> String {
         format!(
             concat!(
                 "<h3>Degree centrality</h3>",
@@ -669,16 +669,16 @@ impl Graph {
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.\n",
                 "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
             ),
-            minimum_node_degree = self.get_unweighted_minimum_node_degree().unwrap(),
-            maximum_node_degree = self.get_unweighted_maximum_node_degree().unwrap(),
-            mode_node_degree = self.get_unweighted_node_degrees_mode().unwrap(),
-            mean_node_degree = self.get_unweighted_node_degrees_mean().unwrap(),
-            node_degree_median = self.get_unweighted_node_degrees_median().unwrap(),
+            minimum_node_degree = self.get_minimum_node_degree().unwrap(),
+            maximum_node_degree = self.get_maximum_node_degree().unwrap(),
+            mode_node_degree = self.get_node_degrees_mode().unwrap(),
+            mean_node_degree = self.get_node_degrees_mean().unwrap(),
+            node_degree_median = self.get_node_degrees_median().unwrap(),
             list_of_most_central_nodes = self.get_unchecked_formatted_list(
-                self.get_unweighted_top_k_central_node_ids(5).unwrap()
+                self.get_top_k_central_node_ids(5).unwrap()
                     .into_iter()
                     .filter(|node_id| {
-                        self.get_unchecked_unweighted_node_degree_from_node_id(*node_id) > 0
+                        self.get_unchecked_node_degree_from_node_id(*node_id) > 0
                     })
                     .map(|node_id| {
                         self.get_unchecked_succinct_node_description(node_id)
@@ -1282,7 +1282,7 @@ impl Graph {
         // We add to the report the unweighted node degree centrality
         // if the graph has at least an edge.
         if self.has_edges() {
-            paragraphs.push(unsafe { self.get_unweighted_node_degree_centrality_report() });
+            paragraphs.push(unsafe { self.get_node_degree_centrality_report() });
         }
 
         // We add to the report the graph on disconnected nodes if the graph

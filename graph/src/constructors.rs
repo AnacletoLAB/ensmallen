@@ -31,6 +31,7 @@ type ParsedStringEdgesType = Result<
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -98,11 +99,9 @@ pub(crate) fn parse_node_ids<'a>(
     // we can skip a significant amount of checks and therefore create
     // a simpler iterator.
     if node_list_is_correct {
-        Box::new(
-            nodes_iter.map_ok(move |(node_name, node_type)| {
-                (nodes.unchecked_insert(node_name), node_type)
-            }),
-        )
+        Box::new(nodes_iter.map_ok(move |(node_name, node_type)| unsafe {
+            (nodes.unchecked_insert(node_name), node_type)
+        }))
     } else {
         Box::new(nodes_iter.filter_map(move |row| {
             row.map_or_else(|err| Some(Err(err)),  |(node_name, node_type)| {
@@ -152,7 +151,7 @@ pub(crate) fn parse_node_type_ids<'a>(
     node_types_vocabulary: &'a mut NodeTypeVocabulary,
 ) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a> {
     if node_list_is_correct {
-        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| {
+        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| unsafe {
             (
                 node_id,
                 node_types_vocabulary.unchecked_insert_values(node_type_names),
@@ -196,7 +195,7 @@ pub(crate) fn parse_edges_node_ids<'a>(
     // a simpler iterator.
     if edge_list_is_correct {
         Box::new(
-            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| {
+            edges_iterator.map_ok(move |(src_name, dst_name, edge_type, weight)| unsafe {
                 (
                     nodes.unchecked_insert(src_name),
                     nodes.unchecked_insert(dst_name),
@@ -252,14 +251,16 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
     if edge_list_is_correct {
-        Box::new(edges_iter.map_ok(move |(src, dst, edge_type, weight)| {
-            (
-                src,
-                dst,
-                edge_type.map(|et| edge_types.unchecked_insert(et)),
-                weight,
-            )
-        }))
+        Box::new(
+            edges_iter.map_ok(move |(src, dst, edge_type, weight)| unsafe {
+                (
+                    src,
+                    dst,
+                    edge_type.map(|et| edge_types.unchecked_insert(et)),
+                    weight,
+                )
+            }),
+        )
     } else {
         Box::new(edges_iter.map(move |row| {
             row.and_then(|(src, dst, edge_type, weight)| {
@@ -453,6 +454,7 @@ pub(crate) fn build_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -586,6 +588,7 @@ pub(crate) fn build_edges(
     let mut last_dst: NodeT = 0;
     let mut min_node_degree: NodeT = NodeT::MAX;
     let mut max_node_degree: NodeT = 0;
+    let mut most_central_node_id: NodeT = 0;
     let mut current_node_degree: NodeT = 0;
     let mut previous_node_degree: NodeT = 0;
     let mut last_edge_type: Option<EdgeTypeT> = None;
@@ -781,7 +784,10 @@ pub(crate) fn build_edges(
                     // We update the minimum node degree
                     min_node_degree = min_node_degree.min(current_node_degree);
                     // And the maximum node degree
-                    max_node_degree = max_node_degree.max(current_node_degree);
+                    if max_node_degree < current_node_degree {
+                        max_node_degree = current_node_degree;
+                        most_central_node_id = last_src;
+                    }
                     // Check if the node IDs are provided sorted by decreasing
                     // outbound node degree.
                     if previous_node_degree != 0 {
@@ -878,7 +884,10 @@ pub(crate) fn build_edges(
         min_node_degree = min_node_degree.min(current_node_degree);
     }
     // And the maximum node degree
-    max_node_degree = max_node_degree.max(current_node_degree);
+    if max_node_degree < current_node_degree {
+        max_node_degree = current_node_degree;
+        most_central_node_id = last_src;
+    }
 
     // We check if the last node is sorted.
     if previous_node_degree != 0 {
@@ -1127,6 +1136,7 @@ pub(crate) fn build_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1243,6 +1253,7 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1288,6 +1299,7 @@ pub(crate) fn parse_string_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1331,6 +1343,7 @@ pub(crate) fn parse_integer_edges(
         Option<RoaringBitmap>,
         NodeT,
         NodeT,
+        NodeT,
         Option<f64>,
         Option<f64>,
         Option<f64>,
@@ -1358,6 +1371,7 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1399,6 +1413,7 @@ pub(crate) fn parse_integer_edges(
         singleton_nodes_with_selfloops,
         min_node_degree,
         max_node_degree,
+        most_central_node_id,
         min_weighted_node_degree,
         max_weighted_node_degree,
         total_weights,
@@ -1445,6 +1460,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1489,6 +1505,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1745,6 +1762,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,
@@ -1791,6 +1809,7 @@ impl Graph {
             singleton_nodes_with_selfloops,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             min_weighted_node_degree,
             max_weighted_node_degree,
             total_weights,

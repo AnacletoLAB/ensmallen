@@ -255,7 +255,7 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
-        self.get_unchecked_unweighted_node_degree_from_node_id(node_id) == 0
+        self.get_unchecked_node_degree_from_node_id(node_id) == 0
             && self
                 .connected_nodes
                 .as_ref()

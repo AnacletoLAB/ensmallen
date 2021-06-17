@@ -2,9 +2,9 @@ use super::*;
 use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::slice::ParallelSliceMut;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 
@@ -14,6 +14,7 @@ pub struct ShortestPathsResultBFS {
     pub(crate) visited: Option<BitVec<Lsb0, u8>>,
     pub(crate) dst_node_distance: Option<NodeT>,
     pub(crate) eccentricity: NodeT,
+    pub(crate) most_distant_reacheable_node: NodeT,
     pub(crate) total_distance: NodeT,
     pub(crate) total_harmonic_distance: f64,
 }
@@ -25,6 +26,7 @@ impl ShortestPathsResultBFS {
         visited: Option<BitVec<Lsb0, u8>>,
         dst_node_distance: Option<NodeT>,
         eccentricity: NodeT,
+        most_distant_reacheable_node: NodeT,
         total_distance: NodeT,
         total_harmonic_distance: f64,
     ) -> ShortestPathsResultBFS {
@@ -34,6 +36,7 @@ impl ShortestPathsResultBFS {
             visited,
             dst_node_distance,
             eccentricity,
+            most_distant_reacheable_node,
             total_distance,
             total_harmonic_distance,
         }
@@ -98,6 +101,7 @@ impl Graph {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let compute_visited = compute_visited.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
+        let mut most_distant_reacheable_node = src_node_id;
         let mut dst_node_distance = maybe_dst_node_id.map(|_| NodeT::MAX);
 
         let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
@@ -132,6 +136,7 @@ impl Graph {
                 visited,
                 dst_node_distance,
                 NodeT::MAX,
+                most_distant_reacheable_node,
                 NodeT::MAX,
                 0.0,
             );
@@ -182,7 +187,10 @@ impl Graph {
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // Update the metrics
-            eccentricity = eccentricity.max(depth);
+            if eccentricity < depth {
+                eccentricity = depth;
+                most_distant_reacheable_node = node_id;
+            }
             total_distance += depth;
             if depth != 0 {
                 total_harmonic_distance += 1.0 / depth as f64;
@@ -230,6 +238,7 @@ impl Graph {
             visited,
             dst_node_distance,
             eccentricity,
+            most_distant_reacheable_node,
             total_distance,
             total_harmonic_distance,
         )
@@ -248,7 +257,7 @@ impl Graph {
     /// # Raises
     /// * If the given node is a selfloop.
     /// * If there is no path between the two given nodes.
-    pub unsafe fn get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -295,14 +304,14 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>, String> {
         Ok(self
-            .get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+            .get_unchecked_minimum_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth,
@@ -321,14 +330,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node IDs do not exist in the current graph.
-    pub fn get_unweighted_minimum_path_node_ids_from_node_ids(
+    pub fn get_minimum_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 maximal_depth,
@@ -345,14 +354,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_unweighted_minimum_path_node_ids_from_node_names(
+    pub fn get_minimum_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 maximal_depth,
@@ -369,14 +378,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_unweighted_minimum_path_node_names_from_node_names(
+    pub fn get_minimum_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_minimum_path_node_names_from_node_ids(
+            self.get_unchecked_minimum_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 maximal_depth,
@@ -398,7 +407,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -456,14 +465,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node IDs does not exist in the graph.
-    pub fn get_unweighted_k_shortest_path_node_ids_from_node_ids(
+    pub fn get_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+            self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 k,
@@ -486,14 +495,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names does not exist in the graph.
-    pub fn get_unweighted_k_shortest_path_node_ids_from_node_names(
+    pub fn get_k_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_k_shortest_path_node_ids_from_node_ids(
+            self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 k,
@@ -516,29 +525,25 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names does not exist in the graph.
-    pub fn get_unweighted_k_shortest_path_node_names_from_node_names(
+    pub fn get_k_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
     ) -> Result<Vec<Vec<String>>, String> {
-        self.get_unweighted_k_shortest_path_node_ids_from_node_names(
-            src_node_name,
-            dst_node_name,
-            k,
-        )
-        .map(|paths| {
-            paths
-                .into_iter()
-                .map(|path| {
-                    path.into_iter()
-                        .map(|node_id| unsafe {
-                            self.get_unchecked_node_name_from_node_id(node_id)
-                        })
-                        .collect()
-                })
-                .collect()
-        })
+        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
+            .map(|paths| {
+                paths
+                    .into_iter()
+                    .map(|path| {
+                        path.into_iter()
+                            .map(|node_id| unsafe {
+                                self.get_unchecked_node_name_from_node_id(node_id)
+                            })
+                            .collect()
+                    })
+                    .collect()
+            })
     }
 
     /// Returns unweighted eccentricity of the given node.
@@ -550,10 +555,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> NodeT {
+    pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search_from_node_ids(
             node_id,
             None,
@@ -601,13 +603,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
-    pub fn get_unweighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> Result<NodeT, String> {
-        self.validate_node_id(node_id).map(|node_id| unsafe {
-            self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
-        })
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node ID.
@@ -646,14 +644,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node name does not exist in the current graph instance.
-    pub fn get_unweighted_eccentricity_from_node_name(
-        &self,
-        node_name: &str,
-    ) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| unsafe {
-                self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
-            })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node name.
@@ -1140,21 +1133,88 @@ impl Graph {
         })
     }
 
-    /// Returns diameter of an UNDIRECTED and UNWEIGHTED graph.
+    /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
+    fn get_four_sweep(&self) -> (NodeT, NodeT) {
+        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
+        let a1 = unsafe {
+            self.get_unchecked_breath_first_search_from_node_ids(
+                most_central_node_id,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            )
+            .most_distant_reacheable_node
+        };
+        let (b1, eccentricity_a1) = unsafe {
+            let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+                a1,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            );
+            (bfs.most_distant_reacheable_node, bfs.eccentricity)
+        };
+        let path = unsafe {
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(a1, b1, None)
+                .unwrap()
+        };
+        let r2 = path[path.len() / 2];
+        let a2 = unsafe {
+            self.get_unchecked_breath_first_search_from_node_ids(
+                r2,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            )
+            .most_distant_reacheable_node
+        };
+        let (b2, eccentricity_a2) = unsafe {
+            let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+                a2,
+                None,
+                None,
+                Some(false),
+                Some(false),
+                Some(false),
+                None,
+            );
+            (bfs.most_distant_reacheable_node, bfs.eccentricity)
+        };
+        let path = unsafe {
+            self.get_unchecked_minimum_path_node_ids_from_node_ids(a2, b2, None)
+                .unwrap()
+        };
+        let u = path[path.len() / 2];
+        let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
+        (lower_bound_diameter, u)
+    }
+
+    /// Returns diameter of an UNDIRECTED graph.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_unweighted_ifub(&self) -> f64 {
+    fn get_ifub(&self, verbose: Option<bool>) -> f64 {
         if self.is_directed() {
-            panic!("This method is not defined for directed graphs!")
+            panic!(
+                "This method is not defined YET for directed graphs! We will add it in the future!"
+            )
         }
-        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
-        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
-            return f64::INFINITY;
-        }
+        let (tentative_diameter, low_eccentricity_node) = self.get_four_sweep();
         let bfs = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
-                most_central_node_id,
+                low_eccentricity_node,
                 None,
                 None,
                 Some(true),
@@ -1163,133 +1223,86 @@ impl Graph {
                 None,
             )
         };
-        let mut root_eccentricity = bfs.eccentricity;
-        let distances = bfs.distances.unwrap();
+        let tentative_diameter = tentative_diameter.max(bfs.eccentricity);
         assert!(
-            root_eccentricity != NodeT::MAX,
+            tentative_diameter != NodeT::MAX,
             "The central node eccentricity cannot be infinite!"
         );
         assert!(
-            root_eccentricity != 0,
+            tentative_diameter != 0,
             "The central node eccentricity cannot be zero!"
         );
-        let mut lower_bound_diameter = root_eccentricity;
-        let mut upper_bound_diameter = 2 * root_eccentricity;
-        while lower_bound_diameter < upper_bound_diameter {
-            if let Some(maximal_eccentricity) = distances
-                .par_iter()
-                .enumerate()
-                .filter(|(_, &distance)| distance == root_eccentricity)
-                .map(|(node_id, _)| unsafe {
-                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id as NodeT)
-                })
-                .max()
-            {
-                assert!(
-                    maximal_eccentricity != NodeT::MAX,
-                    "The maximal eccentricity here cannot be infinite!"
-                );
-                assert!(
-                    maximal_eccentricity != 0,
-                    "The maximal eccentricity here cannot be zero!"
-                );
-                assert!(
-                    root_eccentricity != 0,
-                    "The root eccentricity cannot be zero!"
-                );
-                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-            }
-            root_eccentricity -= 1;
-            upper_bound_diameter = 2 * root_eccentricity;
-        }
-        lower_bound_diameter as f64
-    }
 
-    /// Returns diameter of an UNDIRECTED and WEIGHTED graph.
-    ///
-    /// # Arguments
-    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
-    ///
-    /// # Safety
-    /// This method will raise a panic if it is called on a directed graph.
-    ///
-    /// # Referencences
-    /// This method is based on the algorithm described in ["On Computing the Diameter of Real-World Directed (Weighted) Graphs" by Crescenzi et al](https://link.springer.com/chapter/10.1007/978-3-642-30850-5_10).
-    fn get_weighted_ifub(&self, use_edge_weights_as_probabilities: Option<bool>) -> f64 {
-        if self.is_directed() {
-            panic!("This method is not defined for directed graphs!")
-        }
-        let most_central_node_id = unsafe { self.get_unchecked_argmax_node_degree() };
-        if self.is_singleton_with_selfloops_from_node_id(most_central_node_id) {
-            return f64::INFINITY;
-        }
-        let dijkstra = unsafe {
-            self.get_unchecked_dijkstra_from_node_ids(
-                most_central_node_id,
-                None,
-                None,
-                Some(false),
-                None,
-                use_edge_weights_as_probabilities,
-            )
+        let mut distances_and_node_ids = bfs
+            .distances
+            .unwrap()
+            .into_iter()
+            .zip(self.iter_node_ids())
+            .filter(|&(distance, _)| distance != NodeT::MAX && tentative_diameter < distance * 2)
+            .collect::<Vec<(NodeT, NodeT)>>();
+        distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
+
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true) && distances_and_node_ids.len() > 1,
+            "Computing diameter",
+            distances_and_node_ids.len(),
+        );
+
+        // We retrieve the number of threads that we can use
+        // for this operation.
+        let threads_number = rayon::current_num_threads();
+        // We allocate a vector with our tentative best diameter.
+        // We will use the thread 0 and the position 0 of this vector
+        // as position where to store the actual diameter.
+        let mut best_diameters_per_thread = vec![tentative_diameter; threads_number];
+        // We wrap the object into an unsafe cell to be able to
+        // access with the various threads without having the compiler
+        // ranting about what we are doing: we are adults here,
+        // I know what I am doing, let me be.
+        // Yes, I am still talking about the code.
+        let thread_shared_best_diameters_per_thread = ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(&mut best_diameters_per_thread),
         };
 
-        let mut root_eccentricity = dijkstra.eccentricity;
-        let distances = dijkstra.distances;
+        distances_and_node_ids
+            .into_par_iter()
+            .progress_with(pb)
+            .for_each(|(distance, node_id)| unsafe {
+                // First of all we get the thread ID of this thread.
+                // In cases where the distances are already filtered down to one
+                // or generally speaking, so little that it does not make sense
+                // for rayon to allocate a thread pool, the thread ID does not
+                // actually exist, and we can set it to zero.
+                let thread_id = rayon::current_thread_index().unwrap_or(0);
+                // We get the best diameters
+                let best_diameters = thread_shared_best_diameters_per_thread.value.get();
+                // If we have not yet reached the bound
+                if (*best_diameters)[0] < distance * 2 {
+                    // We compute the new candidate diameter.
+                    let new_candidate = self.get_unchecked_eccentricity_from_node_id(node_id);
+                    (*best_diameters)[thread_id] = (*best_diameters)[thread_id].max(new_candidate);
+                }
+                // We make the thread 0 deal with the book keeping and
+                // keeping the maximum current value in the cell 0.
+                // This does not guarantee to always have the absolute maximum
+                // in the cell 0, but we expect to often have that there.
+                // Surely, we won't have collisions because of this.
+                if thread_id == 0 {
+                    (*best_diameters)[0] = (*best_diameters).iter().cloned().max().unwrap();
+                }
+            });
 
-        assert!(
-            root_eccentricity != f64::INFINITY,
-            "The central node eccentricity cannot be infinite!"
-        );
-        assert!(
-            root_eccentricity != 0.0,
-            "The central node eccentricity cannot be zero!"
-        );
-        let mut lower_bound_diameter = root_eccentricity;
-        let mut upper_bound_diameter = 2.0 * root_eccentricity;
-        while upper_bound_diameter < lower_bound_diameter {
-            if let Some(maximal_eccentricity) = distances
-                .par_iter()
-                .enumerate()
-                .filter(|(_, &distance)| (distance - root_eccentricity).abs() < f64::EPSILON)
-                .map(|(node_id, _)| unsafe {
-                    Some(self.get_unchecked_weighted_eccentricity_from_node_id(
-                        node_id as NodeT,
-                        use_edge_weights_as_probabilities,
-                    ))
-                })
-                .reduce(
-                    || None,
-                    |old, new| {
-                        if let (Some(old), Some(new)) = (old, new) {
-                            Some(f64::max(old, new))
-                        } else {
-                            new
-                        }
-                    },
-                )
-            {
-                assert!(
-                    maximal_eccentricity != f64::INFINITY,
-                    "The maximal eccentricity here cannot be infinite!"
-                );
-                assert!(
-                    maximal_eccentricity != 0.0,
-                    "The maximal eccentricity here cannot be zero!"
-                );
-                assert!(
-                    root_eccentricity != 0.0,
-                    "The root eccentricity cannot be zero!"
-                );
-                lower_bound_diameter = lower_bound_diameter.max(maximal_eccentricity);
-            }
-            root_eccentricity -= 1.0;
-            upper_bound_diameter = 2.0 * root_eccentricity;
-        }
-        lower_bound_diameter
+        // We get the maximum value by consuming the vector
+        // of best diameters for each thread.
+        best_diameters_per_thread.into_iter().max().unwrap() as f64
     }
 
-    /// Returns diameter of the graph.
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
     ///
     /// # Arguments
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
@@ -1297,12 +1310,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain nodes.
-    /// * If the graph does not have weights and weights have been requested.
-    ///
-    /// TODO! Add better implementation for directed graphs
-    /// To make the better implementation for directed graphs we will first
-    /// need to make the Elias-Fano encode the directed graph in a better way.
-    pub fn get_unweighted_diameter(
+    pub fn get_diameter_naive(
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
@@ -1315,28 +1323,66 @@ impl Graph {
             return Ok(f64::INFINITY);
         }
 
-        if self.is_directed() {
-            let pb = get_loading_bar(
-                verbose,
-                "Computing unweighted diameter",
-                self.get_nodes_number() as usize,
-            );
-            // TODO: Add a better implementation for the directed case
-            Ok(self
-                .par_iter_node_ids()
-                .progress_with(pb)
-                .map(|node_id| unsafe {
-                    self.get_unchecked_unweighted_eccentricity_from_node_id(node_id)
-                })
-                .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
-                .max()
-                .unwrap_or(0) as f64)
-        } else {
-            Ok(self.get_unweighted_ifub())
+        if self.get_nodes_number() == 1 {
+            return Ok(1.0);
         }
+
+        let pb = get_loading_bar(
+            verbose,
+            "Computing diameter",
+            self.get_nodes_number() as usize,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
+            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .max()
+            .unwrap_or(0) as f64)
     }
 
     /// Returns diameter of the graph.
+    ///
+    /// # Arguments
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    /// # Raises
+    /// * If the graph does not contain nodes.
+    ///
+    /// TODO! Add better implementation for directed graphs
+    /// To make the better implementation for directed graphs we will first
+    /// need to make the Elias-Fano encode the directed graph in a better way.
+    pub fn get_diameter(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Result<f64, String> {
+        self.must_have_nodes()?;
+        let ignore_infinity = ignore_infinity.unwrap_or(false);
+        let verbose = verbose.unwrap_or(true);
+
+        if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
+            return Ok(f64::INFINITY);
+        }
+
+        if self.get_nodes_number() == 1 {
+            return Ok(1.0);
+        }
+
+        if self.is_directed() {
+            self.get_diameter_naive(Some(true), Some(verbose))
+        } else {
+            Ok(self.get_ifub(Some(verbose)))
+        }
+    }
+
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
     ///
     /// # Arguments
     /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
@@ -1352,7 +1398,7 @@ impl Graph {
     /// TODO! Add better implementation for directed graphs
     /// To make the better implementation for directed graphs we will first
     /// need to make the Elias-Fano encode the directed graph in a better way.
-    pub fn get_weighted_diameter(
+    pub fn get_weighted_diameter_naive(
         &self,
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
@@ -1375,33 +1421,29 @@ impl Graph {
             });
         }
 
-        if self.is_directed() {
-            let pb = get_loading_bar(
-                verbose,
-                "Computing weighted diameter",
-                self.get_nodes_number() as usize,
-            );
-            Ok(self
-                .par_iter_node_ids()
-                .progress_with(pb)
-                .map(|node_id| unsafe {
-                    self.get_unchecked_weighted_eccentricity_from_node_id(
-                        node_id,
-                        Some(use_edge_weights_as_probabilities),
-                    )
-                })
-                .filter(|&distance| {
-                    !ignore_infinity
-                        || if use_edge_weights_as_probabilities {
-                            !distance.is_zero()
-                        } else {
-                            distance.is_finite()
-                        }
-                })
-                .reduce(|| f64::NEG_INFINITY, f64::max))
-        } else {
-            Ok(self.get_weighted_ifub(Some(use_edge_weights_as_probabilities)) as f64)
-        }
+        let pb = get_loading_bar(
+            verbose,
+            "Computing weighted diameter",
+            self.get_nodes_number() as usize,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(|node_id| unsafe {
+                self.get_unchecked_weighted_eccentricity_from_node_id(
+                    node_id,
+                    Some(use_edge_weights_as_probabilities),
+                )
+            })
+            .filter(|&distance| {
+                !ignore_infinity
+                    || if use_edge_weights_as_probabilities {
+                        !distance.is_zero()
+                    } else {
+                        distance.is_finite()
+                    }
+            })
+            .reduce(|| f64::NEG_INFINITY, f64::max))
     }
 
     #[manual_binding]

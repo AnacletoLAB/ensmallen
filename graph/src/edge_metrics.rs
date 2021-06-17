@@ -9,16 +9,16 @@ impl Graph {
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_unweighted_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_unweighted_minimum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_minimum_node_degree() as f64).pow(2)
     }
 
     /// Returns the maximum unweighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_unweighted_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_unweighted_maximum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
+        (self.get_unchecked_maximum_node_degree() as f64).pow(2)
     }
 
     /// Returns the minumum weighted preferential attachment score.
@@ -47,21 +47,21 @@ impl Graph {
     /// # Safety
     /// If either of the provided one and two node IDs are higher than the
     /// number of nodes in the graph.
-    pub unsafe fn get_unchecked_unweighted_preferential_attachment_from_node_ids(
+    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
         let mut preferential_attachment_score = self
-            .get_unchecked_unweighted_node_degree_from_node_id(source_node_id)
+            .get_unchecked_node_degree_from_node_id(source_node_id)
             as f64
-            * self.get_unchecked_unweighted_node_degree_from_node_id(destination_node_id) as f64;
+            * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
         if normalize {
             let min_preferential_attachment_score =
-                self.get_unchecked_unweighted_minimum_preferential_attachment();
+                self.get_unchecked_minimum_preferential_attachment();
             let max_preferential_attachment_score =
-                self.get_unchecked_unweighted_maximum_preferential_attachment();
+                self.get_unchecked_maximum_preferential_attachment();
             preferential_attachment_score = (preferential_attachment_score
                 - min_preferential_attachment_score)
                 / (max_preferential_attachment_score - min_preferential_attachment_score);
@@ -79,14 +79,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the node IDs are higher than the number of nodes in the graph.
-    pub fn get_unweighted_preferential_attachment_from_node_ids(
+    pub fn get_preferential_attachment_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+            self.get_unchecked_preferential_attachment_from_node_ids(
                 self.validate_node_id(source_node_id)?,
                 self.validate_node_id(destination_node_id)?,
                 normalize,
@@ -104,14 +104,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the given node names do not exist in the current graph.
-    pub fn get_unweighted_preferential_attachment_from_node_names(
+    pub fn get_preferential_attachment_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+            self.get_unchecked_preferential_attachment_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
                 self.get_node_id_from_node_name(second_node_name)?,
                 normalize,
@@ -328,7 +328,7 @@ impl Graph {
             source_node_id,
             destination_node_id,
         )
-        .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
+        .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 1)
         .map(|node_degree| 1.0 / (node_degree as f64).ln())
         .sum()
@@ -419,7 +419,7 @@ impl Graph {
     /// # Safety
     /// If either of the provided one and two node IDs are higher than the
     /// number of nodes in the graph.
-    pub unsafe fn get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
@@ -428,7 +428,7 @@ impl Graph {
             source_node_id,
             destination_node_id,
         )
-        .map(|node_id| self.get_unchecked_unweighted_node_degree_from_node_id(node_id))
+        .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 0)
         .map(|node_degree| 1.0 / node_degree as f64)
         .sum()
@@ -490,13 +490,13 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the node IDs are higher than the number of nodes in the graph.
-    pub fn get_unweighted_resource_allocation_index_from_node_ids(
+    pub fn get_resource_allocation_index_from_node_ids(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+            self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
                 self.validate_node_id(destination_node_id)?,
             )
@@ -523,13 +523,13 @@ impl Graph {
     ///
     /// # Raises
     /// * If either of the given node names do not exist in the current graph.
-    pub fn get_unweighted_resource_allocation_index_from_node_names(
+    pub fn get_resource_allocation_index_from_node_names(
         &self,
         first_node_name: &str,
         second_node_name: &str,
     ) -> Result<f64, String> {
         Ok(unsafe {
-            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+            self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
                 self.get_node_id_from_node_name(second_node_name)?,
             )
@@ -631,11 +631,11 @@ impl Graph {
                 source_node_id,
                 destination_node_id,
             ),
-            self.get_unchecked_unweighted_resource_allocation_index_from_node_ids(
+            self.get_unchecked_resource_allocation_index_from_node_ids(
                 source_node_id,
                 destination_node_id,
             ),
-            self.get_unchecked_unweighted_preferential_attachment_from_node_ids(
+            self.get_unchecked_preferential_attachment_from_node_ids(
                 source_node_id,
                 destination_node_id,
                 normalize,

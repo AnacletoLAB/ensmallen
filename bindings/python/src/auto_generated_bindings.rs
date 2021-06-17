@@ -29,6 +29,7 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar or not.
     ///
+<<<<<<< HEAD
     pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: Option<EdgeT>,
@@ -37,6 +38,12 @@ impl EnsmallenGraph {
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.graph
             .random_spanning_arborescence_kruskal(random_state, undesired_edge_types, verbose)
+=======
+    pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.get_laplacian_transformed_graph(verbose),
+        }
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -57,11 +64,23 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar or not.
     ///
+<<<<<<< HEAD
     pub fn spanning_arborescence_kruskal(
         &self,
         verbose: Option<bool>,
     ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         self.graph.spanning_arborescence_kruskal(verbose)
+=======
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(
+        &self,
+        verbose: Option<bool>,
+    ) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self
+                .graph
+                .get_random_walk_normalized_laplacian_transformed_graph(verbose),
+        }
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -92,11 +111,23 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the system configuration does not allow for the creation of the thread pool.
     ///
+<<<<<<< HEAD
     pub fn connected_components(
         &self,
         verbose: Option<bool>,
     ) -> PyResult<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
         pe!(self.graph.connected_components(verbose))
+=======
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(
+        &self,
+        verbose: Option<bool>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self
+                .graph
+                .get_symmetric_normalized_laplacian_transformed_graph(verbose))?,
+        })
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -120,8 +151,20 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If one of the two graphs has edge types and the other does not.
     ///
+<<<<<<< HEAD
     pub fn overlaps(&self, other: &EnsmallenGraph) -> PyResult<bool> {
         pe!(self.graph.overlaps(&other.graph))
+=======
+    pub fn get_symmetric_normalized_transformed_graph(
+        &self,
+        verbose: Option<bool>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(self
+                .graph
+                .get_symmetric_normalized_transformed_graph(verbose))?,
+        })
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2113,6 +2156,7 @@ impl EnsmallenGraph {
     /// maximal_depth: Optional[int],
     ///     The maximal number of iterations to execute Dijkstra for.
     ///
+<<<<<<< HEAD
     ///
     /// Raises
     /// -------
@@ -2134,6 +2178,23 @@ impl EnsmallenGraph {
                 use_edge_weights_as_probabilities,
                 maximal_depth
             ))
+=======
+    pub fn get_number_of_triangles(
+        &self,
+        normalize: Option<bool>,
+        low_centrality: Option<usize>,
+        verbose: Option<bool>,
+    ) -> EdgeT {
+        self.graph
+            .get_number_of_triangles(normalize, low_centrality, verbose)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns total number of triads in the graph without taking into account weights
+    pub fn get_triads_number(&self) -> EdgeT {
+        self.graph.get_triads_number()
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2185,6 +2246,7 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     ///
+<<<<<<< HEAD
     ///
     /// Raises
     /// -------
@@ -2199,6 +2261,10 @@ impl EnsmallenGraph {
         verbose: Option<bool>,
     ) -> PyResult<f64> {
         pe!(self.graph.get_unweighted_diameter(ignore_infinity, verbose))
+=======
+    pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
+        self.graph.get_transitivity(low_centrality, verbose)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2214,6 +2280,7 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show a loading bar.
     ///
+<<<<<<< HEAD
     ///
     /// Raises
     /// -------
@@ -2227,16 +2294,30 @@ impl EnsmallenGraph {
     ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
     ///
     pub fn get_weighted_diameter(
+=======
+    pub fn get_number_of_triangles_per_node(
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
         &self,
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
+<<<<<<< HEAD
     ) -> PyResult<f64> {
         pe!(self.graph.get_weighted_diameter(
             ignore_infinity,
             use_edge_weights_as_probabilities,
             verbose
         ))
+=======
+    ) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.graph
+                .get_number_of_triangles_per_node(normalize, low_centrality, verbose),
+            NodeT
+        )
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2622,8 +2703,29 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given edge ID does not exist in the current graph.
     ///
+<<<<<<< HEAD
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
         pe!(self.graph.get_destination_node_id_from_edge_id(edge_id))
+=======
+    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unchecked_minimum_path_node_ids_from_node_ids(
+                    src_node_id,
+                    dst_node_id,
+                    maximal_depth
+                ))?,
+            NodeT
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2638,10 +2740,27 @@ impl EnsmallenGraph {
     ///
     /// Safety
     /// ------
+<<<<<<< HEAD
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> String {
         self.graph
             .get_unchecked_source_node_name_from_edge_id(edge_id)
+=======
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Vec<String>> {
+        pe!(self
+            .graph
+            .get_unchecked_minimum_path_node_names_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                maximal_depth
+            ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2654,6 +2773,7 @@ impl EnsmallenGraph {
     ///     The edge ID whose destination node name is to be retrieved.
     ///
     ///
+<<<<<<< HEAD
     /// Safety
     /// ------
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
@@ -2663,6 +2783,24 @@ impl EnsmallenGraph {
     ) -> String {
         self.graph
             .get_unchecked_destination_node_name_from_edge_id(edge_id)
+=======
+    pub fn get_minimum_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_minimum_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                maximal_depth
+            ))?,
+            NodeT
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2678,8 +2816,27 @@ impl EnsmallenGraph {
     /// Raises
     /// -------
     ///
+<<<<<<< HEAD
     pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
         pe!(self.graph.get_source_node_name_from_edge_id(edge_id))
+=======
+    pub fn get_minimum_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_minimum_path_node_ids_from_node_names(
+                src_node_name,
+                dst_node_name,
+                maximal_depth
+            ))?,
+            NodeT
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2695,8 +2852,22 @@ impl EnsmallenGraph {
     /// Raises
     /// -------
     ///
+<<<<<<< HEAD
     pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
         pe!(self.graph.get_destination_node_name_from_edge_id(edge_id))
+=======
+    pub fn get_minimum_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_minimum_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            maximal_depth
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2708,8 +2879,22 @@ impl EnsmallenGraph {
     /// edge_id: int,
     ///     The edge ID whose source and destination node IDs are to e retrieved.
     ///
+<<<<<<< HEAD
     pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(String, String)> {
         pe!(self.graph.get_node_names_from_edge_id(edge_id))
+=======
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> Vec<Vec<NodeT>> {
+        self.graph
+            .get_unchecked_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2721,8 +2906,20 @@ impl EnsmallenGraph {
     /// edge_id: int,
     ///     The edge ID whose source and destination node IDs are to e retrieved.
     ///
+<<<<<<< HEAD
     pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(NodeT, NodeT)> {
         pe!(self.graph.get_node_ids_from_edge_id(edge_id))
+=======
+    pub fn get_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self
+            .graph
+            .get_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2740,11 +2937,25 @@ impl EnsmallenGraph {
     ///     The destination node ID.
     ///
     ///
+<<<<<<< HEAD
     /// Safety
     /// ------
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         self.graph.get_unchecked_edge_id_from_node_ids(src, dst)
+=======
+    pub fn get_k_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self.graph.get_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2771,12 +2982,26 @@ impl EnsmallenGraph {
     /// source_id: int,
     ///     The source node ID.
     ///
+<<<<<<< HEAD
     ///
     /// Safety
     /// ------
     /// If the given source node ID does not exist in the current graph the method will panic.
     pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         self.graph.get_unchecked_unique_source_node_id(source_id)
+=======
+    pub fn get_k_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<String>>> {
+        pe!(self.graph.get_k_shortest_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2793,6 +3018,7 @@ impl EnsmallenGraph {
     ///
     /// Safety
     /// ------
+<<<<<<< HEAD
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_ids_and_edge_type_id_from_edge_id(
         &self,
@@ -2800,6 +3026,11 @@ impl EnsmallenGraph {
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         self.graph
             .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id)
+=======
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.graph.get_unchecked_eccentricity_from_node_id(node_id)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2811,6 +3042,7 @@ impl EnsmallenGraph {
     /// edge_id: int,
     ///     The edge ID whose source, destination and edge type are to be retrieved.
     ///
+<<<<<<< HEAD
     pub fn get_node_ids_and_edge_type_id_from_edge_id(
         &self,
         edge_id: EdgeT,
@@ -2818,6 +3050,10 @@ impl EnsmallenGraph {
         pe!(self
             .graph
             .get_node_ids_and_edge_type_id_from_edge_id(edge_id))
+=======
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        pe!(self.graph.get_eccentricity_from_node_id(node_id))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -2881,6 +3117,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph has no nodes.
     ///
+<<<<<<< HEAD
     pub fn get_unweighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
@@ -2888,6 +3125,10 @@ impl EnsmallenGraph {
             pe!(self.graph.get_unweighted_top_k_central_node_ids(k))?,
             NodeT
         ))
+=======
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        pe!(self.graph.get_eccentricity_from_node_name(node_name))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3007,6 +3248,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self, k)"]
     /// Return vector with top k central node names.
     ///
@@ -3022,6 +3264,70 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     /// Returns option with vector of node types of given node.
+=======
+    #[text_signature = "($self, ignore_infinity, verbose)"]
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
+    ///
+    /// Parameters
+    /// ----------
+    /// ignore_infinity: Optional[bool],
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain nodes.
+    ///
+    pub fn get_diameter_naive(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_diameter_naive(ignore_infinity, verbose))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, ignore_infinity, verbose)"]
+    /// Returns diameter of the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// ignore_infinity: Optional[bool],
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain nodes.
+    ///
+    pub fn get_diameter(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_diameter(ignore_infinity, verbose))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, ignore_infinity, use_edge_weights_as_probabilities, verbose)"]
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     ///
     /// This method will panic if the given node ID is greater than
     /// the number of nodes in the graph.
@@ -3034,6 +3340,7 @@ impl EnsmallenGraph {
     ///     node whose node type is to be returned.
     ///
     ///
+<<<<<<< HEAD
     /// Safety
     /// ------
     /// Even though the method will return an option when the node types are
@@ -3043,6 +3350,19 @@ impl EnsmallenGraph {
         node_id: NodeT,
     ) -> Option<Vec<NodeTypeT>> {
         self.graph.get_unchecked_node_type_id_from_node_id(node_id)
+=======
+    pub fn get_weighted_diameter_naive(
+        &self,
+        ignore_infinity: Option<bool>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_diameter_naive(
+            ignore_infinity,
+            use_edge_weights_as_probabilities,
+            verbose
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3204,6 +3524,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self, src, dst)"]
     /// Returns weight of the given node ids.
     ///
@@ -3216,6 +3537,12 @@ impl EnsmallenGraph {
     ///
     pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
         pe!(self.graph.get_edge_weight_from_node_ids(src, dst))
+=======
+    #[text_signature = "($self)"]
+    /// Returns unweighted mean node degree of the graph.
+    pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
+        pe!(self.graph.get_node_degrees_mean())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3243,6 +3570,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self, src, dst, edge_type)"]
     /// Returns weight of the given node names and edge type.
     ///
@@ -3264,6 +3592,12 @@ impl EnsmallenGraph {
         pe!(self
             .graph
             .get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))
+=======
+    #[text_signature = "($self)"]
+    /// Returns unweighted median node degree of the graph
+    pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_median())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3299,9 +3633,17 @@ impl EnsmallenGraph {
     ///
     /// Safety
     /// ------
+<<<<<<< HEAD
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
         self.graph.get_unchecked_node_name_from_node_id(node_id)
+=======
+    /// The method will return an undefined value (0) when the graph
+    ///  does not contain nodes. In those cases the value is not properly
+    ///  defined.
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_maximum_node_degree()
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3378,6 +3720,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     When any of the given node name does not exists in the current graph.
     ///
+<<<<<<< HEAD
     pub fn get_edge_node_ids_from_edge_node_names(
         &self,
         edge_node_names: Vec<(&str, &str)>,
@@ -3385,12 +3728,17 @@ impl EnsmallenGraph {
         pe!(self
             .graph
             .get_edge_node_ids_from_edge_node_names(edge_node_names))
+=======
+    pub fn get_maximum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_maximum_node_degree())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, edge_node_ids)"]
     /// Returns result with the edge node names.
     ///
+<<<<<<< HEAD
     /// Parameters
     /// ----------
     /// edge_node_ids: List[Tuple[int, int]],
@@ -3425,12 +3773,27 @@ impl EnsmallenGraph {
         node_name: &str,
     ) -> PyResult<Option<Vec<NodeTypeT>>> {
         pe!(self.graph.get_node_type_id_from_node_name(node_name))
+=======
+    /// Safety
+    /// ------
+    /// This method fails with a panic if the graph does not have any node.
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+        self.graph.get_unchecked_most_central_node_id()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns maximum node degree of the graph.
+    pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_most_central_node_id())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_name)"]
     /// Return node type name for the given node name if available.
     ///
+<<<<<<< HEAD
     /// Parameters
     /// ----------
     /// node_name: str,
@@ -3441,6 +3804,22 @@ impl EnsmallenGraph {
         node_name: &str,
     ) -> PyResult<Option<Vec<String>>> {
         pe!(self.graph.get_node_type_name_from_node_name(node_name))
+=======
+    /// Safety
+    /// ------
+    /// The method will return an undefined value (NodeT::MAX) when the graph
+    ///  does not contain nodes. In those cases the value is not properly
+    ///  defined.
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_minimum_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns minimum weighted node degree of the graph
+    pub fn get_weighted_mininum_node_degree(&self) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_mininum_node_degree())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -3450,6 +3829,7 @@ impl EnsmallenGraph {
     /// If None is given as an edge type ID, the unknown edge type IDs
     /// will be returned.
     ///
+<<<<<<< HEAD
     /// Parameters
     /// ----------
     /// edge_type_id: Optional[int],
@@ -3480,6 +3860,17 @@ impl EnsmallenGraph {
         pe!(self
             .graph
             .get_edge_type_id_from_edge_type_name(edge_type_name))
+=======
+    pub fn get_minimum_node_degree(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_minimum_node_degree())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns mode node degree of the graph.
+    pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degrees_mode())
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -4732,6 +5123,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self, normalize, verbose)"]
     /// Returns vector of betweenness centrality for all nodes.
     ///
@@ -4753,6 +5145,13 @@ impl EnsmallenGraph {
             self.graph.get_betweenness_centrality(normalize, verbose),
             f64
         )
+=======
+    #[text_signature = "($self)"]
+    /// Returns the unweighted degree of every node in the graph
+    pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_node_degrees(), NodeT)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -6012,10 +6411,33 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self)"]
     /// Returns minimum weighted node degree of the graph
     pub fn get_weighted_mininum_node_degree(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_mininum_node_degree())
+=======
+    #[text_signature = "($self, iterations, verbose)"]
+    /// Returns graph with unweighted shortest paths computed up to the given depth.
+    ///
+    /// The returned graph will have no selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// iterations: Optional[int],
+    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn get_all_shortest_paths(
+        &self,
+        iterations: Option<NodeT>,
+        verbose: Option<bool>,
+    ) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.get_all_shortest_paths(iterations, verbose),
+        }
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -6409,8 +6831,18 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If there are no node types in the graph.
     ///
+<<<<<<< HEAD
     pub fn get_unknown_node_types_rate(&self) -> PyResult<f64> {
         pe!(self.graph.get_unknown_node_types_rate())
+=======
+    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_top_k_central_node_ids(k))?,
+            NodeT
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -6435,8 +6867,16 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If there are no node types in the graph.
     ///
+<<<<<<< HEAD
     pub fn get_minimum_node_types_number(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_minimum_node_types_number())
+=======
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.graph.get_unchecked_node_degree_from_node_id(node_id)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -6456,10 +6896,15 @@ impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns number of maximum multilabel count.
     ///
+<<<<<<< HEAD
     /// This value is the maximum number of multilabel counts
     /// that appear in any given node in the graph
     pub fn get_maximum_multilabel_count(&self) -> PyResult<NodeTypeT> {
         pe!(self.graph.get_maximum_multilabel_count())
+=======
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        pe!(self.graph.get_node_degree_from_node_id(node_id))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7388,9 +7833,20 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
+<<<<<<< HEAD
     /// Returns boolean representing whether graph has edge types.
     pub fn has_edge_types(&self) -> bool {
         self.graph.has_edge_types()
+=======
+    /// Returns vector of unweighted degree centrality for all nodes
+    pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_degree_centrality())?,
+            f64
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7401,11 +7857,34 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self)"]
     /// Returns boolean representing if nodes which are nor singletons nor
     /// singletons with selfloops.
     pub fn has_disconnected_nodes(&self) -> bool {
         self.graph.has_disconnected_nodes()
+=======
+    #[text_signature = "($self, node_id)"]
+    /// Return closeness centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     The node ID whose closeness centrality is to be computed.
+    /// verbose: Optional[bool],
+    ///     Whether to show an indicative progress bar.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.graph
+            .get_unchecked_closeness_centrality_from_node_id(node_id)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7416,10 +7895,24 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self)"]
     /// Returns boolean representing if graph has singletons
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
         self.graph.has_singleton_nodes_with_selfloops()
+=======
+    #[text_signature = "($self, verbose)"]
+    /// Return closeness centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool],
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_closeness_centrality(verbose), f64)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7436,10 +7929,31 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self)"]
     /// Returns boolean representing if graph has node types
     pub fn has_node_types(&self) -> bool {
         self.graph.has_node_types()
+=======
+    #[text_signature = "($self, node_id)"]
+    /// Return harmonic centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     The node ID whose harmonic centrality is to be computed.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.graph
+            .get_unchecked_harmonic_centrality_from_node_id(node_id)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7464,8 +7978,14 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
+<<<<<<< HEAD
     pub fn has_unknown_node_types(&self) -> PyResult<bool> {
         pe!(self.graph.has_unknown_node_types())
+=======
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_harmonic_centrality(verbose), f64)
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7516,8 +8036,24 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
+<<<<<<< HEAD
     pub fn has_homogeneous_node_types(&self) -> PyResult<bool> {
         pe!(self.graph.has_homogeneous_node_types())
+=======
+    pub fn get_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f64>,
+    ) -> PyResult<Py<PyArray1<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+            f64
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7548,15 +8084,26 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
+<<<<<<< HEAD
     /// Return whether the graph has any known node-related graph oddities
     pub fn has_node_oddities(&self) -> bool {
         self.graph.has_node_oddities()
+=======
+    /// Returns the minumum unweighted preferential attachment score.
+    ///
+    /// Safety
+    /// ------
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
+        self.graph.get_unchecked_minimum_preferential_attachment()
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return whether the graph has any known node type-related graph oddities.
     ///
+<<<<<<< HEAD
     /// Raises
     /// -------
     /// ValueError
@@ -7564,6 +8111,13 @@ impl EnsmallenGraph {
     ///
     pub fn has_node_types_oddities(&self) -> PyResult<bool> {
         pe!(self.graph.has_node_types_oddities())
+=======
+    /// Safety
+    /// ------
+    /// If the graph does not contain nodes, the return value will be undefined.
+    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
+        self.graph.get_unchecked_maximum_preferential_attachment()
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7593,6 +8147,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[text_signature = "($self)"]
     /// Return if there are multiple edges between two node
     pub fn is_multigraph(&self) -> bool {
@@ -7605,6 +8160,37 @@ impl EnsmallenGraph {
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.graph
             .has_nodes_sorted_by_decreasing_outbound_node_degree()
+=======
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    /// Returns the unweighted preferential attachment from the given node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int,
+    ///     Node ID of the first node.
+    /// destination_node_id: int,
+    ///     Node ID of the second node.
+    /// normalize: bool,
+    ///     Whether to normalize within 0 to 1.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If either of the provided one and two node IDs are higher than the
+    ///  number of nodes in the graph.
+    pub unsafe fn get_unchecked_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> f64 {
+        self.graph
+            .get_unchecked_preferential_attachment_from_node_ids(
+                source_node_id,
+                destination_node_id,
+                normalize,
+            )
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7647,6 +8233,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the provided number of neighbours is zero.
     ///
+<<<<<<< HEAD
     pub fn generate_new_edges_from_node_features(
         &self,
         features: Vec<Vec<f64>>,
@@ -7664,6 +8251,19 @@ impl EnsmallenGraph {
                 verbose
             ))?,
         })
+=======
+    pub fn get_preferential_attachment_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_preferential_attachment_from_node_ids(
+            source_node_id,
+            destination_node_id,
+            normalize
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7683,6 +8283,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the edge weight for the new singletons is NOT provided but the graph does have edge weights.
     ///
+<<<<<<< HEAD
     pub fn add_selfloops(
         &self,
         edge_type_name: Option<&str>,
@@ -7692,6 +8293,19 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.add_selfloops(edge_type_name, weight, verbose))?,
         })
+=======
+    pub fn get_preferential_attachment_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+        normalize: bool,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_preferential_attachment_from_node_names(
+            first_node_name,
+            second_node_name,
+            normalize
+        ))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7851,6 +8465,7 @@ impl EnsmallenGraph {
     /// verbose: Optional[bool],
     ///     Whether to show the loading bar.
     ///
+<<<<<<< HEAD
     pub fn sample_negatives(
         &self,
         negatives_number: EdgeT,
@@ -7868,6 +8483,22 @@ impl EnsmallenGraph {
                 verbose
             ))?,
         })
+=======
+    /// Safety
+    /// ------
+    /// If either of the provided one and two node IDs are higher than the
+    ///  number of nodes in the graph.
+    pub unsafe fn get_unchecked_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> f64 {
+        self.graph
+            .get_unchecked_resource_allocation_index_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -7959,6 +8590,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If one or more of the given edge type names is not present in the graph.
     ///
+<<<<<<< HEAD
     pub fn random_holdout(
         &self,
         train_size: f64,
@@ -7977,6 +8609,16 @@ impl EnsmallenGraph {
             verbose
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+=======
+    pub fn get_resource_allocation_index_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_resource_allocation_index_from_node_ids(source_node_id, destination_node_id))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
@@ -8002,6 +8644,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is requested but the graph has a multilabel node types.
     ///
+<<<<<<< HEAD
     pub fn node_label_holdout(
         &self,
         train_size: f64,
@@ -8013,6 +8656,16 @@ impl EnsmallenGraph {
                 .graph
                 .node_label_holdout(train_size, use_stratification, random_state))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+=======
+    pub fn get_resource_allocation_index_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))
+>>>>>>> 82d17cfb246b637155eede48394b2e39e3601e27
     }
 
     #[automatically_generated_binding]
