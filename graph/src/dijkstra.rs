@@ -186,8 +186,8 @@ impl Graph {
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                             .for_each(|neighbour_node_id| {
                                 if distances[neighbour_node_id as usize]
-                                    .fetch_max(new_neighbour_distance, Ordering::SeqCst)
-                                    < new_neighbour_distance
+                                    .fetch_min(new_neighbour_distance, Ordering::SeqCst)
+                                    > new_neighbour_distance
                                 {
                                     if let Some(parents) = parents.as_ref() {
                                         parents[neighbour_node_id as usize]
@@ -242,7 +242,7 @@ impl Graph {
             self.get_unchecked_breath_first_search_from_node_ids(src_node_id, None, maximal_depth)?;
 
         // If the distance is infinite, the destination node is not connected.
-        if bfs.has_path_to_node_id(dst_node_id) {
+        if !bfs.has_path_to_node_id(dst_node_id) {
             return Err(format!(
                 "There is no path starting from the given source node {} and reaching the given destination node {}.",
                 src_node_id, dst_node_id
@@ -1073,6 +1073,9 @@ impl Graph {
             self.get_unchecked_breath_first_search_from_node_ids(a1, None, None)?
                 .into_eccentricity_and_most_distant_node_id()
         };
+        if a1 == b1 {
+            return Ok((eccentricity_a1, b1));
+        }
         let path = unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(a1, b1, None)
                 .unwrap()
@@ -1086,12 +1089,15 @@ impl Graph {
             self.get_unchecked_breath_first_search_from_node_ids(a2, None, None)?
                 .into_eccentricity_and_most_distant_node_id()
         };
+        let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
+        if a2 == b2 {
+            return Ok((lower_bound_diameter, b2));
+        }
         let path = unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(a2, b2, None)
                 .unwrap()
         };
         let u = path[path.len() / 2];
-        let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
         Ok((lower_bound_diameter, u))
     }
 
