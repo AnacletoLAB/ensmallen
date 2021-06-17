@@ -14,6 +14,18 @@ macro_rules! optionify {
     };
 }
 
+#[macro_export]
+/// Create a vector of atomic using a default value.
+/// the syntax is:
+/// `vec_atomic[AtomicTYPE; DEFAULT_VALUE; SIZE]`
+macro_rules! vec_atomic {
+    [$atomic_type:ty ; $default_value:expr ; $size:expr] => {{
+        (0..$size)
+            .map(|_| <$atomic_type>::new($default_value))
+            .collect()
+    }}
+}
+
 pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
