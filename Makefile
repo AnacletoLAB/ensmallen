@@ -16,12 +16,10 @@ build_manylinux2010:
 update:
 	(cd graph; cargo update)
 	(cd bindings/python; cargo update)
+	(cd code_analysis; cargo update)
 	(cd fuzzing/graph_harness; cargo update)
 	(cd fuzzing/graph_harness/fuzz; cargo update)
-	(cd fuzzing/honggfuzz/from_csv; cargo update)
-	(cd fuzzing/honggfuzz/from_vec; cargo update)
-	(cd fuzzing/afl/from_csv; cargo update)
-	(cd fuzzing/afl/from_vec; cargo update)
+	(cd fuzzing/honggfuzz/; cargo update)
 
 
 
