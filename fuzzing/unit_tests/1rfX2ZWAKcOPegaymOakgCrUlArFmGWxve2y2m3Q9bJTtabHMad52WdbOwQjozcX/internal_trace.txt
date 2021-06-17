@@ -1,0 +1,14 @@
+Some(
+    [
+        "par_iter_node_names_with_unknown_node_types()",
+        "remap_from_node_ids(node_ids: [], verbose: None)",
+        "has_singleton_nodes()",
+        "enable(vector_sources: None, vector_destinations: None, vector_cumulative_node_degrees: None)",
+        "par_iter_edge_prediction_metrics(normalize: Some(true), verbose: Some(true))",
+        "iter_edge_node_ids_with_known_edge_types(directed: false)",
+        "get_edge_type_name_from_edge_type_id(edge_type_id: 12079)",
+        "get_diameter(ignore_infinity: None, verbose: None)",
+        "get_node_report_from_node_id(node_id: 0)",
+        "encode_edge(src: 0, dst: 0)",
+    ],
+)

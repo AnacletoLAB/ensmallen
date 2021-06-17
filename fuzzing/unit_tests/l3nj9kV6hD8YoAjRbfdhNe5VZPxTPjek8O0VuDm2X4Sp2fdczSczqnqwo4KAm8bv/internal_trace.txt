@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_known_edge_types_number()",
+        "get_node_type_names_counts_hashmap()",
+        "get_node_report_from_node_id(node_id: 0)",
+        "iter_unique_edge_type_names_and_counts()",
+        "has_node_types()",
+        "get_unique_edge_type_ids()",
+        "iter_node_ids_with_known_node_types()",
+        "get_weighted_laplacian_transformed_graph(verbose: None)",
+        "par_iter_node_names_with_known_node_types()",
+        "get_weighted_minimum_node_degree()",
+    ],
+)
