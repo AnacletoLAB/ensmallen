@@ -1205,6 +1205,12 @@ impl Graph {
                 "This method is not defined YET for directed graphs! We will add it in the future!"
             )
         }
+
+        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
+        if unsafe{self.is_unchecked_disconnected_from_node_id(most_central_node_id)} {
+            return Ok(0.0);
+        }
+
         // get the lowerbound of the diameter
         let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
         // find the distances of all the nodes from the node with low eccentricty,
@@ -1285,10 +1291,6 @@ impl Graph {
             return Ok(f64::INFINITY);
         }
 
-        if self.get_nodes_number() == 1 {
-            return Ok(1.0);
-        }
-
         let pb = get_loading_bar(
             verbose,
             "Computing diameter",
@@ -1326,10 +1328,6 @@ impl Graph {
 
         if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
             return Ok(f64::INFINITY);
-        }
-
-        if self.get_nodes_number() == 1 {
-            return Ok(1.0);
         }
 
         if self.is_directed() {

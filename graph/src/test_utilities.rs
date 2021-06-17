@@ -2219,14 +2219,6 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
                 .get_diameter(Some(false), verbose)
                 .unwrap()
                 .is_infinite());
-
-            // if all the nodes are singletons then the diameter should be infinite
-            if biggest == 1 {
-                assert!(graph
-                    .get_diameter(Some(true), verbose)
-                    .unwrap()
-                    .is_infinite());
-            }
         }
     }
 
