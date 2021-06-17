@@ -9,7 +9,7 @@ edition = "2018"
 rust_parser = {path = "./rust_parser" }
 graph = {path = "../graph" }
 regex = "1.5.4"
-
+lazy_static = "1.4.0"
 
 [lib]
 name = "libcodeanalysis"
