@@ -425,6 +425,7 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
+        self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
