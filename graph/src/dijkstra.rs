@@ -129,139 +129,52 @@ impl Graph {
     pub unsafe fn get_unchecked_breath_first_search_from_node_ids_sequential(
         &self,
         src_node_id: NodeT,
-        maybe_dst_node_id: Option<NodeT>,
-        mut maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_distances: Option<bool>,
         compute_predecessors: Option<bool>,
-        compute_visited: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> ShortestPathsResultBFS {
-        let compute_distances = compute_distances.unwrap_or(true);
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let compute_visited = compute_visited.unwrap_or(false);
-        let nodes_number = self.get_nodes_number() as usize;
-        let mut dst_node_distance = maybe_dst_node_id.map(|_| NodeT::MAX);
 
-        let mut parents: Option<Vec<Option<NodeT>>> = if compute_predecessors {
-            let mut parents = vec![None; nodes_number];
-            parents[src_node_id as usize] = Some(src_node_id);
+        let nodes_number = self.get_nodes_number() as usize;
+
+        let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
+            let mut parents = vec![NOT_PRESENT; nodes_number];
+            parents[src_node_id as usize] = src_node_id;
             Some(parents)
         } else {
             None
         };
 
-        let mut distances: Option<Vec<NodeT>> = if compute_distances {
-            let mut distances: Vec<NodeT> = vec![NodeT::MAX; nodes_number];
-            distances[src_node_id as usize] = 0;
-            Some(distances)
-        } else {
-            None
-        };
-
-        let mut visited: Option<_> = if compute_visited || parents.is_none() && distances.is_none()
-        {
-            let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
-            *visited.get_unchecked_mut(src_node_id as usize) = true;
-            Some(visited)
-        } else {
-            None
-        };
-
-        if self.is_unchecked_disconnected_from_node_id(src_node_id) {
-            return ShortestPathsResultBFS::new(
-                distances,
-                parents,
-                visited,
-                dst_node_distance,
-                NodeT::MAX,
-                NodeT::MAX,
-                0.0,
-            );
-        }
-
-        let mut to_be_added = |neighbour_node_id, new_neighbour_distance, node_id| match (
-            &mut distances,
-            &mut parents,
-            &mut visited,
-        ) {
-            (None, None, Some(visited)) if !visited[neighbour_node_id as usize] => {
-                unsafe { *visited.get_unchecked_mut(neighbour_node_id as usize) = true };
-                true
-            }
-            (Some(distances), None, None)
-                if distances[neighbour_node_id as usize] == NodeT::MAX =>
-            {
-                distances[neighbour_node_id as usize] = new_neighbour_distance;
-                true
-            }
-            (None, Some(parents), None) if parents[neighbour_node_id as usize].is_none() => {
-                parents[neighbour_node_id as usize] = Some(node_id);
-                true
-            }
-            (Some(distances), Some(parents), None)
-                if distances[neighbour_node_id as usize] == NodeT::MAX =>
-            {
-                distances[neighbour_node_id as usize] = new_neighbour_distance;
-                parents[neighbour_node_id as usize] = Some(node_id);
-                true
-            }
-            (Some(distances), Some(parents), Some(visited))
-                if distances[neighbour_node_id as usize] == NodeT::MAX =>
-            {
-                unsafe { *visited.get_unchecked_mut(neighbour_node_id as usize) = true };
-                distances[neighbour_node_id as usize] = new_neighbour_distance;
-                parents[neighbour_node_id as usize] = Some(node_id);
-                true
-            }
-            _ => false,
-        };
-
+        let mut distances: Vec<NodeT> = vec![NOT_PRESENT; nodes_number];
+        distances[src_node_id as usize] = 0;
+        
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
-        let mut eccentricity = 0;
-        let mut total_distance = 0;
-        let mut total_harmonic_distance: f64 = 0.0;
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
-            // Update the metrics
-            eccentricity = eccentricity.max(depth);
-            total_distance += depth;
-            if depth != 0 {
-                total_harmonic_distance += 1.0 / depth as f64;
-            }
-            // If the closest node is the optional destination node, we have
-            // completed what the user has required.
-            if maybe_dst_node_id.map_or(false, |dst| dst == node_id) {
-                dst_node_distance.insert(depth);
-                break;
-            }
-
-            // If the closest node is in the set of the destination nodes
-            if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
-                // We remove it
-                let node_id_idx = dst_node_ids.iter().position(|x| *x == node_id);
-
-                if let Some(nii) = node_id_idx {
-                    dst_node_ids.remove(nii);
-                }
-                // And if now the roaringbitmap is empty
-                if dst_node_ids.is_empty() {
-                    // We have completed the requested task.
-                    break;
-                }
-            }
-
+            // compute the distance of the childs of the current node
             let new_neighbour_distance = depth + 1;
 
+            // check if we need to stop
             if let Some(mi) = maximal_depth {
                 if new_neighbour_distance > mi {
                     continue;
                 }
             }
-
+            
+            // explore the neighbourhood of the current node
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
-                    if to_be_added(neighbour_node_id, new_neighbour_distance, node_id) {
+                    // If the node was not previously visited
+                    if distances[neighbour_node_id as usize] == NOT_PRESENT {
+                        // Set it's distance
+                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+
+                        // and set its parent if we are asked to
+                        if let Some(parents) = parents.as_mut() {
+                            parents[neighbour_node_id as usize] = node_id;
+                        }
+
+                        // add the node to the nodes to explore
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
@@ -269,11 +182,6 @@ impl Graph {
         ShortestPathsResultBFS::new(
             distances,
             parents,
-            visited,
-            dst_node_distance,
-            eccentricity,
-            total_distance,
-            total_harmonic_distance,
         )
     }
 
@@ -292,7 +200,7 @@ impl Graph {
         src_node_id: NodeT,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<ShortestPathsResultBFS, String> {
+    ) -> ShortestPathsResultBFS {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
 
@@ -309,7 +217,7 @@ impl Graph {
             None
         };
 
-        let (cpu_number, pool) = get_thread_pool()?;
+        let (cpu_number, pool) = get_thread_pool().expect("Could not initialize the threads pool");
         let shared_stacks: Arc<Vec<Mutex<VecDeque<(NodeT, NodeT)>>>> = Arc::from(
             (0..std::cmp::max(cpu_number, 1))
                 .map(|_| Mutex::from(VecDeque::with_capacity(nodes_number / cpu_number)))
@@ -325,15 +233,27 @@ impl Graph {
                     let thread_id = rayon::current_thread_index().unwrap_or(0);
                     let (node_id, depth) = 'inner: loop {
                         {
-                            for mut stack in
+                            for stack in
                                 (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
                                     shared_stacks[id % shared_stacks.len()].lock().expect(
                                         "The lock is poisoned from the panic of another thread",
                                     )
                                 })
                             {
-                                if let Some(stack_tuple) = stack.pop_front() {
-                                    break 'inner stack_tuple;
+                                if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                                    break 'outer;
+                                }
+
+                                for mut stack in
+                                    (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
+                                        shared_stacks[id % shared_stacks.len()].lock().expect(
+                                            "The lock is poisoned from the panic of another thread",
+                                        )
+                                    })
+                                {
+                                    if let Some(stack_tuple) = stack.pop_front() {
+                                        break 'inner stack_tuple;
+                                    }
                                 }
                             }
 
@@ -371,12 +291,12 @@ impl Graph {
             });
         });
 
-        Ok(ShortestPathsResultBFS::new(
+        ShortestPathsResultBFS::new(
             std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(distances),
             parents.map(|parents| unsafe {
                 std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(parents)
             }),
-        ))
+        )
     }
 
     /// Returns minimum path node IDs and distance from given node ids.
@@ -402,7 +322,7 @@ impl Graph {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
         let bfs =
-            self.get_unchecked_breath_first_search_from_node_ids(src_node_id, None, maximal_depth)?;
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(src_node_id, None, maximal_depth);
 
         // If the distance is infinite, the destination node is not connected.
         if !bfs.has_path_to_node_id(dst_node_id) {
@@ -683,8 +603,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
-        self.get_unchecked_breath_first_search_from_node_ids(node_id, None, None)
-            .unwrap()
+        self.get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
             .into_eccentricity()
     }
 
@@ -860,8 +779,7 @@ impl Graph {
         }
 
         let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
-            self.get_unchecked_breath_first_search_from_node_ids(src_node_id, None, Some(md))
-                .unwrap()
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(src_node_id, None, Some(md))
         });
 
         let mut nodes_to_explore: DijkstraQueue =
@@ -1162,11 +1080,11 @@ impl Graph {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breath_first_search_from_node_ids_sequential(
                 src_node_id,
                 compute_predecessors,
                 maximal_depth,
-            )
+            ))
         }
     }
 
@@ -1239,11 +1157,11 @@ impl Graph {
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT), String> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let a1 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(most_central_node_id, None, None)?
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(most_central_node_id, None, None)
                 .into_most_distant_node_id()
         };
         let (eccentricity_a1, b1) = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(a1, None, None)?
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(a1, None, None)
                 .into_eccentricity_and_most_distant_node_id()
         };
         if a1 == b1 {
@@ -1255,11 +1173,11 @@ impl Graph {
         };
         let r2 = path[path.len() / 2];
         let a2 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(r2, None, None)?
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(r2, None, None)
                 .into_most_distant_node_id()
         };
         let (eccentricity_a2, b2) = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(a2, None, None)?
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(a2, None, None)
                 .into_eccentricity_and_most_distant_node_id()
         };
         let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
@@ -1292,7 +1210,7 @@ impl Graph {
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let distances = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(low_eccentricity_node, None, None)?
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(low_eccentricity_node, None, None)
                 .into_distances()
         };
         assert!(
@@ -1510,11 +1428,11 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS, String> {
         unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breath_first_search_from_node_ids_sequential(
                 self.get_node_id_from_node_name(src_node_name)?,
                 compute_predecessors,
                 maximal_depth,
-            )
+            ))
         }
     }
 
