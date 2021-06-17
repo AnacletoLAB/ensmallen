@@ -2191,8 +2191,8 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
 
         1 => {
             // by definition the diameter of a graph with a single component
-            // cannot be infinite unless it's just a singleton.
-            if graph.get_nodes_number() == 1 {
+            // cannot be infinite unless it's just a singleton and it does not have edges.
+            if graph.get_nodes_number() == 1 && !graph.has_edges(){
                 assert!(graph
                     .get_diameter(Some(false), verbose)
                     .unwrap()
