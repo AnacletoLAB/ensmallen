@@ -158,52 +158,56 @@ impl Graph {
 
         pool.scope(|s| {
             (0..shared_stacks.len()).for_each(|_| {
-                s.spawn(|_| 'outer: loop {
+                s.spawn(|_| {
                     let thread_id = rayon::current_thread_index().unwrap_or(0);
-                    let (node_id, depth) = 'inner: loop {
-                        {
-                            for mut stack in
-                                (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
-                                    shared_stacks[id % shared_stacks.len()].lock().expect(
-                                        "The lock is poisoned from the panic of another thread",
-                                    )
-                                })
+                    'outer: loop {
+                        let (node_id, depth) = 'inner: loop {
                             {
-                                if let Some(stack_tuple) = stack.pop_front() {
-                                    break 'inner stack_tuple;
-                                }
-                            }
-
-                            if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                                break 'outer;
-                            }
-                        }
-                    };
-
-                    let new_neighbour_distance = depth + 1;
-
-                    if maximal_depth.map_or(true, |md| md >= new_neighbour_distance) {
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .for_each(|neighbour_node_id| {
-                                if distances[neighbour_node_id as usize]
-                                    .fetch_min(new_neighbour_distance, Ordering::SeqCst)
-                                    > new_neighbour_distance
+                                for mut stack in
+                                    (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
+                                        shared_stacks[id % shared_stacks.len()].lock().expect(
+                                            "The lock is poisoned from the panic of another thread",
+                                        )
+                                    })
                                 {
-                                    if let Some(parents) = parents.as_ref() {
-                                        parents[neighbour_node_id as usize]
-                                            .store(node_id, Ordering::SeqCst);
+                                    if let Some(stack_tuple) = stack.pop_front() {
+                                        break 'inner stack_tuple;
                                     }
-                                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                    shared_stacks[rand_u64(neighbour_node_id as u64) as usize
-                                        % shared_stacks.len()]
-                                    .lock()
-                                    .expect("The lock is poisoned from the panic of another thread")
-                                    .push_back((neighbour_node_id, new_neighbour_distance));
                                 }
-                            });
-                    }
 
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                                if active_nodes_number.load(Ordering::SeqCst) == 0 {
+                                    break 'outer;
+                                }
+                            }
+                        };
+
+                        let new_neighbour_distance = depth + 1;
+
+                        if maximal_depth.map_or(true, |md| md >= new_neighbour_distance) {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                                .for_each(|neighbour_node_id| {
+                                    if distances[neighbour_node_id as usize]
+                                        .fetch_min(new_neighbour_distance, Ordering::SeqCst)
+                                        > new_neighbour_distance
+                                    {
+                                        if let Some(parents) = parents.as_ref() {
+                                            parents[neighbour_node_id as usize]
+                                                .store(node_id, Ordering::SeqCst);
+                                        }
+                                        active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                        shared_stacks[rand_u64(neighbour_node_id as u64) as usize
+                                            % shared_stacks.len()]
+                                        .lock()
+                                        .expect(
+                                            "The lock is poisoned from the panic of another thread",
+                                        )
+                                        .push_back((neighbour_node_id, new_neighbour_distance));
+                                    }
+                                });
+                        }
+
+                        active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    }
                 });
             });
         });
